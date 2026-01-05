@@ -32,12 +32,15 @@ Get your API key from: https://console.anthropic.com/
 - Searches for words like "once", "miracle", "happened"
 - Misses stories without these keywords
 - Includes non-narrative legal discussions that happen to use these words
+- English-only analysis
 
 **Semantic Narrative Detection (This Project):**
 - Uses AI to understand narrative structure
 - Identifies beginning, middle, and end
 - Finds brief vignettes and dialogues with narrative arcs
 - Distinguishes stories from legal discussions
+- **Analyzes both Hebrew/Aramaic original AND English translation**
+- Detects Hebrew narrative markers: ויהי (vayehi), מעשה ב (ma'aseh be), פעם אחת (pa'am achat)
 
 ## Usage
 
@@ -69,10 +72,11 @@ python find_talmud_stories.py
 
 The script will:
 1. Systematically analyze passages from Talmud tractates
-2. Use AI to detect narrative structure (beginning, middle, end)
-3. Classify story types (full narratives, dialogue vignettes, brief anecdotes)
-4. Provide confidence scores and summaries
-5. Save detailed results to `talmud_stories.json`
+2. Fetch both Hebrew/Aramaic original and English translation
+3. Use AI to detect narrative structure in BOTH languages
+4. Classify story types (full narratives, dialogue vignettes, brief anecdotes)
+5. Provide confidence scores and summaries
+6. Save detailed results to `talmud_stories.json` with both texts
 
 **Example output:**
 ```
@@ -116,6 +120,8 @@ Does NOT include:
 - **Claude 3.5 Haiku** (default) - Fast and cost-effective
 - **Claude 3.5 Sonnet** - More nuanced understanding, higher cost
 
+Both models are fully multilingual and can read Hebrew, Aramaic, and English. See [BILINGUAL_ANALYSIS.md](BILINGUAL_ANALYSIS.md) for details on how the tool uses both languages.
+
 ## Sefaria MCP Tools (Optional)
 
 For interactive exploration with Claude Desktop, you can also use:
@@ -124,6 +130,13 @@ For interactive exploration with Claude Desktop, you can also use:
 - `search_in_book` - Search within specific tractate
 - `get_links_between_texts` - Find cross-references
 - `english_semantic_search` - Semantic similarity search
+
+## Documentation
+
+- **[HOW_IT_WORKS.md](HOW_IT_WORKS.md)** - Detailed explanation of semantic narrative detection
+- **[BILINGUAL_ANALYSIS.md](BILINGUAL_ANALYSIS.md)** - How Hebrew/Aramaic + English analysis works
+- **[QUICKSTART.md](QUICKSTART.md)** - Quick start guide
+- **[MCP_USAGE_GUIDE.md](MCP_USAGE_GUIDE.md)** - Using with Claude Desktop via MCP
 
 ## References
 

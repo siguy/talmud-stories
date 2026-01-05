@@ -56,15 +56,31 @@ class NarrativeAnalyzer:
             print("Set ANTHROPIC_API_KEY environment variable or pass api_key parameter.")
             print("Falling back to basic heuristic analysis.\n")
 
-    def analyze_narrative_structure(self, text: str, ref: str) -> Dict[str, Any]:
+    def analyze_narrative_structure(self, text: str, ref: str, hebrew_text: str = None) -> Dict[str, Any]:
         """
         Use AI to determine if passage contains a narrative arc.
+
+        Analyzes both English translation and Hebrew/Aramaic original when available.
 
         Definition: "Literary Stories" - any narrative arc with beginning, middle,
         and end, including brief two-line dialogues or vignettes.
         """
         if not self.api_key:
             return self._heuristic_analysis(text, ref)
+
+        # Prepare bilingual prompt if Hebrew available
+        text_section = f"""English Translation:
+{text}"""
+
+        if hebrew_text and hebrew_text.strip():
+            text_section += f"""
+
+Hebrew/Aramaic Original:
+{hebrew_text}
+
+Note: You can read both Hebrew and English. Use BOTH to determine if this is a story.
+Hebrew narrative markers include: ויהי (vayehi), מעשה ב (ma'aseh be), פעם אחת (pa'am achat), אמר לו (amar lo).
+If the texts differ or if one is clearer, rely on the more complete version."""
 
         prompt = f"""Analyze this Talmudic passage and determine if it contains a "Literary Story."
 
@@ -88,7 +104,8 @@ DO NOT count:
 - Bare statements of law
 
 Passage Reference: {ref}
-Text: {text}
+
+{text_section}
 
 Respond in JSON format:
 {{
@@ -258,28 +275,35 @@ class SefariaStoryFinder:
             if not text_data:
                 continue
 
-            # Get English text if available
-            text = text_data.get('text', '')
-            en_text = text_data.get('he', '')  # Sometimes 'he' contains English
+            # Get both English and Hebrew text
+            english_text = text_data.get('text', '')
+            hebrew_text = text_data.get('he', '')
 
-            # Prefer English text
-            if isinstance(text, list):
-                text = ' '.join(str(t) for t in text if t)
+            # Convert lists to strings
+            if isinstance(english_text, list):
+                english_text = ' '.join(str(t) for t in english_text if t)
+            if isinstance(hebrew_text, list):
+                hebrew_text = ' '.join(str(t) for t in hebrew_text if t)
 
-            # Skip if too short or too long
-            if not text or len(text) < 50:
+            # Skip if both are too short
+            if (not english_text or len(english_text) < 50) and (not hebrew_text or len(hebrew_text) < 50):
                 continue
-            if len(text) > 3000:  # Truncate very long sections
-                text = text[:3000] + "..."
 
-            # Analyze with AI
-            analysis = self.analyzer.analyze_narrative_structure(text, ref)
+            # Truncate if too long (keep both under reasonable size)
+            if len(english_text) > 2500:
+                english_text = english_text[:2500] + "..."
+            if len(hebrew_text) > 2500:
+                hebrew_text = hebrew_text[:2500] + "..."
+
+            # Analyze with AI - use both languages
+            analysis = self.analyzer.analyze_narrative_structure(english_text, ref, hebrew_text)
 
             if analysis['is_story']:
                 stories.append({
                     'ref': ref,
                     'book': tractate,
-                    'text': text,
+                    'text': english_text,
+                    'hebrew_text': hebrew_text if hebrew_text else None,
                     'analysis': analysis
                 })
                 confidence = analysis['confidence']
