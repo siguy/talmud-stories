@@ -79,7 +79,15 @@ Hebrew/Aramaic Original:
 {hebrew_text}
 
 Note: You can read both Hebrew and English. Use BOTH to determine if this is a story.
-Hebrew narrative markers include: ויהי (vayehi), מעשה ב (ma'aseh be), פעם אחת (pa'am achat), אמר לו (amar lo).
+
+IMPORTANT: Analyze the narrative structure semantically - do NOT require specific markers.
+Some Hebrew phrases that MAY appear in stories (but are NOT required):
+- ויהי (vayehi) - "and it was"
+- מעשה ב (ma'aseh be) - "an incident involving"
+- פעם אחת (pa'am achat) - "one time"
+- אמר לו (amar lo) - "said to him"
+
+Many stories have NONE of these markers. Focus on: Does this passage have beginning, middle, end?
 If the texts differ or if one is clearer, rely on the more complete version."""
 
         prompt = f"""Analyze this Talmudic passage and determine if it contains a "Literary Story."
@@ -122,7 +130,13 @@ Respond in JSON format:
   }},
   "story_type": "full_narrative" | "dialogue_vignette" | "brief_anecdote" | "not_a_story",
   "one_sentence_summary": "brief description if is_story is true, else empty string",
-  "reasoning": "brief explanation of your classification"
+  "reasoning": "brief explanation of your classification",
+  "continuation": {{
+    "seems_incomplete": true/false,
+    "missing_beginning": true/false,
+    "missing_end": true/false,
+    "note": "explanation if story appears to continue beyond this passage or starts mid-narrative"
+  }}
 }}"""
 
         try:
@@ -200,10 +214,11 @@ Respond in JSON format:
 class SefariaStoryFinder:
     """Find stories in Talmud using semantic narrative detection"""
 
-    def __init__(self, analyzer: NarrativeAnalyzer):
+    def __init__(self, analyzer: NarrativeAnalyzer, use_windowing: bool = True):
         self.analyzer = analyzer
         self.session = requests.Session()
         self.cache = {}
+        self.use_windowing = use_windowing  # Enable multi-page story detection
 
     def get_tractate_structure(self, tractate: str) -> List[str]:
         """Get all text references (pages/sections) in a tractate"""
@@ -245,17 +260,58 @@ class SefariaStoryFinder:
             print(f"  Error fetching {ref}: {e}")
             return None
 
+    def get_combined_text(self, refs: List[str]) -> Optional[Dict[str, Any]]:
+        """
+        Get combined text from multiple consecutive references.
+        For multi-page story detection (e.g., 2a→2b→3a).
+        """
+        combined_english = []
+        combined_hebrew = []
+
+        for ref in refs:
+            text_data = self.get_text(ref)
+            if not text_data:
+                continue
+
+            # Collect English
+            eng = text_data.get('text', '')
+            if isinstance(eng, list):
+                eng = ' '.join(str(t) for t in eng if t)
+            if eng:
+                combined_english.append(eng)
+
+            # Collect Hebrew
+            heb = text_data.get('he', '')
+            if isinstance(heb, list):
+                heb = ' '.join(str(t) for t in heb if t)
+            if heb:
+                combined_hebrew.append(heb)
+
+        if not combined_english and not combined_hebrew:
+            return None
+
+        return {
+            'text': ' '.join(combined_english),
+            'he': ' '.join(combined_hebrew),
+            'refs': refs,
+            'combined': True
+        }
+
     def search_tractate_systematically(self, tractate: str, order: str,
                                       sample_rate: int = 1) -> List[Dict[str, Any]]:
         """
         Systematically analyze a tractate for narrative content.
+        Uses multi-page windowing to catch stories spanning 2a→2b→3a.
         sample_rate: analyze every Nth section (1 = all sections, 2 = every other, etc.)
         """
         print(f"\n{'='*60}")
         print(f"Analyzing {tractate} ({order}) for narrative structure...")
+        if self.use_windowing:
+            print("Using multi-page windowing to detect stories spanning pages")
         print(f"{'='*60}")
 
         stories = []
+        seen_story_keys = set()  # For deduplication
 
         # Get all references in tractate
         refs = self.get_tractate_structure(tractate)
@@ -270,7 +326,8 @@ class SefariaStoryFinder:
         print(f"  Analyzing {len(refs)} sections...")
         analyzed_count = 0
 
-        for ref in refs:
+        # PASS 1: Analyze individual pages
+        for i, ref in enumerate(refs):
             text_data = self.get_text(ref)
             if not text_data:
                 continue
@@ -299,16 +356,59 @@ class SefariaStoryFinder:
             analysis = self.analyzer.analyze_narrative_structure(english_text, ref, hebrew_text)
 
             if analysis['is_story']:
-                stories.append({
-                    'ref': ref,
-                    'book': tractate,
-                    'text': english_text,
-                    'hebrew_text': hebrew_text if hebrew_text else None,
-                    'analysis': analysis
-                })
-                confidence = analysis['confidence']
-                story_type = analysis['story_type']
-                print(f"  ✓ {ref} - {story_type} (confidence: {confidence}%)")
+                story_key = self._create_story_key(english_text, ref)
+                if story_key not in seen_story_keys:
+                    seen_story_keys.add(story_key)
+                    stories.append({
+                        'ref': ref,
+                        'book': tractate,
+                        'text': english_text,
+                        'hebrew_text': hebrew_text if hebrew_text else None,
+                        'analysis': analysis,
+                        'spans_multiple_pages': False
+                    })
+                    confidence = analysis['confidence']
+                    story_type = analysis['story_type']
+                    print(f"  ✓ {ref} - {story_type} (confidence: {confidence}%)")
+
+            # PASS 2: Check for continuation and analyze with next page if needed
+            if self.use_windowing and i < len(refs) - 1:
+                continuation = analysis.get('continuation', {})
+                if continuation.get('seems_incomplete') or continuation.get('missing_end'):
+                    # Story might continue to next page
+                    next_ref = refs[i + 1]
+                    combined_data = self.get_combined_text([ref, next_ref])
+
+                    if combined_data:
+                        comb_eng = combined_data['text']
+                        comb_heb = combined_data['he']
+
+                        # Truncate combined text if too long
+                        if len(comb_eng) > 4000:
+                            comb_eng = comb_eng[:4000] + "..."
+                        if len(comb_heb) > 4000:
+                            comb_heb = comb_heb[:4000] + "..."
+
+                        combined_ref = f"{ref}-{next_ref.split()[-1]}"
+                        combined_analysis = self.analyzer.analyze_narrative_structure(
+                            comb_eng, combined_ref, comb_heb
+                        )
+
+                        # If combined version has higher confidence and complete story, use it
+                        if combined_analysis['is_story'] and combined_analysis['confidence'] > analysis['confidence'] + 10:
+                            if not combined_analysis.get('continuation', {}).get('seems_incomplete'):
+                                story_key = self._create_story_key(comb_eng, combined_ref)
+                                if story_key not in seen_story_keys:
+                                    seen_story_keys.add(story_key)
+                                    stories.append({
+                                        'ref': combined_ref,
+                                        'book': tractate,
+                                        'text': comb_eng,
+                                        'hebrew_text': comb_heb if comb_heb else None,
+                                        'analysis': combined_analysis,
+                                        'spans_multiple_pages': True
+                                    })
+                                    print(f"  ✓✓ {combined_ref} - MULTI-PAGE {combined_analysis['story_type']} (confidence: {combined_analysis['confidence']}%)")
 
             analyzed_count += 1
             if analyzed_count % 10 == 0:
@@ -317,7 +417,16 @@ class SefariaStoryFinder:
             time.sleep(0.3)  # Rate limiting
 
         print(f"  Found {len(stories)} stories in {tractate}")
+        multi_page = sum(1 for s in stories if s.get('spans_multiple_pages'))
+        if multi_page > 0:
+            print(f"  ({multi_page} span multiple pages)")
         return stories
+
+    def _create_story_key(self, text: str, ref: str) -> str:
+        """Create a unique key for story deduplication"""
+        # Use first 200 chars + ref as key to avoid duplicate stories
+        text_snippet = text[:200].strip() if text else ""
+        return f"{text_snippet}:{ref}"
 
     def search_all_tractates(self, sample_rate: int = 2):
         """Search all Talmud tractates for stories"""
