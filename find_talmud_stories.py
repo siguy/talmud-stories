@@ -232,12 +232,21 @@ class SefariaStoryFinder:
             schema = data.get('schema', {})
             lengths = data.get('lengths', [])
 
-            # Generate references for each page
+            # Generate references for Talmud pages (2a, 2b, 3a, 3b, etc.)
+            # Talmud starts at page 2 and each page has 2 sides (a and b)
             refs = []
             if lengths:
-                for chapter_idx, chapter_length in enumerate(lengths, 1):
-                    for section in range(1, chapter_length + 1):
-                        refs.append(f"{tractate} {chapter_idx}:{section}")
+                # For Talmud, lengths[0] is the total number of amudim (page sides)
+                total_amudim = lengths[0] if lengths else 0
+
+                # Starting page is 2 (Talmud convention)
+                # Each page has 2 sides: a and b
+                page_num = 2
+                for i in range(total_amudim):
+                    side = 'a' if i % 2 == 0 else 'b'
+                    refs.append(f"{tractate} {page_num}{side}")
+                    if side == 'b':
+                        page_num += 1
 
             return refs
         except Exception as e:
