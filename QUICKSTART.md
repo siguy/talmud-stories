@@ -1,31 +1,76 @@
-# Quick Start Guide - Finding Talmud Stories
+# Quick Start Guide - Finding Talmud Stories with AI
 
-## Option 1: Use the Python Script (Fastest)
+## What This Does
 
-### Install and Run
+Uses **AI to detect narrative structure** in Talmud passages - not just keyword matching!
+
+**"Literary Stories"** = any passage with beginning, middle, end (including 2-line dialogues)
+
+## Option 1: AI-Powered Analysis (Recommended)
+
+### Setup (One-time)
 ```bash
 # Install dependencies
-pip install requests
+pip install -r requirements.txt
 
-# Run the script
+# Set your Anthropic API key
+export ANTHROPIC_API_KEY='your-key-from-console.anthropic.com'
+```
+
+### Run the Script
+```bash
 python find_talmud_stories.py
 ```
 
 ### Choose Your Search
-- **Option 1**: Search all tractates (30+ minutes, comprehensive)
-- **Option 2**: Search specific tractate (5-10 minutes)
-- **Option 3**: Search story-rich tractates (10-15 minutes, recommended)
+- **Option 1**: All tractates (~2-4 hours with AI, comprehensive)
+- **Option 2**: Specific tractate (10-30 minutes)
+- **Option 3**: Story-rich tractates - Taanit, Berakhot, Sanhedrin (20-40 minutes, **recommended**)
 
 ### Output
-Results saved to `talmud_stories.json` with:
-- Story references (e.g., "Taanit 23a")
-- Full text of passages
-- Story score (based on narrative keywords)
-- Keywords found
+Results in `talmud_stories.json` include:
+- **Narrative analysis** (has beginning/middle/end, characters, dialogue, etc.)
+- **Story type** (full_narrative, dialogue_vignette, brief_anecdote)
+- **Confidence score** (0-100%)
+- **AI-generated summary**
+- Full text of passage
+
+Example:
+```json
+{
+  "ref": "Taanit 23a",
+  "analysis": {
+    "is_story": true,
+    "confidence": 95,
+    "story_type": "full_narrative",
+    "one_sentence_summary": "Honi draws circle and refuses to leave until God sends proper rain",
+    "narrative_elements": {
+      "has_beginning": true,
+      "has_middle": true,
+      "has_end": true,
+      "has_characters": true,
+      "has_action": true,
+      "has_dialogue": true
+    }
+  }
+}
+```
 
 ---
 
-## Option 2: Use MCP Server with Claude Desktop (Interactive)
+## Option 2: Without API Key (Heuristic Fallback)
+
+If you don't have an Anthropic API key:
+```bash
+pip install requests
+python find_talmud_stories.py
+```
+
+Uses heuristic analysis (less accurate but free). Looks for narrative indicators like dialogue, actions, temporal markers.
+
+---
+
+## Option 3: MCP Server with Claude Desktop (Interactive)
 
 ### Setup (One-time)
 ```bash

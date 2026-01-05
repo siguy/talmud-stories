@@ -1,0 +1,49 @@
+{
+  "total_stories": 2,
+  "generated_at": "2026-01-05 12:00:00",
+  "definition": "Literary Stories - any narrative arc with beginning, middle, and end",
+  "stories": [
+    {
+      "ref": "Taanit 23a",
+      "book": "Taanit",
+      "text": "Once the world was in need of rain. The people came to Honi the Circle Drawer and said to him: Pray that rain may fall. He prayed, but no rain fell. What did he do? He drew a circle and stood within it and said before God: Master of the Universe, Your children have turned their faces to me because I am like a member of Your household. I swear by Your great name that I will not move from here until You have mercy on Your children. Rain began to drizzle. He said: I did not ask for this, but for rain that will fill cisterns, ditches, and caves. The rain began to come down with great force. He said: I did not ask for this either, but for rain of benevolence, blessing, and generosity. The rain then fell in the normal way until the Jews went up from Jerusalem to the Temple Mount because of the rain.",
+      "analysis": {
+        "is_story": true,
+        "confidence": 95,
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "full_narrative",
+        "one_sentence_summary": "Honi draws a circle and refuses to leave it until God sends the proper amount of rain, demonstrating the power and audacity of righteous prayer",
+        "reasoning": "This passage has a clear narrative arc: Beginning (drought, people ask Honi to pray), Middle (Honi draws circle, makes demands, God responds with different types of rain), End (proper rain falls, people go to Temple). Contains dialogue, character actions, temporal progression, and resolution."
+      }
+    },
+    {
+      "ref": "Berakhot 5b",
+      "book": "Berakhot",
+      "text": "Rabbi Yoḥanan said: Once I was walking along the way when I saw a man gathering carobs. I said to him: Are these ownerless? He said to me: Yes. And I ate from them. After three days, the owner of the carobs came to me. He said to me: Give me compensation for the carobs that you ate. I said to him: But didn't you say they were ownerless? He said to me: I said to you they were ownerless with regard to tithes, meaning they do not require the separation of tithes, but they are not ownerless in terms of ownership. I gave him compensation for them.",
+      "analysis": {
+        "is_story": true,
+        "confidence": 85,
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "brief_anecdote",
+        "one_sentence_summary": "Rabbi Yochanan misunderstands a man's statement about carobs being 'ownerless' and must pay compensation after eating them",
+        "reasoning": "This is a brief anecdote with narrative structure: Beginning (Rabbi Yochanan walking, sees carobs, asks if ownerless), Middle (eats them, owner comes three days later demanding payment, misunderstanding revealed), End (compensation paid). Has dialogue, temporal progression, and resolution showing a lesson about miscommunication."
+      }
+    }
+  ]
+}
