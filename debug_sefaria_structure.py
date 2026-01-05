@@ -50,10 +50,20 @@ for ref in test_refs:
         resp = requests.get(text_url, timeout=5)
         if resp.status_code == 200:
             text_data = resp.json()
+
+            # English text
             text = text_data.get('text', '')
             if isinstance(text, list):
                 text = ' '.join(str(t) for t in text[:2])  # First 2 lines
-            print(f"✓ {ref}: {text[:100]}...")
+
+            # Hebrew text
+            hebrew = text_data.get('he', '')
+            if isinstance(hebrew, list):
+                hebrew = ' '.join(str(t) for t in hebrew[:2])  # First 2 lines
+
+            print(f"✓ {ref}:")
+            print(f"  English: {text[:100]}...")
+            print(f"  Hebrew: {hebrew[:100]}...")
         else:
             print(f"✗ {ref}: HTTP {resp.status_code}")
     except Exception as e:

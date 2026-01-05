@@ -228,9 +228,9 @@ class SefariaStoryFinder:
             response.raise_for_status()
             data = response.json()
 
-            # Get the length information
+            # Get the length information from schema
             schema = data.get('schema', {})
-            lengths = data.get('lengths', [])
+            lengths = schema.get('lengths', [])
 
             # Generate references for Talmud pages (2a, 2b, 3a, 3b, etc.)
             # Talmud starts at page 2 and each page has 2 sides (a and b)
