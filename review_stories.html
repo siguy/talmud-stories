@@ -382,6 +382,11 @@
             <h1>📚 Ketubot Stories Review</h1>
             <p>Review AI-identified stories from Tractate Ketubot and provide expert feedback</p>
 
+            <div class="control-group" style="margin: 20px 0;">
+                <label for="reviewerName">Reviewer Name</label>
+                <input type="text" id="reviewerName" placeholder="Enter your name" style="max-width: 300px;">
+            </div>
+
             <div class="stats" id="stats">
                 <!-- Populated by JavaScript -->
             </div>
@@ -639,7 +644,16 @@
         }
 
         function exportFeedback() {
+            const reviewerName = document.getElementById('reviewerName').value.trim();
+
+            if (!reviewerName) {
+                alert('⚠️ Please enter your name before exporting feedback');
+                document.getElementById('reviewerName').focus();
+                return;
+            }
+
             const exportData = {
+                reviewer_name: reviewerName,
                 reviewed_at: new Date().toISOString(),
                 tractate: 'Ketubot',
                 total_stories: stories.length,
@@ -661,7 +675,7 @@
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `ketubot_review_${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `ketubot_review_${reviewerName.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.json`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
@@ -670,8 +684,26 @@
             alert(`✓ Exported feedback for ${Object.keys(feedback).length} stories!`);
         }
 
+        // Load saved reviewer name from localStorage
+        function loadReviewerName() {
+            const savedName = localStorage.getItem('reviewerName');
+            if (savedName) {
+                document.getElementById('reviewerName').value = savedName;
+            }
+        }
+
+        // Save reviewer name to localStorage when it changes
+        function saveReviewerName() {
+            const nameInput = document.getElementById('reviewerName');
+            nameInput.addEventListener('input', () => {
+                localStorage.setItem('reviewerName', nameInput.value.trim());
+            });
+        }
+
         // Initialize on load
         loadStories();
+        loadReviewerName();
+        saveReviewerName();
     </script>
 </body>
 </html>
