@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ketubot Stories Review - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        .stat-box .label {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .controls {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            margin-bottom: 20px;
+        }
+
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .control-group label {
+            display: block;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        select, input[type="range"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        input[type="range"] {
+            padding: 0;
+        }
+
+        .range-value {
+            color: #3498db;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: box-shadow 0.3s;
+        }
+
+        .story-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+
+        .story-header {
+            padding: 20px;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .story-ref {
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .story-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .confidence-high {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .confidence-medium {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .confidence-low {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .type-full_narrative {
+            background: #cfe2ff;
+            color: #084298;
+        }
+
+        .type-dialogue_vignette {
+            background: #e7d6f5;
+            color: #6f42c1;
+        }
+
+        .type-brief_anecdote {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .multi-page {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .story-content {
+            padding: 20px;
+        }
+
+        .summary {
+            background: #f0f7ff;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #2c3e50;
+        }
+
+        .text-section {
+            margin-bottom: 20px;
+        }
+
+        .text-section h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .text-content {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            white-space: pre-wrap;
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .hebrew {
+            direction: rtl;
+            text-align: right;
+            font-family: 'Times New Roman', serif;
+            font-size: 18px;
+        }
+
+        .toggle-text {
+            background: none;
+            border: none;
+            color: #3498db;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: underline;
+        }
+
+        .toggle-text:hover {
+            color: #2980b9;
+        }
+
+        .narrative-elements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .element {
+            padding: 6px 12px;
+            background: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 6px;
+            font-size: 13px;
+        }
+
+        .feedback-section {
+            padding: 20px;
+            background: #f8f9fa;
+            border-top: 2px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .feedback-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .feedback-btn {
+            padding: 10px 24px;
+            border: 2px solid;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .feedback-btn.correct {
+            background: white;
+            border-color: #27ae60;
+            color: #27ae60;
+        }
+
+        .feedback-btn.correct:hover,
+        .feedback-btn.correct.active {
+            background: #27ae60;
+            color: white;
+        }
+
+        .feedback-btn.false-positive {
+            background: white;
+            border-color: #e74c3c;
+            color: #e74c3c;
+        }
+
+        .feedback-btn.false-positive:hover,
+        .feedback-btn.false-positive.active {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .feedback-note {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .feedback-note input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+        }
+
+        .export-section {
+            text-align: center;
+            margin-top: 30px;
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .export-btn {
+            padding: 15px 40px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .export-btn:hover {
+            background: #2980b9;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 60px 20px;
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .reasoning {
+            margin-top: 15px;
+            padding: 15px;
+            background: #fff9e6;
+            border-left: 4px solid #f39c12;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .reasoning strong {
+            color: #f39c12;
+        }
+
+        .demo-notice {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: #1976d2;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="demo-notice">
+            🎨 <strong>DEMO MODE</strong> - This is showing sample data from Ketubot. Run the actual analysis to get real results!
+        </div>
+
+        <div class="header">
+            <h1>📚 Ketubot Stories Review</h1>
+            <p>Review AI-identified stories from Tractate Ketubot and provide expert feedback</p>
+
+            <div class="stats" id="stats"></div>
+        </div>
+
+        <div class="controls">
+            <div class="filters">
+                <div class="control-group">
+                    <label>Search by Reference</label>
+                    <input type="text" id="searchRef" placeholder="e.g., 62b, 67a, 103">
+                </div>
+
+                <div class="control-group">
+                    <label>Story Type</label>
+                    <select id="filterType">
+                        <option value="all">All Types</option>
+                        <option value="full_narrative">Full Narratives</option>
+                        <option value="dialogue_vignette">Dialogue Vignettes</option>
+                        <option value="brief_anecdote">Brief Anecdotes</option>
+                    </select>
+                </div>
+
+                <div class="control-group">
+                    <label>Minimum Confidence: <span class="range-value" id="confValue">0%</span></label>
+                    <input type="range" id="filterConfidence" min="0" max="100" value="0">
+                </div>
+
+                <div class="control-group">
+                    <label>Multi-Page Stories</label>
+                    <select id="filterMultiPage">
+                        <option value="all">All</option>
+                        <option value="multipage">Multi-Page Only</option>
+                        <option value="singlepage">Single-Page Only</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div id="storiesContainer"></div>
+
+        <div class="export-section">
+            <h2>Export Your Feedback</h2>
+            <p style="margin: 15px 0; color: #7f8c8d;">Download your expert review to share with the AI team</p>
+            <button class="export-btn" onclick="exportFeedback()">📥 Download Feedback JSON</button>
+        </div>
+    </div>
+
+    <script>
+        // EMBEDDED TEST DATA
+        const testData = {
+            "total_stories": 5,
+            "stories": [
+                {
+                    "ref": "Ketubot 62b-63a",
+                    "book": "Ketubot",
+                    "text": "Rabbi Akiva was a shepherd for Ben Kalba Savua. Ben Kalba Savua's daughter saw that Rabbi Akiva was modest and of superior character. She said to him: If I betroth myself to you, will you go to the study hall? He said to her: Yes. She betrothed herself to him in private and sent him away. Her father heard and drove her from his house and took a vow prohibiting her from deriving any benefit from his property. Rabbi Akiva went away and spent twelve years in the study hall. When he returned, he brought twelve thousand students with him. He heard an old man say to her: How long will you remain a living widow? She said to him: If he would listen to me, he would spend another twelve years studying. Rabbi Akiva said: I have permission from her. He turned around and went back to the study hall for another twelve years. When he returned, he brought twenty-four thousand students with him. His wife heard and went out to greet him. Her neighbors said to her: Borrow some clothes and dress properly. She said to them: A righteous man regards the life of his beast. When she came before him, she fell on her face and kissed his feet. His students sought to push her away. He said to them: Leave her, for my Torah and yours is hers.",
+                    "hebrew_text": "רבי עקיבא היה רועה צאן של בן כלבא שבוע. ראתה בתו שהוא צנוע ומעולה. אמרה לו: אם אתקדש לך תלך לבית המדרש? אמר לה: הן. נתקדשה לו בצנעא ושלחתו. שמע אביה, גירשה מביתו ונדר הנאה מנכסיו. הלך וישב בבית המדרש שתים עשרה שנה. כשבא, בא עמו שנים עשר אלף תלמידים. שמע זקן אחד שאמר לה: עד מתי תהיי אלמנה של חיים? אמרה לו: אם שומע לי, יושב עוד שתים עשרה שנה. אמר רבי עקיבא: ברשות ממנה עשיתי. חזר וישב בבית המדרש שתים עשרה שנה אחרות. כשבא, בא עמו עשרים וארבעה אלף תלמידים. שמעה אשתו ויצאה לקראתו. אמרו לה שכנותיה: שאלי בגדים והתלבשי. אמרה להן: צדיק יודע נפש בהמתו. כשבאה לפניו נפלה על פניה ונשקה רגליו. בקשו תלמידיו להדפה. אמר להם: הניחו לה, שלי ושלכם שלה הוא.",
+                    "analysis": {
+                        "is_story": true,
+                        "confidence": 95,
+                        "narrative_elements": {
+                            "has_beginning": true,
+                            "has_middle": true,
+                            "has_end": true,
+                            "has_characters": true,
+                            "has_action": true,
+                            "has_dialogue": true,
+                            "has_temporal_progression": true
+                        },
+                        "story_type": "full_narrative",
+                        "one_sentence_summary": "Rabbi Akiva's wife supports him through 24 years of Torah study despite being driven from her father's house, and he credits her when he returns with thousands of students",
+                        "reasoning": "Complete narrative arc spanning 24 years: Beginning (shepherd Akiva betrothed to wealthy daughter, father disowns her), Middle (12 years study, returns with students, overhears wife support another 12 years), End (returns with 24,000 students, wife greets him, he honors her sacrifice). Rich dialogue, character development, temporal progression, resolution honoring the wife's role."
+                    },
+                    "spans_multiple_pages": true
+                },
+                {
+                    "ref": "Ketubot 67b",
+                    "book": "Ketubot",
+                    "text": "There was a certain poor man who came before Rabbi Nehemiah. He said to him: What do you typically eat? He said to him: Fat meat and aged wine. Rabbi Nehemiah said to him: Would you be willing to eat lentils with me? He ate lentils with him and died. Rabbi Nehemiah said: Woe to this man that Nehemiah killed him. Similarly, it happened that Nakdimon ben Gurion's daughter was once seen by Rabbi Yohanan ben Zakkai gathering barley from beneath the hooves of the animals in Acre. He said to her: My daughter, what are you doing? She said to him: Rabbi, provide sustenance for me.",
+                    "hebrew_text": "עני אחד בא לפני רבי נחמיה. אמר לו: במה אתה סועד? אמר לו: בשר שמן ויין ישן. אמר לו: מי לך להסתפק בעדשים עמי? אכל עמו עדשים ומת. אמר רבי נחמיה: אוי לזה שהרגו נחמיה! וכן מעשה בבתו של נקדימון בן גוריון, שראה אותה רבי יוחנן בן זכאי מלקטת שעורין מבין רגלי בהמות של עכו. אמר לה: בתי, מה את עושה? אמרה לו: רבי, פרנסני.",
+                    "analysis": {
+                        "is_story": true,
+                        "confidence": 92,
+                        "narrative_elements": {
+                            "has_beginning": true,
+                            "has_middle": true,
+                            "has_end": true,
+                            "has_characters": true,
+                            "has_action": true,
+                            "has_dialogue": true,
+                            "has_temporal_progression": true
+                        },
+                        "story_type": "full_narrative",
+                        "one_sentence_summary": "Two stories about wealth and poverty: a poor man dies after eating lentils, and Nakdimon's daughter is reduced to gleaning barley",
+                        "reasoning": "Two interconnected narratives about charity and downfall."
+                    },
+                    "spans_multiple_pages": false
+                },
+                {
+                    "ref": "Ketubot 17a",
+                    "book": "Ketubot",
+                    "text": "How does one dance before a bride? Beit Shammai say: The bride as she is. Beit Hillel say: A beautiful and graceful bride. Beit Shammai said to Beit Hillel: If she was lame or blind, does one say about her: A beautiful and graceful bride? But the Torah said: Distance yourself from falsehood.",
+                    "hebrew_text": "כיצד מרקדין לפני הכלה? בית שמאי אומרים: כלה כמות שהיא. ובית הלל אומרים: כלה נאה וחסודה.",
+                    "analysis": {
+                        "is_story": true,
+                        "confidence": 76,
+                        "narrative_elements": {
+                            "has_beginning": true,
+                            "has_middle": true,
+                            "has_end": true,
+                            "has_characters": false,
+                            "has_action": false,
+                            "has_dialogue": true,
+                            "has_temporal_progression": false
+                        },
+                        "story_type": "dialogue_vignette",
+                        "one_sentence_summary": "Beit Shammai and Beit Hillel debate whether to praise all brides as beautiful",
+                        "reasoning": "Dialogue vignette with argumentative progression."
+                    },
+                    "spans_multiple_pages": false
+                },
+                {
+                    "ref": "Ketubot 103a",
+                    "book": "Ketubot",
+                    "text": "When Rabbi Yehuda HaNasi was dying, he said: I need my sons. His sons came in to him. He said to them: Be careful about the honor of your mother. My son Gamliel shall be the patriarch.",
+                    "hebrew_text": "כשחלה רבי יהודה הנשיא אמר: צריך אני לבני. נכנסו בניו אצלו. אמר להם: היזהרו בכבוד אמכם. גמליאל בני ישא נשיאות.",
+                    "analysis": {
+                        "is_story": true,
+                        "confidence": 91,
+                        "narrative_elements": {
+                            "has_beginning": true,
+                            "has_middle": true,
+                            "has_end": true,
+                            "has_characters": true,
+                            "has_action": true,
+                            "has_dialogue": true,
+                            "has_temporal_progression": true
+                        },
+                        "story_type": "full_narrative",
+                        "one_sentence_summary": "Rabbi Yehuda HaNasi's deathbed instructions",
+                        "reasoning": "Deathbed narrative with succession."
+                    },
+                    "spans_multiple_pages": false
+                },
+                {
+                    "ref": "Ketubot 8b",
+                    "book": "Ketubot",
+                    "text": "The school of Shammai says: The groom is excused from reciting the Shema on the first night. The school of Hillel says: He is not excused.",
+                    "hebrew_text": "בית שמאי אומרים: חתן פטור מקריאת שמע בלילה הראשון.",
+                    "analysis": {
+                        "is_story": true,
+                        "confidence": 72,
+                        "narrative_elements": {
+                            "has_beginning": true,
+                            "has_middle": true,
+                            "has_end": true,
+                            "has_characters": true,
+                            "has_action": true,
+                            "has_dialogue": true,
+                            "has_temporal_progression": false
+                        },
+                        "story_type": "brief_anecdote",
+                        "one_sentence_summary": "Debate about groom's obligation to recite Shema",
+                        "reasoning": "Brief debate with embedded example."
+                    },
+                    "spans_multiple_pages": false
+                }
+            ]
+        };
+
+        let stories = testData.stories;
+        let feedback = {};
+
+        function initializeApp() {
+            updateStats();
+            renderStories();
+            setupEventListeners();
+        }
+
+        function updateStats() {
+            const multiPage = stories.filter(s => s.spans_multiple_pages).length;
+            const avgConfidence = stories.reduce((sum, s) => sum + s.analysis.confidence, 0) / stories.length;
+            const highConf = stories.filter(s => s.analysis.confidence >= 90).length;
+
+            document.getElementById('stats').innerHTML = `
+                <div class="stat-box">
+                    <div class="number">${stories.length}</div>
+                    <div class="label">Total Stories</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">${avgConfidence.toFixed(0)}%</div>
+                    <div class="label">Avg Confidence</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">${highConf}</div>
+                    <div class="label">High Confidence (90%+)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">${multiPage}</div>
+                    <div class="label">Multi-Page</div>
+                </div>
+            `;
+        }
+
+        function renderStories() {
+            const searchTerm = document.getElementById('searchRef').value.toLowerCase();
+            const typeFilter = document.getElementById('filterType').value;
+            const confFilter = parseInt(document.getElementById('filterConfidence').value);
+            const multiPageFilter = document.getElementById('filterMultiPage').value;
+
+            const filtered = stories.filter(story => {
+                if (searchTerm && !story.ref.toLowerCase().includes(searchTerm)) return false;
+                if (typeFilter !== 'all' && story.analysis.story_type !== typeFilter) return false;
+                if (story.analysis.confidence < confFilter) return false;
+                if (multiPageFilter === 'multipage' && !story.spans_multiple_pages) return false;
+                if (multiPageFilter === 'singlepage' && story.spans_multiple_pages) return false;
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                document.getElementById('storiesContainer').innerHTML = '<div class="no-results">No stories match your filters</div>';
+                return;
+            }
+
+            document.getElementById('storiesContainer').innerHTML = filtered.map((story, index) => {
+                const confidenceClass = story.analysis.confidence >= 90 ? 'high' :
+                                       story.analysis.confidence >= 75 ? 'medium' : 'low';
+
+                const elements = Object.entries(story.analysis.narrative_elements)
+                    .filter(([key, value]) => value)
+                    .map(([key]) => key.replace('has_', '').replace('_', ' '));
+
+                const storyFeedback = feedback[story.ref] || { type: null, note: '' };
+
+                return `
+                    <div class="story-card">
+                        <div class="story-header">
+                            <div class="story-ref">${story.ref}</div>
+                            <div class="story-meta">
+                                <span class="badge confidence-${confidenceClass}">${story.analysis.confidence}% Confidence</span>
+                                <span class="badge type-${story.analysis.story_type}">${story.analysis.story_type.replace('_', ' ')}</span>
+                                ${story.spans_multiple_pages ? '<span class="badge multi-page">Multi-Page</span>' : ''}
+                            </div>
+                        </div>
+
+                        <div class="story-content">
+                            ${story.analysis.one_sentence_summary ? `
+                                <div class="summary">
+                                    <strong>Summary:</strong> ${story.analysis.one_sentence_summary}
+                                </div>
+                            ` : ''}
+
+                            <div class="text-section">
+                                <h3>
+                                    📖 English Translation
+                                    <button class="toggle-text" onclick="toggleText('eng-${index}')">Show/Hide</button>
+                                </h3>
+                                <div class="text-content" id="eng-${index}">
+                                    ${story.text}
+                                </div>
+                            </div>
+
+                            ${story.hebrew_text ? `
+                                <div class="text-section">
+                                    <h3>
+                                        🕎 Hebrew/Aramaic Original
+                                        <button class="toggle-text" onclick="toggleText('heb-${index}')">Show/Hide</button>
+                                    </h3>
+                                    <div class="text-content hebrew hidden" id="heb-${index}">
+                                        ${story.hebrew_text}
+                                    </div>
+                                </div>
+                            ` : ''}
+
+                            <div class="reasoning">
+                                <strong>AI Reasoning:</strong> ${story.analysis.reasoning}
+                            </div>
+
+                            <div class="narrative-elements">
+                                ${elements.map(el => `<span class="element">✓ ${el}</span>`).join('')}
+                            </div>
+                        </div>
+
+                        <div class="feedback-section">
+                            <div>
+                                <strong style="color: #2c3e50;">Is this a correct story identification?</strong>
+                            </div>
+                            <div class="feedback-buttons">
+                                <button class="feedback-btn correct ${storyFeedback.type === 'correct' ? 'active' : ''}"
+                                        onclick="markFeedback('${story.ref}', 'correct')">
+                                    ✓ Correct
+                                </button>
+                                <button class="feedback-btn false-positive ${storyFeedback.type === 'false_positive' ? 'active' : ''}"
+                                        onclick="markFeedback('${story.ref}', 'false_positive')">
+                                    ✗ False Positive
+                                </button>
+                            </div>
+                            <div class="feedback-note">
+                                <input type="text"
+                                       placeholder="Optional notes..."
+                                       value="${storyFeedback.note}"
+                                       onchange="updateNote('${story.ref}', this.value)">
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function setupEventListeners() {
+            document.getElementById('searchRef').addEventListener('input', renderStories);
+            document.getElementById('filterType').addEventListener('change', renderStories);
+            document.getElementById('filterMultiPage').addEventListener('change', renderStories);
+
+            document.getElementById('filterConfidence').addEventListener('input', (e) => {
+                document.getElementById('confValue').textContent = e.target.value + '%';
+                renderStories();
+            });
+        }
+
+        function toggleText(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function markFeedback(ref, type) {
+            if (!feedback[ref]) {
+                feedback[ref] = { type: null, note: '' };
+            }
+
+            if (feedback[ref].type === type) {
+                feedback[ref].type = null;
+            } else {
+                feedback[ref].type = type;
+            }
+
+            renderStories();
+        }
+
+        function updateNote(ref, note) {
+            if (!feedback[ref]) {
+                feedback[ref] = { type: null, note: '' };
+            }
+            feedback[ref].note = note;
+        }
+
+        function exportFeedback() {
+            const exportData = {
+                reviewed_at: new Date().toISOString(),
+                tractate: 'Ketubot',
+                demo_mode: true,
+                total_stories: stories.length,
+                reviewed_count: Object.keys(feedback).length,
+                feedback: Object.entries(feedback).map(([ref, data]) => {
+                    const story = stories.find(s => s.ref === ref);
+                    return {
+                        ref: ref,
+                        feedback_type: data.type,
+                        notes: data.note,
+                        story_confidence: story?.analysis.confidence,
+                        story_type: story?.analysis.story_type,
+                        spans_multiple_pages: story?.spans_multiple_pages
+                    };
+                })
+            };
+
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `ketubot_review_demo_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert(`✓ Exported feedback for ${Object.keys(feedback).length} stories!`);
+        }
+
+        initializeApp();
+    </script>
+</body>
+</html>
