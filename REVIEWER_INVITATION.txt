@@ -1,0 +1,138 @@
+Subject: Expert Review Requested - AI-Identified Talmud Stories
+
+Dear [Reviewer Name],
+
+I'm reaching out to request your expert help in reviewing AI-identified stories from Tractate Ketubot. Your expertise in Talmudic literature will be invaluable in improving our story detection system.
+
+================================================================================
+REVIEW LINK
+================================================================================
+
+https://siguy.github.io/talmud-stories/review_stories.html
+
+Click the link above to access the review interface in your web browser.
+
+================================================================================
+WHAT YOU'LL BE DOING
+================================================================================
+
+You'll review stories that our AI identified in Tractate Ketubot and provide feedback on whether they are:
+- ✓ Correctly identified as stories
+- ✗ False positives (not actually stories)
+
+For each story, you can:
+- Mark it as correct or false positive
+- Add notes explaining your reasoning
+- Adjust the story boundaries if needed (expand or shrink)
+
+================================================================================
+TIME COMMITMENT
+================================================================================
+
+The AI found 243 potential stories. You can review as many or as few as you have time for:
+
+- Quick pass (20-30 stories): ~15-20 minutes
+- Substantial review (100 stories): ~1-2 hours
+- Complete review (all 243): ~3-4 hours
+
+You can work in multiple sessions - your progress auto-saves automatically!
+
+================================================================================
+GETTING STARTED
+================================================================================
+
+1. Click the link: https://siguy.github.io/talmud-stories/review_stories.html
+
+2. Enter your name in the "Reviewer Name" field at the top
+
+3. Start reviewing stories:
+   - Each story shows side-by-side English translation and Hebrew/Aramaic original
+   - Click the green "✓ Correct" button if it's a real story
+   - Click the red "✗ False Positive" button if it's not a story
+   - Add optional notes to explain your reasoning
+
+4. Your work auto-saves as you go (you can close the browser and come back later)
+
+5. When finished, click "📥 Download Feedback JSON" at the bottom
+
+6. Email the downloaded file back to me
+
+================================================================================
+WHAT MAKES A STORY?
+================================================================================
+
+Stories have:
+✓ Characters - Named individuals doing things (not just legal positions)
+✓ Action - Events happening in sequence
+✓ Temporal progression - Things unfold over time
+✓ Resolution - Some outcome or conclusion
+
+NOT stories (common false positives):
+✗ Legal debates - "Rabbi X says this, Rabbi Y says that" about law
+✗ Hypothetical cases - "If a man does X, what is the law?"
+✗ Halakhic analysis - Technical legal discussions
+✗ Brief attributions - "Rabbi X taught..." without narrative
+
+================================================================================
+AUTO-SAVE FEATURE
+================================================================================
+
+Your feedback automatically saves in your browser as you work:
+- No "Save" button needed - it saves every change
+- You can close the browser and come back later
+- Your progress will be restored when you return
+- Export your feedback when completely done
+
+Look for the "💾 Auto-saved" indicator at the bottom of the page.
+
+================================================================================
+FILTERS (HELPFUL TIPS)
+================================================================================
+
+Use the filter controls to focus your review:
+
+- Search by reference (e.g., "62b") to jump to specific pages
+- Drag the "Minimum Confidence" slider to 90% to see the AI's most confident calls first
+- Filter by story type to review similar stories together
+- Filter to multi-page stories only if you want to focus on those
+
+Start with high-confidence stories (90%+) - these are usually easier decisions.
+
+================================================================================
+QUESTIONS?
+================================================================================
+
+Full documentation is available at:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/REVIEWER_GUIDE.md
+
+If you encounter any technical issues or have questions, please reach out to me directly.
+
+================================================================================
+WHY THIS MATTERS
+================================================================================
+
+Your expert review will directly improve the AI's ability to identify narrative structures in rabbinic literature. The feedback you provide will be used to:
+
+1. Measure the AI's current accuracy
+2. Identify patterns in errors (what types of passages confuse the AI?)
+3. Refine the AI's instructions to avoid those errors
+4. Train better story detection for other Talmudic tractates
+
+Every piece of feedback helps make the system better!
+
+================================================================================
+THANK YOU
+================================================================================
+
+Thank you for taking the time to share your expertise. Your knowledge of Talmudic literature is essential to making this project successful.
+
+Looking forward to seeing your feedback!
+
+Best regards,
+[Your Name]
+
+---
+
+QUICK REFERENCE:
+Review Link: https://siguy.github.io/talmud-stories/review_stories.html
+Documentation: https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/REVIEWER_GUIDE.md

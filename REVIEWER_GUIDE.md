@@ -6,14 +6,15 @@ This guide will help you review AI-identified stories from the Talmud and provid
 
 ### Step 1: Open the Review Interface
 
-**If you received a link:**
-Simply click the link and the interface will open in your browser.
+Open this link in your web browser:
 
-**If you have the files locally:**
-1. Navigate to the `talmud-stories` folder
-2. Open Terminal/Command Prompt in that folder
-3. Run: `python3 -m http.server 8000`
-4. Open your browser and go to: `http://localhost:8000/review_stories.html`
+**https://siguy.github.io/talmud-stories/review_stories.html**
+
+The review interface will load automatically. You should see:
+- A "Reviewer Name" field at the top
+- Statistics about the stories
+- Filter controls
+- A list of stories to review
 
 ### Step 2: Enter Your Name
 
@@ -317,11 +318,11 @@ Your expert knowledge directly improves the AI!
 
 ### Problem: Page won't load the stories
 
-**Solution:** Make sure you're running the local server:
-```bash
-python3 -m http.server 8000
-```
-Then open: `http://localhost:8000/review_stories.html`
+**Solution:**
+- Make sure you're using the correct link: https://siguy.github.io/talmud-stories/review_stories.html
+- Check your internet connection
+- Try refreshing the page (press F5 or Cmd+R)
+- Try a different browser (Chrome, Firefox, or Safari)
 
 ### Problem: My feedback disappeared
 
