@@ -9,6 +9,11 @@ Quick guide to test the story finder on Tractate Ketubot.
 pip install -r requirements.txt
 ```
 
+**On macOS**, use `pip3`:
+```bash
+pip3 install -r requirements.txt
+```
+
 2. **Set your Anthropic API key:**
 ```bash
 export ANTHROPIC_API_KEY='sk-ant-...'  # Your key from console.anthropic.com
@@ -18,6 +23,11 @@ export ANTHROPIC_API_KEY='sk-ant-...'  # Your key from console.anthropic.com
 
 ```bash
 python test_ketubot.py
+```
+
+**On macOS**, use `python3` instead:
+```bash
+python3 test_ketubot.py
 ```
 
 ## What to Expect
