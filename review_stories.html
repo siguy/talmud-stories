@@ -472,7 +472,21 @@
         <div class="export-section">
             <h2>Export Your Feedback</h2>
             <p style="margin: 15px 0; color: #7f8c8d;">Download your expert review to share with the AI team</p>
-            <button class="export-btn" onclick="exportFeedback()">📥 Download Feedback JSON</button>
+
+            <div style="margin: 20px 0; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #27ae60;">
+                <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+                    <span style="font-size: 20px;">💾</span>
+                    <span id="autoSaveStatus" style="color: #27ae60; font-weight: 600;">Auto-saved</span>
+                </div>
+                <div id="lastSavedTime" style="font-size: 14px; color: #7f8c8d; margin-top: 5px;"></div>
+            </div>
+
+            <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                <button class="export-btn" onclick="exportFeedback()">📥 Download Feedback JSON</button>
+                <button class="export-btn" onclick="clearFeedback()" style="background: #e74c3c; border-color: #e74c3c;">
+                    🗑️ Clear All Feedback
+                </button>
+            </div>
         </div>
     </div>
 
@@ -505,9 +519,95 @@
         }
 
         function initializeApp() {
+            loadSavedFeedback();
             updateStats();
             renderStories();
             setupEventListeners();
+            updateAutoSaveStatus();
+        }
+
+        // Auto-save functions
+        function saveFeedback() {
+            try {
+                localStorage.setItem('talmud_feedback', JSON.stringify(feedback));
+                localStorage.setItem('talmud_feedback_timestamp', new Date().toISOString());
+                updateAutoSaveStatus();
+            } catch (e) {
+                console.error('Failed to save feedback:', e);
+            }
+        }
+
+        function loadSavedFeedback() {
+            try {
+                const saved = localStorage.getItem('talmud_feedback');
+                if (saved) {
+                    feedback = JSON.parse(saved);
+                    console.log(`Loaded ${Object.keys(feedback).length} saved feedback items`);
+                }
+            } catch (e) {
+                console.error('Failed to load saved feedback:', e);
+                feedback = {};
+            }
+        }
+
+        function updateAutoSaveStatus() {
+            const timestamp = localStorage.getItem('talmud_feedback_timestamp');
+            const feedbackCount = Object.keys(feedback).length;
+
+            const statusEl = document.getElementById('autoSaveStatus');
+            const timeEl = document.getElementById('lastSavedTime');
+
+            if (feedbackCount === 0) {
+                statusEl.textContent = 'No feedback yet';
+                statusEl.style.color = '#7f8c8d';
+                timeEl.textContent = '';
+            } else {
+                statusEl.textContent = `Auto-saved (${feedbackCount} ${feedbackCount === 1 ? 'story' : 'stories'})`;
+                statusEl.style.color = '#27ae60';
+
+                if (timestamp) {
+                    const date = new Date(timestamp);
+                    const now = new Date();
+                    const diffMs = now - date;
+                    const diffMins = Math.floor(diffMs / 60000);
+
+                    let timeStr;
+                    if (diffMins < 1) {
+                        timeStr = 'Just now';
+                    } else if (diffMins < 60) {
+                        timeStr = `${diffMins} minute${diffMins === 1 ? '' : 's'} ago`;
+                    } else {
+                        const hours = Math.floor(diffMins / 60);
+                        timeStr = `${hours} hour${hours === 1 ? '' : 's'} ago`;
+                    }
+
+                    timeEl.textContent = `Last saved: ${timeStr}`;
+                }
+            }
+        }
+
+        function clearFeedback() {
+            const count = Object.keys(feedback).length;
+
+            if (count === 0) {
+                alert('No feedback to clear');
+                return;
+            }
+
+            const confirmed = confirm(
+                `⚠️ Are you sure you want to clear all ${count} feedback items?\n\n` +
+                `This will delete your saved progress and cannot be undone.\n\n` +
+                `Tip: Export your feedback first if you want to keep a backup.`
+            );
+
+            if (confirmed) {
+                feedback = {};
+                localStorage.removeItem('talmud_feedback');
+                localStorage.removeItem('talmud_feedback_timestamp');
+                renderStories();
+                updateAutoSaveStatus();
+                alert('✓ All feedback cleared');
+            }
         }
 
         function updateStats() {
@@ -681,6 +781,7 @@
                 feedback[ref].type = type;
             }
 
+            saveFeedback();
             renderStories();
         }
 
@@ -689,6 +790,7 @@
                 feedback[ref] = { type: null, note: '', length_adjustment: null };
             }
             feedback[ref].note = note;
+            saveFeedback();
         }
 
         function adjustLength(ref, action) {
@@ -697,11 +799,12 @@
             }
 
             feedback[ref].length_adjustment = action;
+            saveFeedback();
 
             alert(
                 action === 'expand'
-                    ? `✓ Marked "${ref}" for expansion.\n\nNote: This is recorded in your feedback. The actual text expansion would require re-fetching from Sefaria API with additional context lines.`
-                    : `✓ Marked "${ref}" for shrinking.\n\nNote: This is recorded in your feedback to indicate the story boundaries should be tighter.`
+                    ? `✓ Marked "${ref}" for expansion.\n\nNote: This is recorded in your feedback and auto-saved. The actual text expansion would require re-fetching from Sefaria API with additional context lines.`
+                    : `✓ Marked "${ref}" for shrinking.\n\nNote: This is recorded in your feedback and auto-saved to indicate the story boundaries should be tighter.`
             );
 
             renderStories();
