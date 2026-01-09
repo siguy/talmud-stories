@@ -494,12 +494,12 @@
         let stories = [];
         let feedback = {};
 
-        // Load ketubot_stories_complete.json
+        // Load ketubot_stories.json
         async function loadStories() {
             try {
-                const response = await fetch('ketubot_stories_complete.json');
+                const response = await fetch('ketubot_stories.json');
                 if (!response.ok) {
-                    throw new Error('ketubot_stories_complete.json not found');
+                    throw new Error('ketubot_stories.json not found');
                 }
                 const data = await response.json();
                 stories = data.stories || [];
@@ -507,12 +507,12 @@
             } catch (error) {
                 document.getElementById('storiesContainer').innerHTML = `
                     <div class="no-results">
-                        <h2>⚠️ ketubot_stories_complete.json not found</h2>
-                        <p>Please run the merge script first:</p>
+                        <h2>⚠️ ketubot_stories.json not found</h2>
+                        <p>Please run the analysis first:</p>
                         <code style="display: block; margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 8px;">
-                            python3 merge_stories.py
+                            python3 test_ketubot.py
                         </code>
-                        <p>This will generate ketubot_stories_complete.json with both a and b pages.</p>
+                        <p>This will generate ketubot_stories.json with all identified stories.</p>
                     </div>
                 `;
             }
