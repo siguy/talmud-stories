@@ -92,24 +92,116 @@ If the texts differ or if one is clearer, rely on the more complete version."""
 
         prompt = f"""Analyze this Talmudic passage and determine if it contains a "Literary Story."
 
-Definition: A "Literary Story" is any narrative arc with a beginning, middle, and end. This includes:
-- Full narratives with multiple scenes
-- Brief two-line dialogues with narrative progression
-- Vignettes showing character actions and outcomes
-- Anecdotes with temporal progression
+CRITICAL: This passage may contain LEGAL DISCUSSIONS, HYPOTHETICAL CASES, or STORIES. You must distinguish between them.
 
-Look for:
-1. Beginning: Setup, characters introduced, situation established
-2. Middle: Action, dialogue, conflict, or change
-3. End: Resolution, conclusion, or outcome
+═══════════════════════════════════════════════════════════════════════════════
+STORIES ARE DESCRIPTIVE (What DID Happen - One-Time Events)
+═══════════════════════════════════════════════════════════════════════════════
 
-Even a brief exchange like "Rabbi X asked Rabbi Y a question. Rabbi Y replied with a parable" can be a story if it has this arc.
+A STORY must have ALL of these:
 
-DO NOT count:
-- Pure legal discussions without narrative
-- Abstract philosophical debates
-- Lists of rulings without context
-- Bare statements of law
+1. DESCRIPTIVE, not prescriptive
+   ✓ Tells what DID happen in a specific instance
+   ✗ NOT what SHOULD happen, COULD happen, or what the law is
+
+2. ONE-TIME SPECIFIC EVENT with named individuals
+   ✓ "Ravina arranged his son's marriage..." (specific person, specific event)
+   ✓ "A certain man came before Rav Nahman..." (specific incident)
+   ✗ "A virgin is married on Wednesday" (general rule)
+   ✗ "Women are always married on Wednesday" (repeated action)
+
+3. AT LEAST TWO EVENTS with CAUSAL RELATIONSHIP
+   ✓ Event A happened → which caused → Event B → resulting in → Outcome
+   ✗ Single fact with no causality: "Rav Zevid had intercourse on Shabbat" (one event, no story)
+
+4. CHANGE or IMPLIED CHANGE (Before → After)
+   ✓ Situation changes due to events
+   ✗ Report without change: "Rav Asi came and recited blessings" (no causal progression)
+
+5. POST-BIBLICAL RABBINIC CHARACTERS ONLY
+   ✓ Stories about rabbis and their contemporaries
+   ✗ NOT biblical stories (David, Moses, etc.)
+
+═══════════════════════════════════════════════════════════════════════════════
+NOT STORIES (Even if They Sound Narrative)
+═══════════════════════════════════════════════════════════════════════════════
+
+❌ LEGAL HYPOTHETICALS - Prescriptive scenarios:
+   "If a man gives a woman a ring, and she throws it away, then she is not betrothed"
+   → This is a HYPOTHETICAL LEGAL CASE, not a story about something that happened
+
+❌ LEGAL RULINGS - Even with narrative form:
+   "A virgin is married on Wednesday and a widow on Thursday"
+   → This is a RULE about what should happen, not what did happen
+
+❌ HYPOTHETICAL LEGAL DEBATES:
+   "What if he does X? Then the law is Y"
+   "Rabbi X says [legal opinion]... Rabbi Y says [legal opinion]..." (unless embedded in actual story)
+   → These are legal positions, not narratives about events
+
+❌ REPEATED/HABITUAL ACTIONS:
+   "When R. Abbah would come from the academy..." (whenever = not one-time event)
+   "Rabbi X would always say..." (habitual, not specific)
+
+❌ SINGLE EVENTS without causality:
+   "Rav Zevid engaged in intercourse on Shabbat" (one fact, not a story)
+
+❌ REPORTS without causality or change:
+   "Rav Asi happened to come to the house of Rav Ashi and recited six blessings"
+   → Events but no causal relationship or change
+
+═══════════════════════════════════════════════════════════════════════════════
+EXAMPLES FROM EXPERT REVIEW
+═══════════════════════════════════════════════════════════════════════════════
+
+FALSE POSITIVE Example 1:
+Text: "A virgin is married on Wednesday and a widow on Thursday. The reason is..."
+Why NOT a story: This is PRESCRIPTIVE (what should happen), not descriptive. It's a legal rule.
+
+FALSE POSITIVE Example 2:
+Text: "If a man gives a woman a ring and she throws it away, then she is not betrothed..."
+Why NOT a story: HYPOTHETICAL legal case. Not a one-time event that actually happened.
+
+TRUE STORY Example 1:
+Text: "Ravina arranged for his son to marry a woman from the house of Rav Ḥaviva and recited the blessing from the time of betrothal. He said: I am certain with regard to them, that they will not retract their commitment. Nevertheless, the matter was not to be, and ultimately they retracted their commitment, and the wedding was canceled."
+Why IS a story:
+✓ One-time specific event (Ravina's son)
+✓ Two+ events with causality: arrangement → confidence → unexpected retraction
+✓ Change: from betrothal to cancellation
+✓ Descriptive (what did happen)
+
+TRUE STORY Example 2:
+Text: "Initially, funeral expenditures for the deceased were more taxing than his death, until people would abandon the deceased and flee. This continued until Rabbi Gamliel came and conducted himself in self-deprecatory manner, instructing that they take him for burial in plain linen garments. And all the people conducted themselves following his example."
+Why IS a story:
+✓ Change over time (before → after)
+✓ Causality: Rabbi Gamliel's action → people changed behavior
+✓ Multiple events with progression
+
+═══════════════════════════════════════════════════════════════════════════════
+IMPORTANT: Story Extraction
+═══════════════════════════════════════════════════════════════════════════════
+
+If this passage CONTAINS a story embedded in legal discussion:
+- Identify ONLY the story portion
+- Note in your response where the story begins and ends
+- The story text should exclude surrounding legal analysis
+
+═══════════════════════════════════════════════════════════════════════════════
+VALIDATION CHECKLIST
+═══════════════════════════════════════════════════════════════════════════════
+
+Before marking is_story=true, verify:
+□ Is this DESCRIPTIVE (what happened) not PRESCRIPTIVE (what should happen)?
+□ Is this a ONE-TIME specific event with named individuals?
+□ Are there AT LEAST 2 EVENTS with CAUSAL relationship?
+□ Is there CHANGE or outcome (not just a report)?
+□ Is this about RABBIS/post-biblical figures (not biblical characters)?
+□ Is this an ACTUAL event (not hypothetical "if X then Y")?
+□ If embedded in legal text, have I identified just the story portion?
+
+If ANY checkbox is NO → is_story = false
+
+═══════════════════════════════════════════════════════════════════════════════
 
 Passage Reference: {ref}
 
@@ -130,13 +222,17 @@ Respond in JSON format:
   }},
   "story_type": "full_narrative" | "dialogue_vignette" | "brief_anecdote" | "not_a_story",
   "one_sentence_summary": "brief description if is_story is true, else empty string",
-  "reasoning": "brief explanation of your classification",
+  "reasoning": "brief explanation of your classification - mention if this is legal discussion, hypothetical, or actual story",
+  "embedded_in_legal_context": true/false,
+  "story_start_marker": "first few words where story begins (if embedded)",
+  "story_end_marker": "last few words where story ends (if embedded)",
   "continuation": {{
     "seems_incomplete": true/false,
     "missing_beginning": true/false,
     "missing_end": true/false,
     "note": "explanation if story appears to continue beyond this passage or starts mid-narrative"
-  }}
+  }},
+  "validation_notes": "explain which validation criteria were met or failed"
 }}"""
 
         try:
