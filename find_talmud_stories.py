@@ -90,7 +90,13 @@ Some Hebrew phrases that MAY appear in stories (but are NOT required):
 Many stories have NONE of these markers. Focus on: Does this passage have beginning, middle, end?
 If the texts differ or if one is clearer, rely on the more complete version."""
 
-        prompt = f"""Analyze this Talmudic passage and determine if it contains a "Literary Story."
+        prompt = f"""Analyze this Talmudic passage and identify ALL "Literary Stories" it contains.
+
+CRITICAL INSTRUCTIONS:
+1. A SINGLE PAGE can contain MULTIPLE STORIES (2-4 stories are common)
+2. Scan the ENTIRE passage from beginning to end
+3. Identify EACH story SEPARATELY with precise boundaries
+4. A page may also contain NO stories (only legal discussions)
 
 CRITICAL: This passage may contain LEGAL DISCUSSIONS, HYPOTHETICAL CASES, or STORIES. You must distinguish between them.
 
@@ -162,6 +168,10 @@ FALSE POSITIVE Example 2:
 Text: "If a man gives a woman a ring and she throws it away, then she is not betrothed..."
 Why NOT a story: HYPOTHETICAL legal case. Not a one-time event that actually happened.
 
+FALSE POSITIVE Example 3 (Report, not story):
+Text: "Rav Asi happened to come to the house of Rav Ashi and recited six blessings"
+Why NOT a story: Just a report of events with no causality or change. No story arc.
+
 TRUE STORY Example 1:
 Text: "Ravina arranged for his son to marry a woman from the house of Rav Ḥaviva and recited the blessing from the time of betrothal. He said: I am certain with regard to them, that they will not retract their commitment. Nevertheless, the matter was not to be, and ultimately they retracted their commitment, and the wedding was canceled."
 Why IS a story:
@@ -177,14 +187,32 @@ Why IS a story:
 ✓ Causality: Rabbi Gamliel's action → people changed behavior
 ✓ Multiple events with progression
 
+MULTIPLE STORIES Example (Ketubot 10b):
+This page contains THREE separate stories:
+Story 1: A certain woman comes before Rav Nahman with testimony → judgment given
+Story 2: A man betrothed a woman → died → brother's betrothal case → ruling
+Story 3: Another marriage case → witnesses brought → judgment rendered
+
+Each story has its own beginning, middle, end, and must be identified separately!
+
 ═══════════════════════════════════════════════════════════════════════════════
-IMPORTANT: Story Extraction
+STORY BOUNDARIES - CRITICAL REQUIREMENT
 ═══════════════════════════════════════════════════════════════════════════════
 
-If this passage CONTAINS a story embedded in legal discussion:
-- Identify ONLY the story portion
-- Note in your response where the story begins and ends
-- The story text should exclude surrounding legal analysis
+For EACH story you identify, you MUST provide EXACT text boundaries:
+
+1. story_start_english: The first 5-10 words where the story begins in English
+2. story_end_english: The last 5-10 words where the story ends in English
+3. story_start_hebrew: The first 5-10 words where the story begins in Hebrew/Aramaic
+4. story_end_hebrew: The last 5-10 words where the story ends in Hebrew/Aramaic
+
+These boundaries allow us to extract ONLY the story text, excluding legal discussions.
+
+Example boundaries:
+- Start: "A certain man came before"
+- End: "and he went on his way"
+
+The output should contain ONLY the story text between these markers, not the entire page!
 
 ═══════════════════════════════════════════════════════════════════════════════
 VALIDATION CHECKLIST
@@ -197,7 +225,7 @@ Before marking is_story=true, verify:
 □ Is there CHANGE or outcome (not just a report)?
 □ Is this about RABBIS/post-biblical figures (not biblical characters)?
 □ Is this an ACTUAL event (not hypothetical "if X then Y")?
-□ If embedded in legal text, have I identified just the story portion?
+□ Have I provided EXACT start/end boundaries for extraction?
 
 If ANY checkbox is NO → is_story = false
 
@@ -207,33 +235,43 @@ Passage Reference: {ref}
 
 {text_section}
 
-Respond in JSON format:
+Respond in JSON format with an ARRAY of stories found:
 {{
-  "is_story": true/false,
-  "confidence": 0-100,
-  "narrative_elements": {{
-    "has_beginning": true/false,
-    "has_middle": true/false,
-    "has_end": true/false,
-    "has_characters": true/false,
-    "has_action": true/false,
-    "has_dialogue": true/false,
-    "has_temporal_progression": true/false
-  }},
-  "story_type": "full_narrative" | "dialogue_vignette" | "brief_anecdote" | "not_a_story",
-  "one_sentence_summary": "brief description if is_story is true, else empty string",
-  "reasoning": "brief explanation of your classification - mention if this is legal discussion, hypothetical, or actual story",
-  "embedded_in_legal_context": true/false,
-  "story_start_marker": "first few words where story begins (if embedded)",
-  "story_end_marker": "last few words where story ends (if embedded)",
-  "continuation": {{
-    "seems_incomplete": true/false,
-    "missing_beginning": true/false,
-    "missing_end": true/false,
-    "note": "explanation if story appears to continue beyond this passage or starts mid-narrative"
-  }},
-  "validation_notes": "explain which validation criteria were met or failed"
-}}"""
+  "total_stories": <number of stories found, 0 if none>,
+  "stories_found": [
+    {{
+      "story_number": 1,
+      "is_story": true,
+      "confidence": 0-100,
+      "story_start_english": "exact first 5-10 words of story in English",
+      "story_end_english": "exact last 5-10 words of story in English",
+      "story_start_hebrew": "exact first 5-10 words in Hebrew/Aramaic",
+      "story_end_hebrew": "exact last 5-10 words in Hebrew/Aramaic",
+      "narrative_elements": {{
+        "has_beginning": true/false,
+        "has_middle": true/false,
+        "has_end": true/false,
+        "has_characters": true/false,
+        "has_action": true/false,
+        "has_dialogue": true/false,
+        "has_temporal_progression": true/false
+      }},
+      "story_type": "full_narrative" | "dialogue_vignette" | "brief_anecdote",
+      "one_sentence_summary": "brief description of this specific story",
+      "reasoning": "why this is a story - mention causality and change",
+      "embedded_in_legal_context": true/false,
+      "continuation": {{
+        "seems_incomplete": true/false,
+        "missing_beginning": true/false,
+        "missing_end": true/false,
+        "note": "explanation if story continues to next page"
+      }},
+      "validation_notes": "explain which validation criteria were met"
+    }}
+  ]
+}}
+
+IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found": []}}"""
 
         try:
             headers = {
@@ -262,6 +300,30 @@ Respond in JSON format:
             json_end = content.rfind('}') + 1
             if json_start >= 0 and json_end > json_start:
                 analysis = json.loads(content[json_start:json_end])
+
+                # Convert to new array format if needed (backward compatibility)
+                if 'stories_found' not in analysis:
+                    # Old format: single story object
+                    if analysis.get('is_story', False):
+                        # Wrap in array format
+                        analysis = {
+                            'total_stories': 1,
+                            'stories_found': [analysis]
+                        }
+                    else:
+                        # No story found
+                        analysis = {
+                            'total_stories': 0,
+                            'stories_found': []
+                        }
+
+                # Validate stories have required boundary fields
+                for i, story in enumerate(analysis.get('stories_found', [])):
+                    if not story.get('story_start_english'):
+                        print(f"  ⚠️  Story {i+1} missing English start boundary")
+                    if not story.get('story_start_hebrew'):
+                        print(f"  ⚠️  Story {i+1} missing Hebrew start boundary")
+
                 return analysis
             else:
                 print(f"  ⚠️  Could not parse AI response for {ref}")
@@ -272,7 +334,7 @@ Respond in JSON format:
             return self._heuristic_analysis(text, ref)
 
     def _heuristic_analysis(self, text: str, ref: str) -> Dict[str, Any]:
-        """Fallback heuristic analysis when AI is unavailable"""
+        """Fallback heuristic analysis when AI is unavailable - returns array format"""
         text_lower = text.lower()
 
         # Narrative indicators
@@ -288,10 +350,16 @@ Respond in JSON format:
         has_characters = "rabbi" in text_lower or "ben " in text_lower
 
         narrative_count = sum([has_dialogue, has_action, has_temporal, has_characters])
+        is_story = narrative_count >= 2
 
-        return {
-            "is_story": narrative_count >= 2,
+        story_data = {
+            "story_number": 1,
+            "is_story": is_story,
             "confidence": min(narrative_count * 25, 75),  # Max 75 for heuristic
+            "story_start_english": "",  # Can't determine without AI
+            "story_end_english": "",
+            "story_start_hebrew": "",
+            "story_end_hebrew": "",
             "narrative_elements": {
                 "has_beginning": has_temporal or has_characters,
                 "has_middle": has_action or has_dialogue,
@@ -301,10 +369,30 @@ Respond in JSON format:
                 "has_dialogue": has_dialogue,
                 "has_temporal_progression": has_temporal
             },
-            "story_type": "heuristic_detection" if narrative_count >= 2 else "not_a_story",
+            "story_type": "heuristic_detection" if is_story else "not_a_story",
             "one_sentence_summary": "",
-            "reasoning": f"Heuristic analysis: {narrative_count}/4 narrative markers found"
+            "reasoning": f"Heuristic analysis: {narrative_count}/4 narrative markers found",
+            "embedded_in_legal_context": False,
+            "continuation": {
+                "seems_incomplete": False,
+                "missing_beginning": False,
+                "missing_end": False,
+                "note": ""
+            },
+            "validation_notes": "Heuristic fallback - boundaries not available"
         }
+
+        # Return in array format
+        if is_story:
+            return {
+                "total_stories": 1,
+                "stories_found": [story_data]
+            }
+        else:
+            return {
+                "total_stories": 0,
+                "stories_found": []
+            }
 
 
 class SefariaStoryFinder:
@@ -315,6 +403,66 @@ class SefariaStoryFinder:
         self.session = requests.Session()
         self.cache = {}
         self.use_windowing = use_windowing  # Enable multi-page story detection
+
+    def extract_story_text(self, full_text: str, start_marker: str, end_marker: str,
+                          language: str = "english") -> Optional[str]:
+        """
+        Extract story text using start/end boundaries.
+        Handles cases where markers aren't found exactly.
+
+        Args:
+            full_text: The complete page text
+            start_marker: First 5-10 words where story begins
+            end_marker: Last 5-10 words where story ends
+            language: "english" or "hebrew" for better error messages
+
+        Returns:
+            Extracted story text, or None if extraction failed
+        """
+        if not start_marker or not end_marker:
+            print(f"  ⚠️  Missing {language} boundaries - cannot extract")
+            return None
+
+        # Try exact match first
+        start_pos = full_text.find(start_marker)
+        end_pos = full_text.find(end_marker)
+
+        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
+            # Success - extract the story
+            return full_text[start_pos:end_pos + len(end_marker)]
+
+        # Fallback: Try with normalized whitespace
+        import re
+
+        # Normalize whitespace in both text and markers
+        normalized_text = re.sub(r'\s+', ' ', full_text)
+        normalized_start = re.sub(r'\s+', ' ', start_marker.strip())
+        normalized_end = re.sub(r'\s+', ' ', end_marker.strip())
+
+        start_pos = normalized_text.find(normalized_start)
+        end_pos = normalized_text.find(normalized_end)
+
+        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
+            # Map back to original text positions (approximate)
+            # This is a simple approach - could be improved
+            return normalized_text[start_pos:end_pos + len(normalized_end)]
+
+        # If still not found, try partial match (first few words)
+        first_words = ' '.join(normalized_start.split()[:3])  # First 3 words
+        last_words = ' '.join(normalized_end.split()[-3:])     # Last 3 words
+
+        start_pos = normalized_text.find(first_words)
+        end_pos = normalized_text.find(last_words)
+
+        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
+            print(f"  ⚠️  {language} boundaries: using partial match")
+            return normalized_text[start_pos:end_pos + len(last_words)]
+
+        # Give up
+        print(f"  ❌ {language} boundaries not found in text")
+        print(f"     Looking for start: '{start_marker[:50]}...'")
+        print(f"     Looking for end: '{end_marker[:50]}...'")
+        return None
 
     def get_tractate_structure(self, tractate: str) -> List[str]:
         """Get all text references (pages/sections) in a tractate"""
@@ -460,26 +608,64 @@ class SefariaStoryFinder:
             # Analyze with AI - use both languages
             analysis = self.analyzer.analyze_narrative_structure(english_text, ref, hebrew_text)
 
-            if analysis['is_story']:
-                story_key = self._create_story_key(english_text, ref)
+            # Process each story found on this page
+            total_stories = analysis.get('total_stories', 0)
+            stories_found = analysis.get('stories_found', [])
+
+            if total_stories > 0:
+                print(f"  Found {total_stories} {'story' if total_stories == 1 else 'stories'} on {ref}")
+
+            for story_data in stories_found:
+                # Extract just the story text using boundaries
+                story_english = self.extract_story_text(
+                    english_text,
+                    story_data.get('story_start_english', ''),
+                    story_data.get('story_end_english', ''),
+                    language="english"
+                )
+
+                story_hebrew = self.extract_story_text(
+                    hebrew_text,
+                    story_data.get('story_start_hebrew', ''),
+                    story_data.get('story_end_hebrew', ''),
+                    language="hebrew"
+                )
+
+                # If extraction failed, fall back to full text with warning
+                if not story_english and not story_hebrew:
+                    print(f"  ⚠️  Story extraction failed - using full page text as fallback")
+                    story_english = english_text
+                    story_hebrew = hebrew_text
+
+                # Create story entry
+                story_number = story_data.get('story_number', 1)
+                story_key = self._create_story_key(story_english or english_text, f"{ref}_story{story_number}")
+
                 if story_key not in seen_story_keys:
                     seen_story_keys.add(story_key)
                     stories.append({
                         'ref': ref,
+                        'story_number': story_number,
                         'book': tractate,
-                        'text': english_text,
-                        'hebrew_text': hebrew_text if hebrew_text else None,
-                        'analysis': analysis,
+                        'text': story_english if story_english else english_text,
+                        'hebrew_text': story_hebrew if story_hebrew else hebrew_text,
+                        'analysis': story_data,
                         'spans_multiple_pages': False
                     })
-                    confidence = analysis['confidence']
-                    story_type = analysis['story_type']
-                    print(f"  ✓ {ref} - {story_type} (confidence: {confidence}%)")
+                    confidence = story_data.get('confidence', 0)
+                    story_type = story_data.get('story_type', 'unknown')
+                    summary = story_data.get('one_sentence_summary', '')[:60]
+                    print(f"    ✓ Story {story_number}: {story_type} (confidence: {confidence}%) - {summary}...")
 
             # PASS 2: Check for continuation and analyze with next page if needed
             if self.use_windowing and i < len(refs) - 1:
-                continuation = analysis.get('continuation', {})
-                if continuation.get('seems_incomplete') or continuation.get('missing_end'):
+                # Check if any story seems incomplete
+                has_incomplete = any(
+                    story.get('continuation', {}).get('seems_incomplete', False)
+                    for story in stories_found
+                )
+
+                if has_incomplete:
                     # Story might continue to next page
                     next_ref = refs[i + 1]
                     combined_data = self.get_combined_text([ref, next_ref])
@@ -499,21 +685,43 @@ class SefariaStoryFinder:
                             comb_eng, combined_ref, comb_heb
                         )
 
-                        # If combined version has higher confidence and complete story, use it
-                        if combined_analysis['is_story'] and combined_analysis['confidence'] > analysis['confidence'] + 10:
-                            if not combined_analysis.get('continuation', {}).get('seems_incomplete'):
-                                story_key = self._create_story_key(comb_eng, combined_ref)
-                                if story_key not in seen_story_keys:
+                        # Process each story from the combined pages
+                        for combined_story in combined_analysis.get('stories_found', []):
+                            # Extract story text
+                            story_eng = self.extract_story_text(
+                                comb_eng,
+                                combined_story.get('story_start_english', ''),
+                                combined_story.get('story_end_english', ''),
+                                language="english"
+                            )
+                            story_heb = self.extract_story_text(
+                                comb_heb,
+                                combined_story.get('story_start_hebrew', ''),
+                                combined_story.get('story_end_hebrew', ''),
+                                language="hebrew"
+                            )
+
+                            # Use combined text if extraction fails
+                            if not story_eng and not story_heb:
+                                story_eng = comb_eng
+                                story_heb = comb_heb
+
+                            # Add if not already seen and higher confidence
+                            story_key = self._create_story_key(story_eng or comb_eng, combined_ref)
+                            if story_key not in seen_story_keys:
+                                # Only add if significantly better than single-page version
+                                if combined_story.get('confidence', 0) > 75:
                                     seen_story_keys.add(story_key)
                                     stories.append({
                                         'ref': combined_ref,
+                                        'story_number': combined_story.get('story_number', 1),
                                         'book': tractate,
-                                        'text': comb_eng,
-                                        'hebrew_text': comb_heb if comb_heb else None,
-                                        'analysis': combined_analysis,
+                                        'text': story_eng or comb_eng,
+                                        'hebrew_text': story_heb or comb_heb,
+                                        'analysis': combined_story,
                                         'spans_multiple_pages': True
                                     })
-                                    print(f"  ✓✓ {combined_ref} - MULTI-PAGE {combined_analysis['story_type']} (confidence: {combined_analysis['confidence']}%)")
+                                    print(f"  ✓✓ {combined_ref} - MULTI-PAGE (confidence: {combined_story.get('confidence')}%)")
 
             analyzed_count += 1
             if analyzed_count % 10 == 0:
