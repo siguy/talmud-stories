@@ -321,11 +321,21 @@ IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found
             else:
                 raise ValueError(f"Unsupported provider: {self.provider}")
 
-            # Extract JSON from response
-            json_start = content.find('{')
-            json_end = content.rfind('}') + 1
+            # Extract JSON from response - handle Gemini's markdown code blocks
+            # Strip markdown code blocks if present (```json ... ``` or ``` ... ```)
+            cleaned_content = content
+            if '```json' in cleaned_content:
+                cleaned_content = cleaned_content.split('```json')[1].split('```')[0]
+            elif '```' in cleaned_content:
+                parts = cleaned_content.split('```')
+                if len(parts) >= 2:
+                    cleaned_content = parts[1]
+
+            json_start = cleaned_content.find('{')
+            json_end = cleaned_content.rfind('}') + 1
             if json_start >= 0 and json_end > json_start:
-                analysis = json.loads(content[json_start:json_end])
+                json_str = cleaned_content[json_start:json_end]
+                analysis = json.loads(json_str)
 
                 # Convert to new array format if needed (backward compatibility)
                 if 'stories_found' not in analysis:
