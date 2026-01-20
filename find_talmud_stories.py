@@ -9,8 +9,10 @@ import requests
 import json
 import time
 import os
+import re
 from typing import List, Dict, Any, Optional
 from pathlib import Path
+from difflib import SequenceMatcher
 
 # Import Google Generative AI for Gemini support
 try:
@@ -462,10 +464,59 @@ class SefariaStoryFinder:
         self.cache = {}
         self.use_windowing = use_windowing  # Enable multi-page story detection
 
+    def _fuzzy_find(self, text: str, marker: str, threshold: float = 0.6) -> int:
+        """
+        Find the best fuzzy match for a marker in text.
+        Returns the position of the best match, or -1 if no good match found.
+        """
+        # Normalize both
+        text_norm = re.sub(r'\s+', ' ', text.strip())
+        marker_norm = re.sub(r'\s+', ' ', marker.strip())
+
+        # Try finding first few words (more reliable)
+        marker_words = marker_norm.split()
+        if len(marker_words) >= 3:
+            # Try 3-word, 4-word, 5-word chunks
+            for num_words in [5, 4, 3]:
+                if len(marker_words) >= num_words:
+                    search_phrase = ' '.join(marker_words[:num_words])
+
+                    # Try exact match first
+                    pos = text_norm.find(search_phrase)
+                    if pos != -1:
+                        return pos
+
+                    # Try case-insensitive
+                    pos = text_norm.lower().find(search_phrase.lower())
+                    if pos != -1:
+                        return pos
+
+        # Fallback: Use fuzzy matching on windows of text
+        marker_len = len(marker_norm)
+        best_ratio = 0.0
+        best_pos = -1
+
+        # Only check windows around the length of the marker
+        window_size = max(marker_len, 50)
+        step = max(10, marker_len // 4)
+
+        for i in range(0, len(text_norm) - window_size + 1, step):
+            window = text_norm[i:i + window_size]
+            ratio = SequenceMatcher(None, marker_norm, window).ratio()
+
+            if ratio > best_ratio:
+                best_ratio = ratio
+                best_pos = i
+
+        if best_ratio >= threshold:
+            return best_pos
+
+        return -1
+
     def extract_story_text(self, full_text: str, start_marker: str, end_marker: str,
                           language: str = "english") -> Optional[str]:
         """
-        Extract story text using start/end boundaries.
+        Extract story text using start/end boundaries with fuzzy matching.
         Handles cases where markers aren't found exactly.
 
         Args:
@@ -478,48 +529,40 @@ class SefariaStoryFinder:
             Extracted story text, or None if extraction failed
         """
         if not start_marker or not end_marker:
-            print(f"  ⚠️  Missing {language} boundaries - cannot extract")
             return None
 
-        # Try exact match first
-        start_pos = full_text.find(start_marker)
-        end_pos = full_text.find(end_marker)
+        # Normalize text
+        normalized_text = re.sub(r'\s+', ' ', full_text.strip())
 
-        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
-            # Success - extract the story
-            return full_text[start_pos:end_pos + len(end_marker)]
+        # Try fuzzy finding both markers
+        start_pos = self._fuzzy_find(normalized_text, start_marker, threshold=0.5)
+        end_pos = self._fuzzy_find(normalized_text, end_marker, threshold=0.5)
 
-        # Fallback: Try with normalized whitespace
-        import re
+        if start_pos != -1 and end_pos != -1:
+            # Make sure end is after start
+            if end_pos > start_pos:
+                # Extend end_pos to include the marker
+                end_pos += len(re.sub(r'\s+', ' ', end_marker.strip()))
+                return normalized_text[start_pos:end_pos]
+            elif end_pos == start_pos:
+                # Markers might be the same - just extract a reasonable chunk
+                end_pos = min(start_pos + 500, len(normalized_text))
+                return normalized_text[start_pos:end_pos]
 
-        # Normalize whitespace in both text and markers
-        normalized_text = re.sub(r'\s+', ' ', full_text)
-        normalized_start = re.sub(r'\s+', ' ', start_marker.strip())
-        normalized_end = re.sub(r'\s+', ' ', end_marker.strip())
+        # If one marker found, try to extract a reasonable chunk
+        if start_pos != -1:
+            # Found start but not end - extract next 300-500 chars
+            end_pos = min(start_pos + 400, len(normalized_text))
+            print(f"  ⚠️  {language}: found start, estimating end")
+            return normalized_text[start_pos:end_pos]
 
-        start_pos = normalized_text.find(normalized_start)
-        end_pos = normalized_text.find(normalized_end)
+        if end_pos != -1:
+            # Found end but not start - extract previous 300-500 chars
+            start_pos = max(0, end_pos - 400)
+            print(f"  ⚠️  {language}: found end, estimating start")
+            return normalized_text[start_pos:end_pos]
 
-        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
-            # Map back to original text positions (approximate)
-            # This is a simple approach - could be improved
-            return normalized_text[start_pos:end_pos + len(normalized_end)]
-
-        # If still not found, try partial match (first few words)
-        first_words = ' '.join(normalized_start.split()[:3])  # First 3 words
-        last_words = ' '.join(normalized_end.split()[-3:])     # Last 3 words
-
-        start_pos = normalized_text.find(first_words)
-        end_pos = normalized_text.find(last_words)
-
-        if start_pos != -1 and end_pos != -1 and end_pos >= start_pos:
-            print(f"  ⚠️  {language} boundaries: using partial match")
-            return normalized_text[start_pos:end_pos + len(last_words)]
-
-        # Give up
-        print(f"  ❌ {language} boundaries not found in text")
-        print(f"     Looking for start: '{start_marker[:50]}...'")
-        print(f"     Looking for end: '{end_marker[:50]}...'")
+        # Complete failure - couldn't find either marker
         return None
 
     def get_tractate_structure(self, tractate: str) -> List[str]:
