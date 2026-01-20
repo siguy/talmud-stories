@@ -12,6 +12,14 @@ import os
 from typing import List, Dict, Any, Optional
 from pathlib import Path
 
+# Import Google Generative AI for Gemini support
+try:
+    import google.generativeai as genai
+    GOOGLE_AI_AVAILABLE = True
+except ImportError:
+    GOOGLE_AI_AVAILABLE = False
+    print("⚠️  google-generativeai not installed. Run: pip install google-generativeai")
+
 # Sefaria API base URL
 SEFARIA_API = "https://www.sefaria.org/api"
 
@@ -42,19 +50,48 @@ TALMUD_TRACTATES = {
 class NarrativeAnalyzer:
     """Uses AI to detect narrative structure in Talmudic passages"""
 
-    def __init__(self, api_key: Optional[str] = None, model: str = "claude-3-5-haiku-20241022"):
+    def __init__(self, api_key: Optional[str] = None, model: str = "claude-3-5-haiku-20241022",
+                 provider: str = "anthropic"):
         """
-        Initialize with Anthropic API key.
-        Falls back to ANTHROPIC_API_KEY environment variable.
-        """
-        self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        self.model = model
-        self.api_url = "https://api.anthropic.com/v1/messages"
+        Initialize with AI API key.
 
-        if not self.api_key:
-            print("\n⚠️  WARNING: No Anthropic API key found.")
-            print("Set ANTHROPIC_API_KEY environment variable or pass api_key parameter.")
-            print("Falling back to basic heuristic analysis.\n")
+        Args:
+            api_key: API key (or None to use environment variable)
+            model: Model name
+                - Anthropic: "claude-3-5-haiku-20241022", "claude-3-5-sonnet-20241022"
+                - Google: "gemini-2.0-flash-exp", "gemini-1.5-flash", "gemini-1.5-pro"
+            provider: "anthropic" or "google"
+        """
+        self.provider = provider.lower()
+        self.model = model
+
+        if self.provider == "anthropic":
+            self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
+            self.api_url = "https://api.anthropic.com/v1/messages"
+
+            if not self.api_key:
+                print("\n⚠️  WARNING: No Anthropic API key found.")
+                print("Set ANTHROPIC_API_KEY environment variable or pass api_key parameter.")
+                print("Falling back to basic heuristic analysis.\n")
+
+        elif self.provider == "google":
+            self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+
+            if not GOOGLE_AI_AVAILABLE:
+                print("\n❌ ERROR: google-generativeai package not installed.")
+                print("Run: pip install google-generativeai")
+                self.api_key = None
+            elif not self.api_key:
+                print("\n⚠️  WARNING: No Google API key found.")
+                print("Set GOOGLE_API_KEY environment variable or pass api_key parameter.")
+                print("Falling back to basic heuristic analysis.\n")
+            else:
+                # Configure Google AI
+                genai.configure(api_key=self.api_key)
+                self.gemini_model = genai.GenerativeModel(self.model)
+
+        else:
+            raise ValueError(f"Unsupported provider: {provider}. Use 'anthropic' or 'google'.")
 
     def analyze_narrative_structure(self, text: str, ref: str, hebrew_text: str = None) -> Dict[str, Any]:
         """
@@ -274,26 +311,13 @@ Respond in JSON format with an ARRAY of stories found:
 IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found": []}}"""
 
         try:
-            headers = {
-                "x-api-key": self.api_key,
-                "anthropic-version": "2023-06-01",
-                "content-type": "application/json"
-            }
-
-            payload = {
-                "model": self.model,
-                "max_tokens": 1024,
-                "messages": [{
-                    "role": "user",
-                    "content": prompt
-                }]
-            }
-
-            response = requests.post(self.api_url, headers=headers, json=payload, timeout=30)
-            response.raise_for_status()
-
-            result = response.json()
-            content = result["content"][0]["text"]
+            # Route to appropriate provider
+            if self.provider == "anthropic":
+                content = self._call_anthropic(prompt)
+            elif self.provider == "google":
+                content = self._call_google(prompt)
+            else:
+                raise ValueError(f"Unsupported provider: {self.provider}")
 
             # Extract JSON from response
             json_start = content.find('{')
@@ -332,6 +356,40 @@ IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found
         except Exception as e:
             print(f"  ⚠️  AI analysis failed for {ref}: {e}")
             return self._heuristic_analysis(text, ref)
+
+    def _call_anthropic(self, prompt: str) -> str:
+        """Call Anthropic Claude API"""
+        headers = {
+            "x-api-key": self.api_key,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json"
+        }
+
+        payload = {
+            "model": self.model,
+            "max_tokens": 1024,
+            "messages": [{
+                "role": "user",
+                "content": prompt
+            }]
+        }
+
+        response = requests.post(self.api_url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+
+        result = response.json()
+        return result["content"][0]["text"]
+
+    def _call_google(self, prompt: str) -> str:
+        """Call Google Gemini API"""
+        response = self.gemini_model.generate_content(
+            prompt,
+            generation_config=genai.types.GenerationConfig(
+                max_output_tokens=2048,
+                temperature=0.1,
+            )
+        )
+        return response.text
 
     def _heuristic_analysis(self, text: str, ref: str) -> Dict[str, Any]:
         """Fallback heuristic analysis when AI is unavailable - returns array format"""

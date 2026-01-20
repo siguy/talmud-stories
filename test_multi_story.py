@@ -31,20 +31,49 @@ TEST_PAGES = [
 def test_multi_story_detection():
     """Test the improved prompt on pages with multiple stories"""
 
-    # Get API key
-    api_key = os.getenv("ANTHROPIC_API_KEY")
-    if not api_key:
-        print("❌ ERROR: ANTHROPIC_API_KEY not set")
-        print("Run: export ANTHROPIC_API_KEY='your-key'")
-        sys.exit(1)
-
     print("=" * 80)
     print("Testing Multi-Story Detection on Sample Pages")
     print("=" * 80)
     print()
 
-    # Initialize
-    analyzer = NarrativeAnalyzer(api_key=api_key, model="claude-3-5-haiku-20241022")
+    # Choose provider
+    print("Select AI Provider:")
+    print("  1. Anthropic Claude")
+    print("  2. Google Gemini (recommended - cheaper & faster)")
+    provider_choice = input("Choice (1 or 2, default=2): ").strip() or "2"
+    print()
+
+    if provider_choice == "2":
+        # Google Gemini
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            print("❌ ERROR: GOOGLE_API_KEY not set")
+            print("Run: export GOOGLE_API_KEY='your-key'")
+            print("Get key from: https://aistudio.google.com/app/apikey")
+            sys.exit(1)
+
+        analyzer = NarrativeAnalyzer(
+            api_key=api_key,
+            model="gemini-2.0-flash-exp",
+            provider="google"
+        )
+        print("✅ Using Google Gemini 2.0 Flash\n")
+    else:
+        # Anthropic Claude
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("❌ ERROR: ANTHROPIC_API_KEY not set")
+            print("Run: export ANTHROPIC_API_KEY='your-key'")
+            print("Get key from: https://console.anthropic.com/")
+            sys.exit(1)
+
+        analyzer = NarrativeAnalyzer(
+            api_key=api_key,
+            model="claude-3-5-haiku-20241022",
+            provider="anthropic"
+        )
+        print("✅ Using Anthropic Claude 3.5 Haiku\n")
+
     finder = SefariaStoryFinder(analyzer, use_windowing=False)
 
     results = []

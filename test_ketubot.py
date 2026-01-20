@@ -6,17 +6,6 @@ Quick test: Run story finder on Tractate Ketubot
 import os
 import sys
 
-# Check for API key
-if not os.getenv("ANTHROPIC_API_KEY"):
-    print("=" * 70)
-    print("ERROR: ANTHROPIC_API_KEY not found!")
-    print("=" * 70)
-    print("\nPlease set your API key:")
-    print("  export ANTHROPIC_API_KEY='your-key-here'")
-    print("\nGet your key from: https://console.anthropic.com/")
-    print("=" * 70)
-    sys.exit(1)
-
 from find_talmud_stories import NarrativeAnalyzer, SefariaStoryFinder
 
 def main():
@@ -25,12 +14,47 @@ def main():
     print("=" * 70)
     print()
 
-    # Initialize with Haiku (fast and cheap)
-    print("Initializing AI analyzer (Claude 3.5 Haiku)...")
-    analyzer = NarrativeAnalyzer(
-        api_key=os.getenv("ANTHROPIC_API_KEY"),
-        model="claude-3-5-haiku-20241022"
-    )
+    # Choose provider
+    print("Select AI Provider:")
+    print("  1. Anthropic Claude (default)")
+    print("  2. Google Gemini (recommended - cheaper & faster)")
+    provider_choice = input("Choice (1 or 2, default=2): ").strip() or "2"
+
+    if provider_choice == "2":
+        # Google Gemini
+        api_key = os.getenv("GOOGLE_API_KEY")
+        if not api_key:
+            print("\n❌ ERROR: GOOGLE_API_KEY not found!")
+            print("Please set your API key:")
+            print("  export GOOGLE_API_KEY='your-key-here'")
+            print("\nGet your key from: https://aistudio.google.com/app/apikey")
+            print("Or run: pip install google-generativeai")
+            sys.exit(1)
+
+        print("\nInitializing AI analyzer (Gemini 2.0 Flash)...")
+        analyzer = NarrativeAnalyzer(
+            api_key=api_key,
+            model="gemini-2.0-flash-exp",
+            provider="google"
+        )
+        print("✅ Using Google Gemini 2.0 Flash (fast & cheap)")
+    else:
+        # Anthropic Claude
+        api_key = os.getenv("ANTHROPIC_API_KEY")
+        if not api_key:
+            print("\n❌ ERROR: ANTHROPIC_API_KEY not found!")
+            print("Please set your API key:")
+            print("  export ANTHROPIC_API_KEY='your-key-here'")
+            print("\nGet your key from: https://console.anthropic.com/")
+            sys.exit(1)
+
+        print("\nInitializing AI analyzer (Claude 3.5 Haiku)...")
+        analyzer = NarrativeAnalyzer(
+            api_key=api_key,
+            model="claude-3-5-haiku-20241022",
+            provider="anthropic"
+        )
+        print("✅ Using Anthropic Claude 3.5 Haiku")
 
     finder = SefariaStoryFinder(analyzer, use_windowing=True)
 
