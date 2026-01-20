@@ -50,7 +50,7 @@ When prompted:
 
 | Model | Full Ketubot (~224 pages) | Speed |
 |-------|--------------------------|-------|
-| Gemini 2.0 Flash | **$0.03-0.05** ⭐ | ~8 min |
+| Gemini 3 Flash Preview | **$0.03-0.05** ⭐ | ~8 min |
 | Claude 3.5 Haiku | $0.50-1.00 | ~15 min |
 
 **Gemini is 10-20× cheaper!**
@@ -60,7 +60,7 @@ When prompted:
 The test will:
 1. Connect to Sefaria API
 2. Fetch pages: Ketubot 10b, 62b, 67b
-3. Analyze with Gemini 2.0 Flash
+3. Analyze with Gemini 3 Flash Preview
 4. Show results:
    - How many stories found per page
    - Story boundaries (start/end markers)

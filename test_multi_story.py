@@ -54,10 +54,10 @@ def test_multi_story_detection():
 
         analyzer = NarrativeAnalyzer(
             api_key=api_key,
-            model="gemini-2.0-flash-exp",
+            model="gemini-3-flash-preview",
             provider="google"
         )
-        print("✅ Using Google Gemini 2.0 Flash\n")
+        print("✅ Using Google Gemini 3 Flash Preview\n")
     else:
         # Anthropic Claude
         api_key = os.getenv("ANTHROPIC_API_KEY")

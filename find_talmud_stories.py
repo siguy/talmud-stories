@@ -59,7 +59,7 @@ class NarrativeAnalyzer:
             api_key: API key (or None to use environment variable)
             model: Model name
                 - Anthropic: "claude-3-5-haiku-20241022", "claude-3-5-sonnet-20241022"
-                - Google: "gemini-2.0-flash-exp", "gemini-1.5-flash", "gemini-1.5-pro"
+                - Google: "gemini-3-flash-preview", "gemini-2.0-flash-exp", "gemini-1.5-flash", "gemini-1.5-pro"
             provider: "anthropic" or "google"
         """
         self.provider = provider.lower()
