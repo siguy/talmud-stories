@@ -36,11 +36,23 @@ def test_multi_story_detection():
     print("=" * 80)
     print()
 
-    # Choose provider
-    print("Select AI Provider:")
-    print("  1. Anthropic Claude")
-    print("  2. Google Gemini (recommended - cheaper & faster)")
-    provider_choice = input("Choice (1 or 2, default=2): ").strip() or "2"
+    # Choose provider - check command line args first, then env, then prompt
+    provider_choice = "2"  # Default to Gemini
+
+    if len(sys.argv) > 1:
+        if sys.argv[1] in ["1", "claude", "anthropic"]:
+            provider_choice = "1"
+        elif sys.argv[1] in ["2", "gemini", "google"]:
+            provider_choice = "2"
+    elif sys.stdin.isatty():
+        # Interactive mode - prompt user
+        print("Select AI Provider:")
+        print("  1. Anthropic Claude")
+        print("  2. Google Gemini (recommended - cheaper & faster)")
+        try:
+            provider_choice = input("Choice (1 or 2, default=2): ").strip() or "2"
+        except EOFError:
+            provider_choice = "2"
     print()
 
     if provider_choice == "2":
@@ -54,10 +66,10 @@ def test_multi_story_detection():
 
         analyzer = NarrativeAnalyzer(
             api_key=api_key,
-            model="gemini-3-flash-preview",
+            model="gemini-2.0-flash",
             provider="google"
         )
-        print("✅ Using Google Gemini 3 Flash Preview\n")
+        print("✅ Using Google Gemini 2.0 Flash\n")
     else:
         # Anthropic Claude
         api_key = os.getenv("ANTHROPIC_API_KEY")

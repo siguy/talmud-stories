@@ -335,7 +335,12 @@ IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found
             json_end = cleaned_content.rfind('}') + 1
             if json_start >= 0 and json_end > json_start:
                 json_str = cleaned_content[json_start:json_end]
-                analysis = json.loads(json_str)
+                try:
+                    analysis = json.loads(json_str)
+                except json.JSONDecodeError as e:
+                    print(f"  ❌ JSON parse error: {e}")
+                    print(f"  Raw response (first 500 chars): {content[:500]}")
+                    return self._heuristic_analysis(text, ref)
 
                 # Convert to new array format if needed (backward compatibility)
                 if 'stories_found' not in analysis:
@@ -363,10 +368,14 @@ IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found
                 return analysis
             else:
                 print(f"  ⚠️  Could not parse AI response for {ref}")
+                print(f"      Response length: {len(content)} chars")
+                print(f"      First 300 chars: {content[:300]}")
                 return self._heuristic_analysis(text, ref)
 
         except Exception as e:
             print(f"  ⚠️  AI analysis failed for {ref}: {e}")
+            import traceback
+            traceback.print_exc()
             return self._heuristic_analysis(text, ref)
 
     def _call_anthropic(self, prompt: str) -> str:
@@ -394,14 +403,32 @@ IMPORTANT: If NO stories are found, return: {{"total_stories": 0, "stories_found
 
     def _call_google(self, prompt: str) -> str:
         """Call Google Gemini API"""
-        response = self.gemini_model.generate_content(
-            prompt,
-            generation_config=genai.types.GenerationConfig(
-                max_output_tokens=2048,
-                temperature=0.1,
+        try:
+            response = self.gemini_model.generate_content(
+                prompt,
+                generation_config=genai.types.GenerationConfig(
+                    max_output_tokens=16384,  # Increased further for multi-story pages
+                    temperature=0.1,
+                )
             )
-        )
-        return response.text
+            # Check for blocked or incomplete response
+            if not response.candidates:
+                print(f"  ❌ Gemini returned no candidates")
+                return ""
+
+            candidate = response.candidates[0]
+            if candidate.finish_reason.name != "STOP":
+                print(f"  ⚠️  Gemini finish reason: {candidate.finish_reason.name}")
+
+            # Get full text from all parts
+            full_text = ""
+            for part in candidate.content.parts:
+                full_text += part.text
+
+            return full_text
+        except Exception as e:
+            print(f"  ❌ Gemini API error: {e}")
+            raise
 
     def _heuristic_analysis(self, text: str, ref: str) -> Dict[str, Any]:
         """Fallback heuristic analysis when AI is unavailable - returns array format"""

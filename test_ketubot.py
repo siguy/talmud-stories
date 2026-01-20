@@ -31,13 +31,13 @@ def main():
             print("Or run: pip install google-generativeai")
             sys.exit(1)
 
-        print("\nInitializing AI analyzer (Gemini 3 Flash Preview)...")
+        print("\nInitializing AI analyzer (Gemini 2.0 Flash)...")
         analyzer = NarrativeAnalyzer(
             api_key=api_key,
-            model="gemini-3-flash-preview",
+            model="gemini-2.0-flash",
             provider="google"
         )
-        print("✅ Using Google Gemini 3 Flash Preview (fast & cheap)")
+        print("✅ Using Google Gemini 2.0 Flash (fast & cheap)")
     else:
         # Anthropic Claude
         api_key = os.getenv("ANTHROPIC_API_KEY")
