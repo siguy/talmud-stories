@@ -414,13 +414,26 @@
         .reasoning strong {
             color: #f39c12;
         }
+
+        .validation-notes {
+            margin-top: 15px;
+            padding: 15px;
+            background: #e8f5e9;
+            border-left: 4px solid #27ae60;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        .validation-notes strong {
+            color: #27ae60;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
             <h1>📚 Ketubot Stories Review</h1>
-            <p>Review AI-identified stories from Tractate Ketubot and provide expert feedback</p>
+            <p>Review 258 AI-identified stories from Tractate Ketubot (analyzed with Gemini 2.0 Flash)</p>
 
             <div class="control-group" style="margin: 20px 0;">
                 <label for="reviewerName">Reviewer Name</label>
@@ -721,6 +734,12 @@
                             <div class="reasoning">
                                 <strong>AI Reasoning:</strong> ${story.analysis.reasoning}
                             </div>
+
+                            ${story.analysis.validation_notes ? `
+                                <div class="validation-notes">
+                                    <strong>Validation Notes:</strong> ${story.analysis.validation_notes}
+                                </div>
+                            ` : ''}
 
                             <div class="narrative-elements">
                                 ${elements.map(el => `<span class="element">✓ ${el}</span>`).join('')}

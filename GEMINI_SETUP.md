@@ -1,8 +1,28 @@
-# Switching to Google Gemini Flash
+# Google Gemini Setup Guide
 
-This guide explains how to switch from Anthropic Claude to Google Gemini for story detection.
+This guide explains how to use Google Gemini for Talmud story detection.
 
-## Why Switch to Gemini?
+## Quick Start (5 Steps)
+
+```bash
+# 1. Install Google AI SDK
+pip install google-generativeai
+
+# 2. Get API key from https://aistudio.google.com/app/apikey
+
+# 3. Set environment variable
+export GOOGLE_API_KEY='your-key-here'
+
+# 4. Run test analysis
+python3 test_multi_story.py
+
+# 5. Run full Ketubot analysis (258 stories found)
+python3 test_ketubot.py gemini 1
+```
+
+---
+
+## Why Gemini?
 
 - **Lower cost**: Gemini Flash is significantly cheaper than Claude
 - **Speed**: Gemini 2.0 Flash is extremely fast
@@ -87,8 +107,7 @@ python3 test_ketubot.py
 
 | Model | Speed | Cost | Best For |
 |-------|-------|------|----------|
-| `gemini-3-flash-preview` | ⚡️ Fastest | 💰 Cheapest | Production, high volume (recommended) |
-| `gemini-2.0-flash-exp` | ⚡️ Very Fast | 💰 Cheapest | Alternative fast option |
+| `gemini-2.0-flash` | ⚡️ Fastest | 💰 Cheapest | **Production (recommended)** |
 | `gemini-1.5-flash` | ⚡️ Fast | 💰 Cheap | General use |
 | `gemini-1.5-pro` | 🐢 Slower | 💰💰 Medium | Complex analysis |
 
@@ -99,25 +118,25 @@ python3 test_ketubot.py
 | `claude-3-5-haiku-20241022` | ⚡️ Fast | 💰💰 Medium | Current default |
 | `claude-3-5-sonnet-20241022` | 🐢 Slower | 💰💰💰 Expensive | Highest quality |
 
-## Recommended: Gemini 3 Flash Preview
+## Recommended: Gemini 2.0 Flash
 
-For this project, **Gemini 3 Flash Preview** (`gemini-3-flash-preview`) is recommended:
+For this project, **Gemini 2.0 Flash** (`gemini-2.0-flash`) is recommended:
 
 - **10-20× cheaper** than Claude Haiku
 - **2-3× faster**
 - **Excellent quality** for structured output (JSON)
 - **High rate limits** (1500 requests/min on free tier)
+- **Tested result**: 258 stories found in Ketubot with 95.2% average confidence
 
 ## Cost Comparison
 
-### Full Ketubot Analysis (~224 pages):
+### Full Ketubot Analysis (224 pages, 258 stories found):
 
 | Model | Estimated Cost | Time |
 |-------|---------------|------|
-| Claude 3.5 Haiku | $0.50-1.00 | ~15 min |
-| **Gemini 3 Flash Preview** | **$0.03-0.05** | **~8 min** |
-| Gemini 2.0 Flash | $0.03-0.05 | ~8 min |
+| **Gemini 2.0 Flash** | **$0.03-0.05** | **~12 min** |
 | Gemini 1.5 Pro | $0.20-0.30 | ~20 min |
+| Claude 3.5 Haiku | $0.50-1.00 | ~15 min |
 
 ## Usage Examples
 
@@ -130,7 +149,7 @@ import os
 # Initialize with Google Gemini
 analyzer = NarrativeAnalyzer(
     api_key=os.getenv("GOOGLE_API_KEY"),
-    model="gemini-3-flash-preview",
+    model="gemini-2.0-flash",
     provider="google"
 )
 
@@ -148,7 +167,7 @@ anthropic_analyzer = NarrativeAnalyzer(
 )
 
 google_analyzer = NarrativeAnalyzer(
-    model="gemini-3-flash-preview",
+    model="gemini-2.0-flash",
     provider="google"
 )
 

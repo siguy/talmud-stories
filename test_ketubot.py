@@ -1,6 +1,17 @@
 #!/usr/bin/env python3
 """
 Quick test: Run story finder on Tractate Ketubot
+
+Usage:
+  python3 test_ketubot.py [provider] [sample_rate]
+
+  provider: 'gemini' or 'claude' (default: gemini)
+  sample_rate: 1 for all pages, 2 for every other, etc. (default: 1)
+
+Examples:
+  python3 test_ketubot.py gemini 1     # All pages with Gemini
+  python3 test_ketubot.py gemini 10    # Every 10th page (quick test)
+  python3 test_ketubot.py claude 1     # All pages with Claude
 """
 
 import os
@@ -14,11 +25,22 @@ def main():
     print("=" * 70)
     print()
 
-    # Choose provider
-    print("Select AI Provider:")
-    print("  1. Anthropic Claude (default)")
-    print("  2. Google Gemini (recommended - cheaper & faster)")
-    provider_choice = input("Choice (1 or 2, default=2): ").strip() or "2"
+    # Parse command line arguments
+    provider_choice = "2"  # Default to Gemini
+    sample_rate = 1
+
+    if len(sys.argv) > 1:
+        arg = sys.argv[1].lower()
+        if arg in ["1", "claude", "anthropic"]:
+            provider_choice = "1"
+        elif arg in ["2", "gemini", "google"]:
+            provider_choice = "2"
+
+    if len(sys.argv) > 2:
+        try:
+            sample_rate = int(sys.argv[2])
+        except ValueError:
+            pass
 
     if provider_choice == "2":
         # Google Gemini
@@ -60,11 +82,8 @@ def main():
 
     print("Multi-page story detection: ENABLED")
     print("Bilingual analysis (Hebrew + English): ENABLED")
+    print(f"Sample rate: {sample_rate} (analyzing every {sample_rate} page(s))")
     print()
-
-    # Search Ketubot with sample_rate=1 (analyze all sections)
-    # Change to sample_rate=2 for every other section (faster, cheaper)
-    sample_rate = int(input("Sample rate (1=all sections, 2=every other, default=1): ").strip() or "1")
 
     stories = finder.search_tractate_systematically("Ketubot", "Test", sample_rate=sample_rate)
 
