@@ -1,0 +1,258 @@
+[
+  {
+    "ref": "Ketubot 10b",
+    "expected": 3,
+    "found": 3,
+    "correct": true,
+    "stories": [
+      {
+        "story_number": 1,
+        "is_story": true,
+        "confidence": 95,
+        "story_start_english": "A certain man who came before Rabban",
+        "story_end_english": "Go take possession of your acquisition",
+        "story_start_hebrew": "הַהוּא דַּאֲתָא לְקַמֵּיהּ דְּרַבָּן",
+        "story_end_hebrew": "לֵךְ זְכֵה בְּמִקָּחֶךָ",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "full_narrative",
+        "one_sentence_summary": "A man claims his bride is not a virgin, Rabban Gamliel tests her using maidservants and a barrel of wine, and declares her a virgin.",
+        "reasoning": "This is a story because it describes a specific event with named individuals (Rabban Gamliel), involves multiple events with causality (claim of non-virginity leads to testing, which leads to a ruling), and shows change (from doubt to certainty about the bride's virginity).",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": null
+        },
+        "validation_notes": "All validation criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event."
+      },
+      {
+        "story_number": 2,
+        "is_story": true,
+        "confidence": 95,
+        "story_start_english": "A certain man who came before Rabban",
+        "story_end_english": "who have neither menstrual blood nor blood",
+        "story_start_hebrew": "הַהוּא דַּאֲתָא לְקַמֵּיהּ דְּרַבָּן",
+        "story_end_hebrew": "לֹא דַּם נִדָּה וְלֹא דַּם בְּתוּלִים",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": false,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "dialogue_vignette",
+        "one_sentence_summary": "A man claims his bride is not a virgin, but she claims to be from a family without such blood, leading Rabban Gamliel to investigate.",
+        "reasoning": "This is a story because it describes a specific event with named individuals (Rabban Gamliel), involves multiple events with causality (claim of non-virginity leads to the bride's explanation, which leads to an investigation), and shows change (from initial claim to investigation).",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": true,
+          "missing_beginning": false,
+          "missing_end": true,
+          "note": "The story continues after this point."
+        },
+        "validation_notes": "All validation criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event."
+      },
+      {
+        "story_number": 3,
+        "is_story": true,
+        "confidence": 95,
+        "story_start_english": "A certain man who came before Rabbi",
+        "story_end_english": "Go take possession of your acquisition",
+        "story_start_hebrew": "הַהוּא דַּאֲתָא לְקַמֵּיהּ דְּרַבִּי",
+        "story_end_hebrew": "לֵךְ זְכֵה בְּמִקָּחֶךָ",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "full_narrative",
+        "one_sentence_summary": "A man claims his bride is not a virgin, Rabbi sees they are pale due to famine, orders them bathed and fed, and then blood is found after intercourse.",
+        "reasoning": "This is a story because it describes a specific event with named individuals (Rabbi), involves multiple events with causality (claim of non-virginity leads to Rabbi's observation, which leads to bathing/feeding, which leads to a different outcome), and shows change (from no blood to blood found).",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": null
+        },
+        "validation_notes": "All validation criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event."
+      }
+    ]
+  },
+  {
+    "ref": "Ketubot 62b",
+    "expected": 2,
+    "found": 2,
+    "correct": true,
+    "stories": [
+      {
+        "story_number": 1,
+        "is_story": true,
+        "confidence": 100,
+        "story_start_english": "Rava said: The Sages relied on",
+        "story_end_english": "and continually said to herself: ...",
+        "story_start_hebrew": "אָמַר רָבָא: סָמְכוּ רַבָּנַן אַדְּרַב",
+        "story_end_hebrew": "הֲוָה מְסַכְּיָא דְּבֵיתְהוּ: הַשְׁתָּא אָתֵי",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": false,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": false,
+          "has_temporal_progression": true
+        },
+        "story_type": "brief_anecdote",
+        "one_sentence_summary": "Rav Reḥumi, engrossed in his studies, misses Yom Kippur eve, causing his wife distress as she awaits his return.",
+        "reasoning": "This is a story because it describes a specific event involving Rav Reḥumi. He usually returns home on Yom Kippur eve, but one year he is delayed by his studies. This causes his wife distress. There is a clear change in the situation and a causal relationship between his actions and her emotional state.",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": true,
+          "missing_beginning": false,
+          "missing_end": true,
+          "note": "The story continues on the next page."
+        },
+        "validation_notes": "All validation criteria are met. It's descriptive, a one-time event, has causality, change, and involves rabbis."
+      },
+      {
+        "story_number": 2,
+        "is_story": true,
+        "confidence": 100,
+        "story_start_english": "Yehuda, the son of Rabbi Ḥiyya, the",
+        "story_end_english": "not nullify his conjugal obligation, and he died.",
+        "story_start_hebrew": "יְהוּדָה בְּרֵיהּ דְּרַבִּי חִיָּיא, חַתְנֵיהּ",
+        "story_end_hebrew": "וְנָח נַפְשֵׁיהּ.",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "brief_anecdote",
+        "one_sentence_summary": "Yehuda, Rabbi Ḥiyya's son-in-law, usually returns home before nightfall, but one day he is delayed, leading to his death after Rabbi Yannai realizes he missed his conjugal duty.",
+        "reasoning": "This is a story because it describes a specific event involving Yehuda. He usually returns home before nightfall and is marked by a pillar of fire. One day he is delayed, and the pillar of fire is missing. Rabbi Yannai realizes he missed his conjugal duty, and Yehuda dies. There is a clear change in the situation and a causal relationship between his actions and his death.",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": "The story is complete on this page."
+        },
+        "validation_notes": "All validation criteria are met. It's descriptive, a one-time event, has causality, change, and involves rabbis."
+      }
+    ]
+  },
+  {
+    "ref": "Ketubot 67b",
+    "expected": 4,
+    "found": 3,
+    "correct": false,
+    "stories": [
+      {
+        "story_number": 1,
+        "is_story": true,
+        "confidence": 100,
+        "story_start_english": "They said about Hillel the Elder",
+        "story_end_english": "three mil, to fulfill the dictate",
+        "story_start_hebrew": "אָמְרוּ עָלָיו עַל הִלֵּל הַזָּקֵן",
+        "story_end_hebrew": "לִפְנָיו שְׁלֹשָׁה מִילִין",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": false,
+          "has_temporal_progression": true
+        },
+        "story_type": "brief_anecdote",
+        "one_sentence_summary": "Hillel the Elder provided a poor man with a horse and servant, and when he couldn't find a servant, he ran in front of him himself.",
+        "reasoning": "This is a story because it describes a specific event involving Hillel and a poor man. The events are causally linked: the man needed assistance, Hillel provided it, and when a servant was unavailable, Hillel substituted himself. There is a change in the situation as Hillel goes above and beyond to help.",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": null
+        },
+        "validation_notes": "All criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event, and boundaries provided."
+      },
+      {
+        "story_number": 2,
+        "is_story": true,
+        "confidence": 100,
+        "story_start_english": "There was an incident involving the people",
+        "story_end_english": "what is the novelty",
+        "story_start_hebrew": "מַעֲשֶׂה בְּאַנְשֵׁי גָּלִיל הָעֶלְיוֹן",
+        "story_end_hebrew": "מַאי רְבוּתָא?",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": false,
+          "has_temporal_progression": true
+        },
+        "story_type": "brief_anecdote",
+        "one_sentence_summary": "The people of the Upper Galilee bought a poor man from Tzippori a litra of meat every day.",
+        "reasoning": "This is a story because it describes a specific event involving the people of the Upper Galilee and a poor man. The events are causally linked: the man was poor, the community provided him with meat. There is a change in the man's situation as he receives daily sustenance. The story ends with a question about the significance of this act.",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": null
+        },
+        "validation_notes": "All criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event, and boundaries provided."
+      },
+      {
+        "story_number": 3,
+        "is_story": true,
+        "confidence": 100,
+        "story_start_english": "That one who came before Rabbi",
+        "story_end_english": "Nehemiah killed him.",
+        "story_start_hebrew": "הַהוּא דַּאֲתָא לְקַמֵּיהּ דְּרַבִּי",
+        "story_end_hebrew": "נְחֶמְיָה.",
+        "narrative_elements": {
+          "has_beginning": true,
+          "has_middle": true,
+          "has_end": true,
+          "has_characters": true,
+          "has_action": true,
+          "has_dialogue": true,
+          "has_temporal_progression": true
+        },
+        "story_type": "full_narrative",
+        "one_sentence_summary": "A man who ate rich food was asked by Rabbi Nehemiah to eat lentils, and he died, leading to the accusation that Nehemiah killed him.",
+        "reasoning": "This is a story because it describes a specific event involving a man and Rabbi Nehemiah. The events are causally linked: the man ate rich food, Nehemiah suggested lentils, the man ate lentils, and he died. There is a significant change in the man's situation as he goes from being alive to dead. The story has a clear beginning, middle, and end.",
+        "embedded_in_legal_context": true,
+        "continuation": {
+          "seems_incomplete": false,
+          "missing_beginning": false,
+          "missing_end": false,
+          "note": null
+        },
+        "validation_notes": "All criteria are met: descriptive, one-time event, causal relationship, change, rabbinic figures, actual event, and boundaries provided."
+      }
+    ]
+  }
+]

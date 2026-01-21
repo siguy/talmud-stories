@@ -1,0 +1,21 @@
+[
+  {
+    "test": "Story 1: Woman with ketubba claim",
+    "success": true,
+    "length": 335,
+    "boundaries_correct": true,
+    "is_subset": true
+  },
+  {
+    "test": "Story 2: Levirate marriage case",
+    "success": true,
+    "length": 448,
+    "boundaries_correct": true,
+    "is_subset": true
+  },
+  {
+    "test": "Hebrew extraction",
+    "success": true,
+    "length": 144
+  }
+]
