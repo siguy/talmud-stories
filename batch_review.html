@@ -71,7 +71,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 1rem;
         }
@@ -140,10 +140,31 @@
             padding: 0.75rem;
             border-radius: 0.5rem;
             font-size: 0.85rem;
-            max-height: 150px;
+            max-height: 200px;
             overflow-y: auto;
             border: 1px solid var(--border);
             margin-bottom: 0.75rem;
+        }
+
+        .text-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .text-column-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
+        }
+
+        .story-text-preview.hebrew {
+            direction: rtl;
+            font-family: 'SBL Hebrew', 'Ezra SIL', serif;
+            font-size: 0.95rem;
         }
 
         .context-segment {
@@ -446,8 +467,8 @@
             updateStats();
         }
 
-        // Get text with context
-        function getTextWithContext(story, segments) {
+        // Get text with context for a specific language
+        function getTextWithContext(story, segments, lang = 'english') {
             if (!segments) return 'No text available';
 
             let html = '';
@@ -457,16 +478,17 @@
             const beforeStart = Math.max(0, story.start_segment - CONTEXT);
             for (let i = beforeStart; i < story.start_segment; i++) {
                 const seg = segments.find(s => s.index === i);
-                if (seg && seg.english) {
-                    html += `<div class="context-segment">[Before] ${seg.english.substring(0, 150)}...</div>`;
+                if (seg && seg[lang]) {
+                    const text = lang === 'english' ? seg[lang].substring(0, 150) + '...' : seg[lang].substring(0, 200) + '...';
+                    html += `<div class="context-segment">${text}</div>`;
                 }
             }
 
             // SELECTED segments
             for (let i = story.start_segment; i <= story.end_segment; i++) {
                 const seg = segments.find(s => s.index === i);
-                if (seg && seg.english) {
-                    html += `<div class="selected-segment">${seg.english}</div>`;
+                if (seg && seg[lang]) {
+                    html += `<div class="selected-segment">${seg[lang]}</div>`;
                 }
             }
 
@@ -474,8 +496,9 @@
             const maxIdx = Math.max(...segments.map(s => s.index));
             for (let i = story.end_segment + 1; i <= Math.min(maxIdx, story.end_segment + CONTEXT); i++) {
                 const seg = segments.find(s => s.index === i);
-                if (seg && seg.english) {
-                    html += `<div class="context-segment">[After] ${seg.english.substring(0, 150)}...</div>`;
+                if (seg && seg[lang]) {
+                    const text = lang === 'english' ? seg[lang].substring(0, 150) + '...' : seg[lang].substring(0, 200) + '...';
+                    html += `<div class="context-segment">${text}</div>`;
                 }
             }
 
@@ -518,7 +541,16 @@
                         </div>
                         <div class="story-body">
                             <div class="story-summary">${story.one_sentence_summary || 'No summary'}</div>
-                            <div class="story-text-preview">${getTextWithContext(story, story.segments)}</div>
+                            <div class="text-columns">
+                                <div>
+                                    <div class="text-column-label">English</div>
+                                    <div class="story-text-preview">${getTextWithContext(story, story.segments, 'english')}</div>
+                                </div>
+                                <div>
+                                    <div class="text-column-label">Hebrew</div>
+                                    <div class="story-text-preview hebrew">${getTextWithContext(story, story.segments, 'hebrew')}</div>
+                                </div>
+                            </div>
                             ${story.why_this_is_a_story ? `<div class="ai-reasoning">AI: ${story.why_this_is_a_story}</div>` : ''}
                         </div>
                         ${resultHtml || `
