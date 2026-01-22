@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talmud Story Detection - v4</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container {
+            background: white;
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 { color: #1e3a5f; margin-bottom: 0.5rem; }
+        .subtitle { color: #64748b; margin-bottom: 2rem; }
+        .card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            text-decoration: none;
+            display: block;
+            transition: all 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-color: #2563eb;
+        }
+        .card h2 { color: #1e3a5f; font-size: 1.25rem; margin-bottom: 0.5rem; }
+        .card p { color: #64748b; font-size: 0.9rem; }
+        .badge {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        .stat { text-align: center; }
+        .stat-value { font-size: 2rem; font-weight: 700; color: #2563eb; }
+        .stat-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Talmud Story Detection</h1>
+        <p class="subtitle">AI-powered narrative identification in Tractate Ketubot</p>
+
+        <a href="validation.html" class="card">
+            <h2>Full Validation Interface</h2>
+            <p>Detailed view with side-by-side Hebrew/English text, segment boundaries, and AI reasoning. Best for thorough review.</p>
+            <span class="badge">Recommended for detailed review</span>
+        </a>
+
+        <a href="batch-review.html" class="card">
+            <h2>Quick Batch Review</h2>
+            <p>Streamlined interface for rapid validation. Keyboard shortcuts (Y/N/S) for fast feedback.</p>
+            <span class="badge">Best for quick validation</span>
+        </a>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">76</div>
+                <div class="stat-label">Pages Analyzed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">30</div>
+                <div class="stat-label">Stories Found</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">69%</div>
+                <div class="stat-label">Avg Confidence</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
