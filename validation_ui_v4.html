@@ -202,11 +202,6 @@
             color: #166534;
         }
 
-        .badge-segments {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
         .badge-validated {
             background: #dcfce7;
             color: #166534;
@@ -244,12 +239,23 @@
             font-weight: 600;
         }
 
+        /* Side-by-side text layout */
+        .text-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .text-column {
+            min-width: 0;
+        }
+
         .story-text {
             background: #f8fafc;
             padding: 1rem;
             border-radius: 0.5rem;
             font-size: 0.9rem;
-            max-height: 200px;
+            max-height: 300px;
             overflow-y: auto;
             border: 1px solid var(--border);
         }
@@ -290,6 +296,58 @@
         .marker.negative {
             background: #fee2e2;
             color: #991b1b;
+        }
+
+        .context-segment {
+            color: #2563eb;
+            opacity: 0.7;
+            border-left: 2px solid #2563eb;
+            padding-left: 0.5rem;
+            margin: 0.25rem 0;
+            font-size: 0.85rem;
+        }
+
+        .selected-segment {
+            background: #fef9c3;
+            padding: 0.25rem 0.5rem;
+            margin: 0.25rem 0;
+            border-left: 3px solid #eab308;
+        }
+
+        .selected-segment-anchor {
+            scroll-margin-top: 100px;
+        }
+
+        .segment-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .boundary-validation {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            margin-top: 0.5rem;
+            padding: 0.5rem;
+            background: #f1f5f9;
+            border-radius: 0.25rem;
+        }
+
+        .boundary-validation label {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            font-size: 0.85rem;
+            cursor: pointer;
+        }
+
+        .boundary-notes {
+            flex: 1;
+            padding: 0.35rem;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+            font-size: 0.8rem;
         }
 
         .validation-controls {
@@ -361,6 +419,12 @@
             margin: 1rem 0;
         }
 
+        @media (max-width: 900px) {
+            .text-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media (max-width: 768px) {
             .stats-bar {
                 gap: 1rem;
@@ -374,7 +438,7 @@
 </head>
 <body>
     <div class="header">
-        <span class="version-badge">Version 4.0 - Segment-Based Detection</span>
+        <span class="version-badge">Version 4.1 - Segment-Based Detection</span>
         <h1>Talmud Stories Validation Interface</h1>
         <p>Expert review of AI-identified stories in Ketubot (First 1/3: Pages 2a-39b)</p>
     </div>
@@ -608,19 +672,15 @@
                     ` : ''}
 
                     <div class="story-section">
-                        <div class="story-section-title">
-                            English Text
-                            <span class="toggle-text" onclick="toggleText(this, 'eng-${story.id}')">[show]</span>
+                        <div class="story-section-title">Text (English | Hebrew)</div>
+                        <div class="text-columns">
+                            <div class="text-column">
+                                <div class="story-text" id="eng-${story.id}">${getTextWithContext(story, 'english')}</div>
+                            </div>
+                            <div class="text-column">
+                                <div class="story-text hebrew" id="heb-${story.id}">${getTextWithContext(story, 'hebrew')}</div>
+                            </div>
                         </div>
-                        <div class="story-text hidden" id="eng-${story.id}">${story.story_text_english || getTextFromSegments(story, 'english')}</div>
-                    </div>
-
-                    <div class="story-section">
-                        <div class="story-section-title">
-                            Hebrew Text
-                            <span class="toggle-text" onclick="toggleText(this, 'heb-${story.id}')">[show]</span>
-                        </div>
-                        <div class="story-text hebrew hidden" id="heb-${story.id}">${story.story_text_hebrew || getTextFromSegments(story, 'hebrew')}</div>
                     </div>
 
                     ${story.why_this_is_a_story ? `
@@ -632,7 +692,16 @@
                 </div>
 
                 <div class="validation-controls">
-                    <textarea id="notes-${story.id}" placeholder="Add validation notes...">${validation?.notes || ''}</textarea>
+                    <div style="flex: 1;">
+                        <div class="boundary-validation">
+                            <span style="font-size: 0.85rem; font-weight: 500;">Segment Boundaries:</span>
+                            <label><input type="radio" name="boundary-${story.id}" value="ok" ${!validation?.boundaryIssue ? 'checked' : ''}> OK</label>
+                            <label><input type="radio" name="boundary-${story.id}" value="too_short" ${validation?.boundaryIssue === 'too_short' ? 'checked' : ''}> Too Short</label>
+                            <label><input type="radio" name="boundary-${story.id}" value="too_long" ${validation?.boundaryIssue === 'too_long' ? 'checked' : ''}> Too Long</label>
+                            <input type="text" class="boundary-notes" id="boundary-notes-${story.id}" placeholder="Suggest correct segments (e.g., 5-8)..." value="${validation?.boundaryNotes || ''}">
+                        </div>
+                        <textarea id="notes-${story.id}" placeholder="Add validation notes..." style="margin-top: 0.5rem; width: 100%;">${validation?.notes || ''}</textarea>
+                    </div>
                     <div class="validation-buttons">
                         <button class="btn btn-success" onclick="validateStory(${story.id}, true)">True Story</button>
                         <button class="btn btn-danger" onclick="validateStory(${story.id}, false)">Not a Story</button>
@@ -643,39 +712,59 @@
             return card;
         }
 
-        // Get text from segments
-        function getTextFromSegments(story, lang) {
+        // Get text with context segments before/after (shown in blue) - only 1 segment context
+        function getTextWithContext(story, lang) {
             if (!story.segments) return 'No text available';
 
-            const texts = [];
-            for (let i = story.start_segment; i <= story.end_segment; i++) {
+            let html = '';
+            const CONTEXT_SEGMENTS = 1; // Show 1 segment before and after
+
+            // Context BEFORE (in blue)
+            const beforeStart = Math.max(0, story.start_segment - CONTEXT_SEGMENTS);
+            for (let i = beforeStart; i < story.start_segment; i++) {
                 const seg = story.segments.find(s => s.index === i);
-                if (seg) {
-                    texts.push(seg[lang] || '');
+                if (seg && seg[lang]) {
+                    html += `<div class="context-segment"><span class="segment-label">[Seg ${i}]</span> ${seg[lang]}</div>`;
                 }
             }
-            return texts.join(' ');
-        }
 
-        // Toggle text visibility
-        function toggleText(btn, id) {
-            const el = document.getElementById(id);
-            if (el.classList.contains('hidden')) {
-                el.classList.remove('hidden');
-                btn.textContent = '[hide]';
-            } else {
-                el.classList.add('hidden');
-                btn.textContent = '[show]';
+            // SELECTED segments (highlighted) with anchor on first
+            let isFirst = true;
+            for (let i = story.start_segment; i <= story.end_segment; i++) {
+                const seg = story.segments.find(s => s.index === i);
+                if (seg && seg[lang]) {
+                    const anchorClass = isFirst ? ' selected-segment-anchor' : '';
+                    const anchorId = isFirst ? ` id="anchor-${story.id}-${lang}"` : '';
+                    html += `<div class="selected-segment${anchorClass}"${anchorId}><span class="segment-label">[Seg ${i}]</span> ${seg[lang]}</div>`;
+                    isFirst = false;
+                }
             }
+
+            // Context AFTER (in blue)
+            const maxSegIndex = Math.max(...story.segments.map(s => s.index));
+            const afterEnd = Math.min(maxSegIndex, story.end_segment + CONTEXT_SEGMENTS);
+            for (let i = story.end_segment + 1; i <= afterEnd; i++) {
+                const seg = story.segments.find(s => s.index === i);
+                if (seg && seg[lang]) {
+                    html += `<div class="context-segment"><span class="segment-label">[Seg ${i}]</span> ${seg[lang]}</div>`;
+                }
+            }
+
+            return html || 'No text available';
         }
 
         // Validate story
         function validateStory(id, isStory) {
             const notes = document.getElementById(`notes-${id}`).value;
+            const boundaryRadio = document.querySelector(`input[name="boundary-${id}"]:checked`);
+            const boundaryValue = boundaryRadio ? boundaryRadio.value : 'ok';
+            const boundaryNotes = document.getElementById(`boundary-notes-${id}`)?.value || '';
 
             validations[id] = {
                 isStory: isStory,
                 notes: notes,
+                boundaryIssue: boundaryValue !== 'ok' ? boundaryValue : null,
+                boundaryNotes: boundaryNotes,
                 timestamp: new Date().toISOString()
             };
 
@@ -752,7 +841,7 @@
         // Export validations
         function exportValidations() {
             const exportData = {
-                version: 'v4.0',
+                version: 'v4.1',
                 exportDate: new Date().toISOString(),
                 totalStories: allStories.length,
                 validations: {}
@@ -794,6 +883,14 @@
             a.href = url;
             a.download = `ketubot_v4_with_validations_${new Date().toISOString().split('T')[0]}.json`;
             a.click();
+        }
+
+        // Scroll to selected text anchor after rendering
+        function scrollToAnchor(storyId) {
+            const anchor = document.getElementById(`anchor-${storyId}-english`);
+            if (anchor) {
+                anchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         // Initialize

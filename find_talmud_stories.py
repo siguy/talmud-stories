@@ -173,7 +173,7 @@ def calculate_story_likelihood(heb_markers: Dict, eng_markers: Dict) -> str:
     if eng_markers['story']:
         score += 30
     if heb_markers['dialogue']:
-        score += 10
+        score += 3  # Reduced from 10 - dialogue alone is insufficient for story identification
     if heb_markers['temporal']:
         score += 10
     if heb_markers['outcome']:
@@ -875,7 +875,7 @@ A passage is NOT A STORY if it has ANY of:
 ✗ Habitual actions without specific incident ("He would always do X")
 ✗ Purely theoretical debates between rabbis about law
 
-=== EXAMPLES FROM JEFF'S VALIDATION ===
+=== EXAMPLES FROM JEFF'S VALIDATION (6 validated examples) ===
 
 TRUE STORY (Ketubot 62b - Rav Reḥumi):
 "Rav Reḥumi would commonly study before Rava in Meḥoza. He was accustomed to come
@@ -886,11 +886,38 @@ The roof collapsed under him and he died."
 → WHY IT'S A STORY: Named characters, temporal progression ("one day", "at that moment"),
   causal chain (engrossed→didn't come→wife distressed→tear→roof collapsed→died), tragic outcome.
 
+TRUE STORY (Ketubot 8b - Comforting a Mourner):
+Narrative about Reish Lakish, Yehuda bar Naḥmani, and Rav Ḥiyya bar Abba comforting a mourner.
+→ WHY IT'S A STORY: Specific characters, multiple events with causality, dialogue,
+  temporal progression, change in situation, post-biblical characters.
+
+TRUE STORY (Ketubot 10b - Rabban Gamliel's Ruling):
+Complex narrative about a groom who came before Rabban Gamliel with a claim about his bride.
+→ WHY IT'S A STORY: Specific characters (Rabban Gamliel, groom, bride), descriptive narrative,
+  multiple events with causality, clear change in situation, dialogue, temporal progression.
+
+TRUE STORY (Ketubot 20b - Rav Ashi and Rav Kahana):
+Specific narrative about Rav Ashi and Rav Kahana involving a memory of testimony.
+→ WHY IT'S A STORY: Specific characters, dialogue, causal progression of memory recall,
+  change in understanding, descriptive of a specific event.
+
 NOT A STORY (Ketubot 2a):
 "A virgin is married on Wednesday and a widow on Thursday. Due to the fact that
 courts convene in towns twice a week... If he had a claim concerning virginity..."
 → WHY NOT A STORY: Legal rule (prescriptive), hypothetical scenarios throughout,
   no specific named individuals in an actual event, conditional "if X then Y" logic.
+
+NOT A STORY (Ketubot 3a):
+"If a man said to agents: Give this bill of divorce to my wife if I do not return
+within thirty days, and he wanted to come but was prevented..."
+→ WHY NOT A STORY: Hypothetical case construction, legal reasoning about theoretical
+  scenarios, no actual event being described.
+
+NOT A STORY (Ketubot 3b):
+Discussion about marriage practices and timing, with hypothetical scenarios about
+when and how marriages can be conducted under different circumstances.
+→ WHY NOT A STORY: Not descriptive of a specific one-time event, lacks clear causality,
+  no specific character-driven narrative, primarily prescriptive legal analysis.
 
 === PRE-PROCESSED SEGMENTS WITH MARKERS ===
 {chr(10).join(segment_display)}
@@ -959,13 +986,124 @@ Page: {ref}
             json_start = content.find('{')
             json_end = content.rfind('}') + 1
             if json_start >= 0 and json_end > json_start:
-                return json.loads(content[json_start:json_end])
+                result = json.loads(content[json_start:json_end])
+
+                # Run self-check on identified stories
+                if result.get('stories'):
+                    print(f"  Running self-check on {len(result['stories'])} stories...")
+                    original_count = len(result['stories'])
+                    result['stories'] = self._run_self_check(ref, result['stories'], processed_segments)
+                    filtered_count = len(result['stories'])
+                    if filtered_count < original_count:
+                        print(f"  Self-check filtered: {original_count} → {filtered_count} stories")
+
+                return result
 
             return {"page_analysis": "Could not parse response", "stories": []}
 
         except Exception as e:
             print(f"  Error analyzing segments: {e}")
             return {"page_analysis": f"Error: {e}", "stories": []}
+
+    def _run_self_check(self, ref: str, stories: List[Dict], segments: List[Dict]) -> List[Dict]:
+        """
+        Run AI self-validation on identified stories.
+        Returns filtered list of stories that pass self-check.
+        """
+        if not stories:
+            return []
+
+        # Build self-check prompt
+        story_descriptions = []
+        for i, story in enumerate(stories):
+            start = story.get('start_segment', 0)
+            end = story.get('end_segment', 0)
+
+            story_text = ""
+            for seg in segments:
+                if seg['index'] >= start and seg['index'] <= end:
+                    story_text += seg.get('english', '')[:200] + "... "
+
+            story_descriptions.append(f"""
+CANDIDATE {i+1}: Segments {start}-{end}
+Type: {story.get('story_type', 'unknown')}
+Summary: {story.get('one_sentence_summary', 'N/A')}
+AI Reasoning: {story.get('why_this_is_a_story', 'N/A')}
+Text Preview: {story_text[:400]}...
+""")
+
+        prompt = f"""You previously identified the following as stories from {ref}.
+Now critically evaluate EACH ONE. Ask yourself:
+
+SELF-CHECK CRITERIA:
+1. Does it have SPECIFIC NAMED CHARACTERS in a REAL EVENT (not hypothetical)?
+2. Does it have TRUE TEMPORAL PROGRESSION (events happening in sequence)?
+3. Does it have a CAUSAL CHAIN (Event A → Event B → Outcome)?
+4. Is it DESCRIPTIVE of what DID happen (not what SHOULD happen legally)?
+5. Is there a CHANGE or OUTCOME at the end?
+
+COMMON FALSE POSITIVES TO REJECT:
+- Legal discussions with dialogue (rabbis debating law is NOT a story)
+- Hypothetical cases ("If X were to do Y...")
+- General practices described ("He would always do X" without specific incident)
+- Mishna or legal rulings
+
+{chr(10).join(story_descriptions)}
+
+For EACH candidate, respond with JSON:
+{{
+  "validations": [
+    {{
+      "candidate": 1,
+      "passes_self_check": true/false,
+      "critical_issue": "If false, explain what disqualifies it"
+    }}
+  ]
+}}
+"""
+
+        try:
+            if self.provider == "google":
+                content = self._call_google(prompt)
+            else:
+                content = self._call_anthropic(prompt)
+
+            # Parse JSON
+            if '```json' in content:
+                content = content.split('```json')[1].split('```')[0]
+            elif '```' in content:
+                parts = content.split('```')
+                if len(parts) >= 2:
+                    content = parts[1]
+
+            json_start = content.find('{')
+            json_end = content.rfind('}') + 1
+            if json_start >= 0 and json_end > json_start:
+                result = json.loads(content[json_start:json_end])
+                validations = result.get('validations', [])
+
+                # Filter stories based on self-check
+                filtered_stories = []
+                for i, story in enumerate(stories):
+                    validation = next((v for v in validations if v.get('candidate') == i + 1), None)
+                    if validation:
+                        if validation.get('passes_self_check', True):
+                            story['self_check_passed'] = True
+                            filtered_stories.append(story)
+                        else:
+                            print(f"    Self-check REJECTED: {validation.get('critical_issue', 'Unknown reason')}")
+                    else:
+                        # If no validation found, keep the story
+                        filtered_stories.append(story)
+
+                return filtered_stories
+
+        except Exception as e:
+            print(f"  Self-check error: {e}")
+            # On error, return original stories
+            return stories
+
+        return stories
 
 
 class SefariaStoryFinder:
