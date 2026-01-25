@@ -453,7 +453,7 @@ class CategoricalStoryClassifier:
             self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
             if self.api_key and GOOGLE_AI_AVAILABLE:
                 genai.configure(api_key=self.api_key)
-                self.model = genai.GenerativeModel("gemini-2.0-flash-exp")
+                self.model = genai.GenerativeModel("gemini-2.0-flash")  # Regular model (not -exp) for higher rate limits
                 print(f"✓ Gemini API configured")
             else:
                 self.model = None
@@ -935,7 +935,7 @@ def analyze_tractate_v5(tractate: str, start_page: int = 2, end_page: int = 10):
             }
             results['pages'].append(page_result)
 
-            time.sleep(0.5)  # Rate limiting
+            time.sleep(1)  # Rate limiting: Testing regular gemini-2.0-flash (not -exp) - may have higher limits
 
     # Print summary
     print("\n" + "=" * 70)
@@ -960,6 +960,18 @@ def save_results(results: Dict, filename: str):
 
 
 if __name__ == "__main__":
-    # Test on pages 2-10 to get variety of story types
-    results = analyze_tractate_v5("Ketubot", start_page=2, end_page=10)
-    save_results(results, "ketubot_v5.1_test.json")
+    import sys
+
+    # Check if start/end page provided as arguments
+    if len(sys.argv) >= 3:
+        start_page = int(sys.argv[1])
+        end_page = int(sys.argv[2])
+        filename = f"ketubot_v5.1_full_validation_{start_page}-{end_page}.json"
+    else:
+        # Default: Test on pages 2-10 to get variety of story types
+        start_page = 2
+        end_page = 10
+        filename = "ketubot_v5.1_test.json"
+
+    results = analyze_tractate_v5("Ketubot", start_page=start_page, end_page=end_page)
+    save_results(results, filename)
