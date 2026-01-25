@@ -60,7 +60,9 @@
         @media (max-width: 1024px) { .text-container { grid-template-columns: 1fr; } }
         .text-section h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
         .text-content { padding: 15px; background: #f8f9fa; border-radius: 8px; line-height: 1.8; font-size: 15px; max-height: 400px; overflow-y: auto; }
+        .text-content div { margin: 5px 0; }
         .hebrew { direction: rtl; text-align: right; font-family: 'Times New Roman', serif; font-size: 18px; }
+        .story-text { background: #fff3cd; padding: 8px; border-left: 3px solid #f39c12; margin: 5px 0; }
 
         /* Criteria breakdown */
         .criteria-breakdown { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
@@ -15337,6 +15339,34 @@
             });
         });
 
+        function getStoryText(story) {
+            // Extract text segments for this story
+            const start = story.start_segment;
+            const end = story.end_segment;
+            const segments = story.page_segments || [];
+
+            let englishParts = [];
+            let hebrewParts = [];
+
+            for (let i = 0; i < segments.length; i++) {
+                const seg = segments[i];
+                const isStorySegment = i >= start && i <= end;
+                const className = isStorySegment ? 'story-text' : '';
+
+                if (seg.english) {
+                    englishParts.push(`<div class="${className}">${seg.english}</div>`);
+                }
+                if (seg.hebrew) {
+                    hebrewParts.push(`<div class="${className}">${seg.hebrew}</div>`);
+                }
+            }
+
+            return {
+                english: englishParts.join(''),
+                hebrew: hebrewParts.join('')
+            };
+        }
+
         function renderStats() {
             const yes = allStories.filter(s => s.classification === 'YES').length;
             const high = allStories.filter(s => s.classification === 'HIGH_CONFIDENCE').length;
@@ -15358,6 +15388,7 @@
             const criteria = story.criteria || {};
             const disqs = story.disqualifiers_found || [];
             const weaks = story.weakeners_found || [];
+            const texts = getStoryText(story);
 
             let html = `
                 <div class="story-card class-${story.classification}">
@@ -15369,6 +15400,17 @@
                         </div>
                     </div>
                     <div class="story-content">
+                        <div class="text-container">
+                            <div class="text-section">
+                                <h3>English Translation</h3>
+                                <div class="text-content">${texts.english}</div>
+                            </div>
+                            <div class="text-section">
+                                <h3>Hebrew/Aramaic Original</h3>
+                                <div class="text-content hebrew">${texts.hebrew}</div>
+                            </div>
+                        </div>
+
                         ${story.one_sentence_summary ? `<div class="summary">${story.one_sentence_summary}</div>` : ''}
 
                         <div class="criteria-breakdown">
