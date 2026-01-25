@@ -46,9 +46,22 @@ When flattening stories, MUST copy: page_segments: page.segments
 - Claim "fixed" without testing
 - Re-read large files multiple times
 
+## Project Structure
+```
+src/                          # Core detection code
+results/ketubot/v5/           # Analysis output (text in segments)
+validation/ui/                # HTML validation interfaces
+validation/generators/        # Scripts to generate UIs
+validation/feedback/          # Expert feedback JSONs
+docs/                         # All documentation
+tests/v5_categorical/         # Current version tests
+archive/                      # Old versions (reference only)
+```
+
 ## Key Files
 | File | Purpose |
 |------|---------|
-| `results/v5/*.json` | Analysis output (text in segments) |
-| `generate_*_review_ui.py` | UI generators |
-| `*_review_ui*.html` | Validation UIs |
+| `src/story_detector_v5.py` | Main detection script |
+| `results/ketubot/v5/pages_*.json` | Analysis output |
+| `validation/generators/generate_review_ui.py` | UI generator |
+| `validation/ui/ketubot_*.html` | Validation UIs |
