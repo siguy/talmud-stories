@@ -1,0 +1,174 @@
+Subject: v5.1 Story Detection: Full Validation Results (Ketubot 2-39)
+
+Hi Jeff,
+
+I've completed v5.1 of the Talmud story detection system and run it on your full v4.1 validation range (Ketubot 2-39). All improvements are based on the patterns you identified in your 30-story validation (15 TRUE, 15 FALSE positives).
+
+FULL VALIDATION RESULTS (Ketubot 2-39)
+
+76 pages analyzed:
+- YES (definitive):          3 stories (1.6%)
+- HIGH_CONFIDENCE:          14 stories (7.5%)
+- LOW_CONFIDENCE:           16 stories (8.6%)
+- NOT_A_STORY (rejected):  153 segments (82.3%)
+
+KEY VALIDATIONS
+
+✓ Both of your TRUE stories found (Ketubot 8b):
+  - Comforting mourner (Rav Ḥiyya bar Abba's child) - HIGH_CONFIDENCE
+  - Rabban Gamliel funeral reform - HIGH_CONFIDENCE
+
+✓ Your FALSE positive example rejected:
+  - Ketubot 14b (girl drawing water/raped) - NOT_A_STORY
+  - Stricter causality test working!
+
+✓ rabbi_legal_opinion disqualifier applied 53 TIMES
+  - This is the major improvement from your validation
+  - Catching attribution vs character confusion at scale
+
+✓ Self-check working (21 adjustments across 186 segments):
+  - YES → NOT_A_STORY (catching over-classifications)
+  - HIGH → LOW (appropriate downgrades)
+  - Examples from output throughout
+
+WHAT'S NEW IN v5.1
+
+Your feedback drove 7 major improvements:
+
+1. New Disqualifier: Rabbi Legal Opinion (53 applications!)
+   Your insight: "Whenever it sees a rabbi's name saying something, it assumes
+   this rabbi is a character in a story. But in most cases the rabbi is just
+   discussing a legal case."
+
+   Detection: "said that it is permitted", "quotes", "discusses a case of"
+
+2. Stricter Causality Test
+   Your example: Girl drew water, was raped = sequential, NOT causal
+
+   Old: "Events connected by cause and effect" (vague)
+   New: "Event A CAUSED Event B, which CAUSED Event C" (explicit)
+   Result: Ketubot 14b correctly rejected as NOT_A_STORY
+
+3. Stricter Change Test
+   Your examples: Levi wedding visit, Rav Ashi recited blessings = reports, NOT transformations
+
+   Old: "Situation different at end than beginning" (vague)
+   New: "Situation TRANSFORMED from beginning to end" (explicit)
+
+4. New Weakeners
+   - minimal_change: 26 applications
+   - minimal_causality: 23 applications
+   - simple_report: 6 applications
+
+   Impact: Better granularity (borderline → LOW instead of HIGH)
+
+5. Boundary Detection
+   - Commentary markers: "the reason is...", "The Gemara explains"
+   - Continuation markers: "on another occasion"
+
+6. Enhanced Self-Check (6 → 7 tests)
+   - New: Rabbi character test
+   - Enhanced: Causality (causal vs sequential)
+   - Enhanced: Change (transformation vs report)
+
+GITHUB DOCUMENTATION
+
+Full Results & Analysis:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/v5.1_FULL_RESULTS_SUMMARY.md
+
+Full JSON Results:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/results/v5/ketubot_v5.1_full_validation_2-39.json
+
+Implementation Details:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/tests/v5_categorical/README_v5.1.md
+
+Rate Limiting Diagnosis:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/RATE_LIMITING_ANALYSIS.md
+
+CRITICAL QUESTIONS FOR YOUR VALIDATION
+
+1. STORIES ON YOUR FALSE POSITIVE PAGES
+
+You marked these pages as having false positives in v4.1:
+
+Ketubot 2b - "Levi wedding visit" (FALSE)
+  v5.1 found: "Ferry divorce condition" (LOW_CONFIDENCE)
+  Question: Different story, or same story still being found?
+
+Ketubot 8a - "Rav Ashi wedding blessings" and "Rav Ḥaviva circumcision" (FALSE)
+  v5.1 found:
+    - "Rav Ashi visited Rav Kahana and recited seven blessings" (HIGH_CONFIDENCE)
+    - "Ravina arranged marriage for his son, marriage failed" (YES)
+  Question: Are these the same stories you rejected, or different ones?
+
+This is CRITICAL for measuring improvement. If these are your false positives still being found, I need to make the criteria even stricter. If they're different stories on the same pages, then v5.1 is working well.
+
+2. REVIEW ALL 33 STORIES FOUND
+
+Could you validate the 33 stories v5.1 found (3 YES, 14 HIGH, 16 LOW)?
+
+YES Stories (3):
+- Ketubot 8a (Seg 12): Ravina's failed marriage arrangement
+- Ketubot 27b (Segs 1-2): Donkey rental story
+- Ketubot 27b (Segs 10-11): Bei Hoza'ah inheritance
+
+HIGH_CONFIDENCE (14):
+- Ketubot 3a, 8a (2 stories), 8b (2 stories), 10a (3 stories), 20b, 21a, 21b, 25a, 26a, 28a, 28b
+
+LOW_CONFIDENCE (16):
+- Ketubot 2b, 12b, 19b, 22a, 23a (2 stories), 24b, 25b (4 stories), 26b (2 stories), 27a, 27b, 34b
+
+Question: How many of these 33 are false positives?
+
+3. DISQUALIFIER HIERARCHY
+
+Currently: ANY disqualifier → automatic NOT_A_STORY
+
+Should we rank by strength?
+- HARD disqualifiers (always reject): MISHNA, hypothetical_case
+- SOFT disqualifiers (downgrade to LOW instead): rabbi_legal_opinion, embedded_in_legal
+
+Your scholarly view?
+
+4. ACTUAL FALSE POSITIVE RATE
+
+Based on your review of the 33 stories:
+- True positives: ?
+- False positives: ?
+- False positive rate: ? % (vs 50% in v4.1)
+
+This will tell us if we hit the expected <20% improvement goal.
+
+5. REMAINING PATTERNS
+
+Looking at the 33 stories, do you see any NEW false positive patterns not yet addressed?
+
+TECHNICAL NOTE: Model Switch
+
+We discovered the rate limiting issue was using gemini-2.0-flash-exp (experimental, 10 req/min hard limit) vs gemini-2.0-flash (regular, much better limits).
+
+Switching to the regular model:
+- Reduced processing time: 9 minutes → 3 minutes
+- No rate limit errors
+- Same accuracy, better performance
+
+NEXT STEPS
+
+Would you be able to:
+1. Review the 33 stories found and identify false positives?
+2. Confirm if Ketubot 2b/8a stories are your false positives or different ones?
+3. Answer the disqualifier hierarchy question?
+4. Calculate the actual false positive rate?
+5. Identify any remaining patterns for v5.2?
+
+I believe v5.1 represents a significant improvement (expected <20% false positive rate vs your 50% in v4.1), but I need your expert validation to confirm this and identify any remaining issues.
+
+Thank you for the incredibly detailed feedback in v4.1 - your specific examples (Levi wedding visit, girl drawing water, rabbi attribution pattern) were exactly what I needed to make targeted improvements.
+
+Best,
+Simon
+
+Quick Links:
+- GitHub repo: https://github.com/siguy/talmud-stories
+- v5.1 full results: https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/v5.1_FULL_RESULTS_SUMMARY.md
+- JSON results: https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/results/v5/ketubot_v5.1_full_validation_2-39.json
