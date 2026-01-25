@@ -9391,15 +9391,19 @@
         });
 
         function getStoryText(story) {
-            // Extract text segments for this story
+            // Extract text segments for this story (with 1 segment before/after for context)
             const start = story.start_segment;
             const end = story.end_segment;
             const segments = story.page_segments || [];
 
+            // Show 1 segment before and 1 segment after for context
+            const contextStart = Math.max(0, start - 1);
+            const contextEnd = Math.min(segments.length - 1, end + 1);
+
             let englishParts = [];
             let hebrewParts = [];
 
-            for (let i = 0; i < segments.length; i++) {
+            for (let i = contextStart; i <= contextEnd; i++) {
                 const seg = segments[i];
                 const isStorySegment = i >= start && i <= end;
                 const className = isStorySegment ? 'story-text' : '';
