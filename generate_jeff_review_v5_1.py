@@ -232,6 +232,7 @@ def generate_html(v5_1_data, jeff_data, output_file):
                     allStories.push({{
                         ...story,
                         page_ref: page.ref,
+                        page_segments: page.segments,
                         storyId: `${{page.ref}}_${{story.start_segment}}-${{story.end_segment}}`,
                         jeffData: jeffLookup[page.ref] || null
                     }});
