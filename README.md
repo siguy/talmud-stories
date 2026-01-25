@@ -6,12 +6,80 @@ Unlike keyword-based approaches, this uses semantic understanding through AI (Go
 
 ## Latest Results
 
-**Tractate Ketubot Analysis (January 2026):**
-- **258 stories identified** with 95.2% average confidence
+**v5.1 Categorical Classification (January 2026):**
+- **Validation-driven improvements** based on expert feedback from Jeffrey Rubenstein
+- New categorical system: YES, HIGH_CONFIDENCE, LOW_CONFIDENCE, NOT_A_STORY
+- Stricter criteria addressing 50% false positive rate in v4.1
+- Test results (Ketubot 2-10): 3 HIGH_CONFIDENCE, 6 LOW_CONFIDENCE, 27 NOT_A_STORY
+- Documentation: [v5.1_test_summary.md](v5.1_test_summary.md) | [v5.1_validation_report.md](v5.1_validation_report.md)
+- Code: [tests/v5_categorical/](tests/v5_categorical/)
+
+**Previous Analysis - Tractate Ketubot (v3):**
+- 258 stories identified with 95.2% average confidence
 - 118 full narratives, 94 brief anecdotes, 46 dialogue vignettes
-- 63 multi-page stories detected (spanning consecutive pages)
-- Results: [ketubot_stories.json](ketubot_stories.json)
 - Review interface: [jeff_review.html](jeff_review.html)
+
+## Version History & Evolution
+
+This project has evolved through iterative validation with Talmud scholar Jeffrey Rubenstein:
+
+### v5.1 (Current) - Categorical Classification with Validation-Driven Improvements
+**Focus:** Address false positive patterns identified in expert validation
+
+**Key Changes:**
+- **Categorical confidence:** YES, HIGH_CONFIDENCE, LOW_CONFIDENCE, NOT_A_STORY (replacing 0-100% scores)
+- **New disqualifier:** `rabbi_legal_opinion` - catches rabbi attribution vs character confusion
+- **Stricter causality:** "Event A CAUSED Event B, which CAUSED Event C" (not just sequential)
+- **Stricter change:** "Situation TRANSFORMED" (not just action reports)
+- **New weakeners:** `simple_report`, `minimal_causality`, `minimal_change`
+- **Boundary detection:** Talmud commentary markers, continuation markers
+- **Enhanced self-check:** 7 domain-specific validation questions
+
+**Impact:** Expected false positive rate reduction from ~50% → <20%
+
+**Documentation:**
+- [v5.1_test_summary.md](v5.1_test_summary.md) - Executive summary
+- [v5.1_validation_report.md](v5.1_validation_report.md) - Detailed pattern analysis
+- [tests/v5_categorical/README_v5.1.md](tests/v5_categorical/README_v5.1.md) - Implementation details
+
+### v5.0 - Categorical Classification System
+**Focus:** Replace percentage-based confidence with actionable categories
+
+**Changes:**
+- Introduced YES/HIGH/LOW/NOT_A_STORY classification
+- Self-check mechanism with 6 validation questions
+- Enhanced disqualifiers and weakeners
+
+### v4.1 - Expert Validation Phase
+**Focus:** Expert validation by Jeffrey Rubenstein
+
+**Results:**
+- 30 stories validated (15 TRUE, 15 FALSE positives)
+- Identified key false positive patterns:
+  - Rabbi legal opinions mistaken as story characters
+  - Sequential events without causal connection
+  - Simple reports without transformation
+  - Boundary detection issues
+
+### v4 - Segment-Based Detection
+**Focus:** Preserve Sefaria's aligned segment structure
+
+**Changes:**
+- Segment-level story boundaries
+- Multi-segment story grouping
+- Hebrew/Aramaic marker detection
+- Continuation chain detection
+
+### v3 - Full Tractate Analysis
+**Focus:** Comprehensive Ketubot analysis
+
+**Results:** 258 stories identified, validation UI created
+
+### v2 - Bilingual Analysis
+**Focus:** Hebrew/Aramaic + English analysis
+
+### v1 - Initial Prototype
+**Focus:** English-only semantic detection
 
 ## Setup
 
