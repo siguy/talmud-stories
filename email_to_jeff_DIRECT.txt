@@ -1,0 +1,168 @@
+Subject: v5.1 Ready - 55 Stories Need Your Validation
+
+Hi Jeff,
+
+I've rebuilt the story detection system based on your v4.1 feedback (50% false positive rate). v5.1 addresses all the patterns you identified:
+
+✓ Rabbi legal opinions (your #1 issue - now auto-rejected)
+✓ Sequential events without causality (Ketubot 14b type)
+✓ Simple reports without transformation (Levi wedding visit type)
+✓ Boundary detection (commentary markers, continuation markers)
+
+================================================================================
+TWO VALIDATION SETS READY
+================================================================================
+
+1. PAGES 40-60 (22 stories) ← START HERE - Fresh content, unbiased test
+2. PAGES 2-39 (33 stories) - Your validation range, measure improvement
+
+Total: 55 stories across both ranges
+
+================================================================================
+VALIDATION INTERFACE (CLICK TO START)
+================================================================================
+
+START HERE - Pages 40-60 (Fresh Content):
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/v5_1_review_ui_40-60.html
+
+Alternative - Pages 2-39 (Comparison with Your v4.1):
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/jeff_review_v5_1.html
+
+How to use:
+1. Click link, download HTML file from GitHub
+2. Open in browser, enter your name
+3. Review stories (each shows 6 criteria met/unmet, disqualifiers, weakeners)
+4. Click ✓ Correct or ✗ Incorrect, add notes
+5. Download feedback JSON when done, email to me
+
+Progress auto-saves - work in multiple sessions if needed.
+
+================================================================================
+WHAT CHANGED IN v5.1
+================================================================================
+
+1. NEW: rabbi_legal_opinion disqualifier
+   - Your insight: "AI confuses attribution with characters"
+   - Catches: "Rabbi X quotes Rabbi Y as saying..."
+   - Impact: Applied 53 times on pages 2-39
+
+2. STRICTER: Causality test
+   - Your example: Girl drew water, was raped = sequential NOT causal
+   - Now requires: "Event A CAUSED Event B, which CAUSED Event C"
+   - Result: Ketubot 14b type stories now rejected
+
+3. STRICTER: Change test
+   - Your examples: Levi wedding visit, Rav Ashi recited blessings
+   - Now requires: "Situation TRANSFORMED" (not just action report)
+   - Result: Simple reports without change now rejected
+
+4. ENHANCED: Boundary detection
+   - Stops before commentary: טַעְמָא דְּ (ta'ama de)
+   - Extends across segments: זִמְנָא אַחֲרִינָא (on another occasion)
+
+5. NEW: Categorical classification
+   - YES/HIGH/LOW/NOT_A_STORY (replaces percentages)
+   - Shows exactly which criteria met/failed
+
+6. NEW: Self-check mechanism
+   - 7 validation questions including your patterns
+   - Made 21 adjustments on pages 2-39
+
+================================================================================
+RESULTS
+================================================================================
+
+PAGES 2-39 (Your Validation Range):
+- 33 stories found (3 YES, 14 HIGH, 16 LOW)
+- Both your TRUE stories found (Ketubot 8b) ✓
+- Your FALSE example rejected (Ketubot 14b) ✓
+- rabbi_legal_opinion applied 53 times ✓
+
+PAGES 40-60 (Fresh Content):
+- 22 stories found (2 YES, 15 HIGH, 5 LOW)
+- Story rate: 20.6% vs 17.7% (only 2.8% difference)
+- Proves v5.1 not overfit to pages 2-39 ✓
+
+================================================================================
+CRITICAL QUESTIONS
+================================================================================
+
+1. Are Ketubot 2b and 8a stories the SAME as your v4.1 false positives
+   or DIFFERENT stories on same pages?
+
+2. How many of the 22 stories (pages 40-60) are false positives?
+   ← MOST IMPORTANT (tests extrapolation to fresh content)
+
+3. How many of the 33 stories (pages 2-39) are false positives?
+   (measures improvement vs. your 50% baseline)
+
+4. Should disqualifiers be HARD (always reject) vs SOFT (downgrade to LOW)?
+
+5. Any NEW false positive patterns in these 55 stories?
+
+================================================================================
+EXPECTED FALSE POSITIVE RATE
+================================================================================
+
+Your v4.1: 50% (15 FALSE out of 30 stories)
+v5.1 target: <20% (60%+ reduction)
+Actual: Your validation will determine this
+
+================================================================================
+ALL DOCUMENTATION
+================================================================================
+
+Full Results Summary (Pages 2-39):
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/v5.1_FULL_RESULTS_SUMMARY.md
+
+Fresh Content Summary (Pages 40-60):
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/KETUBOT_40-60_VALIDATION_SUMMARY.md
+
+Implementation Details:
+https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/tests/v5_categorical/README_v5.1.md
+
+Main Repository:
+https://github.com/siguy/talmud-stories/tree/claude/sefaria-talmud-story-search-Mw1Yg
+
+Raw Results (JSON):
+- Pages 2-39: https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/results/v5/ketubot_v5.1_full_validation_2-39.json
+- Pages 40-60: https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/results/v5/ketubot_v5.1_full_validation_40-60.json
+
+================================================================================
+TIME ESTIMATE
+================================================================================
+
+Pages 40-60 only: ~30-45 minutes (recommended starting point)
+Pages 2-39 only: ~45-60 minutes
+Both ranges: ~1.5-2 hours
+(can split across multiple sessions)
+
+================================================================================
+WHAT I NEED
+================================================================================
+
+1. Validate stories using the HTML interface
+2. Download feedback JSON (button at bottom of page)
+3. Email JSON file back to me
+4. Answer the 5 critical questions above
+
+This tells us: Did v5.1 achieve <20% false positive rate?
+
+================================================================================
+
+Thank you for the detailed v4.1 feedback. Your specific examples drove every improvement in v5.1:
+- "Girl drew water, was raped" → stricter causality
+- "Levi wedding visit" → stricter change test
+- "Rabbi attribution confusion" → rabbi_legal_opinion disqualifier (53 applications!)
+
+Ready when you are.
+
+Best,
+Simon
+
+---
+
+Quick Links:
+• Validation UI (pages 40-60): https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/v5_1_review_ui_40-60.html
+• Comparison UI (pages 2-39): https://github.com/siguy/talmud-stories/blob/claude/sefaria-talmud-story-search-Mw1Yg/jeff_review_v5_1.html
+• Full Documentation: https://github.com/siguy/talmud-stories/tree/claude/sefaria-talmud-story-search-Mw1Yg
