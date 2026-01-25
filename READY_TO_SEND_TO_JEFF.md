@@ -1,7 +1,31 @@
 # Ready to Send to Jeff - Complete Package
 
 **Date:** 2026-01-25
-**Status:** ✅ All validation UIs created, both email versions ready
+**Status:** ✅ All validation UIs FIXED and ready, email versions ready
+**Last Update:** Fixed critical missing text display bug in all UIs
+
+---
+
+## 🔧 Critical Fix Applied (2026-01-25)
+
+**ISSUE IDENTIFIED:** All three validation UIs were missing English/Hebrew text display
+- UIs only showed criteria, disqualifiers, and reasoning
+- Did NOT display the actual Talmud text segments
+- This was a critical regression from earlier UI versions
+
+**FIX APPLIED:**
+✅ Updated both generator scripts (generate_v5_1_review_ui.py and generate_jeff_review_v5_1.py)
+✅ Added getStoryText() JavaScript function to extract text segments
+✅ Added side-by-side English/Hebrew text display with story segments highlighted
+✅ Regenerated all three validation UIs with text display
+✅ Committed and pushed to GitHub
+
+**ALL UIs NOW SHOW:**
+- English translation (left side)
+- Hebrew/Aramaic original (right side)
+- Story segments highlighted with yellow background
+- Full page context (all segments visible)
+- All v5.1 diagnostic features (criteria, disqualifiers, weakeners, self-check)
 
 ---
 
@@ -30,27 +54,30 @@
 - Covers: Complete system architecture, all technical details, every improvement
 - Use case: Reference documentation
 
-### 🎨 Three Validation UIs
+### 🎨 Three Validation UIs (✅ TEXT DISPLAY FIXED)
 
 **1. Fresh Content Review (HIGHEST PRIORITY)**
-- File: `v5_1_review_ui_40-60.html`
+- File: `v5_1_review_ui_40-60.html` ✅ FIXED
 - Stories: 22 (pages 40-60)
 - Purpose: Unbiased validation on completely fresh content
 - Why important: Tests extrapolation, no discussion bias
 - Recommendation: Jeff should prioritize this
+- **NOW INCLUDES:** Side-by-side English/Hebrew text with highlighted story segments
 
 **2. Jeff's Comparison UI**
-- File: `jeff_review_v5_1.html`
+- File: `jeff_review_v5_1.html` ✅ FIXED
 - Stories: 33 (pages 2-39)
 - Purpose: Compare v5.1 with Jeff's v4.1 validations
 - Features: Highlights his previous TRUE/FALSE validations
 - Shows: What changed from v4.1 to v5.1
+- **NOW INCLUDES:** Full text display with all v5.1 features
 
 **3. General Review UI**
-- File: `v5_1_review_ui.html`
+- File: `v5_1_review_ui.html` ✅ FIXED
 - Stories: 33 (pages 2-39)
 - Purpose: General review interface
 - Features: Full diagnostic display
+- **NOW INCLUDES:** Complete text display with story segment highlighting
 
 ### 📊 Results & Analysis
 
