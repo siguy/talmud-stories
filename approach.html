@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Find Stories - Talmud Story Detection</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: white;
+        }
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: white; }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        section:nth-child(odd) {
+            background: white;
+        }
+        h2 {
+            color: #1e3a5f;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            color: #1e3a5f;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        /* Sefaria Box */
+        .sefaria-box {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+            border-radius: 1rem;
+            padding: 2rem;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .sefaria-logo {
+            font-size: 3rem;
+            background: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sefaria-content {
+            flex: 1;
+            min-width: 250px;
+        }
+        .sefaria-content h3 {
+            color: #065f46;
+            margin-bottom: 0.5rem;
+        }
+        .sefaria-content p {
+            color: #047857;
+            margin-bottom: 0.5rem;
+        }
+        .sefaria-content a {
+            color: #059669;
+            font-weight: 600;
+        }
+
+        /* Pipeline */
+        .pipeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .pipeline-step {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+            position: relative;
+        }
+        .pipeline-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -0.75rem;
+            top: 1.5rem;
+            color: #94a3b8;
+            font-size: 1.25rem;
+        }
+        .step-number {
+            background: #2563eb;
+            color: white;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+            font-weight: 700;
+        }
+        .step-name {
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 0.25rem;
+        }
+        .step-desc {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+
+        /* Pipeline Details */
+        .pipeline-details {
+            margin-top: 3rem;
+        }
+        .pipeline-detail {
+            background: #f1f5f9;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+        .detail-number {
+            background: #2563eb;
+            color: white;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .detail-content h4 {
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .detail-content p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        .hebrew-example {
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-top: 0.75rem;
+            font-family: 'SBL Hebrew', 'David', serif;
+            direction: rtl;
+            display: inline-block;
+        }
+
+        /* Criteria Grid */
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .criteria-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.2s;
+        }
+        .criteria-card:hover {
+            border-color: #2563eb;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .criteria-number {
+            background: #dbeafe;
+            color: #2563eb;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+        .criteria-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .criteria-card p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Filters */
+        .filter-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .filter-item {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+            padding: 1rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+        .filter-item h4 {
+            color: #dc2626;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+        }
+        .filter-item p {
+            color: #991b1b;
+            font-size: 0.85rem;
+            margin: 0;
+        }
+
+        /* Examples */
+        .example-box {
+            border-radius: 1rem;
+            padding: 2rem;
+            margin: 1.5rem 0;
+        }
+        .example-yes {
+            background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+            border: 2px solid #10b981;
+        }
+        .example-no {
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+            border: 2px solid #ef4444;
+        }
+        .example-label {
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .example-yes .example-label { color: #065f46; }
+        .example-no .example-label { color: #991b1b; }
+        .example-ref {
+            font-weight: 600;
+            color: #1e3a5f;
+            margin-bottom: 0.75rem;
+        }
+        .example-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .example-why {
+            font-size: 0.9rem;
+        }
+        .example-yes .example-why { color: #047857; }
+        .example-no .example-why { color: #dc2626; }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .pipeline-step:not(:last-child)::after { display: none; }
+            .pipeline { gap: 1rem; }
+            .pipeline-detail { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>How We Find Stories</h1>
+        <p>Our detection pipeline and the criteria that define a Talmudic narrative</p>
+    </header>
+
+    <!-- Sefaria Section -->
+    <section>
+        <div class="container">
+            <div class="sefaria-box">
+                <div class="sefaria-logo">📚</div>
+                <div class="sefaria-content">
+                    <h3>Built on Sefaria</h3>
+                    <p>This project uses text from <strong>Sefaria</strong>, the free online library of Jewish texts. Sefaria provides Hebrew and English translations aligned segment-by-segment—essential for our analysis.</p>
+                    <p>Without Sefaria's open API and dedication to making Jewish texts accessible, this project wouldn't be possible.</p>
+                    <a href="https://www.sefaria.org" target="_blank">Visit Sefaria.org →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section>
+        <div class="container">
+            <h2>How It Works: The 6-Step Pipeline</h2>
+            <p>Each Talmud page goes through this process to identify potential stories:</p>
+
+            <div class="pipeline">
+                <div class="pipeline-step">
+                    <div class="step-number">1</div>
+                    <div class="step-name">Fetch</div>
+                    <div class="step-desc">Get text from Sefaria</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">2</div>
+                    <div class="step-name">Detect</div>
+                    <div class="step-desc">Find Hebrew markers</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">3</div>
+                    <div class="step-name">Classify</div>
+                    <div class="step-desc">AI evaluates criteria</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">4</div>
+                    <div class="step-name">Filter</div>
+                    <div class="step-desc">Remove non-stories</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">5</div>
+                    <div class="step-name">Self-Check</div>
+                    <div class="step-desc">Validate findings</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">6</div>
+                    <div class="step-name">Output</div>
+                    <div class="step-desc">Categorize results</div>
+                </div>
+            </div>
+
+            <div class="pipeline-details">
+                <div class="pipeline-detail">
+                    <div class="detail-number">1</div>
+                    <div class="detail-content">
+                        <h4>Fetch Text from Sefaria</h4>
+                        <p>We retrieve each Talmud page with Hebrew and English text aligned side-by-side. This alignment lets us analyze both languages together.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">2</div>
+                    <div class="detail-content">
+                        <h4>Detect Hebrew Narrative Markers</h4>
+                        <p>We scan for Hebrew words that often signal stories:</p>
+                        <span class="hebrew-example">מעשה</span> <em>(ma'aseh - "an incident")</em><br>
+                        <span class="hebrew-example">יומא חד</span> <em>(yoma chad - "one day")</em><br>
+                        <span class="hebrew-example">פעם אחת</span> <em>(pa'am achat - "one time")</em>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">3</div>
+                    <div class="detail-content">
+                        <h4>AI Evaluates 6 Criteria</h4>
+                        <p>Google Gemini analyzes each passage against our six story criteria (detailed below). It checks for characters, events, causation, and more.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">4</div>
+                    <div class="detail-content">
+                        <h4>Apply Disqualifiers</h4>
+                        <p>We automatically filter out legal rulings, hypothetical cases, Mishnah sections, and habitual actions—things that look like stories but aren't.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">5</div>
+                    <div class="detail-content">
+                        <h4>Self-Check Validation</h4>
+                        <p>The AI asks itself 7 validation questions based on expert feedback. This catches false positives before human review.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">6</div>
+                    <div class="detail-content">
+                        <h4>Categorize the Result</h4>
+                        <p>Each finding is labeled: <strong style="color:#16a34a">YES</strong> (definite story), <strong style="color:#2563eb">HIGH</strong> (likely), <strong style="color:#ca8a04">LOW</strong> (needs review), or rejected.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 Criteria -->
+    <section>
+        <div class="container">
+            <h2>The 6 Story Criteria</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">For a passage to be classified as a story, it should meet most of these criteria:</p>
+
+            <div class="criteria-grid">
+                <div class="criteria-card">
+                    <div class="criteria-number">1</div>
+                    <h3>Named Characters</h3>
+                    <p>Specific people appear—usually named rabbis like "Rav Hisda" or "Rabbi Akiva," not just "someone" or "a person."</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-number">2</div>
+                    <h3>Multiple Events</h3>
+                    <p>More than one thing happens. A single action isn't a story—we need a sequence of events.</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-number">3</div>
+                    <h3>Cause and Effect</h3>
+                    <p>Events connect logically. One thing <em>causes</em> another—not just "A happened, then B happened."</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-number">4</div>
+                    <h3>Time Passes</h3>
+                    <p>There's a sense of before, during, and after. Time markers like "one day" or "eventually" signal this.</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-number">5</div>
+                    <h3>Actually Happened</h3>
+                    <p>The text describes what <em>did</em> happen, not what <em>should</em> happen or what <em>might</em> happen.</p>
+                </div>
+                <div class="criteria-card">
+                    <div class="criteria-number">6</div>
+                    <h3>Something Changes</h3>
+                    <p>The situation at the end differs from the beginning. There's a transformation, not just a report.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Filter Out -->
+    <section>
+        <div class="container">
+            <h2>What We Filter Out</h2>
+            <p>These patterns look like stories but aren't—we automatically remove them:</p>
+
+            <div class="filter-list">
+                <div class="filter-item">
+                    <h4>Legal Rulings</h4>
+                    <p>"Rabbi X said it is permitted to..." — stating law, not telling a story</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Hypothetical Cases</h4>
+                    <p>"If someone were to..." — not something that actually happened</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Habitual Actions</h4>
+                    <p>"He would always..." — regular practice, not a one-time event</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Mishnah Sections</h4>
+                    <p>Legal codifications marked with מתני׳ — not narrative</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Attribution Chains</h4>
+                    <p>"Rabbi X quotes Rabbi Y as saying..." — citing sources, not characters in action</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Simple Reports</h4>
+                    <p>"He visited and recited a blessing" — action without transformation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples -->
+    <section>
+        <div class="container">
+            <h2>Examples</h2>
+
+            <div class="example-box example-yes">
+                <div class="example-label">✓ This IS a Story</div>
+                <div class="example-ref">Ketubot 62b — The Death of Rav Reḥumi</div>
+                <p class="example-text">"Rav Reḥumi would study before Rava in Meḥoza. He was accustomed to come home every year on the eve of Yom Kippur. One day he was engrossed in the halakha. His wife was expecting him: Now he is coming, now he is coming. He did not come. She was distressed. A tear fell from her eye. He was sitting on the roof. The roof collapsed under him and he died."</p>
+                <p class="example-why"><strong>Why it's a story:</strong> Named character (Rav Reḥumi), multiple events in sequence, clear causation (engrossed → didn't return → wife distressed → tear → death), time passes ("one day"), describes what happened, and a dramatic transformation occurs.</p>
+            </div>
+
+            <div class="example-box example-no">
+                <div class="example-label">✗ This is NOT a Story</div>
+                <div class="example-ref">Ketubot 17a — Legal Opinion</div>
+                <p class="example-text">"Rabbi Shmuel bar Naḥmani quotes Rabbi Yonatan as saying it is permitted to look at the face of a bride."</p>
+                <p class="example-why"><strong>Why it's not a story:</strong> The rabbis appear only to attribute a legal ruling. There are no events, no causation, no transformation. This is legal citation, not narrative.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="index.html">← Home</a> · <a href="validation.html">How We Validate →</a></p>
+    </footer>
+</body>
+</html>

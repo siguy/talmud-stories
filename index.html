@@ -3,96 +3,463 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Talmud Story Detection - v4</title>
+    <title>Talmud Story Detection</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Hero */
+        .hero {
             background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
-            min-height: 100vh;
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        .hero .subtitle {
+            font-size: 1.25rem;
+            color: white;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 500;
+        }
+        .hero-visual {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 2rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
         }
+        .hero-box {
+            background: rgba(255,255,255,0.15);
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+        }
+        .hero-arrow {
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        /* Container */
         .container {
-            background: white;
-            border-radius: 1rem;
-            padding: 3rem;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
         }
-        h1 { color: #1e3a5f; margin-bottom: 0.5rem; }
-        .subtitle { color: #64748b; margin-bottom: 2rem; }
-        .card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        section:nth-child(even) {
+            background: white;
+        }
+        h2 {
+            color: #1e3a5f;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        h3 {
+            color: #1e3a5f;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
             margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        /* Why It Matters */
+        .goal-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+        .goal-box p {
+            color: #92400e;
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* Challenge Grid */
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .challenge-card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        .challenge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Stats */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2563eb;
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Navigation Cards */
+        .nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .nav-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 2rem;
             text-decoration: none;
-            display: block;
             transition: all 0.2s;
         }
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        .nav-card:hover {
             border-color: #2563eb;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
         }
-        .card h2 { color: #1e3a5f; font-size: 1.25rem; margin-bottom: 0.5rem; }
-        .card p { color: #64748b; font-size: 0.9rem; }
-        .badge {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 1rem;
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
+        .nav-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
         }
-        .stats {
-            display: flex;
+        .nav-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .nav-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Team Section */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #e2e8f0;
+            margin: 2rem 0;
         }
-        .stat { text-align: center; }
-        .stat-value { font-size: 2rem; font-weight: 700; color: #2563eb; }
-        .stat-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; }
+        .team-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .team-card h3 {
+            margin-bottom: 0.25rem;
+        }
+        .team-role {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .team-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .team-card li {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+        .team-card li::before {
+            content: "•";
+            color: #2563eb;
+            position: absolute;
+            left: 0;
+        }
+        .book-list {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .book-list h4 {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .book-list li {
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Powered By */
+        .powered-by {
+            background: #1e3a5f;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .powered-by h2 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .partners {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .partner {
+            text-align: center;
+        }
+        .partner-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+        .partner-desc {
+            font-size: 0.875rem;
+            opacity: 0.8;
+        }
+        .partner a {
+            color: #93c5fd;
+            text-decoration: none;
+        }
+        .partner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .hero h1 { font-size: 1.75rem; }
+            .hero .subtitle { font-size: 1rem; }
+            section { padding: 2.5rem 0; }
+            h2 { font-size: 1.5rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Talmud Story Detection</h1>
-        <p class="subtitle">AI-powered narrative identification in Tractate Ketubot</p>
+    <!-- Hero -->
+    <header class="hero">
+        <h1>Finding Stories in the Talmud</h1>
+        <p class="subtitle">Using AI to identify narrative passages in the Babylonian Talmud</p>
 
-        <a href="validation_embedded.html" class="card">
-            <h2>Full Validation Interface</h2>
-            <p>Detailed view with side-by-side Hebrew/English text, segment boundaries, and AI reasoning. Best for thorough review.</p>
-            <span class="badge">Recommended for detailed review</span>
-        </a>
+        <div class="hero-visual">
+            <div class="hero-box">Talmud Text</div>
+            <span class="hero-arrow">→</span>
+            <div class="hero-box">AI Analysis</div>
+            <span class="hero-arrow">→</span>
+            <div class="hero-box">Identified Stories</div>
+        </div>
+    </header>
 
-        <a href="batch_review_embedded.html" class="card">
-            <h2>Quick Batch Review</h2>
-            <p>Streamlined interface for rapid validation. Keyboard shortcuts (Y/N/S) for fast feedback.</p>
-            <span class="badge">Best for quick validation</span>
-        </a>
+    <!-- Why This Matters -->
+    <section>
+        <div class="container">
+            <h2>Why This Matters</h2>
+            <p>The Babylonian Talmud is filled with stories—narratives about rabbis, their lives, their teachings, and the world around them. These stories are woven throughout the Talmud's legal discussions and are treasures of Jewish literature.</p>
+            <p>But there's a problem: these stories are scattered throughout the Talmud with no index. They appear without warning between legal debates, sometimes just a few sentences, sometimes spanning pages. Scholars spend years learning to recognize them.</p>
 
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-value">76</div>
-                <div class="stat-label">Pages Analyzed</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">30</div>
-                <div class="stat-label">Stories Found</div>
-            </div>
-            <div class="stat">
-                <div class="stat-value">69%</div>
-                <div class="stat-label">Avg Confidence</div>
+            <div class="goal-box">
+                <p><strong>Our Goal:</strong> Create the first comprehensive catalog of narrative stories in the Talmud, making them accessible to scholars, students, and curious readers everywhere.</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- The Challenge -->
+    <section>
+        <div class="container">
+            <h2>The Challenge</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Finding stories in the Talmud isn't a simple search problem. Here's why:</p>
+
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <div class="challenge-icon">🔍</div>
+                    <h3>No Clear Markers</h3>
+                    <p>Stories don't announce themselves. The same Hebrew words appear in both legal and narrative contexts.</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-icon">📏</div>
+                    <h3>Variable Length</h3>
+                    <p>Stories range from two sentences to multiple pages, with no standard format.</p>
+                </div>
+                <div class="challenge-card">
+                    <div class="challenge-icon">⚖️</div>
+                    <h3>Mixed Content</h3>
+                    <p>Narratives are interwoven with legal discussions, often mid-paragraph.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Progress -->
+    <section>
+        <div class="container">
+            <h2>Current Progress</h2>
+            <p style="text-align: center;">We're starting with Tractate Ketubot and expanding from there.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">76</div>
+                    <div class="stat-label">Pages Analyzed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">55</div>
+                    <div class="stat-label">Stories Found</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Confirmed Stories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">1</div>
+                    <div class="stat-label">Tractate Complete</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section>
+        <div class="container">
+            <h2>Learn More</h2>
+
+            <div class="nav-grid">
+                <a href="approach.html" class="nav-card">
+                    <div class="nav-icon">🔬</div>
+                    <h3>How We Find Stories</h3>
+                    <p>Our 6-step detection pipeline and the criteria that define a Talmudic narrative.</p>
+                </a>
+                <a href="validation.html" class="nav-card">
+                    <div class="nav-icon">✓</div>
+                    <h3>How We Validate</h3>
+                    <p>Expert scholars review every finding. See how human judgment improves AI.</p>
+                </a>
+                <a href="history.html" class="nav-card">
+                    <div class="nav-icon">📚</div>
+                    <h3>Project History</h3>
+                    <p>From first prototype to current version—what we learned along the way.</p>
+                </a>
+                <a href="validation/ui/ketubot_2-39.html" class="nav-card">
+                    <div class="nav-icon">👁️</div>
+                    <h3>Review Stories</h3>
+                    <p>See the stories we've found with side-by-side Hebrew and English text.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team -->
+    <section>
+        <div class="container">
+            <h2>Project Team</h2>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <h3>Jeffrey L. Rubenstein, Ph.D.</h3>
+                    <div class="team-role">Scholarship & Validation</div>
+                    <ul>
+                        <li>Skirball Professor of Talmud and Rabbinic Literature, New York University</li>
+                        <li>One of the world's leading experts on Talmudic narratives</li>
+                        <li>His scholarship directly informs our detection criteria</li>
+                    </ul>
+                    <div class="book-list">
+                        <h4>Selected Works</h4>
+                        <ul>
+                            <li>Talmudic Stories: Narrative Art, Composition, and Culture (1999)</li>
+                            <li>The Culture of the Babylonian Talmud (2003)</li>
+                            <li>Stories of the Babylonian Talmud (2010)</li>
+                            <li>Rabbinic Stories (2002)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <h3>Simon B.</h3>
+                    <div class="team-role">Technical Development</div>
+                    <ul>
+                        <li>Not a software engineer, but plays one on TV (with Claude Code as co-star)</li>
+                        <li>Brought the curiosity; AI brought the code</li>
+                        <li>Proof that you don't need a CS degree to build something meaningful—just good questions and persistent debugging</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Powered By -->
+    <section class="powered-by">
+        <h2>Powered By</h2>
+        <div class="partners">
+            <div class="partner">
+                <div class="partner-name">Sefaria</div>
+                <div class="partner-desc">Text data from the free library of Jewish texts</div>
+                <a href="https://www.sefaria.org" target="_blank">sefaria.org</a>
+            </div>
+            <div class="partner">
+                <div class="partner-name">Google Gemini</div>
+                <div class="partner-desc">AI classification engine</div>
+                <a href="https://ai.google.dev" target="_blank">ai.google.dev</a>
+            </div>
+            <div class="partner">
+                <div class="partner-name">Anthropic Claude Code</div>
+                <div class="partner-desc">Development assistant</div>
+                <a href="https://claude.ai" target="_blank">claude.ai</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Talmud Story Detection Project · <a href="https://github.com/simonbrief/talmud-stories">View on GitHub</a></p>
+    </footer>
 </body>
 </html>

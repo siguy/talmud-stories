@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project History - Talmud Story Detection</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: white;
+        }
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: white; }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        section:nth-child(odd) {
+            background: white;
+        }
+        h2 {
+            color: #1e3a5f;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 0.5rem;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #2563eb, #1e3a5f);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 2rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -1.5rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            background: #2563eb;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #2563eb;
+        }
+        .timeline-item.milestone .timeline-dot {
+            width: 1.25rem;
+            height: 1.25rem;
+            background: #16a34a;
+            box-shadow: 0 0 0 3px #16a34a;
+        }
+        .timeline-content {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .timeline-item.milestone .timeline-content {
+            border-color: #16a34a;
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        }
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .timeline-version {
+            font-weight: 700;
+            color: #1e3a5f;
+            font-size: 1.1rem;
+        }
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #64748b;
+            background: #f1f5f9;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+        }
+        .timeline-title {
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-item.milestone .timeline-title {
+            color: #16a34a;
+        }
+        .timeline-desc {
+            color: #475569;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+        .timeline-lesson {
+            background: #fef3c7;
+            border-radius: 0.5rem;
+            padding: 0.75rem 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .timeline-lesson strong {
+            color: #92400e;
+        }
+        .timeline-lesson p {
+            color: #b45309;
+            margin: 0;
+        }
+
+        /* Quote */
+        .insight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+        .insight-box p {
+            color: #92400e;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .insight-box .attribution {
+            color: #b45309;
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* What's Next */
+        .next-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .next-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+        .next-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .next-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .next-card p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Stats comparison */
+        .stats-comparison {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .stats-box {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .stats-box.before {
+            border: 2px solid #ef4444;
+        }
+        .stats-box.after {
+            border: 2px solid #16a34a;
+        }
+        .stats-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+        .stats-box.before .stats-label { color: #dc2626; }
+        .stats-box.after .stats-label { color: #16a34a; }
+        .stats-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        .stats-box.before .stats-value { color: #ef4444; }
+        .stats-box.after .stats-value { color: #16a34a; }
+        .stats-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .stats-comparison { grid-template-columns: 1fr; }
+            .timeline { padding-left: 1.5rem; }
+            .timeline-item { padding-left: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>Project History</h1>
+        <p>From first prototype to expert-validated detection</p>
+    </header>
+
+    <!-- The Journey -->
+    <section>
+        <div class="container">
+            <h2>The Journey</h2>
+            <p>Building a system to detect Talmud stories wasn't straightforward. Each version taught us something new about what makes a story—and what doesn't.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 1</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Basic Detection</div>
+                        <p class="timeline-desc">Simple AI prompt asking "Is this a story?" for each page. Only found one story per page maximum.</p>
+                        <div class="timeline-lesson">
+                            <strong>Lesson:</strong>
+                            <p>Many pages have multiple stories. Need to detect them all.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 2</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Multi-Story Detection</div>
+                        <p class="timeline-desc">Enhanced to find multiple stories per page. Started tracking story boundaries.</p>
+                        <div class="timeline-lesson">
+                            <strong>Lesson:</strong>
+                            <p>Character offsets were unreliable. Boundaries often cut mid-sentence.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 3</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Text Anchors</div>
+                        <p class="timeline-desc">Used first/last words as boundary markers instead of character offsets.</p>
+                        <div class="timeline-lesson">
+                            <strong>Lesson:</strong>
+                            <p>Hebrew/English alignment was imperfect. Needed a better approach.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 4</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Segment-Based Detection</div>
+                        <p class="timeline-desc">Preserved Sefaria's segment structure—Hebrew and English perfectly aligned. Added Hebrew narrative markers.</p>
+                        <div class="timeline-lesson">
+                            <strong>Lesson:</strong>
+                            <p>Ready for expert validation to test real-world accuracy.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item milestone">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 4.1</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Expert Validation</div>
+                        <p class="timeline-desc">Jeffrey Rubenstein reviewed 30 stories. Results: 50% false positive rate. Identified specific patterns causing errors.</p>
+                        <div class="timeline-lesson">
+                            <strong>Key Finding:</strong>
+                            <p>AI confused legal attribution ("Rabbi X quotes Rabbi Y") with characters in a story.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 5.0</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Categorical Classification</div>
+                        <p class="timeline-desc">Replaced percentage scores with clear categories: YES, HIGH, LOW, NOT_A_STORY. Added 6 explicit criteria.</p>
+                        <div class="timeline-lesson">
+                            <strong>Improvement:</strong>
+                            <p>Clearer decisions help experts focus review on uncertain cases.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item milestone">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 5.1</span>
+                            <span class="timeline-date">January 2025</span>
+                        </div>
+                        <div class="timeline-title">Validation-Driven Improvements</div>
+                        <p class="timeline-desc">Addressed all false positive patterns from expert review. Added self-check mechanism. Stricter causality and transformation tests.</p>
+                        <div class="timeline-lesson">
+                            <strong>Current version</strong>
+                            <p>Now detecting with expert-informed criteria.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact of Validation -->
+    <section>
+        <div class="container">
+            <h2>Impact of Expert Validation</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Version 4.1's expert review transformed our approach:</p>
+
+            <div class="stats-comparison">
+                <div class="stats-box before">
+                    <div class="stats-label">Before Validation</div>
+                    <div class="stats-value">50%</div>
+                    <div class="stats-desc">False positive rate</div>
+                </div>
+                <div class="stats-box after">
+                    <div class="stats-label">After v5.1</div>
+                    <div class="stats-value">6</div>
+                    <div class="stats-desc">Specific criteria + self-check</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <p>"The AI was confusing attribution with characters. When it sees 'Rabbi X said that Rabbi Y said...', it thought there was a story with characters, but it's just legal attribution."</p>
+                <div class="attribution">— Key insight from Jeffrey Rubenstein's validation</div>
+            </div>
+
+            <p>This single insight led to a new disqualifier that caught 53 false positives in our test set. Expert validation doesn't just measure accuracy—it teaches the system to be better.</p>
+        </div>
+    </section>
+
+    <!-- What's Next -->
+    <section>
+        <div class="container">
+            <h2>What's Next</h2>
+
+            <div class="next-grid">
+                <div class="next-card">
+                    <div class="next-icon">📖</div>
+                    <h3>More Tractates</h3>
+                    <p>Expand beyond Ketubot to cover the entire Babylonian Talmud.</p>
+                </div>
+                <div class="next-card">
+                    <div class="next-icon">📊</div>
+                    <h3>Comprehensive Index</h3>
+                    <p>Build a searchable catalog of all Talmud stories for scholars and students.</p>
+                </div>
+                <div class="next-card">
+                    <div class="next-icon">🔄</div>
+                    <h3>Continuous Improvement</h3>
+                    <p>Each expert review makes the system smarter and more accurate.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="validation.html">← How We Validate</a> · <a href="index.html">Home</a></p>
+    </footer>
+</body>
+</html>

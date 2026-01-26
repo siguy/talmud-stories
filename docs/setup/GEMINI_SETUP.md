@@ -1,41 +1,29 @@
 # Google Gemini Setup Guide
 
-This guide explains how to use Google Gemini for Talmud story detection.
+This guide explains how to set up Google Gemini for Talmud story detection.
 
-## Quick Start (5 Steps)
+## Quick Start
 
 ```bash
 # 1. Install Google AI SDK
-pip install google-generativeai
+pip install google-genai
 
 # 2. Get API key from https://aistudio.google.com/app/apikey
 
 # 3. Set environment variable
 export GOOGLE_API_KEY='your-key-here'
 
-# 4. Run test analysis
-python3 test_multi_story.py
-
-# 5. Run full Ketubot analysis (258 stories found)
-python3 test_ketubot.py gemini 1
+# 4. Run detection
+cd src
+python3 story_detector_v5.py 2 39
 ```
 
----
-
-## Why Gemini?
-
-- **Lower cost**: Gemini Flash is significantly cheaper than Claude
-- **Speed**: Gemini 2.0 Flash is extremely fast
-- **High rate limits**: Google's free tier has generous limits
-- **Comparison**: Test different models to find the best results
-
-## Step-by-Step Setup
+## Setup Steps
 
 ### 1. Install Google AI SDK
 
 ```bash
-cd ~/talmud-stories
-pip install google-generativeai
+pip install google-genai
 ```
 
 Or install from requirements:
@@ -61,221 +49,55 @@ export GOOGLE_API_KEY='your-google-api-key-here'
 echo "GOOGLE_API_KEY=your-google-api-key-here" >> .env
 ```
 
-Or manually edit `.env`:
-```
-GOOGLE_API_KEY=your-google-api-key-here
-```
-
-### 4. Update Your Scripts
-
-#### For test_ketubot.py:
-
-**OLD (Anthropic):**
-```python
-analyzer = NarrativeAnalyzer(
-    api_key=api_key,
-    model="claude-3-5-haiku-20241022"
-)
-```
-
-**NEW (Google Gemini):**
-```python
-analyzer = NarrativeAnalyzer(
-    api_key=api_key,
-    model="gemini-2.0-flash-exp",
-    provider="google"
-)
-```
-
-#### For test_multi_story.py:
-
-Same change - just add `provider="google"` parameter.
-
-### 5. Run Tests
+### 4. Run Detection
 
 ```bash
-# Test on sample pages
-python3 test_multi_story.py
-
-# Full Ketubot analysis
-python3 test_ketubot.py
+cd src
+python3 story_detector_v5.py 2 39  # Analyze Ketubot pages 2-39
 ```
 
-## Available Models
+Results saved to `results/ketubot/v5/pages_2-39.json`
 
-### Google Gemini Models:
+## Model Information
 
-| Model | Speed | Cost | Best For |
-|-------|-------|------|----------|
-| `gemini-2.0-flash` | ⚡️ Fastest | 💰 Cheapest | **Production (recommended)** |
-| `gemini-1.5-flash` | ⚡️ Fast | 💰 Cheap | General use |
-| `gemini-1.5-pro` | 🐢 Slower | 💰💰 Medium | Complex analysis |
+### Gemini 2.0 Flash (Default)
 
-### Anthropic Claude Models:
-
-| Model | Speed | Cost | Best For |
-|-------|-------|------|----------|
-| `claude-3-5-haiku-20241022` | ⚡️ Fast | 💰💰 Medium | Current default |
-| `claude-3-5-sonnet-20241022` | 🐢 Slower | 💰💰💰 Expensive | Highest quality |
-
-## Recommended: Gemini 2.0 Flash
-
-For this project, **Gemini 2.0 Flash** (`gemini-2.0-flash`) is recommended:
-
-- **10-20× cheaper** than Claude Haiku
-- **2-3× faster**
-- **Excellent quality** for structured output (JSON)
-- **High rate limits** (1500 requests/min on free tier)
-- **Tested result**: 258 stories found in Ketubot with 95.2% average confidence
-
-## Cost Comparison
-
-### Full Ketubot Analysis (224 pages, 258 stories found):
-
-| Model | Estimated Cost | Time |
-|-------|---------------|------|
-| **Gemini 2.0 Flash** | **$0.03-0.05** | **~12 min** |
-| Gemini 1.5 Pro | $0.20-0.30 | ~20 min |
-| Claude 3.5 Haiku | $0.50-1.00 | ~15 min |
-
-## Usage Examples
-
-### Example 1: Quick test with Gemini
-
-```python
-from find_talmud_stories import NarrativeAnalyzer, SefariaStoryFinder
-import os
-
-# Initialize with Google Gemini
-analyzer = NarrativeAnalyzer(
-    api_key=os.getenv("GOOGLE_API_KEY"),
-    model="gemini-2.0-flash",
-    provider="google"
-)
-
-finder = SefariaStoryFinder(analyzer)
-stories = finder.search_tractate_systematically("Ketubot", "Nashim", sample_rate=10)
-```
-
-### Example 2: Compare both providers
-
-```python
-# Test with both Anthropic and Google
-anthropic_analyzer = NarrativeAnalyzer(
-    model="claude-3-5-haiku-20241022",
-    provider="anthropic"
-)
-
-google_analyzer = NarrativeAnalyzer(
-    model="gemini-2.0-flash",
-    provider="google"
-)
-
-# Run same analysis with both
-# Compare results
-```
-
-### Example 3: Offline test (no API needed)
-
-```python
-# Test extraction logic without API calls
-python3 test_extraction_offline.py
-```
-
-## Switching Back to Anthropic
-
-To switch back to Anthropic Claude:
-
-```python
-analyzer = NarrativeAnalyzer(
-    api_key=os.getenv("ANTHROPIC_API_KEY"),
-    model="claude-3-5-haiku-20241022",
-    provider="anthropic"
-)
-```
+| Aspect | Details |
+|--------|---------|
+| Model | `gemini-2.0-flash` |
+| Speed | Very fast |
+| Cost | ~$0.01 per 10 pages |
+| Quality | Excellent for structured JSON output |
+| Rate Limits | 1500 requests/min (free tier) |
 
 ## Troubleshooting
 
-### Error: "google-generativeai not installed"
+### Error: "google-genai not installed"
 
-**Solution:**
 ```bash
-pip install google-generativeai
+pip install google-genai
 ```
 
-### Error: "No Google API key found"
+### Error: "GOOGLE_API_KEY not set"
 
-**Solution:**
 ```bash
 export GOOGLE_API_KEY='your-key-here'
-# Or add to .env file
 ```
 
 ### Error: API rate limit exceeded
 
-**Solution:**
-- Gemini free tier: 1500 requests/minute
-- Add delays between requests in code
+- Free tier: 1500 requests/minute
+- Add delays between requests (1 second default)
 - Upgrade to paid tier if needed
 
-### Different results from Claude
+## Rate Limits (Free Tier)
 
-**Expected:**
-- Different models may identify different stories
-- Gemini may be more/less strict on causality
-- Compare results and iterate on prompt if needed
-
-## Rate Limits
-
-### Google Gemini (Free Tier):
 - **Requests**: 1500 per minute
 - **Tokens**: 1M input tokens/min, 4M output tokens/min
 - **Daily**: 1500 requests per day
 
-### Anthropic Claude:
-- Depends on your tier
-- Usually lower rate limits
-- Check: https://console.anthropic.com/settings/limits
+## Resources
 
-## Next Steps
-
-1. ✅ Install Google AI SDK
-2. ✅ Get API key from Google AI Studio
-3. ✅ Set environment variable
-4. ✅ Update analyzer initialization
-5. 🔄 Run tests
-6. 📊 Compare results with Jeffrey's feedback
-7. 🚀 Use Gemini for production if results are good
-
-## Quick Start Commands
-
-```bash
-# 1. Install dependencies
-pip install google-generativeai
-
-# 2. Set API key
-export GOOGLE_API_KEY='your-key-here'
-
-# 3. Test on sample pages
-python3 test_multi_story.py
-
-# 4. Full analysis (if tests pass)
-python3 test_ketubot.py
-# Enter sample_rate: 1
-
-# 5. Review results
-open review_stories.html
-```
-
-## Performance Tips
-
-1. **Use Gemini 2.0 Flash** for best speed/cost ratio
-2. **Batch requests** when possible (not yet implemented)
-3. **Cache results** to avoid re-analyzing same pages
-4. **Monitor usage** at https://aistudio.google.com/
-
-## Support
-
-- Google AI Docs: https://ai.google.dev/gemini-api/docs
-- Gemini API Reference: https://ai.google.dev/api/python
-- Report issues: Include model name and error message
+- Google AI Studio: https://aistudio.google.com/
+- Gemini API Docs: https://ai.google.dev/gemini-api/docs
+- API Reference: https://ai.google.dev/api/python

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How We Validate - Talmud Story Detection</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            color: white;
+        }
+        .back-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        .back-link:hover { color: white; }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+        }
+        section:nth-child(odd) {
+            background: white;
+        }
+        h2 {
+            color: #1e3a5f;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+        h3 {
+            color: #1e3a5f;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            margin-bottom: 1rem;
+            color: #475569;
+        }
+
+        /* Why Section */
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .why-card {
+            background: #f1f5f9;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        .why-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .why-card h3 {
+            margin-bottom: 0.5rem;
+        }
+        .why-card p {
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* Process Flow */
+        .process-flow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 3rem 0;
+        }
+        .process-step {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem 2rem;
+            text-align: center;
+            min-width: 180px;
+        }
+        .process-step.active {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+        .process-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .process-label {
+            font-weight: 600;
+            color: #1e3a5f;
+        }
+        .process-desc {
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+        .process-arrow {
+            font-size: 1.5rem;
+            color: #94a3b8;
+        }
+
+        /* Classification Badges */
+        .badge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .badge-card {
+            padding: 1.5rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .badge-yes {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            border: 2px solid #16a34a;
+        }
+        .badge-high {
+            background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+            border: 2px solid #2563eb;
+        }
+        .badge-low {
+            background: linear-gradient(135deg, #fef9c3 0%, #fef08a 100%);
+            border: 2px solid #ca8a04;
+        }
+        .badge-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .badge-yes .badge-name { color: #16a34a; }
+        .badge-high .badge-name { color: #2563eb; }
+        .badge-low .badge-name { color: #ca8a04; }
+        .badge-desc {
+            font-size: 0.9rem;
+        }
+        .badge-yes .badge-desc { color: #166534; }
+        .badge-high .badge-desc { color: #1e40af; }
+        .badge-low .badge-desc { color: #854d0e; }
+
+        /* Expert Section */
+        .expert-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .expert-header {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .expert-avatar {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .expert-info {
+            flex: 1;
+            min-width: 200px;
+        }
+        .expert-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .expert-title {
+            color: #2563eb;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .expert-affiliation {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+        .expert-bio {
+            margin-bottom: 1.5rem;
+        }
+        .book-list {
+            background: #f8fafc;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .book-list h4 {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .book-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .book-list li {
+            font-style: italic;
+            color: #475569;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+        .book-list li::before {
+            content: "📖";
+            position: absolute;
+            left: 0;
+            font-style: normal;
+        }
+
+        /* Quote */
+        .insight-quote {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 0 0.5rem 0.5rem 0;
+            margin: 2rem 0;
+        }
+        .insight-quote p {
+            color: #92400e;
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .insight-quote .attribution {
+            color: #b45309;
+            font-size: 0.9rem;
+            font-style: normal;
+        }
+
+        /* Interface Links */
+        .interface-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .interface-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .interface-card:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .interface-card h3 {
+            color: #1e3a5f;
+            margin-bottom: 0.5rem;
+        }
+        .interface-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .interface-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a5f;
+            color: #94a3b8;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .process-arrow { display: none; }
+            .process-flow { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="back-link">← Back to Home</a>
+        <h1>How We Validate</h1>
+        <p>Expert review ensures AI findings meet scholarly standards</p>
+    </header>
+
+    <!-- Why Validation Matters -->
+    <section>
+        <div class="container">
+            <h2>Why Human Review Matters</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">AI is a powerful tool, but it's not the final word. Here's why expert validation is essential:</p>
+
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">🎯</div>
+                    <h3>Accuracy</h3>
+                    <p>Experts catch false positives that AI misses—like legal discussions that look like stories.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">📚</div>
+                    <h3>Context</h3>
+                    <p>Scholars understand Talmudic literary forms in ways AI is still learning.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">🔄</div>
+                    <h3>Improvement</h3>
+                    <p>Every correction teaches the system to be better next time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Process -->
+    <section>
+        <div class="container">
+            <h2>The Validation Process</h2>
+
+            <div class="process-flow">
+                <div class="process-step">
+                    <div class="process-icon">🤖</div>
+                    <div class="process-label">AI Identifies</div>
+                    <div class="process-desc">System finds candidate stories</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step active">
+                    <div class="process-icon">👨‍🏫</div>
+                    <div class="process-label">Expert Reviews</div>
+                    <div class="process-desc">Scholar examines Hebrew + English</div>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="process-icon">✅</div>
+                    <div class="process-label">Feedback Applied</div>
+                    <div class="process-desc">System learns from corrections</div>
+                </div>
+            </div>
+
+            <p style="text-align: center; max-width: 600px; margin: 0 auto;">Each story candidate is reviewed with the full Hebrew and English text displayed side-by-side. The expert marks it as correct or incorrect and provides notes explaining why.</p>
+        </div>
+    </section>
+
+    <!-- Classification System -->
+    <section>
+        <div class="container">
+            <h2>Classification System</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Stories are categorized by confidence level, helping prioritize expert review:</p>
+
+            <div class="badge-grid">
+                <div class="badge-card badge-yes">
+                    <div class="badge-name">YES</div>
+                    <div class="badge-desc">Definite story — meets all 6 criteria with no weakening factors</div>
+                </div>
+                <div class="badge-card badge-high">
+                    <div class="badge-name">HIGH</div>
+                    <div class="badge-desc">Likely story — meets 5-6 criteria with minor concerns</div>
+                </div>
+                <div class="badge-card badge-low">
+                    <div class="badge-name">LOW</div>
+                    <div class="badge-desc">Possible story — meets 3-4 criteria, needs careful review</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expert Validator -->
+    <section>
+        <div class="container">
+            <h2>Our Expert Validator</h2>
+
+            <div class="expert-card">
+                <div class="expert-header">
+                    <div class="expert-avatar">JR</div>
+                    <div class="expert-info">
+                        <h3>Jeffrey L. Rubenstein, Ph.D.</h3>
+                        <div class="expert-title">Scholarship & Validation</div>
+                        <div class="expert-affiliation">Skirball Professor of Talmud and Rabbinic Literature<br>New York University</div>
+                    </div>
+                </div>
+
+                <div class="expert-bio">
+                    <p>Professor Rubenstein is one of the world's leading experts on Talmudic narratives. His scholarship defines what makes a Talmudic story—and his validation ensures our AI learns from the best.</p>
+                    <p>His books are foundational texts for anyone studying stories in rabbinic literature.</p>
+                </div>
+
+                <div class="book-list">
+                    <h4>Selected Works</h4>
+                    <ul>
+                        <li>Talmudic Stories: Narrative Art, Composition, and Culture (1999)</li>
+                        <li>The Culture of the Babylonian Talmud (2003)</li>
+                        <li>Stories of the Babylonian Talmud (2010)</li>
+                        <li>Rabbinic Stories — Classics of Western Spirituality (2002)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-quote">
+                <p>"The AI was confusing attribution with characters. When it sees 'Rabbi X said that Rabbi Y said...', it thought there was a story with characters, but it's just legal attribution."</p>
+                <div class="attribution">— Key insight from expert validation that improved our detection</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Try It -->
+    <section>
+        <div class="container">
+            <h2>Review Stories Yourself</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">See the stories we've found with side-by-side Hebrew and English text:</p>
+
+            <div class="interface-grid">
+                <a href="validation/ui/ketubot_2-39.html" class="interface-card">
+                    <div class="interface-icon">📄</div>
+                    <h3>Ketubot Pages 2-39</h3>
+                    <p>33 stories identified from the first section of Tractate Ketubot</p>
+                </a>
+                <a href="validation/ui/ketubot_40-60.html" class="interface-card">
+                    <div class="interface-icon">📄</div>
+                    <h3>Ketubot Pages 40-60</h3>
+                    <p>22 stories from the middle section of the tractate</p>
+                </a>
+                <a href="validation/ui/jeff_comparison.html" class="interface-card">
+                    <div class="interface-icon">⚖️</div>
+                    <h3>Expert Comparison</h3>
+                    <p>Compare AI findings with expert validations</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><a href="approach.html">← How We Find Stories</a> · <a href="history.html">Project History →</a></p>
+    </footer>
+</body>
+</html>

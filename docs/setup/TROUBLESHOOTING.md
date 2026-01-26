@@ -7,10 +7,10 @@
 **Solution**: Use `python3` instead:
 
 ```bash
-python3 test_ketubot.py
+python3 src/story_detector_v5.py 2 10
 ```
 
-## Other Common Issues
+## Common Issues
 
 ### Missing Dependencies
 
@@ -22,10 +22,20 @@ pip3 install -r requirements.txt
 
 ### API Key Not Set
 
-If you get "ANTHROPIC_API_KEY not found":
+If you get "GOOGLE_API_KEY not set":
 
 ```bash
-export ANTHROPIC_API_KEY='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'
+export GOOGLE_API_KEY='your-key-here'
+```
+
+Get your key from: https://aistudio.google.com/app/apikey
+
+### google-genai Not Installed
+
+If you get "google-genai not installed":
+
+```bash
+pip3 install google-genai
 ```
 
 ### Network Errors from Sefaria
@@ -35,6 +45,13 @@ If you get connection errors to www.sefaria.org:
 - Try again (sometimes Sefaria has rate limits)
 - Make sure you're not behind a restrictive firewall
 
+### Rate Limit Errors
+
+If you get API rate limit errors:
+- Google Gemini free tier: 1500 requests/minute
+- The script includes 1-second delays between requests
+- Wait a minute and try again
+
 ## Quick Start Commands (macOS)
 
 ```bash
@@ -42,16 +59,12 @@ If you get connection errors to www.sefaria.org:
 pip3 install -r requirements.txt
 
 # 2. Set API key
-export ANTHROPIC_API_KEY='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'
+export GOOGLE_API_KEY='your-key-here'
 
-# 3. Run the analysis
-python3 test_ketubot.py
+# 3. Run detection (small test first)
+cd src
+python3 story_detector_v5.py 2 10
 
-# 4. When prompted, enter sample rate (try 2 for faster testing)
-2
-
-# 5. Wait for analysis to complete (8-12 minutes for sample_rate=2)
-
-# 6. Open the review interface
-open review_stories.html
+# 4. View results
+open ../validation/ui/ketubot_2-39.html
 ```

@@ -29,11 +29,12 @@ from pathlib import Path
 
 # Import Google Generative AI for Gemini support
 try:
-    import google.generativeai as genai
+    from google import genai
+    from google.genai import types
     GOOGLE_AI_AVAILABLE = True
 except ImportError:
     GOOGLE_AI_AVAILABLE = False
-    print("google-generativeai not installed. Run: pip install google-generativeai")
+    print("google-genai not installed. Run: pip install google-genai")
 
 
 # ============================================================
@@ -446,24 +447,19 @@ class CategoricalStoryClassifier:
     YES, HIGH_CONFIDENCE, LOW_CONFIDENCE, NOT_A_STORY
     """
 
-    def __init__(self, api_key: Optional[str] = None, provider: str = "google"):
-        self.provider = provider.lower()
+    def __init__(self, api_key: Optional[str] = None):
+        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+        self.model_name = "gemini-2.0-flash"
 
-        if self.provider == "google":
-            self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-            if self.api_key and GOOGLE_AI_AVAILABLE:
-                genai.configure(api_key=self.api_key)
-                self.model = genai.GenerativeModel("gemini-2.0-flash")  # Regular model (not -exp) for higher rate limits
-                print(f"✓ Gemini API configured")
-            else:
-                self.model = None
-                if not self.api_key:
-                    print(f"✗ GOOGLE_API_KEY not set")
-                if not GOOGLE_AI_AVAILABLE:
-                    print(f"✗ Google AI library not available")
+        if self.api_key and GOOGLE_AI_AVAILABLE:
+            self.client = genai.Client(api_key=self.api_key)
+            print(f"✓ Gemini API configured (model: {self.model_name})")
         else:
-            self.api_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-            self.model = "claude-3-5-haiku-20241022"
+            self.client = None
+            if not self.api_key:
+                print(f"✗ GOOGLE_API_KEY not set")
+            if not GOOGLE_AI_AVAILABLE:
+                print(f"✗ Google AI library not available")
 
     def build_classification_prompt(self, ref: str, segments: List[Dict]) -> str:
         """Build the prompt for categorical classification."""
@@ -732,13 +728,13 @@ Return JSON:
     def _call_google(self, prompt: str) -> str:
         """Call Google Gemini API."""
         try:
-            response = self.model.generate_content(
-                prompt,
-                generation_config=genai.types.GenerationConfig(
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
                     max_output_tokens=8192,
                     temperature=0.1,
-                ),
-                request_options={"timeout": 120}
+                )
             )
 
             if not response.candidates:
@@ -778,7 +774,7 @@ Return JSON:
         """
         Classify stories on a page using categorical system.
         """
-        if not self.model:
+        if not self.client:
             return {"page_ref": ref, "stories": [], "error": "No API configured"}
 
         # Build and send classification prompt
@@ -885,7 +881,7 @@ def analyze_tractate_v5(tractate: str, start_page: int = 2, end_page: int = 10):
     print(f"Tractate: {tractate}, Pages: {start_page}-{end_page}")
     print("=" * 70)
 
-    classifier = CategoricalStoryClassifier(provider="google")
+    classifier = CategoricalStoryClassifier()
 
     results = {
         "tractate": tractate,

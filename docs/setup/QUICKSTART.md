@@ -6,108 +6,66 @@ Uses **AI to detect narrative structure** in Talmud passages - not just keyword 
 
 **"Literary Stories"** = any passage with beginning, middle, end (including 2-line dialogues)
 
-## Option 1: AI-Powered Analysis (Recommended)
+## Setup (One-time)
 
-### Setup (One-time)
 ```bash
 # Install dependencies
 pip install -r requirements.txt
 
-# Set your Anthropic API key
-export ANTHROPIC_API_KEY='your-key-from-console.anthropic.com'
+# Set your Google API key
+export GOOGLE_API_KEY='your-key-from-aistudio.google.com'
 ```
 
-### Run the Script
+## Run Story Detection
+
 ```bash
-python find_talmud_stories.py
+cd src
+python3 story_detector_v5.py 2 39  # Analyze Ketubot pages 2-39
 ```
 
-### Choose Your Search
-- **Option 1**: All tractates (~2-4 hours with AI, comprehensive)
-- **Option 2**: Specific tractate (10-30 minutes)
-- **Option 3**: Story-rich tractates - Taanit, Berakhot, Sanhedrin (20-40 minutes, **recommended**)
+## View Results
 
-### Output
-Results in `talmud_stories.json` include:
-- **Narrative analysis** (has beginning/middle/end, characters, dialogue, etc.)
-- **Story type** (full_narrative, dialogue_vignette, brief_anecdote)
-- **Confidence score** (0-100%)
-- **AI-generated summary**
-- Full text of passage
+```bash
+open validation/ui/ketubot_2-39.html
+```
 
-Example:
+## Output Format
+
+Results saved to `results/ketubot/v5/pages_2-39.json`:
+
 ```json
 {
-  "ref": "Taanit 23a",
-  "analysis": {
-    "is_story": true,
-    "confidence": 95,
-    "story_type": "full_narrative",
-    "one_sentence_summary": "Honi draws circle and refuses to leave until God sends proper rain",
-    "narrative_elements": {
-      "has_beginning": true,
-      "has_middle": true,
-      "has_end": true,
-      "has_characters": true,
-      "has_action": true,
-      "has_dialogue": true
-    }
+  "tractate": "Ketubot",
+  "version": "v5.1_categorical",
+  "pages": [...],
+  "summary": {
+    "yes": 3,
+    "high_confidence": 14,
+    "low_confidence": 16,
+    "not_a_story": 0
   }
 }
 ```
 
----
+## Classification System
 
-## Option 2: Without API Key (Heuristic Fallback)
-
-If you don't have an Anthropic API key:
-```bash
-pip install requests
-python find_talmud_stories.py
-```
-
-Uses heuristic analysis (less accurate but free). Looks for narrative indicators like dialogue, actions, temporal markers.
-
----
-
-## Option 3: MCP Server with Claude Desktop (Interactive)
-
-### Setup (One-time)
-```bash
-# Install the Sefaria MCP server
-pip install sefaria-mcp
-
-# Add to Claude Desktop config
-# Copy contents from claude_desktop_config_example.json
-# to your Claude Desktop config file
-
-# Restart Claude Desktop
-```
-
-### Use with Claude
-Ask Claude in Claude Desktop:
-```
-Use the Sefaria MCP to search Tractate Taanit for stories about miracles.
-For each story found, get the full text and provide a summary.
-```
-
-See `MCP_USAGE_GUIDE.md` for detailed prompts and examples.
-
----
+| Classification | Meaning |
+|----------------|---------|
+| **YES** | Definite story (6/6 criteria, no weakeners) |
+| **HIGH_CONFIDENCE** | Likely story (5-6 criteria, minor weakeners) |
+| **LOW_CONFIDENCE** | Possible story (3-4 criteria, needs review) |
+| **NOT_A_STORY** | Not a narrative |
 
 ## Story-Rich Tractates to Start With
 
-1. **Taanit** - Stories about rain, drought, and miracles
-2. **Berakhot** - Stories about prayer and divine encounters
-3. **Sanhedrin** - Historical narratives and parables
-4. **Megillah** - Stories related to Purim
+1. **Ketubot** - Marriage cases and narratives
+2. **Taanit** - Stories about rain, drought, and miracles
+3. **Berakhot** - Stories about prayer and divine encounters
+4. **Sanhedrin** - Historical narratives and parables
 5. **Shabbat** - Stories about Sabbath observance
-
----
 
 ## Need Help?
 
-- Read `README.md` for full setup instructions
-- Read `MCP_USAGE_GUIDE.md` for detailed MCP usage
-- Visit https://www.sefaria.org to browse texts manually
-- Check https://github.com/Sefaria/sefaria-mcp for MCP documentation
+- See [GEMINI_SETUP.md](GEMINI_SETUP.md) for API setup
+- See [HOW_IT_WORKS.md](../technical/HOW_IT_WORKS.md) for detection details
+- See [REVIEW_INTERFACE.md](../technical/REVIEW_INTERFACE.md) for validation UI
