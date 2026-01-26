@@ -46,6 +46,12 @@ When flattening stories, MUST copy: page_segments: page.segments
 - Claim "fixed" without testing
 - Re-read large files multiple times
 
+## Documentation Requirements
+When making changes, update these files:
+- `docs/technical/VERSION_HISTORY.md` - New versions, results, patterns
+- `docs/technical/HOW_IT_WORKS.md` - Pipeline changes, criteria updates
+- `README.md` - Results tables, quick start if paths change
+
 ## Project Structure
 ```
 src/                          # Core detection code
