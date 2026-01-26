@@ -50,6 +50,7 @@ When flattening stories, MUST copy: page_segments: page.segments
 When making changes, update these files:
 - `docs/technical/VERSION_HISTORY.md` - New versions, results, patterns
 - `docs/technical/HOW_IT_WORKS.md` - Pipeline changes, criteria updates
+- `docs/technical/REVIEW_INTERFACE.md` - UI features, file locations
 - `README.md` - Results tables, quick start if paths change
 
 ## Project Structure

@@ -1,210 +1,177 @@
-# Story Review Interface
+# Validation Review Interface
 
-Beautiful, interactive web interface for expert review of AI-identified Talmud stories.
+Interactive web interface for expert validation of AI-detected Talmud stories.
 
 ## Quick Start
 
-### 1. Generate the Data (if you haven't already)
-
-```bash
-export ANTHROPIC_API_KEY='your-key'
-python test_ketubot.py
-```
-
-This creates `ketubot_stories.json`
-
-### 2. Open the Review Interface
-
-Simply **double-click** `review_stories.html` or open it in your browser:
+### Open a Validation UI
 
 ```bash
 # macOS
-open review_stories.html
+open validation/ui/ketubot_2-39.html
 
-# Linux
-xdg-open review_stories.html
-
-# Windows
-start review_stories.html
+# Or double-click the file in Finder/Explorer
 ```
 
-That's it! No server, no setup, no technical knowledge needed.
+No server needed - runs entirely in browser.
+
+## Available Interfaces
+
+| File | Content | Purpose |
+|------|---------|---------|
+| `validation/ui/ketubot_2-39.html` | 33 stories | General review (pages 2-39) |
+| `validation/ui/ketubot_40-60.html` | 22 stories | Fresh content review |
+| `validation/ui/jeff_comparison.html` | 33 stories | Compare with v4.1 validations |
 
 ## Features
 
-### 📊 Statistics Dashboard
-- Total stories found
-- Average confidence score
-- High-confidence stories (90%+)
-- Multi-page story count
+### Statistics Dashboard
+- Stories by classification (YES / HIGH / LOW)
+- Review progress counter
+- Filter counts
 
-### 🔍 Powerful Filtering
-- **Search by reference**: Type "62b" to find stories on that page
-- **Filter by story type**: Full narratives, dialogue vignettes, or brief anecdotes
-- **Confidence slider**: Only show stories above a certain confidence level
-- **Multi-page filter**: View only multi-page or single-page stories
+### Classification Badges
 
-### 📖 Story Cards
+| Badge | Meaning | Criteria |
+|-------|---------|----------|
+| **YES** (green) | Definite story | 6/6 criteria, no weakeners |
+| **HIGH** (blue) | Strong story | 5-6 criteria, minor weakeners |
+| **LOW** (yellow) | Possible story | 3-4 criteria, needs review |
+
+### Story Cards
+
 Each story displays:
-- **Reference** (e.g., "Ketubot 62b-63a")
-- **Confidence score** with color coding:
-  - 🟢 Green (90%+): High confidence
-  - 🟡 Yellow (75-89%): Medium confidence
-  - 🔴 Red (<75%): Low confidence
-- **Story type badge**
-- **Multi-page indicator** (if applicable)
-- **AI-generated summary**
-- **English translation** (show/hide)
-- **Hebrew/Aramaic original** (show/hide)
-- **AI reasoning** explaining why it was classified as a story
-- **Narrative elements** detected (beginning, middle, end, characters, dialogue, etc.)
 
-### ✅ Expert Feedback System
+**Text Display:**
+- Side-by-side English and Hebrew/Aramaic
+- Story segments highlighted (yellow background)
+- ±1 segment context shown
 
-For each story, mark:
-- **✓ Correct** - This IS a story
-- **✗ False Positive** - This is NOT a story
-- **Notes field** - Add any comments or explanations
+**Criteria Breakdown:**
+```
+✓ named_characters - Rav Ḥisda, Rabba bar Rav Huna
+✓ multiple_events - Going, consoling, speaking
+✓ causal_chain - Go → Console → Say blessing
+✓ temporal_progression - Before → during → after
+✓ descriptive - What they DID do
+✓ change_outcome - Mourners consoled
+```
 
-### 📥 Export Feedback
+**Disqualifiers/Weakeners:**
+- 🚫 Disqualifiers (if any) - would make NOT_A_STORY
+- ⚠️ Weakeners (if any) - downgrade confidence
 
-Click "Download Feedback JSON" to export your review as a structured file containing:
+**AI Reasoning:**
+- One-sentence summary
+- Classification reasoning
+- Self-check adjustments (if any)
+
+### Filtering
+
+- **Classification**: YES only, HIGH only, LOW only, or all
+- **Page search**: Type "8b" to find stories on that page
+- **Disqualifiers**: Show only stories with/without disqualifiers
+
+### Feedback System
+
+For each story:
+- **✓ Correct** - Classification is accurate
+- **✗ Incorrect** - Classification is wrong
+- **Notes** - Add explanation or observations
+
+Feedback auto-saves to browser localStorage.
+
+### Export
+
+Click "Download Feedback JSON" to export:
+
 ```json
 {
-  "reviewed_at": "2026-01-05T14:32:18Z",
-  "tractate": "Ketubot",
-  "total_stories": 38,
-  "reviewed_count": 38,
-  "feedback": [
-    {
-      "ref": "Ketubot 62b-63a",
-      "feedback_type": "correct",
-      "notes": "Classic Rabbi Akiva story",
-      "story_confidence": 95,
-      "story_type": "full_narrative",
-      "spans_multiple_pages": true
-    },
-    {
-      "ref": "Ketubot 17a",
-      "feedback_type": "false_positive",
-      "notes": "This is actually a legal discussion about dance, not a story",
-      "story_confidence": 76,
-      "story_type": "dialogue_vignette",
-      "spans_multiple_pages": false
+  "reviewer": "Jeff",
+  "version": "v5.1_validation",
+  "exportDate": "2026-01-25T...",
+  "totalStories": 33,
+  "reviewed": 33,
+  "feedback": {
+    "Ketubot 8b_3-5": {
+      "verdict": "correct",
+      "note": "Clear mourning narrative",
+      "reviewer": "Jeff",
+      "timestamp": "2026-01-25T..."
     }
-  ]
+  }
 }
 ```
 
-## Usage Tips
+## Review Guidelines
 
-### For Expert Reviewers
+### What Makes a Story (YES/HIGH)
 
-1. **Start with high confidence**: Set confidence slider to 90% to see the best matches first
-2. **Check multi-page stories**: These often contain the most complete narratives
-3. **Read the AI reasoning**: Helps understand why it was classified as a story
-4. **Compare Hebrew and English**: Sometimes the narrative is clearer in one language
-5. **Use notes liberally**: Your insights are valuable for improving the system
+✓ **Named characters** with agency (specific rabbis, not "a person")
+✓ **Multiple events** that form a sequence
+✓ **Causal chain** - Event A CAUSED Event B (not just sequential)
+✓ **Temporal progression** - before → during → after
+✓ **Descriptive** - what DID happen (not hypothetical)
+✓ **Transformation** - situation changed from beginning to end
 
-### What to Look For
+### What's NOT a Story
 
-**Correct Stories (✓):**
-- Has clear beginning, middle, end
-- Characters perform actions
-- Temporal progression (things happen in sequence)
-- Resolution or outcome
-- Even brief vignettes count if they have narrative arc
-
-**False Positives (✗):**
-- Pure legal discussions (even with "once" or "if someone")
-- Hypothetical cases for legal illustration
-- Lists of rulings
-- Abstract debates
-- Parables without narrative structure
+✗ **Rabbi legal opinions** - "Rabbi X quotes Rabbi Y as saying..." (attribution, not narrative)
+✗ **Sequential events** - Things that happened but didn't cause each other
+✗ **Simple reports** - Actions without transformation
+✗ **Hypotheticals** - "If someone were to..."
+✗ **MISHNA sections** - Legal codifications
+✗ **Habitual actions** - "He would regularly..."
 
 ### Common Edge Cases
 
-**Borderline Cases:**
-- Legal case study with narrative elements → Use your judgment
-- Brief dialogue with progression → Probably a story (dialogue_vignette)
-- "Once Rabbi X said..." without action → Probably not a story (just a saying)
+**Legal case with narrative elements:**
+- If it has all 6 criteria → probably a story
+- If just illustrating a law → probably not
 
-**Multi-Page Stories:**
-- Check if the combined text truly forms one narrative
-- Sometimes AI combines unrelated passages
+**Brief dialogue:**
+- Has progression and change → dialogue vignette (story)
+- Just statement and response → probably not
 
-## Understanding Story Types
+**"Once Rabbi X...":**
+- Followed by actions and outcome → story
+- Just attribution of a saying → not a story
 
-### Full Narrative
-Complete story with multiple scenes, rich detail, clear arc.
-**Example:** Honi the Circle Drawer (multiple scenes, dialogue, resolution)
+## Generating New UIs
 
-### Dialogue Vignette
-Brief exchange with narrative progression.
-**Example:** "Rabbi X asked Y about prayer. Y responded with a question. X understood and changed his practice."
+After running analysis:
 
-### Brief Anecdote
-Short narrative (2-3 sentences) showing an event.
-**Example:** "Rabbi Yochanan was walking and saw carobs. He asked if they were ownerless, ate them, then had to pay."
+```bash
+cd validation/generators
+python generate_review_ui.py ../../results/ketubot/v5/pages_2-39.json ../../validation/ui/ketubot_2-39.html
+```
 
-## Exporting for Analysis
+## Technical Notes
 
-After reviewing all stories, export your feedback:
+- **No server required** - Pure HTML/JavaScript
+- **Auto-save** - Feedback saved to localStorage
+- **Works offline** - After initial load
+- **All browsers** - Chrome, Firefox, Safari, Edge
 
-1. Click "Download Feedback JSON"
-2. File saves as `ketubot_review_YYYY-MM-DD.json`
-3. Share with the AI team for:
-   - Calculating precision (% of AI identifications that are correct)
-   - Identifying patterns in false positives
-   - Improving the AI prompt
-   - Training labeled dataset
+## File Locations
 
-## Privacy & Data
+```
+validation/
+├── ui/                          # HTML interfaces
+│   ├── ketubot_2-39.html
+│   ├── ketubot_40-60.html
+│   └── jeff_comparison.html
+├── generators/                  # Scripts to create UIs
+│   ├── generate_review_ui.py
+│   └── generate_jeff_comparison_ui.py
+└── feedback/                    # Expert feedback JSONs
+    └── jeff_v4.1_validation.json
+```
 
-- Everything runs **locally in your browser**
-- No data sent to any server
-- No internet connection needed (after loading)
-- Your feedback stays on your computer until you export
+## Workflow
 
-## Browser Compatibility
-
-Works in all modern browsers:
-- ✅ Chrome/Edge (recommended)
-- ✅ Firefox
-- ✅ Safari
-
-## Troubleshooting
-
-**"ketubot_stories.json not found"**
-- Make sure you ran `python test_ketubot.py` first
-- The HTML file must be in the same directory as ketubot_stories.json
-
-**Hebrew text not displaying correctly**
-- Try a different browser (Chrome/Firefox recommended)
-- Hebrew displays right-to-left automatically
-
-**Filters not working**
-- Try refreshing the page
-- Make sure JavaScript is enabled
-
-**Export button does nothing**
-- Check that you've marked at least one story with feedback
-- Try a different browser
-
-## Next Steps
-
-After reviewing Ketubot:
-1. Export your feedback
-2. Share with the research team
-3. They can use your expert labels to:
-   - Calculate accuracy metrics
-   - Improve the AI prompt
-   - Build a training dataset
-   - Run on other tractates with higher confidence
-
-## Contact
-
-Questions about the interface or how to provide feedback?
-- The interface is self-contained HTML/JavaScript
-- No installation or technical knowledge required
-- Just open in browser and start reviewing!
+1. **Run detection** → `src/story_detector_v5.py`
+2. **Generate UI** → `validation/generators/generate_review_ui.py`
+3. **Review stories** → Open HTML in browser
+4. **Export feedback** → Click download button
+5. **Analyze results** → Use feedback to improve detection
