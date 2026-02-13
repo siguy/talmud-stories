@@ -201,13 +201,18 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
 """
         return prompt
 
+    # Models that require thinking mode (can't set thinking_budget=0)
+    THINKING_REQUIRED_MODELS = {'gemini-3-pro-preview', 'gemini-2.5-pro'}
+
     def _call_google(self, prompt: str, max_tokens: int = 8192,
                      json_mode: bool = False) -> str:
         """Call Google Gemini API.
 
         Args:
-            json_mode: If True, use response_mime_type='application/json' and
-                       disable thinking (required for Gemini 3+ models).
+            json_mode: If True, use response_mime_type='application/json'.
+                       For Flash models, also disables thinking to prevent
+                       token exhaustion. For Pro models (which require thinking),
+                       increases max_output_tokens instead.
         """
         try:
             config_kwargs = {
@@ -216,12 +221,15 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             }
             if json_mode:
                 config_kwargs['response_mime_type'] = 'application/json'
-                # Gemini 3 models use "thinking" tokens that count against
-                # max_output_tokens, causing truncated JSON. Disable thinking
-                # for structured output.
-                config_kwargs['thinking_config'] = types.ThinkingConfig(
-                    thinking_budget=0
-                )
+                if self.model_name in self.THINKING_REQUIRED_MODELS:
+                    # Pro models require thinking — give enough tokens for
+                    # thinking + structured JSON output
+                    config_kwargs['max_output_tokens'] = max(max_tokens, 32768)
+                else:
+                    # Flash models: disable thinking for structured output
+                    config_kwargs['thinking_config'] = types.ThinkingConfig(
+                        thinking_budget=0
+                    )
 
             response = self.client.models.generate_content(
                 model=self.model_name,
@@ -232,6 +240,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 return ""
             full_text = ""
             for part in response.candidates[0].content.parts:
+                if hasattr(part, 'thought') and part.thought:
+                    continue  # Skip thinking tokens, keep only output
                 full_text += part.text
             return full_text
         except Exception as e:
