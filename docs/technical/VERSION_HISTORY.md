@@ -15,6 +15,48 @@
 | v7 | Feb 2025 | Hybrid Pipeline | 4-stage decomposed detection, 87.4% accuracy |
 | v7+pp | Feb 2025 | Post-Processing | v6 ensemble rule boosts to 89.8% |
 | v7 (G3 Flash) | Feb 2026 | Model Upgrade | Gemini 3 Flash hits **92.1%** — new best |
+| v7 (61-112) | Feb 2026 | Generalization | 98 stories on unseen Ketubot pages 61-112 |
+
+---
+
+## Phase 4: Ketubot 61-112 — Generalization Test
+
+**Goal:** Test pipeline on unseen Ketubot pages (61a-112b) to validate generalization.
+
+**Setup:**
+- 104 new pages fetched from Sefaria API (pages 61a through 112b)
+- Winning pipeline: v7 + Gemini 3 Flash (92.1% on pages 2-60)
+- Full pipeline: triage → detection → boundary refinement → cross-page merge
+
+**Results:**
+| Metric | Value |
+|--------|-------|
+| Total pages | 104 |
+| Triage skip rate | 50% (52 skipped, 52 kept) |
+| Stories found | 98 (35 YES, 20 HIGH, 43 LOW) |
+| NOT_A_STORY | 8 |
+| Cross-page merges | 7 |
+
+**Comparison with pages 2-60:**
+| Metric | Pages 2-60 | Pages 61-112 |
+|--------|-----------|--------------|
+| Total pages | 118 | 104 |
+| Triage skip rate | 66% | 50% |
+| Stories/kept page | ~2.5 | ~1.9 |
+
+The lower skip rate (50% vs 66%) suggests pages 61-112 have more narrative content.
+Awaiting Jeff's review for accuracy validation.
+
+**New Files:**
+- `scripts/run_ketubot_61_112.py` — Phase 4 execution script
+- `results/v7/ketubot_v7_61-112.json` — Detection results
+- `results/v7/event_triage_61-112.json` — Triage results
+- `results/v7/ketubot_pages_61-112.json` — Cached Sefaria pages
+- `validation/ui/ketubot_61-112.html` — Review UI for Jeff
+
+**Technical Changes:**
+- Fixed `event_triage.py` for Gemini 3 compatibility (thinking mode, JSON repair)
+- Fixed `story_detector_v7.py` to handle list-type JSON responses from Gemini 3
 
 ---
 

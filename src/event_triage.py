@@ -132,21 +132,41 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
 """
         return prompt
 
+    @property
+    def _use_json_mode(self) -> bool:
+        """Use JSON mode for Gemini 3+ models to avoid thinking token issues."""
+        return 'gemini-3' in self.model_name or 'gemini-2.5' in self.model_name
+
+    # Models that require thinking mode (can't set thinking_budget=0)
+    THINKING_REQUIRED_MODELS = {'gemini-3-pro-preview', 'gemini-2.5-pro'}
+
     def _call_google(self, prompt: str) -> str:
-        """Call Google Gemini API."""
+        """Call Google Gemini API with Gemini 3 thinking mode support."""
         try:
+            config_kwargs = {
+                'max_output_tokens': 4096,
+                'temperature': 0.1,
+            }
+            if self._use_json_mode:
+                config_kwargs['response_mime_type'] = 'application/json'
+                if self.model_name in self.THINKING_REQUIRED_MODELS:
+                    config_kwargs['max_output_tokens'] = 32768
+                else:
+                    config_kwargs['thinking_config'] = types.ThinkingConfig(
+                        thinking_budget=0
+                    )
+
             response = self.client.models.generate_content(
                 model=self.model_name,
                 contents=prompt,
-                config=types.GenerateContentConfig(
-                    max_output_tokens=4096,
-                    temperature=0.1,
-                )
+                config=types.GenerateContentConfig(**config_kwargs),
             )
             if not response.candidates:
                 return ""
             full_text = ""
             for part in response.candidates[0].content.parts:
+                if hasattr(part, 'thought') and part.thought:
+                    continue  # Skip thinking tokens
                 full_text += part.text
             return full_text
         except Exception as e:
@@ -167,11 +187,17 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
         json_end = cleaned.rfind('}') + 1
 
         if json_start >= 0 and json_end > json_start:
+            json_str = cleaned[json_start:json_end]
             try:
-                return json.loads(cleaned[json_start:json_end])
-            except json.JSONDecodeError as e:
-                print(f"  JSON parse error: {e}")
-                return None
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                # Repair trailing commas (common with Gemini 3 models)
+                repaired = re.sub(r',\s*([}\]])', r'\1', json_str)
+                try:
+                    return json.loads(repaired)
+                except json.JSONDecodeError as e:
+                    print(f"  JSON parse error (after repair): {e}")
+                    return None
         return None
 
     def triage_page(self, ref: str, segments: List[Dict]) -> List[EventType]:
