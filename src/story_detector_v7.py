@@ -268,7 +268,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
                      delay: float = 1.0,
-                     skip_triage: bool = False) -> Dict:
+                     skip_triage: bool = False,
+                     enable_adversarial: bool = False) -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
 
@@ -370,6 +371,22 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         page_order = {p.get('ref', ''): i for i, p in enumerate(pages)}
         all_results.sort(key=lambda r: page_order.get(r['ref'], 999))
 
+        # Stage 3: Adversarial Validation (disabled by default — net negative in testing)
+        if enable_adversarial:
+            print(f"\n--- Stage 3: Adversarial Validation ---")
+            validator = AdversarialValidator(
+                api_key=self.api_key,
+                ground_truth_db=self.ground_truth_db,
+            )
+            if validator.client:
+                changes = validator.validate_all_stories(all_results, delay=delay)
+            else:
+                print("  Skipped (no API configured)")
+                changes = []
+        else:
+            print(f"\n--- Stage 3: Adversarial Validation (disabled) ---")
+            changes = []
+
         # Cross-page merge
         all_results = merge_cross_page_stories(all_results)
 
@@ -382,6 +399,335 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
         }
+
+
+# ============================================================
+# ADVERSARIAL VALIDATION (Stage 3)
+# ============================================================
+
+class AdversarialValidator:
+    """
+    Three-call adversarial validation for borderline stories.
+
+    Pattern:
+    1. Detector Defense: "You classified this as a story. Defend your classification."
+    2. Jeff's Advocate: "Argue why this is NOT a story."
+    3. Adjudicator: "Given defense and challenge, what's the correct classification?"
+
+    Only runs on borderline stories (~30-40 cases per tractate).
+    """
+
+    def __init__(self, api_key: Optional[str] = None,
+                 ground_truth_db: Optional[GroundTruthDB] = None):
+        self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
+        self.model_name = "gemini-2.0-flash"
+        self.ground_truth_db = ground_truth_db
+
+        if self.api_key and GOOGLE_AI_AVAILABLE:
+            self.client = genai.Client(api_key=self.api_key)
+        else:
+            self.client = None
+
+    def _call_google(self, prompt: str) -> str:
+        try:
+            response = self.client.models.generate_content(
+                model=self.model_name,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    max_output_tokens=4096,
+                    temperature=0.1,
+                )
+            )
+            if not response.candidates:
+                return ""
+            return ''.join(part.text for part in response.candidates[0].content.parts)
+        except Exception as e:
+            print(f"    Adversarial API error: {e}")
+            raise
+
+    def _parse_json_response(self, content: str) -> Optional[Dict]:
+        cleaned = content
+        if '```json' in cleaned:
+            cleaned = cleaned.split('```json')[1].split('```')[0]
+        elif '```' in cleaned:
+            parts = cleaned.split('```')
+            if len(parts) >= 2:
+                cleaned = parts[1]
+        json_start = cleaned.find('{')
+        json_end = cleaned.rfind('}') + 1
+        if json_start >= 0 and json_end > json_start:
+            try:
+                return json.loads(cleaned[json_start:json_end])
+            except json.JSONDecodeError:
+                return None
+        return None
+
+    def should_validate(self, story: Dict) -> bool:
+        """
+        Determine if a story needs adversarial validation.
+
+        Target cases most likely to be legal misidentifications:
+        - HIGH_CONFIDENCE with legal-related weakeners or disqualifier flags
+        - LOW_CONFIDENCE where events are mainly verbal/legal
+        - Any story with ≤1 actual narrative event but HIGH+ classification
+        """
+        cls = story.get('classification', '')
+        if cls == 'NOT_A_STORY':
+            return False
+
+        weakeners = story.get('weakeners_found', [])
+        disqualifiers = story.get('disqualifiers_found', [])
+        criteria = story.get('criteria', {})
+        events = criteria.get('multiple_events', {})
+        event_count = events.get('count', 0) if isinstance(events, dict) else 0
+
+        # HIGH/YES with weakeners suggesting legal content
+        if cls in ('HIGH_CONFIDENCE', 'YES'):
+            legal_weakeners = [w for w in weakeners
+                               if any(kw in str(w).lower()
+                                      for kw in ['legal', 'embedded', 'speech', 'verbal'])]
+            if legal_weakeners or len(weakeners) >= 2:
+                return True
+            if event_count <= 1:
+                return True
+
+        # LOW_CONFIDENCE: only validate if events seem questionable
+        if cls == 'LOW_CONFIDENCE':
+            if event_count <= 1:
+                return True
+            if any(kw in str(weakeners).lower() for kw in ['legal', 'speech', 'verbal']):
+                return True
+
+        return False
+
+    def _get_story_text(self, story: Dict, segments: List[Dict]) -> str:
+        """Get the text of a story from its segments."""
+        start = story.get('start_segment', 0)
+        end = story.get('end_segment', 0)
+        texts = []
+        for seg in segments:
+            if start <= seg.get('index', -1) <= end:
+                eng = re.sub(r'<[^>]+>', '', seg.get('english', ''))
+                texts.append(f"Seg {seg['index']}: {eng[:200]}")
+        return '\n'.join(texts)
+
+    def build_detector_defense_prompt(self, story: Dict, story_text: str) -> str:
+        """Call 1: Ask the detector to defend its classification."""
+        cls = story.get('classification', 'UNKNOWN')
+        reasoning = story.get('classification_reasoning', 'N/A')
+        summary = story.get('one_sentence_summary', 'N/A')
+        criteria = json.dumps(story.get('criteria', {}), indent=2)
+
+        return f"""You classified the following Talmudic passage as {cls}.
+
+Summary: {summary}
+Reasoning: {reasoning}
+
+Criteria evaluation:
+{criteria}
+
+Text:
+{story_text}
+
+DEFEND your classification. Explain specifically:
+1. What are the NARRATIVE events (not verbal statements or legal arguments)?
+2. What is the CAUSAL chain between events?
+3. What CHANGES from beginning to end?
+4. Why is this NOT just a legal discussion with a narrative setting?
+
+Be specific and cite the text. If your defense is weak, acknowledge it.
+
+Respond in plain text (no JSON)."""
+
+    def build_advocate_prompt(self, story: Dict, story_text: str,
+                              defense: str) -> str:
+        """Call 2: Jeff's advocate challenges the classification."""
+        cls = story.get('classification', 'UNKNOWN')
+
+        # Get adversarial examples from ground truth
+        examples = ""
+        if self.ground_truth_db:
+            adv_examples = self.ground_truth_db.generate_few_shot_examples('adversarial', n=2)
+            if adv_examples:
+                examples = "\n\nRelevant expert corrections:\n" + '\n'.join(adv_examples)
+
+        return f"""You are Jeff Rubenstein's advocate — an expert in Talmudic narrative who holds a HIGH BAR
+for what counts as a "story." A passage was classified as {cls} and the detector defended it.
+
+TEXT:
+{story_text}
+
+DETECTOR'S DEFENSE:
+{defense}
+
+{examples}
+
+YOUR TASK: Argue why this passage should be classified as NOT_A_STORY. Be aggressive:
+
+1. Are the "events" really just VERBAL ACTS (statements, arguments, rulings)?
+   - "Rabbi X said to Rabbi Y" is NOT a narrative event
+   - "He ruled that..." is NOT a narrative event
+   - Legal difficulty/resolution is NOT a narrative event
+
+2. Is there a REAL causal chain, or just sequential statements?
+   - One thing being mentioned after another ≠ causality
+   - Legal reasoning chain ≠ narrative causality
+
+3. Is the "change" just a legal ruling being issued?
+   - A rabbi ruling on a case is NOT a story outcome
+   - Resolution of a legal difficulty is NOT narrative change
+
+4. Is this a legal discussion with a SETTING (not a story)?
+   - A rabbi going somewhere to discuss law ≠ narrative event
+   - A sage sitting before another sage ≠ story
+
+If you genuinely believe it IS a story, say so. But err on the side of NOT_A_STORY.
+
+Respond in plain text (no JSON)."""
+
+    def build_adjudicator_prompt(self, story: Dict, story_text: str,
+                                  defense: str, challenge: str) -> str:
+        """Call 3: Adjudicator makes final decision."""
+        cls = story.get('classification', 'UNKNOWN')
+
+        return f"""You are an impartial adjudicator reviewing a Talmudic passage classification dispute.
+
+ORIGINAL CLASSIFICATION: {cls}
+
+TEXT:
+{story_text}
+
+DEFENDER'S ARGUMENT (for {cls}):
+{defense}
+
+CHALLENGER'S ARGUMENT (for NOT_A_STORY):
+{challenge}
+
+## CLASSIFICATION RULES
+
+DEMOTE to NOT_A_STORY if:
+1. The "events" are purely verbal (legal arguments, rulings, traditions) with no physical action
+2. A rabbi "going somewhere" or "sitting before" someone is ONLY a setting for legal debate
+3. "Experiencing difficulty" with a legal issue is NOT a narrative event
+4. All characters are just stating legal opinions, not acting in a narrative
+
+KEEP as LOW_CONFIDENCE if:
+1. A specific person PHYSICALLY does something (comes with a real case, performs an action)
+2. There is genuine temporal progression around a real-world event
+3. Even one REAL event (not legal/verbal) embedded in discussion = borderline story
+
+KEEP as HIGH_CONFIDENCE or higher if:
+1. Multiple physical events in causal chain
+2. Clear temporal progression with change
+
+## KEY TEST
+Ask: "If I remove all the legal discussion, is there still a PHYSICAL EVENT that happened
+to a specific person?" If YES → keep (at least LOW_CONFIDENCE). If NO → NOT_A_STORY.
+
+YOUR DECISION:
+
+Return JSON:
+{{
+  "final_classification": "YES | HIGH_CONFIDENCE | LOW_CONFIDENCE | NOT_A_STORY",
+  "reasoning": "...",
+  "defender_strongest_point": "...",
+  "challenger_strongest_point": "...",
+  "decision_basis": "..."
+}}"""
+
+    def validate_story(self, story: Dict, segments: List[Dict],
+                       delay: float = 0.5) -> Dict:
+        """
+        Run three-call adversarial validation on a single story.
+        Returns validation result with final classification.
+        """
+        if not self.client:
+            raise RuntimeError("Gemini API not configured")
+
+        story_text = self._get_story_text(story, segments)
+        original_cls = story.get('classification', 'UNKNOWN')
+
+        # Call 1: Defense
+        defense_prompt = self.build_detector_defense_prompt(story, story_text)
+        defense = self._call_google(defense_prompt)
+        time.sleep(delay)
+
+        # Call 2: Challenge
+        advocate_prompt = self.build_advocate_prompt(story, story_text, defense)
+        challenge = self._call_google(advocate_prompt)
+        time.sleep(delay)
+
+        # Call 3: Adjudication
+        adjudicator_prompt = self.build_adjudicator_prompt(
+            story, story_text, defense, challenge
+        )
+        adjudication_raw = self._call_google(adjudicator_prompt)
+        adjudication = self._parse_json_response(adjudication_raw)
+
+        if not adjudication:
+            return {
+                'original_classification': original_cls,
+                'final_classification': original_cls,
+                'error': 'Failed to parse adjudication',
+            }
+
+        final_cls = adjudication.get('final_classification', original_cls)
+
+        return {
+            'original_classification': original_cls,
+            'final_classification': final_cls,
+            'reasoning': adjudication.get('reasoning', ''),
+            'defense_summary': defense[:300],
+            'challenge_summary': challenge[:300],
+            'changed': original_cls != final_cls,
+        }
+
+    def validate_all_stories(self, pages: List[Dict],
+                              delay: float = 0.5) -> List[Dict]:
+        """
+        Run adversarial validation on all borderline stories across pages.
+        Modifies story classifications in-place and returns log of changes.
+        """
+        changes = []
+        total_validated = 0
+
+        for page in pages:
+            ref = page.get('ref', '')
+            segments = page.get('segments', [])
+            stories = page.get('stories', [])
+
+            for i, story in enumerate(stories):
+                if not self.should_validate(story):
+                    continue
+
+                total_validated += 1
+                cls = story.get('classification', '')
+                segs = f"{story.get('start_segment', '?')}-{story.get('end_segment', '?')}"
+                print(f"    Validating {ref} segs {segs} ({cls})...")
+
+                result = self.validate_story(story, segments, delay=delay)
+
+                if result.get('changed'):
+                    old_cls = result['original_classification']
+                    new_cls = result['final_classification']
+                    story['classification'] = new_cls
+                    story['adversarial_validation'] = result
+                    print(f"      → CHANGED: {old_cls} → {new_cls}")
+                    print(f"        Reason: {result.get('reasoning', '')[:100]}")
+                    changes.append({
+                        'page_ref': ref,
+                        'segments': segs,
+                        'old': old_cls,
+                        'new': new_cls,
+                        'reasoning': result.get('reasoning', '')[:200],
+                    })
+                else:
+                    story['adversarial_validation'] = {'confirmed': True}
+                    print(f"      → CONFIRMED: {cls}")
+
+        print(f"\n  Adversarial validation complete: {total_validated} stories validated, "
+              f"{len(changes)} changed")
+        return changes
 
 
 # ============================================================

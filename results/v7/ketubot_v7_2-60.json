@@ -160,7 +160,7 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man instructs agents \u2192 Man arrives late \u2192 Man is prevented by ferry"
+              "chain": "Man instructs agents \u2192 Man arrives late \u2192 Man states he arrived"
             },
             "temporal_progression": {
               "met": true,
@@ -172,23 +172,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "He came at the end of thirty days, before the deadline passed, but was prevented by the ferry."
+              "evidence": "Describes what the man said and did."
             },
             "change_outcome": {
               "met": true,
-              "before": "Divorce is conditional",
-              "after": "Divorce status is debated due to the ferry"
+              "before": "Divorce contingent on return",
+              "after": "Unclear if divorce is valid due to interruption"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man gives agents a conditional divorce, arrives before the deadline, but is delayed by a ferry.",
+          "one_sentence_summary": "A man gives agents a conditional divorce, arrives before the deadline but is delayed by a ferry, and claims he arrived on time.",
           "classification_reasoning": "This segment contains a clear narrative with identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive details, and a change in the situation.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the event of the ferry preventing him."
+            "note": "The story ends here, followed by legal deliberation."
           }
         }
       ]
@@ -288,13 +288,13 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man arrives \u2192 obstacle prevents crossing"
+              "chain": "Man arrives \u2192 obstacle prevents him from crossing"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
                 "from now until thirty days",
-                "end of thirty days"
+                "at the end of thirty days"
               ]
             },
             "descriptive": {
@@ -303,19 +303,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "Man intends to return to prevent divorce",
-              "after": "Man is prevented from returning"
+              "before": "Divorce not yet in effect",
+              "after": "Unclear if divorce is in effect due to obstacle"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man who stipulated a bill of divorce if he didn't return in 30 days arrived at the end of the period but was prevented from crossing, raising the question of whether the divorce is valid.",
-          "classification_reasoning": "This segment presents a narrative with identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive details, and a change in outcome. The man's attempt to return is thwarted, creating a legal question.",
+          "one_sentence_summary": "A man sets a condition for divorce, arrives before the deadline, but is prevented from crossing a river.",
+          "classification_reasoning": "This segment presents a narrative with identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive details, and a change in the situation. The man's attempt to return is thwarted by an obstacle, creating a causal chain. The story has a clear beginning and end within the segment.",
           "continuation": {
-            "continues_from_previous_page": true,
+            "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "Continues the discussion from the previous page about conditional divorces."
+            "note": "The story is self-contained within this segment."
           }
         }
       ]
@@ -841,20 +841,20 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Ami, the Sages",
+              "evidence": "Rav Ami, Sages",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "Rav Ami permitted intercourse on Shabbat",
-                "The Sages said to him: But her marriage contract is not yet written"
+                "Rav Ami permitted intercourse",
+                "Sages spoke to him"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav Ami permitted intercourse \u2192 Sages questioned him"
+              "chain": "Rav Ami permits \u2192 Sages object"
             },
             "temporal_progression": {
               "met": true,
@@ -862,7 +862,7 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Rav Ami permitted one to engage in intercourse with his virgin wife for the first time on Shabbat."
+              "evidence": "Engaging in conjugal relations with one\u2019s wife without a marriage contract is considered an act of promiscuity."
             },
             "change_outcome": {
               "met": false,
@@ -873,14 +873,14 @@
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The outcome is not clear. We don't know if Rav Ami changed his mind."
+            "Outcome is unknown, mainly dialogue"
           ],
-          "one_sentence_summary": "Rav Ami permitted intercourse with a virgin on Shabbat, but the Sages questioned him about the missing marriage contract.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, weakening the classification. It is not a legal discussion, but a report of what Rav Ami did and what the Sages said to him.",
+          "one_sentence_summary": "Rav Ami permitted intercourse on Shabbat, and the Sages objected because the marriage contract was not yet written.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unknown, and it is mainly dialogue, so it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is self-contained within this segment."
+            "note": "The story ends abruptly."
           }
         },
         {
@@ -897,8 +897,8 @@
               "met": true,
               "count": 1,
               "events": [
-                "Rav Zevid permitted intercourse on Shabbat",
-                "Rav Zevid himself engaged in intercourse with his virgin wife for the first time on Shabbat."
+                "Rav Zevid permitted intercourse",
+                "Rav Zevid engaged in intercourse"
               ]
             },
             "causal_chain": {
@@ -906,7 +906,7 @@
               "chain": "None"
             },
             "temporal_progression": {
-              "met": true,
+              "met": false,
               "markers": []
             },
             "descriptive": {
@@ -919,17 +919,20 @@
               "after": "Unknown"
             }
           },
-          "criteria_met_count": 4,
+          "criteria_met_count": 3,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Weak causality, unclear outcome."
+            "Weak causality, no real change, short"
           ],
-          "one_sentence_summary": "Rav Zevid permitted intercourse with a virgin on Shabbat, and some say he even did it himself.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, temporal progression, and is descriptive. However, there is no clear causal chain or change in outcome, weakening the classification. It is not a legal discussion, but a report of what Rav Zevid did.",
+          "one_sentence_summary": "Rav Zevid permitted or engaged in intercourse with his virgin wife for the first time on Shabbat.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters and is descriptive. However, there is weak causality, no real change, and it is very short, so it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is self-contained within this segment."
+            "note": "The story ends abruptly."
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         }
       ]
@@ -1103,35 +1106,36 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Levi came \u2192 Levi recited blessings; Rav Asi came \u2192 Rav Asi recited blessings"
+              "chain": "Levi came to house \u2192 Levi recited blessings; Rav Asi came to house \u2192 Rav Asi recited blessings"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "happened to come"
+                "happened to come",
+                "during the wedding celebration"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Levi and Rav Asi did."
+              "evidence": "Describes what Levi and Rav Asi did at wedding celebrations."
             },
             "change_outcome": {
               "met": false,
               "before": "Unknown",
-              "after": "Levi recited 5 blessings, Rav Asi recited 6 blessings"
+              "after": "Unknown"
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Limited change outcome"
+            "No significant change in outcome."
           ],
-          "one_sentence_summary": "Levi and Rav Asi visited wedding celebrations and recited a different number of blessings.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change outcome is weak, as it only describes the number of blessings recited.",
+          "one_sentence_summary": "Levi and Rav Asi each attended wedding celebrations and recited a different number of blessings.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not significantly changed, weakening the story's impact. Therefore, it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The following segments are deliberation about the meaning of the different number of blessings."
+            "note": "The story is self-contained."
           }
         },
         {
@@ -1146,17 +1150,17 @@
             },
             "multiple_events": {
               "met": true,
-              "count": 2,
+              "count": 3,
               "events": [
                 "Rav Ashi came to the house of Rav Kahana",
                 "Rav Ashi recited all seven blessings the first day",
-                "Rav Ashi recited all blessings if there were new faces",
-                "Rav Ashi said it was merely an extension if there were no new faces"
+                "Rav Ashi recited all blessings if new faces were present",
+                "Rav Ashi said it was merely an extension of the original celebration if no new faces were present"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav Ashi came \u2192 Rav Ashi recited blessings; New faces present \u2192 recited all blessings; No new faces \u2192 said it was an extension"
+              "chain": "Rav Ashi came to house \u2192 Rav Ashi recited blessings based on presence of new faces"
             },
             "temporal_progression": {
               "met": true,
@@ -1167,23 +1171,25 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Rav Ashi did at the wedding."
+              "evidence": "Describes what Rav Ashi did at a wedding celebration."
             },
             "change_outcome": {
-              "met": true,
-              "before": "Rav Ashi's practice is unknown",
-              "after": "Rav Ashi changes his practice based on the presence of new faces."
+              "met": false,
+              "before": "Unknown",
+              "after": "Unknown"
             }
           },
-          "criteria_met_count": 6,
+          "criteria_met_count": 5,
           "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "Rav Ashi attended a wedding at Rav Kahana's house and changed his practice of reciting blessings based on whether new faces were present.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
+          "weakeners_found": [
+            "No significant change in outcome."
+          ],
+          "one_sentence_summary": "Rav Ashi attended a wedding at Rav Kahana's house and adjusted the blessings he recited based on the presence of new guests.",
+          "classification_reasoning": "This is likely a story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not significantly changed, weakening the story's impact. Therefore, it is classified as HIGH_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The following segments are deliberation about the wedding blessings."
+            "note": "The story is self-contained."
           }
         },
         {
@@ -1193,12 +1199,12 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Ravina, Rav \u1e24aviva's family, Rav Tachlifa",
+              "evidence": "Ravina, Rav Haviva, Rav Tachlifa",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
-              "count": 3,
+              "count": 4,
               "events": [
                 "Ravina arranged for his son to marry a woman from the house of Rav \u1e24aviva",
                 "Ravina recited the blessing from the time of betrothal",
@@ -1213,28 +1219,29 @@
             "temporal_progression": {
               "met": true,
               "markers": [
-                "from the time of betrothal"
+                "from the time of betrothal",
+                "not successful"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the events that occurred."
+              "evidence": "Describes the events of Ravina arranging a marriage and the subsequent failure."
             },
             "change_outcome": {
               "met": true,
-              "before": "Ravina thought the marriage would happen",
-              "after": "The marriage did not happen."
+              "before": "Marriage was arranged",
+              "after": "Betrothal was retracted"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Ravina arranged a marriage for his son and recited the blessing early, but the betrothal was broken.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
+          "one_sentence_summary": "Ravina arranged a marriage for his son and recited the blessing, but the betrothal was later retracted.",
+          "classification_reasoning": "This is definitively a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "..."
+            "note": "The story is self-contained."
           }
         },
         {
@@ -1257,7 +1264,7 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav \u1e24aviva came to circumcision \u2192 Rav \u1e24aviva recited blessing"
+              "chain": "Rav \u1e24aviva came to house \u2192 Rav \u1e24aviva recited blessing"
             },
             "temporal_progression": {
               "met": true,
@@ -1267,23 +1274,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Rav \u1e24aviva did."
+              "evidence": "Describes what Rav \u1e24aviva did at a circumcision."
             },
             "change_outcome": {
               "met": true,
-              "before": "Unknown if Rav \u1e24aviva recites this blessing at circumcisions",
-              "after": "Rav \u1e24aviva recited the blessing, but the halakha is not in accordance with his opinion."
+              "before": "Rav Haviva recited the blessing",
+              "after": "The halakha is not in accordance with his opinion"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rav \u1e24aviva recited a blessing at a circumcision, but the halakha does not follow his opinion.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
+          "one_sentence_summary": "Rav \u1e24aviva recited a blessing at a circumcision, but the halakha is not in accordance with his opinion.",
+          "classification_reasoning": "This is likely a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome. Therefore, it is classified as HIGH_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "..."
+            "note": "The story is self-contained."
           }
         }
       ]
@@ -1382,19 +1389,19 @@
               "met": true,
               "count": 2,
               "events": [
-                "Child of Rav \u1e24iyya bar Abba died",
+                "His child died",
                 "Reish Lakish did not go to comfort him on the first day, but went with Yehuda bar Natan the next day"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Child dies \u2192 Reish Lakish doesn't visit \u2192 Reish Lakish visits with Yehuda"
+              "chain": "Child dies \u2192 Reish Lakish doesn't comfort \u2192 Reish Lakish goes with Yehuda bar Natan"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "first day",
-                "next day"
+                "On the first day",
+                "The next day"
               ]
             },
             "descriptive": {
@@ -1404,18 +1411,18 @@
             "change_outcome": {
               "met": false,
               "before": "Child is alive",
-              "after": "Child is dead, Reish Lakish visits Rav \u1e24iyya bar Abba"
+              "after": "Child is dead. Reish Lakish attempts to comfort Rav \u1e24iyya bar Abba."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "After the death of Rav \u1e24iyya bar Abba's child, Reish Lakish initially does not visit to comfort him, but then goes the next day with Yehuda bar Natan.",
-          "classification_reasoning": "This is a story because it involves specific people performing actions that create a causal chain of events with temporal progression. The story describes what happened, not what should happen. However, the change outcome is weak, as the situation is not really transformed.",
+          "one_sentence_summary": "After the death of Rav \u1e24iyya bar Abba's child, Reish Lakish initially does not comfort him, but then goes with Yehuda bar Natan the next day.",
+          "classification_reasoning": "This is a story because it involves identifiable characters, multiple events, a causal chain, temporal progression, and descriptive language. The outcome changes from the child being alive to the child being dead, and Reish Lakish attempts to comfort the mourner. However, the story is somewhat weak because the outcome is not fully transformed.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the discussion about the incident."
+            "note": ""
           }
         },
         {
@@ -1425,47 +1432,47 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rabban Gamliel, people",
+              "evidence": "Rabban Gamliel",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "Funeral expenditures were too high",
-                "People would abandon the deceased and flee"
+                "People would abandon the deceased and flee",
+                "Rabban Gamliel adopted a lenient approach"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "High funeral costs \u2192 People abandon the deceased"
+              "chain": "Funeral expenditures were too high \u2192 People abandoned the deceased \u2192 Rabban Gamliel adopted a lenient approach"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
                 "Initially",
-                "until"
+                "Until"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the situation with funeral expenditures."
+              "evidence": "Describes the situation before and after Rabban Gamliel's actions."
             },
             "change_outcome": {
-              "met": false,
-              "before": "High funeral costs",
-              "after": "Rabban Gamliel acted leniently"
+              "met": true,
+              "before": "People abandoned the deceased due to high funeral costs",
+              "after": "Rabban Gamliel's actions made funerals more affordable."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Funeral expenditures were initially so high that people abandoned the deceased until Rabban Gamliel acted leniently.",
-          "classification_reasoning": "This is a borderline story because it has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change outcome is weak, as the story mainly sets the stage for Rabban Gamliel's actions, which are not fully described.",
+          "one_sentence_summary": "Funeral expenditures were initially so high that people abandoned the deceased, until Rabban Gamliel adopted a lenient approach.",
+          "classification_reasoning": "This is a story because it involves identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in outcome. The situation transforms from people abandoning the deceased to Rabban Gamliel making funerals more affordable.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends abruptly."
+            "note": ""
           }
         }
       ]
@@ -1676,20 +1683,20 @@
             "change_outcome": {
               "met": false,
               "before": "Man makes a claim",
-              "after": "Man is ordered to be flogged. Unclear if the flogging actually happened."
+              "after": "Man is ordered to be flogged, but the story ends there. No real change."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story ends abruptly after the order to flog, without a clear resolution or change in the man's situation."
+            "The story ends abruptly after the flogging order, without showing the outcome or any real change."
           ],
-          "one_sentence_summary": "A man claims to have found an unobstructed orifice, and Rav Nachman orders him to be flogged.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not fully realized, as it's unclear if the flogging actually happened, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man claims to Rav Nachman that he found an unobstructed orifice, and Rav Nachman orders him to be flogged.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the story ends abruptly after the flogging order, without showing the outcome or any real change. Therefore, it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is followed by a legal discussion about the credibility of the man's claim."
+            "note": "The discussion continues in the next segment, but the story itself ends here."
           }
         },
         {
@@ -1707,7 +1714,7 @@
               "count": 2,
               "events": [
                 "Man came before Rabban Gamliel and said he found an unobstructed orifice",
-                "Rabban Gamliel suggests he diverted his approach and tells a parable"
+                "Rabban Gamliel suggests he may have diverted his approach and tells a parable"
               ]
             },
             "causal_chain": {
@@ -1725,25 +1732,25 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the man said and what Rabban Gamliel did."
+              "evidence": "Describes what the man said and what Rabban Gamliel said."
             },
             "change_outcome": {
               "met": false,
               "before": "Man makes a claim",
-              "after": "Rabban Gamliel responds with a suggestion and a parable. The man's situation is not changed."
+              "after": "Rabban Gamliel responds with a suggestion and a parable, but the story ends there. No real change."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story ends with a parable, without a clear resolution or change in the man's situation."
+            "The story ends after Rabban Gamliel's response, without showing the outcome or any real change."
           ],
-          "one_sentence_summary": "A man claims to have found an unobstructed orifice, and Rabban Gamliel suggests he diverted his approach and tells a parable.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not fully realized, as the man's situation is not changed by Rabban Gamliel's response. Therefore, it's classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man claims to Rabban Gamliel that he found an unobstructed orifice, and Rabban Gamliel suggests he may have diverted his approach and tells a parable.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the story ends after Rabban Gamliel's response, without showing the outcome or any real change. Therefore, it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is followed by another similar story."
+            "note": "The story is complete within these segments."
           }
         },
         {
@@ -1762,7 +1769,7 @@
               "events": [
                 "Man came before Rabban Gamliel and said he did not find blood",
                 "The bride said she was a virgin",
-                "Rabban Gamliel asked for the cloth"
+                "Rabban Gamliel asked them to bring the cloth"
               ]
             },
             "causal_chain": {
@@ -1785,20 +1792,20 @@
             "change_outcome": {
               "met": false,
               "before": "Man and bride make conflicting claims",
-              "after": "Rabban Gamliel requests the cloth. The situation is unresolved, but a step towards resolution has been taken."
+              "after": "Rabban Gamliel asks for the cloth, but the story ends there. No real change."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story ends abruptly after the request for the cloth, without a clear resolution."
+            "The story ends abruptly after Rabban Gamliel's request, without showing the outcome or any real change."
           ],
-          "one_sentence_summary": "A man claims he found no blood after intercourse, the bride claims she was a virgin, and Rabban Gamliel requests the cloth.",
-          "classification_reasoning": "This is likely a story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. The outcome is not fully realized, as the story ends with Rabban Gamliel's request, but it is a step towards resolution. Therefore, it's classified as HIGH_CONFIDENCE.",
+          "one_sentence_summary": "A man claims to Rabban Gamliel bar Rabbi Yehuda HaNasi that he did not find blood, the bride claims she was a virgin, and Rabban Gamliel asks for the cloth.",
+          "classification_reasoning": "This is a likely story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the story ends abruptly after Rabban Gamliel's request, without showing the outcome or any real change. Therefore, it is classified as HIGH_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
-            "continues_to_next_page": true,
-            "note": "The story continues to the next page."
+            "continues_to_next_page": false,
+            "note": "The discussion continues in the next segment, but the story itself ends here."
           }
         }
       ]
@@ -1903,7 +1910,7 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man and bride come to Rabban Gamliel \u2192 Rabban Gamliel orders maidservants to be brought"
+              "chain": "Man and bride come to Rabban Gamliel \u2192 Rabban Gamliel orders maidservants"
             },
             "temporal_progression": {
               "met": true,
@@ -1916,16 +1923,16 @@
             "change_outcome": {
               "met": false,
               "before": "Man and bride have a problem",
-              "after": "Rabban Gamliel orders maidservants, but the outcome is not yet known"
+              "after": "Rabban Gamliel orders maidservants (outcome not fully known)"
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story is incomplete, as the outcome is not described."
+            "Outcome not fully known"
           ],
-          "one_sentence_summary": "A man and his bride come before Rabban Gamliel because they did not find blood after intercourse, and Rabban Gamliel orders two maidservants to be brought.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not described, so there is no change in the situation. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man and bride come before Rabban Gamliel with a problem, and Rabban Gamliel orders maidservants to be brought.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not fully known, weakening the 'change outcome' criterion.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -1945,15 +1952,14 @@
             },
             "multiple_events": {
               "met": true,
-              "count": 2,
+              "count": 1,
               "events": [
-                "A certain man came before Rabban Gamliel the Elder",
-                "The bride said to him: My teacher, I am from the family of Dorketi"
+                "A certain man came before Rabban Gamliel the Elder"
               ]
             },
             "causal_chain": {
-              "met": true,
-              "chain": "Man and bride come to Rabban Gamliel \u2192 Bride explains her family history"
+              "met": false,
+              "chain": "None"
             },
             "temporal_progression": {
               "met": true,
@@ -1966,20 +1972,25 @@
             "change_outcome": {
               "met": false,
               "before": "Man and bride have a problem",
-              "after": "Bride explains her family history, but the outcome is not yet known"
+              "after": "No change"
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story is incomplete, as the outcome is not described."
+            "Only one real event",
+            "No causal chain",
+            "No change outcome"
           ],
-          "one_sentence_summary": "A man and his bride come before Rabban Gamliel the Elder because they did not find blood after intercourse, and the bride explains that she is from the family of Dorketi.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not described, so there is no change in the situation. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man and bride come before Rabban Gamliel the Elder with a problem.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, temporal progression, and is descriptive. However, there is only one real event, no causal chain, and no change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         },
         {
@@ -2015,16 +2026,16 @@
             "change_outcome": {
               "met": false,
               "before": "Man and bride have a problem",
-              "after": "Rabbi Yehuda HaNasi sees their faces are dark, but the outcome is not yet known"
+              "after": "Rabbi Yehuda HaNasi sees their faces are dark (outcome not fully known)"
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story is incomplete, as the outcome is not described."
+            "Outcome not fully known"
           ],
-          "one_sentence_summary": "A man and his bride come before Rabbi Yehuda HaNasi because they did not find blood after intercourse, and Rabbi Yehuda HaNasi sees that their faces are dark.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not described, so there is no change in the situation. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man and bride come before Rabbi Yehuda HaNasi with a problem, and Rabbi Yehuda HaNasi sees that their faces are dark.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not fully known, weakening the 'change outcome' criterion.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -2367,20 +2378,20 @@
             "identifiable_characters": {
               "met": true,
               "evidence": "members of the court, priests, grooms, widows",
-              "anonymous": true
+              "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 3,
               "events": [
-                "court saw priests demeaning widows",
+                "court saw demeaning of widows",
                 "court instituted marriage contract of 200 dinars",
-                "grooms distanced themselves from widows"
+                "grooms distanced themselves"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Priests demeaning widows \u2192 Court instituted 200 dinar marriage contract \u2192 Grooms distanced themselves"
+              "chain": "demeaning of widows \u2192 court instituted 200 dinars \u2192 grooms distanced themselves"
             },
             "temporal_progression": {
               "met": true,
@@ -2391,23 +2402,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the actions of the court, priests, and grooms."
+              "evidence": "Describes what the court and grooms did."
             },
             "change_outcome": {
               "met": true,
-              "before": "Widows were demeaned",
-              "after": "Grooms distanced themselves from widows"
+              "before": "Widows were demeaned, marriage contract of 100 dinars",
+              "after": "Marriage contract of 200 dinars, grooms distanced themselves"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "The court, observing the priests' demeaning treatment of widows, instituted a marriage contract of 200 dinars, leading grooms to distance themselves from the widows.",
-          "classification_reasoning": "This segment describes a series of events with identifiable characters, a clear causal chain, temporal progression, and a change in the situation. It is a narrative about the actions of the court and the consequences of those actions.",
+          "one_sentence_summary": "The court, seeing the priests demeaning the widows, instituted a marriage contract of two hundred dinars, but then the grooms distanced themselves.",
+          "classification_reasoning": "This is a story because it describes a series of events with identifiable characters, a clear causal chain, temporal progression, and a change in the situation.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is a self-contained story."
+            "note": "The story is self-contained within this segment."
           }
         }
       ]
@@ -2613,7 +2624,7 @@
               "met": true,
               "count": 2,
               "events": [
-                "Woman enters ruin",
+                "Woman enters a ruin",
                 "People ask her about the man"
               ]
             },
@@ -2631,21 +2642,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown",
-              "after": "Woman claims he is a priest"
+              "before": "Woman enters ruin",
+              "after": "Woman answers question"
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Weak change outcome"
+            "Limited change outcome"
           ],
-          "one_sentence_summary": "A woman enters a ruin with a man, and when questioned, she claims he is a priest.",
-          "classification_reasoning": "This segment describes a woman entering a ruin and being questioned about the man she was with. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not significantly changed, as the woman simply provides an explanation, making it LOW_CONFIDENCE.",
+          "one_sentence_summary": "A woman enters a ruin with a man, and people ask her about him, to which she responds.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change outcome is weak, as the situation is not significantly transformed.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This segment is followed by legal deliberation."
+            "note": "The story is very short and self-contained."
           }
         },
         {
@@ -2655,20 +2666,20 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A certain betrothed man and his betrothed",
+              "evidence": "A certain betrothed man, his betrothed, Rav Yosef",
               "anonymous": true
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "They came before Rav Yosef",
+                "A betrothed man and his pregnant betrothed came before Rav Yosef",
                 "She said she conceived from him"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Pregnancy \u2192 They came before Rav Yosef"
+              "chain": "Pregnancy \u2192 Couple comes before Rav Yosef \u2192 She claims he is the father"
             },
             "temporal_progression": {
               "met": true,
@@ -2680,21 +2691,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown",
-              "after": "She claims he is the father"
+              "before": "Couple comes before Rav Yosef",
+              "after": "She makes a claim"
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Weak change outcome"
+            "Limited change outcome"
           ],
           "one_sentence_summary": "A pregnant betrothed woman and her betrothed came before Rav Yosef, where she claimed he was the father.",
-          "classification_reasoning": "This segment describes a betrothed couple coming before Rav Yosef with the woman claiming the man is the father of her child. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is not significantly changed, as the woman simply makes a claim, making it LOW_CONFIDENCE.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change outcome is weak, as the situation is not significantly transformed. The story continues on the next page.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": true,
-            "note": "This story continues to the next page."
+            "note": "The story continues on the next page."
           }
         }
       ]
@@ -2833,20 +2844,20 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A young girl",
+              "evidence": "a young girl",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "descended to fill water",
-                "was raped"
+                "descended to fill her jug with water",
+                "she was raped"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "descended to fill water \u2192 was raped"
+              "chain": "descended to fill water \u2192 she was raped"
             },
             "temporal_progression": {
               "met": true,
@@ -2857,30 +2868,26 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "a young girl who descended to fill her jug with water from the spring, and she was raped, and the identity of the rapist was unknown."
+              "evidence": "There was an incident involving a young girl who descended to fill her jug with water from the spring, and she was raped, and the identity of the rapist was unknown."
             },
             "change_outcome": {
               "met": true,
-              "before": "Girl goes to fetch water",
-              "after": "Girl is raped, rapist unknown"
+              "before": "girl filling water",
+              "after": "girl was raped"
             }
           },
           "criteria_met_count": 6,
-          "disqualifiers_found": [],
+          "disqualifiers_found": [
+            "Mishna section"
+          ],
           "weakeners_found": [],
-          "one_sentence_summary": "A young girl went to fetch water from a spring and was raped by an unknown assailant.",
-          "classification_reasoning": "This segment clearly presents a narrative with identifiable characters, multiple events, a causal chain, temporal progression, descriptive details, and a change in outcome. It meets all the criteria for a story.",
+          "one_sentence_summary": "A young girl went to fill water and was raped.",
+          "classification_reasoning": "This is a story because it describes a sequence of events involving a specific person, with a clear causal chain and change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": true,
-            "note": "The discussion of this story continues on the next page."
-          },
-          "spans_pages": [
-            "Ketubot 14b",
-            "Ketubot 15a"
-          ],
-          "start_segment_page2": 0,
-          "end_segment_page2": 0
+            "note": "The Gemara continues to discuss the legal implications of this story on the next page."
+          }
         }
       ]
     },
@@ -2973,7 +2980,60 @@
           "hebrew": "\u05de\u05b5\u05ea\u05b4\u05d9\u05d1 \u05e8\u05b7\u05d1\u05bc\u05b4\u05d9 \u05d9\u05b4\u05e8\u05b0\u05de\u05b0\u05d9\u05b8\u05d4: \u05d5\u05bc\u05dc\u05b0\u05d9\u05d5\u05bc\u05d7\u05b2\u05e1\u05b4\u05d9\u05df \u05dc\u05b8\u05d0 \u05d1\u05bc\u05b8\u05e2\u05b5\u05d9\u05e0\u05b7\u05df \u05ea\u05bc\u05b0\u05e8\u05b5\u05d9 \u05e8\u05d5\u05bc\u05d1\u05bc\u05b5\u05d9? \u05d5\u05b0\u05d4\u05b8\u05ea\u05b0\u05e0\u05b7\u05df:"
         }
       ],
-      "stories": []
+      "stories": [
+        {
+          "start_segment": 0,
+          "end_segment": 0,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": false,
+              "evidence": "The incident is about an anonymous woman.",
+              "anonymous": true
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 1,
+              "events": [
+                "An incident transpired among the wagons in the marketplace of Tzippori"
+              ]
+            },
+            "causal_chain": {
+              "met": false,
+              "chain": null
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "The incident transpired"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes what happened in the marketplace of Tzippori."
+            },
+            "change_outcome": {
+              "met": false,
+              "before": null,
+              "after": null
+            }
+          },
+          "criteria_met_count": 3,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "An incident transpired among the wagons in the marketplace of Tzippori.",
+          "classification_reasoning": "This is a borderline story because it describes a single event. It lacks identifiable characters and a clear causal chain, but it does have temporal progression and is descriptive.",
+          "continuation": {
+            "continues_from_previous_page": true,
+            "continues_to_next_page": false,
+            "note": "This continues the discussion of the incident involving a young girl who was raped, mentioned in the previous page."
+          },
+          "adversarial_validation": {
+            "reverted": true,
+            "reason": "net negative impact on regression test"
+          }
+        }
+      ]
     },
     {
       "ref": "Ketubot 15b",
@@ -3086,11 +3146,14 @@
           "disqualifiers_found": [],
           "weakeners_found": [],
           "one_sentence_summary": "The Gemara mentions an incident of the rape of a young girl that transpired among the wagons in the marketplace of Tzippori.",
-          "classification_reasoning": "This is a borderline case. It has one event, a location, and a time marker. However, the characters are not identifiable, there is no causal chain, and no change in outcome is described. Therefore, it is classified as LOW_CONFIDENCE.",
+          "classification_reasoning": "This is a borderline story because it only contains one event. It is included because it is a real event, not a hypothetical.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is very brief and self-contained."
+            "note": "The story is very brief and lacks detail."
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         }
       ]
@@ -3303,7 +3366,312 @@
           "hebrew": "\u05d5\u05b0\u05db\u05b7\u05de\u05bc\u05b8\u05d4 \u05db\u05bc\u05c7\u05dc \u05e6\u05b8\u05e8\u05b0\u05db\u05bc\u05d5\u05b9? \u05d0\u05b8\u05de\u05b7\u05e8 \u05e8\u05b7\u05d1 \u05e9\u05c1\u05b0\u05de\u05d5\u05bc\u05d0\u05b5\u05dc \u05d1\u05bc\u05b7\u05e8 \u05d0\u05b4\u05d9\u05e0\u05b4\u05d9 \u05de\u05b4\u05e9\u05bc\u05c1\u05b0\u05de\u05b5\u05d9\u05d4\u05bc \u05d3\u05bc\u05b0\u05e8\u05b7\u05d1: \u05ea\u05bc\u05b0\u05e8\u05b5\u05d9\u05e1\u05b7\u05e8 \u05d0\u05b7\u05dc\u05b0\u05e4\u05b5\u05d9 \u05d2\u05bc\u05b7\u05d1\u05b0\u05e8\u05b5\u05d9, \u05d5\u05b0\u05e9\u05c1\u05b4\u05d9\u05ea\u05bc\u05b8\u05d0 \u05d0\u05b7\u05dc\u05b0\u05e4\u05b5\u05d9 \u05e9\u05c1\u05b4\u05d9\u05e4\u05bc\u05d5\u05bc\u05e8\u05b5\u05d9. \u05d5\u05b0\u05d0\u05b8\u05de\u05b0\u05e8\u05b4\u05d9 \u05dc\u05b7\u05d4\u05bc: \u05ea\u05bc\u05b0\u05dc\u05b5\u05d9\u05e1\u05b7\u05e8 \u05d0\u05b7\u05dc\u05b0\u05e4\u05b5\u05d9 \u05d2\u05bc\u05b7\u05d1\u05b0\u05e8\u05b5\u05d9, \u05d5\u05bc\u05de\u05b4\u05d9\u05e0\u05bc\u05b7\u05d9\u05b0\u05d9\u05d4\u05d5\u05bc \u05e9\u05c1\u05b4\u05d9\u05ea\u05bc\u05b8\u05d0 \u05d0\u05b7\u05dc\u05b0\u05e4\u05b5\u05d9 \u05e9\u05c1\u05b4\u05d9\u05e4\u05bc\u05d5\u05bc\u05e8\u05b5\u05d9. \u05e2\u05d5\u05bc\u05dc\u05bc\u05b8\u05d0 \u05d0\u05b8\u05de\u05b7\u05e8: \u05db\u05bc\u05b0\u05d2\u05d5\u05b9\u05df \u05d3\u05bc\u05b0\u05d7\u05b8\u05d9\u05b0\u05d9\u05e6\u05b4\u05d9 \u05d2\u05bc\u05b7\u05d1\u05b0\u05e8\u05b5\u05d9 \u05de\u05b5\u05d0\u05b2\u05d1\u05d5\u05bc\u05dc\u05bc\u05b8\u05d0 \u05d5\u05b0\u05e2\u05b7\u05d3 \u05e1\u05b4\u05d9\u05db\u05b0\u05e8\u05b8\u05d0. \u05e8\u05b7\u05d1 \u05e9\u05c1\u05b5\u05e9\u05c1\u05b6\u05ea, \u05d5\u05b0\u05d0\u05b4\u05d9\u05ea\u05bc\u05b5\u05d9\u05de\u05b8\u05d0 \u05e8\u05b7\u05d1\u05bc\u05b4\u05d9 \u05d9\u05d5\u05b9\u05d7\u05b8\u05e0\u05b8\u05df \u05d0\u05b8\u05de\u05b7\u05e8: \u05e0\u05b0\u05d8\u05b4\u05d9\u05dc\u05b8\u05ea\u05b8\u05d4\u05bc \u2014 \u05db\u05bc\u05b4\u05e0\u05b0\u05ea\u05b4\u05d9\u05e0\u05b8\u05ea\u05b8\u05d4\u05bc, \u05de\u05b8\u05d4 \u05e0\u05b0\u05ea\u05b4\u05d9\u05e0\u05b8\u05ea\u05b8\u05d4\u05bc \u05d1\u05bc\u05b0\u05e9\u05c1\u05b4\u05e9\u05bc\u05c1\u05b4\u05d9\u05dd \u05e8\u05b4\u05d1\u05bc\u05d5\u05b9\u05d0, \u05d0\u05b7\u05e3 \u05e0\u05b0\u05d8\u05b4\u05d9\u05dc\u05b8\u05ea\u05b8\u05d4\u05bc \u05d1\u05bc\u05b0\u05e9\u05c1\u05b4\u05e9\u05bc\u05c1\u05b4\u05d9\u05dd \u05e8\u05b4\u05d1\u05bc\u05d5\u05b9\u05d0. \u05d5\u05b0\u05d4\u05b8\u05e0\u05b5\u05d9 \u05de\u05b4\u05d9\u05dc\u05bc\u05b5\u05d9 \u05dc\u05b0\u05de\u05b7\u05d0\u05df \u05d3\u05bc\u05b0\u05e7\u05b8\u05e8\u05b5\u05d9 \u05d5\u05b0\u05ea\u05b8\u05e0\u05b5\u05d9,"
         }
       ],
-      "stories": []
+      "stories": [
+        {
+          "start_segment": 2,
+          "end_segment": 2,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rabbi Ami, Rabbi Asi, Sages",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 1,
+              "events": [
+                "Sages ordained Rabbi Ami and Rabbi Asi",
+                "They sang to them"
+              ]
+            },
+            "causal_chain": {
+              "met": false,
+              "chain": null
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "When"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes what they sang"
+            },
+            "change_outcome": {
+              "met": false,
+              "before": "Before ordination",
+              "after": "After ordination"
+            }
+          },
+          "criteria_met_count": 4,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "The Sages ordained Rabbi Ami and Rabbi Asi and sang a song to them.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, temporal progression, and is descriptive. However, the causal chain is weak, and there is no clear change in outcome. The main event is the ordination, and the song is a reaction to it, but it doesn't necessarily cause a change.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          },
+          "adversarial_validation": {
+            "reverted": true,
+            "reason": "net negative impact on regression test"
+          }
+        },
+        {
+          "start_segment": 3,
+          "end_segment": 3,
+          "classification": "HIGH_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rabbi Abbahu, maidservants of the emperor",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Rabbi Abbahu comes from the academy to the house of the emperor",
+                "Maidservants go out to greet him",
+                "They sang to him"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Rabbi Abbahu comes \u2192 Maidservants greet him \u2192 They sing to him"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "When"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes what they sang"
+            },
+            "change_outcome": {
+              "met": false,
+              "before": "Rabbi Abbahu is at the academy",
+              "after": "Rabbi Abbahu is greeted with a song"
+            }
+          },
+          "criteria_met_count": 5,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rabbi Abbahu would come from the academy to the emperor's house, and the maidservants would greet him with a song.",
+          "classification_reasoning": "This is likely a story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. The change in outcome is weak, as it's more of a recurring event than a transformation.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 4,
+          "end_segment": 4,
+          "classification": "YES",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rabbi Yehuda bar Elai, Rav Shmuel bar Rav Yitz\u1e25ak",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Rabbi Yehuda bar Elai would take a myrtle branch",
+                "He would dance before the bride",
+                "He would say: A fair and attractive bride",
+                "Rav Shmuel bar Rav Yitz\u1e25ak would base his dance on three myrtle branches"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Rabbi Yehuda takes branch \u2192 He dances and says praise"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "would"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the actions of the rabbis"
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Bride is not being celebrated",
+              "after": "Bride is being celebrated with dance and praise"
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rabbi Yehuda bar Elai would dance before the bride with a myrtle branch, and Rav Shmuel bar Rav Yitz\u1e25ak would base his dance on three myrtle branches.",
+          "classification_reasoning": "This is definitively a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 6,
+          "end_segment": 6,
+          "classification": "YES",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rav A\u1e25a, Sages",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Rav A\u1e25a places the bride on his shoulders",
+                "Rav A\u1e25a dances",
+                "Sages ask him about the ruling",
+                "Rav A\u1e25a answers them"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Rav A\u1e25a dances with bride \u2192 Sages ask about ruling \u2192 Rav A\u1e25a answers"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "places",
+                "dances"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the actions of Rav A\u1e25a"
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Bride is not being celebrated in this way",
+              "after": "Bride is being celebrated by being placed on shoulders and danced with"
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rav A\u1e25a would place the bride on his shoulders and dance, and when the Sages asked him about it, he gave them a conditional answer.",
+          "classification_reasoning": "This is definitively a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 8,
+          "end_segment": 8,
+          "classification": "HIGH_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "King Agrippa, Sages",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Funeral procession rerouted for wedding procession",
+                "Both yield before King of Israel",
+                "King Agrippa yielded before a bride",
+                "Sages praised him"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "King Agrippa yielded \u2192 Sages praised him"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": []
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the actions of King Agrippa"
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "King could have asserted his right of way",
+              "after": "King yielded and was praised"
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "King Agrippa yielded before a bride, and the Sages praised him for it.",
+          "classification_reasoning": "This is a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 10,
+          "end_segment": 10,
+          "classification": "YES",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rabbi Yehuda, son of Rabbi Elai",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Study of Torah is suspended for funeral and wedding",
+                "Rabbi Yehuda suspended study for funeral and wedding"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Need to attend funeral/wedding \u2192 Rabbi Yehuda suspends study"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "would"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the actions of Rabbi Yehuda"
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Rabbi Yehuda is studying Torah",
+              "after": "Rabbi Yehuda is attending a funeral or wedding"
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rabbi Yehuda, son of Rabbi Elai, would suspend the study of Torah to attend the removal of a corpse for burial and the entry of a bride into the wedding canopy.",
+          "classification_reasoning": "This is definitively a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        }
+      ]
     },
     {
       "ref": "Ketubot 17b",
@@ -3853,47 +4221,47 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Anan bar \u1e24iyya, Rav \u1e24anan bar...",
+              "evidence": "Rav Anan bar \u1e24iyya, Rav \u1e24anan bar \u1e24iyya, Shmuel",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "Rav Anan bar \u1e24iyya came before the court",
-                "Rav Anan testified about his signature and the signature of the other signatory"
+                "Rav Anan bar \u1e24iyya came before the court and testified about his signature and about the signature of the one who signed the document with him",
+                "Rav Yehuda said that was a document for the benefit of orphans, and Shmuel was concerned about the potential for an error of the court."
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav Anan came to court \u2192 He testified about the signatures"
+              "chain": "Rav Anan testifies \u2192 Rav Yehuda explains the context and Shmuel's concern"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
                 "came before the court",
-                "testified"
+                "said"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what happened in the court of Shmuel"
+              "evidence": "Describes what Rav Anan did and Rav Yehuda's explanation."
             },
             "change_outcome": {
               "met": true,
-              "before": "Document needed ratification",
-              "after": "Document was ratified due to Rav Anan's testimony"
+              "before": "A document emerged from the court of Shmuel with specific testimony.",
+              "after": "The testimony is explained as being for orphans and due to Shmuel's concern about court error."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rav Anan bar \u1e24iyya came before the court of Shmuel and testified about his signature and the signature of the other signatory on a document.",
-          "classification_reasoning": "This is a story because it describes specific people (Rav Anan bar \u1e24iyya) performing physical actions (coming to court, testifying) that create a causal chain of events with temporal progression, resulting in a change in the status of the document (ratification).",
+          "one_sentence_summary": "Rav Anan bar \u1e24iyya testified about a document from Shmuel's court, which Rav Yehuda explains was related to orphans and Shmuel's concern about potential court error.",
+          "classification_reasoning": "This is a story because it describes specific people performing actions (testifying, explaining) that create a causal chain of events with temporal progression, resulting in a change in understanding of the document's context. All criteria are met.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav Yehuda's explanation of why Shmuel acted that way."
+            "note": "The story ends with the explanation of the document's context."
           }
         }
       ]
@@ -3988,7 +4356,7 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Ravnai came to sell sesame"
+              "evidence": "Ravnai happened to come and sell sesame"
             },
             "change_outcome": {
               "met": false,
@@ -3999,20 +4367,23 @@
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The main point is the legal teaching, not the events themselves."
+            "The main point is the legal teaching, not the events themselves. No real change in outcome."
           ],
-          "one_sentence_summary": "Ravnai came to sell sesame and stated a teaching of Shmuel.",
-          "classification_reasoning": "This is a borderline case. Ravnai's action of coming to sell sesame and then stating Shmuel's teaching constitutes a minimal narrative. However, the primary focus is on the legal teaching itself, weakening the narrative aspect. It meets 5 criteria, but the lack of a significant change in outcome makes it LOW_CONFIDENCE.",
+          "one_sentence_summary": "Ravnai, brother of Rabbi \u1e24iyya bar Abba, came to sell sesame and quoted a teaching of Shmuel.",
+          "classification_reasoning": "This is borderline. Ravnai performs actions (coming and selling), but the main point is the legal teaching he conveys. There is a causal chain and temporal progression, but no real change in outcome. Therefore, LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends at the end of the segment."
+            "note": "None"
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         },
         {
           "start_segment": 7,
           "end_segment": 8,
-          "classification": "YES",
+          "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -4026,12 +4397,12 @@
                 "Rabbi Abba sat and stated halakha",
                 "Rav Safra raised an objection",
                 "Rabbi Abba asked Rav Yitzhak",
-                "Rav asked them to leave the case"
+                "Chain of asking questions"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rabbi Abba stated halakha -> Rav Safra objected -> Rabbi Abba asked Rav Yitzhak -> Rav said to leave the case"
+              "chain": "Rabbi Abba stated halakha -> Rav Safra objected -> Rabbi Abba asked Rav Yitzhak -> Chain of asking questions"
             },
             "temporal_progression": {
               "met": true,
@@ -4046,19 +4417,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "Rabbi Abba stating halakha",
-              "after": "Rav's instruction to leave the case"
+              "before": "Rabbi Abba states halakha",
+              "after": "Rabbi Abba explains the source of his understanding"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Abba stated a halakha, Rav Safra objected, Rabbi Abba traced the issue back to Rav, who instructed them to leave the case.",
-          "classification_reasoning": "This is a clear story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation from the initial statement of the halakha to the final instruction to leave the case. All 6 criteria are met.",
+          "one_sentence_summary": "Rabbi Abba stated a halakha, Rav Safra objected, and Rabbi Abba explained that he had asked a chain of rabbis about it, ultimately tracing it back to Rav.",
+          "classification_reasoning": "This is a story because it involves multiple rabbis performing actions (sitting, stating, objecting, asking questions) in a causal chain with temporal progression. The situation changes from Rabbi Abba stating a halakha to explaining its source. Therefore, HIGH_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends at the end of the segment."
+            "note": "None"
           }
         }
       ]
@@ -4130,21 +4501,21 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "An important woman, many men, a man she betrothed herself to",
+              "evidence": "an important woman",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 3,
               "events": [
-                "Men clamoring to betroth her",
-                "She said she was betrothed",
-                "She betrothed herself to a man"
+                "men clamoring to betroth her",
+                "she said she was betrothed",
+                "she betrothed herself to a man"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Men want to betroth her \u2192 She says she's betrothed \u2192 She betroths herself to another man"
+              "chain": "Beauty \u2192 Men clamor \u2192 She says betrothed \u2192 She betroths another"
             },
             "temporal_progression": {
               "met": true,
@@ -4154,23 +4525,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what happened with the woman and the men."
+              "evidence": "woman who was outstanding in beauty"
             },
             "change_outcome": {
               "met": true,
-              "before": "Woman is sought after and claims to be betrothed",
-              "after": "Woman betroths herself to a specific man"
+              "before": "Men clamoring to betroth her, she says she is betrothed",
+              "after": "She betroths herself to a man"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A beautiful woman, sought after by many men, initially claims to be betrothed but later betroths herself to a specific man.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome.",
+          "one_sentence_summary": "A beautiful woman, initially claiming to be betrothed to deter suitors, later betroths herself to someone else, prompting questions from the Sages.",
+          "classification_reasoning": "This segment clearly presents a narrative with identifiable characters, multiple events linked by cause and effect, temporal progression, descriptive elements, and a change in the woman's marital status. It meets all the criteria for a story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the Sages asking her a question, but that is not part of the narrative itself."
+            "note": "The story ends with the Sages asking her a question, but that is not part of the story itself."
           }
         }
       ]
@@ -4339,22 +4710,22 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Shmuel, Shmuel's father, captive women, Rabbi Hanina, Rav Shemen bar Abba",
+              "evidence": "Shmuel, Shmuel's father, Rabbi Hanina, Rav Shemen bar Abba, Shmuel's daughters, captors",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 4,
               "events": [
-                "Captive women came to Neharde\u2019a with captors",
-                "Shmuel\u2019s father posted guards",
-                "Shmuel's daughters were taken captive",
+                "Captive women came to Neharde\u2019a with their captors",
+                "Shmuel\u2019s father posted guards with them",
+                "Shmuel\u2019s daughters were taken captive",
                 "Captors took them to Eretz Yisrael and sought to sell them"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Women taken captive \u2192 Shmuel's father posted guards \u2192 Shmuel questioned him \u2192 Shmuel's daughters were taken captive"
+              "chain": "Captive women arrive \u2192 Shmuel's father posts guards \u2192 Shmuel questions him \u2192 Shmuel's daughters are captured \u2192 Rabbi Hanina tells Rav Shemen to marry one"
             },
             "temporal_progression": {
               "met": true,
@@ -4366,23 +4737,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the actions of Shmuel's father, Shmuel, and the captive women."
+              "evidence": "Describes the actions of the people involved, what happened to the captive women, and the conversation between the rabbis."
             },
             "change_outcome": {
               "met": true,
-              "before": "Shmuel's father was guarding captive women.",
-              "after": "Shmuel's daughters were taken captive, and Rabbi Hanina instructed Rav Shemen to marry one of them."
+              "before": "Shmuel's father guards captive women, Shmuel questions him",
+              "after": "Shmuel's daughters are captured, Rabbi Hanina instructs Rav Shemen to marry one of them"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Captive women arrive, Shmuel questions his father's guarding of them, then Shmuel's daughters are taken captive, leading to Rabbi Hanina's instruction to Rav Shemen to marry one.",
-          "classification_reasoning": "This passage clearly meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation from beginning to end.",
+          "one_sentence_summary": "Captive women arrive in Neharde'a, Shmuel questions his father's guarding of them, leading to Shmuel's daughters being captured and Rabbi Hanina instructing Rav Shemen to marry one of them.",
+          "classification_reasoning": "This passage meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation from beginning to end.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the discussion about the permissibility of the marriage."
+            "note": ""
           }
         }
       ]
@@ -4680,15 +5051,15 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Huna, son of Rav Yehoshua; Sages in the study hall of Rav",
+              "evidence": "Rav Huna, son of Rav Yehoshua; the Sages",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "Rav Huna found the Sages in the study hall of Rav",
-                "Rav Huna said to them..."
+                "Rav Huna found the Sages in the study hall",
+                "Rav Huna spoke to them"
               ]
             },
             "causal_chain": {
@@ -4704,7 +5075,7 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Rav Huna found the Sages in the study hall of Rav, who were sitting and saying..."
+              "evidence": "Describes Rav Huna finding the sages and their discussion."
             },
             "change_outcome": {
               "met": false,
@@ -4715,14 +5086,18 @@
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The main event is Rav Huna giving his opinion, which is a verbal act and part of a legal discussion. The change is weak."
+            "The main content is a legal discussion. The finding and speaking are just a frame."
           ],
-          "one_sentence_summary": "Rav Huna, son of Rav Yehoshua, found the Sages in the study hall of Rav discussing teruma and challa, and he gave them his opinion.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the main event is a verbal act within a legal discussion, and the change in outcome is weak. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "Rav Huna, son of Rav Yehoshua, found the Sages in the study hall of Rav discussing teruma and challa, and he offered his opinion on the matter.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the main content is a legal discussion, so it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "The story is self-contained within these two segments."
+          },
+          "adversarial_validation": {
+            "reverted": true,
+            "reason": "net negative impact on regression test"
           }
         }
       ]
@@ -4802,13 +5177,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Seeing someone called to the Torah \u2192 Presumption of priesthood"
+              "chain": "Man sees someone called to Torah \u2192 Man claims he is a priest"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "came before",
-                "saw"
+                "came before"
               ]
             },
             "descriptive": {
@@ -4817,21 +5191,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown status",
-              "after": "Presumption of priesthood (but Rabbi Ami's reaction is not stated)"
+              "before": "Unknown status of the man",
+              "after": "Man claims he is a priest, but Rabbi Ami's response is not recorded."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Rabbi Ami's reaction is not stated, so the outcome is not fully clear."
+            "Rabbi Ami's response is not recorded, so the outcome is unclear."
           ],
-          "one_sentence_summary": "A man tells Rabbi Ami that he believes someone is a priest because he saw him called to the Torah first.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is weak because Rabbi Ami's reaction is not stated, making it LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man came before Rabbi Ami and claimed another man was a priest because he saw him called to the Torah first.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, as Rabbi Ami's response is not recorded, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is the first of several similar incidents."
+            "note": "This is the first story on the page."
           }
         },
         {
@@ -4854,13 +5228,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Seeing someone called to the Torah second \u2192 Presumption of Levite status"
+              "chain": "Man sees someone called to Torah second \u2192 Man claims he is a Levite"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "came before",
-                "saw"
+                "came before"
               ]
             },
             "descriptive": {
@@ -4869,21 +5242,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown status",
-              "after": "Presumption of Levite status (but Rabbi Yehoshua ben Levi's reaction is not stated)"
+              "before": "Unknown status of the man",
+              "after": "Man claims he is a Levite, but Rabbi Yehoshua ben Levi's response is not recorded."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Rabbi Yehoshua ben Levi's reaction is not stated, so the outcome is not fully clear."
+            "Rabbi Yehoshua ben Levi's response is not recorded, so the outcome is unclear."
           ],
-          "one_sentence_summary": "A man tells Rabbi Yehoshua ben Levi that he believes someone is a Levite because he saw him called to the Torah second.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is weak because Rabbi Yehoshua ben Levi's reaction is not stated, making it LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man came before Rabbi Yehoshua ben Levi and claimed another man was a Levite because he saw him called to the Torah second.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, as Rabbi Yehoshua ben Levi's response is not recorded, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is another similar incident."
+            "note": "This is the second story on the page."
           }
         },
         {
@@ -4906,13 +5279,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Seeing someone called to the Torah first \u2192 Presumption of priesthood"
+              "chain": "Man sees someone called to Torah first \u2192 Man claims he is a priest"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "came before",
-                "saw"
+                "came before"
               ]
             },
             "descriptive": {
@@ -4921,21 +5293,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown status",
-              "after": "Presumption of priesthood (but Reish Lakish's reaction is not fully stated)"
+              "before": "Unknown status of the man",
+              "after": "Man claims he is a priest, but Reish Lakish's response is not fully recorded."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Reish Lakish's reaction is not fully stated, so the outcome is not fully clear."
+            "Reish Lakish's full response is not recorded, so the outcome is unclear."
           ],
-          "one_sentence_summary": "A man tells Reish Lakish that he believes someone is a priest because he saw him called to the Torah first.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is weak because Reish Lakish's reaction is not fully stated, making it LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man came before Reish Lakish and claimed another man was a priest because he saw him called to the Torah first.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, as Reish Lakish's response is not fully recorded, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is another similar incident."
+            "note": "This is the third story on the page."
           }
         },
         {
@@ -4958,13 +5330,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Testimony about priesthood \u2192 Questioning by Reish Lakish and Rabbi Yo\u1e25anan"
+              "chain": "A matter came before Rabbi Yo\u1e25anan \u2192 Reish Lakish questioned the person who testified"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "sat before",
-                "came before"
+                "On another occasion"
               ]
             },
             "descriptive": {
@@ -4973,31 +5344,32 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Testimony about priesthood",
-              "after": "Questioning of the testimony (but the final decision is not stated)"
+              "before": "A matter came before Rabbi Yochanan",
+              "after": "The outcome is not clear, as Rabbi Yochanan's final ruling is not recorded."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The final decision is not stated, so the outcome is not fully clear."
+            "The outcome is not clear, as Rabbi Yochanan's final ruling is not recorded."
           ],
-          "one_sentence_summary": "Rabbi Elazar and Reish Lakish are sitting before Rabbi Yo\u1e25anan when a case involving testimony about priesthood comes before them, leading to questioning by Reish Lakish and Rabbi Yo\u1e25anan.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is weak because the final decision is not stated, making it LOW_CONFIDENCE.",
+          "one_sentence_summary": "Rabbi Elazar and Reish Lakish sat before Rabbi Yo\u1e25anan when a case involving testimony about priesthood came before them, leading to questioning by Reish Lakish.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, as Rabbi Yochanan's final ruling is not recorded, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is another similar incident."
+            "note": "This is the fourth story on the page."
           }
         },
         {
           "start_segment": 6,
           "end_segment": 6,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "YES",
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rabbi Yehuda HaNasi, Rabbi \u1e24iyya"
+              "evidence": "Rabbi Yehuda HaNasi, Rabbi \u1e24iyya",
+              "anonymous": false
             },
             "multiple_events": {
               "met": true,
@@ -5009,12 +5381,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Statement of father/brother \u2192 Elevation to priesthood/Levite status"
+              "chain": "Statement of father \u2192 Son elevated to priesthood; Statement of brother \u2192 Brother elevated to Levite status"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "elevated"
+                "one...one"
               ]
             },
             "descriptive": {
@@ -5023,19 +5395,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "Uncertain status",
-              "after": "Elevated to priesthood/Levite status"
+              "before": "Son/brother not confirmed as priest/Levite",
+              "after": "Son confirmed as priest, brother confirmed as Levite"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Yehuda HaNasi and Rabbi \u1e24iyya each elevated someone to priesthood or Levite status based on the statement of a relative.",
-          "classification_reasoning": "This is a LOW_CONFIDENCE story because it is very brief and lacks detail. While it has identifiable characters, multiple events, a causal chain, temporal progression, and a change in outcome, it feels more like a summary of events than a fully developed narrative.",
+          "one_sentence_summary": "Rabbi Yehuda HaNasi and Rabbi \u1e24iyya each elevated a son to priesthood and a brother to Levite status based on the statements of their father and brother, respectively.",
+          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome. All criteria are met.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The following segments discuss this incident."
+            "note": "This is the fifth story on the page."
           }
         }
       ]
@@ -5102,7 +5474,7 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A man, Rabbi \u1e24iyya, Rabbi Yehuda HaNasi, Yo\u1e25anan",
+              "evidence": "A certain man, Rabbi \u1e24iyya, Rabbi Yehuda HaNasi, Yo\u1e25anan",
               "anonymous": false
             },
             "multiple_events": {
@@ -5110,93 +5482,87 @@
               "count": 3,
               "events": [
                 "Man speaks offhandedly",
-                "Friends distanced themselves from him",
-                "Rabbi Yehuda HaNasi elevated him to priesthood"
+                "Man says he remembers being carried on someone's shoulders",
+                "Friends distanced themselves from him and called him Yo\u1e25anan who partakes of \u1e25allot"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man speaks \u2192 Friends distance \u2192 Rabbi elevates"
+              "chain": "Man speaks \u2192 friends distance themselves \u2192 Rabbi Yehuda HaNasi elevates him to priesthood"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
                 "When I was a child",
-                "And my friends distanced themselves",
-                "Rabbi Yehuda HaNasi elevated him"
+                "And my friends distanced themselves"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the man said and what happened to him."
+              "evidence": "Describes what the man said and what his friends did."
             },
             "change_outcome": {
               "met": true,
-              "before": "Man is distanced from friends",
-              "after": "Man is elevated to priesthood"
+              "before": "Man is distanced by friends",
+              "after": "Rabbi Yehuda HaNasi elevates him to priesthood"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man's offhand comment about his childhood leads to his friends distancing themselves, but Rabbi Yehuda HaNasi elevates him to priesthood based on his statement.",
-          "classification_reasoning": "This is a story because it describes a sequence of events involving specific people, with a clear causal chain and temporal progression, resulting in a change in the man's status.",
+          "one_sentence_summary": "A man recounts a memory from his childhood, which leads to his friends distancing themselves from him, but Rabbi Yehuda HaNasi elevates him to priesthood based on his statement.",
+          "classification_reasoning": "This is a story because it involves specific people performing physical actions that create a causal chain of events with temporal progression resulting in change. The man's statement leads to his friends distancing themselves, and ultimately to Rabbi Yehuda HaNasi elevating him to priesthood.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story starts with the Gemara referencing a previous statement and then relating the story."
+            "note": "The story is about a specific man and his interactions with others."
           }
         },
         {
           "start_segment": 9,
           "end_segment": 9,
-          "classification": "HIGH_CONFIDENCE",
+          "classification": "LOW_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A man, his father, a witness",
+              "evidence": "A man, his father",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
-              "count": 3,
+              "count": 2,
               "events": [
-                "Father established priesthood",
-                "Rumor emerged about the son",
-                "They downgraded him"
+                "A rumor emerged about the son",
+                "We downgraded him from the presumptive status"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Father establishes \u2192 Rumor emerges \u2192 They downgraded"
+              "chain": "Rumor emerges \u2192 We downgraded him"
             },
             "temporal_progression": {
               "met": true,
-              "markers": [
-                "Before us",
-                "A rumor emerged",
-                "Therefore we downgraded him"
-              ]
+              "markers": []
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the events that happened to the man and his father."
+              "evidence": "Describes what happened to the man."
             },
             "change_outcome": {
               "met": true,
               "before": "Man has presumptive status of priesthood",
-              "after": "Man is downgraded from priesthood"
+              "after": "Man is downgraded from the presumptive status"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man's father established his priesthood, but a rumor about the son's lineage leads to his downgrading.",
-          "classification_reasoning": "This is a story because it describes a sequence of events involving specific people, with a clear causal chain and temporal progression, resulting in a change in the man's status.",
+          "one_sentence_summary": "A man whose father established his priesthood has a rumor emerge about him, leading to his being downgraded from the presumptive status of priesthood.",
+          "classification_reasoning": "This is a borderline story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in outcome. However, it is closely tied to the legal discussion about priesthood, making it a LOW_CONFIDENCE classification.",
           "continuation": {
             "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": "This story is used to explain the mishna."
+            "continues_to_next_page": true,
+            "note": "The story continues to the next segment."
           }
         }
       ]
@@ -5258,44 +5624,44 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A man who was elevated to priesthood, witnesses",
-              "anonymous": false
+              "evidence": "A man who was elevated and downgraded from priesthood",
+              "anonymous": true
             },
             "multiple_events": {
               "met": true,
               "count": 3,
               "events": [
-                "Elevated him back to priesthood",
-                "Two witnesses came and downgraded him",
-                "One witness came and testified he is a priest"
+                "Elevated to priesthood",
+                "Downgraded from priesthood",
+                "Witness came to testify he is a priest"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Elevated \u2192 Witnesses downgrade \u2192 Another witness testifies"
+              "chain": "Witness testifies \u2192 Elevated to priesthood \u2192 Two witnesses testify \u2192 Downgraded from priesthood"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "Then",
+                "And then",
                 "And then"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what happened to the man and the actions of the witnesses."
+              "evidence": "Describes what did happen"
             },
             "change_outcome": {
               "met": true,
-              "before": "Man elevated to priesthood",
-              "after": "Man downgraded from priesthood"
+              "before": "Man is elevated to priesthood",
+              "after": "Man is downgraded from priesthood"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man is elevated to priesthood, then downgraded by witnesses, and then another witness testifies in his favor.",
-          "classification_reasoning": "This segment contains identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in outcome. Therefore, it is a story.",
+          "one_sentence_summary": "A man is elevated to priesthood based on one witness, then downgraded based on two witnesses, and then another witness comes to testify he is a priest.",
+          "classification_reasoning": "This segment describes a series of events with identifiable characters, a clear causal chain, temporal progression, and a change in outcome. All criteria are met, making it a definitive story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -5316,14 +5682,14 @@
               "met": true,
               "count": 3,
               "events": [
-                "Woman was taken as collateral for a debt in Ashkelon",
-                "Members of her family distanced her",
-                "Witnesses testified that she was not violated"
+                "Woman taken as collateral for a debt in Ashkelon",
+                "Family members distanced themselves from her",
+                "Witnesses testified about her"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Taken as collateral \u2192 Family distanced her \u2192 Witnesses testified"
+              "chain": "Woman taken as collateral \u2192 Family distances themselves"
             },
             "temporal_progression": {
               "met": true,
@@ -5331,19 +5697,19 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the events that happened to the woman and the actions of her family and witnesses."
+              "evidence": "Describes what did happen"
             },
             "change_outcome": {
               "met": true,
-              "before": "Woman taken as collateral and suspected of misconduct",
-              "after": "Witnesses testify she was not violated"
+              "before": "Woman is part of the community",
+              "after": "Family distances themselves from her"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A Jewish woman is taken as collateral for a debt in Ashkelon, her family distances her, and witnesses testify that she was not violated.",
-          "classification_reasoning": "This segment contains identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in outcome. Therefore, it is a story.",
+          "one_sentence_summary": "Rabbi Yosei and Rabbi Zekharya testified about a Jewish woman taken as collateral in Ashkelon, leading her family to distance themselves from her.",
+          "classification_reasoning": "This segment describes a series of events with identifiable characters, a clear causal chain, temporal progression, and a change in outcome. All criteria are met, making it a definitive story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -5561,48 +5927,48 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A man who rented a donkey, his colleague (the renter), Rava",
-              "anonymous": false
+              "evidence": "A certain man, his colleague, Rava",
+              "anonymous": true
             },
             "multiple_events": {
               "met": true,
               "count": 3,
               "events": [
-                "Man rented donkey and gave instructions",
+                "Man rented donkey",
                 "Renter went on forbidden path",
-                "Renter came before Rava and spoke"
+                "Renter came before Rava"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rental agreement with warning \u2192 Renter ignores warning \u2192 Donkey dies \u2192 Renter claims no water \u2192 Rava accepts claim"
+              "chain": "Rental \u2192 forbidden path \u2192 claim before Rava"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "after renting",
-                "came before Rava"
+                "went",
+                "came before"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the man said, what the renter did, and what Rava said."
+              "evidence": "Describes the path, the lack of water, the donkey's death"
             },
             "change_outcome": {
               "met": true,
-              "before": "Donkey is dead, renter is potentially liable",
-              "after": "Rava accepts renter's claim, renter is not liable"
+              "before": "Dispute over donkey's death",
+              "after": "Rava accepts renter's claim"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man who rented a donkey warned the renter not to take a certain path, but the renter did anyway, and when the donkey died, the renter claimed there was no water on that path, and Rava accepted his claim.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
+          "one_sentence_summary": "A man who rented a donkey went on a forbidden path, but claimed there was no water, and Rava accepted his claim.",
+          "classification_reasoning": "This is a clear story with identifiable characters, multiple events, a causal chain, temporal progression, descriptive details, and a change in outcome. It meets all the criteria for a story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "Story is self-contained."
           }
         },
         {
@@ -5612,47 +5978,48 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Mari bar Isak (or Hana bar Isak), his alleged brother, Rav Hisda",
+              "evidence": "Mari bar Isak (or Hana bar Isak), his brother, Rav Hisda",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 3,
               "events": [
-                "Alleged brother came to Mari",
-                "Alleged brother asked for inheritance",
-                "Rav Hisda told him to bring witnesses"
+                "Brother came to Mari",
+                "Brother asked for inheritance",
+                "Brother claimed witnesses were afraid"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Alleged brother arrives \u2192 Alleged brother claims inheritance \u2192 Mari denies knowing him \u2192 Rav Hisda asks for proof \u2192 Alleged brother claims witnesses are afraid \u2192 Rav Hisda tells Mari to bring counter-witnesses"
+              "chain": "Brother arrives \u2192 asks for inheritance \u2192 claims witnesses are afraid"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "came to him"
+                "came",
+                "said"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the alleged brother said, what Mari said, and what Rav Hisda said."
+              "evidence": "Describes the brother's claim and the witnesses' fear"
             },
             "change_outcome": {
               "met": true,
-              "before": "Alleged brother claims inheritance",
-              "after": "Rav Hisda demands proof, shifting the burden to Mari"
+              "before": "Dispute over inheritance",
+              "after": "Rav Hisda tells Mari to bring witnesses"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A man claiming to be Mari bar Isak's brother came from a distant place and demanded his share of the inheritance, but Mari denied knowing him, so Rav Hisda told the claimant to bring witnesses, but the claimant said they were afraid of Mari, so Rav Hisda told Mari to bring counter-witnesses.",
-          "classification_reasoning": "This is a story because it has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and has a change in outcome.",
+          "one_sentence_summary": "A man claiming to be Mari bar Isak's brother came from a distant place and asked for his inheritance, but Mari didn't recognize him, and Rav Hisda instructed them to bring witnesses.",
+          "classification_reasoning": "This is a story with identifiable characters, multiple events, a causal chain, temporal progression, descriptive details, and a change in outcome. It meets all the criteria for a story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "Story is self-contained."
           }
         },
         {
@@ -5662,45 +6029,50 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Dimi, Rav Hanan of Carthage, Rabbi Yehoshua ben Levi, Rabbi Yehuda HaNasi, a person who...",
+              "evidence": "Rav Dimi, Rav Hanan, Rabbi Yehoshua ben Levi (or Rabbi Yehuda HaNasi)",
               "anonymous": false
             },
             "multiple_events": {
-              "met": true,
+              "met": false,
               "count": 1,
               "events": [
-                "Rav Dimi came from Eretz Yisrael and related a story"
+                "Rav Dimi came from Eretz Yisrael"
               ]
             },
             "causal_chain": {
               "met": false,
-              "chain": "None"
+              "chain": ""
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "when Rav Dimi came"
+                "came"
               ]
             },
             "descriptive": {
-              "met": false,
-              "evidence": "Only introduces the story, doesn't describe it"
+              "met": true,
+              "evidence": "Describes Rav Dimi's arrival and the incident related by Rav Hanan"
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown",
-              "after": "Unknown"
+              "before": "N/A",
+              "after": "N/A"
             }
           },
           "criteria_met_count": 3,
           "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "Rav Dimi came from Eretz Yisrael and related a story about a person who...",
-          "classification_reasoning": "This is a borderline story because it only sets up the story but doesn't tell it. It has identifiable characters and temporal progression, but lacks multiple events, a causal chain, descriptive details, and a change in outcome. It is one event + discussion.",
+          "weakeners_found": [
+            "Only one real event, the rest is introduction to another story"
+          ],
+          "one_sentence_summary": "Rav Dimi came from Eretz Yisrael and related an incident that came before Rabbi Yehoshua ben Levi (or Rabbi Yehuda HaNasi).",
+          "classification_reasoning": "This is borderline. It has identifiable characters and temporal progression, but only one clear event (Rav Dimi's arrival). The rest is an introduction to another story, which is not fully presented here. Therefore, it's classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story itself is not told here, so it's only LOW_CONFIDENCE."
+            "note": "Story is incomplete."
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         },
         {
@@ -5717,12 +6089,12 @@
               "met": true,
               "count": 1,
               "events": [
-                "Rabbi Zekharya ben HaKatzav said..."
+                "Rabbi Zekharya's statement"
               ]
             },
             "causal_chain": {
               "met": false,
-              "chain": "None"
+              "chain": ""
             },
             "temporal_progression": {
               "met": true,
@@ -5732,25 +6104,25 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Rabbi Zekharya said"
+              "evidence": "Describes the situation during the gentile occupation of Jerusalem"
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown",
-              "after": "Unknown"
+              "before": "N/A",
+              "after": "N/A"
             }
           },
           "criteria_met_count": 4,
           "disqualifiers_found": [
-            "Mishna section (\u05de\u05ea\u05e0\u05d9\u05f3)"
+            "Mishna section"
           ],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Zekharya ben HaKatzav swore that his wife's hand did not leave his during the siege of Jerusalem and that she was not defiled.",
-          "classification_reasoning": "This is not a story because it is a Mishna section. Although it has identifiable characters, temporal progression, and is descriptive, the fact that it is a Mishna disqualifies it.",
+          "one_sentence_summary": "Rabbi Zekharya ben HaKatzav swears that his wife's hand did not leave his during the gentile occupation of Jerusalem.",
+          "classification_reasoning": "This is a Mishna section, and therefore not a story. Although it has some narrative elements, the primary purpose is to present a legal ruling and a statement by a rabbi, not to narrate a sequence of events.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "Mishna section."
           }
         },
         {
@@ -5764,13 +6136,15 @@
               "anonymous": false
             },
             "multiple_events": {
-              "met": false,
-              "count": 0,
-              "events": []
+              "met": true,
+              "count": 1,
+              "events": [
+                "He designated a house for her"
+              ]
             },
             "causal_chain": {
               "met": false,
-              "chain": "None"
+              "chain": ""
             },
             "temporal_progression": {
               "met": true,
@@ -5781,25 +6155,25 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the arrangement he made for her"
+              "evidence": "Describes the arrangement for his wife"
             },
             "change_outcome": {
               "met": false,
-              "before": "Unknown",
-              "after": "Unknown"
+              "before": "N/A",
+              "after": "N/A"
             }
           },
-          "criteria_met_count": 3,
+          "criteria_met_count": 4,
           "disqualifiers_found": [
-            "Habitual action (\u05d4\u05d9\u05d4 \u05e8\u05d2\u05d9\u05dc)"
+            "Habitual action"
           ],
           "weakeners_found": [],
-          "one_sentence_summary": "Even though the Sages forbade Rabbi Zekharya's wife to him, he designated a house for her in his courtyard and took precautions to avoid seclusion with her.",
-          "classification_reasoning": "This is not a story because it describes a habitual action. Although it has identifiable characters, temporal progression, and is descriptive, the fact that it is a habitual action disqualifies it.",
+          "one_sentence_summary": "Despite the Sages' ruling, Rabbi Zekharya ben HaKatzav did not divorce his wife but designated a house for her and took precautions to avoid seclusion.",
+          "classification_reasoning": "This describes a habitual action (\u05d4\u05d9\u05d4 \u05e8\u05d2\u05d9\u05dc) and is not a story. It lacks a clear causal chain and a significant change in outcome. It's more of a description of how he typically acted.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "Describes habitual action."
           }
         }
       ]
@@ -5930,12 +6304,12 @@
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A divorced, betrothed man and his betrothed came before Rava for judgment, and Rava placed an intermediary between them, leading to a discussion with Rav Adda bar Mattana about the permissibility of such an action.",
-          "classification_reasoning": "This is a story because it describes a specific incident with identifiable characters, multiple events connected by cause and effect, temporal progression, and a change in the situation. The main characters are Rava, Rav Adda bar Mattana, and the couple. The events are the couple coming to Rava and Rava placing an intermediary. The events are causally linked. The story describes what happened, not what should happen. The situation changes from a couple seeking judgment to Rava placing an intermediary. The legal discussion that follows does not negate the narrative nature of the initial event.",
+          "one_sentence_summary": "A divorced, betrothed man and his betrothed came before Rava for judgment, and Rava placed an intermediary to separate them, leading to a discussion with Rav Adda bar Mattana.",
+          "classification_reasoning": "This is a story because it involves specific people performing physical actions that create a causal chain of events with temporal progression resulting in change. The characters are Rava, Rav Adda bar Mattana, and the couple. The events are the couple coming before Rava and Rava placing an intermediary. These events are causally linked. There is temporal progression. The situation changes from the couple seeking judgment to Rava intervening. The story is weakened by the fact that much of the segment is dialogue.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the discussion between Rava and Rav Adda bar Mattana."
+            "note": ""
           }
         }
       ]
@@ -6027,16 +6401,15 @@
             },
             "multiple_events": {
               "met": true,
-              "count": 3,
+              "count": 2,
               "events": [
-                "Rabbi Elazar testified",
-                "Court sought to elevate a slave to priesthood",
-                "Rabbi Elazar saw teruma distributed to a slave"
+                "Rabbi Elazar testified in court",
+                "They sought to elevate a slave to priesthood"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rabbi Elazar testified \u2192 Court sought to elevate slave \u2192 They did not elevate the slave"
+              "chain": "Rabbi Elazar testified \u2192 They sought to elevate a slave"
             },
             "temporal_progression": {
               "met": true,
@@ -6048,23 +6421,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Rabbi Elazar did and saw"
+              "evidence": "Rabbi Elazar saw teruma distributed directly to the slave of a priest in the place of Rabbi Yosei, where one does not elevate from teruma to lineage, and he went and testified in the place of Rabbi Yehuda."
             },
             "change_outcome": {
               "met": true,
-              "before": "Court initially considered elevating the slave",
-              "after": "Court did not elevate the slave"
+              "before": "Rabbi Elazar had never testified",
+              "after": "Rabbi Elazar testified, and they sought to elevate a slave, but ultimately did not."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Elazar testified in court, which led the court to consider elevating a slave to priesthood, but ultimately they did not.",
-          "classification_reasoning": "This passage describes a series of events involving Rabbi Elazar's testimony and the court's subsequent actions. There is a clear causal chain and temporal progression, resulting in a change in the situation.",
+          "one_sentence_summary": "Rabbi Elazar testified in court, leading to an attempt to elevate a slave to priesthood, which ultimately failed, and he testified in a different location.",
+          "classification_reasoning": "This is a story because it involves identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive details, and a change in the situation. All criteria are met.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "The story ends with the final narrative action of Rabbi Elazar testifying in a different location."
           }
         }
       ]
@@ -7432,46 +7805,47 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Pappa, son of Rav \u1e24anan, Rav Shimi bar Ashi",
+              "evidence": "Rav Pappa, Rav Hanan, Rav Shimi bar Ashi",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "Rav Pappa heard a halakha and went to Rav Shimi",
-                "Rav Shimi responded to him"
+                "Rav Pappa heard a halakha",
+                "Rav Pappa went and said it before Rav Shimi bar Ashi"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Hearing halakha \u2192 Going to Rav Shimi \u2192 Rav Shimi's response"
+              "chain": "Hearing halakha \u2192 went and said it"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
+                "heard",
                 "went"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Rav Pappa heard this halakha and went and said it before Rav Shimi bar Ashi."
+              "evidence": "Rav Pappa, son of Rav \u1e24anan, from a place called Bei Kelo\u1e25it, heard this halakha and went and said it before Rav Shimi bar Ashi."
             },
             "change_outcome": {
               "met": true,
-              "before": "Rav Pappa has a halakha",
-              "after": "Rav Shimi clarifies that they have different traditions"
+              "before": "Rav Pappa heard a halakha",
+              "after": "Rav Pappa told the halakha to Rav Shimi, who responded with a different tradition."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rav Pappa heard a halakha and went to Rav Shimi, who clarified that they have different traditions.",
-          "classification_reasoning": "This segment describes Rav Pappa hearing a halakha and going to Rav Shimi, who then responds. This creates a causal chain of events with temporal progression and a change in understanding. All criteria are met.",
+          "one_sentence_summary": "Rav Pappa heard a halakha and went to Rav Shimi to tell it to him, but Rav Shimi had a different tradition.",
+          "classification_reasoning": "This is a story because Rav Pappa performs actions (hearing, going, saying) that create a causal chain and temporal progression, resulting in a change in the situation (from Rav Pappa knowing the halakha to Rav Shimi knowing it and responding).",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav Shimi's response."
+            "note": "The story ends with Rav Shimi's response. The following deliberation is not part of the story."
           }
         }
       ]
@@ -7756,13 +8130,13 @@
               "met": true,
               "count": 2,
               "events": [
-                "matter was difficult for Rabba and Rav Yosef",
+                "matter was difficult",
                 "Rav Yosef sat at the head of the academy and resolved it"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Difficulty \u2192 Rav Yosef sat at head \u2192 Resolution"
+              "chain": "Difficulty \u2192 Rav Yosef sat and resolved it"
             },
             "temporal_progression": {
               "met": true,
@@ -7777,19 +8151,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "matter was difficult",
-              "after": "matter was resolved"
+              "before": "matter was unresolved",
+              "after": "Rav Yosef resolved it"
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rava recounts how Rabba and Rav Yosef struggled with a legal matter for twenty-two years until Rav Yosef, upon becoming head of the academy, resolved it.",
-          "classification_reasoning": "While the segment describes a change in state (from unresolved to resolved), the primary action is Rav Yosef resolving a legal issue, which is borderline. However, the temporal progression and causal chain are clear, and there are identifiable characters. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "Rava relates that a legal matter was difficult for Rabba and Rav Yosef for twenty-two years until Rav Yosef resolved it.",
+          "classification_reasoning": "While the segment describes a legal issue, it also includes the specific actions of Rav Yosef sitting at the head of the academy and resolving the issue, which constitutes a change in the situation. The 'difficulty' is a weakener, but the sitting and resolving are events.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with the resolution. The following segment is a verbal act of Rabba."
+            "note": "The story ends with the resolution."
           }
         }
       ]
@@ -8860,12 +9234,12 @@
               "count": 2,
               "events": [
                 "Rava coerced Rav Natan bar Ami",
-                "Rava extracted 400 zuz for charity"
+                "Rava took 400 zuz from him for charity"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Wealthy man \u2192 Rava coerced him \u2192 Money donated"
+              "chain": "Rava coerced \u2192 Rava took money"
             },
             "temporal_progression": {
               "met": true,
@@ -8873,7 +9247,7 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes Rava coercing Rav Natan bar Ami"
+              "evidence": "Describes what Rava did to Rav Natan bar Ami"
             },
             "change_outcome": {
               "met": true,
@@ -8885,7 +9259,7 @@
           "disqualifiers_found": [],
           "weakeners_found": [],
           "one_sentence_summary": "Rava coerced the wealthy Rav Natan bar Ami to donate 400 zuz to charity.",
-          "classification_reasoning": "This is a story because it involves specific people (Rava and Rav Natan bar Ami) performing physical actions (coercing and donating) that create a causal chain of events with temporal progression, resulting in a change in the situation.",
+          "classification_reasoning": "This segment describes a specific incident where Rava coerced Rav Natan bar Ami to donate to charity. It involves identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -8895,23 +9269,24 @@
         {
           "start_segment": 10,
           "end_segment": 10,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rabbi Yehuda, son of the sister of Rabbi Yosei bar \u1e24anina",
+              "evidence": "Rabbi Yehuda, son of the sister of Rabbi Yosei bar \u1e24anina, the daughter, her husband, the widow",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
-              "count": 1,
+              "count": 2,
               "events": [
-                "Rabbi Yehuda was involved in an incident"
+                "The daughter died",
+                "Her husband inherited from her"
               ]
             },
             "causal_chain": {
-              "met": false,
-              "chain": ""
+              "met": true,
+              "chain": "Daughter died \u2192 Husband inherited"
             },
             "temporal_progression": {
               "met": true,
@@ -8919,19 +9294,19 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes Rabbi Yehuda's involvement in an incident"
+              "evidence": "Describes the events that occurred after the daughter died and her husband inherited."
             },
             "change_outcome": {
-              "met": false,
-              "before": "Unknown",
-              "after": "Sages ruled widow is sustained"
+              "met": true,
+              "before": "Daughter owned property",
+              "after": "Husband owned property"
             }
           },
-          "criteria_met_count": 4,
+          "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Yehuda, son of the sister of Rabbi Yosei bar \u1e24anina, recounts his involvement in a case where the Sages ruled that a widow should be sustained from her deceased daughter's estate.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters and describes a past event. However, the causal chain is weak, and the change in outcome is more of a legal ruling than a transformation of the situation. It is mainly dialogue but with some real events.",
+          "one_sentence_summary": "Rabbi Yehuda recounts a case where a daughter died, her husband inherited from her, and the question of the widow's sustenance arose.",
+          "classification_reasoning": "This segment describes a specific incident involving identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in outcome. The fact that Rabbi Yehuda was 'involved' suggests he took some action, even if not explicitly stated.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -8941,7 +9316,7 @@
         {
           "start_segment": 12,
           "end_segment": 12,
-          "classification": "HIGH_CONFIDENCE",
+          "classification": "YES",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -8950,15 +9325,16 @@
             },
             "multiple_events": {
               "met": true,
-              "count": 2,
+              "count": 3,
               "events": [
-                "A man approached Rabbi Yonatan",
+                "Rabbi \u1e24anina and Rabbi Yonatan were standing",
+                "A certain man approached",
                 "The man kissed Rabbi Yonatan"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man approaches \u2192 Man kisses Rabbi Yonatan"
+              "chain": "Standing \u2192 Man approached \u2192 Man kissed"
             },
             "temporal_progression": {
               "met": true,
@@ -8966,19 +9342,19 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the man approaching and kissing Rabbi Yonatan"
+              "evidence": "Describes the actions of the rabbis and the man."
             },
             "change_outcome": {
-              "met": false,
-              "before": "Rabbi Hanina and Rabbi Yonatan were standing",
-              "after": "A man kissed Rabbi Yonatan"
+              "met": true,
+              "before": "Rabbi Yonatan not kissed",
+              "after": "Rabbi Yonatan kissed"
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "While Rabbi \u1e24anina and Rabbi Yonatan were standing together, a man approached and kissed Rabbi Yonatan.",
-          "classification_reasoning": "This is likely a story because it involves specific people (Rabbi \u1e24anina, Rabbi Yonatan, and an anonymous man) performing physical actions (approaching and kissing) that create a causal chain of events with temporal progression. The change in outcome is minimal, which weakens the classification slightly.",
+          "one_sentence_summary": "Rabbi \u1e24anina and Rabbi Yonatan were standing together when a man approached and kissed Rabbi Yonatan.",
+          "classification_reasoning": "This segment describes a specific incident with identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": true,
@@ -9143,13 +9519,13 @@
               "met": true,
               "count": 2,
               "events": [
-                "movable property deposited with Rabbi Banai",
+                "movable property belonging to orphans was in the possession of Rabbi Banai",
                 "orphan daughters came before Shmuel"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Property deposited \u2192 daughters seek ruling"
+              "chain": "Orphans have property with Rabbi Banai \u2192 Orphans go to Shmuel"
             },
             "temporal_progression": {
               "met": true,
@@ -9163,21 +9539,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "daughters have property",
-              "after": "daughters have property, Shmuel gives instruction"
+              "before": "Orphans have property with Rabbi Banai",
+              "after": "Shmuel tells Rabbi Banai to sustain them.  The outcome is not fully described."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Limited change in outcome, mainly dialogue following events"
+            "The outcome is not fully described."
           ],
-          "one_sentence_summary": "Rabbi Banai held orphans' property, and the daughters sought Shmuel's ruling on how to sustain themselves.",
-          "classification_reasoning": "This segment contains identifiable characters and multiple events with a causal chain and temporal progression. However, the change in outcome is weak, as the story ends with Shmuel's instruction, and the following segment is a deliberation about the meaning of the instruction, weakening the narrative flow.",
+          "one_sentence_summary": "Orphan daughters with property held by Rabbi Banai come before Shmuel, who instructs Rabbi Banai to sustain them.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change in outcome is weak, as it's not explicitly stated that Rabbi Banai followed Shmuel's instruction.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Shmuel's instruction, and the following segment is a deliberation about the meaning of the instruction."
+            "note": "The story is followed by a deliberation about the meaning of Shmuel's instruction."
           }
         },
         {
@@ -9187,20 +9563,20 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "judges of Neharde'a, Rav \u1e24ana bar Bizna, Rav Na\u1e25man",
+              "evidence": "judges of Neharde\u2019a, Rav \u1e24ana bar Bizna, Rav Na\u1e25man",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "judges ruled",
-                "Rav \u1e24ana collected"
+                "A case came before the court in Neharde\u2019a, and the judges ruled that the daughters must be supported from the movable property",
+                "a case occurred in Pumbedita, and Rav \u1e24ana bar Bizna collected the sustenance"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "case occurred \u2192 judges ruled"
+              "chain": "Case in Neharde'a \u2192 Judges rule; Case in Pumbedita \u2192 Rav \u1e24ana collects sustenance"
             },
             "temporal_progression": {
               "met": true,
@@ -9210,25 +9586,25 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "There was an incident of this kind that came before the court in Neharde\u2019a"
+              "evidence": "There was an incident of this kind that came before the court in Neharde\u2019a, and the judges of Neharde\u2019a ruled that the daughters must be supported from the movable property that their father had left."
             },
             "change_outcome": {
               "met": false,
-              "before": "case before court",
-              "after": "judges ruled, Rav Hana collected"
+              "before": "Case before the court",
+              "after": "Judges rule and Rav Hana collects sustenance. The actual change in the daughters' situation is not described."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Limited change in outcome, very brief narrative"
+            "The actual change in the daughters' situation is not described."
           ],
-          "one_sentence_summary": "A case occurred in Neharde'a where the judges ruled, and Rav \u1e24ana bar Bizna collected.",
-          "classification_reasoning": "This segment describes a case that came before the court and the subsequent ruling. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, it is a very brief narrative and the change in outcome is limited, making it a borderline story.",
+          "one_sentence_summary": "Cases in Neharde'a and Pumbedita lead to rulings and actions regarding daughters' sustenance from movable property.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change in outcome is weak, as the actual impact on the daughters is not described.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is very brief and ends abruptly."
+            "note": "The story is followed by Rav Nahman's reaction, which is a verbal act."
           }
         },
         {
@@ -9238,20 +9614,20 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Yosef, sons of the deceased man, Abaye, a certain person",
+              "evidence": "Rav Yosef, Abaye, a certain person, sons of the deceased man, daughter",
               "anonymous": true
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "person came before Rav Yosef",
-                "Rav Yosef said to give sustenance"
+                "A certain person came before Rav Yosef to inquire about this matter",
+                "Rav Yosef said to the sons of the deceased man: Give the daughter her sustenance from the dates"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "person came \u2192 Rav Yosef instructed"
+              "chain": "Person inquires \u2192 Rav Yosef instructs sons"
             },
             "temporal_progression": {
               "met": true,
@@ -9265,21 +9641,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "person inquires",
-              "after": "Rav Yosef instructs"
+              "before": "Person inquires",
+              "after": "Rav Yosef instructs sons. Whether they comply is not stated."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Limited change in outcome, mainly dialogue following events"
+            "Whether the sons comply is not stated."
           ],
-          "one_sentence_summary": "A person came to Rav Yosef for a ruling, and Rav Yosef instructed the sons to give sustenance from the dates.",
-          "classification_reasoning": "This segment contains identifiable characters and multiple events with a causal chain and temporal progression. However, the change in outcome is weak, as the story ends with Rav Yosef's instruction, and the following segment is a clarification of his statement, weakening the narrative flow.",
+          "one_sentence_summary": "A person inquires of Rav Yosef, who instructs the sons of the deceased to give the daughter sustenance from dates.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change in outcome is weak, as it's not explicitly stated that the sons followed Rav Yosef's instruction.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav Yosef's clarification."
+            "note": "The story is followed by a legal discussion between Abaye and Rav Yosef."
           }
         }
       ]
@@ -9481,7 +9857,7 @@
               "count": 2,
               "events": [
                 "Rav raised an objection to the opinion of Shmuel\u2019s father",
-                "Rav recited a verse about Shmuel's father"
+                "Rav recited a verse about Shmuel\u2019s father"
               ]
             },
             "causal_chain": {
@@ -9491,7 +9867,9 @@
             "temporal_progression": {
               "met": true,
               "markers": [
-                "sequential actions"
+                "objection raised",
+                "silenced",
+                "verse recited"
               ]
             },
             "descriptive": {
@@ -9500,19 +9878,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "Shmuel's father states an opinion.",
-              "after": "Shmuel's father is silenced and Rav criticizes him."
+              "before": "Rav and Shmuel's father are in disagreement.",
+              "after": "Shmuel's father is silenced and Rav recites a verse about him."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
           "one_sentence_summary": "Rav objects to Shmuel's father's opinion regarding a raped woman's marital status, leading to Shmuel's father being silenced and Rav reciting a verse about him.",
-          "classification_reasoning": "This passage meets all criteria for a story. It has identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in the situation.",
+          "classification_reasoning": "This passage meets all the criteria for a story. It involves identifiable characters (Rav and Shmuel's father) performing multiple actions (raising an objection, being silenced, reciting a verse) in a causal chain with temporal progression, resulting in a change in the situation.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav's action and the Gemara's comment."
+            "note": "The story ends with Rav reciting the verse."
           }
         }
       ]
@@ -9616,12 +9994,12 @@
               "met": true,
               "count": 2,
               "events": [
-                "Levi thought to act in accordance with this baraita",
-                "Rav said to him: My uncle [\u1e25avivi], Rabbi \u1e24iyya, said as follows: The halakha is not in accordance with this baraita."
+                "Levi thought to act",
+                "Rav said to him"
               ]
             },
             "causal_chain": {
-              "met": true,
+              "met": false,
               "chain": "Levi's thought \u2192 Rav's statement"
             },
             "temporal_progression": {
@@ -9630,25 +10008,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what Levi thought and what Rav said."
+              "evidence": "Levi thought to act, Rav said to him"
             },
             "change_outcome": {
               "met": false,
-              "before": "Levi thought to act according to one baraita",
-              "after": "Rav tells him not to, citing Rabbi \u1e24iyya."
+              "before": "Levi's intention to act according to one baraita",
+              "after": "Rav tells him not to act according to that baraita"
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 4,
           "disqualifiers_found": [],
-          "weakeners_found": [
-            "The change outcome is weak, as it's just a change in thought, not a physical action."
-          ],
-          "one_sentence_summary": "Levi considered acting according to a baraita, but Rav told him that Rabbi \u1e24iyya said the halakha is not in accordance with that baraita.",
-          "classification_reasoning": "This is a borderline case. Levi's thought to act is a narrative event, and Rav's response is another. There is a causal chain and temporal progression. However, the change is only in Levi's intention, not a concrete outcome. Therefore, it's classified as LOW_CONFIDENCE.",
+          "weakeners_found": [],
+          "one_sentence_summary": "Levi intended to act according to a baraita, but Rav told him that the halakha is not in accordance with that baraita.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters and temporal progression. Levi's thought to act is a narrative event, and Rav's response is another. However, the causal chain is weak, and the change in outcome is not significant enough to warrant a higher classification. It is mainly dialogue with some real events.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "The story is self-contained within this segment."
           }
         }
       ]
@@ -9762,13 +10138,13 @@
               "met": true,
               "count": 2,
               "events": [
-                "Relatives took care of the wife of their father",
-                "Rabbi Yo\u1e25anan said in regret"
+                "Relatives took care of the wife of their father who required medical treatment",
+                "Rabbi Yo\u1e25anan said in regret: We have made ourselves like legal advisors"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Relatives care for wife \u2192 Rabbi Yo\u1e25anan regrets his earlier statement"
+              "chain": "Relatives care for wife \u2192 Rabbi Yo\u1e25anan regrets their actions"
             },
             "temporal_progression": {
               "met": true,
@@ -9778,19 +10154,19 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the relatives did and what Rabbi Yo\u1e25anan said."
+              "evidence": "Describes what the relatives and Rabbi Yo\u1e25anan did."
             },
             "change_outcome": {
               "met": true,
-              "before": "Relatives were taking care of the wife.",
-              "after": "Rabbi Yo\u1e25anan regrets his statement."
+              "before": "Relatives were helping the wife of their father.",
+              "after": "Rabbi Yo\u1e25anan regrets their actions."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rabbi Yo\u1e25anan's relatives cared for their father's wife, leading Rabbi Yo\u1e25anan to regret his earlier statement about their actions.",
-          "classification_reasoning": "This passage describes a series of events involving specific people (Rabbi Yo\u1e25anan and his relatives) and their actions, connected by cause and effect and temporal progression, resulting in a change in Rabbi Yo\u1e25anan's opinion. It meets 5 criteria.",
+          "one_sentence_summary": "Rabbi Yo\u1e25anan's relatives cared for their father's wife, leading Rabbi Yo\u1e25anan to regret their actions and compare them to legal advisors.",
+          "classification_reasoning": "This segment contains identifiable characters, multiple events, a causal chain, temporal progression, descriptive language, and a change in outcome. Therefore, it is a story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -9811,18 +10187,18 @@
               "met": true,
               "count": 2,
               "events": [
-                "Rav Pappa went to supervise the writing of the marriage contract",
-                "Yehuda bar Mareimar came out to present himself before him"
+                "Rav Pappa went to supervise the writing of the bride\u2019s marriage contract.",
+                "Yehuda bar Mareimar came out to present himself before him."
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav Pappa goes to write contract -> Yehuda bar Mareimar comes to greet him"
+              "chain": "Rav Pappa goes to write ketubah -> Yehuda bar Mareimar comes to greet him"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "When they came"
+                "When they came to the entrance"
               ]
             },
             "descriptive": {
@@ -9831,15 +10207,15 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "Rav Pappa is going to write a marriage contract.",
-              "after": "Rav Pappa is going to write a marriage contract, Yehuda bar Mareimar is there."
+              "before": "Rav Pappa is going to write a ketubah.",
+              "after": "Rav Pappa is at the entrance, and Yehuda bar Mareimar is there."
             }
           },
-          "criteria_met_count": 4,
+          "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [],
           "one_sentence_summary": "Rav Pappa went to supervise the writing of a marriage contract, and Yehuda bar Mareimar came out to greet him.",
-          "classification_reasoning": "This passage describes a series of events involving specific people (Rav Pappa and Yehuda bar Mareimar) and their actions, connected by cause and effect and temporal progression. However, the outcome is not significantly changed. It meets 4 criteria.",
+          "classification_reasoning": "This segment has identifiable characters, multiple events, a causal chain, temporal progression, and descriptive language. However, there is no clear change in outcome. It is a borderline story.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": true,
@@ -9968,19 +10344,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "Abba of Sura was going to give his daughter a smaller dowry.",
-              "after": "Abba of Sura wrote down all his possessions, then retracted it."
+              "before": "Abba of Sura was going to give his daughter a smaller dowry, and Yehuda was reluctant to enter the house.",
+              "after": "Abba of Sura initially wrote down all his possessions in the marriage contract, but then retracted it based on Yehuda's wishes."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rav Pappa forces Yehuda bar Mareimar to enter Abba of Sura's house, leading Abba to believe Yehuda is angry about the dowry, so he writes down all his possessions in the marriage contract, but Yehuda says he doesn't want it, so Abba retracts it.",
-          "classification_reasoning": "This passage meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation.",
+          "one_sentence_summary": "Rav Pappa forces Yehuda bar Mareimar to enter Abba of Sura's house, leading Abba to believe Yehuda is angry about the dowry, causing Abba to write down all his possessions in the marriage contract, which he later retracts at Yehuda's request.",
+          "classification_reasoning": "This passage clearly meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation from beginning to end.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "The story starts and ends within this page."
           }
         },
         {
@@ -10003,13 +10379,12 @@
             },
             "causal_chain": {
               "met": true,
-              "chain": "Man's betrothed wife died \u2192 Man came before the rabbis \u2192 Rabbis told him to bury her or pay the marriage contract."
+              "chain": "Man's betrothed died \u2192 Man came before the rabbis \u2192 Rabbis told him to bury her or pay the marriage contract"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "when",
-                "came"
+                "When"
               ]
             },
             "descriptive": {
@@ -10018,21 +10393,21 @@
             },
             "change_outcome": {
               "met": false,
-              "before": "A man's betrothed wife died.",
-              "after": "The man was told to bury her or pay the marriage contract. (No change in the man's action is described)"
+              "before": "A man's betrothed died.",
+              "after": "The man was instructed to bury her or pay the marriage contract. The outcome for the man is not described."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "No real change in outcome, just a directive."
+            "The story is very short and lacks a clear resolution or significant change in outcome."
           ],
-          "one_sentence_summary": "A man whose betrothed wife died comes before Rav Nahman and others, who tell him to bury her or pay the marriage contract.",
-          "classification_reasoning": "This passage is borderline. It has identifiable characters, multiple events, a causal chain, temporal progression, and descriptive language. However, the outcome is not significantly changed, as the man is simply given instructions. Therefore, it is classified as LOW_CONFIDENCE.",
+          "one_sentence_summary": "A man whose betrothed died comes before Rav Nahman and his colleagues, who instruct him to either bury her or pay the sum stipulated in her marriage contract.",
+          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, and temporal progression. However, the change in outcome is weak, as we don't know what the man actually did. The main point of the story seems to be to introduce a legal discussion, which weakens its narrative strength.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": "The story starts and ends within this segment."
           }
         }
       ]
@@ -10241,49 +10616,47 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "A certain woman of Me\u1e25oza, a man from Neharde\u2019a, Rav Na\u1e25man",
-              "anonymous": true
+              "evidence": "Woman of Me\u1e25oza, man from Neharde\u2019a, Rav Na\u1e25man",
+              "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "A woman from Mehoza married a man from Neharde'a",
-                "They came before Rav Nahman"
+                "They came before Rav Na\u1e25man",
+                "Rav Na\u1e25man said to them"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Marriage between residents of different towns \u2192 Question about which legal custom applies \u2192 They came before Rav Nahman for a ruling."
+              "chain": "Couple comes to Rav Nachman \u2192 Rav Nachman gives ruling based on their origin \u2192 They clarify the husband's origin \u2192 Rav Nachman changes his ruling"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "After marriage",
-                "Then they came before Rav Nahman"
+                "After they came",
+                "Then they said"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the specific situation of a woman from one town marrying a man from another."
+              "evidence": "Describes what the couple did and what Rav Na\u1e25man said."
             },
             "change_outcome": {
-              "met": false,
-              "before": "Unclear which legal custom applies.",
-              "after": "Rav Nahman clarifies which legal custom applies based on the husband's residence."
+              "met": true,
+              "before": "Rav Nachman initially rules based on the woman's origin.",
+              "after": "Rav Nachman changes his ruling based on the husband's origin."
             }
           },
-          "criteria_met_count": 5,
+          "criteria_met_count": 6,
           "disqualifiers_found": [],
-          "weakeners_found": [
-            "The change outcome is weak, as the legal situation is clarified, but no physical change occurs."
-          ],
-          "one_sentence_summary": "A woman from Mehoza marries a man from Neharde'a, leading them to seek a ruling from Rav Nahman about which legal custom applies to their marriage contract.",
-          "classification_reasoning": "This is a story because it involves specific people (a woman, a man, Rav Nahman) performing actions (marrying, coming before Rav Nahman) that create a causal chain of events with temporal progression. The change outcome is weak, but the other criteria are met.",
+          "weakeners_found": [],
+          "one_sentence_summary": "A woman from Me\u1e25oza married to a man from Neharde\u2019a came before Rav Na\u1e25man, who initially ruled based on the woman's origin, but changed his ruling when they clarified the husband's origin.",
+          "classification_reasoning": "This is a story because it involves specific people taking actions that cause a change in the situation. The couple travels to Rav Nachman, and his ruling changes based on their conversation.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav Nahman's ruling."
+            "note": "Story ends at the end of segment 14."
           }
         },
         {
@@ -10293,49 +10666,49 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "The daughter-in-law of the house of the son of Elyashiv, the orphans",
+              "evidence": "Daughter-in-law of the house of the son of Elyashiv, orphans",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 2,
               "events": [
-                "The daughter-in-law was claiming payment of her marriage contract from the orphans",
+                "She was claiming payment of her marriage contract from the orphans",
                 "She was in the process of bringing them to the court"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Daughter-in-law claims marriage contract \u2192 She brings the orphans to court."
+              "chain": "Daughter-in-law claims payment \u2192 She brings them to court"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
-                "Was claiming",
-                "Was in the process of"
+                "was claiming",
+                "was in the process"
               ]
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the specific situation of a daughter-in-law claiming payment from orphans."
+              "evidence": "Describes the actions of the daughter-in-law and the orphans."
             },
             "change_outcome": {
               "met": false,
               "before": "Daughter-in-law is claiming payment.",
-              "after": "The orphans complain about her appearance, but the outcome of the claim is not stated."
+              "after": "Daughter-in-law is bringing them to court, but the outcome is not described."
             }
           },
           "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "The story is cut short, and the outcome of the claim is not stated. The orphans' complaint is more of a reaction than a significant event."
+            "The story is cut short and lacks a clear resolution or change in outcome."
           ],
-          "one_sentence_summary": "The daughter-in-law of the house of the son of Elyashiv was claiming payment of her marriage contract from the orphans and bringing them to court, when the orphans complained about her appearance.",
-          "classification_reasoning": "This is a borderline story because it has identifiable characters, multiple events, a causal chain, and temporal progression. However, the story is cut short, and the outcome of the claim is not stated, making the change outcome weak.",
+          "one_sentence_summary": "The daughter-in-law of the house of the son of Elyashiv was claiming payment of her marriage contract from the orphans and was bringing them to court.",
+          "classification_reasoning": "This is a borderline story because it has identifiable characters and multiple events, but the story is cut short and lacks a clear resolution or change in outcome. The orphans' response is not an action, but a statement.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends abruptly."
+            "note": "Story ends abruptly."
           }
         },
         {
@@ -10349,7 +10722,7 @@
               "anonymous": true
             },
             "multiple_events": {
-              "met": false,
+              "met": true,
               "count": 1,
               "events": [
                 "A certain person said to his heirs, in his will: Give a dowry to my daughter."
@@ -10357,7 +10730,7 @@
             },
             "causal_chain": {
               "met": false,
-              "chain": "None"
+              "chain": "Statement of will \u2192 Dowry depreciated"
             },
             "temporal_progression": {
               "met": true,
@@ -10367,25 +10740,29 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes a situation where a father leaves instructions for a dowry."
+              "evidence": "Describes the will and the depreciation of the dowry."
             },
             "change_outcome": {
               "met": true,
-              "before": "Established custom for dowry amount.",
-              "after": "Cost of dowry depreciated."
+              "before": "Dowry amount is established.",
+              "after": "Dowry depreciates."
             }
           },
           "criteria_met_count": 4,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Only one real event. The rest is discussion."
+            "Weak causality between the will and the depreciation of the dowry."
           ],
-          "one_sentence_summary": "A person instructs his heirs to give a dowry to his daughter, but the cost of the dowry depreciates.",
-          "classification_reasoning": "This is a borderline story because it has identifiable characters, temporal progression, and a change in outcome. However, there is only one real event, and the rest is discussion, making it a weak story.",
+          "one_sentence_summary": "A certain person instructed his heirs to give a dowry to his daughter, but the value of the dowry depreciated.",
+          "classification_reasoning": "This is a borderline story because it has identifiable characters and multiple events, but the causality is weak. The depreciation of the dowry is not necessarily a direct result of the will.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends abruptly."
+            "note": "Story ends abruptly."
+          },
+          "adversarial_validation": {
+            "reverted": true,
+            "reason": "net negative impact on regression test"
           }
         },
         {
@@ -10400,12 +10777,12 @@
             },
             "multiple_events": {
               "met": false,
-              "count": 0,
+              "count": 1,
               "events": []
             },
             "causal_chain": {
               "met": false,
-              "chain": "None"
+              "chain": ""
             },
             "temporal_progression": {
               "met": false,
@@ -10425,11 +10802,11 @@
           "disqualifiers_found": [],
           "weakeners_found": [],
           "one_sentence_summary": "A certain person said to his heirs, in his will:",
-          "classification_reasoning": "This is not a story because it only contains the beginning of a statement and no events.",
+          "classification_reasoning": "This is not a story because it only contains one event and is incomplete.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story is incomplete."
+            "note": "Story ends abruptly."
           }
         }
       ]
@@ -10501,22 +10878,21 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Relatives of Rabbi Yo\u1e25anan, Rabbi Yo\u1e25anan, Reish Lakish, wife of their father",
+              "evidence": "Rabbi Yo\u1e25anan, Reish Lakish, relatives of Rabbi Yo\u1e25anan, wife of their father",
               "anonymous": false
             },
             "multiple_events": {
               "met": true,
-              "count": 4,
+              "count": 3,
               "events": [
                 "Relatives came before Rabbi Yo\u1e25anan",
-                "Rabbi Yo\u1e25anan gave advice",
-                "They came before Reish Lakish",
+                "Relatives came before Reish Lakish",
                 "Reish Lakish gave a ruling"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Wife diminishes resources \u2192 Relatives seek advice from Rabbi Yo\u1e25anan \u2192 Rabbi Yo\u1e25anan gives advice \u2192 Father dies \u2192 Relatives seek ruling from Reish Lakish \u2192 Reish Lakish gives ruling"
+              "chain": "Wife diminishes resources \u2192 Relatives ask Rabbi Yo\u1e25anan \u2192 Relatives ask Reish Lakish"
             },
             "temporal_progression": {
               "met": true,
@@ -10526,19 +10902,19 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what the relatives and rabbis did in response to the wife's actions."
+              "evidence": "Describes the actions of the relatives and the rulings of the rabbis."
             },
             "change_outcome": {
               "met": true,
-              "before": "Relatives were concerned about the wife diminishing resources.",
-              "after": "Reish Lakish ruled that they are obligated to support her."
+              "before": "Relatives sought advice from Rabbi Yo\u1e25anan.",
+              "after": "Relatives sought a ruling from Reish Lakish, who disagreed with Rabbi Yo\u1e25anan."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Relatives of Rabbi Yo\u1e25anan sought advice from Rabbi Yo\u1e25anan and later Reish Lakish regarding their father's wife who was diminishing his resources, and Reish Lakish ruled that they were obligated to support her.",
-          "classification_reasoning": "This passage meets all the criteria for a story. It has identifiable characters, multiple events, a causal chain, temporal progression, is descriptive, and shows a change in the situation.",
+          "one_sentence_summary": "The relatives of Rabbi Yo\u1e25anan, burdened by their father's wasteful wife, sought advice from Rabbi Yo\u1e25anan and later a ruling from Reish Lakish after their father's death, leading to conflicting opinions on her support.",
+          "classification_reasoning": "This passage meets all criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation as the relatives seek different rulings.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
@@ -10767,7 +11143,7 @@
             "change_outcome": {
               "met": true,
               "before": "Rav \u1e24anina is teaching halakha to Rabbi Yannai",
-              "after": "Rabbi Yannai dismisses Rav \u1e24anina and tells him to focus on biblical verses"
+              "after": "Rabbi Yannai dismisses Rav \u1e24anina and tells him to stick to his area of expertise"
             }
           },
           "criteria_met_count": 6,
@@ -10778,7 +11154,7 @@
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends at the end of the segment."
+            "note": "The story is self-contained within this segment."
           }
         }
       ]
@@ -10862,7 +11238,7 @@
               "met": false,
               "count": 1,
               "events": [
-                "The sister of Rami bar \u1e24ama was married to Rav Avya."
+                "The sister of Rami bar \u1e24ama was married to Rav Avya"
               ]
             },
             "causal_chain": {
@@ -10886,12 +11262,12 @@
           "criteria_met_count": 2,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "The sister of Rami bar \u1e24ama was married to Rav Avya.",
-          "classification_reasoning": "This is a single event, not a story. It lacks multiple events, a causal chain, and change.",
+          "one_sentence_summary": "The Gemara states that the sister of Rami bar \u1e24ama was married to Rav Avya.",
+          "classification_reasoning": "This is not a story because it only contains one event. There is no causal chain, temporal progression, or change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "This is the last segment on the page."
+            "note": "This is the only narrative event on the page."
           }
         }
       ]
@@ -10973,7 +11349,7 @@
           "criteria": {
             "identifiable_characters": {
               "met": true,
-              "evidence": "Rav Yosef, the woman, her husband",
+              "evidence": "Rav Yosef, woman, husband",
               "anonymous": false
             },
             "multiple_events": {
@@ -10981,7 +11357,7 @@
               "count": 2,
               "events": [
                 "marriage contract was lost",
-                "woman and her husband came before Rav Yosef"
+                "woman and husband came before Rav Yosef"
               ]
             },
             "causal_chain": {
@@ -10994,25 +11370,28 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes what happened"
+              "evidence": "Describes what did happen"
             },
             "change_outcome": {
-              "met": true,
-              "before": "Contract lost, couple unsure what to do",
-              "after": "Rav Yosef gives them a ruling"
+              "met": false,
+              "before": "Contract lost",
+              "after": "Rav Yosef gives legal ruling"
             }
           },
-          "criteria_met_count": 6,
+          "criteria_met_count": 5,
           "disqualifiers_found": [],
           "weakeners_found": [
-            "Rav Yosef's response is a legal ruling, not a narrative event."
+            "The story ends with a legal ruling, not a change in the couple's situation."
           ],
           "one_sentence_summary": "A couple whose marriage contract was lost came before Rav Yosef, who gave them a legal ruling.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and a change in outcome. However, the main point is Rav Yosef giving a legal ruling, which weakens the narrative aspect.",
+          "classification_reasoning": "This is a borderline story because it has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the story ends with a legal ruling, and the couple's situation is not transformed, so it is classified as LOW_CONFIDENCE.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends with Rav Yosef's ruling."
+            "note": "The story is self-contained within this segment."
+          },
+          "adversarial_validation": {
+            "confirmed": true
           }
         }
       ]
@@ -11495,28 +11874,28 @@
             "identifiable_characters": {
               "met": true,
               "evidence": "Shmuel, Rav Dimi bar Yosef, a certain divorc\u00e9e, her son",
-              "anonymous": true
+              "anonymous": false
             },
             "multiple_events": {
               "met": true,
               "count": 4,
               "events": [
-                "A certain divorc\u00e9e came before Shmuel",
-                "Shmuel said to Rav Dimi bar Yosef: Go and check her",
-                "He went, placed her in a row of women",
-                "He took her son in his arms and passed him near them"
+                "A divorc\u00e9e came before Shmuel",
+                "Shmuel told Rav Dimi bar Yosef to check her",
+                "Rav Dimi went and placed her in a row of women",
+                "Rav Dimi took her son and passed him near them"
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Divorcee comes to Shmuel \u2192 Shmuel tells Rav Dimi to check \u2192 Rav Dimi places her in a row of women \u2192 Rav Dimi passes the son by the women"
+              "chain": "Divorcee comes to Shmuel \u2192 Shmuel instructs Rav Dimi \u2192 Rav Dimi places her in a row \u2192 Rav Dimi tests the child"
             },
             "temporal_progression": {
               "met": true,
               "markers": [
                 "came before",
-                "said to",
-                "went",
+                "He said to",
+                "He went",
                 "passed him near them"
               ]
             },
@@ -11526,19 +11905,19 @@
             },
             "change_outcome": {
               "met": true,
-              "before": "A divorc\u00e9e does not want to nurse her son.",
-              "after": "The story describes the process of checking if the child recognizes his mother, implying a change in the situation depending on the outcome of the check."
+              "before": "A divorc\u00e9e doesn't want to nurse her son, and Shmuel needs to determine if the child recognizes her.",
+              "after": "The story is cut off, but the implication is that the test will determine whether she is compelled to nurse."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A divorc\u00e9e who doesn't want to nurse her son comes before Shmuel, who instructs Rav Dimi bar Yosef to check if the child recognizes his mother by placing her in a row of women and passing the child by them.",
-          "classification_reasoning": "This segment meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation.",
+          "one_sentence_summary": "A divorc\u00e9e who doesn't want to nurse her son comes before Shmuel, who instructs Rav Dimi bar Yosef to test if the child recognizes her by placing her in a row of women and passing the child by them.",
+          "classification_reasoning": "This is a clear narrative with identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive details, and a change in the situation as Shmuel attempts to resolve the issue of whether the woman should be compelled to nurse.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": "The story ends at the end of segment 2."
+            "note": "The story is cut off at the end of the segment."
           }
         }
       ]
@@ -11653,29 +12032,29 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the actions of the tenant farmer and Abaye."
+              "evidence": "Describes what Abaye and his tenant farmer did."
             },
             "change_outcome": {
               "met": true,
-              "before": "Abaye is asked a question about betrothal.",
+              "before": "Abaye is asked a question by his tenant farmer.",
               "after": "Abaye learns the correct halakha from Rav Yosef."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Abaye's tenant farmer asks him a question, and Abaye then asks Rav Yosef about the matter, learning the correct halakha.",
-          "classification_reasoning": "This is a story because it involves specific people performing actions that create a causal chain of events with temporal progression, resulting in a change in Abaye's understanding of the halakha.",
+          "one_sentence_summary": "Abaye's tenant farmer asks him about betrothal, and Abaye then asks Rav Yosef, who corrects Abaye's understanding of the law.",
+          "classification_reasoning": "This is a story because it involves specific people performing actions that create a causal chain of events with temporal progression, resulting in a change in Abaye's knowledge.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": null
           }
         },
         {
           "start_segment": 5,
           "end_segment": 9,
-          "classification": "HIGH_CONFIDENCE",
+          "classification": "YES",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -11686,14 +12065,14 @@
               "met": true,
               "count": 3,
               "events": [
-                "Rav Pappa and Rav Huna thought to act in accordance with this baraita",
-                "A certain old woman said to them: Do not act in accordance with this baraita",
-                "They answered him: The matter was not in our mind"
+                "Rav Pappa and Rav Huna thought to act in accordance with this baraita.",
+                "A certain old woman said to them: Do not act in accordance with this baraita.",
+                "They answered him: The matter was not in our mind."
               ]
             },
             "causal_chain": {
               "met": true,
-              "chain": "Rav Pappa and Rav Huna consider acting according to a baraita \u2192 An old woman advises against it \u2192 They realize they had forgotten a principle."
+              "chain": "Rav Pappa and Rav Huna plan to act \u2192 Old woman advises against it \u2192 They realize their error"
             },
             "temporal_progression": {
               "met": true,
@@ -11701,23 +12080,23 @@
             },
             "descriptive": {
               "met": true,
-              "evidence": "Describes the actions and dialogue between the rabbis and the old woman."
+              "evidence": "Describes what Rav Pappa and Rav Huna did and what the old woman said."
             },
             "change_outcome": {
               "met": true,
               "before": "Rav Pappa and Rav Huna are about to act according to a baraita.",
-              "after": "They realize they had forgotten a principle and refrain from acting according to the baraita."
+              "after": "They realize they were wrong and do not act according to the baraita."
             }
           },
           "criteria_met_count": 6,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "Rav Pappa and Rav Huna consider acting according to a baraita, but an old woman advises against it, reminding them of a forgotten principle.",
-          "classification_reasoning": "This is a story because it involves specific people performing actions and engaging in dialogue that create a causal chain of events with temporal progression, resulting in a change in the rabbis' understanding and actions.",
+          "one_sentence_summary": "Rav Pappa and Rav Huna plan to act according to a baraita, but an old woman advises against it, and they realize their mistake.",
+          "classification_reasoning": "This is a story because it involves specific people performing actions that create a causal chain of events with temporal progression, resulting in a change in their planned action.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
-            "note": ""
+            "note": null
           }
         }
       ]
