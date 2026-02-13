@@ -42,9 +42,10 @@ class V7StoryDetector:
     """
 
     def __init__(self, api_key: Optional[str] = None,
-                 ground_truth_db: Optional[GroundTruthDB] = None):
+                 ground_truth_db: Optional[GroundTruthDB] = None,
+                 model_name: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = "gemini-2.0-flash"
+        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
         self.ground_truth_db = ground_truth_db
 
         if self.api_key and GOOGLE_AI_AVAILABLE:
@@ -284,7 +285,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             print("\n--- Stage 1: Event Triage ---")
             triager = EventTriager(
                 api_key=self.api_key,
-                ground_truth_db=self.ground_truth_db
+                ground_truth_db=self.ground_truth_db,
+                model_name=self.model_name,
             )
             triage_results = triager.triage_all_pages(pages, delay=delay)
         elif skip_triage:
@@ -377,6 +379,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             validator = AdversarialValidator(
                 api_key=self.api_key,
                 ground_truth_db=self.ground_truth_db,
+                model_name=self.model_name,
             )
             if validator.client:
                 changes = validator.validate_all_stories(all_results, delay=delay)
@@ -428,9 +431,10 @@ class AdversarialValidator:
     """
 
     def __init__(self, api_key: Optional[str] = None,
-                 ground_truth_db: Optional[GroundTruthDB] = None):
+                 ground_truth_db: Optional[GroundTruthDB] = None,
+                 model_name: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = "gemini-2.0-flash"
+        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
         self.ground_truth_db = ground_truth_db
 
         if self.api_key and GOOGLE_AI_AVAILABLE:
