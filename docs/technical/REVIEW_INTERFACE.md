@@ -152,7 +152,7 @@ After running analysis:
 
 ```bash
 cd validation/generators
-python generate_review_ui.py ../../results/ketubot/v5/pages_2-39.json ../../validation/ui/ketubot_2-39.html
+python generate_review_ui.py ../../results/v6/ketubot_v6_2-39.json ../../validation/ui/ketubot_2-39.html
 ```
 
 ## Technical Notes

@@ -20,7 +20,7 @@ export GOOGLE_API_KEY='your-key-from-aistudio.google.com'
 
 ```bash
 cd src
-python3 story_detector_v5.py 2 39  # Analyze Ketubot pages 2-39
+python3 story_detector_v6.py 2 39  # Analyze Ketubot pages 2-39
 ```
 
 ## View Results
@@ -31,12 +31,12 @@ open validation/ui/ketubot_2-39.html
 
 ## Output Format
 
-Results saved to `results/ketubot/v5/pages_2-39.json`:
+Results saved to `results/v6/ketubot_v6_2-39.json`:
 
 ```json
 {
   "tractate": "Ketubot",
-  "version": "v5.1_categorical",
+  "version": "v6",
   "pages": [...],
   "summary": {
     "yes": 3,

@@ -15,7 +15,7 @@ export GOOGLE_API_KEY='your-key-here'
 
 # 4. Run detection
 cd src
-python3 story_detector_v5.py 2 39
+python3 story_detector_v6.py 2 39
 ```
 
 ## Setup Steps
@@ -53,10 +53,10 @@ echo "GOOGLE_API_KEY=your-google-api-key-here" >> .env
 
 ```bash
 cd src
-python3 story_detector_v5.py 2 39  # Analyze Ketubot pages 2-39
+python3 story_detector_v6.py 2 39  # Analyze Ketubot pages 2-39
 ```
 
-Results saved to `results/ketubot/v5/pages_2-39.json`
+Results saved to `results/v6/ketubot_v6_2-39.json`
 
 ## Model Information
 

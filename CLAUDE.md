@@ -56,12 +56,13 @@ When making changes, update these files:
 ## Project Structure
 ```
 src/                          # Core detection code
-results/ketubot/v5/           # Analysis output (text in segments)
+results/v6/                   # Current v6 analysis output
+results/ketubot/v5/           # Historical v5.1 analysis output
 validation/ui/                # HTML validation interfaces
 validation/generators/        # Scripts to generate UIs
 validation/feedback/          # Expert feedback JSONs
 docs/                         # All documentation
-tests/v5_categorical/         # Current version tests
+tests/                        # Tests (v6 regression, v5 categorical)
 archive/                      # Old versions (reference only)
 ```
 
