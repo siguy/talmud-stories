@@ -56,6 +56,7 @@ When making changes, update these files:
 ## Project Structure
 ```
 src/                          # Core detection code
+scripts/                      # Execution scripts (e.g., run_ketubot_61_112.py)
 results/v7/                   # Current v7 analysis output
 results/v6/                   # Previous v6 analysis output
 results/ketubot/v5/           # Historical v5.1 analysis output
@@ -74,6 +75,7 @@ archive/                      # Old versions (reference only)
 | `src/event_triage.py` | Event triage (Stage 1) |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
 | `src/story_detector_v6.py` | Previous detection script (v6) |
+| `scripts/run_ketubot_61_112.py` | Phase 4: pages 61-112 generalization |
 | `results/v7/` | v7 analysis output |
 | `results/v6/` | v6 analysis output |
 | `results/ketubot/v5/pages_*.json` | v5.1 analysis output |

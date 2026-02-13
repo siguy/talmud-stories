@@ -19,6 +19,9 @@ talmud-stories/
 │   ├── story_detector_v6.py     # Previous detection script (v6)
 │   └── story_detector_v5.py     # Previous detection script (v5.1)
 │
+├── scripts/                     # Execution scripts
+│   └── run_ketubot_61_112.py    # Phase 4: pages 61-112 generalization test
+│
 ├── results/                     # Analysis output (by tractate)
 │   ├── v7/                      # Current version results
 │   ├── v6/                      # Previous version results
@@ -32,6 +35,7 @@ talmud-stories/
 │   ├── ui/                      # HTML review interfaces
 │   │   ├── ketubot_2-39.html
 │   │   ├── ketubot_40-60.html
+│   │   ├── ketubot_61-112.html
 │   │   └── jeff_comparison.html
 │   ├── generators/              # Scripts to generate UIs
 │   └── feedback/                # Expert feedback JSONs
@@ -56,7 +60,7 @@ talmud-stories/
 
 ### Pipeline
 
-- **Event triage** — classifies every segment into NARRATIVE_EVENT/VERBAL_ACT/DELIBERATION/HABITUAL, skips 66% of pages
+- **Event triage** — classifies every segment into NARRATIVE_EVENT/VERBAL_ACT/DELIBERATION/HABITUAL, skips 50-66% of pages
 - **Constrained detection** — event-annotated prompt with anti-legal few-shot examples from Ground Truth DB
 - **Boundary refinement** — trims DELIBERATION segments from story edges
 - **Cross-page merge** — uses triage event types at page boundaries to detect story fragments
@@ -76,7 +80,7 @@ talmud-stories/
 5. Descriptive (what DID happen, not hypothetical)
 6. Change/outcome (situation transforms)
 
-### Ketubot Results
+### Ketubot Results (Pages 2-60, validated by Jeff)
 | Version | Model | Agreement with Jeff |
 |---------|-------|---------------------|
 | v5.1 | — | 84.3% (107/127) |
@@ -84,6 +88,14 @@ talmud-stories/
 | v7 | gemini-2.0-flash | 87.4% (111/127) |
 | v7+pp | gemini-2.0-flash | 89.8% (114/127) |
 | **v7** | **gemini-3-flash** | **92.1% (117/127)** |
+
+### Ketubot 61-112 (Generalization Test)
+| Metric | Value |
+|--------|-------|
+| Pages | 104 (52 kept after triage) |
+| Stories found | 98 (35 YES, 20 HIGH, 43 LOW) |
+| Model | gemini-3-flash-preview |
+| Status | Awaiting Jeff's review |
 
 ## Quick Start
 
@@ -99,21 +111,23 @@ export GOOGLE_API_KEY='your-key'  # Get from https://aistudio.google.com/app/api
 
 ### Run Detection
 ```bash
-# v7 pipeline with Gemini 3 Flash (current best)
+# v7 pipeline on pages 2-60 (uses pre-computed triage)
 GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.py
+
+# Pages 61-112 generalization test
+python3 scripts/run_ketubot_61_112.py               # Full run
+python3 scripts/run_ketubot_61_112.py --triage-only  # Triage only
+python3 scripts/run_ketubot_61_112.py --resume       # Resume from saved triage
 
 # Model comparison (run detection + regression test)
 PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
 
 # Regression test (compare against Jeff's labels)
 PYTHONPATH=. python3 tests/v7_regression_test.py
-
-# Score all existing model results
-PYTHONPATH=. python3 tests/model_comparison.py --score
 ```
 
 ### View Results
-Open `validation/ui/ketubot_2-39.html` in a browser, or see `results/v7/ketubot_v7_2-60.json`.
+Open `validation/ui/ketubot_61-112.html` in a browser, or see `results/v7/ketubot_v7_61-112.json`.
 
 ## How It Works
 
@@ -136,7 +150,7 @@ Open `validation/ui/ketubot_2-39.html` in a browser, or see `results/v7/ketubot_
 
 ## Expanding to Other Tractates
 
-Results are organized by tractate for easy expansion. The pipeline is tractate-agnostic — tested on Ketubot 2a-60b with plans to validate on additional tractates.
+Results are organized by tractate for easy expansion. The pipeline is tractate-agnostic — tested on Ketubot 2a-112b (full tractate). Pages 2-60 validated by expert (92.1%); pages 61-112 awaiting review.
 
 ## Expert Validation
 

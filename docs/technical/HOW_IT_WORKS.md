@@ -38,7 +38,7 @@ Every segment on every page is classified into one of 4 event types using Gemini
 | HABITUAL | Recurring practice or custom | "He was accustomed to..." |
 
 **Skip Decision:** Pages with <2 NARRATIVE_EVENT (or <1 NARRATIVE + <2 VERBAL_ACT) are skipped.
-Result: ~66% of pages skipped, saving API calls on legal-only pages.
+Result: ~66% of pages skipped on pages 2-60, ~50% on pages 61-112.
 
 **Hebrew markers used:** `מעשה` (incident), `ההוא/ההיא` (that certain person), `אתא לקמיה` (came before), `הוה עובדא` (there was an incident)
 
@@ -199,30 +199,36 @@ A girl went out to draw water. She was raped.
 
 ## Technical Details
 
-**Model:** Gemini 2.0 Flash (not -exp)
-- Regular model has higher rate limits
-- 1 second delay between requests
-- ~3 minutes for 40 pages
+**Model:** Gemini 3 Flash (`gemini-3-flash-preview`)
+- Configurable via `model_name` param or `GEMINI_MODEL` env var
+- 0.5 second delay between requests
+- ~3 minutes for 40 pages detection
+- Thinking mode disabled for Flash (JSON mode); increased token budget for Pro
 
 **API:** Sefaria REST API
 - No authentication required
 - 15 second timeout
 - Preserves segment alignment
 
-**Cost:** ~$0.01 per 10 pages analyzed
+**Cost (Gemini 3 Flash):** ~$0.31 per 40 pages (detection only)
 
 ## Running Detection
 
 ```bash
 export GOOGLE_API_KEY='your-key'
 
-# v7 (current) — uses pre-computed triage
+# v7 (current) — pages 2-60, uses pre-computed triage
 PYTHONPATH=. python3 src/story_detector_v7.py
 # Output: results/v7/ketubot_v7_2-60.json
 
-# v6 (previous)
-python3 src/story_detector_v6.py 2 39
-# Output: results/v6/ketubot_v6_2-39.json
+# Pages 61-112 (generalization test)
+python3 scripts/run_ketubot_61_112.py              # Full run
+python3 scripts/run_ketubot_61_112.py --triage-only # Triage only
+python3 scripts/run_ketubot_61_112.py --resume      # Resume from saved triage
+# Output: results/v7/ketubot_v7_61-112.json
+
+# Model comparison
+PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
 
 # Regression test (compare v6 vs v7 vs Jeff's labels)
 PYTHONPATH=. python3 tests/v7_regression_test.py
