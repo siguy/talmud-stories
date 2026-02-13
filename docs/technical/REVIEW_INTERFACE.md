@@ -49,8 +49,8 @@ Each story displays:
 
 **Criteria Breakdown:**
 ```
-✓ named_characters - Rav Ḥisda, Rabba bar Rav Huna
-✓ multiple_events - Going, consoling, speaking
+✓ identifiable_characters - Rav Ḥisda, Rabba bar Rav Huna (or "a certain man")
+✓ multiple_events - Going, consoling, speaking (physical actions)
 ✓ causal_chain - Go → Console → Say blessing
 ✓ temporal_progression - Before → during → after
 ✓ descriptive - What they DID do
@@ -107,21 +107,30 @@ Click "Download Feedback JSON" to export:
 
 ### What Makes a Story (YES/HIGH)
 
-✓ **Named characters** with agency (specific rabbis, not "a person")
-✓ **Multiple events** that form a sequence
+✓ **Identifiable characters** - named rabbis OR anonymous ("a certain man/woman") - both valid!
+✓ **Multiple NARRATIVE events** - physical actions, state changes (not legal talk)
 ✓ **Causal chain** - Event A CAUSED Event B (not just sequential)
 ✓ **Temporal progression** - before → during → after
 ✓ **Descriptive** - what DID happen (not hypothetical)
 ✓ **Transformation** - situation changed from beginning to end
 
+### What's a Borderline Story (LOW)
+
+○ One real event + rabbinic discussion about it
+○ Mainly dialogue/speech acts but with some real events
+○ Weak causality but some change
+
 ### What's NOT a Story
 
 ✗ **Rabbi legal opinions** - "Rabbi X quotes Rabbi Y as saying..." (attribution, not narrative)
+✗ **Legal deliberation** - Thinking about acting, experiencing legal difficulty
+✗ **Legal debate settings** - Sage sitting before another debating, academy vs academy
 ✗ **Sequential events** - Things that happened but didn't cause each other
 ✗ **Simple reports** - Actions without transformation
 ✗ **Hypotheticals** - "If someone were to..."
 ✗ **MISHNA sections** - Legal codifications
 ✗ **Habitual actions** - "He would regularly..."
+✗ **Verbal statements as events** - "It is all talk" (objections, rulings, orders)
 
 ### Common Edge Cases
 
@@ -170,7 +179,7 @@ validation/
 
 ## Workflow
 
-1. **Run detection** → `src/story_detector_v5.py`
+1. **Run detection** → `src/story_detector_v6.py` (current) or `src/story_detector_v5.py`
 2. **Generate UI** → `validation/generators/generate_review_ui.py`
 3. **Review stories** → Open HTML in browser
 4. **Export feedback** → Click download button

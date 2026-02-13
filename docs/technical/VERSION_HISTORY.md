@@ -14,7 +14,76 @@
 
 ---
 
-## v5.1: Validation-Driven Improvements (Current)
+## v6: Comprehensive Revision from Jeff's v5.1 Validation (Current)
+
+**Goal:** Address all 20 errors and ~12 refinements from Jeff's 128-passage review
+
+**Expert Review Stats (v5.1):** 128 reviewed, 107 correct (86%), 18 incorrect, 3 null-with-notes
+
+**Error Breakdown:**
+| Category | Count | Root Cause |
+|----------|-------|------------|
+| False positives (legal activity ≠ story) | 7 | Legal deliberation/debate mistaken for events |
+| False negatives (anonymous chars) | 5 | Anonymous characters penalized incorrectly |
+| Cross-page / boundary splits | 5 | No cross-page awareness |
+| Should be borderline, not rejected | 3 | Too strict on borderline classification |
+
+**Key Changes:**
+
+1. **Criterion renamed: `identifiable_characters` (was `named_characters`)**
+   - Anonymous characters ("a certain man/woman") now count FULLY
+   - Jeff: "Stories can be about unnamed people. The anonymous character does not weaken the confidence."
+   - Partial naming removed as weakener
+
+2. **What constitutes a "narrative event" (refined)**
+   - NOT events: verbal statements, legal arguments, deliberation, thinking about acting, traveling to debate, legal difficulty/resolution, ordering someone, "instituting" a practice
+   - ARE events: physical actions, changes in state, concrete outcomes
+   - Jeff: "The events here are rabbis making legal arguments... that is not really an event"
+
+3. **New disqualifiers: `legal_deliberation`, `legal_debate_setting`**
+   - "Levi thought about acting" = deliberation, not event
+   - "Legal debate between Pumbedita and Matta Mehasia" = not story
+   - "One sage sitting before another debating" = setting, not story
+
+4. **Removed disqualifier: `biblical_narrative`**
+   - Jeff validated a King David story as correct (Ketubot 9b)
+
+5. **Borderline story calibration**
+   - One event + discussion = LOW_CONFIDENCE (not NOT_A_STORY)
+   - Jeff: "should be marked a borderline story" (~15 instances)
+   - New LOW_CONFIDENCE examples from Jeff's actual feedback
+
+6. **Story boundary trimming**
+   - Stories start at first narrative event, not preceding legal ruling
+   - Stories end at final action, not following Talmudic commentary
+   - Exception: Rabbi who directly references story events IS part of story
+   - Self-check now suggests boundary adjustments
+
+7. **Cross-page story merging (new)**
+   - Phase 1: Fetch all pages
+   - Phase 2: Classify with cross-page context (prev/next page segments visible)
+   - Phase 3: Post-processing merge of stories split by page boundaries
+   - Fixes ~5 errors from Jeff's review
+
+8. **Duplicate story detection (new)**
+   - Detects same story quoted on multiple pages
+   - Jeff: "This is the same story as on Ketubot 2b"
+
+9. **Self-check expanded to 9 questions**
+   - Added: boundary check, borderline check, character role test
+   - Boundary adjustments applied automatically
+
+10. **12+ new curated examples from Jeff's v5.1 feedback**
+    - Including borderline (LOW_CONFIDENCE) examples
+    - NOT_A_STORY examples for legal debate settings, deliberation
+
+**Files:**
+- `src/story_detector_v6.py`
+- `results/ketubot/v6/` (when run)
+
+---
+
+## v5.1: Validation-Driven Improvements
 
 **Goal:** Reduce false positive rate from 50% to <20%
 

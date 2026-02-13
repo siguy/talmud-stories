@@ -68,7 +68,10 @@ archive/                      # Old versions (reference only)
 ## Key Files
 | File | Purpose |
 |------|---------|
-| `src/story_detector_v5.py` | Main detection script |
-| `results/ketubot/v5/pages_*.json` | Analysis output |
+| `src/story_detector_v6.py` | Current detection script (v6) |
+| `src/story_detector_v5.py` | Previous detection script (v5.1) |
+| `results/v6/` | v6 analysis output |
+| `results/ketubot/v5/pages_*.json` | v5.1 analysis output |
 | `validation/generators/generate_review_ui.py` | UI generator |
 | `validation/ui/ketubot_*.html` | Validation UIs |
+| `validation/feedback/v5_1_feedback_*.json` | Jeff's v5.1 feedback |
