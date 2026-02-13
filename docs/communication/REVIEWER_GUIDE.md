@@ -8,7 +8,7 @@ This guide will help you review AI-identified stories from the Talmud and provid
 
 Open this link in your web browser:
 
-**https://siguy.github.io/talmud-stories/review_stories.html**
+**Open the validation UI HTML file in your browser** (e.g., `validation/ui/ketubot_2-39.html`)
 
 The review interface will load automatically. You should see:
 - A "Reviewer Name" field at the top
@@ -212,10 +212,12 @@ If you need to start over:
 ### 1. What Makes a Story?
 
 A story has:
-- **Characters**: Named individuals doing things (not just holding legal positions)
-- **Action**: Events that happen in sequence
-- **Temporal progression**: Things unfold over time
-- **Resolution**: Some outcome or conclusion
+- **Identifiable Characters**: Named rabbis OR anonymous characters ("a certain man/woman") — both count
+- **Multiple Narrative Events**: Physical actions and state changes (not legal arguments or deliberation)
+- **Cause and Effect**: Event A caused Event B (not just sequential)
+- **Temporal Progression**: Things unfold over time
+- **Descriptive**: What DID happen (not hypothetical)
+- **Transformation**: Situation changed from beginning to end
 
 ### 2. What is NOT a Story?
 
@@ -224,6 +226,8 @@ Common false positives:
 - **Hypothetical cases**: "If a man does X, what is the law?"
 - **Halakhic analysis**: Technical discussions of legal principles
 - **Brief attributions**: "Rabbi X taught..." without narrative context
+- **Legal deliberation**: "He thought about acting" or "experienced difficulty"
+- **Debate settings**: "One sage sitting before another debating" — physical setting, not story
 
 ### 3. Edge Cases
 
@@ -319,7 +323,7 @@ Your expert knowledge directly improves the AI!
 ### Problem: Page won't load the stories
 
 **Solution:**
-- Make sure you're using the correct link: https://siguy.github.io/talmud-stories/review_stories.html
+- Make sure you're opening the correct HTML file from the validation/ui/ folder
 - Check your internet connection
 - Try refreshing the page (press F5 or Cmd+R)
 - Try a different browser (Chrome, Firefox, or Safari)

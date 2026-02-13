@@ -562,21 +562,27 @@ def detect_page_boundary_continuation(page_segments: List[Dict]) -> Dict[str, bo
 
     # Check if first segment seems to continue from previous page
     first_eng = first_seg.get('english', '')
-    starts_mid = (
-        first_eng.startswith('And ') or
-        first_eng.startswith('He ') or
-        first_eng.startswith('She ') or
-        first_eng.startswith('They ') or
-        not first_eng[0:1].isupper() if first_eng else False
-    )
+    if first_eng:
+        starts_mid = (
+            first_eng.startswith('And ') or
+            first_eng.startswith('He ') or
+            first_eng.startswith('She ') or
+            first_eng.startswith('They ') or
+            first_eng[0:1].islower()
+        )
+    else:
+        starts_mid = False
 
     # Check if last segment seems incomplete
     last_eng = last_seg.get('english', '')
-    ends_mid = (
-        last_eng.rstrip().endswith(',') or
-        last_eng.rstrip().endswith(':') or
-        'and then' in last_eng.lower()[-30:] if last_eng else False
-    )
+    if last_eng:
+        ends_mid = (
+            last_eng.rstrip().endswith(',') or
+            last_eng.rstrip().endswith(':') or
+            'and then' in last_eng.lower()[-30:]
+        )
+    else:
+        ends_mid = False
 
     return {"starts_mid_story": starts_mid, "ends_mid_story": ends_mid}
 
@@ -1219,7 +1225,6 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
             }
 
             # Update page N: replace last story with merged story
-            idx_n = i if i not in pages_to_update else i
             updated_stories_n = list(stories_n[:-1]) + [merged_story]
 
             if i in pages_to_update:
@@ -1254,7 +1259,7 @@ def _pick_higher_classification(cls1: str, cls2: str) -> str:
 def detect_duplicate_stories(pages: List[Dict]) -> List[Dict]:
     """
     Detect and flag stories that appear to be the same passage quoted on multiple pages.
-    Uses text similarity of the first 100 chars of English text.
+    Uses text similarity of the first 150 chars of normalized English text.
     """
     story_fingerprints = {}  # fingerprint -> (page_idx, story_idx, ref)
 
@@ -1273,7 +1278,8 @@ def detect_duplicate_stories(pages: List[Dict]) -> List[Dict]:
                 if seg['index'] >= start and seg['index'] <= end:
                     story_text += seg.get('english', '')
 
-            fingerprint = story_text[:100].strip().lower()
+            # Normalize whitespace and take first 150 chars for more reliable matching
+            fingerprint = ' '.join(story_text.split())[:150].strip().lower()
             if len(fingerprint) < 20:
                 continue
 

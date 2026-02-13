@@ -104,28 +104,30 @@ Logos/acknowledgments for:
 
 **How It Works - The Pipeline:**
 
-Visual: 6-step horizontal flow diagram
+Visual: 8-step horizontal flow diagram
 
 ```
-[Sefaria API] → [Detect Markers] → [AI Classification] → [Apply Filters] → [Self-Check] → [Output]
+[Fetch All Pages] → [Detect Markers] → [AI + Cross-Page Context] → [Apply Filters] → [Self-Check (9 Qs)] → [Merge Cross-Page] → [Deduplicate] → [Output]
 ```
 
 | Step | What Happens | Plain Language |
 |------|--------------|----------------|
-| 1. Fetch | Get text from Sefaria API | We retrieve each Talmud page with Hebrew and English side-by-side |
+| 1. Fetch All | Get all pages from Sefaria API | We retrieve all Talmud pages at once with Hebrew and English side-by-side |
 | 2. Detect | Find Hebrew narrative markers | Look for words like "מעשה" (an incident) or "יומא חד" (one day) |
-| 3. Classify | AI evaluates 6 criteria | Gemini checks if the passage has characters, events, causation, etc. |
-| 4. Filter | Apply disqualifiers | Remove legal rulings, hypotheticals, and habitual actions |
-| 5. Self-Check | Validate the classification | AI double-checks its own work with 7 validation questions |
-| 6. Output | Categorize result | Label as YES, HIGH, LOW, or NOT_A_STORY |
+| 3. Classify | AI evaluates 6 criteria with cross-page context | Gemini checks characters, events, causation with prev/next page visible |
+| 4. Filter | Apply disqualifiers | Remove legal rulings, hypotheticals, habitual actions, legal deliberation, debate settings |
+| 5. Self-Check | Validate the classification | AI double-checks its own work with 9 validation questions (incl. boundary + borderline) |
+| 6. Merge | Combine cross-page stories | Stories split by arbitrary page boundaries are merged into one |
+| 7. Deduplicate | Flag duplicate stories | Same story quoted on multiple pages gets flagged |
+| 8. Output | Categorize result | Label as YES, HIGH, LOW, or NOT_A_STORY |
 
 **What Makes a Talmud Story?**
 
 Visual flowchart showing the 6 criteria (non-technical):
 
-1. **Named Characters** - Specific rabbis, not "someone"
-2. **Multiple Events** - More than one thing happens
-3. **Cause and Effect** - Events connect logically
+1. **Identifiable Characters** - Named rabbis OR anonymous ("a certain man/woman") — both valid
+2. **Multiple Events** - More than one NARRATIVE event (not legal arguments)
+3. **Cause and Effect** - Events connect logically (A caused B)
 4. **Time Passes** - Before, during, after
 5. **Actually Happened** - Not hypothetical
 6. **Something Changes** - Beginning differs from end
@@ -185,7 +187,8 @@ Visual badges:
 | v4 | Jan 2025 | Preserved Hebrew/English alignment |
 | v4.1 | Jan 2025 | Expert validation revealed 50% false positives |
 | v5.0 | Jan 2025 | Categorical classification (YES/HIGH/LOW) |
-| v5.1 | Jan 2025 | Addressed all false positive patterns |
+| v5.1 | Jan 2025 | Addressed all false positive patterns (86% accuracy on 128 passages) |
+| v6 | Feb 2026 | Comprehensive revision from 128-passage review: cross-page merging, anonymous chars, borderline calibration |
 
 **Key Insight from Expert Validation:**
 Quote from Jeff about attribution vs characters
@@ -256,3 +259,7 @@ When updating the website:
 | HIGH Classification | 29 | Jan 2025 |
 | LOW Classification | 21 | Jan 2025 |
 | Tractates Covered | 1 (Ketubot) | Jan 2025 |
+| Current Version | v6 | Feb 2026 |
+| Expert Accuracy (v5.1) | 86% (128 passages) | Feb 2026 |
+
+*Note: v6 stats will update once the detector is run. The above v5.1 stats are from the last completed analysis.*

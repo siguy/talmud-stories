@@ -338,14 +338,14 @@
     <!-- How It Works -->
     <section>
         <div class="container">
-            <h2>How It Works: The 6-Step Pipeline</h2>
-            <p>Each Talmud page goes through this process to identify potential stories:</p>
+            <h2>How It Works: The 8-Step Pipeline</h2>
+            <p>All pages in a range are fetched first, then each page is analyzed with cross-page context:</p>
 
             <div class="pipeline">
                 <div class="pipeline-step">
                     <div class="step-number">1</div>
-                    <div class="step-name">Fetch</div>
-                    <div class="step-desc">Get text from Sefaria</div>
+                    <div class="step-name">Fetch All</div>
+                    <div class="step-desc">Get all pages from Sefaria</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">2</div>
@@ -355,7 +355,7 @@
                 <div class="pipeline-step">
                     <div class="step-number">3</div>
                     <div class="step-name">Classify</div>
-                    <div class="step-desc">AI evaluates criteria</div>
+                    <div class="step-desc">AI with cross-page context</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">4</div>
@@ -365,10 +365,20 @@
                 <div class="pipeline-step">
                     <div class="step-number">5</div>
                     <div class="step-name">Self-Check</div>
-                    <div class="step-desc">Validate findings</div>
+                    <div class="step-desc">9 validation questions</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">6</div>
+                    <div class="step-name">Merge</div>
+                    <div class="step-desc">Cross-page stories</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">7</div>
+                    <div class="step-name">Deduplicate</div>
+                    <div class="step-desc">Flag duplicates</div>
+                </div>
+                <div class="pipeline-step">
+                    <div class="step-number">8</div>
                     <div class="step-name">Output</div>
                     <div class="step-desc">Categorize results</div>
                 </div>
@@ -378,8 +388,8 @@
                 <div class="pipeline-detail">
                     <div class="detail-number">1</div>
                     <div class="detail-content">
-                        <h4>Fetch Text from Sefaria</h4>
-                        <p>We retrieve each Talmud page with Hebrew and English text aligned side-by-side. This alignment lets us analyze both languages together.</p>
+                        <h4>Fetch All Pages from Sefaria</h4>
+                        <p>We retrieve all Talmud pages in the range at once, with Hebrew and English text aligned side-by-side. Fetching everything first enables cross-page awareness.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
@@ -395,29 +405,43 @@
                 <div class="pipeline-detail">
                     <div class="detail-number">3</div>
                     <div class="detail-content">
-                        <h4>AI Evaluates 6 Criteria</h4>
-                        <p>Google Gemini analyzes each passage against our six story criteria (detailed below). It checks for characters, events, causation, and more.</p>
+                        <h4>AI Classifies with Cross-Page Context</h4>
+                        <p>Google Gemini analyzes each passage against six story criteria, with segments from the previous and next pages visible. This prevents stories split by page boundaries from being missed.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">4</div>
                     <div class="detail-content">
                         <h4>Apply Disqualifiers</h4>
-                        <p>We automatically filter out legal rulings, hypothetical cases, Mishnah sections, and habitual actions—things that look like stories but aren't.</p>
+                        <p>We automatically filter out legal rulings, hypothetical cases, Mishnah sections, habitual actions, legal deliberation, and debate settings—things that look like stories but aren't.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">5</div>
                     <div class="detail-content">
                         <h4>Self-Check Validation</h4>
-                        <p>The AI asks itself 7 validation questions based on expert feedback. This catches false positives before human review.</p>
+                        <p>The AI asks itself 9 validation questions based on expert feedback—including boundary checks and borderline story detection. This catches false positives before human review.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">6</div>
                     <div class="detail-content">
+                        <h4>Merge Cross-Page Stories</h4>
+                        <p>Stories that span page boundaries are detected and merged into single entries. Talmud page breaks are arbitrary and shouldn't split a story.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">7</div>
+                    <div class="detail-content">
+                        <h4>Detect Duplicates</h4>
+                        <p>The same story sometimes appears on multiple pages. We flag duplicates so each story is counted once.</p>
+                    </div>
+                </div>
+                <div class="pipeline-detail">
+                    <div class="detail-number">8</div>
+                    <div class="detail-content">
                         <h4>Categorize the Result</h4>
-                        <p>Each finding is labeled: <strong style="color:#16a34a">YES</strong> (definite story), <strong style="color:#2563eb">HIGH</strong> (likely), <strong style="color:#ca8a04">LOW</strong> (needs review), or rejected.</p>
+                        <p>Each finding is labeled: <strong style="color:#16a34a">YES</strong> (definite story), <strong style="color:#2563eb">HIGH</strong> (likely), <strong style="color:#ca8a04">LOW</strong> (borderline—one event with discussion), or rejected.</p>
                     </div>
                 </div>
             </div>
@@ -433,8 +457,8 @@
             <div class="criteria-grid">
                 <div class="criteria-card">
                     <div class="criteria-number">1</div>
-                    <h3>Named Characters</h3>
-                    <p>Specific people appear—usually named rabbis like "Rav Hisda" or "Rabbi Akiva," not just "someone" or "a person."</p>
+                    <h3>Identifiable Characters</h3>
+                    <p>Specific people appear—named rabbis like "Rav Hisda" or anonymous characters like "a certain man" or "a certain woman." Both count equally.</p>
                 </div>
                 <div class="criteria-card">
                     <div class="criteria-number">2</div>
@@ -491,6 +515,14 @@
                 <div class="filter-item">
                     <h4>Attribution Chains</h4>
                     <p>"Rabbi X quotes Rabbi Y as saying..." — citing sources, not characters in action</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Legal Deliberation</h4>
+                    <p>"He thought about acting" or "experienced difficulty" — mental activity, not narrative events</p>
+                </div>
+                <div class="filter-item">
+                    <h4>Legal Debate Settings</h4>
+                    <p>"One sage sitting before another debating" — physical setting of debate is not a story</p>
                 </div>
                 <div class="filter-item">
                     <h4>Simple Reports</h4>

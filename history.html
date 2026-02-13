@@ -372,7 +372,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item milestone">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
@@ -380,10 +380,26 @@
                             <span class="timeline-date">January 2025</span>
                         </div>
                         <div class="timeline-title">Validation-Driven Improvements</div>
-                        <p class="timeline-desc">Addressed all false positive patterns from expert review. Added self-check mechanism. Stricter causality and transformation tests.</p>
+                        <p class="timeline-desc">Addressed all false positive patterns from expert review. Added self-check mechanism. Stricter causality and transformation tests. Jeff reviewed 128 passages: 86% accuracy.</p>
+                        <div class="timeline-lesson">
+                            <strong>Breakthrough:</strong>
+                            <p>Expert validation at scale (128 passages) revealed 20 errors and 12 refinement opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item milestone">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 6</span>
+                            <span class="timeline-date">February 2026</span>
+                        </div>
+                        <div class="timeline-title">Comprehensive Revision from Expert Feedback</div>
+                        <p class="timeline-desc">Complete overhaul based on Jeff's 128-passage review. Anonymous characters now count fully. Refined what constitutes a "narrative event" vs legal activity. Cross-page story merging. Borderline story calibration. Story boundary trimming. 9-question self-check.</p>
                         <div class="timeline-lesson">
                             <strong>Current version</strong>
-                            <p>Now detecting with expert-informed criteria.</p>
+                            <p>Targeting >90% accuracy with cross-page awareness and expert-calibrated borderline detection.</p>
                         </div>
                     </div>
                 </div>
@@ -399,23 +415,30 @@
 
             <div class="stats-comparison">
                 <div class="stats-box before">
-                    <div class="stats-label">Before Validation</div>
+                    <div class="stats-label">Before Validation (v4.1)</div>
                     <div class="stats-value">50%</div>
                     <div class="stats-desc">False positive rate</div>
                 </div>
                 <div class="stats-box after">
-                    <div class="stats-label">After v5.1</div>
-                    <div class="stats-value">6</div>
-                    <div class="stats-desc">Specific criteria + self-check</div>
+                    <div class="stats-label">After v5.1 Review</div>
+                    <div class="stats-value">86%</div>
+                    <div class="stats-desc">Accuracy (128 passages reviewed)</div>
                 </div>
             </div>
 
             <div class="insight-box">
                 <p>"The AI was confusing attribution with characters. When it sees 'Rabbi X said that Rabbi Y said...', it thought there was a story with characters, but it's just legal attribution."</p>
-                <div class="attribution">— Key insight from Jeffrey Rubenstein's validation</div>
+                <div class="attribution">— v4.1 insight from Jeffrey Rubenstein</div>
             </div>
 
-            <p>This single insight led to a new disqualifier that caught 53 false positives in our test set. Expert validation doesn't just measure accuracy—it teaches the system to be better.</p>
+            <p>This single insight led to a new disqualifier that caught 53 false positives in our test set.</p>
+
+            <div class="insight-box">
+                <p>"Stories can be about unnamed people. The anonymous character does not weaken the confidence." ... "The page is a totally arbitrary marker and should be ignored when identifying the boundaries of stories."</p>
+                <div class="attribution">— v5.1 insights from Jeffrey Rubenstein's 128-passage review</div>
+            </div>
+
+            <p>Expert validation doesn't just measure accuracy—it teaches the system to be better. Each round of feedback reveals patterns we couldn't see from the code alone.</p>
         </div>
     </section>
 

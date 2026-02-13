@@ -1,31 +1,39 @@
 # Ready to Send to Jeff - Complete Package
 
-**Date:** 2026-01-25
-**Status:** ✅ All validation UIs FIXED and ready, email versions ready
-**Last Update:** Fixed critical missing text display bug in all UIs
+**Date:** 2026-02-12
+**Status:** v6 detector built from Jeff's v5.1 feedback — needs to be run before sending
+**Last Update:** v6 comprehensive revision incorporating all 20 errors and 12 refinements from Jeff's 128-passage review
 
 ---
 
-## 🔧 Critical Fix Applied (2026-01-25)
+## What Changed in v6 (Based on Jeff's v5.1 Feedback)
 
-**ISSUE IDENTIFIED:** All three validation UIs were missing English/Hebrew text display
-- UIs only showed criteria, disqualifiers, and reasoning
-- Did NOT display the actual Talmud text segments
-- This was a critical regression from earlier UI versions
+Jeff reviewed 128 passages in v5.1: 107 correct (86%), 18 incorrect, 3 null-with-notes.
 
-**FIX APPLIED:**
-✅ Updated both generator scripts (generate_v5_1_review_ui.py and generate_jeff_review_v5_1.py)
-✅ Added getStoryText() JavaScript function to extract text segments
-✅ Added side-by-side English/Hebrew text display with story segments highlighted
-✅ Regenerated all three validation UIs with text display
-✅ Committed and pushed to GitHub
+**v6 addresses all feedback:**
 
-**ALL UIs NOW SHOW:**
-- English translation (left side)
-- Hebrew/Aramaic original (right side)
-- Story segments highlighted with yellow background
-- Full page context (all segments visible)
-- All v5.1 diagnostic features (criteria, disqualifiers, weakeners, self-check)
+| Category | Count | v6 Fix |
+|----------|-------|--------|
+| False positives (legal activity ≠ story) | 7 | New disqualifiers: legal_deliberation, legal_debate_setting |
+| False negatives (anonymous chars) | 5 | Criterion renamed to identifiable_characters, anonymous counts fully |
+| Cross-page / boundary splits | 5 | Cross-page merging + boundary trimming |
+| Should be borderline, not rejected | 3 | Borderline calibration: 1 event + discussion = LOW_CONFIDENCE |
+
+**Additional changes:**
+- Removed biblical_narrative disqualifier (Jeff validated biblical stories as correct)
+- Narrative events refined: legal arguments, deliberation, debate settings ≠ events
+- Self-check expanded to 9 questions (added boundary + borderline checks)
+- Duplicate story detection
+- Story boundary trimming (exclude legal framing before/after stories)
+
+---
+
+## Before Sending to Jeff
+
+1. **Run v6 detector**: `cd src && python story_detector_v6.py 2 39` (and 40 60)
+2. **Generate new validation UIs** from v6 results
+3. **Draft new email** highlighting what changed since his last review
+4. **Decide scope**: same pages (2-60) + new pages for fresh feedback
 
 ---
 
@@ -291,33 +299,30 @@ All of these are now in the GitHub repo:
 
 ## Expected Outcome
 
-**If v5.1 validates well (<20% false positive rate):**
+**If v6 validates well (>90% accuracy):**
 - Ready to scale to other tractates
-- Can build v6 on this foundation
-- Establishes methodology for Talmud narrative detection
+- Establishes methodology for Talmud narrative detection at scale
+- Can begin building comprehensive story index
 
-**If false positive rate still high:**
-- Analyze Jeff's new feedback
-- Identify remaining patterns
-- Implement v5.2 with additional refinements
+**If accuracy still needs improvement:**
+- Analyze Jeff's new feedback for remaining patterns
+- Implement v7 with further refinements
+- Potentially expand the expert feedback to additional reviewers
 
 **Either way:**
 - Expert validation drives continuous improvement
 - Each iteration gets closer to production quality
+- v6 already addresses all 20 errors from the v5.1 review
 
 ---
 
 ## Summary
 
-✅ **Created:** Two email versions (executive + comprehensive)
-✅ **Created:** Three validation UIs (fresh content, comparison, general)
-✅ **Analyzed:** Two validation ranges (2-39 and 40-60)
-✅ **Documented:** Complete results and analysis
-✅ **Committed:** Everything pushed to GitHub
-✅ **Ready:** To send to Jeff for validation
+✅ **Built:** v6 detector incorporating all of Jeff's 128-passage feedback
+✅ **Fixed:** All 20 errors identified (anonymous chars, legal activity, cross-page, borderline)
+✅ **Added:** Cross-page merging, duplicate detection, boundary trimming
+✅ **Updated:** All documentation and website for v6
 
-**Next Action:** Send `email_to_jeff_EXECUTIVE_SUMMARY.txt` to Jeff with GitHub link.
+**Next Action:** Run v6 detector, generate new UIs, send to Jeff.
 
-**Expected Turnaround:** Based on 55 stories total, Jeff could complete validation in 1.5-2 hours (or in multiple sessions over a few days).
-
-**Impact:** This validation determines if v5.1 achieved the goal of reducing false positives from 50% to <20%.
+**Strategy for Jeff's next review:** Include new pages (61-80 or beyond) alongside re-running 2-60 to test both improvement on known content AND generalization to new content.
