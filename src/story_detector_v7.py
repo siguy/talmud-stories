@@ -201,16 +201,32 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
 """
         return prompt
 
-    def _call_google(self, prompt: str, max_tokens: int = 8192) -> str:
-        """Call Google Gemini API."""
+    def _call_google(self, prompt: str, max_tokens: int = 8192,
+                     json_mode: bool = False) -> str:
+        """Call Google Gemini API.
+
+        Args:
+            json_mode: If True, use response_mime_type='application/json' and
+                       disable thinking (required for Gemini 3+ models).
+        """
         try:
+            config_kwargs = {
+                'max_output_tokens': max_tokens,
+                'temperature': 0.1,
+            }
+            if json_mode:
+                config_kwargs['response_mime_type'] = 'application/json'
+                # Gemini 3 models use "thinking" tokens that count against
+                # max_output_tokens, causing truncated JSON. Disable thinking
+                # for structured output.
+                config_kwargs['thinking_config'] = types.ThinkingConfig(
+                    thinking_budget=0
+                )
+
             response = self.client.models.generate_content(
                 model=self.model_name,
                 contents=prompt,
-                config=types.GenerateContentConfig(
-                    max_output_tokens=max_tokens,
-                    temperature=0.1,
-                )
+                config=types.GenerateContentConfig(**config_kwargs),
             )
             if not response.candidates:
                 return ""
@@ -236,12 +252,24 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         json_end = cleaned.rfind('}') + 1
 
         if json_start >= 0 and json_end > json_start:
+            json_str = cleaned[json_start:json_end]
             try:
-                return json.loads(cleaned[json_start:json_end])
-            except json.JSONDecodeError as e:
-                print(f"  JSON parse error: {e}")
-                return None
+                return json.loads(json_str)
+            except json.JSONDecodeError:
+                # Repair common issues from newer Gemini models:
+                # 1. Trailing commas before } or ]
+                repaired = re.sub(r',\s*([}\]])', r'\1', json_str)
+                try:
+                    return json.loads(repaired)
+                except json.JSONDecodeError as e:
+                    print(f"  JSON parse error (after repair): {e}")
+                    return None
         return None
+
+    @property
+    def _use_json_mode(self) -> bool:
+        """Use JSON mode for Gemini 3+ models to avoid thinking token issues."""
+        return 'gemini-3' in self.model_name or 'gemini-2.5' in self.model_name
 
     def detect_stories(self, ref: str, segments: List[Dict],
                        event_types: List[EventType],
@@ -249,7 +277,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                        next_page_context: Optional[str] = None) -> List[Dict]:
         """
         Detect stories on a single page using constrained prompt.
-        Returns list of story dicts.
+        Returns list of story dicts. Retries once on JSON parse failure.
         """
         if not self.client:
             raise RuntimeError("Gemini API not configured")
@@ -258,13 +286,25 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             ref, segments, event_types,
             prev_page_context, next_page_context
         )
-        content = self._call_google(prompt)
-        result = self._parse_json_response(content)
+        use_json = self._use_json_mode
 
-        if not result:
-            return []
+        for attempt in range(2):
+            content = self._call_google(prompt, json_mode=use_json)
+            if use_json:
+                # JSON mode returns clean JSON, parse directly
+                try:
+                    result = json.loads(content) if content else None
+                except json.JSONDecodeError:
+                    result = self._parse_json_response(content)
+            else:
+                result = self._parse_json_response(content)
+            if result is not None:
+                return result.get('stories', [])
+            if attempt == 0:
+                print(f"    Retrying {ref} (JSON parse failed)...")
+                time.sleep(1)
 
-        return result.get('stories', [])
+        return []
 
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
@@ -470,10 +510,15 @@ class AdversarialValidator:
         json_start = cleaned.find('{')
         json_end = cleaned.rfind('}') + 1
         if json_start >= 0 and json_end > json_start:
+            json_str = cleaned[json_start:json_end]
             try:
-                return json.loads(cleaned[json_start:json_end])
+                return json.loads(json_str)
             except json.JSONDecodeError:
-                return None
+                repaired = re.sub(r',\s*([}\]])', r'\1', json_str)
+                try:
+                    return json.loads(repaired)
+                except json.JSONDecodeError:
+                    return None
         return None
 
     def should_validate(self, story: Dict) -> bool:
