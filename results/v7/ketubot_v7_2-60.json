@@ -1377,7 +1377,7 @@
       "stories": [
         {
           "start_segment": 3,
-          "end_segment": 5,
+          "end_segment": 4,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -1423,7 +1423,8 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
-          }
+          },
+          "boundary_refined": true
         },
         {
           "start_segment": 13,
@@ -4705,7 +4706,7 @@
       "stories": [
         {
           "start_segment": 13,
-          "end_segment": 17,
+          "end_segment": 16,
           "classification": "YES",
           "criteria": {
             "identifiable_characters": {
@@ -4754,7 +4755,8 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
-          }
+          },
+          "boundary_refined": true
         }
       ]
     },
@@ -5468,7 +5470,7 @@
       ],
       "stories": [
         {
-          "start_segment": 0,
+          "start_segment": 1,
           "end_segment": 1,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
@@ -5516,7 +5518,8 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is about a specific man and his interactions with others."
-          }
+          },
+          "boundary_refined": true
         },
         {
           "start_segment": 9,
@@ -9507,7 +9510,7 @@
       "stories": [
         {
           "start_segment": 4,
-          "end_segment": 5,
+          "end_segment": 4,
           "classification": "LOW_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -9554,7 +9557,8 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is followed by a deliberation about the meaning of Shmuel's instruction."
-          }
+          },
+          "boundary_refined": true
         },
         {
           "start_segment": 6,
@@ -10768,7 +10772,7 @@
         {
           "start_segment": 22,
           "end_segment": 22,
-          "classification": "NOT_A_STORY",
+          "classification": "YES",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -10801,13 +10805,20 @@
           "criteria_met_count": 1,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "A certain person said to his heirs, in his will:",
+          "one_sentence_summary": "A certain person said to his heirs, in his will: The relatives of Rabbi Yo\u1e25anan, burdened by their father's wasteful wife, sought advice from Rabbi Yo\u1e25anan and later a ruling from Reish Lakish after their father's death, leading to conflicting opinions on her support.",
           "classification_reasoning": "This is not a story because it only contains one event and is incomplete.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Story ends abruptly."
-          }
+          },
+          "spans_pages": [
+            "Ketubot 54a",
+            "Ketubot 54b"
+          ],
+          "start_segment_page2": 1,
+          "end_segment_page2": 2,
+          "cross_page_merge_v7": true
         }
       ]
     },
@@ -10870,58 +10881,7 @@
           "hebrew": "\u05d5\u05bc\u05dc\u05b0\u05e4\u05d5\u05b9\u05d2\u05b6\u05de\u05b6\u05ea; \u05dc\u05b0\u05ea\u05d5\u05b9\u05d1\u05b7\u05e2\u05b7\u05ea; \u05d5\u05bc\u05dc\u05b0\u05e2\u05d5\u05b9\u05d1\u05b6\u05e8\u05b6\u05ea \u05e2\u05b7\u05dc \u05d3\u05bc\u05b8\u05ea;"
         }
       ],
-      "stories": [
-        {
-          "start_segment": 1,
-          "end_segment": 2,
-          "classification": "YES",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rabbi Yo\u1e25anan, Reish Lakish, relatives of Rabbi Yo\u1e25anan, wife of their father",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 3,
-              "events": [
-                "Relatives came before Rabbi Yo\u1e25anan",
-                "Relatives came before Reish Lakish",
-                "Reish Lakish gave a ruling"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Wife diminishes resources \u2192 Relatives ask Rabbi Yo\u1e25anan \u2192 Relatives ask Reish Lakish"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "After their father died"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the actions of the relatives and the rulings of the rabbis."
-            },
-            "change_outcome": {
-              "met": true,
-              "before": "Relatives sought advice from Rabbi Yo\u1e25anan.",
-              "after": "Relatives sought a ruling from Reish Lakish, who disagreed with Rabbi Yo\u1e25anan."
-            }
-          },
-          "criteria_met_count": 6,
-          "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "The relatives of Rabbi Yo\u1e25anan, burdened by their father's wasteful wife, sought advice from Rabbi Yo\u1e25anan and later a ruling from Reish Lakish after their father's death, leading to conflicting opinions on her support.",
-          "classification_reasoning": "This passage meets all criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation as the relatives seek different rulings.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": ""
-          }
-        }
-      ]
+      "stories": []
     },
     {
       "ref": "Ketubot 55a",
@@ -11227,7 +11187,7 @@
         {
           "start_segment": 11,
           "end_segment": 11,
-          "classification": "NOT_A_STORY",
+          "classification": "LOW_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -11262,13 +11222,20 @@
           "criteria_met_count": 2,
           "disqualifiers_found": [],
           "weakeners_found": [],
-          "one_sentence_summary": "The Gemara states that the sister of Rami bar \u1e24ama was married to Rav Avya.",
+          "one_sentence_summary": "The Gemara states that the sister of Rami bar \u1e24ama was married to Rav Avya. A couple whose marriage contract was lost came before Rav Yosef, who gave them a legal ruling.",
           "classification_reasoning": "This is not a story because it only contains one event. There is no causal chain, temporal progression, or change in outcome.",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "This is the only narrative event on the page."
-          }
+          },
+          "spans_pages": [
+            "Ketubot 56b",
+            "Ketubot 57a"
+          ],
+          "start_segment_page2": 0,
+          "end_segment_page2": 0,
+          "cross_page_merge_v7": true
         }
       ]
     },
@@ -11341,60 +11308,7 @@
           "hebrew": "\u05d6\u05d5\u05b9 \u05de\u05b4\u05e9\u05c1\u05b0\u05e0\u05b8\u05d4 \u05e8\u05b4\u05d0\u05e9\u05c1\u05d5\u05b9\u05e0\u05b8\u05d4. \u05d1\u05bc\u05b5\u05d9\u05ea \u05d3\u05bc\u05b4\u05d9\u05df \u05e9\u05c1\u05b6\u05dc \u05d0\u05b7\u05d7\u05b2\u05e8\u05b5\u05d9\u05d4\u05b6\u05df \u05d0\u05b8\u05de\u05b0\u05e8\u05d5\u05bc:"
         }
       ],
-      "stories": [
-        {
-          "start_segment": 0,
-          "end_segment": 0,
-          "classification": "LOW_CONFIDENCE",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rav Yosef, woman, husband",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 2,
-              "events": [
-                "marriage contract was lost",
-                "woman and husband came before Rav Yosef"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Lost contract \u2192 couple came to Rav Yosef"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": []
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes what did happen"
-            },
-            "change_outcome": {
-              "met": false,
-              "before": "Contract lost",
-              "after": "Rav Yosef gives legal ruling"
-            }
-          },
-          "criteria_met_count": 5,
-          "disqualifiers_found": [],
-          "weakeners_found": [
-            "The story ends with a legal ruling, not a change in the couple's situation."
-          ],
-          "one_sentence_summary": "A couple whose marriage contract was lost came before Rav Yosef, who gave them a legal ruling.",
-          "classification_reasoning": "This is a borderline story because it has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the story ends with a legal ruling, and the couple's situation is not transformed, so it is classified as LOW_CONFIDENCE.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": "The story is self-contained within this segment."
-          },
-          "adversarial_validation": {
-            "confirmed": true
-          }
-        }
-      ]
+      "stories": []
     },
     {
       "ref": "Ketubot 57b",

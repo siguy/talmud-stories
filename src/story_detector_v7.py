@@ -387,7 +387,17 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             print(f"\n--- Stage 3: Adversarial Validation (disabled) ---")
             changes = []
 
-        # Cross-page merge
+        # Stage 4: Boundary Refinement + Cross-page Merge
+        print(f"\n--- Stage 4: Boundary Refinement + Cross-page Merge ---")
+
+        # 4a: Refine boundaries using event tags
+        boundary_changes = refine_boundaries_with_event_tags(all_results, triage_results)
+        print(f"  Boundary refinement: {boundary_changes} stories trimmed")
+
+        # 4b: Cross-page merge (improved — uses triage event types)
+        all_results = merge_cross_page_stories_v7(all_results, triage_results)
+
+        # 4c: Legacy cross-page merge for continuation flags
         all_results = merge_cross_page_stories(all_results)
 
         # Detect duplicates
@@ -728,6 +738,197 @@ Return JSON:
         print(f"\n  Adversarial validation complete: {total_validated} stories validated, "
               f"{len(changes)} changed")
         return changes
+
+
+# ============================================================
+# STAGE 4: BOUNDARY REFINEMENT + IMPROVED MERGE
+# ============================================================
+
+def refine_boundaries_with_event_tags(pages: List[Dict],
+                                       triage_results: Dict[str, List[EventType]]) -> int:
+    """
+    Trim DELIBERATION segments from story edges using triage event types.
+
+    If a story starts or ends with segments that are DELIBERATION in the triage,
+    shrink the boundary inward. This prevents including legal commentary at the
+    edges of stories.
+
+    Returns count of stories modified.
+    """
+    changes = 0
+
+    for page in pages:
+        ref = page.get('ref', '')
+        events = triage_results.get(ref, [])
+        if not events:
+            continue
+
+        for story in page.get('stories', []):
+            cls = story.get('classification', 'NOT_A_STORY')
+            if cls == 'NOT_A_STORY':
+                continue
+
+            start = story.get('start_segment', 0)
+            end = story.get('end_segment', 0)
+            orig_start = start
+            orig_end = end
+
+            # Trim DELIBERATION from the start
+            while start < end and start < len(events):
+                if events[start] == EventType.DELIBERATION:
+                    start += 1
+                else:
+                    break
+
+            # Trim DELIBERATION from the end
+            while end > start and end < len(events):
+                if events[end] == EventType.DELIBERATION:
+                    end -= 1
+                else:
+                    break
+
+            # Only apply if we still have at least 1 segment with narrative content
+            if start != orig_start or end != orig_end:
+                # Verify the trimmed range still has narrative events
+                remaining_narrative = any(
+                    events[i] == EventType.NARRATIVE_EVENT
+                    for i in range(start, min(end + 1, len(events)))
+                )
+                if remaining_narrative and start <= end:
+                    story['start_segment'] = start
+                    story['end_segment'] = end
+                    story['boundary_refined'] = True
+                    changes += 1
+
+    return changes
+
+
+def merge_cross_page_stories_v7(pages: List[Dict],
+                                 triage_results: Dict[str, List[EventType]]) -> List[Dict]:
+    """
+    Improved cross-page merge using triage event types.
+
+    Handles cases where a story at a page boundary is classified as NOT_A_STORY
+    because it doesn't have enough context on its own, but the adjacent page
+    has a detected story that this fragment belongs to.
+
+    Key improvement over merge_cross_page_stories:
+    - Uses triage NARRATIVE_EVENT types to identify story fragments at boundaries
+    - Promotes NOT_A_STORY fragments to LOW_CONFIDENCE when they have narrative
+      events and merge with an adjacent story
+    """
+    for i in range(len(pages) - 1):
+        page_n = pages[i]
+        page_n1 = pages[i + 1]
+
+        ref_n = page_n.get('ref', '')
+        ref_n1 = page_n1.get('ref', '')
+
+        events_n = triage_results.get(ref_n, [])
+        events_n1 = triage_results.get(ref_n1, [])
+
+        stories_n = page_n.get('stories', [])
+        stories_n1 = page_n1.get('stories', [])
+
+        if not events_n or not events_n1:
+            continue
+
+        # Check if last segment(s) of page N have NARRATIVE_EVENT
+        last_seg_idx = len(events_n) - 1
+        n_has_narrative_at_end = (
+            last_seg_idx >= 0 and
+            events_n[last_seg_idx] == EventType.NARRATIVE_EVENT
+        )
+
+        # Check if first segment(s) of page N+1 have NARRATIVE_EVENT
+        n1_has_narrative_at_start = (
+            len(events_n1) > 0 and
+            (events_n1[0] == EventType.NARRATIVE_EVENT or
+             (len(events_n1) > 1 and events_n1[1] == EventType.NARRATIVE_EVENT))
+        )
+
+        if not (n_has_narrative_at_end and n1_has_narrative_at_start):
+            continue
+
+        # Find boundary stories
+        last_story_n = stories_n[-1] if stories_n else None
+        first_story_n1 = stories_n1[0] if stories_n1 else None
+
+        # Case: Page N has NOT_A_STORY at boundary, Page N+1 has real story at start
+        if (last_story_n and first_story_n1 and
+            last_story_n.get('classification') == 'NOT_A_STORY' and
+            first_story_n1.get('classification') not in ('NOT_A_STORY', None) and
+            last_story_n.get('end_segment', -1) >= last_seg_idx - 1 and
+            first_story_n1.get('start_segment', 999) <= 1):
+
+            # Promote the NOT_A_STORY fragment and merge
+            merged_cls = first_story_n1.get('classification', 'LOW_CONFIDENCE')
+            last_story_n['classification'] = merged_cls
+            last_story_n['spans_pages'] = [ref_n, ref_n1]
+            last_story_n['start_segment_page2'] = first_story_n1.get('start_segment')
+            last_story_n['end_segment_page2'] = first_story_n1.get('end_segment')
+            last_story_n['cross_page_merge_v7'] = True
+
+            # Merge summaries
+            summary_n = last_story_n.get('one_sentence_summary', '')
+            summary_n1 = first_story_n1.get('one_sentence_summary', '')
+            if summary_n1 and not summary_n:
+                last_story_n['one_sentence_summary'] = summary_n1
+            elif summary_n and summary_n1:
+                last_story_n['one_sentence_summary'] = f"{summary_n} {summary_n1}"
+
+            # Remove from page N+1
+            stories_n1.pop(0)
+            page_n1['stories'] = stories_n1
+
+            print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
+                  f"[promoted NOT_A_STORY + story]")
+            continue
+
+        # Case: Page N has real story at end, Page N+1 has NOT_A_STORY at boundary
+        if (last_story_n and first_story_n1 and
+            last_story_n.get('classification') not in ('NOT_A_STORY', None) and
+            first_story_n1.get('classification') == 'NOT_A_STORY' and
+            last_story_n.get('end_segment', -1) >= last_seg_idx - 1 and
+            first_story_n1.get('start_segment', 999) <= 1):
+
+            # Merge the NOT_A_STORY fragment into the page N story
+            merged_cls = last_story_n.get('classification', 'LOW_CONFIDENCE')
+            last_story_n['spans_pages'] = [ref_n, ref_n1]
+            last_story_n['start_segment_page2'] = first_story_n1.get('start_segment')
+            last_story_n['end_segment_page2'] = first_story_n1.get('end_segment')
+            last_story_n['cross_page_merge_v7'] = True
+
+            # Remove from page N+1
+            stories_n1.pop(0)
+            page_n1['stories'] = stories_n1
+
+            print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
+                  f"[story + promoted NOT_A_STORY]")
+            continue
+
+        # Case: Both sides are NOT_A_STORY but boundary has NARRATIVE_EVENT
+        # Create a LOW_CONFIDENCE cross-page story
+        if (last_story_n and first_story_n1 and
+            last_story_n.get('classification') == 'NOT_A_STORY' and
+            first_story_n1.get('classification') == 'NOT_A_STORY' and
+            last_story_n.get('end_segment', -1) >= last_seg_idx - 1 and
+            first_story_n1.get('start_segment', 999) <= 1):
+
+            last_story_n['classification'] = 'LOW_CONFIDENCE'
+            last_story_n['spans_pages'] = [ref_n, ref_n1]
+            last_story_n['start_segment_page2'] = first_story_n1.get('start_segment')
+            last_story_n['end_segment_page2'] = first_story_n1.get('end_segment')
+            last_story_n['cross_page_merge_v7'] = True
+
+            stories_n1.pop(0)
+            page_n1['stories'] = stories_n1
+
+            print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} (LOW_CONFIDENCE) "
+                  f"[both NOT_A_STORY promoted]")
+            continue
+
+    return pages
 
 
 # ============================================================
