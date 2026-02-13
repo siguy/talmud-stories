@@ -11,10 +11,74 @@
 | v4.1 | Jan 2025 | Expert Validation | Jeff Rubenstein validation (50% false positive rate) |
 | v5.0 | Jan 2025 | Categorical | YES/HIGH/LOW/NOT_A_STORY classification |
 | v5.1 | Jan 2025 | Validation-Driven | Address all false positive patterns |
+| v6 | Feb 2025 | Comprehensive | Cross-page merge, self-check, anti-legal disqualifiers |
+| v7 | Feb 2025 | Hybrid Pipeline | 4-stage decomposed detection, 87.4% accuracy |
 
 ---
 
-## v6: Comprehensive Revision from Jeff's v5.1 Validation (Current)
+## v7: Hybrid Pipeline — Decomposed Detection + Cross-Page Merge (Current)
+
+**Goal:** Decompose the monolithic v6 prompt into stages, reducing legal misidentification errors
+
+**Expert Review Stats (v6):** 82.7% agreement (105/127) with Jeff's labels
+**v7 Result:** 87.4% agreement (111/127), +6 net improvement over v6
+
+**Architecture: 4-Stage Pipeline**
+
+```
+Stage 1: Event Triage → classify segments as NARRATIVE_EVENT/VERBAL_ACT/DELIBERATION/HABITUAL
+                        → skip pages with <2 narrative events (~66% skip rate)
+Stage 2: Constrained Detection → event-annotated prompt, anti-legal few-shots from Ground Truth DB
+Stage 3: Adversarial Validation → three-call pattern (disabled — net negative in testing)
+Stage 4: Boundary Refinement → trim DELIBERATION at edges + improved cross-page merge
+```
+
+**Key Components:**
+
+1. **Ground Truth DB** (`src/ground_truth.py`)
+   - Structures Jeff's 128 labels with error types and passage patterns
+   - Auto-generates few-shot examples per stage
+   - Error types: LEGAL_MISIDENTIFICATION, MISSED_STORY, BOUNDARY_ERROR, CROSS_PAGE_BLEED
+
+2. **Event Triage** (`src/event_triage.py`)
+   - Classifies every segment into 4 event types using Gemini Flash
+   - Skip pages with <2 NARRATIVE_EVENT (or <1 NARRATIVE + <2 VERBAL_ACT)
+   - 66.1% skip rate, 1 false skip (saves ~60% of detection API calls)
+
+3. **Constrained Detection** (`src/story_detector_v7.py`)
+   - Segments pre-annotated with event types: `[NARRATIVE_EVENT] Seg 3: "Rabbi Yochanan said..."`
+   - Explicit "legal is not a story" instruction with Jeff's examples
+   - Self-check can only DEMOTE or CONFIRM (never promote)
+
+4. **Boundary Refinement + Cross-Page Merge**
+   - Trim DELIBERATION segments from story edges using triage event types
+   - Improved cross-page merge: uses NARRATIVE_EVENT at page boundaries to detect
+     story fragments even when one side is NOT_A_STORY
+   - Promotes and merges when both sides have narrative events at boundary
+
+**Scorecard vs Jeff's 128 labels:**
+| Metric | v6 | v7 |
+|--------|-----|-----|
+| Agreement | 82.7% (105/127) | 87.4% (111/127) |
+| Fixes from v6 | — | 10 |
+| Regressions from v6 | — | 4 |
+| Net change | — | +6 |
+
+**Remaining regressions (4):**
+- 3 legal misidentifications (8a, 40b, 52a)
+- 1 triage false skip (51a)
+
+**Files:**
+- `src/ground_truth.py` — Ground Truth DB
+- `src/event_triage.py` — Event Triage (Stage 1)
+- `src/story_detector_v7.py` — Detection + Adversarial + Merge
+- `results/v7/ketubot_v7_2-60.json` — Results
+- `results/v7/event_triage_2-60.json` — Pre-computed triage
+- `tests/v7_regression_test.py` — Side-by-side regression test
+
+---
+
+## v6: Comprehensive Revision from Jeff's v5.1 Validation
 
 **Goal:** Address all 20 errors and ~12 refinements from Jeff's 128-passage review
 
@@ -275,9 +339,12 @@ Stored in `validation/feedback/jeff_v4.1_validation.json`
 ## Running Current Version
 
 ```bash
-cd src
 export GOOGLE_API_KEY='your-key'
-python story_detector_v5.py 2 39  # Ketubot pages 2-39
-```
 
-Results saved to `results/ketubot/v5/pages_2-39.json`
+# v7 (current) — uses pre-computed triage from results/v7/event_triage_2-60.json
+PYTHONPATH=. python3 src/story_detector_v7.py
+# Output: results/v7/ketubot_v7_2-60.json
+
+# Regression test
+PYTHONPATH=. python3 tests/v7_regression_test.py
+```

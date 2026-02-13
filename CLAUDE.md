@@ -56,23 +56,28 @@ When making changes, update these files:
 ## Project Structure
 ```
 src/                          # Core detection code
-results/v6/                   # Current v6 analysis output
+results/v7/                   # Current v7 analysis output
+results/v6/                   # Previous v6 analysis output
 results/ketubot/v5/           # Historical v5.1 analysis output
 validation/ui/                # HTML validation interfaces
 validation/generators/        # Scripts to generate UIs
 validation/feedback/          # Expert feedback JSONs
 docs/                         # All documentation
-tests/                        # Tests (v6 regression, v5 categorical)
+tests/                        # Tests (v7 regression, v6 regression, v5 categorical)
 archive/                      # Old versions (reference only)
 ```
 
 ## Key Files
 | File | Purpose |
 |------|---------|
-| `src/story_detector_v6.py` | Current detection script (v6) |
-| `src/story_detector_v5.py` | Previous detection script (v5.1) |
+| `src/story_detector_v7.py` | Current detection script (v7) |
+| `src/event_triage.py` | Event triage (Stage 1) |
+| `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
+| `src/story_detector_v6.py` | Previous detection script (v6) |
+| `results/v7/` | v7 analysis output |
 | `results/v6/` | v6 analysis output |
 | `results/ketubot/v5/pages_*.json` | v5.1 analysis output |
+| `tests/v7_regression_test.py` | v7 vs v6 regression test |
 | `validation/generators/generate_review_ui.py` | UI generator |
 | `validation/ui/ketubot_*.html` | Validation UIs |
 | `validation/feedback/v5_1_feedback_*.json` | Jeff's v5.1 feedback |

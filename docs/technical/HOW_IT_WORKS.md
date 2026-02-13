@@ -2,15 +2,17 @@
 
 ## Overview
 
-This system detects narrative stories in Talmud text using AI-powered semantic analysis with expert-validated criteria. Version 6 incorporates comprehensive feedback from Jeff Rubenstein's review of 128 passages.
+This system detects narrative stories in Talmud text using AI-powered semantic analysis with expert-validated criteria. Version 7 uses a decomposed 4-stage pipeline that improved accuracy from 82.7% (v6) to 87.4% on Jeff Rubenstein's 128 expert-labeled passages.
 
 ```
-Sefaria API → Fetch ALL pages → Classify with cross-page context → Self-check (9 questions) → Cross-page merge → Duplicate detection → Output
+Sefaria API → Fetch pages → Event Triage (skip 66% of pages) →
+Constrained Detection (event-annotated) → Boundary Refinement →
+Cross-page Merge → Duplicate Detection → Output
 ```
 
-## Pipeline Stages
+## v7 Pipeline Stages
 
-### Stage 1: Fetch Text from Sefaria
+### Stage 0: Fetch Text from Sefaria
 
 ```python
 # Preserves aligned segment structure
@@ -24,32 +26,31 @@ Sefaria API → Fetch ALL pages → Classify with cross-page context → Self-ch
 }
 ```
 
-### Stage 2: Hebrew Marker Detection
+### Stage 1: Event Triage (`src/event_triage.py`)
 
-Each segment is pre-processed to detect narrative signals:
+Every segment on every page is classified into one of 4 event types using Gemini Flash:
 
-**Story Markers (Positive):**
-- `מעשה` (ma'aseh) - "an incident"
-- `יומא חד` (yoma chad) - "one day"
-- `פעם אחת` (pa'am achat) - "one time"
-- `כי הא ד` (ki ha d') - "like this case"
+| Event Type | Description | Example |
+|-----------|-------------|---------|
+| NARRATIVE_EVENT | Physical action happens to a specific person | "A certain man came before Rabbi X" |
+| VERBAL_ACT | Speech act as main content (ruling, question) | "Rabbi X said..." |
+| DELIBERATION | Legal reasoning, hypotheticals, abstract principles | "What is the law if..." |
+| HABITUAL | Recurring practice or custom | "He was accustomed to..." |
 
-**Dialogue Markers:**
-- `אמר ליה` / `א"ל` (amar leih) - "said to him"
-- `אמר לה` (amar lah) - "said to her"
+**Skip Decision:** Pages with <2 NARRATIVE_EVENT (or <1 NARRATIVE + <2 VERBAL_ACT) are skipped.
+Result: ~66% of pages skipped, saving API calls on legal-only pages.
 
-**Legal Markers (Negative):**
-- `מתני` (matni) - Mishna indicator
-- `הלכה` (halakha) - legal ruling
-- `תנו רבנן` (tanu rabbanan) - "the Rabbis taught"
+**Hebrew markers used:** `מעשה` (incident), `ההוא/ההיא` (that certain person), `אתא לקמיה` (came before), `הוה עובדא` (there was an incident)
 
-**Boundary Markers:**
-- `טַעְמָא דְּ` (ta'ama de) - commentary begins (stop)
-- `זִמְנָא אַחֲרִינָא` - "on another occasion" (extend)
+### Stage 2: Constrained Story Detection (`src/story_detector_v7.py`)
 
-### Stage 3: AI Classification (v6)
+Using Gemini 2.0 Flash, each non-skipped page is evaluated with:
+- **Event annotations** on each segment: `[NARRATIVE_EVENT] Seg 3: "Rabbi Yochanan said..."`
+- **Cross-page context** (last 3 segments of previous page, first 3 of next page)
+- **Anti-legal few-shot examples** from Ground Truth DB (Jeff's actual corrections)
+- **Explicit legal exclusion**: "A legal discussion is NOT a story even if it mentions a specific rabbi, place, or time"
 
-Using Gemini 2.0 Flash, each page is evaluated with cross-page context (last 3 segments of previous page, first 3 of next page) against **6 criteria**:
+Classification uses **6 criteria**:
 
 | Criterion | Question | Example |
 |-----------|----------|---------|
@@ -60,9 +61,9 @@ Using Gemini 2.0 Flash, each page is evaluated with cross-page context (last 3 s
 | descriptive | What DID happen (not hypothetical)? | Not "if X were to..." |
 | change_outcome | Situation TRANSFORMED? | Not just action report |
 
-**Key v6 refinements:**
-- Anonymous characters ("a certain man/woman") are FULLY valid characters (not weakeners)
-- What is NOT a narrative event: verbal statements, legal arguments, deliberation, traveling to debate, ordering someone, "instituting" a practice
+**Key refinements from expert validation:**
+- Anonymous characters ("a certain man/woman") are FULLY valid characters
+- What is NOT a narrative event: verbal statements, legal arguments, deliberation, traveling to debate
 - Rabbis who only state legal opinions are NOT characters in a story
 
 **Classification:**
@@ -71,60 +72,25 @@ Using Gemini 2.0 Flash, each page is evaluated with cross-page context (last 3 s
 - **LOW_CONFIDENCE**: 3-4 criteria, OR 1 event + discussion (borderline stories)
 - **NOT_A_STORY**: <3 criteria OR disqualifier
 
-### Stage 4: Disqualifiers (v6 expanded)
+**Automatic Disqualifiers → NOT_A_STORY:**
+Mishna sections, hypothetical cases, habitual actions, pure legal rulings, legal deliberation, legal debate settings
 
-Any of these → automatic NOT_A_STORY:
+### Stage 3: Adversarial Validation (disabled)
 
-| Disqualifier | Catches |
-|--------------|---------|
-| `MISHNA_section` | Legal codification |
-| `hypothetical_case` | "If X were to do Y..." |
-| `habitual_actions` | "He would regularly..." |
-| `pure_legal_ruling` | Law without narrative |
-| `rabbi_legal_opinion` | "Rabbi X quotes Rabbi Y as saying..." |
-| `legal_deliberation` | Thinking about acting, legal difficulty (v6) |
-| `legal_debate_setting` | Physical setting of debate, academy debates (v6) |
+Three-call LLM pattern for borderline stories. Currently disabled because testing showed net negative impact (-1 on Jeff's labels). The code is present for future tuning.
 
-**Removed in v6:** `biblical_narrative` — Jeff validated biblical stories as correct
+Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 
-### Stage 5: Weakeners
+### Stage 4: Boundary Refinement + Cross-Page Merge
 
-These downgrade confidence but don't disqualify:
+**Boundary Refinement:** Trim DELIBERATION segments from story edges using triage event types. If a story starts/ends with segments classified as DELIBERATION in Stage 1, shrink the boundary inward.
 
-- `minimal_causality` - Events connected but not strongly causal
-- `minimal_change` - Change is subtle
-- `simple_report` - Action without transformation
-- `embedded_in_legal_discussion` - Story within legal context
+**Cross-Page Merge (v7 improved):** Uses triage NARRATIVE_EVENT types at page boundaries to detect story fragments, even when one side is classified NOT_A_STORY:
+1. Check if last segment of page N has NARRATIVE_EVENT in triage
+2. Check if first segment of page N+1 has NARRATIVE_EVENT in triage
+3. If both sides have narrative events and one side has a detected story, promote and merge
 
-### Stage 6: Self-Check (v6: 9 questions)
-
-9 validation questions asked after initial classification:
-
-1. **Descriptive test**: What DID happen vs what SHOULD happen?
-2. **Habitual check**: Does היה רגיל appear?
-3. **Ma'aseh follow-through**: If מעשה appears, does a story follow?
-4. **Event count**: 2+ NARRATIVE events? (legal talk doesn't count)
-5. **Causality test**: A CAUSED B CAUSED C? (strict)
-6. **Change test**: What transformed?
-7. **Character role test**: Acting in narrative, or legal discourse? Anonymous = valid!
-8. **Boundary check** (v6): Does story start/end include legal framing that should be trimmed?
-9. **Borderline check** (v6): One event + discussion = LOW_CONFIDENCE, not NOT_A_STORY
-
-If answers contradict initial classification → adjust.
-Boundary adjustments are applied automatically in v6.
-
-### Stage 7: Cross-Page Merging (v6 new)
-
-Post-processing pass to merge stories split by arbitrary page boundaries:
-
-1. Scan for stories at page boundaries with continuation flags
-2. Merge stories where page N ends incomplete and page N+1 starts mid-narrative
-3. Combined story gets higher confidence of the two halves
-
-### Stage 8: Duplicate Detection (v6 new)
-
-Flag stories that appear to be the same passage quoted on multiple pages.
-Uses text fingerprinting of first 100 characters of English translation.
+**Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
 
 ## Example Classification
 
@@ -239,16 +205,18 @@ A girl went out to draw water. She was raped.
 ## Running Detection
 
 ```bash
-cd src
 export GOOGLE_API_KEY='your-key'
 
-# v6 (current)
-python story_detector_v6.py 2 39  # Analyze pages 2-39
+# v7 (current) — uses pre-computed triage
+PYTHONPATH=. python3 src/story_detector_v7.py
+# Output: results/v7/ketubot_v7_2-60.json
+
+# v6 (previous)
+python3 src/story_detector_v6.py 2 39
 # Output: results/v6/ketubot_v6_2-39.json
 
-# v5.1 (previous)
-python story_detector_v5.py 2 39
-# Output: results/v5/ketubot_v5.1_full_validation_2-39.json
+# Regression test (compare v6 vs v7 vs Jeff's labels)
+PYTHONPATH=. python3 tests/v7_regression_test.py
 ```
 
 ## Validation UI
