@@ -13,10 +13,60 @@
 | v5.1 | Jan 2025 | Validation-Driven | Address all false positive patterns |
 | v6 | Feb 2025 | Comprehensive | Cross-page merge, self-check, anti-legal disqualifiers |
 | v7 | Feb 2025 | Hybrid Pipeline | 4-stage decomposed detection, 87.4% accuracy |
+| v7+pp | Feb 2025 | Post-Processing | v6 ensemble rule boosts to 89.8% |
+| v7 (G3 Flash) | Feb 2026 | Model Upgrade | Gemini 3 Flash hits **92.1%** — new best |
 
 ---
 
-## v7: Hybrid Pipeline — Decomposed Detection + Cross-Page Merge (Current)
+## v7 + Gemini 3 Flash: 92.1% (Current Best)
+
+**Goal:** Migrate from gemini-2.0-flash (sunset March 2026) and test newer models
+
+**Result:** 117/127 (92.1%) — +6 over v7 baseline, +3 over v7+pp
+
+**Model Comparison (all using v7 pipeline + triage):**
+| Model | Raw | +Post-Processing | Cost (40 pages) |
+|-------|-----|------------------|-----------------|
+| gemini-2.0-flash | 87.4% (111/127) | 89.8% (114/127) | ~$0.05 |
+| gemini-3-pro-preview | 89.8% (114/127) | 90.6% (115/127) | ~$1.23 |
+| **gemini-3-flash-preview** | **92.1% (117/127)** | **92.1% (117/127)** | ~$0.31 |
+
+**Key Findings:**
+- Flash > Pro (surprise) — Pro is too conservative, misses borderline stories
+- Post-processing adds nothing to G3 Flash (model itself is better)
+- G3 Flash found 8b_6-10 story that no previous version detected
+- Gemini 3 models require `response_mime_type='application/json'` + thinking config
+
+**Technical: Gemini 3 Thinking Mode**
+- Gemini 3 models use "thinking" tokens that count against `max_output_tokens`
+- Without fix: truncated JSON, 78.7% accuracy (most pages get 0 stories)
+- Flash fix: `thinking_budget=0` disables thinking for structured output
+- Pro fix: `max_output_tokens=32768` (Pro requires thinking, can't disable it)
+- Both: filter out thinking parts from response, use `response_mime_type='application/json'`
+
+**Ablation Results (which v7 components matter):**
+| Configuration | Score |
+|--------------|-------|
+| v6 (baseline) | 82.7% (105/127) |
+| v7-no-triage (all 118 pages) | 83.5% (106/127) |
+| v6+triage+merge | 87.4% (111/127) |
+| v7 | 87.4% (111/127) |
+| v7+pp | 89.8% (114/127) |
+| **v7 + G3 Flash** | **92.1% (117/127)** |
+
+Triage is the key component (+4.7%). v7 constrained prompt ≈ v6 when both use triage.
+
+**New Files:**
+- `src/post_processing.py` — Mechanical post-processing rules (v6 ensemble)
+- `tests/ablation_test.py` — Ablation test framework
+- `tests/model_comparison.py` — Multi-model comparison runner
+- `results/v7/ketubot_g3flash_2-60.json` — G3 Flash results
+- `results/v7/ketubot_g3pro_2-60.json` — G3 Pro results
+- `results/v7/ablation_*.json` — Ablation test results
+
+---
+
+## v7: Hybrid Pipeline — Decomposed Detection + Cross-Page Merge
 
 **Goal:** Decompose the monolithic v6 prompt into stages, reducing legal misidentification errors
 
@@ -341,9 +391,18 @@ Stored in `validation/feedback/jeff_v4.1_validation.json`
 ```bash
 export GOOGLE_API_KEY='your-key'
 
-# v7 (current) — uses pre-computed triage from results/v7/event_triage_2-60.json
-PYTHONPATH=. python3 src/story_detector_v7.py
-# Output: results/v7/ketubot_v7_2-60.json
+# v7 with Gemini 3 Flash (current best)
+GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.py
+# Or pass model_name to V7StoryDetector constructor
+
+# Model comparison (run detection + regression test)
+PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
+
+# Score all existing results
+PYTHONPATH=. python3 tests/model_comparison.py --score
+
+# Ablation tests
+PYTHONPATH=. python3 tests/ablation_test.py --test score
 
 # Regression test
 PYTHONPATH=. python3 tests/v7_regression_test.py

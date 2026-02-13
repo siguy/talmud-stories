@@ -15,6 +15,7 @@ talmud-stories/
 │   ├── story_detector_v7.py     # Current detection script (v7)
 │   ├── event_triage.py          # Event triage (Stage 1)
 │   ├── ground_truth.py          # Ground Truth DB (Jeff's labels)
+│   ├── post_processing.py       # Mechanical post-processing rules
 │   ├── story_detector_v6.py     # Previous detection script (v6)
 │   └── story_detector_v5.py     # Previous detection script (v5.1)
 │
@@ -41,23 +42,25 @@ talmud-stories/
 │   └── communication/           # Expert reviewer materials
 │
 ├── tests/                       # Test implementations
-│   └── v5_categorical/          # Current version
+│   ├── v7_regression_test.py    # Regression test vs Jeff's labels
+│   ├── model_comparison.py      # Multi-model comparison runner
+│   ├── ablation_test.py         # Ablation test framework
+│   └── v5_categorical/          # Historical tests
 │
 └── archive/                     # Old versions (reference)
 ```
 
-## Current Version: v7
+## Current Version: v7 + Gemini 3 Flash
 
-**Decomposed 4-stage pipeline** improving accuracy from 82.7% (v6) to 87.4% on Jeff Rubenstein's 128 expert-labeled passages.
+**92.1% accuracy** (117/127) on Jeff Rubenstein's 128 expert-labeled passages. Decomposed 4-stage pipeline with Gemini 3 Flash.
 
-### What Changed in v7
+### Pipeline
 
-- **4-stage pipeline** — Event Triage → Constrained Detection → (Adversarial) → Boundary Refinement
 - **Event triage** — classifies every segment into NARRATIVE_EVENT/VERBAL_ACT/DELIBERATION/HABITUAL, skips 66% of pages
-- **Ground Truth DB** — structures Jeff's 128 expert labels with error types for few-shot examples
-- **Event-annotated detection** — segments pre-labeled with event types, explicit anti-legal instructions
-- **Improved cross-page merge** — uses triage event types at page boundaries to detect story fragments
-- **Boundary refinement** — trims DELIBERATION segments from story edges using triage data
+- **Constrained detection** — event-annotated prompt with anti-legal few-shot examples from Ground Truth DB
+- **Boundary refinement** — trims DELIBERATION segments from story edges
+- **Cross-page merge** — uses triage event types at page boundaries to detect story fragments
+- **Post-processing** — mechanical rules (v6 ensemble) for additional accuracy
 
 ### Classification System
 - **YES**: Definite story (all 6 criteria met, no weakeners)
@@ -74,11 +77,13 @@ talmud-stories/
 6. Change/outcome (situation transforms)
 
 ### Ketubot Results
-| Version | Agreement with Jeff | Stories Found | Net vs Previous |
-|---------|---------------------|---------------|-----------------|
-| v5.1 | 84.3% (107/127) | 55 | — |
-| v6 | 82.7% (105/127) | ~65 | -2 |
-| v7 | **87.4% (111/127)** | 68 | **+6** |
+| Version | Model | Agreement with Jeff |
+|---------|-------|---------------------|
+| v5.1 | — | 84.3% (107/127) |
+| v6 | gemini-2.0-flash | 82.7% (105/127) |
+| v7 | gemini-2.0-flash | 87.4% (111/127) |
+| v7+pp | gemini-2.0-flash | 89.8% (114/127) |
+| **v7** | **gemini-3-flash** | **92.1% (117/127)** |
 
 ## Quick Start
 
@@ -94,11 +99,17 @@ export GOOGLE_API_KEY='your-key'  # Get from https://aistudio.google.com/app/api
 
 ### Run Detection
 ```bash
-# v7 pipeline (uses pre-computed triage)
-PYTHONPATH=. python3 src/story_detector_v7.py
+# v7 pipeline with Gemini 3 Flash (current best)
+GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.py
 
-# Regression test (compare v6 vs v7)
+# Model comparison (run detection + regression test)
+PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
+
+# Regression test (compare against Jeff's labels)
 PYTHONPATH=. python3 tests/v7_regression_test.py
+
+# Score all existing model results
+PYTHONPATH=. python3 tests/model_comparison.py --score
 ```
 
 ### View Results
@@ -113,7 +124,8 @@ Open `validation/ui/ketubot_2-39.html` in a browser, or see `results/v7/ketubot_
 5. **Refine** boundaries by trimming DELIBERATION segments from story edges
 6. **Merge** cross-page stories using triage event types at page boundaries
 7. **Deduplicate** stories quoted on multiple pages
-8. **Output** categorized stories with evidence and criteria evaluation
+8. **Post-process** with mechanical rules (v6 ensemble)
+9. **Output** categorized stories with evidence and criteria evaluation
 
 ## Documentation
 
@@ -124,15 +136,7 @@ Open `validation/ui/ketubot_2-39.html` in a browser, or see `results/v7/ketubot_
 
 ## Expanding to Other Tractates
 
-Results are organized by tractate for easy expansion:
-
-```bash
-# Run on a different tractate
-cd src
-python story_detector_v6.py 2 39  # Default: Ketubot
-
-# Results saved to: results/v6/ketubot_v6_2-39.json
-```
+Results are organized by tractate for easy expansion. The pipeline is tractate-agnostic — tested on Ketubot 2a-60b with plans to validate on additional tractates.
 
 ## Expert Validation
 

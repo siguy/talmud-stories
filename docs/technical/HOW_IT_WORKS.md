@@ -2,12 +2,12 @@
 
 ## Overview
 
-This system detects narrative stories in Talmud text using AI-powered semantic analysis with expert-validated criteria. Version 7 uses a decomposed 4-stage pipeline that improved accuracy from 82.7% (v6) to 87.4% on Jeff Rubenstein's 128 expert-labeled passages.
+This system detects narrative stories in Talmud text using AI-powered semantic analysis with expert-validated criteria. Version 7 uses a decomposed 4-stage pipeline with Gemini 3 Flash, achieving 92.1% accuracy on Jeff Rubenstein's 128 expert-labeled passages.
 
 ```
 Sefaria API → Fetch pages → Event Triage (skip 66% of pages) →
 Constrained Detection (event-annotated) → Boundary Refinement →
-Cross-page Merge → Duplicate Detection → Output
+Cross-page Merge → Duplicate Detection → [Post-Processing] → Output
 ```
 
 ## v7 Pipeline Stages
@@ -44,7 +44,7 @@ Result: ~66% of pages skipped, saving API calls on legal-only pages.
 
 ### Stage 2: Constrained Story Detection (`src/story_detector_v7.py`)
 
-Using Gemini 2.0 Flash, each non-skipped page is evaluated with:
+Using Gemini 3 Flash (or configurable model), each non-skipped page is evaluated with:
 - **Event annotations** on each segment: `[NARRATIVE_EVENT] Seg 3: "Rabbi Yochanan said..."`
 - **Cross-page context** (last 3 segments of previous page, first 3 of next page)
 - **Anti-legal few-shot examples** from Ground Truth DB (Jeff's actual corrections)
@@ -91,6 +91,15 @@ Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 3. If both sides have narrative events and one side has a detected story, promote and merge
 
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
+
+### Stage 5: Post-Processing (`src/post_processing.py`)
+
+Optional mechanical rules applied after LLM detection:
+
+- **Rule 3 (v6 ensemble):** If v6 didn't find a story AND page has ≤1 NARRATIVE_EVENT → demote to NOT_A_STORY. Catches legal misidentifications on law-heavy pages.
+- Rules 1 (single-event filter) and 2 (duplicate reclassification) are disabled — caused regressions in testing.
+
+With gemini-2.0-flash, post-processing adds +2.4% (89.8% → from 87.4%). With gemini-3-flash, post-processing adds nothing (model already at 92.1%).
 
 ## Example Classification
 
