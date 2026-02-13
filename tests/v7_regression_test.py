@@ -128,7 +128,14 @@ def get_cls_label(match) -> str:
 
 # --- Main ---
 
-def run_regression_test():
+def run_regression_test(v7_results_path=None, label="v7"):
+    """
+    Run regression test comparing results against Jeff's 128 labels.
+
+    Args:
+        v7_results_path: Path to results JSON to score (default: results/v7/ketubot_v7_2-60.json)
+        label: Label for the results in output (e.g. "v7", "v7+pp", "ablation_A")
+    """
     project_root = Path(__file__).parent.parent
 
     # Load feedback
@@ -157,11 +164,11 @@ def run_regression_test():
             v6_data = json.load(f)
         v6_lookup = build_version_lookup(v6_data)
 
-    # Load v7
-    v7_path = project_root / 'results' / 'v7' / 'ketubot_v7_2-60.json'
+    # Load v7 (or specified results)
+    v7_path = Path(v7_results_path) if v7_results_path else \
+        project_root / 'results' / 'v7' / 'ketubot_v7_2-60.json'
     if not v7_path.exists():
-        print(f"ERROR: V7 results not found at {v7_path}")
-        print("Run: PYTHONPATH=. python3 src/story_detector_v7.py")
+        print(f"ERROR: Results not found at {v7_path}")
         sys.exit(1)
     with open(v7_path) as f:
         v7_data = json.load(f)
@@ -249,30 +256,30 @@ def run_regression_test():
 
     # --- Scorecard ---
     print("=" * 70)
-    print("  V7 REGRESSION TEST — SIDE-BY-SIDE WITH V6")
+    print(f"  {label.upper()} REGRESSION TEST — SIDE-BY-SIDE WITH V6")
     print("=" * 70)
 
     print(f"\nOVERALL ({total} entries, {len(skipped)} skipped):")
     if v6_lookup:
         print(f"  v6 agrees with Jeff: {v6_agrees}/{total} ({100*v6_agrees/total:.1f}%)")
-    print(f"  v7 agrees with Jeff: {v7_agrees}/{total} ({100*v7_agrees/total:.1f}%)")
+    print(f"  {label} agrees with Jeff: {v7_agrees}/{total} ({100*v7_agrees/total:.1f}%)")
     net = v7_agrees - v6_agrees if v6_lookup else 0
-    print(f"  Net change v6→v7:    {'+' if net >= 0 else ''}{net}")
+    print(f"  Net change v6→{label}:    {'+' if net >= 0 else ''}{net}")
 
-    print(f"\nv7 REGRESSIONS FROM v5.1 (was correct, now wrong): {len(v7_regressions)}")
+    print(f"\n{label} REGRESSIONS FROM v5.1 (was correct, now wrong): {len(v7_regressions)}")
     for r in v7_regressions:
-        print(f"  {r['key']}: v5.1={r['v5_cls']} → v7={r['v7_cls']} (Jeff wants {r['jeff_want']})")
+        print(f"  {r['key']}: v5.1={r['v5_cls']} → {label}={r['v7_cls']} (Jeff wants {r['jeff_want']})")
         if r['note']:
             print(f"    Jeff: \"{r['note']}\"")
 
     if v6_lookup:
-        print(f"\nv6→v7 FIXES (v6 wrong, v7 correct): {len(v7_fixes_from_v6)}")
+        print(f"\nv6→{label} FIXES (v6 wrong, {label} correct): {len(v7_fixes_from_v6)}")
         for f in v7_fixes_from_v6:
-            print(f"  {f['key']}: v6={f['v6_cls']} → v7={f['v7_cls']} (Jeff wants {f['jeff_want']})")
+            print(f"  {f['key']}: v6={f['v6_cls']} → {label}={f['v7_cls']} (Jeff wants {f['jeff_want']})")
 
-        print(f"\nv6→v7 REGRESSIONS (v6 correct, v7 wrong): {len(v7_regressions_from_v6)}")
+        print(f"\nv6→{label} REGRESSIONS (v6 correct, {label} wrong): {len(v7_regressions_from_v6)}")
         for r in v7_regressions_from_v6:
-            print(f"  {r['key']}: v6={r['v6_cls']} → v7={r['v7_cls']} (Jeff wants {r['jeff_want']})")
+            print(f"  {r['key']}: v6={r['v6_cls']} → {label}={r['v7_cls']} (Jeff wants {r['jeff_want']})")
             if r['note']:
                 print(f"    Jeff: \"{r['note']}\"")
 
@@ -282,9 +289,9 @@ def run_regression_test():
     print(f"{'─' * 70}")
     for d in sorted(incorrect_details, key=lambda x: x['key']):
         v6_status = "v6=OK" if d['v6_ok'] else "v6=WRONG"
-        v7_status = "v7=OK" if d['v7_ok'] else "v7=WRONG"
+        v7_status = f"{label}=OK" if d['v7_ok'] else f"{label}=WRONG"
         print(f"  {d['key']}: Jeff wants {d['jeff_want']}")
-        print(f"    v5.1={d['v5_cls']} | v6={d['v6_cls']} | v7={d['v7_cls']} [{v6_status}, {v7_status}]")
+        print(f"    v5.1={d['v5_cls']} | v6={d['v6_cls']} | {label}={d['v7_cls']} [{v6_status}, {v7_status}]")
         if d['note']:
             print(f"    Jeff: \"{d['note']}\"")
 
@@ -298,10 +305,55 @@ def run_regression_test():
               f"{triage_summary.get('kept', '?')} kept "
               f"({triage_summary.get('skip_rate', '?')})")
 
+    # Post-processing info
+    pp_info = v7_data.get('post_processing', {})
+    if pp_info:
+        pp_stats = pp_info.get('stats', {})
+        print(f"\n{'─' * 70}")
+        print(f"POST-PROCESSING:")
+        print(f"  Total demotions: {pp_stats.get('total_demotions', 0)}")
+        for rule in ['rule1_single_event', 'rule2_duplicate', 'rule3_v6_ensemble']:
+            rs = pp_stats.get(rule, {})
+            if rs.get('demoted', 0) > 0:
+                print(f"  {rule}: {rs['demoted']} demotions")
+                for d in rs.get('details', []):
+                    print(f"    {d}")
+
     print(f"\n{'=' * 70}")
 
-    return 1 if v7_regressions else 0
+    return v7_agrees, total
 
 
 if __name__ == '__main__':
-    sys.exit(run_regression_test())
+    import argparse
+    parser = argparse.ArgumentParser(description='V7 Regression Test')
+    parser.add_argument('--results', '-r', type=str, default=None,
+                        help='Path to results JSON to score')
+    parser.add_argument('--label', '-l', type=str, default='v7',
+                        help='Label for the results (default: v7)')
+    parser.add_argument('--post-process', '-pp', action='store_true',
+                        help='Apply post-processing before scoring')
+    args = parser.parse_args()
+
+    if args.post_process and not args.results:
+        # Apply post-processing to default v7 results, save to temp file
+        from src.post_processing import apply_post_processing, print_stats
+        project_root = Path(__file__).parent.parent
+        v7_path = str(project_root / 'results' / 'v7' / 'ketubot_v7_2-60.json')
+        v6_path = str(project_root / 'results' / 'v6' / 'ketubot_v6_2-60.json')
+        triage_path = str(project_root / 'results' / 'v7' / 'event_triage_2-60.json')
+        pp_path = str(project_root / 'results' / 'v7' / 'ketubot_v7_2-60_pp.json')
+
+        processed, stats = apply_post_processing(v7_path, v6_path, triage_path, pp_path)
+        print_stats(stats)
+        print()
+
+        args.results = pp_path
+        if args.label == 'v7':
+            args.label = 'v7+pp'
+
+    agrees, total = run_regression_test(
+        v7_results_path=args.results,
+        label=args.label,
+    )
+    sys.exit(0 if agrees > 0 else 1)
