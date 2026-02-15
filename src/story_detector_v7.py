@@ -310,7 +310,11 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 result = self._parse_json_response(content)
             if result is not None:
                 if isinstance(result, list):
-                    return result  # Model returned stories array directly
+                    # Model returned a list — could be stories directly,
+                    # or a list wrapping a {"page_ref", "stories"} dict
+                    if len(result) == 1 and isinstance(result[0], dict) and 'stories' in result[0]:
+                        return result[0]['stories']
+                    return result
                 return result.get('stories', [])
             if attempt == 0:
                 print(f"    Retrying {ref} (JSON parse failed)...")

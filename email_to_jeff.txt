@@ -1,0 +1,45 @@
+Subject: Talmud Story Detection — Ketubot 61-112 Ready for Review
+
+
+Hi Jeff,
+
+We've made significant progress on the Talmud story detection pipeline since your last review of pages 2-60. Here's a quick summary and what I'd love your help with next.
+
+WHAT'S NEW SINCE YOUR LAST REVIEW
+
+1. Accuracy improved from 82.7% to 92.1% on your labeled pages (2-60)
+   - Your feedback was the key driver. We built a "Ground Truth DB" from your 128 labels and used it to improve every stage of the pipeline.
+   - The biggest single improvement came from the event triage stage, which skips pages that are purely legal discussion — that alone accounts for about half the gains.
+   - We also upgraded the AI model from Gemini 2.0 Flash to Gemini 3 Flash, which brought us from 87.4% to 92.1%.
+
+2. We ran the full pipeline on Ketubot 61-112 (the rest of the tractate)
+   - 104 new pages fetched from Sefaria (61a through 112b)
+   - The triage stage identified 52 pages worth analyzing (50% skip rate — lower than pages 2-60's 66%, suggesting more narrative content in the later folios)
+   - 107 stories detected: 37 YES, 23 HIGH_CONFIDENCE, 47 LOW_CONFIDENCE
+   - Notable story-rich pages: 62b (7 stories — Rabbi Akiva, Rav Rehumi, etc.), 67b (7 stories — Mar Ukva charity narratives), 85a (6 stories — property disputes), 103a-104a (deathbed of Rabbi Yehuda HaNasi)
+
+WHAT I NEED FROM YOU
+
+I've set up a review interface for the 107 stories from pages 61-112. You can access it here:
+
+https://siguy.github.io/talmud-stories/validation/ui/ketubot_61-112.html
+
+It works the same as the previous review pages — just open it in your browser (no login needed). For each story:
+- Click "Correct" or "Incorrect"
+- Add any notes you'd like
+- The page auto-saves your progress in your browser
+
+When you're done (or whenever you want to send a batch), click "Download Feedback JSON" at the bottom and send me the file.
+
+You don't need to review all 107 — even a sample of 30-50 would be very helpful. The most valuable ones to look at are the YES and HIGH_CONFIDENCE stories (60 total), since those are the ones we're most confident about and where a wrong call matters most. The LOW_CONFIDENCE ones (47) are the borderline cases that could go either way.
+
+A FEW THINGS I'M ESPECIALLY CURIOUS ABOUT
+
+- Does the pipeline hold up on pages you know well? Pages 62b, 67b, 103a-104a, and 105b have dense narrative content — do the story boundaries look right?
+- Are there stories in 61-112 that you know should be there but are missing? (The triage stage skips 52 pages entirely, so a missed story on a skipped page would be good to know about.)
+- Do the LOW_CONFIDENCE classifications make sense as borderline? Or are some of them clearly stories (or clearly not)?
+
+Thanks as always for your expertise on this. Your earlier feedback fundamentally reshaped how the system works, and this is the first real test of whether it generalizes beyond the pages we trained on.
+
+Best,
+Simon

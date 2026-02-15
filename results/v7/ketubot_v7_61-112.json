@@ -6232,321 +6232,316 @@
       ],
       "stories": [
         {
-          "page_ref": "Ketubot 85a",
-          "stories": [
-            {
-              "start_segment": 0,
-              "end_segment": 2,
-              "classification": "YES",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "Rav Pappa, Rav Huna son of Rav Yehoshua, Rav Pineḥas bar Ami, Rava",
-                  "anonymous": false
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 4,
-                  "events": [
-                    "Rav Pappa and Rav Huna seize a boat",
-                    "Rav Pineḥas bar Ami encounters them and challenges them",
-                    "They come before Rava for a ruling",
-                    "Rava rebukes them and issues a decision"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Seizure of boat → Legal challenge by Rav Pineḥas → Seeking arbitration from Rava → Rava's rebuke and ruling"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "encountered them",
-                    "came before Rava"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes the physical act of steering with an oar and pulling with a rope, and Rava's specific insult 'white geese'."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "Two rabbis are in possession of a boat they seized.",
-                  "after": "The seizure is declared unlawful and the ownership status is clarified by Rava."
-                }
-              },
-              "criteria_met_count": 6,
-              "disqualifiers_found": [],
-              "weakeners_found": [],
-              "one_sentence_summary": "Rav Pappa and Rav Huna seize a boat to collect a debt but are rebuked by Rava for their unlawful methods after being challenged by Rav Pineḥas.",
-              "classification_reasoning": "This is a clear narrative with specific physical actions (steering, pulling), a sequence of events, and a resolution. It continues from the previous page's introduction of the case.",
-              "continuation": {
-                "continues_from_previous_page": true,
-                "continues_to_next_page": false,
-                "note": "The incident began on 84b with Yeimar bar Hashu and concludes here with Rava's ruling."
-              }
+          "start_segment": 0,
+          "end_segment": 2,
+          "classification": "YES",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rav Pappa, Rav Huna son of Rav Yehoshua, Rav Pineḥas bar Ami, Rava",
+              "anonymous": false
             },
-            {
-              "start_segment": 3,
-              "end_segment": 4,
-              "classification": "YES",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "Avimi son of Rabbi Abbahu, Hama son of Rabba bar Abbahu, Rabbi Abbahu",
-                  "anonymous": false
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 4,
-                  "events": [
-                    "Avimi sends money via Hama",
-                    "Hama pays the creditors",
-                    "Hama requests the promissory note back and is refused",
-                    "Hama brings the case to Rabbi Abbahu"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Payment without receiving the note → Creditors deny payment → Legal dispute before Rabbi Abbahu"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "sent the money",
-                    "went and paid",
-                    "then said",
-                    "came before"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes the specific interaction between the agent and the creditors regarding the return of the document."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "Hama has paid the debt but has no proof.",
-                  "after": "Rabbi Abbahu rules that the creditors have the upper hand due to the lack of witnesses."
-                }
-              },
-              "criteria_met_count": 6,
-              "disqualifiers_found": [],
-              "weakeners_found": [],
-              "one_sentence_summary": "Avimi's agent pays a debt but fails to retrieve the promissory note or secure witnesses, leading to a legal loss when the creditors deny the payment.",
-              "classification_reasoning": "This is a complete narrative arc with specific characters performing actions that lead to a legal complication and resolution.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "multiple_events": {
+              "met": true,
+              "count": 4,
+              "events": [
+                "Rav Pappa and Rav Huna seize a boat",
+                "Rav Pineḥas bar Ami encounters them and challenges them",
+                "They come before Rava for a ruling",
+                "Rava rebukes them and issues a decision"
+              ]
             },
-            {
-              "start_segment": 7,
-              "end_segment": 7,
-              "classification": "LOW_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "A certain woman, heirs of a deceased man, Rav Nahman",
-                  "anonymous": true
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 3,
-                  "events": [
-                    "Heirs claim a bag of documents",
-                    "Woman claims she seized them for a debt",
-                    "They go before Rav Nahman"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Claim of ownership → Counter-claim of seizure → Judicial intervention"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "came and claimed",
-                    "came before"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes a bag full of documents."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "Woman holds documents; heirs want them.",
-                  "after": "Rav Nahman issues a ruling on the validity of her seizure."
-                }
-              },
-              "criteria_met_count": 6,
-              "disqualifiers_found": [],
-              "weakeners_found": [
-                "Brief narrative that serves primarily to introduce a legal ruling"
-              ],
-              "one_sentence_summary": "A woman holding a bag of documents claims she seized them for a debt, and Rav Nahman rules on the case when the heirs sue her.",
-              "classification_reasoning": "While brief, it contains specific characters and a sequence of actions (claiming, responding, going to court) that distinguish it from a hypothetical case.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "causal_chain": {
+              "met": true,
+              "chain": "Seizure of boat → Legal challenge by Rav Pineḥas → Seeking arbitration from Rava → Rava's rebuke and ruling"
             },
-            {
-              "start_segment": 8,
-              "end_segment": 8,
-              "classification": "HIGH_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "A certain woman, Rava, Daughter of Rav Hisda",
-                  "anonymous": true
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 3,
-                  "events": [
-                    "Woman is obligated to take an oath",
-                    "Daughter of Rav Hisda informs Rava of the woman's character",
-                    "Rava reverses the oath"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Legal obligation → Character testimony → Judicial reversal"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "reversed the obligation"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "The interaction between Rava and his wife regarding a litigant."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "The woman was supposed to swear.",
-                  "after": "The oath was shifted to the opponent."
-                }
-              },
-              "criteria_met_count": 5,
-              "disqualifiers_found": [],
-              "weakeners_found": [],
-              "one_sentence_summary": "Rava changes a court procedure based on his wife's testimony that a litigant is untrustworthy.",
-              "classification_reasoning": "This is a narrative of a specific event in court involving a change in outcome based on a character's intervention.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "encountered them",
+                "came before Rava"
+              ]
             },
-            {
-              "start_segment": 9,
-              "end_segment": 10,
-              "classification": "HIGH_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "Rav Pappa, Rav Adda bar Mattana, Rava",
-                  "anonymous": false
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 3,
-                  "events": [
-                    "Rabbis are sitting before Rava",
-                    "A document is brought for examination",
-                    "Rav Pappa identifies it as paid; Rava questions him"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Document presented → Rav Pappa's testimony → Rava's refusal to accept it based on precedent"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "On another occasion",
-                    "was brought"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "The setting of the rabbis sitting together and the presentation of the document."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "A document is presented for collection.",
-                  "after": "The document is not immediately invalidated because Rav Pappa's single testimony is insufficient."
-                }
-              },
-              "criteria_met_count": 5,
-              "disqualifiers_found": [],
-              "weakeners_found": [
-                "The 'sitting before' setting often signals legal debate, but here it frames a specific event regarding a physical document."
-              ],
-              "one_sentence_summary": "Rav Pappa attempts to invalidate a document brought before Rava, but Rava refuses to rely on his testimony alone, contrasting it with his reliance on his wife.",
-              "classification_reasoning": "This describes a specific courtroom incident with a clear sequence and interaction between named individuals.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the physical act of steering with an oar and pulling with a rope, and Rava's specific insult 'white geese'."
             },
-            {
-              "start_segment": 13,
-              "end_segment": 14,
-              "classification": "HIGH_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "A certain woman, Rav Beivai bar Abaye, a litigant, Rav Pappi",
-                  "anonymous": true
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 3,
-                  "events": [
-                    "Woman is obligated to swear",
-                    "Litigant suggests moving the oath to the town to shame her",
-                    "Rav Pappi insults Rav Beivai for considering it"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Legal obligation → Proposal for public shaming → Verbal confrontation between rabbis"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "Let her come"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "The specific insult regarding Rav Beivai's lineage (house of Eli)."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "A proposal is made to change the location of an oath.",
-                  "after": "The proposal is rejected with a sharp personal rebuke."
-                }
-              },
-              "criteria_met_count": 5,
-              "disqualifiers_found": [],
-              "weakeners_found": [],
-              "one_sentence_summary": "A litigant proposes shaming a woman into confession by moving her oath to the town, leading to a sharp exchange between Rav Pappi and Rav Beivai.",
-              "classification_reasoning": "This is a narrative of a specific courtroom conflict that includes a personal insult and a specific situational context.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "change_outcome": {
+              "met": true,
+              "before": "Two rabbis are in possession of a boat they seized.",
+              "after": "The seizure is declared unlawful and the ownership status is clarified by Rava."
             }
-          ]
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rav Pappa and Rav Huna seize a boat to collect a debt but are rebuked by Rava for their unlawful methods after being challenged by Rav Pineḥas.",
+          "classification_reasoning": "This is a clear narrative with specific physical actions (steering, pulling), a sequence of events, and a resolution. It continues from the previous page's introduction of the case.",
+          "continuation": {
+            "continues_from_previous_page": true,
+            "continues_to_next_page": false,
+            "note": "The incident began on 84b with Yeimar bar Hashu and concludes here with Rava's ruling."
+          }
+        },
+        {
+          "start_segment": 3,
+          "end_segment": 4,
+          "classification": "YES",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Avimi son of Rabbi Abbahu, Hama son of Rabba bar Abbahu, Rabbi Abbahu",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 4,
+              "events": [
+                "Avimi sends money via Hama",
+                "Hama pays the creditors",
+                "Hama requests the promissory note back and is refused",
+                "Hama brings the case to Rabbi Abbahu"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Payment without receiving the note → Creditors deny payment → Legal dispute before Rabbi Abbahu"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "sent the money",
+                "went and paid",
+                "then said",
+                "came before"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the specific interaction between the agent and the creditors regarding the return of the document."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Hama has paid the debt but has no proof.",
+              "after": "Rabbi Abbahu rules that the creditors have the upper hand due to the lack of witnesses."
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Avimi's agent pays a debt but fails to retrieve the promissory note or secure witnesses, leading to a legal loss when the creditors deny the payment.",
+          "classification_reasoning": "This is a complete narrative arc with specific characters performing actions that lead to a legal complication and resolution.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 7,
+          "end_segment": 7,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "A certain woman, heirs of a deceased man, Rav Nahman",
+              "anonymous": true
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 3,
+              "events": [
+                "Heirs claim a bag of documents",
+                "Woman claims she seized them for a debt",
+                "They go before Rav Nahman"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Claim of ownership → Counter-claim of seizure → Judicial intervention"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "came and claimed",
+                "came before"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes a bag full of documents."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Woman holds documents; heirs want them.",
+              "after": "Rav Nahman issues a ruling on the validity of her seizure."
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [
+            "Brief narrative that serves primarily to introduce a legal ruling"
+          ],
+          "one_sentence_summary": "A woman holding a bag of documents claims she seized them for a debt, and Rav Nahman rules on the case when the heirs sue her.",
+          "classification_reasoning": "While brief, it contains specific characters and a sequence of actions (claiming, responding, going to court) that distinguish it from a hypothetical case.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 8,
+          "end_segment": 8,
+          "classification": "HIGH_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "A certain woman, Rava, Daughter of Rav Hisda",
+              "anonymous": true
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 3,
+              "events": [
+                "Woman is obligated to take an oath",
+                "Daughter of Rav Hisda informs Rava of the woman's character",
+                "Rava reverses the oath"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Legal obligation → Character testimony → Judicial reversal"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "reversed the obligation"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "The interaction between Rava and his wife regarding a litigant."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "The woman was supposed to swear.",
+              "after": "The oath was shifted to the opponent."
+            }
+          },
+          "criteria_met_count": 5,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "Rava changes a court procedure based on his wife's testimony that a litigant is untrustworthy.",
+          "classification_reasoning": "This is a narrative of a specific event in court involving a change in outcome based on a character's intervention.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 9,
+          "end_segment": 10,
+          "classification": "HIGH_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rav Pappa, Rav Adda bar Mattana, Rava",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 3,
+              "events": [
+                "Rabbis are sitting before Rava",
+                "A document is brought for examination",
+                "Rav Pappa identifies it as paid; Rava questions him"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Document presented → Rav Pappa's testimony → Rava's refusal to accept it based on precedent"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "On another occasion",
+                "was brought"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "The setting of the rabbis sitting together and the presentation of the document."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "A document is presented for collection.",
+              "after": "The document is not immediately invalidated because Rav Pappa's single testimony is insufficient."
+            }
+          },
+          "criteria_met_count": 5,
+          "disqualifiers_found": [],
+          "weakeners_found": [
+            "The 'sitting before' setting often signals legal debate, but here it frames a specific event regarding a physical document."
+          ],
+          "one_sentence_summary": "Rav Pappa attempts to invalidate a document brought before Rava, but Rava refuses to rely on his testimony alone, contrasting it with his reliance on his wife.",
+          "classification_reasoning": "This describes a specific courtroom incident with a clear sequence and interaction between named individuals.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 13,
+          "end_segment": 14,
+          "classification": "HIGH_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "A certain woman, Rav Beivai bar Abaye, a litigant, Rav Pappi",
+              "anonymous": true
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 3,
+              "events": [
+                "Woman is obligated to swear",
+                "Litigant suggests moving the oath to the town to shame her",
+                "Rav Pappi insults Rav Beivai for considering it"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Legal obligation → Proposal for public shaming → Verbal confrontation between rabbis"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "Let her come"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "The specific insult regarding Rav Beivai's lineage (house of Eli)."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "A proposal is made to change the location of an oath.",
+              "after": "The proposal is rejected with a sharp personal rebuke."
+            }
+          },
+          "criteria_met_count": 5,
+          "disqualifiers_found": [],
+          "weakeners_found": [],
+          "one_sentence_summary": "A litigant proposes shaming a woman into confession by moving her oath to the town, leading to a sharp exchange between Rav Pappi and Rav Beivai.",
+          "classification_reasoning": "This is a narrative of a specific courtroom conflict that includes a personal insult and a specific situational context.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
         }
       ]
     },
@@ -13580,167 +13575,162 @@
       ],
       "stories": [
         {
-          "page_ref": "Ketubot 111a",
-          "stories": [
-            {
-              "start_segment": 9,
-              "end_segment": 9,
-              "classification": "LOW_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "Ulla, Rabbi Elazar",
-                  "anonymous": false
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 3,
-                  "events": [
-                    "Ulla died outside Eretz Yisrael",
-                    "People came and told Rabbi Elazar",
-                    "Rabbi Elazar lamented his death"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Ulla dies → news reaches Rabbi Elazar → Rabbi Elazar reacts with a verse"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "passed away",
-                    "they came and said"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes the specific event of Ulla's death and the subsequent report to his colleague."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "Ulla is alive and traveling",
-                  "after": "Ulla is dead and mourned as having died in an 'unclean land'"
-                }
-              },
-              "criteria_met_count": 6,
-              "disqualifiers_found": [],
-              "weakeners_found": [
-                "Short narrative used to introduce a legal/homiletic point"
-              ],
-              "one_sentence_summary": "Ulla dies outside of Eretz Yisrael, and Rabbi Elazar laments that he fulfilled the prophecy of dying in an unclean land.",
-              "classification_reasoning": "While short, it contains a clear sequence of physical events (death, reporting, reaction) involving specific historical figures. It is classified as LOW_CONFIDENCE because it is a single incident reported to a Sage, which often borders on a legal anecdote, but it functions here as a biographical narrative.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+          "start_segment": 9,
+          "end_segment": 9,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Ulla, Rabbi Elazar",
+              "anonymous": false
             },
-            {
-              "start_segment": 10,
-              "end_segment": 11,
-              "classification": "LOW_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "A certain man, Rabbi Hanina",
-                  "anonymous": true
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 2,
-                  "events": [
-                    "A man's brother died leaving a widow in Bei Hoza'a",
-                    "The man came before Rabbi Hanina to ask for a ruling"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Brother dies abroad → man seeks to perform levirate marriage → Rabbi Hanina forbids/discourages it"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "happened before him",
-                    "came before"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes the specific geographical situation and the man's inquiry."
-                },
-                "change_outcome": {
-                  "met": true,
-                  "before": "Man intends to travel for levirate marriage",
-                  "after": "Rabbi Hanina rebukes the idea and the deceased brother"
-                }
-              },
-              "criteria_met_count": 6,
-              "disqualifiers_found": [],
-              "weakeners_found": [
-                "The core of the segment is a legal consultation"
-              ],
-              "one_sentence_summary": "A man asks Rabbi Hanina if he should travel to Babylonia to perform levirate marriage, and the Rabbi harshly discourages him.",
-              "classification_reasoning": "This is a classic 'Maaseh' (incident). Although it is a legal inquiry, it involves a specific (though anonymous) person taking action based on a specific family tragedy. It meets the criteria for a story but is LOW_CONFIDENCE because the 'action' is primarily a verbal consultation.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": false,
-                "note": null
-              }
+            "multiple_events": {
+              "met": true,
+              "count": 3,
+              "events": [
+                "Ulla died outside Eretz Yisrael",
+                "People came and told Rabbi Elazar",
+                "Rabbi Elazar lamented his death"
+              ]
             },
-            {
-              "start_segment": 23,
-              "end_segment": 26,
-              "classification": "LOW_CONFIDENCE",
-              "criteria": {
-                "identifiable_characters": {
-                  "met": true,
-                  "evidence": "Rabba, Rabba's brothers, Ilfa",
-                  "anonymous": false
-                },
-                "multiple_events": {
-                  "met": true,
-                  "count": 2,
-                  "events": [
-                    "Brothers sent a letter to Rabba",
-                    "Ilfa adds a story within the letter about a man suffering for a woman"
-                  ]
-                },
-                "causal_chain": {
-                  "met": true,
-                  "chain": "Brothers want Rabba to move → they write a letter with arguments and medical advice"
-                },
-                "temporal_progression": {
-                  "met": true,
-                  "markers": [
-                    "sent him a letter",
-                    "continued by writing"
-                  ]
-                },
-                "descriptive": {
-                  "met": true,
-                  "evidence": "Describes the contents of the letter and the specific advice given."
-                },
-                "change_outcome": {
-                  "met": false,
-                  "before": "Rabba is in Babylonia",
-                  "after": "Rabba has received advice (outcome of his move is not stated here)"
-                }
-              },
-              "criteria_met_count": 5,
-              "disqualifiers_found": [],
-              "weakeners_found": [
-                "The 'story' is a letter containing advice",
-                "The internal story by Ilfa is truncated"
-              ],
-              "one_sentence_summary": "Rabba's brothers send him a letter from Eretz Yisrael urging him to immigrate and providing him with medical and academic advice.",
-              "classification_reasoning": "The act of sending a letter and the specific, non-legal advice (medical/habitual) creates a narrative framework. It is LOW_CONFIDENCE because it is largely a collection of sayings sent via correspondence rather than a sequence of physical actions, though the 'sending' is a narrative event.",
-              "continuation": {
-                "continues_from_previous_page": false,
-                "continues_to_next_page": true,
-                "note": "The discussion of the letter's advice continues onto the next page."
-              }
+            "causal_chain": {
+              "met": true,
+              "chain": "Ulla dies → news reaches Rabbi Elazar → Rabbi Elazar reacts with a verse"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "passed away",
+                "they came and said"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the specific event of Ulla's death and the subsequent report to his colleague."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Ulla is alive and traveling",
+              "after": "Ulla is dead and mourned as having died in an 'unclean land'"
             }
-          ]
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [
+            "Short narrative used to introduce a legal/homiletic point"
+          ],
+          "one_sentence_summary": "Ulla dies outside of Eretz Yisrael, and Rabbi Elazar laments that he fulfilled the prophecy of dying in an unclean land.",
+          "classification_reasoning": "While short, it contains a clear sequence of physical events (death, reporting, reaction) involving specific historical figures. It is classified as LOW_CONFIDENCE because it is a single incident reported to a Sage, which often borders on a legal anecdote, but it functions here as a biographical narrative.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 10,
+          "end_segment": 11,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "A certain man, Rabbi Hanina",
+              "anonymous": true
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "A man's brother died leaving a widow in Bei Hoza'a",
+                "The man came before Rabbi Hanina to ask for a ruling"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Brother dies abroad → man seeks to perform levirate marriage → Rabbi Hanina forbids/discourages it"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "happened before him",
+                "came before"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the specific geographical situation and the man's inquiry."
+            },
+            "change_outcome": {
+              "met": true,
+              "before": "Man intends to travel for levirate marriage",
+              "after": "Rabbi Hanina rebukes the idea and the deceased brother"
+            }
+          },
+          "criteria_met_count": 6,
+          "disqualifiers_found": [],
+          "weakeners_found": [
+            "The core of the segment is a legal consultation"
+          ],
+          "one_sentence_summary": "A man asks Rabbi Hanina if he should travel to Babylonia to perform levirate marriage, and the Rabbi harshly discourages him.",
+          "classification_reasoning": "This is a classic 'Maaseh' (incident). Although it is a legal inquiry, it involves a specific (though anonymous) person taking action based on a specific family tragedy. It meets the criteria for a story but is LOW_CONFIDENCE because the 'action' is primarily a verbal consultation.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": null
+          }
+        },
+        {
+          "start_segment": 23,
+          "end_segment": 26,
+          "classification": "LOW_CONFIDENCE",
+          "criteria": {
+            "identifiable_characters": {
+              "met": true,
+              "evidence": "Rabba, Rabba's brothers, Ilfa",
+              "anonymous": false
+            },
+            "multiple_events": {
+              "met": true,
+              "count": 2,
+              "events": [
+                "Brothers sent a letter to Rabba",
+                "Ilfa adds a story within the letter about a man suffering for a woman"
+              ]
+            },
+            "causal_chain": {
+              "met": true,
+              "chain": "Brothers want Rabba to move → they write a letter with arguments and medical advice"
+            },
+            "temporal_progression": {
+              "met": true,
+              "markers": [
+                "sent him a letter",
+                "continued by writing"
+              ]
+            },
+            "descriptive": {
+              "met": true,
+              "evidence": "Describes the contents of the letter and the specific advice given."
+            },
+            "change_outcome": {
+              "met": false,
+              "before": "Rabba is in Babylonia",
+              "after": "Rabba has received advice (outcome of his move is not stated here)"
+            }
+          },
+          "criteria_met_count": 5,
+          "disqualifiers_found": [],
+          "weakeners_found": [
+            "The 'story' is a letter containing advice",
+            "The internal story by Ilfa is truncated"
+          ],
+          "one_sentence_summary": "Rabba's brothers send him a letter from Eretz Yisrael urging him to immigrate and providing him with medical and academic advice.",
+          "classification_reasoning": "The act of sending a letter and the specific, non-legal advice (medical/habitual) creates a narrative framework. It is LOW_CONFIDENCE because it is largely a collection of sayings sent via correspondence rather than a sequence of physical actions, though the 'sending' is a narrative event.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": true,
+            "note": "The discussion of the letter's advice continues onto the next page."
+          }
         }
       ]
     },
