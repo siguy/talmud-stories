@@ -338,49 +338,29 @@
     <!-- How It Works -->
     <section>
         <div class="container">
-            <h2>How It Works: The 8-Step Pipeline</h2>
-            <p>All pages in a range are fetched first, then each page is analyzed with cross-page context:</p>
+            <h2>How It Works: The 4-Stage Pipeline</h2>
+            <p>Our current system (v7) decomposes detection into specialized stages. Instead of asking one AI call to do everything, each stage focuses on what it does best:</p>
 
             <div class="pipeline">
                 <div class="pipeline-step">
                     <div class="step-number">1</div>
-                    <div class="step-name">Fetch All</div>
-                    <div class="step-desc">Get all pages from Sefaria</div>
+                    <div class="step-name">Fetch &amp; Triage</div>
+                    <div class="step-desc">Classify every segment</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">2</div>
                     <div class="step-name">Detect</div>
-                    <div class="step-desc">Find Hebrew markers</div>
+                    <div class="step-desc">Event-guided classification</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">3</div>
-                    <div class="step-name">Classify</div>
-                    <div class="step-desc">AI with cross-page context</div>
+                    <div class="step-name">Refine</div>
+                    <div class="step-desc">Trim boundaries</div>
                 </div>
                 <div class="pipeline-step">
                     <div class="step-number">4</div>
-                    <div class="step-name">Filter</div>
-                    <div class="step-desc">Remove non-stories</div>
-                </div>
-                <div class="pipeline-step">
-                    <div class="step-number">5</div>
-                    <div class="step-name">Self-Check</div>
-                    <div class="step-desc">9 validation questions</div>
-                </div>
-                <div class="pipeline-step">
-                    <div class="step-number">6</div>
                     <div class="step-name">Merge</div>
                     <div class="step-desc">Cross-page stories</div>
-                </div>
-                <div class="pipeline-step">
-                    <div class="step-number">7</div>
-                    <div class="step-name">Deduplicate</div>
-                    <div class="step-desc">Flag duplicates</div>
-                </div>
-                <div class="pipeline-step">
-                    <div class="step-number">8</div>
-                    <div class="step-name">Output</div>
-                    <div class="step-desc">Categorize results</div>
                 </div>
             </div>
 
@@ -388,60 +368,42 @@
                 <div class="pipeline-detail">
                     <div class="detail-number">1</div>
                     <div class="detail-content">
-                        <h4>Fetch All Pages from Sefaria</h4>
-                        <p>We retrieve all Talmud pages in the range at once, with Hebrew and English text aligned side-by-side. Fetching everything first enables cross-page awareness.</p>
+                        <h4>Fetch All Pages &amp; Event Triage</h4>
+                        <p>First, we retrieve all pages from Sefaria with Hebrew and English aligned. Then <strong>event triage</strong> classifies every segment into one of four types:</p>
+                        <p style="margin-top: 0.75rem;">
+                            <strong style="color:#16a34a">NARRATIVE_EVENT</strong> — physical actions, changes in state<br>
+                            <strong style="color:#2563eb">VERBAL_ACT</strong> — speech acts (blessings, rulings, questions)<br>
+                            <strong style="color:#ca8a04">DELIBERATION</strong> — legal debate, analysis, reasoning<br>
+                            <strong style="color:#64748b">HABITUAL</strong> — repeated customs or practices
+                        </p>
+                        <p style="margin-top: 0.75rem;">Pages with fewer than 2 narrative events are <strong>skipped entirely</strong>&mdash;saving 50-66% of detection calls. This is the single biggest accuracy improvement in v7: by pre-filtering, the detector never sees purely legal pages that used to cause false positives.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">2</div>
                     <div class="detail-content">
-                        <h4>Detect Hebrew Narrative Markers</h4>
-                        <p>We scan for Hebrew words that often signal stories:</p>
-                        <span class="hebrew-example">מעשה</span> <em>(ma'aseh - "an incident")</em><br>
-                        <span class="hebrew-example">יומא חד</span> <em>(yoma chad - "one day")</em><br>
-                        <span class="hebrew-example">פעם אחת</span> <em>(pa'am achat - "one time")</em>
+                        <h4>Constrained Detection</h4>
+                        <p>On pages that pass triage, Google Gemini analyzes the text with segments <strong>pre-annotated</strong> with their event types. The AI sees labels like "[NARRATIVE_EVENT] Segment 3: Rabbi Yochanan went to..." which helps it distinguish narrative action from legal discussion.</p>
+                        <p style="margin-top: 0.75rem;">The prompt includes curated examples from a <strong>Ground Truth database</strong>&mdash;real cases where our expert validator corrected the AI, organized by error type. The AI evaluates each passage against six criteria and checks for disqualifiers.</p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">3</div>
                     <div class="detail-content">
-                        <h4>AI Classifies with Cross-Page Context</h4>
-                        <p>Google Gemini analyzes each passage against six story criteria, with segments from the previous and next pages visible. This prevents stories split by page boundaries from being missed.</p>
+                        <h4>Boundary Refinement</h4>
+                        <p>Stories often start or end with legal material that isn't part of the narrative. Using the event triage labels, we automatically <strong>trim DELIBERATION segments</strong> from story edges&mdash;so stories begin at the first narrative event and end at the last action.</p>
+                        <p style="margin-top: 0.75rem;">Hebrew narrative markers help pinpoint where stories begin:<br>
+                        <span class="hebrew-example">מעשה</span> <em>(ma'aseh&mdash;"an incident")</em> &nbsp;
+                        <span class="hebrew-example">יומא חד</span> <em>(yoma chad&mdash;"one day")</em> &nbsp;
+                        <span class="hebrew-example">פעם אחת</span> <em>(pa'am achat&mdash;"one time")</em></p>
                     </div>
                 </div>
                 <div class="pipeline-detail">
                     <div class="detail-number">4</div>
                     <div class="detail-content">
-                        <h4>Apply Disqualifiers</h4>
-                        <p>We automatically filter out legal rulings, hypothetical cases, Mishnah sections, habitual actions, legal deliberation, and debate settings—things that look like stories but aren't.</p>
-                    </div>
-                </div>
-                <div class="pipeline-detail">
-                    <div class="detail-number">5</div>
-                    <div class="detail-content">
-                        <h4>Self-Check Validation</h4>
-                        <p>The AI asks itself 9 validation questions based on expert feedback—including boundary checks and borderline story detection. This catches false positives before human review.</p>
-                    </div>
-                </div>
-                <div class="pipeline-detail">
-                    <div class="detail-number">6</div>
-                    <div class="detail-content">
-                        <h4>Merge Cross-Page Stories</h4>
-                        <p>Stories that span page boundaries are detected and merged into single entries. Talmud page breaks are arbitrary and shouldn't split a story.</p>
-                    </div>
-                </div>
-                <div class="pipeline-detail">
-                    <div class="detail-number">7</div>
-                    <div class="detail-content">
-                        <h4>Detect Duplicates</h4>
-                        <p>The same story sometimes appears on multiple pages. We flag duplicates so each story is counted once.</p>
-                    </div>
-                </div>
-                <div class="pipeline-detail">
-                    <div class="detail-number">8</div>
-                    <div class="detail-content">
-                        <h4>Categorize the Result</h4>
-                        <p>Each finding is labeled: <strong style="color:#16a34a">YES</strong> (definite story), <strong style="color:#2563eb">HIGH</strong> (likely), <strong style="color:#ca8a04">LOW</strong> (borderline—one event with discussion), or rejected.</p>
+                        <h4>Cross-Page Merge &amp; Output</h4>
+                        <p>Talmud page breaks are arbitrary&mdash;they shouldn't split a story. We detect stories that span page boundaries by checking for narrative events on both sides of a break, then <strong>merge them into single entries</strong>.</p>
+                        <p style="margin-top: 0.75rem;">Each finding is categorized: <strong style="color:#16a34a">YES</strong> (definite story), <strong style="color:#2563eb">HIGH</strong> (likely), <strong style="color:#ca8a04">LOW</strong> (borderline&mdash;one event with discussion), or rejected. Duplicate stories quoted on multiple pages are flagged so each is counted once.</p>
                     </div>
                 </div>
             </div>

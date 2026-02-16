@@ -388,18 +388,66 @@
                     </div>
                 </div>
 
-                <div class="timeline-item milestone">
+                <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <span class="timeline-version">Version 6</span>
-                            <span class="timeline-date">February 2026</span>
+                            <span class="timeline-date">February 2025</span>
                         </div>
                         <div class="timeline-title">Comprehensive Revision from Expert Feedback</div>
-                        <p class="timeline-desc">Complete overhaul based on Jeff's 128-passage review. Anonymous characters now count fully. Refined what constitutes a "narrative event" vs legal activity. Cross-page story merging. Borderline story calibration. Story boundary trimming. 9-question self-check.</p>
+                        <p class="timeline-desc">Complete overhaul based on Jeff's 128-passage review. Anonymous characters now count fully. Refined what constitutes a "narrative event" vs legal activity. Cross-page story merging. Borderline story calibration. 82.7% accuracy.</p>
                         <div class="timeline-lesson">
-                            <strong>Current version</strong>
-                            <p>Targeting >90% accuracy with cross-page awareness and expert-calibrated borderline detection.</p>
+                            <strong>Lesson:</strong>
+                            <p>Expert feedback revealed 20 errors and 12 refinement opportunities. Each correction taught the system something new.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Version 7</span>
+                            <span class="timeline-date">February 2025</span>
+                        </div>
+                        <div class="timeline-title">Decomposed Pipeline: Event Triage</div>
+                        <p class="timeline-desc">Instead of one monolithic AI call, decomposed detection into stages. Event triage classifies every segment as narrative, verbal, deliberation, or habitual&mdash;then skips pages without enough narrative events. 87.4% accuracy (+6 over v6).</p>
+                        <div class="timeline-lesson">
+                            <strong>Key insight:</strong>
+                            <p>Triage alone accounted for +4.7% accuracy. By never showing the detector purely legal pages, most false positives disappeared.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item milestone">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">v7 + Gemini 3 Flash</span>
+                            <span class="timeline-date">February 2026</span>
+                        </div>
+                        <div class="timeline-title">92.1% Accuracy &mdash; New Best</div>
+                        <p class="timeline-desc">Upgrading to Google's Gemini 3 Flash model jumped accuracy from 87.4% to 92.1% (117/127 passages). Surprisingly, the smaller Flash model outperformed the larger Pro model. The model was so good that post-processing rules added nothing&mdash;it got them right on its own.</p>
+                        <div class="timeline-lesson">
+                            <strong>Surprise:</strong>
+                            <p>Flash > Pro. The Pro model was too conservative, missing borderline stories that Flash correctly identified.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item milestone">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <span class="timeline-version">Phase 4: Full Tractate</span>
+                            <span class="timeline-date">February 2026</span>
+                        </div>
+                        <div class="timeline-title">98 New Stories on Unseen Pages</div>
+                        <p class="timeline-desc">Ran the winning pipeline on Ketubot pages 61-112&mdash;104 pages the system had never seen. Found 98 stories (35 YES, 20 HIGH, 43 LOW). The entire tractate is now analyzed: 222 pages, ~153 stories total. Awaiting Jeff's expert review.</p>
+                        <div class="timeline-lesson">
+                            <strong>Status:</strong>
+                            <p>Generalization test passed. The pipeline found stories at a similar rate to the training set without any tuning.</p>
                         </div>
                     </div>
                 </div>
@@ -420,9 +468,9 @@
                     <div class="stats-desc">False positive rate</div>
                 </div>
                 <div class="stats-box after">
-                    <div class="stats-label">After v5.1 Review</div>
-                    <div class="stats-value">86%</div>
-                    <div class="stats-desc">Accuracy (128 passages reviewed)</div>
+                    <div class="stats-label">Current (v7 + G3 Flash)</div>
+                    <div class="stats-value">92.1%</div>
+                    <div class="stats-desc">Accuracy (127 expert-labeled passages)</div>
                 </div>
             </div>
 
@@ -449,19 +497,19 @@
 
             <div class="next-grid">
                 <div class="next-card">
+                    <div class="next-icon">✓</div>
+                    <h3>Expert Review: Pages 61-112</h3>
+                    <p>Jeff Rubenstein is reviewing 98 newly detected stories from the unseen half of Ketubot.</p>
+                </div>
+                <div class="next-card">
                     <div class="next-icon">📖</div>
                     <h3>More Tractates</h3>
-                    <p>Expand beyond Ketubot to cover the entire Babylonian Talmud.</p>
+                    <p>With Ketubot complete, expand to other tractates across the Babylonian Talmud.</p>
                 </div>
                 <div class="next-card">
                     <div class="next-icon">📊</div>
                     <h3>Comprehensive Index</h3>
-                    <p>Build a searchable catalog of all Talmud stories for scholars and students.</p>
-                </div>
-                <div class="next-card">
-                    <div class="next-icon">🔄</div>
-                    <h3>Continuous Improvement</h3>
-                    <p>Each expert review makes the system smarter and more accurate.</p>
+                    <p>Build a searchable catalog of all Talmud stories for scholars, students, and curious readers.</p>
                 </div>
             </div>
         </div>

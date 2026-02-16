@@ -253,13 +253,11 @@ When updating the website:
 
 | Metric | Value | Last Updated |
 |--------|-------|--------------|
-| Pages Analyzed | 76 | Jan 2025 |
-| Stories Found (v5.1) | 55 | Jan 2025 |
-| YES Classification | 5 | Jan 2025 |
-| HIGH Classification | 29 | Jan 2025 |
-| LOW Classification | 21 | Jan 2025 |
-| Tractates Covered | 1 (Ketubot) | Jan 2025 |
-| Current Version | v6 | Feb 2026 |
-| Expert Accuracy (v5.1) | 86% (128 passages) | Feb 2026 |
-
-*Note: v6 stats will update once the detector is run. The above v5.1 stats are from the last completed analysis.*
+| Pages Analyzed | 222 (full Ketubot) | Feb 2026 |
+| Stories Found | ~153 (55 from 2-60 + 98 from 61-112) | Feb 2026 |
+| YES Classification | ~40 | Feb 2026 |
+| HIGH Classification | ~34 | Feb 2026 |
+| LOW Classification | ~64 | Feb 2026 |
+| Tractates Covered | 1 (Ketubot, complete) | Feb 2026 |
+| Current Version | v7 + Gemini 3 Flash | Feb 2026 |
+| Expert Accuracy | 92.1% (117/127 passages) | Feb 2026 |

@@ -139,6 +139,52 @@
             letter-spacing: 0.05em;
         }
 
+        /* Journey Section */
+        .journey-track {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .journey-step {
+            text-align: center;
+            flex: 1;
+            min-width: 120px;
+        }
+        .journey-bar {
+            border-radius: 0.5rem 0.5rem 0 0;
+            margin: 0 auto 0.75rem;
+            width: 80px;
+            transition: height 0.3s;
+        }
+        .journey-version {
+            font-weight: 700;
+            color: #1e3a5f;
+            font-size: 0.95rem;
+        }
+        .journey-pct {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .journey-label {
+            font-size: 0.8rem;
+            color: #64748b;
+        }
+        .journey-arrow {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            padding-bottom: 3rem;
+        }
+        .journey-narrative {
+            max-width: 700px;
+            margin: 2rem auto 0;
+            text-align: center;
+            font-size: 1.05rem;
+        }
+
         /* Navigation Cards */
         .nav-grid {
             display: grid;
@@ -349,21 +395,63 @@
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">76</div>
+                    <div class="stat-value">222</div>
                     <div class="stat-label">Pages Analyzed</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">55</div>
+                    <div class="stat-value">153</div>
                     <div class="stat-label">Stories Found</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">5</div>
-                    <div class="stat-label">Confirmed Stories</div>
+                    <div class="stat-value">92.1%</div>
+                    <div class="stat-label">Accuracy (Expert-Validated)</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-value">1</div>
-                    <div class="stat-label">Tractate Complete</div>
+                    <div class="stat-label">Full Tractate</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Journey -->
+    <section>
+        <div class="container">
+            <h2>The Journey: 50% to 92%</h2>
+            <p style="text-align: center; max-width: 650px; margin: 0 auto 2rem;">Each round of expert feedback transformed the system. What started with a 50% false positive rate became a 92.1% accurate pipeline&mdash;through seven versions of learning what makes a story.</p>
+
+            <div class="journey-track">
+                <div class="journey-step">
+                    <div class="journey-pct" style="color: #ef4444;">50%</div>
+                    <div class="journey-bar" style="height: 60px; background: #fecaca;"></div>
+                    <div class="journey-version">v4.1</div>
+                    <div class="journey-label">First expert review</div>
+                </div>
+                <div class="journey-arrow">&#8594;</div>
+                <div class="journey-step">
+                    <div class="journey-pct" style="color: #f59e0b;">86%</div>
+                    <div class="journey-bar" style="height: 120px; background: #fde68a;"></div>
+                    <div class="journey-version">v5.1</div>
+                    <div class="journey-label">128-passage review</div>
+                </div>
+                <div class="journey-arrow">&#8594;</div>
+                <div class="journey-step">
+                    <div class="journey-pct" style="color: #2563eb;">87%</div>
+                    <div class="journey-bar" style="height: 130px; background: #bfdbfe;"></div>
+                    <div class="journey-version">v7</div>
+                    <div class="journey-label">Decomposed pipeline</div>
+                </div>
+                <div class="journey-arrow">&#8594;</div>
+                <div class="journey-step">
+                    <div class="journey-pct" style="color: #16a34a;">92.1%</div>
+                    <div class="journey-bar" style="height: 170px; background: #bbf7d0;"></div>
+                    <div class="journey-version">v7 + G3 Flash</div>
+                    <div class="journey-label">Current best</div>
+                </div>
+            </div>
+
+            <div class="journey-narrative">
+                <p>The biggest breakthrough came from expert validation. When Talmud scholar Jeffrey Rubenstein reviewed our first results, he found the AI was confusing legal attribution ("Rabbi X quotes Rabbi Y") with characters in a story. That single insight eliminated 53 false positives. Every version since has been shaped by his corrections.</p>
             </div>
         </div>
     </section>
@@ -389,10 +477,10 @@
                     <h3>Project History</h3>
                     <p>From first prototype to current version—what we learned along the way.</p>
                 </a>
-                <a href="validation/ui/ketubot_2-39.html" class="nav-card">
+                <a href="validation.html#review" class="nav-card">
                     <div class="nav-icon">👁️</div>
                     <h3>Review Stories</h3>
-                    <p>See the stories we've found with side-by-side Hebrew and English text.</p>
+                    <p>See all 153 stories across Ketubot with side-by-side Hebrew and English text.</p>
                 </a>
             </div>
         </div>
