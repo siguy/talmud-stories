@@ -637,7 +637,7 @@ Return JSON:
 
         return {
             'tractate': 'Ketubot',
-            'version': 'v7.1',
+            'version': 'v8',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
         }

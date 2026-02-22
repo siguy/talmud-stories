@@ -16,11 +16,11 @@
 | v7+pp | Feb 2025 | Post-Processing | v6 ensemble rule boosts to 89.8% |
 | v7 (G3 Flash) | Feb 2026 | Model Upgrade | Gemini 3 Flash hits **92.1%** — new best |
 | v7 (61-112) | Feb 2026 | Generalization | 98 stories on unseen Ketubot pages 61-112 |
-| v7.1 | Feb 2026 | Cross-Page Fix | Fix 14 cut-off stories + 5 missing conclusions from Jeff's review |
+| v8 | Feb 2026 | Cross-Page Fix | Fix 14 cut-off stories + 5 missing conclusions from Jeff's review |
 
 ---
 
-## v7.1: Cross-Page Continuation + Story Boundary Fix
+## v8: Cross-Page Continuation + Story Boundary Fix
 
 **Goal:** Fix 14 stories cut off at page boundaries and 5 stories missing their narrative conclusion, based on Jeff's review of pages 61-112.
 
