@@ -16,6 +16,50 @@
 | v7+pp | Feb 2025 | Post-Processing | v6 ensemble rule boosts to 89.8% |
 | v7 (G3 Flash) | Feb 2026 | Model Upgrade | Gemini 3 Flash hits **92.1%** — new best |
 | v7 (61-112) | Feb 2026 | Generalization | 98 stories on unseen Ketubot pages 61-112 |
+| v7.1 | Feb 2026 | Cross-Page Fix | Fix 14 cut-off stories + 5 missing conclusions from Jeff's review |
+
+---
+
+## v7.1: Cross-Page Continuation + Story Boundary Fix
+
+**Goal:** Fix 14 stories cut off at page boundaries and 5 stories missing their narrative conclusion, based on Jeff's review of pages 61-112.
+
+**Expert Review (pages 61-112):** 109/113 stories reviewed, 96.3% accuracy (105 correct, 4 incorrect, 2 false positives)
+
+**Root Causes:**
+1. Pipeline processes pages individually — stories split at page boundaries not merged
+2. Merge logic only handled NOT_A_STORY + real story combinations, not real + real
+3. Legacy merge required BOTH continuation flags (too strict)
+4. Boundary trimmer removed DELIBERATION segments that were actually resolving rulings
+5. Prompt told LLM to end at "final narrative action" — too aggressive
+
+**Changes:**
+
+1. **Prompt: Boundary Rules** — Story END now includes rabbi's ruling that resolves the narrative case, consequences, and outcomes. Added notes that abrupt endings and "beyond the letter of the law" are not weakeners.
+
+2. **Prompt: Cross-Page Continuation** — New section instructing LLM when to set `continues_from_previous_page` and `continues_to_next_page` flags. Explicit note that pagination is a printing artifact.
+
+3. **Expanded Cross-Page Context** — Previous/next page context expanded from 3→5 segments, English from 150→300 chars, added Hebrew (200 chars), added event type annotations from triage.
+
+4. **Case 4 Merge** — New merge case for when BOTH page N's last story and page N+1's first story are real stories at the boundary with continuation flags. Uses `_pick_higher_classification`, combines summaries.
+
+5. **Relaxed Legacy Merge** — Changed from requiring BOTH continuation flags to at least ONE (`and` → `or`). NOT_A_STORY guards still prevent false merges.
+
+6. **Boundary Trimmer Guard** — New `_segment_has_ruling()` check prevents trimming DELIBERATION segments that contain ruling verbs (ruled, permitted, forbade, etc.) AND mention a character from the story.
+
+7. **Post-Detection Stitching** — New `stitch_cross_page_continuation()` method for stories with `continues_to_next_page=true` but no merge happened. Makes targeted LLM call with story text + first 8 segments of next page to find where the story ends. Estimated 5-8 API calls per run.
+
+**Files Modified:**
+- `src/story_detector_v7.py` — All changes (prompt, context, merge, stitching, boundary trimmer)
+
+**Pipeline Stage 4 Updated:**
+```
+4a: Boundary refinement (trim DELIBERATION, guard rulings)
+4b: Cross-page merge v7 (NOT_A_STORY combos + Case 4 real+real)
+4c: Legacy merge (relaxed to OR for continuation flags)
+4d: Cross-page stitching (targeted LLM for unmerged boundary stories)
+4e: Duplicate detection
+```
 
 ---
 
