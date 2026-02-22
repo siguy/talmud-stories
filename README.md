@@ -91,12 +91,13 @@ talmud-stories/
 | **v7** | **gemini-3-flash** | **92.1% (117/127)** |
 
 ### Ketubot 61-112 (Generalization Test)
-| Metric | Value |
-|--------|-------|
-| Pages | 104 (52 kept after triage) |
-| Stories found | 98 (35 YES, 20 HIGH, 43 LOW) |
-| Model | gemini-3-flash-preview |
-| Status | Awaiting Jeff's review |
+| Metric | v7 | v8 |
+|--------|----|----|
+| Pages | 104 (52 kept after triage) | same |
+| Stories found | 113 (38 YES, 21 HIGH, 54 LOW) | 103 (37 YES, 22 HIGH, 41 LOW) |
+| Cross-page stories | 7 | 16 |
+| Expert accuracy | 96.3% (109/113) | Delta review sent |
+| Model | gemini-3-flash-preview | same |
 
 ## Quick Start
 
@@ -129,6 +130,7 @@ PYTHONPATH=. python3 tests/v7_regression_test.py
 
 ### View Results
 Open `validation/ui/ketubot_61-112.html` in a browser, or see `results/v7/ketubot_v7_61-112.json`.
+For the v8 delta review (cross-page changes only): `validation/ui/ketubot_61-112_v8_delta.html`.
 
 ## How It Works
 
@@ -151,7 +153,7 @@ Open `validation/ui/ketubot_61-112.html` in a browser, or see `results/v7/ketubo
 
 ## Expanding to Other Tractates
 
-Results are organized by tractate for easy expansion. The pipeline is tractate-agnostic — tested on Ketubot 2a-112b (full tractate). Pages 2-60 validated by expert (92.1%); pages 61-112 awaiting review.
+Results are organized by tractate for easy expansion. The pipeline is tractate-agnostic — tested on Ketubot 2a-112b (full tractate). Pages 2-60 validated by expert (92.1%); pages 61-112 validated at 96.3%, v8 cross-page fixes under delta review.
 
 ## Expert Validation
 

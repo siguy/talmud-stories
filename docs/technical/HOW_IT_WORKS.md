@@ -83,12 +83,17 @@ Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 
 ### Stage 4: Boundary Refinement + Cross-Page Merge
 
-**Boundary Refinement:** Trim DELIBERATION segments from story edges using triage event types. If a story starts/ends with segments classified as DELIBERATION in Stage 1, shrink the boundary inward.
+**Boundary Refinement:** Trim DELIBERATION segments from story edges using triage event types. If a story starts/ends with segments classified as DELIBERATION in Stage 1, shrink the boundary inward. A guard prevents trimming segments that contain narrative rulings integral to the story.
 
-**Cross-Page Merge (v7 improved):** Uses triage NARRATIVE_EVENT types at page boundaries to detect story fragments, even when one side is classified NOT_A_STORY:
+**Cross-Page Merge (v8 improved):** Uses triage NARRATIVE_EVENT types at page boundaries to detect story fragments, even when one side is classified NOT_A_STORY:
 1. Check if last segment of page N has NARRATIVE_EVENT in triage
 2. Check if first segment of page N+1 has NARRATIVE_EVENT in triage
 3. If both sides have narrative events and one side has a detected story, promote and merge
+4. **(v8) Case 4 merge:** Detects real stories that span pages even when neither side was flagged as a continuation
+5. **(v8) Relaxed legacy merge:** Uses OR logic (either side has narrative events) instead of requiring both
+6. **(v8) Post-detection stitching:** A second pass after all merges catches stories that were split across pages but not caught by the initial boundary checks
+
+Result: 16 cross-page stories on pages 61-112 (up from 7 in v7).
 
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
 
