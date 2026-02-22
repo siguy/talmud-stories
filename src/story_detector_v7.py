@@ -405,19 +405,33 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                              if p.get('ref') == ref), None)
             if page_idx is not None:
                 if page_idx > 0:
-                    prev_segs = pages[page_idx - 1].get('segments', [])
+                    prev_page = pages[page_idx - 1]
+                    prev_segs = prev_page.get('segments', [])
+                    prev_ref = prev_page.get('ref', '')
+                    prev_events = triage_results.get(prev_ref, []) if triage_results else []
                     if prev_segs:
-                        prev_ctx = '\n'.join(
-                            f"[Prev Seg {s['index']}] {re.sub(r'<[^>]+>', '', s.get('english', ''))[:150]}"
-                            for s in prev_segs[-3:]
-                        )
+                        lines = []
+                        for s in prev_segs[-5:]:
+                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                            heb = s.get('hebrew', '')[:200]
+                            idx = s.get('index', 0)
+                            et = prev_events[idx].value if idx < len(prev_events) else "UNKNOWN"
+                            lines.append(f"[{et}] Prev Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                        prev_ctx = '\n'.join(lines)
                 if page_idx < len(pages) - 1:
-                    next_segs = pages[page_idx + 1].get('segments', [])
+                    next_page = pages[page_idx + 1]
+                    next_segs = next_page.get('segments', [])
+                    next_ref = next_page.get('ref', '')
+                    next_events = triage_results.get(next_ref, []) if triage_results else []
                     if next_segs:
-                        next_ctx = '\n'.join(
-                            f"[Next Seg {s['index']}] {re.sub(r'<[^>]+>', '', s.get('english', ''))[:150]}"
-                            for s in next_segs[:3]
-                        )
+                        lines = []
+                        for s in next_segs[:5]:
+                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                            heb = s.get('hebrew', '')[:200]
+                            idx = s.get('index', 0)
+                            et = next_events[idx].value if idx < len(next_events) else "UNKNOWN"
+                            lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                        next_ctx = '\n'.join(lines)
 
             print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
             stories = self.detect_stories(ref, segments, events, prev_ctx, next_ctx)
