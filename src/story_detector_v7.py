@@ -153,10 +153,33 @@ Weak causality but some change → LOW_CONFIDENCE
 ## BOUNDARY RULES
 
 - Story STARTS at first NARRATIVE event, not preceding legal ruling
-- Story ENDS at final narrative action, not following Talmudic commentary
-- Talmudic questions (beginning with וְהָא) are NOT part of story
+- Story ENDS when its narrative arc resolves — this includes:
+  - The final narrative action
+  - A rabbi's ruling that RESOLVES the narrative case (this IS the story's conclusion)
+  - The consequence or outcome of the events
+- Story does NOT include Talmudic commentary that ANALYZES the story from outside
+- Talmudic questions (beginning with וְהָא) challenging the story are NOT part of it
 - Exception: Rabbi directly referencing story events IS part of story
 - Do NOT split one continuous story into two
+- An abrupt ending is NOT a reason to weaken a story — some stories end abruptly for literary effect
+- "Beyond the letter of the law" (לפנים משורת הדין) is NOT a weakener — it describes legal
+  precedent status, not whether the passage is a story
+
+## CROSS-PAGE CONTINUATION
+
+Stories frequently span Talmud page boundaries. Pagination is a printing artifact, not a narrative boundary.
+
+Set continues_from_previous_page = true when:
+- The FIRST segments of THIS page continue a narrative from the previous page
+- The previous page context shows the same characters/situation
+- This page begins mid-narrative without a new story introduction
+
+Set continues_to_next_page = true when:
+- A story reaches the LAST segments without narrative resolution
+- The next page context shows continuation of the same characters/situation
+
+When continuation is detected, include ALL story segments on THIS page — do not leave
+continuation segments undetected.
 
 {cross_page}
 {few_shot_section}
