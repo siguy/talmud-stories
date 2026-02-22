@@ -846,6 +846,51 @@ Return JSON:
 # STAGE 4: BOUNDARY REFINEMENT + IMPROVED MERGE
 # ============================================================
 
+def _segment_has_ruling(seg: Dict, story: Dict) -> bool:
+    """
+    Check if a DELIBERATION segment contains a ruling that resolves the story.
+
+    A ruling segment has ruling verbs AND mentions a character from the story.
+    These should NOT be trimmed from story boundaries.
+    """
+    eng = re.sub(r'<[^>]+>', '', seg.get('english', '')).lower()
+
+    ruling_verbs = [
+        'ruled', 'said to him', 'said to them', 'said to her',
+        'permitted', 'forbade', 'decreed', 'excommunicated',
+        'ordered', 'instructed', 'declared', 'pronounced',
+    ]
+    has_ruling = any(verb in eng for verb in ruling_verbs)
+    if not has_ruling:
+        return False
+
+    # Check if segment mentions a character from the story
+    # Use the story's criteria for character evidence, or check for rabbi names
+    criteria = story.get('criteria', {})
+    chars = criteria.get('identifiable_characters', {})
+    char_evidence = str(chars.get('evidence', '')).lower()
+
+    # Extract potential names from the character evidence
+    # Also check common rabbi name patterns in the segment
+    rabbi_pattern = r'\b(?:rabbi|rav|r\.|mar|rab)\s+\w+'
+    story_names = set(re.findall(rabbi_pattern, char_evidence))
+    seg_names = set(re.findall(rabbi_pattern, eng))
+
+    # If any character name from the story appears in this segment, it's a ruling
+    if story_names and seg_names and story_names & seg_names:
+        return True
+
+    # Fallback: if the segment has a ruling verb, be conservative — keep it
+    # if the story summary mentions similar characters
+    summary = story.get('one_sentence_summary', '').lower()
+    if summary:
+        summary_names = set(re.findall(rabbi_pattern, summary))
+        if summary_names and seg_names and summary_names & seg_names:
+            return True
+
+    return False
+
+
 def refine_boundaries_with_event_tags(pages: List[Dict],
                                        triage_results: Dict[str, List[EventType]]) -> int:
     """
@@ -855,6 +900,9 @@ def refine_boundaries_with_event_tags(pages: List[Dict],
     shrink the boundary inward. This prevents including legal commentary at the
     edges of stories.
 
+    Guard: DELIBERATION segments containing ruling verbs that resolve the story's
+    narrative case are NOT trimmed (they are the story's conclusion).
+
     Returns count of stories modified.
     """
     changes = 0
@@ -862,8 +910,12 @@ def refine_boundaries_with_event_tags(pages: List[Dict],
     for page in pages:
         ref = page.get('ref', '')
         events = triage_results.get(ref, [])
+        segments = page.get('segments', [])
         if not events:
             continue
+
+        # Build index→segment lookup
+        seg_by_idx = {s.get('index', i): s for i, s in enumerate(segments)}
 
         for story in page.get('stories', []):
             cls = story.get('classification', 'NOT_A_STORY')
@@ -882,9 +934,12 @@ def refine_boundaries_with_event_tags(pages: List[Dict],
                 else:
                     break
 
-            # Trim DELIBERATION from the end
+            # Trim DELIBERATION from the end — but guard ruling segments
             while end > start and end < len(events):
                 if events[end] == EventType.DELIBERATION:
+                    seg = seg_by_idx.get(end)
+                    if seg and _segment_has_ruling(seg, story):
+                        break  # This is a ruling that resolves the story — keep it
                     end -= 1
                 else:
                     break
