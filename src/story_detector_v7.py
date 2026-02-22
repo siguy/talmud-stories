@@ -1030,6 +1030,49 @@ def merge_cross_page_stories_v7(pages: List[Dict],
                   f"[both NOT_A_STORY promoted]")
             continue
 
+        # Case 4: Both sides are REAL stories at the boundary with continuation flags
+        # This is the key gap — previously only handled NOT_A_STORY combinations
+        if (last_story_n and first_story_n1 and
+            last_story_n.get('classification') not in ('NOT_A_STORY', None) and
+            first_story_n1.get('classification') not in ('NOT_A_STORY', None) and
+            last_story_n.get('end_segment', -1) >= last_seg_idx - 1 and
+            first_story_n1.get('start_segment', 999) <= 1):
+
+            # Check continuation flags — at least one side must signal continuation
+            last_cont = last_story_n.get('continuation', {})
+            first_cont = first_story_n1.get('continuation', {})
+            has_continuation = (
+                last_cont.get('continues_to_next_page') or
+                first_cont.get('continues_from_previous_page')
+            )
+
+            if has_continuation:
+                merged_cls = _pick_higher_classification(
+                    last_story_n.get('classification', 'LOW_CONFIDENCE'),
+                    first_story_n1.get('classification', 'LOW_CONFIDENCE')
+                )
+
+                last_story_n['classification'] = merged_cls
+                last_story_n['spans_pages'] = [ref_n, ref_n1]
+                last_story_n['start_segment_page2'] = first_story_n1.get('start_segment')
+                last_story_n['end_segment_page2'] = first_story_n1.get('end_segment')
+                last_story_n['cross_page_merge_v7'] = True
+
+                # Merge summaries
+                summary_n = last_story_n.get('one_sentence_summary', '')
+                summary_n1 = first_story_n1.get('one_sentence_summary', '')
+                if summary_n and summary_n1:
+                    last_story_n['one_sentence_summary'] = f"{summary_n} {summary_n1}"
+                elif summary_n1:
+                    last_story_n['one_sentence_summary'] = summary_n1
+
+                stories_n1.pop(0)
+                page_n1['stories'] = stories_n1
+
+                print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
+                      f"[both real stories merged via continuation flags]")
+                continue
+
     return pages
 
 
@@ -1040,7 +1083,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
 def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
     """
     Merge stories that span page boundaries.
-    Only merge if both sides have continuation flags.
+    Merge if at least one side has a continuation flag (relaxed from requiring both).
     """
     for i in range(len(pages) - 1):
         page_n = pages[i]
@@ -1059,7 +1102,7 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
         last_cont = last_story.get('continuation', {})
         first_cont = first_story.get('continuation', {})
 
-        if (last_cont.get('continues_to_next_page') and
+        if (last_cont.get('continues_to_next_page') or
             first_cont.get('continues_from_previous_page')):
 
             # Both sides agree there's a continuation
