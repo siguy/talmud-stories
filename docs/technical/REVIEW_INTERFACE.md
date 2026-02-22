@@ -21,7 +21,8 @@ No server needed - runs entirely in browser.
 |------|---------|---------|
 | `validation/ui/ketubot_2-39.html` | 33 stories | General review (pages 2-39) |
 | `validation/ui/ketubot_40-60.html` | 22 stories | Fresh content review |
-| `validation/ui/ketubot_61-112.html` | 98 stories | Generalization test (pages 61-112) |
+| `validation/ui/ketubot_61-112.html` | 103 stories | v8 full review (pages 61-112) |
+| `validation/ui/ketubot_61-112_v8_delta.html` | 49 stories | **v8 delta review** — only what changed from v7 |
 | `validation/ui/jeff_comparison.html` | 33 stories | Compare with v4.1 validations |
 
 ## Features
@@ -171,9 +172,11 @@ validation/
 │   ├── ketubot_2-39.html
 │   ├── ketubot_40-60.html
 │   ├── ketubot_61-112.html
+│   ├── ketubot_61-112_v8_delta.html  # v8 delta review (only changes)
 │   └── jeff_comparison.html
 ├── generators/                  # Scripts to create UIs
 │   ├── generate_review_ui.py
+│   ├── generate_delta_review_ui.py   # v7→v8 delta comparison
 │   └── generate_jeff_comparison_ui.py
 └── feedback/                    # Expert feedback JSONs
     └── jeff_v4.1_validation.json

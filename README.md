@@ -36,6 +36,7 @@ talmud-stories/
 │   │   ├── ketubot_2-39.html
 │   │   ├── ketubot_40-60.html
 │   │   ├── ketubot_61-112.html
+│   │   ├── ketubot_61-112_v8_delta.html  # v8 delta review
 │   │   └── jeff_comparison.html
 │   ├── generators/              # Scripts to generate UIs
 │   └── feedback/                # Expert feedback JSONs

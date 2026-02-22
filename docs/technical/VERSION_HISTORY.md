@@ -61,6 +61,22 @@
 4e: Duplicate detection
 ```
 
+**v8 Results (pages 61-112):**
+| Metric | v7 | v8 | Change |
+|--------|-----|-----|--------|
+| Total stories | 113 | 103 | -10 (merges reduced count) |
+| Real stories (YES+HIGH+LOW) | 107 | 100 | -7 |
+| Cross-page stories | 7 | 16 | +9 new merges |
+| Unmerged continuations | 14 | 0 | All resolved |
+
+**Delta Review UI:**
+- `validation/generators/generate_delta_review_ui.py` — compares v7 vs v8 results
+- `validation/ui/ketubot_61-112_v8_delta.html` — focused review showing only changes
+- Tier 1 (8): Cross-page merges — stories that now span two pages
+- Tier 2 (10): New stories (5), status flips (1), truly removed (4)
+- Tier 3 (31): Absorbed into merges (11) + classification changes (20)
+- Skipped: 69 unchanged stories
+
 ---
 
 ## Phase 4: Ketubot 61-112 — Generalization Test
