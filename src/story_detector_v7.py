@@ -345,6 +345,135 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
 
         return []
 
+    def stitch_cross_page_continuation(self, all_results: List[Dict],
+                                        pages: List[Dict],
+                                        triage_results: Dict[str, List[EventType]],
+                                        delay: float = 0.5) -> int:
+        """
+        Post-detection stitching for stories with continues_to_next_page=true
+        that were NOT merged by the merge passes (no story detected on next page start).
+
+        Makes a targeted LLM call: story text + first 8 segments of next page →
+        "Where does this story end on page N+1?"
+
+        Returns count of stories stitched.
+        """
+        if not self.client:
+            return 0
+
+        stitched = 0
+        # Build ref→page lookup for all_results
+        result_by_ref = {r.get('ref', ''): r for r in all_results}
+        # Build ref→page lookup for original pages (for segment data)
+        page_by_ref = {p.get('ref', ''): p for p in pages}
+        # Build ordered ref list
+        ref_order = [p.get('ref', '') for p in pages]
+
+        for page_result in all_results:
+            ref = page_result.get('ref', '')
+            stories = page_result.get('stories', [])
+            if not stories:
+                continue
+
+            for story in stories:
+                if story.get('classification') == 'NOT_A_STORY':
+                    continue
+                if story.get('spans_pages'):
+                    continue  # Already merged
+                cont = story.get('continuation', {})
+                if not cont.get('continues_to_next_page'):
+                    continue
+
+                # Find next page
+                try:
+                    idx = ref_order.index(ref)
+                except ValueError:
+                    continue
+                if idx >= len(ref_order) - 1:
+                    continue
+                next_ref = ref_order[idx + 1]
+                next_page = page_by_ref.get(next_ref)
+                if not next_page:
+                    continue
+
+                # Check that no merge happened — the next page's first story
+                # should NOT already be part of this story
+                next_result = result_by_ref.get(next_ref)
+                next_stories = next_result.get('stories', []) if next_result else []
+                if next_stories and next_stories[0].get('continuation', {}).get('continues_from_previous_page'):
+                    continue  # Already handled by merge logic
+
+                # Build story text from current page
+                segments = page_result.get('segments', [])
+                start = story.get('start_segment', 0)
+                end = story.get('end_segment', 0)
+                story_lines = []
+                for seg in segments:
+                    if start <= seg.get('index', -1) <= end:
+                        eng = re.sub(r'<[^>]+>', '', seg.get('english', ''))[:300]
+                        story_lines.append(f"Seg {seg['index']}: {eng}")
+                story_text = '\n'.join(story_lines)
+
+                # Build next page segments (first 8)
+                next_segs = next_page.get('segments', [])[:8]
+                next_events = triage_results.get(next_ref, [])
+                next_lines = []
+                for seg in next_segs:
+                    idx_s = seg.get('index', 0)
+                    eng = re.sub(r'<[^>]+>', '', seg.get('english', ''))[:300]
+                    et = next_events[idx_s].value if idx_s < len(next_events) else "UNKNOWN"
+                    next_lines.append(f"[{et}] Seg {idx_s}: {eng}")
+                next_text = '\n'.join(next_lines)
+
+                prompt = f"""A story on {ref} was detected as continuing to the next page ({next_ref}).
+No story was detected on the start of {next_ref} to merge with.
+
+STORY TEXT (from {ref}):
+{story_text}
+
+SUMMARY: {story.get('one_sentence_summary', 'N/A')}
+
+FIRST SEGMENTS OF {next_ref} (with event types):
+{next_text}
+
+QUESTION: Does this story continue on {next_ref}? If yes, at which segment does it end?
+
+Return JSON:
+{{
+  "continues_on_page": true/false,
+  "end_segment": <int or null>,
+  "reasoning": "..."
+}}"""
+
+                try:
+                    use_json = self._use_json_mode
+                    content = self._call_google(prompt, max_tokens=2048, json_mode=use_json)
+                    if use_json:
+                        try:
+                            result = json.loads(content) if content else None
+                        except json.JSONDecodeError:
+                            result = self._parse_json_response(content)
+                    else:
+                        result = self._parse_json_response(content)
+
+                    if result and result.get('continues_on_page'):
+                        end_seg = result.get('end_segment')
+                        if end_seg is not None:
+                            story['spans_pages'] = [ref, next_ref]
+                            story['start_segment_page2'] = 0
+                            story['end_segment_page2'] = end_seg
+                            story['cross_page_stitched'] = True
+                            stitched += 1
+                            print(f"  Stitched: {ref} → {next_ref} (ends at seg {end_seg})")
+
+                    if delay > 0:
+                        time.sleep(delay)
+
+                except Exception as e:
+                    print(f"  Stitch error for {ref}: {e}")
+
+        return stitched
+
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
                      delay: float = 1.0,
@@ -496,12 +625,19 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         # 4c: Legacy cross-page merge for continuation flags
         all_results = merge_cross_page_stories(all_results)
 
+        # 4d: Stitch unmerged boundary stories via targeted LLM calls
+        stitch_count = self.stitch_cross_page_continuation(
+            all_results, pages, triage_results, delay=delay
+        )
+        if stitch_count:
+            print(f"  Cross-page stitching: {stitch_count} stories extended")
+
         # Detect duplicates
         all_results = detect_duplicate_stories(all_results)
 
         return {
             'tractate': 'Ketubot',
-            'version': 'v7',
+            'version': 'v7.1',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
         }
