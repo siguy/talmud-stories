@@ -438,6 +438,12 @@ FIRST SEGMENTS OF {next_ref} (with event types):
 
 QUESTION: Does this story continue on {next_ref}? If yes, at which segment does it end?
 
+IMPORTANT GUIDELINES:
+- The continuation is at the VERY TOP of {next_ref} (typically the first 1-3 segments).
+- Look for where the Talmud shifts to a new topic or introduces a new sage — that marks the END of the continuation.
+- Do NOT skip past the top segments to find a different story further down the page.
+- If the top segments don't clearly continue the story from {ref}, set continues_on_page to false.
+
 Return JSON:
 {{
   "continues_on_page": true/false,
@@ -1223,11 +1229,13 @@ def merge_cross_page_stories_v7(pages: List[Dict],
 
         # Case 4: Both sides are REAL stories at the boundary with continuation flags
         # This is the key gap — previously only handled NOT_A_STORY combinations
+        # Fix C: Tightened from <= 1 to == 0. Seg 1 stories are often independent
+        # (e.g. 61a→61b where the seg 1 story is different).
         if (last_story_n and first_story_n1 and
             last_story_n.get('classification') not in ('NOT_A_STORY', None) and
             first_story_n1.get('classification') not in ('NOT_A_STORY', None) and
             last_story_n.get('end_segment', -1) >= last_seg_idx - 1 and
-            first_story_n1.get('start_segment', 999) <= 1):
+            first_story_n1.get('start_segment', 999) == 0):
 
             # Check continuation flags — at least one side must signal continuation
             last_cont = last_story_n.get('continuation', {})
@@ -1290,6 +1298,10 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
         last_story = stories_n[-1]
         first_story = stories_n1[0]
 
+        # Fix A: Skip if already merged by a previous pass (e.g. 4b)
+        if last_story.get('spans_pages'):
+            continue
+
         last_cont = last_story.get('continuation', {})
         first_cont = first_story.get('continuation', {})
 
@@ -1300,6 +1312,11 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
             if last_story.get('classification') == 'NOT_A_STORY':
                 continue
             if first_story.get('classification') == 'NOT_A_STORY':
+                continue
+
+            # Fix B: If first story on N+1 starts at seg >= 1, there's likely
+            # a gap of undetected continuation text. Defer to stitch pass (4d).
+            if first_story.get('start_segment', 0) >= 1:
                 continue
 
             # Merge: keep higher classification
