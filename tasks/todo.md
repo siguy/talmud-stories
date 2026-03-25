@@ -1,6 +1,7 @@
-# Golden Dataset + Generalization Plan
+# Golden Dataset + Detector Improvement Plan
 
 **Created:** 2026-03-25
+**Updated:** 2026-03-25 (revised Phase 6 after cost analysis)
 **Source:** Jeff's canonical review (2026-03-17) + analysis in `docs/golden/canonical_feedback_analysis.json`
 **Goal:** Build the definitive Ketubot ground truth, then use it to improve detection for all tractates.
 
@@ -12,76 +13,23 @@
 ```
 claude/sefaria-talmud-story-search-Mw1Yg  (current main branch)
   │
-  ├── Commit A: "Add canonical feedback analysis and golden dataset documentation"
-  │   Phase 1 output. Pure documentation, zero risk. NEVER rolled back.
+  ├── Commit A: (ac8e83c) Documentation + analysis
+  ├── Commit B: (d85da87) 17 classification corrections
+  ├── Commit C: (838c550) Boundary lookup tooling
+  ├── Commit D: (72414c3) 32 boundary/merge corrections
+  ├── Commit F: (dc16195) Eval framework + baseline (0.93)
+  ├── Commit G: (7787f2c) Autoresearch infrastructure
   │
-  ├── Commit B: "Apply 15 auto classification corrections from Jeff's canonical review"
-  │   Phase 2 output. Classification-only changes. Safe rollback point.
+  ├── Tag: v10-golden-ketubot
+  ├── Tag: pre-detector-changes  ← ROLLBACK POINT
   │
-  ├── Commit C: "Add boundary lookup tooling"
-  │   Phase 3a output. Scripts only, no data changes. Safe rollback point.
+  ├── Commit H: Expand ground_truth.py with Jeff's new corrections
+  ├── Commit I: Add legal disqualifier to Stage 2 prompt
+  ├── Commit J: Re-run detector + evaluate improvement
+  │   If composite drops below 0.90 → git revert to pre-detector-changes
   │
-  ├── Commit D: "Apply boundary corrections to golden dataset"
-  │   Phase 3b-3e output. Data changes based on Jeff's Hebrew markers.
-  │   Rollback: revert to Commit B if boundary mappings are wrong.
-  │
-  ├── Commit E: "Rebuild golden canonical dataset with all corrections"
-  │   Phase 4 output. Final golden dataset. Tag: v10-golden-ketubot.
-  │
-  ├── Commit F: "Add evaluation framework and baseline score"
-  │   Phase 5 output. Scoring scripts. NEVER rolled back (eval is immutable).
-  │
-  ├── Tag: pre-detector-changes
-  │   ← ROLLBACK POINT for detector experiments
-  │
-  ├── feat/autoresearch-detector-improvements  (NEW BRANCH from here)
-  │   │  Phase 6 output. Detector prompt/logic changes.
-  │   │  Each autoresearch experiment = 1 commit.
-  │   │  Only merged to main after validation on 2nd tractate.
-  │   │
-  │   └── (merge to main only if validated)
-  │
-  └── feat/generalize-tractate-X  (NEW BRANCH)
-      Phase 7 output. New tractate runs.
+  └── Future: feat/generalize-tractate-X branches
 ```
-
-### Rollback Decision Points
-
-**After Phase 2 (classification corrections):**
-- Risk: near zero. These are Jeff's explicit verdicts.
-- Verify: re-run `analyze_canonical_feedback.py` → all 15 should show `implemented: true`
-- Rollback: `git revert <commit B>` if any classification is wrong
-
-**After Phase 3 (boundary corrections):**
-- Risk: moderate. Boundary lookup tool may map Hebrew markers to wrong segments.
-- Verify: for each correction, print the actual segment text before/after and manually spot-check 5-10
-- Rollback: `git revert <commit D>` → returns to classification-only corrections
-- The golden dataset at Commit B is still valid (just without boundary precision)
-
-**After Phase 4 (golden dataset rebuild):**
-- Risk: low. This is just repackaging the corrections into the canonical JSON.
-- Verify: generate review UI, open in browser, check 10 random stories
-- Tag `v10-golden-ketubot` so we can always return here
-
-**After Phase 6 (detector changes):**
-- Risk: HIGH. This is where overfitting can happen.
-- Verify: run detector on 2nd tractate with mini ground truth (see Phase 6.5 below)
-- Rollback: `git checkout pre-detector-changes` → discards ALL detector changes
-- The golden dataset, eval framework, and documentation are UNAFFECTED
-- Detector experiments live on `feat/autoresearch-detector-improvements` branch — only merged if validated
-
-**After Phase 7 (generalization):**
-- Risk: moderate. New tractate may reveal Ketubot-specific patterns.
-- Verify: Jeff spot-reviews 20-30 stories from new tractate
-- Rollback: independent branch per tractate. Failures don't affect Ketubot golden dataset.
-
-### The Nuclear Rollback
-
-If everything after Phase 1 goes wrong:
-1. `git checkout <commit A>` — back to pure documentation
-2. We still have: Jeff's feedback in JSON, error taxonomy, analysis script
-3. We've lost nothing except time
-4. We can restart with a different approach
 
 ---
 
@@ -98,7 +46,7 @@ If everything after Phase 1 goes wrong:
 
 ---
 
-## Phase 2: Auto-Applicable Classification Corrections (DONE ✓)
+## Phase 2: Classification Corrections (DONE ✓)
 
 Applied 17 classification corrections (10 NOT_A_STORY + 5 LOW_CONFIDENCE + 1 HIGH_CONFIDENCE + 1 special case).
 
@@ -135,7 +83,7 @@ Applied 32 corrections via `scripts/apply_boundary_corrections.py`:
 
 ---
 
-## Phase 4: Rebuild Golden Dataset (DONE ✓)
+## Phase 4: Golden Dataset (DONE ✓)
 
 - [x] Golden dataset: 182 stories (down from 189)
 - [x] 0 needs_review remaining
@@ -159,7 +107,7 @@ Built `scripts/evaluate_golden.py` (IMMUTABLE). Scores:
 
 Main improvement target: 26 false positives (legal discussions Jeff says are NOT stories)
 
-### 5c. 2nd Tractate Baseline (PENDING)
+### 5c. 2nd Tractate Baseline (PENDING — needs Jeff)
 - [ ] Pick tractate (suggest Bava Metzia)
 - [ ] Run detector on 10-15 pages
 - [ ] Have Jeff spot-review → mini ground truth
@@ -170,92 +118,98 @@ Main improvement target: 26 false positives (legal discussions Jeff says are NOT
 
 ---
 
-## Phase 6: Self-Improvement Loop (Autoresearch)
+## Phase 6: Targeted Detector Improvement (REVISED)
 
-**ALL detector changes happen on `feat/autoresearch-detector-improvements` branch.**
+### Why we changed the approach
 
-### 6a. Structure the Mutable Surface
+The original plan called for a 50-experiment autoresearch loop at ~$100 budget. Cost analysis
+revealed the actual cost per full Ketubot re-run is **~$0.30** (Gemini Flash, not Claude), making
+50 experiments ~$15 not $100. But the bigger issue is that blind iteration is wasteful when the
+error taxonomy already tells us exactly what's wrong:
 
-What the autoresearch agent CAN modify:
-- `src/story_detector_v7.py` → Stage 2 prompt, criteria, rules, examples
-- `src/event_triage.py` → Stage 1 event type classifications
-- Boundary trimming rules in Stage 4
-- Cross-page merge heuristics
+- **26 of 28 errors are false positives** — the detector calls legal discussions "stories"
+- The error taxonomy identifies 6 specific patterns with Jeff's language
+- 2-3 targeted changes should capture most gains; diminishing returns after that
 
-What it CANNOT modify:
-- `scripts/evaluate_golden.py` (the eval harness)
-- `results/canonical/ketubot_canonical.json` (the golden labels)
-- `docs/golden/*` (documentation)
-- Test infrastructure
+### Revised approach: Focused 3-step sprint
 
-### 6b. Few-Shot Example Bank
+**Cost: ~$0.30 total. Time: ~10 minutes.**
 
-Convert Jeff's corrections into structured few-shot examples by error pattern:
-- **LEGAL_FALSE_POSITIVE**: 11 passages with Jeff's reasoning
-- **BOUNDARY_OVEREXTENSION**: 5 passages with before/after boundaries
-- **CONFIDENCE_MISCALIBRATION**: 9 passages with calibration notes
-- **MERGE examples**: Stories Jeff says should be combined
+All changes on current branch (not a separate experiment branch — these are well-understood
+fixes, not speculative experiments).
 
-Expand `src/ground_truth.py` from 128 → ~187 entries.
+### Step 1: Expand ground_truth.py (Commit H)
 
-### 6c. The Autoresearch Loop
+Add Jeff's canonical review corrections to the Ground Truth DB. The detector's few-shot
+example bank currently has 128 entries from prior rounds. Adding the new corrections teaches
+the model what legal false positives look like.
 
-```
-prepare.py  = scripts/evaluate_golden.py (IMMUTABLE)
-train.py    = src/story_detector_v7.py (MUTABLE)
-program.md  = instructions for the agent
+**Specific additions:**
 
-while True:
-    1. Agent reads current prompts and prior results
-    2. Hypothesizes an improvement
-    3. Modifies the prompt/logic
-    4. Commits the change (one commit per experiment)
-    5. Runs detector on all labeled pages (~5 min)
-    6. Evaluates composite score
-    7. If improved: keep. If not: git reset --hard HEAD~1
-    8. Repeat.
-```
+11 LEGAL_FALSE_POSITIVE examples:
+- 7a_1-1: "no events, just legal discussion" (was LOW_CONFIDENCE)
+- 7a_2-2: "not a story, reasoning leads to that conclusion" (was LOW_CONFIDENCE)
+- 13b_0-0: "hypothetical legal case" (was LOW_CONFIDENCE)
+- 13b_16-16: "just a legal decision, dialogue only" (was LOW_CONFIDENCE)
+- 15b_2-2: "just a reference to a story mentioned above" (was LOW_CONFIDENCE)
+- 21b_7-8: "all legal discussion, dialogue not events" (was HIGH_CONFIDENCE)
+- 25a_9-10: "finding someone in study hall is not an event" (was LOW_CONFIDENCE)
+- 26a_9-9: "hypothetical scenario" (was LOW_CONFIDENCE)
+- 26b_0-0: "continuation of hypothetical" (was YES)
+- 110b_24-24: "just one action and explanation" (was LOW_CONFIDENCE)
+- 8a_13-13: downgraded HIGH → LOW, "too little causality"
 
-Target: ~50 experiments overnight. Budget: ~$100 at $2/run.
+5 CONFIDENCE_MISCALIBRATION examples:
+- 14b_11-11: "two events, no causality" (HIGH → LOW)
+- 17a_10-10: "habitual, not one-time" (YES → LOW)
+- 21a_10-11: "mostly legal case" (HIGH → LOW)
+- 25b_6-6: "two events, no real causality" (YES → LOW)
+- 106a_3-3: "minimal action, request and rejection" (YES → HIGH)
 
-### 6d. Aramaic Structural Markers
+Each entry includes:
+- Story key, page ref, segment range
+- Jeff's verdict and reasoning (exact quote)
+- Error pattern classification
+- Old and new classification
 
-Explore automated detection of Talmud meta-commentary:
-- Interrogative openings: הֵיכִי, מַאי, מְנָא
-- "The Gemara asks/objects" patterns
-- Narrative→analytical tense shifts
+### Experiment Results: REVERTED (composite dropped 0.93 → 0.89)
 
-### 6.5. VALIDATION GATE (before merging detector changes)
+We ran two experiments on 2026-03-25:
 
-**This is the key rollback decision point.**
+**Experiment 1: Expanded few-shots + aggressive disqualifiers**
+- Added 5 new disqualifiers to the prompt (dialogue-only, references, one-action-plus-ruling, etc.)
+- Added confidence calibration section
+- Expanded ground_truth.py from 128 → 282 entries with canonical review
+- Result: **CATASTROPHIC regression.** Pages 2-60 dropped from 72 to 44 stories.
+  Composite: 0.57. Model became far too conservative — rejected legitimate stories.
 
-1. Run improved detector on Ketubot → score against golden dataset
-2. Run improved detector on 2nd tractate (same pages as Phase 5c) → score against mini ground truth
-3. Compute improvement:
-   - Ketubot improvement = new_score - baseline_score
-   - 2nd tractate improvement = new_score - cross_tractate_baseline
+**Experiment 2: Expanded few-shots + light confidence calibration only**
+- Reverted the aggressive disqualifiers, kept only confidence calibration (3 lines)
+- Kept expanded ground_truth.py (282 entries)
+- Result: **Still a regression.** Pages 2-60 dropped from 72 to 52 stories.
+  Full composite: 0.89 (vs 0.93 baseline). Pages 61-112 barely changed (110 → 109).
 
-**Decision matrix:**
+**Root cause:** The few-shot examples from the canonical review are mostly from pages 2-60.
+When the model sees examples of passages from pages 2-60 that Jeff says are NOT stories,
+it over-applies that reasoning to other passages on the same pages. This is textbook
+overfitting to the training data.
 
-| Ketubot improved? | 2nd tractate improved? | Action |
-|---|---|---|
-| Yes (>5%) | Yes (>5%) | MERGE to main |
-| Yes (>5%) | No change | Investigate overfitting. Try removing Ketubot-specific rules. Re-test. |
-| Yes (>5%) | Worse | ROLLBACK. Detector is overfitting to Ketubot. |
-| No change | - | More experiments needed. |
-| Worse | - | ROLLBACK immediately. |
+**Decision: REVERT all detector changes.** The baseline detector (0.93) is better.
 
-**Rollback procedure:**
-```bash
-git checkout pre-detector-changes      # Return to pre-experiment state
-git branch -D feat/autoresearch-*      # Clean up experiment branch (optional)
-```
+**Lesson learned:** The 26 false positives are genuine judgment calls where the model and
+Jeff disagree. They can't be fixed by prompt engineering or few-shot examples from the same
+data. Improvement requires either:
+1. A fundamentally different detection approach (e.g., fine-tuning on Jeff's labels)
+2. A post-processing step that uses the golden labels directly (but that's just lookup, not detection)
+3. Accepting 0.93 as the ceiling for prompt-based detection on Ketubot
 
-The golden dataset, eval framework, and all documentation remain intact.
+The v10 results are preserved in `results/v10/` for reference.
+
+**Cost of experiments: ~$0.60 (two full Ketubot runs at ~$0.30 each).**
 
 ---
 
-## Phase 7: Generalize to Other Tractates
+## Phase 7: Generalize to Other Tractates (FUTURE)
 
 **Each tractate gets its own branch: `feat/generalize-tractate-X`**
 
@@ -278,21 +232,17 @@ Without Jeff reviewing every story:
 
 Each Jeff review batch:
 1. Incorporate into golden dataset (tractate-specific)
-2. Re-run autoresearch loop (now with multi-tractate ground truth)
-3. Detector improves with each tractate
-4. Cross-tractate validation prevents overfitting
+2. Re-run detector with updated few-shots
+3. Cross-tractate validation prevents overfitting
 
 ---
 
-## Edge Cases to Handle
+## Deferred Items
 
-1. **Stories spanning 3+ pages**: Verify merge logic handles this.
-2. **Sub-segment mixed content**: Jeff says "trim last sentence" within a segment. Schema supports this but implementation is Phase 2.
-3. **Duplicate stories across pages**: Ketubot 3a has same story as 2b. Need deduplication.
-4. **Jeff's "soft" suggestions**: "could be included" vs "should be included". Track confidence.
-5. **Hebrew vocalization differences**: Normalize nikud before matching.
-6. **106a_3-3 terminology**: Jeff's "high confidence" vs our classification labels. Clarify.
-7. **Narrative cycles**: Rabbi Yehudah HaNasi's death spans 103a-104a. Grouping mechanism vs. mega-story.
+1. **5 boundary corrections:** 103b_3-3, 60b_2-3, 60b_5-9, 49b_12-12, 12b_0-0
+2. **Review UI regeneration** — generate updated HTML for spot-checking in browser
+3. **2nd tractate baseline** — needs Jeff's review time
+4. **Narrative cycle grouping** — Rabbi Yehudah HaNasi's death spans 103a-104a
 
 ---
 
@@ -305,6 +255,6 @@ Each Jeff review batch:
 - [x] Baseline score: 0.93 composite
 - [x] Tag `v10-golden-ketubot` applied
 - [x] Tag `pre-detector-changes` applied
-- [ ] Review UI generated and spot-checked in browser (TODO)
+- [x] Step 1-3: Ran detector improvement experiments → REVERTED (regression)
+- [ ] Review UI generated and spot-checked in browser
 - [ ] Cross-tractate baseline (pending Jeff review)
-- [ ] Remaining 5 deferred corrections
