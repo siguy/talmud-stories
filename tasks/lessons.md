@@ -1,0 +1,47 @@
+# Lessons Learned
+
+Ongoing log of mistakes, surprises, and things worth remembering across sessions.
+
+---
+
+## 2026-03-25: Golden Dataset + Detector Experiments
+
+### Lesson 1: Never split feedback processing into "auto" and "defer" without scheduling the "defer" pile
+
+**What happened:** Across three prior feedback rounds, we categorized Jeff's corrections as "auto-apply" (classification changes) and "needs review" (boundary/merge changes). We applied the auto ones immediately but never came back to the needs-review pile. Jeff noticed — 10 of his 53 corrections in the canonical review were things he'd already told us to fix.
+
+**Rule:** When splitting work into "now" and "later" buckets, the "later" bucket must go into a task list with a specific due date. If there's no mechanism to return to deferred work, it doesn't get done.
+
+### Lesson 2: Don't add feedback from reviewed pages as few-shot examples for those same pages
+
+**What happened:** We expanded the detector's few-shot example bank from 128 to 282 entries by adding Jeff's canonical review corrections. The new examples were mostly from pages 2-60. When we re-ran the detector, it massively over-rejected stories on pages 2-60 (72 → 52 stories) while pages 61-112 barely changed (110 → 109). Classic train/test contamination.
+
+**Rule:** Few-shot examples must come from a different dataset than what you're evaluating on. If Jeff reviews Ketubot, use those examples when detecting stories in Bava Metzia, not when re-running on Ketubot.
+
+### Lesson 3: The canonical review verdict format is different from prior rounds
+
+**What happened:** The canonical review uses `correct/incorrect/approve/adjust` verdicts on the *already-corrected* data, while prior rounds used `correct/incorrect/confirm_remove/reject_remove` on the *base* data. We initially planned to add it as a 4th entry in the timestamp-based feedback system, but realized this would cause the canonical review's "correct" (meaning "the correction was right") to override the prior round's "incorrect" (which triggered the correction), effectively undoing the correction.
+
+**Rule:** When combining feedback from different review rounds, understand what each verdict means in context. A "correct" on corrected data is not the same as a "correct" on base data. We solved this by processing the canonical review as a separate post-processing step.
+
+### Lesson 4: Cost estimates should be verified before building infrastructure
+
+**What happened:** The brainstorm estimated $2/run for detector experiments ($100 for 50 runs). Actual cost: $0.30/run (Gemini Flash, not Claude). We built autoresearch infrastructure (program.md, run_experiment.py) for a 50-experiment loop that turned out to be both cheap enough to run impulsively and also unnecessary — the error taxonomy already told us what was wrong.
+
+**Rule:** Before building experiment infrastructure, verify: (a) the actual cost per experiment, (b) whether you already know what to try. If you know the answer, run 2-3 targeted experiments, not 50 blind ones.
+
+### Lesson 5: Prompt engineering has a ceiling
+
+**What happened:** We tried two levels of prompt modification — aggressive (5 new disqualifiers) and light (just confidence calibration). The aggressive version caused a catastrophic regression (0.93 → 0.57). The light version still regressed (0.93 → 0.89). The remaining 26 false positives are genuine judgment calls that can't be resolved by telling the model "legal discussions aren't stories" — it already knows that. The ambiguity is in passages that have BOTH narrative and legal elements.
+
+**Rule:** When your baseline is already 0.93, the remaining errors are the hard cases. Prompt engineering works for systematic, clear-cut errors. It doesn't work for judgment calls that require domain expertise. The next step is either fine-tuning, a different model, or acceptance.
+
+### Lesson 6: Run the full evaluation before drawing conclusions
+
+**What happened:** The first experiment evaluation only covered pages 2-60. The composite score was 0.44, which looked catastrophic. But much of that was because the evaluator penalizes for every golden story not in the detected results — and all 61-112 stories were "missing" since we hadn't run that range yet.
+
+**Rule:** Always run the full evaluation pipeline before interpreting results. Partial evaluations are misleading when the scoring function considers all pages.
+
+---
+
+*Add new lessons below this line. Date each entry.*
