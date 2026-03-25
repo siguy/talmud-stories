@@ -43,6 +43,7 @@ FEEDBACK_FILES = [
         'default_timestamp': '2026-02-26T00:00:00Z',
     },
 ]
+CANONICAL_REVIEW_PATH = PROJECT_ROOT / 'validation' / 'feedback' / 'canonical_review_anonymous_2026-03-17.json'
 OUTPUT_PATH = PROJECT_ROOT / 'results' / 'canonical' / 'ketubot_canonical.json'
 
 
@@ -670,9 +671,138 @@ def annotate_stories(pages, auto_applied, needs_review):
             page['stories'].append(placeholder)
 
 
+# ---------- Step 2: Apply canonical review corrections ----------
+
+def load_canonical_review():
+    """Load Jeff's canonical review (March 2026) as a separate correction layer."""
+    print("\n--- Loading canonical review (2026-03-17) ---")
+    with open(CANONICAL_REVIEW_PATH) as f:
+        data = json.load(f)
+    entries = data.get('feedback', {})
+    print(f"  {len(entries)} entries")
+    return entries
+
+
+def apply_canonical_classification_corrections(pages, canonical_review):
+    """
+    Apply classification corrections from Jeff's canonical review.
+
+    Runs AFTER the prior 3 feedback rounds as a refinement layer.
+    Only applies clear classification changes here. Boundary/merge
+    corrections are handled separately by scripts/apply_boundary_corrections.py.
+    """
+    print("\n--- Applying canonical review classification corrections ---")
+
+    applied = []
+    deferred = []
+    no_change_keys = []
+
+    for key, entry in sorted(canonical_review.items()):
+        verdict = entry.get('verdict')
+        note = (entry.get('note') or '').strip()
+        note_lower = note.lower()
+
+        parsed = parse_story_key(key)
+        if not parsed:
+            continue
+        page_ref, start_seg, end_seg = parsed
+
+        if verdict is None:
+            continue
+        if verdict == 'correct':
+            no_change_keys.append(key)
+            continue
+
+        # approve/adjust are boundary/merge changes → defer to Phase 3
+        if verdict in ('approve', 'adjust'):
+            deferred.append({'key': key, 'verdict': verdict, 'note': note})
+            continue
+
+        if verdict != 'incorrect':
+            deferred.append({'key': key, 'verdict': verdict, 'note': note})
+            continue
+
+        # Handle "incorrect" verdicts — determine target classification
+        target_cls = None
+
+        # Special case: 111a_23-25 — split story, 111a portion is LOW_CONFIDENCE
+        if key == 'Ketubot 111a_23-25':
+            target_cls = 'LOW_CONFIDENCE'
+        # NOT_A_STORY patterns (check BEFORE low confidence since some notes
+        # contain both "not a story" and other text)
+        elif any(p in note_lower for p in [
+            'not a story', 'not even a story',
+            'not really an event',
+            'just one event', 'just the report',
+            'just a reference', 'just one action',
+        ]):
+            target_cls = 'NOT_A_STORY'
+        elif any(p in note_lower for p in [
+            'hypothetical legal case', 'hypothetical scenario',
+        ]) and 'story' not in note_lower.split('hypothetical')[0]:
+            # "hypothetical legal case" but not "a story... hypothetical"
+            target_cls = 'NOT_A_STORY'
+        elif 'legal discussion' in note_lower and 'story' not in note_lower:
+            target_cls = 'NOT_A_STORY'
+        # LOW_CONFIDENCE patterns
+        elif any(p in note_lower for p in [
+            'low confidence', 'low-confidence', 'borderline',
+        ]):
+            target_cls = 'LOW_CONFIDENCE'
+        # HIGH_CONFIDENCE patterns
+        elif any(p in note_lower for p in [
+            'high confidence', 'should be high',
+        ]):
+            target_cls = 'HIGH_CONFIDENCE'
+
+        if target_cls:
+            page = find_page(pages, page_ref)
+            if page:
+                idx, story = find_story_on_page(page, start_seg, end_seg)
+                if story:
+                    old_cls = story['classification']
+                    if old_cls != target_cls:
+                        story['classification'] = target_cls
+                        record = {
+                            'key': key,
+                            'old_classification': old_cls,
+                            'new_classification': target_cls,
+                            'note': note,
+                            'source': 'canonical_review_2026-03-17',
+                        }
+                        applied.append(record)
+                        print(f"  {key}: {old_cls} → {target_cls}")
+
+                        # Annotate the story
+                        if 'corrections' not in story:
+                            story['corrections'] = []
+                        story['corrections'].append({
+                            'action': f'canonical_reclassify_{target_cls.lower()}',
+                            'reason': f"Jeff's canonical review: {note}",
+                            'source': 'canonical_review_2026-03-17',
+                            'auto_applied': True,
+                        })
+                    else:
+                        no_change_keys.append(key)
+                else:
+                    print(f"  WARNING: Story not found: {key}")
+            else:
+                print(f"  WARNING: Page not found: {page_ref}")
+        else:
+            # Unclear classification target — defer
+            deferred.append({'key': key, 'verdict': verdict, 'note': note})
+
+    print(f"\n  Classification changes applied: {len(applied)}")
+    print(f"  Deferred (boundary/merge): {len(deferred)}")
+    print(f"  No change needed: {len(no_change_keys)}")
+
+    return applied, deferred
+
+
 # ---------- Save ----------
 
-def save_canonical(pages, auto_applied, needs_review, skipped, no_change):
+def save_canonical(pages, auto_applied, needs_review, skipped, no_change,
+                   canonical_applied=None, canonical_deferred=None):
     """Save the canonical file."""
     print(f"\n--- Saving canonical file ---")
 
@@ -686,20 +816,24 @@ def save_canonical(pages, auto_applied, needs_review, skipped, no_change):
 
     output = {
         'tractate': 'Ketubot',
-        'version': 'canonical_draft',
+        'version': 'canonical_v10_draft',
         'base_versions': {
             'pages_2_60': 'v7',
             'pages_61_112': 'v9',
         },
         'corrections_summary': {
-            'auto_applied': len(auto_applied),
-            'needs_review': len(needs_review),
-            'no_change': len(no_change),
-            'skipped': len(skipped),
+            'prior_rounds_auto_applied': len(auto_applied),
+            'prior_rounds_needs_review': len(needs_review),
+            'prior_rounds_no_change': len(no_change),
+            'prior_rounds_skipped': len(skipped),
+            'canonical_review_applied': len(canonical_applied) if canonical_applied else 0,
+            'canonical_review_deferred': len(canonical_deferred) if canonical_deferred else 0,
             'total_stories': total_stories,
             'review_count': review_count,
         },
         'auto_applied_log': auto_applied,
+        'canonical_review_applied_log': canonical_applied or [],
+        'canonical_review_deferred_log': canonical_deferred or [],
         'needs_review_log': needs_review,
         'pages': pages,
     }
@@ -724,17 +858,23 @@ def main():
     pages = load_and_merge_base()
     fix_bad_merge_2_60(pages)
 
-    # Step 1b: Load feedback
+    # Step 1b: Load prior feedback (3 rounds)
     feedback = load_all_feedback()
 
-    # Step 1c/1d: Apply corrections
+    # Step 1c/1d: Apply prior corrections
     auto_applied, needs_review, skipped, no_change = apply_corrections(pages, feedback)
 
     # Step 1e: Annotate stories
     annotate_stories(pages, auto_applied, needs_review)
 
-    # Print summary of auto-applied changes
-    print("\n--- Auto-applied changes ---")
+    # Step 2: Apply canonical review classification corrections
+    canonical_review = load_canonical_review()
+    canonical_applied, canonical_deferred = apply_canonical_classification_corrections(
+        pages, canonical_review
+    )
+
+    # Print summary of prior round changes
+    print("\n--- Prior round auto-applied changes ---")
     for r in auto_applied:
         action = r['action']
         key = r['key']
@@ -749,22 +889,24 @@ def main():
         elif action == 'auto_keep':
             print(f"  {key}: KEPT (reject_remove)")
 
-    print("\n--- Flagged for review ---")
+    print("\n--- Prior round flagged for review ---")
     for r in needs_review:
         action = r['action']
         key = r['key']
         print(f"  {key}: {action}")
         if r.get('note'):
-            # Truncate long notes
             note_preview = r['note'][:100] + ('...' if len(r['note']) > 100 else '')
             print(f"    Note: {note_preview}")
 
     # Save
-    save_canonical(pages, auto_applied, needs_review, skipped, no_change)
+    save_canonical(pages, auto_applied, needs_review, skipped, no_change,
+                   canonical_applied, canonical_deferred)
 
     print("\n" + "=" * 60)
-    print(f"  Done! {len(auto_applied)} auto-applied, "
+    print(f"  Done! Prior: {len(auto_applied)} auto-applied, "
           f"{len(needs_review)} flagged for review")
+    print(f"  Canonical: {len(canonical_applied)} classification changes, "
+          f"{len(canonical_deferred)} deferred")
     print("=" * 60)
 
 
