@@ -1,6 +1,6 @@
 {
   "tractate": "Ketubot",
-  "version": "canonical_v10_draft",
+  "version": "canonical_v10_golden",
   "base_versions": {
     "pages_2_60": "v7",
     "pages_61_112": "v9"
@@ -12,8 +12,10 @@
     "prior_rounds_skipped": 8,
     "canonical_review_applied": 17,
     "canonical_review_deferred": 24,
-    "total_stories": 189,
-    "review_count": 19
+    "total_stories": 182,
+    "review_count": 0,
+    "boundary_corrections_applied": 32,
+    "boundary_corrections_deferred": 5
   },
   "auto_applied_log": [
     {
@@ -1171,11 +1173,7 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained within this segment."
-          },
-          "needs_review": true,
-          "review_reason": "review_merge",
-          "jeff_note": "This is the same story as on Ketubot 2b, the previous selection. It happen to be quoted on both pages. The boundaries of the story should be the same too. It should end with the man's statement. And iוּנְסָא דִּשְׁכִיחַ — שָׁאנֵי, דְּכֵיוָן דְּאִיבְּעִי לֵיהּ לְאַתְנוֹיֵי וְלָא אַתְנִי, אִיהוּ הוּא דְּאַפְסֵיד אַנַּפְשֵׁיהּ. This is the Talmud's rejection of the proof from the story and not part of the story. t should certain not have the last line, ",
-          "proposed_change": "Jeff says same story: This is the same story as on Ketubot 2b, the previous selection. It happen to be quoted on both pages. The boundaries of the story should be the same too. It should end with the man's statement. And iוּנְסָא דִּשְׁכִיחַ — שָׁאנֵי, דְּכֵיוָן דְּאִיבְּעִי לֵיהּ לְאַתְנוֹיֵי וְלָא אַתְנִי, אִיהוּ הוּא דְּאַפְסֵיד אַנַּפְשֵׁיהּ. This is the Talmud's rejection of the proof from the story and not part of the story. t should certain not have the last line,"
+          }
         }
       ]
     },
@@ -2268,7 +2266,7 @@
       "stories": [
         {
           "start_segment": 3,
-          "end_segment": 4,
+          "end_segment": 10,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -2315,7 +2313,15 @@
             "continues_to_next_page": false,
             "note": ""
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "corrections": [
+            {
+              "action": "merged_with_6-10",
+              "reason": "Jeff: one long story (8b_3-5 + 6-10)",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 13,
@@ -2365,20 +2371,6 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
-          }
-        },
-        {
-          "start_segment": 6,
-          "end_segment": 10,
-          "classification": "NEEDS_REVIEW",
-          "one_sentence_summary": "[Flagged for review: review_merge]",
-          "needs_review": true,
-          "review_reason": "review_merge",
-          "jeff_note": "This is the second half of the story that with Ketubot 8b (segments 3-5). It is one long story",
-          "proposed_change": "Jeff says merge needed: This is the second half of the story that with Ketubot 8b (segments 3-5). It is one long story",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false
           }
         }
       ]
@@ -5749,7 +5741,17 @@
             "continues_to_next_page": false,
             "note": ""
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "end_text_marker": "טַעְמָא דְּלָא אֲתוֹ עֵדִים",
+          "end_trim_note": "Text after this marker is Talmud commentary, not part of story",
+          "corrections": [
+            {
+              "action": "sub_segment_trim_end",
+              "reason": "Jeff: last few words are Talmud comment",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -6264,7 +6266,7 @@
         },
         {
           "start_segment": 4,
-          "end_segment": 4,
+          "end_segment": 5,
           "classification": "LOW_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -6311,58 +6313,15 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "This is the third story on the page."
-          }
-        },
-        {
-          "start_segment": 5,
-          "end_segment": 5,
-          "classification": "LOW_CONFIDENCE",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rabbi Elazar, Reish Lakish, Rabbi Yoḥanan, a person who testified",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 2,
-              "events": [
-                "Rabbi Elazar and Reish Lakish sat before Rabbi Yoḥanan",
-                "A matter came before Rabbi Yoḥanan"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "A matter came before Rabbi Yoḥanan → Reish Lakish questioned the person who testified"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "On another occasion"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the setting and the testimony"
-            },
-            "change_outcome": {
-              "met": false,
-              "before": "A matter came before Rabbi Yochanan",
-              "after": "The outcome is not clear, as Rabbi Yochanan's final ruling is not recorded."
-            }
           },
-          "criteria_met_count": 5,
-          "disqualifiers_found": [],
-          "weakeners_found": [
-            "The outcome is not clear, as Rabbi Yochanan's final ruling is not recorded."
-          ],
-          "one_sentence_summary": "Rabbi Elazar and Reish Lakish sat before Rabbi Yoḥanan when a case involving testimony about priesthood came before them, leading to questioning by Reish Lakish.",
-          "classification_reasoning": "This is a borderline story. It has identifiable characters, multiple events, a causal chain, temporal progression, and is descriptive. However, the outcome is unclear, as Rabbi Yochanan's final ruling is not recorded, weakening the 'change outcome' criterion. Therefore, it's classified as LOW_CONFIDENCE.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": "This is the fourth story on the page."
-          }
+          "corrections": [
+            {
+              "action": "merged_with_5-5",
+              "reason": "Jeff: 25b_5 is continuation of 25b_4",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 6,
@@ -6479,7 +6438,7 @@
       ],
       "stories": [
         {
-          "start_segment": 1,
+          "start_segment": 0,
           "end_segment": 1,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
@@ -6528,7 +6487,15 @@
             "continues_to_next_page": false,
             "note": "The story is about a specific man and his interactions with others."
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "corrections": [
+            {
+              "action": "extend_start_1_to_0",
+              "reason": "Jeff: first half of story not quoted",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 9,
@@ -11306,10 +11273,21 @@
             "continues_to_next_page": true,
             "note": "The story continues to the next page."
           },
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "This is the beginning of a story that continues on the next page of Talmud, the next selection here, Ketubot 53a (Segments 0-3)",
-          "proposed_change": "Jeff noted cross-page issue: This is the beginning of a story that continues on the next page of Talmud, the next selection here, Ketubot 53a (Segments 0-3)"
+          "spans_pages": [
+            "Ketubot 52b",
+            "Ketubot 53a"
+          ],
+          "start_segment_page2": 0,
+          "end_segment_page2": 3,
+          "cross_page_merge_v10": true,
+          "corrections": [
+            {
+              "action": "cross_page_merge_to_Ketubot 53a_seg_0-3",
+              "reason": "Jeff: story continues on 53a",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -11393,61 +11371,6 @@
         }
       ],
       "stories": [
-        {
-          "start_segment": 2,
-          "end_segment": 3,
-          "classification": "YES",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rav Pappa, Yehuda bar Mareimar, Abba of Sura",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 4,
-              "events": [
-                "Rav Pappa forced Yehuda bar Mareimar to enter",
-                "Yehuda bar Mareimar sat silently",
-                "Abba of Sura wrote down all his possessions in the marriage contract",
-                "Abba of Sura retracted what he wrote"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Rav Pappa forces Yehuda to enter → Yehuda is silent → Abba thinks Yehuda is angry → Abba writes down all his possessions → Yehuda says he doesn't want it → Abba retracts"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "Eventually",
-                "He was silent, and sat",
-                "Therefore",
-                "Finally",
-                "Now too"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the actions and thoughts of the characters."
-            },
-            "change_outcome": {
-              "met": true,
-              "before": "Abba of Sura was going to give his daughter a smaller dowry, and Yehuda was reluctant to enter the house.",
-              "after": "Abba of Sura initially wrote down all his possessions in the marriage contract, but then retracted it based on Yehuda's wishes."
-            }
-          },
-          "criteria_met_count": 6,
-          "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "Rav Pappa forces Yehuda bar Mareimar to enter Abba of Sura's house, leading Abba to believe Yehuda is angry about the dowry, causing Abba to write down all his possessions in the marriage contract, which he later retracts at Yehuda's request.",
-          "classification_reasoning": "This passage clearly meets all the criteria for a story. It has identifiable characters, multiple events connected by cause and effect, temporal progression, descriptive language, and a change in the situation from beginning to end.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": "The story starts and ends within this page."
-          }
-        },
         {
           "start_segment": 12,
           "end_segment": 12,
@@ -11911,8 +11834,21 @@
               "reason": "Jeff says borderline/low confidence: The story finished on the next page of Talmud with one more line, and it is a borderline story",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "action": "cross_page_merge_to_Ketubot 54b_seg_0-0",
+              "reason": "Jeff: story continues on 54b",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
             }
-          ]
+          ],
+          "spans_pages": [
+            "Ketubot 54a",
+            "Ketubot 54b"
+          ],
+          "start_segment_page2": 0,
+          "end_segment_page2": 0,
+          "cross_page_merge_v10": true
         }
       ]
     },
@@ -12348,12 +12284,16 @@
             "Ketubot 57a"
           ],
           "start_segment_page2": 0,
-          "end_segment_page2": 0,
+          "end_segment_page2": 1,
           "cross_page_merge_v7": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "This is the beginning of a story that continues on the next page of Talmud",
-          "proposed_change": "Jeff noted cross-page issue: This is the beginning of a story that continues on the next page of Talmud"
+          "corrections": [
+            {
+              "action": "extend_page2_end_0_to_1",
+              "reason": "Jeff: story ends with Shmuel's statement (next line)",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -12951,10 +12891,15 @@
             "continues_to_next_page": false,
             "note": "The story is cut off at the end of the segment."
           },
-          "needs_review": true,
-          "review_reason": "review_boundary",
-          "jeff_note": "This is indeed a story but the last line should not be included. That is a follow-up question. that comes after the story.  ( סוֹמֵא מְנָא יָדַע? אָמַר רַב אָשֵׁי: בְּרֵיחָא וּבְטַעְמָא. is not part of the story)",
-          "proposed_change": "Jeff noted boundary issue: This is indeed a story but the last line should not be included. That is a follow-up question. that comes after the story.  ( סוֹמֵא מְנָא יָדַע? אָמַר רַב אָשֵׁי: בְּרֵיחָא וּבְטַעְמָא. is not part of the story)"
+          "end_trim_note": "Follow-up question at end of segment should not be included",
+          "corrections": [
+            {
+              "action": "sub_segment_trim_end",
+              "reason": "Jeff: follow-up question at end not part of story",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -13806,7 +13751,7 @@
         },
         {
           "start_segment": 6,
-          "end_segment": 7,
+          "end_segment": 9,
           "classification": "YES",
           "criteria": {
             "identifiable_characters": {
@@ -13856,66 +13801,14 @@
             "continues_to_next_page": false,
             "note": "The story of this specific marriage continues in segment 9."
           },
-          "needs_review": true,
-          "review_reason": "review_boundary",
-          "jeff_note": "Correct identification of a story but again it is cut off in the middle. The final line here and the continuation in the next story should be highlighted as they are all one story. IT ends with  בְּעָא עֲלַהּ רַחֲמֵי וְאִיתַּסִּיאַת in the selection below.",
-          "proposed_change": "Jeff noted boundary issue: Correct identification of a story but again it is cut off in the middle. The final line here and the continuation in the next story should be highlighted as they are all one story. IT ends with  בְּעָא עֲלַהּ רַחֲמֵי וְאִיתַּסִּיאַת in the selection below."
-        },
-        {
-          "start_segment": 9,
-          "end_segment": 9,
-          "classification": "YES",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rabbi Yehuda HaNasi, his son, the son's wife",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 3,
-              "events": [
-                "The son goes to study for 12 years",
-                "The wife becomes infertile",
-                "Rabbi Yehuda HaNasi prays for her and she is healed"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Long absence → infertility → Rabbi's prayer → healing"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "after his wedding",
-                "twelve years",
-                "by the time he came back"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the biological consequence of the absence and the internal deliberation of the Rabbi."
-            },
-            "change_outcome": {
-              "met": true,
-              "before": "The wife is infertile.",
-              "after": "The wife is healed and gives birth."
+          "corrections": [
+            {
+              "action": "merged_with_9-9",
+              "reason": "Jeff: 62b_9 is continuation of 62b_6-7",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
             }
-          },
-          "criteria_met_count": 6,
-          "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "After the son of Rabbi Yehuda HaNasi returns from 12 years of study to find his wife infertile, the Rabbi prays for her and she recovers her fertility.",
-          "classification_reasoning": "This is the resolution to the previous narrative arc, containing physical change (infertility/healing) and specific characters.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": null
-          },
-          "needs_review": true,
-          "review_reason": "review_merge",
-          "jeff_note": "This is the second part of a story that begins above. It is not an independent story but should go with what preceded it.",
-          "proposed_change": "Jeff says merge needed: This is the second part of a story that begins above. It is not an independent story but should go with what preceded it."
+          ]
         },
         {
           "start_segment": 10,
@@ -14083,10 +13976,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 1,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The merge is not correct. The top of 63a should be included with the beginning of the story on 62b. What is highlighted here on 62b is an independant story",
-          "proposed_change": "Jeff noted cross-page issue: The merge is not correct. The top of 63a should be included with the beginning of the story on 62b. What is highlighted here on 62b is an independant story"
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: highlight and boundaries are correct",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -14306,17 +14203,14 @@
             "continues_to_next_page": true,
             "note": "The discussion of the ruling against Rav Zevid's daughter-in-law continues on 64a."
           },
-          "spans_pages": [
-            "Ketubot 63b",
-            "Ketubot 64a"
-          ],
-          "start_segment_page2": 0,
-          "end_segment_page2": 0,
-          "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_boundary",
-          "jeff_note": "The story does continue from one page to the next. The last line is the Talmud's summary and need not be included with the story itself (הַשְׁתָּא דְּלָא אִתְּמַר לָא הָכִי וְלָא הָכִי, תְּפַסָה — לָא מַפְּקִינַן מִינַּהּ, לָא תְּפַסָה — לָא יָהֲבִינַן לַהּ.). That is, this line should not be highlighted.",
-          "proposed_change": "Jeff noted boundary issue: The story does continue from one page to the next. The last line is the Talmud's summary and need not be included with the story itself (הַשְׁתָּא דְּלָא אִתְּמַר לָא הָכִי וְלָא הָכִי, תְּפַסָה — לָא מַפְּקִינַן מִינַּהּ, לָא תְּפַסָה — לָא יָהֲבִינַן לַהּ.). That is, this line should not be highlighted."
+          "corrections": [
+            {
+              "action": "strip_cross_page_merge_trim",
+              "reason": "Jeff: 64a continuation is Talmud's summary, not part of story",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -15671,8 +15565,21 @@
               "reason": "Jeff noted borderline/low confidence: This is correct. But the previous line should be considered low-confidence story. It is a narrative but lacks real change, so borderline. רַבִּי אַבָּא הֲוָה צָיַיר זוּזֵי בְּסוּדָרֵיהּ, וְשָׁדֵי לֵיהּ לַאֲחוֹרֵיהּ, וּמַמְצֵי נַפְשֵׁיהּ לְבֵי עַנְיֵי, וּמַצְלֵי עֵינֵיהּ מֵרַמָּאֵי. Also, this story is cut off and the ending, on the next page of Talmud, is omitted. This should be included from 68a: בטלי כסף או בטלי זהב? אמר: היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן, היינו חוטאין בכל יום, שנאמר: ״וקרא עליך אל ה׳ והיה בך חטא״.",
               "source": "v5.1_2026-02-20",
               "auto_applied": true
+            },
+            {
+              "action": "cross_page_merge_to_Ketubot 68a_seg_0-15",
+              "reason": "Jeff: story continues at top of 68a",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
             }
-          ]
+          ],
+          "spans_pages": [
+            "Ketubot 67b",
+            "Ketubot 68a"
+          ],
+          "start_segment_page2": 0,
+          "end_segment_page2": 15,
+          "cross_page_merge_v10": true
         }
       ]
     },
@@ -16162,10 +16069,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 0,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The merge is not correct. Again, the top lines of 69b continue the story and should be included (גופא דעובדא היכי הוה, א\"ל: הכי והכי הוה מעשה. אמר ליה: גברא דלא ידע מאי ניהו מרזיחא, שלח ליה לרב הונא הונא חברין? ). What is highlighted here on 69b is an independent story",
-          "proposed_change": "Jeff noted cross-page issue: The merge is not correct. Again, the top lines of 69b continue the story and should be included (גופא דעובדא היכי הוה, א\"ל: הכי והכי הוה מעשה. אמר ליה: גברא דלא ידע מאי ניהו מרזיחא, שלח ליה לרב הונא הונא חברין? ). What is highlighted here on 69b is an independent story"
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: boundaries are correct now",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -16248,7 +16159,22 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "spans_pages": [
+            "Ketubot 69b",
+            "Ketubot 70a"
+          ],
+          "start_segment_page2": 0,
+          "end_segment_page2": 2,
+          "cross_page_merge_v10": true,
+          "corrections": [
+            {
+              "action": "cross_page_merge_to_Ketubot 70a_seg_0-2",
+              "reason": "Jeff: story continues at top of 70a",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -17512,7 +17438,7 @@
       ],
       "stories": [
         {
-          "start_segment": 6,
+          "start_segment": 5,
           "end_segment": 8,
           "classification": "YES",
           "criteria": {
@@ -17563,7 +17489,15 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained on this page."
-          }
+          },
+          "corrections": [
+            {
+              "action": "extend_start_6_to_5",
+              "reason": "Jeff: story begins with Rabbi Yehoshua ben Levi",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 9,
@@ -19180,10 +19114,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 2,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The classification is correct. However, the highlighted text is not correct. The continuation of the story on 84b is not quoted. It should be included. The top line of 85a, which is not highlighted here, is the end of that story (אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: קָאקֵי חִיוָּרֵי, מְשַׁלְּחֵי גְּלִימֵי דְאִינָשֵׁי! הָכִי אָמַר רַב נַחְמָן: וְהוּא שֶׁתְּפָסָהּ מֵחַיִּים).  Then the highlighted portion on 85a, the story of Avimi bar R. Abahu, is a different story that should have its own entry.",
-          "proposed_change": "Jeff noted cross-page issue: The classification is correct. However, the highlighted text is not correct. The continuation of the story on 84b is not quoted. It should be included. The top line of 85a, which is not highlighted here, is the end of that story (אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: קָאקֵי חִיוָּרֵי, מְשַׁלְּחֵי גְּלִימֵי דְאִינָשֵׁי! הָכִי אָמַר רַב נַחְמָן: וְהוּא שֶׁתְּפָסָהּ מֵחַיִּים).  Then the highlighted portion on 85a, the story of Avimi bar R. Abahu, is a different story that should have its own entry."
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: new boundaries and merge are now correct",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -19348,7 +19286,7 @@
         },
         {
           "start_segment": 8,
-          "end_segment": 8,
+          "end_segment": 10,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -19392,61 +19330,15 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
-        },
-        {
-          "start_segment": 9,
-          "end_segment": 10,
-          "classification": "HIGH_CONFIDENCE",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rav Pappa, Rav Adda bar Mattana, Rava",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 2,
-              "events": [
-                "A document is brought to court",
-                "Rav Pappa claims it is paid",
-                "Rava refuses to accept the testimony",
-                "Rav Adda bar Mattana challenges Rava"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Document presented → Sages testify → Judge distinguishes between witnesses"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "On another occasion",
-                "were sitting"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the setting of the sages sitting before Rava and a document being brought."
-            },
-            "change_outcome": {
-              "met": true,
-              "before": "A document is presented for collection.",
-              "after": "The document is not invalidated because Rava does not 'know' Rav Pappa's reliability as well as his wife's."
-            }
           },
-          "criteria_met_count": 5,
-          "disqualifiers_found": [],
-          "weakeners_found": [
-            "Dialogue-heavy"
-          ],
-          "one_sentence_summary": "When Rav Pappa tries to invalidate a document based on personal knowledge, Rava refuses, explaining why he trusted his wife in a previous case but cannot trust Rav Pappa here.",
-          "classification_reasoning": "This is a narrative 'sequel' to the previous story, providing a specific scene in court with a beginning, middle, and end.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": null
-          }
+          "corrections": [
+            {
+              "action": "merged_with_9-10",
+              "reason": "Jeff: 85a_9-10 is continuation of 85a_8",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 13,
@@ -19837,10 +19729,16 @@
           "start_segment_page2": 0,
           "end_segment_page2": 1,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The merge is not correct. As in the previous cases, the top lines of the next page, the continuation of the story, are not included. This is the continuation at the top of 86a: תיזיל ותיחלה לכתובתה דאמה לגבי אבוה, ותירתה מיניה. שמעה, אזלה אחילתה. אמר רב נחמן: עשינו עצמינו כעורכי הדיינין.   The classification is correct.",
-          "proposed_change": "Jeff noted cross-page issue: The merge is not correct. As in the previous cases, the top lines of the next page, the continuation of the story, are not included. This is the continuation at the top of 86a: תיזיל ותיחלה לכתובתה דאמה לגבי אבוה, ותירתה מיניה. שמעה, אזלה אחילתה. אמר רב נחמן: עשינו עצמינו כעורכי הדיינין.   The classification is correct."
+          "end_text_marker": "מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר",
+          "end_trim_note": "Text after this marker is Talmud's question, not part of story",
+          "corrections": [
+            {
+              "action": "sub_segment_trim_end_with_merge",
+              "reason": "Jeff: merge correct, but last portion is Talmud's comment",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -20991,10 +20889,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 0,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "Again, the continuation of the story at the top of 91b (זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין ) should have been included with the story on 91a that begins תָּא שְׁמַע: דְּנִיכְסֵי דְּבֵי בַּר צַרְצוּר. That line is not given here.  The story on 91b is a separate story that should have its own entry.  (Also, the last two lines of this story on 91b should not be included as they are the anonymous Talmud's comments on the story.  (...וְטִירְפָא, בְּכַמָּה כָּתְבִינַן?)",
-          "proposed_change": "Jeff noted cross-page issue: Again, the continuation of the story at the top of 91b (זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין ) should have been included with the story on 91a that begins תָּא שְׁמַע: דְּנִיכְסֵי דְּבֵי בַּר צַרְצוּר. That line is not given here.  The story on 91b is a separate story that should have its own entry.  (Also, the last two lines of this story on 91b should not be included as they are the anonymous Talmud's comments on the story.  (...וְטִירְפָא, בְּכַמָּה כָּתְבִינַן?)"
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: merge and boundaries are now correct",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -21095,18 +20997,26 @@
       "stories": [
         {
           "start_segment": 2,
-          "end_segment": 7,
+          "end_segment": 3,
           "classification": "YES",
           "one_sentence_summary": "[Restored from Ketubot 91a merge]",
           "continuation": {
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corrections": [
+            {
+              "action": "trim_end_7_to_3",
+              "reason": "Jeff: story ends before legal discussion",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 8,
-          "end_segment": 10,
+          "end_segment": 9,
           "classification": "YES",
           "criteria": {
             "identifiable_characters": {
@@ -21156,7 +21066,15 @@
             "continues_to_next_page": false,
             "note": null
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "corrections": [
+            {
+              "action": "trim_end_10_to_9",
+              "reason": "Jeff: same trim pattern as 91b_2-7",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 12,
@@ -21216,7 +21134,7 @@
         },
         {
           "start_segment": 15,
-          "end_segment": 16,
+          "end_segment": 15,
           "classification": "HIGH_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
@@ -21264,7 +21182,15 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corrections": [
+            {
+              "action": "trim_end_16_to_15",
+              "reason": "Jeff: story ends at seg 15",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -21765,10 +21691,14 @@
             "continues_to_next_page": false,
             "note": null
           },
-          "needs_review": true,
-          "review_reason": "review_boundary",
-          "jeff_note": "Reasoning is correct but only the first half of the story is highlighted. Although the second part is a legal discussion, because it is the continuation of the story, it should be highlighted too.",
-          "proposed_change": "Jeff noted boundary issue: Reasoning is correct but only the first half of the story is highlighted. Although the second part is a legal discussion, because it is the continuation of the story, it should be highlighted too."
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: All correct now",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 10,
@@ -24067,11 +23997,21 @@
             "Ketubot 103b"
           ],
           "start_segment_page2": 0,
-          "end_segment_page2": 2,
-          "needs_review": true,
-          "review_reason": "review_boundary",
-          "jeff_note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)",
-          "proposed_change": "Jeff noted boundary issue: The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)"
+          "end_segment_page2": 21,
+          "corrections": [
+            {
+              "action": "extend_page2_end_2_to_3",
+              "reason": "Jeff: include next paragraph",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            },
+            {
+              "action": "extend_page2_end_to_include_103b_20-21",
+              "reason": "Jeff: include 103b_20-21 with death narrative",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -24369,60 +24309,6 @@
           }
         },
         {
-          "start_segment": 20,
-          "end_segment": 21,
-          "classification": "HIGH_CONFIDENCE",
-          "criteria": {
-            "identifiable_characters": {
-              "met": true,
-              "evidence": "Rabbi Yehuda HaNasi, Shimon, Gamliel",
-              "anonymous": false
-            },
-            "multiple_events": {
-              "met": true,
-              "count": 2,
-              "events": [
-                "Shimon enters and receives wisdom",
-                "Gamliel enters and receives leadership instructions"
-              ]
-            },
-            "causal_chain": {
-              "met": true,
-              "chain": "Rabbi calls for sons → They enter sequentially → He transmits specific legacies to each"
-            },
-            "temporal_progression": {
-              "met": true,
-              "markers": [
-                "entered",
-                "transmitted"
-              ]
-            },
-            "descriptive": {
-              "met": true,
-              "evidence": "Describes the specific scene of the deathbed transmission."
-            },
-            "change_outcome": {
-              "met": true,
-              "before": "Sons have not yet received their specific charges",
-              "after": "The roles of Sage and Nasi are formally handed over"
-            }
-          },
-          "criteria_met_count": 6,
-          "disqualifiers_found": [],
-          "weakeners_found": [],
-          "one_sentence_summary": "On his deathbed, Rabbi Yehuda HaNasi calls his sons individually to transmit the specific traditions of wisdom and leadership to them.",
-          "classification_reasoning": "This is a distinct narrative unit within the larger deathbed cycle, featuring specific actions (calling, entering, transmitting) and a clear outcome.",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false,
-            "note": null
-          },
-          "needs_review": true,
-          "review_reason": "review_merge",
-          "jeff_note": "It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation.",
-          "proposed_change": "Jeff suggested merge with previous: It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation."
-        },
-        {
           "start_segment": 24,
           "end_segment": 25,
           "classification": "YES",
@@ -24598,22 +24484,7 @@
           "hebrew": "אָמַר רַב נַחְמָן בַּר יִצְחָק: תָּנֵי רַב יְהוּדָה בַּר קָזָא בְּמַתְנִיתָא דְּבֵי בַּר קָזָא: תָּבְעָה כְּתוּבָּתָהּ —"
         }
       ],
-      "stories": [
-        {
-          "start_segment": 1,
-          "end_segment": 5,
-          "classification": "NEEDS_REVIEW",
-          "one_sentence_summary": "[Flagged for review: review_cross_page]",
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "This story was correctly merged with the previous story. However, the merge was not done correctly, as part of the story was skipped. See above",
-          "proposed_change": "Jeff noted merge issue: This story was correctly merged with the previous story. However, the merge was not done correctly, as part of the story was skipped. See above",
-          "continuation": {
-            "continues_from_previous_page": false,
-            "continues_to_next_page": false
-          }
-        }
-      ]
+      "stories": []
     },
     {
       "ref": "Ketubot 104b",
@@ -24769,7 +24640,17 @@
             "continues_to_next_page": false,
             "note": "The story concludes with Rava's final analysis of the previous judge's error."
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "end_text_marker": "מֵעִיקָּרָא הוּא סְבַר הָנֵי וְקָא",
+          "end_trim_note": "Text after this marker is Talmud question, not part of story",
+          "corrections": [
+            {
+              "action": "sub_segment_trim_end",
+              "reason": "Jeff: last few words are Talmud's question",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -25270,10 +25151,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 2,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The classification is correct. The merge is not accurate. The top lines of 106a should be included (ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.   ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה. ) What is highlighted on 106a is an independant story",
-          "proposed_change": "Jeff noted cross-page issue: The classification is correct. The merge is not accurate. The top lines of 106a should be included (ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.   ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה. ) What is highlighted on 106a is an independant story"
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: merge and boundaries are now correct",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
@@ -26687,13 +26572,6 @@
             "note": "The health advice and the discussion of the letter's contents continue onto the next page."
           },
           "boundary_refined": true,
-          "spans_pages": [
-            "Ketubot 111a",
-            "Ketubot 111b"
-          ],
-          "start_segment_page2": 0,
-          "end_segment_page2": 2,
-          "cross_page_stitched": true,
           "corrections": [
             {
               "action": "auto_not_a_story",
@@ -26704,6 +26582,18 @@
             {
               "action": "canonical_reclassify_low_confidence",
               "reason": "Jeff's canonical review: I think something got confused here. The first selection, from 111a, is a low-confidence story. The second passage highlighted here, from 111b, is not a story",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            },
+            {
+              "action": "strip_cross_page_merge",
+              "removed_fields": [
+                "spans_pages",
+                "start_segment_page2",
+                "end_segment_page2",
+                "cross_page_stitched"
+              ],
+              "reason": "Jeff: 111a is LOW_CONFIDENCE, 111b is NOT_A_STORY; un-merge",
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
@@ -27111,10 +27001,14 @@
           "start_segment_page2": 0,
           "end_segment_page2": 0,
           "cross_page_stitched": true,
-          "needs_review": true,
-          "review_reason": "review_cross_page",
-          "jeff_note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry",
-          "proposed_change": "Jeff noted cross-page issue: The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry"
+          "corrections": [
+            {
+              "action": "confirmed_correct",
+              "reason": "Jeff: merge and boundaries are now correct",
+              "source": "canonical_review_2026-03-17",
+              "auto_applied": true
+            }
+          ]
         }
       ]
     },
