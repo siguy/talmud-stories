@@ -1,0 +1,653 @@
+{
+  "version": "boundary_corrections_v1",
+  "stats": {
+    "resolved": 17,
+    "inferred": 1,
+    "needs_manual": 27,
+    "already_correct": 7,
+    "no_change": 0,
+    "error": 0
+  },
+  "total": 52,
+  "corrections": [
+    {
+      "story_key": "Ketubot 103a_24-32",
+      "correction_type": "merge",
+      "current_start": 24,
+      "current_end": 32,
+      "jeff_note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא",
+      "markers_searched": [
+        "הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא"
+      ],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 103a_24-32",
+      "correction_type": "adjustment",
+      "jeff_note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא",
+      "markers_searched": [
+        "הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא"
+      ],
+      "status": "needs_manual_review",
+      "reason": "Adjust verdict requires manual interpretation"
+    },
+    {
+      "story_key": "Ketubot 103b_20-21",
+      "correction_type": "implement_approved",
+      "jeff_note": "The \"our interpretation is correct.\"  The change should be implemented by adding this portion to the story on this same page about Rabbi Yehudah HaNasi's death.",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 103b_3-3",
+      "correction_type": "merge",
+      "current_start": 3,
+      "current_end": 3,
+      "jeff_note": "Identification is correct. However, it is also part of a longer story and should be quoted with the rest of the story.",
+      "markers_searched": [],
+      "merge_type": "same_page",
+      "status": "needs_manual_review",
+      "reason": "No preceding story to merge with"
+    },
+    {
+      "story_key": "Ketubot 104a_1-5",
+      "correction_type": "implement_approved",
+      "jeff_note": "",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 104b_7-15",
+      "correction_type": "trim_boundary",
+      "current_start": 7,
+      "current_end": 15,
+      "jeff_note": "The last few words do not need to be included with the story, as they are the Talmud's comment on the story ( מֵעִיקָּרָא הוּא סְבַר הָנֵי וְהָנֵי דִּידֵיהּ, מָה לִי מֵהָנֵי, מָה לִי מֵהָנֵי, [15])",
+      "markers_searched": [
+        "מֵעִיקָּרָא הוּא סְבַר הָנֵי וְהָנֵי דִּידֵיהּ, מָה לִי מֵהָנֵי, מָה לִי מֵהָנֵי"
+      ],
+      "proposed_end": 15,
+      "end_text_marker": "מֵעִיקָּרָא הוּא סְבַר הָנֵי וְהָנֵי דִּידֵיהּ, מָה לִי מֵהָנֵי, מָה לִי מֵהָנֵי",
+      "marker_match": {
+        "segment_index": 15,
+        "char_offset": 70,
+        "match_type": "exact",
+        "context": "וֹפֵר הוּא, דִּבְהָא אֲפִילּוּ רַבָּה בַּר שֵׁילָא טָעֵי. מֵעִיקָּרָא הוּא סְבַר הָנֵי וְהָנֵי דִּידֵיהּ, מָה לִי מֵהָנֵ"
+      },
+      "status": "resolved",
+      "proposed_start": 7,
+      "before_text_preview": "§ The Gemara relates that the mother-in-law of Rav Ḥiyya Arikha, so named because of his height, as the word arikha literally means long, was also the...",
+      "after_text_preview": "§ The Gemara relates that the mother-in-law of Rav Ḥiyya Arikha, so named because of his height, as the word arikha literally means long, was also the..."
+    },
+    {
+      "story_key": "Ketubot 105b_14-16",
+      "correction_type": "merge",
+      "current_start": 14,
+      "current_end": 16,
+      "jeff_note": "The merge and boundaries are now correct",
+      "markers_searched": [],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 105b_14-16",
+      "correction_type": "implement_approved",
+      "jeff_note": "The merge and boundaries are now correct",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 111b_22-22",
+      "correction_type": "merge",
+      "current_start": 22,
+      "current_end": 22,
+      "jeff_note": "The merge and boundaries are now correct. ",
+      "markers_searched": [],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 111b_22-22",
+      "correction_type": "implement_approved",
+      "jeff_note": "The merge and boundaries are now correct. ",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 23a_13-16",
+      "correction_type": "trim_boundary",
+      "current_start": 13,
+      "current_end": 16,
+      "jeff_note": "Classification and reasoning are correct. The last few words are not part of the story but are the Gemara's comment on the story: ( טַעְמָא דְּלָא אֲתוֹ עֵדִים, הָא אֲתוֹ עֵדִים, מִיתַּסְרָא?)",
+      "markers_searched": [
+        "טַעְמָא דְּלָא אֲתוֹ עֵדִים, הָא אֲתוֹ עֵדִים, מִיתַּסְרָא"
+      ],
+      "proposed_end": 16,
+      "end_text_marker": "טַעְמָא דְּלָא אֲתוֹ עֵדִים, הָא אֲתוֹ עֵדִים, מִיתַּסְרָא",
+      "marker_match": {
+        "segment_index": 16,
+        "char_offset": 142,
+        "match_type": "exact",
+        "context": "ָאִיכָּא עֵדִים בִּמְדִינַת הַיָּם! הַשְׁתָּא מִיהַת לֵיתַנְהוּ קַמַּן. עֵדִים בְּצַד אִסְתָּן, וְ"
+      },
+      "status": "resolved",
+      "proposed_start": 13,
+      "before_text_preview": "The Gemara relates: There were these captive women who came to Neharde’a with their captors so that the local residents would redeem them. Shmuel’s fa...",
+      "after_text_preview": "The Gemara relates: There were these captive women who came to Neharde’a with their captors so that the local residents would redeem them. Shmuel’s fa..."
+    },
+    {
+      "story_key": "Ketubot 25b_4-4",
+      "correction_type": "merge",
+      "current_start": 4,
+      "current_end": 4,
+      "jeff_note": "The next paragraph should be included, as it is the continuation of the story.  זִימְנִין הָווּ יָתְבִי קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲתָא כִּי הָא מַעֲשֶׂה לְקַמֵּיהּ. אֲמַר לֵיהּ רֵישׁ לָקִישׁ: רְאִיתִיו שֶׁחִילֵּק עַל הַגּוֹרֶן? אֲמַר לֵיהּ רַבִּי יוֹחָנָן: וְאִם אֵין שָׁם גּוֹרֶן, בָּטְלָה כְּהוּנָּה? הֲדַר חַזְיֵיהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת, אֲמַר: שָׁמְעַתְּ מִילֵּי דְּבַר נַפָּחָא, וְלָא אֲמַרְתְּ לַן מִשְּׁמֵיהּ?",
+      "markers_searched": [
+        "זִימְנִין הָווּ יָתְבִי קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲתָא כִּי הָא מַעֲשֶׂה לְקַמֵּיהּ. אֲמַר לֵיהּ רֵישׁ לָקִישׁ: רְאִיתִיו שֶׁחִילֵּק עַל הַגּוֹרֶן? אֲמַר לֵיהּ רַבִּי יוֹחָנָן: וְאִם אֵין שָׁם גּוֹרֶן, בָּטְלָה כְּהוּנָּה? הֲדַר חַזְיֵיהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת, אֲמַר: שָׁמְעַתְּ מִילֵּי דְּבַר נַפָּחָא, וְלָא אֲמַרְתְּ לַן מִשְּׁמֵיהּ"
+      ],
+      "merge_type": "same_page",
+      "merge_with": {
+        "start_segment": 3,
+        "end_segment": 3
+      },
+      "proposed_merged_start": 3,
+      "proposed_merged_end": 4,
+      "status": "resolved_same_page"
+    },
+    {
+      "story_key": "Ketubot 25b_5-5",
+      "correction_type": "merge",
+      "current_start": 5,
+      "current_end": 5,
+      "jeff_note": "This should be merged with the previous story, as it is really the continuation of that story, and not a separate story",
+      "markers_searched": [],
+      "merge_type": "same_page",
+      "merge_with": {
+        "start_segment": 4,
+        "end_segment": 4
+      },
+      "proposed_merged_start": 4,
+      "proposed_merged_end": 5,
+      "status": "resolved_same_page"
+    },
+    {
+      "story_key": "Ketubot 26a_1-1",
+      "correction_type": "extend_boundary",
+      "current_start": 1,
+      "current_end": 1,
+      "jeff_note": "This is a story, but the boundaries are incorrect. The first half of the story is not included here but should be included too. This part needs to be included: מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהָיָה מֵסִיחַ לְפִי תּוּמּוֹ, וְאָמַר: זְכוּרַנִי כְּשֶׁאֲנִי תִּינוֹק וּמוּרְכָּב עַל כְּתֵיפוֹ שֶׁל אַבָּא, וְהוֹצִיאוּנִי מִבֵּית הַסֵּפֶר, וְהִפְשִׁיטוּנִי אֶת כּוּתׇּנְתִּי, וְהַטְבִּילוּנִי לֶאֱכוֹל בִּתְרוּמָה לָעֶרֶב. ",
+      "markers_searched": [
+        "מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהָיָה מֵסִיחַ לְפִי תּוּמּוֹ, וְאָמַר: זְכוּרַנִי כְּשֶׁאֲנִי תִּינוֹק וּמוּרְכָּב עַל כְּתֵיפוֹ שֶׁל אַבָּא, וְהוֹצִיאוּנִי מִבֵּית הַסֵּפֶר, וְהִפְשִׁיטוּנִי אֶת כּוּתׇּנְתִּי, וְהַטְבִּילוּנִי לֶאֱכוֹל בִּתְרוּמָה לָעֶרֶב"
+      ],
+      "proposed_start": 0,
+      "proposed_end": 1,
+      "marker_match": {
+        "segment_index": 0,
+        "char_offset": 47,
+        "match_type": "exact",
+        "context": "כִּי הָא דְּאָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל: מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהָיָה מֵסִיחַ לְפִי תּוּמּוֹ, וְאָמַר: זְכוּרַנִי כְּשֶׁאֲנִי תִּינוֹק וּמוּרְכָּב עַל כְּתֵיפוֹ שֶׁל אַבָּא, וְהוֹצִיאוּנִי מִבֵּית הַסֵּפֶר, וְהִפְשִׁיטוּנִי אֶת כּוּתׇּנְתִּי, וְהַטְבִּילוּנִי לֶאֱכוֹל בִּתְרוּמָה"
+      },
+      "status": "resolved",
+      "before_text_preview": "And Rabbi Ḥiyya, who related that incident, concluded the story and related that the man said: And my friends distanced themselves from me, and would ...",
+      "after_text_preview": "The Gemara answers: Rabbi Ḥiyya is speaking of a case where the brother speaks offhandedly in the context of a conversation about a different topic. I..."
+    },
+    {
+      "story_key": "Ketubot 3a_9-9",
+      "correction_type": "extend_boundary",
+      "current_start": 9,
+      "current_end": 9,
+      "jeff_note": "The boundaries of this story are correct. There seems to be some confusion in the \"note\" and in \"our interpretation\" as this story is entirely on 3a, not 2b. So this does not need adjustment.",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Could not determine extension direction"
+    },
+    {
+      "story_key": "Ketubot 3a_9-9",
+      "correction_type": "adjustment",
+      "jeff_note": "The boundaries of this story are correct. There seems to be some confusion in the \"note\" and in \"our interpretation\" as this story is entirely on 3a, not 2b. So this does not need adjustment.",
+      "markers_searched": [],
+      "status": "no_change",
+      "reason": "Jeff says no adjustment needed"
+    },
+    {
+      "story_key": "Ketubot 49b_12-12",
+      "correction_type": "fix_merge",
+      "jeff_note": "The boundaries of the stories are not correct. The story continues with the next few words on 50a, which should be merged. ",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Fix-merge requires undoing existing merge and re-merging with correct segments"
+    },
+    {
+      "story_key": "Ketubot 52b_17-17",
+      "correction_type": "merge",
+      "current_start": 17,
+      "current_end": 17,
+      "jeff_note": "The reasoning is correct. Here we just have highlighted the first part of the story so we need the continuation from the next page too.",
+      "markers_searched": [],
+      "merge_type": "cross_page",
+      "merge_target_page": "Ketubot 53a",
+      "continuation_start_segment": 0,
+      "continuation_end_segment": 1,
+      "status": "resolved_cross_page"
+    },
+    {
+      "story_key": "Ketubot 52b_17-17",
+      "correction_type": "implement_approved",
+      "jeff_note": "The reasoning is correct. Here we just have highlighted the first part of the story so we need the continuation from the next page too.",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 53a_2-3",
+      "correction_type": "extend_boundary",
+      "current_start": 2,
+      "current_end": 3,
+      "jeff_note": "The boundaries are not correct. The first half of the story is not quoted here. It begins רב פפא איעסק ליה לבריה בי אבא סוראה, אזיל למיכתב לה כתובתה, שמע יהודה בר מרימר, נפק אתא איתחזי ליה. All the text from these words until  the ending quoted here should be included",
+      "markers_searched": [
+        "רב פפא איעסק ליה לבריה בי אבא סוראה, אזיל למיכתב לה כתובתה, שמע יהודה בר מרימר, נפק אתא איתחזי ליה"
+      ],
+      "proposed_start": 1,
+      "proposed_end": 3,
+      "status": "inferred",
+      "inference": "Extended start by one segment",
+      "before_text_preview": "Eventually, Rav Pappa forced Yehuda bar Mareimar and he entered. He was silent, and sat without uttering a word. Abba of Sura thought that Yehuda bar ...",
+      "after_text_preview": "Rav Pappa continued: Are you worried that your arrival will pressure Abba of Sura to give his daughter a more substantial dowry? But this too is an or..."
+    },
+    {
+      "story_key": "Ketubot 54a_22-22",
+      "correction_type": "merge",
+      "current_start": 22,
+      "current_end": 22,
+      "jeff_note": "The classification is correct. The continuation of the story on the next page should also be included. That is, a merge of the pages is required. These words from 54a that should be included here are: ״ארבע מאה זוזי מן חמרא לברת״. אייקר חמרא. אמר רב יוסף: רווחא ליתמי.",
+      "markers_searched": [
+        "״ארבע מאה זוזי מן חמרא לברת״. אייקר חמרא. אמר רב יוסף: רווחא ליתמי"
+      ],
+      "merge_type": "cross_page",
+      "merge_target_page": "Ketubot 54b",
+      "continuation_end_segment": 0,
+      "marker_match": {
+        "segment_index": 0,
+        "char_offset": 0,
+        "match_type": "exact",
+        "context": "״אַרְבַּע מְאָה זוּזֵי מִן חַמְרָא לִבְרַת״. אִיַּיקַּר חַמְרָא. אָמַר רַב יוֹסֵף: רַו"
+      },
+      "continuation_start_segment": 0,
+      "status": "resolved_cross_page"
+    },
+    {
+      "story_key": "Ketubot 56b_11-11",
+      "correction_type": "merge",
+      "current_start": 11,
+      "current_end": 11,
+      "jeff_note": "The merge is correct. But the story actually ends with the next line, which completes's Shmuel's statement אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה.  ",
+      "markers_searched": [
+        "אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה"
+      ],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 56b_11-11",
+      "correction_type": "adjustment",
+      "jeff_note": "The merge is correct. But the story actually ends with the next line, which completes's Shmuel's statement אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה.  ",
+      "markers_searched": [
+        "אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה"
+      ],
+      "status": "needs_manual_review",
+      "reason": "Adjust verdict requires manual interpretation"
+    },
+    {
+      "story_key": "Ketubot 60a_2-2",
+      "correction_type": "extend_boundary",
+      "current_start": 2,
+      "current_end": 2,
+      "jeff_note": "The \"Our interpretation\" is correct, so the boundaries in the highlight should be adjusted accordingly. ",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Could not determine extension direction"
+    },
+    {
+      "story_key": "Ketubot 60a_2-2",
+      "correction_type": "implement_approved",
+      "jeff_note": "The \"Our interpretation\" is correct, so the boundaries in the highlight should be adjusted accordingly. ",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 60b_2-3",
+      "correction_type": "extend_boundary",
+      "current_start": 2,
+      "current_end": 3,
+      "jeff_note": "The classification and reasoning are correct. The boundaries of the story need adjusting. It should start with אֲרִיסֵיהּ דְּאַבָּיֵי and the next paragraph should be in cluded, as it is Abaye's reflection on the story: אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר.",
+      "markers_searched": [
+        "אֲרִיסֵיהּ דְּאַבָּיֵי",
+        "אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר"
+      ],
+      "proposed_start": 2,
+      "proposed_end": 3,
+      "marker_match": {
+        "segment_index": 2,
+        "char_offset": 84,
+        "match_type": "exact",
+        "context": " לִי הִתִּיר רַבִּי חֲנִינָא לָשֵׂאת לְאַחַר חֲמִשָּׁה עָשָׂר "
+      },
+      "status": "resolved",
+      "before_text_preview": "Ulla said: The halakha is in accordance with the opinion of Rabbi Yehuda. And Mar Ukva said: Rabbi Ḥanina allowed me to marry a nursing woman after fi...",
+      "after_text_preview": "Ulla said: The halakha is in accordance with the opinion of Rabbi Yehuda. And Mar Ukva said: Rabbi Ḥanina allowed me to marry a nursing woman after fi..."
+    },
+    {
+      "story_key": "Ketubot 60b_5-9",
+      "correction_type": "extend_boundary",
+      "current_start": 5,
+      "current_end": 9,
+      "jeff_note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story.",
+      "markers_searched": [
+        "הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ"
+      ],
+      "marker_match": {
+        "segment_index": 6,
+        "char_offset": 8,
+        "match_type": "exact",
+        "context": "אִינִי?! וְהָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ."
+      },
+      "status": "resolved"
+    },
+    {
+      "story_key": "Ketubot 62b_14-14",
+      "correction_type": "extend_boundary",
+      "current_start": 14,
+      "current_end": 14,
+      "jeff_note": "The highlight now is correct. The boundaries of the story are correct. ",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Could not determine extension direction"
+    },
+    {
+      "story_key": "Ketubot 62b_14-14",
+      "correction_type": "implement_approved",
+      "jeff_note": "The highlight now is correct. The boundaries of the story are correct. ",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 62b_6-7",
+      "correction_type": "implement_approved",
+      "jeff_note": "",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 62b_9-9",
+      "correction_type": "implement_approved",
+      "jeff_note": "",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 63b_8-8",
+      "correction_type": "extend_boundary",
+      "current_start": 8,
+      "current_end": 8,
+      "jeff_note": "Out interpretation is correct, and the change should be implemented so that the boundaries are correct.  ",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Could not determine extension direction"
+    },
+    {
+      "story_key": "Ketubot 63b_8-8",
+      "correction_type": "implement_approved",
+      "jeff_note": "Out interpretation is correct, and the change should be implemented so that the boundaries are correct.  ",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 67b_17-17",
+      "correction_type": "merge",
+      "current_start": 17,
+      "current_end": 17,
+      "jeff_note": "the classification is correct. But the boundaries are not. The story continues, and a merge is required with the text at the top of 68a. The following should be quoted too as part of the story: בטלי כסף או בטלי זהב? אמר, היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן היינו חוטאין בכל יום, שנאמר: וקרא עליך אל ה' והיה בך חטא. ",
+      "markers_searched": [
+        "בטלי כסף או בטלי זהב? אמר, היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן היינו חוטאין בכל יום, שנאמר: וקרא עליך אל ה' והיה בך חטא"
+      ],
+      "merge_type": "cross_page",
+      "merge_target_page": "Ketubot 68a",
+      "continuation_start_segment": 0,
+      "continuation_end_segment": 15,
+      "status": "resolved_cross_page"
+    },
+    {
+      "story_key": "Ketubot 69a_14-16",
+      "correction_type": "extend_boundary",
+      "current_start": 14,
+      "current_end": 16,
+      "jeff_note": "The boundaries are correct now",
+      "markers_searched": [],
+      "status": "needs_manual_review",
+      "reason": "Could not determine extension direction"
+    },
+    {
+      "story_key": "Ketubot 69a_14-16",
+      "correction_type": "implement_approved",
+      "jeff_note": "The boundaries are correct now",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 69b_10-12",
+      "correction_type": "merge",
+      "current_start": 10,
+      "current_end": 12,
+      "jeff_note": "Classification is correct. Merge is required. The story continues with a few words from the top of 70a. ר' מאחר היא, דאמר מצוה לקיים דברי המת. So the story identification should also be changed to Ketubot 69b-70a",
+      "markers_searched": [
+        "ר' מאחר היא, דאמר מצוה לקיים דברי המת"
+      ],
+      "merge_type": "cross_page",
+      "merge_target_page": "Ketubot 70a",
+      "continuation_start_segment": 0,
+      "continuation_end_segment": 2,
+      "status": "resolved_cross_page"
+    },
+    {
+      "story_key": "Ketubot 77b_6-8",
+      "correction_type": "extend_boundary",
+      "current_start": 6,
+      "current_end": 8,
+      "jeff_note": "Correct reasoning. Boundaries are not exact. The story begins with the previous line: רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא. ",
+      "markers_searched": [
+        "רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא"
+      ],
+      "proposed_start": 5,
+      "proposed_end": 8,
+      "marker_match": {
+        "segment_index": 5,
+        "char_offset": 149,
+        "match_type": "exact",
+        "context": "ָזָר לָא עָיֵיל בְּאֻהְלֵיהּ. רַבִּי אַמֵּי וְרַבִּי אַסִּי לָא הֲווֹ אָכְלִי מִבֵּיעֵי דְּהָהִיא מְבוֹאָה. רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְ"
+      },
+      "status": "resolved",
+      "before_text_preview": "When Rabbi Yehoshua ben Levi was on the verge of dying, they said to the Angel of Death: Go and perform his bidding, as he is a righteous man and dese...",
+      "after_text_preview": "Rabbi Yoḥanan would announce: Be careful of the flies found on those afflicted with ra’atan, as they are carriers of the disease. Rabbi Zeira would no..."
+    },
+    {
+      "story_key": "Ketubot 84b_11-11",
+      "correction_type": "merge",
+      "current_start": 11,
+      "current_end": 11,
+      "jeff_note": "The new boundaries and merge are now correct",
+      "markers_searched": [],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 84b_11-11",
+      "correction_type": "implement_approved",
+      "jeff_note": "The new boundaries and merge are now correct",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 85a_8-8",
+      "correction_type": "merge",
+      "current_start": 8,
+      "current_end": 8,
+      "jeff_note": "Correct but the boundaries are wrong. THe next paragraph is part of the story. This paragraph is identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story.",
+      "markers_searched": [],
+      "merge_type": "same_page",
+      "merge_with": {
+        "start_segment": 7,
+        "end_segment": 7
+      },
+      "proposed_merged_start": 7,
+      "proposed_merged_end": 8,
+      "status": "resolved_same_page"
+    },
+    {
+      "story_key": "Ketubot 85a_9-10",
+      "correction_type": "merge",
+      "current_start": 9,
+      "current_end": 10,
+      "jeff_note": "Correct but the boundaries are wrong. See the previous comment . This selection is part of the previous story in the previous paragraph of gemara.  This selection should not be identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story but combined with the previous story (הָהִיא אִיתְּתָא דְּאִיחַיַּיבָא שְׁבוּעָה בֵּי דִינָא דְּרָבָא. אֲמַרָה לֵיהּ בַּת רַב חִסְדָּא: יָדְעָנָא בָּהּ דַּחֲשׁוּדָה אַשְּׁבוּעָה. אַפְכַהּ רָבָא לִשְׁבוּעָה אַשֶּׁכְּנֶגְדָּהּ.)",
+      "markers_searched": [
+        "הָהִיא אִיתְּתָא דְּאִיחַיַּיבָא שְׁבוּעָה בֵּי דִינָא דְּרָבָא. אֲמַרָה לֵיהּ בַּת רַב חִסְדָּא: יָדְעָנָא בָּהּ דַּחֲשׁוּדָה אַשְּׁבוּעָה. אַפְכַהּ רָבָא לִשְׁבוּעָה אַשֶּׁכְּנֶגְדָּהּ"
+      ],
+      "merge_type": "same_page",
+      "merge_with": {
+        "start_segment": 8,
+        "end_segment": 8
+      },
+      "proposed_merged_start": 8,
+      "proposed_merged_end": 10,
+      "status": "resolved_same_page"
+    },
+    {
+      "story_key": "Ketubot 85b_9-9",
+      "correction_type": "merge",
+      "current_start": 9,
+      "current_end": 9,
+      "jeff_note": "The merge is now correct. However, the boundaries of the story need adjustment. The last line is the Talmud's comment on the story and not part of the story itself. This line should be omitted: מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי. [1].",
+      "markers_searched": [
+        "מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי"
+      ],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 85b_9-9",
+      "correction_type": "adjustment",
+      "jeff_note": "The merge is now correct. However, the boundaries of the story need adjustment. The last line is the Talmud's comment on the story and not part of the story itself. This line should be omitted: מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי. [1].",
+      "markers_searched": [
+        "מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי"
+      ],
+      "status": "needs_manual_review",
+      "reason": "Adjust verdict requires manual interpretation"
+    },
+    {
+      "story_key": "Ketubot 8b_6-10",
+      "correction_type": "merge",
+      "current_start": 6,
+      "current_end": 10,
+      "jeff_note": "The interpretation is correct. The highlight has to be adjusted as here it is still the continuation of the story without the first half. ",
+      "markers_searched": [],
+      "merge_type": "same_page",
+      "merge_with": {
+        "start_segment": 13,
+        "end_segment": 13
+      },
+      "proposed_merged_start": 13,
+      "proposed_merged_end": 10,
+      "status": "resolved_same_page"
+    },
+    {
+      "story_key": "Ketubot 8b_6-10",
+      "correction_type": "implement_approved",
+      "jeff_note": "The interpretation is correct. The highlight has to be adjusted as here it is still the continuation of the story without the first half. ",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    },
+    {
+      "story_key": "Ketubot 91a_19-20",
+      "correction_type": "merge",
+      "current_start": 19,
+      "current_end": 20,
+      "jeff_note": "The merge and boundaries are now correct. ",
+      "markers_searched": [],
+      "merge_type": "unclear",
+      "status": "needs_manual_review",
+      "reason": "Could not determine merge type from note"
+    },
+    {
+      "story_key": "Ketubot 91a_19-20",
+      "correction_type": "implement_approved",
+      "jeff_note": "The merge and boundaries are now correct. ",
+      "status": "already_correct",
+      "reason": "Jeff confirms boundaries/merge are already correct"
+    },
+    {
+      "story_key": "Ketubot 91b_15-16",
+      "correction_type": "trim_boundary",
+      "current_start": 15,
+      "current_end": 16,
+      "jeff_note": "The legal discussions that follows the story need not be quoted. The story ends וַאֲתָא אִיהוּ וְקָא מְעַרְעַר",
+      "markers_searched": [
+        "וַאֲתָא אִיהוּ וְקָא מְעַרְעַר"
+      ],
+      "proposed_end": 15,
+      "marker_match": {
+        "segment_index": 16,
+        "char_offset": 27,
+        "match_type": "exact",
+        "context": "ָא אִימֵּיהּ וְלָא (אִי)עַרְעַרָא, וַאֲתָא אִיהוּ וְקָא מְעַרְעַר. סְב"
+      },
+      "status": "resolved",
+      "proposed_start": 15,
+      "before_text_preview": "§ The Gemara relates that there was a certain man who sold the rights to his mother’s marriage contract for a certain financial advantage, i.e., he re...",
+      "after_text_preview": "§ The Gemara relates that there was a certain man who sold the rights to his mother’s marriage contract for a certain financial advantage, i.e., he re..."
+    },
+    {
+      "story_key": "Ketubot 91b_2-7",
+      "correction_type": "trim_boundary",
+      "current_start": 2,
+      "current_end": 7,
+      "jeff_note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק.",
+      "markers_searched": [
+        "וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק"
+      ],
+      "proposed_end": 3,
+      "end_text_marker": "וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק",
+      "marker_match": {
+        "segment_index": 3,
+        "char_offset": 68,
+        "match_type": "exact",
+        "context": "אֲמַר לֵיהּ: אִי שַׁוְיָא לָךְ אַלְפָּא זוּזֵי — לְחַיֵּי, וְאִי לָא — שְׁקֹיל אַלְפָּא זו"
+      },
+      "status": "resolved",
+      "proposed_start": 2,
+      "before_text_preview": "There was a certain man who had a creditor with a claim of one thousand dinars against him. He had two mansions [appedanei]. He sold them, one for fiv...",
+      "after_text_preview": "There was a certain man who had a creditor with a claim of one thousand dinars against him. He had two mansions [appedanei]. He sold them, one for fiv..."
+    },
+    {
+      "story_key": "Ketubot 91b_8-10",
+      "correction_type": "trim_boundary",
+      "current_start": 8,
+      "current_end": 10,
+      "jeff_note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק.",
+      "markers_searched": [
+        "וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק"
+      ],
+      "status": "needs_manual_review",
+      "reason": "Could not locate boundary marker"
+    },
+    {
+      "story_key": "Ketubot 94b_6-9",
+      "correction_type": "implement_approved",
+      "jeff_note": "All correct now",
+      "status": "needs_manual_review",
+      "reason": "Check needs_review_log for the proposed change to implement"
+    }
+  ]
+}
