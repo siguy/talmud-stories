@@ -17,6 +17,72 @@
 | v7 (G3 Flash) | Feb 2026 | Model Upgrade | Gemini 3 Flash hits **92.1%** — new best |
 | v7 (61-112) | Feb 2026 | Generalization | 98 stories on unseen Ketubot pages 61-112 |
 | v8 | Feb 2026 | Cross-Page Fix | Fix 14 cut-off stories + 5 missing conclusions from Jeff's review |
+| v9 | Feb 2026 | Remerge | Undo 12 bad cross-page merges, re-stitch from segment 0 |
+| Canonical | Mar 2026 | Unified Dataset | Merge all feedback into single 189-story canonical file |
+| v10 Golden | Mar 2026 | Golden Dataset | 182 stories, 48 corrections, composite 0.93. Detector experiments reverted. |
+
+---
+
+## v10 Golden: Definitive Ketubot Ground Truth
+
+**Date:** 2026-03-25
+**Tag:** `v10-golden-ketubot`
+
+**What changed:** Processed Jeff's comprehensive canonical review (all 189 stories, March 2026) into the definitive ground truth. Applied 17 classification corrections + 32 boundary/merge corrections. Built evaluation framework.
+
+**Results:**
+- 182 stories (down from 189: merges + FP removal)
+- Classification F1: 0.92, Boundary IoU: 0.98, Merge F1: 0.86, Composite: 0.93
+- 26 false positives identified (legal discussions with narrative framing)
+- 0 needs_review remaining
+
+**Detector experiments (REVERTED):**
+- Tried expanding few-shot examples from 128 to 282 entries → overfitting (0.93 → 0.89)
+- Tried strengthening legal disqualifiers in prompt → catastrophic regression (0.93 → 0.57)
+- Tried ML post-processing classifier → features don't separate FPs from TPs
+- Root cause: train/test contamination + genuine ambiguity at domain expertise level
+- Conclusion: 0.93 is the prompt-based ceiling for Ketubot. Tag `pre-detector-changes` marks rollback point.
+
+**Key files:**
+- `results/canonical/ketubot_canonical.json` — the golden dataset
+- `scripts/evaluate_golden.py` — IMMUTABLE evaluation harness
+- `docs/golden/` — findings, research, error taxonomy, workflow docs
+- `tasks/lessons.md` — 8 lessons learned
+
+**Documentation:** See `docs/golden/findings_v10_golden_dataset.md` for full writeup.
+
+---
+
+## Canonical: Unified Dataset for Ketubot
+
+**Goal:** Merge all of Jeff's feedback (v4 through v8) into a single validated canonical file.
+
+**Canonical File:** `results/canonical/ketubot_canonical.json`
+- Base: v7 (pages 2-60) + v9 (pages 61-112)
+- 189 total stories
+
+**Corrections Applied:**
+| Category | Count |
+|----------|-------|
+| Auto-applied (clear Jeff feedback) | 30 |
+| Needs review (ambiguous notes) | 19 |
+| No change needed | 143 |
+
+**AI Accuracy:** 84% (143/170 stories correct where Jeff gave clear verdicts)
+
+**Most Common Error:** Over-classification — 21 of 30 corrections were downgrades (AI classified higher than Jeff would)
+
+**Review UI:** `validation/ui/ketubot_canonical_review.html`
+- 3 collapsible sections: Needs Review (19), Auto-Applied (27), All Other (143)
+- Classification filter (YES/HIGH_CONFIDENCE/LOW_CONFIDENCE/NOT_A_STORY)
+- Full story cards with text, criteria, feedback buttons
+- Hosted: https://siguy.github.io/talmud-stories/validation/ui/ketubot_canonical_review.html
+
+**Files:**
+- `scripts/build_canonical.py` — Builds canonical from base results + feedback
+- `results/canonical/ketubot_canonical.json` — The canonical file
+- `validation/generators/generate_canonical_review_ui.py` — UI generator (all 189 stories)
+- `validation/ui/ketubot_canonical_review.html` — Review interface
 
 ---
 
