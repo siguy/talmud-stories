@@ -197,9 +197,30 @@ the same false positive problem as within-page detection. Triage filters either 
 everything or let everything through. Needs careful prompt engineering to reach
 production quality.
 
-**Decision:** Run Kiddushin with the current page-by-page approach (86% merge rate).
-The boundary check is a proven concept but not production-ready. Revisit after
-Kiddushin results show whether merge accuracy is a priority issue.
+### Revised approach: Continuation check (not story detection)
+
+The first boundary check attempt failed because it asked "is there a story at this
+boundary?" — same vague question, same false positive problem. The right question is:
+"does THIS specific story we already found continue on the next page?"
+
+**Stage 4f: Continuation check**
+1. After all merge passes (4b-4e), find pages where the last detected story does NOT
+   have `continues_to_next_page = true` and is NOT already merged
+2. For each, send the LLM: the story text + first 5-8 segments of the next page
+3. Ask: "Is the text at the top of the next page a continuation of this specific story?
+   Same characters, same situation, narrative continues?"
+4. This is a yes/no continuation question, not a story detection question
+
+**Why this is different:**
+- Only fires for EXISTING stories near page boundaries (~20-30 per tractate)
+- Asks about a SPECIFIC story's continuation, not "find any story"
+- Binary yes/no answer, not open-ended detection
+- False positive rate should be much lower: hard to falsely match a specific narrative
+
+**Cost:** ~$0.03 per tractate (20-30 small API calls)
+
+**Decision:** Implement as part of Kiddushin run. Compare merge results to Ketubot
+baseline (86%). If it catches additional merges without noise, keep it. If not, drop it.
 
 ---
 
