@@ -480,11 +480,162 @@ Return JSON:
 
         return stitched
 
+    def continuation_check(self, all_results: List[Dict],
+                           pages: List[Dict],
+                           triage_results: Dict[str, List[EventType]],
+                           delay: float = 0.5) -> int:
+        """
+        Stage 4f: Continuation check for stories near page boundaries.
+
+        Unlike stitch (4d) which only fires when continues_to_next_page is already set,
+        this checks stories that are the LAST story on their page AND end near the
+        page boundary, but were NOT flagged as continuing.
+
+        Asks: "Does THIS specific story continue on the next page?"
+        Binary yes/no — NOT "find a story."
+
+        Returns count of stories extended.
+        """
+        if not self.client:
+            return 0
+
+        extended = 0
+        page_by_ref = {p.get('ref', ''): p for p in pages}
+        ref_order = [p.get('ref', '') for p in pages]
+
+        for page_result in all_results:
+            ref = page_result.get('ref', '')
+            stories = page_result.get('stories', [])
+            if not stories:
+                continue
+
+            # Find the last real story on this page
+            real_stories = [s for s in stories
+                           if s.get('classification') != 'NOT_A_STORY'
+                           and not s.get('spans_pages')]
+            if not real_stories:
+                continue
+
+            last_story = max(real_stories, key=lambda s: s.get('end_segment', 0))
+
+            # Skip if already has continuation flag or is already merged
+            cont = last_story.get('continuation', {})
+            if cont.get('continues_to_next_page'):
+                continue  # Already handled by stitch pass (4d)
+
+            # Check if story ends near the page boundary (within last 3 segments)
+            segments = page_result.get('segments', [])
+            if not segments:
+                continue
+            last_seg_idx = max(s.get('index', 0) for s in segments)
+            story_end = last_story.get('end_segment', 0)
+            if story_end < last_seg_idx - 3:
+                continue  # Story ends too far from page boundary
+
+            # Find next page
+            try:
+                idx = ref_order.index(ref)
+            except ValueError:
+                continue
+            if idx >= len(ref_order) - 1:
+                continue
+            next_ref = ref_order[idx + 1]
+            next_page = page_by_ref.get(next_ref)
+            if not next_page:
+                continue
+
+            # Build story text
+            start = last_story.get('start_segment', 0)
+            end = last_story.get('end_segment', 0)
+            story_lines = []
+            for seg in segments:
+                if start <= seg.get('index', -1) <= end:
+                    eng = re.sub(r'<[^>]+>', '', seg.get('english', ''))[:300]
+                    heb = seg.get('hebrew', '')[:200]
+                    story_lines.append(f"Seg {seg['index']}:\n  English: {eng}\n  Hebrew: {heb}")
+            story_text = '\n'.join(story_lines)
+
+            # Build next page segments (first 8)
+            next_segs = next_page.get('segments', [])[:8]
+            next_events = triage_results.get(next_ref, [])
+            next_lines = []
+            for seg in next_segs:
+                idx_s = seg.get('index', 0)
+                eng = re.sub(r'<[^>]+>', '', seg.get('english', ''))[:300]
+                heb = seg.get('hebrew', '')[:200]
+                et = next_events[idx_s].value if idx_s < len(next_events) else "UNKNOWN"
+                next_lines.append(f"[{et}] Seg {idx_s}:\n  English: {eng}\n  Hebrew: {heb}")
+            next_text = '\n'.join(next_lines)
+
+            summary = last_story.get('one_sentence_summary', 'N/A')
+
+            prompt = f"""You are checking whether a specific Talmudic story continues across a page boundary.
+
+STORY ON {ref} (segments {start}-{end}):
+{story_text}
+
+SUMMARY: {summary}
+
+FIRST SEGMENTS OF NEXT PAGE ({next_ref}):
+{next_text}
+
+QUESTION: Is the text at the top of {next_ref} a direct continuation of this specific story?
+
+To answer YES, ALL of these must be true:
+- The SAME characters or rabbis from the story appear at the top of {next_ref}
+- The SAME situation or narrative event continues (not a new topic)
+- The narrative flows directly — removing the page break would read as one story
+
+To answer NO (most cases):
+- The next page starts a new topic, new discussion, or new story
+- Different characters appear
+- The connection is only thematic (same legal topic) but not the same narrative
+
+This is a CONSERVATIVE check. When in doubt, answer NO.
+
+Return JSON:
+{{
+  "continues": true/false,
+  "end_segment": <int — last segment of continuation on {next_ref}, or null if false>,
+  "reasoning": "brief explanation"
+}}"""
+
+            try:
+                use_json = self._use_json_mode
+                content = self._call_google(prompt, max_tokens=2048, json_mode=use_json)
+                if use_json:
+                    try:
+                        result = json.loads(content) if content else None
+                    except json.JSONDecodeError:
+                        result = self._parse_json_response(content)
+                else:
+                    result = self._parse_json_response(content)
+
+                if result and result.get('continues'):
+                    end_seg = result.get('end_segment')
+                    if end_seg is not None:
+                        last_story['spans_pages'] = [ref, next_ref]
+                        last_story['start_segment_page2'] = 0
+                        last_story['end_segment_page2'] = end_seg
+                        last_story['continuation_check_extended'] = True
+                        extended += 1
+                        print(f"  Continuation check: {ref} → {next_ref} (ends seg {end_seg})")
+                        print(f"    Reasoning: {result.get('reasoning', '')[:100]}")
+
+                if delay > 0:
+                    time.sleep(delay)
+
+            except Exception as e:
+                print(f"  Continuation check error for {ref}: {e}")
+
+        return extended
+
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
                      delay: float = 1.0,
                      skip_triage: bool = False,
-                     enable_adversarial: bool = False) -> Dict:
+                     enable_adversarial: bool = False,
+                     tractate: str = 'Ketubot') -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
 
@@ -493,6 +644,7 @@ Return JSON:
             triage_results: Pre-computed triage results (or None to compute)
             delay: Delay between API calls
             skip_triage: If True, process all pages (no triage filtering)
+            tractate: Tractate name for output metadata
         """
         # Stage 1: Event Triage
         if triage_results is None and not skip_triage:
@@ -638,11 +790,18 @@ Return JSON:
         if stitch_count:
             print(f"  Cross-page stitching: {stitch_count} stories extended")
 
+        # 4f: Continuation check — for stories near page boundaries without continuation flags
+        continuation_count = self.continuation_check(
+            all_results, pages, triage_results, delay=delay
+        )
+        if continuation_count:
+            print(f"  Continuation check: {continuation_count} stories extended")
+
         # Detect duplicates
         all_results = detect_duplicate_stories(all_results)
 
         return {
-            'tractate': 'Ketubot',
+            'tractate': tractate,
             'version': 'v8',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),

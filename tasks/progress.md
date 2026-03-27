@@ -1,65 +1,56 @@
 # Progress: Kiddushin Run
 
-**Saved:** 2026-03-27, pre-compact
+**Saved:** 2026-03-27, post-run
 
 ## What's Done
+
+### Previously
 - Golden Ketubot dataset complete (182 stories, 0.93 composite)
-- All documentation updated (CLAUDE.md, FOR_SIMON.md, new_tractate_workflow, kiddushin_run_plan, false_positive_learning_plan, lessons.md with 9 lessons, VERSION_HISTORY)
-- Boundary check experiment: concept proved (2/3 targeted), but full-pipeline was too noisy (28 FPs). Reverted. Reframed as "continuation check" (ask if a SPECIFIC story continues, not "find any story").
-- Kiddushin selected as next tractate (164 pages, ~$0.25, Jeff suggested it)
+- All documentation updated
+- Boundary check experiment reverted, reframed as "continuation check"
+- Kiddushin selected as next tractate (Jeff suggested it)
 
-## What's Next — Kiddushin Run
-Follow `docs/golden/kiddushin_run_plan.md` exactly.
+### This Session — Steps 1-5 COMPLETE
+- [x] Step 1: Wrote `scripts/run_kiddushin.py` (adapted from run_ketubot_61_112.py)
+- [x] Step 2: Implemented Stage 4f continuation check in `src/story_detector_v7.py`
+  - New method `continuation_check()` — fires for last story on each page near boundary
+  - Conservative prompt: requires same characters, same situation, direct continuation
+  - Wired into `run_pipeline()` after stage 4d stitch
+  - Also parameterized `tractate` in `run_pipeline()` (was hardcoded 'Ketubot')
+- [x] Step 3: Ran on Kiddushin 2a-82b — completed successfully
+- [x] Step 4: Post-run spot checks — all look good
+- [x] Step 5: Generated review UI — verified in browser
 
-### Step 1: Write `scripts/run_kiddushin.py`
-- Adapt from `scripts/run_ketubot_61_112.py`
-- Tractate: Kiddushin, pages 2a-82b (164 pages)
-- Model: gemini-3-flash-preview
-- Output: `results/kiddushin/kiddushin_v7.json`
-- Include Stage 4f: continuation check (new — see below)
-- Load ground truth from v5.1 feedback only (Ketubot examples are cross-tractate, no contamination)
-- Parameterize tractate name in output metadata
+### Results
+- **162 pages** fetched (2a-82b)
+- **109 skipped** by triage (67% skip rate — slightly higher than Ketubot's ~60%)
+- **53 pages** processed
+- **96 stories** detected (higher than predicted 65-80)
+  - YES: 34
+  - HIGH_CONFIDENCE: 16
+  - LOW_CONFIDENCE: 46
+  - NOT_A_STORY: 5
+- **12 cross-page stories** detected:
+  - 5 via merge (continuation flags)
+  - 4 via stitch (targeted LLM)
+  - **3 via continuation check (4f)** — NEW, working!
+    - Kiddushin 29b→30a (Rav Huna/Rav Hamnuna)
+    - Kiddushin 31a→31b (Dama ben Netina — famous story)
+    - Kiddushin 81b→82a (actions for sake of Heaven)
 
-### Step 2: Implement Stage 4f continuation check
-Add to `src/story_detector_v7.py` as a new method:
-1. After all merge passes, find pages where last detected story has NO `continues_to_next_page` flag and is NOT already merged
-2. Send LLM: story text + first 5-8 segments of next page
-3. Ask: "Is the top of the next page a continuation of THIS specific story?"
-4. Binary yes/no — NOT "find a story"
-5. If yes: extend the story with `spans_pages` fields
-- ~20-30 API calls, ~$0.03 cost
+### Files Created
+- `scripts/run_kiddushin.py` — run script
+- `results/kiddushin/kiddushin_v7.json` — detection results
+- `results/kiddushin/event_triage_kiddushin.json` — triage results
+- `results/kiddushin/kiddushin_pages.json` — cached Sefaria pages
+- `validation/generators/generate_kiddushin_review_ui.py` — review UI generator
+- `validation/ui/kiddushin_review.html` — review UI for Jeff
 
-### Step 3: Run on Kiddushin
-- Fetch pages from Sefaria API
-- Run triage → detection → post-processing → continuation check
-- Save results
+### Files Modified
+- `src/story_detector_v7.py` — added `continuation_check()` method, `tractate` param in `run_pipeline()`
 
-### Step 4: Post-run checks (before Jeff)
-- Count stories, classification distribution, triage skip rate
-- Eyeball 10-15 stories
-- Check continuation check results — how many found, do they look right?
-- Spot-check cross-page stories
-
-### Step 5: Generate review UI
-- Adapt `validation/generators/generate_canonical_review_ui.py` for Kiddushin
-- All stories in one section (first-pass, no needs_review split)
-
-### Step 6: Prepare to send to Jeff
-- Review UI HTML file
-- Context email (adapt from `docs/golden/email_draft_jeff_v10_update.md`)
-- Error taxonomy reference
-
-## Key Files to Read After Compact
-- `docs/golden/kiddushin_run_plan.md` — the full plan with checklists
-- `docs/golden/false_positive_learning_plan.md` — FP handling checklists
-- `docs/golden/new_tractate_workflow.md` — generic workflow
-- `scripts/run_ketubot_61_112.py` — template for run script
-- `src/story_detector_v7.py` — detector code (add continuation check here)
-- `CLAUDE.md` — project config (up to date)
-- `tasks/lessons.md` — 9 lessons (read before starting)
-
-## Git State
-- Branch: `claude/sefaria-talmud-story-search-Mw1Yg`
-- Last commit: `6b2e471` (revised continuation check approach)
-- Tags: `v10-golden-ketubot`, `pre-detector-changes`
-- No unstaged changes (except this file)
+## What's Next
+- [x] Write context email for Jeff — `docs/golden/email_draft_jeff_kiddushin.md`
+- [ ] Commit all changes
+- [ ] Send Jeff: review UI HTML + email + error taxonomy reference
+- [ ] After Jeff reviews: score, analyze FPs, build golden dataset (see kiddushin_run_plan.md)
