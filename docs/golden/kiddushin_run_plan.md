@@ -190,12 +190,16 @@ no merge logic needed.
 - Con: Triage (Stage 1) currently works per-page, would need rethinking
 - Cost impact: Negligible (~$0.07 more per tractate)
 
-**Status:** Not yet tested. Could be a good experiment for Kiddushin if the standard
-page-by-page run shows the same ~14% merge miss rate. Would require modifying
-`story_detector_v7.py`'s `run_pipeline()` to use segment windows instead of pages.
+**Status:** Tested on 2026-03-27. Targeted test on 3 known missed boundaries caught 2/3
+(proof of concept works). But full-pipeline test found 28 false positives across all
+boundaries — the LLM is too generous about what counts as a story at page breaks,
+the same false positive problem as within-page detection. Triage filters either blocked
+everything or let everything through. Needs careful prompt engineering to reach
+production quality.
 
-**Decision:** Run Kiddushin with the current page-by-page approach first. Measure merge
-accuracy. If merge misses are a significant issue, implement sliding windows as a follow-up.
+**Decision:** Run Kiddushin with the current page-by-page approach (86% merge rate).
+The boundary check is a proven concept but not production-ready. Revisit after
+Kiddushin results show whether merge accuracy is a priority issue.
 
 ---
 
