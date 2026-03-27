@@ -153,6 +153,52 @@ All detected stories, classified by confidence. Jeff can open in any browser.
 
 ---
 
+## Cross-Page Merge: Current State and Potential Improvement
+
+### Current approach (v9)
+The detector processes one Talmud page at a time. It includes the last 5 segments of the
+previous page and first 5 of the next page as READ-ONLY context, but tells the LLM to
+only detect stories on THIS page, then set continuation flags. Stage 4 merges stories
+across pages using those flags + a targeted LLM "stitch" pass.
+
+**Performance:** 16/19 cross-page merges detected (86%). The 3 misses happen when the
+LLM doesn't set continuation flags during per-page detection — Stage 4 has no signal to
+merge on. This is an architectural limitation, not a bug.
+
+### Why this matters
+Every version (v1–v9) uses page-by-page processing. The cross-page problem was always
+solved via post-processing. We've never tried changing the input windowing.
+
+### Potential improvement: Sliding segment windows
+Sefaria gives us segments individually. The page boundary (5a vs 5b) is an arbitrary
+printing artifact. Instead of "analyze page 5a with context from 5b," we could give the
+LLM overlapping windows of segments that cross page boundaries:
+
+```
+Window 1: 5a all segments + 5b segments 0-5
+Window 2: 5b all segments + 6a segments 0-5
+```
+
+A story at the 5a/5b boundary would fall INSIDE a window — detected as a single unit,
+no merge logic needed.
+
+**Tradeoffs:**
+- Pro: Eliminates 14% merge miss rate for boundary stories
+- Pro: No dependence on LLM setting continuation flags correctly
+- Con: ~25% more tokens per window (overlapping segments analyzed twice)
+- Con: Need deduplication for stories detected in multiple windows
+- Con: Triage (Stage 1) currently works per-page, would need rethinking
+- Cost impact: Negligible (~$0.07 more per tractate)
+
+**Status:** Not yet tested. Could be a good experiment for Kiddushin if the standard
+page-by-page run shows the same ~14% merge miss rate. Would require modifying
+`story_detector_v7.py`'s `run_pipeline()` to use segment windows instead of pages.
+
+**Decision:** Run Kiddushin with the current page-by-page approach first. Measure merge
+accuracy. If merge misses are a significant issue, implement sliding windows as a follow-up.
+
+---
+
 ## Files This Run Will Create
 
 | File | Purpose |

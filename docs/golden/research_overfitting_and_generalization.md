@@ -153,7 +153,27 @@ additional benefit — the two approaches are alternatives, not complements.
 **Effort:** High. Need Vertex AI setup, training pipeline, billing.
 **Risk:** Medium. Fine-tuned model might overfit to Ketubot literary style.
 
-### F. Many-Shot In-Context Learning
+### F. Sliding Segment Windows (Architectural Change for Cross-Page)
+
+**What:** Instead of processing one Talmud page at a time, give the LLM overlapping
+windows of segments that cross page boundaries. A story at the 5a/5b boundary falls
+INSIDE a window instead of at the edge — detected as one unit, no merge needed.
+
+**Why it helps:** The current 14% cross-page merge miss rate exists because the LLM
+processes pages independently and sometimes doesn't set continuation flags. Sliding
+windows eliminate this dependency entirely. The page boundary becomes invisible.
+
+**Never tried:** Every version (v1–v9) processes page-by-page. Cross-page detection
+was always post-processing. This is the one architectural change that directly addresses
+the root cause of the merge limitation.
+
+**Effort:** Medium. Modify `run_pipeline()` to build segment windows instead of using
+page boundaries. Need deduplication for overlapping detections.
+**Risk:** Low. Worst case same accuracy with ~25% more API cost. Can A/B test against
+page-by-page.
+**Cost impact:** ~$0.07 more per tractate (negligible).
+
+### G. Many-Shot In-Context Learning
 
 **What:** Instead of 3-5 examples, include ALL 182 labeled examples in the prompt using
 Gemini Flash's long context window. But only use examples from pages NOT being evaluated.
