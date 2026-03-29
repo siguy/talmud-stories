@@ -71,13 +71,21 @@ We tried three approaches to fix this:
 | scikit-learn | Quick ML experiments for the classifier test | PyTorch (overkill), manual stats (too limited) |
 | HTML review UIs | Jeff can open in any browser, no setup needed | Google Sheets (tried, too limiting), web app (too complex) |
 
-## What to Build Next
+## Kiddushin: The Generalization Test
 
-1. **Run on Kiddushin** (next tractate Jeff suggested). This tests whether the detector generalizes beyond Ketubot. If it scores 0.85+ on Kiddushin, we know the approach works generally.
+We ran the detector on Kiddushin (2a-82b, 162 pages) — the first tractate beyond Ketubot. Jeff suggested it. This is the key test: does the approach generalize?
 
-2. **If Kiddushin works:** Expand to more tractates, building a multi-tractate golden dataset. At 200+ labeled stories across 2+ tractates, fine-tuning becomes viable and would likely push past the 0.93 ceiling.
+**Results:** 96 stories detected (34 YES, 16 HIGH, 46 LOW). 67% of pages were pure legal content (skipped). 12 cross-page stories found, including 3 caught by a new "continuation check" — instead of asking "is there a story at this boundary?" (which produced too many false positives in testing), we ask "does THIS specific story continue on the next page?" Much more precise.
 
-3. **If Kiddushin doesn't work:** The detector might be Ketubot-specific. Would need to investigate why (different literary style? different story types?) and potentially retrain.
+**Status:** Review UI sent to Jeff. Awaiting his feedback to score against the Ketubot baseline (target: 0.85+ composite).
+
+## What's Next
+
+1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.
+
+2. **Fine-tuning path:** With Ketubot (182 stories) + Kiddushin (~80-90 from Jeff's review), we'll have ~270 labeled examples. Research suggests fine-tuning at 200+ examples would push past the 0.93 ceiling.
+
+3. **If Kiddushin scores low:** Investigate whether the detector learned Ketubot-specific patterns. Different literary style? Different story types? Would need targeted improvements.
 
 ## Key Concepts Worth Remembering
 

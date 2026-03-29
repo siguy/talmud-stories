@@ -41,12 +41,16 @@ The detector analyzes kept pages using:
 **Cost:** ~$0.12 per 100 pages (only ~40% of pages make it past triage)
 **Time:** ~3 min per 100 pages
 
-## Step 4: Post-Processing (Stage 4, no API calls)
+## Step 4: Post-Processing (Stage 4)
 
-Deterministic refinement:
-- Boundary trimming using event types
-- Cross-page merge detection (stories spanning page boundaries)
+Deterministic refinement + targeted LLM calls:
+- **4a:** Boundary trimming using event types
+- **4b-4c:** Cross-page merge detection (stories spanning page boundaries)
+- **4d:** Cross-page stitching (targeted LLM for unmerged boundary stories with continuation flags)
+- **4f:** Continuation check (targeted LLM for stories near page boundaries WITHOUT continuation flags — asks "does THIS story continue?" not "find a story"). ~$0.03 per tractate. Added for Kiddushin run, caught 3 additional cross-page stories.
 - Duplicate story detection
+
+**Reference implementation:** `scripts/run_kiddushin.py` demonstrates the full workflow.
 
 ## Step 5: Generate Review UI
 

@@ -6,9 +6,10 @@ Detect narrative stories in Talmud text using LLM classification. Expert validat
 ## Current State (March 2026)
 - **Golden Ketubot dataset**: 182 expert-validated stories (`results/canonical/ketubot_canonical.json`)
 - **Evaluation framework**: Scores any detector output against golden labels (`scripts/evaluate_golden.py`)
-- **Baseline**: Classification F1=0.92, Boundary IoU=0.98, Merge F1=0.86, Composite=0.93
+- **Ketubot baseline**: Classification F1=0.92, Boundary IoU=0.98, Merge F1=0.86, Composite=0.93
 - **Key finding**: Prompt engineering and few-shot examples cannot improve beyond 0.93 on Ketubot (see `docs/golden/research_overfitting_and_generalization.md`)
-- **Next step**: Run detector on Kiddushin, have Jeff review ~30 stories
+- **Kiddushin run complete**: 96 stories detected across 162 pages, 12 cross-page stories (3 via new continuation check). Review UI sent to Jeff. Awaiting his feedback.
+- **Next step**: Score Kiddushin against Jeff's labels, compare to Ketubot baseline (target: 0.85+ composite)
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
@@ -30,7 +31,7 @@ Quick version:
 1. Fetch pages from Sefaria API
 2. Run event triage (Stage 1)
 3. Run story detection (Stage 2) with ground truth few-shots
-4. Post-process: boundary refinement + cross-page merge (Stage 4)
+4. Post-process: boundary refinement + cross-page merge + continuation check (Stage 4)
 5. Generate review UI for expert validation
 6. Expert reviews → feedback JSON → golden dataset
 
@@ -41,6 +42,7 @@ src/                              # Core detection code
   event_triage.py                 #   Stage 1 event classification
   ground_truth.py                 #   Jeff's expert labels for few-shot learning
 scripts/                          # Execution and analysis scripts
+  run_kiddushin.py                #   Run detector on Kiddushin 2a-82b
   run_ketubot_61_112.py           #   Run detector on Ketubot 61-112
   rerun_detector_v10.py           #   Re-run with modified prompts (experimental)
   build_canonical.py              #   Build golden dataset from base + feedback
@@ -52,6 +54,7 @@ scripts/                          # Execution and analysis scripts
 results/
   canonical/                      #   Golden dataset (v10)
   v7/                             #   Detector output (v7/v9 baseline)
+  kiddushin/                      #   Kiddushin detection results (v7 + continuation check)
   v10/                            #   Experiment output (reverted)
   v6/, ketubot/v5/                #   Historical
 validation/
@@ -82,7 +85,9 @@ archive/                          # Old versions (reference only)
 | `src/story_detector_v7.py` | Current detector (Gemini Flash) |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
-| `tasks/lessons.md` | 8 lessons learned across all sessions |
+| `results/kiddushin/kiddushin_v7.json` | Kiddushin detection results (96 stories) |
+| `scripts/run_kiddushin.py` | Run script for Kiddushin |
+| `tasks/lessons.md` | 10 lessons learned across all sessions |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
 ## Git Tags

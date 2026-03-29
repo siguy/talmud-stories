@@ -20,6 +20,48 @@
 | v9 | Feb 2026 | Remerge | Undo 12 bad cross-page merges, re-stitch from segment 0 |
 | Canonical | Mar 2026 | Unified Dataset | Merge all feedback into single 189-story canonical file |
 | v10 Golden | Mar 2026 | Golden Dataset | 182 stories, 48 corrections, composite 0.93. Detector experiments reverted. |
+| Kiddushin | Mar 2026 | Generalization Test | 96 stories on new tractate. Stage 4f continuation check. Awaiting Jeff review. |
+
+---
+
+## Kiddushin Run: First Generalization Test
+
+**Date:** 2026-03-27
+**Tractate:** Kiddushin 2a-82b (162 pages)
+**Model:** gemini-3-flash-preview
+
+**What this tests:** Does the detector generalize beyond Ketubot? Uses Ketubot examples as cross-tractate few-shots (no contamination). Target: 0.85+ composite.
+
+**Results:**
+- 162 pages fetched, 109 skipped by triage (67% skip rate)
+- 53 pages processed → 96 stories detected
+- Classification: 34 YES, 16 HIGH, 46 LOW, 5 NOT_A_STORY
+- 12 cross-page stories: 5 merge, 4 stitch, 3 continuation check (new)
+
+**New: Stage 4f Continuation Check**
+Added `continuation_check()` method to `story_detector_v7.py`. For stories near page boundaries without continuation flags, asks: "Does THIS specific story continue on the next page?" Caught 3 stories the existing merge passes missed (including the Dama ben Netina story, 31a→31b). See `docs/golden/kiddushin_run_plan.md` for design rationale.
+
+**Pipeline Stage 4 Updated:**
+```
+4a: Boundary refinement
+4b: Cross-page merge v7
+4c: Legacy merge (continuation flags)
+4d: Cross-page stitching (targeted LLM)
+4f: Continuation check (new — for unmerged boundary stories)
+4e: Duplicate detection
+```
+
+**Files created:**
+- `scripts/run_kiddushin.py` — Run script
+- `results/kiddushin/kiddushin_v7.json` — Detection results
+- `results/kiddushin/event_triage_kiddushin.json` — Triage results
+- `results/kiddushin/kiddushin_pages.json` — Cached Sefaria pages
+- `validation/generators/generate_kiddushin_review_ui.py` — Review UI generator
+- `validation/ui/kiddushin_review.html` — Review UI for Jeff
+
+**Review URL:** https://siguy.github.io/talmud-stories/validation/ui/kiddushin_review.html
+
+**Status:** Awaiting Jeff's review. Will score against his labels and compare to Ketubot baseline.
 
 ---
 

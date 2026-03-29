@@ -93,7 +93,23 @@ Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 5. **(v8) Relaxed legacy merge:** Uses OR logic (either side has narrative events) instead of requiring both
 6. **(v8) Post-detection stitching:** A second pass after all merges catches stories that were split across pages but not caught by the initial boundary checks
 
-Result: 16 cross-page stories on pages 61-112 (up from 7 in v7).
+Result: 16 cross-page stories on Ketubot 61-112 (up from 7 in v7). 12 cross-page stories on Kiddushin.
+
+**Stage 4f: Continuation Check (new — added for Kiddushin run)**
+
+After all merge passes, checks stories near page boundaries that were NOT flagged as continuing. Unlike stitch (4d) which only fires when `continues_to_next_page` is already set, this catches stories where the LLM didn't set the flag.
+
+How it works:
+1. Find the last story on each page that ends within 3 segments of the page boundary
+2. Skip if already merged or already has continuation flags
+3. Send LLM: story text + first 8 segments of next page
+4. Ask: "Is the top of the next page a direct continuation of THIS specific story? Same characters, same situation?"
+5. Conservative — requires same characters and narrative flow, not just thematic similarity
+
+Why this works better than the sliding-window approach (which produced 28 false positives): it asks about a SPECIFIC story's continuation, not "find any story at this boundary." Binary yes/no, not open-ended detection.
+
+Cost: ~$0.03 per tractate (20-30 small API calls).
+Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben Netina, 31a→31b).
 
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
 
@@ -231,6 +247,12 @@ python3 scripts/run_ketubot_61_112.py              # Full run
 python3 scripts/run_ketubot_61_112.py --triage-only # Triage only
 python3 scripts/run_ketubot_61_112.py --resume      # Resume from saved triage
 # Output: results/v7/ketubot_v7_61-112.json
+
+# Kiddushin (new tractate)
+python3 scripts/run_kiddushin.py                    # Full run
+python3 scripts/run_kiddushin.py --triage-only      # Triage only
+python3 scripts/run_kiddushin.py --resume            # Resume from saved triage
+# Output: results/kiddushin/kiddushin_v7.json
 
 # Model comparison
 PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
