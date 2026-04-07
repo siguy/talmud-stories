@@ -23,6 +23,8 @@ No server needed - runs entirely in browser.
 | `validation/ui/ketubot_40-60.html` | 22 stories | Fresh content review |
 | `validation/ui/ketubot_61-112.html` | 103 stories | v8 full review (pages 61-112) |
 | `validation/ui/ketubot_61-112_v8_delta.html` | 49 stories | **v8 delta review** — only what changed from v7 |
+| `validation/ui/ketubot_canonical_review.html` | 189 stories | **Canonical review** — all stories in 3 sections |
+| `validation/ui/kiddushin_review.html` | 96 stories | **Kiddushin first-pass review** — all stories, Correct/Incorrect |
 | `validation/ui/jeff_comparison.html` | 33 stories | Compare with v4.1 validations |
 
 ## Features
@@ -173,10 +175,14 @@ validation/
 │   ├── ketubot_40-60.html
 │   ├── ketubot_61-112.html
 │   ├── ketubot_61-112_v8_delta.html  # v8 delta review (only changes)
+│   ├── ketubot_canonical_review.html   # All 189 stories, 3 sections
+│   ├── kiddushin_review.html           # Kiddushin first-pass (96 stories)
 │   └── jeff_comparison.html
 ├── generators/                  # Scripts to create UIs
 │   ├── generate_review_ui.py
-│   ├── generate_delta_review_ui.py   # v7→v8 delta comparison
+│   ├── generate_canonical_review_ui.py  # Canonical: all stories, 3 sections
+│   ├── generate_kiddushin_review_ui.py  # Kiddushin first-pass review
+│   ├── generate_delta_review_ui.py      # v7→v8 delta comparison
 │   └── generate_jeff_comparison_ui.py
 └── feedback/                    # Expert feedback JSONs
     └── jeff_v4.1_validation.json

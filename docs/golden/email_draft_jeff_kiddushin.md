@@ -1,88 +1,45 @@
 # Email Draft: Jeff — Kiddushin Results Ready for Review
 
 **To:** Jeff Rubenstein
-**Subject:** Kiddushin Story Detection Results — Review UI Attached
+**Subject:** Kiddushin Results Ready — Testing if the Detector Generalizes
 
 ---
 
 Hi Jeff,
 
-Following your suggestion, we ran the story detector on Kiddushin (2a-82b). The results are ready for your review at this link:
+We ran the detector on Kiddushin, as you suggested. The results are ready for review:
 
 **https://siguy.github.io/talmud-stories/validation/ui/kiddushin_review.html**
 
-It shows every detected story with the full English and Hebrew text so you can evaluate each one. Works in any browser (Chrome, Safari, Firefox).
+Same review UI as before — Correct/Incorrect for each story, notes field for anything that needs explanation.
 
-## What We Did
+## What We Learned from Ketubot
 
-We ran the same detection pipeline we used on Ketubot, now on all 162 pages of Kiddushin. The detector uses Ketubot examples as reference points (your prior corrections), but this is the first time it has seen Kiddushin text — so this is a clean test of whether it generalizes.
+After processing all of your corrections, we built a definitive Ketubot dataset (182 stories) and an evaluation framework that scores the detector on three dimensions: classification accuracy (F1=0.92), boundary precision (IoU=0.98), and cross-page merge detection (F1=0.86). The overall composite score is **0.93**.
 
-**Results:**
-- **96 stories detected** across 53 pages (109 pages were pure legal content and skipped)
-- 34 classified as YES (definite story), 16 as HIGH confidence, 46 as LOW confidence
-- **12 cross-page stories** detected — stories that span a page boundary
-- 3 of those cross-page stories were found by a new "continuation check" we built specifically for catching stories that break across pages
+We then tried to use your corrections to improve the detector — adding your reasoning patterns as instructions, using your examples as few-shot training data. **It made things worse.** The detector learned to reject the specific Ketubot passages we showed it rather than learning the general principle. Pages 2-60 (where most examples came from) lost 20 stories; pages 61-112 barely changed. We reverted everything.
 
-## How to Use the Review UI
+The takeaway: **0.93 appears to be the ceiling for prompt-based detection on Ketubot.** The remaining errors are the 26 false positives you identified — legal discussions with narrative framing — where the distinction requires exactly the kind of expert literary judgment that makes this project valuable. The detector can't learn that distinction from prompts alone.
 
-Open the link above in any browser.
+## What Kiddushin Tests
 
-**For each story you'll see:**
-- The story summary and classification (YES / HIGH / LOW)
-- The full English and Hebrew text with the detected story highlighted in yellow
-- Context segments before and after the story (unhighlighted) so you can judge boundaries
-- For cross-page stories: both pages shown with a purple divider marking the page break
+This is the first time the detector has seen text outside Ketubot. It uses your Ketubot corrections as reference examples, but the Kiddushin text is entirely new. So this answers the big question: **does the detector generalize, or did we just get good at Ketubot?**
 
-**Filter buttons at the top** let you view:
-- All stories, or just YES / HIGH / LOW confidence
-- Cross-page stories only (to check merge accuracy)
-- Unreviewed stories (to track your progress)
+We're targeting a **0.85+ composite score** on Kiddushin. If it hits that, the approach works across tractates and we can scale. If it falls significantly below, we need to investigate whether the detector learned Ketubot-specific patterns.
 
-**For each story, click:**
-- **Correct** — the detector got it right (it's a real story with good boundaries)
-- **Incorrect** — something is wrong (add a note explaining what)
+## What the Detector Found
 
-**In the notes field, it's most helpful to note:**
-- **False positive** — this isn't really a story (legal discussion, hypothetical case, etc.)
-- **Boundary issue** — the story starts too early/late or ends too early/late (note where it should start/end)
-- **Merge issue** — this story should be combined with an adjacent one, or a merge is wrong
+- **96 stories** across 162 pages (67% of pages were pure legal content, skipped automatically)
+- 34 YES, 16 HIGH, 46 LOW confidence
+- **12 cross-page stories**, including 3 caught by a new continuation check we built — instead of asking "is there a story at this boundary?" (which produced too many false positives), we ask "does THIS specific detected story continue on the next page?" Much more precise.
 
-When you're done, click **Save Results** at the top right. It will show a JSON block you can download and send back.
+The high LOW_CONFIDENCE count (46) suggests the same pattern as Ketubot — many borderline legal/narrative passages. We expect roughly 15% of detected stories to be false positives matching the patterns you know well.
 
-## What We Expect
+## What Would Help Most
 
-Based on Ketubot (where the detector scored 0.93 composite), we expect roughly:
-- **~85% of detected stories to be correct**
-- **~15% to be false positives** — mostly legal discussions with narrative framing (the same pattern from Ketubot)
+- **Even 30 reviewed stories** gives us enough to score the detector on Kiddushin and compare to Ketubot
+- If you spot false positive patterns that are **different** from the Ketubot taxonomy, those are especially valuable — they'd tell us what we're missing
+- With your Kiddushin feedback combined with Ketubot (~270 labeled examples total), we'd have enough data to explore fine-tuning the model on your labels directly — which research suggests would break through the 0.93 ceiling
 
-## What to Watch For
-
-From our Ketubot error analysis, the detector's main mistakes are:
-
-1. **Legal discussions where all "events" are verbal** — rabbis asking, objecting, ruling. No physical actions or changes of state.
-2. **Hypothetical scenarios** — "if a man..." passages that describe what *could* happen, not what *did* happen.
-3. **Narrative settings followed by legal debate** — a rabbi goes somewhere or sits before another rabbi, but the substance is legal argumentation, not narrative.
-4. **Stories that should start earlier or end sooner** — boundary issues where the detector includes too much Talmudic commentary after the narrative ends, or misses the opening.
-5. **Stories that continue across page boundaries** — we detect 12 of these, but there may be others we missed.
-
-## What's Most Helpful
-
-- **Review as many as you can** — even 30 stories gives us solid data to evaluate the detector on a new tractate
-- **Prioritize LOW confidence stories** — these are the ones where the detector is least sure, and your judgment is most valuable
-- **For false positives, a brief note is gold** — even "not a story, legal discussion" tells us what pattern it matched
-- **For boundary issues, note where the story should start/end** — a Hebrew phrase or segment number helps us fix it precisely
-
-## Next Steps After Your Review
-
-Once we have your feedback:
-
-1. **Score the detector on Kiddushin** — compare to the Ketubot baseline (0.93). If it scores 0.85+, the detector generalizes well.
-2. **Analyze the false positives** — are they the same patterns as Ketubot, or new ones? This tells us if our error taxonomy is comprehensive.
-3. **Build a Kiddushin golden dataset** — just like Ketubot, your corrections become the definitive ground truth.
-4. **Evaluate fine-tuning** — with Ketubot (182 stories) + Kiddushin (~80-90 stories from your review), we'll have ~270 labeled examples. Research suggests that at 200+ examples, fine-tuning the model on your labels would significantly outperform the current prompt-based approach. This would be our path to pushing past the 0.93 ceiling.
-5. **Continue to more tractates** — if the detector generalizes, we can run it on additional tractates with confidence, building toward a comprehensive dataset of Talmudic narratives.
-
-Thank you for continuing to make this work possible — your expertise is what makes the difference between a useful tool and a guessing machine.
-
-Best,
+Thank you as always,
 Simon
