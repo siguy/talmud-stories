@@ -312,4 +312,106 @@ Each Jeff review batch:
 - [ ] Receive Jeff's confirmations on 10 boundary-slice text edits
 - [ ] Re-run `scripts/build_kiddushin_canonical.py` (or equivalent) with new verdicts → updated golden
 - [ ] Re-score Wave 3 against updated golden; expect composite ≥ Wave 2 once confirmed candidates flip from FP→TP
-- [ ] Plan Wave 4 around remaining misses (71a multi-story, 81b baraita-embedded, 7 boundary cases that needed non-canonical anchors)
+
+---
+
+## NEXT — Resume command (works post-/clear, fully self-contained)
+
+Copy-paste this block to Claude Code to pick up where this session ended:
+
+```
+Resume the Talmud story detector project after Wave 3 ship.
+
+Project state: v9 (Wave 3) is committed (dcefb30) on branch
+claude/sefaria-talmud-story-search-Mw1Yg, tagged v9-wave3, pushed.
+Email sent to Jeff Rubenstein (jr6@nyu.edu) on 2026-05-25 with the
+Kiddushin Wave 3 review UI link
+(https://siguy.github.io/talmud-stories/validation/ui/kiddushin_review_wave3.html)
+asking him to verdict 7 new Kiddushin candidates + 4 new Ketubot
+candidates + 10 boundary-slice confirmations.
+
+READ FIRST (in order):
+1. CLAUDE.md (project conventions, immutable files, current state)
+2. tasks/todo.md (you are picking up at the "NEXT" section)
+3. tasks/lessons.md (especially Lessons 2, 8, 11, 13, 14)
+4. docs/golden/v9/wave3_results.md (what Wave 3 shipped + why)
+
+DECIDE which track to start:
+
+Track A — Jeff replied:
+  - His export will be a JSON in validation/feedback/ (or attached
+    to his reply — check Gmail via `gws gmail +read` or via the
+    Gmail MCP).
+  - Promote his verdicts into results/canonical/kiddushin_canonical.json
+    and (if Ketubot verdicts present) ketubot_canonical.json using a
+    new scripts/build_canonical_from_wave3.py modeled on
+    scripts/build_kiddushin_canonical.py. Do NOT modify
+    scripts/evaluate_golden.py (IMMUTABLE).
+  - Re-score Wave 3 against the updated golden with
+    `scripts/evaluate_golden.py`. Expected: Kiddushin composite ≥
+    Wave 2 (because previously-FP candidates Jeff confirmed flip to
+    TP). Write findings to docs/golden/v9/wave3_round2_results.md.
+
+Track B — Jeff has not replied yet, start Wave 4 prep:
+  - Open a brainstorm doc at docs/brainstorms/wave4_brainstorm.md.
+  - Three concrete Wave 4 candidates ranked by impact:
+    1. **Post-detection FP classifier** (highest leverage per Lesson 7
+       — prompt rules hit a ceiling at 0.93). Train a small classifier
+       (logistic regression / LightGBM) on Jeff's NOT_A_STORY labels
+       from results/canonical/*.json that runs AFTER Stage 4 and
+       demotes detected stories matching the FP pattern. Per Lesson 7
+       this is safer than prompt mods (can never cause new FNs).
+       Inputs: criteria_met_count, disqualifiers, named-actor type,
+       segment-count, etc. Eval: must keep Ketubot recall ≥ 0.9367.
+    2. **Second baraita-embedded few-shot** for the
+       `אלא תנאי היא. דתניא, אמר רבי X… אמר רבי Y` shape (Kiddushin
+       81b seg 9 still missed in Wave 3). Source from Ketubot or
+       Berakhot canonical (Lesson 2 — never Kiddushin). Add as a
+       third item-2-style example in the v10 Stage 2 prompt (fork v9
+       → v10; do NOT edit v9 in place per detector-versioning rule).
+    3. **Remaining 7 text-internal boundary cases.** Pattern in
+       scripts/audit_wave3_item4.py output. Most need either:
+       (a) non-canonical narrative-verb introducer like `רבי X הוה קאי`
+           (33a seg 16) — extend _START_INTRODUCERS but carefully
+       (b) end-phrase trim where trailing text doesn't start with a
+           canonical stam marker (52b, 72a×2, 32b 2) — likely need
+           prompt-side text-span emission rather than a regex.
+  - Pick ONE for Wave 4 and write a plan at tasks/PLAN_wave4.md
+    mirroring tasks/PLAN_wave3.md structure (Phase 0 baseline, Phase
+    1 fork, Phase 2 implement, Phase 3 LLM runs, Phase 4 ship). Wait
+    for user approval before executing.
+
+Track C — Pivot to 3rd tractate:
+  - Bava Metzia was the suggested next per todo.md Section 5c.
+  - Follow docs/golden/workflow/new_tractate_workflow.md.
+  - Use scripts/run_wave3.py as the runner template (parameterized
+    by tractate); add a `--tractate bavametzia` config block. Will
+    need Sefaria pages cache + triage cache (~10 min one-time run).
+  - First-run gate is "does Wave 3 detector generalize" — no
+    pre-existing golden, so plan for sending Jeff a fresh review UI.
+
+RULES (NEVER violate):
+- scripts/evaluate_golden.py is IMMUTABLE.
+- Never use Kiddushin labels as few-shot examples when evaluating
+  Kiddushin (Lesson 2).
+- Always regenerate today's baseline before comparing — never trust
+  frozen scores from past sessions (Lesson 11).
+- Detector changes require a new versioned file (v9 → v10); never
+  edit canonical detector in place.
+- All multi-step work goes through tasks/PLAN_<wave>.md with user
+  approval BEFORE LLM-billable execution.
+
+Start by reading the four files above, then ask: "Has Jeff replied?
+Or which Wave 4 track should we prep?"
+```
+
+### Wave 4 candidates (pick one per planning session)
+- [ ] **Track 1 — Post-detection FP classifier** (Lesson 7 path). Train on Jeff's NOT_A_STORY labels. New file `src/post_detection_classifier.py`. Cannot cause new FNs by construction.
+- [ ] **Track 2 — Second baraita-embedded few-shot** for the 81b shape (`אלא תנאי היא. דתניא, אמר רבי X…`). Fork v9 → v10.
+- [ ] **Track 3 — Remaining 7 text-internal boundary cases** (non-canonical introducers + non-stam-marker end phrases). Likely needs prompt-side text-span emission.
+- [ ] **Track 4 — Pivot to 3rd tractate (Bava Metzia)**. Tests Wave 3 generalization on a tractate where the golden isn't built from our detector's output (cleaner gate). Follow `docs/golden/workflow/new_tractate_workflow.md`.
+
+### Stretch / longer-term
+- [ ] Refresh `FOR_SIMON.md` to cover Wave 1/2/3 (currently pre-Wave-3)
+- [ ] Document Lesson 5 ceiling-breaking options (fine-tuning on Jeff's labels vs post-detection classifier vs accepting 0.93)
+- [ ] GitHub Pages site (`docs/WEBSITE_PLAN.md`) — non-technical project intro
