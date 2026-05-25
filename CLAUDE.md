@@ -54,7 +54,7 @@ scripts/                          # Execution and analysis scripts
 results/                          # See results/README.md for full layout
   canonical/                      #   GOLDEN LABELS (Jeff's validations)
     ketubot_canonical.json        #     Ketubot golden (182 stories, iteration 10)
-    kiddushin_canonical.json      #     TODO — promote from validation/feedback/
+    kiddushin_canonical.json      #     Kiddushin golden (85 stories from Jeff's 2026-04-23 review)
     source_runs/                  #     Detector runs that fed golden corrections
                                   #     (formerly results/v10/ — NOT a detector version)
   v4/, v5/, v6/                   #   Historical detector outputs

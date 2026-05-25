@@ -1,11 +1,34 @@
 #!/usr/bin/env python3
 """
-Talmud Story Detection v8: v7 baseline + Wave 1 fixes from Jeff's 2026-04-23 feedback.
+Talmud Story Detection v8: v7 baseline + Wave 1/2 fixes from Jeff's 2026-04-23
+feedback.
 
 Architecture mirrors v7. Stage 2 (LLM detection prompt) is UNCHANGED. Only the
 Stage 1 gating decision and Stage 4 post-processors gain new behavior. The
 class name V7StoryDetector is retained on purpose so existing call sites only
 need to swap the import path.
+
+Wave 2 fixes (mechanical, deterministic post-processors):
+
+  Issue #3 — Story-START boundary snap (snap_start_to_introducer)
+    Scan the first few segments of each detected multi-segment story for a
+    canonical Hebrew introducer (מַעֲשֶׂה ב…, כִּי הָא ד…, הַהוּא ד…,
+    הָנְהוּ בֵּי תְרֵי, כִּדְתַנְיָא, תַּנְיָא). If found at index >
+    start, snap start forward. If found in the segment immediately BEFORE
+    start, extend start back. Single-segment stories are not touched (their
+    boundary issues are text-internal — see wave2_results.md).
+
+  Issue #4 — Story-END boundary trim (trim_trailing_stam_segments)
+    Walk the detected story from the end inward. Drop trailing segments
+    that open with stam-Talmud markers (שְׁמַע מִינַּהּ, מַאי טַעְמָא,
+    אִי הָכִי, וְאִי, שָׁאנֵי, הָכִי קָאָמַר, אֶלָּא) as long as at
+    least one segment remains. Single-segment stories are not touched.
+
+  Issue #6(b) — Biblical-actor filter (filter_biblical_actor_stories)
+    If a story's identifiable_characters.evidence names only biblical
+    actors (Moses, David, Nebuchadnezzar, "Jewish people" collective,
+    etc.), demote to NOT_A_STORY. We are cataloguing rabbinic stories;
+    biblical narratives belong in a different corpus.
 
 Wave 1 fixes (mechanical, no model change):
 
@@ -851,6 +874,21 @@ Return JSON:
         mishnah_filtered = filter_mishnah_only_stories(all_results)
         if mishnah_filtered:
             print(f"  Mishnah filter: {mishnah_filtered} stories moved to mishnah_stories")
+
+        # 4h (Wave 2 Issue #3): snap story start to canonical introducer
+        snapped = snap_start_to_introducer(all_results)
+        if snapped:
+            print(f"  Start-boundary snap: {snapped} stories adjusted")
+
+        # 4i (Wave 2 Issue #4): trim trailing stam-Talmud segments
+        trimmed = trim_trailing_stam_segments(all_results)
+        if trimmed:
+            print(f"  End-boundary trim: {trimmed} stories trimmed")
+
+        # 4j (Wave 2 Issue #6b): demote biblical-actor-only stories
+        biblical = filter_biblical_actor_stories(all_results)
+        if biblical:
+            print(f"  Biblical-actor filter: {biblical} stories demoted")
 
         # Detect duplicates
         all_results = detect_duplicate_stories(all_results)
@@ -1710,6 +1748,285 @@ def filter_mishnah_only_stories(pages: List[Dict]) -> int:
                 kept.append(story)
         page['stories'] = kept
     return moved
+
+
+# ============================================================
+# WAVE 2 POST-PROCESSORS — deterministic, no model calls
+# ============================================================
+
+# Issue #3 (Wave 2). Story introducers (consonantal forms, no nikud).
+# Order matters: longer prefixes first so substring search picks them up.
+_START_INTRODUCERS = (
+    'מעשה ב',         # "An incident with…"
+    'הנהו בי תרי',    # "Those two…"
+    'הנהו תרי',       # variant
+    'ההוא גברא',      # "A certain man"
+    'ההוא ד',         # "A certain one who…"
+    'ההיא',           # "That [feminine]…" (used for ההיא איתתא)
+    'כי הא ד',        # "Like this one who…"
+    'כדתניא',         # "As it was taught"
+    'תניא',           # "It was taught" (baraita)
+)
+
+
+def _segment_starts_with_introducer(seg_hebrew: str) -> bool:
+    """True if the segment's Hebrew text starts with a canonical introducer
+    (after stripping nikud and leading punctuation/whitespace)."""
+    if not seg_hebrew:
+        return False
+    txt = _strip_nikud(seg_hebrew).lstrip(' :,.!?"\u201c\u201d״׳')
+    return any(txt.startswith(m) for m in _START_INTRODUCERS)
+
+
+def _segment_contains_introducer(seg_hebrew: str) -> bool:
+    """True if the segment contains an introducer anywhere (loose check)."""
+    if not seg_hebrew:
+        return False
+    txt = _strip_nikud(seg_hebrew)
+    return any(m in txt for m in _START_INTRODUCERS)
+
+
+def snap_start_to_introducer(pages: List[Dict]) -> int:
+    """
+    Wave 2 Issue #3: snap story start to canonical introducer segment.
+
+    For each multi-segment real story:
+      1. If a segment in [start+1 .. start+3] STARTS WITH an introducer,
+         snap start to that segment (skip preceding halakhic framing).
+      2. If the segment immediately BEFORE start (start-1) starts with an
+         introducer, extend start back to include it (missed preamble).
+
+    Single-segment stories are not modified — their boundary issues are
+    text-internal and require Hebrew-text trimming (out of scope).
+
+    Returns count of stories modified.
+    """
+    modified = 0
+    for page in pages:
+        segments = page.get('segments', [])
+        seg_by_idx = {s.get('index', i): s for i, s in enumerate(segments)}
+        for story in page.get('stories', []):
+            if story.get('classification') == 'NOT_A_STORY':
+                continue
+            start = story.get('start_segment')
+            end = story.get('end_segment')
+            if start is None or end is None or end <= start:
+                continue  # skip single-segment
+
+            # (1) snap forward within the first few segments
+            new_start = None
+            for cand in range(start + 1, min(end, start + 4)):
+                seg = seg_by_idx.get(cand)
+                if seg and _segment_starts_with_introducer(seg.get('hebrew', '')):
+                    new_start = cand
+                    break
+
+            # (2) extend back if introducer is in segment immediately before
+            extend = False
+            if new_start is None and start > 0:
+                prev = seg_by_idx.get(start - 1)
+                if prev and _segment_starts_with_introducer(prev.get('hebrew', '')):
+                    new_start = start - 1
+                    extend = True
+
+            if new_start is not None and new_start != start:
+                story['start_segment_pre_snap'] = start
+                story['start_segment'] = new_start
+                story['start_snap_kind'] = 'extend_back' if extend else 'snap_forward'
+                modified += 1
+    return modified
+
+
+# Issue #4 (Wave 2). Stam-Talmud / dialectical markers that signal the
+# voice has shifted from narrative to anonymous commentary. A trailing
+# segment is trimmable only if it opens with one of these.
+_TRAILING_MARKERS = (
+    'שמע מינה',       # "infer from this"
+    'מאי טעמא',       # "what is the reason"
+    'אי הכי',         # "if so"
+    'הכי קאמר',       # "this is what he means"
+    'שאני',           # "it is different"
+    'תא שמע',         # "come and hear" (objection introducer)
+    'איתיביה',        # "they raised an objection"
+    'מיתיבי',         # variant
+    'אלא',            # "rather"
+    'ואי',            # "and if"
+    'מתקיף',          # "X challenges"
+    'תניא נמי הכי',   # "this too was taught"
+    'תנו רבנן',       # "the Sages taught" (often shifts to new baraita)
+)
+
+
+def _segment_starts_with_trailing_marker(seg_hebrew: str) -> bool:
+    if not seg_hebrew:
+        return False
+    txt = _strip_nikud(seg_hebrew).lstrip(' :,.!?"\u201c\u201d״׳')
+    return any(txt.startswith(m) for m in _TRAILING_MARKERS)
+
+
+def trim_trailing_stam_segments(pages: List[Dict]) -> int:
+    """
+    Wave 2 Issue #4: trim trailing dialectical segments from a story.
+
+    For each multi-segment real story, walk from the end inward. Drop the
+    last segment if it opens with a stam-Talmud marker, as long as at
+    least 2 segments would remain (we never reduce to a single segment
+    via trim; that would be aggressive and risks deletion of real story
+    body).
+
+    Single-segment stories are untouched (their boundary issues are
+    text-internal — out of scope for a segment-level trim).
+
+    Returns count of stories modified.
+    """
+    modified = 0
+    for page in pages:
+        segments = page.get('segments', [])
+        seg_by_idx = {s.get('index', i): s for i, s in enumerate(segments)}
+        for story in page.get('stories', []):
+            if story.get('classification') == 'NOT_A_STORY':
+                continue
+            start = story.get('start_segment')
+            end = story.get('end_segment')
+            if start is None or end is None or end <= start:
+                continue
+
+            orig_end = end
+            cur_end = end
+            while cur_end > start + 1:
+                seg = seg_by_idx.get(cur_end)
+                if seg and _segment_starts_with_trailing_marker(seg.get('hebrew', '')):
+                    cur_end -= 1
+                else:
+                    break
+
+            if cur_end != orig_end:
+                story['end_segment_pre_trim'] = orig_end
+                story['end_segment'] = cur_end
+                story['end_trim_segments_removed'] = orig_end - cur_end
+                modified += 1
+    return modified
+
+
+# Issue #6(b) (Wave 2). Biblical-actor names that signal a story is a
+# biblical narrative, not a rabbinic one. We compare against the
+# `criteria.identifiable_characters.evidence` field, which the Stage 2
+# prompt populates with a short comma-separated list of named actors.
+
+# Surface form is checked case-insensitively as a substring of `evidence`.
+_BIBLICAL_ACTORS = frozenset({
+    # Patriarchs and matriarchs
+    'adam', 'eve', 'noah', 'abraham', 'sarah', 'isaac', 'rebecca',
+    'jacob', 'leah', 'rachel', 'joseph', 'benjamin',
+    # Exodus / wilderness
+    'moses', 'aaron', 'miriam', 'pharaoh', 'jethro', 'tzipporah',
+    # Conquest and judges
+    'joshua', 'caleb', 'gideon', 'samson', 'deborah', 'barak',
+    'samuel', 'eli',
+    # United monarchy and prophets
+    'saul', 'david', 'solomon', 'jonathan', 'bathsheba', 'nathan',
+    'absalom', 'goliath',
+    # Divided kingdoms and later kings
+    'rehoboam', 'jeroboam', 'ahab', 'jezebel', 'hezekiah', 'manasseh',
+    'josiah', 'ahaz', 'jehu', 'uzziah', 'amaziah',
+    # Latter prophets
+    'elijah', 'elisha', 'isaiah', 'jeremiah', 'ezekiel', 'hosea',
+    'amos', 'obadiah', 'jonah', 'micah', 'nahum', 'habakkuk',
+    'zephaniah', 'haggai', 'zechariah', 'malachi',
+    # Exile / return / late biblical
+    'daniel', 'esther', 'mordechai', 'mordecai', 'haman', 'ahasuerus',
+    'nebuchadnezzar', 'sennacherib', 'cyrus', 'darius', 'ezra',
+    'nehemiah', 'pelatiah',
+    # Collective biblical actors
+    'jewish people', 'children of israel', 'israelites',
+    'people of israel',
+})
+
+# A handful of common rabbinic actor names; if any appear, the story is
+# NOT biblical-only.
+_RABBINIC_SIGNAL = (
+    'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
+    'mar ', 'abaye', 'rava', 'shmuel', 'samuel',  # 'samuel' overlaps
+    'hillel', 'shammai', 'akiva', 'akiba', 'meir', 'judah hanasi',
+    'yehuda hanasi', 'tanna', 'amora',
+)
+
+
+def _actors_are_biblical_only(evidence: str) -> bool:
+    """True if the actor evidence string names ONLY biblical figures."""
+    if not evidence:
+        return False
+    low = evidence.lower()
+
+    # Quick reject: if any rabbinic signal is present, not biblical-only.
+    # "Samuel" alone is ambiguous (prophet vs amora). Treat as biblical
+    # unless explicitly "Rav Samuel" / "Rabbi Samuel".
+    if any(sig in low for sig in _RABBINIC_SIGNAL):
+        # 'samuel' in _RABBINIC_SIGNAL — guard
+        # Only count as rabbinic if the rabbi prefix is present, not bare
+        # mentions of an ambiguous name.
+        rabbinic_strong = any(s in low for s in [
+            'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
+            'mar ', 'abaye', 'rava ', 'rava\n', 'hillel', 'shammai',
+            'akiva', 'akiba', 'rabbi meir', 'judah hanasi', 'yehuda hanasi',
+            'tanna', 'amora',
+        ])
+        if rabbinic_strong:
+            return False
+
+    # Hit if any biblical name is mentioned.
+    has_biblical = any(name in low for name in _BIBLICAL_ACTORS)
+    if not has_biblical:
+        return False
+
+    # Additional check: tokenize by commas/and and see whether ANY token
+    # contains no biblical name and is not a generic descriptor.
+    parts = re.split(r'[,;]| and ', low)
+    generic_descriptors = (
+        'collective character', 'character', 'narrator',
+        'agent', 'agents', 'man', 'woman', 'child', 'children',
+    )
+    for p in parts:
+        p = p.strip()
+        if not p:
+            continue
+        if any(name in p for name in _BIBLICAL_ACTORS):
+            continue
+        if any(g in p for g in generic_descriptors):
+            continue
+        # An actor token with no biblical name and not a generic descriptor
+        # → likely rabbinic. Reject biblical-only.
+        return False
+    return True
+
+
+def filter_biblical_actor_stories(pages: List[Dict]) -> int:
+    """
+    Wave 2 Issue #6(b): demote stories whose only named actors are biblical
+    figures. We want rabbinic stories in the catalog; biblical narratives
+    belong elsewhere.
+
+    The actor names are read from `criteria.identifiable_characters.evidence`
+    which is a comma-separated string the Stage 2 prompt produces. Stories
+    are demoted to NOT_A_STORY (kept in the page record with a flag, so the
+    decision is auditable).
+
+    Returns count of stories demoted.
+    """
+    demoted = 0
+    for page in pages:
+        for story in page.get('stories', []):
+            if story.get('classification') == 'NOT_A_STORY':
+                continue
+            evidence = (story.get('criteria', {})
+                            .get('identifiable_characters', {})
+                            .get('evidence', ''))
+            if _actors_are_biblical_only(evidence):
+                story['filtered_as_biblical'] = True
+                story['classification_pre_biblical_filter'] = story.get('classification')
+                story['classification'] = 'NOT_A_STORY'
+                demoted += 1
+    return demoted
 
 
 def _pick_higher_classification(cls1: str, cls2: str) -> str:
