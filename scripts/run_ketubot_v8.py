@@ -64,8 +64,8 @@ def build_db():
     feedback_path = PROJECT_ROOT / 'validation' / 'feedback' / \
         'v5_1_feedback_anonymous_2026-02-05 (1).json'
     v5_paths = [
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_2-39.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_40-60.json'),
     ]
     db = GroundTruthDB()
     if feedback_path.exists():

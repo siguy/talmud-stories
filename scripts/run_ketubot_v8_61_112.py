@@ -33,8 +33,8 @@ def load_triage(path):
 def build_db():
     fb = ROOT / 'validation' / 'feedback' / 'v5_1_feedback_anonymous_2026-02-05 (1).json'
     v5_paths = [
-        str(ROOT / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(ROOT / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(ROOT / 'results' / 'v5' / 'pages_2-39.json'),
+        str(ROOT / 'results' / 'v5' / 'pages_40-60.json'),
     ]
     db = GroundTruthDB()
     if fb.exists():

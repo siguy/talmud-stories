@@ -45,7 +45,7 @@ END_PAGE = 82
 DELAY = 0.5  # seconds between API calls
 
 # Output paths
-RESULTS_DIR = PROJECT_ROOT / 'results' / 'kiddushin'
+RESULTS_DIR = PROJECT_ROOT / 'results' / 'v7'
 TRIAGE_PATH = RESULTS_DIR / 'event_triage_kiddushin.json'
 RESULTS_PATH = RESULTS_DIR / 'kiddushin_v7.json'
 PAGES_CACHE_PATH = RESULTS_DIR / 'kiddushin_pages.json'
@@ -166,8 +166,8 @@ def run_detection(pages: list[dict], triage_results: dict[str, list[EventType]])
     feedback_path = str(PROJECT_ROOT / 'validation' / 'feedback' /
                         'v5_1_feedback_anonymous_2026-02-05 (1).json')
     v5_paths = [
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_2-39.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_40-60.json'),
     ]
 
     db = GroundTruthDB()

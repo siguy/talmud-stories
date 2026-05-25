@@ -395,7 +395,7 @@ def main():
     if args.output:
         output_path = Path(args.output)
     else:
-        output_path = PROJECT_ROOT / 'docs' / 'golden' / 'baseline_ketubot.json'
+        output_path = PROJECT_ROOT / 'docs' / 'golden' / 'v7' / 'baseline_ketubot.json'
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
 

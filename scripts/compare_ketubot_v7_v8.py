@@ -14,8 +14,12 @@ ROOT = Path(__file__).parent.parent
 EVAL = ROOT / 'scripts' / 'evaluate_golden.py'
 GOLDEN = ROOT / 'results' / 'canonical' / 'ketubot_canonical.json'
 
-V7_2_60 = ROOT / 'results' / 'v7' / 'ketubot_v7_2-60.json'
-V7_61_112 = ROOT / 'results' / 'v7' / 'ketubot_v9_61-112.json'
+# Use v7_fresh as the baseline, not the historical v7 file. The historical
+# baseline scored 0.93 against canonical labels but is not reproducible today —
+# Gemini output has drifted (Lesson 11). For a fair Wave 1 regression check we
+# must compare two runs taken on the same day in the same model conditions.
+V7_2_60 = ROOT / 'results' / 'v7_fresh' / 'ketubot_v7_2-60.json'
+V7_61_112 = ROOT / 'results' / 'v7_fresh' / 'ketubot_v7_61-112.json'
 V8_2_60 = ROOT / 'results' / 'v8' / 'ketubot_v8_2-60.json'
 V8_61_112 = ROOT / 'results' / 'v8' / 'ketubot_v8_61-112.json'
 

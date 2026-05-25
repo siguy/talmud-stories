@@ -51,18 +51,26 @@ scripts/                          # Execution and analysis scripts
   evaluate_golden.py              #   IMMUTABLE evaluation harness
   boundary_lookup.py              #   Match Hebrew markers to segments
   autoresearch/                   #   Experiment infrastructure (unused)
-results/
-  canonical/                      #   Golden dataset (v10)
-  v7/                             #   Detector output (v7/v9 baseline)
-  kiddushin/                      #   Kiddushin detection results (v7 + continuation check)
-  v10/                            #   Experiment output (reverted)
-  v6/, ketubot/v5/                #   Historical
+results/                          # ORGANIZED BY DETECTOR VERSION (reorg 2026-05-24)
+  canonical/                      #   Golden dataset (THE labels; immutable)
+  v4/, v5/, v6/                   #   Historical detector outputs
+  v7/                             #   v7 baseline + Sefaria/triage caches
+                                  #     (ketubot_v7_*.json, ketubot_v9_61-112.json,
+                                  #      kiddushin_v7.json, kiddushin_pages.json,
+                                  #      event_triage_*.json)
+  v7_fresh/                       #   v7 re-run from 2026-05-18 (fair-baseline)
+  v8/                             #   Wave 1 fixes — ketubot_v8_*, kiddushin_v8
+  v10/                            #   Experiment branch (reverted, kept for reference)
 validation/
   ui/                             #   HTML review interfaces
   generators/                     #   Scripts to generate UIs
   feedback/                       #   Expert feedback JSONs (4 rounds)
 docs/
-  golden/                         #   Golden dataset docs, research, Jeff email
+  golden/                         # ORGANIZED BY DETECTOR VERSION (reorg 2026-05-24)
+    workflow/                     #   Cross-version process docs and research
+    v7/                           #   v7-era analyses + Kiddushin feedback
+    v8/                           #   Wave 1 results
+    v10/                          #   v10 findings + post-improvement email
   technical/                      #   Pipeline docs (HOW_IT_WORKS, etc.)
   brainstorms/                    #   Design exploration
 tasks/
@@ -77,17 +85,23 @@ archive/                          # Old versions (reference only)
 |------|---------|
 | `results/canonical/ketubot_canonical.json` | **THE golden dataset** (182 stories) |
 | `scripts/evaluate_golden.py` | IMMUTABLE evaluation harness |
-| `docs/golden/baseline_ketubot.json` | Baseline scores (0.93 composite) |
-| `docs/golden/error_taxonomy.md` | 6 error patterns from Jeff's reviews |
-| `docs/golden/findings_v10_golden_dataset.md` | Full session writeup |
-| `docs/golden/research_overfitting_and_generalization.md` | Why prompt engineering has a ceiling |
-| `docs/golden/new_tractate_workflow.md` | Step-by-step for new tractates |
-| `src/story_detector_v7.py` | Current detector (Gemini Flash) |
+| `docs/golden/v7/baseline_ketubot.json` | v7 baseline scores (historical 0.93; not reproducible — Lesson 11) |
+| `docs/golden/v8/wave1_results.md` | **Wave 1 writeup** (start here for current state) |
+| `docs/golden/workflow/error_taxonomy.md` | 6 error patterns from Jeff's reviews |
+| `docs/golden/v10/findings_v10_golden_dataset.md` | v10 session writeup |
+| `docs/golden/workflow/research_overfitting_and_generalization.md` | Why prompt engineering has a ceiling |
+| `docs/golden/workflow/new_tractate_workflow.md` | Step-by-step for new tractates |
+| `src/story_detector_v7.py` | Canonical detector — DO NOT modify in place |
+| `src/story_detector_v8.py` | v7 + Wave 1 fixes (mechanical post-processors) |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
-| `results/kiddushin/kiddushin_v7.json` | Kiddushin detection results (96 stories) |
-| `scripts/run_kiddushin.py` | Run script for Kiddushin |
-| `tasks/lessons.md` | 10 lessons learned across all sessions |
+| `results/v7/kiddushin_v7.json` | Kiddushin v7 results (96 stories, pre-Wave-1) |
+| `results/v8/kiddushin_v8.json` | Kiddushin Wave 1 results (93 stories) |
+| `scripts/run_kiddushin.py` | Run script for Kiddushin (v7) |
+| `scripts/run_kiddushin_wave1.py` | Kiddushin Wave 1 runner (v8) |
+| `scripts/verify_wave1.py` | Kiddushin Wave 1 verification (11 checks) |
+| `scripts/compare_ketubot_v7_v8.py` | Ketubot v7-vs-v8 regression check |
+| `tasks/lessons.md` | 11 lessons learned across all sessions |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
 ## Git Tags

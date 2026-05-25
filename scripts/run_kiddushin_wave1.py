@@ -29,10 +29,11 @@ MODEL = "gemini-3-flash-preview"
 TRACTATE = "Kiddushin"
 DELAY = 0.5
 
-RESULTS_DIR = PROJECT_ROOT / 'results' / 'kiddushin'
-PAGES_CACHE_PATH = RESULTS_DIR / 'kiddushin_pages.json'
-TRIAGE_PATH = RESULTS_DIR / 'event_triage_kiddushin.json'
-OUTPUT_PATH = RESULTS_DIR / 'kiddushin_v8.json'
+CACHE_DIR = PROJECT_ROOT / 'results' / 'v7'  # Sefaria + triage caches live here
+OUT_DIR = PROJECT_ROOT / 'results' / 'v8'
+PAGES_CACHE_PATH = CACHE_DIR / 'kiddushin_pages.json'
+TRIAGE_PATH = CACHE_DIR / 'event_triage_kiddushin.json'
+OUTPUT_PATH = OUT_DIR / 'kiddushin_v8.json'
 
 
 def main():
@@ -63,8 +64,8 @@ def main():
     feedback_path = PROJECT_ROOT / 'validation' / 'feedback' / \
         'v5_1_feedback_anonymous_2026-02-05 (1).json'
     v5_paths = [
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(PROJECT_ROOT / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_2-39.json'),
+        str(PROJECT_ROOT / 'results' / 'v5' / 'pages_40-60.json'),
     ]
     db = GroundTruthDB()
     if feedback_path.exists():
