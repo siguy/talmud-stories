@@ -21,6 +21,76 @@
 | Canonical | Mar 2026 | Unified Dataset | Merge all feedback into single 189-story canonical file |
 | v10 Golden | Mar 2026 | Golden Dataset | 182 stories, 48 corrections, composite 0.93. Detector experiments reverted. |
 | Kiddushin | Mar 2026 | Generalization Test | 96 stories on new tractate. Stage 4f continuation check. Awaiting Jeff review. |
+| v8 Wave 1 | May 2026 | Mechanical fixes | Cross-page seg-0 fix, gap-aware continuation, triage lexical override, Mishnah filter |
+| v8 Wave 2 | May 2026 | Boundary + biblical | Start-snap to introducer, end-trim stam markers, biblical-actor demotion; first Kiddushin golden |
+
+---
+
+## v8 Wave 2: Boundary Snap + Biblical Filter (2026-05-24)
+
+**Goal:** Address remaining classes of error from Jeff's 2026-04-23 Kiddushin review with deterministic post-processors.
+
+**Changes** (all in `src/story_detector_v8.py`, Stage 4):
+1. **`snap_start_to_introducer`** — extends story start back when the segment immediately before the detected start opens with a canonical introducer (`ההוא ד`, `ההיא`, `מעשה ב`, `כי הא ד`, etc.). Snap-forward variant fires on segments within the first 3 of a story.
+2. **`trim_trailing_stam_segments`** — drops trailing segments opening with stam-Talmud markers (`שמע מינה`, `מאי טעמא`, `אי הכי`, `שאני`, `תא שמע`, etc.).
+3. **`filter_biblical_actor_stories`** — demotes stories whose `criteria.identifiable_characters.evidence` names only biblical figures (Moses, David, Nebuchadnezzar, Ezra, "Jewish people" collective, etc.) to NOT_A_STORY.
+
+**Kiddushin golden built this session:** `results/canonical/kiddushin_canonical.json` from `scripts/build_kiddushin_canonical.py`, promoting Jeff's 96 reviews into 85 confirmed real stories + 11 NOT_A_STORY reclassifications.
+
+**Scores** (fresh both waves, same day):
+
+| Tractate | Metric | Wave 1 | Wave 2 | Δ |
+|---|---|---:|---:|---:|
+| Kiddushin | Classification F1 | 0.9101 | 0.9257 | +0.016 |
+| Kiddushin | Boundary IoU | 0.9856 | 0.9815 | -0.004 |
+| Kiddushin | Merge F1 | 0.6667 | 0.6667 | 0.000 |
+| **Kiddushin** | **Composite** | **0.8916** | **0.8962** | **+0.005** |
+| Ketubot | Classification F1 | 0.8952 | 0.8952 | 0.000 |
+| Ketubot | Boundary IoU | 0.9569 | 0.9563 | -0.001 |
+| Ketubot | Merge F1 | 0.8780 | 0.8780 | 0.000 |
+| **Ketubot** | **Composite** | **0.9164** | **0.9162** | **-0.0002** |
+
+**Activity:**
+- Biblical filter fired 3x on Kiddushin (38a, 69b, 72b). Zero on Ketubot.
+- Start snap fired 3x (Kid 12a, Ket 67b, Ket 85a) — all extend-back to a textbook introducer.
+- End trim fired 0x — Lesson 12 explains why (Jeff's end-boundary cases are text-internal).
+
+**Files added:**
+- `scripts/apply_wave2.py` — runs Wave 2 filters on Wave 1 outputs without LLM re-call
+- `scripts/build_kiddushin_canonical.py` — Kiddushin golden builder
+- `scripts/verify_wave2.py` — 10-check pass/fail report
+- `scripts/compare_v8_waves.py` — Wave 1 vs Wave 2 delta table
+- `results/v8/wave2/{kiddushin_v8,ketubot_v8_2-60,ketubot_v8_61-112}.json`
+- `docs/golden/v8/wave2_results.md` — full writeup
+- `docs/golden/v8/baselines/{kiddushin,ketubot}_wave1_baseline.json`
+
+**Key findings (Lessons 12, 13):**
+- Most of Jeff's boundary feedback is text-internal (within a single segment); segment-level mechanical fixes can't reach it. Wave 3 must edit at sub-segment text granularity.
+- Strict composite-score gates penalize correct improvements when expert hasn't reviewed the affected cases. Shipped Wave 2 despite -0.0002 on Ketubot — both Ketubot snaps are rabbinically correct and flagged for Jeff's next review round.
+
+**Commit:** `1c4d18d`
+
+---
+
+## v8 Wave 1: Mechanical Fixes from Jeff's 2026-04-23 Kiddushin Review (2026-05-17)
+
+**Goal:** Ship four mechanical fixes targeting Jeff's first-pass Kiddushin feedback. No model change, no prompt rewrite.
+
+**Changes:**
+1. **Cross-page first-segment skip fix** (Issue #1) — `merge_cross_page_stories_v7` Case 5: when both pages flag continuation and page2 starts at seg 1, force include seg 0.
+2. **Gap-aware continuation** (Issue #2) — reject any cross-page bridge with intervening segments between story end and page boundary.
+3. **Triage lexical override** (Issue #5) — pages containing canonical introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `כי הא ד`) force Stage 2 to run.
+4. **Mishnah-only story filter** (Issue #7) — stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) moved to `mishnah_stories`.
+
+**Results:**
+- Kiddushin: 11/11 verification checks pass. 2 missed stories recovered (45a, 53a). 3/4 false bridges removed. 1 Mishnah story bucketed.
+- Ketubot: composite 0.8576 → 0.9164 (+0.06) — Issue #1 fix also caught same bug on 103b→104a.
+
+**Key finding (Lesson 11):** LLM nondeterminism breaks historical baselines. Always generate a fresh baseline same-day before comparing.
+
+**Files:** `src/story_detector_v8.py` (forked from v7, kept v7 untouched), `scripts/run_kiddushin_wave1.py`, `scripts/verify_wave1.py`, `scripts/compare_ketubot_v7_v8.py`, `docs/golden/v8/wave1_results.md`.
+
+**Commit:** `eff0218`
 
 ---
 

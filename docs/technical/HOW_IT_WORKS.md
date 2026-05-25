@@ -111,6 +111,14 @@ Why this works better than the sliding-window approach (which produced 28 false 
 Cost: ~$0.03 per tractate (20-30 small API calls).
 Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben Netina, 31a→31b).
 
+**Stage 4g (v8 Wave 1): Mishnah-only filter** — moves stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) into a separate `mishnah_stories` list.
+
+**Stage 4h (v8 Wave 2): Start-boundary snap** — `snap_start_to_introducer`. For each multi-segment story: if a canonical Hebrew introducer (`ההוא ד`, `ההיא`, `מעשה ב`, `כי הא ד`, `כדתניא`) starts the segment immediately BEFORE detector's start, extend start back. If one starts a segment in `[start+1..start+3]`, snap start forward. Pure-Python, no LLM.
+
+**Stage 4i (v8 Wave 2): End-boundary trim** — `trim_trailing_stam_segments`. Walks story from end inward, drops trailing segments that open with stam-Talmud markers (`שמע מינה`, `מאי טעמא`, `אי הכי`, `שאני`, `תא שמע`, `מיתיבי`, etc.) as long as ≥2 segments remain.
+
+**Stage 4j (v8 Wave 2): Biblical-actor filter** — `filter_biblical_actor_stories`. Demotes stories whose `criteria.identifiable_characters.evidence` names only biblical figures (Moses, David, Ezra, Nebuchadnezzar, "Jewish people" collective, etc.) to NOT_A_STORY. The catalog is for rabbinic stories.
+
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
 
 ### Stage 5: Post-Processing (`src/post_processing.py`)
