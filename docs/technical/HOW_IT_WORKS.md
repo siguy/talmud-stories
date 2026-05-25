@@ -119,6 +119,13 @@ Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben 
 
 **Stage 4j (v8 Wave 2): Biblical-actor filter** — `filter_biblical_actor_stories`. Demotes stories whose `criteria.identifiable_characters.evidence` names only biblical figures (Moses, David, Ezra, Nebuchadnezzar, "Jewish people" collective, etc.) to NOT_A_STORY. The catalog is for rabbinic stories.
 
+**Stage 4k (v9 Wave 3): Text-internal boundary edits** — `edit_text_internal_boundaries`. For each real story: search the first segment for the earliest canonical introducer at a word boundary, search the last segment for the latest stam-Talmud marker at a full word boundary. When found mid-segment, records `text_span_start = {segment, char_offset, introducer}` and/or `text_span_end = {segment, char_offset, marker}`. Char offsets are in the original (with-nikud) text. The evaluation harness reads only `start_segment` / `end_segment`, so these fields are score-neutral — the change shows up in the review UI (slice rendered with strikethrough + highlight) but not in the metric. Closes the segment-level gap from Lesson 12.
+
+**Wave 3 Stage 2 prompt changes (v9):**
+- "MULTIPLE STORIES PER PAGE" section — detect every distinct story; follow with iterative pass (one extra Stage 2 call listing already-detected ranges) when ≥1 story found.
+- "EMBEDDED STORIES" section — two worked examples (Ketubot 111b baraita-embedded `תניא + מעשה ב`; Ketubot 91a objection-embedded `תא שמע + narrative`). Both sourced from Ketubot canonical (Lesson 2).
+- Three new disqualifier rules: all-verbal exchanges, biblical-only narratives, requirement of ≥2 distinct actions + change/conflict. Per Lesson 8 these are abstract patterns only — no Kiddushin-specific examples.
+
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
 
 ### Stage 5: Post-Processing (`src/post_processing.py`)

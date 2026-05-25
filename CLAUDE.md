@@ -3,13 +3,13 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
-## Current State (March 2026)
+## Current State (May 2026)
 - **Golden Ketubot dataset**: 182 expert-validated stories (`results/canonical/ketubot_canonical.json`)
-- **Evaluation framework**: Scores any detector output against golden labels (`scripts/evaluate_golden.py`)
-- **Ketubot baseline**: Classification F1=0.92, Boundary IoU=0.98, Merge F1=0.86, Composite=0.93
-- **Key finding**: Prompt engineering and few-shot examples cannot improve beyond 0.93 on Ketubot (see `docs/golden/research_overfitting_and_generalization.md`)
-- **Kiddushin run complete**: 96 stories detected across 162 pages, 12 cross-page stories (3 via new continuation check). Review UI sent to Jeff. Awaiting his feedback.
-- **Next step**: Score Kiddushin against Jeff's labels, compare to Ketubot baseline (target: 0.85+ composite)
+- **Golden Kiddushin dataset**: 85 expert-validated stories (`results/canonical/kiddushin_canonical.json`, built from Jeff's 2026-04-23 review)
+- **Evaluation framework**: `scripts/evaluate_golden.py` (IMMUTABLE)
+- **Active detector**: v9 (Wave 3) — `src/story_detector_v9.py`. v8 frozen as Wave 2 baseline.
+- **Wave 3 scores (today vs Wave 2):** Ketubot composite 0.9162 → **0.9170** (+0.044 recall, −7 FNs). Kiddushin 0.8962 → 0.8859 (5 new finds incl. Jeff's flagged-missing 33a — shipped per Lesson 13). See `docs/golden/v9/wave3_results.md`.
+- **Next step**: Send Kiddushin Wave 3 + Ketubot Wave 3 review UIs to Jeff. His verdicts on the 7 new Kiddushin candidates will determine whether the next iteration's composite moves up.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
@@ -60,9 +60,12 @@ results/                          # See results/README.md for full layout
   v4/, v5/, v6/                   #   Historical detector outputs
   v7/                             #   FROZEN v7 baseline + Sefaria/triage caches
   v7_fresh/                       #   v7 re-run 2026-05-18 (use as same-day baseline; Lesson 11)
-  v8/                             #   ACTIVE DEVELOPMENT — current detector
+  v8/                             #   FROZEN Wave 1+2 baseline
     wave1/                        #     Wave 1 outputs (kiddushin_v8.json, ketubot_v8_*)
-    wave2/                        #     (next session)
+    wave2/                        #     Wave 2 outputs (frozen gate for Wave 3)
+  v9/                             #   ACTIVE DEVELOPMENT — current detector
+    wave3/                        #     Wave 3 outputs (kiddushin_v9.json, ketubot_v9_*)
+    wave3_item4/                  #     Item 4 score-neutrality artifact
 validation/
   ui/                             #   HTML review interfaces
   generators/                     #   Scripts to generate UIs
@@ -71,7 +74,8 @@ docs/
   golden/                         # ORGANIZED BY DETECTOR VERSION (reorg 2026-05-24)
     workflow/                     #   Cross-version process docs and research
     v7/                           #   v7-era analyses + Kiddushin feedback
-    v8/                           #   Wave 1 results
+    v8/                           #   Wave 1+2 results
+    v9/                           #   Wave 3 results
     v10/                          #   v10 findings + post-improvement email
   technical/                      #   Pipeline docs (HOW_IT_WORKS, etc.)
   brainstorms/                    #   Design exploration
@@ -88,27 +92,38 @@ archive/                          # Old versions (reference only)
 | `results/canonical/ketubot_canonical.json` | **THE golden dataset** (182 stories) |
 | `scripts/evaluate_golden.py` | IMMUTABLE evaluation harness |
 | `docs/golden/v7/baseline_ketubot.json` | v7 baseline scores (historical 0.93; not reproducible — Lesson 11) |
-| `docs/golden/v8/wave1_results.md` | **Wave 1 writeup** (start here for current state) |
+| `docs/golden/v9/wave3_results.md` | **Wave 3 writeup** (start here for current state) |
+| `docs/golden/v8/wave2_results.md` | Wave 2 writeup |
+| `docs/golden/v8/wave1_results.md` | Wave 1 writeup |
+| `docs/golden/v8/wave3_approach.md` | Wave 3 approach + design decisions |
 | `docs/golden/workflow/error_taxonomy.md` | 6 error patterns from Jeff's reviews |
 | `docs/golden/v10/findings_v10_golden_dataset.md` | v10 session writeup |
 | `docs/golden/workflow/research_overfitting_and_generalization.md` | Why prompt engineering has a ceiling |
 | `docs/golden/workflow/new_tractate_workflow.md` | Step-by-step for new tractates |
-| `src/story_detector_v7.py` | Canonical detector — DO NOT modify in place |
-| `src/story_detector_v8.py` | v7 + Wave 1 fixes (mechanical post-processors) |
+| `src/story_detector_v7.py` | v7 — DO NOT modify in place |
+| `src/story_detector_v8.py` | FROZEN Wave 2 baseline (v7 + Wave 1/2 post-processors) |
+| `src/story_detector_v9.py` | **ACTIVE** — v8 + Wave 3 prompt changes + text_span post-processor |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
 | `results/v7/kiddushin_v7.json` | Kiddushin v7 results (96 stories, pre-Wave-1) |
-| `results/v8/kiddushin_v8.json` | Kiddushin Wave 1 results (93 stories) |
-| `scripts/run_kiddushin.py` | Run script for Kiddushin (v7) |
+| `results/v8/wave2/kiddushin_v8.json` | Kiddushin Wave 2 (frozen baseline for Wave 3 gate) |
+| `results/v9/wave3/kiddushin_v9.json` | Kiddushin Wave 3 results (95 stories) |
+| `results/v9/wave3/ketubot_v9_2-60.json`, `results/v9/wave3/ketubot_v9_61-112.json` | Ketubot Wave 3 results |
+| `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json` | Today-regenerated Wave 2 numbers (gate per Lesson 11) |
+| `scripts/run_wave3.py` | Parameterized Wave 3 runner (--tractate / --range / --refs) |
+| `scripts/apply_wave3_item4.py` | Apply item 4 to Wave 2 outputs (score-neutrality fast path) |
+| `scripts/audit_wave3_item4.py` | Audit item 4 against Jeff's 17 boundary cases (`AUDIT_INPUT` env override) |
+| `scripts/verify_wave3.py` | Wave 3 per-item pass/fail report |
+| `scripts/compare_v8_v9.py` | Wave 2 vs Wave 3 side-by-side metrics |
 | `scripts/run_kiddushin_wave1.py` | Kiddushin Wave 1 runner (v8) |
-| `scripts/verify_wave1.py` | Kiddushin Wave 1 verification (11 checks) |
-| `scripts/compare_ketubot_v7_v8.py` | Ketubot v7-vs-v8 regression check |
-| `tasks/lessons.md` | 11 lessons learned across all sessions |
+| `scripts/verify_wave1.py` | Wave 1 verification |
+| `tasks/lessons.md` | 14 lessons learned across all sessions |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
 ## Git Tags
 - `v10-golden-ketubot` — golden dataset checkpoint
 - `pre-detector-changes` — rollback point for detector experiments
+- `v9-wave3` — Wave 3 ship point
 
 ## Testing Requirements
 1. Always verify changes work — don't assume

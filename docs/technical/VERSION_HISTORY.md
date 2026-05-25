@@ -23,6 +23,55 @@
 | Kiddushin | Mar 2026 | Generalization Test | 96 stories on new tractate. Stage 4f continuation check. Awaiting Jeff review. |
 | v8 Wave 1 | May 2026 | Mechanical fixes | Cross-page seg-0 fix, gap-aware continuation, triage lexical override, Mishnah filter |
 | v8 Wave 2 | May 2026 | Boundary + biblical | Start-snap to introducer, end-trim stam markers, biblical-actor demotion; first Kiddushin golden |
+| v9 Wave 3 | May 2026 | Embedded + text-span | Multi-story-per-page + embedded-story few-shots + sharper not-a-story rules (prompt); text_span_* sub-segment edits (post-processor). Ketubot composite 0.9162→0.9170 (recall +0.044, −7 FNs); Kiddushin 0.8962→0.8859 (5 new finds incl. Jeff's flagged-missing 33a — shipped per Lesson 13). |
+
+---
+
+## v9 Wave 3: Embedded Stories + Text-Span Boundaries (2026-05-25)
+
+**Goal:** Catch embedded stories (baraita / objection), multi-story pages, and address Lesson 12 text-internal boundary feedback.
+
+**Detector:** new `src/story_detector_v9.py` (forked from v8). v8 frozen as Wave 2 baseline.
+
+**Changes:**
+1. **Multi-story-per-page (prompt + iterative Stage 2)** — Stage 2 prompt instructs detection of every distinct story on a page. After the first pass, a second "find more stories" pass is made with already-detected ranges listed, asking only for non-overlapping additions. Capped at 1 extra pass per page.
+2. **Embedded-story few-shots** — Stage 2 prompt adds two worked examples (Ketubot 111b 13 baraita-embedded; Ketubot 91a 19-20 objection-embedded). Both from Ketubot canonical (Lesson 2 — never train on the eval set).
+3. **Sharper not-a-story rules** — three abstract disqualifier rules added (no all-verbal exchanges; no biblical-only narratives; ≥2 actions + change/conflict required). Per Lesson 8, abstract patterns only — no Kiddushin examples.
+4. **Text-internal boundary post-processor** (`edit_text_internal_boundaries`, Stage 4 step 4k) — records `text_span_start` / `text_span_end` fields with `{segment, char_offset, introducer|marker}` when the canonical introducer / trailing-stam marker falls mid-segment. Score-neutral by design (harness reads only segment indices).
+
+**Scores** (today-Wave-2 vs Wave 3, both fresh):
+
+| Tractate | Metric | Wave 2 | Wave 3 | Δ |
+|---|---|---:|---:|---:|
+| Kiddushin | Classification F1 | 0.9257 | 0.9000 | −0.026 |
+| Kiddushin | Recall | 0.9529 | 0.9529 | 0.000 |
+| Kiddushin | FP count | 9 | 14 | +5 |
+| **Kiddushin** | **Composite** | **0.8962** | **0.8859** | **−0.0103** |
+| Ketubot | Classification F1 | 0.8952 | 0.9108 | +0.016 |
+| Ketubot | Recall | 0.8924 | 0.9367 | **+0.044** |
+| Ketubot | FN count | 17 | 10 | **−7** |
+| **Ketubot** | **Composite** | **0.9162** | **0.9170** | **+0.0008** |
+
+**Why shipped despite Kiddushin gate failure (Lesson 13):** All 7 new Kiddushin detections inspected by hand. Most are real rabbinic narratives the v8 detector missed (Rav Sheshet flogging on 12b; Levi/Shmuel orla on 39a; betrothal-via-figs on 51a/52a). One — **Kiddushin 33a seg 5 "Rabbi Hiyya in bathhouse"** — is the story Jeff explicitly flagged as missed in the 2026-04-23 review. The Kiddushin golden was built from v8 detector + Jeff's prior reviews, so any new story v9 catches is scored as FP. Per Lesson 13: ship and flag for next review, don't disable to chase agreement with a stale frozen target.
+
+**Item 4 audit:** 10/17 Jeff-flagged text-internal boundary cases now produce a correct `text_span_*` slice (passes ≥10 plan gate). The 7 misses require either non-canonical introducers or end phrases not starting with a canonical stam marker — queued for Wave 4.
+
+**Files added:**
+- `src/story_detector_v9.py` — forked from v8
+- `scripts/run_wave3.py` — parameterized runner
+- `scripts/apply_wave3_item4.py` — score-neutrality fast path
+- `scripts/audit_wave3_item4.py` — Jeff's 17-case audit (`AUDIT_INPUT` env override)
+- `scripts/verify_wave3.py`, `scripts/compare_v8_v9.py`
+- `results/v9/wave3/{kiddushin_v9,ketubot_v9_2-60,ketubot_v9_61-112}.json`
+- `results/v9/wave3_item4/*.json` — score-neutrality artifact
+- `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
+- `docs/golden/v9/wave3_results.md` — full writeup
+
+**Files modified:** `validation/generators/generate_kiddushin_review_ui.py` (renders `text_span_*` slice).
+
+**Key finding (Lesson 14 — see lessons.md):** Iterative Stage 2 surfaced exactly the story Jeff said was missed (33a seg 5 bathhouse) — and the agreement-with-golden gate penalized it as a false positive. Lesson 13 in action: when the detector overtakes the golden, the metric drops even though quality improved.
+
+**Commit:** `[next]`
 
 ---
 

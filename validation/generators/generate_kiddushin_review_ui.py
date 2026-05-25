@@ -49,6 +49,8 @@ def build_stories_data(results):
                 'end_segment_page2': story.get('end_segment_page2'),
                 'continuation_check_extended': story.get('continuation_check_extended', False),
                 'cross_page_stitched': story.get('cross_page_stitched', False),
+                'text_span_start': story.get('text_span_start'),
+                'text_span_end': story.get('text_span_end'),
                 'key': f"{ref}_{story['start_segment']}-{story['end_segment']}",
             }
 
@@ -125,6 +127,9 @@ body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans
 .segment {{ padding: 4px 8px; margin: 2px 0; border-radius: 4px; font-size: 13px; line-height: 1.5; }}
 .segment.highlighted {{ background: #fffde7; border-left: 3px solid #f9a825; }}
 .segment .seg-num {{ color: #999; font-size: 11px; margin-right: 6px; }}
+.text-span-trim {{ color: #b0b0b0; text-decoration: line-through; opacity: 0.6; }}
+.text-span-kept {{ background: #d4edda; padding: 0 2px; border-radius: 2px; }}
+.text-span-note {{ font-size: 11px; color: #2e7d32; margin-top: 4px; font-style: italic; direction: ltr; text-align: left; }}
 .hebrew {{ direction: rtl; text-align: right; font-family: 'SBL Hebrew', 'Noto Serif Hebrew', 'Times New Roman', serif; font-size: 15px; line-height: 1.8; }}
 
 .page2-divider {{ border-top: 2px dashed #9b59b6; margin: 12px 0; padding-top: 8px; }}
@@ -291,13 +296,40 @@ function buildTextDisplay(story) {{
   }}
   html += '</div>';
 
-  // Hebrew
+  // Hebrew — with text_span slicing if v9 item 4 recorded sub-segment edits
   html += '<div class="text-block"><h4>Hebrew</h4>';
+  const tss = story.text_span_start;
+  const tse = story.text_span_end;
   for (let i = showStart; i <= showEnd; i++) {{
     const seg = segs.find(s => s.index === i);
     if (!seg) continue;
     const hl = (i >= start && i <= end) ? 'highlighted' : '';
-    html += `<div class="segment hebrew ${{hl}}"><span class="seg-num">${{i}}</span>${{seg.hebrew}}</div>`;
+    let heb = seg.hebrew || '';
+    let trimNote = '';
+    if (i >= start && i <= end && (tss || tse)) {{
+      let lo = 0, hi = heb.length;
+      let leadCut = '', tailCut = '';
+      if (tss && tss.segment === i && tss.char_offset > 0) {{
+        leadCut = heb.slice(0, tss.char_offset);
+        lo = tss.char_offset;
+      }}
+      if (tse && tse.segment === i && tse.char_offset > 0 && tse.char_offset < heb.length) {{
+        tailCut = heb.slice(tse.char_offset);
+        hi = tse.char_offset;
+      }}
+      if (lo > 0 || hi < heb.length) {{
+        const kept = heb.slice(lo, hi);
+        heb = '';
+        if (leadCut) heb += `<span class="text-span-trim" title="trimmed (halakhic framing)">${{leadCut}}</span>`;
+        heb += `<span class="text-span-kept">${{kept}}</span>`;
+        if (tailCut) heb += `<span class="text-span-trim" title="trimmed (stam commentary)">${{tailCut}}</span>`;
+        const tags = [];
+        if (tss && tss.segment === i) tags.push(`start→${{tss.introducer||''}}`);
+        if (tse && tse.segment === i) tags.push(`end before ${{tse.marker||''}}`);
+        trimNote = `<div class="text-span-note">v9 text-span: ${{tags.join(', ')}}</div>`;
+      }}
+    }}
+    html += `<div class="segment hebrew ${{hl}}"><span class="seg-num">${{i}}</span>${{heb}}${{trimNote}}</div>`;
   }}
   html += '</div>';
 

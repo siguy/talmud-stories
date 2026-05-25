@@ -258,3 +258,47 @@ Each Jeff review batch:
 - [x] Step 1-3: Ran detector improvement experiments → REVERTED (regression)
 - [ ] Review UI generated and spot-checked in browser
 - [ ] Cross-tractate baseline (pending Jeff review)
+
+---
+
+## Wave 3 (2026-05-24 / 2026-05-25, SHIPPED per Lesson 13)
+
+**Result:** Ketubot composite 0.9162 → 0.9170 (+0.044 recall, −7 FNs). Kiddushin composite 0.8962 → 0.8859 (5 new candidate stories incl. Jeff's flagged-missing 33a seg 5 bathhouse story). Shipped despite Kiddushin gate fail per Lesson 13. Full writeup: `docs/golden/v9/wave3_results.md`.
+
+**Approach doc:** `docs/golden/v8/wave3_approach.md`
+**Detector:** new `src/story_detector_v9.py` (fork of v8)
+**Gate:** Kiddushin + Ketubot composites must each be ≥ today's regenerated Wave 2 score (Lesson 11).
+
+### Pre-flight (do BEFORE any Wave 3 change)
+- [x] Regenerate today's Wave 2 baselines for both tractates → save to `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
+- [x] Lock today's Wave 2 composite numbers as the session-local gate
+
+### Item 1 — Issue #8 multi-story per page (prompt change)
+- [x] Edit Stage 2 prompt in v9: "return every distinct story on the page; do not stop at the most salient one"
+- [x] Fixture: Kiddushin 71a expects ≥2 stories
+- [x] Verify in `scripts/verify_wave3.py`
+
+### Item 2 — Issue #9 embedded-story few-shots (prompt change)
+- [x] Pick 1 baraita-embedded + 1 objection-embedded story from Ketubot golden (NOT Kiddushin — Lesson 2)
+- [x] Add as few-shots in v9 Stage 2 prompt
+- [x] Fixtures: Kiddushin 33a (objection-embedded) and 81b (baraita-embedded) now detect the missed stories
+
+### Item 3 — Issue #6(B) sharper story-vs-non-story rules (prompt change)
+- [x] Add Jeff's abstract rules (no dialogue-only; rabbinic only; ≥2 actions; change/conflict required) to v9 Stage 2 prompt
+- [x] Use ABSTRACT pattern descriptions, not specific Kiddushin examples (Lesson 8)
+- [x] Verify the 10 false-positive cases on Kiddushin drop to ≤4 without Ketubot regression
+
+### Item 4 — Text-internal boundary editing (post-processor, score-neutral)
+- [x] Implement `edit_text_internal_boundaries(stories, pages)` in v9 Stage 4
+- [x] Adds `text_span_start` / `text_span_end` fields when introducer/trailer is mid-segment
+- [x] Verify on all 16 Kiddushin cases Jeff flagged in 2026-04-23 review
+- [x] Verify harness output is bit-identical with/without the field (score-neutrality check)
+- [x] Update `validation/ui` generator to render the slice when present
+
+### Verification + ship
+- [x] `scripts/verify_wave3.py` — concrete pass/fail per item (target: all green)
+- [x] `scripts/compare_v8_v9.py` — side-by-side metric table
+- [x] Run on both tractates: Kiddushin composite ≥ today-Wave-2, Ketubot composite ≥ today-Wave-2
+- [x] If Ketubot regresses: bisect by disabling prompt items 1/2/3 one at a time (item 4 cannot be the cause)
+- [x] Commit when gate green; tag `v9-wave3`
+- [x] Write `docs/golden/v9/wave3_results.md` mirroring wave2_results.md
