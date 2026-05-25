@@ -51,16 +51,18 @@ scripts/                          # Execution and analysis scripts
   evaluate_golden.py              #   IMMUTABLE evaluation harness
   boundary_lookup.py              #   Match Hebrew markers to segments
   autoresearch/                   #   Experiment infrastructure (unused)
-results/                          # ORGANIZED BY DETECTOR VERSION (reorg 2026-05-24)
-  canonical/                      #   Golden dataset (THE labels; immutable)
+results/                          # See results/README.md for full layout
+  canonical/                      #   GOLDEN LABELS (Jeff's validations)
+    ketubot_canonical.json        #     Ketubot golden (182 stories, iteration 10)
+    kiddushin_canonical.json      #     TODO — promote from validation/feedback/
+    source_runs/                  #     Detector runs that fed golden corrections
+                                  #     (formerly results/v10/ — NOT a detector version)
   v4/, v5/, v6/                   #   Historical detector outputs
-  v7/                             #   v7 baseline + Sefaria/triage caches
-                                  #     (ketubot_v7_*.json, ketubot_v9_61-112.json,
-                                  #      kiddushin_v7.json, kiddushin_pages.json,
-                                  #      event_triage_*.json)
-  v7_fresh/                       #   v7 re-run from 2026-05-18 (fair-baseline)
-  v8/                             #   Wave 1 fixes — ketubot_v8_*, kiddushin_v8
-  v10/                            #   Experiment branch (reverted, kept for reference)
+  v7/                             #   FROZEN v7 baseline + Sefaria/triage caches
+  v7_fresh/                       #   v7 re-run 2026-05-18 (use as same-day baseline; Lesson 11)
+  v8/                             #   ACTIVE DEVELOPMENT — current detector
+    wave1/                        #     Wave 1 outputs (kiddushin_v8.json, ketubot_v8_*)
+    wave2/                        #     (next session)
 validation/
   ui/                             #   HTML review interfaces
   generators/                     #   Scripts to generate UIs

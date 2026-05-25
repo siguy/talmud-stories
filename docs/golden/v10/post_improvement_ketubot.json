@@ -1,26 +1,26 @@
 {
   "classification": {
-    "precision": 0.8944,
-    "recall": 0.9114,
-    "f1": 0.9028,
-    "tp": 144,
-    "fp": 17,
-    "fn": 14,
-    "tn": 16
+    "precision": 0.8994,
+    "recall": 0.9051,
+    "f1": 0.9022,
+    "tp": 143,
+    "fp": 16,
+    "fn": 15,
+    "tn": 17
   },
   "boundary": {
-    "mean_iou": 0.956,
+    "mean_iou": 0.9545,
     "median_iou": 1.0,
-    "pct_above_0.8": 0.9028,
-    "count": 144
+    "pct_above_0.8": 0.9021,
+    "count": 143
   },
   "merge": {
-    "precision": 0.6522,
-    "recall": 0.7895,
-    "f1": 0.7143,
+    "precision": 0.64,
+    "recall": 0.8421,
+    "f1": 0.7273,
     "golden_merges": 19,
-    "detected_merges": 23,
-    "matched": 15
+    "detected_merges": 25,
+    "matched": 16
   },
-  "composite": 0.8864
+  "composite": 0.8881
 }

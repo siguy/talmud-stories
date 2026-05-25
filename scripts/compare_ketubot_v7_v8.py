@@ -20,8 +20,8 @@ GOLDEN = ROOT / 'results' / 'canonical' / 'ketubot_canonical.json'
 # must compare two runs taken on the same day in the same model conditions.
 V7_2_60 = ROOT / 'results' / 'v7_fresh' / 'ketubot_v7_2-60.json'
 V7_61_112 = ROOT / 'results' / 'v7_fresh' / 'ketubot_v7_61-112.json'
-V8_2_60 = ROOT / 'results' / 'v8' / 'ketubot_v8_2-60.json'
-V8_61_112 = ROOT / 'results' / 'v8' / 'ketubot_v8_61-112.json'
+V8_2_60 = ROOT / 'results' / 'v8' / 'wave1' / 'ketubot_v8_2-60.json'
+V8_61_112 = ROOT / 'results' / 'v8' / 'wave1' / 'ketubot_v8_61-112.json'
 
 
 def run_eval(detected_a, detected_b, label):

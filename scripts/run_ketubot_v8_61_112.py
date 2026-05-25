@@ -13,7 +13,7 @@ from src.story_detector_v8 import V7StoryDetector
 
 PAGES_FILE = ROOT / 'results' / 'v7' / 'ketubot_pages_61-112.json'
 TRIAGE_FILE = ROOT / 'results' / 'v7' / 'event_triage_61-112.json'
-OUT_FILE = ROOT / 'results' / 'v8' / 'ketubot_v8_61-112.json'
+OUT_FILE = ROOT / 'results' / 'v8' / 'wave1' / 'ketubot_v8_61-112.json'
 
 
 def load_pages(path):

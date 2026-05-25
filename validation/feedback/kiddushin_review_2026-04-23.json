@@ -1,0 +1,908 @@
+{
+  "tractate": "Kiddushin",
+  "date": "2026-04-23",
+  "total_stories": 96,
+  "reviewed": 96,
+  "reviews": {
+    "Kiddushin 8a_9-9": {
+      "index": 1,
+      "page_ref": "Kiddushin 8a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Kahana accepted a scarf as payment for the redemption of a firstborn son, declaring that to him personally, it was worth the required five sela.",
+      "verdict": "correct",
+      "notes": "Boundary issue: The story excerpt should start with \"This is like the incident...\" = כִּי הָא דְּרַב כָּהֲנָא שָׁקֵיל סוּדָרָא מִבֵּי פִּדְיוֹן הַבֵּן",
+      "spans_pages": null
+    },
+    "Kiddushin 8a_10-10": {
+      "index": 2,
+      "page_ref": "Kiddushin 8a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Mar bar Rav Ashi purchased a scarf from the mother of Rabbah of Paraziya to demonstrate its value.",
+      "verdict": "correct",
+      "notes": "boundary issue. The story should begin \"This is like the incident...\" =  כִּי הָא דְּמָר בַּר רַב אָשֵׁי ",
+      "spans_pages": null
+    },
+    "Kiddushin 8b_2-2": {
+      "index": 3,
+      "page_ref": "Kiddushin 8b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "The sons of Rav Huna bar Avin gave a silver bar as collateral for a maidservant, and when her value rose, they sought a ruling from Rabbi Ammi regarding the payment.",
+      "verdict": "incorrect",
+      "notes": "High confidence. There is conflict, change, and several actions. ",
+      "spans_pages": null
+    },
+    "Kiddushin 8b_14-14": {
+      "index": 4,
+      "page_ref": "Kiddushin 8b",
+      "classification": "YES",
+      "summary": "A man was selling items (identified on the next page as glass beads) when a woman approached him. A woman asks a bead-seller for a string of beads, and he attempts to betroth her with them, leading to a ruling on her ambiguous response.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": [
+        "Kiddushin 8b",
+        "Kiddushin 9a"
+      ]
+    },
+    "Kiddushin 9a_1-1": {
+      "index": 5,
+      "page_ref": "Kiddushin 9a",
+      "classification": "YES",
+      "summary": "A man drinking in a wine shop is asked for a cup by a woman, and he tries to betroth her with it.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 9a_2-2": {
+      "index": 6,
+      "page_ref": "Kiddushin 9a",
+      "classification": "YES",
+      "summary": "A man picking dates is asked by a woman to throw some down to her, and he attempts to betroth her with them.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 12a_13-13": {
+      "index": 7,
+      "page_ref": "Kiddushin 12a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man betroths a woman with a bundle of rags, and Rav Shimi bar Hiyya physically examines the item to see if it meets the minimum value for a valid betrothal.",
+      "verdict": "correct",
+      "notes": "boundary issue: the story should end with: אִי אִית בַּהּ שָׁוֶה פְּרוּטָה – אִין, אִי לָא – לָא.  The next sentence, וְאִי לֵית בַּהּ שָׁוֶה פְּרוּטָה לָא?, is the anonymous talmud's reaction to the story. Not the story itself.",
+      "spans_pages": null
+    },
+    "Kiddushin 12a_14-15": {
+      "index": 8,
+      "page_ref": "Kiddushin 12a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "After a man betroths a woman with a blue marble stone, Rav Hisda finds it lacks value, leading the man's mother to unsuccessfully argue that it was worth more at the time of the act.",
+      "verdict": "correct",
+      "notes": "boundary issue. The story continues with the statement of Rav Hisda on 12b: לָאו הַיְינוּ דִּיהוּדִית דְּבֵיתְהוּ דְּרַבִּי חִיָּיא, (דַּהֲוֵית) [דַּהֲוָה] לַהּ צַעַר לֵידָה, אֲמַרָה לֵיהּ: אֲמַרָה לִי אֵם: קַבֵּיל בִּיךְ אֲבוּךְ קִידּוּשֵׁי כִּי זוּטְרַתְּ. אֲמַר לַהּ: לָאו כָּל כְּמִינַּהּ דְּאִימָּךְ דְּאָסְרָה לִיךְ עִילָּוַאי.",
+      "spans_pages": null
+    },
+    "Kiddushin 12b_4-4": {
+      "index": 9,
+      "page_ref": "Kiddushin 12b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Following Rav Hisda's ruling that a betrothal with a marble was invalid, the woman remarried and had children, but the Sages of Sura avoided marrying into her family due to the halakhic dispute.",
+      "verdict": "incorrect",
+      "notes": "low confidence. ",
+      "spans_pages": null
+    },
+    "Kiddushin 12b_5-5": {
+      "index": 10,
+      "page_ref": "Kiddushin 12b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man betrothed a woman with a myrtle branch in a marketplace, and Rav Yosef ruled that he should be flogged for the impropriety and provide a bill of divorce.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 12b_10-10": {
+      "index": 11,
+      "page_ref": "Kiddushin 12b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "A man attempted to betroth a woman with a worthless mat, but when told it was valueless, he directed her to the money wrapped inside, to which she responded with silence after taking it.",
+      "verdict": "correct",
+      "notes": "Boundary issue. This continuation on 13a is not part of the story. It is clearly separated from the story by the bottom lines on 12b. So only the part on 12b, should be quoted. That excerpt is correct. ",
+      "spans_pages": [
+        "Kiddushin 12b",
+        "Kiddushin 13a"
+      ]
+    },
+    "Kiddushin 13a_3-3": {
+      "index": 12,
+      "page_ref": "Kiddushin 13a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man snatches a belt from a woman and offers to return it as a means of betrothal, leading Rav Nachman to rule on the validity of the act.",
+      "verdict": "incorrect",
+      "notes": "Yes, a full story. More than two actions and conflict and change.",
+      "spans_pages": null
+    },
+    "Kiddushin 20a_12-15": {
+      "index": 13,
+      "page_ref": "Kiddushin 20a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Abaye boasts of his intellectual prowess, prompting an anonymous Sage to challenge him with a difficulty regarding the redemption of slaves.",
+      "verdict": "incorrect",
+      "notes": "Not a story. Just dialogue",
+      "spans_pages": null
+    },
+    "Kiddushin 22b_18-18": {
+      "index": 14,
+      "page_ref": "Kiddushin 22b",
+      "classification": "YES",
+      "summary": "Mar Zutra visits the dying convert Rabbi Yehuda and, realizing the man has no heirs, instructs Rabbi Yehuda's slave to perform an act of service for him so that he may legally acquire the slave before the property becomes ownerless. Following the death of Rabbi Yehuda from India, Mar Zutra acquires his slave through a specific act of possession performed just before the death.",
+      "verdict": "correct",
+      "notes": "Minor issue. The next few words should be included, וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, since it is an alternative version of the story.",
+      "spans_pages": [
+        "Kiddushin 22b",
+        "Kiddushin 23a"
+      ]
+    },
+    "Kiddushin 25a_1-3": {
+      "index": 15,
+      "page_ref": "Kiddushin 25a",
+      "classification": "YES",
+      "summary": "Rav Hisda sends Rav Hamnuna to ostracize the Elders of Nezonya for boycotting his lectures, but they stump him with a legal question, forcing him to return to Rav Hisda in defeat.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story continues through the next two lines (4-5): וְאֵלּוּ הֵם: רָאשֵׁי אֶצְבָּעוֹת יָדַיִם וְרַגְלַיִם, וְרָאשֵׁי אׇזְנַיִם, וְרֹאשׁ הַחוֹטֶם, וְרֹאשׁ הַגְּוִיָּיה וְרָאשֵׁי דַדִּים שֶׁבָּאִשָּׁה. רַבִּי יְהוּדָה אוֹמֵר: אַף שֶׁבָּאִישׁ. וְתָנֵי עֲלַהּ: בְּכוּלָּם עֶבֶד יוֹצֵא בָּהֶם לְחֵירוּת. רַבִּי אוֹמֵר: אַף הַסֵּירוּס. בֶּן עַזַּאי אוֹמֵר: אַף הַלָּשׁוֹן. 5אָמַר מָר: רַבִּי אוֹמֵר אַף הַסֵּירוּס. סֵירוּס דְּמַאי? אִילֵּימָא סֵירוּס דְּגִיד, הַיְינוּ גְּוִיָּיה. אֶלָּא לָאו: סֵירוּס דְּבֵיצִים?",
+      "spans_pages": null
+    },
+    "Kiddushin 25a_17-17": {
+      "index": 16,
+      "page_ref": "Kiddushin 25a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A maidservant in Rabbi Yehuda HaNasi's house immersed in a mikveh, but a bone was later found between her teeth, raising questions about the validity of the immersion.",
+      "verdict": "correct",
+      "notes": "Boundary should be adjusted to the story alone without the transition to the story. It should start: מַעֲשֶׂה בְּשִׁפְחָה שֶׁל בֵּית רַבִּי שֶׁטָּבְלָה, וְעָלְתָה וְנִמְצָא עֶצֶם בֵּין שִׁינֶּיהָ, וְהִצְרִיכָהּ רַבִּי טְבִילָה אַחֶרֶת.",
+      "spans_pages": null
+    },
+    "Kiddushin 26b_2-2": {
+      "index": 17,
+      "page_ref": "Kiddushin 26b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man from Madon in Jerusalem falls ill and seeks a way to legally transfer his property quickly before he dies.",
+      "verdict": "incorrect",
+      "notes": "High Confidence. ",
+      "spans_pages": null
+    },
+    "Kiddushin 26b_4-5": {
+      "index": 18,
+      "page_ref": "Kiddushin 26b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "A sick man in Jerusalem follows the Sages' advice by purchasing a small plot of land to legally transfer his movable property as a gift.",
+      "verdict": "correct",
+      "notes": "Minor boundary issue. The last sentence is the Talmud's conclusion. The story should end with וְקִיְּימוּ חֲכָמִים אֶת דְּבָרָיו",
+      "spans_pages": null
+    },
+    "Kiddushin 26b_10-10": {
+      "index": 19,
+      "page_ref": "Kiddushin 26b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "While traveling on a ship, Rabban Gamliel designates tithes and rents the land they sit on to other sages to effect the transfer.",
+      "verdict": "incorrect",
+      "notes": "Low confidence, as mainly a legal statement with no real change.  Also, boundary issue. Last few words should not be included (שְׁמַע מִינַּהּ בָּעֵינַן צְבוּרִים בַּהּ! שָׁאנֵי הָתָם, כִּי הֵיכִי דְּלָא לַיטְרְחִינְהוּ.)",
+      "spans_pages": [
+        "Kiddushin 26b",
+        "Kiddushin 27a"
+      ]
+    },
+    "Kiddushin 29b_10-12": {
+      "index": 20,
+      "page_ref": "Kiddushin 29b",
+      "classification": "YES",
+      "summary": "Abaye forces Rav Aha bar Ya'akov to stay in a haunted study hall, where Rav Aha's prayers miraculously destroy a seven-headed demon.",
+      "verdict": "correct",
+      "notes": "Boundary issue: The legal source before the story need not be quoted as it is not part of the story proper. The story begins: כִּי הָא דְּרַב יַעֲקֹב",
+      "spans_pages": null
+    },
+    "Kiddushin 29b_15-15": {
+      "index": 21,
+      "page_ref": "Kiddushin 29b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Huna meets Rav Hamnuna and, upon realizing he is unmarried, tells him not to see him again until he has a wife.",
+      "verdict": "incorrect",
+      "notes": "The passage on 29b should be marked \"high confidence.\"  The continuation included here on 30a is not part of the story. One way you know this is because it is there is some material that interrupts after the passage on 29b before this line on 30a. This seems to be an error as this same line is quoted with the next story.",
+      "spans_pages": [
+        "Kiddushin 29b",
+        "Kiddushin 30a"
+      ]
+    },
+    "Kiddushin 29b_18-18": {
+      "index": 22,
+      "page_ref": "Kiddushin 29b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Hisda attributes his intellectual superiority to his early marriage at sixteen.",
+      "verdict": "incorrect",
+      "notes": "Not a story. This is just a statement about his past, but there is no narrative.",
+      "spans_pages": [
+        "Kiddushin 29b",
+        "Kiddushin 30a"
+      ]
+    },
+    "Kiddushin 30a_7-7": {
+      "index": 23,
+      "page_ref": "Kiddushin 30a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabbi Ḥiyya bar Abba encounters Rabbi Yehoshua ben Levi rushing his grandson to study while dressed haphazardly, leading to a discussion on the importance of teaching one's descendants.",
+      "verdict": "incorrect",
+      "notes": "Yes. This is a story. There is an action, speech-act or question, and change.",
+      "spans_pages": null
+    },
+    "Kiddushin 31a_3-4": {
+      "index": 24,
+      "page_ref": "Kiddushin 31a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man asks Rabbi Eliezer how to prioritize honoring his parents, but his tears reveal to the Rabbi that he is actually a grieving orphan.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 31a_7-9": {
+      "index": 25,
+      "page_ref": "Kiddushin 31a",
+      "classification": "YES",
+      "summary": "Dama ben Netina refuses a lucrative business deal to avoid waking his sleeping father and is later rewarded by God with the birth of a red heifer.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 31a_12-12": {
+      "index": 26,
+      "page_ref": "Kiddushin 31a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "While Dama ben Netina was sitting in gold garments among Roman nobles, his mother publicly shamed and struck him, yet he refused to embarrass her.",
+      "verdict": "incorrect",
+      "notes": "Yes, this is a story. Boundary issue. The line on 31b is not part of the story. Again, it is clear from the fact that it is not continuous with the story on 31a but that other material interrupts. For a continuation on the next page of Talmud to be a true continuation, there can be no intervening material.",
+      "spans_pages": [
+        "Kiddushin 31a",
+        "Kiddushin 31b"
+      ]
+    },
+    "Kiddushin 31b_1-2": {
+      "index": 27,
+      "page_ref": "Kiddushin 31b",
+      "classification": "YES",
+      "summary": "Avimi demonstrates extreme respect for his father by standing over him while he sleeps, leading to divine assistance in his Torah studies.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 31b_4-4": {
+      "index": 28,
+      "page_ref": "Kiddushin 31b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabbi Tarfon acts as a human step-stool for his mother and is told by the Sages that he still hasn't fulfilled the mitzva's full potential.",
+      "verdict": "incorrect",
+      "notes": "Yes. This is a story. Two actions with a causal relationship. It also involved a type of conflict in R. Tarfon's brag and the rebuke by the rabbis.",
+      "spans_pages": null
+    },
+    "Kiddushin 31b_6-8": {
+      "index": 29,
+      "page_ref": "Kiddushin 31b",
+      "classification": "YES",
+      "summary": "Rav Asi flees to Israel to escape his senile mother's demands, but when he attempts to return to greet her upon hearing she followed him, he discovers she has passed away.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 32a_6-6": {
+      "index": 30,
+      "page_ref": "Kiddushin 32a",
+      "classification": "YES",
+      "summary": "Rav Huna tears expensive silk in front of his son Rabba to test if he will remain respectful and not lose his temper.",
+      "verdict": "incorrect",
+      "notes": "Low confidence, as we don't really have the conclusion to the event. It is just one event.",
+      "spans_pages": null
+    },
+    "Kiddushin 32a_8-12": {
+      "index": 31,
+      "page_ref": "Kiddushin 32a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Yehuda corrects his father Rav Yeḥezkel's teaching, leading Shmuel to rebuke him for his disrespectful tone and teach him the proper way to correct a parent.",
+      "verdict": "incorrect",
+      "notes": "Not a story, as it is all dialogue. Basically a legal discussion and rebuke. But still all dialogue. ",
+      "spans_pages": null
+    },
+    "Kiddushin 32b_1-1": {
+      "index": 32,
+      "page_ref": "Kiddushin 32b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "At the wedding of Rava's son, Rava served drinks to his students, some of whom stood in respect while others remained seated.",
+      "verdict": "incorrect",
+      "notes": "Yes, this is a story",
+      "spans_pages": null
+    },
+    "Kiddushin 32b_2-2": {
+      "index": 33,
+      "page_ref": "Kiddushin 32b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Pappa served drinks at his son's wedding and became angry when Rav Yitzḥak son of Rav Yehuda did not stand up for him.",
+      "verdict": "incorrect",
+      "notes": "Yes, this is a story. Also a boundary issue. It should end with וְלָא קָם מִקַּמֵּיהּ וְאִיקְּפַד. The following words are the Talmud's comment",
+      "spans_pages": null
+    },
+    "Kiddushin 32b_3-5": {
+      "index": 34,
+      "page_ref": "Kiddushin 32b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "At a feast, Rabban Gamliel stood to serve his colleagues; while Rabbi Eliezer refused to be served by the Nasi, Rabbi Yehoshua and Rabbi Tzadok provided precedents to allow it.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story proper begins מַעֲשֶׂה בְּרַבִּי אֱלִיעֶזֶר וְרַבִּי יְהוֹשֻׁעַ. The preceding  words are a later halakhic statement by a later rabbi and not part of the story",
+      "spans_pages": null
+    },
+    "Kiddushin 33a_6-6": {
+      "index": 35,
+      "page_ref": "Kiddushin 33a",
+      "classification": "YES",
+      "summary": "Rabbi Shimon bar Rabbi is offended when Bar Kappara fails to stand for him in a bathhouse, but his father, Rabbi Yehuda HaNasi, suggests the student was preoccupied with his studies.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 33a_13-13": {
+      "index": 36,
+      "page_ref": "Kiddushin 33a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "While Abaye is riding his donkey past a group of rabbis, they do not stand for him, leading to a discussion on the distance at which one is obligated to stand.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 33a_15-15": {
+      "index": 37,
+      "page_ref": "Kiddushin 33a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Ravina criticizes a man for passing by with an uncovered head, but Rabbi Yirmeya suggests the man is simply following the customs of his city, Mata Mehasya.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 33a_16-16": {
+      "index": 38,
+      "page_ref": "Kiddushin 33a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabbi Yoḥanan would stand in honor of elderly Arameans, explaining that their long lives must have involved many trials and experiences.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story begins with  רַבִּי יוֹחָנָן הֲוָה קָאֵי מִקַּמֵּי סָבֵי דְאַרְמָאֵ. The preceding words are the talmudic discussion but not part of the story.",
+      "spans_pages": null
+    },
+    "Kiddushin 33b_12-12": {
+      "index": 39,
+      "page_ref": "Kiddushin 33b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "While Rabbi Elai and Rabbi Ya’akov bar Zavdi were studying, Rabbi Shimon bar Abba passed by, and when they stood for him, he informed them they were not required to interrupt their study for his honor.",
+      "verdict": "incorrect",
+      "notes": "Low confidence. It is much the same story pattern as #38, the preceding story, which is marked correctly as low confidence.",
+      "spans_pages": null
+    },
+    "Kiddushin 38a_0-0": {
+      "index": 40,
+      "page_ref": "Kiddushin 38a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "The Jewish people sacrificed the omer offering upon entering Eretz Yisrael and subsequently ate from the new produce.",
+      "verdict": "incorrect",
+      "notes": "Not a story. And the excerpt here is the middle of line, which is actually part of a legal discussion about the biblical past. ",
+      "spans_pages": null
+    },
+    "Kiddushin 38a_4-6": {
+      "index": 41,
+      "page_ref": "Kiddushin 38a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "The baraita records that Moses was born and died on the same day, the seventh of Adar, based on biblical verses.",
+      "verdict": "incorrect",
+      "notes": "Not a story. This is about a biblical character and biblical verses. We focus on stories of the rabbis and rabbinic times.",
+      "spans_pages": null
+    },
+    "Kiddushin 39a_1-1": {
+      "index": 42,
+      "page_ref": "Kiddushin 39a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Levi asks Shmuel to provide him with produce so he can eat it without personally picking it, and other rabbis are noted for supplying each other similarly.",
+      "verdict": "incorrect",
+      "notes": "Not a story. There a couple of statements, and just one event, a mention of two rabbis supplying each other with food. But no change or conflict or other actions.",
+      "spans_pages": null
+    },
+    "Kiddushin 39a_10-11": {
+      "index": 43,
+      "page_ref": "Kiddushin 39a",
+      "classification": "YES",
+      "summary": "While traveling, Rav Hanan and Rav Anan witness a man planting diverse kinds and debate whether to ostracize him, ultimately deciding against it based on specific legal interpretations.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 39a_12-13": {
+      "index": 44,
+      "page_ref": "Kiddushin 39a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Rav Yosef is seen planting mixed seeds but retracts his permissive ruling after Abaye challenges him and he recalls the cautious planting practices of Rav.",
+      "verdict": "incorrect",
+      "notes": "Not a story. One action followed by a legal discussion. ",
+      "spans_pages": [
+        "Kiddushin 39a",
+        "Kiddushin 39b"
+      ]
+    },
+    "Kiddushin 39b_8-8": {
+      "index": 45,
+      "page_ref": "Kiddushin 39b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A son obeys his father's request to fetch chicks, fulfilling two mitzvot simultaneously, but falls to his death upon his return.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The previous line should be included as that is where the story appears, albeit hypothetically in this line. But that is what R. Yaakov saw.",
+      "spans_pages": null
+    },
+    "Kiddushin 39b_13-13": {
+      "index": 46,
+      "page_ref": "Kiddushin 39b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Elisha ben Avuya witnesses the tongue of a martyred sage being dragged by a pig and, in despair over the lack of reward for the righteous, abandons his faith.",
+      "verdict": "incorrect",
+      "notes": "Yes, this is a story. He saw a terrible event and then went out and sinned. Two events, causality, change.",
+      "spans_pages": null
+    },
+    "Kiddushin 39b_15-15": {
+      "index": 47,
+      "page_ref": "Kiddushin 39b",
+      "classification": "YES",
+      "summary": "Rabbi Hanina bar Pappi goes to extreme lengths, including self-disfigurement and hiding in a haunted bathhouse, to escape the advances of a noblewoman. Soldiers guarding a rabbi who fled a noblewoman's advances attribute his miraculous safety to his merit in resisting sin.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The final comment based on the verse  (״גִּבֹּרֵי כֹחַ עֹשֵׂי דְבָרוֹ לִשְׁמֹעַ בְּקוֹל דְּבָרוֹ״ – כְּגוֹן רַבִּי צָדוֹק וַחֲבֵירָיו.) is not part of the story but actually goes with teh following story",
+      "spans_pages": [
+        "Kiddushin 39b",
+        "Kiddushin 40a"
+      ]
+    },
+    "Kiddushin 40a_1-1": {
+      "index": 48,
+      "page_ref": "Kiddushin 40a",
+      "classification": "YES",
+      "summary": "Rabbi Tzadok escapes the advances of a noblewoman by pretending he needs to eat non-kosher meat first, shocking her into letting him go.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 40a_2-2": {
+      "index": 49,
+      "page_ref": "Kiddushin 40a",
+      "classification": "YES",
+      "summary": "Rav Kahana jumps off a roof to escape a noblewoman's advances and is caught mid-air by Elijah the Prophet.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 40b_7-7": {
+      "index": 50,
+      "page_ref": "Kiddushin 40b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabbi Tarfon and the Elders were reclining in a loft in Lod when they were asked whether study or action is greater, eventually concluding that study is superior as it leads to action.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 41a_3-3": {
+      "index": 51,
+      "page_ref": "Kiddushin 41a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Safra and Rava personally performed menial food preparation tasks for Shabbat to demonstrate that performing a mitzva oneself is more meritorious than using an agent.",
+      "verdict": "incorrect",
+      "notes": "This is not even a story of low confidence. Just a mention of two independent events.",
+      "spans_pages": null
+    },
+    "Kiddushin 44b_6-6": {
+      "index": 52,
+      "page_ref": "Kiddushin 44b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "The Sages, seeking a ruling on a dispute between Shmuel and Karna, swap the names of the disputants and send the query to Rav, who responds with an emphatic oath and a ruling.",
+      "verdict": "correct",
+      "notes": "Boundary issue. This is the middle of the story. It starts אִיתְּמַר: קְטַנָּה שֶׁנִּתְקַדְּשָׁה שֶׁלֹּא לְדַעַת אָבִיהָ, אָמַר שְׁמוּאֵל: צְרִיכָה גֵּט, וּצְרִיכָה מֵיאוּן. אָמַר קַרְנָא: דְּבָרִים בְּגוֹ: אִם גֵּט, לָמָּה מֵיאוּן? אִם מֵיאוּן, לָמָּה גֵּט?",
+      "spans_pages": null
+    },
+    "Kiddushin 45b_1-1": {
+      "index": 53,
+      "page_ref": "Kiddushin 45b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man attempts to betroth a minor girl in a marketplace using a bundle of vegetables, leading Ravina to rule the act invalid due to its degrading nature.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 45b_3-3": {
+      "index": 54,
+      "page_ref": "Kiddushin 45b",
+      "classification": "YES",
+      "summary": "After a husband is pressured by his wife to agree to her relative's marriage proposal for their daughter, his own relative surreptitiously betroths the girl from a roof during the celebratory meal.",
+      "verdict": "correct",
+      "notes": "Boundary issue. ",
+      "spans_pages": null
+    },
+    "Kiddushin 50a_5-5": {
+      "index": 55,
+      "page_ref": "Kiddushin 50a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "An incident occurs in Rav Hisda's study hall, which he then brings to Rav Huna for a resolution based on a Mishna in Me'ila.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 50a_9-9": {
+      "index": 56,
+      "page_ref": "Kiddushin 50a",
+      "classification": "YES",
+      "summary": "A man sells his property to move to Israel but returns when he cannot settle, leading Rava to rule on whether the sale is void.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 50a_10-10": {
+      "index": 57,
+      "page_ref": "Kiddushin 50a",
+      "classification": "YES",
+      "summary": "A man sells his property to move to Israel but simply chooses not to go, leading Rav Ashi to rule the sale valid.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 50b_10-10": {
+      "index": 58,
+      "page_ref": "Kiddushin 50b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "An incident is recounted where a man attempted to betroth five women simultaneously, including two sisters, using a basket of dates he had gathered.",
+      "verdict": "incorrect",
+      "notes": "This story is in the Mishnah, so it should be catalogued with Mishnah stories, not Talmud stories. ",
+      "spans_pages": null
+    },
+    "Kiddushin 52a_4-6": {
+      "index": 59,
+      "page_ref": "Kiddushin 52a",
+      "classification": "YES",
+      "summary": "A man attempts to betroth five women simultaneously using a basket of Sabbatical Year figs gathered from their own field, leading to a discussion of the validity of the act.",
+      "verdict": "incorrect",
+      "notes": "This is just a reference to the Mishnah' story. The rest is just legal comments about the Mishnah",
+      "spans_pages": null
+    },
+    "Kiddushin 52b_1-1": {
+      "index": 60,
+      "page_ref": "Kiddushin 52b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A man steals money and throws it to a woman washing her feet to betroth her, then asks Rava for a ruling on the validity of the act.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 52b_2-2": {
+      "index": 61,
+      "page_ref": "Kiddushin 52b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A sharecropper betroths a woman with onions from his employer's field and Rava rules on whether the owner would have minded.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story ends מַאן אַחֲלָךְ? The rest is the gemara's commentary on this mishnah",
+      "spans_pages": null
+    },
+    "Kiddushin 52b_3-3": {
+      "index": 62,
+      "page_ref": "Kiddushin 52b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A brewer uses beer sediment to betroth a woman; the owner's subsequent comment is analyzed by Rava to determine if the betrothal is valid.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 52b_12-14": {
+      "index": 63,
+      "page_ref": "Kiddushin 52b",
+      "classification": "YES",
+      "summary": "Following Rabbi Meir's death, Rabbi Yehuda attempts to ban Meir's students from the study hall, leading to a confrontation involving Sumakhos and Rabbi Yosei.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 57a_0-1": {
+      "index": 64,
+      "page_ref": "Kiddushin 57a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Shimon HaAmasoni, who had a method of interpreting every instance of the word 'et', abandoned his life's work when he reached a verse where the method seemed blasphemous, explaining to his concerned students that withdrawing was as meritorious as interpreting.",
+      "verdict": "correct",
+      "notes": "Boundary issue. Story should begin with כִּדְתַנְיָא: שִׁמְעוֹן הָעַמְסוֹנִי וְאָמְרִי לַהּ נְחֶמְיָה",
+      "spans_pages": null
+    },
+    "Kiddushin 58a_2-4": {
+      "index": 65,
+      "page_ref": "Kiddushin 58a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Mar Yehuda confronts Rav Yosef and Rav Shmuel at the study hall entrance with a legal contradiction that silences them, leading them to seek a resolution from Rabba.",
+      "verdict": "incorrect",
+      "notes": "low confidence. It is mainly discussion of a legal issue. The only narrative elements are extremely minor: the setting, that the sages were standing in a certain place, and then they went to another rabbi to ask him. ",
+      "spans_pages": null
+    },
+    "Kiddushin 59a_3-3": {
+      "index": 66,
+      "page_ref": "Kiddushin 59a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Ravin the Pious was sent to betroth a woman for his son but ended up betrothing her for himself.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 59a_4-4": {
+      "index": 67,
+      "page_ref": "Kiddushin 59a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabba bar bar Hana gave Rav money to buy land for him, but Rav bought it for himself.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 59a_5-7": {
+      "index": 68,
+      "page_ref": "Kiddushin 59a",
+      "classification": "YES",
+      "summary": "After Rabbi Abba inadvertently buys land Rav Giddel was negotiating for, a series of rabbinic mediations leads to both men refusing to take the land out of mutual respect and piety.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 60b_8-8": {
+      "index": 69,
+      "page_ref": "Kiddushin 60b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rabbi Zeira recounts traveling to Eretz Yisrael and discovering Rabbi Asi teaching a version of a legal dispute that differed from what was known in Babylonia.",
+      "verdict": "incorrect",
+      "notes": "This is just a report of a legal tradition. That the rabbis \"went up there\" and found another rabbi saying the tradition is not enough for a story",
+      "spans_pages": null
+    },
+    "Kiddushin 65b_8-9": {
+      "index": 70,
+      "page_ref": "Kiddushin 65b",
+      "classification": "YES",
+      "summary": "Mar Zutra and Rav Adda divide their property and ask Rav Ashi if witnesses are required to validate the division, to which he responds that witnesses are only necessary to prevent lying.",
+      "verdict": "incorrect",
+      "notes": "Low confidence. There is just one event and a legal discussion about it. This is low confidence. ",
+      "spans_pages": null
+    },
+    "Kiddushin 66a_5-5": {
+      "index": 71,
+      "page_ref": "Kiddushin 66a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Mar Shmuel sends a messenger to find his late student, and the messenger returns claiming he saw the student's wife committing adultery.",
+      "verdict": "incorrect",
+      "notes": "Yes. This is clearly a story. Several events, causality and change.",
+      "spans_pages": null
+    },
+    "Kiddushin 66a_7-11": {
+      "index": 72,
+      "page_ref": "Kiddushin 66a",
+      "classification": "YES",
+      "summary": "King Yannai's victory celebration turns into a massacre of the Sages after a guest questions his priestly legitimacy and a provocateur incites the King to violence.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story starts  מַעֲשֶׂה בִּינַאי הַמֶּלֶךְ",
+      "spans_pages": null
+    },
+    "Kiddushin 66b_0-5": {
+      "index": 73,
+      "page_ref": "Kiddushin 66b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A water reservoir in Yavne is measured and found to be lacking the required volume, sparking a debate between Rabbi Tarfon and Rabbi Akiva over the status of those who had already immersed in it.",
+      "verdict": "correct",
+      "notes": "boundary issue. It should begin: מַעֲשֶׂה בִּמְגוֹרָה שֶׁל דִּסְקִים",
+      "spans_pages": null
+    },
+    "Kiddushin 70a_11-16": {
+      "index": 74,
+      "page_ref": "Kiddushin 70a",
+      "classification": "YES",
+      "summary": "After a man from Neharde’a insults Rav Yehuda in a butcher shop and summons him to court, Rav Yehuda travels to Neharde’a and engages in a sharp-witted exchange with the judge, Rav Naḥman.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 70b_1-8": {
+      "index": 75,
+      "page_ref": "Kiddushin 70b",
+      "classification": "YES",
+      "summary": "Rav Yehuda travels to Neharde'a to answer a summons, where he successfully challenges the lineage of his accuser and the local community, leading to mass social upheaval and a narrow escape from a mob.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The top line on this page (0אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה. עַל יְדֵי בַּעְלָהּ! אֲמַר לֵיהּ: הָכִי אָמַר שְׁמוּאֵל: אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה כְּלָל. שְׁלַחָה לֵיהּ דְּבֵיתְהוּ: שְׁרִי לֵיהּ תִּגְרֵיהּ דְּלָא נִישַׁוְּויָךְ כִּשְׁאָר עַם הָאָרֶץ.) is also part of the story and should be highlighted. Whenever stories continue on the next page, they should not have a gap, but include the first words of the page and forward.",
+      "spans_pages": null
+    },
+    "Kiddushin 71a_4-5": {
+      "index": 76,
+      "page_ref": "Kiddushin 71a",
+      "classification": "YES",
+      "summary": "Rabbi Pineḥas prepares a quick escape via stretcher before delivering a controversial ruling on Babylonian lineage to avoid being caught by the angry scholars.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 71b_2-2": {
+      "index": 77,
+      "page_ref": "Kiddushin 71b",
+      "classification": "YES",
+      "summary": "Ze’eiri avoids Rabbi Yoḥanan's marriage proposals until he is forced to carry him across a puddle, at which point Rabbi Yoḥanan challenges his refusal.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The next line should be included in the story (בִּימֵי רַבִּי בִּקְּשׁוּ לַעֲשׂוֹת בָּבֶל עִיסָּה לְאֶרֶץ יִשְׂרָאֵל. אָמַר לָהֶן: קוֹצִים אַתֶּם מְשִׂימִים לִי בֵּין עֵינַי? רְצוֹנְכֶם, יִטָּפֵל עִמָּכֶם רַבִּי חֲנִינָא בַּר חָמָא. 3נִטְפַּל עִמָּהֶם רַבִּי חֲנִינָא בַּר חָמָא, אָמַר לָהֶם: כָּךְ מְקוּבְּלַנִי מֵרַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי שֶׁאָמַר מִשּׁוּם אָבִיו: כׇּל אֲרָצוֹת עִיסָּה לְאֶרֶץ יִשְׂרָאֵל וְאֶרֶץ יִשְׂרָאֵל עִיסָּה לְבָבֶל.)",
+      "spans_pages": null
+    },
+    "Kiddushin 71b_4-8": {
+      "index": 78,
+      "page_ref": "Kiddushin 71b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Ulla visits Rav Yehuda, notices his son is unmarried, and advises him on how to identify pure lineage through the behavior of families during quarrels.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 71b_9-9": {
+      "index": 79,
+      "page_ref": "Kiddushin 71b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "The Gemara cites an incident where Rav visited a specific family to examine their lineage status.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 72a_3-3": {
+      "index": 80,
+      "page_ref": "Kiddushin 72a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "An anonymous man identifies his place of origin to the Sages, prompting Rabbi Yitzḥak Nappaḥa to stand and clarify the location's geography.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story ends with: שׁוֹט מֵישׁוֹט בֵּין הַנְּהָרוֹת עוֹמֶדֶת. The rest is the gemara's commentary.",
+      "spans_pages": null
+    },
+    "Kiddushin 72a_10-10": {
+      "index": 81,
+      "page_ref": "Kiddushin 72a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "As Rabbi Yehuda HaNasi is dying, he issues a series of prophetic warnings regarding the flawed lineage of specific Babylonian towns. The Gemara describes a series of synchronized births and deaths of great Sages, ensuring that the world is never without a righteous leader.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The story ends with הַיּוֹם נוֹלַד רַב יְהוּדָה בְּבָבֶל.. The rest is a separate tradition.",
+      "spans_pages": [
+        "Kiddushin 72a",
+        "Kiddushin 72b"
+      ]
+    },
+    "Kiddushin 72b_4-4": {
+      "index": 82,
+      "page_ref": "Kiddushin 72b",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Pelatiah son of Benaiah convinces Nebuchadnezzar to send Jewish slaves to his son-in-law instead of the Jewish nobility.",
+      "verdict": "incorrect",
+      "notes": "This is a biblical story. It is not about the rabbis",
+      "spans_pages": null
+    },
+    "Kiddushin 72b_10-10": {
+      "index": 83,
+      "page_ref": "Kiddushin 72b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Ameimar permits Rav Huna bar Natan to marry a woman from Meḥoza, leading Rav Ashi to question the legal basis of the decision.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 73a_5-5": {
+      "index": 84,
+      "page_ref": "Kiddushin 73a",
+      "classification": "HIGH_CONFIDENCE",
+      "summary": "Rabbi Zeira taught that converts may marry mamzeret in Meḥoza, leading the local converts to stone him with their etrogim in offense.",
+      "verdict": "incorrect",
+      "notes": "Yes. This is a story, given the action (a public exposition) and the response (stoning). ",
+      "spans_pages": null
+    },
+    "Kiddushin 76b_9-10": {
+      "index": 85,
+      "page_ref": "Kiddushin 76b",
+      "classification": "YES",
+      "summary": "Rav Adda bar Ahava's host and Rav Beivai quarrel over a position of authority and bring their case to Rav Yosef, who rules on their eligibility and assigns their roles.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 79b_6-7": {
+      "index": 86,
+      "page_ref": "Kiddushin 79b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Yosef son of Rav Menashya ruled according to Rav's opinion in a specific case, which caused Shmuel to become angry.",
+      "verdict": "correct",
+      "notes": "Boundary issue. The words introducing the story here (וְנֵימָא מִדְּמַתְנִיתָא לָא פְּלִיגִי, אָמוֹרָאֵי נָמֵי לָא פְּלִיגִי! וְתִסְבְּרָא? הָא) and following the story ( וְאִי סָלְקָא דַּעְתָּךְ לָא פְּלִיגִי, אַמַּאי קָא מִקְּפֵיד?) should not be quoted",
+      "spans_pages": null
+    },
+    "Kiddushin 80a_4-4": {
+      "index": 87,
+      "page_ref": "Kiddushin 80a",
+      "classification": "YES",
+      "summary": "A woman arrived in Jerusalem carrying a child and raised him as her son, but after they later had sexual relations, the court executed them for incest based on the public presumption that they were mother and son.",
+      "verdict": "correct",
+      "notes": "The attribution of the tradition need not be quoted with the story (אָמַר רַבִּי שִׁמְעוֹן בֶּן פַּזִּי, אָמַר רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִשּׁוּם בַּר קַפָּרָא:)",
+      "spans_pages": null
+    },
+    "Kiddushin 80b_11-11": {
+      "index": 88,
+      "page_ref": "Kiddushin 80b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "A mourning woman removed her husband from his grave and engaged in intercourse with the man guarding the cemetery.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 80b_12-12": {
+      "index": 89,
+      "page_ref": "Kiddushin 80b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Ten men used the pretense of carrying a woman on a funeral bier to seclude her for immoral purposes.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81a_2-2": {
+      "index": 90,
+      "page_ref": "Kiddushin 81a",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "While walking with Rav Yehuda, Rav spots a woman ahead and insists they speed up to avoid a prohibited state of seclusion.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81a_10-11": {
+      "index": 91,
+      "page_ref": "Kiddushin 81a",
+      "classification": "YES",
+      "summary": "Rav Amram the Pious is tempted by a captive woman and begins to climb a ladder to her, but he stops himself by shouting 'fire' to summon the Sages and shame himself out of the act.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81a_12-12": {
+      "index": 92,
+      "page_ref": "Kiddushin 81a",
+      "classification": "YES",
+      "summary": "Rabbi Meir, who mocked sinners, is tempted by Satan in the guise of a woman and is only saved from sin by Satan's own intervention.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81a_13-13": {
+      "index": 93,
+      "page_ref": "Kiddushin 81a",
+      "classification": "YES",
+      "summary": "Rabbi Akiva is tempted by Satan appearing as a woman in a palm tree and is humbled when he realizes he was unable to resist the temptation on his own.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81a_14-14": {
+      "index": 94,
+      "page_ref": "Kiddushin 81a",
+      "classification": "YES",
+      "summary": "Satan appears to Peleimu as a pauper on the eve of Yom Kippur to challenge Peleimu's habit of mocking him. Satan, disguised as a pauper, tests Peleimu by acting disgustingly and then faking his own death to make Peleimu believe he committed a crime.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": [
+        "Kiddushin 81a",
+        "Kiddushin 81b"
+      ]
+    },
+    "Kiddushin 81b_1-3": {
+      "index": 95,
+      "page_ref": "Kiddushin 81b",
+      "classification": "YES",
+      "summary": "Rabbi Ḥiyya bar Ashi's wife disguises herself as a prostitute to test his piety; after succumbing, he is so overcome with guilt that he tries to burn himself in an oven.",
+      "verdict": "correct",
+      "notes": "",
+      "spans_pages": null
+    },
+    "Kiddushin 81b_14-14": {
+      "index": 96,
+      "page_ref": "Kiddushin 81b",
+      "classification": "LOW_CONFIDENCE",
+      "summary": "Rav Aḥa bar Abba visits his son-in-law and holds his granddaughter, leading to a brief legal exchange about the propriety of the act.",
+      "verdict": "incorrect",
+      "notes": "High confidence",
+      "spans_pages": [
+        "Kiddushin 81b",
+        "Kiddushin 82a"
+      ]
+    }
+  }
+}

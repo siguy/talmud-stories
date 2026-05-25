@@ -13,7 +13,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 OLD = ROOT / 'results' / 'v7' / 'kiddushin_v7.json'
-NEW = ROOT / 'results' / 'v8' / 'kiddushin_v8.json'
+NEW = ROOT / 'results' / 'v8' / 'wave1' / 'kiddushin_v8.json'
 
 
 def real_stories(page):

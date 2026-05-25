@@ -34,13 +34,13 @@ SEGMENTS = [
     {
         'pages_file': V7_DIR / 'ketubot_v7_2-60.json',
         'triage_file': V7_DIR / 'event_triage_2-60.json',
-        'out_file': V8_DIR / 'ketubot_v8_2-60.json',
+        'out_file': V8_DIR / 'wave1' / 'ketubot_v8_2-60.json',
         'label': '2-60',
     },
     {
         'pages_file': V7_DIR / 'ketubot_pages_61-112.json',
         'triage_file': V7_DIR / 'event_triage_61-112.json',
-        'out_file': V8_DIR / 'ketubot_v8_61-112.json',
+        'out_file': V8_DIR / 'wave1' / 'ketubot_v8_61-112.json',
         'label': '61-112',
     },
 ]

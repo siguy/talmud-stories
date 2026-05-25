@@ -33,7 +33,7 @@ CACHE_DIR = PROJECT_ROOT / 'results' / 'v7'  # Sefaria + triage caches live here
 OUT_DIR = PROJECT_ROOT / 'results' / 'v8'
 PAGES_CACHE_PATH = CACHE_DIR / 'kiddushin_pages.json'
 TRIAGE_PATH = CACHE_DIR / 'event_triage_kiddushin.json'
-OUTPUT_PATH = OUT_DIR / 'kiddushin_v8.json'
+OUTPUT_PATH = OUT_DIR / 'wave1' / 'kiddushin_v8.json'
 
 
 def main():

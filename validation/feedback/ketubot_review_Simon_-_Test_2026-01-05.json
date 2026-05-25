@@ -1,0 +1,27 @@
+{
+  "reviewer_name": "Simon - Test",
+  "reviewed_at": "2026-01-05T20:10:50.006Z",
+  "tractate": "Ketubot",
+  "total_stories": 243,
+  "reviewed_count": 2,
+  "feedback": [
+    {
+      "ref": "Ketubot 3a",
+      "feedback_type": null,
+      "notes": "",
+      "length_adjustment": "shrink",
+      "story_confidence": 85,
+      "story_type": "dialogue_vignette",
+      "spans_multiple_pages": false
+    },
+    {
+      "ref": "Ketubot 111b-112a",
+      "feedback_type": "false_positive",
+      "notes": "",
+      "length_adjustment": null,
+      "story_confidence": 90,
+      "story_type": "full_narrative",
+      "spans_multiple_pages": true
+    }
+  ]
+}
