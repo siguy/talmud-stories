@@ -71,7 +71,7 @@
 
 **Key finding (Lesson 14 — see lessons.md):** Iterative Stage 2 surfaced exactly the story Jeff said was missed (33a seg 5 bathhouse) — and the agreement-with-golden gate penalized it as a false positive. Lesson 13 in action: when the detector overtakes the golden, the metric drops even though quality improved.
 
-**Commit:** `[next]`
+**Commit:** `dcefb30` (Wave 3 ship), `c7fe851` (review UI + email draft)
 
 ---
 
