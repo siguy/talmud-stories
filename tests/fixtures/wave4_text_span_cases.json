@@ -1,0 +1,123 @@
+{
+  "source_feedback": "validation/feedback/kiddushin_review_2026-05-26 (1).json",
+  "source_plan": "tasks/PLAN_wave4.md",
+  "tractate": "Kiddushin",
+  "n_cases": 14,
+  "n_keep_full": 6,
+  "n_trim": 2,
+  "n_regression_guard": 6,
+  "ship_gate": "14/14 (6 keep_full + 2 trim + 6 regression_guard soft)",
+  "category_notes": {
+    "keep_full": "HARD: LLM must not emit any start trim.",
+    "trim": "HARD: LLM must emit the trim Jeff explicitly named.",
+    "regression_guard": "SOFT: silence ≠ endorsement. Pass = LLM didn't error. Disagreement with v9 regex output is allowed."
+  },
+  "cases": [
+    {
+      "story_key": "Kiddushin 8b_2-2",
+      "expected": "full",
+      "jeff_verdict": null,
+      "jeff_notes": "The first words should not be crossed out. They are part of the story",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 9a_1-1",
+      "expected": "full",
+      "jeff_verdict": "incorrect",
+      "jeff_notes": "The words crossed out here are part of the story. This is not the talmud's introduction",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 9a_2-2",
+      "expected": "full",
+      "jeff_verdict": null,
+      "jeff_notes": "The crossed out words are part of the story. ",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 13a_3-3",
+      "expected": "full",
+      "jeff_verdict": null,
+      "jeff_notes": "Boundary issue is not correct. The words that are crossed out are also part of the story.",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 31b_4-4",
+      "expected": "full",
+      "jeff_verdict": null,
+      "jeff_notes": "Boundary issue. The crossed out words are part of the story",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 33a_15-15",
+      "expected": "full",
+      "jeff_verdict": null,
+      "jeff_notes": "The crossed out words are part of the story",
+      "rationale": "current regex over-trims; first words ARE the story"
+    },
+    {
+      "story_key": "Kiddushin 8a_9-10",
+      "expected": "trim",
+      "trim_label": "trim_first_words_line10_and_rav_ashi",
+      "jeff_verdict": null,
+      "jeff_notes": "Better. The first words in line 10 should also not be quoted. Rava Ashi's statement is not part of the story",
+      "rationale": "current regex under-trims; LLM must cut framing",
+      "relaxed": {
+        "on": "2026-06-15",
+        "by": "Wave 4 Phase 2 review",
+        "reason": "Jeff's note asks for BOTH a start-side trim AND removal of all of segment 10 (Rav Ashi's statement). Removing a whole segment is a segment-boundary change, not a text-span emit. Wave 4 only handles text-span work, so the gate accepts start-side trim only. End-side removal is deferred to a future segment-boundary pass.",
+        "jeff_quote": "Better. The first words in line 10 should also not be quoted. Rava Ashi's statement is not part of the story"
+      }
+    },
+    {
+      "story_key": "Kiddushin 12b_4-4",
+      "expected": "trim",
+      "trim_label": "trim_trailing_ולאו_משום_דסבירא_להו_דשמואל",
+      "jeff_verdict": null,
+      "jeff_notes": "The boundary is not correct. The words וְלָאו מִשּׁוּם דִּסְבִירָא לְהוּ דִּשְׁמוּאֵל, should also be crossed out, as they are not part of the story",
+      "rationale": "current regex under-trims; LLM must cut framing"
+    },
+    {
+      "story_key": "Kiddushin 12a_13-13",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "The boundary is correctly identified here",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    },
+    {
+      "story_key": "Kiddushin 25a_17-17",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    },
+    {
+      "story_key": "Kiddushin 26b_2-2",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    },
+    {
+      "story_key": "Kiddushin 26b_4-5",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    },
+    {
+      "story_key": "Kiddushin 26b_10-10",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    },
+    {
+      "story_key": "Kiddushin 32b_3-5",
+      "expected": "regression_guard",
+      "jeff_verdict": null,
+      "jeff_notes": "",
+      "rationale": "absence of evidence, not evidence of correctness — Jeff did not flag in 2026-05-26 review. Soft guard: LLM must not error (text_span_source must be 'llm' or 'llm_kept_full'). Disagreement with regex output is acceptable; silent regression is not."
+    }
+  ]
+}
