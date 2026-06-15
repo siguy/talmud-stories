@@ -1,0 +1,27 @@
+{
+  "classification": {
+    "precision": 0.8922,
+    "recall": 0.9371,
+    "f1": 0.9141,
+    "tp": 149,
+    "fp": 18,
+    "fn": 10,
+    "tn": 13
+  },
+  "boundary": {
+    "mean_iou": 0.95,
+    "median_iou": 1.0,
+    "pct_above_0.8": 0.8993,
+    "count": 149
+  },
+  "merge": {
+    "precision": 0.7826,
+    "recall": 0.9474,
+    "f1": 0.8571,
+    "golden_merges": 19,
+    "detected_merges": 23,
+    "matched": 18
+  },
+  "composite": 0.9171,
+  "per_story_count": 177
+}

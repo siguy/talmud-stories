@@ -307,11 +307,21 @@ Each Jeff review batch:
 - [x] Email sent to Jeff (jr6@nyu.edu) with 7 new Kiddushin candidates + 4 new Ketubot candidates + 10 boundary-slice confirmations
 
 ### Wave 3 follow-up (awaiting Jeff)
-- [ ] Receive Jeff's verdicts on 7 new Kiddushin candidates
+- [ ] Receive Jeff's verdicts on 7 new Kiddushin candidates (NOT received in 2026-06-03 reply — asked again)
 - [ ] Receive Jeff's verdicts on 4 new Ketubot candidates
-- [ ] Receive Jeff's confirmations on 10 boundary-slice text edits
-- [ ] Re-run `scripts/build_kiddushin_canonical.py` (or equivalent) with new verdicts → updated golden
-- [ ] Re-score Wave 3 against updated golden; expect composite ≥ Wave 2 once confirmed candidates flip from FP→TP
+- [x] Receive Jeff's verdicts on 10 boundary-slice text edits (PARTIAL — 5 confirmed working, 7 flagged as over-trim; regex approach retired)
+- [x] Apply Jeff's 4 Ketubot golden corrections from 2026-06-03 (7a_1, 26a_9, 102a_6, 106a_2-3) — `scripts/apply_jeff_2026-06-03_corrections.py`
+- [x] Re-score Wave 3 Ketubot against updated golden: composite 0.9170 → 0.9171, F1 0.910 → 0.914 (`docs/golden/v9/wave3_round2_ketubot_rescore.md`)
+- [x] Draft reply to Jeff (`docs/golden/v9/email_draft_jeff_wave3_round2.md`) — awaiting Simon to send
+- [ ] Re-run canonical build with full Kiddushin verdicts once Jeff completes
+- [ ] Re-score Wave 3 against updated Kiddushin golden once new candidates verdicted
+
+### Wave 3 Round 2 (2026-06-03, IN PROGRESS)
+Plan: `tasks/PLAN_wave3_round2.md`
+- [x] Step 1: Apply Ketubot corrections + rescore
+- [ ] Step 2: Send reply to Jeff (draft ready)
+- [x] Step 3: Update docs (CLAUDE.md, todo.md, VERSION_HISTORY, Lesson 15)
+- [x] Step 4: Drafted `tasks/PLAN_wave4.md` — Option B (Stage 4 LLM text-span call) recommended; 14-case held-out test set built from Jeff's labels; awaiting Simon approval before Phase 0 execution
 
 ---
 

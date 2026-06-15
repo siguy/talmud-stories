@@ -523,6 +523,20 @@
       "new_classification": "LOW_CONFIDENCE",
       "note": "There is too little change or causality to be high confidence. It should be low confidence",
       "source": "canonical_review_2026-03-17"
+    },
+    {
+      "key": "Ketubot 7a_1-1",
+      "action": "reclassify",
+      "old_classification": "NOT_A_STORY",
+      "new_classification": "LOW_CONFIDENCE",
+      "note": "Jeff 2026-06-03 email: low confidence"
+    },
+    {
+      "key": "Ketubot 106a_3-3 -> 2-3",
+      "action": "extend_start",
+      "old_range": "3-3",
+      "new_range": "2-3",
+      "note": "Jeff 2026-06-03 email"
     }
   ],
   "canonical_review_deferred_log": [
@@ -1694,7 +1708,7 @@
         {
           "start_segment": 1,
           "end_segment": 1,
-          "classification": "NOT_A_STORY",
+          "classification": "LOW_CONFIDENCE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -1745,6 +1759,14 @@
               "reason": "Jeff's canonical review: There are no events. This is just a legal discussion.",
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
+            },
+            {
+              "date": "2026-06-03",
+              "source": "Jeff email reply to Wave 3 review",
+              "action": "reclassify",
+              "old": "NOT_A_STORY",
+              "new": "LOW_CONFIDENCE",
+              "note": "Jeff: 'low confidence' (re-adding to golden as LOW)"
             }
           ]
         },
@@ -25238,7 +25260,7 @@
       ],
       "stories": [
         {
-          "start_segment": 3,
+          "start_segment": 2,
           "end_segment": 3,
           "classification": "HIGH_CONFIDENCE",
           "one_sentence_summary": "[Restored from Ketubot 105b merge]",
@@ -25253,6 +25275,14 @@
               "reason": "Jeff's canonical review: This should be \"high confidence\". There is minimal action. Mainly a request and a rejections",
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
+            },
+            {
+              "date": "2026-06-03",
+              "source": "Jeff email reply to Wave 3 review",
+              "action": "extend_start",
+              "old_range": "3-3",
+              "new_range": "2-3",
+              "note": "Jeff: 'the story is segments 2-3, not really 1' (v9 detected 1-2; correct is 2-3)"
             }
           ]
         }
@@ -27298,5 +27328,35 @@
       "stories": [],
       "skipped_by_triage": true
     }
-  ]
+  ],
+  "round2_jeff_2026_06_03": {
+    "date": "2026-06-03",
+    "source": "validation/feedback/kiddushin_review_2026-05-26 (1).json + email",
+    "applied": [
+      {
+        "key": "Ketubot 7a_1-1",
+        "action": "reclassify",
+        "old_classification": "NOT_A_STORY",
+        "new_classification": "LOW_CONFIDENCE",
+        "note": "Jeff 2026-06-03 email: low confidence"
+      },
+      {
+        "key": "Ketubot 106a_3-3 -> 2-3",
+        "action": "extend_start",
+        "old_range": "3-3",
+        "new_range": "2-3",
+        "note": "Jeff 2026-06-03 email"
+      }
+    ],
+    "confirmed_no_change": [
+      {
+        "key": "Ketubot 26a_9",
+        "note": "Jeff confirms NOT_A_STORY; canonical already NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 102a_6",
+        "note": "Jeff confirms not a story; canonical does not include it"
+      }
+    ]
+  }
 }

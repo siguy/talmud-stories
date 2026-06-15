@@ -73,9 +73,14 @@ until you weigh in.
   legal error; Rav Anan fasts until he returns
   (https://www.sefaria.org/Ketubot.106a)
 
-**Review UI (Kiddushin):** the standard HTML browser app, now also
-showing the trimmed-text slices for the boundary cases. I'll attach /
-share separately.
+**Review UI (Kiddushin):**
+https://siguy.github.io/talmud-stories/validation/ui/kiddushin_review_wave3.html
+
+Same browser app as before, with one new thing: for the boundary cases
+the Hebrew text now greys out the framing and highlights (in green) the
+slice the detector thinks is story body. If the highlight matches what
+you meant, no action needed; if not, jot the correct slice in the notes
+field. When you're done, hit "Export Results" and send me the JSON.
 
 **Time estimate:** the seven Kiddushin candidates are the priority and
 should take ~10 minutes. The four Ketubot are ~5 minutes. The ten

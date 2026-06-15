@@ -27,6 +27,35 @@
 
 ---
 
+## v9 Wave 3 Round 2: Jeff's 2026-06-03 Golden Corrections (Ketubot)
+
+**Goal:** Apply 4 Ketubot corrections Jeff sent in his Wave 3 reply, rescore against unchanged v9 detector.
+
+**Changes (golden, not detector):**
+- Ketubot 7a_1-1: NOT_A_STORY → LOW_CONFIDENCE (re-added; v9 already detected as LOW)
+- Ketubot 26a_9: confirmed NOT_A_STORY (no change)
+- Ketubot 102a_6: confirmed not a story (no change; not in golden)
+- Ketubot 106a: 3-3 boundary extended to 2-3 per Jeff's "the story is segments 2-3, not really 1"
+
+**Scores** (Wave 3 v9 unchanged; golden updated):
+
+| Metric | Wave 3 | Round 2 | Δ |
+|--------|--------|---------|---|
+| Composite | 0.9170 | **0.9171** | +0.0001 |
+| Classification F1 | 0.9108 | **0.9141** | +0.0033 |
+| TP / FP / FN | 148 / 19 / 10 | 149 / 18 / 10 | +1 TP, −1 FP |
+| Boundary IoU mean | 0.95 | 0.95 | flat |
+
+**Item 4 (text-internal regex) verdict — MIXED:** Jeff confirmed 5 of the canonical ההוא/ההיא cases work correctly; flagged 7 over-trims where rabbi-name / אלא markers are story content, not framing. Regex approach retired; Wave 4 will replace with LLM-side text-span emission.
+
+**Artifacts:**
+- `docs/golden/v9/wave3_round2_ketubot_rescore.md`
+- `scripts/apply_jeff_2026-06-03_corrections.py`
+- `docs/golden/v9/wave3_round2_ketubot_score.json`
+- `docs/golden/v9/email_draft_jeff_wave3_round2.md`
+
+---
+
 ## v9 Wave 3: Embedded Stories + Text-Span Boundaries (2026-05-25)
 
 **Goal:** Catch embedded stories (baraita / objection), multi-story pages, and address Lesson 12 text-internal boundary feedback.

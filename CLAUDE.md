@@ -3,13 +3,14 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
-## Current State (May 2026)
-- **Golden Ketubot dataset**: 182 expert-validated stories (`results/canonical/ketubot_canonical.json`)
+## Current State (June 2026)
+- **Golden Ketubot dataset**: 182 expert-validated stories + 2 round-2 corrections 2026-06-03 (`results/canonical/ketubot_canonical.json`)
 - **Golden Kiddushin dataset**: 85 expert-validated stories (`results/canonical/kiddushin_canonical.json`, built from Jeff's 2026-04-23 review)
 - **Evaluation framework**: `scripts/evaluate_golden.py` (IMMUTABLE)
 - **Active detector**: v9 (Wave 3) — `src/story_detector_v9.py`. v8 frozen as Wave 2 baseline.
-- **Wave 3 scores (today vs Wave 2):** Ketubot composite 0.9162 → **0.9170** (+0.044 recall, −7 FNs). Kiddushin 0.8962 → 0.8859 (5 new finds incl. Jeff's flagged-missing 33a — shipped per Lesson 13). See `docs/golden/v9/wave3_results.md`.
-- **Next step**: Send Kiddushin Wave 3 + Ketubot Wave 3 review UIs to Jeff. His verdicts on the 7 new Kiddushin candidates will determine whether the next iteration's composite moves up.
+- **Wave 3 Round 2 scores (2026-06-03 after Jeff's Ketubot corrections):** Ketubot composite **0.9171** (F1 0.914, +0.004 vs pre-correction), Kiddushin **0.8859** (unchanged — Jeff hasn't verdicted the 7 new candidates yet). See `docs/golden/v9/wave3_round2_ketubot_rescore.md`.
+- **Jeff's 2026-06-03 reply verdict on Item 4 (text-internal boundary regex):** MIXED — works on 5 canonical ההוא/ההיא cases, over-trims 7 stories with rabbi-name/אלא patterns that ARE story content. Regex approach has hit its ceiling; Wave 4 will replace it with LLM-side text-span emission.
+- **Next step**: Reply sent to Jeff (draft: `docs/golden/v9/email_draft_jeff_wave3_round2.md`) asking for full Kiddushin verdicts. Wave 4 plan (`tasks/PLAN_wave4.md`) to be drafted with Track 3 (text-span emission) as top priority.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
