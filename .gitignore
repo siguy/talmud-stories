@@ -2,3 +2,10 @@
 basketball_biblical_pairings.csv
 .tmp.driveupload/
 *.log
+
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+
+# Environment secrets
+.env
