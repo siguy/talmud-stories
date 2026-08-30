@@ -81,15 +81,37 @@ displays stories, so he says cut it.
 **This is a product decision, not a tuning decision.** Until it is made, any end-boundary
 number can be moved by choosing a ruler.
 
-## 4. Status of the cap
+## 4. RESOLVED — we build for the 2026 reviewer, and the cap is REVERTED
 
-`MAX_END_TRIM_CLAUSES = 3` is **shipped but contested**. It is one constant and trivially
-reversible. It is justified on the safe direction (the project's stated preference for
-under-trimming, Jeff 2026-06-03) and it catches the two genuine story-discarding cases —
-but it also pulls end boundaries toward the 2005 definition, and it costs on the
-corrections ruler.
+Simon settled §3 on 2026-08-30: **we build for Jeff-2026, the tool reviewer.** The
+product displays stories to a reader; the surrounding legal give-and-take is not part of
+what we show. That decision does three things.
 
-Reconsider once §3 is decided.
+**(a) It re-reads the 2005 list as an UPPER BOUND, not a target.** Under the 2026
+standard a story ends at or before Jeff-2005's ending — he kept the legal frame, we cut
+inside it. So ending EARLIER than his boundary is expected, and ending LATER is wrong
+under both standards. Scored that way, on 105 Ketubot end boundaries:
+
+| variant | exact | earlier (expected) | **LATER (wrong either way)** |
+|---|---|---|---|
+| no trimming | 79 | 3 | **23** |
+| Wave 5, uncapped | 78 | 17 | **10** |
+| Wave 5 + cap at 3 | 80 | 9 | **16** |
+
+**End-trimming is good after all.** It more than halves the definite overshoots, 23 → 10.
+The earlier §1 table said the opposite only because it scored the 2005 boundary as a
+target, which counted "cut the legal frame" — the thing we were asked to do — as a
+failure.
+
+**(b) The cap is reverted.** It scored better only against the 2005 standard; against the
+one we build for it undoes the trims that fix real overshoots (10 → 16). Removed from
+`src/story_detector_v11.py`, with a note in place so it is not re-invented.
+
+**(c) The genuine bug in §2(b) survives the decision.** Ketubot 62a and 105b discard a
+whole second story — at 105b the entire Mar Ukva episode, which Sefaria's own English
+renders in full. That is wrong under any definition, and the depth cap was never the
+right fix for it. The right guard is *never trim away a clause that is itself narrative*
+— see §5.
 
 ## 5. What the elegant fix would be
 

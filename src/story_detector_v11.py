@@ -572,19 +572,14 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                         'source': 'clause_llm',
                     }
                     emitted = True
-                # An END trim deeper than MAX_END_TRIM_CLAUSES is the model
-                # over-reaching, not a judgment. Measured 2026-08-30 against
-                # Jeff's detector-blind 2005 list (229 scorable Ketubot
-                # boundaries): end-trims run 15 fixes to 12 regressions overall,
-                # and EVERY regression cuts too EARLY — nine of them by 4-6
-                # clauses, lopping off the story's resolution. Dropping just
-                # those nine takes the corpus from 80%/84% to 81%/86% and
-                # removes the catastrophic failure mode. Start-trims need no
-                # such cap: they run 15 fixes to 2 regressions.
-                # See docs/golden/v11/trim_asymmetry_2026-08-30.md
-                if ec < len(end_ranges) - 1 and (len(end_ranges) - 1 - ec) > MAX_END_TRIM_CLAUSES:
-                    counts['end_trim_too_deep'] = counts.get('end_trim_too_deep', 0) + 1
-                    ec = len(end_ranges) - 1
+                # NOTE: an end-trim depth cap was tried on 2026-08-30 and
+                # REVERTED once Simon settled which expert standard we build
+                # for. It scored better only against Jeff's 2005 story INDEX,
+                # which keeps the legal discussion after a story. We build for
+                # his 2026 tool reviews, which say to cut it — and against
+                # that standard the cap undoes the trims that remove real
+                # overshoots (ends running past even the 2005 outer limit go
+                # 10 -> 16 of 105). See docs/golden/v11/trim_asymmetry_2026-08-30.md
                 if ec < len(end_ranges) - 1:
                     offset = end_ranges[ec][1]
                     _assert_word_boundary(end_heb, offset, page.get('ref', '?'),
@@ -2409,11 +2404,6 @@ def _supports_thinking_level(model_name: str) -> bool:
     """
     m = (model_name or '').lower()
     return any(tag in m for tag in ('gemini-3', 'gemini-4'))
-
-
-# The deepest END trim we will accept from the model. Above this it is
-# over-reaching rather than judging — see extract_text_spans_via_clauses.
-MAX_END_TRIM_CLAUSES = 3
 
 
 CLAUSE_TERMINATORS = '.:?!'
