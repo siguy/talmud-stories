@@ -412,3 +412,11 @@ hard-won handling lives and where a rewrite silently drops it.
 (d) Scorers must read the run's own failure counts and refuse to score,
 or quarantine failures in their own bucket, rather than silently folding
 them into the metric.
+
+**Status:** the runner was fixed 2026-08-30 and is guarded by
+`tests/test_wave5b_runner_outcomes.py` — the failure-injection test was
+written first and watched fail. Same fixture, model failing every call:
+before `{kept_full: 6, no_split: 2, skipped: 6}` = 14 counts for 6
+stories with 6 fabricated speech profiles; after `{no_split: 1,
+skipped: 5}` = 6 counts, 0 profiles, 5 `needs_review`. Point (d) —
+the scorer — is **still open**.

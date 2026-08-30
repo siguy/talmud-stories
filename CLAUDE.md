@@ -145,6 +145,8 @@ archive/                          # Old versions (reference only)
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
 | `scripts/score_boundary_targets.py` | Scores any run against it |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
+| `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
+| `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
 | `tasks/lessons.md` | 14 lessons learned across all sessions |
 | `FOR_SIMON.md` | Plain-English project explanation |
 

@@ -11,7 +11,9 @@ Writes TWO artifacts:
                                       features for the FP classifier (Lesson 7),
                                       the input to Wave 6's speech-act question,
                                       and the basis for English spans in the
-                                      published database.
+                                      published database. One record per story
+                                      the run processed, labelled or not, so the
+                                      file is a complete account of the run.
   results/v11/wave5b/<name>.json      the boundary output, scoreable by
                                       scripts/score_boundary_targets.py and
                                       scripts/audit_text_spans.py
@@ -46,6 +48,21 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [wave5
                     handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
                               logging.StreamHandler(sys.stdout)])
 log = logging.getLogger(__name__)
+
+# Per-story outcomes. Mutually exclusive and exhaustive: every story the run
+# processes lands in exactly one, and they must sum to stories_labelled.
+#   clause_roles      the model labelled the clauses and we narrowed a boundary
+#   clause_kept_full  the model labelled the clauses and judged all of them in-story
+#   no_clause_split   every side is a single clause; nothing to choose between
+#   skipped           the model never answered. NOT a judgment (Lesson 21)
+OUTCOMES = ('clause_roles', 'clause_kept_full', 'no_clause_split', 'skipped')
+
+# A side's labelling status. 'clause_roles' is the only one carrying labels.
+SIDE_STATUSES = ('clause_roles', 'no_clause_split', 'skipped')
+
+
+def new_counts():
+    return {k: 0 for k in OUTCOMES}
 
 
 def load_env():
@@ -85,60 +102,187 @@ def label_segment(detector, summary, hebrew, english):
     return ranges, labels, ('clause_roles' if labels else 'skipped')
 
 
-def reassemble(data, args):
-    """Rebuild boundaries from stored labels without calling the API.
+# ---------------------------------------------------------------------------
+# The shared write path. main() and reassemble() go through these and nothing
+# else, so the two cannot drift apart (review §3.1).
+# ---------------------------------------------------------------------------
 
-    Labels are the expensive artifact; the assembly rule is one line of code. This
-    makes comparing first_last vs longest_run free instead of a second full run.
+def emit_span(story, side, hebrew, ranges, span, ref, seg_idx):
+    """Write one side's text span onto `story`. True if it narrowed the boundary.
+
+    The only place a span is written. Every offset comes from a clause range
+    derived from the real string, and _assert_word_boundary makes that guarantee
+    checkable rather than assumed (Lesson 16).
     """
-    store = json.loads(Path(args.from_labels).read_text())
-    by_key = {(s['ref'], s['story']): s for s in store['stories']}
-    counts = {'clause_roles': 0, 'clause_kept_full': 0, 'no_clause_split': 0, 'skipped': 0}
+    if side == 'start':
+        if span['first'] <= 0:
+            return False
+        clause, offset, key = span['first'], ranges[span['first']][0], 'text_span_start'
+    else:
+        if span['last'] >= len(ranges) - 1:
+            return False
+        clause, offset, key = span['last'], ranges[span['last']][1], 'text_span_end'
+    _assert_word_boundary(hebrew, offset, ref, seg_idx, side)
+    story[key] = {'segment': seg_idx, 'char_offset': offset, 'clause_index': clause,
+                  'clause_count': len(ranges), 'source': 'clause_roles'}
+    return True
+
+
+def aggregate_speech(sides, complete):
+    """Speech composition over the story's labelled segments, each counted once.
+
+    Only the first and last segments are labelled, so on a multi-segment story
+    this covers the edges and not the middle — `complete` says which. Never
+    called without labels: a profile computed from nothing is fabricated data,
+    and `all_speech: False` reads as a finding (Lesson 21).
+    """
+    per_segment = {}
+    for s in sides:
+        per_segment.setdefault(s['segment'], speech_profile(s['labels']))
+    in_story = sum(p['in_story_clauses'] for p in per_segment.values())
+    spoken = sum(p['speech_clauses'] for p in per_segment.values())
+    return {'in_story_clauses': in_story, 'speech_clauses': spoken,
+            'speech_ratio': round(spoken / in_story, 3) if in_story else None,
+            'all_speech': (spoken == in_story) if in_story else None,
+            'complete': complete}
+
+
+def finalize_story(story, ref, sides, counts, rule):
+    """Write one story's spans, speech profile, provenance and counter.
+
+    `sides` is one dict per side examined:
+      {'side', 'segment', 'hebrew', 'ranges', 'labels', 'status'}
+
+    Increments EXACTLY ONE counter, and a failed call gets a provenance that
+    cannot be mistaken for a judgment: 'clause_kept_full' means the model read
+    the segment and kept all of it; 'skipped' means it never answered.
+
+    Returns (outcome, {side: assembled span}).
+    """
+    for s in sides:
+        # reassemble() takes these from a file on disk, so check the contract.
+        assert s['status'] in SIDE_STATUSES, f"unknown side status: {s['status']!r}"
+        assert (s['labels'] is not None) == (s['status'] == 'clause_roles'), (
+            f"{ref}: side {s['side']} says {s['status']!r} but "
+            f"{'has' if s['labels'] else 'has no'} labels")
+
+    if any(s['status'] == 'skipped' for s in sides):
+        # A half-judged story's span is derived from partial input. Drop it and
+        # keep the segment-level boundary — the safe, under-trimming direction.
+        story.pop('text_span_start', None)
+        story.pop('text_span_end', None)
+        story['text_span_source'] = 'skipped'
+        story['needs_review'] = True
+        counts['skipped'] += 1
+        return 'skipped', {}
+
+    labelled = [s for s in sides if s['labels']]
+    if not labelled:
+        # Every side is one clause: nothing to choose. A named, logged outcome,
+        # never a silent accident (tasks/PLAN_wave5.md).
+        story['text_span_source'] = 'no_clause_split'
+        counts['no_clause_split'] += 1
+        return 'no_clause_split', {}
+
+    spans, emitted = {}, False
+    for s in labelled:
+        span = assemble(s['labels'], len(s['ranges']), rule)
+        spans[s['side']] = span
+        if span.get('needs_review'):
+            story['needs_review'] = True
+        if emit_span(story, s['side'], s['hebrew'], s['ranges'], span, ref, s['segment']):
+            emitted = True
+
+    story['speech_profile'] = aggregate_speech(
+        labelled, complete=story.get('start_segment') == story.get('end_segment'))
+    outcome = 'clause_roles' if emitted else 'clause_kept_full'
+    story['text_span_source'] = outcome
+    counts[outcome] += 1
+    return outcome, spans
+
+
+def write_span_artifact(data, stats, name):
+    """Stamp and write the boundary output. Both paths produce the same shape."""
+    assert sum(stats['counts'].values()) == stats['stories_labelled'], (
+        f"outcome buckets are not a partition: {stats['counts']} "
+        f"sums to {sum(stats['counts'].values())} for "
+        f"{stats['stories_labelled']} stories (Lesson 21)")
+    data['version'] = f"{data.get('version', '?')}-wave5b"
+    data['wave5b_stats'] = stats
+    data.pop('text_span_policy', None)
+    out = PROJECT_ROOT / 'results/v11/wave5b' / f'{name}.json'
+    out.parent.mkdir(parents=True, exist_ok=True)
+    out.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+    return out
+
+
+def eligible_stories(data):
+    """Yield (page, segs, story, start, end) for every story worth labelling."""
     for page in data['pages']:
         segs = {s.get('index', i): s for i, s in enumerate(page.get('segments', []))}
         for story in page.get('stories', []):
             if story.get('classification') == 'NOT_A_STORY':
                 continue
-            rec = by_key.get((page['ref'], f"{story.get('start_segment')}-{story.get('end_segment')}"))
-            if not rec:
+            start, end = story.get('start_segment'), story.get('end_segment')
+            if start is None or end is None or start not in segs or end not in segs:
                 continue
-            story.pop('text_span_start', None)
-            story.pop('text_span_end', None)
-            emitted = False
-            for side in ('start', 'end'):
-                blk = rec.get(side)
-                if not blk:
-                    continue
-                hebrew = segs[blk['segment']].get('hebrew', '') or ''
-                ranges = _split_into_clauses(hebrew)
+            yield page, segs, story, start, end
+
+
+# ---------------------------------------------------------------------------
+
+
+def reassemble(data, args):
+    """Rebuild boundaries from stored labels without calling the API.
+
+    Labels are the expensive artifact; the assembly rule is one line of code. This
+    makes comparing first_last vs longest_run free instead of a second full run —
+    and correct, because the model is nondeterministic (Lesson 11), so a second
+    run would confound the assembly rule with fresh labels.
+    """
+    store = json.loads(Path(args.from_labels).read_text())
+    by_key = {(s['ref'], s['story']): s for s in store['stories']}
+    counts = new_counts()
+    processed, missing = 0, 0
+
+    for page, segs, story, start, end in eligible_stories(data):
+        rec = by_key.get((page['ref'], f'{start}-{end}'))
+        if rec is None:
+            missing += 1
+            continue
+        sides = []
+        for side, seg_idx in (('start', start), ('end', end)):
+            status = (rec.get('status') or {}).get(side)
+            if status is None:
+                continue
+            blk = rec.get(side)
+            if blk and blk['segment'] != seg_idx:
+                raise ValueError(
+                    f"{args.from_labels} has {page['ref']} story {start}-{end} "
+                    f"{side} on segment {blk['segment']}, but {args.inp} has it on "
+                    f"segment {seg_idx} — the labels came from a different input.")
+            hebrew = segs[seg_idx].get('hebrew', '') or ''
+            labels = None
+            if blk:
                 labels = {'hebrew': {int(k): v for k, v in blk['labels'].items()},
                           'english': {int(k): v for k, v in blk['english'].items()}}
-                span = assemble(labels, len(ranges), args.assembly)
-                if side == 'start' and span['first'] > 0:
-                    off = ranges[span['first']][0]
-                    _assert_word_boundary(hebrew, off, page['ref'], blk['segment'], 'start')
-                    story['text_span_start'] = {'segment': blk['segment'], 'char_offset': off,
-                                                'clause_index': span['first'],
-                                                'clause_count': len(ranges), 'source': 'clause_roles'}
-                    emitted = True
-                if side == 'end' and span['last'] < len(ranges) - 1:
-                    off = ranges[span['last']][1]
-                    _assert_word_boundary(hebrew, off, page['ref'], blk['segment'], 'end')
-                    story['text_span_end'] = {'segment': blk['segment'], 'char_offset': off,
-                                              'clause_index': span['last'],
-                                              'clause_count': len(ranges), 'source': 'clause_roles'}
-                    emitted = True
-            story['text_span_source'] = 'clause_roles' if emitted else 'clause_kept_full'
-            counts['clause_roles' if emitted else 'clause_kept_full'] += 1
+            sides.append({'side': side, 'segment': seg_idx, 'hebrew': hebrew,
+                          'ranges': _split_into_clauses(hebrew),
+                          'labels': labels, 'status': status})
+        processed += 1
+        finalize_story(story, page['ref'], sides, counts, args.assembly)
+
+    if missing:
+        log.warning('%d stories in --in have no record in %s and were left untouched',
+                    missing, Path(args.from_labels).name)
     stats = dict(store['_stats'])
-    stats['assembly_rule'] = args.assembly
-    stats['reassembled_from'] = Path(args.from_labels).name
-    stats['counts'] = counts
-    data['wave5b_stats'] = stats
-    out = PROJECT_ROOT / 'results/v11/wave5b' / f'{args.name}.json'
-    out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(json.dumps(data, ensure_ascii=False, indent=1))
-    log.info('re-assembled with %s | %s -> %s', args.assembly, counts, out.relative_to(PROJECT_ROOT))
+    stats.update({'counts': counts, 'assembly_rule': args.assembly,
+                  'stories_labelled': processed,
+                  'stories_without_labels': missing,
+                  'reassembled_from': Path(args.from_labels).name})
+    out = write_span_artifact(data, stats, args.name)
+    log.info('re-assembled with %s | %s -> %s',
+             args.assembly, counts, out.relative_to(PROJECT_ROOT))
     return 0
 
 
@@ -167,96 +311,57 @@ def main():
 
     log.info('model=%s thinking=%s prompt=%s assembly=%s',
              args.model, args.thinking, PROMPT_VERSION, args.assembly)
-    counts = {'clause_roles': 0, 'clause_kept_full': 0, 'no_clause_split': 0, 'skipped': 0}
+    counts = new_counts()
     label_store, disagreements, speech_rows = [], [], []
     done, t0 = 0, time.time()
 
-    for page in data['pages']:
-        segs = {s.get('index', i): s for i, s in enumerate(page.get('segments', []))}
-        for story in page.get('stories', []):
-            if story.get('classification') == 'NOT_A_STORY':
+    for page, segs, story, start, end in eligible_stories(data):
+        if args.limit and done >= args.limit:
+            continue
+        done += 1
+        summary = story_summary(story)
+
+        # A single-segment story has start_segment == end_segment. Labelling it
+        # once and reusing the result halves the calls on the common case.
+        sides, cache = [], {}
+        for side, seg_idx in (('start', start), ('end', end)):
+            hebrew = segs[seg_idx].get('hebrew', '') or ''
+            if seg_idx not in cache:
+                cache[seg_idx] = label_segment(
+                    detector, summary, hebrew, segs[seg_idx].get('english', '') or '')
+            ranges, labels, status = cache[seg_idx]
+            sides.append({'side': side, 'segment': seg_idx, 'hebrew': hebrew,
+                          'ranges': ranges, 'labels': labels, 'status': status})
+
+        outcome, spans = finalize_story(story, page['ref'], sides, counts, args.assembly)
+
+        # One record per processed story — labelled or not — so the labels file
+        # is a complete account of the run and reassemble() reproduces it exactly.
+        rec = {'ref': page['ref'], 'story': f'{start}-{end}', 'summary': summary,
+               'outcome': outcome, 'status': {s['side']: s['status'] for s in sides}}
+        for s in sides:
+            if not s['labels']:
                 continue
-            if args.limit and done >= args.limit:
-                continue
-            start, end = story.get('start_segment'), story.get('end_segment')
-            if start is None or end is None or start not in segs or end not in segs:
-                continue
-            done += 1
-            summary = story_summary(story)
-            emitted = False
-            seen_speech = []
-            per_story = {'ref': page['ref'], 'story': f'{start}-{end}', 'summary': summary}
-
-            # A single-segment story has start_segment == end_segment. Labelling it
-            # once and reusing the result halves the calls on the common case.
-            cache = {}
-            for side, seg_idx in (('start', start), ('end', end)):
-                seg = segs[seg_idx]
-                hebrew = seg.get('hebrew', '') or ''
-                if seg_idx in cache:
-                    ranges, labels, status = cache[seg_idx]
-                else:
-                    ranges, labels, status = label_segment(
-                        detector, summary, hebrew, seg.get('english', '') or '')
-                    cache[seg_idx] = (ranges, labels, status)
-                if labels is None:
-                    if side == 'start' or start != end:
-                        counts['no_clause_split' if status == 'no_clause_split' else 'skipped'] += 1
-                    continue
-
-                span = assemble(labels, len(ranges), args.assembly)
-                per_story[side] = {
-                    'segment': seg_idx, 'n_clauses': len(ranges), 'span': span,
-                    'labels': {str(k): v for k, v in labels['hebrew'].items()},
-                    'english': {str(k): v for k, v in labels['english'].items()},
-                }
-                xl = cross_language_disagreement(labels)
-                if xl['n_disagree']:
-                    disagreements.append({'ref': page['ref'], 'segment': seg_idx, **xl})
-                if side == 'start' or start != end:
-                    seen_speech.append(speech_profile(labels))
-
-                if side == 'start' and span['first'] > 0:
-                    off = ranges[span['first']][0]
-                    _assert_word_boundary(hebrew, off, page['ref'], seg_idx, 'start')
-                    story['text_span_start'] = {'segment': seg_idx, 'char_offset': off,
-                                                'clause_index': span['first'],
-                                                'clause_count': len(ranges),
-                                                'source': 'clause_roles'}
-                    emitted = True
-                if side == 'end' and span['last'] < len(ranges) - 1:
-                    off = ranges[span['last']][1]
-                    _assert_word_boundary(hebrew, off, page['ref'], seg_idx, 'end')
-                    story['text_span_end'] = {'segment': seg_idx, 'char_offset': off,
-                                              'clause_index': span['last'],
-                                              'clause_count': len(ranges),
-                                              'source': 'clause_roles'}
-                    emitted = True
-                if span.get('needs_review'):
-                    story['needs_review'] = True
-
-            # Aggregate speech across the story's labelled segments.
-            # NOTE: only the FIRST and LAST segments are labelled, so for a
-            # multi-segment story this covers the edges, not the middle. Exact for
-            # single-segment stories, which are the majority.
-            in_story = sum(p['in_story_clauses'] for p in seen_speech)
-            sp = sum(p['speech_clauses'] for p in seen_speech)
-            story['speech_profile'] = {
-                'in_story_clauses': in_story, 'speech_clauses': sp,
-                'speech_ratio': round(sp / in_story, 3) if in_story else None,
-                'all_speech': (in_story > 0 and sp == in_story),
-                'complete': start == end,
+            rec[s['side']] = {
+                'segment': s['segment'], 'n_clauses': len(s['ranges']),
+                'span': spans[s['side']],
+                'labels': {str(k): v for k, v in s['labels']['hebrew'].items()},
+                'english': {str(k): v for k, v in s['labels']['english'].items()},
             }
+        label_store.append(rec)
+
+        if 'speech_profile' in story:
             speech_rows.append({'ref': page['ref'], 'story': f'{start}-{end}',
                                 **story['speech_profile']})
-            story['text_span_source'] = 'clause_roles' if emitted else 'clause_kept_full'
-            counts['clause_roles' if emitted else 'clause_kept_full'] += 1
-            label_store.append(per_story)
-            if done % 20 == 0:
-                log.info('  %d stories labelled (%.0fs)', done, time.time() - t0)
+        for seg_idx, labels in {s['segment']: s['labels'] for s in sides if s['labels']}.items():
+            xl = cross_language_disagreement(labels)
+            if xl['n_disagree']:
+                disagreements.append({'ref': page['ref'], 'segment': seg_idx, **xl})
+
+        if done % 20 == 0:
+            log.info('  %d stories labelled (%.0fs)', done, time.time() - t0)
 
     elapsed = time.time() - t0
-    covered = sum(d['clauses_covered'] for d in disagreements) or 0
     stats = {
         'counts': counts, 'model': args.model, 'thinking_level': args.thinking,
         'prompt_version': PROMPT_VERSION, 'assembly_rule': args.assembly,
@@ -273,12 +378,7 @@ def main():
          'cross_language_disagreements': disagreements, 'speech_profiles': speech_rows},
         ensure_ascii=False, indent=1))
 
-    data['version'] = f"{data.get('version', '?')}-wave5b"
-    data['wave5b_stats'] = stats
-    data.pop('text_span_policy', None)
-    out_path = PROJECT_ROOT / 'results/v11/wave5b' / f'{args.name}.json'
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text(json.dumps(data, ensure_ascii=False, indent=1))
+    out_path = write_span_artifact(data, stats, args.name)
 
     log.info('%s | %s | %.0fs', args.model, counts, elapsed)
     log.info('labels -> %s', labels_path.relative_to(PROJECT_ROOT))

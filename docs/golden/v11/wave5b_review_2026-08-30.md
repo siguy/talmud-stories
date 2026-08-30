@@ -32,7 +32,17 @@ and whether the gate can measure anything.
 
 ## 2. P0 — must fix before Wave 5b runs at all
 
-### 2.1 A failed API call is recorded as a successful judgment — VERIFIED
+> **STATUS 2026-08-30: 2.1, 2.2 and 2.4 are FIXED** in
+> `scripts/run_clause_labeling.py`, guarded by
+> [`tests/test_wave5b_runner_outcomes.py`](../../../tests/test_wave5b_runner_outcomes.py)
+> (failure-injection test written first, watched fail, then fixed). Same fixture,
+> model failing on every call: before `{kept_full: 6, no_split: 2, skipped: 6}` =
+> 14 counts for 6 stories, all 6 stamped `clause_kept_full`, 6 fabricated speech
+> profiles; after `{no_split: 1, skipped: 5}` = 6 counts, 0 success stamps, 0
+> profiles, 5 `needs_review`. **2.3 (the scorer) is still open** — it is a
+> different file and was out of scope for that commit.
+
+### 2.1 A failed API call is recorded as a successful judgment — VERIFIED — **FIXED 2026-08-30**
 
 `scripts/run_clause_labeling.py` — failure path `continue`s the inner **per-side** loop,
 then falls through to an unconditional success write after the loop.
@@ -54,7 +64,7 @@ partition (12 ≠ 5).
 loop so buckets stay mutually exclusive. `src/story_detector_v11.py` already does this
 correctly — the new runner regressed against the file it was forked from. → Lesson 21.
 
-### 2.2 `speech_profile` fabricated on stories that were never labelled — VERIFIED
+### 2.2 `speech_profile` fabricated on stories that were never labelled — VERIFIED — **FIXED 2026-08-30**
 
 Same fall-through. Failed stories receive
 `{'in_story_clauses': 0, 'speech_clauses': 0, 'speech_ratio': None, 'all_speech': False}`
@@ -65,7 +75,7 @@ when there is no data; the runner's aggregation discards that care.
 
 **Fix:** do not write the key at all when no labels were obtained.
 
-### 2.3 The scorer rates a completely dead run as a normal result — VERIFIED
+### 2.3 The scorer rates a completely dead run as a normal result — VERIFIED — **STILL OPEN**
 
 A fully-failed run scores **6% HIT / 38% HIT+NEAR** — numerically identical to the
 legitimate no-trim baseline. `boundary_clause()` falls back to "clause 0 / last clause"
@@ -77,7 +87,7 @@ to score (or banner loudly) when `skipped` is non-trivial, and add a `FAIL` buck
 stories whose `text_span_source == 'skipped'`. The scorer already models exactly this
 distinction for detection gaps (`N/A`) — apply the same reasoning to run failures.
 
-### 2.4 `no_clause_split` provenance destroyed — VERIFIED
+### 2.4 `no_clause_split` provenance destroyed — VERIFIED — **FIXED 2026-08-30**
 
 The unconditional post-loop write overwrites `text_span_source`, so the no-split case
 never survives. [`tasks/PLAN_wave5.md`](../../../tasks/PLAN_wave5.md) explicitly requires
@@ -88,7 +98,7 @@ accident." Wave 5b regresses against its predecessor's stated requirement.
 
 ## 3. P1 — high
 
-### 3.1 `reassemble()` produces a different artifact from the fresh path — VERIFIED
+### 3.1 `reassemble()` produces a different artifact from the fresh path — VERIFIED — **FIXED 2026-08-30**
 
 Same input, same rule, same stories:
 
