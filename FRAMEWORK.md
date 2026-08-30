@@ -189,13 +189,18 @@ Until both are answered, quote the gates as provisional and say so.
 Every number must name its dataset and its kind. This is not bookkeeping: quoting a
 circular number as an accuracy claim is the mistake that cost this project months.
 
+**Count golden datasets the same way, and say which way.** A canonical file holds every
+entry Jeff ruled on, the rejected ones included: Ketubot is 182 entries / 159 accepted,
+Kiddushin 96 / 85. This project has been quoting "182 and 85" — entries against
+accepted-only — as though they were the same measurement.
+
 | dataset | n | kind | what it can measure |
 |---|---|---|---|
 | `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
 | `results/expert_lists/kiddushin_2005.json` | 89 Kiddushin stories | **BLIND** — of 95 parsed; excludes 1 he added and 5 appendix entries | recall, triage recall, boundaries |
-| `results/canonical/ketubot_canonical.json` | 182 stories | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
-| `results/canonical/kiddushin_canonical.json` | 85 stories | **CIRCULAR** | precision, consistency |
+| `results/canonical/ketubot_canonical.json` | 182 entries, 159 accepted | **CIRCULAR** — we proposed, Jeff corrected. v7 + v9, several rounds | precision, consistency |
+| `results/canonical/kiddushin_canonical.json` | 96 entries, 85 accepted | **CIRCULAR** — v7 only, one round; 16 later verdicts not folded in | precision, consistency |
 | `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
 | review-round verdict files | 8 rounds | **CIRCULAR** — verdicts on what we proposed | precision |
 
@@ -211,9 +216,11 @@ from survived as a separate file. Nothing in the merged list would ever have sho
 
 Two consequences:
 
-- **Ask, before the merge.** An appendix kept separate, or entries marked, costs the
-  expert nothing and cannot be reconstructed afterwards. Gittin, Yevamot and Eruvin are
-  still ahead of us.
+- **Ask before the first review round on a tractate**, not after. An appendix kept
+  separate, or entries marked, costs the expert nothing and cannot be reconstructed
+  afterwards. Gittin, Yevamot and Eruvin are clean precisely because we have never run
+  there — a list can only be contaminated by output we have actually produced, which
+  also makes them the only place a clean floor test is available.
 - **Check every expert list against what we sent him** before quoting it as blind —
   `scripts/check_appendix_coverage.py`. Provenance is a property to be tested, not
   inferred from a file's name or its date.
