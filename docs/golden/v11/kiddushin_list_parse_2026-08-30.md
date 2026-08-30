@@ -92,59 +92,65 @@ below, trimmed before the `אמר אביי` scriptural coda. Given that his othe
 are boundary corrections, the likeliest reading is that this is one too. Flagged
 `blind: false` either way; it never enters a recall denominator.
 
-**The five in `Kiddushin missed stories.docx` are blind, and they count.** They are the
-five stories **Jeff flagged that our detector missed**, in April 2026
-([`kiddushin_feedback_analysis_2026-04-23.md`](../v7/kiddushin_feedback_analysis_2026-04-23.md)).
-The worry was that they had come from our output, which would make counting them
-circular. They did not, and this is **measured**, three independent ways:
-
-| check | result |
-|---|---|
-| Were any of the five among the 96 stories we showed Jeff in the April review? | **none** — `validation/feedback/kiddushin_review_2026-04-23.json` has no item covering their segments |
-| Whose text is in the .docx? | **3 of 5 are character-for-character Jeff's own list entries** (raw similarity 1.000, 1.000, 0.901; zero nikud). We did not possess his Kiddushin list until 2026-08-30, so we could not have written them. The other two are vocalized Sefaria text he pasted. |
-| Are they in the detector output now? | **3 of 5 still are not** — 53a, 71a and 81b are absent from v7 through v10 |
-
-A story that was never in our output cannot have entered his list from our output. So all
-five are blind **whenever he wrote them**, and the 2005-versus-later question that looked
-like it needed Jeff turns out not to matter.
+**The five in `Kiddushin missed stories.docx` are NOT blind.** That file is the appendix
+Jeff refers to as *"additional stories that you and Claude found that were not on my
+list"* — a set of cases drawn from across many of our runs, which he annotated
+`Yes` / `Low confidence` and then merged into his list. They are in his list **because of
+our output**, which is the definition of circular (FRAMEWORK §3). All five are
+`blind: false` and excluded from recall.
 
 ```
-recall_denominator = 94
+recall_denominator = 89        95 parsed - 1 he added himself - 5 appendix
 ```
 
-`recall_denominator_excluding_flagged` (89) stays in the artifact, but only to show what
-these five cost. **Do not score recall on it** — excluding five known-hard cases, three
-of which are genuine misses, moves the number in our own favour by about three points.
+### 4a. What we actually detected, per run — a separate question
 
-## 5. The ten remarks, each attached to its passage
+Provenance says these five are ours. It does not say we *found* them, and the two are
+worth keeping apart: `NEXT/06` needs to know which of the five it should expect to score
+as misses. Reproduce with `scripts/check_appendix_coverage.py`:
 
-Nine Word comments plus one in the notes column. Six anchor inside the story text; three
-sit at the end of a location cell (labelling the row); one is the notes cell. The
-attachments are self-verifying — the note names what is in the passage it points at:
+| run | 33a | 45a | 53a | 71a | 81b |
+|---|---|---|---|---|---|
+| v7 | PART | – | – | – | – |
+| v8 wave1 / wave2 | PART | **full** | PART | – | – |
+| v9 wave3 | PART | **full** | PART | – | – |
+| canonical (golden) | PART | – | – | – | – |
+| v10 wave4 / notrim | PART | **full** | PART | – | – |
+| v11 wave5 / summaryfix | PART | **full** | PART | – | – |
 
-| | note | attaches to | check |
-|---|---|---|---|
-| `c_00` | "very minimal story… dialogue *sent* through messengers or letters" | 10b | the passage **is** an exchange of letters (Yochanan b. Bag Bag ↔ R. Yehuda b. Beteira) |
-| `c_01` | "these words should be omitted… the Talmud's comment on the alternative story" | 22b | the entry ends in `איכא דאמרי… ואיכא דאמרי…` |
-| `c_02` | "a few more words should be included: `סֵירוּס דְּמַאי?…`" + "These seem to be the words of Rav Hisda" | 25a | the entry ends at `רבי אומר: אף הסירוס` |
-| `c_05` | "this *response* (teirutz)… part of the dialectical argumentation" | 39b | the entry ends `ר' יעקב מעשה חזא` — a teirutz |
-| `c_note_28` | "example *hada ve'od* that looks Amoraic" | 33b | the passage runs `חדא, ד… ועוד, …` |
+`full` = one span covers every segment the case occupies · `PART` = a span overlaps but
+does not cover it · `–` = nothing proposed there.
 
-`c_02` is **two** remarks in one annotation — a boundary instruction and an attribution
-note. `NEXT/08` should sort at the sentence level, not the comment level.
+Three findings in that table:
 
-### 4a. The contamination risk is in the future, not the past
+- **45a is the one clean win.** Absent in v7, found from Wave 1 onward — a real
+  improvement, visible only because the appendix recorded the case.
+- **33a and 53a have never been fully caught in any run.** Both are permanently `PART`:
+  we propose one segment of a two-segment story. That is a **boundary** failure sitting
+  on top of a detection near-miss, not a detection miss, and it has survived every wave.
+- **71a and 81b were never proposed by any run, ever.** At 71a we propose the *parallel*
+  version (`בימי רבי פנחס`, segs 4-5) and never the one Jeff kept (`בימי רבי`, segs 2-3).
+  At 81b the story sits at segment 9 and nothing has ever been proposed there.
 
-Jeff, on the lists he is preparing: *"Also an appendix with additional stories that you
-and Claude found that were not on my list."* That appendix does not exist yet — it is not
-`Kiddushin missed stories.docx`, which is his own document, as above.
+The last point is the awkward one and it is stated rather than smoothed: the appendix is
+described as cases we found, but two of its five are not in any run on disk. Either they
+came from a run that was not kept, or from a reading pass rather than detector output.
+It does not change the flags — they are in Jeff's list through our process either way —
+but anyone using this file should know the sourcing is uneven.
 
-But when it arrives it will be **exactly** the circular material the `NEXT/05` brief
-feared, and merging it into a tractate list would destroy that list's ability to measure
-recall — permanently and invisibly, since the merged entries would look like any others.
-**This is worth one sentence to Jeff:** keep the appendix a separate file, or mark its
-entries, so the list stays a blind ruler. It costs him nothing and it is not recoverable
-afterwards.
+### 4b. The same thing is about to happen to four more tractates
+
+The merge already happened here, and we caught it only because the appendix survived as
+a separate file. Jeff is preparing the same appendix for Gittin, Yevamot and Eruvin. If
+those entries are merged into those lists without a marker, each list quietly loses the
+ability to measure what we missed — **permanently and invisibly**, because a merged entry
+looks like every other entry.
+
+**One sentence to Jeff:** keep the appendix a separate file, or mark its entries. Costs
+him nothing, and it cannot be reconstructed afterwards.
+
+**And one for us:** every expert list from here on gets checked against whatever we sent
+him before it is trusted as blind. `scripts/check_appendix_coverage.py` is that check.
 
 ## 6. Two loose ends for `NEXT/08`
 

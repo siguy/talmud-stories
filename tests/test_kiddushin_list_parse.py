@@ -85,18 +85,29 @@ def test_jeffs_own_addition_is_flagged_not_blind():
     stories, comments = _kiddushin()
     marked = [c for c in comments if c.get('marks_addition')]
     assert len(marked) == 1, f'expected one addition marker, got {len(marked)}'
-    added = [s for s in stories if not s['blind']]
-    assert len(added) == 1 and added[0]['id'] == marked[0]['added_story_id']
-    assert added[0]['vocalized'], 'the added entry was pasted from Sefaria, so it carries nikud'
-    assert added[0]['duplicate_of'], 'it duplicates the entry he already had'
+    added = next(s for s in stories if s['id'] == marked[0]['added_story_id'])
+    assert not added['blind'], 'an entry he added in 2026 cannot score recall'
+    assert not added['in_appendix'], 'this one is his own, not from the appendix'
+    assert added['vocalized'], 'the added entry was pasted from Sefaria, so it carries nikud'
+    assert added['duplicate_of'], 'it duplicates the entry he already had'
 
 
-def test_the_five_detector_reviewed_stories_are_flagged():
-    """Selected because we missed them, so they bias recall downward. Must be visible."""
+def test_appendix_entries_are_flagged_and_excluded_from_recall():
+    """The appendix is our own output, merged into his list. Circular -- never blind."""
     stories, _ = _kiddushin()
-    flagged = {s['ref'] for s in stories if s['expert_flagged_miss_2026']}
-    assert flagged == {'Kiddushin 33a', 'Kiddushin 45a', 'Kiddushin 53a',
-                       'Kiddushin 71a', 'Kiddushin 81b'}, flagged
+    appendix = [s for s in stories if s['in_appendix']]
+    assert {s['ref'] for s in appendix} == {'Kiddushin 33a', 'Kiddushin 45a', 'Kiddushin 53a',
+                                            'Kiddushin 71a', 'Kiddushin 81b'}
+    for s in appendix:
+        assert not s['blind'], f"{s['id']} is appendix-sourced and cannot be blind"
+        assert s['appendix_verdict'] in ('Yes', 'Low confidence')
+
+
+def test_recall_denominator_is_the_blind_unique_count():
+    stories, _ = _kiddushin()
+    blind = [s for s in stories if s['blind'] and not s['duplicate_of']]
+    assert len(blind) == 89, f'expected 89 blind unique stories, got {len(blind)}'
+    assert len([s for s in stories if not s['blind']]) == 6
 
 
 def test_story_text_matches_an_independent_renderer():

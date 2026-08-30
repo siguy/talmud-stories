@@ -7,17 +7,16 @@
  "counts": {
   "table_rows": 71,
   "stories": 95,
-  "blind": 94,
-  "not_blind": 1,
+  "blind": 89,
+  "not_blind": 6,
   "duplicates": 1,
-  "expert_flagged_miss_2026": 5,
-  "recall_denominator": 94,
-  "recall_denominator_excluding_flagged": 89,
+  "in_appendix": 5,
+  "recall_denominator": 89,
   "comments": 10
  },
  "notes": [
   "blind=false means Jeff marked the entry as his own 2026 addition; exclude from recall.",
-  "Use recall_denominator (94). The five expert_flagged_miss_2026 entries ARE blind: none was among the 96 stories shown to Jeff in April 2026, three are verbatim from his own list which we did not possess until 2026-08-30, and three are still absent from detector output. They cannot have come from us. The flag marks known-hard cases; recall_denominator_excluding_flagged (89) exists only to show what they cost.",
+  "in_appendix=true marks the five entries from \"Kiddushin missed stories.docx\" -- the appendix of cases from our own runs that Jeff merged into his list. They are in the list because of our output, so they are CIRCULAR: blind=false, and excluded from recall. Use recall_denominator (89).",
   "duplicate_of is set where the same story appears twice; count it once.",
   "ref_ambiguous=true means the row carried more than one daf label and the per-story reference could not be resolved from the document alone."
  ],
@@ -40,7 +39,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -63,7 +62,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -86,7 +85,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -109,7 +108,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -131,7 +130,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_00"
@@ -155,7 +154,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -177,7 +176,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -199,7 +198,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -221,7 +220,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -243,7 +242,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -265,7 +264,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -287,7 +286,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -310,7 +309,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_01"
@@ -334,7 +333,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_02"
@@ -358,7 +357,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -381,7 +380,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -403,7 +402,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -425,7 +424,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -447,7 +446,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -469,7 +468,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -491,7 +490,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -513,7 +512,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_03"
@@ -537,7 +536,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -559,7 +558,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -581,7 +580,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -603,7 +602,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -625,7 +624,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -647,7 +646,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_04"
@@ -671,7 +670,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -693,7 +692,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -715,7 +714,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -737,7 +736,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -759,7 +758,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -781,7 +780,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -801,12 +800,12 @@
    "words": 29,
    "parallels": "ירושלמי כלאיים וכתובות, בר\"ר לג.",
    "vocalized": false,
-   "blind": true,
-   "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": true,
+   "blind": false,
+   "blind_basis": "in `Kiddushin missed stories.docx`, the appendix of cases from our runs that Jeff merged into his list -- circular, excluded from recall",
+   "in_appendix": true,
    "duplicate_of": null,
    "comment_ids": [],
-   "expert_flagged_miss_verdict": "Yes"
+   "appendix_verdict": "Yes"
   },
   {
    "id": "kiddushin_036",
@@ -826,7 +825,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -848,7 +847,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -870,7 +869,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -892,7 +891,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_note_28"
@@ -916,7 +915,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -938,7 +937,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_05"
@@ -962,7 +961,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -985,7 +984,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1007,7 +1006,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1029,7 +1028,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1051,7 +1050,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1073,7 +1072,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1095,7 +1094,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1117,14 +1116,14 @@
    "words": 37,
    "parallels": null,
    "vocalized": false,
-   "blind": true,
-   "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": true,
+   "blind": false,
+   "blind_basis": "in `Kiddushin missed stories.docx`, the appendix of cases from our runs that Jeff merged into his list -- circular, excluded from recall",
+   "in_appendix": true,
    "duplicate_of": null,
    "comment_ids": [
     "c_06"
    ],
-   "expert_flagged_miss_verdict": "Low confidence"
+   "appendix_verdict": "Low confidence"
   },
   {
    "id": "kiddushin_050",
@@ -1146,7 +1145,7 @@
    "vocalized": true,
    "blind": false,
    "blind_basis": "marked `hosafti--y.r.` (I added -- J.R.) by comment c_06",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": "kiddushin_052",
    "comment_ids": []
   },
@@ -1170,7 +1169,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1194,7 +1193,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1216,7 +1215,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1238,7 +1237,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1260,7 +1259,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1282,7 +1281,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1304,7 +1303,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1326,7 +1325,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1348,7 +1347,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1368,12 +1367,12 @@
    "words": 37,
    "parallels": "יומא לט ע\"א, ירושלמי יומא פ\"ו ה\"ג",
    "vocalized": false,
-   "blind": true,
-   "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": true,
+   "blind": false,
+   "blind_basis": "in `Kiddushin missed stories.docx`, the appendix of cases from our runs that Jeff merged into his list -- circular, excluded from recall",
+   "in_appendix": true,
    "duplicate_of": null,
    "comment_ids": [],
-   "expert_flagged_miss_verdict": "Low confidence"
+   "appendix_verdict": "Low confidence"
   },
   {
    "id": "kiddushin_061",
@@ -1393,7 +1392,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1415,7 +1414,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_07"
@@ -1440,7 +1439,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": [
     "c_08"
@@ -1464,7 +1463,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1486,7 +1485,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1508,7 +1507,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1530,7 +1529,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1552,7 +1551,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1574,7 +1573,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1596,7 +1595,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1619,7 +1618,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1639,12 +1638,12 @@
    "words": 49,
    "parallels": null,
    "vocalized": false,
-   "blind": true,
-   "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": true,
+   "blind": false,
+   "blind_basis": "in `Kiddushin missed stories.docx`, the appendix of cases from our runs that Jeff merged into his list -- circular, excluded from recall",
+   "in_appendix": true,
    "duplicate_of": null,
    "comment_ids": [],
-   "expert_flagged_miss_verdict": "Low confidence"
+   "appendix_verdict": "Low confidence"
   },
   {
    "id": "kiddushin_073",
@@ -1664,7 +1663,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1686,7 +1685,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1708,7 +1707,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1730,7 +1729,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1752,7 +1751,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1774,7 +1773,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1796,7 +1795,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1818,7 +1817,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1840,7 +1839,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1862,7 +1861,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1884,7 +1883,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1906,7 +1905,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1928,7 +1927,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1950,7 +1949,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1972,7 +1971,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -1994,7 +1993,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2016,7 +2015,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2038,7 +2037,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2061,7 +2060,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2083,7 +2082,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2103,12 +2102,12 @@
    "words": 35,
    "parallels": null,
    "vocalized": false,
-   "blind": true,
-   "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": true,
+   "blind": false,
+   "blind_basis": "in `Kiddushin missed stories.docx`, the appendix of cases from our runs that Jeff merged into his list -- circular, excluded from recall",
+   "in_appendix": true,
    "duplicate_of": null,
    "comment_ids": [],
-   "expert_flagged_miss_verdict": "Yes"
+   "appendix_verdict": "Yes"
   },
   {
    "id": "kiddushin_094",
@@ -2128,7 +2127,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   },
@@ -2150,7 +2149,7 @@
    "vocalized": false,
    "blind": true,
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
-   "expert_flagged_miss_2026": false,
+   "in_appendix": false,
    "duplicate_of": null,
    "comment_ids": []
   }

@@ -193,7 +193,7 @@ circular number as an accuracy claim is the mistake that cost this project month
 |---|---|---|---|
 | `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
-| `results/expert_lists/kiddushin_2005.json` | 94 Kiddushin stories | **BLIND** — his 2005 list, 1 marked 2026 addition excluded | recall, triage recall, boundaries |
+| `results/expert_lists/kiddushin_2005.json` | 89 Kiddushin stories | **BLIND** — of 95 parsed; excludes 1 he added and 5 appendix entries | recall, triage recall, boundaries |
 | `results/canonical/ketubot_canonical.json` | 182 stories | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
 | `results/canonical/kiddushin_canonical.json` | 85 stories | **CIRCULAR** | precision, consistency |
 | `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
@@ -203,17 +203,20 @@ circular number as an accuracy claim is the mistake that cost this project month
 precision (of what we proposed, how much is good) but *never* recall (what did we never
 propose).
 
-**Test provenance, do not infer it.** Five Kiddushin entries looked contaminated — they
-arrived in a file about stories in play between us and Jeff. Three checks settled it as
-**measured**: none had been shown to him in review, three were character-for-character
-his own text which we did not possess, and three are still absent from our output. A
-story that was never in our output cannot have entered his list from it, so all five are
-blind and they count. Reasoning from where a file *sits* would have dropped five
-known-hard cases and moved recall three points in our own favour.
+**A blind list stops being blind the moment the expert merges our output into it.**
+This is not hypothetical: five Kiddushin entries are cases from our own runs that Jeff
+annotated and merged into his list. They look exactly like his other 90 — same column,
+same hand, no marker — and the only reason we know is that the appendix he built them
+from survived as a separate file. Nothing in the merged list would ever have shown it.
 
-**The direction of a suspected bias is part of the finding.** Ask not only "is this
-tainted?" but "which way would it push, and who does that flatter?" A correction that
-happens to improve our own number deserves the most evidence, not the least.
+Two consequences:
+
+- **Ask, before the merge.** An appendix kept separate, or entries marked, costs the
+  expert nothing and cannot be reconstructed afterwards. Gittin, Yevamot and Eruvin are
+  still ahead of us.
+- **Check every expert list against what we sent him** before quoting it as blind —
+  `scripts/check_appendix_coverage.py`. Provenance is a property to be tested, not
+  inferred from a file's name or its date.
 
 ## 4. The scoreboard
 

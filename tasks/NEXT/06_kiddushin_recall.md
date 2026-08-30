@@ -27,12 +27,10 @@ Mirror the Ketubot measurement exactly — same script, so the numbers are compa
    is a **Classification** failure, not Detection — keep them apart (FRAMEWORK §1).
 3. Report triage recall separately from detection recall. They compose:
    `triage × detection = end-to-end` (FRAMEWORK §2b).
-4. **The denominator is 94.** Use `recall_denominator`. The five
-   `expert_flagged_miss_2026` entries are blind and they count — measured, see
-   [the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4. Three of
-   them (53a, 71a, 81b) are still absent from the detector output, so expect them as
-   genuine misses. **Do not quote 89**: dropping five known-hard cases moves the number
-   about three points in our own favour.
+4. **The denominator is 89.** Use `recall_denominator` — filter `blind == true` and
+   `duplicate_of == null`. The six excluded are the one Jeff added himself and the five
+   `in_appendix` entries, which are our own cases merged into his list (finding §4).
+   Including them would score us against stories that are there because of us.
 
 ## How you know it worked
 
@@ -46,9 +44,13 @@ plainly — that is a generalization finding and it matters more than the number
   `הוספתי--י.ר.` ("I added — J.R.") in 2026, which is also a duplicate of an entry he
   already had. That is the *only* non-blind entry — the `NEXT/05` brief's worry that the
   list was seeded from our output did not survive checking (finding §4).
-- **The real circularity risk is an appendix Jeff has not sent yet** — "additional
-  stories that you and Claude found that were not on my list." If it arrives before this
-  runs, keep it out of the denominator entirely. → `NEXT/09` item 1b.
+- **Do not re-derive the appendix entries as misses.** Three of the five (33a, 53a as
+  partial spans, 71a and 81b not at all) are cases we handle badly, so they will look
+  like findings. They are excluded from the denominator; report them separately as
+  known-hard cases if useful, never inside the recall number.
+- The per-run history of those five is `scripts/check_appendix_coverage.py`. **45a is a
+  genuine Wave 1 win** — absent in v7, found since. Worth saying in the writeup, since
+  the appendix is the only reason we can see it.
 - Same script as Ketubot, or the comparison is meaningless.
 - Regenerate today's baseline before comparing (Lesson 11).
 

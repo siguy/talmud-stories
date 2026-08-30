@@ -7,40 +7,45 @@ recorded so they are revisited rather than inherited. Read
 **Capability: ground truth for 1, 2, 4.** **No API calls except item 2.**
 
 Each is stated as: what was decided · what it rests on · what it costs if wrong · what
-would settle it. None blocks `06`, `07` or `08`. **Item 1 is now resolved** — the
-denominator is 94 — and item 1b replaces it with the risk that actually matters.
+would settle it. None blocks `06`, `07` or `08`. **Item 1 is resolved** — the denominator
+is 89 — and 1b is the live one: the same contamination is about to reach three more
+tractates.
 
 ---
 
-## 1. ~~Were the five expert-flagged stories in Jeff's 2005 original?~~ — **RESOLVED**
+## 1. ~~Were the five in the appendix blind?~~ — **RESOLVED: no**
 
-**Answer: they are blind, they count, the denominator is 94.** Settled 2026-08-30 by
-three checks, not by asking him — see
-[the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4. None of the
-five was among the 96 stories we showed him in April; three are character-for-character
-his own list text, which we did not have until 2026-08-30; three are still absent from
-the detector output. A story never in our output cannot have entered his list from it,
-so *when* he wrote them does not matter.
+`Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
+that you and Claude found that were not on my list"* — cases from across our runs, which
+he merged into his list. They are in his list because of our output, so they are
+circular. **`blind: false`, denominator 89.** See
+[the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4.
 
-**Do not score recall on 89.** Dropping five known-hard cases, three of them genuine
-misses, moves the number about three points in our own favour.
+## 1b. Ask Jeff to keep the next appendices separate — **the live one**
 
-## 1b. The appendix Jeff is preparing — **the real contamination risk, and it is future**
+The merge already cost us five of Kiddushin's stories as blind ground truth, and we only
+noticed because the appendix survived as its own file. Jeff is preparing the same thing
+for **Gittin, Yevamot and Eruvin**.
 
-Jeff: *"Also an appendix with additional stories that you and Claude found that were not
-on my list."* That file does not exist yet, and it is **not**
-`Kiddushin missed stories.docx` (his own document — §4 of the finding).
+**Do:** one sentence in the next email — keep the appendix a separate file, or mark its
+entries. Costs him nothing; cannot be reconstructed afterwards.
 
-When it arrives it is exactly the circular material `NEXT/05` was worried about. If it is
-merged into a tractate list, that list stops being able to measure recall — permanently,
-and invisibly, because merged entries look like every other entry.
+**And for us:** every expert list gets checked against what we sent him *before* it is
+trusted as blind. `scripts/check_appendix_coverage.py` is that check. Run it on each new
+tractate list; anything it matches is not blind.
 
-**Do:** ask him to keep it a separate file, or to mark its entries. One sentence, costs
-him nothing, not recoverable afterwards. **Add to the next email** — this replaces the
-question item 1 used to carry.
+## 1c. 71a and 81b are in the appendix but in none of our runs
 
-**Also:** whatever arrives, parse it into its own stream with `blind: false`, never into
-`kiddushin_2005.json`'s `stories`.
+The appendix is described as cases we found, yet two of its five were never proposed by
+any run on disk (v7 through v11). Either they came from a run that was not kept, or from
+a reading pass rather than detector output.
+
+**Costs if unexplained:** nothing for the flags — they are in Jeff's list through our
+process either way — but it means the appendix's sourcing is uneven, and any future
+"is this blind?" check cannot rely on run output alone.
+
+**Settles it:** ask Simon how the appendix was assembled, or accept it as unrecoverable
+and note it wherever the file is used.
 
 ## 2. Four references resolved from outside the document
 
@@ -106,14 +111,14 @@ cutoff needs a better rule than word count.
 
 ## How you know it worked
 
-Item 4 answered, 1b asked, 2 re-verified
+Item 4 answered, 1b asked, 1c explained or written off, 2 re-verified
 independently, 3 and 5 checked at the point they are used. Update the finding doc in
 place for 2; anything that changes a count also updates `STATUS.md` and the artifact.
 
 ## Guardrails
 
 - Item 1b is a **request to Jeff, not a task.** Nothing to build; it just has to be
-  asked before he merges the appendix.
+  asked before he merges the next appendices.
 - Any number quoted from this list says which denominator it used (FRAMEWORK §3). The
-  answer is 94.
+  answer is 89.
 - Label every outcome measured / indicated / suspected.
