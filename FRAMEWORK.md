@@ -40,7 +40,9 @@ empty page (costs money only).
 **Measured by:** of the blind list's stories, the fraction sitting on pages we kept.
 **Now: 98.0%** — 3 of Jeff's 149 lost, while examining 44% of pages.
 
-**Gate: ≥98%, and always state the exchange rate.** Losses here are invisible and
+**Gate: ≥98% — PROVISIONAL.** *Set to our current value, which is circular reasoning
+in a principle's clothing. The defensible part is the shape, not the number; the number
+falls out of §2b once the end-to-end target is set.* Losses here are invisible and
 permanent, so the bar is the strictest of the six. But the capability exists *to save
 money* — a bar quoted without its cost saving is meaningless, and 2% of recall for a
 56% cost cut may well be a good trade. That is a decision to take deliberately, not a
@@ -59,7 +61,9 @@ precision does not.
 
 **Measured by:** recall against the blind 2005 list. **Now: 96.0%** (143/149).
 
-**Gate: ≥95%.** Jeff's own 2005 lists missed stories he later accepted from us — his
+**Gate: ≥95% — PROVISIONAL.** *Half-derived: Jeff's lists missing stories genuinely
+proves 100% is not the standard, but it does not prove 95.* Jeff's own 2005 lists
+missed stories he later accepted from us — his
 words: *"the AI has found some stories we missed."* So 100% is not the human standard.
 Matching a careful scholar working deliberately is the honest ceiling.
 
@@ -79,7 +83,10 @@ database users decide"* is a legitimate answer rather than an evasion.
 **Measured by:** precision on expert review rounds. **Now: 86% Ketubot, 68% Kiddushin —
 both from March/April 2026 on older detector versions. We have no current number.**
 
-**Gate: ≥85%.** Set by reviewer patience, not by truth. Below roughly 85% a reviewer
+**Gate: ≥85% — PROVISIONAL, and the weakest of the six.** *Invented. "Below ~85% a
+reviewer spends more time rejecting than confirming" is a plausible sentence with no
+measurement behind it. Only Jeff can settle this — see §2b.* Set by reviewer patience,
+not by truth. Below roughly 85% a reviewer
 spends more time rejecting than confirming, and reviewing is this project's actual
 bottleneck — so classification quality is really a *review throughput* lever.
 
@@ -97,7 +104,8 @@ under-trimming, showing extra context (mild).
 **Measured by:** hit / near against the blind boundary set.
 **Now: 80% / 84% Ketubot** (untrimmed 75%/83%), 60% / 73% ±7pt Kiddushin.
 
-**Gate: ≥75% hit+near** — the loosest of the six, because the reader sees the
+**Gate: ≥75% hit+near — PROVISIONAL.** *The ceiling (87%) is measured and the ordering
+is principled; the 75 is not.* The loosest of the six, because the reader sees the
 surrounding text and can correct silently. There is also a structural ceiling near 87%:
 13% of Jeff's boundaries do not fall on a clause edge, so no prompt can reach them.
 Currently blocked on a definitional question with Jeff.
@@ -115,7 +123,8 @@ each other (published errors, though the crowd-edit design absorbs these).
 **Measured by:** days per tractate; inter-rater agreement against Jeff.
 **Now: not started.**
 
-**Gate: a scholar reviews a tractate in days, not weeks.** Jeff's own figure: six weeks
+**Gate: a scholar reviews a tractate in days, not weeks — DERIVED.** *The only gate in
+this document with a real basis.* Jeff's own figure: six weeks
 per tractate makes the Talmud years of one person's life. That number is why
 crowd-sourcing exists in the plan at all.
 
@@ -146,6 +155,34 @@ when each one is wrong**, and that is what sets its bar.
 
 **Invisible, permanent errors get the highest bars. Visible, correctable ones get the
 lowest.** That is the whole principle.
+
+## 2b. The gates are PROVISIONAL — and here is how to settle them
+
+**Four of the five gates above were invented.** Only Review's is derived. The *shapes*
+are defensible — invisible-and-permanent gets the strictest bar, visible-and-correctable
+the loosest — but the numbers were picked, then dressed as principles. Recording that
+here rather than letting it calcify.
+
+**Gates should not be picked one at a time, because they compose.** Recall multiplies
+down the pipeline, which is checkable against what we already measured:
+
+```
+triage recall  ×  detection recall  =  end-to-end recall
+   0.980       ×       0.980        =       0.960     ← matches the measured 96.0%
+```
+
+So the only number anyone has to defend is the **end-to-end** one; the rest are
+allocated backwards from it. And the end-to-end number is not a technical question, it
+is a claim about the product:
+
+> **Open (Simon):** if we publish "every story in the Talmud," what miss rate makes that
+> claim false? 1 in 20? 1 in 50? That single number sets Triage and Detection.
+
+> **Open (Jeff — add to the next email):** at what error rate does reviewing our output
+> become worse than working from scratch? That single number sets Classification, and he
+> is the only person who can answer it.
+
+Until both are answered, quote the gates as provisional and say so.
 
 ## 3. Ground truth — say which one, and say if it is blind
 
