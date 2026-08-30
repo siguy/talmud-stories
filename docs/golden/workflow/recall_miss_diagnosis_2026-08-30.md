@@ -5,6 +5,44 @@ list. They are the most valuable failures in the project — genuine negatives, 
 without our own labels in the loop. Traced through the pipeline, they are not one
 problem.
 
+> ## CORRECTION — 2026-08-30 evening (brief `tasks/NEXT/02`)
+>
+> **The two-population split below is wrong. All six misses are absent from the golden.**
+>
+> The row for Ketubot 77a carried `in_golden: true`, and this document read that as "we
+> labelled it ourselves and still miss it." It is a locator artifact. Jeff's blind 77a
+> story and our golden's 77a story are **two different passages on one daf**:
+>
+> | | golden | Jeff's 2005 list |
+> |---|---|---|
+> | segments | **8** | **13-14** |
+> | passage | Sidon tanner *ma'aseh* | `אכסוה שערי לאלעזר` |
+> | layer | Mishnah | Gemara |
+> | n-gram coverage of Jeff's text | 0.010 | **0.943** |
+>
+> The recall locator returns a deliberately coarse window (up to 14 segments) to
+> maximise coverage, so it spanned both and made them look like one story.
+>
+> **What 77a actually is:** re-run 8 times on identical code, Stage 2 *does* propose
+> segs 13-14 in **7 of 8** runs and classifies them `NOT_A_STORY` in 6 of those 7,
+> every time citing the same three prompt disqualifiers. Production landed in the ~1/8
+> tail where nothing was proposed. So it is a **Classification** problem sitting on
+> proposal-level variance — not Detection. Capability reassigned 2 → 3.
+> Seed case with the minimal pair: [`tasks/PLAN_wave6.md`](../../../tasks/PLAN_wave6.md).
+>
+> **A separate, larger loss found while measuring the corpus rate:**
+> `filter_mishnah_only_stories()` moves stories out of `stories` into `mishnah_stories`,
+> and **neither `evaluate_golden.py` nor the recall script reads that key**. Of the 4
+> Ketubot stories it moves, **3 are stories our own golden accepts** — removed from the
+> output and invisible to every metric. Ketubot 77a seg 8, 95b seg 0, 14b seg 11.
+>
+> **Also:** `parse_expert_doc` only matches single-amud headers, so stories under
+> two-amud headers (`מט ע"ב-נ ע"א`) are credited to the preceding daf — **15 such headers
+> in the Ketubot document**. The **96% recall figure is unaffected**: `locate()` finds
+> stories by n-gram matching across the whole corpus and never consults the parsed
+> reference. What is unreliable is the per-story `ref` *label*, so any **per-daf**
+> analysis needs the fix first.
+
 ## The two populations, which had been conflated
 
 | | count | what it means |
