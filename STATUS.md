@@ -149,9 +149,34 @@ Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a pla
 ```
 BLIND   (can measure recall)
   Ketubot   149 stories (2005 list) · 294 derived boundary targets
-  Kiddushin ~96 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW, counts INDICATED only,
-                                                            Kiddushin needs NEXT/05 first
+  Kiddushin ~96 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW,
+                                        Kiddushin needs NEXT/05 first
 CIRCULAR (precision and consistency only — never recall)
   Ketubot   182 golden stories · Kiddushin 85
   70 boundary corrections across 8 review rounds
+
+SEFARIA TEXT on hand (text only — no detector has been run on these)
+  Ketubot · Kiddushin                     results/v7/, results/v10/wave4_notrim/
+  Gittin   2a-90b   178 dapim  2,990 seg  results/sefaria/gittin.json   ← NEW 08-30
+  Yevamot  2a-122b  242 dapim  3,865 seg  results/sefaria/yevamot.json  ← NEW 08-30
+  Eruvin   2a-105a  207 dapim  3,645 seg  results/sefaria/eruvin.json   ← NEW 08-30
 ```
+
+**Every reference in Jeff's Gittin, Yevamot and Eruvin lists resolves to a fetched
+page** — ranges derived from Sefaria's own index, not guessed, and verified by
+`python3 scripts/fetch_tractate_pages.py --verify-only`. The three entry counts
+above are now **measured** (112 / 102 / 73 reproduce exactly), and all three lists
+are genuinely blind — 0 English review comments, 0 `הוספתי` markers, unlike Kiddushin's.
+
+`scripts/build_boundary_testset_2005.py` **cannot yet** build blind boundary sets for
+these three, contrary to `NEXT/09`'s closing note: its `load_units` globs only
+`results/v10/wave4_notrim/`, so it returns **0 segments** for all three (verified).
+It needs one change — also read `results/sefaria/*.json`. Left undone here because
+`NEXT/07` owns that script.
+
+**But their per-daf attribution has a defect, in the same family as Kiddushin's.**
+`parse_expert_doc` only matches single-amud headers, so **21 stories** under two-amud
+headers (`סה ע"ב-סו ע"א`) are silently credited to the *preceding* daf — Gittin 11,
+Yevamot 7, Eruvin 3. Entry counts are unaffected; **daf-level recall on these three
+would be wrong until it is fixed.** One Gittin header (`יד ע"ד`) uses amud *dalet*, a
+Yerushalmi form with no Bavli equivalent. `--verify-only` lists all 21.

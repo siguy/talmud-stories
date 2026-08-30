@@ -81,12 +81,29 @@ def norm_map(text):
 def load_units(tractate):
     """Every segment of the tractate, in reading order: (ref, index, hebrew)."""
     units = []
-    for path in sorted(glob.glob(str(PROJECT_ROOT / 'results/v10/wave4_notrim/*.json'))):
+    # Detector output for tractates we have run, plus raw Sefaria text for those we
+    # have only fetched (Gittin, Yevamot, Eruvin as of 2026-08-30). Without the second
+    # glob this returned 0 segments for every un-run tractate, silently producing an
+    # empty test set rather than an error.
+    paths = (sorted(glob.glob(str(PROJECT_ROOT / 'results/v10/wave4_notrim/*.json')))
+             + sorted(glob.glob(str(PROJECT_ROOT / 'results/sefaria/*.json'))))
+    seen = set()
+    for path in paths:
         data = json.loads(Path(path).read_text())
-        if tractate.lower() not in str(data.get('tractate', path)).lower():
+        name = str(data.get('tractate') or Path(path).stem)
+        if tractate.lower() not in name.lower() and tractate.lower() not in Path(path).stem.lower():
             continue
         for page in data['pages']:
-            units += [(page['ref'], s['index'], s['hebrew']) for s in page.get('segments', [])]
+            for s in page.get('segments', []):
+                key = (page['ref'], s['index'])
+                if key in seen:
+                    continue
+                seen.add(key)
+                units.append((page['ref'], s['index'], s['hebrew']))
+    if not units:
+        raise SystemExit(
+            f"no segments found for {tractate!r}. Fetch it first "
+            f"(scripts/fetch_tractate_pages.py) or check the tractate name.")
     daf = lambda ref: (int(re.search(r'(\d+)', ref).group(1)), 0 if ref.rstrip()[-1] == 'a' else 1)
     units.sort(key=lambda u: (daf(u[0]), u[1]))
     return units
