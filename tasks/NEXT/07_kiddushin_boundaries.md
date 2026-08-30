@@ -19,9 +19,8 @@ floor to **zero**. Same method, same tooling, different tractate.
 
 1. Run `scripts/build_boundary_testset_2005.py` against the Kiddushin stories filtered
    to `blind == true` and `duplicate_of == null` — **94 stories**, `--tractate Kiddushin`.
-   Include the five `expert_flagged_miss_2026` entries here: the selection bias that
-   matters for recall does not apply to boundaries, since a boundary target is graded on
-   *where the story ends*, not on whether we found it.
+   This includes the five `expert_flagged_miss_2026` entries, which are blind and count
+   (finding §4).
 2. Expect roughly 2 targets per story, so ~190. Report `align_fraction` and `bracket_ratio`
    distributions; Ketubot aligned 147 of 149 at a median 99% of letters matched.
 3. Measure `exact_clause_edge`. On Ketubot **87%** of Jeff's boundaries fall on a clause

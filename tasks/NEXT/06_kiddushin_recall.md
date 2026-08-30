@@ -27,12 +27,12 @@ Mirror the Ketubot measurement exactly — same script, so the numbers are compa
    is a **Classification** failure, not Detection — keep them apart (FRAMEWORK §1).
 3. Report triage recall separately from detection recall. They compose:
    `triage × detection = end-to-end` (FRAMEWORK §2b).
-4. **Report recall over both denominators, 89 and 94, and quote the range.** Five
-   entries carry `expert_flagged_miss_2026` — the stories Jeff told us in April 2026 we
-   had missed. They are his, not ours, so they are not circular; but they were selected
-   *because* we missed them, so counting them biases recall **downward**. Whether they
-   were in his 2005 original is indicated, not measured. The true value is one of the
-   two numbers, not between them — say which entries move it.
+4. **The denominator is 94.** Use `recall_denominator`. The five
+   `expert_flagged_miss_2026` entries are blind and they count — measured, see
+   [the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4. Three of
+   them (53a, 71a, 81b) are still absent from the detector output, so expect them as
+   genuine misses. **Do not quote 89**: dropping five known-hard cases moves the number
+   about three points in our own favour.
 
 ## How you know it worked
 
@@ -44,9 +44,11 @@ plainly — that is a generalization finding and it matters more than the number
 
 - Exclude `blind: false`. Exactly one entry qualifies: the one Jeff marked
   `הוספתי--י.ר.` ("I added — J.R.") in 2026, which is also a duplicate of an entry he
-  already had. Note the direction: the brief for `NEXT/05` guessed this marked stories
-  taken from our output, which would inflate recall. It does not — see §4 of the
-  finding. The contamination that does exist pushes the other way.
+  already had. That is the *only* non-blind entry — the `NEXT/05` brief's worry that the
+  list was seeded from our output did not survive checking (finding §4).
+- **The real circularity risk is an appendix Jeff has not sent yet** — "additional
+  stories that you and Claude found that were not on my list." If it arrives before this
+  runs, keep it out of the denominator entirely. → `NEXT/09` item 1b.
 - Same script as Ketubot, or the comparison is meaningless.
 - Regenerate today's baseline before comparing (Lesson 11).
 

@@ -92,25 +92,29 @@ below, trimmed before the `אמר אביי` scriptural coda. Given that his othe
 are boundary corrections, the likeliest reading is that this is one too. Flagged
 `blind: false` either way; it never enters a recall denominator.
 
-**The five in `Kiddushin missed stories.docx`.** All five appear in the list. These are
-*not* ours: per
-[`kiddushin_feedback_analysis_2026-04-23.md`](../v7/kiddushin_feedback_analysis_2026-04-23.md)
-they are the five stories **Jeff flagged that our detector missed**, in April 2026. So
-they are not circular — but they were selected *precisely because we missed them*, so a
-denominator that includes them is biased **downward**, the opposite of the brief's fear.
+**The five in `Kiddushin missed stories.docx` are blind, and they count.** They are the
+five stories **Jeff flagged that our detector missed**, in April 2026
+([`kiddushin_feedback_analysis_2026-04-23.md`](../v7/kiddushin_feedback_analysis_2026-04-23.md)).
+The worry was that they had come from our output, which would make counting them
+circular. They did not, and this is **measured**, three independent ways:
 
-Nothing in the document says whether they were in the 2005 original. Two of them (33a,
-53a) carry 2005-era parallels annotations, none carries an addition marker, and Jeff did
-mark the one thing he added — so the balance of evidence is that they were always there.
-That is **indicated, not measured**, so the artifact refuses to collapse it:
+| check | result |
+|---|---|
+| Were any of the five among the 96 stories we showed Jeff in the April review? | **none** — `validation/feedback/kiddushin_review_2026-04-23.json` has no item covering their segments |
+| Whose text is in the .docx? | **3 of 5 are character-for-character Jeff's own list entries** (raw similarity 1.000, 1.000, 0.901; zero nikud). We did not possess his Kiddushin list until 2026-08-30, so we could not have written them. The other two are vocalized Sefaria text he pasted. |
+| Are they in the detector output now? | **3 of 5 still are not** — 53a, 71a and 81b are absent from v7 through v10 |
+
+A story that was never in our output cannot have entered his list from our output. So all
+five are blind **whenever he wrote them**, and the 2005-versus-later question that looked
+like it needed Jeff turns out not to matter.
 
 ```
-recall_denominator_max = 94   all blind, unique entries
-recall_denominator_min = 89   minus the five expert-flagged misses
+recall_denominator = 94
 ```
 
-**`NEXT/06` must report recall over both and quote the range.** On 94 the five count as
-misses; on 89 they are excluded. The true value is one of the two, not between them.
+`recall_denominator_excluding_flagged` (89) stays in the artifact, but only to show what
+these five cost. **Do not score recall on it** — excluding five known-hard cases, three
+of which are genuine misses, moves the number in our own favour by about three points.
 
 ## 5. The ten remarks, each attached to its passage
 
@@ -128,6 +132,19 @@ attachments are self-verifying — the note names what is in the passage it poin
 
 `c_02` is **two** remarks in one annotation — a boundary instruction and an attribution
 note. `NEXT/08` should sort at the sentence level, not the comment level.
+
+### 4a. The contamination risk is in the future, not the past
+
+Jeff, on the lists he is preparing: *"Also an appendix with additional stories that you
+and Claude found that were not on my list."* That appendix does not exist yet — it is not
+`Kiddushin missed stories.docx`, which is his own document, as above.
+
+But when it arrives it will be **exactly** the circular material the `NEXT/05` brief
+feared, and merging it into a tractate list would destroy that list's ability to measure
+recall — permanently and invisibly, since the merged entries would look like any others.
+**This is worth one sentence to Jeff:** keep the appendix a separate file, or mark its
+entries, so the list stays a blind ruler. It costs him nothing and it is not recoverable
+afterwards.
 
 ## 6. Two loose ends for `NEXT/08`
 

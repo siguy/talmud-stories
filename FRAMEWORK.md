@@ -203,12 +203,17 @@ circular number as an accuracy claim is the mistake that cost this project month
 precision (of what we proposed, how much is good) but *never* recall (what did we never
 propose).
 
-**Contamination has a direction, and it is not always toward inflation.** Five of the
-Kiddushin entries are stories Jeff told us in April 2026 that we had *missed*. They came
-from him, so they are not circular — but they were selected precisely *because* we
-missed them, so counting them biases recall **downward**. The honest treatment is to
-quote both denominators (89 and 94) and name the entries that move the number. Ask of
-any contaminated entry not just "is it tainted?" but "which way does it push?".
+**Test provenance, do not infer it.** Five Kiddushin entries looked contaminated — they
+arrived in a file about stories in play between us and Jeff. Three checks settled it as
+**measured**: none had been shown to him in review, three were character-for-character
+his own text which we did not possess, and three are still absent from our output. A
+story that was never in our output cannot have entered his list from it, so all five are
+blind and they count. Reasoning from where a file *sits* would have dropped five
+known-hard cases and moved recall three points in our own favour.
+
+**The direction of a suspected bias is part of the finding.** Ask not only "is this
+tainted?" but "which way would it push, and who does that flatter?" A correction that
+happens to improve our own number deserves the most evidence, not the least.
 
 ## 4. The scoreboard
 

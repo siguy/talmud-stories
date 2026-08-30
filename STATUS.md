@@ -23,10 +23,16 @@ can measure *recall* — what we never found. We had exactly one (Ketubot, 149 s
 Kiddushin now has one too, so three scoreboard cells that read "unmeasured" for the life
 of the project are unblocked — **06, 07 and 08 are ready to run.**
 
-One correction to yesterday's reading: `הוספתי--י.ר.` marks **one** entry Jeff added in
-2026, not stories taken from our output. The contamination that exists runs the *other*
-way — five entries are stories he told us in April we had missed, so counting them
-biases recall **down**. Recall must be quoted over both denominators, **89 and 94**.
+Two corrections to yesterday's reading. `הוספתי--י.ר.` marks **one** entry Jeff added in
+2026, not stories taken from our output — and the five "missed stories" are **his**, not
+ours, so they are blind and they count. **The recall denominator is 94**, measured, not a
+range. A story that was never in our output cannot have entered his list from it.
+
+**The contamination risk is ahead of us, not behind.** Jeff is preparing *"an appendix
+with additional stories that you and Claude found that were not on my list."* That file
+does not exist yet. If it is merged into a tractate list, that list permanently stops
+being able to measure recall — invisibly, because merged entries look like any other.
+**Ask him to keep it separate.**
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
@@ -84,10 +90,10 @@ his review notes say cut it. Blocks the end rule for capability 4.
 **To add when we next write:**
 1. At what error rate does reviewing our output become worse than working from scratch?
    That number sets the Classification gate and only he can answer it.
-2. The five Kiddushin stories he flagged in April as ones we had missed — were they
-   already in his own list, or added after seeing our output? That one sentence decides
-   whether Kiddushin recall is scored over 89 or 94, and nothing else can answer it.
-   → `tasks/NEXT/09`
+2. **Keep the appendix separate.** The "additional stories that you and Claude found"
+   must stay a separate file, or be marked, rather than merged into a tractate list —
+   otherwise that list can no longer measure what we missed. Costs him nothing, and it
+   cannot be undone afterwards. → `tasks/NEXT/09` item 1b
 
 ## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
@@ -104,7 +110,7 @@ job that should wait until Kiddushin shows what we get.
 
 fully independent, start any time:   00 · 02 · 04
 lower value until the above land:    01 · 03
-open calls from the parse:           09  (item 1 sets the denominator 06 reports)
+open calls from the parse:           09  (denominator settled at 94; 1b is for Jeff)
 ```
 
 | | task | capability | needs | Jeff? |
@@ -117,7 +123,7 @@ open calls from the parse:           09  (item 1 sets the denominator 06 reports
 | 02 | Why is Ketubot 77a never proposed | 2 | — | no |
 | 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
-| 09 | Judgment calls left open by the parse — incl. the 89-vs-94 denominator | ground truth | — | **1 of 5** |
+| 09 | Open calls from the parse — 1 resolved (denominator = 94); 1b asks Jeff to keep the appendix separate | ground truth | — | **1b** |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
 
@@ -145,8 +151,8 @@ BLIND   (can measure recall)
   Ketubot    149 stories (2005 list) · 294 derived boundary targets
   Kiddushin   94 stories, MEASURED  -> results/expert_lists/kiddushin_2005.json
                  95 parsed, minus 1 Jeff marked as his own 2026 addition
-                 recall denominator 89-94: five entries are stories he told us in
-                 April we had missed, so counting them biases recall DOWN. Quote both.
+                 recall denominator 94, MEASURED. The five "missed stories" are his,
+                 never in our output, so they are blind and they count. Not 89.
                  ~190 boundary targets derivable (NEXT/07)
   Gittin 112 · Yevamot 102 · Eruvin 73   ← INDICATED only; each needs its own parse,
                                             and no detector output exists there yet

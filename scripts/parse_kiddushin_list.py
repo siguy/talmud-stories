@@ -36,15 +36,18 @@ purely blind. Two provenance flags are emitted on every story:
   blind: false             -- Jeff marked this himself with `hosafti--y.r.`
                               ("I added -- J.R."). Never counts toward recall.
   expert_flagged_miss_2026 -- the story is one of the five in
-                              `Kiddushin missed stories.docx`, which Jeff
-                              produced in April 2026 *while reviewing our
-                              detector output* (docs/golden/v7/
-                              kiddushin_feedback_analysis_2026-04-23.md).
-                              They came from him, not from us, so they are not
-                              circular -- but they were selected precisely
-                              because we missed them, so a recall number that
-                              includes them is biased downward. Report recall
-                              both ways and quote the range.
+                              `Kiddushin missed stories.docx`. These ARE blind
+                              and they DO belong in the recall denominator; the
+                              flag marks them as known-hard cases, not as a
+                              provenance doubt. Established three ways
+                              (docs/golden/v11/kiddushin_list_parse_2026-08-30.md
+                              sec.4): none of the five was among the 96 stories
+                              we showed Jeff in April 2026; three of the five are
+                              character-for-character his own list text, which we
+                              did not possess until 2026-08-30; and three are
+                              still absent from the current detector output. They
+                              cannot have come from us, so they are blind
+                              whenever he wrote them. Denominator: 94.
 
 Usage:
   python3 scripts/parse_kiddushin_list.py                       # writes the JSON
@@ -289,7 +292,8 @@ def parse(doc_path, tractate, missed_path=None):
                 'parallels': parallels or None,
                 'vocalized': bool(NIKUD.search(p['text'])),
                 'blind': True,
-                'blind_basis': 'present in the 2005 document with no marker of later addition',
+                'blind_basis': 'in Jeff\'s list with no marker of later addition; '
+                               'never present in detector output he had seen',
                 'expert_flagged_miss_2026': False,
                 'duplicate_of': None,
                 'comment_ids': [],
@@ -405,18 +409,18 @@ def main():
             'not_blind': len(stories) - len(blind),
             'duplicates': len(dupes),
             'expert_flagged_miss_2026': len(flagged),
-            'recall_denominator_max': len(blind_unique),
-            'recall_denominator_min': len(blind_unique) - len([s for s in blind_unique
-                                                               if s['expert_flagged_miss_2026']]),
+            'recall_denominator': len(blind_unique),
+            'recall_denominator_excluding_flagged': len(blind_unique) - len(
+                [s for s in blind_unique if s['expert_flagged_miss_2026']]),
             'comments': len(comments),
         },
         'notes': [
             'blind=false means Jeff marked the entry as his own 2026 addition; exclude from recall.',
-            'expert_flagged_miss_2026=true means the entry is one of the five in '
-            '"Kiddushin missed stories.docx", which Jeff wrote in April 2026 while reviewing '
-            'detector output. They are his, not ours, but they were selected because we missed '
-            'them, so including them biases recall downward. Report recall over both '
-            'denominators and quote the range.',
+'Use recall_denominator (94). The five expert_flagged_miss_2026 entries ARE blind: '
+            'none was among the 96 stories shown to Jeff in April 2026, three are verbatim from '
+            'his own list which we did not possess until 2026-08-30, and three are still absent '
+            'from detector output. They cannot have come from us. The flag marks known-hard '
+            'cases; recall_denominator_excluding_flagged (89) exists only to show what they cost.',
             'duplicate_of is set where the same story appears twice; count it once.',
             'ref_ambiguous=true means the row carried more than one daf label and the '
             'per-story reference could not be resolved from the document alone.',
@@ -430,8 +434,9 @@ def main():
     log.info('%s: %d stories (%d blind, %d not blind, %d duplicate, %d expert-flagged), '
              '%d comments -> %s', args.tractate, len(stories), len(blind),
              len(stories) - len(blind), len(dupes), len(flagged), len(comments), args.out)
-    log.info('recall denominator: %d to %d',
-             payload['counts']['recall_denominator_min'], payload['counts']['recall_denominator_max'])
+    log.info('recall denominator: %d (%d excluding the expert-flagged known-hard cases)',
+             payload['counts']['recall_denominator'],
+             payload['counts']['recall_denominator_excluding_flagged'])
 
     if args.report:
         print(f"\n{'='*78}\nSTORIES ({len(stories)})\n{'='*78}")
