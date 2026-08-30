@@ -130,6 +130,9 @@ archive/                          # Old versions (reference only)
 | `docs/golden/v11/kiddushin_list_parse_2026-08-30.md` | Why the line-based parse gave 105, and how the count was verified |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
 | `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 26) |
+| `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
+| `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
+| `docs/golden/v11/detection_classification_ruler_2026-08-30.md` | Why 86%/68% were not Classification numbers, and why 96% recall is 88% strict |
 | `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
 | `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md` | The 96% recall finding + method |

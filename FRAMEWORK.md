@@ -59,7 +59,14 @@ precision does not.
 
 **Fails by:** never proposing a real story (invisible) · proposing noise (visible, cheap).
 
-**Measured by:** recall against the blind 2005 list. **Now: 96.0%** (143/149).
+**Measured by:** recall against the blind 2005 list. **Now: Ketubot 96.0%** (143/149),
+**Kiddushin 93.3%** (83/89).
+
+Quote the test with the number. The published figure credits a proposal anywhere in the
+aligner's search window, which runs to 14 segments and straddles daf boundaries. Under a
+**strict** test — a proposal must overlap a segment the story actually occupies — it is
+**87.9% / 84.3%**. The gap is almost entirely cross-page stories whose text sits on a
+continuation daf we proposed nothing on.
 
 **Gate: ≥95% — PROVISIONAL.** *Half-derived: Jeff's lists missing stories genuinely
 proves 100% is not the standard, but it does not prove 95.* Jeff's own 2005 lists
@@ -80,8 +87,16 @@ database users decide"* is a legitimate answer rather than an evasion.
 **Fails by:** admitting a non-story (costs reviewer time) · rejecting a real one
 (invisible, and as costly as a detection miss).
 
-**Measured by:** precision on expert review rounds. **Now: 86% Ketubot, 68% Kiddushin —
-both from March/April 2026 on older detector versions. We have no current number.**
+**Measured by:** precision on expert review rounds — **counting only rejections that
+dispute whether the passage is a story.** A rejection objecting to the boundary, the
+merge, or our confidence level belongs to another capability; pooling them is how this
+project mistook a boundary problem for a classification one (Lesson 27). `adjust` counts
+as **accepted**: it says the story is real and the extent is wrong.
+
+**Now: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–92.1% (Apr 2026, v7).** A range, not
+a point: the lower bound counts every rejection, the upper bound only the classification
+ones, and the width is the notes too ambiguous to sort. Narrowing it needs the review UI
+to capture *which* thing is wrong (`NEXT/04`), not more inference over free text.
 
 **Gate: ≥85% — PROVISIONAL, and the weakest of the six.** *Invented. "Below ~85% a
 reviewer spends more time rejecting than confirming" is a plausible sentence with no
@@ -200,7 +215,8 @@ accepted-only — as though they were the same measurement.
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
 | `results/expert_lists/kiddushin_2005.json` | 89 Kiddushin stories | **BLIND** — of 95 parsed; excludes 1 he added and 5 appendix entries | recall, triage recall, boundaries |
 | `results/canonical/ketubot_canonical.json` | 182 entries, 159 accepted | **CIRCULAR** — we proposed, Jeff corrected. v7 + v9, several rounds | precision, consistency |
-| `results/canonical/kiddushin_canonical.json` | 96 entries, 85 accepted | **CIRCULAR** — v7 only, one round; 16 later verdicts not folded in | precision, consistency |
+| `results/canonical/kiddushin_canonical.json` | 96 entries, 85 accepted | **CIRCULAR** — v7 only, one round | precision, consistency |
+| `results/rulers/{tractate}_ruler.json` | Ketubot 201, Kiddushin 122 entries | **JOINED** — each entry says whether it is expert-listed (blind) and/or proposed (circular) | recall *and* precision, from one file |
 | `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
 | review-round verdict files | 8 rounds | **CIRCULAR** — verdicts on what we proposed | precision |
 

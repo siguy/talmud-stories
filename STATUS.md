@@ -45,8 +45,8 @@ the future, and it starts the moment we send him results.
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
 | **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
-| **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **ready, `NEXT/06`** | ≥95% *(provisional)* |
-| **3 Classification** | precision, CIRCULAR | 86% *(Mar 2026, stale)* | 68% *(Apr 2026, stale)* | ≥85% *(provisional)* |
+| **2 Detection** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **84.3%** strict — **NEW** | ≥95% *(provisional)* |
+| **3 Classification** | precision, CIRCULAR | **87.9–94.8%** *(Mar 2026)* | **67.4–92.1%** *(Apr 2026, v7)* | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
 | **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
 | **6 Publication** | — | not started | not started | — |
@@ -56,16 +56,22 @@ the future, and it starts the moment we send him results.
 that is a product decision, not a technical one. Two questions are open there: one for
 Simon, one for Jeff.
 
-**The weakest capability is Classification, and we cannot currently see it** — both
-precision numbers are from March/April on older detector versions. There is no current
-measurement of the capability furthest from its gate.
+**The 86 / 68 Classification numbers were never Classification numbers.** They counted
+every rejection, whatever Jeff objected to. Sorting the notes: most rejections are
+**boundary, merge or confidence-level** complaints — three other capabilities pooled into
+one figure. Separated, both tractates land near 92-95% and the gap between them mostly
+disappears. Precision is now quoted as a **range**, because unreadable notes set its
+width. → [`docs/golden/v11/detection_classification_ruler_2026-08-30.md`](docs/golden/v11/detection_classification_ruler_2026-08-30.md)
 
-**And the 86 / 68 gap is partly bookkeeping.** Ketubot's golden has absorbed several
-correction rounds across two detector versions; Kiddushin's has absorbed **one round on
-v7**, with 16 later verdicts never folded in. Neither golden contains the stories we
-never proposed — five of Jeff's Ketubot list are in no golden at all. Until both are
-built the same way that comparison measures our record-keeping as much as the detector.
-→ `tasks/NEXT/10`
+**We still have no point estimate for Classification.** The fix is to make the reviewer
+say *which thing* is wrong rather than re-deriving it from free text — a review-UI
+change, `NEXT/04`.
+
+**Detection is softer than 96% under a strict test.** The published test credits a
+proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
+story actually occupies gives 87.9% Ketubot / 84.3% Kiddushin. The 12 Ketubot stories in
+the gap are **cross-page stories whose text sits on a continuation daf where we proposed
+nothing** — 17b, 50a and 51a each carry zero proposals.
 
 ## What changed today
 
@@ -86,6 +92,11 @@ built the same way that comparison measures our record-keeping as much as the de
   considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
 - **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
   `tasks/NEXT/03`.
+- **One ruler now measures Detection and Classification for both tractates.**
+  `scripts/build_ruler.py` joins the blind lists, the detector proposals and all six
+  review rounds — including the 16 Kiddushin verdicts that had never been folded in. It
+  reproduces the published 96.0% and 86% as its regression check, then shows what those
+  numbers were hiding. → `results/rulers/`
 - **Kiddushin has a blind list.** 95 stories, parsed from the .doc's own table structure
   rather than a converter's line dump; the parser reproduces Ketubot's established 149
   as its regression check, and all 95 texts match an independent renderer character for
@@ -135,9 +146,9 @@ open calls from the parse:           09  (denominator settled at 89; 1b is for J
 | **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
 | 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
 | 02 | Why is Ketubot 77a never proposed | 2 | — | no |
-| 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
-| **10** | Make the goldens complete — 16 + 39 unapplied verdicts, and the stories we never proposed | 3, ground truth | 06 for Kiddushin's half | no |
+| **10** | Add the never-proposed stories to the goldens (the ruler now names all 12) | 3, ground truth | — | no |
+| **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate | 3, 5 | — | no |
 | 09 | Open calls from the parse — denominator settled at 89; 1b asks Jeff to keep the next appendices separate | ground truth | — | **1b** |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
