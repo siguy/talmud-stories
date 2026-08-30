@@ -3,25 +3,14 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
-## Current State (2026-08-30)
-- **Golden datasets**: Ketubot 182 stories, Kiddushin 85 (`results/canonical/`)
-- **Detection eval**: `scripts/evaluate_golden.py` (IMMUTABLE). Ketubot **0.9171**, Kiddushin **0.8859**
-- **TRUE RECALL: 96.0% on Ketubot** vs Jeff's detector-blind 2005 list (149 stories)
-- **Boundary eval rebuilt 2026-08-30** — 35 gradeable targets -> **249**; noise floor
-  7 points -> **0**. Two rulers, never pooled (Lesson 24):
-  - `tests/expert_boundary_targets_2005.json` — 294 neutral, Ketubot, catches regressions
-  - `tests/expert_boundary_targets_v2.json` — 70 corrections, both tractates
-- **Current best**: Wave 5 clause spans + `MAX_END_TRIM_CLAUSES=3` — **81% / 86%** on the
-  neutral ruler vs 75% / 83% untrimmed. Ceiling is ~87%: 13% of Jeff's boundaries do not
-  sit on a clause edge.
-- **OPEN DECISION (blocks end-boundary work):** Jeff-2005 keeps the legal discussion
-  after a story; Jeff-2026 says cut it. Start boundaries agree 7/7, ends split. The cap
-  is shipped but **CONTESTED**. See `docs/golden/v11/trim_asymmetry_2026-08-30.md`.
-- **Wave 5b: SHELVED.** Its trigger ("stalls near 50%") came from the biased ruler; the
-  real number is 81% of an 87% ceiling. Salvage list in `tasks/RESUME_after_clear.md`.
-- **Next:** Ein Yaakov as a neutral ruler for Kiddushin (on Sefaria, verified); read the
-  33 remaining misses; fix the second-story over-cut (Ketubot 62a, 105b); then Wave 6.
-- **Not yet sent:** reply to Jeff. Walk the ledger's open-items tracker first.
+## Current State
+**See [`STATUS.md`](STATUS.md) — that is the single source of truth for where the
+project is, and the first thing to read in any session.** It is rewritten each session,
+never appended. Do not restate status here; this file is about *how to work in the
+repo*, not where we are.
+
+Ready-to-run work lives in [`tasks/NEXT/`](tasks/NEXT/) — one self-contained brief per
+task, each executable in a fresh session with no other context.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
