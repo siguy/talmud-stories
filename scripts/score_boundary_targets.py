@@ -57,12 +57,30 @@ def boundary_clause(story, segs, ref, side):
     return seg, (0 if side == 'start' else max(n - 1, 0))
 
 
-def score(path):
+DEFAULT_TARGETS = 'tests/expert_boundary_targets.json'
+
+
+def load_targets(specs):
+    """Pool one or more target files. Each target keeps its source file so the
+    two kinds — Jeff's CORRECTIONS and his detector-blind 2005 list — can be
+    reported apart as well as together. They measure different things: the
+    corrections ask 'did we fix known failures', the 2005 list asks 'are we
+    right in general', and only the latter can catch a regression."""
+    pooled = []
+    for spec in specs:
+        data = json.loads((PROJECT_ROOT / spec).read_text())
+        for tgt in data['targets']:
+            pooled.append({**tgt, 'target_file': Path(spec).name})
+    return pooled
+
+
+def score(path, targets, skip_needs_human=True):
     _, stories, segs = load_run(path)
-    ts = json.loads((PROJECT_ROOT / 'tests/expert_boundary_targets.json').read_text())
     out = Counter()
     rows = []
-    for t in ts['targets']:
+    for t in targets:
+        if skip_needs_human and t.get('needs_human'):
+            continue
         ref = t.get('located_on') or t['ref']
         seg, want = t['segment'], t['clause']
         cover = [s for r, s in stories
@@ -82,29 +100,56 @@ def score(path):
         else:
             verdict = 'MISS'
         out[verdict] += 1
-        rows.append((ref, seg, t['direction'], want, got, verdict))
-    return out, rows, ts
+        rows.append((ref, seg, t['direction'], want, got, verdict, t.get('target_file')))
+    return out, rows
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--runs', nargs='+', required=True, help='NAME=path ...')
     ap.add_argument('--detail', action='store_true')
+    ap.add_argument('--targets', nargs='+', default=[DEFAULT_TARGETS],
+                    help='one or more target files to pool')
+    ap.add_argument('--by-source', action='store_true',
+                    help='also break the score out per target file')
+    ap.add_argument('--include-needs-human', action='store_true',
+                    help='score targets flagged for human polarity review (default: skip)')
     args = ap.parse_args()
 
-    print("BIAS NOTE: every target is a case Jeff flagged as wrong. This measures "
-          "fixing known failures, not avoiding new ones.\n")
+    targets = load_targets(args.targets)
+    skipped = sum(1 for t in targets if t.get('needs_human'))
+    corrections = sum(1 for t in targets if t['target_file'] != 'expert_boundary_targets_2005.json')
+    print(f"targets: {len(targets)} pooled from {len(args.targets)} file(s) — "
+          f"{corrections} corrections, {len(targets)-corrections} detector-blind (2005 list)"
+          + (f"; {skipped} skipped pending human polarity review" if skipped and not args.include_needs_human else ""))
+    print("BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures "
+          "fixing known failures. The 2005 list is a neutral sample and also catches regressions.\n")
     print(f"{'run':10s} {'scored':>7s} {'HIT':>5s} {'NEAR':>5s} {'MISS':>5s} {'N/A':>5s} {'hit%':>6s} {'hit+near%':>10s}")
     details = {}
     for spec in args.runs:
         name, path = spec.split('=', 1)
-        c, rows, ts = score(path)
+        c, rows = score(path, targets, not args.include_needs_human)
         details[name] = rows
         scored = c['HIT'] + c['NEAR'] + c['MISS']
         h = c['HIT'] / scored if scored else 0
         hn = (c['HIT'] + c['NEAR']) / scored if scored else 0
         print(f"{name:10s} {scored:7d} {c['HIT']:5d} {c['NEAR']:5d} {c['MISS']:5d} {c['N/A']:5d} "
               f"{h:6.0%} {hn:10.0%}")
+
+    if args.by_source:
+        files = sorted({t['target_file'] for t in targets})
+        print()
+        for f in files:
+            sub = [t for t in targets if t['target_file'] == f]
+            print(f"--- {f}  ({len(sub)} targets)")
+            for spec in args.runs:
+                name, path = spec.split('=', 1)
+                c, _ = score(path, sub, not args.include_needs_human)
+                s = c['HIT'] + c['NEAR'] + c['MISS']
+                if not s:
+                    print(f"    {name:12s} no scorable targets"); continue
+                print(f"    {name:12s} scored {s:3d}  hit {c['HIT']/s:4.0%}  "
+                      f"hit+near {(c['HIT']+c['NEAR'])/s:4.0%}   (N/A {c['N/A']})")
 
     if args.detail:
         for name, rows in details.items():

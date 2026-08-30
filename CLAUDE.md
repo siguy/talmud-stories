@@ -141,7 +141,11 @@ archive/                          # Old versions (reference only)
 | `tasks/PLAN_wave5b_clause_roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `tasks/PLAN_wave6.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
-| `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated, across 7 rounds |
+| `tests/expert_boundary_targets_2005.json` | **294 detector-blind boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
+| `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
+| `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
+| `docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md` | **Ruler rebuild** — 35 -> 249 targets, noise floor 7pts -> 0 |
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
 | `scripts/score_boundary_targets.py` | Scores any run against it |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |

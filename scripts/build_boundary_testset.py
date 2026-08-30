@@ -46,8 +46,50 @@ log = logging.getLogger(__name__)
 NIKUD = re.compile(r'[֑-ׇ]')
 HTML = re.compile(r'<[^>]+>')
 HEB_RUN = re.compile(r'[֐-׿\s־"\'–—.,:;?!()\[\]]{12,}')
-START_RE = re.compile(r'\b(should (begin|start)|starts? with|begins? with|start of the story|first (line|words|half))\b', re.I)
-END_RE = re.compile(r'\b(should end|ends? with|continues? (with|through)|not part|last (line|words|few words)|next (line|paragraph|sentence)|through the next)\b', re.I)
+# v1 vocabulary (kept for provenance). It caught 57 of the 102 Hebrew-bearing
+# notes; the 45 it missed were Jeff phrasing the same judgment differently —
+# "the story ends X" without "with", "should be quoted", "need not be quoted".
+START_RE_V1 = re.compile(r'\b(should (begin|start)|starts? with|begins? with|start of the story|first (line|words|half))\b', re.I)
+END_RE_V1 = re.compile(r'\b(should end|ends? with|continues? (with|through)|not part|last (line|words|few words)|next (line|paragraph|sentence)|through the next)\b', re.I)
+
+START_RE = re.compile(r'\b(should (begin|start)|starts? with|begins? with|start of the story|'
+                      r'first (line|words|half)|story (begins?|opens)|begins? at)\b', re.I)
+END_RE = re.compile(r'\b(should end|ends? with|story ends|ends? at|continues? (with|through)|'
+                    r'not part|last (line|words|few words)|next (line|paragraph|sentence)|'
+                    r'through the next|need not be (quoted|included)|should (also )?be quoted|'
+                    r'should be (included|added)|following (lines?|words?)|these words)\b', re.I)
+
+# Does the Hebrew quote name text that BELONGS to the story, or text to cut?
+# This decides whether the boundary sits AT the quote or one clause away from it,
+# and it was never modelled — leaving 24 of the original 52 targets potentially
+# anchored one clause off, in a known direction, with NEAR tolerance (+/-1) the
+# exact size of the error. Cross-checking against Jeff's 2005 list on 2026-08-30
+# surfaced it: e.g. Ketubot 23a, "the last few words are not part of the story
+# but are the Gemara's comment: (...)" anchored ON the comment instead of before it.
+EXCLUDE_RE = re.compile(r'\b(not part of|need not be (quoted|included)|do(es)? not need to be '
+                        r'(included|quoted)|should not be (included|quoted|part)|should be '
+                        r"(removed|omitted|excluded)|is the (talmud|gemara)'?s? (comment|question)|"
+                        r'follow-?up question)\b', re.I)
+INCLUDE_RE = re.compile(r'\b(should (also )?be (quoted|included|added)|story ends|ends? with|'
+                        r'should (begin|start)|starts? with|begins? with|following (lines?|words?)|'
+                        r'these words|be included with)\b', re.I)
+
+
+def quote_polarity(note):
+    """'exclude' = the quote is text to cut; 'include' = it is story text."""
+    exc, inc = bool(EXCLUDE_RE.search(note)), bool(INCLUDE_RE.search(note))
+    if exc and not inc:
+        return 'exclude'
+    if inc and not exc:
+        return 'include'
+    return 'mixed' if (exc and inc) else 'unclear'
+
+
+# Notes where Jeff writes the story out IN FULL — "only the story should be
+# quoted. This is the story: ...". The quote is the whole story, so it anchors
+# BOTH edges, not one. Same shape as his 2005 list.
+FULL_STORY_RE = re.compile(r'\b(this is the story|the (first|second|third) is|'
+                           r'only the (text of the )?stor(y|ies) should be (quoted|included))\b', re.I)
 
 
 def norm(s):
@@ -96,8 +138,12 @@ def page_ref_from(key, item):
     return m.group(1) if m else None
 
 
-def locate(quote, segments):
-    """Find (segment_index, clause_index, position) for a quoted boundary."""
+def locate(quote, segments, side='start'):
+    """Find (segment_index, clause_index) for a quoted boundary.
+
+    side='start' anchors the quote's first words; side='end' anchors its last,
+    which is what a full-story quote needs for its closing boundary.
+    """
     q = norm(quote)
     if len(q) < 12:
         return None
@@ -106,6 +152,11 @@ def locate(quote, segments):
         pos = flat.find(q[:60])           # prefix match tolerates trailing ellipsis
         if pos < 0:
             continue
+        if side == 'end':
+            tail = flat.find(q[-60:])
+            if tail < 0:
+                continue
+            pos = tail + len(q[-60:]) - 1
         # map the normalized position back onto a clause
         clauses = _split_into_clauses(heb)
         acc = 0
@@ -136,10 +187,10 @@ def neighbours(ref):
     return [f"{book}{d}{a}" for d, a in near]
 
 
-def locate_near(quote, ref, segs):
+def locate_near(quote, ref, segs, side='start'):
     """Locate the quote on the filed daf, then on its neighbours."""
     for cand in neighbours(ref):
-        hit = locate(quote, segs.get(cand, {}))
+        hit = locate(quote, segs.get(cand, {}), side)
         if hit:
             hit['located_on'] = cand
             hit['cross_page'] = (cand != ref)
@@ -163,21 +214,46 @@ def main():
             note = (item.get('notes') or item.get('note') or '').strip()
             if not note:
                 continue
-            direction = 'start' if START_RE.search(note) else ('end' if END_RE.search(note) else None)
-            if not direction:
-                continue
             quote = longest_hebrew_quote(note)
             if not quote:
                 continue
             ref = page_ref_from(key, item)
-            rec = {'ref': ref, 'direction': direction, 'quote': quote.strip(),
-                   'note': note, 'source_round': os.path.basename(path), 'review_key': str(key)}
-            hit = locate_near(quote, ref, segs) if ref else None
-            if hit:
+
+            # A full-story quote anchors BOTH edges; anything else anchors one.
+            if FULL_STORY_RE.search(note):
+                sides, rule = ('start', 'end'), 'full_story_quote'
+            elif START_RE.search(note):
+                sides, rule = ('start',), ('v1_start' if START_RE_V1.search(note) else 'widened_start')
+            elif END_RE.search(note):
+                sides, rule = ('end',), ('v1_end' if END_RE_V1.search(note) else 'widened_end')
+            else:
+                continue
+
+            polarity = 'include' if rule == 'full_story_quote' else quote_polarity(note)
+            for direction in sides:
+                # Where the boundary sits relative to the quote:
+                #   include + end   -> the quote's LAST clause (story runs through it)
+                #   include + start -> the quote's FIRST clause
+                #   exclude + end   -> the clause BEFORE the quote starts
+                #   exclude + start -> the clause AFTER the quote ends
+                anchor_side = direction
+                if polarity == 'exclude':
+                    anchor_side = 'start' if direction == 'end' else 'end'
+                rec = {'ref': ref, 'direction': direction, 'quote': quote.strip(),
+                       'note': note, 'source_round': os.path.basename(path),
+                       'review_key': str(key), 'harvest_rule': rule,
+                       'quote_polarity': polarity, 'anchor_verified': False}
+                hit = locate_near(quote, ref, segs, anchor_side) if ref else None
+                if not hit:
+                    unresolved.append(rec)
+                    continue
+                if polarity == 'exclude':
+                    shift = -1 if direction == 'end' else 1
+                    hit['clause'] = max(0, min(hit['clause'] + shift, hit['n_clauses'] - 1))
+                elif polarity in ('mixed', 'unclear'):
+                    rec['needs_human'] = True
                 rec.update(hit)
                 targets.append(rec)
-            else:
-                unresolved.append(rec)
 
     out = {
         '_comment': 'Sub-segment boundary targets extracted from Jeff Rubenstein review '
