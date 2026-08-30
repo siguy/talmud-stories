@@ -90,8 +90,7 @@ job that should wait until Kiddushin shows what we get.
 05 parse ─────┼── 07 Kiddushin blind boundary set
   (blocker)   └── 08 harvest the embedded review comments
 
-fully independent, start any time:   00 · 02 · 04
-lower value until the above land:    01 · 03
+fully independent, start any time:   00 · 01 · 02 · 04 · 09 · 10 · 11 · 03
 ```
 
 | | task | capability | needs | Jeff? |
@@ -104,8 +103,14 @@ lower value until the above land:    01 · 03
 | 02 | Why is Ketubot 77a never proposed | 2 | — | no |
 | 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
-| 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
+| 03 | Stop discarding a second story sharing a segment | 4 | — | low priority* |
+| 09 | Fetch Gittin / Yevamot / Eruvin from Sefaria | ground truth | — | no |
+| 10 | Add the 5 missing stories to the Ketubot golden | 2 | — | no |
+| 11 | Kiddushin 12a — one detection covering two stories | 2 | — | no |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
+
+\* 03 is not blocked: deleting a whole second story is wrong whatever Jeff answers about
+where an entry ends. Its *value* depends on his answer; the work does not.
 
 ## Where things live — one job each
 
