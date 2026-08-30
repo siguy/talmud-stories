@@ -82,7 +82,8 @@ database users decide"* is a legitimate answer rather than an evasion.
 
 **Measured by:** classification precision from `scripts/evaluate_golden.py` against the
 canonical golden (CIRCULAR — correct for precision, never for recall).
-**Now, current detector, measured 2026-08-30: Ketubot 89.2%** (TP 149 / FP 18 / FN 10),
+**Now, current detector, measured 2026-08-30: Ketubot 89.2%** (TP 149 / FP 18 / FN 15
+after the golden grew to 187 — precision is unchanged; the 5 additions are all FN),
 **Kiddushin 85.3%** (TP 81 / FP 14 / FN 4). *Both are AT or ABOVE the gate.*
 
 *Correcting an earlier claim in this file that we had "no current number" — we did; it

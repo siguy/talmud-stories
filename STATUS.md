@@ -31,6 +31,7 @@ is now fixable, and three tractates we have never touched become testable.
 |---|---|---|---|---|
 | **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **now possible** | ≥98% *(provisional)* |
 | **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **now possible** | ≥95% *(provisional)* |
+| | *golden recall, CIRCULAR* | *90.9% (was 93.7% on the 182-story golden)* | *95.3%* | — |
 | **3 Classification** | precision, CIRCULAR | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
 | **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
@@ -57,10 +58,24 @@ Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
   → [`docs/golden/v11/trim_asymmetry_2026-08-30.md`](docs/golden/v11/trim_asymmetry_2026-08-30.md)
 - **Triage is a trade, not a defect.** 98% recall while examining 44% of pages. Worth
   pricing, not reflexively fixing.
-- **The six recall misses split into two populations.** Five were missed *and* absent
-  from our golden; one (Ketubot 77a) is in our golden and still never proposed — a
-  **Detection** failure, since nothing was proposed at all, not even a rejected candidate.
+- **The six recall misses do NOT split into two populations — all six are absent from
+  the golden.** The claimed exception (Ketubot 77a) was a locator artifact: Jeff's blind
+  entry there is segs **13-14** (Gemara, 94% text alignment) while the golden's 77a story
+  is seg **8** (a Mishnah ma'aseh, 1% alignment). Two different stories on one daf, joined
+  only by the recall locator's coarse 7-segment window.
   → [`docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md`](docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md)
+- **Ketubot 77a is a Classification miss, not a Detection one** (measured, 8 identical
+  re-runs, `NEXT/02`). Segs 13-14 are **proposed in 7 of 8 runs** and rejected as
+  `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
+  disqualifiers. The empty production `stories` list is the ~1/8 tail. Seed case written
+  into [`tasks/PLAN_wave6.md`](tasks/PLAN_wave6.md).
+- **A Mishnah filter is silently deleting expert-validated stories.**
+  `filter_mishnah_only_stories()` moves stories to `mishnah_stories`, which **neither**
+  `measure_recall_vs_expert_list.py` **nor** `evaluate_golden.py` reads. 4 of the 5 it
+  moves are accepted stories in the golden — **31% of Ketubot's 13 golden false
+  negatives**. Two of those 4 are plain Gemara mis-tagged at a chapter boundary, where
+  Sefaria uses the chapter incipit instead of `מתני׳` (7 pages affected). Costs no
+  measured recall; needs a decision, not a reflex. Detail in `PLAN_wave6.md`.
 - **A runner bug was fixed and guarded:** a failed API call could be recorded as a
   considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
 - **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
@@ -100,7 +115,7 @@ fully independent, start any time:   00 · 01 · 02 · 04 · 09 · 10 · 11 · 0
 | **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | 05 | no |
 | **08** | Harvest Jeff's embedded comments — criteria + boundary corrections | 3, 4 | 05 | no |
 | 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
-| 02 | Why is Ketubot 77a never proposed | 2 | — | no |
+| 02 | ~~Why is Ketubot 77a never proposed~~ **DONE** — it *is* proposed; classification rejects it | 3 | — | no |
 | 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | low priority* |
