@@ -12,10 +12,11 @@
     "prior_rounds_skipped": 8,
     "canonical_review_applied": 17,
     "canonical_review_deferred": 24,
-    "total_stories": 182,
+    "total_stories": 187,
     "review_count": 0,
     "boundary_corrections_applied": 32,
-    "boundary_corrections_deferred": 5
+    "boundary_corrections_deferred": 5,
+    "expert_list_additions": 5
   },
   "auto_applied_log": [
     {
@@ -5029,7 +5030,49 @@
           "hebrew": "אִיבַּעְיָא לְהוּ: עַצְמוֹ, מַאי? רַב חֲבִיבָא אָמַר: אֲפִילּוּ עַצְמוֹ. מָר בְּרֵיהּ דְּרַב אָשֵׁי אָמַר: עַצְמוֹ לֹא. וְהִלְכְתָא עַצְמוֹ לֹא."
         }
       ],
-      "stories": [],
+      "stories": [
+        {
+          "start_segment": 2,
+          "end_segment": 3,
+          "classification": "YES",
+          "one_sentence_summary": "Bar Shatya, who suffered periodic bouts of insanity, sold his property; one pair of witnesses testified he sold it while insane and another that he sold it while sane, and Rav Ashi ruled that the pairs cancel each other so the property stays in bar Shatya's possession.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": "Jeff's quotation begins mid-segment 2 (after Rav Nahman's ruling) and ends with Rav Ashi's ruling in the first sentence of segment 3. Segments 2-3 are the minimal segment-level cover."
+          },
+          "source": "jeff_2005_list",
+          "blind": true,
+          "never_detected": true,
+          "provenance": {
+            "source": "jeff_2005_list",
+            "blind": true,
+            "never_detected": true,
+            "added": "2026-08-30",
+            "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
+            "source_document": "jeff comms/b.ketubot (1).doc",
+            "source_document_date": "2005-02-02",
+            "why_blind": "Jeff wrote this list in 2005, twenty years before this detector existed, so nothing we produced could have influenced it. It is the only ground truth we hold that can measure recall.",
+            "expert_ref": "Ketubot 20a",
+            "expert_text_hebrew": "בר שטיא זבין נכסי, אתו בי תרי אמרי כשהוא שוטה זבין, ואתו בי תרי ואמרי כשהוא חלים זבין, אמר רב אשי: אוקי תרי להדי תרי ואוקי ממונא בחזקת בר שטיא.",
+            "expert_word_count": 30,
+            "in_golden_before_this_date": false,
+            "proposed_by_detector": false,
+            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "loss_cause": "stage_1_triage_discarded_page",
+            "loss_detail": "Stage 1 event triage discarded both Ketubot 19b and 20a, so the story detector never saw this page. Nothing was proposed and nothing was rejected -- there is no record of the loss anywhere in the run.",
+            "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
+            "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
+            "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
+            "alignment_coverage": 0.965,
+            "alignment_coarse_window": "Ketubot 19b seg 7 -> Ketubot 20a seg 8 (13 segments)",
+            "classification_basis": "Derived, not graded. Jeff placed the passage on a list whose every entry is a story, so it is is_story=True for the harness. He did not assign it a confidence tier; \"YES\" is our positive label, not his word.",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+            "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
+          }
+        }
+      ],
       "skipped_by_triage": true
     },
     {
@@ -11394,6 +11437,47 @@
       ],
       "stories": [
         {
+          "start_segment": 11,
+          "end_segment": 11,
+          "classification": "YES",
+          "one_sentence_summary": "Ravin bar Hanina sat before Rav Hisda and reported in Rabbi Elazar's name that a woman who forgoes her marriage contract loses her sustenance; Rav Hisda replied that had it not come to him in a great man's name he would have called it rewarding evil for good.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": "Contained entirely within segment 11 (4-gram coverage 1.00)."
+          },
+          "source": "jeff_2005_list",
+          "blind": true,
+          "never_detected": true,
+          "provenance": {
+            "source": "jeff_2005_list",
+            "blind": true,
+            "never_detected": true,
+            "added": "2026-08-30",
+            "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
+            "source_document": "jeff comms/b.ketubot (1).doc",
+            "source_document_date": "2005-02-02",
+            "why_blind": "Jeff wrote this list in 2005, twenty years before this detector existed, so nothing we produced could have influenced it. It is the only ground truth we hold that can measure recall.",
+            "expert_ref": "Ketubot 53a",
+            "expert_text_hebrew": "יתיב רבין בר חנינא קמיה דרב חסדא, ויתיב וקאמר משמיה דרבי אלעזר: מוחלת כתובתה לבעלה - אין לה מזונות. אמר ליה: אי לאו דקאמרת לי משמיה דגברא רבא, הוה אמינא לך: משיב רעה תחת טובה לא תמוש רעה מביתו.",
+            "expert_word_count": 39,
+            "in_golden_before_this_date": false,
+            "proposed_by_detector": false,
+            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "loss_cause": "examined_but_never_proposed",
+            "loss_detail": "The page survived triage and was examined. Stage 2 proposed one span on it (segments 12-12, which is in the golden); segment 11 was read and nothing was proposed there.",
+            "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
+            "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
+            "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
+            "alignment_coverage": 1.0,
+            "alignment_coarse_window": "Ketubot 53a seg 5 -> seg 11 (7 segments)",
+            "classification_basis": "Derived, not graded. Jeff placed the passage on a list whose every entry is a story, so it is is_story=True for the harness. He did not assign it a confidence tier; \"YES\" is our positive label, not his word.",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+            "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
+          }
+        },
+        {
           "start_segment": 12,
           "end_segment": 12,
           "classification": "LOW_CONFIDENCE",
@@ -15212,6 +15296,47 @@
       ],
       "stories": [
         {
+          "start_segment": 2,
+          "end_segment": 2,
+          "classification": "YES",
+          "one_sentence_summary": "They said of Hillel the Elder that he bought a poor man of noble descent a horse to ride and a servant to run before him, and when once no servant could be found Hillel himself ran before him three mil.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": "Contained entirely in the tail of segment 2 (4-gram coverage 1.00). The golden's existing 67b 3-3 entry is the separate Upper Galilee story in the same charity sequence, not a continuation of this one."
+          },
+          "source": "jeff_2005_list",
+          "blind": true,
+          "never_detected": true,
+          "provenance": {
+            "source": "jeff_2005_list",
+            "blind": true,
+            "never_detected": true,
+            "added": "2026-08-30",
+            "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
+            "source_document": "jeff comms/b.ketubot (1).doc",
+            "source_document_date": "2005-02-02",
+            "why_blind": "Jeff wrote this list in 2005, twenty years before this detector existed, so nothing we produced could have influenced it. It is the only ground truth we hold that can measure recall.",
+            "expert_ref": "Ketubot 67b",
+            "expert_text_hebrew": "אמרו עליו על הלל הזקן, שלקח לעני בן טובים אחד סוס לרכוב עליו ועבד לרוץ לפניו; פעם אחת לא מצא עבד לרוץ לפניו, ורץ לפניו שלשה מילין.",
+            "expert_word_count": 27,
+            "in_golden_before_this_date": false,
+            "proposed_by_detector": false,
+            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "loss_cause": "examined_but_never_proposed",
+            "loss_detail": "The page survived triage and was examined. Stage 2 proposed seven spans on it (3-3, 4-4, 4-6, 11-12, 14-14, 15-15, 17-17) -- none covering segment 2. The Hillel passage sits in the tail of a segment whose head is halakhic exposition of \"sufficient for his deficiency\".",
+            "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
+            "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
+            "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
+            "alignment_coverage": 1.0,
+            "alignment_coarse_window": "Ketubot 67a seg 9 -> Ketubot 67b seg 2 (7 segments)",
+            "classification_basis": "Derived, not graded. Jeff placed the passage on a list whose every entry is a story, so it is is_story=True for the harness. He did not assign it a confidence tier; \"YES\" is our positive label, not his word.",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+            "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
+          }
+        },
+        {
           "start_segment": 3,
           "end_segment": 3,
           "classification": "LOW_CONFIDENCE",
@@ -16699,7 +16824,49 @@
           "hebrew": "אִיתְּמַר: קִידְּשָׁה עַל תְּנַאי וּכְנָסָהּ סְתָם, רַב אָמַר: צְרִיכָה הֵימֶנּוּ גֵּט. וּשְׁמוּאֵל אָמַר: אֵינָהּ צְרִיכָה הֵימֶנּוּ גֵּט. אָמַר אַבָּיֵי:"
         }
       ],
-      "stories": [],
+      "stories": [
+        {
+          "start_segment": 3,
+          "end_segment": 3,
+          "classification": "YES",
+          "one_sentence_summary": "Rabba bar bar Hanna, walking behind Rav Ukva, saw an Arab woman spinning in the open who tore her spindle away when she noticed them and asked him to return it; Rav Ukva remarked on her, and the Sages dispute which form of immodesty he meant.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": "Contained entirely within segment 3 (4-gram coverage 1.00)."
+          },
+          "source": "jeff_2005_list",
+          "blind": true,
+          "never_detected": true,
+          "provenance": {
+            "source": "jeff_2005_list",
+            "blind": true,
+            "never_detected": true,
+            "added": "2026-08-30",
+            "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
+            "source_document": "jeff comms/b.ketubot (1).doc",
+            "source_document_date": "2005-02-02",
+            "why_blind": "Jeff wrote this list in 2005, twenty years before this detector existed, so nothing we produced could have influenced it. It is the only ground truth we hold that can measure recall.",
+            "expert_ref": "Ketubot 72b",
+            "expert_text_hebrew": "אמר רבה בר בר חנה: זימנא חדא הוה קאזילנא בתריה דרב עוקבא, חזיתיה לההיא ערביא דהוה יתבה קא שדיא פילכה וטווה ורד כנגד פניה, כיון דחזיתינן פסיקתיה לפילכה שדיתיה, אמרה לי: עולם, הב לי פלך, אמר בה רב עוקבא מילתא. מאי אמר בה? רבינא אמר: טווה בשוק אמר בה, רבנן אמרי: מדברת עם כל אדם אמר בה.",
+            "expert_word_count": 57,
+            "in_golden_before_this_date": false,
+            "proposed_by_detector": false,
+            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "loss_cause": "stage_1_triage_discarded_page",
+            "loss_detail": "Stage 1 event triage discarded both Ketubot 72a and 72b, so the story detector never saw this page.",
+            "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
+            "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
+            "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
+            "alignment_coverage": 1.0,
+            "alignment_coarse_window": "Ketubot 72a seg 16 -> Ketubot 72b seg 3 (7 segments)",
+            "classification_basis": "Derived, not graded. Jeff placed the passage on a list whose every entry is a story, so it is is_story=True for the harness. He did not assign it a confidence tier; \"YES\" is our positive label, not his word.",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+            "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
+          }
+        }
+      ],
       "skipped_by_triage": true
     },
     {
@@ -18565,7 +18732,49 @@
           "hebrew": "<br><br><big><strong>הֲדַרַן עֲלָךְ הָאִשָּׁה</strong></big><br><br>"
         }
       ],
-      "stories": [],
+      "stories": [
+        {
+          "start_segment": 9,
+          "end_segment": 12,
+          "classification": "YES",
+          "one_sentence_summary": "Rav Yehuda traces the history of the marriage contract: men grew old unmarried because the sum had to be held in cash, successive ordinances moved the money to the father's house and then the father-in-law's, until Shimon ben Shatah instituted that all the husband's property is guaranteed for it.",
+          "continuation": {
+            "continues_from_previous_page": false,
+            "continues_to_next_page": false,
+            "note": "Jeff's quotation runs from Rav Yehuda's statement through the parallel baraita. Segments 9-12 are the minimal segment-level cover (coverage 0.967); the coarse locator window spilled into 83a, which the per-segment overlap shows carries none of the passage."
+          },
+          "source": "jeff_2005_list",
+          "blind": true,
+          "never_detected": true,
+          "provenance": {
+            "source": "jeff_2005_list",
+            "blind": true,
+            "never_detected": true,
+            "added": "2026-08-30",
+            "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
+            "source_document": "jeff comms/b.ketubot (1).doc",
+            "source_document_date": "2005-02-02",
+            "why_blind": "Jeff wrote this list in 2005, twenty years before this detector existed, so nothing we produced could have influenced it. It is the only ground truth we hold that can measure recall.",
+            "expert_ref": "Ketubot 82b",
+            "expert_text_hebrew": "בראשונה היו כותבין לבתולה מאתים ולאלמנה מנה, והיו מזקינין ולא היו נושאין נשים, עד שבא שמעון בן שטח ותיקן: כל נכסיו אחראין לכתובתה. תניא נמי הכי: בראשונה היו כותבין לבתולה מאתים ולאלמנה מנה, והיו מזקינין ולא היו נושאין נשים, התקינו שיהיו מניחין אותה בבית אביה; ועדיין כשהוא כועס עליה, אומר לה לכי אצל כתובתיך.",
+            "expert_word_count": 97,
+            "in_golden_before_this_date": false,
+            "proposed_by_detector": false,
+            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "loss_cause": "stage_1_triage_discarded_page",
+            "loss_detail": "Stage 1 event triage discarded both Ketubot 82b and 83a, so the story detector never saw this page.",
+            "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
+            "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
+            "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
+            "alignment_coverage": 0.967,
+            "alignment_coarse_window": "Ketubot 82b seg 5 -> Ketubot 83a seg 4 (14 segments)",
+            "classification_basis": "Derived, not graded. Jeff placed the passage on a list whose every entry is a story, so it is is_story=True for the harness. He did not assign it a confidence tier; \"YES\" is our positive label, not his word.",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+            "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
+          }
+        }
+      ],
       "skipped_by_triage": true
     },
     {
@@ -27358,5 +27567,27 @@
         "note": "Jeff confirms not a story; canonical does not include it"
       }
     ]
+  },
+  "expert_list_additions_2026_08_30": {
+    "date": "2026-08-30",
+    "brief": "tasks/NEXT/10_golden_additions.md",
+    "capability": "2 Detection (ground truth)",
+    "script": "scripts/add_expert_list_stories_2026-08-30.py",
+    "source_document": "jeff comms/b.ketubot (1).doc",
+    "source_document_date": "2005-02-02",
+    "blind": true,
+    "why": "These 5 stories were a double miss: never proposed by the detector AND never in the golden, so no metric could see them. They are visible only because Jeff's 2005 list is detector-blind. Adding them makes the recorded recall fall -- that is the ground truth becoming honest, not detection getting worse.",
+    "expected_effect": "scripts/evaluate_golden.py gains 5 false negatives; classification recall and composite both fall. Precision is unchanged.",
+    "boundaries_are_not_expert_confirmed": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
+    "stories_before": 182,
+    "stories_after": 187,
+    "added": [
+      "Ketubot 20a 2-3",
+      "Ketubot 53a 11-11",
+      "Ketubot 67b 2-2",
+      "Ketubot 72b 3-3",
+      "Ketubot 82b 9-12"
+    ],
+    "already_present": []
   }
 }
