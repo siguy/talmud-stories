@@ -211,3 +211,204 @@ an explicit `text_span_start` / `text_span_end` schema, or (b) skip
 the slice entirely and let segment-level boundaries stand. Do NOT add
 a regex post-processor; you'll move score 0 net while introducing
 silent over-trims.
+
+## Lesson 16 — LLMs cannot count characters; anchor boundaries to real text units (2026-08-28)
+
+Wave 4 followed Lesson 15's advice — "emit the slice from the LLM
+with an explicit text_span_start/text_span_end schema" — but
+implemented it as **character offsets**. Jeff's 2026-07-06 review
+(`validation/feedback/jeff_2026-07-06_feedback_ledger.md`) proved it
+broken: 8 of 15 reviewed Kiddushin stories were mis-trimmed, one
+(30a seg 7) cut in the middle of a word, inside a Biblical quotation.
+
+Verified root cause: the nikud-stripping position map is faithful
+(`stripped[i] == hebrew[map[i]]` for every i in
+`src/story_detector_v10.py`), so the wrong cuts come from the model's
+raw offset numbers, not the mapping. LLMs reproduce text reliably but
+**do not count characters reliably**.
+
+**Rule:** Never ask an LLM for a character offset / index into text.
+When you need a sub-segment boundary, have the model **select a real
+text unit** (a punctuation-delimited clause) or **quote the boundary
+words verbatim**, then locate that unit deterministically. Sefaria's
+Davidson text is fully punctuated and its English is aligned and
+already-correct — use those units.
+
+**Why:** Character counting is a known LLM weakness; text
+reproduction is a known strength. The whole point of Lesson 15 (let
+the model judge meaning) was right — the failure was the numeric
+*interface*, not the idea of LLM emission.
+
+**How to apply:** See `tasks/PLAN_wave5.md` — clause-index selection
+anchored to punctuation, with a verbatim-quote fallback, plus an
+assertion that every emitted boundary sits at a clause/word boundary
+(a mid-word cut becomes a build error, not a silent corruption).
+
+## Lesson 17 — Feedback and lessons must be durable gates, not passive notes (2026-08-28)
+
+This session repeated two already-recorded mistakes: (1) Lesson 9
+(fixture ≠ production) — Wave 4 shipped on 14/14 hand-picked fixtures
+and then failed 11/15 in the wild; (2) memory
+`feedback_boundary_corrections.md` ("never split feedback processing
+again") — yet Jeff's feedback was again processed partially and the
+nuance nearly lost. The lessons existed and did not prevent
+recurrence, because a lessons file is a passive record only consulted
+if someone remembers to.
+
+**Rule:** Every substantive piece of expert feedback goes into a
+durable, status-tracked ledger the moment it arrives
+(`validation/feedback/jeff_<date>_feedback_ledger.md`), and every
+recurring lesson gets converted from prose into an **executable gate**
+where possible.
+
+**Why:** Feedback scattered across emails, JSON, .docx, and
+conversation gets processed once, partially, then lost on the next
+context clear. The cost is real: Jeff repeats himself and trust
+erodes.
+
+**How to apply:** (a) On any expert reply, create/append the ledger
+FIRST, before analysis or code — one row per note, with status
+open/addressed and where addressed. (b) Turn key lessons into gates:
+no detector ships without scoring on a FRESH held-out sample (not its
+own fixture); build a criteria-conformance test from
+`docs/golden/workflow/jeff_story_definition_criteria.md`; assert
+structural invariants (Lesson 16's clause-boundary check). (c) Before
+replying to the expert, walk the ledger's open-items tracker so
+nothing is dropped.
+
+## Lesson 18 — Audit the whole output, not the sample the expert happened to see (2026-08-28)
+
+Jeff reviewed 15 of 95 Kiddushin stories and flagged 8 bad trims. We
+wrote the Wave 5 plan around "8 stories to fix." A full audit of every
+emitted cut — cheap, no LLM, no expert — showed **104 of 189 cuts
+(55%) sever a Hebrew word** and 96% land mid-clause, across all three
+v10 outputs. ~100 corrupted cuts sat in the two Ketubot files nobody
+had reviewed. The cross-tab was worse: of the 9 reviewed stories that
+were actually trimmed, **9 were marked incorrect**; of the 6 untrimmed,
+4 were correct. The feature had zero observed successes.
+
+**Rule:** When an expert flags N instances of a defect, measure the
+defect's population rate over the entire corpus before planning the
+fix. Expert samples locate a bug; they never size it. Write the
+structural check that counts *all* violations — it usually takes
+minutes and no API budget.
+
+**Why:** Expert review is a sparse, non-random sample (Jeff reviewed
+16% of one tractate). Planning from it silently assumes the unreviewed
+90% is fine. Here the plan's scope, its urgency, and its correct
+sequencing were all wrong as a result.
+
+**How to apply:** Before writing a fix plan from feedback, ask "what
+fraction of all outputs has this property?" If the property is
+structural — a boundary that must sit on a word edge, a field that must
+parse, a ref that must resolve — it is checkable deterministically.
+Build that check first, record the baseline in the script's docstring,
+and make it the ship gate (`scripts/audit_text_spans.py --strict`).
+See `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`.
+
+## Lesson 19 — Reverting to the safe default beats shipping a better version of a broken feature (2026-08-28)
+
+The Wave 5 plan went straight from "broken char-offset trimmer" to
+"clause-anchored trimmer," leaving 153 stories with corrupt boundaries
+live for however long v11 took to build and validate. The better first
+move was to **delete the feature**: strip the spans, restore
+segment-level boundaries, ship today. Cost: $0, no LLM calls, no new
+detector. Score movement: none (0.9171 → 0.9171, verified by running
+the harness both ways). On Jeff's own sample, untrimmed output would
+have scored 4/6 instead of 4/15.
+
+**Rule:** When a feature is measurably net-negative, revert it before
+building its replacement. Ship the safe default, then treat the new
+mechanism as an improvement over a clean baseline rather than a rescue
+of a corrupt one.
+
+**Why:** The risk is asymmetric. An over-inclusive segment boundary is
+recoverable by a human reader — Jeff can see the extra text and tell us
+to trim it. A mid-word cut destroys information and reads as
+incompetence to the expert whose trust the project runs on. "We are
+building a fix" does not help the reviewer looking at corrupt text
+today. Reverting also removes all schedule pressure from the
+replacement, which is how the replacement gets built properly.
+
+**How to apply:** Ask "what does this system do if I delete the feature
+entirely?" If the answer is *degraded but honest*, that is the correct
+interim state. Prove neutrality by running the eval harness before and
+after rather than reasoning about what it reads. Keep the reverted
+version as a new file; never edit the frozen one
+(`scripts/strip_text_spans.py` → `results/v10/wave4_notrim/`).
+
+## Lesson 20 — Thinking tokens are drawn from max_output_tokens (2026-08-29)
+
+Enabling `thinking_level=HIGH` on `gemini-3.7-flash` while leaving
+`max_output_tokens=512` made **72 of 95 stories fail**. The model
+spent 487 tokens thinking, hit `finish_reason=MAX_TOKENS`, and never
+emitted the JSON. It looked like the new model was broken on the task.
+It wasn't — the budget was.
+
+The codebase already knew this: the Pro-model branch of `_call_google`
+raises the budget to 32768 precisely because "Pro models require
+thinking — give enough tokens for thinking + structured JSON output."
+The `thinking_level` branch was added without carrying that lesson over.
+
+**Rule:** Whenever you enable or raise model reasoning, raise the output
+token budget in the same edit. Thinking and output share one budget.
+
+**Why:** The failure is silent and misattributes cleanly to the wrong
+cause — "the new model can't do this task" rather than "we gave it no
+room to answer." A 75% failure rate is easy to read as a capability
+result and act on.
+
+**How to apply:** On any run with a non-trivial skip/error rate, check
+`finish_reason` and `usage_metadata.thoughts_token_count` before
+concluding anything about model quality. When adding a new config path
+next to an existing one, read what the existing branch compensates for
+— it usually encodes a bug someone already paid for.
+
+## Lesson 21 — A failed call must never be recorded as a decision (2026-08-30)
+
+Wave 5b's runner, written the same day as Lessons 18-19, reintroduced the
+exact failure the v10 regex fallback taught us. Reproduced by stubbing
+every model call to fail:
+
+```
+counts: {'clause_roles': 0, 'clause_kept_full': 5, 'skipped': 7}  sum=12
+stories_labelled: 5
+text_span_source on failed stories: {'clause_kept_full'}
+speech_profile fabricated: {'all_speech': False}
+needs_review set: 0
+```
+
+`clause_kept_full` means "the model read this and judged all of it
+in-story." In a total outage every story got that stamp, a fabricated
+`speech_profile` was written into the dataset intended to answer Jeff's
+speech-act question, and the counters summed to 12 for 5 stories. The
+scorer then rated the dead run at 6% HIT / 38% HIT+NEAR — identical to
+the legitimate no-trim baseline.
+
+The cause was structural, not careless: the failure path `continue`d an
+inner (per-side) loop, then fell through to an unconditional
+"success" write after the loop. `src/story_detector_v11.py` avoids this
+by `continue`ing the *story* loop, keeping the buckets mutually
+exclusive. The new code regressed against the file it was forked from.
+
+**Rule:** Every outcome bucket must be mutually exclusive and must sum
+to the number of items processed. Assert it. A failure must write a
+distinguishable provenance value — never the value that also means a
+considered judgment — and must never emit derived data (ratios, flags,
+profiles) computed from absent inputs.
+
+**Why:** A wrong answer gets caught. A *confident* answer with the
+provenance stripped off does not — it flows into results docs, datasets,
+and expert-facing artifacts as though it were a judgment. This is the
+same shape as the v10 regex fallback, and it is quieter, which makes it
+worse.
+
+**How to apply:** (a) `assert sum(counts.values()) == n_processed` in
+any runner that reports counts. (b) Write the failure-injection test
+FIRST: stub the model to raise, assert no item acquires a
+success-provenance value and no derived field is written. (c) When
+forking a file, diff the failure paths specifically — that is where the
+hard-won handling lives and where a rewrite silently drops it.
+(d) Scorers must read the run's own failure counts and refuse to score,
+or quarantine failures in their own bucket, rather than silently folding
+them into the metric.

@@ -3,14 +3,26 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
-## Current State (June 2026)
-- **Golden Ketubot dataset**: 182 expert-validated stories + 2 round-2 corrections 2026-06-03 (`results/canonical/ketubot_canonical.json`)
-- **Golden Kiddushin dataset**: 85 expert-validated stories (`results/canonical/kiddushin_canonical.json`, built from Jeff's 2026-04-23 review)
+## Current State (August 2026)
+- **Golden Ketubot dataset**: 182 expert-validated stories (`results/canonical/ketubot_canonical.json`)
+- **Golden Kiddushin dataset**: 85 expert-validated stories (`results/canonical/kiddushin_canonical.json`)
 - **Evaluation framework**: `scripts/evaluate_golden.py` (IMMUTABLE)
-- **Active detector**: v9 (Wave 3) — `src/story_detector_v9.py`. v8 frozen as Wave 2 baseline.
-- **Wave 3 Round 2 scores (2026-06-03 after Jeff's Ketubot corrections):** Ketubot composite **0.9171** (F1 0.914, +0.004 vs pre-correction), Kiddushin **0.8859** (unchanged — Jeff hasn't verdicted the 7 new candidates yet). See `docs/golden/v9/wave3_round2_ketubot_rescore.md`.
-- **Jeff's 2026-06-03 reply verdict on Item 4 (text-internal boundary regex):** MIXED — works on 5 canonical ההוא/ההיא cases, over-trims 7 stories with rabbi-name/אלא patterns that ARE story content. Regex approach has hit its ceiling; Wave 4 will replace it with LLM-side text-span emission.
-- **Next step**: Reply sent to Jeff (draft: `docs/golden/v9/email_draft_jeff_wave3_round2.md`) asking for full Kiddushin verdicts. Wave 4 plan (`tasks/PLAN_wave4.md`) to be drafted with Track 3 (text-span emission) as top priority.
+- **Active output**: v10 **no-trim** — `results/v10/wave4_notrim/`. Ketubot composite **0.9171**, Kiddushin **0.8859**.
+- **TRUE RECALL MEASURED (2026-08-28): 96.0% on Ketubot** against Jeff's detector-blind
+  2005 story list (`jeff comms/b.ketubot (1).doc`, 149 stories). This closes the
+  circular-recall problem. 6 misses; 5 of them also absent from the golden.
+  See `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`.
+- **Wave 4 (v10) text-spans are REVERTED.** The LLM char-offset mechanism severed a
+  Hebrew word in 55% of its 189 cuts and was judged incorrect in 9 of 9 reviewed
+  cases. Spans stripped; score unchanged. See
+  `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`.
+- **Next step: Wave 6** (`tasks/PLAN_wave6.md`) — encode Jeff's hypothetical-vs-actual
+  story criteria. Promoted ahead of Wave 5 (`tasks/PLAN_wave5.md`, clause-anchored
+  boundaries) because half the measured recall misses are the halakhic-story-plus-ruling
+  shape Jeff's criteria explicitly call a story, and boundary trimming is invisible
+  to the eval harness.
+- **Not yet sent:** reply to Jeff. Walk the open-items tracker in
+  `validation/feedback/jeff_2026-07-06_feedback_ledger.md` first.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
@@ -118,6 +130,21 @@ archive/                          # Old versions (reference only)
 | `scripts/compare_v8_v9.py` | Wave 2 vs Wave 3 side-by-side metrics |
 | `scripts/run_kiddushin_wave1.py` | Kiddushin Wave 1 runner (v8) |
 | `scripts/verify_wave1.py` | Wave 1 verification |
+| `scripts/audit_text_spans.py` | **Structural gate** — mid-word / clause-edge rates; `--strict` fails the build |
+| `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
+| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list |
+| `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — 149 stories, detector-blind ground truth |
+| `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
+| `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
+| `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md` | The 96% recall finding + method |
+| `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md` | Span failure audit + revert |
+| `tasks/PLAN_wave5b_clause_roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
+| `tasks/PLAN_wave6.md` | Jeff's story criteria (6c blocked on his answer) |
+| `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
+| `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated, across 7 rounds |
+| `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
+| `scripts/score_boundary_targets.py` | Scores any run against it |
+| `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
 | `tasks/lessons.md` | 14 lessons learned across all sessions |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
@@ -146,3 +173,5 @@ When making changes, update these files as relevant:
 - Claim "fixed" without testing
 - Modify `evaluate_golden.py` during experiments
 - Use few-shot examples from pages being evaluated
+- Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
+- Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)

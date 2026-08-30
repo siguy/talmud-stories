@@ -24,6 +24,8 @@
 | v8 Wave 1 | May 2026 | Mechanical fixes | Cross-page seg-0 fix, gap-aware continuation, triage lexical override, Mishnah filter |
 | v8 Wave 2 | May 2026 | Boundary + biblical | Start-snap to introducer, end-trim stam markers, biblical-actor demotion; first Kiddushin golden |
 | v9 Wave 3 | May 2026 | Embedded + text-span | Multi-story-per-page + embedded-story few-shots + sharper not-a-story rules (prompt); text_span_* sub-segment edits (post-processor). Ketubot composite 0.9162→0.9170 (recall +0.044, −7 FNs); Kiddushin 0.8962→0.8859 (5 new finds incl. Jeff's flagged-missing 33a — shipped per Lesson 13). |
+| v10 Wave 4 | Jun 2026 | LLM char-offset spans | Replaced regex boundary editing with LLM-emitted character offsets. **FAILED** — 55% of cuts sever a word (Lesson 16, 18). |
+| v10 no-trim | Aug 2026 | Revert | Spans stripped, segment-level boundaries restored. Composite unchanged 0.9171. `results/v10/wave4_notrim/`. |
 
 ---
 
@@ -765,3 +767,38 @@ PYTHONPATH=. python3 tests/ablation_test.py --test score
 # Regression test
 PYTHONPATH=. python3 tests/v7_regression_test.py
 ```
+
+---
+
+## v10 no-trim: Wave 4 span revert (2026-08-28)
+
+**Goal:** Remove the Wave 4 LLM character-offset text-spans after a full audit
+showed them systematically corrupt.
+
+**Evidence:** Across all three v10 outputs, **104 of 189 emitted cuts (55%) sever a
+Hebrew word** and 96% land mid-clause. Of the 9 stories Jeff reviewed that had been
+trimmed, **9 of 9 were marked incorrect**; of the 6 untrimmed, 4 were correct. The
+mechanism had no observed successes.
+Full audit: [`docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`](../golden/v10/wave4_span_failure_audit_2026-08-28.md)
+
+**Change (outputs, not detector):** `scripts/strip_text_spans.py` removes
+`text_span_*` from every story. `src/story_detector_v10.py` and the original v10
+outputs are untouched.
+
+**Scores** (Ketubot, harness run both ways on the same day):
+
+| Metric | v10 with spans | v10 no-trim | Δ |
+|--------|----------------|-------------|---|
+| Composite | 0.9171 | **0.9171** | 0 |
+| Stories scored | 177 | 177 | 0 |
+
+Score-neutral by construction (`evaluate_golden.py` reads only
+`start_segment`/`end_segment`) and verified empirically rather than assumed.
+
+**New permanent gate:** `scripts/audit_text_spans.py --strict` fails on any
+mid-word cut. v10 baseline recorded in its docstring (55% mid-word / 4%
+clause-edge); any future span mechanism must reach 0% / 100%.
+
+**Recall, measured for the first time:** against Jeff's detector-blind 2005 Ketubot
+list (149 stories), v10 finds **143/149 = 96.0%**; the golden covers 96.6%.
+See [`docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`](../golden/workflow/recall_measurement_ketubot_2026-08-28.md).

@@ -425,3 +425,115 @@ Or which Wave 4 track should we prep?"
 - [ ] Refresh `FOR_SIMON.md` to cover Wave 1/2/3 (currently pre-Wave-3)
 - [ ] Document Lesson 5 ceiling-breaking options (fine-tuning on Jeff's labels vs post-detection classifier vs accepting 0.93)
 - [ ] GitHub Pages site (`docs/WEBSITE_PLAN.md`) — non-technical project intro
+
+---
+
+## 2026-08-28 session — audit, revert, recall measurement (DONE ✓)
+
+- [x] Audit **all** v10 text-span cuts, not just Jeff's 15 reviewed stories
+      → 104/189 (55%) sever a word; 96% land mid-clause; 9/9 reviewed trims wrong
+- [x] Revert spans to segment-level (`scripts/strip_text_spans.py` → `results/v10/wave4_notrim/`)
+- [x] Prove score-neutrality by running the harness both ways (0.9171 → 0.9171)
+- [x] Build the permanent structural gate (`scripts/audit_text_spans.py --strict`)
+- [x] Parse Jeff's 2005 Ketubot list (`jeff comms/b.ketubot (1).doc`) — 149 stories
+- [x] **Measure true recall for the first time: 143/149 = 96.0%**
+      (`scripts/measure_recall_vs_expert_list.py`)
+- [x] Document: span audit, recall finding, Lessons 18–19, ledger banner,
+      PLAN_wave5 revision, PLAN_wave6, roadmap, VERSION_HISTORY, CLAUDE.md
+
+### Next: Wave 6 — encode Jeff's story criteria (`tasks/PLAN_wave6.md`)
+- [ ] **Phase 0** — build `tests/criteria_conformance_set.json` + scorer; baseline v10 ($0)
+- [ ] **Phase 1** — golden re-check vs. the rubric; add the 5 missing expert-list stories ($0)
+- [ ] **Phase 2** — fork v10 → v11, rewrite Stage 2 criteria (needs approval, ~$3)
+- [ ] **Phase 3** — gates: conformance per-axis, both composites, expert-list recall, cross-tractate holdout
+
+### Deprioritized (not cancelled)
+- [ ] Wave 5 clause-anchored boundaries (`tasks/PLAN_wave5.md`) — nothing corrupt is live
+- [ ] Fix review-UI Hebrew/English trim asymmetry before any new Jeff review round
+- [ ] Ask Jeff which other tractates he has story lists for
+
+---
+
+## 2026-08-29 — "Everything possible without Jeff", then one email
+
+Simon's directive: do all work that does not require Jeff's input, then send him an
+update (his delay: busy summer, travelled to Israel) covering what we've done and the
+one thing we need from him.
+
+### Wave 5 — Hebrew text selection (FIRST) — `tasks/PLAN_wave5.md`
+- [x] Phase 2 — forked `src/story_detector_v11.py`; `_split_into_clauses` (`. : ? !` only, never commas)
+- [x] Phase 3 — clause selection replaces char offsets; model never emits a number
+- [x] **Model A/B set up and run on Kiddushin** — `scripts/run_wave5_clause_spans.py`,
+      `scripts/compare_wave5_arms.py`, `tests/wave5_expert_clause_fixture.json`
+      → both arms 0 mid-word / 100% clause-edge; 3.7-flash+HIGH 5/8 vs 2.5-flash 4/8,
+      and errs by keeping too much rather than cutting too much. **Recommend 3.7-flash + HIGH.**
+- [ ] Phase 1 — fix review-UI Hebrew/English asymmetry (Hebrew marks trims, English doesn't)
+- [ ] Run both arms on Ketubot too (Kiddushin only so far)
+- [ ] One prompt iteration against the 3 under-trim cases
+- [ ] Phase 4 — gates: structural 0%/100%, composites regenerated today, 69% segment-boundary vs Jeff's list
+- [ ] Phase 5 — ship + regenerate UIs
+
+### ON HOLD — Wave 5b reviewed 2026-08-30 (DHH / Kieran / simplicity), see plan
+Do these IN ORDER before any Wave 5b run:
+- [ ] **P0 correctness** — failure must record `skipped` (not `clause_kept_full`), no
+      fabricated `speech_profile`, one counter per story, `no_clause_split` provenance
+      preserved, single shared `emit_span()` for `main()`+`reassemble()`
+- [ ] **Failure-injection test FIRST** — stub the model to raise; assert no story reads
+      as a judgment and `sum(counts.values()) == stories_labelled` (Lesson 21)
+- [ ] **Run existing Wave 5 on Ketubot** (both no-trim files already on disk) — scored
+      n 16 -> ~45. Two commands.
+- [ ] **1-hour human anchor pass** on the 52 targets — resolve 2 contradictions
+      (Ketubot 67b seg15: 5 vs 6; Kiddushin 12b seg4: 0 vs 1), merge 3 duplicates,
+      set `anchor_verified`. Perfect score is currently 50/52 and nothing says so.
+- [ ] **Scorer hardening** — refuse to score runs with non-trivial `skipped`; add FAIL
+      bucket; break out by `quote_polarity`; assert stored `clause_count` still matches
+- [ ] **Fix the summary bug in `src/story_detector_v11.py`** (one line,
+      `one_sentence_summary` first) — present on 0/95 stories; the fallback drops the
+      story's resolution while 35 of 52 targets are END boundaries
+- [ ] **Add English + `classification_reasoning` as CONTEXT** to the one-shot (~6 lines)
+- [ ] **Re-score at n~45.** Only if a properly-fed one-shot still stalls ~50% does
+      Wave 5b proceed — and then cut to 3 roles + speech, Hebrew only, one assembly rule
+
+### Wave 5b — clause-role labelling — `tasks/PLAN_wave5b_clause_roles.md`
+- [x] Design + taxonomy traced to Jeff's language; label frequencies measured (21,381 clauses)
+- [x] Verified English sentences NEST over Hebrew clauses -> cross-language check is possible
+- [x] Verified English framing markers are NOT a rule ("The Gemara comments:" = correct cut on
+      12b_4, wrong cut on 22b_18 — Lesson 15 in English)
+- [ ] Write prompt v2: add `parallel`, `variant`, `is_speech`, English sentence labelling
+- [ ] Run on Kiddushin; score against the 52 expert targets (beat Wave 5's ~50%)
+- [ ] Test both assembly rules (first->last narrative vs longest unbroken run)
+- [ ] Test English on/off
+- [ ] Report Hebrew/English label disagreement rate
+
+### Test-set hardening (blocks gate-grade numbers)
+- [ ] **1-hour human pass** over the 52 targets to verify quote polarity
+      (`include` 23 / `exclude` 10 / `mixed` 5 / `unclear` 14; `anchor_verified` false on all)
+- [ ] Random sample of currently-CORRECT stories — the 52 are all known failures and
+      cannot see regressions
+
+### Review UI
+- [ ] Trim English the same way as Hebrew. It is displayed and highlighted at SEGMENT
+      level today while Hebrew gets sub-segment trims — that asymmetry produced several
+      of Jeff's "the Hebrew doesn't match" verdicts
+- [ ] Stop stripping Sefaria's bold markup (literal Talmud text vs Steinsaltz interpolation)
+
+### Model upgrade, measured separately — `tasks/PLAN_model_upgrade.md`
+- [ ] 3 arms (2.5 / 3.7 / 3.7+HIGH) on **detection**, not just spans — separates model from thinking
+- [ ] Run after Wave 5 ships, before Wave 6
+
+### Then, still without Jeff
+- [ ] **Triage recovery** — Stage 2 on triage-skipped pages; recovers 20a/72b/82b; first independent triage score
+- [ ] **Wave 7 lexicon** — mine openers from Jeff's list + golden; triage prior only (`tasks/PLAN_wave7.md`); recovers 67b
+- [ ] **Cause B fixes** — Kiddushin 8a start, 8b_14 cross-page, 20a_12-14 baraita tail (Jeff already specified all three)
+- [ ] **Multi-story dedup** — Kiddushin 12a_13-15 (two `הָהוּא גַּבְרָא` stories)
+- [ ] **Orphaned correction** — apply Kiddushin 9a_1-1 from `kiddushin_review_2026-05-26 (1).json` (Lesson 1 recurrence)
+- [ ] **Add 5 expert-list stories** to Ketubot golden (20a, 53a, 67b, 72b, 82b) with `provenance: expert_list_2005`
+- [ ] **FP classifier** (Lesson 7) — sklearn logistic regression on existing labels; leave-one-tractate-out; flag, never filter
+- [ ] **Wave 6a** — measure speech-act blast radius on the 110 LOW_CONFIDENCE golden stories (~$0.10)
+
+### Needs Jeff (goes in the email, nothing else)
+- [ ] **Wave 6b** — the speech-act contradiction question + blast-radius count
+- [ ] Kiddushin 25a_3 boundary ambiguity (how far does `דִּתְנַן…` extend?)
+- [ ] Which other tractates he has 2005 story lists for
+- [ ] Sanity-check the mined opener list (a scan, not a review round)
+- [ ] **Then and only then:** Wave 6c criteria implementation
