@@ -60,6 +60,13 @@ Simon, one for Jeff.
 precision numbers are from March/April on older detector versions. There is no current
 measurement of the capability furthest from its gate.
 
+**And the 86 / 68 gap is partly bookkeeping.** Ketubot's golden has absorbed several
+correction rounds across two detector versions; Kiddushin's has absorbed **one round on
+v7**, with 16 later verdicts never folded in. Neither golden contains the stories we
+never proposed — five of Jeff's Ketubot list are in no golden at all. Until both are
+built the same way that comparison measures our record-keeping as much as the detector.
+→ `tasks/NEXT/10`
+
 ## What changed today
 
 - **Measurement became honest.** The boundary test set was built entirely from Jeff's
@@ -130,6 +137,7 @@ open calls from the parse:           09  (denominator settled at 89; 1b is for J
 | 02 | Why is Ketubot 77a never proposed | 2 | — | no |
 | 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
+| **10** | Make the goldens complete — 16 + 39 unapplied verdicts, and the stories we never proposed | 3, ground truth | 06 for Kiddushin's half | no |
 | 09 | Open calls from the parse — denominator settled at 89; 1b asks Jeff to keep the next appendices separate | ground truth | — | **1b** |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
