@@ -193,6 +193,7 @@ circular number as an accuracy claim is the mistake that cost this project month
 |---|---|---|---|
 | `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
+| `results/expert_lists/kiddushin_2005.json` | 94 Kiddushin stories | **BLIND** — his 2005 list, 1 marked 2026 addition excluded | recall, triage recall, boundaries |
 | `results/canonical/ketubot_canonical.json` | 182 stories | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
 | `results/canonical/kiddushin_canonical.json` | 85 stories | **CIRCULAR** | precision, consistency |
 | `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
@@ -200,8 +201,14 @@ circular number as an accuracy claim is the mistake that cost this project month
 
 **CIRCULAR means the system helped choose what it is graded on.** Such a set can measure
 precision (of what we proposed, how much is good) but *never* recall (what did we never
-propose). Kiddushin has no blind set at all — which is why its recall is unknown and why
-Jeff's other lists are the highest-value ask open.
+propose).
+
+**Contamination has a direction, and it is not always toward inflation.** Five of the
+Kiddushin entries are stories Jeff told us in April 2026 that we had *missed*. They came
+from him, so they are not circular — but they were selected precisely *because* we
+missed them, so counting them biases recall **downward**. The honest treatment is to
+quote both denominators (89 and 94) and name the entries that move the number. Ask of
+any contaminated entry not just "is it tainted?" but "which way does it push?".
 
 ## 4. The scoreboard
 
@@ -216,7 +223,9 @@ Jeff's other lists are the highest-value ask open.
 
 **Known gaps in this table, stated rather than hidden:** classification precision is
 measured on 5-month-old detector versions — we have **no current precision number**.
-Kiddushin has no blind ground truth, so three of its cells cannot be filled at all.
+Kiddushin's three blind cells are unfilled but no longer unfillable — it has a blind
+list as of 2026-08-30 (`results/expert_lists/kiddushin_2005.json`); `NEXT/06` and
+`NEXT/07` fill them.
 
 ## 5. Answering the seven questions, for any capability
 

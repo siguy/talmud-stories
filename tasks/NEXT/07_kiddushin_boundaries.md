@@ -1,6 +1,8 @@
 # NEXT 07 — A blind boundary set for Kiddushin
 
-**Needs `NEXT/05` first.** Read `STATUS.md` and `FRAMEWORK.md`.
+**`NEXT/05` is DONE** — ground truth is
+[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json).
+Read `STATUS.md` and `FRAMEWORK.md`.
 **Capability: 4 Boundaries.** **No API calls.**
 
 ## What this fixes
@@ -15,9 +17,12 @@ floor to **zero**. Same method, same tooling, different tractate.
 
 ## Method
 
-1. Run `scripts/build_boundary_testset_2005.py` against the blind-only Kiddushin
-   stories, `--tractate Kiddushin`.
-2. Expect roughly 2 targets per story. Report `align_fraction` and `bracket_ratio`
+1. Run `scripts/build_boundary_testset_2005.py` against the Kiddushin stories filtered
+   to `blind == true` and `duplicate_of == null` — **94 stories**, `--tractate Kiddushin`.
+   Include the five `expert_flagged_miss_2026` entries here: the selection bias that
+   matters for recall does not apply to boundaries, since a boundary target is graded on
+   *where the story ends*, not on whether we found it.
+2. Expect roughly 2 targets per story, so ~190. Report `align_fraction` and `bracket_ratio`
    distributions; Ketubot aligned 147 of 149 at a median 99% of letters matched.
 3. Measure `exact_clause_edge`. On Ketubot **87%** of Jeff's boundaries fall on a clause
    edge, which set the ceiling for clause-anchored spans. If Kiddushin differs, the

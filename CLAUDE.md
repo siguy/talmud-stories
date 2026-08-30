@@ -124,6 +124,10 @@ archive/                          # Old versions (reference only)
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
 | `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — 149 stories, detector-blind ground truth |
+| `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
+| `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
+| `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — 95 stories with `blind` flags, 10 anchored expert remarks |
+| `docs/golden/v11/kiddushin_list_parse_2026-08-30.md` | Why the line-based parse gave 105, and how the count was verified |
 | `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
 | `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md` | The 96% recall finding + method |
@@ -172,5 +176,6 @@ When making changes, update these files as relevant:
 - Modify `evaluate_golden.py` during experiments
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
+- Ingest ground truth from a converter's output (Lesson 25) — parse the source format; `textutil` silently drops table columns and relocates Word comments
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
