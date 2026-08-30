@@ -90,7 +90,7 @@ cross-page-merge work.
 | Ref | Category | Jeff's note | Status |
 |---|---|---|---|
 | Kiddushin 8a seg 9-10 | different_trim | First words `כֹּהֵן עִילָּוֵיהּ` not part of story; Rav Ashi statement (seg 10) not part of story; should start `כִּי הָא דְּמָר בַּר רַב אָשֵׁי`. (This is the segment-level case already deferred pre-Wave-4.) | OPEN → segment-boundary pass |
-| Kiddushin 8b seg 14 | both_full | English right but Hebrew cut off; continues to seg 0 of next page (9a) | OPEN → cross-page merge |
+| Kiddushin 8b seg 14 | both_full | English right but Hebrew cut off; continues to seg 0 of next page (9a) | **CLOSED 2026-08-30 — display bug, not a merge defect.** The detector had already merged this correctly (`spans_pages: [8b, 9a]`); the UI rendered an English-only continuation block. Fixed in `tasks/NEXT/04`. |
 | Kiddushin 20a seg 12-14 | both_full | Seg 14 is the end of the baraita, not the story; story ends `עִמְּךָ בַּמַּאֲכָל וְעִמְּךָ בַּמִּשְׁתֶּה`. Also flags this as **very low confidence** as a story | OPEN → segment-boundary + classification |
 
 ### Correct verdicts (4) — with one structural note
@@ -185,7 +185,7 @@ per-story columns: notes, references to scholarship, Yerushalmi parallels.**
 
 - [x] **Cause A contained** — spans reverted to segment-level (`results/v10/wave4_notrim/`), score-neutral, 0 mid-word cuts. Gate: `scripts/audit_text_spans.py --strict`.
 - [ ] **v11 clause-anchored spans** (Wave 5) — DEPRIORITIZED behind Wave 6; nothing corrupt is live. Plan: [tasks/PLAN_wave5.md](../../tasks/PLAN_wave5.md)
-- [ ] **Fix the review UI Hebrew/English asymmetry** — `validation/generators/generate_wave4_review_ui.py` trims Hebrew only; English shows full segments. This *caused* several of Jeff's "Hebrew doesn't match" notes. Fix before any new review round.
+- [x] **Fix the review UI Hebrew/English asymmetry** (2026-08-30, `tasks/NEXT/04`) — there were **two** asymmetries, not one. (1) The Hebrew was cut at the LLM char-offsets while the English showed full segments. (2) Cross-page stories rendered an *English-only* continuation block, so the Hebrew appeared to stop at the page break — **35 stories** across the three outputs, and the direct cause of the `8b seg 14` note in Cause B below, which is therefore a display bug and **not** a cross-page-merge defect. Both fixed by rendering each segment as one row carrying both languages; the story is now **highlighted inside the full text**, never trimmed to. Verified in a browser over all 262 stories (0 truncations, 0 strikethrough, 35/35 bilingual continuations) and on all 9 of Jeff's flagged cases. Guard: `tests/test_review_ui_symmetry.py`.
 - [ ] **Segment-boundary + cross-page pass** (Cause B: 8a, 8b_14, 20a) — separate from v11
 - [ ] **Multi-story / dedup** (12a_13-15 two `הָהוּא גַּבְרָא` stories + repeat)
 - [ ] **Encode Jeff's (c) criteria — WAVE 6, now the FIRST wave, ahead of Wave 5** ([tasks/PLAN_wave6.md](../../tasks/PLAN_wave6.md)); the 6 recall misses seed its conformance set (Stage 2 rewrite around hypothetical-vs-actual + conformance test set + golden re-check against the rubric). Deliberately NOT in Wave 5 — different axis (classification, not boundary). Do not let it slip to "never" (Lesson 17).

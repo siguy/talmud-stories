@@ -48,24 +48,52 @@
                  margin-top: 10px; border: 1px solid #e5e8ec; }
   .text-block h4 { font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px;
                    color: #6c7a89; margin-bottom: 8px; font-weight: 600; }
-  .segment { margin-bottom: 4px; padding-left: 36px; position: relative;
-              font-size: 14px; }
-  .segment.hebrew { direction: rtl; font-size: 18px; font-family: 'SBL Hebrew', 'Times New Roman', serif;
-                    padding-left: 0; padding-right: 36px; }
-  .segment.highlighted { background: #fffbe6; border-left: 3px solid #d4a017; padding-left: 12px; }
-  .segment.hebrew.highlighted { border-left: none; border-right: 3px solid #d4a017;
-                                padding-right: 12px; padding-left: 0; }
-  .seg-num { position: absolute; left: 8px; color: #94a3b8; font-size: 12px;
-              font-family: monospace; }
-  .segment.hebrew .seg-num { left: auto; right: 8px; }
-  .v10-trim { color: #c53030; text-decoration: line-through;
-               text-decoration-color: #c53030; opacity: 0.55; }
-  .v10-kept { color: #1a202c; font-weight: 500; }
-  .v9-trim { background: rgba(252, 165, 165, 0.35); border-bottom: 1px dashed #c53030; }
-  .compare-toggle { font-size: 12px; color: #2c7a7b; cursor: pointer;
-                    margin-top: 6px; display: inline-block; }
-  .v9-note { background: #fef3c7; padding: 6px 10px; margin-top: 6px;
-              border-radius: 4px; font-size: 12px; color: #78350f; }
+
+  /* ---------------------------------------------------------------------
+     PAIRED SEGMENT ROWS.  One segment = ONE row that holds BOTH languages.
+     English and Hebrew for a given segment are siblings in the same DOM
+     node, so the two columns cannot show different extents.  This is the
+     structural fix for the 2026-07-06 asymmetry: previously the Hebrew was
+     trimmed by char-offset while the English was shown in full, and
+     cross-page stories got an English continuation block but no Hebrew one.
+     Nothing is ever hidden, faded or struck through in either language.
+     --------------------------------------------------------------------- */
+  .seg-head { display: flex; gap: 10px; align-items: flex-start;
+               padding: 0 10px 6px; font-size: 11px; font-weight: 600;
+               text-transform: uppercase; letter-spacing: 0.6px; color: #6c7a89; }
+  .seg-row { display: flex; gap: 10px; align-items: flex-start;
+              padding: 7px 10px; border-top: 1px solid #eef1f4; }
+  .seg-num { flex: 0 0 26px; font-family: monospace; font-size: 12px;
+              color: #94a3b8; padding-top: 3px; text-align: right; }
+  .seg-en { flex: 1 1 0; min-width: 0; font-size: 14px; }
+  .seg-he { flex: 1 1 0; min-width: 0; direction: rtl; text-align: right;
+             font-size: 18px; line-height: 1.75;
+             font-family: 'SBL Hebrew', 'Times New Roman', serif; }
+  .seg-row.context .seg-en, .seg-row.context .seg-he { color: #a3adb8; }
+  .seg-row.context { background: #fbfcfd; }
+  .seg-row.story { background: #fffbe6; }
+  .seg-row.story .seg-num { color: #8a6d1f; font-weight: 700; }
+  .seg-row.story-first { border-top: 2px solid #d4a017; }
+  .seg-row.story-last { border-bottom: 2px solid #d4a017; }
+  @media (max-width: 900px) {
+    .seg-row { flex-wrap: wrap; }
+    .seg-en, .seg-he { flex: 1 1 100%; }
+  }
+
+  /* A proposed narrower span is an ANNOTATION on the Hebrew, never a cut. */
+  mark.span-in { background: #fde68a; color: inherit; border-radius: 2px;
+                  box-shadow: inset 0 -2px 0 #d97706; padding: 0 1px; }
+  .span-note { background: #fffaf0; border: 1px solid #fbd38d; color: #7c4a03;
+                padding: 8px 12px; border-radius: 6px; font-size: 12.5px;
+                margin-top: 10px; line-height: 1.5; }
+  .span-note .warn { color: #9b2c2c; font-weight: 700; }
+  .v9-note { background: #f7fafc; border: 1px solid #e2e8f0; padding: 6px 10px;
+              margin-top: 6px; border-radius: 4px; font-size: 12px; color: #4a5568; }
+  .cont-head { margin-top: 14px; padding-top: 10px; border-top: 1px dashed #cbd5e1;
+                font-size: 12px; color: #64748b; }
+  .legend { font-size: 12px; color: #6c7a89; margin-top: 14px; line-height: 1.6; }
+  .legend .sw { display: inline-block; width: 12px; height: 12px; vertical-align: -2px;
+                 border-radius: 3px; margin-right: 4px; }
 
   .review-row { display: flex; gap: 8px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
   .verdict-btn { padding: 6px 16px; border: 1px solid #d4dae0; border-radius: 6px;
@@ -85,7 +113,13 @@
 <div class="container">
   <div class="header">
     <h1>Wave 4 — Kiddushin Story Review</h1>
-    <p>v10 detector (LLM-emitted text spans, replacing v9 regex). Compare v10 trims (red strikethrough) with v9 regex trims (pink underline, click "Compare v9" to toggle).</p>
+    <p>English and Hebrew are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language &mdash; the story is highlighted inside the full text.</p>
+    <div class="legend">
+      <span class="sw" style="background:#fffbe6;border:1px solid #d4a017;"></span> the story &nbsp;·&nbsp;
+      <span class="sw" style="background:#fbfcfd;border:1px solid #dde3e9;"></span> surrounding context (2 segments either side) &nbsp;·&nbsp;
+      <span class="sw" style="background:#fde68a;box-shadow:inset 0 -2px 0 #d97706;"></span> the detector's proposed narrower <b>Hebrew</b> span &mdash; an annotation with no English counterpart, not a cut<br>
+      Cross-page stories continue in <b>both</b> languages below the dashed rule.
+    </div>
     <div class="stats">
       <div class="stat"><strong>95</strong> stories</div>
       <div class="stat">recovered_text: <strong>10</strong></div>
@@ -170,74 +204,176 @@ function buildCard(story, idx) {
   return card;
 }
 
-function renderHebrew(seg, story, isPage2) {
-  let heb = seg.hebrew || '';
-  const i = seg.index;
-  let lo = 0, hi = heb.length;
-  const v10ts = story.v10_text_span_start;
-  const v10te = story.v10_text_span_end;
-  if (v10ts && v10ts.segment === i && v10ts.char_offset > 0) lo = v10ts.char_offset;
-  if (v10te && v10te.segment === i && v10te.char_offset > 0 && v10te.char_offset < heb.length) hi = v10te.char_offset;
-  let html = '';
-  if (lo > 0 || hi < heb.length) {
-    if (lo > 0) html += `<span class="v10-trim" title="v10 trimmed (LLM)">${heb.slice(0, lo)}</span>`;
-    html += `<span class="v10-kept">${heb.slice(lo, hi)}</span>`;
-    if (hi < heb.length) html += `<span class="v10-trim" title="v10 trimmed (LLM)">${heb.slice(hi)}</span>`;
-  } else {
-    html += `<span class="v10-kept">${heb}</span>`;
+// ---------------------------------------------------------------------------
+// TEXT DISPLAY
+//
+// Invariant: a segment is rendered ONCE, into a single row that carries both
+// its English and its Hebrew.  There is no code path that can emit one
+// language without the other, and no code path that hides text in either.
+//
+// This replaces the 2026-07-06 behaviour, which (a) applied the detector's
+// Hebrew char-offsets as a visible CUT on the Hebrew while showing the English
+// in full, and (b) rendered an "English (continued)" block for cross-page
+// stories with no Hebrew counterpart.  Both made the Hebrew look like it
+// stopped early next to an English passage that did not.
+// ---------------------------------------------------------------------------
+
+// Sefaria markup we keep (it carries meaning: bold = the Talmud's own words in
+// the English, <big><strong> = the mishnah opening in the Hebrew).  Anything
+// else is escaped rather than executed.
+const INLINE_OK = { B: 1, STRONG: 1, I: 1, EM: 1, BIG: 1, SMALL: 1, BR: 1 };
+
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+// Split raw Sefaria markup into tag / text tokens, remembering each token's
+// offset in the RAW string -- the detector's char_offsets index the raw string
+// (tags included), and scripts/audit_text_spans.py reads them the same way.
+function tokenize(raw) {
+  const out = [];
+  const re = /<[^>]*>/g;
+  let last = 0, m;
+  while ((m = re.exec(raw)) !== null) {
+    if (m.index > last) out.push({ tag: false, v: raw.slice(last, m.index), at: last });
+    out.push({ tag: true, v: m[0], at: m.index });
+    last = re.lastIndex;
   }
-  // v9 comparison note
-  const v9ts = story.v9_text_span_start;
-  const v9te = story.v9_text_span_end;
-  const v9Notes = [];
-  if (v9ts && v9ts.segment === i) v9Notes.push(`v9 trimmed start @${v9ts.char_offset} (intro: ${v9ts.introducer||'?'})`);
-  if (v9te && v9te.segment === i) v9Notes.push(`v9 trimmed end @${v9te.char_offset} (marker: ${v9te.marker||'?'})`);
-  if (v9Notes.length) {
-    html += `<div class="v9-note">${v9Notes.join(' · ')}</div>`;
-  }
+  if (last < raw.length) out.push({ tag: false, v: raw.slice(last), at: last });
+  return out;
+}
+
+// Render raw markup in full.  If [lo,hi) is given, the characters inside that
+// raw-offset range are wrapped in <mark> -- an annotation, never a cut.
+// Tags are never split, and <mark> is closed before any tag so nesting stays
+// valid.
+function renderMarkup(raw, lo, hi) {
+  raw = raw || '';
+  const marking = (lo !== null && lo !== undefined && hi !== null && hi !== undefined);
+  let html = '', open = false;
+  const openMark = () => { if (!open) { html += '<mark class="span-in">'; open = true; } };
+  const closeMark = () => { if (open) { html += '</mark>'; open = false; } };
+  tokenize(raw).forEach(tok => {
+    if (tok.tag) {
+      closeMark();
+      const name = (tok.v.match(/^<\/?\s*([a-zA-Z0-9]+)/) || [])[1];
+      html += (name && INLINE_OK[name.toUpperCase()]) ? tok.v : esc(tok.v);
+      return;
+    }
+    if (!marking) { html += esc(tok.v); return; }
+    for (let k = 0; k < tok.v.length; k++) {
+      const abs = tok.at + k;
+      if (abs >= lo && abs < hi) openMark(); else closeMark();
+      html += esc(tok.v[k]);
+    }
+  });
+  closeMark();
   return html;
 }
 
-function buildTextDisplay(story) {
-  const segs = story.page_segments || [];
-  const start = story.start_segment;
-  const end = story.end_segment;
+// Same word-boundary test as scripts/audit_text_spans.py, so the UI agrees
+// with the structural gate about what counts as a mid-word cut.
+const BREAKERS = '.:?!,״׳()[]–—';
+function midWord(heb, off) {
+  if (!heb || off <= 0 || off >= heb.length) return false;
+  const a = heb[off - 1], b = heb[off];
+  if (/\s/.test(a) || /\s/.test(b)) return false;
+  return BREAKERS.indexOf(a) === -1 && BREAKERS.indexOf(b) === -1;
+}
+
+// The proposed narrower Hebrew range for one segment, or [null,null].
+function spanRange(story, segIndex, heb) {
+  const ts = story.v10_text_span_start, te = story.v10_text_span_end;
+  let lo = 0, hi = heb.length, any = false;
+  if (ts && ts.segment === segIndex && ts.char_offset > 0) { lo = ts.char_offset; any = true; }
+  if (te && te.segment === segIndex && te.char_offset > 0 && te.char_offset < heb.length) {
+    hi = te.char_offset; any = true;
+  }
+  return any ? [lo, hi] : [null, null];
+}
+
+// One block of paired rows.  English and Hebrew are emitted together, from the
+// same loop iteration, over the same segment range.
+function buildGrid(segs, start, end, story) {
+  if (!segs || !segs.length) return '';
+  const maxIdx = segs.reduce((m, s) => Math.max(m, s.index), 0);
   const showStart = Math.max(0, start - 2);
-  const showEnd = Math.min(segs.length - 1, end + 2);
-
-  let html = '<div class="text-block"><h4>English</h4>';
+  const showEnd = Math.min(maxIdx, end + 2);
+  let rows = '';
   for (let i = showStart; i <= showEnd; i++) {
     const seg = segs.find(s => s.index === i);
     if (!seg) continue;
-    const hl = (i >= start && i <= end) ? 'highlighted' : '';
-    const text = (seg.english || '').replace(/<[^>]+>/g, '');
-    html += `<div class="segment ${hl}"><span class="seg-num">${i}</span>${text}</div>`;
+    const inStory = (i >= start && i <= end);
+    const cls = ['seg-row', inStory ? 'story' : 'context'];
+    if (i === start) cls.push('story-first');
+    if (i === end) cls.push('story-last');
+    const heb = seg.hebrew || '';
+    const r = inStory ? spanRange(story, i, heb) : [null, null];
+    rows += '<div class="' + cls.join(' ') + '">'
+          +   '<div class="seg-num">' + i + '</div>'
+          +   '<div class="seg-en">' + renderMarkup(seg.english || '', null, null) + '</div>'
+          +   '<div class="seg-he">' + renderMarkup(heb, r[0], r[1]) + '</div>'
+          + '</div>';
   }
-  html += '</div>';
+  return '<div class="text-block">'
+       +   '<div class="seg-head"><div class="seg-num">#</div>'
+       +     '<div class="seg-en">English</div><div class="seg-he">Hebrew</div></div>'
+       +   rows
+       + '</div>';
+}
 
-  html += '<div class="text-block"><h4>Hebrew (v10 trims shown)</h4>';
-  for (let i = showStart; i <= showEnd; i++) {
-    const seg = segs.find(s => s.index === i);
-    if (!seg) continue;
-    const hl = (i >= start && i <= end) ? 'highlighted' : '';
-    let inner = (i >= start && i <= end) ? renderHebrew(seg, story, false) : (seg.hebrew || '');
-    html += `<div class="segment hebrew ${hl}"><span class="seg-num">${i}</span>${inner}</div>`;
+// Explain any Hebrew-only annotation in words, so a reviewer is never left
+// inferring why one column carries a mark the other does not.
+function spanNotice(story) {
+  const segs = story.page_segments || [];
+  const hebOf = i => { const s = segs.find(x => x.index === i); return s ? (s.hebrew || '') : ''; };
+  const parts = [], warns = [];
+  [['start', story.v10_text_span_start], ['end', story.v10_text_span_end]].forEach(([which, sp]) => {
+    if (!sp) return;
+    parts.push(which + ' at seg ' + sp.segment + ', char ' + sp.char_offset);
+    if (midWord(hebOf(sp.segment), sp.char_offset)) warns.push(which);
+  });
+  if (!parts.length) return '';
+  let html = '<div class="span-note">The detector proposed a narrower <b>Hebrew</b> span ('
+           + parts.join('; ') + '), shaded below. '
+           + 'These are Hebrew character offsets with no English counterpart, so the shading '
+           + 'appears in the Hebrew column only. '
+           + '<b>Both columns show the full text &mdash; nothing is trimmed.</b>';
+  if (warns.length) {
+    html += ' <span class="warn">&#9888; the ' + warns.join(' and ')
+          + ' offset falls mid-word</span> (Wave 4 offsets do this in 55% of cases and were '
+          + 'reverted &mdash; treat the shading as unreliable).';
   }
-  html += '</div>';
+  return html + '</div>';
+}
 
+function v9Notice(story) {
+  const notes = [];
+  const ts = story.v9_text_span_start, te = story.v9_text_span_end;
+  if (ts) notes.push('start at seg ' + ts.segment + ', char ' + ts.char_offset
+                     + ' (intro: ' + (ts.introducer || '?') + ')');
+  if (te) notes.push('end at seg ' + te.segment + ', char ' + te.char_offset
+                     + ' (marker: ' + (te.marker || '?') + ')');
+  if (!notes.length) return '';
+  return '<div class="v9-note">v9 regex span for reference: ' + notes.join('; ')
+       + '. Not shaded &mdash; shown as text so it cannot be confused with the displayed extent.</div>';
+}
+
+function buildTextDisplay(story) {
+  let html = spanNotice(story);
+  html += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story);
+  html += v9Notice(story);
+
+  // Cross-page continuation: the SAME builder, so the continuation carries
+  // both languages too.  Previously only English continued, which is what
+  // Jeff saw on Kiddushin 8b seg 14 ("English right but Hebrew cut off").
   if (story.spans_pages && story.page2_segments) {
-    const p2 = story.page2_segments;
-    const s2 = story.start_segment_page2 || 0;
-    const e2 = story.end_segment_page2 || 0;
-    html += `<div style="margin-top:14px; padding-top:10px; border-top:1px dashed #cbd5e1; font-size:12px; color:#64748b;">Continues on ${story.spans_pages[1]}</div>`;
-    html += '<div class="text-block"><h4>English (continued)</h4>';
-    p2.filter(s => s.index <= e2 + 1).forEach(seg => {
-      const hl = (seg.index >= s2 && seg.index <= e2) ? 'highlighted' : '';
-      html += `<div class="segment ${hl}"><span class="seg-num">${seg.index}</span>${(seg.english||'').replace(/<[^>]+>/g, '')}</div>`;
-    });
-    html += '</div>';
+    html += '<div class="cont-head">Continues on <b>' + story.spans_pages[1] + '</b></div>';
+    html += buildGrid(story.page2_segments,
+                      story.start_segment_page2 || 0,
+                      story.end_segment_page2 || 0,
+                      {});
   }
-
   return html;
 }
 

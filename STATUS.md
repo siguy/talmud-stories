@@ -90,7 +90,14 @@ his review notes say cut it. Blocks the end rule for capability 4.
 
 **To add when we next write:** at what error rate does reviewing our output become worse
 than working from scratch? That number sets the Classification gate and only he can
-answer it.
+answer it. Also a correction we owe him: the email said Ketubot 77a is a story "our own
+set has" — it is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8);
+his is at segs 13-14. The substance stands (we do miss his), the claim did not.
+
+**Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
+still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
+so the regenerated page stayed comparable to what Jeff actually saw during brief 04's
+verification. Point it at `results/v10/wave4_notrim/` before showing him anything new.
 
 ## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
