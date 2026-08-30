@@ -31,7 +31,7 @@ is now fixable, and three tractates we have never touched become testable.
 |---|---|---|---|---|
 | **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **now possible** | ≥98% *(provisional)* |
 | **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **now possible** | ≥95% *(provisional)* |
-| **3 Classification** | precision, CIRCULAR | 86% *(Mar 2026, stale)* | 68% *(Apr 2026, stale)* | ≥85% *(provisional)* |
+| **3 Classification** | precision, CIRCULAR | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
 | **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
 | **6 Publication** | — | not started | not started | — |
@@ -41,9 +41,10 @@ is now fixable, and three tractates we have never touched become testable.
 that is a product decision, not a technical one. Two questions are open there: one for
 Simon, one for Jeff.
 
-**The weakest capability is Classification, and we cannot currently see it** — both
-precision numbers are from March/April on older detector versions. There is no current
-measurement of the capability furthest from its gate.
+**Every measurable capability is now at or above its provisional gate.** Classification
+measured 2026-08-30 on the current detector: Ketubot 89.2%, Kiddushin 85.3% — correcting
+an earlier claim in this file that we had no current number. What is *not* measured is
+Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
 
 ## What changed today
 

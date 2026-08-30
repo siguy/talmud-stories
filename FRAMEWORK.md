@@ -80,8 +80,15 @@ database users decide"* is a legitimate answer rather than an evasion.
 **Fails by:** admitting a non-story (costs reviewer time) · rejecting a real one
 (invisible, and as costly as a detection miss).
 
-**Measured by:** precision on expert review rounds. **Now: 86% Ketubot, 68% Kiddushin —
-both from March/April 2026 on older detector versions. We have no current number.**
+**Measured by:** classification precision from `scripts/evaluate_golden.py` against the
+canonical golden (CIRCULAR — correct for precision, never for recall).
+**Now, current detector, measured 2026-08-30: Ketubot 89.2%** (TP 149 / FP 18 / FN 10),
+**Kiddushin 85.3%** (TP 81 / FP 14 / FN 4). *Both are AT or ABOVE the gate.*
+
+*Correcting an earlier claim in this file that we had "no current number" — we did; it
+needed one run of the immutable harness. The 86% / 68% figures quoted from the
+March/April review rounds were stale and measured something different (raw reviewer
+verdicts, not harness precision).*
 
 **Gate: ≥85% — PROVISIONAL, and the weakest of the six.** *Invented. "Below ~85% a
 reviewer spends more time rejecting than confirming" is a plausible sentence with no
@@ -209,14 +216,16 @@ Jeff's other lists are the highest-value ask open.
 |---|---|---|---|---|---|---|
 | **Triage** | % of true stories surviving | blind 2005 list | **98.0%** (3 of 149 lost) at 44% of pages examined | unmeasured | **≥98%**, and state the exchange rate | losses here are invisible and permanent; but 2% for a 56% cost cut may be a good trade — that is a decision, not a bug |
 | **Detection** | recall | blind 2005 list | **96.0%** (143/149) | unmeasured | **≥95%** | Jeff's own lists missed stories; matching a careful scholar is the honest ceiling |
-| **Classification** | precision — of what we call a story, what does an expert accept | review rounds (circular) | **86%** (Mar 2026) | **68%** (Apr 2026) | **≥85%** | below ~85% a reviewer wades through junk; this is set by reviewer patience, not by truth |
+| **Classification** | precision vs golden | canonical golden (CIRCULAR) | **89.2%** | **85.3%** | **≥85%** | below ~85% a reviewer wades through junk; this is set by reviewer patience, not by truth |
 | **Boundaries** | at expert's clause / within one | blind 2005 list | **80% / 84%** (ceiling ~87%) | 60% / 73%, ±7pt | **≥75%** hit+near | the reader sees surrounding text, so errors are visible and self-correcting |
 | **Review** | throughput; inter-rater agreement | — | not started | not started | a scholar reviews a tractate in **days, not weeks** | Jeff: 6 weeks/tractate makes Shas take years |
 | **Publication** | — | — | not started | not started | — | — |
 
-**Known gaps in this table, stated rather than hidden:** classification precision is
-measured on 5-month-old detector versions — we have **no current precision number**.
-Kiddushin has no blind ground truth, so three of its cells cannot be filled at all.
+**Known gaps in this table, stated rather than hidden:** Kiddushin's blind ground truth
+arrived 2026-08-30 and is not yet processed (`tasks/NEXT/05`), so its recall cells stay
+empty until then. Classification precision is measured against a CIRCULAR set — correct
+for precision, but it cannot tell us about stories we never proposed; that is Detection's
+job and it needs the blind list.
 
 ## 5. Answering the seven questions, for any capability
 
