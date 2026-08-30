@@ -145,6 +145,8 @@ archive/                          # Old versions (reference only)
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
 | `scripts/score_boundary_targets.py` | Scores any run against it |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
+| `docs/golden/v11/wave5_summary_fix_2026-08-30.md` | **Steps 1-2 writeup** — 35 targets, +29pts vs no-trim, and the gate's noise floor |
+| `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
 | `tasks/lessons.md` | 14 lessons learned across all sessions |
@@ -177,3 +179,4 @@ When making changes, update these files as relevant:
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
+- Attribute a score change to a code change without a same-code repeat run (Lesson 22)

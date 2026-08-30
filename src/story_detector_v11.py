@@ -461,13 +461,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         """
         if not self.client:
             return None
-        summary = story.get('summary') or story.get('text', '') or ''
-        if not summary:
-            crit = story.get('criteria', {}) or {}
-            events = (crit.get('multiple_events', {}) or {}).get('events', [])
-            if events:
-                summary = '; '.join(events)
-        summary = (summary or '(no summary available)')[:400]
+        summary = story_summary(story)
 
         def numbered(clauses):
             return '\n'.join(f'  [{i}] {c}' for i, c in enumerate(clauses))
@@ -2430,6 +2424,24 @@ def _split_into_clauses(text: str):
     if pos < len(text):
         ranges.append((pos, len(text)))
     return [(a, b) for a, b in ranges if text[a:b].strip()]
+
+
+def story_summary(story: Dict) -> str:
+    """The story description shown to the boundary prompt.
+
+    `one_sentence_summary` FIRST. The detector writes that field; `summary` is
+    present on 0 of 262 stories in the corpus, so the old chain fell through to
+    a joined events list on 100% of them — and that list stops before the
+    story's resolution, while 35 of the 52 expert boundary targets are ENDS.
+    Measured 2026-08-30 across all three wave4_notrim files.
+    """
+    for key in ('one_sentence_summary', 'summary', 'text'):
+        val = story.get(key)
+        if val:
+            return str(val)[:400]
+    crit = (story.get('criteria') or {}).get('multiple_events') or {}
+    events = crit.get('events') or []
+    return '; '.join(events)[:400] if events else '(no summary available)'
 
 
 def _clause_text_for_display(text: str, rng) -> str:

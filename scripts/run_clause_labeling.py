@@ -18,8 +18,9 @@ Writes TWO artifacts:
                                       scripts/score_boundary_targets.py and
                                       scripts/audit_text_spans.py
 
-Fixes a v10 bug carried into Wave 5: the span prompt read story['summary'], which
-is present on 0 of 106 stories. The detector writes 'one_sentence_summary'.
+Story descriptions come from story_summary() in src/story_detector_v11.py — shared
+with the Wave 5 span prompt, which had the same bug (story['summary'] is present on
+0 of 262 stories; the detector writes 'one_sentence_summary').
 
 Usage:
   python3 scripts/run_clause_labeling.py \
@@ -42,7 +43,8 @@ from src.clause_roles import (PROMPT_VERSION, assemble, build_prompt,  # noqa: E
                               cross_language_disagreement, parse_labels,
                               speech_profile, split_english_sentences)
 from src.story_detector_v11 import (V7StoryDetector, _assert_word_boundary,  # noqa: E402
-                                    _clause_text_for_display, _split_into_clauses)
+                                    _clause_text_for_display, _split_into_clauses,
+                                    story_summary)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [wave5b] %(message)s',
                     handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
@@ -72,17 +74,6 @@ def load_env():
             if line.strip() and not line.startswith('#') and '=' in line:
                 k, v = line.split('=', 1)
                 os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
-
-
-def story_summary(story):
-    """v10 wrote one_sentence_summary; the old span prompt read 'summary' (never present)."""
-    for key in ('one_sentence_summary', 'summary', 'text'):
-        val = story.get(key)
-        if val:
-            return str(val)[:400]
-    crit = (story.get('criteria') or {}).get('multiple_events') or {}
-    events = crit.get('events') or []
-    return '; '.join(events)[:400] if events else '(no summary available)'
 
 
 def label_segment(detector, summary, hebrew, english):
