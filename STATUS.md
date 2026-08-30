@@ -81,9 +81,13 @@ part of the story we display, or the discussion that follows it? His 2005 lists 
 his review notes say cut it. Blocks the end rule for capability 4.
 → draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
 
-**To add when we next write:** at what error rate does reviewing our output become worse
-than working from scratch? That number sets the Classification gate and only he can
-answer it.
+**To add when we next write:**
+1. At what error rate does reviewing our output become worse than working from scratch?
+   That number sets the Classification gate and only he can answer it.
+2. The five Kiddushin stories he flagged in April as ones we had missed — were they
+   already in his own list, or added after seeing our output? That one sentence decides
+   whether Kiddushin recall is scored over 89 or 94, and nothing else can answer it.
+   → `tasks/NEXT/09`
 
 ## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
@@ -100,6 +104,7 @@ job that should wait until Kiddushin shows what we get.
 
 fully independent, start any time:   00 · 02 · 04
 lower value until the above land:    01 · 03
+open calls from the parse:           09  (item 1 sets the denominator 06 reports)
 ```
 
 | | task | capability | needs | Jeff? |
@@ -112,6 +117,7 @@ lower value until the above land:    01 · 03
 | 02 | Why is Ketubot 77a never proposed | 2 | — | no |
 | 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
+| 09 | Judgment calls left open by the parse — incl. the 89-vs-94 denominator | ground truth | — | **1 of 5** |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
 
