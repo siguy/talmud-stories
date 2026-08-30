@@ -8,9 +8,17 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**Jeff's expert lists for four more tractates arrived** (`jeff comms/8-30-2026/`) and all
-four parse with our existing tooling: **Kiddushin 105, Gittin 112, Yevamot 102, Eruvin
-73 — 392 blind stories.** These were the single highest-value thing we had asked for.
+**Jeff sent expert lists for four more tractates** (`jeff comms/8-30-2026/`), with:
+*"I will get to all this soon. But here is the kiddushin list I have."* — so **the
+boundary question is still unanswered** and capability 4 stays blocked.
+
+Rough parse: **Kiddushin ~96, Gittin 112, Yevamot 102, Eruvin 73.** Treat these as
+indicated, not measured — the Kiddushin document is **dirtier than the Ketubot one**:
+9 of its 105 parsed entries are Jeff's own English review comments, which inherit the
+preceding daf reference (making Kiddushin 81b appear to hold 11 stories), and it
+contains `הוספתי--י.ר.` — *"I added — J.R."* — very likely marking stories he took from
+**our** output, which are therefore **not blind**. `NEXT/05` fixes this and everything
+downstream depends on it.
 
 Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
 can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
@@ -70,18 +78,33 @@ answer it.
 
 ## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
-| | task | capability | depends on Jeff? |
-|---|---|---|---|
-| **NEW** | Run the four new lists: parse, align, measure recall + build blind boundary sets | 1, 2, 4 | no |
-| 00 | Write the per-capability history (what we tried, what we reverted, current best) | all | no |
-| 01 | Price the triage trade over the 124 discarded pages | 1 | no |
-| 02 | Why is Ketubot 77a never proposed | 2 | no |
-| 03 | Stop discarding a second story sharing a segment | 4 | no |
-| 04 | Fix the review UI Hebrew/English asymmetry | 5 | no |
-| — | Wave 6 — encode Jeff's criteria | 3 | no |
+**Lead with Kiddushin only.** It is the sole new tractate where we already have a mature
+detector output (95 stories, a golden set, 8 review rounds), so its list pays off
+immediately with zero API calls. Gittin, Yevamot and Eruvin have **no detector output at
+all** — their lists are worth nothing until the detector runs there, which is a larger
+job that should wait until Kiddushin shows what we get.
 
-**Recommended order:** the new lists first. They unblock three "unmeasured" cells and
-change what the other briefs are worth doing on.
+```
+              ┌── 06 Kiddushin recall (triage + detection)
+05 parse ─────┼── 07 Kiddushin blind boundary set
+  (blocker)   └── 08 harvest the embedded review comments
+
+fully independent, start any time:   00 · 02 · 04
+lower value until the above land:    01 · 03
+```
+
+| | task | capability | needs | Jeff? |
+|---|---|---|---|---|
+| **05** | Parse the Kiddushin list properly — 3 streams, blind flags | ground truth | — | no |
+| **06** | Kiddushin recall: triage + detection | 1, 2 | 05 | no |
+| **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | 05 | no |
+| **08** | Harvest Jeff's embedded comments — criteria + boundary corrections | 3, 4 | 05 | no |
+| 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
+| 02 | Why is Ketubot 77a never proposed | 2 | — | no |
+| 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
+| 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
+| 03 | Stop discarding a second story sharing a segment | 4 | — | **blocked** |
+| — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
 
 ## Where things live — one job each
 
@@ -105,7 +128,8 @@ Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a pla
 ```
 BLIND   (can measure recall)
   Ketubot   149 stories (2005 list) · 294 derived boundary targets
-  Kiddushin 105 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW, unprocessed
+  Kiddushin ~96 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW, counts INDICATED only,
+                                                            Kiddushin needs NEXT/05 first
 CIRCULAR (precision and consistency only — never recall)
   Ketubot   182 golden stories · Kiddushin 85
   70 boundary corrections across 8 review rounds
