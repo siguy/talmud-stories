@@ -1,0 +1,1693 @@
+{
+  "tractate": "Kiddushin",
+  "wave": 4,
+  "date": "2026-07-06",
+  "total_stories": 95,
+  "reviewed": 15,
+  "reviews": {
+    "Kiddushin 7b_9-10": {
+      "index": 1,
+      "page_ref": "Kiddushin 7b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "correct",
+      "notes": ""
+    },
+    "Kiddushin 8a_9-10": {
+      "index": 2,
+      "page_ref": "Kiddushin 8a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 9,
+        "char_offset": 46,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 9,
+        "char_offset": 69,
+        "introducer": "כי הא ד"
+      },
+      "v9_text_span_end": {
+        "segment": 10,
+        "char_offset": 30,
+        "marker": "אלא"
+      },
+      "verdict": "incorrect",
+      "notes": "The first two words, כֹּהֵן עִילָּוֵיהּ, are not part of the story. With line 10, the statement of Rav Ashi is not part of the story. It should start with כִּי הָא דְּמָר בַּר רַב אָשֵׁי "
+    },
+    "Kiddushin 8b_2-2": {
+      "index": 3,
+      "page_ref": "Kiddushin 8b",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 37,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": "correct",
+      "notes": ""
+    },
+    "Kiddushin 8b_14-14": {
+      "index": 4,
+      "page_ref": "Kiddushin 8b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The English highlight is correct but the Hebrew is cut off. It continues wiht line 0 on the next page (Kiddushin 9a)"
+    },
+    "Kiddushin 9a_1-1": {
+      "index": 5,
+      "page_ref": "Kiddushin 9a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 1,
+        "char_offset": 131,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 1,
+        "char_offset": 64,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 9a_2-2": {
+      "index": 6,
+      "page_ref": "Kiddushin 9a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 2,
+        "char_offset": 156,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 64,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The story is cut off. These words should be included: מִיקַּדְּשַׁתְּ לִי״? אֲמַרָה לֵיהּ: ״שְׁדִי מִישְׁדָּא״. אָמַר רַב זְבִיד: כֹּל ״שְׁדִי מִישְׁדָּא״ לָאו כְּלוּם הוּא  The English above is correctbut does not correspond to the Hebrew"
+    },
+    "Kiddushin 12a_13-13": {
+      "index": 7,
+      "page_ref": "Kiddushin 12a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 13,
+        "char_offset": 125,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 13,
+        "char_offset": 180,
+        "marker": "ואי"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 12a_13-15": {
+      "index": 8,
+      "page_ref": "Kiddushin 12a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "correct",
+      "notes": "This is correct but repeats much of what is above (Kiddushin 12a :: seg 13-13). It also includes two stories, each of which begins הָהוּא גַּבְרָא (sections 13 and 14)"
+    },
+    "Kiddushin 12b_4-4": {
+      "index": 9,
+      "page_ref": "Kiddushin 12b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 4,
+        "char_offset": 45,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 4,
+        "char_offset": 123,
+        "marker": "אלא"
+      },
+      "verdict": "incorrect",
+      "notes": "Boundary issue. The story continues nin the Hebrew through the next three words.  וּפְרַשׁוּ רַבָּנַן מִינַּהּ is part of the story. Otherwise it is too brief and just a datum."
+    },
+    "Kiddushin 12b_5-5": {
+      "index": 10,
+      "page_ref": "Kiddushin 12b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "correct",
+      "notes": ""
+    },
+    "Kiddushin 12b_8-8": {
+      "index": 11,
+      "page_ref": "Kiddushin 12b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 8,
+        "char_offset": 48,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 8,
+        "char_offset": 121,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The story is: הָהוּא חַתְנָא דַּחֲלֵיף אַבָּבָא דְּבֵי חֲמוּהּ וְנַגְּדֵיהּ רַב שֵׁשֶׁת! The corresponding Englihs: But there was a certain son-in-law who passed by the entrance of his father-in-law’s house and Rav Sheshet flogged him due to licentiousness"
+    },
+    "Kiddushin 12b_10-10": {
+      "index": 12,
+      "page_ref": "Kiddushin 12b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 10,
+        "char_offset": 165,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "Here is the story: הָהוּא גַּבְרָא דְּקַדֵּישׁ בְּצִיפְּתָא דְאָסָא, אֲמַרוּ לֵיהּ: וְהָא לֵית בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לְהוּ: תִּיקְדּוֹשׁ בְּאַרְבַּע זוּזֵי דְּאִית בַּהּ. שְׁקַלְתַּהּ וְאִישְׁתִּיקָא."
+    },
+    "Kiddushin 13a_3-3": {
+      "index": 13,
+      "page_ref": "Kiddushin 13a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 3,
+        "char_offset": 144,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 3,
+        "char_offset": 60,
+        "introducer": "ההוא גברא"
+      },
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The story continues a little. These words are part of the story: לַהּ: אִי יָהֵיבְנָא לִיךְ מִיקַּדְּשַׁתְּ לִי? שְׁקַלְתֵּיהּ וְאִישְׁתִּיקָה"
+    },
+    "Kiddushin 20a_12-14": {
+      "index": 14,
+      "page_ref": "Kiddushin 20a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "Section 14 is not part of he story. It is the end of the baraita. The story ends  עִמְּךָ בַּמַּאֲכָל וְעִמְּךָ בַּמִּשְׁתֶּה. Separately, this is a very low confidence story."
+    },
+    "Kiddushin 22b_18-18": {
+      "index": 15,
+      "page_ref": "Kiddushin 22b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 18,
+        "char_offset": 41,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 18,
+        "char_offset": 195,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "Nothing should have been trimmed here. That is, all of 18 is the story. "
+    },
+    "Kiddushin 25a_1-3": {
+      "index": 16,
+      "page_ref": "Kiddushin 25a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 3,
+        "char_offset": 39,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The words crossed out are part of the story. ( לֵיהּ: מַתְנִיתָא בְּעוֹ מִינָּךְ. דִּתְנַן: עֶשְׂרִים וְאַרְבָּעָה רָאשֵׁי אֵבָרִים שֶׁבָּאָדָם כּוּלָּם אֵין מְטַמְּאִין מִשּׁוּם מִחְיָה,). Otherwise it ends with אֲמַר."
+    },
+    "Kiddushin 25a_17-17": {
+      "index": 17,
+      "page_ref": "Kiddushin 25a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 17,
+        "char_offset": 90,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 17,
+        "char_offset": 108,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 26b_2-2": {
+      "index": 18,
+      "page_ref": "Kiddushin 26b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 2,
+        "char_offset": 26,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 37,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 26b_4-5": {
+      "index": 19,
+      "page_ref": "Kiddushin 26b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 4,
+        "char_offset": 18,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 5,
+        "char_offset": 325,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 4,
+        "char_offset": 46,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": {
+        "segment": 5,
+        "char_offset": 323,
+        "marker": "ואי"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 26b_10-10": {
+      "index": 20,
+      "page_ref": "Kiddushin 26b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 10,
+        "char_offset": 13,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 10,
+        "char_offset": 13,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": {
+        "segment": 10,
+        "char_offset": 139,
+        "marker": "שאני"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 29b_10-12": {
+      "index": 21,
+      "page_ref": "Kiddushin 29b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 10,
+        "char_offset": 268,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 10,
+        "char_offset": 178,
+        "introducer": "כי הא ד"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 29b_15-15": {
+      "index": 22,
+      "page_ref": "Kiddushin 29b",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 15,
+        "char_offset": 204,
+        "marker": "מאי טעמא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 30a_7-7": {
+      "index": 23,
+      "page_ref": "Kiddushin 30a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 7,
+        "char_offset": 311,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": "incorrect",
+      "notes": "The story is cut off, and seems to end in the middle of a word. It should include ךָ בְּחֹרֵב״? מִכָּאן וְאֵילָךְ, רַבִּי חִיָּיא בַּר אַבָּא לָא טָעֵים אוּמְצָא עַד דְּמַקְרֵי לְיָנוֹקָא וּמוֹסְפֵיהּ"
+    },
+    "Kiddushin 31a_3-4": {
+      "index": 24,
+      "page_ref": "Kiddushin 31a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 31a_7-9": {
+      "index": 25,
+      "page_ref": "Kiddushin 31a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 7,
+        "char_offset": 69,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 9,
+        "char_offset": 289,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 31a_12-12": {
+      "index": 26,
+      "page_ref": "Kiddushin 31a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 12,
+        "char_offset": 28,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 31b_1-2": {
+      "index": 27,
+      "page_ref": "Kiddushin 31b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 1,
+        "char_offset": 42,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 2,
+        "char_offset": 94,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 31b_4-4": {
+      "index": 28,
+      "page_ref": "Kiddushin 31b",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 4,
+        "char_offset": 28,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 31b_6-8": {
+      "index": 29,
+      "page_ref": "Kiddushin 31b",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 6,
+        "char_offset": 23,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 32a_6-6": {
+      "index": 30,
+      "page_ref": "Kiddushin 32a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 6,
+        "char_offset": 18,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 32a_8-12": {
+      "index": 31,
+      "page_ref": "Kiddushin 32a",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 12,
+        "char_offset": 313,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 32b_1-1": {
+      "index": 32,
+      "page_ref": "Kiddushin 32b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 1,
+        "char_offset": 8,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 32b_2-2": {
+      "index": 33,
+      "page_ref": "Kiddushin 32b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 2,
+        "char_offset": 6,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 2,
+        "char_offset": 127,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 32b_3-5": {
+      "index": 34,
+      "page_ref": "Kiddushin 32b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 3,
+        "char_offset": 77,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 3,
+        "char_offset": 163,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33a_5-5": {
+      "index": 35,
+      "page_ref": "Kiddushin 33a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 5,
+        "char_offset": 39,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33a_6-6": {
+      "index": 36,
+      "page_ref": "Kiddushin 33a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 6,
+        "char_offset": 6,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 6,
+        "char_offset": 258,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33a_13-13": {
+      "index": 37,
+      "page_ref": "Kiddushin 33a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 13,
+        "char_offset": 65,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33a_15-15": {
+      "index": 38,
+      "page_ref": "Kiddushin 33a",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 15,
+        "char_offset": 71,
+        "introducer": "ההוא גברא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33a_16-16": {
+      "index": 39,
+      "page_ref": "Kiddushin 33a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 16,
+        "char_offset": 105,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 16,
+        "char_offset": 223,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 33b_12-12": {
+      "index": 40,
+      "page_ref": "Kiddushin 33b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 12,
+        "char_offset": 98,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39a_1-1": {
+      "index": 41,
+      "page_ref": "Kiddushin 39a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39a_10-11": {
+      "index": 42,
+      "page_ref": "Kiddushin 39a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 11,
+        "char_offset": 120,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39a_12-13": {
+      "index": 43,
+      "page_ref": "Kiddushin 39a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 13,
+        "char_offset": 152,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 13,
+        "char_offset": 111,
+        "marker": "מאי טעמא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39b_8-10": {
+      "index": 44,
+      "page_ref": "Kiddushin 39b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 8,
+        "char_offset": 35,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 10,
+        "char_offset": 63,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 10,
+        "char_offset": 85,
+        "marker": "שאני"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39b_13-13": {
+      "index": 45,
+      "page_ref": "Kiddushin 39b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 13,
+        "char_offset": 21,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 39b_15-15": {
+      "index": 46,
+      "page_ref": "Kiddushin 39b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 15,
+        "char_offset": 18,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 15,
+        "char_offset": 55,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 40a_2-2": {
+      "index": 47,
+      "page_ref": "Kiddushin 40a",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 58,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 40b_7-7": {
+      "index": 48,
+      "page_ref": "Kiddushin 40b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 41a_3-3": {
+      "index": 49,
+      "page_ref": "Kiddushin 41a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 3,
+        "char_offset": 108,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 3,
+        "char_offset": 142,
+        "introducer": "כי הא ד"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 44b_6-6": {
+      "index": 50,
+      "page_ref": "Kiddushin 44b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 45a_5-5": {
+      "index": 51,
+      "page_ref": "Kiddushin 45a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 5,
+        "char_offset": 124,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 45b_1-1": {
+      "index": 52,
+      "page_ref": "Kiddushin 45b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 1,
+        "char_offset": 52,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 45b_3-3": {
+      "index": 53,
+      "page_ref": "Kiddushin 45b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 49b_12-12": {
+      "index": 54,
+      "page_ref": "Kiddushin 49b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 12,
+        "char_offset": 19,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 12,
+        "char_offset": 159,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 12,
+        "char_offset": 35,
+        "introducer": "ההוא גברא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 50a_5-5": {
+      "index": 55,
+      "page_ref": "Kiddushin 50a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 5,
+        "char_offset": 30,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 5,
+        "char_offset": 260,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 5,
+        "char_offset": 382,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 50a_9-9": {
+      "index": 56,
+      "page_ref": "Kiddushin 50a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 9,
+        "char_offset": 103,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 50a_10-10": {
+      "index": 57,
+      "page_ref": "Kiddushin 50a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 10,
+        "char_offset": 78,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 51a_11-11": {
+      "index": 58,
+      "page_ref": "Kiddushin 51a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 11,
+        "char_offset": 40,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 11,
+        "char_offset": 200,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 11,
+        "char_offset": 48,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 52a_4-4": {
+      "index": 59,
+      "page_ref": "Kiddushin 52a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 4,
+        "char_offset": 19,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 4,
+        "char_offset": 39,
+        "marker": "שמע מינה"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 52b_1-1": {
+      "index": 60,
+      "page_ref": "Kiddushin 52b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 1,
+        "char_offset": 142,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 1,
+        "char_offset": 80,
+        "introducer": "ההוא גברא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 52b_2-2": {
+      "index": 61,
+      "page_ref": "Kiddushin 52b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 2,
+        "char_offset": 77,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 52b_3-3": {
+      "index": 62,
+      "page_ref": "Kiddushin 52b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 3,
+        "char_offset": 131,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 3,
+        "char_offset": 218,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 52b_12-14": {
+      "index": 63,
+      "page_ref": "Kiddushin 52b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 12,
+        "char_offset": 23,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 14,
+        "char_offset": 161,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 53a_8-8": {
+      "index": 64,
+      "page_ref": "Kiddushin 53a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 8,
+        "char_offset": 119,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 8,
+        "char_offset": 29,
+        "introducer": "תניא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 57a_0-1": {
+      "index": 65,
+      "page_ref": "Kiddushin 57a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 0,
+        "char_offset": 15,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 1,
+        "char_offset": 249,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 0,
+        "char_offset": 20,
+        "introducer": "כדתניא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 58a_2-4": {
+      "index": 66,
+      "page_ref": "Kiddushin 58a",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 154,
+        "introducer": "תניא"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 59a_3-3": {
+      "index": 67,
+      "page_ref": "Kiddushin 59a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 3,
+        "char_offset": 100,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 3,
+        "char_offset": 128,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 59a_4-4": {
+      "index": 68,
+      "page_ref": "Kiddushin 59a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 4,
+        "char_offset": 91,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 4,
+        "char_offset": 159,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 59a_5-7": {
+      "index": 69,
+      "page_ref": "Kiddushin 59a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 60b_8-8": {
+      "index": 70,
+      "page_ref": "Kiddushin 60b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 8,
+        "char_offset": 54,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 8,
+        "char_offset": 191,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 65b_8-9": {
+      "index": 71,
+      "page_ref": "Kiddushin 65b",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 9,
+        "char_offset": 91,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 66a_5-5": {
+      "index": 72,
+      "page_ref": "Kiddushin 66a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 5,
+        "char_offset": 26,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 5,
+        "char_offset": 386,
+        "marker": "ואי"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 66a_7-11": {
+      "index": 73,
+      "page_ref": "Kiddushin 66a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 7,
+        "char_offset": 26,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 11,
+        "char_offset": 168,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 7,
+        "char_offset": 51,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 66b_0-5": {
+      "index": 74,
+      "page_ref": "Kiddushin 66b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 0,
+        "char_offset": 26,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 5,
+        "char_offset": 209,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 0,
+        "char_offset": 55,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 69b_8-9": {
+      "index": 75,
+      "page_ref": "Kiddushin 69b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 8,
+        "char_offset": 36,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 70a_11-16": {
+      "index": 76,
+      "page_ref": "Kiddushin 70a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 71a_4-5": {
+      "index": 77,
+      "page_ref": "Kiddushin 71a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 71b_2-2": {
+      "index": 78,
+      "page_ref": "Kiddushin 71b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 71b_4-8": {
+      "index": 79,
+      "page_ref": "Kiddushin 71b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 71b_9-9": {
+      "index": 80,
+      "page_ref": "Kiddushin 71b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 9,
+        "char_offset": 59,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 9,
+        "char_offset": 90,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 9,
+        "char_offset": 172,
+        "marker": "הכי קאמר"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 72a_3-3": {
+      "index": 81,
+      "page_ref": "Kiddushin 72a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 3,
+        "char_offset": 116,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 72a_10-10": {
+      "index": 82,
+      "page_ref": "Kiddushin 72a",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 73a_5-5": {
+      "index": 83,
+      "page_ref": "Kiddushin 73a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 5,
+        "char_offset": 76,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 5,
+        "char_offset": 440,
+        "marker": "ואי"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 76b_9-10": {
+      "index": 84,
+      "page_ref": "Kiddushin 76b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 10,
+        "char_offset": 346,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 79b_6-7": {
+      "index": 85,
+      "page_ref": "Kiddushin 79b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 6,
+        "char_offset": 32,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 80a_4-4": {
+      "index": 86,
+      "page_ref": "Kiddushin 80a",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 4,
+        "char_offset": 84,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 4,
+        "char_offset": 204,
+        "source": "llm"
+      },
+      "v9_text_span_start": {
+        "segment": 4,
+        "char_offset": 96,
+        "introducer": "מעשה ב"
+      },
+      "v9_text_span_end": {
+        "segment": 4,
+        "char_offset": 284,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 80b_11-11": {
+      "index": 87,
+      "page_ref": "Kiddushin 80b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 11,
+        "char_offset": 17,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 80b_12-12": {
+      "index": 88,
+      "page_ref": "Kiddushin 80b",
+      "category": "different_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 12,
+        "char_offset": 124,
+        "source": "llm"
+      },
+      "v10_text_span_end": {
+        "segment": 12,
+        "char_offset": 157,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": {
+        "segment": 12,
+        "char_offset": 62,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81a_2-2": {
+      "index": 89,
+      "page_ref": "Kiddushin 81a",
+      "category": "recovered_text",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": {
+        "segment": 2,
+        "char_offset": 64,
+        "introducer": "ההיא"
+      },
+      "v9_text_span_end": {
+        "segment": 2,
+        "char_offset": 291,
+        "marker": "אלא"
+      },
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81a_10-11": {
+      "index": 90,
+      "page_ref": "Kiddushin 81a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": null,
+      "v10_text_span_end": {
+        "segment": 11,
+        "char_offset": 160,
+        "source": "llm"
+      },
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81a_12-12": {
+      "index": 91,
+      "page_ref": "Kiddushin 81a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 12,
+        "char_offset": 30,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81a_13-13": {
+      "index": 92,
+      "page_ref": "Kiddushin 81a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 13,
+        "char_offset": 36,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81a_14-14": {
+      "index": 93,
+      "page_ref": "Kiddushin 81a",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 14,
+        "char_offset": 49,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81b_1-3": {
+      "index": 94,
+      "page_ref": "Kiddushin 81b",
+      "category": "new_trim",
+      "v10_source": "llm",
+      "v10_text_span_start": {
+        "segment": 1,
+        "char_offset": 70,
+        "source": "llm"
+      },
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    },
+    "Kiddushin 81b_14-14": {
+      "index": 95,
+      "page_ref": "Kiddushin 81b",
+      "category": "both_full",
+      "v10_source": "llm_kept_full",
+      "v10_text_span_start": null,
+      "v10_text_span_end": null,
+      "v9_text_span_start": null,
+      "v9_text_span_end": null,
+      "verdict": null,
+      "notes": ""
+    }
+  }
+}
