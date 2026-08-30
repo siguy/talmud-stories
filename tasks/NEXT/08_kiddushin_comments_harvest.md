@@ -61,10 +61,19 @@ rulers.
      boundary corrections, this is probably one too — and if so it is a boundary target
      stated by example rather than in words. Confirm before using it as one.
 
+7. **While you are here: 16 Kiddushin verdicts have never been folded into the golden.**
+   `results/canonical/kiddushin_canonical.json` was built from the 2026-04-23 round only
+   (`feedback_source` says so). Two later rounds sit unused:
+   `validation/feedback/kiddushin_review_2026-05-26 (1).json` (1 reviewed) and
+   `jeff comms/wave4_kiddushin_review_2026-07-06.json` (15 reviewed). That is Lesson 1
+   happening again — feedback split into piles and one pile never revisited. Append them
+   to the ledger and either fold them in or record why not, per Lesson 17.
+
 ## How you know it worked
 
 Every remark either sorted and used, or explicitly listed as unusable with a reason.
-Nothing silently dropped. The count to reconcile against is **10**.
+Nothing silently dropped. The count to reconcile against is **10** remarks, plus the
+**16** unincorporated verdicts in item 7.
 
 ## Guardrails
 

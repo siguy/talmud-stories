@@ -31,11 +31,14 @@ our output, so they are circular. Plus the one he marked `הוספתי--י.ר.` 
 
 **Recall denominator: 89**, not 95 and not 94.
 
-We caught this only because the appendix survived as a separate file. **Jeff is preparing
-the same appendix for Gittin, Yevamot and Eruvin** — if those get merged without a
-marker, each list silently loses the ability to measure what we missed. Ask him to keep
-it separate; check every list against what we sent him before trusting it as blind
-(`scripts/check_appendix_coverage.py`).
+We caught this only because the appendix survived as a separate file.
+
+**Gittin, Yevamot and Eruvin cannot have this problem — and that makes them the best
+ground truth we have.** We have never run the detector on those tractates, so there is
+nothing of ours for Jeff to have merged. Their lists are pristine. They are also the only
+place we can run a *floor* test: whatever is on his list we should at minimum find, with
+no prior output to have primed either side. The contamination risk there is entirely in
+the future, and it starts the moment we send him results.
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
@@ -93,10 +96,11 @@ his review notes say cut it. Blocks the end rule for capability 4.
 **To add when we next write:**
 1. At what error rate does reviewing our output become worse than working from scratch?
    That number sets the Classification gate and only he can answer it.
-2. **Keep the appendix separate — for Gittin, Yevamot and Eruvin.** In Kiddushin the
-   appendix entries were merged into the list, which cost us five of its stories as blind
-   ground truth. A separate file, or any marker, prevents it. Costs him nothing, and it
-   cannot be undone afterwards. → `tasks/NEXT/09` item 1b
+2. **When we send results for a new tractate, ask him to keep his appendix separate.**
+   In Kiddushin the appendix entries were merged into the list and cost us five of its
+   stories as blind ground truth. Not urgent — Gittin, Yevamot and Eruvin are clean until
+   we run there — but it must be said *before* the first review round, not after.
+   → `tasks/NEXT/09` item 1b
 
 ## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
@@ -156,10 +160,17 @@ BLIND   (can measure recall)
                  89 blind: 95 parsed, minus 1 he added himself, minus 5 appendix
                  entries (ours, merged into his list -> circular). Denominator 89.
                  ~180 boundary targets derivable from the 89 (NEXT/07)
-  Gittin 112 · Yevamot 102 · Eruvin 73   ← INDICATED only; each needs its own parse,
-                                            and no detector output exists there yet
+  Gittin 112 · Yevamot 102 · Eruvin 73   ← PRISTINE. We have never run the detector on
+                                            these, so nothing of ours can have been
+                                            merged in. Each needs its own parse; a
+                                            detector run there is a clean floor test.
 CIRCULAR (precision and consistency only — never recall)
-  Ketubot   182 golden stories · Kiddushin 85
+  Ketubot   golden: 182 entries, 159 accepted (23 NOT_A_STORY) — v7 + v9, many rounds
+  Kiddushin golden:  96 entries,  85 accepted (11 NOT_A_STORY) — v7 only, ONE round
+                     16 verdicts from the May-26 and Jul-06 rounds are NOT folded in
   70 boundary corrections across 8 review rounds
   10 Kiddushin review remarks, each anchored to its passage (NEXT/08)
 ```
+
+**Quote golden counts the same way.** "Ketubot 182 · Kiddushin 85" compared entries
+against accepted-only. Use 182/96 or 159/85, never one of each.

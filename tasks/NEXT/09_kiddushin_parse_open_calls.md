@@ -21,18 +21,21 @@ he merged into his list. They are in his list because of our output, so they are
 circular. **`blind: false`, denominator 89.** See
 [the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4.
 
-## 1b. Ask Jeff to keep the next appendices separate — **the live one**
+## 1b. Say it before the first review round on a new tractate — **not urgent yet**
 
-The merge already cost us five of Kiddushin's stories as blind ground truth, and we only
-noticed because the appendix survived as its own file. Jeff is preparing the same thing
-for **Gittin, Yevamot and Eruvin**.
+The merge cost us five of Kiddushin's stories as blind ground truth, and we only noticed
+because the appendix survived as its own file.
 
-**Do:** one sentence in the next email — keep the appendix a separate file, or mark its
-entries. Costs him nothing; cannot be reconstructed afterwards.
+**Gittin, Yevamot and Eruvin are not at risk today.** We have never run the detector on
+them, so there is nothing of ours for Jeff to have merged; their lists are pristine. The
+risk begins the moment we send him results for one of those tractates.
 
-**And for us:** every expert list gets checked against what we sent him *before* it is
-trusted as blind. `scripts/check_appendix_coverage.py` is that check. Run it on each new
-tractate list; anything it matches is not blind.
+**Do, at that point and not before:** ask him to keep his appendix a separate file, or to
+mark its entries. Costs him nothing; cannot be reconstructed afterwards.
+
+**And for us, always:** `scripts/check_appendix_coverage.py` on any expert list before
+calling it blind. On a tractate we have never run it will trivially come back clean —
+which is itself the evidence.
 
 ## 1c. 71a and 81b are in the appendix but in none of our runs
 
