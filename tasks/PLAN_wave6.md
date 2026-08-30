@@ -124,13 +124,24 @@ disqualifier list actively suppresses it.
 
 ### Two adjacent defects found while measuring this (Lesson 18), NOT owned by Wave 6
 
-1. **The Mishnah filter contradicts the golden.** Corpus-wide it moves 5 stories to
-   `mishnah_stories`; **4 of them the golden accepts as real stories** (Ketubot 14b seg 11,
-   54b segs 1-3, 77a seg 8, 95b seg 0). Those 4 are **31% of the 13 golden false negatives
-   on Ketubot**. Jeff's blind list contains no Mishnah-only story, so the filter costs no
-   measured recall — but it silently deletes stories our own expert-validated dataset
-   accepts, and no harness can see it. Decide the premise before Wave 6 measures anything
-   against the golden.
+1. **The Mishnah filter contradicts the golden. MEASURED 2026-08-30 —**
+   [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../docs/golden/v11/mishnah_filter_delta_2026-08-30.md).
+   Corpus-wide it moves 5 stories to `mishnah_stories`; **4 of them the golden accepts as
+   real stories** (Ketubot 14b seg 11, 54b segs 1-3, 77a seg 8, 95b seg 0). Folding them
+   back moves Ketubot **FN 15 → 11, recall 0.9085 → 0.9329, F1 0.9003 → 0.9134**, so the
+   filter alone accounts for **27% of Ketubot's golden false negatives**. *(This bullet
+   previously said "31% of the 13"; brief 10 grew the golden 182 → 187 and with it the
+   denominator. The 4 is unchanged.)* On Kiddushin the filter is **right** — its one case
+   is `NOT_A_STORY` in the golden, and folding it back costs a false positive. Jeff's blind
+   list contains no Mishnah-only story, so the filter costs no measured recall — the one
+   expert story that now flags `in_mishnah_filtered` is the 77a locator artifact, not a
+   loss. The premise is **Jeff's own** ("catalogued with Mishnah stories, not Talmud
+   stories", Kiddushin 50b) and so is the acceptance of all four; what over-reaches is our
+   implementation, which deletes where he asked for a separate catalogue. Question drafted
+   at [`docs/golden/v11/email_jeff_next_open_questions.md`](../docs/golden/v11/email_jeff_next_open_questions.md).
+   Both harnesses can now see the loss (`scripts/report_mishnah_filter_delta.py`;
+   `measure_recall_vs_expert_list.py` reports it without moving the headline number).
+   Decide the premise before Wave 6 measures anything against the golden.
 2. **`_tag_mishnah_segments()` mislabels Gemara as Mishnah at chapter boundaries.** At a
    new chapter Sefaria marks the opening Mishnah with the chapter incipit in
    `<big><strong>` (e.g. `אף על פי` on Ketubot 54b seg 5) instead of `מתני׳`. The

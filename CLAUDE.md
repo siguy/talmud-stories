@@ -1,7 +1,7 @@
 # Claude.md - Talmud Story Detection
 
 ## Project
-Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
+Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (187 entries, 164 accepted as stories; composite 0.9115 measured 2026-08-30). Expanding to additional tractates.
 
 ## Current State
 **See [`STATUS.md`](STATUS.md) — where the project is, and the first thing to read in
@@ -23,9 +23,16 @@ task, each executable in a fresh session with no other context.
 ```
 pages[].segments[] → contains english/hebrew text
 pages[].stories[] → references segments by index (NO text)
+pages[].mishnah_stories[] → stories Stage 4g WITHHELD from stories[] (same shape)
 
 When flattening stories, MUST copy: page_segments: page.segments
 ```
+
+`stories[]` is not the whole output. Stage 4g moves Mishnah-internal stories to
+`mishnah_stories[]`, and no harness or UI reads that key — a withheld story therefore
+scores as a story we never found (4 of Ketubot's 15 golden false negatives; Lesson 26).
+Any code that reads a run for scoring or display must decide about that key explicitly.
+Report it with `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
 
 ## Running the Detector on a New Tractate
 See `docs/golden/new_tractate_workflow.md` for the step-by-step guide.
@@ -52,11 +59,12 @@ scripts/                          # Execution and analysis scripts
   analyze_canonical_feedback.py   #   Analyze all feedback rounds
   apply_boundary_corrections.py   #   Apply boundary/merge corrections
   evaluate_golden.py              #   IMMUTABLE evaluation harness
+  report_mishnah_filter_delta.py  #   What Stage 4g withholds, and its cost vs the golden
   boundary_lookup.py              #   Match Hebrew markers to segments
   autoresearch/                   #   Experiment infrastructure (unused)
 results/                          # See results/README.md for full layout
   canonical/                      #   GOLDEN LABELS (Jeff's validations)
-    ketubot_canonical.json        #     Ketubot golden (182 stories, iteration 10)
+    ketubot_canonical.json        #     Ketubot golden (187 entries; +5 from Jeff's blind 2005 list)
     kiddushin_canonical.json      #     Kiddushin golden (85 stories from Jeff's 2026-04-23 review)
     source_runs/                  #     Detector runs that fed golden corrections
                                   #     (formerly results/v10/ — NOT a detector version)
@@ -92,7 +100,7 @@ archive/                          # Old versions (reference only)
 ## Key Files
 | File | Purpose |
 |------|---------|
-| `results/canonical/ketubot_canonical.json` | **THE golden dataset** (182 stories) |
+| `results/canonical/ketubot_canonical.json` | **THE golden dataset** (187 entries, 164 accepted) |
 | `scripts/evaluate_golden.py` | IMMUTABLE evaluation harness |
 | `docs/golden/v7/baseline_ketubot.json` | v7 baseline scores (historical 0.93; not reproducible — Lesson 11) |
 | `docs/golden/v9/wave3_results.md` | **Wave 3 writeup** (start here for current state) |
@@ -122,7 +130,10 @@ archive/                          # Old versions (reference only)
 | `scripts/verify_wave1.py` | Wave 1 verification |
 | `scripts/audit_text_spans.py` | **Structural gate** — mid-word / clause-edge rates; `--strict` fails the build |
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
-| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list |
+| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld |
+| `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
+| `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` | The measurement + why it is a scope question for Jeff |
+| `docs/golden/v11/email_jeff_next_open_questions.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — 149 stories, detector-blind ground truth |
 | `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
@@ -174,3 +185,5 @@ When making changes, update these files as relevant:
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
+- Move detector output to a new key without making the harnesses read it (Lesson 26) — an invisible deletion reads as a model failure
+- Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 26)

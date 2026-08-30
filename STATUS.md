@@ -69,13 +69,19 @@ Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
   `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
   disqualifiers. The empty production `stories` list is the ~1/8 tail. Seed case written
   into [`tasks/PLAN_wave6.md`](tasks/PLAN_wave6.md).
-- **A Mishnah filter is silently deleting expert-validated stories.**
-  `filter_mishnah_only_stories()` moves stories to `mishnah_stories`, which **neither**
-  `measure_recall_vs_expert_list.py` **nor** `evaluate_golden.py` reads. 4 of the 5 it
-  moves are accepted stories in the golden — **31% of Ketubot's 13 golden false
-  negatives**. Two of those 4 are plain Gemara mis-tagged at a chapter boundary, where
-  Sefaria uses the chapter incipit instead of `מתני׳` (7 pages affected). Costs no
-  measured recall; needs a decision, not a reflex. Detail in `PLAN_wave6.md`.
+- **A Mishnah filter is silently deleting expert-validated stories — now measured, and
+  no longer silent.** `filter_mishnah_only_stories()` moves stories to `mishnah_stories`,
+  which **neither** `measure_recall_vs_expert_list.py` **nor** `evaluate_golden.py` reads.
+  4 of the 5 it moves are accepted in the golden; folding them back moves Ketubot's
+  false negatives **15 → 11 and recall 90.9% → 93.3%**, so the filter alone accounts for
+  **27% of them**. (Was reported as "31% of 13" — the denominator moved when brief 10 grew
+  the golden 182 → 187; the 4 did not.) Two of the 4 are plain Gemara mis-tagged at a
+  chapter boundary, where Sefaria uses the chapter incipit instead of `מתני׳` (7 pages).
+  On Kiddushin the filter is **right** — its one case is `NOT_A_STORY` in the golden.
+  Costs no measured recall. **The premise is Jeff's own**, and so is the acceptance of all
+  four: he asked for Mishnah stories to be *catalogued separately*; we built a deletion.
+  Needs his answer, not a reflex. → [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](docs/golden/v11/mishnah_filter_delta_2026-08-30.md),
+  `scripts/report_mishnah_filter_delta.py`
 - **A runner bug was fixed and guarded:** a failed API call could be recorded as a
   considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
 - **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
@@ -88,11 +94,22 @@ part of the story we display, or the discussion that follows it? His 2005 lists 
 his review notes say cut it. Blocks the end rule for capability 4.
 → draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
 
-**To add when we next write:** at what error rate does reviewing our output become worse
-than working from scratch? That number sets the Classification gate and only he can
-answer it. Also a correction we owe him: the email said Ketubot 77a is a story "our own
-set has" — it is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8);
-his is at segs 13-14. The substance stands (we do miss his), the claim did not.
+**To add when we next write** — drafted in
+[`docs/golden/v11/email_jeff_next_open_questions.md`](docs/golden/v11/email_jeff_next_open_questions.md),
+three items, ask in this order:
+
+1. **NEW — do stories quoted inside a Mishnah belong in the database?** He told us
+   (Kiddushin 50b) they should be "catalogued with Mishnah stories, not Talmud stories";
+   he also marked **correct** all four Ketubot stories our filter now deletes. We read him
+   as asking for a separate catalogue and will build that unless he says otherwise. Two
+   genuine cases to show him: 14b seg 11, 77a seg 8. Do **not** send him 54b / 95b — those
+   are our tagger bug.
+2. At what error rate does reviewing our output become worse than working from scratch?
+   That number sets the Classification gate and only he can answer it.
+3. A correction we owe him: the email said Ketubot 77a is a story "our own set has" — it
+   is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8); his is at
+   segs 13-14. The substance stands (we do miss his), the claim did not. Pairs naturally
+   with item 1 — same daf.
 
 **Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
 still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
