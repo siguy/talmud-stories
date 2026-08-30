@@ -79,6 +79,94 @@ We ran the detector on Kiddushin (2a-82b, 162 pages) — the first tractate beyo
 
 **Status:** Review UI sent to Jeff. Awaiting his feedback to score against the Ketubot baseline (target: 0.85+ composite).
 
+## The Day We Fixed the Ruler (2026-08-30)
+
+This is the most important thing in the file, so read it even if you skip the rest.
+
+**The setup.** We had a test for whether the program picks the right start and end of a
+story. It had 52 questions, 35 of them gradeable. We'd been tuning against it for weeks.
+
+**The problem, which nobody noticed for months.** Every one of those 52 questions was
+built from Jeff's *corrections* — places he'd told us we were wrong. That's like grading
+a student only on the questions they missed last time. Two things follow, and both are
+bad. Any change looks like a huge improvement, because you're only measuring the cases
+that were already broken. And you can never, ever detect that you broke something that
+used to work, because "used to work" isn't in the test.
+
+The test file's own header said this out loud. We quoted its numbers anyway, because it
+was the only test we had. That's the real lesson: a warning you've read and worked
+around is not a warning you've heeded.
+
+**The fix, and where it came from.** Simon pushed: why only 52? Use everything Jeff gave
+us. It turned out Jeff wrote a list of Ketubot stories in **2005** — twenty years before
+this program existed, so it couldn't possibly be contaminated by our output — and he
+wrote each story out **in full Hebrew**. We'd had that file on disk for two days and had
+used it only to count how many stories we'd found.
+
+The full text was the boundary information. If you know exactly where a story's text
+starts and ends, you know the boundaries.
+
+**The engineering bit.** You can't just search for Jeff's text in the Talmud, because
+Jeff transcribed from his own edition — unvocalised, and abbreviated (א"ל where the
+printed text has אמר ליה). Exact search finds almost nothing. What works is *sequence
+alignment*: the same family of algorithm that `git diff` uses to line up two versions of
+a file, and that biologists use to line up DNA. It finds the longest run of matching
+pieces and tolerates the gaps. 147 of 149 stories aligned, with 99% of Jeff's letters
+matched in the right order.
+
+**The payoff.** 35 gradeable questions became 249. And here's the number that mattered:
+we ran the *identical program twice* and scored it on both tests. On the old 15-question
+test it scored 60% and then 67% — a 7-point swing from nothing but the AI's own
+randomness. On the new 168-question test it scored 79% and 79%. **The ruler stopped
+wobbling.** Every tuning decision we'd made before that was, in a real sense, unfalsifiable.
+
+**Then it immediately told us something we didn't want to hear.** On the old test, our
+fancy boundary-trimming doubled the score on half the corpus: 33% to 67%. On the new
+neutral test, the plain untrimmed version was *already 79% right*, and the trimming
+barely moved it. The gain was real but a fraction of what we'd claimed.
+
+**And then a second twist, which is the subtlest thing in this project.** We read the
+list of boundaries we'd had right and broken — a list the old test could never have
+produced. The pattern was sharp: trimming the *start* of a story helped 15 times and
+hurt twice. Trimming the *end* helped 7 times and hurt 12, and every single failure cut
+too early.
+
+So I capped end-trimming, and the score went up. Then I checked it against the *other*
+ruler, and the score went **down**.
+
+Reading the disputed cases explained it. The program was cutting the rabbinic legal
+discussion that follows a story. Jeff's 2005 list keeps that. Jeff's 2026 notes say
+*"the legal discussions that follow the story need not be quoted."* Both are Jeff. Neither
+is wrong. In 2005 he was building an **index** — where to find a story in its context —
+so the legal frame belonged. In 2026 he's reviewing a tool that **displays** stories, so
+it doesn't.
+
+Split by which edge: the two Jeffs agree on where stories *begin* 7 times out of 7, and
+disagree about where they *end*.
+
+**Why that's the deepest thing here.** A story's beginning is a fact about the text. Its
+ending depends on what the story is *for*. We had been treating "where does the story
+end" as a question with a right answer, and it isn't — it's a product decision wearing
+the costume of a measurement. No amount of prompt engineering resolves it, and any number
+we quote can be moved by choosing a ruler.
+
+**What a good engineer takes from this:**
+
+1. **Ask what an artifact was made for, not just whether it's accurate.** Two datasets
+   from the same expert can encode two different questions. We had an "84% agreement"
+   number and nearly used it to justify merging them. The 16% that disagreed wasn't
+   noise — it was the entire definition of one edge.
+2. **Measure your instrument before you trust your measurements.** Running the same code
+   twice and reporting the spread costs one extra run. We'd been quoting single-run
+   comparisons for weeks, where the effects we chased were smaller than the wobble.
+3. **A test built from failures is a fixed-the-failures test, and nothing else.** If it's
+   all you have, say so every time you quote it.
+4. **Re-read your raw inputs.** The 2005 file had been fetched for one purpose and the
+   answer to a completely different question was sitting in the same column.
+5. **The best change of the day involved no AI at all.** It came from reading a list of
+   twelve failures and noticing they all pointed the same direction. Analysis beat
+   engineering, and it usually does.
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.

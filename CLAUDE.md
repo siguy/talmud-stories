@@ -3,26 +3,25 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
-## Current State (August 2026)
-- **Golden Ketubot dataset**: 182 expert-validated stories (`results/canonical/ketubot_canonical.json`)
-- **Golden Kiddushin dataset**: 85 expert-validated stories (`results/canonical/kiddushin_canonical.json`)
-- **Evaluation framework**: `scripts/evaluate_golden.py` (IMMUTABLE)
-- **Active output**: v10 **no-trim** — `results/v10/wave4_notrim/`. Ketubot composite **0.9171**, Kiddushin **0.8859**.
-- **TRUE RECALL MEASURED (2026-08-28): 96.0% on Ketubot** against Jeff's detector-blind
-  2005 story list (`jeff comms/b.ketubot (1).doc`, 149 stories). This closes the
-  circular-recall problem. 6 misses; 5 of them also absent from the golden.
-  See `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`.
-- **Wave 4 (v10) text-spans are REVERTED.** The LLM char-offset mechanism severed a
-  Hebrew word in 55% of its 189 cuts and was judged incorrect in 9 of 9 reviewed
-  cases. Spans stripped; score unchanged. See
-  `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`.
-- **Next step: Wave 6** (`tasks/PLAN_wave6.md`) — encode Jeff's hypothetical-vs-actual
-  story criteria. Promoted ahead of Wave 5 (`tasks/PLAN_wave5.md`, clause-anchored
-  boundaries) because half the measured recall misses are the halakhic-story-plus-ruling
-  shape Jeff's criteria explicitly call a story, and boundary trimming is invisible
-  to the eval harness.
-- **Not yet sent:** reply to Jeff. Walk the open-items tracker in
-  `validation/feedback/jeff_2026-07-06_feedback_ledger.md` first.
+## Current State (2026-08-30)
+- **Golden datasets**: Ketubot 182 stories, Kiddushin 85 (`results/canonical/`)
+- **Detection eval**: `scripts/evaluate_golden.py` (IMMUTABLE). Ketubot **0.9171**, Kiddushin **0.8859**
+- **TRUE RECALL: 96.0% on Ketubot** vs Jeff's detector-blind 2005 list (149 stories)
+- **Boundary eval rebuilt 2026-08-30** — 35 gradeable targets -> **249**; noise floor
+  7 points -> **0**. Two rulers, never pooled (Lesson 24):
+  - `tests/expert_boundary_targets_2005.json` — 294 neutral, Ketubot, catches regressions
+  - `tests/expert_boundary_targets_v2.json` — 70 corrections, both tractates
+- **Current best**: Wave 5 clause spans + `MAX_END_TRIM_CLAUSES=3` — **81% / 86%** on the
+  neutral ruler vs 75% / 83% untrimmed. Ceiling is ~87%: 13% of Jeff's boundaries do not
+  sit on a clause edge.
+- **OPEN DECISION (blocks end-boundary work):** Jeff-2005 keeps the legal discussion
+  after a story; Jeff-2026 says cut it. Start boundaries agree 7/7, ends split. The cap
+  is shipped but **CONTESTED**. See `docs/golden/v11/trim_asymmetry_2026-08-30.md`.
+- **Wave 5b: SHELVED.** Its trigger ("stalls near 50%") came from the biased ruler; the
+  real number is 81% of an 87% ceiling. Salvage list in `tasks/RESUME_after_clear.md`.
+- **Next:** Ein Yaakov as a neutral ruler for Kiddushin (on Sefaria, verified); read the
+  33 remaining misses; fix the second-story over-cut (Ketubot 62a, 105b); then Wave 6.
+- **Not yet sent:** reply to Jeff. Walk the ledger's open-items tracker first.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
