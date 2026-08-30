@@ -1,6 +1,7 @@
 # NEXT 02 — Why is Ketubot 77a never proposed?
 
-**Self-contained.** Read `STATUS.md` first. **Depends on Jeff: no.** **Cost: reading time.**
+**Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
+**Capability: 2 Detection.** **Depends on Jeff: no.** **Cost: reading time.**
 
 ## Why this one passage matters more than it looks
 

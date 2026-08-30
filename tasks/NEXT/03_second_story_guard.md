@@ -1,6 +1,7 @@
 # NEXT 03 — Stop discarding a second story that shares a segment
 
-**Self-contained.** Read `STATUS.md` first. **Depends on Jeff: no** — this is wrong
+**Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
+**Capability: 4 Boundaries.** **Depends on Jeff: no** — this is wrong
 under every definition of where a story ends. **Cost: small, plus one measured run.**
 
 ## The bug, with the evidence

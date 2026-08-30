@@ -1,6 +1,7 @@
 # NEXT 01 — Does Stage 1 throw away real stories?
 
-**Self-contained.** Read `STATUS.md` first, then this. No other context needed.
+**Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first, then this.
+**Capability: 1 Triage.** Gate: >=98% survival, provisional. No other context needed.
 **Depends on Jeff: no.** **Cost: minutes, pennies.** **Owner: unassigned.**
 
 ## The claim to test
@@ -53,5 +54,5 @@ tractate, and it compounds at Talmud scale.
 
 ## When done
 
-Findings → `docs/golden/workflow/triage_recall_<date>.md`. Update `STATUS.md` axis 1.
+Findings → `docs/golden/workflow/triage_recall_<date>.md`. Update `STATUS.md` — capability: **1 Triage**.
 If it changes what we would tell Jeff, note it — a reply is pending.

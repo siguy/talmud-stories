@@ -6,9 +6,11 @@ drifted, which is exactly the problem it was meant to solve.
 ## Read, in this order
 
 1. **[`STATUS.md`](../STATUS.md)** — where the project is. One page. Start here.
-2. **[`tasks/NEXT/`](NEXT/)** — the ready work. Each brief is self-contained: pick one,
+2. **[`FRAMEWORK.md`](../FRAMEWORK.md)** — the six capabilities, their metrics and
+   gates, and the words to use. Read once; it changes rarely.
+3. **[`tasks/NEXT/`](NEXT/)** — the ready work. Each brief is self-contained: pick one,
    read it, execute it in this session. No other context required.
-3. **[`tasks/lessons.md`](lessons.md)** — 24 durable rules. Skim the headings; read any
+4. **[`tasks/lessons.md`](lessons.md)** — 24 durable rules. Skim the headings; read any
    lesson a brief cites by number.
 
 That is enough to start. Everything else is reference:

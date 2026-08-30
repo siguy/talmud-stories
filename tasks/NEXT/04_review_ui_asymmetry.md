@@ -1,6 +1,7 @@
 # NEXT 04 — Fix the review UI before Jeff sees another round
 
-**Self-contained.** Read `STATUS.md` first. **Depends on Jeff: no, but it is on the
+**Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
+**Capability: 5 Review.** **Depends on Jeff: no, but it is on the
 critical path for the next thing we send him.**
 
 ## The problem

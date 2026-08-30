@@ -1,94 +1,112 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-08-30.** This file is REWRITTEN, never appended. It is the
-entry point: read this first, in any session. One page, on purpose.
+**Last rewritten: 2026-08-30 (evening).** Rewritten every session, never appended.
+Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
+counts as good enough. Language and capability names come from there.
 
 ---
 
-## The one-paragraph version
+## The headline
 
-We built a detector that finds narrative stories in the Talmud. Ketubot and Kiddushin
-are done to the point of expert-validated golden datasets. **In August 2026 the project
-changed character: it stopped being about improving the detector and became about
-learning to measure it** — because it turned out most of our numbers were measuring
-our own selection. Today the measurement is honest for the first time. The next moves
-are consequences of that.
+**Jeff's expert lists for four more tractates arrived** (`jeff comms/8-30-2026/`) and all
+four parse with our existing tooling: **Kiddushin 105, Gittin 112, Yevamot 102, Eruvin
+73 — 392 blind stories.** These were the single highest-value thing we had asked for.
 
-## The three axes — all quality lives on one of these
+Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
+can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
+Kiddushin had none, which is why three cells in the scoreboard read "unmeasured." That
+is now fixable, and three tractates we have never touched become testable.
 
-| | question it answers | Ketubot | Kiddushin | what blocks it |
+## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
+
+| capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
-| **1. Detection** | do we find the stories? | **96%** recall vs Jeff's blind 2005 list — but Stage 1 examines only **44% of pages** | **unmeasured** — no independent list exists | nothing. `NEXT/01` |
-| **2. Classification** | is it really a story? | composite **0.9171** vs our golden | composite **0.8859** | Jeff's criteria received 2026-07-06, still not encoded — Wave 6 |
-| **3. Boundaries** | what text do we show? | **80% / 84%** on the neutral ruler (untrimmed: 75% / 83%; ceiling ~87%) | **60% / 73%** on 15 targets, ±7pt noise | Jeff's answer on where an entry ends |
+| **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **now possible** | ≥98% *(provisional)* |
+| **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **now possible** | ≥95% *(provisional)* |
+| **3 Classification** | precision, CIRCULAR | 86% *(Mar 2026, stale)* | 68% *(Apr 2026, stale)* | ≥85% *(provisional)* |
+| **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
+| **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
+| **6 Publication** | — | not started | not started | — |
 
-Read the table as: detection is better than we thought but measured on half the corpus;
-classification is stale; boundaries are near their ceiling on Ketubot and unmeasurable
-on Kiddushin.
+**Four of five gates are provisional** — see FRAMEWORK §2b. They compose
+(`triage × detection = end-to-end`), so only the end-to-end number needs defending, and
+that is a product decision, not a technical one. Two questions are open there: one for
+Simon, one for Jeff.
 
-## What is true today that was not true a week ago
+**The weakest capability is Classification, and we cannot currently see it** — both
+precision numbers are from March/April on older detector versions. There is no current
+measurement of the capability furthest from its gate.
 
-- **True recall exists.** 96% on Ketubot against Jeff's 2005 list — genuinely blind,
-  written twenty years before the detector. Every earlier accuracy number was the
-  system checked against stories it had itself proposed.
-- **The boundary ruler is honest.** It was 52 questions, all of them cases Jeff had
-  flagged as wrong, so it could never show a boundary we had right and broke. Rebuilt
-  from his 2005 list: **35 gradeable targets → 249**, run-to-run noise **7 points → 0**.
-- **Wave 5's benefit is much smaller than claimed.** The old ruler said trimming
-  doubled us on Ketubot 61-112 (33% → 67%). The neutral ruler says the untrimmed
-  boundary was already 79% right.
-- **Stage 1 discards 56% of Ketubot pages** before anything looks for a story. Half our
-  known misses are there. Never noticed because nothing measured it.
-- **Wave 5b is shelved.** Its trigger was "revive if we stall near 50%" — measured on
-  the biased ruler. The real number is 80% of an ~87% ceiling.
+## What changed today
 
-## Waiting on Jeff (email sent 2026-08-30)
+- **Measurement became honest.** The boundary test set was built entirely from Jeff's
+  corrections, so it could never reveal a boundary we had right and broke. Rebuilt from
+  his blind 2005 list: **35 gradeable targets → 249**, run-to-run noise **7 points → 0**.
+  → [`docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md`](docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md)
+- **Boundary trimming is worth much less than claimed.** The old ruler said it doubled
+  us on Ketubot 61-112 (33%→67%). The blind ruler says untrimmed was already 79% right.
+  → [`docs/golden/v11/trim_asymmetry_2026-08-30.md`](docs/golden/v11/trim_asymmetry_2026-08-30.md)
+- **Triage is a trade, not a defect.** 98% recall while examining 44% of pages. Worth
+  pricing, not reflexively fixing.
+- **The six recall misses split into two populations.** Five were missed *and* absent
+  from our golden; one (Ketubot 77a) is in our golden and still never proposed — a
+  **Detection** failure, since nothing was proposed at all, not even a rejected candidate.
+  → [`docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md`](docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md)
+- **A runner bug was fixed and guarded:** a failed API call could be recorded as a
+  considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
+- **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
+  `tasks/NEXT/03`.
 
-One question: **when a ruling is what makes a passage a story at all, is that ruling
-part of the story we display, or the discussion that follows it?** His 2005 list keeps
-it; his review notes say cut it. Both were made for different purposes; neither answers
-this. Blocks axis 3's end rule. Also asked whether his lists cover other tractates —
-that is the only route to a neutral ruler for Kiddushin.
+## Waiting on Jeff — email sent 2026-08-30
 
-## In flight
+**The question:** when a ruling is what makes a passage a story at all, is that ruling
+part of the story we display, or the discussion that follows it? His 2005 lists keep it;
+his review notes say cut it. Blocks the end rule for capability 4.
+→ draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
 
-Nothing is mid-execution. The tree is clean and all work is committed.
+**To add when we next write:** at what error rate does reviewing our output become worse
+than working from scratch? That number sets the Classification gate and only he can
+answer it.
 
-## Next — see `tasks/NEXT/`, each brief is self-contained
+## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
 
-| | task | depends on Jeff? | why now |
+| | task | capability | depends on Jeff? |
 |---|---|---|---|
-| **01** | Stage 2 over the 124 triage-discarded pages | no | largest unmeasured thing in the project |
-| **02** | Diagnose Ketubot 77a | no | sharpest signal about the classifier; feeds Wave 6 |
-| **03** | Stop discarding a second story in one segment | no | wrong under every definition |
-| **04** | Fix the review UI Hebrew/English asymmetry | no | on the critical path for the next review round |
-| — | Wave 6 (encode Jeff's criteria) | no | axis 2 is the stalest axis |
-| — | Encode the end rule, re-check Ketubot | **yes** | — |
+| **NEW** | Run the four new lists: parse, align, measure recall + build blind boundary sets | 1, 2, 4 | no |
+| 00 | Write the per-capability history (what we tried, what we reverted, current best) | all | no |
+| 01 | Price the triage trade over the 124 discarded pages | 1 | no |
+| 02 | Why is Ketubot 77a never proposed | 2 | no |
+| 03 | Stop discarding a second story sharing a segment | 4 | no |
+| 04 | Fix the review UI Hebrew/English asymmetry | 5 | no |
+| — | Wave 6 — encode Jeff's criteria | 3 | no |
+
+**Recommended order:** the new lists first. They unblock three "unmeasured" cells and
+change what the other briefs are worth doing on.
 
 ## Where things live — one job each
 
 | file | its one job |
 |---|---|
-| **`STATUS.md`** | where we are today. Rewritten each session. **Start here.** |
+| **`STATUS.md`** | where we are. Rewritten each session. **Start here.** |
+| **`FRAMEWORK.md`** | the six capabilities, how each is measured, what the gates are and why. |
 | `tasks/NEXT/*.md` | one self-contained brief per ready task. Delete when done. |
-| `tasks/lessons.md` | durable rules learned the hard way. Append-only. 24 of them. |
+| `tasks/lessons.md` | 24 durable rules. Append-only. |
 | `docs/golden/**` | dated findings. Immutable once written. |
+| `docs/capabilities/` | per-capability history — **not written yet, see `NEXT/00`**. |
 | `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
 | `CLAUDE.md` | how to work in this repo. Not status. |
-| `FOR_SIMON.md` | the plain-English narrative of how it was built. |
-| `tasks/PLAN_*.md` | historical plans. Wave 6 is live; the rest are archive. |
+| `FOR_SIMON.md` | the plain-English narrative. |
 
-**The rule that keeps this working:** status goes in STATUS.md and nowhere else.
-Findings go in a dated doc under `docs/golden/`. Rules go in `lessons.md`. If you find
-yourself writing project status into a plan or a findings doc, stop — that is how the
-last version of this became unnavigable.
+**The rule:** status here and nowhere else. Findings in a dated `docs/golden/` file.
+Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a plan.
 
-## The numbers, in one place
+## Ground truth on hand
 
 ```
-Ketubot   182 golden stories · 0.9171 composite · 96% recall (of 44% of pages examined)
-          167 detected stories · 249 gradeable boundary targets · 80%/84% boundaries
-Kiddushin  85 golden stories · 0.8859 composite · recall unmeasured
-           95 detected stories ·  15 gradeable boundary targets · 60%/73% ±7pt
-Jeff       149 Ketubot stories in his 2005 list · 70 boundary corrections across 8 rounds
+BLIND   (can measure recall)
+  Ketubot   149 stories (2005 list) · 294 derived boundary targets
+  Kiddushin 105 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW, unprocessed
+CIRCULAR (precision and consistency only — never recall)
+  Ketubot   182 golden stories · Kiddushin 85
+  70 boundary corrections across 8 review rounds
 ```

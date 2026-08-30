@@ -4,8 +4,10 @@
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (182 stories, 0.93 composite score). Expanding to additional tractates.
 
 ## Current State
-**See [`STATUS.md`](STATUS.md) — that is the single source of truth for where the
-project is, and the first thing to read in any session.** It is rewritten each session,
+**See [`STATUS.md`](STATUS.md) — where the project is, and the first thing to read in
+any session. Then [`FRAMEWORK.md`](FRAMEWORK.md) — the six capabilities, how each is
+measured, and what the gates are. Use its language: capability names, BLIND vs
+CIRCULAR datasets, and measured / indicated / suspected on every finding.** It is rewritten each session,
 never appended. Do not restate status here; this file is about *how to work in the
 repo*, not where we are.
 
