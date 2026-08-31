@@ -27,8 +27,8 @@ def get_db() -> GroundTruthDB:
     feedback_path = str(project_root / 'validation' / 'feedback' /
                         'v5_1_feedback_anonymous_2026-02-05 (1).json')
     v5_paths = [
-        str(project_root / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(project_root / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(project_root / 'results' / 'v5' / 'pages_2-39.json'),
+        str(project_root / 'results' / 'v5' / 'pages_40-60.json'),
     ]
     db = GroundTruthDB()
     db.load_from_feedback(feedback_path, v5_paths)
