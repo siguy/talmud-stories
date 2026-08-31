@@ -48,6 +48,10 @@ active was not active. One command, so there is nothing to remember but the one.
 `work/<slug>`, and **does not rewrite `STATUS.md`** — that is an integration step done
 once on main after merging, not a thing each branch does, because it is hand-written and
 "rewritten every session" means two sessions always conflict over the whole file.
+Merging several branches back, or recovering a worktree that was never pushed:
+[`docs/technical/integrating-concurrent-work.md`](docs/technical/integrating-concurrent-work.md).
+**Capture before you integrate** — a commit is recoverable forever, an uncommitted working
+tree is one `git checkout` from gone, and `git checkout` is step one of every merge.
 
 ## Current State
 Do not restate status here; this file is about *how to work in the repo*, not where we
