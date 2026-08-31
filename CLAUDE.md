@@ -45,6 +45,20 @@ task, each executable in a fresh session with no other context.
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
 2. **Never use labeled examples from the same pages you're evaluating on** — causes overfitting (see `lessons/`, Lesson 2)
 3. **`scripts/evaluate_golden.py` is IMMUTABLE** — do not modify the evaluation harness during experiments
+4. **Always run `evaluate_golden.py` with `--output <scratch path>`.** Bare, it overwrites
+   `docs/golden/v7/baseline_ketubot.json` — a score from a run that cannot be reproduced
+   (Lesson 11), so the loss is permanent. *Guarded: `test_bookkeeping.py` and the
+   pre-commit hook both pin that file's hash. If it fires, `git checkout --` the file.*
+5. **Never verify with the composite score.** It is built from ratios over pages already
+   in the golden, so *deleting* expert validations makes it go **up** — it is
+   anti-correlated with the risk. Verify with **counts** and `git hash-object` instead.
+   The counts live in one place — `GOLDEN_COUNTS` in `tests/test_bookkeeping.py`, which
+   asserts them on every run. Read them from there; do not copy them into prose, including
+   here. *Guarded for the values, not for the habit.*
+6. **Never `git stash`.** `refs/stash` is shared across every worktree, so a stash in one
+   session is visible and poppable in another. Commit to your branch instead.
+   (`git stash create` also silently drops untracked files.) *Not enforceable — this one
+   is on you.*
 
 ## Data Structure
 ```

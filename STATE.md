@@ -134,6 +134,8 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 | `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? |
+| `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
+| `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -141,4 +143,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 5fca973842514aa9 -->
+<!-- board-checksum: 9f3e1bee2798e0e5 -->
