@@ -3,6 +3,49 @@
 **Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 **Depends on Jeff: no.** **No API calls.** **Cost: reading time, a few hours.**
 
+## Before you start — state as of 2026-08-30
+
+Steps 0–6 of the reorg plan (`~/.claude/plans/fuzzy-yawning-hinton.md`) are **done**:
+four branches merged, lessons de-duplicated to a clean 1–30, trunk and
+`claude/repo-reorganization-execution-bed72b` both pushed. This brief is **step 7**, and
+the plan calls it the highest-value item because it decays fastest. Steps 8–13
+(restructuring) come after and are reversible.
+
+**Three corrections landed today that this brief must reflect.** Each was a confident
+claim whose scope did not match the scope of the check behind it, so do not carry the
+old versions forward from any doc that predates them:
+
+1. **Ketubot 20a segs 2-3 and 53a seg 11 are Classification rejections, not Detection
+   misses.** Both were proposed by earlier runs (`results/v5/pages_2-39.json` and
+   `results/v7/ablation_v6_triage_merge.json`) and classified `NOT_A_STORY`, at 100%
+   Hebrew 4-gram coverage. The taxonomy in
+   `docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md` is 3 Detection misses and
+   2 Classification rejections, not 5 misses. Same re-diagnosis `abdc4af` made for 77a.
+
+2. **The Kiddushin appendix is three signals, not one** —
+   `docs/golden/v11/appendix_provenance_correction_2026-08-30.md`. 33a/45a are Detection
+   successes; 53a/71a are Detection hits with the wrong extent, which belong to
+   **Boundaries**; 81b is a genuine Detection miss. Recall denominator 89 → **90**;
+   strict Kiddushin recall 84.3% → **83.3%**.
+
+3. **The loose recall window demonstrably over-credits.** Jeff's 81b story is at
+   segment 9; every run proposed segments 1-3 and 14 and nothing at 9 — 9% text overlap
+   — and the loose test credits it anyway. Pinned by
+   `tests/test_build_ruler.py::test_the_loose_window_credits_a_story_we_never_proposed`.
+   This is the first case that proves the loose/strict gap without relying on the
+   aligner, and Detection's record should quote the strict number beside the loose one.
+
+**Hazards, verified — read before running anything:**
+
+- **Never run `scripts/evaluate_golden.py` without `--output`.** It defaults to
+  overwriting `docs/golden/v7/baseline_ketubot.json`, an irreplaceable historical record.
+- **Never verify with the composite score.** It is built from ratios over pages already
+  in the golden, so deleting expert validations makes it go **up**. Verify with counts
+  (`ketubot` 222 pages / 187 stories / 164 accepted; `kiddushin` 162 / 96 / 85) and
+  `git hash-object`.
+- **Never `git stash` / `stash pop`.** `refs/stash` is shared across all worktrees.
+  Commit to your branch instead. (`git stash create` also silently drops untracked files.)
+
 ## What this produces
 
 Six files, `docs/capabilities/1_triage.md` … `6_publication.md`. One per capability in
