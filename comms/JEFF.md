@@ -19,13 +19,13 @@ names that slug in its `awaiting:` field; one that cannot start names it in `blo
 
 | slug | question | why it matters | status |
 |---|---|---|---|
-| `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? | Blocks the end rule for capability 4. His 2005 lists keep the ruling; his 2026 review notes say cut it — and both are his (Lesson 24). | **ASKED 2026-08-30** ([email](sent/2026-08-30-email-jeff.md)). Reply: *"I will get to all this soon."* |
-| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? | Our filter currently deletes them, and no harness or UI can see the loss. His two sources disagree: his blind 2005 list holds no Mishnah-only story, but he marked **correct** in review every Ketubot case the filter removes. | drafted, not sent — [`draft_next_email.md`](draft_next_email.md) §1 |
-| `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? | **Sets the Classification gate**, and only he can answer it. Every other gate is provisional partly because this one is unanswered (FRAMEWORK §2b). | drafted, not sent — §2 |
-| `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? | It is a redefinition of a large share of the golden, so it is his call and not ours. Blocks `work/2026-08-30-story-criteria.md` phase 6c **by design**. | not drafted — needs the 6a count first |
-| `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? | **Sets the Triage and Detection gates**, which are currently invented (FRAMEWORK §2b). It is a claim about scholarly completeness, so it is his to make, not ours — an earlier draft of FRAMEWORK wrongly assigned it to Simon. | not drafted |
-| `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? | Decides what Publication has to be, which sets how right Boundaries and Classification must be. Asked as a **proposal to confirm**, not as "corpus or database?" — the second is a design question we should not outsource to a busy reader. | not drafted — see below |
-| `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. | Costs him nothing and **cannot be reconstructed afterwards**. Five Kiddushin entries were merged in unmarked and we caught it only because the appendix survived separately (Lesson 29). Gittin, Yevamot and Eruvin are still clean — the window closes the moment we send him results for them. | not sent — **say it before the first review round on a new tractate, not after** |
+| `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? | Blocks the end rule for capability 4. His 2005 lists keep the ruling; his 2026 review notes say cut it — and both are his (Lesson 24). | **ASKED 2026-08-30**, unanswered — *"I will get to all this soon."* **Email 1, item 2**, sharpened with the start-vs-end split |
+| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? | Our filter currently deletes them, and no harness or UI can see the loss. His two sources disagree: his blind 2005 list holds no Mishnah-only story, but he marked **correct** in review every Ketubot case the filter removes. | **Email 1, item 3** — drafted, [`draft_next_email.md`](draft_next_email.md) §1 |
+| `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? | **Sets the Classification gate**, and only he can answer it. Every other gate is provisional partly because this one is unanswered (FRAMEWORK §2b). | **Email 2, item 7** — hold until 6a gives it an anchor |
+| `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? | It is a redefinition of a large share of the golden, so it is his call and not ours. Blocks `work/2026-08-30-story-criteria.md` phase 6c **by design**. | **Email 2, item 6** — blocked on our own phase 6a, not on him |
+| `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? | **Sets the Triage and Detection gates**, which are currently invented (FRAMEWORK §2b). It is a claim about scholarly completeness, so it is his to make, not ours — an earlier draft of FRAMEWORK wrongly assigned it to Simon. | **Email 2, item 7** — ask beside the six misses, not as a bare threshold |
+| `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? | Decides what Publication has to be, which sets how right Boundaries and Classification must be. Asked as a **proposal to confirm**, not as "corpus or database?" — the second is a design question we should not outsource to a busy reader. | **Email 1, item 4** — a yes/no on the proposal below |
+| `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. | Costs him nothing and **cannot be reconstructed afterwards**. Five Kiddushin entries were merged in unmarked and we caught it only because the appendix survived separately (Lesson 29). Gittin, Yevamot and Eruvin are still clean — the window closes the moment we send him results for them. | **Email 1, item 5** — one sentence, and the window closes when we send new-tractate results |
 
 ### On `jeff:deliverable-shape` — what we would propose
 
@@ -47,6 +47,55 @@ The honest tradeoff to put to him: **a citable release cannot also be silently m
 Live edits and stable citation are in tension, and versioned releases are how every other
 scholarly corpus resolves it. If he wants edits visible immediately, that is a different
 product and worth knowing before we build.
+
+## Ask order — seven questions is two emails, not one
+
+**The constraint that decides this:** he answered a single question with *"I will get to
+all this soon."* Seven will get the same reply, or none. The sent log shows the same
+curve from another angle — 187 verdicts, then 96, then **1**, then 15.
+
+Six principles, applied below:
+
+1. **Open by giving, not asking.** The 77a correction goes first. We owe it, and a message
+   that starts by fixing our own error reads differently from one that starts with a list.
+2. **One hard question per email.** Abstract judgment calls are what stall; more than one
+   and none get answered.
+3. **Anchor every number question in real cases.** Do not ask him to produce a tolerance
+   from nothing — show him what we actually miss and ask whether *that* is acceptable.
+   This is the change that makes `jeff:miss-rate` answerable at all.
+4. **Free asks ride along.** `jeff:appendix-separate` costs him one line and cannot be
+   reconstructed later. It goes in every email until he acts on it.
+5. **Never ask what our own work can answer first.** `jeff:speech-act-policy` without the
+   6a count is a vague question about an unnamed number of passages.
+6. **Time-critical goes now regardless of size.**
+
+### Email 1 — send now
+
+| # | item | why here |
+|---|---|---|
+| 1 | **The 77a correction** (see below) | We owe it. It also sets up #3 — same daf. |
+| 2 | `jeff:boundary-end-rule` | **Already asked, still blocking capability 4.** Not a re-ask: we now have evidence he has not seen — his 2005 list and his 2026 notes agree on **start** boundaries 7/7 and split on **ends** 16/19. That sharpens it from "what do you think" to "your two sources disagree, and only on one edge." |
+| 3 | `jeff:mishnah-scope` | Concrete: two named passages, drafted in [`draft_next_email.md`](draft_next_email.md) §1. Pairs with #1. |
+| 4 | `jeff:deliverable-shape` | Looks big, is cheap — it is a yes/no on a proposal, not an open design question. Answering it is one line. |
+| 5 | `jeff:appendix-separate` | One sentence. **The window closes the moment we send him results for Gittin, Yevamot or Eruvin**, and it cannot be reconstructed afterwards (Lesson 29). |
+
+One hard question (#2), two concrete ones, one yes/no, one freebie — and it opens with a
+correction rather than a request.
+
+### Email 2 — after phase 6a runs
+
+| # | item | why it waits |
+|---|---|---|
+| 6 | `jeff:speech-act-policy` | Needs the 6a blast-radius count. With it: *"N stories currently in your golden would be demoted by your newer rule — here are four."* Without it, unanswerable. |
+| 7 | `jeff:miss-rate` **and** `jeff:review-error-rate`, asked together | Both ask the same thing — *what error can you live with* — one about what we miss, one about what we wrongly include. Answering either primes the other, and splitting them across emails wastes that. |
+
+**How to ask #7 so it is answerable.** Not *"what miss rate makes the claim false?"* — that
+is a number from nothing, and it is the shape of question he has already deferred once.
+Instead show him the six Ketubot stories on his own 2005 list that we miss, with their
+openers, and ask: *would a published corpus that misses these six still be honest as "the
+stories in Ketubot"?* Same for precision: show him a sample at the current rate and ask
+whether reviewing it beats starting from scratch. **A judgment on real cases is a
+different, much easier act than producing a threshold.**
 
 ## Corrections owed
 
