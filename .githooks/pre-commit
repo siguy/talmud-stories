@@ -11,3 +11,10 @@ ACTUAL=$(git hash-object scripts/evaluate_golden.py 2>/dev/null)
 BASE_PINNED=e5e46fd7ac174b2a52c4030ed71bb603c2f79067
 BASE_ACTUAL=$(git hash-object docs/golden/v7/baseline_ketubot.json 2>/dev/null)
 [ "$BASE_ACTUAL" = "$BASE_PINNED" ] || { echo "pre-commit: docs/golden/v7/baseline_ketubot.json CHANGED."; echo "  Almost certainly evaluate_golden.py run without --output. Restore it:"; echo "    git checkout -- docs/golden/v7/baseline_ketubot.json"; exit 1; }
+
+# Every src/story_detector_v*.py main() writes here unconditionally (no --output). It is
+# the frozen v7 baseline three test files score against. Nothing reaches the write today
+# only because those main()s crash first on a stale input path -- an accident, not a guard.
+V7RES_PINNED=e50afc966bbe74f875e7cb572659b66d2bd6c68e
+V7RES_ACTUAL=$(git hash-object results/v7/ketubot_v7_2-60.json 2>/dev/null)
+[ "$V7RES_ACTUAL" = "$V7RES_PINNED" ] || { echo "pre-commit: results/v7/ketubot_v7_2-60.json CHANGED."; echo "  Almost certainly a detector run directly (python3 src/story_detector_vN.py). Restore it:"; echo "    git checkout -- results/v7/ketubot_v7_2-60.json"; exit 1; }

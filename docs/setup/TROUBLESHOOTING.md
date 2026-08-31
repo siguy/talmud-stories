@@ -7,7 +7,7 @@
 **Solution**: Use `python3` instead:
 
 ```bash
-python3 src/story_detector_v6.py 2 10
+python3 -m pytest tests/ -q
 ```
 
 ## Common Issues

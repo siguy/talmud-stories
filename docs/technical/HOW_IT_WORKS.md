@@ -270,8 +270,12 @@ A girl went out to draw water. She was raped.
 export GOOGLE_API_KEY='your-key'
 
 # v7 (current) — pages 2-60, uses pre-computed triage
-PYTHONPATH=. python3 src/story_detector_v7.py
-# Output: results/v7/ketubot_v7_2-60.json
+# NOT `python3 src/story_detector_v7.py`. Every detector's main() writes
+# results/v7/ketubot_v7_2-60.json unconditionally, with no --output to redirect it,
+# and that file is the frozen baseline the regression tests score against.
+# The runner below writes to results/v7_fresh/ instead (Lesson 11).
+PYTHONPATH=. python3 scripts/run_ketubot_v7_fresh.py
+# Output: results/v7_fresh/ketubot_v7_2-60.json
 
 # Pages 61-112 (generalization test)
 python3 scripts/run_ketubot_61_112.py              # Full run

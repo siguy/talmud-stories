@@ -114,7 +114,11 @@ export GOOGLE_API_KEY='your-key'  # Get from https://aistudio.google.com/app/api
 ### Run Detection
 ```bash
 # v7 pipeline on pages 2-60 (uses pre-computed triage)
-GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.py
+# NOT `python3 src/story_detector_v7.py`. Every detector's main() writes
+# results/v7/ketubot_v7_2-60.json unconditionally, with no --output to redirect it,
+# and that file is the frozen baseline the regression tests score against.
+# The runner below writes to results/v7_fresh/ instead (Lesson 11).
+GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 scripts/run_ketubot_v7_fresh.py
 
 # Pages 61-112 generalization test
 python3 scripts/run_ketubot_61_112.py               # Full run
