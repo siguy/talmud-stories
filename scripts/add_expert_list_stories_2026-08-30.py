@@ -68,6 +68,18 @@ BOUNDARY_CAVEAT = ('Segment-level only, and NOT expert-confirmed. Jeff quoted th
 # The five stories. `loss_cause` was read off the detector run's own page
 # records (skipped_by_triage flags and proposed spans), not inferred from prose.
 # ---------------------------------------------------------------------------
+DEFAULT_DETECTOR_STATUS = (
+    'Never proposed by any run on disk. Searched every run file for the passage TEXT '
+    '(Hebrew character 4-grams over the consonantal skeleton), not for its page '
+    'reference, on 2026-08-30.')
+
+# CORRECTION 2026-08-30. The original version of this script asserted, for all five,
+# "Never proposed by any detector run through v10" -- but only checked
+# results/v10/wave4_notrim/. A text search across all 53 run files found two of them
+# proposed by earlier configurations and REJECTED as NOT_A_STORY. For those two the
+# failure is Classification, not Detection: the same re-diagnosis commit abdc4af made
+# for Ketubot 77a. The scope of a negative claim has to match the scope of the check.
+
 STORIES = [
     {
         'page_ref': 'Ketubot 20a',
@@ -83,9 +95,18 @@ STORIES = [
                     'sane, and Rav Ashi ruled that the pairs cancel each other so the property stays '
                     'in bar Shatya\'s possession.'),
         'loss_cause': 'stage_1_triage_discarded_page',
-        'loss_detail': ('Stage 1 event triage discarded both Ketubot 19b and 20a, so the story detector '
-                        'never saw this page. Nothing was proposed and nothing was rejected -- there is '
-                        'no record of the loss anywhere in the run.'),
+        'loss_detail': ('Under the current pipeline, Stage 1 event triage discards both Ketubot 19b '
+                        'and 20a, so the story detector never sees this page. But v5 -- which predates '
+                        'Stage 1 (added in v7, commit 84c9f43) -- DID examine it and DID propose exactly '
+                        'segments 2-3, then classified them NOT_A_STORY. So the passage has been both '
+                        'found and rejected by this project; the current loss is triage, the earlier one '
+                        'was Classification.'),
+        'never_detected': False,
+        'proposed_by_detector': True,
+        'detector_status': ('Proposed at segments 2-3 by results/v5/pages_2-39.json and classified '
+                            'NOT_A_STORY (100% Hebrew 4-gram coverage of Jeff\'s text, verified '
+                            '2026-08-30). Not proposed by any run from v7 on, where Stage 1 triage '
+                            'discards the page before Stage 2 sees it.'),
         'continuation_note': ('Jeff\'s quotation begins mid-segment 2 (after Rav Nahman\'s ruling) and ends '
                               'with Rav Ashi\'s ruling in the first sentence of segment 3. Segments 2-3 are '
                               'the minimal segment-level cover.'),
@@ -105,9 +126,16 @@ STORIES = [
                     'had it not come to him in a great man\'s name he would have called it rewarding evil '
                     'for good.'),
         'loss_cause': 'examined_but_never_proposed',
-        'loss_detail': ('The page survived triage and was examined. Stage 2 proposed one span on it '
-                        '(segments 12-12, which is in the golden); segment 11 was read and nothing was '
-                        'proposed there.'),
+        'loss_detail': ('In the current pipeline the page survives triage and is examined; Stage 2 '
+                        'proposes one span on it (segments 12-12, which is in the golden) and nothing at '
+                        'segment 11. But the v6-triage+merge ablation DID propose exactly segment 11 and '
+                        'classified it NOT_A_STORY, so the passage has been found and rejected here too.'),
+        'never_detected': False,
+        'proposed_by_detector': True,
+        'detector_status': ('Proposed at segment 11 by results/v7/ablation_v6_triage_merge.json and '
+                            'classified NOT_A_STORY (100% Hebrew 4-gram coverage of Jeff\'s text, '
+                            'verified 2026-08-30). That is an ablation configuration, not a production '
+                            'run; no production run has proposed it.'),
         'continuation_note': 'Contained entirely within segment 11 (4-gram coverage 1.00).',
     },
     {
@@ -191,11 +219,11 @@ def build_story(spec):
         # Flat flags so a grep or a naive reader cannot miss them.
         'source': 'jeff_2005_list',
         'blind': True,
-        'never_detected': True,
+        'never_detected': spec.get('never_detected', True),
         'provenance': {
             'source': 'jeff_2005_list',
             'blind': True,
-            'never_detected': True,
+            'never_detected': spec.get('never_detected', True),
             'added': ADDED_ON,
             'added_by': 'tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)',
             'source_document': EXPERT_DOC,
@@ -205,10 +233,8 @@ def build_story(spec):
             'expert_text_hebrew': spec['expert_text'],
             'expert_word_count': spec['expert_words'],
             'in_golden_before_this_date': False,
-            'proposed_by_detector': False,
-            'detector_status': (
-                'Never proposed by any detector run through v10. Confirmed against '
-                + DETECTOR_RUN + ': no candidate span covers this range, rejected or otherwise.'),
+            'proposed_by_detector': spec.get('proposed_by_detector', False),
+            'detector_status': spec.get('detector_status', DEFAULT_DETECTOR_STATUS),
             'loss_cause': spec['loss_cause'],
             'loss_detail': spec['loss_detail'],
             'loss_diagnosis_doc': 'docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md',

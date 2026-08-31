@@ -5043,11 +5043,11 @@
           },
           "source": "jeff_2005_list",
           "blind": true,
-          "never_detected": true,
+          "never_detected": false,
           "provenance": {
             "source": "jeff_2005_list",
             "blind": true,
-            "never_detected": true,
+            "never_detected": false,
             "added": "2026-08-30",
             "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
             "source_document": "jeff comms/b.ketubot (1).doc",
@@ -5057,10 +5057,10 @@
             "expert_text_hebrew": "בר שטיא זבין נכסי, אתו בי תרי אמרי כשהוא שוטה זבין, ואתו בי תרי ואמרי כשהוא חלים זבין, אמר רב אשי: אוקי תרי להדי תרי ואוקי ממונא בחזקת בר שטיא.",
             "expert_word_count": 30,
             "in_golden_before_this_date": false,
-            "proposed_by_detector": false,
-            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "proposed_by_detector": true,
+            "detector_status": "Proposed at segments 2-3 by results/v5/pages_2-39.json and classified NOT_A_STORY (100% Hebrew 4-gram coverage of Jeff's text, verified 2026-08-30). Not proposed by any run from v7 on, where Stage 1 triage discards the page before Stage 2 sees it.",
             "loss_cause": "stage_1_triage_discarded_page",
-            "loss_detail": "Stage 1 event triage discarded both Ketubot 19b and 20a, so the story detector never saw this page. Nothing was proposed and nothing was rejected -- there is no record of the loss anywhere in the run.",
+            "loss_detail": "Under the current pipeline, Stage 1 event triage discards both Ketubot 19b and 20a, so the story detector never sees this page. But v5 -- which predates Stage 1 (added in v7, commit 84c9f43) -- DID examine it and DID propose exactly segments 2-3, then classified them NOT_A_STORY. So the passage has been both found and rejected by this project; the current loss is triage, the earlier one was Classification.",
             "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
             "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
             "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
@@ -5070,7 +5070,21 @@
             "expert_confirmed_boundaries": false,
             "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
             "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
-          }
+          },
+          "corrections": [
+            {
+              "action": "correct_detector_status_scope",
+              "reason": "The original note claimed \"Never proposed by any detector run through v10\" but only checked results/v10/wave4_notrim/. A text search of all 53 run files found this passage proposed by results/v5/pages_2-39.json and classified NOT_A_STORY, at 100% Hebrew 4-gram coverage. For this entry the failure is Classification, not Detection.",
+              "source": "detector_status_scope_correction_2026-08-30",
+              "superseded": {
+                "never_detected": true,
+                "proposed_by_detector": false,
+                "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+                "loss_detail": "Stage 1 event triage discarded both Ketubot 19b and 20a, so the story detector never saw this page. Nothing was proposed and nothing was rejected -- there is no record of the loss anywhere in the run."
+              },
+              "auto_applied": true
+            }
+          ]
         }
       ],
       "skipped_by_triage": true
@@ -11448,11 +11462,11 @@
           },
           "source": "jeff_2005_list",
           "blind": true,
-          "never_detected": true,
+          "never_detected": false,
           "provenance": {
             "source": "jeff_2005_list",
             "blind": true,
-            "never_detected": true,
+            "never_detected": false,
             "added": "2026-08-30",
             "added_by": "tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)",
             "source_document": "jeff comms/b.ketubot (1).doc",
@@ -11462,10 +11476,10 @@
             "expert_text_hebrew": "יתיב רבין בר חנינא קמיה דרב חסדא, ויתיב וקאמר משמיה דרבי אלעזר: מוחלת כתובתה לבעלה - אין לה מזונות. אמר ליה: אי לאו דקאמרת לי משמיה דגברא רבא, הוה אמינא לך: משיב רעה תחת טובה לא תמוש רעה מביתו.",
             "expert_word_count": 39,
             "in_golden_before_this_date": false,
-            "proposed_by_detector": false,
-            "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+            "proposed_by_detector": true,
+            "detector_status": "Proposed at segment 11 by results/v7/ablation_v6_triage_merge.json and classified NOT_A_STORY (100% Hebrew 4-gram coverage of Jeff's text, verified 2026-08-30). That is an ablation configuration, not a production run; no production run has proposed it.",
             "loss_cause": "examined_but_never_proposed",
-            "loss_detail": "The page survived triage and was examined. Stage 2 proposed one span on it (segments 12-12, which is in the golden); segment 11 was read and nothing was proposed there.",
+            "loss_detail": "In the current pipeline the page survives triage and is examined; Stage 2 proposes one span on it (segments 12-12, which is in the golden) and nothing at segment 11. But the v6-triage+merge ablation DID propose exactly segment 11 and classified it NOT_A_STORY, so the passage has been found and rejected here too.",
             "loss_diagnosis_doc": "docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md",
             "recall_match_record": "results/recall/ketubot_jeff2005_matches.json",
             "alignment_method": "Hebrew character 4-gram coverage against Sefaria segments, per scripts/measure_recall_vs_expert_list.py; the locator's coarse window (up to 14 segments) tightened to the minimal contiguous range preserving coverage.",
@@ -11475,7 +11489,21 @@
             "expert_confirmed_boundaries": false,
             "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
             "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
-          }
+          },
+          "corrections": [
+            {
+              "action": "correct_detector_status_scope",
+              "reason": "The original note claimed \"Never proposed by any detector run through v10\" but only checked results/v10/wave4_notrim/. A text search of all 53 run files found this passage proposed by results/v7/ablation_v6_triage_merge.json and classified NOT_A_STORY, at 100% Hebrew 4-gram coverage. For this entry the failure is Classification, not Detection.",
+              "source": "detector_status_scope_correction_2026-08-30",
+              "superseded": {
+                "never_detected": true,
+                "proposed_by_detector": false,
+                "detector_status": "Never proposed by any detector run through v10. Confirmed against results/v10/wave4_notrim/ketubot_v10_{2-60,61-112}_notrim.json: no candidate span covers this range, rejected or otherwise.",
+                "loss_detail": "The page survived triage and was examined. Stage 2 proposed one span on it (segments 12-12, which is in the golden); segment 11 was read and nothing was proposed there."
+              },
+              "auto_applied": true
+            }
+          ]
         },
         {
           "start_segment": 12,

@@ -959,9 +959,12 @@ def refuse_unless_purely_additive(new_doc):
             story = live_index[(ref, lo, hi)]
             why = ''
             if story.get('source'):
-                why = f"  <- {story['source']}"
+                # Every expert-list entry is unregenerable by THIS script, which reads
+                # only the 2026-02 feedback and the 2026-03 review. Whether the detector
+                # ever proposed it is a separate fact and is reported separately.
+                why = f"  <- {story['source']}, NOT REGENERABLE"
                 if story.get('never_detected'):
-                    why += ", never proposed by the detector, NOT REGENERABLE"
+                    why += "; never proposed by any run"
             print(f"      {ref} seg {lo}-{hi}{why}")
 
     if changed:

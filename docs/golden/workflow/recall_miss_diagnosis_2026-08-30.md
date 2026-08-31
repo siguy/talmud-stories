@@ -1,5 +1,16 @@
 # Why we miss the 6 stories we miss — 2026-08-30
 
+> **Corrected 2026-08-30.** This document's cause breakdown treats all five as
+> Detection misses. Two of them are not. A text search across all 53 run files (this
+> document checked only `results/v10/wave4_notrim/`) found **Ketubot 20a segs 2-3**
+> proposed by `results/v5/pages_2-39.json` and **Ketubot 53a seg 11** proposed by
+> `results/v7/ablation_v6_triage_merge.json`, both classified **NOT_A_STORY**, both at
+> 100% Hebrew 4-gram coverage of Jeff's text. For those two the failure is
+> **Classification, not Detection** — the same re-diagnosis `abdc4af` made for 77a.
+> So the taxonomy is 3 Detection misses and 2 Classification rejections, not 5 misses.
+> The golden's provenance is corrected by `scripts/correct_detector_status_2026-08-30.py`.
+
+
 The 96% recall figure on Ketubot rests on 6 misses against Jeff's detector-blind 2005
 list. They are the most valuable failures in the project — genuine negatives, found
 without our own labels in the loop. Traced through the pipeline, they are not one
