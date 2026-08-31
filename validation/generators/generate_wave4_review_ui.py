@@ -2,7 +2,7 @@
 """
 Generate the Wave 4 story review UI.
 
-DISPLAY SYMMETRY (fixed 2026-08-30, tasks/NEXT/04)
+DISPLAY SYMMETRY (fixed 2026-08-30, work/2026-08-30-review-verdict-axes.md)
 --------------------------------------------------
 Every segment is rendered as ONE row holding BOTH languages, so the English
 and the Hebrew always show the same extent. Nothing is hidden, faded or struck

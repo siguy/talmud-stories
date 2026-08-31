@@ -57,7 +57,7 @@ digitized *Ein Yaakov*.
 > [`docs/findings/2026-07-06-jeff-story-definition-criteria.md`](2026-07-06-jeff-story-definition-criteria.md)
 > (hypothetical→not-a-story / actual→story; speech-acts need action; emotions
 > count). And Wave 4's boundary mechanism proved broken in his review, replaced
-> by [`tasks/PLAN_wave5.md`](../../tasks/PLAN_wave5.md).
+> by [`docs/history/2026-08-28-PLAN-wave5.md`](../history/2026-08-28-PLAN-wave5.md).
 
 ---
 

@@ -170,7 +170,7 @@ def finalize_story(story, ref, sides, counts, rule):
     labelled = [s for s in sides if s['labels']]
     if not labelled:
         # Every side is one clause: nothing to choose. A named, logged outcome,
-        # never a silent accident (tasks/PLAN_wave5.md).
+        # never a silent accident (docs/history/2026-08-28-PLAN-wave5.md).
         story['text_span_source'] = 'no_clause_split'
         counts['no_clause_split'] += 1
         return 'no_clause_split', {}

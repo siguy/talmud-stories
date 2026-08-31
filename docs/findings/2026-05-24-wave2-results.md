@@ -2,7 +2,7 @@
 
 **Session date:** 2026-05-24
 **Detector:** `src/story_detector_v8.py` (Wave 2 = Wave 1 + 3 deterministic post-processors)
-**Plan:** `tasks/PLAN_kiddushin_fixes.md`
+**Plan:** `docs/history/2026-05-17-PLAN-kiddushin-fixes.md`
 **Golden:** Ketubot `results/canonical/ketubot_canonical.json` (unchanged) +
 NEW Kiddushin `results/canonical/kiddushin_canonical.json` (built this session
 from Jeff's 96 reviews on `validation/feedback/kiddushin_review_2026-04-23.json`).

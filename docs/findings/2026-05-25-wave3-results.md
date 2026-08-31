@@ -2,7 +2,7 @@
 
 **Session date:** 2026-05-24 / 2026-05-25
 **Detector:** `src/story_detector_v9.py` (forked from v8; Stage 2 prompt changes + new text-internal post-processor)
-**Plan:** `tasks/PLAN_wave3.md`
+**Plan:** `docs/history/2026-05-24-PLAN-wave3.md`
 **Approach:** `docs/history/2026-05-24-wave3-approach.md`
 
 ---

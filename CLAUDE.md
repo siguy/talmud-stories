@@ -16,7 +16,7 @@ rot the moment someone works without reading them, and this file is read first. 
 is unavoidable, write the *rule that stays true* and the command that answers it — not the
 number. (Every stale entry found on 2026-08-30 was one of these three.)
 
-Ready-to-run work lives in [`tasks/NEXT/`](tasks/NEXT) — one self-contained brief per
+Ready-to-run work lives in [`work/`](work/) — one self-contained item per
 task, each executable in a fresh session with no other context.
 
 ## Critical Rules
@@ -87,17 +87,18 @@ validation/
   generators/                     #   Scripts to generate UIs
   feedback/                       #   Expert feedback JSONs (4 rounds)
 docs/
-  golden/                         # ORGANIZED BY DETECTOR VERSION (reorg 2026-05-24)
-    workflow/                     #   Cross-version process docs and research
-    v7/                           #   v7-era analyses + Kiddushin feedback
-    v8/                           #   Wave 1+2 results
-    v9/                           #   Wave 3 results
-    v10/                          #   v10 findings + post-improvement email
-  technical/                      #   Pipeline docs (HOW_IT_WORKS, etc.)
+  capabilities/                   #   Per-capability history: tried / reverted / best / untried
+  findings/                       #   Dated findings, YYYY-MM-DD-slug.md. Corrected, never edited silently
+  history/                        #   Plans and approach docs, superseded by what they produced
+  technical/                      #   Pipeline docs (HOW_IT_WORKS, new_tractate_workflow, etc.)
   brainstorms/                    #   Design exploration
-tasks/
-  todo.md                         #   Current task list with progress
-  lessons/                      #   Ongoing learning log (append-only)
+  golden/                         #   DATA ONLY since 2026-08-30 + a redirect table in its README
+work/                             # One self-contained item per ready task (dated slug, no counter)
+  done/                           #   Finished items with an ## Outcome. NEVER deleted
+  _TEMPLATE.md                    #   Copy this to start work
+lessons/                          # One file per lesson, L-001..L-030. Numbers are permanent
+comms/                            # Correspondence with Jeff
+  sent/                           #   What was sent, dated
 tests/                            # Regression tests
 archive/                          # Old versions (reference only)
 ```
@@ -151,8 +152,8 @@ archive/                          # Old versions (reference only)
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
 | `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The 96% recall finding + method |
 | `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
-| `tasks/PLAN_wave5b_clause_roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
-| `tasks/PLAN_wave6.md` | Jeff's story criteria (6c blocked on his answer) |
+| `docs/history/2026-08-30-PLAN-wave5b-clause-roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
+| `docs/history/2026-08-29-PLAN-wave6-story-criteria.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
 | `tests/expert_boundary_targets_2005.json` | **294 detector-blind boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |

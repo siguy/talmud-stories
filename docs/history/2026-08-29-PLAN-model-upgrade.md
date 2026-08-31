@@ -13,7 +13,7 @@ found*; a mechanism change changes *where they trim*. Together they are unreadab
 
 ## What is already settled (2026-08-29)
 
-The **span stage** A/B is done — see [PLAN_wave5.md](PLAN_wave5.md). Because spans
+The **span stage** A/B is done — see [PLAN_wave5.md](2026-08-28-PLAN-wave5.md). Because spans
 are score-neutral, that comparison was safe to run alone. Result: both models
 produce 0 mid-word cuts; 3.7-flash + thinking HIGH scores 5/8 vs 4/8 on Jeff's
 stated boundaries and, decisively, **errs by keeping too much rather than cutting

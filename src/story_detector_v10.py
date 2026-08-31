@@ -6,7 +6,7 @@ v10 = v9 (Wave 1+2+3) PLUS:
   - Wave 4: extract_text_spans_via_llm replaces edit_text_internal_boundaries
     (regex) as the production pipeline path. Per-story Gemini call emits
     {start_offset, end_offset}. Regex retained only as fallback on LLM
-    error. See tasks/PLAN_wave4.md.
+    error. See docs/history/2026-06-15-PLAN-wave4.md.
 
 Requires GEMINI_MODEL=gemini-2.5-flash or newer — the legacy
 gemini-2.0-flash default was deprecated by Google in mid-2026.

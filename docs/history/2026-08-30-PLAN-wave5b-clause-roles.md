@@ -10,12 +10,12 @@ been run without a known handicap.
 > ## REVIEW OUTCOME 2026-08-30 — read before touching this wave
 >
 > **Full findings as an actionable fix list:**
-> [`docs/findings/2026-08-30-wave5b-review.md`](../docs/findings/2026-08-30-wave5b-review.md)
+> [`docs/findings/2026-08-30-wave5b-review.md`](../findings/2026-08-30-wave5b-review.md)
 > — every P0/P1/P2 item, the scope cuts, the 22 tests to write, and the claims in this
 > plan that turned out to be wrong. **If the cheap path fails and Wave 5b is revived,
 > start there.**
 > **Plain-language decision record:**
-> [`docs/findings/2026-08-30-wave5b-decision.md`](../docs/findings/2026-08-30-wave5b-decision.md)
+> [`docs/findings/2026-08-30-wave5b-decision.md`](../findings/2026-08-30-wave5b-decision.md)
 >
 > ### The core idea survived. The execution did not.
 >
@@ -213,7 +213,7 @@ attributable (roadmap 5.3: pin and record external versions).
 1. Failure semantics: `text_span_source = 'skipped'` on API failure, set `needs_review`,
    never write a fabricated `speech_profile`, exactly one counter per story.
 2. Preserve `no_clause_split` provenance — currently overwritten, violating
-   [PLAN_wave5.md](PLAN_wave5.md)'s own "named, logged outcome, never a silent accident."
+   [PLAN_wave5.md](2026-08-28-PLAN-wave5.md)'s own "named, logged outcome, never a silent accident."
 3. Extract one `emit_span()` used by both `main()` and `reassemble()`; they have already
    diverged (reassembled artifacts lack `speech_profile`/`needs_review` and are not even
    stamped `-wave5b`).

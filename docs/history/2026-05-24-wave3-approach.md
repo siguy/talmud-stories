@@ -2,7 +2,7 @@
 
 **Session date:** 2026-05-24
 **Status:** Approved by Simon; implementation pending.
-**Companion to:** `docs/findings/2026-05-24-wave2-results.md`, `tasks/PLAN_kiddushin_fixes.md` (Wave 3 section).
+**Companion to:** `docs/findings/2026-05-24-wave2-results.md`, `docs/history/2026-05-17-PLAN-kiddushin-fixes.md` (Wave 3 section).
 
 This doc records the design decisions for Wave 3 *before* any code is
 written, so the implementation can be checked against an explicit plan and

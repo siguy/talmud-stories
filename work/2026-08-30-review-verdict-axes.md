@@ -1,13 +1,23 @@
-# Make the reviewer say *which* thing is wrong
+---
+title: Make the reviewer say which thing is wrong
+capability: [classification, review]
+tractate: []
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
 
-**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
+# Make the reviewer say which thing is wrong
+
+**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
 **Capabilities: 3 Classification (primary), 5 Review, 4 Boundaries, 2 Detection.**
 **Depends on Jeff: no** — Phases A and B need nobody. Phase C needs one review round.
 **Cost:** Phase A ~1 hour, no API. Phase B a session, no API. Phase C free.
 **Replaces `NEXT/04`,** whose file was deleted in `b394489` when its first job (the
 Hebrew/English display asymmetry) was completed; `4de7135` repointed the *name* at this
 job without writing a brief, so `STATUS.md` has been listing a ready task with nothing
-behind it. Dated slug, not a number: `tasks/NEXT/` has already collided twice on `09` and
+behind it. Dated slug, not a number: `work/` has already collided twice on `09` and
 `10`, and step 8 of the reorg migrates this file to `work/2026-08-30-review-verdict-axes.md`
 unchanged.
 
@@ -35,7 +45,7 @@ What that already cost: months treating Classification as the weakest capability
 Kiddushin as far worse than Ketubot. Separated, both land near 92–95% and most of the gap
 evaporates. Worse, the pooled number is the one that would have been "improved" by tuning
 the classifier, which would have done nothing — the errors were largely in the boundary
-code (Lesson 30, [`detection_classification_ruler`](../../docs/findings/2026-08-30-detection-classification-ruler.md)).
+code (Lesson 30, [`detection_classification_ruler`](../docs/findings/2026-08-30-detection-classification-ruler.md)).
 
 ## The insight the design rests on
 
@@ -61,10 +71,10 @@ classification problem, and why `build_ruler.py` now treats it as **accepted**.
 
 `Borderline` is new and is **Jeff's own request**: contested cases kept and flagged rather
 than silently resolved
-([ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)). It is
-also the thing [`FRAMEWORK.md` §1.3](../../FRAMEWORK.md) says makes this the one capability
+([ledger Part 2(d)](../validation/feedback/jeff_2026-07-06_feedback_ledger.md)). It is
+also the thing [`FRAMEWORK.md` §1.3](../FRAMEWORK.md) says makes this the one capability
 where "let database users decide" is a legitimate answer, and it is a column the published
-database needs anyway ([capability 6](../../docs/capabilities/6_publication.md)).
+database needs anyway ([capability 6](../docs/capabilities/6_publication.md)).
 
 **Axes 2–4 — shown only when something is wrong.** Progressive disclosure:
 
@@ -101,7 +111,7 @@ population, no API, no Jeff.
 Output: a dated finding plus a re-run ruler, reporting the narrowed range **and what
 remains genuinely unresolvable**. Do not guess the residue into a bucket to make the range
 look tighter — an indication presented as a measurement is the failure
-[`FRAMEWORK.md` §7](../../FRAMEWORK.md) names, and it is how the 86/68 numbers survived.
+[`FRAMEWORK.md` §7](../FRAMEWORK.md) names, and it is how the 86/68 numbers survived.
 
 *Why by hand and not with an LLM pass:* the notes are free text about specific passages,
 and an LLM classifier adds a second layer of inference on top of the one we are removing.
@@ -131,7 +141,7 @@ is the acceptance test for the whole item.
 
 - **Show him `mishnah_stories`.** The Mishnah filter's withheld passages are displayed to
   nobody, and he is the one person who can settle whether they belong in the database
-  ([`mishnah_filter_delta`](../../docs/findings/2026-08-30-mishnah-filter-delta.md)).
+  ([`mishnah_filter_delta`](../docs/findings/2026-08-30-mishnah-filter-delta.md)).
 - **Ask him to keep his appendix a separate file.** One sentence. It cannot be
   reconstructed afterwards, and the window closes the moment we send Gittin / Yevamot /
   Eruvin results (Lesson 29, `09_kiddushin_parse_open_calls.md` item 1b).
@@ -168,5 +178,5 @@ narrows going forward, not backward.
 
 Finding → `docs/findings/` (dated). Update the scoreboard row for **3 Classification** in
 `STATUS.md` and the *Untried* section of
-[`docs/capabilities/3_classification.md`](../../docs/capabilities/3_classification.md) and
-[`5_review.md`](../../docs/capabilities/5_review.md), which both name this item.
+[`docs/capabilities/3_classification.md`](../docs/capabilities/3_classification.md) and
+[`5_review.md`](../docs/capabilities/5_review.md), which both name this item.

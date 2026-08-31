@@ -2,7 +2,7 @@
 """
 Parse Jeff Rubenstein's Kiddushin story list into a defensible ground-truth JSON.
 
-WHY THIS EXISTS (see tasks/NEXT/05_kiddushin_list_parse.md)
+WHY THIS EXISTS (see work/done/2026-08-30-kiddushin-list-parse.md)
 ----------------------------------------------------------
 `scripts/measure_recall_vs_expert_list.py::parse_expert_doc` reads the .doc as
 flat lines produced by `textutil`. That works on the Ketubot list, which is

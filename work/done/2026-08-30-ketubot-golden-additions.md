@@ -1,4 +1,14 @@
-# NEXT 10 — Add the 5 expert-list stories missing from the Ketubot golden
+---
+title: Add the 5 blind-list stories missing from the Ketubot golden
+capability: [detection, classification]
+tractate: [ketubot]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Add the 5 blind-list stories missing from the Ketubot golden
 
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
 **Capability: 2 Detection (ground truth).** **No LLM calls.** **Independent.**
@@ -42,3 +52,7 @@ not move, the stories were not really added.
 - Always pass `--output`.
 - A score that falls because the ground truth got more honest is a good outcome. Lesson
   13 already says this; do not let it look like a regression in any writeup.
+
+## Outcome
+
+**Done 2026-08-30 (`2e61035`).** Golden 182 -> 187. Recall fell 0.9371 -> 0.9085 and **the drop is the deliverable** — nothing about the detector changed; we added stories it cannot find so the harness can finally count them. Blind recall untouched at 96.0%. Golden coverage of Jeff's 149-story list 96.6% -> 100%. **Later corrected** by `6284070`: two of the five (20a segs 2-3, 53a seg 11) *were* proposed by earlier runs and classified `NOT_A_STORY`, so they are Classification rejections, not Detection misses. The generator's blanket 'never proposed' claim was checked against one run directory and asserted over all of them.

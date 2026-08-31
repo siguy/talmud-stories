@@ -8,7 +8,7 @@ Jeff's 2005 list (**BLIND**); untrimmed segment boundaries alone score 75% / 83%
 **Kiddushin 60% / 73%, ±7 points**, on 15–16 correction targets (**CIRCULAR + biased**).
 Measured 2026-08-30.
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status.*
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
 
@@ -125,7 +125,7 @@ a properly-fed one-shot still sits at 40% HIT / 63% HIT+NEAR, unmoved by the sum
 But the same session found the gate could not resolve a change of that size, so **the
 revival question is now different from the one the plan asked**: not "is 50% good enough"
 but *"is the remaining 20% reachable at all, given 13% of boundaries are not on clause
-edges?"* The salvage list is `tasks/NEXT/03` and `wave5b_review_2026-08-30.md`.
+edges?"* The salvage list is `work/2026-08-30-second-story-guard.md` and `wave5b_review_2026-08-30.md`.
 
 **5. A revert that never happened, and should be remembered as such: the old ruler.**
 The corrections-only test set was not wrong so much as **structurally incapable** of
@@ -179,7 +179,7 @@ Three things follow:
    identical-code runs that genuinely differ (2 of 111 boundaries moved) score the same.
    That is the first gate in this project able to adjudicate a code change.
 2. **Kiddushin's shortfall is not a fact about Kiddushin.** Its ruler is 16 corrections
-   targets with a ±7-point noise floor, on a biased set. `tasks/NEXT/07` builds a blind
+   targets with a ±7-point noise floor, on a biased set. `work/2026-08-30-kiddushin-boundary-set.md` builds a blind
    Kiddushin boundary set (~180–190 targets) from the newly parsed 2005 list, which will
    kill the noise the same way Ketubot's did. **Until then, do not compare the two
    tractates on this row.**
@@ -218,13 +218,13 @@ the scorer says so. Downgraded from a blocker to a cleanup once the neutral rule
 - **Never trim away a clause that is itself narrative** — the principled guard, and the
   one salvageable piece of Wave 5b: its labeller used as a **veto on the trim** rather
   than as the mechanism that computes the boundary. ~40 lines against the original 433.
-  Brief written: `tasks/NEXT/03`. It targets the one defect that survived the product
+  Brief written: `work/2026-08-30-second-story-guard.md`. It targets the one defect that survived the product
   decision: **Ketubot 62a and 105b each discard a whole second story** — R. Yochanan on
   the collapsing stair, and Mar Ukva and the spit, six clauses of narrative and dialogue
   Sefaria prints in full. Wrong under **every** definition of where a story ends.
-- **A blind Kiddushin boundary set** (`tasks/NEXT/07`) — ~180–190 targets from the 2005
+- **A blind Kiddushin boundary set** (`work/2026-08-30-kiddushin-boundary-set.md`) — ~180–190 targets from the 2005
   list, which removes the ±7-point noise and makes the Kiddushin row meaningful.
-- **Harvest Jeff's 10 anchored Kiddushin remarks** (`tasks/NEXT/08`) — each came back
+- **Harvest Jeff's 10 anchored Kiddushin remarks** (`work/2026-08-30-kiddushin-comments-harvest.md`) — each came back
   with its exact anchor position in the main text, so it attaches to the passage he was
   looking at. Several are boundary corrections. Unused.
 - **A finer splitter for the 13%** — the only route past the measured ceiling. Nobody has

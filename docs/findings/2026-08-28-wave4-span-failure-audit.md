@@ -5,7 +5,7 @@
 **Trigger:** Jeff Rubenstein's 2026-07-06 review
 ([ledger](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)) flagged
 8 mis-trimmed Kiddushin stories, one cut mid-word.
-**Supersedes the scale claim in:** [tasks/PLAN_wave5.md](../../tasks/PLAN_wave5.md)
+**Supersedes the scale claim in:** [docs/history/2026-08-28-PLAN-wave5.md](../history/2026-08-28-PLAN-wave5.md)
 (drafted before this audit, which assumed the damage was limited to the 8 stories
 Jeff happened to review).
 
@@ -100,4 +100,4 @@ Fix before the next review round, or the same confusion is purchased twice.
 
 **A sequencing consequence.** With nothing corrupt in the current outputs, Wave 5
 (clause-anchored spans) is no longer urgent. See
-[tasks/PLAN_wave6.md](../../tasks/PLAN_wave6.md) for what took its place and why.
+[docs/history/2026-08-29-PLAN-wave6-story-criteria.md](../history/2026-08-29-PLAN-wave6-story-criteria.md) for what took its place and why.

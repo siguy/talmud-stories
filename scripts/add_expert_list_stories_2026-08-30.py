@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Add the 5 blind-expert-list Ketubot stories that were absent from the golden.
 
-Brief: tasks/NEXT/10_golden_additions.md   Capability: 2 (Detection / ground truth).
+Brief: work/done/2026-08-30-ketubot-golden-additions.md   Capability: 2 (Detection / ground truth).
 
 Five stories on Jeff Rubenstein's detector-blind 2005 Ketubot list
 (`jeff comms/b.ketubot (1).doc`, written 2005-02-02, twenty years before this
@@ -225,7 +225,7 @@ def build_story(spec):
             'blind': True,
             'never_detected': spec.get('never_detected', True),
             'added': ADDED_ON,
-            'added_by': 'tasks/NEXT/10_golden_additions.md (scripts/add_expert_list_stories_2026-08-30.py)',
+            'added_by': 'work/done/2026-08-30-ketubot-golden-additions.md (scripts/add_expert_list_stories_2026-08-30.py)',
             'source_document': EXPERT_DOC,
             'source_document_date': EXPERT_DOC_DATE,
             'why_blind': WHY_BLIND,
@@ -304,7 +304,7 @@ def main():
 
     data['expert_list_additions_2026_08_30'] = {
         'date': ADDED_ON,
-        'brief': 'tasks/NEXT/10_golden_additions.md',
+        'brief': 'work/done/2026-08-30-ketubot-golden-additions.md',
         'capability': '2 Detection (ground truth)',
         'script': 'scripts/add_expert_list_stories_2026-08-30.py',
         'source_document': EXPERT_DOC,

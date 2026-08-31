@@ -2,7 +2,7 @@
 
 **Session date:** 2026-05-17 / 18
 **Detector:** `src/story_detector_v8.py` (v7 left untouched as canonical)
-**Plan:** `tasks/PLAN_kiddushin_fixes.md`
+**Plan:** `docs/history/2026-05-17-PLAN-kiddushin-fixes.md`
 **Commit:** `eff0218`
 
 ---

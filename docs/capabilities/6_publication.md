@@ -8,7 +8,7 @@ stated accuracy, plus the columns Jeff asked for, editable by scholars. See
 exists is a public *explainer* site and a set of per-round review pages — neither of which
 is the resource.
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status.*
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
 
@@ -94,7 +94,7 @@ One structural fact about them, stated because it is the difference between a re
 resource: **a golden built from detector output can only contain what we proposed.** Five
 stories on Jeff's blind Ketubot list were in no golden at all until 2026-08-30 (`2e61035`),
 and the ruler now names 6 more for Ketubot and 6 for Kiddushin that are still absent
-(`4de7135`, `tasks/NEXT/10_golden_completeness.md`). Until that third source is folded in,
+(`4de7135`, `work/2026-08-30-golden-completeness.md`). Until that third source is folded in,
 "golden" means *our proposals, corrected* rather than *the best available answer for what
 is in this tractate*.
 
@@ -155,7 +155,7 @@ Everything. Listed in the order the dependencies fall, not by size:
   strict recall, a precision range, BLIND vs CIRCULAR named per number). Publishing a
   number without its dataset is the mistake FRAMEWORK §3 says cost this project months.
 - **Make the goldens complete** before calling them a resource — fold in every verdict,
-  and add the stories we never proposed (`tasks/NEXT/10_golden_completeness.md`).
+  and add the stories we never proposed (`work/2026-08-30-golden-completeness.md`).
 - **Fix or retire the public site's statistics.** Either update `index.html` from a
   current measurement or remove the numbers; a stale 96.3% on a public page is worse than
   no number.

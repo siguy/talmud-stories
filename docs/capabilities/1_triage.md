@@ -6,7 +6,7 @@
 **Current:** **98.0%** — 3 of 149 lost — on Jeff's 2005 Ketubot list (**BLIND**), while
 examining 44% of pages. Measured 2026-08-30 (`c900ee4`). Kiddushin: **unmeasured**.
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status —
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status —
 status lives in [`STATUS.md`](../../STATUS.md).*
 
 ---
@@ -108,12 +108,12 @@ versions after it shipped (v8, v9, v10, v11)
 ## Untried
 
 - **Re-run Stage 2 on the 124 discarded Ketubot pages and price the trade.** The single
-  highest-value item here; brief written and ready (`tasks/NEXT/01`), no API cost beyond
+  highest-value item here; brief written and ready (`work/2026-08-30-triage-recall-price.md`), no API cost beyond
   pennies, text already on disk. It answers whether "96% recall" is really "96% of the
   44% we look at." **Never attempted.**
 - **Measure Kiddushin triage recall** against its new blind list — `NEXT/06`, no API
   calls.
-- **Mine the opener lexicon instead of hand-writing it** (`tasks/PLAN_wave7.md`, DRAFT,
+- **Mine the opener lexicon instead of hand-writing it** (`docs/history/2026-08-28-PLAN-wave7-opener-lexicon.md`, DRAFT,
   never executed). The five introducers were invented, not derived. Wave 7 proposes
   ranking opening n-grams from the 149 blind stories plus the golden by story-frequency
   vs corpus-frequency, and using them **as a triage prior only, never as a classifier**

@@ -1,4 +1,14 @@
-# NEXT 09 — Fetch Gittin, Yevamot and Eruvin from Sefaria
+---
+title: Fetch Gittin, Yevamot and Eruvin from Sefaria
+capability: [triage, detection]
+tractate: [gittin, yevamot, eruvin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Fetch Gittin, Yevamot and Eruvin from Sefaria
 
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
 **Capability: ground truth / prerequisite for everything on these tractates.**
@@ -42,3 +52,7 @@ last check is the point of the task.
 
 Update the ground-truth block in `STATUS.md`. Note that `scripts/build_boundary_testset_2005.py`
 can now build blind boundary sets for all three, since their lists already parse.
+
+## Outcome
+
+**Done 2026-08-30 (`488576a`).** Gittin 2a-90b (178 dapim / 2,990 segments), Yevamot 2a-122b (242 / 3,865), Eruvin 2a-105a (207 / 3,645). Ranges from Sefaria's own /api/shape/ index, not guessed; every daf cited in Jeff's three lists resolves to a fetched page. Also fixed this brief's own closing claim, which was wrong: `build_boundary_testset_2005.py` could NOT build blind boundary sets for these three — `load_units` globbed only `results/v10/wave4_notrim/` and would have produced an empty test set rather than an error. **Still open:** `parse_expert_doc` credits 21 stories under two-amud headers to the preceding daf, so per-daf analysis on these three is wrong until it is fixed.

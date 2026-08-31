@@ -90,7 +90,7 @@ distinction for detection gaps (`N/A`) — apply the same reasoning to run failu
 ### 2.4 `no_clause_split` provenance destroyed — VERIFIED — **FIXED 2026-08-30**
 
 The unconditional post-loop write overwrites `text_span_source`, so the no-split case
-never survives. [`tasks/PLAN_wave5.md`](../../tasks/PLAN_wave5.md) explicitly requires
+never survives. [`docs/history/2026-08-28-PLAN-wave5.md`](../history/2026-08-28-PLAN-wave5.md) explicitly requires
 this be "a named, logged outcome (`text_span_source: 'no_clause_split'`), never a silent
 accident." Wave 5b regresses against its predecessor's stated requirement.
 

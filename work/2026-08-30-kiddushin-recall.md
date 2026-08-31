@@ -1,8 +1,18 @@
-# NEXT 06 — Kiddushin recall: triage and detection
+---
+title: Kiddushin recall: triage and detection
+capability: [triage, detection]
+tractate: [kiddushin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Kiddushin recall: triage and detection
 
 **`NEXT/05` is DONE** — ground truth is
-[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json)
-(95 stories; see [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../../docs/findings/2026-08-30-kiddushin-list-parse.md)).
+[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json)
+(95 stories; see [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../docs/findings/2026-08-30-kiddushin-list-parse.md)).
 Read `STATUS.md` and `FRAMEWORK.md`.
 **Capabilities: 1 Triage, 2 Detection.** **No API calls.**
 

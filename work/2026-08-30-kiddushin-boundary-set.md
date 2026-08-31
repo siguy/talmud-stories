@@ -1,7 +1,17 @@
-# NEXT 07 — A blind boundary set for Kiddushin
+---
+title: Build a blind Kiddushin boundary set
+capability: [boundaries]
+tractate: [kiddushin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Build a blind Kiddushin boundary set
 
 **`NEXT/05` is DONE** — ground truth is
-[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json).
+[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json).
 Read `STATUS.md` and `FRAMEWORK.md`.
 **Capability: 4 Boundaries.** **No API calls.**
 

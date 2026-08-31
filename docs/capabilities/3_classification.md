@@ -8,7 +8,7 @@ goldens (**CIRCULAR**), measured 2026-08-30 (`46d90b2`). *Review-round precision
 **range**, not a point: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–92.1% (Apr 2026, on
 v7) — see §"Distance to gate".*
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status.*
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
 
@@ -44,7 +44,7 @@ Its cost lands in this capability's false-negative column, so it is recorded her
 | 2026-05-24 | **Wave 2 Issue #6(b) — biblical-actor filter.** Demote a story whose only named actors are biblical | shipped. Fired 3× on Kiddushin (38a "the Jewish people", 72b Nebuchadnezzar, 69b Ezra); two are exactly Jeff's flagged cases. **Kiddushin classification F1 0.9101 → 0.9257** (CIRCULAR). Fired 0× on Ketubot | `1c4d18d`, [`wave2_results.md`](../findings/2026-05-24-wave2-results.md) |
 | 2026-05-25 | **Wave 3 Item 3 — sharper not-a-story rules**, written as abstract patterns rather than passages (Lesson 8): all-verbal → not a story; biblical-actor-only → not a story; <2 distinct actions or no change → not a story | **failed on its own target: Kiddushin FPs went up, not down.** Shipped anyway, because inspection showed the new "FPs" were largely real stories the golden did not contain — including Jeff's own flagged-missing 33a | `dcefb30`, Lesson 14 |
 | 2026-06-03 | Jeff's Wave 3 reply applied: 7a re-added as LOW_CONFIDENCE, 26a and 102a confirmed not stories, 106a boundary extended | Ketubot composite 0.9170 → 0.9171 (+1 TP, −1 FP) | `402ed0d` |
-| 2026-08-29 | **Wave 6 written, then split into measure → ask Jeff → implement**, after an audit found its own justification half wrong | **6c BLOCKED by design.** See "Ceiling" | [`PLAN_wave6.md`](../../tasks/PLAN_wave6.md) |
+| 2026-08-29 | **Wave 6 written, then split into measure → ask Jeff → implement**, after an audit found its own justification half wrong | **6c BLOCKED by design.** See "Ceiling" | [`PLAN_wave6.md`](../history/2026-08-29-PLAN-wave6-story-criteria.md) |
 | 2026-08-30 | **Harness precision measured on the current detector** — correcting a claim in FRAMEWORK that no current number existed | **measured: Ketubot 89.2% (TP 149 / FP 18), Kiddushin 85.3% (TP 81 / FP 14)** (**CIRCULAR**). Both at or above the gate | `46d90b2` |
 | 2026-08-30 | **The 86% / 68% figures re-derived** by sorting every rejection by *what Jeff objected to* | **measured: they were never Classification numbers.** Most rejections are boundary, merge or confidence-level complaints. Separated, both tractates land near 92–95% and the tractate gap mostly evaporates | `4de7135`, Lesson 30, [`ruler`](../findings/2026-08-30-detection-classification-ruler.md) |
 | 2026-08-30 | **Ketubot 77a diagnosed** over 8 re-runs of identical code | **measured:** segs 13-14 proposed in 7 of 8 runs, classified `NOT_A_STORY` in 6 of those 7, every run citing the same three prompt disqualifiers. A Classification failure sitting on proposal-level variance | `abdc4af` |
@@ -125,7 +125,7 @@ precision is superseded by `4de7135`.
   against accepted, never one of each (`6d1f917`).
 - **Never verify with the composite score.** It is built from ratios over pages already in
   the golden, so *deleting* expert validations makes it go **up**. Verify with counts and
-  `git hash-object` (`tasks/NEXT/00`).
+  `git hash-object` (`work/done/2026-08-30-capability-histories.md`).
 
 ## Distance to gate
 
@@ -142,7 +142,7 @@ Three things this table hides, all of them stated rather than smoothed:
 1. **We have a harness point estimate, not a review-round one.** The review rounds cannot
    give a point estimate, because the reviewer never recorded *which thing* he was
    rejecting. The range's width **is** the unreadable notes: 9 + 9 + 6 across the rounds.
-   Narrowing it needs the review UI to capture the distinction (`tasks/NEXT/04`), not
+   Narrowing it needs the review UI to capture the distinction (`work/2026-08-30-review-verdict-axes.md`), not
    more inference over free text (Lesson 30).
 2. **The gate itself is invented.** *"Below ~85% a reviewer spends more time rejecting
    than confirming"* is a plausible sentence with no measurement behind it. Only Jeff can
@@ -177,7 +177,7 @@ that matters, and it is definitional, not technical.**
 
 Jeff's 2026-07-06 criteria contradict his own 2026-03-17 rulings. Both are his; neither is
 wrong; they cannot both be mechanically applied
-([`PLAN_wave6.md`](../../tasks/PLAN_wave6.md) Finding 1):
+([`PLAN_wave6.md`](../history/2026-08-29-PLAN-wave6-story-criteria.md) Finding 1):
 
 | 2026-03-17 rulings | 2026-07-06 criteria |
 |---|---|
@@ -227,7 +227,7 @@ suggests he may choose exactly that.
   nothing: 16 Kiddushin verdicts from the 2026-05-26 and 2026-07-06 rounds were never
   folded in; Ketubot has 26 unique deferred/needs-review items, 8 skipped and 5 deferred
   boundary corrections; **52 Ketubot proposals carry no verdict at all** (`f415a9f`,
-  `4de7135`, `tasks/NEXT/10_golden_completeness.md`). Separately, the ruler folds in 7 of
+  `4de7135`, `work/2026-08-30-golden-completeness.md`). Separately, the ruler folds in 7 of
   the 8 verdict files on disk — the 2026-01-08 round (25 verdicts) is not among them
   (measured 2026-08-30 from `results/rulers/*.json`).
 - **Rebuild the Kiddushin golden on a current run.** Its verdicts were given on **v7**

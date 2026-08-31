@@ -27,7 +27,7 @@ reproduction is a known strength. The whole point of Lesson 15 (let
 the model judge meaning) was right — the failure was the numeric
 *interface*, not the idea of LLM emission.
 
-**How to apply:** See `tasks/PLAN_wave5.md` — clause-index selection
+**How to apply:** See `docs/history/2026-08-28-PLAN-wave5.md` — clause-index selection
 anchored to punctuation, with a verbatim-quote fallback, plus an
 assertion that every emitted boundary sits at a clause/word boundary
 (a mid-word cut becomes a build error, not a silent corruption).

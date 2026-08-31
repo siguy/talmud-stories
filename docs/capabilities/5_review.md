@@ -7,7 +7,7 @@ this project with a real basis)
 **Current:** **not started** as a measured capability. No throughput number, no
 inter-rater number — one reviewer has ever reviewed anything.
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status.*
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
 
@@ -152,7 +152,7 @@ days per tractate, and inter-rater agreement. The second is not merely unmeasure
 
 **A gap worth naming, measured 2026-08-30.** `STATUS.md` lists **`NEXT/04` as a ready,
 bolded task** — *"make the reviewer say which thing is wrong"* — and **the brief file does
-not exist.** `tasks/NEXT/04_review_ui_asymmetry.md` was deleted in `b394489` when its
+not exist.** `work/done/2026-08-30-review-ui-display-asymmetry.md` was deleted in `b394489` when its
 original job (the display bug) was completed, and `4de7135` then repointed the *name* at a
 new job without writing a new brief. In a repo whose convention is one self-contained
 brief per ready task, this one is a name with nothing behind it.

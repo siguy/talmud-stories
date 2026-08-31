@@ -1,4 +1,14 @@
-# NEXT 11 — One detection covering two stories: Kiddushin 12a
+---
+title: Kiddushin 12a: one detection covering two stories
+capability: [detection]
+tractate: [kiddushin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Kiddushin 12a: one detection covering two stories
 
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
 **Capability: 2 Detection.** **Independent.** Open in the ledger since 2026-07-06.

@@ -294,7 +294,7 @@ Use this shape every time, in `STATUS.md`:
    is not a metric yet.
 4. **Where do we measure up?** — current vs gate, and say if it is inside the noise.
 5. **How right must we be?** — the gate, justified by recoverability (§2). Not a vibe.
-6. **If we are not ready, how do we improve?** — a brief in `tasks/NEXT/`.
+6. **If we are not ready, how do we improve?** — a brief in `work/`.
 7. **Can we improve it after moving on?** — see below.
 
 ## 6. Can a capability improve after we move past it?
@@ -325,4 +325,4 @@ downstream ones are loose.
   indication presented as a measurement is how this project has misled itself before.
 - **capability** — one of the six. Not "phase", not "wave", not "axis".
 - **wave** — a historical batch of changes (Waves 1-7). Retired as a planning unit;
-  work is now a capability plus a brief in `tasks/NEXT/`.
+  work is now a capability plus a brief in `work/`.

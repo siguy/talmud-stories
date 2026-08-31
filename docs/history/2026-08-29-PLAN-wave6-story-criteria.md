@@ -9,7 +9,7 @@ justification was half wrong and that it would silently redefine ~40% of the gol
 ## Why this wave is split
 
 Jeff gave us a sharp story-definition rule on 2026-07-06
-([criteria](../docs/findings/2026-07-06-jeff-story-definition-criteria.md)). Encoding
+([criteria](../findings/2026-07-06-jeff-story-definition-criteria.md)). Encoding
 it looks like a prompt change. It isn't — it is a **question about what the dataset
 means**, and we cannot answer it for him. Two findings force the split.
 
@@ -17,7 +17,7 @@ means**, and we cannot answer it for him. Two findings force the split.
 
 Both are his. Neither is wrong. They cannot both be mechanically applied.
 
-| 2026-03-17 (the 187-review corpus behind [error_taxonomy.md](../docs/findings/2026-03-17-error-taxonomy.md)) | 2026-07-06 ([criteria](../docs/findings/2026-07-06-jeff-story-definition-criteria.md)) |
+| 2026-03-17 (the 187-review corpus behind [error_taxonomy.md](../findings/2026-03-17-error-taxonomy.md)) | 2026-07-06 ([criteria](../findings/2026-07-06-jeff-story-definition-criteria.md)) |
 |---|---|
 | *"There is only one action followed by a legal ruling"* → **not a story** | *"A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story."* |
 | *"The actions mentioned in the reasoning, 'stating, objecting, asking questions' are all part of a dialogue, and not really events."* | *"speech-acts don't count… minimally there must be some action beyond the speech"* — implying speech **plus** action qualifies |
@@ -49,7 +49,7 @@ never saw it. Of the 6 known recall misses:
 | Miss | Responsible stage | Fix belongs to |
 |---|---|---|
 | 20a, 72b, 82b | **TRIAGE** — page never processed | triage recovery (no criteria change can help) |
-| 67b | Stage 2 — opener `אמרו עליו` outside lexicon | [Wave 7](PLAN_wave7.md) |
+| 67b | Stage 2 — opener `אמרו עליו` outside lexicon | [Wave 7](2026-08-28-PLAN-wave7-opener-lexicon.md) |
 | 53a | Stage 2 — plausibly criteria | **this wave** |
 | 77a | Stage 2 — **measured**: criteria, see seed case below | **this wave** |
 
@@ -61,7 +61,7 @@ evidence at the granularity the mechanism operates on.
 ## Seed case — Ketubot 77a (measured 2026-08-30, brief `tasks/NEXT/02`)
 
 **The premise this case was filed under was wrong.** Brief 02 and
-[`recall_miss_diagnosis_2026-08-30.md`](../docs/findings/2026-08-30-recall-miss-diagnosis.md)
+[`recall_miss_diagnosis_2026-08-30.md`](../findings/2026-08-30-recall-miss-diagnosis.md)
 both state that Jeff's blind 2005 entry and our golden agree on a story at
 Ketubot 77a "segments 8-14", and that Stage 2 proposed nothing. **All three claims are
 false.** They are two different stories on one daf, conflated by the recall locator's
@@ -111,7 +111,7 @@ That form trips four of the prompt's disqualifiers and three clauses of its CRIT
 ("a rabbi travels to another academy for a debate", "one sage sits before another",
 "named rabbis make legal arguments to each other").
 
-Under [Jeff's rubric](../docs/findings/2026-07-06-jeff-story-definition-criteria.md) it
+Under [Jeff's rubric](../findings/2026-07-06-jeff-story-definition-criteria.md) it
 qualifies (INDICATED — our reading of his written criteria, not his verdict on this
 passage): the events **actually happened**; there is **action beyond the speech**
 (`אזל`, `סליק`, `אשכחיה` — went, ascended, found him), which is his stated minimum; and the
@@ -141,7 +141,7 @@ a queued question for Jeff.** The original counts below were wrong in a way wort
    His blind 2005 list contains no Mishnah-only story, but his review rounds accepted these
    into our golden — **his own two sources disagree**, the same shape as the boundary
    question, so this is his call and not ours. **Queued for the next email** →
-   [`../comms/sent/2026-08-30-email-jeff.md`](../comms/sent/2026-08-30-email-jeff.md)
+   [`../comms/sent/2026-08-30-email-jeff.md`](../../comms/sent/2026-08-30-email-jeff.md)
    § "Not yet asked". Still decide the premise before Wave 6 measures against the golden.
 
 2. **`_tag_mishnah_segments()` mislabelled Gemara as Mishnah at chapter boundaries —
@@ -158,7 +158,7 @@ a queued question for Jeff.** The original counts below were wrong in a way wort
    change a correction. Golden **TP 149 → 151, FN 15 → 13, composite 0.9115 → 0.9136**;
    precision and merge unchanged; **blind recall identical at 96.0%**, which is why nothing
    caught it. Guarded by `tests/test_mishnah_tagger_chapter_boundary.py`. → Lesson 27,
-   [`../docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](../docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md)
+   [`../docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](../findings/2026-08-30-mishnah-tagger-chapter-boundary.md)
 
 ### Gate contribution
 

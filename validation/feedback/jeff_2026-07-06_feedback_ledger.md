@@ -35,7 +35,7 @@ feedback processing again"). This ledger is the mechanism that stops it.
 >
 > **Consequence for sequencing:** the misses are Wave 6 (criteria) territory, not
 > Wave 5 (boundaries) territory. Wave 6 is now first. See
-> [`tasks/PLAN_wave6.md`](../../tasks/PLAN_wave6.md).
+> [`docs/history/2026-08-29-PLAN-wave6-story-criteria.md`](../../docs/history/2026-08-29-PLAN-wave6-story-criteria.md).
 
 ## Source files (everything this ledger is built from)
 
@@ -68,7 +68,7 @@ Root cause verified this session: the Wave 4 mechanism asks Gemini for a
 *character offset*; the nikud-mapping is provably faithful, so the wrong cuts
 come from the model's raw offset numbers. LLMs quote text well but count
 characters badly. Fix = anchor boundaries to Sefaria punctuation/clauses, not
-characters (see [tasks/PLAN_wave5.md](../../tasks/PLAN_wave5.md)).
+characters (see [docs/history/2026-08-28-PLAN-wave5.md](../../docs/history/2026-08-28-PLAN-wave5.md)).
 
 | Ref | Category | Jeff's note (verbatim intent) | Status |
 |---|---|---|---|
@@ -184,11 +184,11 @@ per-story columns: notes, references to scholarship, Yerushalmi parallels.**
 ## OPEN ITEMS TRACKER (nothing here is done until checked off)
 
 - [x] **Cause A contained** — spans reverted to segment-level (`results/v10/wave4_notrim/`), score-neutral, 0 mid-word cuts. Gate: `scripts/audit_text_spans.py --strict`.
-- [ ] **v11 clause-anchored spans** (Wave 5) — DEPRIORITIZED behind Wave 6; nothing corrupt is live. Plan: [tasks/PLAN_wave5.md](../../tasks/PLAN_wave5.md)
+- [ ] **v11 clause-anchored spans** (Wave 5) — DEPRIORITIZED behind Wave 6; nothing corrupt is live. Plan: [docs/history/2026-08-28-PLAN-wave5.md](../../docs/history/2026-08-28-PLAN-wave5.md)
 - [x] **Fix the review UI Hebrew/English asymmetry** (2026-08-30, `tasks/NEXT/04`) — there were **two** asymmetries, not one. (1) The Hebrew was cut at the LLM char-offsets while the English showed full segments. (2) Cross-page stories rendered an *English-only* continuation block, so the Hebrew appeared to stop at the page break — **35 stories** across the three outputs, and the direct cause of the `8b seg 14` note in Cause B below, which is therefore a display bug and **not** a cross-page-merge defect. Both fixed by rendering each segment as one row carrying both languages; the story is now **highlighted inside the full text**, never trimmed to. Verified in a browser over all 262 stories (0 truncations, 0 strikethrough, 35/35 bilingual continuations) and on all 9 of Jeff's flagged cases. Guard: `tests/test_review_ui_symmetry.py`.
 - [ ] **Segment-boundary + cross-page pass** (Cause B: 8a, 8b_14, 20a) — separate from v11
 - [ ] **Multi-story / dedup** (12a_13-15 two `הָהוּא גַּבְרָא` stories + repeat)
-- [ ] **Encode Jeff's (c) criteria — WAVE 6, now the FIRST wave, ahead of Wave 5** ([tasks/PLAN_wave6.md](../../tasks/PLAN_wave6.md)); the 6 recall misses seed its conformance set (Stage 2 rewrite around hypothetical-vs-actual + conformance test set + golden re-check against the rubric). Deliberately NOT in Wave 5 — different axis (classification, not boundary). Do not let it slip to "never" (Lesson 17).
+- [ ] **Encode Jeff's (c) criteria — WAVE 6, now the FIRST wave, ahead of Wave 5** ([docs/history/2026-08-29-PLAN-wave6-story-criteria.md](../../docs/history/2026-08-29-PLAN-wave6-story-criteria.md)); the 6 recall misses seed its conformance set (Stage 2 rewrite around hypothetical-vs-actual + conformance test set + golden re-check against the rubric). Deliberately NOT in Wave 5 — different axis (classification, not boundary). Do not let it slip to "never" (Lesson 17).
 - [x] **Ketubot list obtained and used** — `jeff comms/b.ketubot (1).doc`; recall measured at 96.0%
 - [ ] **Ask Jeff which OTHER tractates he has lists for** — highest-value, lowest-cost ask; a Kiddushin list gives a generalization estimate on a less-tuned tractate
 - [ ] **Add the 5 expert-list stories missing from the Ketubot golden** (20a, 53a, 67b, 72b, 82b), flagged with expert-list provenance

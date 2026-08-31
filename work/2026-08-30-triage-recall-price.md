@@ -1,4 +1,14 @@
-# NEXT 01 — Does Stage 1 throw away real stories?
+---
+title: Price the triage trade over the 124 discarded Ketubot pages
+capability: [triage]
+tractate: [ketubot]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Price the triage trade over the 124 discarded Ketubot pages
 
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first, then this.
 **Capability: 1 Triage.** Gate: >=98% survival, provisional. No other context needed.

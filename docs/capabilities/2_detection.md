@@ -9,7 +9,7 @@ see [`FRAMEWORK.md` §1.2](../../FRAMEWORK.md). It proposes; it does not judge.
 *Circular cross-check, not an accuracy claim:* golden recall 92.1% Ketubot / 95.3%
 Kiddushin (**CIRCULAR**).
 
-*Written 2026-08-30 from the sources in `tasks/NEXT/00`. History, not status.*
+*Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
 
@@ -192,10 +192,10 @@ believed, which is the opposite of what a plateau reading would predict.
   cross-page stories whose continuation daf carries no proposal at all.
 - **Propose anything at all on Ketubot 17b, 50a, 51a** — three continuation dapim
   carrying zero proposals. Named, never investigated (`4de7135`).
-- **The opener lexicon, mined rather than invented** (`tasks/PLAN_wave7.md`, DRAFT).
+- **The opener lexicon, mined rather than invented** (`docs/history/2026-08-28-PLAN-wave7-opener-lexicon.md`, DRAFT).
   Targets Ketubot 67b (`אמרו עליו`) and 82b (`בראשונה`). Shared with
   [Triage](1_triage.md); as a recall prior only, never a classifier (Lesson 15).
-- **Kiddushin 12a — one detection covering two stories** (`tasks/NEXT/11`), and the same
+- **Kiddushin 12a — one detection covering two stories** (`work/2026-08-30-kiddushin-12a-dedup.md`), and the same
   shape Jeff flagged at 12a segs 13-15: two `הָהוּא גַּבְרָא` stories in one span, plus a
   partial duplicate ([ledger, Part 1](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)).
   A Detection question (*how many stories are here*), not a Boundaries one.

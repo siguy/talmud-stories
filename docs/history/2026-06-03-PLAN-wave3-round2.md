@@ -62,7 +62,7 @@ Triage of the 4 Wave 4 tracks in `todo.md` in light of new evidence:
 - **Track 2 (second baraita-embedded few-shot for 81b)** → still valid but low-leverage (1 known FN).
 - **Track 4 (Bava Metzia)** → still valid but a different scope (new tractate, fresh golden) — defer until v10 ships.
 
-**Recommendation:** Track 3 next, single-feature Wave 4. Plan doc at `tasks/PLAN_wave4.md` after Step 1-3 done and user has approved this plan.
+**Recommendation:** Track 3 next, single-feature Wave 4. Plan doc at `docs/history/2026-06-15-PLAN-wave4.md` after Step 1-3 done and user has approved this plan.
 
 ---
 

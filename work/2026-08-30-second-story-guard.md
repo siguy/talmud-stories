@@ -1,4 +1,14 @@
-# NEXT 03 — Stop discarding a second story that shares a segment
+---
+title: Stop discarding a second story that shares a segment
+capability: [boundaries]
+tractate: [ketubot]
+blocked_by: []
+awaiting: [jeff:boundary-end-rule]
+finding:
+superseded_by:
+---
+
+# Stop discarding a second story that shares a segment
 
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
 **Capability: 4 Boundaries.** **Depends on Jeff: no** — this is wrong
@@ -30,7 +40,7 @@ It targets exactly this failure and leaves the definitional question alone.
 That needs one signal per clause — *is this narrative?* — which is the one salvageable
 piece of the shelved Wave 5b: its labeller used as a **guard on the trim**, not as the
 mechanism that computes the boundary. Roughly 40 lines against the original 433.
-Salvage list in `tasks/RESUME_after_clear.md`; full review in
+Salvage list in `work/ (the item itself)`; full review in
 `docs/findings/2026-08-30-wave5b-review.md`.
 
 ## Method

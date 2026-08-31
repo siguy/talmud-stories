@@ -1,9 +1,19 @@
-# NEXT 08 — Harvest the review comments embedded in the Kiddushin list
+---
+title: Harvest Jeff's 10 anchored Kiddushin remarks
+capability: [classification, boundaries]
+tractate: [kiddushin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Harvest Jeff's 10 anchored Kiddushin remarks
 
 **`NEXT/05` is DONE.** The comments are the `comments` stream in
-[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json),
+[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json),
 each carrying its `anchor_cp` and `attached_story_id`. Read `STATUS.md`, `FRAMEWORK.md`
-and [the finding](../../docs/findings/2026-08-30-kiddushin-list-parse.md) §5–6.
+and [the finding](../docs/findings/2026-08-30-kiddushin-list-parse.md) §5–6.
 **Capabilities: 3 Classification, 4 Boundaries.** **No API calls.**
 
 ## What is in there

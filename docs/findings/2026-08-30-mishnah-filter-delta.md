@@ -1,7 +1,7 @@
 # The Mishnah filter contradicts the golden — measured
 
 **2026-08-30.** Found while executing `tasks/NEXT/02`; the seed case is written up in
-[`tasks/PLAN_wave6.md`](../../tasks/PLAN_wave6.md) under "Seed case — Ketubot 77a",
+[`docs/history/2026-08-29-PLAN-wave6-story-criteria.md`](../history/2026-08-29-PLAN-wave6-story-criteria.md) under "Seed case — Ketubot 77a",
 adjacent defect #1. This file is the measurement and the scope question it raises.
 
 ## What the filter does

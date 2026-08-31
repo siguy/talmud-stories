@@ -8,7 +8,7 @@ there is deleted silently.
 **Result:** two stories the golden accepts come back. On the immutable harness,
 Ketubot **TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
 with **precision and merge unchanged**. Found while executing `tasks/NEXT/02`; written up
-as adjacent defect #2 in `tasks/PLAN_wave6.md`.
+as adjacent defect #2 in `docs/history/2026-08-29-PLAN-wave6-story-criteria.md`.
 
 Scope note: this fixes the **tagger**. Whether a genuinely Mishnah-only *ma'aseh* should
 be filtered at all is the separate open question (adjacent defect #1) and is untouched

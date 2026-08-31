@@ -1,4 +1,14 @@
-# NEXT 10 — Make the goldens complete: fold in every verdict, add the stories we never proposed
+---
+title: Make the goldens complete: fold in every verdict
+capability: [classification]
+tractate: [ketubot, kiddushin]
+blocked_by: []
+awaiting: []
+finding:
+superseded_by:
+---
+
+# Make the goldens complete: fold in every verdict
 
 Read `STATUS.md` and `FRAMEWORK.md`. **Capability: 3 Classification (and the ground truth
 under all six).** **No API calls** — every input already exists on disk.

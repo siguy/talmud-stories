@@ -44,4 +44,4 @@ Per Lesson 13/14, the Ketubot ceiling here is bounded by golden coverage, not de
 
 ## Next
 
-See `tasks/PLAN_wave3_round2.md` Step 2-4 and `tasks/PLAN_wave4.md` (to be drafted).
+See `docs/history/2026-06-03-PLAN-wave3-round2.md` Step 2-4 and `docs/history/2026-06-15-PLAN-wave4.md` (to be drafted).

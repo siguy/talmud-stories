@@ -64,7 +64,7 @@ his 2005 entry is at segs 13-14 (`אזל ר' אלעזר אמרה לשמעתא`).
 conflated by our locator's coarse window. The substance stands (we do miss his); the claim
 did not. Measured in
 [`recall_miss_diagnosis_2026-08-30.md`](../docs/findings/2026-08-30-recall-miss-diagnosis.md)
-and `tasks/PLAN_wave6.md`.
+and `docs/history/2026-08-29-PLAN-wave6-story-criteria.md`.
 
 Worth pairing with item 1 in the same email: the correction and the scope question are
 about the same page, and the pairing is the clearest way to show him why the daf matters.
