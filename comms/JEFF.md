@@ -23,7 +23,30 @@ names that slug in its `awaiting:` field; one that cannot start names it in `blo
 | `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? | Our filter currently deletes them, and no harness or UI can see the loss. His two sources disagree: his blind 2005 list holds no Mishnah-only story, but he marked **correct** in review every Ketubot case the filter removes. | drafted, not sent — [`draft_next_email.md`](draft_next_email.md) §1 |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? | **Sets the Classification gate**, and only he can answer it. Every other gate is provisional partly because this one is unanswered (FRAMEWORK §2b). | drafted, not sent — §2 |
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? | It is a redefinition of a large share of the golden, so it is his call and not ours. Blocks `work/2026-08-30-story-criteria.md` phase 6c **by design**. | not drafted — needs the 6a count first |
+| `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? | **Sets the Triage and Detection gates**, which are currently invented (FRAMEWORK §2b). It is a claim about scholarly completeness, so it is his to make, not ours — an earlier draft of FRAMEWORK wrongly assigned it to Simon. | not drafted |
+| `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? | Decides what Publication has to be, which sets how right Boundaries and Classification must be. Asked as a **proposal to confirm**, not as "corpus or database?" — the second is a design question we should not outsource to a busy reader. | not drafted — see below |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. | Costs him nothing and **cannot be reconstructed afterwards**. Five Kiddushin entries were merged in unmarked and we caught it only because the appendix survived separately (Lesson 29). Gittin, Yevamot and Eruvin are still clean — the window closes the moment we send him results for them. | not sent — **say it before the first review round on a new tractate, not after** |
+
+### On `jeff:deliverable-shape` — what we would propose
+
+His 2026-07-06 answer asked for a living, crowd-sourced, editable database with contested
+cases kept and flagged. That is the right end state and it is a large build. A **published
+corpus with a feedback channel** is the same thing minus write access, and it is reachable
+now:
+
+- the corpus is versioned, citable and static — which is what makes it usable in
+  scholarship at all, and what an editable database is *worse* at
+- feedback is a per-story channel (flag *not a story* / *borderline* / *missing*, with a
+  note), which is the crowd-sourcing he asked for on the reading side
+- adjudication stays with him or a small group, and accepted corrections ship in the next
+  release — so the corpus keeps the property that a citation resolves to fixed text
+- it needs the `borderline` flag the pipeline does not yet emit, and it reuses the review
+  UI we already build every round
+
+The honest tradeoff to put to him: **a citable release cannot also be silently mutable.**
+Live edits and stable citation are in tension, and versioned releases are how every other
+scholarly corpus resolves it. If he wants edits visible immediately, that is a different
+product and worth knowing before we build.
 
 ## Corrections owed
 

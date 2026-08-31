@@ -29,6 +29,13 @@ TRACTATES = {"ketubot", "kiddushin", "gittin", "yevamot", "eruvin"}
 # hash in the same commit and say why in the message.
 EVALUATE_GOLDEN_SHA = "5b83879e731b361d312bc72b3faa2598eaae585b"
 
+# scripts/evaluate_golden.py writes HERE when --output is omitted, silently overwriting a
+# historical baseline that cannot be regenerated (the run that produced it is not
+# reproducible -- Lesson 11). The harness is immutable, so the flag cannot be made
+# required; pinning the file it would clobber is the next best thing, and turns "remember
+# to pass --output" from advice into a test failure.
+BASELINE_KETUBOT_SHA = "e5e46fd7ac174b2a52c4030ed71bb603c2f79067"
+
 # The irreplaceable data. An unchanged composite beside a changed count is the signature
 # of silent loss, so we assert the counts and never the score.
 GOLDEN_COUNTS = {
@@ -155,6 +162,16 @@ def test_evaluate_golden_is_unchanged():
         "scripts/evaluate_golden.py changed. CLAUDE.md calls it IMMUTABLE and every "
         "score in this repo is comparable only because it has not moved. If the change "
         "is deliberate, update EVALUATE_GOLDEN_SHA in the same commit and justify it.")
+
+
+def test_the_historical_baseline_was_not_clobbered():
+    sha = git("hash-object", "docs/golden/v7/baseline_ketubot.json").strip()
+    assert sha == BASELINE_KETUBOT_SHA, (
+        "docs/golden/v7/baseline_ketubot.json changed. This is almost certainly an "
+        "accident: scripts/evaluate_golden.py writes here when --output is omitted. The "
+        "file records a score from a run that CANNOT be reproduced (Lesson 11), so an "
+        "overwrite is unrecoverable. Restore it with `git checkout -- "
+        "docs/golden/v7/baseline_ketubot.json` and re-run with --output.")
 
 
 @pytest.mark.parametrize("tractate", sorted(GOLDEN_COUNTS))

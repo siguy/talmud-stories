@@ -203,8 +203,10 @@ So the only number anyone has to defend is the **end-to-end** one; the rest are
 allocated backwards from it. And the end-to-end number is not a technical question, it
 is a claim about the product:
 
-> **Open (Simon):** if we publish "every story in the Talmud," what miss rate makes that
-> claim false? 1 in 20? 1 in 50? That single number sets Triage and Detection.
+> **Open (Jeff — `jeff:miss-rate`):** if we publish this as "the stories in tractate X,"
+> what miss rate would make that claim false? 1 in 20? 1 in 50? That single number sets
+> Triage and Detection. *This file previously assigned the question to Simon. It is a
+> claim about scholarly completeness, so it belongs to the scholar making it.*
 
 > **Open (Jeff — add to the next email):** at what error rate does reviewing our output
 > become worse than working from scratch? That single number sets Classification, and he

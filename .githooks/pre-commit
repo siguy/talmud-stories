@@ -5,3 +5,9 @@
 PINNED=5b83879e731b361d312bc72b3faa2598eaae585b
 ACTUAL=$(git hash-object scripts/evaluate_golden.py 2>/dev/null)
 [ "$ACTUAL" = "$PINNED" ] || { echo "pre-commit: scripts/evaluate_golden.py CHANGED ($ACTUAL != $PINNED)."; echo "  If deliberate, update PINNED here and EVALUATE_GOLDEN_SHA in tests/test_bookkeeping.py, and say why."; exit 1; }
+
+# The harness writes here when --output is omitted. The baseline it would overwrite is
+# from a run that cannot be reproduced, so the overwrite is unrecoverable.
+BASE_PINNED=e5e46fd7ac174b2a52c4030ed71bb603c2f79067
+BASE_ACTUAL=$(git hash-object docs/golden/v7/baseline_ketubot.json 2>/dev/null)
+[ "$BASE_ACTUAL" = "$BASE_PINNED" ] || { echo "pre-commit: docs/golden/v7/baseline_ketubot.json CHANGED."; echo "  Almost certainly evaluate_golden.py run without --output. Restore it:"; echo "    git checkout -- docs/golden/v7/baseline_ketubot.json"; exit 1; }
