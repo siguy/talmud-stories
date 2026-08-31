@@ -855,4 +855,4 @@ the chapter-boundary tagger bug (7 pages); the review UI, which still does not s
 `mishnah_stories` to the expert.
 
 **Detail:** [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../golden/v11/mishnah_filter_delta_2026-08-30.md).
-**Rule:** `tasks/lessons.md` Lesson 26.
+**Rule:** `tasks/lessons.md` Lesson 27.

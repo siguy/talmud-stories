@@ -41,4 +41,4 @@ is scored against them.
   stories to `pages[].mishnah_stories[]`, which no harness or UI reads — so a withheld
   story scores as one we never found (4 of Ketubot's 15 golden false negatives).
   Check it with `scripts/report_mishnah_filter_delta.py` before quoting a golden number.
-  See `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` and Lesson 26.
+  See `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` and Lesson 27.

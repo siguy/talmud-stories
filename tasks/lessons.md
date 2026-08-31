@@ -580,7 +580,7 @@ renderer *before* filing it against the detector.
 confirm the test fails when the bug is reintroduced — see
 `tests/test_review_ui_symmetry.py`.
 
-## Lesson 26 — A post-processor that deletes output must be visible to the harness that scores it (2026-08-30)
+## Lesson 27 — A post-processor that deletes output must be visible to the harness that scores it (2026-08-30)
 
 `filter_mishnah_only_stories()` (Wave 1, v8) moves any story lying entirely
 inside a Mishnah block out of `stories` and into `mishnah_stories`. Its

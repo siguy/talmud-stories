@@ -30,7 +30,7 @@ When flattening stories, MUST copy: page_segments: page.segments
 
 `stories[]` is not the whole output. Stage 4g moves Mishnah-internal stories to
 `mishnah_stories[]`, and no harness or UI reads that key — a withheld story therefore
-scores as a story we never found (4 of Ketubot's 15 golden false negatives; Lesson 26).
+scores as a story we never found (4 of Ketubot's 15 golden false negatives; Lesson 27).
 Any code that reads a run for scoring or display must decide about that key explicitly.
 Report it with `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
 
@@ -185,5 +185,5 @@ When making changes, update these files as relevant:
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
-- Move detector output to a new key without making the harnesses read it (Lesson 26) — an invisible deletion reads as a model failure
-- Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 26)
+- Move detector output to a new key without making the harnesses read it (Lesson 27) — an invisible deletion reads as a model failure
+- Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 27)
