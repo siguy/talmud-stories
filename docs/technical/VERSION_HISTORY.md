@@ -160,7 +160,7 @@
 1. **Cross-page first-segment skip fix** (Issue #1) — `merge_cross_page_stories_v7` Case 5: when both pages flag continuation and page2 starts at seg 1, force include seg 0.
 2. **Gap-aware continuation** (Issue #2) — reject any cross-page bridge with intervening segments between story end and page boundary.
 3. **Triage lexical override** (Issue #5) — pages containing canonical introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `כי הא ד`) force Stage 2 to run.
-4. **Mishnah-only story filter** (Issue #7) — stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) moved to `mishnah_stories`.
+4. **Mishnah-only story filter** (Issue #7) — stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) moved to `mishnah_stories`. **See the 2026-08-30 entry at the foot of this file: nothing reads that key, and the filter costs 4 of Ketubot's 15 golden false negatives.**
 
 **Results:**
 - Kiddushin: 11/11 verification checks pass. 2 missed stories recovered (45a, 53a). 3/4 false bridges removed. 1 Mishnah story bucketed.
@@ -800,5 +800,59 @@ mid-word cut. v10 baseline recorded in its docstring (55% mid-word / 4%
 clause-edge); any future span mechanism must reach 0% / 100%.
 
 **Recall, measured for the first time:** against Jeff's detector-blind 2005 Ketubot
-list (149 stories), v10 finds **143/149 = 96.0%**; the golden covers 96.6%.
+list (149 stories), v10 finds **143/149 = 96.0%**; the golden covered 144/149 = 96.6% on
+that date. *(Golden coverage is now 149/149 — brief 10 added the 5 stories of his that
+were absent: Ketubot 20a, 53a, 67b, 72b, 82b. Detector recall is unchanged at 96.0%.)*
 See [`docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`](../golden/workflow/recall_measurement_ketubot_2026-08-28.md).
+
+---
+
+## Mishnah filter made visible (2026-08-30)
+
+**No detector change.** Instrumentation only — `src/story_detector_v11.py` is untouched
+and the filter still behaves exactly as it did.
+
+**The defect.** `filter_mishnah_only_stories()` (v8 Wave 1, Issue #7) moves stories out
+of `stories` into `mishnah_stories`. No harness reads that key, so a story found and
+then deliberately dropped was indistinguishable from a story never found — a false
+negative in the golden, a miss in recall, with no trace in either.
+
+**Measured** over `results/v10/wave4_notrim/`. The filter moves **5 stories corpus-wide**
+(Ketubot 4, Kiddushin 1); **4 of the 5 are accepted in the golden**, and Jeff marked all
+four correct in review. Scored twice through the immutable harness — as-is, and with
+`mishnah_stories` folded back:
+
+| Ketubot (golden 187) | as-is | folded back | Δ |
+|---|---|---|---|
+| classification recall | 0.9085 | 0.9329 | **+0.0244** |
+| classification F1 | 0.9003 | 0.9134 | +0.0131 |
+| true positives | 149 | 153 | +4 |
+| **false negatives** | **15** | 11 | **−4** |
+| false positives | 18 | 18 | 0 |
+| composite | 0.9115 | 0.9125 | +0.0010 |
+
+**The filter alone accounts for 27% of Ketubot's golden false negatives.** On Kiddushin
+its one case is `NOT_A_STORY` in the golden, so folding it back costs a false positive —
+the filter is not wrong there, it is uncalibrated. Recall is **unchanged at 143/149 =
+96.0%**: Jeff's blind 2005 list holds no Mishnah-only story.
+
+**Consequence for earlier findings.** Ketubot 77a seg 8 is proposed in 8 of 8 runs at
+HIGH_CONFIDENCE with an exact match to the golden, then removed by this stage. Any
+reading of it as a Detection or Classification failure is wrong.
+
+**Changes:**
+- `scripts/report_mishnah_filter_delta.py` — NEW. Inventories every withheld story with
+  its standing in the golden, then reports the delta by scoring the runs twice.
+  `evaluate_golden.py` is imported **read-only** and is not modified (project rule);
+  nothing is written to its default output path.
+- `scripts/measure_recall_vs_expert_list.py` — reads `mishnah_stories`; each row gains
+  `in_mishnah_filtered`. Headline recall deliberately unchanged — "found then dropped"
+  and "never found" are reported as different facts, not merged.
+
+**Open, not fixed here:** the scope premise is a question for Jeff (drafted in
+[`docs/golden/v11/email_jeff_next_open_questions.md`](../golden/v11/email_jeff_next_open_questions.md));
+the chapter-boundary tagger bug (7 pages); the review UI, which still does not show
+`mishnah_stories` to the expert.
+
+**Detail:** [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../golden/v11/mishnah_filter_delta_2026-08-30.md).
+**Rule:** `tasks/lessons.md` Lesson 27.

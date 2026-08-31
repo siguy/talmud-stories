@@ -91,14 +91,25 @@ def parse_expert_doc(path, tractate):
 
 
 def load_detected(paths):
-    units, spans = [], defaultdict(list)
+    """Returns (units, spans, withheld).
+
+    `withheld` holds the spans that `filter_mishnah_only_stories()` moved out of
+    `stories` and into `mishnah_stories`. They are reported separately and never
+    folded into the headline recall: a withheld story was found and then dropped
+    on a scope judgement, which is not the same thing as never finding it, and
+    the two must not be silently merged. Before this key was read, a withheld
+    story was indistinguishable from a miss (see tasks/PLAN_wave6.md).
+    """
+    units, spans, withheld = [], defaultdict(list), defaultdict(list)
     for path in paths:
         for page in json.loads(Path(path).read_text())['pages']:
             spans[page['ref']] += [(s['start_segment'], s['end_segment']) for s in page.get('stories', [])]
+            withheld[page['ref']] += [(s['start_segment'], s['end_segment'])
+                                      for s in page.get('mishnah_stories', [])]
             units += [(page['ref'], s['index'], grams(s['hebrew'])) for s in page.get('segments', [])]
     daf = lambda ref: (int(re.search(r'(\d+)', ref).group(1)), 0 if ref.rstrip()[-1] == 'a' else 1)
     units.sort(key=lambda u: (daf(u[0]), u[1]))
-    return units, spans
+    return units, spans, withheld
 
 
 def locate(story_grams, units, index, max_window=14, seeds=12):
@@ -133,7 +144,7 @@ def main():
     args = ap.parse_args()
 
     expert = parse_expert_doc(args.expert_doc, args.tractate)
-    units, detected = load_detected(args.detected)
+    units, detected, withheld = load_detected(args.detected)
     log.info('detector corpus: %d segments across %d dapim', len(units), len({u[0] for u in units}))
 
     golden = defaultdict(list)
@@ -154,7 +165,9 @@ def main():
         covered = lambda table: any(lo <= ix <= hi for ref, ix in window for lo, hi in table.get(ref, []))
         rows.append({**story, 'coverage': round(cov, 3), 'segments': len(window),
                      'located': window[:1] + window[-1:],
-                     'in_detector': covered(detected), 'in_golden': covered(golden) if args.golden else None})
+                     'in_detector': covered(detected),
+                     'in_mishnah_filtered': covered(withheld),
+                     'in_golden': covered(golden) if args.golden else None})
 
     found = [r for r in rows if r['in_detector']]
     unlocated = [r for r in rows if r['coverage'] < 0.6]
@@ -163,6 +176,21 @@ def main():
     if args.golden:
         g = sum(1 for r in rows if r['in_golden'])
         log.info('GOLDEN coverage of expert list: %d/%d = %.1f%%', g, len(rows), 100 * g / len(rows))
+
+    # The Mishnah-only filter deletes stories from `stories` after detection.
+    # Report what it withheld rather than counting it either way.
+    held = sum(len(v) for v in withheld.values())
+    overlaps = [r for r in rows if r['in_mishnah_filtered']]
+    unmatched = [r for r in overlaps if not r['in_detector']]
+    log.info('MISHNAH FILTER withheld %d detected stories corpus-wide; %d expert stories overlap '
+             'one, %d of those are otherwise undetected (NOT counted in the recall above)',
+             held, len(overlaps), len(unmatched))
+    for r in unmatched:
+        # A located window runs up to `max_window` segments, so an overlap is a
+        # lead, not proof: check the withheld story is the expert's story and not
+        # a neighbour on the same daf (Ketubot 77a is exactly that trap).
+        log.info('  CHECK %s (window %d segs, %s..%s): %s', r['ref'], r['segments'],
+                 r['located'][0][1], r['located'][-1][1], r['text'][:70])
     for r in rows:
         if not r['in_detector']:
             log.info('  MISS %s: %s', r['ref'], r['text'][:80])

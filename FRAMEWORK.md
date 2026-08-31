@@ -192,6 +192,19 @@ is a claim about the product:
 
 Until both are answered, quote the gates as provisional and say so.
 
+One further question is open with Jeff, on **scope** rather than on a gate:
+
+> **Open (Jeff — scope):** do stories quoted inside a **Mishnah** belong in the database?
+> He told us (Kiddushin 50b) they should be "catalogued with Mishnah stories, not Talmud
+> stories"; he also marked **correct** all four Ketubot stories our Mishnah filter now
+> deletes. We read him as asking for a separate catalogue, not exclusion. Until he
+> answers, Ketubot's Classification numbers understate: the filter alone accounts for
+> **4 of its 15 golden false negatives**.
+> → measured in [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](docs/golden/v11/mishnah_filter_delta_2026-08-30.md)
+
+All three are drafted, in ask-order, in
+[`docs/golden/v11/email_jeff_next_open_questions.md`](docs/golden/v11/email_jeff_next_open_questions.md).
+
 ## 3. Ground truth — say which one, and say if it is blind
 
 Every number must name its dataset and its kind. This is not bookkeeping: quoting a
@@ -201,8 +214,8 @@ circular number as an accuracy claim is the mistake that cost this project month
 |---|---|---|---|
 | `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
-| `results/canonical/ketubot_canonical.json` | 182 stories | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
-| `results/canonical/kiddushin_canonical.json` | 85 stories | **CIRCULAR** | precision, consistency |
+| `results/canonical/ketubot_canonical.json` | 187 entries · 164 accepted | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
+| `results/canonical/kiddushin_canonical.json` | 96 entries · 85 accepted | **CIRCULAR** | precision, consistency |
 | `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
 | review-round verdict files | 8 rounds | **CIRCULAR** — verdicts on what we proposed | precision |
 

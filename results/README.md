@@ -24,7 +24,7 @@ is scored against them.
 
 | Path | What |
 |------|------|
-| `canonical/ketubot_canonical.json` | **THE Ketubot golden labels** (182 stories, iteration 10 of corrections; tagged `v10-golden-ketubot`). |
+| `canonical/ketubot_canonical.json` | **THE Ketubot golden labels** (187 entries, 164 accepted as stories; iteration 10 of corrections plus 5 additions from Jeff's blind 2005 list; tagged `v10-golden-ketubot` at 182). |
 | `canonical/kiddushin_canonical.json` | **TODO** — promote `validation/feedback/kiddushin_review_2026-04-23.json` into the canonical schema so it can be scored by `evaluate_golden.py`. |
 | `canonical/source_runs/` | The detector outputs that fed the golden-label corrections rounds. Formerly `results/v10/`. NOT a detector version — kept as the historical source. |
 
@@ -37,3 +37,8 @@ is scored against them.
 - Cached Sefaria pages and triage results are version-agnostic in principle
   but park under the version that first generated them (`v7/`).
 - Log files (`*_run.log`) are transient; not committed.
+- **A run's `stories[]` is not its whole output.** Stage 4g moves Mishnah-internal
+  stories to `pages[].mishnah_stories[]`, which no harness or UI reads — so a withheld
+  story scores as one we never found (4 of Ketubot's 15 golden false negatives).
+  Check it with `scripts/report_mishnah_filter_delta.py` before quoting a golden number.
+  See `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` and Lesson 27.

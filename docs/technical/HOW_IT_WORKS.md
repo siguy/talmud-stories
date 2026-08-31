@@ -111,7 +111,13 @@ Why this works better than the sliding-window approach (which produced 28 false 
 Cost: ~$0.03 per tractate (20-30 small API calls).
 Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben Netina, 31a→31b).
 
-**Stage 4g (v8 Wave 1): Mishnah-only filter** — moves stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) into a separate `mishnah_stories` list.
+**Stage 4g (v8 Wave 1): Mishnah-only filter** — `filter_mishnah_only_stories`. Moves stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) out of `stories` and into `mishnah_stories`. `NOT_A_STORY` entries are exempt. Each moved story is stamped `filtered_as_mishnah: true`.
+
+> **A move is a deletion to every reader that doesn't know the key.** Nothing downstream reads `mishnah_stories` — not `scripts/evaluate_golden.py`, not `scripts/measure_recall_vs_expert_list.py`, not the review UI generators. So a story the detector found and this stage dropped scores identically to one it never found. **Measured 2026-08-30:** the filter accounts for **4 of Ketubot's 15 golden false negatives (27%)**, and all 4 are stories Jeff marked correct in review. On Kiddushin its one case is `NOT_A_STORY` in the golden, so there the filter is right.
+>
+> Report it before trusting any golden number: `python3 scripts/report_mishnah_filter_delta.py --detected <runs>`. The recall harness now prints what was withheld (without moving the headline number). **The scope premise is an open question for Jeff** — see [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../golden/v11/mishnah_filter_delta_2026-08-30.md) and Lesson 27.
+>
+> Known defect, separate from the scope question: `_tag_mishnah_segments()` mislabels Gemara as Mishnah at chapter boundaries, where Sefaria uses the chapter incipit in `<big><strong>` instead of `מתני׳`. 7 pages affected (Ketubot 54b, 65b, 70a, 95b, 101b; Kiddushin 41a, 58b).
 
 **Stage 4h (v8 Wave 2): Start-boundary snap** — `snap_start_to_introducer`. For each multi-segment story: if a canonical Hebrew introducer (`ההוא ד`, `ההיא`, `מעשה ב`, `כי הא ד`, `כדתניא`) starts the segment immediately BEFORE detector's start, extend start back. If one starts a segment in `[start+1..start+3]`, snap start forward. Pure-Python, no LLM.
 
@@ -199,11 +205,21 @@ A girl went out to draw water. She was raped.
           "weakeners_found": [],
           "one_sentence_summary": "Rav Ḥisda and Rabba bar Rav Huna..."
         }
+      ],
+      "mishnah_stories": [
+        {
+          "start_segment": 8,
+          "end_segment": 8,
+          "classification": "HIGH_CONFIDENCE",
+          "filtered_as_mishnah": true
+        }
       ]
     }
   ]
 }
 ```
+
+**`mishnah_stories`** holds what Stage 4g withheld — same shape as a `stories` entry, plus `filtered_as_mishnah`. Anything reading a run for scoring or display must decide explicitly whether to include it; treating `stories` as the whole output silently drops these. Empty on most pages (5 stories corpus-wide across `results/v10/wave4_notrim/`).
 
 ## Why This Works
 
