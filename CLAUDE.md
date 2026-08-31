@@ -1,7 +1,7 @@
 # Claude.md - Talmud Story Detection
 
 ## Project
-Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden dataset for Ketubot complete (187 entries, 164 accepted as stories; composite 0.9115 measured 2026-08-30). Expanding to additional tractates.
+Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden datasets exist for Ketubot and Kiddushin; expanding to additional tractates. Current counts and scores live in `STATUS.md` — not here.
 
 ## Current State
 **See [`STATUS.md`](STATUS.md) — where the project is, and the first thing to read in
@@ -10,6 +10,11 @@ measured, and what the gates are. Use its language: capability names, BLIND vs
 CIRCULAR datasets, and measured / indicated / suspected on every finding.** It is rewritten each session,
 never appended. Do not restate status here; this file is about *how to work in the
 repo*, not where we are.
+
+**Nothing in this file may carry a count, a score, or an "active version" claim.** Those
+rot the moment someone works without reading them, and this file is read first. Where one
+is unavoidable, write the *rule that stays true* and the command that answers it — not the
+number. (Every stale entry found on 2026-08-30 was one of these three.)
 
 Ready-to-run work lives in [`tasks/NEXT/`](tasks/NEXT/) — one self-contained brief per
 task, each executable in a fresh session with no other context.
@@ -64,8 +69,8 @@ scripts/                          # Execution and analysis scripts
   autoresearch/                   #   Experiment infrastructure (unused)
 results/                          # See results/README.md for full layout
   canonical/                      #   GOLDEN LABELS (Jeff's validations)
-    ketubot_canonical.json        #     Ketubot golden (187 entries; +5 from Jeff's blind 2005 list)
-    kiddushin_canonical.json      #     Kiddushin golden (85 stories from Jeff's 2026-04-23 review)
+    ketubot_canonical.json        #     Ketubot golden (grows with each review round)
+    kiddushin_canonical.json      #     Kiddushin golden (from Jeff's 2026-04-23 review)
     source_runs/                  #     Detector runs that fed golden corrections
                                   #     (formerly results/v10/ — NOT a detector version)
   v4/, v5/, v6/                   #   Historical detector outputs
@@ -74,7 +79,7 @@ results/                          # See results/README.md for full layout
   v8/                             #   FROZEN Wave 1+2 baseline
     wave1/                        #     Wave 1 outputs (kiddushin_v8.json, ketubot_v8_*)
     wave2/                        #     Wave 2 outputs (frozen gate for Wave 3)
-  v9/                             #   ACTIVE DEVELOPMENT — current detector
+  v9/                             #   Wave 3 outputs
     wave3/                        #     Wave 3 outputs (kiddushin_v9.json, ketubot_v9_*)
     wave3_item4/                  #     Item 4 score-neutrality artifact
 validation/
@@ -92,7 +97,7 @@ docs/
   brainstorms/                    #   Design exploration
 tasks/
   todo.md                         #   Current task list with progress
-  lessons.md                      #   Ongoing learning log (8 lessons)
+  lessons.md                      #   Ongoing learning log (append-only)
 tests/                            # Regression tests
 archive/                          # Old versions (reference only)
 ```
@@ -100,10 +105,10 @@ archive/                          # Old versions (reference only)
 ## Key Files
 | File | Purpose |
 |------|---------|
-| `results/canonical/ketubot_canonical.json` | **THE golden dataset** (187 entries, 164 accepted) |
+| `results/canonical/ketubot_canonical.json` | **THE golden dataset.** It grows — count it, don't quote a number. Entries include `NOT_A_STORY`; filter those out for a story count. |
 | `scripts/evaluate_golden.py` | IMMUTABLE evaluation harness |
 | `docs/golden/v7/baseline_ketubot.json` | v7 baseline scores (historical 0.93; not reproducible — Lesson 11) |
-| `docs/golden/v9/wave3_results.md` | **Wave 3 writeup** (start here for current state) |
+| `docs/golden/v9/wave3_results.md` | Wave 3 writeup (for current state read `STATUS.md`) |
 | `docs/golden/v8/wave2_results.md` | Wave 2 writeup |
 | `docs/golden/v8/wave1_results.md` | Wave 1 writeup |
 | `docs/golden/v8/wave3_approach.md` | Wave 3 approach + design decisions |
@@ -111,9 +116,7 @@ archive/                          # Old versions (reference only)
 | `docs/golden/v10/findings_v10_golden_dataset.md` | v10 session writeup |
 | `docs/golden/workflow/research_overfitting_and_generalization.md` | Why prompt engineering has a ceiling |
 | `docs/golden/workflow/new_tractate_workflow.md` | Step-by-step for new tractates |
-| `src/story_detector_v7.py` | v7 — DO NOT modify in place |
-| `src/story_detector_v8.py` | FROZEN Wave 2 baseline (v7 + Wave 1/2 post-processors) |
-| `src/story_detector_v9.py` | **ACTIVE** — v8 + Wave 3 prompt changes + text_span post-processor |
+| `src/story_detector_v*.py` | **The highest-numbered file is the active detector; every lower one is a frozen ship point — never edit those in place.** `ls src/story_detector_v*.py` is the source of truth; a version number written in this file is not. What each version changed: its own module docstring, and `docs/golden/`. |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
 | `results/v7/kiddushin_v7.json` | Kiddushin v7 results (96 stories, pre-Wave-1) |
@@ -154,7 +157,7 @@ archive/                          # Old versions (reference only)
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
-| `tasks/lessons.md` | 14 lessons learned across all sessions |
+| `tasks/lessons.md` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
 ## Git Tags

@@ -2020,46 +2020,90 @@ def _page_has_story_introducer(page: Dict) -> bool:
     return False
 
 
+# Sefaria wraps every structural transition in `<big><strong>…</strong></big>`.
+# Measured over the 384 fetched Ketubot/Kiddushin pages, exactly four kinds occur
+# (and all four ONLY ever occur inside that markup — 0 bare occurrences):
+#   מתני׳             a Mishnah block opens
+#   גמ׳               the Gemara on it opens
+#   הדרן עלך …       the chapter-end formula
+#   the chapter name  a new chapter's FIRST Mishnah — Sefaria opens it with the
+#                     chapter incipit INSTEAD of מתני׳ (e.g. אף על פי, Ketubot 54b seg 5)
+_BIG_MARKER_RE = re.compile(r'<big>\s*<strong>(.*?)</strong>\s*</big>', re.DOTALL)
+
+# Nikud byte order in Sefaria differs from naive literals, so match against
+# the unvocalized consonantal skeleton.
+_GEMARA = 'גמ׳'
+_MISHNAH = 'מתני׳'
+_HADRAN = 'הדרן'
+
+
+def _segment_structural_marker(seg: Dict) -> Optional[str]:
+    """
+    Classify a segment's structural marker, or None if it carries none.
+
+    Returns 'mishnah' | 'gemara' | 'chapter_end' | 'chapter_start'.
+
+    The chapter incipit is only identifiable by its markup — it is the chapter's
+    name, not a fixed formula — so the `<big><strong>` layer is read first. The
+    bare-substring check afterwards preserves the pre-fix behaviour for מתני׳ and
+    גמ׳ on any page whose markup differs from the corpus we measured.
+    """
+    heb = seg.get('hebrew', '')
+
+    for raw in _BIG_MARKER_RE.findall(heb):
+        marker = _strip_nikud(re.sub(r'<[^>]+>', '', raw)).strip()
+        if _MISHNAH in marker:
+            return 'mishnah'
+        if _GEMARA in marker:
+            return 'gemara'
+        if _HADRAN in marker:
+            return 'chapter_end'
+        if marker:
+            return 'chapter_start'
+
+    plain = _strip_nikud(heb)
+    if _MISHNAH in plain:
+        return 'mishnah'
+    if _GEMARA in plain:
+        return 'gemara'
+    return None
+
+
 def _tag_mishnah_segments(segments: List[Dict]) -> Dict[int, bool]:
     """
     Wave 1 Issue #7: tag which segments are in Mishnah vs Gemara.
 
-    Detection uses Sefaria's HTML markers: `<big><strong>מַתְנִי׳</strong></big>`
-    starts a Mishnah block, `<big><strong>גְּמָ׳</strong></big>` starts Gemara.
-    A page may begin mid-Mishnah (continuation from previous page) — detected
-    by the first marker on the page being גְּמָ׳ rather than מַתְנִי׳.
+    Walks the page's structural markers (see `_segment_structural_marker`) as a
+    state machine. A page may legitimately begin mid-Mishnah — the Mishnah opened
+    on the previous page and the גמ׳ closing it is the page's first marker.
+
+    That continuation rule used to read only מתני׳ and גמ׳, which made it misfire
+    at every chapter boundary: the new chapter's opening Mishnah is marked with
+    the chapter incipit rather than מתני׳, so גמ׳ looked like the page's first
+    marker and everything before it — the PREVIOUS chapter's Gemara tail and the
+    הדרן formula — was back-tagged as Mishnah. That silently fed
+    `filter_mishnah_only_stories()` plain Gemara (e.g. Ketubot 95b seg 0,
+    54b segs 1-3, both accepted stories in the golden). Reading all four markers
+    fixes it: a chapter_end or chapter_start seen first means the page opened in
+    Gemara, not Mishnah.
 
     Returns dict: segment_index -> is_mishnah (bool).
     """
     if not segments:
         return {}
 
-    # Nikud byte order in Sefaria differs from naive literals, so match against
-    # the unvocalized consonantal skeleton.
-    GEMARA = 'גמ׳'
-    MISHNAH = 'מתני׳'
+    marked = [(seg, _segment_structural_marker(seg)) for seg in segments]
 
-    # Find first marker to determine initial state
-    first_marker = None
-    for seg in segments:
-        heb = _strip_nikud(seg.get('hebrew', ''))
-        if GEMARA in heb:
-            first_marker = 'gemara'
-            break
-        if MISHNAH in heb:
-            first_marker = 'mishnah'
-            break
-
-    # If first marker is גמ׳, the page started in mishnah (continuation).
-    # If first marker is מתני׳, segments before it are gemara. Default: gemara.
+    first_marker = next((m for _, m in marked if m is not None), None)
     in_mishnah = (first_marker == 'gemara')
 
     result = {}
-    for seg in segments:
-        heb = _strip_nikud(seg.get('hebrew', ''))
-        if MISHNAH in heb:
+    for seg, marker in marked:
+        if marker in ('mishnah', 'chapter_start'):
             in_mishnah = True
-        elif GEMARA in heb:
+        elif marker in ('gemara', 'chapter_end'):
+            # הדרן closes the chapter; the formula is not Mishnah, and neither is
+            # the Gemara tail it follows. The next chapter's Mishnah opens after it.
             in_mishnah = False
         result[seg.get('index', -1)] = in_mishnah
     return result
