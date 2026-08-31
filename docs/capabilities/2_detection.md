@@ -44,12 +44,12 @@ the credit is being counted twice.
 | 2026-03-01 | **Cross-page merge bug**: Stage 4c was overwriting correct 4b merges by grabbing an independent story further down page N+1 instead of the continuation fragment at seg 0 | fixed with four guards + 15 regression tests; 12 bad merges undone and re-stitched from seg 0 | `abe9337`, `cac23bb` |
 | 2026-03-27 | **Sliding-window boundary check** — ask "is there a story at this page boundary?" across all boundaries | **REVERTED.** Caught 2 of 3 hand-picked missed merges, then produced **28 false positives** across ~100 boundaries in production. Triage filtering could not find a threshold | `de6a8c1`, Lesson 9 |
 | 2026-03-27 | **Stage 4f continuation check** — the same problem asked narrowly: "does *this* detected story continue on the next page?" | shipped. **3 genuine cross-page stories, 0 false positives** on Kiddushin. The narrow question worked where the open one failed | `14a5f3a`, `6b2e471`, Lesson 10 |
-| 2026-05-18 | **Wave 1 Issue #1 — first-segment skip ("the glitch")**: when both sides flag continuation and page 2's story starts at seg 1, force seg 0 | shipped; fired on Kiddushin 70a→70b **and on Ketubot 103b→104a**, a case Jeff had never seen. **Merge F1 0.59 → 0.88 on the Ketubot golden (CIRCULAR)** — the largest single-change gain in the project's history | `eff0218`, [`wave1_results.md`](../golden/v8/wave1_results.md) |
+| 2026-05-18 | **Wave 1 Issue #1 — first-segment skip ("the glitch")**: when both sides flag continuation and page 2's story starts at seg 1, force seg 0 | shipped; fired on Kiddushin 70a→70b **and on Ketubot 103b→104a**, a case Jeff had never seen. **Merge F1 0.59 → 0.88 on the Ketubot golden (CIRCULAR)** — the largest single-change gain in the project's history | `eff0218`, [`wave1_results.md`](../findings/2026-05-18-wave1-results.md) |
 | 2026-05-18 | **Wave 1 Issue #2 — gap-aware continuation**: reject any bridge with segments intervening between story-end and the page break | shipped; removed 3 of Jeff's 4 false bridges (12b→13a, 29b→30a, 31a→31b). **#47 (39b→40a) survives** — it is adjacent, so the rule cannot see it; needs a content signal. Still open | `eff0218` |
-| 2026-05-25 | **Wave 3 Item 1 — multi-story per page**: prompt section plus a second "find more, non-overlapping" Stage 2 pass, capped at one extra pass | **mixed.** The target fixture (Kiddushin 71a) still returns 1 story. But Items 1–3 together lifted Ketubot golden recall +0.044 (FN 17 → 10, **CIRCULAR**) and surfaced **7 new Kiddushin candidates** — the per-item split is not separable from the run | `dcefb30`, [`wave3_results.md`](../golden/v9/wave3_results.md) |
+| 2026-05-25 | **Wave 3 Item 1 — multi-story per page**: prompt section plus a second "find more, non-overlapping" Stage 2 pass, capped at one extra pass | **mixed.** The target fixture (Kiddushin 71a) still returns 1 story. But Items 1–3 together lifted Ketubot golden recall +0.044 (FN 17 → 10, **CIRCULAR**) and surfaced **7 new Kiddushin candidates** — the per-item split is not separable from the run | `dcefb30`, [`wave3_results.md`](../findings/2026-05-25-wave3-results.md) |
 | 2026-05-25 | **Wave 3 Item 2 — embedded-story few-shots** (baraita-framed and objection-framed, drawn from Ketubot so Kiddushin stays clean per Lesson 2) | **half worked.** Kiddushin 33a seg 5 — the bathhouse story Jeff flagged as missed — is now detected. 81b seg 9 still missed: its lead-in does not resemble either pattern closely enough | `dcefb30` |
-| 2026-08-28 | **True recall measured for the first time**, against `jeff comms/b.ketubot (1).doc` — 149 stories, written 2005-02-02, twenty years before the detector | **measured: 143/149 = 96.0% (BLIND).** The roadmap had guessed 80–85%. Two matcher fixes were needed first: Hebrew character 4-grams (Jeff writes abbreviated and unvocalised) and a corpus-wide sliding window (his story blocks cross daf boundaries). Before them the same data read 89.7% with 34 stories unlocated; after, 96.0% with zero | `8b86a9f`, [`recall_measurement`](../golden/workflow/recall_measurement_ketubot_2026-08-28.md) |
-| 2026-08-30 | **Strict recall introduced.** The published test credits a proposal anywhere in the aligner's search window (up to 14 segments, straddling daf boundaries). Strict requires overlap with a segment the story actually occupies | **measured: 96.0% → 87.9% Ketubot, 12 stories credited by proximity only.** The 12 are cross-page stories whose text sits on a continuation daf carrying **zero proposals** — Ketubot 17b, 50a, 51a | `4de7135`, [`ruler`](../golden/v11/detection_classification_ruler_2026-08-30.md) |
+| 2026-08-28 | **True recall measured for the first time**, against `jeff comms/b.ketubot (1).doc` — 149 stories, written 2005-02-02, twenty years before the detector | **measured: 143/149 = 96.0% (BLIND).** The roadmap had guessed 80–85%. Two matcher fixes were needed first: Hebrew character 4-grams (Jeff writes abbreviated and unvocalised) and a corpus-wide sliding window (his story blocks cross daf boundaries). Before them the same data read 89.7% with 34 stories unlocated; after, 96.0% with zero | `8b86a9f`, [`recall_measurement`](../findings/2026-08-28-recall-measurement-ketubot.md) |
+| 2026-08-30 | **Strict recall introduced.** The published test credits a proposal anywhere in the aligner's search window (up to 14 segments, straddling daf boundaries). Strict requires overlap with a segment the story actually occupies | **measured: 96.0% → 87.9% Ketubot, 12 stories credited by proximity only.** The 12 are cross-page stories whose text sits on a continuation daf carrying **zero proposals** — Ketubot 17b, 50a, 51a | `4de7135`, [`ruler`](../findings/2026-08-30-detection-classification-ruler.md) |
 | 2026-08-30 | **Kiddushin Detection measured for the first time** | **measured: 93.3% loose / 83.3% strict** (84/90, BLIND) — **below the 95% gate where Ketubot is above.** First like-for-like comparison of the two tractates | `4de7135`, corrected by `2cd1094` |
 | 2026-08-30 | Five stories from Jeff's blind list added to the Ketubot golden (20a, 53a, 67b, 72b, 82b) — a *double* miss, never detected and never labelled, so the harness was structurally unable to penalise them | golden 182 → 187; golden recall 0.9371 → 0.9085 (**the drop is the deliverable**); blind recall untouched at 96.0%; golden coverage of Jeff's list 96.6% → 100% | `2e61035` |
 
@@ -164,16 +164,16 @@ number 95 remains **invented** — see FRAMEWORK §2b.
 **A structural sub-ceiling that is not a ceiling on Detection at all.** Two Kiddushin
 cases (33a, 53a) have been `PART` in every run ever made — we propose one segment of a
 two-segment story
-([`kiddushin_list_parse` §4a](../golden/v11/kiddushin_list_parse_2026-08-30.md)). That
+([`kiddushin_list_parse` §4a](../findings/2026-08-30-kiddushin-list-parse.md)). That
 survives every wave, but it is a **Boundaries** failure sitting on top of a Detection
 hit, and counting it against Detection hides where the fix belongs
-([`appendix_provenance_correction`](../golden/v11/appendix_provenance_correction_2026-08-30.md)).
+([`appendix_provenance_correction`](../findings/2026-08-30-appendix-provenance-correction.md)).
 
 **The plateau claim, stated as it was found.** The 2026-07-06 approach review concluded
 that *"detection accuracy has genuinely plateaued — every gain since Wave 1 came from
 post-processors and corrections to the golden data, not from a smarter detector,"* with
 the composite trajectory 0.8576 → 0.9164 → 0.9162 → 0.9170 → 0.9171 across Waves 1–4
-([§3.3](../golden/workflow/approach_review_and_scaling_2026-07-06.md)). That is
+([§3.3](../findings/2026-07-06-approach-review-and-scaling.md)). That is
 **measured on a CIRCULAR set** and therefore says nothing about recall — a plateau in
 agreement with the golden is compatible with any amount of undiscovered material. The
 blind number that arrived seven weeks later (96.0%) was *better* than the roadmap
@@ -187,7 +187,7 @@ believed, which is the opposite of what a plateau reading would predict.
   through v9, has ever tried changing the input windowing** (`074c7fb`); re-proposed
   2026-07-06 at an estimated +25% cost (~$0.08/tractate) and "do this once, at the v11
   fork, before mass rollout"
-  ([§4.5](../golden/workflow/approach_review_and_scaling_2026-07-06.md)). Still untried.
+  ([§4.5](../findings/2026-07-06-approach-review-and-scaling.md)). Still untried.
   It targets the strict-recall gap directly: the 12 Ketubot loose-only credits are
   cross-page stories whose continuation daf carries no proposal at all.
 - **Propose anything at all on Ketubot 17b, 50a, 51a** — three continuation dapim
@@ -205,13 +205,13 @@ believed, which is the opposite of what a plateau reading would predict.
   disagreement between samples is itself the borderline signal; or a second-model
   re-verdict at ~$1/tractate, which also removes the single-vendor dependency (every
   stage currently rides one Gemini model with no retries and no fallback)
-  ([§4.4](../golden/workflow/approach_review_and_scaling_2026-07-06.md)). Never tried,
+  ([§4.4](../findings/2026-07-06-approach-review-and-scaling.md)). Never tried,
   and it is the cheapest available answer to the run-to-run variance that put 77a in a
   1/8 tail.
 - **Fine-tuning** — deferred deliberately, not rejected: it locks in whatever the labels
   currently are, so it should follow the recall probe and 1–2 more tractates of golden
   data, with leave-one-tractate-out evaluation
-  ([§4.6](../golden/workflow/approach_review_and_scaling_2026-07-06.md)).
+  ([§4.6](../findings/2026-07-06-approach-review-and-scaling.md)).
 - **Declined, by Jeff:** *Ein Yaakov as a corpus-wide recall probe* — see
   [Triage](1_triage.md). Also declined: *a fresh cold-read of 10 random dapim*, because
   he already has detector-blind lists and offered them

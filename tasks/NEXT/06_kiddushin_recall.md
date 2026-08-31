@@ -2,7 +2,7 @@
 
 **`NEXT/05` is DONE** — ground truth is
 [`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json)
-(95 stories; see [`docs/golden/v11/kiddushin_list_parse_2026-08-30.md`](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md)).
+(95 stories; see [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../../docs/findings/2026-08-30-kiddushin-list-parse.md)).
 Read `STATUS.md` and `FRAMEWORK.md`.
 **Capabilities: 1 Triage, 2 Detection.** **No API calls.**
 

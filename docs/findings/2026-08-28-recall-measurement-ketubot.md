@@ -3,7 +3,7 @@
 **Date:** 2026-08-28
 **Status:** Measured and reproducible. This closes the project's largest open
 question.
-**Supersedes:** [approach_review_and_scaling_2026-07-06.md](approach_review_and_scaling_2026-07-06.md)
+**Supersedes:** [approach_review_and_scaling_2026-07-06.md](2026-07-06-approach-review-and-scaling.md)
 §3.1, which called measured recall "circular" and "the most important unmeasured
 number in the project," and guessed true recall at "plausibly 80–85%."
 
@@ -44,7 +44,7 @@ should adopt this shape rather than invent one.
 
 ## 3. Result
 
-Reproducible via [scripts/measure_recall_vs_expert_list.py](../../../scripts/measure_recall_vs_expert_list.py):
+Reproducible via [scripts/measure_recall_vs_expert_list.py](../../scripts/measure_recall_vs_expert_list.py):
 
 | | Coverage of Jeff's 149 stories |
 |---|---|
@@ -106,7 +106,7 @@ The clustering is the useful part. These are not six unrelated errors; they are
 three recurring shapes:
 
 1. **Halakhic story + ruling** (20a, 77a) — exactly the case Jeff's criteria
-   ([jeff_story_definition_criteria.md](jeff_story_definition_criteria.md)) says
+   ([jeff_story_definition_criteria.md](2026-07-06-jeff-story-definition-criteria.md)) says
    *is* a story: *"A man stole another man's cow and sold it. Rava ruled…. In this
    case you may have a story."* The detector's current anti-legal disqualifier is
    the direct cause.

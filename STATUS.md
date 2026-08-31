@@ -16,7 +16,7 @@ Rough parse: **Gittin 112, Yevamot 102, Eruvin 73** — indicated, not measured.
 **Kiddushin is now parsed properly: 95 stories, measured** (`NEXT/05` done). The rough
 figure was 105, of which 9 were Jeff's own English review comments and 4 were
 parallels-column citations. 81b no longer appears to hold 11 stories; it holds 4.
-→ [`docs/golden/v11/kiddushin_list_parse_2026-08-30.md`](docs/golden/v11/kiddushin_list_parse_2026-08-30.md)
+→ [`docs/findings/2026-08-30-kiddushin-list-parse.md`](docs/findings/2026-08-30-kiddushin-list-parse.md)
 
 Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
 can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
@@ -36,7 +36,7 @@ fifth (**81b**) we **never proposed**; he found it in page text our review UI di
 so it can only count *against* us, and dropping it is what inflates the number.
 
 **Recall denominator: 90** — 89 strictly blind, plus 81b. →
-[`docs/golden/v11/appendix_provenance_correction_2026-08-30.md`](docs/golden/v11/appendix_provenance_correction_2026-08-30.md)
+[`docs/findings/2026-08-30-appendix-provenance-correction.md`](docs/findings/2026-08-30-appendix-provenance-correction.md)
 
 We caught this only because the appendix survived as a separate file.
 
@@ -73,7 +73,7 @@ every rejection, whatever Jeff objected to. Sorting the notes: most rejections a
 **boundary, merge or confidence-level** complaints — three other capabilities pooled into
 one figure. Separated, both tractates land near 92-95% and the gap between them mostly
 disappears. Review-round precision is therefore quoted as a **range**, because unreadable
-notes set its width. → [`docs/golden/v11/detection_classification_ruler_2026-08-30.md`](docs/golden/v11/detection_classification_ruler_2026-08-30.md)
+notes set its width. → [`docs/findings/2026-08-30-detection-classification-ruler.md`](docs/findings/2026-08-30-detection-classification-ruler.md)
 
 **We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
 from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
@@ -91,10 +91,10 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
 - **Measurement became honest.** The boundary test set was built entirely from Jeff's
   corrections, so it could never reveal a boundary we had right and broke. Rebuilt from
   his blind 2005 list: **35 gradeable targets → 249**, run-to-run noise **7 points → 0**.
-  → [`docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md`](docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md)
+  → [`docs/findings/2026-08-30-boundary-ruler-rebuild.md`](docs/findings/2026-08-30-boundary-ruler-rebuild.md)
 - **Boundary trimming is worth much less than claimed.** The old ruler said it doubled
   us on Ketubot 61-112 (33%→67%). The blind ruler says untrimmed was already 79% right.
-  → [`docs/golden/v11/trim_asymmetry_2026-08-30.md`](docs/golden/v11/trim_asymmetry_2026-08-30.md)
+  → [`docs/findings/2026-08-30-trim-asymmetry.md`](docs/findings/2026-08-30-trim-asymmetry.md)
 - **Triage is a trade, not a defect.** 98% recall while examining 44% of pages. Worth
   pricing, not reflexively fixing.
 - **The six recall misses do NOT split into two populations — all six are absent from
@@ -102,7 +102,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
   entry there is segs **13-14** (Gemara, 94% text alignment) while the golden's 77a story
   is seg **8** (a Mishnah ma'aseh, 1% alignment). Two different stories on one daf, joined
   only by the recall locator's coarse 7-segment window.
-  → [`docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md`](docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md)
+  → [`docs/findings/2026-08-30-recall-miss-diagnosis.md`](docs/findings/2026-08-30-recall-miss-diagnosis.md)
 - **Ketubot 77a is a Classification miss, not a Detection one** (measured, 8 identical
   re-runs, `NEXT/02`). Segs 13-14 are **proposed in 7 of 8 runs** and rejected as
   `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
@@ -121,7 +121,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
   precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
   the harness nobody reads for recall was the only one that could see the loss, which is
   why it survived four waves. → Lesson 27,
-  [`docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
+  [`docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md)
   The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
   question for Jeff, not a bug. Now queued below.
 - **A runner bug was fixed and guarded:** a failed API call could be recorded as a
@@ -145,7 +145,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
 **The question:** when a ruling is what makes a passage a story at all, is that ruling
 part of the story we display, or the discussion that follows it? His 2005 lists keep it;
 his review notes say cut it. Blocks the end rule for capability 4.
-→ draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
+→ draft: [`comms/sent/2026-08-30-email-jeff.md`](comms/sent/2026-08-30-email-jeff.md)
 
 **To add when we next write — four items:**
 
@@ -170,7 +170,7 @@ still reads `results/v10/wave4/` — the **reverted** char-offset span data — 
 so the regenerated page stayed comparable to what Jeff actually saw during brief 04's
 verification. Point it at `results/v10/wave4_notrim/` before showing him anything new.
 
-## Next — briefs in [`tasks/NEXT/`](tasks/NEXT/), each self-contained
+## Next — briefs in [`tasks/NEXT/`](tasks/NEXT), each self-contained
 
 **Lead with Kiddushin only.** It is the sole new tractate where we already have a mature
 detector output (95 stories, a golden set, 8 review rounds), so its list pays off
@@ -195,7 +195,7 @@ goldens still incomplete:            10-golden-completeness
 | **06** | Kiddushin recall: triage + detection — report over **both** denominators (90 / 94) | 1, 2 | — | no |
 | **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | — | no |
 | **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
-| ~~00~~ | ~~Per-capability history: what we tried, reverted, current best~~ — **done**, six files in [`docs/capabilities/`](docs/capabilities/), linked from the scoreboard | all | — | no |
+| ~~00~~ | ~~Per-capability history: what we tried, reverted, current best~~ — **done**, six files in [`docs/capabilities/`](docs/capabilities), linked from the scoreboard | all | — | no |
 | 02 | ~~Why is Ketubot 77a never proposed~~ **DONE** — it *is* proposed; classification rejects it | 3 | — | no |
 | **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate. **Planned as step 7a:** [`NEXT/2026-08-30-review-verdict-axes.md`](tasks/NEXT/2026-08-30-review-verdict-axes.md) (the old `04` file was deleted in `b394489`; this replaces it) | 3, 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
@@ -219,7 +219,7 @@ where an entry ends. Its *value* depends on his answer; the work does not.
 | `tasks/NEXT/*.md` | one self-contained brief per ready task. Delete when done. |
 | `tasks/lessons.md` | 25 durable rules. Append-only. |
 | `docs/golden/**` | dated findings. Immutable once written. |
-| [`docs/capabilities/`](docs/capabilities/) | per-capability history: what we tried, what we reverted and why, current best, distance to gate, ceiling, untried. One file per capability, linked from the scoreboard above. |
+| [`docs/capabilities/`](docs/capabilities) | per-capability history: what we tried, what we reverted and why, current best, distance to gate, ceiling, untried. One file per capability, linked from the scoreboard above. |
 | `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
 | `CLAUDE.md` | how to work in this repo. Not status. |
 | `FOR_SIMON.md` | the plain-English narrative. |

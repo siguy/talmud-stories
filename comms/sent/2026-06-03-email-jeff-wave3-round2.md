@@ -34,7 +34,7 @@ just now:**
 Net: classification F1 ticked up from **0.910 → 0.914**, composite
 **0.9170 → 0.9171** (essentially flat — the 7a recovery + the 106a
 boundary cancel out). Detailed writeup:
-`docs/golden/v9/wave3_round2_ketubot_rescore.md`.
+`docs/findings/2026-06-03-wave3-round2-ketubot-rescore.md`.
 
 **2. Wave 4 plan (for your awareness):** I'm going to retire the regex
 boundary trimmer and replace it with the LLM emitting the

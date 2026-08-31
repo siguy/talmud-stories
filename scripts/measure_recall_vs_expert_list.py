@@ -3,7 +3,7 @@
 Measure TRUE recall against an expert's detector-blind story list.
 
 This closes the circular-recall problem described in
-docs/golden/workflow/approach_review_and_scaling_2026-07-06.md §3.1: the golden
+docs/findings/2026-07-06-approach-review-and-scaling.md §3.1: the golden
 datasets contain only stories the detector itself proposed, so they cannot see
 systematic misses.
 

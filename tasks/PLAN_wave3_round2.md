@@ -30,7 +30,7 @@
   - Log entries in `canonical_review_applied_log` with date 2026-06-03 + source = Jeff email
 - [ ] 1b. Re-run `scripts/evaluate_golden.py` on Wave 3 Ketubot results
 - [ ] 1c. Compare new composite vs prior 0.9170 — expect small positive movement (one new LOW + one boundary correction; both should agree with v9 detector)
-- [ ] 1d. Write `docs/golden/v9/wave3_round2_ketubot_rescore.md` with before/after numbers
+- [ ] 1d. Write `docs/findings/2026-06-03-wave3-round2-ketubot-rescore.md` with before/after numbers
 
 ## Step 2 — Draft reply to Jeff (THIS SESSION)
 
@@ -39,7 +39,7 @@
 - [ ] 2c. Ask him to **complete the remaining ~85 Kiddushin verdicts** when he can (he offered)
 - [ ] 2d. Specifically ask him to verdict the **7 new candidates** (still unverdicted) — they're what move the composite
 - [ ] 2e. Confirm we'll apply his 4 Ketubot corrections immediately
-- [ ] 2f. Save draft to `docs/golden/v9/email_draft_jeff_wave3_round2.md`
+- [ ] 2f. Save draft to `comms/sent/2026-06-03-email-jeff-wave3-round2.md`
 
 ## Step 3 — `/update-docs` (THIS SESSION)
 

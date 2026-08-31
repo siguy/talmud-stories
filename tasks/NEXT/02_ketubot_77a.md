@@ -36,7 +36,7 @@ than another tuning round.
    it crowded out by a long page, or is the story split across segments in a way the
    prompt does not anticipate?
 3. Check it against Jeff's own rubric in
-   `docs/golden/workflow/jeff_story_definition_criteria.md` — hypothetical vs actual,
+   `docs/findings/2026-07-06-jeff-story-definition-criteria.md` — hypothetical vs actual,
    speech-acts, emotional reactions.
 4. Re-run Stage 2 on that single page a few times. If it sometimes finds the story, this
    is variance, not a criterion problem — that is a different bug and worth knowing.

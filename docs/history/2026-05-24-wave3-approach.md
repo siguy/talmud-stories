@@ -2,7 +2,7 @@
 
 **Session date:** 2026-05-24
 **Status:** Approved by Simon; implementation pending.
-**Companion to:** `docs/golden/v8/wave2_results.md`, `tasks/PLAN_kiddushin_fixes.md` (Wave 3 section).
+**Companion to:** `docs/findings/2026-05-24-wave2-results.md`, `tasks/PLAN_kiddushin_fixes.md` (Wave 3 section).
 
 This doc records the design decisions for Wave 3 *before* any code is
 written, so the implementation can be checked against an explicit plan and
@@ -185,7 +185,7 @@ Verification:
 - **NEW:** `results/v9/wave3/{kiddushin_v9,ketubot_v9_2-60,ketubot_v9_61-112}.json`
 - **NEW:** `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
   (today's regenerated Wave 2 numbers per Lesson 11).
-- **NEW (at end of session):** `docs/golden/v9/wave3_results.md`.
+- **NEW (at end of session):** `docs/findings/2026-05-25-wave3-results.md`.
 - Update: `validation/ui` generator to render `text_span_*` if present.
 
 ---

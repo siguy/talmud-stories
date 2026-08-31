@@ -36,7 +36,7 @@ provisional precisely because that question has not been answered
 | 2026-02-16 | Site updated to the v7 / Gemini 3 Flash era: 222 pages, 153 stories, 92.1%; a "The Journey: 50% to 92%" section | shipped | `76cab37` |
 | 2026-02-22 | Site updated again for v8: 172 stories, 96.3% | shipped — **and never updated since** | `e3f2957` |
 | 2026-07-06 | **Jeff re-specifies the end product.** Not a static published corpus: a **living, crowd-sourced, editable database**. Any scholar can flag *not a story* / *remove*, mark **borderline**, or suggest additions, gradually; he or a small editor group finalises; **contested and borderline cases are kept and flagged, not silently resolved**. Three extra per-story columns: **notes, references to scholarship, Yerushalmi parallels** | recorded as a decision; **nothing built** | [ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md) |
-| 2026-08-28 | **Jeff has already designed the schema he asked for.** His 2005 Ketubot table has four columns — מיקום / טקסט / מקבילות / הערות (location / text / parallels / notes) — with the parallels column already populated with Yerushalmi and midrashic references | measured, and it is a free design input: adopt his shape rather than inventing one | [`recall_measurement` §2](../golden/workflow/recall_measurement_ketubot_2026-08-28.md) |
+| 2026-08-28 | **Jeff has already designed the schema he asked for.** His 2005 Ketubot table has four columns — מיקום / טקסט / מקבילות / הערות (location / text / parallels / notes) — with the parallels column already populated with Yerushalmi and midrashic references | measured, and it is a free design input: adopt his shape rather than inventing one | [`recall_measurement` §2](../findings/2026-08-28-recall-measurement-ketubot.md) |
 | 2026-08-30 | The accuracy claim the resource would carry becomes quotable: recall stated as **loose *and* strict**, precision as a **range**, every number naming its dataset and saying BLIND or CIRCULAR | this is the substrate a published error rate is made of; see [`FRAMEWORK.md` §3](../../FRAMEWORK.md) | `4de7135`, `2cd1094` |
 
 ## What we reverted, and why
@@ -87,7 +87,7 @@ one:
 `kiddushin_canonical.json` (96 / 85), which hold expert-validated stories with boundaries,
 classifications and Jeff's notes. The 2026-07-06 review called these "the real asset…
 a scholarly resource independent of any detector"
-([§2](../golden/workflow/approach_review_and_scaling_2026-07-06.md)). They are a *record*,
+([§2](../findings/2026-07-06-approach-review-and-scaling.md)). They are a *record*,
 not a publication: no reader-facing surface, no stated error rate, no edit path.
 
 One structural fact about them, stated because it is the difference between a record and a
@@ -112,13 +112,13 @@ That single number sets Triage and Detection by backward allocation
 capability ([`FRAMEWORK.md` §2b](../../FRAMEWORK.md)). A second, Jeff's, sets
 Classification: at what error rate does reviewing our output become worse than working
 from scratch? Both are drafted in ask-order
-([`email_jeff_next_open_questions.md`](../golden/v11/email_jeff_next_open_questions.md));
+([`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md));
 neither is answered.
 
 **What is already known about the scale being published:** 37 tractates, 2,711 dapim;
 194 dapim validated so far (~7%); a naive density extrapolation from Ketubot+Kiddushin
 (1.38 stories/daf) gives ≈3,700 stories, realistically 2,500–4,500, since density varies
-enormously by seder ([§5.1](../golden/workflow/approach_review_and_scaling_2026-07-06.md)).
+enormously by seder ([§5.1](../findings/2026-07-06-approach-review-and-scaling.md)).
 Compute for the whole corpus is ~$10–25.
 
 ## Ceiling
@@ -144,7 +144,7 @@ Everything. Listed in the order the dependencies fall, not by size:
   2005 columns already give four of these; the borderline flag and verdict state are what
   the crowd-sourcing model adds
   ([ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md),
-  [`recall_measurement` §2](../golden/workflow/recall_measurement_ketubot_2026-08-28.md)).
+  [`recall_measurement` §2](../findings/2026-08-28-recall-measurement-ketubot.md)).
 - **Emit a `borderline` flag from the pipeline.** Nothing in the detector produces one
   today, so the resource cannot show what Jeff asked it to show. Blocked in part on his
   Wave 6b answer — see [Classification](3_classification.md).
@@ -163,7 +163,7 @@ Everything. Listed in the order the dependencies fall, not by size:
   by a filter nothing catalogues, scores or displays — while Jeff asked for them to be
   *catalogued separately*. That is a publication-shape question (one bucket or two) as
   much as a classification one
-  ([`mishnah_filter_delta`](../golden/v11/mishnah_filter_delta_2026-08-30.md)).
+  ([`mishnah_filter_delta`](../findings/2026-08-30-mishnah-filter-delta.md)).
 - **Nothing here has been declined.** Unlike the other five capabilities, this one has no
   failures to record and no dead ends to avoid — which is precisely why it is the least
   understood of the six.

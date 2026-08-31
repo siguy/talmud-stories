@@ -9,7 +9,7 @@ v10 = v9 (Wave 1+2+3) PLUS:
     cut is therefore structurally impossible (Lesson 16).
   - Wave 4 (v10, superseded): extract_text_spans_via_llm asked for char offsets;
     audit found 55% of cuts severed a word. See
-    docs/golden/v10/wave4_span_failure_audit_2026-08-28.md
+    docs/findings/2026-08-28-wave4-span-failure-audit.md
   - Wave 4: extract_text_spans_via_llm replaces edit_text_internal_boundaries
     (regex) as the production pipeline path. Per-story Gemini call emits
     {start_offset, end_offset}. Regex retained only as fallback on LLM
@@ -501,7 +501,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         from clause ranges we derived from the actual string, so a boundary
         can only ever land where a clause begins or ends — mid-word cuts are
         structurally impossible (Lesson 16, and the audit in
-        docs/golden/v10/wave4_span_failure_audit_2026-08-28.md).
+        docs/findings/2026-08-28-wave4-span-failure-audit.md).
 
         Per-story outcomes (text_span_source):
           - 'clause_llm'       : model selected a narrower clause range.
@@ -579,7 +579,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 # his 2026 tool reviews, which say to cut it — and against
                 # that standard the cap undoes the trims that remove real
                 # overshoots (ends running past even the 2005 outer limit go
-                # 10 -> 16 of 105). See docs/golden/v11/trim_asymmetry_2026-08-30.md
+                # 10 -> 16 of 105). See docs/findings/2026-08-30-trim-asymmetry.md
                 if ec < len(end_ranges) - 1:
                     offset = end_ranges[ec][1]
                     _assert_word_boundary(end_heb, offset, page.get('ref', '?'),

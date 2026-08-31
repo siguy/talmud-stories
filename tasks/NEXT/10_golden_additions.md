@@ -14,7 +14,7 @@ count a false negative for a story that is not in the golden. They only surfaced
 Jeff's list is blind.
 
 Diagnosis of how each was lost is already written:
-`docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md` — three died in triage
+`docs/findings/2026-08-30-recall-miss-diagnosis.md` — three died in triage
 (20a, 72b, 82b), two on pages that were examined but produced nothing.
 
 ## Method

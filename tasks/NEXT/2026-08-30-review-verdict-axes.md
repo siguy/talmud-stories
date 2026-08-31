@@ -35,7 +35,7 @@ What that already cost: months treating Classification as the weakest capability
 Kiddushin as far worse than Ketubot. Separated, both land near 92–95% and most of the gap
 evaporates. Worse, the pooled number is the one that would have been "improved" by tuning
 the classifier, which would have done nothing — the errors were largely in the boundary
-code (Lesson 30, [`detection_classification_ruler`](../../docs/golden/v11/detection_classification_ruler_2026-08-30.md)).
+code (Lesson 30, [`detection_classification_ruler`](../../docs/findings/2026-08-30-detection-classification-ruler.md)).
 
 ## The insight the design rests on
 
@@ -131,7 +131,7 @@ is the acceptance test for the whole item.
 
 - **Show him `mishnah_stories`.** The Mishnah filter's withheld passages are displayed to
   nobody, and he is the one person who can settle whether they belong in the database
-  ([`mishnah_filter_delta`](../../docs/golden/v11/mishnah_filter_delta_2026-08-30.md)).
+  ([`mishnah_filter_delta`](../../docs/findings/2026-08-30-mishnah-filter-delta.md)).
 - **Ask him to keep his appendix a separate file.** One sentence. It cannot be
   reconstructed afterwards, and the window closes the moment we send Gittin / Yevamot /
   Eruvin results (Lesson 29, `09_kiddushin_parse_open_calls.md` item 1b).

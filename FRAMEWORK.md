@@ -218,10 +218,10 @@ One further question is open with Jeff, on **scope** rather than on a gate:
 > deletes. We read him as asking for a separate catalogue, not exclusion. Until he
 > answers, Ketubot's Classification numbers understate: the filter alone accounts for
 > **4 of its 15 golden false negatives**.
-> → measured in [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](docs/golden/v11/mishnah_filter_delta_2026-08-30.md)
+> → measured in [`docs/findings/2026-08-30-mishnah-filter-delta.md`](docs/findings/2026-08-30-mishnah-filter-delta.md)
 
 All three are drafted, in ask-order, in
-[`docs/golden/v11/email_jeff_next_open_questions.md`](docs/golden/v11/email_jeff_next_open_questions.md).
+[`comms/email_jeff_next_open_questions.md`](comms/email_jeff_next_open_questions.md).
 
 ## 3. Ground truth — say which one, and say if it is blind
 

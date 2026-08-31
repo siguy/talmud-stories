@@ -113,5 +113,5 @@ Simon
 
 **Optional quick-scan summaries** (plain text, if you'd rather skim than
 click through):
-- `docs/golden/v10/wave4_diff_kiddushin.md`
-- `docs/golden/v10/wave4_diff_ketubot.md`
+- `docs/findings/2026-06-15-wave4-span-diff-kiddushin.md`
+- `docs/findings/2026-06-15-wave4-span-diff-ketubot.md`

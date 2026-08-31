@@ -51,10 +51,10 @@
 **Item 4 (text-internal regex) verdict — MIXED:** Jeff confirmed 5 of the canonical ההוא/ההיא cases work correctly; flagged 7 over-trims where rabbi-name / אלא markers are story content, not framing. Regex approach retired; Wave 4 will replace with LLM-side text-span emission.
 
 **Artifacts:**
-- `docs/golden/v9/wave3_round2_ketubot_rescore.md`
+- `docs/findings/2026-06-03-wave3-round2-ketubot-rescore.md`
 - `scripts/apply_jeff_2026-06-03_corrections.py`
 - `docs/golden/v9/wave3_round2_ketubot_score.json`
-- `docs/golden/v9/email_draft_jeff_wave3_round2.md`
+- `comms/sent/2026-06-03-email-jeff-wave3-round2.md`
 
 ---
 
@@ -96,7 +96,7 @@
 - `results/v9/wave3/{kiddushin_v9,ketubot_v9_2-60,ketubot_v9_61-112}.json`
 - `results/v9/wave3_item4/*.json` — score-neutrality artifact
 - `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
-- `docs/golden/v9/wave3_results.md` — full writeup
+- `docs/findings/2026-05-25-wave3-results.md` — full writeup
 
 **Files modified:** `validation/generators/generate_kiddushin_review_ui.py` (renders `text_span_*` slice).
 
@@ -141,7 +141,7 @@
 - `scripts/verify_wave2.py` — 10-check pass/fail report
 - `scripts/compare_v8_waves.py` — Wave 1 vs Wave 2 delta table
 - `results/v8/wave2/{kiddushin_v8,ketubot_v8_2-60,ketubot_v8_61-112}.json`
-- `docs/golden/v8/wave2_results.md` — full writeup
+- `docs/findings/2026-05-24-wave2-results.md` — full writeup
 - `docs/golden/v8/baselines/{kiddushin,ketubot}_wave1_baseline.json`
 
 **Key findings (Lessons 12, 13):**
@@ -168,7 +168,7 @@
 
 **Key finding (Lesson 11):** LLM nondeterminism breaks historical baselines. Always generate a fresh baseline same-day before comparing.
 
-**Files:** `src/story_detector_v8.py` (forked from v7, kept v7 untouched), `scripts/run_kiddushin_wave1.py`, `scripts/verify_wave1.py`, `scripts/compare_ketubot_v7_v8.py`, `docs/golden/v8/wave1_results.md`.
+**Files:** `src/story_detector_v8.py` (forked from v7, kept v7 untouched), `scripts/run_kiddushin_wave1.py`, `scripts/verify_wave1.py`, `scripts/compare_ketubot_v7_v8.py`, `docs/findings/2026-05-18-wave1-results.md`.
 
 **Commit:** `eff0218`
 
@@ -779,7 +779,7 @@ showed them systematically corrupt.
 Hebrew word** and 96% land mid-clause. Of the 9 stories Jeff reviewed that had been
 trimmed, **9 of 9 were marked incorrect**; of the 6 untrimmed, 4 were correct. The
 mechanism had no observed successes.
-Full audit: [`docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`](../golden/v10/wave4_span_failure_audit_2026-08-28.md)
+Full audit: [`docs/findings/2026-08-28-wave4-span-failure-audit.md`](../findings/2026-08-28-wave4-span-failure-audit.md)
 
 **Change (outputs, not detector):** `scripts/strip_text_spans.py` removes
 `text_span_*` from every story. `src/story_detector_v10.py` and the original v10
@@ -803,7 +803,7 @@ clause-edge); any future span mechanism must reach 0% / 100%.
 list (149 stories), v10 finds **143/149 = 96.0%**; the golden covered 144/149 = 96.6% on
 that date. *(Golden coverage is now 149/149 — brief 10 added the 5 stories of his that
 were absent: Ketubot 20a, 53a, 67b, 72b, 82b. Detector recall is unchanged at 96.0%.)*
-See [`docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`](../golden/workflow/recall_measurement_ketubot_2026-08-28.md).
+See [`docs/findings/2026-08-28-recall-measurement-ketubot.md`](../findings/2026-08-28-recall-measurement-ketubot.md).
 
 ---
 
@@ -850,9 +850,9 @@ reading of it as a Detection or Classification failure is wrong.
   and "never found" are reported as different facts, not merged.
 
 **Open, not fixed here:** the scope premise is a question for Jeff (drafted in
-[`docs/golden/v11/email_jeff_next_open_questions.md`](../golden/v11/email_jeff_next_open_questions.md));
+[`comms/email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md));
 the chapter-boundary tagger bug (7 pages); the review UI, which still does not show
 `mishnah_stories` to the expert.
 
-**Detail:** [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../golden/v11/mishnah_filter_delta_2026-08-30.md).
+**Detail:** [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md).
 **Rule:** `tasks/lessons.md` Lesson 27.

@@ -9,7 +9,7 @@ this script:
 3. Searches segments for Jeff's Hebrew markers
 4. Outputs proposed boundary corrections with before/after diffs
 
-Output: docs/golden/boundary_corrections.json
+Output: docs/golden/v7/boundary_corrections.json
 
 Usage:
   python3 scripts/boundary_lookup.py

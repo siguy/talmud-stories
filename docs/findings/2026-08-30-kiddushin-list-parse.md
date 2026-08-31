@@ -10,9 +10,9 @@ with exact anchors + 1 in the notes column), **1 entry Jeff marked as his own 20
 addition**, and a recall denominator of **89–94** rather than a single number. The
 parser reproduces Ketubot's established **149** as its regression check.
 
-Artifacts: [`scripts/parse_kiddushin_list.py`](../../../scripts/parse_kiddushin_list.py) ·
-[`results/expert_lists/kiddushin_2005.json`](../../../results/expert_lists/kiddushin_2005.json) ·
-[`tests/test_kiddushin_list_parse.py`](../../../tests/test_kiddushin_list_parse.py)
+Artifacts: [`scripts/parse_kiddushin_list.py`](../../scripts/parse_kiddushin_list.py) ·
+[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json) ·
+[`tests/test_kiddushin_list_parse.py`](../../tests/test_kiddushin_list_parse.py)
 
 ---
 

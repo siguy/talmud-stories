@@ -39,7 +39,7 @@ problem.
 > every time citing the same three prompt disqualifiers. Production landed in the ~1/8
 > tail where nothing was proposed. So it is a **Classification** problem sitting on
 > proposal-level variance — not Detection. Capability reassigned 2 → 3.
-> Seed case with the minimal pair: [`tasks/PLAN_wave6.md`](../../../tasks/PLAN_wave6.md).
+> Seed case with the minimal pair: [`tasks/PLAN_wave6.md`](../../tasks/PLAN_wave6.md).
 >
 > **A separate, larger loss found while measuring the corpus rate:**
 > `filter_mishnah_only_stories()` moves stories out of `stories` into `mishnah_stories`,

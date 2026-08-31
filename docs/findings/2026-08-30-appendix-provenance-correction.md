@@ -1,6 +1,6 @@
 # The Kiddushin appendix is three findings, not one — 2026-08-30
 
-**Corrects:** [`detection_classification_ruler_2026-08-30.md`](detection_classification_ruler_2026-08-30.md)
+**Corrects:** [`detection_classification_ruler_2026-08-30.md`](2026-08-30-detection-classification-ruler.md)
 and commit `240c3cb`, both of which treat the five appendix cases as a single
 category ("ours, therefore excluded"). **Status of every claim below: measured.**
 

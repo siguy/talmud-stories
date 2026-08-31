@@ -44,17 +44,17 @@ digitized *Ein Yaakov*.
 >    "most important unmeasured number in the project" is now measured, for $0 in
 >    expert time. The 6 misses cluster into halakhic-story-plus-ruling (20a, 77a),
 >    lexicon-gap openers (67b `אמרו עליו`, 82b `בראשונה`), and narrative-inside-speech
->    (72b, 53a). → [`recall_measurement_ketubot_2026-08-28.md`](recall_measurement_ketubot_2026-08-28.md)
+>    (72b, 53a). → [`recall_measurement_ketubot_2026-08-28.md`](2026-08-28-recall-measurement-ketubot.md)
 >    Caveat: Ketubot is our most-tuned tractate, so this is not a generalization
 >    estimate. Ask Jeff which other tractates he has lists for.
 > 5. **Wave 4's spans are reverted (2026-08-28).** 55% of emitted cuts severed a
 >    word; the mechanism had zero observed successes. `results/v10/wave4_notrim/`
->    is the current honest output. → [`../v10/wave4_span_failure_audit_2026-08-28.md`](../v10/wave4_span_failure_audit_2026-08-28.md)
+>    is the current honest output. → [`../v10/wave4_span_failure_audit_2026-08-28.md`](2026-08-28-wave4-span-failure-audit.md)
 >
 > **Scope fact threaded through everything:** the target is **all stories,
 > including halakhic ones** — not aggadic only. Jeff also gave the sharp
 > story-definition criterion the detector was missing:
-> [`docs/golden/workflow/jeff_story_definition_criteria.md`](jeff_story_definition_criteria.md)
+> [`docs/findings/2026-07-06-jeff-story-definition-criteria.md`](2026-07-06-jeff-story-definition-criteria.md)
 > (hypothetical→not-a-story / actual→story; speech-acts need action; emotions
 > count). And Wave 4's boundary mechanism proved broken in his review, replaced
 > by [`tasks/PLAN_wave5.md`](../../tasks/PLAN_wave5.md).
@@ -405,8 +405,8 @@ clearly worth doing before, not after, the corpus run.
 *Sources: pipeline audit of `src/story_detector_v10.py`, `src/event_triage.py`,
 `docs/technical/HOW_IT_WORKS.md`, `docs/technical/VERSION_HISTORY.md`;
 evaluation audit of `scripts/evaluate_golden.py`, `tasks/lessons.md` (15
-lessons), `docs/golden/workflow/error_taxonomy.md`,
-`docs/golden/workflow/research_overfitting_and_generalization.md`, wave
+lessons), `docs/findings/2026-03-17-error-taxonomy.md`,
+`docs/findings/2026-03-25-overfitting-and-generalization-research.md`, wave
 writeups in `docs/golden/v8/` and `docs/golden/v9/`; golden provenance from
 `results/canonical/*.json`; Ein Yaakov availability verified against the
 Sefaria API 2026-07-06 (digitized per-tractate; no existing daf-level links —

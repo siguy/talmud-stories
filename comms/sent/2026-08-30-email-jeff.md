@@ -3,7 +3,7 @@
 **Sent by Simon from his own client on 2026-08-30.** This is the draft as prepared;
 Simon may have edited before sending. HTML version with the three Hebrew passages
 inline — this is the version that was sent:
-[`email_jeff_2026-08-30.html`](email_jeff_2026-08-30.html).
+[`email_jeff_2026-08-30.html`](2026-08-30-email-jeff.html).
 
 A companion web page carrying the same three passages was published privately as a
 Claude artifact ("Where the Story Ends"); it is reachable from Simon's artifact gallery.

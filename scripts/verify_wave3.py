@@ -8,8 +8,8 @@ Assumes Wave 3 outputs at:
   results/v9/wave3/ketubot_v9_61-112.json     (with item 4 already applied)
 
 And today's Wave 2 baselines at:
-  docs/golden/v8/baselines/kiddushin_wave2_baseline_today.json
-  docs/golden/v8/baselines/ketubot_wave2_baseline_today.json
+  tests/baselines/kiddushin_wave2_baseline_today.json
+  tests/baselines/ketubot_wave2_baseline_today.json
 
 Checks:
   Item 1: Kiddushin 71a has ≥2 stories.
@@ -29,7 +29,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
 WAVE3 = ROOT / 'results' / 'v9' / 'wave3'
-BASELINES = ROOT / 'docs' / 'golden' / 'v8' / 'baselines'
+BASELINES = ROOT / 'tests' / 'baselines'
 
 KID_W3 = WAVE3 / 'kiddushin_v9.json'
 KET_W3 = [WAVE3 / 'ketubot_v9_2-60.json', WAVE3 / 'ketubot_v9_61-112.json']

@@ -3,7 +3,7 @@
 **Session date:** 2026-05-24 / 2026-05-25
 **Detector:** `src/story_detector_v9.py` (forked from v8; Stage 2 prompt changes + new text-internal post-processor)
 **Plan:** `tasks/PLAN_wave3.md`
-**Approach:** `docs/golden/v8/wave3_approach.md`
+**Approach:** `docs/history/2026-05-24-wave3-approach.md`
 
 ---
 
@@ -225,7 +225,7 @@ content, so the Kiddushin eval is not contaminated.
 - `results/v9/wave3/{kiddushin_v9,ketubot_v9_2-60,ketubot_v9_61-112}.json`
 - `results/v9/wave3_item4/*.json` — score-neutrality artifact
 - `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
-- `docs/golden/v9/wave3_results.md` — this file
+- `docs/findings/2026-05-25-wave3-results.md` — this file
 
 **Modified:**
 - `validation/generators/generate_kiddushin_review_ui.py` — renders `text_span_*`

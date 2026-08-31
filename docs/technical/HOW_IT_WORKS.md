@@ -115,7 +115,7 @@ Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben 
 
 > **A move is a deletion to every reader that doesn't know the key.** Nothing downstream reads `mishnah_stories` — not `scripts/evaluate_golden.py`, not `scripts/measure_recall_vs_expert_list.py`, not the review UI generators. So a story the detector found and this stage dropped scores identically to one it never found. **Measured 2026-08-30:** the filter accounts for **4 of Ketubot's 15 golden false negatives (27%)**, and all 4 are stories Jeff marked correct in review. On Kiddushin its one case is `NOT_A_STORY` in the golden, so there the filter is right.
 >
-> Report it before trusting any golden number: `python3 scripts/report_mishnah_filter_delta.py --detected <runs>`. The recall harness now prints what was withheld (without moving the headline number). **The scope premise is an open question for Jeff** — see [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](../golden/v11/mishnah_filter_delta_2026-08-30.md) and Lesson 27.
+> Report it before trusting any golden number: `python3 scripts/report_mishnah_filter_delta.py --detected <runs>`. The recall harness now prints what was withheld (without moving the headline number). **The scope premise is an open question for Jeff** — see [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md) and Lesson 27.
 >
 > Known defect, separate from the scope question: `_tag_mishnah_segments()` mislabels Gemara as Mishnah at chapter boundaries, where Sefaria uses the chapter incipit in `<big><strong>` instead of `מתני׳`. 7 pages affected (Ketubot 54b, 65b, 70a, 95b, 101b; Kiddushin 41a, 58b).
 

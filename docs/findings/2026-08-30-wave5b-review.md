@@ -4,7 +4,7 @@
 clause-role labelling design and code, captured as an **actionable fix list**.
 
 **Why it exists:** Wave 5b was put on hold in favour of a cheaper path (fix two bugs,
-then tune the existing approach — see [decision record](wave5b_decision_2026-08-30.md)).
+then tune the existing approach — see [decision record](2026-08-30-wave5b-decision.md)).
 **If that path does not work, Wave 5b gets revived — and this file is what makes that
 possible.** Without it the review evaporates and the same 433 lines get run with the
 same defects. This is the Lesson 17 pattern applied to a code review.
@@ -34,7 +34,7 @@ and whether the gate can measure anything.
 
 > **STATUS 2026-08-30: 2.1, 2.2 and 2.4 are FIXED** in
 > `scripts/run_clause_labeling.py`, guarded by
-> [`tests/test_wave5b_runner_outcomes.py`](../../../tests/test_wave5b_runner_outcomes.py)
+> [`tests/test_wave5b_runner_outcomes.py`](../../tests/test_wave5b_runner_outcomes.py)
 > (failure-injection test written first, watched fail, then fixed). Same fixture,
 > model failing on every call: before `{kept_full: 6, no_split: 2, skipped: 6}` =
 > 14 counts for 6 stories, all 6 stamped `clause_kept_full`, 6 fabricated speech
@@ -90,7 +90,7 @@ distinction for detection gaps (`N/A`) — apply the same reasoning to run failu
 ### 2.4 `no_clause_split` provenance destroyed — VERIFIED — **FIXED 2026-08-30**
 
 The unconditional post-loop write overwrites `text_span_source`, so the no-split case
-never survives. [`tasks/PLAN_wave5.md`](../../../tasks/PLAN_wave5.md) explicitly requires
+never survives. [`tasks/PLAN_wave5.md`](../../tasks/PLAN_wave5.md) explicitly requires
 this be "a named, logged outcome (`text_span_source: 'no_clause_split'`), never a silent
 accident." Wave 5b regresses against its predecessor's stated requirement.
 

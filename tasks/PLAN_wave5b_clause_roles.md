@@ -10,12 +10,12 @@ been run without a known handicap.
 > ## REVIEW OUTCOME 2026-08-30 — read before touching this wave
 >
 > **Full findings as an actionable fix list:**
-> [`docs/golden/v11/wave5b_review_2026-08-30.md`](../docs/golden/v11/wave5b_review_2026-08-30.md)
+> [`docs/findings/2026-08-30-wave5b-review.md`](../docs/findings/2026-08-30-wave5b-review.md)
 > — every P0/P1/P2 item, the scope cuts, the 22 tests to write, and the claims in this
 > plan that turned out to be wrong. **If the cheap path fails and Wave 5b is revived,
 > start there.**
 > **Plain-language decision record:**
-> [`docs/golden/v11/wave5b_decision_2026-08-30.md`](../docs/golden/v11/wave5b_decision_2026-08-30.md)
+> [`docs/findings/2026-08-30-wave5b-decision.md`](../docs/findings/2026-08-30-wave5b-decision.md)
 >
 > ### The core idea survived. The execution did not.
 >

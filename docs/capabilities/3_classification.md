@@ -38,17 +38,17 @@ Its cost lands in this capability's false-negative column, so it is recorded her
 | 2026-02-13 | **Adversarial validation** — three calls: detector defends, "Jeff's advocate" attacks, adjudicator rules | **BUILT AND DISABLED.** After 3 rounds of prompt tuning it was net −1 (109 → 108). The adjudicator over-demotes borderline stories Jeff had confirmed. Code retained, `enable_adversarial=False` | `77131ea` |
 | 2026-02-13 | **Post-processing rules, 3 tried, 1 kept.** Rule 1 (single-event filter) **disabled** — regressed cross-page stories where count=1 is a partial-page artifact. Rule 2 (duplicate reclassification) **disabled** — the model flags valid continuations as duplicates. Rule 3 (v6 ensemble: demote where v6 disagrees **and** triage shows ≤1 narrative event) **enabled** | Rule 3: +3 net, zero regressions, 87.4% → 89.8% (**CIRCULAR**). This is the project's one working ensemble result | `b664003` |
 | 2026-02-13 | **Model comparison, measured not assumed** | Gemini 3 Flash **92.1%** > Gemini 3 Pro 90.6% > Gemini 2.0 Flash+pp 89.8%. Pro is 4× the cost, 3× slower, and *more conservative* — it misses borderline stories Flash catches. Also: with G3 Flash, post-processing adds **nothing** (117/127 either way) — the model absorbed the rule | `a74554a`, `5ec53e3` |
-| 2026-03-25 | **Golden dataset built** from four review rounds; `scripts/evaluate_golden.py` written and marked IMMUTABLE | baseline composite **0.93** (**CIRCULAR**): F1 0.92, IoU 0.98, merge F1 0.86, with 26 false positives named as the quality gap | `dc16195`, [`findings_v10`](../golden/v10/findings_v10_golden_dataset.md) |
+| 2026-03-25 | **Golden dataset built** from four review rounds; `scripts/evaluate_golden.py` written and marked IMMUTABLE | baseline composite **0.93** (**CIRCULAR**): F1 0.92, IoU 0.98, merge F1 0.86, with 26 false positives named as the quality gap | `dc16195`, [`findings_v10`](../findings/2026-03-25-golden-dataset-v10.md) |
 | 2026-03-25 | **Experiment 1 — aggressive prompt.** Five new disqualifiers from Jeff's own language; few-shot bank expanded 128 → 282 by loading the canonical review | **REVERTED. Catastrophic: composite 0.93 → 0.57.** Ketubot 2-60 fell from 72 detected stories to 44 | `c0ce13e` |
 | 2026-03-25 | **Experiment 2 — light prompt.** Confidence calibration only (3 lines) plus the expanded few-shots | **REVERTED. Still a regression: 0.89.** Pages 2-60 fell 72 → 52; pages 61-112 barely moved (110 → 109) | `c0ce13e`, Lesson 2 |
-| 2026-05-24 | **Wave 2 Issue #6(b) — biblical-actor filter.** Demote a story whose only named actors are biblical | shipped. Fired 3× on Kiddushin (38a "the Jewish people", 72b Nebuchadnezzar, 69b Ezra); two are exactly Jeff's flagged cases. **Kiddushin classification F1 0.9101 → 0.9257** (CIRCULAR). Fired 0× on Ketubot | `1c4d18d`, [`wave2_results.md`](../golden/v8/wave2_results.md) |
+| 2026-05-24 | **Wave 2 Issue #6(b) — biblical-actor filter.** Demote a story whose only named actors are biblical | shipped. Fired 3× on Kiddushin (38a "the Jewish people", 72b Nebuchadnezzar, 69b Ezra); two are exactly Jeff's flagged cases. **Kiddushin classification F1 0.9101 → 0.9257** (CIRCULAR). Fired 0× on Ketubot | `1c4d18d`, [`wave2_results.md`](../findings/2026-05-24-wave2-results.md) |
 | 2026-05-25 | **Wave 3 Item 3 — sharper not-a-story rules**, written as abstract patterns rather than passages (Lesson 8): all-verbal → not a story; biblical-actor-only → not a story; <2 distinct actions or no change → not a story | **failed on its own target: Kiddushin FPs went up, not down.** Shipped anyway, because inspection showed the new "FPs" were largely real stories the golden did not contain — including Jeff's own flagged-missing 33a | `dcefb30`, Lesson 14 |
 | 2026-06-03 | Jeff's Wave 3 reply applied: 7a re-added as LOW_CONFIDENCE, 26a and 102a confirmed not stories, 106a boundary extended | Ketubot composite 0.9170 → 0.9171 (+1 TP, −1 FP) | `402ed0d` |
 | 2026-08-29 | **Wave 6 written, then split into measure → ask Jeff → implement**, after an audit found its own justification half wrong | **6c BLOCKED by design.** See "Ceiling" | [`PLAN_wave6.md`](../../tasks/PLAN_wave6.md) |
 | 2026-08-30 | **Harness precision measured on the current detector** — correcting a claim in FRAMEWORK that no current number existed | **measured: Ketubot 89.2% (TP 149 / FP 18), Kiddushin 85.3% (TP 81 / FP 14)** (**CIRCULAR**). Both at or above the gate | `46d90b2` |
-| 2026-08-30 | **The 86% / 68% figures re-derived** by sorting every rejection by *what Jeff objected to* | **measured: they were never Classification numbers.** Most rejections are boundary, merge or confidence-level complaints. Separated, both tractates land near 92–95% and the tractate gap mostly evaporates | `4de7135`, Lesson 30, [`ruler`](../golden/v11/detection_classification_ruler_2026-08-30.md) |
+| 2026-08-30 | **The 86% / 68% figures re-derived** by sorting every rejection by *what Jeff objected to* | **measured: they were never Classification numbers.** Most rejections are boundary, merge or confidence-level complaints. Separated, both tractates land near 92–95% and the tractate gap mostly evaporates | `4de7135`, Lesson 30, [`ruler`](../findings/2026-08-30-detection-classification-ruler.md) |
 | 2026-08-30 | **Ketubot 77a diagnosed** over 8 re-runs of identical code | **measured:** segs 13-14 proposed in 7 of 8 runs, classified `NOT_A_STORY` in 6 of those 7, every run citing the same three prompt disqualifiers. A Classification failure sitting on proposal-level variance | `abdc4af` |
-| 2026-08-30 | **Mishnah filter cost measured** by scoring twice through the immutable harness | **measured: 4 of Ketubot's 15 golden false negatives — 27%.** Folding them back moves golden recall 0.9085 → 0.9329, precision unchanged. Blind recall identical at 96.0% both ways | `804a097`, [`mishnah_filter_delta`](../golden/v11/mishnah_filter_delta_2026-08-30.md) |
+| 2026-08-30 | **Mishnah filter cost measured** by scoring twice through the immutable harness | **measured: 4 of Ketubot's 15 golden false negatives — 27%.** Folding them back moves golden recall 0.9085 → 0.9329, precision unchanged. Blind recall identical at 96.0% both ways | `804a097`, [`mishnah_filter_delta`](../findings/2026-08-30-mishnah-filter-delta.md) |
 | 2026-08-30 | **Mishnah tagger chapter-boundary bug fixed** — the tagger read only `מתני׳`/`גמ׳`, but Sefaria opens a new chapter's first Mishnah with the chapter incipit, so `גמ׳` came first and everything before it was back-tagged as Mishnah | **fixed and measured: Ketubot TP 149 → 151, FN 15 → 13, golden recall 90.9% → 92.1%**, precision and merge unchanged. 72 segments on 12 pages, every change a correction | `8fd68de` |
 
 ## What we reverted, and why
@@ -94,7 +94,7 @@ and then deliberately deleted scored exactly like a story we never found, from v
   separate **catalogue**; we built a **deletion** that nothing catalogues, scores or
   displays. Under his literal words there is no contradiction to resolve. Two genuine
   cases remain (Ketubot 14b seg 11, 77a seg 8, plus Kiddushin 50b seg 10), queued for the
-  next email ([`email_jeff_next_open_questions.md`](../golden/v11/email_jeff_next_open_questions.md)).
+  next email ([`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md)).
 
 **5. Not a revert but a redefinition of the number.** The 86% / 68% precision figures,
 which made Classification "our weakest capability" for months, counted every `incorrect`
@@ -147,7 +147,7 @@ Three things this table hides, all of them stated rather than smoothed:
 2. **The gate itself is invented.** *"Below ~85% a reviewer spends more time rejecting
    than confirming"* is a plausible sentence with no measurement behind it. Only Jeff can
    settle it, and the question is drafted
-   ([FRAMEWORK §2b](../../FRAMEWORK.md), [`email_jeff_next_open_questions.md`](../golden/v11/email_jeff_next_open_questions.md)).
+   ([FRAMEWORK §2b](../../FRAMEWORK.md), [`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md)).
 3. **Precision is measured on a CIRCULAR set, which is correct for precision and useless
    for the other direction.** The invisible half of this capability — real stories we
    *reject* — is as costly as a Detection miss and has no measurement at all. The only
@@ -170,7 +170,7 @@ own reasoning as prompt rules both regressed — badly. The residual false posit
 physical action and two-thirds of true stories do; the distinguishing feature is
 structural (does the narrative serve the legal debate, or the debate the narrative), which
 no additional prompt rule captures
-([Lesson 5](../../tasks/lessons.md), [§3.3](../golden/workflow/approach_review_and_scaling_2026-07-06.md)).
+([Lesson 5](../../tasks/lessons.md), [§3.3](../findings/2026-07-06-approach-review-and-scaling.md)).
 
 **2. The ground truth is contested — by the expert, with himself. This is the ceiling
 that matters, and it is definitional, not technical.**
@@ -207,7 +207,7 @@ suggests he may choose exactly that.
 - **A post-hoc false-positive classifier** — logistic regression / LightGBM on the
   features the detector already emits (`criteria_met_count`, disqualifiers, actor type,
   segment count), validated leave-one-tractate-out. Recommended twice (Lesson 7, 2026-03;
-  [§4.3](../golden/workflow/approach_review_and_scaling_2026-07-06.md), 2026-07) on the
+  [§4.3](../findings/2026-07-06-approach-review-and-scaling.md), 2026-07) on the
   grounds that a post-filter **can only demote, so it can never create a new missed
   story** — the opposite risk profile to a prompt edit. **Never built.** Note the
   converse, recorded in `PLAN_wave6`: it also cannot *recover* false negatives, which is
@@ -220,7 +220,7 @@ suggests he may choose exactly that.
   vs matched factual story; pure discussion vs discussion+action; emotional-reaction
   cases — gating every future detector, **test-only and never few-shot** (Lessons 2, 8).
   Specified in
-  [`jeff_story_definition_criteria.md`](../golden/workflow/jeff_story_definition_criteria.md)
+  [`jeff_story_definition_criteria.md`](../findings/2026-07-06-jeff-story-definition-criteria.md)
   and in `PLAN_wave6`; the seed case (the Ketubot 77a minimal pair, segs 8 and 13-14 on
   one daf) is written. **Not built.**
 - **Fold in the verdicts nobody used.** The goldens are incomplete in a way that flatters

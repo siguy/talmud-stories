@@ -7,7 +7,7 @@ detector's Stage 2 criteria and into a conformance test set.
 
 **Source:** Jeff's Part 2(c) answer,
 [`jeff comms/Simon Brief Questions.docx`](../../jeff%20comms/Simon%20Brief%20Questions.docx)
-(reply to [`docs/golden/v10/email_draft_jeff_wave4_and_roadmap.md`](../v10/email_draft_jeff_wave4_and_roadmap.md), 2026-07-06).
+(reply to [`comms/sent/2026-07-06-email-jeff-wave4-and-roadmap.md`](../../comms/sent/2026-07-06-email-jeff-wave4-and-roadmap.md), 2026-07-06).
 Logged in [`validation/feedback/jeff_2026-07-06_feedback_ledger.md`](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md).
 
 **Current detector criteria this must be reconciled with:**

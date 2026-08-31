@@ -271,7 +271,7 @@ FIRST, before analysis or code — one row per note, with status
 open/addressed and where addressed. (b) Turn key lessons into gates:
 no detector ships without scoring on a FRESH held-out sample (not its
 own fixture); build a criteria-conformance test from
-`docs/golden/workflow/jeff_story_definition_criteria.md`; assert
+`docs/findings/2026-07-06-jeff-story-definition-criteria.md`; assert
 structural invariants (Lesson 16's clause-boundary check). (c) Before
 replying to the expert, walk the ledger's open-items tracker so
 nothing is dropped.
@@ -304,7 +304,7 @@ structural — a boundary that must sit on a word edge, a field that must
 parse, a ref that must resolve — it is checkable deterministically.
 Build that check first, record the baseline in the script's docstring,
 and make it the ship gate (`scripts/audit_text_spans.py --strict`).
-See `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`.
+See `docs/findings/2026-08-28-wave4-span-failure-audit.md`.
 
 ## Lesson 19 — Reverting to the safe default beats shipping a better version of a broken feature (2026-08-28)
 
@@ -460,7 +460,7 @@ as the run you already did — always spend it. (b) Report `n` targets and
 inside the noise, keep a change only on its own merits (this one is a
 strict information improvement) and say plainly that the gate is silent.
 (d) If a decision depends on the difference, fix the gate first — see
-`docs/golden/v11/wave5_summary_fix_2026-08-30.md` §5.
+`docs/findings/2026-08-30-wave5-summary-fix.md` §5.
 
 ## Lesson 23 — An exam built only from corrections cannot see a regression (2026-08-30)
 

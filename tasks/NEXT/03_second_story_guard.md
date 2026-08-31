@@ -22,7 +22,7 @@ item on Kiddushin 12a (two `הָהוּא גַּבְרָא` stories in one detect
 
 A depth cap on trimming was tried on 2026-08-30 and reverted — it is a magic number that
 cannot tell "we cut a second story" from "we disagree about legal framing", and it
-optimised for the wrong expert standard. See `docs/golden/v11/trim_asymmetry_2026-08-30.md`.
+optimised for the wrong expert standard. See `docs/findings/2026-08-30-trim-asymmetry.md`.
 
 The principled rule is **never trim away a clause that is narrative in its own right.**
 It targets exactly this failure and leaves the definitional question alone.
@@ -31,7 +31,7 @@ That needs one signal per clause — *is this narrative?* — which is the one s
 piece of the shelved Wave 5b: its labeller used as a **guard on the trim**, not as the
 mechanism that computes the boundary. Roughly 40 lines against the original 433.
 Salvage list in `tasks/RESUME_after_clear.md`; full review in
-`docs/golden/v11/wave5b_review_2026-08-30.md`.
+`docs/findings/2026-08-30-wave5b-review.md`.
 
 ## Method
 

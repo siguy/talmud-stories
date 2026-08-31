@@ -64,7 +64,7 @@ ninety-five stories.** **2026-07-06: fifteen.** After the two exhaustive rounds
 
 | when | what | outcome | evidence |
 |---|---|---|---|
-| 2026-03-25 | **The error taxonomy** — 187 verdicts sorted into 6 systematic patterns with Jeff's own language, detection heuristics and Aramaic structural markers | shipped; still the best summary of what he objects to | `ac8e83c`, [`error_taxonomy.md`](../golden/workflow/error_taxonomy.md) |
+| 2026-03-25 | **The error taxonomy** — 187 verdicts sorted into 6 systematic patterns with Jeff's own language, detection heuristics and Aramaic structural markers | shipped; still the best summary of what he objects to | `ac8e83c`, [`error_taxonomy.md`](../findings/2026-03-17-error-taxonomy.md) |
 | 2026-08-28 | **The feedback ledger** — one durable, status-tracked row per note, created the moment feedback arrives, checked before replying or shipping | shipped for the 2026-07-06 round. It is the mechanism that stops Lesson 1 recurring, and it worked: the round's open items are still tracked | [ledger](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md), Lesson 17 |
 | 2026-08-30 | **Every verdict on disk joined into one artifact**, matched by segment **overlap** rather than key equality (keys encode spans, and spans move between runs, so exact matching silently drops older rounds) | shipped. Folded in the 16 Kiddushin verdicts that had never been used | `4de7135`, `scripts/build_ruler.py` |
 
@@ -140,7 +140,7 @@ arithmetic that produced the gate, and it is the clearest number in the project:
 | Jeff's review | **2–6 weeks calendar** | **~3–5 years, serially** |
 
 Ketubot took four review rounds over ~6 weeks
-([§3.2](../golden/workflow/approach_review_and_scaling_2026-07-06.md)). **Compute is
+([§3.2](../findings/2026-07-06-approach-review-and-scaling.md)). **Compute is
 four orders of magnitude away from being the constraint.** No detector improvement
 changes this arithmetic; only changing the validation design does. That is why this is
 the one derived gate — and why the endgame is a crowd-sourced database rather than a
@@ -194,7 +194,7 @@ old lists. **That offer has not been taken up.**
   detector, an FP classifier and an ensemble agree, with a 5–10% audited sample to
   *measure* the residual error; an expert queue for disagreements; auto-reject with a
   low-rate sample to bound the miss rate — is specified at
-  [§5.2](../golden/workflow/approach_review_and_scaling_2026-07-06.md) and **nothing of it
+  [§5.2](../findings/2026-07-06-approach-review-and-scaling.md) and **nothing of it
   is built.** Two of its three inputs (the FP classifier, the ensemble) are also untried —
   see [Classification](3_classification.md).
 - **Reuse the throughput UI.** `batch_review.html` with Y/N/S keyboard shortcuts was built

@@ -3,7 +3,7 @@
 **`NEXT/05` is done.** These are the decisions taken under uncertainty while building
 [`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json),
 recorded so they are revisited rather than inherited. Read
-[the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) first.
+[the finding](../../docs/findings/2026-08-30-kiddushin-list-parse.md) first.
 **Capability: ground truth for 1, 2, 4.** **No API calls except item 2.**
 
 Each is stated as: what was decided · what it rests on · what it costs if wrong · what
@@ -20,7 +20,7 @@ that you and Claude found that were not on my list"* — cases from across our r
 he merged into his list. They are in his list because of our output, so they are
 circular. **`blind: false` on all five; `counts_for_recall: false` on the four we
 proposed, true on 81b which we never did. Denominator 90.** See
-[the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4.
+[the finding](../../docs/findings/2026-08-30-kiddushin-list-parse.md) §4.
 
 ## 1b. Say it before the first review round on a new tractate — **not urgent yet**
 

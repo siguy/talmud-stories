@@ -9,7 +9,7 @@ text he is shown is wrong, no other improvement registers with him.
 **Predecessor:** Wave 4 / v10 ([PLAN_wave4.md](PLAN_wave4.md)) shipped LLM
 character-offset spans. Audited 2026-08-28: **104 of 189 cuts (55%) sever a Hebrew
 word**; 9 of 9 reviewed trims judged wrong. Reverted the same day.
-→ [`docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`](../docs/golden/v10/wave4_span_failure_audit_2026-08-28.md)
+→ [`docs/findings/2026-08-28-wave4-span-failure-audit.md`](../docs/findings/2026-08-28-wave4-span-failure-audit.md)
 
 **Current baseline (what Wave 5 must beat):** `results/v10/wave4_notrim/` —
 segment-level boundaries, no sub-segment trimming, Ketubot composite 0.9171.

@@ -22,7 +22,7 @@ feedback processing again"). This ledger is the mechanism that stops it.
 >    Ketubot files nobody has reviewed. Of the 9 reviewed stories that were
 >    actually trimmed, **9 of 9 were marked incorrect**. The mechanism has zero
 >    observed successes.
->    → [`docs/golden/v10/wave4_span_failure_audit_2026-08-28.md`](../../docs/golden/v10/wave4_span_failure_audit_2026-08-28.md)
+>    → [`docs/findings/2026-08-28-wave4-span-failure-audit.md`](../../docs/findings/2026-08-28-wave4-span-failure-audit.md)
 > 2. **The spans are reverted, shipped, and verified.** `results/v10/wave4_notrim/`
 >    restores segment-level boundaries. Composite unchanged (0.9171 → 0.9171,
 >    proven by running the harness both ways); zero mid-word cuts remain.
@@ -31,7 +31,7 @@ feedback processing again"). This ledger is the mechanism that stops it.
 >    Ketubot list (`jeff comms/b.ketubot (1).doc`, created 2005) is a genuinely
 >    detector-blind ground truth. 143/149 of his stories are found by v10.
 >    The six misses cluster into the categories Jeff's own criteria predict.
->    → [`docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`](../../docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md)
+>    → [`docs/findings/2026-08-28-recall-measurement-ketubot.md`](../../docs/findings/2026-08-28-recall-measurement-ketubot.md)
 >
 > **Consequence for sequencing:** the misses are Wave 6 (criteria) territory, not
 > Wave 5 (boundaries) territory. Wave 6 is now first. See
@@ -44,7 +44,7 @@ feedback processing again"). This ledger is the mechanism that stops it.
 - Jeff's Part 2 strategic answers (Word doc):
   [`jeff comms/Simon Brief Questions.docx`](../../jeff%20comms/Simon%20Brief%20Questions.docx)
 - The email he was replying to:
-  [`docs/golden/v10/email_draft_jeff_wave4_and_roadmap.md`](../../docs/golden/v10/email_draft_jeff_wave4_and_roadmap.md)
+  [`comms/sent/2026-07-06-email-jeff-wave4-and-roadmap.md`](../../comms/sent/2026-07-06-email-jeff-wave4-and-roadmap.md)
 - Wave 4 detector output he reviewed:
   [`results/v10/wave4/kiddushin_v10.json`](../../results/v10/wave4/kiddushin_v10.json)
 - Review UI he used:
@@ -118,7 +118,7 @@ project's value).
 - **Decision:** Drop the "have Jeff cold-read 10 random pages" proposal. Instead
   **obtain Jeff's existing lists** and use them as independent ground truth to
   finally measure true recall (fixes the circular-recall problem in
-  [docs/golden/workflow/approach_review_and_scaling_2026-07-06.md](../../docs/golden/workflow/approach_review_and_scaling_2026-07-06.md) §3.1).
+  [docs/findings/2026-07-06-approach-review-and-scaling.md](../../docs/findings/2026-07-06-approach-review-and-scaling.md) §3.1).
 - **Action (OPEN):** Ask Jeff for the full lists + which tractates they cover.
 - **CORRECTION 2026-08-28 — the Kiddushin docx is NOT a recall probe.**
   [`validation/feedback/Kiddushin missesd stories.docx`](Kiddushin%20missesd%20stories.docx)
@@ -131,7 +131,7 @@ project's value).
   **Ketubot** list, created 2005-02-02, 149 stories across 55 dapim, with
   מקבילות (parallels) and הערות (notes) columns already populated. Genuinely
   detector-blind. Measured: **v10 finds 143/149 = 96.0%.**
-  → [`docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md`](../../docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md)
+  → [`docs/findings/2026-08-28-recall-measurement-ketubot.md`](../../docs/findings/2026-08-28-recall-measurement-ketubot.md)
   Note he has therefore already designed the DB schema he asked for in (d).
 
 ### (b) Ein Yaakov as answer key → weaker than I claimed; Jeff is right
@@ -144,14 +144,14 @@ overall; his own lists are better.
 
 - **Decision:** Demote Ein Yaakov from "primary corpus-wide recall probe" to
   "cheap optional aggadic-only cross-check." Correct the roadmap doc
-  [docs/golden/workflow/approach_review_and_scaling_2026-07-06.md](../../docs/golden/workflow/approach_review_and_scaling_2026-07-06.md) §4.2 accordingly.
+  [docs/findings/2026-07-06-approach-review-and-scaling.md](../../docs/findings/2026-07-06-approach-review-and-scaling.md) §4.2 accordingly.
 - **Scope fact to propagate everywhere:** the target is **all stories incl.
   halakhic**, not just aggadic.
 
 ### (c) The story-definition criterion → captured as a rubric
 
 Jeff gave the sharp rule the detector has been missing. Extracted in full to
-[docs/golden/workflow/jeff_story_definition_criteria.md](../../docs/golden/workflow/jeff_story_definition_criteria.md).
+[docs/findings/2026-07-06-jeff-story-definition-criteria.md](../../docs/findings/2026-07-06-jeff-story-definition-criteria.md).
 Summary:
 - **Hypothetical → not a story; actually-happened → story** (even if fictional).
   Legal cases are theoretical ("*if* I steal a cow…") even with action; a legal
@@ -196,4 +196,4 @@ per-story columns: notes, references to scholarship, Yerushalmi parallels.**
 - [ ] **Demote Ein Yaakov** to optional aggadic cross-check; propagate "incl. halakhic stories" scope
 - [ ] **Design crowd-sourced editable DB** (borderline flags + notes/scholarship/Yerushalmi columns)
 - [ ] **Reply to Jeff** — only after the above are digested; thank him, confirm the offset diagnosis, share the v11 direction, respond to Part 2 (lists, crowd-sourcing, criteria)
-- [ ] **Update roadmap** [docs/golden/workflow/approach_review_and_scaling_2026-07-06.md](../../docs/golden/workflow/approach_review_and_scaling_2026-07-06.md) §3.1/§4.2/§5.2/§5.4 per (a),(b),(d)
+- [ ] **Update roadmap** [docs/findings/2026-07-06-approach-review-and-scaling.md](../../docs/findings/2026-07-06-approach-review-and-scaling.md) §3.1/§4.2/§5.2/§5.4 per (a),(b),(d)

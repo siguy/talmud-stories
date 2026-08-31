@@ -1,7 +1,7 @@
 # The Mishnah filter contradicts the golden — measured
 
 **2026-08-30.** Found while executing `tasks/NEXT/02`; the seed case is written up in
-[`tasks/PLAN_wave6.md`](../../../tasks/PLAN_wave6.md) under "Seed case — Ketubot 77a",
+[`tasks/PLAN_wave6.md`](../../tasks/PLAN_wave6.md) under "Seed case — Ketubot 77a",
 adjacent defect #1. This file is the measurement and the scope question it raises.
 
 ## What the filter does
@@ -69,7 +69,7 @@ evidence, not evidence the scope is right.
 
 One expert story (Ketubot 77a) now reports `in_mishnah_filtered: true`, but that is the
 **same locator artifact** documented in
-[`recall_miss_diagnosis_2026-08-30.md`](../workflow/recall_miss_diagnosis_2026-08-30.md):
+[`recall_miss_diagnosis_2026-08-30.md`](2026-08-30-recall-miss-diagnosis.md):
 the located window runs 77a segs 8..14 and so straddles both the withheld Mishnah
 ma'aseh (seg 8) and Jeff's actual story (segs 13-14). An overlap is a lead, not a loss —
 which is why the recall script prints it as `CHECK`, not as a miss.
@@ -122,7 +122,7 @@ Mishnah:
 - Ketubot 77a seg 8 — `מעשה בצידון בבורסי אחד שמת, והיה לו אח בורסי`
 
 Question drafted for the next email:
-[`email_jeff_next_open_questions.md`](email_jeff_next_open_questions.md).
+[`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md).
 
 ## What changed in the repo today
 

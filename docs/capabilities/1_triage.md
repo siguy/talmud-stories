@@ -19,8 +19,8 @@ status lives in [`STATUS.md`](../../STATUS.md).*
 | 2026-02-13 | Threshold relaxed from "≥2 narrative events" to also keep 1 narrative + 2 verbal, so dialogue-carrying stories survive | shipped; zero false skips on the four strong story pages checked (10b, 8b, 2b, 60a) | `84c9f43` |
 | 2026-02-13 | **Ablation: does triage help or hurt?** v7 with triage vs v7 without, scored against Jeff's 127 labels (**CIRCULAR**) | **measured: triage is the single largest accuracy driver.** 111/127 (87.4%) with, 106/127 (83.5%) without | `6ea4204` |
 | 2026-03-27 | Kiddushin first run under v7 | 67% skip rate (109 of 162 pages), reported without any recall check | `14a5f3a` |
-| 2026-05-18 | **Wave 1 Issue #5 — lexical override.** A page containing any of five canonical Hebrew introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `ההוא גברא`, `כי הא ד`, matched on the consonantal skeleton) forces Stage 2 to run whatever Stage 1 said | shipped and **it worked**: Kiddushin 45a and 53a — two stories Jeff had flagged as missed — recovered, each yielding one real story. 9 Kiddushin pages and 5 Ketubot pages moved from skipped to processed | `eff0218`, [`wave1_results.md`](../golden/v8/wave1_results.md) |
-| 2026-08-30 | **First measurement of what triage discards.** Traced the 6 blind-list recall misses back through the pipeline | **measured: Stage 1 discards 124 of 222 Ketubot pages (56%)** — 1,535 segments never examined. 19 of Jeff's 149 stories touch a discarded page; 16 survive only because the other half of the daf pair was kept; **3 are lost outright** (Ketubot 20a, 72b, 82b — both pages of each pair discarded) | `9f7ddf8`, [`recall_miss_diagnosis`](../golden/workflow/recall_miss_diagnosis_2026-08-30.md) |
+| 2026-05-18 | **Wave 1 Issue #5 — lexical override.** A page containing any of five canonical Hebrew introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `ההוא גברא`, `כי הא ד`, matched on the consonantal skeleton) forces Stage 2 to run whatever Stage 1 said | shipped and **it worked**: Kiddushin 45a and 53a — two stories Jeff had flagged as missed — recovered, each yielding one real story. 9 Kiddushin pages and 5 Ketubot pages moved from skipped to processed | `eff0218`, [`wave1_results.md`](../findings/2026-05-18-wave1-results.md) |
+| 2026-08-30 | **First measurement of what triage discards.** Traced the 6 blind-list recall misses back through the pipeline | **measured: Stage 1 discards 124 of 222 Ketubot pages (56%)** — 1,535 segments never examined. 19 of Jeff's 149 stories touch a discarded page; 16 survive only because the other half of the daf pair was kept; **3 are lost outright** (Ketubot 20a, 72b, 82b — both pages of each pair discarded) | `9f7ddf8`, [`recall_miss_diagnosis`](../findings/2026-08-30-recall-miss-diagnosis.md) |
 | 2026-08-30 | **Triage recall computed for the first time**, against the BLIND 2005 list | **measured: 98.0%** (146 of 149 survive) at 44% of pages examined. Reframed from "the biggest unmeasured thing in the project" to **a trade to be priced** | `c900ee4` |
 
 ## What we reverted, and why
@@ -126,7 +126,7 @@ versions after it shipped (v8, v9, v10, v11)
 - **A local model for Stage 1** — Dicta's rabbinic-Hebrew BERT (BEREL family) as a
   triage replacement, near-zero marginal cost at corpus scale and it removes the API
   dependency from the highest-volume stage. Proposed 2026-07-06
-  ([`approach_review_and_scaling` §4.6](../golden/workflow/approach_review_and_scaling_2026-07-06.md)),
+  ([`approach_review_and_scaling` §4.6](../findings/2026-07-06-approach-review-and-scaling.md)),
   never tried.
 - **Declined, by Jeff:** *Ein Yaakov coverage as a triage prior.* Proposed 2026-07-06 as
   part of "the highest-leverage new idea" (§4.2); **Jeff declined it the same day** — it

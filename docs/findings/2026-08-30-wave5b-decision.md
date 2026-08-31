@@ -4,7 +4,7 @@
 actually broken — so we are going to test that first, for about 10 lines of changes
 instead of the 433 already written.
 
-Full technical findings: [`wave5b_review_2026-08-30.md`](wave5b_review_2026-08-30.md).
+Full technical findings: [`wave5b_review_2026-08-30.md`](2026-08-30-wave5b-review.md).
 That file exists so this plan can be **revived and fixed** if the cheap path fails.
 
 ---
@@ -55,7 +55,7 @@ the legitimate no-trim baseline. It also writes a fabricated speech profile into
 dataset meant to answer Jeff's question.
 
 This is the same shape as a failure this project already paid for once (v10's silent
-regex fallback). It is now [Lesson 21](../../../tasks/lessons.md).
+regex fallback). It is now [Lesson 21](../../tasks/lessons.md).
 
 ## What we are doing instead
 
@@ -73,7 +73,7 @@ nearly rewrote 400 lines to fix a one-line bug.
 
 ## If the cheap path does not work
 
-Revive Wave 5b using [`wave5b_review_2026-08-30.md`](wave5b_review_2026-08-30.md), which
+Revive Wave 5b using [`wave5b_review_2026-08-30.md`](2026-08-30-wave5b-review.md), which
 holds every finding as a fix list: the P0 correctness bugs, the scope cuts (3 roles
 instead of 8, Hebrew only, one assembly rule), the 22 tests to write, and two claims in
 the original plan that turned out to be **wrong** — most importantly that "English

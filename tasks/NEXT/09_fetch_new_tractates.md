@@ -16,7 +16,7 @@ it depends on nothing.
 
 ## Method
 
-1. Follow `docs/golden/workflow/new_tractate_workflow.md` step 1 only — **fetch, do not
+1. Follow `docs/technical/new_tractate_workflow.md` step 1 only — **fetch, do not
    run the detector.** Reuse the existing Sefaria client; do not write a new one.
 2. Fetch the full daf range for each tractate, both Hebrew and English, in the same
    page/segment shape as `results/v10/wave4_notrim/*.json` (`pages[].segments[]` with

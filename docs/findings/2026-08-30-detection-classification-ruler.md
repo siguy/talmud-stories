@@ -1,7 +1,7 @@
 # One ruler for Detection and Classification — 2026-08-30
 
 > **Corrected 2026-08-30** by
-> [`appendix_provenance_correction_2026-08-30.md`](appendix_provenance_correction_2026-08-30.md).
+> [`appendix_provenance_correction_2026-08-30.md`](2026-08-30-appendix-provenance-correction.md).
 > The Kiddushin recall denominator is **90**, not 89, and strict recall is **83.3%**,
 > not 84.3%. Four of the five appendix cases are excluded as circular; the fifth (81b)
 > we never proposed, so excluding it inflated recall. The Kiddushin numbers below are
@@ -22,9 +22,9 @@ numbers.
 | **Detection** (BLIND) | **96.0%** (143/149) · strict 87.9% | **93.3%** (83/89) · strict 84.3% |
 | **Classification** (CIRCULAR) | **87.9% – 94.8%** (n=173, Mar 2026) | **67.4% – 92.1%** (n=89, Apr 2026) |
 
-Artifacts: [`scripts/build_ruler.py`](../../../scripts/build_ruler.py) ·
+Artifacts: [`scripts/build_ruler.py`](../../scripts/build_ruler.py) ·
 `results/rulers/{ketubot,kiddushin}_ruler.json` ·
-[`tests/test_build_ruler.py`](../../../tests/test_build_ruler.py)
+[`tests/test_build_ruler.py`](../../tests/test_build_ruler.py)
 
 ---
 
@@ -106,7 +106,7 @@ supports what Wave 1 suspected: the detector generalises less well than the Ketu
 numbers implied.
 
 The denominator is 89 — blind entries only, the appendix excluded (see
-[the list parse finding](kiddushin_list_parse_2026-08-30.md) §4).
+[the list parse finding](2026-08-30-kiddushin-list-parse.md) §4).
 
 ## 5. What the join also fixed
 

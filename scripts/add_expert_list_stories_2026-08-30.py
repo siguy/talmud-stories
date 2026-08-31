@@ -237,7 +237,7 @@ def build_story(spec):
             'detector_status': spec.get('detector_status', DEFAULT_DETECTOR_STATUS),
             'loss_cause': spec['loss_cause'],
             'loss_detail': spec['loss_detail'],
-            'loss_diagnosis_doc': 'docs/golden/workflow/recall_miss_diagnosis_2026-08-30.md',
+            'loss_diagnosis_doc': 'docs/findings/2026-08-30-recall-miss-diagnosis.md',
             'recall_match_record': 'results/recall/ketubot_jeff2005_matches.json',
             'alignment_method': ALIGNMENT_METHOD,
             'alignment_coverage': spec['coverage'],

@@ -3,7 +3,7 @@
 **`NEXT/05` is DONE.** The comments are the `comments` stream in
 [`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json),
 each carrying its `anchor_cp` and `attached_story_id`. Read `STATUS.md`, `FRAMEWORK.md`
-and [the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §5–6.
+and [the finding](../../docs/findings/2026-08-30-kiddushin-list-parse.md) §5–6.
 **Capabilities: 3 Classification, 4 Boundaries.** **No API calls.**
 
 ## What is in there
@@ -48,7 +48,7 @@ rulers.
    `scripts/build_boundary_testset.py`. Mind `quote_polarity` — whether the quoted
    Hebrew is text to keep or text to cut. Getting this backwards silently anchors a
    target one clause off, which went unnoticed for months.
-4. Classification ones → append to `docs/golden/workflow/jeff_story_definition_criteria.md`
+4. Classification ones → append to `docs/findings/2026-07-06-jeff-story-definition-criteria.md`
    as cases, quoting him verbatim. **Do not paraphrase into a rule.** A gloss added to
    his words once produced a contradiction that turned out to be ours, not his.
 5. Append everything to the feedback ledger first (Lesson 17).

@@ -16,7 +16,7 @@ rot the moment someone works without reading them, and this file is read first. 
 is unavoidable, write the *rule that stays true* and the command that answers it — not the
 number. (Every stale entry found on 2026-08-30 was one of these three.)
 
-Ready-to-run work lives in [`tasks/NEXT/`](tasks/NEXT/) — one self-contained brief per
+Ready-to-run work lives in [`tasks/NEXT/`](tasks/NEXT) — one self-contained brief per
 task, each executable in a fresh session with no other context.
 
 ## Critical Rules
@@ -40,7 +40,7 @@ Any code that reads a run for scoring or display must decide about that key expl
 Report it with `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
 
 ## Running the Detector on a New Tractate
-See `docs/golden/new_tractate_workflow.md` for the step-by-step guide.
+See `docs/technical/new_tractate_workflow.md` for the step-by-step guide.
 
 Quick version:
 1. Fetch pages from Sefaria API
@@ -108,14 +108,14 @@ archive/                          # Old versions (reference only)
 | `results/canonical/ketubot_canonical.json` | **THE golden dataset.** It grows — count it, don't quote a number. Entries include `NOT_A_STORY`; filter those out for a story count. |
 | `scripts/evaluate_golden.py` | IMMUTABLE evaluation harness |
 | `docs/golden/v7/baseline_ketubot.json` | v7 baseline scores (historical 0.93; not reproducible — Lesson 11) |
-| `docs/golden/v9/wave3_results.md` | Wave 3 writeup (for current state read `STATUS.md`) |
-| `docs/golden/v8/wave2_results.md` | Wave 2 writeup |
-| `docs/golden/v8/wave1_results.md` | Wave 1 writeup |
-| `docs/golden/v8/wave3_approach.md` | Wave 3 approach + design decisions |
-| `docs/golden/workflow/error_taxonomy.md` | 6 error patterns from Jeff's reviews |
-| `docs/golden/v10/findings_v10_golden_dataset.md` | v10 session writeup |
-| `docs/golden/workflow/research_overfitting_and_generalization.md` | Why prompt engineering has a ceiling |
-| `docs/golden/workflow/new_tractate_workflow.md` | Step-by-step for new tractates |
+| `docs/findings/2026-05-25-wave3-results.md` | Wave 3 writeup (for current state read `STATUS.md`) |
+| `docs/findings/2026-05-24-wave2-results.md` | Wave 2 writeup |
+| `docs/findings/2026-05-18-wave1-results.md` | Wave 1 writeup |
+| `docs/history/2026-05-24-wave3-approach.md` | Wave 3 approach + design decisions |
+| `docs/findings/2026-03-17-error-taxonomy.md` | 6 error patterns from Jeff's reviews |
+| `docs/findings/2026-03-25-golden-dataset-v10.md` | v10 session writeup |
+| `docs/findings/2026-03-25-overfitting-and-generalization-research.md` | Why prompt engineering has a ceiling |
+| `docs/technical/new_tractate_workflow.md` | Step-by-step for new tractates |
 | `src/story_detector_v*.py` | **The highest-numbered file is the active detector; every lower one is a frozen ship point — never edit those in place.** `ls src/story_detector_v*.py` is the source of truth; a version number written in this file is not. What each version changed: its own module docstring, and `docs/golden/`. |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
@@ -135,22 +135,22 @@ archive/                          # Old versions (reference only)
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
 | `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
-| `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` | The measurement + why it is a scope question for Jeff |
-| `docs/golden/v11/email_jeff_next_open_questions.md` | **Open questions for the next email to Jeff** — ask in the order listed |
+| `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
+| `comms/email_jeff_next_open_questions.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — 149 stories, detector-blind ground truth |
 | `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
 | `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
 | `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — 95 stories with `blind` flags, 10 anchored expert remarks |
-| `docs/golden/v11/kiddushin_list_parse_2026-08-30.md` | Why the line-based parse gave 105, and how the count was verified |
+| `docs/findings/2026-08-30-kiddushin-list-parse.md` | Why the line-based parse gave 105, and how the count was verified |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
 | `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 29) |
 | `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
 | `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
-| `docs/golden/v11/detection_classification_ruler_2026-08-30.md` | Why 86%/68% were not Classification numbers, and why 96% recall is 88% strict |
+| `docs/findings/2026-08-30-detection-classification-ruler.md` | Why 86%/68% were not Classification numbers, and why 96% recall is 88% strict |
 | `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
-| `docs/golden/workflow/recall_measurement_ketubot_2026-08-28.md` | The 96% recall finding + method |
-| `docs/golden/v10/wave4_span_failure_audit_2026-08-28.md` | Span failure audit + revert |
+| `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The 96% recall finding + method |
+| `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
 | `tasks/PLAN_wave5b_clause_roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `tasks/PLAN_wave6.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
@@ -158,11 +158,11 @@ archive/                          # Old versions (reference only)
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
 | `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
 | `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
-| `docs/golden/v11/boundary_ruler_rebuild_2026-08-30.md` | **Ruler rebuild** — 35 -> 249 targets, noise floor 7pts -> 0 |
+| `docs/findings/2026-08-30-boundary-ruler-rebuild.md` | **Ruler rebuild** — 35 -> 249 targets, noise floor 7pts -> 0 |
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
 | `scripts/score_boundary_targets.py` | Scores any run against it |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
-| `docs/golden/v11/wave5_summary_fix_2026-08-30.md` | **Steps 1-2 writeup** — 35 targets, +29pts vs no-trim, and the gate's noise floor |
+| `docs/findings/2026-08-30-wave5-summary-fix.md` | **Steps 1-2 writeup** — 35 targets, +29pts vs no-trim, and the gate's noise floor |
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
@@ -184,7 +184,7 @@ archive/                          # Old versions (reference only)
 When making changes, update these files as relevant:
 - `docs/technical/VERSION_HISTORY.md` - New versions, results
 - `docs/technical/HOW_IT_WORKS.md` - Pipeline changes
-- `docs/golden/findings_v10_golden_dataset.md` - Golden dataset work
+- `docs/findings/2026-03-25-golden-dataset-v10.md` - Golden dataset work
 - `tasks/lessons.md` - After any correction or surprise
 - `CLAUDE.md` - If project structure or key files change
 

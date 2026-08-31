@@ -2,7 +2,7 @@
 
 **Created:** 2026-05-24
 **Status:** Approved, ready to execute.
-**Approach doc:** `docs/golden/v8/wave3_approach.md` (READ THIS FIRST — it explains the *why* behind every choice below).
+**Approach doc:** `docs/history/2026-05-24-wave3-approach.md` (READ THIS FIRST — it explains the *why* behind every choice below).
 **Source plan:** `tasks/PLAN_kiddushin_fixes.md` (Wave 3 section).
 **Detector version:** new `src/story_detector_v9.py` (fork of v8).
 
@@ -28,8 +28,8 @@ Goal: lock today's Wave 2 scores as the session-local gate.
 
 - [ ] **0.1** Run `scripts/apply_wave2.py` on existing Wave 1 outputs for both tractates → fresh Wave 2 JSON outputs in a scratch location.
 - [ ] **0.2** Score both with `scripts/evaluate_golden.py`. Save numbers to:
-  - `docs/golden/v8/baselines/kiddushin_wave2_baseline_today.json`
-  - `docs/golden/v8/baselines/ketubot_wave2_baseline_today.json`
+  - `tests/baselines/kiddushin_wave2_baseline_today.json`
+  - `tests/baselines/ketubot_wave2_baseline_today.json`
 - [ ] **0.3** Diff today's scores vs. the frozen wave2_results.md numbers. Expected: identical (apply_wave2 is pure Python). If they differ, STOP — Lesson 11 is in play and the comparison surface is wrong.
 - [ ] **0.4** Record today's gate numbers in `tasks/PLAN_wave3.md` (this file, under "Session gate" below).
 
@@ -106,7 +106,7 @@ Goal: layer prompt changes one at a time so a regression can be bisected without
 - Ketubot Wave 3 composite ≥ Ketubot Wave 2 today's
 
 - [ ] **3d.6** If Ketubot regresses: bisect by disabling items 3c → 3b → 3a (highest risk last). Item 4 cannot be the cause — skip it in the bisect.
-- [ ] **3d.7** If bisect identifies a problematic item, document the failure mode in `docs/golden/v9/wave3_results.md` and ship the others.
+- [ ] **3d.7** If bisect identifies a problematic item, document the failure mode in `docs/findings/2026-05-25-wave3-results.md` and ship the others.
 
 ---
 
@@ -120,7 +120,7 @@ Goal: layer prompt changes one at a time so a regression can be bisected without
   - Gate: Kiddushin composite ≥ today-Wave-2; Ketubot composite ≥ today-Wave-2.
 - [ ] **4.2** Build `scripts/compare_v8_v9.py` — side-by-side metric table for both tractates, both versions.
 - [ ] **4.3** All checks green → commit. Tag `v9-wave3`.
-- [ ] **4.4** Write `docs/golden/v9/wave3_results.md` mirroring `wave2_results.md` structure:
+- [ ] **4.4** Write `docs/findings/2026-05-25-wave3-results.md` mirroring `wave2_results.md` structure:
   - TL;DR for Jeff
   - What we shipped + per-item findings
   - How we know it worked (gate table)
@@ -145,9 +145,9 @@ Goal: layer prompt changes one at a time so a regression can be bisected without
 - `results/v9/wave3/kiddushin_v9.json`
 - `results/v9/wave3/ketubot_v9_2-60.json`
 - `results/v9/wave3/ketubot_v9_61-112.json`
-- `docs/golden/v8/baselines/kiddushin_wave2_baseline_today.json`
-- `docs/golden/v8/baselines/ketubot_wave2_baseline_today.json`
-- `docs/golden/v9/wave3_results.md`
+- `tests/baselines/kiddushin_wave2_baseline_today.json`
+- `tests/baselines/ketubot_wave2_baseline_today.json`
+- `docs/findings/2026-05-25-wave3-results.md`
 
 **Modified:**
 - `validation/ui` generator (text-span rendering)

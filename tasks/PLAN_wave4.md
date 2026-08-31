@@ -174,7 +174,7 @@ before implementation begins.
       - `validation/ui/wave4_ketubot_review.html` (167 stories, 5.9 MB)
       - Shows v10 LLM trims with v9 regex disagreement noted; filterable
         by category (recovered_text / new_trim / different_trim / etc.)
-- [x] Email draft for Jeff: `docs/golden/v10/email_draft_jeff_wave4.md`
+- [x] Email draft for Jeff: `comms/sent/2026-06-15-email-jeff-wave4.md`
 - [ ] Run Kiddushin full → expect Kiddushin composite ≥ Wave 3 (0.8859);
       no FP/FN deltas (text spans are score-neutral)
 - [ ] Run Ketubot full → expect Ketubot composite ≥ Round 2 (0.9171)
