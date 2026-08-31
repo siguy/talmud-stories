@@ -71,24 +71,46 @@
       "boundary": 7,
       "merge": 1
      },
+     "by_direction": {
+      "unread": 21
+     },
+     "hand_sorted": 0,
      "judged": 173,
      "precision_all_causes": 0.879,
      "precision_classification_only": 0.948,
+     "unread_notes": 0,
+     "empty_notes": 0,
      "unclassified_notes": 0,
-     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 0,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 0
     },
     "v5_1_feedback_anonymous_2026-02-05 (1).json": {
      "accepted": 24,
      "rejected": 12,
      "by_kind": {
-      "unclassified": 9,
+      "merge": 2,
+      "classification": 7,
       "confidence": 3
      },
+     "by_direction": {
+      "span_shape": 2,
+      "under_call": 4,
+      "over_call": 3,
+      "unread": 3
+     },
+     "hand_sorted": 9,
      "judged": 36,
      "precision_all_causes": 0.667,
-     "precision_classification_only": 1.0,
-     "unclassified_notes": 9,
-     "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
+     "precision_classification_only": 0.806,
+     "unread_notes": 0,
+     "empty_notes": 0,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 0,
+     "rejections_inverted_direction": 4,
+     "rejections_on_our_renderer": 0
     },
     "v5_1_feedback_anonymous_2026-02-20.json": {
      "accepted": 98,
@@ -98,27 +120,49 @@
       "confidence": 2,
       "boundary": 1
      },
+     "by_direction": {
+      "unread": 4
+     },
+     "hand_sorted": 0,
      "judged": 102,
      "precision_all_causes": 0.961,
      "precision_classification_only": 0.99,
+     "unread_notes": 0,
+     "empty_notes": 0,
      "unclassified_notes": 0,
-     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 0,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 0
     },
     "v8_delta_feedback_anonymous_2026-02-26.json": {
      "accepted": 20,
      "rejected": 23,
      "by_kind": {
-      "merge": 4,
-      "unclassified": 9,
+      "merge": 5,
+      "unresolvable": 7,
+      "not_an_objection": 1,
       "boundary": 7,
       "confidence": 1,
       "classification": 2
      },
+     "by_direction": {
+      "unread": 14,
+      "over_call": 7,
+      "affirms": 1,
+      "span_shape": 1
+     },
+     "hand_sorted": 9,
      "judged": 43,
      "precision_all_causes": 0.465,
      "precision_classification_only": 0.953,
-     "unclassified_notes": 9,
-     "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
+     "unread_notes": 0,
+     "empty_notes": 7,
+     "unclassified_notes": 7,
+     "bounds_note": "true classification precision lies between these two; the gap is 7 notes that name no axis (0 unread, 7 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 1,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 0
     }
    },
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
@@ -11101,7 +11145,7 @@
    ],
    "verdict_match": "exact",
    "expert_accepted": false,
-   "objection_kind": "confidence"
+   "objection_kind": "unresolvable"
   },
   {
    "id": "ketubot_r199",

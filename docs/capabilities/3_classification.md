@@ -5,8 +5,9 @@ see [`FRAMEWORK.md` §1.3](../../FRAMEWORK.md).
 **Gate:** ≥85% precision (PROVISIONAL — *"the weakest of the six"*)
 **Current:** **Ketubot 89.2%, Kiddushin 85.3%** — harness precision against the canonical
 goldens (**CIRCULAR**), measured 2026-08-30 (`46d90b2`). *Review-round precision is a
-**range**, not a point: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–92.1% (Apr 2026, on
-v7) — see §"Distance to gate".*
+**range**, not a point: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–**89.9%** (Apr 2026,
+on v7) — see §"Distance to gate". Kiddushin narrowed from 92.1% on 2026-08-31 by the
+Phase A hand sort.*
 
 *Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
@@ -49,6 +50,7 @@ Its cost lands in this capability's false-negative column, so it is recorded her
 | 2026-08-30 | **The 86% / 68% figures re-derived** by sorting every rejection by *what Jeff objected to* | **measured: they were never Classification numbers.** Most rejections are boundary, merge or confidence-level complaints. Separated, both tractates land near 92–95% and the tractate gap mostly evaporates | `4de7135`, Lesson 30, [`ruler`](../findings/2026-08-30-detection-classification-ruler.md) |
 | 2026-08-30 | **Ketubot 77a diagnosed** over 8 re-runs of identical code | **measured:** segs 13-14 proposed in 7 of 8 runs, classified `NOT_A_STORY` in 6 of those 7, every run citing the same three prompt disqualifiers. A Classification failure sitting on proposal-level variance | `abdc4af` |
 | 2026-08-30 | **Mishnah filter cost measured** by scoring twice through the immutable harness | **measured: 4 of Ketubot's 15 golden false negatives — 27%.** Folding them back moves golden recall 0.9085 → 0.9329, precision unchanged. Blind recall identical at 96.0% both ways | `804a097`, [`mishnah_filter_delta`](../findings/2026-08-30-mishnah-filter-delta.md) |
+| 2026-08-31 | **The rejection notes the keyword rules could not read, read by hand** (Phase A of `work/2026-08-30-review-verdict-axes.md`) | **measured: the population was 34, not the 24 on record; 27 sorted, residue 7 and all 7 are empty notes.** Only **9 of 34** dispute whether the passage is a story. Kiddushin's upper bound 92.1% → **89.9%**, Ketubot 2026-02-05's 100% → **80.6%**; every lower bound unchanged. Also measured: `incorrect` has meant two opposite things — 95 of the 2026-02-05 round's 125 verdicts sit on spans we had labelled `NOT_A_STORY` | [`hand_sort`](../findings/2026-08-31-objection-axis-hand-sort.md) |
 | 2026-08-30 | **Mishnah tagger chapter-boundary bug fixed** — the tagger read only `מתני׳`/`גמ׳`, but Sefaria opens a new chapter's first Mishnah with the chapter incipit, so `גמ׳` came first and everything before it was back-tagged as Mishnah | **fixed and measured: Ketubot TP 149 → 151, FN 15 → 13, golden recall 90.9% → 92.1%**, precision and merge unchanged. 72 segments on 12 pages, every change a correction | `8fd68de` |
 
 ## What we reverted, and why
@@ -135,24 +137,40 @@ weakest of the six.**
 | measure | Ketubot | Kiddushin | gate |
 |---|---|---|---|
 | harness precision (CIRCULAR, current detector) | **89.2%** | **85.3%** | ≥85% |
-| review-round precision, all-causes → classification-only | 87.9 → 94.8% (n=173, Mar 2026) | 67.4 → 92.1% (n=89, Apr 2026, v7) | — |
+| review-round precision, all-causes → classification-only | 87.9 → 94.8% (n=173, Mar 2026) | 67.4 → **89.9%** (n=89, Apr 2026, v7) | — |
 
 Three things this table hides, all of them stated rather than smoothed:
 
 1. **We have a harness point estimate, not a review-round one.** The review rounds cannot
    give a point estimate, because the reviewer never recorded *which thing* he was
-   rejecting. The range's width **is** the unreadable notes: 9 + 9 + 6 across the rounds.
-   Narrowing it needs the review UI to capture the distinction (`work/2026-08-30-review-verdict-axes.md`), not
-   more inference over free text (Lesson 30).
+   rejecting. The range's width **is** the notes that name no axis — and an earlier
+   version of this line said *"9 + 9 + 6 across the rounds"*, which undercounted. The
+   ruler scores **seven** rounds, not the four that were tallied: the real width was
+   **34 notes across five rounds**. Hand-sorting them on 2026-08-31 read **27 of 34**;
+   the residue is **7, all of them empty notes**, all in the 2026-02-26 v8-delta round.
+   → [`objection_axis_hand_sort`](../findings/2026-08-31-objection-axis-hand-sort.md)
+   That is as far as reading gets. A *point* estimate still needs the review UI to
+   capture the distinction at entry (`work/2026-08-30-review-verdict-axes.md`, Phase B),
+   not more inference over free text (Lesson 30).
 2. **The gate itself is invented.** *"Below ~85% a reviewer spends more time rejecting
    than confirming"* is a plausible sentence with no measurement behind it. Only Jeff can
    settle it, and the question is drafted
    ([FRAMEWORK §2b](../../FRAMEWORK.md), [`JEFF.md`](../../comms/JEFF.md)).
 3. **Precision is measured on a CIRCULAR set, which is correct for precision and useless
    for the other direction.** The invisible half of this capability — real stories we
-   *reject* — is as costly as a Detection miss and has no measurement at all. The only
-   three cases we know of (Ketubot 77a, 20a, 53a) were found by chasing blind-list misses,
-   not by any classification metric (`abdc4af`, `6284070`).
+   *reject* — is as costly as a Detection miss and has no metric. Three cases (Ketubot
+   77a, 20a, 53a) were found by chasing blind-list misses, not by any classification
+   measure (`abdc4af`, `6284070`).
+   **Four more surfaced on 2026-08-31, and they came from a review round.** The
+   2026-02-05 UI showed Jeff our `NOT_A_STORY` verdicts as well as our stories, so an
+   `incorrect` there can mean *"you wrongly rejected this"*: Ketubot `10b_1-1`,
+   `10b_3-3`, `10b_6-6` and `56b_11-11`, all overturning a `NOT_A_STORY`, all since
+   corrected — the current run calls all four stories. The round measured the invisible
+   half and nothing has read it that way since, because `build_ruler.py` maps both
+   directions of `incorrect` to one bucket. It now reports
+   `rejections_inverted_direction` per round rather than re-scoring them; whether an
+   overturned rejection belongs in a precision denominator is a definition question.
+   → [`hand_sort` §4](../findings/2026-08-31-objection-axis-hand-sort.md)
 
 **Noise floor: partially known, and it is not small.** Ketubot 77a's segs 13-14 are
 proposed in 7 of 8 identical runs and rejected in 6 of those 7 — so this capability's

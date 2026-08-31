@@ -40,3 +40,4 @@ when it lands on main, so two sessions cannot claim the same number (four did on
 | 28 | 2026-08-30 | [Read the source format, not the converter's output](L-028-read-the-source-format-not-the-converter-s-output.md) |
 | 29 | 2026-08-30 | [A blind list stops being blind when the expert merges your output into it](L-029-a-blind-list-stops-being-blind-when-the-expert.md) |
 | 30 | 2026-08-30 | ["Incorrect" is not a metric until you know what was rejected](L-030-incorrect-is-not-a-metric-until-you-know-what-was.md) |
+| 31 | 2026-08-31 | [Audit the bucket your conservative rule files things into](L-031-audit-the-bucket-your-conservative-rule-files.md) |

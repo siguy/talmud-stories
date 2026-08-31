@@ -129,6 +129,70 @@ def test_every_story_localises_to_at_least_one_segment():
         assert not bad, f'{tractate}: unlocalised {bad}'
 
 
+def test_hand_sort_rows_all_point_at_a_verdict_the_ruler_scores():
+    """A dangling row is a sort that has drifted off the data it claims to read.
+
+    Round files get renamed and spans get re-keyed. When that happens the row stops
+    applying and the note silently reverts to `unclassified` -- the range widens again
+    and nothing says so. docs/findings/2026-08-31-objection-axis-hand-sort.md
+    """
+    assert ruler.HAND_SORT, 'results/rulers/objection_axes.json did not load'
+    scored = set()
+    for tractate in ('Ketubot', 'Kiddushin'):
+        _, _, props, _ = built(tractate)
+        scored |= {(v['round'], v['key']) for p in props for v in p['verdicts']
+                   if v['verdict'] in ruler.REJECTED}
+    dangling = sorted(set(ruler.HAND_SORT) - scored)
+    assert not dangling, f'hand-sorted rows the ruler no longer scores: {dangling}'
+    assert len(ruler.HAND_SORT) == 34, len(ruler.HAND_SORT)
+
+
+def test_the_residue_is_exactly_the_empty_notes():
+    """The finding's central claim: every note with text in it was readable.
+
+    If a future row files a non-empty note as `unresolvable`, that is a judgment call
+    being hidden in the residue bucket -- which is the failure FRAMEWORK sec.7 names.
+    """
+    AXES = {'classification', 'boundary', 'confidence', 'merge',
+            'display', 'not_an_objection', 'unresolvable'}
+    for key, row in ruler.HAND_SORT.items():
+        assert row['axis'] in AXES, f'{key}: unknown axis {row["axis"]!r}'
+        if row['axis'] == 'unresolvable':
+            assert not row['note'].strip(), f'{key}: filed unresolvable but has a note'
+        else:
+            assert row['note'].strip(), f'{key}: sorted onto {row["axis"]} with no note'
+    empty = [k for k, r in ruler.HAND_SORT.items() if r['axis'] == 'unresolvable']
+    assert len(empty) == 7, len(empty)
+
+
+def test_reading_notes_never_moves_the_lower_bound():
+    """precision_all_causes counts every rejection whatever it objected to.
+
+    It is definitional, so no reading of the notes may change it. Only the upper bound
+    and the residue are allowed to move; the two rounds below are the ones that did.
+    """
+    _, _, _, ket = built('Ketubot')
+    _, _, _, kid = built('Kiddushin')
+    v5 = ket['classification']['per_round']['v5_1_feedback_anonymous_2026-02-05 (1).json']
+    k4 = kid['classification']['per_round']['kiddushin_review_2026-04-23.json']
+    assert v5['precision_all_causes'] == 0.667, v5['precision_all_causes']
+    assert k4['precision_all_causes'] == 0.674, k4['precision_all_causes']
+    # ... and the upper bounds these notes pulled down, from 1.000 and 0.921.
+    assert v5['precision_classification_only'] == 0.806, v5['precision_classification_only']
+    assert k4['precision_classification_only'] == 0.899, k4['precision_classification_only']
+    assert v5['unclassified_notes'] == 0 and k4['unclassified_notes'] == 0
+
+
+def test_the_only_residue_left_is_the_v8_delta_round():
+    """34 notes named no axis; 7 do. All 7 are in one round, and all 7 are empty."""
+    _, _, _, ket = built('Ketubot')
+    _, _, _, kid = built('Kiddushin')
+    left = {name: r['unclassified_notes']
+            for m in (ket, kid) for name, r in m['classification']['per_round'].items()
+            if r['unclassified_notes']}
+    assert left == {'v8_delta_feedback_anonymous_2026-02-26.json': 7}, left
+
+
 def test_strict_recall_is_a_subset_of_loose_recall():
     for tractate in ('Ketubot', 'Kiddushin'):
         entries, _, _, m = built(tractate)

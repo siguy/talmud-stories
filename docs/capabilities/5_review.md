@@ -157,6 +157,12 @@ original job (the display bug) was completed, and `4de7135` then repointed the *
 new job without writing a new brief. In a repo whose convention is one self-contained
 brief per ready task, this one is a name with nothing behind it.
 
+> **Closed 2026-08-31.** The brief was written the same day this gap was named, as
+> [`work/2026-08-30-review-verdict-axes.md`](../../work/2026-08-30-review-verdict-axes.md),
+> and its Phase A has now run. The paragraph above is kept because the failure it
+> describes — a status file advertising a ready task with no brief behind it — is the
+> thing to recognise next time, not the particular task it happened to.
+
 ## Ceiling
 
 **None technical. The ceiling is one person's calendar**, and it is the reason the
@@ -177,9 +183,18 @@ old lists. **That offer has not been taken up.**
 - **Make the reviewer say which thing is wrong.** The single highest-value item here, and
   the only route to a Classification point estimate: separate verdict axes for *is it a
   story* / *is the extent right* / *is the confidence right* / *is the merge right*.
-  Re-deriving intent from free text has a measured ceiling — **24 notes across the rounds
-  are unreadable**, and that is exactly the width of the precision range (Lesson 30).
-  Named as `NEXT/04`; **no brief exists** (see above).
+  Brief: [`work/2026-08-30-review-verdict-axes.md`](../../work/2026-08-30-review-verdict-axes.md).
+  **Phase A is done** (2026-08-31): the 34 unreadable notes were hand-sorted, 27 of them
+  successfully, and the residue is 7 empty notes.
+  → [`hand_sort`](../findings/2026-08-31-objection-axis-hand-sort.md)
+  **Phases B and C are untried**, and Phase A is what re-deriving intent from free text
+  can do — a narrower range, still not a point estimate. Three things Phase A says the
+  design needs that the brief does not yet have: **a fifth option for *the display is
+  wrong*** (one of the 15 verdicts in the 2026-07-06 round was spent on our renderer),
+  **a direction on every rejection** (four cases exist where he overturned a
+  `NOT_A_STORY` — the opposite error, pooled with false positives today), and **a check
+  that the verdict does not contradict its own note** (two of the 34 affirm and reject
+  at once).
 - **Show `mishnah_stories` to the expert.** The review UI still does not display what the
   Mishnah filter withheld, so the one person who could settle the scope question has never
   been shown the passages it removes (`804a097`).

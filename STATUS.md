@@ -78,7 +78,19 @@ notes set its width. → [`docs/findings/2026-08-30-detection-classification-rul
 **We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
 from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
 a point estimate, because the reviewer never recorded *which thing* he was rejecting. That
-fix is a review-UI change, `NEXT/04`, not more inference over free text.
+fix is a review-UI change — [`review-verdict-axes`](work/2026-08-30-review-verdict-axes.md)
+Phase B — not more inference over free text.
+
+**The range narrowed as far as reading can take it (2026-08-31, Phase A).** Every note the
+ruler filed `unclassified` was read by hand. **There were 34, not the 24 on record** — the
+tally had covered four of the seven rounds the ruler scores. **27 sorted; the residue is 7,
+and all 7 are notes that are empty.** Only 9 of the 34 dispute whether the passage is a
+story. **Kiddushin's range tightens to 67.4 – 89.9%**; Ketubot's headline (87.9 – 94.8%,
+the 2026-03-17 round) does not move, because that round had no unreadable notes. Both ends
+stay CIRCULAR and *indicated*. Phase A also found that `incorrect` has meant two opposite
+things: the 2026-02-05 UI showed Jeff our `NOT_A_STORY` verdicts too, so 4 of the 34 are
+him **overturning a rejection** — a false negative counted against precision.
+→ [`docs/findings/2026-08-31-objection-axis-hand-sort.md`](docs/findings/2026-08-31-objection-axis-hand-sort.md)
 
 **Detection is softer than 96% under a strict test.** The published test credits a
 proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
@@ -198,7 +210,7 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 | **[kiddushin-recall](work/2026-08-30-kiddushin-recall.md)** — report over both denominators (90 / 94) | 1, 2 | — | no |
 | **[kiddushin-boundary-set](work/2026-08-30-kiddushin-boundary-set.md)** — ~190 targets, kills the ±7pt noise | 4 | — | no |
 | **[kiddushin-comments-harvest](work/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
-| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. Planned as step 7a | 3, 5 | — | no |
+| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. **Phase A done 2026-08-31**; Phase B is the UI change and is the part that must land *before* the next review round | 3, 5 | — | no |
 | [triage-recall-price](work/2026-08-30-triage-recall-price.md) — price the trade over the 124 discarded pages | 1 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
 | [kiddushin-parse-open-calls](work/2026-08-30-kiddushin-parse-open-calls.md) | ground truth | — | **1b** |

@@ -37,6 +37,23 @@ expert's note and deliberately conservative: anything unclear stays `unclassifie
 rather than being guessed into a bucket. Precision is reported twice -- all-causes and
 classification-only -- and the gap between them is the point.
 
+Where the keywords could not read a note, `results/rulers/objection_axes.json` supplies
+a hand sort, and it wins over the keyword rules. That file is hand-authored, dated and
+never regenerated; each row records the label the reviewer was actually shown, the axis,
+the direction of the error, and why the keyword rules missed it. 27 of the 34 notes the
+rules could not read turned out to be readable by a person; the residue is 7 notes that
+are empty. See docs/findings/2026-08-31-objection-axis-hand-sort.md.
+
+DIRECTION
+---------
+Each rejection also carries a `direction`. It matters because `incorrect` has meant two
+opposite things across the rounds. In the 2026-02-05 round the UI asked the reviewer to
+judge our *verdict*, and 107 of its 125 verdicts sit on spans we had labelled
+NOT_A_STORY -- so an `incorrect` there can mean "you wrongly rejected this", a false
+NEGATIVE. Counting those against precision inverts their meaning. They are surfaced as
+`rejections_inverted_direction` rather than silently re-scored, because changing the
+precision definition is not this script's call.
+
 MATCHING
 --------
 Review keys are `Ketubot 3a_9-9` -- a page and a segment span from whichever run the
@@ -161,6 +178,44 @@ def classify_objection(notes):
     return 'unclassified'
 
 
+def _load_hand_sort():
+    """(round, key) -> {axis, direction, ...}, from the Phase A hand sort.
+
+    Hand-authored and dated; it is read, never written. Missing file is not an error --
+    the keyword rules still work, the range is just wider.
+    """
+    p = PROJECT_ROOT / 'results/rulers/objection_axes.json'
+    if not p.exists():
+        log.warning('no %s; falling back to keyword rules alone', p.name)
+        return {}
+    doc = json.loads(p.read_text())
+    return {(r['round'], r['key']): r for r in doc['resolutions']}
+
+
+HAND_SORT = _load_hand_sort()
+
+
+def classify_verdict(v):
+    """The axis and direction of one rejection. Hand sort first, then the keywords.
+
+    Returns (axis, direction). `direction` is None wherever nobody has read the note --
+    the keyword rules cannot tell over-call from under-call, and must not pretend to.
+    """
+    hand = HAND_SORT.get((v['round'], v['key']))
+    if hand:
+        return hand['axis'], hand['direction']
+    return classify_objection([v['note']]), None
+
+
+def _proposal_objection(verdicts):
+    """One objection_kind for a whole proposal. Hand sort first, else the old pass."""
+    for v in verdicts:
+        hand = HAND_SORT.get((v['round'], v['key']))
+        if hand:
+            return hand['axis']
+    return classify_objection([v['note'] for v in verdicts])
+
+
 def build(tractate, cfg):
     runs = [str(PROJECT_ROOT / r) for r in cfg['runs']]
     # load_detected returns a third value, `withheld` — the stories
@@ -282,7 +337,9 @@ def build(tractate, cfg):
             'in_golden': p['in_golden'],
             'verdicts': p['verdicts'], 'verdict_match': p['verdict_match'],
             'expert_accepted': p['accepted'],
-            'objection_kind': (classify_objection([v['note'] for v in p['verdicts']])
+            # Hand sort wins where one exists; otherwise exactly the old keyword pass
+            # over every note on the proposal, so unsorted entries do not move.
+            'objection_kind': (_proposal_objection(p['verdicts'])
                                if p['accepted'] is False else None),
         })
     log.info('%s: %d expert stories, %d proposals, %d proposals unclaimed',
@@ -308,12 +365,17 @@ def metrics(entries, props):
     per_round = {}
     for p in props:
         for v in p['verdicts']:
-            r = per_round.setdefault(v['round'], {'accepted': 0, 'rejected': 0, 'by_kind': Counter()})
+            r = per_round.setdefault(v['round'], {'accepted': 0, 'rejected': 0,
+                                                 'by_kind': Counter(), 'by_direction': Counter(),
+                                                 'hand_sorted': 0})
             if v['verdict'] in ACCEPTED:
                 r['accepted'] += 1
             elif v['verdict'] in REJECTED:
                 r['rejected'] += 1
-                r['by_kind'][classify_objection([v['note']])] += 1
+                kind, direction = classify_verdict(v)
+                r['by_kind'][kind] += 1
+                r['by_direction'][direction or 'unread'] += 1
+                r['hand_sorted'] += (v['round'], v['key']) in HAND_SORT
     for name, r in per_round.items():
         n = r['accepted'] + r['rejected']
         r['judged'] = n
@@ -325,11 +387,25 @@ def metrics(entries, props):
         # which is what makes it an upper bound rather than the answer.
         not_class = n - r['accepted'] - r['by_kind'].get('classification', 0)
         r['precision_classification_only'] = round((r['accepted'] + not_class) / n, 3) if n else None
-        r['unclassified_notes'] = r['by_kind'].get('unclassified', 0)
+        # Two ways a note fails to name its axis, and they are not the same fact.
+        # `unclassified` = the keyword rules could not read it and nobody has tried.
+        # `unresolvable` = a person read it and there was nothing there (an empty note).
+        # The bound needs their sum; the finding needs them apart.
+        r['unread_notes'] = r['by_kind'].get('unclassified', 0)
+        r['empty_notes'] = r['by_kind'].get('unresolvable', 0)
+        r['unclassified_notes'] = r['unread_notes'] + r['empty_notes']
         r['bounds_note'] = ('true classification precision lies between these two; the gap '
-                            f"is {r['by_kind'].get('unclassified', 0)} unreadable notes plus "
+                            f"is {r['unclassified_notes']} notes that name no axis "
+                            f"({r['unread_notes']} unread, {r['empty_notes']} empty) plus "
                             'the boundary/merge/confidence rejections')
+        # Two shapes the four axes cannot express, surfaced rather than re-scored.
+        # Both are counted in precision_all_causes today; whether they should be is a
+        # definition question, and this script does not get to decide it.
+        r['rejections_that_dispute_nothing'] = r['by_kind'].get('not_an_objection', 0)
+        r['rejections_inverted_direction'] = r['by_direction'].get('under_call', 0)
+        r['rejections_on_our_renderer'] = r['by_kind'].get('display', 0)
         r['by_kind'] = dict(r['by_kind'])
+        r['by_direction'] = dict(r['by_direction'])
 
     judged = [p for p in props if p['verdicts']]
     agree = [p for p in judged if p['claimed_by'] and p['accepted']]

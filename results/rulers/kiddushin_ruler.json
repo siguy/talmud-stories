@@ -61,41 +61,76 @@
      "accepted": 4,
      "rejected": 11,
      "by_kind": {
-      "boundary": 5,
-      "unclassified": 6
+      "boundary": 10,
+      "display": 1
      },
+     "by_direction": {
+      "unread": 5,
+      "renderer": 1,
+      "restate_span": 2,
+      "extend_end": 1,
+      "undo_trim": 1,
+      "extend_start": 1
+     },
+     "hand_sorted": 6,
      "judged": 15,
      "precision_all_causes": 0.267,
      "precision_classification_only": 1.0,
-     "unclassified_notes": 6,
-     "bounds_note": "true classification precision lies between these two; the gap is 6 unreadable notes plus the boundary/merge/confidence rejections"
+     "unread_notes": 0,
+     "empty_notes": 0,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 0,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 1
     },
     "kiddushin_review_2026-04-23.json": {
      "accepted": 60,
      "rejected": 29,
      "by_kind": {
-      "confidence": 10,
-      "unclassified": 9,
+      "confidence": 16,
       "boundary": 3,
-      "classification": 7
+      "classification": 9,
+      "not_an_objection": 1
      },
+     "by_direction": {
+      "unread": 20,
+      "raise": 6,
+      "over_call": 2,
+      "affirms": 1
+     },
+     "hand_sorted": 9,
      "judged": 89,
      "precision_all_causes": 0.674,
-     "precision_classification_only": 0.921,
-     "unclassified_notes": 9,
-     "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
+     "precision_classification_only": 0.899,
+     "unread_notes": 0,
+     "empty_notes": 0,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 1,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 0
     },
     "kiddushin_review_2026-05-26 (1).json": {
      "accepted": 0,
      "rejected": 1,
      "by_kind": {
-      "unclassified": 1
+      "boundary": 1
      },
+     "by_direction": {
+      "extend_start": 1
+     },
+     "hand_sorted": 1,
      "judged": 1,
      "precision_all_causes": 0.0,
      "precision_classification_only": 1.0,
-     "unclassified_notes": 1,
-     "bounds_note": "true classification precision lies between these two; the gap is 1 unreadable notes plus the boundary/merge/confidence rejections"
+     "unread_notes": 0,
+     "empty_notes": 0,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 notes that name no axis (0 unread, 0 empty) plus the boundary/merge/confidence rejections",
+     "rejections_that_dispute_nothing": 0,
+     "rejections_inverted_direction": 0,
+     "rejections_on_our_renderer": 0
     }
    },
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
@@ -5411,7 +5446,7 @@
    ],
    "verdict_match": "exact",
    "expert_accepted": false,
-   "objection_kind": "unclassified"
+   "objection_kind": "boundary"
   },
   {
    "id": "kiddushin_r099",
@@ -5886,7 +5921,7 @@
    ],
    "verdict_match": "overlap",
    "expert_accepted": false,
-   "objection_kind": "unclassified"
+   "objection_kind": "classification"
   },
   {
    "id": "kiddushin_r116",
@@ -6059,7 +6094,7 @@
    ],
    "verdict_match": "exact",
    "expert_accepted": false,
-   "objection_kind": "unclassified"
+   "objection_kind": "classification"
   },
   {
    "id": "kiddushin_r122",

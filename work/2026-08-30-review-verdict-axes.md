@@ -103,7 +103,39 @@ today, and any new vocabulary must ship an explicit mapping table rather than as
 
 ## Phases
 
-### Phase A — recover what is recoverable (nobody else needed, ~1 hour)
+### Phase A — recover what is recoverable (nobody else needed, ~1 hour) — **DONE 2026-08-31**
+
+> **Outcome.** → [`docs/findings/2026-08-31-objection-axis-hand-sort.md`](../docs/findings/2026-08-31-objection-axis-hand-sort.md)
+>
+> **The population was 34, not 24.** The table above lists four rounds; the ruler scores
+> seven. Ketubot 2026-02-05 carries 9 more and Kiddushin 2026-05-26 one more. Correct the
+> table before quoting it again.
+>
+> **27 of 34 sorted; residue 7, every one an empty note.** Kiddushin 2026-04-23 narrows
+> 0.674–0.921 → **0.674–0.899**; Ketubot 2026-02-05 narrows 0.667–1.000 → **0.667–0.806**.
+> Every `precision_all_causes` unchanged; Ketubot 143/149 = 96.0% and the 0.879 gate both
+> reproduce. Artifacts: `results/rulers/objection_axes.json` (hand sort, one row per note,
+> each quoting the note and naming the label under review), `scripts/build_ruler.py`
+> (reads it, keyword rules as fallback), 4 new tests in `tests/test_build_ruler.py`.
+>
+> **Three things Phase B must add that the design below does not have:**
+> 1. **A fifth option — *the display is wrong*.** `Kiddushin 8b_14-14` is a verdict spent
+>    on our renderer. With nowhere to put it, a UI bug scores as a detector error, which
+>    is how one sat misfiled for seven weeks (Lesson 25). The Risks section below already
+>    predicts this; the axes do not accommodate it.
+> 2. **A direction on every rejection.** `incorrect` has meant two opposite things:
+>    4 of the 34 are Jeff **overturning a `NOT_A_STORY`** — a false negative, pooled with
+>    false positives today. The 2026-02-05 round put 95 of its 125 verdicts on spans we had
+>    labelled `NOT_A_STORY`, so this is not an edge case.
+> 3. **A verdict may not contradict its own note.** 2 of the 34 affirm and reject at once
+>    (`Ketubot 62a_4-4`, `Kiddushin 73a_5-5`). Asking axis 1 first makes that unrecordable.
+>
+> Not done here, deliberately: the direction defect is **surfaced**
+> (`rejections_inverted_direction` per round) and not re-scored. Whether an overturned
+> rejection belongs in a precision denominator is a definition question, not a note-reading
+> one.
+
+*Original brief:*
 
 Read the **24 `unclassified` notes** by hand and sort them onto the four axes. Bounded
 population, no API, no Jeff.
