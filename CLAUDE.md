@@ -16,8 +16,10 @@ Detect narrative stories in Talmud text using LLM classification. Expert validat
 3. **Start work by copying [`work/_TEMPLATE.md`](work/_TEMPLATE.md)** to
    `work/<today>-<slug>.md`. Never invent a numbering scheme; the counter is what
    collided four ways on 2026-08-30.
-4. **Finish** by adding `## Outcome` — including *why*, especially for a revert — and
-   `git mv`-ing the item to `work/done/`. **Never delete it.**
+4. **Finish** by adding `## Outcome` — including *why*, especially for a revert — then
+   `python3 scripts/board.py finish <slug>`. It refuses without an Outcome, re-roots the
+   item's relative links (they break one level deeper, which is where done items live),
+   and moves it. **Never delete it.**
 5. **Run `python3 -m pytest tests/ -q` before you stop.** `tests/test_bookkeeping.py` is
    in that suite and fails on a dangling dependency, an unknown capability slug, a moved
    golden, or a stale `STATE.md`.

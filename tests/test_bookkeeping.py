@@ -222,3 +222,73 @@ def test_generated_files_carry_their_banner():
     for name in ("STATE.md", "WORK.md"):
         head = (ROOT / name).read_text().split("\n")[0]
         assert "GENERATED" in head, f"{name} lost its do-not-edit banner"
+
+def test_no_markdown_link_is_broken():
+    """A broken link is how a reorganised repo quietly stops being navigable.
+
+    This is not hypothetical bookkeeping: on 2026-08-31 the first item anyone finished
+    broke its own link to FRAMEWORK.md, because `work/` items link with `../` and
+    `work/done/` sits one level deeper. 60 such links were one `git mv` from breaking.
+    `board.py finish` now re-roots them; this test is what notices if it stops.
+    """
+    import urllib.parse
+    broken = []
+    for p in tracked("*.md"):
+        base = p.parent
+        for m in re.finditer(r"\[([^\]]*)\]\(([^)\s]+)\)", p.read_text(errors="ignore")):
+            link = m.group(2).split("#")[0]
+            if link.startswith(("http", "mailto:", "#")) or not link:
+                continue
+            target = (base / urllib.parse.unquote(link)).resolve()
+            if not target.exists():
+                broken.append(f"{p.relative_to(ROOT)} -> {link}")
+    assert not broken, f"{len(broken)} broken markdown link(s): {broken[:10]}"
+
+
+def test_the_closing_step_re_roots_links_so_finishing_cannot_break_them():
+    """Verify the guard by simulating the failure it guards (Lesson 31).
+
+    Items live in `work/` and link out with `../`. Finishing one moves it into
+    `work/done/`, one level deeper, where every such link breaks — at the exact moment
+    the item becomes a permanent record. That happened: the first item anyone finished
+    broke its own link to FRAMEWORK.md, with 60 more one `git mv` away.
+
+    The fix is not to pre-break the 60 links (they are correct where they are); it is for
+    the closing step to re-root them. This tests that it does.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    before = ("Read [`FRAMEWORK.md`](../FRAMEWORK.md) and [wf](../docs/technical/x.md), "
+              "plus [deep](../../already/deep.md) and [ext](https://example.com).")
+    after = board.reroot_links(before)
+    assert "](../../FRAMEWORK.md)" in after
+    assert "](../../docs/technical/x.md)" in after
+    assert "](../../already/deep.md)" in after, "an already-deeper link must not move again"
+    assert "https://example.com" in after, "external links must be untouched"
+    assert board.reroot_links(after) == after, "re-rooting must be idempotent"
+
+
+def test_every_open_item_would_survive_being_closed():
+    """The 60 latent breakages, checked the right way round: not 'are the links already
+    deep' but 'does the closing step leave them resolvable'."""
+    import importlib.util, urllib.parse
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    done_dir = ROOT / "work" / "done"
+    broken = []
+    for f in sorted((ROOT / "work").glob("*.md")):
+        if f.name == "README.md":
+            continue
+        for m in re.finditer(r"\[([^\]]*)\]\(([^)\s]+)\)", board.reroot_links(f.read_text())):
+            link = m.group(2).split("#")[0]
+            if link.startswith(("http", "mailto:", "#")) or not link:
+                continue
+            if not (done_dir / urllib.parse.unquote(link)).resolve().exists():
+                broken.append(f"{f.name} -> {link}")
+    assert not broken, (
+        f"{len(broken)} link(s) would still be broken after `board.py finish`: {broken[:5]}")

@@ -49,9 +49,9 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `2026-08-31-composite-blind-to-golden-loss` | `talmud-stories` | **7 FILES** |
-| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **5 FILES** |
-| `state-work-review-40b153` | `state-work-review-40b153` | clean |
+| `jeff-ask-order` | `talmud-stories` | **4 FILES** |
+| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **20 FILES** |
+| `state-work-review-40b153` | `state-work-review-40b153` | **6 FILES** |
 <!-- board-live:end -->
 
 ## Done — 7 items, never deleted
