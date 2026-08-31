@@ -113,7 +113,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
   **Golden TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
   precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
   the harness nobody reads for recall was the only one that could see the loss, which is
-  why it survived four waves. → Lesson 28,
+  why it survived four waves. → Lesson 27,
   [`docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
   The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
   question for Jeff, not a bug. Now queued below.
@@ -131,7 +131,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
   as its regression check, and all 95 texts match an independent renderer character for
   character. Jeff's 9 review comments came back with their **exact anchor positions**, so
   each attaches to the passage he was looking at — which is what makes them usable to
-  `NEXT/08`. → Lesson 29
+  `NEXT/08`. → Lesson 28
 
 ## Waiting on Jeff — email sent 2026-08-30
 

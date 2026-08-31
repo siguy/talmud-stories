@@ -157,7 +157,7 @@ a queued question for Jeff.** The original counts below were wrong in a way wort
    (`מתני׳`, `גמ׳`, `הדרן`, chapter incipit) instead of two: 72 segments on 12 pages, every
    change a correction. Golden **TP 149 → 151, FN 15 → 13, composite 0.9115 → 0.9136**;
    precision and merge unchanged; **blind recall identical at 96.0%**, which is why nothing
-   caught it. Guarded by `tests/test_mishnah_tagger_chapter_boundary.py`. → Lesson 28,
+   caught it. Guarded by `tests/test_mishnah_tagger_chapter_boundary.py`. → Lesson 27,
    [`../docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](../docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
 
 ### Gate contribution

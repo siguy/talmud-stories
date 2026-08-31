@@ -98,7 +98,7 @@ after the golden grew to 187 — precision is unchanged; the 5 additions are all
 *Review-round precision* — **counting only rejections that dispute whether the passage is
 a story.** A rejection objecting to the boundary, the merge, or our confidence level
 belongs to another capability; pooling them is how this project mistook a boundary problem
-for a classification one (Lesson 31). `adjust` counts as **accepted**: it says the story is
+for a classification one (Lesson 30). `adjust` counts as **accepted**: it says the story is
 real and the extent is wrong. On the review rounds this gives Ketubot 87.9–94.8% (Mar 2026)
 and Kiddushin 67.4–92.1% (Apr 2026, v7) — a range, not a point: the lower bound counts every
 rejection, the upper bound only the classification ones, and the width is the notes too

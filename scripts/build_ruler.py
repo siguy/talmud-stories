@@ -161,8 +161,8 @@ def build(tractate, cfg):
     # load_detected returns a third value, `withheld` — the stories
     # filter_mishnah_only_stories() moved into `mishnah_stories`. The ruler's
     # `proposed` flag deliberately does NOT fold those in: "found then dropped"
-    # and "never found" are different facts and must not be merged (Lessons 27,
-    # 28). measure_recall_vs_expert_list.py reports them separately.
+    # and "never found" are different facts and must not be merged (Lesson 27).
+    # measure_recall_vs_expert_list.py reports them separately.
     units, proposals, _withheld = recall.load_detected(runs)
     index = defaultdict(set)
     for i, (_, _, gs) in enumerate(units):
