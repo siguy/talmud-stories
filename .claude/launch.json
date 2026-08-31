@@ -4,8 +4,26 @@
     {
       "name": "validation-ui",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8747", "--directory", "validation/ui"],
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8747",
+        "--directory",
+        "validation/ui"
+      ],
       "port": 8747
+    },
+    {
+      "name": "site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8748",
+        "--directory",
+        "."
+      ],
+      "port": 8748
     }
   ]
 }

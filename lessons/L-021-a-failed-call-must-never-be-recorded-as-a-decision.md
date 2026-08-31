@@ -56,3 +56,32 @@ before `{kept_full: 6, no_split: 2, skipped: 6}` = 14 counts for 6
 stories with 6 fabricated speech profiles; after `{no_split: 1,
 skipped: 5}` = 6 counts, 0 profiles, 5 `needs_review`. Point (d) —
 the scorer — is **still open**.
+
+**A second instance, found 2026-08-30 and fixed 2026-08-31 — in Stage 1, which
+is the worst place for it.** `EventTriager.triage_page()` returned
+`[DELIBERATION] * n` on an unparseable response, commented *"safest — won't
+skip pages incorrectly."* The comment was backwards: all-DELIBERATION gives
+`narrative_count == 0`, which fails both keep-conditions, so **a failed call
+silently discarded the page.**
+
+Two things make this instance instructive beyond the first:
+
+- **The comment asserted the opposite of the behaviour**, and nobody checked.
+  It read as a considered safety decision, which is the most effective possible
+  disguise for a defect. A stated intention is not a test.
+- **No harness could ever have caught it.** The wave 5b instance at least
+  corrupted an artifact somebody scores. A triage discard leaves no trace
+  anywhere downstream (FRAMEWORK §1.1), so the only instrument that can see it
+  is an external blind list — which exists for two tractates out of thirty-seven.
+
+Fixed by giving failure its own value (`EventType.TRIAGE_FAILED`), failing
+**open** on it, and counting and naming the failed pages. Proven to change 0 of
+the shipped skip decisions. **The historical failure rate is unknown and
+unrecoverable, because nothing ever counted it** — which is the durable cost of
+this class of bug and the reason to fix it before you need the number.
+→ `docs/findings/2026-08-31-triage-failure-default.md`,
+`tests/test_triage_failure_default.py`
+
+**The generalisation, now that there are two:** when a failure path picks a
+fallback value, ask *"is this value also something a successful run could
+legitimately produce?"* If yes, it is not a fallback — it is a disguise.
