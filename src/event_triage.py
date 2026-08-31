@@ -213,8 +213,13 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
         result = self._parse_json_response(content)
 
         if not result:
-            # Default: all DELIBERATION (safest — won't skip pages incorrectly)
-            return [EventType.DELIBERATION] * len(segments)
+            # The call failed or its response would not parse. We do NOT know what is on
+            # this page, so we must not say DELIBERATION — that is a real verdict about a
+            # legal passage, and should_skip_page() would then discard the page. Stage 1
+            # discards leave no trace anywhere downstream, so that loss is permanent and
+            # invisible (FRAMEWORK 1.1). Fail OPEN and say so. -> Lesson 21
+            print(f"  TRIAGE FAILED on {ref}: response unparseable; keeping the page")
+            return [EventType.TRIAGE_FAILED] * len(segments)
 
         # Parse event types
         event_types = [EventType.DELIBERATION] * len(segments)  # Default
@@ -262,11 +267,17 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
 
         Keep pages with:
         - ≥2 NARRATIVE_EVENT segments, OR
-        - ≥1 NARRATIVE_EVENT + ≥2 VERBAL_ACT (story with dialogue)
+        - ≥1 NARRATIVE_EVENT + ≥2 VERBAL_ACT (story with dialogue), OR
+        - any TRIAGE_FAILED segment — we could not look, so we do not get to decide
 
         This catches Talmudic stories which often have 1 narrative setup
         followed by dialogue between characters.
         """
+        # A page whose triage failed is UNKNOWN, not empty. Examining it costs one Stage 2
+        # call; discarding it costs a story we can never find again.
+        if any(et == EventType.TRIAGE_FAILED for et in event_types):
+            return False
+
         narrative_count = sum(1 for et in event_types
                               if et == EventType.NARRATIVE_EVENT)
         verbal_count = sum(1 for et in event_types
@@ -286,6 +297,11 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
                       if EventTriager.should_skip_page(events))
         kept = total_pages - skipped
 
+        # An error rate nobody counts is an error rate nobody notices. Name the pages
+        # too: you cannot re-run what you cannot identify.
+        failed_refs = sorted(ref for ref, events in triage_results.items()
+                             if any(et == EventType.TRIAGE_FAILED for et in events))
+
         total_segments = sum(len(events) for events in triage_results.values())
         type_counts = {}
         for events in triage_results.values():
@@ -297,6 +313,8 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
             'skipped': skipped,
             'kept': kept,
             'skip_rate': f"{100*skipped/total_pages:.1f}%" if total_pages else "0%",
+            'failed': len(failed_refs),
+            'failed_refs': failed_refs,
             'total_segments': total_segments,
             'event_type_counts': type_counts,
         }

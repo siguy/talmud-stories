@@ -39,6 +39,10 @@ class EventType(Enum):
     VERBAL_ACT = "VERBAL_ACT"            # Speech act (saying, commanding)
     DELIBERATION = "DELIBERATION"        # Legal reasoning, hypothetical
     HABITUAL = "HABITUAL"                # Recurring practice, not specific event
+    # NOT a judgment: the triage call failed and we do not know what is on this page.
+    # It must never be DELIBERATION, which is a real verdict about a legal passage and
+    # would make the page look deliberately discarded (Lesson 21).
+    TRIAGE_FAILED = "TRIAGE_FAILED"
 
 
 class GroundTruthEntry:

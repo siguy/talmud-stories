@@ -57,13 +57,22 @@ where "mark it borderline and let database users decide" is a real answer.
 Recorded in [Review](5_review.md); its consequence here is that the published artifact
 must carry per-story verdict state, editable by people who are not us.
 
-**And one thing that was never decided and should have been:** the site's numbers.
-`index.html` still says **172 stories / 96.3%**, last touched 2026-02-22 (`e3f2957`) — six
-months and four detector versions ago, from a v8-era review statistic that is not any
-current measure of anything. It sits on the public GitHub Pages site. This is exactly the
-failure mode `CLAUDE.md` forbids for the repo's own docs ("nothing may carry a count, a
-score, or an 'active version' claim"), applied to the one surface strangers actually read.
-**Measured 2026-08-30 by reading the file.**
+**And one thing that was never decided and should have been — FIXED 2026-08-31.**
+`index.html` had said **172 stories / 96.3%** since 2026-02-22 (`e3f2957`): six months and
+four detector versions stale, from a v8-era *review-agreement* statistic that was not any
+current measure of anything, on the one surface strangers actually read. Exactly the
+failure `CLAUDE.md` forbids for the repo's own docs, applied to the public site.
+
+The cards now read 384 pages / 249 expert-validated stories / **96% recall against an
+independent expert list** / 2 tractates, with a footnote giving the date, saying what
+*recall against a blind list* means, and quoting the strict figure beside the loose one.
+`history.html`'s "Current (v8) 96.3%" is relabelled "After validation (v8, Feb 2026) —
+expert agreement". Two "172 stories" references that describe a specific v8 review
+interface now name the version instead of reading as a corpus count.
+
+**This will go stale again**, because these pages are hand-maintained and nothing
+regenerates them. The footnote's last line points at the repository for live values, which
+is the most a hand-written page can honestly do. A generated site is untried — below.
 
 ## Current best — the exact configuration
 
@@ -156,9 +165,11 @@ Everything. Listed in the order the dependencies fall, not by size:
   number without its dataset is the mistake FRAMEWORK §3 says cost this project months.
 - **Make the goldens complete** before calling them a resource — fold in every verdict,
   and add the stories we never proposed (`work/2026-08-30-golden-completeness.md`).
-- **Fix or retire the public site's statistics.** Either update `index.html` from a
-  current measurement or remove the numbers; a stale 96.3% on a public page is worse than
-  no number.
+- **Generate the public site's statistics instead of typing them.** They were corrected
+  by hand on 2026-08-31 and dated, which buys time rather than solving it: nothing
+  regenerates these pages, so they will drift again. `scripts/board.py` already derives
+  the same values for `STATE.md`; emitting a small JSON the site reads would end the
+  problem class.
 - **Decide what happens to Mishnah stories.** They are currently deleted from the output
   by a filter nothing catalogues, scores or displays — while Jeff asked for them to be
   *catalogued separately*. That is a publication-shape question (one bucket or two) as

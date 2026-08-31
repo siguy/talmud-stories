@@ -22,11 +22,13 @@ status lives in [`STATUS.md`](../../STATUS.md).*
 | 2026-05-18 | **Wave 1 Issue #5 — lexical override.** A page containing any of five canonical Hebrew introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `ההוא גברא`, `כי הא ד`, matched on the consonantal skeleton) forces Stage 2 to run whatever Stage 1 said | shipped and **it worked**: Kiddushin 45a and 53a — two stories Jeff had flagged as missed — recovered, each yielding one real story. 9 Kiddushin pages and 5 Ketubot pages moved from skipped to processed | `eff0218`, [`wave1_results.md`](../findings/2026-05-18-wave1-results.md) |
 | 2026-08-30 | **First measurement of what triage discards.** Traced the 6 blind-list recall misses back through the pipeline | **measured: Stage 1 discards 124 of 222 Ketubot pages (56%)** — 1,535 segments never examined. 19 of Jeff's 149 stories touch a discarded page; 16 survive only because the other half of the daf pair was kept; **3 are lost outright** (Ketubot 20a, 72b, 82b — both pages of each pair discarded) | `9f7ddf8`, [`recall_miss_diagnosis`](../findings/2026-08-30-recall-miss-diagnosis.md) |
 | 2026-08-30 | **Triage recall computed for the first time**, against the BLIND 2005 list | **measured: 98.0%** (146 of 149 survive) at 44% of pages examined. Reframed from "the biggest unmeasured thing in the project" to **a trade to be priced** | `c900ee4` |
+| 2026-08-31 | **A failed triage call no longer discards the page.** `TRIAGE_FAILED` as a distinguishable provenance value; `should_skip_page()` fails open on it; failures counted and named | shipped, and **0 shipped skip decisions change** — proven against the caches, which contain no failures. Ten failure-injection tests, written first and watched fail | [`finding`](../findings/2026-08-31-triage-failure-default.md), Lesson 21 |
 
 ## What we reverted, and why
 
 **Nothing has been reverted in this capability.** Every change to Stage 1 since it was
-built is still shipped: the relaxed threshold, and the Wave 1 lexical override. That is
+built is still shipped: the relaxed threshold, the Wave 1 lexical override, and the
+2026-08-31 failure-default fix. That is
 worth stating plainly, because it is unusual in this project — and because it is also a
 warning. Triage is the one capability where **no change has ever been reverted, and no
 change has ever been measured against a blind dataset before shipping.** The two facts
@@ -51,15 +53,17 @@ The nearest thing to a revert is a decision *not* to act:
 - **Override:** `_page_has_story_introducer()` in `src/story_detector_v11.py:2011` —
   five introducers, nikud stripped (`_STORY_INTRODUCERS`, line 2002). Any hit forces
   Stage 2 (`src/story_detector_v11.py:1072`).
-- **Failure default:** on an unparseable model response the page is tagged all
-  DELIBERATION (`src/event_triage.py:216`), whose comment reads *"safest — won't skip
-  pages incorrectly."* **The comment is backwards** — measured by reading the code:
-  all-DELIBERATION gives `narrative_count == 0`, which fails both keep-conditions in
-  `should_skip_page()`, so a failed triage call **silently discards the page**. This is
-  Lesson 21's shape (a failed call recorded as a judgment) sitting in the one stage whose
-  errors leave no trace. How often it fires is **unmeasured** — nothing counts parse
-  failures — and it is not in the shipped skip counts either way, since those come from a
-  cache. Found while writing this file, 2026-08-30; not fixed here.
+- **Failure default — FIXED 2026-08-31.** An unparseable response used to be tagged all
+  DELIBERATION under the comment *"safest — won't skip pages incorrectly."* The comment
+  was backwards: all-DELIBERATION gives `narrative_count == 0`, failing both
+  keep-conditions, so a failed call **silently discarded the page** — Lesson 21's shape in
+  the one stage whose errors leave no trace. A failure now writes `EventType.TRIAGE_FAILED`,
+  `should_skip_page()` **fails open** on it, and `summarize_triage()` counts and names the
+  failed pages. Proven to change **0** of the shipped skip decisions (the caches hold no
+  failures), so no published number moves. The **historical** failure rate remains unknown
+  and unrecoverable, because nothing counted it.
+  → [`2026-08-31-triage-failure-default.md`](../findings/2026-08-31-triage-failure-default.md),
+  guarded by `tests/test_triage_failure_default.py`
 - **Model:** `GEMINI_MODEL`, currently `gemini-3-flash-preview` for detection runs;
   triage results are cached (`results/v7/event_triage_*.json`) and reused rather than
   re-run, so the shipped skip decisions predate several model changes.
