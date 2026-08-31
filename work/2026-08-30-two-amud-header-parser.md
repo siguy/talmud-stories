@@ -4,6 +4,7 @@ capability: [detection]
 tractate: [gittin, yevamot, eruvin, ketubot]
 blocked_by: []
 awaiting: []
+writes: [scripts/parse_expert_doc.py, scripts/fetch_tractate_pages.py, results/expert_lists/]
 finding:
 superseded_by:
 ---

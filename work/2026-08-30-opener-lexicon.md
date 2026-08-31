@@ -4,6 +4,7 @@ capability: [triage, detection]
 tractate: [ketubot]
 blocked_by: []
 awaiting: []
+writes: [src/story_detector_v11.py, src/prompts/]
 finding:
 superseded_by:
 ---

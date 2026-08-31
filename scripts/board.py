@@ -8,6 +8,8 @@ two places and let them drift (FRAMEWORK said the golden was both 182 and 187).
 
     python3 scripts/board.py                 # regenerate both
     python3 scripts/board.py --check         # exit 1 if either is stale (for CI/tests)
+    python3 scripts/board.py lanes           # what can safely run at the same time
+    python3 scripts/board.py setup           # one-time per clone: hooks + merge driver
     python3 scripts/board.py new-tractate gittin
 
 REFUSES TO OVERWRITE A HAND-EDIT. Each generated file embeds a checksum of its own body.
@@ -134,9 +136,101 @@ def items() -> list[dict]:
                 "title": fm.get("title", f.stem),
                 "capability": listy("capability"), "tractate": listy("tractate"),
                 "blocked_by": listy("blocked_by"), "awaiting": listy("awaiting"),
+                "writes": listy("writes"),
                 "finding": fm.get("finding", "").strip(),
             })
     return out
+
+
+# ------------------------------------------------- contention (not ordering)
+
+def overlap(a: list[str], b: list[str]) -> list[str]:
+    """Paths two items both write. A trailing `/` means the whole subtree.
+
+    `blocked_by` is the ORDERING graph. This is the CONTENTION graph, and they are not
+    the same: two items with no ordering relation between them are shown as concurrently
+    runnable whether or not they write the same file. Six such pairs existed among the
+    items runnable on 2026-08-31, four of them recommended together as the cheapest next
+    steps.
+    """
+    hits = set()
+    for x in a:
+        for y in b:
+            if x == y or x.startswith(y.rstrip("/") + "/") or y.startswith(x.rstrip("/") + "/"):
+                hits.add(x if len(x) >= len(y) else y)
+    return sorted(hits)
+
+
+def collisions(its: list[dict]) -> list[tuple[str, str, list[str]]]:
+    """Every pair of OPEN items that write a common path, with the paths."""
+    import itertools
+    open_items = [i for i in its if not i["done"]]
+    out = []
+    for a, b in itertools.combinations(sorted(open_items, key=lambda x: x["slug"]), 2):
+        shared = overlap(a["writes"], b["writes"])
+        if shared:
+            out.append((a["slug"], b["slug"], shared))
+    return out
+
+
+def lanes(its: list[dict]) -> list[list[str]]:
+    """Group open items so that two items in DIFFERENT lanes never write a common path.
+
+    Connected components of the contention graph. A lane runs serially; lanes run in
+    parallel. This is the number of concurrent sessions the work actually supports --
+    which is not the number of unblocked items, and never has been.
+    """
+    open_items = sorted([i for i in its if not i["done"]], key=lambda x: x["slug"])
+    parent = {i["slug"]: i["slug"] for i in open_items}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]; x = parent[x]
+        return x
+
+    for a, b, _ in collisions(its):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+    groups: dict[str, list[str]] = {}
+    for i in open_items:
+        groups.setdefault(find(i["slug"]), []).append(i["slug"])
+    return sorted(groups.values(), key=lambda g: (-len(g), g[0]))
+
+
+def report_lanes() -> int:
+    """Print the contention graph. Non-zero exit means at least one pair collides --
+    which is information, not a failure: it says those two need one lane, not two."""
+    its = items()
+    cols = collisions(its)
+    undeclared = [i["slug"] for i in its if not i["done"] and not i["writes"]]
+    ls = lanes(its)
+
+    print(f"{len([i for i in its if not i['done']])} open items -> "
+          f"{len(ls)} lane(s) that can run concurrently\n")
+    for n, g in enumerate(ls, 1):
+        tag = "SERIAL" if len(g) > 1 else "alone "
+        print(f"  lane {n:>2} [{tag}] {len(g)} item(s)")
+        for s in g:
+            print(f"              {s}")
+    if cols:
+        # Grouped by the contended path, not by pair: 39 pairs is unreadable and, more to
+        # the point, six of them are one file. The path is the thing you act on.
+        by_path: dict[str, set[str]] = {}
+        for a, b, shared in cols:
+            for p in shared:
+                by_path.setdefault(p, set()).update((a, b))
+        print(f"\n{len(cols)} colliding pair(s) over {len(by_path)} contended path(s):\n")
+        for p, slugs in sorted(by_path.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            print(f"  {p}   <- {len(slugs)} items")
+            for s in sorted(slugs):
+                print(f"      {s}")
+            print()
+    if undeclared:
+        print(f"{len(undeclared)} open item(s) declare no `writes:` -- their collisions "
+              f"CANNOT be seen:\n  " + "\n  ".join(undeclared))
+        return 1
+    return 0
 
 
 def worktrees() -> list[dict]:
@@ -474,10 +568,56 @@ def finish(slug: str) -> None:
     print(f"closed work/{slug}.md -> work/done/{slug}.md" + (f" ({n} links re-rooted)" if n else ""))
 
 
+def merge_driver(name: str, dest: str) -> int:
+    """Resolve a conflict on a generated file by regenerating it.
+
+    git hands a merge driver the two sides and wants the answer written to %A. For
+    STATE.md and WORK.md the answer is never a blend of the two sides: it is whatever
+    board.py produces from the merged inputs. So ignore both sides and regenerate.
+
+    `%P` (the path being merged) would let one driver serve both files, but it needs git
+    >= 2.44 and this repo has run on 2.43. The filename is passed explicitly instead.
+    """
+    write(ROOT / "STATE.md", render_state(), force=True, check=False)
+    write(ROOT / "WORK.md", render_work(), force=True, check=False)
+    Path(dest).write_text((ROOT / name).read_text())
+    return 0
+
+
+def setup() -> int:
+    """One-time per-clone wiring. Idempotent, so running it again is free.
+
+    Two things need per-clone git config, and neither travels in a commit:
+
+      core.hooksPath        the pre-commit guard on the immutable harness
+      merge.board.driver    regenerate STATE.md / WORK.md instead of merging them
+
+    They are done together deliberately. A fresh clone previously needed one remembered
+    command and now needs one remembered command; adding a *second* setup step is how a
+    setup step stops being run at all. On 2026-08-31 a clone was found with
+    `core.hooksPath` unset -- the guard CLAUDE.md calls active was not active.
+    """
+    ok = True
+    for k, v in (("core.hooksPath", ".githooks"),
+                 ("merge.board-state.name", "regenerate STATE.md"),
+                 ("merge.board-state.driver", "python3 scripts/board.py merge-driver STATE.md %A"),
+                 ("merge.board-work.name", "regenerate WORK.md"),
+                 ("merge.board-work.driver", "python3 scripts/board.py merge-driver WORK.md %A")):
+        r = subprocess.run(["git", "config", k, v], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"  FAILED  git config {k}: {r.stderr.strip()}"); ok = False
+        else:
+            print(f"  set     {k} = {v}")
+    print("\nboard merge driver and hooks path registered." if ok else "\nsetup incomplete.")
+    return 0 if ok else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("command", nargs="?", default="generate")
-    ap.add_argument("tractate", nargs="?", help="tractate name, or item slug for `finish`")
+    ap.add_argument("tractate", nargs="?", help="tractate name, item slug for `finish`, "
+                                                "or generated filename for `merge-driver`")
+    ap.add_argument("dest", nargs="?", help="merge-driver only: the path git wants written")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
@@ -493,6 +633,25 @@ def main() -> int:
             print("usage: board.py new-tractate <name>"); return 1
         new_tractate(a.tractate)
         return 0
+
+    if a.command == "lanes":
+        try:
+            return report_lanes()
+        except BrokenPipeError:
+            # `board.py lanes | head` is the obvious way to read this, and an unhandled
+            # BrokenPipeError there looks like the command crashed.
+            try:
+                sys.stdout.close()
+            finally:
+                return 0
+
+    if a.command == "setup":
+        return setup()
+
+    if a.command == "merge-driver":
+        if not a.tractate or not a.dest:
+            print("usage: board.py merge-driver <STATE.md|WORK.md> <dest>"); return 1
+        return merge_driver(a.tractate, a.dest)
 
     fresh = [write(ROOT / "STATE.md", render_state(), a.force, a.check),
              write(ROOT / "WORK.md", render_work(), a.force, a.check)]

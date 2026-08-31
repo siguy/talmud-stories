@@ -4,6 +4,7 @@ capability: [classification, boundaries]
 tractate: [kiddushin]
 blocked_by: []
 awaiting: []
+writes: [results/canonical/kiddushin_canonical.json, results/rulers/, tests/expert_boundary_targets_v2.json, scripts/build_boundary_testset.py, tests/test_bookkeeping.py]
 finding:
 superseded_by:
 ---

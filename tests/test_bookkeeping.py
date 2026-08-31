@@ -125,6 +125,71 @@ def test_item_frontmatter_is_complete_and_uses_known_slugs():
         assert not bad_tr, f"{rel} has unknown tractate {bad_tr}"
 
 
+def test_every_open_item_declares_what_it_writes():
+    """`blocked_by` is ORDERING. `writes:` is CONTENTION. They are different graphs.
+
+    Without `writes:`, two items with no dependency between them are presented by
+    STATE.md, WORK.md and STATUS.md alike as concurrently runnable whether or not they
+    write the same file. On 2026-08-31 six such pairs existed among the items runnable
+    that day -- `golden-completeness` and `kiddushin-comments-harvest` both rewrite
+    `results/canonical/kiddushin_canonical.json`, and both were recommended in the same
+    breath as cheap next steps.
+
+    An item that declares nothing is invisible to `board.py lanes`, which is worse than
+    an item that declares too much: over-declaring costs a serialized lane,
+    under-declaring costs a silent corruption.
+    """
+    missing = [str(f.relative_to(ROOT)) for f, fm, _ in items()
+               if not f.parent.name == "done" and not listy(fm, "writes")]
+    assert not missing, ("open items with no `writes:` -- their collisions cannot be "
+                         f"seen by `board.py lanes`: {missing}")
+
+
+def test_the_generated_board_is_never_merged_by_hand():
+    """The guaranteed collision, and the one that has nothing to do with the work.
+
+    Every item that is opened, finished or edited changes STATE.md and WORK.md, so every
+    pair of concurrent branches conflicts on them. Measured on 2026-08-31: three sessions
+    each opening ONE unrelated work item produced two conflicting merges, five conflict
+    markers committed into WORK.md, and a trunk on which `board.py --check` failed.
+
+    A hand-resolved generated file is worse than a conflict, because editing it breaks
+    the checksum, and board.py then REFUSES to regenerate in whichever session next runs
+    it -- a failure two steps removed from its cause.
+
+    So the drivers must exist and .gitattributes must point at them. `board.py setup`
+    registers them per clone; this asserts the committed half.
+    """
+    attrs = (ROOT / ".gitattributes").read_text()
+    for name, driver in (("STATE.md", "board-state"), ("WORK.md", "board-work")):
+        assert re.search(rf"^{re.escape(name)}\s+merge={driver}\s*$", attrs, re.M), \
+            f".gitattributes does not route {name} to the {driver} merge driver"
+
+    hook = ROOT / ".githooks" / "post-merge"
+    assert hook.exists(), (
+        "no .githooks/post-merge. The merge driver runs mid-merge, when work/ on disk "
+        "does not yet hold the other side's items, so it resolves the conflict but "
+        "cannot produce the correct board. The hook is what produces it (Lesson 32).")
+    assert "board.py" in hook.read_text(), "post-merge hook no longer regenerates the board"
+
+
+def test_contention_is_computed_over_subtrees_not_just_exact_paths():
+    """A trailing `/` in `writes:` means the subtree. Verified by simulating the failure
+    it guards (Lesson 31): declaring `validation/generators/` must collide with a file
+    inside it, or four review-UI items would be reported as safely concurrent."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    assert board.overlap(["validation/generators/"], ["validation/generators/gen_ui.py"])
+    assert board.overlap(["results/canonical/kiddushin_canonical.json"],
+                         ["results/canonical/kiddushin_canonical.json"])
+    assert not board.overlap(["results/triage/gittin.json"], ["results/triage/eruvin.json"])
+    # A prefix that is not a path boundary is not an overlap.
+    assert not board.overlap(["results/v10/"], ["results/v10_other/x.json"])
+
+
 def test_blocked_by_and_awaiting_resolve():
     """A dependency pointing at nothing parks work silently. Both kinds must resolve:
     an item slug, or a `jeff:` question that comms/JEFF.md actually lists."""

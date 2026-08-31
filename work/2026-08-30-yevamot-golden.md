@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [yevamot]
 blocked_by: [2026-08-30-yevamot-expert-round]
 awaiting: []
+writes: [results/canonical/yevamot_canonical.json, tests/test_bookkeeping.py]
 finding:
 superseded_by:
 ---

@@ -49,12 +49,10 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `jeff-ask-order` | `talmud-stories` | **4 FILES** |
-| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **20 FILES** |
-| `state-work-review-40b153` | `state-work-review-40b153` | **6 FILES** |
+| `talmud-stories-collision-bdsjeg` | `talmud-stories` | **43 FILES** |
 <!-- board-live:end -->
 
-## Done — 7 items, never deleted
+## Done — 8 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -65,4 +63,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Parse Jeff's Kiddushin story list](work/done/2026-08-30-kiddushin-list-parse.md) | detection, boundaries | [2026-08-30-kiddushin-list-parse.md](docs/findings/2026-08-30-kiddushin-list-parse.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
-<!-- board-checksum: 35ab5f6f15309bb9 -->
+| [Make concurrent work items declare what they write](work/done/2026-08-31-concurrency-collisions.md) | — | [2026-08-31-concurrent-work-collisions.md](docs/findings/2026-08-31-concurrent-work-collisions.md) |
+<!-- board-checksum: d46f8338accab0f1 -->

@@ -4,6 +4,7 @@ capability: [detection]
 tractate: [gittin]
 blocked_by: [2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser]
 awaiting: []
+writes: [results/detection/gittin.json, src/story_detector_v11.py]
 finding:
 superseded_by:
 ---

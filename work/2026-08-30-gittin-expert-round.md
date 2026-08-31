@@ -4,6 +4,7 @@ capability: [review]
 tractate: [gittin]
 blocked_by: [2026-08-30-gittin-review-ui]
 awaiting: []
+writes: [validation/feedback/gittin/]
 finding:
 superseded_by:
 ---

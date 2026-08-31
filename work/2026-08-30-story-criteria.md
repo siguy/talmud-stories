@@ -4,6 +4,7 @@ capability: [classification]
 tractate: []
 blocked_by: []
 awaiting: [jeff:speech-act-policy]
+writes: [src/prompts/]
 finding:
 superseded_by:
 ---

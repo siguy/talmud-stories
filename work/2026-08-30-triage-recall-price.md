@@ -4,6 +4,7 @@ capability: [triage]
 tractate: [ketubot]
 blocked_by: []
 awaiting: []
+writes: [src/story_detector_v11.py, scripts/measure_recall_vs_expert_list.py, results/v11/triage_recall/]
 finding:
 superseded_by:
 ---

@@ -8,6 +8,13 @@ each chose. On 2026-08-30 four concurrent sessions each wrote a "Lesson 26", and
 a different `09` and a different `10`; because the slugs differed, git merged all four
 cleanly and silently. That is the failure this layout removes.
 
+**Before running items concurrently: `python3 scripts/board.py lanes`.** Dated slugs fixed
+the *naming* collision; they do nothing about two items writing the same file. `lanes`
+groups open items so that two items in different lanes never write a common path — one
+session per lane, and a lane runs serially. The lane count is smaller than the count of
+unblocked items, always.
+→ [`docs/findings/2026-08-31-concurrent-work-collisions.md`](../docs/findings/2026-08-31-concurrent-work-collisions.md)
+
 **Finishing:** add `## Outcome` saying what happened *and why*, then
 `python3 scripts/board.py finish <slug>`. **Never delete it.**
 
@@ -26,8 +33,9 @@ happened here at least once already.
 | `title` | one line |
 | `capability` | list of slugs — `triage detection classification boundaries review publication`. **Editable**: diagnosing which capability is at fault *is* the work (`abdc4af` moved Ketubot 77a from Detection to Classification), so it cannot be a precondition for starting |
 | `tractate` | list; empty means cross-cutting |
-| `blocked_by` | cannot **start** — item slugs, or `jeff:<question-slug>` |
+| `blocked_by` | cannot **start** — item slugs, or `jeff:<question-slug>`. This is the **ordering** graph |
 | `awaiting` | can finish, cannot **conclude** — usually a question out with Jeff |
+| `writes` | paths this item **modifies**; a trailing `/` means the subtree. This is the **contention** graph, and it is a different graph: two items can be mutually unblocked and still destroy each other's work. Declare **generously** — over-declaring costs a serialized lane, under-declaring costs a silent corruption |
 | `finding` | `docs/findings/YYYY-MM-DD-slug.md`, once written |
 | `superseded_by` | set when reverted or replaced |
 

@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [eruvin]
 blocked_by: [2026-08-30-eruvin-expert-round]
 awaiting: []
+writes: [results/canonical/eruvin_canonical.json, tests/test_bookkeeping.py]
 finding:
 superseded_by:
 ---
