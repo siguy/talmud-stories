@@ -14,23 +14,36 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | STATUS · B | 96.0% / 87.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
-| **Kiddushin** | ⬜ | 93.3% / 83.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
+| **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
+| **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Gittin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
 
-Detection is quoted **loose / strict**, straight from `results/rulers/`. The loose
-test credits a proposal anywhere in the aligner's window and is provably
-over-credited in at least one case, so read it as an upper bound.
+**Triage** is stories surviving, and **Detection** is recall *given the page
+survived triage* — both from `results/recall/*_jeff2005_matches.json`, whose
+denominator each cell states. Detection is conditioned because the two
+capabilities compose and have separate gates; charging Triage's losses to
+Detection as well double-counts them (Lesson 35).
+
+The **end-to-end** figure — what the pipeline delivers, `triage x detection` —
+is quoted **loose / strict** from `results/rulers/`:
+
+- Ketubot: **96.0% loose / 87.9% strict** on 149 stories
+- Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
+
+The loose test credits a proposal anywhere in the aligner's window and is
+provably over-credited in at least one case, so read it as an upper bound.
 
 **Cells reading `STATUS` are a known gap in this generator, not a formatting**
-**choice.** Triage, Classification and Boundaries have no artifact on disk carrying
+**choice.** Classification and Boundaries have no artifact on disk carrying
 their current value — they are produced by `evaluate_golden.py` and
 `score_boundary_targets.py`, which write to a scratch path this script does not
-read and must not re-run. Until those scripts also write a small committed
+read and must not re-run. (Triage left this list on 2026-08-31, when the recall
+harness started writing `survived_triage` per story, so the cell became
+derivable.) Until those scripts also write a small committed
 measurements file, the honest cell is a pointer to the hand-written number in
 [`STATUS.md`](STATUS.md), not a number typed into a generator that promises it
 types none.
@@ -41,11 +54,10 @@ gate       ≥98% · PROVISIONAL
 history    docs/capabilities/1_triage.md
 open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
-open       2026-08-30-kiddushin-recall
 open       2026-08-30-opener-lexicon
 open       2026-08-30-triage-recall-price
 open       2026-08-30-yevamot-triage
-closed     2 item(s) in work/done/
+closed     3 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -56,9 +68,9 @@ open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 
 open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
-open       2026-08-30-kiddushin-recall
 open       2026-08-30-opener-lexicon
-closed     4 item(s) in work/done/
+open       2026-08-30-two-amud-header-parser
+closed     5 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -78,10 +90,9 @@ closed     4 item(s) in work/done/
 ```
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
-open       2026-08-30-kiddushin-boundary-set
 open       2026-08-30-kiddushin-comments-harvest
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     2 item(s) in work/done/
+closed     3 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -143,4 +154,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 9f3e1bee2798e0e5 -->
+<!-- board-checksum: 3502f60889e53cb1 -->

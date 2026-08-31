@@ -3,8 +3,10 @@
 **Definition:** decide whether a page is worth examining at all — see
 [`FRAMEWORK.md` §1.1](../../FRAMEWORK.md).
 **Gate:** ≥98% of true stories surviving (PROVISIONAL)
-**Current:** **98.0%** — 3 of 149 lost — on Jeff's 2005 Ketubot list (**BLIND**), while
-examining 44% of pages. Measured 2026-08-30 (`c900ee4`). Kiddushin: **unmeasured**.
+**Current:** **Ketubot 98.0%** — 3 of 149 lost — while examining 44% of pages;
+**Kiddushin 95.6%** — 4 of 90 lost — while examining 38% of pages. Both on Jeff's 2005
+lists (**BLIND**), both measured with `scripts/measure_recall_vs_expert_list.py`
+(Ketubot 2026-08-30 `c900ee4`, Kiddushin 2026-08-31).
 
 *Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status —
 status lives in [`STATUS.md`](../../STATUS.md).*
@@ -22,6 +24,7 @@ status lives in [`STATUS.md`](../../STATUS.md).*
 | 2026-05-18 | **Wave 1 Issue #5 — lexical override.** A page containing any of five canonical Hebrew introducers (`מעשה ב`, `הנהו בי תרי`, `ההוא ד`, `ההוא גברא`, `כי הא ד`, matched on the consonantal skeleton) forces Stage 2 to run whatever Stage 1 said | shipped and **it worked**: Kiddushin 45a and 53a — two stories Jeff had flagged as missed — recovered, each yielding one real story. 9 Kiddushin pages and 5 Ketubot pages moved from skipped to processed | `eff0218`, [`wave1_results.md`](../findings/2026-05-18-wave1-results.md) |
 | 2026-08-30 | **First measurement of what triage discards.** Traced the 6 blind-list recall misses back through the pipeline | **measured: Stage 1 discards 124 of 222 Ketubot pages (56%)** — 1,535 segments never examined. 19 of Jeff's 149 stories touch a discarded page; 16 survive only because the other half of the daf pair was kept; **3 are lost outright** (Ketubot 20a, 72b, 82b — both pages of each pair discarded) | `9f7ddf8`, [`recall_miss_diagnosis`](../findings/2026-08-30-recall-miss-diagnosis.md) |
 | 2026-08-30 | **Triage recall computed for the first time**, against the BLIND 2005 list | **measured: 98.0%** (146 of 149 survive) at 44% of pages examined. Reframed from "the biggest unmeasured thing in the project" to **a trade to be priced** | `c900ee4` |
+| 2026-08-31 | **Kiddushin triage recall measured — the cell that had been empty for the life of the project.** Same script as Ketubot, run the same day so the comparison holds (Lesson 11) | **measured: 95.6%** (86 of 90) while examining **38%** of pages — 2.4 points below Ketubot for 6 points more of the corpus skipped. **All of Kiddushin's end-to-end recall deficit is here**, not in Detection: detection-given-triage is 97.7% vs Ketubot's 97.9%. Wave 1's lexical override is worth **+1.1 points** of it (one story, Kiddushin 49b), priced against a blind set for the first time | [`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md) |
 | 2026-08-31 | **A failed triage call no longer discards the page.** `TRIAGE_FAILED` as a distinguishable provenance value; `should_skip_page()` fails open on it; failures counted and named | shipped, and **0 shipped skip decisions change** — proven against the caches, which contain no failures. Ten failure-injection tests, written first and watched fail | [`finding`](../findings/2026-08-31-triage-failure-default.md), Lesson 21 |
 
 ## What we reverted, and why
@@ -90,10 +93,19 @@ the shipped triage decisions come from a **cache**, so today's 98.0% is stable b
 construction — it is a property of a fixed artifact, not a re-runnable measurement. A
 fresh triage run on a current model could land anywhere, and nobody has tried.
 
-**Kiddushin is unmeasured.** It now has a blind list
-([`kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json), 90 stories),
-so the cell is fillable — `NEXT/06`. Its skip rate is 62%, higher than Ketubot's 56%,
-so its triage recall could plausibly be worse (suspected, no evidence either way).
+**Kiddushin is measured, and it is below the gate: 95.6%** (2026-08-31). The suspicion
+recorded here — that a 62% skip rate against Ketubot's 56% would cost recall — was
+correct, and is now measured rather than suspected. **This is the first capability
+number that differs materially between the two tractates**, and it is the whole of
+Kiddushin's end-to-end gap; Detection is the same on both
+([`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md)).
+
+That makes the provisional 98% gate a sharper problem than it was, because it was set on
+the tractate that skips less. The exchange rate is now measurable on two tractates:
+**Kiddushin gives up 2.4 more points of recall for 6 more points of corpus skipped** —
+about one story per 1.5 points of pages not examined. Whether that is a good trade is the
+open end-to-end question for Simon, not something to fix by loosening the threshold (see
+"What we reverted").
 
 ## Ceiling
 
@@ -115,8 +127,9 @@ versions after it shipped (v8, v9, v10, v11)
   highest-value item here; brief written and ready (`work/2026-08-30-triage-recall-price.md`), no API cost beyond
   pennies, text already on disk. It answers whether "96% recall" is really "96% of the
   44% we look at." **Never attempted.**
-- **Measure Kiddushin triage recall** against its new blind list — `NEXT/06`, no API
-  calls.
+- ~~Measure Kiddushin triage recall~~ — **done 2026-08-31**, 95.6%. What it opened:
+  the same measurement on Gittin, Yevamot and Eruvin, which cannot be run until the
+  detector has produced triage decisions there.
 - **Mine the opener lexicon instead of hand-writing it** (`docs/history/2026-08-28-PLAN-wave7-opener-lexicon.md`, DRAFT,
   never executed). The five introducers were invented, not derived. Wave 7 proposes
   ranking opening n-grams from the 149 blind stories plus the golden by story-frequency

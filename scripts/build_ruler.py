@@ -163,12 +163,17 @@ def classify_objection(notes):
 
 def build(tractate, cfg):
     runs = [str(PROJECT_ROOT / r) for r in cfg['runs']]
-    # load_detected returns a third value, `withheld` — the stories
+    # load_detected returns `withheld` third — the stories
     # filter_mishnah_only_stories() moved into `mishnah_stories`. The ruler's
     # `proposed` flag deliberately does NOT fold those in: "found then dropped"
     # and "never found" are different facts and must not be merged (Lesson 27).
     # measure_recall_vs_expert_list.py reports them separately.
-    units, proposals, _withheld = recall.load_detected(runs)
+    #
+    # The trailing three (triage, rejected, accepted) belong to that script's own
+    # capability split and the ruler has no use for them. Unpacked by name rather
+    # than with `*_` so that adding a return value there fails loudly here again
+    # rather than silently — which is how the 2026-08-31 breakage was caught.
+    units, proposals, _withheld, _triage, _rejected, _accepted = recall.load_detected(runs)
     index = defaultdict(set)
     for i, (_, _, gs) in enumerate(units):
         for g in gs:

@@ -172,7 +172,7 @@ archive/                          # Old versions (reference only)
 | `scripts/verify_wave1.py` | Wave 1 verification |
 | `scripts/audit_text_spans.py` | **Structural gate** — mid-word / clause-edge rates; `--strict` fails the build |
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
-| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld |
+| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld. Also the only committed measurement of **triage recall**, and it splits the misses by cause: triage-discarded / examined-but-nothing-proposed / proposed-then-`NOT_A_STORY`. Use `--expert-json` for any list that is not the Ketubot `.doc` |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
 | `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
 | `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
@@ -181,19 +181,22 @@ archive/                          # Old versions (reference only)
 | `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
 | `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — per-story `blind` and `counts_for_recall` flags, plus Jeff's anchored remarks. **Filter on the flags; never take the raw length as the denominator.** |
 | `docs/findings/2026-08-30-kiddushin-list-parse.md` | Why the line-based parse gave 105, and how the count was verified |
+| `docs/findings/2026-08-31-kiddushin-recall.md` | Kiddushin Triage 95.6% / Detection 97.7%. **Quote Detection *given the page survived triage*** — the end-to-end figure charges Triage's losses to Detection as well |
+| `docs/findings/2026-08-31-kiddushin-boundary-set.md` | The blind Kiddushin boundary set: 85%/91%, noise 7pt → 0.77 |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
 | `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 29) |
 | `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
 | `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
 | `docs/findings/2026-08-30-detection-classification-ruler.md` | Why the old Classification precision figures were not Classification numbers, and why loose recall overstates strict |
-| `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
+| `results/recall/<tractate>_jeff2005_matches.json` | Per-story recall match output (incl. the misses), carrying `survived_triage` / `only_rejected` per story. **The unsuffixed name is always the recall denominator**; sensitivity variants take a suffix. `scripts/board.py` fills the Triage and Detection cells from these, so do not rename one casually |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
 | `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The first blind recall measurement, and the method (Hebrew 4-grams + a corpus-wide window) |
 | `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
 | `docs/history/2026-08-30-PLAN-wave5b-clause-roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `docs/history/2026-08-29-PLAN-wave6-story-criteria.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
-| `tests/expert_boundary_targets_2005.json` | **294 detector-blind boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_2005.json` | **294 detector-blind Ketubot boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_2005_kiddushin.json` | **176 detector-blind Kiddushin boundaries.** Retires the 15-target corrections gate and its ±7pt noise. Built with `--expert-filter blind` (89), *not* the recall filter (90) — a boundary target must be an extent Jeff chose |
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
 | `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
 | `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
@@ -237,6 +240,8 @@ When making changes, update these files as relevant:
 - Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments
 - Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
+- Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
+- Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
 - Move detector output to a new key without making the harnesses read it (Lesson 27) — an invisible deletion reads as a model failure
 - Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 27)

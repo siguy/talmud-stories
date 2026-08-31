@@ -32,6 +32,18 @@ Usage:
   python3 scripts/build_boundary_testset_2005.py \
       --expert-doc "jeff comms/b.ketubot (1).doc" \
       --out tests/expert_boundary_targets_2005.json
+
+  python3 scripts/build_boundary_testset_2005.py \
+      --expert-json results/expert_lists/kiddushin_2005.json --expert-filter blind \
+      --tractate Kiddushin --out tests/expert_boundary_targets_2005_kiddushin.json
+
+KIDDUSHIN USES --expert-json, and the filter is `blind`, not the `recall` filter
+the recall measurement uses. The two questions are different. Recall asks "is this
+story on the list for a reason that could flatter us" and keeps 81b, which we never
+proposed. A boundary target additionally requires that JEFF chose the extent: the
+five appendix entries are our own spans, which he annotated, so a target built from
+one would grade us against a boundary we picked ourselves. Excluding all five costs
+one story and removes the circularity entirely.
 """
 import argparse
 import difflib
@@ -46,8 +58,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 from src.story_detector_v11 import _split_into_clauses  # noqa: E402
-from scripts.measure_recall_vs_expert_list import (grams, locate,  # noqa: E402
-                                                   parse_expert_doc)
+from scripts.measure_recall_vs_expert_list import (grams, load_expert_json,  # noqa: E402
+                                                   locate, parse_expert_doc)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [testset2005] %(message)s',
                     handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
@@ -177,12 +189,17 @@ def align_story(story, units, window):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument('--expert-doc', required=True)
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument('--expert-doc', help='parse the .doc directly (Ketubot)')
+    source.add_argument('--expert-json', help='pre-parsed list (Kiddushin — Lesson 28)')
+    ap.add_argument('--expert-filter', default='blind', choices=['recall', 'blind', 'all'],
+                    help='--expert-json only; see the module docstring for why blind')
     ap.add_argument('--tractate', default='Ketubot')
     ap.add_argument('--out', default='tests/expert_boundary_targets_2005.json')
     args = ap.parse_args()
 
-    expert = parse_expert_doc(args.expert_doc, args.tractate)
+    expert = (parse_expert_doc(args.expert_doc, args.tractate) if args.expert_doc
+              else load_expert_json(args.expert_json, args.expert_filter))
     units = load_units(args.tractate)
     log.info('expert stories: %d | corpus segments: %d', len(expert), len(units))
 
@@ -206,7 +223,8 @@ def main():
         for side, edge in aligned['edges'].items():
             targets.append({
                 'ref': story['ref'], 'direction': side, **edge,
-                'source_round': 'jeff_2005_ketubot_list', 'review_key': f'2005#{n}',
+                'source_round': f'jeff_2005_{args.tractate.lower()}_list',
+                'review_key': f'2005#{n}',
                 'expert_words': story['words'], 'coverage': round(cov, 3),
                 'align_fraction': aligned['align_fraction'],
                 'bracket_ratio': aligned['bracket_ratio'],
@@ -222,7 +240,8 @@ def main():
                     'neutral sample and can catch REGRESSIONS as well as known failures. '
                     'Filter on align_fraction / bracket_ratio; exact_clause_edge says whether '
                     'his boundary falls on a clause edge or inside a clause.',
-        'source_doc': args.expert_doc, 'tractate': args.tractate,
+        'source_doc': args.expert_doc or args.expert_json, 'tractate': args.tractate,
+        'expert_filter': args.expert_filter if args.expert_json else None,
         'thresholds': {'min_align_fraction': MIN_ALIGN_FRACTION,
                        'max_bracket_ratio': MAX_BRACKET_RATIO, 'min_block': MIN_BLOCK},
         'n_stories': len(expert), 'n_aligned': len(targets) // 2,
