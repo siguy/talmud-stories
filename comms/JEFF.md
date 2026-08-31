@@ -20,7 +20,7 @@ names that slug in its `awaiting:` field; one that cannot start names it in `blo
 | slug | question | why it matters | status |
 |---|---|---|---|
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? | Blocks the end rule for capability 4. His 2005 lists keep the ruling; his 2026 review notes say cut it — and both are his (Lesson 24). | **ASKED 2026-08-30**, unanswered — *"I will get to all this soon."* **Email 1, item 2**, sharpened with the start-vs-end split |
-| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? | Our filter currently deletes them, and no harness or UI can see the loss. His two sources disagree: his blind 2005 list holds no Mishnah-only story, but he marked **correct** in review every Ketubot case the filter removes. | **Email 1, item 3** — drafted, [`draft_next_email.md`](draft_next_email.md) §1 |
+| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? | Our filter currently deletes them, and no harness or UI can see the loss. His two sources disagree: his blind 2005 list holds no Mishnah-only story, but he marked **correct** in review every Ketubot case the filter removes. | **Email 1, item 3** — drafted in full, [`draft_next_email.md`](draft_next_email.md) §2 |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? | **Sets the Classification gate**, and only he can answer it. Every other gate is provisional partly because this one is unanswered (FRAMEWORK §2b). | **Email 2, item 7** — hold until 6a gives it an anchor |
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? | It is a redefinition of a large share of the golden, so it is his call and not ours. Blocks `work/2026-08-30-story-criteria.md` phase 6c **by design**. | **Email 2, item 6** — blocked on our own phase 6a, not on him |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? | **Sets the Triage and Detection gates**, which are currently invented (FRAMEWORK §2b). It is a claim about scholarly completeness, so it is his to make, not ours — an earlier draft of FRAMEWORK wrongly assigned it to Simon. | **Email 2, item 7** — ask beside the six misses, not as a bare threshold |
@@ -70,6 +70,9 @@ Six principles, applied below:
 6. **Time-critical goes now regardless of size.**
 
 ### Email 1 — send now
+
+**Drafted in full 2026-08-31 and ready to send** — all five items, in this order:
+[`draft_next_email.md`](draft_next_email.md). Not sent; Simon sends from his own client.
 
 | # | item | why here |
 |---|---|---|

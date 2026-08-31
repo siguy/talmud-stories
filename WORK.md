@@ -49,9 +49,9 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `jeff-ask-order` | `talmud-stories` | **4 FILES** |
-| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **20 FILES** |
-| `state-work-review-40b153` | `state-work-review-40b153` | **6 FILES** |
+| `build-canonical-hazard` | `talmud-stories` | **6 FILES** |
+| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | clean |
+| `state-work-review-40b153` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
 ## Done — 7 items, never deleted
