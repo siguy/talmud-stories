@@ -218,17 +218,22 @@ work does not. That is `awaiting`, not `blocked_by`.
 
 | file | its one job |
 |---|---|
-| **`STATUS.md`** | where we are. Rewritten each session. **Start here.** |
-| **`FRAMEWORK.md`** | the six capabilities, how each is measured, what the gates are and why. |
-| `work/*.md` | one self-contained item per ready task. When done: add `## Outcome` and `git mv` to `work/done/` — **never delete**. |
-| `lessons/` | one file per lesson, L-001..L-030. Numbers are permanent. |
-| `docs/golden/**` | dated findings. Immutable once written. |
-| [`docs/capabilities/`](docs/capabilities) | per-capability history: what we tried, what we reverted and why, current best, distance to gate, ceiling, untried. One file per capability, linked from the scoreboard above. |
-| `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
-| `CLAUDE.md` | how to work in this repo. Not status. |
+| **[`STATE.md`](STATE.md)** | **generated instrument panel** — coverage matrix, gates, what is in flight. Never edit it; run `python3 scripts/board.py`. |
+| **`STATUS.md`** | where we are, in words: judgment, hazards, what is *indicated* rather than measured. Rewritten each session. |
+| **[`FRAMEWORK.md`](FRAMEWORK.md)** | the six capabilities, how each is measured, what the gates are and **why**. Carries no current values. |
+| [`WORK.md`](WORK.md) | generated board — open items, in flight, done. |
+| [`work/*.md`](work/) | one self-contained item per ready task. When done: add `## Outcome` and `git mv` to [`work/done/`](work/done/) — **never delete**. |
+| [`lessons/`](lessons/) | one file per lesson, L-001…L-030. Numbers are permanent. |
+| [`docs/findings/`](docs/findings/) | dated findings. Corrected by a **new** dated finding, never edited to look as though they were always right. |
+| [`docs/history/`](docs/history/) | plans and approach docs, superseded by what they produced. |
+| [`docs/capabilities/`](docs/capabilities/) | per-capability history: tried, reverted and why, current best, distance to gate, ceiling, untried. **Read before opening work on a capability.** |
+| [`comms/JEFF.md`](comms/JEFF.md) | every open question (with the slug items name in `awaiting:`), corrections owed, and the sent log. |
+| `validation/feedback/jeff_*_ledger.md` | everything Jeff has **said**, and its disposition. Different job from JEFF.md, and kept. |
+| `docs/golden/` | **data only** since 2026-08-30, plus a redirect table for its old paths. |
+| `CLAUDE.md` | how to work in this repo, and the route to read things in. Not status. |
 | `FOR_SIMON.md` | the plain-English narrative. |
 
-**The rule:** status here and nowhere else. Findings in a dated `docs/golden/` file.
+**The rule:** status here and nowhere else. Findings in a dated `docs/findings/` file.
 Rules in `lessons/`. Ready work in `work/`. Never append status to a plan.
 
 ## Ground truth on hand
