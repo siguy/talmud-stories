@@ -1,4 +1,9 @@
-# Lesson 31 — Audit the bucket your conservative rule files things into
+# Audit the bucket your conservative rule files things into
+
+<!-- Unnumbered on purpose: lessons/README.md says to land a new lesson as
+     `_<slug>.md` and number it when it reaches main, so two sessions cannot
+     claim the same number. Four did on 2026-08-30; this one collided with a
+     concurrent L-031 on 2026-08-31. -->
 
 **2026-08-31**
 
