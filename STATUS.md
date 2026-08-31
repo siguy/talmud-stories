@@ -12,27 +12,42 @@ counts as good enough. Language and capability names come from there.
 *"I will get to all this soon. But here is the kiddushin list I have."* — so **the
 boundary question is still unanswered** and capability 4 stays blocked.
 
-Rough parse: **Kiddushin ~96, Gittin 112, Yevamot 102, Eruvin 73.** Treat these as
-indicated, not measured — the Kiddushin document is **dirtier than the Ketubot one**:
-9 of its 105 parsed entries are Jeff's own English review comments, which inherit the
-preceding daf reference (making Kiddushin 81b appear to hold 11 stories), and it
-contains `הוספתי--י.ר.` — *"I added — J.R."* — very likely marking stories he took from
-**our** output, which are therefore **not blind**. `NEXT/05` fixes this and everything
-downstream depends on it.
+Rough parse: **Gittin 112, Yevamot 102, Eruvin 73** — indicated, not measured.
+**Kiddushin is now parsed properly: 95 stories, measured** (`NEXT/05` done). The rough
+figure was 105, of which 9 were Jeff's own English review comments and 4 were
+parallels-column citations. 81b no longer appears to hold 11 stories; it holds 4.
+→ [`docs/golden/v11/kiddushin_list_parse_2026-08-30.md`](docs/golden/v11/kiddushin_list_parse_2026-08-30.md)
 
 Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
 can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
-Kiddushin had none, which is why three cells in the scoreboard read "unmeasured." That
-is now fixable, and three tractates we have never touched become testable.
+Kiddushin now has one too, so three scoreboard cells that read "unmeasured" for the life
+of the project are unblocked — **06, 07 and 08 are ready to run.**
+
+**The list is already contaminated, and we nearly missed it.**
+`Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
+that you and Claude found that were not on my list"* — cases from across our runs, which
+he annotated and **merged into his list**. Those five entries are in his list because of
+our output, so they are circular. Plus the one he marked `הוספתי--י.ר.` himself.
+
+**Recall denominator: 89**, not 95 and not 94.
+
+We caught this only because the appendix survived as a separate file.
+
+**Gittin, Yevamot and Eruvin cannot have this problem — and that makes them the best
+ground truth we have.** We have never run the detector on those tractates, so there is
+nothing of ours for Jeff to have merged. Their lists are pristine. They are also the only
+place we can run a *floor* test: whatever is on his list we should at minimum find, with
+no prior output to have primed either side. The contamination risk there is entirely in
+the future, and it starts the moment we send him results.
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
-| **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **now possible** | ≥98% *(provisional)* |
-| **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **now possible** | ≥95% *(provisional)* |
+| **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
+| **2 Detection** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **84.3%** strict — **NEW** | ≥95% *(provisional)* |
 | | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
-| **3 Classification** | precision, CIRCULAR | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
+| **3 Classification** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
 | **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
 | **6 Publication** | — | not started | not started | — |
@@ -43,9 +58,26 @@ that is a product decision, not a technical one. Two questions are open there: o
 Simon, one for Jeff.
 
 **Every measurable capability is now at or above its provisional gate.** Classification
-measured 2026-08-30 on the current detector: Ketubot 89.2%, Kiddushin 85.3% — correcting
-an earlier claim in this file that we had no current number. What is *not* measured is
-Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
+measured 2026-08-30 on the current detector with the immutable harness: Ketubot 89.2%,
+Kiddushin 85.3% — correcting an earlier claim in this file that we had no current number.
+
+**But the 86 / 68 Classification numbers were never Classification numbers.** They counted
+every rejection, whatever Jeff objected to. Sorting the notes: most rejections are
+**boundary, merge or confidence-level** complaints — three other capabilities pooled into
+one figure. Separated, both tractates land near 92-95% and the gap between them mostly
+disappears. Review-round precision is therefore quoted as a **range**, because unreadable
+notes set its width. → [`docs/golden/v11/detection_classification_ruler_2026-08-30.md`](docs/golden/v11/detection_classification_ruler_2026-08-30.md)
+
+**We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
+from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
+a point estimate, because the reviewer never recorded *which thing* he was rejecting. That
+fix is a review-UI change, `NEXT/04`, not more inference over free text.
+
+**Detection is softer than 96% under a strict test.** The published test credits a
+proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
+story actually occupies gives 87.9% Ketubot / 84.3% Kiddushin. The 12 Ketubot stories in
+the gap are **cross-page stories whose text sits on a continuation daf where we proposed
+nothing** — 17b, 50a and 51a each carry zero proposals.
 
 ## What changed today
 
@@ -89,6 +121,17 @@ Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
   considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
 - **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
   `tasks/NEXT/03`.
+- **One ruler now measures Detection and Classification for both tractates.**
+  `scripts/build_ruler.py` joins the blind lists, the detector proposals and all six
+  review rounds — including the 16 Kiddushin verdicts that had never been folded in. It
+  reproduces the published 96.0% and 86% as its regression check, then shows what those
+  numbers were hiding. → `results/rulers/`
+- **Kiddushin has a blind list.** 95 stories, parsed from the .doc's own table structure
+  rather than a converter's line dump; the parser reproduces Ketubot's established 149
+  as its regression check, and all 95 texts match an independent renderer character for
+  character. Jeff's 9 review comments came back with their **exact anchor positions**, so
+  each attaches to the passage he was looking at — which is what makes them usable to
+  `NEXT/08`. → Lesson 29
 
 ## Waiting on Jeff — email sent 2026-08-30
 
@@ -97,7 +140,7 @@ part of the story we display, or the discussion that follows it? His 2005 lists 
 his review notes say cut it. Blocks the end rule for capability 4.
 → draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
 
-**To add when we next write — three items**, framed in the draft's "Not yet asked":
+**To add when we next write — four items:**
 
 1. At what error rate does reviewing our output become worse than working from scratch?
    That number sets the Classification gate and only he can answer it.
@@ -105,9 +148,15 @@ his review notes say cut it. Blocks the end rule for capability 4.
    cases: 14b seg 11 and 77a seg 8 (the Sidon tanner). His blind 2005 list contains no
    Mishnah-only story; his review rounds accepted both into our golden — his own two
    sources disagree, exactly as on the boundary question.
-3. A correction we owe him: the email said Ketubot 77a is a story "our own set has" — it
+3. **When we send results for a new tractate, ask him to keep his appendix separate.**
+   In Kiddushin the appendix entries were merged into the list and cost us five of its
+   stories as blind ground truth. Not urgent — Gittin, Yevamot and Eruvin are clean until
+   we run there — but it must be said *before* the first review round, not after.
+   → `tasks/NEXT/09_kiddushin_parse_open_calls.md` item 1b
+4. A correction we owe him: the email said Ketubot 77a is a story "our own set has" — it
    is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8); his is at
-   segs 13-14. The substance stands (we do miss his), the claim did not.
+   segs 13-14. The substance stands (we do miss his), the claim did not. Pairs naturally
+   with item 2 — same daf.
 
 **Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
 still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
@@ -124,25 +173,30 @@ job that should wait until Kiddushin shows what we get.
 
 ```
               ┌── 06 Kiddushin recall (triage + detection)
-05 parse ─────┼── 07 Kiddushin blind boundary set
-  (blocker)   └── 08 harvest the embedded review comments
+05 parse DONE ┼── 07 Kiddushin blind boundary set        all three now unblocked,
+              └── 08 harvest the embedded review comments  and independent of each other
 
-fully independent, start any time:   00 · 01 · 02 · 04 · 09 · 10 · 11 · 03
+fully independent, start any time:   00 · 02 · 04 · 11 · 09-fetch · 10-additions
+lower value until the above land:    01 · 03
+open calls from the parse:           09-parse-open-calls  (denominator 89; 1b is for Jeff)
+goldens still incomplete:            10-golden-completeness
 ```
 
 | | task | capability | needs | Jeff? |
 |---|---|---|---|---|
-| **05** | Parse the Kiddushin list properly — 3 streams, blind flags | ground truth | — | no |
-| **06** | Kiddushin recall: triage + detection | 1, 2 | 05 | no |
-| **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | 05 | no |
-| **08** | Harvest Jeff's embedded comments — criteria + boundary corrections | 3, 4 | 05 | no |
+| ~~05~~ | ~~Parse the Kiddushin list~~ — **done**, 95 stories + 10 remarks | ground truth | — | no |
+| **06** | Kiddushin recall: triage + detection — report over **both** denominators (89 / 94) | 1, 2 | — | no |
+| **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | — | no |
+| **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
 | 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
 | 02 | ~~Why is Ketubot 77a never proposed~~ **DONE** — it *is* proposed; classification rejects it | 3 | — | no |
-| 04 | Fix the review UI Hebrew/English asymmetry | 5 | — | no |
+| **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate | 3, 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | low priority* |
-| 09 | Fetch Gittin / Yevamot / Eruvin from Sefaria | ground truth | — | no |
-| 10 | Add the 5 missing stories to the Ketubot golden | 2 | — | no |
+| 09-fetch | Fetch Gittin / Yevamot / Eruvin from Sefaria | ground truth | — | no |
+| 09-parse-open-calls | Open calls from the Kiddushin parse — denominator settled at 89 | ground truth | — | **1b** |
+| 10-additions | Add the 5 missing stories to the Ketubot golden | 2 | — | no |
+| **10-golden-completeness** | Make the goldens complete: fold in every verdict (the ruler now names all 12) | 3, ground truth | — | no |
 | 11 | Kiddushin 12a — one detection covering two stories | 2 | — | no |
 | — | Wave 6 — encode Jeff's criteria (08 feeds it) | 3 | 08 | no |
 
@@ -156,7 +210,7 @@ where an entry ends. Its *value* depends on his answer; the work does not.
 | **`STATUS.md`** | where we are. Rewritten each session. **Start here.** |
 | **`FRAMEWORK.md`** | the six capabilities, how each is measured, what the gates are and why. |
 | `tasks/NEXT/*.md` | one self-contained brief per ready task. Delete when done. |
-| `tasks/lessons.md` | 24 durable rules. Append-only. |
+| `tasks/lessons.md` | 25 durable rules. Append-only. |
 | `docs/golden/**` | dated findings. Immutable once written. |
 | `docs/capabilities/` | per-capability history — **not written yet, see `NEXT/00`**. |
 | `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
@@ -170,18 +224,27 @@ Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a pla
 
 ```
 BLIND   (can measure recall)
-  Ketubot   149 stories (2005 list) · 294 derived boundary targets
-  Kiddushin ~96 · Gittin 112 · Yevamot 102 · Eruvin 73   ← NEW,
-                                        Kiddushin needs NEXT/05 first
+  Ketubot    149 stories (2005 list) · 294 derived boundary targets
+  Kiddushin   89 stories, MEASURED  -> results/expert_lists/kiddushin_2005.json
+                 89 blind: 95 parsed, minus 1 he added himself, minus 5 appendix
+                 entries (ours, merged into his list -> circular). Denominator 89.
+                 ~180 boundary targets derivable from the 89 (NEXT/07)
+  Gittin 112 · Yevamot 102 · Eruvin 73   <- PRISTINE. We have never run the detector on
+                                            these, so nothing of ours can have been
+                                            merged in. Each needs its own parse; a
+                                            detector run there is a clean floor test.
 CIRCULAR (precision and consistency only — never recall)
-  Ketubot   182 golden stories · Kiddushin 85
+  Ketubot   golden: 187 entries, 164 accepted (23 NOT_A_STORY) — v7 + v9, many rounds
+  Kiddushin golden:  96 entries,  85 accepted (11 NOT_A_STORY) — v7 only, ONE round
+                     16 verdicts from the May-26 and Jul-06 rounds are NOT folded in
   70 boundary corrections across 8 review rounds
+  10 Kiddushin review remarks, each anchored to its passage (NEXT/08)
 
 SEFARIA TEXT on hand (text only — no detector has been run on these)
   Ketubot · Kiddushin                     results/v7/, results/v10/wave4_notrim/
-  Gittin   2a-90b   178 dapim  2,990 seg  results/sefaria/gittin.json   ← NEW 08-30
-  Yevamot  2a-122b  242 dapim  3,865 seg  results/sefaria/yevamot.json  ← NEW 08-30
-  Eruvin   2a-105a  207 dapim  3,645 seg  results/sefaria/eruvin.json   ← NEW 08-30
+  Gittin   2a-90b   178 dapim  2,990 seg  results/sefaria/gittin.json   <- NEW 08-30
+  Yevamot  2a-122b  242 dapim  3,865 seg  results/sefaria/yevamot.json  <- NEW 08-30
+  Eruvin   2a-105a  207 dapim  3,645 seg  results/sefaria/eruvin.json   <- NEW 08-30
 ```
 
 **Every reference in Jeff's Gittin, Yevamot and Eruvin lists resolves to a fetched
@@ -202,3 +265,6 @@ headers (`סה ע"ב-סו ע"א`) are silently credited to the *preceding* daf �
 Yevamot 7, Eruvin 3. Entry counts are unaffected; **daf-level recall on these three
 would be wrong until it is fixed.** One Gittin header (`יד ע"ד`) uses amud *dalet*, a
 Yerushalmi form with no Bavli equivalent. `--verify-only` lists all 21.
+
+**Quote golden counts the same way.** "Ketubot 182 · Kiddushin 85" compared entries
+against accepted-only. Use 187/96 or 164/85, never one of each.

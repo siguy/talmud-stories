@@ -717,3 +717,131 @@ step goes haywire?** If the answer is "none", that is the defect — before any
 bug in the step's logic. Same family as Lesson 21 (a failed call recorded as
 a judgment) and Lesson 23 (an exam that cannot see a regression): all three
 are cases where the measurement, not the code, was the thing that was wrong.
+
+## Lesson 29 — Read the source format, not the converter's output (2026-08-30)
+
+Jeff's Kiddushin list was parsed by running `textutil` over the `.doc` and
+reading the result line by line. That returned 105 stories. Nine were his
+English review notes, and because `.doc` stores annotations in a separate
+character range, `textutil` dumped them all at the end of the file, where
+they inherited the last daf reference seen — Kiddushin 81b appeared to
+hold **eleven** stories. Four parallels-column entries were also counted
+as stories, and Hebrew range labels (`כב ע"ב-כג ע"א`) were dropped.
+
+Nothing errored. The file parsed, returned plausible Hebrew, and the
+count was in the right ballpark.
+
+The information needed to get it right was in the file the whole time.
+Reading the OLE streams directly recovers the table (`0x07` terminates
+each cell and again the row), so the four columns separate exactly, and
+`PlcfandRef` gives every comment's **anchor position in the main text** —
+so the notes attach to the passage Jeff was actually looking at, which is
+the only form in which they are worth anything to `NEXT/08`.
+
+**Rule:** when an artifact is ground truth, parse its native format. A
+converter is lossy in ways that are invisible downstream: it discards
+structure (tables, columns), relocates content (comments, footnotes), and
+never says it did. Reach for `textutil`/`pandoc` output for *reading* a
+document, never for *ingesting* one.
+
+**Why:** the loss is silent and it lands in the denominator. A recall
+number computed on 105 entries where 9 are not stories is wrong, and
+nothing about the pipeline would have shown it — the same failure shape
+as Lesson 21.
+
+**How to apply:** (a) Validate a new parser against a known answer before
+trusting it on new data — this one is asserted against Ketubot's
+established 149, so a structural mistake fails loudly. (b) Cross-check
+extracted text against an independent renderer character-for-character;
+that check caught a retained annotation marker in 6 of 95 entries. (c)
+When a count looks implausible on one key (81b with 11), treat it as a
+parser bug until proven otherwise, not as a quirk of the data.
+
+## Lesson 30 — A blind list stops being blind when the expert merges your output into it (2026-08-30)
+
+Jeff's Kiddushin list has 95 stories. Five of them are cases from our own
+runs, which we sent him, which he annotated `Yes` / `Low confidence`, and
+which he then **merged into the list**. In the merged document they are
+indistinguishable from his other 90: same column, same hand, no marker,
+no date. The list still looks like a 2005 artifact.
+
+We caught it for one reason only — the appendix he built them from
+survived as a separate file in the same folder. Nothing inside the list
+would ever have shown it.
+
+Worse, the first two attempts to settle it both went wrong in *our
+favour* in one direction or another. Reasoning from where the file sat
+said "these are his, they count" (denominator 94, three known-hard cases
+scored against us). Reasoning from a partial look at the runs said "we
+never found them, so they can't be ours" — because only four of the
+thirteen Kiddushin runs had been checked. The answer came from Simon
+knowing what Jeff had actually been sent.
+
+**Rule:** provenance is a property to be **tested**, not inferred from a
+file's name, its creation date, or where it sits. Before quoting any
+expert artifact as blind, check it against everything we have sent that
+expert. If the check cannot be run, the artifact is not blind — it is
+unverified.
+
+**Why:** blindness is the whole value of the ruler. A circular entry in a
+recall denominator does not announce itself; it just quietly changes the
+number, and it changes it in the flattering direction as often as not.
+This is Lesson 23's problem arriving through a new door: there the
+corrections set had selection baked in, here the neutral set had our own
+output baked in.
+
+**How to apply:** (a) `scripts/check_appendix_coverage.py` — run it on
+every new expert list before trusting it. Gittin, Yevamot and Eruvin are
+still ahead of us. (b) Ask the expert to keep his appendix a separate
+file, or to mark its entries. It costs him nothing and it cannot be
+reconstructed afterwards — this belongs in the next email. (c) Check
+*every* run, not the current one: 45a is absent from v7 and found from
+Wave 1 on, so "is it in our output" has a different answer depending on
+which output you look at. (d) When a provenance question moves a headline
+number, say which way it moves it and who that flatters, before deciding.
+
+## Lesson 31 — "Incorrect" is not a metric until you know what was rejected (2026-08-30)
+
+Classification precision was 86% on Ketubot and 68% on Kiddushin, and the
+scoreboard called Classification our weakest capability on that basis.
+Both numbers came from counting `verdict: incorrect` in the review rounds.
+
+But a reviewer clicking "incorrect" is not saying *this is not a story*.
+Sorting the notes by what Jeff actually objected to:
+
+```
+Ketubot  2026-03-17 (n=173)  classification 9 · boundary 7 · confidence 4 · merge 1
+Kiddushin 2026-04-23 (n=89)  confidence 10 · classification 7 · boundary 3 · unreadable 9
+Kiddushin 2026-07-06 (n=15)  boundary 5 · unreadable 6
+```
+
+Most rejections are boundary complaints, merge complaints, or disagreement
+about our *confidence level* — three other capabilities, pooled into one
+number and reported as Classification. Separated, both tractates sit near
+92-95% and the 86-vs-68 gap mostly evaporates.
+
+The `adjust` verdict makes it sharpest: it means "this IS a story, the
+boundary is wrong." Counting it against Classification converts a
+boundary failure into a fake precision problem.
+
+**Rule:** a verdict vocabulary that records *that* the expert disagreed but
+not *what with* cannot measure any single capability. Before quoting a
+precision number, sort the rejections by which capability they indict. If
+that cannot be done from the data, the number is an all-causes error rate
+— say so, and report it as a range whose width is the part you could not
+read.
+
+**Why:** we spent months treating Classification as the weakest capability
+and Kiddushin as far worse than Ketubot. Both conclusions were mostly an
+artifact of pooling. Worse, the pooled number is the one that would have
+been "improved" by tuning the classifier — which would have done nothing,
+because the errors were largely in the boundary code.
+
+**How to apply:** (a) Fix it at the source: the review UI should make the
+reviewer say which thing is wrong. Re-deriving intent from free text has a
+ceiling — 24 notes here were unreadable, and that is the width of the
+range. This is now the point of `NEXT/04`. (b) Report per round, never
+pooled across rounds: each round judged a different detector version, and
+pooling lets whichever round has the most verdicts set the headline
+(Lesson 24). (c) When a metric is a range, quote both ends. A point
+estimate you cannot defend is worse than an honest interval.

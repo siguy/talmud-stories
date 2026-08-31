@@ -62,6 +62,12 @@ def grams(text, n=4):
     return {flat[i:i + n] for i in range(len(flat) - n + 1)}
 
 
+def overlap_frac(a, b):
+    """Fraction of a's n-grams present in b. Added for scripts/build_ruler.py;
+    the recall measurement itself does not use it and is unchanged."""
+    return len(a & b) / len(a) if a else 0.0
+
+
 def gematria(letters):
     letters = re.sub(r'["״\']', '', letters)
     return sum(GEMATRIA[c] for c in letters) if letters and all(c in GEMATRIA for c in letters) else None
