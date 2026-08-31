@@ -542,6 +542,62 @@ def reroot_links(text: str) -> str:
     return re.sub(r"\]\((\.\./)(?!\.\./)", r"](../../", text)
 
 
+# Paths every item touches by construction, which therefore cannot indicate contention:
+# the generated board (auto-resolved by the merge drivers), and the dated-slug files whose
+# names cannot collide because nobody has to agree on them.
+UNCONTENDED = ("STATE.md", "WORK.md", "docs/findings/", "lessons/", "work/")
+
+
+def declared_vs_actual(slug: str) -> tuple[list[str], list[str]]:
+    """What the item SAID it would write, against what the branch actually changed.
+
+    `writes:` is filled in when an item is opened -- before the work is done, by whoever
+    is opening it. Lesson 34 is precisely about such a field: a person who does not know
+    a value leaves it blank, and an LLM session produces a confident, plausible, wrong
+    one. A blank gets investigated; a confident wrong value does not.
+
+    So the field has to be grounded against something. git is the only thing that knows
+    what a branch really touched, and `finish` is the moment it knows it.
+
+    Measured on the first item ever to carry the field: it under-declared 8 paths, one of
+    which (tests/test_review_ui_symmetry.py) collides with `review-verdict-axes` -- an
+    item the lane map printed as safe to run concurrently at that exact moment.
+    """
+    base = sh("git", "merge-base", "main", "HEAD")
+    if not base:
+        return [], []
+    actual = [f for f in sh("git", "diff", "--name-only", f"{base}..HEAD").split("\n") if f]
+    declared = next((i["writes"] for i in items() if i["slug"] == slug), [])
+    missed = sorted(f for f in actual
+                    if not f.startswith(UNCONTENDED)
+                    and not any(overlap([f], [d]) for d in declared))
+    unused = sorted(d for d in declared if not any(overlap([f], [d]) for f in actual))
+    return missed, unused
+
+
+def report_declaration_drift(slug: str) -> list[tuple[str, list[str]]]:
+    """Print how the declaration diverged, and return the collisions it hid."""
+    missed, unused = declared_vs_actual(slug)
+    if not missed and not unused:
+        return []
+    if missed:
+        print(f"\n  `writes:` under-declared {len(missed)} path(s) actually changed:")
+        for m in missed:
+            print(f"      + {m}")
+    if unused:
+        print(f"\n  declared but never touched (harmless -- costs a serialized lane):")
+        for u in unused:
+            print(f"      - {u}")
+    hidden = []
+    for i in items():
+        if i["done"] or i["slug"] == slug:
+            continue
+        shared = overlap(missed, i["writes"])
+        if shared:
+            hidden.append((i["slug"], shared))
+    return hidden
+
+
 def finish(slug: str) -> None:
     """Close an item: rewrite its relative links, then git mv it into work/done/.
 
@@ -575,6 +631,16 @@ def finish(slug: str) -> None:
         print("  (moved without git mv — the item was not tracked yet)")
     n = len(re.findall(r"\]\(\.\./(?!\.\./)", text))
     print(f"closed work/{slug}.md -> work/done/{slug}.md" + (f" ({n} links re-rooted)" if n else ""))
+
+    # Ground the declaration against what the branch really did. This is the only moment
+    # the truth is knowable, and an unchecked `writes:` is worse than none: it licenses
+    # the confidence that two items are safe to run side by side.
+    for other, shared in report_declaration_drift(slug):
+        print(f"\n  !! an undeclared path collides with an OPEN item: {other}")
+        print(f"     on: {', '.join(shared)}")
+        print(f"     Anyone told those two were in different lanes was told wrong.")
+        print(f"     Add these paths to `writes:` in work/done/{slug}.md before merging,")
+        print(f"     so the next session's lane graph is right.")
 
 
 def merge_driver(name: str, dest: str) -> int:

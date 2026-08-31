@@ -190,6 +190,42 @@ def test_contention_is_computed_over_subtrees_not_just_exact_paths():
     assert not board.overlap(["results/v10/"], ["results/v10_other/x.json"])
 
 
+def test_an_undeclared_write_is_caught_when_an_item_is_closed():
+    """`writes:` is filled in when an item is OPENED -- before the work is done.
+
+    Lesson 34 is exactly about such a field: a person who does not know a value leaves it
+    blank, and an LLM session produces a confident, plausible, wrong one. A blank gets
+    investigated; a confident wrong value does not. So the field cannot be trusted on its
+    own -- it has to be grounded against something that knows.
+
+    This is not a hypothetical risk. The FIRST item ever to carry the field under-declared
+    four contended paths, one of which (tests/test_review_ui_symmetry.py) collides with
+    `review-verdict-axes` -- an item the lane map was printing as safe to run concurrently
+    at that exact moment. An unchecked declaration is worse than none: it licenses the
+    confidence that two sessions cannot hurt each other.
+
+    Verified by simulating the failure it guards (Lesson 31).
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    # An undeclared path that another open item writes must surface as a collision...
+    victim = next((i for i in board.items() if not i["done"] and i["writes"]), None)
+    assert victim, "no open item declares writes -- nothing to test against"
+    stolen = victim["writes"][0]
+    hidden = [(i["slug"], board.overlap([stolen], i["writes"]))
+              for i in board.items() if not i["done"]]
+    assert any(sl == victim["slug"] and sh for sl, sh in hidden), (
+        f"overlap() no longer matches {stolen} against the item that declares it")
+
+    # ...and the bookkeeping every item touches by construction must NOT, or the report
+    # would cry wolf on every single close and stop being read.
+    for p in ("STATE.md", "WORK.md", "docs/findings/x.md", "lessons/L-999-x.md"):
+        assert p.startswith(board.UNCONTENDED), f"{p} should be exempt from drift reporting"
+
+
 def test_blocked_by_and_awaiting_resolve():
     """A dependency pointing at nothing parks work silently. Both kinds must resolve:
     an item slug, or a `jeff:` question that comms/JEFF.md actually lists."""

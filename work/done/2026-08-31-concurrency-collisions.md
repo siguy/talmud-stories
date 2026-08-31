@@ -4,7 +4,7 @@ capability: []
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [work/, scripts/board.py, tests/test_bookkeeping.py, .gitattributes, requirements.txt, CLAUDE.md]
+writes: [work/, scripts/board.py, tests/test_bookkeeping.py, .gitattributes, requirements.txt, CLAUDE.md, .githooks/post-merge, docs/technical/integrating-concurrent-work.md, tests/test_kiddushin_list_parse.py, tests/test_review_ui_symmetry.py]
 finding: docs/findings/2026-08-31-concurrent-work-collisions.md
 superseded_by:
 ---
