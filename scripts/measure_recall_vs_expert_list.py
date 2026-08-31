@@ -33,8 +33,10 @@ import re
 import subprocess
 import sys
 import tempfile
-from collections import defaultdict
+from collections import defaultdict, namedtuple
 from pathlib import Path
+
+Triage = namedtuple('Triage', 'examined skipped')
 
 PROJECT_ROOT = Path(__file__).parent.parent
 logging.basicConfig(
@@ -96,8 +98,51 @@ def parse_expert_doc(path, tractate):
     return stories
 
 
+def load_expert_json(path, which):
+    """Read a pre-parsed expert list instead of re-parsing the source document.
+
+    Use this, never `parse_expert_doc`, on the Kiddushin .doc: the line-based
+    parser returns 105 entries there, 9 of them Jeff's English review comments
+    relocated to the end of the file, where they inherit the last daf seen
+    (Lesson 28). `scripts/parse_kiddushin_list.py` reads the OLE table instead
+    and returns 95, each carrying its own provenance flags.
+
+    Which entries form the denominator is a provenance question, not a filter
+    detail — see docs/findings/2026-08-30-appendix-provenance-correction.md:
+
+      recall  `counts_for_recall` — the 90 whose presence on the list cannot
+              flatter us. Excludes the four appendix cases that are on the list
+              *because we proposed them*; keeps 81b, which is there because he
+              read a page we surfaced and found a story we had missed, so
+              dropping it is what would inflate the number.
+      blind   `blind` — the 89 he wrote with no output of ours in front of him.
+      all     everything except the one duplicate (94).
+    """
+    keep = {'recall': lambda s: s['counts_for_recall'],
+            'blind': lambda s: s['blind'],
+            'all': lambda s: True}[which]
+    data = json.loads(Path(path).read_text())
+    stories = [{'id': s['id'], 'ref': s['ref'], 'text': s['text'], 'words': s['words'],
+                'blind': s['blind'], 'in_appendix': s['in_appendix']}
+               for s in data['stories'] if s['duplicate_of'] is None and keep(s)]
+    log.info('loaded %s: %d of %d entries (--expert-filter %s)',
+             Path(path).name, len(stories), len(data['stories']), which)
+    return stories
+
+
 def load_detected(paths):
-    """Returns (units, spans, withheld).
+    """Returns (units, spans, withheld, triage, rejected).
+
+    `triage` is the shipped keep/skip decision per page, read from
+    `skipped_by_triage`. That flag is the decision *after* the Wave 1 lexical
+    override, which forces Stage 2 on a page holding a canonical story
+    introducer whatever Stage 1 said — so it is the number that describes what
+    the pipeline actually examined, and it is smaller than `triage_summary.skipped`.
+
+    `rejected` and `accepted` partition `spans` by classification. Both stay
+    inside `spans`, because Detection proposes and does not judge (FRAMEWORK
+    §1.2); the split is reported separately so a Classification failure is never
+    filed as a Detection miss (Lesson 30).
 
     `withheld` holds the spans that `filter_mishnah_only_stories()` moved out of
     `stories` and into `mishnah_stories`. They are reported separately and never
@@ -107,15 +152,21 @@ def load_detected(paths):
     story was indistinguishable from a miss (see docs/history/2026-08-29-PLAN-wave6-story-criteria.md).
     """
     units, spans, withheld = [], defaultdict(list), defaultdict(list)
+    rejected, accepted = defaultdict(list), defaultdict(list)
+    examined, skipped = set(), set()
     for path in paths:
         for page in json.loads(Path(path).read_text())['pages']:
             spans[page['ref']] += [(s['start_segment'], s['end_segment']) for s in page.get('stories', [])]
+            for s in page.get('stories', []):
+                table = rejected if s.get('classification') == 'NOT_A_STORY' else accepted
+                table[page['ref']].append((s['start_segment'], s['end_segment']))
             withheld[page['ref']] += [(s['start_segment'], s['end_segment'])
                                       for s in page.get('mishnah_stories', [])]
             units += [(page['ref'], s['index'], grams(s['hebrew'])) for s in page.get('segments', [])]
+            (skipped if page.get('skipped_by_triage') else examined).add(page['ref'])
     daf = lambda ref: (int(re.search(r'(\d+)', ref).group(1)), 0 if ref.rstrip()[-1] == 'a' else 1)
     units.sort(key=lambda u: (daf(u[0]), u[1]))
-    return units, spans, withheld
+    return units, spans, withheld, Triage(examined, skipped), rejected, accepted
 
 
 def locate(story_grams, units, index, max_window=14, seeds=12):
@@ -142,16 +193,24 @@ def locate(story_grams, units, index, max_window=14, seeds=12):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--expert-doc', required=True)
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument('--expert-doc', help='parse the .doc directly (Ketubot)')
+    source.add_argument('--expert-json', help='pre-parsed list (Kiddushin — see load_expert_json)')
+    ap.add_argument('--expert-filter', default='recall', choices=['recall', 'blind', 'all'],
+                    help='which entries form the denominator; --expert-json only')
     ap.add_argument('--detected', nargs='+', required=True)
     ap.add_argument('--golden')
     ap.add_argument('--tractate', default='Ketubot')
     ap.add_argument('--out')
     args = ap.parse_args()
 
-    expert = parse_expert_doc(args.expert_doc, args.tractate)
-    units, detected, withheld = load_detected(args.detected)
-    log.info('detector corpus: %d segments across %d dapim', len(units), len({u[0] for u in units}))
+    expert = (parse_expert_doc(args.expert_doc, args.tractate) if args.expert_doc
+              else load_expert_json(args.expert_json, args.expert_filter))
+    units, detected, withheld, triage, rejected, accepted = load_detected(args.detected)
+    pages = len(triage.examined) + len(triage.skipped)
+    log.info('detector corpus: %d segments across %d dapim; triage examined %d/%d pages (%.0f%%)',
+             len(units), len({u[0] for u in units}), len(triage.examined), pages,
+             100 * len(triage.examined) / pages)
 
     golden = defaultdict(list)
     if args.golden:
@@ -169,9 +228,13 @@ def main():
         cov, start, end = locate(gs, units, index)
         window = [(units[i][0], units[i][1]) for i in range(start, end + 1)] if start is not None else []
         covered = lambda table: any(lo <= ix <= hi for ref, ix in window for lo, hi in table.get(ref, []))
+        pages_touched = sorted({ref for ref, _ in window})
         rows.append({**story, 'coverage': round(cov, 3), 'segments': len(window),
                      'located': window[:1] + window[-1:],
+                     'pages_touched': pages_touched,
+                     'survived_triage': any(ref in triage.examined for ref in pages_touched),
                      'in_detector': covered(detected),
+                     'only_rejected': covered(rejected) and not covered(accepted),
                      'in_mishnah_filtered': covered(withheld),
                      'in_golden': covered(golden) if args.golden else None})
 
@@ -179,6 +242,32 @@ def main():
     unlocated = [r for r in rows if r['coverage'] < 0.6]
     log.info('RECALL vs expert list: %d/%d = %.1f%%  (unlocated in text: %d)',
              len(found), len(rows), 100 * len(found) / len(rows), len(unlocated))
+
+    # Triage and Detection are separate capabilities and compose (FRAMEWORK §2b):
+    #   triage recall x detection-given-triage = the end-to-end figure above.
+    # A story lost to triage sits on pages that were never examined, so no Stage 2
+    # prompt could have reached it; filing it as a Detection miss hides where the
+    # fix belongs. Same reason `only_rejected` is pulled out: proposed-then-rejected
+    # is Classification (FRAMEWORK §1.2, Lesson 30).
+    survived = [r for r in rows if r['survived_triage']]
+    kept_missed = [r for r in survived if not r['in_detector']]
+    triage_lost = [r for r in rows if not r['survived_triage']]
+    log.info('TRIAGE recall: %d/%d = %.1f%%  while examining %d/%d pages (%.0f%%); %d lost outright',
+             len(survived), len(rows), 100 * len(survived) / len(rows),
+             len(triage.examined), pages, 100 * len(triage.examined) / pages, len(triage_lost))
+    log.info('DETECTION recall given the page survived triage: %d/%d = %.1f%%',
+             len(survived) - len(kept_missed), len(survived),
+             100 * (len(survived) - len(kept_missed)) / len(survived) if survived else 0.0)
+    log.info('CAUSE of the %d misses: %d triage discarded the page, %d page examined and '
+             'nothing proposed in range', len(rows) - len(found), len(triage_lost), len(kept_missed))
+    only_rejected = [r for r in found if r['only_rejected']]
+    log.info('CLASSIFICATION, reported apart: %d located stories are covered ONLY by a span '
+             'this run classified NOT_A_STORY — counted as FOUND above, because Detection '
+             'proposes and does not judge', len(only_rejected))
+    for r in only_rejected:
+        log.info('  REJECTED %s: %s', r['ref'], r['text'][:80])
+    for r in triage_lost:
+        log.info('  TRIAGE-LOST %s (pages %s): %s', r['ref'], ','.join(r['pages_touched']), r['text'][:70])
     if args.golden:
         g = sum(1 for r in rows if r['in_golden'])
         log.info('GOLDEN coverage of expert list: %d/%d = %.1f%%', g, len(rows), 100 * g / len(rows))

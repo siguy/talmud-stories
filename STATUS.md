@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-08-30 (evening).** Rewritten every session, never appended.
+**Last rewritten: 2026-08-31.** Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -8,54 +8,53 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**Jeff sent expert lists for four more tractates** (`jeff comms/8-30-2026/`), with:
-*"I will get to all this soon. But here is the kiddushin list I have."* — so **the
-boundary question is still unanswered** and capability 4 stays blocked.
+**Kiddushin's blind list has been spent, and it moved three cells — two of them in the
+opposite direction from what this file said yesterday.**
 
-Rough parse: **Gittin 112, Yevamot 102, Eruvin 73** — indicated, not measured.
-**Kiddushin is now parsed properly: 95 stories, measured** (`NEXT/05` done). The rough
-figure was 105, of which 9 were Jeff's own English review comments and 4 were
-parallels-column citations. 81b no longer appears to hold 11 stories; it holds 4.
-→ [`docs/findings/2026-08-30-kiddushin-list-parse.md`](docs/findings/2026-08-30-kiddushin-list-parse.md)
+**1. Kiddushin's recall deficit is Triage's, not Detection's.**
+Triage measured for the first time: **95.6%** (86 of 90) while examining **38%** of pages.
+Detection, measured on the pages that survived triage, is **97.7%** — against Ketubot's
+**97.9%**. A difference of one story. The entire 2.7-point end-to-end gap (93.3% vs 96.0%)
+is Triage, which Kiddushin skips 62% of the tractate to buy.
+→ [`2026-08-31-kiddushin-recall.md`](docs/findings/2026-08-31-kiddushin-recall.md)
 
-Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
-can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
-Kiddushin now has one too, so three scoreboard cells that read "unmeasured" for the life
-of the project are unblocked — **06, 07 and 08 are ready to run.**
+Yesterday this file called 93.3% "the first like-for-like comparison of the two
+tractates." It was like-for-like on the *pipeline*, not on the capability. **Detection
+generalizes across tractates** — the first evidence either way, since Ketubot was the
+only blind list we had.
 
-**The list is already contaminated, and we nearly missed it.**
-`Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
-that you and Claude found that were not on my list"* — cases from across our runs, which
-he annotated and **merged into his list**. None of the five is blind: each is there
-because we put the page in front of him. Plus the one he marked `הוספתי--י.ר.` himself.
+**2. Kiddushin's boundary score was 85% / 91% all along, not 60% / 73%.**
+The old figure came from 15 correction targets with a ±7-point noise band. Built blind
+from the 2005 list — **176 targets, 130 scorable** — Kiddushin clears the ≥75% gate and
+scores **above Ketubot's 80% / 84%**. It is above the gate on the *shipped untrimmed*
+output alone (77% / 85%).
+→ [`2026-08-31-kiddushin-boundary-set.md`](docs/findings/2026-08-31-kiddushin-boundary-set.md)
 
-But **blind and "counts for recall" are different questions.** Circularity only matters
-in the direction that *flatters*. Four of the five (33a, 45a, 53a, 71a) are in his list
-because **we proposed them**, so counting them could only raise recall — excluded. The
-fifth (**81b**) we **never proposed**; he found it in page text our review UI displayed,
-so it can only count *against* us, and dropping it is what inflates the number.
+**The noise demonstration is exact.** Across two identical-code runs **one target**
+changes verdict — Kiddushin 66b seg 0, NEAR→HIT. On 15 targets that flip is 6.7 points and
+reads as a result; on 130 it is 0.77 and reads as nothing. Same noise, same single target.
 
-**Recall denominator: 90** — 89 strictly blind, plus 81b. →
-[`docs/findings/2026-08-30-appendix-provenance-correction.md`](docs/findings/2026-08-30-appendix-provenance-correction.md)
+**3. The clause-edge ceiling is not a Ketubot artifact.** 88% of Jeff's Kiddushin
+boundaries land on a clause edge against Ketubot's 87%. Split by direction: **ends 95% /
+96%, starts 80% / 79%**. So the residual 12-13% that no clause-anchored prompt can reach
+is almost entirely a **start** problem — which is where a finer splitter would have to pay
+for itself.
 
-We caught this only because the appendix survived as a separate file.
-
-**Gittin, Yevamot and Eruvin cannot have this problem — and that makes them the best
-ground truth we have.** We have never run the detector on those tractates, so there is
-nothing of ours for Jeff to have merged. Their lists are pristine. They are also the only
-place we can run a *floor* test: whatever is on his list we should at minimum find, with
-no prior output to have primed either side. The contamination risk there is entirely in
-the future, and it starts the moment we send him results.
+**What this costs to believe: one run per tractate on recall.** Boundaries now have a
+measured noise floor on both tractates; **recall still has none anywhere**, because
+measuring it means re-running the detector. Both recall figures are single runs of a model
+known to move ~3% of its own output (Lesson 22).
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
-| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
-| **[2 Detection](docs/capabilities/2_detection.md)** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **83.3%** strict — **NEW** | ≥95% *(provisional)* |
+| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving, BLIND | **98.0%** at 44% of pages ✓ | **95.6%** at 38% of pages — **NEW** ✗ | ≥98% *(provisional)* |
+| **[2 Detection](docs/capabilities/2_detection.md)** | recall given the page survived triage, BLIND | **97.9%** ✓ | **97.7%** ✓ — **NEW** | ≥95% *(provisional)* |
+| | *end-to-end recall (triage × detection), BLIND* | *96.0% loose / 87.9% strict* | *93.3% loose / 83.3% strict* | — |
 | | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
 | **[3 Classification](docs/capabilities/3_classification.md)** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
-| **[4 Boundaries](docs/capabilities/4_boundaries.md)** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
+| **[4 Boundaries](docs/capabilities/4_boundaries.md)** | hit / near, BLIND | **80% / 84%** ✓ (ceiling ~87%) | **85% / 91%** ✓ — **NEW** (ceiling ~88%) | ≥75% *(provisional)* |
 | **[5 Review](docs/capabilities/5_review.md)** | days per tractate | not started | not started | days, not weeks *(derived)* |
 | **[6 Publication](docs/capabilities/6_publication.md)** | — | not started | not started | — |
 
@@ -64,7 +63,22 @@ the future, and it starts the moment we send him results.
 that is a product decision, not a technical one. Two questions are open there: one for
 Simon, one for Jeff.
 
-**Every measurable capability is now at or above its provisional gate.** Classification
+**One cell now sits below its gate, and it is the one that matters most: Kiddushin
+Triage, 95.6% against ≥98%.** That is the only failing cell on the board, and per
+FRAMEWORK §2 it is the capability whose errors are invisible and permanent. It is also the
+gate FRAMEWORK itself calls "circular reasoning in a principle's clothing" — set to
+Ketubot's own value, on the tractate that happens to skip *less*. So the honest reading is
+not "Kiddushin triage is broken" but **"the trade is priced differently on the two
+tractates and nobody chose either price"**: Kiddushin gives up 2.4 more points of recall
+for 6 more points of corpus skipped, about one story per 1.5 points of pages not examined.
+That is the open end-to-end question for Simon (FRAMEWORK §2b), now with a number attached.
+
+**The Detection row is quoted differently than it was yesterday, on purpose.** The
+headline is now recall *given the page survived triage*, because the end-to-end figure
+charges Triage's losses to Detection as well and the two capabilities have separate gates.
+Both readings are in the table.
+
+Classification
 measured 2026-08-30 on the current detector with the immutable harness: Ketubot 89.2%,
 Kiddushin 85.3% — correcting an earlier claim in this file that we had no current number.
 
@@ -88,57 +102,52 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
 
 ## What changed today
 
-- **Measurement became honest.** The boundary test set was built entirely from Jeff's
-  corrections, so it could never reveal a boundary we had right and broke. Rebuilt from
-  his blind 2005 list: **35 gradeable targets → 249**, run-to-run noise **7 points → 0**.
-  → [`docs/findings/2026-08-30-boundary-ruler-rebuild.md`](docs/findings/2026-08-30-boundary-ruler-rebuild.md)
-- **Boundary trimming is worth much less than claimed.** The old ruler said it doubled
-  us on Ketubot 61-112 (33%→67%). The blind ruler says untrimmed was already 79% right.
-  → [`docs/findings/2026-08-30-trim-asymmetry.md`](docs/findings/2026-08-30-trim-asymmetry.md)
-- **Triage is a trade, not a defect.** 98% recall while examining 44% of pages. Worth
-  pricing, not reflexively fixing.
-- **The six recall misses do NOT split into two populations — all six are absent from
-  the golden.** The claimed exception (Ketubot 77a) was a locator artifact: Jeff's blind
-  entry there is segs **13-14** (Gemara, 94% text alignment) while the golden's 77a story
-  is seg **8** (a Mishnah ma'aseh, 1% alignment). Two different stories on one daf, joined
-  only by the recall locator's coarse 7-segment window.
-  → [`docs/findings/2026-08-30-recall-miss-diagnosis.md`](docs/findings/2026-08-30-recall-miss-diagnosis.md)
-- **Ketubot 77a is a Classification miss, not a Detection one** (measured, 8 identical
-  re-runs, `NEXT/02`). Segs 13-14 are **proposed in 7 of 8 runs** and rejected as
-  `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
-  disqualifiers. The empty production `stories` list is the ~1/8 tail. Seed case written
-  into [`docs/history/2026-08-29-PLAN-wave6-story-criteria.md`](docs/history/2026-08-29-PLAN-wave6-story-criteria.md).
-- **A Mishnah filter was silently deleting expert-validated stories. Half of it was a
-  bug; that half is now fixed and measured.** `filter_mishnah_only_stories()` moves
-  stories to `mishnah_stories`, which **neither** `measure_recall_vs_expert_list.py`
-  **nor** `evaluate_golden.py` reads. It removed 4 Ketubot stories the golden accepts —
-  **4 of the 15 golden false negatives, 27%** (an earlier line here said "31% of 13";
-  13 is the *post-fix* count, 15 was the real one). Two of the 4 were not Mishnah at all:
-  `_tag_mishnah_segments()` read every chapter boundary as a mid-Mishnah page, because
-  Sefaria opens a new chapter's first Mishnah with the chapter incipit instead of
-  `מתני׳`. 72 segments on 12 pages; Gittin and Yevamot would have hit it on 20 more.
-  **Golden TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
-  precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
-  the harness nobody reads for recall was the only one that could see the loss, which is
-  why it survived four waves. → Lesson 27,
-  [`docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md)
-  The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
-  question for Jeff, not a bug. Now queued below.
-- **A runner bug was fixed and guarded:** a failed API call could be recorded as a
-  considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
-- **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
-  `work/2026-08-30-second-story-guard.md`.
-- **One ruler now measures Detection and Classification for both tractates.**
-  `scripts/build_ruler.py` joins the blind lists, the detector proposals and all six
-  review rounds — including the 16 Kiddushin verdicts that had never been folded in. It
-  reproduces the published 96.0% and 86% as its regression check, then shows what those
-  numbers were hiding. → `results/rulers/`
-- **Kiddushin has a blind list.** 95 stories, parsed from the .doc's own table structure
-  rather than a converter's line dump; the parser reproduces Ketubot's established 149
-  as its regression check, and all 95 texts match an independent renderer character for
-  character. Jeff's 9 review comments came back with their **exact anchor positions**, so
-  each attaches to the passage he was looking at — which is what makes them usable to
-  `NEXT/08`. → Lesson 28
+- **Kiddushin Triage measured, and it owns the whole recall gap.** 95.6% (86/90) at 38%
+  of pages; Detection given triage is 97.7% vs Ketubot's 97.9%. Cause split of the 6
+  misses: **4 triage-discarded, 2 examined-and-nothing-proposed.** `triage × detection =
+  end-to-end` re-checked and holds on a second tractate (0.956 × 0.977 = 0.934).
+  → [`2026-08-31-kiddushin-recall.md`](docs/findings/2026-08-31-kiddushin-recall.md)
+- **A blind Kiddushin boundary set: 176 targets, noise 7 points → 0.77.** 85% / 91%,
+  above the gate and above Ketubot. The old 60% / 73% is retired, not averaged.
+  → [`2026-08-31-kiddushin-boundary-set.md`](docs/findings/2026-08-31-kiddushin-boundary-set.md)
+- **The clause-edge ceiling generalizes (88% vs 87%) and the residual is a *start*
+  problem** — ends are 95-96% clause-aligned on both tractates, starts 79-80%.
+- **Two Kiddushin stories are proposed and then classified `NOT_A_STORY`** (44a, 58a),
+  which is why the figure reaching output is **91.1%**, not 93.3%. Both are
+  rabbis-in-conversation passages — the material under `jeff:speech-act-policy`. Ketubot
+  loses nothing this way in the current run.
+- **Kiddushin 81b carries two of Jeff's stories, not one.** Every prior document discusses
+  only the appendix case (R. Meir / R. Tarfon). The second — Rav Hanan of Nehardea, segs
+  4-10, 100% text alignment — is blind, sits on an examined page, and was **never
+  proposed**.
+- **Wave 1's lexical override priced against a blind set for the first time: +1.1 points
+  of triage recall** (one story, Kiddushin 49b) for 9 extra Stage 2 calls. Stage 1 alone
+  would skip 109 of 162 pages; the shipped figure is 100.
+- **`STATE.md`'s Triage and Detection cells are derived now, not pointers.** The recall
+  harness writes `survived_triage` per story, so the generator reads the number instead of
+  naming a file — closing one of the three cells its own footnote calls a known gap.
+  Detection is quoted there **given the page survived triage**, with the end-to-end figure
+  beneath it.
+- **Four latent measurement defects fixed before they could be quoted, and three are the
+  same mistake: a literal standing in for a property.** `score_boundary_targets.py`
+  classified blind-vs-corrections by a *filename*, so the new Kiddushin set would have been
+  reported as a corrections set — Lesson 24's pooling, arriving through a string
+  comparison. `board.py` decided whether a tractate had a triage number with
+  `if t == "ketubot"`, so Kiddushin's cell would have gone on reading "never measured"
+  however many times it was measured. `measure_recall_vs_expert_list.py` had no committed
+  triage-recall measurement at all — the published 98.0% was computed by hand while writing
+  FRAMEWORK. And the fourth: changing its `load_detected` signature broke `build_ruler.py`,
+  which the suite caught immediately; the caller now unpacks by name so the next such change
+  fails loudly rather than silently.
+
+- **Lesson 35** — a composed metric names the pipeline, not the capability. Lesson 30's
+  shape one level up: there the pooling was across *reasons for a rejection*, here across
+  *stages of a pipeline*. Both send the fix to the wrong place.
+
+**The previous session's changes** (the boundary ruler rebuild, the Mishnah-tagger fix,
+the Ketubot 77a re-diagnosis, the detection/classification ruler) are recorded in
+[`docs/capabilities/`](docs/capabilities/) and their dated findings. This section is
+rotated each session, not appended.
 
 ## Waiting on Jeff — email sent 2026-08-30
 
@@ -147,7 +156,7 @@ part of the story we display, or the discussion that follows it? His 2005 lists 
 his review notes say cut it. Blocks the end rule for capability 4.
 → draft: [`comms/sent/2026-08-30-email-jeff.md`](comms/sent/2026-08-30-email-jeff.md)
 
-**To add when we next write — four items:**
+**To add when we next write — five items:**
 
 1. At what error rate does reviewing our output become worse than working from scratch?
    That number sets the Classification gate and only he can answer it.
@@ -164,6 +173,16 @@ his review notes say cut it. Blocks the end rule for capability 4.
    is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8); his is at
    segs 13-14. The substance stands (we do miss his), the claim did not. Pairs naturally
    with item 2 — same daf.
+5. **Two of his own Kiddushin stories are ones we throw away as `NOT_A_STORY`**, and they
+   are the cleanest test case yet for `jeff:speech-act-policy` — real passages he listed,
+   which our current criteria reject. **44a**, `ר' אסי לא על לבי מדרשא` (R. Assi did not
+   go to the study house), and **58a**,
+   `בעא מיניה ר' חייא בר אבין מרב הונא` (R. Hiyya b. Avin asked R. Huna). Both are
+   rabbis-in-conversation. Neither is in our golden, so no round has ever put them in
+   front of him. Show him these two rather than restating the policy question in the
+   abstract. Measured 2026-08-31; they are why Kiddushin's recall reaching output is
+   91.1% and not 93.3%
+   ([`kiddushin_recall` §4](docs/findings/2026-08-31-kiddushin-recall.md)).
 
 **Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
 still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
@@ -172,19 +191,33 @@ verification. Point it at `results/v10/wave4_notrim/` before showing him anythin
 
 ## Next — items in [`work/`](work/), each self-contained
 
-**Lead with Kiddushin only.** It is the sole new tractate where we already have a mature
-detector output (95 stories, a golden set, 8 review rounds), so its list pays off
-immediately with zero API calls. Gittin, Yevamot and Eruvin have **no detector output at
-all** — their lists are worth nothing until the detector runs there, which is a larger
-job that should wait until Kiddushin shows what we get.
+**Kiddushin's blind list is now largely spent.** Two of its three items are done; only
+`kiddushin-comments-harvest` remains, and it is the one that needs no list at all — Jeff's
+10 anchored remarks, each carrying the exact passage he was looking at.
+
+**What today's numbers point at next, in order:**
+
+1. **`triage-recall-price`** — promoted from "lower value". It was the cheapest item on
+   the board yesterday and is now the one the scoreboard's only failing cell asks for.
+   Re-run Stage 2 on the discarded pages (124 Ketubot, 100 Kiddushin, text already on
+   disk) and produce the exchange rate that FRAMEWORK §1.1 says a triage bar is meaningless
+   without. It is also the only route to the single number that would settle four
+   provisional gates at once.
+2. **`opener-lexicon`** — mine openers rather than invent them. Both remaining Kiddushin
+   Detection misses and three of the four triage losses open on frames outside the five
+   hand-written introducers, and the override is now measured to be worth +1.1 points of
+   triage recall when it fires.
+3. **`kiddushin-comments-harvest`** — unchanged, and now better targeted: several of the
+   10 remarks are boundary corrections, and there is finally a Kiddushin boundary gate
+   that can tell whether acting on them helps.
 
 ```
-                          ┌── kiddushin-recall            (triage + detection)
-kiddushin-list-parse DONE ┼── kiddushin-boundary-set      all three unblocked,
-                          └── kiddushin-comments-harvest  and independent of each other
+kiddushin-list-parse DONE ─┬─ kiddushin-recall        DONE   (triage + detection)
+                           ├─ kiddushin-boundary-set  DONE   (176 blind targets)
+                           └─ kiddushin-comments-harvest     still open
 
 start any time:   review-verdict-axes · kiddushin-12a-dedup · opener-lexicon
-lower value:      triage-recall-price · second-story-guard
+now the priority: triage-recall-price
 open calls:       kiddushin-parse-open-calls   (denominator 90; item 1b is for Jeff)
 incomplete:       golden-completeness
 ```
@@ -195,19 +228,18 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[kiddushin-recall](work/2026-08-30-kiddushin-recall.md)** — report over both denominators (90 / 94) | 1, 2 | — | no |
-| **[kiddushin-boundary-set](work/2026-08-30-kiddushin-boundary-set.md)** — ~190 targets, kills the ±7pt noise | 4 | — | no |
+| **[triage-recall-price](work/2026-08-30-triage-recall-price.md)** — price the trade over the discarded pages. **Now the highest-value item**: Kiddushin Triage is the board's only failing cell and this is what its gate is missing | 1 | — | no |
+| **[opener-lexicon](work/2026-08-30-opener-lexicon.md)** — mine openers, never invent them. Targets the triage losses directly | 1, 2 | — | no |
 | **[kiddushin-comments-harvest](work/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
-| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. Planned as step 7a | 3, 5 | — | no |
-| [triage-recall-price](work/2026-08-30-triage-recall-price.md) — price the trade over the 124 discarded pages | 1 | — | no |
+| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate | 3, 5 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
 | [kiddushin-parse-open-calls](work/2026-08-30-kiddushin-parse-open-calls.md) | ground truth | — | **1b** |
 | **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict (the ruler names all 12) | 3, ground truth | — | no |
 | [kiddushin-12a-dedup](work/2026-08-30-kiddushin-12a-dedup.md) — one detection covering two stories | 2 | — | no |
 | [story-criteria](work/2026-08-30-story-criteria.md) — was Wave 6; 6a runs now, 6c blocked by design | 3 | comments-harvest | **6b** |
-| [opener-lexicon](work/2026-08-30-opener-lexicon.md) — was Wave 7; mine openers, never invent them | 1, 2 | — | no |
 
-**Done today** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
+**Done 2026-08-31** — `kiddushin-recall` · `kiddushin-boundary-set`.
+**Done 2026-08-30** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
 `ketubot-golden-additions` · `kiddushin-list-parse` · `review-ui-display-asymmetry`.
 
 \* `second-story-guard` is **not blocked**: deleting a whole second story is wrong
@@ -240,13 +272,17 @@ Rules in `lessons/`. Ready work in `work/`. Never append status to a plan.
 
 ```
 BLIND   (can measure recall)
-  Ketubot    149 stories (2005 list) · 294 derived boundary targets
+  Ketubot    149 stories (2005 list) · 294 derived boundary targets, 229 scorable
   Kiddushin   90 stories, MEASURED  -> results/expert_lists/kiddushin_2005.json
                  95 parsed, minus 1 he added himself, minus 4 appendix entries we
                  proposed ourselves (circular; counting them could only flatter).
                  The 5th appendix case (81b) we never proposed, so it STAYS -- it
                  can only count against us. Denominator 90; strictly blind 89.
-                 ~180 boundary targets derivable from the 89 (NEXT/07)
+                 176 boundary targets, 130 scorable  <- BUILT 08-31, from the 89
+                 -> tests/expert_boundary_targets_2005_kiddushin.json
+                 The two filters differ ON PURPOSE: recall uses `counts_for_recall`
+                 (90, keeps 81b), boundaries use `blind` (89, drops all 5 appendix
+                 cases). A boundary target must be an extent JEFF chose.
   Gittin 112 · Yevamot 102 · Eruvin 73   <- PRISTINE. We have never run the detector on
                                             these, so nothing of ours can have been
                                             merged in. Each needs its own parse; a
@@ -255,7 +291,9 @@ CIRCULAR (precision and consistency only — never recall)
   Ketubot   golden: 187 entries, 164 accepted (23 NOT_A_STORY) — v7 + v9, many rounds
   Kiddushin golden:  96 entries,  85 accepted (11 NOT_A_STORY) — v7 only, ONE round
                      16 verdicts from the May-26 and Jul-06 rounds are NOT folded in
-  70 boundary corrections across 8 review rounds
+  70 boundary corrections across 8 review rounds (27 Kiddushin, 15 of them scorable)
+     -- report these APART from the blind sets, never pooled (Lesson 24). On Kiddushin
+        the two disagree on 4 of the 14 boundaries they share.
   10 Kiddushin review remarks, each anchored to its passage (NEXT/08)
 
 SEFARIA TEXT on hand (text only — no detector has been run on these)
@@ -271,11 +309,13 @@ page** — ranges derived from Sefaria's own index, not guessed, and verified by
 above are now **measured** (112 / 102 / 73 reproduce exactly), and all three lists
 are genuinely blind — 0 English review comments, 0 `הוספתי` markers, unlike Kiddushin's.
 
-`scripts/build_boundary_testset_2005.py` **cannot yet** build blind boundary sets for
-these three, contrary to `NEXT/09`'s closing note: its `load_units` globs only
-`results/v10/wave4_notrim/`, so it returns **0 segments** for all three (verified).
-It needs one change — also read `results/sefaria/*.json`. Left undone here because
-`NEXT/07` owns that script.
+`scripts/build_boundary_testset_2005.py` **can** build blind boundary sets for these
+three — correcting this file's 2026-08-30 claim that it could not. Its `load_units` reads
+`results/sefaria/*.json` as well as the detector outputs, and returns 2,990 / 3,865 /
+3,645 segments for Gittin / Yevamot / Eruvin (verified 2026-08-31). What is missing is the
+other half: each list must first be parsed to JSON the way Kiddushin's was, because
+`--expert-json` is the only input the builder now accepts for a list that is not the
+Ketubot `.doc` (Lesson 28).
 
 **But their per-daf attribution has a defect, in the same family as Kiddushin's.**
 `parse_expert_doc` only matches single-amud headers, so **21 stories** under two-amud

@@ -118,7 +118,11 @@ def main():
 
     targets = load_targets(args.targets)
     skipped = sum(1 for t in targets if t.get('needs_human'))
-    corrections = sum(1 for t in targets if t['target_file'] != 'expert_boundary_targets_2005.json')
+    # Classify by what the target IS, not by which file it arrived in. The filename
+    # test here was `!= 'expert_boundary_targets_2005.json'`, which silently counted
+    # the blind Kiddushin set as corrections the moment a second 2005 file existed.
+    blind = lambda t: str(t.get('source_round', '')).startswith('jeff_2005_')
+    corrections = sum(1 for t in targets if not blind(t))
     print(f"targets: {len(targets)} pooled from {len(args.targets)} file(s) — "
           f"{corrections} corrections, {len(targets)-corrections} detector-blind (2005 list)"
           + (f"; {skipped} skipped pending human polarity review" if skipped and not args.include_needs_human else ""))
