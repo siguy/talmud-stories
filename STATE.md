@@ -71,7 +71,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
 open       2026-08-30-kiddushin-comments-harvest
-closed     3 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -141,4 +141,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: b3995f3dc4385597 -->
+<!-- board-checksum: 5fca973842514aa9 -->

@@ -49,16 +49,12 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `sefaria-talmud-story-search-Mw1Yg` | `talmud-stories` | clean |
-| `compassionate-curie-09ac68` | `compassionate-curie-09ac68` | clean |
-| `concurrent-session-results-fbe21e` | `concurrent-session-results-fbe21e` | clean |
-| `ecstatic-hawking-546a9e` | `ecstatic-hawking-546a9e` | clean |
-| `kiddushin-list-parse-67a886` | `kiddushin-list-parse-67a886` | clean |
-| `repo-reorganization-execution-bed72b` | `repo-reorganization-execution-bed72b` | **19 FILES** |
-| `strange-haslett-efac50` | `strange-haslett-efac50` | clean |
+| `2026-08-31-composite-blind-to-golden-loss` | `talmud-stories` | **7 FILES** |
+| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **5 FILES** |
+| `state-work-review-40b153` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 6 items, never deleted
+## Done — 7 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -68,4 +64,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Add the 5 blind-list stories missing from the Ketubot golden](work/done/2026-08-30-ketubot-golden-additions.md) | detection, classification | — |
 | [Parse Jeff's Kiddushin story list](work/done/2026-08-30-kiddushin-list-parse.md) | detection, boundaries | [2026-08-30-kiddushin-list-parse.md](docs/findings/2026-08-30-kiddushin-list-parse.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
-<!-- board-checksum: e2d6af7500014d3e -->
+| [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
+<!-- board-checksum: 35ab5f6f15309bb9 -->
