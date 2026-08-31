@@ -14,7 +14,7 @@ end to end without re-deriving decisions.
 ## Critical context (read before touching code)
 
 1. **Approach doc** explains the four items, why we forked to v9, why item 4 cannot move the score, and the gate.
-2. **Lesson 11** (`tasks/lessons.md`): LLM nondeterminism breaks historical baselines. Wave 2's frozen 0.9162 / 0.8962 are NOT the gate. Today's regenerated Wave 2 scores ARE.
+2. **Lesson 11** (`lessons/`): LLM nondeterminism breaks historical baselines. Wave 2's frozen 0.9162 / 0.8962 are NOT the gate. Today's regenerated Wave 2 scores ARE.
 3. **Lesson 2**: few-shots for item #9 must come from Ketubot/Berakhot, not Kiddushin.
 4. **Lesson 8**: use abstract pattern descriptions in prompts, not specific Kiddushin passages.
 5. **Lesson 12**: most boundary feedback is text-internal — item 4 addresses this; items 1–3 don't.
@@ -129,7 +129,7 @@ Goal: layer prompt changes one at a time so a regression can be bisected without
   - Files changed
 - [ ] **4.5** Update `CLAUDE.md` "Key Files" table: add v9 entries.
 - [ ] **4.6** Update `docs/technical/VERSION_HISTORY.md` and `docs/technical/HOW_IT_WORKS.md`.
-- [ ] **4.7** Add new Lesson(s) to `tasks/lessons.md` for any surprises encountered.
+- [ ] **4.7** Add new Lesson(s) to `lessons/` for any surprises encountered.
 
 ---
 
@@ -154,7 +154,7 @@ Goal: layer prompt changes one at a time so a regression can be bisected without
 - `CLAUDE.md` (Key Files table)
 - `docs/technical/VERSION_HISTORY.md`
 - `docs/technical/HOW_IT_WORKS.md`
-- `tasks/lessons.md` (if any new lessons)
+- `lessons/` (if any new lessons)
 - `tasks/todo.md` (check off Wave 3 items)
 
 **Untouched (do NOT modify):**

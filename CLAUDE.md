@@ -21,7 +21,7 @@ task, each executable in a fresh session with no other context.
 
 ## Critical Rules
 1. **Validation UIs must display text** (English + Hebrew, story highlighted). Test in browser before claiming done.
-2. **Never use labeled examples from the same pages you're evaluating on** — causes overfitting (see `tasks/lessons.md`, Lesson 2)
+2. **Never use labeled examples from the same pages you're evaluating on** — causes overfitting (see `lessons/`, Lesson 2)
 3. **`scripts/evaluate_golden.py` is IMMUTABLE** — do not modify the evaluation harness during experiments
 
 ## Data Structure
@@ -97,7 +97,7 @@ docs/
   brainstorms/                    #   Design exploration
 tasks/
   todo.md                         #   Current task list with progress
-  lessons.md                      #   Ongoing learning log (append-only)
+  lessons/                      #   Ongoing learning log (append-only)
 tests/                            # Regression tests
 archive/                          # Old versions (reference only)
 ```
@@ -166,7 +166,7 @@ archive/                          # Old versions (reference only)
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
-| `tasks/lessons.md` | Durable rules from past sessions. Read before starting; append after any correction. |
+| `lessons/` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
 ## Git Tags
@@ -185,7 +185,7 @@ When making changes, update these files as relevant:
 - `docs/technical/VERSION_HISTORY.md` - New versions, results
 - `docs/technical/HOW_IT_WORKS.md` - Pipeline changes
 - `docs/findings/2026-03-25-golden-dataset-v10.md` - Golden dataset work
-- `tasks/lessons.md` - After any correction or surprise
+- `lessons/` - After any correction or surprise
 - `CLAUDE.md` - If project structure or key files change
 
 ## Don't

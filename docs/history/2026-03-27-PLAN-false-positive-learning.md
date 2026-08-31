@@ -110,7 +110,7 @@ few-shots, fine-tuning may not be worth the infrastructure cost.
 - [ ] Analyze false positives: count, confidence distribution, error patterns
 - [ ] Compare to Ketubot false positive profile
 - [ ] If total labeled examples ≥ 200: evaluate whether fine-tuning is warranted
-- [ ] Update `tasks/lessons.md` with any new findings
+- [ ] Update `lessons/` with any new findings
 - [ ] Store FP analysis in `docs/golden/fp_analysis_<tractate>.md`
 
 ---
@@ -119,5 +119,5 @@ few-shots, fine-tuning may not be worth the infrastructure cost.
 
 - `docs/golden/error_taxonomy.md` — the 6 error patterns with Jeff's language
 - `docs/golden/research_overfitting_and_generalization.md` — why prompt engineering failed, ranked alternatives
-- `tasks/lessons.md` — Lessons 2 (same-page overfitting), 5 (prompt ceiling), 7 (post-processing > prompt changes), 8 (abstract > specific)
+- `lessons/` — Lessons 2 (same-page overfitting), 5 (prompt ceiling), 7 (post-processing > prompt changes), 8 (abstract > specific)
 - `docs/golden/findings_v10_golden_dataset.md` — full Ketubot session writeup

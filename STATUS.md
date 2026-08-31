@@ -217,7 +217,7 @@ where an entry ends. Its *value* depends on his answer; the work does not.
 | **`STATUS.md`** | where we are. Rewritten each session. **Start here.** |
 | **`FRAMEWORK.md`** | the six capabilities, how each is measured, what the gates are and why. |
 | `tasks/NEXT/*.md` | one self-contained brief per ready task. Delete when done. |
-| `tasks/lessons.md` | 25 durable rules. Append-only. |
+| `lessons/` | 25 durable rules. Append-only. |
 | `docs/golden/**` | dated findings. Immutable once written. |
 | [`docs/capabilities/`](docs/capabilities) | per-capability history: what we tried, what we reverted and why, current best, distance to gate, ceiling, untried. One file per capability, linked from the scoreboard above. |
 | `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
@@ -225,7 +225,7 @@ where an entry ends. Its *value* depends on his answer; the work does not.
 | `FOR_SIMON.md` | the plain-English narrative. |
 
 **The rule:** status here and nowhere else. Findings in a dated `docs/golden/` file.
-Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a plan.
+Rules in `lessons/`. Ready work in `tasks/NEXT/`. Never append status to a plan.
 
 ## Ground truth on hand
 

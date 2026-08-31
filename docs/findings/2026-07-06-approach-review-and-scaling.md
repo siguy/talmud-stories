@@ -404,7 +404,7 @@ clearly worth doing before, not after, the corpus run.
 
 *Sources: pipeline audit of `src/story_detector_v10.py`, `src/event_triage.py`,
 `docs/technical/HOW_IT_WORKS.md`, `docs/technical/VERSION_HISTORY.md`;
-evaluation audit of `scripts/evaluate_golden.py`, `tasks/lessons.md` (15
+evaluation audit of `scripts/evaluate_golden.py`, `lessons/` (15
 lessons), `docs/findings/2026-03-17-error-taxonomy.md`,
 `docs/findings/2026-03-25-overfitting-and-generalization-research.md`, wave
 writeups in `docs/golden/v8/` and `docs/golden/v9/`; golden provenance from

@@ -6,7 +6,7 @@ Every item has a status. This ledger is the source of truth for what still
 needs doing — check it before replying to Jeff or shipping any change.
 
 **Why this file exists:** We have a documented, repeated failure of dropping
-Jeff's feedback (see [tasks/lessons.md](../../tasks/lessons.md) Lesson 1 and
+Jeff's feedback (see [lessons/](../../lessons/README.md) Lesson 1 and
 Lesson 16/17 added this session; and memory `feedback_boundary_corrections.md`:
 "we systematically ignored boundary/merge feedback from Jeff; never split
 feedback processing again"). This ledger is the mechanism that stops it.

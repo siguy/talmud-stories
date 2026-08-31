@@ -91,4 +91,4 @@ purpose is a database of all stories." Do not let any aggada-only heuristic
    legal case vs. matched factual story; pure discussion vs. discussion+action;
    emotional-reaction cases — and gate every future detector on it. This is how
    the criterion stops being a lesson that gets forgotten (see
-   [`tasks/lessons.md`](../../tasks/lessons.md) Lesson 17).
+   [`lessons/`](../../lessons/README.md) Lesson 17).

@@ -100,7 +100,7 @@
 
 **Files modified:** `validation/generators/generate_kiddushin_review_ui.py` (renders `text_span_*` slice).
 
-**Key finding (Lesson 14 — see lessons.md):** Iterative Stage 2 surfaced exactly the story Jeff said was missed (33a seg 5 bathhouse) — and the agreement-with-golden gate penalized it as a false positive. Lesson 13 in action: when the detector overtakes the golden, the metric drops even though quality improved.
+**Key finding (Lesson 14 — see lessons/):** Iterative Stage 2 surfaced exactly the story Jeff said was missed (33a seg 5 bathhouse) — and the agreement-with-golden gate penalized it as a false positive. Lesson 13 in action: when the detector overtakes the golden, the metric drops even though quality improved.
 
 **Commit:** `dcefb30` (Wave 3 ship), `c7fe851` (review UI + email draft)
 
@@ -239,7 +239,7 @@ Added `continuation_check()` method to `story_detector_v7.py`. For stories near 
 - `results/canonical/ketubot_canonical.json` — the golden dataset
 - `scripts/evaluate_golden.py` — IMMUTABLE evaluation harness
 - `docs/golden/` — findings, research, error taxonomy, workflow docs
-- `tasks/lessons.md` — 8 lessons learned
+- `lessons/` — 8 lessons learned
 
 **Documentation:** See `docs/golden/findings_v10_golden_dataset.md` for full writeup.
 
@@ -855,4 +855,4 @@ the chapter-boundary tagger bug (7 pages); the review UI, which still does not s
 `mishnah_stories` to the expert.
 
 **Detail:** [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md).
-**Rule:** `tasks/lessons.md` Lesson 27.
+**Rule:** `lessons/` Lesson 27.

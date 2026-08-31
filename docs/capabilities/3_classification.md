@@ -170,7 +170,7 @@ own reasoning as prompt rules both regressed — badly. The residual false posit
 physical action and two-thirds of true stories do; the distinguishing feature is
 structural (does the narrative serve the legal debate, or the debate the narrative), which
 no additional prompt rule captures
-([Lesson 5](../../tasks/lessons.md), [§3.3](../findings/2026-07-06-approach-review-and-scaling.md)).
+([Lesson 5](../../lessons/README.md), [§3.3](../findings/2026-07-06-approach-review-and-scaling.md)).
 
 **2. The ground truth is contested — by the expert, with himself. This is the ceiling
 that matters, and it is definitional, not technical.**

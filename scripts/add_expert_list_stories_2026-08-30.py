@@ -11,7 +11,7 @@ were never in our labels. That made them invisible to every metric we had --
 not in the golden. They surfaced only because Jeff's list is blind.
 
 Adding them makes the golden honest and the recorded recall DROP. That is the
-point of the change, not a regression (lessons.md Lesson 13).
+point of the change, not a regression (lessons/ Lesson 13).
 
 Every added story carries explicit provenance -- `source: "jeff_2005_list"`,
 `blind: true`, `never_detected: true` -- so no future reader can mistake these
@@ -248,7 +248,7 @@ def build_story(spec):
             'effect_on_metrics': (
                 'Adds a false negative to scripts/evaluate_golden.py. The recorded recall '
                 'falls because the ground truth got more honest, not because detection got '
-                'worse (lessons.md Lesson 13).'),
+                'worse (lessons/ Lesson 13).'),
         },
     }
 

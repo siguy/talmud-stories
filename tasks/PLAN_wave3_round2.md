@@ -46,7 +46,7 @@
 - [ ] 3a. `CLAUDE.md`: bump current state to 2026-06-03, note new Ketubot composite, note Item 4 verdict-mixed
 - [ ] 3b. `tasks/todo.md`: mark Wave 3 follow-up items checked where applicable
 - [ ] 3c. `docs/technical/VERSION_HISTORY.md`: add Round 2 golden update entry
-- [ ] 3d. Add **Lesson 15** to `tasks/lessons.md`: regex-based text-internal boundary editing cannot generalize — pattern markers (אלא, rabbi names) are sometimes story content and sometimes framing; only semantic judgment can tell. Document the empirical evidence (Jeff's 7 over-trim cases on stories where ההוא/ההיא wasn't the actual story opener).
+- [ ] 3d. Add **Lesson 15** to `lessons/`: regex-based text-internal boundary editing cannot generalize — pattern markers (אלא, rabbi names) are sometimes story content and sometimes framing; only semantic judgment can tell. Document the empirical evidence (Jeff's 7 over-trim cases on stories where ההוא/ההיא wasn't the actual story opener).
 
 ## Step 4 — Wave 4 plan kickoff (NEXT SESSION, blocking on user approval)
 

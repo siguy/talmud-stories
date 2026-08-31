@@ -201,7 +201,7 @@ Post-ship:
 - [ ] Commit, tag `v10-wave4`, push
 - [ ] Write `docs/golden/v10/wave4_results.md`
 - [ ] Update `docs/technical/VERSION_HISTORY.md`, `CLAUDE.md`,
-      `tasks/lessons.md` (Lesson 16 if anything surprises)
+      `lessons/` (Lesson 16 if anything surprises)
 - [ ] Generate Wave 4 Kiddushin review UI for Jeff
 - [ ] Send email with 14-case pass/fail report + per-story diff + ask
       him to confirm any remaining over-trims

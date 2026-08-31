@@ -55,7 +55,7 @@ is faithful — `stripped[i] == hebrew[map[i]]` holds for every `i`. The mapping
 is correct, so the bad cuts come from the model's raw offset numbers.
 
 LLMs reproduce text reliably and count characters unreliably. See
-[tasks/lessons.md](../../tasks/lessons.md) Lesson 16.
+[lessons/](../../lessons/README.md) Lesson 16.
 
 ## 4. The revert (shipped)
 

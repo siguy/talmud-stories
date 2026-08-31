@@ -229,7 +229,7 @@ content, so the Kiddushin eval is not contaminated.
 
 **Modified:**
 - `validation/generators/generate_kiddushin_review_ui.py` — renders `text_span_*`
-- `tasks/lessons.md` — Lesson 14 added
+- `lessons/` — Lesson 14 added
 - `tasks/todo.md` — Wave 3 items checked off
 - `CLAUDE.md` — Key Files table updated
 - `docs/technical/VERSION_HISTORY.md` — Wave 3 row

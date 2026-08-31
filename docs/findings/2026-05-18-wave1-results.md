@@ -228,4 +228,4 @@ demonstrated.
 - `scripts/run_ketubot_v8.py` — Ketubot runner
 - `results/kiddushin/kiddushin_v8.json` — Kiddushin Wave 1 output
 - `results/v8/ketubot_v8_*.json` — Ketubot Wave 1 output
-- `tasks/lessons.md` Lesson 11 — LLM nondeterminism breaks historical baselines
+- `lessons/` Lesson 11 — LLM nondeterminism breaks historical baselines

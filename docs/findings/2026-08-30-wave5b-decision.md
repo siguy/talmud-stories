@@ -55,7 +55,7 @@ the legitimate no-trim baseline. It also writes a fabricated speech profile into
 dataset meant to answer Jeff's question.
 
 This is the same shape as a failure this project already paid for once (v10's silent
-regex fallback). It is now [Lesson 21](../../tasks/lessons.md).
+regex fallback). It is now [Lesson 21](../../lessons/README.md).
 
 ## What we are doing instead
 
