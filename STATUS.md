@@ -51,13 +51,13 @@ the future, and it starts the moment we send him results.
 
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
-| **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
-| **2 Detection** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **83.3%** strict — **NEW** | ≥95% *(provisional)* |
+| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
+| **[2 Detection](docs/capabilities/2_detection.md)** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **83.3%** strict — **NEW** | ≥95% *(provisional)* |
 | | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
-| **3 Classification** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
-| **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
-| **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
-| **6 Publication** | — | not started | not started | — |
+| **[3 Classification](docs/capabilities/3_classification.md)** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
+| **[4 Boundaries](docs/capabilities/4_boundaries.md)** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
+| **[5 Review](docs/capabilities/5_review.md)** | days per tractate | not started | not started | days, not weeks *(derived)* |
+| **[6 Publication](docs/capabilities/6_publication.md)** | — | not started | not started | — |
 
 **Four of five gates are provisional** — see FRAMEWORK §2b. They compose
 (`triage × detection = end-to-end`), so only the end-to-end number needs defending, and
@@ -183,7 +183,7 @@ job that should wait until Kiddushin shows what we get.
 05 parse DONE ┼── 07 Kiddushin blind boundary set        all three now unblocked,
               └── 08 harvest the embedded review comments  and independent of each other
 
-fully independent, start any time:   00 · 02 · 04 · 11 · 09-fetch · 10-additions
+fully independent, start any time:   04 · 11 · 09-fetch · 10-additions   (00, 02 done)
 lower value until the above land:    01 · 03
 open calls from the parse:           09-parse-open-calls  (denominator 90; 1b is for Jeff)
 goldens still incomplete:            10-golden-completeness
@@ -195,7 +195,7 @@ goldens still incomplete:            10-golden-completeness
 | **06** | Kiddushin recall: triage + detection — report over **both** denominators (90 / 94) | 1, 2 | — | no |
 | **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | — | no |
 | **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
-| 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
+| ~~00~~ | ~~Per-capability history: what we tried, reverted, current best~~ — **done**, six files in [`docs/capabilities/`](docs/capabilities/), linked from the scoreboard | all | — | no |
 | 02 | ~~Why is Ketubot 77a never proposed~~ **DONE** — it *is* proposed; classification rejects it | 3 | — | no |
 | **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate | 3, 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
@@ -219,7 +219,7 @@ where an entry ends. Its *value* depends on his answer; the work does not.
 | `tasks/NEXT/*.md` | one self-contained brief per ready task. Delete when done. |
 | `tasks/lessons.md` | 25 durable rules. Append-only. |
 | `docs/golden/**` | dated findings. Immutable once written. |
-| `docs/capabilities/` | per-capability history — **not written yet, see `NEXT/00`**. |
+| [`docs/capabilities/`](docs/capabilities/) | per-capability history: what we tried, what we reverted and why, current best, distance to gate, ceiling, untried. One file per capability, linked from the scoreboard above. |
 | `validation/feedback/jeff_*_ledger.md` | everything Jeff has said, and its disposition. |
 | `CLAUDE.md` | how to work in this repo. Not status. |
 | `FOR_SIMON.md` | the plain-English narrative. |
