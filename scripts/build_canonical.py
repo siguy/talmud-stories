@@ -844,6 +844,8 @@ def save_canonical(pages, auto_applied, needs_review, skipped, no_change,
         'pages': pages,
     }
 
+    refuse_unless_purely_additive(output)
+
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, 'w', encoding='utf-8') as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
@@ -855,53 +857,134 @@ def save_canonical(pages, auto_applied, needs_review, skipped, no_change,
 
 # ---------- Main ----------
 
-def refuse_if_would_regress():
-    """Stop if the live canonical holds work this script cannot reproduce.
+OVERRIDE_FLAG = '--i-know-this-discards-later-work'
+
+
+def _story_index(doc):
+    """Map every story in a canonical doc to a stable key -> its record.
+
+    The key is (page ref, start segment, end segment): the identity of the
+    passage, independent of ordering or of any field we might later add.
+    """
+    index = {}
+    for page in doc.get('pages', []):
+        for story in page.get('stories', []):
+            index[(page['ref'], story.get('start_segment'),
+                   story.get('end_segment'))] = story
+    return index
+
+
+def _brief(value, limit=60):
+    """A one-line summary of a field value, for the refusal message.
+
+    `corrections` holds whole correction records; printing them raw makes the
+    message unreadable, and an unreadable warning is a warning nobody acts on.
+    """
+    if isinstance(value, list):
+        return f"[{len(value)} correction{'s' if len(value) != 1 else ''}]"
+    text = repr(value)
+    return text if len(text) <= limit else text[:limit - 3] + "..."
+
+
+# Fields that carry an expert judgment or its provenance. A change to any of
+# them is a change to what Jeff said, which this script must never make silently.
+JUDGMENT_FIELDS = ('classification', 'source', 'blind', 'provenance',
+                   'never_detected', 'corrections')
+
+
+def refuse_unless_purely_additive(new_doc):
+    """The golden may only GROW. Anything else needs a human to say so.
 
     This script rebuilds the golden from the base runs plus three 2026-02
-    feedback files and the 2026-03 canonical review. The golden has since moved
-    on WITHOUT it — the 2026-06-03 round, and on 2026-08-30 five stories from
-    Jeff's blind 2005 list that the detector has never proposed. Re-running
-    would silently delete them, and the golden is the most valuable artifact in
-    the project.
+    feedback files and the 2026-03 canonical review. The golden has moved on
+    WITHOUT it -- a 2026-06-03 round, and five stories from Jeff's blind 2005
+    list that the detector has never proposed and this script cannot regenerate.
 
-    So this is no longer a build step; it is a historical reconstruction. It
-    refuses to overwrite unless the caller states that they mean it.
+    The rule is not "detect the kinds of newer work we happen to know about" --
+    that is a guess, and the previous version of this guard got the guess wrong
+    (it matched '2026-06' against keys written '2026_06', so it never fired).
+    The rule is a direct comparison against what is on disk:
+
+        removing a story, or changing an expert judgment on one, is REFUSED.
+        adding stories is allowed.
+
+    Everything Jeff has ruled on -- directly, or by validating a previous run --
+    therefore survives every rebuild by construction.
     """
     import sys
     if not OUTPUT_PATH.exists():
         return
-    live = json.loads(OUTPUT_PATH.read_text())
-    stories = [s for pg in live.get('pages', []) for s in pg.get('stories', [])]
-    unreproducible = [s for s in stories if s.get('source') == 'jeff_2005_list']
-    rounds = live.get('corrections_summary', {}) or {}
-    later_round = any('2026-06' in str(k) or '2026-08' in str(k)
-                      for k in list(rounds.keys()) + list(live.keys()))
-    if not unreproducible and not later_round:
+
+    live = json.loads(OUTPUT_PATH.read_text(encoding='utf-8'))
+    live_index, new_index = _story_index(live), _story_index(new_doc)
+
+    removed = [k for k in live_index if k not in new_index]
+    changed = []
+    for key, live_story in live_index.items():
+        new_story = new_index.get(key)
+        if new_story is None:
+            continue
+        for field in JUDGMENT_FIELDS:
+            if live_story.get(field) != new_story.get(field):
+                changed.append((key, field, live_story.get(field),
+                                new_story.get(field)))
+    added = [k for k in new_index if k not in live_index]
+
+    if not removed and not changed:
+        if added:
+            print(f"  Purely additive: {len(added)} new stories, "
+                  f"{len(live_index)} existing untouched.")
         return
-    if '--i-know-this-discards-later-work' in sys.argv:
-        print("WARNING: overwriting the canonical, discarding later work, as instructed.")
+
+    if OVERRIDE_FLAG in sys.argv:
+        print(f"WARNING: overwriting the canonical, discarding {len(removed)} "
+              f"stories and {len(changed)} expert judgments, as instructed.")
         return
+
+    try:
+        shown = OUTPUT_PATH.relative_to(PROJECT_ROOT)
+    except ValueError:
+        shown = OUTPUT_PATH          # this guard must still speak when OUTPUT_PATH
+                                     # is redirected outside the repo, which is
+                                     # exactly what it tells the caller to do
     print("=" * 70)
-    print("  REFUSING TO WRITE — this would regress the golden dataset")
+    print("  REFUSING TO WRITE - this would not be an addition to the golden")
     print("=" * 70)
-    print(f"  {OUTPUT_PATH.relative_to(PROJECT_ROOT)} currently holds "
-          f"{len(stories)} stories.")
-    if unreproducible:
-        print(f"  {len(unreproducible)} of them came from Jeff's blind 2005 list and were")
-        print("  never proposed by the detector, so this script cannot regenerate them:")
-        for s in unreproducible:
-            ref = (s.get('provenance') or {}).get('expert_ref', '?')
-            print(f"      {ref}")
-    if later_round:
-        print("  The golden also carries correction rounds later than the three")
-        print("  2026-02 files and the 2026-03 review this script reads.")
+    print(f"  {shown} currently holds "
+          f"{len(live_index)} stories. This rebuild produces {len(new_index)}.")
+
+    if removed:
+        print(f"\n  {len(removed)} would be REMOVED:")
+        for ref, lo, hi in sorted(removed):
+            story = live_index[(ref, lo, hi)]
+            why = ''
+            if story.get('source'):
+                why = f"  <- {story['source']}"
+                if story.get('never_detected'):
+                    why += ", never proposed by the detector, NOT REGENERABLE"
+            print(f"      {ref} seg {lo}-{hi}{why}")
+
+    if changed:
+        print(f"\n  {len(changed)} expert judgments would be CHANGED:")
+        for (ref, lo, hi), field, was, now in changed[:20]:
+            print(f"      {ref} seg {lo}-{hi}: {field} "
+                  f"{_brief(was)} -> {_brief(now)}")
+        if len(changed) > 20:
+            print(f"      ... and {len(changed) - 20} more")
+
+    if added:
+        print(f"\n  ({len(added)} would be added - additions alone are fine.)")
+
     print()
-    print("  This script is now a HISTORICAL RECONSTRUCTION, not a build step.")
+    print("  The golden may only GROW programmatically. It holds expert")
+    print("  judgments -- Jeff's directly, and his validations of earlier runs --")
+    print("  and this script cannot reproduce the ones made after 2026-03.")
+    print()
+    print("  This script is a HISTORICAL RECONSTRUCTION, not a build step.")
     print("  To rebuild the 2026-03 state for inspection, write elsewhere:")
-    print("      OUTPUT_PATH override, or copy the file first.")
-    print("  To overwrite anyway and lose the above:")
-    print("      python3 scripts/build_canonical.py --i-know-this-discards-later-work")
+    print("      point OUTPUT_PATH at another file, or copy the golden first.")
+    print("  To overwrite anyway and lose the above, by hand and on purpose:")
+    print(f"      python3 scripts/build_canonical.py {OVERRIDE_FLAG}")
     sys.exit(1)
 
 
@@ -909,7 +992,6 @@ def main():
     print("=" * 60)
     print("  BUILD CANONICAL KETUBOT STORIES")
     print("=" * 60)
-    refuse_if_would_regress()
 
     # Step 1a: Load and merge
     pages = load_and_merge_base()
