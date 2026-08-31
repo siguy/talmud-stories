@@ -51,8 +51,8 @@ def get_db():
     feedback_path = str(project_root / 'validation' / 'feedback' /
                         'v5_1_feedback_anonymous_2026-02-05 (1).json')
     v5_paths = [
-        str(project_root / 'results' / 'ketubot' / 'v5' / 'pages_2-39.json'),
-        str(project_root / 'results' / 'ketubot' / 'v5' / 'pages_40-60.json'),
+        str(project_root / 'results' / 'v5' / 'pages_2-39.json'),
+        str(project_root / 'results' / 'v5' / 'pages_40-60.json'),
     ]
     db = GroundTruthDB()
     db.load_from_feedback(feedback_path, v5_paths)
@@ -64,7 +64,7 @@ def load_pages():
     project_root = Path(__file__).parent.parent
     all_pages = []
     for fname in ['pages_2-39.json', 'pages_40-60.json']:
-        path = project_root / 'results' / 'ketubot' / 'v5' / fname
+        path = project_root / 'results' / 'v5' / fname
         with open(path) as f:
             data = json.load(f)
             all_pages.extend(data.get('pages', []))
@@ -158,7 +158,7 @@ def test_summarize():
 # INTEGRATION TESTS (require API)
 # ============================================================
 
-def test_live_triage(pages):
+def run_live_triage(pages):
     """Run triage on real pages and check against Jeff's expectations."""
     db = get_db()
     triager = EventTriager(ground_truth_db=db)
@@ -202,7 +202,7 @@ def test_live_triage(pages):
     return passed, failed, false_skips
 
 
-def test_full_triage(pages):
+def run_full_triage(pages):
     """Run triage on all pages 2-60 and report skip rate."""
     db = get_db()
     triager = EventTriager(ground_truth_db=db)
@@ -278,9 +278,9 @@ if __name__ == '__main__':
         print("\n--- Live API Tests ---")
         pages = load_pages()
         print(f"Loaded {len(pages)} pages")
-        test_live_triage(pages)
+        run_live_triage(pages)
         print("\n--- Full Triage Run ---")
-        test_full_triage(pages)
+        run_full_triage(pages)
     else:
         print("\n(Skipping live API tests — run with --live to enable)")
 

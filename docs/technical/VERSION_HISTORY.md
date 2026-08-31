@@ -597,8 +597,8 @@ Stage 4: Boundary Refinement → trim DELIBERATION at edges + improved cross-pag
 
 **Files:**
 - `src/story_detector_v5.py`
-- `tests/v5_categorical/test_categorical_classification_v5.1.py`
-- `results/ketubot/v5/`
+- `archive/legacy_tests/v5_categorical/test_categorical_classification_v5.1.py`
+- `results/v5/`
 
 ---
 
@@ -711,7 +711,7 @@ Stage 4: Boundary Refinement → trim DELIBERATION at edges + improved cross-pag
 - Character offsets unreliable
 - Boundaries cut mid-sentence
 
-**Files:** `tests/v2_multi_story/`
+**Files:** `archive/legacy_tests/v2_multi_story/`
 
 ---
 
@@ -728,7 +728,7 @@ Stage 4: Boundary Refinement → trim DELIBERATION at edges + improved cross-pag
 - High false positive rate on legal discussions
 - Missed multi-story pages
 
-**Files:** `tests/v1_basic/`
+**Files:** `archive/legacy_tests/v1_basic/`
 
 ---
 
