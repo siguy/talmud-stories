@@ -31,7 +31,7 @@ is now fixable, and three tractates we have never touched become testable.
 |---|---|---|---|---|
 | **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **now possible** | ≥98% *(provisional)* |
 | **2 Detection** | recall, BLIND | **96.0%** | unmeasured → **now possible** | ≥95% *(provisional)* |
-| | *golden recall, CIRCULAR* | *90.9% (was 93.7% on the 182-story golden)* | *95.3%* | — |
+| | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
 | **3 Classification** | precision, CIRCULAR | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
 | **5 Review** | days per tractate | not started | not started | days, not weeks *(derived)* |
@@ -69,13 +69,22 @@ Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
   `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
   disqualifiers. The empty production `stories` list is the ~1/8 tail. Seed case written
   into [`tasks/PLAN_wave6.md`](tasks/PLAN_wave6.md).
-- **A Mishnah filter is silently deleting expert-validated stories.**
-  `filter_mishnah_only_stories()` moves stories to `mishnah_stories`, which **neither**
-  `measure_recall_vs_expert_list.py` **nor** `evaluate_golden.py` reads. 4 of the 5 it
-  moves are accepted stories in the golden — **31% of Ketubot's 13 golden false
-  negatives**. Two of those 4 are plain Gemara mis-tagged at a chapter boundary, where
-  Sefaria uses the chapter incipit instead of `מתני׳` (7 pages affected). Costs no
-  measured recall; needs a decision, not a reflex. Detail in `PLAN_wave6.md`.
+- **A Mishnah filter was silently deleting expert-validated stories. Half of it was a
+  bug; that half is now fixed and measured.** `filter_mishnah_only_stories()` moves
+  stories to `mishnah_stories`, which **neither** `measure_recall_vs_expert_list.py`
+  **nor** `evaluate_golden.py` reads. It removed 4 Ketubot stories the golden accepts —
+  **4 of the 15 golden false negatives, 27%** (an earlier line here said "31% of 13";
+  13 is the *post-fix* count, 15 was the real one). Two of the 4 were not Mishnah at all:
+  `_tag_mishnah_segments()` read every chapter boundary as a mid-Mishnah page, because
+  Sefaria opens a new chapter's first Mishnah with the chapter incipit instead of
+  `מתני׳`. 72 segments on 12 pages; Gittin and Yevamot would have hit it on 20 more.
+  **Golden TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
+  precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
+  the harness nobody reads for recall was the only one that could see the loss, which is
+  why it survived four waves. → Lesson 26,
+  [`docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
+  The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
+  question for Jeff, not a bug. Now queued below.
 - **A runner bug was fixed and guarded:** a failed API call could be recorded as a
   considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
 - **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
@@ -88,11 +97,17 @@ part of the story we display, or the discussion that follows it? His 2005 lists 
 his review notes say cut it. Blocks the end rule for capability 4.
 → draft: [`docs/golden/v11/email_jeff_2026-08-30.md`](docs/golden/v11/email_jeff_2026-08-30.md)
 
-**To add when we next write:** at what error rate does reviewing our output become worse
-than working from scratch? That number sets the Classification gate and only he can
-answer it. Also a correction we owe him: the email said Ketubot 77a is a story "our own
-set has" — it is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8);
-his is at segs 13-14. The substance stands (we do miss his), the claim did not.
+**To add when we next write — three items**, framed in the draft's "Not yet asked":
+
+1. At what error rate does reviewing our output become worse than working from scratch?
+   That number sets the Classification gate and only he can answer it.
+2. **Do stories inside the Mishnah count?** We currently delete them. Two genuine Ketubot
+   cases: 14b seg 11 and 77a seg 8 (the Sidon tanner). His blind 2005 list contains no
+   Mishnah-only story; his review rounds accepted both into our golden — his own two
+   sources disagree, exactly as on the boundary question.
+3. A correction we owe him: the email said Ketubot 77a is a story "our own set has" — it
+   is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8); his is at
+   segs 13-14. The substance stands (we do miss his), the claim did not.
 
 **Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
 still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,

@@ -124,21 +124,41 @@ disqualifier list actively suppresses it.
 
 ### Two adjacent defects found while measuring this (Lesson 18), NOT owned by Wave 6
 
-1. **The Mishnah filter contradicts the golden.** Corpus-wide it moves 5 stories to
-   `mishnah_stories`; **4 of them the golden accepts as real stories** (Ketubot 14b seg 11,
-   54b segs 1-3, 77a seg 8, 95b seg 0). Those 4 are **31% of the 13 golden false negatives
-   on Ketubot**. Jeff's blind list contains no Mishnah-only story, so the filter costs no
-   measured recall — but it silently deletes stories our own expert-validated dataset
-   accepts, and no harness can see it. Decide the premise before Wave 6 measures anything
-   against the golden.
-2. **`_tag_mishnah_segments()` mislabels Gemara as Mishnah at chapter boundaries.** At a
-   new chapter Sefaria marks the opening Mishnah with the chapter incipit in
-   `<big><strong>` (e.g. `אף על פי` on Ketubot 54b seg 5) instead of `מתני׳`. The
-   tagger then finds `גמ׳` first, concludes the page began mid-Mishnah, and back-tags every
-   preceding segment — including the previous chapter's Gemara tail and the `הדרן`
-   formula. **7 pages are definitely mis-tagged** (Ketubot 54b, 65b, 70a, 95b, 101b;
-   Kiddushin 41a, 58b). Two of the four deletions above (54b, 95b) are plain Gemara lost
-   this way — 95b seg 0 is `דההוא גברא דמישכן ליה פרדיסא`, not Mishnah at all.
+**Status 2026-08-30: defect 2 is fixed; defect 1 is narrowed from 4 stories to 2 and is now
+a queued question for Jeff.** The original counts below were wrong in a way worth naming.
+
+1. **The Mishnah filter contradicts the golden — 2 stories, not 4.**
+   `filter_mishnah_only_stories()` moves stories into `mishnah_stories`, which **no harness
+   reads**. On Ketubot it removed 4 stories the golden accepts — **4 of the 15 golden false
+   negatives, 27%**. (This section previously said "31% of the 13"; 13 is the *post-fix*
+   count, 15 was the real one. Same error was corrected in `STATUS.md`.)
+
+   Two of those 4 were defect 2 below and are now back. The remaining two — Ketubot
+   **14b seg 11** (`מעשה בתינוקת שירדה למלאות מים מן העין`) and **77a seg 8** (the Sidon
+   tanner) — are genuine Mishnaic *ma'asim*, as is Kiddushin **50b seg 10**
+   (`ומעשה בחמש נשים ובהן שתי אחיות`). A recurring category, not two oddities.
+
+   His blind 2005 list contains no Mishnah-only story, but his review rounds accepted these
+   into our golden — **his own two sources disagree**, the same shape as the boundary
+   question, so this is his call and not ours. **Queued for the next email** →
+   [`../docs/golden/v11/email_jeff_2026-08-30.md`](../docs/golden/v11/email_jeff_2026-08-30.md)
+   § "Not yet asked". Still decide the premise before Wave 6 measures against the golden.
+
+2. **`_tag_mishnah_segments()` mislabelled Gemara as Mishnah at chapter boundaries —
+   FIXED 2026-08-30.** At a new chapter Sefaria marks the opening Mishnah with the chapter
+   incipit in `<big><strong>` (e.g. `אף על פי` on Ketubot 54b seg 5) instead of `מתני׳`. The
+   tagger found `גמ׳` first, concluded the page began mid-Mishnah, and back-tagged every
+   preceding segment — the previous chapter's Gemara tail and the `הדרן` formula included.
+   7 pages were mis-tagged (Ketubot 54b, 65b, 70a, 95b, 101b; Kiddushin 41a, 58b), and two
+   of the four deletions above were plain Gemara lost this way — 95b seg 0 is
+   `דההוא גברא דמישכן ליה פרדיסא`, not Mishnah at all.
+
+   Fixed in `src/story_detector_v11.py` by reading all four of Sefaria's structural markers
+   (`מתני׳`, `גמ׳`, `הדרן`, chapter incipit) instead of two: 72 segments on 12 pages, every
+   change a correction. Golden **TP 149 → 151, FN 15 → 13, composite 0.9115 → 0.9136**;
+   precision and merge unchanged; **blind recall identical at 96.0%**, which is why nothing
+   caught it. Guarded by `tests/test_mishnah_tagger_chapter_boundary.py`. → Lesson 26,
+   [`../docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](../docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
 
 ### Gate contribution
 

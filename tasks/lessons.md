@@ -579,3 +579,40 @@ renderer *before* filing it against the detector.
 (d) Guard it with a test that executes the page's real display code, and
 confirm the test fails when the bug is reintroduced — see
 `tests/test_review_ui_symmetry.py`.
+
+---
+
+## Lesson 26 — A step that moves records out of the measured path is invisible by construction (2026-08-30)
+
+`filter_mishnah_only_stories()` does not delete stories. It moves them from
+`stories` into `mishnah_stories`. `evaluate_golden.py` and
+`measure_recall_vs_expert_list.py` both read only `stories`.
+
+So for four waves it quietly removed four expert-validated Ketubot stories —
+27% of the golden false negatives — and two of them were not Mishnah at all,
+just Gemara mis-tagged at a chapter boundary.
+
+The number that matters:
+
+```
+                          before fix    after fix
+  blind recall (Jeff 2005)   96.0%        96.0%     ← identical, same 6 misses
+  golden recall              90.9%        92.1%
+```
+
+The metric this project trusts most — the detector-blind one, the one that
+exists *specifically* to catch what we never found — was unchanged by two
+stories being deleted and restored. It could not have caught this. Neither
+could any amount of care in the tagger, because the tagger's output isn't in
+the measured population.
+
+A silent-deletion path scores **better** the more it deletes. That is the
+whole failure, and the tagger bug was only how it got exercised.
+
+**Rule:** any step that removes, filters, reroutes or defers records must
+either write into a key a harness already reads, or ship a test that pins its
+decisions on real data. When adding one, ask: **which harness goes red if this
+step goes haywire?** If the answer is "none", that is the defect — before any
+bug in the step's logic. Same family as Lesson 21 (a failed call recorded as
+a judgment) and Lesson 23 (an exam that cannot see a regression): all three
+are cases where the measurement, not the code, was the thing that was wrong.

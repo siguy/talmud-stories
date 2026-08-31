@@ -48,5 +48,33 @@ Whether his lists cover other tractates. **ANSWERED — four arrived the same da
 
 ## Not yet asked — add to the next email
 
+### 1. The review-cost threshold
+
 At what error rate does reviewing our output become worse than working from scratch?
 That number sets the Classification gate (FRAMEWORK §2b) and only he can answer it.
+
+### 2. Do stories inside the Mishnah count? *(added 2026-08-30)*
+
+Our pipeline currently **deletes** any story lying entirely within a Mishnah rather than
+the Gemara. That was never a decision — it was a Wave 1 post-processor nobody revisited,
+and until today two of the four Ketubot passages it removed were not Mishnah at all, just
+Gemara mis-tagged at a chapter boundary (fixed; Lesson 26). Two genuine cases remain, and
+both are explicitly *ma'aseh* formulas inside a Mishnah:
+
+- **Ketubot 14b seg 11** — `אמר רבי יוסי: מעשה בתינוקת שירדה למלאות מים מן העין, ונאנסה`
+  — R. Yosei's incident of the girl who went down to fill water from the spring.
+- **Ketubot 77a seg 8** — `מעשה בצידון בבורסי אחד שמת, והיה לו אח בורסי`
+  — the Sidon tanner. (This is the 77a story *our* golden holds — not the one on his
+  blind list, which is at segs 13-14. See the correction owed above.)
+
+**Why it is a real question and not a preference: his own two sources disagree.** His
+blind 2005 Ketubot list contains no Mishnah-only story. His review rounds accepted both
+of these into our golden. That is the same shape as the boundary question — the 2005
+lists were an index of where a story sits in its *sugya*, the reviews are of a tool that
+*displays* stories — and it may well have the same answer.
+
+Scale is small and known: 2 on Ketubot, 1 on Kiddushin in the current output — and the
+Kiddushin one (50b seg 10, `ומעשה בחמש נשים ובהן שתי אחיות`) is the same shape again, so
+this is a recurring category rather than two oddities. What it decides is bigger than the
+count: whether the filter should exist at all, and whether a Mishnaic *ma'aseh* belongs in
+a corpus of Talmudic stories.
