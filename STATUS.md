@@ -183,7 +183,7 @@ job that should wait until Kiddushin shows what we get.
 05 parse DONE ┼── 07 Kiddushin blind boundary set        all three now unblocked,
               └── 08 harvest the embedded review comments  and independent of each other
 
-fully independent, start any time:   04 · 11 · 09-fetch · 10-additions   (00, 02 done)
+fully independent, start any time:   04 (=review-verdict-axes) · 11 · 09-fetch · 10-additions   (00, 02 done)
 lower value until the above land:    01 · 03
 open calls from the parse:           09-parse-open-calls  (denominator 90; 1b is for Jeff)
 goldens still incomplete:            10-golden-completeness
@@ -197,7 +197,7 @@ goldens still incomplete:            10-golden-completeness
 | **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
 | ~~00~~ | ~~Per-capability history: what we tried, reverted, current best~~ — **done**, six files in [`docs/capabilities/`](docs/capabilities/), linked from the scoreboard | all | — | no |
 | 02 | ~~Why is Ketubot 77a never proposed~~ **DONE** — it *is* proposed; classification rejects it | 3 | — | no |
-| **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate | 3, 5 | — | no |
+| **04** | Review UI: make the reviewer say *which* thing is wrong — the only way to a Classification point estimate. **Planned as step 7a:** [`NEXT/2026-08-30-review-verdict-axes.md`](tasks/NEXT/2026-08-30-review-verdict-axes.md) (the old `04` file was deleted in `b394489`; this replaces it) | 3, 5 | — | no |
 | 01 | Price the triage trade over the 124 discarded pages | 1 | — | no |
 | 03 | Stop discarding a second story sharing a segment | 4 | — | low priority* |
 | 09-fetch | Fetch Gittin / Yevamot / Eruvin from Sefaria | ground truth | — | no |
