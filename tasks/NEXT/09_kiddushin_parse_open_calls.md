@@ -18,7 +18,8 @@ tractates.
 `Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
 that you and Claude found that were not on my list"* — cases from across our runs, which
 he merged into his list. They are in his list because of our output, so they are
-circular. **`blind: false`, denominator 89.** See
+circular. **`blind: false` on all five; `counts_for_recall: false` on the four we
+proposed, true on 81b which we never did. Denominator 90.** See
 [the finding](../../docs/golden/v11/kiddushin_list_parse_2026-08-30.md) §4.
 
 ## 1b. Say it before the first review round on a new tractate — **not urgent yet**

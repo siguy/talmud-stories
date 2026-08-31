@@ -26,10 +26,17 @@ of the project are unblocked — **06, 07 and 08 are ready to run.**
 **The list is already contaminated, and we nearly missed it.**
 `Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
 that you and Claude found that were not on my list"* — cases from across our runs, which
-he annotated and **merged into his list**. Those five entries are in his list because of
-our output, so they are circular. Plus the one he marked `הוספתי--י.ר.` himself.
+he annotated and **merged into his list**. None of the five is blind: each is there
+because we put the page in front of him. Plus the one he marked `הוספתי--י.ר.` himself.
 
-**Recall denominator: 89**, not 95 and not 94.
+But **blind and "counts for recall" are different questions.** Circularity only matters
+in the direction that *flatters*. Four of the five (33a, 45a, 53a, 71a) are in his list
+because **we proposed them**, so counting them could only raise recall — excluded. The
+fifth (**81b**) we **never proposed**; he found it in page text our review UI displayed,
+so it can only count *against* us, and dropping it is what inflates the number.
+
+**Recall denominator: 90** — 89 strictly blind, plus 81b. →
+[`docs/golden/v11/appendix_provenance_correction_2026-08-30.md`](docs/golden/v11/appendix_provenance_correction_2026-08-30.md)
 
 We caught this only because the appendix survived as a separate file.
 
@@ -45,7 +52,7 @@ the future, and it starts the moment we send him results.
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
 | **1 Triage** | stories surviving | **98.0%** at 44% of pages | unmeasured → **ready, `NEXT/06`** | ≥98% *(provisional)* |
-| **2 Detection** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **84.3%** strict — **NEW** | ≥95% *(provisional)* |
+| **2 Detection** | recall, BLIND | **96.0%** loose / **87.9%** strict | **93.3%** loose / **83.3%** strict — **NEW** | ≥95% *(provisional)* |
 | | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
 | **3 Classification** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | ≥85% *(provisional)* |
 | **4 Boundaries** | hit / near, BLIND | **80% / 84%** (ceiling ~87%) | 60%/73% ±7pt, circular | ≥75% *(provisional)* |
@@ -75,7 +82,7 @@ fix is a review-UI change, `NEXT/04`, not more inference over free text.
 
 **Detection is softer than 96% under a strict test.** The published test credits a
 proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
-story actually occupies gives 87.9% Ketubot / 84.3% Kiddushin. The 12 Ketubot stories in
+story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot stories in
 the gap are **cross-page stories whose text sits on a continuation daf where we proposed
 nothing** — 17b, 50a and 51a each carry zero proposals.
 
@@ -178,14 +185,14 @@ job that should wait until Kiddushin shows what we get.
 
 fully independent, start any time:   00 · 02 · 04 · 11 · 09-fetch · 10-additions
 lower value until the above land:    01 · 03
-open calls from the parse:           09-parse-open-calls  (denominator 89; 1b is for Jeff)
+open calls from the parse:           09-parse-open-calls  (denominator 90; 1b is for Jeff)
 goldens still incomplete:            10-golden-completeness
 ```
 
 | | task | capability | needs | Jeff? |
 |---|---|---|---|---|
 | ~~05~~ | ~~Parse the Kiddushin list~~ — **done**, 95 stories + 10 remarks | ground truth | — | no |
-| **06** | Kiddushin recall: triage + detection — report over **both** denominators (89 / 94) | 1, 2 | — | no |
+| **06** | Kiddushin recall: triage + detection — report over **both** denominators (90 / 94) | 1, 2 | — | no |
 | **07** | Kiddushin blind boundary set (~190 targets, kills the ±7pt noise) | 4 | — | no |
 | **08** | Harvest Jeff's **10** embedded remarks — criteria + boundary corrections | 3, 4 | — | no |
 | 00 | Per-capability history: what we tried, reverted, current best | all | — | no |
@@ -225,9 +232,11 @@ Rules in `lessons.md`. Ready work in `tasks/NEXT/`. Never append status to a pla
 ```
 BLIND   (can measure recall)
   Ketubot    149 stories (2005 list) · 294 derived boundary targets
-  Kiddushin   89 stories, MEASURED  -> results/expert_lists/kiddushin_2005.json
-                 89 blind: 95 parsed, minus 1 he added himself, minus 5 appendix
-                 entries (ours, merged into his list -> circular). Denominator 89.
+  Kiddushin   90 stories, MEASURED  -> results/expert_lists/kiddushin_2005.json
+                 95 parsed, minus 1 he added himself, minus 4 appendix entries we
+                 proposed ourselves (circular; counting them could only flatter).
+                 The 5th appendix case (81b) we never proposed, so it STAYS -- it
+                 can only count against us. Denominator 90; strictly blind 89.
                  ~180 boundary targets derivable from the 89 (NEXT/07)
   Gittin 112 · Yevamot 102 · Eruvin 73   <- PRISTINE. We have never run the detector on
                                             these, so nothing of ours can have been

@@ -1,5 +1,13 @@
 # One ruler for Detection and Classification — 2026-08-30
 
+> **Corrected 2026-08-30** by
+> [`appendix_provenance_correction_2026-08-30.md`](appendix_provenance_correction_2026-08-30.md).
+> The Kiddushin recall denominator is **90**, not 89, and strict recall is **83.3%**,
+> not 84.3%. Four of the five appendix cases are excluded as circular; the fifth (81b)
+> we never proposed, so excluding it inflated recall. The Kiddushin numbers below are
+> superseded; the Ketubot numbers and the method are not.
+
+
 **Why:** neither artifact we had could measure both. The goldens are built *from*
 detector output, so they can never contain a story we did not propose — useful for
 precision, useless for recall. Jeff's blind lists can measure recall but carry no

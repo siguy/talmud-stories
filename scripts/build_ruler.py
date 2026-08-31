@@ -114,7 +114,12 @@ def expert_stories(tractate, cfg):
     """Blind list entries: [{ref, text, blind}]. Never the old line-based parser."""
     if 'expert_json' in cfg:
         data = json.loads((PROJECT_ROOT / cfg['expert_json']).read_text())
-        return [{'ref': s['ref'], 'text': s['text'], 'blind': s['blind'],
+        # `blind` says whether our output influenced the entry; `counts_for_recall`
+        # says whether it belongs in the denominator. They differ for the one appendix
+        # case we never proposed -- excluding it would inflate recall, not protect it.
+        return [{'ref': s['ref'], 'text': s['text'],
+                 'blind': s.get('counts_for_recall', s['blind']),
+                 'strictly_blind': s['blind'],
                  'not_blind_reason': None if s['blind'] else s['blind_basis']}
                 for s in data['stories'] if not s['duplicate_of']]
     stories, _ = kid.parse(PROJECT_ROOT / cfg['expert_doc'], tractate)
@@ -236,6 +241,9 @@ def build(tractate, cfg):
             'id': eid,
             'ref': window[0][0] if window else story['ref'],
             'expert_listed': True, 'expert_blind': story['blind'],
+            # `expert_blind` is the recall-denominator flag; this is the stricter
+            # question of whether our output influenced the entry at all.
+            'expert_strictly_blind': story.get('strictly_blind', story['blind']),
             'expert_text': story['text'], 'expert_coverage': round(cov, 3),
             'expert_located': window[:1] + window[-1:],
             'expert_segments': tight,

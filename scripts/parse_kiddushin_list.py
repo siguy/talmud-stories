@@ -36,16 +36,19 @@ purely blind. Two provenance flags are emitted on every story:
   blind: false             -- Jeff marked this himself with `hosafti--y.r.`
                               ("I added -- J.R."). Never counts toward recall.
   in_appendix: true        -- the story is one of the five in
-                              `Kiddushin missed stories.docx`. That file is the
-                              appendix Jeff describes as "additional stories that
-                              you and Claude found that were not on my list":
-                              cases drawn from across many of our runs, which he
-                              annotated Yes / Low confidence and then merged into
-                              his list. They are in his list BECAUSE of our
-                              output, so they are circular and are excluded from
-                              recall. Denominator: 89.
-                              `scripts/check_appendix_coverage.py` shows which
-                              runs actually proposed each one.
+                              `Kiddushin missed stories.docx`, the appendix Jeff
+                              merged into his list after reviewing our output.
+                              None of the five is blind.
+  counts_for_recall: bool  -- whether the entry belongs in the recall
+                              denominator, which is a SEPARATE question from
+                              blindness. Four appendix cases we proposed
+                              ourselves, so counting them could only flatter us;
+                              they are excluded. One (81b) we never proposed --
+                              Jeff found it in page text our UI displayed -- so
+                              it can only count against us and stays in.
+                              Dropping a story we missed is what inflates recall.
+                              See APPENDIX_DETECTION; re-derive it with
+                              `scripts/check_appendix_coverage.py`.
 
 Usage:
   python3 scripts/parse_kiddushin_list.py                       # writes the JSON
@@ -222,6 +225,26 @@ def overlap(a, b):
     return len(a & b) / len(a) if a else 0.0
 
 
+# Which appendix cases our own runs actually proposed, measured 2026-08-30 by
+# searching every Kiddushin run for the passage TEXT (not its page reference):
+# scripts/check_appendix_coverage.py re-derives this.
+#
+# It matters because "in the appendix" and "excluded from recall" are not the same
+# judgment. An entry that is in Jeff's list BECAUSE we proposed it can only flatter
+# our recall, so it must come out of the denominator. An entry he added because he
+# saw, on a page we showed him, a story we had MISSED cannot flatter us -- leaving
+# it out is what inflates the number. Both are non-blind; only the first is circular
+# in the dangerous direction.
+APPENDIX_DETECTION = {
+    'Kiddushin 33a': (True,  'proposed in every run; seg 6 partial in v7/v8, full at seg 5 from Wave 3 on'),
+    'Kiddushin 45a': (True,  'proposed in full from Wave 1 on (absent in v7) -- a genuine Wave 1 win'),
+    'Kiddushin 53a': (True,  'proposed but truncated: seg 8 of the segs 8-9 the story occupies'),
+    'Kiddushin 71a': (True,  'proposed but truncated: segs 4-5, the tail of the segs 2-5 it occupies'),
+    'Kiddushin 81b': (False, 'NEVER proposed by any run. The story is seg 9; we proposed segs 1-3 '
+                             'and 14. Jeff found it in the page text our review UI displayed.'),
+}
+
+
 def read_missed_stories(path):
     """`Kiddushin missed stories.docx` -> [{ref, verdict, text}]."""
     ns = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
@@ -290,6 +313,7 @@ def parse(doc_path, tractate, missed_path=None):
                 'parallels': parallels or None,
                 'vocalized': bool(NIKUD.search(p['text'])),
                 'blind': True,
+                'counts_for_recall': True,
                 'blind_basis': 'in Jeff\'s list with no marker of later addition; '
                                'never present in detector output he had seen',
                 'in_appendix': False,
@@ -362,10 +386,21 @@ def parse(doc_path, tractate, missed_path=None):
             if overlap(g, grams(best['text'])) > 0.6:
                 best['in_appendix'] = True
                 best['appendix_verdict'] = entry['verdict']
+                proposed, evidence = APPENDIX_DETECTION.get(
+                    best['ref'], (True, 'not individually checked; assumed ours'))
+                best['appendix_detection'] = evidence
                 best['blind'] = False
                 best['blind_basis'] = (
-                    'in `Kiddushin missed stories.docx`, the appendix of cases from our runs '
-                    'that Jeff merged into his list -- circular, excluded from recall')
+                    'in `Kiddushin missed stories.docx`, the appendix Jeff merged into his '
+                    'list. Not blind: it is there because we put the page in front of him.')
+                # Whether it counts toward RECALL is a separate question from whether it
+                # is blind -- see APPENDIX_DETECTION.
+                best['counts_for_recall'] = not proposed
+                best['counts_for_recall_basis'] = (
+                    'excluded: we proposed it, so counting it could only flatter recall'
+                    if proposed else
+                    'INCLUDED: we never proposed it, so it can only count against us. '
+                    'Dropping a story we missed is what inflates recall.')
     return stories, comments
 
 
@@ -394,9 +429,11 @@ def main():
     stories, comments = parse(PROJECT_ROOT / args.doc, args.tractate,
                               PROJECT_ROOT / args.missed if args.missed else None)
     blind = [s for s in stories if s['blind']]
+    counted = [s for s in stories if s.get('counts_for_recall', s['blind'])]
     flagged = [s for s in stories if s['in_appendix']]
     dupes = [s for s in stories if s['duplicate_of']]
     blind_unique = [s for s in blind if not s['duplicate_of']]
+    counted_unique = [s for s in counted if not s['duplicate_of']]
 
     payload = {
         'tractate': args.tractate,
@@ -411,15 +448,20 @@ def main():
             'not_blind': len(stories) - len(blind),
             'duplicates': len(dupes),
             'in_appendix': len(flagged),
-            'recall_denominator': len(blind_unique),
+            'recall_denominator': len(counted_unique),
+            'strictly_blind': len(blind_unique),
             'comments': len(comments),
         },
         'notes': [
             'blind=false means Jeff marked the entry as his own 2026 addition; exclude from recall.',
 'in_appendix=true marks the five entries from "Kiddushin missed stories.docx" -- the '
-            'appendix of cases from our own runs that Jeff merged into his list. They are in the '
-            'list because of our output, so they are CIRCULAR: blind=false, and excluded from '
-            'recall. Use recall_denominator (89).',
+            'appendix Jeff merged into his list. None of the five is BLIND: they are there '
+            'because we put the page in front of him. But blindness and the recall '
+            'denominator are different questions. Four (33a, 45a, 53a, 71a) we proposed '
+            'ourselves, so counting them could only flatter recall -- excluded. One (81b) we '
+            'never proposed; Jeff found it in page text our UI displayed. It can only count '
+            'AGAINST us, so it stays in the denominator: dropping a story we missed is what '
+            'inflates recall. Use recall_denominator.',
             'duplicate_of is set where the same story appears twice; count it once.',
             'ref_ambiguous=true means the row carried more than one daf label and the '
             'per-story reference could not be resolved from the document alone.',
@@ -433,7 +475,7 @@ def main():
     log.info('%s: %d stories (%d blind, %d not blind, %d duplicate, %d expert-flagged), '
              '%d comments -> %s', args.tractate, len(stories), len(blind),
              len(stories) - len(blind), len(dupes), len(flagged), len(comments), args.out)
-    log.info('recall denominator: %d blind unique stories', payload['counts']['recall_denominator'])
+    log.info('recall denominator: %d (%d strictly blind, plus %d appendix case(s) we never proposed)', payload['counts']['recall_denominator'], payload['counts']['strictly_blind'], payload['counts']['recall_denominator'] - payload['counts']['strictly_blind'])
 
     if args.report:
         print(f"\n{'='*78}\nSTORIES ({len(stories)})\n{'='*78}")

@@ -77,12 +77,48 @@ def test_adjust_counts_as_accepted():
     assert not (ruler.ACCEPTED & ruler.REJECTED)
 
 
-def test_kiddushin_uses_only_blind_entries_for_recall():
-    """The appendix entries are our own output; they cannot score Detection."""
+def test_kiddushin_recall_excludes_only_the_appendix_cases_we_proposed():
+    """Circularity is only dangerous in the direction that flatters.
+
+    Four appendix cases are in Jeff's list because we proposed them; counting them
+    could only raise recall, so they stay out. The fifth (81b) we never proposed --
+    he found it in page text our review UI displayed -- so it can only count against
+    us, and leaving it out is what inflates the number. Denominator 90, not 89.
+    """
     entries, _, _, m = built('Kiddushin')
-    assert m['detection']['denominator'] == 89, m['detection']['denominator']
-    assert all(e['expert_blind'] for e in entries
-               if e['expert_listed'] and e['expert_blind'] is not False) is True
+    assert m['detection']['denominator'] == 90, m['detection']['denominator']
+
+    listed = [e for e in entries if e['expert_listed']]
+    counted = [e for e in listed if e['expert_blind']]
+    assert len(counted) == 90, len(counted)
+
+    # 81b counts, and is still not strictly blind: both must hold at once.
+    b81 = [e for e in listed if e['ref'] == 'Kiddushin 81b' and e.get('not_blind_reason')]
+    assert b81, 'the appendix 81b entry should carry a not-blind reason'
+    assert all(e['expert_blind'] for e in b81), '81b must count toward recall'
+    assert all(e['expert_strictly_blind'] is False for e in b81), '81b is not blind'
+
+
+def test_the_loose_window_credits_a_story_we_never_proposed():
+    """The concrete case that shows the loose recall figure is an upper bound.
+
+    Jeff's 81b story is at segment 9. Every run proposed segments 1-3 and 14 on that
+    page and nothing at 9 -- 9% text overlap, measured by
+    scripts/check_appendix_coverage.py. The loose window credits it anyway; the
+    strict test does not. This pins the gap to a case that does not depend on the
+    aligner being right.
+    """
+    entries, _, _, _ = built('Kiddushin')
+    # built() returns the in-memory structure, where cells are tuples; the written
+    # JSON has them as lists. Compare in a shape-independent way.
+    cells = lambda e: [tuple(c) for c in (e.get('expert_segments') or [])]
+    hits = [e for e in entries
+            if e['ref'] == 'Kiddushin 81b' and e.get('not_blind_reason')
+            and cells(e) == [('Kiddushin 81b', 9)]]
+    assert hits, 'expected the appendix 81b entry, localised to segment 9'
+    e = hits[0]
+    assert e['detector_proposed'] is True, 'loose window credits it'
+    assert e['detector_proposed_strict'] is False, 'strict test must not credit it'
 
 
 def test_every_story_localises_to_at_least_one_segment():

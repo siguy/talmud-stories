@@ -106,8 +106,36 @@ def test_appendix_entries_are_flagged_and_excluded_from_recall():
 def test_recall_denominator_is_the_blind_unique_count():
     stories, _ = _kiddushin()
     blind = [s for s in stories if s['blind'] and not s['duplicate_of']]
-    assert len(blind) == 89, f'expected 89 blind unique stories, got {len(blind)}'
+    assert len(blind) == 89, f'expected 89 strictly-blind unique stories, got {len(blind)}'
     assert len([s for s in stories if not s['blind']]) == 6
+
+
+def test_an_appendix_case_we_never_proposed_stays_in_the_denominator():
+    """Blindness and the recall denominator are different questions.
+
+    Four appendix cases we proposed ourselves: counting them could only flatter
+    recall, so they come out. The fifth (81b) we never proposed -- Jeff found it in
+    page text our review UI displayed -- so it can only count AGAINST us. Dropping
+    a story we missed is what inflates recall, which is the direction that matters.
+    """
+    stories, _ = _kiddushin()
+    appendix = {s['ref']: s for s in stories if s['in_appendix']}
+    assert len(appendix) == 5
+
+    for ref in ('Kiddushin 33a', 'Kiddushin 45a', 'Kiddushin 53a', 'Kiddushin 71a'):
+        s = appendix[ref]
+        assert not s['blind'], f'{ref} is appendix-sourced and cannot be blind'
+        assert not s['counts_for_recall'], f'{ref} was proposed by us; it must not count'
+
+    s = appendix['Kiddushin 81b']
+    assert not s['blind'], '81b is still not blind -- we showed him the page'
+    assert s['counts_for_recall'], (
+        '81b was never proposed by any run, so it must stay in the denominator; '
+        'excluding it inflates recall')
+
+    counted = [x for x in stories
+               if x.get('counts_for_recall', x['blind']) and not x['duplicate_of']]
+    assert len(counted) == 90, f'expected a denominator of 90, got {len(counted)}'
 
 
 def test_story_text_matches_an_independent_renderer():

@@ -35,6 +35,22 @@ RUN_ORDER = ['v7/kiddushin_v7', 'v8/wave1', 'v8/wave2', 'v9/wave3/', 'v9/wave3_i
              'canonical', 'v10/wave4/', 'v10/wave4_notrim', 'v11/wave5/', 'v11/wave5_summaryfix']
 
 
+NIKUD = re.compile(r'[\u0591-\u05c7]')
+
+
+def strip(text):
+    """Consonantal skeleton: no markup, no vowel points, letters only."""
+    return re.sub(r'[^\u05d0-\u05ea]', '', NIKUD.sub('', HTML.sub('', text or '')))
+
+
+def contains(needle, haystack):
+    """Fraction of `needle`'s character 4-grams present in `haystack`."""
+    if len(needle) < 8:
+        return 0.0
+    g = [needle[i:i + 4] for i in range(len(needle) - 3)]
+    return sum(1 for x in g if x in haystack) / len(g)
+
+
 def occupied_segments(cases):
     """Which segments each case actually occupies, from the page text."""
     pages = {p['ref']: p for p in json.loads(SEGMENT_SOURCE.read_text())['pages']}
@@ -59,12 +75,17 @@ def main():
     print('-' * (50 + 8 * len(cases)))
     ever = {c['ref']: False for c in cases}
     for r in runs:
-        pages = {p['ref']: p for p in json.loads(r.read_text())['pages']}
+        try:
+            doc = json.loads(r.read_text())
+            pages = {p['ref']: p for p in doc['pages']}
+        except (KeyError, TypeError, json.JSONDecodeError):
+            continue          # not a per-page run file (ruler, index, triage cache)
         row = f"{str(r.relative_to(PROJECT_ROOT / 'results')):50}"
         for c in cases:
             segs = set(occ[c['ref']])
+            page = pages.get(c['ref'], {})
             spans = [set(range(s['start_segment'], s['end_segment'] + 1))
-                     for s in pages.get(c['ref'], {}).get('stories', [])]
+                     for s in page.get('stories', [])]
             full = any(segs <= s for s in spans)
             part = any(segs & s for s in spans)
             ever[c['ref']] |= part
@@ -72,6 +93,34 @@ def main():
         print(row)
     print('\nnever proposed in any run:',
           ', '.join(ref for ref, hit in ever.items() if not hit) or 'none')
+    print()
+    print('Segment overlap is a weak test: a span that merely TOUCHES a segment sharing')
+    print('vocabulary with the case scores PART. The table below asks the stronger')
+    print('question -- how much of the case TEXT does the proposed span actually contain?')
+    print()
+    print(f"{'case':16}{'best span':>12}{'contains':>10}   verdict")
+    print('-' * 62)
+    for c in cases:
+        best = (0.0, None)
+        for r in runs:
+            try:
+                pages = {p['ref']: p for p in json.loads(r.read_text())['pages']}
+            except (KeyError, TypeError, json.JSONDecodeError):
+                continue
+            page = pages.get(c['ref'])
+            if not page:
+                continue
+            segs = page.get('segments', [])
+            for st in page.get('stories', []):
+                lo, hi = st['start_segment'], st['end_segment']
+                hay = strip(' '.join(x.get('hebrew', '') for x in segs[lo:hi + 1]))
+                cov = contains(strip(c['text']), hay)
+                if cov > best[0]:
+                    best = (cov, f"{lo}-{hi}")
+        verdict = ('proposed in full' if best[0] > 0.85 else
+                   'proposed, TRUNCATED' if best[0] > 0.25 else
+                   'NEVER PROPOSED')
+        print(f"{c['ref'].split()[1]:16}{best[1] or '-':>12}{best[0]:>9.0%}   {verdict}")
 
 
 if __name__ == '__main__':

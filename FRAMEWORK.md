@@ -60,12 +60,12 @@ precision does not.
 **Fails by:** never proposing a real story (invisible) · proposing noise (visible, cheap).
 
 **Measured by:** recall against the blind 2005 list. **Now: Ketubot 96.0%** (143/149),
-**Kiddushin 93.3%** (83/89).
+**Kiddushin 93.3%** (84/90).
 
 Quote the test with the number. The published figure credits a proposal anywhere in the
 aligner's search window, which runs to 14 segments and straddles daf boundaries. Under a
 **strict** test — a proposal must overlap a segment the story actually occupies — it is
-**87.9% / 84.3%**. The gap is almost entirely cross-page stories whose text sits on a
+**87.9% / 83.3%**. The gap is almost entirely cross-page stories whose text sits on a
 continuation daf we proposed nothing on.
 
 **Gate: ≥95% — PROVISIONAL.** *Half-derived: Jeff's lists missing stories genuinely
@@ -238,7 +238,7 @@ measurement.
 |---|---|---|---|
 | `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
 | `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
-| `results/expert_lists/kiddushin_2005.json` | 89 Kiddushin stories | **BLIND** — of 95 parsed; excludes 1 he added and 5 appendix entries | recall, triage recall, boundaries |
+| `results/expert_lists/kiddushin_2005.json` | 90 Kiddushin stories | **BLIND** (89 strictly) — of 95 parsed; excludes 1 he added and the 4 appendix cases we proposed ourselves. The 5th (81b) we never proposed, so excluding it would inflate recall | recall, triage recall, boundaries |
 | `results/canonical/ketubot_canonical.json` | 187 entries · 164 accepted | **CIRCULAR** — we proposed, Jeff corrected. v7 + v9, several rounds | precision, consistency |
 | `results/canonical/kiddushin_canonical.json` | 96 entries · 85 accepted | **CIRCULAR** — v7 only, one round | precision, consistency |
 | `results/rulers/{tractate}_ruler.json` | Ketubot 201, Kiddushin 122 entries | **JOINED** — each entry says whether it is expert-listed (blind) and/or proposed (circular) | recall *and* precision, from one file |
