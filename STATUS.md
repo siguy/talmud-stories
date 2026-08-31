@@ -102,7 +102,7 @@ nothing** — 17b, 50a and 51a each carry zero proposals.
   as its regression check, and all 95 texts match an independent renderer character for
   character. Jeff's 9 review comments came back with their **exact anchor positions**, so
   each attaches to the passage he was looking at — which is what makes them usable to
-  `NEXT/08`. → Lesson 25
+  `NEXT/08`. → Lesson 29
 
 ## Waiting on Jeff — email sent 2026-08-30
 

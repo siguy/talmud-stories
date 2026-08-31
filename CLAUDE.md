@@ -129,7 +129,7 @@ archive/                          # Old versions (reference only)
 | `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — 95 stories with `blind` flags, 10 anchored expert remarks |
 | `docs/golden/v11/kiddushin_list_parse_2026-08-30.md` | Why the line-based parse gave 105, and how the count was verified |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
-| `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 26) |
+| `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 30) |
 | `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
 | `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
 | `docs/golden/v11/detection_classification_ruler_2026-08-30.md` | Why 86%/68% were not Classification numbers, and why 96% recall is 88% strict |
@@ -181,7 +181,7 @@ When making changes, update these files as relevant:
 - Modify `evaluate_golden.py` during experiments
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
-- Ingest ground truth from a converter's output (Lesson 25) — parse the source format; `textutil` silently drops table columns and relocates Word comments
-- Call an expert list blind without checking it against what we sent him (Lesson 26) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
+- Ingest ground truth from a converter's output (Lesson 29) — parse the source format; `textutil` silently drops table columns and relocates Word comments
+- Call an expert list blind without checking it against what we sent him (Lesson 30) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)

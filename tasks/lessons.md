@@ -540,7 +540,7 @@ that is a PRODUCT question — which definition are we building? — and it
 goes to the human, not into a tuning loop. (c) A metric that can be moved
 by choosing a ruler is not yet a metric.
 
-## Lesson 25 — Read the source format, not the converter's output (2026-08-30)
+## Lesson 29 — Read the source format, not the converter's output (2026-08-30)
 
 Jeff's Kiddushin list was parsed by running `textutil` over the `.doc` and
 reading the result line by line. That returned 105 stories. Nine were his
@@ -579,7 +579,7 @@ that check caught a retained annotation marker in 6 of 95 entries. (c)
 When a count looks implausible on one key (81b with 11), treat it as a
 parser bug until proven otherwise, not as a quirk of the data.
 
-## Lesson 26 — A blind list stops being blind when the expert merges your output into it (2026-08-30)
+## Lesson 30 — A blind list stops being blind when the expert merges your output into it (2026-08-30)
 
 Jeff's Kiddushin list has 95 stories. Five of them are cases from our own
 runs, which we sent him, which he annotated `Yes` / `Low confidence`, and
@@ -622,7 +622,7 @@ Wave 1 on, so "is it in our output" has a different answer depending on
 which output you look at. (d) When a provenance question moves a headline
 number, say which way it moves it and who that flatters, before deciding.
 
-## Lesson 27 — "Incorrect" is not a metric until you know what was rejected (2026-08-30)
+## Lesson 31 — "Incorrect" is not a metric until you know what was rejected (2026-08-30)
 
 Classification precision was 86% on Ketubot and 68% on Kiddushin, and the
 scoreboard called Classification our weakest capability on that basis.

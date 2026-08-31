@@ -104,7 +104,7 @@ does, ask Jeff whether he meant to add it. `NEXT/08` step 6.
 **true for Kiddushin and Ketubot, unverified anywhere else.**
 
 **Costs if wrong:** silently dropped stories, in the denominator, with no error. The same
-failure shape as Lesson 25.
+failure shape as Lesson 29.
 
 **Settles it:** before running this parser on Gittin, Yevamot or Eruvin, print the 3–7
 word paragraphs in the text column and confirm the bucket is empty. If it is not, the

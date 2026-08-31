@@ -20,7 +20,7 @@ Mirror the Ketubot measurement exactly — same script, so the numbers are compa
 1. `scripts/measure_recall_vs_expert_list.py` against
    `results/v10/wave4_notrim/kiddushin_v10_notrim.json`. Do **not** re-parse the .doc —
    its `parse_expert_doc` returns 105 entries on this document, 9 of them Jeff's English
-   notes (Lesson 25). Feed it the stories from `kiddushin_2005.json` instead.
+   notes (Lesson 29). Feed it the stories from `kiddushin_2005.json` instead.
    Filter `blind == true` and `duplicate_of == null`.
 2. Split the misses by cause, as was done for Ketubot: triage discarded the page /
    page examined but nothing proposed / proposed but classified NOT_A_STORY. The third

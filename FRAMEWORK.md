@@ -90,7 +90,7 @@ database users decide"* is a legitimate answer rather than an evasion.
 **Measured by:** precision on expert review rounds — **counting only rejections that
 dispute whether the passage is a story.** A rejection objecting to the boundary, the
 merge, or our confidence level belongs to another capability; pooling them is how this
-project mistook a boundary problem for a classification one (Lesson 27). `adjust` counts
+project mistook a boundary problem for a classification one (Lesson 31). `adjust` counts
 as **accepted**: it says the story is real and the extent is wrong.
 
 **Now: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–92.1% (Apr 2026, v7).** A range, not
