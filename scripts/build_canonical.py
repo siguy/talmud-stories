@@ -5,6 +5,12 @@ Build Canonical Ketubot Stories File.
 Merges v7 (pages 2-60) and v9 (pages 61-112) base results, then applies
 Jeff Rubenstein's expert corrections from 3 segment-level feedback rounds.
 
+WARNING (2026-08-30): the golden has moved on without this script — a 2026-06-03
+round, and five stories added from Jeff's blind 2005 list that the detector has
+never proposed and this script cannot regenerate. It therefore REFUSES to
+overwrite results/canonical/ketubot_canonical.json unless explicitly forced.
+Treat it as a historical reconstruction of the 2026-03 state, not a build step.
+
 Corrections are categorized as:
   - auto: Unambiguous changes applied automatically
   - needs_review: Ambiguous changes flagged for Jeff's confirmation
@@ -849,10 +855,61 @@ def save_canonical(pages, auto_applied, needs_review, skipped, no_change,
 
 # ---------- Main ----------
 
+def refuse_if_would_regress():
+    """Stop if the live canonical holds work this script cannot reproduce.
+
+    This script rebuilds the golden from the base runs plus three 2026-02
+    feedback files and the 2026-03 canonical review. The golden has since moved
+    on WITHOUT it — the 2026-06-03 round, and on 2026-08-30 five stories from
+    Jeff's blind 2005 list that the detector has never proposed. Re-running
+    would silently delete them, and the golden is the most valuable artifact in
+    the project.
+
+    So this is no longer a build step; it is a historical reconstruction. It
+    refuses to overwrite unless the caller states that they mean it.
+    """
+    import sys
+    if not OUTPUT_PATH.exists():
+        return
+    live = json.loads(OUTPUT_PATH.read_text())
+    stories = [s for pg in live.get('pages', []) for s in pg.get('stories', [])]
+    unreproducible = [s for s in stories if s.get('source') == 'jeff_2005_list']
+    rounds = live.get('corrections_summary', {}) or {}
+    later_round = any('2026-06' in str(k) or '2026-08' in str(k)
+                      for k in list(rounds.keys()) + list(live.keys()))
+    if not unreproducible and not later_round:
+        return
+    if '--i-know-this-discards-later-work' in sys.argv:
+        print("WARNING: overwriting the canonical, discarding later work, as instructed.")
+        return
+    print("=" * 70)
+    print("  REFUSING TO WRITE — this would regress the golden dataset")
+    print("=" * 70)
+    print(f"  {OUTPUT_PATH.relative_to(PROJECT_ROOT)} currently holds "
+          f"{len(stories)} stories.")
+    if unreproducible:
+        print(f"  {len(unreproducible)} of them came from Jeff's blind 2005 list and were")
+        print("  never proposed by the detector, so this script cannot regenerate them:")
+        for s in unreproducible:
+            ref = (s.get('provenance') or {}).get('expert_ref', '?')
+            print(f"      {ref}")
+    if later_round:
+        print("  The golden also carries correction rounds later than the three")
+        print("  2026-02 files and the 2026-03 review this script reads.")
+    print()
+    print("  This script is now a HISTORICAL RECONSTRUCTION, not a build step.")
+    print("  To rebuild the 2026-03 state for inspection, write elsewhere:")
+    print("      OUTPUT_PATH override, or copy the file first.")
+    print("  To overwrite anyway and lose the above:")
+    print("      python3 scripts/build_canonical.py --i-know-this-discards-later-work")
+    sys.exit(1)
+
+
 def main():
     print("=" * 60)
     print("  BUILD CANONICAL KETUBOT STORIES")
     print("=" * 60)
+    refuse_if_would_regress()
 
     # Step 1a: Load and merge
     pages = load_and_merge_base()
