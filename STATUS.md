@@ -77,9 +77,10 @@ notes set its width. → [`docs/findings/2026-08-30-detection-classification-rul
 
 **We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
 from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
-a point estimate, because the reviewer never recorded *which thing* he was rejecting. That
-fix is a review-UI change — [`review-verdict-axes`](work/2026-08-30-review-verdict-axes.md)
-Phase B — not more inference over free text.
+a point estimate, because the reviewer never recorded *which thing* he was rejecting — and
+no reading of those notes can fix that retroactively. The two paragraphs below are how far
+each half got: reading took the range as far as it goes, and the UI stops the next round
+adding to it.
 
 **The range narrowed as far as reading can take it (2026-08-31, Phase A).** Every note the
 ruler filed `unclassified` was read by hand. **There were 34, not the 24 on record** — the
@@ -91,6 +92,20 @@ stay CIRCULAR and *indicated*. Phase A also found that `incorrect` has meant two
 things: the 2026-02-05 UI showed Jeff our `NOT_A_STORY` verdicts too, so 4 of the 34 are
 him **overturning a rejection** — a false negative counted against precision.
 → [`docs/findings/2026-08-31-objection-axis-hand-sort.md`](docs/findings/2026-08-31-objection-axis-hand-sort.md)
+
+**And the next round will not add to it (2026-08-31, Phase B).** The review UI now asks
+*is this a story?* as its only required question, with **extent / confidence / grouping**
+as separate axes behind a disclosure — each indicting a different capability. A correct
+entry is still **one click**, verified by clicking it in a browser. Answering *not a story*
+clears and hides the other axes, so the affirm-and-reject contradiction Phase A found is
+unrecordable. Every saved verdict carries the label under review and the direction of the
+error, so nobody has to reconstruct either again.
+`scripts/migrate_verdicts.py` puts all **11 banked verdict files (792 records)** onto that
+shape and found **a fourth vocabulary**: the 2026-01-08 round already had classification,
+boundary and confidence axes, and **10 of its 25 entries are boundary corrections no
+harness has ever read**. Phase C is now just *run a round* — `build_ruler.py` reads the
+axes directly, so such a round reports `unclassified_notes: 0` by construction.
+→ [`docs/findings/2026-08-31-verdict-axes-review-ui.md`](docs/findings/2026-08-31-verdict-axes-review-ui.md)
 
 **Detection is softer than 96% under a strict test.** The published test credits a
 proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
@@ -177,10 +192,17 @@ his review notes say cut it. Blocks the end rule for capability 4.
    segs 13-14. The substance stands (we do miss his), the claim did not. Pairs naturally
    with item 2 — same daf.
 
-**Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
-still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
-so the regenerated page stayed comparable to what Jeff actually saw during brief 04's
-verification. Point it at `results/v10/wave4_notrim/` before showing him anything new.
+**Before any next review round:** use
+[`generate_verdict_axes_review_ui.py`](validation/generators/generate_verdict_axes_review_ui.py),
+which reads `results/v10/wave4_notrim/` and records which capability an objection indicts.
+`generate_wave4_review_ui.py` still reads `results/v10/wave4/` — the **reverted**
+char-offset span data — deliberately, so that page stays comparable to what Jeff actually
+saw; **nothing new should go to him from it.**
+
+That round should also carry the two things bundled into the page: `mishnah_stories` is
+shown and badged, so `jeff:mishnah-scope` can finally be answered; and
+`--include-rejected` is available for the entries we classified NOT_A_STORY, which is the
+only way to measure real stories we throw away.
 
 ## Next — items in [`work/`](work/), each self-contained
 
@@ -210,7 +232,7 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 | **[kiddushin-recall](work/2026-08-30-kiddushin-recall.md)** — report over both denominators (90 / 94) | 1, 2 | — | no |
 | **[kiddushin-boundary-set](work/2026-08-30-kiddushin-boundary-set.md)** — ~190 targets, kills the ±7pt noise | 4 | — | no |
 | **[kiddushin-comments-harvest](work/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
-| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. **Phase A done 2026-08-31**; Phase B is the UI change and is the part that must land *before* the next review round | 3, 5 | — | no |
+| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong. **Phases A and B done 2026-08-31.** Phase C is not code: **run a round on the new page**, and Classification becomes a number rather than a range | 3, 5 | a review round | no |
 | [triage-recall-price](work/2026-08-30-triage-recall-price.md) — price the trade over the 124 discarded pages | 1 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
 | [kiddushin-parse-open-calls](work/2026-08-30-kiddushin-parse-open-calls.md) | ground truth | — | **1b** |

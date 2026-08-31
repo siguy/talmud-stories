@@ -193,6 +193,30 @@ def test_the_only_residue_left_is_the_v8_delta_round():
     assert left == {'v8_delta_feedback_anonymous_2026-02-26.json': 7}, left
 
 
+def test_a_verdict_axes_round_needs_no_note_reading_at_all():
+    """Phase C's acceptance test, made mechanical rather than hoped for.
+
+    A round saved by the verdict-axes UI states the axis at entry, so `unclassified`
+    cannot arise from it. Without this the new UI would ship and the ruler would still
+    be keyword-guessing at its notes -- which is the whole thing Phase B removes.
+    """
+    axed = {'round': 'a_future_round.json', 'key': 'Ketubot 5a_1-1', 'note': '',
+            'verdict': 'incorrect',
+            'axes': {'is_story': 'no', 'extent': 'right', 'confidence': 'right',
+                     'grouping': 'right', 'display_broken': False,
+                     'direction': 'over_call', 'classification_shown': 'YES'}}
+    assert ruler.classify_verdict(axed) == ('classification', 'over_call')
+
+    # An identical rejection with no axes and an unreadable note stays unclassified --
+    # the fallback must not quietly start guessing.
+    bare = {k: axed[k] for k in ('round', 'key', 'note', 'verdict')}
+    assert ruler.classify_verdict(bare) == ('unclassified', None)
+
+    # And the reviewer's own answer outranks the keyword rules, not the other way round.
+    contradicted = dict(axed, note='the boundary should be extended')
+    assert ruler.classify_verdict(contradicted)[0] == 'classification'
+
+
 def test_strict_recall_is_a_subset_of_loose_recall():
     for tractate in ('Ketubot', 'Kiddushin'):
         entries, _, _, m = built(tractate)

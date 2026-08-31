@@ -24,6 +24,18 @@
         "."
       ],
       "port": 8748
+    },
+    {
+      "name": "validation-ui-alt",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8751",
+        "--directory",
+        "validation/ui"
+      ],
+      "port": 8751
     }
   ]
 }

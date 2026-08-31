@@ -164,9 +164,17 @@ def load_reviews(tractate):
                 m = REVIEW_KEY.match(key)
                 if not m or not m.group(1).startswith(tractate):
                     continue
-                out[(m.group(1), int(m.group(2)), int(m.group(3)))].append({
-                    'round': path.name, 'key': key, 'verdict': val['verdict'],
-                    'note': (val.get('note') or val.get('notes') or '').strip()})
+                rec = {'round': path.name, 'key': key, 'verdict': val['verdict'],
+                       'note': (val.get('note') or val.get('notes') or '').strip()}
+                # A `verdict_axes_v1` round states the axis outright, so nothing has to
+                # be inferred from its note. This is what makes Phase C's acceptance
+                # test -- unclassified_notes: 0 -- a fact about the data rather than a
+                # hope about the keyword rules.
+                if val.get('is_story'):
+                    rec['axes'] = {a: val.get(a) for a in
+                                   ('is_story', 'extent', 'confidence', 'grouping',
+                                    'display_broken', 'direction', 'classification_shown')}
+                out[(m.group(1), int(m.group(2)), int(m.group(3)))].append(rec)
                 rounds[path.name] += 1
     return out, rounds
 
@@ -196,11 +204,23 @@ HAND_SORT = _load_hand_sort()
 
 
 def classify_verdict(v):
-    """The axis and direction of one rejection. Hand sort first, then the keywords.
+    """The axis and direction of one rejection, from the best source available.
 
-    Returns (axis, direction). `direction` is None wherever nobody has read the note --
-    the keyword rules cannot tell over-call from under-call, and must not pretend to.
+    Three sources, in falling order of authority:
+
+      1. the reviewer said so    -- a `verdict_axes_v1` round records the axis at entry
+      2. a person read the note  -- results/rulers/objection_axes.json (Phase A)
+      3. the keyword rules       -- conservative, and `unclassified` when unsure
+
+    Returns (axis, direction). `direction` is None wherever nobody has read the note:
+    the keyword rules cannot tell an over-call from an under-call and must not pretend
+    to (docs/findings/2026-08-31-objection-axis-hand-sort.md sec.4).
     """
+    axes = v.get('axes')
+    if axes:
+        # Under the axes vocabulary a rejection IS a classification objection by
+        # construction: an extent complaint projects to `adjust`, which is ACCEPTED.
+        return 'classification', axes.get('direction')
     hand = HAND_SORT.get((v['round'], v['key']))
     if hand:
         return hand['axis'], hand['direction']

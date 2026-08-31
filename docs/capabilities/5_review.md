@@ -184,20 +184,19 @@ old lists. **That offer has not been taken up.**
   the only route to a Classification point estimate: separate verdict axes for *is it a
   story* / *is the extent right* / *is the confidence right* / *is the merge right*.
   Brief: [`work/2026-08-30-review-verdict-axes.md`](../../work/2026-08-30-review-verdict-axes.md).
-  **Phase A is done** (2026-08-31): the 34 unreadable notes were hand-sorted, 27 of them
-  successfully, and the residue is 7 empty notes.
-  → [`hand_sort`](../findings/2026-08-31-objection-axis-hand-sort.md)
-  **Phases B and C are untried**, and Phase A is what re-deriving intent from free text
-  can do — a narrower range, still not a point estimate. Three things Phase A says the
-  design needs that the brief does not yet have: **a fifth option for *the display is
-  wrong*** (one of the 15 verdicts in the 2026-07-06 round was spent on our renderer),
-  **a direction on every rejection** (four cases exist where he overturned a
-  `NOT_A_STORY` — the opposite error, pooled with false positives today), and **a check
-  that the verdict does not contradict its own note** (two of the 34 affirm and reject
-  at once).
-- **Show `mishnah_stories` to the expert.** The review UI still does not display what the
-  Mishnah filter withheld, so the one person who could settle the scope question has never
-  been shown the passages it removes (`804a097`).
+  **Phases A and B are done** (2026-08-31). Phase A hand-sorted the 34 unreadable notes,
+  27 of them successfully
+  ([`hand_sort`](../findings/2026-08-31-objection-axis-hand-sort.md)); Phase B shipped the
+  page, browser-verified, and migrated all 11 banked verdict files onto its shape
+  ([`verdict_axes_ui`](../findings/2026-08-31-verdict-axes-review-ui.md)).
+  **Phase C is what remains, and it is not code: run a round on it.** The acceptance
+  test is mechanical — `build_ruler.py` reads the axes directly, so a `verdict_axes_v1`
+  round reports `unclassified_notes: 0` and Classification becomes a number rather than
+  a range.
+- **Show `mishnah_stories` to the expert.** ~~The review UI still does not display what
+  the Mishnah filter withheld~~ — **done 2026-08-31**: the verdict-axes page includes them,
+  badged *withheld: inside a Mishnah*, with the scope question on the page. Ketubot 4,
+  Kiddushin 1. Still needs a round run for him to answer (`jeff:mishnah-scope`).
 - **Measure a round.** Nobody has ever recorded how long a review took, or verdicts per
   hour. Zero cost; it just requires asking.
 - **A second reviewer.** Until there are two, inter-rater agreement — half of this
@@ -213,7 +212,9 @@ old lists. **That offer has not been taken up.**
   is built.** Two of its three inputs (the FP classifier, the ensemble) are also untried —
   see [Classification](3_classification.md).
 - **Reuse the throughput UI.** `batch_review.html` with Y/N/S keyboard shortcuts was built
-  in January 2026 and never used for a real round.
+  in January 2026 and never used for a real round. **The verdict-axes page carries Y/B/N
+  and J/K (2026-08-31)**; whether it is used, and how fast, is still unmeasured — nobody
+  has ever recorded a review's duration.
 - **Ask Jeff to keep his appendix separate** on the next tractate — one sentence, costs
   him nothing, and it cannot be reconstructed afterwards. It is the difference between a
   blind list and an unverifiable one (Lesson 29, `NEXT/09` item 1b). Gittin, Yevamot and

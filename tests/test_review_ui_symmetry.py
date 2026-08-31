@@ -32,6 +32,12 @@ production), chosen to cover every shape: a plain multi-segment story, a story
 with a Hebrew span annotation, a story whose span severs a Hebrew word, and the
 cross-page story Jeff flagged.
 
+Run against EVERY generator that includes `validation/generators/_review_display.py`.
+The display code lives in one module precisely so a second review page cannot
+quietly grow its own copy and reintroduce the asymmetry; this test is what makes
+that true rather than intended. Adding a generator to GENERATORS below is the
+whole cost of keeping a new page under the guard.
+
 Requires `node` on PATH; skips cleanly if absent. No API key, no network.
 
 Run directly:  python3 -m tests.test_review_ui_symmetry
@@ -49,12 +55,20 @@ import unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-GENERATOR = ROOT / 'validation' / 'generators' / 'generate_wave4_review_ui.py'
+GEN_DIR = ROOT / 'validation' / 'generators'
 FIXTURE = ROOT / 'tests' / 'fixtures' / 'review_ui_symmetry_stories.json'
 
+# name -> (file, how to call its generate_html with the fixture)
+GENERATORS = {
+    'wave4': ('generate_wave4_review_ui.py',
+              lambda m, stories: m.generate_html('Kiddushin', stories)),
+    'verdict_axes': ('generate_verdict_axes_review_ui.py',
+                     lambda m, stories: m.generate_html('Kiddushin', stories, ['fixture.json'])),
+}
 
-def _load_generator():
-    spec = importlib.util.spec_from_file_location('wave4_ui', GENERATOR)
+
+def _load_generator(filename):
+    spec = importlib.util.spec_from_file_location(filename.replace('.py', ''), GEN_DIR / filename)
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
@@ -131,55 +145,73 @@ class ReviewUiSymmetryTest(unittest.TestCase):
         if shutil.which('node') is None:
             raise unittest.SkipTest('node not on PATH')
         cls.stories = json.loads(FIXTURE.read_text())
-        html = _load_generator().generate_html('Kiddushin', cls.stories)
-        script = _extract_script(html) + AUDIT_JS
-        proc = subprocess.run([shutil.which('node'), '-e', script],
-                              capture_output=True, text=True, timeout=60)
-        if proc.returncode != 0:
-            raise AssertionError(f'display JS failed to run:\n{proc.stderr}')
-        cls.audit = {r['key']: r for r in json.loads(proc.stdout)}
+        cls.audits = {}
+        for name, (filename, call) in GENERATORS.items():
+            html = call(_load_generator(filename), cls.stories)
+            script = _extract_script(html) + AUDIT_JS
+            proc = subprocess.run([shutil.which('node'), '-e', script],
+                                  capture_output=True, text=True, timeout=60)
+            if proc.returncode != 0:
+                raise AssertionError(f'{name}: display JS failed to run:\n{proc.stderr}')
+            cls.audits[name] = {r['key']: r for r in json.loads(proc.stdout)}
+
+    def test_every_generator_shares_one_display(self):
+        """Two copies of this code is how the asymmetry comes back."""
+        for filename, _ in GENERATORS.values():
+            src = (GEN_DIR / filename).read_text()
+            self.assertIn('_review_display import', src,
+                          f'{filename} does not use the shared display module')
+            self.assertNotIn('function buildGrid', src,
+                             f'{filename} has grown its own copy of the display code')
 
     def test_fixture_covers_every_shape(self):
-        keys = set(self.audit)
+        keys = set(next(iter(self.audits.values())))
         self.assertIn('Kiddushin 9a_2-2', keys, 'span-annotation case missing')
         self.assertIn('Kiddushin 8b_14-14', keys, 'cross-page case missing')
-        self.assertTrue(any(r['crossPage'] for r in self.audit.values()))
-        self.assertTrue(any(r['marks'] > 0 for r in self.audit.values()),
+        for name, audit in self.audits.items():
+            self.assertTrue(any(r['crossPage'] for r in audit.values()), name)
+        # Only the Wave 4 page carries char-offset spans; wave4_notrim has none.
+        self.assertTrue(any(r['marks'] > 0 for r in self.audits['wave4'].values()),
                         'no span annotation rendered — the marking path is untested')
 
+    def _rows(self):
+        """(generator name, audit row, story key) for every generator under guard."""
+        return [(name, r, key) for name, audit in self.audits.items()
+                for key, r in audit.items()]
+
     def test_A_every_block_pairs_the_two_languages(self):
-        for key, r in self.audit.items():
-            self.assertTrue(r['blocks'], f'{key}: no text block rendered')
+        for name, r, key in self._rows():
+            self.assertTrue(r['blocks'], f'{name}/{key}: no text block rendered')
             for n, block in enumerate(r['blocks']):
                 self.assertEqual(
                     block['en'], block['he'],
-                    f'{key} block {n}: {block["en"]} English cells vs '
+                    f'{name}/{key} block {n}: {block["en"]} English cells vs '
                     f'{block["he"]} Hebrew cells — the languages have diverged')
 
     def test_B_no_story_text_is_hidden_in_either_language(self):
-        for key, r in self.audit.items():
+        for name, r, key in self._rows():
             self.assertEqual([], r['truncated'],
-                             f'{key}: text hidden from the reviewer — {r["truncated"]}')
+                             f'{name}/{key}: text hidden from the reviewer — {r["truncated"]}')
 
     def test_C_cross_page_continuation_carries_both_languages(self):
-        cross = {k: r for k, r in self.audit.items() if r['crossPage']}
+        cross = [(n, r, k) for n, r, k in self._rows() if r['crossPage']]
         self.assertTrue(cross, 'fixture has no cross-page story')
-        for key, r in cross.items():
+        for name, r, key in cross:
             self.assertEqual(2, len(r['blocks']),
-                             f'{key}: expected a continuation block, got {len(r["blocks"])}')
+                             f'{name}/{key}: expected a continuation block, got {len(r["blocks"])}')
             self.assertGreater(r['blocks'][1]['he'], 1,
-                               f'{key}: continuation block has no Hebrew — this is the '
-                               f'exact bug Jeff hit on Kiddushin 8b seg 14')
+                               f'{name}/{key}: continuation block has no Hebrew — this is '
+                               f'the exact bug Jeff hit on Kiddushin 8b seg 14')
             self.assertGreater(r['blocks'][1]['en'], 1,
-                               f'{key}: continuation block has no English')
+                               f'{name}/{key}: continuation block has no English')
 
     def test_D_nothing_is_struck_through_or_english_only(self):
-        for key, r in self.audit.items():
+        for name, r, key in self._rows():
             self.assertFalse(r['strikethrough'],
-                             f'{key}: trimming styles are back — the story must be '
+                             f'{name}/{key}: trimming styles are back — the story must be '
                              f'HIGHLIGHTED inside the full text, never cut')
             self.assertFalse(r['englishOnlyBlock'],
-                             f'{key}: an English-only block is back')
+                             f'{name}/{key}: an English-only block is back')
 
 
 if __name__ == '__main__':

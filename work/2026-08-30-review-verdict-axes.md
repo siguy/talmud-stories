@@ -150,7 +150,41 @@ and an LLM classifier adds a second layer of inference on top of the one we are 
 At n=24 a person is cheaper and auditable. At n=240 the answer would be different — say so
 in the finding, so the rule is reusable rather than a preference.
 
-### Phase B — stop widening the range (the UI change)
+### Phase B — stop widening the range (the UI change) — **DONE 2026-08-31**
+
+> **Outcome.** → [`docs/findings/2026-08-31-verdict-axes-review-ui.md`](../docs/findings/2026-08-31-verdict-axes-review-ui.md)
+>
+> `validation/generators/generate_verdict_axes_review_ui.py`, reading
+> `results/v10/wave4_notrim/`. All four constraints below met; all five gates met.
+> **One click verified by clicking it** in a browser, not by reading the code.
+>
+> **Three additions the design above did not have, each from Phase A:** a fifth control
+> for *the page is showing this wrong* (never gated behind axis 1); `classification_shown`
+> + `direction` on every saved verdict; and axes 2-4 cleared and hidden when axis 1 says
+> "not a story", which makes the affirm-and-reject contradiction unrecordable.
+>
+> **The migration found a fourth vocabulary, and it is the oldest.** The 2026-01-08 round
+> already had `feedback_type` + `length_adjustment` + `story_confidence` -- a
+> classification, a boundary and a confidence axis, in January 2026. **10 of its 25
+> entries are boundary corrections no harness has ever read**, because that file keys its
+> records under a list. `scripts/migrate_verdicts.py` covers all 11 verdict files (792
+> records); a test asserts totality and that nothing unreadable is guessed into a bucket.
+> It caught a real mapping bug: `correct` on a NOT_A_STORY means "right to reject", and
+> the first draft would have invented **92 approvals nobody gave**.
+>
+> **The display code now lives in `validation/generators/_review_display.py`** and both
+> pages import it; `tests/test_review_ui_symmetry.py` runs its invariants against every
+> generator and fails if one grows a private copy. Both new guards were checked by
+> reintroducing the bug and watching them go red.
+>
+> **Phase C is now mechanical:** `build_ruler.py` reads the axes directly, so a
+> `verdict_axes_v1` round cannot produce an `unclassified` note. Pinned by a test.
+>
+> Still open: four readable notes outside Phase A's population, named in the finding
+> section 6. And `.claude/launch.json` gained a `validation-ui-alt` entry on port 8751,
+> because another worktree holds 8747.
+
+*Original brief:*
 
 Implement the axes in `validation/generators/`. Four constraints, each bought by a past
 failure:
