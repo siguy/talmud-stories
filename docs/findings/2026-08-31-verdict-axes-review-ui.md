@@ -11,6 +11,10 @@ rounds migrate onto the new shape, and the migration surfaced a fourth vocabular
 **10 boundary corrections from the project's first expert round that no harness has ever
 read**.
 
+**And the page produces BLIND boundary targets** — §8. That was not in the brief. It is
+the part that makes this hill-climbing rather than only bookkeeping, because capability 4
+is the one whose ruler the review round can actually add to.
+
 | gate (from the brief) | result |
 |---|---|
 | Correct entry stays one click | **verified by clicking it** in the browser: one click writes `is_story: yes` with all three axes at `right` |
@@ -198,6 +202,99 @@ named here for whoever widens it rather than folded in quietly.
 and the display path, and both are tested. Whether a reviewer reaches for *"something
 else is wrong"* rather than typing a note is a question only a round answers, and the
 free-text box is deliberately still there — supplementary, never the only signal.
+
+## 8. Boundaries: the page produces blind targets, not just corrections
+
+Everything above improves *measurement*. This is the one part that adds to a ruler.
+
+**Boundary truth in this project is a clause.** `scripts/score_boundary_targets.py` asks
+*"is the run's boundary at the target clause"* and scores HIT / NEAR / MISS on
+`(ref, segment, direction, clause)`. The clause splitter's own docstring says its ranges
+are over the original string *"so offsets map directly onto what the review UI renders"* —
+the hook was built and never used.
+
+So the page renders each Hebrew clause as a clickable span, from ranges computed **in
+Python by the detector's own `_split_into_clauses`** and shipped with the story. Not a
+JavaScript reimplementation: a boundary target that means something different to the page
+than to the scorer is worse than no target. A test asserts the shipped ranges equal the
+splitter's, story by story and segment by segment.
+
+Median 5 clauses per story segment, p90 9. Clicking one is a click.
+
+### The move that makes a review-round boundary blind
+
+A boundary answer is circular only if **our span** anchored it. So the page asks for the
+extent **before our span is on screen**: on a deterministic sample (1 in 7, hashed on the
+story key so regenerating the page cannot reshuffle it), the card shows the passage with
+*no highlight and no verdict buttons*, and asks where the story begins and ends. Only then
+does the highlight appear and the ordinary card resume.
+
+**Boundary-blindness and detection-blindness are different properties.** We chose which
+passage he saw; we did not choose the boundary he marked. Choosing the passage biases
+*which* boundaries get measured — toward passages the detector finds, which is also the
+population the shipped database needs boundaries for. It cannot bias the answer *within*
+a passage, and that is what the metric reads. This is the same distinction
+`results/expert_lists/kiddushin_2005.json` already draws between `blind` and
+`counts_for_recall`: circularity matters in the direction that flatters, and this one
+cannot flatter.
+
+**Two residual anchors, recorded rather than argued away**, in `blind_basis` on every
+target: the one-sentence English summary is on the card (it names the story, not its
+edges), and the displayed window is centred on our span — widened to ±4 segments for the
+blind pass for exactly this reason, which at clause resolution leaves tens of clauses of
+freedom. Our *classification* badge also stays visible; it says the passage is a story,
+not where it runs, and hiding it would tighten a claim this design is not making.
+
+### Why this is worth having when the 2005 lists exist
+
+Those lists already yield blind targets — 294 for Ketubot — by aligning his verbatim story
+text to Sefaria. Three things a clicked clause adds:
+
+1. **It is stated, not inferred.** Every 2005 target carries an `align_fraction` and
+   `anchor_verified: false`; 2 of his 149 Ketubot stories would not align at all. A click
+   has nothing to verify.
+2. **It covers stories his list does not.** His Ketubot list has 149 entries; our golden
+   has 187. Stories we found that he never listed have no blind boundary truth and never
+   can — and they are in the database.
+3. **It answers the question capability 4 is blocked on, by demonstration.** The end rule —
+   *when a ruling is what makes a passage a story, is that ruling part of it?* — has his
+   2005 lists saying keep and his review notes saying cut. An abstract question has been
+   sitting in his inbox. Twenty clicked end-clauses on passages with a trailing ruling
+   settle it as data.
+
+### Two files, never one
+
+`scripts/build_boundary_targets_from_review.py` writes `..._review_blind.json` and
+`..._review_corrections.json` separately, because they answer different questions and
+pooling them is Lesson 24. The scorer reads both with no changes.
+
+**It did need one fix, and it is the exact error this whole design exists to prevent.**
+`score_boundary_targets.py` decided a target's provenance by comparing its *filename*
+against one hardcoded string, so the new blind file was reported as corrections — a blind
+number labelled circular. Provenance is now read from the target itself
+(`target_is_blind`), the 2005 sets still classify as blind (294 / 0, pinned by a test),
+and the real sets score identically to before.
+
+### End to end, in the browser
+
+On `Kiddushin 22b_18-18`: two clicks marked the story as running clause 1 → clause 5 of
+segment 18, `blind: true`; the card then revealed our span and reported the comparison;
+Save produced a `verdict_axes_v1` round; the converter split it into two files; the scorer
+read the blind file and returned **2 HIT, 100%**.
+
+That case is worth naming. It is Phase A's note #32, where Jeff wrote *"Nothing should
+have been trimmed here. That is, all of 18 is the story."* Marking clause 1 through
+clause 5 of segment 18 **is** that sentence, captured as a scoreable target instead of
+prose somebody has to read.
+
+### A bug the tests could not have caught
+
+The blind pass never armed itself: `marking` had to be set somewhere and nothing set it,
+so the first blind card silently swallowed every click. **The test passed anyway**, because
+the probe was arming it by hand. The browser found it in one click. The state is now
+*derived* from which marks exist rather than stored, and the probe no longer arms
+anything — reintroducing the bug now fails 5 tests. This is what `CLAUDE.md` critical
+rule 1 is for, and it is the second time this project has been saved by opening the page.
 
 ## 7. Bundled into the page, because both cost him nothing
 

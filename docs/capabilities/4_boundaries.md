@@ -215,6 +215,16 @@ the scorer says so. Downgraded from a blocker to a cleanup once the neutral rule
 
 ## Untried
 
+- **Run a round on the verdict-axes page.** *(2026-08-31: the page is built and
+  browser-verified; nobody has reviewed on it yet.)* It captures a boundary as a clicked
+  **clause** — the unit this capability is scored in — and on a 1-in-7 sample it asks for
+  the extent **before our span is on screen**, which makes those targets **BLIND** for the
+  boundary question. Three things that buys, none of them available from the 2005 lists:
+  a boundary that is *stated* rather than aligned (every 2005 target carries an
+  `align_fraction` and `anchor_verified: false`, and 2 of 149 would not align); boundaries
+  for stories his list does not contain (149 listed vs 187 in the golden); and **the end
+  rule settled by demonstration** rather than by an email he has not answered.
+  → [`verdict_axes_ui` §8](../findings/2026-08-31-verdict-axes-review-ui.md)
 - **Never trim away a clause that is itself narrative** — the principled guard, and the
   one salvageable piece of Wave 5b: its labeller used as a **veto on the trim** rather
   than as the mechanism that computes the boundary. ~40 lines against the original 433.

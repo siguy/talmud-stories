@@ -107,6 +107,18 @@ harness has ever read**. Phase C is now just *run a round* — `build_ruler.py` 
 axes directly, so such a round reports `unclassified_notes: 0` by construction.
 → [`docs/findings/2026-08-31-verdict-axes-review-ui.md`](docs/findings/2026-08-31-verdict-axes-review-ui.md)
 
+**And the same page adds to capability 4's ruler, which is the part that is not just
+bookkeeping.** A boundary here is a **clause** — the unit `score_boundary_targets.py`
+scores — so the page renders Hebrew clauses clickable, from ranges computed by the
+detector's own splitter. On a deterministic 1-in-7 sample it asks where the story runs
+**before our span is on screen**: no highlight, no verdict buttons. Those targets are
+**BLIND for the boundary question** — we chose the passage, not the boundary — so unlike
+every previous round's boundary feedback they can catch a regression. Verified end to
+end in a browser: two clicks → saved round → converter → scorer, 2 HIT.
+That also exposed a provenance bug: `score_boundary_targets.py` judged a target's kind by
+its **filename**, so the new blind file was reported as corrections. It now reads the
+target (294 / 0 on the existing sets, pinned).
+
 **Detection is softer than 96% under a strict test.** The published test credits a
 proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
 story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot stories in

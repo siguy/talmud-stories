@@ -180,6 +180,19 @@ in the finding, so the rule is reusable rather than a preference.
 > **Phase C is now mechanical:** `build_ruler.py` reads the axes directly, so a
 > `verdict_axes_v1` round cannot produce an `unclassified` note. Pinned by a test.
 >
+> **The page also produces BLIND boundary targets, which was not in this brief.**
+> Capability 4 is scored in clauses, so the page renders Hebrew clauses clickable (ranges
+> computed by the detector's own `_split_into_clauses`, shipped with the story, asserted
+> equal by test) and on a deterministic 1-in-7 sample asks where the story runs **before
+> our span is on screen** -- no highlight, no verdict buttons. Those marks are blind for
+> the boundary question: we chose the passage, not the boundary. Two files out, never
+> pooled (Lesson 24). Verified end to end in a browser -- two clicks, save, convert,
+> score, 2 HIT -- on `Kiddushin 22b_18-18`, which is Phase A's note #32 (*"all of 18 is
+> the story"*) now captured as a scoreable target instead of a sentence.
+> `scripts/build_boundary_targets_from_review.py`. It exposed a provenance bug:
+> `score_boundary_targets.py` judged a target's kind by its **filename**, so a blind file
+> read as corrections; it now reads the target.
+>
 > Still open: four readable notes outside Phase A's population, named in the finding
 > section 6. And `.claude/launch.json` gained a `validation-ui-alt` entry on port 8751,
 > because another worktree holds 8747.

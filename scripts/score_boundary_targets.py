@@ -57,6 +57,25 @@ def boundary_clause(story, segs, ref, side):
     return seg, (0 if side == 'start' else max(n - 1, 0))
 
 
+def target_is_blind(t):
+    """Is this target free of our own influence -- and say so from the TARGET, not its filename.
+
+    This used to be `target_file != 'expert_boundary_targets_2005.json'`, which quietly
+    reported every new blind source as a correction and understated the score against it.
+    Provenance is a property of the target (FRAMEWORK sec.3): a set is blind or circular
+    because of how it was elicited, and the file it happens to sit in is not evidence.
+
+      boundary_blind  written by scripts/build_boundary_targets_from_review.py -- the
+                      expert marked the extent BEFORE our span was shown
+      jeff_2005*      his lists, written 20 years before this detector existed
+      everything else a correction until it carries a flag saying otherwise
+    """
+    if 'boundary_blind' in t:
+        return bool(t['boundary_blind'])
+    return (str(t.get('source_round', '')).startswith('jeff_2005')
+            or t.get('target_file') == 'expert_boundary_targets_2005.json')
+
+
 DEFAULT_TARGETS = 'tests/expert_boundary_targets.json'
 
 
@@ -118,12 +137,14 @@ def main():
 
     targets = load_targets(args.targets)
     skipped = sum(1 for t in targets if t.get('needs_human'))
-    corrections = sum(1 for t in targets if t['target_file'] != 'expert_boundary_targets_2005.json')
+    corrections = sum(1 for t in targets if not target_is_blind(t))
     print(f"targets: {len(targets)} pooled from {len(args.targets)} file(s) — "
-          f"{corrections} corrections, {len(targets)-corrections} detector-blind (2005 list)"
+          f"{corrections} corrections, {len(targets)-corrections} blind"
           + (f"; {skipped} skipped pending human polarity review" if skipped and not args.include_needs_human else ""))
     print("BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures "
-          "fixing known failures. The 2005 list is a neutral sample and also catches regressions.\n")
+          "fixing known failures. A BLIND target -- his 2005 list, or an extent he marked "
+          "before our span was on screen -- is a neutral sample and also catches "
+          "regressions.\n")
     print(f"{'run':10s} {'scored':>7s} {'HIT':>5s} {'NEAR':>5s} {'MISS':>5s} {'N/A':>5s} {'hit%':>6s} {'hit+near%':>10s}")
     details = {}
     for spec in args.runs:

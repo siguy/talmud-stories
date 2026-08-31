@@ -56,6 +56,14 @@ DISPLAY_CSS = r"""
   .seg-row.story { background: #fffbe6; }
   .seg-row.story .seg-num { color: #8a6d1f; font-weight: 700; }
   .seg-row.story-first { border-top: 2px solid #d4a017; }
+  /* Asking where the story runs, before our answer is on screen. Same background as
+     context, but NOT greyed -- he is being asked to read this closely. */
+  .seg-row.neutral { background: #fff; }
+  span.cl { cursor: pointer; border-radius: 3px; padding: 0 1px;
+            box-shadow: inset 0 -1px 0 #cbd5e1; }
+  span.cl:hover { background: #e6f4f4; box-shadow: inset 0 -2px 0 #2c7a7b; }
+  span.cl.pick-start { background: #c6f6d5; box-shadow: inset 0 -2px 0 #22543d; }
+  span.cl.pick-end { background: #fed7d7; box-shadow: inset 0 -2px 0 #822727; }
   .seg-row.story-last { border-bottom: 2px solid #d4a017; }
   @media (max-width: 900px) {
     .seg-row { flex-wrap: wrap; }
@@ -140,6 +148,51 @@ function renderMarkup(raw, lo, hi) {
   return html;
 }
 
+// Render raw markup in full, with each CLAUSE wrapped in a clickable span.
+//
+// The clause is the unit boundary truth is expressed in: scripts/score_boundary_targets.py
+// scores (segment, clause) and _split_into_clauses() in the detector returns ranges over
+// the ORIGINAL string -- nikud and HTML intact -- precisely "so offsets map directly onto
+// what the review UI renders". The ranges are computed in Python by that same function and
+// shipped with the story, so the page and the scorer cannot drift.
+//
+// Same discipline as renderMarkup: tags are never split, and a span closes before any tag
+// so nesting stays valid. EVERY character is still emitted. This is an affordance laid
+// over the text, never a cut (Lesson 25).
+function renderClauses(raw, clauses, segIndex) {
+  raw = raw || '';
+  clauses = clauses || [];
+  const at = pos => {
+    for (let k = 0; k < clauses.length; k++) {
+      if (pos >= clauses[k][0] && pos < clauses[k][1]) return k;
+    }
+    return -1;                       // the terminator and the space after it
+  };
+  let html = '', open = -1;
+  const close = () => { if (open !== -1) { html += '</span>'; open = -1; } };
+  tokenize(raw).forEach(tok => {
+    if (tok.tag) {
+      close();
+      const name = (tok.v.match(/^<\/?\s*([a-zA-Z0-9]+)/) || [])[1];
+      html += (name && INLINE_OK[name.toUpperCase()]) ? tok.v : esc(tok.v);
+      return;
+    }
+    for (let k = 0; k < tok.v.length; k++) {
+      const idx = at(tok.at + k);
+      if (idx !== open) {
+        close();
+        if (idx !== -1) {
+          html += '<span class="cl" data-s="' + segIndex + '" data-c="' + idx + '">';
+          open = idx;
+        }
+      }
+      html += esc(tok.v[k]);
+    }
+  });
+  close();
+  return html;
+}
+
 // Same word-boundary test as scripts/audit_text_spans.py, so the UI agrees
 // with the structural gate about what counts as a mid-word cut.
 const BREAKERS = '.:?!,״׳()[]–—';
@@ -163,25 +216,36 @@ function spanRange(story, segIndex, heb) {
 
 // One block of paired rows.  English and Hebrew are emitted together, from the
 // same loop iteration, over the same segment range.
-function buildGrid(segs, start, end, story) {
+// opts (all optional, and omitting them reproduces the original behaviour exactly):
+//   clauseMode  render the Hebrew as clickable clause spans, from story.clauses
+//   hideStory   do NOT mark which rows are the story -- used to ask the reviewer
+//               where the story runs BEFORE our answer is on screen
+//   context     segments of context either side (default 2; wider when hiding,
+//               so the window itself gives less away)
+function buildGrid(segs, start, end, story, opts) {
   if (!segs || !segs.length) return '';
+  opts = opts || {};
+  const pad = opts.context || 2;
   const maxIdx = segs.reduce((m, s) => Math.max(m, s.index), 0);
-  const showStart = Math.max(0, start - 2);
-  const showEnd = Math.min(maxIdx, end + 2);
+  const showStart = Math.max(0, start - pad);
+  const showEnd = Math.min(maxIdx, end + pad);
   let rows = '';
   for (let i = showStart; i <= showEnd; i++) {
     const seg = segs.find(s => s.index === i);
     if (!seg) continue;
-    const inStory = (i >= start && i <= end);
-    const cls = ['seg-row', inStory ? 'story' : 'context'];
-    if (i === start) cls.push('story-first');
-    if (i === end) cls.push('story-last');
+    const inStory = !opts.hideStory && (i >= start && i <= end);
+    const cls = ['seg-row', opts.hideStory ? 'neutral' : (inStory ? 'story' : 'context')];
+    if (!opts.hideStory && i === start) cls.push('story-first');
+    if (!opts.hideStory && i === end) cls.push('story-last');
     const heb = seg.hebrew || '';
     const r = inStory ? spanRange(story, i, heb) : [null, null];
+    const cl = (opts.clauseMode && story && story.clauses) ? story.clauses[i] : null;
     rows += '<div class="' + cls.join(' ') + '">'
           +   '<div class="seg-num">' + i + '</div>'
           +   '<div class="seg-en">' + renderMarkup(seg.english || '', null, null) + '</div>'
-          +   '<div class="seg-he">' + renderMarkup(heb, r[0], r[1]) + '</div>'
+          +   '<div class="seg-he">'
+          +     (cl ? renderClauses(heb, cl, i) : renderMarkup(heb, r[0], r[1]))
+          +   '</div>'
           + '</div>';
   }
   return '<div class="text-block">'
@@ -228,12 +292,13 @@ function v9Notice(story) {
        + '. Not shaded &mdash; shown as text so it cannot be confused with the displayed extent.</div>';
 }
 
-function buildTextDisplay(story) {
+function buildTextDisplay(story, opts) {
   // Optional hooks. A page with no span data defines neither, and the grid below is
   // unaffected -- there is still exactly one path emitting both languages, which is
   // the invariant that matters.
   let html = (typeof spanNotice === 'function') ? spanNotice(story) : '';
-  html += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story);
+  html += buildGrid(story.page_segments || [], story.start_segment, story.end_segment,
+                    story, opts);
   html += (typeof v9Notice === 'function') ? v9Notice(story) : '';
 
   // Cross-page continuation: the SAME builder, so the continuation carries
@@ -244,7 +309,7 @@ function buildTextDisplay(story) {
     html += buildGrid(story.page2_segments,
                       story.start_segment_page2 || 0,
                       story.end_segment_page2 || 0,
-                      {});
+                      {clauses: (story.clauses2 || null)}, opts);
   }
   return html;
 }
