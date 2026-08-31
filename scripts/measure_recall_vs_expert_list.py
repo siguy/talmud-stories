@@ -3,7 +3,7 @@
 Measure TRUE recall against an expert's detector-blind story list.
 
 This closes the circular-recall problem described in
-docs/golden/workflow/approach_review_and_scaling_2026-07-06.md §3.1: the golden
+docs/findings/2026-07-06-approach-review-and-scaling.md §3.1: the golden
 datasets contain only stories the detector itself proposed, so they cannot see
 systematic misses.
 
@@ -104,7 +104,7 @@ def load_detected(paths):
     folded into the headline recall: a withheld story was found and then dropped
     on a scope judgement, which is not the same thing as never finding it, and
     the two must not be silently merged. Before this key was read, a withheld
-    story was indistinguishable from a miss (see tasks/PLAN_wave6.md).
+    story was indistinguishable from a miss (see docs/history/2026-08-29-PLAN-wave6-story-criteria.md).
     """
     units, spans, withheld = [], defaultdict(list), defaultdict(list)
     for path in paths:

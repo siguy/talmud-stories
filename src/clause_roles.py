@@ -4,7 +4,7 @@ Wave 5b: clause-role labelling and deterministic boundary assembly.
 
 The model labels REAL UNITS (Hebrew clauses, English sentences) and never emits a
 boundary or a character position. We compute the boundary from the labels. See
-tasks/PLAN_wave5b_clause_roles.md for why, and src/prompts/clause_roles_v2.md for
+docs/history/2026-08-30-PLAN-wave5b-clause-roles.md for why, and src/prompts/clause_roles_v2.md for
 the prompt and its provenance in Jeff Rubenstein's own language.
 """
 import json

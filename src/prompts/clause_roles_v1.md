@@ -3,7 +3,7 @@
 > **Out of date as of 2026-08-30.** v1 is missing four things settled after it was
 > written: the `parallel` and `variant` roles, the `is_speech` flag, and English
 > sentence labelling with the Hebrew/English consistency check. See
-> [`tasks/PLAN_wave5b_clause_roles.md`](../../tasks/PLAN_wave5b_clause_roles.md)
+> [`docs/history/2026-08-30-PLAN-wave5b-clause-roles.md`](../../docs/history/2026-08-30-PLAN-wave5b-clause-roles.md)
 > for the current design; v2 will supersede this file.
 >
 > v1's known bug: it tells the model to label a clause belonging to a DIFFERENT

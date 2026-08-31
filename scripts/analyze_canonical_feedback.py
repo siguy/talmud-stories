@@ -10,7 +10,7 @@ Produces a comprehensive machine-readable analysis that:
 5. Extracts generalizable lessons for other tractates
 6. Maps boundary corrections to specific Hebrew text markers
 
-Output: docs/golden/canonical_feedback_analysis.json
+Output: docs/golden/v7/canonical_feedback_analysis.json
 
 This analysis is the FOUNDATION for:
 - Building the golden Ketubot dataset

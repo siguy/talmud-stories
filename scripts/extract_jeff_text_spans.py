@@ -117,7 +117,7 @@ def main() -> None:
 
     out = {
         "source_feedback": str(FEEDBACK.relative_to(ROOT)),
-        "source_plan": "tasks/PLAN_wave4.md",
+        "source_plan": "docs/history/2026-06-15-PLAN-wave4.md",
         "tractate": "Kiddushin",
         "n_cases": len(cases),
         "n_keep_full": len(KEEP_FULL),

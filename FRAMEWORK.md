@@ -32,20 +32,21 @@ text. Out: one yes/no per page. It never sees a story and never produces one.
 anything looks at it*, and the only one whose errors leave no trace downstream. A page
 never examined produces no record of what was lost. Fusing it into detection hides its
 cost — which is exactly what happened here until 2026-08-30, when it turned out to be
-discarding 56% of Ketubot.
+discarding more than half of Ketubot.
 
 **Fails by:** dropping a page that held a story (invisible, permanent) · keeping an
 empty page (costs money only).
 
-**Measured by:** of the blind list's stories, the fraction sitting on pages we kept.
-**Now: 98.0%** — 3 of Jeff's 149 lost, while examining 44% of pages.
+**Measured by:** of the blind list's stories, the fraction sitting on pages we kept —
+and always beside the fraction of pages examined, since the bar is meaningless without
+its cost saving. **Current value: [`STATE.md`](STATE.md).**
 
 **Gate: ≥98% — PROVISIONAL.** *Set to our current value, which is circular reasoning
 in a principle's clothing. The defensible part is the shape, not the number; the number
 falls out of §2b once the end-to-end target is set.* Losses here are invisible and
 permanent, so the bar is the strictest of the six. But the capability exists *to save
-money* — a bar quoted without its cost saving is meaningless, and 2% of recall for a
-56% cost cut may well be a good trade. That is a decision to take deliberately, not a
+money* — a bar quoted without its cost saving is meaningless, and a couple of points of
+recall for a large cost cut may well be a good trade. That is a decision to take deliberately, not a
 defect to fix reflexively.
 
 ### 2. Detection
@@ -59,14 +60,16 @@ precision does not.
 
 **Fails by:** never proposing a real story (invisible) · proposing noise (visible, cheap).
 
-**Measured by:** recall against the blind 2005 list. **Now: Ketubot 96.0%** (143/149),
-**Kiddushin 93.3%** (84/90).
+**Measured by:** recall against the blind 2005 lists. **Current values:**
+[`STATE.md`](STATE.md).
 
-Quote the test with the number. The published figure credits a proposal anywhere in the
-aligner's search window, which runs to 14 segments and straddles daf boundaries. Under a
-**strict** test — a proposal must overlap a segment the story actually occupies — it is
-**87.9% / 83.3%**. The gap is almost entirely cross-page stories whose text sits on a
-continuation daf we proposed nothing on.
+**Quote the test with the number, always.** The published figure credits a proposal
+anywhere in the aligner's search window, which runs to 14 segments and straddles daf
+boundaries; a **strict** test requires the proposal to overlap a segment the story
+actually occupies. The two differ by several points, and the gap is almost entirely
+cross-page stories whose text sits on a continuation daf we proposed nothing on. The
+loose test is **provably** over-credited in at least one case, so treat it as an upper
+bound (`tests/test_build_ruler.py::test_the_loose_window_credits_a_story_we_never_proposed`).
 
 **Gate: ≥95% — PROVISIONAL.** *Half-derived: Jeff's lists missing stories genuinely
 proves 100% is not the standard, but it does not prove 95.* Jeff's own 2005 lists
@@ -90,24 +93,19 @@ database users decide"* is a legitimate answer rather than an evasion.
 **Measured by:** two different things, and this file used to pool them.
 
 *Harness precision* — classification precision from `scripts/evaluate_golden.py` against
-the canonical golden (CIRCULAR — correct for precision, never for recall).
-**Now, current detector, measured 2026-08-30: Ketubot 89.2%** (TP 149 / FP 18 / FN 15
-after the golden grew to 187 — precision is unchanged; the 5 additions are all FN),
-**Kiddushin 85.3%** (TP 81 / FP 14 / FN 4). *Both are AT or ABOVE the gate.*
+the canonical golden (CIRCULAR — correct for precision, never for recall). This is the one
+we have as a point estimate. **Current value: [`STATE.md`](STATE.md).**
 
 *Review-round precision* — **counting only rejections that dispute whether the passage is
 a story.** A rejection objecting to the boundary, the merge, or our confidence level
 belongs to another capability; pooling them is how this project mistook a boundary problem
 for a classification one (Lesson 30). `adjust` counts as **accepted**: it says the story is
-real and the extent is wrong. On the review rounds this gives Ketubot 87.9–94.8% (Mar 2026)
-and Kiddushin 67.4–92.1% (Apr 2026, v7) — a range, not a point: the lower bound counts every
-rejection, the upper bound only the classification ones, and the width is the notes too
-ambiguous to sort. Narrowing it needs the review UI to capture *which* thing is wrong
-(`NEXT/04`), not more inference over free text.
-
-*Those March/April percentages are review-round figures on 5-month-old detector versions,
-not harness precision. An earlier claim in this file that we had "no current number"
-confused the two: we do have a current harness number, and it needed one run.*
+real and the extent is wrong. It is reported as a **range, never a point** — the lower
+bound counts every rejection, the upper bound only the classification ones, and the width
+is the notes too ambiguous to sort. Narrowing it needs the review UI to capture *which*
+thing is wrong (`work/2026-08-30-review-verdict-axes.md`), not more inference over free
+text. Review-round figures are also per detector version, so they are **not** comparable
+with the harness number and must never be quoted as though they were.
 
 **Gate: ≥85% — PROVISIONAL, and the weakest of the six.** *Invented. "Below ~85% a
 reviewer spends more time rejecting than confirming" is a plausible sentence with no
@@ -127,8 +125,9 @@ can see and compensate for.
 **Fails by:** over-trimming, cutting story content (the serious direction) ·
 under-trimming, showing extra context (mild).
 
-**Measured by:** hit / near against the blind boundary set.
-**Now: 80% / 84% Ketubot** (untrimmed 75%/83%), 60% / 73% ±7pt Kiddushin.
+**Measured by:** hit / near against the blind boundary set, reported separately from the
+corrections set — they encode different tasks and must never be pooled (Lesson 24).
+**Current values: [`STATE.md`](STATE.md).**
 
 **Gate: ≥75% hit+near — PROVISIONAL.** *The ceiling (87%) is measured and the ordering
 is principled; the 75 is not.* The loosest of the six, because the reader sees the
@@ -194,8 +193,11 @@ down the pipeline, which is checkable against what we already measured:
 
 ```
 triage recall  ×  detection recall  =  end-to-end recall
-   0.980       ×       0.980        =       0.960     ← matches the measured 96.0%
 ```
+
+*Checked once, on Ketubot, 2026-08-30: the two allocated factors multiplied out to the
+end-to-end figure then measured. Worked once is not a law — re-check it, from
+[`STATE.md`](STATE.md), before leaning on it again.*
 
 So the only number anyone has to defend is the **end-to-end** one; the rest are
 allocated backwards from it. And the end-to-end number is not a technical question, it
@@ -218,10 +220,10 @@ One further question is open with Jeff, on **scope** rather than on a gate:
 > deletes. We read him as asking for a separate catalogue, not exclusion. Until he
 > answers, Ketubot's Classification numbers understate: the filter alone accounts for
 > **4 of its 15 golden false negatives**.
-> → measured in [`docs/golden/v11/mishnah_filter_delta_2026-08-30.md`](docs/golden/v11/mishnah_filter_delta_2026-08-30.md)
+> → measured in [`docs/findings/2026-08-30-mishnah-filter-delta.md`](docs/findings/2026-08-30-mishnah-filter-delta.md)
 
 All three are drafted, in ask-order, in
-[`docs/golden/v11/email_jeff_next_open_questions.md`](docs/golden/v11/email_jeff_next_open_questions.md).
+[`comms/JEFF.md`](comms/JEFF.md).
 
 ## 3. Ground truth — say which one, and say if it is blind
 
@@ -229,21 +231,22 @@ Every number must name its dataset and its kind. This is not bookkeeping: quotin
 circular number as an accuracy claim is the mistake that cost this project months.
 
 **Count golden datasets the same way, and say which way.** A canonical file holds every
-entry Jeff ruled on, the rejected ones included: Ketubot is 187 entries / 164 accepted,
-Kiddushin 96 / 85. This project has been quoting Ketubot's *entries* against Kiddushin's
-*accepted-only* — for a long time as "182 and 85" — as though they were the same
-measurement.
+entry Jeff ruled on, the rejected ones included, so *entries* and *accepted* are two
+different numbers. This project quoted one tractate's entries against another's
+accepted-only for a long time. Quote entries against entries, accepted against accepted,
+never one of each — and take both from [`STATE.md`](STATE.md) rather than typing them.
 
-| dataset | n | kind | what it can measure |
-|---|---|---|---|
-| `jeff comms/b.ketubot (1).doc` | 149 Ketubot stories | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
-| `tests/expert_boundary_targets_2005.json` | 294 boundaries | **BLIND** — derived from the above | boundaries, regressions |
-| `results/expert_lists/kiddushin_2005.json` | 90 Kiddushin stories | **BLIND** (89 strictly) — of 95 parsed; excludes 1 he added and the 4 appendix cases we proposed ourselves. The 5th (81b) we never proposed, so excluding it would inflate recall | recall, triage recall, boundaries |
-| `results/canonical/ketubot_canonical.json` | 187 entries · 164 accepted | **CIRCULAR** — we proposed, Jeff corrected. v7 + v9, several rounds | precision, consistency |
-| `results/canonical/kiddushin_canonical.json` | 96 entries · 85 accepted | **CIRCULAR** — v7 only, one round | precision, consistency |
-| `results/rulers/{tractate}_ruler.json` | Ketubot 201, Kiddushin 122 entries | **JOINED** — each entry says whether it is expert-listed (blind) and/or proposed (circular) | recall *and* precision, from one file |
-| `tests/expert_boundary_targets_v2.json` | 70 boundaries | **CIRCULAR + biased** — all are cases we got wrong | "did we fix known failures" only |
-| review-round verdict files | 8 rounds | **CIRCULAR** — verdicts on what we proposed | precision |
+| dataset | kind | what it can measure |
+|---|---|---|
+| `jeff comms/b.ketubot (1).doc` | **BLIND** — written 2005, 20 yrs pre-detector | recall, triage recall |
+| `tests/expert_boundary_targets_2005.json` | **BLIND** — derived from the above | boundaries, regressions |
+| `results/expert_lists/kiddushin_2005.json` | **BLIND**, per entry — carries `blind` and `counts_for_recall` flags, which are **not the same question** | recall, triage recall, boundaries |
+| `results/canonical/{tractate}_canonical.json` | **CIRCULAR** — we proposed, Jeff corrected | precision, consistency |
+| `results/rulers/{tractate}_ruler.json` | **JOINED** — each entry says whether it is expert-listed (blind) and/or proposed (circular) | recall *and* precision, from one file |
+| `tests/expert_boundary_targets_v2.json` | **CIRCULAR + biased** — every target is a case we got wrong | "did we fix known failures" only |
+| review-round verdict files | **CIRCULAR** — verdicts on what we proposed | precision |
+
+Sizes, and which cells each one currently fills, are in [`STATE.md`](STATE.md).
 
 **CIRCULAR means the system helped choose what it is graded on.** Such a set can measure
 precision (of what we proposed, how much is good) but *never* recall (what did we never
@@ -266,23 +269,27 @@ Two consequences:
   `scripts/check_appendix_coverage.py`. Provenance is a property to be tested, not
   inferred from a file's name or its date.
 
-## 4. The scoreboard
+## 4. The gates, and why each one is what it is
 
-| capability | metric | ground truth | Ketubot | Kiddushin | gate to move on | why that gate |
-|---|---|---|---|---|---|---|
-| **Triage** | % of true stories surviving | blind 2005 list | **98.0%** (3 of 149 lost) at 44% of pages examined | unmeasured | **≥98%**, and state the exchange rate | losses here are invisible and permanent; but 2% for a 56% cost cut may be a good trade — that is a decision, not a bug |
-| **Detection** | recall | blind 2005 list | **96.0%** (143/149) | unmeasured | **≥95%** | Jeff's own lists missed stories; matching a careful scholar is the honest ceiling |
-| **Classification** | precision vs golden | canonical golden (CIRCULAR) | **89.2%** | **85.3%** | **≥85%** | below ~85% a reviewer wades through junk; this is set by reviewer patience, not by truth |
-| **Boundaries** | at expert's clause / within one | blind 2005 list | **80% / 84%** (ceiling ~87%) | 60% / 73%, ±7pt | **≥75%** hit+near | the reader sees surrounding text, so errors are visible and self-correcting |
-| **Review** | throughput; inter-rater agreement | — | not started | not started | a scholar reviews a tractate in **days, not weeks** | Jeff: 6 weeks/tractate makes Shas take years |
-| **Publication** | — | — | not started | not started | — | — |
+**This table carries no values.** They live in [`STATE.md`](STATE.md), which is generated,
+and in [`STATUS.md`](STATUS.md), which is the hand-written narrative. A number typed here
+is a second copy that drifts — this file said the golden was both 182 and 187 on two
+different lines, which is how the rule got written.
 
-**Known gaps in this table, stated rather than hidden:** classification precision is
-measured against a CIRCULAR set — correct for precision, but it cannot tell us about
-stories we never proposed; that is Detection's job and it needs the blind list.
-Kiddushin's three blind cells are unfilled but no longer unfillable — it has a blind
-list as of 2026-08-30 (`results/expert_lists/kiddushin_2005.json`); `NEXT/06` and
-`NEXT/07` fill them.
+| capability | metric | ground truth | gate to move on | why that gate |
+|---|---|---|---|---|
+| **Triage** | % of true stories surviving, beside % of pages examined | blind 2005 lists | **≥98%**, and state the exchange rate | losses here are invisible and permanent; but recall traded for a large cost cut may be a good deal — that is a decision, not a bug |
+| **Detection** | recall, loose **and** strict | blind 2005 lists | **≥95%** | Jeff's own lists missed stories; matching a careful scholar is the honest ceiling |
+| **Classification** | precision vs golden | canonical golden (CIRCULAR) | **≥85%** | below ~85% a reviewer wades through junk; set by reviewer patience, not by truth |
+| **Boundaries** | at expert's clause / within one | blind 2005 lists | **≥75%** hit+near | the reader sees surrounding text, so errors are visible and self-correcting |
+| **Review** | throughput; inter-rater agreement | — | a scholar reviews a tractate in **days, not weeks** | Jeff: 6 weeks/tractate makes Shas take years |
+| **Publication** | not yet defined | — | — | set by what the published form must show (§3 of the reorg plan) |
+
+**A gap that no value can close, so it belongs here and not in `STATE.md`:**
+classification precision is measured against a CIRCULAR set — correct for precision, but
+structurally unable to tell us about stories we never proposed. That is Detection's job
+and it needs a blind list. Which tractates have one, and which cells are still empty,
+is [`STATE.md`](STATE.md)'s coverage matrix.
 
 ## 5. Answering the seven questions, for any capability
 
@@ -294,7 +301,7 @@ Use this shape every time, in `STATUS.md`:
    is not a metric yet.
 4. **Where do we measure up?** — current vs gate, and say if it is inside the noise.
 5. **How right must we be?** — the gate, justified by recoverability (§2). Not a vibe.
-6. **If we are not ready, how do we improve?** — a brief in `tasks/NEXT/`.
+6. **If we are not ready, how do we improve?** — a brief in `work/`.
 7. **Can we improve it after moving on?** — see below.
 
 ## 6. Can a capability improve after we move past it?
@@ -325,4 +332,4 @@ downstream ones are loose.
   indication presented as a measurement is how this project has misled itself before.
 - **capability** — one of the six. Not "phase", not "wave", not "axis".
 - **wave** — a historical batch of changes (Waves 1-7). Retired as a planning unit;
-  work is now a capability plus a brief in `tasks/NEXT/`.
+  work is now a capability plus a brief in `work/`.

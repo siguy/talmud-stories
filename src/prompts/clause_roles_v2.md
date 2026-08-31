@@ -1,7 +1,7 @@
 # Clause-role labelling prompt — v2 (current)
 
 Supersedes [`clause_roles_v1.md`](clause_roles_v1.md). Design and rationale:
-[`tasks/PLAN_wave5b_clause_roles.md`](../../tasks/PLAN_wave5b_clause_roles.md).
+[`docs/history/2026-08-30-PLAN-wave5b-clause-roles.md`](../../docs/history/2026-08-30-PLAN-wave5b-clause-roles.md).
 
 **What changed from v1**
 1. Added `parallel` — a different person's similar practice, or a second story.

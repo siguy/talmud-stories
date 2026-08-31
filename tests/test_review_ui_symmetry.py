@@ -1,6 +1,6 @@
 """The review UI must never show Hebrew and English at different extents.
 
-This is the regression guard for `tasks/NEXT/04`. The Wave 4 review UI shipped
+This is the regression guard for `work/2026-08-30-review-verdict-axes.md`. The Wave 4 review UI shipped
 two display asymmetries, and BOTH of them cost Jeff Rubenstein real attention in
 the 2026-07-06 round — he wrote "the Hebrew doesn't match" notes about bugs in
 our own rendering, not about detector output:
