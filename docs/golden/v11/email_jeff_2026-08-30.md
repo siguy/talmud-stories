@@ -58,7 +58,7 @@ That number sets the Classification gate (FRAMEWORK §2b) and only he can answer
 Our pipeline currently **deletes** any story lying entirely within a Mishnah rather than
 the Gemara. That was never a decision — it was a Wave 1 post-processor nobody revisited,
 and until today two of the four Ketubot passages it removed were not Mishnah at all, just
-Gemara mis-tagged at a chapter boundary (fixed; Lesson 26). Two genuine cases remain, and
+Gemara mis-tagged at a chapter boundary (fixed; Lesson 28). Two genuine cases remain, and
 both are explicitly *ma'aseh* formulas inside a Mishnah:
 
 - **Ketubot 14b seg 11** — `אמר רבי יוסי: מעשה בתינוקת שירדה למלאות מים מן העין, ונאנסה`

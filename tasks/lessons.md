@@ -582,7 +582,7 @@ confirm the test fails when the bug is reintroduced — see
 
 ---
 
-## Lesson 26 — A step that moves records out of the measured path is invisible by construction (2026-08-30)
+## Lesson 28 — A step that moves records out of the measured path is invisible by construction (2026-08-30)
 
 `filter_mishnah_only_stories()` does not delete stories. It moves them from
 `stories` into `mishnah_stories`. `evaluate_golden.py` and

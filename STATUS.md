@@ -81,7 +81,7 @@ Kiddushin's recall, and that is what `NEXT/05`-`07` unlock.
   **Golden TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
   precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
   the harness nobody reads for recall was the only one that could see the loss, which is
-  why it survived four waves. → Lesson 26,
+  why it survived four waves. → Lesson 28,
   [`docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md`](docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md)
   The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
   question for Jeff, not a bug. Now queued below.
