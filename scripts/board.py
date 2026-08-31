@@ -112,7 +112,16 @@ def expert_lists() -> dict[str, dict]:
         out[f.stem.split("_")[0]] = {
             "parsed": len(stories),
             "blind": sum(1 for s in stories if s.get("blind")),
-            "counts_for_recall": sum(1 for s in stories if s.get("counts_for_recall", s.get("blind"))),
+            # `and not duplicate_of` is not a refinement -- it is the denominator.
+            # Without it this cell read 91 while STATUS.md, the ruler and
+            # tests/test_kiddushin_list_parse.py all said 90: kiddushin_050 is the same
+            # story listed twice, and counting it inflates recall's denominator by one.
+            # Found 2026-08-31 by noticing the generated file and the hand-written one
+            # disagreed. The generated one was wrong, which is the whole argument for
+            # having exactly one of them.
+            "counts_for_recall": sum(1 for s in stories
+                                     if s.get("counts_for_recall", s.get("blind"))
+                                     and not s.get("duplicate_of")),
             "path": str(f.relative_to(ROOT)),
         }
     return out

@@ -109,7 +109,7 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
-| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 95 parsed · 89 blind · 91 count for recall |
+| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 95 parsed · 89 blind · 90 count for recall |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -143,4 +143,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 9f3e1bee2798e0e5 -->
+<!-- board-checksum: 398020af497caf88 -->
