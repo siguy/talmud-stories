@@ -3,13 +3,35 @@
 ## Project
 Detect narrative stories in Talmud text using LLM classification. Expert validation by Jeff Rubenstein (NYU). Golden datasets exist for Ketubot and Kiddushin; expanding to additional tractates. Current counts and scores live in `STATUS.md` — not here.
 
+## The route — do this, in this order
+
+1. **Read [`STATE.md`](STATE.md)** — generated; the coverage matrix, every gate, what is
+   in flight and what is blocked. Then [`STATUS.md`](STATUS.md) for the judgment and the
+   live hazards. Never edit `STATE.md` or `WORK.md`; run `python3 scripts/board.py`.
+2. **Before opening work on a capability, read
+   [`docs/capabilities/<n>_<name>.md`](docs/capabilities/)** — what was already tried,
+   and what was reverted and why. *This is the step that stops a dead end being re-run.*
+   Ein Yaakov was proposed, declined by Jeff, recorded — and proposed again months later
+   by someone who had not read the record.
+3. **Start work by copying [`work/_TEMPLATE.md`](work/_TEMPLATE.md)** to
+   `work/<today>-<slug>.md`. Never invent a numbering scheme; the counter is what
+   collided four ways on 2026-08-30.
+4. **Finish** by adding `## Outcome` — including *why*, especially for a revert — and
+   `git mv`-ing the item to `work/done/`. **Never delete it.**
+5. **Run `python3 -m pytest tests/ -q` before you stop.** `tests/test_bookkeeping.py` is
+   in that suite and fails on a dangling dependency, an unknown capability slug, a moved
+   golden, or a stale `STATE.md`.
+
+Read [`FRAMEWORK.md`](FRAMEWORK.md) for how each capability is measured and why each gate
+is what it is. Use its language: capability names, BLIND vs CIRCULAR on every dataset, and
+measured / indicated / suspected on every finding.
+
+**Fresh clone:** `git config core.hooksPath .githooks` once, so the pre-commit guard on
+the immutable harness is active. The same check is in the test suite either way.
+
 ## Current State
-**See [`STATUS.md`](STATUS.md) — where the project is, and the first thing to read in
-any session. Then [`FRAMEWORK.md`](FRAMEWORK.md) — the six capabilities, how each is
-measured, and what the gates are. Use its language: capability names, BLIND vs
-CIRCULAR datasets, and measured / indicated / suspected on every finding.** It is rewritten each session,
-never appended. Do not restate status here; this file is about *how to work in the
-repo*, not where we are.
+Do not restate status here; this file is about *how to work in the repo*, not where we
+are. `STATE.md` is generated and `STATUS.md` is rewritten each session, never appended.
 
 **Nothing in this file may carry a count, a score, or an "active version" claim.** Those
 rot the moment someone works without reading them, and this file is read first. Where one
@@ -120,11 +142,11 @@ archive/                          # Old versions (reference only)
 | `src/story_detector_v*.py` | **The highest-numbered file is the active detector; every lower one is a frozen ship point — never edit those in place.** `ls src/story_detector_v*.py` is the source of truth; a version number written in this file is not. What each version changed: its own module docstring, and `docs/golden/`. |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
-| `results/v7/kiddushin_v7.json` | Kiddushin v7 results (96 stories, pre-Wave-1) |
+| `results/v7/kiddushin_v7.json` | Kiddushin v7 results, pre-Wave-1 |
 | `results/v8/wave2/kiddushin_v8.json` | Kiddushin Wave 2 (frozen baseline for Wave 3 gate) |
-| `results/v9/wave3/kiddushin_v9.json` | Kiddushin Wave 3 results (95 stories) |
+| `results/v9/wave3/kiddushin_v9.json` | Kiddushin Wave 3 results |
 | `results/v9/wave3/ketubot_v9_2-60.json`, `results/v9/wave3/ketubot_v9_61-112.json` | Ketubot Wave 3 results |
-| `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json` | Today-regenerated Wave 2 numbers (gate per Lesson 11) |
+| `tests/baselines/{kiddushin,ketubot}_wave2_baseline_today.json` | Today-regenerated Wave 2 numbers (gate per Lesson 11) |
 | `scripts/run_wave3.py` | Parameterized Wave 3 runner (--tractate / --range / --refs) |
 | `scripts/apply_wave3_item4.py` | Apply item 4 to Wave 2 outputs (score-neutrality fast path) |
 | `scripts/audit_wave3_item4.py` | Audit item 4 against Jeff's 17 boundary cases (`AUDIT_INPUT` env override) |
@@ -137,20 +159,20 @@ archive/                          # Old versions (reference only)
 | `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
 | `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
-| `comms/email_jeff_next_open_questions.md` | **Open questions for the next email to Jeff** — ask in the order listed |
-| `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — 149 stories, detector-blind ground truth |
+| `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
+| `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — detector-blind ground truth. Count it with `parse_kiddushin_list.py --self-test` |
 | `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
 | `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
-| `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — 95 stories with `blind` flags, 10 anchored expert remarks |
+| `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — per-story `blind` and `counts_for_recall` flags, plus Jeff's anchored remarks. **Filter on the flags; never take the raw length as the denominator.** |
 | `docs/findings/2026-08-30-kiddushin-list-parse.md` | Why the line-based parse gave 105, and how the count was verified |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
 | `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 29) |
 | `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
 | `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
-| `docs/findings/2026-08-30-detection-classification-ruler.md` | Why 86%/68% were not Classification numbers, and why 96% recall is 88% strict |
+| `docs/findings/2026-08-30-detection-classification-ruler.md` | Why the old Classification precision figures were not Classification numbers, and why loose recall overstates strict |
 | `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
-| `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The 96% recall finding + method |
+| `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The first blind recall measurement, and the method (Hebrew 4-grams + a corpus-wide window) |
 | `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
 | `docs/history/2026-08-30-PLAN-wave5b-clause-roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `docs/history/2026-08-29-PLAN-wave6-story-criteria.md` | Jeff's story criteria (6c blocked on his answer) |
@@ -159,11 +181,11 @@ archive/                          # Old versions (reference only)
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
 | `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
 | `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
-| `docs/findings/2026-08-30-boundary-ruler-rebuild.md` | **Ruler rebuild** — 35 -> 249 targets, noise floor 7pts -> 0 |
+| `docs/findings/2026-08-30-boundary-ruler-rebuild.md` | **Ruler rebuild** — why a corrections-only exam cannot see a regression, and what replaced it |
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
 | `scripts/score_boundary_targets.py` | Scores any run against it |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
-| `docs/findings/2026-08-30-wave5-summary-fix.md` | **Steps 1-2 writeup** — 35 targets, +29pts vs no-trim, and the gate's noise floor |
+| `docs/findings/2026-08-30-wave5-summary-fix.md` | Wave 5 steps 1-2, and the first noise floor this project ever measured |
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |

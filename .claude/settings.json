@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && python3 -m pytest tests/test_bookkeeping.py -q 2>&1 | tail -5"
+          }
+        ]
+      }
+    ]
+  }
+}

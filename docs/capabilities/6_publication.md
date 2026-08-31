@@ -112,7 +112,7 @@ That single number sets Triage and Detection by backward allocation
 capability ([`FRAMEWORK.md` §2b](../../FRAMEWORK.md)). A second, Jeff's, sets
 Classification: at what error rate does reviewing our output become worse than working
 from scratch? Both are drafted in ask-order
-([`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md));
+([`JEFF.md`](../../comms/JEFF.md));
 neither is answered.
 
 **What is already known about the scale being published:** 37 tractates, 2,711 dapim;

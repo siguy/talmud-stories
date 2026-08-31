@@ -94,7 +94,7 @@ and then deliberately deleted scored exactly like a story we never found, from v
   separate **catalogue**; we built a **deletion** that nothing catalogues, scores or
   displays. Under his literal words there is no contradiction to resolve. Two genuine
   cases remain (Ketubot 14b seg 11, 77a seg 8, plus Kiddushin 50b seg 10), queued for the
-  next email ([`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md)).
+  next email ([`JEFF.md`](../../comms/JEFF.md)).
 
 **5. Not a revert but a redefinition of the number.** The 86% / 68% precision figures,
 which made Classification "our weakest capability" for months, counted every `incorrect`
@@ -147,7 +147,7 @@ Three things this table hides, all of them stated rather than smoothed:
 2. **The gate itself is invented.** *"Below ~85% a reviewer spends more time rejecting
    than confirming"* is a plausible sentence with no measurement behind it. Only Jeff can
    settle it, and the question is drafted
-   ([FRAMEWORK §2b](../../FRAMEWORK.md), [`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md)).
+   ([FRAMEWORK §2b](../../FRAMEWORK.md), [`JEFF.md`](../../comms/JEFF.md)).
 3. **Precision is measured on a CIRCULAR set, which is correct for precision and useless
    for the other direction.** The invisible half of this capability — real stories we
    *reject* — is as costly as a Detection miss and has no measurement at all. The only

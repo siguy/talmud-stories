@@ -66,4 +66,4 @@ plainly — that is a generalization finding and it matters more than the number
 
 ## When done
 
-Findings → `docs/golden/workflow/kiddushin_recall_<date>.md`. Update the scoreboard.
+Findings → `docs/findings/<date>-kiddushin-recall.md`. Update the scoreboard.

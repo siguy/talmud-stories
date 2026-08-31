@@ -1,0 +1,7 @@
+#!/bin/sh
+# scripts/evaluate_golden.py is IMMUTABLE (CLAUDE.md). Every score in this repo is
+# comparable only because it has not moved. Three lines, so it costs nothing on every
+# commit; tests/test_bookkeeping.py pins the same hash for anyone who skips hooks.
+PINNED=5b83879e731b361d312bc72b3faa2598eaae585b
+ACTUAL=$(git hash-object scripts/evaluate_golden.py 2>/dev/null)
+[ "$ACTUAL" = "$PINNED" ] || { echo "pre-commit: scripts/evaluate_golden.py CHANGED ($ACTUAL != $PINNED)."; echo "  If deliberate, update PINNED here and EVALUATE_GOLDEN_SHA in tests/test_bookkeeping.py, and say why."; exit 1; }

@@ -64,5 +64,5 @@ tractate, and it compounds at Talmud scale.
 
 ## When done
 
-Findings → `docs/golden/workflow/triage_recall_<date>.md`. Update `STATUS.md` — capability: **1 Triage**.
+Findings → `docs/findings/<date>-triage-recall.md`. Update `STATUS.md` — capability: **1 Triage**.
 If it changes what we would tell Jeff, note it — a reply is pending.

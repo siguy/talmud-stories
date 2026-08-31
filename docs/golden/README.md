@@ -38,7 +38,7 @@ Four destinations, decided file by file:
 | `docs/golden/v11/detection_classification_ruler_2026-08-30.md` | [`docs/findings/2026-08-30-detection-classification-ruler.md`](../findings/2026-08-30-detection-classification-ruler.md) |
 | `docs/golden/v11/email_jeff_2026-08-30.html` | [`comms/sent/2026-08-30-email-jeff.html`](../../comms/sent/2026-08-30-email-jeff.html) |
 | `docs/golden/v11/email_jeff_2026-08-30.md` | [`comms/sent/2026-08-30-email-jeff.md`](../../comms/sent/2026-08-30-email-jeff.md) |
-| `docs/golden/v11/email_jeff_next_open_questions.md` | [`comms/email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md) |
+| `docs/golden/v11/JEFF.md` | [`comms/JEFF.md`](../../comms/JEFF.md) |
 | `docs/golden/v11/kiddushin_list_parse_2026-08-30.md` | [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../findings/2026-08-30-kiddushin-list-parse.md) |
 | `docs/golden/v11/mishnah_filter_delta_2026-08-30.md` | [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md) |
 | `docs/golden/v11/mishnah_tagger_chapter_boundary_2026-08-30.md` | [`docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](../findings/2026-08-30-mishnah-tagger-chapter-boundary.md) |

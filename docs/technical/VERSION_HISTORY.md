@@ -95,7 +95,7 @@
 - `scripts/verify_wave3.py`, `scripts/compare_v8_v9.py`
 - `results/v9/wave3/{kiddushin_v9,ketubot_v9_2-60,ketubot_v9_61-112}.json`
 - `results/v9/wave3_item4/*.json` — score-neutrality artifact
-- `docs/golden/v8/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
+- `tests/baselines/{kiddushin,ketubot}_wave2_baseline_today.json`
 - `docs/findings/2026-05-25-wave3-results.md` — full writeup
 
 **Files modified:** `validation/generators/generate_kiddushin_review_ui.py` (renders `text_span_*` slice).
@@ -142,7 +142,7 @@
 - `scripts/compare_v8_waves.py` — Wave 1 vs Wave 2 delta table
 - `results/v8/wave2/{kiddushin_v8,ketubot_v8_2-60,ketubot_v8_61-112}.json`
 - `docs/findings/2026-05-24-wave2-results.md` — full writeup
-- `docs/golden/v8/baselines/{kiddushin,ketubot}_wave1_baseline.json`
+- `tests/baselines/{kiddushin,ketubot}_wave1_baseline.json`
 
 **Key findings (Lessons 12, 13):**
 - Most of Jeff's boundary feedback is text-internal (within a single segment); segment-level mechanical fixes can't reach it. Wave 3 must edit at sub-segment text granularity.
@@ -189,7 +189,7 @@
 - 12 cross-page stories: 5 merge, 4 stitch, 3 continuation check (new)
 
 **New: Stage 4f Continuation Check**
-Added `continuation_check()` method to `story_detector_v7.py`. For stories near page boundaries without continuation flags, asks: "Does THIS specific story continue on the next page?" Caught 3 stories the existing merge passes missed (including the Dama ben Netina story, 31a→31b). See `docs/golden/kiddushin_run_plan.md` for design rationale.
+Added `continuation_check()` method to `story_detector_v7.py`. For stories near page boundaries without continuation flags, asks: "Does THIS specific story continue on the next page?" Caught 3 stories the existing merge passes missed (including the Dama ben Netina story, 31a→31b). See `docs/history/2026-03-27-kiddushin-run-plan.md` for design rationale.
 
 **Pipeline Stage 4 Updated:**
 ```
@@ -241,7 +241,7 @@ Added `continuation_check()` method to `story_detector_v7.py`. For stories near 
 - `docs/golden/` — findings, research, error taxonomy, workflow docs
 - `lessons/` — 8 lessons learned
 
-**Documentation:** See `docs/golden/findings_v10_golden_dataset.md` for full writeup.
+**Documentation:** See `docs/findings/2026-03-25-golden-dataset-v10.md` for full writeup.
 
 ---
 
@@ -850,7 +850,7 @@ reading of it as a Detection or Classification failure is wrong.
   and "never found" are reported as different facts, not merged.
 
 **Open, not fixed here:** the scope premise is a question for Jeff (drafted in
-[`comms/email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md));
+[`comms/JEFF.md`](../../comms/JEFF.md));
 the chapter-boundary tagger bug (7 pages); the review UI, which still does not show
 `mishnah_stories` to the expert.
 

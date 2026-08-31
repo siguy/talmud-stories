@@ -122,7 +122,7 @@ Mishnah:
 - Ketubot 77a seg 8 — `מעשה בצידון בבורסי אחד שמת, והיה לו אח בורסי`
 
 Question drafted for the next email:
-[`email_jeff_next_open_questions.md`](../../comms/email_jeff_next_open_questions.md).
+[`JEFF.md`](../../comms/JEFF.md).
 
 ## What changed in the repo today
 

@@ -10,7 +10,7 @@ Step-by-step guide for running the story detector on a tractate beyond Ketubot a
 - Sefaria API access (public, no key needed)
 - Python 3.11+ with `google-genai`, `requests`, `python-dotenv`
 - Expert reviewer available to validate ~30 stories
-- Read `docs/golden/false_positive_learning_plan.md` — contains checklists for before/after each tractate run
+- Read `docs/history/2026-03-27-PLAN-false-positive-learning.md` — contains checklists for before/after each tractate run
 
 ## Step 1: Fetch Pages from Sefaria
 
@@ -83,7 +83,7 @@ The review UI shows each detected story with:
 python3 scripts/evaluate_golden.py \
   --detected results/v7/tractate_output.json \
   --golden results/canonical/tractate_golden.json \
-  --output docs/golden/baseline_tractate.json
+  --output docs/golden/v7/baseline_ketubot.json
 ```
 
 **Metrics:**
