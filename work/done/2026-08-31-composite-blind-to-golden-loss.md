@@ -11,7 +11,7 @@ superseded_by:
 # Can the composite score detect silent loss from the golden?
 
 **Self-contained.** A fresh session executes this with no other context.
-Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 
 ## The claim to test / the problem
 

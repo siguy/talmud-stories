@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-08-30 (evening).** Rewritten every session, never appended.
+**Last rewritten: 2026-08-31.** Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -8,44 +8,29 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**Jeff sent expert lists for four more tractates** (`jeff comms/8-30-2026/`), with:
-*"I will get to all this soon. But here is the kiddushin list I have."* — so **the
-boundary question is still unanswered** and capability 4 stays blocked.
+**The repository was reorganized around the six capabilities, and not one capability
+number moved.** Say that first, because everything below is easy to mistake for progress.
+Detection, Classification, Boundaries and Triage read exactly what they read on
+2026-08-28. What changed is that the project can now be *navigated*: what was already
+tried, what was reverted and why, and what a dead end costs.
 
-Rough parse: **Gittin 112, Yevamot 102, Eruvin 73** — indicated, not measured.
-**Kiddushin is now parsed properly: 95 stories, measured** (`NEXT/05` done). The rough
-figure was 105, of which 9 were Jeff's own English review comments and 4 were
-parallels-column citations. 81b no longer appears to hold 11 stories; it holds 4.
-→ [`docs/findings/2026-08-30-kiddushin-list-parse.md`](docs/findings/2026-08-30-kiddushin-list-parse.md)
+**The strategic fork, stated plainly.** The detector is not the problem. It finds 96% of
+the stories on a list Jeff wrote twenty years before it existed. The problem is that
+reviewing a tractate costs 2–6 weeks of one scholar's calendar against ~$0.30 of compute
+— four orders of magnitude apart — and his last two rounds returned **1 verdict and 15**.
+Wave 6 would recover 1–2 stories. Review throughput is what stands between two tractates
+and thirty-seven. That has been the measured answer since 2026-07-06 and no work has yet
+been aimed at it.
 
-Why it matters: a **blind** dataset is one the detector had no hand in creating, so it
-can measure *recall* — what we never found. We had exactly one (Ketubot, 149 stories).
-Kiddushin now has one too, so three scoreboard cells that read "unmeasured" for the life
-of the project are unblocked — **06, 07 and 08 are ready to run.**
+**Nothing is blocked on us for the cheapest next steps.** `kiddushin-recall` and
+`kiddushin-boundary-set` need no API calls and fill three cells that have read
+"unmeasured" for the life of the project. Phase 6a costs about ten cents. All three are
+written and ready in [`work/`](work/).
 
-**The list is already contaminated, and we nearly missed it.**
-`Kiddushin missed stories.docx` is the appendix Jeff describes as *"additional stories
-that you and Claude found that were not on my list"* — cases from across our runs, which
-he annotated and **merged into his list**. None of the five is blind: each is there
-because we put the page in front of him. Plus the one he marked `הוספתי--י.ר.` himself.
-
-But **blind and "counts for recall" are different questions.** Circularity only matters
-in the direction that *flatters*. Four of the five (33a, 45a, 53a, 71a) are in his list
-because **we proposed them**, so counting them could only raise recall — excluded. The
-fifth (**81b**) we **never proposed**; he found it in page text our review UI displayed,
-so it can only count *against* us, and dropping it is what inflates the number.
-
-**Recall denominator: 90** — 89 strictly blind, plus 81b. →
-[`docs/findings/2026-08-30-appendix-provenance-correction.md`](docs/findings/2026-08-30-appendix-provenance-correction.md)
-
-We caught this only because the appendix survived as a separate file.
-
-**Gittin, Yevamot and Eruvin cannot have this problem — and that makes them the best
-ground truth we have.** We have never run the detector on those tractates, so there is
-nothing of ours for Jeff to have merged. Their lists are pristine. They are also the only
-place we can run a *floor* test: whatever is on his list we should at minimum find, with
-no prior output to have primed either side. The contamination risk there is entirely in
-the future, and it starts the moment we send him results.
+**Two clocks are running.** Gittin, Yevamot and Eruvin have pristine blind lists **only
+until we send Jeff results for them** — and the ask that protects them
+(`jeff:appendix-separate`) has to reach him *before* that round, not after. And he is
+still sitting on the boundary question, which blocks capability 4 entirely.
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
@@ -86,89 +71,47 @@ story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot st
 the gap are **cross-page stories whose text sits on a continuation daf where we proposed
 nothing** — 17b, 50a and 51a each carry zero proposals.
 
-## What changed today
+## What changed today (2026-08-31)
 
-- **Measurement became honest.** The boundary test set was built entirely from Jeff's
-  corrections, so it could never reveal a boundary we had right and broke. Rebuilt from
-  his blind 2005 list: **35 gradeable targets → 249**, run-to-run noise **7 points → 0**.
-  → [`docs/findings/2026-08-30-boundary-ruler-rebuild.md`](docs/findings/2026-08-30-boundary-ruler-rebuild.md)
-- **Boundary trimming is worth much less than claimed.** The old ruler said it doubled
-  us on Ketubot 61-112 (33%→67%). The blind ruler says untrimmed was already 79% right.
-  → [`docs/findings/2026-08-30-trim-asymmetry.md`](docs/findings/2026-08-30-trim-asymmetry.md)
-- **Triage is a trade, not a defect.** 98% recall while examining 44% of pages. Worth
-  pricing, not reflexively fixing.
-- **The six recall misses do NOT split into two populations — all six are absent from
-  the golden.** The claimed exception (Ketubot 77a) was a locator artifact: Jeff's blind
-  entry there is segs **13-14** (Gemara, 94% text alignment) while the golden's 77a story
-  is seg **8** (a Mishnah ma'aseh, 1% alignment). Two different stories on one daf, joined
-  only by the recall locator's coarse 7-segment window.
-  → [`docs/findings/2026-08-30-recall-miss-diagnosis.md`](docs/findings/2026-08-30-recall-miss-diagnosis.md)
-- **Ketubot 77a is a Classification miss, not a Detection one** (measured, 8 identical
-  re-runs, `NEXT/02`). Segs 13-14 are **proposed in 7 of 8 runs** and rejected as
-  `NOT_A_STORY` in 6 of those 7, always citing the same three of the prompt's own
-  disqualifiers. The empty production `stories` list is the ~1/8 tail. Seed case written
-  into [`docs/history/2026-08-29-PLAN-wave6-story-criteria.md`](docs/history/2026-08-29-PLAN-wave6-story-criteria.md).
-- **A Mishnah filter was silently deleting expert-validated stories. Half of it was a
-  bug; that half is now fixed and measured.** `filter_mishnah_only_stories()` moves
-  stories to `mishnah_stories`, which **neither** `measure_recall_vs_expert_list.py`
-  **nor** `evaluate_golden.py` reads. It removed 4 Ketubot stories the golden accepts —
-  **4 of the 15 golden false negatives, 27%** (an earlier line here said "31% of 13";
-  13 is the *post-fix* count, 15 was the real one). Two of the 4 were not Mishnah at all:
-  `_tag_mishnah_segments()` read every chapter boundary as a mid-Mishnah page, because
-  Sefaria opens a new chapter's first Mishnah with the chapter incipit instead of
-  `מתני׳`. 72 segments on 12 pages; Gittin and Yevamot would have hit it on 20 more.
-  **Golden TP 149 → 151, FN 15 → 13, recall 90.9% → 92.1%, composite 0.9115 → 0.9136**,
-  precision and merge unchanged. **Blind recall identical at 96.0% before and after** —
-  the harness nobody reads for recall was the only one that could see the loss, which is
-  why it survived four waves. → Lesson 27,
-  [`docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md`](docs/findings/2026-08-30-mishnah-tagger-chapter-boundary.md)
-  The remaining 2 (Ketubot 14b seg 11, 77a seg 8) are genuine Mishnaic *ma'asim* — a
-  question for Jeff, not a bug. Now queued below.
-- **A runner bug was fixed and guarded:** a failed API call could be recorded as a
-  considered judgment. → Lesson 21, `tests/test_wave5b_runner_outcomes.py`
-- **Wave 5b shelved.** Its trigger was measured on the biased ruler. Salvage list in
-  `work/2026-08-30-second-story-guard.md`.
-- **One ruler now measures Detection and Classification for both tractates.**
-  `scripts/build_ruler.py` joins the blind lists, the detector proposals and all six
-  review rounds — including the 16 Kiddushin verdicts that had never been folded in. It
-  reproduces the published 96.0% and 86% as its regression check, then shows what those
-  numbers were hiding. → `results/rulers/`
-- **Kiddushin has a blind list.** 95 stories, parsed from the .doc's own table structure
-  rather than a converter's line dump; the parser reproduces Ketubot's established 149
-  as its regression check, and all 95 texts match an independent renderer character for
-  character. Jeff's 9 review comments came back with their **exact anchor positions**, so
-  each attaches to the passage he was looking at — which is what makes them usable to
-  `NEXT/08`. → Lesson 28
+All of it is infrastructure or correction. **No measurement moved.**
 
-## Waiting on Jeff — email sent 2026-08-30
+- **The reorganization landed** (PRs #1–#3). `docs/capabilities/` now carries a history
+  per capability; `work/` replaced `tasks/NEXT/` with dated slugs and frontmatter;
+  `lessons.md` became one file per lesson; `docs/golden/` is data only;
+  `scripts/board.py` generates [`STATE.md`](STATE.md) and [`WORK.md`](WORK.md); and
+  `tests/test_bookkeeping.py` makes a bookkeeping violation an ordinary test failure.
+- **A failed triage call was silently discarding the page.** `triage_page()` returned
+  all-DELIBERATION on a parse failure, which fails both keep-conditions — so a crashed
+  call threw the page away, in the one stage whose errors leave no trace. Fixed with a
+  distinguishable `TRIAGE_FAILED` value that **fails open**. Proven to change **0** of the
+  shipped skip decisions. The *historical* failure rate is unknown and unrecoverable,
+  because nothing counted it.
+  → [`2026-08-31-triage-failure-default.md`](docs/findings/2026-08-31-triage-failure-default.md)
+- **The public site was publishing a six-month-stale accuracy figure** — a v8-era
+  *expert-agreement* number presented as accuracy. Corrected and dated, with the strict
+  figure quoted beside the loose one. It will go stale again; nothing regenerates those
+  pages.
+- **Two hazards stopped being advice.** `docs/golden/v7/baseline_ketubot.json` is pinned
+  in both the test suite and the pre-commit hook, so running `evaluate_golden.py` without
+  `--output` now fails loudly instead of destroying an unreproducible baseline.
+- **Three defects were found by *reading*, not by a failing test** — the triage default,
+  the stale site numbers, and a `NEXT/04` listed as ready with no brief behind it. That is
+  the argument for having written the capability histories.
 
-**The question:** when a ruling is what makes a passage a story at all, is that ruling
-part of the story we display, or the discussion that follows it? His 2005 lists keep it;
-his review notes say cut it. Blocks the end rule for capability 4.
-→ draft: [`comms/sent/2026-08-30-email-jeff.md`](comms/sent/2026-08-30-email-jeff.md)
+## Waiting on Jeff — [`comms/JEFF.md`](comms/JEFF.md) owns this
 
-**To add when we next write — four items:**
+**Do not keep a second copy here.** Open questions used to live in three places at once;
+that file exists to end it. It carries all seven questions with the slug each work item
+names in `awaiting:`, the corrections we owe, the full sent log, and the **ask order** —
+which matters, because seven questions is two emails, not one.
 
-1. At what error rate does reviewing our output become worse than working from scratch?
-   That number sets the Classification gate and only he can answer it.
-2. **Do stories inside the Mishnah count?** We currently delete them. Two genuine Ketubot
-   cases: 14b seg 11 and 77a seg 8 (the Sidon tanner). His blind 2005 list contains no
-   Mishnah-only story; his review rounds accepted both into our golden — his own two
-   sources disagree, exactly as on the boundary question.
-3. **When we send results for a new tractate, ask him to keep his appendix separate.**
-   In Kiddushin the appendix entries were merged into the list and cost us five of its
-   stories as blind ground truth. Not urgent — Gittin, Yevamot and Eruvin are clean until
-   we run there — but it must be said *before* the first review round, not after.
-   → `work/2026-08-30-kiddushin-parse-open-calls.md` item 1b
-4. A correction we owe him: the email said Ketubot 77a is a story "our own set has" — it
-   is not. Our golden holds a *different* 77a story (the Sidon tanner, seg 8); his is at
-   segs 13-14. The substance stands (we do miss his), the claim did not. Pairs naturally
-   with item 2 — same daf.
+Still unanswered and still blocking capability 4: `jeff:boundary-end-rule`, asked
+2026-08-30, answered *"I will get to all this soon."*
 
 **Before any next review round:** `validation/generators/generate_wave4_review_ui.py`
 still reads `results/v10/wave4/` — the **reverted** char-offset span data — deliberately,
-so the regenerated page stayed comparable to what Jeff actually saw during brief 04's
-verification. Point it at `results/v10/wave4_notrim/` before showing him anything new.
+so the regenerated page stayed comparable to what Jeff actually saw. Point it at
+`results/v10/wave4_notrim/` before showing him anything new.
 
 ## Next — items in [`work/`](work/), each self-contained
 

@@ -430,13 +430,63 @@ def new_tractate(name: str) -> None:
         print("  work/" + s + ".md")
 
 
+
+def reroot_links(text: str) -> str:
+    """Rewrite `](../x)` to `](../../x)` for a file moving one directory deeper.
+
+    Already-deeper links (`../../`) are left alone, so running this twice is safe.
+    """
+    return re.sub(r"\]\((\.\./)(?!\.\./)", r"](../../", text)
+
+
+def finish(slug: str) -> None:
+    """Close an item: rewrite its relative links, then git mv it into work/done/.
+
+    Why this exists. Items live in work/ and link out with `../FRAMEWORK.md`. Finishing
+    an item moves it one level deeper, so every one of those links breaks -- at the exact
+    moment the item is supposed to become a permanent record. 60 links across 27 items
+    were one `git mv` away from breaking when this was written, and the first item anyone
+    actually finished broke one.
+
+    Making the correct path the easy path beats remembering: `board.py finish <slug>`.
+    """
+    src = ROOT / "work" / f"{slug}.md"
+    if not src.exists():
+        print(f"no such item: work/{slug}.md"); sys.exit(1)
+    text = src.read_text()
+    if not re.search(r"^## Outcome$", text, re.M):
+        print(f"work/{slug}.md has no `## Outcome` section.\n"
+              f"Say what happened and WHY -- especially for a revert -- before closing it. "
+              f"A revert we cannot explain gets re-tried.")
+        sys.exit(1)
+    fixed = reroot_links(text)
+    src.write_text(fixed)
+    dst = ROOT / "work" / "done" / f"{slug}.md"
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    # git mv fails on a file git does not know about, which is the normal state of an
+    # item created and closed in the same session. Fall back to a plain move rather than
+    # a traceback; the result is identical and `git add` picks it up either way.
+    if subprocess.run(["git", "mv", str(src), str(dst)], cwd=ROOT,
+                      capture_output=True).returncode != 0:
+        src.rename(dst)
+        print("  (moved without git mv — the item was not tracked yet)")
+    n = len(re.findall(r"\]\(\.\./(?!\.\./)", text))
+    print(f"closed work/{slug}.md -> work/done/{slug}.md" + (f" ({n} links re-rooted)" if n else ""))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("command", nargs="?", default="generate")
-    ap.add_argument("tractate", nargs="?")
+    ap.add_argument("tractate", nargs="?", help="tractate name, or item slug for `finish`")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
+
+    if a.command == "finish":
+        if not a.tractate:
+            print("usage: board.py finish <item-slug>"); return 1
+        finish(a.tractate)
+        return 0
 
     if a.command == "new-tractate":
         if not a.tractate:
