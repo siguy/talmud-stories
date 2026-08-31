@@ -244,7 +244,15 @@ def build(tractate, cfg):
             'detector_proposed_strict': strict,
             'detector_span': [list(p['span']) for p in linked] or None,
             'detector_classification': [p['classification'] for p in linked] or None,
-            'in_golden': any(p['in_golden'] for p in linked),
+            # Read from the GOLDEN, not from the proposals linked to this story.
+            # This field used to be `any(p['in_golden'] for p in linked)`, which
+            # asks "is a proposal of mine in the golden" -- so an expert story the
+            # detector never proposed read False no matter what the golden held.
+            # That was exactly backwards for the five stories added FROM Jeff's
+            # blind 2005 list, which are in the golden BECAUSE we never proposed
+            # them. Membership of the golden is a fact about the golden.
+            'in_golden': any(lo <= ix <= hi for ref, ix in (tight or window)
+                             for lo, hi in golden.get(ref, [])),
             'verdicts': vs,
             'verdict_match': next((p['verdict_match'] for p in linked if p['verdict_match']), None),
             # On his list IS his verdict that it is a story; a later note may still
