@@ -40,3 +40,7 @@ when it lands on main, so two sessions cannot claim the same number (four did on
 | 28 | 2026-08-30 | [Read the source format, not the converter's output](L-028-read-the-source-format-not-the-converter-s-output.md) |
 | 29 | 2026-08-30 | [A blind list stops being blind when the expert merges your output into it](L-029-a-blind-list-stops-being-blind-when-the-expert.md) |
 | 30 | 2026-08-30 | ["Incorrect" is not a metric until you know what was rejected](L-030-incorrect-is-not-a-metric-until-you-know-what-was.md) |
+| 31 | 2026-08-31 | [Verify a guard by simulating the failure it guards against](L-031-verify-a-guard-by-simulating-the-failure-it-guards.md) |
+| 32 | 2026-08-31 | [A clean merge is not evidence that the result is correct](L-032-a-clean-merge-is-not-evidence-that-the-result-is.md) |
+| 33 | 2026-08-31 | [When a mechanism needs a third guard, remove the mechanism](L-033-when-a-mechanism-needs-a-third-guard-remove-the.md) |
+| 34 | 2026-08-31 | [A field an agent cannot ground fills with confident noise](L-034-a-field-an-agent-cannot-ground-fills-with-confident.md) |

@@ -11,7 +11,7 @@ superseded_by:
 # Build a blind Kiddushin boundary set
 
 **`NEXT/05` is DONE** — ground truth is
-[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json).
+[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json).
 Read `STATUS.md` and `FRAMEWORK.md`.
 **Capability: 4 Boundaries.** **No API calls.**
 
@@ -58,7 +58,7 @@ A Kiddushin boundary score on a blind set, with its noise floor stated. The old
 ## Outcome
 
 **Done 2026-08-31.** →
-[`docs/findings/2026-08-31-kiddushin-boundary-set.md`](../docs/findings/2026-08-31-kiddushin-boundary-set.md)
+[`docs/findings/2026-08-31-kiddushin-boundary-set.md`](../../docs/findings/2026-08-31-kiddushin-boundary-set.md)
 · set: `tests/expert_boundary_targets_2005_kiddushin.json`
 
 **176 targets** from 88 of 89 blind stories (median 99.3% of Jeff's letters aligned;

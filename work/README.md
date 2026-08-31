@@ -8,8 +8,15 @@ each chose. On 2026-08-30 four concurrent sessions each wrote a "Lesson 26", and
 a different `09` and a different `10`; because the slugs differed, git merged all four
 cleanly and silently. That is the failure this layout removes.
 
-**Finishing:** add `## Outcome` saying what happened *and why*, then `git mv` the file to
-`work/done/`. **Never delete it.** A revert we cannot explain will be re-tried — it has
+**Finishing:** add `## Outcome` saying what happened *and why*, then
+`python3 scripts/board.py finish <slug>`. **Never delete it.**
+
+Use the command rather than a bare `git mv`: items link out with `../`, and `work/done/`
+is one level deeper, so a plain move breaks every one of those links at the moment the
+item becomes a permanent record. That is not hypothetical — the first item anyone finished
+broke its own link to `FRAMEWORK.md`, with 60 more one move away.
+`tests/test_bookkeeping.py` checks both that no link is broken and that the closing step
+would leave every open item's links resolvable. A revert we cannot explain will be re-tried — it has
 happened here at least once already.
 
 ## Frontmatter
@@ -37,8 +44,8 @@ by number; resolve them here.
 | `tasks/NEXT/03` second-story guard | [`2026-08-30-second-story-guard.md`](2026-08-30-second-story-guard.md) |
 | `tasks/NEXT/04` review UI asymmetry | [`done/2026-08-30-review-ui-display-asymmetry.md`](done/2026-08-30-review-ui-display-asymmetry.md) — **and then the name was reused.** `4de7135` repointed "NEXT/04" at a different job with no brief behind it; that job is now [`2026-08-30-review-verdict-axes.md`](2026-08-30-review-verdict-axes.md). A citation of `NEXT/04` means one or the other depending on its date — which is the reuse-after-deletion problem this layout exists to end |
 | `tasks/NEXT/05` Kiddushin list parse | [`done/2026-08-30-kiddushin-list-parse.md`](done/2026-08-30-kiddushin-list-parse.md) |
-| `tasks/NEXT/06` Kiddushin recall | [`2026-08-30-kiddushin-recall.md`](2026-08-30-kiddushin-recall.md) |
-| `tasks/NEXT/07` Kiddushin boundaries | [`2026-08-30-kiddushin-boundary-set.md`](2026-08-30-kiddushin-boundary-set.md) |
+| `tasks/NEXT/06` Kiddushin recall | [`done/2026-08-30-kiddushin-recall.md`](done/2026-08-30-kiddushin-recall.md) |
+| `tasks/NEXT/07` Kiddushin boundaries | [`done/2026-08-30-kiddushin-boundary-set.md`](done/2026-08-30-kiddushin-boundary-set.md) |
 | `tasks/NEXT/08` comments harvest | [`2026-08-30-kiddushin-comments-harvest.md`](2026-08-30-kiddushin-comments-harvest.md) |
 | `tasks/NEXT/09` fetch new tractates | [`done/2026-08-30-fetch-new-tractates.md`](done/2026-08-30-fetch-new-tractates.md) |
 | `tasks/NEXT/09` parse open calls | [`2026-08-30-kiddushin-parse-open-calls.md`](2026-08-30-kiddushin-parse-open-calls.md) — *two different briefs were both numbered 09* |

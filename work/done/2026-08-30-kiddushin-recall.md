@@ -11,8 +11,8 @@ superseded_by:
 # Kiddushin recall: triage and detection
 
 **`NEXT/05` is DONE** — ground truth is
-[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json)
-(95 stories; see [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../docs/findings/2026-08-30-kiddushin-list-parse.md)).
+[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json)
+(95 stories; see [`docs/findings/2026-08-30-kiddushin-list-parse.md`](../../docs/findings/2026-08-30-kiddushin-list-parse.md)).
 Read `STATUS.md` and `FRAMEWORK.md`.
 **Capabilities: 1 Triage, 2 Detection.** **No API calls.**
 
@@ -71,7 +71,7 @@ Findings → `docs/findings/<date>-kiddushin-recall.md`. Update the scoreboard.
 ## Outcome
 
 **Done 2026-08-31. Both cells filled.** →
-[`docs/findings/2026-08-31-kiddushin-recall.md`](../docs/findings/2026-08-31-kiddushin-recall.md)
+[`docs/findings/2026-08-31-kiddushin-recall.md`](../../docs/findings/2026-08-31-kiddushin-recall.md)
 
 | | Ketubot | Kiddushin |
 |---|---|---|
@@ -102,7 +102,7 @@ figure as Classification, and the reason the figure reaching output is 91.1% not
 
 It says "the denominator is 89" and in the same sentence to use `recall_denominator`,
 which is **90**. It predates
-[`appendix-provenance-correction`](../docs/findings/2026-08-30-appendix-provenance-correction.md),
+[`appendix-provenance-correction`](../../docs/findings/2026-08-30-appendix-provenance-correction.md),
 which split *blind* from *counts for recall*. 90 was used. All three readings (89 / 90 /
 94) were run: **they span 0.3 points and change no conclusion.**
 

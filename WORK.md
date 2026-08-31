@@ -47,12 +47,12 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `jeff-ask-order` | `talmud-stories` | clean |
-| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **16 FILES** |
+| `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
+| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **14 FILES** |
 | `state-work-review-40b153` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 8 items, never deleted
+## Done — 9 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -64,4 +64,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Parse Jeff's Kiddushin story list](work/done/2026-08-30-kiddushin-list-parse.md) | detection, boundaries | [2026-08-30-kiddushin-list-parse.md](docs/findings/2026-08-30-kiddushin-list-parse.md) |
 | [Kiddushin recall: triage and detection](work/done/2026-08-30-kiddushin-recall.md) | triage, detection | [2026-08-31-kiddushin-recall.md](docs/findings/2026-08-31-kiddushin-recall.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
-<!-- board-checksum: 9029a2edeee9e6ab -->
+| [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
+<!-- board-checksum: bd1be0c09c534d4b -->
