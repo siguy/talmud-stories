@@ -15,41 +15,44 @@ The governing rule, and the reason for the ordering below:
 
 ## Phase 0 — Capture everything, decide nothing
 
-Do this in **every** worktree, before merging, rebasing, pulling, or switching branches
-anywhere. It is mechanical and it is not reversible in the wrong order.
-
 ```sh
-git worktree list                     # find them all; do not work from memory
+python3 scripts/board.py capture          # dry run: shows what it would do
+python3 scripts/board.py capture --go     # branch, commit and push every dirty worktree
 ```
 
-Then, in each one:
+That is the whole phase. It walks `git worktree list`, and for each worktree with
+uncommitted work it creates `wip/<name>-<date>`, commits everything as-is, and pushes.
 
-```sh
-cd <worktree>
-git status --porcelain --untracked-files=all      # LOOK first. Note anything surprising.
-git checkout -b wip/<worktree-name>-$(date +%m%d) # a branch of its own, always
-git add -A
-git commit -m "WIP capture: <worktree-name>, uncommitted state at $(date +%F)"
-git push -u origin HEAD
-```
+**It is a command and not a procedure on purpose.** This repo already ran the other
+experiment: `git config core.hooksPath .githooks` was documented as a one-line fresh-clone
+step in `9be0586`, and on 2026-08-31 a clone was found with it unset — the guard
+`CLAUDE.md` called active was not active. A five-command procedure, run correctly in three
+worktrees, under time pressure, with unpushed work at stake, was not going to do better.
 
-**Do not** tidy, squash, fix a failing test, or resolve anything first. A messy commit
-that exists beats a clean one that does not. You are buying the right to be careless
-later.
+What it does for you, each of which lost work at least once when it was prose:
 
-Three things that quietly lose work at this step:
+- **Re-running is safe and additive.** If a worktree is already on its `wip/` branch it
+  commits onto it rather than failing. You never have to remember whether you already ran it.
+- **It refuses to commit credential-shaped files** — `.env`, `*.pem`, `*.key`,
+  `id_rsa`, and friends — and captures *nothing anywhere* when it finds one. `git add -A`
+  will happily sweep a secret into a commit and push it, and a pushed secret is in history
+  forever. (Found by testing `capture` end to end: a worktree branched before `.gitignore`
+  gained `.env` had the secret committed and pushed.)
+- **It warns about ignored-but-present files**, which `git add -A` silently leaves behind.
+  Ignored on purpose most of the time; irreplaceable the rest of the time. Copy those out
+  of the repo yourself — it will not commit them.
+- **It stops at the first failure** rather than half-capturing a set of worktrees.
 
-- **`git stash` is banned here** (`CLAUDE.md` Rule 6) and this is exactly why:
-  `refs/stash` is shared across every worktree, so a stash made in one is poppable from
-  another, and `git stash create` drops untracked files silently.
-- **`git add -A` does not add ignored files.** If something real is caught by
-  `.gitignore` — a `.env`, a generated dataset, a scratch notebook you care about — copy
-  it somewhere outside the repo now. `git status --ignored` will show you.
-- **Untracked directories** are easy to miss in a truncated `git status`. Use
-  `--untracked-files=all`.
+Deliberately *not* tidy: no squashing, no fixing the failing test, no resolving anything.
+A messy commit that exists beats a clean one that does not. You are buying the right to be
+careless later.
 
-Stop here. Do not proceed until every worktree is pushed and `git status` is clean in
-all of them.
+One thing the command cannot do for you: **`git stash` is banned here** (`CLAUDE.md`
+Rule 6) and this is exactly why. `refs/stash` is shared across every worktree, so a stash
+made in one is poppable from another, and `git stash create` drops untracked files
+silently. If you have already stashed, `git stash list` and pop it before capturing.
+
+Stop here. Do not proceed until `board.py capture` reports every worktree clean.
 
 ## Phase 1 — Land the machinery before you merge anything into it
 

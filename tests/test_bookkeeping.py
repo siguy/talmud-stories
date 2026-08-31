@@ -226,6 +226,35 @@ def test_an_undeclared_write_is_caught_when_an_item_is_closed():
         assert p.startswith(board.UNCONTENDED), f"{p} should be exempt from drift reporting"
 
 
+def test_capture_refuses_to_commit_a_credential():
+    """`board.py capture` runs `git add -A` and pushes. That sweeps in secrets.
+
+    Verified by simulating the failure it guards (Lesson 31). This is not a theoretical
+    risk: testing `capture` end to end on 2026-08-31, a worktree that had branched before
+    .gitignore gained `.env` had the secret committed AND pushed. A pushed secret is in
+    history forever, so the guard refuses the whole run rather than skipping one file.
+
+    The list is deliberately high-precision. A false positive blocks a capture under time
+    pressure with unpushed work at stake, which is the one moment a tool must not argue.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    caught = board.sensitive([
+        ".env", "config/.env.production", "deploy/server.pem", "certs/tls.key",
+        "secrets/id_rsa", "gcp/service-account.json",
+    ])
+    assert len(caught) == 6, f"a credential shape slipped through: {caught}"
+
+    # And must not fire on ordinary repo content, or it blocks captures for nothing.
+    assert board.sensitive([
+        "src/story_detector_v11.py", "results/canonical/ketubot_canonical.json",
+        "docs/findings/2026-08-31-x.md", "environment.md", "scripts/keyword_lookup.py",
+    ]) == []
+
+
 def test_blocked_by_and_awaiting_resolve():
     """A dependency pointing at nothing parks work silently. Both kinds must resolve:
     an item slug, or a `jeff:` question that comms/JEFF.md actually lists."""

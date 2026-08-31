@@ -10,6 +10,7 @@ two places and let them drift (FRAMEWORK said the golden was both 182 and 187).
     python3 scripts/board.py --check         # exit 1 if either is stale (for CI/tests)
     python3 scripts/board.py lanes           # what can safely run at the same time
     python3 scripts/board.py setup           # one-time per clone: hooks + merge driver
+    python3 scripts/board.py capture         # push every worktree's uncommitted work
     python3 scripts/board.py new-tractate gittin
 
 REFUSES TO OVERWRITE A HAND-EDIT. Each generated file embeds a checksum of its own body.
@@ -659,6 +660,132 @@ def merge_driver(name: str, dest: str) -> int:
     return 0
 
 
+# Filenames that must never be swept into a WIP commit. Deliberately high-precision:
+# a false positive here blocks a capture under time pressure, which is the one moment you
+# cannot afford a tool arguing with you. Found by testing `capture` end to end -- a worktree
+# branched before .gitignore gained `.env` had the secret committed AND PUSHED, and a
+# pushed secret is in history forever. The ignored-file warning could not see it, because
+# the whole problem is that it was not ignored.
+SENSITIVE_NAMES = {"id_rsa", "id_ed25519", ".netrc", "credentials.json",
+                   "service-account.json", ".npmrc", ".pypirc"}
+SENSITIVE_SUFFIX = (".pem", ".key", ".p12", ".pfx", ".keystore")
+
+
+def sensitive(paths: list[str]) -> list[str]:
+    out = []
+    for f in paths:
+        base = Path(f).name
+        if (base in SENSITIVE_NAMES or base == ".env" or base.startswith(".env.")
+                or base.endswith(SENSITIVE_SUFFIX)):
+            out.append(f)
+    return sorted(out)
+
+
+def capture(go: bool) -> int:
+    """Commit and push every worktree's uncommitted work, on a branch of its own.
+
+    THE ORDERING IS THE POINT. A commit is recoverable forever, even a broken one on a
+    dead branch. An uncommitted working tree is one `git checkout` from gone -- and
+    `git checkout` is step one of every merge you are about to do. So capture everything
+    before integrating anything.
+
+    This exists as a command rather than a documented procedure because this repo has
+    already run the experiment. `git config core.hooksPath .githooks` was documented as a
+    one-line fresh-clone step in 9be0586, and on 2026-08-31 a clone was found with it
+    unset -- the guard CLAUDE.md called active was not active. A five-command procedure,
+    to be run correctly in three worktrees, under time pressure, with unpushed work at
+    stake, is not going to fare better than the one-command one did.
+
+    Deliberately NOT tidy: no squashing, no fixing the failing test, no resolving
+    anything. A messy commit that exists beats a clean one that does not.
+    """
+    wts = worktrees()
+    print(f"{len(wts)} worktree(s).\n")
+    todo, blocked = [], []
+    for w in wts:
+        path, branch = w["path"], w.get("branch", "(detached)")
+        dirty = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"],
+                               cwd=path, capture_output=True, text=True).stdout.strip()
+        files = [l for l in dirty.split("\n") if l.strip()]
+        # Ignored-but-present files are what `git add -A` silently leaves behind. They are
+        # ignored on purpose most of the time and irreplaceable the rest of the time, so
+        # they are reported and never committed.
+        ign = [l for l in subprocess.run(
+            ["git", "status", "--porcelain", "--ignored=matching", "--untracked-files=no"],
+            cwd=path, capture_output=True, text=True).stdout.split("\n") if l.startswith("!!")]
+        name = Path(path).name
+        if not files:
+            print(f"  clean    {name}  [{branch}]")
+            continue
+        # Re-running must be safe and additive. Someone WILL run this twice -- it is the
+        # command you reach for when you are unsure whether you already ran it, and the
+        # first version failed with "a branch named ... already exists", which under time
+        # pressure reads as "capture is broken" rather than "capture already happened".
+        cur = subprocess.run(["git", "branch", "--show-current"], cwd=path,
+                             capture_output=True, text=True).stdout.strip()
+        if cur.startswith("wip/"):
+            wip = cur                       # already captured once; add to the same branch
+        else:
+            stem = f"wip/{name}-{sh('date', '+%m%d') or 'capture'}"
+            wip, n = stem, 2
+            while subprocess.run(["git", "rev-parse", "--verify", "-q", wip], cwd=path,
+                                 capture_output=True).returncode == 0:
+                wip, n = f"{stem}-{n}", n + 1
+        print(f"  DIRTY    {name}  [{branch}]  {len(files)} file(s) -> {wip}")
+        for l in files[:6]:
+            print(f"               {l}")
+        if len(files) > 6:
+            print(f"               ... and {len(files) - 6} more")
+        if ign:
+            print(f"           !! {len(ign)} IGNORED file(s) present -- `git add -A` will NOT")
+            print(f"              take these. Copy anything you need outside the repo first:")
+            for l in ign[:4]:
+                print(f"               {l}")
+        secret = sensitive([l[3:].strip().strip('"') for l in files])
+        if secret:
+            print(f"           !! REFUSING: `git add -A` would commit and PUSH these:")
+            for s in secret:
+                print(f"               {s}")
+            print(f"              A pushed secret is in history forever. Add them to")
+            print(f"              .gitignore or move them out of the repo, then re-run.")
+            blocked.append(name)
+            continue
+        todo.append((path, wip))
+
+    if blocked:
+        print(f"\n{len(blocked)} worktree(s) BLOCKED on a credential-shaped file: "
+              f"{', '.join(blocked)}")
+        print("Nothing was committed anywhere. Resolve those, then re-run.")
+        return 1
+    if not todo:
+        print("\nNothing to capture.")
+        return 0
+    if not go:
+        print(f"\nDRY RUN. {len(todo)} worktree(s) would be branched, committed and pushed.")
+        print("Re-run with `board.py capture --go` to do it.")
+        return 0
+
+    stamp_ = sh("date", "+%F")
+    for path, wip in todo:
+        print(f"\ncapturing {Path(path).name} -> {wip}")
+        cur = subprocess.run(["git", "branch", "--show-current"], cwd=path,
+                             capture_output=True, text=True).stdout.strip()
+        steps = ([] if cur == wip else [["git", "checkout", "-b", wip]])
+        for args in (*steps,
+                     ["git", "add", "-A"],
+                     ["git", "commit", "-m", f"WIP capture: {Path(path).name}, "
+                      f"uncommitted state at {stamp_}"],
+                     ["git", "push", "-u", "origin", "HEAD"]):
+            r = subprocess.run(args, cwd=path, capture_output=True, text=True)
+            if r.returncode != 0:
+                print(f"  FAILED: {' '.join(args)}\n  {r.stderr.strip()}")
+                print("  STOPPING. Nothing after this point ran; nothing was lost.")
+                return 1
+            print(f"  ok  {' '.join(args[:3])}")
+    print("\nAll captured and pushed. Now safe to merge, rebase and checkout.")
+    return 0
+
+
 def setup() -> int:
     """One-time per-clone wiring. Idempotent, so running it again is free.
 
@@ -695,6 +822,8 @@ def main() -> int:
     ap.add_argument("dest", nargs="?", help="merge-driver only: the path git wants written")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--go", action="store_true",
+                    help="capture only: actually commit and push (default is a dry run)")
     a = ap.parse_args()
 
     if a.command == "finish":
@@ -722,6 +851,9 @@ def main() -> int:
 
     if a.command == "setup":
         return setup()
+
+    if a.command == "capture":
+        return capture(go=a.go)
 
     if a.command == "merge-driver":
         if not a.tractate or not a.dest:
