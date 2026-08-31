@@ -39,9 +39,12 @@ types none.
 ```
 gate       ≥98% · PROVISIONAL
 history    docs/capabilities/1_triage.md
+open       2026-08-30-eruvin-triage
+open       2026-08-30-gittin-triage
 open       2026-08-30-kiddushin-recall
 open       2026-08-30-opener-lexicon
 open       2026-08-30-triage-recall-price
+open       2026-08-30-yevamot-triage
 closed     2 item(s) in work/done/
 ```
 
@@ -49,6 +52,8 @@ closed     2 item(s) in work/done/
 ```
 gate       ≥95% · PROVISIONAL
 history    docs/capabilities/2_detection.md
+open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 2026-08-30-two-amud-header-parser
+open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-kiddushin-recall
@@ -60,10 +65,12 @@ closed     4 item(s) in work/done/
 ```
 gate       ≥85% · PROVISIONAL
 history    docs/capabilities/3_classification.md
+open       2026-08-30-eruvin-classification   ← blocked: 2026-08-30-eruvin-detection
+open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-round
+open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
+open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
 open       2026-08-30-kiddushin-comments-harvest
-open       2026-08-30-review-verdict-axes
-open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
 closed     3 item(s) in work/done/
 ```
 
@@ -81,7 +88,12 @@ closed     2 item(s) in work/done/
 ```
 gate       a scholar reviews a tractate in days, not weeks · DERIVED
 history    docs/capabilities/5_review.md
+open       2026-08-30-eruvin-expert-round   ← blocked: 2026-08-30-eruvin-review-ui
+open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classification
+open       2026-08-30-gittin-expert-round   ← blocked: 2026-08-30-gittin-review-ui
+open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-review-verdict-axes
+open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 closed     2 item(s) in work/done/
 ```
 
@@ -129,4 +141,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 70e0e1de2a0b6274 -->
+<!-- board-checksum: b3995f3dc4385597 -->
