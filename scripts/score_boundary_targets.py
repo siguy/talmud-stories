@@ -13,6 +13,11 @@ Jeff quoted?
   MISS  - elsewhere
   N/A   - this run has no story covering that segment (a detection gap, not a
           boundary error; reported separately so the two never get conflated)
+  WITHHELD - the covering story exists but Stage 4g moved it to `mishnah_stories`.
+          Found, bounded, then set aside on a scope judgment still open with Jeff
+          (`jeff:mishnah-scope`). Never folded into the score in either direction,
+          and never reported as N/A: a withheld story is not a story we missed
+          (Lesson 27).
 
 BIAS — always report it with the number: every target is a case Jeff flagged as
 WRONG. This measures whether known failures get fixed, not whether correct
@@ -34,14 +39,24 @@ from src.story_detector_v11 import _split_into_clauses  # noqa: E402
 
 
 def load_run(path):
+    """Returns (data, stories, segs, withheld).
+
+    `withheld` is read from `mishnah_stories` and kept apart from `stories` on
+    purpose. Before this key was read here, a target on a withheld story scored
+    N/A — the bucket that means "we found nothing on that segment" — so Stage 4g's
+    scope decision was reported as a detection gap (Lesson 27).
+    """
     data = json.loads(Path(path).read_text())
-    stories, segs = [], {}
+    stories, withheld, segs = [], [], {}
     for page in data['pages']:
         segs[page['ref']] = {s['index']: s['hebrew'] for s in page.get('segments', [])}
         for s in page.get('stories', []):
             if s.get('classification') != 'NOT_A_STORY':
                 stories.append((page['ref'], s))
-    return data, stories, segs
+        for s in page.get('mishnah_stories', []) or []:
+            if s.get('classification') != 'NOT_A_STORY':
+                withheld.append((page['ref'], s))
+    return data, stories, segs, withheld
 
 
 def boundary_clause(story, segs, ref, side):
@@ -75,7 +90,7 @@ def load_targets(specs):
 
 
 def score(path, targets, skip_needs_human=True):
-    _, stories, segs = load_run(path)
+    _, stories, segs, withheld = load_run(path)
     out = Counter()
     rows = []
     for t in targets:
@@ -86,8 +101,11 @@ def score(path, targets, skip_needs_human=True):
         cover = [s for r, s in stories
                  if r == ref and s['start_segment'] <= seg <= s['end_segment']]
         if not cover:
-            out['N/A'] += 1
-            rows.append((ref, seg, t['direction'], want, None, 'N/A'))
+            held = any(r == ref and s['start_segment'] <= seg <= s['end_segment']
+                       for r, s in withheld)
+            verdict = 'WITHHELD' if held else 'N/A'
+            out[verdict] += 1
+            rows.append((ref, seg, t['direction'], want, None, verdict))
             continue
         st = cover[0]
         gseg, got = boundary_clause(st, segs, ref, t['direction'])
@@ -128,7 +146,8 @@ def main():
           + (f"; {skipped} skipped pending human polarity review" if skipped and not args.include_needs_human else ""))
     print("BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures "
           "fixing known failures. The 2005 list is a neutral sample and also catches regressions.\n")
-    print(f"{'run':10s} {'scored':>7s} {'HIT':>5s} {'NEAR':>5s} {'MISS':>5s} {'N/A':>5s} {'hit%':>6s} {'hit+near%':>10s}")
+    print(f"{'run':10s} {'scored':>7s} {'HIT':>5s} {'NEAR':>5s} {'MISS':>5s} {'N/A':>5s} "
+          f"{'WITHHELD':>9s} {'hit%':>6s} {'hit+near%':>10s}")
     details = {}
     for spec in args.runs:
         name, path = spec.split('=', 1)
@@ -138,7 +157,11 @@ def main():
         h = c['HIT'] / scored if scored else 0
         hn = (c['HIT'] + c['NEAR']) / scored if scored else 0
         print(f"{name:10s} {scored:7d} {c['HIT']:5d} {c['NEAR']:5d} {c['MISS']:5d} {c['N/A']:5d} "
-              f"{h:6.0%} {hn:10.0%}")
+              f"{c['WITHHELD']:9d} {h:6.0%} {hn:10.0%}")
+        if c['WITHHELD']:
+            print(f"{'':10s} {c['WITHHELD']} target(s) sit on a story Stage 4g withheld to "
+                  f"`mishnah_stories` — found, then set aside (jeff:mishnah-scope). "
+                  f"Not scored, and not a detection gap.")
 
     if args.by_source:
         files = sorted({t['target_file'] for t in targets})
@@ -153,7 +176,8 @@ def main():
                 if not s:
                     print(f"    {name:12s} no scorable targets"); continue
                 print(f"    {name:12s} scored {s:3d}  hit {c['HIT']/s:4.0%}  "
-                      f"hit+near {(c['HIT']+c['NEAR'])/s:4.0%}   (N/A {c['N/A']})")
+                      f"hit+near {(c['HIT']+c['NEAR'])/s:4.0%}   "
+                      f"(N/A {c['N/A']}, withheld {c['WITHHELD']})")
 
     if args.detail:
         for name, rows in details.items():

@@ -62,6 +62,7 @@ five successive mechanisms, and four of them were wrong.
 | 2026-08-31 | `score_boundary_targets.py` classified blind-vs-corrections by the literal filename `expert_boundary_targets_2005.json` | fixed before it mattered: the new Kiddushin set would have been **counted and reported as a corrections set**. Classifies on `source_round` now | same |
 | 2026-08-30 | **End-trim cap at 3 clauses** — every end regression cut too *early* (drifts −6 −6 −6 −6 −4 −3 −2 −2 −2 −1); caps of 1/2/3 score identically | shipped at 80%/84% → **81%/86%** on the neutral ruler… | `2e4fd89` |
 | 2026-08-30 | …then **REVERTED** once Simon settled which expert standard we build for | see below | `a7659d3`, [`trim_asymmetry`](../findings/2026-08-30-trim-asymmetry.md), Lesson 24 |
+| 2026-08-31 | **The scorer could not see `mishnah_stories`.** A target on a story Stage 4g withheld scored `N/A` — the bucket whose docstring says *"this run has no story covering that segment (a detection gap)"* — so a scope decision was reported as a detection failure (Lesson 27) | fixed: fourth bucket `WITHHELD`, folded into neither the score nor `N/A`. **2 of 294 blind Ketubot targets move**, both on 54b's chapter-boundary mis-tag, which the current tagger no longer withholds. Kiddushin 85%/91% and Ketubot 61–112 80%/84% **unchanged** | [`span_bounds_and_mishnah_readers`](../findings/2026-08-31-span-bounds-and-mishnah-readers.md) |
 
 ## What we reverted, and why
 
