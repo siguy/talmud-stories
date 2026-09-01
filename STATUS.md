@@ -505,7 +505,12 @@ BLIND   (can measure recall)
                  The two filters differ ON PURPOSE: recall uses `counts_for_recall`
                  (90, keeps 81b), boundaries use `blind` (89, drops all 5 appendix
                  cases). A boundary target must be an extent JEFF chose.
-  Gittin 112 · Yevamot 102 · Eruvin 73   <- PRISTINE. We have never run the detector on
+  Gittin 112 · Yevamot 102 · Eruvin 74   <- PRISTINE, and now PARSED 09-01 to
+                                            results/expert_lists/*_2005.json. Eruvin was
+                                            recorded as 73: its table is stored right-to-left,
+                                            so the line parser dropped the first story and
+                                            mis-attributed 53 of the rest. We have never run
+                                            the detector on
                                             these, so nothing of ours can have been
                                             merged in. Each needs its own parse; a
                                             detector run there is a clean floor test.
@@ -528,7 +533,8 @@ SEFARIA TEXT on hand (text only — no detector has been run on these)
 **Every reference in Jeff's Gittin, Yevamot and Eruvin lists resolves to a fetched
 page** — ranges derived from Sefaria's own index, not guessed, and verified by
 `python3 scripts/fetch_tractate_pages.py --verify-only`. The three entry counts
-above are now **measured** (112 / 102 / 73 reproduce exactly), and all three lists
+above are now **measured** (112 / 102 / **74** — Eruvin's 73 was a parser artifact,
+corrected 2026-09-01), and all three lists
 are genuinely blind — 0 English review comments, 0 `הוספתי` markers, unlike Kiddushin's.
 
 `scripts/build_boundary_testset_2005.py` **can** build blind boundary sets for these

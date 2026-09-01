@@ -45,11 +45,11 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | clean |
-| `two-amud-header-parser` | `kiddushin-recall-boundary-c52c91` | **6 FILES** |
+| `parse-new-tractate-expert-lists` | `kiddushin-recall-boundary-c52c91` | **10 FILES** |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 16 items, never deleted
+## Done — 17 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -69,4 +69,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
 | [Finishing an item re-roots its outbound links and breaks every inbound one](work/done/2026-08-31-finish-reroots-inbound-links.md) | — | — |
 | [Fix skip_triage so it bypasses Stage 1 instead of faking its output](work/done/2026-09-01-fix-skip-triage-flag.md) | triage | [2026-09-01-examine-all-pages-fix.md](docs/findings/2026-09-01-examine-all-pages-fix.md) |
-<!-- board-checksum: d5701ae24c4b99b0 -->
+| [Parse the Gittin, Yevamot and Eruvin expert lists to JSON](work/done/2026-09-01-parse-new-tractate-lists.md) | detection | [2026-09-01-new-tractate-expert-lists.md](docs/findings/2026-09-01-new-tractate-expert-lists.md) |
+<!-- board-checksum: 366ff27792a82066 -->

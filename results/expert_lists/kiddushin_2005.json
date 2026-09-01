@@ -13,7 +13,10 @@
   "in_appendix": 5,
   "recall_denominator": 90,
   "strictly_blind": 89,
-  "comments": 10
+  "comments": 10,
+  "ref_disagrees_with_text": 1,
+  "ref_unlocated": 0,
+  "ref_text_anchored": 4
  },
  "notes": [
   "blind=false means Jeff marked the entry as his own 2026 addition; exclude from recall.",
@@ -43,7 +46,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.971,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_002",
@@ -67,7 +72,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.973,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_003",
@@ -91,7 +98,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_004",
@@ -115,7 +124,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.972,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_005",
@@ -140,7 +151,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_00"
-   ]
+   ],
+   "text_coverage": 0.987,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_006",
@@ -163,7 +176,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.889,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_007",
@@ -186,7 +201,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.94,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_008",
@@ -209,7 +226,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.912,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_009",
@@ -232,7 +251,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.94,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_010",
@@ -255,7 +276,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.969,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_011",
@@ -278,7 +301,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.961,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_012",
@@ -301,7 +326,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.913,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_013",
@@ -327,7 +354,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_01"
-   ]
+   ],
+   "text_coverage": 0.956,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_014",
@@ -352,7 +381,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_02"
-   ]
+   ],
+   "text_coverage": 0.972,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_015",
@@ -375,7 +406,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_016",
@@ -399,7 +432,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.926,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_017",
@@ -422,7 +457,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.982,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_018",
@@ -445,7 +482,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.964,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_019",
@@ -468,7 +507,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.947,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_020",
@@ -491,7 +532,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.905,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_021",
@@ -514,7 +557,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.889,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_022",
@@ -539,7 +584,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_03"
-   ]
+   ],
+   "text_coverage": 0.932,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_023",
@@ -562,7 +609,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.974,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_024",
@@ -585,7 +634,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.921,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_025",
@@ -608,7 +659,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.918,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_026",
@@ -631,7 +684,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_027",
@@ -654,7 +709,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.964,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_028",
@@ -679,7 +736,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_04"
-   ]
+   ],
+   "text_coverage": 0.975,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_029",
@@ -702,7 +761,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_030",
@@ -725,7 +786,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.907,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_031",
@@ -748,7 +811,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.912,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_032",
@@ -771,7 +836,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_033",
@@ -794,7 +861,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.958,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_034",
@@ -817,7 +886,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.954,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_035",
@@ -843,7 +914,9 @@
    "comment_ids": [],
    "appendix_verdict": "Yes",
    "appendix_detection": "proposed in every run; seg 6 partial in v7/v8, full at seg 5 from Wave 3 on",
-   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall"
+   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall",
+   "text_coverage": 0.991,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_036",
@@ -866,7 +939,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.91,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_037",
@@ -889,7 +964,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_038",
@@ -912,7 +989,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.927,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_039",
@@ -937,7 +1016,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_note_28"
-   ]
+   ],
+   "text_coverage": 0.932,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_040",
@@ -960,7 +1041,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.895,
+   "ref_in_text_window": false
   },
   {
    "id": "kiddushin_041",
@@ -985,7 +1068,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_05"
-   ]
+   ],
+   "text_coverage": 0.945,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_042",
@@ -1008,7 +1093,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.986,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_043",
@@ -1032,7 +1119,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.987,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_044",
@@ -1055,7 +1144,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.934,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_045",
@@ -1078,7 +1169,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.972,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_046",
@@ -1101,7 +1194,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.967,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_047",
@@ -1124,7 +1219,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.96,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_048",
@@ -1147,7 +1244,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.982,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_049",
@@ -1177,7 +1276,9 @@
    ],
    "appendix_verdict": "Low confidence",
    "appendix_detection": "proposed in full from Wave 1 on (absent in v7) -- a genuine Wave 1 win",
-   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall"
+   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall",
+   "text_coverage": 0.978,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_050",
@@ -1202,7 +1303,9 @@
    "blind_basis": "marked `hosafti--y.r.` (I added -- J.R.) by comment c_06",
    "in_appendix": false,
    "duplicate_of": "kiddushin_052",
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_051",
@@ -1227,7 +1330,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_052",
@@ -1252,7 +1357,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.947,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_053",
@@ -1275,7 +1382,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_054",
@@ -1298,7 +1407,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_055",
@@ -1321,7 +1432,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_056",
@@ -1344,7 +1457,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.977,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_057",
@@ -1367,7 +1482,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_058",
@@ -1390,7 +1507,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_059",
@@ -1413,7 +1532,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.938,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_060",
@@ -1439,7 +1560,9 @@
    "comment_ids": [],
    "appendix_verdict": "Low confidence",
    "appendix_detection": "proposed but truncated: seg 8 of the segs 8-9 the story occupies",
-   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall"
+   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall",
+   "text_coverage": 0.977,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_061",
@@ -1462,7 +1585,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.983,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_062",
@@ -1487,7 +1612,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_07"
-   ]
+   ],
+   "text_coverage": 0.896,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_063",
@@ -1513,7 +1640,9 @@
    "duplicate_of": null,
    "comment_ids": [
     "c_08"
-   ]
+   ],
+   "text_coverage": 0.931,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_064",
@@ -1536,7 +1665,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_065",
@@ -1559,7 +1690,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_066",
@@ -1582,7 +1715,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.938,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_067",
@@ -1605,7 +1740,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.974,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_068",
@@ -1628,7 +1765,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.971,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_069",
@@ -1651,7 +1790,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.951,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_070",
@@ -1674,7 +1815,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.9,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_071",
@@ -1698,7 +1841,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.879,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_072",
@@ -1724,7 +1869,9 @@
    "comment_ids": [],
    "appendix_verdict": "Low confidence",
    "appendix_detection": "proposed but truncated: segs 4-5, the tail of the segs 2-5 it occupies",
-   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall"
+   "counts_for_recall_basis": "excluded: we proposed it, so counting it could only flatter recall",
+   "text_coverage": 0.926,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_073",
@@ -1747,7 +1894,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.986,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_074",
@@ -1770,7 +1919,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.939,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_075",
@@ -1793,7 +1944,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_076",
@@ -1816,7 +1969,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.947,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_077",
@@ -1839,7 +1994,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.891,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_078",
@@ -1862,7 +2019,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_079",
@@ -1885,7 +2044,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.928,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_080",
@@ -1908,7 +2069,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.952,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_081",
@@ -1931,7 +2094,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.94,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_082",
@@ -1954,7 +2119,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.966,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_083",
@@ -1977,7 +2144,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.953,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_084",
@@ -2000,7 +2169,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.897,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_085",
@@ -2023,7 +2194,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.947,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_086",
@@ -2046,7 +2219,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.954,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_087",
@@ -2069,7 +2244,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.942,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_088",
@@ -2092,7 +2269,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.97,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_089",
@@ -2115,7 +2294,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.98,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_090",
@@ -2138,7 +2319,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.993,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_091",
@@ -2162,7 +2345,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.973,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_092",
@@ -2185,7 +2370,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.977,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_093",
@@ -2211,7 +2398,9 @@
    "comment_ids": [],
    "appendix_verdict": "Yes",
    "appendix_detection": "NEVER proposed by any run. The story is seg 9; we proposed segs 1-3 and 14. Jeff found it in the page text our review UI displayed.",
-   "counts_for_recall_basis": "INCLUDED: we never proposed it, so it can only count against us. Dropping a story we missed is what inflates recall."
+   "counts_for_recall_basis": "INCLUDED: we never proposed it, so it can only count against us. Dropping a story we missed is what inflates recall.",
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_094",
@@ -2234,7 +2423,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 1.0,
+   "ref_in_text_window": true
   },
   {
    "id": "kiddushin_095",
@@ -2257,7 +2448,9 @@
    "blind_basis": "in Jeff's list with no marker of later addition; never present in detector output he had seen",
    "in_appendix": false,
    "duplicate_of": null,
-   "comment_ids": []
+   "comment_ids": [],
+   "text_coverage": 0.97,
+   "ref_in_text_window": true
   }
  ],
  "comments": [
