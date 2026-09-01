@@ -209,7 +209,56 @@ Checking 6 commented Kiddushin passages individually, it credits us with a **dif
 passage on the same daf** twice (30a, 58a). Treat the loose column as an upper bound and
 verify by name before building on it.
 
-## What changed today (2026-08-31)
+## What changed 2026-09-01
+
+**One historical claim retracted; no current number moves.** Stage 1's only evidence that
+it earns its place — *"triage is the single largest accuracy driver, 87.4% with, 83.5%
+without"* (2026-02-13) — rests on `results/v7/ablation_v7_no_triage.json`, and that file is
+**not a no-triage run**. `skip_triage=True` stamps every segment `DELIBERATION` and feeds
+it to Stage 2's prompt and to post-processing, so the contest it ran was true labels
+against uniformly false ones.
+
+Proven without reading the code: **the arm examining 3x the pages found 5 fewer of Jeff's
+stories**, 3 of them on pages both arms examined — impossible for a change to the page set.
+The capability row is struck with its reason rather than deleted, and the file is kept as
+evidence. Triage may well be the largest driver; yesterday's 14.3% precision on discarded
+pages is a better reason to think so. **The flag is still live in v11**, which is now a
+`Don't` in `CLAUDE.md` and a work item.
+→ [`2026-09-01-contaminated-no-triage-ablation.md`](docs/findings/2026-09-01-contaminated-no-triage-ablation.md)
+· [`fix-skip-triage-flag`](work/done/2026-09-01-fix-skip-triage-flag.md)
+
+**And the flag is fixed, same day.** `skip_triage` is renamed **`examine_all_pages`** and
+now gates the page selection alone: Stage 1 runs whenever labels were not supplied, and
+supplied labels are never overwritten — the old `elif` discarded them, which is what
+`run_triage_recall_price.py` had to work around. A second all-DELIBERATION default in the
+Stage 2 loop became `[]` (renders `UNKNOWN`). **v7-v10 keep the stub on purpose**, pinned
+by a test, so the audited artifact stays reproducible. 10 failure-injection tests, 9 of 10
+watched fail first.
+→ [`2026-09-01-examine-all-pages-fix.md`](docs/findings/2026-09-01-examine-all-pages-fix.md)
+
+**Nothing published moves.** Yesterday's pricing and the `N>=1` rule both used cached
+labels and never touched this flag.
+
+**And the ablation was re-run correctly, same day, with no API calls** — the Stage 2 output
+on the discarded pages already existed and had only ever been scored against the blind
+lists, never against the golden. **Stage 1 buys ~8 points of classification precision on
+both tractates**: Ketubot 89.2% → 81.1% (FP 18 → 35), Kiddushin 85.3% → 77.1% (FP 14 → 24),
+for at most +0.6 points of golden recall. Nothing was lost by examining more pages — the
+invariant whose violation exposed the contaminated original. **February's claim had the
+right direction and the wrong evidence; the direction is now measured.**
+→ [`2026-09-01-corrected-triage-ablation.md`](docs/findings/2026-09-01-corrected-triage-ablation.md)
+
+**The reason to keep Stage 1 is precision and reviewer load, not compute.** 124 extra calls
+a tractate is pennies; 17 extra unjudged proposals in front of the one reviewer is not.
+
+**What is now open in its place, and it is a reading task:** those **27 extra proposals
+across the two tractates have never been read.** They score as false positives only because
+the golden cannot contain a story from a page triage never let anyone see — so nobody knows
+how many are real. That number decides whether the 8 points of precision is a genuine
+saving or an artifact of a circular measure, and it is the one thing here that cannot be
+settled by more compute.
+
+## What changed 2026-08-31
 
 **Morning: infrastructure and correction. Afternoon: three cells measured. Evening: three
 work items shipped, and two of them corrected an attribution this file was making.**
