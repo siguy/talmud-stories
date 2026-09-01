@@ -46,6 +46,31 @@ false-negative count drops from 15 to 11 for the right reason rather than by acc
 mis-labelled at a chapter boundary — and asking about them would put a question of ours in
 his mouth.
 
+### Added 2026-09-01 — Gittin shows the same story landing on both sides of the rule
+
+The first Gittin run (2026-08-31, blind: 100% loose / 96.4% strict against his 2005 list of 112 stories)
+turned up **three pairs where one story is counted twice** — the Mishnah copy withheld by
+the filter, and the Gemara's own citation of it kept:
+
+| withheld, inside the Mishnah | kept, the Gemara citing it |
+|---|---|
+| Gittin 10a — `מעשה והביאו לפני רבן גמליאל לכפר עותנאי` | Gittin 10b — `והא קתני: מעשה והביאו…` |
+| Gittin 45b — `מעשה בצידון` (the vow to divorce) | Gittin 46a — `אמר ר' יוסי בר' יהודה: מעשה בצידון` |
+| Gittin 74a — `מעשה בצידון` (the coat) | Gittin 74b — `אמר רשב"ג: מעשה בצידון` |
+
+His 2005 list has **neither** member of any pair. This is worth one added sentence in the
+draft, because it is the question from a third side and it is not hypothetical:
+
+> On Gittin we hit a case your Kiddushin note does not settle. The same *ma'aseh* often
+> appears twice — once in the Mishnah, and again where the Gemara quotes it back. Our rule
+> files the Mishnah copy separately and keeps the Gemara's citation, so one story is
+> catalogued twice under two different headings. Should the pair be one entry, and if so
+> which text is the one you would cite?
+
+**Sending these closes the appendix window** (Lesson 29): the moment he has Gittin results,
+the "stories you and Claude found" ask can no longer be made cleanly for that tractate. So
+this goes **in the same email as item 5**, never before it.
+
 ---
 
 ## 2. Parked — at what error rate does review become worse than starting from scratch?
