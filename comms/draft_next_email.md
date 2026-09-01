@@ -13,48 +13,65 @@ Order below is the order to ask in. Item 1 is new today.
 
 **Why it leads:** it is the first tractate we have detected that nobody here had ever
 looked at, and it is the whole point of the project — Ketubot and Kiddushin exist to make
-us good enough to do this on tractates where no list exists. Measured in
+us good enough to do this where no list exists. Measured in
 [`gittin-first-run`](../docs/findings/2026-08-31-gittin-first-run.md).
+
+**The four we did not find are not bugs, and the draft must not offer to fix them.**
+Diagnosed 2026-09-01: 57a was re-run and reproduces both of its misses exactly, so they are
+not nondeterminism. Three of the four are passages where **nothing happens except speech or
+custom** — the class his 2026-07-06 rule tells us to reject and his 2005 list includes:
+
+| miss | Stage 1 label | why we rejected it |
+|---|---|---|
+| **38b** seg 6 — `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` | `VERBAL_ACT` | a dictum; no event |
+| **57a** seg 12 — the exchange on the land of Israel's fertility | — | talk, no action |
+| **57a** seg 20 — `אשקא דריספק חריב ביתר`, *"they were accustomed, when a boy was born, to plant a cedar"* | `HABITUAL` | customary practice, not a single event |
+| **46b** — `פירקן…` in the redemption sugya | — | we propose segs 15-17; his unit starts at the legal frame at seg 14 (the Jeff-2005 / Jeff-2026 boundary difference, Lesson 24) |
+
+So they are the sharpest cases we have for `jeff:speech-act-policy` — each one is a passage
+where **his own two answers disagree**, on a tractate where nothing of ours has ever
+touched his list. Ask him to rule, do not promise a fix.
 
 **Draft — as it would go to him:**
 
 > We ran the detector over all of Gittin (178 dapim) last night, before opening your 2005
 > list — no Gittin example was ever in the prompts, and the code that finds stories cannot
-> read your file. Then we scored ourselves against your 112 stories.
+> read your file. Then we scored ourselves against your 112 stories: **we found 108.**
 >
-> **We found 108 of your 112.** The four we did not find as their own entry:
+> The four we did not are the same question, and it is one you have already answered twice
+> in two different ways. You told us in July that a passage where rabbis only speak is not
+> a story. Your 2005 list includes these:
 >
-> - **38b** — `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` (the three things by which
->   householders lose their property). We proposed only R. Eliezer freeing his slave for a
->   minyan, three segments earlier.
-> - **57a** — `אשקא דריספק חריב ביתר` (the cedar and the pine, and Betar). We stopped two
->   segments short of it, having taken Tur Malka as one story.
-> - **46b** — `פירקן…` in the sugya on redeeming a man who sold himself. We proposed the
->   passage but may have started it in the wrong place.
-> - **57a** — the exchange with the *tzedoki* who told R. Ḥanina *"you are lying!"* about
->   the land's fertility.
+> - **38b** — `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` — Rabba's three matters by
+>   which householders become impoverished. A saying, with no event.
+> - **57a** — the exchange about the land of Israel's fertility: *"you are lying!"*, and the
+>   answer about the deer's hide. Talk, and nothing done.
+> - **57a** — `אשקא דריספק חריב ביתר` — Beitar and the shaft of the carriage, which opens
+>   with a custom: when a boy was born they planted a cedar, when a girl, a pine.
+> - **46b** — the redemption case. We do find it; we begin it one line later than you do,
+>   at the incident rather than at Rav Asi's ruling.
 >
-> **We also propose about 30 passages that are not on your list.** Most are a named sage
-> issuing a ruling, which is the borderline class we already owe you a policy question on.
-> Two look to us like real stories and we would value a yes or no:
+> Our detector rejects the first three **because you told us to**. We would rather have your
+> ruling than quietly pick one of your two answers: should passages like these be in the
+> corpus, out of it, or in with a *borderline* flag?
+>
+> **We also propose about 30 Gittin passages that are not on your list.** Most are the same
+> class — a named sage issuing a ruling. Two look to us like real stories, and a yes or no
+> on each would be worth a lot:
 >
 > - **43a** — Rabba bar Rav Huna publicly retracts his ruling after Rav Ḥisda challenges
->   him, and reads a verse to explain that one only truly understands a teaching after
+>   him, and reads a verse to say that one only truly understands a teaching after
 >   stumbling in it.
 > - **25a** — `תניא נמי הכי: מעשה, וקדמו בנות לבנים` — the children racing to Jerusalem for
 >   the Paschal offering, and the daughters arriving first.
->
-> If you have a moment to mark those two, and to say whether the four above are stories you
-> would still list today, that is enough for us to know where we stand on a tractate you
-> have not looked at in twenty years.
 
 **Do not dress this up as 100%.** A looser matching rule scores it 112/112; that rule
 credits a proposal anywhere within a fourteen-segment window and has been shown to credit
-the wrong passage on the same daf. 108/112 is the number that survives checking each case
-by name, and it is the one to send.
+the wrong passage on the same daf. **108/112 survives checking every case by name**, and it
+is the number to send.
 
-**Whether he marks his own additions separately no longer gates anything.** The value of
-his answer is the training signal for the tractates nobody has listed.
+**Whether he marks his own additions separately no longer gates anything.** The value of his
+answer is the training signal for the tractates nobody has listed.
 
 ---
 

@@ -57,20 +57,30 @@ ruler's own narrowing — a segment belongs to the story if either side is mostl
 the day it is first run. It reproduces Kiddushin's banked 93.3% / 83.3% exactly, which is
 what makes the Gittin figure comparable.
 
-**The four loose-only cases were checked by name on 2026-09-01, and at least two are real
-misses** — the loose window credited a neighbouring story on the same daf, exactly the
-failure mode STATUS warns about:
+**The four loose-only cases were checked by name on 2026-09-01.** The loose window had
+credited a neighbouring story on the same daf in every one — exactly the failure mode
+STATUS warns about — so **108/112 is the figure that survives checking**.
 
-| | the expert's story | what we proposed instead |
-|---|---|---|
-| **38b** seg 6 | `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` | seg 3 only — R. Eliezer freeing his slave for a minyan |
-| **57a** seg 20 | `אשקא דריספק חריב ביתר` — the cedar, the pine, and Betar | segs 4-8, Tur Malka, stopping two segments short |
-| **46b** | `פירקן…`, in the redemption sugya | segs 15-17 cover the sugya; likely a start-boundary difference |
-| **57a** | the *tzedoki* telling R. Ḥanina *"you are lying!"* | nothing on that passage |
+**They are one thing, and it is not a bug.** Three of the four are passages where nothing
+happens except speech or custom: the class Jeff's 2026-07-06 rule tells us to reject and
+his 2005 list includes. Stage 1 labelled them `VERBAL_ACT` and `HABITUAL`, and Stage 2
+rejected them as instructed. A same-code re-run of 57a reproduces both of its misses
+exactly, so this is the rule and not nondeterminism (Lesson 22). **A targeted re-run cannot
+recover a passage the classifier is correctly instructed to reject** — the only thing that
+moves these is a ruling from Jeff, which is why they went into the email as evidence under
+`jeff:speech-act-policy` rather than onto the board as defects:
 
-So **108 of 112 is the defensible figure**, and 100% is an artifact of the aligner's
-window. Named in `results/recall/gittin_strict.json`; drafted to Jeff as §0 of
-[`draft_next_email.md`](../../comms/draft_next_email.md).
+| miss | Stage 1 label | why Stage 2 rejected it | kind |
+|---|---|---|---|
+| **38b** seg 6 — `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` | `VERBAL_ACT` | a dictum; no event | **speech-act policy** |
+| **57a** seg 12 — the exchange on the land of Israel's fertility | — | talk, no action | **speech-act policy** |
+| **57a** seg 20 — `אשקא דריספק חריב ביתר` | `HABITUAL` | customary practice, not a single event | **speech-act policy** |
+| **46b** — `פירקן…` in the redemption sugya | — | we propose segs 15-17; his unit starts at Rav Asi's ruling, seg 14 | **boundary standard** (Lesson 24) |
+
+An earlier reading of this session called three of the four a second-story-on-a-page
+coverage defect and pointed at `work/2026-08-30-second-story-guard.md`. **That was wrong**,
+and the segment labels above are why: only 46b is a boundary case, and none is a coverage
+gap. Drafted to Jeff as §0 of [`draft_next_email.md`](../../comms/draft_next_email.md).
 
 **Triage lost nothing measurable:** 0 of the 112 sit on a page Stage 1 discarded, so
 Detection *given the page survived triage* equals end-to-end here. The Mishnah filter
