@@ -136,3 +136,33 @@ button. Schema `axes-1` → `axes-2`, both old fields retained so banked verdict
 Verified in a browser: selecting Hebrew and pressing each button captures two distinct
 quotes, and the export carries `quote_start`, `quote_end`, `extent: both_wrong` and
 `detector_version: v11`.
+
+
+## The confidence label predicts his listing decision — measured blind
+
+Set our own classification against whether the passage is on his 2005 list. The labels were
+decided before the list was opened, so this is a clean test of whether our uncertainty
+means anything.
+
+| our label | on his list | ours alone | share he listed |
+|---|---|---|---|
+| `YES` | 59 | **0** | **100%** |
+| `HIGH_CONFIDENCE` | 19 | 5 | 79% |
+| `LOW_CONFIDENCE` | 39 | 25 | 61% |
+
+**Every `YES` is on his list, and no `YES` is an extra.** The ordering is monotonic with no
+inversions, and the 30 extras sit where our own uncertainty already is — 83% `LOW`, 17%
+`HIGH`, 0% `YES`.
+
+Three of the five `HIGH` extras are the Mishnah pairs (our double-count, not a
+disagreement), so on the passages that are genuinely in dispute `HIGH` is **19 of 21 = 90%**
+and the only two real cases are 43a and 25a.
+
+**Two uses.** It is a triage order for the review round — confirm the confident tier fast,
+spend the scholar's attention on `LOW`, which is where every open question already lives.
+And it is the first evidence this project has that the confidence axis carries information
+at all; until now it was a label nobody had scored. One tractate is not a calibration
+curve, so treat it as **indicated, not measured**, until a second blind list repeats it.
+
+Related and clean: **0** of his 112 stories are covered only by a span we classified
+`NOT_A_STORY` — Classification discarded none of them.

@@ -64,6 +64,26 @@ touched his list. Ask him to rule, do not promise a fix.
 >   stumbling in it.
 > - **25a** — `תניא נמי הכי: מעשה, וקדמו בנות לבנים` — the children racing to Jerusalem for
 >   the Paschal offering, and the daughters arriving first.
+>
+> One more thing came out of this that we did not expect, and it should save you time.
+> Every passage we propose carries our own confidence label, decided before we had seen
+> your list. Set against it:
+>
+> | our label | on your list | not on your list |
+> |---|---|---|
+> | **certain** | **59** | **0** |
+> | **high confidence** | 19 | 5 |
+> | **low confidence** | 39 | 25 |
+>
+> Every one of the 59 we called certain is on your list, and everything we propose that you
+> do not have sits in the two lower tiers. Three of the five high-confidence exceptions are
+> not really disagreements — they are the Gemara quoting back a *ma'aseh* that also stands
+> in the Mishnah, which is the question above. That leaves 43a and 25a.
+>
+> If that holds on another tractate, it changes what we would ask of you: you could pass
+> quickly over what we are sure about and spend your time on the ones we are not, which is
+> where the real questions are. Each entry on the review page carries its label, so you can
+> read them in that order.
 
 **Do not dress this up as 100%.** A looser matching rule scores it 112/112; that rule
 credits a proposal anywhere within a fourteen-segment window and has been shown to credit
