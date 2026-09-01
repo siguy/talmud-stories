@@ -15,3 +15,20 @@ __pycache__/
 
 # worktrees live inside .claude/ and must not be tracked
 .claude/worktrees/
+
+# Derived merge artifacts of the triage-recall-price experiment (~7MB). Each is a
+# whole-tractate copy of a committed run with the discarded pages' Stage 2 output
+# spliced in, and is regenerated in seconds:
+#   python3 scripts/merge_triage_recall_run.py --tractate <ketubot|kiddushin>
+# The inputs it needs — *_skipped_stage2.json — ARE committed, because they cost
+# API calls and cannot be reproduced for free.
+results/v11/triage_recall/*_plus_skipped.json
+results/v11/triage_recall/*_plus_liverule.json
+
+# Candidate-rule sweep artifacts (~39MB). One whole-tractate copy per candidate rule,
+# regenerated in seconds with NO API calls — the sweep re-partitions Stage 2 output that
+# is already committed as *_skipped_stage2.json:
+#   python3 scripts/sweep_triage_rules.py --tractate <ketubot|kiddushin>
+# The measured result is in docs/findings/2026-08-31-triage-single-narrative.md; these
+# are the intermediate files it was computed from.
+results/v11/triage_rules/
