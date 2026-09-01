@@ -185,8 +185,11 @@ archive/                          # Old versions (reference only)
 | `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — detector-blind ground truth. Count it with `parse_kiddushin_list.py --self-test` |
 | `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
-| `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
+| `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser, all five lists** (`--tractate`) — reads the .doc's OLE streams and detects each document's **column order** from its own header row, because `eruvin.doc` stores them right-to-left. Anchors multi-label rows against Sefaria; **never moves an unambiguous label** — a disagreement is a question for Jeff. `--self-test` asserts Ketubot == 149 |
 | `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — per-story `blind` and `counts_for_recall` flags, plus Jeff's anchored remarks. **Filter on the flags; never take the raw length as the denominator.** |
+| `results/expert_lists/{gittin,yevamot,eruvin}_2005.json` | **The three pristine blind lists**, parsed 2026-09-01 — 112 / 102 / **74**, every entry blind. No detector has run on these tractates, so nothing of ours can be in them. Filter on the flags, as with Kiddushin |
+| `docs/findings/2026-09-01-new-tractate-expert-lists.md` | The parse, and why Eruvin has 74 stories rather than the 73 on record |
+| `docs/findings/2026-09-01-expert-list-daf-attribution.md` | **Per-daf attribution in the expert lists.** Two-amud headers are text-anchored; a reversed-column list is refused. Read before measuring any new tractate per daf |
 | `docs/findings/2026-08-30-kiddushin-list-parse.md` | Why the line-based parse gave 105, and how the count was verified |
 | `docs/findings/2026-08-31-kiddushin-recall.md` | Kiddushin Triage 95.6% / Detection 97.7%. **Quote Detection *given the page survived triage*** — the end-to-end figure charges Triage's losses to Detection as well |
 | `docs/findings/2026-08-31-kiddushin-boundary-set.md` | The blind Kiddushin boundary set: 85%/91%, noise 7pt → 0.77 |
@@ -255,7 +258,7 @@ When making changes, update these files as relevant:
 - Modify `evaluate_golden.py` during experiments
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
-- Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments
+- Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments. **A second instance, 2026-09-01:** `eruvin.doc` stores its columns right-to-left, so `textutil`'s flattened stream puts each location cell *after* its story and the line-based parser credited **53 of 73** entries to the previous row's daf — with the right story count, on real nearby dapim, so nothing looked wrong. `parse_expert_doc` now refuses such a list by name
 - Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
