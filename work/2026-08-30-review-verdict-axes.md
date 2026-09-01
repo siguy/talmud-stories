@@ -103,7 +103,39 @@ today, and any new vocabulary must ship an explicit mapping table rather than as
 
 ## Phases
 
-### Phase A — recover what is recoverable (nobody else needed, ~1 hour)
+### Phase A — DONE 2026-08-31
+
+→ [`docs/findings/2026-08-31-unclassified-notes-resolved.md`](../docs/findings/2026-08-31-unclassified-notes-resolved.md)
+· artifact `results/rulers/unclassified_notes_resolved.json`
+· `python3 scripts/resolve_unclassified_notes.py`
+
+**Two corrections to this item's own premise.** The population is **34, not 24** — the
+table above omits the v5.1 round (9) and the 2026-05-26 round (1). And a note **cannot be
+read against the ruler's `detector_classification` column**, which is *today's* run rather
+than what the reviewer saw; the two differ on 12 of the 34, and the difference inverts the
+meaning of several notes.
+
+Resolved: **12 classification · 8 boundary · 4 confidence · 2 merge · 1 display · 7
+unresolvable**. All 7 unresolvable are empty notes and all 7 are from the single v8_delta
+round. They are left as residue, not guessed into buckets (FRAMEWORK §7).
+
+**The result that outgrew the phase:** of the 12 notes stating a plain story/not-a-story
+position, the detector disagreed with 8 at review time and **today agrees with 7 of those
+8**. The banked per-round precision figures are therefore properties of *the version
+reviewed*, and quoting them as the current Classification number charges today's detector
+for calls it no longer makes — Lesson 30's shape pooled across **detector versions**.
+One regression surfaced: **Ketubot 10b_3-3**, which Jeff called "definitely a story",
+is now proposed by nothing at all.
+
+**Two requirements this adds to Phase B:**
+- **Record the detector version alongside every verdict.** One field. Without it Phase C's
+  point estimate inherits the same version-ambiguity in a new vocabulary.
+- **Make `display` a first-class outcome**, not a note — 1 of these 34 plus 2 of the 15
+  verdicts in the 2026-07-06 round were spent on our renderer (Lesson 25).
+
+---
+
+### Phase A (original brief) — recover what is recoverable (nobody else needed, ~1 hour)
 
 Read the **24 `unclassified` notes** by hand and sort them onto the four axes. Bounded
 population, no API, no Jeff.

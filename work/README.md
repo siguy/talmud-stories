@@ -46,7 +46,7 @@ by number; resolve them here.
 | `tasks/NEXT/05` Kiddushin list parse | [`done/2026-08-30-kiddushin-list-parse.md`](done/2026-08-30-kiddushin-list-parse.md) |
 | `tasks/NEXT/06` Kiddushin recall | [`done/2026-08-30-kiddushin-recall.md`](done/2026-08-30-kiddushin-recall.md) |
 | `tasks/NEXT/07` Kiddushin boundaries | [`done/2026-08-30-kiddushin-boundary-set.md`](done/2026-08-30-kiddushin-boundary-set.md) |
-| `tasks/NEXT/08` comments harvest | [`2026-08-30-kiddushin-comments-harvest.md`](2026-08-30-kiddushin-comments-harvest.md) |
+| `tasks/NEXT/08` comments harvest | [`2026-08-30-kiddushin-comments-harvest.md`](done/2026-08-30-kiddushin-comments-harvest.md) |
 | `tasks/NEXT/09` fetch new tractates | [`done/2026-08-30-fetch-new-tractates.md`](done/2026-08-30-fetch-new-tractates.md) |
 | `tasks/NEXT/09` parse open calls | [`2026-08-30-kiddushin-parse-open-calls.md`](2026-08-30-kiddushin-parse-open-calls.md) — *two different briefs were both numbered 09* |
 | `tasks/NEXT/10` golden additions | [`done/2026-08-30-ketubot-golden-additions.md`](done/2026-08-30-ketubot-golden-additions.md) |
