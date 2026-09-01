@@ -37,8 +37,25 @@ Every segment on every page is classified into one of 4 event types using Gemini
 | DELIBERATION | Legal reasoning, hypotheticals, abstract principles | "What is the law if..." |
 | HABITUAL | Recurring practice or custom | "He was accustomed to..." |
 
-**Skip Decision:** Pages with <2 NARRATIVE_EVENT (or <1 NARRATIVE + <2 VERBAL_ACT) are skipped.
-Result: ~66% of pages skipped on pages 2-60, ~50% on pages 61-112.
+**Skip Decision (changed 2026-08-31):** a page is examined if it has **≥1 NARRATIVE_EVENT**,
+or if any segment's triage call failed (fail-open — we could not look, so we do not get to
+decide), or if it contains a canonical story introducer (the Stage 2 lexical override).
+Everything else is skipped.
+
+The rule previously demanded that a narrative event be *corroborated* — `≥2 NARRATIVE_EVENT`,
+or `≥1 NARRATIVE_EVENT and ≥2 VERBAL_ACT`. Measured against both blind expert lists, that
+clause was the single richest seam of missed stories in the corpus: the 8 pages it discarded
+across Ketubot and Kiddushin contain **6 real stories** (~75%, against 14.3% for discarded
+pages as a whole), Ketubot 51a among them. Removing it costs 8 extra Stage 2 calls across
+both tractates and raises triage recall from 98.0% → **98.7%** (Ketubot) and 95.6% →
+**97.8%** (Kiddushin).
+
+**Verbal acts alone never keep a page.** A `V >= 4` clause would recover one further story
+(Kiddushin 10b) but buys nothing on Ketubot for 70 extra calls; it is a threshold fitted to a
+single case and is deliberately not adopted.
+→ [`2026-08-31-triage-single-narrative.md`](../findings/2026-08-31-triage-single-narrative.md)
+
+Result: ~54% of Ketubot pages skipped and ~59% of Kiddushin, down from 56% / 62%.
 
 **Hebrew markers used:** `מעשה` (incident), `ההוא/ההיא` (that certain person), `אתא לקמיה` (came before), `הוה עובדא` (there was an incident)
 

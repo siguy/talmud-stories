@@ -82,15 +82,18 @@ def test_should_skip_logic():
         EventType.DELIBERATION, EventType.DELIBERATION, EventType.VERBAL_ACT
     ]) == True
 
-    # 1 narrative + 0 verbal → skip
+    # 1 narrative + 0 verbal → KEEP since 2026-08-31. Both of these used to be
+    # skips; they were the corroboration clause, measured as the richest seam of
+    # missed stories in the corpus (6 real stories on the 8 pages it discarded,
+    # Ketubot 51a among them). See tests/test_triage_single_narrative.py.
     assert EventTriager.should_skip_page([
         EventType.NARRATIVE_EVENT, EventType.DELIBERATION, EventType.DELIBERATION
-    ]) == True
+    ]) == False
 
-    # 1 narrative + 1 verbal → skip (need 2 verbal)
+    # 1 narrative + 1 verbal → KEEP since 2026-08-31 (was: "need 2 verbal")
     assert EventTriager.should_skip_page([
         EventType.NARRATIVE_EVENT, EventType.VERBAL_ACT, EventType.DELIBERATION
-    ]) == True
+    ]) == False
 
     # 1 narrative + 2 verbal → keep (story with dialogue)
     assert EventTriager.should_skip_page([
