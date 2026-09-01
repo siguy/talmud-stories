@@ -81,8 +81,8 @@ open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-roun
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
-open       2026-08-30-review-verdict-axes
-closed     5 item(s) in work/done/
+open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
+closed     6 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -101,9 +101,9 @@ open       2026-08-30-eruvin-expert-round   ← blocked: 2026-08-30-eruvin-revie
 open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classification
 open       2026-08-30-gittin-expert-round   ← blocked: 2026-08-30-gittin-review-ui
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
-open       2026-08-30-review-verdict-axes
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
-closed     2 item(s) in work/done/
+open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
+closed     3 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -145,6 +145,7 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
+| `jeff:axes-round` | Would you review one tractate on the new page, where each entry asks **is it a story** (yes / borderline / no) and, only if you want to say more, whether the **extent**, the **confidence level** or the **grouping** is wrong? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -152,4 +153,5 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 16834a5e2a013f11 -->
+- `2026-08-31-classification-point-estimate` — jeff:axes-round
+<!-- board-checksum: 2c1cd04e52691871 -->

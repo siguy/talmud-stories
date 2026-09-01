@@ -1,7 +1,7 @@
 # PLAN — review-verdict-axes Phase B: the per-axis review UI
 
 **Status: proposed, not started.** Written 2026-08-31, after Phase A closed.
-The item is [`work/2026-08-30-review-verdict-axes.md`](../../work/2026-08-30-review-verdict-axes.md);
+The item is [`work/2026-08-30-review-verdict-axes.md`](../../work/done/2026-08-30-review-verdict-axes.md);
 this document is the implementation plan for its Phase B and is superseded by
 whatever it produces.
 

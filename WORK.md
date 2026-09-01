@@ -26,7 +26,6 @@ of four branches on 2026-08-30 had never committed anything.
 | [Kiddushin 12a: one detection covering two stories](work/2026-08-30-kiddushin-12a-dedup.md) | detection | kiddushin | — |
 | [Open judgment calls from the Kiddushin list parse](work/2026-08-30-kiddushin-parse-open-calls.md) | detection | kiddushin | awaiting `jeff:appendix-separate` |
 | [Mine the story-opener lexicon instead of hand-writing it (was Wave 7)](work/2026-08-30-opener-lexicon.md) | triage, detection | ketubot | — |
-| [Make the reviewer say which thing is wrong](work/2026-08-30-review-verdict-axes.md) | classification, review | — | — |
 | [Stop discarding a second story that shares a segment](work/2026-08-30-second-story-guard.md) | boundaries | ketubot | awaiting `jeff:boundary-end-rule` |
 | [Encode Jeff's story criteria (was Wave 6)](work/2026-08-30-story-criteria.md) | classification | — | awaiting `jeff:speech-act-policy` |
 | [Fix per-daf attribution for two-amud headers in the expert lists](work/2026-08-30-two-amud-header-parser.md) | detection | gittin, yevamot, eruvin, ketubot | — |
@@ -36,6 +35,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Yevamot — golden](work/2026-08-30-yevamot-golden.md) | classification | yevamot | **blocked:** `2026-08-30-yevamot-expert-round` |
 | [Yevamot — review ui](work/2026-08-30-yevamot-review-ui.md) | review | yevamot | **blocked:** `2026-08-30-yevamot-classification` |
 | [Yevamot — triage](work/2026-08-30-yevamot-triage.md) | triage | yevamot | — |
+| [Turn Classification from a range into a number](work/2026-08-31-classification-point-estimate.md) | classification, review | — | awaiting `jeff:axes-round` |
 
 <!-- board-live:start -->
 ## In flight
@@ -46,11 +46,11 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | clean |
-| `integrity-fixes` | `kiddushin-recall-boundary-c52c91` | **15 FILES** |
+| `review-verdict-axes-phase-b` | `kiddushin-recall-boundary-c52c91` | **22 FILES** |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 13 items, never deleted
+## Done — 14 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -63,8 +63,9 @@ staleness check: it changes whenever anyone edits anything.*
 | [Parse Jeff's Kiddushin story list](work/done/2026-08-30-kiddushin-list-parse.md) | detection, boundaries | [2026-08-30-kiddushin-list-parse.md](docs/findings/2026-08-30-kiddushin-list-parse.md) |
 | [Kiddushin recall: triage and detection](work/done/2026-08-30-kiddushin-recall.md) | triage, detection | [2026-08-31-kiddushin-recall.md](docs/findings/2026-08-31-kiddushin-recall.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
+| [Make the reviewer say which thing is wrong](work/done/2026-08-30-review-verdict-axes.md) | classification, review | — |
 | [Price the triage trade over the 124 discarded Ketubot pages](work/done/2026-08-30-triage-recall-price.md) | triage | — |
 | [The recall harness reports miss-causes as a partition without checking it is one](work/done/2026-08-31-cause-bucket-partition.md) | triage, detection | — |
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
 | [Finishing an item re-roots its outbound links and breaks every inbound one](work/done/2026-08-31-finish-reroots-inbound-links.md) | — | — |
-<!-- board-checksum: 99c3b2ca7752f254 -->
+<!-- board-checksum: f3c50ed782a54249 -->
