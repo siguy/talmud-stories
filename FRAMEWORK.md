@@ -49,6 +49,24 @@ money* — a bar quoted without its cost saving is meaningless, and a couple of 
 recall for a large cost cut may well be a good trade. That is a decision to take deliberately, not a
 defect to fix reflexively.
 
+**How to supply the cost saving this bar requires** (added 2026-08-31, after the first
+time it was actually done). The skipped pages carry their full text, so the trade is
+measurable for pennies and without re-fetching anything:
+
+1. `scripts/run_triage_recall_price.py` — Stage 2 on the discarded pages, using their
+   **cached** triage labels so the skip decision is the only variable.
+2. `scripts/sweep_triage_rules.py` — every intermediate rule, **free**, because each is a
+   re-partition of output already paid for.
+3. Score each through `measure_recall_vs_expert_list.py` against the blind list.
+
+**Report the exchange rate in two currencies: extra Stage 2 calls, and false proposals
+reaching the reviewer.** The second is the one that binds — capability 5 is the project's
+bottleneck, so recall bought at the cost of reviewer attention may be no bargain.
+
+And **do not stop at the endpoints.** "As-is vs off" proves a trade exists; it does not
+locate the good deal inside it, which on both tractates so far sat at the very first step
+(Lesson 37).
+
 ### 2. Detection
 **Does:** given a page we chose to examine, propose every span that might be a story.
 In: page segments. Out: candidate spans. It proposes; it does not judge.
