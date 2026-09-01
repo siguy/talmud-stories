@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-08-31.** Rewritten every session, never appended.
+**Last rewritten: 2026-09-01.** Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -268,6 +268,58 @@ passages, which is the form his last two rounds actually answered.
 
 **The screen is a screen, not a verdict** — this session applying the project's own
 `NARRATIVE_EVENT` criterion to decide what deserves his scarce attention.
+
+**Later the same day: the board's own guards were checked, and three defects were behind a
+green one.** `STATE.md` was read against the artifacts it summarises. Throughout,
+`board.py --check` passed and so did `test_bookkeeping.py`. Neither is broken; neither
+verifies the property a reader relies on. **`--check` regenerates and compares a checksum,
+so a generator that misreads an artifact misreads it identically on both sides.**
+
+**1. The Triage cells describe the rule that was replaced — still OPEN.** `STATE.md`
+prints **98.0% / 95.6%**; `should_skip_page()` has been `N>=1` since 2026-08-31, giving
+**98.7% / 97.8%**. The board derives both cells from
+`results/recall/<t>_jeff2005_matches.json`, whose `survived_triage` predates the change —
+recomputing from the artifacts returns exactly what the board prints. **The Detection cells
+inherit the same conditioning.** So the file that promises it types no numbers is the wrong
+one, and the hand-written file is right. Not repaired here: the fix rewrites the file
+CLAUDE.md calls *"always the recall denominator"*, which changes what every recall cell
+means. → [`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md), and a
+caveat now sits in [`1_triage.md`](docs/capabilities/1_triage.md) so the cells are not
+quoted bare meanwhile.
+
+**2. Two Kiddushin files collided on a dict key, and the blind list lost — FIXED.** Rows
+were keyed `f.stem.split("_")[0]`, so `kiddushin_2005` and `kiddushin_comments_harvested`
+both keyed to `kiddushin` and the second overwrote the first. **The "Ground truth on hand"
+table never showed the Kiddushin blind list at all** — the 89-blind / 90-for-recall
+denominator behind every Kiddushin number on the board — and printed another file's zeros
+in its place. It was filed as *"a file renders as three zeros"*; running the pre-fix loader
+showed the list was **absent, not mis-sized**. Found by executing the old code, not by
+reading it — the `split` looks like a tidy-up.
+
+**3. A verdict was dropped for being falsy — FIXED.** `_verdict_count()` required a truthy
+`feedback_type`, so the January round read **24** where the file states
+`"reviewed_count": 25`. The dropped entry is **Ketubot 17a**, where Jeff declines the
+dropdown and answers in prose — stating a display defect, then *quoting the Hebrew of the
+story he says the excerpt contains*. The most informative verdict in the round is the one
+the inventory could not see. **This is the round Lesson 38 was bought by**: the fix written
+for that lesson recovered it and then miscounted it.
+
+**And `finish` was breaking outbound sibling links**, caught by the link guard on the first
+item ever to cite a sibling — while its docstring claimed both directions were handled
+(Lesson 31's shape, a third time). Fixed to one pass over three link shapes; two
+self-inflicted regressions during that fix were caught by the suite and are pinned.
+
+**No measured value moves.** `STATE.md` changes only in the ground-truth table and the
+January round 24 → 25.
+→ [`2026-09-01-board-guards-verify-the-wrong-property.md`](docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md),
+**Lesson 40**
+
+**A hazard for whoever runs the suite next: it cannot go green off a Mac.** Four test files
+fail for environment reasons alone — 29 tests across macOS-only `textutil` and a `node -e`
+argv limit — and `test_expert_doc_span_headers.py` is red identically on `main`. The
+project's entire bookkeeping regime (golden counts, the immutable-harness hash, link
+integrity) is enforced by that suite. The `node` tests guard on `shutil.which('node')`; the
+`textutil` ones have no availability guard at all.
 
 ## What changed 2026-08-31
 

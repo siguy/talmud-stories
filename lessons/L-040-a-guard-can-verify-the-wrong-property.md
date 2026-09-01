@@ -1,4 +1,4 @@
-# L-0XX — A guard can verify the wrong property and pass forever
+# L-040 — A guard can verify the wrong property and pass forever
 
 **Date:** 2026-09-01
 **Found in:** `scripts/board.py` — three defects behind a passing `--check`

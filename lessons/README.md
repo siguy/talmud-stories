@@ -49,3 +49,4 @@ when it lands on main, so two sessions cannot claim the same number (four did on
 | 37 | 2026-08-31 | [The endpoints bracket a trade; they do not locate it](L-037-the-endpoints-bracket-a-trade-they-do-not-locate-it.md) |
 | 38 | 2026-08-31 | [A guard that skips silently looks exactly like empty input](L-038-a-guard-that-skips-silently-looks-exactly-like-empty-input.md) |
 | 39 | 2026-09-01 | [An ablation must remove the thing, not replace it with a lie](L-039-an-ablation-must-remove-the-thing-not-replace-it.md) |
+| 40 | 2026-09-01 | [A guard can verify the wrong property and pass forever](L-040-a-guard-can-verify-the-wrong-property.md) |

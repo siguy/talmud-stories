@@ -183,4 +183,4 @@ What none of the existing guards ask:
 can never reach: the generator is honest about the artifact; the artifact is stale about
 the code.
 
-→ **Lesson: a guard can verify the wrong property and pass forever.**
+→ **[Lesson 40](../../lessons/L-040-a-guard-can-verify-the-wrong-property.md) — a guard can verify the wrong property and pass forever.**
