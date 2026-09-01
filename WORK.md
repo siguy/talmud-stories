@@ -45,12 +45,11 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `build-canonical-hazard` | `talmud-stories` | clean |
-| `integrity-fixes` | `kiddushin-recall-boundary-c52c91` | **15 FILES** |
-| `(detached)` | `state-work-review-40b153` | clean |
+| `work-tree-next-steps-vtgdii` | `talmud-stories` | **8 FILES** |
+| `(detached)` | `wt-triage-recall-price` | clean |
 <!-- board-live:end -->
 
-## Done — 13 items, never deleted
+## Done — 14 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -67,4 +66,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [The recall harness reports miss-causes as a partition without checking it is one](work/done/2026-08-31-cause-bucket-partition.md) | triage, detection | — |
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
 | [Finishing an item re-roots its outbound links and breaks every inbound one](work/done/2026-08-31-finish-reroots-inbound-links.md) | — | — |
-<!-- board-checksum: 99c3b2ca7752f254 -->
+| [Fix skip_triage so it bypasses Stage 1 instead of faking its output](work/done/2026-09-01-fix-skip-triage-flag.md) | triage | [2026-09-01-examine-all-pages-fix.md](docs/findings/2026-09-01-examine-all-pages-fix.md) |
+<!-- board-checksum: 952019c7b5a64ded -->

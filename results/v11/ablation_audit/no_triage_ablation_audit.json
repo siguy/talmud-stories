@@ -1,0 +1,67 @@
+{
+  "range": "Ketubot 2a-60b",
+  "detector": "v7",
+  "pages": 118,
+  "expert_in_range": 45,
+  "placed": 44,
+  "unplaced": [
+    {
+      "ref": "Ketubot 1b",
+      "coverage": 0.114
+    }
+  ],
+  "pages_examined_with_triage": 40,
+  "pages_examined_without_triage": 118,
+  "proposals_with_triage": 74,
+  "proposals_without_triage": 91,
+  "classification": {
+    "with_triage": {
+      "YES": 21,
+      "HIGH_CONFIDENCE": 18,
+      "LOW_CONFIDENCE": 33,
+      "NOT_A_STORY": 2
+    },
+    "without_triage": {
+      "NOT_A_STORY": 44,
+      "YES": 4,
+      "LOW_CONFIDENCE": 35,
+      "HIGH_CONFIDENCE": 8
+    }
+  },
+  "found_with_triage": 42,
+  "found_without_triage": 37,
+  "impossible_losses": [
+    {
+      "ref": "Ketubot 52b",
+      "coverage": 0.97,
+      "pages_touched": [
+        "Ketubot 52a",
+        "Ketubot 52b"
+      ],
+      "examined_by_both": true,
+      "found_with_triage": true,
+      "found_without_triage": false
+    },
+    {
+      "ref": "Ketubot 53a",
+      "coverage": 0.971,
+      "pages_touched": [
+        "Ketubot 53a"
+      ],
+      "examined_by_both": true,
+      "found_with_triage": true,
+      "found_without_triage": false
+    },
+    {
+      "ref": "Ketubot 54a",
+      "coverage": 0.982,
+      "pages_touched": [
+        "Ketubot 54a"
+      ],
+      "examined_by_both": true,
+      "found_with_triage": true,
+      "found_without_triage": false
+    }
+  ],
+  "verdict": "CONTAMINATED — not a no-triage run, and not usable for recall or precision. 3 stories found by the triaged arm are missing from the \"no triage\" arm on pages BOTH arms examined, which removing a filter cannot cause. NOT_A_STORY went 2 -> 44. Cause: skip_triage=True stamps every segment DELIBERATION (story_detector_v7.py:658-664), which Stage 2 renders into its prompt (:75) and post-processing rule 3 reads as an empty page."
+}

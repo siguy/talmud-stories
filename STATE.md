@@ -56,7 +56,7 @@ open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
-closed     5 item(s) in work/done/
+closed     6 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -152,4 +152,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 16834a5e2a013f11 -->
+<!-- board-checksum: d94eb8bcb447c784 -->
