@@ -67,9 +67,11 @@ draft, because it is the question from a third side and it is not hypothetical:
 > catalogued twice under two different headings. Should the pair be one entry, and if so
 > which text is the one you would cite?
 
-**Sending these closes the appendix window** (Lesson 29): the moment he has Gittin results,
-the "stories you and Claude found" ask can no longer be made cleanly for that tractate. So
-this goes **in the same email as item 5**, never before it.
+**Send it.** Sending Gittin examples costs a measurement convenience — the list stops being
+a perfectly clean denominator for that tractate — and nothing else. The goal is to find every
+story in every tractate; his telling us which were his and which were ours is exactly the
+signal we want, not contamination. Pair it with item 5 if convenient, but do not hold the
+question for it.
 
 ---
 
