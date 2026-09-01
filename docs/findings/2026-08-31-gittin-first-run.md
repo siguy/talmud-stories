@@ -104,3 +104,35 @@ has never reviewed a Gittin page. `report_mishnah_filter_delta.py` cannot run ei
 scores against a golden, and Gittin has none. **Ask him to keep any appendix of "stories
 you and Claude found" separate before the first round** (Lesson 29) — once merged, the
 list stops being able to measure what we missed.
+
+
+## The 30 we propose that his list does not have — screened, then put in front of him
+
+Screened by hand on 2026-09-01, reading the Hebrew of all 30
+(`results/recall/gittin_unlisted_screen.json`):
+
+| bucket | n | what it is |
+|---|---|---|
+| **candidate** | 10 | story-shaped: named people, something happens, an outcome. 20a Levi teaching in Rabbi's name and being ignored; 43a Rabba bar Rav Huna's public retraction; 43b the woman who is half maidservant (an explicit `מעשה`); 70a Elijah and R. Natan |
+| **thin** | 12 | a case is brought, a rabbi rules. The borderline class — one policy question, not twelve asks |
+| **mishnah_pair** | 3 | the Gemara re-citing a `מעשה` we withheld from the Mishnah (10b/46a/74b). Not new stories; the double-count above |
+| **duplicate** | 3 | the same passage proposed on the facing daf, or a bare cross-reference (`וכמעשה דקטינא דאביי`, five words) |
+| **habitual** | 2 | a standing practice or an enactment, not an event |
+
+**Not noise, and not 30 questions.** The 5 dropped buckets are ours to fix or ours to
+count; the other 25 are one page — `validation/ui/axis_gittin_unlisted.html`, built with
+`generate_axis_review_ui.py --run … --only …`, which is new and is the point: a 147-entry
+tractate becomes a **25-entry ask**. The one round Jeff completed 100% of was the delta UI
+that showed him only what was new (49/49, against 1 and 15 for the pages that showed him
+everything again).
+
+### The review page can now take an exact boundary
+
+`extent: both_wrong` had been expressible on the axis and **not** in the box beneath it —
+one quote, one polarity — so a passage that starts late *and* ends early could not be
+corrected. Every entry now carries two capture boxes, **where the story should START** and
+**where it should END**, each filled by highlighting the Hebrew on the page and pressing a
+button. Schema `axes-1` → `axes-2`, both old fields retained so banked verdicts still map.
+Verified in a browser: selecting Hebrew and pressing each button captures two distinct
+quotes, and the export carries `quote_start`, `quote_end`, `extent: both_wrong` and
+`detector_version: v11`.

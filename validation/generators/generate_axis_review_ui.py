@@ -65,7 +65,7 @@ from review_ui_core import DISPLAY_CSS, DISPLAY_JS  # noqa: E402
 RUN_DIR = ROOT / 'results' / 'v10' / 'wave4_notrim'
 OUT_DIR = ROOT / 'validation' / 'ui'
 
-SCHEMA_VERSION = 'axes-1'
+SCHEMA_VERSION = 'axes-2'
 
 TRACTATES = {
     'kiddushin': dict(title='Kiddushin', files=['kiddushin_v10_notrim.json'],
@@ -207,6 +207,8 @@ __DISPLAY_CSS__
               text-align: right; font-size: 17px; line-height: 1.7;
               font-family: 'SBL Hebrew', 'Times New Roman', serif;
               border: 1px solid #e0cf8a; border-radius: 5px; background: white; }
+  .quote-row { margin-bottom: 10px; }
+  .quote-row .hint b { color: #6b4e00; }
   .quote-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
   .grab-btn { background: #fff; border: 1px dashed #c9a227 !important; color: #7a5c05; }
   .notes-input { width: 100%; margin-top: 10px; padding: 7px 10px;
@@ -222,11 +224,12 @@ __DISPLAY_CSS__
 <div class="container">
   <div class="header">
     <h1>__TITLE__ — Story Review</h1>
+    __NOTE__
     <p>Hebrew and English are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language — the story is highlighted inside the full text.</p>
     <div class="howto">
       <b>If an entry is right, click <span style="color:#2c7a7b">Yes</span> and move on — that is the whole review for it.</b><br>
       If something is off, use <b>“Something else is wrong”</b> to say <i>what</i>: the extent, the confidence level, or whether it should be split or merged. A passage can be a story <i>and</i> have the wrong extent — those are separate questions on purpose, because we have been unable to tell them apart and it has sent us fixing the wrong things.<br>
-      If the <b>extent</b> is wrong, a box opens for the Hebrew: <b>highlight the words in the text above and press “Use highlighted text”</b> — no need to type them — then say whether they <i>belong in the story</i> or <i>should be cut</i>.<br>
+      If the <b>extent</b> is wrong, a box opens for the Hebrew: <b>highlight the words in the text above and press “Use highlighted text”</b> — no need to type them. There are two boxes, <b>where the story should start</b> and <b>where it should end</b>; fill either or both. Below them you can instead point at one passage and say whether it <i>belongs in the story</i> or <i>should be cut</i>.<br>
       If the <b>page itself</b> is broken — text missing, Hebrew not matching — click <b>⚠ Display problem</b>. That is our bug, not a judgement about the passage.
     </div>
     <div class="stats">
@@ -344,9 +347,27 @@ function quoteBox(key, idx) {
   const v = verdicts[key] || {};
   const open = isExtentWrong(v.extent) ? ' open' : '';
   const pol = p => v.quote_polarity === p ? 'selected' : '';
+  const g = (field, label, ph) =>
+        '<div class="quote-row" data-role="row-' + field + '">'
+    +     '<div class="hint"><b>' + label + '</b></div>'
+    +     '<textarea class="quote-he" data-role="' + field + '-text" placeholder="' + ph + '"'
+    +       ' oninput="setField(\'' + key + '\', \'' + field + '\', this.value)">'
+    +       esc(v[field] || '') + '</textarea>'
+    +     '<div class="quote-actions">'
+    +       '<button class="axis-btn grab-btn" data-role="grab-' + field + '"'
+    +         ' onclick="grabInto(\'' + key + '\', \'' + field + '\', ' + idx + ')">'
+    +         'Use highlighted text</button>'
+    +     '</div>'
+    +   '</div>';
   return '<div class="quote-box' + open + '" data-role="quote">'
-    +   '<div class="hint">Where should it start or end? Highlight the Hebrew above and press '
-    +     '<b>Use highlighted text</b>, or paste it here.</div>'
+    +   '<div class="hint">Give the story\'s real boundaries: highlight the Hebrew above and press '
+    +     '<b>Use highlighted text</b>. Fill only the end that is wrong — both boxes are optional, '
+    +     'and either one alone is a complete answer.</div>'
+    +   g('quote_start', 'The story should START with these words',
+        '\u05d4\u05d3\u05d1\u05e7 \u05d0\u05ea \u05ea\u05d7\u05d9\u05dc\u05ea \u05d4\u05e1\u05d9\u05e4\u05d5\u05e8')
+    +   g('quote_end', 'The story should END with these words',
+        '\u05d4\u05d3\u05d1\u05e7 \u05d0\u05ea \u05e1\u05d5\u05e3 \u05d4\u05e1\u05d9\u05e4\u05d5\u05e8')
+    +   '<div class="hint" style="margin-top:12px;">Or point at one passage and say which way it goes:</div>'
     +   '<textarea class="quote-he" data-role="quote-text" placeholder="\u05d4\u05d3\u05d1\u05e7 \u05d0\u05ea \u05d4\u05d8\u05e7\u05e1\u05d8 \u05db\u05d0\u05df"'
     +     ' oninput="setQuote(\'' + key + '\', this.value)">' + esc(v.quote || '') + '</textarea>'
     +   '<div class="quote-actions">'
@@ -400,7 +421,8 @@ function ensure(key) {
   if (!verdicts[key]) {
     verdicts[key] = { is_story: null, extent: null, confidence: null,
                       grouping: null, display_problem: false,
-                      quote: '', quote_polarity: null, notes: '' };
+                      quote: '', quote_polarity: null,
+                      quote_start: '', quote_end: '', notes: '' };
   }
   return verdicts[key];
 }
@@ -423,6 +445,24 @@ function setAxis(key, axis, value, idx) {
 }
 
 function setQuote(key, text) { ensure(key).quote = text; }
+function setField(key, field, text) { ensure(key)[field] = text; }
+
+// Same as grabSelection, but writes into a named field, so START and END are
+// two separate statements rather than one quote whose direction we have to
+// guess. `both_wrong` was expressible on the extent axis and NOT expressible in
+// the box underneath it — one quote, one polarity — which is the same
+// "we recorded that it was wrong, never what was wrong" failure the axes exist
+// to end (Lesson 30).
+function grabInto(key, field, idx) {
+  const sel = (typeof window !== 'undefined' && window.getSelection)
+              ? String(window.getSelection()) : '';
+  if (!sel.trim()) return;
+  const v = ensure(key);
+  v[field] = sel.trim();
+  const card = document.getElementById('card-' + idx);
+  const box = card && card.querySelector('[data-role="' + field + '-text"]');
+  if (box) box.value = v[field];
+}
 
 // Typing Hebrew is a transcription risk and a chore; the text is already on the
 // page, so let him select it. Falls back to the textarea where there is no
@@ -492,6 +532,11 @@ function buildExport() {
       // `mixed` or `unclear`.
       quote: v.quote || '',
       quote_polarity: v.quote_polarity,
+      // The exact boundaries, in his own words. Two fields because a story can
+      // start AND end in the wrong place, which `extent: both_wrong` could say
+      // and the single quote box could not.
+      quote_start: v.quote_start || '',
+      quote_end: v.quote_end || '',
       notes: v.notes || ''
     };
   });
@@ -529,7 +574,8 @@ init();
 </html>"""
 
 
-def generate_html(title: str, stories: List[Dict], detector_version: str) -> str:
+def generate_html(title: str, stories: List[Dict], detector_version: str,
+                  note: str | None = None) -> str:
     data_json = json.dumps(stories, ensure_ascii=True).replace('</', '<\\/')
     n_cross = sum(1 for s in stories if s.get('spans_pages'))
     n_mish = sum(1 for s in stories if s.get('mishnah_withheld'))
@@ -542,11 +588,60 @@ def generate_html(title: str, stories: List[Dict], detector_version: str) -> str
             .replace('__N_TOTAL__', str(len(stories)))
             .replace('__N_CROSS__', str(n_cross))
             .replace('__N_MISHNAH__', str(n_mish))
+            # Whole line, newline included, so a page with no note is byte-identical
+            # to the ones already banked (tests/test_review_ui_axes.py).
+            .replace('    __NOTE__\n', f'    <p><b>{note}</b></p>\n' if note else '')
             .replace('__STORIES__', data_json))
 
 
-def main() -> int:
+def main(argv=None) -> int:
+    """No arguments reproduces the two banked pages byte for byte.
+
+    `--run/--title/--out` builds a page for a tractate with no banked config
+    (Gittin, Yevamot, Eruvin), and `--only` restricts it to a list of
+    `{ref, start_segment, end_segment}` — which is what turns a 147-entry
+    tractate into a 30-entry ask. Review is the bottleneck, and the one round
+    Jeff finished 100% of was the delta page that showed him only what was new
+    (49/49, against 1 and 15 for the pages that showed him everything again).
+    """
+    import argparse
+    ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
+    ap.add_argument('--run', nargs='+', help='run file(s) to read instead of the banked set')
+    ap.add_argument('--title')
+    ap.add_argument('--out', help='file name under validation/ui/')
+    ap.add_argument('--only', help='JSON list of {ref,start_segment,end_segment} to keep')
+    ap.add_argument('--note', help='one line shown under the page title')
+    args = ap.parse_args(argv)
+
     OUT_DIR.mkdir(parents=True, exist_ok=True)
+    if args.run:
+        if not (args.title and args.out):
+            ap.error('--run needs --title and --out')
+        paths = [Path(r) if Path(r).is_absolute() else ROOT / r for r in args.run]
+        stories, version = build_data(paths)
+        if args.only:
+            keep = {(o['ref'], o['start_segment'], o['end_segment'])
+                    for o in json.loads(Path(args.only).read_text())}
+            before = len(stories)
+            stories = [s for s in stories
+                       if (s['page_ref'], s['start_segment'], s['end_segment']) in keep]
+            # Never drop silently: a filter that matches nothing, or half of what
+            # it names, is the failure this line exists to make visible (Lesson 38).
+            print(f"  --only kept {len(stories)} of {before} entries "
+                  f"({len(keep)} named in {Path(args.only).name}; "
+                  f"{len(keep) - len(stories)} named but not present in the run)")
+            if not stories:
+                print('  REFUSING to write an empty review page'); return 1
+        html = generate_html(args.title, stories, version, note=args.note)
+        out = OUT_DIR / args.out
+        out.write_text(html, encoding='utf-8')
+        cls = Counter(s['classification'] for s in stories)
+        print(f"  {args.title}: {len(stories)} entries "
+              f"({sum(1 for s in stories if s['mishnah_withheld'])} withheld from a Mishnah) "
+              f"-> {out.relative_to(ROOT)}")
+        print(f"      version={version}  {dict(cls)}")
+        return 0
+
     for slug, cfg in TRACTATES.items():
         paths = [RUN_DIR / n for n in cfg['files']]
         missing = [p for p in paths if not p.exists()]

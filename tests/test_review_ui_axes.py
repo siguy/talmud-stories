@@ -201,6 +201,20 @@ report.quote = { text: verdicts[s1.key].quote,
                  polarity: verdicts[s1.key].quote_polarity,
                  notes: verdicts[s1.key].notes };
 
+// --- the exact boundaries: START and END, stated separately -----------------
+// `extent: both_wrong` exists on the axis; before this the box beneath it held
+// ONE quote and ONE polarity, so a story that starts late AND ends early could
+// not be corrected. Both grab buttons are driven here through their own onclick.
+report.boundaryRows = {
+  startBox: /data-role="quote_start-text"/.test(card1),
+  endBox: /data-role="quote_end-text"/.test(card1),
+  grabButtons: (card1.match(/data-role="grab-quote_(start|end)"/g) || []).length
+};
+setField(s1.key, 'quote_start', '\u05de\u05e2\u05e9\u05d4 \u05d1');
+setField(s1.key, 'quote_end', '\u05d5\u05db\u05df \u05d4\u05dc\u05db\u05d4');
+report.boundaries = { start: verdicts[s1.key].quote_start,
+                      end: verdicts[s1.key].quote_end };
+
 // --- D/F/G: the export ------------------------------------------------------
 const exported = buildExport();
 report.export = {
@@ -216,6 +230,7 @@ report.export = {
     confidence: r.confidence, grouping: r.grouping,
     display_problem: r.display_problem,
     quote: r.quote, quote_polarity: r.quote_polarity,
+    quote_start: r.quote_start, quote_end: r.quote_end,
     keys: Object.keys(r)
   }))
 };
@@ -294,6 +309,25 @@ class AxisReviewUiTest(unittest.TestCase):
                          'it is the commonest correction Jeff gives us (Lesson 30)')
 
     # D ---------------------------------------------------------------------
+    def test_C9_both_ends_can_be_stated_exactly(self):
+        """`extent: both_wrong` was expressible on the axis and NOT in the box
+        beneath it: ONE quote and ONE polarity, so a story that starts late AND
+        ends early could not be corrected. That is the same "we recorded that it
+        was wrong, never what was wrong" failure the axes exist to end
+        (Lesson 30). Every entry now carries a START box and an END box, each
+        filled by highlighting the Hebrew on the page."""
+        rows = self.report['boundaryRows']
+        self.assertTrue(rows['startBox'], 'no START box on the card')
+        self.assertTrue(rows['endBox'], 'no END box on the card')
+        self.assertEqual(rows['grabButtons'], 2,
+                         'each boundary needs its own "Use highlighted text" button')
+        b = self.report['boundaries']
+        self.assertTrue(b['start'] and b['end'], 'the two fields are not independent')
+        self.assertNotEqual(b['start'], b['end'])
+        row = self.report['export']['rows'][0]
+        self.assertIn('quote_start', row['keys'])
+        self.assertIn('quote_end', row['keys'])
+
     def test_D_every_verdict_carries_the_detector_version(self):
         exp = self.report['export']
         self.assertEqual(exp['detector_version'], self.version)
@@ -301,7 +335,7 @@ class AxisReviewUiTest(unittest.TestCase):
         for row in exp['rows']:
             self.assertEqual(row['detector_version'], self.version,
                              'a verdict belongs to the version it judged (Lesson 36)')
-        self.assertEqual(exp['schema_version'], 'axes-1')
+        self.assertEqual(exp['schema_version'], 'axes-2')
         self.assertEqual(exp['applies_to'], 'base',
                          'base vs corrected data must be stated, never inferred (Lesson 3)')
 
