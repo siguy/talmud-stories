@@ -4,17 +4,17 @@ capability: [triage]
 tractate: []
 blocked_by: []
 awaiting: []
-finding:
+finding: docs/findings/2026-09-01-examine-all-pages-fix.md
 superseded_by:
 ---
 
 # Fix `skip_triage` so it bypasses Stage 1 instead of faking its output
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then
-[`2026-09-01-contaminated-no-triage-ablation.md`](../docs/findings/2026-09-01-contaminated-no-triage-ablation.md),
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then
+[`2026-09-01-contaminated-no-triage-ablation.md`](../../docs/findings/2026-09-01-contaminated-no-triage-ablation.md),
 then this. **Capability: 1 Triage.** **Depends on Jeff: no.** **Cost: minutes, no API
 calls** — the measurement this would have unblocked is already done by
-[`2026-08-31-triage-recall-price.md`](../docs/findings/2026-08-31-triage-recall-price.md),
+[`2026-08-31-triage-recall-price.md`](../../docs/findings/2026-08-31-triage-recall-price.md),
 which routed around the flag rather than fixing it. What is left is the trap itself.
 
 ## The problem
@@ -78,5 +78,36 @@ it, and `CLAUDE.md` now warns about it, but nothing stops the next use.
 ## When done
 
 Finding → `docs/findings/<date>-<slug>.md`. Update
-[`docs/capabilities/1_triage.md`](../docs/capabilities/1_triage.md) — capability **1
+[`docs/capabilities/1_triage.md`](../../docs/capabilities/1_triage.md) — capability **1
 Triage** — including, if step 5 was run, what replaces the retracted 2026-02-13 row.
+
+## Outcome
+
+**Done 2026-09-01, shipped.** → [`2026-09-01-examine-all-pages-fix.md`](../../docs/findings/2026-09-01-examine-all-pages-fix.md)
+
+`skip_triage` is renamed `examine_all_pages` and now gates the page selection alone:
+Stage 1 runs whenever labels were not supplied, and supplied labels are never overwritten.
+The old spelling stays as a deprecated alias that warns; passing both is a `TypeError`.
+
+**A second instance of the same defect was found while fixing the first** — the Stage 2
+loop defaulted a page with no triage entry to `[EventType.DELIBERATION] * len(segments)`.
+Now `[]`, which reaches `build_prompt`'s own `UNKNOWN` fallback and matches what the
+cross-page context blocks eight lines below already did.
+
+Guarded by `tests/test_examine_all_pages.py` — 10 tests written first, 9 of 10 watched
+fail. Beyond the direct regression they pin the two properties that make the defect
+visible next time: the labels are **identical with and without** the flag, and the flag
+**only ever adds** pages (`off ⊆ on`) — the arithmetic whose violation exposed the
+contamination in the first place.
+
+**v7-v10 were deliberately left alone**, and a test asserts they still contain the stub.
+They are frozen ship points, and `results/v7/ablation_v7_no_triage.json` has to stay
+reproducible from the code that produced it or the retraction loses its evidence.
+
+**Nothing published or shipped moves** — every shipped run used cached labels and never
+touched this flag. Suite: 125 passed against main's 115, the difference being exactly these
+10 tests, with the same 6 pre-existing `textutil` failures.
+
+**Step 5 was not done** and is now an `Untried` entry in the capability history: re-running
+the ablation correctly needs API calls, and it is what would replace the struck 2026-02-13
+row. Until then Stage 1 has no valid direct measurement that it improves accuracy.

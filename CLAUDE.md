@@ -219,6 +219,7 @@ archive/                          # Old versions (reference only)
 | `docs/findings/2026-08-30-wave5-summary-fix.md` | Wave 5 steps 1-2, and the first noise floor this project ever measured |
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
+| `tests/test_examine_all_pages.py` | **Failure-injection guard** — bypassing Stage 1 must not fabricate its output. Pins that the flag only ever *adds* pages, that labels are identical with and without it, and that v7-v10 keep the stub so the archived ablation stays reproducible |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
 | `lessons/` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
@@ -255,7 +256,7 @@ When making changes, update these files as relevant:
 - Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
 - Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
-- Use `skip_triage=True` to mean "no triage" — it stamps every segment `DELIBERATION` and feeds that to Stage 2's prompt and to post-processing, in every version v7-v11. `results/v7/ablation_v7_no_triage.json` is its output and is contaminated; the 2026-02-13 "largest accuracy driver" claim built on it is retracted (`docs/findings/2026-09-01-contaminated-no-triage-ablation.md`). Pass real cached labels and override only the skip decision, as `run_triage_recall_price.py` does
+- Use `skip_triage=True` to mean "no triage" — **fixed in v11 on 2026-09-01 and renamed `examine_all_pages`; still live in the frozen v7-v10, deliberately.** It stamped every segment `DELIBERATION`, which Stage 2's prompt, the cross-page context, boundary refinement and post-processing all believed, and it overwrote labels the caller had supplied. `results/v7/ablation_v7_no_triage.json` is its output and is contaminated; the 2026-02-13 "largest accuracy driver" claim built on it is retracted (`docs/findings/2026-09-01-contaminated-no-triage-ablation.md`)
 - Move detector output to a new key without making the harnesses read it (Lesson 27) — an invisible deletion reads as a model failure
 - Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 27)
 - Act on an ablation's **endpoints** — "as-is" vs "off" — without sweeping the rules between them (Lesson 37). Once the "off" run exists every intermediate rule is a free re-partition of results you already hold, and the good deal is rarely at either end: on triage, the first step inside the interval was **28x cheaper** than turning the filter off

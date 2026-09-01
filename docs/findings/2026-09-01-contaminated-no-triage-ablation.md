@@ -53,7 +53,7 @@ So the ablation changed something other than which pages were seen.
 ## What it changed
 
 ```python
-# story_detector_v7.py:658-664 — and unchanged in v8:727, v9:845, v10:1014, v11:1058
+# story_detector_v7.py:658-664 — and v8:727, v9:845, v10:1014, v11:1058 when this was written
 elif skip_triage:
     # Generate default triage (all DELIBERATION) so detection still works
     triage_results[ref] = [EventType.DELIBERATION] * n_segs
@@ -82,13 +82,21 @@ easier contest to win, and not one anybody chose to run.
   removes the claim also removes the record that it was ever believed.
 - **The file is kept.** It is contaminated as a measurement and is now *evidence*; nothing
   should overwrite or delete it.
-- **The flag is still live in v11**, and reads as though it does what its name says. The
-  next person to reach for it to mean "no triage" gets the same answer.
-  → [`work/2026-09-01-fix-skip-triage-flag.md`](../../work/2026-09-01-fix-skip-triage-flag.md)
+- ~~**The flag is still live in v11**, and reads as though it does what its name says. The
+  next person to reach for it to mean "no triage" gets the same answer.~~
+  **FIXED the same day**, 2026-09-01: renamed `examine_all_pages`, and it now gates the
+  page selection alone — Stage 1's labels are real, and supplied labels are no longer
+  overwritten. A second all-DELIBERATION default in the Stage 2 loop went with it. **v7-v10
+  keep the stub on purpose**, pinned by a test, so the artifact audited above stays
+  reproducible from the code that produced it.
+  → [`2026-09-01-examine-all-pages-fix.md`](2026-09-01-examine-all-pages-fix.md),
+  [`work/done/2026-09-01-fix-skip-triage-flag.md`](../../work/done/2026-09-01-fix-skip-triage-flag.md)
 - **The triage-vs-no-triage question is open again**, and is cheap to close correctly: the
   method in [`2026-08-31-triage-recall-price.md`](2026-08-31-triage-recall-price.md) —
   real cached labels, skip decision as the only variable — is exactly the corrected
-  experiment, already implemented in `scripts/run_triage_recall_price.py`.
+  experiment, already implemented in `scripts/run_triage_recall_price.py`, and now
+  expressible through the fixed flag rather than around it. **Until it is run, Stage 1 has
+  no valid direct measurement that it improves accuracy.**
 
 ## Scope
 

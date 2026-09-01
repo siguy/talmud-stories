@@ -201,10 +201,24 @@ evidence. Triage may well be the largest driver; yesterday's 14.3% precision on 
 pages is a better reason to think so. **The flag is still live in v11**, which is now a
 `Don't` in `CLAUDE.md` and a work item.
 → [`2026-09-01-contaminated-no-triage-ablation.md`](docs/findings/2026-09-01-contaminated-no-triage-ablation.md)
-· [`fix-skip-triage-flag`](work/2026-09-01-fix-skip-triage-flag.md)
+· [`fix-skip-triage-flag`](work/done/2026-09-01-fix-skip-triage-flag.md)
+
+**And the flag is fixed, same day.** `skip_triage` is renamed **`examine_all_pages`** and
+now gates the page selection alone: Stage 1 runs whenever labels were not supplied, and
+supplied labels are never overwritten — the old `elif` discarded them, which is what
+`run_triage_recall_price.py` had to work around. A second all-DELIBERATION default in the
+Stage 2 loop became `[]` (renders `UNKNOWN`). **v7-v10 keep the stub on purpose**, pinned
+by a test, so the audited artifact stays reproducible. 10 failure-injection tests, 9 of 10
+watched fail first.
+→ [`2026-09-01-examine-all-pages-fix.md`](docs/findings/2026-09-01-examine-all-pages-fix.md)
 
 **Nothing published moves.** Yesterday's pricing and the `N>=1` rule both used cached
 labels and never touched this flag.
+
+**What is now open in its place:** re-running the ablation correctly, to replace the struck
+row. It is cheap and no longer booby-trapped. Until then **Stage 1 has no valid direct
+measurement that it improves accuracy** — only the indirect evidence that its discarded
+pages carry stories at 14.3% against ~89% on the pages it keeps.
 
 ## What changed 2026-08-31
 
