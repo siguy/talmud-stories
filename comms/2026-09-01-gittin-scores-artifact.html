@@ -1,0 +1,377 @@
+<title>Finding the Stories</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --ground:#f5f6f7;
+  --panel:#ffffff;
+  --panel-2:#eef1f2;
+  --ink:#17222a;
+  --ink-2:#41535d;
+  --ink-3:#6d7f88;
+  --rule:#d8dee1;
+  --accent:#0f5f63;
+  --accent-soft:#dceaea;
+  --match:#2c6e4c;
+  --near:#8a6a12;
+  --differ:#9c3f31;
+  --match-soft:#dfeee6;
+  --near-soft:#f4ecd6;
+  --differ-soft:#f6e2de;
+  --shadow:0 1px 2px rgba(23,34,42,.06),0 8px 24px rgba(23,34,42,.05);
+  --on-accent:#ffffff;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#10171c;
+    --panel:#172128;
+    --panel-2:#1e2a31;
+    --ink:#e6ecee;
+    --ink-2:#aebcc3;
+    --ink-3:#87979f;
+    --rule:#2b3940;
+    --accent:#5fb3b4;
+    --accent-soft:#1b3336;
+    --match:#7bc199;
+    --near:#d8b451;
+    --differ:#e08a78;
+    --match-soft:#1b2f26;
+    --near-soft:#332c17;
+    --differ-soft:#33211d;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.28);
+    --on-accent:#0d1417;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#10171c; --panel:#172128; --panel-2:#1e2a31;
+  --ink:#e6ecee; --ink-2:#aebcc3; --ink-3:#87979f; --rule:#2b3940;
+  --accent:#5fb3b4; --accent-soft:#1b3336;
+  --match:#7bc199; --near:#d8b451; --differ:#e08a78;
+  --match-soft:#1b2f26; --near-soft:#332c17; --differ-soft:#33211d;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.28);
+  --on-accent:#0d1417;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--ground); color:var(--ink);
+  font-family:"Source Sans 3",system-ui,-apple-system,sans-serif;
+  font-size:17px; line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:56px 24px 96px}
+.col{max-width:660px}
+h1,h2,h3{font-family:"Frank Ruhl Libre",Georgia,serif;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,5vw,52px);line-height:1.1;font-weight:700;letter-spacing:-.01em}
+h2{font-size:26px;font-weight:700;line-height:1.25}
+h3{font-size:19px;font-weight:500}
+p{margin:0 0 1em}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 14px
+}
+.lede{font-size:20px;line-height:1.55;color:var(--ink-2);margin-top:18px}
+.he{font-family:"Frank Ruhl Libre",serif;direction:rtl;unicode-bidi:isolate}
+.num{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums}
+section{margin-top:64px}
+.rule{height:1px;background:var(--rule);border:0;margin:0}
+
+/* ---- scoreboard ---- */
+.board{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));margin-top:34px}
+.card{
+  background:var(--panel);border:1px solid var(--rule);border-radius:4px;
+  padding:22px 22px 20px;box-shadow:var(--shadow);position:relative
+}
+.card.pending{background:var(--panel-2);box-shadow:none}
+.card h3{font-size:21px;margin-bottom:2px}
+.card .sub{font-size:13.5px;color:var(--ink-3);margin-bottom:16px}
+.big{font-family:"IBM Plex Mono",monospace;font-size:40px;line-height:1;font-weight:500;letter-spacing:-.02em}
+.big small{font-size:15px;font-weight:400;color:var(--ink-3);letter-spacing:0}
+.metric{display:flex;justify-content:space-between;gap:12px;font-size:14.5px;padding:7px 0;border-top:1px solid var(--rule)}
+.metric:first-of-type{margin-top:16px}
+.metric span:last-child{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.pill{
+  display:inline-block;font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;padding:3px 8px;border-radius:2px;background:var(--accent-soft);color:var(--accent)
+}
+.card.pending .pill{background:transparent;border:1px solid var(--rule);color:var(--ink-3)}
+
+/* ---- capability chain ---- */
+.chain{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));margin-top:28px}
+.step{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:18px 18px 16px}
+.step .n{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);letter-spacing:.1em}
+.step h3{margin:6px 0 6px}
+.step p{font-size:14.5px;color:var(--ink-2);margin:0}
+.step .score{margin-top:12px;font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--ink)}
+.step .score em{font-style:normal;color:var(--ink-3)}
+
+/* ---- tables ---- */
+.scroll{overflow-x:auto;margin-top:24px;border:1px solid var(--rule);border-radius:4px;background:var(--panel)}
+table{border-collapse:collapse;width:100%;font-size:15px}
+th,td{padding:11px 16px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--ink-3);font-weight:500;white-space:nowrap
+}
+tbody tr:last-child td{border-bottom:0}
+td.n{font-family:"IBM Plex Mono",monospace;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+     padding:2px 7px;border-radius:2px;white-space:nowrap}
+.t-match{background:var(--match-soft);color:var(--match)}
+.t-near{background:var(--near-soft);color:var(--near)}
+.t-differ{background:var(--differ-soft);color:var(--differ)}
+
+/* ---- clause strip ---- */
+.strip{margin-top:26px;display:grid;gap:20px}
+.case{background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:18px 20px 20px}
+.case .ref{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--ink-3);margin-bottom:12px}
+.clauses{display:flex;flex-wrap:wrap;gap:0;direction:rtl;font-family:"Frank Ruhl Libre",serif;font-size:19px;line-height:1.9}
+.cl{padding:2px 6px;border-bottom:3px solid transparent}
+.cl.formula{background:var(--near-soft);border-bottom-color:var(--near)}
+.cl.body{background:var(--match-soft);border-bottom-color:var(--match)}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px;font-size:13.5px;color:var(--ink-2)}
+.swatch{display:inline-block;width:11px;height:11px;border-radius:2px;margin-inline-end:6px;vertical-align:baseline}
+
+/* ---- calibration bars ---- */
+.bars{display:grid;gap:14px;margin-top:26px}
+.bar-row{display:grid;grid-template-columns:150px 1fr 92px;gap:14px;align-items:center}
+.bar{height:30px;display:flex;border-radius:3px;overflow:hidden;background:var(--panel-2)}
+.bar .on{background:var(--accent)}
+.bar .off{background:var(--differ-soft);border-left:1px solid var(--panel)}
+.bar span{display:flex;align-items:center;justify-content:center;font-family:"IBM Plex Mono",monospace;
+          font-size:12.5px}
+.bar .on span{color:var(--on-accent)}
+.bar .off span,.bar .off{color:var(--differ)}
+.bar-label{font-size:14.5px;color:var(--ink-2)}
+.bar-val{font-family:"IBM Plex Mono",monospace;font-size:14px;text-align:right;color:var(--ink-2)}
+
+.note{
+  border-left:3px solid var(--accent);background:var(--panel);padding:16px 20px;margin-top:26px;
+  border-radius:0 4px 4px 0;font-size:16px;color:var(--ink-2)
+}
+.note b{color:var(--ink)}
+.cta{
+  display:inline-block;margin-top:8px;background:var(--accent);color:var(--on-accent);text-decoration:none;
+  padding:13px 22px;border-radius:3px;font-weight:600;font-size:16px
+}
+footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule);font-size:14px;color:var(--ink-3)}
+@media (max-width:640px){
+  .bar-row{grid-template-columns:104px 1fr 74px;gap:9px}
+  .wrap{padding:40px 18px 72px}
+}
+</style>
+
+<div class="wrap">
+
+  <p class="eyebrow">Rubenstein · Talmud story corpus · 1 September 2026</p>
+  <h1>Finding the stories</h1>
+  <p class="lede col">Where the detector stands on three tractates, measured against Jeff Rubenstein's own 2005 lists — and, for Gittin, measured before those lists were opened.</p>
+
+  <section>
+    <h2>Three tractates, scored</h2>
+    <p class="col" style="margin-top:14px">Each figure is the share of Jeff's listed stories the detector also found. <b>Exact</b> means our passage and his are the same passage, checked text against text. Gittin is the one that matters: no detector had ever read it, and the list was opened only after the run finished.</p>
+
+    <div class="board">
+      <div class="card">
+        <h3>Gittin</h3>
+        <p class="sub">178 dapim · 112 stories listed · run 31 Aug 2026</p>
+        <div class="big">108<small> / 112</small></div>
+        <div class="metric"><span>Found, exact match</span><span>96.4%</span></div>
+        <div class="metric"><span>Boundaries identical</span><span>84%</span></div>
+        <div class="metric"><span>Lost before reading</span><span>0</span></div>
+        <p style="margin:16px 0 0"><span class="pill">Never seen before</span></p>
+      </div>
+      <div class="card">
+        <h3>Kiddushin</h3>
+        <p class="sub">162 dapim · 90 stories listed · 3 review rounds</p>
+        <div class="big">75<small> / 90</small></div>
+        <div class="metric"><span>Found, exact match</span><span>83.3%</span></div>
+        <div class="metric"><span>Boundaries identical</span><span>85%</span></div>
+        <div class="metric"><span>Lost before reading</span><span>4</span></div>
+        <p style="margin:16px 0 0"><span class="pill">Reviewed</span></p>
+      </div>
+      <div class="card">
+        <h3>Ketubot</h3>
+        <p class="sub">222 dapim · 149 stories listed · 4 review rounds</p>
+        <div class="big">131<small> / 149</small></div>
+        <div class="metric"><span>Found, exact match</span><span>87.9%</span></div>
+        <div class="metric"><span>Boundaries identical</span><span>80%</span></div>
+        <div class="metric"><span>Lost before reading</span><span>3</span></div>
+        <p style="margin:16px 0 0"><span class="pill">Reviewed</span></p>
+      </div>
+      <div class="card pending">
+        <h3>Yevamot · Eruvin</h3>
+        <p class="sub">Lists read and checked: 102 and 74 stories</p>
+        <div class="big" style="color:var(--ink-3)">—</div>
+        <div class="metric"><span>Text fetched</span><span>yes</span></div>
+        <div class="metric"><span>Detector run</span><span>not yet</span></div>
+        <div class="metric"><span>Expected effort</span><span>~20 min each</span></div>
+        <p style="margin:16px 0 0"><span class="pill">Next</span></p>
+      </div>
+    </div>
+
+    <div class="note col">
+      A looser test scores Gittin <b>112 of 112</b>. It accepts a match anywhere within about fourteen segments, and on inspection it was crediting a neighbouring story on the same daf every time. <b>108</b> is the figure that survives reading each case.
+    </div>
+  </section>
+
+  <section>
+    <h2>Four things that can go wrong, measured separately</h2>
+    <p class="col" style="margin-top:14px">A story can be lost at four different points, and for a long time we could only see the total. Splitting them tells us which one to fix — and three of the four have quite different costs. Text flows left to right; a loss early cannot be recovered later.</p>
+
+    <div class="chain">
+      <div class="step">
+        <p class="n">FIRST</p>
+        <h3>Triage</h3>
+        <p>Is this page worth reading at all? Half the tractate is set aside unread — and a page never read leaves no trace of what was on it.</p>
+        <p class="score">Gittin: <em>lost 0 of 112</em></p>
+      </div>
+      <div class="step">
+        <p class="n">THEN</p>
+        <h3>Detection</h3>
+        <p>Propose every passage that might be a story. It proposes; it does not judge. A passage never proposed cannot be recovered.</p>
+        <p class="score">Gittin: <em>108 of 112</em></p>
+      </div>
+      <div class="step">
+        <p class="n">THEN</p>
+        <h3>Classification</h3>
+        <p>Is it really a story, by your criteria? The only one whose right answer is contested among scholars.</p>
+        <p class="score">Gittin: <em>discarded 0 of 112</em></p>
+      </div>
+      <div class="step">
+        <p class="n">LAST</p>
+        <h3>Boundaries</h3>
+        <p>Where exactly does it start and end? A story can be found, judged correctly, and still shown with the wrong extent.</p>
+        <p class="score">Gittin: <em>84% identical</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The four we did not find</h2>
+    <p class="col" style="margin-top:14px">Not a malfunction. Three of the four are passages where nothing happens except speech or custom — the class Jeff's July note tells the detector to reject, and which his 2005 list includes. Re-running the page reproduces both of its misses exactly, so this is the rule at work, not chance.</p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Daf</th><th>The passage</th><th>Why the detector passed over it</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="n">38b</td>
+            <td class="he">אָמַר רַבָּה: בְּהָנֵי תְּלָת מִילֵּי נָחֲתִי בַּעֲלֵי בָתִּים מִנִּכְסֵיהוֹן</td>
+            <td>A saying, with no event. <span class="tag t-differ">speech only</span></td>
+          </tr>
+          <tr>
+            <td class="n">57a</td>
+            <td>The exchange on the fertility of the land — <span class="he">שקורי משקריתו</span>, and the answer about the deer's hide</td>
+            <td>Talk, and nothing done. <span class="tag t-differ">speech only</span></td>
+          </tr>
+          <tr>
+            <td class="n">57a</td>
+            <td class="he">אַשָּׁקָא דְרִיסְפַּק חֲרִיב בֵּיתֵּר</td>
+            <td>Opens with a custom — a cedar for a boy, a pine for a girl. <span class="tag t-differ">habitual</span></td>
+          </tr>
+          <tr>
+            <td class="n">46b</td>
+            <td>The redemption case — <span class="he">פירקן</span></td>
+            <td>Found, but begun one line late, at the incident rather than at Rav Asi's ruling. <span class="tag t-near">boundary</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where our boundary differs from yours</h2>
+    <p class="col" style="margin-top:14px">On 171 boundaries we match exactly 84% of the time. The differences are lopsided in a way that is worth seeing. At the <b>end</b>, we usually stop earlier than you — the legal give-and-take you said need not be quoted. At the <b>start</b>, we are almost always one clause late, and it is the same clause every time: the formula that introduces the story.</p>
+
+    <div class="strip">
+      <div class="case">
+        <p class="ref">Gittin 58a · segment 10 — you start at the attribution, we start at the narrative</p>
+        <div class="clauses">
+          <span class="cl formula">אָמַר רַב יְהוּדָה אָמַר רַב:</span>
+          <span class="cl body">מַעֲשֶׂה בִּבְנוֹ וּבְבִתּוֹ שֶׁל רַבִּי יִשְׁמָעֵאל בֶּן אֱלִישָׁע שֶׁנִּשְׁבּוּ לִשְׁנֵי אֲדוֹנִים…</span>
+        </div>
+        <div class="legend">
+          <span><span class="swatch" style="background:var(--near)"></span>the clause you include and we drop</span>
+          <span><span class="swatch" style="background:var(--match)"></span>where we both agree the story runs</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="col" style="margin-top:26px">The same clause, across three tractates: <span class="he">תַּנְיָא</span> · <span class="he">תָּנוּ רַבָּנַן</span> · <span class="he">תָּא שְׁמַע</span> · <span class="he">כִּי אֲתָא רַב דִּימִי אָמַר</span> · <span class="he">רַב חָנִין מִישְׁתַּעֵי</span>. It accounts for 27 of the 30 late starts we have.</p>
+
+    <div class="note col">
+      We tried to settle it with a rule — always reach back over the formula. Measured across all 470 boundaries we can check, it <b>fixed nine and broke eight</b>. You start after the formula about as often as before it, so no mechanical rule can tell the cases apart. <b>That is why it is a question rather than a fix.</b>
+    </div>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Direction</th><th>Identical</th><th>We reach further than you</th><th>We stop short of you</th></tr></thead>
+        <tbody>
+          <tr><td>Start of the story</td><td class="n">82%</td><td class="n">2</td><td class="n">13 <span class="tag t-near">the formula</span></td></tr>
+          <tr><td>End of the story</td><td class="n">87%</td><td class="n">2</td><td class="n">7 <span class="tag t-match">as you asked</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Our confidence turns out to mean something</h2>
+    <p class="col" style="margin-top:14px">Every passage carries a confidence label, set before the list was opened. Set against whether you listed it:</p>
+
+    <div class="bars">
+      <div class="bar-row">
+        <div class="bar-label">Certain</div>
+        <div class="bar"><div class="on" style="width:100%"><span>59 on your list</span></div></div>
+        <div class="bar-val">100%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">High confidence</div>
+        <div class="bar"><div class="on" style="width:79%"><span>19</span></div><div class="off" style="width:21%"><span>5</span></div></div>
+        <div class="bar-val">79%</div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">Low confidence</div>
+        <div class="bar"><div class="on" style="width:61%"><span>39</span></div><div class="off" style="width:39%"><span>25</span></div></div>
+        <div class="bar-val">61%</div>
+      </div>
+    </div>
+
+    <p class="col" style="margin-top:22px">Every one of the 59 we called certain is on your list, and not one of the passages you don't have is a certain. Three of the five high-confidence exceptions aren't really disagreements — they are the Gemara quoting back a <span class="he">מעשה</span> that also stands in the Mishnah, so we have catalogued one story twice. That leaves <b>43a</b> and <b>25a</b>.</p>
+    <p class="col">One tractate is not proof. If Yevamot repeats it, it changes what we would ask of you: skim what we are sure of, and spend your time where we are not.</p>
+  </section>
+
+  <section>
+    <h2>What we propose that your list does not have</h2>
+    <p class="col" style="margin-top:14px">Thirty passages. We read all of them before showing you any, because most are ours to settle, not yours.</p>
+
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Count</th><th>Kind</th><th>What we would do with it</th></tr></thead>
+        <tbody>
+          <tr><td class="n">10</td><td>Story-shaped: named people, something happens, an outcome</td><td>Ask you — <b>43a</b> and <b>25a</b> first</td></tr>
+          <tr><td class="n">12</td><td>A case is brought, a sage rules</td><td>One policy question, not twelve</td></tr>
+          <tr><td class="n">3</td><td>The Gemara re-citing a Mishnah <span class="he">מעשה</span></td><td>Our double-count — 10a/10b, 45b/46a, 74a/74b</td></tr>
+          <tr><td class="n">3</td><td>The same passage counted twice, or a bare cross-reference</td><td>Ours to fix</td></tr>
+          <tr><td class="n">2</td><td>A standing practice or an enactment</td><td>Ours to count</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>The 25 we would like you to look at</h2>
+    <p class="col" style="margin-top:14px">A page with one required question per passage — <b>is it a story</b>: yes, borderline, or no. A correct entry is one click. If the extent is wrong, you highlight the Hebrew on the page and press a button to show us where the story should start and where it should end; no typing.</p>
+    <p style="margin-top:22px"><a class="cta" href="https://claude.ai/code/artifact/956c6cb0-09fc-4464-a8c9-80ff29adaf68">Open the review page</a></p>
+    <p class="col" style="margin-top:18px;font-size:15px;color:var(--ink-3)">Twenty-five entries, not a hundred and forty-seven — the passages your list does not already answer.</p>
+  </section>
+
+  <footer class="col">
+    Gittin ran end to end in twenty minutes. Yevamot and Eruvin are fetched and waiting; the questions that stand in the way are the same three on every tractate, which is why they are worth answering once.
+  </footer>
+
+</div>
