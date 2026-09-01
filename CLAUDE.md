@@ -94,10 +94,18 @@ When flattening stories, MUST copy: page_segments: page.segments
 ```
 
 `stories[]` is not the whole output. Stage 4g moves Mishnah-internal stories to
-`mishnah_stories[]`, and no harness or UI reads that key — a withheld story therefore
-scores as a story we never found (4 of Ketubot's 15 golden false negatives; Lesson 27).
-Any code that reads a run for scoring or display must decide about that key explicitly.
-Report it with `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
+`mishnah_stories[]`. A reader blind to that key scores a withheld story as one we never
+found (4 of Ketubot's 15 golden false negatives; Lesson 27). **Any code that reads a run
+for scoring or display must decide about that key explicitly** — and say which way, in a
+comment, so the next reader can tell a decision from an oversight. Who reads it today:
+
+| reader | decision |
+|---|---|
+| `measure_recall_vs_expert_list.py` | reads it, reports withheld **separately**, never in the headline |
+| `score_boundary_targets.py` | reads it; a target on a withheld story scores **`WITHHELD`**, not `N/A` |
+| `build_ruler.py` | deliberately does **not** fold it into `proposed` — found-then-dropped ≠ never found |
+| `generate_axis_review_ui.py` | shows it, **badged** and filterable |
+| `evaluate_golden.py` | **blind, and immutable.** Its Mishnah delta comes from `report_mishnah_filter_delta.py`, which scores twice through the same harness. Run it before trusting a golden number |
 
 ## Running the Detector on a New Tractate
 See `docs/technical/new_tractate_workflow.md` for the step-by-step guide.

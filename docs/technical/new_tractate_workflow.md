@@ -211,7 +211,7 @@ These patterns are expected to appear in any tractate. The expert should watch f
 
 6. **Ask the reviewer *which* thing is wrong.** Most rejections are not "this is not a story" — they are boundary, merge or confidence complaints pooled into one number (Lesson 30). Until the UI separates them, precision can only be quoted as a range.
 
-7. **Count what the reviewer never saw.** Stage 4g moves Mishnah-internal stories to `mishnah_stories[]`, which no harness or UI reads — a withheld story scores as one we never found (Lesson 27). Run `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
+7. **Count what the reviewer never saw.** Stage 4g moves Mishnah-internal stories to `mishnah_stories[]`. The recall harness, the boundary scorer and the axis review UI each read it and report it apart (see the table in `CLAUDE.md`); `evaluate_golden.py` is blind to it and immutable, so a withheld story still scores there as one we never found (Lesson 27). Run `scripts/report_mishnah_filter_delta.py` before trusting a golden number, and read the `WITHHELD` column on `score_boundary_targets.py` before reading its `N/A` one.
 
 8. **Check a "blind" list is blind before using it as one** (Lesson 29). Run `scripts/check_appendix_coverage.py`. Filter on the `blind` / `counts_for_recall` flags, never on the filename and never on the raw length.
 
