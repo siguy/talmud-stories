@@ -90,6 +90,7 @@ closed     6 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
+open       2026-09-01-parallel-story-rule   ← awaiting: jeff:boundary-end-rule
 closed     4 item(s) in work/done/
 ```
 
@@ -157,4 +158,5 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: 12fe94c412917926 -->
+- `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
+<!-- board-checksum: e6f0db1eff1e2c30 -->

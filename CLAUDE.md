@@ -220,7 +220,8 @@ archive/                          # Old versions (reference only)
 | `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
 | `docs/findings/2026-08-30-boundary-ruler-rebuild.md` | **Ruler rebuild** — why a corrections-only exam cannot see a regression, and what replaced it |
 | `scripts/build_boundary_testset.py` | Rebuilds that test set (text-anchored, version-proof) |
-| `scripts/score_boundary_targets.py` | Scores any run against it |
+| `scripts/score_boundary_targets.py` | Scores any run against it. **`--by-direction` splits starts from ends** — the pooled number hides that Ketubot's whole deficit is ends, where trimming scores below untrimmed, and ends are the axis `jeff:boundary-end-rule` has frozen |
+| `scripts/screen_end_trim_depth.py` | **Sizes what end-trimming discards**, by depth, with the dropped Hebrew and English printed for judgment. No API calls, no lexical rule — parallel markers appear as evidence, never as a filter (Lesson 15). Depth over-selects heavily, so its candidate list is **indicated, not measured** (Lesson 18) |
 | `results/clause_labels/` | Per-clause labels — a reusable asset, not a wave by-product |
 | `docs/findings/2026-08-30-wave5-summary-fix.md` | Wave 5 steps 1-2, and the first noise floor this project ever measured |
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |

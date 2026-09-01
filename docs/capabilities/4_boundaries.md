@@ -60,6 +60,9 @@ five successive mechanisms, and four of them were wrong.
 | 2026-08-31 | **A blind Kiddushin boundary set**, built by the same method as Ketubot's: 89 blind stories from the 2005 list, sequence-aligned against the Sefaria Hebrew | **measured: 88 of 89 align (median 99.3% of his letters), 176 targets, 130 scorable.** Noise floor **±7 points → 0.77** — the identical-code repeat moves **exactly one target** (66b seg 0, NEAR→HIT) on both sets; on 15 targets that is 6.7 points, on 130 it is 0.77 and **0 on hit+near**. Kiddushin scores **85% / 91%**, above the gate and **above Ketubot** | [`kiddushin_boundary_set`](../findings/2026-08-31-kiddushin-boundary-set.md) |
 | 2026-08-31 | The clause-edge ceiling re-measured on a second tractate | **measured: 88% of Jeff's Kiddushin boundaries are on a clause edge** vs Ketubot's 87%; by direction **starts 80% / 79%, ends 95% / 96%**. The ~87% ceiling is not a Ketubot artifact, and the residual is almost entirely **starts** | same |
 | 2026-08-31 | `score_boundary_targets.py` classified blind-vs-corrections by the literal filename `expert_boundary_targets_2005.json` | fixed before it mattered: the new Kiddushin set would have been **counted and reported as a corrections set**. Classifies on `source_round` now | same |
+| 2026-09-01 | **The blind score split by direction** — `score_boundary_targets.py --by-direction`, no API calls | **measured, and the pooled number was hiding it: Ketubot starts 85% / 90%, ends 74% / 77%** — while *untrimmed* ends score 74% / **80%**. Trimming earns its keep on starts (+9 Ketubot, +11 Kiddushin HIT) and on Kiddushin ends (+5); **Ketubot ends are the one cell where it is a net loss**, and they are the axis `jeff:boundary-end-rule` is unanswered on | [`parallel_story_rule`](../findings/2026-09-01-parallel-story-rule.md) |
+| 2026-09-01 | **The second-story deletion sized** — `scripts/screen_end_trim_depth.py`, structural, no API calls | **indicated: 2 of 50 end-trims (4%), not the 13 of 50 (26%) that depth alone selects.** Depth over-selects ~6x, and **4 of the 13 false candidates are amoraic legal debate** (`אָמַר אַבָּיֵי ... אֲמַר לֵיהּ רַב אַדָּא בַּר מַתְנָא`) that the prompt trims correctly today. The screen independently surfaced **Kiddushin 12a seg 13**, the `kiddushin-12a-dedup` case | same |
+| 2026-09-01 | **The parallel-practice rule split in two** — a bare "and so-and-so did the same" is trimmed; a parallel that is a **full incident** is a second story and is kept; **judge on events, never on names or speech** | **UNMEASURED — written, not run.** No `GOOGLE_API_KEY` in the session that wrote it, so no Wave 5 re-run. Do not quote a score. Gate and a stated pre-run prediction (it will probably *cost* points on the Ketubot end ruler) in `work/2026-09-01-parallel-story-rule.md`; wording pinned by `tests/test_parallel_story_rule.py` | same |
 | 2026-08-30 | **End-trim cap at 3 clauses** — every end regression cut too *early* (drifts −6 −6 −6 −6 −4 −3 −2 −2 −2 −1); caps of 1/2/3 score identically | shipped at 80%/84% → **81%/86%** on the neutral ruler… | `2e4fd89` |
 | 2026-08-30 | …then **REVERTED** once Simon settled which expert standard we build for | see below | `a7659d3`, [`trim_asymmetry`](../findings/2026-08-30-trim-asymmetry.md), Lesson 24 |
 
@@ -185,6 +188,20 @@ so.**
 | Kiddushin (BLIND, n=130) | **85% / 91%** | ≥75% hit+near | **0.8 points** — one target, and 0 on hit+near |
 | *Kiddushin, corrections only (CIRCULAR + biased, n=15)* | *60% / 73%* | — | *±7 points — one target is 6.7* |
 
+**But the pooled number hides the one failing cell (2026-09-01).** Split by direction on
+the same blind rulers:
+
+| | starts | ends |
+|---|---|---|
+| Ketubot, Wave 5 clause spans | 85% / 90% | **74% / 77%** |
+| Ketubot, untrimmed | 76% / 85% | 74% / **80%** |
+| Kiddushin, Wave 5 clause spans | 86% / 93% | 84% / 89% |
+
+**On Ketubot ends, trimming scores below not trimming at all** — and that is the axis
+`jeff:boundary-end-rule` is unanswered on, so a movement there cannot yet be read as
+better or worse. Reproduce with `score_boundary_targets.py --by-direction`. Any proposal
+for this capability should say **which direction it targets**.
+
 Three things follow:
 
 1. **Both tractates clear the gate, and both measurements can adjudicate a code change.**
@@ -236,6 +253,10 @@ the scorer says so. Downgraded from a blocker to a cleanup once the neutral rule
 - **Never trim away a clause that is itself narrative** — the principled guard, and the
   one salvageable piece of Wave 5b: its labeller used as a **veto on the trim** rather
   than as the mechanism that computes the boundary. ~40 lines against the original 433.
+  **A cheaper attempt at the same outcome went first on 2026-09-01** — the parallel rule
+  split inside the existing one-shot prompt, no new pass (`work/2026-09-01-parallel-story-rule.md`).
+  It is written and **unrun**. If it cannot hold the distinction, this item is the answer
+  and will have earned it against a measured alternative rather than by assumption.
   Brief written: `work/2026-08-30-second-story-guard.md`. It targets the one defect that survived the product
   decision: **Ketubot 62a and 105b each discard a whole second story** — R. Yochanan on
   the collapsing stair, and Mar Ukva and the spit, six clauses of narrative and dialogue
@@ -245,6 +266,17 @@ the scorer says so. Downgraded from a blocker to a cleanup once the neutral rule
 - **Harvest Jeff's 10 anchored Kiddushin remarks** (`work/2026-08-30-kiddushin-comments-harvest.md`) — each came back
   with its exact anchor position in the main text, so it attaches to the passage he was
   looking at. Several are boundary corrections. Unused.
+- **English as prompt CONTEXT — prescribed by [`PLAN-wave5`](../history/2026-08-28-PLAN-wave5.md)
+  and never executed.** Verified 2026-09-01: `_TEXT_SPAN_PROMPT_TEMPLATE` still sends the
+  summary and the Hebrew clauses only — no English, no `classification_reasoning`. ~6 lines.
+  **Know where its signal lands before spending a run on it:** English bolding predicts
+  Jeff's end-trims 6/8 and his start-trims **0/8**, so it speaks to the axis
+  `jeff:boundary-end-rule` has frozen and is uninformative on the axis that grades cleanly.
+  Worth doing after he answers, not before. Distinct from English *labelling* and the
+  cross-language check, which the Wave 5b review cut.
+- **A fuller summary is NOT untried and came back null** — Wave 5 Step 2 moved 14 of 262
+  boundaries and **0 of 35 scored targets**. Anything richer (`classification_reasoning`)
+  is a different experiment and should be run as one.
 - **A finer splitter for the 12-13%** — the only route past the measured ceiling. Nobody
   has costed it, and it may not be worth it: the reader sees the surrounding text. What is
   now known is *where* it would pay: **starts, not ends** (ends are already 95-96%
