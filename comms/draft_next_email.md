@@ -9,6 +9,55 @@ Order below is the order to ask in. Item 1 is new today.
 
 ---
 
+## 0. NEW — we ran Gittin, without looking at your list
+
+**Why it leads:** it is the first tractate we have detected that nobody here had ever
+looked at, and it is the whole point of the project — Ketubot and Kiddushin exist to make
+us good enough to do this on tractates where no list exists. Measured in
+[`gittin-first-run`](../docs/findings/2026-08-31-gittin-first-run.md).
+
+**Draft — as it would go to him:**
+
+> We ran the detector over all of Gittin (178 dapim) last night, before opening your 2005
+> list — no Gittin example was ever in the prompts, and the code that finds stories cannot
+> read your file. Then we scored ourselves against your 112 stories.
+>
+> **We found 108 of your 112.** The four we did not find as their own entry:
+>
+> - **38b** — `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` (the three things by which
+>   householders lose their property). We proposed only R. Eliezer freeing his slave for a
+>   minyan, three segments earlier.
+> - **57a** — `אשקא דריספק חריב ביתר` (the cedar and the pine, and Betar). We stopped two
+>   segments short of it, having taken Tur Malka as one story.
+> - **46b** — `פירקן…` in the sugya on redeeming a man who sold himself. We proposed the
+>   passage but may have started it in the wrong place.
+> - **57a** — the exchange with the *tzedoki* who told R. Ḥanina *"you are lying!"* about
+>   the land's fertility.
+>
+> **We also propose about 30 passages that are not on your list.** Most are a named sage
+> issuing a ruling, which is the borderline class we already owe you a policy question on.
+> Two look to us like real stories and we would value a yes or no:
+>
+> - **43a** — Rabba bar Rav Huna publicly retracts his ruling after Rav Ḥisda challenges
+>   him, and reads a verse to explain that one only truly understands a teaching after
+>   stumbling in it.
+> - **25a** — `תניא נמי הכי: מעשה, וקדמו בנות לבנים` — the children racing to Jerusalem for
+>   the Paschal offering, and the daughters arriving first.
+>
+> If you have a moment to mark those two, and to say whether the four above are stories you
+> would still list today, that is enough for us to know where we stand on a tractate you
+> have not looked at in twenty years.
+
+**Do not dress this up as 100%.** A looser matching rule scores it 112/112; that rule
+credits a proposal anywhere within a fourteen-segment window and has been shown to credit
+the wrong passage on the same daf. 108/112 is the number that survives checking each case
+by name, and it is the one to send.
+
+**Whether he marks his own additions separately no longer gates anything.** The value of
+his answer is the training signal for the tractates nobody has listed.
+
+---
+
 ## 1. NEW — Mishnah stories: one bucket, or out of the database?
 
 **Why it matters:** it decides whether four Ketubot passages are in or out, and it is

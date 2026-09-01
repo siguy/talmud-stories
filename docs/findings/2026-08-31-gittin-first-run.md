@@ -57,8 +57,20 @@ ruler's own narrowing — a segment belongs to the story if either side is mostl
 the day it is first run. It reproduces Kiddushin's banked 93.3% / 83.3% exactly, which is
 what makes the Gittin figure comparable.
 
-The four loose-only cases (Gittin 38b, 46b, 57a ×2) are named in
-`results/recall/gittin_strict.json` and need checking by name before anyone quotes 100%.
+**The four loose-only cases were checked by name on 2026-09-01, and at least two are real
+misses** — the loose window credited a neighbouring story on the same daf, exactly the
+failure mode STATUS warns about:
+
+| | the expert's story | what we proposed instead |
+|---|---|---|
+| **38b** seg 6 | `אמר רבה: בהני תלת מילי נחתי בעלי בתים מנכסיהון` | seg 3 only — R. Eliezer freeing his slave for a minyan |
+| **57a** seg 20 | `אשקא דריספק חריב ביתר` — the cedar, the pine, and Betar | segs 4-8, Tur Malka, stopping two segments short |
+| **46b** | `פירקן…`, in the redemption sugya | segs 15-17 cover the sugya; likely a start-boundary difference |
+| **57a** | the *tzedoki* telling R. Ḥanina *"you are lying!"* | nothing on that passage |
+
+So **108 of 112 is the defensible figure**, and 100% is an artifact of the aligner's
+window. Named in `results/recall/gittin_strict.json`; drafted to Jeff as §0 of
+[`draft_next_email.md`](../../comms/draft_next_email.md).
 
 **Triage lost nothing measurable:** 0 of the 112 sit on a page Stage 1 discarded, so
 Detection *given the page survived triage* equals end-to-end here. The Mishnah filter
