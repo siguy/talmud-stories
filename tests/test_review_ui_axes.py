@@ -139,7 +139,15 @@ const report = { cards: [] };
 
 STORIES.forEach((story, idx) => {
   const html = buildCard(story, idx).innerHTML;
+  // Column order and pairing, on THIS page. The symmetry test guards the
+  // English-first page; Hebrew-first is a second ordering and needs its own
+  // guard, or `cols()` could drop a language in the mode nobody tests.
+  const firstHe = html.indexOf('class="seg-he"');
+  const firstEn = html.indexOf('class="seg-en"');
   report.cards.push({
+    hebrewFirst: firstHe !== -1 && firstHe < firstEn,
+    enCells: (html.match(/class="seg-en"/g) || []).length,
+    heCells: (html.match(/class="seg-he"/g) || []).length,
     key: story.key,
     moreAxesClosed: /class="more-axes" data-role="more-axes"/.test(html),
     hasDiscloseButton: /data-role="disclose"/.test(html),
@@ -313,6 +321,18 @@ class AxisReviewUiTest(unittest.TestCase):
                           "an axis nobody touched must export null, never 'right' — "
                           "guessing residue into a bucket is the failure FRAMEWORK §7 names")
         self.assertIsNone(row['grouping'])
+
+    def test_hebrew_leads_and_still_pairs_with_the_english(self):
+        """The Hebrew is the text; the English translates it. And the reordering
+        must not become a path that emits one language without the other —
+        `tests/test_review_ui_symmetry.py` only ever sees the English-first page."""
+        for card in self.report['cards']:
+            self.assertTrue(card['hebrewFirst'],
+                            f"{card['key']}: English leads — the Hebrew is the text")
+            self.assertEqual(card['enCells'], card['heCells'],
+                             f"{card['key']}: {card['enCells']} English cells vs "
+                             f"{card['heCells']} Hebrew — the languages have diverged")
+            self.assertGreater(card['heCells'], 0, f"{card['key']}: no text rendered")
 
     # H ---------------------------------------------------------------------
     def test_H_quote_box_is_closed_until_the_extent_is_wrong(self):

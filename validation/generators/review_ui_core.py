@@ -95,6 +95,18 @@ function midWord(heb, off) {
   return BREAKERS.indexOf(a) === -1 && BREAKERS.indexOf(b) === -1;
 }
 
+// Which language leads. The Hebrew is the text; the English is a translation of
+// it, so a page built for a scholar puts the Hebrew first. The wave 4 page keeps
+// English-first deliberately: it exists to stay comparable with the page Jeff was
+// actually shown in the 2026-07-06 round, and re-laying it out would break that.
+//
+// Both cells are still emitted from ONE expression, so ordering cannot become a
+// path that drops a language.
+function cols(en, he) {
+  const hebrewFirst = (typeof HEBREW_FIRST !== 'undefined') && HEBREW_FIRST;
+  return hebrewFirst ? (he + en) : (en + he);
+}
+
 // One block of paired rows.  English and Hebrew are emitted together, from the
 // same loop iteration, over the same segment range.
 function buildGrid(segs, start, end, story, spanRangeFn) {
@@ -114,13 +126,14 @@ function buildGrid(segs, start, end, story, spanRangeFn) {
     const r = (inStory && spanRangeFn) ? spanRangeFn(story, i, heb) : [null, null];
     rows += '<div class="' + cls.join(' ') + '">'
           +   '<div class="seg-num">' + i + '</div>'
-          +   '<div class="seg-en">' + renderMarkup(seg.english || '', null, null) + '</div>'
-          +   '<div class="seg-he">' + renderMarkup(heb, r[0], r[1]) + '</div>'
+          +   cols('<div class="seg-en">' + renderMarkup(seg.english || '', null, null) + '</div>',
+                   '<div class="seg-he">' + renderMarkup(heb, r[0], r[1]) + '</div>')
           + '</div>';
   }
   return '<div class="text-block">'
        +   '<div class="seg-head"><div class="seg-num">#</div>'
-       +     '<div class="seg-en">English</div><div class="seg-he">Hebrew</div></div>'
+       +     cols('<div class="seg-en">English</div>', '<div class="seg-he">Hebrew</div>')
+       +   '</div>'
        +   rows
        + '</div>';
 }

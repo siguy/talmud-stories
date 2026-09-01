@@ -110,8 +110,10 @@ version on every verdict**. A wrong extent opens a **Hebrew quote box with a sta
 include/cut polarity**, filled by highlighting the text on the page — the field whose
 absence leaves **16 of our 70 boundary targets** `mixed` or `unclear`, because direction
 has only ever been guessed from prose. 605 banked verdicts map into the new shape with **0 unmapped**;
-both rulers rebuild **byte-identical**; all **15** injected defects fail the test that
-guards them; verified in a browser. Suite **121 → 152**.
+both rulers rebuild **byte-identical**; all **18** injected defects fail the test that
+guards them; verified in a browser. Suite **121 → 153**. The review page leads with the
+**Hebrew** — the wave 4 page keeps English-first on purpose, so it stays comparable with
+the page Jeff was actually shown.
 
 **But it buys fidelity, not throughput, and this file should stop conflating the two.**
 Four axes with progressive disclosure is click-neutral on a correct entry and costs more

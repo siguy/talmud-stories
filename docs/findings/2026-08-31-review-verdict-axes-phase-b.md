@@ -40,6 +40,20 @@ So the disclosure is **independent of axis 1**. A correct entry is one click on 
 has never been before. That case is now pinned by a test that fails if the extent axis
 is ever gated behind a `No`.
 
+## The Hebrew leads
+
+On the review page the **Hebrew is the first column** and the English second. The Hebrew
+is the text; the English is a translation of it, and a page built for a scholar should
+not put the translation first.
+
+The wave 4 page deliberately keeps **English-first**: it exists to stay comparable with
+what Jeff was actually shown in the 2026-07-06 round, and re-laying it out would break
+that comparison. Ordering is therefore one shared helper with a per-page flag, and both
+cells are still emitted from a single expression, so ordering cannot become a path that
+drops a language. `test_review_ui_symmetry.py` only ever sees the English-first page, so
+Hebrew-first has its **own** pairing guard on the axis page — 655 English cells and 655
+Hebrew cells across 547 rows, verified in the browser.
+
 ## Where the story should actually start or end
 
 The extent axis says *that* the extent is wrong. It does not say **where** it should be,
@@ -85,8 +99,8 @@ become retroactively better.
 | Correct entry stays one click | **met** — verified in the browser: one click on `Yes` produces a complete, exported verdict, with the extra axes still closed |
 | `build_ruler.py` regression checks reproduce | **met** — both rulers rebuilt **byte-identical**; Ketubot 143/149 = 96.0% and 0.879 on the 2026-03-17 round still come out |
 | Mapping covers all 8 banked rounds | **met** — **605 verdicts, 0 unmapped**, across three vocabularies |
-| Test suite | **152 passed, 1 skipped** (was 121) |
-| Node display test fails when the defect is reintroduced | **met — demonstrated, not asserted.** All **15** injected defects fail the matching test |
+| Test suite | **153 passed, 1 skipped** (was 121) |
+| Node display test fails when the defect is reintroduced | **met — demonstrated, not asserted.** All **18** injected defects fail the matching test |
 | Browser-verified on the real page | **met** — 96 cards, 0 console errors, paired EN/HE cells, export carries the detector version |
 
 ## The mapping table, and what it can and cannot recover

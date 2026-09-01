@@ -222,7 +222,7 @@ __DISPLAY_CSS__
 <div class="container">
   <div class="header">
     <h1>__TITLE__ — Story Review</h1>
-    <p>English and Hebrew are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language — the story is highlighted inside the full text.</p>
+    <p>Hebrew and English are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language — the story is highlighted inside the full text.</p>
     <div class="howto">
       <b>If an entry is right, click <span style="color:#2c7a7b">Yes</span> and move on — that is the whole review for it.</b><br>
       If something is off, use <b>“Something else is wrong”</b> to say <i>what</i>: the extent, the confidence level, or whether it should be split or merged. A passage can be a story <i>and</i> have the wrong extent — those are separate questions on purpose, because we have been unable to tell them apart and it has sent us fixing the wrong things.<br>
@@ -261,6 +261,7 @@ const STORIES = __STORIES__;
 const TRACTATE = "__TITLE__";
 const DETECTOR_VERSION = "__DETECTOR_VERSION__";
 const SCHEMA_VERSION = "__SCHEMA_VERSION__";
+const HEBREW_FIRST = true;   // the Hebrew is the text; the English translates it
 const verdicts = {};
 let activeFilter = 'all';
 
