@@ -1332,14 +1332,25 @@ Return JSON:
         if biblical:
             print(f"  Biblical-actor filter: {biblical} stories demoted")
 
-        # 4k (Wave 4): LLM-side text-span emission. No regex fallback on
-        # LLM error — see extract_text_spans_via_llm docstring.
+        # 4k (Wave 5): clause selection. The model picks a clause index and we
+        # compute the offset, so a mid-word cut is structurally impossible.
+        # No regex fallback on LLM error — see the method's docstring.
+        #
+        # This called `extract_text_spans_via_llm` until 2026-08-31 — Wave 4's
+        # char-offset mechanism, which v11 does not have (removed when Wave 5
+        # replaced it, per this module's docstring). With a client attached the
+        # pipeline raised AttributeError here, after the whole Stage 1/2/4 spend.
+        # Nothing caught it because v11 had only ever been driven by
+        # run_wave5_clause_spans.py, which calls the method directly.
+        span_counts = {'clause_llm': 0, 'clause_kept_full': 0,
+                       'no_clause_split': 0, 'skipped': 0}
         if self.client:
-            span_counts = self.extract_text_spans_via_llm(all_results)
+            span_counts = self.extract_text_spans_via_clauses(all_results)
             print(
-                "  Text-span (Wave 4): "
-                f"llm={span_counts['llm']} "
-                f"kept_full={span_counts['llm_kept_full']} "
+                "  Text-span (Wave 5 clause selection): "
+                f"llm={span_counts['clause_llm']} "
+                f"kept_full={span_counts['clause_kept_full']} "
+                f"no_split={span_counts['no_clause_split']} "
                 f"skipped={span_counts['skipped']}"
             )
         else:
@@ -1364,6 +1375,7 @@ Return JSON:
             'version': 'v10',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
+            'span_stats': span_counts,
             # Always written, including as `[]`. A key that appears only when
             # something went wrong reads as absence of the check itself.
             'span_repairs': repairs,
