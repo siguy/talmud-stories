@@ -16,7 +16,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 |---|---|---|---|---|---|---|
 | **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
 | **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Gittin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Gittin** | 100.0% · n=112 B | 100.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
@@ -29,10 +29,12 @@ capabilities compose and have separate gates; charging Triage's losses to
 Detection as well double-counts them (Lesson 35).
 
 The **end-to-end** figure — what the pipeline delivers, `triage x detection` —
-is quoted **loose / strict** from `results/rulers/`:
+is quoted **loose / strict** from `results/rulers/`, or from
+`results/recall/<t>_strict.json` for a tractate with no ruler yet:
 
 - Ketubot: **96.0% loose / 87.9% strict** on 149 stories
 - Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
+- Gittin: **100.0% loose / 96.4% strict** on 112 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -57,7 +59,7 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-01-board-reads-stale-triage
-closed     6 item(s) in work/done/
+closed     7 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -70,7 +72,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     9 item(s) in work/done/
+closed     10 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -159,4 +161,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: ac08d7dce11f8c46 -->
+<!-- board-checksum: 96b8bf8a7f0c2bc5 -->
