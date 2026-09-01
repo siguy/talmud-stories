@@ -140,7 +140,7 @@ naming an empty file as a lost round buries the one that is not.
 | slug | question |
 |---|---|
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
-| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? |
+| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? **Now with a third concrete case, 2026-09-01: Ketubot 71a, the incident of Beit Ḥoron** — a real `מעשה`, native to Nedarim, quoted here as precedent. Our detector proposes it; his 2005 list omits it. Asks the same question from the *quoted-as-precedent* side. |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
@@ -152,4 +152,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: d94eb8bcb447c784 -->
+<!-- board-checksum: 691aa8ca6fa528fd -->
