@@ -212,7 +212,7 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[triage-recall-price](work/2026-08-30-triage-recall-price.md)** — price the trade over the discarded pages. **Now the highest-value item**: Kiddushin Triage is the board's only failing cell | 1 | — | no |
+| **[triage-recall-price](work/done/2026-08-30-triage-recall-price.md)** — price the trade over the discarded pages. **Now the highest-value item**: Kiddushin Triage is the board's only failing cell | 1 | — | no |
 | **[kiddushin-comments-harvest](work/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
 | **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. Planned as step 7a | 3, 5 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
