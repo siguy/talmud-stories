@@ -4,6 +4,7 @@ capability: [triage]
 tractate: [eruvin]
 blocked_by: []
 awaiting: []
+writes: [results/triage/eruvin.json]
 finding:
 superseded_by:
 ---

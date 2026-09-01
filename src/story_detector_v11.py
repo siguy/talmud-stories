@@ -92,6 +92,78 @@ except ImportError:
     GOOGLE_AI_AVAILABLE = False
 
 
+def validate_story_spans(ref: str, stories: List[Dict], n_segments: int):
+    """
+    Every proposed span must lie inside its page. Returns `(kept, repairs)`.
+
+    THE DEFECT this closes. Stage 2 proposed `Ketubot 112b, start_segment -2,
+    end_segment 0` and nothing checked it. Python does not raise on a negative
+    index — every Stage 4 post-processor slices `segments[start:end + 1]`, so
+    `-2` silently means the second segment from the END of the page. The story
+    is then built, snapped, trimmed and displayed from the wrong text, with no
+    error anywhere. The one we caught sat on a triage-discarded page, so it
+    reached no published number; that is luck, not a property of the code.
+
+    Two rules, and the second matters as much as the first:
+
+    - **Clamp what overlaps the page, drop what does not.** A span running from
+      -2 to 0 is a real proposal with a wrong start; a span at 12..15 on a
+      10-segment page is not about this page at all, and a non-integer one has
+      no anchor to keep.
+    - **Where one end survives, keep the proposal and refuse to invent the
+      other.** `Ketubot 22a` proposes `10..0` on an 11-segment page: the start
+      is real, the end is unusable, and the summary describes a genuine story.
+      Deleting it would spend a Detection miss — the expensive kind — to avoid a
+      Boundaries error. So it becomes `10..10`, the smallest claim consistent
+      with the half the model got right, and the story is stamped
+      `needs_review` so no downstream number reads that extent as a judgment
+      (Lesson 21).
+    - **Count and name every repair.** Returned in `repairs`, stamped on the
+      story as `span_repair`, and accumulated on the detector so the run output
+      carries it. A silent clamp turns a model defect into a boundary defect
+      that scores as ours — and an unreported drop is Lesson 38's shape, where
+      an `isinstance` guard swallowed a 25-verdict expert round for eight months.
+    """
+    kept, repairs = [], []
+    last = n_segments - 1
+    for story in stories:
+        a, b = story.get('start_segment'), story.get('end_segment')
+
+        def drop(reason):
+            repairs.append({'ref': ref, 'action': 'dropped', 'reason': reason,
+                            'original': [a, b]})
+
+        # bool is an int in Python; a True start is a defect, not segment 1.
+        if any(isinstance(v, bool) or not isinstance(v, int) for v in (a, b)):
+            drop('span is not a pair of integers')
+            continue
+        if b < a:
+            if 0 <= a <= last:
+                repairs.append({'ref': ref, 'action': 'clamped',
+                                'reason': 'end_segment before start_segment; '
+                                          'collapsed to the start segment',
+                                'original': [a, b], 'repaired': [a, a]})
+                story['end_segment'] = a
+                story['span_repair'] = {'original': [a, b], 'repaired': [a, a]}
+                story['needs_review'] = True
+                kept.append(story)
+            else:
+                drop('end_segment before start_segment, and start is off the page')
+            continue
+        lo, hi = max(a, 0), min(b, last)
+        if n_segments <= 0 or hi < lo:
+            drop(f'span lies outside the page (0..{last})')
+            continue
+        if (lo, hi) != (a, b):
+            repairs.append({'ref': ref, 'action': 'clamped',
+                            'reason': f'span clamped into the page (0..{last})',
+                            'original': [a, b], 'repaired': [lo, hi]})
+            story['start_segment'], story['end_segment'] = lo, hi
+            story['span_repair'] = {'original': [a, b], 'repaired': [lo, hi]}
+        kept.append(story)
+    return kept, repairs
+
+
 class V7StoryDetector:
     """
     v7 story detection with event-annotated constrained prompt.
@@ -109,6 +181,9 @@ class V7StoryDetector:
         # results stay attributable (roadmap 5.3: pin and record model versions).
         self.thinking_level = thinking_level or os.getenv("GEMINI_THINKING_LEVEL")
         self.ground_truth_db = ground_truth_db
+        # Every span repair Stage 2 needed, across the run. Written to the output
+        # so a malformed proposal is a number someone can see, not a silence.
+        self.span_repairs: List[Dict] = []
 
         if self.api_key and GOOGLE_AI_AVAILABLE:
             self.client = genai.Client(api_key=self.api_key)
@@ -652,6 +727,16 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 if added:
                     print(f"    Iterative Stage 2: +{added} additional stories")
                 stories = merged
+
+        # Bounds check, both passes. Runs here rather than in run_pipeline so the
+        # one other caller of this method — scripts/run_triage_recall_price.py,
+        # which is where the Ketubot 112b span was found — is covered too.
+        stories, repairs = validate_story_spans(ref, stories, len(segments))
+        for r in repairs:
+            print(f"    Span {r['action']}: {ref} "
+                  f"{r['original'][0]}-{r['original'][1]} — {r['reason']}")
+        if repairs:
+            self.span_repairs = getattr(self, 'span_repairs', []) + repairs
 
         return stories
 
@@ -1278,11 +1363,20 @@ Return JSON:
         # Detect duplicates
         all_results = detect_duplicate_stories(all_results)
 
+        repairs = getattr(self, 'span_repairs', [])
+        if repairs:
+            clamped = sum(1 for r in repairs if r['action'] == 'clamped')
+            print(f"  Span validation: {clamped} clamped, "
+                  f"{len(repairs) - clamped} dropped — see `span_repairs`")
+
         return {
             'tractate': tractate,
             'version': 'v10',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
+            # Always written, including as `[]`. A key that appears only when
+            # something went wrong reads as absence of the check itself.
+            'span_repairs': repairs,
         }
 
 

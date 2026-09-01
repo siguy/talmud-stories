@@ -4,6 +4,7 @@ capability: [boundaries]
 tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: [jeff:boundary-end-rule]
+writes: [src/story_detector_v11.py, scripts/screen_end_trim_depth.py, scripts/score_boundary_targets.py, tests/test_parallel_story_rule.py, docs/capabilities/4_boundaries.md, docs/findings/2026-09-01-parallel-story-rule.md, results/v11/]
 finding: docs/findings/2026-09-01-parallel-story-rule.md
 superseded_by:
 ---

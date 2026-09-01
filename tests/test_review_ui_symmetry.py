@@ -41,10 +41,12 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -133,8 +135,18 @@ class ReviewUiSymmetryTest(unittest.TestCase):
         cls.stories = json.loads(FIXTURE.read_text())
         html = _load_generator().generate_html('Kiddushin', cls.stories)
         script = _extract_script(html) + AUDIT_JS
-        proc = subprocess.run([shutil.which('node'), '-e', script],
-                              capture_output=True, text=True, timeout=60)
+        # Via a file, not `node -e <script>`. The script is the whole display layer plus
+        # the audit harness, and passing it as an argv entry exceeded ARG_MAX in a Linux
+        # container -- five errors reading `OSError: [Errno 7] Argument list too long`,
+        # which looks like a broken repo and is really just a long argument.
+        with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False) as fh:
+            fh.write(script)
+            script_path = fh.name
+        try:
+            proc = subprocess.run([shutil.which('node'), script_path],
+                                  capture_output=True, text=True, timeout=60)
+        finally:
+            os.unlink(script_path)
         if proc.returncode != 0:
             raise AssertionError(f'display JS failed to run:\n{proc.stderr}')
         cls.audit = {r['key']: r for r in json.loads(proc.stdout)}

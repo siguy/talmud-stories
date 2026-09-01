@@ -4,6 +4,7 @@ capability: [triage]
 tractate: [yevamot]
 blocked_by: []
 awaiting: []
+writes: [results/triage/yevamot.json]
 finding:
 superseded_by:
 ---

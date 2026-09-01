@@ -18,9 +18,12 @@ from __future__ import annotations
 
 import importlib.util
 import re
+import shutil
 import subprocess
 import sys
 from pathlib import Path
+
+import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
@@ -139,7 +142,19 @@ def test_an_appendix_case_we_never_proposed_stays_in_the_denominator():
 
 
 def test_story_text_matches_an_independent_renderer():
-    """Apple's textutil and this binary reader must agree, character for character."""
+    """Apple's textutil and this binary reader must agree, character for character.
+
+    SKIPS off macOS. `textutil` is an Apple binary, so on Linux this raised
+    FileNotFoundError and no cloud or CI session could ever get a green suite -- while
+    CLAUDE.md makes a green suite the condition for stopping. A skip states the gap;
+    a hard failure on every non-Mac machine trains people to ignore the suite.
+
+    The cross-check is still real where it can run, and it is the check that caught
+    Lesson 28 (textutil silently drops table columns), so it is deliberately not deleted.
+    """
+    if shutil.which('textutil') is None:
+        pytest.skip("textutil is macOS-only; this cross-check runs on a Mac. "
+                    "Run it there before trusting a change to the .doc parser.")
     stories, _ = _kiddushin()
     raw = subprocess.run(['textutil', '-convert', 'txt', '-stdout', str(KIDDUSHIN_DOC)],
                          capture_output=True, text=True, check=True).stdout

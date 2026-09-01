@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [gittin]
 blocked_by: [2026-08-30-gittin-expert-round]
 awaiting: []
+writes: [results/canonical/gittin_canonical.json, tests/test_bookkeeping.py]
 finding:
 superseded_by:
 ---

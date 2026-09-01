@@ -4,6 +4,7 @@ capability: [review]
 tractate: [yevamot]
 blocked_by: [2026-08-30-yevamot-review-ui]
 awaiting: []
+writes: [validation/feedback/yevamot/]
 finding:
 superseded_by:
 ---

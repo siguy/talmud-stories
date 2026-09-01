@@ -90,6 +90,18 @@ are unaffected; the new rule applies to future runs.
 
 ## Distance to gate
 
+> **Read `STATE.md`'s Triage cells with this caveat until
+> [`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md) is
+> closed.** They print **98.0% / 95.6%** — the *previous* corroboration rule. The board
+> derives them from `results/recall/<t>_jeff2005_matches.json`, whose `survived_triage`
+> flag came from a run made before the `N>=1` rule shipped on 2026-08-31, so the generated
+> panel describes a rule the detector no longer uses. `board.py --check` passes: it
+> compares the generator against itself, not against the code. The values below are the
+> measured ones. Found 2026-09-01 →
+> [`board-guards-verify-the-wrong-property`](../findings/2026-09-01-board-guards-verify-the-wrong-property.md).
+> The **Detection** cells inherit the same conditioning, since they divide by the same
+> surviving set.
+
 **At the gate, exactly — and that is the problem with the gate.** 98.0% measured against
 a ≥98% bar that [`FRAMEWORK.md` §1.1](../../FRAMEWORK.md) marks PROVISIONAL and describes
 as "our current value, which is circular reasoning in a principle's clothing." The shape
@@ -152,9 +164,13 @@ versions after it shipped (v8, v9, v10, v11)
   inside scope questions already open with him, so they were added to `comms/JEFF.md` as
   **evidence under `jeff:mishnah-scope` and `jeff:speech-act-policy`**, not as new asks
   ([screen](../findings/2026-09-01-unread-proposals-screened.md)).
-- **Validate that a proposed span lies within its page.** `Ketubot 112b` proposes
-  `start_segment -2`. Reported 2026-08-31, hit again independently by the screen, still
-  unfixed. Nothing checks it anywhere in the pipeline.
+- ~~Validate that a proposed span lies within its page~~ — **done 2026-08-31**:
+  `validate_story_spans()` in `src/story_detector_v11.py`, inside `detect_stories()` so
+  both Stage 2 passes and `run_triage_recall_price.py` are covered. `Ketubot 112b`
+  (`-2..0`) is clamped; a second, previously unknown case — `Ketubot 22a` (`10..0`) —
+  collapses to its valid start and is marked `needs_review`. Every repair is written to
+  the run as `span_repairs`
+  ([finding](../findings/2026-08-31-span-bounds-and-mishnah-readers.md)).
 - **Cross-page merge misses a story re-proposed from the other side of a daf boundary.**
   Ketubot 51a and Kiddushin 58b are almost certainly Jeff's own entries proposed again
   from the adjacent daf — they inflate any raw count of "new" proposals.

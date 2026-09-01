@@ -15,7 +15,14 @@ Detect narrative stories in Talmud text using LLM classification. Expert validat
    by someone who had not read the record.
 3. **Start work by copying [`work/_TEMPLATE.md`](work/_TEMPLATE.md)** to
    `work/<today>-<slug>.md`. Never invent a numbering scheme; the counter is what
-   collided four ways on 2026-08-30.
+   collided four ways on 2026-08-30. **Fill in `writes:`** — the paths the item will
+   modify. `blocked_by` says what must finish *first*; `writes:` is the only thing that
+   says what cannot run *beside* it, and they are different graphs.
+3b. **Before running anything concurrently, `python3 scripts/board.py lanes`.** It groups
+   open items so two items in different lanes never write a common path. **The lane count
+   is how many sessions the work supports — not the unblocked-item count**, and it is
+   always the smaller number. Do not guess it from `STATE.md`: items that file lists side
+   by side as ready have been found writing the same golden.
 4. **Finish** by adding `## Outcome` — including *why*, especially for a revert — then
    `python3 scripts/board.py finish <slug>`. It refuses without an Outcome, re-roots the
    item's relative links (they break one level deeper, which is where done items live),
@@ -28,8 +35,23 @@ Read [`FRAMEWORK.md`](FRAMEWORK.md) for how each capability is measured and why 
 is what it is. Use its language: capability names, BLIND vs CIRCULAR on every dataset, and
 measured / indicated / suspected on every finding.
 
-**Fresh clone:** `git config core.hooksPath .githooks` once, so the pre-commit guard on
-the immutable harness is active. The same check is in the test suite either way.
+**Fresh clone:** `pip install -r requirements.txt && python3 scripts/board.py setup`.
+`setup` is idempotent and wires two things that cannot travel in a commit: the pre-commit
+guard on the immutable harness, and the merge drivers that regenerate `STATE.md` /
+`WORK.md` instead of merging them. Without it those two files conflict on **every** pair
+of concurrent branches — for no information, since a generated file's correct content is
+never a blend of two sides. The same checks are in the test suite either way.
+*A clone was found on 2026-08-31 with `core.hooksPath` unset: the guard this file calls
+active was not active. One command, so there is nothing to remember but the one.*
+
+**Concurrency, in one line:** each session takes **one lane** (`board.py lanes`), works on
+`work/<slug>`, and **does not rewrite `STATUS.md`** — that is an integration step done
+once on main after merging, not a thing each branch does, because it is hand-written and
+"rewritten every session" means two sessions always conflict over the whole file.
+Merging several branches back, or recovering a worktree that was never pushed:
+[`docs/technical/integrating-concurrent-work.md`](docs/technical/integrating-concurrent-work.md).
+**Capture before you integrate** — a commit is recoverable forever, an uncommitted working
+tree is one `git checkout` from gone, and `git checkout` is step one of every merge.
 
 ## Current State
 Do not restate status here; this file is about *how to work in the repo*, not where we
@@ -72,10 +94,18 @@ When flattening stories, MUST copy: page_segments: page.segments
 ```
 
 `stories[]` is not the whole output. Stage 4g moves Mishnah-internal stories to
-`mishnah_stories[]`, and no harness or UI reads that key — a withheld story therefore
-scores as a story we never found (4 of Ketubot's 15 golden false negatives; Lesson 27).
-Any code that reads a run for scoring or display must decide about that key explicitly.
-Report it with `scripts/report_mishnah_filter_delta.py` before trusting a golden number.
+`mishnah_stories[]`. A reader blind to that key scores a withheld story as one we never
+found (4 of Ketubot's 15 golden false negatives; Lesson 27). **Any code that reads a run
+for scoring or display must decide about that key explicitly** — and say which way, in a
+comment, so the next reader can tell a decision from an oversight. Who reads it today:
+
+| reader | decision |
+|---|---|
+| `measure_recall_vs_expert_list.py` | reads it, reports withheld **separately**, never in the headline |
+| `score_boundary_targets.py` | reads it; a target on a withheld story scores **`WITHHELD`**, not `N/A` |
+| `build_ruler.py` | deliberately does **not** fold it into `proposed` — found-then-dropped ≠ never found |
+| `generate_axis_review_ui.py` | shows it, **badged** and filterable |
+| `evaluate_golden.py` | **blind, and immutable.** Its Mishnah delta comes from `report_mishnah_filter_delta.py`, which scores twice through the same harness. Run it before trusting a golden number |
 
 ## Running the Detector on a New Tractate
 See `docs/technical/new_tractate_workflow.md` for the step-by-step guide.
@@ -228,6 +258,8 @@ archive/                          # Old versions (reference only)
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
 | `tests/test_examine_all_pages.py` | **Failure-injection guard** — bypassing Stage 1 must not fabricate its output. Pins that the flag only ever *adds* pages, that labels are identical with and without it, and that v7-v10 keep the stub so the archived ablation stays reproducible |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
+| `tests/test_board_reports_what_it_holds.py` | **The board must report what an artifact HOLDS**, not what its loader recognised. Pins that every expert list gets its own row (two Kiddushin files collided on a key and the blind list was silently overwritten), that a comment harvest is sized in remarks and never as `0 parsed`, that an unrecognised shape is **named with its keys** rather than sized at zero, that the board's count-for-recall equals the harness filter *and* the ruler denominator, and that a verdict with a null type but a note still counts |
+| `docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md` | **Why `board.py --check` passing means less than it looks.** Three defects behind a green check; the STATE/code triage disagreement is still open |
 | `lessons/` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
@@ -269,6 +301,9 @@ When making changes, update these files as relevant:
 - Act on an ablation's **endpoints** — "as-is" vs "off" — without sweeping the rules between them (Lesson 37). Once the "off" run exists every intermediate rule is a free re-partition of results you already hold, and the good deal is rarely at either end: on triage, the first step inside the interval was **28x cheaper** than turning the filter off
 - Ship the best row of a sweep without saying whether it is a **principled boundary or a tuned threshold** (Lesson 37, Lesson 18). `N>=1` = "any evidence at all" and shipped; `V>=4` fitted one story in one tractate and was rejected *with a test pinning the rejection*
 - Let a loader `continue` past an input it does not recognise without **counting and naming** what it dropped (Lesson 38) — an `isinstance` guard hid a signed 25-verdict expert round for eight months, and the file was listed in `STATE.md` the whole time. Absence is quiet; nobody investigates a zero
+- Trust `board.py --check` as evidence that `STATE.md` is **true**. It verifies that STATE.md matches what `board.py` computed — if the generator misreads an artifact it misreads it identically on both sides and the check passes. It is a guard against hand edits and nothing else. **Right now its Triage cells describe the superseded corroboration rule** (`work/2026-09-01-board-reads-stale-triage.md`); read the caveat in `docs/capabilities/1_triage.md` before quoting them
+- Key a dict by a **prefix of a filename** (`f.stem.split("_")[0]`). `kiddushin_2005` and `kiddushin_comments_harvested` both key to `kiddushin`, and the second silently overwrote the first — so `STATE.md`'s ground-truth table showed a row of zeros *instead of* the 90-story Kiddushin blind list, for as long as both files existed
+- Count an expert verdict by whether its judgement field is **truthy**. Jeff's most informative Ketubot 17a verdict carries `feedback_type: null` plus a note quoting the Hebrew of the story he says the excerpt contains — declining the dropdown and answering in prose is a verdict, not an absence (Lesson 38's shape, reproduced inside the fix written for Lesson 38)
 - List artifacts in an inventory **without their size**. Three filenames with no counts read as backlog; "**25 verdicts**" beside one of them reads as a problem (Lesson 38)
 - Join a verdict to a proposal on an **exact `(ref, start, end)` key** — a later version re-bounding the same story then reads as the story having been deleted (Lesson 36). Match by overlap
 - Gate the **extent / confidence / grouping** axes of the review UI behind a `No` on "is it a story". A passage can be a story *and* be mis-bounded — that is what `adjust` meant, and it is the commonest correction Jeff gives us. A test fails if this regresses

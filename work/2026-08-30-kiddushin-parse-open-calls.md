@@ -4,6 +4,7 @@ capability: [detection]
 tractate: [kiddushin]
 blocked_by: []
 awaiting: [jeff:appendix-separate]
+writes: [results/expert_lists/kiddushin_2005.json, scripts/check_appendix_coverage.py]
 finding:
 superseded_by:
 ---

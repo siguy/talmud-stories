@@ -8,6 +8,9 @@ two places and let them drift (FRAMEWORK said the golden was both 182 and 187).
 
     python3 scripts/board.py                 # regenerate both
     python3 scripts/board.py --check         # exit 1 if either is stale (for CI/tests)
+    python3 scripts/board.py lanes           # what can safely run at the same time
+    python3 scripts/board.py setup           # one-time per clone: hooks + merge driver
+    python3 scripts/board.py capture         # push every worktree's uncommitted work
     python3 scripts/board.py new-tractate gittin
 
 REFUSES TO OVERWRITE A HAND-EDIT. Each generated file embeds a checksum of its own body.
@@ -97,7 +100,27 @@ def rulers() -> dict[str, dict]:
 
 
 def expert_lists() -> dict[str, dict]:
-    """Blind story lists, counted by their own flags — never by raw length (Lesson 29)."""
+    """
+    Expert ground truth on disk, each row sized in ITS OWN units.
+
+    Two shapes live in this directory and they are not interchangeable:
+
+    - a **story list** (`stories[]`), counted by its own `blind` / `counts_for_recall`
+      flags and never by raw length (Lesson 29);
+    - a **comment harvest** (`remarks[]`) — Jeff's anchored marginal remarks, sorted onto
+      the axes. It has no `stories` key at all.
+
+    Reading `d.get("stories", [])` for both printed
+    `kiddushin_comments_harvested.json` as **0 parsed · 0 blind · 0 count for recall** in
+    a table headed BLIND — i.e. as a ground-truth file holding nothing, when it holds 11
+    sentence-level remarks including the 2005 margin note that retired an open question
+    with Jeff without our having to spend one of his answers on it.
+
+    Zero because the file is empty and zero because this function did not recognise the
+    file are different facts and must print as different facts (Lesson 38). An unknown
+    shape is named with its keys rather than sized at zero, so it reads as *unclassified*
+    and not as *absent*.
+    """
     out = {}
     p = ROOT / "results/expert_lists"
     if not p.exists():
@@ -106,14 +129,53 @@ def expert_lists() -> dict[str, dict]:
         d = load_json(str(f.relative_to(ROOT)))
         if not isinstance(d, dict):
             continue
-        stories = d.get("stories", [])
-        out[f.stem.split("_")[0]] = {
-            "parsed": len(stories),
-            "blind": sum(1 for s in stories if s.get("blind")),
-            "counts_for_recall": sum(1 for s in stories if s.get("counts_for_recall", s.get("blind"))),
-            "path": str(f.relative_to(ROOT)),
-        }
+        row = {"path": str(f.relative_to(ROOT))}
+        if "stories" in d:
+            # The same two filters `measure_recall_vs_expert_list.load_expert()` applies:
+            # drop the duplicate first, THEN count the flags. Counting flags over the raw
+            # list prints 91 where the harness's denominator is 90 — the board and the
+            # harness must not disagree about the size of the same set.
+            #
+            # Found twice independently, which is worth recording. #6 found it by noticing
+            # that this generated cell said 91 while STATUS.md, the ruler and
+            # tests/test_kiddushin_list_parse.py all said 90 — `kiddushin_050` is one story
+            # listed twice. #17 found it by re-deriving the denominator from the harness.
+            # The generated file was the wrong one both times, which is the whole argument
+            # for having exactly one of them. #6 applied the filter to `counts_for_recall`
+            # alone; it belongs to `parsed` and `blind` too, so it is applied once, here.
+            stories = [s for s in d["stories"] if s.get("duplicate_of") is None]
+            row |= {
+                "shape": "story_list",
+                "parsed": len(stories),
+                "blind": sum(1 for s in stories if s.get("blind")),
+                "counts_for_recall": sum(
+                    1 for s in stories if s.get("counts_for_recall", s.get("blind"))),
+                "duplicates_dropped": len(d["stories"]) - len(stories),
+            }
+        elif "remarks" in d:
+            row |= {
+                "shape": "comment_harvest",
+                "remarks": len(d["remarks"]),
+                "comments": d.get("comments"),
+            }
+        else:
+            row |= {"shape": "unrecognised", "keys": sorted(d)[:6]}
+        out[f.stem] = row
     return out
+
+
+def _expert_list_size(d: dict) -> str:
+    """The size cell for one expert-list row, in the units that row actually has."""
+    if d["shape"] == "story_list":
+        dup = f" ({d['duplicates_dropped']} duplicate dropped)" if d.get("duplicates_dropped") else ""
+        return (f"{d['parsed']} parsed{dup} · {d['blind']} blind "
+                f"· {d['counts_for_recall']} count for recall")
+    if d["shape"] == "comment_harvest":
+        n = d["remarks"]
+        src = f" from {d['comments']} comments" if d.get("comments") else ""
+        return f"**{n} anchored remarks**{src} — not a story list, carries no recall denominator"
+    return ("**shape not recognised by `board.py`** — top-level keys: "
+            + ", ".join(f"`{k}`" for k in d["keys"]))
 
 
 def items() -> list[dict]:
@@ -134,9 +196,101 @@ def items() -> list[dict]:
                 "title": fm.get("title", f.stem),
                 "capability": listy("capability"), "tractate": listy("tractate"),
                 "blocked_by": listy("blocked_by"), "awaiting": listy("awaiting"),
+                "writes": listy("writes"),
                 "finding": fm.get("finding", "").strip(),
             })
     return out
+
+
+# ------------------------------------------------- contention (not ordering)
+
+def overlap(a: list[str], b: list[str]) -> list[str]:
+    """Paths two items both write. A trailing `/` means the whole subtree.
+
+    `blocked_by` is the ORDERING graph. This is the CONTENTION graph, and they are not
+    the same: two items with no ordering relation between them are shown as concurrently
+    runnable whether or not they write the same file. Six such pairs existed among the
+    items runnable on 2026-08-31, four of them recommended together as the cheapest next
+    steps.
+    """
+    hits = set()
+    for x in a:
+        for y in b:
+            if x == y or x.startswith(y.rstrip("/") + "/") or y.startswith(x.rstrip("/") + "/"):
+                hits.add(x if len(x) >= len(y) else y)
+    return sorted(hits)
+
+
+def collisions(its: list[dict]) -> list[tuple[str, str, list[str]]]:
+    """Every pair of OPEN items that write a common path, with the paths."""
+    import itertools
+    open_items = [i for i in its if not i["done"]]
+    out = []
+    for a, b in itertools.combinations(sorted(open_items, key=lambda x: x["slug"]), 2):
+        shared = overlap(a["writes"], b["writes"])
+        if shared:
+            out.append((a["slug"], b["slug"], shared))
+    return out
+
+
+def lanes(its: list[dict]) -> list[list[str]]:
+    """Group open items so that two items in DIFFERENT lanes never write a common path.
+
+    Connected components of the contention graph. A lane runs serially; lanes run in
+    parallel. This is the number of concurrent sessions the work actually supports --
+    which is not the number of unblocked items, and never has been.
+    """
+    open_items = sorted([i for i in its if not i["done"]], key=lambda x: x["slug"])
+    parent = {i["slug"]: i["slug"] for i in open_items}
+
+    def find(x):
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]; x = parent[x]
+        return x
+
+    for a, b, _ in collisions(its):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+    groups: dict[str, list[str]] = {}
+    for i in open_items:
+        groups.setdefault(find(i["slug"]), []).append(i["slug"])
+    return sorted(groups.values(), key=lambda g: (-len(g), g[0]))
+
+
+def report_lanes() -> int:
+    """Print the contention graph. Non-zero exit means at least one pair collides --
+    which is information, not a failure: it says those two need one lane, not two."""
+    its = items()
+    cols = collisions(its)
+    undeclared = [i["slug"] for i in its if not i["done"] and not i["writes"]]
+    ls = lanes(its)
+
+    print(f"{len([i for i in its if not i['done']])} open items -> "
+          f"{len(ls)} lane(s) that can run concurrently\n")
+    for n, g in enumerate(ls, 1):
+        tag = "SERIAL" if len(g) > 1 else "alone "
+        print(f"  lane {n:>2} [{tag}] {len(g)} item(s)")
+        for s in g:
+            print(f"              {s}")
+    if cols:
+        # Grouped by the contended path, not by pair: 39 pairs is unreadable and, more to
+        # the point, six of them are one file. The path is the thing you act on.
+        by_path: dict[str, set[str]] = {}
+        for a, b, shared in cols:
+            for p in shared:
+                by_path.setdefault(p, set()).update((a, b))
+        print(f"\n{len(cols)} colliding pair(s) over {len(by_path)} contended path(s):\n")
+        for p, slugs in sorted(by_path.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+            print(f"  {p}   <- {len(slugs)} items")
+            for s in sorted(slugs):
+                print(f"      {s}")
+            print()
+    if undeclared:
+        print(f"{len(undeclared)} open item(s) declare no `writes:` -- their collisions "
+              f"CANNOT be seen:\n  " + "\n  ".join(undeclared))
+        return 1
+    return 0
 
 
 def worktrees() -> list[dict]:
@@ -294,8 +448,8 @@ def render_state() -> str:
 
     L += ["## Ground truth on hand", "", "| dataset | kind | size |", "|---|---|---|"]
     for t, d in sorted(el.items()):
-        L.append(f"| `{d['path']}` | **BLIND** | {d['parsed']} parsed · {d['blind']} blind "
-                 f"· {d['counts_for_recall']} count for recall |")
+        kind = "**BLIND**" if d["shape"] != "unrecognised" else "**UNKNOWN**"
+        L.append(f"| `{d['path']}` | {kind} | {_expert_list_size(d)} |")
     for t, d in sorted(gl.items()):
         L.append(f"| `results/canonical/{t}_canonical.json` | **CIRCULAR** | {d['pages']} pages "
                  f"· {d['entries']} entries · {d['accepted']} accepted |")
@@ -362,11 +516,36 @@ def _verdict_count(path) -> int:
     items = data.get("reviews") or data.get("feedback") or data.get("validations")
     if isinstance(items, dict):
         return sum(1 for v in items.values()
-                   if isinstance(v, dict) and v.get("verdict"))
+                   if isinstance(v, dict) and _is_verdict(v))
     if isinstance(items, list):
-        return sum(1 for v in items
-                   if isinstance(v, dict) and v.get("feedback_type"))
+        return sum(1 for v in items if isinstance(v, dict) and _is_verdict(v))
     return 0
+
+
+# The keys a round uses to carry the expert's judgement. A round is one of ours if it
+# has ANY of them — the vocabularies differ per round and are mapped by
+# `scripts/map_verdict_vocabularies.py`, not by this counter.
+VERDICT_KEYS = ("verdict", "feedback_type", "is_story", "classification")
+
+
+def _is_verdict(v: dict) -> bool:
+    """
+    An entry Jeff actually ruled on — counted by whether it carries a judgement FIELD,
+    not by whether that field is truthy.
+
+    Counting `v.get("feedback_type")` truthily dropped the 2026-01-08 round's **Ketubot
+    17a** — `feedback_type: null` with a 300-character note in which he states the English
+    and Aramaic do not correlate and then *quotes the Hebrew of the story the excerpt
+    contains*. So the single richest verdict in the round was the one the inventory could
+    not see, and this function's own docstring said "25 real verdicts" three lines above
+    the code that printed 24.
+
+    A null verdict with a note is not an absent verdict. It is an expert declining the
+    dropdown and answering in prose, which is the most informative thing he does
+    (Lesson 38: absence is quiet — an entry skipped without a count is indistinguishable
+    from one that was never there).
+    """
+    return any(k in v for k in VERDICT_KEYS) or bool(v.get("notes"))
 
 
 def unfolded_verdict_files() -> list[tuple[str, int]]:
@@ -517,11 +696,57 @@ def new_tractate(name: str) -> None:
 
 
 def reroot_links(text: str) -> str:
-    """Rewrite `](../x)` to `](../../x)` for a file moving one directory deeper.
+    """Rewrite links *out of* an item moving from `work/` into `work/done/`.
 
-    Already-deeper links (`../../`) are left alone, so running this twice is safe.
+    Three shapes move, and all three used to break:
+
+    - `](../x)`        -> `](../../x)`   — out of work/ entirely
+    - `](sibling.md)`  -> `](../sibling.md)`  — a still-open item, one level up now
+    - `](done/x.md)`   -> `](x.md)`      — an already-finished item, now a sibling
+
+    Only the first was handled. An item that cited a sibling item — which is the normal
+    way to say "the rest of this is that item's territory" — broke that link at the moment
+    of finishing, and `finish`'s own docstring claimed links "run BOTH ways and both are
+    handled". That is Lesson 31's shape again at one remove: the guard existed, the
+    docstring overclaimed, and the case nobody had written yet was the one that broke.
+    Caught by `test_bookkeeping.py::test_no_markdown_link_is_broken` on 2026-09-01, on the
+    first item to link a sibling.
+
+    Rewritten in ONE pass, deliberately. Written as three sequential `re.sub` calls, the
+    `done/x.md` rule strips the prefix and the bare-sibling rule then re-adds `../` to the
+    result — each rule correct alone, wrong in composition. Every link must be considered
+    exactly once.
+
+    **Not idempotent, and it cannot be.** `../x` and `done/x.md` are safe to re-run, but a
+    bare sibling is not: once rewritten to `../sibling.md` it is indistinguishable from a
+    link that legitimately points one level up, so a second pass would deepen it again.
+    The predecessor was idempotent and this docstring said so; keeping the claim after
+    adding a rule that breaks it is how a docstring starts lying. `finish` applies this
+    exactly once, as the file moves — after which the source path no longer exists, so
+    there is no second application to defend against. Do not call it from anywhere else.
     """
-    return re.sub(r"\]\((\.\./)(?!\.\./)", r"](../../", text)
+    def one(m: re.Match) -> str:
+        target = m.group(1)
+        if target.startswith("#") or "://" in target:
+            # A same-page anchor, or an external URL. Neither is ours to move — and the
+            # anchor only became reachable here once the pattern stopped excluding `#`,
+            # so that it could keep re-rooting non-markdown paths.
+            return m.group(0)
+        if target.startswith("../"):
+            # Out of work/ entirely — one level deeper now. `../../` is already correct.
+            # NOT restricted to .md: items link `../results/...json` and `../scripts/...py`,
+            # and narrowing this rule to markdown broke exactly those (caught by
+            # test_every_open_item_would_survive_being_closed, 2026-09-01).
+            return m.group(0) if target.startswith("../../") else f"](../{target})"
+        if target.startswith("done/") and target.count("/") == 1:
+            # An already-finished item: a sibling once we are inside work/done/.
+            return f"]({target[len('done/'):]})"
+        if "/" not in target and not target.startswith("."):
+            # A still-open sibling in work/, now one level up.
+            return f"](../{target})"
+        return m.group(0)
+
+    return re.sub(r"\]\(([^)\s]+)\)", one, text)
 
 
 def reroot_inbound(text: str, linking_file: str, slug: str) -> str:
@@ -590,6 +815,62 @@ def fix_inbound_links(slug: str) -> list[str]:
     return changed
 
 
+# Paths every item touches by construction, which therefore cannot indicate contention:
+# the generated board (auto-resolved by the merge drivers), and the dated-slug files whose
+# names cannot collide because nobody has to agree on them.
+UNCONTENDED = ("STATE.md", "WORK.md", "docs/findings/", "lessons/", "work/")
+
+
+def declared_vs_actual(slug: str) -> tuple[list[str], list[str]]:
+    """What the item SAID it would write, against what the branch actually changed.
+
+    `writes:` is filled in when an item is opened -- before the work is done, by whoever
+    is opening it. Lesson 34 is precisely about such a field: a person who does not know
+    a value leaves it blank, and an LLM session produces a confident, plausible, wrong
+    one. A blank gets investigated; a confident wrong value does not.
+
+    So the field has to be grounded against something. git is the only thing that knows
+    what a branch really touched, and `finish` is the moment it knows it.
+
+    Measured on the first item ever to carry the field: it under-declared 8 paths, one of
+    which (tests/test_review_ui_symmetry.py) collides with `review-verdict-axes` -- an
+    item the lane map printed as safe to run concurrently at that exact moment.
+    """
+    base = sh("git", "merge-base", "main", "HEAD")
+    if not base:
+        return [], []
+    actual = [f for f in sh("git", "diff", "--name-only", f"{base}..HEAD").split("\n") if f]
+    declared = next((i["writes"] for i in items() if i["slug"] == slug), [])
+    missed = sorted(f for f in actual
+                    if not f.startswith(UNCONTENDED)
+                    and not any(overlap([f], [d]) for d in declared))
+    unused = sorted(d for d in declared if not any(overlap([f], [d]) for f in actual))
+    return missed, unused
+
+
+def report_declaration_drift(slug: str) -> list[tuple[str, list[str]]]:
+    """Print how the declaration diverged, and return the collisions it hid."""
+    missed, unused = declared_vs_actual(slug)
+    if not missed and not unused:
+        return []
+    if missed:
+        print(f"\n  `writes:` under-declared {len(missed)} path(s) actually changed:")
+        for m in missed:
+            print(f"      + {m}")
+    if unused:
+        print(f"\n  declared but never touched (harmless -- costs a serialized lane):")
+        for u in unused:
+            print(f"      - {u}")
+    hidden = []
+    for i in items():
+        if i["done"] or i["slug"] == slug:
+            continue
+        shared = overlap(missed, i["writes"])
+        if shared:
+            hidden.append((i["slug"], shared))
+    return hidden
+
+
 def finish(slug: str) -> None:
     """Close an item: rewrite its relative links, then git mv it into work/done/.
 
@@ -634,13 +915,197 @@ def finish(slug: str) -> None:
     n = len(re.findall(r"\]\(\.\./(?!\.\./)", text))
     print(f"closed work/{slug}.md -> work/done/{slug}.md" + (f" ({n} links re-rooted)" if n else ""))
 
+    # Ground the declaration against what the branch really did. This is the only moment
+    # the truth is knowable, and an unchecked `writes:` is worse than none: it licenses
+    # the confidence that two items are safe to run side by side.
+    for other, shared in report_declaration_drift(slug):
+        print(f"\n  !! an undeclared path collides with an OPEN item: {other}")
+        print(f"     on: {', '.join(shared)}")
+        print(f"     Anyone told those two were in different lanes was told wrong.")
+        print(f"     Add these paths to `writes:` in work/done/{slug}.md before merging,")
+        print(f"     so the next session's lane graph is right.")
+
+
+def merge_driver(name: str, dest: str) -> int:
+    """Resolve a conflict on a generated file by regenerating it.
+
+    git hands a merge driver the two sides and wants the answer written to %A. For
+    STATE.md and WORK.md the answer is never a blend of the two sides: it is whatever
+    board.py produces from the merged inputs. So ignore both sides and regenerate.
+
+    `%P` (the path being merged) would let one driver serve both files, but it needs git
+    >= 2.44 and this repo has run on 2.43. The filename is passed explicitly instead.
+    """
+    write(ROOT / "STATE.md", render_state(), force=True, check=False)
+    write(ROOT / "WORK.md", render_work(), force=True, check=False)
+    Path(dest).write_text((ROOT / name).read_text())
+    return 0
+
+
+# Filenames that must never be swept into a WIP commit. Deliberately high-precision:
+# a false positive here blocks a capture under time pressure, which is the one moment you
+# cannot afford a tool arguing with you. Found by testing `capture` end to end -- a worktree
+# branched before .gitignore gained `.env` had the secret committed AND PUSHED, and a
+# pushed secret is in history forever. The ignored-file warning could not see it, because
+# the whole problem is that it was not ignored.
+SENSITIVE_NAMES = {"id_rsa", "id_ed25519", ".netrc", "credentials.json",
+                   "service-account.json", ".npmrc", ".pypirc"}
+SENSITIVE_SUFFIX = (".pem", ".key", ".p12", ".pfx", ".keystore")
+
+
+def sensitive(paths: list[str]) -> list[str]:
+    out = []
+    for f in paths:
+        base = Path(f).name
+        if (base in SENSITIVE_NAMES or base == ".env" or base.startswith(".env.")
+                or base.endswith(SENSITIVE_SUFFIX)):
+            out.append(f)
+    return sorted(out)
+
+
+def capture(go: bool) -> int:
+    """Commit and push every worktree's uncommitted work, on a branch of its own.
+
+    THE ORDERING IS THE POINT. A commit is recoverable forever, even a broken one on a
+    dead branch. An uncommitted working tree is one `git checkout` from gone -- and
+    `git checkout` is step one of every merge you are about to do. So capture everything
+    before integrating anything.
+
+    This exists as a command rather than a documented procedure because this repo has
+    already run the experiment. `git config core.hooksPath .githooks` was documented as a
+    one-line fresh-clone step in 9be0586, and on 2026-08-31 a clone was found with it
+    unset -- the guard CLAUDE.md called active was not active. A five-command procedure,
+    to be run correctly in three worktrees, under time pressure, with unpushed work at
+    stake, is not going to fare better than the one-command one did.
+
+    Deliberately NOT tidy: no squashing, no fixing the failing test, no resolving
+    anything. A messy commit that exists beats a clean one that does not.
+    """
+    wts = worktrees()
+    print(f"{len(wts)} worktree(s).\n")
+    todo, blocked = [], []
+    for w in wts:
+        path, branch = w["path"], w.get("branch", "(detached)")
+        dirty = subprocess.run(["git", "status", "--porcelain", "--untracked-files=all"],
+                               cwd=path, capture_output=True, text=True).stdout.strip()
+        files = [l for l in dirty.split("\n") if l.strip()]
+        # Ignored-but-present files are what `git add -A` silently leaves behind. They are
+        # ignored on purpose most of the time and irreplaceable the rest of the time, so
+        # they are reported and never committed.
+        ign = [l for l in subprocess.run(
+            ["git", "status", "--porcelain", "--ignored=matching", "--untracked-files=no"],
+            cwd=path, capture_output=True, text=True).stdout.split("\n") if l.startswith("!!")]
+        name = Path(path).name
+        if not files:
+            print(f"  clean    {name}  [{branch}]")
+            continue
+        # Re-running must be safe and additive. Someone WILL run this twice -- it is the
+        # command you reach for when you are unsure whether you already ran it, and the
+        # first version failed with "a branch named ... already exists", which under time
+        # pressure reads as "capture is broken" rather than "capture already happened".
+        cur = subprocess.run(["git", "branch", "--show-current"], cwd=path,
+                             capture_output=True, text=True).stdout.strip()
+        if cur.startswith("wip/"):
+            wip = cur                       # already captured once; add to the same branch
+        else:
+            stem = f"wip/{name}-{sh('date', '+%m%d') or 'capture'}"
+            wip, n = stem, 2
+            while subprocess.run(["git", "rev-parse", "--verify", "-q", wip], cwd=path,
+                                 capture_output=True).returncode == 0:
+                wip, n = f"{stem}-{n}", n + 1
+        print(f"  DIRTY    {name}  [{branch}]  {len(files)} file(s) -> {wip}")
+        for l in files[:6]:
+            print(f"               {l}")
+        if len(files) > 6:
+            print(f"               ... and {len(files) - 6} more")
+        if ign:
+            print(f"           !! {len(ign)} IGNORED file(s) present -- `git add -A` will NOT")
+            print(f"              take these. Copy anything you need outside the repo first:")
+            for l in ign[:4]:
+                print(f"               {l}")
+        secret = sensitive([l[3:].strip().strip('"') for l in files])
+        if secret:
+            print(f"           !! REFUSING: `git add -A` would commit and PUSH these:")
+            for s in secret:
+                print(f"               {s}")
+            print(f"              A pushed secret is in history forever. Add them to")
+            print(f"              .gitignore or move them out of the repo, then re-run.")
+            blocked.append(name)
+            continue
+        todo.append((path, wip))
+
+    if blocked:
+        print(f"\n{len(blocked)} worktree(s) BLOCKED on a credential-shaped file: "
+              f"{', '.join(blocked)}")
+        print("Nothing was committed anywhere. Resolve those, then re-run.")
+        return 1
+    if not todo:
+        print("\nNothing to capture.")
+        return 0
+    if not go:
+        print(f"\nDRY RUN. {len(todo)} worktree(s) would be branched, committed and pushed.")
+        print("Re-run with `board.py capture --go` to do it.")
+        return 0
+
+    stamp_ = sh("date", "+%F")
+    for path, wip in todo:
+        print(f"\ncapturing {Path(path).name} -> {wip}")
+        cur = subprocess.run(["git", "branch", "--show-current"], cwd=path,
+                             capture_output=True, text=True).stdout.strip()
+        steps = ([] if cur == wip else [["git", "checkout", "-b", wip]])
+        for args in (*steps,
+                     ["git", "add", "-A"],
+                     ["git", "commit", "-m", f"WIP capture: {Path(path).name}, "
+                      f"uncommitted state at {stamp_}"],
+                     ["git", "push", "-u", "origin", "HEAD"]):
+            r = subprocess.run(args, cwd=path, capture_output=True, text=True)
+            if r.returncode != 0:
+                print(f"  FAILED: {' '.join(args)}\n  {r.stderr.strip()}")
+                print("  STOPPING. Nothing after this point ran; nothing was lost.")
+                return 1
+            print(f"  ok  {' '.join(args[:3])}")
+    print("\nAll captured and pushed. Now safe to merge, rebase and checkout.")
+    return 0
+
+
+def setup() -> int:
+    """One-time per-clone wiring. Idempotent, so running it again is free.
+
+    Two things need per-clone git config, and neither travels in a commit:
+
+      core.hooksPath        the pre-commit guard on the immutable harness
+      merge.board.driver    regenerate STATE.md / WORK.md instead of merging them
+
+    They are done together deliberately. A fresh clone previously needed one remembered
+    command and now needs one remembered command; adding a *second* setup step is how a
+    setup step stops being run at all. On 2026-08-31 a clone was found with
+    `core.hooksPath` unset -- the guard CLAUDE.md calls active was not active.
+    """
+    ok = True
+    for k, v in (("core.hooksPath", ".githooks"),
+                 ("merge.board-state.name", "regenerate STATE.md"),
+                 ("merge.board-state.driver", "python3 scripts/board.py merge-driver STATE.md %A"),
+                 ("merge.board-work.name", "regenerate WORK.md"),
+                 ("merge.board-work.driver", "python3 scripts/board.py merge-driver WORK.md %A")):
+        r = subprocess.run(["git", "config", k, v], cwd=ROOT, capture_output=True, text=True)
+        if r.returncode != 0:
+            print(f"  FAILED  git config {k}: {r.stderr.strip()}"); ok = False
+        else:
+            print(f"  set     {k} = {v}")
+    print("\nboard merge driver and hooks path registered." if ok else "\nsetup incomplete.")
+    return 0 if ok else 1
+
 
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("command", nargs="?", default="generate")
-    ap.add_argument("tractate", nargs="?", help="tractate name, or item slug for `finish`")
+    ap.add_argument("tractate", nargs="?", help="tractate name, item slug for `finish`, "
+                                                "or generated filename for `merge-driver`")
+    ap.add_argument("dest", nargs="?", help="merge-driver only: the path git wants written")
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--go", action="store_true",
+                    help="capture only: actually commit and push (default is a dry run)")
     a = ap.parse_args()
 
     if a.command == "finish":
@@ -654,6 +1119,28 @@ def main() -> int:
             print("usage: board.py new-tractate <name>"); return 1
         new_tractate(a.tractate)
         return 0
+
+    if a.command == "lanes":
+        try:
+            return report_lanes()
+        except BrokenPipeError:
+            # `board.py lanes | head` is the obvious way to read this, and an unhandled
+            # BrokenPipeError there looks like the command crashed.
+            try:
+                sys.stdout.close()
+            finally:
+                return 0
+
+    if a.command == "setup":
+        return setup()
+
+    if a.command == "capture":
+        return capture(go=a.go)
+
+    if a.command == "merge-driver":
+        if not a.tractate or not a.dest:
+            print("usage: board.py merge-driver <STATE.md|WORK.md> <dest>"); return 1
+        return merge_driver(a.tractate, a.dest)
 
     fresh = [write(ROOT / "STATE.md", render_state(), a.force, a.check),
              write(ROOT / "WORK.md", render_work(), a.force, a.check)]

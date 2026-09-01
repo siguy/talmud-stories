@@ -4,6 +4,7 @@ capability: [detection]
 tractate: [kiddushin]
 blocked_by: []
 awaiting: []
+writes: [results/v10/wave4_notrim/kiddushin_v10_notrim.json]
 finding:
 superseded_by:
 ---
