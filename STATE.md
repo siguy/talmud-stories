@@ -81,17 +81,16 @@ open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-roun
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
-open       2026-08-30-kiddushin-comments-harvest
-closed     4 item(s) in work/done/
+open       2026-08-30-review-verdict-axes
+closed     5 item(s) in work/done/
 ```
 
 ### 4 Boundaries
 ```
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
-open       2026-08-30-kiddushin-comments-harvest
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     3 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -119,7 +118,7 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
-| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 95 parsed · 89 blind · 91 count for recall |
+| `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | 0 parsed · 0 blind · 0 count for recall |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -153,4 +152,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: c18b67b361c35f3f -->
+<!-- board-checksum: 0f2b01fcb29139eb -->
