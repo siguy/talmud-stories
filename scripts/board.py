@@ -97,7 +97,27 @@ def rulers() -> dict[str, dict]:
 
 
 def expert_lists() -> dict[str, dict]:
-    """Blind story lists, counted by their own flags — never by raw length (Lesson 29)."""
+    """
+    Expert ground truth on disk, each row sized in ITS OWN units.
+
+    Two shapes live in this directory and they are not interchangeable:
+
+    - a **story list** (`stories[]`), counted by its own `blind` / `counts_for_recall`
+      flags and never by raw length (Lesson 29);
+    - a **comment harvest** (`remarks[]`) — Jeff's anchored marginal remarks, sorted onto
+      the axes. It has no `stories` key at all.
+
+    Reading `d.get("stories", [])` for both printed
+    `kiddushin_comments_harvested.json` as **0 parsed · 0 blind · 0 count for recall** in
+    a table headed BLIND — i.e. as a ground-truth file holding nothing, when it holds 11
+    sentence-level remarks including the 2005 margin note that retired an open question
+    with Jeff without our having to spend one of his answers on it.
+
+    Zero because the file is empty and zero because this function did not recognise the
+    file are different facts and must print as different facts (Lesson 38). An unknown
+    shape is named with its keys rather than sized at zero, so it reads as *unclassified*
+    and not as *absent*.
+    """
     out = {}
     p = ROOT / "results/expert_lists"
     if not p.exists():
@@ -106,14 +126,45 @@ def expert_lists() -> dict[str, dict]:
         d = load_json(str(f.relative_to(ROOT)))
         if not isinstance(d, dict):
             continue
-        stories = d.get("stories", [])
-        out[f.stem.split("_")[0]] = {
-            "parsed": len(stories),
-            "blind": sum(1 for s in stories if s.get("blind")),
-            "counts_for_recall": sum(1 for s in stories if s.get("counts_for_recall", s.get("blind"))),
-            "path": str(f.relative_to(ROOT)),
-        }
+        row = {"path": str(f.relative_to(ROOT))}
+        if "stories" in d:
+            # The same two filters `measure_recall_vs_expert_list.load_expert()` applies:
+            # drop the duplicate first, THEN count the flags. Counting flags over the raw
+            # list prints 91 where the harness's denominator is 90 — the board and the
+            # harness must not disagree about the size of the same set.
+            stories = [s for s in d["stories"] if s.get("duplicate_of") is None]
+            row |= {
+                "shape": "story_list",
+                "parsed": len(stories),
+                "blind": sum(1 for s in stories if s.get("blind")),
+                "counts_for_recall": sum(
+                    1 for s in stories if s.get("counts_for_recall", s.get("blind"))),
+                "duplicates_dropped": len(d["stories"]) - len(stories),
+            }
+        elif "remarks" in d:
+            row |= {
+                "shape": "comment_harvest",
+                "remarks": len(d["remarks"]),
+                "comments": d.get("comments"),
+            }
+        else:
+            row |= {"shape": "unrecognised", "keys": sorted(d)[:6]}
+        out[f.stem] = row
     return out
+
+
+def _expert_list_size(d: dict) -> str:
+    """The size cell for one expert-list row, in the units that row actually has."""
+    if d["shape"] == "story_list":
+        dup = f" ({d['duplicates_dropped']} duplicate dropped)" if d.get("duplicates_dropped") else ""
+        return (f"{d['parsed']} parsed{dup} · {d['blind']} blind "
+                f"· {d['counts_for_recall']} count for recall")
+    if d["shape"] == "comment_harvest":
+        n = d["remarks"]
+        src = f" from {d['comments']} comments" if d.get("comments") else ""
+        return f"**{n} anchored remarks**{src} — not a story list, carries no recall denominator"
+    return ("**shape not recognised by `board.py`** — top-level keys: "
+            + ", ".join(f"`{k}`" for k in d["keys"]))
 
 
 def items() -> list[dict]:
@@ -294,8 +345,8 @@ def render_state() -> str:
 
     L += ["## Ground truth on hand", "", "| dataset | kind | size |", "|---|---|---|"]
     for t, d in sorted(el.items()):
-        L.append(f"| `{d['path']}` | **BLIND** | {d['parsed']} parsed · {d['blind']} blind "
-                 f"· {d['counts_for_recall']} count for recall |")
+        kind = "**BLIND**" if d["shape"] != "unrecognised" else "**UNKNOWN**"
+        L.append(f"| `{d['path']}` | {kind} | {_expert_list_size(d)} |")
     for t, d in sorted(gl.items()):
         L.append(f"| `results/canonical/{t}_canonical.json` | **CIRCULAR** | {d['pages']} pages "
                  f"· {d['entries']} entries · {d['accepted']} accepted |")
@@ -362,11 +413,36 @@ def _verdict_count(path) -> int:
     items = data.get("reviews") or data.get("feedback") or data.get("validations")
     if isinstance(items, dict):
         return sum(1 for v in items.values()
-                   if isinstance(v, dict) and v.get("verdict"))
+                   if isinstance(v, dict) and _is_verdict(v))
     if isinstance(items, list):
-        return sum(1 for v in items
-                   if isinstance(v, dict) and v.get("feedback_type"))
+        return sum(1 for v in items if isinstance(v, dict) and _is_verdict(v))
     return 0
+
+
+# The keys a round uses to carry the expert's judgement. A round is one of ours if it
+# has ANY of them — the vocabularies differ per round and are mapped by
+# `scripts/map_verdict_vocabularies.py`, not by this counter.
+VERDICT_KEYS = ("verdict", "feedback_type", "is_story", "classification")
+
+
+def _is_verdict(v: dict) -> bool:
+    """
+    An entry Jeff actually ruled on — counted by whether it carries a judgement FIELD,
+    not by whether that field is truthy.
+
+    Counting `v.get("feedback_type")` truthily dropped the 2026-01-08 round's **Ketubot
+    17a** — `feedback_type: null` with a 300-character note in which he states the English
+    and Aramaic do not correlate and then *quotes the Hebrew of the story the excerpt
+    contains*. So the single richest verdict in the round was the one the inventory could
+    not see, and this function's own docstring said "25 real verdicts" three lines above
+    the code that printed 24.
+
+    A null verdict with a note is not an absent verdict. It is an expert declining the
+    dropdown and answering in prose, which is the most informative thing he does
+    (Lesson 38: absence is quiet — an entry skipped without a count is indistinguishable
+    from one that was never there).
+    """
+    return any(k in v for k in VERDICT_KEYS) or bool(v.get("notes"))
 
 
 def unfolded_verdict_files() -> list[tuple[str, int]]:
@@ -517,11 +593,57 @@ def new_tractate(name: str) -> None:
 
 
 def reroot_links(text: str) -> str:
-    """Rewrite `](../x)` to `](../../x)` for a file moving one directory deeper.
+    """Rewrite links *out of* an item moving from `work/` into `work/done/`.
 
-    Already-deeper links (`../../`) are left alone, so running this twice is safe.
+    Three shapes move, and all three used to break:
+
+    - `](../x)`        -> `](../../x)`   — out of work/ entirely
+    - `](sibling.md)`  -> `](../sibling.md)`  — a still-open item, one level up now
+    - `](done/x.md)`   -> `](x.md)`      — an already-finished item, now a sibling
+
+    Only the first was handled. An item that cited a sibling item — which is the normal
+    way to say "the rest of this is that item's territory" — broke that link at the moment
+    of finishing, and `finish`'s own docstring claimed links "run BOTH ways and both are
+    handled". That is Lesson 31's shape again at one remove: the guard existed, the
+    docstring overclaimed, and the case nobody had written yet was the one that broke.
+    Caught by `test_bookkeeping.py::test_no_markdown_link_is_broken` on 2026-09-01, on the
+    first item to link a sibling.
+
+    Rewritten in ONE pass, deliberately. Written as three sequential `re.sub` calls, the
+    `done/x.md` rule strips the prefix and the bare-sibling rule then re-adds `../` to the
+    result — each rule correct alone, wrong in composition. Every link must be considered
+    exactly once.
+
+    **Not idempotent, and it cannot be.** `../x` and `done/x.md` are safe to re-run, but a
+    bare sibling is not: once rewritten to `../sibling.md` it is indistinguishable from a
+    link that legitimately points one level up, so a second pass would deepen it again.
+    The predecessor was idempotent and this docstring said so; keeping the claim after
+    adding a rule that breaks it is how a docstring starts lying. `finish` applies this
+    exactly once, as the file moves — after which the source path no longer exists, so
+    there is no second application to defend against. Do not call it from anywhere else.
     """
-    return re.sub(r"\]\((\.\./)(?!\.\./)", r"](../../", text)
+    def one(m: re.Match) -> str:
+        target = m.group(1)
+        if target.startswith("#") or "://" in target:
+            # A same-page anchor, or an external URL. Neither is ours to move — and the
+            # anchor only became reachable here once the pattern stopped excluding `#`,
+            # so that it could keep re-rooting non-markdown paths.
+            return m.group(0)
+        if target.startswith("../"):
+            # Out of work/ entirely — one level deeper now. `../../` is already correct.
+            # NOT restricted to .md: items link `../results/...json` and `../scripts/...py`,
+            # and narrowing this rule to markdown broke exactly those (caught by
+            # test_every_open_item_would_survive_being_closed, 2026-09-01).
+            return m.group(0) if target.startswith("../../") else f"](../{target})"
+        if target.startswith("done/") and target.count("/") == 1:
+            # An already-finished item: a sibling once we are inside work/done/.
+            return f"]({target[len('done/'):]})"
+        if "/" not in target and not target.startswith("."):
+            # A still-open sibling in work/, now one level up.
+            return f"](../{target})"
+        return m.group(0)
+
+    return re.sub(r"\]\(([^)\s]+)\)", one, text)
 
 
 def reroot_inbound(text: str, linking_file: str, slug: str) -> str:
