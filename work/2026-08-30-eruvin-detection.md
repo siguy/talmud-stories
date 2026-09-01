@@ -4,6 +4,7 @@ capability: [detection]
 tractate: [eruvin]
 blocked_by: [2026-08-30-eruvin-triage, 2026-08-30-two-amud-header-parser]
 awaiting: []
+writes: [results/detection/eruvin.json, src/story_detector_v11.py]
 finding:
 superseded_by:
 ---

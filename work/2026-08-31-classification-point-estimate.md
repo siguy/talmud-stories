@@ -4,6 +4,7 @@ capability: [classification, review]
 tractate: []
 blocked_by: []
 awaiting: [jeff:axes-round]
+writes: [validation/ui/, validation/feedback/, results/rulers/]
 finding:
 superseded_by:
 ---

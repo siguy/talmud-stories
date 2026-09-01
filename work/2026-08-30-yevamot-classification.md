@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [yevamot]
 blocked_by: [2026-08-30-yevamot-detection]
 awaiting: []
+writes: [results/classification/yevamot.json]
 finding:
 superseded_by:
 ---

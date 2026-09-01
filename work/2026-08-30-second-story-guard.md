@@ -4,6 +4,7 @@ capability: [boundaries]
 tractate: [ketubot]
 blocked_by: []
 awaiting: [jeff:boundary-end-rule]
+writes: [src/story_detector_v11.py, scripts/run_clause_labeling.py, tests/test_wave5b_runner_outcomes.py]
 finding:
 superseded_by:
 ---

@@ -4,6 +4,7 @@ capability: [triage]
 tractate: [gittin]
 blocked_by: []
 awaiting: []
+writes: [results/triage/gittin.json]
 finding:
 superseded_by:
 ---

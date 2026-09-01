@@ -4,6 +4,7 @@ capability: [triage, detection]
 tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: []
+writes: [results/recall/, scripts/measure_recall_vs_expert_list.py, scripts/board.py, STATE.md]
 finding: docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md
 superseded_by:
 ---

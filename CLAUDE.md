@@ -15,7 +15,14 @@ Detect narrative stories in Talmud text using LLM classification. Expert validat
    by someone who had not read the record.
 3. **Start work by copying [`work/_TEMPLATE.md`](work/_TEMPLATE.md)** to
    `work/<today>-<slug>.md`. Never invent a numbering scheme; the counter is what
-   collided four ways on 2026-08-30.
+   collided four ways on 2026-08-30. **Fill in `writes:`** — the paths the item will
+   modify. `blocked_by` says what must finish *first*; `writes:` is the only thing that
+   says what cannot run *beside* it, and they are different graphs.
+3b. **Before running anything concurrently, `python3 scripts/board.py lanes`.** It groups
+   open items so two items in different lanes never write a common path. **The lane count
+   is how many sessions the work supports — not the unblocked-item count**, and it is
+   always the smaller number. Do not guess it from `STATE.md`: items that file lists side
+   by side as ready have been found writing the same golden.
 4. **Finish** by adding `## Outcome` — including *why*, especially for a revert — then
    `python3 scripts/board.py finish <slug>`. It refuses without an Outcome, re-roots the
    item's relative links (they break one level deeper, which is where done items live),
@@ -28,8 +35,23 @@ Read [`FRAMEWORK.md`](FRAMEWORK.md) for how each capability is measured and why 
 is what it is. Use its language: capability names, BLIND vs CIRCULAR on every dataset, and
 measured / indicated / suspected on every finding.
 
-**Fresh clone:** `git config core.hooksPath .githooks` once, so the pre-commit guard on
-the immutable harness is active. The same check is in the test suite either way.
+**Fresh clone:** `pip install -r requirements.txt && python3 scripts/board.py setup`.
+`setup` is idempotent and wires two things that cannot travel in a commit: the pre-commit
+guard on the immutable harness, and the merge drivers that regenerate `STATE.md` /
+`WORK.md` instead of merging them. Without it those two files conflict on **every** pair
+of concurrent branches — for no information, since a generated file's correct content is
+never a blend of two sides. The same checks are in the test suite either way.
+*A clone was found on 2026-08-31 with `core.hooksPath` unset: the guard this file calls
+active was not active. One command, so there is nothing to remember but the one.*
+
+**Concurrency, in one line:** each session takes **one lane** (`board.py lanes`), works on
+`work/<slug>`, and **does not rewrite `STATUS.md`** — that is an integration step done
+once on main after merging, not a thing each branch does, because it is hand-written and
+"rewritten every session" means two sessions always conflict over the whole file.
+Merging several branches back, or recovering a worktree that was never pushed:
+[`docs/technical/integrating-concurrent-work.md`](docs/technical/integrating-concurrent-work.md).
+**Capture before you integrate** — a commit is recoverable forever, an uncommitted working
+tree is one `git checkout` from gone, and `git checkout` is step one of every merge.
 
 ## Current State
 Do not restate status here; this file is about *how to work in the repo*, not where we

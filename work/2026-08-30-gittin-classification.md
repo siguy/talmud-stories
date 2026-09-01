@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [gittin]
 blocked_by: [2026-08-30-gittin-detection]
 awaiting: []
+writes: [results/classification/gittin.json]
 finding:
 superseded_by:
 ---

@@ -1,2 +1,8 @@
 requests>=2.31.0
 google-genai>=1.60.0
+
+# The test suite. `python3 -m pytest tests/ -q` is mandatory before stopping (CLAUDE.md),
+# and without these two a fresh clone fails at COLLECTION, not at a test -- which reads
+# like a broken repo rather than a missing dependency. Found on 2026-08-31 by cloning.
+pytest>=8.0.0
+olefile>=0.47          # scripts/parse_kiddushin_list.py reads the .doc OLE streams

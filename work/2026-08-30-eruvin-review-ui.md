@@ -4,6 +4,7 @@ capability: [review]
 tractate: [eruvin]
 blocked_by: [2026-08-30-eruvin-classification]
 awaiting: []
+writes: [validation/ui/eruvin_review.html, validation/generators/]
 finding:
 superseded_by:
 ---

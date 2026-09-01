@@ -4,6 +4,7 @@ capability: [review]
 tractate: [eruvin]
 blocked_by: [2026-08-30-eruvin-review-ui]
 awaiting: []
+writes: [validation/feedback/eruvin/]
 finding:
 superseded_by:
 ---

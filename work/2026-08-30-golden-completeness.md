@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: []
+writes: [results/canonical/ketubot_canonical.json, results/canonical/kiddushin_canonical.json, results/rulers/, tests/test_bookkeeping.py]
 finding:
 superseded_by:
 ---

@@ -1,0 +1,20 @@
+#!/bin/sh
+# Regenerate the board after every merge.
+#
+# The merge=board-state / board-work drivers in .gitattributes stop STATE.md and WORK.md
+# from CONFLICTING, but they cannot produce the correct board: a merge driver runs while
+# the merge is still in progress, so `work/` on disk does not yet contain the other
+# side's items. The driver's job is to keep conflict markers and a broken checksum out of
+# a generated file. Producing the truth is this hook's job.
+#
+# This is Lesson 32 made automatic: "after any merge that touches a source of truth,
+# regenerate everything derived from it -- the absence of conflicts is not a reason to
+# skip that, it is the reason the problem is invisible."
+#
+# tests/test_bookkeeping.py::test_generated_files_are_not_stale is the backstop for
+# anyone whose clone never ran `board.py setup`.
+python3 scripts/board.py --force >/dev/null 2>&1 || exit 0
+if ! git diff --quiet -- STATE.md WORK.md 2>/dev/null; then
+    echo "post-merge: STATE.md / WORK.md regenerated from the merged inputs. Commit them."
+fi
+exit 0

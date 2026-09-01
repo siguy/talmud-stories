@@ -4,6 +4,7 @@ capability: [triage, detection]
 tractate: [kiddushin]
 blocked_by: []
 awaiting: []
+writes: [scripts/measure_recall_vs_expert_list.py, results/recall/]
 finding: docs/findings/2026-08-31-kiddushin-recall.md
 superseded_by:
 ---

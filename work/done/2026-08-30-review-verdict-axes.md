@@ -4,6 +4,7 @@ capability: [classification, review]
 tractate: []
 blocked_by: []
 awaiting: []
+writes: [validation/generators/, validation/ui/, tests/test_review_ui_symmetry.py]
 finding:
 superseded_by:
 ---

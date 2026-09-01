@@ -141,6 +141,136 @@ def test_item_frontmatter_is_complete_and_uses_known_slugs():
         assert not bad_tr, f"{rel} has unknown tractate {bad_tr}"
 
 
+def test_every_open_item_declares_what_it_writes():
+    """`blocked_by` is ORDERING. `writes:` is CONTENTION. They are different graphs.
+
+    Without `writes:`, two items with no dependency between them are presented by
+    STATE.md, WORK.md and STATUS.md alike as concurrently runnable whether or not they
+    write the same file. On 2026-08-31 six such pairs existed among the items runnable
+    that day -- `golden-completeness` and `kiddushin-comments-harvest` both rewrite
+    `results/canonical/kiddushin_canonical.json`, and both were recommended in the same
+    breath as cheap next steps.
+
+    An item that declares nothing is invisible to `board.py lanes`, which is worse than
+    an item that declares too much: over-declaring costs a serialized lane,
+    under-declaring costs a silent corruption.
+    """
+    missing = [str(f.relative_to(ROOT)) for f, fm, _ in items()
+               if not f.parent.name == "done" and not listy(fm, "writes")]
+    assert not missing, ("open items with no `writes:` -- their collisions cannot be "
+                         f"seen by `board.py lanes`: {missing}")
+
+
+def test_the_generated_board_is_never_merged_by_hand():
+    """The guaranteed collision, and the one that has nothing to do with the work.
+
+    Every item that is opened, finished or edited changes STATE.md and WORK.md, so every
+    pair of concurrent branches conflicts on them. Measured on 2026-08-31: three sessions
+    each opening ONE unrelated work item produced two conflicting merges, five conflict
+    markers committed into WORK.md, and a trunk on which `board.py --check` failed.
+
+    A hand-resolved generated file is worse than a conflict, because editing it breaks
+    the checksum, and board.py then REFUSES to regenerate in whichever session next runs
+    it -- a failure two steps removed from its cause.
+
+    So the drivers must exist and .gitattributes must point at them. `board.py setup`
+    registers them per clone; this asserts the committed half.
+    """
+    attrs = (ROOT / ".gitattributes").read_text()
+    for name, driver in (("STATE.md", "board-state"), ("WORK.md", "board-work")):
+        assert re.search(rf"^{re.escape(name)}\s+merge={driver}\s*$", attrs, re.M), \
+            f".gitattributes does not route {name} to the {driver} merge driver"
+
+    hook = ROOT / ".githooks" / "post-merge"
+    assert hook.exists(), (
+        "no .githooks/post-merge. The merge driver runs mid-merge, when work/ on disk "
+        "does not yet hold the other side's items, so it resolves the conflict but "
+        "cannot produce the correct board. The hook is what produces it (Lesson 32).")
+    assert "board.py" in hook.read_text(), "post-merge hook no longer regenerates the board"
+
+
+def test_contention_is_computed_over_subtrees_not_just_exact_paths():
+    """A trailing `/` in `writes:` means the subtree. Verified by simulating the failure
+    it guards (Lesson 31): declaring `validation/generators/` must collide with a file
+    inside it, or four review-UI items would be reported as safely concurrent."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    assert board.overlap(["validation/generators/"], ["validation/generators/gen_ui.py"])
+    assert board.overlap(["results/canonical/kiddushin_canonical.json"],
+                         ["results/canonical/kiddushin_canonical.json"])
+    assert not board.overlap(["results/triage/gittin.json"], ["results/triage/eruvin.json"])
+    # A prefix that is not a path boundary is not an overlap.
+    assert not board.overlap(["results/v10/"], ["results/v10_other/x.json"])
+
+
+def test_an_undeclared_write_is_caught_when_an_item_is_closed():
+    """`writes:` is filled in when an item is OPENED -- before the work is done.
+
+    Lesson 34 is exactly about such a field: a person who does not know a value leaves it
+    blank, and an LLM session produces a confident, plausible, wrong one. A blank gets
+    investigated; a confident wrong value does not. So the field cannot be trusted on its
+    own -- it has to be grounded against something that knows.
+
+    This is not a hypothetical risk. The FIRST item ever to carry the field under-declared
+    four contended paths, one of which (tests/test_review_ui_symmetry.py) collides with
+    `review-verdict-axes` -- an item the lane map was printing as safe to run concurrently
+    at that exact moment. An unchecked declaration is worse than none: it licenses the
+    confidence that two sessions cannot hurt each other.
+
+    Verified by simulating the failure it guards (Lesson 31).
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    # An undeclared path that another open item writes must surface as a collision...
+    victim = next((i for i in board.items() if not i["done"] and i["writes"]), None)
+    assert victim, "no open item declares writes -- nothing to test against"
+    stolen = victim["writes"][0]
+    hidden = [(i["slug"], board.overlap([stolen], i["writes"]))
+              for i in board.items() if not i["done"]]
+    assert any(sl == victim["slug"] and sh for sl, sh in hidden), (
+        f"overlap() no longer matches {stolen} against the item that declares it")
+
+    # ...and the bookkeeping every item touches by construction must NOT, or the report
+    # would cry wolf on every single close and stop being read.
+    for p in ("STATE.md", "WORK.md", "docs/findings/x.md", "lessons/L-999-x.md"):
+        assert p.startswith(board.UNCONTENDED), f"{p} should be exempt from drift reporting"
+
+
+def test_capture_refuses_to_commit_a_credential():
+    """`board.py capture` runs `git add -A` and pushes. That sweeps in secrets.
+
+    Verified by simulating the failure it guards (Lesson 31). This is not a theoretical
+    risk: testing `capture` end to end on 2026-08-31, a worktree that had branched before
+    .gitignore gained `.env` had the secret committed AND pushed. A pushed secret is in
+    history forever, so the guard refuses the whole run rather than skipping one file.
+
+    The list is deliberately high-precision. A false positive blocks a capture under time
+    pressure with unpushed work at stake, which is the one moment a tool must not argue.
+    """
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
+    board = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(board)
+
+    caught = board.sensitive([
+        ".env", "config/.env.production", "deploy/server.pem", "certs/tls.key",
+        "secrets/id_rsa", "gcp/service-account.json",
+    ])
+    assert len(caught) == 6, f"a credential shape slipped through: {caught}"
+
+    # And must not fire on ordinary repo content, or it blocks captures for nothing.
+    assert board.sensitive([
+        "src/story_detector_v11.py", "results/canonical/ketubot_canonical.json",
+        "docs/findings/2026-08-31-x.md", "environment.md", "scripts/keyword_lookup.py",
+    ]) == []
+
+
 def test_blocked_by_and_awaiting_resolve():
     """A dependency pointing at nothing parks work silently. Both kinds must resolve:
     an item slug, or a `jeff:` question that comms/JEFF.md actually lists."""

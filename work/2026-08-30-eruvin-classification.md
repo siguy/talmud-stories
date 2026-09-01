@@ -4,6 +4,7 @@ capability: [classification]
 tractate: [eruvin]
 blocked_by: [2026-08-30-eruvin-detection]
 awaiting: []
+writes: [results/classification/eruvin.json]
 finding:
 superseded_by:
 ---

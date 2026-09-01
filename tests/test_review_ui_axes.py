@@ -38,10 +38,12 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import os
 import re
 import shutil
 import subprocess
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -232,8 +234,20 @@ class AxisReviewUiTest(unittest.TestCase):
         html = gen.generate_html('Kiddushin', stories, version)
         cls.html = html
         script = DOM_STUB + _extract_script(html) + AUDIT_JS
-        proc = subprocess.run([shutil.which('node'), '-e', script],
-                              capture_output=True, text=True, timeout=60)
+        # Via a file, not `node -e <script>` — the same fix this suite already carries in
+        # test_review_ui_symmetry.py. That file was written first and fixed; this one was
+        # written later and reproduced the defect, so the suite went red on Linux again in
+        # a place the original fix could not reach. 14 errors reading
+        # `OSError: [Errno 7] Argument list too long`, which looks like a broken repo and
+        # is really just a long argument.
+        with tempfile.NamedTemporaryFile('w', suffix='.js', delete=False) as fh:
+            fh.write(script)
+            script_path = fh.name
+        try:
+            proc = subprocess.run([shutil.which('node'), script_path],
+                                  capture_output=True, text=True, timeout=60)
+        finally:
+            os.unlink(script_path)
         if proc.returncode != 0:
             raise AssertionError(f'axis JS failed to run:\n{proc.stderr}')
         cls.report = json.loads(proc.stdout)
