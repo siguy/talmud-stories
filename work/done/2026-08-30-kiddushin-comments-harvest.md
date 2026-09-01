@@ -12,9 +12,9 @@ superseded_by:
 # Harvest Jeff's 10 anchored Kiddushin remarks
 
 **`NEXT/05` is DONE.** The comments are the `comments` stream in
-[`results/expert_lists/kiddushin_2005.json`](../results/expert_lists/kiddushin_2005.json),
+[`results/expert_lists/kiddushin_2005.json`](../../results/expert_lists/kiddushin_2005.json),
 each carrying its `anchor_cp` and `attached_story_id`. Read `STATUS.md`, `FRAMEWORK.md`
-and [the finding](../docs/findings/2026-08-30-kiddushin-list-parse.md) §5–6.
+and [the finding](../../docs/findings/2026-08-30-kiddushin-list-parse.md) §5–6.
 **Capabilities: 3 Classification, 4 Boundaries.** **No API calls.**
 
 ## What is in there
@@ -91,3 +91,52 @@ Nothing silently dropped. The count to reconcile against is **10** remarks, plus
 - Quote Jeff verbatim; mark any interpretation as ours.
 - These are CIRCULAR — they are comments on our output. Fine for precision and criteria,
   never for recall (FRAMEWORK §3).
+
+## Outcome
+
+**Done 2026-08-31.** → [`docs/findings/2026-08-31-kiddushin-comments-harvest.md`](../../docs/findings/2026-08-31-kiddushin-comments-harvest.md)
+· artifact `results/expert_lists/kiddushin_comments_harvested.json`
+· `python3 scripts/harvest_kiddushin_comments.py`
+
+10 comments → **11 sentence-level remarks** (`c_02` split as the item predicted), all
+sorted, none dropped: **3 borderline · 3 classification · 2 boundary · 1 attribution ·
+1 provenance · 1 open question**.
+
+**The join had to be rebuilt to be worth anything.** Joining through the recall
+artifact's `in_detector` uses the **loose window**, which on these remarks credits a
+*different passage on the same daf* in 2 of 6 cases (c_03 30a, c_08 58a). Rebuilt to
+require one of our spans to actually contain his text. This killed a dramatic-looking
+first result — that his 2005 notes contradicted his own 2026 verdicts on the same
+passages — which was an artifact of the loose join. Different passages, no contradiction.
+
+**Three real disagreements**, and two of them are a clean precision signal independent of
+every review round, because he wrote them in 2005:
+
+- Kiddushin 31b — we say `YES`; he says *"a halakhic question and answer … does not
+  really amount to a story"*
+- Kiddushin 39b — we say `HIGH_CONFIDENCE`; he says the *teirutz* is *"dialectical
+  argumentation"*
+- Kiddushin 58a — we say `LOW_CONFIDENCE`; he says *"Not sure"*. Calibration agreeing
+  with the expert, which is what LOW_CONFIDENCE is for.
+
+**One open question with Jeff is retired.** `comms/JEFF.md` listed Kiddushin 58a
+(`בעא מיניה ר' חייא בר אבין`) as a proposed-then-`NOT_A_STORY` case needing his ruling.
+His own 2005 margin note on that passage says *"Not sure this is a story. Very minimal."*
+— he agrees with us. Withdrawn from the ask; **44a stands as the only one**. Given his
+last two rounds returned 1 and 15 verdicts, not spending one on a question he answered
+in 2005 is the point.
+
+**Two criteria categories he names that ours does not model:** *report / tradition*
+(c_03) and *teirutz / dialectical argumentation* (c_05). Stored verbatim, deliberately
+not paraphrased into a rule.
+
+**Carried forward, not done here:**
+- The 2 boundary targets (`c_01` **CUT**, `c_02#a` **ADD**) are captured with polarity but
+  **not yet folded into `tests/expert_boundary_targets_v2.json`** — that changes a scored
+  ruler and wants its own before/after plus a same-code repeat (Lesson 22).
+- **Item 7 (the 16 unincorporated verdicts) was deliberately not done here** — it is
+  `golden-completeness`'s job and burying a golden change inside a comments harvest is how
+  Lesson 1 happened. Count confirmed at 16.
+- `c_note_28`'s question to us (33b, *"Check parallel"*) is unanswered.
+- Loose end 6a — the `מו ע"ב` (46b) label with no story beside it — unresolved; it is a
+  table row, not a comment, so it was outside this stream.

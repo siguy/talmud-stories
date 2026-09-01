@@ -47,14 +47,14 @@ by number; resolve them here.
 | old | now |
 |---|---|
 | `tasks/NEXT/00` capability records | [`done/2026-08-30-capability-histories.md`](done/2026-08-30-capability-histories.md) |
-| `tasks/NEXT/01` triage recall | [`2026-08-30-triage-recall-price.md`](2026-08-30-triage-recall-price.md) |
+| `tasks/NEXT/01` triage recall | [`done/2026-08-30-triage-recall-price.md`](done/2026-08-30-triage-recall-price.md) |
 | `tasks/NEXT/02` Ketubot 77a | [`done/2026-08-30-ketubot-77a.md`](done/2026-08-30-ketubot-77a.md) |
 | `tasks/NEXT/03` second-story guard | [`2026-08-30-second-story-guard.md`](2026-08-30-second-story-guard.md) |
-| `tasks/NEXT/04` review UI asymmetry | [`done/2026-08-30-review-ui-display-asymmetry.md`](done/2026-08-30-review-ui-display-asymmetry.md) — **and then the name was reused.** `4de7135` repointed "NEXT/04" at a different job with no brief behind it; that job is now [`2026-08-30-review-verdict-axes.md`](2026-08-30-review-verdict-axes.md). A citation of `NEXT/04` means one or the other depending on its date — which is the reuse-after-deletion problem this layout exists to end |
+| `tasks/NEXT/04` review UI asymmetry | [`done/2026-08-30-review-ui-display-asymmetry.md`](done/2026-08-30-review-ui-display-asymmetry.md) — **and then the name was reused.** `4de7135` repointed "NEXT/04" at a different job with no brief behind it; that job is now [`2026-08-30-review-verdict-axes.md`](done/2026-08-30-review-verdict-axes.md). A citation of `NEXT/04` means one or the other depending on its date — which is the reuse-after-deletion problem this layout exists to end |
 | `tasks/NEXT/05` Kiddushin list parse | [`done/2026-08-30-kiddushin-list-parse.md`](done/2026-08-30-kiddushin-list-parse.md) |
-| `tasks/NEXT/06` Kiddushin recall | [`2026-08-30-kiddushin-recall.md`](2026-08-30-kiddushin-recall.md) |
-| `tasks/NEXT/07` Kiddushin boundaries | [`2026-08-30-kiddushin-boundary-set.md`](2026-08-30-kiddushin-boundary-set.md) |
-| `tasks/NEXT/08` comments harvest | [`2026-08-30-kiddushin-comments-harvest.md`](2026-08-30-kiddushin-comments-harvest.md) |
+| `tasks/NEXT/06` Kiddushin recall | [`done/2026-08-30-kiddushin-recall.md`](done/2026-08-30-kiddushin-recall.md) |
+| `tasks/NEXT/07` Kiddushin boundaries | [`done/2026-08-30-kiddushin-boundary-set.md`](done/2026-08-30-kiddushin-boundary-set.md) |
+| `tasks/NEXT/08` comments harvest | [`done/2026-08-30-kiddushin-comments-harvest.md`](done/2026-08-30-kiddushin-comments-harvest.md) |
 | `tasks/NEXT/09` fetch new tractates | [`done/2026-08-30-fetch-new-tractates.md`](done/2026-08-30-fetch-new-tractates.md) |
 | `tasks/NEXT/09` parse open calls | [`2026-08-30-kiddushin-parse-open-calls.md`](2026-08-30-kiddushin-parse-open-calls.md) — *two different briefs were both numbered 09* |
 | `tasks/NEXT/10` golden additions | [`done/2026-08-30-ketubot-golden-additions.md`](done/2026-08-30-ketubot-golden-additions.md) |

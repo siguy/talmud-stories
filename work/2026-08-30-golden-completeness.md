@@ -110,3 +110,31 @@ with `detector_proposed` saying whether we found it. Counts quoted entries-and-a
 - `scripts/evaluate_golden.py` is IMMUTABLE. If a new field breaks it, adapt the data.
 - Rebuilding Kiddushin on a current run invalidates the stale 68%. Say so; do not quietly
   compare the new number to the old one (Lesson 22 — regenerate the baseline same-day).
+
+---
+
+## Inputs confirmed 2026-08-31 (item still OPEN — nothing folded in)
+
+Three populations, and they are not equally recoverable:
+
+| input | n | mechanically foldable? |
+|---|---|---|
+| Kiddushin verdicts from the 2026-05-26 and 2026-07-06 rounds | **16** | **yes** — standard `<ref>_<start>-<end>` keys |
+| Jeff's **2026-01-08** Ketubot round, read by nothing | **25** (24 with notes) | **NO** — see below |
+| `validations_v4_2026-01-25.json` / `jeff_v4.1_validation.json` | **0** | n/a — the first has an empty `validations` dict, the second is an automated eval trace, not expert judgement. Both were listed in `STATE.md` as lost expert rounds and are not. |
+
+**The 2026-01-08 round cannot be folded mechanically and must not be forced.** Its
+verdicts carry **no segment spans** — only a daf, and for 9 of the 25 only a cross-page
+range (`Ketubot 3b-4a`). Attaching them to whatever we propose there *today* would
+manufacture ground truth. The v4 output they judged is not on disk.
+
+What is usable from it now: the **24 notes** as criteria evidence (they state the
+prescriptive/descriptive rule six months before the criteria doc), and the **structured
+`length_adjustment` / `spans_multiple_pages` fields** — 10 and 9 rows — which are boundary
+and merge signal no later round records outside free text.
+
+→ [`docs/findings/2026-08-31-january-round-recovered.md`](../docs/findings/2026-08-31-january-round-recovered.md)
+· artifact `results/rulers/january_2026_round_captured.json`
+
+**Decide explicitly and record the reason** (Lesson 17) for each of the three, rather than
+folding what is easy and leaving the rest unnamed — which is how this backlog formed.

@@ -90,10 +90,14 @@ def test_a_genuinely_legal_page_is_still_skipped():
 @pytest.mark.parametrize("events,keep", [
     ([EventType.NARRATIVE_EVENT] * 2 + [EventType.DELIBERATION], True),
     ([EventType.NARRATIVE_EVENT, EventType.VERBAL_ACT, EventType.VERBAL_ACT], True),
-    ([EventType.NARRATIVE_EVENT, EventType.DELIBERATION, EventType.DELIBERATION], False),
+    # Was False until 2026-08-31, when the corroboration clause was removed and a
+    # single NARRATIVE_EVENT became sufficient. This row is the one that moved;
+    # it is kept here rather than deleted so the change stays visible from the
+    # fail-open tests, whose own behaviour is untouched.
+    ([EventType.NARRATIVE_EVENT, EventType.DELIBERATION, EventType.DELIBERATION], True),
     ([], False),
 ])
-def test_the_existing_keep_rule_is_unchanged(events, keep):
+def test_the_keep_rule_still_requires_a_narrative_event(events, keep):
     assert (not EventTriager.should_skip_page(events)) is keep
 
 

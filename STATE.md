@@ -14,23 +14,36 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | STATUS · B | 96.0% / 87.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
-| **Kiddushin** | ⬜ | 93.3% / 83.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
+| **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
+| **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Gittin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
 
-Detection is quoted **loose / strict**, straight from `results/rulers/`. The loose
-test credits a proposal anywhere in the aligner's window and is provably
-over-credited in at least one case, so read it as an upper bound.
+**Triage** is stories surviving, and **Detection** is recall *given the page
+survived triage* — both from `results/recall/*_jeff2005_matches.json`, whose
+denominator each cell states. Detection is conditioned because the two
+capabilities compose and have separate gates; charging Triage's losses to
+Detection as well double-counts them (Lesson 35).
+
+The **end-to-end** figure — what the pipeline delivers, `triage x detection` —
+is quoted **loose / strict** from `results/rulers/`:
+
+- Ketubot: **96.0% loose / 87.9% strict** on 149 stories
+- Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
+
+The loose test credits a proposal anywhere in the aligner's window and is
+provably over-credited in at least one case, so read it as an upper bound.
 
 **Cells reading `STATUS` are a known gap in this generator, not a formatting**
-**choice.** Triage, Classification and Boundaries have no artifact on disk carrying
+**choice.** Classification and Boundaries have no artifact on disk carrying
 their current value — they are produced by `evaluate_golden.py` and
 `score_boundary_targets.py`, which write to a scratch path this script does not
-read and must not re-run. Until those scripts also write a small committed
+read and must not re-run. (Triage left this list on 2026-08-31, when the recall
+harness started writing `survived_triage` per story, so the cell became
+derivable.) Until those scripts also write a small committed
 measurements file, the honest cell is a pointer to the hand-written number in
 [`STATUS.md`](STATUS.md), not a number typed into a generator that promises it
 types none.
@@ -41,11 +54,10 @@ gate       ≥98% · PROVISIONAL
 history    docs/capabilities/1_triage.md
 open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
-open       2026-08-30-kiddushin-recall
 open       2026-08-30-opener-lexicon
-open       2026-08-30-triage-recall-price
 open       2026-08-30-yevamot-triage
-closed     2 item(s) in work/done/
+open       2026-09-01-board-reads-stale-triage
+closed     6 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -56,9 +68,9 @@ open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 
 open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
-open       2026-08-30-kiddushin-recall
 open       2026-08-30-opener-lexicon
-closed     4 item(s) in work/done/
+open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
+closed     8 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -70,18 +82,16 @@ open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-roun
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
-open       2026-08-30-kiddushin-comments-harvest
-closed     4 item(s) in work/done/
+open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
+closed     7 item(s) in work/done/
 ```
 
 ### 4 Boundaries
 ```
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
-open       2026-08-30-kiddushin-boundary-set
-open       2026-08-30-kiddushin-comments-harvest
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     2 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -92,9 +102,9 @@ open       2026-08-30-eruvin-expert-round   ← blocked: 2026-08-30-eruvin-revie
 open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classification
 open       2026-08-30-gittin-expert-round   ← blocked: 2026-08-30-gittin-review-ui
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
-open       2026-08-30-review-verdict-axes
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
-closed     2 item(s) in work/done/
+open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
+closed     4 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -109,7 +119,11 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
-| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 95 parsed · 89 blind · 90 count for recall |
+| `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
+| `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 112 count for recall |
+| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
+| `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
+| `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -121,21 +135,22 @@ closed     1 item(s) in work/done/
 
 Each of these is a round Jeff gave us whose verdicts are not in any ruler, so
 they are invisible to every precision number. Lesson 1's failure, still live.
+Counts are measured; files holding zero verdicts are not listed, because
+naming an empty file as a lost round buries the one that is not.
 
-- `validation/feedback/jeff_v4.1_validation.json`
-- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json`
-- `validation/feedback/validations_v4_2026-01-25.json`
+- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
 ## Open with Jeff
 
 | slug | question |
 |---|---|
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
-| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? |
+| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? **Now with a third concrete case, 2026-09-01: Ketubot 71a, the incident of Beit Ḥoron** — a real `מעשה`, native to Nedarim, quoted here as precedent. Our detector proposes it; his 2005 list omits it. Asks the same question from the *quoted-as-precedent* side. |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
+| `jeff:axes-round` | Would you review one tractate on the new page, where each entry asks **is it a story** (yes / borderline / no) and, only if you want to say more, whether the **extent**, the **confidence level** or the **grouping** is wrong? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -143,4 +158,5 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 398020af497caf88 -->
+- `2026-08-31-classification-point-estimate` — jeff:axes-round
+<!-- board-checksum: 120b3d0440992289 -->

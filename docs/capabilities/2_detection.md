@@ -9,6 +9,13 @@ see [`FRAMEWORK.md` §1.2](../../FRAMEWORK.md). It proposes; it does not judge.
 *Circular cross-check, not an accuracy claim:* golden recall 92.1% Ketubot / 95.3%
 Kiddushin (**CIRCULAR**).
 
+**Those two figures are end-to-end, not Detection.** They include what Triage discarded
+before Stage 2 ever saw the page. **Detection measured on pages that survived triage is
+97.9% Ketubot / 97.7% Kiddushin** (2026-08-31) — the same, within one story, and both
+comfortably above the gate. Quote the conditional figure when the subject is this
+capability, and the end-to-end one when the subject is the pipeline
+([`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md)).
+
 *Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
 ---
@@ -51,6 +58,8 @@ the credit is being counted twice.
 | 2026-08-28 | **True recall measured for the first time**, against `jeff comms/b.ketubot (1).doc` — 149 stories, written 2005-02-02, twenty years before the detector | **measured: 143/149 = 96.0% (BLIND).** The roadmap had guessed 80–85%. Two matcher fixes were needed first: Hebrew character 4-grams (Jeff writes abbreviated and unvocalised) and a corpus-wide sliding window (his story blocks cross daf boundaries). Before them the same data read 89.7% with 34 stories unlocated; after, 96.0% with zero | `8b86a9f`, [`recall_measurement`](../findings/2026-08-28-recall-measurement-ketubot.md) |
 | 2026-08-30 | **Strict recall introduced.** The published test credits a proposal anywhere in the aligner's search window (up to 14 segments, straddling daf boundaries). Strict requires overlap with a segment the story actually occupies | **measured: 96.0% → 87.9% Ketubot, 12 stories credited by proximity only.** The 12 are cross-page stories whose text sits on a continuation daf carrying **zero proposals** — Ketubot 17b, 50a, 51a | `4de7135`, [`ruler`](../findings/2026-08-30-detection-classification-ruler.md) |
 | 2026-08-30 | **Kiddushin Detection measured for the first time** | **measured: 93.3% loose / 83.3% strict** (84/90, BLIND) — **below the 95% gate where Ketubot is above.** First like-for-like comparison of the two tractates | `4de7135`, corrected by `2cd1094` |
+| 2026-08-31 | **The Kiddushin gap re-attributed to Triage.** The 93.3% was compared with Ketubot's 96.0% as though both were Detection; both are end-to-end. Split with `measure_recall_vs_expert_list.py`, same script both sides, same day | **measured: Detection given the page survived triage is 97.7% Kiddushin vs 97.9% Ketubot** — a difference of one story. The entire 2.7-point end-to-end gap is Triage (95.6% vs 98.0%). Cause split of Kiddushin's 6 misses: **4 triage, 2 detection**. Two further stories are proposed and then classified `NOT_A_STORY` — Classification, reported apart | [`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md) |
+| 2026-08-31 | Kiddushin 81b re-read while splitting the misses | **measured: 81b carries two of Jeff's stories, not one.** Every prior document discusses only `kiddushin_093` (R. Meir / R. Tarfon, the appendix case). `kiddushin_094` — Rav Hanan of Nehardea, segs 4-10, 100% text alignment — is blind, examined, and **never proposed** | [`kiddushin_recall` §4](../findings/2026-08-31-kiddushin-recall.md) |
 | 2026-08-30 | Five stories from Jeff's blind list added to the Ketubot golden (20a, 53a, 67b, 72b, 82b) — a *double* miss, never detected and never labelled, so the harness was structurally unable to penalise them | golden 182 → 187; golden recall 0.9371 → 0.9085 (**the drop is the deliverable**); blind recall untouched at 96.0%; golden coverage of Jeff's list 96.6% → 100% | `2e61035` |
 
 ## What we reverted, and why
@@ -119,10 +128,17 @@ rejections, because the check behind the claim was narrower than the claim:
 
 | | current | gate | verdict |
 |---|---|---|---|
-| Ketubot loose | 96.0% | ≥95% | above |
-| Ketubot strict | 87.9% | ≥95% | **7 points below** |
-| Kiddushin loose | 93.3% | ≥95% | below |
-| Kiddushin strict | 83.3% | ≥95% | **12 points below** |
+| **Ketubot, given the page survived triage** | **97.9%** | ≥95% | **above** |
+| **Kiddushin, given the page survived triage** | **97.7%** | ≥95% | **above** |
+| Ketubot loose, end-to-end | 96.0% | ≥95% | above |
+| Ketubot strict, end-to-end | 87.9% | ≥95% | **7 points below** |
+| Kiddushin loose, end-to-end | 93.3% | ≥95% | below |
+| Kiddushin strict, end-to-end | 83.3% | ≥95% | **12 points below** |
+
+**Which rows the gate refers to has never been decided either, and it is the same
+question as the loose/strict one below.** The bottom four bundle Triage, which has its
+own gate; charging its losses to Detection as well is double-counting. On the top two
+rows this capability passes on both tractates.
 
 **Which test the gate refers to has never been decided,** and it changes the answer.
 FRAMEWORK's scoreboard quotes the loose figure and instructs that the strict one be
@@ -216,6 +232,9 @@ believed, which is the opposite of what a plateau reading would predict.
   [Triage](1_triage.md). Also declined: *a fresh cold-read of 10 random dapim*, because
   he already has detector-blind lists and offered them
   ([ledger Part 2(a)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)).
+- **Kiddushin 81b `kiddushin_094`** — Rav Hanan of Nehardea, blind, on an examined page,
+  never proposed. Found 2026-08-31 while splitting the misses; not the 81b case the
+  Wave 3 notes discuss. Never investigated.
 - **The three pristine tractates.** Gittin (112), Yevamot (102) and Eruvin (73) have
   blind lists and fetched Sefaria text, and **the detector has never run there** — so a
   run is a clean floor test with no prior output priming either side, and their lists

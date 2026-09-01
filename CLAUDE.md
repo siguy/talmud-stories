@@ -194,28 +194,49 @@ archive/                          # Old versions (reference only)
 | `scripts/verify_wave1.py` | Wave 1 verification |
 | `scripts/audit_text_spans.py` | **Structural gate** — mid-word / clause-edge rates; `--strict` fails the build |
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
-| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld |
+| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld. Also the only committed measurement of **triage recall**, and it splits the misses by cause: triage-discarded / examined-but-nothing-proposed / proposed-then-`NOT_A_STORY`. Use `--expert-json` for any list that is not the Ketubot `.doc` |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
+| `scripts/run_triage_recall_price.py` | **Prices what triage discards** — runs Stage 2 on the skipped pages using their *cached* triage labels, so the skip decision is the only variable. `--dry-run` verifies the page partition with no API calls. Never uses the all-DELIBERATION `--skip-triage` default; that changes the prompt and confounds the result |
+| `scripts/audit_no_triage_ablation.py` | **Proves `results/v7/ablation_v7_no_triage.json` is not a no-triage run** — the arm examining 3x the pages finds 5 fewer of Jeff's stories. No API calls. Why the 2026-02-13 ablation conclusion is retracted |
+| `scripts/merge_triage_recall_run.py` | Splices that output back into a shipped run so the recall harness can score the **whole** tractate. `--live-rule` splices only the pages the *current* `should_skip_page()` would examine — that is how a triage rule change is measured against the blind lists |
+| `scripts/sweep_triage_rules.py` | **Prices candidate Stage 1 rules with no API calls**, reusing the discarded-page output. Read [Lesson 37](lessons/) first: the on/off endpoints bracket a trade but do not locate it. Restricted to rules strictly looser than the shipped one, asserted per candidate |
+| `scripts/resolve_unclassified_notes.py` | The hand-sort of the rejection notes `classify_objection()` cannot read, onto the four axes. Carries the **round → detector-version** map (`ROUND_SOURCES`) — extend it, do not re-derive it. Matches spans by **overlap**; exact-key matching makes a re-bounded story read as deleted (Lesson 36) |
+| `scripts/harvest_kiddushin_comments.py` | Jeff's 10 anchored Kiddushin remarks, sorted at the **sentence** level onto axes, joined to our output by **strict span coverage**. The loose recall window credits a different passage on the same daf in 2 of 6 cases |
+| `scripts/capture_january_round.py` | Recovers the **2026-01-08 round no ruler reads** — 25 verdicts skipped for eight months by an `isinstance` guard because it stores a list where every other round stores a dict (Lesson 38) |
 | `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
 | `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — detector-blind ground truth. Count it with `parse_kiddushin_list.py --self-test` |
 | `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
-| `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser** — reads the .doc's OLE streams; `--self-test` asserts Ketubot == 149 |
+| `scripts/parse_kiddushin_list.py` | **Table-aware expert-list parser, all five lists** (`--tractate`) — reads the .doc's OLE streams and detects each document's **column order** from its own header row, because `eruvin.doc` stores them right-to-left. Anchors multi-label rows against Sefaria; **never moves an unambiguous label** — a disagreement is a question for Jeff. `--self-test` asserts Ketubot == 149 |
 | `results/expert_lists/kiddushin_2005.json` | **Kiddushin blind ground truth** — per-story `blind` and `counts_for_recall` flags, plus Jeff's anchored remarks. **Filter on the flags; never take the raw length as the denominator.** |
+| `results/expert_lists/{gittin,yevamot,eruvin}_2005.json` | **The three pristine blind lists**, parsed 2026-09-01 — 112 / 102 / **74**, every entry blind. No detector has run on these tractates, so nothing of ours can be in them. Filter on the flags, as with Kiddushin |
+| `docs/findings/2026-09-01-new-tractate-expert-lists.md` | The parse, and why Eruvin has 74 stories rather than the 73 on record |
+| `docs/findings/2026-09-01-expert-list-daf-attribution.md` | **Per-daf attribution in the expert lists.** Two-amud headers are text-anchored; a reversed-column list is refused. Read before measuring any new tractate per daf |
 | `docs/findings/2026-08-30-kiddushin-list-parse.md` | Why the line-based parse gave 105, and how the count was verified |
+| `docs/findings/2026-08-31-kiddushin-recall.md` | Kiddushin Triage 95.6% / Detection 97.7%. **Quote Detection *given the page survived triage*** — the end-to-end figure charges Triage's losses to Detection as well |
+| `docs/findings/2026-08-31-kiddushin-boundary-set.md` | The blind Kiddushin boundary set: 85%/91%, noise 7pt → 0.77 |
+| `docs/findings/2026-08-31-triage-recall-price.md` | **What triage discards, priced on both tractates.** Exchange rates, and the reattribution of Ketubot 20a/82b from Triage to Detection |
+| `docs/findings/2026-08-31-triage-single-narrative.md` | **The shipped triage rule change** — one narrative event is enough. Why `N>=1` and not `keep everything`, and why `V>=4` was rejected |
+| `docs/findings/2026-08-31-unclassified-notes-resolved.md` | The 34 unreadable rejection notes, sorted. **Banked round precision is per detector-version** (Lesson 36). Carries a same-day Correction |
+| `docs/findings/2026-08-31-kiddushin-comments-harvest.md` | Jeff's 10 anchored remarks. Retires the Kiddushin 58a question — he answered it in 2005 |
+| `docs/findings/2026-08-31-january-round-recovered.md` | **The round nothing reads**: 25 of Jeff's verdicts, 9 cross-page refs covered by nothing, not mechanically foldable |
 | `jeff comms/8-30-2026/Kiddushin missed stories.docx` | **The appendix** — our own cases, which Jeff merged into his list. Those 5 entries are NOT blind |
 | `scripts/check_appendix_coverage.py` | **Blindness check** — run on every new expert list before trusting it (Lesson 29) |
+| `validation/generators/generate_axis_review_ui.py` | **The per-axis review UI** — *is it a story* (yes/borderline/no) as the only required question; extent / confidence / grouping behind a disclosure that is **independent of it**, because "it IS a story and the boundary is wrong" is the commonest correction we get. `display_problem` is a field, not a note. On a wrong extent it opens a **Hebrew quote box with a stated `include`/`exclude` polarity** — highlight the text on the page rather than typing it — so a boundary correction stops being mined out of prose (16 of the 70 banked targets are `mixed`/`unclear` for want of it). Every exported verdict carries `detector_version` and `schema_version: axes-1`. Reads `wave4_notrim` and shows `mishnah_stories`, badged |
+| `validation/generators/review_ui_core.py` | **The display core, shared** — one segment, one row, both languages. Both review pages import it, so neither can drift; guarded by `tests/test_review_ui_symmetry.py`. Pass `spanRangeFn=null` when there are no spans to annotate |
+| `scripts/map_verdict_vocabularies.py` | **Three verdict vocabularies → the axis shape.** 605 banked verdicts, 0 unmapped. An unknown token **raises**. Carries `applies_to` (base vs already-corrected — Lesson 3) and marks a bare `incorrect` **lossy** rather than guessing which capability it indicted |
 | `scripts/build_ruler.py` | **THE ruler** — joins blind lists + proposals + all 6 review rounds; measures Detection and Classification together |
 | `results/rulers/{ketubot,kiddushin}_ruler.json` | Per-story: expert-listed? proposed? every verdict, and what each rejection objected to |
 | `docs/findings/2026-08-30-detection-classification-ruler.md` | Why the old Classification precision figures were not Classification numbers, and why loose recall overstates strict |
-| `results/recall/ketubot_jeff2005_matches.json` | Per-story recall match output (incl. the 6 misses) |
+| `results/recall/<tractate>_jeff2005_matches.json` | Per-story recall match output (incl. the misses), carrying `survived_triage` / `only_rejected` per story. **The unsuffixed name is always the recall denominator**; sensitivity variants take a suffix. `scripts/board.py` fills the Triage and Detection cells from these, so do not rename one casually |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
 | `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The first blind recall measurement, and the method (Hebrew 4-grams + a corpus-wide window) |
 | `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
 | `docs/history/2026-08-30-PLAN-wave5b-clause-roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `docs/history/2026-08-29-PLAN-wave6-story-criteria.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
-| `tests/expert_boundary_targets_2005.json` | **294 detector-blind boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_2005.json` | **294 detector-blind Ketubot boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_2005_kiddushin.json` | **176 detector-blind Kiddushin boundaries.** Retires the 15-target corrections gate and its ±7pt noise. Built with `--expert-filter blind` (89), *not* the recall filter (90) — a boundary target must be an extent Jeff chose |
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
 | `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
 | `scripts/build_boundary_testset_2005.py` | Aligns Jeff's 2005 story texts to Sefaria Hebrew -> exact boundaries |
@@ -226,7 +247,10 @@ archive/                          # Old versions (reference only)
 | `docs/findings/2026-08-30-wave5-summary-fix.md` | Wave 5 steps 1-2, and the first noise floor this project ever measured |
 | `results/v11/wave5_summaryfix/` | Wave 5 spans with the summary fix (+ a same-code repeat = noise floor) |
 | `tests/test_wave5b_runner_outcomes.py` | **Failure-injection guard** — a failed call must never be stamped as a judgment (Lesson 21) |
+| `tests/test_examine_all_pages.py` | **Failure-injection guard** — bypassing Stage 1 must not fabricate its output. Pins that the flag only ever *adds* pages, that labels are identical with and without it, and that v7-v10 keep the stub so the archived ablation stays reproducible |
 | `tests/fixtures/wave5b_runner_pages.json` | Real 4-page Kiddushin slice covering every outcome bucket |
+| `tests/test_board_reports_what_it_holds.py` | **The board must report what an artifact HOLDS**, not what its loader recognised. Pins that every expert list gets its own row (two Kiddushin files collided on a key and the blind list was silently overwritten), that a comment harvest is sized in remarks and never as `0 parsed`, that an unrecognised shape is **named with its keys** rather than sized at zero, that the board's count-for-recall equals the harness filter *and* the ruler denominator, and that a verdict with a null type but a note still counts |
+| `docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md` | **Why `board.py --check` passing means less than it looks.** Three defects behind a green check; the STATE/code triage disagreement is still open |
 | `lessons/` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
 
@@ -256,9 +280,22 @@ When making changes, update these files as relevant:
 - Modify `evaluate_golden.py` during experiments
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
-- Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments
+- Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments. **A second instance, 2026-09-01:** `eruvin.doc` stores its columns right-to-left, so `textutil`'s flattened stream puts each location cell *after* its story and the line-based parser credited **53 of 73** entries to the previous row's daf — with the right story count, on real nearby dapim, so nothing looked wrong. `parse_expert_doc` now refuses such a list by name
 - Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
+- Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
+- Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
+- Use `skip_triage=True` to mean "no triage" — **fixed in v11 on 2026-09-01 and renamed `examine_all_pages`; still live in the frozen v7-v10, deliberately.** It stamped every segment `DELIBERATION`, which Stage 2's prompt, the cross-page context, boundary refinement and post-processing all believed, and it overwrote labels the caller had supplied. `results/v7/ablation_v7_no_triage.json` is its output and is contaminated; the 2026-02-13 "largest accuracy driver" claim built on it is retracted (`docs/findings/2026-09-01-contaminated-no-triage-ablation.md`)
 - Move detector output to a new key without making the harnesses read it (Lesson 27) — an invisible deletion reads as a model failure
 - Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 27)
+- Act on an ablation's **endpoints** — "as-is" vs "off" — without sweeping the rules between them (Lesson 37). Once the "off" run exists every intermediate rule is a free re-partition of results you already hold, and the good deal is rarely at either end: on triage, the first step inside the interval was **28x cheaper** than turning the filter off
+- Ship the best row of a sweep without saying whether it is a **principled boundary or a tuned threshold** (Lesson 37, Lesson 18). `N>=1` = "any evidence at all" and shipped; `V>=4` fitted one story in one tractate and was rejected *with a test pinning the rejection*
+- Let a loader `continue` past an input it does not recognise without **counting and naming** what it dropped (Lesson 38) — an `isinstance` guard hid a signed 25-verdict expert round for eight months, and the file was listed in `STATE.md` the whole time. Absence is quiet; nobody investigates a zero
+- Trust `board.py --check` as evidence that `STATE.md` is **true**. It verifies that STATE.md matches what `board.py` computed — if the generator misreads an artifact it misreads it identically on both sides and the check passes. It is a guard against hand edits and nothing else. **Right now its Triage cells describe the superseded corroboration rule** (`work/2026-09-01-board-reads-stale-triage.md`); read the caveat in `docs/capabilities/1_triage.md` before quoting them
+- Key a dict by a **prefix of a filename** (`f.stem.split("_")[0]`). `kiddushin_2005` and `kiddushin_comments_harvested` both key to `kiddushin`, and the second silently overwrote the first — so `STATE.md`'s ground-truth table showed a row of zeros *instead of* the 90-story Kiddushin blind list, for as long as both files existed
+- Count an expert verdict by whether its judgement field is **truthy**. Jeff's most informative Ketubot 17a verdict carries `feedback_type: null` plus a note quoting the Hebrew of the story he says the excerpt contains — declining the dropdown and answering in prose is a verdict, not an absence (Lesson 38's shape, reproduced inside the fix written for Lesson 38)
+- List artifacts in an inventory **without their size**. Three filenames with no counts read as backlog; "**25 verdicts**" beside one of them reads as a problem (Lesson 38)
+- Join a verdict to a proposal on an **exact `(ref, start, end)` key** — a later version re-bounding the same story then reads as the story having been deleted (Lesson 36). Match by overlap
+- Gate the **extent / confidence / grouping** axes of the review UI behind a `No` on "is it a story". A passage can be a story *and* be mis-bounded — that is what `adjust` meant, and it is the commonest correction Jeff gives us. A test fails if this regresses
+- Quote a **review round's precision as the current capability's number** without checking the current detector still makes those calls (Lesson 36). Of 8 notes where the detector disagreed at review time, 7 now agree

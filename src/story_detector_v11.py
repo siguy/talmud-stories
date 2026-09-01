@@ -77,6 +77,7 @@ import json
 import os
 import re
 import time
+import warnings
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 
@@ -1033,9 +1034,10 @@ Return JSON:
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
                      delay: float = 1.0,
-                     skip_triage: bool = False,
+                     examine_all_pages: bool = False,
                      enable_adversarial: bool = False,
-                     tractate: str = 'Ketubot') -> Dict:
+                     tractate: str = 'Ketubot',
+                     skip_triage: Optional[bool] = None) -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
 
@@ -1043,11 +1045,37 @@ Return JSON:
             pages: List of page dicts with 'ref' and 'segments'
             triage_results: Pre-computed triage results (or None to compute)
             delay: Delay between API calls
-            skip_triage: If True, process all pages (no triage filtering)
+            examine_all_pages: If True, run Stage 2 on every page — overriding Stage 1's
+                skip verdict and ONLY that. The labels are still real.
             tractate: Tractate name for output metadata
+            skip_triage: deprecated spelling of `examine_all_pages`
         """
-        # Stage 1: Event Triage
-        if triage_results is None and not skip_triage:
+        if skip_triage is not None:
+            if examine_all_pages:
+                raise TypeError(
+                    'pass either examine_all_pages or skip_triage, not both — they are '
+                    'the same argument and skip_triage is the deprecated spelling')
+            warnings.warn(
+                'skip_triage is deprecated and misnamed; use examine_all_pages. It never '
+                'skipped Stage 1 — until 2026-09-01 it replaced Stage 1 output with '
+                'all-DELIBERATION, a verdict Stage 2, the cross-page context, boundary '
+                'refinement and post-processing all believed. See '
+                'docs/findings/2026-09-01-contaminated-no-triage-ablation.md',
+                DeprecationWarning, stacklevel=2)
+            examine_all_pages = skip_triage
+
+        # Stage 1: Event Triage.
+        #
+        # Runs whenever labels were not supplied — INCLUDING under examine_all_pages.
+        # The flag decides which pages Stage 2 reads, and nothing else: Stage 1 is the
+        # cheap stage, so there was never a saving in skipping the labelling, and the
+        # labels are an input to how every examined page is read. Fabricating them is
+        # what made results/v7/ablation_v7_no_triage.json unreadable — Stage 2's prompt
+        # renders the label per segment, and rule3_v6_ensemble demotes on it, so an
+        # invented DELIBERATION tells the model and the post-processor that nothing
+        # happens on a page nobody looked at (EventType.TRIAGE_FAILED's docstring one
+        # caller over; Lesson 21).
+        if triage_results is None:
             print("\n--- Stage 1: Event Triage ---")
             triager = EventTriager(
                 api_key=self.api_key,
@@ -1055,13 +1083,6 @@ Return JSON:
                 model_name=self.model_name,
             )
             triage_results = triager.triage_all_pages(pages, delay=delay)
-        elif skip_triage:
-            # Generate default triage (all DELIBERATION) so detection still works
-            triage_results = {}
-            for page in pages:
-                ref = page.get('ref', '')
-                n_segs = len(page.get('segments', []))
-                triage_results[ref] = [EventType.DELIBERATION] * n_segs
 
         # Determine which pages to process
         pages_to_process = []
@@ -1072,7 +1093,7 @@ Return JSON:
             # Wave 1 Issue #5: lexical override — if the page contains a canonical
             # story introducer (מַעֲשֶׂה ב…, הָנְהוּ בֵּי תְרֵי, הַהוּא ד…,
             # כִּי הָא ד…), force Stage 2 to run regardless of triage skip.
-            if skip_triage or not EventTriager.should_skip_page(events) \
+            if examine_all_pages or not EventTriager.should_skip_page(events) \
                     or _page_has_story_introducer(page):
                 pages_to_process.append(page)
             else:
@@ -1087,7 +1108,12 @@ Return JSON:
         for i, page in enumerate(pages_to_process):
             ref = page.get('ref', '')
             segments = page.get('segments', [])
-            events = triage_results.get(ref, [EventType.DELIBERATION] * len(segments))
+            # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
+            # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
+            # what the cross-page context blocks below already do; the old
+            # all-DELIBERATION default was the same fabrication as the removed stub, one
+            # page at a time.
+            events = triage_results.get(ref, [])
 
             # Build cross-page context
             prev_ctx = None

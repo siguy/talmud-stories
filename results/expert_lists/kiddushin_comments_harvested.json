@@ -1,0 +1,298 @@
+{
+  "built_by": "scripts/harvest_kiddushin_comments.py",
+  "source": "results/expert_lists/kiddushin_2005.json",
+  "kind": "CIRCULAR — comments on his own list, compared against our output. Never usable for recall (FRAMEWORK §3).",
+  "comments": 10,
+  "remarks_sentence_level": 11,
+  "axes": {
+    "open_question": 1,
+    "borderline": 3,
+    "boundary": 2,
+    "attribution": 1,
+    "classification": 3,
+    "provenance": 1
+  },
+  "jeff_doubts_and_we_assert_story": [
+    [
+      "c_04",
+      "Kiddushin 31b",
+      [
+        "YES"
+      ]
+    ],
+    [
+      "c_05",
+      "Kiddushin 39b",
+      [
+        "HIGH_CONFIDENCE"
+      ]
+    ],
+    [
+      "c_07",
+      "Kiddushin 58a",
+      [
+        "LOW_CONFIDENCE"
+      ]
+    ]
+  ],
+  "jeff_doubts_and_we_propose_nothing_there": [
+    [
+      "c_00",
+      "Kiddushin 10b"
+    ],
+    [
+      "c_03",
+      "Kiddushin 30a"
+    ],
+    [
+      "c_08",
+      "Kiddushin 58a"
+    ]
+  ],
+  "loose_recall_credits_us_with_a_passage_we_do_not_cover": [
+    [
+      "c_03",
+      "Kiddushin 30a"
+    ],
+    [
+      "c_08",
+      "Kiddushin 58a"
+    ]
+  ],
+  "remarks": [
+    {
+      "remark_id": "c_note_28",
+      "comment_id": "c_note_28",
+      "anchor_cp": 10571,
+      "story_id": "kiddushin_039",
+      "ref": "Kiddushin 33b",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "Hereis*** example hada ve’od that looks Amoraic. Check parallel",
+      "axis": "open_question",
+      "quote_polarity": null,
+      "our_reading": "A question addressed to us (\"Check parallel\"), not a verdict. Owed an answer; carries no target.",
+      "detector_spans_covering": [
+        {
+          "classification": "HIGH_CONFIDENCE",
+          "end": 12,
+          "ref": "Kiddushin 33b",
+          "start": 12
+        }
+      ],
+      "detector_calls_strict": [
+        "HIGH_CONFIDENCE"
+      ],
+      "detector_asserts_story": true,
+      "recall_credits_loose": true,
+      "story_text": "ר' אלעי ור' יעקב בר זבדי הוו יתבי, חליף ואזיל ר' שמעון בר אבא וקמו מקמיה, אמר להו: חדא, דאתון חכימי ואנא חבר! ועוד, כלום תורה עומדת מפני לומדיה?"
+    },
+    {
+      "remark_id": "c_00",
+      "comment_id": "c_00",
+      "anchor_cp": 1142,
+      "story_id": "kiddushin_005",
+      "ref": "Kiddushin 10b",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "This is a very minimal story, if at all. Just a dialogue, even if the dialogue was “sent” through messengers or letters",
+      "axis": "borderline",
+      "quote_polarity": null,
+      "our_reading": "\"if at all\" — explicitly contested, not a clean No. Exactly the case the proposed `borderline` status is for.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": false,
+      "story_text": "וכבר שלח יוחנן בן בג בג אצל רבי יהודה בן בתירה לנציבין: שמעתי עליך, שאתה אומר ארוסה בת ישראל אוכלת בתרומה. שלח לו: ואתה אי אתה אומר כן? מוחזקני בך שאתה בקי בחדרי תורה, לדרוש בקל וחומר אי אתה יודע? ומה"
+    },
+    {
+      "remark_id": "c_01",
+      "comment_id": "c_01",
+      "anchor_cp": 3023,
+      "story_id": "kiddushin_013",
+      "ref": "Kiddushin 22b",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "I think these words should be omitted. It is the Talmud’s comment on the alternative story",
+      "axis": "boundary",
+      "quote_polarity": "CUT",
+      "our_reading": "Jeff names text to REMOVE from the end: the Talmud's own comment on the alternative story. Polarity matters — read as ADD this anchors the target one clause off.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": true,
+      "story_text": "ר' יהודה הנדואה גר שאין לו יורשין הוה, חלש, על מר זוטרא לשיולי ביה, חזייה דתקיף ליה עלמא טובא, אמר ליה לעבדיה: שלוף לי מסנאי ואמטינהו לביתא. איכא דאמרי: גדול הוה, זה פירש למיתה וזה פירש לחיים; ואיכא ד"
+    },
+    {
+      "remark_id": "c_02#a",
+      "comment_id": "c_02",
+      "anchor_cp": 3666,
+      "story_id": "kiddushin_014",
+      "ref": "Kiddushin 25a",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "A few more words should be included in the story:  סֵירוּס דְּמַאי? אִילֵּימָא סֵירוּס דְּגִיד, הַיְינוּ גְּוִיָּיה. אֶלָּא לָאו: סֵירוּס דְּבֵיצִים? ",
+      "axis": "boundary",
+      "quote_polarity": "ADD",
+      "our_reading": "Jeff gives the Hebrew to INCLUDE, verbatim. A directly usable boundary target.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": true,
+      "story_text": "סבי דנזוניא לא אתו לפירקיה דרב חסדא, אמר ליה לרב המנונא: זיל צנעינהו. אזל אמר להו: מאי טעמא לא אתו רבנן לפירקא? אמרו ליה: אמאי ניתי? דבעינן מיניה מילתא ולא פשט לן. אמר להו: מי בעיתו מינאי מידי ולא פשי"
+    },
+    {
+      "remark_id": "c_02#b",
+      "comment_id": "c_02",
+      "anchor_cp": 3666,
+      "story_id": "kiddushin_014",
+      "ref": "Kiddushin 25a",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "These seem to be the words of Rav Hisda.",
+      "axis": "attribution",
+      "quote_polarity": null,
+      "our_reading": "A source-critical attribution note, not a boundary or classification instruction. Carries no target.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": true,
+      "story_text": "סבי דנזוניא לא אתו לפירקיה דרב חסדא, אמר ליה לרב המנונא: זיל צנעינהו. אזל אמר להו: מאי טעמא לא אתו רבנן לפירקא? אמרו ליה: אמאי ניתי? דבעינן מיניה מילתא ולא פשט לן. אמר להו: מי בעיתו מינאי מידי ולא פשי"
+    },
+    {
+      "remark_id": "c_03",
+      "comment_id": "c_03",
+      "anchor_cp": 6045,
+      "story_id": "kiddushin_022",
+      "ref": "Kiddushin 30a",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "This is not a story but a report/tradition",
+      "axis": "classification",
+      "quote_polarity": null,
+      "our_reading": "\"report/tradition\" as a category distinct from story — a distinction our criteria doc does not currently make.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": true,
+      "story_text": "לפיכך נקראו ראשונים סופרים - שהיו סופרים כל האותיות שבתורה, שהיו אומרים: וא\"ו דגחון - חציין של אותיות של ס\"ת, דרש דרש - חציין של תיבות, והתגלח - של פסוקים, יכרסמנה חזיר מיער - עי\"ן דיער חציין של תהלים"
+    },
+    {
+      "remark_id": "c_04",
+      "comment_id": "c_04",
+      "anchor_cp": 7641,
+      "story_id": "kiddushin_028",
+      "ref": "Kiddushin 31b",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "This is not really a story. It is a halakhic question and answer. The question related what happened but it does not really amount to a story",
+      "axis": "classification",
+      "quote_polarity": null,
+      "our_reading": "Halakhic question-and-answer excluded even though it \"related what happened\". Narration of an event is not sufficient.",
+      "detector_spans_covering": [
+        {
+          "classification": "YES",
+          "end": 8,
+          "ref": "Kiddushin 31b",
+          "start": 6
+        }
+      ],
+      "detector_calls_strict": [
+        "YES"
+      ],
+      "detector_asserts_story": true,
+      "recall_credits_loose": true,
+      "story_text": "אמר ליה רב יעקב בר אבוה לאביי: כגון אנא דעד דאתינא מבי רב, אבא מדלי לי כסא ואמא מזגה לי, היכי איעביד? א\"ל: מאמך קביל ומאבוך לא תקבל, דכיון דבר תורה הוא חלשה דעתיה."
+    },
+    {
+      "remark_id": "c_05",
+      "comment_id": "c_05",
+      "anchor_cp": 11184,
+      "story_id": "kiddushin_041",
+      "ref": "Kiddushin 39b",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "Not really a story. This “response” (teirutz) should be seen as part of the dialectical argumentation and not indicative of a real story",
+      "axis": "classification",
+      "quote_polarity": null,
+      "our_reading": "A teirutz is dialectical argumentation, not narrative. Same shape as c_04.",
+      "detector_spans_covering": [
+        {
+          "classification": "HIGH_CONFIDENCE",
+          "end": 10,
+          "ref": "Kiddushin 39b",
+          "start": 8
+        }
+      ],
+      "detector_calls_strict": [
+        "HIGH_CONFIDENCE"
+      ],
+      "detector_asserts_story": true,
+      "recall_credits_loose": true,
+      "story_text": "הרי שאמר לו אביו עלה לבירה והבא לי גוזלות, ועלה לבירה ושלח את האם ונטל את הבנים, ובחזירתו נפל ומת, היכן טובת ימיו של זה? והיכן אריכות ימיו של זה? אלא, למען ייטב לך - לעולם שכולו טוב ולמען יאריכון ימיך"
+    },
+    {
+      "remark_id": "c_06",
+      "comment_id": "c_06",
+      "anchor_cp": 13162,
+      "story_id": "kiddushin_049",
+      "ref": "Kiddushin 45a",
+      "expert_blind": false,
+      "counts_for_recall": false,
+      "jeff_verbatim": "מה ע\"ב\rהוספתי--י.ר.",
+      "axis": "provenance",
+      "quote_polarity": null,
+      "our_reading": "The הוספתי--י.ר. marker: Jeff recording that HE added this entry. Already reflected in blind=false for kiddushin_049.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": null,
+      "story_text": "הנהו בי תרי דהוו קא שתו חמרא תותי ציפי בבבל, שקל חד מינייהו כסא דחמרא יהב ליה לחבריה, אמר: מיקדשא לי ברתיך לברי; אמר רבינא: אפילו למאן דאמר חיישינן שמא נתרצה האב, שמא נתרצה הבן לא אמרינן."
+    },
+    {
+      "remark_id": "c_07",
+      "comment_id": "c_07",
+      "anchor_cp": 15936,
+      "story_id": "kiddushin_062",
+      "ref": "Kiddushin 58a",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "Not sure this is a story. No real narrative.",
+      "axis": "borderline",
+      "quote_polarity": null,
+      "our_reading": "\"Not sure\" — contested, on a story he nonetheless listed.",
+      "detector_spans_covering": [
+        {
+          "classification": "LOW_CONFIDENCE",
+          "end": 4,
+          "ref": "Kiddushin 58a",
+          "start": 2
+        }
+      ],
+      "detector_calls_strict": [
+        "LOW_CONFIDENCE"
+      ],
+      "detector_asserts_story": true,
+      "recall_credits_loose": true,
+      "story_text": "אשכחינהו מר יהודה לרב יוסף ולרב שמואל בריה דרבה בר בר חנה דהוו קיימי אפיתחא דבי רבה, אמר להו, תניא: המקדש בפטר חמור, בבשר בחלב, ובחולין שנשחטו בעזרה - ר' שמעון אומר: מקודשת, וחכ\"א: אינה מקודשת; אלמא, "
+    },
+    {
+      "remark_id": "c_08",
+      "comment_id": "c_08",
+      "anchor_cp": 16312,
+      "story_id": "kiddushin_063",
+      "ref": "Kiddushin 58a",
+      "expert_blind": true,
+      "counts_for_recall": true,
+      "jeff_verbatim": "Not sure this is a story. Very minimal.",
+      "axis": "borderline",
+      "quote_polarity": null,
+      "our_reading": "\"Not sure ... Very minimal\" — contested, on a story he nonetheless listed.",
+      "detector_spans_covering": [],
+      "detector_calls_strict": [],
+      "detector_asserts_story": false,
+      "recall_credits_loose": true,
+      "story_text": "בעא מיניה ר' חייא בר אבין מרב הונא: טובת הנאה, ממון או אינה ממון? אמר ליה, תניתוה: המקדש בתרומות, ובמעשרות, ובמתנות, במי חטאת, ובאפר פרה - הרי זו מקודשת, ואפילו ישראל! א\"ל: ולאו אוקימנא בישראל שנפלו ל"
+    }
+  ]
+}

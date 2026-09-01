@@ -174,15 +174,41 @@ old lists. **That offer has not been taken up.**
 
 ## Untried
 
-- **Make the reviewer say which thing is wrong.** The single highest-value item here, and
-  the only route to a Classification point estimate: separate verdict axes for *is it a
-  story* / *is the extent right* / *is the confidence right* / *is the merge right*.
-  Re-deriving intent from free text has a measured ceiling — **24 notes across the rounds
-  are unreadable**, and that is exactly the width of the precision range (Lesson 30).
-  Named as `NEXT/04`; **no brief exists** (see above).
-- **Show `mishnah_stories` to the expert.** The review UI still does not display what the
-  Mishnah filter withheld, so the one person who could settle the scope question has never
-  been shown the passages it removes (`804a097`).
+- ~~Make the reviewer say which thing is wrong~~ — **BUILT 2026-08-31** (Phases A and B
+  of `review-verdict-axes`, now in `work/done/`).
+  `validation/generators/generate_axis_review_ui.py`: *is it a story* (yes / **borderline**
+  / no) as the only required question, with extent / confidence / grouping behind a
+  disclosure, `display_problem` as its own control, and `detector_version` on every
+  exported verdict. Both Phase A requirements are met.
+  **What remains is a round, not code** — `work/2026-08-31-classification-point-estimate.md`,
+  awaiting `jeff:axes-round`.
+  **The design decision worth remembering:** the disclosure is *independent* of the story
+  question. Revealing the extra axes only on a `No` is the obvious reading of the brief
+  and it is wrong — "it IS a story and the boundary is wrong" is the commonest correction
+  we get, and it is what `adjust` always meant.
+  **What it does not do:** it does not make review faster. Click-neutral on a correct
+  entry, more clicks on a wrong one. It buys fidelity, not throughput — do not quote it
+  against the bottleneck.
+  → [`review_verdict_axes_phase_b`](../findings/2026-08-31-review-verdict-axes-phase-b.md)
+- **Throughput, as opposed to fidelity — still untried, and the evidence is already in
+  this file.** The one round Jeff completed **100%** of (2026-02-26, 49/49) was the
+  **delta** UI that showed him only what had changed; the two rounds that showed him all
+  95 stories again returned **1** and **15**. `batch_review.html`'s keyboard shortcuts are
+  recorded above as the only throughput mechanism this project ever built, and they were
+  never measured or reused. Both readings are *indicated, not measured* — n is tiny and
+  his calendar is an obvious confound — but nothing else on this capability points
+  anywhere at all.
+- **Read the 2026-01-08 round before designing the new review UI.** It is the earliest
+  round Jeff signed by name and no ruler reads it (Lesson 38) — but the point for *this*
+  capability is that **its UI already had the axes**: `length_adjustment` and
+  `spans_multiple_pages` as structured fields, plus `story_confidence` and `story_type`.
+  Every later round buried the same information in free text, which is the entire problem
+  `review-verdict-axes` exists to fix. **The right shape existed in January and was lost.**
+  Phase B should start from it rather than re-deriving it.
+  → [`january_round_recovered`](../findings/2026-08-31-january-round-recovered.md)
+- ~~Show `mishnah_stories` to the expert~~ — **the page does now** (2026-08-31): badged
+  and filterable on the axis review UI, Kiddushin 1 and Ketubot 4. Still untried as an
+  *answer*, because it needs the round (`jeff:mishnah-scope`).
 - **Measure a round.** Nobody has ever recorded how long a review took, or verdicts per
   hour. Zero cost; it just requires asking.
 - **A second reviewer.** Until there are two, inter-rater agreement — half of this

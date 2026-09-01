@@ -68,6 +68,15 @@ from xml.etree import ElementTree
 import olefile
 
 PROJECT_ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+# One locator for the project. `measure_recall_vs_expert_list` owns the Hebrew 4-gram
+# match that every recall number is built on; anchoring a reference with a second,
+# slightly different one would make the two disagree in ways nothing would report.
+from scripts.measure_recall_vs_expert_list import (  # noqa: E402
+    gram_index, locate, text_units)
+from scripts.measure_recall_vs_expert_list import grams as corpus_grams  # noqa: E402
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s [kiddushin-list] %(message)s',
@@ -99,6 +108,26 @@ REF_OVERRIDES = {
     'ההוא גברא דקדיש בכישא דירקא':  'Kiddushin 45b',   # 45b seg 1
     'ההוא דאמר לקריבאי':            'Kiddushin 45b',   # 45b seg 3, twice over
 }
+
+# Every expert list we hold, and what each one needs. Kept as data because the mapping is
+# the fiddly part: Jeff's filenames do not match Sefaria's spellings, only Kiddushin has an
+# appendix, and only the three 2026-08-30 lists have a Sefaria page cache to anchor against.
+LISTS = {
+    'Ketubot':   {'doc': 'jeff comms/b.ketubot (1).doc',
+                  'sefaria': ['results/v10/wave4_notrim/ketubot_v10_2-60_notrim.json',
+                              'results/v10/wave4_notrim/ketubot_v10_61-112_notrim.json']},
+    'Kiddushin': {'doc': 'jeff comms/8-30-2026/kidushin.doc',
+                  'missed': 'jeff comms/8-30-2026/Kiddushin missed stories.docx',
+                  'sefaria': ['results/v10/wave4_notrim/kiddushin_v10_notrim.json']},
+    'Gittin':    {'doc': 'jeff comms/8-30-2026/b.gittin.doc',
+                  'sefaria': ['results/sefaria/gittin.json']},
+    'Yevamot':   {'doc': 'jeff comms/8-30-2026/b. yebamot.doc',
+                  'sefaria': ['results/sefaria/yevamot.json']},
+    'Eruvin':    {'doc': 'jeff comms/8-30-2026/eruvin.doc',
+                  'sefaria': ['results/sefaria/eruvin.json']},
+}
+# Only `segments` is read from these, which is Sefaria's page text either way — a detector
+# run is just where the two older tractates' cached text happens to live.
 
 GEMATRIA = {'א':1,'ב':2,'ג':3,'ד':4,'ה':5,'ו':6,'ז':7,'ח':8,'ט':9,'י':10,'כ':20,'ך':20,
             'ל':30,'מ':40,'ם':40,'נ':50,'ן':50,'ס':60,'ע':70,'פ':80,'ף':80,'צ':90,'ץ':90,
@@ -156,6 +185,34 @@ def read_doc(path):
             body = atn[txt_cps[k]:txt_cps[k + 1]].replace(ATN_REF, '').strip()
             comments.append({'anchor_cp': ref_cps[k], 'text': body})
     return full[:ccp_text], comments
+
+
+# The four columns, in the order the Kiddushin and Ketubot lists store them. `eruvin.doc`
+# stores them right-to-left, which is why the order is DETECTED from the header row and
+# never assumed: reading it wrong does not fail, it silently pairs each story with the
+# neighbouring row's location cell (Lesson 28, and see
+# docs/findings/2026-09-01-expert-list-daf-attribution.md).
+COLUMN_LABELS = {'מיקום': 'location', 'טקסט': 'text', 'מקבילות': 'parallels', 'הערות': 'notes'}
+DEFAULT_COLUMNS = {'location': 0, 'text': 1, 'parallels': 2, 'notes': 3}
+
+
+def column_map(rows):
+    """Which cell index holds which column, read off the table's own header row.
+
+    The header row's first cell also carries the document title, so only its LAST
+    paragraph is a column name. Returns (map, header_row_index); falls back to the
+    common order only when no header row exists at all, and says so.
+    """
+    for r, row in enumerate(rows[:3]):
+        names = {}
+        for i, cell in enumerate(row):
+            last = cell['text'].split('\r')[-1].strip()
+            if last in COLUMN_LABELS:
+                names[COLUMN_LABELS[last]] = i
+        if len(names) == len(COLUMN_LABELS):
+            return names, r
+    log.warning('no column header row found; assuming the usual order %s', DEFAULT_COLUMNS)
+    return dict(DEFAULT_COLUMNS), None
 
 
 def table_rows(main):
@@ -265,16 +322,90 @@ def read_missed_stories(path):
 # ----------------------------------------------------------------------- parse
 
 
-def parse(doc_path, tractate, missed_path=None):
+MIN_ANCHOR_COVERAGE = 0.6
+
+
+def anchor_ambiguous_refs(stories, units, index):
+    """Resolve every multi-label row against the real text; returns the ones that moved.
+
+    A row whose location cell names more than one daf ('מה ע"א / מה ע"ב / מו ע"ב', or a
+    two-amud span) cannot say from the document alone which story sits where. Which daf a
+    passage occupies is an objective fact about the Talmud, so reading it off Sefaria is
+    not a judgement about what counts as a story and leaves the list as blind as it was
+    (FRAMEWORK §3) — the same treatment the three hand-written Kiddushin overrides encode,
+    done by measurement instead of by hand.
+    """
+    moved, unresolved = [], []
+    for story in stories:
+        if not story['ref_ambiguous'] or story['ref_source'] == 'text_anchored':
+            continue
+        cov, start, _ = locate(corpus_grams(story['text']), units, index)
+        if start is None or cov < MIN_ANCHOR_COVERAGE:
+            unresolved.append(story)
+            continue
+        story['ref_coverage'] = round(cov, 3)
+        story['ref_source'] = 'text_anchored'
+        if story['ref'] != units[start][0]:
+            story['ref_before_anchoring'] = story['ref']
+            story['ref'] = units[start][0]
+            moved.append(story)
+    if moved or unresolved:
+        log.info('anchored %d ambiguous rows against Sefaria: %d references moved, '
+                 '%d could not be located', len(moved) + len(unresolved), len(moved),
+                 len(unresolved))
+    for story in moved:
+        log.info('  %s -> %s (%s): %s', story['ref_before_anchoring'], story['ref'],
+                 story['ref_hebrew'], story['text'][:60])
+    for story in unresolved:
+        log.warning('  UNANCHORED %s (%s): %s', story['ref'], story['ref_hebrew'],
+                    story['text'][:60])
+    return moved, unresolved
+
+
+def verify_refs(stories, units, index):
+    """Flag, per story, whether its reference is anywhere in the window its text occupies.
+
+    This CHECKS and never corrects. An unambiguous label is Jeff's statement about where a
+    passage belongs, and quietly moving it to wherever a 4-gram search lands would be us
+    editing the ground truth; a disagreement is a fact to report to him, not to resolve.
+    Only rows the document itself leaves ambiguous are anchored (`anchor_ambiguous_refs`).
+    """
+    for story in stories:
+        cov, start, end = locate(corpus_grams(story['text']), units, index)
+        story['text_coverage'] = round(cov, 3)
+        story['ref_in_text_window'] = (
+            None if start is None or cov < MIN_ANCHOR_COVERAGE
+            else story['ref'] in {units[i][0] for i in range(start, end + 1)})
+    disagree = [s for s in stories if s['ref_in_text_window'] is False]
+    unlocated = [s for s in stories if s['ref_in_text_window'] is None]
+    log.info('reference check: %d of %d references are in the window their own text '
+             'occupies; %d disagree, %d unlocated', len(stories) - len(disagree) - len(unlocated),
+             len(stories), len(disagree), len(unlocated))
+    for story in disagree + unlocated:
+        log.info('  %s %s (%s, coverage %.2f): %s',
+                 'DISAGREES' if story['ref_in_text_window'] is False else 'UNLOCATED',
+                 story['ref'], story['ref_hebrew'], story['text_coverage'], story['text'][:60])
+    return disagree, unlocated
+
+
+def parse(doc_path, tractate, missed_path=None, units=None):
     main, raw_comments = read_doc(doc_path)
     rows = table_rows(main)
 
+    cols, header_row = column_map(rows)
+    log.info('%s column order: %s', tractate,
+             ' | '.join(k for k, _ in sorted(cols.items(), key=lambda kv: kv[1])))
+
     stories, comments, last_refs = [], [], []
     for r, row in enumerate(rows):
-        loc_paras, text_paras = paragraphs(row[0]), paragraphs(row[1])
+        if r == header_row:
+            continue
+        loc_paras, text_paras = paragraphs(row[cols['location']]), paragraphs(row[cols['text']])
         labels = [p['text'].strip() for p in loc_paras if DAF.search(p['text'])]
-        parallels = ' '.join(p['text'].strip() for p in paragraphs(row[2]) if p['text'].strip())
-        note = ' '.join(p['text'].strip() for p in paragraphs(row[3]) if p['text'].strip())
+        parallels = ' '.join(p['text'].strip()
+                             for p in paragraphs(row[cols['parallels']]) if p['text'].strip())
+        note = ' '.join(p['text'].strip()
+                        for p in paragraphs(row[cols['notes']]) if p['text'].strip())
 
         refs, inherited = [], False
         for label in labels:
@@ -401,6 +532,13 @@ def parse(doc_path, tractate, missed_path=None):
                     if proposed else
                     'INCLUDED: we never proposed it, so it can only count against us. '
                     'Dropping a story we missed is what inflates recall.')
+
+    # Last, so a reference the text disagrees with is corrected once and everything above
+    # (duplicates, appendix matching) has already run on the document's own labels.
+    if units is not None:
+        index = gram_index(units)
+        anchor_ambiguous_refs(stories, units, index)
+        verify_refs(stories, units, index)
     return stories, comments
 
 
@@ -410,10 +548,12 @@ def parse(doc_path, tractate, missed_path=None):
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--doc', default='jeff comms/8-30-2026/kidushin.doc')
-    ap.add_argument('--tractate', default='Kiddushin')
-    ap.add_argument('--missed', default='jeff comms/8-30-2026/Kiddushin missed stories.docx')
-    ap.add_argument('--out', default='results/expert_lists/kiddushin_2005.json')
+    ap.add_argument('--tractate', default='Kiddushin', choices=sorted(LISTS))
+    ap.add_argument('--doc', help='defaults to the tractate\'s entry in LISTS')
+    ap.add_argument('--missed', help='appendix docx; Kiddushin only, and only if it exists')
+    ap.add_argument('--out', help='defaults to results/expert_lists/<tractate>_2005.json')
+    ap.add_argument('--sefaria', help='page cache to anchor ambiguous references against; '
+                                      'defaults to the tractate\'s, when one is cached')
     ap.add_argument('--report', action='store_true', help='print a human-readable dump')
     ap.add_argument('--self-test', action='store_true',
                     help='assert the Ketubot list still parses to its established 149')
@@ -426,8 +566,27 @@ def main():
         log.info('SELF-TEST PASS: Ketubot parses to 149 stories, 0 comments')
         return
 
-    stories, comments = parse(PROJECT_ROOT / args.doc, args.tractate,
-                              PROJECT_ROOT / args.missed if args.missed else None)
+    spec = LISTS[args.tractate]
+    doc = PROJECT_ROOT / (args.doc or spec['doc'])
+    missed = args.missed or spec.get('missed')
+    missed = PROJECT_ROOT / missed if missed and (PROJECT_ROOT / missed).exists() else None
+    out_path = args.out or f'results/expert_lists/{args.tractate.lower()}_2005.json'
+
+    caches = [Path(args.sefaria)] if args.sefaria else [PROJECT_ROOT / c
+                                                       for c in spec.get('sefaria', [])]
+    units = None
+    if caches and all(c.is_file() for c in caches):
+        pages = [page for c in caches for page in json.loads(c.read_text())['pages']]
+        units = text_units(pages)
+        log.info('anchoring against %s (%d segments)',
+                 ', '.join(c.name for c in caches), len(units))
+    else:
+        # Never silent: without a cache the ambiguous rows keep the document's own first
+        # label and nothing checks the rest against the text (Lesson 38).
+        log.warning('no Sefaria cache for %s — ambiguous references stay as the document '
+                    'labels them and no reference is checked against the text', args.tractate)
+
+    stories, comments = parse(doc, args.tractate, missed, units)
     blind = [s for s in stories if s['blind']]
     counted = [s for s in stories if s.get('counts_for_recall', s['blind'])]
     flagged = [s for s in stories if s['in_appendix']]
@@ -437,7 +596,7 @@ def main():
 
     payload = {
         'tractate': args.tractate,
-        'source_document': args.doc,
+        'source_document': str(Path(doc).relative_to(PROJECT_ROOT)),
         'source_created': '2005-02-04',
         'source_last_saved': '2026-08-30',
         'parser': 'scripts/parse_kiddushin_list.py',
@@ -451,6 +610,9 @@ def main():
             'recall_denominator': len(counted_unique),
             'strictly_blind': len(blind_unique),
             'comments': len(comments),
+            'ref_disagrees_with_text': sum(1 for s in stories if s.get('ref_in_text_window') is False),
+            'ref_unlocated': sum(1 for s in stories if s.get('ref_in_text_window') is None),
+            'ref_text_anchored': sum(1 for s in stories if s['ref_source'] == 'text_anchored'),
         },
         'notes': [
             'blind=false means Jeff marked the entry as his own 2026 addition; exclude from recall.',
@@ -469,12 +631,12 @@ def main():
         'stories': stories,
         'comments': comments,
     }
-    out = PROJECT_ROOT / args.out
+    out = PROJECT_ROOT / out_path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(payload, ensure_ascii=False, indent=1))
     log.info('%s: %d stories (%d blind, %d not blind, %d duplicate, %d expert-flagged), '
              '%d comments -> %s', args.tractate, len(stories), len(blind),
-             len(stories) - len(blind), len(dupes), len(flagged), len(comments), args.out)
+             len(stories) - len(blind), len(dupes), len(flagged), len(comments), out_path)
     log.info('recall denominator: %d (%d strictly blind, plus %d appendix case(s) we never proposed)', payload['counts']['recall_denominator'], payload['counts']['strictly_blind'], payload['counts']['recall_denominator'] - payload['counts']['strictly_blind'])
 
     if args.report:

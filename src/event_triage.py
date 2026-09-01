@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Event Triage (Stage 1): Classify every segment into event types.
-Skip pages with <2 narrative events (~60% of pages).
+Skip pages with no narrative event at all.
 
 Increment 2 of v7 hybrid pipeline.
 """
@@ -266,12 +266,31 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
         Skip pages unlikely to contain stories.
 
         Keep pages with:
-        - ≥2 NARRATIVE_EVENT segments, OR
-        - ≥1 NARRATIVE_EVENT + ≥2 VERBAL_ACT (story with dialogue), OR
+        - ≥1 NARRATIVE_EVENT segment, OR
         - any TRIAGE_FAILED segment — we could not look, so we do not get to decide
 
         This catches Talmudic stories which often have 1 narrative setup
         followed by dialogue between characters.
+
+        **Changed 2026-08-31: a single NARRATIVE_EVENT is now enough.** The rule
+        used to demand that a narrative event be *corroborated* — a second
+        narrative event, or two verbal acts — and threw the page away otherwise.
+        Measured against both blind lists, that clause was the single richest
+        seam of missed stories in the corpus: 8 pages across Ketubot and
+        Kiddushin were discarded by it and **6 of them carry a real story**
+        (~75%, against 14.3% for discarded pages as a whole). One is Ketubot
+        51a, the false skip found by hand on 2026-02-13 and never fixed.
+
+        Priced before shipping: +1 Ketubot story and +2 Kiddushin stories for
+        **8 extra Stage 2 calls** and 5 false proposals across both tractates.
+        Keeping every discarded page instead costs 224 calls and 24 false
+        proposals to gain just one story more.
+
+        Verbal acts alone still never keep a page. Kiddushin 10b (N=0, V=5) is a
+        real story that stays missed; recovering it needs a `V >= 4` clause,
+        which buys nothing on Ketubot for 70 extra calls — a threshold fitted to
+        a single story, deliberately not adopted (Lesson 18).
+        → docs/findings/2026-08-31-triage-single-narrative.md
         """
         # A page whose triage failed is UNKNOWN, not empty. Examining it costs one Stage 2
         # call; discarding it costs a story we can never find again.
@@ -280,12 +299,7 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
 
         narrative_count = sum(1 for et in event_types
                               if et == EventType.NARRATIVE_EVENT)
-        verbal_count = sum(1 for et in event_types
-                           if et == EventType.VERBAL_ACT)
-
-        if narrative_count >= 2:
-            return False
-        if narrative_count >= 1 and verbal_count >= 2:
+        if narrative_count >= 1:
             return False
         return True
 

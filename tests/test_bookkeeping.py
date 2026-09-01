@@ -49,10 +49,26 @@ def git(*args: str, cwd: Path = ROOT) -> str:
 
 
 def tracked(*globs: str) -> list[Path]:
+    """
+    Every repo file matching the globs: tracked, PLUS untracked-but-not-ignored.
+
+    Untracked files were added 2026-08-31. Enumerating only `git ls-files` made every
+    guard here blind to a file until it was committed — so a brand-new finding with a
+    broken link passed the suite and failed only after `git add`. A guard whose coverage
+    depends on git state is weakest exactly when it matters most: just after you write a
+    file (Lesson 38).
+
+    `--exclude-standard` respects .gitignore, so scratch and generated artifacts stay out;
+    the added set is precisely the files you are about to commit.
+    """
     out: list[Path] = []
     for g in globs:
-        out += [ROOT / p for p in git("ls-files", g).split("\n") if p and not p.startswith("archive/")]
-    return [p for p in out if p.exists()]
+        listings = (git("ls-files", g),
+                    git("ls-files", "--others", "--exclude-standard", g))
+        for listing in listings:
+            out += [ROOT / p for p in listing.split("\n")
+                    if p and not p.startswith("archive/")]
+    return [p for p in dict.fromkeys(out) if p.exists()]
 
 
 def items() -> list[tuple[Path, dict, str]]:
@@ -375,8 +391,14 @@ def test_no_markdown_link_is_broken():
     assert not broken, f"{len(broken)} broken markdown link(s): {broken[:10]}"
 
 
-def test_the_closing_step_re_roots_links_so_finishing_cannot_break_them():
+def test_the_closing_step_re_roots_the_moved_item_s_own_links():
     """Verify the guard by simulating the failure it guards (Lesson 31).
+
+    NOTE the name. This covers ONE direction: links *out of* the moved item. It was
+    called `..._so_finishing_cannot_break_them` until 2026-08-31, which overclaimed —
+    finishing went on breaking links *into* the item, and did so twice in one session
+    while this test stayed green. The suite asserted a property the repo did not have.
+    The other direction lives in `tests/test_finish_fixes_inbound_links.py`.
 
     Items live in `work/` and link out with `../`. Finishing one moves it into
     `work/done/`, one level deeper, where every such link breaks — at the exact moment
@@ -403,7 +425,10 @@ def test_the_closing_step_re_roots_links_so_finishing_cannot_break_them():
 
 def test_every_open_item_would_survive_being_closed():
     """The 60 latent breakages, checked the right way round: not 'are the links already
-    deep' but 'does the closing step leave them resolvable'."""
+    deep' but 'does the closing step leave them resolvable'.
+
+    Outbound only — see the note on the test above. Inbound is covered by
+    `tests/test_finish_fixes_inbound_links.py`."""
     import importlib.util, urllib.parse
     spec = importlib.util.spec_from_file_location("board", ROOT / "scripts" / "board.py")
     board = importlib.util.module_from_spec(spec)

@@ -5,13 +5,13 @@ tractate: [gittin, yevamot, eruvin, ketubot]
 blocked_by: []
 awaiting: []
 writes: [scripts/parse_expert_doc.py, scripts/fetch_tractate_pages.py, results/expert_lists/]
-finding:
+finding: docs/findings/2026-09-01-expert-list-daf-attribution.md
 superseded_by:
 ---
 
 # Fix per-daf attribution for two-amud headers in the expert lists
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) §3, then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) §3, then this.
 **No API calls. Small.** It blocks all three new-tractate `detection` items.
 
 ## The defect, measured
@@ -57,3 +57,32 @@ reproduces exactly as before.
 ## When done
 
 Finding to `docs/findings/`, add `## Outcome`, `git mv` to `work/done/`.
+
+## Outcome
+
+**DONE 2026-09-01.** Fixed, and the filed defect turned out to be the smaller half of it.
+
+Two-amud headers are now read, and a story under one is anchored to the daf its own text
+starts on (`ref_source: text_anchored`), which is an objective fact about where the passage
+sits rather than a judgement about what counts as a story — the list stays blind. A story
+anchored *outside* its own header's span is flagged rather than silently corrected.
+
+**The larger defect was next to it.** Anchoring every entry, not just the span ones, showed
+Eruvin's list is mis-attributed in **53 of 73** entries: its table stores the columns
+right-to-left, so `textutil`'s flattened stream puts each location cell *after* its story
+and every entry inherited the **previous row's** daf. Gittin is 5 of 112 and Yevamot 4 of
+102 by comparison. A reversed-column list is now **refused by name**, pointing at
+`parse_kiddushin_list.py` — the parse it produced returned the right number of stories,
+each on a real nearby daf, so nothing downstream would ever have looked wrong (Lessons 28,
+38). **Eruvin detection was queued behind this item and would have been measured per daf
+against a list that was 71% wrong.**
+
+Regression guard held exactly: Ketubot recall reproduces at **96.0 / 98.0 / 97.9**, every
+measurement field in the recall artifact identical, entry counts unmoved (149 / 112 / 102),
+and **11 `ref` labels corrected** — the largest by 21 dapim. Only per-daf analysis was ever
+affected: `locate()` never reads `ref`, which is why a corpus-wide number could not see it.
+
+`SPAN_HEADER` had two definitions — one in the parser that could not use it, one in the
+report that named the defect; now one. Suite 170 -> 180.
+
+**Does not unblock Eruvin.** It correctly blocks it, which nothing did before.

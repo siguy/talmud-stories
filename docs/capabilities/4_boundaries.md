@@ -5,8 +5,13 @@
 **Gate:** ≥75% hit+near (PROVISIONAL — the loosest of the six)
 **Current:** **Ketubot 80% hit / 84% hit+near** on the 229 scorable targets derived from
 Jeff's 2005 list (**BLIND**); untrimmed segment boundaries alone score 75% / 83%.
-**Kiddushin 60% / 73%, ±7 points**, on 15–16 correction targets (**CIRCULAR + biased**).
-Measured 2026-08-30.
+**Kiddushin 85% / 91%** on 130 scorable of a new 176-target blind set; untrimmed alone
+scores **77% / 85%**. Both figures are Wave 5 clause spans, which are **not what ships** —
+the shipped output is the untrimmed row. Ketubot measured 2026-08-30, Kiddushin
+2026-08-31, both re-scored the same day for comparability (Lesson 11).
+
+**The old Kiddushin figure — 60% / 73% ±7 on 15 correction targets — is retired, not
+averaged.** It was a measurement of a biased 15-question exam, not of Kiddushin.
 
 *Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
@@ -52,6 +57,9 @@ five successive mechanisms, and four of them were wrong.
 | 2026-08-30 | **Wave 5b — per-clause role labelling**, then compute the boundary from the labels: replaces "which clause?" with a structured judgment | **BUILT, REVIEWED, SHELVED.** Three independent reviews: the idea is right, the execution is not. 433 lines committed *with* their defects so they would not be lost | `1582e07`, [`wave5b_review`](../findings/2026-08-30-wave5b-review.md), [`wave5b_decision`](../findings/2026-08-30-wave5b-decision.md) |
 | 2026-08-30 | **Wave 5b Step 0 — a failed call is no longer stamped as a judgment** (failure-injection test written first, watched fail, then fixed) | fixed. With every call failing: before `{kept_full: 6, no_split: 2, skipped: 6}` = 14 counts for 6 stories, 6 fabricated speech profiles, 0 `needs_review`; after `{no_split: 1, skipped: 5}` = 6 counts, 0 profiles, 5 `needs_review`. Guarded by `tests/test_wave5b_runner_outcomes.py` | `d473944`, Lesson 21 |
 | 2026-08-30 | **The boundary ruler rebuilt** — corrections harvest widened 52 → 70, `quote_polarity` modelled, and a **neutral 294-target set built from Jeff's 2005 list** by sequence-aligning his own edition against the Sefaria Hebrew (147 of 149 stories align, median 99% of his letters matched in order) | **measured: gradeable targets 35 → 249; noise floor 7 points → 0.** The two sources, twenty years apart, agree on **84%** of their 32 overlapping boundaries | `6be55d7`, [`boundary_ruler_rebuild`](../findings/2026-08-30-boundary-ruler-rebuild.md), Lesson 23 |
+| 2026-08-31 | **A blind Kiddushin boundary set**, built by the same method as Ketubot's: 89 blind stories from the 2005 list, sequence-aligned against the Sefaria Hebrew | **measured: 88 of 89 align (median 99.3% of his letters), 176 targets, 130 scorable.** Noise floor **±7 points → 0.77** — the identical-code repeat moves **exactly one target** (66b seg 0, NEAR→HIT) on both sets; on 15 targets that is 6.7 points, on 130 it is 0.77 and **0 on hit+near**. Kiddushin scores **85% / 91%**, above the gate and **above Ketubot** | [`kiddushin_boundary_set`](../findings/2026-08-31-kiddushin-boundary-set.md) |
+| 2026-08-31 | The clause-edge ceiling re-measured on a second tractate | **measured: 88% of Jeff's Kiddushin boundaries are on a clause edge** vs Ketubot's 87%; by direction **starts 80% / 79%, ends 95% / 96%**. The ~87% ceiling is not a Ketubot artifact, and the residual is almost entirely **starts** | same |
+| 2026-08-31 | `score_boundary_targets.py` classified blind-vs-corrections by the literal filename `expert_boundary_targets_2005.json` | fixed before it mattered: the new Kiddushin set would have been **counted and reported as a corrections set**. Classifies on `source_round` now | same |
 | 2026-08-30 | **End-trim cap at 3 clauses** — every end regression cut too *early* (drifts −6 −6 −6 −6 −4 −3 −2 −2 −2 −1); caps of 1/2/3 score identically | shipped at 80%/84% → **81%/86%** on the neutral ruler… | `2e4fd89` |
 | 2026-08-30 | …then **REVERTED** once Simon settled which expert standard we build for | see below | `a7659d3`, [`trim_asymmetry`](../findings/2026-08-30-trim-asymmetry.md), Lesson 24 |
 
@@ -168,25 +176,31 @@ The neutral ruler, same runs and same day, says the plain segment boundary was *
 **Above the gate on Ketubot, below it on Kiddushin, and the Kiddushin number is not
 trustworthy.**
 
+**Above the gate on both tractates, and both measurements are now stable enough to say
+so.**
+
 | | current | gate | noise |
 |---|---|---|---|
 | Ketubot (BLIND, n=229) | **80% / 84%** | ≥75% hit+near | **0 points**, measured on same-code repeats |
-| Kiddushin (CIRCULAR + biased, n≈16) | 60% / 73% | ≥75% hit+near | **±7 points** — one target is 6.25 |
+| Kiddushin (BLIND, n=130) | **85% / 91%** | ≥75% hit+near | **0.8 points** — one target, and 0 on hit+near |
+| *Kiddushin, corrections only (CIRCULAR + biased, n=15)* | *60% / 73%* | — | *±7 points — one target is 6.7* |
 
 Three things follow:
 
-1. **Ketubot clears the gate, and the measurement is stable enough to say so.** Two
-   identical-code runs that genuinely differ (2 of 111 boundaries moved) score the same.
-   That is the first gate in this project able to adjudicate a code change.
-2. **Kiddushin's shortfall is not a fact about Kiddushin.** Its ruler is 16 corrections
-   targets with a ±7-point noise floor, on a biased set. `work/2026-08-30-kiddushin-boundary-set.md` builds a blind
-   Kiddushin boundary set (~180–190 targets) from the newly parsed 2005 list, which will
-   kill the noise the same way Ketubot's did. **Until then, do not compare the two
-   tractates on this row.**
-3. **Untrimmed already scores 75% / 83%.** The whole trimming apparatus — three
-   mechanisms, two reverts, four months — is worth about **5 points of HIT and 1 point of
-   hit+near** on the blind ruler. The old exam said it doubled the score. That gap between
-   the two readings is the most important thing this capability has learned.
+1. **Both tractates clear the gate, and both measurements can adjudicate a code change.**
+   Identical-code runs that genuinely differ score the same on hit+near for both.
+2. **Kiddushin's shortfall was never a fact about Kiddushin — confirmed 2026-08-31.**
+   Built blind, it scores **85% / 91%**, above the gate and **above Ketubot**; untrimmed
+   it is already 77% / 85%. The prediction recorded here on 2026-08-30 held, and the
+   direction of the surprise is worth keeping: the biased exam did not merely add noise,
+   it was **wrong by 18 points on hit+near and in the wrong order between tractates**.
+   The two rows may now be compared. The corrections row stays, reported apart: it answers
+   "did we fix the ones he flagged", which is still a real question.
+3. **Untrimmed already scores 75% / 83% (Ketubot) and 77% / 85% (Kiddushin).** The whole
+   trimming apparatus — three mechanisms, two reverts, four months — is worth about **5
+   points of HIT and 1 point of hit+near** on Ketubot's blind ruler, and **8 and 6** on
+   Kiddushin's. The old exams said it doubled the score on both. That gap between the two
+   readings is the most important thing this capability has learned.
 
 **Blocked on Jeff, and honestly so.** The end rule is a product question in a
 measurement's costume: when a ruling is what makes a passage a story at all, is that
@@ -196,13 +210,17 @@ soon"* ([`STATUS.md`](../../STATUS.md), [`email_jeff_2026-08-30.md`](../../comms
 
 ## Ceiling
 
-**Measured, and unusually concrete: ~87%.**
+**Measured, unusually concrete, and now confirmed on a second tractate: ~87-88%.**
 
-**87% of Jeff's 2005 boundaries fall exactly on a clause edge** — 257 of 294. The other
-13% fall *inside* a clause, so **no prompt can reach them** with the current splitter;
-it would need a finer one (`6be55d7`). This is the first direct evidence for or against
-Wave 5's core design choice, and it validates it: clause anchoring can reach seven-eighths
-of the target.
+**87% of Jeff's 2005 Ketubot boundaries fall exactly on a clause edge** — 257 of 294 —
+and **88% of his Kiddushin ones** — 154 of 176 (2026-08-31). The remainder fall *inside*
+a clause, so **no prompt can reach them** with the current splitter; it would need a finer
+one (`6be55d7`). This is the first direct evidence for or against Wave 5's core design
+choice, and it validates it: clause anchoring can reach seven-eighths of the target.
+
+**The residual is a *start* problem, and that is new.** Split by direction the two
+tractates agree closely — ends land on a clause edge 96% / 95% of the time, starts only
+79% / 80%. So a finer splitter would be bought almost entirely for start boundaries.
 
 *Measuring it required care worth recording.* A first pass said 61% land mid-clause —
 an artifact, because clause ranges run past the closing `.` while Jeff's text ends on a
@@ -222,13 +240,15 @@ the scorer says so. Downgraded from a blocker to a cleanup once the neutral rule
   decision: **Ketubot 62a and 105b each discard a whole second story** — R. Yochanan on
   the collapsing stair, and Mar Ukva and the spit, six clauses of narrative and dialogue
   Sefaria prints in full. Wrong under **every** definition of where a story ends.
-- **A blind Kiddushin boundary set** (`work/2026-08-30-kiddushin-boundary-set.md`) — ~180–190 targets from the 2005
-  list, which removes the ±7-point noise and makes the Kiddushin row meaningful.
+- ~~A blind Kiddushin boundary set~~ — **done 2026-08-31**: 176 targets, noise 7 points
+  → 0.77. `tests/expert_boundary_targets_2005_kiddushin.json`.
 - **Harvest Jeff's 10 anchored Kiddushin remarks** (`work/2026-08-30-kiddushin-comments-harvest.md`) — each came back
   with its exact anchor position in the main text, so it attaches to the passage he was
   looking at. Several are boundary corrections. Unused.
-- **A finer splitter for the 13%** — the only route past the measured ceiling. Nobody has
-  costed it, and it may not be worth it: the reader sees the surrounding text.
+- **A finer splitter for the 12-13%** — the only route past the measured ceiling. Nobody
+  has costed it, and it may not be worth it: the reader sees the surrounding text. What is
+  now known is *where* it would pay: **starts, not ends** (ends are already 95-96%
+  clause-aligned on both tractates).
 - **Averaging repeated runs, or many more targets, before adjudicating any prompt
   change.** Recorded as necessary after the noise floor was found (Lesson 22); the neutral
   ruler solved it for Ketubot and nothing solves it for Kiddushin yet.
