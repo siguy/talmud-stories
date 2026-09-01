@@ -50,6 +50,24 @@ HTML = re.compile(r'<[^>]+>')
 GEMATRIA = {'א':1,'ב':2,'ג':3,'ד':4,'ה':5,'ו':6,'ז':7,'ח':8,'ט':9,'י':10,'כ':20,'ך':20,
             'ל':30,'מ':40,'ם':40,'נ':50,'ן':50,'ס':60,'ע':70,'פ':80,'ף':80,'צ':90,'ץ':90,'ק':100}
 DAF_HEADER = re.compile(r'^([א-ת]{1,4})\s*ע["״\']?([אב])["״\']?\s*$')
+# A two-amud header ('סה ע"ב-סו ע"א') names a story that straddles a daf boundary. Before
+# 2026-09-01 nothing matched it, so `current` kept the PRECEDING header and every story
+# under one was credited to the wrong daf — 21 across Gittin/Yevamot/Eruvin, 15 headers in
+# Ketubot. The second daf may be elided ('יד ע"א-ע"ב' = both amudim of daf 14), and one
+# Gittin header uses amud *dalet*, a Yerushalmi four-column form with no Bavli equivalent;
+# both are recognised here and resolved by `anchor_span_refs`, never guessed.
+SPAN_HEADER = re.compile(
+    r'^([א-ת]{1,4})\s*ע["״]([אבגד])\s*[-–]\s*(?:([א-ת]{1,4})\s*)?ע["״]([אבגד])\s*$')
+NON_BAVLI_AMUD = set('גד')
+
+# The lists are four-column tables (mikom | tekst | mekbilot | he'arot). `textutil`
+# flattens a table to lines in stream order, so this parser only aligns a story with its
+# own location cell while the location column comes FIRST. In `eruvin.doc` the columns are
+# stored right-to-left, so the location follows its story and every entry inherits the
+# PREVIOUS row's daf: 53 of 73 land on the wrong page, against 5 of 112 in Gittin. Refusing
+# is the point — a silent 71% mis-attribution is exactly the shape of Lesson 28, and the
+# table-aware parser reads the real column order.
+COLUMN_NAMES = ['מיקום', 'טקסט', 'מקבילות', 'הערות']
 CITATION = re.compile(r'(ירושלמי|תוספתא|בר["״]ר|מכילתא|ספרי|ספרא|אדר["״]נ|מדרש|פסיקתא|תנחומא)')
 SUBREF = re.compile(r'ע["״][אב]|פ["״][א-ת]|ה["״][א-ת]')
 
@@ -75,26 +93,84 @@ def gematria(letters):
     return sum(GEMATRIA[c] for c in letters) if letters and all(c in GEMATRIA for c in letters) else None
 
 
+def amud_ref(tractate, daf, amud):
+    """A Bavli reference. Yerushalmi amud gimel/dalet map onto the daf's second half."""
+    return f"{tractate} {daf}{'a' if amud in 'אג' else 'b'}"
+
+
+def span_refs(match, tractate):
+    """The dapim a two-amud header names, in document order. Second daf may be elided."""
+    first, second = gematria(match.group(1)), gematria(match.group(3) or match.group(1))
+    if not first or not second:
+        return []
+    refs = [amud_ref(tractate, first, match.group(2)), amud_ref(tractate, second, match.group(4))]
+    return list(dict.fromkeys(refs))          # 'יד ע"א-ע"ב' names two amudim, not one twice
+
+
+def require_location_column_first(lines, path):
+    """Refuse a list whose location column does not precede its story column.
+
+    Raises rather than warning: the failure is silent by nature — the parse still returns
+    the right NUMBER of stories, each labelled with a neighbouring daf — and a per-daf
+    measurement built on it looks entirely healthy (Lesson 38, absence is quiet).
+    """
+    seen = {name: i for i, line in enumerate(lines[:60])
+            for name in COLUMN_NAMES if line.strip() == name}
+    if 'מיקום' in seen and 'טקסט' in seen and seen['מיקום'] > seen['טקסט']:
+        raise ValueError(
+            f"{Path(path).name}: the location column follows the story column, so this "
+            "line-based parser would credit every story to the PREVIOUS row's daf. Parse "
+            "it with scripts/parse_kiddushin_list.py, which reads the .doc's real table "
+            "structure instead of textutil's flattened stream (Lesson 28).")
+
+
 def parse_expert_doc(path, tractate):
-    """macOS `textutil` converts legacy .doc; returns [{ref, text, words}]."""
+    """macOS `textutil` converts legacy .doc; returns [{ref, ref_candidates, ref_source, ...}].
+
+    `ref` is a LABEL — the recall measurement locates every story by Hebrew 4-gram over
+    the whole corpus and never reads it (`locate`). So this function's attribution does
+    not move any recall number; what it decides is whether *per-daf* analysis is sound,
+    which is exactly what a new tractate's triage and detection measurement is.
+
+    Under a two-amud header the document alone cannot say which daf a story starts on.
+    `ref` is provisionally the first daf of the span and `ref_source` is `span_header`;
+    `anchor_span_refs` resolves it against the real text when segments are available.
+    """
     with tempfile.NamedTemporaryFile(suffix='.txt', delete=False) as tmp:
         subprocess.run(['textutil', '-convert', 'txt', '-output', tmp.name, str(path)], check=True)
         lines = [l.strip() for l in Path(tmp.name).read_text().split('\n')]
 
-    stories, current = [], None
+    require_location_column_first(lines, path)
+
+    stories, current, spans = [], None, 0
     for line in lines:
         header = DAF_HEADER.match(line)
         if header:
             daf = gematria(header.group(1))
             if daf:
-                current = f"{tractate} {daf}{'a' if header.group(2) == 'א' else 'b'}"
+                current = {'refs': [amud_ref(tractate, daf, header.group(2))],
+                           'hebrew': line, 'non_bavli_amud': False}
+                continue
+        span = SPAN_HEADER.match(line)
+        if span:
+            refs = span_refs(span, tractate)
+            if refs:
+                spans += 1
+                current = {'refs': refs, 'hebrew': line,
+                           'non_bavli_amud': bool({span.group(2), span.group(4)} & NON_BAVLI_AMUD)}
                 continue
         if not current or not line or len(line.split()) < 8:
             continue
         if CITATION.search(line) and SUBREF.search(line) and len(line.split()) <= 25:
             continue  # parallels column, not a story
-        stories.append({'ref': current, 'text': line, 'words': len(line.split())})
-    log.info('parsed %s: %d expert stories', Path(path).name, len(stories))
+        stories.append({'ref': current['refs'][0], 'text': line, 'words': len(line.split()),
+                        'ref_candidates': current['refs'],
+                        'ref_source': 'daf_header' if len(current['refs']) == 1 else 'span_header',
+                        'ref_hebrew': current['hebrew'],
+                        'non_bavli_amud': current['non_bavli_amud']})
+    under_span = sum(1 for s in stories if s['ref_source'] == 'span_header')
+    log.info('parsed %s: %d expert stories (%d under %d two-amud headers, pending text anchoring)',
+             Path(path).name, len(stories), under_span, spans)
     return stories
 
 
@@ -192,6 +268,66 @@ def locate(story_grams, units, index, max_window=14, seeds=12):
 
 
 
+MIN_ANCHOR_COVERAGE = 0.6      # the same floor `main` uses to call a story "unlocated"
+
+
+def gram_index(units):
+    """Inverted 4-gram index over `units`, as returned by `load_detected` or `text_units`."""
+    index = defaultdict(set)
+    for i, (_, _, gs) in enumerate(units):
+        for g in gs:
+            index[g].add(i)
+    return index
+
+
+def text_units(pages):
+    """`load_detected`'s unit shape from plain Sefaria pages — text only, no detector run."""
+    units = [(page['ref'], seg['index'], grams(seg['hebrew']))
+             for page in pages for seg in page.get('segments', [])]
+    daf = lambda ref: (int(re.search(r'(\d+)', ref).group(1)), 0 if ref.rstrip()[-1] == 'a' else 1)
+    return sorted(units, key=lambda u: (daf(u[0]), u[1]))
+
+
+def anchor_span_refs(stories, units, index):
+    """Resolve two-amud-header stories to the daf their text actually starts on.
+
+    Which daf a passage sits on is an objective fact about the Talmud, so reading it off
+    the text is not a judgement about what counts as a story and leaves the list as blind
+    as it was (the same `text_anchored` treatment `parse_kiddushin_list.py` gives its one
+    multi-label row). Returns (anchored, unresolved, outside_span).
+
+    A story anchored OUTSIDE the dapim its own header names is kept at the anchored daf
+    and flagged: the text is the better evidence, and a silent correction here would hide
+    a mis-typed header in the ground truth.
+    """
+    anchored, unresolved, outside = [], [], []
+    for story in stories:
+        if story.get('ref_source') != 'span_header':
+            continue
+        cov, start, _ = locate(grams(story['text']), units, index)
+        if start is None or cov < MIN_ANCHOR_COVERAGE:
+            story['ref_source'] = 'span_header_unanchored'
+            story['ref_coverage'] = round(cov, 3)
+            unresolved.append(story)
+            continue
+        story['ref'] = units[start][0]
+        story['ref_source'] = 'text_anchored'
+        story['ref_coverage'] = round(cov, 3)
+        story['ref_outside_header_span'] = story['ref'] not in story['ref_candidates']
+        (outside if story['ref_outside_header_span'] else anchored).append(story)
+    if anchored or unresolved or outside:
+        log.info('span headers: %d stories anchored to the daf their text starts on, '
+                 '%d anchored outside their own header span, %d unresolved (kept at the '
+                 "span's first daf)", len(anchored), len(outside), len(unresolved))
+    for story in unresolved:
+        log.warning('  UNANCHORED %s (coverage %.2f): %s',
+                    story['ref_hebrew'], story['ref_coverage'], story['text'][:70])
+    for story in outside:
+        log.warning('  OUTSIDE SPAN %s -> %s: %s',
+                    story['ref_hebrew'], story['ref'], story['text'][:70])
+    return anchored, unresolved, outside
+
+
 def cause_buckets(rows):
     """
     Split the MISSES by cause. Returns (missed, triage_lost, kept_missed).
@@ -255,10 +391,8 @@ def main():
         for page in json.loads(Path(args.golden).read_text())['pages']:
             golden[page['ref']] += [(s['start_segment'], s['end_segment']) for s in page.get('stories', [])]
 
-    index = defaultdict(set)
-    for i, (_, _, gs) in enumerate(units):
-        for g in gs:
-            index[g].add(i)
+    index = gram_index(units)
+    anchor_span_refs(expert, units, index)
 
     rows = []
     for story in expert:

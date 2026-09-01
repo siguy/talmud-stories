@@ -39,18 +39,15 @@ PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.story_detector_v6 import get_page_with_segments  # noqa: E402  (the existing client)
-from scripts.measure_recall_vs_expert_list import (DAF_HEADER, gematria,  # noqa: E402
-                                                   parse_expert_doc)
+from scripts.measure_recall_vs_expert_list import (DAF_HEADER, SPAN_HEADER,  # noqa: E402
+                                                   anchor_span_refs, gematria, gram_index,
+                                                   parse_expert_doc, text_units)
 
-# `parse_expert_doc` only recognises single-amud headers ("סה ע\"ב"), so a story Jeff
-# headed with a two-amud span ("סה ע\"ב-סו ע\"א") is silently attributed to the PREVIOUS
-# daf. Checking coverage against the parser alone would therefore be partly vacuous —
-# it cannot report a daf it never saw. This second pattern catches those spans so the
-# range check sees every daf the document actually cites.
+# SPAN_HEADER lived here until 2026-09-01, when `parse_expert_doc` learned to read two-amud
+# headers itself. It stays imported rather than re-declared: this check exists to catch a
+# daf the parser never saw, and two copies of the pattern could not report that honestly.
 # A header for THIS tractate starts with the numeral; a parallel in another tractate is
 # prefixed with its name ('ב"מ יח ע"ב'), so requiring a numeral at ^ excludes them.
-SPAN_HEADER = re.compile(
-    r'^([א-ת]{1,4})\s*ע["״]([אבגד])\s*[-–]\s*(?:([א-ת]{1,4})\s*)?ע["״]([אבגד])\s*$')
 
 # force=True because the imported modules above call basicConfig first, which would
 # otherwise tag this script's lines with their name in project.log.
@@ -186,21 +183,35 @@ def verify(tractate, pages, expected):
     # 3. Expert-list coverage — the check the brief calls the point of the task.
     doc = EXPERT_DOCS.get(tractate)
     if doc and doc.exists():
-        entries = parse_expert_doc(doc, tractate)
+        # Anchor every two-amud-header story to the daf its text actually starts on, so the
+        # refs checked below are the ones a per-daf measurement would use. A list this
+        # parser refuses (reversed columns — see require_location_column_first) still gets
+        # its range checked from `cited_dapim`, and the refusal is reported, never swallowed.
+        try:
+            entries = parse_expert_doc(doc, tractate)
+            units = text_units(pages)
+            anchored, unresolved, outside = anchor_span_refs(entries, units, gram_index(units))
+            refused = None
+        except ValueError as exc:
+            entries, anchored, unresolved, outside, refused = [], [], [], [], str(exc)
         parsed_refs = {e['ref'] for e in entries}
         # Union of what the parser saw and what it drops, so no cited daf escapes the check.
         all_refs, spans = cited_dapim(doc, tractate)
         all_refs |= parsed_refs
         order = lambda r: (int(re.search(r'(\d+)', r).group(1)), r[-1])
-        unresolved = sorted((r for r in all_refs if r not in fetched), key=order)
+        unresolved_refs = sorted((r for r in all_refs if r not in fetched), key=order)
         ordered = sorted(all_refs, key=order)
         report['expert_list'] = {
             'doc': doc.name, 'entries': len(entries), 'distinct_refs': len(ordered),
             'daf_span': f"{ordered[0].split()[-1]}-{ordered[-1].split()[-1]}" if ordered else None,
-            'unresolved_refs': unresolved,
-            'coverage': 'COMPLETE' if not unresolved else f'GAP: {len(unresolved)} refs not fetched',
-            # Not a fetch problem, but a ground-truth problem the next brief must fix.
-            'span_headers_misattributed_by_parser': spans,
+            'unresolved_refs': unresolved_refs,
+            'coverage': 'COMPLETE' if not unresolved_refs else f'GAP: {len(unresolved_refs)} refs not fetched',
+            'span_headers': len(spans),
+            'span_stories_text_anchored': len(anchored) + len(outside),
+            'span_stories_unanchored': [s['text'][:60] for s in unresolved],
+            'span_stories_outside_own_header': [{'header': s['ref_hebrew'], 'anchored_to': s['ref']}
+                                                for s in outside],
+            'parser_refused': refused,
         }
     else:
         report['expert_list'] = {'coverage': 'NO EXPERT DOC FOUND', 'doc': str(doc)}
@@ -236,12 +247,16 @@ def main():
         print(f"  REFERENCE COVERAGE:  {e['coverage']}")
         if e.get('unresolved_refs'):
             print(f"  UNRESOLVED:          {e['unresolved_refs']}")
-        spans = e.get('span_headers_misattributed_by_parser') or []
-        if spans:
-            print(f"  caveat: {len(spans)} two-amud span headers are in range but "
-                  f"parse_expert_doc attributes them to the preceding daf:")
-            for s in spans:
-                print(f"      {s['line']}{'   [amud gimel/dalet — not a Bavli form]' if s['anomalous_amud'] else ''}")
+        if e.get('parser_refused'):
+            print(f"  PARSER REFUSED:      {e['parser_refused']}")
+        if e.get('span_headers') and not e.get('parser_refused'):
+            print(f"  two-amud headers:    {e['span_headers']}, covering "
+                  f"{e['span_stories_text_anchored']} stories, each anchored to the daf its "
+                  f"text starts on")
+        for bad in e.get('span_stories_outside_own_header') or []:
+            print(f"  OUTSIDE ITS HEADER:  {bad['header']} -> {bad['anchored_to']}")
+        for bad in e.get('span_stories_unanchored') or []:
+            print(f"  UNANCHORED:          {bad}")
         log.info('%s verified: %d dapim, %d segments, coverage %s',
                  r['tractate'], r['pages'], r['segments'], e['coverage'])
     print('=' * 70)
