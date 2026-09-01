@@ -142,7 +142,8 @@ Three things this table hides, all of them stated rather than smoothed:
 1. **We have a harness point estimate, not a review-round one.** The review rounds cannot
    give a point estimate, because the reviewer never recorded *which thing* he was
    rejecting. The range's width **is** the unreadable notes: 9 + 9 + 6 across the rounds.
-   Narrowing it needs the review UI to capture the distinction (`work/2026-08-30-review-verdict-axes.md`), not
+   Narrowing it needs the review UI to capture the distinction — **built 2026-08-31**,
+   see `work/done/2026-08-30-review-verdict-axes.md` — not
    more inference over free text (Lesson 30).
 2. **The gate itself is invented.** *"Below ~85% a reviewer spends more time rejecting
    than confirming"* is a plausible sentence with no measurement behind it. Only Jeff can
@@ -198,6 +199,14 @@ suggests he may choose exactly that.
 
 ## Untried
 
+- ~~Capture the objection per axis, so precision stops being a range~~ — **the instrument
+  is BUILT, 2026-08-31** (Phase B of `review-verdict-axes`). The review page now records
+  *which* thing is wrong, `build_ruler.py` reads it, and a `borderline` verdict counts as
+  neither accepted nor rejected. **No reading yet**: no round on disk speaks the new
+  vocabulary, so the path is proved against a synthetic round and the point estimate waits
+  on `work/2026-08-31-classification-point-estimate.md`. The acceptance test is stated
+  there — `unclassified_notes: 0`, and the two precision bounds converge.
+  → [`review_verdict_axes_phase_b`](../findings/2026-08-31-review-verdict-axes-phase-b.md)
 - ~~Read the unreadable rejection notes by hand~~ — **done 2026-08-31** (Phase A of
   `review-verdict-axes`). Population was **34, not 24**; 12 classification, 8 boundary,
   4 confidence, 2 merge, 1 display, and **7 permanently unresolvable** (all empty notes,

@@ -151,3 +151,115 @@ if __name__ == '__main__':
             print(f'FAIL  {name}: {exc}')
     print(f'\n{failures} failure(s)')
     sys.exit(1 if failures else 0)
+
+
+# ---------------------------------------------------------------------------
+# The axes-1 vocabulary (Phase B). No round on disk speaks it yet, so these
+# drive the new path with a synthetic file rather than leaving it unexercised
+# until the first real round -- by which time a defect costs weeks, not minutes.
+# ---------------------------------------------------------------------------
+import json as _json
+import tempfile
+
+
+def _load_axes_round(reviews, applies_to='base'):
+    """Run load_reviews() over one synthetic axes-1 file and return its verdicts."""
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        (root / 'validation' / 'feedback').mkdir(parents=True)
+        (root / 'validation' / 'feedback' / 'axes_round.json').write_text(_json.dumps({
+            'tractate': 'Kiddushin', 'schema_version': 'axes-1',
+            'detector_version': 'v10-notrim', 'applies_to': applies_to,
+            'reviews': reviews}))
+        old = ruler.PROJECT_ROOT
+        try:
+            ruler.PROJECT_ROOT = root
+            out, rounds = ruler.load_reviews('Kiddushin')
+        finally:
+            ruler.PROJECT_ROOT = old
+    return out, rounds
+
+
+def test_axes_round_is_read_at_all():
+    out, rounds = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'yes', 'detector_version': 'v10-notrim'}})
+    assert sum(rounds.values()) == 1, 'the axes-1 round was skipped entirely'
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert v['verdict'] == 'correct'
+    assert v['detector_version'] == 'v10-notrim', 'Lesson 36: the version must survive'
+    assert v['applies_to'] == 'base'
+
+
+def test_axes_rejection_names_its_own_capability():
+    """The whole point: the objection is READ, not guessed from prose."""
+    out, _ = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'no', 'extent': 'starts_wrong', 'notes': ''}})
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert v['verdict'] == 'incorrect'
+    assert ruler.objection_from_axes(v['axes']) == 'boundary'
+    assert ruler.classify_objection([v['note']]) == 'unclassified', (
+        'the note alone is unreadable — which is exactly the range this replaces')
+
+
+def test_a_story_can_carry_a_boundary_complaint():
+    """`adjust`, said properly. Accepted as a story AND counted as a boundary
+    objection, so it can never become a fake classification problem again."""
+    out, _ = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'yes', 'extent': 'ends_wrong'}})
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert v['verdict'] in ruler.ACCEPTED
+    assert ruler.objection_from_axes(v['axes']) == 'boundary'
+
+
+def test_borderline_is_neither_accepted_nor_rejected():
+    out, _ = _load_axes_round({'Kiddushin 8b_14-14': {'is_story': 'borderline'}})
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert v['verdict'] == 'borderline'
+    assert v['verdict'] not in ruler.ACCEPTED and v['verdict'] not in ruler.REJECTED, (
+        'a contested case recorded as contested must not be silently resolved '
+        'either way — that is why Jeff asked for the status')
+
+
+def test_display_problem_is_not_charged_to_any_judgement_capability():
+    out, _ = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'no', 'display_problem': True}})
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert ruler.objection_from_axes(v['axes']) == 'display', (
+        'a renderer bug must not read as a story judgement (Lesson 25)')
+
+
+def test_axes_with_nothing_wrong_is_a_classification_objection():
+    out, _ = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'no', 'extent': 'right',
+                               'confidence': 'right', 'grouping': 'right'}})
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert ruler.objection_from_axes(v['axes']) == 'classification', (
+        '"not a story, and nothing else is wrong" is the one genuine '
+        'Classification rejection')
+
+
+def test_unknown_is_story_value_is_named_not_swallowed(caplog):
+    """Lesson 38: a loader that goes quiet past what it does not recognise hid a
+    signed 25-verdict round for eight months."""
+    import logging
+    with caplog.at_level(logging.WARNING):
+        out, rounds = _load_axes_round({'Kiddushin 8b_14-14': {'is_story': 'maybe'}})
+    assert not out and not rounds
+    assert any('maybe' in r.getMessage() for r in caplog.records), (
+        'the unreadable value was never named')
+
+
+def test_an_axes_round_produces_no_unclassified_notes():
+    """Phase C's acceptance test, in miniature: with the axes recorded, the
+    unreadable-note count that sets the width of the Classification range goes
+    to zero."""
+    reviews = {
+        'Kiddushin 8b_14-14': {'is_story': 'no', 'extent': 'starts_wrong'},
+        'Kiddushin 9a_2-2': {'is_story': 'no', 'confidence': 'too_high'},
+        'Kiddushin 12a_1-3': {'is_story': 'no'},
+    }
+    out, _ = _load_axes_round(reviews)
+    kinds = [ruler.objection_from_axes(v['axes'])
+             for vs in out.values() for v in vs]
+    assert 'unclassified' not in kinds
+    assert sorted(kinds) == ['boundary', 'classification', 'confidence']

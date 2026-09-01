@@ -100,8 +100,30 @@ score that *rises when expert validations are deleted*. Both are CLAUDE.md rules
 by the document that new-tractate work follows first. Fixed.
 
 **Nothing above touches the fork.** Detection was never the problem, Triage now looks
-better than it did, and review throughput still is. `review-verdict-axes` **Phase B — the
-UI change — is the item that matters and is still unbuilt.**
+better than it did, and review throughput still is.
+
+**Later the same day: `review-verdict-axes` Phase B is BUILT** — and it should be read for
+what it is. The review page now records *which* thing is wrong: **is it a story**
+(yes / **borderline** / no) as the only required question, with extent / confidence /
+grouping behind a disclosure, `display_problem` as its own control, and the **detector
+version on every verdict**. A wrong extent opens a **Hebrew quote box with a stated
+include/cut polarity**, filled by highlighting the text on the page — the field whose
+absence leaves **16 of our 70 boundary targets** `mixed` or `unclear`, because direction
+has only ever been guessed from prose. 605 banked verdicts map into the new shape with **0 unmapped**;
+both rulers rebuild **byte-identical**; all **18** injected defects fail the test that
+guards them; verified in a browser. Suite **121 → 153**. The review page leads with the
+**Hebrew** — the wave 4 page keeps English-first on purpose, so it stays comparable with
+the page Jeff was actually shown.
+
+**But it buys fidelity, not throughput, and this file should stop conflating the two.**
+Four axes with progressive disclosure is click-neutral on a correct entry and costs more
+clicks on a wrong one. It turns Classification from a range into a number *once a round
+comes back* — that is Phase C, now its own item awaiting `jeff:axes-round`. The throughput
+evidence, found in `5_review.md` while building this: the one round Jeff completed **100%**
+of was the **delta** UI that showed him only what had changed (49/49); the two that showed
+him all 95 stories again returned **1** and **15**. Nothing in this change addresses that,
+and no item on the board does either.
+→ [`review_verdict_axes_phase_b`](docs/findings/2026-08-31-review-verdict-axes-phase-b.md)
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
@@ -164,7 +186,9 @@ notes set its width. → [`docs/findings/2026-08-30-detection-classification-rul
 **We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
 from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
 a point estimate, because the reviewer never recorded *which thing* he was rejecting. That
-fix is a review-UI change (`review-verdict-axes` Phase B), not more inference over free text.
+fix is a review-UI change — **built 2026-08-31**, see
+[`review_verdict_axes_phase_b`](docs/findings/2026-08-31-review-verdict-axes-phase-b.md) —
+not more inference over free text. The point estimate itself waits on a round.
 
 **A third pooling now known, and it inflates the pessimism: those round figures are
 per-version.** Of the notes stating a plain position where the detector disagreed at
@@ -387,18 +411,18 @@ kiddushin-list-parse DONE ─┬─ kiddushin-recall           DONE  (triage + d
                            └─ kiddushin-comments-harvest DONE  (11 remarks sorted)
 
 triage-recall-price       DONE  (the trade is priced on both tractates)
-review-verdict-axes       Phase A DONE — PHASE B IS THE PRIORITY
+review-verdict-axes       DONE (A+B) — Phase C is now its own item, and needs Jeff
 start any time:   kiddushin-12a-dedup · opener-lexicon
 open calls:       kiddushin-parse-open-calls   (denominator 90; item 1b is for Jeff)
 incomplete:       golden-completeness
 ```
 
-**`review-verdict-axes` Phase B is now unambiguously the highest-value item on the
-board.** Every cheap measurement has been taken; what is left in Detection and Triage is
-either priced-and-declined or blocked on Jeff. Phase B is the only open item aimed at the
-bottleneck this file has named since 2026-07-06 and against which no work has ever been
-done. Phase A added two requirements to it: **record the detector version with every
-verdict** (Lesson 36) and **make `display` a first-class outcome** (Lesson 25).
+**`review-verdict-axes` is closed — Phases A and B both done — and what is left of it
+needs Jeff, not us.** Both of Phase A's requirements are in the shipped page. The board's
+open items are now, honestly, either **waiting on Jeff** (a round, the boundary rule, the
+Mishnah scope) or **new-tractate work** that has never been started. **The next thing that
+would move the bottleneck is not on the board at all**: showing Jeff only what has changed
+since the round he already did, which is the one shape he has ever completed.
 
 **`triage-recall-price` is promoted out of "lower value".** It was a Ketubot curiosity
 yesterday; today Kiddushin Triage is the board's only failing cell, and this item is
@@ -413,7 +437,8 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md) Phase B** — build the per-axis review UI. **The highest-value item on the board**, and the only open one aimed at the bottleneck | 3, 5 | — | no |
+| **[classification-point-estimate](work/2026-08-31-classification-point-estimate.md)** — send one tractate on the new page; the range becomes a number. **The instrument is built; this is the reading** | 3, 5 | a round | **yes** |
+| **price the review cost of a delta-only round** — show him only what changed. No brief yet, and the only lead this project has on throughput | 5 | — | no |
 | **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict; the 16 unincorporated Kiddushin verdicts are confirmed and still unfolded | 3, ground truth | — | no |
 | **price the review cost of loosening triage** — the missing half of the trade; no brief yet | 1, 5 | — | no |
 | **fold the 2 harvested boundary targets** into `expert_boundary_targets_v2.json`, with polarity; needs a same-code repeat (Lesson 22) | 4 | — | no |
@@ -426,7 +451,7 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 **Done today** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
 `ketubot-golden-additions` · `kiddushin-list-parse` · `review-ui-display-asymmetry` ·
 `kiddushin-recall` · `kiddushin-boundary-set` · **`triage-recall-price`** ·
-**`kiddushin-comments-harvest`** · **`review-verdict-axes` Phase A**.
+**`kiddushin-comments-harvest`** · **`review-verdict-axes` Phases A and B**.
 
 \* `second-story-guard` is **not blocked**: deleting a whole second story is wrong
 whatever Jeff answers about where an entry ends. Its *value* depends on his answer; the

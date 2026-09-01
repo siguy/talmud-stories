@@ -6,7 +6,7 @@
 **Status:** measured (population, axes) + indicated (the axis assignments are judgement)
 **CORRECTED same day** — see *Correction* at the end. The "live regression" this finding
 originally reported was an artifact of exact-span matching and is withdrawn.
-**Item:** Phase A of [`work/2026-08-30-review-verdict-axes.md`](../../work/2026-08-30-review-verdict-axes.md)
+**Item:** Phase A of [`work/2026-08-30-review-verdict-axes.md`](../../work/done/2026-08-30-review-verdict-axes.md)
 
 ---
 

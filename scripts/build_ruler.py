@@ -80,6 +80,11 @@ kid = _load('parse_kiddushin_list', 'scripts/parse_kiddushin_list.py')
 
 ACCEPTED = {'correct', 'approve', 'reject_remove', 'adjust'}
 REJECTED = {'incorrect', 'confirm_remove'}
+# `borderline` arrives with the axes-1 vocabulary and is deliberately in NEITHER
+# set. It is Jeff's own request -- contested cases kept and flagged rather than
+# silently resolved (2026-07-06 ledger, Part 2(d)) -- and counting it either way
+# would turn a recorded uncertainty back into a false certainty.
+BORDERLINE = {'borderline'}
 REVIEW_GLOBS = ['validation/feedback/*.json', 'jeff comms/*.json']
 REVIEW_KEY = re.compile(r'^(.+?)_(\d+)-(\d+)$')
 
@@ -142,16 +147,60 @@ def load_reviews(tractate):
             if not isinstance(items, dict):
                 continue
             for key, val in items.items():
-                if not isinstance(val, dict) or not val.get('verdict'):
+                if not isinstance(val, dict):
+                    continue
+                # Two shapes. The banked rounds carry a single `verdict` token;
+                # an axes-1 round (the per-axis UI, Phase B) carries `is_story`
+                # plus the axis that was actually objected to, so the objection
+                # no longer has to be inferred from free text.
+                axes = None
+                if val.get('is_story'):
+                    verdict = AXES_TO_VERDICT.get(val['is_story'])
+                    if verdict is None:
+                        log.warning('%s %s: unknown is_story %r - counted as unread, '
+                                    'not skipped', path.name, key, val['is_story'])
+                        continue
+                    axes = {a: val.get(a) for a in
+                            ('extent', 'confidence', 'grouping', 'display_problem')}
+                elif val.get('verdict'):
+                    verdict = val['verdict']
+                else:
                     continue
                 m = REVIEW_KEY.match(key)
                 if not m or not m.group(1).startswith(tractate):
                     continue
-                out[(m.group(1), int(m.group(2)), int(m.group(3)))].append({
-                    'round': path.name, 'key': key, 'verdict': val['verdict'],
-                    'note': (val.get('note') or val.get('notes') or '').strip()})
+                entry = {
+                    'round': path.name, 'key': key, 'verdict': verdict,
+                    'note': (val.get('note') or val.get('notes') or '').strip()}
+                if axes is not None:
+                    entry['axes'] = axes
+                    # Lesson 36: a verdict is a fact about the version it judged.
+                    entry['detector_version'] = val.get('detector_version')
+                    entry['applies_to'] = data.get('applies_to', 'base')
+                out[(m.group(1), int(m.group(2)), int(m.group(3)))].append(entry)
                 rounds[path.name] += 1
     return out, rounds
+
+
+AXES_TO_VERDICT = {'yes': 'correct', 'no': 'incorrect', 'borderline': 'borderline'}
+
+# An axes-1 verdict states its objection instead of burying it in prose, so the
+# ruler reads it rather than guessing. This is the whole point of Phase B: with
+# the axes recorded, `unclassified_notes` goes to 0 and Classification becomes a
+# number rather than a range (Phase C's acceptance test).
+AXIS_TO_KIND = [('display_problem', 'display'), ('extent', 'boundary'),
+                ('grouping', 'merge'), ('confidence', 'confidence')]
+
+
+def objection_from_axes(axes):
+    """The kind a per-axis verdict names outright, or None if it names none."""
+    if not axes:
+        return None
+    for field, kind in AXIS_TO_KIND:
+        val = axes.get(field)
+        if val and val != 'right':
+            return kind
+    return 'classification'
 
 
 def classify_objection(notes):
@@ -287,7 +336,9 @@ def build(tractate, cfg):
             'in_golden': p['in_golden'],
             'verdicts': p['verdicts'], 'verdict_match': p['verdict_match'],
             'expert_accepted': p['accepted'],
-            'objection_kind': (classify_objection([v['note'] for v in p['verdicts']])
+            'objection_kind': (next((objection_from_axes(v.get('axes'))
+                                     for v in p['verdicts'] if v.get('axes')), None)
+                               or classify_objection([v['note'] for v in p['verdicts']])
                                if p['accepted'] is False else None),
         })
     log.info('%s: %d expert stories, %d proposals, %d proposals unclaimed',
@@ -314,11 +365,21 @@ def metrics(entries, props):
     for p in props:
         for v in p['verdicts']:
             r = per_round.setdefault(v['round'], {'accepted': 0, 'rejected': 0, 'by_kind': Counter()})
-            if v['verdict'] in ACCEPTED:
+            if v['verdict'] in BORDERLINE:
+                r.setdefault('borderline', 0)
+                r['borderline'] += 1
+            elif v['verdict'] in ACCEPTED:
                 r['accepted'] += 1
+                # An accepted entry can still carry an axis complaint -- "it IS a
+                # story and the boundary is wrong" is the commonest correction we
+                # get, and the old vocabulary could not say it (Lesson 30).
+                kind = objection_from_axes(v.get('axes'))
+                if kind and kind != 'classification':
+                    r['by_kind'][kind] += 1
             elif v['verdict'] in REJECTED:
                 r['rejected'] += 1
-                r['by_kind'][classify_objection([v['note']])] += 1
+                r['by_kind'][objection_from_axes(v.get('axes'))
+                             or classify_objection([v['note']])] += 1
     for name, r in per_round.items():
         n = r['accepted'] + r['rejected']
         r['judged'] = n
