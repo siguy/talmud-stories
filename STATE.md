@@ -69,7 +69,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     7 item(s) in work/done/
+closed     8 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -118,7 +118,10 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
+| `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
+| `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 112 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | 0 parsed · 0 blind · 0 count for recall |
+| `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -154,4 +157,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: 4c31171047221ffd -->
+<!-- board-checksum: 12fe94c412917926 -->
