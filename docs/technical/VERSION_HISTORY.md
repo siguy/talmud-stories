@@ -856,3 +856,56 @@ the chapter-boundary tagger bug (7 pages); the review UI, which still does not s
 
 **Detail:** [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md).
 **Rule:** `lessons/` Lesson 27.
+
+---
+
+## 2026-08-31 — Stage 1: a single narrative event is enough
+
+**The keep-rule changed.** `EventTriager.should_skip_page()` required a narrative event to
+be *corroborated* — `NARRATIVE_EVENT >= 2`, or `NARRATIVE_EVENT >= 1 and VERBAL_ACT >= 2`
+— and discarded the page otherwise. It now keeps any page with **`NARRATIVE_EVENT >= 1`**.
+
+**Why.** Stage 2 was re-run on all 224 pages Stage 1 had discarded across Ketubot and
+Kiddushin (0 errors, 28 proposals, 4 matching Jeff's blind lists). Sweeping candidate rules
+over that output showed the corroboration clause was the single richest seam of missed
+stories in the corpus: the 8 pages it discarded hold **6 real stories** — ~75%, against
+**14.3%** for discarded pages as a whole. One is **Ketubot 51a**, recorded as a false skip
+*found by hand* on 2026-02-13 and never fixed.
+
+| | Ketubot | Kiddushin |
+|---|---|---|
+| triage recall (BLIND) | 98.0% → **98.7%** | 95.6% → **97.8%** |
+| end-to-end recall (BLIND) | 96.0% → **96.6%** | 93.3% → **95.6%** |
+| corpus examined | 44% → 46% | 38% → 41% |
+| cost | 4 calls, 3 false proposals | 4 calls, 2 false proposals |
+
+**On Ketubot this captures 100% of the gain available from reading the entire tractate, at
+1/31st of the cost** (4 calls vs 124, 3 false proposals vs 17).
+
+**Rejected:** a `VERBAL_ACT >= 4` clause. It recovers one further Kiddushin story (10b) but
+buys nothing on Ketubot for 70 extra calls — a threshold fitted to a single case (Lesson
+18). Pinned by `test_verbal_acts_alone_never_keep_a_page` so it is revisited deliberately.
+
+**Changes:**
+- `src/event_triage.py` — the rule, plus a docstring carrying the measurement and the
+  rejected alternative. The `verbal_count` local became dead and was removed.
+- `tests/test_triage_single_narrative.py` — NEW, 9 tests written first and watched fail.
+  Pins both the new boundary and the cases that must NOT move.
+- `tests/test_event_triage.py`, `tests/test_triage_failure_default.py` — one case each
+  pinned the old boundary. Updated in place **with a note rather than deleted**, so the
+  change stays visible from the tests that used to assert the opposite.
+- `scripts/sweep_triage_rules.py` — NEW. Prices candidate rules against the blind lists
+  with no API calls, reusing already-paid-for Stage 2 output.
+- `scripts/merge_triage_recall_run.py` — gains `--live-rule`.
+
+**No published number moves.** The shipped runs used cached triage decisions
+(`results/v7/event_triage_*.json`), which are untouched. The figures above are what a
+re-run would produce.
+
+**Untested:** the rule was selected using the same blind stories it is scored against. The
+honest held-out test is Gittin / Yevamot / Eruvin, where blind lists exist and the detector
+has never run. Treat the magnitude as measured on two tractates and the generalisation as
+indicated.
+
+**Detail:** [`docs/findings/2026-08-31-triage-single-narrative.md`](../findings/2026-08-31-triage-single-narrative.md).
+**Prior:** [`docs/findings/2026-08-31-triage-recall-price.md`](../findings/2026-08-31-triage-recall-price.md).

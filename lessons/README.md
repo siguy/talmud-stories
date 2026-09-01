@@ -44,3 +44,7 @@ when it lands on main, so two sessions cannot claim the same number (four did on
 | 32 | 2026-08-31 | [A clean merge is not evidence that the result is correct](L-032-a-clean-merge-is-not-evidence-that-the-result-is.md) |
 | 33 | 2026-08-31 | [When a mechanism needs a third guard, remove the mechanism](L-033-when-a-mechanism-needs-a-third-guard-remove-the.md) |
 | 34 | 2026-08-31 | [A field an agent cannot ground fills with confident noise](L-034-a-field-an-agent-cannot-ground-fills-with-confident.md) |
+| 35 | 2026-08-31 | [A composed metric names the pipeline, not the capability](L-035-a-composed-metric-names-the-pipeline-not-the-capability.md) |
+| 36 | 2026-08-31 | [A verdict belongs to the version that was reviewed](L-036-a-verdict-belongs-to-the-version-that-was-reviewed.md) |
+| 37 | 2026-08-31 | [The endpoints bracket a trade; they do not locate it](L-037-the-endpoints-bracket-a-trade-they-do-not-locate-it.md) |
+| 38 | 2026-08-31 | [A guard that skips silently looks exactly like empty input](L-038-a-guard-that-skips-silently-looks-exactly-like-empty-input.md) |

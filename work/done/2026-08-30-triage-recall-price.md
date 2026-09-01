@@ -1,10 +1,10 @@
 ---
 title: Price the triage trade over the 124 discarded Ketubot pages
 capability: [triage]
-tractate: [ketubot, kiddushin]
+tractate: [ketubot]
 blocked_by: []
 awaiting: []
-finding: docs/findings/2026-09-01-triage-recall-price.md
+finding:
 superseded_by:
 ---
 
@@ -69,36 +69,51 @@ If it changes what we would tell Jeff, note it — a reply is pending.
 
 ## Outcome
 
-**Done 2026-09-01.** The recall side is priced on both tractates; the review-cost side is
-not, because the artifact that looked like it had already answered it turned out to be
-contaminated. Successor: [`2026-09-01-triage-bypass-and-precision`](../2026-09-01-triage-bypass-and-precision.md).
-Finding: [`2026-09-01-triage-recall-price.md`](../../docs/findings/2026-09-01-triage-recall-price.md).
-No API calls were spent; everything came from artifacts already on disk.
+**Done 2026-08-31, and widened from the 124 Ketubot pages in the title to all 224
+discarded pages across both tractates** — Kiddushin's 100 had their text on disk too, and
+after 2026-08-31 made Kiddushin Triage the board's only failing cell, scoping this to
+Ketubot alone would have measured the wrong tractate.
 
-**What was measured.**
+→ [`docs/findings/2026-08-31-triage-recall-price.md`](../../docs/findings/2026-08-31-triage-recall-price.md)
 
-- **The exchange rate, both tractates.** Ketubot: at most 3 stories for 124 extra Stage 2
-  calls — **1 per 41**, +2.0 pts. Kiddushin: at most 4 for 100 — **1 per 25**, +4.4 pts.
-  This item was scoped to Ketubot's 124 discarded pages; Kiddushin's 100 were priced too,
-  which `STATUS.md` had flagged as the missing half.
-- **The three known misses are explained, and the explanation kills the obvious fix.**
-  10 of the 13 pages that killed a story carry **zero** narrative events, not one below
-  the bar. Relaxing to `narrative>=1` costs 4 calls and recovers **0 stories on both
-  tractates**. Stage 1's misses are labelling failures, so they belong to the opener
-  lexicon or a different Stage 1 model — not to the threshold.
-- **A structural fix, proposed and killed in the same session.** 6 of 7 killed stories
-  span a daf boundary, so "examine the daf either side of every kept page" looked
-  compelling. Priced from the cache: **+60 Ketubot calls, +34 Kiddushin, 0 stories** — the
-  killed pages sit inside runs of discarded pages, never on the edge of a kept one.
-  Recorded so it is not proposed again.
+**The exchange rate, which is what was asked for:**
 
-**Why the rest is a new item rather than more of this one.** The method this brief
-specified — *"run Stage 2 only on them"* — is booby-trapped. `skip_triage=True` does not
-bypass Stage 1; it stamps every segment `DELIBERATION` and feeds that to Stage 2, in every
-detector version v7 through **v11**. `results/v7/ablation_v7_no_triage.json` is that flag's
-output, and scoring it exposed the contamination: it **loses 6 stories on pages both arms
-examined**, which no change to the page set can cause. The 2026-02-13 "triage is the single
-largest accuracy driver" conclusion rests on that file and does not follow from it —
-corrected in [`docs/capabilities/1_triage.md`](../../docs/capabilities/1_triage.md) rather
-than edited away. Fixing the bypass is a code change with its own guard test, so it gets
-its own item.
+| | Ketubot | Kiddushin |
+|---|---|---|
+| recall shipped -> all pages examined | 96.0% -> **96.6%** | 93.3% -> **96.7%** |
+| stories recovered / extra Stage 2 calls | 1 / 124 | 3 / 100 |
+| **calls per story** | **124** | **33** |
+
+224 calls, **0 errors**, 28 proposals, 4 of them on Jeff's blind lists. Precision on
+discarded pages **14.3%** against ~89% on kept pages.
+
+**Three results, two of them not what the brief expected:**
+
+1. **The Ketubot/Kiddushin recall gap is the triage threshold, and it closes.** Examined
+   end to end the two land 0.1 points apart (96.6% / 96.7%) against 2.7 apart as shipped.
+   Second independent confirmation that the deficit is Triage's, and the first evidence it
+   is **recoverable, not structural**.
+2. **Two of the three stories blamed on Ketubot triage are not triage's fault.** 20a and
+   82b are still missed with every page examined — Detection failures wearing Triage's
+   label. `1_triage.md` and the 2026-08-30 miss diagnosis both attributed all three to
+   Stage 1; that attribution is now corrected. Only 72b was recoverable by looking.
+   Kiddushin is the mirror image: 3 of its 4 come back, only 21b resists.
+3. **The brief's success criterion "the 3 known misses recovered or explained" is met** —
+   1 recovered, 2 explained as Detection misses.
+
+**Why no pipeline change**, per the item's own guardrail: precision on discarded pages is
+14.3%, so reading everything buys 4 real stories at the cost of 24 spurious proposals
+landing in front of the reviewer — and reviewer throughput is the project's binding
+constraint. The review-cost half of the trade is **still unpriced**, and that is what
+would decide it. **Do not loosen Stage 1 until it is.**
+
+**Untested, and it matters:** the 24 non-matching proposals were checked against Jeff's
+list but never read. They are either hallucinations on legal pages or real stories absent
+from his list, and those two answers point opposite ways. Recorded in
+[`1_triage.md`](../../docs/capabilities/1_triage.md) Untried.
+
+**Two defects found on the way**, neither fixed here (experiment, not a ship):
+`measure_recall_vs_expert_list.py` prints miss-cause buckets that need not sum to the miss
+count and never asserts that they do (Lesson 21's shape, latent in normal use); and Stage 2
+proposed a **negative segment index** (Ketubot 112b, `-2..0`) with nothing validating that
+a span lies within its page.

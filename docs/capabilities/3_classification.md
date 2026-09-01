@@ -198,6 +198,36 @@ suggests he may choose exactly that.
 
 ## Untried
 
+- ~~Read the unreadable rejection notes by hand~~ — **done 2026-08-31** (Phase A of
+  `review-verdict-axes`). Population was **34, not 24**; 12 classification, 8 boundary,
+  4 confidence, 2 merge, 1 display, and **7 permanently unresolvable** (all empty notes,
+  all from the v8_delta round). What it opened, and it is larger than what it closed:
+  **the banked per-round precision figures are properties of the version reviewed, not of
+  today's detector.** 12 of the 34 have a classification that changed since review, and
+  of the 8 where the detector disagreed with a plainly-stated note at review time, **7
+  now agree**. Quoting those rounds as the current Classification number charges today's
+  detector for calls it no longer makes — Lesson 30's shape pooled across *detector
+  versions* rather than across reasons.
+  → [`unclassified_notes_resolved`](../findings/2026-08-31-unclassified-notes-resolved.md)
+- **Two criteria categories Jeff names that we do not model**, recovered 2026-08-31 from
+  his anchored Kiddushin remarks: **report / tradition** (distinct from *story*) and
+  **teirutz / dialectical argumentation** (a response inside an argument is not a narrative
+  event, however much it narrates). Stored verbatim, deliberately not paraphrased into a
+  rule. Two standing false positives sit in that second category — Kiddushin 31b (`YES`)
+  and 39b (`HIGH_CONFIDENCE`), both passages he calls non-stories, on evidence independent
+  of every review round because he wrote it in 2005.
+  → [`kiddushin_comments_harvest`](../findings/2026-08-31-kiddushin-comments-harvest.md)
+- **An entire review round that no ruler has ever read** — Jeff's **2026-01-08** Ketubot
+  round, 25 verdicts, 24 with notes, signed by name. Skipped for eight months by an
+  `isinstance` guard because it stores a list where every other round stores a dict
+  (Lesson 38). **Not mechanically foldable** — no segment spans, and the v4 output it
+  judged is not on disk — so its verdicts cannot be attached without manufacturing ground
+  truth. Its **notes** are usable now: they state the prescriptive/descriptive rule six
+  months before the criteria doc, independently.
+  → [`january_round_recovered`](../findings/2026-08-31-january-round-recovered.md)
+- **Re-derive Classification precision version-aware.** The obvious follow-on, and it
+  needs no API and no Jeff: restrict each round's verdicts to proposals the *current*
+  detector still makes with the *same* call, and report what is left. Not attempted.
 - **Wave 6a — measure the blast radius on one axis** (*does anything non-speech happen?*)
   across the 110 LOW_CONFIDENCE golden entries. ~$0.10, needs nobody, and it is the
   deliverable that makes 6b answerable. **Never run.**

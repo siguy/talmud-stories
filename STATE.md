@@ -56,8 +56,8 @@ open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
-open       2026-09-01-triage-bypass-and-precision
-closed     4 item(s) in work/done/
+open       2026-09-01-fix-skip-triage-flag
+closed     5 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -70,7 +70,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-two-amud-header-parser
-closed     5 item(s) in work/done/
+closed     6 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -82,17 +82,16 @@ open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-roun
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
-open       2026-08-30-kiddushin-comments-harvest
-closed     4 item(s) in work/done/
+open       2026-08-30-review-verdict-axes
+closed     5 item(s) in work/done/
 ```
 
 ### 4 Boundaries
 ```
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
-open       2026-08-30-kiddushin-comments-harvest
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     3 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -120,7 +119,7 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
-| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 95 parsed · 89 blind · 91 count for recall |
+| `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | 0 parsed · 0 blind · 0 count for recall |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -132,10 +131,10 @@ closed     1 item(s) in work/done/
 
 Each of these is a round Jeff gave us whose verdicts are not in any ruler, so
 they are invisible to every precision number. Lesson 1's failure, still live.
+Counts are measured; files holding zero verdicts are not listed, because
+naming an empty file as a lost round buries the one that is not.
 
-- `validation/feedback/jeff_v4.1_validation.json`
-- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json`
-- `validation/feedback/validations_v4_2026-01-25.json`
+- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **24 verdicts**
 
 ## Open with Jeff
 
@@ -154,4 +153,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: c8fb581d2c136651 -->
+<!-- board-checksum: 17feec0438b3211e -->

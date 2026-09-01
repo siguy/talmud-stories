@@ -177,9 +177,24 @@ old lists. **That offer has not been taken up.**
 - **Make the reviewer say which thing is wrong.** The single highest-value item here, and
   the only route to a Classification point estimate: separate verdict axes for *is it a
   story* / *is the extent right* / *is the confidence right* / *is the merge right*.
-  Re-deriving intent from free text has a measured ceiling — **24 notes across the rounds
-  are unreadable**, and that is exactly the width of the precision range (Lesson 30).
-  Named as `NEXT/04`; **no brief exists** (see above).
+  Brief now exists: `work/2026-08-30-review-verdict-axes.md`. **Phase A is done**
+  (2026-08-31) — the unreadable notes were resolved by hand; **Phase B, the UI change,
+  is still untried and is the item that matters.**
+  Two requirements Phase A added to it:
+  **(a) record the detector version alongside every verdict** — every figure derived from
+  the banked rounds is version-ambiguous today, and without this Phase C's point estimate
+  inherits the defect in a new vocabulary; **(b) make `display` a first-class outcome**,
+  so a renderer complaint is not spent as a content verdict (1 of the 34 notes, plus 2 of
+  the 15 verdicts in the 2026-07-06 round — Lesson 25).
+  → [`unclassified_notes_resolved`](../findings/2026-08-31-unclassified-notes-resolved.md)
+- **Read the 2026-01-08 round before designing the new review UI.** It is the earliest
+  round Jeff signed by name and no ruler reads it (Lesson 38) — but the point for *this*
+  capability is that **its UI already had the axes**: `length_adjustment` and
+  `spans_multiple_pages` as structured fields, plus `story_confidence` and `story_type`.
+  Every later round buried the same information in free text, which is the entire problem
+  `review-verdict-axes` exists to fix. **The right shape existed in January and was lost.**
+  Phase B should start from it rather than re-deriving it.
+  → [`january_round_recovered`](../findings/2026-08-31-january-round-recovered.md)
 - **Show `mishnah_stories` to the expert.** The review UI still does not display what the
   Mishnah filter withheld, so the one person who could settle the scope question has never
   been shown the passages it removes (`804a097`).
