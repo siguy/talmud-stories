@@ -215,10 +215,24 @@ watched fail first.
 **Nothing published moves.** Yesterday's pricing and the `N>=1` rule both used cached
 labels and never touched this flag.
 
-**What is now open in its place:** re-running the ablation correctly, to replace the struck
-row. It is cheap and no longer booby-trapped. Until then **Stage 1 has no valid direct
-measurement that it improves accuracy** — only the indirect evidence that its discarded
-pages carry stories at 14.3% against ~89% on the pages it keeps.
+**And the ablation was re-run correctly, same day, with no API calls** — the Stage 2 output
+on the discarded pages already existed and had only ever been scored against the blind
+lists, never against the golden. **Stage 1 buys ~8 points of classification precision on
+both tractates**: Ketubot 89.2% → 81.1% (FP 18 → 35), Kiddushin 85.3% → 77.1% (FP 14 → 24),
+for at most +0.6 points of golden recall. Nothing was lost by examining more pages — the
+invariant whose violation exposed the contaminated original. **February's claim had the
+right direction and the wrong evidence; the direction is now measured.**
+→ [`2026-09-01-corrected-triage-ablation.md`](docs/findings/2026-09-01-corrected-triage-ablation.md)
+
+**The reason to keep Stage 1 is precision and reviewer load, not compute.** 124 extra calls
+a tractate is pennies; 17 extra unjudged proposals in front of the one reviewer is not.
+
+**What is now open in its place, and it is a reading task:** those **27 extra proposals
+across the two tractates have never been read.** They score as false positives only because
+the golden cannot contain a story from a page triage never let anyone see — so nobody knows
+how many are real. That number decides whether the 8 points of precision is a genuine
+saving or an artifact of a circular measure, and it is the one thing here that cannot be
+settled by more compute.
 
 ## What changed 2026-08-31
 

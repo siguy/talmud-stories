@@ -30,6 +30,7 @@ status lives in [`STATUS.md`](../../STATUS.md).*
 | 2026-08-31 | **The trade priced at last — Stage 2 re-run on every discarded page, both tractates.** Skip decision the only variable: shipped triage labels from cache (not the all-DELIBERATION `--skip-triage` default), real cross-page context, `gemini-2.5-flash` matching the shipped run's provenance. All 224 discarded pages verified to reproduce their skip decision before any call | **measured. 224 calls, 0 errors, 28 proposals, 4 real. Ketubot 96.0% -> 96.6% (+1 story, 124 calls/story); Kiddushin 93.3% -> 96.7% (+3 stories, 33 calls/story).** Examined end-to-end the two tractates converge to **96.6% / 96.7%** — the whole Ketubot/Kiddushin gap is the triage threshold and it **closes**. Precision on discarded pages 4/28 = **14.3%**, so Stage 1 is broadly doing its job. **And 2 of the 3 stories blamed on Ketubot triage (20a, 82b) are still missed with every page examined** — Detection failures wearing Triage's label | [`triage_recall_price`](../findings/2026-08-31-triage-recall-price.md) |
 | 2026-08-31 | **The corroboration clause removed — `should_skip_page()` now keeps any page with ≥1 NARRATIVE_EVENT.** Chosen by sweeping intermediate rules against both blind lists (`scripts/sweep_triage_rules.py`, no API), because the price finding had measured only the two endpoints | **measured and SHIPPED. Ketubot triage recall 98.0% -> 98.7%, Kiddushin 95.6% -> 97.8%**, for **8 extra Stage 2 calls** and 5 false proposals across both tractates. The 8 pages the clause discarded hold **6 real stories** — ~75% against 14.3% for discarded pages overall — including **Ketubot 51a**, the false skip found by hand on 2026-02-13 and never fixed. On Ketubot `N>=1` captures **100% of the gain available from reading the entire tractate at 1/31st the cost**. A `V>=4` clause was rejected: +1 Kiddushin story for 70 useless Ketubot calls, a threshold fitted to one case (Lesson 18) | [`triage_single_narrative`](../findings/2026-08-31-triage-single-narrative.md), `tests/test_triage_single_narrative.py` |
 | 2026-09-01 | **`skip_triage` fixed and renamed `examine_all_pages`** (v11 only; v7-v10 frozen). The flag now gates the page selection alone — Stage 1 runs whenever labels are not supplied, and supplied labels are never overwritten. A second all-DELIBERATION default in the Stage 2 loop became `[]` (renders `UNKNOWN`) | shipped, **0 published or shipped numbers move** — every shipped run used cached labels and never touched the flag. 10 failure-injection tests written first, 9 of 10 watched fail; they also pin that v7-v10 keep the stub, so the retracted ablation stays reproducible from the code that made it | [`examine_all_pages_fix`](../findings/2026-09-01-examine-all-pages-fix.md) |
+| 2026-09-01 | **The ablation re-run correctly**, replacing the row struck the same day. Real cached labels, skip decision the only variable, shared half of the two arms **byte-identical** so there is no run-to-run noise in it (Lesson 22 by construction). Scored against the golden (**CIRCULAR** — precision only) | **measured: Stage 1 buys ~8 points of classification precision on both tractates.** Ketubot precision 89.2% -> 81.1%, FP 18 -> 35, TP 149 -> 150, F1 90.0% -> 86.0%; Kiddushin 85.3% -> 77.1%, FP 14 -> 24. **Nothing was lost by examining more pages** — the invariant whose violation exposed the contaminated original. The February claim's *direction* was right; its evidence never was | [`corrected_ablation`](../findings/2026-09-01-corrected-triage-ablation.md) |
 
 ## What we reverted, and why
 
@@ -141,12 +142,14 @@ versions after it shipped (v8, v9, v10, v11)
 
 ## Untried
 
-- **Re-run the triage-vs-no-triage ablation correctly**, replacing the row struck on
-  2026-09-01. Now cheap and no longer booby-trapped: `examine_all_pages` keeps the real
-  labels, and `scripts/run_triage_recall_price.py` already implements the same shape.
-  Until it is run, **Stage 1 has no valid measurement that it improves accuracy** — only
-  the indirect evidence that the pages it discards carry stories at 14.3% against ~89% on
-  the pages it keeps.
+- ~~Re-run the triage-vs-no-triage ablation correctly~~ — **done 2026-09-01**, with no
+  API calls: the Stage 2 output on the discarded pages already existed and had only ever
+  been scored against the blind lists, never against the golden. **Stage 1 buys ~8 points
+  of precision on both tractates.** What it opened: **the 27 extra proposals it suppresses
+  have still never been read.** They are scored false positives only because the golden
+  cannot contain a story from a page triage never let anyone see, so nobody knows how many
+  are real. That is the number that decides whether ~8 points of precision is a saving or
+  an artifact — and it is a reading task, not a compute one.
 
 - ~~Re-run Stage 2 on the discarded pages and price the trade~~ — **done 2026-08-31**,
   on **both** tractates rather than only Ketubot's 124 pages. Exchange rate 124 calls
