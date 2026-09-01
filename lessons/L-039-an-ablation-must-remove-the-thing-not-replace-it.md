@@ -1,6 +1,8 @@
-# Lesson — An ablation must remove the thing, not replace it with a lie
+# L-039 — An ablation must remove the thing, not replace it with a lie
 
-**2026-09-01**
+**Date:** 2026-09-01
+**Found in:** `results/v7/ablation_v7_no_triage.json`, six months after it was believed
+→ [`2026-09-01-contaminated-no-triage-ablation.md`](../docs/findings/2026-09-01-contaminated-no-triage-ablation.md)
 
 `run_pipeline(pages, skip_triage=True)` reads as "run without Stage 1". It does not. It
 substitutes a **false** Stage 1 output — every segment on every page stamped
