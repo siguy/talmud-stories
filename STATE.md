@@ -153,6 +153,7 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 | `jeff:axes-round` | Would you review one tractate on the new page, where each entry asks **is it a story** (yes / borderline / no) and, only if you want to say more, whether the **extent**, the **confidence level** or the **grouping** is wrong? |
+| `jeff:opening-formula` | When a story is introduced by a citation or attribution formula — `תניא` / `תנו רבנן` / `תא שמע` / `אמר רב יהודה אמר רב` / `כי אתא רב דימי אמר` — is that formula **part of the story** you would publish, or the frame around it? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -161,4 +162,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: 9d251f648134f98c -->
+<!-- board-checksum: d8049de4efef6531 -->
