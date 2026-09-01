@@ -232,6 +232,113 @@ quietly fold the withheld stories back in to make it look better. "Found, then d
 purpose" and "never found" are different facts about the system, and merging them would
 have traded one invisible number for another. They're printed side by side instead.
 
+## The Clause That Was Throwing Away Stories (2026-08-31)
+
+This one is worth reading closely, because it is the cleanest example in the project of a
+good habit paying off — and of how nearly it didn't.
+
+### The setup
+
+Stage 1 is a bouncer. It reads every page and decides whether the expensive story-detector
+gets to look at it. It throws away more than half the tractate, which is the whole point:
+compute is cheap but not free, and most of the Talmud is legal argument, not story.
+
+The problem with a bouncer is that **you never see who he turned away.** If he wrongly
+refuses a story at the door, the story doesn't show up as a wrong answer — it doesn't show
+up at all. That is why this capability had no measured accuracy for four detector versions.
+You cannot grade a filter using the things that got through it.
+
+### What we did
+
+We had Jeff's story lists from 2005 — written twenty years before this detector existed, so
+they cannot be contaminated by it. That gives an outside answer key. So: take every page
+the bouncer refused, run the detector on it anyway, and check the results against Jeff's
+list. 224 pages, about thirty cents.
+
+**Result: examining everything recovers 4 stories we were missing.** Nice. But it costs 224
+extra detector calls and produces 24 *false* stories that a human then has to read and
+reject — and human review time is the actual bottleneck in this project, not compute.
+
+Here's where it would have been easy to stop. We had a clean number and a clean trade-off.
+The obvious next step is to hand it to you and ask "is 24-for-4 worth it?"
+
+### The thing we almost missed
+
+Measuring only the two endpoints — *current filter* and *no filter* — tells you the
+trade exists, but not **where inside it the good deal is.** So we swept the rules in
+between. That cost nothing: the detector output was already paid for, we just re-asked
+which pages each candidate rule would have kept.
+
+The old rule said: keep a page if it has **two** narrative events, *or* one narrative event
+**plus** two bits of dialogue. In other words — a single "something happened" wasn't
+trusted on its own. It needed backup.
+
+Drop the backup requirement, and:
+
+- It affects **8 pages** across both tractates.
+- **6 of those 8 contain a real story.** That's a 75% hit rate, against 14.3% for discarded
+  pages generally.
+- On Ketubot it recovers **the entire gain** you'd get from reading the whole tractate —
+  for **4 detector calls instead of 124**.
+
+The "24 false positives for 4 stories" trade turned into "**5 false positives for 3
+stories**", at 1/28th the compute. Same idea, thirty times cheaper.
+
+### The detail that makes it trustworthy
+
+Here's the part a good engineer looks for. When you pick a rule by testing rules against
+your answer key, you are in danger of **overfitting** — inventing a rule that describes the
+data you have rather than the world. It'll look brilliant and then fail on the next
+tractate.
+
+Two things say this one is real:
+
+1. **`≥1 narrative event` isn't a tuned number, it's the natural boundary** — "any evidence
+   at all". The arbitrary number was the old rule's *two*. Nobody ever wrote down a reason
+   why one event needs corroboration; in fact the old docstring's own justification ("a
+   narrative setup followed by dialogue") argued *against* the clause it was defending.
+2. **It fixes a bug we'd known about since February.** Ketubot 51a was found by hand on
+   2026-02-13, written down as "1 false skip", and never fixed. The new rule catches it. A
+   rule overfitted to today's data has no business also fixing a case documented six months
+   ago.
+
+And we **rejected** the other candidate for exactly the overfitting reason. Adding "or 4+
+bits of dialogue" recovers one more Kiddushin story — but costs 70 extra Ketubot calls for
+zero extra Ketubot stories. That's a rule shaped around a single example. We turned it down
+and wrote a test that fails if someone quietly adds it later.
+
+**The habit worth stealing:** when you find a real improvement, ask *"is there a cheaper
+version of this same idea?"* before you ship the expensive one. And when you pick a
+parameter by searching, ask *"would I have picked this if I'd never seen the data?"* If the
+answer is no, be suspicious of it.
+
+### The mistake I made in the same session
+
+Worth recording, because it's a classic and I walked straight into it.
+
+Analysing Jeff's old feedback, I matched his comments to our current output by exact
+location — page, start segment, end segment. One passage came back as **"Jeff said this is
+definitely a story, and today we don't detect it at all."** A regression! I wrote it up as
+a live bug.
+
+It wasn't. We *do* detect it. Jeff had commented on segment 3; today the detector proposes
+segments **3 through 5** — it found the same story and drew slightly wider boundaries. My
+exact-match lookup saw "no entry at (page, 3, 3)" and concluded the story had vanished.
+
+**A boundary change read as a deletion.** The fix is to match by *overlap* rather than exact
+position, which is obvious in hindsight and was invisible in advance.
+
+Two lessons in that:
+
+- **Identity is not location.** When you join two datasets on a position, ask what happens
+  when the position legitimately shifts. Almost always the answer is "it silently looks like
+  the thing disappeared" — the worst kind of bug, because absence is quiet.
+- **Correct it in public.** The wrong claim had already been written into the status file
+  and a findings doc. The repo's rule is that findings get *corrected*, never quietly
+  edited to look as though they were always right — so there's now a dated "Correction"
+  section explaining what was wrong and why. A project that hides its wrong turns teaches
+  nobody, including its future self.
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.

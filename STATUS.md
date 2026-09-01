@@ -8,55 +8,108 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**The repository was reorganized around the six capabilities, and not one capability
-number moved.** Say that first, because everything below is easy to mistake for progress.
-Detection, Classification, Boundaries and Triage read exactly what they read on
-2026-08-28. What changed is that the project can now be *navigated*: what was already
-tried, what was reverted and why, and what a dead end costs.
+**Three items shipped today that were all supposed to be cheap measurements, and two of
+them corrected an attribution this file was making.** The strategic fork below is
+unchanged — review throughput is still what stands between two tractates and thirty-seven
+— but the map of where the deficits actually live is now materially different.
 
-**The strategic fork, stated plainly.** The detector is not the problem. It finds 96% of
-the stories on a list Jeff wrote twenty years before it existed. The problem is that
-reviewing a tractate costs 2–6 weeks of one scholar's calendar against ~$0.30 of compute
-— four orders of magnitude apart — and his last two rounds returned **1 verdict and 15**.
-Wave 6 would recover 1–2 stories. Review throughput is what stands between two tractates
-and thirty-seven. That has been the measured answer since 2026-07-06 and no work has yet
-been aimed at it.
+**1. The triage trade is priced, on both tractates, and Kiddushin's gap closes.**
+Stage 2 re-run on all 224 discarded pages: 0 errors, 28 proposals, 4 real.
+Ketubot 96.0% → **96.6%** (+1 story, **124 calls per story**); Kiddushin 93.3% →
+**96.7%** (+3 stories, **33 calls per story**). Examined end to end the two tractates land
+**0.1 points apart** against 2.7 apart as shipped — the whole Ketubot/Kiddushin recall gap
+is the triage threshold, and it is **recoverable rather than structural**.
+→ [`2026-08-31-triage-recall-price.md`](docs/findings/2026-08-31-triage-recall-price.md)
 
-**Those cheapest next steps have now been taken, and both landed in a different column
-than expected.** `kiddushin-recall` and `kiddushin-boundary-set` are done — no API calls,
-three cells filled, and two of them contradict what this file said a few hours earlier:
+**And the sweep found a far better rule than "keep everything" — now SHIPPED.** The
+endpoints bracket the trade but do not locate the best point in it. A page needed its
+narrative event *corroborated* (`N>=2`, or `N>=1 and V>=2`) or it was discarded; that
+clause alone was the richest seam of missed stories in the corpus — the 8 pages it
+discarded across both tractates hold **6 real stories** (~75%, against 14.3% for
+discarded pages overall), **Ketubot 51a among them**, the false skip found by hand on
+2026-02-13 and never fixed. `should_skip_page()` now keeps any page with **≥1
+NARRATIVE_EVENT**.
 
-**1. Kiddushin's recall deficit is Triage's, not Detection's.** Triage measured for the
-first time: **95.6%** (86/90) at **38%** of pages. Detection, *given the page survived
-triage*, is **97.7%** against Ketubot's **97.9%** — one story apart. The whole 2.7-point
-end-to-end gap is Triage. `triage × detection = end-to-end` re-checked and holds on a
-second tractate, which FRAMEWORK §2b asks for rather than assumes.
-→ [`2026-08-31-kiddushin-recall.md`](docs/findings/2026-08-31-kiddushin-recall.md)
+| | Ketubot | Kiddushin |
+|---|---|---|
+| **Triage recall** | 98.0% → **98.7%** ✓ | 95.6% → **97.8%** |
+| end-to-end recall | 96.0% → **96.6%** | 93.3% → **95.6%** |
+| cost | 4 calls, 3 false proposals | 4 calls, 2 false proposals |
 
-**2. Kiddushin's boundary score was 85% / 91% all along, not 60% / 73%.** Built blind —
-**176 targets, 130 scorable** — it clears the gate and scores **above Ketubot**, on the
-shipped untrimmed output alone. Across two identical-code runs **one** target changes
-verdict; on 15 targets that flip is 6.7 points and reads as a result, on 130 it is 0.77.
-→ [`2026-08-31-kiddushin-boundary-set.md`](docs/findings/2026-08-31-kiddushin-boundary-set.md)
+**Ketubot gets the entire gain available from reading the whole tractate, for 4 calls
+instead of 124.** A `V>=4` clause would add one more Kiddushin story but costs 70 useless
+Ketubot calls — a threshold fitted to a single case, rejected and pinned by a test
+(Lesson 18). → [`2026-08-31-triage-single-narrative.md`](docs/findings/2026-08-31-triage-single-narrative.md)
 
-**3. The clause-edge ceiling is not a Ketubot artifact** — 88% Kiddushin against 87%
-Ketubot, and split by direction the residual is almost entirely a **start** problem
-(ends 95%/96%, starts 79%/80%).
+**2. Two of the three stories blamed on Ketubot triage are not triage's fault.**
+Ketubot 20a and 82b are still missed with **every page examined** — Stage 2 cannot find
+them when handed the text. They are Detection failures wearing Triage's label, and both
+`1_triage.md` and the 2026-08-30 miss diagnosis attributed all three to Stage 1. Only 72b
+was recoverable by looking. Kiddushin is the mirror image: **3 of its 4 come back**.
 
-**None of this touches the fork above.** Detection was never the problem and these
-numbers say so more precisely; review throughput still is. Phase 6a costs about ten
-cents and is still unrun.
+**3. Classification precision is being charged for defects already fixed.** Resolving the
+unreadable rejection notes by hand turned up something larger than the sort: the banked
+per-round figures are properties of *the version reviewed*. Of the 8 notes where the
+detector disagreed with a plainly-stated position at review time, **today it agrees with
+7**. Population was also **34, not 24** — the item's table omitted two rounds.
+→ [`2026-08-31-unclassified-notes-resolved.md`](docs/findings/2026-08-31-unclassified-notes-resolved.md),
+**Lesson 36**
 
-**Two clocks are running.** Gittin, Yevamot and Eruvin have pristine blind lists **only
-until we send Jeff results for them** — and the ask that protects them
-(`jeff:appendix-separate`) has to reach him *before* that round, not after. And he is
-still sitting on the boundary question, which blocks capability 4 entirely.
+**4. One open question with Jeff is retired without asking him.** Kiddushin 58a was listed
+as a proposed-then-`NOT_A_STORY` case needing his ruling. His own 2005 margin note on that
+passage says *"Not sure this is a story. Very minimal."* — he agreed with us twenty years
+before we made the call. **44a stands as the only one to ask.** Given his last two rounds
+returned 1 and 15 verdicts, not spending one on an answered question is the whole game.
+→ [`2026-08-31-kiddushin-comments-harvest.md`](docs/findings/2026-08-31-kiddushin-comments-harvest.md)
+
+**A hazard confirmed in the wild:** the loose recall window credits us with a *different
+passage on the same daf* in 2 of 6 cases tested by name today. It also manufactured a
+dramatic false result — that Jeff's 2005 notes contradicted his own 2026 verdicts on the
+same passages — which evaporated under a strict test. **Treat the loose figure as an
+upper bound and check by name before building on it.**
+
+**5. A round nothing has ever read, and the note that was hiding it.** `STATE.md` listed
+*three* files as expert verdicts no ruler reads. Opened and counted: **one** holds
+verdicts — Jeff's **2026-01-08** Ketubot round, **25 verdicts, 24 with notes, signed by
+name**. The other two are an empty `validations` dict and an automated eval trace. Listing
+all three made it look like filing backlog and buried the real one. `board.py` now counts
+verdicts and omits empty files.
+
+It is unread for a mechanical reason: `build_ruler.load_reviews()` needs a **dict** keyed
+`<ref>_<start>-<end>`, and this round is a **list** keyed by daf — skipped by an
+`isinstance` guard, silently. Two things in it exist nowhere else: **9 cross-page refs
+covered by no round any ruler reads** (cross-page stories being the project's known weak
+spot), and **`length_adjustment` / `spans_multiple_pages` as structured fields** — the
+review UI had the right shape in January and lost it, which Phase B should see before
+redesigning the axes from scratch. **Not foldable mechanically** (no segment spans, v4
+output not on disk); recorded on `golden-completeness` with that caveat.
+→ [`2026-08-31-january-round-recovered.md`](docs/findings/2026-08-31-january-round-recovered.md)
+
+**6. Indexed for reuse.** Today's work was findable only by reading five findings end to
+end, so: all six new scripts and five findings are in `CLAUDE.md`'s Key Files; six new
+`Don't` entries; **Lessons 37 and 38** written and the lessons index repaired (35 and 36
+were never added either); `FRAMEWORK.md` §1.1 now carries *how* to supply the cost saving
+its triage bar demands; and `new_tractate_workflow.md` gained Steps 7b/7c — measure blind
+recall, then price what triage discarded — which is the sequence Gittin/Yevamot/Eruvin
+need next.
+
+**Two live traps were in that workflow doc**, and they had been there for months: Step 7
+instructed `--output docs/golden/v7/baseline_ketubot.json` — the exact command that
+destroys an unreproducible baseline — and told the reader to compare against a composite
+score that *rises when expert validations are deleted*. Both are CLAUDE.md rules, violated
+by the document that new-tractate work follows first. Fixed.
+
+**Nothing above touches the fork.** Detection was never the problem, Triage now looks
+better than it did, and review throughput still is. `review-verdict-axes` **Phase B — the
+UI change — is the item that matters and is still unbuilt.**
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
 | capability | metric | Ketubot | Kiddushin | gate |
 |---|---|---|---|---|
-| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving, BLIND | **98.0%** at 44% of pages ✓ | **95.6%** at 38% of pages — **NEW** ✗ | ≥98% *(provisional)* |
+| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving, BLIND | **98.7%** at 46% of pages ✓ — **NEW RULE** | **97.8%** at 41% of pages — **NEW RULE** | ≥98% *(provisional)* |
+| | *previous rule, for comparison* | *98.0% at 44%* | *95.6% at 38%* | — |
+| | *if every page were examined (NOT shipped)* | *96.6% e2e · 124 calls/story* | *96.7% e2e · 33 calls/story* | — |
 | **[2 Detection](docs/capabilities/2_detection.md)** | recall given the page survived triage, BLIND | **97.9%** ✓ | **97.7%** ✓ — **NEW** | ≥95% *(provisional)* |
 | | *end-to-end (triage × detection), BLIND* | *96.0% loose / 87.9% strict* | *93.3% loose / 83.3% strict* | — |
 | | *golden recall, CIRCULAR* | *92.1% (90.9% before the Mishnah-tagger fix)* | *95.3%* | — |
@@ -70,7 +123,13 @@ still sitting on the boundary question, which blocks capability 4 entirely.
 that is a product decision, not a technical one. Two questions are open there: one for
 Simon, one for Jeff.
 
-**One cell now sits below its gate, and it is the one that matters most: Kiddushin
+**Both Triage cells moved on 2026-08-31 when the corroboration clause was removed:
+Ketubot 98.0% → 98.7% (now clears its gate with margin rather than sitting exactly on
+it), Kiddushin 95.6% → 97.8% (from 2.4 points below the gate to 0.2 — within noise of it
+on a denominator of 90, though not formally clearing it).** The paragraph below describes
+the position *before* that change and is kept because the reasoning still stands.
+
+**One cell sat below its gate, and it was the one that mattered most: Kiddushin
 Triage, 95.6% against ≥98%** — the capability whose errors FRAMEWORK §2 calls invisible
 and permanent. It is also the gate FRAMEWORK itself calls "circular reasoning in a
 principle's clothing", set to Ketubot's own value on the tractate that skips *less*. So
@@ -78,6 +137,14 @@ the reading is not "Kiddushin triage is broken" but **"the trade is priced diffe
 the two tractates and nobody chose either price"**: Kiddushin gives up 2.4 more points of
 recall for 6 more points of corpus skipped, about one story per 1.5 points of pages not
 examined. That is the open end-to-end question for Simon, now with a number attached.
+
+**And as of 2026-08-31 that trade has a measured price rather than an inferred one.**
+Examining every discarded page brings Kiddushin to **96.7%** and Ketubot to **96.6%** —
+the gap closes entirely, so the deficit is the *threshold*, not the tractate. The cost is
+100 extra Stage 2 calls and, more importantly, **24 extra false proposals per tractate
+landing in front of the reviewer** (precision on discarded pages is 14.3%). The decision
+therefore belongs to whoever owns review throughput, and **the review-cost half is still
+unpriced.** → [`triage_recall_price`](docs/findings/2026-08-31-triage-recall-price.md)
 
 **The Detection row is quoted conditionally on purpose.** The end-to-end figure charges
 Triage's losses to Detection as well, and the two have separate gates (Lesson 35). Both
@@ -97,7 +164,14 @@ notes set its width. → [`docs/findings/2026-08-30-detection-classification-rul
 **We have a harness point estimate, not a review-round one.** The 89.2% / 85.3% above come
 from `evaluate_golden.py` against the golden. What the *review rounds* still cannot give is
 a point estimate, because the reviewer never recorded *which thing* he was rejecting. That
-fix is a review-UI change, `NEXT/04`, not more inference over free text.
+fix is a review-UI change (`review-verdict-axes` Phase B), not more inference over free text.
+
+**A third pooling now known, and it inflates the pessimism: those round figures are
+per-version.** Of the notes stating a plain position where the detector disagreed at
+review time, **today it agrees with 7 of 8**. A round's precision is a historical fact
+about v5.1 / v7 / v8, not about the current detector, and quoting it as the capability's
+number charges today's model for calls it no longer makes (**Lesson 36**).
+→ [`unclassified_notes_resolved`](docs/findings/2026-08-31-unclassified-notes-resolved.md)
 
 **Detection is softer under a strict test — and that is the end-to-end row, not the
 capability row.** The published test credits a
@@ -106,13 +180,83 @@ story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot st
 the gap are **cross-page stories whose text sits on a continuation daf where we proposed
 nothing** — 17b, 50a and 51a each carry zero proposals.
 
+**The loose test's over-crediting is now confirmed by name, not just in aggregate.**
+Checking 6 commented Kiddushin passages individually, it credits us with a **different
+passage on the same daf** twice (30a, 58a). Treat the loose column as an upper bound and
+verify by name before building on it.
+
 ## What changed today (2026-08-31)
 
-**The morning was infrastructure and correction; the afternoon moved three cells.**
-Main's original line here — "no measurement moved" — was true when it was written and is
-kept below, because the reorganization it describes is what made the afternoon cheap.
+**Morning: infrastructure and correction. Afternoon: three cells measured. Evening: three
+work items shipped, and two of them corrected an attribution this file was making.**
+The earlier sections are kept below because the reorganization they describe is what made
+the rest cheap.
 
-**Measurements (afternoon):**
+**Evening — three items closed, ~$0.30 of compute:**
+
+- **`triage-recall-price` DONE**, widened from the brief's 124 Ketubot pages to all 224
+  across both tractates. 224 calls, 0 errors. Exchange rate **124 calls/story (Ketubot)**
+  vs **33 (Kiddushin)**; the two tractates converge to 96.6% / 96.7% when everything is
+  examined. **No pipeline change** — precision on discarded pages is 14.3% and the review
+  cost is unpriced. → [`triage_recall_price`](docs/findings/2026-08-31-triage-recall-price.md)
+- **Ketubot 20a and 82b reattributed from Triage to Detection** — still missed with every
+  page examined. `1_triage.md` and the 2026-08-30 miss diagnosis are corrected.
+- **`review-verdict-axes` Phase A DONE** (Phases B and C remain, and B is the one that
+  matters). Population **34, not 24**; resolved to 12 classification · 8 boundary ·
+  4 confidence · 2 merge · 1 display · **7 permanently unresolvable** (all empty notes,
+  all from one round). → [`unclassified_notes_resolved`](docs/findings/2026-08-31-unclassified-notes-resolved.md)
+- **`kiddushin-comments-harvest` DONE.** 10 comments → 11 sentence-level remarks, all
+  sorted. Two boundary targets captured **with polarity** (CUT / ADD), three real
+  disagreements including `YES` and `HIGH_CONFIDENCE` on passages he calls non-stories,
+  and two criteria categories we do not model (*report/tradition*, *teirutz*).
+  → [`kiddushin_comments_harvest`](docs/findings/2026-08-31-kiddushin-comments-harvest.md)
+- **Kiddushin 58a withdrawn from the Jeff queue** — he answered it in 2005.
+- **Lesson 36** — a verdict belongs to the version that was reviewed. L-030's shape a
+  third time: L-030 pooled across *reasons*, L-035 across *pipeline stages*, L-036 across
+  *detector versions*.
+
+**Both filed defects are now FIXED, and both fixes were structural rather than
+defensive.**
+
+- **The miss-cause split is a partition by construction.** Both buckets derive from
+  `missed`, so the assertion can only fire if the derivation is edited. The merged
+  artifact that printed *"3 misses: 4 … 2 …"* now prints *"1 … 2 …"*, and **no published
+  number moved** (Ketubot 96.0/98.0/97.9, Kiddushin 93.3/95.6/97.7, verified). The merged
+  artifacts stayed measurable: instead of asserting them into uselessness the harness
+  warns, names the stories, and says which lines on screen remain trustworthy.
+  → [`cause_bucket_partition`](docs/findings/2026-08-31-cause-bucket-partition.md)
+- **`finish` now fixes links in both directions.** The defect was sharper than filed: the
+  guard **already existed and was one-directional**, and its name promised finishing could
+  not break links at all — the suite asserted a property the repo did not have (Lesson 31
+  at one remove). Renamed rather than deleted, so the overclaim stays visible.
+  `tracked()` now includes untracked-but-not-ignored files, closing a second hole where a
+  brand-new file's broken links stayed green until committed.
+  → [`finish_fixes_inbound_links`](docs/findings/2026-08-31-finish-fixes-inbound-links.md)
+
+**Closing those two items was the acceptance test** — both are linked from this file, and
+`finish` repointed both automatically. Suite **107 → 121 passed, 1 skipped**.
+
+Two things the work turned up about my own testing, both worth keeping: one new test
+**passed vacuously** (it asserted against the wrong function body, since the file
+enumeration lives in a helper) and had to be rewritten behaviourally; and the scratch
+end-to-end test's cleanup `git checkout`-ed the generated board, reverting legitimate
+regeneration — caught by the suite itself, and fixed by regenerating instead. The
+underlying design point: `fix_inbound_links` now **skips generated files**, since editing
+a file that is about to be regenerated achieves nothing and makes it briefly disagree with
+its generator.
+
+**A same-day correction, and it is the more useful result.** This file briefly reported
+Ketubot 10b_3-3 as a live regression — a story Jeff called *"definitely a story"* that the
+detector no longer proposed. **Withdrawn.** It was an artifact of matching verdict spans by
+exact `(ref, start, end)` key: the run proposes 10b **3–5** at `HIGH_CONFIDENCE`, so a
+boundary change read as a deleted story. Matching is now by overlap. The count stays 7 of 8
+fixed; the composition changes, and the one genuine standing disagreement is **Kiddushin
+52a**, where we still say `HIGH_CONFIDENCE` and Jeff says *"just a reference to the
+Mishnah's story"* — plausibly a `jeff:mishnah-scope` symptom rather than a classifier
+defect. Both errors pointed the same way: **exact-span matching reports a re-bounded story
+as a deleted one** (Lesson 27's family, reached through a join).
+
+**Afternoon — three cells measured:**
 
 - **Kiddushin Triage measured, and it owns the whole recall gap.** 95.6% (86/90) at 38%
   of pages; Detection given triage 97.7% vs Ketubot's 97.9%. Cause split of the 6 misses:
@@ -189,15 +333,23 @@ all** — their lists are worth nothing until the detector runs there, which is 
 job that should wait until Kiddushin shows what we get.
 
 ```
-kiddushin-list-parse DONE ─┬─ kiddushin-recall        DONE   (triage + detection)
-                           ├─ kiddushin-boundary-set  DONE   (176 blind targets)
-                           └─ kiddushin-comments-harvest     still open
+kiddushin-list-parse DONE ─┬─ kiddushin-recall           DONE  (triage + detection)
+                           ├─ kiddushin-boundary-set     DONE  (176 blind targets)
+                           └─ kiddushin-comments-harvest DONE  (11 remarks sorted)
 
-start any time:   review-verdict-axes · kiddushin-12a-dedup · opener-lexicon
-now the priority: triage-recall-price
+triage-recall-price       DONE  (the trade is priced on both tractates)
+review-verdict-axes       Phase A DONE — PHASE B IS THE PRIORITY
+start any time:   kiddushin-12a-dedup · opener-lexicon
 open calls:       kiddushin-parse-open-calls   (denominator 90; item 1b is for Jeff)
 incomplete:       golden-completeness
 ```
+
+**`review-verdict-axes` Phase B is now unambiguously the highest-value item on the
+board.** Every cheap measurement has been taken; what is left in Detection and Triage is
+either priced-and-declined or blocked on Jeff. Phase B is the only open item aimed at the
+bottleneck this file has named since 2026-07-06 and against which no work has ever been
+done. Phase A added two requirements to it: **record the detector version with every
+verdict** (Lesson 36) and **make `display` a first-class outcome** (Lesson 25).
 
 **`triage-recall-price` is promoted out of "lower value".** It was a Ketubot curiosity
 yesterday; today Kiddushin Triage is the board's only failing cell, and this item is
@@ -212,19 +364,20 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[triage-recall-price](work/done/2026-08-30-triage-recall-price.md)** — price the trade over the discarded pages. **Now the highest-value item**: Kiddushin Triage is the board's only failing cell | 1 | — | no |
-| **[kiddushin-comments-harvest](work/done/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
-| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. Planned as step 7a | 3, 5 | — | no |
+| **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md) Phase B** — build the per-axis review UI. **The highest-value item on the board**, and the only open one aimed at the bottleneck | 3, 5 | — | no |
+| **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict; the 16 unincorporated Kiddushin verdicts are confirmed and still unfolded | 3, ground truth | — | no |
+| **price the review cost of loosening triage** — the missing half of the trade; no brief yet | 1, 5 | — | no |
+| **fold the 2 harvested boundary targets** into `expert_boundary_targets_v2.json`, with polarity; needs a same-code repeat (Lesson 22) | 4 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
 | [kiddushin-parse-open-calls](work/2026-08-30-kiddushin-parse-open-calls.md) | ground truth | — | **1b** |
-| **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict (the ruler names all 12) | 3, ground truth | — | no |
 | [kiddushin-12a-dedup](work/2026-08-30-kiddushin-12a-dedup.md) — one detection covering two stories | 2 | — | no |
 | [story-criteria](work/2026-08-30-story-criteria.md) — was Wave 6; 6a runs now, 6c blocked by design | 3 | comments-harvest | **6b** |
 | [opener-lexicon](work/2026-08-30-opener-lexicon.md) — was Wave 7; mine openers, never invent them | 1, 2 | — | no |
 
 **Done today** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
 `ketubot-golden-additions` · `kiddushin-list-parse` · `review-ui-display-asymmetry` ·
-**`kiddushin-recall`** · **`kiddushin-boundary-set`**.
+`kiddushin-recall` · `kiddushin-boundary-set` · **`triage-recall-price`** ·
+**`kiddushin-comments-harvest`** · **`review-verdict-axes` Phase A**.
 
 \* `second-story-guard` is **not blocked**: deleting a whole second story is wrong
 whatever Jeff answers about where an entry ends. Its *value* depends on his answer; the
