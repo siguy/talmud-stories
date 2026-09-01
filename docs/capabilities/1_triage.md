@@ -90,6 +90,18 @@ are unaffected; the new rule applies to future runs.
 
 ## Distance to gate
 
+> **Read `STATE.md`'s Triage cells with this caveat until
+> [`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md) is
+> closed.** They print **98.0% / 95.6%** — the *previous* corroboration rule. The board
+> derives them from `results/recall/<t>_jeff2005_matches.json`, whose `survived_triage`
+> flag came from a run made before the `N>=1` rule shipped on 2026-08-31, so the generated
+> panel describes a rule the detector no longer uses. `board.py --check` passes: it
+> compares the generator against itself, not against the code. The values below are the
+> measured ones. Found 2026-09-01 →
+> [`board-guards-verify-the-wrong-property`](../findings/2026-09-01-board-guards-verify-the-wrong-property.md).
+> The **Detection** cells inherit the same conditioning, since they divide by the same
+> surviving set.
+
 **At the gate, exactly — and that is the problem with the gate.** 98.0% measured against
 a ≥98% bar that [`FRAMEWORK.md` §1.1](../../FRAMEWORK.md) marks PROVISIONAL and describes
 as "our current value, which is circular reasoning in a principle's clothing." The shape

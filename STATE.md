@@ -56,6 +56,7 @@ open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
+open       2026-09-01-board-reads-stale-triage
 closed     6 item(s) in work/done/
 ```
 
@@ -82,7 +83,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
-closed     6 item(s) in work/done/
+closed     7 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -103,7 +104,7 @@ open       2026-08-30-gittin-expert-round   ← blocked: 2026-08-30-gittin-revie
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-closed     3 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -118,7 +119,8 @@ closed     1 item(s) in work/done/
 
 | dataset | kind | size |
 |---|---|---|
-| `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | 0 parsed · 0 blind · 0 count for recall |
+| `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
+| `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
@@ -133,7 +135,7 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 Counts are measured; files holding zero verdicts are not listed, because
 naming an empty file as a lost round buries the one that is not.
 
-- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **24 verdicts**
+- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
 ## Open with Jeff
 
@@ -154,4 +156,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: e70bd4397f2b60ef -->
+<!-- board-checksum: a93e60165b176e4f -->

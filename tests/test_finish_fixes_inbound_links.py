@@ -123,3 +123,81 @@ def test_the_link_checker_sees_untracked_files():
             test_bookkeeping.test_no_markdown_link_is_broken()
     finally:
         probe.unlink(missing_ok=True)
+
+
+# --- links OUT of the moved item, to a sibling -------------------------------
+#
+# `reroot_links` handled `](../x)` and nothing else. An item that cites a sibling item —
+# the normal way to write "the rest of this is that item's territory" — broke that link at
+# the moment of finishing, while `finish`'s docstring claimed links "run BOTH ways and both
+# are handled". Lesson 31's shape a third time, and the same overclaim the module docstring
+# above was written about. Caught 2026-09-01 by the link checker, on the first item ever to
+# link a sibling.
+
+@pytest.mark.parametrize('before,after', [
+    # out of work/ entirely — the only case the old implementation handled
+    ('[a](../FRAMEWORK.md)',              '[a](../../FRAMEWORK.md)'),
+    ('[a](../docs/findings/f.md)',        '[a](../../docs/findings/f.md)'),
+    ('[a](../../FRAMEWORK.md)',           '[a](../../FRAMEWORK.md)'),
+    # a still-open sibling: one level up once we are inside work/done/
+    ('[a](2026-09-01-other-item.md)',     '[a](../2026-09-01-other-item.md)'),
+    # an already-finished sibling: `done/` is our own directory now
+    ('[a](done/2026-08-30-old.md)',       '[a](2026-08-30-old.md)'),
+    # not links into the tree at all
+    ('[a](https://example.com/z.md)',     '[a](https://example.com/z.md)'),
+    ('[a](#a-section)',                   '[a](#a-section)'),
+])
+def test_outbound_links_are_rerooted_for_every_shape(before, after):
+    assert load_board().reroot_links(before) == after
+
+
+def test_the_sibling_and_done_rules_do_not_compose():
+    """
+    Written as sequential `re.sub` calls, the `done/` rule strips the prefix and the
+    bare-sibling rule then re-adds `../` to its own output — each rule correct alone,
+    wrong together. Every link must be considered exactly once.
+    """
+    assert load_board().reroot_links('[a](done/x.md)') == '[a](x.md)'
+
+
+def test_a_real_item_body_survives_the_move_intact():
+    """All four link shapes in one document, as an actual item writes them."""
+    body = (
+        "Read [`FRAMEWORK.md`](../FRAMEWORK.md) first.\n"
+        "That is [`other`](2026-09-01-other-item.md)'s territory.\n"
+        "See [`old`](done/2026-08-30-old.md) and the\n"
+        "[finding](../docs/findings/2026-09-01-x.md).\n"
+    )
+    got = load_board().reroot_links(body)
+    assert "](../../FRAMEWORK.md)" in got
+    assert "](../2026-09-01-other-item.md)" in got
+    assert "](2026-08-30-old.md)" in got
+    assert "](../../docs/findings/2026-09-01-x.md)" in got
+
+
+@pytest.mark.parametrize('before,after', [
+    # Items link to data and code, not only to markdown. Restricting the `../` rule to
+    # .md silently stopped re-rooting these — a regression caught the same day by
+    # test_every_open_item_would_survive_being_closed, not by the cases above.
+    ('[a](../results/expert_lists/kiddushin_2005.json)',
+     '[a](../../results/expert_lists/kiddushin_2005.json)'),
+    ('[a](../scripts/board.py)', '[a](../../scripts/board.py)'),
+    ('[a](../lessons/)',         '[a](../../lessons/)'),
+])
+def test_non_markdown_links_are_rerooted_too(before, after):
+    assert load_board().reroot_links(before) == after
+
+
+@pytest.mark.parametrize('link', ['[a](#a-section)', '[a](#top)'])
+def test_a_same_page_anchor_is_never_rerooted(link):
+    """
+    Anchors became reachable by the rewrite only when the pattern stopped excluding `#`
+    — which it had to, so that `../results/x.json` kept being re-rooted. Widening a
+    pattern re-opens every case the old exclusion was quietly covering.
+    """
+    assert load_board().reroot_links(link) == link
+
+
+def test_a_sibling_link_carrying_an_anchor_still_moves():
+    assert load_board().reroot_links('[a](2026-09-01-x.md#outcome)') \
+        == '[a](../2026-09-01-x.md#outcome)'
