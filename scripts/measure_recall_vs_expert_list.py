@@ -191,6 +191,44 @@ def locate(story_grams, units, index, max_window=14, seeds=12):
     return best
 
 
+
+def cause_buckets(rows):
+    """
+    Split the MISSES by cause. Returns (missed, triage_lost, kept_missed).
+
+    Both buckets are derived from `missed`, so they partition it by construction. The
+    earlier version derived `triage_lost` from all rows — every story on an unexamined
+    page, found or not — and compared it against a miss count derived from proposals.
+    Those coincide only while a story on an unexamined page cannot be found, which stops
+    being true the moment a detected file's proposals disagree with its own
+    `skipped_by_triage` flags (the merged artifacts in results/v11/triage_recall/ do
+    exactly that, by design). It then printed splits like "3 misses: 4 ... 2 ...".
+
+    This line is the only place the pipeline attributes a miss to Triage rather than
+    Detection, so a split that does not cover the misses sends the fix to the wrong
+    capability (Lesson 35).
+    """
+    missed = [r for r in rows if not r['in_detector']]
+    triage_lost = [r for r in missed if not r['survived_triage']]
+    kept_missed = [r for r in missed if r['survived_triage']]
+    assert len(triage_lost) + len(kept_missed) == len(missed), (
+        "miss-cause buckets are not a partition — they are derived from `missed`, so "
+        "this can only fire if the derivation above was edited")
+    return missed, triage_lost, kept_missed
+
+
+def flags_disagreeing_with_proposals(rows):
+    """
+    Stories FOUND on a page the detected file flags `skipped_by_triage`.
+
+    Legitimate for the merged measurement artifacts, which override the skip decision on
+    purpose. Not legitimate silently: while any exist, the triage-vs-detection attribution
+    describes the shipped skip decision and not the run in front of you. Reported, never
+    swallowed (Lesson 38 — absence is quiet).
+    """
+    return [r for r in rows if r['in_detector'] and not r['survived_triage']]
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     source = ap.add_mutually_exclusive_group(required=True)
@@ -250,23 +288,37 @@ def main():
     # fix belongs. Same reason `only_rejected` is pulled out: proposed-then-rejected
     # is Classification (FRAMEWORK §1.2, Lesson 30).
     survived = [r for r in rows if r['survived_triage']]
-    kept_missed = [r for r in survived if not r['in_detector']]
-    triage_lost = [r for r in rows if not r['survived_triage']]
+    triage_lost_all = [r for r in rows if not r['survived_triage']]
+    missed, triage_lost, kept_missed = cause_buckets(rows)
     log.info('TRIAGE recall: %d/%d = %.1f%%  while examining %d/%d pages (%.0f%%); %d lost outright',
              len(survived), len(rows), 100 * len(survived) / len(rows),
-             len(triage.examined), pages, 100 * len(triage.examined) / pages, len(triage_lost))
+             len(triage.examined), pages, 100 * len(triage.examined) / pages, len(triage_lost_all))
     log.info('DETECTION recall given the page survived triage: %d/%d = %.1f%%',
              len(survived) - len(kept_missed), len(survived),
              100 * (len(survived) - len(kept_missed)) / len(survived) if survived else 0.0)
     log.info('CAUSE of the %d misses: %d triage discarded the page, %d page examined and '
-             'nothing proposed in range', len(rows) - len(found), len(triage_lost), len(kept_missed))
+             'nothing proposed in range', len(missed), len(triage_lost), len(kept_missed))
+
+    # A found story on a page flagged unexamined means this file's skip flags and its
+    # proposals describe different runs. Warn and name it: the Triage/Detection split
+    # above then describes the SHIPPED skip decision, not the file in front of you.
+    contradicting = flags_disagreeing_with_proposals(rows)
+    if contradicting:
+        log.warning('%d story/stories are FOUND on pages this file still flags '
+                    'skipped_by_triage (e.g. %s). Expected for the merged artifacts in '
+                    'results/v11/triage_recall/, which override the skip decision on '
+                    'purpose. While it holds, the TRIAGE and DETECTION lines above '
+                    'describe the SHIPPED skip decision, not this run; the RECALL line '
+                    'is unaffected.',
+                    len(contradicting),
+                    ', '.join(r['ref'] for r in contradicting[:3]))
     only_rejected = [r for r in found if r['only_rejected']]
     log.info('CLASSIFICATION, reported apart: %d located stories are covered ONLY by a span '
              'this run classified NOT_A_STORY — counted as FOUND above, because Detection '
              'proposes and does not judge', len(only_rejected))
     for r in only_rejected:
         log.info('  REJECTED %s: %s', r['ref'], r['text'][:80])
-    for r in triage_lost:
+    for r in triage_lost_all:
         log.info('  TRIAGE-LOST %s (pages %s): %s', r['ref'], ','.join(r['pages_touched']), r['text'][:70])
     if args.golden:
         g = sum(1 for r in rows if r['in_golden'])

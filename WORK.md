@@ -46,11 +46,11 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | clean |
-| `ground-truth` | `kiddushin-recall-boundary-c52c91` | **19 FILES** |
+| `integrity-fixes` | `kiddushin-recall-boundary-c52c91` | **15 FILES** |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 11 items, never deleted
+## Done — 13 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -64,5 +64,7 @@ staleness check: it changes whenever anyone edits anything.*
 | [Kiddushin recall: triage and detection](work/done/2026-08-30-kiddushin-recall.md) | triage, detection | [2026-08-31-kiddushin-recall.md](docs/findings/2026-08-31-kiddushin-recall.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
 | [Price the triage trade over the 124 discarded Ketubot pages](work/done/2026-08-30-triage-recall-price.md) | triage | — |
+| [The recall harness reports miss-causes as a partition without checking it is one](work/done/2026-08-31-cause-bucket-partition.md) | triage, detection | — |
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
-<!-- board-checksum: bc454f914e9cae86 -->
+| [Finishing an item re-roots its outbound links and breaks every inbound one](work/done/2026-08-31-finish-reroots-inbound-links.md) | — | — |
+<!-- board-checksum: 99c3b2ca7752f254 -->

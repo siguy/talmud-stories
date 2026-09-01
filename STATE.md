@@ -56,7 +56,7 @@ open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
-closed     4 item(s) in work/done/
+closed     5 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -69,7 +69,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-two-amud-header-parser
-closed     5 item(s) in work/done/
+closed     6 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -130,10 +130,10 @@ closed     1 item(s) in work/done/
 
 Each of these is a round Jeff gave us whose verdicts are not in any ruler, so
 they are invisible to every precision number. Lesson 1's failure, still live.
+Counts are measured; files holding zero verdicts are not listed, because
+naming an empty file as a lost round buries the one that is not.
 
-- `validation/feedback/jeff_v4.1_validation.json`
-- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json`
-- `validation/feedback/validations_v4_2026-01-25.json`
+- `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **24 verdicts**
 
 ## Open with Jeff
 
@@ -152,4 +152,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 0f2b01fcb29139eb -->
+<!-- board-checksum: 16834a5e2a013f11 -->
