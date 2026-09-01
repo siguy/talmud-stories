@@ -66,6 +66,22 @@ MUST_KEEP = [('Ketubot 62a', 7), ('Ketubot 105b', 9)]
 MUST_STAY_TRIMMED = [('Ketubot 67b', 3), ('Ketubot 77b', 11), ('Kiddushin 72a', 3)]
 
 
+class Tee:
+    """Everything printed also lands in one file. The run happens wherever the key
+    is; the report is what comes back, so it has to be self-contained rather than a
+    terminal scrollback someone has to remember to copy."""
+
+    def __init__(self, path):
+        self.f = open(path, 'w', encoding='utf-8')
+        self.out = sys.stdout
+
+    def write(self, t):
+        self.out.write(t); self.f.write(t)
+
+    def flush(self):
+        self.out.flush(); self.f.flush()
+
+
 def have_key():
     if os.getenv('GOOGLE_API_KEY'):
         return True
@@ -73,7 +89,7 @@ def have_key():
     return env.exists() and 'GOOGLE_API_KEY' in env.read_text()
 
 
-def run(cmd, dry):
+def run(cmd, dry, quiet=False):
     print('  $ ' + ' '.join(str(c) for c in cmd))
     if dry:
         return ''
@@ -81,6 +97,10 @@ def run(cmd, dry):
     if r.returncode != 0:
         print(r.stdout[-3000:]); print(r.stderr[-3000:], file=sys.stderr)
         raise SystemExit(f'FAILED: {" ".join(str(c) for c in cmd)}')
+    if quiet:
+        print(f'    ok ({len(r.stdout.splitlines())} lines)')
+    else:
+        print(r.stdout.rstrip())
     return r.stdout
 
 
@@ -96,6 +116,9 @@ def main():
     ap.add_argument('--out-dir', default='results/v11/parallel_rule')
     ap.add_argument('--model', default='gemini-3.7-flash')
     ap.add_argument('--thinking', default='high')
+    ap.add_argument('--report', default=None,
+                    help='tee the whole run to this file (default: <out-dir>/REPORT.txt). '
+                         'This is the single artifact to send back.')
     ap.add_argument('--dry-run', action='store_true',
                     help='print the plan and check every input exists; no API calls')
     args = ap.parse_args()
@@ -114,13 +137,17 @@ def main():
 
     out = ROOT / args.out_dir
     out.mkdir(parents=True, exist_ok=True)
+    report = Path(args.report) if args.report else out / 'REPORT.txt'
+    if not args.dry_run:
+        sys.stdout = Tee(report)
+        print(f'# parallel-rule experiment — model {args.model}, thinking {args.thinking}')
     print(f"\n=== 1. Wave 5 runs, 3 arms + 3 same-code repeats (Lesson 22) -> {args.out_dir}\n")
     produced = {}
     for name, inp, _base in ARMS:
         for tag in ('', '_repeat'):
             dest = f'{args.out_dir}/{name}_parallel{tag}.json'
             run(['python3', 'scripts/run_wave5_clause_spans.py', '--in', inp,
-                 '--out', dest, '--model', args.model, '--thinking', args.thinking], args.dry_run)
+                 '--out', dest, '--model', args.model, '--thinking', args.thinking], args.dry_run, quiet=True)
             produced.setdefault(name, {})['repeat' if tag else 'new'] = dest
 
     print("\n=== 2. Structural gate — every boundary at a clause/word edge\n")
@@ -147,8 +174,8 @@ def main():
          [f'base={ket_base[0]}', f'new={ket_new[0]}']),
     ]:
         print(f'--- {label}')
-        print(run(['python3', 'scripts/score_boundary_targets.py', '--targets', targets,
-                   '--by-direction', '--runs'] + runs, args.dry_run))
+        run(['python3', 'scripts/score_boundary_targets.py', '--targets', targets,
+             '--by-direction', '--runs'] + runs, args.dry_run)
 
     print("\n=== 4. The two cases this change exists for\n")
     if not args.dry_run:
@@ -184,6 +211,8 @@ def main():
     run(['python3', 'scripts/screen_end_trim_depth.py', '--runs'] +
         [produced[n]['new'] for n in produced] + ['--min-depth', '4'], args.dry_run)
 
+    if not args.dry_run:
+        print(f'\nFull report written to {report} — that one file is what to send back.')
     print('\nWhen the numbers are in: add an ## Outcome to '
           'work/2026-09-01-parallel-story-rule.md\nsaying what happened and WHY '
           '(especially for a revert), then `python3 scripts/board.py finish '
