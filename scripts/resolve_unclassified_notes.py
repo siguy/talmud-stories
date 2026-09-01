@@ -49,6 +49,20 @@ ROUND_SOURCES = {
         'v7', ['results/v7/kiddushin_v7.json']),
     'wave4_kiddushin_review_2026-07-06.json': (
         'v10_wave4', ['results/v10/wave4/kiddushin_v10.json']),
+    # Added 2026-08-31 (Phase B). None of these three contributes a note to this
+    # script's population, so the extension was verified score-neutral before it
+    # landed: population 34, polarity 12, disagreed 8, agrees-today 7 and
+    # changed-since-review 15 are all identical with and without it. They are
+    # here because this table is the project's one round -> detector-version map
+    # and a second copy elsewhere is how the versions drift apart.
+    'canonical_review_anonymous_2026-03-17.json': (
+        'canonical', ['results/canonical/ketubot_canonical.json']),
+    'v5_1_feedback_anonymous_2026-02-20.json': (
+        'v5.1_categorical',
+        ['results/v5/pages_2-39.json', 'results/v5/pages_40-60.json']),
+    # v4-era output is not on disk, so the saw-column for this round stays blank
+    # and the script names it in missing_source_runs rather than going quiet.
+    'ketubot_review_Jeffrey_Rubenstein_2026-01-08.json': ('v4_era', []),
 }
 
 CURRENT = {

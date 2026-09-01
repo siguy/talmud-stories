@@ -61,7 +61,7 @@ squarely at that weakness, unread.
 **2. Boundary and merge signal in structured fields.** `length_adjustment` (10 rows) and
 `spans_multiple_pages` (9 rows) are dedicated columns. Every later round buried the same
 information in free text, which is exactly the problem
-[`review-verdict-axes`](../../work/2026-08-30-review-verdict-axes.md) exists to fix —
+[`review-verdict-axes`](../../work/done/2026-08-30-review-verdict-axes.md) exists to fix —
 **the UI had the right shape in January and lost it.** Worth knowing before Phase B
 designs it again from scratch.
 

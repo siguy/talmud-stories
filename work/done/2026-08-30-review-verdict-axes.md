@@ -10,7 +10,7 @@ superseded_by:
 
 # Make the reviewer say which thing is wrong
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 **Capabilities: 3 Classification (primary), 5 Review, 4 Boundaries, 2 Detection.**
 **Depends on Jeff: no** — Phases A and B need nobody. Phase C needs one review round.
 **Cost:** Phase A ~1 hour, no API. Phase B a session, no API. Phase C free.
@@ -45,7 +45,7 @@ What that already cost: months treating Classification as the weakest capability
 Kiddushin as far worse than Ketubot. Separated, both land near 92–95% and most of the gap
 evaporates. Worse, the pooled number is the one that would have been "improved" by tuning
 the classifier, which would have done nothing — the errors were largely in the boundary
-code (Lesson 30, [`detection_classification_ruler`](../docs/findings/2026-08-30-detection-classification-ruler.md)).
+code (Lesson 30, [`detection_classification_ruler`](../../docs/findings/2026-08-30-detection-classification-ruler.md)).
 
 ## The insight the design rests on
 
@@ -71,10 +71,10 @@ classification problem, and why `build_ruler.py` now treats it as **accepted**.
 
 `Borderline` is new and is **Jeff's own request**: contested cases kept and flagged rather
 than silently resolved
-([ledger Part 2(d)](../validation/feedback/jeff_2026-07-06_feedback_ledger.md)). It is
-also the thing [`FRAMEWORK.md` §1.3](../FRAMEWORK.md) says makes this the one capability
+([ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)). It is
+also the thing [`FRAMEWORK.md` §1.3](../../FRAMEWORK.md) says makes this the one capability
 where "let database users decide" is a legitimate answer, and it is a column the published
-database needs anyway ([capability 6](../docs/capabilities/6_publication.md)).
+database needs anyway ([capability 6](../../docs/capabilities/6_publication.md)).
 
 **Axes 2–4 — shown only when something is wrong.** Progressive disclosure:
 
@@ -105,7 +105,7 @@ today, and any new vocabulary must ship an explicit mapping table rather than as
 
 ### Phase A — DONE 2026-08-31
 
-→ [`docs/findings/2026-08-31-unclassified-notes-resolved.md`](../docs/findings/2026-08-31-unclassified-notes-resolved.md)
+→ [`docs/findings/2026-08-31-unclassified-notes-resolved.md`](../../docs/findings/2026-08-31-unclassified-notes-resolved.md)
 · artifact `results/rulers/unclassified_notes_resolved.json`
 · `python3 scripts/resolve_unclassified_notes.py`
 
@@ -143,14 +143,14 @@ population, no API, no Jeff.
 Output: a dated finding plus a re-run ruler, reporting the narrowed range **and what
 remains genuinely unresolvable**. Do not guess the residue into a bucket to make the range
 look tighter — an indication presented as a measurement is the failure
-[`FRAMEWORK.md` §7](../FRAMEWORK.md) names, and it is how the 86/68 numbers survived.
+[`FRAMEWORK.md` §7](../../FRAMEWORK.md) names, and it is how the 86/68 numbers survived.
 
 *Why by hand and not with an LLM pass:* the notes are free text about specific passages,
 and an LLM classifier adds a second layer of inference on top of the one we are removing.
 At n=24 a person is cheaper and auditable. At n=240 the answer would be different — say so
 in the finding, so the rule is reusable rather than a preference.
 
-### Phase B — stop widening the range (the UI change)
+### Phase B — DONE 2026-08-31 — stop widening the range (the UI change)
 
 Implement the axes in `validation/generators/`. Four constraints, each bought by a past
 failure:
@@ -173,7 +173,7 @@ is the acceptance test for the whole item.
 
 - **Show him `mishnah_stories`.** The Mishnah filter's withheld passages are displayed to
   nobody, and he is the one person who can settle whether they belong in the database
-  ([`mishnah_filter_delta`](../docs/findings/2026-08-30-mishnah-filter-delta.md)).
+  ([`mishnah_filter_delta`](../../docs/findings/2026-08-30-mishnah-filter-delta.md)).
 - **Ask him to keep his appendix a separate file.** One sentence. It cannot be
   reconstructed afterwards, and the window closes the moment we send Gittin / Yevamot /
   Eruvin results (Lesson 29, `09_kiddushin_parse_open_calls.md` item 1b).
@@ -210,5 +210,46 @@ narrows going forward, not backward.
 
 Finding → `docs/findings/` (dated). Update the scoreboard row for **3 Classification** in
 `STATUS.md` and the *Untried* section of
-[`docs/capabilities/3_classification.md`](../docs/capabilities/3_classification.md) and
-[`5_review.md`](../docs/capabilities/5_review.md), which both name this item.
+[`docs/capabilities/3_classification.md`](../../docs/capabilities/3_classification.md) and
+[`5_review.md`](../../docs/capabilities/5_review.md), which both name this item.
+
+
+---
+
+## Outcome
+
+**Phase B DONE 2026-08-31.** Phases A and B are complete; **Phase C remains** and needs
+a review round on the new UI, not more code.
+→ [`docs/findings/2026-08-31-review-verdict-axes-phase-b.md`](../../docs/findings/2026-08-31-review-verdict-axes-phase-b.md)
+
+Shipped: `validation/generators/generate_axis_review_ui.py` (the four axes, plus
+`display_problem` as its own control **and the Hebrew quote box with a stated
+`belongs in the story` / `should be cut` polarity** — the box this item's design named as
+"existing" when no generator had ever had one; 16 of the 70 harvested boundary targets
+are `mixed` or `unclear` precisely because that polarity has only ever been guessed from
+prose), `validation/generators/review_ui_core.py` (the
+display core, extracted from the wave 4 generator so both pages share one copy),
+`scripts/map_verdict_vocabularies.py` (605 banked verdicts → the new shape, 0 unmapped),
+and `build_ruler.py` taught to read both vocabularies.
+
+Every gate in this item was met and each is stated with its evidence in the finding.
+The two that were at risk: the rulers rebuild **byte-identical**, and all **9** injected
+defects fail the test that guards them — the display test was demonstrated to fail, not
+merely asserted to guard.
+
+**The design decision worth carrying forward:** the disclosure of axes 2–4 is
+*independent of axis 1*. Revealing them only on a `No` is the obvious reading of this
+item's own brief and it is wrong — "it IS a story and the boundary is wrong" is the
+commonest correction we get, and it is exactly what `adjust` meant. A test now fails if
+the extent axis is ever gated behind a `No`.
+
+**What it does not do, stated plainly because this file will be read as a throughput
+win:** Phase B makes verdicts *more informative*, not review *faster*. It is
+click-neutral on a correct entry and costs more clicks on a wrong one. Simon accepted
+that trade explicitly before it was built. The throughput evidence found while reading
+`5_review.md` points at the **delta UI** (49/49 completed) and at
+`batch_review.html`'s keyboard shortcuts, and neither is in this change.
+
+**Not done, and deliberately:** the two bundle-in asks (show Jeff `mishnah_stories`;
+ask him to keep his appendix a separate file) belong to the round, not to the code —
+though the Mishnah passages are now displayed and filterable, so the first is ready.
