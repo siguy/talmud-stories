@@ -174,6 +174,7 @@ archive/                          # Old versions (reference only)
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
 | `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld. Also the only committed measurement of **triage recall**, and it splits the misses by cause: triage-discarded / examined-but-nothing-proposed / proposed-then-`NOT_A_STORY`. Use `--expert-json` for any list that is not the Ketubot `.doc` |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
+| `scripts/price_triage_trade.py` | **What Stage 1 saves and what it costs** — the ceiling on what re-examining discarded pages can return, every keep-rule variant priced from the cached labels, and the audit that retired `results/v7/ablation_v7_no_triage.json`. No API calls |
 | `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
 | `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — detector-blind ground truth. Count it with `parse_kiddushin_list.py --self-test` |
@@ -243,5 +244,6 @@ When making changes, update these files as relevant:
 - Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
 - Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)
+- Use `skip_triage=True` to mean "no triage" — it stamps every segment `DELIBERATION` and feeds that to Stage 2, in every version v7-v11. It measures *real labels vs false labels*, not with-vs-without; `results/v7/ablation_v7_no_triage.json` is its output and is contaminated (`docs/findings/2026-09-01-triage-recall-price.md` §4)
 - Move detector output to a new key without making the harnesses read it (Lesson 27) — an invisible deletion reads as a model failure
 - Generalise one expert correction into a corpus-wide rule without counting how many of their *other* labels it touches (Lesson 27)

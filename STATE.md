@@ -55,9 +55,9 @@ history    docs/capabilities/1_triage.md
 open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
-open       2026-08-30-triage-recall-price
 open       2026-08-30-yevamot-triage
-closed     3 item(s) in work/done/
+open       2026-09-01-triage-bypass-and-precision
+closed     4 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -154,4 +154,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-<!-- board-checksum: 3502f60889e53cb1 -->
+<!-- board-checksum: c8fb581d2c136651 -->

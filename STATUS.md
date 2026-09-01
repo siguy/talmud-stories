@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-08-31.** Rewritten every session, never appended.
+**Last rewritten: 2026-09-01.** Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -47,6 +47,26 @@ Ketubot, and split by direction the residual is almost entirely a **start** prob
 numbers say so more precisely; review throughput still is. Phase 6a costs about ten
 cents and is still unrun.
 
+**2026-09-01 — the board's one failing cell now has a diagnosis, and it rules out the
+obvious fix.** `triage-recall-price` is done, again with no API calls. Kiddushin Triage
+(95.6%, below its ≥98% gate) will **not** be closed by loosening the threshold: every
+relaxation cheap enough to be worth running recovers **0 stories on both tractates**,
+because **10 of the 13 pages that killed a story carry zero narrative events** — Stage 1
+did not narrowly miss them, it read them as containing nothing that happens. The trade is
+now priced on both tractates: **1 story per 41 pages not examined** (Ketubot, +2.0 pts
+available) and **1 per 25** (Kiddushin, +4.4). Closing that 4.4 points is a *labelling*
+job — the opener lexicon, or a different Stage 1 model.
+→ [`2026-09-01-triage-recall-price.md`](docs/findings/2026-09-01-triage-recall-price.md)
+
+**And a six-month-old conclusion was retracted.** `results/v7/ablation_v7_no_triage.json`
+— the basis for *"triage is the single largest accuracy driver"* — is **not a no-triage
+run**. `skip_triage=True` stamps every segment `DELIBERATION` and feeds that into Stage 2's
+prompt, in **every detector version v7 through v11**. Scored, the no-triage arm loses 6
+stories on pages both arms examined, which no change to the page set can cause. So the
+review-cost half of the triage question is still unmeasured, and the method the old brief
+specified would have produced the same contaminated answer today. Successor item:
+[`triage-bypass-and-precision`](work/2026-09-01-triage-bypass-and-precision.md).
+
 **Two clocks are running.** Gittin, Yevamot and Eruvin have pristine blind lists **only
 until we send Jeff results for them** — and the ask that protects them
 (`jeff:appendix-separate`) has to reach him *before* that round, not after. And he is
@@ -79,6 +99,11 @@ the two tractates and nobody chose either price"**: Kiddushin gives up 2.4 more 
 recall for 6 more points of corpus skipped, about one story per 1.5 points of pages not
 examined. That is the open end-to-end question for Simon, now with a number attached.
 
+**Priced properly on 2026-09-01, and the cheap fix is measured not to work.** Per extra
+page examined the exchange rate is **1 story per 41 calls** (Ketubot) and **1 per 25**
+(Kiddushin); every threshold relaxation under +5 calls returns **zero stories on both**.
+Do not loosen Stage 1 to close this cell.
+
 **The Detection row is quoted conditionally on purpose.** The end-to-end figure charges
 Triage's losses to Detection as well, and the two have separate gates (Lesson 35). Both
 readings are in the table.
@@ -106,9 +131,29 @@ story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot st
 the gap are **cross-page stories whose text sits on a continuation daf where we proposed
 nothing** — 17b, 50a and 51a each carry zero proposals.
 
-## What changed today (2026-08-31)
+## What changed today (2026-09-01)
 
-**The morning was infrastructure and correction; the afternoon moved three cells.**
+- **The triage trade is priced on both tractates, from disk alone** — no API calls.
+  Ceiling **1 story per 41 extra calls** (Ketubot, +2.0 pts) and **1 per 25** (Kiddushin,
+  +4.4). Every keep-rule variant priced: nothing under +5 calls recovers a story on either
+  tractate.
+- **The misses are labelling, not threshold.** 10 of 13 killer pages carry **zero**
+  narrative events. Ketubot 82b — 97 words, on Jeff's list — is labelled 10 DELIBERATION +
+  4 HABITUAL. This sends Kiddushin's failing cell to the opener lexicon, not to the
+  threshold.
+- **A structural fix proposed and killed in the same session.** 6 of 7 killed stories span
+  a daf boundary, so "examine the daf either side of every kept page" looked compelling;
+  priced at **+60 / +34 calls for 0 stories**, because the killed pages sit inside runs of
+  discarded pages rather than on the edge of kept ones. Recorded so it is not re-proposed.
+- **`ablation_v7_no_triage.json` retired, and a 2026-02-13 conclusion retracted.**
+  `skip_triage=True` does not bypass Stage 1 — it stamps every segment `DELIBERATION`, in
+  **v7 through v11**. Exposed by an impossible result: the no-triage arm loses 6 stories on
+  pages both arms examined.
+- **New lesson (unnumbered until it lands on main)** — an ablation must remove the thing,
+  not replace it with a lie. Lesson 21's shape one stage over.
+- **`scripts/price_triage_trade.py`** — new, no API calls, reproduces all of the above.
+
+**Earlier — 2026-08-31. The morning was infrastructure and correction; the afternoon moved three cells.**
 Main's original line here — "no measurement moved" — was true when it was written and is
 kept below, because the reorganization it describes is what made the afternoon cheap.
 
@@ -193,18 +238,22 @@ kiddushin-list-parse DONE ─┬─ kiddushin-recall        DONE   (triage + det
                            ├─ kiddushin-boundary-set  DONE   (176 blind targets)
                            └─ kiddushin-comments-harvest     still open
 
-start any time:   review-verdict-axes · kiddushin-12a-dedup · opener-lexicon
-now the priority: triage-recall-price
+start any time:   review-verdict-axes · kiddushin-12a-dedup
+now the priority: opener-lexicon  (Stage 1's misses are labelling — this is where they go)
+                  triage-bypass-and-precision  (the review cost is still unmeasured)
+DONE 09-01:       triage-recall-price
 open calls:       kiddushin-parse-open-calls   (denominator 90; item 1b is for Jeff)
 incomplete:       golden-completeness
 ```
 
-**`triage-recall-price` is promoted out of "lower value".** It was a Ketubot curiosity
-yesterday; today Kiddushin Triage is the board's only failing cell, and this item is
-exactly what that gate is missing — FRAMEWORK §1.1 says a triage bar quoted without its
-cost saving is meaningless. Note its frontmatter still reads `tractate: [ketubot]` and its
-body is scoped to the 124 discarded Ketubot pages; Kiddushin has 100 discarded pages of
-its own with text already on disk, so the item is now under-scoped.
+**`triage-recall-price` is done (2026-09-01), and it re-pointed the work.** It was scoped
+to Ketubot's 124 discarded pages; Kiddushin's 100 were priced in the same pass, so the
+under-scoping noted here is resolved. What it changes: the fix for Kiddushin's failing
+Triage cell is **`opener-lexicon`**, not a threshold change, because the misses are pages
+Stage 1 labelled with zero narrative events. And what it could not answer — how many false
+proposals reach Jeff per story recovered — is now
+**[`triage-bypass-and-precision`](work/2026-09-01-triage-bypass-and-precision.md)**,
+blocked on a real code defect rather than on an unwritten brief.
 
 All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 [`work/done/`](work/done/) with an `## Outcome` — **never deleted**, which is how
@@ -212,7 +261,8 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[triage-recall-price](work/2026-08-30-triage-recall-price.md)** — price the trade over the discarded pages. **Now the highest-value item**: Kiddushin Triage is the board's only failing cell | 1 | — | no |
+| **[triage-bypass-and-precision](work/2026-09-01-triage-bypass-and-precision.md)** — fix `skip_triage` (it fakes Stage 1's output in v7–v11), then measure false proposals per story recovered. The half `triage-recall-price` could not reach | 1, 2 | — | no |
+| **[opener-lexicon](work/2026-08-30-opener-lexicon.md)** — **promoted**: Stage 1's misses are labelling failures, and this is the only item aimed at them. Ketubot 82b's opener `בראשונה היו כותבין` is one of the two known cases | 1, 2 | — | no |
 | **[kiddushin-comments-harvest](work/2026-08-30-kiddushin-comments-harvest.md)** — Jeff's 10 anchored remarks | 3, 4 | — | no |
 | **[review-verdict-axes](work/2026-08-30-review-verdict-axes.md)** — make the reviewer say *which* thing is wrong; the only route to a Classification point estimate. Planned as step 7a | 3, 5 | — | no |
 | [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* |
@@ -220,11 +270,12 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 | **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict (the ruler names all 12) | 3, ground truth | — | no |
 | [kiddushin-12a-dedup](work/2026-08-30-kiddushin-12a-dedup.md) — one detection covering two stories | 2 | — | no |
 | [story-criteria](work/2026-08-30-story-criteria.md) — was Wave 6; 6a runs now, 6c blocked by design | 3 | comments-harvest | **6b** |
-| [opener-lexicon](work/2026-08-30-opener-lexicon.md) — was Wave 7; mine openers, never invent them | 1, 2 | — | no |
 
-**Done today** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
+**Done 2026-09-01** — **`triage-recall-price`**.
+
+**Done 2026-08-31** — `capability-histories` · `ketubot-77a` · `fetch-new-tractates` ·
 `ketubot-golden-additions` · `kiddushin-list-parse` · `review-ui-display-asymmetry` ·
-**`kiddushin-recall`** · **`kiddushin-boundary-set`**.
+`kiddushin-recall` · `kiddushin-boundary-set`.
 
 \* `second-story-guard` is **not blocked**: deleting a whole second story is wrong
 whatever Jeff answers about where an entry ends. Its *value* depends on his answer; the

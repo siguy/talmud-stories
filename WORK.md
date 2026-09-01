@@ -30,7 +30,6 @@ of four branches on 2026-08-30 had never committed anything.
 | [Make the reviewer say which thing is wrong](work/2026-08-30-review-verdict-axes.md) | classification, review | — | — |
 | [Stop discarding a second story that shares a segment](work/2026-08-30-second-story-guard.md) | boundaries | ketubot | awaiting `jeff:boundary-end-rule` |
 | [Encode Jeff's story criteria (was Wave 6)](work/2026-08-30-story-criteria.md) | classification | — | awaiting `jeff:speech-act-policy` |
-| [Price the triage trade over the 124 discarded Ketubot pages](work/2026-08-30-triage-recall-price.md) | triage | ketubot | — |
 | [Fix per-daf attribution for two-amud headers in the expert lists](work/2026-08-30-two-amud-header-parser.md) | detection | gittin, yevamot, eruvin, ketubot | — |
 | [Yevamot — classification](work/2026-08-30-yevamot-classification.md) | classification | yevamot | **blocked:** `2026-08-30-yevamot-detection` |
 | [Yevamot — detection](work/2026-08-30-yevamot-detection.md) | detection | yevamot | **blocked:** `2026-08-30-yevamot-triage`, `2026-08-30-two-amud-header-parser` |
@@ -38,6 +37,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Yevamot — golden](work/2026-08-30-yevamot-golden.md) | classification | yevamot | **blocked:** `2026-08-30-yevamot-expert-round` |
 | [Yevamot — review ui](work/2026-08-30-yevamot-review-ui.md) | review | yevamot | **blocked:** `2026-08-30-yevamot-classification` |
 | [Yevamot — triage](work/2026-08-30-yevamot-triage.md) | triage | yevamot | — |
+| [Fix the triage bypass, then price the review cost of examining more pages](work/2026-09-01-triage-bypass-and-precision.md) | triage, detection | ketubot, kiddushin | — |
 
 <!-- board-live:start -->
 ## In flight
@@ -47,12 +47,11 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
-| `kiddushin-recall-boundary-c52c91` | `kiddushin-recall-boundary-c52c91` | **14 FILES** |
-| `state-work-review-40b153` | `state-work-review-40b153` | clean |
+| `work-tree-next-steps-vtgdii` | `talmud-stories` | clean |
+| `triage-recall-price` | `wt-triage-recall-price` | **9 FILES** |
 <!-- board-live:end -->
 
-## Done — 9 items, never deleted
+## Done — 10 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -64,5 +63,6 @@ staleness check: it changes whenever anyone edits anything.*
 | [Parse Jeff's Kiddushin story list](work/done/2026-08-30-kiddushin-list-parse.md) | detection, boundaries | [2026-08-30-kiddushin-list-parse.md](docs/findings/2026-08-30-kiddushin-list-parse.md) |
 | [Kiddushin recall: triage and detection](work/done/2026-08-30-kiddushin-recall.md) | triage, detection | [2026-08-31-kiddushin-recall.md](docs/findings/2026-08-31-kiddushin-recall.md) |
 | [Review UI: render both languages from one path](work/done/2026-08-30-review-ui-display-asymmetry.md) | review | — |
+| [Price the triage trade over the 124 discarded Ketubot pages](work/done/2026-08-30-triage-recall-price.md) | triage | [2026-09-01-triage-recall-price.md](docs/findings/2026-09-01-triage-recall-price.md) |
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
-<!-- board-checksum: bd1be0c09c534d4b -->
+<!-- board-checksum: a5b4590c553ec6a5 -->
