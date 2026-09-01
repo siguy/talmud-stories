@@ -90,3 +90,19 @@ def test_the_screen_reports_indicated_not_measured():
         assert marker in src, 'markers dropped from the screen'
     assert 'never as a filter' in src.lower() or 'never a filter' in src.lower(), (
         'the screen must state that parallel markers are evidence, not a filter (Lesson 15)')
+
+
+def test_the_experiment_runner_cannot_quietly_drop_what_makes_it_trustworthy():
+    """The runner exists so the method is not re-derived (or skipped) by whoever has
+    the key. Three things are load-bearing and each has been skipped in this project
+    before: the same-code repeat (Lesson 22), keeping the blind and corrections rulers
+    apart (Lesson 24), and splitting by direction (the pooled number hid that Ketubot's
+    whole deficit is ends). Pinned by name, not by phrasing."""
+    src = (ROOT / 'scripts' / 'run_parallel_rule_experiment.py').read_text()
+    assert '_repeat' in src, 'the same-code repeat arm is gone (Lesson 22)'
+    assert '--by-direction' in src, 'the direction split is gone'
+    assert 'expert_boundary_targets_2005.json' in src and \
+           'expert_boundary_targets_2005_kiddushin.json' in src, 'a blind ruler is gone'
+    assert 'expert_boundary_targets_v2.json' in src, 'the corrections ruler is gone'
+    assert 'CIRCULAR' in src, 'the corrections ruler is no longer labelled biased (Lesson 24)'
+    assert 'GOOGLE_API_KEY' in src, 'the runner no longer refuses without a key'

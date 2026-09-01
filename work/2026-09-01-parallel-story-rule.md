@@ -4,7 +4,7 @@ capability: [boundaries]
 tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: [jeff:boundary-end-rule]
-writes: [src/story_detector_v11.py, scripts/screen_end_trim_depth.py, scripts/score_boundary_targets.py, tests/test_parallel_story_rule.py, docs/capabilities/4_boundaries.md, docs/findings/2026-09-01-parallel-story-rule.md, results/v11/]
+writes: [src/story_detector_v11.py, scripts/screen_end_trim_depth.py, scripts/run_parallel_rule_experiment.py, scripts/score_boundary_targets.py, tests/test_parallel_story_rule.py, docs/capabilities/4_boundaries.md, docs/findings/2026-09-01-parallel-story-rule.md, results/v11/]
 finding: docs/findings/2026-09-01-parallel-story-rule.md
 superseded_by:
 ---
@@ -66,6 +66,12 @@ mirror image. The shipped wording adds an explicit second line naming amoraic de
 as the confusable case.
 
 ## Method
+
+**Steps 2-5 are one command.** `scripts/run_parallel_rule_experiment.py` runs the
+arms, the same-code repeats, both blind rulers split by direction, the corrections
+ruler apart, the two motivating cases and the three lookalikes, and re-screens — so
+the parts that make the result trustworthy cannot be skipped by whoever has the key.
+It refuses without a `GOOGLE_API_KEY` and `--dry-run` verifies the plan with no calls.
 
 1. `src/story_detector_v11.py` — split the parallel rule in two: a bare mention is
    trimmed; a full incident is kept; **judge on events, never on names or speech**.

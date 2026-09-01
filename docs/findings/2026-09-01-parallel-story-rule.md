@@ -29,19 +29,28 @@ Kiddushin ends (+5). Ketubot ends are the one cell where it does not.
 
 Two consequences:
 
-- **`jeff:boundary-end-rule` is not a side question, it is the main one.** The axis
-  the whole trimming apparatus is failing on is the axis where his 2005 list and his
-  2026 notes disagree ([trim-asymmetry](2026-08-30-trim-asymmetry.md): starts agree
-  7/7, ends 16/19). Until he answers, a movement on Ketubot ends cannot be read as
-  better or worse.
+- **`jeff:boundary-end-rule` is not a side question, it is the main one** — but the
+  disagreement is smaller than first written here. **Correction, same day:** an
+  earlier version of this line read *"the axis where his 2005 list and his 2026 notes
+  disagree (starts agree 7/7, ends 16/19)"*, taking 16/19 for a disagreement count.
+  [`kiddushin-boundary-set` §5](2026-08-31-kiddushin-boundary-set.md) counts
+  **agreement**: on Ketubot his two sources agree on **7/7 starts and 16/19 ends** —
+  so they disagree on **3 ends**, not 16. The same error sat in `comms/JEFF.md` and is
+  fixed in #22.
+
+  The direction of the argument survives and its magnitude does not: every stated
+  disagreement between his two standards is on an **end**, and none is on a start — but
+  that is 3 cases, and on Kiddushin the pattern does not reproduce (starts 2/3, ends
+  8/11, on 14 shared boundaries). So the honest claim is that the end rule is
+  **unsettled and unanswered**, not that his sources widely conflict. Until he answers,
+  a movement on Ketubot ends still cannot be read as better or worse.
 - **Anything proposed for boundaries should say which direction it targets.** The
   English-as-context idea from [`PLAN-wave5`](../history/2026-08-28-PLAN-wave5.md) is
   measured at 6/8 on ends and **0/8 on starts** — so its known signal lands on the
   contested axis and is uninformative on the clean one. That is not a reason to drop
   it; it is a reason not to run it until the end rule is settled.
 
-*Method: `scripts/score_boundary_targets.py` unchanged, rows grouped by direction.
-No API calls. Reproduce with the snippet in the PR, or add `--by-direction`.*
+*Method: `scripts/score_boundary_targets.py --by-direction`. No API calls.*
 
 ## 2. Sizing the second-story deletion — 2 of 50, not 13 of 50
 
