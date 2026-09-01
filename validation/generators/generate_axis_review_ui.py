@@ -93,6 +93,8 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
         data = json.loads(p.read_text())
         versions.add(data.get('version', 'unknown'))
         page_lookup = {pg['ref']: pg for pg in data['pages']}
+        order = [pg.get('ref', '') for pg in data['pages']]
+        pos = {r: i for i, r in enumerate(order)}
         for page in data['pages']:
             ref = page.get('ref', '')
             for withheld, group in ((False, page.get('stories') or []),
@@ -110,7 +112,29 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
                         'page_segments': page.get('segments', []),
                         'mishnah_withheld': withheld,
                         'spans_pages': s.get('spans_pages'),
+                        # Filled by --listed. Agreement was invisible on this page:
+                        # every entry looked equally like an open question, when most
+                        # of them are passages his own list already has.
+                        'expert_listed': None,
                     }
+                    # A boundary correction needs text on BOTH sides of our span, and
+                    # 8 of the 25 Gittin entries had fewer than two lines of context on
+                    # one side — two of them ended on the last segment of the daf, with
+                    # nothing after at all. The reviewer cannot highlight what is not on
+                    # the page, so the neighbouring daf comes with it.
+                    i = pos.get(ref)
+                    if i is not None and s['start_segment'] <= 1 and i > 0:
+                        prev = page_lookup.get(order[i - 1], {})
+                        if prev.get('segments'):
+                            item['prev_page_ref'] = prev['ref']
+                            item['prev_page_segments'] = prev['segments'][-3:]
+                    last = max((sg.get('index', 0) for sg in page.get('segments', [])),
+                               default=0)
+                    if i is not None and s['end_segment'] >= last - 1 and i + 1 < len(order):
+                        nxt = page_lookup.get(order[i + 1], {})
+                        if nxt.get('segments'):
+                            item['next_page_ref'] = nxt['ref']
+                            item['next_page_segments'] = nxt['segments'][:3]
                     if s.get('spans_pages') and len(s['spans_pages']) >= 2:
                         p2 = page_lookup.get(s['spans_pages'][1])
                         if p2:
@@ -163,6 +187,12 @@ PAGE = r"""<!DOCTYPE html>
   .badge { font-size: 11px; padding: 3px 8px; border-radius: 4px; font-weight: 600; }
   .badge.mishnah { background: #ede9fe; color: #4c1d95; }
   .badge.cross { background: #dbeafe; color: #1e3a8a; }
+  .badge.listed { background: #dcf3e6; color: #1d5b3a; }
+  .badge.unlisted { background: #fdeee9; color: #8a3a25; }
+  /* The neighbouring daf: present so a boundary can be moved off this page, and
+     visibly not part of it. */
+  .edge-note { font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
+               color: #8a97a3; margin: 14px 0 4px; }
 
 __DISPLAY_CSS__
 
@@ -294,8 +324,25 @@ const AXIS_LABELS = {
 // wave4_notrim carries segment-level boundaries only. The reverted char-offset
 // spans are not shown here at all -- 55% of them cut mid-word.
 function buildTextDisplay(story) {
-  return buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, null)
-       + buildContinuation(story);
+  // The neighbouring daf is drawn by the SAME grid builder, so its Hebrew and
+  // English pair exactly like the rest. The synthetic start/end simply pick the
+  // window: one segment past the end of the previous page shows its last rows,
+  // and -1 on the next page shows its first — every row lands as context, since
+  // no real index can fall inside those ranges.
+  const edge = (segs, label, synthetic) =>
+    '<div class="edge-note">' + label + '</div>' + buildGrid(segs, synthetic, synthetic, {}, null);
+  let out = '';
+  if (story.prev_page_segments) {
+    const lastIdx = story.prev_page_segments.reduce((m, s) => Math.max(m, s.index), 0);
+    out += edge(story.prev_page_segments, 'end of ' + story.prev_page_ref, lastIdx + 1);
+  }
+  out += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, null);
+  // A story that already continues onto the next daf gets that page from
+  // buildContinuation below; showing it twice would read as two passages.
+  if (story.next_page_segments && !story.spans_pages) {
+    out += edge(story.next_page_segments, story.next_page_ref + ' begins', -1);
+  }
+  return out + buildContinuation(story);
 }
 
 function isComplete(v) { return !!(v && v.is_story); }
@@ -303,7 +350,12 @@ function isComplete(v) { return !!(v && v.is_story); }
 // 'right' is an answer, not a complaint: the quote box is for a wrong extent.
 function isExtentWrong(extent) { return !!extent && extent !== 'right'; }
 
-function init() { render(); }
+function init() {
+  // Show the two list filters only when the page was built with --listed.
+  const known = STORIES.some(s => s.expert_listed !== null && s.expert_listed !== undefined);
+  if (known) document.querySelectorAll('[data-role^="filter-"]').forEach(b => b.style.display = '');
+  render();
+}
 
 function setFilter(f, btn) {
   activeFilter = f;
@@ -317,6 +369,8 @@ function passesFilter(story) {
   if (activeFilter === 'unreviewed') return !isComplete(verdicts[story.key]);
   if (activeFilter === 'cross') return !!story.spans_pages;
   if (activeFilter === 'mishnah') return !!story.mishnah_withheld;
+  if (activeFilter === 'unlisted') return story.expert_listed === false;
+  if (activeFilter === 'listed') return story.expert_listed === true;
   return true;
 }
 
@@ -393,6 +447,8 @@ function buildCard(story, idx) {
     +   '<span class="story-title">' + story.page_ref + ' :: seg ' + story.start_segment + '-' + story.end_segment + '</span>'
     +   (story.spans_pages ? '<span class="badge cross">continues on ' + story.spans_pages[1] + '</span>' : '')
     +   (story.mishnah_withheld ? '<span class="badge mishnah">inside a Mishnah — withheld from our output</span>' : '')
+    +   (story.expert_listed === true ? '<span class="badge listed">on your 2005 list</span>' : '')
+    +   (story.expert_listed === false ? '<span class="badge unlisted">not on your 2005 list</span>' : '')
     +   '<span style="font-size:12px;color:#94a3b8;">' + story.classification + '</span>'
     + '</div>'
     + (story.one_sentence_summary ? '<div style="font-size:13px;color:#475569;margin-bottom:8px;">' + esc(story.one_sentence_summary) + '</div>' : '')
@@ -610,6 +666,8 @@ def main(argv=None) -> int:
     ap.add_argument('--title')
     ap.add_argument('--out', help='file name under validation/ui/')
     ap.add_argument('--only', help='JSON list of {ref,start_segment,end_segment} to keep')
+    ap.add_argument('--listed', help='JSON list of {ref,start_segment,end_segment} the expert '
+                                     'ALSO has, so the page can show where we agree')
     ap.add_argument('--note', help='one line shown under the page title')
     args = ap.parse_args(argv)
 
@@ -632,6 +690,14 @@ def main(argv=None) -> int:
                   f"{len(keep) - len(stories)} named but not present in the run)")
             if not stories:
                 print('  REFUSING to write an empty review page'); return 1
+        if args.listed:
+            listed = {(o['ref'], o['start_segment'], o['end_segment'])
+                      for o in json.loads(Path(args.listed).read_text())}
+            for st in stories:
+                st['expert_listed'] = (st['page_ref'], st['start_segment'],
+                                       st['end_segment']) in listed
+            agreed = sum(1 for st in stories if st['expert_listed'])
+            print(f"  agreement: {agreed} of {len(stories)} entries are on the expert's list")
         html = generate_html(args.title, stories, version, note=args.note)
         out = OUT_DIR / args.out
         out.write_text(html, encoding='utf-8')

@@ -328,6 +328,31 @@ class AxisReviewUiTest(unittest.TestCase):
         self.assertIn('quote_start', row['keys'])
         self.assertIn('quote_end', row['keys'])
 
+    def test_C10_a_story_at_the_edge_of_the_daf_still_has_context(self):
+        """A boundary can only be corrected against text that is on the page. 8 of
+        the 25 Gittin entries had fewer than two lines of context on one side, and
+        two ended on the LAST segment of the daf with nothing after them at all —
+        so the reviewer was asked to fix a boundary he could not reach. The
+        neighbouring daf is now carried with the entry, drawn by the same grid
+        builder so its Hebrew and English still pair."""
+        js = self.html
+        self.assertIn('prev_page_segments', js)
+        self.assertIn('next_page_segments', js)
+        self.assertIn('edge-note', js)
+        # and it is not drawn twice for a story that already continues onto that daf
+        self.assertIn('!story.spans_pages', js)
+
+    def test_C11_agreement_is_visible_when_the_page_knows_the_expert_list(self):
+        """Every entry looked equally like an open question, including the ones his
+        own list already has. `--listed` marks them, and the filter appears only on
+        a page that was told."""
+        self.assertIn('badge listed', self.html)
+        self.assertIn('badge unlisted', self.html)
+        self.assertIn("activeFilter === 'listed'", self.html)
+        for story in self.stories:
+            self.assertIn('expert_listed', story,
+                          'every item carries the field, null when unknown')
+
     def test_D_every_verdict_carries_the_detector_version(self):
         exp = self.report['export']
         self.assertEqual(exp['detector_version'], self.version)
