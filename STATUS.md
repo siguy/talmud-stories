@@ -251,12 +251,23 @@ right direction and the wrong evidence; the direction is now measured.**
 **The reason to keep Stage 1 is precision and reviewer load, not compute.** 124 extra calls
 a tractate is pennies; 17 extra unjudged proposals in front of the one reviewer is not.
 
-**What is now open in its place, and it is a reading task:** those **27 extra proposals
-across the two tractates have never been read.** They score as false positives only because
-the golden cannot contain a story from a page triage never let anyone see — so nobody knows
-how many are real. That number decides whether the 8 points of precision is a genuine
-saving or an artifact of a circular measure, and it is the one thing here that cannot be
-settled by more compute.
+**And they were then read — the precision gain is mostly real, and the blind lists are not
+badly incomplete.** Of 60 proposals triage suppresses, only **28** reach a reviewer at all
+(the detector rejects 32 itself, so any cost quoted as 60 doubles the real burden).
+**15 of the 28 are plainly legal**; 9 are Jeff's own stories re-found or re-bounded; **4 are
+genuine candidates.**
+
+**The four are the interesting part, and none is "Jeff missed one."** Ketubot 71a (a
+Mishnaic `מעשה` quoted as precedent), Ketubot 112b (closing Eretz Yisrael aggada, and a
+malformed `start_segment -2`), Kiddushin 25b and 27a (specific encounters whose content is
+purely legal). **Every one falls inside a scope question already open with him** — so they
+went into [`comms/JEFF.md`](comms/JEFF.md) as **evidence under `jeff:mishnah-scope` and
+`jeff:speech-act-policy`**, not as new questions. They turn two abstract asks into concrete
+passages, which is the form his last two rounds actually answered.
+→ [`2026-09-01-unread-proposals-screened.md`](docs/findings/2026-09-01-unread-proposals-screened.md)
+
+**The screen is a screen, not a verdict** — this session applying the project's own
+`NARRATIVE_EVENT` criterion to decide what deserves his scarce attention.
 
 ## What changed 2026-08-31
 

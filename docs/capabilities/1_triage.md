@@ -142,14 +142,22 @@ versions after it shipped (v8, v9, v10, v11)
 
 ## Untried
 
-- ~~Re-run the triage-vs-no-triage ablation correctly~~ — **done 2026-09-01**, with no
-  API calls: the Stage 2 output on the discarded pages already existed and had only ever
-  been scored against the blind lists, never against the golden. **Stage 1 buys ~8 points
-  of precision on both tractates.** What it opened: **the 27 extra proposals it suppresses
-  have still never been read.** They are scored false positives only because the golden
-  cannot contain a story from a page triage never let anyone see, so nobody knows how many
-  are real. That is the number that decides whether ~8 points of precision is a saving or
-  an artifact — and it is a reading task, not a compute one.
+- ~~Re-run the triage-vs-no-triage ablation correctly~~ — **done 2026-09-01**: **Stage 1
+  buys ~8 points of precision on both tractates.**
+- ~~Read the proposals triage suppresses~~ — **screened 2026-09-01**, and the precision
+  gain is **mostly real**: of 60 such proposals only **28** reach a reviewer at all (the
+  detector rejects 32 itself), **15 of those 28 are plainly legal**, 9 are Jeff's own
+  material re-found or re-bounded, and **4 are genuine candidates**. The blind lists are
+  **not badly incomplete**. What remains is not a counting task: all 4 candidates sit
+  inside scope questions already open with him, so they were added to `comms/JEFF.md` as
+  **evidence under `jeff:mishnah-scope` and `jeff:speech-act-policy`**, not as new asks
+  ([screen](../findings/2026-09-01-unread-proposals-screened.md)).
+- **Validate that a proposed span lies within its page.** `Ketubot 112b` proposes
+  `start_segment -2`. Reported 2026-08-31, hit again independently by the screen, still
+  unfixed. Nothing checks it anywhere in the pipeline.
+- **Cross-page merge misses a story re-proposed from the other side of a daf boundary.**
+  Ketubot 51a and Kiddushin 58b are almost certainly Jeff's own entries proposed again
+  from the adjacent daf — they inflate any raw count of "new" proposals.
 
 - ~~Re-run Stage 2 on the discarded pages and price the trade~~ — **done 2026-08-31**,
   on **both** tractates rather than only Ketubot's 124 pages. Exchange rate 124 calls
