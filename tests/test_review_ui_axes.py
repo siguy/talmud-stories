@@ -25,6 +25,10 @@ defect it guards is reintroduced (see the finding). The properties:
      verdict -- "not asked" and "answered nothing" are different facts.
   G. An unset axis exports as null, never as `right`. FRAMEWORK §7: residue is
      reported, not guessed.
+  H. The Hebrew quote box appears only once the extent is said to be WRONG, and
+     its polarity is STATED. Every quote we hold was typed into a generic notes
+     box and mined out by regex afterwards, which leaves 16 of the 70 boundary
+     targets in `expert_boundary_targets_v2.json` `mixed` or `unclear`.
 
 Fixture is a real 4-page slice of the shipped Kiddushin output (Lesson 9 --
 fixture != production), covering a cross-page story, a Mishnah-withheld story
@@ -171,6 +175,22 @@ const moreStub = { classList: makeClassList({}) };
 toggleAxes(0, null);
 report.disclosureOpens = moreStub.classList.contains('open');
 
+// --- H: the quote box -------------------------------------------------------
+const s1 = STORIES[1];
+const card1 = buildCard(s1, 1).innerHTML;
+document.getElementById('card-1').innerHTML = card1;
+report.quoteClosedBeforeExtent = /class="quote-box" data-role="quote"/.test(card1);
+clickIn(card1, byAxisValue('is_story', 'no'));
+clickIn(card1, byAxisValue('extent', 'right'));
+report.quoteShutOnExtentRight = !isExtentWrong(verdicts[s1.key].extent);
+clickIn(card1, byAxisValue('extent', 'ends_wrong'));
+report.quoteOpensOnWrongExtent = isExtentWrong(verdicts[s1.key].extent);
+setQuote(s1.key, '\u05d0\u05d1\u05dc \u05d7\u05db\u05de\u05d9\u05dd \u05d0\u05d5\u05de\u05e8\u05d9\u05dd');
+clickIn(card1, byAxisValue('quote_polarity', 'include'));
+report.quote = { text: verdicts[s1.key].quote,
+                 polarity: verdicts[s1.key].quote_polarity,
+                 notes: verdicts[s1.key].notes };
+
 // --- D/F/G: the export ------------------------------------------------------
 const exported = buildExport();
 report.export = {
@@ -185,6 +205,7 @@ report.export = {
     is_story: r.is_story, extent: r.extent,
     confidence: r.confidence, grouping: r.grouping,
     display_problem: r.display_problem,
+    quote: r.quote, quote_polarity: r.quote_polarity,
     keys: Object.keys(r)
   }))
 };
@@ -292,6 +313,43 @@ class AxisReviewUiTest(unittest.TestCase):
                           "an axis nobody touched must export null, never 'right' — "
                           "guessing residue into a bucket is the failure FRAMEWORK §7 names")
         self.assertIsNone(row['grouping'])
+
+    # H ---------------------------------------------------------------------
+    def test_H_quote_box_is_closed_until_the_extent_is_wrong(self):
+        self.assertTrue(self.report['quoteClosedBeforeExtent'],
+                        'the quote box is open before anything is said to be wrong — '
+                        'that is a cost on the common path')
+        self.assertTrue(self.report['quoteShutOnExtentRight'],
+                        "'right' is an answer, not a complaint: it must not open the box")
+        self.assertTrue(self.report['quoteOpensOnWrongExtent'],
+                        'a wrong extent must open the box, or the correction has '
+                        'nowhere to go but prose')
+
+    def test_H_quote_polarity_is_stated_not_inferred(self):
+        q = self.report['quote']
+        self.assertTrue(q['text'], 'the quote did not record')
+        self.assertEqual(q['polarity'], 'include',
+                         'whether the quoted Hebrew BELONGS in the story or should be '
+                         'CUT must be a stated field — inferring it from prose leaves '
+                         '16 of our 70 boundary targets mixed or unclear')
+        self.assertEqual(q['notes'], '',
+                         'the quote must not be smuggled into the notes box, which is '
+                         'the situation this replaces')
+
+    def test_H_quote_and_polarity_reach_the_export(self):
+        rows = self.report['export']['rows']
+        quoted = [r for r in rows if r['quote']]
+        self.assertTrue(quoted, 'no quoted correction reached the export')
+        for r in quoted:
+            self.assertIn('quote_polarity', r['keys'])
+            self.assertIn(r['quote_polarity'], ('include', 'exclude'),
+                          'a quote without a polarity is the ambiguity, not the fix')
+
+    def test_H_a_quote_box_exists_on_every_card(self):
+        self.assertIn('data-role="quote-text"', self.html)
+        self.assertIn('data-role="grab"', self.html,
+                      'no way to capture the highlighted Hebrew — typing it is a '
+                      'transcription risk and a chore')
 
     # The page must still be the shared display core, not a second copy of it.
     def test_display_core_is_shared_not_reimplemented(self):

@@ -55,7 +55,12 @@ Also check, because they are new and have never seen real data:
 - every verdict carries a `detector_version` (Lesson 36);
 - any `borderline` verdicts are counted as neither accepted nor rejected;
 - any `display_problem` flags are charged to the renderer, not to a judgement
-  capability (Lesson 25) — and then **fixed**, because that is what they are for.
+  capability (Lesson 25) — and then **fixed**, because that is what they are for;
+- **any `quote` carries a `quote_polarity`.** For those entries
+  `scripts/build_boundary_testset.py` can read the field instead of inferring direction
+  from the note with `quote_polarity()` — which is what leaves 16 of the banked 70
+  targets `mixed` or `unclear`. Do not retrofit the old 70; the mining was the only way
+  to get them and it does not become better in hindsight.
 
 ## Guardrails
 

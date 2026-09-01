@@ -223,7 +223,11 @@ a review round on the new UI, not more code.
 → [`docs/findings/2026-08-31-review-verdict-axes-phase-b.md`](../../docs/findings/2026-08-31-review-verdict-axes-phase-b.md)
 
 Shipped: `validation/generators/generate_axis_review_ui.py` (the four axes, plus
-`display_problem` as its own control), `validation/generators/review_ui_core.py` (the
+`display_problem` as its own control **and the Hebrew quote box with a stated
+`belongs in the story` / `should be cut` polarity** — the box this item's design named as
+"existing" when no generator had ever had one; 16 of the 70 harvested boundary targets
+are `mixed` or `unclear` precisely because that polarity has only ever been guessed from
+prose), `validation/generators/review_ui_core.py` (the
 display core, extracted from the wave 4 generator so both pages share one copy),
 `scripts/map_verdict_vocabularies.py` (605 banked verdicts → the new shape, 0 unmapped),
 and `build_ruler.py` taught to read both vocabularies.

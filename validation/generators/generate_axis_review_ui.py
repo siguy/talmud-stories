@@ -195,6 +195,20 @@ __DISPLAY_CSS__
   .more-axes.open { display: block; }
   .more-axes .axis-row { border-top: none; padding-top: 0; margin-top: 8px; }
   .more-axes .axis-row:first-child { margin-top: 0; }
+  /* The quote box. Appears only once the extent is said to be WRONG, so it
+     costs nothing on the common path. `quote_polarity` is two buttons rather
+     than a sentence because inferring it from prose is what leaves 16 of our
+     70 boundary targets `mixed` or `unclear`. */
+  .quote-box { display: none; margin-top: 10px; padding: 10px 12px;
+               background: #fffbe6; border: 1px solid #f0d98c; border-radius: 6px; }
+  .quote-box.open { display: block; }
+  .quote-box .hint { font-size: 12.5px; color: #6b5a13; margin-bottom: 8px; }
+  .quote-he { width: 100%; min-height: 58px; padding: 8px 10px; direction: rtl;
+              text-align: right; font-size: 17px; line-height: 1.7;
+              font-family: 'SBL Hebrew', 'Times New Roman', serif;
+              border: 1px solid #e0cf8a; border-radius: 5px; background: white; }
+  .quote-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
+  .grab-btn { background: #fff; border: 1px dashed #c9a227 !important; color: #7a5c05; }
   .notes-input { width: 100%; margin-top: 10px; padding: 7px 10px;
                  border: 1px solid #d4dae0; border-radius: 6px; font-size: 13px; }
   .progress-bar { background: #e2e8f0; height: 6px; border-radius: 3px; margin-bottom: 18px; }
@@ -281,6 +295,9 @@ function buildTextDisplay(story) {
 
 function isComplete(v) { return !!(v && v.is_story); }
 
+// 'right' is an answer, not a complaint: the quote box is for a wrong extent.
+function isExtentWrong(extent) { return !!extent && extent !== 'right'; }
+
 function init() { render(); }
 
 function setFilter(f, btn) {
@@ -317,6 +334,30 @@ function axisButtons(key, idx, axis) {
     + AXIS_LABELS[axis][val] + '</button>').join('');
 }
 
+// Where the story actually starts or ends, in his words rather than ours.
+// Every Hebrew quote we hold was typed into a generic notes box and mined out
+// with a regex afterwards; 16 of the 70 boundary targets built that way have a
+// polarity we could not determine. Here he states it.
+function quoteBox(key, idx) {
+  const v = verdicts[key] || {};
+  const open = isExtentWrong(v.extent) ? ' open' : '';
+  const pol = p => v.quote_polarity === p ? 'selected' : '';
+  return '<div class="quote-box' + open + '" data-role="quote">'
+    +   '<div class="hint">Where should it start or end? Highlight the Hebrew above and press '
+    +     '<b>Use highlighted text</b>, or paste it here.</div>'
+    +   '<textarea class="quote-he" data-role="quote-text" placeholder="\u05d4\u05d3\u05d1\u05e7 \u05d0\u05ea \u05d4\u05d8\u05e7\u05e1\u05d8 \u05db\u05d0\u05df"'
+    +     ' oninput="setQuote(\'' + key + '\', this.value)">' + esc(v.quote || '') + '</textarea>'
+    +   '<div class="quote-actions">'
+    +     '<button class="axis-btn grab-btn" data-role="grab" onclick="grabSelection(\'' + key + '\', ' + idx + ')">Use highlighted text</button>'
+    +     '<span class="axis-label" style="margin-left:6px;">This text</span>'
+    +     '<button class="axis-btn plain ' + pol('include') + '" data-axis="quote_polarity" data-value="include"'
+    +       ' onclick="setAxis(\'' + key + '\', \'quote_polarity\', \'include\', ' + idx + ')">belongs in the story</button>'
+    +     '<button class="axis-btn plain ' + pol('exclude') + '" data-axis="quote_polarity" data-value="exclude"'
+    +       ' onclick="setAxis(\'' + key + '\', \'quote_polarity\', \'exclude\', ' + idx + ')">should be cut</button>'
+    +   '</div>'
+    + '</div>';
+}
+
 function buildCard(story, idx) {
   const card = document.createElement('div');
   const v = verdicts[story.key] || {};
@@ -343,6 +384,7 @@ function buildCard(story, idx) {
     + '</div>'
     + '<div class="more-axes" data-role="more-axes">'
     +   '<div class="axis-row"><span class="axis-label">Extent</span>' + axisButtons(story.key, idx, 'extent') + '</div>'
+    +   quoteBox(story.key, idx)
     +   '<div class="axis-row"><span class="axis-label">Confidence</span>' + axisButtons(story.key, idx, 'confidence') + '</div>'
     +   '<div class="axis-row"><span class="axis-label">Grouping</span>' + axisButtons(story.key, idx, 'grouping') + '</div>'
     + '</div>'
@@ -355,7 +397,8 @@ function buildCard(story, idx) {
 function ensure(key) {
   if (!verdicts[key]) {
     verdicts[key] = { is_story: null, extent: null, confidence: null,
-                      grouping: null, display_problem: false, notes: '' };
+                      grouping: null, display_problem: false,
+                      quote: '', quote_polarity: null, notes: '' };
   }
   return verdicts[key];
 }
@@ -369,8 +412,28 @@ function setAxis(key, axis, value, idx) {
       b.classList.toggle('selected', b.dataset.value === v[axis]);
     });
     card.classList.toggle('reviewed', isComplete(v));
+    if (axis === 'extent') {
+      const box = card.querySelector('[data-role="quote"]');
+      if (box) box.classList.toggle('open', isExtentWrong(v.extent));
+    }
   }
   updateProgress();
+}
+
+function setQuote(key, text) { ensure(key).quote = text; }
+
+// Typing Hebrew is a transcription risk and a chore; the text is already on the
+// page, so let him select it. Falls back to the textarea where there is no
+// selection API.
+function grabSelection(key, idx) {
+  const sel = (typeof window !== 'undefined' && window.getSelection)
+              ? String(window.getSelection()) : '';
+  if (!sel.trim()) return;
+  const v = ensure(key);
+  v.quote = sel.trim();
+  const card = document.getElementById('card-' + idx);
+  const box = card && card.querySelector('[data-role="quote-text"]');
+  if (box) box.value = v.quote;
 }
 
 function toggleDisplay(key, idx) {
@@ -422,6 +485,11 @@ function buildExport() {
       confidence: v.confidence,
       grouping: v.grouping,
       display_problem: !!v.display_problem,
+      // Stated, not mined out of prose afterwards. `quote_polarity` is the
+      // field whose absence leaves 16 of 70 harvested boundary targets
+      // `mixed` or `unclear`.
+      quote: v.quote || '',
+      quote_polarity: v.quote_polarity,
       notes: v.notes || ''
     };
   });

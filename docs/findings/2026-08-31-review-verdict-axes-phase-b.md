@@ -19,6 +19,10 @@ four axes instead of one button:
 Plus **⚠ Display problem** as its own control, and free-text notes as an optional
 extra rather than the only place structure can live.
 
+And, on the Extent axis, **a Hebrew quote box with a stated polarity** — see below. It
+was in the item's design and was missing from the first cut of this work; Simon asked
+for it by name.
+
 It reads `results/v10/wave4_notrim/` — the honest segment-level output. The reverted
 char-offset spans are not shown at all.
 
@@ -36,6 +40,44 @@ So the disclosure is **independent of axis 1**. A correct entry is one click on 
 has never been before. That case is now pinned by a test that fails if the extent axis
 is ever gated behind a `No`.
 
+## Where the story should actually start or end
+
+The extent axis says *that* the extent is wrong. It does not say **where** it should be,
+and without that a boundary complaint is not actionable.
+
+**Every Hebrew quote this project holds was typed into a generic notes box and mined out
+afterwards by regex.** `scripts/build_boundary_testset.py` carries a `quote_polarity()`
+function whose whole job is guessing, from the surrounding prose, whether the Hebrew he
+quoted is text that **belongs in** the story or text that **should be cut**. The result,
+in `tests/expert_boundary_targets_v2.json`:
+
+| polarity | targets |
+|---|---|
+| include | 43 |
+| exclude | 11 |
+| **mixed** | **11** |
+| **unclear** | **5** |
+
+**16 of 70 — 23% — we cannot tell which way the correction runs.** That is capability 4's
+ground truth, and it is degraded by the same defect as capability 3's precision: a
+structured judgement written into a prose box and inferred back out.
+
+So the quote box is two controls, not one: the text, and **`belongs in the story` /
+`should be cut`** as an explicit field. It opens only once the extent is called wrong, so
+it costs nothing on the common path — and `right` does not open it, because that is an
+answer rather than a complaint.
+
+**He does not have to type Hebrew.** The text is already rendered on the page: highlight
+it and press **Use highlighted text**. Verified in the browser — selecting a story's
+Hebrew and pressing it captured 203 characters into the box with no transcription step.
+Typing pointed Hebrew into a text field is both a chore and a corruption risk, and it is
+the kind of friction that turns a 95-story round into 15 verdicts.
+
+Once a round comes back in this shape, `build_boundary_testset.py` can read
+`quote_polarity` as a field for those entries instead of running its regex over the note.
+The banked 70 stay as they are — the mining was the only way to get them, and it does not
+become retroactively better.
+
 ## Gates, and how each was met
 
 | gate | result |
@@ -43,8 +85,8 @@ is ever gated behind a `No`.
 | Correct entry stays one click | **met** — verified in the browser: one click on `Yes` produces a complete, exported verdict, with the extra axes still closed |
 | `build_ruler.py` regression checks reproduce | **met** — both rulers rebuilt **byte-identical**; Ketubot 143/149 = 96.0% and 0.879 on the 2026-03-17 round still come out |
 | Mapping covers all 8 banked rounds | **met** — **605 verdicts, 0 unmapped**, across three vocabularies |
-| Test suite | **148 passed, 1 skipped** (was 121) |
-| Node display test fails when the defect is reintroduced | **met — demonstrated, not asserted.** All **9** injected defects fail the matching test |
+| Test suite | **152 passed, 1 skipped** (was 121) |
+| Node display test fails when the defect is reintroduced | **met — demonstrated, not asserted.** All **15** injected defects fail the matching test |
 | Browser-verified on the real page | **met** — 96 cards, 0 console errors, paired EN/HE cells, export carries the detector version |
 
 ## The mapping table, and what it can and cannot recover
@@ -86,6 +128,8 @@ vocabulary that cannot read the old rounds is worthless.
 - **An unanswered card is absent from the export**, not exported as a null verdict:
   "not asked" and "answered nothing" are different facts.
 - **An untouched axis exports `null`, never `right`.** Residue is reported, not guessed.
+- **A quote never lands in `notes`,** and a quote without a polarity is refused by a test:
+  a quote whose direction is unknown is the ambiguity, not the fix.
 
 ## What the ruler does with it
 
@@ -116,6 +160,20 @@ had changed, and the two rounds that showed him all 95 stories again returned **
 mechanism this project has ever built, and it was never measured or reused". Both are
 *indicated, not measured* — n is tiny and his calendar is an obvious confound — and
 neither is in this change.
+
+## What was missing from the first cut
+
+The Hebrew quote box. The item's design names it — "*Extent — right / starts wrong /
+ends wrong / both, with the existing Hebrew quote box*" — and I read that as describing
+something already built. **It never existed.** No generator in `validation/generators/`
+has ever had one; the phrase refers to a box that was assumed rather than written, and
+every quote we hold came through a general-purpose notes field.
+
+That is worth recording as a pattern and not just a slip: **the brief described an
+existing component that did not exist, and the description was confident enough that I
+did not check.** The same sentence would have been true of the whole item — "the review
+UI records that an entry was rejected" — which was checked, because it was the premise.
+An aside inside a design was not.
 
 ## Corrections owed to this document
 

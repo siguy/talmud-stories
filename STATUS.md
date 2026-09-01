@@ -106,9 +106,12 @@ better than it did, and review throughput still is.
 what it is. The review page now records *which* thing is wrong: **is it a story**
 (yes / **borderline** / no) as the only required question, with extent / confidence /
 grouping behind a disclosure, `display_problem` as its own control, and the **detector
-version on every verdict**. 605 banked verdicts map into the new shape with **0 unmapped**;
-both rulers rebuild **byte-identical**; all **9** injected defects fail the test that
-guards them; verified in a browser. Suite **121 → 148**.
+version on every verdict**. A wrong extent opens a **Hebrew quote box with a stated
+include/cut polarity**, filled by highlighting the text on the page — the field whose
+absence leaves **16 of our 70 boundary targets** `mixed` or `unclear`, because direction
+has only ever been guessed from prose. 605 banked verdicts map into the new shape with **0 unmapped**;
+both rulers rebuild **byte-identical**; all **15** injected defects fail the test that
+guards them; verified in a browser. Suite **121 → 152**.
 
 **But it buys fidelity, not throughput, and this file should stop conflating the two.**
 Four axes with progressive disclosure is click-neutral on a correct entry and costs more
