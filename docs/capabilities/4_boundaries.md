@@ -67,6 +67,8 @@ five successive mechanisms, and four of them were wrong.
 | 2026-09-01 | **First blind boundary set on an unreviewed tractate** — Gittin, 107 of 112 stories align, 214 targets, 171 scorable, 89% of his boundaries on a clause edge | **measured: 84% hit / 88% hit+near**, above the gate. Starts 82%, ends 87%; the end differences are mostly us ending *earlier*, which Jeff-2026 asks for | [`gittin_boundary_analysis`](../findings/2026-09-01-gittin-boundary-analysis.md) |
 | 2026-09-01 | **The opening-formula rule, measured and REJECTED before shipping.** Where our start is late we drop the citation formula (`תניא`, `תנו רבנן`, `אמר רב יהודה אמר רב`) that Jeff keeps — 27 of ~30 late starts corpus-wide | **fixes 9 targets, breaks 8, across all four blind sets.** Net +1 of 470: he starts after the formula about as often as before it. Recorded as rejected with its numbers; asked as `jeff:opening-formula` instead | same |
 
+| 2026-09-02 | **R-B1 — the story starts at the formula that introduces it**, on Jeff's own ruling of 2026-09-01. Rejected 24 hours earlier at 9 fixes / 8 breaks; his answer re-read the breaks as his lists' own inconsistency | **shipped. Under his stated standard: Gittin 82→86%, Kiddushin 84→88%, Ketubot 61-112 77→82%.** Against the 2005 lists as written it is +10/−11, and all 11 losses are targets whose start excludes a formula. 30 targets annotated, **none moved** | [`jeff_answers`](../findings/2026-09-02-jeff-answers-gittin.md), [`STORY_RULES`](../STORY_RULES.md) |
+
 ## What we reverted, and why
 
 **1. Wave 3's regex text-internal editor (2026-06-03).**

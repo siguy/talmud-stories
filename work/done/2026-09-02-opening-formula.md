@@ -4,17 +4,17 @@ capability: [boundaries]
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [src/story_detector_v11.py, tests/expert_boundary_targets_2005.json, tests/expert_boundary_targets_2005_kiddushin.json, tests/expert_boundary_targets_2005_gittin.json]
+writes: [src/story_detector_v11.py, scripts/apply_opening_formula.py, scripts/annotate_boundary_rules.py, scripts/score_boundary_targets.py, tests/test_opening_formula.py, tests/expert_boundary_targets_2005.json, tests/expert_boundary_targets_2005_kiddushin.json, tests/expert_boundary_targets_2005_gittin.json, docs/STORY_RULES.md, docs/capabilities/4_boundaries.md, CLAUDE.md]
 finding: docs/findings/2026-09-02-jeff-answers-gittin.md
 superseded_by:
 ---
 
 # Include the introducing formula in the story start
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then
-[`2026-09-01-gittin-boundary-analysis`](../docs/findings/2026-09-01-gittin-boundary-analysis.md)
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then
+[`2026-09-01-gittin-boundary-analysis`](../../docs/findings/2026-09-01-gittin-boundary-analysis.md)
 — which **rejected** this rule — and then
-[`2026-09-02-jeff-answers-gittin`](../docs/findings/2026-09-02-jeff-answers-gittin.md),
+[`2026-09-02-jeff-answers-gittin`](../../docs/findings/2026-09-02-jeff-answers-gittin.md),
 which is why it is back.
 
 ## The claim to test
@@ -54,3 +54,38 @@ starts are still reported as unexplained rather than absorbed.
   Lesson 15 forbids — the difference is that the expert stated the rule in words, so it is
   principled and not fitted. Say so in the finding, and keep the scope to one clause.
 - Do not re-baseline the golden. Score with `score_boundary_targets.py` only.
+
+## Outcome
+
+**Shipped 2026-09-02.** `extend_start_over_opening_formula()` runs as Stage 4l, and
+`scripts/apply_opening_formula.py` applies it to a finished run for nothing.
+
+**Measured, both standards, because the two disagree and that is the point:**
+
+| | as his 2005 list is written | under the rule he stated in 2026 |
+|---|---|---|
+| Gittin | 84% → 84% | **82% → 86%** |
+| Kiddushin | 85% → 85% | **84% → 88%** |
+| Ketubot 61-112 | 80% → 79% | **77% → 82%** |
+
+Against the lists as written the change is **+10 / −11**, and **every one of the 11
+losses is a target whose own start excludes a formula** — the population he called
+"sloppy and preliminary". That is not a regression; it is the ruler and the rule
+disagreeing, which is Lesson 24 in a new place.
+
+**Nothing in his data was moved.** `scripts/annotate_boundary_rules.py` marks 30 start
+targets across the three blind sets as `included` or `excluded`, and
+`score_boundary_targets.py --standard jeff-2026` reads the annotation. Both numbers come
+from one file and both are reproducible.
+
+Two things came out differently from the brief:
+
+- **The formula list needed a verb-final case.** `רב חנין משתעי:` puts the verb last, so a
+  prefix test alone missed the whole "X related:" family — 2 of the 10 corrected starts.
+- **A length guard does the real work.** `אמר רב יהודה אמר רב:` introduces; the same words
+  followed by `מעשה ב…` are the story. Without the ≤8-word guard the rule swallows
+  narrative, which is exactly how the 2026-06-03 regex trimmer failed.
+
+**Not fixed:** 17 late starts across the four sets that the formula does not explain, and
+the segment-level misses (Gittin 55b, 56a, 56b, 57a) where our story starts on a different
+*segment* than his — a clause rule cannot reach those.
