@@ -1061,7 +1061,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story ends here, followed by legal deliberation."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -1188,7 +1192,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained within this segment."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -1769,6 +1777,10 @@
               "new": "LOW_CONFIDENCE",
               "note": "Jeff: 'low confidence' (re-adding to golden as LOW)"
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -1829,6 +1841,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -2032,7 +2048,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 9,
@@ -2094,6 +2114,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -2146,7 +2170,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 13,
@@ -2203,6 +2231,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -2344,6 +2376,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -2394,7 +2430,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -2618,7 +2658,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The discussion continues in the next segment, but the story itself ends here."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 9,
@@ -2672,7 +2716,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is complete within these segments."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -2727,7 +2775,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The discussion continues in the next segment, but the story itself ends here."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -2867,6 +2919,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -2928,6 +2984,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -2985,6 +3045,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -3372,6 +3436,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -3618,6 +3686,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -3675,6 +3747,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -3864,6 +3940,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "mishnah",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -4008,7 +4088,11 @@
           "adversarial_validation": {
             "reverted": true,
             "reason": "net negative impact on regression test"
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -4139,6 +4223,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -4403,7 +4491,11 @@
           "adversarial_validation": {
             "reverted": true,
             "reason": "net negative impact on regression test"
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 3,
@@ -4453,7 +4545,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 4,
@@ -4504,7 +4600,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 6,
@@ -4556,7 +4656,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -4605,7 +4709,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -4662,6 +4770,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -5084,6 +5196,10 @@
               },
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ],
@@ -5179,7 +5295,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is self-contained within the segment."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -5319,6 +5439,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -5435,7 +5559,11 @@
           },
           "adversarial_validation": {
             "confirmed": true
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 7,
@@ -5495,6 +5623,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -5607,7 +5739,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story ends with the Sages asking her a question, but that is not part of the story itself."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -5830,6 +5966,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -6182,6 +6322,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -6290,7 +6434,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "This is the first story on the page."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 3,
@@ -6341,7 +6489,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "This is the second story on the page."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 4,
@@ -6400,6 +6552,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -6457,6 +6613,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -6574,6 +6734,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -6629,6 +6793,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -6740,6 +6908,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -6788,7 +6960,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story ends at the end of the segment."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -7043,7 +7219,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Story is self-contained."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -7094,7 +7274,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Story is self-contained."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 15,
@@ -7147,7 +7331,11 @@
           },
           "adversarial_validation": {
             "confirmed": true
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 16,
@@ -7197,7 +7385,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Mishna section."
-          }
+          },
+          "corpus": "mishnah",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 17,
@@ -7248,7 +7440,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Describes habitual action."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -7384,7 +7580,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": ""
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -7512,7 +7712,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story ends with the final narrative action of Rabbi Elazar testifying in a different location."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -8928,6 +9132,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -9254,6 +9462,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -10362,6 +10574,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -10417,6 +10633,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -10465,7 +10685,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": true,
             "note": "The story continues on the next page."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -10661,7 +10885,11 @@
             "continues_to_next_page": false,
             "note": "The story is followed by a deliberation about the meaning of Shmuel's instruction."
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 6,
@@ -10712,7 +10940,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is followed by Rav Nahman's reaction, which is a verbal act."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 9,
@@ -10763,7 +10995,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is followed by a legal discussion between Abaye and Rav Yosef."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -11006,6 +11242,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -11148,6 +11388,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -11302,6 +11546,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -11366,6 +11614,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -11503,6 +11755,10 @@
               },
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -11554,7 +11810,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story starts and ends within this segment."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -11811,6 +12071,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -11863,7 +12127,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "Story ends abruptly."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 21,
@@ -11917,7 +12185,11 @@
           "adversarial_validation": {
             "reverted": true,
             "reason": "net negative impact on regression test"
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 22,
@@ -11982,7 +12254,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 0,
-          "cross_page_merge_v10": true
+          "cross_page_merge_v10": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -12055,7 +12331,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -12299,6 +12579,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -12427,6 +12711,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -13033,6 +13321,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -13164,7 +13456,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 5,
@@ -13220,6 +13516,10 @@
               "source": "v5.1_2026-02-05",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -13360,7 +13660,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 15,
@@ -13419,7 +13723,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 0,
-          "cross_page_stitched": true
+          "cross_page_stitched": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -13522,7 +13830,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -13641,6 +13953,10 @@
               "source": "v8_delta_2026-02-26",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -13695,7 +14011,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The segment also mentions Rabbi Yoḥanan starting a similar story, but the text provided cuts off or transitions; however, the Abbahu story is a complete narrative unit."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -13830,7 +14150,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 5,
@@ -13881,7 +14205,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 6,
@@ -13942,6 +14270,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -13996,7 +14328,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 12,
@@ -14049,7 +14385,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -14117,6 +14457,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -14180,7 +14524,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -14284,7 +14632,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -14344,6 +14696,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -14650,7 +15006,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -14706,7 +15066,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -14760,7 +15124,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -14814,7 +15182,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -15092,7 +15464,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -15153,7 +15529,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 1,
-          "cross_page_stitched": true
+          "cross_page_stitched": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -15362,7 +15742,11 @@
             "expert_confirmed_boundaries": false,
             "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
             "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 3,
@@ -15413,7 +15797,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 4,
@@ -15463,7 +15851,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 5,
@@ -15517,7 +15909,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -15571,7 +15967,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -15623,7 +16023,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 15,
@@ -15681,6 +16085,10 @@
               "source": "v8_delta_2026-02-26",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -15754,7 +16162,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 15,
-          "cross_page_merge_v10": true
+          "cross_page_merge_v10": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -15913,6 +16325,10 @@
               "source": "v5.1_2026-02-20",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -16130,7 +16546,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 12,
@@ -16182,7 +16602,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -16251,6 +16675,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -16349,6 +16777,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -16892,7 +17324,11 @@
             "expert_confirmed_boundaries": false,
             "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
             "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ],
       "skipped_by_triage": true
@@ -17146,7 +17582,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -17575,7 +18015,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "mishnah",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -17714,6 +18158,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -17767,7 +18215,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story concludes with the resolution of the pillar of fire."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -17941,7 +18393,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 2,
-          "cross_page_merge_v7": true
+          "cross_page_merge_v7": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -18225,7 +18681,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 4,
@@ -18279,7 +18739,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -18411,7 +18875,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -18682,7 +19150,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The story is a self-contained anecdote used to trigger the following legal discussion."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -18800,7 +19272,11 @@
             "expert_confirmed_boundaries": false,
             "boundary_caveat": "Segment-level only, and NOT expert-confirmed. Jeff quoted the passage but never reviewed our segment range for it. Do not feed these into the boundary test set as expert targets.",
             "effect_on_metrics": "Adds a false negative to scripts/evaluate_golden.py. The recorded recall falls because the ground truth got more honest, not because detection got worse (lessons.md Lesson 13)."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ],
       "skipped_by_triage": true
@@ -19157,7 +19633,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 7,
@@ -19209,7 +19689,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -19261,7 +19745,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -19311,7 +19799,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -19380,6 +19872,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -19488,7 +19984,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 7,
@@ -19541,7 +20041,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -19597,6 +20101,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -19654,6 +20162,10 @@
               "source": "v5.1_2026-02-20",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -19764,7 +20276,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 3,
@@ -19818,7 +20334,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 4,
@@ -19872,7 +20392,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 5,
@@ -19925,7 +20449,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 9,
@@ -19997,6 +20525,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -20065,7 +20597,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -20115,7 +20651,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -20493,6 +21033,10 @@
               "source": "v5.1_2026-02-20",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -20975,7 +21519,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -21155,6 +21703,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -21271,6 +21823,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -21333,6 +21889,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -21389,7 +21949,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 15,
@@ -21449,6 +22013,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -21824,7 +22392,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -21957,6 +22529,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -22017,7 +22593,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 1,
-          "cross_page_stitched": true
+          "cross_page_stitched": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -22260,7 +22840,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -22399,7 +22983,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -22591,7 +23179,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -22644,7 +23236,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -22862,7 +23458,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 6,
@@ -22915,7 +23515,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -23202,7 +23806,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -23336,7 +23944,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": "The narrative is self-contained within these segments as a report of a past event."
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -23528,7 +24140,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 17,
@@ -23587,6 +24203,10 @@
               "source": "v5.1_2026-02-20",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -24194,6 +24814,10 @@
               "source": "v5.1_2026-02-20",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -24270,6 +24894,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -24459,7 +25087,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 8,
@@ -24512,7 +25144,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -24565,7 +25201,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 24,
@@ -24625,7 +25265,11 @@
           ],
           "start_segment_page2": 0,
           "end_segment_page2": 5,
-          "cross_page_stitched": true
+          "cross_page_stitched": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -24909,6 +25553,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -25049,7 +25697,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -25194,7 +25846,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 9,
@@ -25246,7 +25902,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -25298,7 +25958,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 12,
@@ -25349,7 +26013,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -25417,6 +26085,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -25521,6 +26193,10 @@
               "new_range": "2-3",
               "note": "Jeff: 'the story is segments 2-3, not really 1' (v9 detected 1-2; correct is 2-3)"
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -25825,7 +26501,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -26152,7 +26832,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -26214,6 +26898,10 @@
               "source": "v8_delta_2026-02-26",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -26268,7 +26956,11 @@
             "continues_to_next_page": false,
             "note": null
           },
-          "boundary_refined": true
+          "boundary_refined": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -26578,6 +27270,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -26731,7 +27427,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 10,
@@ -26784,7 +27484,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 23,
@@ -26864,6 +27568,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -27005,6 +27713,10 @@
               "source": "v8_delta_2026-02-26",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         },
         {
@@ -27055,7 +27767,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 13,
@@ -27106,7 +27822,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 19,
@@ -27159,7 +27879,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 21,
@@ -27210,7 +27934,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 22,
@@ -27275,6 +28003,10 @@
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
             }
+          ],
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
           ]
         }
       ]
@@ -27383,7 +28115,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false
           },
-          "restored_from_merge": true
+          "restored_from_merge": true,
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 11,
@@ -27431,7 +28167,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 14,
@@ -27485,7 +28225,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         },
         {
           "start_segment": 16,
@@ -27534,7 +28278,11 @@
             "continues_from_previous_page": false,
             "continues_to_next_page": false,
             "note": null
-          }
+          },
+          "corpus": "talmud",
+          "rules": [
+            "R-C1"
+          ]
         }
       ]
     },
@@ -27617,5 +28365,8 @@
       "Ketubot 82b 9-12"
     ],
     "already_present": []
-  }
+  },
+  "rules_applied": [
+    "R-C1"
+  ]
 }

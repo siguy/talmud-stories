@@ -274,14 +274,24 @@ a CAUSAL CHAIN of EVENTS with TEMPORAL PROGRESSION resulting in CHANGE.
 
 - Mishna section (מתני׳)
 - Hypothetical case ("If X were to...")
-- Habitual action (היה רגיל)
+- Habitual action (היה רגיל) with NOTHING further — a standing practice, and then the
+  passage moves on. But a custom is often the FRAME of a story rather than a
+  disqualifier: if the habitual opening is followed by a single datable occurrence
+  ("one day…", "מַעֲשֶׂה…", a named person doing something once), that is a STORY and
+  the story STARTS at the custom. Jeff Rubenstein, 2026-09-01, on Gittin 57a: "clearly
+  a story. After the custom you have the one time event — One day the emperor's
+  daughter…" Do not stop reading at the frame.
 - Pure legal ruling without narrative
 - Rabbi stating legal opinion (not acting in narrative)
 - Legal deliberation (thinking, considering, difficulty resolving)
 - Legal debate with setting (sitting before another = just a debate)
 - A legal debate between academies (place names ≠ characters)
 - A passage whose entire activity is verbal exchange (אֲמַר לוֹ … אֲמַר לוֹ)
-  with NO physical action. Speech alone is not a story.
+  with NO physical action. Speech alone is not a story — UNLESS a story is quoted
+  INSIDE the speech. A dictum can contain one: Gittin 38b is a saying of Rabba, and
+  inside it R. Yoḥanan reports two families who set their meals at the wrong times and
+  were uprooted — two actions with a causal connection, which Jeff (2026-09-01) counts
+  as a story. Judge what the speech CONTAINS, not only what the passage is.
 - Biblical narrative (named actors are only biblical figures like Moses, David,
   Nebuchadnezzar, "the Jewish people" as a collective). We catalog rabbinic stories.
 - Fewer than 2 distinct actions, OR no change/conflict between start and end.
