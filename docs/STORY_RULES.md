@@ -93,18 +93,34 @@ no real hard and fast rules, that is, unless we make one."*
 **Jeff, 2026-09-01, on Gittin 57a (Beitar):** *"clearly a story. After the custom you have
 the one time event — One day the emperor's daughter…"*
 
-- **Status:** stated, **not yet implemented.** Stage 1 labels the segment `HABITUAL` and
-  Stage 2 stops at the frame; this is a live miss.
-- **Before implementing:** measure the corpus-wide rate (Lesson 18).
-  Item: [`work/2026-09-02-habitual-frame.md`](../work/2026-09-02-habitual-frame.md).
+- **Status:** in the prompt, **and it does not work yet.** Say both halves.
+- **Rate, measured first** (Lesson 18): 18 `HABITUAL` segments on examined Gittin pages,
+  16 covered by no proposal, and **3 of those 16 sit inside one of his stories — 19%**,
+  against 14.3% for discarded pages generally. Worth changing something.
+- **What was changed:** the disqualifier now says a custom is often the frame of a story
+  and the story starts at the custom, with his case and date attached.
+- **What it bought:** on the four pages carrying the known cases, **1 of 3** recovered
+  (58a seg 4). On a full re-run of the tractate, **nothing**: strict recall 108/112 before
+  and after, the same four misses, and 7 gained / 9 lost proposals that are mostly the
+  same stories re-bounded — churn indistinguishable from the noise floor without a
+  same-code repeat (Lesson 22).
+- **The diagnosis that matters:** Beitar is not proposed *at all*, not even as
+  `NOT_A_STORY`. Detection never sees a candidate there, so no amount of classification
+  wording will reach it. The mechanism is unresolved.
+- **Kept anyway**, because the rule is his and the wording is faithful to it; pinned by
+  `tests/test_prompt_carries_the_rules.py` so it is not silently dropped while it is still
+  ineffective. The shipped Gittin artifact remains the pre-change run.
+  Item: [`work/2026-09-02-habitual-frame.md`](../work/done/2026-09-02-habitual-frame.md).
 
 ### R-C4 · A story may be embedded inside a dictum
 **Jeff, 2026-09-01, on Gittin 38b:** the dialogue *"includes a story, in R. Yohanan's
 statement, that there were two families who set their meals at the wrong times and were
 uprooted. (two actions, causal connection)"*
 
-- **Status:** stated, not implemented, no mechanism yet. The story is not the passage's
-  outer shape.
+- **Status:** in the prompt ("judge what the speech CONTAINS, not only what the passage
+  is"), and **not working**: 38b is still missed on the full re-run. Same shape as R-C3 —
+  the passage is never proposed, so the failure is in Detection's reach and not in the
+  criteria. Pinned by `tests/test_prompt_carries_the_rules.py`.
 
 ---
 
