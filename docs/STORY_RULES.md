@@ -12,7 +12,32 @@ when a number moves.
 
 ---
 
-## The standing principle: we never edit his data
+## Two artifacts, two jobs — and only one of them is frozen
+
+**The golden set is the product. It is supposed to change.** The goal is a corpus of
+stories under the criteria we hold *today*, better and more refined than any list that
+existed in 2005 — and better than Jeff's own, because his lists were provisional and he
+says so. Every rule settled below should be applied to it, and the machine improves
+because the golden improves.
+
+**The 2005 blind lists are the instrument, and an instrument you adjust to match the
+result stops measuring.** They are the only artifact that can tell us we missed something,
+because they were written before this project existed. Edit them toward our output and
+recall becomes unfalsifiable.
+
+| | the golden corpus | the 2005 blind lists · his raw verdicts |
+|---|---|---|
+| what it is | our best current answer | evidence of what an expert said, and when |
+| when a rule is settled | **rebuild it under the rule**, versioned, provenance per entry | **annotate**, never move |
+| when he corrects an entry | apply the correction | record it beside the original |
+| what it answers | *what is in the corpus* | *what did we fail to find* |
+
+So: `results/canonical/*_canonical.json` is rebuilt as the rules settle;
+`results/expert_lists/*_2005.json` and `tests/expert_boundary_targets_2005*.json` keep
+their values and gain annotations. **The golden getting better is the point of the
+project; the ruler holding still is what lets us prove it.**
+
+## The corollary: we never edit the evidence
 
 Jeff's 2005 lists and his review verdicts are **evidence, not our working notes.** When a
 rule he states later disagrees with something in them — and it does, because he called
@@ -26,10 +51,12 @@ we never overwrite it.
 | We think an entry is wrong | It stays. Put it on the list for the next round and let him rule. |
 | We want a number under the new rule | Score with `--standard`, which reads the annotation. Two standards, two numbers, both reproducible from one file. |
 
-**Why not just fix the data.** The blind lists are the only thing in this project that can
-tell us we are wrong. Editing them toward our own output turns the ruler into a mirror —
-and the composite already taught us what that feels like: deleting expert validations made
-the score go **up**. A dataset we are free to edit is not evidence any more.
+**Why not just fix the evidence.** The blind lists are the only thing in this project that
+can tell us we are wrong. Editing them toward our own output turns the ruler into a mirror
+— and the composite already taught us what that feels like: deleting expert validations
+made the score go **up**. A dataset we are free to edit is not evidence any more. **This
+says nothing about the golden**, which is ours to improve and which every settled rule
+below should be applied to.
 
 ---
 
