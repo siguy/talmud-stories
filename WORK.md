@@ -47,11 +47,12 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `story-boundaries-eval-sivz3d` | `talmud-stories` | clean |
-| `worktree-story-boundaries-eval-sivz3d` | `story-boundaries-eval-sivz3d` | **63 FILES** |
+| `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
+| `pr21work` | `kiddushin-recall-boundary-c52c91` | **51 FILES** |
+| `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 20 items, never deleted
+## Done — 23 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -71,8 +72,11 @@ staleness check: it changes whenever anyone edits anything.*
 | [Can the composite score detect silent loss from the golden?](work/done/2026-08-31-composite-blind-to-golden-loss.md) | classification | [2026-08-31-composite-blind-to-golden-loss.md](docs/findings/2026-08-31-composite-blind-to-golden-loss.md) |
 | [Make concurrent work items declare what they write](work/done/2026-08-31-concurrency-collisions.md) | — | [2026-08-31-concurrent-work-collisions.md](docs/findings/2026-08-31-concurrent-work-collisions.md) |
 | [Finishing an item re-roots its outbound links and breaks every inbound one](work/done/2026-08-31-finish-reroots-inbound-links.md) | — | — |
+| [Gittin — the first full detection run on a tractate we have never detected on](work/done/2026-08-31-gittin-detection-run.md) | triage, detection | [2026-08-31-gittin-first-run.md](docs/findings/2026-08-31-gittin-first-run.md) |
 | [Two pre-flight fixes before a new tractate — validate proposed spans, and stop the Mishnah key from being silently invisible](work/done/2026-08-31-span-bounds-and-mishnah-readers.md) | detection, boundaries | [2026-08-31-span-bounds-and-mishnah-readers.md](docs/findings/2026-08-31-span-bounds-and-mishnah-readers.md) |
 | [Two board.py loaders report absence instead of what the artifact holds](work/done/2026-09-01-board-loaders-report-absence.md) | classification, review | [2026-09-01-board-guards-verify-the-wrong-property.md](docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md) |
 | [Fix skip_triage so it bypasses Stage 1 instead of faking its output](work/done/2026-09-01-fix-skip-triage-flag.md) | triage | [2026-09-01-examine-all-pages-fix.md](docs/findings/2026-09-01-examine-all-pages-fix.md) |
 | [Parse the Gittin, Yevamot and Eruvin expert lists to JSON](work/done/2026-09-01-parse-new-tractate-lists.md) | detection | [2026-09-01-new-tractate-expert-lists.md](docs/findings/2026-09-01-new-tractate-expert-lists.md) |
-<!-- board-checksum: 23782891b7e5f38a -->
+| [A custom that frames a one-time event is still a story (Gittin 57a, Beitar)](work/done/2026-09-02-habitual-frame.md) | detection, classification | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
+| [Include the introducing formula in the story start — Jeff ruled, so build it](work/done/2026-09-02-opening-formula.md) | boundaries | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
+<!-- board-checksum: bd61b7227b4a733b -->
