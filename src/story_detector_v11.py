@@ -1332,14 +1332,25 @@ Return JSON:
         if biblical:
             print(f"  Biblical-actor filter: {biblical} stories demoted")
 
-        # 4k (Wave 4): LLM-side text-span emission. No regex fallback on
-        # LLM error — see extract_text_spans_via_llm docstring.
+        # 4k (Wave 5): clause selection. The model picks a clause index and we
+        # compute the offset, so a mid-word cut is structurally impossible.
+        # No regex fallback on LLM error — see the method's docstring.
+        #
+        # This called `extract_text_spans_via_llm` until 2026-08-31 — Wave 4's
+        # char-offset mechanism, which v11 does not have (removed when Wave 5
+        # replaced it, per this module's docstring). With a client attached the
+        # pipeline raised AttributeError here, after the whole Stage 1/2/4 spend.
+        # Nothing caught it because v11 had only ever been driven by
+        # run_wave5_clause_spans.py, which calls the method directly.
+        span_counts = {'clause_llm': 0, 'clause_kept_full': 0,
+                       'no_clause_split': 0, 'skipped': 0}
         if self.client:
-            span_counts = self.extract_text_spans_via_llm(all_results)
+            span_counts = self.extract_text_spans_via_clauses(all_results)
             print(
-                "  Text-span (Wave 4): "
-                f"llm={span_counts['llm']} "
-                f"kept_full={span_counts['llm_kept_full']} "
+                "  Text-span (Wave 5 clause selection): "
+                f"llm={span_counts['clause_llm']} "
+                f"kept_full={span_counts['clause_kept_full']} "
+                f"no_split={span_counts['no_clause_split']} "
                 f"skipped={span_counts['skipped']}"
             )
         else:
@@ -1349,6 +1360,13 @@ Return JSON:
                 "  Text-span (regex-only, no client): "
                 f"{text_edited} stories got sub-segment spans"
             )
+
+        # 4l (2026-09-02): the story starts at the formula that introduces it.
+        # Runs AFTER the spans exist, because it moves a clause index, not a segment.
+        formula = extend_start_over_opening_formula(all_results)
+        if formula['extended']:
+            print(f"  Opening formula: {formula['extended']} starts extended over "
+                  f"the formula that introduces them")
 
         # Detect duplicates
         all_results = detect_duplicate_stories(all_results)
@@ -1364,6 +1382,8 @@ Return JSON:
             'version': 'v10',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
+            'span_stats': span_counts,
+            'opening_formula': formula,
             # Always written, including as `[]`. A key that appears only when
             # something went wrong reads as absence of the check itself.
             'span_repairs': repairs,
@@ -2572,6 +2592,104 @@ def _supports_thinking_level(model_name: str) -> bool:
 
 CLAUSE_TERMINATORS = '.:?!'
 _CLAUSE_BREAK = re.compile(r'(?<=[\.\:\?\!])\s+')
+
+
+# Citation and attribution formulae that INTRODUCE a quoted story. Jeff, 2026-09-01:
+# "not technically part of the stories. But they are important, as, for example,
+# תניא indicates the Talmud thinks the story is Tannaitic... If not too much
+# trouble, we should include them."
+#
+# Every token here was drawn from a case he named or from a boundary in one of the
+# four blind sets, and each is counted against his OTHER boundaries before being
+# added (Lesson 27). Matching is on the nikud-stripped text, because his edition and
+# Sefaria's vocalise differently.
+_OPENING_FORMULAE = (
+    'תניא',            # this is Tannaitic - his own example
+    'תנו רבנן',
+    'תא שמע',
+    'מיתיבי',
+    'גופא',
+    'אמר רב',           # covers אמר רב יהודה אמר רב - his second example
+    'אמר רבי',
+    'אמר ריש לקיש',
+    'אמר רבה',
+    'כי אתא',
+    'בעו מיניה',
+    'שאלו',
+    'משתעי',
+    'דרש',
+)
+
+
+def _strip_nikud(text: str) -> str:
+    return re.sub(r'[\u0591-\u05C7]', '', text or '')
+
+
+def _is_opening_formula(clause: str) -> bool:
+    """True if this clause is a formula that introduces a story rather than telling it.
+
+    Deliberately narrow: the clause must be SHORT. `אמר רב יהודה אמר רב:` introduces;
+    `אמר רב יהודה: מעשה בבנו ובבתו של רבי ישמעאל...` is the story itself, and pulling a
+    boundary over that would swallow narrative rather than frame it.
+    """
+    bare = _strip_nikud(clause).strip()
+    if not bare:
+        return False
+    words = bare.split()
+    if len(words) > 8:
+        return False
+    if any(bare.startswith(f) for f in _OPENING_FORMULAE):
+        return True
+    # `רב חנין משתעי:` puts the verb last, so a prefix test misses the whole
+    # "X related:" family. Allowed only on a very short clause, where there is no
+    # room for narrative around it.
+    return len(words) <= 4 and any(f in bare for f in ('משתעי', 'מישתעי'))
+
+
+def extend_start_over_opening_formula(pages: List[Dict]) -> Dict[str, int]:
+    """Move a story's start back over the formula that introduces it (Jeff, 2026-09-01).
+
+    ONE clause, backwards only, inside the start segment. A deterministic
+    post-processor on a text-internal decision is the shape Lesson 15 forbids — the
+    difference here is that the expert stated the rule in words, so it is principled
+    rather than fitted to our own past errors, and it stays one clause wide.
+
+    Measured before shipping, on all four blind 2005 sets: 10 of our late starts are
+    fixed, and the 10 targets that move against us are ones where his own start sits
+    after a formula — "the lists were sloppy and preliminary, and we had not worked
+    this out."
+
+    Returns counts. Never silent: a run records what moved.
+    """
+    counts = {'extended': 0, 'already_at_formula': 0, 'no_formula': 0}
+    for page in pages:
+        seg_by_idx = {s.get('index', i): s for i, s in enumerate(page.get('segments', []))}
+        for story in page.get('stories', []):
+            if story.get('classification') == 'NOT_A_STORY':
+                continue
+            span = story.get('text_span_start')
+            if not span or span.get('clause_index') is None:
+                counts['no_formula'] += 1
+                continue
+            idx = span['clause_index']
+            if idx <= 0:
+                counts['already_at_formula'] += 1
+                continue
+            seg = seg_by_idx.get(span.get('segment', story.get('start_segment')))
+            heb = (seg or {}).get('hebrew', '')
+            clauses = _split_into_clauses(heb)
+            if idx >= len(clauses):
+                counts['no_formula'] += 1
+                continue
+            prev = heb[clauses[idx - 1][0]:clauses[idx - 1][1]]
+            if not _is_opening_formula(prev):
+                counts['no_formula'] += 1
+                continue
+            span['clause_index'] = idx - 1
+            span['char_offset'] = clauses[idx - 1][0]
+            span['opening_formula'] = _strip_nikud(prev).strip()
+            counts['extended'] += 1
+    return counts
 
 
 def _split_into_clauses(text: str):

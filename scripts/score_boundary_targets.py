@@ -89,7 +89,23 @@ def load_targets(specs):
     return pooled
 
 
-def score(path, targets, skip_needs_human=True):
+def wanted_clause(t, standard):
+    """Which clause the target expects, under the named standard.
+
+    `as-listed` is the extent Jeff wrote in 2005 and is the default: it is his data,
+    and it stays the answer to "do we match his list".
+
+    `jeff-2026` applies the rule he stated on 2026-09-01 — an introducing formula
+    belongs to the story — to the targets that predate it. Only targets carrying
+    `rule_relation: excluded` move, and only their start. Nothing is rewritten on
+    disk; the two standards are two readings of the same file (Lesson 24).
+    """
+    if standard == 'jeff-2026' and t.get('rule') == 'R-B1' and t.get('rule_relation') == 'excluded':
+        return t['rule_clause']
+    return t['clause']
+
+
+def score(path, targets, skip_needs_human=True, standard='as-listed'):
     _, stories, segs, withheld = load_run(path)
     out = Counter()
     rows = []
@@ -97,7 +113,7 @@ def score(path, targets, skip_needs_human=True):
         if skip_needs_human and t.get('needs_human'):
             continue
         ref = t.get('located_on') or t['ref']
-        seg, want = t['segment'], t['clause']
+        seg, want = t['segment'], wanted_clause(t, standard)
         cover = [s for r, s in stories
                  if r == ref and s['start_segment'] <= seg <= s['end_segment']]
         if not cover:
@@ -130,6 +146,9 @@ def main():
                     help='one or more target files to pool')
     ap.add_argument('--by-source', action='store_true',
                     help='also break the score out per target file')
+    ap.add_argument('--standard', default='as-listed', choices=['as-listed', 'jeff-2026'],
+                    help="which convention to grade against: the extent he wrote in 2005 "
+                         "(default), or the rule he stated in 2026 about opening formulae")
     ap.add_argument('--include-needs-human', action='store_true',
                     help='score targets flagged for human polarity review (default: skip)')
     args = ap.parse_args()
@@ -145,13 +164,18 @@ def main():
           f"{corrections} corrections, {len(targets)-corrections} detector-blind (2005 list)"
           + (f"; {skipped} skipped pending human polarity review" if skipped and not args.include_needs_human else ""))
     print("BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures "
-          "fixing known failures. The 2005 list is a neutral sample and also catches regressions.\n")
+          "fixing known failures. The 2005 list is a neutral sample and also catches regressions.")
+    moved = sum(1 for t in targets
+                if args.standard == 'jeff-2026' and t.get('rule_relation') == 'excluded')
+    print(f"STANDARD: {args.standard}"
+          + (f" — {moved} start target(s) read at the opening formula per his 2026-09-01 rule "
+             f"(their 2005 value is unchanged on disk)" if moved else "") + "\n")
     print(f"{'run':10s} {'scored':>7s} {'HIT':>5s} {'NEAR':>5s} {'MISS':>5s} {'N/A':>5s} "
           f"{'WITHHELD':>9s} {'hit%':>6s} {'hit+near%':>10s}")
     details = {}
     for spec in args.runs:
         name, path = spec.split('=', 1)
-        c, rows = score(path, targets, not args.include_needs_human)
+        c, rows = score(path, targets, not args.include_needs_human, args.standard)
         details[name] = rows
         scored = c['HIT'] + c['NEAR'] + c['MISS']
         h = c['HIT'] / scored if scored else 0
@@ -171,7 +195,7 @@ def main():
             print(f"--- {f}  ({len(sub)} targets)")
             for spec in args.runs:
                 name, path = spec.split('=', 1)
-                c, _ = score(path, sub, not args.include_needs_human)
+                c, _ = score(path, sub, not args.include_needs_human, args.standard)
                 s = c['HIT'] + c['NEAR'] + c['MISS']
                 if not s:
                     print(f"    {name:12s} no scorable targets"); continue

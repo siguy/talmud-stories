@@ -406,12 +406,23 @@ def render_state() -> str:
           "capabilities compose and have separate gates; charging Triage's losses to",
           "Detection as well double-counts them (Lesson 35).", "",
           "The **end-to-end** figure — what the pipeline delivers, `triage x detection` —",
-          "is quoted **loose / strict** from `results/rulers/`:", ""]
+          "is quoted **loose / strict** from `results/rulers/`, or from",
+          "`results/recall/<t>_strict.json` for a tractate with no ruler yet:", ""]
     for t in TRACTATES:
         d = r.get(t, {}).get("detection", {})
         if d:
             L.append(f"- {t.title()}: **{d['recall']*100:.1f}% loose / "
                      f"{d['recall_strict']*100:.1f}% strict** on {d['denominator']} stories")
+            continue
+        # A tractate detected but not yet reviewed has no ruler — its strict figure
+        # comes from measure_strict_recall.py, which applies the ruler's own
+        # narrowing. Without this the matrix would show only the loose cell, and a
+        # bare 100.0% is the exact shape the loose window's over-crediting takes.
+        sr = load_json(f"results/recall/{t}_strict.json")
+        if sr:
+            L.append(f"- {t.title()}: **{sr['recall_loose']*100:.1f}% loose / "
+                     f"{sr['recall_strict']*100:.1f}% strict** on {sr['denominator']} "
+                     f"stories (no ruler yet — no expert round on this tractate)")
     L += ["",
           "The loose test credits a proposal anywhere in the aligner's window and is",
           "provably over-credited in at least one case, so read it as an upper bound.", "",

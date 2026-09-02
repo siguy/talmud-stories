@@ -212,6 +212,7 @@ archive/                          # Old versions (reference only)
 | `scripts/harvest_kiddushin_comments.py` | Jeff's 10 anchored Kiddushin remarks, sorted at the **sentence** level onto axes, joined to our output by **strict span coverage**. The loose recall window credits a different passage on the same daf in 2 of 6 cases |
 | `scripts/capture_january_round.py` | Recovers the **2026-01-08 round no ruler reads** — 25 verdicts skipped for eight months by an `isinstance` guard because it stores a list where every other round stores a dict (Lesson 38) |
 | `docs/findings/2026-08-30-mishnah-filter-delta.md` | The measurement + why it is a scope question for Jeff |
+| [`docs/STORY_RULES.md`](docs/STORY_RULES.md) | **THE RULE REGISTER** — one numbered rule per decision, with the expert's words, the date, and what it implies for data already on disk. **Read it before changing a prompt, a boundary or a dataset.** Carries the standing principle: his lists are evidence, so a rule that contradicts one is an *annotation*, never an edit |
 | `comms/JEFF.md` | **Open questions for the next email to Jeff** — ask in the order listed |
 | `jeff comms/b.ketubot (1).doc` | Jeff's 2005 Ketubot story list — detector-blind ground truth. Count it with `parse_kiddushin_list.py --self-test` |
 | `jeff comms/8-30-2026/kidushin.doc` | Jeff's Kiddushin list — parse with `parse_kiddushin_list.py`, NOT `parse_expert_doc` |
