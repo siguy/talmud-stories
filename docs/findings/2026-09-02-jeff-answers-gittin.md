@@ -87,3 +87,31 @@ over-confident.
 5. **The confidence axis has its first two expert data points** on Gittin.
 
 Question 5 — the 25-passage review round — is still with him.
+
+---
+
+## Addendum, same day: R-C3 and R-C4 were implemented, measured, and did not work
+
+The rate justified trying (19% of uncovered `HABITUAL` segments sit inside one of his
+stories). The prompt now carries both rules with his case and date. Then:
+
+| | before | after |
+|---|---|---|
+| strict recall | 108 / 112 | **108 / 112** |
+| the four known misses | 4 | **4** |
+| stories proposed | 147 | 145 |
+| boundaries, his 2026 standard | 86% / 88% | 85% / 89% |
+
+7 proposals gained, 9 lost, and most of both are the same stories re-bounded — churn of a
+size the noise floor produces on identical code, which no same-code repeat was run to
+separate (Lesson 22). **The honest reading is: no measured effect.**
+
+**Beitar is not proposed at all — not even as `NOT_A_STORY`.** That relocates the problem:
+it is not that Stage 2 judges the passage and rejects it on the habitual frame, it is that
+Stage 2 never offers it. Classification wording cannot fix a candidate that is never
+generated, and the two remaining cases (57a:20, 62a:11) have the same signature.
+
+The wording stays, pinned by a test, because the rule is his and it is faithfully written
+down; the shipped Gittin artifact stays the pre-change run, because nothing measured
+better. The next attempt should be aimed at Detection's coverage of a page — the
+"find more stories" pass — rather than at the criteria.
