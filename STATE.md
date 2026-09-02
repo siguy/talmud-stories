@@ -93,6 +93,7 @@ closed     7 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
+open       2026-09-02-opening-formula
 closed     5 item(s) in work/done/
 ```
 
@@ -147,13 +148,10 @@ naming an empty file as a lost round buries the one that is not.
 | slug | question |
 |---|---|
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
-| `jeff:mishnah-scope` | Is a story quoted inside a **Mishnah** part of this project at all, or does the database begin at the Gemara? **Now with a third concrete case, 2026-09-01: Ketubot 71a, the incident of Beit Ḥoron** — a real `מעשה`, native to Nedarim, quoted here as precedent. Our detector proposes it; his 2005 list omits it. Asks the same question from the *quoted-as-precedent* side. **A fourth angle, 2026-09-01, from the first Gittin run: three pairs where the SAME story is catalogued twice** — the Mishnah copy withheld (10a, 45b, 74a) and the Gemara's own citation of it kept (10b, 46a, 74b), with neither member on his 2005 list. Our rule does not reconcile the pair, and this is the case his Kiddushin note does not cover. |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
-| `jeff:speech-act-policy` | Passages where rabbis only speak are LOW_CONFIDENCE stories today, per his 2026-03-17 rulings; his 2026-07-06 rule reads as *not stories at all*. Should they become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new **borderline** status? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 | `jeff:axes-round` | Would you review one tractate on the new page, where each entry asks **is it a story** (yes / borderline / no) and, only if you want to say more, whether the **extent**, the **confidence level** or the **grouping** is wrong? |
-| `jeff:opening-formula` | When a story is introduced by a citation or attribution formula — `תניא` / `תנו רבנן` / `תא שמע` / `אמר רב יהודה אמר רב` / `כי אתא רב דימי אמר` — is that formula **part of the story** you would publish, or the frame around it? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -162,4 +160,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: d8049de4efef6531 -->
+<!-- board-checksum: 00b4316a2afef030 -->
