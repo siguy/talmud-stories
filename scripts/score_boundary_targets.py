@@ -146,6 +146,13 @@ def main():
                     help='one or more target files to pool')
     ap.add_argument('--by-source', action='store_true',
                     help='also break the score out per target file')
+    ap.add_argument('--by-direction', action='store_true',
+                    help='also break the score out into start and end boundaries. '
+                         'The pooled number hides them: measured 2026-09-01, Ketubot '
+                         'starts run 85%%/90%% and ends 74%%/77%%, and on ends trimming '
+                         'scores BELOW untrimmed. Ends are also the axis '
+                         'jeff:boundary-end-rule is unanswered on, so read a movement '
+                         'there with that caveat')
     ap.add_argument('--standard', default='as-listed', choices=['as-listed', 'jeff-2026'],
                     help="which convention to grade against: the extent he wrote in 2005 "
                          "(default), or the rule he stated in 2026 about opening formulae")
@@ -202,6 +209,19 @@ def main():
                 print(f"    {name:12s} scored {s:3d}  hit {c['HIT']/s:4.0%}  "
                       f"hit+near {(c['HIT']+c['NEAR'])/s:4.0%}   "
                       f"(N/A {c['N/A']}, withheld {c['WITHHELD']})")
+
+    if args.by_direction:
+        print()
+        for spec in args.runs:
+            name, path = spec.split('=', 1)
+            rows = details[name]
+            for d in ('start', 'end'):
+                c = Counter(r[5] for r in rows if r[2] == d)
+                s = c['HIT'] + c['NEAR'] + c['MISS']
+                if not s:
+                    continue
+                print(f"    {name:12s} {d:5s}  scored {s:3d}  hit {c['HIT']/s:4.0%}  "
+                      f"hit+near {(c['HIT']+c['NEAR'])/s:4.0%}   (N/A {c['N/A']})")
 
     if args.detail:
         for name, rows in details.items():
