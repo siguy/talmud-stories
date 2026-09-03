@@ -60,7 +60,7 @@ reconstruction, and this file says plainly which it is.
   every email until he acknowledges it as a standing habit — one round is not a policy.
 - **The instrument failed anyway.** Every structured field came back empty and five
   boundary corrections arrived as prose. The round succeeded; the schema did not capture
-  it. → [`axis-fields-unused`](../2026-09-02-axis-fields-unused.md)
+  it. → [`axis-fields-unused`](2026-09-02-axis-fields-unused.md)
 
 ### What it opened
 

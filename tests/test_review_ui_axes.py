@@ -185,6 +185,28 @@ const moreStub = { classList: makeClassList({}) };
 toggleAxes(0, null);
 report.disclosureOpens = moreStub.classList.contains('open');
 
+// --- I: reaching for prose reveals the structure ---------------------------
+// The Gittin round (2026-09-02) returned 25 verdicts with EVERY structured field
+// empty and five boundary corrections written as prose. The page was then opened
+// and used: the only always-visible free-text control invited "anything else, in
+// your own words", while every axis sat behind a disclosure the reviewer has to
+// find. Prose was the path of least resistance.
+report.notesIsMultiLine = /<textarea class="notes-input"/.test(card0);
+report.notesOutsideDisclosure =
+  card0.indexOf('notes-input') > card0.indexOf('class="more-axes"');
+report.notesRevealsAxes = /oninput="notesTyped\(/.test(card0);
+{
+  // typing reveals the axes once, and a deliberate close stays closed
+  const cardEl = document.getElementById('card-0');
+  cardEl.dataset = {};
+  moreStub.classList.remove('open');
+  notesTyped(0);
+  report.axesRevealedByTyping = moreStub.classList.contains('open');
+  moreStub.classList.remove('open');
+  notesTyped(0);
+  report.revealIsOneShot = !moreStub.classList.contains('open');
+}
+
 // --- H: the quote box -------------------------------------------------------
 const s1 = STORIES[1];
 const card1 = buildCard(s1, 1).innerHTML;
@@ -443,6 +465,35 @@ class AxisReviewUiTest(unittest.TestCase):
         self.assertIn('data-role="grab"', self.html,
                       'no way to capture the highlighted Hebrew — typing it is a '
                       'transcription risk and a chore')
+
+    def test_I_reaching_for_prose_reveals_the_structure(self):
+        """The defect the first real round exposed, and the narrowest fix for it.
+
+        25 verdicts came back with every structured field empty and five boundary
+        corrections written as prose -- two of them quoting Hebrew to cut. Opening the
+        page showed why: the ONLY always-visible free-text control invited "anything
+        else, in your own words", and every axis was behind a disclosure that has to be
+        discovered. The reviewer used what was in front of him.
+
+        So typing a note reveals the axes -- once, where the reviewer already is. It
+        does not gate, interrupt, or require anything: a reviewer who keeps typing has
+        still given a complete review. It removes the discovery step at the one moment
+        the reviewer has something to say.
+        """
+        self.assertTrue(self.report['notesIsMultiLine'],
+                        'the notes box is a single-line <input>. Every one of his 25 '
+                        'notes was a sentence or more, two of them quoting Hebrew')
+        self.assertTrue(self.report['notesOutsideDisclosure'],
+                        'the notes box moved inside the disclosure — prose must stay '
+                        'reachable, this fix adds a path and removes none')
+        self.assertTrue(self.report['notesRevealsAxes'],
+                        'typing a note no longer reveals the axes, which is the whole '
+                        'of the fix')
+        self.assertTrue(self.report['axesRevealedByTyping'],
+                        'the reveal did not fire')
+        self.assertTrue(self.report['revealIsOneShot'],
+                        'the reveal re-fires after the reviewer closes it. A panel that '
+                        'reopens itself is worse than one that never opened')
 
     # The page must still be the shared display core, not a second copy of it.
     def test_display_core_is_shared_not_reimplemented(self):

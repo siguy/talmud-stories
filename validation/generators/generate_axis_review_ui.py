@@ -241,8 +241,12 @@ __DISPLAY_CSS__
   .quote-row .hint b { color: #6b4e00; }
   .quote-actions { display: flex; gap: 8px; margin-top: 8px; align-items: center; flex-wrap: wrap; }
   .grab-btn { background: #fff; border: 1px dashed #c9a227 !important; color: #7a5c05; }
-  .notes-input { width: 100%; margin-top: 10px; padding: 7px 10px;
-                 border: 1px solid #d4dae0; border-radius: 6px; font-size: 13px; }
+  /* A textarea since 2026-09-02, not an input. Every one of Jeff's 25 Gittin notes was
+     a full sentence or more -- two of them quoting Hebrew -- typed into a single-line
+     box that showed him about eight words of it at a time. */
+  .notes-input { width: 100%; margin-top: 10px; padding: 7px 10px; font-family: inherit;
+                 border: 1px solid #d4dae0; border-radius: 6px; font-size: 13px;
+                 resize: vertical; box-sizing: border-box; }
   .progress-bar { background: #e2e8f0; height: 6px; border-radius: 3px; margin-bottom: 18px; }
   .progress-fill { background: #2c7a7b; height: 100%; border-radius: 3px; transition: width 0.3s; }
   .hidden { display: none; }
@@ -467,9 +471,11 @@ function buildCard(story, idx) {
     +   '<div class="axis-row"><span class="axis-label">Confidence</span>' + axisButtons(story.key, idx, 'confidence') + '</div>'
     +   '<div class="axis-row"><span class="axis-label">Grouping</span>' + axisButtons(story.key, idx, 'grouping') + '</div>'
     + '</div>'
-    + '<input class="notes-input" placeholder="Anything else, in your own words (optional)"'
-    +   ' value="' + String(v.notes || '').replace(/"/g, '&quot;') + '"'
-    +   ' onchange="setNotes(\'' + story.key + '\', this.value)">';
+    + '<textarea class="notes-input" rows="2" placeholder="Anything else, in your own words '
+    +   '&mdash; if it is about where the story starts or ends, the boxes above capture it better"'
+    +   ' oninput="notesTyped(' + idx + ')"'
+    +   ' onchange="setNotes(\'' + story.key + '\', this.value)">'
+    +   esc(String(v.notes || '')) + '</textarea>';
   return card;
 }
 
@@ -556,6 +562,28 @@ function toggleAxes(idx, btn) {
 }
 
 function setNotes(key, notes) { ensure(key).notes = notes; }
+
+// The whole reason this exists. On the first real round (Gittin, 2026-09-02) every
+// structured field came back empty and five boundary corrections arrived as prose --
+// including two that quote the Hebrew to cut. The page was then opened and used, and the
+// cause was not subtle: the ONLY always-visible free-text control invited "anything else,
+// in your own words", while every axis sat behind a disclosure that has to be discovered.
+// Prose was the path of least resistance, so prose is what we got.
+//
+// So: reaching for prose reveals the structure, once, where the reviewer already is. It
+// does not gate, interrupt, or require anything -- a reviewer who wants to keep typing
+// keeps typing, and that stays a complete review. It only removes the discovery step at
+// the exact moment the reviewer has something to say.
+function notesTyped(idx) {
+  const card = document.getElementById('card-' + idx);
+  if (!card || card.dataset.axesRevealed) return;
+  card.dataset.axesRevealed = '1';
+  const more = card.querySelector('[data-role="more-axes"]');
+  const btn = card.querySelector('[data-role="disclose"]');
+  if (!more || more.classList.contains('open')) return;
+  more.classList.add('open');
+  if (btn) btn.classList.add('open');
+}
 
 function updateProgress() {
   const done = Object.keys(verdicts).filter(k => isComplete(verdicts[k])).length;

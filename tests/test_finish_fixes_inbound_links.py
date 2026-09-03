@@ -45,6 +45,17 @@ def load_board():
     # from one level down — same, with the ../ preserved
     ('docs/findings/f.md', '[x](../../work/2026-01-01-demo.md)',
      '[x](../../work/done/2026-01-01-demo.md)'),
+    # from an ALREADY-finished item — it wrote `../<slug>.md` while the target was
+    # still open, which was correct then. Once the target closes they are siblings and
+    # the `../` is what breaks. This case was missing until 2026-09-02 and broke a link
+    # on three consecutive finishes in one session; the same defect as Lesson 31,
+    # surviving in the one direction nobody checked.
+    ('work/done/other.md', '[x](../2026-01-01-demo.md)', '[x](2026-01-01-demo.md)'),
+    # ...and one already correct is left alone
+    ('work/done/other.md', '[x](2026-01-01-demo.md)', '[x](2026-01-01-demo.md)'),
+    # ...and one already pointing into done/ is not double-rewritten
+    ('work/done/other.md', '[x](../done/2026-01-01-demo.md)',
+     '[x](../done/2026-01-01-demo.md)'),
 ])
 def test_inbound_links_are_rewritten_for_the_linking_file(linking_file, before, after):
     board = load_board()
