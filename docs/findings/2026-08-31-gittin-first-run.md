@@ -41,6 +41,16 @@ an empty story, and left no trace.
 
 ## Recall against Jeff's blind list — quote the strict figure
 
+> **Correction, 2026-09-02.** Every figure in this section has a denominator of 112. It is
+> **111**. On 2026-09-01 Jeff retracted one of his own entries — `gittin_075`, 57a, the
+> Sadducee on the land's fertility: *"I agree that this is not a story and should not have
+> been included. The list was wrong. Great to have the AI correct it!"* We proposed nothing
+> there, so it scored here as one of the four strict misses. It is not a miss; it is a case
+> where we were right and the ground truth was wrong. **Strict recall is 108/111 = 97.3%,
+> and the remaining misses are three, not four: 38b, 46b, and 57a Beitar.** The paragraphs
+> below are left as written — they were true of what we knew — and the artifacts on disk
+> are regenerated. → [`gittin-recall-denominator`](2026-09-02-gittin-recall-denominator.md)
+
 112 stories, all blind, checked against the appendix.
 
 | | loose | strict |

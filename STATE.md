@@ -16,7 +16,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 |---|---|---|---|---|---|---|
 | **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
 | **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Gittin** | 100.0% · n=112 B | 100.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Gittin** | 100.0% · n=111 B | 100.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
@@ -34,7 +34,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 
 - Ketubot: **96.0% loose / 87.9% strict** on 149 stories
 - Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
-- Gittin: **100.0% loose / 96.4% strict** on 112 stories (no ruler yet — no expert round on this tractate)
+- Gittin: **100.0% loose / 97.3% strict** on 111 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -72,7 +72,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     11 item(s) in work/done/
+closed     12 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -123,7 +123,7 @@ closed     1 item(s) in work/done/
 | dataset | kind | size |
 |---|---|---|
 | `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
-| `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 112 count for recall |
+| `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
@@ -161,4 +161,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
-<!-- board-checksum: d6d618323f935f09 -->
+<!-- board-checksum: 78ad803bc261c6f1 -->
