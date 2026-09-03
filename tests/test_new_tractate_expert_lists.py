@@ -170,5 +170,28 @@ def test_the_committed_json_matches_a_fresh_parse(tractate):
     data = json.loads(out.read_text())
     stories, _ = parse(doc_for(tractate), tractate, None, units_for(tractate))
     assert data['counts']['stories'] == len(stories) == STORIES[tractate]
-    assert data['counts']['recall_denominator'] == STORIES[tractate]
     assert [s['ref'] for s in data['stories']] == [s['ref'] for s in stories]
+
+    # The denominator was pinned to the parsed count until 2026-09-02, when Jeff
+    # retracted one of his own Gittin entries. A list can now legitimately hold more
+    # entries than it counts -- so the property to pin is no longer "they are equal",
+    # it is "every gap is accounted for by an annotation naming who withdrew it".
+    #
+    # Pinning equality here would force the next retraction to be applied by DELETING
+    # the entry, which is exactly the edit STORY_RULES.md forbids: his lists are
+    # evidence. A test can push you into the wrong fix as easily as the right one.
+    counted = [s for s in data['stories'] if s.get('counts_for_recall')]
+    assert data['counts']['recall_denominator'] == len(counted)
+    for story in data['stories']:
+        if story.get('counts_for_recall'):
+            continue
+        assert story.get('retracted_by_expert'), (
+            f"{story['id']} is out of the recall denominator with nothing saying why. "
+            f"An unexplained exclusion is indistinguishable from a parsing bug.")
+        assert story['retracted_by_expert'].get('quote'), (
+            f"{story['id']} is retracted without his words. The quote IS the evidence; "
+            f"a date and a flag are a claim about evidence.")
+        assert story.get('blind') is True, (
+            f"{story['id']} lost its blind flag along with its recall flag. Blindness is "
+            f"a fact about how the entry was produced and does not change when the "
+            f"expert decides the passage is not a story.")
