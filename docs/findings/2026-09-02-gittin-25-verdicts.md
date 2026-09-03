@@ -109,7 +109,7 @@ targets are already in, and they will need the same mining.
 | what | where |
 |---|---|
 | the round is read by no ruler — Lesson 38's shape, caught by the board this time | [`classification-point-estimate`](../../work/2026-08-31-classification-point-estimate.md) |
-| 57a retracted from his own list → recall denominator 112 → 111 | [`gittin-recall-denominator`](../../work/2026-09-02-gittin-recall-denominator.md) |
+| 57a retracted from his own list → recall denominator 112 → 111 | [`gittin-recall-denominator`](../../work/done/2026-09-02-gittin-recall-denominator.md) |
 | a Gittin golden — the first blind tractate with **negative** labels | [`gittin-golden`](../../work/2026-08-30-gittin-golden.md) |
 | English-first prompting | [`english-first-prompt`](../../work/2026-09-02-english-first-prompt.md) |
 | the unused axis fields | [`axis-fields-unused`](../../work/2026-09-02-axis-fields-unused.md) |

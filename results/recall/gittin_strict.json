@@ -1,8 +1,8 @@
 {
   "tractate": "Gittin",
-  "denominator": 112,
+  "denominator": 111,
   "recall_loose": 1.0,
-  "recall_strict": 0.9643,
+  "recall_strict": 0.973,
   "stories": [
     {
       "id": "gittin_001",
@@ -367,8 +367,8 @@
     {
       "id": "gittin_037",
       "ref": "Gittin 37a",
-      "coverage": 0.961,
-      "window_segments": 11,
+      "coverage": 0.965,
+      "window_segments": 14,
       "tight_segments": 2,
       "loose": true,
       "strict": true,
@@ -743,16 +743,6 @@
       "loose": true,
       "strict": true,
       "text": "אתרנגולא ואתרנגולתא חריב טור מלכא, דהוו נהיגי כי הוו מפקי חתנא וכלתא, מפקי קמייהו תרנגולא ותרנגולתא, כלומר, פרו ורבו כתר"
-    },
-    {
-      "id": "gittin_075",
-      "ref": "Gittin 57a",
-      "coverage": 0.94,
-      "window_segments": 14,
-      "tight_segments": 1,
-      "loose": true,
-      "strict": false,
-      "text": "אמר ליה ההוא צדוקי לרבי חנינא: שקורי משקריתו! אמר ליה: ארץ צבי כתיב בה, מה צבי זה אין עורו מחזיק את בשרו, אף ארץ ישראל, "
     },
     {
       "id": "gittin_076",
