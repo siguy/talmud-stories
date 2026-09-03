@@ -1,0 +1,7230 @@
+{
+ "tractate": "Gittin",
+ "built_by": "scripts/build_ruler.py",
+ "runs": [
+  "results/v11/gittin/gittin_v11.json"
+ ],
+ "golden": "results/canonical/gittin_canonical.json",
+ "review_rounds": {
+  "gittin_axes_review_2026-09-02.json": 25
+ },
+ "verdict_mapping": {
+  "accepted": [
+   "adjust",
+   "approve",
+   "correct",
+   "reject_remove"
+  ],
+  "rejected": [
+   "confirm_remove",
+   "incorrect"
+  ],
+  "note": "adjust is ACCEPTED: it means the story is real and the boundary is wrong, which is a Boundaries failure"
+ },
+ "metrics": {
+  "detection": {
+   "kind": "BLIND",
+   "denominator": 111,
+   "found": 111,
+   "recall": 1.0,
+   "recall_strict": 0.973,
+   "missed": [],
+   "missed_strict": [
+    "Gittin 38b",
+    "Gittin 46b",
+    "Gittin 57a"
+   ],
+   "note": "recall uses the published window-overlap test so it stays comparable with the 96.0% already reported. recall_strict requires a proposal to overlap a segment the story actually occupies; the gap is stories we are credited with only because something else on the page was proposed."
+  },
+  "classification": {
+   "kind": "CIRCULAR",
+   "proposals": 158,
+   "with_verdict": 25,
+   "without_verdict": 133,
+   "per_round": {
+    "gittin_axes_review_2026-09-02.json": {
+     "accepted": 3,
+     "rejected": 18,
+     "by_kind": {
+      "classification": 18
+     },
+     "borderline": 4,
+     "judged": 21,
+     "precision_all_causes": 0.143,
+     "precision_classification_only": 0.143,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
+    }
+   },
+   "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
+  },
+  "cross_check": {
+   "proposals_on_the_blind_list": 110,
+   "of_those_judged_and_accepted": 0,
+   "proposals_claimed_by_more_than_one_expert_story": 15
+  }
+ },
+ "entries": [
+  {
+   "id": "gittin_r001",
+   "ref": "Gittin 5b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "בר הדיא בעי לאתויי גיטא, אתא לקמיה דרבי אחי דהוה ממונה אגיטי, א\"ל: צריך אתה לעמוד על כל אות ואות. אתא לקמיה דרבי אמי ור' אסי, אמרי ליה: לא צריכת, וכי תימא אעביד לחומרא, נמצא אתה מוציא לעז על גיטין הראשונים.",
+   "expert_coverage": 0.929,
+   "expert_located": [
+    [
+     "Gittin 5b",
+     13
+    ],
+    [
+     "Gittin 5b",
+     20
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 5b",
+     19
+    ],
+    [
+     "Gittin 5b",
+     20
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 5b",
+     19,
+     20
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r002",
+   "ref": "Gittin 5b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבה בר בר חנה אייתי גיטא, פלגא איכתב קמיה ופלגא לא איכתב קמיה, אתא לקמיה דרבי אלעזר, אמר ליה: אפילו לא כתב בו אלא שיטה אחת לשמה, שוב אינו צריך.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 5b",
+     15
+    ],
+    [
+     "Gittin 5b",
+     21
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 5b",
+     21
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 5b",
+     21,
+     21
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r003",
+   "ref": "Gittin 6a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב חנין מישתעי: רב כהנא אייתי גיטא, ולא ידענא אי מסורא לנהרדעא אי מנהרדעא לסורא, אתא לקמיה דרב, א\"ל: צריכנא למימר בפני נכתב ובפני נחתם או לא צריכנא? אמר ליה: לא צריכת, ואי עבדת אהנית.",
+   "expert_coverage": 0.95,
+   "expert_located": [
+    [
+     "Gittin 6a",
+     12
+    ],
+    [
+     "Gittin 6b",
+     2
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 6a",
+     18
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 6a",
+     18,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r004",
+   "ref": "Gittin 6a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "מעשה באדם אחד שהביא גט לפני רבי ישמעאל, אמר לו: צריך אני לומר בפני נכתב ובפני נחתם או איני צריך? אמר לו: בני, מהיכן אתה? אמר לו: רבי, מכפר סיסאי אני, אמר לו: צריך אתה לומר בפני נכתב ובפני נחתם, שלא תיזקק לעדים. לאחר שיצא נכנס לפניו רבי אלעאי, אמר לו: רבי, והלא כפר סיסאי מובלעת בתחום ארץ ישראל, וקרובה לציפורי יותר מעכו! ותנן, רבי מאיר אומר: עכו - כארץ ישראל לגיטין, ואפי' רבנן לא פליגי עליה דר\"מ - אלא בעכו דמרחקא, אבל כפר סיסאי דמקרבא - לא! אמר לו: שתוק, בני, שתוק, הואיל ויצא הדבר בהיתר יצא.",
+   "expert_coverage": 0.96,
+   "expert_located": [
+    [
+     "Gittin 6a",
+     15
+    ],
+    [
+     "Gittin 6b",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 6b",
+     1
+    ],
+    [
+     "Gittin 6b",
+     2
+    ],
+    [
+     "Gittin 6b",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 6b",
+     1,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r005",
+   "ref": "Gittin 6b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "\"ותזנה עליו פילגשו\", רבי אביתר אמר: זבוב מצא לה, ר' יונתן אמר: נימא מצא לה, ואשכחיה ר' אביתר לאליהו, א\"ל: מאי קא עביד הקב\"ה? א\"ל: עסיק בפילגש בגבעה, ומאי קאמר? אמר ליה: אביתר בני כך הוא אומר, יונתן בני כך הוא אומר, א\"ל: ח\"ו, ומי איכא ספיקא קמי שמיא? א\"ל: אלו ואלו דברי אלהים חיים הן זבוב מצא ולא הקפיד, נימא מצא והקפיד.",
+   "expert_coverage": 0.858,
+   "expert_located": [
+    [
+     "Gittin 6b",
+     5
+    ],
+    [
+     "Gittin 6b",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 6b",
+     10
+    ],
+    [
+     "Gittin 6b",
+     11
+    ],
+    [
+     "Gittin 6b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 6b",
+     11,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r006",
+   "ref": "Gittin 6b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר ר' אשי: אנא לא שמיעא לי הא דרבה בר בר חנה, וקיימתיה מסברא. א\"ר אבהו: לעולם אל יטיל אדם אימה יתירה בתוך ביתו, שהרי אדם גדול הטיל אימה יתירה בתוך ביתו והאכילוהו דבר גדול, ומנו? ר' חנינא בן גמליאל. האכילוהו ס\"ד? השתא בהמתן של צדיקים אין הקב\"ה מביא תקלה על ידם, צדיקים עצמן לא כ\"ש! אלא בקשו להאכילו דבר גדול, ומאי ניהו? אבר מן החי.",
+   "expert_coverage": 0.88,
+   "expert_located": [
+    [
+     "Gittin 6b",
+     12
+    ],
+    [
+     "Gittin 7a",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 7a",
+     0
+    ],
+    [
+     "Gittin 7a",
+     1
+    ],
+    [
+     "Gittin 7a",
+     2
+    ],
+    [
+     "Gittin 7a",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 7a",
+     1,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r007",
+   "ref": "Gittin 7a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "שלח ליה מר עוקבא לר' אלעזר: בני אדם העומדים עלי ובידי למסרם למלכות, מהו? שרטט וכתב ליה: תהלים ל\"ט אמרתי אשמרה דרכי מחטוא בלשוני אשמרה לפי מחסום בעוד רשע לנגדי, אע\"פ שרשע לנגדי אשמרה לפי מחסום. שלח ליה: קא מצערי לי טובא, ולא מצינא דאיקום בהו! שלח ליה: תהלים ל\"ז דום לה' והתחולל לו, דום לה' והוא יפילם לך חללים חללים, השכם והערב עליהן לבהמ\"ד והן כלין מאיליהן. הדבר יצא מפי ר\"א, ונתנוהו לגניבא בקולר. שלחו ליה למר עוקבא: זמרא מנא לן דאסיר? שרטט וכתב להו: אל תשמח ישראל אל גיל בעמים.",
+   "expert_coverage": 0.867,
+   "expert_located": [
+    [
+     "Gittin 7a",
+     0
+    ],
+    [
+     "Gittin 7a",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 7a",
+     4
+    ],
+    [
+     "Gittin 7a",
+     5
+    ],
+    [
+     "Gittin 7a",
+     6
+    ],
+    [
+     "Gittin 7a",
+     7
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 7a",
+     4,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r008",
+   "ref": "Gittin 7a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "א\"ל ריש גלותא לרב הונא: כלילא מנא לן דאסור? א\"ל: מדרבנן, דתנן: בפולמוס של אספסיינוס גזרו על עטרות חתנים ועל האירוס. אדהכי קם רב הונא לאפנויי, א\"ל רב חסדא, קרא כתיב: כה אמר ה' אלהים הסר המצנפת והרם העטרה זאת לא זאת השפלה הגבה והגבוה השפיל, וכי מה ענין מצנפת אצל עטרה? אלא לומר לך: בזמן שמצנפת בראש כ\"ג - עטרה בראש כל אדם, נסתלקה מצנפת מראש כ\"ג - נסתלקה עטרה מראש כל אדם. אדהכי אתא רב הונא, אשכחינהו דהוי יתבי, א\"ל: האלהים! מדרבנן, אלא חסדא שמך וחסדאין מילך.",
+   "expert_coverage": 0.908,
+   "expert_located": [
+    [
+     "Gittin 7a",
+     6
+    ],
+    [
+     "Gittin 7a",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 7a",
+     12
+    ],
+    [
+     "Gittin 7a",
+     13
+    ],
+    [
+     "Gittin 7a",
+     14
+    ],
+    [
+     "Gittin 7a",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 7a",
+     12,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r009",
+   "ref": "Gittin 7a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבינא אשכחיה למר בר רב אשי דהוה גדיל כלילא לברתיה, א\"ל: לא סבר לה מר הסר המצנפת והרם העטרה? א\"ל: דומיא דכ\"ג בגברי, אבל בנשי לא.",
+   "expert_coverage": 0.889,
+   "expert_located": [
+    [
+     "Gittin 7a",
+     10
+    ],
+    [
+     "Gittin 7a",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 7a",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 7a",
+     16,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r010",
+   "ref": "Gittin 11b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "יתיב רב הונא ורב יצחק בר יוסף קמיה דר' ירמיה, ויתיב ר' ירמיה וקא מנמנם, ויתיב רב הונא וקאמר: ש\"מ מדרבנן, התופס לבעל חוב - קנה. א\"ל רב יצחק בר יוסף: ואפי' במקום שחב לאחרים? א\"ל: אין. אדהכי איתער בהו ר' ירמיה, אמר להו: דרדקי! הכי א\"ר יוחנן: התופס לבעל חוב במקום שחב לאחרים - לא קנה; וא\"ת, משנתינו! כל האומר תנו כאומר זכו דמי.",
+   "expert_coverage": 0.806,
+   "expert_located": [
+    [
+     "Gittin 11b",
+     5
+    ],
+    [
+     "Gittin 12a",
+     0
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 11b",
+     9
+    ],
+    [
+     "Gittin 11b",
+     10
+    ],
+    [
+     "Gittin 11b",
+     11
+    ],
+    [
+     "Gittin 11b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 11b",
+     9,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r011",
+   "ref": "Gittin 14a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "הנהו גינאי דעביד חושבנא בהדי הדדי, פש חמש איסתרי זוזי גבי חד מנייהו, אמרי ליה: יהבינהו ניהליה למרי ארעא באפי מרי ארעא וקנה מיניה. לסוף אזל עבד חושבנא בין דיליה לנפשיה, לא פש גביה ולא מידי, אתא לקמיה דרב נחמן, א\"ל: מאי איעביד לך? חדא, דאמר רב הונא אמר רב; ועוד, הא קנו מינך.",
+   "expert_coverage": 0.968,
+   "expert_located": [
+    [
+     "Gittin 14a",
+     3
+    ],
+    [
+     "Gittin 14a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 14a",
+     8
+    ],
+    [
+     "Gittin 14a",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 14a",
+     8,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r012",
+   "ref": "Gittin 14a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב ששת הוה ליה אשרתא דסרבלי במחוזא, א\"ל לרב יוסף בר חמא: בהדי דאתית אייתינהו ניהלי. אזל, יהבינהו ליה. אמרי ליה: ניקני מינך, אמר להו: אין, לסוף אישתמיט להו. כי אתא לגביה, אמר ליה: שפיר עבדת דלא שוית נפשך עבד לוה לאיש מלוה. לישנא אחרינא: שפיר עבדת, עבד לוה לאיש מלוה.",
+   "expert_coverage": 0.959,
+   "expert_located": [
+    [
+     "Gittin 14a",
+     10
+    ],
+    [
+     "Gittin 14a",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 14a",
+     16
+    ],
+    [
+     "Gittin 14a",
+     17
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 14a",
+     16,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r013",
+   "ref": "Gittin 14a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ר' אחי בר' יאשיה הוה ליה איספקא דכספא בנהרדעא, אמר להו לר' דוסתאי ב\"ר ינאי ולר' יוסי בר כיפר: בהדי דאתיתו אתיוה ניהלי. אזול, יהביה ניהליה. אמרי להו: נקני מינייכו, אמרי להו: לא. אמרי להו: אהדריה ניהלן, ר' דוסתאי ברבי ינאי אמר להו: אין, ר' יוסי בר כיפר אמר להו: לא. הוו קא מצערו ליה, א\"ל: חזי מר היכי קא עביד! אמר להו: טב רמו ליה. כי אתו לגביה, א\"ל: חזי מר, לא מיסתייה דלא סייען, אלא אמר להו נמי טב רמו ליה! א\"ל: אמאי תיעבד הכי? א\"ל: אותן בני אדם הן אמה וכובען אמה, ומדברין מחצייהן, ושמותיהן מבוהלין, ארדא וארטא ופילי בריש, אומרין כפותו - כופתין, אומרין הרוגו - הורגין, אילו הרגו את דוסתאי, מי נתן לינאי אבא בר כמותי! א\"ל: בני אדם הללו קרובים למלכות הן? א\"ל: הן. יש להן סוסים ופרדים שרצים אחריהן? א\"ל: הן. א\"ל: אי הכי שפיר עבדת.",
+   "expert_coverage": 0.908,
+   "expert_located": [
+    [
+     "Gittin 14a",
+     10
+    ],
+    [
+     "Gittin 14b",
+     4
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 14a",
+     18
+    ],
+    [
+     "Gittin 14b",
+     0
+    ],
+    [
+     "Gittin 14b",
+     1
+    ],
+    [
+     "Gittin 14b",
+     2
+    ],
+    [
+     "Gittin 14b",
+     3
+    ],
+    [
+     "Gittin 14b",
+     4
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 14a",
+     18,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r014",
+   "ref": "Gittin 14b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "המחלק נכסיו על פיו, ר' אלעזר אומר: אחד בריא ואחד מסוכן, נכסים שיש להן אחריות - נקנין בכסף ובשטר ובחזקה, ושאין להן אחריות - אין נקנין אלא במשיכה; וחכמים אומרים: אלו ואלו נקנין באמירה, אמרו לו: מעשה באמן של בני רוכל שהיתה חולה, ואמרה תינתן כבינתי לבתי והיא בשנים עשר מנה, ומתה, וקיימו חכמים את דבריה! אמר להם: בני רוכל תקברם אמם.",
+   "expert_coverage": 0.969,
+   "expert_located": [
+    [
+     "Gittin 14b",
+     15
+    ],
+    [
+     "Gittin 15a",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 14b",
+     16
+    ],
+    [
+     "Gittin 14b",
+     17
+    ],
+    [
+     "Gittin 15a",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 14b",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r015",
+   "ref": "Gittin 16b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבה בר בר חנה חלש, עול לגביה רב יהודה ורבה לשיולי ביה; בעו מיניה: שנים שהביאו גט ממדינת הים, צריכין שיאמרו בפנינו נכתב ובפנינו נחתם או אין צריכין? אמר להם: אין צריכין, מה אילו יאמרו בפנינו גירשה מי לא מהימני? אדהכי אתא ההוא חברא, שקלה לשרגא מקמייהו, אמר: רחמנא! או בטולך או בטולא דבר עשו.",
+   "expert_coverage": 0.984,
+   "expert_located": [
+    [
+     "Gittin 16b",
+     8
+    ],
+    [
+     "Gittin 17a",
+     0
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 16b",
+     13
+    ],
+    [
+     "Gittin 16b",
+     14
+    ],
+    [
+     "Gittin 17a",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 16b",
+     14,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r016",
+   "ref": "Gittin 18b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאמר להו לעשרה כתבו גט לאשתי, חתום בי תרי מינייהו ביומיה ואינך מכאן ועד עשרה ימים, אלא לקמיה דרבי יהושע בן לוי, אמר ליה: כדאי הוא ר\"ש לסמוך עליו בשעת הדחק.",
+   "expert_coverage": 0.914,
+   "expert_located": [
+    [
+     "Gittin 18b",
+     0
+    ],
+    [
+     "Gittin 19a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 18b",
+     6
+    ],
+    [
+     "Gittin 19a",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 18b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r017",
+   "ref": "Gittin 19b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דזרק לה גיטא לדביתהו לביני דני, אשתכח מזוזתא; אמר רב נחמן: מזוזתא ביני דני לא שכיחא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 19b",
+     12
+    ],
+    [
+     "Gittin 19b",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 19b",
+     18
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 19b",
+     18,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r018",
+   "ref": "Gittin 19b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דעל לבי כנישתא, שקל ספר תורה יהיב לה לדביתהו, ואמר לה הא גיטך.",
+   "expert_coverage": 0.981,
+   "expert_located": [
+    [
+     "Gittin 19b",
+     15
+    ],
+    [
+     "Gittin 20a",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 19b",
+     20
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 19b",
+     20,
+     20
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r019",
+   "ref": "Gittin 26b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גיטא דאישתכח בי דינא דרב הונא, והוה כתיב ביה בשוירי מתא דעל רכיס נהרא, ואמר רב הונא: חוששין לשני שוירי, ואמר ליה רב חסדא לרבה: פוק ועיין בה, דלאורתא בעי לה מינך רב הונא, נפק דק ואשכח, דתנן: כל מעשה ב\"ד הרי זה יחזיר.",
+   "expert_coverage": 0.954,
+   "expert_located": [
+    [
+     "Gittin 26b",
+     12
+    ],
+    [
+     "Gittin 27a",
+     5
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 27a",
+     4
+    ],
+    [
+     "Gittin 27a",
+     5
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 27a",
+     4,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r020",
+   "ref": "Gittin 27b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבה בר בר חנה אירכס ליה גיטא בי מדרשא, אמר: אי סימנא - אית לי בגויה, אי טביעות עינא - אית לי בגויה; אהדרוה ניהליה. אמר: לא ידענא אי משום סימנא אהדרוה, וקסברי סימנים דאורייתא, אי משום טביעות עינא, ודוקא צורבא מדרבנן, אבל אינש בעלמא לא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 27b",
+     2
+    ],
+    [
+     "Gittin 27b",
+     8
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 27b",
+     8
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 27b",
+     8,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r021",
+   "ref": "Gittin 29b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דשדר לה גיטא לדביתהו, אמר שליח: לא ידענא לה, אמר ליה: זיל יהביה לאבא בר מניומי, דאיהו ידע לה, וליזיל וליתביה ניהלה. אתא ולא אשכח לאבא בר מניומי, אשכחיה לרבי אבהו ורבי חנינא בר פפא ור' יצחק נפחא ויתיב רב ספרא גבייהו, אמרו ליה: מסור מילך קמי דידן, דכי ייתי אבא בר מניומי ניתביניה ליה, וליזיל וליתביניה לה. אמר להו רב ספרא: והא שליח שלא ניתן לגירושין הוא! איכסופו. אמר רבא: קפחינהו רב ספרא לתלתא רבנן סמוכי. א\"ר אשי: במאי קפחינהו? מי קאמר ליה אבא בר מניומי ולא את? איכא דאמרי, אמר רבא: קפחינהו רב ספרא לתלתא רבנן סמוכי בטעותא. א\"ר אשי: מאי טעותא? מאי קא אמר ליה? אבא בר מניומי ולא את.",
+   "expert_coverage": 0.963,
+   "expert_located": [
+    [
+     "Gittin 29b",
+     6
+    ],
+    [
+     "Gittin 30a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 29b",
+     8
+    ],
+    [
+     "Gittin 29b",
+     9
+    ],
+    [
+     "Gittin 29b",
+     10
+    ],
+    [
+     "Gittin 29b",
+     11
+    ],
+    [
+     "Gittin 29b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 29b",
+     8,
+     9
+    ],
+    [
+     "Gittin 29b",
+     12,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r022",
+   "ref": "Gittin 29b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דשדר לה גיטא לדביתהו, א\"ל לשליח: לא תיתביה ניהלה עד תלתין יומין. אתניס בגו תלתין יומין, אתא לקמיה דרבא, אמר רבא: חלה טעמא מאי? משום דאנוס, האי נמי אנוס הוא, אמר ליה: מסור מילך קמי דידן, דלבתר תלתין יומין משוינן שליח ויהיב ליה ניהלה. א\"ל רבנן לרבא: והא שליח שלא ניתן לגירושין הוא! אמר להו: כיון דלבתר תלתין יומין מצי מגרש, כשליח שניתן לגירושין הוא. וליחוש שמא פייס! מי לא תנן: מעכשיו אם לא באתי מכאן ועד יב\"ח, ומת בתוך יב\"ח - הרי זה גט; והוינן בה, וניחוש שמא פייס! ואמר רבה בר רב הונא! הכי אמר אבא מרי משמיה דרב: באומר נאמנת עלי לומר שלא באתי! איכסיף. לסוף איגלאי מילתא דארוסה הואי, אמר רבא: אם אמרו בנשואה, יאמרו בארוסה?",
+   "expert_coverage": 0.919,
+   "expert_located": [
+    [
+     "Gittin 29b",
+     7
+    ],
+    [
+     "Gittin 30a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 29b",
+     9
+    ],
+    [
+     "Gittin 29b",
+     12
+    ],
+    [
+     "Gittin 29b",
+     13
+    ],
+    [
+     "Gittin 29b",
+     14
+    ],
+    [
+     "Gittin 29b",
+     15
+    ],
+    [
+     "Gittin 29b",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 29b",
+     8,
+     9
+    ],
+    [
+     "Gittin 29b",
+     12,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r023",
+   "ref": "Gittin 29b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאמר: אי לא אתינא עד תלתין יומין ליהוי גיטא, אתא ופסקיה מברא, אמר להו: חזו דאתאי, חזו דאתאי, אמר שמואל: לא שמיה מתיא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 29b",
+     13
+    ],
+    [
+     "Gittin 30a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 30a",
+     1
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 30a",
+     1,
+     1
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r024",
+   "ref": "Gittin 29b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאמר להו; אי לא פייסנא לה עד תלתין יומין ליהוי גיטא, אזל פייסה ולא איפייסא, אמר רב יוסף: מי יהיב לה תרקבא דדינרי ולא איפייסא? איכא דאמרי, אמר רב יוסף: מידי תרקבא דדינרי בעי למיתב לה? הא פייסה ולא איפייסא.",
+   "expert_coverage": 0.957,
+   "expert_located": [
+    [
+     "Gittin 29b",
+     8
+    ],
+    [
+     "Gittin 30a",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 30a",
+     2
+    ],
+    [
+     "Gittin 30a",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 30a",
+     2,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r025",
+   "ref": "Gittin 31b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב הונא ורב חסדא הוו יתבי, חליף ואזיל גניבא עלייהו, אמר חד לחבריה: ניקום מקמיה, דבר אוריין הוא, א\"ל אידך: מקמי פלגאה ניקום? אדהכי אתא איהו לגבייהו, אמר להו: במאי עסקיתו? אמרו ליה: ברוחות. אמר להו, הכי אמר רב חנן בר רבא אמר רב: ד' רוחות מנשבות בכל יום, ורוח צפונית מנשבת עם כולן, שאלמלא כן, אין העולם מתקיים אפילו שעה אחת, ורוח דרומית קשה מכולן, ואלמלא בן נץ מעמידה, מחרבת כל העולם כולו מפניה, שנאמר: המבינתך יאבר נץ יפרש כנפיו לתימן.",
+   "expert_coverage": 0.966,
+   "expert_located": [
+    [
+     "Gittin 31b",
+     4
+    ],
+    [
+     "Gittin 31b",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 31b",
+     9
+    ],
+    [
+     "Gittin 31b",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 31b",
+     9,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r026",
+   "ref": "Gittin 31b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבא ורב נחמן בר יצחק הוו יתבי, הוה חליף ואזיל רב נחמן בר יעקב דיתיב בגוהרקא דדהבא ופריס עליה סרבלא דכרתי, רבא אזל לגביה, רב נחמן בר יצחק לא אזל לגביה, אמר: דלמא מאינשי דבי ריש גלותא נינהו, רבא צריך להו, אנא לא צריכנא להו. כדחזא דרב נחמן בר יעקב הוה אזיל לגביה, גלי לדרעיה, אמר: שדיא נשיב! אמר רבא, הכי אמר רב: אשה מפלת בו, ושמואל אמר: אפי' מרגלית שבים מרקבת בו, ר' יוחנן אמר: אפי' שכבת זרע שבמעי אשה מסרחת בו.",
+   "expert_coverage": 0.953,
+   "expert_located": [
+    [
+     "Gittin 31b",
+     5
+    ],
+    [
+     "Gittin 31b",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 31b",
+     11
+    ],
+    [
+     "Gittin 31b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 31b",
+     11,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r027",
+   "ref": "Gittin 33b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "חמשה סבי הוינן קמיה דר' יאשיה דמן אושא, אתא ההוא גברא קמיה ואשקליה גיטא על כורחיה, אמר לן: זילו אטמורו וכתבו לה.",
+   "expert_coverage": 0.963,
+   "expert_located": [
+    [
+     "Gittin 33b",
+     5
+    ],
+    [
+     "Gittin 33b",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 33b",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 33b",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r028",
+   "ref": "Gittin 33b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "גידול בר רעילאי שדר לה גיטא לדביתהו, אזל שליחא אשכחה דהוה יתבה ונוולה, אמר לה: הא גיטיך, אמרה ליה: זיל השתא מיהא ותא למחר. אזל לגביה וא\"ל, פתח ואמר: ברוך הטוב והמטיב.",
+   "expert_coverage": 0.967,
+   "expert_located": [
+    [
+     "Gittin 33b",
+     11
+    ],
+    [
+     "Gittin 34a",
+     2
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 34a",
+     2
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 34a",
+     2,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r029",
+   "ref": "Gittin 33b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב ששת אשקליה גיטא לההוא גברא בעל כרחיה, ואמר להו לסהדי: הכי אמר לכו רב ששת לבטל גיטא, ואצרכיה רב ששת גיטא אחרינא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 33b",
+     14
+    ],
+    [
+     "Gittin 34a",
+     5
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 34a",
+     5
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 34a",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r030",
+   "ref": "Gittin 34a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב יהודה אשקליה גיטא לחתניה דר' ירמיה ביראה ובטליה, תנא אשקליה ובטליה, הדר תנא ואשקליה על כרחיה, ואמר להו לסהדי: אותיבו קרי באוניכו וכתובו ליה; ואי סלקא דעתך גלוי דעתא בגיטא מילתא היא, הא חזו ליה דקא רהיט בתרייהו.",
+   "expert_coverage": 0.98,
+   "expert_located": [
+    [
+     "Gittin 34a",
+     1
+    ],
+    [
+     "Gittin 34a",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 34a",
+     7
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 34a",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r031",
+   "ref": "Gittin 34a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאמר להו: אי לא נסיבנא עד תלתין יומין ליהוי גיטא, כי מטו תלתין יומין, אמר להו: הא טרחנא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 34a",
+     5
+    ],
+    [
+     "Gittin 34a",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 34a",
+     9
+    ],
+    [
+     "Gittin 34a",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 34a",
+     9,
+     9
+    ],
+    [
+     "Gittin 34a",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE",
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r032",
+   "ref": "Gittin 34b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "מעשה באדם אחד בשני בצורת שהפקיד דינר זהב אצל אלמנה, והניחתו בכד של קמח, ואפאתו בפת ונתנתו לעני, לימים בא בעל הדינר ואמר לה: הבי לי דינרי, אמרה ליה: יהנה סם המות באחד מבניה של אותה אשה אם נהניתי מדינרך כלום! אמרו: לא היו ימים מועטין עד שמת אחד מבניה, וכששמעו חכמים בדבר אמרו: מה מי שנשבע באמת - כך, הנשבע על שקר - על אחת כמה וכמה; מאי טעמא איענשה? דאישתרשי לה מקום דינר.",
+   "expert_coverage": 0.97,
+   "expert_located": [
+    [
+     "Gittin 34b",
+     5
+    ],
+    [
+     "Gittin 35a",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 35a",
+     1
+    ],
+    [
+     "Gittin 35a",
+     2
+    ],
+    [
+     "Gittin 35a",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 35a",
+     1,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r033",
+   "ref": "Gittin 35a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דאתאי לקמיה דרב הונא, אמר לה: מה אעביד ליך, דרב לא מגבי כתובה לארמלתא. אמרה ליה: מידי הוא טעמא אלא דלמא נקיטנא מידי מכתובתי, חי ה' צבאות אם נהניתי מכתובתי כלום! אמר רב הונא: מודה רב בקופצת.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 35a",
+     4
+    ],
+    [
+     "Gittin 35a",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 35a",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 35a",
+     10,
+     10
+    ],
+    [
+     "Gittin 35a",
+     10,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE",
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r034",
+   "ref": "Gittin 35a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דאתאי לקמיה דרבה בר רב הונא, אמר לה: מאי אעביד ליך, דרב לא מגבי כתובה לארמלתא, ואבא מרי לא מגבי כתובה לארמלתא. אמרה ליה: הב לי מזוני, אמר לה: מזוני נמי לית ליך, דאמר רב יהודה אמר שמואל: התובעת כתובתה בב\"ד - אין לה מזונות. אמרה ליה: אפכוה לכורסיה, כבי תרי עבדא לי! הפכוה לכורסיה ותרצוה, ואפילו הכי לא איפרק מחולשא.",
+   "expert_coverage": 0.944,
+   "expert_located": [
+    [
+     "Gittin 35a",
+     5
+    ],
+    [
+     "Gittin 35a",
+     13
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 35a",
+     11
+    ],
+    [
+     "Gittin 35a",
+     12
+    ],
+    [
+     "Gittin 35a",
+     13
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 35a",
+     10,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r035",
+   "ref": "Gittin 35b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא מקרי דרדקי דאדריה רב אחא על דעת רבים, דהוה פשע בינוקי, ואהדריה רבינא, דלא אישתכח דדייק כוותיה.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 35b",
+     7
+    ],
+    [
+     "Gittin 36a",
+     2
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 36a",
+     2
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 36a",
+     2,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r036",
+   "ref": "Gittin 37a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "קריביה דר' אסי הוה ליה ההוא שטרא דהוה כתיב ביה אחריות נכסים, אתא לקמיה דר' אסי, אמר ליה: משמט או אינו משמט? א\"ל: אינו משמט, שבקיה ואתא לקמיה דר' יוחנן, א\"ל: משמט. אתא ר' אסי לקמיה דר' יוחנן, א\"ל: משמט או אינו משמט? אמר ליה: משמט, והא מר הוא דאמר אינו משמט: א\"ל: וכי מפני שאנו מדמין נעשה מעשה? א\"ל: והתני' כוותיה דמר! א\"ל: דלמא ההיא בית שמאי היא, דאמרי: שטר העומד לגבות כגבוי דמי.",
+   "expert_coverage": 0.848,
+   "expert_located": [
+    [
+     "Gittin 37a",
+     6
+    ],
+    [
+     "Gittin 37b",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 37a",
+     11
+    ],
+    [
+     "Gittin 37a",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 37a",
+     10,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r037",
+   "ref": "Gittin 37a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אבא בר מרתא דהוא אבא בר מניומי הוה מסיק ביה רבה זוזי, אייתינהו ניהליה בשביעית, אמר ליה: משמט אני, שקלינהו ואזל. אתא אביי אשכחיה דהוה עציב, אמר ליה: אמאי עציב מר? אמר ליה: הכי הוה מעשה. אזל לגביה, אמר ליה: אמטת ליה זוזי למר? אמר ליה: אין. אמר ליה: ומאי אמר לך? אמר ליה: משמט אני. אמר ליה: ואמרת ליה אף על פי כן? אמר ליה: לא. אמר ליה: ואי אמרת ליה אף על פי כן הוה שקלינהו מינך, השתא מיהת אמטינהו ניהליה ואימא ליה אע\"פ כן. אזל אמטינהו ניהליה ואמר ליה אף על פי כן, שקלינהו מיניה, אמר: לא הוה ביה דעתא בהאי צורבא מרבנן מעיקרא.",
+   "expert_coverage": 0.965,
+   "expert_located": [
+    [
+     "Gittin 37a",
+     11
+    ],
+    [
+     "Gittin 37b",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 37b",
+     2
+    ],
+    [
+     "Gittin 37b",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 37b",
+     2,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r038",
+   "ref": "Gittin 38a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמתיה דמר שמואל אשתבאי, פרקוה לשום אמהתא ושדרוה ליה, שלחו ליה: אנן כרשב\"ג סבירא לן, את אי נמי כרבנן סבירא לך, אנן לשום אמהתא פרקינן לה ניהלה.",
+   "expert_coverage": 0.938,
+   "expert_located": [
+    [
+     "Gittin 38a",
+     3
+    ],
+    [
+     "Gittin 38a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38a",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 38a",
+     9,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r039",
+   "ref": "Gittin 38a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמתיה דרבי אבא בר זוטרא אישתבאי, פרקה ההוא תרמודאה לשום איתתא, שלחו ליה לדידיה: אי יאות עבדת, שדר לה גיטא דחירותא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 38a",
+     6
+    ],
+    [
+     "Gittin 38a",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38a",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 38a",
+     12,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r040",
+   "ref": "Gittin 38a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא אמתא דהות בפומבדיתא דהוו קא מעבדי בה אינשי איסורא, אמר אביי: אי לאו דאמר רב יהודה אמר שמואל כל המשחרר עבדו עובר בעשה, הוה כייפנא ליה למרה וכתיב לה גיטא דחירותא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 38a",
+     10
+    ],
+    [
+     "Gittin 38a",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38a",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 38a",
+     16,
+     16
+    ],
+    [
+     "Gittin 38a",
+     16,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE",
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r041",
+   "ref": "Gittin 38a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רב חנינא בר רב קטינא אמר ר' יצחק: מעשה באשה אחת שחציה שפחה וחציה בת חורין, וכפו את רבה ועשאה בת חורין, ואמר רב נחמן בר יצחק: מנהג הפקר נהגו בה.",
+   "expert_coverage": 0.957,
+   "expert_located": [
+    [
+     "Gittin 38a",
+     11
+    ],
+    [
+     "Gittin 38b",
+     0
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38a",
+     17
+    ],
+    [
+     "Gittin 38b",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 38a",
+     16,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r042",
+   "ref": "Gittin 38a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "מעשה בר' אליעזר שנכנס בבית הכנסת ולא מצא עשרה, ושחרר עבדו והשלימו לעשרה.",
+   "expert_coverage": 0.962,
+   "expert_located": [
+    [
+     "Gittin 38a",
+     15
+    ],
+    [
+     "Gittin 38b",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38b",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 38b",
+     3,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r043",
+   "ref": "Gittin 38b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רבה, בהני תלת מילי נחתי בעלי בתים מנכסיהון: דמפקי עבדייהו לחירותא, ודסיירי נכסייהו בשבתא, ודקבעי סעודתייהו בשבתא בעידן בי מדרשא, דא\"ר חייא בר אבא א\"ר יוחנן: שתי משפחות היו בירושלים, אחת קבעה סעודתא בשבתא ואחת קבעה סעודתא בערב שבת, ושתיהן נעקרו.",
+   "expert_coverage": 0.91,
+   "expert_located": [
+    [
+     "Gittin 38b",
+     0
+    ],
+    [
+     "Gittin 38b",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 38b",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": false,
+   "detector_span": [
+    [
+     "Gittin 38b",
+     3,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r044",
+   "ref": "Gittin 39b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רמי בר חמא א\"ר נחמן: הלכה כר' שמעון, ורב יוסף בר חמא א\"ר יוחנן: אין הלכה כר' שמעון. אשכחיה רב נחמן בר יצחק לרבא בר שאילתא דהוה קאי אפיתחא דבי תפלה, א\"ל: הלכה או אין הלכה? א\"ל: אני אומר אין הלכה, ורבנן דאתו ממחוזא אמרי: אמר רבי זירא משמיה דרב נחמן הלכה, וכי אתאי לסורא אשכחתיה לר' חייא בר אבין, אמרי לי': אימא לי איזי גופא דעובדא היכי הוה, אמר לי: דההיא אמתא דהוה מרה שכיב מרע, אתיא בכיא קמיה, אמרה ליה: עד אימת תשתעביד ותיזיל ההיא איתתא? שקל כומתיה שדא בה, אמר לה: זיל קני הא וקני נפשך, אתו לקמיה דרב נחמן, אמר להו: לא עשה ולא כלום, מאן דחזא, סבר, משום דהלכה כר' שמעון, ולא היא, אלא משום דהוה ליה כליו של מקנה.",
+   "expert_coverage": 0.915,
+   "expert_located": [
+    [
+     "Gittin 39b",
+     8
+    ],
+    [
+     "Gittin 39b",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 39b",
+     12
+    ],
+    [
+     "Gittin 39b",
+     13
+    ],
+    [
+     "Gittin 39b",
+     14
+    ],
+    [
+     "Gittin 39b",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 39b",
+     13,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r045",
+   "ref": "Gittin 40a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דסקרתא דעבדי דאזדבן לעובד כוכבים, כלו מרוותא בתראי, אתו לקמיה דרבינא, אמר להו: זילו אהדרו אבני מרוותא קמאי, ויכתבו לכו גיטא דחרותא. אמרו ליה רבנן לרבינא, והאמר אמימר: המפקיר עבדו ומת, אותו העבד אין לו תקנה! אמר להו: אנא כרב דימי סבירא לי. אמרו ליה: דרב דימי טעותא היא! אמר להו: מאי טעותא? דלא אמרה בלשון שחרור, הא אמרה בלשון שחרור הכי נמי.",
+   "expert_coverage": 0.941,
+   "expert_located": [
+    [
+     "Gittin 40a",
+     6
+    ],
+    [
+     "Gittin 40b",
+     2
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 40a",
+     11
+    ],
+    [
+     "Gittin 40a",
+     12
+    ],
+    [
+     "Gittin 40a",
+     13
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 40a",
+     12,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r046",
+   "ref": "Gittin 40a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא עבדא דבי תרי, קם חד מינייהו ושחררי' לפלגי', אמר אידך: השתא שמעי בי רבנן ומפסדו ליה מינאי, אזל אקנייה לבנו קטן; שלחה רב יוסף בריה דרבא לקמיה דרב פפא, שלח ליה: כאשר עשה כן יעשה לו גמולו ישיב לו בראשו, אנן קים לן בינוקא דמקרבא דעתיה לגבי זוזי, מוקמינן ליה אפוטרופוס, ומקרקיש ליה זוזי, וכתב ליה גיטא דחירותא על שמיה.",
+   "expert_coverage": 0.953,
+   "expert_located": [
+    [
+     "Gittin 40a",
+     9
+    ],
+    [
+     "Gittin 40b",
+     0
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 40a",
+     14
+    ],
+    [
+     "Gittin 40a",
+     15
+    ],
+    [
+     "Gittin 40b",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 40a",
+     14,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r047",
+   "ref": "Gittin 44b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא עבדא דערק מחוצה לארץ לארץ, אזל מריה אבתריה. אתא לקמיה דרבי אמי, אמר ליה: נכתוב לך שטרא אדמיה וכתוב ליה גיטא דחירותא, ואי לא, מפקנא ליה מינך.",
+   "expert_coverage": 0.971,
+   "expert_located": [
+    [
+     "Gittin 44b",
+     16
+    ],
+    [
+     "Gittin 45a",
+     4
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 45a",
+     4
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 45a",
+     4,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r048",
+   "ref": "Gittin 45a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב חסדא ערק ליה עבדא לבי כותאי, שלח להו: הדרוה ניהלי, שלחו ליה: לא תסגיר עבד אל אדוניו. שלח להו: ההוא בעבד שברח מחו\"ל לארץ, וכדרבי אחי ברבי יאשיה. ומאי שנא דשלח להו כדר' אחי בר' יאשיה? משום דמשמע להו קראי.",
+   "expert_coverage": 0.888,
+   "expert_located": [
+    [
+     "Gittin 45a",
+     3
+    ],
+    [
+     "Gittin 45a",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 45a",
+     9
+    ],
+    [
+     "Gittin 45a",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 45a",
+     9,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r049",
+   "ref": "Gittin 45a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אביי אירכס ליה חמרא בי כותאי, שלח להו: שדרוה לי, שלחו ליה: שלח סימנא, שלח להו: דחיוורא כריסיה. שלחו ליה: אי לאו דנחמני את, לא הוה משדרנא ליה ניהלך, אטו כולי חמרי לאו כריסייהו חיוורין נינהו?",
+   "expert_coverage": 0.976,
+   "expert_located": [
+    [
+     "Gittin 45a",
+     11
+    ],
+    [
+     "Gittin 45b",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 45a",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 45a",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r050",
+   "ref": "Gittin 45a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "בנתיה דרב נחמן בחשן קדרא בידייהו. קשיא ליה לרב עיליש, כתיב: אדם אחד מאלף מצאתי ואשה בכל אלה לא מצאתי, הא איכא בנתיה דרב נחמן! גרמא להו מילתא ואשתביין, ואישתבאי איהו נמי בהדייהו. יומא חד הוה יתיב גביה ההוא גברא דהוה ידע בלישנא דציפורי, אתא עורבא וקא קרי ליה, אמר ליה: מאי קאמר? אמר ליה: עיליש ברח עיליש ברח, אמר: עורבא שיקרא הוא ולא סמיכנא עליה. אדהכי אתא יונה וקא קריא, אמר ליה: מאי קאמרה? א\"ל: עיליש ברח עיליש ברח, אמר: כנסת ישראל כיונה מתילא, ש\"מ מתרחיש לי ניסא. אמר: איזיל אחזי בנתיה דרב נחמן, אי קיימן בהימנותייהו אהדרינהו. אמר: נשי כל מילי דאית להו סדרן להדדי בבית הכסא, שמעינהו דקאמרן: עדי גוברין ונהרדעי גוברין, לימא להו לשבוייהו דלירחקינהו מהכא, דלא ליתו אינשין ולישמעי וליפרקינן. קם ערק, אתא איהו וההוא גברא, לדידיה איתרחיש ליה ניסא עבר במברא, וההוא גברא אשכחוה וקטלוה. כי הדרן ואתן, אמר: הוו קא בחשן קידרא בכשפים.",
+   "expert_coverage": 0.964,
+   "expert_located": [
+    [
+     "Gittin 45a",
+     17
+    ],
+    [
+     "Gittin 45b",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 45a",
+     17
+    ],
+    [
+     "Gittin 45a",
+     18
+    ],
+    [
+     "Gittin 45a",
+     19
+    ],
+    [
+     "Gittin 45a",
+     20
+    ],
+    [
+     "Gittin 45a",
+     21
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 45a",
+     17,
+     21
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r051",
+   "ref": "Gittin 45b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא טייעתא דאייתי חייתא דתפילי לקמיה דאביי, אמר לה: יהבת לי ריש ריש בתמרי? אימליא זיהרא שקלא שדתינהו בנהרא, אמר: לא אבעי לי לזלזולינהו באפה כולי האי.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 45b",
+     5
+    ],
+    [
+     "Gittin 45b",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 45b",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 45b",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r052",
+   "ref": "Gittin 46b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "הנהו בני בי מיכסי דיזפי זוזי מעובדי כוכבים ולא הוה להו למפרעינהו, אתו וקא גרבי להו, אתו לקמיה דרב הונא, אמר להו: מאי איעביד לכו, דתנן: המוכר את עצמו ואת בניו לעובדי כוכבים - אין פודין אותו. אמר ליה רבי אבא: לימדתני רבינו, והוא שמכר ושנה ושילש! אמר ליה: הני מרגל רגילי דעבדי הכי.",
+   "expert_coverage": 0.908,
+   "expert_located": [
+    [
+     "Gittin 46b",
+     9
+    ],
+    [
+     "Gittin 46b",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 46b",
+     14
+    ],
+    [
+     "Gittin 46b",
+     15
+    ],
+    [
+     "Gittin 46b",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 46b",
+     15,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r053",
+   "ref": "Gittin 46b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דזבין נפשיה ללודאי, אתא לקמיה דרבי אמי, אמר ליה:",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 46b",
+     11
+    ],
+    [
+     "Gittin 46b",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 46b",
+     17
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 46b",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r054",
+   "ref": "Gittin 46b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "פירקן, אמר ליה, תנן: המוכר עצמו ואת בניו לעובדי כוכבים - אין פודין אותו, אבל פודין את הבנים משום קלקולא, וכ\"ש הכא דאיכא קטלא. אמרו לי' רבנן לר' אמי: האי ישראל מומר הוא, דקא חזו ליה דקאכיל נבילות וטריפות! אמר להו: אימא לתיאבון הוא דקאכיל. אמרו ליה: והא זמנין דאיכא היתירא ואיסורא קמיה, ושביק היתירא ואכיל איסורא! א\"ל: זיל, לא קא שבקי לי דאפרקינך.",
+   "expert_coverage": 0.874,
+   "expert_located": [
+    [
+     "Gittin 46b",
+     12
+    ],
+    [
+     "Gittin 47a",
+     2
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 46b",
+     13
+    ],
+    [
+     "Gittin 47a",
+     0
+    ],
+    [
+     "Gittin 47a",
+     1
+    ],
+    [
+     "Gittin 47a",
+     2
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": false,
+   "detector_span": [
+    [
+     "Gittin 46b",
+     15,
+     16
+    ],
+    [
+     "Gittin 46b",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r055",
+   "ref": "Gittin 46b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ריש לקיש זבין נפשיה ללודאי, שקל בהדיה חייתא וגלגלתא, אמר: גמירי, דיומא בתרא כל דבעי מינייהו עבדי ליה, כי היכי דליחול אדמיה. יומא בתרא אמרו ליה: מאי ניחא לך? אמר להו: בעינא אקמטינכו ואותבינכו, וכל חד מינייכו אמחי' חייתא ופלגא. קמטינהו ואותבינהו כל חד מינייהו, כד מחייה חד חייתא נפק נשמתיה חרקיניה לשיניה, א\"ל: אחוכי קא מחייכת בי? אכתי פש לך גבי פלגא דחייתא, קטלינהו כולהו. נפק ואתא, יתיב קאכיל ושתי, אמרה ליה ברתיה: לא בעית מידי למזגא עליה? אמר לה: בתי, כריסי כרי. כי נח נפשיה שבק קבא דמוריקא, קרא אנפשיה: ועזבו לאחרים חילם.",
+   "expert_coverage": 0.968,
+   "expert_located": [
+    [
+     "Gittin 46b",
+     17
+    ],
+    [
+     "Gittin 47a",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 47a",
+     3
+    ],
+    [
+     "Gittin 47a",
+     4
+    ],
+    [
+     "Gittin 47a",
+     5
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 47a",
+     3,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r056",
+   "ref": "Gittin 52a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא אפוטרופוס דהוה בשבבותיה דר' מאיר, דהוה קא מזבין ארעתא וזבין עבדי, ולא שבקיה ר' מאיר; אחוו ליה בחלמיה אני להרוס ואתה לבנות, אפילו הכי לא אשגח, אמר: דברי חלומות לא מעלין ולא מורידין. הנהו בי תרי דאיגרי בהו שטן, דכל בי שמשי הוו קא מינצו בהדי הדדי, איקלע רבי מאיר להתם, עכבינהו תלתא בי שמשי עד דעבד להו שלמא, שמעיה דקאמר: ווי, דאפקיה ר' מאיר לההוא גברא מביתיה.",
+   "expert_coverage": 0.969,
+   "expert_located": [
+    [
+     "Gittin 52a",
+     6
+    ],
+    [
+     "Gittin 52a",
+     13
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 52a",
+     12
+    ],
+    [
+     "Gittin 52a",
+     13
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 52a",
+     12,
+     12
+    ],
+    [
+     "Gittin 52a",
+     13,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE",
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r057",
+   "ref": "Gittin 52a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא אפוטרופוס דהוה בשבבותיה דר' יהושע בן לוי, דהוה קא מזבין ארעא וזבין תורי, ולא אמר ליה ולא מידי; סבר לה כר' יוסי, דתניא, א\"ר יוסי: מימי לא קריתי לאשתי אשתי ולשורי שורי, אלא לאשתי - ביתי ולשורי - שדי.",
+   "expert_coverage": 0.932,
+   "expert_located": [
+    [
+     "Gittin 52a",
+     8
+    ],
+    [
+     "Gittin 52a",
+     14
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 52a",
+     14
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 52a",
+     14,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r058",
+   "ref": "Gittin 52a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "הנהו יתמי דהוו סמיכי גבי ההיא סבתא, הוה להו תורתא, שקלה וזבינתה ניהלייהו. אתו קרובים לקמיה דרב נחמן, אמרו ליה: מאי עבידתה דזבנא? אמר להו: יתומים שסמכו אצל בעל הבית תנן. והא אייקר! ברשותא דלוקח אייקר. והא לא נקיטי דמי! אמר להו: א\"כ, היינו דרב חנילאי בר אידי אמר שמואל, דאמר רב חנילאי בר אידי אמר שמואל: נכסי יתומין הרי הן כהקדש, ולא מקני אלא בכספא.",
+   "expert_coverage": 0.953,
+   "expert_located": [
+    [
+     "Gittin 52a",
+     9
+    ],
+    [
+     "Gittin 52a",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 52a",
+     15
+    ],
+    [
+     "Gittin 52a",
+     16
+    ],
+    [
+     "Gittin 52a",
+     17
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 52a",
+     15,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r059",
+   "ref": "Gittin 52a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "חמריה דרבנא עוקבא יתמא, משכוה בארבעה ארבעה ואייקר וקם בשיתא שיתא, אתו לקמיה דרב נחמן, אמר להו: היינו דרב חנילאי בר אידי, דאמר רב חנילאי בר אידי אמר שמואל: נכסי יתומין הרי הן כהקדש, ולא מקני אלא בכספא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 52a",
+     12
+    ],
+    [
+     "Gittin 52a",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 52a",
+     17
+    ],
+    [
+     "Gittin 52a",
+     18
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 52a",
+     15,
+     17
+    ],
+    [
+     "Gittin 52a",
+     18,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r060",
+   "ref": "Gittin 52a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "עמרם צבעא אפוטרופא דיתמי הוה, אתו קרובים לקמיה דרב נחמן, אמרי ליה: קא לביש ומכסי מיתמי! אמר להו: כי היכי דלישתמען מיליה. קאכיל ושתי מדידהו, ולא אמוד! אימור מציאה אשכח. והא קא מפסיד! אמר להו: אייתו לי סהדי דמפסיד ואיסלקיניה, דאמר רב הונא חברין משמיה דרב: אפוטרופוס דמפסיד מסלקינן ליה.",
+   "expert_coverage": 0.974,
+   "expert_located": [
+    [
+     "Gittin 52a",
+     23
+    ],
+    [
+     "Gittin 52b",
+     5
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 52b",
+     4
+    ],
+    [
+     "Gittin 52b",
+     5
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 52b",
+     4,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r061",
+   "ref": "Gittin 53b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "באתריה דרבי יהודה חמירא להו שביעית, דההוא דאמר ליה לחבירו: דייר בר דיירתא! אמר ליה: אנא לא אכלי פירי דשביעית כוותך.",
+   "expert_coverage": 0.963,
+   "expert_located": [
+    [
+     "Gittin 53b",
+     15
+    ],
+    [
+     "Gittin 54a",
+     5
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 54a",
+     4
+    ],
+    [
+     "Gittin 54a",
+     5
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 54a",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r062",
+   "ref": "Gittin 54b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאמר ליה לחבריה: טהרות שעשיתי עמך ביום פלוני נטמאו, אתא לקמיה דרבי אמי, אמר ליה: שורת הדין אינו נאמן. אמר לפניו רבי אסי: רבי, אתה אומר כן? הכי אמר ר' יוחנן משום רבי יוסי: מה אעשה שהתורה האמינתו.",
+   "expert_coverage": 0.979,
+   "expert_located": [
+    [
+     "Gittin 54b",
+     3
+    ],
+    [
+     "Gittin 54b",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 54b",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 54b",
+     9,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r063",
+   "ref": "Gittin 54b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאתא לקמיה דרבי אמי, אמר ליה: ספר תורה שכתבתי לפלוני, אזכרות שלו לא כתבתים לשמן, אמר ליה: ספר תורה ביד מי? אמר ליה: ביד לוקח, אמר ליה: נאמן אתה להפסיד שכרך, ואי אתה נאמן להפסיד ספר תורה. אמר ליה רבי ירמיה: נהי דהפסיד שכר אזכרות, שכר דספר תורה כוליה מי הפסיד? אמר ליה: אין, שכל ספר תורה שאין אזכרות שלו כתובות לשמן - אינו שוה כלום.",
+   "expert_coverage": 0.989,
+   "expert_located": [
+    [
+     "Gittin 54b",
+     3
+    ],
+    [
+     "Gittin 54b",
+     14
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 54b",
+     13
+    ],
+    [
+     "Gittin 54b",
+     14
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 54b",
+     13,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r064",
+   "ref": "Gittin 54b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא דאתא לקמיה דר' אבהו, א\"ל: ס\"ת שכתבתי לפלוני, גוילין שלו לא עיבדתים לשמן, א\"ל: ספר תורה ביד מי? א\"ל: ביד לוקח, אמר לו: מתוך שאתה נאמן להפסיד שכרך, אתה נאמן להפסיד ספר תורה.",
+   "expert_coverage": 0.855,
+   "expert_located": [
+    [
+     "Gittin 54b",
+     12
+    ],
+    [
+     "Gittin 54b",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 54b",
+     13
+    ],
+    [
+     "Gittin 54b",
+     18
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 54b",
+     13,
+     14
+    ],
+    [
+     "Gittin 54b",
+     18,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE",
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r065",
+   "ref": "Gittin 55b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רב שיזבי: כרת מדבריהם. אחיכו עליה, כרת מדבריהם מי איכא? אמר להו רבא: גברא רבה אמר מילתא לא תחוכו עלה, כרת שעל ידי דבריהן באתה לו, אוקמוה רבנן ברשותיה כי היכי דליחייב עלה.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 55b",
+     0
+    ],
+    [
+     "Gittin 55b",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 55b",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 55b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r066",
+   "ref": "Gittin 55b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אקמצא ובר קמצא חרוב ירושלים, דההוא גברא דרחמיה קמצא ובעל דבביה בר קמצא, עבד סעודתא, אמר ליה לשמעיה: זיל אייתי לי קמצא, אזל אייתי ליה בר קמצא. אתא אשכחיה דהוה יתיב, אמר ליה: מכדי ההוא גברא בעל דבבא דההוא גברא הוא, מאי בעית הכא? קום פוק! אמר ליה: הואיל ואתאי שבקן, ויהיבנא לך דמי מה דאכילנא ושתינא, אמר ליה: לא. אמר ליה: יהיבנא לך דמי פלגא דסעודתיך! אמר ליה: לא. אמר ליה: יהיבנא לך דמי כולה סעודתיך! א\"ל: לא. נקטיה בידיה ואוקמיה ואפקיה. אמר: הואיל והוו יתבי רבנן ולא מחו ביה, ש\"מ קא ניחא להו, איזיל איכול בהו קורצא בי מלכא. אזל אמר ליה לקיסר: מרדו בך יהודאי! א\"ל: מי יימר? א\"ל: שדר להו קורבנא, חזית אי מקרבין ליה. אזל שדר בידיה עגלא תלתא. בהדי דקאתי שדא ביה מומא בניב שפתים, ואמרי לה בדוקין שבעין, דוכתא דלדידן הוה מומא ולדידהו לאו מומא הוא. סבור רבנן לקרוביה משום שלום מלכות, אמר להו רבי זכריה בן אבקולס, יאמרו: בעלי מומין קריבין לגבי מזבח! סבור למיקטליה, דלא ליזיל ולימא, אמר להו רבי זכריה, יאמרו: מטיל מום בקדשים יהרג! אמר רבי יוחנן: ענוותנותו של רבי זכריה בן אבקולס, החריבה את ביתנו, ושרפה את היכלנו, והגליתנו מארצנו.",
+   "expert_coverage": 0.943,
+   "expert_located": [
+    [
+     "Gittin 55b",
+     16
+    ],
+    [
+     "Gittin 56a",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 55b",
+     16
+    ],
+    [
+     "Gittin 55b",
+     17
+    ],
+    [
+     "Gittin 56a",
+     0
+    ],
+    [
+     "Gittin 56a",
+     1
+    ],
+    [
+     "Gittin 56a",
+     2
+    ],
+    [
+     "Gittin 56a",
+     3
+    ],
+    [
+     "Gittin 56a",
+     4
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 55b",
+     15,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r067",
+   "ref": "Gittin 55b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "שדר עלוייהו לנירון קיסר. כי קאתי, שדא גירא למזרח אתא נפל בירושלים, למערב - אתא נפל בירושלים, לארבע רוחות השמים - אתא נפל בירושלים. א\"ל לינוקא: פסוק לי פסוקיך, אמר ליה: ונתתי את נקמתי באדום ביד עמי ישראל וגו', אמר: קודשא בריך הוא בעי לחרובי ביתיה, ובעי לכפורי ידיה בההוא גברא! ערק ואזל ואיגייר, ונפק מיניה ר\"מ.",
+   "expert_coverage": 0.976,
+   "expert_located": [
+    [
+     "Gittin 55b",
+     11
+    ],
+    [
+     "Gittin 56a",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56a",
+     5
+    ],
+    [
+     "Gittin 56a",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56a",
+     5,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r068",
+   "ref": "Gittin 56a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "שדריה עילוייהו לאספסיינוס קיסר. אתא, צר עלה תלת שני. הוו בה הנהו תלתא עתירי: נקדימון בן גוריון, ובן כלבא שבוע, ובן ציצית הכסת; נקדימון בן גוריון, שנקדה לו חמה בעבורו; בן כלבא שבוע, שכל הנכנס לביתו כשהוא רעב ככלב, יוצא כשהוא שבע; בן ציצית הכסת, שהיתה ציצתו נגררת על גבי כסתות. איכא דאמרי: שהיתה כסתו מוטלת בין גדולי רומי. חד אמר להו: אנא זיינא להו בחיטי ושערי, וחד אמר להו: בדחמרא ובדמלחא ומשחא, וחד אמר להו: בדציבי, ושבחו רבנן לדציבי; דרב חסדא כל אקלידי הוה מסר לשמעיה בר מדציבי, דאמר רב חסדא: אכלבא דחיטי בעי שיתין אכלבי דציבי. הוה להו למיזן עשרים וחד שתא. הוו בהו הנהו בריוני, אמרו להו רבנן: ניפוק ונעביד שלמא בהדייהו, לא שבקינהו. אמרו להו: ניפוק ונעביד קרבא בהדייהו, אמרו להו רבנן: לא מסתייעא מילתא. קמו קלנהו להנהו אמברי דחיטי ושערי, והוה כפנא.",
+   "expert_coverage": 0.987,
+   "expert_located": [
+    [
+     "Gittin 56a",
+     1
+    ],
+    [
+     "Gittin 56a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56a",
+     7
+    ],
+    [
+     "Gittin 56a",
+     8
+    ],
+    [
+     "Gittin 56a",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56a",
+     7,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r069",
+   "ref": "Gittin 56a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "מרתא בת בייתוס עתירתא דירושלים הויא, שדרתה לשלוחה ואמרה ליה: זיל אייתי לי סמידא. אדאזל איזדבן, אתא אמר לה: סמידא ליכא, חיורתא איכא, אמרה ליה: זיל אייתי לי. אדאזל אזדבן, אתא ואמר לה: חיורתא ליכא, גושקרא איכא, א\"ל: זיל אייתי לי. אדאזל אזדבן, אתא ואמר לה: גושקרא ליכא, קימחא דשערי איכא, אמרה ליה: זיל אייתי לי. אדאזל איזדבן, הוה שליפא מסאנא, אמרה: איפוק ואחזי אי משכחנא מידי למיכל, איתיב לה פרתא בכרעא ומתה. קרי עלה רבן יוחנן בן זכאי: הרכה בך והענוגה אשר לא נסתה כף רגלה. איכא דאמרי: גרוגרות דר' צדוק אכלה, ואיתניסא ומתה.",
+   "expert_coverage": 0.948,
+   "expert_located": [
+    [
+     "Gittin 56a",
+     4
+    ],
+    [
+     "Gittin 56a",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56a",
+     10
+    ],
+    [
+     "Gittin 56a",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56a",
+     10,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r070",
+   "ref": "Gittin 56a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "דר' צדוק יתיב ארבעין שנין בתעניתא דלא ליחרב ירושלים, כי הוה אכיל מידי הוה מיתחזי מאבראי, וכי הוה בריא, מייתי ליה גרוגרות, מייץ מייהו ושדי להו. כי הוה קאי ניחא נפשה, אפיקתא לכל דהבא וכספא שדיתיה בשוקא, אמרה: האי למאי מיבעי לי! והיינו דכתיב: כספם בחוצות ישליכו.",
+   "expert_coverage": 0.901,
+   "expert_located": [
+    [
+     "Gittin 56a",
+     6
+    ],
+    [
+     "Gittin 56a",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56a",
+     12
+    ],
+    [
+     "Gittin 56a",
+     13
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56a",
+     10,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r071",
+   "ref": "Gittin 56a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אבא סקרא ריש בריוני דירושלים בר אחתיה דרבן יוחנן בן זכאי הוה, שלח ליה: תא בצינעא לגבאי. אתא, א\"ל: עד אימת עבדיתו הכי, וקטליתו ליה לעלמא בכפנא? א\"ל: מאי איעביד, דאי אמינא להו מידי קטלו לי! א\"ל: חזי לי תקנתא לדידי דאיפוק, אפשר דהוי הצלה פורתא. א\"ל: נקוט נפשך בקצירי, וליתי כולי עלמא ולישיילו בך, ואייתי מידי סריא ואגני גבך, ולימרו דנח נפשך, וליעיילו בך תלמידך ולא ליעול בך איניש אחרינא, דלא לרגשן בך דקליל את, דאינהו ידעי דחייא קליל ממיתא. עביד הכי, נכנס בו רבי אליעזר מצד אחד ורבי יהושע מצד אחר, כי מטו לפיתחא בעו למדקריה, אמר להו: יאמרו רבן דקרו! בעו למדחפיה, אמר להו: יאמרו רבן דחפו! פתחו ליה בבא, נפק. כי מטא להתם, אמר: שלמא עלך מלכא, שלמא עלך מלכא! א\"ל: מיחייבת תרי קטלא, חדא, דלאו מלכא אנא וקא קרית לי מלכא! ותו, אי מלכא אנא, עד האידנא אמאי לא אתית לגבאי? א\"ל: דקאמרת לאו מלכא אנא, איברא מלכא את, דאי לאו מלכא את לא מימסרא ירושלים בידך, דכתיב: והלבנון באדיר יפול, ואין אדיר אלא מלך, דכתי': והיה אדירו ממנו וגו', ואין לבנון אלא ביהמ\"ק, שנאמר: ההר הטוב הזה והלבנון; ודקאמרת אי מלכא אנא אמאי לא קאתית לגבאי עד האידנא? בריוני דאית בן לא שבקינן. אמר ליה: אילו חבית של דבש ודרקון כרוך עליה, לא היו שוברין את החבית בשביל דרקון? אישתיק. קרי עליה רב יוסף, ואיתימא רבי עקיבא: משיב חכמים אחור ודעתם יסכל, איבעי ליה למימר ליה: שקלינן צבתא ושקלינן ליה לדרקון וקטלינן ליה, וחביתא שבקינן לה. אדהכי אתי פריסתקא עליה מרומי, אמר ליה: קום, דמית ליה קיסר, ואמרי הנהו חשיבי דרומי לאותיבך ברישא. הוה סיים חד מסאני, בעא למסיימא לאחרינא לא עייל, בעא למשלפא לאידך לא נפק, אמר: מאי האי? אמר ליה: לא תצטער, שמועה טובה אתיא לך, דכתיב: שמועה טובה תדשן עצם. אלא מאי תקנתיה? ליתי איניש דלא מיתבא דעתך מיניה ולחליף קמך, דכתיב: ורוח נכאה תיבש גרם, עבד הכי עייל. אמר ליה: ומאחר דחכמיתו כולי האי, עד האידנא אמאי לא אתיתו לגבאי? אמר ליה: ולא אמרי לך? אמר ליה: אנא נמי אמרי לך! אמר ליה: מיזל אזילנא ואינש אחרינא משדרנא, אלא בעי מינאי מידי דאתן לך. אמר ליה: תן לי יבנה וחכמיה, ושושילתא דרבן גמליאל, ואסוותא דמסיין ליה לרבי צדוק. קרי עליה רב יוסף, ואתימא רבי עקיבא: משיב חכמים אחור ודעתם יסכל, איבעי למימר ליה לשבקינהו הדא זימנא. והוא סבר, דלמא כולי האי לא עביד, והצלה פורתא נמי לא הוי. אסוותא דמסיין ליה לרבי צדוק מאי היא? יומא קמא אשקיוה מיא דפארי, למחר מיא דסיפוקא, למחר מיא דקימחא, עד דרווח מיעיה פורתא פורתא.",
+   "expert_coverage": 0.94,
+   "expert_located": [
+    [
+     "Gittin 56a",
+     12
+    ],
+    [
+     "Gittin 56b",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56a",
+     14
+    ],
+    [
+     "Gittin 56a",
+     15
+    ],
+    [
+     "Gittin 56a",
+     16
+    ],
+    [
+     "Gittin 56a",
+     17
+    ],
+    [
+     "Gittin 56b",
+     0
+    ],
+    [
+     "Gittin 56b",
+     1
+    ],
+    [
+     "Gittin 56b",
+     2
+    ],
+    [
+     "Gittin 56b",
+     3
+    ],
+    [
+     "Gittin 56b",
+     4
+    ],
+    [
+     "Gittin 56b",
+     5
+    ],
+    [
+     "Gittin 56b",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56a",
+     14,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r072",
+   "ref": "Gittin 56b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אזל שדריה לטיטוס. ואמר אי אלהימו צור חסיו בו - זה טיטוס הרשע שחירף וגידף כלפי מעלה. מה עשה? תפש זונה בידו ונכנס לבית קדשי הקדשים, והציע ספר תורה ועבר עליה עבירה, ונטל סייף וגידר את הפרוכת, ונעשה נס והיה דם מבצבץ ויוצא, וכסבור הרג את עצמו, שנאמר: שאגו צורריך בקרב מועדיך שמו אותותם אותות. אבא חנן אומר: מי כמוך חסין יה - מי כמוך חסין וקשה, שאתה שומע ניאוצו וגידופו של אותו רשע ושותק. דבי רבי ישמעאל תנא: מי כמוכה באלים ה' - מי כמוכה באלמים. מה עשה? נטל את הפרוכת ועשאו כמין גרגותני, והביא כל כלים שבמקדש והניחן בהן, והושיבן בספינה לילך להשתבח בעירו, שנאמר: ובכן ראיתי רשעים קבורים ובאו וממקום קדוש יהלכו וישתכחו בעיר אשר כן עשו, אל תיקרי קבורים אלא קבוצים, אל תיקרי וישתכחו אלא וישתבחו. איכא דאמרי: קבורים ממש, דאפילו מילי דמטמרן איגלייא להון. עמד עליו נחשול שבים לטובעו, אמר: כמדומה אני שאלהיהם של אלו אין גבורתו אלא במים, בא פרעה טבעו במים, בא סיסרא טבעו במים, אף הוא עומד עלי לטובעני במים, אם גבור הוא יעלה ליבשה ויעשה עמי מלחמה! יצתה בת קול ואמרה לו: רשע בן רשע בן בנו של עשו הרשע, בריה קלה יש לי בעולמי ויתוש שמה, אמאי קרי לה בריה קלה? דמעלנא אית לה ומפקנא לית לה, עלה ליבשה ותעשה עמה מלחמה. עלה ליבשה, בא יתוש ונכנס בחוטמו, ונקר במוחו שבע שנים. יומא חד הוה קא חליף אבבא דבי נפחא, שמע קל ארזפתא אישתיק, אמר: איכא תקנתא. כל יומא מייתו נפחא ומחו קמיה, לנכרי יהיב ליה ארבע זוזי, לישראל אמר ליה: מיסתייך דקא חזית בסנאך. עד תלתין יומין עבד הכי, מכאן ואילך כיון דדש דש. תניא, אמר רבי פנחס בן ערובא: אני הייתי בין גדולי רומי, וכשמת פצעו את מוחו, ומצאו בו כצפור דרור משקל שני סלעים. במתניתא תנא: כגוזל בן שנה משקל שני ליטרין. אמר אביי, נקטינן: פיו של נחושת וצפורניו של ברזל. כי הוה קא מיית, אמר להו: ליקליוה לההוא גברא ולבדרי לקיטמיה אשב ימי, דלא לשכחיה אלהא דיהודאי ולוקמיה בדינא.",
+   "expert_coverage": 0.961,
+   "expert_located": [
+    [
+     "Gittin 56b",
+     6
+    ],
+    [
+     "Gittin 56b",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56b",
+     7
+    ],
+    [
+     "Gittin 56b",
+     8
+    ],
+    [
+     "Gittin 56b",
+     9
+    ],
+    [
+     "Gittin 56b",
+     10
+    ],
+    [
+     "Gittin 56b",
+     11
+    ],
+    [
+     "Gittin 56b",
+     12
+    ],
+    [
+     "Gittin 56b",
+     13
+    ],
+    [
+     "Gittin 56b",
+     14
+    ],
+    [
+     "Gittin 56b",
+     15
+    ],
+    [
+     "Gittin 56b",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56b",
+     7,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r073",
+   "ref": "Gittin 56b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אונקלוס בר קלוניקוס בר אחתיה דטיטוס הוה, בעי לאיגיורי, אזל אסקיה לטיטוס בנגידא, אמר ליה: מאן חשיב בההוא עלמא? אמר ליה: ישראל. מהו לאידבוקי בהו? אמר ליה: מילייהו נפישין ולא מצית לקיומינהו, זיל איגרי בהו בההוא עלמא והוית רישא, דכתיב: היו צריה לראש וגו', כל המיצר לישראל נעשה ראש. אמר ליה: דיניה דההוא גברא במאי? א\"ל: במאי דפסיק אנפשיה, כל יומא מכנשי ליה לקיטמיה ודייני ליה, וקלו ליה ומבדרו אשב ימי. אזל אסקיה לבלעם בנגידא, אמר ליה: מאן חשיב בההוא עלמא? א\"ל: ישראל. מהו לאידבוקי בהו? א\"ל: +דברים כ\"ג+ לא תדרוש שלומם וטובתם כל הימים. א\"ל: דיניה דההוא גברא במאי? א\"ל: בשכבת זרע רותחת. אזל אסקיה בנגידא לפושעי ישראל, א\"ל: מאן חשיב בההוא עלמא? א\"ל: ישראל. מהו לאדבוקי בהו? א\"ל: טובתם דרוש, רעתם לא תדרוש, כל הנוגע בהן כאילו נוגע בבבת עינו. א\"ל: דיניה דההוא גברא במאי? א\"ל: בצואה רותחת; דאמר מר: כל המלעיג על דברי חכמים נידון בצואה רותחת. תא חזי, מה בין פושעי ישראל לנביאי אומות העולם עובדי ע\"ז. תניא, אמר רבי אלעזר: בא וראה כמה גדולה כחה של בושה, שהרי סייע הקב\"ה את בר קמצא, והחריב את ביתו ושרף את היכלו.",
+   "expert_coverage": 0.898,
+   "expert_located": [
+    [
+     "Gittin 56b",
+     11
+    ],
+    [
+     "Gittin 57a",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 56b",
+     17
+    ],
+    [
+     "Gittin 57a",
+     0
+    ],
+    [
+     "Gittin 57a",
+     1
+    ],
+    [
+     "Gittin 57a",
+     2
+    ],
+    [
+     "Gittin 57a",
+     3
+    ],
+    [
+     "Gittin 57a",
+     4
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 56b",
+     17,
+     17
+    ],
+    [
+     "Gittin 57a",
+     4,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r074",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אתרנגולא ואתרנגולתא חריב טור מלכא, דהוו נהיגי כי הוו מפקי חתנא וכלתא, מפקי קמייהו תרנגולא ותרנגולתא, כלומר, פרו ורבו כתרנגולים. יומא חד הוה קא חליף גונדא דרומאי, שקלינהו מינייהו, נפלו עלייהו מחונהו, אתו אמרו ליה לקיסר: מרדו בך יהודאי! אתא עלייהו. הוה בהו ההוא בר דרומא דהוה קפיץ מילא וקטיל בהו, שקליה קיסר לתאגיה ואותביה אארעא, אמר: ריבוניה דעלמא כוליה, אי ניחא לך, לא תמסריה לההוא גברא לדידיה ולמלכותיה בידיה דחד גברא! אכשליה פומיה לבר דרומא, ואמר: הלא אתה אלהים זנחתנו ולא תצא אלהים בצבאותינו. דוד נמי אמר הכי! דוד אתמוהי קא מתמה. על לבית הכסא, אתא דרקונא שמטיה לכרכשיה ונח נפשיה. אמר: הואיל ואיתרחיש לי ניסא, הא זימנא אישבקינהו, שבקינהו ואזל. איזדקור ואכלו ושתו, ואדליקו שרגי עד דאיתחזי בליונא דגושפנקא ברחוק מילא. אמר: מיחדא קא חדו בי יהודאי! הדר אתא עלייהו. א\"ר אסי: תלת מאה אלפי שליפי סייפא עיילו לטור מלכא, וקטלו בה תלתא יומי ותלתא לילוותא, ובהך גיסא הלולי וחנגי, ולא הוו ידעי הני בהני.",
+   "expert_coverage": 0.979,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     0
+    ],
+    [
+     "Gittin 57a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57a",
+     5
+    ],
+    [
+     "Gittin 57a",
+     6
+    ],
+    [
+     "Gittin 57a",
+     7
+    ],
+    [
+     "Gittin 57a",
+     8
+    ],
+    [
+     "Gittin 57a",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 57a",
+     4,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r075",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": false,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר ליה ההוא צדוקי לרבי חנינא: שקורי משקריתו! אמר ליה: ארץ צבי כתיב בה, מה צבי זה אין עורו מחזיק את בשרו, אף ארץ ישראל, בזמן שיושבין עליה רווחא, ובזמן שאין יושבין עליה גמדא.",
+   "expert_coverage": 0.94,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     6
+    ],
+    [
+     "Gittin 57a",
+     19
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57a",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": false,
+   "detector_span": [
+    [
+     "Gittin 57a",
+     4,
+     8
+    ],
+    [
+     "Gittin 57a",
+     14,
+     15
+    ],
+    [
+     "Gittin 57a",
+     17,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "HIGH_CONFIDENCE",
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r076",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב מניומי בר חלקיה ורב חלקיה בר טוביה ורב הונא בר חייא הוו יתבי גבי הדדי, אמרי: אי איכא דשמיע ליה מילתא מכפר סכניא של מצרים לימא. פתח חד מינייהו ואמר: מעשה בארוס וארוסתו שנשבו לבין העובדי כוכבים והשיאום זה לזה, אמרה לו: בבקשה ממך, אל תגע בי, שאין לי כתובה ממך, ולא נגע בה עד יום מותו. וכשמת, אמרה להן: סיפדו לזה שפטפט ביצרו יותר מיוסף, דאילו ביוסף לא הוה אלא חדא שעתא, והאי כל יומא ויומא; ואילו יוסף לאו בחדא מטה, והאי בחדא מטה; ואילו יוסף לאו אשתו, והא אשתו. פתח אידך ואמר: מעשה ועמדו ארבעים מודיות בדינר, נחסר השער מודיא אחת, ובדקו ומצאו אב ובנו שבאו על נערה מאורסה ביום הכפורים, והביאום לבית דין וסקלום, וחזר השער למקומו.",
+   "expert_coverage": 0.952,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     10
+    ],
+    [
+     "Gittin 57a",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57a",
+     13
+    ],
+    [
+     "Gittin 57a",
+     14
+    ],
+    [
+     "Gittin 57a",
+     15
+    ],
+    [
+     "Gittin 57a",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 57a",
+     14,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r077",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "פתח אידך ואמר: מעשה באדם אחד שנתן עיניו באשתו לגרשה, והיתה כתובתה מרובה. מה עשה? הלך וזימן את שושביניו והאכילן והשקן, שיכרן והשכיבן על מיטה אחת, והביא לובן ביצה והטיל ביניהן, והעמיד להן עדים ובא לבית דין. היה שם זקן אחד מתלמידי שמאי הזקן ובבא בן בוטא שמו, אמר להן, כך מקובלני משמאי הזקן: לובן ביצה סולד מן האור, ושכבת זרע דוחה מן האור. בדקו ומצאו כדבריו, והביאוהו לב\"ד והלקוהו והגבוהו כתובתה ממנו. א\"ל אביי לרב יוסף: ומאחר דהוו צדיקים כולי האי, מאי טעמא איענוש? א\"ל: משום דלא איאבול על ירושלים, דכתיב: שמחו את ירושלם וגילו בה כל אוהביה שישו אתה משוש כל המתאבלים עליה.",
+   "expert_coverage": 0.961,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     11
+    ],
+    [
+     "Gittin 57a",
+     19
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57a",
+     17
+    ],
+    [
+     "Gittin 57a",
+     18
+    ],
+    [
+     "Gittin 57a",
+     19
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 57a",
+     17,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r078",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אשקא דריספק חריב ביתר, דהוו נהיגי כי הוה מתיליד ינוקא שתלי ארזא, ינוקתא - שתלי תורניתא, וכי הוו מינסבי, קייצי להו ועבדו גננא. יומא חד הוה קא חלפא ברתיה דקיסר, אתבר שקא דריספק, קצו ארזא ועיילו לה, אתו נפול עלייהו מחונהו. אתו אמרו ליה לקיסר: מרדו בך יהודאי! אתא עלייהו. גדע בחרי אף כל קרן ישראל - א\"ר זירא א\"ר אבהו א\"ר יוחנן: אלו שמונים [אלף] קרני מלחמה שנכנסו לכרך ביתר בשעה שלכדוה, והרגו בה אנשים ונשים וטף, עד שהלך דמן ונפל לים הגדול; שמא תאמר קרובה היתה, רחוקה היתה מיל. תניא, רבי אליעזר הגדול אומר: שני נחלים יש בבקעת ידים, אחד מושך אילך ואחד מושך אילך, ושיערו חכמים: שני חלקים מים ואחד דם. במתניתא תנא: שבע שנים בצרו עובדי כוכבים את כרמיהן מדמן של ישראל בלא זבל.",
+   "expert_coverage": 0.927,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     14
+    ],
+    [
+     "Gittin 57a",
+     22
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57a",
+     20
+    ],
+    [
+     "Gittin 57a",
+     21
+    ],
+    [
+     "Gittin 57a",
+     22
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": false,
+   "detector_span": [
+    [
+     "Gittin 57a",
+     14,
+     15
+    ],
+    [
+     "Gittin 57a",
+     17,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE",
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r079",
+   "ref": "Gittin 57a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "מעשה בד' מאות ילדים וילדות שנשבו לקלון, הרגישו בעצמן למה הן מתבקשים, אמרו: אם אנו טובעין בים אנו באין לחיי העולם הבא? דרש להן הגדול שבהן: +תהלים ס\"ח+ אמר ה' מבשן אשיב אשיב ממצולות ים, מבשן אשיב - מבין שיני אריה אשיב, ממצולות ים - אלו שטובעין בים; כיון ששמעו ילדות כך, קפצו כולן ונפלו לתוך הים. נשאו ילדים ק\"ו בעצמן ואמרו: מה הללו שדרכן לכך - כך, אנו שאין דרכנו לכך - על אחת כמה וכמה! אף הם קפצו לתוך הים. ועליהם הכתוב אומר: כי עליך הורגנו כל היום נחשבנו כצאן טבחה.",
+   "expert_coverage": 0.934,
+   "expert_located": [
+    [
+     "Gittin 57a",
+     22
+    ],
+    [
+     "Gittin 57b",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57b",
+     11
+    ],
+    [
+     "Gittin 57b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 57b",
+     11,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r080",
+   "ref": "Gittin 57b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ורב יהודה אמר: זו אשה ושבעה בניה. אתיוהו קמא לקמיה דקיסר, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: אנכי ה' אלהיך, אפקוהו וקטלוהו. ואתיוהו לאידך לקמיה דקיסר, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: לא יהיה לך אלהים אחרים על פני, אפקוהו וקטלוהו. אתיוהו לאידך, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: זובח לאלהים יחרם, אפקוהו וקטלוהו. אתיוהו לאידך, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: לא תשתחוה לאל אחר, אפקוהו וקטלוהו. אתיוהו לאידך, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: שמע ישראל ה' אלהינו ה' אחד, אפקוהו וקטלוהו. אתיוהו לאידך, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: וידעת היום והשבות אל לבבך כי ה' הוא האלהים בשמים ממעל ועל הארץ מתחת אין עוד, אפקוהו וקטלוהו. אתיוהו לאידך, אמרו ליה: פלח לעבודת כוכבים! אמר להו, כתוב בתורה: את ה' האמרת וגו' וה' האמירך היום, כבר נשבענו להקדוש ברוך הוא שאין אנו מעבירין אותו באל אחר, ואף הוא נשבע לנו שאין מעביר אותנו באומה אחרת. א\"ל קיסר: אישדי לך גושפנקא וגחין ושקליה, כי היכי דלימרו קביל עליה הרמנא דמלכא, א\"ל: חבל עלך קיסר, חבל עלך קיסר, על כבוד עצמך כך, על כבוד הקב\"ה על אחת כמה וכמה! אפקוהו למיקטליה, אמרה להו אימיה: יהבוהו ניהלי ואינשקיה פורתא, אמרה לו: בניי, לכו ואמרו לאברהם אביכם אתה עקדת מזבח אחד ואני עקדתי שבעה מזבחות! אף היא עלתה לגג ונפלה ומתה. יצתה בת קול ואמרה: אם הבנים שמחה.",
+   "expert_coverage": 0.926,
+   "expert_located": [
+    [
+     "Gittin 57b",
+     11
+    ],
+    [
+     "Gittin 57b",
+     19
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 57b",
+     13
+    ],
+    [
+     "Gittin 57b",
+     14
+    ],
+    [
+     "Gittin 57b",
+     15
+    ],
+    [
+     "Gittin 57b",
+     16
+    ],
+    [
+     "Gittin 57b",
+     17
+    ],
+    [
+     "Gittin 57b",
+     18
+    ],
+    [
+     "Gittin 57b",
+     19
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 57b",
+     13,
+     19
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r081",
+   "ref": "Gittin 57b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "בני ציון היקרים המסולאים בפז - מאי מסולאים בפז? אילימא דהוו מחפי בפיזא, והאמרי דבי רבי שילא: תרתי מתקלי איסתירי פיזא נחות בעלמא, חדא ברומי וחדא בכולי עלמא! אלא שהיו מגנין את הפז ביופיין. מעיקרא, חשיבי דרומאי הוו נקטי בליונא דגושפנקא ומשמשי ערסייהו, מכאן ואילך מייתו בני ישראל ואסרי בכרעי דפורייהו ומשמשי. אמר ליה חד לחבריה: הא היכא כתיבא? אמר ליה: גם כל חלי וכל מכה אשר לא כתוב בספר התורה הזאת. אמר: כמה מרחיקנא מדוכתא פלן? אמר ליה: אינגד פוסתא ופלגא, אמר ליה: אי מטאי לגביה לא איצטריכי לך. אמר רב יהודה אמר שמואל משום רבן שמעון בן גמליאל, מאי דכתיב: עיני עוללה לנפשי מכל בנות עירי? ארבע מאות בתי כנסיות היו בכרך ביתר, ובכל אחת ואחת היו בה ארבע מאות מלמדי תינוקות, וכל אחד ואחד היו לפניו ארבע מאות תינוקות של בית רבן, וכשהיה אויב נכנס לשם היו דוקרין אותן בחוטריהן, וכשגבר אויב ולכדום, כרכום בספריהם והציתום באש.",
+   "expert_coverage": 0.983,
+   "expert_located": [
+    [
+     "Gittin 57b",
+     19
+    ],
+    [
+     "Gittin 58a",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58a",
+     3
+    ],
+    [
+     "Gittin 58a",
+     4
+    ],
+    [
+     "Gittin 58a",
+     5
+    ],
+    [
+     "Gittin 58a",
+     6
+    ],
+    [
+     "Gittin 58a",
+     7
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58a",
+     5,
+     5
+    ],
+    [
+     "Gittin 58a",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE",
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r082",
+   "ref": "Gittin 58a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ת\"ר: מעשה ברבי יהושע בן חנניה שהלך לכרך גדול שברומי, אמרו לו: תינוק אחד יש בבית האסורים, יפה עינים וטוב רואי וקווצותיו: סדורות לו תלתלים. הלך ועמד על פתח בית האסורים, אמר: מי נתן למשיסה יעקב וישראל לבוזזים? ענה אותו תינוק ואמר: הלא ה' זו חטאנו לו ולא אבו בדרכיו הלוך ולא שמעו בתורתו. אמר: מובטחני בו שמורה הוראה בישראל, העבודה! שאיני זז מכאן עד שאפדנו בכל ממון שפוסקין עליו. אמרו: לא זז משם עד שפדאו בממון הרבה, ולא היו ימים מועטין עד שהורה הוראה בישראל. ומנו? רבי ישמעאל בן אלישע.",
+   "expert_coverage": 0.988,
+   "expert_located": [
+    [
+     "Gittin 58a",
+     2
+    ],
+    [
+     "Gittin 58a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58a",
+     8
+    ],
+    [
+     "Gittin 58a",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58a",
+     8,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r083",
+   "ref": "Gittin 58a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רב יהודה אמר רב: מעשה בבנו ובבתו של ר' ישמעאל בן אלישע שנשבו לשני אדונים. לימים נזדווגו שניהם במקום אחד, זה אומר: יש לי עבד שאין כיופיו בכל העולם, וזה אומר: יש לי שפחה שאין בכל העולם כולו כיופיה, אמרו: בוא ונשיאם זה לזה ונחלק בוולדות. הכניסום לחדר, זה ישב בקרן זוית זה וזו ישבה בקרן זוית זה, זה אומר: אני כהן בן כהנים גדולים אשא שפחה? וזאת אומרת: אני כהנת בת כהנים גדולים אנשא לעבד? ובכו כל הלילה. כיון שעלה עמוד השחר, הכירו זה את זה, ונפלו זה על זה וגעו בבכיה עד שיצאה נשמתן. ועליהן קונן ירמיה: על אלה אני בוכיה עיני עיני יורדה מים.",
+   "expert_coverage": 0.978,
+   "expert_located": [
+    [
+     "Gittin 58a",
+     5
+    ],
+    [
+     "Gittin 58a",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58a",
+     10
+    ],
+    [
+     "Gittin 58a",
+     11
+    ],
+    [
+     "Gittin 58a",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58a",
+     10,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r084",
+   "ref": "Gittin 58a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר ריש לקיש: מעשה באשה אחת וצפנת בת פניאל שמה, צפנת - שהכל צופין ביופיה, בת פניאל - בתו של כהן גדול ששימש לפני ולפנים, שנתעלל בה שבאי כל הלילה. למחר הלבישה שבעה חלוקים והוציאה למוכרה. בא אדם אחד שהיה מכוער ביותר, אמר לו: הראני את יופיה, אמר לו: ריקא! אם אתה רוצה ליקח קח, שאין כיופיה בכל העולם כולו, אמר לו: אף על פי כן. הפשיטה ששת חלוקים, ושביעי קרעתה ונתפלשה באפר, אמרה לפניו: רבונו של עולם, אם עלינו לא חסת, על קדושת שמך הגבור למה לא תחוס? ועליה קונן ירמיה: + בת עמי חגרי שק והתפלשי באפר אבל יחיד עשי לך מספד תמרורים כי פתאום יבא השודד עלינו, עליך לא נאמר אלא עלינו, כביכול, עלי ועליך בא שודד.",
+   "expert_coverage": 0.956,
+   "expert_located": [
+    [
+     "Gittin 58a",
+     8
+    ],
+    [
+     "Gittin 58a",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58a",
+     13
+    ],
+    [
+     "Gittin 58a",
+     14
+    ],
+    [
+     "Gittin 58a",
+     15
+    ],
+    [
+     "Gittin 58a",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58a",
+     13,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r085",
+   "ref": "Gittin 58a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר רב יהודה אמר רב, מאי דכתיב: ועשקו גבר וביתו ואיש ונחלתו? מעשה באדם אחד שנתן עיניו באשת רבו, ושוליא דנגרי הוה. פעם אחת הוצרך (רבו) ללות, אמר לו: שגר אשתך אצלי ואלונה, שיגר אשתו אצלו, שהה עמה שלשה ימים. קדם ובא אצלו, אמר לו: אשתי ששיגרתי לך היכן היא? אמר לו: אני פטרתיה לאלתר, ושמעתי שהתינוקות נתעללו בה בדרך. אמר לו: מה אעשה? אמר לו: אם אתה שומע לעצתי גרשה. אמר לו: כתובתה מרובה, אמר לו: אני אלווך ותן לה כתובתה. עמד זה וגרשה, הלך הוא ונשאה. כיון שהגיע זמנו ולא היה לו לפורעו, אמר לו: בא ועשה עמי בחובך. והיו הם יושבים ואוכלים ושותין והוא היה עומד ומשקה עליהן, והיו דמעות נושרות מעיניו ונופלות בכוסיהן, ועל אותה שעה נתחתם גזר דין. ואמרי לה: על שתי פתילות בנר אחד.",
+   "expert_coverage": 0.98,
+   "expert_located": [
+    [
+     "Gittin 58a",
+     14
+    ],
+    [
+     "Gittin 58a",
+     20
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58a",
+     17
+    ],
+    [
+     "Gittin 58a",
+     18
+    ],
+    [
+     "Gittin 58a",
+     19
+    ],
+    [
+     "Gittin 58a",
+     20
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58a",
+     17,
+     20
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r086",
+   "ref": "Gittin 58b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "גידל בר רעילאי קביל ארעא בטסקא מבני באגא, אקדים ויהיב זוזי דתלת שנין. לסוף אתא מרוותא קמאי, אמרו ליה: שתא קמייתא דיהבת אכלת, השתא אנן יהבינן אנן אכלינן, אתו לקמיה דרב פפא, סבר למיכתב ליה טירפא אבני באגא, א\"ל רב הונא בריה דרב יהושע לרב פפא: א\"כ, עשית סיקריקון! אלא אמר רב הונא בריה דרב יהושע: הניח מעותיו על קרן הצבי.",
+   "expert_coverage": 0.919,
+   "expert_located": [
+    [
+     "Gittin 58b",
+     3
+    ],
+    [
+     "Gittin 58b",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 58b",
+     9
+    ],
+    [
+     "Gittin 58b",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 58b",
+     9,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r087",
+   "ref": "Gittin 60b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב שימי בר אשי אתא לקמיה דאביי, אמר ליה: לותבן מר בעידנא! אמר ליה: אית לי עידנא לדידי. ולותבן מר בליליא! א\"ל: אית לי מיא לאשקויי. א\"ל: אנא משקינא ליה למר מיא ביממא, ולותבן מר בליליא! א\"ל: לחיי. אזל לעילאי, אמר להו: תתאי שתו מיא ברישא, אזל לתתאי, אמר להו: עילאי שתו מיא ברישא, אדהכי סכר מיסכר ואשקי. כי אתא לקמיה דאביי, אמר ליה: כבי תרי עבדת לי! ולא טעמינהו אביי לפירי דההיא שתא.",
+   "expert_coverage": 0.942,
+   "expert_located": [
+    [
+     "Gittin 60b",
+     8
+    ],
+    [
+     "Gittin 61a",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 60b",
+     13
+    ],
+    [
+     "Gittin 60b",
+     14
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 60b",
+     13,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r088",
+   "ref": "Gittin 60b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "הנהו בני בי חרמך דאזול כרו ברישא דשנוותא ואהדרוה ושדיוה בשילהי נהרא, אתו עילאי לקמיה דאביי, אמרו ליה: קא מתקיל לנהרין! אמר להו: כרו בהדייהו טפי פורתא. אמרו ליה: קא יבשי פירין! אמר להו: זילו סליקו נפשייכו מהתם.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 60b",
+     9
+    ],
+    [
+     "Gittin 60b",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 60b",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 60b",
+     15,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r089",
+   "ref": "Gittin 60b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב כהנא הוה קאזיל להוצל, חזייה לההוא גברא דהוה שדי אופיי וקא נתרן תמרי, אזל קא מנקיט ואכיל. א\"ל: חזי מר דבידאי שדיתינהו, א\"ל: מאתריה דר' יאשיה אתה, קרי עליה: וצדיק יסוד עולם.",
+   "expert_coverage": 0.921,
+   "expert_located": [
+    [
+     "Gittin 60b",
+     14
+    ],
+    [
+     "Gittin 61a",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 61a",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 61a",
+     3,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r090",
+   "ref": "Gittin 62a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב הונא ורב חסדא הוו יתבי, חליף ואזיל גניבא. א\"ל חד לחבריה: ניקום מקמיה דבר אוריין הוא, אמר לו: ומקמי פלגאה ניקום? אדהכי אתא איהו לגבייהו, אמר להו: שלמא עלייכו מלכי, שלמא עלייכו מלכי! אמרו ליה: מנא לך דרבנן איקרו מלכים? אמר להו, דכתיב: בי מלכים ימלוכו וגו'. אמרו ליה: ומנא לך דכפלינן שלמא למלכי? אמר להו, דאמר רב יהודה אמר רב: מנין שכופלין שלום למלך? שנאמרורוח לבשה את עמשי ראש השלישים וגו'. אמרי ליה: ליטעום מר מידי, אמר להו, הכי אמר רב יהודה אמר רב: אסור לו לאדם שיטעום כלום עד שיתן מאכל לבהמתו, שנאמרונתתי עשב בשדך לבהמתך, והדר ואכלת ושבעת.",
+   "expert_coverage": 0.982,
+   "expert_located": [
+    [
+     "Gittin 62a",
+     7
+    ],
+    [
+     "Gittin 62a",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 62a",
+     13
+    ],
+    [
+     "Gittin 62a",
+     14
+    ],
+    [
+     "Gittin 62a",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 62a",
+     13,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r091",
+   "ref": "Gittin 63b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דשדר לה גיטא לדביתהו, אזל שליחא אשכחה כי יתבה וקא לישא, אמר לה: הילך גיטך, אמרה ליה: ליהוי בידך; אמר רב נחמן: אם איתא לדרבי חנינא, עבדי בה עובדא. אמר ליה רבא: ואם איתא לדר' חנינא, עבדת בה עובדא? הא לא חזרה שליחות אצל הבעל! שלחוה לקמיה דר' אמי, שלח להו: לא חזרה שליחות אצל הבעל, ור' חייא בר אבא אמר: נתיישב בדבר. הדור שלחוה קמיה דר' חייא בר אבא, אמר: כל הני שלחו לה ואזלי! כי היכי דמספקא להו לדידהו, הכי נמי מספקא לן לדידן. הוי דבר שבערוה, ודבר שבערוה חולצת. הוה עובדא, ואצרכה רב יצחק בר שמואל בר מרתא גט וחליצה. תרתי? גט מחיים, וחליצה לאחר מיתה.",
+   "expert_coverage": 0.925,
+   "expert_located": [
+    [
+     "Gittin 63b",
+     5
+    ],
+    [
+     "Gittin 63b",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 63b",
+     11
+    ],
+    [
+     "Gittin 63b",
+     12
+    ],
+    [
+     "Gittin 63b",
+     13
+    ],
+    [
+     "Gittin 63b",
+     14
+    ],
+    [
+     "Gittin 63b",
+     15
+    ],
+    [
+     "Gittin 63b",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 63b",
+     11,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r092",
+   "ref": "Gittin 63b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דהוו קרו לה נפאתה, אזול סהדי כתוב תפאתה, אמר רב יצחק בר שמואל בר מרתא משמיה דרב: עשו עדים שליחותן. מתקיף לה רבה: מי קאמר להו כתובו חספא והבו לה? אלא אמר רבה: ודאי אי כתוב סהדי גיטא מעליא ואבד, עשו עדים שליחותן.",
+   "expert_coverage": 0.979,
+   "expert_located": [
+    [
+     "Gittin 63b",
+     12
+    ],
+    [
+     "Gittin 63b",
+     18
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 63b",
+     17
+    ],
+    [
+     "Gittin 63b",
+     18
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 63b",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r093",
+   "ref": "Gittin 65b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "גניבא יוצא בקולר הוה, כי הוה קא נפיק, אמר: הבו ארבע מאה זוזי לרבי אבינא, מחמרא דנהר פניא. אמר רבי זירא: דרא רבי אבינא לסילתיה ואזל לגבי דרב הונא רביה, דאמר רב הונא: גיטו כמתנתו, מה מתנתו אם עמד חוזר, אף גיטו אם עמד חוזר; ומה גיטו אע\"ג דלא פריש, כיון דאמר כתבו - אע\"ג דלא אמר תנו, אף מתנתו כיון דאמר תנו - אע\"ג דלא קנו מיניה.",
+   "expert_coverage": 0.932,
+   "expert_located": [
+    [
+     "Gittin 65b",
+     9
+    ],
+    [
+     "Gittin 66a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 65b",
+     15
+    ],
+    [
+     "Gittin 66a",
+     0
+    ],
+    [
+     "Gittin 66a",
+     1
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 65b",
+     15,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r094",
+   "ref": "Gittin 66a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דעל לבי כנישתא, אשכח מקרי ינוקא ובריה דיתבי ויתיב איניש אחרינא גבייהו, אמר להו: בי תרי מינייכו נכתבו גיטא לדביתהו, לסוף שכיב מקרי ינוקא, מי משוו אינשי ברא שליחא במקום אבא או לא? רב נחמן אמר: לא משוו אינשי ברא שליחא במקום אבא, ורב פפי אמר: משוו אינשי ברא שליחא במקום אבא. אמר רבא, הילכת': משוו אינשי ברא שליח' במקום אבא.",
+   "expert_coverage": 0.95,
+   "expert_located": [
+    [
+     "Gittin 66a",
+     8
+    ],
+    [
+     "Gittin 66a",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 66a",
+     14
+    ],
+    [
+     "Gittin 66a",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 66a",
+     14,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r095",
+   "ref": "Gittin 66b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אמר שמואל, אמר רבי: הלכה כרבי יוסי, דאמר: מילי לא מימסרן לשליח. אמר לפניו ר\"ש ברבי: מאחר שר\"מ וחנינא איש אונו חולקין על רבי יוסי, מה ראה רבי לומר הלכה כר' יוסי? אמר לו: שתוק, בני, שתוק, לא ראית את ר' יוסי, אילמלי ראיתו נמוקו עמו.",
+   "expert_coverage": 0.906,
+   "expert_located": [
+    [
+     "Gittin 66b",
+     14
+    ],
+    [
+     "Gittin 67a",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 67a",
+     5
+    ],
+    [
+     "Gittin 67a",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 67a",
+     5,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r096",
+   "ref": "Gittin 67b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב עמרם חסידא כי הוה מצערין ליה בי ריש גלותא, הוו מגנו ליה אתלגא, למחר אמרו ליה: מאי ניחא ליה למר דלייתו ליה? אמר: הני כל דאמינא להו מיפך אפכי, אמר להו: בישרא סומקא אגומרי וחמרא מרקא, אייתו ליה אינהו בישרא שמינא אגומרי וחמרא חייא; שמעה ילתא ומעיילה ליה לבי מסותא, ומוקמי ליה במיא דבי מסותא עד דמהפכי מיא דבי מסותא והוו דמא, וקאי בישריה פשיטי פשיט.",
+   "expert_coverage": 0.987,
+   "expert_located": [
+    [
+     "Gittin 67b",
+     9
+    ],
+    [
+     "Gittin 67b",
+     16
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 67b",
+     11
+    ],
+    [
+     "Gittin 67b",
+     14
+    ],
+    [
+     "Gittin 67b",
+     15
+    ],
+    [
+     "Gittin 67b",
+     16
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 67b",
+     15,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r097",
+   "ref": "Gittin 67b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "א\"ל ריש גלותא לרב ששת: מ\"ט לא סעיד מר גבן? א\"ל: דלא מעלו עבדי, דחשידי אאבר מן החי. א\"ל: מי יימר? אמר ליה: השתא מחוינא לך. א\"ל לשמעיה: זיל גנוב, אייתי לי חדא כרעא מחיותא, אייתי ליה. אמר להו: אהדמו לי הדמי דחיותא, אייתו תלת כרעי אותיבו קמיה. אמר להו: הא בעלת שלש רגלים הואי? פסוק אייתו חדא מעלמא, אותיבו קמיה. אמר ליה לשמעיה: אותביה נמי להך דידך, אותבה. אמר להו: האי בת חמש רגלים הואי? אמר ליה: אי הכי, ליעבדו קמיה (שמעיה) דמר וליכול, א\"ל: לחיי. קריבו תכא קמייהו, ואייתו קמיה בישרא ואותיבו קמיה ריסתנא דחנקא חמתא, גששיה ושקלה כרכה בסודריה. לבתר דאכיל, אמרי ליה: איגניב לן כסא דכספא! בהדי דקא מעייני ואתי, אשכחוה דכרוכה בסודריה, אמרי ליה: חזי מר, דלא מיכל קא בעי אלא לצעורן! אמר להו: אנא מיכל אכלי, וטעמי ביה טעמא דחיורא. אמרי ליה: חיורא לא עביד לן האידנא, אמר להו: בדקו בדוכתיה; דאמר רב חסדא: אוכמא בחיורא וחיורא באוכמתא - לקותא היא; בדוק אשכחוה. כי קא נפיק, כרו ליה בירא ושדו ליה ציפתא עילויה, ואמרי ליה: ליתי מר לינח, נחר ליה רב חסדא מאחוריה, אמר ליה לינוקא: פסוק לי פסוקיך, אמר ליה: נטה לך על ימינך או על שמאלך. אמר ליה לשמעיה: מאי קא חזית? אמר ליה: ציפיתא דשדיא, אמר ליה: הדר מינה. לבתר דנפק, אמר ליה רב חסדא: מנא הוה ידע מר? אמר ליה: חדא, דנחר לי מר; ועוד, דפסק לי ינוקא פסוקא; ועוד, דחשידי עבדי דלא מעלו.",
+   "expert_coverage": 0.95,
+   "expert_located": [
+    [
+     "Gittin 67b",
+     18
+    ],
+    [
+     "Gittin 68a",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 67b",
+     18
+    ],
+    [
+     "Gittin 67b",
+     19
+    ],
+    [
+     "Gittin 67b",
+     20
+    ],
+    [
+     "Gittin 67b",
+     21
+    ],
+    [
+     "Gittin 68a",
+     0
+    ],
+    [
+     "Gittin 68a",
+     1
+    ],
+    [
+     "Gittin 68a",
+     2
+    ],
+    [
+     "Gittin 68a",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 67b",
+     18,
+     21
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r098",
+   "ref": "Gittin 69b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבין דמן נרש עבד לה לברתיה דרב אשי מאה וחמשין מהני דידן, ואתסיא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 69b",
+     0
+    ],
+    [
+     "Gittin 69b",
+     6
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 69b",
+     6
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 69b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r099",
+   "ref": "Gittin 69b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא עיזא דהות שתיא מיא דבי נפחא, אישתחיט ולא אישתכח לה טחלא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 69b",
+     5
+    ],
+    [
+     "Gittin 69b",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 69b",
+     11
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 69b",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r100",
+   "ref": "Gittin 69b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב שימי בר אשי עבד ליה לההוא עובד כוכבים לדבר אחר, ואיתסי.",
+   "expert_coverage": 0.69,
+   "expert_located": [
+    [
+     "Gittin 69b",
+     15
+    ],
+    [
+     "Gittin 70a",
+     1
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 70a",
+     1
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 70a",
+     1,
+     1
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r101",
+   "ref": "Gittin 72a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רבה בר אבוה חלש, עול לגביה רב הונא ורב נחמן; א\"ל רב הונא לר\"נ, בעי מיניה מרבה בר אבוה: הלכה כרבי יוסי או אין הלכה? א\"ל: טעמא דרבי יוסי לא ידענא, הלכה איבעי מיניה? א\"ל: את בעי מיניה הלכה, וטעמיה דרבי יוסי אנא אמינא לך; בעי מיניה, א\"ל, הכי אמר רב: הלכה כרבי יוסי; לבתר דנפק, א\"ל: היינו טעמא דרבי יוסי, דקסבר: זמנו של שטר מוכיח עליו! אלא מספקא ליה, אי אמר ר' יוסי בע\"פ אי לא אמר.",
+   "expert_coverage": 0.851,
+   "expert_located": [
+    [
+     "Gittin 72a",
+     11
+    ],
+    [
+     "Gittin 72b",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 72a",
+     15
+    ],
+    [
+     "Gittin 72a",
+     17
+    ],
+    [
+     "Gittin 72a",
+     18
+    ],
+    [
+     "Gittin 72b",
+     0
+    ],
+    [
+     "Gittin 72b",
+     3
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 72a",
+     17,
+     18
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r102",
+   "ref": "Gittin 73a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דזבין ארעא לחבריה, קביל עליה כל אונסא דמתיליד, לסוף אפיקו בה נהרא; אתא לקמיה דרבינא, א\"ל: זיל שפי ליה, דהא קבילת עלך כל אונסא דמתיליד. א\"ל רב אחא בר תחליפא לרבינא: אונסא דלא שכיח הוא! איגלגל מילתא ומטא לקמיה דרבא, אמר להו: אונסא דלא שכיח הוא.",
+   "expert_coverage": 0.934,
+   "expert_located": [
+    [
+     "Gittin 73a",
+     4
+    ],
+    [
+     "Gittin 73a",
+     11
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 73a",
+     9
+    ],
+    [
+     "Gittin 73a",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 73a",
+     9,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r103",
+   "ref": "Gittin 73a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "רב פפא ורב הונא בריה דרב יהושע זבן שומשמי אגידא דנהר מלכא, אגור מלחי לעבורינהו, קבילו עלייהו כל אונסא דמתיליד, לסוף איסתכר נהר מלכא, אמרו להו: אגורו חמרי אפקעינהו ניהלן, דהא קבילתו עלייכו כל אונסא דמיתליד; אתו לקמיה דרבא, אמר להו: קאקי חיורי משלחי גלימי דאינשי, אונסא דלא שכיח הוא.",
+   "expert_coverage": 0.969,
+   "expert_located": [
+    [
+     "Gittin 73a",
+     9
+    ],
+    [
+     "Gittin 73a",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 73a",
+     15
+    ],
+    [
+     "Gittin 73a",
+     16
+    ],
+    [
+     "Gittin 73a",
+     17
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 73a",
+     15,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r104",
+   "ref": "Gittin 74b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דאמר ליה לאריסיה: כולי עלמא דלו תלת דלוותא ואכלי ריבעא, את דלי ארבעה ואכול תילתא, לסוף אתא מיטרא, אמר רב יוסף: הא לא דלה, רבה אמר: הא לא איצטריכא.",
+   "expert_coverage": 0.982,
+   "expert_located": [
+    [
+     "Gittin 74b",
+     5
+    ],
+    [
+     "Gittin 74b",
+     12
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 74b",
+     11
+    ],
+    [
+     "Gittin 74b",
+     12
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 74b",
+     11,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r105",
+   "ref": "Gittin 77a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "תניא, רבי אומר: לאחר הרגל - שלשים יום. נפק ר' חייא דרשה משמיה דרבי וקלסוה. משמיה דרבים - ולא קלסוה; אלמא לית הילכתא כוותיה.",
+   "expert_coverage": 0.962,
+   "expert_located": [
+    [
+     "Gittin 77a",
+     1
+    ],
+    [
+     "Gittin 77a",
+     7
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 77a",
+     7
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 77a",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r106",
+   "ref": "Gittin 77a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא שכיב מרע דכתב לה גיטא לדביתהו בהדי פניא דמעלי שבתא ולא הספיק למיתביה לה, למחר תקף ליה עלמא, אתו לקמיה דרבא, אמר להו: זילו אמרו ליה ליקניה ניהלה לההוא דוכתא דיתיב ביה גיטא, ותיזל איהי ותיחוד ותפתח ותחזיק ביה, דתנן: נעל, גדר, פרץ כל שהוא - הרי זו חזקה. אמר ליה רב עיליש לרבא: מה שקנתה אשה קנה בעלה! איכסיף. לסוף איגלי מילתא דארוסה הואי, אמר רבא: אם אמרו בנשואה יאמרו בארוסה? הדר אמר רבא: לא שנא ארוסה ולא שנא נשואה, גיטה וחצירה באין כאחד. והא אמרה רבא מעיקרא! כי אמרה רבא - אהאי מעשה אמרה.",
+   "expert_coverage": 0.952,
+   "expert_located": [
+    [
+     "Gittin 77a",
+     18
+    ],
+    [
+     "Gittin 77b",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 77b",
+     5
+    ],
+    [
+     "Gittin 77b",
+     6
+    ],
+    [
+     "Gittin 77b",
+     7
+    ],
+    [
+     "Gittin 77b",
+     8
+    ],
+    [
+     "Gittin 77b",
+     9
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 77b",
+     5,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r107",
+   "ref": "Gittin 77b",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההוא גברא דזרק לה גיטא לדביתהו, הוה קיימא בחצר, אזל גיטא נפל בפיסלא; אמר רב יוסף: חזינן, אי הויא ארבע אמות על ארבע אמות - פלג ליה רשותא לנפשיה, ואי לא - חדא רשותא היא.",
+   "expert_coverage": 1.0,
+   "expert_located": [
+    [
+     "Gittin 77b",
+     9
+    ],
+    [
+     "Gittin 77b",
+     15
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 77b",
+     15
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 77b",
+     15,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r108",
+   "ref": "Gittin 83a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "אחר פטירתו של ר\"א, נכנסו ארבעה זקנים להשיב על דבריו, אלו הן: רבי יוסי הגלילי, ור\"ט, ורבי אלעזר בן עזריה, ור\"ע. נענה ר\"ט ואמר: הרי שהלכה זו ונישאת לאחיו של זה שנאסרה עליו, ומת בלא בנים, לא נמצא זה עוקר דבר מן התורה? הא למדת, שאין זה כריתות. נענה רבי יוסי הגלילי ואמר: היכן מצינו אסור לזה ומותר לזה? האסור אסור לכל, והמותר מותר לכל! הא למדת, שאין זה כריתות. נענה רבי אלעזר בן עזריה ואמר: כריתות - דבר הכורת בינו לבינה, הא למדת, שאין זה כריתות. נענה ר\"ע ואמר: הרי שהלכה זו ונשאת לאחד מן השוק והיו לה בנים, ונתארמלה או נתגרשה, ועמדה ונישאת לזה שנאסרה עליו, לא נמצא גט בטל ובניה ממזרים? הא למדת, שאין זה כריתות; דבר אחר: הרי שהיה זה שנאסרה עליו כהן, ומת המגרש, לא נמצאת אלמנה אצלו וגרושה אצל כל אדם? וק\"ו: מה גרושה שהיא קלה - אסורה בשביל צד גירושין שבה, אשת איש שהיא חמורה לא כ\"ש! הא למדת, שאין זה כריתות. אמר להן רבי יהושע: אין משיבין את הארי לאחר מיתה.",
+   "expert_coverage": 0.909,
+   "expert_located": [
+    [
+     "Gittin 83a",
+     1
+    ],
+    [
+     "Gittin 83a",
+     10
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 83a",
+     3
+    ],
+    [
+     "Gittin 83a",
+     4
+    ],
+    [
+     "Gittin 83a",
+     5
+    ],
+    [
+     "Gittin 83a",
+     6
+    ],
+    [
+     "Gittin 83a",
+     7
+    ],
+    [
+     "Gittin 83a",
+     8
+    ],
+    [
+     "Gittin 83a",
+     9
+    ],
+    [
+     "Gittin 83a",
+     10
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 83a",
+     3,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r109",
+   "ref": "Gittin 89a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "היא דנפק עלה קלא דאיקדשה לבר בי רב, אתייה רב חמא לאבוה, אמר ליה: אימא לי היכי הוה עובדא? אמר ליה: על תנאי קדיש, אדעתא דלא אזיל לבי חוזאי ואזל. א\"ל: כיון דבעידנא דהואי קלא לא הואי אמתלא, לאו כל כמינך דמחזקת אמתלא.",
+   "expert_coverage": 0.973,
+   "expert_located": [
+    [
+     "Gittin 89a",
+     11
+    ],
+    [
+     "Gittin 89a",
+     17
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 89a",
+     17
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 89a",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r110",
+   "ref": "Gittin 89a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דנפק עלה קלא דאיקדשה באציפא דתוחלא בעינא דבי שיפי, שלחה רב אידי בר אבין לקמיה דאביי: כי האי גוונא מאי? אמר ליה: אפי' למאן דאמר לא מבטלינן קלא, בהא מבטלינן קלא, מימר אמרי: עיינו בהו רבנן בקידושיה ולא הוה בהו שוה פרוטה.",
+   "expert_coverage": 0.975,
+   "expert_located": [
+    [
+     "Gittin 89a",
+     16
+    ],
+    [
+     "Gittin 89b",
+     9
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 89a",
+     18
+    ],
+    [
+     "Gittin 89a",
+     19
+    ],
+    [
+     "Gittin 89b",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 89a",
+     18,
+     18
+    ],
+    [
+     "Gittin 89a",
+     19,
+     19
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r111",
+   "ref": "Gittin 89a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דנפק עלה קלא דאיקדשה לחד מבני פלניא, אמר רבא: אפי' למאן דאמר לא מבטלינן קלא, בהא מבטלינן קלא, מימר אמרי: עיינו בהו רבנן בקידושי, וקידושי קטן הוו.",
+   "expert_coverage": 0.96,
+   "expert_located": [
+    [
+     "Gittin 89a",
+     14
+    ],
+    [
+     "Gittin 89b",
+     0
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 89a",
+     18
+    ],
+    [
+     "Gittin 89a",
+     19
+    ],
+    [
+     "Gittin 89b",
+     0
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 89a",
+     18,
+     18
+    ],
+    [
+     "Gittin 89a",
+     19,
+     19
+    ]
+   ],
+   "detector_classification": [
+    "YES",
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r112",
+   "ref": "Gittin 89a",
+   "expert_listed": true,
+   "expert_blind": true,
+   "expert_strictly_blind": true,
+   "expert_text": "ההיא דנפק עלה קלא דאיקדשה לקטן הנראה כגדול, א\"ל רב מרדכי לרב אשי: הוה עובדא, ואמרו: עדיין לא הגיע לפלגות ראובן, שנאמר: לפלגות ראובן גדולים חקרי לב.",
+   "expert_coverage": 0.97,
+   "expert_located": [
+    [
+     "Gittin 89a",
+     15
+    ],
+    [
+     "Gittin 89b",
+     3
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Gittin 89a",
+     19
+    ],
+    [
+     "Gittin 89b",
+     1
+    ]
+   ],
+   "not_blind_reason": null,
+   "detector_proposed": true,
+   "detector_proposed_strict": true,
+   "detector_span": [
+    [
+     "Gittin 89a",
+     19,
+     19
+    ],
+    [
+     "Gittin 89b",
+     1,
+     1
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE",
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r113",
+   "ref": "Gittin 4a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 4a",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r114",
+   "ref": "Gittin 5b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 5b",
+     2,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r115",
+   "ref": "Gittin 5b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 5b",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r116",
+   "ref": "Gittin 10b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 10b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 10b_6-6",
+     "verdict": "borderline",
+     "note": "The words וּתְרֵי לָא? at the beginning and אָמַר אַבָּיֵי, תְּנִי: ״עֵדוֹ״ at the end are not part of the story. The words וְהָא קָתָנֵי are technically not part of the story, but are the Talmudic method of introducing the story, so they could be retained.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r117",
+   "ref": "Gittin 11a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 11a",
+     8,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r118",
+   "ref": "Gittin 14a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 14a",
+     4,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r119",
+   "ref": "Gittin 17a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 17a",
+     5,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r120",
+   "ref": "Gittin 18a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 18a",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r121",
+   "ref": "Gittin 19a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 19a",
+     15,
+     15
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 19a_15-15",
+     "verdict": "incorrect",
+     "note": "Basically just one action, and it is a speech-act (That Rav Pappa instructed, i.e., told someone what to do.  Not enough for a story.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r122",
+   "ref": "Gittin 19a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 19a",
+     16,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 19a_16-16",
+     "verdict": "correct",
+     "note": "This is a very minimal story, but qualifies as a story.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r123",
+   "ref": "Gittin 19b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 19b",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r124",
+   "ref": "Gittin 19b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 19b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 19b_6-6",
+     "verdict": "incorrect",
+     "note": "There is not enough causality and change. Just an account of how Rav Yehuda read documents and signed, and how scribe read to R. Elezar. No real story here. Also, the part from  וְדַוְוקָא רַב נַחְמָן to the end is not part of the source (the account of Rav Yeuhuda and Ulla) , but a later Talmudic comment.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r125",
+   "ref": "Gittin 20a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 20a",
+     9,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 20a_9-9",
+     "verdict": "borderline",
+     "note": "The last three words are not part of the story.   Very borderline as the main actions are verbal. Expounding and praising.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r126",
+   "ref": "Gittin 25a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 25a",
+     10,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 25a_10-10",
+     "verdict": "borderline",
+     "note": "This is borderline, not high confidence.  It is also a little ambiguous depending how one understands וְנִמְצְאוּ , which could just mean that everyone now realized they were lazy/enthusiastic, which would not be a real action.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r127",
+   "ref": "Gittin 27a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 27a",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 27a_7-7",
+     "verdict": "incorrect",
+     "note": "This is just a ruling and the talmud tries to determine the precise circumstances of the ruling. But there is no real story",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r128",
+   "ref": "Gittin 30b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 30b",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r129",
+   "ref": "Gittin 32b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 32b",
+     2,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 32b_2-2",
+     "verdict": "incorrect",
+     "note": "not enough action",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r130",
+   "ref": "Gittin 33b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 33b",
+     9,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r131",
+   "ref": "Gittin 34a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 34a",
+     13,
+     13
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 34a_13-13",
+     "verdict": "incorrect",
+     "note": "This is mainly a legal problem. It is based on what a man said, but not enough action.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r132",
+   "ref": "Gittin 34b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 34b",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r133",
+   "ref": "Gittin 37a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 37a",
+     5,
+     5
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r134",
+   "ref": "Gittin 39a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 39a",
+     11,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r135",
+   "ref": "Gittin 43a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 43a",
+     13,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 43a_13-14",
+     "verdict": "borderline",
+     "note": "Most of the narrative is about teaching and speech acts. The only actions are that the rabbi \"went back\" and placed an interpreter/loudspeaker. But \"went back\" can just mean he started over.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r136",
+   "ref": "Gittin 43b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 43b",
+     4,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 43b_4-4",
+     "verdict": "correct",
+     "note": "The  last sentence is not part of the story (כְּמַאן? כְּרַבִּי יוֹחָנָן בֶּן בְּרוֹקָה, דְּאָמַר: עַל שְׁנֵיהֶם הוּא אוֹמֵר: ״וַיְבָרֶךְ אוֹתָם אֱלֹהִים וַיֹּאמֶר וְגוֹ׳ פְּרוּ וּרְבוּ וּמִלְאוּ וְגוֹ׳״)",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r137",
+   "ref": "Gittin 44a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 44a",
+     8,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 44a_8-11",
+     "verdict": "incorrect",
+     "note": "This is a hypothetical legal problem. Only at the end R. Ami sends a message and ruling. But that is not a real story.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r138",
+   "ref": "Gittin 45a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 45a",
+     14,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r139",
+   "ref": "Gittin 46a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 46a",
+     12,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 46a_12-12",
+     "verdict": "incorrect",
+     "note": "If you look at the Aramaic/Hebrew, there is no story. It is filled in by the translator. Not enough to go on here.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r140",
+   "ref": "Gittin 52b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 52b",
+     3,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r141",
+   "ref": "Gittin 57b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 57b",
+     0,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r142",
+   "ref": "Gittin 58b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 58b",
+     14,
+     14
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r143",
+   "ref": "Gittin 59a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 59a",
+     16,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 59a_16-16",
+     "verdict": "incorrect",
+     "note": "Just one real action, that Bonyam sent a gift to rabbi. Rav Dimi arriving in Bavel is not a second action. Just that he reported the tradition upon arriving.",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r144",
+   "ref": "Gittin 59a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 59a",
+     19,
+     19
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 59a_19-19",
+     "verdict": "incorrect",
+     "note": "It is really a legal discussion. The description of Rav Ashi standing in a certain way, does not add much action",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r145",
+   "ref": "Gittin 59b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 59b",
+     21,
+     21
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 59b_21-21",
+     "verdict": "incorrect",
+     "note": "This is all just about asking for a legal ruling. It is sent to a rabbi but there is no story",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r146",
+   "ref": "Gittin 60a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 60a",
+     1,
+     1
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r147",
+   "ref": "Gittin 67b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 67b",
+     17,
+     17
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r148",
+   "ref": "Gittin 68a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 68a",
+     7,
+     12
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r149",
+   "ref": "Gittin 70a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 70a",
+     9,
+     9
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 70a_9-9",
+     "verdict": "incorrect",
+     "note": "This is just a statement of Elijah to R. Natan. There is no other action",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r150",
+   "ref": "Gittin 70a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 70a",
+     22,
+     22
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 70a_22-22",
+     "verdict": "correct",
+     "note": "It is a minimal story, but there are two acts and change. Only this part is the story: וְהָא מְעוּרַת עֲבַדָה לֵיהּ לְעַבְדַּהּ תְּלָת מִינַּיְיהוּ, וּמִית!",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r151",
+   "ref": "Gittin 74b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 74b",
+     4,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 74b_4-4",
+     "verdict": "incorrect",
+     "note": "THis is the same as 46a above",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r152",
+   "ref": "Gittin 74b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 74b",
+     16,
+     16
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r153",
+   "ref": "Gittin 75a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 75a",
+     0,
+     3
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  },
+  {
+   "id": "gittin_r154",
+   "ref": "Gittin 76b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 76b",
+     19,
+     19
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 76b_19-19",
+     "verdict": "incorrect",
+     "note": "Just a legal discussion",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r155",
+   "ref": "Gittin 78b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 78b",
+     8,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 78b_8-8",
+     "verdict": "incorrect",
+     "note": "It is a legal ruling based on a case. But no real story",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r156",
+   "ref": "Gittin 80b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 80b",
+     1,
+     2
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 80b_1-2",
+     "verdict": "incorrect",
+     "note": "It is a legal discussion at a distance. They send the question and answer to each other",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r157",
+   "ref": "Gittin 82a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 82a",
+     4,
+     4
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 82a_4-4",
+     "verdict": "incorrect",
+     "note": "This is a legal ruling by R. Ami",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r158",
+   "ref": "Gittin 86b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 86b",
+     24,
+     25
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 86b_24-25",
+     "verdict": "incorrect",
+     "note": "A legal question. While the rabbi died in the meantime, that event does not figure in a story. It is all a question and answer",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r159",
+   "ref": "Gittin 88a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 88a",
+     11,
+     11
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "gittin_axes_review_2026-09-02.json",
+     "key": "Gittin 88a_11-11",
+     "verdict": "incorrect",
+     "note": "A legal problem and answer",
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v11",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": false,
+   "objection_kind": "classification"
+  },
+  {
+   "id": "gittin_r160",
+   "ref": "Gittin 88b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Gittin 88b",
+     9,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "NOT_A_STORY"
+   ],
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
+   "expert_accepted": null,
+   "objection_kind": null
+  }
+ ]
+}

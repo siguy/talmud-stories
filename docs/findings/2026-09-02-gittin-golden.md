@@ -101,4 +101,4 @@ Counts are pinned in `GOLDEN_COUNTS` and the two-evidence split in `GITTIN_SHAPE
 
 **It is not a Classification measurement.** 110 of the 135 entries are labelled from a
 blind list, which cannot be evidence about our precision on spans he never saw. The
-measurement is [a separate item](../../work/2026-08-31-classification-point-estimate.md).
+measurement is [a separate item](../../work/done/2026-08-31-classification-point-estimate.md).

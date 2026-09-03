@@ -7,6 +7,13 @@ see [`FRAMEWORK.md` §1.3](../../FRAMEWORK.md).
 goldens (**CIRCULAR**), measured 2026-08-30 (`46d90b2`). *Review-round precision is a
 **range**, not a point: Ketubot 87.9–94.8% (Mar 2026), Kiddushin 67.4–92.1% (Apr 2026, on
 v7) — see §"Distance to gate".*
+**Gittin 83.7–86.7% (BLIND), measured 2026-09-02** over the 135 of 147 asserted proposals
+that carry an expert label; 76.9–87.8% with the 12 unjudged spans left in the denominator.
+**Not comparable to the two above** — different round shape, and 110 of its 113 correct
+entries are *corroborated* by his blind list rather than judged as spans
+([`point_estimate`](../findings/2026-09-02-classification-point-estimate.md)).
+**The ruler prints 0.143 for Gittin. That is precision on the residue after his list is
+removed, not the tractate's precision — read the finding before quoting either.**
 
 *Written 2026-08-30 from the sources in `work/done/2026-08-30-capability-histories.md`. History, not status.*
 
@@ -28,6 +35,8 @@ Its cost lands in this capability's false-negative column, so it is recorded her
 
 | when | what | outcome | evidence |
 |---|---|---|---|
+| 2026-09-02 | **The range becomes a point — Phase C's acceptance test.** First round in the axis vocabulary: 25 Gittin verdicts, each rejection naming its own axis | **measured: `unclassified_notes` = 0, and all-causes precision equals classification-only exactly (`0.143..0.143`).** The width that made this a range for a year was unreadable notes, and it is gone. **But the converged number is precision on the *residue*** — the round covered only proposals his list does not name — and the tractate figure is **83.7–86.7%** | [`point_estimate`](../findings/2026-09-02-classification-point-estimate.md) |
+| 2026-09-02 | **First negative labels on a tractate never in a prompt** — 18 explicit `NOT_A_STORY` verdicts, Gittin | **measured, BLIND.** Precision on the other two tractates rests on rounds over material the detector had already shaped; this does not | [`gittin_golden`](../findings/2026-09-02-gittin-golden.md) |
 | 2026-01-09 | First expert feedback applied: distinguish legal discussions from stories | shipped; the founding distinction of the project | `27170ba` |
 | 2026-01-22 | **v4.1** — dialogue-marker weight cut from +10 to +3; Jeff's 6 validated examples added; a post-detection **self-check** pass | shipped; 30 stories on Ketubot 2a-39b | `68ce263` |
 | 2026-01-25 | **Jeff's v4.1 verdict: 50% false-positive rate** (30 stories reviewed, 15 true / 15 false) | the number that reset the project | `94f7844` |
