@@ -27,7 +27,6 @@ names that slug in its `awaiting:` field; one that cannot start names it in `blo
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? | Decides what Publication has to be, which sets how right Boundaries and Classification must be. Asked as a **proposal to confirm**, not as "corpus or database?" — the second is a design question we should not outsource to a busy reader. | **Email 1, item 4** — a yes/no on the proposal below |
 | ~~`jeff:axes-round`~~ **ANSWERED 2026-09-02** | He reviewed all 25 Gittin passages not on his 2005 list. **3 `yes`, 4 `borderline`, 18 `no`** — three stories we found that his list does not have (19a:16, 43b:4, 70a:22), and the first **negative** labels this project has ever had on a tractate that was never in a prompt. No extra is a `YES`, so the top-band claim in the email survives; the middle band produced zero yeses from five `HIGH_CONFIDENCE` extras. **The instrument failed even though the round succeeded:** every structured field came back empty and five boundary corrections arrived as prose ([`axis-fields-unused`](../work/done/2026-09-02-axis-fields-unused.md)). Unblocks [`classification-point-estimate`](../work/done/2026-08-31-classification-point-estimate.md). | closed — [verdicts](../docs/findings/2026-09-02-gittin-25-verdicts.md) |
 | ~~`jeff:opening-formula`~~ **ANSWERED 2026-09-01** | *"not technically part of the stories. But they are important… If not too much trouble, we should include them."* | **Reverses our 2026-09-01 rejection.** We measured the rule at 9 fixes / 8 breaks and dropped it; his answer re-reads the 8 — those are targets where his own start sits after the formula, and he says the lists 'were sloppy and preliminary'. Re-measured on all four blind sets: **10 of our late starts fixed, 10 targets corrected in the ruler**, 17 late for other reasons and still unexplained. Now a **principled** rule, not a tuned one (Lesson 37). | closed — [answers](../docs/findings/2026-09-02-jeff-answers-gittin.md) |
-| `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. | Costs him nothing and **cannot be reconstructed afterwards**. Five Kiddushin entries were merged in unmarked and we caught it only because the appendix survived separately (Lesson 29). Gittin, Yevamot and Eruvin are still clean — the window closes the moment we send him results for them. | **Email 1, item 5** — one sentence, and the window closes when we send new-tractate results |
 
 ### On `jeff:deliverable-shape` — what we would propose
 
@@ -65,8 +64,9 @@ Six principles, applied below:
 3. **Anchor every number question in real cases.** Do not ask him to produce a tolerance
    from nothing — show him what we actually miss and ask whether *that* is acceptable.
    This is the change that makes `jeff:miss-rate` answerable at all.
-4. **Free asks ride along.** `jeff:appendix-separate` costs him one line and cannot be
-   reconstructed later. It goes in every email until he acts on it.
+4. **Free asks ride along.** A question that costs him one line and unblocks something
+   here can share an email with a harder one. It must genuinely cost a line — a "free"
+   ask that turns out to need thought is just a second hard question.
 5. **Never ask what our own work can answer first.** `jeff:speech-act-policy` without the
    6a count is a vague question about an unnamed number of passages.
 6. **Time-critical goes now regardless of size.**
@@ -79,10 +79,9 @@ Six principles, applied below:
 | 2 | `jeff:boundary-end-rule` | **Already asked, still blocking capability 4.** Not a re-ask: we now have evidence he has not seen — on the 32 Ketubot boundaries the two sources share, they **agree** on starts 7/7 and **agree** on ends 16/19 — so the disagreement is **3 of 19 ends and 0 of 7 starts** (84% overall). *Phrasing corrected 2026-09-01: this line previously read "split on ends 16/19", which reads as 16 disagreements when 16 is the agreement count — it was misread that way while drafting the email.* That still sharpens the ask from "what do you think" to "your two sources disagree, and only on the end edge" — but the honest magnitude is 3 cases. The Ketubot pattern does **not** reproduce on Kiddushin, where the overlap is 14 boundaries and 3 starts is not a sample ([kiddushin_boundary_set §5](../docs/findings/2026-08-31-kiddushin-boundary-set.md)). |
 | 3 | `jeff:mishnah-scope` | Concrete: two named passages, drafted in [`draft_next_email.md`](draft_next_email.md) §1. Pairs with #1. |
 | 4 | `jeff:deliverable-shape` | Looks big, is cheap — it is a yes/no on a proposal, not an open design question. Answering it is one line. |
-| 5 | `jeff:appendix-separate` | One sentence. **The window closes the moment we send him results for Gittin, Yevamot or Eruvin**, and it cannot be reconstructed afterwards (Lesson 29). |
 
-One hard question (#2), two concrete ones, one yes/no, one freebie — and it opens with a
-correction rather than a request.
+One hard question (#2), two concrete ones, and a yes/no — and it opens with a correction
+rather than a request.
 
 ### Email 2 — after phase 6a runs
 

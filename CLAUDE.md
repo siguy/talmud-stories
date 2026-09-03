@@ -292,7 +292,7 @@ When making changes, update these files as relevant:
 - Use few-shot examples from pages being evaluated
 - Ask an LLM for a character offset into text (Lesson 16) — anchor to real text units
 - Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments. **A second instance, 2026-09-01:** `eruvin.doc` stores its columns right-to-left, so `textutil`'s flattened stream puts each location cell *after* its story and the line-based parser credited **53 of 73** entries to the previous row's daf — with the right story count, on real nearby dapim, so nothing looked wrong. `parse_expert_doc` now refuses such a list by name
-- Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories are our own output, merged in and unmarked
+- Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories came from our own output, which he reviewed and folded in. **Making that join is our job, not his**: we know what we sent and when, and `check_appendix_coverage.py` is how we check it
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
 - Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
 - Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set

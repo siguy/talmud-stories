@@ -226,10 +226,13 @@ old lists. **That offer has not been taken up.**
   see [Classification](3_classification.md).
 - **Reuse the throughput UI.** `batch_review.html` with Y/N/S keyboard shortcuts was built
   in January 2026 and never used for a real round.
-- **Ask Jeff to keep his appendix separate** on the next tractate — one sentence, costs
-  him nothing, and it cannot be reconstructed afterwards. It is the difference between a
-  blind list and an unverifiable one (Lesson 29, `NEXT/09` item 1b). Gittin, Yevamot and
-  Eruvin are still clean; **the window closes the moment we send him results**.
+- ~~**Ask Jeff to keep his appendix separate** on the next tractate.~~ **Dropped
+  2026-09-03, and it should never have been here.** Jeff is a partner on this project;
+  folding our cases into his list is him engaging with what we sent, not contaminating a
+  dataset. And the engineering premise was false — **we know exactly what we sent him and
+  when, so the join is ours to make**, `check_appendix_coverage.py` makes it, and it runs
+  against any list at any time. There is no window. What stays is the check, run on every
+  expert list before calling it blind (Lesson 29, revised).
 - **Declined, by Jeff:** a fresh cold-read of 10 random dapim as a recall probe — he
   already had detector-blind lists and offered those instead
   ([ledger Part 2(a)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md)). Also
