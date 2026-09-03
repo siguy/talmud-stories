@@ -1,5 +1,12 @@
 # The speech-act contradiction touches 6 golden entries, not 110 — and half of those are a boundary defect
 
+> **Superseded in part, same day.** Jeff's 2026-09-02 email — which arrived after this
+> ran — rules that *retracted, considered, responded, sent (a message)* are not actions.
+> This screen counted them as actions. Under his rule the count is **17, not 6**, and
+> **9 of the 13 additions dissolve into the span defect this finding names below** —
+> which is why its central claim stands and its number does not. →
+> [`quasi-speech-acts and the span confound`](2026-09-03-quasi-speech-acts-and-the-span-confound.md)
+
 **2026-09-03.** Phase 6a of [`story-criteria`](../../work/2026-08-30-story-criteria.md),
 first proposed 2026-08-29, described as *"~$0.10, needs nobody, changes nothing"*, and
 **never run for five weeks** while the contradiction it sizes was called a 44%-of-the-golden
