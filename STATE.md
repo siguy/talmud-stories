@@ -82,10 +82,10 @@ history    docs/capabilities/3_classification.md
 open       2026-08-30-eruvin-classification   ← blocked: 2026-08-30-eruvin-detection
 open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-round
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
-open       2026-08-30-gittin-golden   ← blocked: 2026-08-30-gittin-expert-round
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
-closed     8 item(s) in work/done/
+open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
+closed     9 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -161,4 +161,5 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
-<!-- board-checksum: 78ad803bc261c6f1 -->
+- `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round
+<!-- board-checksum: a5c7f6786943afdb -->
