@@ -46,15 +46,22 @@ _spec.loader.exec_module(recall)
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--expert-json', required=True)
+    source = ap.add_mutually_exclusive_group(required=True)
+    source.add_argument('--expert-json')
+    source.add_argument('--expert-doc',
+                        help='the Ketubot .doc, parsed by parse_expert_doc — a different '
+                             'path from the three JSON lists, so it is checked separately')
     ap.add_argument('--detected', nargs='+', required=True)
     ap.add_argument('--tractate', required=True)
+    ap.add_argument('--matcher', default='fuzzy', choices=['fuzzy', 'exact'],
+                    help='see measure_recall_vs_expert_list.locate_exact')
     ap.add_argument('--expert-filter', default='recall', choices=['recall', 'blind', 'all'])
     ap.add_argument('--out')
     ap.add_argument('--show', type=int, default=10, help='how many loose-only cases to print')
     args = ap.parse_args()
 
-    stories = recall.load_expert_json(args.expert_json, args.expert_filter)
+    stories = (recall.load_expert_json(args.expert_json, args.expert_filter)
+               if args.expert_json else recall.parse_expert_doc(args.expert_doc, args.tractate))
     units, spans, withheld, triage, rejected, accepted = recall.load_detected(args.detected)
     index = recall.build_index(units) if hasattr(recall, 'build_index') else None
     if index is None:
@@ -64,10 +71,13 @@ def main():
             for g in gs:
                 index[g].add(i)
 
+    corpus = recall.word_corpus(args.detected, units)
+    locator, fell_back = recall.make_locator(args.matcher, units, index, corpus)
+
     rows, loose, strict = [], 0, 0
     for s in stories:
         gs = recall.grams(s['text'])
-        cov, lo, hi = recall.locate(gs, units, index)
+        cov, lo, hi = locator(s)
         window = [(units[i][0], units[i][1]) for i in range(lo, hi + 1)] if lo is not None else []
         tight = [(units[i][0], units[i][1]) for i in range(lo, hi + 1)
                  if max(recall.overlap_frac(units[i][2], gs),
@@ -81,11 +91,15 @@ def main():
         rows.append({'id': s.get('id'), 'ref': window[0][0] if window else s.get('ref'),
                      'coverage': round(cov, 3) if cov else cov,
                      'window_segments': len(window), 'tight_segments': len(tight),
-                     'loose': in_loose, 'strict': in_strict,
+                     'loose': in_loose, 'strict': in_strict, 'matcher': args.matcher,
                      'text': s['text'][:120]})
 
     n = len(stories)
-    log.info('%s: %d expert stories (--expert-filter %s)', args.tractate, n, args.expert_filter)
+    log.info('%s: %d expert stories (--expert-filter %s, --matcher %s)',
+             args.tractate, n, args.expert_filter, args.matcher)
+    if args.matcher == 'exact' and fell_back:
+        log.warning('%d story(s) had no corpus-unique phrase and fell back to the 4-gram '
+                    'aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
     log.info('LOOSE  recall: %d/%d = %.1f%%  — proposal anywhere in the search window',
              loose, n, 100 * loose / n)
     log.info('STRICT recall: %d/%d = %.1f%%  — proposal overlapping the story\'s own segments',
@@ -103,7 +117,7 @@ def main():
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)
         Path(args.out).write_text(json.dumps(
-            {'tractate': args.tractate, 'denominator': n,
+            {'tractate': args.tractate, 'denominator': n, 'matcher': args.matcher,
              'recall_loose': round(loose / n, 4), 'recall_strict': round(strict / n, 4),
              'stories': rows}, indent=2, ensure_ascii=False))
         log.info('wrote %s', args.out)

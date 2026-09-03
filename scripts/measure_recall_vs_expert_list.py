@@ -268,6 +268,136 @@ def locate(story_grams, units, index, max_window=14, seeds=12):
 
 
 
+# ---------------------------------------------------------------------------
+# Exact-anchor matching (2026-09-03)
+#
+# `locate` above compares SETS of 4-grams per segment, so word order and position are
+# discarded, and it grows a window while coverage improves. Accumulating segments can only
+# ADD grams, so nothing ever penalises a too-wide window: a neighbour sharing `אמר ליה`
+# extends it. Windows run to `max_window` segments and the loose recall figure credits a
+# proposal anywhere inside one — 5 of Yevamot's 96 loose credits are a different story on
+# the same daf.
+#
+# Jeff's 2005 text is essentially verbatim Vilna, so the abbreviation problem the 4-gram
+# aligner was built around (א"ל vs אמר ליה) is mostly not present. Measured 2026-09-03 on
+# all four lists: EVERY story (149 Ketubot / 90 Kiddushin / 111 Gittin / 102 Yevamot)
+# contains at least one exact 6-word phrase that is unique in its whole tractate.
+#
+# That is not a property to assume for a list nobody has checked. `locate_exact` returns
+# None when a story has no unique anchor, and the fuzzy aligner stays the per-story
+# fallback — `--matcher exact` means "exact where it anchors", never "exact or nothing".
+# ---------------------------------------------------------------------------
+
+SHINGLE = 6                    # words per phrase; 6 is unique corpus-wide on all four lists
+CLUSTER_GAP = 500              # tokens; a wider jump between anchors is a different passage
+SLACK_FLOOR = 25               # words a phrase may sit from where the story puts it
+SLACK_FRACTION = 0.25          # ...or a quarter of the story, for the long ones
+
+Corpus = namedtuple('Corpus', 'tokens owner shingles')
+
+
+def word_corpus(paths, units):
+    """Word-level corpus aligned to `units` BY CONSTRUCTION, not by re-sorting.
+
+    `units` is whatever `load_detected`/`text_units` returned; this indexes the same
+    segments by (ref, index) and lays their words out in that list's own order, so a token
+    position maps back to a unit index without either side knowing how the other sorted.
+    """
+    words = {}
+    for path in paths:
+        for page in json.loads(Path(path).read_text())['pages']:
+            for seg in page.get('segments', []):
+                words[(page['ref'], seg['index'])] = normalize(seg['hebrew']).split()
+    tokens, owner = [], []
+    for i, (ref, ix, _) in enumerate(units):
+        ws = words.get((ref, ix), [])
+        tokens += ws
+        owner += [i] * len(ws)
+    shingles = defaultdict(list)
+    for i in range(len(tokens) - SHINGLE + 1):
+        shingles[' '.join(tokens[i:i + SHINGLE])].append(i)
+    return Corpus(tokens, owner, shingles)
+
+
+def _largest_cluster(anchors, gap=CLUSTER_GAP):
+    """The densest run of (story_position, corpus_position) anchors.
+
+    A corpus-unique phrase cannot match the wrong place, but a story quoting a passage
+    that recurs elsewhere in the tractate can hold anchors in two, and taking min/max
+    would stretch the span across half a tractate.
+    """
+    best, run = [], [anchors[0]]
+    for prev, cur in zip(anchors, anchors[1:]):
+        if cur[1] - prev[1] > gap:
+            best, run = max(best, run, key=len), [cur]
+        else:
+            run.append(cur)
+    return max(best, run, key=len)
+
+
+def locate_exact(text, corpus):
+    """(coverage, start_unit, end_unit) from exact phrase anchors, or None if unanchored.
+
+    Anchor on the phrases that are unique corpus-wide, then extend over every OTHER phrase
+    of the story that matches exactly AND SITS WHERE THE STORY SAYS IT SHOULD — Jeff's
+    text is near-verbatim Vilna, so a phrase `k` words into the story belongs `k` words
+    into the passage, give or take small elisions. That positional test is the whole
+    difference from `locate`: a gram set can only grow, so it cannot reject a neighbour,
+    while a phrase landing 300 words from where the story puts it is simply not this
+    story's copy of it.
+
+    Extension is what protects EXTENT: a story whose middle alone is unique would
+    otherwise be located to its middle, and boundary scoring reads these same locations.
+
+    Returns the fraction of the story's phrases PLACED, which is a matching diagnostic and
+    not comparable to `locate`'s gram coverage — a verbatim story routinely places only
+    half its phrases, because one changed word kills six overlapping shingles.
+    `make_locator` converts it to gram coverage of the located span before anything
+    downstream sees it, so the 0.6 unlocated floor keeps meaning what it meant.
+    """
+    words = normalize(text).split()
+    if len(words) < SHINGLE:
+        return None
+    phrases = [' '.join(words[i:i + SHINGLE]) for i in range(len(words) - SHINGLE + 1)]
+    hits = [corpus.shingles.get(p, ()) for p in phrases]
+    anchors = sorted((i, h[0]) for i, h in enumerate(hits) if len(h) == 1)
+    if not anchors:
+        return None
+    cluster = _largest_cluster(sorted(_largest_cluster(anchors), key=lambda a: a[1]))
+    offset = sorted(p - i for i, p in cluster)[len(cluster) // 2]   # median: story -> corpus
+    slack = max(SLACK_FLOOR, int(SLACK_FRACTION * len(words)))
+    lo = hi = cluster[0][1]
+    placed = 0
+    for i, h in enumerate(hits):
+        near = [p for p in h if abs(p - (i + offset)) <= slack]
+        if near:
+            placed += 1
+            lo, hi = min(lo, min(near)), max(hi, max(near))
+    end = min(hi + SHINGLE - 1, len(corpus.tokens) - 1)
+    return placed / len(phrases), corpus.owner[lo], corpus.owner[end]
+
+
+def make_locator(kind, units, index, corpus):
+    """`story -> (coverage, start_unit, end_unit)`, so both harnesses swap matchers in one
+    line and every other caller of `locate` is untouched."""
+    fuzzy = lambda story: locate(grams(story['text']), units, index)
+    if kind == 'fuzzy':
+        return fuzzy, {}
+    fell_back = {}
+
+    def exact(story):
+        found = locate_exact(story['text'], corpus)
+        if found is None:
+            fell_back[story.get('id', story['ref'])] = story['text'][:60]
+            return fuzzy(story)
+        _, lo, hi = found
+        # Report gram coverage of the located span, the same quantity `locate` returns,
+        # so `coverage` means one thing across both matchers and the 0.6 floor still holds.
+        gs = grams(story['text'])
+        acc = set().union(*(units[i][2] for i in range(lo, hi + 1)))
+        return overlap_frac(gs, acc), lo, hi
+    return exact, fell_back
+
 MIN_ANCHOR_COVERAGE = 0.6      # the same floor `main` uses to call a story "unlocated"
 
 
@@ -375,6 +505,10 @@ def main():
     ap.add_argument('--detected', nargs='+', required=True)
     ap.add_argument('--golden')
     ap.add_argument('--tractate', default='Ketubot')
+    ap.add_argument('--matcher', default='fuzzy', choices=['fuzzy', 'exact'],
+                    help='how to locate an expert story in the text: `fuzzy` is the '
+                         '4-gram window aligner; `exact` anchors on phrases unique '
+                         'corpus-wide and falls back to fuzzy per story (see locate_exact)')
     ap.add_argument('--out')
     args = ap.parse_args()
 
@@ -393,15 +527,17 @@ def main():
 
     index = gram_index(units)
     anchor_span_refs(expert, units, index)
+    corpus = word_corpus(args.detected, units)
+    locator, fell_back = make_locator(args.matcher, units, index, corpus)
 
     rows = []
     for story in expert:
-        gs = grams(story['text'])
-        cov, start, end = locate(gs, units, index)
+        cov, start, end = locator(story)
         window = [(units[i][0], units[i][1]) for i in range(start, end + 1)] if start is not None else []
         covered = lambda table: any(lo <= ix <= hi for ref, ix in window for lo, hi in table.get(ref, []))
         pages_touched = sorted({ref for ref, _ in window})
-        rows.append({**story, 'coverage': round(cov, 3), 'segments': len(window),
+        rows.append({**story, 'matcher': args.matcher, 'coverage': round(cov, 3),
+                     'segments': len(window),
                      'located': window[:1] + window[-1:],
                      'pages_touched': pages_touched,
                      'survived_triage': any(ref in triage.examined for ref in pages_touched),
@@ -409,6 +545,13 @@ def main():
                      'only_rejected': covered(rejected) and not covered(accepted),
                      'in_mishnah_filtered': covered(withheld),
                      'in_golden': covered(golden) if args.golden else None})
+
+    if args.matcher == 'exact':
+        log.info('MATCHER exact: %d/%d stories anchored on a corpus-unique phrase, '
+                 '%d fell back to the 4-gram aligner', len(rows) - len(fell_back),
+                 len(rows), len(fell_back))
+        for key, text in fell_back.items():
+            log.warning('  NO EXACT ANCHOR %s: %s', key, text)
 
     found = [r for r in rows if r['in_detector']]
     unlocated = [r for r in rows if r['coverage'] < 0.6]

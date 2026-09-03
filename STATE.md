@@ -73,7 +73,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     14 item(s) in work/done/
+closed     15 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -94,7 +94,7 @@ closed     11 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     7 item(s) in work/done/
+closed     8 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -162,4 +162,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 79d7eef646732416 -->
+<!-- board-checksum: b0615c6c8439e3b4 -->
