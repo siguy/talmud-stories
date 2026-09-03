@@ -79,20 +79,36 @@ def gates() -> dict[str, str]:
 
 
 def goldens() -> dict[str, dict]:
+    """Every golden on disk -- iterate TRACTATES, never a shorter hardcoded list.
+
+    Until 2026-09-02 this looped over ("ketubot", "kiddushin") while TRACTATES held five.
+    The Gittin golden landed and the coverage matrix printed the Classification cell as
+    `⬜` -- "never measured" -- for a file sitting in results/canonical/. The board is the
+    thing sessions read to decide what to work on, so an artifact it cannot see may as
+    well not exist, and nothing raises: a missing golden and an unlooped tractate produce
+    the same blank (Lesson 38 -- absence is quiet).
+
+    `load_json` already returns nothing for a file that is not there, so the guard the
+    short list was doing is the one the loop already does.
+    """
     out = {}
-    for t in ("ketubot", "kiddushin"):
+    for t in TRACTATES:
         d = load_json(f"results/canonical/{t}_canonical.json")
         if not d:
             continue
         stories = [s for pg in d["pages"] for s in pg.get("stories", [])]
+        # `accepted` = not NOT_A_STORY, which counts BORDERLINE as accepted. Gittin is
+        # the first golden to carry that value and this figure does not distinguish it;
+        # the split lives in the golden's own `classification_distribution`.
         accepted = [s for s in stories if s.get("classification") != "NOT_A_STORY"]
         out[t] = {"pages": len(d["pages"]), "entries": len(stories), "accepted": len(accepted)}
     return out
 
 
 def rulers() -> dict[str, dict]:
+    """Same fix, same reason: a ruler for a tractate not in the list was unreadable."""
     out = {}
-    for t in ("ketubot", "kiddushin"):
+    for t in TRACTATES:
         d = load_json(f"results/rulers/{t}_ruler.json")
         if d:
             out[t] = d.get("metrics", {})

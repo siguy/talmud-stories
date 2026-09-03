@@ -112,6 +112,15 @@ TRACTATES = {
         'runs': ['results/v10/wave4_notrim/kiddushin_v10_notrim.json'],
         'golden': 'results/canonical/kiddushin_canonical.json',
     },
+    # Gittin, added 2026-09-02. The first tractate whose review round covers ONLY the
+    # proposals his list does not name -- the other two were reviewed story by story.
+    # That is why its precision reads differently and must be read differently: see
+    # docs/findings/2026-09-02-classification-point-estimate.md.
+    'Gittin': {
+        'expert_json': 'results/expert_lists/gittin_2005.json',
+        'runs': ['results/v11/gittin/gittin_v11.json'],
+        'golden': 'results/canonical/gittin_canonical.json',
+    },
 }
 
 

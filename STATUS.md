@@ -500,7 +500,7 @@ All items are `work/2026-08-30-<slug>.md`. Finished ones are in
 
 | item | capability | needs | Jeff? |
 |---|---|---|---|
-| **[classification-point-estimate](work/2026-08-31-classification-point-estimate.md)** — send one tractate on the new page; the range becomes a number. **The instrument is built; this is the reading** | 3, 5 | a round | **yes** |
+| **[classification-point-estimate](work/done/2026-08-31-classification-point-estimate.md)** — send one tractate on the new page; the range becomes a number. **The instrument is built; this is the reading** | 3, 5 | a round | **yes** |
 | **price the review cost of a delta-only round** — show him only what changed. No brief yet, and the only lead this project has on throughput | 5 | — | no |
 | **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict; the 16 unincorporated Kiddushin verdicts are confirmed and still unfolded | 3, ground truth | — | no |
 | **price the review cost of loosening triage** — the missing half of the trade; no brief yet | 1, 5 | — | no |

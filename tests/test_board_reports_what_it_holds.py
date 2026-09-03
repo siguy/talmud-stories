@@ -142,3 +142,24 @@ def test_a_row_carrying_no_judgement_at_all_is_not_counted():
     """The counter must still exclude filler, or every empty row inflates a round."""
     assert not board._is_verdict({"ref": "Ketubot 5a"})
     assert not board._is_verdict({})
+
+
+def test_the_board_sees_every_golden_and_every_ruler_on_disk():
+    """A hardcoded tractate list makes a real artifact indistinguishable from a missing one.
+
+    `goldens()` and `rulers()` looped over ("ketubot", "kiddushin") while TRACTATES held
+    five. The Gittin golden landed on 2026-09-02 and the coverage matrix printed its
+    Classification cell as `⬜` — "never measured" — for a file sitting in
+    results/canonical/. Nothing raised, because a missing file and an unlooped tractate
+    produce the identical blank (Lesson 38: absence is quiet).
+
+    The board is what a session reads to decide what to work on. An artifact it cannot
+    see may as well not exist, and this is the one property that says it can.
+    """
+    for t in board.TRACTATES:
+        if (ROOT / f"results/canonical/{t}_canonical.json").exists():
+            assert t in board.goldens(), (
+                f"{t}_canonical.json is on disk and the board does not read it")
+        if (ROOT / f"results/rulers/{t}_ruler.json").exists():
+            assert t in board.rulers(), (
+                f"{t}_ruler.json is on disk and the board does not read it")

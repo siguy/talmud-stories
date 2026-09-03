@@ -80,7 +80,7 @@ Aramaic-only arm has been run — and it is the subject of
 **Settles:** the Gittin extras. 147 accepted proposals, 117 matching his list, 30
 unlisted — 25 sent here, 5 self-screened as duplicates or standing practice. Every one of
 the 30 now has a disposition. The Classification point estimate is
-[a separate item](../../work/2026-08-31-classification-point-estimate.md); this file is
+[a separate item](../../work/done/2026-08-31-classification-point-estimate.md); this file is
 the round, not the measurement.
 
 **Does not settle:** the top band's precision. There are three tiers, not two — `YES`
@@ -108,7 +108,7 @@ targets are already in, and they will need the same mining.
 
 | what | where |
 |---|---|
-| the round is read by no ruler — Lesson 38's shape, caught by the board this time | [`classification-point-estimate`](../../work/2026-08-31-classification-point-estimate.md) |
+| the round is read by no ruler — Lesson 38's shape, caught by the board this time | [`classification-point-estimate`](../../work/done/2026-08-31-classification-point-estimate.md) |
 | 57a retracted from his own list → recall denominator 112 → 111 | [`gittin-recall-denominator`](../../work/done/2026-09-02-gittin-recall-denominator.md) |
 | a Gittin golden — the first blind tractate with **negative** labels | [`gittin-golden`](../../work/done/2026-08-30-gittin-golden.md) |
 | English-first prompting | [`english-first-prompt`](../../work/2026-09-02-english-first-prompt.md) |

@@ -16,7 +16,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 |---|---|---|---|---|---|---|
 | **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
 | **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Gittin** | 100.0% · n=111 B | 100.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Gittin** | 100.0% · n=111 B | 100.0% B | STATUS · C | STATUS | 1 rounds | ⬜ |
 | **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
@@ -34,7 +34,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 
 - Ketubot: **96.0% loose / 87.9% strict** on 149 stories
 - Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
-- Gittin: **100.0% loose / 97.3% strict** on 111 stories (no ruler yet — no expert round on this tractate)
+- Gittin: **100.0% loose / 97.3% strict** on 111 stories
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -85,7 +85,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     9 item(s) in work/done/
+closed     10 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -106,8 +106,8 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-open       2026-08-31-classification-point-estimate   ← awaiting: jeff:axes-round
-closed     5 item(s) in work/done/
+open       2026-09-02-axis-fields-unused
+closed     6 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -127,8 +127,10 @@ closed     1 item(s) in work/done/
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
+| `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 135 entries · 117 accepted |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
+| `results/rulers/gittin_ruler.json` | **JOINED** | denominator 111 · found 111 |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
 | `results/rulers/kiddushin_ruler.json` | **JOINED** | denominator 90 · found 84 |
 
@@ -159,7 +161,7 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
-- `2026-08-31-classification-point-estimate` — jeff:axes-round
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round
-<!-- board-checksum: a5c7f6786943afdb -->
+- `2026-08-31-classification-point-estimate` — jeff:axes-round
+<!-- board-checksum: 848ee0fb925b4b15 -->
