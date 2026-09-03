@@ -310,3 +310,6 @@ When making changes, update these files as relevant:
 - Join a verdict to a proposal on an **exact `(ref, start, end)` key** — a later version re-bounding the same story then reads as the story having been deleted (Lesson 36). Match by overlap
 - Gate the **extent / confidence / grouping** axes of the review UI behind a `No` on "is it a story". A passage can be a story *and* be mis-bounded — that is what `adjust` meant, and it is the commonest correction Jeff gives us. A test fails if this regresses
 - Quote a **review round's precision as the current capability's number** without checking the current detector still makes those calls (Lesson 36). Of 8 notes where the detector disagreed at review time, 7 now agree
+
+## Output style
+Use the `i-really-have-adhd` skill (`.claude/skills/i-really-have-adhd/SKILL.md`) on every response. Length scales with Simon's decisions and actions, never with work performed: first line is the answer or the action, successful work collapses to one line, no preamble, no closer, rationale only on request.
