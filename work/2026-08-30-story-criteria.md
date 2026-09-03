@@ -3,7 +3,7 @@ title: Encode Jeff's story criteria (was Wave 6)
 capability: [classification]
 tractate: []
 blocked_by: []
-awaiting: [jeff:speech-act-policy]
+awaiting: []
 writes: [src/prompts/]
 finding:
 superseded_by:
@@ -23,15 +23,24 @@ Encoding [Jeff's 2026-07-06 rubric](../docs/findings/2026-07-06-jeff-story-defin
 looks like a prompt change. It is not — it is a question about what the dataset *means*,
 and we cannot answer it for him.
 
-**His 2026-07-06 criteria contradict his own 2026-03-17 rulings**, and the bucket they
-point at is **110 of the 249 accepted golden entries** (Ketubot 77, Kiddushin 33 —
-verified 2026-08-30). Applying the new rule mechanically would redefine 44% of the golden.
+**His 2026-07-06 criteria contradict his own 2026-03-17 rulings.** The bucket they *point
+at* is 110 of the 249 accepted golden entries (Ketubot 77, Kiddushin 33). The bucket they
+**hit** is **6** — measured 2026-09-03, and the difference is the whole reason 6a exists.
+
+> **Corrected 2026-09-03.** This section read *"applying the new rule mechanically would
+> redefine 44% of the golden"* for five weeks, and it was the sentence that made this item
+> look like the project's largest open question. 44% is the size of the bucket we had to
+> *search*, not of the set that turns out to be affected. **A candidate count is not a
+> blast radius**, and quoting one as the other is how an item gets ranked first on a
+> number nobody measured.
 
 ## The three phases
 
-- **6a — measure the blast radius.** Classify each of the 110 LOW_CONFIDENCE golden
-  entries on one axis: *does anything non-speech happen?* ~$0.10, needs nobody, changes
-  nothing. **Never run.**
+- **6a — measure the blast radius.** ~~Never run.~~ **DONE 2026-09-03: the answer is 6,
+  not 110** ([finding](../docs/findings/2026-09-03-speech-act-blast-radius.md)). 110 was
+  the candidate bucket; 6 of them are speech-only, 2.4% of the accepted golden. And on
+  reading those 6, **three are spans that stop before the action happens** — a Boundaries
+  defect wearing a criteria costume. The criteria question is about **three entries**.
 - **6b — ask Jeff.** Present the contradiction in his own words with 6a's count and 3–4
   examples: should those entries become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new
   **borderline** status? Drafted, not sent.
