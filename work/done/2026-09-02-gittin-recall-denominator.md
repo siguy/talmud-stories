@@ -4,7 +4,7 @@ capability: [detection]
 tractate: [gittin]
 blocked_by: []
 awaiting: []
-writes: [results/expert_lists/gittin_2005.json, results/recall/gittin_strict.json, results/recall/gittin_jeff2005_matches.json, docs/capabilities/2_detection.md]
+writes: [results/expert_lists/gittin_2005.json, results/recall/gittin_strict.json, results/recall/gittin_strict_rc3.json, results/recall/gittin_jeff2005_matches.json, docs/capabilities/2_detection.md, docs/findings/2026-08-31-gittin-first-run.md, tests/test_new_tractate_expert_lists.py]
 finding:
 superseded_by:
 ---
@@ -101,3 +101,19 @@ answerable.
 - **`comms/2026-09-01-email-jeff-gittin.md`** and the sent artifact HTML. Sent
   correspondence is a record of what he was told; it is not updated after the fact.
 - **The other 111 entries.** One retraction is not a licence to re-audit a blind list.
+
+### A note on `board.py finish`'s drift report, for whoever hits it next
+
+It ran here and was **wrong**, and the reason is worth knowing. `declared_vs_actual()`
+diffs `main..HEAD` on **committed** work. This item was developed on a branch stacked on
+another open PR and finished before its own commit, so the report showed the *previous*
+PR's files as under-declared and this item's real files as "declared but never touched" —
+exactly inverted.
+
+It then escalated to a lane collision that does not exist: the previous PR's feedback
+file against `classification-point-estimate`, two items that never ran concurrently.
+
+Nothing is wrong with the check. It is accurate for the workflow it assumes — one branch,
+one item, commit before finish. **On a stacked branch, run `finish` after the commit and
+read its report against `git diff <parent-pr-head>..HEAD`, not against main.** The
+`writes:` above is corrected from that diff, by hand.
