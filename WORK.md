@@ -18,7 +18,6 @@ of four branches on 2026-08-30 had never committed anything.
 | [Eruvin — triage](work/2026-08-30-eruvin-triage.md) | triage | eruvin | — |
 | [Gittin — classification](work/2026-08-30-gittin-classification.md) | classification | gittin | **blocked:** `2026-08-30-gittin-detection` |
 | [Gittin — detection](work/2026-08-30-gittin-detection.md) | detection | gittin | **blocked:** `2026-08-30-gittin-triage`, `2026-08-30-two-amud-header-parser` |
-| [Gittin — golden](work/2026-08-30-gittin-golden.md) | classification | gittin | **blocked:** `2026-08-30-gittin-expert-round` |
 | [Gittin — review ui](work/2026-08-30-gittin-review-ui.md) | review | gittin | **blocked:** `2026-08-30-gittin-classification` |
 | [Gittin — triage](work/2026-08-30-gittin-triage.md) | triage | gittin | — |
 | [Make the goldens complete: fold in every verdict](work/2026-08-30-golden-completeness.md) | classification | ketubot, kiddushin | — |
@@ -39,6 +38,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Stop the parallel-practice rule deleting a second story](work/2026-09-01-parallel-story-rule.md) | boundaries | ketubot, kiddushin | awaiting `jeff:boundary-end-rule` |
 | [The axis UI's structured fields went 100% unused on their first real round](work/2026-09-02-axis-fields-unused.md) | review | — | — |
 | [The detector reads more translation than source — price it](work/2026-09-02-english-first-prompt.md) | detection, classification | — | — |
+| [Two YES-tier Gittin stories nobody has ever judged — and the loose window that hid them](work/2026-09-02-gittin-two-unjudged-yes.md) | detection, classification | gittin | awaiting `jeff:axes-round` |
 
 <!-- board-live:start -->
 ## In flight
@@ -49,17 +49,18 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
-| `gittin-recall-denominator` | `kiddushin-recall-boundary-c52c91` | **10 FILES** |
+| `gittin-golden` | `kiddushin-recall-boundary-c52c91` | **8 FILES** |
 | `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 25 items, never deleted
+## Done — 26 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
 | [Write the history of each capability](work/done/2026-08-30-capability-histories.md) | triage, detection, classification, boundaries, review, publication | — |
 | [Fetch Gittin, Yevamot and Eruvin from Sefaria](work/done/2026-08-30-fetch-new-tractates.md) | triage, detection | — |
 | [Gittin — expert round](work/done/2026-08-30-gittin-expert-round.md) | review | — |
+| [Gittin — golden](work/done/2026-08-30-gittin-golden.md) | classification | — |
 | [Why is Ketubot 77a never proposed?](work/done/2026-08-30-ketubot-77a.md) | classification | [2026-08-30-recall-miss-diagnosis.md](docs/findings/2026-08-30-recall-miss-diagnosis.md) |
 | [Add the 5 blind-list stories missing from the Ketubot golden](work/done/2026-08-30-ketubot-golden-additions.md) | detection, classification | — |
 | [Build a blind Kiddushin boundary set](work/done/2026-08-30-kiddushin-boundary-set.md) | boundaries | [2026-08-31-kiddushin-boundary-set.md](docs/findings/2026-08-31-kiddushin-boundary-set.md) |
@@ -82,4 +83,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Correct the Gittin recall denominator — Jeff retracted one of his own entries](work/done/2026-09-02-gittin-recall-denominator.md) | detection | — |
 | [A custom that frames a one-time event is still a story (Gittin 57a, Beitar)](work/done/2026-09-02-habitual-frame.md) | detection, classification | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
 | [Include the introducing formula in the story start — Jeff ruled, so build it](work/done/2026-09-02-opening-formula.md) | boundaries | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
-<!-- board-checksum: 1314b2d5b99ec037 -->
+<!-- board-checksum: 94e143007d87a541 -->

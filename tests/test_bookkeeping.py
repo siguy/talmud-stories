@@ -41,6 +41,21 @@ BASELINE_KETUBOT_SHA = "e5e46fd7ac174b2a52c4030ed71bb603c2f79067"
 GOLDEN_COUNTS = {
     "ketubot": {"pages": 222, "entries": 187, "accepted": 164},
     "kiddushin": {"pages": 162, "entries": 96, "accepted": 85},
+    # Gittin, 2026-09-02. `accepted` here counts BORDERLINE, because that is what this
+    # test's definition has always meant (anything not NOT_A_STORY) and silently
+    # redefining it would move the other two tractates' numbers without touching them.
+    # The split that actually matters is pinned separately, below.
+    "gittin": {"pages": 178, "entries": 135, "accepted": 117},
+}
+
+# Gittin is the first golden built from two kinds of expert evidence, and the first to
+# carry BORDERLINE. Both distinctions are load-bearing and neither is visible in a
+# pages/entries/accepted triple, so they get their own assertion.
+GITTIN_SHAPE = {
+    "label_sources": {"expert_blind_list": 110, "expert_verdict": 25},
+    "classification_distribution": {"YES": 113, "BORDERLINE": 4, "NOT_A_STORY": 18},
+    "unlabelled_proposals": 23,
+    "known_missing_stories": 3,
 }
 
 
@@ -332,6 +347,41 @@ def test_golden_still_measures_what_it_should(tractate):
         f"{tractate} golden moved: {got} != {GOLDEN_COUNTS[tractate]}. The golden may only "
         f"GROW programmatically; if this is a deliberate addition, update the expected "
         f"counts in the same commit.")
+
+
+def test_the_gittin_golden_keeps_its_two_kinds_of_evidence_apart():
+    """A golden entry labelled from a 2005 list is NOT the same fact as one he judged.
+
+    `expert_verdict` means he saw our span and ruled on it. `expert_blind_list` means his
+    list names a story our span overlaps -- it says a story is there, and says nothing
+    about our extent. Collapsing them would let an unvalidated boundary be quoted as
+    expert-confirmed, which is the shape of error Lesson 24 is about.
+
+    Also pinned: every entry carries an expert label. A proposal with no expert evidence
+    belongs in `unlabelled_proposals`, never in `pages[].stories[]` with a null
+    classification -- a null in a file called "golden" is read as a label by the next
+    reader and as a fact by the one after.
+    """
+    d = json.loads((ROOT / "results/canonical/gittin_canonical.json").read_text())
+    stories = [s for pg in d["pages"] for s in pg.get("stories", [])]
+
+    assert d["label_sources"] == GITTIN_SHAPE["label_sources"]
+    assert d["classification_distribution"] == GITTIN_SHAPE["classification_distribution"]
+    assert len(d["unlabelled_proposals"]) == GITTIN_SHAPE["unlabelled_proposals"]
+    assert len(d["known_missing_stories"]) == GITTIN_SHAPE["known_missing_stories"]
+
+    for s in stories:
+        assert s.get("label_source") in ("expert_verdict", "expert_blind_list"), (
+            f"{s} carries no label source. Every entry in this golden is labelled by the "
+            f"expert, one way or the other.")
+        assert s.get("classification") in ("YES", "BORDERLINE", "NOT_A_STORY")
+
+    # BORDERLINE must stay its own answer. He asked for contested cases to be kept and
+    # flagged (2026-07-06); rounding them into yes or no is the thing he declined.
+    borderline = [s for s in stories if s["classification"] == "BORDERLINE"]
+    assert len(borderline) == 4
+    assert all(s["label_source"] == "expert_verdict" for s in borderline), (
+        "a BORDERLINE can only come from a verdict -- a 2005 list has no such column")
 
 
 # ---------------------------------------------------------------- paths

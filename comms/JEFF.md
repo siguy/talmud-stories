@@ -103,6 +103,7 @@ different, much easier act than producing a threshold.**
 
 | what we told him | what is true | where |
 |---|---|---|
+| The 2026-09-01 email said *"All 59 we called 'certain' are on your list."* | **False for two of them.** Gittin **57b:0-4** (Nebuzaradan and Zechariah's blood) and **68a:7-12** (Solomon and Ashmedai) are `YES`-tier and on no list of his. They were counted as matches by the **loose** window, which is up to 14 segments wide and credited a neighbouring story on the same daf — the third and fourth known instance of that failure. The second half of the claim — *"none of the extras we propose is one"* — still stands. Both passages go on the next page he sees. | [`gittin_golden`](../docs/findings/2026-09-02-gittin-golden.md), [`two-unjudged-yes`](../work/2026-09-02-gittin-two-unjudged-yes.md) |
 | The 2026-08-30 email said Ketubot 77a is a story "our own set has." | It is not. Our golden holds a **different** 77a story — the Sidon tanner at seg 8 — while his 2005 entry is at segs 13-14. Two stories on one daf, conflated by our locator's coarse window. **The substance stands** (we do miss his); the claim did not. | [`2026-08-30-recall-miss-diagnosis.md`](../docs/findings/2026-08-30-recall-miss-diagnosis.md) |
 
 Pair this with `jeff:mishnah-scope` in the same email — the correction and the scope
