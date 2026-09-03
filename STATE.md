@@ -106,6 +106,7 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
+open       2026-09-03-loose-credited-proposals
 closed     7 item(s) in work/done/
 ```
 
@@ -163,4 +164,4 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-story-criteria` — jeff:speech-act-policy is answered
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 50f7ca2bb8c31376 -->
+<!-- board-checksum: 060cf9eeefec9047 -->
