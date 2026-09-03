@@ -799,6 +799,19 @@ def reroot_inbound(text: str, linking_file: str, slug: str) -> str:
         # Sibling reference from inside work/ — the link gains a `done/` segment.
         pattern = rf"\]\((?!done/)({re.escape(slug)}\.md)\)"
         return re.sub(pattern, r"](done/\1)", text)
+    if linking_dir == PurePosixPath("work/done"):
+        # An ALREADY-finished item referring to one that was still open: it wrote
+        # `../<slug>.md`, which was right at the time. Once the target closes they are
+        # siblings and the `../` is what breaks it.
+        #
+        # This case was missing, and it is the same defect as the one Lesson 31 records
+        # -- a link broken at the exact moment an item becomes a permanent record --
+        # surviving in the one direction nobody checked. It fired three times in one
+        # session on 2026-09-02 before anyone read the error instead of editing the link
+        # by hand, which is the tell: a fix you keep applying manually is a fix that
+        # belongs in the tool.
+        pattern = rf"\]\(\.\./(?!done/){re.escape(slug)}\.md\)"
+        return re.sub(pattern, rf"]({slug}.md)", text)
     pattern = rf"\]\(((?:\.\./)*)work/(?!done/){re.escape(slug)}\.md\)"
     return re.sub(pattern, rf"](\1work/done/{slug}.md)", text)
 

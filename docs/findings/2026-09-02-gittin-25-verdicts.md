@@ -99,7 +99,7 @@ Hebrew to cut.
 That is the exact failure the axis UI was built to prevent, and it happened on the UI's
 first real round. `display_problem` was false throughout, so the renderer was fine — this
 is not a display bug, it is the disclosure going unused.
-[`work/2026-09-02-axis-fields-unused.md`](../../work/2026-09-02-axis-fields-unused.md).
+[`work/2026-09-02-axis-fields-unused.md`](../../work/done/2026-09-02-axis-fields-unused.md).
 
 The boundary corrections are not lost — they are prose, which is the state the 70 banked
 targets are already in, and they will need the same mining.
@@ -112,4 +112,4 @@ targets are already in, and they will need the same mining.
 | 57a retracted from his own list → recall denominator 112 → 111 | [`gittin-recall-denominator`](../../work/done/2026-09-02-gittin-recall-denominator.md) |
 | a Gittin golden — the first blind tractate with **negative** labels | [`gittin-golden`](../../work/done/2026-08-30-gittin-golden.md) |
 | English-first prompting | [`english-first-prompt`](../../work/done/2026-09-02-english-first-prompt.md) |
-| the unused axis fields | [`axis-fields-unused`](../../work/2026-09-02-axis-fields-unused.md) |
+| the unused axis fields | [`axis-fields-unused`](../../work/done/2026-09-02-axis-fields-unused.md) |

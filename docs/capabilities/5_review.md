@@ -47,6 +47,7 @@ ninety-five stories.** **2026-07-06: fifteen.** After the two exhaustive rounds
 
 | when | what | outcome | evidence |
 |---|---|---|---|
+| 2026-09-02 | **The axis UI's first real round — and its structured fields went 100% unused.** 25 Gittin verdicts: `extent`, `confidence`, `grouping`, `quote`, `quote_polarity` empty on all 25; five boundary corrections arrived as prose | **measured, and the cause is the layout, not the reviewer.** The only always-visible free-text control invited *"anything else, in your own words"* — a **single-line `<input>`** — while every axis sat at `display:none` behind a toggle. Fixed: textarea, and **typing a note reveals the axes**, once, adding a path and removing none. The planned question to Jeff was dropped — the DOM answered it for free | [`axis_fields_unused`](../findings/2026-09-02-axis-fields-unused.md) |
 | 2026-01-05 | First review interface — self-contained HTML, no server, statistics dashboard, search/type/confidence filters | shipped; the shape everything since has kept | `ff94499` |
 | 2026-01-05 | Reviewer-name field with `localStorage`; **auto-save across browser sessions**; reviewer guide + email template | shipped. Small, and it is why verdicts survived at all | `9e9cef8`, `e1a017e`, `5019882` |
 | 2026-01-05 | Side-by-side English/Hebrew with length-adjustment controls | shipped | `e10610b` |

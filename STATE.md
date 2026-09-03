@@ -106,8 +106,7 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-open       2026-09-02-axis-fields-unused
-closed     6 item(s) in work/done/
+closed     7 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -164,4 +163,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: 8f081b207fd45cd3 -->
+<!-- board-checksum: e2d543641d0a6678 -->
