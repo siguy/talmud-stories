@@ -9,6 +9,45 @@ prose, two of them quoting the Hebrew to cut.
 `display_problem` was false throughout, so the renderer was fine. This is not a display
 bug.
 
+## First: the file came out of that page. Who was driving it is a separate question
+
+**Correction, 2026-09-03.** Simon read this finding and objected: *"Jeff sent me the json
+file which contained the results. That html was never meant to hold his responses."* That
+is worth settling before anything below is trusted, because the whole diagnosis rests on
+him having used the page.
+
+The JSON is **`buildExport()`'s output, exactly.** Its envelope is that function's return
+literal key-for-key and in order — `tractate, schema_version, detector_version,
+applies_to, date, total_stories, reviewed, reviews` — and every review object carries
+`index`, `classification_shown`, `mishnah_withheld`, `quote_start`, `quote_end`, in the
+order the function emits them. `date: "2026-09-02"` is `new Date()` at the moment Save was
+clicked.
+
+It also **cannot be a blank template we sent him to fill in.** `buildExport()` skips any
+card that is not complete (`if (!isComplete(v)) return`), so an unanswered page exports
+`reviews: {}` and `reviewed: 0`. A 25-entry skeleton with every field present and null is
+not something this code can produce.
+
+So the page produced the file. **What the file cannot tell us is whose hands were on it.**
+Two possibilities remain, and they have different consequences:
+
+1. **Jeff used the page.** Then everything below holds: the layout is why the structured
+   fields are empty, and the fix is aimed at the right thing.
+2. **Jeff answered in prose — by email or on paper — and someone transcribed his answers
+   into the page.** Then the empty fields say nothing about how *he* reads the UI. They
+   say the transcriber had prose in hand and filled the field that takes prose. The
+   layout finding would be about the transcription step, not about him.
+
+**This is Simon's to answer, not the artifact's,** and it is one line. Until it is
+answered, read the diagnosis below as **indicated**, not measured.
+
+**The fix does not depend on which it is.** A single-line `<input>` is wrong for
+sentence-length notes either way, and revealing the axes when someone reaches for prose
+helps a transcriber exactly as much as it helps Jeff — in reading (2) it helps *more*,
+because a transcriber holding a boundary correction in prose is precisely the person who
+should be shown the boundary boxes. Nothing here is gated, so no path gets worse under
+either reading.
+
 ## The item posed two readings. Opening the page settled it without asking him
 
 1. he never opened the disclosure, or
@@ -97,3 +136,11 @@ The lesson is about where to look. It was tempting to write this up as a questio
 the reviewer's habits and put it in the next email. The answer was in the page's own
 layout, available for the cost of serving a file, and **cheaper than a question that would
 have spent one of his scarce replies.**
+
+**And the correction at the top of this file is the same lesson turned around.** Reading
+the layout told us how the page behaves. It could not tell us who was operating it, and
+the finding was written as though it had — the one question that needed a human was the
+one assumed away. Provenance of a verdict is not recoverable from its shape: `axes-2`
+proves which code wrote the file, never who filled it in. If reviews are ever transcribed
+rather than entered by the reviewer, the export needs a field saying so, and no amount of
+looking at the artifact substitutes for that.

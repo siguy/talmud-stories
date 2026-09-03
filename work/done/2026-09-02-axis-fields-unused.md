@@ -89,6 +89,15 @@ Finding: [`2026-09-02-axis-fields-unused.md`](../../docs/findings/2026-09-02-axi
 The item posed two readings and said not to guess between them, because the fix differs
 completely. Step 1 — serve the page and use it — answered it outright.
 
+**Correction, 2026-09-03 — read this first.** Simon objected that Jeff sent the JSON
+directly and the HTML was never the vehicle. The file itself is `buildExport()`'s output
+exactly, envelope and all, and cannot be a blank template (the function skips incomplete
+cards, so an unfilled page exports `reviews: {}`). So the page produced it. **But the file
+cannot say whose hands were on the page** — if Jeff answered in prose and someone
+transcribed him into it, the empty fields describe the transcriber, not him. That is one
+line from Simon and it is unanswered, so the diagnosis below is **indicated**. The fix
+holds under either reading and gates nothing.
+
 **It is reading (1), and the cause is the layout.** On a fresh card the only
 always-visible free-text control invites *"Anything else, in your own words"*, and every
 axis sits inside `.more-axes` at `display: none` behind a toggle. Prose was the path of
