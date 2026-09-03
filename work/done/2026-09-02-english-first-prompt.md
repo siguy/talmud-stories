@@ -4,14 +4,14 @@ capability: [detection, classification]
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [src/prompts/, scripts/audit_language_exposure.py, docs/findings/]
+writes: [scripts/audit_language_exposure.py, docs/capabilities/2_detection.md, docs/findings/]
 finding:
 superseded_by:
 ---
 
 # The detector reads more translation than source — price it
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 **Capabilities: 2 Detection (primary), 3 Classification.**
 **Cost:** the audit is free. The ablation is one Gittin run.
 
@@ -25,8 +25,8 @@ Jeff rejected Gittin 46a — a passage we proposed at `HIGH_CONFIDENCE` — with
 And then 74b: *"the same as 46a above."* Two of our five `HIGH_CONFIDENCE` extras, killed
 by the same cause.
 
-**The mechanism is real and it is in the prompt.** `_build_detection_prompt`
-([`src/story_detector_v11.py:204`](../src/story_detector_v11.py)) renders each segment as
+**The mechanism is real and it is in the prompt.** `build_detection_prompt`
+([`src/story_detector_v11.py:204`](../../src/story_detector_v11.py)) renders each segment as
 English truncated at **300** characters, then Hebrew truncated at **200** — so on any
 segment long enough to truncate, the model sees *more translation than source*. Boundary
 refinement, cross-page merge and the continuation check send **English only** (lines 913,
@@ -78,5 +78,50 @@ Score against the same blind list.
 ## When done
 
 Write the finding to `docs/findings/<date>-english-first-prompt.md`, update the
-**2 Detection** row in [`docs/capabilities/2_detection.md`](../docs/capabilities/2_detection.md),
+**2 Detection** row in [`docs/capabilities/2_detection.md`](../../docs/capabilities/2_detection.md),
 add an `## Outcome` below, and `python3 scripts/board.py finish 2026-09-02-english-first-prompt`.
+
+## Outcome
+
+**Step 1 done, 2026-09-02. Step 2 not run, and should not be.**
+Finding: [`2026-09-02-english-first-prompt.md`](../../docs/findings/2026-09-02-english-first-prompt.md).
+
+**The mechanism is confirmed and larger than expected.** Hebrew is truncated on **197 of
+301** proposal segments — 65%. On two thirds of the segments in a proposal the model has
+not seen the whole source. That was not known before today.
+
+**His two cases are exactly as he described.** Untruncated English:Hebrew, corpus median
+2.05: Gittin 46a:12 is **4.51**, 74b:4 is **5.89**. Both single short segments where the
+translator supplies four to six times the Aramaic. He read them right.
+
+**And the hypothesis fails anyway.** The passages he rejects sit *lower* on expansion than
+the ones he accepts — medians 2.42 against 2.59, gap **−0.17** — and the split test agrees:
+of the judged proposals above ratio 2.5, 62% are rejected; below it, 83%. The
+heavily-expanded group is rejected **less**. Expansion is not what separates his yes from
+his no.
+
+So the ablation is not run. That is the gate working: it existed so a real-sounding
+mechanism could not spend a run on its own plausibility (Lesson 18).
+
+### What makes this worth having written
+
+The cause an expert names for two passages is evidence about **those two passages**. It
+became a corpus-wide theory in the space of one paragraph while the finding was being
+drafted, and only the screen stopped it — the same shape as Lesson 27, and the second time
+in two days that his prose about specific cases nearly became a rule.
+
+The negative result is also the cheaper half of the item by a wide margin: no API calls,
+no same-code repeat needed, and it closes a live hypothesis rather than parking it.
+
+### The honest limit
+
+3 accepted against 18 rejected, and the entire judged set is the adversarial residue — the
+proposals his 2005 list does not name. The medians move on one passage. **This points
+away; it does not refute.** If a later round judges a broad sample of ordinary proposals,
+re-run the audit against it before treating the question as closed.
+
+### Where the next attempt should aim
+
+Detection's **coverage of a page** — the find-more-stories pass — not the criteria and not
+the language mix. Two independent results now point there: R-C3/R-C4 measured no effect on
+the wording, and Beitar is not proposed at all, not even as `NOT_A_STORY`.

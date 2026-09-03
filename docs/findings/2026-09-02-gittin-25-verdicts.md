@@ -73,7 +73,7 @@ have.
 
 That is a **mechanism**, and mechanisms generalise. It is `suspected`, not measured — no
 Aramaic-only arm has been run — and it is the subject of
-[`work/2026-09-02-english-first-prompt.md`](../../work/2026-09-02-english-first-prompt.md).
+[`work/2026-09-02-english-first-prompt.md`](../../work/done/2026-09-02-english-first-prompt.md).
 
 ## What the round does and does not settle
 
@@ -111,5 +111,5 @@ targets are already in, and they will need the same mining.
 | the round is read by no ruler — Lesson 38's shape, caught by the board this time | [`classification-point-estimate`](../../work/done/2026-08-31-classification-point-estimate.md) |
 | 57a retracted from his own list → recall denominator 112 → 111 | [`gittin-recall-denominator`](../../work/done/2026-09-02-gittin-recall-denominator.md) |
 | a Gittin golden — the first blind tractate with **negative** labels | [`gittin-golden`](../../work/done/2026-08-30-gittin-golden.md) |
-| English-first prompting | [`english-first-prompt`](../../work/2026-09-02-english-first-prompt.md) |
+| English-first prompting | [`english-first-prompt`](../../work/done/2026-09-02-english-first-prompt.md) |
 | the unused axis fields | [`axis-fields-unused`](../../work/2026-09-02-axis-fields-unused.md) |
