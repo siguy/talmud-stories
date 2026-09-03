@@ -83,7 +83,7 @@ open       2026-08-30-eruvin-classification   ← blocked: 2026-08-30-eruvin-det
 open       2026-08-30-eruvin-golden   ← blocked: 2026-08-30-eruvin-expert-round
 open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-detection
 open       2026-08-30-golden-completeness
-open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
+open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
 closed     11 item(s) in work/done/
 ```
@@ -162,6 +162,5 @@ Items that can finish but cannot conclude until he answers:
 
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
-- `2026-08-30-story-criteria` — jeff:speech-act-policy is answered
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 060cf9eeefec9047 -->
+<!-- board-checksum: 2409632a3d28eee5 -->
