@@ -22,7 +22,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Gittin — triage](work/2026-08-30-gittin-triage.md) | triage | gittin | — |
 | [Make the goldens complete: fold in every verdict](work/2026-08-30-golden-completeness.md) | classification | ketubot, kiddushin | — |
 | [Kiddushin 12a: one detection covering two stories](work/2026-08-30-kiddushin-12a-dedup.md) | detection | kiddushin | — |
-| [Open judgment calls from the Kiddushin list parse](work/2026-08-30-kiddushin-parse-open-calls.md) | detection | kiddushin | awaiting `jeff:appendix-separate` |
+| [Open judgment calls from the Kiddushin list parse](work/2026-08-30-kiddushin-parse-open-calls.md) | detection | kiddushin | — |
 | [Mine the story-opener lexicon instead of hand-writing it (was Wave 7)](work/2026-08-30-opener-lexicon.md) | triage, detection | ketubot | — |
 | [Stop discarding a second story that shares a segment](work/2026-08-30-second-story-guard.md) | boundaries | ketubot | awaiting `jeff:boundary-end-rule` |
 | [Encode Jeff's story criteria (was Wave 6)](work/2026-08-30-story-criteria.md) | classification | — | awaiting `jeff:speech-act-policy` |
@@ -46,7 +46,7 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
-| `axis-ui-boundary-capture` | `kiddushin-recall-boundary-c52c91` | **9 FILES** |
+| `remove-appendix-ask` | `kiddushin-recall-boundary-c52c91` | **7 FILES** |
 | `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
@@ -83,4 +83,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Correct the Gittin recall denominator — Jeff retracted one of his own entries](work/done/2026-09-02-gittin-recall-denominator.md) | detection | — |
 | [A custom that frames a one-time event is still a story (Gittin 57a, Beitar)](work/done/2026-09-02-habitual-frame.md) | detection, classification | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
 | [Include the introducing formula in the story start — Jeff ruled, so build it](work/done/2026-09-02-opening-formula.md) | boundaries | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
-<!-- board-checksum: 033da4145bb1ac0c -->
+<!-- board-checksum: 4871448afdef9028 -->

@@ -69,7 +69,7 @@ history    docs/capabilities/2_detection.md
 open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
-open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
+open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
 closed     13 item(s) in work/done/
@@ -153,11 +153,9 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
-| `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
 
-- `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
 
@@ -165,4 +163,4 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-story-criteria` — jeff:speech-act-policy is answered
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: ed90d8a5fa0b4e0b -->
+<!-- board-checksum: 50f7ca2bb8c31376 -->

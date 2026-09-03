@@ -146,8 +146,15 @@ those entries are merged into those lists without a marker, each list quietly lo
 ability to measure what we missed — **permanently and invisibly**, because a merged entry
 looks like every other entry.
 
-**One sentence to Jeff:** keep the appendix a separate file, or mark its entries. Costs
-him nothing, and it cannot be reconstructed afterwards.
+> **Correction, 2026-09-03.** This paragraph asked Jeff to keep his appendix a
+> separate file. That request is withdrawn and should not be revived. He is a partner
+> here, and folding our cases into his list is him engaging with what we sent. The
+> engineering premise was also wrong: **we know what we sent him and when**, so the join
+> is ours to make — `check_appendix_coverage.py` makes it, against any list, at any
+> time. Nothing expires. The original text is kept below as written.
+
+~~**One sentence to Jeff:** keep the appendix a separate file, or mark its entries. Costs
+him nothing, and it cannot be reconstructed afterwards.~~
 
 **And one for us:** every expert list from here on gets checked against whatever we sent
 him before it is trusted as blind. `scripts/check_appendix_coverage.py` is that check.

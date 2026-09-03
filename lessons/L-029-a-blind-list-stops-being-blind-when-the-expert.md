@@ -34,11 +34,25 @@ corrections set had selection baked in, here the neutral set had our own
 output baked in.
 
 **How to apply:** (a) `scripts/check_appendix_coverage.py` — run it on
-every new expert list before trusting it. Gittin, Yevamot and Eruvin are
-still ahead of us. (b) Ask the expert to keep his appendix a separate
-file, or to mark its entries. It costs him nothing and it cannot be
-reconstructed afterwards — this belongs in the next email. (c) Check
-*every* run, not the current one: 45a is absent from v7 and found from
-Wave 1 on, so "is it in our output" has a different answer depending on
-which output you look at. (d) When a provenance question moves a headline
-number, say which way it moves it and who that flatters, before deciding.
+every new expert list before trusting it. (b) Check *every* run, not the
+current one: 45a is absent from v7 and found from Wave 1 on, so "is it in
+our output" has a different answer depending on which output you look at.
+(c) When a provenance question moves a headline number, say which way it
+moves it and who that flatters, before deciding.
+
+**Whose problem this is (revised 2026-09-03).** This lesson once carried a
+fourth instruction: ask Jeff to keep his appendix a separate file, because
+"the window closes" once he sees new results. That was wrong twice over.
+
+It was wrong about the collaboration: Jeff is a partner on this project,
+not a contamination source to be managed, and merging our cases into his
+list is him *doing the work* — engaging with what we sent and folding in
+what he agreed with. Asking him to hold that at arm's length so our metric
+stays clean puts our scorecard ahead of the thing the scorecard is for.
+
+And it was wrong about the engineering. **Knowing which entries came from
+us is our bookkeeping obligation, not his.** We know exactly what we sent
+him and when; the join is ours to make and `check_appendix_coverage.py` is
+how we make it. Framing it as a window that closes disguised a check we
+can run any time as a favour we needed asked for. The check is the fix.
+Nothing about it expires.

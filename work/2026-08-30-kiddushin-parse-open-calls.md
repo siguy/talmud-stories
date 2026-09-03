@@ -3,7 +3,7 @@ title: Open judgment calls from the Kiddushin list parse
 capability: [detection]
 tractate: [kiddushin]
 blocked_by: []
-awaiting: [jeff:appendix-separate]
+awaiting: []
 writes: [results/expert_lists/kiddushin_2005.json, scripts/check_appendix_coverage.py]
 finding:
 superseded_by:
@@ -38,16 +38,27 @@ proposed, true on 81b which we never did. Denominator 90.** See
 The merge cost us five of Kiddushin's stories as blind ground truth, and we only noticed
 because the appendix survived as its own file.
 
-**Gittin, Yevamot and Eruvin are not at risk today.** We have never run the detector on
-them, so there is nothing of ours for Jeff to have merged; their lists are pristine. The
-risk begins the moment we send him results for one of those tractates.
+**Gittin, Yevamot and Eruvin held nothing of ours when their lists were parsed.** The
+detector had never run on them, so `check_appendix_coverage.py` comes back clean on all
+three — and that clean result *is* the evidence, recorded, not assumed.
 
-**Do, at that point and not before:** ask him to keep his appendix a separate file, or to
-mark its entries. Costs him nothing; cannot be reconstructed afterwards.
+**This is our join to make, and it does not expire (revised 2026-09-03).** An earlier
+version of this item said to ask Jeff to keep his appendix a separate file before sending
+him new-tractate results, on the grounds that it "cannot be reconstructed afterwards."
+Both halves were wrong.
 
-**And for us, always:** `scripts/check_appendix_coverage.py` on any expert list before
-calling it blind. On a tractate we have never run it will trivially come back clean —
-which is itself the evidence.
+It can be reconstructed: **we know exactly what we sent him and when.** That is the join
+`check_appendix_coverage.py` performs, it runs against any list at any time, and the
+sent log in [`comms/JEFF.md`](../comms/JEFF.md) is the other half of it. There is no
+window.
+
+And the framing was wrong about the work. Jeff folding our cases into his list is him
+engaging with what we sent — the collaboration functioning. Asking him to hold it at
+arm's length so our recall denominator stays tidy would put our scorecard ahead of the
+thing the scorecard is for.
+
+**So: `check_appendix_coverage.py` on any expert list before calling it blind, every
+time, and the obligation is entirely ours.**
 
 ## 1c. 71a and 81b are in the appendix but in none of our runs
 
