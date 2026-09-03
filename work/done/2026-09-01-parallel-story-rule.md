@@ -3,7 +3,7 @@ title: Stop the parallel-practice rule deleting a second story
 capability: [boundaries]
 tractate: [ketubot, kiddushin]
 blocked_by: []
-awaiting: [jeff:boundary-end-rule]
+awaiting: []
 writes: [src/story_detector_v11.py, scripts/screen_end_trim_depth.py, scripts/run_parallel_rule_experiment.py, scripts/score_boundary_targets.py, tests/test_parallel_story_rule.py, docs/capabilities/4_boundaries.md, docs/findings/2026-09-01-parallel-story-rule.md, results/v11/]
 finding: docs/findings/2026-09-01-parallel-story-rule.md
 superseded_by:
@@ -11,8 +11,8 @@ superseded_by:
 
 # Stop the parallel-practice rule deleting a second story
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) and
-[`docs/capabilities/4_boundaries.md`](../docs/capabilities/4_boundaries.md) first.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) and
+[`docs/capabilities/4_boundaries.md`](../../docs/capabilities/4_boundaries.md) first.
 **Capability: 4 Boundaries.** **Cost: one prompt rule, plus one measured run.**
 
 ## The claim to test
@@ -122,3 +122,41 @@ more widely, the rule is over-keeping and should be reverted rather than tuned.
 
 Write the finding to `docs/findings/2026-09-01-parallel-story-rule.md`, add an
 `## Outcome` section below, then `python3 scripts/board.py finish 2026-09-01-parallel-story-rule`.
+
+## Outcome
+
+**Measured 2026-09-03, and kept.**
+Finding: [`2026-09-03-parallel-rule-measured.md`](../../docs/findings/2026-09-03-parallel-rule-measured.md).
+Full log: `results/v11/parallel_rule/REPORT.txt`.
+
+**Base and new are identical on every blind ruler row** — Ketubot 2-60 80%/85%, Ketubot
+61-112 80%/84%, Kiddushin 85%/91%, and the same on the corrections set. The same-code
+repeats move by one target on two of three sets, so the noise floor is ±1 and the change
+is 0. **All five case checks pass**: 62a and 105b keep their second story, 67b, 77b and
+72a stay trimmed.
+
+### The prediction was wrong, and understanding why matters more than the result
+
+The item predicted a cost on the Ketubot end ruler, on the reasoning that keeping a second
+story makes an entry end later than Jeff's 2005 boundary. It cost nothing — **because the
+two passages the rule rescues are not scorable targets in the blind sets.** The ruler is
+blind to the thing the rule fixes.
+
+So what the rulers establish is only that the rule **breaks nothing elsewhere**. That was
+the real risk and it is now retired. What establishes that the rule *works* is five hand
+checks, and it should be quoted that way and not as a ruler result.
+
+### Why this ran now
+
+It shipped **unmeasured** on 2026-09-01 — no API key in that session — and stayed live in
+the detector for two days. A new tractate run would have confounded it with R-B1, the one
+change since Gittin that does have a measured effect. **An unmeasured live change is a
+confound with a countdown**, and the cost of clearing it was one command.
+
+### Item 3 folded in
+
+The end axis was ranked separately and is not opened as its own item. It is not
+under-measured — Ketubot ends 72-75% against starts 84-88%, Kiddushin ends 84% against
+starts 86%, measured again here. The Ketubot-only concentration argues against a general
+end rule. It is one unanswered question (`jeff:boundary-end-rule`), and more measurement
+will not answer it.

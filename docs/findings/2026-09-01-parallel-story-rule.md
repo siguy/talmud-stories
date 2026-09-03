@@ -3,7 +3,7 @@
 **Status: the two measurements below are done and free. The prompt change they justify
 is written but UNMEASURED — no `GOOGLE_API_KEY` in the session that made it, so the
 Wave 5 re-run has not happened.** Do not quote a score for it. The gate is in
-[`work/2026-09-01-parallel-story-rule.md`](../../work/2026-09-01-parallel-story-rule.md).
+[`work/2026-09-01-parallel-story-rule.md`](../../work/done/2026-09-01-parallel-story-rule.md).
 
 Capability 4 Boundaries. Companion to
 [`docs/capabilities/4_boundaries.md`](../capabilities/4_boundaries.md).

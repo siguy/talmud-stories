@@ -37,6 +37,7 @@ five successive mechanisms, and four of them were wrong.
 
 | when | what | outcome | evidence |
 |---|---|---|---|
+| 2026-09-03 | **The parallel-practice rule, measured** — it shipped 2026-09-01 unmeasured (no API key in that session) and stayed live for two days. 3 arms + 3 same-code repeats | **measured: no effect on any blind ruler.** Base and new identical on all three sets (Ketubot 80/85, 80/84; Kiddushin 85/91); repeats move ±1 target, so noise floor ±1 and the change is 0. **All five case checks pass** — 62a/105b keep their second story, 67b/77b/72a stay trimmed. The predicted end-ruler cost did not occur, because **the rescued passages are not scorable targets** — the ruler is blind to what the rule fixes, so quote the five cases, not the rulers | [`parallel_measured`](../findings/2026-09-03-parallel-rule-measured.md) |
 | 2026-01-20 | **Fuzzy text-anchor extraction** — match the model's quoted boundary words into the page with `difflib`, 3–5 word chunks, 50–60% similarity, estimate the missing edge | shipped; fixed "boundaries not found in text" errors. Superseded by segment-based detection days later | `2e4e969` |
 | 2026-01-25 | Review UI trimmed to 1 segment of context either side of the story | shipped | `81bb7de` |
 | 2026-02-13 | **Stage 4a boundary refinement** — trim DELIBERATION segments off story edges using the triage event types | shipped; 4 stories trimmed. Still in the pipeline, and it is why Wave 2's end-trim later found nothing to do | `cfaca8a` |

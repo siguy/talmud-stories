@@ -93,8 +93,7 @@ closed     11 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-open       2026-09-01-parallel-story-rule   ← awaiting: jeff:boundary-end-rule
-closed     6 item(s) in work/done/
+closed     7 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -158,9 +157,8 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-- `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
 
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 2409632a3d28eee5 -->
+<!-- board-checksum: 28a0ac88a92e3b42 -->
