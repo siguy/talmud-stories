@@ -73,13 +73,15 @@ Wave 1 fixes (mechanical, no model change):
 v7 (canonical) is left untouched. Revert = swap import back.
 """
 
+import copy
+import hashlib
 import json
 import os
 import re
 import time
 import warnings
 from pathlib import Path
-from typing import Dict, List, Optional, Any, Tuple
+from typing import Callable, Dict, List, Optional, Any, Tuple
 
 from src.ground_truth import GroundTruthDB, EventType, ErrorType
 from src.event_triage import EventTriager
@@ -184,6 +186,14 @@ class V7StoryDetector:
         # Every span repair Stage 2 needed, across the run. Written to the output
         # so a malformed proposal is a number someone can see, not a silence.
         self.span_repairs: List[Dict] = []
+        # Failed calls, counted rather than swallowed. `empty_responses` is a model
+        # response with no parts (safety stop, MAX_TOKENS); `parse_failures` is a
+        # Stage 2 call whose JSON could not be read on either attempt. Both return
+        # "" / [] to the caller, which is indistinguishable from "nothing here" —
+        # so the checkpoint below reads these counters to decide whether a page's
+        # result is a judgment or a failure (Lesson 21).
+        self.empty_responses: List[str] = []
+        self.parse_failures: List[str] = []
 
         if self.api_key and GOOGLE_AI_AVAILABLE:
             self.client = genai.Client(api_key=self.api_key)
@@ -710,6 +720,27 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     counts['clause_kept_full'] += 1
         return counts
 
+    def stage2_cache_digest(self, ref: str, segments: List[Dict],
+                            event_types: List[EventType],
+                            prev_page_context: Optional[str] = None,
+                            next_page_context: Optional[str] = None) -> str:
+        """Digest of everything that decides what Stage 2 is asked on this page.
+
+        It hashes the **built prompt** rather than the ingredients, plus the model and
+        thinking level. That is exact by construction: if the prompt and the model are
+        the same, the call being resumed is the call that would be made. It also means a
+        prompt edit, a few-shot change, a re-fetch of the daf, a different triage label
+        on this page *or on either neighbour* invalidates the entry automatically —
+        nobody has to remember to bump a version. Cheap: no network, one local build.
+        """
+        prompt = self.build_detection_prompt(
+            ref, segments, event_types, prev_page_context, next_page_context)
+        h = hashlib.sha256()
+        for part in (self.model_name or '', self.thinking_level or '', prompt):
+            h.update(part.encode('utf-8'))
+            h.update(b'\x00')
+        return h.hexdigest()
+
     def detect_stories(self, ref: str, segments: List[Dict],
                        event_types: List[EventType],
                        prev_page_context: Optional[str] = None,
@@ -785,6 +816,11 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             if attempt == 0:
                 print(f"    Retrying {ref} (JSON parse failed)...")
                 time.sleep(1)
+        # Both attempts unreadable. `[]` is what a page with no stories also returns,
+        # so record the failure — otherwise the checkpoint would persist this page as
+        # a considered "nothing here" and a resume would never re-ask (Lesson 21).
+        print(f"    JSON PARSE FAILED on {ref} after 2 attempts")
+        self.parse_failures = getattr(self, 'parse_failures', []) + [ref]
         return []
 
     def _find_additional_stories(self, ref: str, segments: List[Dict],
@@ -1155,7 +1191,11 @@ Return JSON:
                      examine_all_pages: bool = False,
                      enable_adversarial: bool = False,
                      tractate: str = 'Ketubot',
-                     skip_triage: Optional[bool] = None) -> Dict:
+                     skip_triage: Optional[bool] = None,
+                     resume_stories: Optional[Dict[str, Dict]] = None,
+                     on_page_detected: Optional[
+                         Callable[[str, str, List[Dict], List[Dict]], None]] = None,
+                     ) -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
 
@@ -1167,6 +1207,22 @@ Return JSON:
                 skip verdict and ONLY that. The labels are still real.
             tractate: Tractate name for output metadata
             skip_triage: deprecated spelling of `examine_all_pages`
+            resume_stories: Stage 2 results already on disk, `ref -> {digest, stories,
+                span_repairs}`, as written by `on_page_detected`. An entry is reused
+                only when its digest still matches what this run would ask (see
+                `stage2_cache_digest`); otherwise the page is re-detected. Passing this
+                changes no Stage 4 input: a resumed page contributes exactly the
+                `stories` and `span_repairs` the original call produced, and every other
+                Stage 4 input (page order, segments, triage labels, the skipped-page
+                rows) is recomputed from `pages`/`triage_results` and never read from
+                Stage 2's output.
+            on_page_detected: called `(ref, digest, stories, span_repairs)` after each
+                page Stage 2 **successfully** completes, so the caller can persist it.
+                It is NOT called for a page where the model failed — an empty response
+                or an unreadable one returns `[]`, which is also what a page with no
+                stories returns, and persisting that would let a resume skip a page
+                nobody ever read (Lesson 21). Persistence lives in the caller; this
+                class does no file I/O.
         """
         if skip_triage is not None:
             if examine_all_pages:
@@ -1223,6 +1279,8 @@ Return JSON:
 
         # Stage 2: Constrained Detection
         all_results = []
+        resumed_pages = 0
+        failed_pages: List[str] = []
         for i, page in enumerate(pages_to_process):
             ref = page.get('ref', '')
             segments = page.get('segments', [])
@@ -1268,8 +1326,47 @@ Return JSON:
                             lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
                         next_ctx = '\n'.join(lines)
 
-            print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
-            stories = self.detect_stories(ref, segments, events, prev_ctx, next_ctx)
+            # ---- Stage 2 checkpoint -------------------------------------
+            # A crash in this loop used to discard every page detected so far; it did
+            # twice on Yevamot, 2026-09-03. The digest covers the whole prompt, so a
+            # reused entry is only ever reused for the identical question.
+            digest = None
+            if resume_stories is not None or on_page_detected is not None:
+                digest = self.stage2_cache_digest(ref, segments, events,
+                                                  prev_ctx, next_ctx)
+            entry = (resume_stories or {}).get(ref)
+            if entry is not None and entry.get('digest') != digest:
+                print(f"  [{i+1}/{len(pages_to_process)}] {ref}: cached inputs changed "
+                      f"— re-detecting")
+                entry = None
+            if entry is not None:
+                # deepcopy so Stage 4, which mutates stories in place, cannot write
+                # back into the caller's cache and corrupt it for the next resume.
+                stories = copy.deepcopy(entry.get('stories') or [])
+                cached_repairs = copy.deepcopy(entry.get('span_repairs') or [])
+                if cached_repairs:
+                    self.span_repairs = getattr(self, 'span_repairs', []) + cached_repairs
+                resumed_pages += 1
+                print(f"  [{i+1}/{len(pages_to_process)}] {ref}: from Stage 2 cache "
+                      f"({len(stories)} candidates)")
+            else:
+                print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
+                failures_before = (len(getattr(self, 'empty_responses', [])),
+                                   len(getattr(self, 'parse_failures', [])))
+                repairs_before = len(getattr(self, 'span_repairs', []))
+                stories = self.detect_stories(ref, segments, events, prev_ctx, next_ctx)
+                failed = (len(getattr(self, 'empty_responses', [])),
+                          len(getattr(self, 'parse_failures', []))) != failures_before
+                if failed:
+                    # The page is kept in the run exactly as before — this changes
+                    # nothing about the output. It is simply not written to the cache,
+                    # so a resume re-asks instead of inheriting a silence.
+                    failed_pages.append(ref)
+                    print(f"    NOT checkpointed: the model failed on {ref}; a resume "
+                          f"will re-detect it")
+                elif on_page_detected is not None:
+                    on_page_detected(ref, digest, stories,
+                                     getattr(self, 'span_repairs', [])[repairs_before:])
 
             # Build page result
             page_result = {
@@ -1283,8 +1380,24 @@ Return JSON:
                               if s.get('classification') != 'NOT_A_STORY')
             print(f"    → {len(stories)} candidates, {story_count} stories")
 
-            if delay > 0 and i < len(pages_to_process) - 1:
+            if delay > 0 and entry is None and i < len(pages_to_process) - 1:
                 time.sleep(delay)
+
+        # Mutually exclusive, and they must sum to the pages Stage 2 walked
+        # (Lesson 21(a)). `failed` is a page the model did not answer for; it is in the
+        # run with whatever came back, and it is the one bucket the cache refuses.
+        stage2_summary = {
+            'examined': len(pages_to_process),
+            'detected': len(pages_to_process) - resumed_pages - len(failed_pages),
+            'resumed_from_cache': resumed_pages,
+            'failed': len(failed_pages),
+            'failed_refs': failed_pages,
+        }
+        assert (stage2_summary['detected'] + stage2_summary['resumed_from_cache']
+                + stage2_summary['failed'] == len(pages_to_process)), stage2_summary
+        if resumed_pages or failed_pages:
+            print(f"  Stage 2: {stage2_summary['detected']} detected, "
+                  f"{resumed_pages} resumed from cache, {len(failed_pages)} failed")
 
         # Add skipped pages with empty stories
         for page in pages:
@@ -1415,6 +1528,10 @@ Return JSON:
             'version': 'v10',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
+            # Always written, `resumed_from_cache: 0` included — a run that reused
+            # cached Stage 2 output must say so on its face, so nobody reads it as a
+            # fresh sample of a nondeterministic model.
+            'stage2_summary': stage2_summary,
             'span_stats': span_counts,
             'opening_formula': formula,
             # Always written, including as `[]`. A key that appears only when
