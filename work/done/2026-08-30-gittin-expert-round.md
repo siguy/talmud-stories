@@ -70,4 +70,4 @@ Two things neither this item nor the workflow doc anticipated:
    stricter reading. → [`_a-policy-answer-does-not-certify-a-case.md`](../../lessons/_a-policy-answer-does-not-certify-a-case.md)
 2. **`"It is filled in by the translator"`** — a named mechanism for a class of false
    positives, sitting in our prompt, where English gets 300 characters and Hebrew 200.
-   → [`english-first-prompt`](../2026-09-02-english-first-prompt.md)
+   → [`english-first-prompt`](2026-09-02-english-first-prompt.md)

@@ -72,7 +72,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls   ← awaiting: jeff:appendix-separate
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     12 item(s) in work/done/
+closed     13 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -85,7 +85,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria   ← awaiting: jeff:speech-act-policy
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     10 item(s) in work/done/
+closed     11 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -164,4 +164,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: 848ee0fb925b4b15 -->
+<!-- board-checksum: 8f081b207fd45cd3 -->
