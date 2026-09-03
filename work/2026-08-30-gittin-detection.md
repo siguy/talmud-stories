@@ -6,10 +6,13 @@ blocked_by: [2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser]
 awaiting: []
 writes: [results/detection/gittin.json, src/story_detector_v11.py]
 finding:
-superseded_by:
+superseded_by: work/done/2026-08-31-gittin-detection-run.md
 ---
 
 # Gittin — detection
+
+**Superseded, found 2026-09-03 while checking board coverage.** Detection actually ran as part of the 2026-08-31 first blind run (`results/v11/gittin/gittin_v11.json`, not the `results/detection/gittin.json` this item declared — the path itself never materialized). Same supersession as `gittin-triage`; see that item's note.
+
 
 **Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) and
 [`docs/technical/new_tractate_workflow.md`](../docs/technical/new_tractate_workflow.md),
