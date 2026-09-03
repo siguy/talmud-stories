@@ -6,10 +6,13 @@ blocked_by: [2026-08-30-gittin-detection]
 awaiting: []
 writes: [results/classification/gittin.json]
 finding:
-superseded_by:
+superseded_by: work/done/2026-09-02-gittin-golden.md
 ---
 
 # Gittin — classification
+
+**Superseded, found 2026-09-03 while checking board coverage.** Classification for Gittin happened via the golden build and the 25-verdict expert round, not via this item — see `work/done/2026-09-02-gittin-golden.md` and `work/done/2026-08-30-gittin-expert-round.md`. `results/classification/gittin.json`, the path this item declared, never materialized.
+
 
 **Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) and
 [`docs/technical/new_tractate_workflow.md`](../docs/technical/new_tractate_workflow.md),

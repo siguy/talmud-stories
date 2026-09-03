@@ -34,8 +34,13 @@ and nothing on disk separates those.
    Boundaries problem, not a Classification question — sending him a boundary error as
    *"is this a story?"* wastes a verdict and gets a confusing answer.
 3. Put what survives on the next review page, with the extras already queued from
-   [`gittin-two-unjudged-yes`](2026-09-02-gittin-two-unjudged-yes.md). **One page, not
-   two** — review throughput is the bottleneck and two pages is two asks.
+   [`gittin-two-unjudged-yes`](2026-09-02-gittin-two-unjudged-yes.md) **and the 6
+   speech-act entries from [`story-criteria`](2026-08-30-story-criteria.md) 6a/6b**
+   (`docs/findings/2026-09-03-speech-act-blast-radius.md`). **One page, not three** —
+   review throughput is the bottleneck and three pages is three asks. The three 6a
+   entries that are genuinely all-speech (7a:1, 15a:0, 112a:11) are a `borderline`
+   question for Jeff; the other three (17a:10, 54a:22, 85a:13-14) are boundary bugs and
+   do not belong on a page at all — fix them, don't ask about them.
 
 ## How you know it worked
 
