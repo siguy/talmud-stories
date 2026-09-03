@@ -501,10 +501,32 @@ def render_state() -> str:
     L += ["## Open with Jeff", ""]
     if q:
         L += ["| slug | question |", "|---|---|"] + [f"| `{s}` | {t} |" for s, t in q]
-        waiting = [i for i in its if i["awaiting"]]
-        if waiting:
+        # An `awaiting:` field is a claim about the FUTURE, and it goes stale silently:
+        # the item stays as written while the question gets answered underneath it.
+        # Until 2026-09-03 this listed every item with a non-empty `awaiting`, including
+        # finished ones and ones whose question had closed -- so it named six items as
+        # blocked on Jeff when three were. A board that overstates what is blocked is
+        # read as "nothing can start", which is the opposite of what it is for.
+        #
+        # A stale await is NAMED, never dropped. Dropping it silently would leave an item
+        # that is ready to conclude looking identical to one nobody has looked at, and
+        # the frontmatter would stay wrong forever (Lesson 38: absence is quiet).
+        open_slugs = {s for s, _ in q}
+        live = [i for i in its if i["awaiting"] and not i["done"]]
+        blocked = [(i, [a for a in i["awaiting"] if a in open_slugs]) for i in live]
+        answered = [(i, [a for a in i["awaiting"] if a not in open_slugs])
+                    for i in its if not i["done"]
+                    and any(a not in open_slugs for a in i["awaiting"])]
+
+        still = [(i, aw) for i, aw in blocked if aw]
+        if still:
             L += ["", "Items that can finish but cannot conclude until he answers:", ""]
-            L += [f"- `{i['slug']}` — {', '.join(i['awaiting'])}" for i in waiting]
+            L += [f"- `{i['slug']}` — {', '.join(aw)}" for i, aw in still]
+        if answered:
+            L += ["", "**Answered — these can conclude now, and their `awaiting:` is "
+                  "stale:**", ""]
+            L += [f"- `{i['slug']}` — {', '.join(aw)} is answered"
+                  for i, aw in answered]
     else:
         L.append("`comms/JEFF.md` not present or has no open-questions table.")
     return "\n".join(L) + "\n"

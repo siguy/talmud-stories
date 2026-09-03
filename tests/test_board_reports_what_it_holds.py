@@ -163,3 +163,39 @@ def test_the_board_sees_every_golden_and_every_ruler_on_disk():
         if (ROOT / f"results/rulers/{t}_ruler.json").exists():
             assert t in board.rulers(), (
                 f"{t}_ruler.json is on disk and the board does not read it")
+
+
+def test_the_awaiting_list_names_only_what_is_really_blocked():
+    """An `awaiting:` field is a claim about the future, and it goes stale silently.
+
+    The item stays as written while the question gets answered underneath it. Until
+    2026-09-03 the board listed every item with a non-empty `awaiting` -- finished ones
+    included, and ones whose question had since closed -- so it named six items as
+    blocked on Jeff when three were. A board that overstates what is blocked reads as
+    "nothing can start", which is the opposite of what it is for.
+
+    Two properties, and the second matters more than the first: a stale await must be
+    NAMED, not dropped. Silently dropping it would leave an item that is ready to
+    conclude looking identical to one nobody has looked at, and the frontmatter would
+    stay wrong forever (Lesson 38: absence is quiet).
+    """
+    state = (ROOT / "STATE.md").read_text()
+    if "cannot conclude until he answers" not in state:
+        pytest.skip("no items awaiting an answer")
+
+    open_slugs = {s for s, _ in board.jeff_questions()}
+    blocked_section = state.split("cannot conclude until he answers:")[1].split("**Answered")[0]
+
+    for item in board.items():
+        listed = f"`{item['slug']}`" in blocked_section
+        really = (not item["done"]
+                  and any(a in open_slugs for a in item["awaiting"]))
+        assert listed == really, (
+            f"{item['slug']}: listed as blocked={listed}, actually blocked={really} "
+            f"(done={item['done']}, awaiting={item['awaiting']})")
+
+        stale = [a for a in item["awaiting"] if a not in open_slugs]
+        if stale and not item["done"]:
+            assert f"`{item['slug']}`" in state, (
+                f"{item['slug']} awaits {stale}, which is answered, and the board says "
+                f"nothing. A stale await must be named so it gets cleared.")
