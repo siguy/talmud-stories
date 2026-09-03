@@ -17,7 +17,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 | **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
 | **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Gittin** | 100.0% · n=111 B | 100.0% B | STATUS · C | STATUS | 1 rounds | ⬜ |
-| **Yevamot** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Yevamot** | 100.0% · n=102 B | 94.1% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
@@ -35,6 +35,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 - Ketubot: **96.0% loose / 87.9% strict** on 149 stories
 - Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
 - Gittin: **100.0% loose / 97.3% strict** on 111 stories
+- Yevamot: **94.1% loose / 89.2% strict** on 102 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -59,7 +60,7 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-01-board-reads-stale-triage
-closed     7 item(s) in work/done/
+closed     8 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -72,7 +73,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     13 item(s) in work/done/
+closed     14 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -161,4 +162,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 28a0ac88a92e3b42 -->
+<!-- board-checksum: 79d7eef646732416 -->
