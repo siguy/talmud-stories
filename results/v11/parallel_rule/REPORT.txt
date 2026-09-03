@@ -1,0 +1,155 @@
+# parallel-rule experiment — model gemini-3.7-flash, thinking high
+
+=== 1. Wave 5 runs, 3 arms + 3 same-code repeats (Lesson 22) -> results/v11/parallel_rule
+
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/ketubot_v10_2-60_notrim.json --out results/v11/parallel_rule/ketubot_2-60_parallel.json --model gemini-3.7-flash --thinking high
+    ok (112 lines)
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/ketubot_v10_2-60_notrim.json --out results/v11/parallel_rule/ketubot_2-60_parallel_repeat.json --model gemini-3.7-flash --thinking high
+    ok (112 lines)
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/ketubot_v10_61-112_notrim.json --out results/v11/parallel_rule/ketubot_61-112_parallel.json --model gemini-3.7-flash --thinking high
+    ok (222 lines)
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/ketubot_v10_61-112_notrim.json --out results/v11/parallel_rule/ketubot_61-112_parallel_repeat.json --model gemini-3.7-flash --thinking high
+    ok (222 lines)
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/kiddushin_v10_notrim.json --out results/v11/parallel_rule/kiddushin_parallel.json --model gemini-3.7-flash --thinking high
+    ok (190 lines)
+  $ python3 scripts/run_wave5_clause_spans.py --in results/v10/wave4_notrim/kiddushin_v10_notrim.json --out results/v11/parallel_rule/kiddushin_parallel_repeat.json --model gemini-3.7-flash --thinking high
+    ok (190 lines)
+
+=== 2. Structural gate — every boundary at a clause/word edge
+
+  $ python3 scripts/audit_text_spans.py --strict results/v11/parallel_rule/ketubot_2-60_parallel.json
+ketubot_2-60_parallel.json         cuts=  28  mid-word=   0 (0%)  clause-edge=  28 (100%)
+
+PASS: no mid-word cuts.
+  $ python3 scripts/audit_text_spans.py --strict results/v11/parallel_rule/ketubot_61-112_parallel.json
+ketubot_61-112_parallel.json       cuts=  35  mid-word=   0 (0%)  clause-edge=  35 (100%)
+
+PASS: no mid-word cuts.
+  $ python3 scripts/audit_text_spans.py --strict results/v11/parallel_rule/kiddushin_parallel.json
+kiddushin_parallel.json            cuts=  55  mid-word=   0 (0%)  clause-edge=  55 (100%)
+
+PASS: no mid-word cuts.
+
+=== 3. Blind rulers, split by direction, reported APART from corrections (Lessons 22 and 24)
+
+--- KETUBOT  BLIND
+  $ python3 scripts/score_boundary_targets.py --targets tests/expert_boundary_targets_2005.json --by-direction --runs base=results/v11/wave5_summaryfix/ketubot_2-60_v11_g37high.json new=results/v11/parallel_rule/ketubot_2-60_parallel.json repeat=results/v11/parallel_rule/ketubot_2-60_parallel_repeat.json
+targets: 294 pooled from 1 file(s) — 0 corrections, 294 detector-blind (2005 list)
+BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures fixing known failures. The 2005 list is a neutral sample and also catches regressions.
+STANDARD: as-listed
+
+run         scored   HIT  NEAR  MISS   N/A  WITHHELD   hit%  hit+near%
+base            61    49     3     9   231         2    80%        85%
+           2 target(s) sit on a story Stage 4g withheld to `mishnah_stories` — found, then set aside (jeff:mishnah-scope). Not scored, and not a detection gap.
+new             61    49     3     9   231         2    80%        85%
+           2 target(s) sit on a story Stage 4g withheld to `mishnah_stories` — found, then set aside (jeff:mishnah-scope). Not scored, and not a detection gap.
+repeat          61    49     3     9   231         2    80%        85%
+           2 target(s) sit on a story Stage 4g withheld to `mishnah_stories` — found, then set aside (jeff:mishnah-scope). Not scored, and not a detection gap.
+
+    base         start  scored  32  hit  88%  hit+near  94%   (N/A 114)
+    base         end    scored  29  hit  72%  hit+near  76%   (N/A 117)
+    new          start  scored  32  hit  88%  hit+near  94%   (N/A 114)
+    new          end    scored  29  hit  72%  hit+near  76%   (N/A 117)
+    repeat       start  scored  32  hit  88%  hit+near  94%   (N/A 114)
+    repeat       end    scored  29  hit  72%  hit+near  76%   (N/A 117)
+--- KETUBOT2 BLIND
+  $ python3 scripts/score_boundary_targets.py --targets tests/expert_boundary_targets_2005.json --by-direction --runs base=results/v11/wave5_summaryfix/ketubot_61-112_v11_g37high.json new=results/v11/parallel_rule/ketubot_61-112_parallel.json repeat=results/v11/parallel_rule/ketubot_61-112_parallel_repeat.json
+targets: 294 pooled from 1 file(s) — 0 corrections, 294 detector-blind (2005 list)
+BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures fixing known failures. The 2005 list is a neutral sample and also catches regressions.
+STANDARD: as-listed
+
+run         scored   HIT  NEAR  MISS   N/A  WITHHELD   hit%  hit+near%
+base           168   134     7    27   126         0    80%        84%
+new            168   134     7    27   126         0    80%        84%
+repeat         168   135     6    27   126         0    80%        84%
+
+    base         start  scored  92  hit  84%  hit+near  89%   (N/A 55)
+    base         end    scored  76  hit  75%  hit+near  78%   (N/A 71)
+    new          start  scored  92  hit  84%  hit+near  89%   (N/A 55)
+    new          end    scored  76  hit  75%  hit+near  78%   (N/A 71)
+    repeat       start  scored  92  hit  85%  hit+near  89%   (N/A 55)
+    repeat       end    scored  76  hit  75%  hit+near  78%   (N/A 71)
+--- KIDDUSHIN BLIND
+  $ python3 scripts/score_boundary_targets.py --targets tests/expert_boundary_targets_2005_kiddushin.json --by-direction --runs base=results/v11/wave5_summaryfix/kiddushin_v11_g37high.json new=results/v11/parallel_rule/kiddushin_parallel.json repeat=results/v11/parallel_rule/kiddushin_parallel_repeat.json
+targets: 176 pooled from 1 file(s) — 0 corrections, 176 detector-blind (2005 list)
+BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures fixing known failures. The 2005 list is a neutral sample and also catches regressions.
+STANDARD: as-listed
+
+run         scored   HIT  NEAR  MISS   N/A  WITHHELD   hit%  hit+near%
+base           130   110     8    12    46         0    85%        91%
+new            130   110     8    12    46         0    85%        91%
+repeat         130   111     7    12    46         0    85%        91%
+
+    base         start  scored  69  hit  86%  hit+near  93%   (N/A 19)
+    base         end    scored  61  hit  84%  hit+near  89%   (N/A 27)
+    new          start  scored  69  hit  86%  hit+near  93%   (N/A 19)
+    new          end    scored  61  hit  84%  hit+near  89%   (N/A 27)
+    repeat       start  scored  69  hit  87%  hit+near  93%   (N/A 19)
+    repeat       end    scored  61  hit  84%  hit+near  89%   (N/A 27)
+--- CORRECTIONS (CIRCULAR, biased — every target is a case he flagged wrong)
+  $ python3 scripts/score_boundary_targets.py --targets tests/expert_boundary_targets_v2.json --by-direction --runs base=results/v11/wave5_summaryfix/ketubot_2-60_v11_g37high.json new=results/v11/parallel_rule/ketubot_2-60_parallel.json
+targets: 70 pooled from 1 file(s) — 70 corrections, 0 detector-blind (2005 list); 16 skipped pending human polarity review
+BIAS NOTE: a CORRECTION target is a case Jeff flagged as wrong, so it measures fixing known failures. The 2005 list is a neutral sample and also catches regressions.
+STANDARD: as-listed
+
+run         scored   HIT  NEAR  MISS   N/A  WITHHELD   hit%  hit+near%
+base            14    10     1     3    40         0    71%        79%
+new             14    10     1     3    40         0    71%        79%
+
+    base         start  scored   6  hit  83%  hit+near  83%   (N/A 10)
+    base         end    scored   8  hit  62%  hit+near  75%   (N/A 30)
+    new          start  scored   6  hit  83%  hit+near  83%   (N/A 10)
+    new          end    scored   8  hit  62%  hit+near  75%   (N/A 30)
+
+=== 4. The two cases this change exists for
+
+  Ketubot 62a    seg 7   KEPT (no trim)           PASS
+  Ketubot 105b   seg 9   KEPT (no trim)           PASS
+
+=== 5. The lookalikes that must STAY trimmed (if these flip, the rule keys on speech — finding §2)
+
+  Ketubot 67b    seg 3   still trimmed  PASS
+  Ketubot 77b    seg 11  still trimmed  PASS
+  Kiddushin 72a  seg 3   still trimmed  PASS
+
+------------------------------------------------------------------------
+The two motivating cases: PASS
+Read work/2026-09-01-parallel-story-rule.md before acting on the end-ruler
+rows: a fall there was PREDICTED and is not by itself evidence the change
+is wrong. What decides it is whether the fall is confined to these cases.
+
+=== 6. Re-screen, to see the candidate list did not balloon
+
+  $ python3 scripts/screen_end_trim_depth.py --runs results/v11/parallel_rule/ketubot_2-60_parallel.json results/v11/parallel_rule/ketubot_61-112_parallel.json results/v11/parallel_rule/kiddushin_parallel.json --min-depth 4
+end-trims: 48 across 3 run(s)
+
+ depth  trims   share
+     1     14     29%  ##############
+     2     17     35%  #################
+     3      5     10%  #####
+     4      5     10%  #####
+     5      1      2%  #
+     6      5     10%  #####
+    10      1      2%  #
+
+candidates at depth >= 4: 12 (25% of trims)
+INDICATED, NOT MEASURED — depth is structural. A deep trim is as likely to be a long
+stam-Talmud discussion (which the prompt SHOULD cut) as a second story. Judge each by eye.
+
+  Kiddushin 72a      seg 3   depth 10   351 chars  kept 0..2 of 12
+  Ketubot 60b        seg 9   depth  6   264 chars  kept 0..1 of 7
+  Ketubot 67b        seg 3   depth  6   234 chars  kept 0..1 of 7
+  Ketubot 77b        seg 11  depth  6   245 chars  kept 0..5 of 11
+  Kiddushin 59a      seg 3   depth  6   202 chars  kept 0..0 of 6
+  Kiddushin 59a      seg 4   depth  6   296 chars  kept 0..2 of 8
+  Ketubot 67b        seg 15  depth  5   207 chars  kept 0..5 of 10
+  Ketubot 52b        seg 5   depth  4   141 chars  kept 0..1 of 5
+  Ketubot 61a        seg 12  depth  4   128 chars  kept 0..3 of 7
+  Ketubot 68a        seg 16  depth  4   116 chars  kept 0..1 of 5  markers: so too
+  Kiddushin 12a      seg 13  depth  4   141 chars  kept 0..0 of 4
+  Kiddushin 50a      seg 10  depth  4   121 chars  kept 0..2 of 6
+
+Full report written to /Users/simonbrief/talmud-stories/.claude/worktrees/kiddushin-recall-boundary-c52c91/results/v11/parallel_rule/REPORT.txt — that one file is what to send back.
+
+When the numbers are in: add an ## Outcome to work/2026-09-01-parallel-story-rule.md
+saying what happened and WHY (especially for a revert), then `python3 scripts/board.py finish 2026-09-01-parallel-story-rule`.
