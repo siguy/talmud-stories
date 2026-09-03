@@ -6,8 +6,14 @@ Stage 1 (event triage) -> Stage 2 (constrained detection) -> Stage 4 (merge,
 stitch, Mishnah filter, snap, trim, Wave 5 clause spans).
 
 Reads `results/sefaria/<tractate>.json` (fetched 2026-08-30, never re-fetched),
-caches triage to `results/triage/<tractate>.json`, writes the run to
+caches triage to `results/triage/<tractate>.json` and Stage 2 to
+`results/stage2/<tractate>.json`, writes the run to
 `results/v11/<tractate>/<tractate>_v11.json`.
+
+Both caches checkpoint every CHECKPOINT pages, so a crash resumes instead of
+restarting. A Stage 2 page is reused only if the prompt that produced it is
+unchanged, and a page the model FAILED on is never cached — see
+tests/test_stage2_checkpoint.py.
 
 Two things it does NOT do, on purpose:
 
@@ -43,9 +49,68 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 MODEL = 'gemini-3-flash-preview'
-CHECKPOINT = 10  # pages between triage-cache writes
+CHECKPOINT = 10  # pages between cache writes, Stage 1 and Stage 2 alike
 DELAY = 0.5
 KNOWN = ('gittin', 'yevamot', 'eruvin')
+
+STAGE2_SCHEMA = 'stage2-cache-1'
+
+
+def stage2_header(tractate, name, model, thinking, detector_module):
+    """The identity of the run a Stage 2 cache belongs to.
+
+    Every field here can change what the model is asked or which model answers, so a
+    cache whose header disagrees with the run is refused rather than blended. The
+    per-page digest (`stage2_cache_digest`) is the fine-grained check; this is the
+    coarse one, and it is the one a human can read.
+    """
+    return {'schema_version': STAGE2_SCHEMA, 'tractate': tractate, 'name': name,
+            'model': model, 'thinking_level': thinking, 'detector': detector_module}
+
+
+def load_stage2_cache(path, header):
+    """Return `ref -> {digest, stories, span_repairs}`, or raise on a header mismatch.
+
+    Refuses rather than falls back: a cache from another model or another detector
+    silently blended into this run would put two detectors' output in one file with
+    nothing on its face to say so. Nothing under results/ is ever deleted here — the
+    message tells the operator to move the file aside or pass --stage2-cache.
+    """
+    if not path.exists():
+        return {}
+    doc = json.loads(path.read_text())
+    got = {k: doc.get(k) for k in header}
+    if got != header:
+        differ = {k: (header[k], got[k]) for k in header if header[k] != got[k]}
+        raise SystemExit(
+            f'Stage 2 cache {path} does not belong to this run: '
+            + '; '.join(f'{k}: run has {r!r}, cache has {c!r}' for k, (r, c) in differ.items())
+            + f'. Move it aside or pass --stage2-cache <other path>; '
+              f'--fresh-stage2 ignores it. Nothing is deleted automatically.')
+    pages = doc.get('pages', {})
+    if not isinstance(pages, dict):
+        raise SystemExit(f'Stage 2 cache {path}: "pages" is {type(pages).__name__}, '
+                         f'expected an object keyed by ref')
+    return pages
+
+
+def write_stage2_cache(path, header, pages):
+    """Atomic write: a partial file must never be readable as a complete one.
+
+    The cache is rewritten whole to a sibling temp file, flushed and fsynced, then
+    `os.replace`d — which is atomic on POSIX, so a reader sees either the previous
+    complete cache or the new complete one, never a truncated JSON document. A crash
+    mid-write therefore costs at most the pages since the last checkpoint, which is the
+    same thing a crash mid-run costs.
+    """
+    path.parent.mkdir(parents=True, exist_ok=True)
+    body = json.dumps({**header, 'pages': pages}, indent=2, ensure_ascii=False)
+    tmp = path.with_suffix(path.suffix + '.tmp')
+    with open(tmp, 'w', encoding='utf-8') as fh:
+        fh.write(body)
+        fh.flush()
+        os.fsync(fh.fileno())
+    os.replace(tmp, path)
 
 
 def load_env():
@@ -89,6 +154,11 @@ def main():
     ap.add_argument('--delay', type=float, default=DELAY)
     ap.add_argument('--retriage', action='store_true',
                     help='re-run Stage 1 even if a cache exists (costs money)')
+    ap.add_argument('--stage2-cache',
+                    help='default: results/stage2/<tractate>.json')
+    ap.add_argument('--fresh-stage2', action='store_true',
+                    help='ignore any Stage 2 cache and re-detect every page '
+                         '(costs money; the cache is still written, never deleted)')
     args = ap.parse_args()
 
     env = load_env()
@@ -164,16 +234,59 @@ def main():
     if not detector.client:
         log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
 
+    # ---- Stage 2 checkpoint ---------------------------------------------
+    # Stage 2 held every page in memory until the tractate finished, so one raise
+    # discarded the whole spend -- twice on Yevamot, 2026-09-03, the second time at
+    # page 35 of 106. Same shape of fix as Stage 1's above: write every CHECKPOINT
+    # pages, and write once more on the way out of a failure.
+    s2_path = Path(args.stage2_cache) if args.stage2_cache else (
+        PROJECT_ROOT / 'results' / 'stage2' / f'{args.tractate}.json')
+    s2_header = stage2_header(args.tractate, name, args.model, args.thinking,
+                              V7StoryDetector.__module__.rsplit('.', 1)[-1])
+    s2_pages = {} if args.fresh_stage2 else load_stage2_cache(s2_path, s2_header)
+    if s2_pages:
+        log.info('Stage 2 cache: %d page(s) from %s — a page is only reused if the '
+                 'prompt it was produced from is unchanged', len(s2_pages), s2_path.name)
+    resume = dict(s2_pages)
+    since_write = [0]
+
+    def checkpoint(ref, digest, stories, span_repairs):
+        s2_pages[ref] = {'digest': digest, 'stories': stories,
+                         'span_repairs': span_repairs}
+        since_write[0] += 1
+        if since_write[0] >= CHECKPOINT:
+            write_stage2_cache(s2_path, s2_header, s2_pages)
+            since_write[0] = 0
+            log.info('Stage 2 cache: %d page(s) written to %s',
+                     len(s2_pages), s2_path.name)
+
     t0 = time.time()
-    results = detector.run_pipeline(pages, triage_results=triage,
-                                    delay=args.delay, tractate=name)
+    try:
+        results = detector.run_pipeline(pages, triage_results=triage,
+                                        delay=args.delay, tractate=name,
+                                        resume_stories=resume,
+                                        on_page_detected=checkpoint)
+    except Exception:
+        write_stage2_cache(s2_path, s2_header, s2_pages)
+        log.error('run failed with %d Stage 2 page(s) cached — re-run to resume '
+                  'from %s', len(s2_pages), s2_path.name)
+        raise
+    write_stage2_cache(s2_path, s2_header, s2_pages)
     elapsed = time.time() - t0
 
     results['version'] = 'v11'
     results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
                            'elapsed_seconds': round(elapsed, 1),
                            'pages': len(pages), 'source': src.name,
-                           'ground_truth': 'ketubot-only (cross-tractate)'}
+                           'ground_truth': 'ketubot-only (cross-tractate)',
+                           # On its face, so a run assembled partly from a cache is
+                           # never mistaken for a fresh sample of a nondeterministic
+                           # model.
+                           'stage2_cache': str(s2_path.relative_to(PROJECT_ROOT))
+                           if s2_path.is_relative_to(PROJECT_ROOT) else str(s2_path),
+                           'stage2_resumed_pages':
+                               results.get('stage2_summary', {}).get(
+                                   'resumed_from_cache', 0)}
     out = Path(args.output) if args.output else (
         PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
     out.parent.mkdir(parents=True, exist_ok=True)

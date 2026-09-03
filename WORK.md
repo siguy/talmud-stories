@@ -46,11 +46,11 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `build-canonical-hazard` | `talmud-stories` | **2 FILES** |
-| `main` | `kiddushin-recall-boundary-c52c91` | **15 FILES** |
+| `stage2-checkpoint` | `kiddushin-recall-boundary-c52c91` | **11 FILES** |
 | `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 31 items, never deleted
+## Done — 32 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -84,5 +84,6 @@ staleness check: it changes whenever anyone edits anything.*
 | [Correct the Gittin recall denominator — Jeff retracted one of his own entries](work/done/2026-09-02-gittin-recall-denominator.md) | detection | — |
 | [A custom that frames a one-time event is still a story (Gittin 57a, Beitar)](work/done/2026-09-02-habitual-frame.md) | detection, classification | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
 | [Include the introducing formula in the story start — Jeff ruled, so build it](work/done/2026-09-02-opening-formula.md) | boundaries | [2026-09-02-jeff-answers-gittin.md](docs/findings/2026-09-02-jeff-answers-gittin.md) |
+| [Stage 2 checkpointing — a crashed detection run must resume, not restart](work/done/2026-09-03-stage2-checkpoint.md) | detection | — |
 | [Yevamot — the full detection run, measured against the blind list the day it runs](work/done/2026-09-03-yevamot-detection-run.md) | triage, detection | [2026-09-03-yevamot-first-run.md](docs/findings/2026-09-03-yevamot-first-run.md) |
-<!-- board-checksum: bc1c5778ebbf8ebe -->
+<!-- board-checksum: e609572e9b46c9b9 -->
