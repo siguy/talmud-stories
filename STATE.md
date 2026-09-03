@@ -159,8 +159,10 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-kiddushin-parse-open-calls` — jeff:appendix-separate
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-- `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
-- `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round
-- `2026-08-31-classification-point-estimate` — jeff:axes-round
-<!-- board-checksum: e2d543641d0a6678 -->
+
+**Answered — these can conclude now, and their `awaiting:` is stale:**
+
+- `2026-08-30-story-criteria` — jeff:speech-act-policy is answered
+- `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
+<!-- board-checksum: ed90d8a5fa0b4e0b -->
