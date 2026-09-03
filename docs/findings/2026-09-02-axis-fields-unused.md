@@ -9,12 +9,18 @@ prose, two of them quoting the Hebrew to cut.
 `display_problem` was false throughout, so the renderer was fine. This is not a display
 bug.
 
-## First: the file came out of that page. Who was driving it is a separate question
+## First: Jeff used the page — asked and answered
 
-**Correction, 2026-09-03.** Simon read this finding and objected: *"Jeff sent me the json
-file which contained the results. That html was never meant to hold his responses."* That
-is worth settling before anything below is trusted, because the whole diagnosis rests on
-him having used the page.
+**Resolved 2026-09-03.** Simon: *"Jeff emailed me the output."* He reviewed on the page,
+clicked Save, and sent the JSON it produced. **The diagnosis below is confirmed, not
+indicated.**
+
+Worth keeping the working, because the question was live for an afternoon and the answer
+did not come from the artifact. Simon's first objection was
+*"Jeff sent me the json file which contained the results. That html was never meant to
+hold his responses"* — which is true and reads as a contradiction, but is not one: the
+HTML is not where responses live, the JSON export is. That is the design working, and it
+is easy to mistake for the page having been bypassed.
 
 The JSON is **`buildExport()`'s output, exactly.** Its envelope is that function's return
 literal key-for-key and in order — `tractate, schema_version, detector_version,
@@ -28,25 +34,20 @@ card that is not complete (`if (!isComplete(v)) return`), so an unanswered page 
 `reviews: {}` and `reviewed: 0`. A 25-entry skeleton with every field present and null is
 not something this code can produce.
 
-So the page produced the file. **What the file cannot tell us is whose hands were on it.**
-Two possibilities remain, and they have different consequences:
+So the page produced the file — but that was never the open question. **What a file cannot
+tell you is whose hands were on it.** Two readings survived the evidence:
 
-1. **Jeff used the page.** Then everything below holds: the layout is why the structured
-   fields are empty, and the fix is aimed at the right thing.
-2. **Jeff answered in prose — by email or on paper — and someone transcribed his answers
-   into the page.** Then the empty fields say nothing about how *he* reads the UI. They
-   say the transcriber had prose in hand and filled the field that takes prose. The
-   layout finding would be about the transcription step, not about him.
+1. **Jeff used the page.** The layout is why the structured fields are empty. — **This is
+   what happened.**
+2. Jeff answered in prose and someone transcribed him into the page. The empty fields
+   would then describe the transcriber, and this finding would be about the wrong step.
 
-**This is Simon's to answer, not the artifact's,** and it is one line. Until it is
-answered, read the diagnosis below as **indicated**, not measured.
+One line from Simon separated them, and nothing in the artifact could have.
 
-**The fix does not depend on which it is.** A single-line `<input>` is wrong for
+**Note that the fix never depended on the answer.** A single-line `<input>` is wrong for
 sentence-length notes either way, and revealing the axes when someone reaches for prose
-helps a transcriber exactly as much as it helps Jeff — in reading (2) it helps *more*,
-because a transcriber holding a boundary correction in prose is precisely the person who
-should be shown the boundary boxes. Nothing here is gated, so no path gets worse under
-either reading.
+helps a transcriber as much as it helps Jeff. Nothing is gated, so no path got worse under
+either reading — which is why it was correct to ship it before the question was settled.
 
 ## The item posed two readings. Opening the page settled it without asking him
 
@@ -137,10 +138,14 @@ the reviewer's habits and put it in the next email. The answer was in the page's
 layout, available for the cost of serving a file, and **cheaper than a question that would
 have spent one of his scarce replies.**
 
-**And the correction at the top of this file is the same lesson turned around.** Reading
-the layout told us how the page behaves. It could not tell us who was operating it, and
-the finding was written as though it had — the one question that needed a human was the
-one assumed away. Provenance of a verdict is not recoverable from its shape: `axes-2`
-proves which code wrote the file, never who filled it in. If reviews are ever transcribed
-rather than entered by the reviewer, the export needs a field saying so, and no amount of
-looking at the artifact substitutes for that.
+**And the exchange at the top of this file is the same lesson turned around.** Reading the
+layout told us how the page behaves. It could not tell us who was operating it, and the
+finding was first written as though it had — the one question that needed a human was the
+one assumed away. It happened to be assumed correctly, which is the least useful way to be
+right.
+
+**Provenance is not recoverable from a verdict's shape.** `axes-2` proves which code wrote
+the file; it can never prove who filled it in. This round is safe because Simon remembers.
+That is not a property to rely on twice — if a review is ever transcribed rather than
+entered by the reviewer, the export needs a field saying so, and looking harder at the
+artifact will not substitute for it.
