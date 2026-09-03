@@ -103,11 +103,11 @@ gate       a scholar reviews a tractate in days, not weeks · DERIVED
 history    docs/capabilities/5_review.md
 open       2026-08-30-eruvin-expert-round   ← blocked: 2026-08-30-eruvin-review-ui
 open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classification
-open       2026-08-30-gittin-expert-round   ← blocked: 2026-08-30-gittin-review-ui
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-closed     4 item(s) in work/done/
+open       2026-08-31-classification-point-estimate   ← awaiting: jeff:axes-round
+closed     5 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -141,6 +141,7 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 Counts are measured; files holding zero verdicts are not listed, because
 naming an empty file as a lost round buries the one that is not.
 
+- `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
 ## Open with Jeff
@@ -151,7 +152,6 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
-| `jeff:axes-round` | Would you review one tractate on the new page, where each entry asks **is it a story** (yes / borderline / no) and, only if you want to say more, whether the **extent**, the **confidence level** or the **grouping** is wrong? |
 | `jeff:appendix-separate` | Please keep your appendix of "stories you and Claude found" a **separate file**, or mark its entries. |
 
 Items that can finish but cannot conclude until he answers:
@@ -161,4 +161,4 @@ Items that can finish but cannot conclude until he answers:
 - `2026-08-30-story-criteria` — jeff:speech-act-policy
 - `2026-08-31-classification-point-estimate` — jeff:axes-round
 - `2026-09-01-parallel-story-rule` — jeff:boundary-end-rule
-<!-- board-checksum: 473bb3eb1d8884d5 -->
+<!-- board-checksum: d6d618323f935f09 -->
