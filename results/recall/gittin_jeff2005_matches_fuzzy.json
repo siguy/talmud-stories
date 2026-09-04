@@ -6,13 +6,13 @@
   "words": 41,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.929,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 5b",
-    19
+    13
    ],
    [
     "Gittin 5b",
@@ -35,13 +35,13 @@
   "words": 30,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 5b",
-    21
+    15
    ],
    [
     "Gittin 5b",
@@ -64,17 +64,17 @@
   "words": 35,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.942,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.95,
+  "segments": 10,
   "located": [
    [
     "Gittin 6a",
-    18
+    12
    ],
    [
     "Gittin 6b",
-    0
+    2
    ]
   ],
   "pages_touched": [
@@ -94,13 +94,13 @@
   "words": 98,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.957,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.96,
+  "segments": 8,
   "located": [
    [
-    "Gittin 6b",
-    1
+    "Gittin 6a",
+    15
    ],
    [
     "Gittin 6b",
@@ -108,6 +108,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 6a",
    "Gittin 6b"
   ],
   "survived_triage": true,
@@ -123,13 +124,13 @@
   "words": 63,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.842,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.858,
+  "segments": 8,
   "located": [
    [
     "Gittin 6b",
-    10
+    5
    ],
    [
     "Gittin 6b",
@@ -152,13 +153,13 @@
   "words": 66,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.88,
-  "segments": 4,
+  "segments": 9,
   "located": [
    [
-    "Gittin 7a",
-    0
+    "Gittin 6b",
+    12
    ],
    [
     "Gittin 7a",
@@ -166,6 +167,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 6b",
    "Gittin 7a"
   ],
   "survived_triage": true,
@@ -181,13 +183,13 @@
   "words": 92,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.867,
-  "segments": 4,
+  "segments": 8,
   "located": [
    [
     "Gittin 7a",
-    4
+    0
    ],
    [
     "Gittin 7a",
@@ -210,17 +212,17 @@
   "words": 89,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.901,
-  "segments": 4,
+  "matcher": "fuzzy",
+  "coverage": 0.908,
+  "segments": 13,
   "located": [
    [
     "Gittin 7a",
-    12
+    6
    ],
    [
     "Gittin 7a",
-    15
+    18
    ]
   ],
   "pages_touched": [
@@ -239,13 +241,13 @@
   "words": 26,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.867,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.889,
+  "segments": 7,
   "located": [
    [
     "Gittin 7a",
-    16
+    10
    ],
    [
     "Gittin 7a",
@@ -268,21 +270,22 @@
   "words": 65,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.794,
-  "segments": 5,
+  "matcher": "fuzzy",
+  "coverage": 0.806,
+  "segments": 11,
   "located": [
    [
     "Gittin 11b",
-    9
+    5
    ],
    [
-    "Gittin 11b",
-    13
+    "Gittin 12a",
+    0
    ]
   ],
   "pages_touched": [
-   "Gittin 11b"
+   "Gittin 11b",
+   "Gittin 12a"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -297,13 +300,13 @@
   "words": 54,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.968,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 14a",
-    8
+    2
    ],
    [
     "Gittin 14a",
@@ -326,13 +329,13 @@
   "words": 51,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.959,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 14a",
-    16
+    10
    ],
    [
     "Gittin 14a",
@@ -355,13 +358,13 @@
   "words": 143,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.899,
-  "segments": 6,
+  "matcher": "fuzzy",
+  "coverage": 0.908,
+  "segments": 14,
   "located": [
    [
     "Gittin 14a",
-    18
+    10
    ],
    [
     "Gittin 14b",
@@ -385,17 +388,17 @@
   "words": 62,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.964,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.969,
+  "segments": 14,
   "located": [
    [
     "Gittin 14b",
-    16
+    15
    ],
    [
     "Gittin 15a",
-    0
+    10
    ]
   ],
   "pages_touched": [
@@ -415,13 +418,13 @@
   "words": 55,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.984,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 16b",
-    14
+    8
    ],
    [
     "Gittin 17a",
@@ -445,17 +448,17 @@
   "words": 32,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.905,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.914,
+  "segments": 9,
   "located": [
    [
     "Gittin 18b",
-    6
+    0
    ],
    [
     "Gittin 19a",
-    0
+    1
    ]
   ],
   "pages_touched": [
@@ -475,13 +478,13 @@
   "words": 18,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 19b",
-    18
+    12
    ],
    [
     "Gittin 19b",
@@ -504,21 +507,22 @@
   "words": 15,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.904,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.981,
+  "segments": 14,
   "located": [
    [
     "Gittin 19b",
-    20
+    15
    ],
    [
-    "Gittin 19b",
-    20
+    "Gittin 20a",
+    7
    ]
   ],
   "pages_touched": [
-   "Gittin 19b"
+   "Gittin 19b",
+   "Gittin 20a"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -533,13 +537,13 @@
   "words": 45,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.954,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
-    "Gittin 27a",
-    4
+    "Gittin 26b",
+    12
    ],
    [
     "Gittin 27a",
@@ -547,6 +551,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 26b",
    "Gittin 27a"
   ],
   "survived_triage": true,
@@ -562,13 +567,13 @@
   "words": 46,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 27b",
-    8
+    2
    ],
    [
     "Gittin 27b",
@@ -591,21 +596,22 @@
   "words": 115,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.957,
-  "segments": 4,
+  "matcher": "fuzzy",
+  "coverage": 0.963,
+  "segments": 14,
   "located": [
    [
     "Gittin 29b",
-    8
+    6
    ],
    [
-    "Gittin 29b",
-    11
+    "Gittin 30a",
+    1
    ]
   ],
   "pages_touched": [
-   "Gittin 29b"
+   "Gittin 29b",
+   "Gittin 30a"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -620,21 +626,22 @@
   "words": 122,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.914,
-  "segments": 5,
+  "matcher": "fuzzy",
+  "coverage": 0.919,
+  "segments": 13,
   "located": [
    [
     "Gittin 29b",
-    12
+    7
    ],
    [
-    "Gittin 29b",
-    16
+    "Gittin 30a",
+    1
    ]
   ],
   "pages_touched": [
-   "Gittin 29b"
+   "Gittin 29b",
+   "Gittin 30a"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -649,13 +656,13 @@
   "words": 24,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 30a",
-    1
+    "Gittin 29b",
+    13
    ],
    [
     "Gittin 30a",
@@ -663,6 +670,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 29b",
    "Gittin 30a"
   ],
   "survived_triage": true,
@@ -678,13 +686,13 @@
   "words": 41,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.931,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.957,
+  "segments": 14,
   "located": [
    [
-    "Gittin 30a",
-    2
+    "Gittin 29b",
+    8
    ],
    [
     "Gittin 30a",
@@ -692,6 +700,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 29b",
    "Gittin 30a"
   ],
   "survived_triage": true,
@@ -707,13 +716,13 @@
   "words": 82,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.963,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.966,
+  "segments": 7,
   "located": [
    [
     "Gittin 31b",
-    9
+    4
    ],
    [
     "Gittin 31b",
@@ -736,13 +745,13 @@
   "words": 83,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.953,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 31b",
-    11
+    5
    ],
    [
     "Gittin 31b",
@@ -765,13 +774,13 @@
   "words": 22,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.963,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 33b",
-    11
+    5
    ],
    [
     "Gittin 33b",
@@ -794,13 +803,13 @@
   "words": 32,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.967,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 34a",
-    2
+    "Gittin 33b",
+    11
    ],
    [
     "Gittin 34a",
@@ -808,6 +817,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 33b",
    "Gittin 34a"
   ],
   "survived_triage": true,
@@ -823,13 +833,13 @@
   "words": 23,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 34a",
-    5
+    "Gittin 33b",
+    14
    ],
    [
     "Gittin 34a",
@@ -837,6 +847,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 33b",
    "Gittin 34a"
   ],
   "survived_triage": true,
@@ -852,13 +863,13 @@
   "words": 39,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.98,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 34a",
-    7
+    1
    ],
    [
     "Gittin 34a",
@@ -881,13 +892,13 @@
   "words": 19,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 34a",
-    11
+    5
    ],
    [
     "Gittin 34a",
@@ -910,13 +921,13 @@
   "words": 75,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.97,
-  "segments": 3,
+  "segments": 8,
   "located": [
    [
-    "Gittin 35a",
-    1
+    "Gittin 34b",
+    5
    ],
    [
     "Gittin 35a",
@@ -924,6 +935,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 34b",
    "Gittin 35a"
   ],
   "survived_triage": true,
@@ -939,13 +951,13 @@
   "words": 38,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 35a",
-    10
+    4
    ],
    [
     "Gittin 35a",
@@ -968,13 +980,13 @@
   "words": 62,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.934,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.944,
+  "segments": 9,
   "located": [
    [
     "Gittin 35a",
-    11
+    5
    ],
    [
     "Gittin 35a",
@@ -997,13 +1009,13 @@
   "words": 18,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 36a",
-    2
+    "Gittin 35b",
+    7
    ],
    [
     "Gittin 36a",
@@ -1011,6 +1023,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 35b",
    "Gittin 36a"
   ],
   "survived_triage": true,
@@ -1026,21 +1039,22 @@
   "words": 75,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.843,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.848,
+  "segments": 13,
   "located": [
    [
     "Gittin 37a",
-    11
+    6
    ],
    [
-    "Gittin 37a",
-    12
+    "Gittin 37b",
+    1
    ]
   ],
   "pages_touched": [
-   "Gittin 37a"
+   "Gittin 37a",
+   "Gittin 37b"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -1055,20 +1069,21 @@
   "words": 107,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.957,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.965,
+  "segments": 14,
   "located": [
    [
-    "Gittin 37b",
-    2
+    "Gittin 37a",
+    11
    ],
    [
     "Gittin 37b",
-    3
+    7
    ]
   ],
   "pages_touched": [
+   "Gittin 37a",
    "Gittin 37b"
   ],
   "survived_triage": true,
@@ -1084,13 +1099,13 @@
   "words": 27,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.938,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 38a",
-    9
+    3
    ],
    [
     "Gittin 38a",
@@ -1113,13 +1128,13 @@
   "words": 21,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 38a",
-    12
+    6
    ],
    [
     "Gittin 38a",
@@ -1142,13 +1157,13 @@
   "words": 32,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 38a",
-    16
+    10
    ],
    [
     "Gittin 38a",
@@ -1171,13 +1186,13 @@
   "words": 32,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.957,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 38a",
-    17
+    11
    ],
    [
     "Gittin 38b",
@@ -1201,13 +1216,13 @@
   "words": 13,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.943,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.962,
+  "segments": 7,
   "located": [
    [
-    "Gittin 38b",
-    3
+    "Gittin 38a",
+    15
    ],
    [
     "Gittin 38b",
@@ -1215,6 +1230,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 38a",
    "Gittin 38b"
   ],
   "survived_triage": true,
@@ -1230,13 +1246,13 @@
   "words": 42,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.91,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 38b",
-    6
+    0
    ],
    [
     "Gittin 38b",
@@ -1247,7 +1263,7 @@
    "Gittin 38b"
   ],
   "survived_triage": true,
-  "in_detector": false,
+  "in_detector": true,
   "only_rejected": false,
   "in_mishnah_filtered": false,
   "in_golden": null
@@ -1259,13 +1275,13 @@
   "words": 126,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.91,
-  "segments": 4,
+  "matcher": "fuzzy",
+  "coverage": 0.915,
+  "segments": 8,
   "located": [
    [
     "Gittin 39b",
-    12
+    8
    ],
    [
     "Gittin 39b",
@@ -1288,21 +1304,22 @@
   "words": 64,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.932,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.941,
+  "segments": 13,
   "located": [
    [
     "Gittin 40a",
-    12
+    6
    ],
    [
-    "Gittin 40a",
-    13
+    "Gittin 40b",
+    2
    ]
   ],
   "pages_touched": [
-   "Gittin 40a"
+   "Gittin 40a",
+   "Gittin 40b"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -1317,13 +1334,13 @@
   "words": 61,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.949,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.953,
+  "segments": 8,
   "located": [
    [
     "Gittin 40a",
-    14
+    9
    ],
    [
     "Gittin 40b",
@@ -1347,13 +1364,13 @@
   "words": 28,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.971,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 45a",
-    4
+    "Gittin 44b",
+    16
    ],
    [
     "Gittin 45a",
@@ -1361,6 +1378,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 44b",
    "Gittin 45a"
   ],
   "survived_triage": true,
@@ -1376,13 +1394,13 @@
   "words": 41,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.888,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 45a",
-    9
+    3
    ],
    [
     "Gittin 45a",
@@ -1405,21 +1423,22 @@
   "words": 36,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.968,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.976,
+  "segments": 14,
   "located": [
    [
     "Gittin 45a",
     11
    ],
    [
-    "Gittin 45a",
-    11
+    "Gittin 45b",
+    1
    ]
   ],
   "pages_touched": [
-   "Gittin 45a"
+   "Gittin 45a",
+   "Gittin 45b"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -1434,21 +1453,22 @@
   "words": 150,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.958,
-  "segments": 5,
+  "matcher": "fuzzy",
+  "coverage": 0.964,
+  "segments": 14,
   "located": [
    [
     "Gittin 45a",
     17
    ],
    [
-    "Gittin 45a",
-    21
+    "Gittin 45b",
+    7
    ]
   ],
   "pages_touched": [
-   "Gittin 45a"
+   "Gittin 45a",
+   "Gittin 45b"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -1463,13 +1483,13 @@
   "words": 27,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 45b",
-    11
+    5
    ],
    [
     "Gittin 45b",
@@ -1492,13 +1512,13 @@
   "words": 54,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.903,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.908,
+  "segments": 8,
   "located": [
    [
     "Gittin 46b",
-    15
+    9
    ],
    [
     "Gittin 46b",
@@ -1521,13 +1541,13 @@
   "words": 11,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 46b",
-    17
+    11
    ],
    [
     "Gittin 46b",
@@ -1550,13 +1570,13 @@
   "words": 64,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.87,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.874,
+  "segments": 9,
   "located": [
    [
-    "Gittin 47a",
-    0
+    "Gittin 46b",
+    12
    ],
    [
     "Gittin 47a",
@@ -1564,10 +1584,11 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 46b",
    "Gittin 47a"
   ],
   "survived_triage": true,
-  "in_detector": false,
+  "in_detector": true,
   "only_rejected": false,
   "in_mishnah_filtered": false,
   "in_golden": null
@@ -1579,20 +1600,21 @@
   "words": 95,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.963,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.968,
+  "segments": 14,
   "located": [
    [
-    "Gittin 47a",
-    3
+    "Gittin 46b",
+    17
    ],
    [
     "Gittin 47a",
-    5
+    12
    ]
   ],
   "pages_touched": [
+   "Gittin 46b",
    "Gittin 47a"
   ],
   "survived_triage": true,
@@ -1608,13 +1630,13 @@
   "words": 69,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.969,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 52a",
-    12
+    6
    ],
    [
     "Gittin 52a",
@@ -1637,13 +1659,13 @@
   "words": 40,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.932,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 52a",
-    14
+    8
    ],
    [
     "Gittin 52a",
@@ -1666,13 +1688,13 @@
   "words": 66,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.948,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.953,
+  "segments": 9,
   "located": [
    [
     "Gittin 52a",
-    15
+    9
    ],
    [
     "Gittin 52a",
@@ -1695,13 +1717,13 @@
   "words": 38,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 52a",
-    18
+    12
    ],
    [
     "Gittin 52a",
@@ -1724,13 +1746,13 @@
   "words": 50,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.974,
-  "segments": 2,
+  "segments": 7,
   "located": [
    [
-    "Gittin 52b",
-    4
+    "Gittin 52a",
+    23
    ],
    [
     "Gittin 52b",
@@ -1738,6 +1760,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 52a",
    "Gittin 52b"
   ],
   "survived_triage": true,
@@ -1753,13 +1776,13 @@
   "words": 21,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.963,
-  "segments": 2,
+  "segments": 7,
   "located": [
    [
-    "Gittin 54a",
-    4
+    "Gittin 53b",
+    15
    ],
    [
     "Gittin 54a",
@@ -1767,6 +1790,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 53b",
    "Gittin 54a"
   ],
   "survived_triage": true,
@@ -1782,13 +1806,13 @@
   "words": 39,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.979,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 54b",
-    9
+    3
    ],
    [
     "Gittin 54b",
@@ -1811,13 +1835,13 @@
   "words": 67,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.984,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.989,
+  "segments": 12,
   "located": [
    [
     "Gittin 54b",
-    13
+    3
    ],
    [
     "Gittin 54b",
@@ -1840,13 +1864,13 @@
   "words": 34,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.845,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.855,
+  "segments": 7,
   "located": [
    [
     "Gittin 54b",
-    18
+    12
    ],
    [
     "Gittin 54b",
@@ -1869,13 +1893,13 @@
   "words": 34,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 55b",
-    6
+    0
    ],
    [
     "Gittin 55b",
@@ -1898,9 +1922,9 @@
   "words": 192,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.942,
-  "segments": 7,
+  "matcher": "fuzzy",
+  "coverage": 0.943,
+  "segments": 14,
   "located": [
    [
     "Gittin 55b",
@@ -1908,7 +1932,7 @@
    ],
    [
     "Gittin 56a",
-    4
+    11
    ]
   ],
   "pages_touched": [
@@ -1928,13 +1952,13 @@
   "words": 57,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.971,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.976,
+  "segments": 14,
   "located": [
    [
-    "Gittin 56a",
-    5
+    "Gittin 55b",
+    11
    ],
    [
     "Gittin 56a",
@@ -1942,6 +1966,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 55b",
    "Gittin 56a"
   ],
   "survived_triage": true,
@@ -1957,13 +1982,13 @@
   "words": 137,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.987,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 56a",
-    7
+    1
    ],
    [
     "Gittin 56a",
@@ -1986,13 +2011,13 @@
   "words": 95,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.948,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 56a",
-    10
+    4
    ],
    [
     "Gittin 56a",
@@ -2015,17 +2040,17 @@
   "words": 47,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.896,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.901,
+  "segments": 10,
   "located": [
    [
     "Gittin 56a",
-    12
+    6
    ],
    [
     "Gittin 56a",
-    13
+    15
    ]
   ],
   "pages_touched": [
@@ -2044,17 +2069,17 @@
   "words": 411,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.937,
-  "segments": 11,
+  "matcher": "fuzzy",
+  "coverage": 0.94,
+  "segments": 14,
   "located": [
    [
     "Gittin 56a",
-    14
+    12
    ],
    [
     "Gittin 56b",
-    6
+    7
    ]
   ],
   "pages_touched": [
@@ -2074,17 +2099,17 @@
   "words": 323,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.959,
-  "segments": 10,
+  "matcher": "fuzzy",
+  "coverage": 0.961,
+  "segments": 12,
   "located": [
    [
     "Gittin 56b",
-    7
+    6
    ],
    [
     "Gittin 56b",
-    16
+    17
    ]
   ],
   "pages_touched": [
@@ -2103,17 +2128,17 @@
   "words": 184,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.893,
-  "segments": 6,
+  "matcher": "fuzzy",
+  "coverage": 0.898,
+  "segments": 14,
   "located": [
    [
     "Gittin 56b",
-    17
+    11
    ],
    [
     "Gittin 57a",
-    4
+    6
    ]
   ],
   "pages_touched": [
@@ -2133,13 +2158,13 @@
   "words": 157,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.979,
-  "segments": 5,
+  "matcher": "fuzzy",
+  "coverage": 0.984,
+  "segments": 14,
   "located": [
    [
-    "Gittin 57a",
-    5
+    "Gittin 56b",
+    14
    ],
    [
     "Gittin 57a",
@@ -2147,6 +2172,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 56b",
    "Gittin 57a"
   ],
   "survived_triage": true,
@@ -2162,13 +2188,13 @@
   "words": 121,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.952,
-  "segments": 4,
+  "segments": 7,
   "located": [
    [
     "Gittin 57a",
-    13
+    10
    ],
    [
     "Gittin 57a",
@@ -2191,13 +2217,13 @@
   "words": 105,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.961,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 57a",
-    17
+    11
    ],
    [
     "Gittin 57a",
@@ -2220,13 +2246,13 @@
   "words": 128,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.927,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 57a",
-    20
+    14
    ],
    [
     "Gittin 57a",
@@ -2237,7 +2263,7 @@
    "Gittin 57a"
   ],
   "survived_triage": true,
-  "in_detector": false,
+  "in_detector": true,
   "only_rejected": false,
   "in_mishnah_filtered": false,
   "in_golden": null
@@ -2249,13 +2275,13 @@
   "words": 93,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.921,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.934,
+  "segments": 14,
   "located": [
    [
-    "Gittin 57b",
-    11
+    "Gittin 57a",
+    22
    ],
    [
     "Gittin 57b",
@@ -2263,6 +2289,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 57a",
    "Gittin 57b"
   ],
   "survived_triage": true,
@@ -2278,13 +2305,13 @@
   "words": 235,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.919,
-  "segments": 7,
+  "matcher": "fuzzy",
+  "coverage": 0.926,
+  "segments": 9,
   "located": [
    [
     "Gittin 57b",
-    13
+    11
    ],
    [
     "Gittin 57b",
@@ -2307,13 +2334,13 @@
   "words": 150,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.981,
-  "segments": 5,
+  "matcher": "fuzzy",
+  "coverage": 0.983,
+  "segments": 11,
   "located": [
    [
-    "Gittin 58a",
-    3
+    "Gittin 57b",
+    19
    ],
    [
     "Gittin 58a",
@@ -2321,6 +2348,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 57b",
    "Gittin 58a"
   ],
   "survived_triage": true,
@@ -2336,13 +2364,13 @@
   "words": 91,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.988,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 58a",
-    8
+    2
    ],
    [
     "Gittin 58a",
@@ -2365,13 +2393,13 @@
   "words": 108,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.978,
-  "segments": 3,
+  "segments": 8,
   "located": [
    [
     "Gittin 58a",
-    10
+    5
    ],
    [
     "Gittin 58a",
@@ -2394,17 +2422,17 @@
   "words": 120,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.951,
-  "segments": 4,
+  "matcher": "fuzzy",
+  "coverage": 0.956,
+  "segments": 11,
   "located": [
    [
     "Gittin 58a",
-    13
+    8
    ],
    [
     "Gittin 58a",
-    16
+    18
    ]
   ],
   "pages_touched": [
@@ -2423,13 +2451,13 @@
   "words": 130,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.98,
-  "segments": 4,
+  "segments": 7,
   "located": [
    [
     "Gittin 58a",
-    17
+    14
    ],
    [
     "Gittin 58a",
@@ -2452,13 +2480,13 @@
   "words": 61,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.919,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 58b",
-    9
+    3
    ],
    [
     "Gittin 58b",
@@ -2481,21 +2509,22 @@
   "words": 74,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.937,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.942,
+  "segments": 13,
   "located": [
    [
     "Gittin 60b",
-    13
+    8
    ],
    [
-    "Gittin 60b",
-    14
+    "Gittin 61a",
+    3
    ]
   ],
   "pages_touched": [
-   "Gittin 60b"
+   "Gittin 60b",
+   "Gittin 61a"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -2510,13 +2539,13 @@
   "words": 38,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 60b",
-    15
+    9
    ],
    [
     "Gittin 60b",
@@ -2539,13 +2568,13 @@
   "words": 33,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.921,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 61a",
-    3
+    "Gittin 60b",
+    14
    ],
    [
     "Gittin 61a",
@@ -2553,6 +2582,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 60b",
    "Gittin 61a"
   ],
   "survived_triage": true,
@@ -2568,13 +2598,13 @@
   "words": 102,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.982,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 62a",
-    13
+    7
    ],
    [
     "Gittin 62a",
@@ -2597,17 +2627,17 @@
   "words": 111,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.925,
-  "segments": 7,
+  "segments": 12,
   "located": [
    [
     "Gittin 63b",
-    11
+    5
    ],
    [
     "Gittin 63b",
-    17
+    16
    ]
   ],
   "pages_touched": [
@@ -2626,13 +2656,13 @@
   "words": 44,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.979,
-  "segments": 3,
+  "segments": 7,
   "located": [
    [
     "Gittin 63b",
-    16
+    12
    ],
    [
     "Gittin 63b",
@@ -2655,13 +2685,13 @@
   "words": 68,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.932,
-  "segments": 3,
+  "segments": 9,
   "located": [
    [
     "Gittin 65b",
-    15
+    9
    ],
    [
     "Gittin 66a",
@@ -2685,13 +2715,13 @@
   "words": 63,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.95,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 66a",
-    14
+    8
    ],
    [
     "Gittin 66a",
@@ -2704,7 +2734,7 @@
   "survived_triage": true,
   "in_detector": true,
   "only_rejected": false,
-  "in_mishnah_filtered": false,
+  "in_mishnah_filtered": true,
   "in_golden": null
  },
  {
@@ -2714,13 +2744,13 @@
   "words": 46,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.899,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.906,
+  "segments": 8,
   "located": [
    [
-    "Gittin 67a",
-    5
+    "Gittin 66b",
+    14
    ],
    [
     "Gittin 67a",
@@ -2728,6 +2758,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 66b",
    "Gittin 67a"
   ],
   "survived_triage": true,
@@ -2743,13 +2774,13 @@
   "words": 67,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.987,
-  "segments": 2,
+  "segments": 8,
   "located": [
    [
     "Gittin 67b",
-    15
+    9
    ],
    [
     "Gittin 67b",
@@ -2772,9 +2803,9 @@
   "words": 234,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.946,
-  "segments": 8,
+  "matcher": "fuzzy",
+  "coverage": 0.95,
+  "segments": 14,
   "located": [
    [
     "Gittin 67b",
@@ -2782,7 +2813,7 @@
    ],
    [
     "Gittin 68a",
-    3
+    9
    ]
   ],
   "pages_touched": [
@@ -2802,13 +2833,13 @@
   "words": 13,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 69b",
-    6
+    0
    ],
    [
     "Gittin 69b",
@@ -2831,13 +2862,13 @@
   "words": 12,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 69b",
-    11
+    5
    ],
    [
     "Gittin 69b",
@@ -2860,13 +2891,13 @@
   "words": 12,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.69,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
-    "Gittin 70a",
-    1
+    "Gittin 69b",
+    15
    ],
    [
     "Gittin 70a",
@@ -2874,6 +2905,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 69b",
    "Gittin 70a"
   ],
   "survived_triage": true,
@@ -2889,17 +2921,17 @@
   "words": 78,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.836,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.851,
+  "segments": 12,
   "located": [
    [
     "Gittin 72a",
-    17
+    11
    ],
    [
     "Gittin 72b",
-    0
+    3
    ]
   ],
   "pages_touched": [
@@ -2919,13 +2951,13 @@
   "words": 48,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.934,
-  "segments": 3,
+  "segments": 8,
   "located": [
    [
     "Gittin 73a",
-    9
+    4
    ],
    [
     "Gittin 73a",
@@ -2948,13 +2980,13 @@
   "words": 50,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.964,
-  "segments": 3,
+  "matcher": "fuzzy",
+  "coverage": 0.969,
+  "segments": 9,
   "located": [
    [
     "Gittin 73a",
-    15
+    9
    ],
    [
     "Gittin 73a",
@@ -2977,13 +3009,13 @@
   "words": 31,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.974,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.982,
+  "segments": 8,
   "located": [
    [
     "Gittin 74b",
-    11
+    5
    ],
    [
     "Gittin 74b",
@@ -3006,13 +3038,13 @@
   "words": 24,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.962,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 77a",
-    7
+    1
    ],
    [
     "Gittin 77a",
@@ -3035,13 +3067,13 @@
   "words": 97,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.952,
-  "segments": 5,
+  "segments": 11,
   "located": [
    [
-    "Gittin 77b",
-    5
+    "Gittin 77a",
+    18
    ],
    [
     "Gittin 77b",
@@ -3049,6 +3081,7 @@
    ]
   ],
   "pages_touched": [
+   "Gittin 77a",
    "Gittin 77b"
   ],
   "survived_triage": true,
@@ -3064,13 +3097,13 @@
   "words": 35,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 1.0,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 77b",
-    15
+    9
    ],
    [
     "Gittin 77b",
@@ -3093,13 +3126,13 @@
   "words": 169,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.909,
-  "segments": 8,
+  "segments": 10,
   "located": [
    [
     "Gittin 83a",
-    3
+    1
    ],
    [
     "Gittin 83a",
@@ -3122,13 +3155,13 @@
   "words": 43,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
+  "matcher": "fuzzy",
   "coverage": 0.973,
-  "segments": 1,
+  "segments": 7,
   "located": [
    [
     "Gittin 89a",
-    17
+    11
    ],
    [
     "Gittin 89a",
@@ -3151,21 +3184,22 @@
   "words": 43,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.962,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.975,
+  "segments": 14,
   "located": [
    [
     "Gittin 89a",
-    18
+    16
    ],
    [
-    "Gittin 89a",
-    18
+    "Gittin 89b",
+    9
    ]
   ],
   "pages_touched": [
-   "Gittin 89a"
+   "Gittin 89a",
+   "Gittin 89b"
   ],
   "survived_triage": true,
   "in_detector": true,
@@ -3180,13 +3214,13 @@
   "words": 28,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.95,
-  "segments": 2,
+  "matcher": "fuzzy",
+  "coverage": 0.96,
+  "segments": 7,
   "located": [
    [
     "Gittin 89a",
-    19
+    14
    ],
    [
     "Gittin 89b",
@@ -3210,20 +3244,21 @@
   "words": 27,
   "blind": true,
   "in_appendix": false,
-  "matcher": "exact",
-  "coverage": 0.96,
-  "segments": 1,
+  "matcher": "fuzzy",
+  "coverage": 0.97,
+  "segments": 9,
   "located": [
    [
-    "Gittin 89b",
-    1
+    "Gittin 89a",
+    15
    ],
    [
     "Gittin 89b",
-    1
+    3
    ]
   ],
   "pages_touched": [
+   "Gittin 89a",
    "Gittin 89b"
   ],
   "survived_triage": true,

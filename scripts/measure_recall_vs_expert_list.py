@@ -505,7 +505,7 @@ def main():
     ap.add_argument('--detected', nargs='+', required=True)
     ap.add_argument('--golden')
     ap.add_argument('--tractate', default='Ketubot')
-    ap.add_argument('--matcher', default='fuzzy', choices=['fuzzy', 'exact'],
+    ap.add_argument('--matcher', default='exact', choices=['fuzzy', 'exact'],
                     help='how to locate an expert story in the text: `fuzzy` is the '
                          '4-gram window aligner; `exact` anchors on phrases unique '
                          'corpus-wide and falls back to fuzzy per story (see locate_exact)')

@@ -14,10 +14,10 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | 98.0% · n=149 B | 97.9% B | STATUS · C | STATUS | 4 rounds | ⬜ |
-| **Kiddushin** | 95.6% · n=90 B | 97.7% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Gittin** | 100.0% · n=111 B | 100.0% B | STATUS · C | STATUS | 1 rounds | ⬜ |
-| **Yevamot** | 100.0% · n=102 B | 94.1% B | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Ketubot** | 96.6% · n=149 B | 90.3% B | STATUS · C | STATUS | 4 rounds | ⬜ |
+| **Kiddushin** | 95.6% · n=90 B | 88.4% B | STATUS · C | STATUS | 3 rounds | ⬜ |
+| **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 1 rounds | ⬜ |
+| **Yevamot** | 100.0% · n=102 B | 89.2% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
@@ -32,9 +32,9 @@ The **end-to-end** figure — what the pipeline delivers, `triage x detection` �
 is quoted **loose / strict** from `results/rulers/`, or from
 `results/recall/<t>_strict.json` for a tractate with no ruler yet:
 
-- Ketubot: **96.0% loose / 87.9% strict** on 149 stories
-- Kiddushin: **93.3% loose / 83.3% strict** on 90 stories
-- Gittin: **100.0% loose / 97.3% strict** on 111 stories
+- Ketubot: **87.2% loose / 87.2% strict** on 149 stories
+- Kiddushin: **84.4% loose / 83.3% strict** on 90 stories
+- Gittin: **97.3% loose / 97.3% strict** on 111 stories
 - Yevamot: **94.1% loose / 89.2% strict** on 102 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
@@ -73,7 +73,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     15 item(s) in work/done/
+closed     16 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -86,7 +86,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     11 item(s) in work/done/
+closed     12 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -94,7 +94,7 @@ closed     11 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
-closed     8 item(s) in work/done/
+closed     9 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -127,12 +127,12 @@ closed     1 item(s) in work/done/
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
-| `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 135 entries · 117 accepted |
+| `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 134 entries · 116 accepted |
 | `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 164 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
-| `results/rulers/gittin_ruler.json` | **JOINED** | denominator 111 · found 111 |
-| `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 143 |
-| `results/rulers/kiddushin_ruler.json` | **JOINED** | denominator 90 · found 84 |
+| `results/rulers/gittin_ruler.json` | **JOINED** | denominator 111 · found 108 |
+| `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 130 |
+| `results/rulers/kiddushin_ruler.json` | **JOINED** | denominator 90 · found 76 |
 
 **Quote entries against entries and accepted against accepted, never one of each.** This project did exactly that for months.
 
@@ -162,4 +162,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: b0615c6c8439e3b4 -->
+<!-- board-checksum: e92c5c4dee88fd14 -->

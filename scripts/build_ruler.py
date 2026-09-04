@@ -275,10 +275,15 @@ def build(tractate, cfg):
     # ---- one entry per expert story, however the proposals fall -------------
     # A proposal may be claimed by more than one expert story: that is our detector
     # merging two of his stories into one span, and it is worth keeping, not collapsing.
+    # One locating function for the whole board (2026-09-03): the ruler and the recall
+    # row must not answer "where is this story" differently. `make_locator` anchors on
+    # phrases unique corpus-wide and falls back per story when none exists.
+    locate, fell_back = recall.make_locator('exact', units, index,
+                                            recall.word_corpus(runs, units))
     entries = []
     for story in expert_stories(tractate, cfg):
         gs = recall.grams(story['text'])
-        cov, lo, hi = recall.locate(gs, units, index)
+        cov, lo, hi = locate(story)
         window = [(units[i][0], units[i][1]) for i in range(lo, hi + 1)] if lo is not None else []
         # `locate` returns a search window up to 14 segments wide, which is right for
         # deciding "did we propose anything here" but far too loose to say WHICH
@@ -331,6 +336,10 @@ def build(tractate, cfg):
             'expert_accepted': True,
             'objection_kind': None,
         })
+
+    if fell_back:
+        log.warning('%d expert story/stories had no corpus-unique phrase and fell back to '
+                    'the 4-gram aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
 
     # ---- proposals no expert story claimed: precision-only entries ----------
     for p in props:

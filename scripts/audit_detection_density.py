@@ -97,11 +97,13 @@ def per_daf(tractate, cfg):
     # proposal overlaps those segments. Density is counted on the ANCHORED daf, never on
     # the label in his list -- a label can name a daf the text does not sit on, and
     # crediting density to the wrong daf would fabricate the very correlation being tested.
+    locate, fell_back = recall.make_locator('exact', units, index,
+                                            recall.word_corpus(runs, units))
     daf = defaultdict(lambda: {'expert': 0, 'found': 0, 'missed': []})
     rows, unanchored = [], 0
     for s in stories:
         gs = recall.grams(s['text'])
-        _, lo, hi = recall.locate(gs, units, index)
+        _, lo, hi = locate(s)
         if lo is None:
             unanchored += 1
             continue
@@ -118,6 +120,9 @@ def per_daf(tractate, cfg):
         rows.append({'ref': ref, 'hit': hit, 'words': len(s['text'].split())})
         if not hit:
             daf[ref]['missed'].append(s['id'])
+    if fell_back:
+        log.warning('%d expert story/stories had no corpus-unique phrase and fell back to '
+                    'the 4-gram aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
     for r in rows:
         r['density'] = daf[r['ref']]['expert']
     return daf, unanchored, examined, rows

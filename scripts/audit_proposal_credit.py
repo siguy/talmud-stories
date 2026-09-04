@@ -111,10 +111,12 @@ def classify(tractate, cfg, show):
                                   'cls': st.get('classification'),
                                   'summary': (st.get('one_sentence_summary') or '')[:70]})
 
+    locate, fell_back = recall.make_locator('exact', units, index,
+                                            recall.word_corpus(runs, units))
     strict_hits, loose_hits = defaultdict(list), defaultdict(list)
     for s in stories:
         gs = recall.grams(s['text'])
-        _, lo, hi = recall.locate(gs, units, index)
+        _, lo, hi = locate(s)
         if lo is None:
             continue
         window = {(units[i][0], units[i][1]) for i in range(lo, hi + 1)}
@@ -128,6 +130,10 @@ def classify(tractate, cfg, show):
                 strict_hits[key].append(s['id'])
             elif cells & window:
                 loose_hits[key].append(s['id'])
+
+    if fell_back:
+        log.warning('%d expert story/stories had no corpus-unique phrase and fell back to '
+                    'the 4-gram aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
 
     only_loose = []
     for p in proposals:

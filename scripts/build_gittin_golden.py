@@ -93,10 +93,12 @@ def strict_matches(pages, expert_stories):
             by_ref[page['ref']].append(
                 (story.get('start_segment'), story.get('end_segment')))
 
+    locate, fell_back = recall.make_locator('exact', units, index,
+                                            recall.word_corpus([str(RUN)], units))
     out = {}
     for story in expert_stories:
         gs = recall.grams(story['text'])
-        _, lo, hi = recall.locate(gs, units, index)
+        _, lo, hi = locate(story)
         if lo is None:
             out[story['id']] = []
             continue
@@ -109,6 +111,9 @@ def strict_matches(pages, expert_stories):
                 if a is not None and b is not None and a <= seg <= b and (ref, a, b) not in hits:
                     hits.append((ref, a, b))
         out[story['id']] = hits
+    if fell_back:
+        log.warning('%d expert story/stories had no corpus-unique phrase and fell back to '
+                    'the 4-gram aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
     return out
 
 

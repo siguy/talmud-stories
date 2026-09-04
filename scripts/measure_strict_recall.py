@@ -53,7 +53,7 @@ def main():
                              'path from the three JSON lists, so it is checked separately')
     ap.add_argument('--detected', nargs='+', required=True)
     ap.add_argument('--tractate', required=True)
-    ap.add_argument('--matcher', default='fuzzy', choices=['fuzzy', 'exact'],
+    ap.add_argument('--matcher', default='exact', choices=['fuzzy', 'exact'],
                     help='see measure_recall_vs_expert_list.locate_exact')
     ap.add_argument('--expert-filter', default='recall', choices=['recall', 'blind', 'all'])
     ap.add_argument('--out')

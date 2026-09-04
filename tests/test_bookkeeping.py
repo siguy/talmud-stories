@@ -45,16 +45,22 @@ GOLDEN_COUNTS = {
     # test's definition has always meant (anything not NOT_A_STORY) and silently
     # redefining it would move the other two tractates' numbers without touching them.
     # The split that actually matters is pinned separately, below.
-    "gittin": {"pages": 178, "entries": 135, "accepted": 117},
+    # 135 -> 134 on 2026-09-03: Gittin 34a:9 left the golden with the exact-anchor
+    # cutover. It was there because a 7-segment 4-gram window credited it to Jeff's
+    # `ההוא דאמר להו: אי לא נסיבנא` at 34a:11 — the man who did not MARRY within 30
+    # days. 34a:9 is the near-identical neighbour, the man who did not RETURN. Nobody
+    # labelled it; it is an unlabelled proposal now, which is what it always was.
+    "gittin": {"pages": 178, "entries": 134, "accepted": 116},
 }
 
 # Gittin is the first golden built from two kinds of expert evidence, and the first to
 # carry BORDERLINE. Both distinctions are load-bearing and neither is visible in a
 # pages/entries/accepted triple, so they get their own assertion.
 GITTIN_SHAPE = {
-    "label_sources": {"expert_blind_list": 110, "expert_verdict": 25},
-    "classification_distribution": {"YES": 113, "BORDERLINE": 4, "NOT_A_STORY": 18},
-    "unlabelled_proposals": 23,
+    # -1 blind-list label and +1 unlabelled proposal, 2026-09-03: see the note above.
+    "label_sources": {"expert_blind_list": 109, "expert_verdict": 25},
+    "classification_distribution": {"YES": 112, "BORDERLINE": 4, "NOT_A_STORY": 18},
+    "unlabelled_proposals": 24,
     "known_missing_stories": 3,
 }
 
