@@ -111,9 +111,27 @@ pip install -r requirements.txt
 export GOOGLE_API_KEY='your-key'  # Get from https://aistudio.google.com/app/apikey
 ```
 
+### Choosing the model
+
+The default is **`gemini-3.8-flash`** at **`thinking_level=high`**, both set in one place —
+[`src/model_config.py`](src/model_config.py), overridable with `GEMINI_MODEL` and
+`GEMINI_THINKING_LEVEL`. See [`.env.example`](.env.example). Frozen detector versions
+(v5–v10) keep their own literals so they still say what they ran with.
+
+**Thinking is not free.** Measured 2026-09-03: one detection call at `high` spent **7,867
+thinking tokens against 321 tokens of output**, and pages took **14–70s**. Thinking tokens
+bill as output. At the previous 8,192-token budget this truncated the JSON outright — both
+call sites now raise it to 32,768. Use `low` for cheap screens.
+
+**Every number on the scoreboard predates the 2026-09-03 switch** and was produced on
+`gemini-3-flash-preview` or earlier. They are not comparable to a fresh run until every
+tractate is re-run on one manifest, and nothing on the board should be read as describing
+this model.
+
 ### Run Detection
 ```bash
 # v7 pipeline on pages 2-60 (uses pre-computed triage)
+# v7 is frozen: pin the model it was measured on rather than taking the default
 GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.py
 
 # Pages 61-112 generalization test
@@ -122,7 +140,7 @@ python3 scripts/run_ketubot_61_112.py --triage-only  # Triage only
 python3 scripts/run_ketubot_61_112.py --resume       # Resume from saved triage
 
 # Model comparison (run detection + regression test)
-PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3-flash-preview
+PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3.8-flash
 
 # Regression test (compare against Jeff's labels)
 PYTHONPATH=. python3 tests/v7_regression_test.py

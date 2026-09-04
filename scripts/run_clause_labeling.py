@@ -39,6 +39,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.model_config import default_model, default_thinking_level
+
 from src.clause_roles import (PROMPT_VERSION, assemble, build_prompt,  # noqa: E402
                               cross_language_disagreement, parse_labels,
                               speech_profile, split_english_sentences)
@@ -281,8 +283,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--in', dest='inp', required=True)
     ap.add_argument('--name', required=True, help='basename for both output artifacts')
-    ap.add_argument('--model', default='gemini-3.7-flash')
-    ap.add_argument('--thinking', default='high')
+    ap.add_argument('--model', default=default_model())
+    ap.add_argument('--thinking', default=default_thinking_level())
     ap.add_argument('--assembly', default='first_last', choices=['first_last', 'longest_run'])
     ap.add_argument('--limit', type=int, help='label only the first N stories (smoke test)')
     ap.add_argument('--from-labels', help='re-assemble from an existing labels file with NO '
