@@ -2,7 +2,7 @@
 title: Re-run every tractate on the current detector, once the pending changes are settled
 capability: [detection, classification, boundaries]
 tractate: [ketubot, kiddushin, gittin]
-blocked_by: []
+blocked_by: [2026-09-03-tighten-story-finder]
 awaiting: []
 writes: [results/, STATUS.md, STATE.md, src/story_detector_v11.py]
 finding:
@@ -33,28 +33,22 @@ before changes that are now shipped:
 A single clean run of every tractate on one detector and one model is the only way the
 board's cells become comparable to each other.
 
-## BLOCKED on one answer from Simon — and the frontmatter cannot say so
+## ANSWERED 2026-09-03 — it is the quasi-speech-act rule
 
-**`awaiting` resolves only to an item slug or a `jeff:` question in `comms/JEFF.md`**
-(`tests/test_bookkeeping.py::test_blocked_by_and_awaiting_resolve`). There is no namespace
-for a question aimed at Simon, though FRAMEWORK §2b already names two of them. So this
-blocker lives in prose, where the board cannot see it — **do not start this item on the
-strength of an empty `awaiting` field.**
+Simon: *"Story finder — tighten it per what I suggested. Then rerun it so we can see the
+actual score."* So the change is
+[`tighten-story-finder`](2026-09-03-tighten-story-finder.md), and this item is
+`blocked_by` it — there is nothing to re-run until it ships.
 
-**"The segment story finder was too loose" does not resolve to one change on disk**, and
-this item must not run until it does. The candidates:
+**Ruled out, and worth recording so it is not re-litigated:** the recall aligner's
+14-segment window is *also* "too loose", credits 35 proposals as matching his list when
+they do not, and **a re-run cannot fix it** — it is a scoring defect over artifacts we
+already hold, repaired by re-scoring for free →
+[`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md).
 
-| candidate | what it is | shipped? |
-|---|---|---|
-| **the recall aligner's window** | returns a window up to 14 segments wide; 35 proposals read as "on his list" and are not (Ketubot 19, Kiddushin 9, Gittin 7) | scoring only — **does not change detector output**, so a re-run does not fix it → [`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md) |
-| **the quasi-speech-act screen** | 2026-09-03; tightens what counts as an *action* | **not shipped** — Wave 6c is blocked on Jeff |
-| **boundary R-B1** | the opening-formula rule, worth 4–5 points on three tractates | shipped, and **is** a reason to re-run |
-| **the `N≥1` triage rule** | keeps more pages, i.e. *looser*, not tighter | shipped, and **is** a reason to re-run |
-
-**If the intended change is the aligner window, a re-run is the wrong instrument** — that
-is a measurement defect and re-scoring the existing artifacts fixes it for free. If it is
-R-B1 and the triage rule, the re-run is right and this item proceeds. Ask before spending
-the runs.
+Two shipped changes are independent reasons this re-run is due regardless: **R-B1**, the
+opening-formula boundary rule (worth 4–5 points on three tractates), and the **`N≥1`
+triage rule**, which applies to future runs only — no shipped output reflects it.
 
 ## Method, once unblocked
 

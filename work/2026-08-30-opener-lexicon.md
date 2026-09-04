@@ -28,6 +28,23 @@ Jeff's blind 2005 Ketubot list:
 
 Both are unmistakable stories. 82b compounds with a triage skip.
 
+**Updated 2026-09-03 — the evidence is larger than the two cases above.** A full inventory
+of every blind-list story never proposed puts the count at 12, of which **7 die in triage**,
+and **four of those seven open with a reported-narrative formula outside the five-term
+list**:
+
+| miss | opener | shape |
+|---|---|---|
+| Ketubot 72b | `זימנא חדא הוה קאזילנא בתריה דרב עוקבא` | "once I was walking behind…" — first-person |
+| Ketubot 82b | `בראשונה היו כותבין` | institutional / historical |
+| Kiddushin 14a | `פעם אחת היינו יושבים לפני ר' טרפון` | "one time we were sitting before…" — first-person |
+| Kiddushin 10b | `וכבר שלח יוחנן בן בג בג` | "and he already sent…" — reported |
+
+`פעם אחת` and `זימנא חדא` are the same formula in Hebrew and Aramaic, and neither is in
+`_STORY_INTRODUCERS`. **This raises the item's expected value from 1 story to a candidate
+4**, and it is the cheapest item on the triage list — no API calls to mine or to price.
+Ranked first in [`triage-recall-options`](2026-09-03-triage-recall-options.md).
+
 ## Method
 
 1. **Mine, don't invent.** Extract opening n-grams from the 149 blind stories plus the
