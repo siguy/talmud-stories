@@ -59,6 +59,7 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-01-board-reads-stale-triage
+open       2026-09-03-examine-all-pages
 closed     7 item(s) in work/done/
 ```
 
@@ -93,6 +94,7 @@ closed     11 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
+open       2026-09-03-rerun-all-tractates
 closed     7 item(s) in work/done/
 ```
 
@@ -161,4 +163,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 28a0ac88a92e3b42 -->
+<!-- board-checksum: d5c0cd6f4aedc423 -->
