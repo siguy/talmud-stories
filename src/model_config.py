@@ -30,6 +30,13 @@ DEFAULT_MODEL = "gemini-3.8-flash"
 # for the failure measured 2026-08-29: a 2,042-char prompt spent 487 thinking tokens
 # against a 512 budget and 72 of 95 stories returned MAX_TOKENS with no JSON.
 DEFAULT_THINKING_LEVEL = "high"
+# ...and `high` is a CHOICE MADE WITHOUT EVIDENCE. Unset meant thinking off, which was
+# clearly nobody's decision, but that does not make `high` right. The experiment that
+# would justify it is work/2026-09-03-thinking-level-experiment.md, and it is unrun.
+# Stated prediction: the effect, if any, is on precision rather than recall -- thinking
+# plausibly helps the model REJECT a legal passage that looks narrative more than it helps
+# it NOTICE a story it missed. If that holds, detection wants `high` and triage does not,
+# and these two should stop sharing one default.
 
 
 def default_model() -> str:
