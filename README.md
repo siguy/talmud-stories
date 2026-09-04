@@ -113,9 +113,15 @@ export GOOGLE_API_KEY='your-key'  # Get from https://aistudio.google.com/app/api
 
 ### Choosing the model
 
-The default is **`gemini-3.8-flash`**, set in one place —
-[`src/model_config.py`](src/model_config.py). `GEMINI_MODEL` overrides it. Frozen detector
-versions (v5–v10) keep their own literals so they still say what they ran with.
+The default is **`gemini-3.8-flash`** at **`thinking_level=high`**, both set in one place —
+[`src/model_config.py`](src/model_config.py), overridable with `GEMINI_MODEL` and
+`GEMINI_THINKING_LEVEL`. See [`.env.example`](.env.example). Frozen detector versions
+(v5–v10) keep their own literals so they still say what they ran with.
+
+**Thinking is not free.** Measured 2026-09-03: one detection call at `high` spent **7,867
+thinking tokens against 321 tokens of output**, and pages took **14–70s**. Thinking tokens
+bill as output. At the previous 8,192-token budget this truncated the JSON outright — both
+call sites now raise it to 32,768. Use `low` for cheap screens.
 
 **Every number on the scoreboard predates the 2026-09-03 switch** and was produced on
 `gemini-3-flash-preview` or earlier. They are not comparable to a fresh run until every

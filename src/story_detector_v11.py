@@ -76,7 +76,8 @@ v7 (canonical) is left untouched. Revert = swap import back.
 import json
 import os
 
-from src.model_config import default_model
+from src.model_config import (default_model, default_thinking_level,
+                              supports_thinking_level)
 import re
 import time
 import warnings
@@ -181,7 +182,7 @@ class V7StoryDetector:
         # Wave 5: newer Gemini (3.x) exposes thinking_level; older flash models
         # need thinking disabled for structured output. Recorded per run so
         # results stay attributable (roadmap 5.3: pin and record model versions).
-        self.thinking_level = thinking_level or os.getenv("GEMINI_THINKING_LEVEL")
+        self.thinking_level = thinking_level or default_thinking_level()
         self.ground_truth_db = ground_truth_db
         # Every span repair Stage 2 needed, across the run. Written to the output
         # so a malformed proposal is a number someone can see, not a silence.
@@ -446,7 +447,12 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     config_kwargs['thinking_config'] = types.ThinkingConfig(
                         thinking_level=self.thinking_level.upper()
                     )
-                    config_kwargs['max_output_tokens'] = max(max_tokens, 8192)
+                    # 8192 was sized for gemini-3.7-flash. Measured 2026-09-03 on
+                    # gemini-3.8-flash at thinking_level=HIGH: a 15.9K-char detection
+                    # prompt spent 7,867 thinking tokens of an 8,192 budget, leaving 321
+                    # for output -> MAX_TOKENS, truncated JSON. Same failure as
+                    # 2026-08-29, one model generation later. Match the Pro branch.
+                    config_kwargs['max_output_tokens'] = max(max_tokens, 32768)
                 else:
                     # Older flash models: disable thinking for structured output
                     config_kwargs['thinking_config'] = types.ThinkingConfig(
@@ -2602,14 +2608,9 @@ def filter_biblical_actor_stories(pages: List[Dict]) -> int:
 # The validation UI reads these fields to render the trimmed text.
 
 
-def _supports_thinking_level(model_name: str) -> bool:
-    """Gemini 3.x exposes thinking_level; 2.x only thinking_budget.
-
-    Verified 2026-08-29 against the live model list: gemini-3.7-flash accepts
-    thinking_level=HIGH together with response_mime_type='application/json'.
-    """
-    m = (model_name or '').lower()
-    return any(tag in m for tag in ('gemini-3', 'gemini-4'))
+# Moved to src/model_config.py on 2026-09-03 so event_triage can use it without a cycle.
+# Re-exported under the original name: it is referenced by tests and by call sites here.
+_supports_thinking_level = supports_thinking_level
 
 
 CLAUSE_TERMINATORS = '.:?!'

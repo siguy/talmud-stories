@@ -35,6 +35,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.model_config import default_thinking_level  # noqa: E402
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s [new_tractate] %(message)s',
@@ -84,7 +86,8 @@ def main():
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
     ap.add_argument('--model', default=MODEL)
-    ap.add_argument('--thinking', default=None, help='low|medium|high (Gemini 3.x)')
+    ap.add_argument('--thinking', default=default_thinking_level(),
+                    help='low|medium|high (Gemini 3.x)')
     ap.add_argument('--delay', type=float, default=DELAY)
     ap.add_argument('--retriage', action='store_true',
                     help='re-run Stage 1 even if a cache exists (costs money)')
