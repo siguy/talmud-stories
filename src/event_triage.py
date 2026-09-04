@@ -8,6 +8,8 @@ Increment 2 of v7 hybrid pipeline.
 
 import json
 import os
+
+from src.model_config import default_model
 import re
 import time
 from typing import Dict, List, Optional
@@ -29,7 +31,7 @@ class EventTriager:
                  ground_truth_db: Optional[GroundTruthDB] = None,
                  model_name: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+        self.model_name = model_name or default_model()
         self.ground_truth_db = ground_truth_db
 
         if self.api_key and GOOGLE_AI_AVAILABLE:

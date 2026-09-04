@@ -75,6 +75,8 @@ v7 (canonical) is left untouched. Revert = swap import back.
 
 import json
 import os
+
+from src.model_config import default_model
 import re
 import time
 import warnings
@@ -175,7 +177,7 @@ class V7StoryDetector:
                  model_name: Optional[str] = None,
                  thinking_level: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+        self.model_name = model_name or default_model()
         # Wave 5: newer Gemini (3.x) exposes thinking_level; older flash models
         # need thinking disabled for structured output. Recorded per run so
         # results stay attributable (roadmap 5.3: pin and record model versions).
@@ -1430,7 +1432,7 @@ class AdversarialValidator:
                  ground_truth_db: Optional[GroundTruthDB] = None,
                  model_name: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+        self.model_name = model_name or default_model()
         self.ground_truth_db = ground_truth_db
 
         if self.api_key and GOOGLE_AI_AVAILABLE:

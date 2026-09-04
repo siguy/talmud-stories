@@ -42,6 +42,8 @@ from pathlib import Path
 ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(ROOT))
 
+from src.model_config import default_model  # noqa: E402
+
 # The three shipped no-trim inputs. Spans ride existing segment boundaries, so each
 # output is directly comparable to the wave5_summaryfix baseline beside it.
 ARMS = [
@@ -114,7 +116,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--out-dir', default='results/v11/parallel_rule')
-    ap.add_argument('--model', default='gemini-3.7-flash')
+    ap.add_argument('--model', default=default_model())
     ap.add_argument('--thinking', default='high')
     ap.add_argument('--report', default=None,
                     help='tee the whole run to this file (default: <out-dir>/REPORT.txt). '
