@@ -909,3 +909,50 @@ indicated.
 
 **Detail:** [`docs/findings/2026-08-31-triage-single-narrative.md`](../findings/2026-08-31-triage-single-narrative.md).
 **Prior:** [`docs/findings/2026-08-31-triage-recall-price.md`](../findings/2026-08-31-triage-recall-price.md).
+
+---
+
+## 2026-09-03 — Exact-phrase anchoring replaces the 4-gram window in every measurement
+
+**Not a detector version.** No prompt, model or pipeline stage changed and no run was
+re-executed. What changed is how an expert's story is *located* in the text — which is
+upstream of every recall, ruler and density figure the project publishes.
+
+**The defect.** `measure_recall_vs_expert_list.locate` compared sets of Hebrew 4-grams per
+segment and grew a window while coverage improved. A union can only grow, so no window was
+ever too wide: a neighbouring passage sharing `אמר ליה` improved the score. Windows ran to
+14 segments (Lesson 41).
+
+**The replacement.** Every one of the 452 stories across the four blind lists contains an
+exact 6-word phrase that is unique in its own tractate. `locate_exact` anchors there and
+extends only over phrases sitting where the story says they should. Nothing fell back to
+the 4-gram aligner on any tractate.
+
+| | detection recall, was → now | triage recall, was → now |
+|---|---|---|
+| Ketubot | 96.0% loose / 87.9% strict → **87.2%** | 98.0% → **96.6%** |
+| Kiddushin | 93.3% / 83.3% → **84.4% / 83.3%** | 95.6% → 95.6% |
+| Gittin | 100.0% / 97.3% → **97.3%** | 100% → 100% |
+| Yevamot | 94.1% / 89.2% → **89.2%** | 100% → 100% |
+
+**Loose and strict were two answers to one question**, separated by the window. They now
+coincide except on Kiddushin, where they differ by one story. Independent check the matcher
+never reads: agreement with Jeff's own daf labels goes 51→85 Kiddushin, 90→104 Gittin,
+72→97 Yevamot.
+
+**Code.** `--matcher exact` is the default in `measure_recall_vs_expert_list.py` and
+`measure_strict_recall.py`; `build_ruler.py`, `audit_proposal_credit.py`,
+`audit_detection_density.py`, `build_gittin_golden.py` and
+`build_boundary_testset_2005.py` route through `recall.make_locator`.
+`measure_strict_recall.py` gains `--expert-doc` so Ketubot is measured by the same script
+as the other three. Superseded readings kept as `results/recall/*_jeff2005_matches_fuzzy.json`.
+
+**Data.** One entry left the Gittin golden — `34a:9`, in as `expert_blind_list`/`YES`
+because a 7-segment window credited it to Jeff's near-identical 34a:11 story. Golden is
+**134 entries / 116 accepted**, repinned in `GOLDEN_COUNTS` with the reason beside it. No
+other golden moves. The blind boundary target sets are **measured but not rebuilt** — they
+carry 23 `rule*` annotations the builder cannot regenerate
+(`work/2026-09-03-boundary-testset-rebuild.md`).
+
+**Detail:** [`docs/findings/2026-09-03-exact-anchor-matcher.md`](../findings/2026-09-03-exact-anchor-matcher.md),
+[`docs/findings/2026-09-03-exact-matcher-cutover.md`](../findings/2026-09-03-exact-matcher-cutover.md).

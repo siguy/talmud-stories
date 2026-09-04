@@ -296,6 +296,23 @@ SLACK_FRACTION = 0.25          # ...or a quarter of the story, for the long ones
 Corpus = namedtuple('Corpus', 'tokens owner shingles')
 
 
+def corpus_from_texts(texts):
+    """Word-level corpus from the segments' Hebrew, in unit order — one entry per unit.
+
+    Callers that already hold the text (`build_boundary_testset_2005.load_units`) use this
+    directly; `word_corpus` is the same thing sourced from detector-output JSON.
+    """
+    tokens, owner = [], []
+    for i, hebrew in enumerate(texts):
+        ws = normalize(hebrew).split()
+        tokens += ws
+        owner += [i] * len(ws)
+    shingles = defaultdict(list)
+    for i in range(len(tokens) - SHINGLE + 1):
+        shingles[' '.join(tokens[i:i + SHINGLE])].append(i)
+    return Corpus(tokens, owner, shingles)
+
+
 def word_corpus(paths, units):
     """Word-level corpus aligned to `units` BY CONSTRUCTION, not by re-sorting.
 
@@ -303,20 +320,12 @@ def word_corpus(paths, units):
     segments by (ref, index) and lays their words out in that list's own order, so a token
     position maps back to a unit index without either side knowing how the other sorted.
     """
-    words = {}
+    text = {}
     for path in paths:
         for page in json.loads(Path(path).read_text())['pages']:
             for seg in page.get('segments', []):
-                words[(page['ref'], seg['index'])] = normalize(seg['hebrew']).split()
-    tokens, owner = [], []
-    for i, (ref, ix, _) in enumerate(units):
-        ws = words.get((ref, ix), [])
-        tokens += ws
-        owner += [i] * len(ws)
-    shingles = defaultdict(list)
-    for i in range(len(tokens) - SHINGLE + 1):
-        shingles[' '.join(tokens[i:i + SHINGLE])].append(i)
-    return Corpus(tokens, owner, shingles)
+                text[(page['ref'], seg['index'])] = seg['hebrew']
+    return corpus_from_texts(text.get((ref, ix), '') for ref, ix, _ in units)
 
 
 def _largest_cluster(anchors, gap=CLUSTER_GAP):

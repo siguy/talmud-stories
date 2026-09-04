@@ -202,7 +202,7 @@ archive/                          # Old versions (reference only)
 | `scripts/verify_wave1.py` | Wave 1 verification |
 | `scripts/audit_text_spans.py` | **Structural gate** — mid-word / clause-edge rates; `--strict` fails the build |
 | `scripts/strip_text_spans.py` | Reverts LLM char-offset spans to segment-level boundaries |
-| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld. Also the only committed measurement of **triage recall**, and it splits the misses by cause: triage-discarded / examined-but-nothing-proposed / proposed-then-`NOT_A_STORY`. Use `--expert-json` for any list that is not the Ketubot `.doc` |
+| `scripts/measure_recall_vs_expert_list.py` | **True recall** vs. an expert's detector-blind list; reports what Stage 4g withheld. Also the only committed measurement of **triage recall**, and it splits the misses by cause: triage-discarded / examined-but-nothing-proposed / proposed-then-`NOT_A_STORY`. Use `--expert-json` for any list that is not the Ketubot `.doc`. **It also holds the matcher every reader of an expert list shares** — `locate_exact` / `make_locator`, `--matcher exact` by default. Change it here or the board stops agreeing with itself |
 | `scripts/report_mishnah_filter_delta.py` | What the Mishnah filter costs vs. the golden — scores twice through the immutable harness |
 | `scripts/run_triage_recall_price.py` | **Prices what triage discards** — runs Stage 2 on the skipped pages using their *cached* triage labels, so the skip decision is the only variable. `--dry-run` verifies the page partition with no API calls. Never uses the all-DELIBERATION `--skip-triage` default; that changes the prompt and confounds the result |
 | `scripts/audit_no_triage_ablation.py` | **Proves `results/v7/ablation_v7_no_triage.json` is not a no-triage run** — the arm examining 3x the pages finds 5 fewer of Jeff's stories. No API calls. Why the 2026-02-13 ablation conclusion is retracted |
@@ -239,12 +239,14 @@ archive/                          # Old versions (reference only)
 | `docs/findings/2026-08-30-detection-classification-ruler.md` | Why the old Classification precision figures were not Classification numbers, and why loose recall overstates strict |
 | `results/recall/<tractate>_jeff2005_matches.json` | Per-story recall match output (incl. the misses), carrying `survived_triage` / `only_rejected` per story. **The unsuffixed name is always the recall denominator**; sensitivity variants take a suffix. `scripts/board.py` fills the Triage and Detection cells from these, so do not rename one casually |
 | `results/v10/wave4_notrim/` | **Current honest outputs** — segment-level boundaries, no spans |
-| `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The first blind recall measurement, and the method (Hebrew 4-grams + a corpus-wide window) |
+| `docs/findings/2026-08-28-recall-measurement-ketubot.md` | The first blind recall measurement, and its method — **the 4-gram window, superseded 2026-09-03**. Read for the history, not the method |
+| `docs/findings/2026-09-03-exact-anchor-matcher.md` | **How an expert story is located now**: anchor on a phrase unique in the tractate, extend only over phrases sitting where the story says they should. Every story on all four lists has such an anchor — but that is a property to *check* per list, never to assume |
+| `docs/findings/2026-09-03-exact-matcher-cutover.md` | What moved when every reader took that matcher, story by story — and **what still uses 4-grams on purpose** |
 | `docs/findings/2026-08-28-wave4-span-failure-audit.md` | Span failure audit + revert |
 | `docs/history/2026-08-30-PLAN-wave5b-clause-roles.md` | Clause-role labelling — the judgment layer on Wave 5 |
 | `docs/history/2026-08-29-PLAN-wave6-story-criteria.md` | Jeff's story criteria (6c blocked on his answer) |
 | `src/prompts/clause_roles_v*.md` | Versioned labelling prompts |
-| `tests/expert_boundary_targets_2005.json` | **294 detector-blind Ketubot boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions |
+| `tests/expert_boundary_targets_2005.json` | **294 detector-blind Ketubot boundaries** from Jeff's 2005 list — the neutral ruler; catches regressions. **Do not regenerate it:** 23 targets carry `rule*` fields the builder does not produce, and a rebuild drops them (`work/2026-09-03-boundary-testset-rebuild.md`) |
 | `tests/expert_boundary_targets_2005_kiddushin.json` | **176 detector-blind Kiddushin boundaries.** Retires the 15-target corrections gate and its ±7pt noise. Built with `--expert-filter blind` (89), *not* the recall filter (90) — a boundary target must be an extent Jeff chose |
 | `tests/expert_boundary_targets_v2.json` | 70 correction boundaries (was 52) — widened harvest + `quote_polarity` |
 | `tests/expert_boundary_targets.json` | 52 sub-segment boundaries Jeff stated (superseded by _v2) |
@@ -294,6 +296,14 @@ When making changes, update these files as relevant:
 - Ingest ground truth from a converter's output (Lesson 28) — parse the source format; `textutil` silently drops table columns and relocates Word comments. **A second instance, 2026-09-01:** `eruvin.doc` stores its columns right-to-left, so `textutil`'s flattened stream puts each location cell *after* its story and the line-based parser credited **53 of 73** entries to the previous row's daf — with the right story count, on real nearby dapim, so nothing looked wrong. `parse_expert_doc` now refuses such a list by name
 - Call an expert list blind without checking it against what we sent him (Lesson 29) — 5 of Jeff's 95 Kiddushin stories came from our own output, which he reviewed and folded in. **Making that join is our job, not his**: we know what we sent and when, and `check_appendix_coverage.py` is how we check it
 - Plan a fix from an expert's sample without first measuring the defect's corpus-wide rate (Lesson 18)
+- Trust the maximum of a similarity score **nothing can make fall** (Lesson 41). The recall
+  aligner grew a window while gram coverage improved — and a union of gram sets only grows,
+  so a neighbour sharing `אמר ליה` *improved* the match. It read as generosity, not as a
+  bug, and every figure it touched read as good news. Ask what makes the score go down
+- Quote **loose and strict recall as two figures**. They were two answers to one question,
+  separated by that window; since 2026-09-03 they coincide everywhere but Kiddushin, where
+  they differ by one story. `measure_strict_recall.py` still prints both, and a divergence
+  is now a *symptom*: a story anchored somewhere its own segments are not
 - Quote a recall number without saying whether it is end-to-end or given-the-page-survived-triage — they differ by 2.7 points on Kiddushin and put the deficit in different columns
 - Distinguish blind from circular ground truth by a **filename**; test the property (`source_round`, the `blind` / `counts_for_recall` flags). A filename comparison in `score_boundary_targets.py` would have labelled the blind Kiddushin set a corrections set
 - Attribute a score change to a code change without a same-code repeat run (Lesson 22)

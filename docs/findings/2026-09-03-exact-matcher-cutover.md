@@ -10,8 +10,10 @@ change and shipped it behind a flag.
 `--matcher exact` is now the **default** in `measure_recall_vs_expert_list.py` and
 `measure_strict_recall.py`, and the four scripts that called `recall.locate` directly —
 `build_ruler.py`, `audit_proposal_credit.py`, `audit_detection_density.py`,
-`build_gittin_golden.py` — now go through `recall.make_locator`. There is one locating
-function for the whole board and one place to change it.
+`build_gittin_golden.py` — now go through `recall.make_locator`, as does
+`build_boundary_testset_2005.py`. There is one locating function and one place to change
+it. **Three callers deliberately still use the 4-gram aligner** — see below; the claim is
+that every number the board quotes comes from one matcher, not that no fuzzy call remains.
 
 Before this, two of the six could use the better matcher and four could not, so the board
 answered *"where is this story"* two different ways depending on which script was asked.
@@ -60,6 +62,41 @@ the dapim their text actually sits on, so the density bands shift — but the sh
 reported is unchanged: recall 82% where a story is alone on its daf against 90% on dapim
 with 4+, on the same 350-story denominator. The conclusion there did not depend on the
 window.
+
+## The boundary test sets: measured, not rebuilt
+
+`build_boundary_testset_2005.py` builds the blind boundary rulers (294 Ketubot / 176
+Kiddushin targets) by locating each story and then sequence-aligning inside that window,
+so the window is not merely an index here — **text the aligner is offered that is not the
+story's is text it can align to.** Tightening it helps:
+
+| | aligned, 4-gram | aligned, exact |
+|---|---|---|
+| Ketubot | 147/149 → 294 targets | **148/149 → 296** |
+| Kiddushin | 88/89 → 176 targets | **89/89 → 178** |
+
+Of the targets present in both, **19 Ketubot and 1 Kiddushin move** — 16 of the Ketubot
+ones are the `ref` label only, and the rest are a segment index shifting by one.
+
+**The banked sets were not rebuilt, and this is the reason.** A fresh *4-gram* build does
+not reproduce them either: 23 Ketubot targets in
+`tests/expert_boundary_targets_2005.json` carry `rule`, `rule_clause` and `rule_relation`
+fields **the builder does not produce** — they were annotated afterwards, against
+[`docs/STORY_RULES.md`](../STORY_RULES.md) — and 16 more differ in `ref` because the
+two-amud daf fix landed after the file was written. Rebuilding would silently drop the
+annotations. That is its own finding and its own item
+([`2026-09-03-boundary-testset-rebuild`](../../work/2026-09-03-boundary-testset-rebuild.md));
+it is not a side effect of a matcher change.
+
+## What still uses the 4-gram aligner, and why
+
+- **`anchor_span_refs`** (inside the recall harness, also used by `fetch_tractate_pages.py`)
+  and **`parse_kiddushin_list.py`** — both resolve which *daf* an expert entry sits on.
+  They label; they do not measure. Cutting them over rewrites
+  `results/expert_lists/*.json`, which is ground-truth data, and it belongs with the
+  boundary-set item rather than smuggled in here.
+- **`audit_no_triage_ablation.py`** — audits a frozen, retracted 2026-02-13 artifact. Its
+  job is to reproduce a historical claim; changing how it locates would defeat that.
 
 ## What is retired
 

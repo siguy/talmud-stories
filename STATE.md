@@ -94,6 +94,7 @@ closed     12 item(s) in work/done/
 gate       ≥75% hit+near · PROVISIONAL
 history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
+open       2026-09-03-boundary-testset-rebuild
 closed     9 item(s) in work/done/
 ```
 
@@ -162,4 +163,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: e92c5c4dee88fd14 -->
+<!-- board-checksum: c8dafb61de7426c2 -->
