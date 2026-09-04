@@ -46,6 +46,31 @@ they do not, and **a re-run cannot fix it** — it is a scoring defect over arti
 already hold, repaired by re-scoring for free →
 [`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md).
 
+## AND IT RUNS AFTER THE THINKING EXPERIMENT — a second ordering the board cannot see
+
+`work/2026-09-03-thinking-level-experiment.md` (PR #42) must produce its answer **before**
+this item spends its runs. #42 changes two things at once — the model becomes
+`gemini-3.8-flash` and `thinking_level` becomes `high`, where unset had silently meant
+*off*. **`high` was chosen on no evidence**, and its cost is measured: 7,867 thinking tokens
+against 321 tokens of output, 14–70s a page.
+
+Re-running before that experiment settles spends the expensive half at a setting nobody has
+justified, and makes the result uninterpretable — model and thinking would have moved
+together, so neither could be attributed. **Run the experiment, take its answer, then
+re-run once.**
+
+**This dependency is not in `blocked_by` because the item it names lives on another branch**
+(PR #42) and `test_blocked_by_and_awaiting_resolve` requires every dependency to resolve to
+an item that exists here. **Once #42 lands on main, add it:**
+
+```
+blocked_by: [2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment]
+```
+
+Until that line exists, this ordering lives only in prose — and the same warning applies as
+for the Simon question above: **do not start this item on the strength of a short
+`blocked_by` field.**
+
 Two shipped changes are independent reasons this re-run is due regardless: **R-B1**, the
 opening-formula boundary rule (worth 4–5 points on three tractates), and the **`N≥1`
 triage rule**, which applies to future runs only — no shipped output reflects it.
