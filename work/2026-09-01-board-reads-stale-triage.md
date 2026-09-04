@@ -21,9 +21,23 @@ Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
 The board still reports the rule it replaced:
 
 ```
-STATE.md      Ketubot 98.0%   Kiddushin 95.6%     <- previous corroboration rule
+STATE.md      Ketubot 96.6%   Kiddushin 95.6%     <- previous corroboration rule
 shipped code  Ketubot 98.7%   Kiddushin 97.8%     <- measured, in the finding, in STATUS.md
 ```
+
+> **UPDATE 2026-09-03 — the gap is now two changes wide, not one.** STATE.md's Ketubot
+> cell read **98.0%** when this item was written; it reads **96.6%** because the way an
+> expert story is *located* changed
+> ([`exact-matcher-cutover`](../docs/findings/2026-09-03-exact-matcher-cutover.md)), which
+> moved two Ketubot stories from Detection's column into Triage's. The Detection cells
+> moved with it: **90.3% / 88.4% / 97.3% / 89.2%**.
+>
+> **The 98.7% / 97.8% pair this item is chasing was measured with the retired 4-gram
+> matcher**, so it cannot simply be dropped into the board — the two numbers now differ by
+> *rule* **and** by *matcher*, and mixing them would hide one inside the other. Option A
+> below re-runs the harness, which uses the current matcher, so it settles both at once;
+> what it must not do is copy 98.7% across from the finding. Say which of the two causes
+> each moved cell is, by name.
 
 `board.py recalls()` derives both cells from
 `results/recall/<t>_jeff2005_matches.json`, whose `survived_triage` flag came from the
@@ -68,7 +82,7 @@ than the status quo: stamp the rule into the artifact and have the board check i
 - `measure_recall_vs_expert_list.py` writes a `triage_rule` field — the source of
   `should_skip_page()`, hashed, or a version string it owns.
 - `board.py` compares that against the live function and renders the cell as
-  **`98.0% (STALE — computed under a different triage rule)`** when they differ.
+  **`96.6% (STALE — computed under a different triage rule)`** when they differ.
 - A test asserts the two agree, so the next rule change fails the suite instead of
   silently ageing the board.
 
@@ -77,7 +91,9 @@ Option B is the durable half either way: A fixes today's numbers, B stops it rec
 
 ## How you know it worked
 
-- `STATE.md` Triage reads **98.7% / 97.8%**, matching `STATUS.md` and the finding.
+- `STATE.md` Triage reads a figure **re-measured under both the live rule and the current
+  matcher**. It will not equal 98.7% / 97.8% — those were the live rule read through the
+  old matcher — and a session that makes it equal them has copied, not measured.
 - The Detection cells are recomputed against the new surviving set, and the change is
   *stated* — they will move, and a silent move is what created this item.
 - `python3 scripts/board.py --check` passes, and now means something.
@@ -92,13 +108,17 @@ Option B is the durable half either way: A fixes today's numbers, B stops it rec
 - The unsuffixed `<t>_jeff2005_matches.json` **is** the recall denominator; sensitivity
   variants take a suffix. Do not rename one to dodge the overwrite (CLAUDE.md, Key Files).
 - Do not promote a scratch run without checking the added stories **by name**. The loose
-  recall window credits a different passage on the same daf in 2 of 6 cases tested
-  (Lesson 37's neighbour;
-  [`kiddushin-comments-harvest`](../docs/findings/2026-08-31-kiddushin-comments-harvest.md)).
+  window credited a different passage on the same daf in 2 of 6 cases tested
+  ([`kiddushin-comments-harvest`](../docs/findings/2026-08-31-kiddushin-comments-harvest.md));
+  the exact matcher removes that failure mode but does not remove the obligation.
+- The **strict/loose** distinction is retired as of 2026-09-03 — they were two answers to
+  one question. If a re-run makes them diverge again, a story is anchored somewhere its own
+  segments are not; investigate rather than reporting the pair.
 - Quote every figure as end-to-end **or** given-the-page-survived-triage, never bare
   (Lesson 35).
-- The **strict** end-to-end column has not been re-measured since the rule changed. If you
-  re-run anyway, re-measure it too rather than leaving a second stale number behind.
+- The end-to-end column has not been re-measured **under the live rule**; it has been
+  re-measured under the current matcher (2026-09-03). Re-measure it here rather than
+  leaving a second stale number behind, and say which of the two causes moved it.
 
 ## When done
 

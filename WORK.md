@@ -36,7 +36,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [STATE.md reports the superseded triage rule — re-run the recall harness, or stamp the artifact](work/2026-09-01-board-reads-stale-triage.md) | triage, detection | ketubot, kiddushin | — |
 | [Two YES-tier Gittin stories nobody has ever judged — and the loose window that hid them](work/2026-09-02-gittin-two-unjudged-yes.md) | detection, classification | gittin | awaiting `jeff:axes-round` |
 | [Rebuild the blind boundary sets on the exact matcher without dropping their annotations](work/2026-09-03-boundary-testset-rebuild.md) | boundaries | ketubot, kiddushin | — |
-| [11 top-confidence proposals credited to the expert's list by a window, not a match](work/2026-09-03-loose-credited-proposals.md) | classification, review | ketubot, kiddushin, gittin | — |
+| [The proposals credited to the expert's list by a window, not a match — 11 became 1](work/2026-09-03-loose-credited-proposals.md) | classification, review | ketubot, kiddushin, gittin | — |
 
 <!-- board-live:start -->
 ## In flight
@@ -46,8 +46,8 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `quasi-speech-act-screen` | `talmud-stories` | clean |
-| `exact-anchor-matcher` | `kiddushin-recall-boundary-c52c91` | **4 FILES** |
+| `gemini-3.8-default` | `talmud-stories` | clean |
+| `exact-anchor-matcher` | `kiddushin-recall-boundary-c52c91` | **3 FILES** |
 | `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
@@ -88,4 +88,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Locate an expert story by exact unique phrase, not by a growing gram-set window](work/done/2026-09-03-exact-anchor-matcher.md) | detection, boundaries | [2026-09-03-exact-anchor-matcher.md](docs/findings/2026-09-03-exact-anchor-matcher.md) |
 | [Cut every reader over to the exact-anchor matcher, so the board locates a story one way](work/done/2026-09-03-exact-matcher-cutover.md) | detection, classification, boundaries | [2026-09-03-exact-matcher-cutover.md](docs/findings/2026-09-03-exact-matcher-cutover.md) |
 | [Yevamot — the full detection run, measured against the blind list the day it runs](work/done/2026-09-03-yevamot-detection-run.md) | triage, detection | [2026-09-03-yevamot-first-run.md](docs/findings/2026-09-03-yevamot-first-run.md) |
-<!-- board-checksum: d96a7a6ea8c17919 -->
+<!-- board-checksum: 4488b09faccfc2d6 -->
