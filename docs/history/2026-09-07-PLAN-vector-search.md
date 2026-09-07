@@ -152,7 +152,16 @@ scored by a harness nobody hand-tunes against.
 ## Cost
 
 - Embeddings: **under $1**, one-time, cents to re-embed after a corpus change.
-- Cloud SQL (smallest tier) + Cloud Run: **~$15-35/month.**
+- Cloud Run: **effectively $0/month** at research-project traffic — comfortably inside the
+  2M-requests / 180k-vCPU-second free tier, and scale-to-zero means idle time is free.
+- Cloud SQL is the real line item, and it forks on a choice this plan doesn't make yet:
+  the shared-core tier (`db-f1-micro`) runs **~$10-15/month** (compute + 10GB SSD +
+  backups) but carries Google's own "not recommended for production, no SLA" label; the
+  smallest **dedicated-core** instance — the safer choice for anything public-facing —
+  runs closer to **$50-90/month**. Pick one deliberately in Phase 4, not by default.
+  *(Figures corroborated across three independent 2026 pricing writeups, not re-verified
+  against Google's own calculator — its pricing page is a JS widget that doesn't expose
+  numbers to a fetch. Confirm on `cloud.google.com/sql/pricing` before budgeting.)*
 - Jeff's time: **1-2 sessions** to write and judge queries.
 
 ## Future work items (not created — copy `work/_TEMPLATE.md` when starting each)
