@@ -19,6 +19,13 @@ result shows a fixed citation or a live-edited one; whether notes/parallels are 
 fields). If his answer lands before Phase 5, revisit the schema in Phase 3 first — it's
 one migration now, a painful one after the index is full of real queries.
 
+The static architecture below is the natural fit for the citable-release half of his
+answer. It doesn't rule out the editable half: edits happen at review-round frequency, not
+per-visitor, so if he wants live editing, that's one small separate write path (a form
+that appends to a file, reviewed like everything else here) bolted onto an otherwise
+unchanged static reader — not a reason to reach for a database now on the strength of a
+maybe.
+
 ## Goal
 
 Let a researcher search the validated story corpus by theme, keyword, sage, or narrative
@@ -61,12 +68,28 @@ tractate list, so they join automatically without a code change.
 
 ## Architecture
 
+**Revised 2026-09-07 — no server, no database.** The first draft of this plan reached for
+Cloud SQL by reflex, the way most "vector search" writeups do, without asking whether this
+corpus needs a server at all. It doesn't. See *The actual ceiling* below.
+
 | piece | choice | why |
 |---|---|---|
-| Embeddings | **`gemini-embedding-001`**, called through the `google-genai` SDK already in `requirements.txt`, with the existing `GOOGLE_API_KEY` | Same client the detector already uses. **No new GCP project, no Vertex AI SDK, no service account** — this is the one piece of the plan that costs zero new infrastructure. |
-| Vector + lexical store | **Cloud SQL for Postgres + `pgvector`**, plus a `tsvector` column | 370 vectors (growing toward maybe 800-1,000 with Yevamot/Eruvin) is small enough that brute-force cosine in Postgres is sub-millisecond. One system holds the vector search, the Hebrew/English full-text search, and the SQL filters (tractate, daf, confidence tier) — no second database to keep in sync. |
-| API | Cloud Run | Stateless, scales to zero, cents/month at research-project traffic. |
-| **Not** Vertex AI Vector Search | — | Built for 10M+ vectors; its always-on index endpoint runs ~$300-700/mo to hold what fits in 5 MB here. Revisit only if the corpus reaches six figures. |
+| Embeddings | **`gemini-embedding-001`**, called through the `google-genai` SDK already in `requirements.txt`, with the existing `GOOGLE_API_KEY` | Same client the detector already uses. **No new GCP project, no Vertex AI SDK, no service account.** This is the only "Google Cloud" piece left, and it's a one-time offline batch job, not a running service. |
+| Storage + serving | **One static file** (embeddings + metadata + tokenized Hebrew/English text), committed to the repo, served by **GitHub Pages** — the exact mechanism `index.html` already uses (`docs/capabilities/6_publication.md`: "Embedded-JSON HTML at the repo root so GitHub Pages can serve it with no build step") | At a few MB total, the whole index can just be downloaded by the visitor's browser. |
+| Query execution | **Client-side JavaScript** — cosine similarity over the embeddings + a keyword score over the tokenized text, fused by reciprocal rank fusion, filtered by tractate/tier/mishnah-flag | Brute-force cosine over a few hundred to a few thousand vectors is sub-100ms *in JS*. No ANN index (HNSW/IVFFlat) is needed at this size — that machinery exists to avoid brute force at millions of vectors, which this corpus will never reach (below). |
+| **Not** Cloud SQL / Cloud Run | — | A running database costs $10-90/month forever to hold data that fits in single-digit megabytes and changes maybe once a review round. Paying monthly, indefinitely, for a fixed problem is the mismatch — parking a 5-page PDF on a rented server rack because "a server can serve files." Recorded here so a later session doesn't re-propose it without seeing why it was dropped (same reason `docs/capabilities/` exists for the detection side). |
+| **Not** Vertex AI Vector Search | — | Built for 10M+ vectors; its always-on index endpoint runs ~$300-700/mo to hold what fits in 5 MB here. |
+
+### The actual ceiling
+
+This isn't "small for now" — it's structurally small forever. Story density measured
+directly off the three canonical datasets: Ketubot 0.74, Gittin 0.68, Kiddushin 0.53
+stories per amud (`indexable / pages`, same filter as the counts table above). The entire
+Talmud Bavli is ~2,711 dapim, ~5,422 amudim. At this density, **the whole Talmud, every
+tractate, ever, tops out around 3,000-4,000 stories** — there is no growth trajectory
+here that reaches "big data." At 3,500 stories × 768-dim embeddings × 4 bytes, the raw
+vector matrix is **~11 MB**; today's 370-story corpus is **~1 MB**. A phone downloads that
+without noticing.
 
 ## What gets embedded, per story
 
@@ -76,10 +99,11 @@ tractate list, so they join automatically without a code change.
   Concatenating the summary in front biases the vector toward the *point* of the story,
   not just its vocabulary — cheap to do since the summary is already computed, no new LLM
   pass required.
-- **Hebrew text** is stored and put in the `tsvector` column for exact-phrase/idiom
-  search, not embedded. This isn't a claim that Hebrew embeds worse — it's that idiom and
-  proper-noun search wants exact lexical matching regardless of embedding quality, and
-  Postgres full-text gives that for free once it's the same row.
+- **Hebrew text** is stored and tokenized for exact-phrase/idiom keyword matching
+  client-side, not embedded. This isn't a claim that Hebrew embeds worse — it's that idiom
+  and proper-noun search wants exact lexical matching regardless of embedding quality, and
+  a token-overlap score over a few hundred documents is a few lines of JS, not a database
+  feature.
 - **Metadata columns**: tractate, daf ref (`page.ref`, e.g. `"Gittin 2a"`), segment range,
   classification tier, `is_mishnah_story` flag, source canonical file + its content hash
   (so a search result can cite exactly which dataset version it came from — matters if
@@ -102,16 +126,20 @@ tractate list, so they join automatically without a code change.
    traceable back to (tractate, page ref, segment range).
 3. **Embed** — batch call to `gemini-embedding-001`, cached by content hash so a rerun
    after a corpus change only re-embeds what changed. Whole corpus is under $1 one-time.
-4. **Load Postgres** — `pgvector` column + `tsvector` column + the metadata columns above.
-5. **Hybrid query layer** — vector search + full-text search, fused by reciprocal rank
-   fusion, filtered by tractate/tier/mishnah-flag. ~30 lines of SQL, not a new service.
+4. **Build the static index file** — embeddings + metadata + tokenized Hebrew/English text,
+   one JSON artifact, committed like every other generated asset this project ships.
+5. **Client-side hybrid search** — cosine similarity + keyword score, fused by reciprocal
+   rank fusion, filtered by tractate/tier/mishnah-flag. Runs in the visitor's browser;
+   ~50-100 lines of vanilla JS, no backend, no per-query cost, nothing to keep running.
 6. **Minimal UI** — bilingual result display, story text highlighted. This is the same
    requirement Critical Rule 1 already puts on every validation UI in this project; a
    public search surface shouldn't be held to a lower bar than an internal review page.
    Reuse `validation/generators/review_ui_core.py`'s shared display core rather than
    building a third bilingual renderer.
-7. **Testing gate** — below. Nothing ships past this point without it.
-8. **Publish.**
+7. **Testing gate** — below. Nothing ships past this point without it. Storage-agnostic:
+   the qrels harness scores whatever the query layer returns, whether it's a SQL query or
+   a JS function.
+8. **Publish** — to GitHub Pages, same as the existing site.
 
 ## Testing — built in, not bolted on at the end
 
@@ -152,17 +180,15 @@ scored by a harness nobody hand-tunes against.
 ## Cost
 
 - Embeddings: **under $1**, one-time, cents to re-embed after a corpus change.
-- Cloud Run: **effectively $0/month** at research-project traffic — comfortably inside the
-  2M-requests / 180k-vCPU-second free tier, and scale-to-zero means idle time is free.
-- Cloud SQL is the real line item, and it forks on a choice this plan doesn't make yet:
-  the shared-core tier (`db-f1-micro`) runs **~$10-15/month** (compute + 10GB SSD +
-  backups) but carries Google's own "not recommended for production, no SLA" label; the
-  smallest **dedicated-core** instance — the safer choice for anything public-facing —
-  runs closer to **$50-90/month**. Pick one deliberately in Phase 4, not by default.
-  *(Figures corroborated across three independent 2026 pricing writeups, not re-verified
-  against Google's own calculator — its pricing page is a JS widget that doesn't expose
-  numbers to a fetch. Confirm on `cloud.google.com/sql/pricing` before budgeting.)*
+- Hosting: **$0/month, indefinitely** — GitHub Pages, same as the existing site. Nothing
+  runs, nothing to renew, nothing that goes down because a bill lapsed after the grant
+  that's funding this ends.
 - Jeff's time: **1-2 sessions** to write and judge queries.
+
+**Rejected alternative, for the record:** Cloud SQL + Cloud Run, ~$10-90/month depending
+on tier (shared-core vs. dedicated-core — see git history on this doc for the full
+breakdown). Dropped once the actual data volume made a running server obviously the wrong
+tool. Written down so a later session doesn't have to rediscover this.
 
 ## Future work items (not created — copy `work/_TEMPLATE.md` when starting each)
 
@@ -173,8 +199,10 @@ query-set items touch disjoint paths and don't block each other:
    `scripts/build_story_index_corpus.py`)
 2. Embedding generation + content-hash cache (`writes: results/search_index/embeddings/`,
    `scripts/embed_story_corpus.py`)
-3. Postgres schema + loader (needs 1 and 2 done first — `blocked_by`)
-4. Hybrid query API (needs 3)
+3. Static index file builder — embeddings + metadata + tokenized text → one JSON artifact
+   (needs 1 and 2 done first — `blocked_by`)
+4. Client-side hybrid search module — cosine + keyword + RRF fusion, vanilla JS, no
+   backend (needs 3)
 5. Query set + `score_retrieval.py` harness — **no shared `writes` with 1-4**, can start
    immediately and run in parallel
 6. Minimal UI, reusing `review_ui_core.py`
