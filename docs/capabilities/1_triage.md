@@ -81,7 +81,9 @@ The nearest thing to a revert is a decision *not* to act:
   and unrecoverable, because nothing counted it.
   → [`2026-08-31-triage-failure-default.md`](../findings/2026-08-31-triage-failure-default.md),
   guarded by `tests/test_triage_failure_default.py`
-- **Model:** `GEMINI_MODEL`, currently `gemini-3-flash-preview` for detection runs;
+- **Model:** `GEMINI_MODEL`, defaulting to **`gemini-3.8-flash`** since 2026-09-03
+  ([`src/model_config.py`](../../src/model_config.py)). **Every triage number on this page
+  was produced before that switch**, on `gemini-3-flash-preview` or `gemini-2.5-flash`;
   triage results are cached (`results/v7/event_triage_*.json`) and reused rather than
   re-run, so the shipped skip decisions predate several model changes.
 - **The numbers came from:** `results/v10/wave4_notrim/*.json`, whose skipped pages carry

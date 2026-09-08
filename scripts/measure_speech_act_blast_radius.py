@@ -51,6 +51,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.model_config import default_model
+
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [6a] %(message)s',
                     handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
                               logging.StreamHandler(sys.stdout)])
@@ -114,7 +116,7 @@ def main():
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--out', default='results/criteria/speech_act_blast_radius.json')
-    ap.add_argument('--model', default=os.getenv('GEMINI_MODEL', 'gemini-2.5-flash'))
+    ap.add_argument('--model', default=default_model())
     args = ap.parse_args()
 
     rows = entries()

@@ -30,6 +30,8 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+from src.model_config import default_model, default_thinking_level
+
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s %(levelname)s [wave5] %(message)s',
@@ -50,8 +52,8 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--in', dest='inp', required=True)
     ap.add_argument('--out', dest='out', required=True)
-    ap.add_argument('--model', default='gemini-3.7-flash')
-    ap.add_argument('--thinking', default=None,
+    ap.add_argument('--model', default=default_model())
+    ap.add_argument('--thinking', default=default_thinking_level(),
                     help="thinking level for Gemini 3.x: low|medium|high (ignored on 2.x)")
     args = ap.parse_args()
 
