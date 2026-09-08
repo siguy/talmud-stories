@@ -43,6 +43,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 MODEL = 'gemini-3-flash-preview'
+CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
 KNOWN = ('gittin', 'yevamot', 'eruvin')
 
@@ -125,13 +126,29 @@ def main():
         if not triager.client:
             log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))
-        fresh = triager.triage_all_pages(todo, delay=args.delay)
-        cached.update(fresh)
-        cache.parent.mkdir(parents=True, exist_ok=True)
-        cache.write_text(json.dumps(
-            {'tractate': name, 'model': args.model,
-             'triage_results': {r: [e.value for e in evs] for r, evs in cached.items()}},
-            indent=2, ensure_ascii=False))
+
+        def write_cache():
+            cache.parent.mkdir(parents=True, exist_ok=True)
+            cache.write_text(json.dumps(
+                {'tractate': name, 'model': args.model,
+                 'triage_results': {r: [e.value for e in evs] for r, evs in cached.items()}},
+                indent=2, ensure_ascii=False))
+
+        # Checkpoint every CHECKPOINT pages. Writing the cache only at the end
+        # means one bad page throws away the whole tractate's Stage 1 spend --
+        # which is what happened on Yevamot, at page 228 of 242. A re-run now
+        # resumes from the cache instead of starting over.
+        try:
+            for i in range(0, len(todo), CHECKPOINT):
+                cached.update(triager.triage_all_pages(todo[i:i + CHECKPOINT],
+                                                       delay=args.delay))
+                write_cache()
+                log.info('triage cache: %d/%d page(s) done', len(cached), len(pages))
+        except Exception:
+            write_cache()
+            log.error('Stage 1 failed after %d cached page(s) — re-run to resume '
+                      'from %s', len(cached), cache.name)
+            raise
         log.info('triage cache written: %s (%d pages)', cache, len(cached))
 
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}

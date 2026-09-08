@@ -224,7 +224,14 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
         # Parse event types
         event_types = [EventType.DELIBERATION] * len(segments)  # Default
         for item in result.get('segment_events', []):
-            idx = item.get('index', -1)
+            # The model sometimes returns the index as a string ("12"). Coerce it;
+            # an index we cannot read is dropped (that segment keeps DELIBERATION),
+            # never allowed to raise — a TypeError here kills a whole tractate's
+            # Stage 1 at the page it happens on. Yevamot 115a, 2026-09-03.
+            try:
+                idx = int(item.get('index', -1))
+            except (TypeError, ValueError):
+                continue
             et_str = item.get('event_type', 'DELIBERATION')
             if 0 <= idx < len(segments):
                 try:

@@ -31,11 +31,18 @@ def built(tractate):
 
 
 def test_ketubot_detection_reproduces_the_published_recall():
-    """96.0% = 143/149, from measure_recall_vs_expert_list.py. The anchor."""
+    """87.2% = 130/149, from measure_recall_vs_expert_list.py. The anchor.
+
+    Was 143/149 = 96.0% until 2026-09-03, when every reader of an expert list moved onto
+    the exact-anchor matcher. The 13 stories that left were credited by a 4-gram window up
+    to 14 segments wide reaching a neighbour on the same daf; loose and strict now agree
+    (docs/findings/2026-09-03-exact-matcher-cutover.md). The point of this test is that the
+    ruler and the recall harness answer with the same number, whatever the number is.
+    """
     _, _, _, m = built('Ketubot')
     d = m['detection']
-    assert (d['found'], d['denominator']) == (143, 149), (d['found'], d['denominator'])
-    assert d['recall'] == 0.96
+    assert (d['found'], d['denominator']) == (130, 149), (d['found'], d['denominator'])
+    assert d['recall'] == 0.872
 
 
 def test_ketubot_classification_reproduces_the_published_precision():
@@ -99,14 +106,15 @@ def test_kiddushin_recall_excludes_only_the_appendix_cases_we_proposed():
     assert all(e['expert_strictly_blind'] is False for e in b81), '81b is not blind'
 
 
-def test_the_loose_window_credits_a_story_we_never_proposed():
-    """The concrete case that shows the loose recall figure is an upper bound.
+def test_the_window_no_longer_credits_a_story_we_never_proposed():
+    """The concrete case the exact-anchor cutover was for, kept as its regression test.
 
     Jeff's 81b story is at segment 9. Every run proposed segments 1-3 and 14 on that
     page and nothing at 9 -- 9% text overlap, measured by
-    scripts/check_appendix_coverage.py. The loose window credits it anyway; the
-    strict test does not. This pins the gap to a case that does not depend on the
-    aligner being right.
+    scripts/check_appendix_coverage.py. Until 2026-09-03 the 4-gram window credited it
+    anyway and only the strict test refused; this test pinned that gap. Both now refuse,
+    so it pins the fix instead -- on a case that does not depend on the aligner being
+    right, which is why it was worth keeping rather than deleting.
     """
     entries, _, _, _ = built('Kiddushin')
     # built() returns the in-memory structure, where cells are tuples; the written
@@ -117,7 +125,7 @@ def test_the_loose_window_credits_a_story_we_never_proposed():
             and cells(e) == [('Kiddushin 81b', 9)]]
     assert hits, 'expected the appendix 81b entry, localised to segment 9'
     e = hits[0]
-    assert e['detector_proposed'] is True, 'loose window credits it'
+    assert e['detector_proposed'] is False, 'the exact anchor must not credit it either'
     assert e['detector_proposed_strict'] is False, 'strict test must not credit it'
 
 

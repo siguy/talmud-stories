@@ -458,8 +458,21 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             )
             if not response.candidates:
                 return ""
+            # A candidate can come back with content=None or parts=None — MAX_TOKENS
+            # spent on thinking, or a safety stop. That is a FAILED call, not an
+            # empty answer, so say so loudly and record it: callers that turn ""
+            # into "no stories" would otherwise stamp a failure as a judgment
+            # (Lesson 21). Raised TypeError and killed a 106-page Stage 2 at page
+            # 35 on Yevamot, 2026-09-03.
+            cand = response.candidates[0]
+            parts = getattr(cand.content, 'parts', None) if cand.content else None
+            if not parts:
+                reason = getattr(cand, 'finish_reason', None)
+                print(f"  EMPTY RESPONSE from model (finish_reason={reason})")
+                self.empty_responses = getattr(self, 'empty_responses', []) + [str(reason)]
+                return ""
             full_text = ""
-            for part in response.candidates[0].content.parts:
+            for part in parts:
                 if hasattr(part, 'thought') and part.thought:
                     continue  # Skip thinking tokens, keep only output
                 full_text += part.text

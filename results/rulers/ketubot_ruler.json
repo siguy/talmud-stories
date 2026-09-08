@@ -29,31 +29,31 @@
   "detection": {
    "kind": "BLIND",
    "denominator": 149,
-   "found": 143,
-   "recall": 0.96,
-   "recall_strict": 0.879,
+   "found": 130,
+   "recall": 0.872,
+   "recall_strict": 0.872,
    "missed": [
-    "Ketubot 19b",
+    "Ketubot 17b",
+    "Ketubot 20a",
+    "Ketubot 27a",
+    "Ketubot 50a",
+    "Ketubot 51a",
     "Ketubot 53a",
-    "Ketubot 67a",
-    "Ketubot 72a",
-    "Ketubot 77a",
-    "Ketubot 82b"
-   ],
-   "missed_strict": [
-    "Ketubot 17a",
-    "Ketubot 49b",
-    "Ketubot 50b",
     "Ketubot 53a",
-    "Ketubot 54a",
-    "Ketubot 60b",
+    "Ketubot 54b",
+    "Ketubot 61a",
     "Ketubot 61a",
     "Ketubot 61a",
     "Ketubot 67b",
-    "Ketubot 103b",
+    "Ketubot 67b",
+    "Ketubot 72b",
+    "Ketubot 77a",
+    "Ketubot 82b",
+    "Ketubot 104a",
     "Ketubot 111a",
-    "Ketubot 111b"
+    "Ketubot 112a"
    ],
+   "missed_strict": [],
    "note": "recall uses the published window-overlap test so it stays comparable with the 96.0% already reported. recall_strict requires a proposal to overlap a segment the story actually occupies; the gap is stories we are credited with only because something else on the page was proposed."
   },
   "classification": {
@@ -124,9 +124,9 @@
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
   },
   "cross_check": {
-   "proposals_on_the_blind_list": 131,
-   "of_those_judged_and_accepted": 126,
-   "proposals_claimed_by_more_than_one_expert_story": 32
+   "proposals_on_the_blind_list": 126,
+   "of_those_judged_and_accepted": 121,
+   "proposals_claimed_by_more_than_one_expert_story": 8
   }
  },
  "entries": [
@@ -141,7 +141,7 @@
    "expert_located": [
     [
      "Ketubot 2b",
-     5
+     11
     ],
     [
      "Ketubot 2b",
@@ -197,7 +197,7 @@
    "expert_located": [
     [
      "Ketubot 8a",
-     6
+     12
     ],
     [
      "Ketubot 8a",
@@ -249,15 +249,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב חייא בר אבא מקרי בניה דריש לקיש הוה, ואמרי לה: מתני בריה דריש לקיש הוה, שכיב ליה ינוקא; יומא קמא לא אזל לגביה, למחר דבריה ליהודה בר נחמני מתורגמניה, אמר ליה: קום אימא מלתא כל קביל ינוקא, פתח ואמר: וירא ה' וינאץ מכעס בניו ובנותיו - דור שאבות מנאצים להקב\"ה, כועס על בניהם ועל בנותיהם ומתים כשהם קטנים. ואיכא דאמרי: בחור הוה, והכי קאמר ליה: על כן על בחוריו לא ישמח ה' ואת יתומיו ואת אלמנותיו לא ירחם כי כולו חנף ומרע וכל פה דובר נבלה בכל זאת לא שב אפו ועוד ידו נטויה. מאי ועוד ידו נטויה? אמר רב חנן בר רב: הכל יודעין כלה למה נכנסה לחופה, אלא כל המנבל פיו ומוציא דבר נבלה מפיו, אפילו נחתם לו גזר דינו של שבעים שנה לטובה - נהפך עליו לרעה. אתא לנחומי, צעורי קמצער ליה? הכי קאמר ליה: חשיב את לאתפוסי אדרא. אמר ליה: קום אימא מלתא כנגד שבחו של הקב\"ה, פתח ואמר: האל הגדול ברוב גדלו, אדיר וחזק ברוב נוראות, מחיה מתים במאמרו, עושה גדולות עד אין חקר ונפלאות עד אין מספר, בא\"י מחיה המתים. א\"ל: קום אימא מלתא כנגד אבלים, פתח ואמר: אחינו המיוגעים המדוכאין באבל הזה, תנו לבבכם לחקור את זאת, זאת היא עומדת לעד, נתיב הוא מששת ימי בראשית, רבים שתו רבים ישתו, כמשתה ראשונים כך משתה אחרונים, אחינו, בעל נחמות ינחם אתכם, ברוך מנחם אבלים. אמר אביי: רבים שתו לימא, רבים ישתו לא לימא, משתה ראשונים לימא, משתה אחרונים לא לימא, דאר\"ש בן לקיש, וכן תנא משמיה דר' יוסי: לעולם אל יפתח אדם פיו לשטן; אמר רב יוסף: מאי קרא? כסדם היינו לעמורה דמינו, מאי אהדר ליה? שמעו דבר ה' קציני סדום וגו'. א\"ל: קום אימא מלתא כנגד מנחמי אבלים, פתח ואמר: אחינו גומלי חסדים בני גומלי חסדים המחזיקים בבריתו של אברהם אבינו, אחינו, בעל הגמול ישלם לכם גמולכם, ברוך אתה משלם הגמול. א\"ל: קום אימא מלתא כנגד כל ישראל, פתח ואמר: רבון העולמים, פדה והצל, מלט, הושע עמך ישראל מן הדבר ומן החרב ומן הביזה, ומן השדפון ומן הירקון, ומכל מיני פורענויות המתרגשות ובאות לעולם.",
-   "expert_coverage": 0.945,
+   "expert_coverage": 0.941,
    "expert_located": [
     [
      "Ketubot 8b",
-     0
+     3
     ],
     [
      "Ketubot 8b",
-     13
+     10
     ]
    ],
    "expert_segments": [
@@ -349,7 +349,7 @@
    "expert_located": [
     [
      "Ketubot 8b",
-     7
+     13
     ],
     [
      "Ketubot 8b",
@@ -405,7 +405,7 @@
    "expert_located": [
     [
      "Ketubot 10a",
-     1
+     7
     ],
     [
      "Ketubot 10a",
@@ -455,7 +455,7 @@
    "expert_located": [
     [
      "Ketubot 10a",
-     3
+     9
     ],
     [
      "Ketubot 10a",
@@ -515,7 +515,7 @@
    "expert_located": [
     [
      "Ketubot 10a",
-     5
+     11
     ],
     [
      "Ketubot 10a",
@@ -556,7 +556,7 @@
   },
   {
    "id": "ketubot_r008",
-   "ref": "Ketubot 10a",
+   "ref": "Ketubot 10b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -564,8 +564,8 @@
    "expert_coverage": 0.982,
    "expert_located": [
     [
-     "Ketubot 10a",
-     8
+     "Ketubot 10b",
+     1
     ],
     [
      "Ketubot 10b",
@@ -612,7 +612,7 @@
   },
   {
    "id": "ketubot_r009",
-   "ref": "Ketubot 10a",
+   "ref": "Ketubot 10b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -620,8 +620,8 @@
    "expert_coverage": 0.993,
    "expert_located": [
     [
-     "Ketubot 10a",
-     10
+     "Ketubot 10b",
+     3
     ],
     [
      "Ketubot 10b",
@@ -672,15 +672,15 @@
   },
   {
    "id": "ketubot_r010",
-   "ref": "Ketubot 10a",
+   "ref": "Ketubot 10b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאתא לקמיה דרבי, אמר ליה: רבי, בעלתי ולא מצאתי דם, אמרה לו: רבי, עדיין בתולה הייתי, ושני בצורת הוה. ראה רבי שפניהם שחורים, צוה עליהן והכניסום למרחץ והאכילום והשקום והכניסום לחדר, בעל ומצא דם, אמר לו: לך זכה במקחך.",
-   "expert_coverage": 0.987,
+   "expert_coverage": 0.954,
    "expert_located": [
     [
-     "Ketubot 10a",
+     "Ketubot 10b",
      6
     ],
     [
@@ -728,7 +728,7 @@
   },
   {
    "id": "ketubot_r011",
-   "ref": "Ketubot 16b",
+   "ref": "Ketubot 17a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -736,8 +736,8 @@
    "expert_coverage": 0.961,
    "expert_located": [
     [
-     "Ketubot 16b",
-     10
+     "Ketubot 17a",
+     4
     ],
     [
      "Ketubot 17a",
@@ -782,7 +782,7 @@
   },
   {
    "id": "ketubot_r012",
-   "ref": "Ketubot 17a",
+   "ref": "Ketubot 17b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -790,8 +790,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 17a",
-     8
+     "Ketubot 17b",
+     2
     ],
     [
      "Ketubot 17b",
@@ -805,47 +805,32 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 17a",
-     8,
-     8
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 17a_8-8",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "ketubot_r013",
-   "ref": "Ketubot 19b",
+   "ref": "Ketubot 20a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "בר שטיא זבין נכסי, אתו בי תרי אמרי כשהוא שוטה זבין, ואתו בי תרי ואמרי כשהוא חלים זבין, אמר רב אשי: אוקי תרי להדי תרי ואוקי ממונא בחזקת בר שטיא.",
-   "expert_coverage": 0.976,
+   "expert_coverage": 0.965,
    "expert_located": [
     [
-     "Ketubot 19b",
-     7
+     "Ketubot 20a",
+     2
     ],
     [
      "Ketubot 20a",
-     8
+     3
     ]
    ],
    "expert_segments": [
@@ -871,20 +856,20 @@
   },
   {
    "id": "ketubot_r014",
-   "ref": "Ketubot 20a",
+   "ref": "Ketubot 20b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב אשי הוה ידיע ליה בסהדותא לרב כהנא, אמר ליה: מי דכיר מר האי סהדותא? אמר ליה: לא. ולאו הכי והכי הוה? א\"ל: לא ידענא. לסוף אידכר רב אשי, אסהיד ליה. חזייה לרב כהנא דהוה מחסם, א\"ל: מי סברת עלך קא סמיכנא? אנא הוא דרמאי אנפשאי ואדכרי .",
-   "expert_coverage": 0.953,
+   "expert_coverage": 0.946,
    "expert_located": [
     [
-     "Ketubot 20a",
-     4
+     "Ketubot 20b",
+     0
     ],
     [
      "Ketubot 20b",
-     4
+     0
     ]
    ],
    "expert_segments": [
@@ -921,16 +906,16 @@
   },
   {
    "id": "ketubot_r015",
-   "ref": "Ketubot 21a",
+   "ref": "Ketubot 21b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "איקלע רבנאי אחוה דר' חייא בר אבא למזבן שומשמי ואמר, הכי אמר שמואל: עד ודיין מצטרפין. אמר אמימר: כמה מעליא הא שמעתא! אמר ליה רב אשי לאמימר: משום דקלסה אבוה דאמך, את נמי מקלסת לה? כבר פרכה רבא.",
-   "expert_coverage": 0.986,
+   "expert_coverage": 0.978,
    "expert_located": [
     [
-     "Ketubot 21a",
-     9
+     "Ketubot 21b",
+     0
     ],
     [
      "Ketubot 21b",
@@ -938,10 +923,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 21a",
-     12
-    ],
     [
      "Ketubot 21b",
      0
@@ -980,15 +961,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "מעשה באשה אחת גדולה, שהיתה גדולה בנוי וקפצו עליה בני אדם לקדשה, ואמרה להם מקודשת אני, לימים עמדה וקידשה את עצמה, אמרו לה חכמים: מה ראית לעשות כן? אמרה להם: בתחלה שבאו עלי אנשים שאינם מהוגנים, אמרתי מקודשת אני, עכשיו שבאו עלי אנשים מהוגנים, עמדתי וקדשתי את עצמי; וזו הלכה העלה רב אחא שר הבירה לפני חכמי' באושא, ואמרו: אם נתנה אמתל' לדבריה - נאמנת.",
-   "expert_coverage": 0.969,
+   "expert_coverage": 0.965,
    "expert_located": [
     [
      "Ketubot 22a",
-     3
+     9
     ],
     [
-     "Ketubot 22b",
-     2
+     "Ketubot 22a",
+     9
     ]
    ],
    "expert_segments": [
@@ -1030,15 +1011,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "הני שבוייתא דאתיין לנהרדעא, אותיב אבוה דשמואל נטורי בהדייהו. א\"ל שמואל: ועד האידנא מאן נטרינהו? א\"ל: אילו בנתך הווין, מי הוית מזלזל בהו כולי האי? הואי כשגגה שיוצא מלפני השליט, ואישתביין בנתיה דמר שמואל ואסקינהו לארעא דישראל. אוקמן לשבויינהו מאבראי ועיילי לבי מדרשא דר' חנינא, הא אמרה נשביתי וטהורה אני, והא אמרה נשביתי וטהורה אני, שרינהו. סוף עול אתו שבויינהו, אמר רבי חנינא: בנן דמוריין אינון. איגלאי מילתא דבנתיה דמר שמואל הווין, אמר ליה רבי חנינא לרב שמן בר אבא: פוק איטפל בקרובותיך.",
-   "expert_coverage": 0.916,
+   "expert_coverage": 0.91,
    "expert_located": [
     [
      "Ketubot 23a",
-     11
+     13
     ],
     [
-     "Ketubot 23b",
-     6
+     "Ketubot 23a",
+     16
     ]
    ],
    "expert_segments": [
@@ -1088,25 +1069,21 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאתא לקמיה דרבי אמי, א\"ל: מוחזקני בזה שהוא כהן, א\"ל: מה ראית? אמר ליה: שקרא ראשון בבית הכנסת; בחזקת שהוא כהן או בחזקת שהוא גדול? שקרא אחריו לוי, והעלהו ר' אמי לכהונה על פיו.",
-   "expert_coverage": 0.914,
+   "expert_coverage": 0.905,
    "expert_located": [
     [
      "Ketubot 25b",
      2
     ],
     [
-     "Ketubot 26a",
-     5
+     "Ketubot 25b",
+     2
     ]
    ],
    "expert_segments": [
     [
      "Ketubot 25b",
      2
-    ],
-    [
-     "Ketubot 25b",
-     3
     ]
    ],
    "not_blind_reason": null,
@@ -1117,15 +1094,9 @@
      "Ketubot 25b",
      2,
      2
-    ],
-    [
-     "Ketubot 25b",
-     3,
-     3
     ]
    ],
    "detector_classification": [
-    "LOW_CONFIDENCE",
     "LOW_CONFIDENCE"
    ],
    "in_golden": true,
@@ -1133,12 +1104,6 @@
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_2-2",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 25b_3-3",
      "verdict": "correct",
      "note": ""
     }
@@ -1149,7 +1114,7 @@
   },
   {
    "id": "ketubot_r019",
-   "ref": "Ketubot 25a",
+   "ref": "Ketubot 25b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1157,8 +1122,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 25a",
-     8
+     "Ketubot 25b",
+     3
     ],
     [
      "Ketubot 25b",
@@ -1166,10 +1131,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 25b",
-     2
-    ],
     [
      "Ketubot 25b",
      3
@@ -1181,27 +1142,15 @@
    "detector_span": [
     [
      "Ketubot 25b",
-     2,
-     2
-    ],
-    [
-     "Ketubot 25b",
      3,
      3
     ]
    ],
    "detector_classification": [
-    "LOW_CONFIDENCE",
     "LOW_CONFIDENCE"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 25b_2-2",
-     "verdict": "correct",
-     "note": ""
-    },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_3-3",
@@ -1220,14 +1169,14 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאתא לקמיה דריש לקיש, אמר ליה: מוחזקני בזה שהוא כהן, א\"ל: מה ראית? [א\"ל:] שקרא ראשון בבית הכנסת, א\"ל: ראיתיו שחילק על הגרנות? אמר לו ר' אלעזר: ואם אין שם גורן, בטלה כהונה? זימנין הוו יתבי קמיה דר' יוחנן, אתא כי הא מעשה לקמיה, א\"ל ריש לקיש: ראיתיו שחילק על הגורן? א\"ל ר' יוחנן: ואם אין שם גורן בטלה כהונה? הדר חזייה לר\"א בישות, אמר: שמעת מילי דבר נפחא ולא אמרת לן משמיה.",
-   "expert_coverage": 0.866,
+   "expert_coverage": 0.857,
    "expert_located": [
     [
      "Ketubot 25b",
-     2
+     4
     ],
     [
-     "Ketubot 26a",
+     "Ketubot 25b",
      5
     ]
    ],
@@ -1281,7 +1230,7 @@
   },
   {
    "id": "ketubot_r021",
-   "ref": "Ketubot 25b",
+   "ref": "Ketubot 26a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1289,8 +1238,8 @@
    "expert_coverage": 0.974,
    "expert_located": [
     [
-     "Ketubot 25b",
-     4
+     "Ketubot 26a",
+     0
     ],
     [
      "Ketubot 26a",
@@ -1335,7 +1284,7 @@
   },
   {
    "id": "ketubot_r022",
-   "ref": "Ketubot 26b",
+   "ref": "Ketubot 27a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1343,8 +1292,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 26b",
-     4
+     "Ketubot 27a",
+     1
     ],
     [
      "Ketubot 27a",
@@ -1353,56 +1302,37 @@
    ],
    "expert_segments": [
     [
-     "Ketubot 26b",
-     7
-    ],
-    [
      "Ketubot 27a",
      1
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
-   "detector_proposed_strict": true,
-   "detector_span": [
-    [
-     "Ketubot 26b",
-     7,
-     7
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE"
-   ],
-   "in_golden": true,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 26b_7-7",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "detector_proposed": false,
+   "detector_proposed_strict": false,
+   "detector_span": null,
+   "detector_classification": null,
+   "in_golden": false,
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "ketubot_r023",
-   "ref": "Ketubot 27a",
+   "ref": "Ketubot 27b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא גברא דאגר ליה חמרא לחבריה, א\"ל: לא תיזיל באורחא דנהר פקוד דאיכא מיא, זיל באורחא דנרש דליכא מיא, ואזיל איהו באורחא דנהר פקוד ומית חמרא, אתא לקמיה דרבא, א\"ל: אין, באורחא דנהר פקוד אזלי, מיהו לא הוו מיא, אמר רבא: מה לי לשקר, אי בעי א\"ל באורחא דנרש אזלי.",
-   "expert_coverage": 0.895,
+   "expert_coverage": 0.881,
    "expert_located": [
     [
-     "Ketubot 27a",
-     16
+     "Ketubot 27b",
+     1
     ],
     [
      "Ketubot 27b",
-     11
+     2
     ]
    ],
    "expert_segments": [
@@ -1448,22 +1378,18 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "מרי בר איסק, ואמרי לה חנא בר איסק, אתא ליה אחא מבי חוזאה, א\"ל: פלוג לי בנכסי דאבא, א\"ל: לא ידענא לך, אתא לקמיה דרב חסדא, א\"ל: שפיר קאמר לך, דכתיב: ויכר יוסף את אחיו והם לא הכירהו, מלמד, שיצא בלא חתימת זקן ובא בחתימת זקן. א\"ל: זיל אייתי סהדי דאחוה את, א\"ל: אית לי סהדי ומסתפינו מיניה, דגברא אלמא הוא. א\"ל לדידיה: זיל אייתינהו את דלאו אחוך הוא, א\"ל: דינא הכי? מוציא מחבירו עליו הראיה! א\"ל: הכי דאיננא לך ולכולהו אלמי חברך; השתא נמי אתו ומשקרי! תרתי לא עבדי.",
-   "expert_coverage": 0.879,
+   "expert_coverage": 0.875,
    "expert_located": [
     [
      "Ketubot 27b",
-     9
+     10
     ],
     [
-     "Ketubot 28a",
-     2
+     "Ketubot 27b",
+     11
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 27b",
-     9
-    ],
     [
      "Ketubot 27b",
      10
@@ -1510,7 +1436,7 @@
    "expert_located": [
     [
      "Ketubot 27b",
-     9
+     15
     ],
     [
      "Ketubot 27b",
@@ -1580,15 +1506,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא ארוס וארוסתו דאתו לקמיה דרבא, יתיב רב אדא בר מתנא קמיה, אוקי רבא שלוחא בינתייהו; א\"ל רב אדא בר מתנא, והאמר רב נחמן: תנא באבל רבתי כו'! א\"ל: קא חזינן דקא גייסי בהדדי. איכא דאמרי: לא אוקי רבא שליח בינתייהו, א\"ל רב אדא בר מתנא: ניקום מר שלוחא בינתייהו! א\"ל, והא [אמר] רב נחמן: תנא באבל רבתי כו'! א\"ל: ה\"מ היכא דלא גייסי בהדדי, אבל הני קא חזינא להו דגייסי בהדדי.",
-   "expert_coverage": 0.902,
+   "expert_coverage": 0.874,
    "expert_located": [
     [
      "Ketubot 28a",
-     3
+     5
     ],
     [
-     "Ketubot 28b",
-     0
+     "Ketubot 28a",
+     6
     ]
    ],
    "expert_segments": [
@@ -1629,7 +1555,7 @@
   },
   {
    "id": "ketubot_r027",
-   "ref": "Ketubot 28a",
+   "ref": "Ketubot 28b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1637,8 +1563,8 @@
    "expert_coverage": 0.929,
    "expert_located": [
     [
-     "Ketubot 28a",
-     13
+     "Ketubot 28b",
+     3
     ],
     [
      "Ketubot 28b",
@@ -1688,15 +1614,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "דרבי חנינא ור' יונתן הוו קיימי, אתא ההוא גברא גחין ונשקיה לר' יונתן אכרעיה, אמר ליה ר' חנינא: מאי האי? א\"ל: כותב נכסיו לבניו הוא, ועשיתינהו לזניה; אי אמרת בשלמא לאו דינא, משום הכי עשיינהו, אלא אי אמרת דינא, עשיינהו בעי?",
-   "expert_coverage": 0.917,
+   "expert_coverage": 0.889,
    "expert_located": [
     [
      "Ketubot 49b",
-     6
+     12
     ],
     [
      "Ketubot 50a",
-     4
+     0
     ]
    ],
    "expert_segments": [
@@ -1737,7 +1663,7 @@
   },
   {
    "id": "ketubot_r029",
-   "ref": "Ketubot 49b",
+   "ref": "Ketubot 50a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1745,8 +1671,8 @@
    "expert_coverage": 0.981,
    "expert_located": [
     [
-     "Ketubot 49b",
-     8
+     "Ketubot 50a",
+     1
     ],
     [
      "Ketubot 50a",
@@ -1760,34 +1686,19 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 49b",
-     12,
-     12
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 49b_12-12",
-     "verdict": "correct",
-     "note": "The boundaries of the stories are not correct. The story continues with the next few words on 50a, which should be merged."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "ketubot_r030",
-   "ref": "Ketubot 50b",
+   "ref": "Ketubot 51a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1795,8 +1706,8 @@
    "expert_coverage": 0.988,
    "expert_located": [
     [
-     "Ketubot 50b",
-     6
+     "Ketubot 51a",
+     1
     ],
     [
      "Ketubot 51a",
@@ -1814,71 +1725,32 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 50b",
-     6,
-     6
-    ],
-    [
-     "Ketubot 50b",
-     9,
-     10
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE",
-    "HIGH_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 50b_6-6",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
-     "key": "Ketubot 50b_6-6",
-     "verdict": "incorrect",
-     "note": "This is a borderline story. The reasoning is correct that there is minimal causality. But there is some, and some change. It should be marked a borderline story."
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 50b_9-10",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
-     "key": "Ketubot 50b_9-10",
-     "verdict": "correct",
-     "note": "This should be marked a borderline story, since it is just one real event and then discussion"
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "ketubot_r031",
-   "ref": "Ketubot 52a",
+   "ref": "Ketubot 52b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "קריביה דרבי יוחנן הוה להו איתת אבא דהות צריכה רפואה כל יומא, אתו לקמיה דר' יוחנן, אמר להו: איזילו קוצו ליה מידי לרופא. אמר רבי יוחנן: עשינו עצמינו כעורכי הדיינין. מעיקרא מאי סבר, ולבסוף מאי סבר? מעיקרא סבר: ומבשרך לא תתעלם, ולבסוף סבר: אדם חשוב שאני.",
-   "expert_coverage": 0.97,
+   "expert_coverage": 0.964,
    "expert_located": [
     [
-     "Ketubot 52a",
-     15
+     "Ketubot 52b",
+     4
     ],
     [
      "Ketubot 52b",
-     9
+     5
     ]
    ],
    "expert_segments": [
@@ -1930,7 +1802,7 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב פפא איעסק ליה לבריה בי אבא סוראה, אזיל למיכתב לה כתובתה, שמע יהודה בר מרימר, נפק אתא איתחזי ליה. כי מטו לפיתחא הוה קא מפטר מיניה, אמר ליה: ניעול מר בהדאי, חזייה דלא הוה ניחא ליה, אמר ליה: מאי דעתיך? משום דאמר ליה שמואל לרב יהודה: שיננא, לא תיהוי בעבורי אחסנתא אפילו מברא בישא לברא טבא, דלא ידיעא מאי זרעא נפיק מיניה, וכל שכן מברא לברתא, האי נמי תקנתא דרבנן היא, דאמר רבי יוחנן משום ר' שמעון בן יוחי! אמר ליה: ה\"מ מדעתיה, לעשוייה נמי? א\"ל: אטו מי קאמינא לך דעול ועשייה? עול ולא תעשייה קאמינא! אמר ליה: מעלאי דידי היינו עשייה. אכפייה ועול, אישתיק ויתיב. סבר ההוא מירתח רתח, כתביה לכל מאי דהוה ליה. לסוף אמר ליה: השתא נמי לא מישתעי מר? חיי דמר, לא שביקי מידי לנפשאי! אמר ליה: אי מינאי דידי, אפי' האי נמי דכתבת לא ניחא לי. א\"ל: השתא נמי אהדר בי! א\"ל: שוייה נפשך, הדרנא לא קאמינא.",
-   "expert_coverage": 0.937,
+   "expert_coverage": 0.933,
    "expert_located": [
     [
      "Ketubot 52b",
@@ -1938,7 +1810,7 @@
     ],
     [
      "Ketubot 53a",
-     12
+     3
     ]
    ],
    "expert_segments": [
@@ -2006,7 +1878,7 @@
    "expert_located": [
     [
      "Ketubot 53a",
-     5
+     11
     ],
     [
      "Ketubot 53a",
@@ -2041,7 +1913,7 @@
    "expert_located": [
     [
      "Ketubot 53a",
-     6
+     12
     ],
     [
      "Ketubot 53a",
@@ -2091,11 +1963,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "כי אתא רבין אמר ריש לקיש: ארוסה שמתה - אין לה כתובה. אמר להו אביי, זילו אמרי ליה: שקילא טיבותך שדיא אחיזרי, כבר תרגמא רב הושעיא לשמעתי' בבבל.",
-   "expert_coverage": 0.903,
+   "expert_coverage": 0.864,
    "expert_located": [
     [
      "Ketubot 53a",
-     8
+     14
     ],
     [
      "Ketubot 53b",
@@ -2113,28 +1985,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 53a",
-     12,
-     12
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 53a_12-12",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -2149,7 +2006,7 @@
    "expert_located": [
     [
      "Ketubot 54a",
-     7
+     13
     ],
     [
      "Ketubot 54a",
@@ -2209,7 +2066,7 @@
    "expert_located": [
     [
      "Ketubot 54a",
-     14
+     20
     ],
     [
      "Ketubot 54a",
@@ -2255,15 +2112,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאמר להו נדוניא לברת, זל נדוניא, א\"ר אידי בר אבין: פורנא ליתמי. ההוא דאמר להו ארבע מאה זוזי מן חמרא לברת, אייקר חמרא, אמר רב יוסף: רווחא ליתמי.",
-   "expert_coverage": 0.912,
+   "expert_coverage": 0.89,
    "expert_located": [
     [
      "Ketubot 54a",
-     17
+     21
     ],
     [
      "Ketubot 54b",
-     1
+     0
     ]
    ],
    "expert_segments": [
@@ -2326,7 +2183,7 @@
   },
   {
    "id": "ketubot_r039",
-   "ref": "Ketubot 54a",
+   "ref": "Ketubot 54b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2334,8 +2191,8 @@
    "expert_coverage": 0.984,
    "expert_located": [
     [
-     "Ketubot 54a",
-     19
+     "Ketubot 54b",
+     1
     ],
     [
      "Ketubot 54b",
@@ -2353,58 +2210,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 54a",
-     20,
-     20
-    ],
-    [
-     "Ketubot 54a",
-     21,
-     22
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE",
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": true,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 54a_20-20",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 54a_22-22",
-     "verdict": "incorrect",
-     "note": "The classification is correct. The continuation of the story on the next page should also be included. That is, a merge of the pages is required. These words from 54a that should be included here are: ״ארבע מאה זוזי מן חמרא לברת״. אייקר חמרא. אמר רב יוסף: רווחא ליתמי."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
-     "key": "Ketubot 54a_22-22",
-     "verdict": "incorrect",
-     "note": "The story finished on the next page of Talmud with one more line, and it is a borderline story"
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 54a_21-21",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
-     "key": "Ketubot 54a_21-21",
-     "verdict": "incorrect",
-     "note": "This should be marked a borderline story. There is a temporal progression, in that someone order a dowry be given to his daughter and then (as a later time) the dowry depreciated. There is weak causality, as the result of the depreciated dowry is just a ruling by a rabbi."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -2415,11 +2227,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אחתיה דרמי בר חמא הות נסיבא לרב אויא, אירכס כתובתה, אתו לקמיה דרב יוסף, אמר להו, הכי אמר רב יהודה אמר שמואל: זו דברי ר' מאיר, אבל חכמים אומרים: משהא אדם את אשתו שתים ושלש שנים בלא כתובה.",
-   "expert_coverage": 0.941,
+   "expert_coverage": 0.933,
    "expert_located": [
     [
      "Ketubot 56b",
-     6
+     11
     ],
     [
      "Ketubot 57a",
@@ -2470,7 +2282,7 @@
   },
   {
    "id": "ketubot_r041",
-   "ref": "Ketubot 59b",
+   "ref": "Ketubot 60a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2478,8 +2290,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 59b",
-     9
+     "Ketubot 60a",
+     2
     ],
     [
      "Ketubot 60a",
@@ -2526,20 +2338,20 @@
   },
   {
    "id": "ketubot_r042",
-   "ref": "Ketubot 60a",
+   "ref": "Ketubot 60b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אריסיה דאביי אתא לקמיה דאביי, אמר ליה: מהו ליארס בחמשה עשר חדש? אמר ליה: חדא, דר\"מ ורבי יהודה - הלכה כרבי יהודה, ועוד, בית שמאי ובית הלל - הלכה כבית הלל, ואמר עולא: הלכה כרבי יהודה, ואמר מר עוקבא: לי התיר רבי חנינא לשאת לאחר חמשה עשר חדש, כל שכן דאת ליארס. כי אתא לקמיה דרב יוסף, א\"ל, רב ושמואל דאמרי תרוייהו: צריכה להמתין עשרים וארבעה חדש, חוץ מיום שנולד בו וחוץ מיום שנתארסה בו; רהט בתריה תלתא פרסי, ואמרי לה פרסא בחלא, ולא אדרכיה. אמר אביי, האי מילתא דאמור רבנן: אפילו ביעתא בכותחא לא לישרי איניש במקום רביה, לא משום דמיחזי כאפקירותא, אלא משום דלא מסתייעא מילתא למימרא, דהא אנא הוה גמירנא ליה להא דרב ושמואל, אפי' הכי לא מסתייעא לי מילתא למימר.",
-   "expert_coverage": 0.965,
+   "expert_coverage": 0.958,
    "expert_located": [
     [
-     "Ketubot 60a",
-     10
+     "Ketubot 60b",
+     2
     ],
     [
      "Ketubot 60b",
-     5
+     4
     ]
    ],
    "expert_segments": [
@@ -2590,20 +2402,20 @@
   },
   {
    "id": "ketubot_r043",
-   "ref": "Ketubot 60a",
+   "ref": "Ketubot 60b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ת\"ר: נתנה בנה למינקת, או גמלתו, או מת - מותרת לינשא מיד. רב פפא ורב הונא בריה דרב יהושע סבור למיעבד עובדא כי הא מתניתא, אמרה להו ההיא סבתא: בדידי הוה עובדא ואסר לי רב נחמן. איני? והא רב נחמן שרא להו לבי ריש גלותא! שאני בי ריש גלותא, דלא הדר בהו.",
-   "expert_coverage": 0.97,
+   "expert_coverage": 0.963,
    "expert_located": [
     [
-     "Ketubot 60a",
-     13
+     "Ketubot 60b",
+     5
     ],
     [
      "Ketubot 60b",
-     8
+     6
     ]
    ],
    "expert_segments": [
@@ -2653,7 +2465,7 @@
    "expert_located": [
     [
      "Ketubot 60b",
-     3
+     9
     ],
     [
      "Ketubot 60b",
@@ -2694,7 +2506,7 @@
   },
   {
    "id": "ketubot_r045",
-   "ref": "Ketubot 60b",
+   "ref": "Ketubot 61a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2702,8 +2514,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 60b",
-     9
+     "Ketubot 61a",
+     0
     ],
     [
      "Ketubot 61a",
@@ -2717,28 +2529,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 60b",
-     5,
-     9
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 60b_5-9",
-     "verdict": "incorrect",
-     "note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -2753,7 +2550,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     6
+     12
     ],
     [
      "Ketubot 61a",
@@ -2809,7 +2606,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     6
+     12
     ],
     [
      "Ketubot 61a",
@@ -2865,7 +2662,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     6
+     12
     ],
     [
      "Ketubot 61a",
@@ -2921,7 +2718,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     7
+     13
     ],
     [
      "Ketubot 61a",
@@ -2935,34 +2732,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 61a",
-     12,
-     12
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 61a_12-12",
-     "verdict": "correct",
-     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 61a_12-12",
-     "verdict": "correct",
-     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -2977,7 +2753,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     8
+     14
     ],
     [
      "Ketubot 61a",
@@ -2991,34 +2767,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 61a",
-     12,
-     12
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 61a_12-12",
-     "verdict": "correct",
-     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 61a_12-12",
-     "verdict": "correct",
-     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -3033,7 +2788,7 @@
    "expert_located": [
     [
      "Ketubot 61a",
-     10
+     15
     ],
     [
      "Ketubot 61b",
@@ -3090,16 +2845,16 @@
   },
   {
    "id": "ketubot_r052",
-   "ref": "Ketubot 61a",
+   "ref": "Ketubot 61b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא רומאה דאמר לה לההיא איתתא: מינסבת לי? אמרה ליה: לא. אזיל אייתי רימני, פלי ואכל קמה, כל מיא דצערי לה בלעתיה, ולא הב לה, עד דזג לה. לסוף אמר לה: אי מסינא לך מינסבת לי? אמרה ליה: אין. אזיל אייתי רימני, פלי ואכל קמה, אמר לה: כל מיא דצערי לך תוף שדאי, תוף שדאי, עד דנפקא מינה כי הוצא ירקא ואתסיאת.",
-   "expert_coverage": 0.982,
+   "expert_coverage": 0.969,
    "expert_located": [
     [
-     "Ketubot 61a",
-     11
+     "Ketubot 61b",
+     1
     ],
     [
      "Ketubot 61b",
@@ -3152,20 +2907,20 @@
   },
   {
    "id": "ketubot_r053",
-   "ref": "Ketubot 61b",
+   "ref": "Ketubot 62a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא ישראל ועובד כוכבים דהוו קאזלי באורחא בהדי הדדי, לא אימצי עובד כוכבים לסגויי בהדי ישראל, אדכריה חורבן בית המקדש נגיד ואיתנח, ואפ\"ה לא אימצי עובד כוכבים לסגויי בהדיה. א\"ל: לאו אמריתו אנחה שוברת חצי גופו של אדם? א\"ל: ה\"מ מילתא חדתי, אבל הא דשנן בה לא, דאמרי אינשי: דמלפי תכלי לא בהתה.",
-   "expert_coverage": 0.811,
+   "expert_coverage": 0.8,
    "expert_located": [
     [
-     "Ketubot 61b",
-     16
+     "Ketubot 62a",
+     4
     ],
     [
-     "Ketubot 62b",
-     2
+     "Ketubot 62a",
+     4
     ]
    ],
    "expert_segments": [
@@ -3223,7 +2978,7 @@
    "expert_located": [
     [
      "Ketubot 62a",
-     1
+     7
     ],
     [
      "Ketubot 62a",
@@ -3279,7 +3034,7 @@
    "expert_located": [
     [
      "Ketubot 62a",
-     1
+     7
     ],
     [
      "Ketubot 62a",
@@ -3326,7 +3081,7 @@
   },
   {
    "id": "ketubot_r056",
-   "ref": "Ketubot 62a",
+   "ref": "Ketubot 62b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3334,8 +3089,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 62a",
-     7
+     "Ketubot 62b",
+     3
     ],
     [
      "Ketubot 62b",
@@ -3382,7 +3137,7 @@
   },
   {
    "id": "ketubot_r057",
-   "ref": "Ketubot 62a",
+   "ref": "Ketubot 62b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3390,8 +3145,8 @@
    "expert_coverage": 0.969,
    "expert_located": [
     [
-     "Ketubot 62a",
-     9
+     "Ketubot 62b",
+     5
     ],
     [
      "Ketubot 62b",
@@ -3443,15 +3198,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי איעסק ליה לבריה בי רבי חייא, כי מטא למיכתב כתובה נח נפשה דרביתא. אמר רבי: ח\"ו פסולא איכא? יתיבו ועיינו במשפחות, רבי אתי משפטיה בן אביטל, ורבי חייא אתי משמעי אחי דוד. אזיל איעסק ליה לבריה בי ר' יוסי בן זימרא, פסקו ליה תרתי סרי שנין למיזל בבי רב. אחלפוה קמיה, אמר להו: ניהוו שית שנין. אחלפוה קמיה, אמר להו: איכניס והדר איזיל. הוה קא מכסיף מאבוה א\"ל: בני, דעת קונך יש בך, מעיקרא כתיב: תביאמו ותטעמו, ולבסוף כתיב: ועשו לי מקדש ושכנתי בתוכם. אזיל יתיב תרתי סרי שני בבי רב. עד דאתא איעקרא דביתהו. אמר רבי: היכי נעביד? נגרשה, יאמרו ענייה זו לשוא שימרה! נינסיב איתתא אחריתי, יאמרו זו אשתו וזו זונתו! בעי עלה רחמי ואיתסיאת.",
-   "expert_coverage": 0.941,
+   "expert_coverage": 0.929,
    "expert_located": [
     [
      "Ketubot 62b",
-     3
+     6
     ],
     [
      "Ketubot 62b",
-     12
+     9
     ]
    ],
    "expert_segments": [
@@ -3535,15 +3290,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "חנניה בן חכינאי הוה קאזיל לבי רב בשילהי הלוליה דר\"ש בן יוחאי, א\"ל: איעכב לי עד דאתי בהדך, לא איעכבא ליה. אזל יתיב תרי סרי שני בבי רב. עד דאתי אישתנו שבילי דמתא ולא ידע למיזל לביתיה. אזל יתיב אגודא דנהרא, שמע לההיא רביתא דהוו קרו לה: בת חכינאי, בת חכינאי, מלי קולתך ותא ניזיל. אמר: ש\"מ, האי רביתא דידן, אזל בתרה. הוה יתיבא דביתהו קא נהלה קמחא, דל עינה חזיתיה, סוי לבה פרח רוחה. אמר לפניו: רבש\"ע, ענייה זו זה שכרה? בעא רחמי עלה וחייה.",
-   "expert_coverage": 0.921,
+   "expert_coverage": 0.907,
    "expert_located": [
     [
      "Ketubot 62b",
-     6
+     10
     ],
     [
-     "Ketubot 63a",
-     4
+     "Ketubot 62b",
+     11
     ]
    ],
    "expert_segments": [
@@ -3589,11 +3344,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי חמא בר ביסא אזיל יתיב תרי סרי שני בבי מדרשא. כי אתא, אמר: לא איעביד כדעביד בן חכינאי, עייל יתיב במדרשא, שלח לביתיה. אתא ר' אושעיא בריה יתיב קמיה, הוה קא משאיל ליה שמעתא, חזא דקא מתחדדי שמעתיה, חלש דעתיה, אמר: אי הואי הכא הוה לי זרע כי האי. על לביתיה, על בריה, קם קמיה. הוא סבר, למשאליה שמעתתא קא בעי, אמרה ליה דביתהו: מי איכא אבא דקאים מקמי ברא? קרי עליה רמי בר חמא: החוט המשולש לא במהרה ינתק - זה ר' אושעיא בנו של רבי חמא בר ביסא.",
-   "expert_coverage": 0.947,
+   "expert_coverage": 0.943,
    "expert_located": [
     [
      "Ketubot 62b",
-     6
+     12
     ],
     [
      "Ketubot 62b",
@@ -3649,11 +3404,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ר\"ע רעיא דבן כלבא שבוע הוה, חזיתיה ברתיה דהוה צניע ומעלי, אמרה ליה: אי מקדשנא לך אזלת לבי רב? אמר לה: אין. איקדשא ליה בצינעה ושדרתיה. שמע אבוה אפקה מביתיה, אדרה הנאה מנכסיה. אזיל יתיב תרי סרי שנין בבי רב. כי אתא, אייתי בהדיה תרי סרי אלפי תלמידי. שמעיה לההוא סבא דקאמר לה: עד כמה קא מדברת אלמנות חיים? אמרה ליה: אי לדידי ציית, יתיב תרי סרי שני אחריני. אמר: ברשות קא עבידנא, הדר אזיל ויתיב תרי סרי שני אחריני בבי רב. כי אתא, אייתי בהדיה עשרין וארבעה אלפי תלמידי. שמעה דביתהו הות קא נפקא לאפיה, אמרו לה שיבבתא: שאילי מאני לבוש ואיכסאי, אמרה להו: יודע צדיק נפש בהמתו. כי מטיא לגביה, נפלה על אפה קא מנשקא ליה לכרעיה, הוו קא מדחפי לה שמעיה, אמר להו: שבקוה, שלי ושלכם שלה הוא. שמע אבוה דאתא גברא רבה למתא, אמר: איזיל לגביה, אפשר דמפר נדראי. אתא לגביה, א\"ל: אדעתא דגברא רבה מי נדרת? א\"ל: אפילו פרק אחד ואפי' הלכה אחת. אמר ליה: אנא הוא, נפל על אפיה ונשקיה על כרעיה, ויהיב ליה פלגא ממוניה. ברתיה דר\"ע עבדא ליה לבן עזאי הכי. והיינו דאמרי אינשי: רחילא בתר רחילא אזלא, כעובדי אמה כך עובדי ברתא.",
-   "expert_coverage": 0.955,
+   "expert_coverage": 0.946,
    "expert_located": [
     [
      "Ketubot 62b",
-     4
+     14
     ],
     [
      "Ketubot 63a",
@@ -3714,7 +3469,7 @@
   },
   {
    "id": "ketubot_r062",
-   "ref": "Ketubot 62b",
+   "ref": "Ketubot 63a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3722,8 +3477,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 62b",
-     11
+     "Ketubot 63a",
+     2
     ],
     [
      "Ketubot 63a",
@@ -3785,7 +3540,7 @@
    "expert_located": [
     [
      "Ketubot 63b",
-     2
+     8
     ],
     [
      "Ketubot 63b",
@@ -3847,7 +3602,7 @@
    "expert_located": [
     [
      "Ketubot 65a",
-     3
+     8
     ],
     [
      "Ketubot 65a",
@@ -3907,7 +3662,7 @@
    "expert_located": [
     [
      "Ketubot 65a",
-     4
+     10
     ],
     [
      "Ketubot 65a",
@@ -3969,7 +3724,7 @@
    "expert_located": [
     [
      "Ketubot 65a",
-     5
+     11
     ],
     [
      "Ketubot 65a",
@@ -3977,10 +3732,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 65a",
-     10
-    ],
     [
      "Ketubot 65a",
      11
@@ -3992,39 +3743,15 @@
    "detector_span": [
     [
      "Ketubot 65a",
-     10,
-     10
-    ],
-    [
-     "Ketubot 65a",
      11,
      11
     ]
    ],
    "detector_classification": [
-    "LOW_CONFIDENCE",
     "LOW_CONFIDENCE"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 65a_10-10",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 65a_10-10",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 65a_10-10",
-     "verdict": "correct",
-     "note": "correct, but the classification has an error. The woman does not drink the wine. It is borderline/low confidence because it is mainly the actions of a court. But it has drama, change etc."
-    },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 65a_11-11",
@@ -4059,7 +3786,7 @@
    "expert_located": [
     [
      "Ketubot 66b",
-     3
+     9
     ],
     [
      "Ketubot 66b",
@@ -4111,11 +3838,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ת\"ר: מעשה ברבן יוחנן בן זכאי שהיה רוכב על החמור והיה יוצא מירושלים, והיו תלמידיו מהלכין אחריו. ראה ריבה אחת שהיתה מלקטת שעורים מבין גללי בהמתן של ערביים, כיון שראתה אותו נתעטפה בשערה ועמדה לפניו, אמרה לו: רבי, פרנסני! אמר לה: בתי, מי את? אמרה לו: בת נקדימון בן גוריון אני. אמר לה: בתי, ממון של בית אביך היכן הלך? אמרה לו: רבי, לא כדין מתלין מתלא בירושלים מלח ממון חסר? ואמרי לה חסד. ושל בית חמיך היכן הוא? אמרה לו: בא זה ואיבד את זה. אמרה לו: רבי, זכור אתה כשחתמת על כתובתי? אמר להן לתלמידיו: זכור אני כשחתמתי על כתובתה של זו, והייתי קורא בה אלף אלפים דינרי זהב מבית אביה חוץ משל חמיה. בכה רבן יוחנן בן זכאי ואמר: אשריכם ישראל, בזמן שעושין רצונו של מקום - אין כל אומה ולשון שולטת בהם, ובזמן שאין עושין רצונו של מקום - מוסרן ביד אומה שפלה, ולא ביד אומה שפלה אלא ביד בהמתן של אומה שפלה...",
-   "expert_coverage": 0.99,
+   "expert_coverage": 0.987,
    "expert_located": [
     [
      "Ketubot 66b",
-     6
+     10
     ],
     [
      "Ketubot 66b",
@@ -4164,7 +3891,7 @@
   },
   {
    "id": "ketubot_r069",
-   "ref": "Ketubot 66b",
+   "ref": "Ketubot 67a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4172,8 +3899,8 @@
    "expert_coverage": 0.979,
    "expert_located": [
     [
-     "Ketubot 66b",
-     9
+     "Ketubot 67a",
+     1
     ],
     [
      "Ketubot 67a",
@@ -4207,7 +3934,7 @@
   },
   {
    "id": "ketubot_r070",
-   "ref": "Ketubot 67a",
+   "ref": "Ketubot 67b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4215,8 +3942,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 67a",
-     9
+     "Ketubot 67b",
+     2
     ],
     [
      "Ketubot 67b",
@@ -4242,7 +3969,7 @@
   },
   {
    "id": "ketubot_r071",
-   "ref": "Ketubot 67a",
+   "ref": "Ketubot 67b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4250,8 +3977,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 67a",
-     10
+     "Ketubot 67b",
+     3
     ],
     [
      "Ketubot 67b",
@@ -4298,7 +4025,7 @@
   },
   {
    "id": "ketubot_r072",
-   "ref": "Ketubot 67a",
+   "ref": "Ketubot 67b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4306,8 +4033,8 @@
    "expert_coverage": 0.974,
    "expert_located": [
     [
-     "Ketubot 67a",
-     11
+     "Ketubot 67b",
+     4
     ],
     [
      "Ketubot 67b",
@@ -4384,7 +4111,7 @@
   },
   {
    "id": "ketubot_r073",
-   "ref": "Ketubot 67a",
+   "ref": "Ketubot 67b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4392,8 +4119,8 @@
    "expert_coverage": 0.938,
    "expert_located": [
     [
-     "Ketubot 67a",
-     12
+     "Ketubot 67b",
+     5
     ],
     [
      "Ketubot 67b",
@@ -4465,7 +4192,7 @@
    "expert_located": [
     [
      "Ketubot 67b",
-     6
+     11
     ],
     [
      "Ketubot 67b",
@@ -4525,7 +4252,7 @@
    "expert_located": [
     [
      "Ketubot 67b",
-     8
+     14
     ],
     [
      "Ketubot 67b",
@@ -4603,7 +4330,7 @@
    "expert_located": [
     [
      "Ketubot 67b",
-     10
+     16
     ],
     [
      "Ketubot 67b",
@@ -4617,70 +4344,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 67b",
-     11,
-     12
-    ],
-    [
-     "Ketubot 67b",
-     14,
-     14
-    ],
-    [
-     "Ketubot 67b",
-     15,
-     15
-    ]
-   ],
-   "detector_classification": [
-    "YES",
-    "YES",
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 67b_11-12",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 67b_11-12",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 67b_14-14",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 67b_15-15",
-     "verdict": "incorrect",
-     "note": "The classification is correct. But the borders of the story still have to be adjusted per my original note. The story ends with קָם בַּזְבְּזֵיהּ לְפַלְגֵיהּ מָמוֹנֵיהּ"
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 67b_15-15",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 67b_15-15",
-     "verdict": "incorrect",
-     "note": "This is clearly a story. It can be kept as \"yes.\" But the boundaries of the story are a little off. The story ends with Mar Ukva distributing his money to charity. The next part is the Talmud's question on the story (הֵיכִי עֲבַד הָכִי? וְהָאָמַר רַבִּי אִילְעַאי, בְּאוּשָׁא הִתְקִינוּ: הַמְבַזְבֵּז — אַל יְבַזְבֵּז יוֹתֵר מֵחוֹמֶשׁ! הָנֵי מִילֵּי מֵחַיִּים, שֶׁמָּא יֵרֵד מִנְּכָסָיו. אֲבָל לְאַחַר מִיתָה לֵית לַן בַּהּ.)"
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -4695,7 +4365,7 @@
    "expert_located": [
     [
      "Ketubot 67b",
-     11
+     17
     ],
     [
      "Ketubot 68a",
@@ -4751,11 +4421,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמר רב מניומי בריה דרב ניחומי: הוה קאימנא קמיה דאמימר, ואתאי האי איתתא לקמיה דהות קא בעיא עישור נכסים, וחזיתיה לדעתיה דאי בעי לסלוקה בזוזי הוי מסלק לה, דשמעי מאחי דהוו קאמרי לה: אילו הוה לן זוזי סליקנא בזוזי, ואישתיק ולא אמר להו ולא מידי.",
-   "expert_coverage": 0.989,
+   "expert_coverage": 0.978,
    "expert_located": [
     [
      "Ketubot 69a",
-     4
+     10
     ],
     [
      "Ketubot 69a",
@@ -4811,7 +4481,7 @@
    "expert_located": [
     [
      "Ketubot 69a",
-     8
+     14
     ],
     [
      "Ketubot 69b",
@@ -4885,7 +4555,7 @@
    "expert_located": [
     [
      "Ketubot 69b",
-     5
+     10
     ],
     [
      "Ketubot 70a",
@@ -4950,7 +4620,7 @@
   },
   {
    "id": "ketubot_r081",
-   "ref": "Ketubot 72a",
+   "ref": "Ketubot 72b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4958,8 +4628,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 72a",
-     16
+     "Ketubot 72b",
+     3
     ],
     [
      "Ketubot 72b",
@@ -4994,7 +4664,7 @@
    "expert_located": [
     [
      "Ketubot 77a",
-     8
+     13
     ],
     [
      "Ketubot 77a",
@@ -5029,15 +4699,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ריב\"ל מיכרך בהו ועסיק בתורה, אמר: אילת אהבים ויעלת חן - אם חן מעלה על לומדיה, אגוני לא מגנא? כי הוה שכיב, אמרו ליה למלאך המות: זיל עביד ליה רעותיה. אזל איתחזי ליה, א\"ל: אחוי לי דוכתאי, אמר ליה: לחיי. א\"ל: הב לי סכינך, דלמא מבעתת לי באורחא, יהבה ניהליה. כי מטא להתם, דלייה קא מחוי ליה, שוור נפל לההוא גיסא, נקטיה בקרנא דגלימיה, א\"ל: בשבועתא דלא אתינא. אמר קודשא בריך הוא: אי איתשיל אשבועתא ניהדר, אי לא - לא ניהדר. אמר ליה: הב לי סכינאי, לא הוה קא יהיב ליה, נפקא בת קלא ואמרה ליה: הב ניהליה, דמיתבעא לברייתא. מכריז אליהו קמיה: פנו מקום לבר ליואי, פנו מקום לבר ליואי. אזל אשכחיה לר' שמעון בן יוחאי דהוה יתיב על תלת עשר תכטקי פיזא, אמר ליה: את הוא בר ליואי? אמר ליה: הן. נראתה קשת בימיך? אמר ליה: הן, אם כן אי אתה בר ליואי. ולא היא, דלא הואי מידי, אלא סבר: לא אחזיק טיבותא לנפשאי.",
-   "expert_coverage": 0.95,
+   "expert_coverage": 0.948,
    "expert_located": [
     [
      "Ketubot 77b",
-     2
+     5
     ],
     [
-     "Ketubot 78a",
-     1
+     "Ketubot 77b",
+     8
     ]
    ],
    "expert_segments": [
@@ -5093,22 +4763,18 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי חנינא בר פפא שושביניה הוה, כי הוה קא ניחא נפשיה, אמרו ליה למלאך המות: זיל עביד ליה רעותיה. אזל לגביה ואיתחזי ליה, אמר ליה: שבקי תלתין יום עד דנהדר תלמודאי, דאמרי: אשרי מי שבא לכאן ותלמודו בידו, שבקיה. לבתר תלתין יומין אזל איתחזי ליה, א\"ל: אחוי לי דוכתאי, א\"ל: לחיי. א\"ל: הב לי סכינך, דלמא מבעתת לי באורחא, אמר ליה: כחברך בעית למיעבד לי? אמר ליה: אייתי ספר תורה וחזי, מי איכא מידי דכתיב ביה דלא קיימתיה! אמר ליה: מי איכרכת בבעלי ראתן ואיעסקת בתורה? ואפילו הכי, כי נח נפשיה אפסיק ליה עמודא דנורא בין דידיה לעלמא, וגמירי, דלא מפסיק עמודא דנורא אלא לחד בדרא או לתרין בדרא. קרב לגביה רבי אלכסנדרי, אמר: עשה בשביל כבוד חכמים! לא אשגח. עשה בשביל כבוד אביך! לא אשגח. עשה בשביל כבוד עצמך! איסתלק. אמר אביי: לאפוקי ממאן דלא קיים (אפילו אות אחת). אמר ליה רב אדא בר מתנא: לאפוקי ממר, דלא אית ליה מעקה לאיגריה. ולא היא, מיהוה הוה, וההיא שעתא הוא דשדייה זיקא.",
-   "expert_coverage": 0.97,
+   "expert_coverage": 0.969,
    "expert_located": [
     [
      "Ketubot 77b",
-     3
+     9
     ],
     [
-     "Ketubot 78a",
-     1
+     "Ketubot 77b",
+     11
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 77b",
-     6
-    ],
     [
      "Ketubot 77b",
      9
@@ -5128,33 +4794,15 @@
    "detector_span": [
     [
      "Ketubot 77b",
-     6,
-     8
-    ],
-    [
-     "Ketubot 77b",
      9,
      11
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 77b_6-8",
-     "verdict": "correct",
-     "note": "Correct reasoning. Boundaries are not exact. The story begins with the previous line: רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 77b_6-8",
-     "verdict": "correct",
-     "note": "Reasoning is correct but the story starts one line earlier with R. Yehoshua ben Levi's name:  רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא?"
-    },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 77b_9-11",
@@ -5179,15 +4827,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההיא איתתא דבעיא דתברחינהו לנכסה מגברה, כתבתינהו לברתה, אינסיבה ואיגרשה, אתאי לקמיה דרב נחמן, קרעיה ר\"נ לשטרא. אזל רב ענן לקמיה דמר עוקבא, א\"ל: חזי מר, נחמן חקלאה היכי מקרע שטרי דאינשי! א\"ל: אימא לי איזי גופא דעובדא היכי הוה, א\"ל: הכי והכי הוה. א\"ל: שטר מברחת קא אמרת? הכי א\"ר חנילאי בר אידי אמר שמואל: מורה הוראה אני, אם יבא שטר מברחת לידי אקרענו.",
-   "expert_coverage": 0.9,
+   "expert_coverage": 0.895,
    "expert_located": [
     [
      "Ketubot 78b",
-     6
+     11
     ],
     [
      "Ketubot 79a",
-     3
+     1
     ]
    ],
    "expert_segments": [
@@ -5238,20 +4886,20 @@
   },
   {
    "id": "ketubot_r086",
-   "ref": "Ketubot 79b",
+   "ref": "Ketubot 80a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההיא איתתא דנפלו לה ארבע מאה זוזי בי חוזאי, אזיל גברא אפיק שית מאה אייתי ארבע מאה, בהדי דקאתי איצטריך ליה חד זוזא ושקל מנייהו, אתא לקמיה דר' אמי, א\"ל: מה שהוציא הוציא, ומה שאכל אכל. אמרו ליה רבנן לר' אמי: ה\"מ היכא דקאכיל פירא, הא קרנא קאכיל והוצאה היא! א\"כ, הוה ליה הוציא ולא אכל, ישבע כמה הוציא ויטול.",
-   "expert_coverage": 0.901,
+   "expert_coverage": 0.892,
    "expert_located": [
     [
-     "Ketubot 79b",
-     13
+     "Ketubot 80a",
+     4
     ],
     [
      "Ketubot 80a",
-     7
+     5
     ]
    ],
    "expert_segments": [
@@ -5298,16 +4946,16 @@
   },
   {
    "id": "ketubot_r087",
-   "ref": "Ketubot 80a",
+   "ref": "Ketubot 80b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההיא איתתא דעיילה ליה לגברא תרתי אמהתא, אזל גברא נסיב איתתא אחריתי עייל לה חדא מנייהו, אתאי לקמיה דרבא, צווחה לא אשגח בה; מאן דחזא סבר, משום דסבר: מה שעשה עשוי, ולא היא, משום רווח ביתא, והא קא רווח.",
-   "expert_coverage": 1.0,
+   "expert_coverage": 0.978,
    "expert_located": [
     [
-     "Ketubot 80a",
-     2
+     "Ketubot 80b",
+     1
     ],
     [
      "Ketubot 80b",
@@ -5358,7 +5006,7 @@
   },
   {
    "id": "ketubot_r088",
-   "ref": "Ketubot 81b",
+   "ref": "Ketubot 82a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -5366,8 +5014,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 81b",
-     10
+     "Ketubot 82a",
+     3
     ],
     [
      "Ketubot 82a",
@@ -5419,15 +5067,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "בראשונה היו כותבין לבתולה מאתים ולאלמנה מנה, והיו מזקינין ולא היו נושאין נשים, עד שבא שמעון בן שטח ותיקן: כל נכסיו אחראין לכתובתה. תניא נמי הכי: בראשונה היו כותבין לבתולה מאתים ולאלמנה מנה, והיו מזקינין ולא היו נושאין נשים, התקינו שיהיו מניחין אותה בבית אביה; ועדיין כשהוא כועס עליה, אומר לה לכי אצל כתובתיך, התקינו שיהיו מניחין אותה בבית חמיה, עשירות עושות אותה קלתות של כסף ושל זהב, עניות היו עושות אותה עביט של מימי רגלים; ועדיין כשכועס עליה, אומר לה טלי כתובתיך וצאי, עד שבא שמעון בן שטח ותיקן, שיהא כותב לה כל נכסי אחראין לכתובתה.",
-   "expert_coverage": 0.971,
+   "expert_coverage": 0.967,
    "expert_located": [
     [
      "Ketubot 82b",
-     5
+     9
     ],
     [
-     "Ketubot 83a",
-     4
+     "Ketubot 82b",
+     12
     ]
    ],
    "expert_segments": [
@@ -5466,11 +5114,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "קריביה דר' יוחנן תפוס פרה דיתמי מסימטא, אתו לקמיה דר' יוחנן, אמר להו: שפיר תפסתוה. אתו לקמיה דרבי שמעון בן לקיש, אמר להו: זילו אהדור. אתו לקמיה דרבי יוחנן, אמר להו: מה אעשה, שכנגדי חלוק עלי.",
-   "expert_coverage": 0.981,
+   "expert_coverage": 0.972,
    "expert_located": [
     [
      "Ketubot 84b",
-     1
+     7
     ],
     [
      "Ketubot 84b",
@@ -5532,7 +5180,7 @@
    "expert_located": [
     [
      "Ketubot 84b",
-     2
+     8
     ],
     [
      "Ketubot 84b",
@@ -5590,15 +5238,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "דבי נשיאה תפוס אמתא דיתמי מסימטא, יתיב ר' אבהו ור' חנינא בר פפי ור' יצחק נפחא ויתיב רבי אבא גבייהו, אמר להו: שפיר תפסיתוה. אמר להו ר' אבא: משום דבי נשיאה נינהו מחנפיתו להו? והא דון דייני כר' טרפון, ואהדריה ריש לקיש עובדא מינייהו.",
-   "expert_coverage": 0.925,
+   "expert_coverage": 0.906,
    "expert_located": [
     [
      "Ketubot 84b",
-     4
+     10
     ],
     [
-     "Ketubot 85a",
-     3
+     "Ketubot 84b",
+     10
     ]
    ],
    "expert_segments": [
@@ -5646,15 +5294,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "יימר בר חשו הוה מסיק ביה זוזי בההוא גברא, שכיב ושביק ארבא, א\"ל לשלוחיה: זיל תפסה ניהליה, אזל תפסה. פגעו ביה רב פפא ורב הונא ברי' דרב יהושע, אמרו ליה: את תופס לב\"ח במקום שחב לאחרים, ואמר רבי יוחנן: התופס לבע\"ח במקום שחב לאחרים -לא קנה. תפסוה אינהו, רב פפא מימלח מלוחי, רב הונא בריה דרב יהושע ממתח לה באשלא, מר אמר: אנא קנינא לה לכולה, ומר אמר: אנא קנינא לה לכולה. פגע בהו רב פנחס בר אמי, אמר להו, רב ושמואל דאמרי תרוייהו: והוא שצבורין ומונחין ברה\"ר! אמר להו: אנן נמי מחריפותא דנהרא תפיסנא. אתו לקמיה דרבא, אמר להו: קאקי חיורי משלחי גלימי דאינשי, הכי אמר רב נחמן: והוא שתפסה מחיים.",
-   "expert_coverage": 0.914,
+   "expert_coverage": 0.909,
    "expert_located": [
     [
      "Ketubot 84b",
-     6
+     11
     ],
     [
      "Ketubot 85a",
-     7
+     2
     ]
    ],
    "expert_segments": [
@@ -5715,20 +5363,20 @@
   },
   {
    "id": "ketubot_r094",
-   "ref": "Ketubot 84b",
+   "ref": "Ketubot 85a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אבימי בריה דרבי אבהו הוו מסקי ביה זוזי בי חוזאי, שדרינהו ביד חמא בריה דרבה בר אבהו, אזל פרעינהו. אמר להו: הבו לי שטרא, אמרו ליה: סיטראי נינהו. אתא לקמיה דרבי אבהו, א\"ל: אית לך סהדי דפרעתינהו? אמר ליה: לא, אמר ליה: מיגו דיכולין לומר לא היו דברים מעולם, יכולין נמי למימר סיטראי נינהו.",
-   "expert_coverage": 0.977,
+   "expert_coverage": 0.966,
    "expert_located": [
     [
-     "Ketubot 84b",
-     9
+     "Ketubot 85a",
+     3
     ],
     [
      "Ketubot 85a",
-     7
+     4
     ]
    ],
    "expert_segments": [
@@ -5786,15 +5434,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההיא איתתא דהוו מיפקדי גבה מלוגא דשטרי, אתו יורשים קא תבעי ליה מינה, אמרה להו: מחיים תפיסנא להו. אתאי לקמי' דרב נחמן, אמר לה: אית ליך סהדי דתבעוה מיניך מחיים ולא יהבית ניהליה? א\"ל: לא. א\"כ, הוי תפיסה דלאחר מיתה, ותפיסה דלאחר מיתה לא כלום היא.",
-   "expert_coverage": 0.939,
+   "expert_coverage": 0.933,
    "expert_located": [
     [
      "Ketubot 85a",
-     2
+     7
     ],
     [
      "Ketubot 85a",
-     15
+     7
     ]
    ],
    "expert_segments": [
@@ -5842,11 +5490,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההיא איתתא דאיחייבא שבועה בי דינא דרבא, אמרה ליה בת רב חסדא: ידענא בה דחשודה אשבועה, אפכה רבא לשבועה אשכנגדה. זימנין הוו יתבי קמיה רב פפא ורב אדא בר מתנא, אייתו ההוא שטרא גביה, א\"ל רב פפא: ידענא ביה דשטרא פריעא הוא, א\"ל: איכא איניש אחרינא בהדי' דמר? א\"ל: לא, א\"ל: אע\"ג דאיכא מר, עד אחד לאו כלום הוא. א\"ל רב אדא בר מתנא: ולא יהא רב פפא כבת רב חסדא? בת רב חסדא קים לי בגווה, מר לא קים לי בגוויה.",
-   "expert_coverage": 0.894,
+   "expert_coverage": 0.89,
    "expert_located": [
     [
      "Ketubot 85a",
-     3
+     8
     ],
     [
      "Ketubot 85a",
@@ -5940,7 +5588,7 @@
    "expert_located": [
     [
      "Ketubot 85a",
-     7
+     13
     ],
     [
      "Ketubot 85a",
@@ -5992,15 +5640,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "הוא גברא דאפקיד שב מרגניתא דציירי בסדינא בי רבי מיאשא בר בריה דר' יהושע בן לוי, שכיב ר' מיאשא ולא פקיד, אתו לקמיה דר' אמי, א\"ל: חדא, דידענא ביה בר' מיאשא בר בריה דר' יהושע בן לוי דלא אמיד; ועוד, הא קא יהיב סימנא. ולא אמרן - אלא דלא רגיל דעייל ונפיק להתם, אבל רגיל דעייל ונפיק להתם, אימא איניש אחרינא אפקיד ואיהו מיחזא חזא.",
-   "expert_coverage": 0.931,
+   "expert_coverage": 0.915,
    "expert_located": [
     [
      "Ketubot 85b",
-     0
+     1
     ],
     [
-     "Ketubot 86a",
-     3
+     "Ketubot 85b",
+     2
     ]
    ],
    "expert_segments": [
@@ -6011,14 +5659,6 @@
     [
      "Ketubot 85b",
      2
-    ],
-    [
-     "Ketubot 85b",
-     3
-    ],
-    [
-     "Ketubot 85b",
-     4
     ]
    ],
    "not_blind_reason": null,
@@ -6029,22 +5669,10 @@
      "Ketubot 85b",
      1,
      1
-    ],
-    [
-     "Ketubot 85b",
-     3,
-     3
-    ],
-    [
-     "Ketubot 85b",
-     4,
-     4
     ]
    ],
    "detector_classification": [
-    "HIGH_CONFIDENCE",
-    "YES",
-    "YES"
+    "HIGH_CONFIDENCE"
    ],
    "in_golden": true,
    "verdicts": [
@@ -6059,30 +5687,6 @@
      "key": "Ketubot 85b_1-1",
      "verdict": "correct",
      "note": "Yes, this is a borderline story but it has more than enough to be included."
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 85b_3-3",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 85b_3-3",
-     "verdict": "correct",
-     "note": "Agreed. A borderline / low confidence story."
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 85b_4-4",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 85b_4-4",
-     "verdict": "correct",
-     "note": "borderline, but enough for a borderline story."
     }
    ],
    "verdict_match": "exact",
@@ -6091,7 +5695,7 @@
   },
   {
    "id": "ketubot_r099",
-   "ref": "Ketubot 85a",
+   "ref": "Ketubot 85b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -6099,8 +5703,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 85a",
-     15
+     "Ketubot 85b",
+     3
     ],
     [
      "Ketubot 85b",
@@ -6108,10 +5712,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 85b",
-     2
-    ],
     [
      "Ketubot 85b",
      3
@@ -6151,7 +5751,7 @@
   },
   {
    "id": "ketubot_r100",
-   "ref": "Ketubot 85a",
+   "ref": "Ketubot 85b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -6159,8 +5759,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Ketubot 85a",
-     16
+     "Ketubot 85b",
+     4
     ],
     [
      "Ketubot 85b",
@@ -6168,10 +5768,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 85b",
-     1
-    ],
     [
      "Ketubot 85b",
      4
@@ -6183,33 +5779,15 @@
    "detector_span": [
     [
      "Ketubot 85b",
-     1,
-     1
-    ],
-    [
-     "Ketubot 85b",
      4,
      4
     ]
    ],
    "detector_classification": [
-    "HIGH_CONFIDENCE",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 85b_1-1",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 85b_1-1",
-     "verdict": "correct",
-     "note": "Yes, this is a borderline story but it has more than enough to be included."
-    },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_4-4",
@@ -6234,14 +5812,14 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאמר להו: נכסיי לטוביה, שכיב, אתא טוביה, א\"ר יוחנן: הרי בא טוביה.",
-   "expert_coverage": 0.93,
+   "expert_coverage": 0.907,
    "expert_located": [
     [
      "Ketubot 85b",
-     2
+     5
     ],
     [
-     "Ketubot 86a",
+     "Ketubot 85b",
      5
     ]
    ],
@@ -6294,7 +5872,7 @@
    "expert_located": [
     [
      "Ketubot 85b",
-     3
+     9
     ],
     [
      "Ketubot 86a",
@@ -6350,22 +5928,18 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ניכסי דבי בר צרצור מועטין ונתרבו הוו, ואתו לקמיה דרב עמרם, אמר להו: זילו פייסינהו, לא אשגחו. אמר להו: אי לא מפייסיתו להו, מחינא לכו בסילוא דלא מבע דמא. שדרינהו לקמיה דרב נחמן, אמר להן: כשם שמרובין ונתמעטו זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין.",
-   "expert_coverage": 0.974,
+   "expert_coverage": 0.968,
    "expert_located": [
     [
      "Ketubot 91a",
-     17
+     19
     ],
     [
      "Ketubot 91b",
-     9
+     0
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 91a",
-     18
-    ],
     [
      "Ketubot 91a",
      19
@@ -6419,20 +5993,20 @@
   },
   {
    "id": "ketubot_r104",
-   "ref": "Ketubot 91a",
+   "ref": "Ketubot 91b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "הוא גברא דהוו מסקי ביה אלפא זוזי, הוו ליה תרי אפדני, זבינהו חדא בחמש מאה וחדא בחמש מאה, אתא בעל חוב טרפא לחדא מינייהו, הדר קטריף לאידך, שקל אלפא זוזי וקא אזיל לגביה, א\"ל: אי שויא לך אלפא זוזי - לחיי, ואי לא - שקיל אלפא זוזי ואיסתלק.",
-   "expert_coverage": 0.95,
+   "expert_coverage": 0.936,
    "expert_located": [
     [
-     "Ketubot 91a",
-     17
+     "Ketubot 91b",
+     2
     ],
     [
      "Ketubot 91b",
-     8
+     3
     ]
    ],
    "expert_segments": [
@@ -6443,10 +6017,6 @@
     [
      "Ketubot 91b",
      3
-    ],
-    [
-     "Ketubot 91b",
-     8
     ]
    ],
    "not_blind_reason": null,
@@ -6457,15 +6027,9 @@
      "Ketubot 91b",
      2,
      7
-    ],
-    [
-     "Ketubot 91b",
-     8,
-     9
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
@@ -6475,12 +6039,6 @@
      "key": "Ketubot 91b_2-7",
      "verdict": "correct",
      "note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 91b_8-9",
-     "verdict": "correct",
-     "note": ""
     }
    ],
    "verdict_match": "exact",
@@ -6498,7 +6056,7 @@
    "expert_located": [
     [
      "Ketubot 91b",
-     2
+     8
     ],
     [
      "Ketubot 91b",
@@ -6506,14 +6064,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 91b",
-     2
-    ],
-    [
-     "Ketubot 91b",
-     3
-    ],
     [
      "Ketubot 91b",
      8
@@ -6529,27 +6079,15 @@
    "detector_span": [
     [
      "Ketubot 91b",
-     2,
-     7
-    ],
-    [
-     "Ketubot 91b",
      8,
      9
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 91b_2-7",
-     "verdict": "correct",
-     "note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק."
-    },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 91b_8-9",
@@ -6572,7 +6110,7 @@
    "expert_located": [
     [
      "Ketubot 91b",
-     6
+     12
     ],
     [
      "Ketubot 91b",
@@ -6632,7 +6170,7 @@
    "expert_located": [
     [
      "Ketubot 91b",
-     10
+     15
     ],
     [
      "Ketubot 91b",
@@ -6698,7 +6236,7 @@
    "expert_located": [
     [
      "Ketubot 94b",
-     1
+     6
     ],
     [
      "Ketubot 94b",
@@ -6756,11 +6294,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "הנהו תרי שטרי דאתו לקמיה דרב יוסף, חד הוה כתוב בחמשא בניסן, וחד הוה כתוב ביה בניסן סתמא, אוקמיה רב יוסף לההוא דחמשא בניסן בנכסים. אמר ליה אידך: ואנא אפסיד? אמר ליה: את ידך על התחתונה, אימא בר כ\"ט בניסן את. א\"ל: ונכתוב לי מר טירפא מאייר ואילך! א\"ל: יכלי למימר לך את בר חד בניסן את. מאי תקנתיה? נכתבו הרשאה להדדי.",
-   "expert_coverage": 0.894,
+   "expert_coverage": 0.884,
    "expert_located": [
     [
      "Ketubot 94b",
-     4
+     10
     ],
     [
      "Ketubot 95a",
@@ -6838,7 +6376,7 @@
    "expert_located": [
     [
      "Ketubot 97a",
-     4
+     10
     ],
     [
      "Ketubot 97a",
@@ -6894,7 +6432,7 @@
    "expert_located": [
     [
      "Ketubot 97a",
-     5
+     11
     ],
     [
      "Ketubot 97a",
@@ -6950,7 +6488,7 @@
    "expert_located": [
     [
      "Ketubot 100b",
-     10
+     16
     ],
     [
      "Ketubot 100b",
@@ -7006,7 +6544,7 @@
    "expert_located": [
     [
      "Ketubot 100b",
-     11
+     17
     ],
     [
      "Ketubot 100b",
@@ -7057,7 +6595,7 @@
   },
   {
    "id": "ketubot_r114",
-   "ref": "Ketubot 102b",
+   "ref": "Ketubot 103a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -7065,8 +6603,8 @@
    "expert_coverage": 0.935,
    "expert_located": [
     [
-     "Ketubot 102b",
-     18
+     "Ketubot 103a",
+     2
     ],
     [
      "Ketubot 103a",
@@ -7074,10 +6612,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 103a",
-     1
-    ],
     [
      "Ketubot 103a",
      2
@@ -7138,11 +6672,11 @@
    "expert_located": [
     [
      "Ketubot 103a",
-     18
+     24
     ],
     [
      "Ketubot 103a",
-     24
+     25
     ]
    ],
    "expert_segments": [
@@ -7200,7 +6734,7 @@
    "expert_located": [
     [
      "Ketubot 103a",
-     23
+     28
     ],
     [
      "Ketubot 103a",
@@ -7262,7 +6796,7 @@
    "expert_located": [
     [
      "Ketubot 103a",
-     27
+     32
     ],
     [
      "Ketubot 103b",
@@ -7319,7 +6853,7 @@
   },
   {
    "id": "ketubot_r118",
-   "ref": "Ketubot 103a",
+   "ref": "Ketubot 103b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -7327,8 +6861,8 @@
    "expert_coverage": 0.966,
    "expert_located": [
     [
-     "Ketubot 103a",
-     30
+     "Ketubot 103b",
+     3
     ],
     [
      "Ketubot 103b",
@@ -7390,11 +6924,11 @@
    "expert_located": [
     [
      "Ketubot 103b",
-     3
+     8
     ],
     [
      "Ketubot 103b",
-     9
+     10
     ]
    ],
    "expert_segments": [
@@ -7446,25 +6980,21 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "כשחלה רבי, נכנס ר' חייא אצלו ומצאו שהוא בוכה, אמר לו: רבי, מפני מה אתה בוכה? והתניא: מת מתוך השחוק - סימן יפה לו, מתוך הבכי - סימן רע לו; פניו למעלה - סימן יפה לו, פניו למטה - סימן רע לו; פניו כלפי העם - סימן יפה לו, כלפי הכותל - סימן רע לו; פניו ירוקין - סימן רע לו, פניו צהובין ואדומים - סימן יפה לו; מת בע\"ש - סימן יפה לו, במו\"ש - סימן רע לו; מת בערב יוהכ\"פ - סימן רע לו, במוצאי יוהכ\"פ - סימן יפה לו; מת מחולי מעיים - סימן יפה לו, מפני שרובם של צדיקים מיתתן בחולי מעיים! א\"ל: אנא אתורה ומצות קא בכינא.",
-   "expert_coverage": 0.911,
+   "expert_coverage": 0.835,
    "expert_located": [
-    [
-     "Ketubot 103b",
-     8
-    ],
-    [
-     "Ketubot 103b",
-     15
-    ]
-   ],
-   "expert_segments": [
     [
      "Ketubot 103b",
      14
     ],
     [
      "Ketubot 103b",
-     15
+     14
+    ]
+   ],
+   "expert_segments": [
+    [
+     "Ketubot 103b",
+     14
     ]
    ],
    "not_blind_reason": null,
@@ -7501,20 +7031,20 @@
   },
   {
    "id": "ketubot_r121",
-   "ref": "Ketubot 103b",
+   "ref": "Ketubot 104a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא יומא דנח נפשיה דרבי, גזרו רבנן תעניתא ובעו רחמי, ואמרי: כל מאן דאמר נח נפשיה דר', ידקר בחרב. סליקא אמתיה דרבי לאיגרא, אמרה: עליוני' מבקשין את רבי והתחתוני' מבקשין את רבי, יהי רצון שיכופו תחתונים את העליונים. כיון דחזאי כמה זימני דעייל לבית הכסא, וחלץ תפילין ומנח להו וקמצטער, אמרה: יהי רצון שיכופו עליונים את התחתונים. ולא הוו שתקי רבנן מלמיבעי רחמי, שקלה כוזא שדייא מאיגרא [לארעא], אישתיקו מרחמי ונח נפשיה דרבי. אמרו ליה רבנן לבר קפרא: זיל עיין. אזל אשכחיה דנח נפשיה, קרעיה ללבושיה ואהדריה לקרעיה לאחוריה, פתח ואמר: אראלים ומצוקים אחזו בארון הקדש, נצחו אראלים את המצוקים ונשבה ארון הקדש! אמרו ליה: נח נפשיה? אמר להו: אתון קאמריתו ואנא לא קאמינא. בשעת פטירתו של רבי, זקף עשר אצבעותיו כלפי מעלה, אמר: רבש\"ע, גלוי וידוע לפניך שיגעתי בעשר אצבעותי בתורה ולא נהניתי אפילו באצבע קטנה, יהי רצון מלפניך שיהא שלום במנוחתי, יצתה ב\"ק ואמרה:  יבא שלום ינוחו על משכבותם.",
-   "expert_coverage": 0.958,
+   "expert_coverage": 0.952,
    "expert_located": [
     [
-     "Ketubot 103b",
-     24
+     "Ketubot 104a",
+     1
     ],
     [
      "Ketubot 104a",
-     11
+     5
     ]
    ],
    "expert_segments": [
@@ -7540,52 +7070,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 103b",
-     20,
-     25
-    ]
-   ],
-   "detector_classification": [
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 103b_20-21",
-     "verdict": "approve",
-     "note": "The \"our interpretation is correct.\"  The change should be implemented by adding this portion to the story on this same page about Rabbi Yehudah HaNasi's death."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 103b_20-21",
-     "verdict": "correct",
-     "note": "This is really the continuation of the story of Ketubot 103b, segments 8-9. The gemara digresses a little but this part here is the continuation of the words of Rabbi Yehudah HaNasi on his deathbed that actually starts 103a segments 24-32."
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 103b_20-21",
-     "verdict": "correct",
-     "note": "It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation."
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 103b_24-25",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 103b_24-25",
-     "verdict": "incorrect",
-     "note": "It is correct that the story continues on 104a but the top line should be highlighted too, as it is the continuation of the story too. That is, the words דְּמִדַּלְיָא וּבְסִים אַוֵּירָא  should be included in the highlighted story."
-    }
-   ],
-   "verdict_match": "overlap",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -7600,7 +7091,7 @@
    "expert_located": [
     [
      "Ketubot 104b",
-     6
+     7
     ],
     [
      "Ketubot 104b",
@@ -7678,29 +7169,21 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "שמואל הוה עבר במברא, אתא ההוא גברא יהיב ליה ידיה, אמר ליה: מאי עבידתיך? אמר ליה: דינא אית לי, א\"ל: פסילנא לך לדינא.",
-   "expert_coverage": 0.961,
+   "expert_coverage": 0.948,
    "expert_located": [
-    [
-     "Ketubot 105b",
-     7
-    ],
-    [
-     "Ketubot 106a",
-     3
-    ]
-   ],
-   "expert_segments": [
     [
      "Ketubot 105b",
      8
     ],
     [
      "Ketubot 105b",
-     9
-    ],
+     8
+    ]
+   ],
+   "expert_segments": [
     [
      "Ketubot 105b",
-     14
+     8
     ]
    ],
    "not_blind_reason": null,
@@ -7711,22 +7194,10 @@
      "Ketubot 105b",
      8,
      8
-    ],
-    [
-     "Ketubot 105b",
-     9,
-     9
-    ],
-    [
-     "Ketubot 105b",
-     14,
-     16
     ]
    ],
    "detector_classification": [
-    "HIGH_CONFIDENCE",
-    "HIGH_CONFIDENCE",
-    "YES"
+    "HIGH_CONFIDENCE"
    ],
    "in_golden": true,
    "verdicts": [
@@ -7741,30 +7212,6 @@
      "key": "Ketubot 105b_8-8",
      "verdict": "correct",
      "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 105b_9-9",
-     "verdict": "correct",
-     "note": "Reasoning and weakeners are correct. This is really two stories, one about Ameimar, and a separate, also borderline story, about Mar Uqba."
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 105b_14-16",
-     "verdict": "approve",
-     "note": "The merge and boundaries are now correct"
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 105b_14-16",
-     "verdict": "correct",
-     "note": "All correct, but the full story should be cited, which continues on the next page. This should be included: אמר: האי עשה והאי עשה, עשה דכבוד תורה עדיף, סלקיה לדינא דיתמי ואחתיה לדיניה. כיון דחזא בעל דיניה יקרא דקא עביד ליה, איסתתם טענתיה.  רב ענן, הוה רגיל אליהו דאתי גביה, דהוה מתני ליה סדר דאליהו, כיון דעבד הכי איסתלק. יתיב בתעניתא ובעא רחמי ואתא. כי אתא הוה מבעית ליה בעותי, ועבד תיבותא ויתיב קמיה, עד דאפיק ליה סידריה. והיינו דאמרי: סדר דאליהו רבה, סדר אליהו זוטא."
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 105b_14-16",
-     "verdict": "incorrect",
-     "note": "The classification is correct. The merge is not accurate. The top lines of 106a should be included (ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.   ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה. ) What is highlighted on 106a is an independant story"
     }
    ],
    "verdict_match": "exact",
@@ -7778,11 +7225,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמימר הוה יתיב וקא דאין דינא, פרח גדפא ארישיה, אתא ההוא גברא שקליה, א\"ל: מאי עבידתיך? א\"ל: דינא אית לי, אמר ליה: פסילנא לך לדינא.",
-   "expert_coverage": 0.932,
+   "expert_coverage": 0.92,
    "expert_located": [
     [
      "Ketubot 105b",
-     3
+     9
     ],
     [
      "Ketubot 105b",
@@ -7828,11 +7275,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "מר עוקבא הוה שדי רוקא קמיה, אתא ההוא גברא כסייה, א\"ל: מאי עבידתיך? א\"ל: דינא אית לי, א\"ל: פסילנא לך לדינא.",
-   "expert_coverage": 0.857,
+   "expert_coverage": 0.843,
    "expert_located": [
     [
      "Ketubot 105b",
-     3
+     9
     ],
     [
      "Ketubot 105b",
@@ -7878,11 +7325,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.",
-   "expert_coverage": 0.93,
+   "expert_coverage": 0.926,
    "expert_located": [
     [
      "Ketubot 105b",
-     4
+     10
     ],
     [
      "Ketubot 105b",
@@ -7944,11 +7391,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.",
-   "expert_coverage": 0.946,
+   "expert_coverage": 0.943,
    "expert_located": [
     [
      "Ketubot 105b",
-     6
+     12
     ],
     [
      "Ketubot 105b",
@@ -7956,10 +7403,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 105b",
-     11
-    ],
     [
      "Ketubot 105b",
      12
@@ -7975,39 +7418,15 @@
    "detector_span": [
     [
      "Ketubot 105b",
-     10,
-     11
-    ],
-    [
-     "Ketubot 105b",
      12,
      13
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 105b_10-11",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 105b_10-11",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 105b_10-11",
-     "verdict": "correct",
-     "note": ""
-    },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105b_12-13",
@@ -8038,11 +7457,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב ענן אייתי ליה ההוא גברא כנתא דגילדני דבי גילי, א\"ל: מאי עבידתיך? א\"ל: דינא אית לי, לא קביל מיניה, א\"ל: פסילנא לך לדינא. אמר ליה: דינא דמר לא בעינא, קבולי לקביל מר, דלא למנען מר מאקרובי בכורים, דתניא: + ואיש בא מבעל שלישה ויבא לאיש האלהים לחם בכורים עשרים לחם שעורים וכרמל בצקלונו - וכי אלישע אוכל בכורים הוה? אלא לומר לך: כל המביא דורון לתלמיד חכם - כאילו מקריב בכורים. אמר ליה: קבולי לא בעינן דאיקביל, השתא דאמרת לי טעמא מקבילנא. שדריה לקמיה דרב נחמן, שלח ליה: נידייניה מר להאי גברא, דאנא ענן פסילנא ליה לדינא. אמר: מדשלח לי הכי, שמע מינה קריביה הוא. הוה קאים דינא דיתמי קמיה, אמר: האי עשה והאי עשה, עשה דכבוד תורה עדיף, סלקיה לדינא דיתמי ואחתיה לדיניה. כיון דחזא בעל דיניה יקרא דקא עביד ליה, איסתתם טענתיה.",
-   "expert_coverage": 0.965,
+   "expert_coverage": 0.963,
    "expert_located": [
     [
      "Ketubot 105b",
-     4
+     14
     ],
     [
      "Ketubot 106a",
@@ -8107,7 +7526,7 @@
   },
   {
    "id": "ketubot_r129",
-   "ref": "Ketubot 105b",
+   "ref": "Ketubot 106a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -8115,8 +7534,8 @@
    "expert_coverage": 0.981,
    "expert_located": [
     [
-     "Ketubot 105b",
-     12
+     "Ketubot 106a",
+     1
     ],
     [
      "Ketubot 106a",
@@ -8154,16 +7573,16 @@
   },
   {
    "id": "ketubot_r130",
-   "ref": "Ketubot 109a",
+   "ref": "Ketubot 109b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דעשאה סימן לאחר, ערער ושכיב ואוקים אפוטרופא, אתא אפוטרופוס לקמיה דאביי, א\"ל: עשאה סימן לאחר - איבד את זכותו. אמר: אי הוה אבוהון דיתמי קיים, הוה טעין ואמר תלם אחד עשיתי לך! א\"ל: שפיר קאמרת, דאמר ר' יוחנן: אם טען ואמר תלם אחד עשיתי לך - נאמן, זיל הב ליה מיהת תלם אחד. הוה עלה ריכבא דדיקלי, אמר ליה: אי הוה אבוהון דיתמי קיים, הוה טעין ואמר חזרתי ולקחתי ממנו! א\"ל: שפיר קאמרת, דא\"ר יוחנן: אם טען ואמר חזרתי ולקחתיו ממנו - נאמן. אמר אביי: האי מאן דמוקים אפוטרופא, נוקים כי האי דידע לאפוכי בזכותא דיתמי.",
-   "expert_coverage": 0.934,
+   "expert_coverage": 0.919,
    "expert_located": [
     [
-     "Ketubot 109a",
-     6
+     "Ketubot 109b",
+     3
     ],
     [
      "Ketubot 109b",
@@ -8171,10 +7590,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Ketubot 109a",
-     12
-    ],
     [
      "Ketubot 109b",
      3
@@ -8231,7 +7646,7 @@
    "expert_located": [
     [
      "Ketubot 109b",
-     5
+     10
     ],
     [
      "Ketubot 109b",
@@ -8297,7 +7712,7 @@
    "expert_located": [
     [
      "Ketubot 109b",
-     7
+     12
     ],
     [
      "Ketubot 109b",
@@ -8357,7 +7772,7 @@
    "expert_located": [
     [
      "Ketubot 111a",
-     3
+     9
     ],
     [
      "Ketubot 111a",
@@ -8419,7 +7834,7 @@
    "expert_located": [
     [
      "Ketubot 111a",
-     4
+     10
     ],
     [
      "Ketubot 111a",
@@ -8479,7 +7894,7 @@
    "expert_located": [
     [
      "Ketubot 111a",
-     6
+     12
     ],
     [
      "Ketubot 111a",
@@ -8493,58 +7908,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 111a",
-     9,
-     9
-    ],
-    [
-     "Ketubot 111a",
-     10,
-     11
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE",
-    "LOW_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 111a_9-9",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 111a_9-9",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 111a_9-9",
-     "verdict": "incorrect",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 111a_10-11",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 111a_10-11",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -8559,7 +7929,7 @@
    "expert_located": [
     [
      "Ketubot 111a",
-     17
+     23
     ],
     [
      "Ketubot 111a",
@@ -8615,7 +7985,7 @@
    "expert_located": [
     [
      "Ketubot 111b",
-     6
+     12
     ],
     [
      "Ketubot 111b",
@@ -8667,11 +8037,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "תניא, אמר רב יוסף: מעשה בשיחין באחד שהניח לו אביו שלשה בדי חרדל, ונפשח אחד מהן ונמצאו בו תשעה קבין חרדל, ועציו סיככו בו סוכת יוצרין.",
-   "expert_coverage": 0.969,
+   "expert_coverage": 0.959,
    "expert_located": [
     [
      "Ketubot 111b",
-     7
+     13
     ],
     [
      "Ketubot 111b",
@@ -8727,7 +8097,7 @@
    "expert_located": [
     [
      "Ketubot 111b",
-     7
+     13
     ],
     [
      "Ketubot 111b",
@@ -8779,15 +8149,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב חייא בר אדא מקרי דרדקי דר\"ל הוה, איפגר תלתא יומי ולא אתא. כי אתא, א\"ל: אמאי איפגרת? א\"ל: דלית אחת הניח לי אבא, ובצרתי ממנה יום ראשון ג' מאות אשכולות אשכול לגרב, יום שני בצרתי ג' מאות אשכולות שתי אשכולות לגרב, יום שלישי בצרתי ממנה ג' מאות אשכולות שלש אשכולות לגרב, והפקרתי יותר מחציה. א\"ל: אי לאו דאיפגרת הוה עבדא טפי.",
-   "expert_coverage": 0.862,
+   "expert_coverage": 0.851,
    "expert_located": [
     [
      "Ketubot 111b",
-     14
+     19
     ],
     [
      "Ketubot 111b",
-     21
+     20
     ]
    ],
    "expert_segments": [
@@ -8843,7 +8213,7 @@
    "expert_located": [
     [
      "Ketubot 111b",
-     15
+     21
     ],
     [
      "Ketubot 111b",
@@ -8899,7 +8269,7 @@
    "expert_located": [
     [
      "Ketubot 111b",
-     16
+     22
     ],
     [
      "Ketubot 111b",
@@ -8961,7 +8331,7 @@
    "expert_located": [
     [
      "Ketubot 111b",
-     16
+     22
     ],
     [
      "Ketubot 112a",
@@ -9018,20 +8388,20 @@
   },
   {
    "id": "ketubot_r144",
-   "ref": "Ketubot 111b",
+   "ref": "Ketubot 112a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי חלבו ור' עוירא ור' יוסי בר חנינא איקלעו לההוא אתרא, אייתו קמייהו אפרסקא דהוה כאילפס כפר הינו, ואילפס כפר הינו כמה הוי? ה' סאין, אכלו שליש והפקירו שליש ונתנו לפני בהמתן שליש. לשנה איקלע ר' אלעזר להתם ואייתו לקמיה, נקטו בידיה ואמר ארץ פרי למלחה מרעת יושבי בה.",
-   "expert_coverage": 0.912,
+   "expert_coverage": 0.895,
    "expert_located": [
     [
-     "Ketubot 111b",
-     19
+     "Ketubot 112a",
+     1
     ],
     [
      "Ketubot 112a",
-     9
+     2
     ]
    ],
    "expert_segments": [
@@ -9078,20 +8448,20 @@
   },
   {
    "id": "ketubot_r145",
-   "ref": "Ketubot 111b",
+   "ref": "Ketubot 112a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי יהושע בן לוי איקלע לגבלא, חזנהו להנהו קטופי דהוו קיימי כי עיגלי, אמר: עגלים בין הגפנים? אמרו ליה: קטופי נינהו, אמר: ארץ, ארץ, הכניסי פירותייך, למי את מוציאה פירותייך, לערביים הללו שעמדו עלינו בחטאתינו? לשנה איקלע ר' חייא להתם, חזנהו דהוו קיימי כעיזי, אמר: עזים בין הגפנים? אמרו ליה: זיל, לא תעביד לן כי חברך.",
-   "expert_coverage": 0.954,
+   "expert_coverage": 0.949,
    "expert_located": [
     [
-     "Ketubot 111b",
-     20
+     "Ketubot 112a",
+     3
     ],
     [
      "Ketubot 112a",
-     7
+     4
     ]
    ],
    "expert_segments": [
@@ -9144,16 +8514,16 @@
   },
   {
    "id": "ketubot_r146",
-   "ref": "Ketubot 111b",
+   "ref": "Ketubot 112a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "א\"ל ההוא צדוקי לר' חנינא: יאה משבחיתו בה בארעכון, בית סאה אחת הניח לי אבא, ממנה משח, ממנה חמר, ממנה עיבור, ממנה קיטניות, ממנה רועות מקנתי.",
-   "expert_coverage": 0.968,
+   "expert_coverage": 0.947,
    "expert_located": [
     [
-     "Ketubot 111b",
-     20
+     "Ketubot 112a",
+     10
     ],
     [
      "Ketubot 112a",
@@ -9167,118 +8537,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Ketubot 111b",
-     19,
-     20
-    ],
-    [
-     "Ketubot 111b",
-     21,
-     21
-    ],
-    [
-     "Ketubot 111b",
-     22,
-     22
-    ],
-    [
-     "Ketubot 112a",
-     1,
-     2
-    ],
-    [
-     "Ketubot 112a",
-     3,
-     4
-    ]
-   ],
-   "detector_classification": [
-    "YES",
-    "HIGH_CONFIDENCE",
-    "HIGH_CONFIDENCE",
-    "YES",
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 111b_19-20",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 111b_19-20",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 111b_21-21",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 111b_21-21",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 111b_22-22",
-     "verdict": "approve",
-     "note": "The merge and boundaries are now correct."
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 111b_22-22",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 111b_22-22",
-     "verdict": "incorrect",
-     "note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry"
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 112a_1-2",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 112a_1-2",
-     "verdict": "reject_remove",
-     "note": ""
-    },
-    {
-     "round": "canonical_review_anonymous_2026-03-17.json",
-     "key": "Ketubot 112a_3-4",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v5_1_feedback_anonymous_2026-02-20.json",
-     "key": "Ketubot 112a_3-4",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
-     "key": "Ketubot 112a_3-4",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -9293,7 +8558,7 @@
    "expert_located": [
     [
      "Ketubot 112a",
-     5
+     11
     ],
     [
      "Ketubot 112a",
@@ -9349,7 +8614,7 @@
    "expert_located": [
     [
      "Ketubot 112a",
-     8
+     14
     ],
     [
      "Ketubot 112a",
@@ -9405,7 +8670,7 @@
    "expert_located": [
     [
      "Ketubot 112a",
-     10
+     16
     ],
     [
      "Ketubot 112a",
@@ -9926,6 +9191,36 @@
   },
   {
    "id": "ketubot_r164",
+   "ref": "Ketubot 17a",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Ketubot 17a",
+     8,
+     8
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 17a_8-8",
+     "verdict": "correct",
+     "note": ""
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "ketubot_r165",
    "ref": "Ketubot 21a",
    "expert_listed": false,
    "expert_blind": null,
@@ -9955,7 +9250,7 @@
    "objection_kind": "confidence"
   },
   {
-   "id": "ketubot_r165",
+   "id": "ketubot_r166",
    "ref": "Ketubot 21b",
    "expert_listed": false,
    "expert_blind": null,
@@ -9985,7 +9280,7 @@
    "objection_kind": "classification"
   },
   {
-   "id": "ketubot_r166",
+   "id": "ketubot_r167",
    "ref": "Ketubot 25a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10015,7 +9310,7 @@
    "objection_kind": "classification"
   },
   {
-   "id": "ketubot_r167",
+   "id": "ketubot_r168",
    "ref": "Ketubot 25b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10045,7 +9340,7 @@
    "objection_kind": "confidence"
   },
   {
-   "id": "ketubot_r168",
+   "id": "ketubot_r169",
    "ref": "Ketubot 26a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10075,7 +9370,37 @@
    "objection_kind": "classification"
   },
   {
-   "id": "ketubot_r169",
+   "id": "ketubot_r170",
+   "ref": "Ketubot 26b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Ketubot 26b",
+     7,
+     7
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 26b_7-7",
+     "verdict": "correct",
+     "note": ""
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "ketubot_r171",
    "ref": "Ketubot 40b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10111,7 +9436,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r170",
+   "id": "ketubot_r172",
    "ref": "Ketubot 42b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10147,7 +9472,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r171",
+   "id": "ketubot_r173",
    "ref": "Ketubot 49b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10183,7 +9508,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r172",
+   "id": "ketubot_r174",
    "ref": "Ketubot 50b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10213,7 +9538,79 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r173",
+   "id": "ketubot_r175",
+   "ref": "Ketubot 50b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Ketubot 50b",
+     6,
+     6
+    ]
+   ],
+   "detector_classification": [
+    "LOW_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 50b_6-6",
+     "verdict": "correct",
+     "note": ""
+    },
+    {
+     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
+     "key": "Ketubot 50b_6-6",
+     "verdict": "incorrect",
+     "note": "This is a borderline story. The reasoning is correct that there is minimal causality. But there is some, and some change. It should be marked a borderline story."
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "ketubot_r176",
+   "ref": "Ketubot 50b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Ketubot 50b",
+     9,
+     10
+    ]
+   ],
+   "detector_classification": [
+    "HIGH_CONFIDENCE"
+   ],
+   "in_golden": true,
+   "verdicts": [
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 50b_9-10",
+     "verdict": "correct",
+     "note": ""
+    },
+    {
+     "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
+     "key": "Ketubot 50b_9-10",
+     "verdict": "correct",
+     "note": "This should be marked a borderline story, since it is just one real event and then discussion"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "ketubot_r177",
    "ref": "Ketubot 51b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10243,7 +9640,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r174",
+   "id": "ketubot_r178",
    "ref": "Ketubot 52a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10273,7 +9670,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r175",
+   "id": "ketubot_r179",
    "ref": "Ketubot 56a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10309,7 +9706,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r176",
+   "id": "ketubot_r180",
    "ref": "Ketubot 63b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10345,7 +9742,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r177",
+   "id": "ketubot_r181",
    "ref": "Ketubot 65a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10381,7 +9778,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r178",
+   "id": "ketubot_r182",
    "ref": "Ketubot 68a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10417,7 +9814,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r179",
+   "id": "ketubot_r183",
    "ref": "Ketubot 69a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10453,7 +9850,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r180",
+   "id": "ketubot_r184",
    "ref": "Ketubot 74a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10489,7 +9886,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r181",
+   "id": "ketubot_r185",
    "ref": "Ketubot 80a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10531,7 +9928,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r182",
+   "id": "ketubot_r186",
    "ref": "Ketubot 81b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10561,7 +9958,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r183",
+   "id": "ketubot_r187",
    "ref": "Ketubot 84b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10597,7 +9994,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r184",
+   "id": "ketubot_r188",
    "ref": "Ketubot 85b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10620,7 +10017,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r185",
+   "id": "ketubot_r189",
    "ref": "Ketubot 86a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10662,7 +10059,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r186",
+   "id": "ketubot_r190",
    "ref": "Ketubot 86a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10698,7 +10095,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r187",
+   "id": "ketubot_r191",
    "ref": "Ketubot 88a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10734,7 +10131,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r188",
+   "id": "ketubot_r192",
    "ref": "Ketubot 90b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10770,7 +10167,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r189",
+   "id": "ketubot_r193",
    "ref": "Ketubot 94a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10806,7 +10203,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r190",
+   "id": "ketubot_r194",
    "ref": "Ketubot 95b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10829,7 +10226,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r191",
+   "id": "ketubot_r195",
    "ref": "Ketubot 96a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10865,7 +10262,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r192",
+   "id": "ketubot_r196",
    "ref": "Ketubot 98a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10901,7 +10298,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r193",
+   "id": "ketubot_r197",
    "ref": "Ketubot 98a",
    "expert_listed": false,
    "expert_blind": null,
@@ -10937,7 +10334,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r194",
+   "id": "ketubot_r198",
    "ref": "Ketubot 99b",
    "expert_listed": false,
    "expert_blind": null,
@@ -10973,7 +10370,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r195",
+   "id": "ketubot_r199",
    "ref": "Ketubot 100a",
    "expert_listed": false,
    "expert_blind": null,
@@ -11009,7 +10406,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r196",
+   "id": "ketubot_r200",
    "ref": "Ketubot 102a",
    "expert_listed": false,
    "expert_blind": null,
@@ -11032,7 +10429,61 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r197",
+   "id": "ketubot_r201",
+   "ref": "Ketubot 103b",
+   "expert_listed": false,
+   "expert_blind": null,
+   "expert_text": null,
+   "detector_proposed": true,
+   "detector_span": [
+    [
+     "Ketubot 103b",
+     20,
+     25
+    ]
+   ],
+   "detector_classification": [
+    "YES"
+   ],
+   "in_golden": false,
+   "verdicts": [
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 103b_20-21",
+     "verdict": "approve",
+     "note": "The \"our interpretation is correct.\"  The change should be implemented by adding this portion to the story on this same page about Rabbi Yehudah HaNasi's death."
+    },
+    {
+     "round": "v5_1_feedback_anonymous_2026-02-20.json",
+     "key": "Ketubot 103b_20-21",
+     "verdict": "correct",
+     "note": "This is really the continuation of the story of Ketubot 103b, segments 8-9. The gemara digresses a little but this part here is the continuation of the words of Rabbi Yehudah HaNasi on his deathbed that actually starts 103a segments 24-32."
+    },
+    {
+     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
+     "key": "Ketubot 103b_20-21",
+     "verdict": "correct",
+     "note": "It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation."
+    },
+    {
+     "round": "canonical_review_anonymous_2026-03-17.json",
+     "key": "Ketubot 103b_24-25",
+     "verdict": "correct",
+     "note": ""
+    },
+    {
+     "round": "v8_delta_feedback_anonymous_2026-02-26.json",
+     "key": "Ketubot 103b_24-25",
+     "verdict": "incorrect",
+     "note": "It is correct that the story continues on 104a but the top line should be highlighted too, as it is the continuation of the story too. That is, the words דְּמִדַּלְיָא וּבְסִים אַוֵּירָא  should be included in the highlighted story."
+    }
+   ],
+   "verdict_match": "overlap",
+   "expert_accepted": true,
+   "objection_kind": null
+  },
+  {
+   "id": "ketubot_r202",
    "ref": "Ketubot 105a",
    "expert_listed": false,
    "expert_blind": null,
@@ -11068,7 +10519,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r198",
+   "id": "ketubot_r203",
    "ref": "Ketubot 106a",
    "expert_listed": false,
    "expert_blind": null,
@@ -11104,7 +10555,7 @@
    "objection_kind": "confidence"
   },
   {
-   "id": "ketubot_r199",
+   "id": "ketubot_r204",
    "ref": "Ketubot 107b",
    "expert_listed": false,
    "expert_blind": null,
@@ -11140,7 +10591,7 @@
    "objection_kind": null
   },
   {
-   "id": "ketubot_r200",
+   "id": "ketubot_r205",
    "ref": "Ketubot 110b",
    "expert_listed": false,
    "expert_blind": null,
@@ -11176,7 +10627,7 @@
    "objection_kind": "boundary"
   },
   {
-   "id": "ketubot_r201",
+   "id": "ketubot_r206",
    "ref": "Ketubot 111b",
    "expert_listed": false,
    "expert_blind": null,

@@ -27,27 +27,27 @@
   "detection": {
    "kind": "BLIND",
    "denominator": 90,
-   "found": 84,
-   "recall": 0.933,
+   "found": 76,
+   "recall": 0.844,
    "recall_strict": 0.833,
    "missed": [
-    "Kiddushin 10a",
-    "Kiddushin 13b",
+    "Kiddushin 10b",
+    "Kiddushin 14a",
     "Kiddushin 21b",
     "Kiddushin 26a",
-    "Kiddushin 68b",
+    "Kiddushin 30a",
+    "Kiddushin 31b",
+    "Kiddushin 40a",
+    "Kiddushin 69a",
+    "Kiddushin 71a",
+    "Kiddushin 71a",
+    "Kiddushin 72a",
+    "Kiddushin 81a",
+    "Kiddushin 81b",
     "Kiddushin 81b"
    ],
    "missed_strict": [
-    "Kiddushin 30a",
-    "Kiddushin 31a",
-    "Kiddushin 39b",
-    "Kiddushin 39b",
-    "Kiddushin 71a",
-    "Kiddushin 71a",
-    "Kiddushin 71b",
-    "Kiddushin 81a",
-    "Kiddushin 81b"
+    "Kiddushin 39b"
    ],
    "note": "recall uses the published window-overlap test so it stays comparable with the 96.0% already reported. recall_strict requires a proposal to overlap a segment the story actually occupies; the gap is stories we are credited with only because something else on the page was proposed."
   },
@@ -103,22 +103,22 @@
   "cross_check": {
    "proposals_on_the_blind_list": 78,
    "of_those_judged_and_accepted": 57,
-   "proposals_claimed_by_more_than_one_expert_story": 21
+   "proposals_claimed_by_more_than_one_expert_story": 2
   }
  },
  "entries": [
   {
    "id": "kiddushin_r001",
-   "ref": "Kiddushin 8a",
+   "ref": "Kiddushin 8b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "בני רב הונא בר אבין זבון ההיא אמתא בפריטי, לא הוו בהדייהו, אותיבי נסכא עליה, לסוף אייקר אמתא, אתו לקמיה דרבי אמי, אמר להו: פריטי אין כאן, נסכא אין כאן.",
-   "expert_coverage": 0.971,
+   "expert_coverage": 0.962,
    "expert_located": [
     [
-     "Kiddushin 8a",
-     19
+     "Kiddushin 8b",
+     2
     ],
     [
      "Kiddushin 8b",
@@ -174,7 +174,7 @@
    "expert_located": [
     [
      "Kiddushin 8b",
-     9
+     14
     ],
     [
      "Kiddushin 9a",
@@ -225,7 +225,7 @@
   },
   {
    "id": "kiddushin_r003",
-   "ref": "Kiddushin 8b",
+   "ref": "Kiddushin 9a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -233,8 +233,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 8b",
-     10
+     "Kiddushin 9a",
+     0
     ],
     [
      "Kiddushin 9a",
@@ -242,10 +242,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 8b",
-     14
-    ],
     [
      "Kiddushin 9a",
      0
@@ -260,34 +256,16 @@
    "detector_proposed_strict": true,
    "detector_span": [
     [
-     "Kiddushin 8b",
-     14,
-     14
-    ],
-    [
      "Kiddushin 9a",
      1,
      1
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 8b_14-14",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "wave4_kiddushin_review_2026-07-06.json",
-     "key": "Kiddushin 8b_14-14",
-     "verdict": "incorrect",
-     "note": "The English highlight is correct but the Hebrew is cut off. It continues wiht line 0 on the next page (Kiddushin 9a)"
-    },
     {
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 9a_1-1",
@@ -307,7 +285,7 @@
   },
   {
    "id": "kiddushin_r004",
-   "ref": "Kiddushin 8b",
+   "ref": "Kiddushin 9a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -315,8 +293,8 @@
    "expert_coverage": 0.972,
    "expert_located": [
     [
-     "Kiddushin 8b",
-     11
+     "Kiddushin 9a",
+     2
     ],
     [
      "Kiddushin 9a",
@@ -324,14 +302,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 8b",
-     14
-    ],
-    [
-     "Kiddushin 9a",
-     1
-    ],
     [
      "Kiddushin 9a",
      2
@@ -342,52 +312,16 @@
    "detector_proposed_strict": true,
    "detector_span": [
     [
-     "Kiddushin 8b",
-     14,
-     14
-    ],
-    [
-     "Kiddushin 9a",
-     1,
-     1
-    ],
-    [
      "Kiddushin 9a",
      2,
      2
     ]
    ],
    "detector_classification": [
-    "YES",
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 8b_14-14",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "wave4_kiddushin_review_2026-07-06.json",
-     "key": "Kiddushin 8b_14-14",
-     "verdict": "incorrect",
-     "note": "The English highlight is correct but the Hebrew is cut off. It continues wiht line 0 on the next page (Kiddushin 9a)"
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 9a_1-1",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-05-26 (1).json",
-     "key": "Kiddushin 9a_1-1",
-     "verdict": "incorrect",
-     "note": "The words crossed out here are part of the story. This is not the talmud's introduction"
-    },
     {
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 9a_2-2",
@@ -407,7 +341,7 @@
   },
   {
    "id": "kiddushin_r005",
-   "ref": "Kiddushin 10a",
+   "ref": "Kiddushin 10b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -415,8 +349,8 @@
    "expert_coverage": 0.987,
    "expert_located": [
     [
-     "Kiddushin 10a",
-     7
+     "Kiddushin 10b",
+     3
     ],
     [
      "Kiddushin 10b",
@@ -455,7 +389,7 @@
    "expert_located": [
     [
      "Kiddushin 12a",
-     7
+     13
     ],
     [
      "Kiddushin 12a",
@@ -513,15 +447,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא גברא דאקדיש באבנא דכוחלא, יתיב רב חסדא וקא משער ליה, אי אית ביה שוה פרוטה - אין, ואי לא - לא. ואי לית ביה שוה פרוטה - לא? והא אמר שמואל: חיישינן! רב חסדא לא סבר ליה דשמואל. אמרה ליה אימיה: והא ההוא יומא דקדשה הוה ביה שוה פרוטה! אמר לה: לאו כל כמינך דאסרת לה אבתרא, לאו היינו דיהודית דביתהו דרבי חייא, דהוית לה צער לידה, אמרה ליה, אמרה לי אם: קיבל ביך אבוך קידושי כי זוטרת! אמר לה: לאו כל כמינה דאימך דאסרת ליך עילואי.",
-   "expert_coverage": 0.94,
+   "expert_coverage": 0.917,
    "expert_located": [
     [
      "Kiddushin 12a",
-     8
+     14
     ],
     [
      "Kiddushin 12b",
-     4
+     0
     ]
    ],
    "expert_segments": [
@@ -566,7 +500,7 @@
   },
   {
    "id": "kiddushin_r008",
-   "ref": "Kiddushin 12a",
+   "ref": "Kiddushin 12b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -574,8 +508,8 @@
    "expert_coverage": 0.912,
    "expert_located": [
     [
-     "Kiddushin 12a",
-     15
+     "Kiddushin 12b",
+     5
     ],
     [
      "Kiddushin 12b",
@@ -622,16 +556,16 @@
   },
   {
    "id": "kiddushin_r009",
-   "ref": "Kiddushin 12a",
+   "ref": "Kiddushin 12b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא גברא דקדיש בציפתא דאסא, אמרו ליה: והא לית בה ש\"פ! אמר להו: תיקדוש בארבע זוזי דאית בה, שקלתא ואישתיקא; אמר רבא: הוה שתיקותא דלאחר מתן מעות, וכל שתיקותא דלאחר מתן מעות לאו כלום היא.",
-   "expert_coverage": 0.94,
+   "expert_coverage": 0.932,
    "expert_located": [
     [
-     "Kiddushin 12a",
-     13
+     "Kiddushin 12b",
+     10
     ],
     [
      "Kiddushin 12b",
@@ -678,7 +612,7 @@
   },
   {
    "id": "kiddushin_r010",
-   "ref": "Kiddushin 12b",
+   "ref": "Kiddushin 13a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -686,8 +620,8 @@
    "expert_coverage": 0.969,
    "expert_located": [
     [
-     "Kiddushin 12b",
-     10
+     "Kiddushin 13a",
+     3
     ],
     [
      "Kiddushin 13a",
@@ -734,7 +668,7 @@
   },
   {
    "id": "kiddushin_r011",
-   "ref": "Kiddushin 13b",
+   "ref": "Kiddushin 14a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -742,8 +676,8 @@
    "expert_coverage": 0.961,
    "expert_located": [
     [
-     "Kiddushin 13b",
-     15
+     "Kiddushin 14a",
+     4
     ],
     [
      "Kiddushin 14a",
@@ -774,15 +708,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "איבעיא להו: עבד עברי כהן, מהו שימסור לו רבו שפחה כנענית? חידוש הוא, לא שנא כהנים ול\"ש ישראל, או דילמא שאני כהנים, הואיל וריבה בהן הכתוב מצות יתירות? רב אמר: מותר, ושמואל אמר: אסור. א\"ל רב נחמן לרב ענן: כי הויתו בי מר שמואל, באיסקומדרי איטלליתו? מ\"ט לא תימרו לי' מהא, וחכ\"א: אין עבד עברי כהן נרצע מפני שנעשה בעל מום.",
-   "expert_coverage": 0.913,
+   "expert_coverage": 0.894,
    "expert_located": [
     [
      "Kiddushin 21b",
-     6
+     12
     ],
     [
      "Kiddushin 21b",
-     16
+     14
     ]
    ],
    "expert_segments": [
@@ -797,10 +731,6 @@
     [
      "Kiddushin 21b",
      14
-    ],
-    [
-     "Kiddushin 21b",
-     16
     ]
    ],
    "not_blind_reason": null,
@@ -825,7 +755,7 @@
    "expert_located": [
     [
      "Kiddushin 22b",
-     12
+     18
     ],
     [
      "Kiddushin 23a",
@@ -876,20 +806,20 @@
   },
   {
    "id": "kiddushin_r014",
-   "ref": "Kiddushin 24b",
+   "ref": "Kiddushin 25a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "סבי דנזוניא לא אתו לפירקיה דרב חסדא, אמר ליה לרב המנונא: זיל צנעינהו. אזל אמר להו: מאי טעמא לא אתו רבנן לפירקא? אמרו ליה: אמאי ניתי? דבעינן מיניה מילתא ולא פשט לן. אמר להו: מי בעיתו מינאי מידי ולא פשיטנא לכו? בעו מיניה: עבד שסרסו רבו בבצים, מהו? כמום שבגלוי דמי, או לא? לא הוה בידיה. אמרו לו: מה שמך? אמר להו: המנונא, אמרו ליה: לאו המנונא אלא קרנונא. אתא לקמיה דרב חסדא, א\"ל: מתניתא בעו מינך, דתנן: עשרים וארבעה ראשי אברים שבאדם, כולם אין מטמאין משום מחיה, ואלו הם: ראשי אצבעות ידים ורגלים, וראשי אזנים, וראש החוטם, וראש הגוייה, וראשי דדים שבאשה, רבי יהודה אומר: אף שבאיש, ותני עלה: בכולם עבד יוצא בהם לחירות, רבי אומר: אף הסירוס.",
-   "expert_coverage": 0.972,
+   "expert_coverage": 0.97,
    "expert_located": [
     [
-     "Kiddushin 24b",
-     19
+     "Kiddushin 25a",
+     1
     ],
     [
      "Kiddushin 25a",
-     11
+     4
     ]
    ],
    "expert_segments": [
@@ -953,7 +883,7 @@
    "expert_located": [
     [
      "Kiddushin 25a",
-     11
+     17
     ],
     [
      "Kiddushin 25a",
@@ -999,11 +929,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "איבעיא להו: בעינן צבורים או לא? אמר רב יוסף: תא שמע, ר' עקיבא אומר: קרקע כל שהוא חייבת בפאה ובבכורים, ולכתוב עליה פרוסבול, ולקנות עמה נכסים שאין להם אחריות; ואי אמרת בעינן צבורים, כל שהוא למאי חזי? תרגומא רב שמואל בר ביסנא קמיה דרב יוסף: כגון שנעץ בה מחט. א\"ל רב יוסף: קבסתן, איכפל תנא לאשמועי' מחט?",
-   "expert_coverage": 0.926,
+   "expert_coverage": 0.922,
    "expert_located": [
     [
      "Kiddushin 26a",
-     8
+     13
     ],
     [
      "Kiddushin 26b",
@@ -1037,7 +967,7 @@
   },
   {
    "id": "kiddushin_r017",
-   "ref": "Kiddushin 26a",
+   "ref": "Kiddushin 26b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1045,8 +975,8 @@
    "expert_coverage": 0.982,
    "expert_located": [
     [
-     "Kiddushin 26a",
-     10
+     "Kiddushin 26b",
+     2
     ],
     [
      "Kiddushin 26b",
@@ -1087,7 +1017,7 @@
   },
   {
    "id": "kiddushin_r018",
-   "ref": "Kiddushin 26a",
+   "ref": "Kiddushin 26b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1095,8 +1025,8 @@
    "expert_coverage": 0.964,
    "expert_located": [
     [
-     "Kiddushin 26a",
-     13
+     "Kiddushin 26b",
+     4
     ],
     [
      "Kiddushin 26b",
@@ -1104,10 +1034,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 26b",
-     2
-    ],
     [
      "Kiddushin 26b",
      4
@@ -1123,27 +1049,15 @@
    "detector_span": [
     [
      "Kiddushin 26b",
-     2,
-     2
-    ],
-    [
-     "Kiddushin 26b",
      4,
      5
     ]
    ],
    "detector_classification": [
-    "HIGH_CONFIDENCE",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 26b_2-2",
-     "verdict": "incorrect",
-     "note": "High Confidence."
-    },
     {
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 26b_4-5",
@@ -1162,15 +1076,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב יעקב בריה דרב אחא בר יעקב שדריה אבוה לקמיה דאביי, כי אתא חזייה דלא הוה מיחדדין שמעתיה, א\"ל: אנא עדיפא מינך, תוב את דאיזיל אנא. שמע אביי דקא הוה אתי, הוה ההוא מזיק בי רבנן דאביי, דכי הוו עיילי בתרין אפי' ביממא הוו מיתזקי, אמר להו: לא ליתיב ליה אינש אושפיזא, אפשר דמתרחיש ניסא. על, בת בההוא בי רבנן, אידמי ליה כתנינא דשבעה רישוותיה, כל כריעה דכרע נתר חד רישיה. אמר להו למחר: אי לא איתרחיש ניסא, סכינתין.",
-   "expert_coverage": 0.947,
+   "expert_coverage": 0.943,
    "expert_located": [
     [
      "Kiddushin 29b",
-     5
+     10
     ],
     [
      "Kiddushin 29b",
-     14
+     12
     ]
    ],
    "expert_segments": [
@@ -1216,11 +1130,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "משתבח ליה רב חסדא לרב הונא בדרב המנונא דאדם גדול הוא, א\"ל: כשיבא לידך הביאהו לידי. כי אתא, חזייה דלא פריס סודרא, א\"ל: מאי טעמא לא פריסת סודרא? א\"ל: דלא נסיבנא. אהדרינהו לאפיה מיניה, א\"ל: חזי, דלא חזית להו לאפי עד דנסבת.",
-   "expert_coverage": 0.905,
+   "expert_coverage": 0.898,
    "expert_located": [
     [
      "Kiddushin 29b",
-     9
+     15
     ],
     [
      "Kiddushin 29b",
@@ -1270,7 +1184,7 @@
    "expert_located": [
     [
      "Kiddushin 30a",
-     1
+     7
     ],
     [
      "Kiddushin 30a",
@@ -1322,15 +1236,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "לפיכך נקראו ראשונים סופרים - שהיו סופרים כל האותיות שבתורה, שהיו אומרים: וא\"ו דגחון - חציין של אותיות של ס\"ת, דרש דרש - חציין של תיבות, והתגלח - של פסוקים, יכרסמנה חזיר מיער - עי\"ן דיער חציין של תהלים, והוא רחום יכפר עון - חציו דפסוקים. בעי רב יוסף: וא\"ו דגחון מהאי גיסא, או מהאי גיסא? א\"ל: ניתי ס\"ת ואימנינהו! מי לא אמר רבה בר בר חנה: לא זזו משם עד שהביאו ספר תורה ומנאום.",
-   "expert_coverage": 0.932,
+   "expert_coverage": 0.928,
    "expert_located": [
     [
      "Kiddushin 30a",
-     5
+     10
     ],
     [
-     "Kiddushin 30b",
-     3
+     "Kiddushin 30a",
+     11
     ]
    ],
    "expert_segments": [
@@ -1344,53 +1258,32 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 30a",
-     7,
-     7
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 30a_7-7",
-     "verdict": "incorrect",
-     "note": "Yes. This is a story. There is an action, speech-act or question, and change."
-    },
-    {
-     "round": "wave4_kiddushin_review_2026-07-06.json",
-     "key": "Kiddushin 30a_7-7",
-     "verdict": "incorrect",
-     "note": "The story is cut off, and seems to end in the middle of a word. It should include ךָ בְּחֹרֵב״? מִכָּאן וְאֵילָךְ, רַבִּי חִיָּיא בַּר אַבָּא לָא טָעֵים אוּמְצָא עַד דְּמַקְרֵי לְיָנוֹקָא וּמוֹסְפֵיהּ"
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "kiddushin_r023",
-   "ref": "Kiddushin 30b",
+   "ref": "Kiddushin 31a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "שאל בן אלמנה אחת את ר' אליעזר: אבא אומר השקיני מים ואימא אומרת השקיני מים, איזה מהם קודם? אמר ליה: הנח כבוד אמך ועשה כבוד אביך, שאתה ואמך חייבים בכבוד אביך. בא לפני רבי יהושע, אמר לו כך. אמר לו: רבי, נתגרשה מהו? אמר ליה: מבין ריסי עיניך ניכר שבן אלמנה אתה, הטל להן מים בספל וקעקע להן כתרנגולין.",
-   "expert_coverage": 0.974,
+   "expert_coverage": 0.969,
    "expert_located": [
     [
-     "Kiddushin 30b",
-     19
+     "Kiddushin 31a",
+     3
     ],
     [
      "Kiddushin 31a",
-     5
+     4
     ]
    ],
    "expert_segments": [
@@ -1436,11 +1329,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "בעו מיניה מרב עולא: עד היכן כיבוד אב ואם? אמר להם: צאו וראו מה עשה עובד כוכבים אחד באשקלון ודמא בן נתינה שמו, פעם אחת בקשו חכמים פרקמטיא בששים ריבוא שכר, והיה מפתח מונח תחת מראשותיו של אביו, ולא ציערו.",
-   "expert_coverage": 0.921,
+   "expert_coverage": 0.914,
    "expert_located": [
     [
      "Kiddushin 31a",
-     1
+     7
     ],
     [
      "Kiddushin 31a",
@@ -1486,11 +1379,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמר רב יהודה אמר שמואל, שאלו את ר' אליעזר: עד היכן כיבוד אב ואם? אמר להם: צאו וראו מה עשה עובד כוכבים אחד לאביו באשקלון ודמא בן נתינה שמו, בקשו ממנו חכמים אבנים לאפוד בששים ריבוא שכר, ורב כהנא מתני: בשמונים ריבוא, והיה מפתח מונח תחת מראשותיו של אביו, ולא ציערו. לשנה האחרת נתן הקב\"ה שכרו, שנולדה לו פרה אדומה בעדרו. נכנסו חכמי ישראל אצלו, אמר להם: יודע אני בכם, שאם אני מבקש מכם כל ממון שבעולם אתם נותנין לי, אלא אין אני מבקש מכם אלא אותו ממון שהפסדתי בשביל כבוד אבא.",
-   "expert_coverage": 0.918,
+   "expert_coverage": 0.915,
    "expert_located": [
     [
      "Kiddushin 31a",
-     1
+     8
     ],
     [
      "Kiddushin 31a",
@@ -1498,10 +1391,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 31a",
-     7
-    ],
     [
      "Kiddushin 31a",
      8
@@ -1548,7 +1437,7 @@
    "expert_located": [
     [
      "Kiddushin 31a",
-     6
+     12
     ],
     [
      "Kiddushin 31a",
@@ -1589,7 +1478,7 @@
   },
   {
    "id": "kiddushin_r027",
-   "ref": "Kiddushin 31a",
+   "ref": "Kiddushin 31b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1597,8 +1486,8 @@
    "expert_coverage": 0.964,
    "expert_located": [
     [
-     "Kiddushin 31a",
-     10
+     "Kiddushin 31b",
+     1
     ],
     [
      "Kiddushin 31b",
@@ -1643,20 +1532,20 @@
   },
   {
    "id": "kiddushin_r028",
-   "ref": "Kiddushin 31a",
+   "ref": "Kiddushin 31b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמר ליה רב יעקב בר אבוה לאביי: כגון אנא דעד דאתינא מבי רב, אבא מדלי לי כסא ואמא מזגה לי, היכי איעביד? א\"ל: מאמך קביל ומאבוך לא תקבל, דכיון דבר תורה הוא חלשה דעתיה.",
-   "expert_coverage": 0.975,
+   "expert_coverage": 0.966,
    "expert_located": [
     [
-     "Kiddushin 31a",
-     11
+     "Kiddushin 31b",
+     3
     ],
     [
      "Kiddushin 31b",
-     8
+     3
     ]
    ],
    "expert_segments": [
@@ -1666,70 +1555,19 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 31a",
-     12,
-     12
-    ],
-    [
-     "Kiddushin 31b",
-     1,
-     2
-    ],
-    [
-     "Kiddushin 31b",
-     4,
-     4
-    ],
-    [
-     "Kiddushin 31b",
-     6,
-     8
-    ]
-   ],
-   "detector_classification": [
-    "HIGH_CONFIDENCE",
-    "YES",
-    "HIGH_CONFIDENCE",
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 31a_12-12",
-     "verdict": "incorrect",
-     "note": "Yes, this is a story. Boundary issue. The line on 31b is not part of the story. Again, it is clear from the fact that it is not continuous with the story on 31a but that other material interrupts. For a continuation on the next page of Talmud to be a true continuation, there can be no intervening material."
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 31b_1-2",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 31b_4-4",
-     "verdict": "incorrect",
-     "note": "Yes. This is a story. Two actions with a causal relationship. It also involved a type of conflict in R. Tarfon's brag and the rebuke by the rabbis."
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 31b_6-8",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "kiddushin_r029",
-   "ref": "Kiddushin 31a",
+   "ref": "Kiddushin 31b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1737,8 +1575,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 31a",
-     12
+     "Kiddushin 31b",
+     4
     ],
     [
      "Kiddushin 31b",
@@ -1784,15 +1622,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב אסי הוה ליה ההיא אמא זקינה, אמרה לי': בעינא תכשיטין, עבד לה. בעינא גברא, נייעין לך. בעינא גברא דשפיר כותך, שבקה ואזל לארעא דישראל. שמע דקא אזלה אבתריה, אתא לקמיה דרבי יוחנן, אמר לי': מהו לצאת מארץ לחוצה לארץ? א\"ל: אסור. לקראת אמא, מהו? א\"ל: איני יודע. [אתרח] פורתא הדר אתא, אמר ליה: אסי, נתרצית לצאת? המקום יחזירך לשלום. אתא לקמיה דרבי אלעזר, א\"ל: חס ושלום, דלמא מירתח רתח! א\"ל: מאי אמר לך? אמר ליה: המקום יחזירך לשלום, אמר ליה: ואם איתא דרתח לא הוה מברך לך. אדהכי והכי שמע לארונא דקאתי, אמר: אי ידעי לא נפקי.",
-   "expert_coverage": 0.907,
+   "expert_coverage": 0.901,
    "expert_located": [
     [
      "Kiddushin 31b",
-     2
+     6
     ],
     [
      "Kiddushin 31b",
-     14
+     8
     ]
    ],
    "expert_segments": [
@@ -1842,15 +1680,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב הונא קרע שיראי באנפי רבה בריה, אמר: איזול איחזי אי רתח אי לא רתח. ודלמא רתח, וקעבר  אלפני עור לא תתן מכשול! דמחיל ליה ליקריה. והא קעבר בל תשחית! דעבד ליה בפומבייני. ודילמא משום הכי לא רתח! דעבד ליה בשעת ריתחיה.",
-   "expert_coverage": 0.912,
+   "expert_coverage": 0.905,
    "expert_located": [
     [
      "Kiddushin 32a",
-     4
+     6
     ],
     [
-     "Kiddushin 32b",
-     1
+     "Kiddushin 32a",
+     7
     ]
    ],
    "expert_segments": [
@@ -1891,7 +1729,7 @@
   },
   {
    "id": "kiddushin_r032",
-   "ref": "Kiddushin 32a",
+   "ref": "Kiddushin 32b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1899,8 +1737,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 32a",
-     11
+     "Kiddushin 32b",
+     1
     ],
     [
      "Kiddushin 32b",
@@ -1941,7 +1779,7 @@
   },
   {
    "id": "kiddushin_r033",
-   "ref": "Kiddushin 32a",
+   "ref": "Kiddushin 32b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -1949,8 +1787,8 @@
    "expert_coverage": 0.958,
    "expert_located": [
     [
-     "Kiddushin 32a",
-     12
+     "Kiddushin 32b",
+     2
     ],
     [
      "Kiddushin 32b",
@@ -1991,16 +1829,16 @@
   },
   {
    "id": "kiddushin_r034",
-   "ref": "Kiddushin 32a",
+   "ref": "Kiddushin 32b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "מיתיבי: מעשה ברבי אליעזר ורבי יהושע ורבי צדוק שהיו מסובין בבית המשתה בנו של רבן גמליאל, והיה רבן גמליאל עומד ומשקה עליהם, נתן הכוס לר' אליעזר ולא נטלו, נתנו לר' יהושע וקיבלו; אמר לו רבי אליעזר: מה זה, יהושע, אנו יושבין ורבן גמליאל ברבי עומד ומשקה עלינו? אמר ליה: מצינו גדול ממנו ששמש, אברהם גדול הדור היה, וכתוב בו: והוא עומד עליהם! ושמא תאמרו, כמלאכי השרת נדמו לו? לא נדמו לו אלא לערביים, ואנו לא יהא רבן גמליאל ברבי עומד ומשקה עלינו? אמר להם רבי צדוק: עד מתי אתם מניחים כבודו של מקום ואתם עוסקים בכבוד הבריות? הקב\"ה משיב רוחות ומעלה נשיאים ומוריד מטר ומצמיח אדמה, ועורך שולחן לפני כל אחד ואחד, ואנו לא יהא רבן גמליאל ברבי עומד ומשקה עלינו?",
-   "expert_coverage": 0.954,
+   "expert_coverage": 0.952,
    "expert_located": [
     [
-     "Kiddushin 32a",
-     13
+     "Kiddushin 32b",
+     3
     ],
     [
      "Kiddushin 32b",
@@ -2049,7 +1887,7 @@
   },
   {
    "id": "kiddushin_r035",
-   "ref": "Kiddushin 32b",
+   "ref": "Kiddushin 33a",
    "expert_listed": true,
    "expert_blind": false,
    "expert_strictly_blind": false,
@@ -2057,8 +1895,8 @@
    "expert_coverage": 0.991,
    "expert_located": [
     [
-     "Kiddushin 32b",
-     14
+     "Kiddushin 33a",
+     5
     ],
     [
      "Kiddushin 33a",
@@ -2101,7 +1939,7 @@
    "expert_located": [
     [
      "Kiddushin 33a",
-     0
+     6
     ],
     [
      "Kiddushin 33a",
@@ -2151,7 +1989,7 @@
    "expert_located": [
     [
      "Kiddushin 33a",
-     7
+     13
     ],
     [
      "Kiddushin 33a",
@@ -2201,7 +2039,7 @@
    "expert_located": [
     [
      "Kiddushin 33a",
-     9
+     15
     ],
     [
      "Kiddushin 33a",
@@ -2251,7 +2089,7 @@
    "expert_located": [
     [
      "Kiddushin 33b",
-     6
+     12
     ],
     [
      "Kiddushin 33b",
@@ -2301,7 +2139,7 @@
    "expert_located": [
     [
      "Kiddushin 39a",
-     5
+     10
     ],
     [
      "Kiddushin 39a",
@@ -2355,7 +2193,7 @@
    "expert_located": [
     [
      "Kiddushin 39b",
-     1
+     7
     ],
     [
      "Kiddushin 39b",
@@ -2401,11 +2239,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אילמלי דרשיה אחר להאי קרא כרבי יעקב בר ברתיה, לא חטא. ואחר מאי הוא? איכא דאמרי: כי האי גוונא חזא; ואיכא דאמרי: לישנא דחוצפית המתורגמן חזא דהוה גריר ליה דבר אחר, אמר: פה שהפיק מרגליות ילחך עפר? נפק חטא.",
-   "expert_coverage": 0.986,
+   "expert_coverage": 0.979,
    "expert_located": [
     [
      "Kiddushin 39b",
-     7
+     12
     ],
     [
      "Kiddushin 39b",
@@ -2459,7 +2297,7 @@
    "expert_located": [
     [
      "Kiddushin 39b",
-     9
+     15
     ],
     [
      "Kiddushin 40a",
@@ -2504,7 +2342,7 @@
   },
   {
    "id": "kiddushin_r044",
-   "ref": "Kiddushin 39b",
+   "ref": "Kiddushin 40a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2512,8 +2350,8 @@
    "expert_coverage": 0.934,
    "expert_located": [
     [
-     "Kiddushin 39b",
-     11
+     "Kiddushin 40a",
+     0
     ],
     [
      "Kiddushin 40a",
@@ -2527,46 +2365,19 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 39b",
-     13,
-     13
-    ],
-    [
-     "Kiddushin 39b",
-     15,
-     15
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE",
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": true,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 39b_13-13",
-     "verdict": "incorrect",
-     "note": "Yes, this is a story. He saw a terrible event and then went out and sinned. Two events, causality, change."
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 39b_15-15",
-     "verdict": "correct",
-     "note": "Boundary issue. The final comment based on the verse  (״גִּבֹּרֵי כֹחַ עֹשֵׂי דְבָרוֹ לִשְׁמֹעַ בְּקוֹל דְּבָרוֹ״ – כְּגוֹן רַבִּי צָדוֹק וַחֲבֵירָיו.) is not part of the story but actually goes with teh following story"
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "kiddushin_r045",
-   "ref": "Kiddushin 39b",
+   "ref": "Kiddushin 40a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2574,8 +2385,8 @@
    "expert_coverage": 0.972,
    "expert_located": [
     [
-     "Kiddushin 39b",
-     12
+     "Kiddushin 40a",
+     2
     ],
     [
      "Kiddushin 40a",
@@ -2625,7 +2436,7 @@
    "expert_located": [
     [
      "Kiddushin 40b",
-     1
+     7
     ],
     [
      "Kiddushin 40b",
@@ -2671,15 +2482,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ר' אסי לא על לבי מדרשא, אשכחיה לרבי זירא, אמר ליה: מאי אמור האידנא בי מדרשא? אמר ליה: אף אנא לא עייל, ר' אבין הוא דעייל ואמר: חברותא כולה כר' יוחנן, וצווח ריש לקיש כי כרוכיא ויצאה... והיתה, וליכא דאשגח ביה. אמר ליה: רבי אבין בר סמכא הוא? אמר ליה: אין, כמין ימא לטיגני הוא.",
-   "expert_coverage": 0.96,
+   "expert_coverage": 0.954,
    "expert_located": [
     [
      "Kiddushin 44a",
-     8
+     14
     ],
     [
-     "Kiddushin 44b",
-     0
+     "Kiddushin 44a",
+     14
     ]
    ],
    "expert_segments": [
@@ -2718,7 +2529,7 @@
    "expert_located": [
     [
      "Kiddushin 44b",
-     0
+     5
     ],
     [
      "Kiddushin 44b",
@@ -2763,7 +2574,7 @@
   },
   {
    "id": "kiddushin_r049",
-   "ref": "Kiddushin 44b",
+   "ref": "Kiddushin 45a",
    "expert_listed": true,
    "expert_blind": false,
    "expert_strictly_blind": false,
@@ -2771,8 +2582,8 @@
    "expert_coverage": 0.978,
    "expert_located": [
     [
-     "Kiddushin 44b",
-     13
+     "Kiddushin 45a",
+     5
     ],
     [
      "Kiddushin 45b",
@@ -2806,7 +2617,7 @@
   },
   {
    "id": "kiddushin_r050",
-   "ref": "Kiddushin 45a",
+   "ref": "Kiddushin 45b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -2814,7 +2625,7 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 45a",
+     "Kiddushin 45b",
      1
     ],
     [
@@ -2856,15 +2667,15 @@
   },
   {
    "id": "kiddushin_r051",
-   "ref": "Kiddushin 45a",
+   "ref": "Kiddushin 45b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא דאמר לקריבאי והיא אמרה לקריבה, כפתיה עד דאמר לה תיהוי לקריבה, אדאכלי ושתי אתא קריביה באיגרא וקדשה; אמר אביי, כתיב: שארית ישראל לא יעשו עולה ולא ידברו כזב.",
-   "expert_coverage": 0.947,
+   "expert_coverage": 0.939,
    "expert_located": [
     [
-     "Kiddushin 45a",
+     "Kiddushin 45b",
      3
     ],
     [
@@ -2919,7 +2730,7 @@
    "expert_located": [
     [
      "Kiddushin 49b",
-     6
+     12
     ],
     [
      "Kiddushin 49b",
@@ -2962,7 +2773,7 @@
    "expert_located": [
     [
      "Kiddushin 50a",
-     3
+     9
     ],
     [
      "Kiddushin 50a",
@@ -3012,7 +2823,7 @@
    "expert_located": [
     [
      "Kiddushin 50a",
-     4
+     10
     ],
     [
      "Kiddushin 50a",
@@ -3053,7 +2864,7 @@
   },
   {
    "id": "kiddushin_r055",
-   "ref": "Kiddushin 52a",
+   "ref": "Kiddushin 52b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3061,8 +2872,8 @@
    "expert_coverage": 0.977,
    "expert_located": [
     [
-     "Kiddushin 52a",
-     6
+     "Kiddushin 52b",
+     1
     ],
     [
      "Kiddushin 52b",
@@ -3103,7 +2914,7 @@
   },
   {
    "id": "kiddushin_r056",
-   "ref": "Kiddushin 52a",
+   "ref": "Kiddushin 52b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3111,8 +2922,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 52a",
-     7
+     "Kiddushin 52b",
+     2
     ],
     [
      "Kiddushin 52b",
@@ -3153,7 +2964,7 @@
   },
   {
    "id": "kiddushin_r057",
-   "ref": "Kiddushin 52a",
+   "ref": "Kiddushin 52b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3161,8 +2972,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 52a",
-     8
+     "Kiddushin 52b",
+     3
     ],
     [
      "Kiddushin 52b",
@@ -3208,11 +3019,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "לאחר פטירתו של ר' מאיר, אמר להם רבי יהודה לתלמידיו: אל יכנסו תלמידי רבי מאיר לכאן, מפני שקנתרנים הם, ולא ללמוד תורה הם באים, אלא לקפחני בהלכות הם באים. דחק סומכוס ונכנס, אמר להם, כך שנה לי ר' מאיר: המקדש בחלקו, בין קדשי קדשים ובין קדשים קלים - לא קידש. כעס ר' יהודה עליהם, אמר להם, לא כך אמרתי לכם: אל יכנסו מתלמידי ר\"מ לכאן, מפני שקנתרנים הם, ולא ללמוד תורה הם באים, אלא לקפחני בהלכות הם באים? וכי אשה בעזרה מנין! אמר ר' יוסי, יאמרו: מאיר שכב, יהודה כעס, יוסי שתק, דברי תורה מה תהא עליה! וכי אין אדם עשוי לקבל קידושין לבתו בעזרה? ואין אשה עשויה לעשות לה שליח לקבל קידושיה בעזרה?",
-   "expert_coverage": 0.938,
+   "expert_coverage": 0.935,
    "expert_located": [
     [
      "Kiddushin 52b",
-     1
+     12
     ],
     [
      "Kiddushin 52b",
@@ -3220,10 +3031,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 52b",
-     11
-    ],
     [
      "Kiddushin 52b",
      12
@@ -3274,7 +3081,7 @@
    "expert_located": [
     [
      "Kiddushin 53a",
-     3
+     8
     ],
     [
      "Kiddushin 53a",
@@ -3308,7 +3115,7 @@
   },
   {
    "id": "kiddushin_r060",
-   "ref": "Kiddushin 56b",
+   "ref": "Kiddushin 57a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3316,8 +3123,8 @@
    "expert_coverage": 0.983,
    "expert_located": [
     [
-     "Kiddushin 56b",
-     11
+     "Kiddushin 57a",
+     0
     ],
     [
      "Kiddushin 57a",
@@ -3362,7 +3169,7 @@
   },
   {
    "id": "kiddushin_r061",
-   "ref": "Kiddushin 57b",
+   "ref": "Kiddushin 58a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3370,8 +3177,8 @@
    "expert_coverage": 0.896,
    "expert_located": [
     [
-     "Kiddushin 57b",
-     14
+     "Kiddushin 58a",
+     2
     ],
     [
      "Kiddushin 58a",
@@ -3421,11 +3228,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "בעא מיניה ר' חייא בר אבין מרב הונא: טובת הנאה, ממון או אינה ממון? אמר ליה, תניתוה: המקדש בתרומות, ובמעשרות, ובמתנות, במי חטאת, ובאפר פרה - הרי זו מקודשת, ואפילו ישראל! א\"ל: ולאו אוקימנא בישראל שנפלו לו טבלים מבית אבי אמו כהן? א\"ל: הוצאה את! איכסיף. הוא סבר משמעתא קאמר ליה, א\"ל, הכי קאמינא: רב אסי דהוצל קאי כותיך.",
-   "expert_coverage": 0.931,
+   "expert_coverage": 0.926,
    "expert_located": [
     [
      "Kiddushin 58a",
-     9
+     15
     ],
     [
      "Kiddushin 58b",
@@ -3433,18 +3240,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 58a",
-     12
-    ],
-    [
-     "Kiddushin 58a",
-     13
-    ],
-    [
-     "Kiddushin 58a",
-     14
-    ],
     [
      "Kiddushin 58a",
      15
@@ -3475,7 +3270,7 @@
   },
   {
    "id": "kiddushin_r063",
-   "ref": "Kiddushin 58b",
+   "ref": "Kiddushin 59a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3483,8 +3278,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 58b",
-     12
+     "Kiddushin 59a",
+     3
     ],
     [
      "Kiddushin 59a",
@@ -3525,7 +3320,7 @@
   },
   {
    "id": "kiddushin_r064",
-   "ref": "Kiddushin 58b",
+   "ref": "Kiddushin 59a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3533,8 +3328,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 58b",
-     13
+     "Kiddushin 59a",
+     4
     ],
     [
      "Kiddushin 59a",
@@ -3575,7 +3370,7 @@
   },
   {
    "id": "kiddushin_r065",
-   "ref": "Kiddushin 58b",
+   "ref": "Kiddushin 59a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3583,8 +3378,8 @@
    "expert_coverage": 0.938,
    "expert_located": [
     [
-     "Kiddushin 58b",
-     14
+     "Kiddushin 59a",
+     5
     ],
     [
      "Kiddushin 59a",
@@ -3633,16 +3428,16 @@
   },
   {
    "id": "kiddushin_r066",
-   "ref": "Kiddushin 65b",
+   "ref": "Kiddushin 66a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "דההוא סמיא דהוה מסדר מתנייתא קמיה דמר שמואל, יומא חד נגה ליה ולא הוה קאתי, שדר שליחא אבתריה. אדאזיל שליח בחדא אורחא, אתא איהו בחדא. כי אתא שליח, אמר: אשתו זינתה, אתא לקמיה דמר שמואל, א\"ל: אי מהימן לך זיל אפקה, ואי לא - לא תפיק; מאי לאו אי מהימן עלך דלאו גזלנא הוא. ורבא? אי מהימן לך כבי תרי זיל אפקה, ואי לא - לא תפקה.",
-   "expert_coverage": 0.974,
+   "expert_coverage": 0.969,
    "expert_located": [
     [
-     "Kiddushin 65b",
-     12
+     "Kiddushin 66a",
+     5
     ],
     [
      "Kiddushin 66a",
@@ -3692,15 +3487,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "מעשה בינאי המלך שהלך לכוחלית שבמדבר וכיבש שם ששים כרכים, ובחזרתו היה שמח שמחה גדולה, וקרא לכל חכמי ישראל. אמר להם: אבותינו היו אוכלים מלוחים בזמן שהיו עסוקים בבנין בית המקדש, אף אנו נאכל מלוחים זכר לאבותינו, והעלו מלוחים על שולחנות של זהב ואכלו. והיה שם אחד איש לץ לב רע ובליעל ואלעזר בן פועירה שמו, ויאמר אלעזר בן פועירה לינאי המלך: ינאי המלך, לבם של פרושים עליך! ומה אעשה? הקם להם בציץ שבין עיניך, הקים להם בציץ שבין עיניו. היה שם זקן אחד ויהודה בן גדידיה שמו, ויאמר יהודה בן גדידיה לינאי המלך: ינאי המלך, רב לך כתר מלכות, הנח כתר כהונה לזרעו של אהרן! שהיו אומרים: אמו נשבית במודיעים, ויבוקש הדבר ולא נמצא; ויבדלו חכמי ישראל בזעם. ויאמר אלעזר בן פועירה לינאי המלך: ינאי המלך, הדיוט שבישראל כך הוא דינו, ואתה מלך וכהן גדול כך הוא דינך? ומה אעשה? אם אתה שומע לעצתי רומסם. ותורה מה תהא עליה? הרי כרוכה ומונחת בקרן זוית, כל הרוצה ללמוד יבוא וילמוד. אמר רב נחמן בר יצחק: מיד נזרקה בו אפיקורסות, דהוה ליה למימר: תינח תורה שבכתב, תורה שבעל פה מאי? מיד ותוצץ הרעה על ידי אלעזר בן פועירה, ויהרגו כל חכמי ישראל, והיה העולם משתומם עד שבא שמעון בן שטח והחזיר את התורה ליושנה.",
-   "expert_coverage": 0.971,
+   "expert_coverage": 0.969,
    "expert_located": [
     [
      "Kiddushin 66a",
-     1
+     7
     ],
     [
      "Kiddushin 66a",
-     14
+     11
     ]
    ],
    "expert_segments": [
@@ -3753,7 +3548,7 @@
   },
   {
    "id": "kiddushin_r068",
-   "ref": "Kiddushin 66a",
+   "ref": "Kiddushin 66b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3761,8 +3556,8 @@
    "expert_coverage": 0.951,
    "expert_located": [
     [
-     "Kiddushin 66a",
-     12
+     "Kiddushin 66b",
+     0
     ],
     [
      "Kiddushin 66b",
@@ -3770,10 +3565,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 66a",
-     16
-    ],
     [
      "Kiddushin 66b",
      0
@@ -3827,7 +3618,7 @@
   },
   {
    "id": "kiddushin_r069",
-   "ref": "Kiddushin 68b",
+   "ref": "Kiddushin 69a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -3835,8 +3626,8 @@
    "expert_coverage": 0.9,
    "expert_located": [
     [
-     "Kiddushin 68b",
-     9
+     "Kiddushin 69a",
+     5
     ],
     [
      "Kiddushin 69a",
@@ -3867,11 +3658,11 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "ההוא גברא דמנהרדעא דעל לבי מטבחיא בפומבדיתא, אמר להו: הבו לי בישרא, אמרו ליה: נטר עד דשקיל לשמעיה דרב יהודה בר יחזקאל, וניתיב לך. אמר: מאן יהודה בר שויסקאל דקדים לי, דשקל מן קמאי? אזלו אמרו ליה לרב יהודה, שמתיה. אמרו: רגיל דקרי אינשי עבדי, אכריז עליה דעבדא הוא. אזל ההוא אזמניה לדינא לקמיה דרב נחמן, אייתי פיתקא דהזמנא. אזל רב יהודה לקמיה דרב הונא, אמר ליה: איזיל או לא איזיל? אמר ליה: מיזל לא מיבעי לך למיזל, משום דגברא רבה את, אלא משום יקרא דבי נשיאה קום זיל. אתא אשכחיה דקעביד מעקה, אמר ליה, לא סבר לה מר להא דאמר רב הונא בר אידי אמר שמואל: כיון שנתמנה אדם פרנס על הצבור - אסור בעשיית מלאכה בפני שלשה? א\"ל: פורתא דגונדריתא הוא דקא עבידנא, א\"ל: מי סניא מעקה דכתיב באורייתא, או מחיצה דאמור רבנן! א\"ל: יתיב מר אקרפיטא, א\"ל: ומי סני ספסל דאמור רבנן, או איצטבא דאמרי אינשי! א\"ל: ליכול מר אתרונגא, אמר ליה, הכי אמר שמואל: כל האומר אתרונגא - תילתא ברמות רוחא, או אתרוג כדקריוה רבנן, או אתרוגא דאמרי אינשי. אמר ליה: לישתי מר אנבגא, אמר ליה: מי סני איספרגוס דקריוה רבנן, או אנפק דאמרי אינשי! אמר ליה: תיתי דונג תשקינן, אמר ליה, הכי אמר שמואל: אין משתמשים באשה. קטנה היא! בפירוש אמר שמואל: אין משתמשים באשה כלל, בין גדולה בין קטנה. נשדר ליה מר שלמא לילתא, א\"ל, הכי אמר שמואל: קול באשה ערוה. אפשר ע\"י שליח! א\"ל, הכי אמר שמואל: אין שואלין בשלום אשה. על ידי בעלה! אמר ליה, הכי אמר שמואל: אין שואלין בשלום אשה כלל. שלחה ליה דביתהו: שרי ליה תגריה, דלא נישוויך כשאר עם הארץ. א\"ל: מאי שיאטיה דמר הכא? אמר ליה: טסקא דהזמנותא שדר מר אבתראי, אמר ליה: השתא שותא דמר לא גמירנא, טסקא דהזמנותא משדרנא למר? אפיק דיסקא דהזמנותא מבי חדיה ואחזי ליה, אמר ליה: הא גברא והא דסקא. אמר ליה: הואיל ואתא מר להכא לישתעי מיליה, כי היכי דלא לימרו מחנפי רבנן אהדדי. אמר ליה: מאי טעמא שמתיה מר לההוא גברא? ציער שליחא דרבנן. ונגדיה מר, דרב מנגיד על מאן דמצער שלוחא דרבנן! דעדיף מיניה עבדי ליה. מאי טעמא אכריז מר עליה דעבדא הוא? אמר ליה: דרגיל דקרי אינשי עבדי, ותני: כל הפוסל - פסול, ואינו מדבר בשבחא לעולם, ואמר שמואל: במומו פוסל. אימר דאמר שמואל - למיחש ליה, לאכרוזי עליה מי אמר? אדהכי והכי (אתא ההוא בר דיניה מנהרדעי), א\"ל ההוא בר דיניה לרב יהודה: לדידי קרית לי עבדא, דאתינא מבית חשמונאי מלכא? אמר ליה, הכי אמר שמואל: כל דאמר מדבית חשמונאי קאתינא - עבדא הוא. א\"ל, לא סבר לה מר להא דא\"ר אבא אמר רב הונא אמר רב: כל ת\"ח שמורה הלכה ובא, אם קודם מעשה אמרה - שומעין לו, ואם לאו - אין שומעין לו? אמר ליה: הא איכא רב מתנה דקאי כוותי. רב מתנה לא חזייה לנהרדעא תליסר שני, ההוא יומא אתא, אמר ליה: דכיר מר מאי אמר שמואל כי קאי חדא כרעא אגודא וחדא כרעא במברא? א\"ל, הכי אמר שמואל: כל דאמר מדבית חשמונאי מלכא קאתינא - עבדא הוא, דלא אישתיור מינייהו אלא ההיא רביתא, דסלקא לאיגרא ורמיא קלא ואמרה: כל דאמר מבית חשמונאי אנא - עבדא הוא, נפלה מאיגרא ומיתה. אכרוז עליה דעבדא הוא. ההוא יומא אקרען כמה כתובתא בנהרדעא. כי קא נפיק, נפקי אבתריה למירגמיה, אמר להו: אי שתיקו - שתיקו, ואי לא - מגלינא עלייכו הא דאמר שמואל: תרתי זרעייתא איכא בנהרדעא, חדא מיקריא דבי יונה וחדא מיקריא דבי עורבתי, וסימניך: טמא טמא, טהור טהור. שדיוה לההוא ריגמא מידייהו, וקם אטמא בנהר מלכא.",
-   "expert_coverage": 0.879,
+   "expert_coverage": 0.957,
    "expert_located": [
     [
      "Kiddushin 70a",
-     12
+     11
     ],
     [
      "Kiddushin 70b",
@@ -3879,6 +3670,10 @@
     ]
    ],
    "expert_segments": [
+    [
+     "Kiddushin 70a",
+     11
+    ],
     [
      "Kiddushin 70a",
      12
@@ -3964,20 +3759,20 @@
   },
   {
    "id": "kiddushin_r071",
-   "ref": "Kiddushin 70b",
+   "ref": "Kiddushin 71a",
    "expert_listed": true,
    "expert_blind": false,
    "expert_strictly_blind": false,
    "expert_text": "בימי רבי בקשו לעשות בבל עיסה לארץ ישראל, אמר להן: קוצים אתם משימים לי בין עיני? רצונכם, יטפל עמכם ר' חנינא בר חמא. נטפל עמהם ר' חנינא בר חמא, אמר להם, כך מקובלני מר' ישמעאל בר' יוסי שאמר משום אביו: כל ארצות עיסה לארץ ישראל, וארץ ישראל עיסה לבבל.",
-   "expert_coverage": 0.926,
+   "expert_coverage": 0.913,
    "expert_located": [
     [
-     "Kiddushin 70b",
-     15
+     "Kiddushin 71a",
+     2
     ],
     [
      "Kiddushin 71a",
-     12
+     3
     ]
    ],
    "expert_segments": [
@@ -3991,34 +3786,19 @@
     ]
    ],
    "not_blind_reason": "in `Kiddushin missed stories.docx`, the appendix Jeff merged into his list. Not blind: it is there because we put the page in front of him.",
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 71a",
-     4,
-     5
-    ]
-   ],
-   "detector_classification": [
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 71a_4-5",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "kiddushin_r072",
-   "ref": "Kiddushin 70b",
+   "ref": "Kiddushin 71a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4026,8 +3806,8 @@
    "expert_coverage": 0.986,
    "expert_located": [
     [
-     "Kiddushin 70b",
-     14
+     "Kiddushin 71a",
+     4
     ],
     [
      "Kiddushin 71a",
@@ -4077,15 +3857,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמר רבה בר בר חנה אמר ר' יוחנן: שם בן ארבע אותיות, חכמים מוסרין אותו לתלמידיהן פעם אחת בשבוע, ואמרי לה פעמים בשבוע. אמר רב נחמן בר יצחק: מסתברא כמאן דאמר פעם אחת בשבוע, דכתיב: זה שמי לעולם, לעלם כתיב. רבא סבר למידרשיה בפירקא, א\"ל ההוא סבא: לעלם כתיב.",
-   "expert_coverage": 0.939,
+   "expert_coverage": 0.933,
    "expert_located": [
     [
      "Kiddushin 71a",
-     3
+     9
     ],
     [
      "Kiddushin 71a",
-     12
+     9
     ]
    ],
    "expert_segments": [
@@ -4095,28 +3875,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 71a",
-     4,
-     5
-    ]
-   ],
-   "detector_classification": [
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 71a_4-5",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -4131,7 +3896,7 @@
    "expert_located": [
     [
      "Kiddushin 71a",
-     5
+     11
     ],
     [
      "Kiddushin 71a",
@@ -4145,28 +3910,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 71a",
-     4,
-     5
-    ]
-   ],
-   "detector_classification": [
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 71a_4-5",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -4177,15 +3927,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "זעירי הוה קא מישתמיט מיניה דר' יוחנן, דהוה אמר ליה נסיב ברתי. יומא חד הוו קאזלי באורחא, מטו לעורקמא דמיא, ארכביה לר' יוחנן אכתפיה וקא מעבר ליה. א\"ל: אורייתן כשרה, בנתין לא כשרן? מאי דעתיך? אילימא מדתנן: עשרה יוחסין עלו מבבל, כהני לויי, אטו כהני לויי וישראלי כולהו סליקו? כי היכי דאישתיור מהני, אישתיור נמי מהני. אישתמיטתיה הא דאמר ר\"א: לא עלה עזרא מבבל - עד שעשאה כסולת נקייה ועלה.",
-   "expert_coverage": 0.947,
+   "expert_coverage": 0.94,
    "expert_located": [
     [
      "Kiddushin 71b",
-     0
+     2
     ],
     [
      "Kiddushin 71b",
-     13
+     3
     ]
    ],
    "expert_segments": [
@@ -4226,7 +3976,7 @@
   },
   {
    "id": "kiddushin_r076",
-   "ref": "Kiddushin 71a",
+   "ref": "Kiddushin 71b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4234,8 +3984,8 @@
    "expert_coverage": 0.891,
    "expert_located": [
     [
-     "Kiddushin 71a",
-     13
+     "Kiddushin 71b",
+     4
     ],
     [
      "Kiddushin 71b",
@@ -4292,7 +4042,7 @@
   },
   {
    "id": "kiddushin_r077",
-   "ref": "Kiddushin 71b",
+   "ref": "Kiddushin 72a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4300,8 +4050,8 @@
    "expert_coverage": 1.0,
    "expert_located": [
     [
-     "Kiddushin 71b",
-     13
+     "Kiddushin 72a",
+     3
     ],
     [
      "Kiddushin 72a",
@@ -4342,20 +4092,20 @@
   },
   {
    "id": "kiddushin_r078",
-   "ref": "Kiddushin 71b",
+   "ref": "Kiddushin 72a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "אמר רב איקא בר אבין אמר רב חננאל אמר רב: חלזון ניהוונד - הרי היא כגולה ליוחסין. א\"ל אביי: לא תציתו ליה, יבמה היא דנפלה ליה התם. א\"ל: אטו דידי היא? דרב חננאל היא. אזיל שיילוה לרב חננאל, אמר להו, הכי אמר רב: חלזון ניהוונד - הרי היא כגולה ליוחסין.",
-   "expert_coverage": 0.928,
+   "expert_coverage": 0.904,
    "expert_located": [
     [
-     "Kiddushin 71b",
-     14
+     "Kiddushin 72a",
+     4
     ],
     [
      "Kiddushin 72a",
-     10
+     4
     ]
    ],
    "expert_segments": [
@@ -4365,55 +4115,28 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 72a",
-     3,
-     3
-    ],
-    [
-     "Kiddushin 72a",
-     10,
-     10
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE",
-    "HIGH_CONFIDENCE"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 72a_3-3",
-     "verdict": "correct",
-     "note": "Boundary issue. The story ends with: שׁוֹט מֵישׁוֹט בֵּין הַנְּהָרוֹת עוֹמֶדֶת. The rest is the gemara's commentary."
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 72a_10-10",
-     "verdict": "correct",
-     "note": "Boundary issue. The story ends with הַיּוֹם נוֹלַד רַב יְהוּדָה בְּבָבֶל.. The rest is a separate tradition."
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
   {
    "id": "kiddushin_r079",
-   "ref": "Kiddushin 71b",
+   "ref": "Kiddushin 72a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "כי הוה ניחא נפשיה דרבי, אמר: הומניא איכא בבבל, כולה עמונאי היא; מסגריא איכא בבבל, כולה דממזירא היא; בירקא איכא בבבל, שני אחים יש שמחליפים נשותיהם זה לזה; בירתא דסטיא איכא בבבל, היום סרו מאחרי המקום, דאקפי פירא בכוורי בשבתא ואזיל וצדו בהו בשבתא, ושמתינהו ר' אחי ברבי יאשיה ואישתמוד.",
-   "expert_coverage": 0.952,
+   "expert_coverage": 0.947,
    "expert_located": [
     [
-     "Kiddushin 71b",
-     13
+     "Kiddushin 72a",
+     10
     ],
     [
      "Kiddushin 72a",
@@ -4454,7 +4177,7 @@
   },
   {
    "id": "kiddushin_r080",
-   "ref": "Kiddushin 72b",
+   "ref": "Kiddushin 73a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4462,8 +4185,8 @@
    "expert_coverage": 0.94,
    "expert_located": [
     [
-     "Kiddushin 72b",
-     14
+     "Kiddushin 73a",
+     5
     ],
     [
      "Kiddushin 73a",
@@ -4513,7 +4236,7 @@
    "expert_located": [
     [
      "Kiddushin 76b",
-     4
+     9
     ],
     [
      "Kiddushin 76b",
@@ -4567,7 +4290,7 @@
    "expert_located": [
     [
      "Kiddushin 79b",
-     0
+     6
     ],
     [
      "Kiddushin 79b",
@@ -4608,7 +4331,7 @@
   },
   {
    "id": "kiddushin_r083",
-   "ref": "Kiddushin 79b",
+   "ref": "Kiddushin 80a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
@@ -4616,8 +4339,8 @@
    "expert_coverage": 0.897,
    "expert_located": [
     [
-     "Kiddushin 79b",
-     12
+     "Kiddushin 80a",
+     4
     ],
     [
      "Kiddushin 80a",
@@ -4663,15 +4386,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "תניא: כל שלשים יום - יוצא בחיק, ונקבר באשה אחת ושני אנשים, אבל לא באיש אחד ושתי נשים, אבא שאול אומר: אף באיש אחד ושתי נשים! אפילו תימא אבא שאול, בשעת אנינות תביר יצריה. ורבנן? סברי לה כר' יצחק, דאמר רבי יצחק: מה יתאונן אדם חי גבר על חטאיו - אפילו בשעת אנינותו של אדם יצרו מתגבר עליו. ואבא שאול? כי כתיב ההוא - במתרעם על מדותיו כתיב, והכי קאמר: מה יתרעם על מדותיו? וכי גבר על חטאיו? דיו חיים שנתתי לו. ורבנן? כי ההוא מעשה דההיא איתתא, דהוה עובדא ואפיקתיה. (ראה רש\"י)",
-   "expert_coverage": 0.947,
+   "expert_coverage": 0.94,
    "expert_located": [
     [
      "Kiddushin 80b",
-     4
+     8
     ],
     [
      "Kiddushin 80b",
-     12
+     11
     ]
    ],
    "expert_segments": [
@@ -4720,20 +4443,20 @@
   },
   {
    "id": "kiddushin_r085",
-   "ref": "Kiddushin 80b",
+   "ref": "Kiddushin 81a",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב ורב יהודה הוו קאזלי באורחא, הוה קאזלא ההיא אתתא קמייהו, א\"ל רב לרב יהודה: דל כרעיך מקמי גיהנם. אמר ליה, והא מר הוא דאמר: בכשרים שפיר דמי! א\"ל: מי יימר דבכשרים כגון אנא ואת! אלא כגון מאי? כגון רבי חנינא בר פפי וחביריו.",
-   "expert_coverage": 0.954,
+   "expert_coverage": 0.947,
    "expert_located": [
     [
-     "Kiddushin 80b",
-     10
+     "Kiddushin 81a",
+     2
     ],
     [
      "Kiddushin 81a",
-     4
+     2
     ]
    ],
    "expert_segments": [
@@ -4775,15 +4498,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רב ביבי איקלע לבי רב יוסף, בתר דכרך ריפתא, אמר להו: שקולי דרגא מתותי ביבי.",
-   "expert_coverage": 0.942,
+   "expert_coverage": 0.923,
    "expert_located": [
     [
      "Kiddushin 81a",
-     1
+     6
     ],
     [
      "Kiddushin 81a",
-     14
+     6
     ]
    ],
    "expert_segments": [
@@ -4793,76 +4516,13 @@
     ]
    ],
    "not_blind_reason": null,
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 81a",
-     2,
-     2
-    ],
-    [
-     "Kiddushin 81a",
-     10,
-     11
-    ],
-    [
-     "Kiddushin 81a",
-     12,
-     12
-    ],
-    [
-     "Kiddushin 81a",
-     13,
-     13
-    ],
-    [
-     "Kiddushin 81a",
-     14,
-     14
-    ]
-   ],
-   "detector_classification": [
-    "LOW_CONFIDENCE",
-    "YES",
-    "YES",
-    "YES",
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_2-2",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_10-11",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_12-12",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_13-13",
-     "verdict": "correct",
-     "note": ""
-    },
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_14-14",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -4873,15 +4533,15 @@
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "הנך שבוייתא דאתאי לנהרדעא, אסקינהו לבי רב עמרם חסידא, אשקולו דרגא מקמייהו, בהדי דקא חלפה חדא מנייהו נפל נהורא באיפומא, שקליה רב עמרם לדרגא דלא הוו יכלין בי עשרה למדלייא, דלייא לחודיה. סליק ואזיל, כי מטא לפלגא דרגא איפשח, רמא קלא: נורא בי עמרם! אתו רבנן, אמרו ליה: כסיפתינן! אמר להו: מוטב תיכספו בי עמרם בעלמא הדין, ולא תיכספו מיניה לעלמא דאתי. אשבעיה דינפק מיניה, נפק מיניה כי עמודא דנורא, אמר ליה: חזי, דאת נורא ואנא בישרא, ואנא עדיפנא מינך.",
-   "expert_coverage": 0.97,
+   "expert_coverage": 0.961,
    "expert_located": [
     [
      "Kiddushin 81a",
-     5
+     10
     ],
     [
      "Kiddushin 81a",
-     13
+     11
     ]
    ],
    "expert_segments": [
@@ -4931,7 +4591,7 @@
    "expert_located": [
     [
      "Kiddushin 81a",
-     6
+     12
     ],
     [
      "Kiddushin 81a",
@@ -4981,7 +4641,7 @@
    "expert_located": [
     [
      "Kiddushin 81a",
-     7
+     13
     ],
     [
      "Kiddushin 81a",
@@ -4989,10 +4649,6 @@
     ]
    ],
    "expert_segments": [
-    [
-     "Kiddushin 81a",
-     12
-    ],
     [
      "Kiddushin 81a",
      13
@@ -5004,27 +4660,15 @@
    "detector_span": [
     [
      "Kiddushin 81a",
-     12,
-     12
-    ],
-    [
-     "Kiddushin 81a",
      13,
      13
     ]
    ],
    "detector_classification": [
-    "YES",
     "YES"
    ],
    "in_golden": true,
    "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81a_12-12",
-     "verdict": "correct",
-     "note": ""
-    },
     {
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_13-13",
@@ -5047,7 +4691,7 @@
    "expert_located": [
     [
      "Kiddushin 81a",
-     8
+     14
     ],
     [
      "Kiddushin 81b",
@@ -5092,16 +4736,16 @@
   },
   {
    "id": "kiddushin_r091",
-   "ref": "Kiddushin 81a",
+   "ref": "Kiddushin 81b",
    "expert_listed": true,
    "expert_blind": true,
    "expert_strictly_blind": true,
    "expert_text": "רבי חייא בר אשי הוה רגיל כל עידן דהוה נפל לאפיה, הוה אמר: הרחמן יצילנו מיצר הרע. יומא חד שמעתינהו דביתהו, אמרה: מכדי הא כמה שני דפריש ליה מינאי, מאי טעמא קאמר הכי? יומא חדא הוה קא גריס בגינתיה, קשטה נפשה חלפה ותנייה קמיה. אמר לה: מאן את? אמרה: אנא חרותא דהדרי מיומא, תבעה, אמרה ליה: אייתי ניהליה להך רומנא דריש צוציתא, שוור אזל אתייה ניהלה. כי אתא לביתיה, הוה קא שגרא דביתהו תנורא, סליק וקא יתיב בגויה. אמרה ליה: מאי האי? אמר לה: הכי והכי הוה מעשה, אמרה ליה: אנא הואי. לא אשגח בה, עד דיהבה ליה סימני, אמר לה: אנא מיהא לאיסורא איכווני. כל ימיו של אותו צדיק היה מתענה, עד שמת באותה מיתה.",
-   "expert_coverage": 0.977,
+   "expert_coverage": 0.972,
    "expert_located": [
     [
-     "Kiddushin 81a",
-     12
+     "Kiddushin 81b",
+     1
     ],
     [
      "Kiddushin 81b",
@@ -5159,7 +4803,7 @@
    "expert_located": [
     [
      "Kiddushin 81b",
-     3
+     9
     ],
     [
      "Kiddushin 81b",
@@ -5173,28 +4817,13 @@
     ]
    ],
    "not_blind_reason": "in `Kiddushin missed stories.docx`, the appendix Jeff merged into his list. Not blind: it is there because we put the page in front of him.",
-   "detector_proposed": true,
+   "detector_proposed": false,
    "detector_proposed_strict": false,
-   "detector_span": [
-    [
-     "Kiddushin 81b",
-     1,
-     3
-    ]
-   ],
-   "detector_classification": [
-    "YES"
-   ],
+   "detector_span": null,
+   "detector_classification": null,
    "in_golden": false,
-   "verdicts": [
-    {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 81b_1-3",
-     "verdict": "correct",
-     "note": ""
-    }
-   ],
-   "verdict_match": "exact",
+   "verdicts": [],
+   "verdict_match": null,
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -5209,7 +4838,7 @@
    "expert_located": [
     [
      "Kiddushin 81b",
-     4
+     10
     ],
     [
      "Kiddushin 81b",
@@ -5244,7 +4873,7 @@
    "expert_located": [
     [
      "Kiddushin 81b",
-     8
+     14
     ],
     [
      "Kiddushin 82a",

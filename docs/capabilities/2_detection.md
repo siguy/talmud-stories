@@ -3,15 +3,21 @@
 **Definition:** on a page we chose to examine, propose every span that might be a story —
 see [`FRAMEWORK.md` §1.2](../../FRAMEWORK.md). It proposes; it does not judge.
 **Gate:** ≥95% recall (PROVISIONAL)
-**Current:** **Ketubot 96.0% loose / 87.9% strict** (143/149) on Jeff's 2005 list
-(**BLIND**); **Kiddushin 93.3% loose / 83.3% strict** (84/90) on his Kiddushin list
-(**BLIND**). Measured 2026-08-30, `results/rulers/`.
+**Current:** **Ketubot 87.2%** (130/149) on Jeff's 2005 list (**BLIND**);
+**Kiddushin 84.4% loose / 83.3% strict** (76/90) on his Kiddushin list (**BLIND**);
+**Gittin 97.3%** (108/111); **Yevamot 89.2%** (91/102). Re-measured 2026-09-03,
+`results/rulers/` and `results/recall/`.
+**Loose and strict are now the same question** — the gap between them was a 4-gram search
+window up to 14 segments wide, not an ambiguity about what we found. Ketubot and Gittin
+agree exactly; Kiddushin differs by one story. The previous headline, **96.0% loose /
+87.9% strict**, was the same runs read through that window.
 *Circular cross-check, not an accuracy claim:* golden recall 92.1% Ketubot / 95.3%
 Kiddushin (**CIRCULAR**).
 
-**Those two figures are end-to-end, not Detection.** They include what Triage discarded
+**Those figures are end-to-end, not Detection.** They include what Triage discarded
 before Stage 2 ever saw the page. **Detection measured on pages that survived triage is
-97.9% Ketubot / 97.7% Kiddushin** (2026-08-31) — the same, within one story, and both
+90.3% Ketubot / 88.4% Kiddushin / 97.3% Gittin / 89.2% Yevamot** (2026-09-03; the
+Ketubot and Kiddushin figures read 97.9% / 97.7% on 2026-08-31, before the matcher) — the same, within one story, and both
 comfortably above the gate. Quote the conditional figure when the subject is this
 capability, and the end-to-end one when the subject is the pipeline
 ([`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md)).
@@ -60,6 +66,7 @@ the credit is being counted twice.
 | 2026-08-30 | **Kiddushin Detection measured for the first time** | **measured: 93.3% loose / 83.3% strict** (84/90, BLIND) — **below the 95% gate where Ketubot is above.** First like-for-like comparison of the two tractates | `4de7135`, corrected by `2cd1094` |
 | 2026-08-31 | **The Kiddushin gap re-attributed to Triage.** The 93.3% was compared with Ketubot's 96.0% as though both were Detection; both are end-to-end. Split with `measure_recall_vs_expert_list.py`, same script both sides, same day | **measured: Detection given the page survived triage is 97.7% Kiddushin vs 97.9% Ketubot** — a difference of one story. The entire 2.7-point end-to-end gap is Triage (95.6% vs 98.0%). Cause split of Kiddushin's 6 misses: **4 triage, 2 detection**. Two further stories are proposed and then classified `NOT_A_STORY` — Classification, reported apart | [`kiddushin_recall`](../findings/2026-08-31-kiddushin-recall.md) |
 | 2026-08-31 | Kiddushin 81b re-read while splitting the misses | **measured: 81b carries two of Jeff's stories, not one.** Every prior document discusses only `kiddushin_093` (R. Meir / R. Tarfon, the appendix case). `kiddushin_094` — Rav Hanan of Nehardea, segs 4-10, 100% text alignment — is blind, examined, and **never proposed** | [`kiddushin_recall` §4](../findings/2026-08-31-kiddushin-recall.md) |
+| 2026-09-03 | **Every reader of an expert list moved onto exact-phrase anchoring.** `locate` compared SETS of 4-grams per segment and grew a window while coverage improved — and an accumulating set can only add grams, so nothing could penalise a window that reached a neighbour. All 452 stories across the four lists carry an exact 6-word phrase unique in their own tractate; the new matcher anchors there and extends only over phrases sitting where the story says they should | **measured: loose recall collapses onto strict and strict barely moves.** Ketubot 96.0→**87.2**, Kiddushin 93.3→**84.4**, Gittin 100.0→**97.3**, Yevamot 94.1→**89.2**, against strict 87.2 / 83.3 / 97.3 / 89.2 — three of four unchanged **to the story**. Independent check the matcher never reads: agreement with Jeff's own daf labels goes 51→85 Kiddushin, 90→104 Gittin, 72→97 Yevamot. One story changes strict verdict (Ketubot's R. Yosi the Priest testimony, a baraita appearing twice — he cites 27a, we proposed only the 26b copy) | [`matcher`](../findings/2026-09-03-exact-anchor-matcher.md), [`cutover`](../findings/2026-09-03-exact-matcher-cutover.md) |
 | 2026-09-03 | **Does Detection miss more on dapim holding more stories?** The attention-per-page hypothesis, after the criteria and translator attempts both came back null. No API calls | **measured: refuted, and reversed.** Recall is **83.3%** where a story is alone on its daf and **90.7%** on dapim with 4+; Ketubot 75.0 vs 89.2, Kiddushin 76.2 vs 84.6. Not length — found median 46 words vs missed 44, and inside the >25-word band the gap survives at 84% vs 94%. **The constraint is salience, not budget:** we miss the story that sits alone in legal surroundings | [`density`](../findings/2026-09-03-detection-density.md) |
 | 2026-09-02 | **"It is filled in by the translator"** — Jeff's stated cause for two `HIGH_CONFIDENCE` rejections, screened corpus-wide with no API calls | **measured: the mechanism is real and does NOT explain the rejections.** Hebrew is truncated on **197/301** proposal segments (65%); his two cases sit at expansion 4.51 and 5.89 against a corpus median of 2.05, so he read them right. But the passages he rejects sit *lower* on expansion than the ones he accepts (2.42 vs 2.59), and above ratio 2.5 only 62% are rejected against 83% below it. **Ablation not run** | [`english_first`](../findings/2026-09-02-english-first-prompt.md) |
 | 2026-09-02 | **Gittin's denominator corrected — the expert retracted one of his own entries.** `gittin_075` (57a, the Sadducee on the land's fertility): *"I agree that this is not a story and should not have been included. The list was wrong. Great to have the AI correct it!"* We proposed nothing there, so it scored as a miss | **measured: strict recall 108/112 = 96.4% → 108/111 = 97.3%.** The remaining misses are three, not four — 38b, 46b, 57a Beitar — and all three are things he confirmed *are* stories. Annotated, not deleted: `counts_for_recall: false` with his words and the date; `blind` stays true, because the entry was blind, it is simply not a story | [`recall_denominator`](../findings/2026-09-02-gittin-recall-denominator.md) |
