@@ -37,7 +37,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Two YES-tier Gittin stories nobody has ever judged — and the loose window that hid them](work/2026-09-02-gittin-two-unjudged-yes.md) | detection, classification | gittin | awaiting `jeff:axes-round` |
 | [Rebuild the blind boundary sets on the exact matcher without dropping their annotations](work/2026-09-03-boundary-testset-rebuild.md) | boundaries | ketubot, kiddushin | — |
 | [Separate "alone on the daf" from "surrounded by halakhah" — the density finding named the check and did not run it](work/2026-09-03-density-mechanism.md) | detection | ketubot, kiddushin | — |
-| [Ship examine_all_pages — Simon has accepted the call cost; price the review cost](work/2026-09-03-examine-all-pages.md) | triage | ketubot, kiddushin | — |
+| [Ship examine_all_pages — Simon has accepted the call cost; price the review cost](work/2026-09-03-examine-all-pages.md) | triage | ketubot, kiddushin | awaiting `simon:review-throughput-price` |
 | [Rank the unlisted proposals — separate real discoveries from junk in the LOW band](work/2026-09-03-extra-story-discriminator.md) | classification | — | — |
 | [The proposals credited to the expert's list by a window, not a match — 11 became 1](work/2026-09-03-loose-credited-proposals.md) | classification, review | ketubot, kiddushin, gittin | — |
 | [Re-run every tractate on the current detector, once the pending changes are settled](work/2026-09-03-rerun-all-tractates.md) | detection, classification, boundaries | ketubot, kiddushin, gittin | **blocked:** `2026-09-03-tighten-story-finder`, `2026-09-03-thinking-level-experiment` |
@@ -53,7 +53,7 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `quasi-speech-act-screen` | `talmud-stories` | **1 FILES** |
+| `simon-question-namespace` | `talmud-stories` | **5 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
 | `recent-work-plans-d0818b` | `recent-work-plans-d0818b` | clean |
 | `google-api-key-env-f5d39a` | `state-work-review-40b153` | clean |
@@ -96,4 +96,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Locate an expert story by exact unique phrase, not by a growing gram-set window](work/done/2026-09-03-exact-anchor-matcher.md) | detection, boundaries | [2026-09-03-exact-anchor-matcher.md](docs/findings/2026-09-03-exact-anchor-matcher.md) |
 | [Cut every reader over to the exact-anchor matcher, so the board locates a story one way](work/done/2026-09-03-exact-matcher-cutover.md) | detection, classification, boundaries | [2026-09-03-exact-matcher-cutover.md](docs/findings/2026-09-03-exact-matcher-cutover.md) |
 | [Yevamot — the full detection run, measured against the blind list the day it runs](work/done/2026-09-03-yevamot-detection-run.md) | triage, detection | [2026-09-03-yevamot-first-run.md](docs/findings/2026-09-03-yevamot-first-run.md) |
-<!-- board-checksum: b6de39910b8a189b -->
+<!-- board-checksum: 6344cc5499f053af -->

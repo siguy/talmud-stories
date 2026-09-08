@@ -60,7 +60,7 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-01-board-reads-stale-triage
-open       2026-09-03-examine-all-pages
+open       2026-09-03-examine-all-pages   ← awaiting: simon:review-throughput-price
 closed     8 item(s) in work/done/
 ```
 
@@ -149,7 +149,7 @@ naming an empty file as a lost round buries the one that is not.
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
-## Open with Jeff
+## Open with Jeff and Simon
 
 | slug | question |
 |---|---|
@@ -157,12 +157,15 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
+| `simon:end-to-end-target` | What end-to-end recall must the pipeline hit for the corpus to be publishable? |
+| `simon:review-throughput-price` | How many false proposals per tractate is one recovered story worth, in Jeff's reading time? |
 
-Items that can finish but cannot conclude until he answers:
+Items that can finish but cannot conclude until answered:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
+- `2026-09-03-examine-all-pages` — simon:review-throughput-price
 
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 4ba4e4f9e3909b5d -->
+<!-- board-checksum: 8ea6336175a670f1 -->

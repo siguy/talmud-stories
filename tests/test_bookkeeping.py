@@ -293,16 +293,34 @@ def test_capture_refuses_to_commit_a_credential():
 
 
 def test_blocked_by_and_awaiting_resolve():
-    """A dependency pointing at nothing parks work silently. Both kinds must resolve:
-    an item slug, or a `jeff:` question that comms/JEFF.md actually lists."""
+    """A dependency pointing at nothing parks work silently. Three kinds must resolve:
+    an item slug, a `jeff:` question comms/JEFF.md lists, or a `simon:` question
+    comms/SIMON.md lists.
+
+    The `simon:` namespace was added 2026-09-04 after the gap bit twice in one day:
+    rerun-all-tractates needed to say "blocked until Simon says which tightening he
+    means" and could not, so the ordering lived in prose while the frontmatter read as
+    unblocked -- the exact failure this graph exists to prevent.
+    """
     slugs = {f.stem for f, _, _ in items()}
-    jeff = set(re.findall(r"`(jeff:[a-z0-9-]+)`", (ROOT / "comms/JEFF.md").read_text()))
+    people = {}
+    for who, path in (("jeff", "comms/JEFF.md"), ("simon", "comms/SIMON.md")):
+        people[who] = set(re.findall(rf"`({who}:[a-z0-9-]+)`",
+                                     (ROOT / path).read_text()))
     for f, fm, _ in items():
         for key in ("blocked_by", "awaiting"):
             for dep in listy(fm, key):
-                ok = dep in slugs or (dep.startswith("jeff:") and dep in jeff)
+                who = dep.split(":", 1)[0] if ":" in dep else None
+                ok = dep in slugs or (who in people and dep in people[who])
                 assert ok, (f"{f.relative_to(ROOT)}: {key} -> {dep!r} resolves to nothing "
-                            f"(not a work item, not a question in comms/JEFF.md)")
+                            f"(not a work item, not a question in comms/JEFF.md or "
+                            f"comms/SIMON.md)")
+
+
+def test_a_person_namespace_has_a_register():
+    """A `whoever:` dependency with no file behind it is the hole this closes."""
+    for path in ("comms/JEFF.md", "comms/SIMON.md"):
+        assert (ROOT / path).exists(), f"{path} is the register for its namespace"
 
 
 def test_done_items_record_what_happened():

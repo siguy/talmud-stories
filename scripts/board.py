@@ -332,16 +332,31 @@ def worktrees() -> list[dict]:
     return out
 
 
-def jeff_questions() -> list[tuple[str, str]]:
-    """Open questions, by slug, from comms/JEFF.md — the one place they live."""
-    p = ROOT / "comms/JEFF.md"
-    if not p.exists():
-        return []
-    txt = p.read_text()
-    sec = re.search(r"## Open questions(.*?)(?=\n## |\Z)", txt, re.S)
-    if not sec:
-        return []
-    return re.findall(r"^\|\s*`(jeff:[a-z0-9-]+)`\s*\|\s*([^|]+?)\s*\|", sec.group(1), re.M)
+def person_questions() -> list[tuple[str, str]]:
+    """Open questions, by slug, from the per-person registers.
+
+    Reads the `## Open questions` section only, so a slug that has moved to `## Answered`
+    stops counting as open — which is the whole point of the section split.
+
+    comms/SIMON.md joined comms/JEFF.md on 2026-09-04. Before that a `simon:` blocker had
+    nowhere to live, so it was carried in prose and this generator could not see it: the
+    board printed an item as unblocked while its own text said otherwise.
+    """
+    out = []
+    for who, rel in (("jeff", "comms/JEFF.md"), ("simon", "comms/SIMON.md")):
+        p = ROOT / rel
+        if not p.exists():
+            continue
+        sec = re.search(r"## Open questions(.*?)(?=\n## |\Z)", p.read_text(), re.S)
+        if not sec:
+            continue
+        out += re.findall(rf"^\|\s*`({who}:[a-z0-9-]+)`\s*\|\s*([^|]+?)\s*\|",
+                          sec.group(1), re.M)
+    return out
+
+
+# Kept so older call sites and any external reader do not break on the rename.
+jeff_questions = person_questions
 
 
 def recalls() -> dict:
@@ -497,8 +512,8 @@ def render_state() -> str:
               "naming an empty file as a lost round buries the one that is not.", ""]
         L += [f"- `validation/feedback/{f}` — **{n} verdicts**" for f, n in unfolded] + [""]
 
-    q = jeff_questions()
-    L += ["## Open with Jeff", ""]
+    q = person_questions()
+    L += ["## Open with Jeff and Simon", ""]
     if q:
         L += ["| slug | question |", "|---|---|"] + [f"| `{s}` | {t} |" for s, t in q]
         # An `awaiting:` field is a claim about the FUTURE, and it goes stale silently:
@@ -520,7 +535,7 @@ def render_state() -> str:
 
         still = [(i, aw) for i, aw in blocked if aw]
         if still:
-            L += ["", "Items that can finish but cannot conclude until he answers:", ""]
+            L += ["", "Items that can finish but cannot conclude until answered:", ""]
             L += [f"- `{i['slug']}` — {', '.join(aw)}" for i, aw in still]
         if answered:
             L += ["", "**Answered — these can conclude now, and their `awaiting:` is "
@@ -528,7 +543,7 @@ def render_state() -> str:
             L += [f"- `{i['slug']}` — {', '.join(aw)} is answered"
                   for i, aw in answered]
     else:
-        L.append("`comms/JEFF.md` not present or has no open-questions table.")
+        L.append("No open-questions table in `comms/JEFF.md` or `comms/SIMON.md`.")
     return "\n".join(L) + "\n"
 
 
