@@ -2,7 +2,7 @@
 title: Re-run every tractate on the current detector, once the pending changes are settled
 capability: [detection, classification, boundaries]
 tractate: [ketubot, kiddushin, gittin]
-blocked_by: [2026-09-03-tighten-story-finder]
+blocked_by: [2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment]
 awaiting: []
 writes: [results/, STATUS.md, STATE.md, src/story_detector_v11.py]
 finding:
@@ -59,17 +59,10 @@ justified, and makes the result uninterpretable — model and thinking would hav
 together, so neither could be attributed. **Run the experiment, take its answer, then
 re-run once.**
 
-**This dependency is not in `blocked_by` because the item it names lives on another branch**
-(PR #42) and `test_blocked_by_and_awaiting_resolve` requires every dependency to resolve to
-an item that exists here. **Once #42 lands on main, add it:**
-
-```
-blocked_by: [2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment]
-```
-
-Until that line exists, this ordering lives only in prose — and the same warning applies as
-for the Simon question above: **do not start this item on the strength of a short
-`blocked_by` field.**
+**Declared in `blocked_by` as of 2026-09-04**, once #42 landed and the item it names existed
+on this branch to resolve against. It spent a day as prose only, which is the same gap the
+Simon question above still sits in — the warning there still stands: **do not start this
+item on the strength of a short `blocked_by` field.**
 
 Two shipped changes are independent reasons this re-run is due regardless: **R-B1**, the
 opening-formula boundary rule (worth 4–5 points on three tractates), and the **`N≥1`
