@@ -8,6 +8,9 @@ Increment 2 of v7 hybrid pipeline.
 
 import json
 import os
+
+from src.model_config import (default_model, default_thinking_level,
+                              supports_thinking_level)
 import re
 import time
 from typing import Dict, List, Optional
@@ -27,9 +30,11 @@ class EventTriager:
 
     def __init__(self, api_key: Optional[str] = None,
                  ground_truth_db: Optional[GroundTruthDB] = None,
-                 model_name: Optional[str] = None):
+                 model_name: Optional[str] = None,
+                 thinking_level: Optional[str] = None):
         self.api_key = api_key or os.getenv("GOOGLE_API_KEY")
-        self.model_name = model_name or os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+        self.model_name = model_name or default_model()
+        self.thinking_level = thinking_level or default_thinking_level()
         self.ground_truth_db = ground_truth_db
 
         if self.api_key and GOOGLE_AI_AVAILABLE:
@@ -150,6 +155,16 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
             if self._use_json_mode:
                 config_kwargs['response_mime_type'] = 'application/json'
                 if self.model_name in self.THINKING_REQUIRED_MODELS:
+                    config_kwargs['max_output_tokens'] = 32768
+                elif self.thinking_level and supports_thinking_level(self.model_name):
+                    # Thinking tokens come out of max_output_tokens, so raising the
+                    # budget is not optional -- see src/model_config.py for the run
+                    # this failure mode cost.
+                    config_kwargs['thinking_config'] = types.ThinkingConfig(
+                        thinking_level=self.thinking_level.upper()
+                    )
+                    # See src/story_detector_v11.py: thinking draws from this budget and
+                    # 3.8-flash at HIGH spends far more of it than 3.7 did.
                     config_kwargs['max_output_tokens'] = 32768
                 else:
                     config_kwargs['thinking_config'] = types.ThinkingConfig(

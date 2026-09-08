@@ -60,6 +60,7 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-01-board-reads-stale-triage
+open       2026-09-03-thinking-level-experiment
 closed     8 item(s) in work/done/
 ```
 
@@ -163,4 +164,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: c8dafb61de7426c2 -->
+<!-- board-checksum: 7f306698d0fdb807 -->
