@@ -512,7 +512,7 @@ def render_state() -> str:
               "naming an empty file as a lost round buries the one that is not.", ""]
         L += [f"- `validation/feedback/{f}` — **{n} verdicts**" for f, n in unfolded] + [""]
 
-    q = jeff_questions()
+    q = person_questions()
     L += ["## Open with Jeff and Simon", ""]
     if q:
         L += ["| slug | question |", "|---|---|"] + [f"| `{s}` | {t} |" for s, t in q]

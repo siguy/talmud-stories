@@ -180,11 +180,21 @@ def test_the_awaiting_list_names_only_what_is_really_blocked():
     stay wrong forever (Lesson 38: absence is quiet).
     """
     state = (ROOT / "STATE.md").read_text()
-    if "cannot conclude until he answers" not in state:
+    # The sentinel is the board's own heading. It was "...until he answers" until
+    # 2026-09-04, when the Simon namespace made "he" wrong; the rename made this test
+    # SKIP rather than fail, which is the quiet-guard shape this file exists to catch.
+    # Assert the heading is present rather than skipping on its absence: an empty
+    # awaiting-set is not the same fact as a board that stopped printing the section.
+    SENTINEL = "cannot conclude until answered"
+    if not any(i["awaiting"] and not i["done"] for i in board.items()):
         pytest.skip("no items awaiting an answer")
+    assert SENTINEL in state, (
+        f"items are awaiting an answer but STATE.md has no {SENTINEL!r} section -- "
+        "either the board stopped printing it or its heading was renamed, and renaming "
+        "it silently disables this test")
 
-    open_slugs = {s for s, _ in board.jeff_questions()}
-    blocked_section = state.split("cannot conclude until he answers:")[1].split("**Answered")[0]
+    open_slugs = {s for s, _ in board.person_questions()}
+    blocked_section = state.split(SENTINEL + ":")[1].split("**Answered")[0]
 
     for item in board.items():
         listed = f"`{item['slug']}`" in blocked_section
