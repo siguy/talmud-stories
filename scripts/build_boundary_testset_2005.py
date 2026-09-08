@@ -58,8 +58,9 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 from src.story_detector_v11 import _split_into_clauses  # noqa: E402
-from scripts.measure_recall_vs_expert_list import (grams, load_expert_json,  # noqa: E402
-                                                   locate, parse_expert_doc)
+from scripts.measure_recall_vs_expert_list import (corpus_from_texts,  # noqa: E402
+                                                   grams, load_expert_json,
+                                                   make_locator, parse_expert_doc)
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [testset2005] %(message)s',
                     handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
@@ -195,6 +196,8 @@ def main():
     ap.add_argument('--expert-filter', default='blind', choices=['recall', 'blind', 'all'],
                     help='--expert-json only; see the module docstring for why blind')
     ap.add_argument('--tractate', default='Ketubot')
+    ap.add_argument('--matcher', default='exact', choices=['fuzzy', 'exact'],
+                    help='see measure_recall_vs_expert_list.locate_exact')
     ap.add_argument('--out', default='tests/expert_boundary_targets_2005.json')
     args = ap.parse_args()
 
@@ -209,10 +212,16 @@ def main():
         for g in gs:
             index[g].add(i)
 
+    # The same locator every other reader of an expert list uses (2026-09-03). It matters
+    # here for a second reason: `align_story` searches inside this window, so a window that
+    # reaches a neighbouring passage offers the aligner text that is not the story's.
+    gram_units = [(r, i, g) for (r, i, _), g in zip(units, unit_grams)]
+    locate, fell_back = make_locator(args.matcher, gram_units, index,
+                                     corpus_from_texts(h for _, _, h in units))
     targets, rejected = [], []
     for n, story in enumerate(expert):
         gs = grams(story['text'])
-        cov, a, b = locate(gs, [(r, i, g) for (r, i, _), g in zip(units, unit_grams)], index)
+        cov, a, b = locate(story)
         if a is None:
             rejected.append({**story, 'reason': 'not_located', 'coverage': round(cov, 3)})
             continue
@@ -231,6 +240,10 @@ def main():
                 'quote_polarity': 'include',   # his text IS the story, not a thing to remove
                 'anchor_verified': False,
             })
+
+    if fell_back:
+        log.warning('%d expert story/stories had no corpus-unique phrase and fell back to '
+                    'the 4-gram aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
 
     out = {
         '_comment': 'Sub-segment boundary targets derived from Jeff Rubenstein\'s 2005 '

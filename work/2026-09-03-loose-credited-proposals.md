@@ -1,5 +1,5 @@
 ---
-title: 11 top-confidence proposals credited to the expert's list by a window, not a match
+title: The proposals credited to the expert's list by a window, not a match — 11 became 1
 capability: [classification, review]
 tractate: [ketubot, kiddushin, gittin]
 blocked_by: []
@@ -9,11 +9,32 @@ finding: docs/findings/2026-09-03-loose-window-proposal-credit.md
 superseded_by:
 ---
 
-# 11 top-confidence proposals credited by a window, not a match
+# Proposals credited by a window, not a match — 11 top-confidence became 1
 
 **Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then
 [the finding](../docs/findings/2026-09-03-loose-window-proposal-credit.md).
 **Capabilities: 3 Classification, 5 Review.** **Cost:** free until the round.
+
+> ## UPDATE 2026-09-03 — most of this evaporated, and that is the finding
+>
+> The window that created this population was replaced
+> ([`exact-matcher-cutover`](../docs/findings/2026-09-03-exact-matcher-cutover.md)).
+> `results/recall/proposal_credit_audit.json` **has already been re-run** and the
+> loose-only bucket is now **Gittin 0, Ketubot 0, Kiddushin 1**:
+>
+> | | was | now |
+> |---|---|---|
+> | loose-only proposals | 35 | **1** |
+> | of those `YES`/`HIGH_CONFIDENCE` | 11 | **1** |
+>
+> **The one survivor is `Kiddushin 39b 8-10`**, `HIGH_CONFIDENCE`, credited to
+> `kiddushin_041` — *a son dies while fulfilling the commandment of honouring his parents*.
+> Read it against `kiddushin_041` and put it in exactly one of the three named states
+> below. **Do not re-run the audit expecting 35**; that number was a measurement artifact
+> and its disappearance is not evidence about the detector.
+>
+> What did **not** change: the Gittin/speech-act extras this item was going to share a
+> review page with are unaffected, and one page is still the right ask.
 
 ## The problem
 

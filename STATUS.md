@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-09-03.** Rewritten every session, never appended.
+**Last rewritten: 2026-09-03** (integration of `feat/exact-anchor-matcher`). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -8,10 +8,45 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**Gittin is measured end to end, and three separate hypotheses about what to fix next were
-screened and refuted — all of them before spending a single tractate run.** The detector is
-now clean: nothing live is unmeasured, and the next tractate's numbers will mean what they
-say.
+**Every recall figure this project has published was measured through a search window that
+could not tell a story from its neighbour. It has been replaced, all four tractates
+re-measured, and the honest numbers are lower.** Ketubot detection 96.0% → **87.2%**,
+Kiddushin 93.3% → **84.4%**, Gittin 100% → **97.3%**, Yevamot 94.1% → **89.2%**. No
+detector changed and nothing was re-run: these are what the same runs were always worth.
+
+**The loose/strict double-quote is retired.** Those were two answers to one question,
+separated by the window — they now coincide on three tractates and differ by one story on
+Kiddushin. Three of the four **strict** figures are unchanged *to the story*, which is the
+evidence that strict was right all along and loose was the artifact.
+
+**Yevamot is detected and measured for the first time** — 89.2%, and Triage lost nothing
+of his 102 stories.
+
+→ [`matcher`](docs/findings/2026-09-03-exact-anchor-matcher.md) ·
+[`cutover`](docs/findings/2026-09-03-exact-matcher-cutover.md) ·
+[`Lesson 41`](lessons/L-041-a-score-that-can-only-grow-cannot-reject.md) ·
+[`yevamot`](docs/findings/2026-09-03-yevamot-first-run.md)
+
+**What the old matcher did:** it compared *sets* of Hebrew 4-grams per segment and grew a
+window while coverage improved. A union of sets can only grow, so a neighbouring passage
+sharing `אמר ליה` **improved** the match — nothing could ever make the score fall. It
+failed in the direction of generosity, which is why no number it touched ever looked wrong.
+
+**What replaced it:** every one of the 452 stories across the four blind lists contains an
+exact 6-word phrase **unique in its own tractate**. Anchor there, extend only over phrases
+sitting where the story says they should. Independent check the matcher never reads —
+agreement with Jeff's own daf labels: Kiddushin 51→85, Gittin 90→104, Yevamot 72→97.
+
+**Three things it took down with it, each of which had looked like real work:**
+
+| what it looked like | what it was |
+|---|---|
+| 35 proposals wrongly read as "on his list", 11 top-confidence — an open review item | **1**, Kiddushin 39b |
+| a Gittin golden entry labelled `YES` from his blind list | a window covering *two* formulaic near-twins one segment apart; nobody had labelled it |
+| 2 Ketubot **Detection** misses | 2 **Triage** misses — their own daf was never examined |
+
+**Gittin remains measured end to end, and three hypotheses about what to fix next were
+screened and refuted** before spending a tractate run.
 
 **1. Jeff answered everything, in two messages, and reversed himself three times on
 seeing the text.** Questions 1-4 came back in prose on 2026-09-01; all 25 verdicts on the
@@ -65,12 +100,13 @@ was the bucket we had to *search*. And reading the 6: **three are spans that sto
 the action**, a Boundaries defect wearing a criteria costume. The criteria question is about
 **three entries**. → [`blast_radius`](docs/findings/2026-09-03-speech-act-blast-radius.md)
 
-**6. One real defect, corpus-wide: 35 proposals read as "on his list" and are not.** The
-recall aligner returns a window up to 14 segments wide; anything inside it was silently read
-as corroborated. Ketubot 19, Kiddushin 9, Gittin 7 — **11 of them top-confidence**. Recall
-is untouched (a generous window is right for *did we find his stories*); this is an error
-only where the association is read **backwards**.
-→ [`proposal_credit`](docs/findings/2026-09-03-loose-window-proposal-credit.md)
+**6. One real defect, corpus-wide — and it turned out to be the instrument.** 35 proposals
+read as "on his list" and were not: Ketubot 19, Kiddushin 9, Gittin 7, **11 of them
+top-confidence**. Diagnosed as an error only where the association is read *backwards*.
+**That diagnosis was too kind.** The window was wrong in both directions; replacing it took
+the population to **1** and moved every recall figure on the board.
+→ [`proposal_credit`](docs/findings/2026-09-03-loose-window-proposal-credit.md) ·
+[`cutover`](docs/findings/2026-09-03-exact-matcher-cutover.md)
 
 **The pattern across 3, 5 and 6 is the session's real finding.** In each case a number was
 correct for the question it was built to answer, got quoted against a different one, and
@@ -85,20 +121,40 @@ pass** → [`parallel_measured`](docs/findings/2026-09-03-parallel-rule-measured
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
-| capability | metric | Ketubot | Kiddushin | **Gittin** | gate |
-|---|---|---|---|---|---|
-| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving, BLIND | **98.7%** at 46% of pages ✓ | **97.8%** at 41% of pages | **100%** at 52% ✓ | ≥98% *(provisional)* |
-| | *previous rule, for comparison* | *98.0% at 44%* | *95.6% at 38%* | — | — |
-| | *if every page were examined (NOT shipped)* | *96.6% e2e · 124 calls/story* | *96.7% e2e · 33 calls/story* | — | — |
-| **[2 Detection](docs/capabilities/2_detection.md)** | recall given the page survived triage, BLIND | **97.9%** ✓ | **97.7%** ✓ | **100%** ✓ | ≥95% *(provisional)* |
-| | *end-to-end (triage × detection), BLIND* | *96.0% loose / 87.9% strict* | *93.3% loose / 83.3% strict* | *100% loose / **97.3%** strict* | — |
-| | *golden recall, CIRCULAR* | *92.1%* | *95.3%* | — | — |
-| **[3 Classification](docs/capabilities/3_classification.md)** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | — | ≥85% *(provisional)* |
-| | *BLIND, over labelled spans* | — | — | **83.7-86.7%** — **NEW** | — |
-| **[4 Boundaries](docs/capabilities/4_boundaries.md)** | hit / near, BLIND | **80% / 84%** ✓ (ceiling ~87%) | **85% / 91%** ✓ (ceiling ~88%) | **85% / 89%** ✓ | ≥75% *(provisional)* |
-| | *under his stated formula rule (R-B1)* | *82% (61-112)* | *88%* | *86%* | — |
-| **[5 Review](docs/capabilities/5_review.md)** | days per tractate | not started | not started | **1 round, 25 verdicts, 1 day** | days, not weeks *(derived)* |
-| **[6 Publication](docs/capabilities/6_publication.md)** | — | not started | not started | not started | — |
+*Every recall cell below was re-measured on 2026-09-03 under exact-phrase anchoring.
+The four rows compose again — `triage × detection = end-to-end` holds on all four
+tractates — because they are now the **same** four artifacts read the **same** way.*
+
+| capability | metric | Ketubot | Kiddushin | Gittin | **Yevamot** | gate |
+|---|---|---|---|---|---|---|
+| **[1 Triage](docs/capabilities/1_triage.md)** | stories surviving, BLIND | **96.6%** at 44% of pages | **95.6%** at 38% | **100%** at 52% ✓ | **100%** at 44% ✓ | ≥98% *(provisional)* |
+| | *live keep-rule, RETIRED MATCHER — not comparable, see below* | *98.7%* | *97.8%* | — | — | — |
+| | *if every page were examined (NOT shipped)* | *124 calls/story* | *33 calls/story* | — | — | — |
+| **[2 Detection](docs/capabilities/2_detection.md)** | recall given the page survived triage, BLIND | **90.3%** | **88.4%** | **97.3%** ✓ | **89.2%** | ≥95% *(provisional)* |
+| | *end-to-end (triage × detection), BLIND* | *87.2%* | *84.4%* | *97.3%* | *89.2%* | — |
+| | *golden recall, CIRCULAR* | *92.1%* | *95.3%* | — | — | — |
+| **[3 Classification](docs/capabilities/3_classification.md)** | precision, CIRCULAR, harness | **89.2%** ✓ | **85.3%** ✓ | — | — | ≥85% *(provisional)* |
+| | *BLIND, over labelled spans* | — | — | **83.7-86.7%** | — | — |
+| **[4 Boundaries](docs/capabilities/4_boundaries.md)** | hit / near, BLIND | **80% / 84%** ✓ (ceiling ~87%) | **85% / 91%** ✓ (ceiling ~88%) | **85% / 89%** ✓ | not scored | ≥75% *(provisional)* |
+| | *under his stated formula rule (R-B1)* | *82% (61-112)* | *88%* | *86%* | — | — |
+| **[5 Review](docs/capabilities/5_review.md)** | days per tractate | not started | not started | **1 round, 25 verdicts, 1 day** | not started | days, not weeks *(derived)* |
+| **[6 Publication](docs/capabilities/6_publication.md)** | — | not started | not started | not started | not started | — |
+
+**Two Detection cells fell by ~7 points and no detector changed.** They were measured
+through a search window up to 14 segments wide that credited a proposal anywhere inside it;
+that window is retired. The numbers above are what the same runs were always worth. **Do
+not read the drop as a regression, and do not compare any figure here against one dated
+before 2026-09-03 without saying which matcher produced it.**
+
+**The Triage row needs its caveat read.** The 96.6% / 95.6% pair is the *shipped artifacts*
+— which still carry the **previous** keep-rule — located by the current matcher, and it is
+the pair that composes with Detection. The live rule (`>=1 NARRATIVE_EVENT`, shipped
+2026-08-31) was measured at 98.7% / 97.8% **with the retired matcher**, so the true live
+figure is **unmeasured**: the two differ by rule *and* by matcher, and mixing them hides
+one inside the other. → [`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md)
+
+**Ketubot Triage now reads below its gate, and Detection below its own on three tractates.**
+That is a change in what we know, not in what the pipeline does.
 
 **Gittin's Classification cell is the only BLIND one on the board, and it is not
 comparable to the two beside it.** The other two are harness precision against a golden
@@ -172,17 +228,47 @@ about v5.1 / v7 / v8, not about the current detector, and quoting it as the capa
 number charges today's model for calls it no longer makes (**Lesson 36**).
 → [`unclassified_notes_resolved`](docs/findings/2026-08-31-unclassified-notes-resolved.md)
 
-**Detection is softer under a strict test — and that is the end-to-end row, not the
-capability row.** The published test credits a
-proposal anywhere in a 14-segment search window. Requiring it to overlap a segment the
-story actually occupies gives 87.9% Ketubot / 83.3% Kiddushin. The 12 Ketubot stories in
-the gap are **cross-page stories whose text sits on a continuation daf where we proposed
-nothing** — 17b, 50a and 51a each carry zero proposals.
+**~~Detection is softer under a strict test~~ — resolved 2026-09-03: there is one test
+now.** The loose column was a 14-segment search window, and the stories "in the gap" were
+never in a gap: 17b, 50a and 51a carry zero proposals and always did. The strict figure was
+the right one, and it is now the only one. The suspicion recorded here — *treat the loose
+column as an upper bound and verify by name* — was correct, and checking it by name on
+6 Kiddushin passages (2 of which the window credited to a different passage on the same
+daf) is what eventually paid for the fix. Kept as the record of how it was found.
 
-**The loose test's over-crediting is now confirmed by name, not just in aggregate.**
-Checking 6 commented Kiddushin passages individually, it credits us with a **different
-passage on the same daf** twice (30a, 58a). Treat the loose column as an upper bound and
-verify by name before building on it.
+## What changed 2026-09-03 — the matcher
+
+**The instrument, not the detector.** `locate` compared sets of Hebrew 4-grams per segment
+and grew a window while coverage improved; a union only grows, so no window was ever too
+wide. Replaced by exact-phrase anchoring on phrases unique corpus-wide. **All six readers of
+an expert list now share one locator**, so the ruler and the recall harness agree per
+tractate for the first time — 130/149, 76/90, 108/111.
+
+**Numbers:** Ketubot 96.0 → **87.2**, triage 98.0 → **96.6**, detection-given-triage 97.9 →
+**90.3**; Kiddushin 93.3 → **84.4**; Gittin 100 → **97.3**; Yevamot 94.1 → **89.2**. Strict
+recall barely moved — three of four unchanged to the story — which is the evidence that the
+loose column was the artifact.
+
+**One story changed strict verdict**, and it is worth knowing by name: Ketubot's testimony
+of R. Yosi the Priest is a baraita appearing **twice**, at 26b:7 and 27a:1. Jeff cites 27a;
+we proposed only the 26b copy. Ketubot strict is 130/149, not 131.
+
+**One entry left the Gittin golden.** 34a:9 was in as `expert_blind_list`/`YES` because a
+7-segment window credited it to Jeff's story at 34a:11 — *did not marry* within thirty days
+against its formulaic near-twin *did not return*. Nobody had labelled it. Golden is now
+**134 / 116**, repinned in `GOLDEN_COUNTS` with the reason beside the count.
+
+**Not rebuilt: the blind boundary target sets.** The tighter window aligns *more* stories
+(Ketubot 147→148, Kiddushin 88→89), but the banked sets carry 23 `rule*` annotations the
+builder cannot regenerate, and `git show HEAD:` is their only copy. Its own item, with
+annotations-first ordering written into it
+([`boundary-testset-rebuild`](work/2026-09-03-boundary-testset-rebuild.md)).
+
+**Three callers still use 4-grams on purpose** — two assign a daf *label* and write
+ground-truth files; one exists to reproduce a frozen retracted claim. Named in the finding.
+
+**Yevamot also landed in this merge:** first run, **89.2%**, Triage lost 0 of 102, two
+crashes fixed that had each eaten a full stage.
 
 ## What changed 2026-09-02 / 09-03
 
@@ -411,7 +497,9 @@ as a deleted one** (Lesson 27's family, reached through a join).
 
 - **Kiddushin Triage measured, and it owns the whole recall gap.** 95.6% (86/90) at 38%
   of pages; Detection given triage 97.7% vs Ketubot's 97.9%. Cause split of the 6 misses:
-  **4 triage-discarded, 2 examined-and-nothing-proposed.**
+  **4 triage-discarded, 2 examined-and-nothing-proposed.** *(Detection figures superseded
+  2026-09-03 — 88.4% / 90.3% under the current matcher. The finding stands: the gap is
+  Triage's. The 6 misses are 14.)*
   → [`2026-08-31-kiddushin-recall.md`](docs/findings/2026-08-31-kiddushin-recall.md)
 - **A blind Kiddushin boundary set: 176 targets, noise 7 points → 0.77.** 85% / 91%,
   above the gate and above Ketubot. The old 60% / 73% is retired, not averaged.
@@ -477,8 +565,10 @@ Gittin cases it named are settled.
 **One review page is queued and not yet sent — this is the next concrete thing to do,
 not a code change.** It bundles three sources that would otherwise be three separate
 asks:
-- the **11 top-confidence proposals** credited to his list by the loose search window but
-  never actually overlapping it (`work/2026-09-03-loose-credited-proposals.md`)
+- the **1 top-confidence proposal** credited to his list by the search window but never
+  actually overlapping it — Kiddushin 39b 8-10 (`work/2026-09-03-loose-credited-proposals.md`).
+  **It was 11 until 2026-09-03**; the other 10 were the window, not proposals needing a
+  verdict, and asking about them would have spent his attention on our instrument
 - the **2 Gittin extras** nobody has judged — Nebuzaradan (57b:0-4) and Ashmedai
   (68a:7-12) (`work/2026-09-02-gittin-two-unjudged-yes.md`)
 - the **3 genuinely speech-only entries** from 6a — 7a:1, 15a:0, 112a:11 — as a
@@ -506,17 +596,25 @@ so the regenerated page stayed comparable to what Jeff actually saw. Point it at
 
 **Two things, and only two, actually move the project right now.**
 
-**1. Send the bundled review page.** Everything is ready: the 11 loose-credited
-proposals, the 2 Gittin extras, the 3 speech-act entries. No code needed — see
+**1. Send the bundled review page.** Everything is ready: the 1 remaining window-credited
+proposal, the 2 Gittin extras, the 3 speech-act entries. No code needed — see
 [`loose-credited-proposals`](work/2026-09-03-loose-credited-proposals.md), which names
-all three sources and why they're one ask, not three.
+all three sources and why they're one ask, not three. It got **smaller** on 2026-09-03,
+which is the good kind of change: ten of the eleven turned out to be our instrument, and
+his attention is the scarcest thing here.
 
-**2. Run Yevamot or Eruvin.** Both have pristine blind lists (102 and 73 stories,
-never in a prompt) and the detector is now clean — nothing shipped since Gittin is
-unmeasured. Gittin took twenty minutes of compute end to end; expect the same order of
-magnitude. **Lead with whichever the reviewer wants back first** — running both
-concurrently before the first review round returns would produce two tractates' worth of
-unlabelled proposals with no golden-building lesson applied to either.
+**2. ~~Run Yevamot~~ — done 2026-09-03. Run Eruvin.** Yevamot came back at **89.2%** with
+Triage losing none of his 102 stories, and its misses are the *speech-act* class again —
+the same open question, not a new defect
+([`yevamot`](docs/findings/2026-09-03-yevamot-first-run.md)). Eruvin still has a pristine
+blind list (74 stories, never in a prompt). **But hold it until the review round returns:**
+running a second unlabelled tractate before the first round comes back produces two
+tractates' worth of unjudged proposals with no golden-building lesson applied to either —
+which is now exactly the position Yevamot is in.
+
+**3. Re-measure Triage under the live rule *and* the current matcher.** The board's Triage
+cells are the only ones left mixing two changes ([`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md)).
+No API calls — the labels are cached. Until it is done, Ketubot Triage has no honest number.
 
 **A correction to this file's own record, found 2026-09-03.** Four Gittin placeholder
 items from the original per-tractate workflow —

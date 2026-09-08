@@ -7,11 +7,11 @@
   "verdict_source": "validation/feedback/gittin_axes_review_2026-09-02.json",
   "verdict_date": "2026-09-02",
   "label_sources": {
-    "expert_blind_list": 110,
+    "expert_blind_list": 109,
     "expert_verdict": 25
   },
   "classification_distribution": {
-    "YES": 113,
+    "YES": 112,
     "BORDERLINE": 4,
     "NOT_A_STORY": 18
   },
@@ -73,6 +73,12 @@
     },
     {
       "ref": "Gittin 33b",
+      "start_segment": 9,
+      "end_segment": 9,
+      "detector_classification": "LOW_CONFIDENCE"
+    },
+    {
+      "ref": "Gittin 34a",
       "start_segment": 9,
       "end_segment": 9,
       "detector_classification": "LOW_CONFIDENCE"
@@ -5191,9 +5197,9 @@
           "corpus": "talmud",
           "classification": "YES",
           "label_source": "expert_blind_list",
-          "expert_list_id": "gittin_021",
+          "expert_list_id": "gittin_022",
           "expert_list_ref": "Gittin 29b",
-          "expert_list_text": "ההוא גברא דשדר לה גיטא לדביתהו, אמר שליח: לא ידענא לה, אמר ליה: זיל יהביה לאבא בר מניומי, דאיהו ידע לה, וליזיל וליתביה ניהלה. אתא ולא אשכח לאבא בר מניומי, אשכחיה לרבי אבהו ורבי חנינא בר פפא ור' יצחק נפחא ויתיב רב ספרא גבייהו, אמרו ליה: מסור מילך קמי דידן, דכי ייתי אבא בר מניומי ניתביניה ליה, וליזיל וליתביניה לה. אמר להו רב ספרא: והא שליח שלא ניתן לגירושין הוא! איכסופו. אמר רבא: קפחינהו רב ספרא לתלתא רבנן סמוכי. א\"ר אשי: במאי קפחינהו? מי קאמר ליה אבא בר מניומי ולא את? איכא דאמרי, אמר רבא: קפחינהו רב ספרא לתלתא רבנן סמוכי בטעותא. א\"ר אשי: מאי טעותא? מאי קא אמר ליה? אבא בר מניומי ולא את.",
+          "expert_list_text": "ההוא גברא דשדר לה גיטא לדביתהו, א\"ל לשליח: לא תיתביה ניהלה עד תלתין יומין. אתניס בגו תלתין יומין, אתא לקמיה דרבא, אמר רבא: חלה טעמא מאי? משום דאנוס, האי נמי אנוס הוא, אמר ליה: מסור מילך קמי דידן, דלבתר תלתין יומין משוינן שליח ויהיב ליה ניהלה. א\"ל רבנן לרבא: והא שליח שלא ניתן לגירושין הוא! אמר להו: כיון דלבתר תלתין יומין מצי מגרש, כשליח שניתן לגירושין הוא. וליחוש שמא פייס! מי לא תנן: מעכשיו אם לא באתי מכאן ועד יב\"ח, ומת בתוך יב\"ח - הרי זה גט; והוינן בה, וניחוש שמא פייס! ואמר רבה בר רב הונא! הכי אמר אבא מרי משמיה דרב: באומר נאמנת עלי לומר שלא באתי! איכסיף. לסוף איגלאי מילתא דארוסה הואי, אמר רבא: אם אמרו בנשואה, יאמרו בארוסה?",
           "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span."
         }
       ],
@@ -5977,19 +5983,6 @@
           "expert_list_id": "gittin_030",
           "expert_list_ref": "Gittin 34a",
           "expert_list_text": "רב יהודה אשקליה גיטא לחתניה דר' ירמיה ביראה ובטליה, תנא אשקליה ובטליה, הדר תנא ואשקליה על כרחיה, ואמר להו לסהדי: אותיבו קרי באוניכו וכתובו ליה; ואי סלקא דעתך גלוי דעתא בגיטא מילתא היא, הא חזו ליה דקא רהיט בתרייהו.",
-          "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span."
-        },
-        {
-          "start_segment": 9,
-          "end_segment": 9,
-          "one_sentence_summary": "A man racing to return within 30 days to prevent a divorce is stopped by a ferry and shouts from across the river to prove he arrived.",
-          "detector_classification": "LOW_CONFIDENCE",
-          "corpus": "talmud",
-          "classification": "YES",
-          "label_source": "expert_blind_list",
-          "expert_list_id": "gittin_031",
-          "expert_list_ref": "Gittin 34a",
-          "expert_list_text": "ההוא דאמר להו: אי לא נסיבנא עד תלתין יומין ליהוי גיטא, כי מטו תלתין יומין, אמר להו: הא טרחנא.",
           "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span."
         },
         {
@@ -18510,9 +18503,9 @@
           "corpus": "talmud",
           "classification": "YES",
           "label_source": "expert_blind_list",
-          "expert_list_id": "gittin_110",
+          "expert_list_id": "gittin_111",
           "expert_list_ref": "Gittin 89a",
-          "expert_list_text": "ההיא דנפק עלה קלא דאיקדשה באציפא דתוחלא בעינא דבי שיפי, שלחה רב אידי בר אבין לקמיה דאביי: כי האי גוונא מאי? אמר ליה: אפי' למאן דאמר לא מבטלינן קלא, בהא מבטלינן קלא, מימר אמרי: עיינו בהו רבנן בקידושיה ולא הוה בהו שוה פרוטה.",
+          "expert_list_text": "ההיא דנפק עלה קלא דאיקדשה לחד מבני פלניא, אמר רבא: אפי' למאן דאמר לא מבטלינן קלא, בהא מבטלינן קלא, מימר אמרי: עיינו בהו רבנן בקידושי, וקידושי קטן הוו.",
           "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span."
         }
       ],

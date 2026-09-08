@@ -45,6 +45,21 @@ So the argument for generating a number is *not* that generators are trustworthy
 that one copy cannot drift, and when two copies disagree you cannot tell which one moved.
 The only reason this was caught is that both happened to be read in one sitting.
 
+> ## UPDATE 2026-09-03 — a live instance, and a merge obligation
+>
+> `STATUS.md` currently carries **retired** recall numbers: the 2026-09-03 matcher cutover
+> moved Ketubot detection to 87.2%, its triage to 96.6%, Kiddushin loose to 84.4%, Gittin
+> to 97.3% and Yevamot to 89.2%, and it moved two Ketubot stories from Detection's column
+> to Triage's. `STATE.md` and `docs/capabilities/` were updated on the branch;
+> **`STATUS.md` deliberately was not**, because it is hand-written and rewriting it in a
+> branch is what makes every pair of concurrent branches conflict (CLAUDE.md, Concurrency).
+>
+> So the numbers are stale on main **by design**, and the design is exactly the problem
+> this item names: the same fact lives in a generated file and a typed one, and the typed
+> one can only be corrected by a human at merge time. **Whoever integrates the
+> `feat/exact-anchor-matcher` branch must update `STATUS.md`'s scoreboard** — and that
+> obligation existing at all is the evidence for doing this item.
+
 ## Method
 
 `STATE.md` exists because "this repo has twice carried the same number in two places and

@@ -10,6 +10,15 @@ scores **77% / 85%**. Both figures are Wave 5 clause spans, which are **not what
 the shipped output is the untrimmed row. Ketubot measured 2026-08-30, Kiddushin
 2026-08-31, both re-scored the same day for comparability (Lesson 11).
 
+**Both figures were scored against targets located with the 4-gram window, retired
+2026-09-03.** The targets themselves were **not** rebuilt: the builder aligns *inside* the
+located window, so a tighter window changes what it can align to — on the exact matcher it
+aligns 148/149 Ketubot and 89/89 Kiddushin stories, against 147 and 88, and 19 Ketubot / 1
+Kiddushin existing targets move. **The banked sets also carry 23 `rule*` annotations the
+builder cannot regenerate**, so a rebuild is its own careful job:
+[`2026-09-03-boundary-testset-rebuild`](../../work/2026-09-03-boundary-testset-rebuild.md).
+Until then, read the numbers above as measured on the old targets.
+
 **The old Kiddushin figure — 60% / 73% ±7 on 15 correction targets — is retired, not
 averaged.** It was a measurement of a biased 15-question exam, not of Kiddushin.
 
@@ -37,6 +46,7 @@ five successive mechanisms, and four of them were wrong.
 
 | when | what | outcome | evidence |
 |---|---|---|---|
+| 2026-09-03 | **The blind boundary sets re-measured under exact-phrase anchoring** — no re-run, no re-score; just how each of Jeff's stories is located before `align_story` searches inside that window | **measured: the tighter window aligns MORE stories, not fewer** — Ketubot 147 → **148** of 149 (294 → 296 targets), Kiddushin 88 → **89** of 89 (176 → 178). 19 Ketubot and 1 Kiddushin existing targets move, 16 of them the `ref` label only. **Not rebuilt:** 23 Ketubot targets carry `rule`/`rule_clause`/`rule_relation` fields the builder does not produce, so regenerating silently drops them | [`cutover`](../findings/2026-09-03-exact-matcher-cutover.md) |
 | 2026-09-03 | **The parallel-practice rule, measured** — it shipped 2026-09-01 unmeasured (no API key in that session) and stayed live for two days. 3 arms + 3 same-code repeats | **measured: no effect on any blind ruler.** Base and new identical on all three sets (Ketubot 80/85, 80/84; Kiddushin 85/91); repeats move ±1 target, so noise floor ±1 and the change is 0. **All five case checks pass** — 62a/105b keep their second story, 67b/77b/72a stay trimmed. The predicted end-ruler cost did not occur, because **the rescued passages are not scorable targets** — the ruler is blind to what the rule fixes, so quote the five cases, not the rulers | [`parallel_measured`](../findings/2026-09-03-parallel-rule-measured.md) |
 | 2026-01-20 | **Fuzzy text-anchor extraction** — match the model's quoted boundary words into the page with `difflib`, 3–5 word chunks, 50–60% similarity, estimate the missing edge | shipped; fixed "boundaries not found in text" errors. Superseded by segment-based detection days later | `2e4e969` |
 | 2026-01-25 | Review UI trimmed to 1 segment of context either side of the story | shipped | `81bb7de` |
