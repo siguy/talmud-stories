@@ -1,0 +1,3884 @@
+{
+  "generated": "2026-09-03 19:34",
+  "model": "gemini-3-flash-preview",
+  "phase": "wave6-6a",
+  "note": "MEASUREMENT ONLY. Nothing in the golden was relabelled.",
+  "n": 110,
+  "verdicts": {
+    "speech_only": 17,
+    "non_speech_event": 93
+  },
+  "event_kinds": {
+    "none": 17,
+    "physical": 79,
+    "both": 10,
+    "emotional": 4
+  },
+  "by_tractate": {
+    "ketubot:speech_only": 13,
+    "ketubot:non_speech_event": 64,
+    "kiddushin:non_speech_event": 29,
+    "kiddushin:speech_only": 4
+  },
+  "stories": [
+    {
+      "id": "ketubot:Ketubot 7a:1-1:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 7a",
+      "start_segment": 1,
+      "end_segment": 1,
+      "summary": "Rav Ami permitted intercourse on Shabbat, and the Sages objected because the marriage contract was not yet written.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "permitted",
+          "said",
+          "seize"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal ruling and a subsequent dialogue regarding a hypothetical solution for a marriage contract, but no actual physical event or emotional change is narrated as occurring.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "permitted",
+          "said"
+        ],
+        "tier2": [
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 8a:6-6:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 8a",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "Levi and Rav Asi each attended wedding celebrations and recited a different number of blessings.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "happened to come to the house",
+        "evidence_hebrew": "אִיקְּלַע לְבֵי",
+        "quasi_speech_acts": [
+          "recited",
+          "blessings"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical arrival of sages at a specific location for a wedding celebration, which constitutes a physical event beyond mere legal speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "cited",
+          "recited"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 8a:9-9:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 8a",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "Rav Ashi attended a wedding at Rav Kahana's house and adjusted the blessings he recited based on the presence of new guests.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "happened to come to the house of Rav Kahana",
+        "evidence_hebrew": "אִיקְּלַע לְבֵי רַב כָּהֲנָא",
+        "quasi_speech_acts": [
+          "recited",
+          "say",
+          "recite"
+        ],
+        "confidence": "high",
+        "why": "The passage begins with a physical event of travel and arrival (Rav Ashi visiting Rav Kahana) before describing the subsequent liturgical actions.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "cited",
+          "recited"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 8a:13-13:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 8a",
+      "start_segment": 13,
+      "end_segment": 13,
+      "summary": "Rav Ḥaviva recited a blessing at a circumcision, but the halakha is not in accordance with his opinion.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "happened to come... parents of the baby are anxious... baby is experiencing pain",
+        "evidence_hebrew": "אִיקְּלַע... דִּטְרִידִי... צַעֲרָא לְיָנוֹקָא",
+        "quasi_speech_acts": [
+          "recited",
+          "opinion"
+        ],
+        "confidence": "high",
+        "why": "The passage records a physical arrival at a location and describes the emotional state of anxiety and the physical sensation of pain.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "cited",
+          "recited"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 8b:13-13:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 8b",
+      "start_segment": 13,
+      "end_segment": 13,
+      "summary": "Funeral expenditures were initially so high that people abandoned the deceased, until Rabban Gamliel adopted a lenient approach.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "people would abandon the deceased and flee",
+        "evidence_hebrew": "הָיוּ מַנִּיחִים אוֹתוֹ וּבוֹרְחִין",
+        "quasi_speech_acts": [
+          "instructing",
+          "conducted themselves following his example",
+          "accustomed"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a historical shift in behavior where relatives physically abandoned and fled from corpses due to the high cost of burial, and Rabban Gamliel was eventually buried in simple linen.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "instructed",
+          "said",
+          "taught"
+        ],
+        "tier2": [],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 10a:7-7:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 10a",
+      "start_segment": 7,
+      "end_segment": 7,
+      "summary": "A man claims to Rav Nachman that he found an unobstructed orifice, and Rav Nachman orders him to be flogged.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Flog him with palm branches",
+        "evidence_hebrew": "אַסְּבוּהוּ כּוּפְרֵי",
+        "quasi_speech_acts": [
+          "came before",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage records a physical punishment (flogging) being ordered and administered as a result of the legal encounter.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 10a:9-10:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 10a",
+      "start_segment": 9,
+      "end_segment": 10,
+      "summary": "A man claims to Rabban Gamliel that he found an unobstructed orifice, and Rabban Gamliel suggests he may have diverted his approach and tells a parable.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "came before",
+          "encountered",
+          "diverted",
+          "displaced"
+        ],
+        "confidence": "high",
+        "why": "The entire passage consists of a legal query brought before a sage and a response involving a hypothetical parable; the actions described (diverting, walking, displacing) occur only within the context of the man's report of his past experience or the sage's parable.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "arrived",
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 12b:0-0:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 12b",
+      "start_segment": 0,
+      "end_segment": 0,
+      "summary": "The court, seeing the priests demeaning the widows, instituted a marriage contract of two hundred dinars, but then the grooms distanced themselves.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "the grooms were distancing themselves from them",
+        "evidence_hebrew": "דְּקָא פָּרְשִׁין מִינַּיְיהוּ",
+        "quasi_speech_acts": [
+          "instituted",
+          "restored matters",
+          "addressing"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a historical sequence where grooms physically avoided or withdrew from marrying a specific group of women in response to a legal change.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "tore"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 14b:11-11:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 14b",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "A young girl went to fill water and was raped.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "descended to fill her jug with water from the spring, and she was raped",
+        "evidence_hebrew": "שֶׁיָּרְדָה לְמַלּאוֹת מַיִם מִן הָעַיִן, וְנֶאֱנָסָה",
+        "quasi_speech_acts": [
+          "אָמַר",
+          "מַעֲשֶׂה"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident involving physical movement and a physical assault.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "descended",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 15a:0-0:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 15a",
+      "start_segment": 0,
+      "end_segment": 0,
+      "summary": "An incident transpired among the wagons in the marketplace of Tzippori.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "The incident transpired among the wagons",
+        "evidence_hebrew": "בִּקְרוֹנוֹת שֶׁל צִיפּוֹרִי הָיָה מַעֲשֶׂה",
+        "quasi_speech_acts": [
+          "said",
+          "ruling",
+          "statement"
+        ],
+        "confidence": "high",
+        "why": "The passage explicitly references a specific historical incident (ma'aseh) involving physical movement or an occurrence among wagons in Tzippori.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 17a:2-2:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 17a",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "The Sages ordained Rabbi Ami and Rabbi Asi and sang a song to them.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "the Sages ordained Rabbi Ami and Rabbi Asi",
+        "evidence_hebrew": "סְמַכוּ רַבָּנַן לְרַבִּי אַמֵּי וּלְרַבִּי אַסִּי",
+        "quasi_speech_acts": [
+          "sang",
+          "some say"
+        ],
+        "confidence": "high",
+        "why": "The ordination (semikha) of the rabbis is a formal change of status and a physical event occurring in time, accompanied by the singing of a specific song.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 17a:10-10:5",
+      "tractate": "ketubot",
+      "ref": "Ketubot 17a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "Rabbi Yehuda, son of Rabbi Elai, would suspend the study of Torah to attend the removal of a corpse for burial and the entry of a bride into the wedding canopy.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "he would suspend the study of Torah to attend the removal of a corpse for burial and to attend the entry of a bride",
+        "evidence_hebrew": "שֶׁהָיָה מְבַטְּלִין תַּלְמוּד תּוֹרָה לְהוֹצָאַת הַמֵּת וּלְהַכְנָסַת כַּלָּה",
+        "quasi_speech_acts": [
+          "The Sages taught",
+          "The Sages said about",
+          "In what case is this statement said"
+        ],
+        "confidence": "high",
+        "why": "The passage records the actual physical practice of Rabbi Yehuda bar Ilai leaving his studies to participate in funeral and wedding processions.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "taught"
+        ],
+        "tier2": [
+          "sat"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 20b:0-0:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 20b",
+      "start_segment": 0,
+      "end_segment": 0,
+      "summary": "Rav Ashi knew testimony relating to Rav Kahana and asked him if he remembered it, but Rav Kahana did not.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "testified for Rav Kahana. He saw that Rav Kahana was hesitant",
+        "evidence_hebrew": "אַסְהֵיד לֵיהּ. חַזְיֵיהּ לְרַב כָּהֲנָא דַּהֲוָה מְחַסֵּם",
+        "quasi_speech_acts": [
+          "knew testimony",
+          "said",
+          "remembered",
+          "relying on you"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical act of testifying in court and the emotional state of Rav Kahana being hesitant or uneasy.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 21a:10-11:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 21a",
+      "start_segment": 10,
+      "end_segment": 11,
+      "summary": "Rav Anan bar Ḥiyya testified about a document from Shmuel's court, which Rav Yehuda explains was related to orphans and Shmuel's concern about potential court error.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "that document that emerged from the court",
+        "evidence_hebrew": "הָהוּא שְׁטָרָא דִּנְפַק מִבֵּי דִינָא",
+        "quasi_speech_acts": [
+          "came before",
+          "testified",
+          "certified",
+          "ratified",
+          "ruled",
+          "concerned",
+          "thought",
+          "holds"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical document emerging from a court and being produced as evidence of a past legal procedure.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "ruled",
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before",
+          "thought",
+          "נְפַק",
+          "סְבַר"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 21b:0-0:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 21b",
+      "start_segment": 0,
+      "end_segment": 0,
+      "summary": "Ravnai, brother of Rabbi Ḥiyya bar Abba, came to sell sesame and quoted a teaching of Shmuel.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "happened to come and sell sesame",
+        "evidence_hebrew": "אִיקְּלַע... לְמִזְבַּן שׁוּמְשְׁמֵי",
+        "quasi_speech_acts": [
+          "said",
+          "praised",
+          "refuted"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical event where Ravnai traveled to a specific location for the purpose of a commercial transaction (selling sesame) before delivering his legal statement.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "sat"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 25b:2-2:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 25b",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "A man came before Rabbi Ami and claimed another man was a priest because he saw him called to the Torah first.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rabbi Ami elevated him to the priesthood",
+        "evidence_hebrew": "וְהֶעֱלָהוּ רַבִּי אַמֵּי לִכְהוּנָּה",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "asked",
+          "established presumptive status"
+        ],
+        "confidence": "high",
+        "why": "While the passage is mostly a legal inquiry, the final phrase describes a change in the legal and social status of an individual (elevation to the priesthood) as a result of the ruling.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "asked",
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 25b:3-3:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 25b",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "A man came before Rabbi Yehoshua ben Levi and claimed another man was a Levite because he saw him called to the Torah second.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "elevated him to Levite status",
+        "evidence_hebrew": "וְהַעֲלֵהוּ רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי לִלְוִיָּה",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "asked",
+          "read second"
+        ],
+        "confidence": "high",
+        "why": "While the dialogue is legal inquiry, the final phrase describes a formal change in the subject's legal/social status (elevation) enacted by the Rabbi in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "asked",
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 25b:4-5:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 25b",
+      "start_segment": 4,
+      "end_segment": 5,
+      "summary": "A man came before Reish Lakish and claimed another man was a priest because he saw him called to the Torah first.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "looked at Rabbi Elazar harshly",
+        "evidence_hebrew": "חַזְיֵיהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת",
+        "quasi_speech_acts": [
+          "came before",
+          "sat",
+          "brought before",
+          "said",
+          "asked",
+          "heard"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical and emotional reaction where Reish Lakish glares at Rabbi Elazar in anger or resentment for not citing his source.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before",
+          "sat",
+          "stood"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 25b:6-6:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 25b",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "Rabbi Yehuda HaNasi and Rabbi Ḥiyya each elevated a son to priesthood and a brother to Levite status based on the statements of their father and brother, respectively.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "one elevated a son to priesthood",
+        "evidence_hebrew": "חד העלה בן על פי אביו לכהונה",
+        "quasi_speech_acts": [
+          "on the basis of the statement"
+        ],
+        "confidence": "high",
+        "why": "The act of 'elevating' someone to a new status (priesthood or Levite status) is a formal change of state and legal standing in the world, not merely a verbal discussion or ruling.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "ruled"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 27b:15-15:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 27b",
+      "start_segment": 15,
+      "end_segment": 15,
+      "summary": "Rav Dimi came from Eretz Yisrael and related an incident that came before Rabbi Yehoshua ben Levi (or Rabbi Yehuda HaNasi).",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "My mother and I were taken captive",
+        "evidence_hebrew": "אֲנִי וְאִמִּי נִשְׁבִּינוּ",
+        "quasi_speech_acts": [
+          "came",
+          "relates",
+          "came before",
+          "said",
+          "making an unconsidered, incidental remark",
+          "deemed her fit"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident involving the physical capture of individuals and the son's actions while in captivity.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "deemed",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before",
+          "considered",
+          "thought",
+          "went out"
+        ],
+        "tier3_physical": [
+          "ate",
+          "went"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 49b:6-6:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 49b",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "Rava coerced the wealthy Rav Natan bar Ami to donate 400 zuz to charity.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "collected from him four hundred dinars",
+        "evidence_hebrew": "וְאַפֵּיק מִינֵּיהּ אַרְבַּע מְאָה זוּזֵי",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "The passage describes a physical act of coercion and the actual collection of a specific sum of money (400 dinars) from an individual.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 50b:4-4:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 50b",
+      "start_segment": 4,
+      "end_segment": 4,
+      "summary": "Orphan daughters with property held by Rabbi Banai come before Shmuel, who instructs Rabbi Banai to sustain them.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "In the possession of Rabbi Banai... there was movable property belonging to orphans",
+        "evidence_hebrew": "בִּידֵיהּ דְּרַבִּי בַּנַּאי... הֲווֹ מִטַּלְטְלִין דְּיַתְמֵי",
+        "quasi_speech_acts": [
+          "came before",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical state of affairs where specific property was held in the possession of a named individual, which constitutes a physical event/state beyond mere legal discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 50b:6-6:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 50b",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "Cases in Neharde'a and Pumbedita lead to rulings and actions regarding daughters' sustenance from movable property.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rav Ḥana bar Bizna collected the sum",
+        "evidence_hebrew": "וְאַגְבִּי רַב חָנָא בַּר בִּיזְנָא",
+        "quasi_speech_acts": [
+          "ruled",
+          "came before",
+          "said",
+          "reverse your decisions"
+        ],
+        "confidence": "high",
+        "why": "The passage records an actual collection of property (agbi) by Rav Hana bar Bizna, which is a physical transfer of assets rather than a mere verbal ruling.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "ruled",
+          "said"
+        ],
+        "tier2": [
+          "came before",
+          "sat"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 50b:9-10:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 50b",
+      "start_segment": 9,
+      "end_segment": 10,
+      "summary": "A person inquires of Rav Yosef, who instructs the sons of the deceased to give the daughter sustenance from dates.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "came before",
+          "give",
+          "would the Master give"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal query and a ruling regarding property, where the 'coming before' is a formal framing for the discussion and the 'giving' is a verbal instruction or hypothetical ruling rather than a narrated physical action.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before",
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate",
+          "sold"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 52b:4-5:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 52b",
+      "start_segment": 4,
+      "end_segment": 5,
+      "summary": "Rabbi Yoḥanan's relatives cared for their father's wife, leading Rabbi Yoḥanan to regret their actions and compare them to legal advisors.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "emotional",
+        "evidence_english": "Rabbi Yoḥanan said in regret",
+        "evidence_hebrew": "אָמַר רַבִּי יוֹחָנָן: עָשִׂינוּ עַצְמֵינוּ כְּעוֹרְכֵי הַדַּיָּינִין",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "fix a lump sum",
+          "held",
+          "reasoned"
+        ],
+        "confidence": "high",
+        "why": "The passage describes Rabbi Yoḥanan's internal emotional change and regret over his previous legal advice, which constitutes an emotional event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "held",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before",
+          "considered",
+          "סְבַר"
+        ],
+        "tier3_physical": [
+          "ate",
+          "hid"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 52b:17-17:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 52b",
+      "start_segment": 17,
+      "end_segment": 17,
+      "summary": "Rav Pappa went to supervise the writing of a marriage contract, and Yehuda bar Mareimar came out to greet him.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "went to supervise the writing... came out to present himself",
+        "evidence_hebrew": "אָזֵיל לְמִיכְתַּב... נְפַק אֲתָא אִיתְחֲזִי לֵיהּ",
+        "quasi_speech_acts": [
+          "arranged",
+          "took his leave"
+        ],
+        "confidence": "high",
+        "why": "The passage describes physical movement and travel (going to Sura, coming out to meet someone) that is narrated as an actual occurrence rather than a hypothetical case or a legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "sent",
+          "נְפַק"
+        ],
+        "tier3_physical": [
+          "ate",
+          "took",
+          "went"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 53a:12-12:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 53a",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "A man whose betrothed died comes before Rav Nahman and his colleagues, who instruct him to either bury her or pay the sum stipulated in her marriage contract.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "was sitting",
+          "came before",
+          "died"
+        ],
+        "confidence": "high",
+        "why": "The death of the betrothed wife is the background premise of the legal query, and the arrival of the man and the sitting of the sages are standard scene-setting for a legal discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before",
+          "was sitting",
+          "יָתֵיב"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 54a:13-14:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 54a",
+      "start_segment": 13,
+      "end_segment": 14,
+      "summary": "A woman from Meḥoza married to a man from Neharde’a came before Rav Naḥman, who initially ruled based on the woman's origin, but changed his ruling when they clarified the husband's origin.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "He heard from her voice",
+        "evidence_hebrew": "שַׁמְעַהּ לְקָלַהּ",
+        "quasi_speech_acts": [
+          "came before",
+          "act in accordance",
+          "said",
+          "asks"
+        ],
+        "confidence": "high",
+        "why": "While the passage is a legal query, the specific detail of the sage physically hearing and identifying the woman's origin by her accent constitutes a sensory event within the narrative.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before",
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 54a:20-20:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 54a",
+      "start_segment": 20,
+      "end_segment": 20,
+      "summary": "The daughter-in-law of the house of the son of Elyashiv was claiming payment of her marriage contract from the orphans and was bringing them to court.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "She went and dressed and covered herself with all of her clothes",
+        "evidence_hebrew": "אֲזַלָא לְבֵישְׁתִּינְהוּ וְאִיכַּסִּתִינְהוּ לְכוּלֵּיהּ מָנָא",
+        "quasi_speech_acts": [
+          "claiming",
+          "bringing them to the court",
+          "came before Ravina"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the physical action of the woman going and dressing herself in multiple layers of clothing to influence the legal appraisal.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "went",
+          "אֲזַל"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 54a:21-21:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 54a",
+      "start_segment": 21,
+      "end_segment": 21,
+      "summary": "A certain person instructed his heirs to give a dowry to his daughter, but the value of the dowry depreciated.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "the cost of a dowry depreciated",
+        "evidence_hebrew": "זַל נְדוּנְיָא",
+        "quasi_speech_acts": [
+          "said",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical change in the market value of goods (depreciation) occurring in the world after the initial speech-act.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "wrote"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 54a:22-22:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 54a",
+      "start_segment": 22,
+      "end_segment": 22,
+      "summary": "A certain person said to his heirs, in his will: The relatives of Rabbi Yoḥanan, burdened by their father's wasteful wife, sought advice from Rabbi Yoḥanan and later a ruling from Reish Lakish after their father's death, leading to conflicting opinions on her support.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage only introduces a verbal statement made by an individual regarding his will, which constitutes a speech-act rather than a physical or emotional event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 56b:11-11:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 56b",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "The Gemara states that the sister of Rami bar Ḥama was married to Rav Avya. A couple whose marriage contract was lost came before Rav Yosef, who gave them a legal ruling.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "was married to",
+        "evidence_hebrew": "הֲוָת נְסִיבָא",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "Marriage is a physical status change and a life event that occurs in the world, not a speech-act or legal deliberation.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 60b:5-9:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 60b",
+      "start_segment": 5,
+      "end_segment": 9,
+      "summary": "Rav Pappa and Rav Huna plan to act according to a baraita, but an old woman advises against it, and they realize their mistake.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "a woman strangled her child",
+        "evidence_hebrew": "וַחֲנַקְתֵּיהּ",
+        "quasi_speech_acts": [
+          "thought to act",
+          "said",
+          "prohibited",
+          "permit",
+          "maintain",
+          "taught",
+          "answered"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident where a woman physically strangled her child, which is a non-speech event used to justify a legal concern.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "answered",
+          "permitted",
+          "prohibited",
+          "said",
+          "taught",
+          "אָמַר"
+        ],
+        "tier2": [
+          "thought"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died",
+          "gave",
+          "married",
+          "went",
+          "מִית"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 61a:12-12:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 61a",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "Rav Anan and Rav Ashi recount personal incidents where they were served food while attending their teachers and would have been physically endangered by their cravings if not for being given a portion.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "they brought him a cooked dish of mushrooms, and if he had not given me some, I would have been endangered",
+        "evidence_hebrew": "אַיְיתוֹ לֵיהּ תַּבְשִׁילָא דְאַרְדֵי, וְאִי לָאו דִּיהַב לִי, אִיסְתַּכַּנִי",
+        "quasi_speech_acts": [
+          "said",
+          "standing before",
+          "concludes",
+          "principle of the matter"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates physical actions (bringing food and giving it) and a physical/emotional state of danger or distress caused by a craving.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "brought",
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 63b:7-7:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 63b",
+      "start_segment": 7,
+      "end_segment": 7,
+      "summary": "Mar Zutra coerces a rebellious woman to remain with her husband, resulting in the birth of Rabbi Hanina of Sura.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Mar Zutra compelled her to stay with him. And from this couple issued Rabbi Ḥanina of Sura.",
+        "evidence_hebrew": "וְאַכְפְּיַהּ מָר זוּטְרָא, וּנְפַק מִינֵּיהּ רַבִּי חֲנִינָא מִסּוּרָא",
+        "quasi_speech_acts": [
+          "related",
+          "claiming",
+          "demonstrates",
+          "concludes"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical act of coercion and the subsequent birth of a child, which are concrete events beyond mere legal speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [
+          "נְפַק"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 65a:5-5:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 65a",
+      "start_segment": 5,
+      "end_segment": 5,
+      "summary": "The Sages allotted the daughter-in-law of Nakdimon ben Guryon two se'ah of wine specifically for her meat pudding.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "apportioned",
+          "said",
+          "taught",
+          "did not answer"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal ruling (apportioning funds) and a verbal exchange, but the 'not answering' is a refusal of a speech-act rather than a physical or emotional event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "taught",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 65a:10-10:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 65a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "The wife of Rav Yosef bar Rava requested a large amount of wine from Rav Nehemya, who granted it and then observed her drinking the entire quart at once.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "came before",
+          "apportioned"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal petition and the resulting ruling, where 'apportioning' refers to the verbal decree of the court rather than a physical transfer of goods.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 65a:11-11:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 65a",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "A widow requested silk garments from Rav Yosef, who denied the request because he knew her late husband did not provide such luxuries.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "He apportioned sustenance for her",
+        "evidence_hebrew": "פְּסַק לַהּ",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "apportion"
+        ],
+        "confidence": "high",
+        "why": "The verb 'apportioned' (pesak) in this context refers to the actual legal allocation or transfer of resources/provisions to the woman, which constitutes a physical change in status or possession.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 66b:9-9:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 66b",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "The Sages allocate 400 gold coins for the daughter of Nakdimon ben Guryon's daily perfume, to which she responds with a sarcastic blessing that they should provide the same for their own daughters.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "designated",
+          "pledge",
+          "answered",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The entire passage describes a legal ruling regarding a maintenance allowance and the verbal exchange that followed, with no physical or emotional events narrated.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "answered",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 67b:3-3:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 67b",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "The people of Upper Galilee provided a specific high-quality ration of meat daily to a impoverished man of noble descent.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "who bought for a poor person... a litra of meat every day",
+        "evidence_hebrew": "שֶׁלָּקְחוּ לְעָנִי בֶּן טוֹבִים אֶחָד מִצִּיפּוֹרִי לִיטְרָא בָּשָׂר בְּכׇל יוֹם",
+        "quasi_speech_acts": [
+          "The Sages taught",
+          "The Gemara asks",
+          "Rav Huna said",
+          "if you wish, say instead",
+          "Rav Ashi said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a historical incident where people physically purchased meat and, according to Rav Ashi, slaughtered an entire animal daily for a specific individual.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "taught",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "bought"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 67b:17-17:7",
+      "tractate": "ketubot",
+      "ref": "Ketubot 67b",
+      "start_segment": 17,
+      "end_segment": 17,
+      "summary": "Rabbi Ḥanina's wife discovered that a man they supported was actually living in luxury, leading the Rabbi to stop his donations.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "he sent it in the hand of his wife. She came back home",
+        "evidence_hebrew": "שַׁדְּרִינְהוּ נִיהֲלֵיהּ בְּיַד דְּבֵיתְהוּ, אֲתַאי",
+        "quasi_speech_acts": [
+          "asked",
+          "said",
+          "heard them saying"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical act of sending money via a person and the physical return of that person, which constitutes a narrative event beyond mere legal speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "asked",
+          "said"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 69a:10-10:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 69a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "Ameimar retracts his theoretical legal position when a woman actually comes before him for a ruling, treating her as a creditor instead of an inheritor.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "retracted",
+          "standing in front of",
+          "came before",
+          "asking",
+          "saw that his opinion was",
+          "silent"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal query and a sage's silence/retraction of an opinion, which are categorized as speech-acts or scene-setting for a legal discussion rather than physical or emotional events.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before",
+          "considered",
+          "retracted"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 69a:12-12:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 69a",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "Ravina facilitates the collection of a dowry for Rav Ashi's daughter from two different heirs using different legal standards for each.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Ravina gave her intermediate-quality land",
+        "evidence_hebrew": "אַגְבְּיַהּ... בֵּינוֹנִית",
+        "quasi_speech_acts": [
+          "Come and hear",
+          "treated"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical collection and transfer of specific grades of land from an estate to a daughter, which constitutes a physical event beyond mere legal ruling.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "gave"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 74a:11-11:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 74a",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "The Gemara cites a specific incident where a man betrothed a woman conditionally and then had intercourse with her, resulting in the Sages ruling that she required a formal divorce.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "engages in sexual intercourse with her",
+        "evidence_hebrew": "וּבָעַל",
+        "quasi_speech_acts": [
+          "said",
+          "relates",
+          "rule"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical act of sexual intercourse occurring after a conditional betrothal, which the text explicitly identifies as an actual incident.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 77a:8-8:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 77a",
+      "start_segment": 8,
+      "end_segment": 8,
+      "summary": "A tanner in Sidon died and left a widow to his brother, who was also a tanner, and the Sages ruled that she could refuse the levirate marriage due to his profession.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "a certain tanner who died",
+        "evidence_hebrew": "בּוּרְסִי אֶחָד שֶׁמֵּת",
+        "quasi_speech_acts": [
+          "say",
+          "concede",
+          "relates an additional account",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the actual death of a specific individual in Sidon, which is a physical event rather than a hypothetical case or a speech-act.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 80a:2-2:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 80a",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "Rav Yehuda ruled that a husband who took branches from his wife's property to feed his animals had performed an act of 'consumption' regarding her assets.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "A husband took them from his wife’s property and fed them to his animals",
+        "evidence_hebrew": "עֲבַד רַב יְהוּדָה עוֹבָדָא בַּחֲבִילֵי זְמוֹרוֹת",
+        "quasi_speech_acts": [
+          "say",
+          "ruled",
+          "conforms to his line of reasoning",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage records a specific legal precedent (ovada) where a husband physically took bundles of branches and fed them to his animals, which constitutes a physical event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "permitted",
+          "ruled",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate",
+          "took"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 82a:3-3:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 82a",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "In Mata Meḥasya, a man attempts to bribe his brother with a share of inheritance to prevent the brother from disqualifying their deceased brother's widow from levirate marriage.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "emotional",
+        "evidence_english": "I am scared",
+        "evidence_hebrew": "מִסְתְּפֵינָא",
+        "quasi_speech_acts": [
+          "wanted to disqualify",
+          "divide the property",
+          "retracted"
+        ],
+        "confidence": "high",
+        "why": "The passage explicitly records the brother's internal emotional state of fear or apprehension regarding a potential swindle.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "retracted"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 84b:2-2:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 84b",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "Reish Lakish reverses a ruling made by judges who followed Rabbi Tarfon, returning money to the heirs.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "restored the money to the heirs",
+        "evidence_hebrew": "וְאַהְדְּרֵיהּ... לְעוֹבָדָא",
+        "quasi_speech_acts": [
+          "judged",
+          "opinion",
+          "ruling",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical reversal of a legal action and the restoration of money, which constitutes a physical event beyond mere speech or ruling.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "tore"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 84b:8-8:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 84b",
+      "start_segment": 8,
+      "end_segment": 8,
+      "summary": "A creditor seizes an ox from an orphans' herdsman, leading to a legal dispute before Rav Nachman regarding when the seizure occurred.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "a creditor seized an ox",
+        "evidence_hebrew": "דְּתָפְסִי תּוֹרָא מִינֵּיהּ",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "ruling"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical event where a creditor seized an ox from a herdsman, which is the factual basis for the subsequent legal dispute.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "stated",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "seized",
+          "מִית"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85a:7-7:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85a",
+      "start_segment": 7,
+      "end_segment": 7,
+      "summary": "A woman holding a bag of documents claims she seized them for a debt while the owner was alive, and Rav Nahman upholds her claim.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "a bag full of documents deposited with her",
+        "evidence_hebrew": "מִיפַּקְדִי גַּבַּהּ מְלוּגָא דִשְׁטָרֵי",
+        "quasi_speech_acts": [
+          "came before",
+          "claimed",
+          "said",
+          "replied"
+        ],
+        "confidence": "high",
+        "why": "The passage begins with a physical act of bailment (depositing a bag of documents) which occurred in the world prior to the legal dispute.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "replied",
+          "said",
+          "stated"
+        ],
+        "tier2": [
+          "came before",
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate",
+          "seized",
+          "יְהַב",
+          "מִית"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85a:13-14:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85a",
+      "start_segment": 13,
+      "end_segment": 14,
+      "summary": "Rav Beivai bar Abaye grants a litigant's request to have a woman swear her oath in public to shame her, prompting a sharp rebuke from Rav Pappi.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "obligated to take an oath",
+          "come and take an oath",
+          "write a document",
+          "give it to me",
+          "come from unfortunate people"
+        ],
+        "confidence": "high",
+        "why": "The entire passage consists of legal maneuvering and verbal exchanges regarding the location of an oath and the writing of a document, without any physical action or emotional change actually occurring in the narrative.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85b:1-1:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85b",
+      "start_segment": 1,
+      "end_segment": 1,
+      "summary": "A man deposited pearls with Rabbi Meyasha, who then died without leaving instructions, leading to a dispute over the items.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rabbi Meyasha passed away",
+        "evidence_hebrew": "שְׁכֵיב רַבִּי מְיָאשָׁא",
+        "quasi_speech_acts": [
+          "deposited",
+          "instructing",
+          "explaining",
+          "came before",
+          "said",
+          "provided a distinguishing mark"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the actual death of Rabbi Meyasha, which is a physical event in the world beyond the legal discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85b:3-3:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85b",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "A man deposited a silver goblet with Hasa, who died, and Rav Nachman ruled the goblet should be returned because Hasa was not wealthy enough to own such an item.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "deposited a silver goblet... Ḥasa passed away",
+        "evidence_hebrew": "דְּאַפְקֵיד כָּסָא דְכַסְפָּא... שָׁכֵיב חָסָא",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "instructing"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical deposit of an object and the subsequent death of the bailee as actual events preceding the legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85b:4-4:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85b",
+      "start_segment": 4,
+      "end_segment": 4,
+      "summary": "A man deposited silk with Rav Dimi, who died, and Rabbi Abba ruled it be returned to the claimant based on Rav Dimi's known financial status.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "deposited silk... passed away",
+        "evidence_hebrew": "דְּאַפְקֵיד מְטַכְסָא... שָׁכֵיב",
+        "quasi_speech_acts": [
+          "came before",
+          "instructing"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical deposit of property and the subsequent death of the bailee, which are concrete historical events rather than speech-acts.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "met"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 85b:5-5:3",
+      "tractate": "ketubot",
+      "ref": "Ketubot 85b",
+      "start_segment": 5,
+      "end_segment": 5,
+      "summary": "A dying man left his property to 'Toviya', and when a man named Toviya appeared, Rabbi Yoḥanan ruled he was the intended recipient.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "He passed away, and Toviya came",
+        "evidence_hebrew": "שָׁכֵיב, אֲתָא טוֹבִיָּה",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "The passage narrates the actual death of the testator and the physical arrival of the claimant, which are non-speech events.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 86a:8-8:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 86a",
+      "start_segment": 8,
+      "end_segment": 8,
+      "summary": "Rav Hama explains that Rava's unusual ruling was a response to a specific debtor who deceitfully claimed his money belonged to a gentile to avoid paying his debts.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "forcing him to sell the land",
+        "evidence_hebrew": "עָשׂוּ בּוֹ שֶׁלֹּא כַּהוֹגֶן",
+        "quasi_speech_acts": [
+          "Tell me",
+          "said to him",
+          "claimed"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a specific historical incident where the Sages physically forced a debtor to sell his land as a punitive measure for his improper conduct.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "replied",
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 95b:0-0:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 95b",
+      "start_segment": 0,
+      "end_segment": 0,
+      "summary": "A man mortgaged his orchard for ten years, but when it withered after five, the Sages allowed the creditor to collect from liened property.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "the orchard grew old",
+        "evidence_hebrew": "וְקַשׁ לַחֲמֵשׁ שְׁנִין",
+        "quasi_speech_acts": [
+          "came before",
+          "wrote him a document"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical change in the state of an object (the orchard aging/becoming unproductive) as a factual event that occurred in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [
+          "came before",
+          "wrote"
+        ],
+        "tier3_physical": [
+          "sold"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 96a:7-7:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 96a",
+      "start_segment": 7,
+      "end_segment": 7,
+      "summary": "Rabbi Shabbtai’s daughter-in-law seized a saddlebag of coins for her sustenance, and the Sages were unable to legally remove it from her possession.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "seized a saddlebag full of coins",
+        "evidence_hebrew": "שתפסה דסקייא מלאה מעות",
+        "quasi_speech_acts": [
+          "came",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical action where a woman seized an object (a saddlebag of coins) and the Sages were unable to physically or legally remove it from her possession.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "seized"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 97a:10-10:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 97a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "A man sold land to Rav Pappa to buy oxen, but when he no longer needed the money, Rav Pappa returned the land to him.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rav Pappa returned his land to him",
+        "evidence_hebrew": "וְאַהְדְּרַיהּ נִיהֲלֵיהּ רַב פָּפָּא לְאַרְעֵיהּ",
+        "quasi_speech_acts": [
+          "Come and hear",
+          "suggests",
+          "rejects"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a completed physical transaction where land was sold and subsequently returned by Rav Pappa.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [],
+        "tier3_physical": [
+          "sold"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 97a:11-11:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 97a",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "During a drought in Neharde'a, people sold their homes for wheat, but when wheat arrived and prices fell, Rav Nachman ordered the sales reversed.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "everyone sold his mansion",
+        "evidence_hebrew": "זַבְּנִינְהוּ כּוּלֵּי עָלְמָא לְאַפַּדְנַיְיהוּ",
+        "quasi_speech_acts": [
+          "said",
+          "holds"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a historical event where people physically sold their property due to a drought and wheat subsequently arrived.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "arrived",
+          "sold"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 98a:1-1:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 98a",
+      "start_segment": 1,
+      "end_segment": 1,
+      "summary": "A woman seizes a silver cup as partial payment of her marriage contract and Rava rules that she is still entitled to sustenance from the orphans.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "seized a silver cup",
+        "evidence_hebrew": "דִּתְפַסָה כָּסָא דְכַסְפָּא",
+        "quasi_speech_acts": [
+          "came before",
+          "demanded",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The woman physically seized an object (a silver cup) as an act of self-help, which is a physical event occurring before the legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "seized"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 100a:8-9:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 100a",
+      "start_segment": 8,
+      "end_segment": 9,
+      "summary": "Rav Dimi and Rav Safra report slightly different versions of an incident where Perata challenged Rabbi Yehuda HaNasi's decision to rule like the Sages regarding a court's error.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rabbi Yehuda HaNasi acted",
+        "evidence_hebrew": "וְעָשָׂה רַבִּי",
+        "quasi_speech_acts": [
+          "came",
+          "said",
+          "reversed his ruling",
+          "teach",
+          "wished to act"
+        ],
+        "confidence": "high",
+        "why": "The passage describes Rabbi Yehuda HaNasi actually performing a physical action or transaction in accordance with a legal ruling, rather than just discussing the law.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 100b:16-16:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 100b",
+      "start_segment": 16,
+      "end_segment": 16,
+      "summary": "Rav Kahana delayed selling beer belonging to an orphan until a festival to ensure a better price despite the risk of it souring.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "He delayed selling it until the Festival",
+        "evidence_hebrew": "שַׁהֲיֵיהּ עַד רִיגְלָא",
+        "quasi_speech_acts": [
+          "explained",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical action where Rav Kahana actively held onto and delayed the sale of a physical object (beer) until a specific time.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "explained",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 100b:17-18:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 100b",
+      "start_segment": 17,
+      "end_segment": 18,
+      "summary": "Ravina consulted Rav Ashi about whether he could transport wine belonging to his orphaned nephew to the market in Sikhra along with his own wine.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "he was taking to Sikhra to sell",
+        "evidence_hebrew": "הֲוָה קָמַסֵּיק לֵיהּ לְסִיכְרָא",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "go"
+        ],
+        "confidence": "high",
+        "why": "The passage describes Ravina physically transporting his own wine to the market in Sikhra, which is a physical action in the world beyond the legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "permitted",
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 103b:14-15:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 103b",
+      "start_segment": 14,
+      "end_segment": 15,
+      "summary": "Rabbi Hiyya visits the ailing Rabbi Yehuda HaNasi and questions why he is weeping.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "fell ill... entered... found him crying",
+        "evidence_hebrew": "חָלָה... נִכְנַס... מְצָאוֹ שֶׁהוּא בּוֹכֶה",
+        "quasi_speech_acts": [
+          "taught",
+          "asks",
+          "said",
+          "indicates"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates Rabbi Yehuda HaNasi falling ill and Rabbi Hiyya physically entering the room, as well as the emotional/physical act of crying.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "taught",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died",
+          "fell ill",
+          "found",
+          "מִית"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 105a:13-13:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 105a",
+      "start_segment": 13,
+      "end_segment": 13,
+      "summary": "When litigants came to Rav Huna for judgment, he would require them to provide a replacement laborer to irrigate his fields so he wouldn't suffer financial loss from his time away from work.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "come for judgment",
+          "say"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a habitual speech-act (a condition for judging) and the framing of legal queries, but no actual physical or emotional event is narrated as occurring.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 105b:8-8:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 105b",
+      "start_segment": 8,
+      "end_segment": 8,
+      "summary": "Shmuel refuses to judge a man's case after the man helped him disembark from a ferry, fearing it constitutes a verbal bribe.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "gave him a hand to help him out of the ferryboat",
+        "evidence_hebrew": "יָהֵיב לֵיהּ יְדֵיהּ",
+        "quasi_speech_acts": [
+          "I have a case to present before you",
+          "I am disqualified from presiding"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical interaction where a man assists Shmuel by giving him a hand to help him off a boat.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate",
+          "gave"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 105b:9-9:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 105b",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "Ameimar disqualifies himself from a case after the litigant removes a feather from his head.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "removed it from his head... covered it",
+        "evidence_hebrew": "שַׁקְלֵיהּ... כַּסְּיֵיהּ",
+        "quasi_speech_acts": [
+          "was sitting",
+          "judging a case",
+          "I have a case to present before you",
+          "disqualified"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates two distinct physical actions—removing a feather and covering spittle—performed by litigants, which trigger the judges' disqualification.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "sent",
+          "was sitting",
+          "הֲוָה יָתֵיב",
+          "יָתֵיב"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 107b:8-10:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 107b",
+      "start_segment": 8,
+      "end_segment": 10,
+      "summary": "Rav Dimi and Ravin report conflicting accounts of specific legal cases brought before Rabbi Yehuda HaNasi and Rabbi Yishmael regarding a woman's sustenance.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "that he died",
+        "evidence_hebrew": "שמת",
+        "quasi_speech_acts": [
+          "came",
+          "came before",
+          "apportioned",
+          "wondered",
+          "interpreted",
+          "heard"
+        ],
+        "confidence": "high",
+        "why": "The passage mentions the death of the husband as a factual event in the world that triggers the legal discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "interpreted",
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 109b:10-11:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 109b",
+      "start_segment": 10,
+      "end_segment": 11,
+      "summary": "After orphans divide their father's estate without giving their sister the palm tree promised in the will, Abaye rules they must provide the tree and redo the division.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "The orphans went and divided up the property",
+        "evidence_hebrew": "אֲזוּל יַתְמֵי פְּלוּג לְנִכְסֵי",
+        "quasi_speech_acts": [
+          "said",
+          "thought to say",
+          "put him off"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical action where the heirs actually went and divided the property among themselves, which is a concrete event in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "thought",
+          "סְבַר"
+        ],
+        "tier3_physical": [
+          "ate",
+          "went",
+          "יְהַב"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 109b:12-12:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 109b",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "A man leaves his daughter a palm tree but dies owning only two halves of trees, leading the rabbis to debate if two halves constitute a 'tree'.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "He died and left behind",
+        "evidence_hebrew": "שְׁכֵיב וּשְׁבַיק",
+        "quasi_speech_acts": [
+          "said",
+          "wished to give"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the actual death of the man and the resulting state of his estate, which are physical events in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 111a:9-9:0",
+      "tractate": "ketubot",
+      "ref": "Ketubot 111a",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "[Restored from Ketubot 110b merge]",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "he died outside of Eretz Yisrael... his coffin is coming",
+        "evidence_hebrew": "נָח נַפְשֵׁיהּ בְּחוּץ לָאָרֶץ... אֲרוֹנוֹ בָּא",
+        "quasi_speech_acts": [
+          "came and said",
+          "said",
+          "said to him",
+          "said to them"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the actual death of Ulla and the physical transport of his coffin, which are physical events in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "died",
+          "מִית"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 111a:10-11:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 111a",
+      "start_segment": 10,
+      "end_segment": 11,
+      "summary": "A man asks Rabbi Hanina if he should travel to Babylonia to perform levirate marriage for his deceased brother's widow, and is harshly rebuked.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "came before",
+          "descend to Babylonia"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a man approaching a sage to ask a legal question about a hypothetical journey, which is a standard framing for a legal query rather than a narrated event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before",
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 111a:23-25:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 111a",
+      "start_segment": 23,
+      "end_segment": 25,
+      "summary": "Rabba's brothers send him a letter from Eretz Yisrael urging him to immigrate, citing an anecdote about a man who died for leaving the land and offering health advice.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "was suffering through his love... suffered without leaving the country until the day he died",
+        "evidence_hebrew": "מִצְטַעֵר עַל אִשָּׁה אַחַת... גִּלְגֵּל בְּעַצְמוֹ עַד יוֹם מוֹתוֹ",
+        "quasi_speech_acts": [
+          "sent",
+          "adds matters",
+          "writing",
+          "heard",
+          "say",
+          "be careful"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific incident (Ma'aseh) involving a man's emotional suffering and his physical endurance/death in the land of Israel.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [
+          "sent",
+          "wrote"
+        ],
+        "tier3_physical": [
+          "ate",
+          "died"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 111b:12-12:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 111b",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "An incident is recorded where a turnip grew so large that a fox nested inside it.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "a fox that nested inside a turnip, and they weighed this turnip, and they discovered",
+        "evidence_hebrew": "שׁוּעָל קִינֵּן בְּלֶפֶת, וּשְׁקָלוּהוּ, וּמָצְאוּ",
+        "quasi_speech_acts": [
+          "said",
+          "do not be surprised"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific past incident involving physical actions: a fox nesting in a turnip and people weighing and measuring the object.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "stated"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 112a:11-11:1",
+      "tractate": "ketubot",
+      "ref": "Ketubot 112a",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "An Amorite asks a resident of Israel about the yield of a palm tree and mocks him for 'destroying' the land's bounty with such high yields.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "said",
+          "speaking"
+        ],
+        "confidence": "high",
+        "why": "The entire passage consists of a verbal exchange between two individuals regarding the yield of a tree, with no physical actions or emotional changes narrated as actually occurring.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "ketubot:Ketubot 112a:14-14:2",
+      "tractate": "ketubot",
+      "ref": "Ketubot 112a",
+      "start_segment": 14,
+      "end_segment": 14,
+      "summary": "Rabbi Elazar marks three milestones in his career in Israel, noting how each one fulfills a condition to escape a biblical curse.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "ascended to Eretz Yisrael",
+        "evidence_hebrew": "סָלֵיק לְאֶרֶץ יִשְׂרָאֵל",
+        "quasi_speech_acts": [
+          "ordained him",
+          "appointed him",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the physical travel of Rabbi Elazar from Babylonia to the Land of Israel, which is a physical event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ascended",
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 8a:9-9:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 8a",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "Rav Kahana accepted a scarf as payment for the redemption of a firstborn son, declaring that to him personally, it was worth the required five sela.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "took a cloth",
+        "evidence_hebrew": "שָׁקֵיל סוּדָרָא",
+        "quasi_speech_acts": [
+          "accepted upon himself",
+          "view this cloth as though"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical action where Rav Kahana takes an object (a cloth) as part of a redemption ceremony.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "deemed",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "took"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 8a:10-10:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 8a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "Mar bar Rav Ashi purchased a scarf from the mother of Rabbah of Paraziya to demonstrate its value.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Mar bar Rav Ashi bought a cloth",
+        "evidence_hebrew": "מָר בַּר רַב אָשֵׁי זְבַן סוּדָרָא",
+        "quasi_speech_acts": [
+          "said",
+          "We said",
+          "cites a proof"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical transaction where Mar bar Rav Ashi physically purchased a head-covering.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "bought"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 12a:13-13:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 12a",
+      "start_segment": 13,
+      "end_segment": 13,
+      "summary": "A man betroths a woman with a bundle of rags, and Rav Shimi bar Hiyya physically examines the item to see if it meets the minimum value for a valid betrothal.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "examined the bundle",
+        "evidence_hebrew": "וְקָא מְעַיֵּין בַּהּ",
+        "quasi_speech_acts": [
+          "betrothed",
+          "sat before",
+          "asks",
+          "say",
+          "explains"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical action where Rav Shimi bar Ḥiyya actively examines a physical object (a bundle of rags) to determine its material value.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "אָמַר"
+        ],
+        "tier2": [
+          "sat",
+          "יָתֵיב"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 12b:4-4:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 12b",
+      "start_segment": 4,
+      "end_segment": 4,
+      "summary": "Following Rav Hisda's ruling that a betrothal with a marble was invalid, the woman remarried and had children, but the Sages of Sura avoided marrying into her family due to the halakhic dispute.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "the Sages avoided the family and refused to marry into it",
+        "evidence_hebrew": "וּפְרַשׁוּ רַבָּנַן מִינַּהּ",
+        "quasi_speech_acts": [
+          "ruled",
+          "maintained",
+          "opinion",
+          "held",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a physical social boycott and the act of avoiding/separating from a specific family, which constitutes a physical event in the world beyond mere legal deliberation.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "held",
+          "maintained",
+          "ruled",
+          "said"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "found",
+          "married"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 12b:5-5:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 12b",
+      "start_segment": 5,
+      "end_segment": 5,
+      "summary": "A man betrothed a woman with a myrtle branch in a marketplace, and Rav Yosef ruled that he should be flogged for the impropriety and provide a bill of divorce.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "betrothed a woman with a myrtle branch in the marketplace",
+        "evidence_hebrew": "דְּאקַדֵּישׁ בְּשׁוּטִיתָא דְאָסָא בְּשׁוּקָא",
+        "quasi_speech_acts": [
+          "sent",
+          "sent a response"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific physical act of betrothal using an object in a public space as a historical event that triggered the subsequent legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 25a:17-17:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 25a",
+      "start_segment": 17,
+      "end_segment": 17,
+      "summary": "A maidservant in Rabbi Yehuda HaNasi's house immersed in a mikveh, but a bone was later found between her teeth, raising questions about the validity of the immersion.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "immersed herself, and she ascended from her immersion and a bone was found",
+        "evidence_hebrew": "שֶׁטָּבְלָה, וְעָלְתָה וְנִמְצָא עֶצֶם",
+        "quasi_speech_acts": [
+          "maintain",
+          "say",
+          "required",
+          "indicates"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident involving physical actions: a maidservant immersing in a ritual bath, exiting the bath, and the discovery of a physical object (a bone) in her mouth.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "אָמַר"
+        ],
+        "tier2": [
+          "considered"
+        ],
+        "tier3_physical": [
+          "ascended",
+          "ate",
+          "found"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 26b:10-10:2",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 26b",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "While traveling on a ship, Rabban Gamliel designates tithes and rents the land they sit on to other sages to effect the transfer.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "were traveling on a ship",
+        "evidence_hebrew": "שֶׁהָיוּ בָּאִים בִּסְפִינָה",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "The passage narrates a physical journey (traveling on a ship) as a historical event rather than a hypothetical case or a static scene-setting for a legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 31a:3-4:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 31a",
+      "start_segment": 3,
+      "end_segment": 4,
+      "summary": "A man asks Rabbi Eliezer how to prioritize honoring his parents, but his tears reveal to the Rabbi that he is actually a grieving orphan.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "emotional",
+        "evidence_english": "your eyelashes, which are filled with tears",
+        "evidence_hebrew": "מִבֵּין רִיסֵי עֵינֶיךָ נִיכָּר",
+        "quasi_speech_acts": [
+          "asked",
+          "said",
+          "came before",
+          "answered"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical/emotional state of the questioner having tear-filled eyes, which indicates his personal grief as the son of a widow.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "answered",
+          "asked",
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "divorced"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 32a:6-6:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 32a",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "Rav Huna tears expensive silk in front of his son Rabba to test if he will remain respectful and not lose his temper.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "Rav Huna tore silk garments... if he becomes angry",
+        "evidence_hebrew": "רַב הוּנָא קְרַע שִׁירָאֵי... אִי רָתַח",
+        "quasi_speech_acts": [
+          "said to himself",
+          "asks",
+          "answers"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical action (tearing silk) and an intended emotional reaction (anger) as part of a specific historical incident.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate",
+          "tore"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 33a:16-16:3",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 33a",
+      "start_segment": 16,
+      "end_segment": 16,
+      "summary": "Rabbi Yoḥanan would stand in honor of elderly Arameans, explaining that their long lives must have involved many trials and experiences.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rabbi Yoḥanan himself would stand before Aramean... elders",
+        "evidence_hebrew": "רַבִּי יוֹחָנָן הֲוָה קָאֵי מִקַּמֵּי סָבֵי דְאַרְמָאֵי",
+        "quasi_speech_acts": [
+          "says",
+          "stated",
+          "said",
+          "opinion"
+        ],
+        "confidence": "high",
+        "why": "The passage describes the physical act of Rabbi Yoḥanan and Rava standing or performing gestures of reverence for elderly gentiles, which goes beyond mere scene-setting for a legal query.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "stated",
+          "אָמַר"
+        ],
+        "tier2": [
+          "קָם"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 33b:12-12:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 33b",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "While Rabbi Elai and Rabbi Ya’akov bar Zavdi were studying, Rabbi Shimon bar Abba passed by, and when they stood for him, he informed them they were not required to interrupt their study for his honor.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "passed before them and they stood before him",
+        "evidence_hebrew": "חָלֵיף וְאָזֵיל... וְקָמוּ מִקַּמֵּיהּ",
+        "quasi_speech_acts": [
+          "sitting"
+        ],
+        "confidence": "high",
+        "why": "The passage describes physical movement (passing by) and a physical action (standing up) that occurs in the narrative world, rather than just a legal query or discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "sent",
+          "stood"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 39b:8-8:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 39b",
+      "start_segment": 8,
+      "end_segment": 8,
+      "summary": "A son obeys his father's request to fetch chicks, fulfilling two mitzvot simultaneously, but falls to his death upon his return.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rabbi Ya’akov himself saw an incident",
+        "evidence_hebrew": "רַבִּי יַעֲקֹב מַעֲשֶׂה חֲזָא",
+        "quasi_speech_acts": [
+          "asks",
+          "answers",
+          "contemplating",
+          "thought"
+        ],
+        "confidence": "high",
+        "why": "The passage explicitly states that Rabbi Ya'akov witnessed a physical event (ma'aseh) occurring in the world, which serves as the empirical basis for the discussion.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [],
+        "tier2": [
+          "thought"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 40b:7-7:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 40b",
+      "start_segment": 7,
+      "end_segment": 7,
+      "summary": "Rabbi Tarfon and the Elders were reclining in a loft in Lod when they were asked whether study or action is greater, eventually concluding that study is superior as it leads to action.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "reclining",
+          "asked",
+          "answered",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a group of sages sitting together to debate a legal/philosophical question, which constitutes scene-setting for a speech-based discussion rather than a narrative event.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "answered",
+          "asked",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 41a:3-3:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 41a",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "Rav Safra and Rava personally performed menial food preparation tasks for Shabbat to demonstrate that performing a mitzva oneself is more meritorious than using an agent.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rav Safra, who would himself singe the head of an animal... and Rava, who would salt a turbot fish",
+        "evidence_hebrew": "רַב סָפְרָא מְחָרֵיךְ רֵישָׁא, רָבָא מָלַח שִׁיבּוּטָא",
+        "quasi_speech_acts": [
+          "questioning",
+          "stated",
+          "says",
+          "writes",
+          "teach"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the physical actions of Rav Safra and Rava preparing food for the Sabbath as a precedent for performing a mitzvah personally.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "stated",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 44b:6-6:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 44b",
+      "start_segment": 6,
+      "end_segment": 6,
+      "summary": "The Sages, seeking a ruling on a dispute between Shmuel and Karna, swap the names of the disputants and send the query to Rav, who responds with an emphatic oath and a ruling.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "reversed the names",
+          "sent the question",
+          "said to him"
+        ],
+        "confidence": "high",
+        "why": "The 'reversing' of names and 'sending' of the question are rhetorical and administrative components of a legal query, not physical or emotional events.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 45b:1-1:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 45b",
+      "start_segment": 1,
+      "end_segment": 1,
+      "summary": "A man attempts to betroth a minor girl in a marketplace using a bundle of vegetables, leading Ravina to rule the act invalid due to its degrading nature.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "betrothed... with a bundle of vegetables in the marketplace",
+        "evidence_hebrew": "דְּקַדֵּישׁ בְּכִישָׁא דְיַרְקָא בְּשׁוּקָא",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "The passage narrates a specific physical event that occurred in the world—a man performing a betrothal with a physical object in a public place—rather than a hypothetical case or a purely verbal exchange.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "אָמַר"
+        ],
+        "tier2": [
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 50a:5-5:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 50a",
+      "start_segment": 5,
+      "end_segment": 5,
+      "summary": "An incident occurs in Rav Hisda's study hall, which he then brings to Rav Huna for a resolution based on a Mishna in Me'ila.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "עוֹבָדָא הֲוָה (there was an incident)",
+          "בֵּי רַב חִסְּדָּא (in the study hall)",
+          "פַּשְׁטוּהָ (they resolved it)"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal query being brought from one study hall to another and resolved via a hypothetical case in a Mishnah, with no actual physical or emotional events narrated.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "brought"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 52b:1-1:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 52b",
+      "start_segment": 1,
+      "end_segment": 1,
+      "summary": "A man steals money and throws it to a woman washing her feet to betroth her, then asks Rava for a ruling on the validity of the act.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "washing her feet... grabbed a few dinars... threw them to her",
+        "evidence_hebrew": "מָשְׁיָא כַּרְעַאּ... חֲטַף זוּזֵי... וּשְׁדָא לַהּ",
+        "quasi_speech_acts": [
+          "came before Rava"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific physical sequence of events including washing feet, grabbing money, and throwing it to a woman.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "stole",
+          "threw"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 52b:2-2:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 52b",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "A sharecropper betroths a woman with onions from his employer's field and Rava rules on whether the owner would have minded.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "betrothed a woman with a handful of onions",
+        "evidence_hebrew": "דְּקַדֵּישׁ בְּמוֹזָא דְשַׁמְכֵי",
+        "quasi_speech_acts": [
+          "came before",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident where a sharecropper performed the physical act of betrothal using a specific object (onions).",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before",
+          "considered"
+        ],
+        "tier3_physical": [
+          "ate",
+          "stole",
+          "took"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 52b:3-3:2",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 52b",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "A brewer uses beer sediment to betroth a woman; the owner's subsequent comment is analyzed by Rava to determine if the betrothal is valid.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "betrothed a woman with sediment",
+        "evidence_hebrew": "דְּקַדֵּישׁ בִּפְרוּמָא",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "found"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical act of betrothal using a specific object (beer sediment) that did not belong to the person performing the act.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "found",
+          "met"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 58a:2-4:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 58a",
+      "start_segment": 2,
+      "end_segment": 4,
+      "summary": "Mar Yehuda confronts Rav Yosef and Rav Shmuel at the study hall entrance with a legal contradiction that silences them, leading them to seek a resolution from Rabba.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "emotional",
+        "evidence_english": "They were silent",
+        "evidence_hebrew": "אִישְׁתִּיקוּ",
+        "quasi_speech_acts": [
+          "found",
+          "standing",
+          "raises a contradiction",
+          "came before",
+          "told him"
+        ],
+        "confidence": "high",
+        "why": "The verb 'ishtiku' (they were silent) in this context denotes a specific emotional/intellectual state of being stumped or embarrassed by a difficulty, which constitutes an internal event beyond mere speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "permitted",
+          "prohibited",
+          "said",
+          "taught"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate",
+          "burned",
+          "found"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 59a:3-3:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 59a",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "Ravin the Pious was sent to betroth a woman for his son but ended up betrothing her for himself.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "went to betroth a woman to his son, but in the end he betrothed her to himself",
+        "evidence_hebrew": "אֲזַיל לְקַדּוֹשֵׁי לֵיהּ אִיתְּתָא לִבְרֵיהּ, קַידְּשַׁהּ לְנַפְשֵׁיהּ",
+        "quasi_speech_acts": [
+          "raises a difficulty",
+          "answers",
+          "asks",
+          "thought"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident involving travel and the physical act of betrothal (kiddushin) performed by Ravin the Pious.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "taught"
+        ],
+        "tier2": [
+          "thought"
+        ],
+        "tier3_physical": [
+          "ate",
+          "went"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 59a:4-4:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 59a",
+      "start_segment": 4,
+      "end_segment": 4,
+      "summary": "Rabba bar bar Hana gave Rav money to buy land for him, but Rav bought it for himself.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "gave money to Rav... went and purchased it for himself",
+        "evidence_hebrew": "יְהַיב לֵיהּ זוּזֵי... אֲזַל זַבְנַהּ לְנַפְשֵׁיהּ",
+        "quasi_speech_acts": [
+          "said",
+          "asks",
+          "answers",
+          "questions",
+          "informed",
+          "thought"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a physical transaction where money changed hands and a purchase of land was executed in the world.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "taught"
+        ],
+        "tier2": [
+          "thought",
+          "סְבַר"
+        ],
+        "tier3_physical": [
+          "ate",
+          "gave",
+          "went",
+          "אֲזַל"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 65b:8-9:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 65b",
+      "start_segment": 8,
+      "end_segment": 9,
+      "summary": "Mar Zutra and Rav Adda divide their property and ask Rav Ashi if witnesses are required to validate the division, to which he responds that witnesses are only necessary to prevent lying.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "divided their shared property between them",
+        "evidence_hebrew": "פְּלוּג נִיכְסַיְיהוּ בַּהֲדֵי הֲדָדֵי",
+        "quasi_speech_acts": [
+          "came before",
+          "said",
+          "retract"
+        ],
+        "confidence": "high",
+        "why": "The passage begins by narrating a completed physical action—the division of property—before the parties approach the sage for a legal ruling on its validity.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "came before"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 66b:0-5:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 66b",
+      "start_segment": 0,
+      "end_segment": 5,
+      "summary": "A water reservoir in Yavne is measured and found to be lacking the required volume, sparking a debate between Rabbi Tarfon and Rabbi Akiva over the status of those who had already immersed in it.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "they measured it and it was found to be deficient",
+        "evidence_hebrew": "וּמָדְדוּ וְנִמְצֵאת חֲסֵירָה",
+        "quasi_speech_acts": [
+          "said",
+          "learned",
+          "render pure",
+          "render impure",
+          "discussed",
+          "compared",
+          "analyze",
+          "accepted"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident in Yavne where people physically measured a water reservoir and discovered it was lacking the required volume.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [
+          "thought"
+        ],
+        "tier3_physical": [
+          "ate",
+          "divorced",
+          "found"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 71b:9-9:2",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 71b",
+      "start_segment": 9,
+      "end_segment": 9,
+      "summary": "The Gemara cites an incident where Rav visited a specific family to examine their lineage status.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "Rav arrived at the house of the son of a vinegar strainer",
+        "evidence_hebrew": "אִיקְּלַע רַב לְבֵי בַּר שָׁפֵי חַלָּא",
+        "quasi_speech_acts": [
+          "says",
+          "asks",
+          "examined",
+          "answers",
+          "said"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific physical event where Rav traveled to and arrived at a particular household.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "arrived",
+          "met"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 72a:3-3:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 72a",
+      "start_segment": 3,
+      "end_segment": 3,
+      "summary": "An anonymous man identifies his place of origin to the Sages, prompting Rabbi Yitzḥak Nappaḥa to stand and clarify the location's geography.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "stood on his feet",
+        "evidence_hebrew": "עָמַד... עַל רַגְלָיו",
+        "quasi_speech_acts": [
+          "said",
+          "relates",
+          "asks",
+          "inquires"
+        ],
+        "confidence": "high",
+        "why": "The passage describes Rabbi Yitzhak Nappaha physically standing up on his feet, which is a physical action beyond mere speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [
+          "stood"
+        ],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 72a:10-10:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 72a",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "As Rabbi Yehuda HaNasi is dying, he issues a series of prophetic warnings regarding the flawed lineage of specific Babylonian towns. The Gemara describes a series of synchronized births and deaths of great Sages, ensuring that the world is never without a righteous leader.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "When Rabbi Yehuda HaNasi was dying... they went and trapped the fish on Shabbat",
+        "evidence_hebrew": "כִּי הֲוָה נִיחָא נַפְשֵׁיהּ דְּרַבִּי... וַאֲזֻיל וְצָדוּ בְּהוּ בְּשַׁבְּתָא",
+        "quasi_speech_acts": [
+          "said",
+          "excommunicated"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates the physical death of Rabbi Yehuda HaNasi and the physical actions of people trapping fish on Shabbat, as well as the resulting apostasy.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "said"
+        ],
+        "tier2": [
+          "sat",
+          "sent"
+        ],
+        "tier3_physical": [
+          "ate",
+          "went"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 72b:10-10:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 72b",
+      "start_segment": 10,
+      "end_segment": 10,
+      "summary": "Ameimar permits Rav Huna bar Natan to marry a woman from Meḥoza, leading Rav Ashi to question the legal basis of the decision.",
+      "verdict_obj": {
+        "verdict": "speech_only",
+        "event_kind": "none",
+        "evidence_english": "",
+        "evidence_hebrew": "",
+        "quasi_speech_acts": [
+          "permitted",
+          "did not accept",
+          "heard"
+        ],
+        "confidence": "high",
+        "why": "The passage describes a legal ruling (permitting a marriage) and a subsequent debate over the validity of that ruling, all of which constitute speech-acts or intellectual deliberation.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "permitted",
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 79b:6-7:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 79b",
+      "start_segment": 6,
+      "end_segment": 7,
+      "summary": "Rav Yosef son of Rav Menashya ruled according to Rav's opinion in a specific case, which caused Shmuel to become angry.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "Shmuel took offense at this... He was angered",
+        "evidence_hebrew": "וְאִיקְּפִיד שְׁמוּאֵל",
+        "quasi_speech_acts": [
+          "performed an action",
+          "ruling",
+          "rule against",
+          "ruling"
+        ],
+        "confidence": "high",
+        "why": "The passage explicitly records Shmuel's emotional reaction (anger/offense) to a legal ruling, which constitutes an internal event beyond mere speech.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "ruled",
+          "said",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "took"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 80b:11-11:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 80b",
+      "start_segment": 11,
+      "end_segment": 11,
+      "summary": "A mourning woman removed her husband from his grave and engaged in intercourse with the man guarding the cemetery.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "both",
+        "evidence_english": "she removed her husband from his grave",
+        "evidence_hebrew": "וְאַפֵּיקְתֵּיהּ",
+        "quasi_speech_acts": [
+          "suggested"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a series of physical actions including visiting a grave, engaging in intercourse, and disinterring a body, as well as the emotional state of succumbing to temptation.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "asked"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 80b:12-12:1",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 80b",
+      "start_segment": 12,
+      "end_segment": 12,
+      "summary": "Ten men used the pretense of carrying a woman on a funeral bier to seclude her for immoral purposes.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "ten men carried out a woman on a bier",
+        "evidence_hebrew": "וְהוֹצִיאוּהָ עֲשָׂרָה בַּמִּטָּה",
+        "quasi_speech_acts": [
+          "says",
+          "taught",
+          "know that this is so"
+        ],
+        "confidence": "high",
+        "why": "The passage narrates a specific historical incident where ten men physically carried a woman on a bier to commit an act of immorality.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "taught",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [],
+        "tier3_emotional": []
+      }
+    },
+    {
+      "id": "kiddushin:Kiddushin 81a:2-2:0",
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 81a",
+      "start_segment": 2,
+      "end_segment": 2,
+      "summary": "While walking with Rav Yehuda, Rav spots a woman ahead and insists they speed up to avoid a prohibited state of seclusion.",
+      "verdict_obj": {
+        "verdict": "non_speech_event",
+        "event_kind": "physical",
+        "evidence_english": "were walking along the way",
+        "evidence_hebrew": "הֲווֹ קָאָזְלִי בְּאוֹרְחָא",
+        "quasi_speech_acts": [],
+        "confidence": "high",
+        "why": "The passage narrates the physical movement of Rav and Rav Yehuda traveling on a road and encountering a woman walking ahead of them.",
+        "error": null
+      },
+      "surface": {
+        "tier1": [
+          "answered",
+          "permitted",
+          "responded",
+          "said",
+          "אֲמַר לֵיהּ",
+          "אָמַר"
+        ],
+        "tier2": [],
+        "tier3_physical": [
+          "ate"
+        ],
+        "tier3_emotional": []
+      }
+    }
+  ]
+}

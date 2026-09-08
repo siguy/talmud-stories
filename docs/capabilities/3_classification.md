@@ -247,12 +247,26 @@ suggests he may choose exactly that.
 - **Re-derive Classification precision version-aware.** The obvious follow-on, and it
   needs no API and no Jeff: restrict each round's verdicts to proposals the *current*
   detector still makes with the *same* call, and report what is left. Not attempted.
-- **Wave 6a — measure the blast radius on one axis** (*does anything non-speech happen?*)
-  across the 110 LOW_CONFIDENCE golden entries. ~$0.10, needs nobody, and it is the
-  deliverable that makes 6b answerable. **Never run.**
-- **Wave 6b — ask Jeff the question**, in his own words, with the count and 3–4 examples:
-  should those entries become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new
-  **borderline** status? Drafted, not sent.
+- ~~**Wave 6a — measure the blast radius**~~ **RUN TWICE, 2026-09-03, and that is the
+  result.** Morning screen: **6** speech-only of 110 ([finding](../findings/2026-09-03-speech-act-blast-radius.md)).
+  Afternoon screen, under Jeff's 2026-09-02 quasi-speech-act rule, which the morning one
+  predates: **17**. **They agree on 4 of 19**, and **9 of the 13 additions flip to
+  "something happens" when the span is extended by two segments** — the Boundaries defect
+  the morning finding named by hand, measured ([finding](../findings/2026-09-03-quasi-speech-acts-and-the-span-confound.md),
+  `scripts/test_span_extension_confound.py`). **The axis is not stable enough to yield a
+  count**; the criteria question is ~3 entries under either screen. Assets:
+  `src/speech_act_lexicon.py` (three tiers — T1 disqualifies, T2 scrutiny only, T3 the
+  positive target, because *sent a question* and *sent a messenger* are not the same verb),
+  `scripts/screen_quasi_speech_acts.py`, `results/criteria/quasi_speech_act_screen.json`.
+- **Wave 6b — ask Jeff the question**: should pure-speech passages become NOT_A_STORY,
+  stay LOW_CONFIDENCE, or take a new **borderline** status? **Drafted 2026-09-03, not
+  sent** → [`comms/2026-09-03-email-jeff-DRAFT.md`](../../comms/2026-09-03-email-jeff-DRAFT.md).
+  **It carries no count, by decision** — 6 and 17 in one day is not a number to put in
+  front of him. It leads with his word list, gives him the three stable cases, and tells
+  him our spans often stop before the action. A second question rides with it: he lists
+  *considered* as a speech-act but says *"was embarrassed"* is an event, and both are
+  internal — our line is *deliberating about the law* = speech, *feeling something* =
+  event, and it needs his confirmation rather than our guess.
 - **A post-hoc false-positive classifier** — logistic regression / LightGBM on the
   features the detector already emits (`criteria_met_count`, disqualifiers, actor type,
   segment count), validated leave-one-tractate-out. Recommended twice (Lesson 7, 2026-03;

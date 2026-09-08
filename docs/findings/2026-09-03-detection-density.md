@@ -12,6 +12,27 @@ proposed even as `NOT_A_STORY`, which no wording change can reach.
 python3 scripts/audit_detection_density.py --out results/recall/detection_density.json
 ```
 
+> **Correction, 2026-09-04 — the numbers below are the loose window's; the shape is not.**
+> This finding was measured before the exact-anchor matcher landed. Re-derived from the
+> regenerated `results/recall/detection_density.json`, on the same 350-story denominator:
+>
+> | stories on the daf | as published | **exact anchor** |
+> |---|---|---|
+> | **1** | 83.3% (70/84) | **82.1%** (69/84) |
+> | 2 | 95.9% | 95.1% (78/82) |
+> | 3 | 88.9% | 90.5% (57/63) |
+> | **4+** | 90.7% (117/129) | **90.1%** (109/121) |
+>
+> **The gap survives the instrument change** — eight points, same direction. That it barely
+> moved is worth more than either table: the profile is a property of the detector, not of
+> the aligner that measured it. The tables below and the 4+ denominator (129 → 121) are left
+> as written, per the standing rule that a finding is corrected in place and never edited to
+> read as though it had always been right.
+>
+> The **length** figures further down — found median 46 words, missed 44, and the 84%/94%
+> within-band split — are still loose-window numbers and have **not** been re-derived.
+> → [`work/2026-09-03-density-mechanism.md`](../../work/2026-09-03-density-mechanism.md)
+
 ## Recall by how many of his stories share the daf
 
 | stories on the daf | his stories | we found | recall |

@@ -37,13 +37,20 @@ at* is 110 of the 249 accepted golden entries (Ketubot 77, Kiddushin 33). The bu
 ## The three phases
 
 - **6a — measure the blast radius.** ~~Never run.~~ **DONE 2026-09-03: the answer is 6,
-  not 110** ([finding](../docs/findings/2026-09-03-speech-act-blast-radius.md)). 110 was
+  not 110** — then **re-run the same afternoon under Jeff's 2026-09-02 quasi-speech-act
+  rule and it is 17**, of which 9 dissolve on span extension into the very Boundaries
+  defect this phase already named. The two screens agree on 4 of 19.
+  **Do not send Jeff a count** → [span confound](../docs/findings/2026-09-03-quasi-speech-acts-and-the-span-confound.md),
+  `scripts/screen_quasi_speech_acts.py`, `src/speech_act_lexicon.py`. Original result: ([finding](../docs/findings/2026-09-03-speech-act-blast-radius.md)). 110 was
   the candidate bucket; 6 of them are speech-only, 2.4% of the accepted golden. And on
   reading those 6, **three are spans that stop before the action happens** — a Boundaries
   defect wearing a criteria costume. The criteria question is about **three entries**.
 - **6b — ask Jeff.** Present the contradiction in his own words with 6a's count and 3–4
   examples: should those entries become NOT_A_STORY, stay LOW_CONFIDENCE, or take a new
-  **borderline** status? Drafted, not sent. **Only 3 of the 6 are actually a 6b
+  **borderline** status? **Drafted 2026-09-03** →
+  [`comms/2026-09-03-email-jeff-DRAFT.md`](../comms/2026-09-03-email-jeff-DRAFT.md).
+  **Not sent.** It carries no count, by decision: it leads with his word list, gives him
+  the three stable cases, and tells him our spans often stop before the action. **Only 3 of the 6 are actually a 6b
   question** — 7a:1, 15a:0, 112a:11, all genuinely speech-only. The other three (17a:10,
   54a:22, 85a:13-14) are boundary bugs, not criteria cases, and go straight to a fix
   rather than a question.
