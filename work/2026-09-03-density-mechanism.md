@@ -21,12 +21,22 @@ Detection recall against the blind lists, by how many of Jeff's stories share th
 
 | stories on the daf | recall |
 |---|---|
-| **1** | **83.3%** |
-| 2 | 95.9% |
-| 4+ | **90.7%** |
+| **1** | **82.1%** (69/84) |
+| 2 | 95.1% (78/82) |
+| 3 | 90.5% (57/63) |
+| 4+ | **90.1%** (109/121) |
+
+**Re-derived 2026-09-04 under the exact-anchor matcher** — the published finding quoted
+83.3% / 90.7% from the loose window. The gap survives the instrument change intact, which
+is the useful part: the profile is a property of the detector, not of the aligner.
 
 It is not story length — found stories median 46 words, missed 44 — and the gap survives
-inside a single length band (84% vs 94% for stories over 25 words).
+inside a single length band (84% vs 94% for stories over 25 words). Those two length figures
+are still the loose-window ones and should be re-derived alongside the rest.
+
+**And this item is now the front of the queue.** Under the exact matcher, **27 of the 36
+misses are detection failures against 9 in triage** — the reverse of the split this work was
+originally ranked under.
 
 The reading offered was **salience**: *we find a story among its own kind and miss it
 embedded in legal give-and-take.* The finding then says plainly what it cannot support:

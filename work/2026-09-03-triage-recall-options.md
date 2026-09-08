@@ -14,24 +14,51 @@ superseded_by:
 **Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) §1.1 and
 [`docs/capabilities/1_triage.md`](../docs/capabilities/1_triage.md), then this.
 
-## Where the losses actually are
+## Where the losses actually are — RE-DERIVED 2026-09-04 under the exact-anchor matcher
 
-12 of Jeff's ~350 blind-list stories are never proposed. **7 die in triage** — the page was
-never examined, so no prompt change can reach them:
+**The first version of this item said 12 misses, 7 of them in triage. Both were artifacts
+of the loose window.** The exact-anchor matcher (PR #41) credits a proposal only where the
+story actually is, and the inventory changes shape completely:
+
+| | loose window | **exact anchor** |
+|---|---|---|
+| stories never proposed, of 350 | 12 | **36** |
+| die in **triage** — page never examined | 7 | **9** |
+| die in **detection** — page examined, nothing proposed | 5 | **27** |
+
+**Triage is no longer the bigger half. Detection is worse by three to one** — 14 Ketubot,
+10 Kiddushin, 3 Gittin. All 36 are located precisely (33 at ≥0.9 coverage) and none was
+proposed-then-rejected, so these are silent non-proposals, not classification calls.
+
+**This item therefore drops below the detection work** —
+[`extra-story-discriminator`](2026-09-03-extra-story-discriminator.md) and
+[`density-mechanism`](2026-09-03-density-mechanism.md). It is still worth doing: 9 stories
+is 9 stories, and options 1 and 2 below cost nothing. But it should no longer be read as
+where the recall problem lives.
+
+### The 9 that die in triage
 
 | tractate | miss | opener |
 |---|---|---|
 | Ketubot | 20a | `בר שטיא זבין נכסי` |
-| Ketubot | 72b | `אמר רבה בר בר חנה: זימנא חדא הוה קאזילנא` |
+| Ketubot | 27a | `העיד רבי יוסי הכהן` |
+| Ketubot | 51a | `ההוא יתום ויתומה דאתו לקמיה דרבא` |
+| Ketubot | 72b | `זימנא חדא הוה קאזילנא בתריה דרב עוקבא` |
 | Ketubot | 82b | `בראשונה היו כותבין` |
 | Kiddushin | 10b | `וכבר שלח יוחנן בן בג בג` |
-| Kiddushin | 14a | `אמר רבי יהודה: פעם אחת היינו יושבים` |
+| Kiddushin | 14a | `פעם אחת היינו יושבים לפני ר' טרפון` |
 | Kiddushin | 21b | `איבעיא להו` |
 | Kiddushin | 69a | `אושפזיכניה דרבי שמלאי ממזר הוה` |
 
-**Four of the seven open with a first-person or reported-narrative formula**
-(`פעם אחת`, `זימנא חדא`, `בראשונה`, `וכבר שלח`) that the five-introducer lexicon does not
-contain. That is not a coincidence and it is the cheapest thing on this list.
+**Four of the nine open with a reported-narrative formula** the five-introducer lexicon does
+not contain (`פעם אחת`, `זימנא חדא`, `בראשונה`, `וכבר שלח`) — still the cheapest thing on
+this list. `ההוא יתום` on 51a is a fifth candidate: the lexicon holds `ההוא גברא` and
+`ההוא ד` but not this form.
+
+**Ketubot 51a is worth a second look for a different reason.** It is the false skip found by
+hand on 2026-02-13 and reported as fixed by the 2026-08-31 `N≥1` rule — but the shipped
+triage labels are **cached from before that rule**, so it still shows as skipped here.
+Confirm against a fresh triage run before counting it as a miss or as a fix.
 
 ## What has already been tried, and whether it worked
 

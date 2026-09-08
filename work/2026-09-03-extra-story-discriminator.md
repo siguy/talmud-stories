@@ -34,6 +34,11 @@ and a **useless** predictor of *whether an unlisted passage is a story*. For the
 this project that is discovery — finding what the 2005 list missed — our ranking signal
 is not weak, it is absent.
 
+**Ranked up 2026-09-04.** The exact-anchor matcher re-derives the miss inventory at **36
+stories never proposed, 27 of them detection failures against 9 in triage** — the reverse of
+the split under which the triage work was ranked ahead of this. Discovery and detection are
+now the two places the recall problem actually lives.
+
 **This is the item that makes discovery cheap.** Nothing here improves the detector. It
 improves which 25 of the unlisted proposals we put in front of Jeff, and in what order.
 

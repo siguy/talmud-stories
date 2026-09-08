@@ -28,10 +28,10 @@ Jeff's blind 2005 Ketubot list:
 
 Both are unmistakable stories. 82b compounds with a triage skip.
 
-**Updated 2026-09-03 — the evidence is larger than the two cases above.** A full inventory
-of every blind-list story never proposed puts the count at 12, of which **7 die in triage**,
-and **four of those seven open with a reported-narrative formula outside the five-term
-list**:
+**Updated 2026-09-04 under the exact-anchor matcher.** A full inventory of every blind-list
+story never proposed puts the count at **36** — not the 12 the loose window reported — of
+which **9 die in triage**, and **four of those nine open with a reported-narrative formula
+outside the five-term list**:
 
 | miss | opener | shape |
 |---|---|---|
@@ -41,8 +41,14 @@ list**:
 | Kiddushin 10b | `וכבר שלח יוחנן בן בג בג` | "and he already sent…" — reported |
 
 `פעם אחת` and `זימנא חדא` are the same formula in Hebrew and Aramaic, and neither is in
-`_STORY_INTRODUCERS`. **This raises the item's expected value from 1 story to a candidate
-4**, and it is the cheapest item on the triage list — no API calls to mine or to price.
+`_STORY_INTRODUCERS`. A fifth candidate is `ההוא יתום ויתומה` on Ketubot 51a — the lexicon
+holds `ההוא גברא` and `ההוא ד` but not this form. **This raises the item's expected value
+from 1 story to a candidate 4-5**, and it is the cheapest item on the triage list — no API
+calls to mine or to price.
+
+**But read it against the corrected split:** 27 of the 36 misses die in *detection*, not
+triage, so this item now addresses the smaller half. It stays near the front only because
+it costs nothing.
 Ranked first in [`triage-recall-options`](2026-09-03-triage-recall-options.md).
 
 ## Method
