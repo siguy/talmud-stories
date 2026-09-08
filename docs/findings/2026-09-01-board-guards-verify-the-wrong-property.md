@@ -4,9 +4,9 @@
 **1 Triage**).
 **Status: measured.** Two defects **FIXED** — `scripts/board.py` changed. One is a
 measurement decision and is **OPEN**:
-[`work/2026-09-01-board-reads-stale-triage.md`](../../work/2026-09-01-board-reads-stale-triage.md).
+[`work/2026-09-01-board-reads-stale-triage.md`](../../work/done/2026-09-01-board-reads-stale-triage.md).
 **Items:** [`board-loaders-report-absence`](../../work/done/2026-09-01-board-loaders-report-absence.md),
-[`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md).
+[`board-reads-stale-triage`](../../work/done/2026-09-01-board-reads-stale-triage.md).
 
 ---
 

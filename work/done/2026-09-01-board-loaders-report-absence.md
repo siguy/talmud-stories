@@ -54,7 +54,7 @@ Every assertion watched fail against `git show HEAD:scripts/board.py` first (Les
   board was applying them wrongly. The list is expert provenance and is not ours to edit.
 - Do not widen `_is_verdict` until it counts blank rows — a round must not inflate.
 - This item touches presentation only. **No measured value may move.** If one does, stop:
-  that is [`board-reads-stale-triage`](../2026-09-01-board-reads-stale-triage.md)'s territory.
+  that is [`board-reads-stale-triage`](2026-09-01-board-reads-stale-triage.md)'s territory.
 
 ## Outcome
 
@@ -86,6 +86,6 @@ remove one. That is why `duplicates_dropped` is now printed rather than merely s
 ground-truth table (a row restored, a row re-sized) and the January round 24 → 25.
 
 **12 tests** in `tests/test_board_reports_what_it_holds.py`, each watched fail against the
-pre-fix module. Left for [`board-reads-stale-triage`](../2026-09-01-board-reads-stale-triage.md):
+pre-fix module. Left for [`board-reads-stale-triage`](2026-09-01-board-reads-stale-triage.md):
 the third and largest defect, which no test here can reach, because the generator is honest
 about an artifact that is stale about the code.

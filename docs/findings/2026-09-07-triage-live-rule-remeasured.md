@@ -2,7 +2,7 @@
 
 **2026-09-07.** Status: **measured.** No API calls — the discarded-page Stage 2 output has
 been on disk since 2026-08-31. Item:
-[`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md).
+[`board-reads-stale-triage`](../../work/done/2026-09-01-board-reads-stale-triage.md).
 
 The board's Triage cells were the last on the coverage matrix mixing two changes: the
 keep-rule shipped 2026-08-31 (`>=1 NARRATIVE_EVENT`) and the exact-anchor matcher shipped

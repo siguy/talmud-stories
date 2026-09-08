@@ -12,12 +12,12 @@ superseded_by:
 # STATE.md reports the superseded triage rule
 
 **Self-contained.** A fresh session executes this with no other context.
-Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 
 ## The claim to test / the problem
 
 `should_skip_page()` keeps any page with `>=1 NARRATIVE_EVENT` as of 2026-08-31
-([`triage-single-narrative`](../docs/findings/2026-08-31-triage-single-narrative.md)).
+([`triage-single-narrative`](../../docs/findings/2026-08-31-triage-single-narrative.md)).
 The board still reports the rule it replaced:
 
 ```
@@ -28,7 +28,7 @@ shipped code  Ketubot 98.7%   Kiddushin 97.8%     <- measured, in the finding, i
 > **UPDATE 2026-09-03 — the gap is now two changes wide, not one.** STATE.md's Ketubot
 > cell read **98.0%** when this item was written; it reads **96.6%** because the way an
 > expert story is *located* changed
-> ([`exact-matcher-cutover`](../docs/findings/2026-09-03-exact-matcher-cutover.md)), which
+> ([`exact-matcher-cutover`](../../docs/findings/2026-09-03-exact-matcher-cutover.md)), which
 > moved two Ketubot stories from Detection's column into Triage's. The Detection cells
 > moved with it: **90.3% / 88.4% / 97.3% / 89.2%**.
 >
@@ -109,7 +109,7 @@ Option B is the durable half either way: A fixes today's numbers, B stops it rec
   variants take a suffix. Do not rename one to dodge the overwrite (CLAUDE.md, Key Files).
 - Do not promote a scratch run without checking the added stories **by name**. The loose
   window credited a different passage on the same daf in 2 of 6 cases tested
-  ([`kiddushin-comments-harvest`](../docs/findings/2026-08-31-kiddushin-comments-harvest.md));
+  ([`kiddushin-comments-harvest`](../../docs/findings/2026-08-31-kiddushin-comments-harvest.md));
   the exact matcher removes that failure mode but does not remove the obligation.
 - The **strict/loose** distinction is retired as of 2026-09-03 — they were two answers to
   one question. If a re-run makes them diverge again, a story is anchored somewhere its own
@@ -126,11 +126,13 @@ Write the finding to `docs/findings/<date>-<slug>.md`, add an `## Outcome` secti
 below, and `python3 scripts/board.py finish <slug>`. **Never delete it.**
 
 
-## Outcome — measured 2026-09-07, one decision left open
+## Outcome
+
+**Measured 2026-09-07; two questions handed on rather than answered.**
 
 **Both cells re-measured under the live rule AND the exact-anchor matcher**, with the two
 causes separated by name, in
-[`2026-09-07-triage-live-rule-remeasured`](../docs/findings/2026-09-07-triage-live-rule-remeasured.md).
+[`2026-09-07-triage-live-rule-remeasured`](../../docs/findings/2026-09-07-triage-live-rule-remeasured.md).
 
 | | shipped artifacts | live rule | the matcher's share |
 |---|---|---|---|
@@ -152,9 +154,9 @@ which carries 4 `HABITUAL` segments and 0 `NARRATIVE_EVENT`; `should_skip_page()
 only the latter. Whether HABITUAL is narrative evidence is definitional, not a threshold,
 and is now its own question.
 
-**LEFT OPEN, deliberately — not this item's call to make silently.** The board still reads
-the unsuffixed denominators and still reports the shipped artifacts. The live-rule figures
-live in `results/recall/*_liverule.json` as suffixed variants. Promoting them means the
-board describes *the code as it is today* rather than *the artifacts we hold* — a
-defensible choice, and the reason this item is finished as a measurement rather than as a
-cutover. Decide it on main, with STATUS.
+**Two questions handed on rather than answered here**, because neither is a measurement:
+[`promote-liverule-denominator`](../2026-09-07-promote-liverule-denominator.md) — what the
+board's cells should describe, the artifacts we hold or the code we ship — and
+[`habitual-is-narrative-evidence`](../2026-09-07-habitual-is-narrative-evidence.md), Ketubot
+82b. The board still reads the unsuffixed denominators; the live-rule figures are suffixed
+variants beside them.

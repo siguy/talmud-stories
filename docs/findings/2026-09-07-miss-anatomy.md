@@ -116,7 +116,7 @@ largest defect we have.** That is [Lesson 41](../../lessons/) in its most expens
    story in an *adjacent* segment never proposed at all. Same expert complaint, two
    stages apart.
 3. **Triage has a named, single-variable failure mode** and a signal it already computes.
-   Folded into [`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md),
+   Folded into [`board-reads-stale-triage`](../../work/done/2026-09-01-board-reads-stale-triage.md),
    which must re-measure Triage anyway.
 4. **`jeff:boundary-end-rule` does not block any of this.** These are not extent
    questions. The 18 adjacent cases are passages Jeff listed and we never proposed.

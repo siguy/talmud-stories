@@ -151,7 +151,7 @@ before 2026-09-03 without saying which matcher produced it.**
 the pair that composes with Detection. The live rule (`>=1 NARRATIVE_EVENT`, shipped
 2026-08-31) was measured at 98.7% / 97.8% **with the retired matcher**, so the true live
 figure is **unmeasured**: the two differ by rule *and* by matcher, and mixing them hides
-one inside the other. → [`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md)
+one inside the other. → [`board-reads-stale-triage`](work/done/2026-09-01-board-reads-stale-triage.md)
 
 **Ketubot Triage now reads below its gate, and Detection below its own on three tractates.**
 That is a change in what we know, not in what the pipeline does.
@@ -384,7 +384,7 @@ recomputing from the artifacts returns exactly what the board prints. **The Dete
 inherit the same conditioning.** So the file that promises it types no numbers is the wrong
 one, and the hand-written file is right. Not repaired here: the fix rewrites the file
 CLAUDE.md calls *"always the recall denominator"*, which changes what every recall cell
-means. → [`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md), and a
+means. → [`board-reads-stale-triage`](work/done/2026-09-01-board-reads-stale-triage.md), and a
 caveat now sits in [`1_triage.md`](docs/capabilities/1_triage.md) so the cells are not
 quoted bare meanwhile.
 
@@ -613,7 +613,7 @@ tractates' worth of unjudged proposals with no golden-building lesson applied to
 which is now exactly the position Yevamot is in.
 
 **3. Re-measure Triage under the live rule *and* the current matcher.** The board's Triage
-cells are the only ones left mixing two changes ([`board-reads-stale-triage`](work/2026-09-01-board-reads-stale-triage.md)).
+cells are the only ones left mixing two changes ([`board-reads-stale-triage`](work/done/2026-09-01-board-reads-stale-triage.md)).
 No API calls — the labels are cached. Until it is done, Ketubot Triage has no honest number.
 
 **A correction to this file's own record, found 2026-09-03.** Four Gittin placeholder
