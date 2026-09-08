@@ -3,7 +3,7 @@ title: Ship examine_all_pages — Simon has accepted the call cost; price the re
 capability: [triage]
 tractate: [ketubot, kiddushin]
 blocked_by: []
-awaiting: []
+awaiting: [simon:review-throughput-price]
 writes: [src/story_detector_v11.py, src/event_triage.py, results/v11/]
 finding:
 superseded_by:
@@ -45,6 +45,12 @@ must produce**, and it is why "Simon doesn't mind the cost" does not by itself c
 question — the cost that matters is not Simon's.
 
 **This item is therefore mostly about mitigating the second cost, not paying the first.**
+
+**`awaiting: simon:review-throughput-price`.** The item can be built and measured; it
+cannot *conclude* until someone says how many false proposals a recovered story is worth in
+Jeff's reading time. Simon accepted the call cost on 2026-09-03 — that is the cheap half.
+Registered in [`comms/SIMON.md`](../comms/SIMON.md); before 2026-09-04 there was nowhere to
+put it.
 
 ## Method
 

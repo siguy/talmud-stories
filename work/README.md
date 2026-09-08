@@ -33,8 +33,8 @@ happened here at least once already.
 | `title` | one line |
 | `capability` | list of slugs — `triage detection classification boundaries review publication`. **Editable**: diagnosing which capability is at fault *is* the work (`abdc4af` moved Ketubot 77a from Detection to Classification), so it cannot be a precondition for starting |
 | `tractate` | list; empty means cross-cutting |
-| `blocked_by` | cannot **start** — item slugs, or `jeff:<question-slug>`. This is the **ordering** graph |
-| `awaiting` | can finish, cannot **conclude** — usually a question out with Jeff |
+| `blocked_by` | cannot **start** — item slugs, `jeff:<slug>` from [`comms/JEFF.md`](../comms/JEFF.md), or `simon:<slug>` from [`comms/SIMON.md`](../comms/SIMON.md). This is the **ordering** graph. The `simon:` half was added 2026-09-04: half the deciding here is about cost and throughput, and it had no namespace, so those blockers lived in prose while the frontmatter read as unblocked |
+| `awaiting` | can finish, cannot **conclude** — usually a question out with Jeff, or one with Simon |
 | `writes` | paths this item **modifies**; a trailing `/` means the subtree. This is the **contention** graph, and it is a different graph: two items can be mutually unblocked and still destroy each other's work. Declare **generously** — over-declaring costs a serialized lane, under-declaring costs a silent corruption |
 | `finding` | `docs/findings/YYYY-MM-DD-slug.md`, once written |
 | `superseded_by` | set when reverted or replaced |

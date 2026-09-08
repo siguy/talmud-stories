@@ -33,7 +33,12 @@ before changes that are now shipped:
 A single clean run of every tractate on one detector and one model is the only way the
 board's cells become comparable to each other.
 
-## ANSWERED 2026-09-03 — it is the quasi-speech-act rule
+## `simon:which-tightening` — ANSWERED 2026-09-03, and now registered
+
+Registered in [`comms/SIMON.md`](../comms/SIMON.md) as of 2026-09-04. When this item was
+written the `simon:` namespace did not exist and the blocker could only be prose; that hole
+is closed, and the answer is on the record where the next session will find it rather than
+in one file's prose.
 
 Simon: *"Story finder — tighten it per what I suggested. Then rerun it so we can see the
 actual score."* So the change is
@@ -60,9 +65,9 @@ together, so neither could be attributed. **Run the experiment, take its answer,
 re-run once.**
 
 **Declared in `blocked_by` as of 2026-09-04**, once #42 landed and the item it names existed
-on this branch to resolve against. It spent a day as prose only, which is the same gap the
-Simon question above still sits in — the warning there still stands: **do not start this
-item on the strength of a short `blocked_by` field.**
+to resolve against. It spent a day as prose only, for the same reason the Simon question
+did — and both holes are now closed, so this item's `blocked_by` finally says everything
+that actually blocks it.
 
 Two shipped changes are independent reasons this re-run is due regardless: **R-B1**, the
 opening-formula boundary rule (worth 4–5 points on three tractates), and the **`N≥1`
