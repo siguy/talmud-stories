@@ -77,7 +77,9 @@ def test_frozen_versions_keep_their_own_literal(path):
     """The other half of the rule: repointing these rewrites history silently."""
     src = (ROOT / path).read_text()
     assert "from src.model_config import" not in src, (
-        f"{path} is frozen -- it must keep the literal it ran with")
+        f"{path} is frozen -- it must keep the literal it ran with. Its default no longer "
+        f"resolves at Google, and that is deliberate: a frozen version that runs under a "
+        f"model which produced none of its numbers is worse than one that does not run.")
 
 
 def test_thinking_level_has_a_default():

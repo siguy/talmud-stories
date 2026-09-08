@@ -11,6 +11,13 @@ command line silently fell back to whichever literal that file happened to hold.
 FROZEN VERSIONS ARE DELIBERATELY NOT IMPORTED HERE. `src/story_detector_v5.py` through
 `v10.py` keep their own literals so that reading them tells you what they ran with. They
 are historical artifacts; a shared constant would silently re-point them.
+
+**Their default is `gemini-2.0-flash`, which Google no longer serves, so running one
+fails.** That is the accepted cost, confirmed 2026-09-04, and NOT a bug to fix: repointing
+them would make them run under a model that produced none of their numbers, which is worse
+than not running at all. If you need to reproduce an old result, pass `--model` explicitly
+and record that you did -- the result is then attributable to the model you chose, not
+silently to whichever one the file happened to name.
 """
 import os
 
