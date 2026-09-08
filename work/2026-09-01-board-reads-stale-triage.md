@@ -5,7 +5,7 @@ tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: []
 writes: [results/recall/, scripts/measure_recall_vs_expert_list.py, scripts/board.py, STATE.md]
-finding: docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md
+finding: docs/findings/2026-09-07-triage-live-rule-remeasured.md
 superseded_by:
 ---
 
@@ -124,3 +124,37 @@ Option B is the durable half either way: A fixes today's numbers, B stops it rec
 
 Write the finding to `docs/findings/<date>-<slug>.md`, add an `## Outcome` section
 below, and `python3 scripts/board.py finish <slug>`. **Never delete it.**
+
+
+## Outcome — measured 2026-09-07, one decision left open
+
+**Both cells re-measured under the live rule AND the exact-anchor matcher**, with the two
+causes separated by name, in
+[`2026-09-07-triage-live-rule-remeasured`](../docs/findings/2026-09-07-triage-live-rule-remeasured.md).
+
+| | shipped artifacts | live rule | the matcher's share |
+|---|---|---|---|
+| Ketubot Triage | 96.6% | **98.0%** | −0.7 (98.7% on record was the retired window) |
+| Kiddushin Triage | 95.6% | **97.8%** | none — 97.8% under both |
+
+Ketubot now sits **exactly on** its ≥98% gate; Kiddushin is 0.2 below. The rows compose
+again.
+
+**A bug was found and fixed in the process:** `merge_triage_recall_run.py --live-rule`
+left `skipped_by_triage: True` on every page it spliced, so a rescued story read as
+`survived_triage=False, in_detector=True` — triage-lost and detector-found at once. That
+is why the first run of this measurement moved end-to-end and left Triage frozen. The
+splice now clears the flag and records the shipped decision as `skipped_by_triage_shipped`.
+
+**Which stories the rule buys:** 4 of the board's 9 Triage misses, and Stage 2 finds all
+four. The five it does not buy are `N=0` with verbal acts only — except **Ketubot 82b**,
+which carries 4 `HABITUAL` segments and 0 `NARRATIVE_EVENT`; `should_skip_page()` counts
+only the latter. Whether HABITUAL is narrative evidence is definitional, not a threshold,
+and is now its own question.
+
+**LEFT OPEN, deliberately — not this item's call to make silently.** The board still reads
+the unsuffixed denominators and still reports the shipped artifacts. The live-rule figures
+live in `results/recall/*_liverule.json` as suffixed variants. Promoting them means the
+board describes *the code as it is today* rather than *the artifacts we hold* — a
+defensible choice, and the reason this item is finished as a measurement rather than as a
+cutover. Decide it on main, with STATUS.

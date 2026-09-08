@@ -89,6 +89,15 @@ def main():
                 f"{ref} was marked skipped but already carries stories")
             page['stories'] = by_ref[ref]['stories']
             page['stage2_rerun'] = True
+            # The page WAS examined in the counterfactual this artifact measures, so the
+            # flag every downstream reader derives `survived_triage` from must say so.
+            # Leaving it True made the harness report stories as simultaneously
+            # triage-lost and detector-found -- which is how the board's Triage cells
+            # stayed frozen at the previous rule's value while end-to-end moved
+            # (work/2026-09-01-board-reads-stale-triage.md). The original decision is
+            # kept, not erased, so a reader can still see what shipped.
+            page['skipped_by_triage_shipped'] = True
+            page['skipped_by_triage'] = False
             stats['replaced'] += 1
 
         out_dir = REPO / args.out_dir
@@ -113,7 +122,10 @@ def main():
         print(f"  NOTE {stats['failed_left_empty']} page(s) had a failed Stage 2 "
               f"call and are NOT counted as 'no stories here'.")
     for d in written:
-        print(f"  wrote {d.relative_to(REPO)}")
+        try:
+            print(f"  wrote {d.relative_to(REPO)}")
+        except ValueError:          # --out-dir outside the repo (a scratch path)
+            print(f"  wrote {d}")
     return 0
 
 
