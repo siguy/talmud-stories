@@ -75,7 +75,7 @@ corpus needs a server at all. It doesn't. See *The actual ceiling* below.
 | piece | choice | why |
 |---|---|---|
 | Embeddings | **`gemini-embedding-001`**, called through the `google-genai` SDK already in `requirements.txt`, with the existing `GOOGLE_API_KEY` | Same client the detector already uses. **No new GCP project, no Vertex AI SDK, no service account.** This is the only "Google Cloud" piece left, and it's a one-time offline batch job, not a running service. |
-| Storage + serving | **One static file** (embeddings + metadata + tokenized Hebrew/English text), committed to the repo, served by **GitHub Pages** — the exact mechanism `index.html` already uses (`docs/capabilities/6_publication.md`: "Embedded-JSON HTML at the repo root so GitHub Pages can serve it with no build step") | At a few MB total, the whole index can just be downloaded by the visitor's browser. |
+| Storage + serving | **One static file** (embeddings + metadata + tokenized Hebrew/English text), committed to the repo, served by **Vercel** | At a few MB total, the whole index can just be downloaded by the visitor's browser. Simon's call over GitHub Pages (2026-09-09) — Vercel adds preview deployments per branch/PR and, if the editable-database path below ever ships, a serverless function is a one-file addition rather than a second service. Free (Hobby) tier: 100GB/month bandwidth, absurdly more than this traffic needs. **One term to know**: Hobby is non-commercial personal use only — fine for a no-revenue academic project, but the line is Vercel's to draw, not this doc's, if that ever changes. The existing public site stays on GitHub Pages (`docs/capabilities/6_publication.md`) — two static hosts until/unless someone consolidates them, not a blocker either way. |
 | Query execution | **Client-side JavaScript** — cosine similarity over the embeddings + a keyword score over the tokenized text, fused by reciprocal rank fusion, filtered by tractate/tier/mishnah-flag | Brute-force cosine over a few hundred to a few thousand vectors is sub-100ms *in JS*. No ANN index (HNSW/IVFFlat) is needed at this size — that machinery exists to avoid brute force at millions of vectors, which this corpus will never reach (below). |
 | **Not** Cloud SQL / Cloud Run | — | A running database costs $10-90/month forever to hold data that fits in single-digit megabytes and changes maybe once a review round. Paying monthly, indefinitely, for a fixed problem is the mismatch — parking a 5-page PDF on a rented server rack because "a server can serve files." Recorded here so a later session doesn't re-propose it without seeing why it was dropped (same reason `docs/capabilities/` exists for the detection side). |
 | **Not** Vertex AI Vector Search | — | Built for 10M+ vectors; its always-on index endpoint runs ~$300-700/mo to hold what fits in 5 MB here. |
@@ -139,7 +139,7 @@ without noticing.
 7. **Testing gate** — below. Nothing ships past this point without it. Storage-agnostic:
    the qrels harness scores whatever the query layer returns, whether it's a SQL query or
    a JS function.
-8. **Publish** — to GitHub Pages, same as the existing site.
+8. **Publish** — to Vercel.
 
 ## Testing — built in, not bolted on at the end
 
@@ -180,9 +180,10 @@ scored by a harness nobody hand-tunes against.
 ## Cost
 
 - Embeddings: **under $1**, one-time, cents to re-embed after a corpus change.
-- Hosting: **$0/month, indefinitely** — GitHub Pages, same as the existing site. Nothing
-  runs, nothing to renew, nothing that goes down because a bill lapsed after the grant
-  that's funding this ends.
+- Hosting: **$0/month** on Vercel's Hobby tier (100GB/month bandwidth free) — fine
+  indefinitely as long as this stays a no-revenue personal/academic project, which is
+  what it is. Nothing to renew, nothing that goes down because a bill lapsed after the
+  grant that's funding this ends.
 - Jeff's time: **1-2 sessions** to write and judge queries.
 
 **Rejected alternative, for the record:** Cloud SQL + Cloud Run, ~$10-90/month depending
