@@ -4,16 +4,16 @@ capability: [detection]
 tractate: [ketubot]
 blocked_by: []
 awaiting: []
-writes: [results/v11/ketubot/, results/recall/ketubot_jeff2005_matches_twinall.json, docs/findings/2026-09-15-ketubot-twin-pass.md]
-finding:
+writes: [results/v11/ketubot/, results/recall/ketubot_jeff2005_matches_v11control.json, results/recall/ketubot_jeff2005_matches_v11twinall.json, docs/findings/2026-09-15-ketubot-twin-pass.md]
+finding: docs/findings/2026-09-15-ketubot-twin-pass.md
 superseded_by:
 ---
 
 # Does the twin pass recover Ketubot's 7 adjacent misses?
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then
-[`twin-pass`](../docs/findings/2026-09-14-twin-pass.md) and
-[`miss-anatomy`](../docs/findings/2026-09-07-miss-anatomy.md).
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then
+[`twin-pass`](../../docs/findings/2026-09-14-twin-pass.md) and
+[`miss-anatomy`](../../docs/findings/2026-09-07-miss-anatomy.md).
 **Capability: 2 Detection.** **Depends on Jeff: no.**
 
 ## The claim to test
@@ -30,7 +30,7 @@ adjacent-class misses by name (the 7th is a Mishnah-scope case). **Ketubot holds
 **Two arms, both on v11 with Kiddushin few-shots.** The control is not optional and the
 shipped v10 artifact cannot serve as one: v10 ran on **Ketubot** few-shots, so comparing
 twin-on against it would confound the pass with the few-shot change
-([`ketubot-v11-runner`](done/2026-09-15-ketubot-v11-runner.md)).
+([`ketubot-v11-runner`](2026-09-15-ketubot-v11-runner.md)).
 
 1. Control — `TWIN_PASS` unset -> `results/v11/ketubot/ketubot_v11.json`
 2. Twin — `TWIN_PASS=1 TWIN_TRIGGER=all` -> `results/v11/ketubot/ketubot_v11_twinall.json`
@@ -67,3 +67,40 @@ Stage 1 is fully cached: 97 examined / 125 skipped, no triage spend.
 
 Finding to `docs/findings/2026-09-15-ketubot-twin-pass.md`, `## Outcome` here, then
 `python3 scripts/board.py finish 2026-09-15-ketubot-twin-measure`.
+
+## Outcome
+
+**Done, 2026-09-15. The mechanism reproduces; the price does not.**
+
+**6 of Ketubot's 7 adjacent cases recovered by name** — 53a seg 11, 61a segs 13 and 14,
+67b segs 2 and 16, 112a seg 10. The one that stays missed is **111a seg 12**
+(`ההוא דנפק מפומבדיתא לבי כובי`), which survives triage and sits one segment from a
+proposal in both arms — unexplained.
+
+| arm | end-to-end | given examined | proposals |
+|---|---|---|---|
+| control (twin off) | 132/149 = 88.6% | 132/146 = 90.4% | 178 |
+| twin, `all` | 139/149 = **93.3%** | 139/146 = **95.2%** | 201 |
+
+**The control did its job:** it scores level with the shipped v10 artifact (87.2% / 90.3%),
+so moving Ketubot onto Kiddushin few-shots costs nothing and the gain belongs to the pass.
+
+**The cost misses the bar.** The pass added 23 proposals, **7 on Jeff's list and 16 not** —
+Yevamot added 12 with 9 not on his list, and single digits was the bar. The price varies by
+tractate, and one tractate had not priced it.
+
+**Boundaries held**: 294 blind 2005 targets, MISS **identical at 39** in both arms, 16 more
+targets scored, starts unchanged, ends 73% -> 75%.
+
+**Correction carried to the finding:** `twin-pass` justified one run per arm on a spread of
+0.0 from a 20-page Yevamot slice. **Ketubot is not deterministic** — the arms' *base*
+detection differs by 5 spans one way and 4 the other, which the pass cannot cause
+(`test_twin_pass.py` pins the prompt byte-identical either way). It cost one expert story,
+103b, found in the control and never proposed in the twin arm. 7 of the 8 gains are
+`twin_pass` proposals and base churn nets +1/-1, so the result stands — but the headline
+carries an unmeasured noise term and a same-code repeat is owed (Lesson 22).
+
+Both flags **stay default off**: one run per arm, and 16 unjudged additions that want a
+review page before this becomes the default.
+
+→ [`ketubot-twin-pass`](../../docs/findings/2026-09-15-ketubot-twin-pass.md)
