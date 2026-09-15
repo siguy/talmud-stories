@@ -1,6 +1,6 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-09-03** (integration of `feat/exact-anchor-matcher`). Rewritten every session, never appended.
+**Last rewritten: 2026-09-15** (integration of #47, #48, #49). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
@@ -8,122 +8,61 @@ counts as good enough. Language and capability names come from there.
 
 ## The headline
 
-**Every recall figure this project has published was measured through a search window that
-could not tell a story from its neighbour. It has been replaced, all four tractates
-re-measured, and the honest numbers are lower.** Ketubot detection 96.0% → **87.2%**,
-Kiddushin 93.3% → **84.4%**, Gittin 100% → **97.3%**, Yevamot 94.1% → **89.2%**. No
-detector changed and nothing was re-run: these are what the same runs were always worth.
+**The largest class of Detection miss is named, measured, and recovered — on one
+tractate.** 18 of the 38 stories we miss across four blind lists sit **one segment from
+something we proposed, and in 18 of 18 that proposal is a different story**: the missed
+one's formulaic twin. The Talmud tells the same shape of anecdote two or three times in a
+row with different actors — R. Zadok and the noblewoman, then Rav Kahana and the
+noblewoman — and the detector returns one and stops. A targeted pass that shows the model
+the story it found *and* the segment beside it, and asks one narrow question, recovers
+them: **Yevamot 89.2% → 94.1%**, all six of that tractate's twin misses by name, nothing
+lost, 0 span repairs, **9 extra proposals** for Jeff per tractate. Merged, **default off**
+until he has seen those nine.
+→ [`miss-anatomy`](docs/findings/2026-09-07-miss-anatomy.md) ·
+[`twin-pass`](docs/findings/2026-09-14-twin-pass.md)
 
-**The loose/strict double-quote is retired.** Those were two answers to one question,
-separated by the window — they now coincide on three tractates and differ by one story on
-Kiddushin. Three of the four **strict** figures are unchanged *to the story*, which is the
-evidence that strict was right all along and loose was the artifact.
+**The density finding is corrected.** "Detection is worst where a story stands alone" was
+Triage's losses charged to Detection: **all nine Triage misses on the board sit in one
+cell** — a story alone on a daf whose other segments carry no narrative label — and
+conditioned on the page being examined, the profile reverses (93.8% alone, 85.4% at 5+).
+Salience was the right idea aimed one stage too late.
 
-**Yevamot is detected and measured for the first time** — 89.2%, and Triage lost nothing
-of his 102 stories.
+**Triage is re-measured under the live rule and the current matcher, both causes named:**
+Ketubot **98.0%** (rule +1.4, matcher −0.7), Kiddushin **97.8%** (rule +2.2, matcher 0).
+The board still prints the *artifacts* (96.6 / 95.6); which it should print is now an
+item, not a silent choice. → [`triage-remeasured`](docs/findings/2026-09-07-triage-live-rule-remeasured.md)
 
-→ [`matcher`](docs/findings/2026-09-03-exact-anchor-matcher.md) ·
-[`cutover`](docs/findings/2026-09-03-exact-matcher-cutover.md) ·
-[`Lesson 41`](lessons/L-041-a-score-that-can-only-grow-cannot-reject.md) ·
-[`yevamot`](docs/findings/2026-09-03-yevamot-first-run.md)
+**The default model was measured and reverted.** #42 had set `gemini-3.8-flash` at
+`thinking=high`; on an intact prompt that scores **27.8%** with 9 of 20 pages returning
+nothing — the JSON is cut off mid-object and the run reports success. Preview with
+thinking off, the config every shipped number came from, scores 83.3% on the same pages.
+It is the default again, pinned by tests. → [`default-model`](docs/findings/2026-09-14-default-model-measured.md)
 
-**What the old matcher did:** it compared *sets* of Hebrew 4-grams per segment and grew a
-window while coverage improved. A union of sets can only grow, so a neighbouring passage
-sharing `אמר ליה` **improved** the match — nothing could ever make the score fall. It
-failed in the direction of generosity, which is why no number it touched ever looked wrong.
+**And a two-night detour that produced only false findings, kept as the record.** A first
+attempt at the twin problem spliced an instruction into the detection prompt and ended
+its f-string early: `{few_shot_section}` went to the model as literal text, every call
+lost its examples, recall fell 83.3% → 50.7%, and nothing raised. It was blamed on model
+drift, on thinking levels, on run-to-run variance, before the prompt was diffed. The
+detector is in fact **deterministic** — three repeats, identical story sets, spread 0.0 —
+so single runs are comparable and every "noise floor" claim from those nights is void.
+The check that ends it is one command: **diff the rendered prompt against the last
+known-good.** A test now fails if any placeholder survives into a built prompt.
+→ [`broken-prompt`](docs/findings/2026-09-09-broken-prompt-explains-everything.md)
 
-**What replaced it:** every one of the 452 stories across the four blind lists contains an
-exact 6-word phrase **unique in its own tractate**. Anchor there, extend only over phrases
-sitting where the story says they should. Independent check the matcher never reads —
-agreement with Jeff's own daf labels: Kiddushin 51→85, Gittin 90→104, Yevamot 72→97.
-
-**Three things it took down with it, each of which had looked like real work:**
-
-| what it looked like | what it was |
-|---|---|
-| 35 proposals wrongly read as "on his list", 11 top-confidence — an open review item | **1**, Kiddushin 39b |
-| a Gittin golden entry labelled `YES` from his blind list | a window covering *two* formulaic near-twins one segment apart; nobody had labelled it |
-| 2 Ketubot **Detection** misses | 2 **Triage** misses — their own daf was never examined |
-
-**Gittin remains measured end to end, and three hypotheses about what to fix next were
-screened and refuted** before spending a tractate run.
-
-**1. Jeff answered everything, in two messages, and reversed himself three times on
-seeing the text.** Questions 1-4 came back in prose on 2026-09-01; all 25 verdicts on the
-review page arrived 2026-09-02. Of the five passages both messages cover, **three disagree,
-always toward the stricter reading** — 25a *"high confidence"* became *"borderline, not
-high confidence"*; 46a and 74b *"can be included"* became **no**. The rule that follows:
-**a prose answer sets policy; only a verdict on the passage settles the passage.**
-→ [`gittin_verdicts`](docs/findings/2026-09-02-gittin-25-verdicts.md),
-[`lesson`](lessons/_a-policy-answer-does-not-certify-a-case.md)
-
-**Three stories we found that his list does not have** — Gittin 19a:16, 43b:4, 70a:22 —
-plus 4 borderline and **18 explicit negatives**, the first negative-label set this project
-holds on a tractate that was never in a prompt.
-
-**2. The Gittin golden exists, and it is the first that is BLIND end to end.** 135 entries:
-25 he judged as spans, 110 corroborated by his 2005 list, and the two kinds of evidence
-are **never merged** — a verdict judges the passage *and the extent*; a list entry says
-only that a story is there. 23 proposals with no expert label are named in
-`unlabelled_proposals` rather than written in with a null classification.
-→ [`gittin_golden`](docs/findings/2026-09-02-gittin-golden.md)
-
-**That design decision is what kept the session's biggest defect out of the golden**, and
-it was not extra checking — it was refusing to write down a label nobody had given us.
-
-**3. Classification is a point estimate at last — and the number the ruler prints is not
-it.** Phase C's acceptance test passed: `unclassified_notes` is 0 and the range collapsed
-to `0.143..0.143`. But **14.3% is precision on the residue** — the round covered only the
-proposals his list does not name. The tractate figure is **83.7-86.7%** over the 135
-labelled spans. The round changed shape and the metric quietly changed meaning.
-→ [`point_estimate`](docs/findings/2026-09-02-classification-point-estimate.md)
-
-**4. Three "what to fix next" hypotheses, screened cheaply, all refuted.**
-
-| hypothesis | screen | result |
-|---|---|---|
-| the criteria wording is wrong | R-C3/R-C4 shipped and scored | **no effect** |
-| we read more translation than source | expansion audit, no API calls | **null** — his two cases sit at 4.5x and 5.9x against a corpus median of 2.05, so he read them right, but the passages he *rejects* sit **lower** on expansion than the ones he accepts |
-| Stage 2 runs out of attention on dense dapim | recall by story density | **refuted, backwards** — 83.3% where a story is **alone** on its daf, 90.7% on dapim with 4+ |
-
-The third is the useful one. **The constraint is salience, not budget:** we find a story
-among its own kind and miss it embedded in legal give-and-take. That also explains why
-rewriting the criteria changed nothing — it changes how a candidate is *described*, and the
-failure happens before there is a candidate.
-→ [`density`](docs/findings/2026-09-03-detection-density.md)
-
-**5. A supposed crisis measured down from 110 to 6.** `story-criteria` was ranked the
-project's largest open item on the claim that Jeff's July rule *"would redefine 44% of the
-golden"*. Phase 6a — described as *"~$0.10, needs nobody, changes nothing"* and **never run
-for five weeks** — says the affected set is **6 entries, 2.4% of the accepted golden**. 110
-was the bucket we had to *search*. And reading the 6: **three are spans that stop before
-the action**, a Boundaries defect wearing a criteria costume. The criteria question is about
-**three entries**. → [`blast_radius`](docs/findings/2026-09-03-speech-act-blast-radius.md)
-
-**6. One real defect, corpus-wide — and it turned out to be the instrument.** 35 proposals
-read as "on his list" and were not: Ketubot 19, Kiddushin 9, Gittin 7, **11 of them
-top-confidence**. Diagnosed as an error only where the association is read *backwards*.
-**That diagnosis was too kind.** The window was wrong in both directions; replacing it took
-the population to **1** and moved every recall figure on the board.
-→ [`proposal_credit`](docs/findings/2026-09-03-loose-window-proposal-credit.md) ·
-[`cutover`](docs/findings/2026-09-03-exact-matcher-cutover.md)
-
-**The pattern across 3, 5 and 6 is the session's real finding.** In each case a number was
-correct for the question it was built to answer, got quoted against a different one, and
-nothing errored — the ruler's 14.3%, `story-criteria`'s 110, the loose window's credit.
-→ [`lesson`](lessons/_a-number-is-an-answer-to-the-question-it-was-built-for.md)
-
-**What is shipped and measured since Gittin ran:** **R-B1**, the opening formula — from one
-sentence of Jeff's — worth **Gittin 82→86%, Kiddushin 84→88%, Ketubot 61-112 77→82%** on
-boundaries. It is the only change with a measured effect. The parallel-practice rule shipped
-unmeasured on 2026-09-01 and is now measured: **no effect on any ruler, all five case checks
-pass** → [`parallel_measured`](docs/findings/2026-09-03-parallel-rule-measured.md)
+**What the previous rewrite said, still true:** every recall figure is measured under
+exact-phrase anchoring; loose/strict is retired; Yevamot is detected and measured; three
+"what to fix next" hypotheses were screened and refuted — the criteria wording, the
+translator, and attention-per-page. The fourth, the one that survived screening, is the
+twin pass above.
 
 ## Scoreboard — capabilities per [`FRAMEWORK.md`](FRAMEWORK.md) §1
 
-*Every recall cell below was re-measured on 2026-09-03 under exact-phrase anchoring.
-The four rows compose again — `triage × detection = end-to-end` holds on all four
-tractates — because they are now the **same** four artifacts read the **same** way.*
+*Every recall cell below is measured under exact-phrase anchoring on the **shipped
+artifacts**. Two measured improvements are NOT in the cells because neither is the
+shipped default: the live Triage rule (Ketubot 98.0 / Kiddushin 97.8, see
+[`promote-liverule-denominator`](work/2026-09-07-promote-liverule-denominator.md)) and
+the twin pass (Yevamot Detection **94.1%**, `TWIN_PASS=1 TWIN_TRIGGER=all`, off by
+default). Read a cell as "what the artifact on disk holds", never as the ceiling.*
 
 | capability | metric | Ketubot | Kiddushin | Gittin | **Yevamot** | gate |
 |---|---|---|---|---|---|---|
@@ -235,6 +174,35 @@ the right one, and it is now the only one. The suspicion recorded here — *trea
 column as an upper bound and verify by name* — was correct, and checking it by name on
 6 Kiddushin passages (2 of which the window credited to a different passage on the same
 daf) is what eventually paid for the fix. Kept as the record of how it was found.
+
+## What changed 2026-09-07 → 09-15 — three PRs
+
+**#47 measurement.** `scripts/audit_miss_anatomy.py` classifies every expert-list miss by
+cause and by distance from the nearest proposal, no API calls. Triage / Mishnah-withheld /
+adjacent / near / far / blank = 9 / 2 / **18** / 11 / 3 / 4 of 47. `merge_triage_recall_run.py
+--live-rule` fixed: it left `skipped_by_triage: True` on rescued pages, so a story read as
+triage-lost and detector-found at once and the Triage cell could not move. Two decisions
+handed on as items: what the board's cells describe, and whether `HABITUAL` keeps a page
+(Ketubot 82b: 4 HABITUAL, 0 NARRATIVE_EVENT, discarded).
+
+**#48 the twin pass.** `_find_adjacent_twins` in `story_detector_v11.py`. Its own prompt;
+the page-level prompt is byte-identical on or off, pinned by `tests/test_twin_pass.py`.
+Two triggers: `labelled` asks only where Stage 1 marked the neighbour narrative (+2 on
+the slice, 2 calls); `all` asks about every free neighbour (+4, ~30 calls per 20 pages,
+recovers the 121b criers that sit inside a segment Stage 1 called DELIBERATION). Full
+Yevamot under `all`: 91 → 96 of 102, 12 proposals added, 9 not on his list. A truncated
+model response (`MAX_TOKENS` with partial text) is now reported and counted instead of
+becoming "no stories". Also carries the series-clause detour: `SERIES_RULE`, measured
++1 unrelated story and no twin, off.
+
+**#49 the default.** `gemini-3-flash-preview`, thinking off. A set-but-empty
+`GEMINI_THINKING_LEVEL` is off, not "use the default". Closes
+`thinking-level-experiment`: high starves the output of tokens, 27.8%.
+
+**Instruments that earned their place this fortnight:** `span_repairs` — 0 / 90 / 237
+separated three conditions recall alone read as noise; `scripts/score_noise_floor_slice.py`
+— repeats on a fixed 20-page slice, ~4 min a run, deterministic, so a one-run comparison
+is a measurement.
 
 ## What changed 2026-09-03 — the matcher
 
@@ -573,8 +541,10 @@ asks:
   (68a:7-12) (`work/2026-09-02-gittin-two-unjudged-yes.md`)
 - the **3 genuinely speech-only entries** from 6a — 7a:1, 15a:0, 112a:11 — as a
   `borderline` question (`work/2026-08-30-story-criteria.md`)
+- **the 9 Yevamot proposals the twin pass added that his list does not carry**
+  (2026-09-14) — his verdicts on these are what turns the pass on by default
 
-**One page, not three.** Review throughput is the bottleneck (his last two full rounds
+**One page, not four.** Review throughput is the bottleneck (his last two full rounds
 returned 1 verdict, then 15), so bundling is not a nicety — it is the difference between
 one ask landing and three asks starving each other. The other three 6a entries (17a:10,
 54a:22, 85a:13-14) are boundary bugs, not criteria questions, and do **not** go on the
@@ -594,94 +564,36 @@ so the regenerated page stayed comparable to what Jeff actually saw. Point it at
 
 ## Next — items in [`work/`](work/), each self-contained
 
-**Two things, and only two, actually move the project right now.**
+**1. Send the review page to Jeff — now with the twin pass's nine extras on it.** This was
+the top item before the fortnight and it still is; it just grew. The 1 window-credited
+proposal, the 2 Gittin extras, the 3 speech-act entries, **plus the 9 Yevamot proposals
+the twin pass added that his 2005 list does not carry** (`results/v11/twin_pass/yevamot_full_twinall.json`,
+`source: twin_pass`). His verdicts on those nine are what turns `TWIN_PASS` on by default.
+One page, not four asks. No code.
 
-**1. Send the bundled review page.** Everything is ready: the 1 remaining window-credited
-proposal, the 2 Gittin extras, the 3 speech-act entries. No code needed — see
-[`loose-credited-proposals`](work/2026-09-03-loose-credited-proposals.md), which names
-all three sources and why they're one ask, not three. It got **smaller** on 2026-09-03,
-which is the good kind of change: ten of the eleven turned out to be our instrument, and
-his attention is the scarcest thing here.
+**2. Run the twin pass on Ketubot.** 7 of the 18 corpus twin misses are there and it is
+the one tractate the pass has not touched. Needs `run_new_tractate.py` — or a sibling —
+taught to read `results/v7/ketubot_pages_*.json` rather than `results/sefaria/`; ~1 hour
+of plumbing, then ~30 min of run. Kiddushin (3) and Gittin (1) after.
 
-**2. ~~Run Yevamot~~ — done 2026-09-03. Run Eruvin.** Yevamot came back at **89.2%** with
-Triage losing none of his 102 stories, and its misses are the *speech-act* class again —
-the same open question, not a new defect
-([`yevamot`](docs/findings/2026-09-03-yevamot-first-run.md)). Eruvin still has a pristine
-blind list (74 stories, never in a prompt). **But hold it until the review round returns:**
-running a second unlabelled tractate before the first round comes back produces two
-tractates' worth of unjudged proposals with no golden-building lesson applied to either —
-which is now exactly the position Yevamot is in.
+**3. Decide what the board's cells describe** —
+[`promote-liverule-denominator`](work/2026-09-07-promote-liverule-denominator.md). Simon's
+call. Recommended: print both per row.
 
-**3. Re-measure Triage under the live rule *and* the current matcher.** The board's Triage
-cells are the only ones left mixing two changes ([`board-reads-stale-triage`](work/done/2026-09-01-board-reads-stale-triage.md)).
-No API calls — the labels are cached. Until it is done, Ketubot Triage has no honest number.
+**4. `HABITUAL` as narrative evidence** —
+[`habitual-is-narrative-evidence`](work/2026-09-07-habitual-is-narrative-evidence.md).
+No API calls to screen. Definitional, not a threshold; worth one story in the measured
+corpus, so argue it from the principle or not at all.
 
-**A correction to this file's own record, found 2026-09-03.** Four Gittin placeholder
-items from the original per-tractate workflow —
-[`gittin-triage`](work/2026-08-30-gittin-triage.md),
-[`gittin-detection`](work/2026-08-30-gittin-detection.md),
-[`gittin-classification`](work/2026-08-30-gittin-classification.md),
-[`gittin-review-ui`](work/2026-08-30-gittin-review-ui.md) — were never closed even
-though the work they describe was done, under different item names, via the ad-hoc
-first-blind-run path (`gittin-detection-run`, `gittin-expert-round`, `gittin-golden`).
-Their declared write paths (`results/detection/gittin.json`,
-`results/classification/gittin.json`, `validation/ui/gittin_review.html`) never
-materialized; the real outputs live at `results/v11/gittin/`,
-`results/canonical/gittin_canonical.json`, and
-`validation/ui/axis_gittin_unlisted.html`. Now marked `superseded_by:` in each file's
-frontmatter, left open rather than deleted per CLAUDE.md. **Not audited: whether the
-Yevamot and Eruvin placeholder items (10 more, same template) are heading for the same
-drift once those tractates run.** Worth checking before, not after.
+**5. Reach 2.** Eleven misses sit 2–6 segments from a proposal. One flag on the twin
+pass; untried. The cost is calls, and it is measurable on the slice in 4 minutes.
 
-```
-kiddushin-list-parse DONE ─┬─ kiddushin-recall           DONE  (triage + detection)
-                           ├─ kiddushin-boundary-set     DONE  (176 blind targets)
-                           └─ kiddushin-comments-harvest DONE  (11 remarks sorted)
+**Hold, unchanged:** Eruvin until a review round returns; the speech-act policy is Jeff's
+(`jeff:speech-act-policy`, the two Yevamot misses the twin pass could not reach are it).
 
-triage-recall-price          DONE  (the trade is priced on both tractates)
-review-verdict-axes          DONE (A, B, C) — Phase C ran 2026-09-02, on Gittin
-gittin-expert-round          DONE — gittin-golden DONE — gittin-recall-denominator DONE
-story-criteria 6a            DONE — 6b bundled into the review page above
-parallel-story-rule          DONE (measured, no effect, kept)
-detection-density            DONE (attention-per-page hypothesis, refuted)
-loose-window-proposal-credit DONE (the measurement) — the round is what's left
-start any time:   kiddushin-12a-dedup · opener-lexicon
-open calls:       kiddushin-parse-open-calls   (denominator 90; item 1b withdrawn)
-incomplete:       golden-completeness
-```
-
-All items are `work/<date>-<slug>.md`. Finished ones are in [`work/done/`](work/done/)
-with an `## Outcome` — **never deleted**, which is how "what has already been done"
-stays answerable.
-
-| item | capability | needs | Jeff? |
-|---|---|---|---|
-| **[loose-credited-proposals](work/2026-09-03-loose-credited-proposals.md)** — the bundled review page. **The single highest-leverage next action.** | 3, 5 | a round | **yes — page not yet sent** |
-| **[gittin-two-unjudged-yes](work/2026-09-02-gittin-two-unjudged-yes.md)** — folded into the page above | 2, 3 | — | via the page |
-| **[story-criteria](work/2026-08-30-story-criteria.md)** — 6a done (6, not 110); 6b folded into the page above; 6c blocked on 6b by design | 3 | — | via the page |
-| **[golden-completeness](work/2026-08-30-golden-completeness.md)** — fold in every verdict; the 16 unincorporated Kiddushin verdicts are confirmed and still unfolded | 3, ground truth | — | no |
-| **price the review cost of a delta-only round** — show him only what changed. No brief yet, and the only lead this project has on throughput | 5 | — | no |
-| **price the review cost of loosening triage** — the missing half of the trade; no brief yet | 1, 5 | — | no |
-| **fold the 2 harvested boundary targets** into `expert_boundary_targets_v2.json`, with polarity; needs a same-code repeat (Lesson 22) | 4 | — | no |
-| [second-story-guard](work/2026-08-30-second-story-guard.md) — stop discarding a second story sharing a segment | 4 | — | *awaiting* `jeff:boundary-end-rule` |
-| [kiddushin-parse-open-calls](work/2026-08-30-kiddushin-parse-open-calls.md) | ground truth | — | no — item 1b withdrawn 2026-09-03 |
-| [kiddushin-12a-dedup](work/2026-08-30-kiddushin-12a-dedup.md) — one detection covering two stories | 2 | — | no |
-| [opener-lexicon](work/2026-08-30-opener-lexicon.md) — was Wave 7; mine openers, never invent them | 1, 2 | — | no |
-| Yevamot / Eruvin — triage, detection, classification, review-ui, expert-round, golden (10 items, unstarted) | all | text on disk, nothing else | not yet — after the first round |
-
-**Done since the last full rewrite** — Jeff's 25 Gittin verdicts, the Gittin golden, the
-Classification point estimate, the recall-denominator correction, the loose-window
-audit (measurement), the detection-density screen, the parallel-rule measurement,
-Phase 6a, the appendix-ask withdrawal, two `board.py` instrument fixes. Findings are
-listed in the headline above; this line exists so the list of *slugs* is in one place
-too: `gittin-25-verdicts` · `gittin-golden` · `classification-point-estimate` ·
-`gittin-recall-denominator` · `loose-window-proposal-credit` · `detection-density` ·
-`parallel-rule-measured` · `speech-act-blast-radius` · `remove-appendix-ask` ·
-`board-stale-awaiting` · `board-sees-every-golden`.
-
-\* `second-story-guard` is **not blocked**: deleting a whole second story is wrong
-whatever Jeff answers about where an entry ends. Its *value* depends on his answer; the
-work does not. That is `awaiting`, not `blocked_by`.
+**Done since the last rewrite:** `board-reads-stale-triage` · `formulaic-cluster-splitting`
+(reopened, then measured: the series clause is +1, no twin) · `adjacent-twin-check` ·
+`bench-is-not-reproducible` (premise refuted) · `thinking-level-experiment`.
 
 
 ## Where things live — one job each
