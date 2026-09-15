@@ -54,16 +54,10 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `span-truncation-rate` | `talmud-stories` | clean |
-| `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `miss-anatomy-triage-remeasure` | `pr1-measurement` | clean |
-| `twin-pass` | `pr2-twin-pass` | clean |
-| `main` | `pr3-default` | clean |
-| `recent-work-plans-d0818b` | `recent-work-plans-d0818b` | clean |
-| `(detached)` | `state-work-review-40b153` | clean |
+| `story-definition-jeff-0bjp9p` | `talmud-stories` | **5 FILES** |
 <!-- board-live:end -->
 
-## Done — 37 items, never deleted
+## Done — 39 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -104,4 +98,6 @@ staleness check: it changes whenever anyone edits anything.*
 | [Yevamot — the full detection run, measured against the blind list the day it runs](work/done/2026-09-03-yevamot-detection-run.md) | triage, detection | [2026-09-03-yevamot-first-run.md](docs/findings/2026-09-03-yevamot-first-run.md) |
 | [Two identical runs differ by 12.8 points — pin a model and measure the noise floor](work/done/2026-09-08-bench-is-not-reproducible.md) | detection, triage, boundaries, classification | [2026-09-09-broken-prompt-explains-everything.md](docs/findings/2026-09-09-broken-prompt-explains-everything.md) |
 | [Ask about the segment next door — a targeted twin check after detection](work/done/2026-09-14-adjacent-twin-check.md) | detection | [2026-09-14-twin-pass.md](docs/findings/2026-09-14-twin-pass.md) |
-<!-- board-checksum: f079a2ef267d4862 -->
+| [Does the twin pass recover Ketubot's 7 adjacent misses?](work/done/2026-09-15-ketubot-twin-measure.md) | detection | [2026-09-15-ketubot-twin-pass.md](docs/findings/2026-09-15-ketubot-twin-pass.md) |
+| [Wire Ketubot to the v11 runner — cross-tractate few-shots, consolidated inputs](work/done/2026-09-15-ketubot-v11-runner.md) | detection | [2026-09-15-ketubot-v11-runner.md](docs/findings/2026-09-15-ketubot-v11-runner.md) |
+<!-- board-checksum: bb7a3183c1d71ce5 -->

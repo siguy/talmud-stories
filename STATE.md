@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     20 item(s) in work/done/
+closed     22 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -127,6 +127,7 @@ closed     1 item(s) in work/done/
 |---|---|---|
 | `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
 | `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
+| `results/expert_lists/ketubot_2005.json` | **BLIND** | 149 parsed · 149 blind · 149 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
@@ -165,4 +166,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: c39967cdfb36c3e2 -->
+<!-- board-checksum: 90a893d447e87b6d -->

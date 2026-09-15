@@ -47,7 +47,18 @@ log = logging.getLogger(__name__)
 MODEL = 'gemini-3-flash-preview'
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
-KNOWN = ('gittin', 'yevamot', 'eruvin')
+KNOWN = ('gittin', 'yevamot', 'eruvin', 'ketubot')
+
+# Which tractate's expert labels become the few-shot examples for each run.
+# **Never a tractate's own labels** — Critical Rule #2 and Lesson 2: an example drawn
+# from a page being scored teaches the model that page's answer. Ketubot cannot use
+# the Ketubot feedback set the other three use, so it reads the Kiddushin golden.
+FEW_SHOT_SOURCE = {
+    'gittin': 'ketubot',
+    'yevamot': 'ketubot',
+    'eruvin': 'ketubot',
+    'ketubot': 'kiddushin',
+}
 
 
 def load_env():
@@ -63,19 +74,62 @@ def load_env():
     return None
 
 
-def load_ground_truth(GroundTruthDB):
-    """Ketubot labels only. Running on Gittin/Yevamot/Eruvin, every example is
-    cross-tractate, so no page being scored can appear in its own prompt."""
-    db = GroundTruthDB()
+def _load_ketubot_labels(db):
+    """Jeff's 128 v5.1 verdicts. The few-shot source for every tractate but Ketubot."""
     feedback = (PROJECT_ROOT / 'validation' / 'feedback' /
                 'v5_1_feedback_anonymous_2026-02-05 (1).json')
     v5 = [str(PROJECT_ROOT / 'results' / 'v5' / n)
           for n in ('pages_2-39.json', 'pages_40-60.json')]
-    if feedback.exists():
-        db.load_from_feedback(str(feedback), v5)
-        log.info('ground truth: %d entries (Ketubot, cross-tractate)', len(db.entries))
-    else:
-        log.warning('NO ground truth found — running without few-shot examples')
+    if not feedback.exists():
+        return None
+    db.load_from_feedback(str(feedback), v5)
+    return feedback
+
+
+def _load_kiddushin_labels(db):
+    """The Kiddushin golden. The few-shot source for Ketubot runs."""
+    canonical = PROJECT_ROOT / 'results' / 'canonical' / 'kiddushin_canonical.json'
+    if not canonical.exists():
+        return None
+    skipped = db.load_from_canonical(str(canonical))
+    if skipped:
+        log.info('ground truth: %d canonical stories carried no review_key and were '
+                 'not used as examples', skipped)
+    return canonical
+
+
+_LABEL_LOADERS = {'ketubot': _load_ketubot_labels, 'kiddushin': _load_kiddushin_labels}
+
+
+def load_ground_truth(GroundTruthDB, tractate):
+    """Few-shot labels for `tractate`, from a DIFFERENT tractate.
+
+    **Raises** if the labels turn out to come from the tractate being run. It does not
+    warn and fall back: a quiet fallback produces a plausible, wrong, CIRCULAR number
+    that nothing downstream would flag, which is the shape of defect Lesson 38 describes.
+    """
+    source = FEW_SHOT_SOURCE.get(tractate)
+    if source is None:
+        raise SystemExit(f'no few-shot source declared for {tractate!r} — add one to '
+                         f'FEW_SHOT_SOURCE, and it must not be {tractate!r} itself')
+    if source == tractate:
+        raise SystemExit(f'FEW_SHOT_SOURCE[{tractate!r}] is {tractate!r}: a tractate '
+                         f'cannot be scored on its own labels (Critical Rule #2)')
+
+    db = GroundTruthDB()
+    loaded = _LABEL_LOADERS[source](db)
+    if loaded is None or not db.entries:
+        raise SystemExit(f'no {source} ground truth found — refusing to run without '
+                         f'few-shot examples rather than silently changing the prompt')
+
+    # Belt and braces: assert the property, do not trust the map. The entries say which
+    # tractate they are from; a filename does not (see the blind-vs-corrections rule).
+    if tractate in db.tractates:
+        raise SystemExit(f'{source} labels contain {tractate} entries '
+                         f'({sorted(db.tractates)}) — that is not cross-tractate')
+
+    log.info('ground truth: %d entries from %s (cross-tractate for %s)',
+             len(db.entries), source, tractate)
     return db
 
 
@@ -86,6 +140,9 @@ def main():
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
+    ap.add_argument('--dry-run', action='store_true',
+                    help='report the page partition and the few-shot source, then stop. '
+                         'Makes no API call and writes nothing.')
     ap.add_argument('--model', default=MODEL)
     ap.add_argument('--thinking', default=default_thinking_level(),
                     help='low|medium|high (Gemini 3.x)')
@@ -124,6 +181,23 @@ def main():
         log.info('triage cache: %d pages from %s', len(cached), cache.name)
 
     todo = [p for p in pages if p['ref'] not in cached]
+
+    if args.dry_run:
+        # Everything that can be checked without spending a call: the page partition,
+        # the triage coverage, and that the few-shot source is a different tractate.
+        have = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
+        skip = sum(1 for evs in have.values() if EventTriager.should_skip_page(evs))
+        log.info('DRY RUN — no API call, nothing written')
+        log.info('  pages:          %d (%d segments)', len(pages),
+                 sum(len(p['segments']) for p in pages))
+        log.info('  triage cached:  %d; would triage now: %d', len(have), len(todo))
+        log.info('  under the live rule: %d examined, %d skipped',
+                 len(have) - skip, skip)
+        load_ground_truth(GroundTruthDB, args.tractate)   # raises if not cross-tractate
+        log.info('  output would be: %s', args.output or
+                 f'results/v11/{args.tractate}/{args.tractate}_v11.json')
+        return 0
+
     if todo:
         triager = EventTriager(model_name=args.model)
         if not triager.client:
@@ -162,7 +236,8 @@ def main():
         return 0
 
     # ---- Stages 2 + 4 ---------------------------------------------------
-    detector = V7StoryDetector(ground_truth_db=load_ground_truth(GroundTruthDB),
+    detector = V7StoryDetector(
+        ground_truth_db=load_ground_truth(GroundTruthDB, args.tractate),
                                model_name=args.model, thinking_level=args.thinking)
     if not detector.client:
         log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
@@ -176,7 +251,7 @@ def main():
     results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
                            'elapsed_seconds': round(elapsed, 1),
                            'pages': len(pages), 'source': src.name,
-                           'ground_truth': 'ketubot-only (cross-tractate)'}
+                           'ground_truth': f'{FEW_SHOT_SOURCE[args.tractate]} (cross-tractate)'}
     out = Path(args.output) if args.output else (
         PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
     out.parent.mkdir(parents=True, exist_ok=True)
