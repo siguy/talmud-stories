@@ -60,14 +60,21 @@ class GroundTruthEntry:
         self.page_ref = None
         self.start_seg = None
         self.end_seg = None
+        self.tractate = None
         self._parse_key(key)
 
+    # Any tractate, not only Ketubot: a Ketubot-only pattern silently left
+    # page_ref None for every other tractate's entries, which reads downstream as
+    # "this entry has no text" rather than as a parse failure.
+    _KEY_RE = re.compile(r'([A-Z][A-Za-z]+) (\d+[ab])_(\d+)-(\d+)$')
+
     def _parse_key(self, key: str):
-        match = re.match(r'Ketubot (\d+[ab])_(\d+)-(\d+)', key)
+        match = self._KEY_RE.match(key)
         if match:
-            self.page_ref = f'Ketubot {match.group(1)}'
-            self.start_seg = int(match.group(2))
-            self.end_seg = int(match.group(3))
+            self.tractate = match.group(1)
+            self.page_ref = f'{match.group(1)} {match.group(2)}'
+            self.start_seg = int(match.group(3))
+            self.end_seg = int(match.group(4))
 
 
 def _is_story_positive(cls: str) -> bool:
@@ -217,6 +224,16 @@ class GroundTruthDB:
         self._v5_pages: List[Dict] = []
         self._segments_by_page: Dict[str, List[Dict]] = {}
 
+    @property
+    def tractates(self) -> set:
+        """Which tractates these labels come from, lowercased.
+
+        The caller needs this to prove a run is cross-tractate (Critical Rule #2,
+        Lesson 2). Read it from the entries rather than from a filename — a filename
+        comparison would have called the blind Kiddushin boundary set a corrections set.
+        """
+        return {e.tractate.lower() for e in self.entries.values() if e.tractate}
+
     def load_from_feedback(self, feedback_path: str,
                            v5_results_paths: Optional[List[str]] = None):
         """Load Jeff's feedback JSON and optionally v5.1 results."""
@@ -258,6 +275,47 @@ class GroundTruthDB:
                 passage_pattern=passage_pattern,
             )
             self.entries[key] = gt_entry
+
+    def load_from_canonical(self, canonical_path: str):
+        """Load a golden dataset (`results/canonical/<tractate>_canonical.json`) as
+        few-shot labels.
+
+        Exists so a tractate can be run on **another** tractate's labels. The canonical
+        files carry the same three things `load_from_feedback` needs — Jeff's verdict,
+        his note, and what the detector had classified the passage as — under different
+        key names, so every entry lands in the same shape and the taggers below are
+        reused unchanged.
+
+        A story with no `review_key` was never put to Jeff; it is **counted and
+        reported**, never silently skipped (Lesson 38).
+        """
+        data = json.loads(Path(canonical_path).read_text())
+        unreviewed = 0
+        for page in data.get('pages', []):
+            ref = page.get('ref', '')
+            self._segments_by_page[ref] = page.get('segments', [])
+            for story in page.get('stories', []):
+                key = story.get('review_key')
+                if not key:
+                    unreviewed += 1
+                    continue
+                verdict = story.get('review_verdict')
+                note = story.get('review_notes', '') or ''
+                # The canonical's `classification` is what the detector said, which is
+                # the role `v5_cls` plays for the feedback loader.
+                cls = story.get('classification', 'UNKNOWN')
+                self.entries[key] = GroundTruthEntry(
+                    key=key,
+                    verdict=verdict,
+                    note=note,
+                    v5_cls=cls,
+                    jeff_wants=_jeff_wanted(verdict, note, cls),
+                    error_type=tag_error_type(key, verdict, note, cls),
+                    passage_pattern=tag_passage_pattern(key, note, cls,
+                                                        _jeff_wanted(verdict, note, cls)),
+                )
+        self.unreviewed_skipped = unreviewed
+        return unreviewed
 
     def get_entries_by_error_type(self, error_type: ErrorType) -> List[GroundTruthEntry]:
         """Get all entries with a specific error type."""

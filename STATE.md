@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     20 item(s) in work/done/
+closed     21 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -165,4 +165,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: c39967cdfb36c3e2 -->
+<!-- board-checksum: 1ae36d6d4e930ebb -->
