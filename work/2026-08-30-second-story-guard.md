@@ -11,6 +11,14 @@ superseded_by:
 
 # Stop discarding a second story that shares a segment
 
+**Re-ranked 2026-09-07.** Same family as
+[`formulaic-cluster-splitting`](2026-09-07-formulaic-cluster-splitting.md), measured that
+day: this item is the *trim* half (a second story sharing one segment, cut away by Stage
+4), that one is the *proposal* half (a second story in an adjacent segment, never proposed
+— 18 of 38 Detection misses). Read
+[`miss-anatomy`](../docs/findings/2026-09-07-miss-anatomy.md) before either.
+**`awaiting: jeff:boundary-end-rule` still stands and still does not block the work.**
+
 **Self-contained.** Read `STATUS.md` and `FRAMEWORK.md` first.
 **Capability: 4 Boundaries.** **Depends on Jeff: no** — this is wrong
 under every definition of where a story ends. **Cost: small, plus one measured run.**

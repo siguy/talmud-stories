@@ -98,19 +98,27 @@ are unaffected; the new rule applies to future runs.
 
 ## Distance to gate
 
-> **Read `STATE.md`'s Triage cells with this caveat until
-> [`board-reads-stale-triage`](../../work/2026-09-01-board-reads-stale-triage.md) is
-> closed.** They print **98.0% / 95.6%** — the *previous* corroboration rule. The board
-> derives them from `results/recall/<t>_jeff2005_matches.json`, whose `survived_triage`
-> flag came from a run made before the `N>=1` rule shipped on 2026-08-31, so the generated
-> panel describes a rule the detector no longer uses. `board.py --check` passes: it
-> compares the generator against itself, not against the code. The values below are the
-> measured ones. Found 2026-09-01 →
-> [`board-guards-verify-the-wrong-property`](../findings/2026-09-01-board-guards-verify-the-wrong-property.md).
+> **Read `STATE.md`'s Triage cells with this caveat.** They print the **shipped
+> artifacts** — 96.6% Ketubot / 95.6% Kiddushin — which carry the *previous* corroboration
+> rule. The board derives them from `results/recall/<t>_jeff2005_matches.json`, whose
+> `survived_triage` flag came from runs made before `N>=1` shipped on 2026-08-31.
+> `board.py --check` passes throughout: it compares the generator against itself, not
+> against the code
+> ([`board-guards`](../findings/2026-09-01-board-guards-verify-the-wrong-property.md)).
+>
+> **Re-measured 2026-09-07 under the live rule AND the exact matcher, both causes named:**
+> Ketubot **98.0%** (rule +1.4, matcher −0.7 — the 98.7% on record was the retired window),
+> Kiddushin **97.8%** (rule +2.2, matcher nothing). In
+> `results/recall/*_jeff2005_matches_liverule.json`; the board does **not** read them, and
+> what it should read is [`promote-liverule-denominator`](../../work/2026-09-07-promote-liverule-denominator.md).
+> → [`triage-live-rule-remeasured`](../findings/2026-09-07-triage-live-rule-remeasured.md)
+>
+> **Never quote a Triage figure without saying which rule and which matcher produced it.**
 > The **Detection** cells inherit the same conditioning, since they divide by the same
 > surviving set.
 
-**At the gate, exactly — and that is the problem with the gate.** 98.0% measured against
+**On the gate, exactly — and that is the problem with the gate.** 98.0% under the live
+rule, measured against
 a ≥98% bar that [`FRAMEWORK.md` §1.1](../../FRAMEWORK.md) marks PROVISIONAL and describes
 as "our current value, which is circular reasoning in a principle's clothing." The shape
 of the bar is defensible (invisible, permanent losses get the strictest bar); the number

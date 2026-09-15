@@ -105,4 +105,4 @@ case.
 measured with the 4-gram matcher on a different run and are **not** re-measured here —
 flagged in the capability doc rather than silently mixed with the shipped-artifact
 numbers. That belongs with
-[`2026-09-01-board-reads-stale-triage`](../2026-09-01-board-reads-stale-triage.md).
+[`2026-09-01-board-reads-stale-triage`](2026-09-01-board-reads-stale-triage.md).
