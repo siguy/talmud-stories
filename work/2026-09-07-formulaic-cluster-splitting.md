@@ -4,8 +4,8 @@ capability: [detection]
 tractate: [ketubot, kiddushin, gittin, yevamot]
 blocked_by: []
 awaiting: []
-writes: [src/story_detector_v11.py, src/prompts/, results/v11/cluster_split/, tests/test_cluster_splitting.py]
-finding:
+writes: [src/story_detector_v11.py, src/prompts/, results/v11/series_rule_experiment/, results/recall/series_rule/, tests/test_cluster_splitting.py]
+finding: docs/findings/2026-09-09-broken-prompt-explains-everything.md
 superseded_by:
 ---
 
@@ -85,3 +85,32 @@ tractates.** Nobody has yet recovered one, which is what this item is for.
 Write the finding to `docs/findings/<date>-cluster-splitting.md`, add `## Outcome`
 here — including why, if reverted — and `python3 scripts/board.py finish
 2026-09-07-formulaic-cluster-splitting`.
+
+
+## Where this stands, 2026-09-09 — reopened
+
+**The 2026-09-08 "refuted" result is void**: it was measured through a prompt that had
+lost its few-shot examples
+([`broken-prompt`](../docs/findings/2026-09-09-broken-prompt-explains-everything.md)).
+
+Re-measured on an intact prompt, 20-page Yevamot slice, 3 repeats per arm, spread **0.0**:
+
+| arm | recall | proposals |
+|---|---|---|
+| control | 83.3% (30/36) | 38.0 |
+| **series clause** | **86.1% (31/36)** | 42.3 |
+
+**+1 story, none lost, reproducible 3/3 — and it recovers none of the four cluster cases
+on the slice.** The story it gains is Yevamot 78b, not a formulaic twin. The gain looks
+like "proposes slightly more", not like the mechanism the clause was written for.
+
+**Still `SERIES_RULE` default off.** What is left to decide it:
+
+1. **A whole tractate, both arms.** One slice is 36 stories; the cluster population across
+   four tractates is 29. Yevamot full is ~25 min per arm and the runs are deterministic,
+   so 2 arms suffice — the repeats were only needed to establish that.
+2. **Score precision, not just recall.** +4.3 proposals per 20 pages is a reviewer cost,
+   and review throughput is the project's bottleneck.
+3. **Report on the ADJACENT cases by name.** If a full run still recovers none of the 18,
+   the clause is a small unrelated gain and the cluster hypothesis needs a different
+   attack — say that plainly rather than shipping the clause as though it worked.

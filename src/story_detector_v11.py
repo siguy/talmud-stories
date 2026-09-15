@@ -79,6 +79,7 @@ import os
 from src.model_config import (default_model, default_thinking_level,
                               supports_thinking_level)
 import re
+import pathlib
 import time
 import warnings
 from pathlib import Path
@@ -313,7 +314,7 @@ the page — not only the most prominent one. Two stories are distinct when
 they have different protagonists, different settings, or are separated by
 halakhic discussion (even a single intervening segment). Do not stop after
 finding the first story; scan all segments.
-
+""" + _SERIES_RULE + f"""
 ## EMBEDDED STORIES — DETECT THESE TOO
 
 Stories often appear INSIDE other Talmudic structures (baraitot, objections).
@@ -484,6 +485,21 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 if hasattr(part, 'thought') and part.thought:
                     continue  # Skip thinking tokens, keep only output
                 full_text += part.text
+            # A response can carry parts AND still be cut off: thinking spends the
+            # budget, the model emits a partial object, finish_reason says MAX_TOKENS.
+            # The branch above only catches the case where NOTHING came back, so a
+            # truncated answer used to fall through to the JSON parser, fail, burn the
+            # retry, and end as "no stories" -- a failed call stamped as a judgment
+            # (Lesson 21). Measured 2026-09-08: at thinking_level=HIGH this was EVERY
+            # page. Say it loudly and record it; the caller still sees "" and retries,
+            # but the run can now be audited for it.
+            reason = str(getattr(cand, 'finish_reason', '') or '')
+            if 'MAX_TOKENS' in reason.upper():
+                print(f"  TRUNCATED RESPONSE ({len(full_text)} chars, "
+                      f"finish_reason={reason}) — thinking level or token cap")
+                self.truncated_responses = getattr(
+                    self, 'truncated_responses', []) + [len(full_text)]
+                return ""
             return full_text
         except Exception as e:
             print(f"  Gemini API error: {e}")
@@ -514,6 +530,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     return json.loads(repaired)
                 except json.JSONDecodeError as e:
                     print(f"  JSON parse error (after repair): {e}")
+                    if os.getenv("DUMP_BAD_JSON"):
+                        pathlib.Path(os.environ["DUMP_BAD_JSON"]).write_text(cleaned)
                     return None
         return None
 
@@ -759,6 +777,20 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     print(f"    Iterative Stage 2: +{added} additional stories")
                 stories = merged
 
+        # Twin pass (2026-09-14). Gated; off means not called, zero calls, nothing
+        # else in this method changes. See _find_adjacent_twins.
+        if os.getenv('TWIN_PASS', '0') == '1':
+            real_stories = [s for s in stories
+                            if s.get('classification') not in ('NOT_A_STORY', None)]
+            if real_stories:
+                twins = self._find_adjacent_twins(ref, segments, event_types, real_stories)
+                if twins:
+                    merged = self._merge_nonoverlapping(stories, twins)
+                    added = len(merged) - len(stories)
+                    if added:
+                        print(f"    Twin pass: +{added} adjacent stories")
+                    stories = merged
+
         # Bounds check, both passes. Runs here rather than in run_pipeline so the
         # one other caller of this method — scripts/run_triage_recall_price.py,
         # which is where the Ketubot 112b span was found — is covered too.
@@ -795,6 +827,118 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 time.sleep(1)
         return []
 
+    # Segment labels that make a neighbour worth asking about. Stage 1 already computed
+    # these; they are the trigger so that no lexical rule is (Lesson 15).
+    TWIN_TRIGGER_LABELS = {EventType.NARRATIVE_EVENT, EventType.VERBAL_ACT}
+
+    def _twin_candidates(self, stories: List[Dict], event_types: List[EventType],
+                         n_segments: int, reach: int = 1) -> List[Dict]:
+        """Segments within `reach` of a story, inside no story, labelled as a trigger.
+
+        Pure function of its inputs — tested without a model. Each candidate names
+        the story it sits beside, so the question can show the two side by side.
+        """
+        covered = set()
+        for st in stories:
+            a, b = st.get('start_segment'), st.get('end_segment')
+            if a is None or b is None:
+                continue
+            covered.update(range(a, b + 1))
+        seen, out = set(), []
+        for st in stories:
+            a, b = st.get('start_segment'), st.get('end_segment')
+            if a is None or b is None:
+                continue
+            for idx in list(range(a - reach, a)) + list(range(b + 1, b + reach + 1)):
+                if idx < 0 or idx >= n_segments or idx in covered or idx in seen:
+                    continue
+                # TWIN_TRIGGER=all asks about every free neighbour regardless of label.
+                # Measured 2026-09-14 because Yevamot 121b seg 14 holds two of Jeff's
+                # stories after a legal question and Stage 1 labelled the whole
+                # segment DELIBERATION -- the labelled trigger can never ask about it.
+                if os.getenv('TWIN_TRIGGER', 'labelled') != 'all':
+                    if idx >= len(event_types) or event_types[idx] not in self.TWIN_TRIGGER_LABELS:
+                        continue
+                seen.add(idx)
+                out.append({'segment': idx, 'beside': (a, b), 'label': event_types[idx].value})
+        return out
+
+    def _find_adjacent_twins(self, ref: str, segments: List[Dict],
+                             event_types: List[EventType],
+                             stories: List[Dict]) -> List[Dict]:
+        """Ask a NARROW question about each segment next door to a found story.
+
+        Why this exists: 18 of 38 Detection misses across four tractates sit ONE
+        segment from a proposal, and in 18 of 18 the proposal is a different story --
+        the missed story's formulaic twin (docs/findings/2026-09-07-miss-anatomy.md).
+        Telling the page-level prompt that "a run of parallel incidents is N stories"
+        recovered none of them; "find everything on this page" saturates. This asks
+        instead: here is the story we found, here is the segment beside it -- is that a
+        separate incident, the same story, or not a story?
+
+        Adds only. Never moves or removes an existing story. A failed or unreadable
+        call adds nothing and is COUNTED on self.twin_failures (Lesson 21).
+        """
+        cands = self._twin_candidates(stories, event_types, len(segments))
+        found = []
+        for c in cands:
+            idx = c['segment']; a, b = c['beside']
+            def heb(i):
+                return re.sub(r'<[^>]+>', '', segments[i].get('hebrew') or '')
+            def eng(i):
+                return re.sub(r'<[^>]+>', '', segments[i].get('english') or '')
+            story_text = '\n'.join(f'[{i}] {heb(i)}\n    {eng(i)}' for i in range(a, b + 1))
+            prompt = f"""You are comparing two adjacent passages from {ref} in the Babylonian Talmud.
+
+## PASSAGE A — a story already identified (segments {a}-{b})
+{story_text}
+
+## PASSAGE B — the segment immediately {'before' if idx < a else 'after'} it (segment {idx})
+[{idx}] {heb(idx)}
+    {eng(idx)}
+
+## THE QUESTION
+The Talmud often places several incidents of the SAME FORM one after another —
+different actors, the same shape, sometimes the same closing words, with nothing
+between them. Each such incident is its own story.
+
+Is PASSAGE B:
+- "separate_incident": its own story — its own actor(s) and its own outcome, even if
+  told in almost the same words as A, or sharing A's formula or verdict;
+- "same_story": part of A — the same actors continuing the same event, or A's
+  aftermath/discussion;
+- "not_a_story": legal reasoning, a citation, a ruling, a list, or a hypothetical.
+
+Answer in JSON only:
+{{"verdict": "separate_incident" | "same_story" | "not_a_story",
+  "classification": "YES" | "HIGH_CONFIDENCE" | "LOW_CONFIDENCE",   (only if separate_incident)
+  "reason": "<one sentence>"}}
+"""
+            try:
+                content = self._call_google(prompt, max_tokens=512, json_mode=True)
+                result = self._parse_json_response(content) if content else None
+            except Exception as e:  # noqa: BLE001 - a failed call is a counted outcome
+                result = None
+                print(f"    Twin pass: call failed on {ref} seg {idx}: {e}")
+            if not isinstance(result, dict) or result.get('verdict') not in (
+                    'separate_incident', 'same_story', 'not_a_story'):
+                self.twin_failures = getattr(self, 'twin_failures', []) + [(ref, idx)]
+                continue
+            self.twin_verdicts = getattr(self, 'twin_verdicts', []) + [
+                {'ref': ref, 'segment': idx, 'beside': [a, b],
+                 'verdict': result['verdict'], 'reason': result.get('reason', '')}]
+            if result['verdict'] == 'separate_incident':
+                cls = result.get('classification')
+                if cls not in ('YES', 'HIGH_CONFIDENCE', 'LOW_CONFIDENCE'):
+                    cls = 'LOW_CONFIDENCE'
+                found.append({
+                    'start_segment': idx, 'end_segment': idx,
+                    'classification': cls,
+                    'source': 'twin_pass', 'twin_of': [a, b],
+                    'reasoning': result.get('reason', ''),
+                })
+        return found
+
     def _find_additional_stories(self, ref: str, segments: List[Dict],
                                   event_types: List[EventType],
                                   detected: List[Dict],
@@ -818,7 +962,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             "not include in the prior pass. A second story is distinct if it "
             "has different protagonists, a different setting, or is separated "
             "from the prior stories by halakhic discussion (even one segment).\n"
-            "Return ONLY stories that do NOT overlap the already-detected "
+            + _SERIES_RULE_SECOND_PASS
+            + "Return ONLY stories that do NOT overlap the already-detected "
             "segment ranges. If there are no additional stories, return "
             '{"page_ref": "' + ref + '", "stories": []}.\n'
         )
@@ -2624,6 +2769,41 @@ def filter_biblical_actor_stories(pages: List[Dict]) -> int:
 # Moved to src/model_config.py on 2026-09-03 so event_triage can use it without a cycle.
 # Re-exported under the original name: it is referenced by tests and by call sites here.
 _supports_thinking_level = supports_thinking_level
+
+
+# The parallel-series clause, added 2026-09-07. Measured 2026-09-07: 18 of 38
+# Detection misses had a proposal ONE segment away, and in 18 of 18 that proposal was
+# a DIFFERENT story -- almost always the missed story's formulaic twin. We were
+# returning one representative of a run.
+# DEFAULT OFF. It is written but NOT measured: the run meant to measure it hit the
+# model breakage recorded in the same commit. Set SERIES_RULE=1 for the treatment arm.
+# Do not turn the default on without a scored two-arm run and a same-code repeat.
+# -> docs/findings/2026-09-07-miss-anatomy.md
+_SERIES_RULE = "" if os.getenv("SERIES_RULE", "0") == "0" else """
+### A SERIES OF PARALLEL INCIDENTS IS N STORIES, NOT ONE
+
+Stories are frequently placed in a RUN: several incidents of the same form,
+one after another, with different actors and no discussion between them.
+Each incident is its OWN story. Return one entry per incident.
+
+Adjacency does NOT merge them. Neither does a shared opening formula, a
+shared closing line, a shared verdict, or a shared narrator. Those are the
+marks of a SERIES -- they are the reason the incidents sit together, not
+evidence that they are one story.
+
+Ask of each incident: does it have its own actor and its own outcome? If
+yes, it is its own story, even where the incident beside it is told in
+almost the same words. Do NOT return one representative of a run and stop.
+"""
+
+_SERIES_RULE_SECOND_PASS = "" if os.getenv("SERIES_RULE", "0") == "0" else (
+    "MOST IMPORTANTLY: look for further incidents of the SAME FORM as "
+    "one already detected -- a run of parallel cases with different "
+    "actors, told in almost the same words, with nothing between them. "
+    "Each such incident is its own story. A shared formula, a shared "
+    "closing line or a shared verdict is the mark of a series, not of "
+    "a single story.\n"
+)
 
 
 CLAUSE_TERMINATORS = '.:?!'

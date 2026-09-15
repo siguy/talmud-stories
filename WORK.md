@@ -54,16 +54,16 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `span-truncation-rate` | `talmud-stories` | **34 FILES** |
-| `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | **253 FILES** |
+| `span-truncation-rate` | `talmud-stories` | clean |
+| `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
 | `miss-anatomy-triage-remeasure` | `pr1-measurement` | clean |
-| `twin-pass` | `pr2-twin-pass` | **30 FILES** |
-| `main` | `pr3-default` | **18 FILES** |
-| `recent-work-plans-d0818b` | `recent-work-plans-d0818b` | **57 FILES** |
-| `(detached)` | `state-work-review-40b153` | **187 FILES** |
+| `twin-pass` | `pr2-twin-pass` | clean |
+| `main` | `pr3-default` | clean |
+| `recent-work-plans-d0818b` | `recent-work-plans-d0818b` | clean |
+| `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 35 items, never deleted
+## Done — 37 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -102,4 +102,6 @@ staleness check: it changes whenever anyone edits anything.*
 | [Cut every reader over to the exact-anchor matcher, so the board locates a story one way](work/done/2026-09-03-exact-matcher-cutover.md) | detection, classification, boundaries | [2026-09-03-exact-matcher-cutover.md](docs/findings/2026-09-03-exact-matcher-cutover.md) |
 | [Does thinking=high actually help? Screen on the known misses before paying for arms](work/done/2026-09-03-thinking-level-experiment.md) | detection, triage | [2026-09-14-default-model-measured.md](docs/findings/2026-09-14-default-model-measured.md) |
 | [Yevamot — the full detection run, measured against the blind list the day it runs](work/done/2026-09-03-yevamot-detection-run.md) | triage, detection | [2026-09-03-yevamot-first-run.md](docs/findings/2026-09-03-yevamot-first-run.md) |
-<!-- board-checksum: 7ab7f0494a989d27 -->
+| [Two identical runs differ by 12.8 points — pin a model and measure the noise floor](work/done/2026-09-08-bench-is-not-reproducible.md) | detection, triage, boundaries, classification | [2026-09-09-broken-prompt-explains-everything.md](docs/findings/2026-09-09-broken-prompt-explains-everything.md) |
+| [Ask about the segment next door — a targeted twin check after detection](work/done/2026-09-14-adjacent-twin-check.md) | detection | [2026-09-14-twin-pass.md](docs/findings/2026-09-14-twin-pass.md) |
+<!-- board-checksum: f079a2ef267d4862 -->
