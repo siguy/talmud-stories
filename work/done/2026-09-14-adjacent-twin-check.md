@@ -79,7 +79,8 @@ and 34b under both triggers; both 121b criers under `all` only — Stage 1 had l
 that segment DELIBERATION, so the labelled trigger never asked. The two remaining misses
 are the speech-act class (`jeff:speech-act-policy`), not twins.
 
-**Not shipped: both flags default off.** One slice of one tractate; the next step is a
-full Ketubot run (7 of the 18 corpus twin misses are there), reporting
-proposals-not-on-his-list beside recall, and trying reach 2.
+**Full Yevamot, same day: 89.2% → 94.1% (96/102).** All six adjacent-class misses on
+the tractate recovered by name; 12 proposals added, 9 of them not on his list — the
+reviewer cost, in single digits. **Both flags still default off**: one tractate, and the
+nine extras want a review page before the pass becomes the default.
 → [`twin-pass`](../../docs/findings/2026-09-14-twin-pass.md)
