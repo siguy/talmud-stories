@@ -5,14 +5,14 @@ tractate: [kiddushin]
 blocked_by: []
 awaiting: []
 writes: [scripts/run_thinking_experiment.py, results/thinking/, docs/findings/]
-finding:
+finding: docs/findings/2026-09-14-default-model-measured.md
 superseded_by:
 ---
 
 # Does `thinking=high` actually help?
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) §2–3, then
-[`src/model_config.py`](../src/model_config.py), then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) §2–3, then
+[`src/model_config.py`](../../src/model_config.py), then this.
 
 ## Why this exists
 
@@ -106,3 +106,13 @@ A null is a complete outcome and closes the item.
 
 Finding to `docs/findings/<date>-thinking-level-experiment.md`, `## Outcome` here, then
 `python3 scripts/board.py finish thinking-level-experiment`.
+
+## Outcome
+
+**Run 2026-09-14, and the answer is no.** Twenty Yevamot dapim, 36 blind stories, intact
+prompt: preview/off **83.3%**, 3.8/off 75.0%, 3.8/high **27.8%** with 9 of 20 pages
+returning nothing and 14 truncated responses. `high` starves the JSON output of tokens
+and the run reports success anyway. The default is now preview with thinking off — the
+config every shipped run actually used. Not settled: thinking at a budget it cannot
+exhaust, and whether 3.8's strictness buys precision.
+→ [`default-model-measured`](../../docs/findings/2026-09-14-default-model-measured.md)
