@@ -61,7 +61,7 @@ open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     10 item(s) in work/done/
+closed     11 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     18 item(s) in work/done/
+closed     20 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -87,7 +87,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     12 item(s) in work/done/
+closed     13 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -97,7 +97,7 @@ history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
-closed     9 item(s) in work/done/
+closed     10 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -165,4 +165,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: 57239620aa796ce2 -->
+<!-- board-checksum: c39967cdfb36c3e2 -->
