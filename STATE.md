@@ -60,8 +60,8 @@ open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
-open       2026-09-03-thinking-level-experiment
-closed     9 item(s) in work/done/
+open       2026-09-03-triage-recall-options
+closed     10 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     17 item(s) in work/done/
+closed     18 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -165,4 +165,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: e6b57f375ba865f6 -->
+<!-- board-checksum: 57239620aa796ce2 -->
