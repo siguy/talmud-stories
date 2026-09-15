@@ -31,8 +31,10 @@ LIVE_ENTRY_POINTS = [
 FROZEN = [f"src/story_detector_v{n}.py" for n in (5, 6, 7, 8, 9, 10)]
 
 
-def test_default_is_the_current_model():
-    assert DEFAULT_MODEL == "gemini-3.8-flash"
+def test_default_is_the_measured_model():
+    # Measured 2026-09-14, intact prompt, 20 Yevamot dapim: preview/off 83.3%,
+    # 3.8/off 75.0%, 3.8/high 27.8%. See docs/findings/2026-09-14-default-model-measured.md
+    assert DEFAULT_MODEL == "gemini-3-flash-preview"
 
 
 def test_env_var_still_wins(monkeypatch):
@@ -87,8 +89,10 @@ def test_thinking_level_has_a_default():
     to thinking_budget=0 under a comment written for 2.x flash. Nothing said so."""
     from src.model_config import DEFAULT_THINKING_LEVEL, default_thinking_level
     os.environ.pop("GEMINI_THINKING_LEVEL", None)
-    assert DEFAULT_THINKING_LEVEL == "high"
-    assert default_thinking_level() == "high"
+    # None is OFF -- what every shipped run used (run_meta: thinking_level null).
+    # Measured 2026-09-14: high truncates 14 of 20 pages and scores 27.8%.
+    assert DEFAULT_THINKING_LEVEL is None
+    assert default_thinking_level() is None
 
 
 def test_thinking_env_var_wins(monkeypatch):
@@ -102,8 +106,8 @@ def test_detector_and_triager_agree_on_thinking():
     from src.event_triage import EventTriager
     from src.story_detector_v11 import V7StoryDetector
     os.environ.pop("GEMINI_THINKING_LEVEL", None)
-    assert EventTriager(api_key="x").thinking_level == "high"
-    assert V7StoryDetector(api_key="x").thinking_level == "high"
+    assert EventTriager(api_key="x").thinking_level is None
+    assert V7StoryDetector(api_key="x").thinking_level is None
 
 
 def test_thinking_budget_is_large_enough_for_the_thinking():

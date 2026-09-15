@@ -21,29 +21,29 @@ silently to whichever one the file happened to name.
 """
 import os
 
-# Verified against the live model list 2026-09-03, and exercised with the project's own
-# call config -- response_mime_type='application/json' plus thinking_level LOW and HIGH,
-# both returning parseable JSON.
-DEFAULT_MODEL = "gemini-3.8-flash"
-
-# The same failure one layer down. `thinking_level` was read from GEMINI_THINKING_LEVEL
-# with NO default, and an unset value falls through `_call_google`'s json_mode branch to
-# `thinking_budget=0` -- thinking explicitly OFF -- under a comment written for 2.x flash.
-# The four run scripts disagreed too: run_clause_labeling and run_parallel_rule_experiment
-# defaulted to 'high', while run_new_tractate -- the one that runs a whole tractate --
-# and run_wave5_clause_spans defaulted to None, i.e. off.
+# MEASURED 2026-09-14 -- the experiment the comment below used to say was unrun. Same 20
+# Yevamot dapim, 36 of Jeff's blind stories, the detection prompt verified byte-identical
+# to the 2026-09-03 shipped run, no rate limiting, one run each (the runs are
+# deterministic at this temperature; spread 0.0 over three repeats, same day):
 #
-# Setting a level makes `_call_google` raise max_output_tokens to 8192, which is the fix
-# for the failure measured 2026-08-29: a 2,042-char prompt spent 487 thinking tokens
-# against a 512 budget and 72 of 95 stories returned MAX_TOKENS with no JSON.
-DEFAULT_THINKING_LEVEL = "high"
-# ...and `high` is a CHOICE MADE WITHOUT EVIDENCE. Unset meant thinking off, which was
-# clearly nobody's decision, but that does not make `high` right. The experiment that
-# would justify it is work/2026-09-03-thinking-level-experiment.md, and it is unrun.
-# Stated prediction: the effect, if any, is on precision rather than recall -- thinking
-# plausibly helps the model REJECT a legal passage that looks narrative more than it helps
-# it NOTICE a story it missed. If that holds, detection wants `high` and triage does not,
-# and these two should stop sharing one default.
+#   gemini-3-flash-preview, thinking off    83.3%   1 empty page    0 truncations
+#   gemini-3.8-flash,       thinking off    75.0%   0 empty        4 truncations
+#   gemini-3.8-flash,       thinking high   27.8%   9 empty of 20  14 truncations
+#
+# The third row was this file's default. At thinking=high the model spends its output
+# budget thinking and returns JSON cut off mid-object; the run prints "0 candidates, 0
+# stories" and completes. Raising max_output_tokens to 32768 does not prevent it. 3.8
+# with thinking off is simply stricter -- it drops borderline stories Jeff's list carries.
+# Every number the board quotes was produced by the first row.
+#
+# -> docs/findings/2026-09-14-default-model-measured.md
+DEFAULT_MODEL = "gemini-3-flash-preview"
+
+# None means thinking OFF (`_call_google` sets thinking_budget=0). That is what the
+# 2026-09-03 Yevamot run and every shipped run before it used; run_meta records
+# thinking_level: null on each. An EMPTY env value also means off -- a dotfile with
+# `GEMINI_THINKING_LEVEL=` must not silently become `high`.
+DEFAULT_THINKING_LEVEL = None
 
 
 def default_model() -> str:
@@ -51,9 +51,14 @@ def default_model() -> str:
     return os.getenv("GEMINI_MODEL", DEFAULT_MODEL)
 
 
-def default_thinking_level() -> str:
-    """Reasoning effort when the caller has not chosen one. `GEMINI_THINKING_LEVEL` wins."""
-    return os.getenv("GEMINI_THINKING_LEVEL", DEFAULT_THINKING_LEVEL)
+def default_thinking_level():
+    """Reasoning effort when the caller has not chosen one; None is off.
+
+    `GEMINI_THINKING_LEVEL` wins when set to a value. Set-but-empty is off, not the
+    default: that is how a dotfile says "no".
+    """
+    value = os.getenv("GEMINI_THINKING_LEVEL")
+    return value if value else DEFAULT_THINKING_LEVEL
 
 
 def supports_thinking_level(model_name: str) -> bool:
