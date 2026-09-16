@@ -161,3 +161,10 @@ the ones that starved were open-ended. Send him 25, not 150.
   lists, which he then sent.
 - **A fixed validation panel** — declined in favour of open crowd-sourcing, with contested
   cases kept and flagged rather than silently resolved.
+
+**Pre-screened by Simon, 2026-09-16** (`validation/feedback/review_2026-09-15_bundle_simon_prescreen_2026-09-16.json`,
+reviewer `simon`, enters no golden): 8 of 14 read. **Yes:** Kiddushin 39b (but the story is
+segment 7, not 8-10 — a boundary note), Gittin 57b, Gittin 68a (starts earlier, at *"The
+Master said: here they interpreted it…"*), Ketubot 112a. **No:** Yevamot 43a, 45a, 78a,
+101b — four of the twin pass's eight extras. **Not read:** Ketubot 7a, 15a; Yevamot 15a,
+17a, 105a, 106b. Open decision: send Jeff all 14, or the 10 that survive the screen.
