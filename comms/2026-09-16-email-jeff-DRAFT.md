@@ -37,9 +37,15 @@ story; extent and confidence sit behind a disclosure and you can ignore them.
 2. **Gittin 57b, 68a** (2) — Nebuzaradan and the blood of Zechariah; Solomon sends
    Benayahu for Ashmedai. Nobody has judged these. I'm fairly sure they are yours, and
    that 68a begins earlier than we marked.
-3. **Ketubot 7a, 15a, 112a** (3) — all speech, nothing else happens. You said
-   "borderline" is the right column for these rather than a general rule. Is it, for
-   these three? (112a is the interesting one — is being mocked an event?)
+3. **Ketubot 7a, 15a, 112a** (3) — all speech, nothing else happens. This is the one
+   place your two rulings pull apart: in March, reviewing passages one by one, you kept
+   dialogue-with-minimal-action as stories at low confidence; in July, as a rule, you
+   said a speech-act is not a story. We went through every low-confidence passage in the
+   golden against the July rule and the set that actually turns on it is small — a
+   handful, not the 40% we first feared — and half of those are our boundary stopping
+   before the action, which is our error. These three are what is left. You said
+   "borderline" is the right column rather than a general rule; is it, for these three?
+   (112a is the interesting one — is being mocked an event?)
 4. **Yevamot 15a, 17a, 105a, 106b** (4) — what the twin pass proposed that your list does
    not carry. Your verdicts here decide whether that pass becomes the default.
 
