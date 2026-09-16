@@ -879,7 +879,11 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         Adds only. Never moves or removes an existing story. A failed or unreadable
         call adds nothing and is COUNTED on self.twin_failures (Lesson 21).
         """
-        cands = self._twin_candidates(stories, event_types, len(segments))
+        # TWIN_REACH: how many segments either side of a found story to ask about.
+        # Reach 1 covers the adjacent class (18 of 38 misses); the near class sits at
+        # 2-6, mostly 3-5 (miss_anatomy.json). Cost scales with it.
+        reach = int(os.getenv('TWIN_REACH', '1'))
+        cands = self._twin_candidates(stories, event_types, len(segments), reach=reach)
         found = []
         for c in cands:
             idx = c['segment']; a, b = c['beside']
