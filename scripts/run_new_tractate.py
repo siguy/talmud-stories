@@ -47,7 +47,19 @@ log = logging.getLogger(__name__)
 MODEL = 'gemini-3-flash-preview'
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
-KNOWN = ('gittin', 'yevamot', 'eruvin')
+KNOWN = ('gittin', 'yevamot', 'eruvin', 'kiddushin')
+
+# Where each tractate's text and cached Stage 1 labels live. The three new tractates were
+# fetched to results/sefaria/ on 2026-08-30; Kiddushin predates that layout and keeps its
+# v7-era files. Same shape either way: pages[] of {ref, segments[]}, and a triage cache
+# with a `triage_results` map. Added 2026-09-15 so the twin pass could be measured on a
+# tractate with cross-tractate few-shots (Ketubot's are Ketubot's own -- Critical Rule 2).
+SOURCES = {
+    'kiddushin': {
+        'pages': 'results/v7/kiddushin_pages.json',
+        'triage': 'results/v7/event_triage_kiddushin.json',
+    },
+}
 
 
 def load_env():
@@ -101,10 +113,11 @@ def main():
     from src.ground_truth import GroundTruthDB, EventType
     from src.story_detector_v11 import V7StoryDetector
 
-    src = PROJECT_ROOT / 'results' / 'sefaria' / f'{args.tractate}.json'
+    override = SOURCES.get(args.tractate, {})
+    src = PROJECT_ROOT / override.get('pages', f'results/sefaria/{args.tractate}.json')
     data = json.loads(src.read_text())
-    pages = data['pages']
-    name = data.get('tractate') or args.tractate.title()
+    pages = data['pages'] if isinstance(data, dict) else data
+    name = (data.get('tractate') if isinstance(data, dict) else None) or args.tractate.title()
     if args.refs:
         want = [r.strip() for r in args.refs.split(',')]
         pages = [p for p in pages if p['ref'] in want]
@@ -116,7 +129,7 @@ def main():
              sum(len(p['segments']) for p in pages))
 
     # ---- Stage 1 --------------------------------------------------------
-    cache = PROJECT_ROOT / 'results' / 'triage' / f'{args.tractate}.json'
+    cache = PROJECT_ROOT / override.get('triage', f'results/triage/{args.tractate}.json')
     cached = {}
     if cache.exists() and not args.retriage:
         raw = json.loads(cache.read_text()).get('triage_results', {})

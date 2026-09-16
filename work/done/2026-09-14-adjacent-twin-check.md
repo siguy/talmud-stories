@@ -84,3 +84,7 @@ the tractate recovered by name; 12 proposals added, 9 of them not on his list �
 reviewer cost, in single digits. **Both flags still default off**: one tractate, and the
 nine extras want a review page before the pass becomes the default.
 → [`twin-pass`](../../docs/findings/2026-09-14-twin-pass.md)
+
+**Kiddushin, 2026-09-15:** v11 control 88.9% → twin pass **90.0%**; the one gain is the one
+adjacent case v11 had not already recovered (31b). Every adjacent case on both tractates
+is now found. The seven Kiddushin misses left are all 2–6 segments away — reach 2.
