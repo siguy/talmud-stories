@@ -85,8 +85,9 @@ rather than a request.
 
 ### Email 2 — the page is built, not sent (2026-09-15)
 
-**[`validation/ui/review_2026-09-15_bundle.html`](../validation/ui/review_2026-09-15_bundle.html)
-— 14 passages, four questions, one page.** Built 2026-09-15; every entry verified to carry
+**[`validation/ui/review_2026-09-16_bundle.html`](../validation/ui/review_2026-09-16_bundle.html)
+— 10 passages, four questions, one page** (the 14-passage version of 2026-09-15 minus the
+four Yevamot extras Simon's pre-screen rejected).** Built 2026-09-15; every entry verified to carry
 Hebrew and English with the story highlighted. Simon sends it.
 
 | source | passages | the question |
@@ -94,7 +95,7 @@ Hebrew and English with the story highlighted. Simon sends it.
 | Kiddushin 39b 8-10 | 1 | credited to his list by a search window and never matched — is it a story? |
 | Gittin 57b:0-4, 68a:7-12 | 2 | Nebuzaradan; Ashmedai — nobody has judged them |
 | Ketubot 7a:1, 15a:0, 112a:11 | 3 | all speech — is `borderline` the right column? (**this is `jeff:speech-act-policy`, on real cases**) |
-| Yevamot 15a, 17a, 43a, 45a, 78a, 101b, 105a, 106b | 8 | a new pass that asks about the segment beside each story proposed these; his 2005 list does not carry them. **His verdicts here decide whether that pass becomes the default** |
+| Yevamot 15a, 17a, 105a, 106b | 4 | a new pass that asks about the segment beside each story proposed these; his 2005 list does not carry them. **His verdicts here decide whether that pass becomes the default** |
 
 Phase 6a has run (the blast radius is 6 entries, then 17 under his quasi-speech-act
 reading — not 110), so the wait below is over. Kiddushin 44a still goes in the email as
@@ -167,4 +168,4 @@ reviewer `simon`, enters no golden): 8 of 14 read. **Yes:** Kiddushin 39b (but t
 segment 7, not 8-10 — a boundary note), Gittin 57b, Gittin 68a (starts earlier, at *"The
 Master said: here they interpreted it…"*), Ketubot 112a. **No:** Yevamot 43a, 45a, 78a,
 101b — four of the twin pass's eight extras. **Not read:** Ketubot 7a, 15a; Yevamot 15a,
-17a, 105a, 106b. Open decision: send Jeff all 14, or the 10 that survive the screen.
+17a, 105a, 106b. Decided 2026-09-16: the 10. Gmail draft redrafted with the 10-passage page attached.
