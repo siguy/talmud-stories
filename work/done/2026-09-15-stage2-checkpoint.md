@@ -11,7 +11,7 @@ superseded_by:
 
 # Stage 2 has no checkpoint
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then this.
 **Cost: small.** **Depends on Jeff: no.**
 
 ## The problem
@@ -48,3 +48,16 @@ going to stop.
 ## When done
 
 Finding, `## Outcome`, `python3 scripts/board.py finish 2026-09-15-stage2-checkpoint`.
+
+## Outcome
+
+**Built 2026-09-16.** `run_pipeline(checkpoint_path=…)` writes finished Stage 2 pages
+every 5 to `<output>.partial.json` and resumes from it — only if the checkpoint's
+fingerprint (prompt-builder source, gated clauses, twin flags, model, thinking level)
+matches, so two detectors can never be spliced into one artifact. A resume prints
+`RESUMED n page(s)` and lands in `run_meta.resumed_pages`. Server errors (5xx /
+`UNAVAILABLE`) retry 3× with backoff; a page that still fails is kept with
+`stage2_error` and counted in `run_meta.stage2_errors`, never recorded as "no stories".
+A 4xx stays fatal. `run_new_tractate.py` wires it and deletes the checkpoint after a full
+write. Five failure-injection tests in `tests/test_stage2_checkpoint.py`, including
+resumed == uninterrupted, byte for byte.

@@ -1309,15 +1309,88 @@ Return JSON:
 
         return extended
 
+    CHECKPOINT_EVERY = 5
+    # Server-side failures worth a second try; a 4xx is our fault and stays fatal.
+    RETRYABLE_STATUS = (500, 502, 503, 504)
+
+    def _stage2_fingerprint(self) -> str:
+        """What a checkpoint must have been written by, for a resume to be honest.
+
+        The prompt builder's source, the gated clauses, the twin-pass flags and the
+        model. A checkpoint from a different prompt would splice two detectors into one
+        artifact and call it a run -- the exact confusion of 2026-09-08.
+        """
+        import hashlib, inspect
+        parts = [
+            inspect.getsource(type(self).build_detection_prompt),
+            _SERIES_RULE, _SERIES_RULE_SECOND_PASS,
+            os.getenv('TWIN_PASS', '0'), os.getenv('TWIN_TRIGGER', 'labelled'),
+            os.getenv('TWIN_REACH', '1'),
+            self.model_name or '', str(self.thinking_level),
+        ]
+        return hashlib.sha256('\n'.join(parts).encode()).hexdigest()[:16]
+
+    def _load_checkpoint(self, path: Optional[str], pages_to_process: List[Dict]) -> Dict:
+        if not path or not os.path.exists(path):
+            return {}
+        try:
+            blob = json.loads(Path(path).read_text())
+        except (OSError, ValueError) as e:
+            print(f"  checkpoint unreadable, ignoring: {e}")
+            return {}
+        if blob.get('fingerprint') != self._stage2_fingerprint():
+            print("  checkpoint was written by a different prompt/flags/model -- NOT resumed")
+            return {}
+        wanted = {p.get('ref') for p in pages_to_process}
+        return {ref: r for ref, r in blob.get('done', {}).items() if ref in wanted}
+
+    def _write_checkpoint(self, path: str, done: Dict) -> None:
+        Path(path).parent.mkdir(parents=True, exist_ok=True)
+        tmp = path + '.tmp'
+        Path(tmp).write_text(json.dumps(
+            {'fingerprint': self._stage2_fingerprint(), 'done': done},
+            ensure_ascii=False))
+        os.replace(tmp, path)
+
+    def _detect_with_retry(self, ref, segments, events, prev_ctx, next_ctx,
+                           attempts: int = 3):
+        """detect_stories, retried on a retryable server error. Returns (stories, error).
+
+        On final failure returns ([], message): the page is recorded with the error,
+        never as "no stories here".
+        """
+        last = None
+        for n in range(attempts):
+            try:
+                return self.detect_stories(ref, segments, events, prev_ctx, next_ctx), None
+            except Exception as e:  # noqa: BLE001 - classify, then decide
+                code = getattr(e, 'code', None) or getattr(e, 'status_code', None)
+                retryable = code in self.RETRYABLE_STATUS or 'UNAVAILABLE' in str(e)
+                last = f"{type(e).__name__}: {str(e)[:200]}"
+                if not retryable:
+                    raise
+                wait = 15 * (n + 1)
+                print(f"    Stage 2 call failed ({code}), retry {n+1}/{attempts} in {wait}s")
+                time.sleep(wait)
+        return [], f"failed after {attempts} attempts: {last}"
+
     def run_pipeline(self, pages: List[Dict],
                      triage_results: Optional[Dict[str, List[EventType]]] = None,
                      delay: float = 1.0,
                      examine_all_pages: bool = False,
                      enable_adversarial: bool = False,
                      tractate: str = 'Ketubot',
-                     skip_triage: Optional[bool] = None) -> Dict:
+                     skip_triage: Optional[bool] = None,
+                     checkpoint_path: Optional[str] = None) -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
+
+        checkpoint_path: if given, Stage 2 writes its finished pages there every
+        CHECKPOINT_EVERY pages and resumes from it on the next call -- but only if the
+        checkpoint was written by the same prompt, flags and model (`_stage2_fingerprint`).
+        Added 2026-09-16 after a Google 503 at page 32 of 66 threw away the third run
+        this year; Stage 1 has checkpointed since 2026-09-03 and Stage 2 never did. A
+        resume is LOUD: a log line, and `resumed_pages` on the detector for run_meta.
 
         Args:
             pages: List of page dicts with 'ref' and 'segments'
@@ -1383,9 +1456,16 @@ Return JSON:
 
         # Stage 2: Constrained Detection
         all_results = []
+        done = self._load_checkpoint(checkpoint_path, pages_to_process)
+        self.resumed_pages = len(done)
+        if done:
+            print(f"  RESUMED {len(done)} page(s) from checkpoint {checkpoint_path}")
         for i, page in enumerate(pages_to_process):
             ref = page.get('ref', '')
             segments = page.get('segments', [])
+            if ref in done:
+                all_results.append(done[ref])
+                continue
             # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
             # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
             # what the cross-page context blocks below already do; the old
@@ -1429,7 +1509,8 @@ Return JSON:
                         next_ctx = '\n'.join(lines)
 
             print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
-            stories = self.detect_stories(ref, segments, events, prev_ctx, next_ctx)
+            stories, stage2_error = self._detect_with_retry(
+                ref, segments, events, prev_ctx, next_ctx)
 
             # Build page result
             page_result = {
@@ -1437,7 +1518,15 @@ Return JSON:
                 'segments': segments,
                 'stories': stories,
             }
+            if stage2_error:
+                # A page whose call failed is UNKNOWN, not empty (Lesson 21). It stays
+                # in the run, marked, so the scorer and the reader can see it.
+                page_result['stage2_error'] = stage2_error
+                self.stage2_errors = getattr(self, 'stage2_errors', []) + [ref]
             all_results.append(page_result)
+            done[ref] = page_result
+            if checkpoint_path and (len(done) % self.CHECKPOINT_EVERY == 0):
+                self._write_checkpoint(checkpoint_path, done)
 
             story_count = sum(1 for s in stories
                               if s.get('classification') != 'NOT_A_STORY')
@@ -1445,6 +1534,9 @@ Return JSON:
 
             if delay > 0 and i < len(pages_to_process) - 1:
                 time.sleep(delay)
+
+        if checkpoint_path:
+            self._write_checkpoint(checkpoint_path, done)
 
         # Add skipped pages with empty stories
         for page in pages:

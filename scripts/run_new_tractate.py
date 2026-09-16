@@ -181,19 +181,32 @@ def main():
         log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
 
     t0 = time.time()
+    out = Path(args.output) if args.output else (
+        PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
+    out.parent.mkdir(parents=True, exist_ok=True)
+    # Stage 2 checkpoints beside the output and resumes from it on a re-run of the same
+    # command; removed once the run has been written in full.
+    checkpoint = str(out) + '.partial.json'
     results = detector.run_pipeline(pages, triage_results=triage,
-                                    delay=args.delay, tractate=name)
+                                    delay=args.delay, tractate=name,
+                                    checkpoint_path=checkpoint)
     elapsed = time.time() - t0
 
     results['version'] = 'v11'
     results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
                            'elapsed_seconds': round(elapsed, 1),
                            'pages': len(pages), 'source': src.name,
-                           'ground_truth': 'ketubot-only (cross-tractate)'}
-    out = Path(args.output) if args.output else (
-        PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
-    out.parent.mkdir(parents=True, exist_ok=True)
+                           'ground_truth': 'ketubot-only (cross-tractate)',
+                           'resumed_pages': getattr(detector, 'resumed_pages', 0),
+                           'stage2_errors': getattr(detector, 'stage2_errors', [])}
+    if results['run_meta']['resumed_pages']:
+        log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)
+    if results['run_meta']['stage2_errors']:
+        log.warning('%d page(s) have a Stage 2 error and NO verdict: %s',
+                    len(results['run_meta']['stage2_errors']), results['run_meta']['stage2_errors'])
     out.write_text(json.dumps(results, indent=2, ensure_ascii=False))
+    if os.path.exists(checkpoint):
+        os.remove(checkpoint)
 
     stories = sum(1 for p in results['pages'] for s in p.get('stories', [])
                   if s.get('classification') != 'NOT_A_STORY')

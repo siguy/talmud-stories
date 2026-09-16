@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     21 item(s) in work/done/
+closed     22 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -147,6 +147,7 @@ naming an empty file as a lost round buries the one that is not.
 
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
+- `validation/feedback/review_2026-09-15_bundle_simon_prescreen_2026-09-16.json` — **8 verdicts**
 
 ## Open with Jeff
 
@@ -160,4 +161,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: 8565561da04e8dbd -->
+<!-- board-checksum: dc8c64f9c8233e77 -->
