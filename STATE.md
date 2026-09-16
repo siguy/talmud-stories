@@ -14,13 +14,20 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | 96.6% · n=149 B | 90.3% B | STATUS · C | STATUS | 4 rounds | ⬜ |
-| **Kiddushin** | 95.6% · n=90 B | 88.4% B | STATUS · C | STATUS | 3 rounds | ⬜ |
+| **Ketubot** | 96.6% artifact · **98.0% code** · n=149 B | 90.3% artifact · **90.4% code** B | STATUS · C | STATUS | 4 rounds | ⬜ |
+| **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 1 rounds | ⬜ |
 | **Yevamot** | 100.0% · n=102 B | 89.2% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
+
+A cell reading **`artifact · code`** carries two true numbers: what the run on
+disk holds, and what the code as shipped today measures on the same blind list
+(`results/recall/*_liverule.json`, `*_v11.json`). They differ where an artifact
+predates a shipped change -- the 2026-08-31 triage rule on Ketubot and
+Kiddushin, the v11 detector on Kiddushin. Neither is promoted over the other;
+quote whichever answers the question you are asking, and say which.
 
 **Triage** is stories surviving, and **Detection** is recall *given the page
 survived triage* — both from `results/recall/*_jeff2005_matches.json`, whose
@@ -61,7 +68,7 @@ open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     11 item(s) in work/done/
+closed     12 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -74,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     22 item(s) in work/done/
+closed     23 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -161,4 +168,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: dc8c64f9c8233e77 -->
+<!-- board-checksum: f7aa8fdb31f33272 -->

@@ -155,7 +155,7 @@ only the latter. Whether HABITUAL is narrative evidence is definitional, not a t
 and is now its own question.
 
 **Two questions handed on rather than answered here**, because neither is a measurement:
-[`promote-liverule-denominator`](../2026-09-07-promote-liverule-denominator.md) — what the
+[`promote-liverule-denominator`](2026-09-07-promote-liverule-denominator.md) — what the
 board's cells should describe, the artifacts we hold or the code we ship — and
 [`habitual-is-narrative-evidence`](../2026-09-07-habitual-is-narrative-evidence.md), Ketubot
 82b. The board still reads the unsuffixed denominators; the live-rule figures are suffixed

@@ -355,6 +355,16 @@ def recalls() -> dict:
     This replaces a hardcoded `if t == "ketubot"`, which claimed Kiddushin triage was
     never measured for as long as the value lived only in prose.
     """
+    def measure(rows):
+        return {"n": len(rows),
+                "triage": sum(1 for r in rows if r["survived_triage"]) / len(rows),
+                # A story on pages that were all skipped cannot have been proposed,
+                # so `in_detector` implies `survived_triage` and the ratio is a true
+                # conditional. Verified 0 exceptions on both tractates, 2026-08-31.
+                "detection_given_triage": (
+                    sum(1 for r in rows if r["in_detector"])
+                    / max(sum(1 for r in rows if r["survived_triage"]), 1))}
+
     out = {}
     for t in TRACTATES:
         f = ROOT / f"results/recall/{t}_jeff2005_matches.json"
@@ -363,14 +373,36 @@ def recalls() -> dict:
         rows = json.loads(f.read_text())
         if not rows or "survived_triage" not in rows[0]:
             continue   # pre-2026-08-31 artifact: no triage field, so no cell
-        out[t] = {"n": len(rows),
-                  "triage": sum(1 for r in rows if r["survived_triage"]) / len(rows),
-                  # A story on pages that were all skipped cannot have been proposed,
-                  # so `in_detector` implies `survived_triage` and the ratio is a true
-                  # conditional. Verified 0 exceptions on both tractates, 2026-08-31.
-                  "detection_given_triage": (
-                      sum(1 for r in rows if r["in_detector"])
-                      / max(sum(1 for r in rows if r["survived_triage"]), 1))}
+        out[t] = measure(rows)
+        # THE SHIPPED CODE, beside the shipped artifact. Decided 2026-09-16
+        # (work/done/2026-09-07-promote-liverule-denominator.md): the cell prints both,
+        # because the artifacts on disk are behind the code on two tractates -- Ketubot
+        # and Kiddushin carry the pre-2026-08-31 triage rule, and Kiddushin's detector run
+        # is v10 -- and a single number would have to pick one and hide the other. The
+        # unsuffixed file is STILL the denominator; these are read from the named
+        # sensitivity variants the findings wrote, and only from those:
+        #   _liverule  Triage under the live keep-rule (2026-09-07)
+        #   _v11       Detection under the current detector (2026-09-15)
+        # An experiment flag that is default-off (the twin pass, _twinall) is NOT code
+        # we ship and is deliberately not read here.
+        code = None
+        for suffix in ("_v11", "_liverule"):
+            vf = ROOT / f"results/recall/{t}_jeff2005_matches{suffix}.json"
+            if vf.exists():
+                vrows = json.loads(vf.read_text())
+                if vrows and "survived_triage" in vrows[0]:
+                    m = measure(vrows)
+                    code = code or {}
+                    # a _v11 file carries the current detector; a _liverule file the
+                    # current triage rule. Take each capability from the file that
+                    # measured it, and never let one overwrite the other.
+                    if suffix == "_v11":
+                        code["detection_given_triage"] = m["detection_given_triage"]
+                    if suffix == "_liverule":
+                        code["triage"] = m["triage"]
+                        code.setdefault("detection_given_triage", m["detection_given_triage"])
+        if code:
+            out[t]["shipped_code"] = code
     return out
 
 
@@ -400,6 +432,10 @@ def render_state() -> str:
         detection = ""
         if t in rc:
             detection = f"{rc[t]['detection_given_triage']*100:.1f}% B"
+            sc = rc[t].get("shipped_code", {})
+            if "detection_given_triage" in sc and abs(sc["detection_given_triage"] - rc[t]["detection_given_triage"]) >= 0.0005:
+                detection = (f"{rc[t]['detection_given_triage']*100:.1f}% artifact · "
+                             f"**{sc['detection_given_triage']*100:.1f}% code** B")
         elif det:
             detection = f"{det['recall']*100:.1f}% / {det['recall_strict']*100:.1f}% B"
         # Classification and Boundaries have NO on-disk artifact carrying their
@@ -412,10 +448,19 @@ def render_state() -> str:
         boundaries = "STATUS" if (ROOT / f"results/rulers/{t}_ruler.json").exists() else ""
         review = f"{len(rounds_for(t))} rounds" if rounds_for(t) else ""
         triage = f"{rc[t]['triage']*100:.1f}% · n={rc[t]['n']} B" if t in rc else ""
+        if t in rc and "triage" in rc[t].get("shipped_code", {}):
+            triage = (f"{rc[t]['triage']*100:.1f}% artifact · "
+                      f"**{rc[t]['shipped_code']['triage']*100:.1f}% code** · n={rc[t]['n']} B")
         L.append(f"| **{t.title()}** | {cell(triage)} | {cell(detection)} | {cell(classif)} "
                  f"| {cell(boundaries)} | {cell(review)} | ⬜ |")
     L += ["", "`B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · "
           "`⬜` = never measured.", "",
+          "A cell reading **`artifact · code`** carries two true numbers: what the run on",
+          "disk holds, and what the code as shipped today measures on the same blind list",
+          "(`results/recall/*_liverule.json`, `*_v11.json`). They differ where an artifact",
+          "predates a shipped change -- the 2026-08-31 triage rule on Ketubot and",
+          "Kiddushin, the v11 detector on Kiddushin. Neither is promoted over the other;",
+          "quote whichever answers the question you are asking, and say which.", "",
           "**Triage** is stories surviving, and **Detection** is recall *given the page",
           "survived triage* — both from `results/recall/*_jeff2005_matches.json`, whose",
           "denominator each cell states. Detection is conditioned because the two",
