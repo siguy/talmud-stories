@@ -76,7 +76,7 @@ consumer instead of by hand-checking.
 
 So a claim in the sent email — *"all 59 we called certain are on your list"* — **is false
 for two of them.** Recorded in `comms/JEFF.md` under corrections owed;
-→ [`gittin-two-unjudged-yes`](../2026-09-02-gittin-two-unjudged-yes.md).
+→ [`gittin-two-unjudged-yes`](2026-09-02-gittin-two-unjudged-yes.md).
 
 They are very likely stories. They are recorded as `indicated` and kept out of the golden,
 because this week has twice shown that only a ruling on a passage settles that passage.

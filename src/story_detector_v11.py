@@ -936,6 +936,9 @@ Answer in JSON only:
                     'classification': cls,
                     'source': 'twin_pass', 'twin_of': [a, b],
                     'reasoning': result.get('reason', ''),
+                    # The review UI shows this line under each passage; without it the
+                    # twin-pass entries appeared on the 2026-09-15 page with no summary.
+                    'one_sentence_summary': result.get('reason', ''),
                 })
         return found
 

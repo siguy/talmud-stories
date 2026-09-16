@@ -11,7 +11,7 @@ superseded_by:
 
 # Two YES-tier Gittin stories nobody has ever judged
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 **Capabilities: 2 Detection, 3 Classification.** **Cost:** free. No API calls.
 
 ## The problem
@@ -42,7 +42,7 @@ told him *"all 59 we called certain are on your list"*, which is false for two o
 These are almost certainly stories — famous aggadot of exactly the kind his lists carry.
 **That is a prediction, not a result.** This project has just been reminded, twice in one
 week, that a passage is settled only by a ruling on that passage
-([lesson](../lessons/_a-policy-answer-does-not-certify-a-case.md)), so they stay
+([lesson](../../lessons/_a-policy-answer-does-not-certify-a-case.md)), so they stay
 `indicated` until he says otherwise.
 
 ## Method
@@ -82,3 +82,9 @@ week, that a passage is settled only by a ruling on that passage
 
 Write the finding to `docs/findings/<date>-gittin-listed-keys-loose.md`, add an
 `## Outcome` below, and `python3 scripts/board.py finish 2026-09-02-gittin-two-unjudged-yes`.
+
+## Outcome
+
+**Queued, 2026-09-15.** Both passages (57b:0-4 Nebuzaradan, 68a:7-12 Ashmedai) are on
+[`review_2026-09-15_bundle.html`](../../validation/ui/review_2026-09-15_bundle.html). Not
+judged until he answers; in no golden as accepted.

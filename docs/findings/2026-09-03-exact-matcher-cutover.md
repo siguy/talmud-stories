@@ -42,7 +42,7 @@ the new matcher and is flagged as such in
 
 **1. The loose-credit population nearly vanished.** `audit_proposal_credit.py` found 35
 proposals credited to an expert story by window alone, 11 of them `YES`/`HIGH_CONFIDENCE`
-([the open item](../../work/2026-09-03-loose-credited-proposals.md)). Under exact
+([the open item](../../work/done/2026-09-03-loose-credited-proposals.md)). Under exact
 anchoring that bucket is **Gittin 0, Ketubot 0, Kiddushin 1** — and the one survivor,
 Kiddushin 39b 8-10, is the single case that item now has to answer. Most of what looked
 like a review backlog was a measurement artifact.

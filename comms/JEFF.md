@@ -83,7 +83,23 @@ Six principles, applied below:
 One hard question (#2), two concrete ones, and a yes/no — and it opens with a correction
 rather than a request.
 
-### Email 2 — after phase 6a runs
+### Email 2 — the page is built, not sent (2026-09-15)
+
+**[`validation/ui/review_2026-09-15_bundle.html`](../validation/ui/review_2026-09-15_bundle.html)
+— 14 passages, four questions, one page.** Built 2026-09-15; every entry verified to carry
+Hebrew and English with the story highlighted. Simon sends it.
+
+| source | passages | the question |
+|---|---|---|
+| Kiddushin 39b 8-10 | 1 | credited to his list by a search window and never matched — is it a story? |
+| Gittin 57b:0-4, 68a:7-12 | 2 | Nebuzaradan; Ashmedai — nobody has judged them |
+| Ketubot 7a:1, 15a:0, 112a:11 | 3 | all speech — is `borderline` the right column? (**this is `jeff:speech-act-policy`, on real cases**) |
+| Yevamot 15a, 17a, 43a, 45a, 78a, 101b, 105a, 106b | 8 | a new pass that asks about the segment beside each story proposed these; his 2005 list does not carry them. **His verdicts here decide whether that pass becomes the default** |
+
+Phase 6a has run (the blast radius is 6 entries, then 17 under his quasi-speech-act
+reading — not 110), so the wait below is over. Kiddushin 44a still goes in the email as
+the mirror image.
+
 
 | # | item | why it waits |
 |---|---|---|
@@ -102,7 +118,7 @@ different, much easier act than producing a threshold.**
 
 | what we told him | what is true | where |
 |---|---|---|
-| The 2026-09-01 email said *"All 59 we called 'certain' are on your list."* | **False for two of them.** Gittin **57b:0-4** (Nebuzaradan and Zechariah's blood) and **68a:7-12** (Solomon and Ashmedai) are `YES`-tier and on no list of his. They were counted as matches by the **loose** window, which is up to 14 segments wide and credited a neighbouring story on the same daf — the third and fourth known instance of that failure. The second half of the claim — *"none of the extras we propose is one"* — still stands. Both passages go on the next page he sees. | [`gittin_golden`](../docs/findings/2026-09-02-gittin-golden.md), [`two-unjudged-yes`](../work/2026-09-02-gittin-two-unjudged-yes.md) |
+| The 2026-09-01 email said *"All 59 we called 'certain' are on your list."* | **False for two of them.** Gittin **57b:0-4** (Nebuzaradan and Zechariah's blood) and **68a:7-12** (Solomon and Ashmedai) are `YES`-tier and on no list of his. They were counted as matches by the **loose** window, which is up to 14 segments wide and credited a neighbouring story on the same daf — the third and fourth known instance of that failure. The second half of the claim — *"none of the extras we propose is one"* — still stands. Both passages go on the next page he sees. | [`gittin_golden`](../docs/findings/2026-09-02-gittin-golden.md), [`two-unjudged-yes`](../work/done/2026-09-02-gittin-two-unjudged-yes.md) |
 | The 2026-08-30 email said Ketubot 77a is a story "our own set has." | It is not. Our golden holds a **different** 77a story — the Sidon tanner at seg 8 — while his 2005 entry is at segs 13-14. Two stories on one daf, conflated by our locator's coarse window. **The substance stands** (we do miss his); the claim did not. | [`2026-08-30-recall-miss-diagnosis.md`](../docs/findings/2026-08-30-recall-miss-diagnosis.md) |
 
 Pair this with `jeff:mishnah-scope` in the same email — the correction and the scope

@@ -18,7 +18,7 @@ then this.
 **Simon, 2026-09-03, resolving `which-tightening`:** *"Story finder — tighten it per what I
 suggested. Then rerun it so we can see the actual score."* The tightening is the
 quasi-speech-act rule. It is **not** the recall aligner's window, which is a scoring defect
-handled by [`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md) and needs
+handled by [`loose-credited-proposals`](done/2026-09-03-loose-credited-proposals.md) and needs
 no run.
 
 ## What is being tightened

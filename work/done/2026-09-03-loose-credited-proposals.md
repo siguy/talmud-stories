@@ -11,14 +11,14 @@ superseded_by:
 
 # Proposals credited by a window, not a match — 11 top-confidence became 1
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then
-[the finding](../docs/findings/2026-09-03-loose-window-proposal-credit.md).
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then
+[the finding](../../docs/findings/2026-09-03-loose-window-proposal-credit.md).
 **Capabilities: 3 Classification, 5 Review.** **Cost:** free until the round.
 
 > ## UPDATE 2026-09-03 — most of this evaporated, and that is the finding
 >
 > The window that created this population was replaced
-> ([`exact-matcher-cutover`](../docs/findings/2026-09-03-exact-matcher-cutover.md)).
+> ([`exact-matcher-cutover`](../../docs/findings/2026-09-03-exact-matcher-cutover.md)).
 > `results/recall/proposal_credit_audit.json` **has already been re-run** and the
 > loose-only bucket is now **Gittin 0, Ketubot 0, Kiddushin 1**:
 >
@@ -56,7 +56,7 @@ and nothing on disk separates those.
    *"is this a story?"* wastes a verdict and gets a confusing answer.
 3. Put what survives on the next review page, with the extras already queued from
    [`gittin-two-unjudged-yes`](2026-09-02-gittin-two-unjudged-yes.md) **and the 6
-   speech-act entries from [`story-criteria`](2026-08-30-story-criteria.md) 6a/6b**
+   speech-act entries from [`story-criteria`](../2026-08-30-story-criteria.md) 6a/6b**
    (`docs/findings/2026-09-03-speech-act-blast-radius.md`). **One page, not three** —
    review throughput is the bottleneck and three pages is three asks. The three 6a
    entries that are genuinely all-speech (7a:1, 15a:0, 112a:11) are a `borderline`
@@ -84,3 +84,13 @@ break down that way means some were quietly dropped.
 
 Write the finding, add an `## Outcome`, and
 `python3 scripts/board.py finish 2026-09-03-loose-credited-proposals`.
+
+## Outcome
+
+**Queued for review, 2026-09-15.** The one survivor (Kiddushin 39b 8-10) is on
+[`review_2026-09-15_bundle.html`](../../validation/ui/review_2026-09-15_bundle.html) with the
+two Gittin extras, the three speech-only Ketubot entries, and eight Yevamot proposals from
+the twin pass — 14 passages, one page. The three 6a boundary bugs (17a:10, 54a:22,
+85a:13-14) are not on it, per this item. State of the original 11: **10 were the
+instrument** (retired with the 4-gram window, 2026-09-03), **1 queued**, 0 judged, 0
+dropped. Not sent — that is Simon's step; `comms/JEFF.md` carries it.

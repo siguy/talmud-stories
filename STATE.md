@@ -74,7 +74,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     20 item(s) in work/done/
+closed     21 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -87,7 +87,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     13 item(s) in work/done/
+closed     15 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -109,8 +109,7 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-open       2026-09-03-loose-credited-proposals
-closed     7 item(s) in work/done/
+closed     8 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -161,8 +160,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-
-**Answered — these can conclude now, and their `awaiting:` is stale:**
-
-- `2026-09-02-gittin-two-unjudged-yes` — jeff:axes-round is answered
-<!-- board-checksum: c39967cdfb36c3e2 -->
+<!-- board-checksum: 8565561da04e8dbd -->

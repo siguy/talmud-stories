@@ -54,7 +54,7 @@ at* is 110 of the 249 accepted golden entries (Ketubot 77, Kiddushin 33). The bu
   question** — 7a:1, 15a:0, 112a:11, all genuinely speech-only. The other three (17a:10,
   54a:22, 85a:13-14) are boundary bugs, not criteria cases, and go straight to a fix
   rather than a question.
-  **Bundled into [`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md)**
+  **Bundled into [`loose-credited-proposals`](done/2026-09-03-loose-credited-proposals.md)**
   as part of the single next review page, alongside the 11 loose-window cases and the
   Gittin extras — three separate asks would waste three of Jeff's replies on one round.
 - **6c — implement.** **BLOCKED on 6b by design**, not by circumstance.
