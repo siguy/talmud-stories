@@ -144,6 +144,8 @@ def main():
     ap.add_argument('--dry-run', action='store_true',
                     help='report the page partition and the few-shot source, then stop. '
                          'Makes no API call and writes nothing.')
+    ap.add_argument('--force', action='store_true',
+                    help='overwrite the output file if it already exists')
     ap.add_argument('--model', default=MODEL)
     ap.add_argument('--thinking', default=default_thinking_level(),
                     help='low|medium|high (Gemini 3.x)')
@@ -151,6 +153,21 @@ def main():
     ap.add_argument('--retriage', action='store_true',
                     help='re-run Stage 1 even if a cache exists (costs money)')
     args = ap.parse_args()
+
+    # Refuse an overwrite up front, before a single call is spent — and before the
+    # 20-odd minutes of one. The default output path is the SHIPPED artifact's path
+    # (`results/v11/<t>/<t>_v11.json`), so a plain re-run silently replaces the run a
+    # published number rests on; that is how the Gittin PR #20 artifact was clobbered on
+    # 2026-09-22. Recoverable there only because it was committed. Same shape as
+    # Critical Rule #4, which exists because the bare evaluator overwrote a baseline.
+    out = Path(args.output) if args.output else (
+        PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
+    if out.exists() and not (args.force or args.dry_run or args.triage_only):
+        log.error('%s already exists. Re-running would replace an artifact that may be '
+                  'the one a published number rests on. Write somewhere else with '
+                  '--output, or pass --force if replacing it is the intent.',
+                  out.relative_to(PROJECT_ROOT) if out.is_relative_to(PROJECT_ROOT) else out)
+        return 1
 
     env = load_env()
     log.info('env loaded from %s', env or 'the environment only')
@@ -253,8 +270,6 @@ def main():
                            'elapsed_seconds': round(elapsed, 1),
                            'pages': len(pages), 'source': src.name,
                            'ground_truth': f'{FEW_SHOT_SOURCE[args.tractate]} (cross-tractate)'}
-    out = Path(args.output) if args.output else (
-        PROJECT_ROOT / 'results' / 'v11' / args.tractate / f'{args.tractate}_v11.json')
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(results, indent=2, ensure_ascii=False))
 

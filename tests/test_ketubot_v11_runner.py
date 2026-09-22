@@ -117,3 +117,32 @@ def test_ketubot_is_runnable_and_dry_run_spends_nothing(monkeypatch):
     assert r.returncode == 0, r.stderr
     assert 'DRY RUN' in r.stdout
     assert 'cross-tractate for ketubot' in r.stdout
+
+
+# --- the overwrite guard ------------------------------------------------
+
+def test_a_run_refuses_to_replace_an_existing_artifact(tmp_path):
+    """The default output path IS the shipped artifact's path, so a plain re-run
+    silently replaces the run a published number rests on — which is how the Gittin
+    PR #20 artifact was clobbered on 2026-09-22. It must refuse, and it must refuse
+    BEFORE spending a single call, not after twenty minutes of them."""
+    target = tmp_path / 'already_here.json'
+    target.write_text('{}')
+    r = subprocess.run([sys.executable, 'scripts/run_new_tractate.py',
+                        '--tractate', 'gittin', '--output', str(target)],
+                       cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 1, 'an existing output must stop the run'
+    assert 'already exists' in r.stdout + r.stderr
+    assert target.read_text() == '{}', 'the existing file was touched'
+    # and it stopped before Stage 1, not after
+    assert 'Stage 1:' not in r.stdout
+
+
+def test_force_and_dry_run_are_not_blocked_by_the_guard(tmp_path):
+    target = tmp_path / 'already_here.json'
+    target.write_text('{}')
+    r = subprocess.run([sys.executable, 'scripts/run_new_tractate.py',
+                        '--tractate', 'gittin', '--output', str(target), '--dry-run'],
+                       cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
+    assert 'DRY RUN' in r.stdout
