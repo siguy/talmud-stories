@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Put Ketubot's pages and cached triage labels where the v11 runner looks for them.
+Put a legacy tractate's pages and cached triage labels where the v11 runner looks.
 
-Ketubot predates the `results/sefaria/<tractate>.json` layout, so its 222 dapim sit
-in three files from two earlier waves, and its triage cache in two more. This script
-merges them into the current layout so `scripts/run_new_tractate.py --tractate ketubot`
-can read them like any other tractate.
+Ketubot and Kiddushin predate the `results/sefaria/<tractate>.json` layout, so their
+pages sit in files from earlier waves — Ketubot's 222 dapim across three, Kiddushin's
+162 in one — and their triage caches likewise. This script merges them into the current
+layout so `scripts/run_new_tractate.py --tractate <t>` can read them like any other.
 
 **It never calls Sefaria.** Every page already on disk is copied verbatim; the golden's
 segment indices are anchored to that text, and a re-fetch can renumber them silently.
@@ -16,8 +16,8 @@ Idempotent. `--check` verifies what is on disk and writes nothing; it is what th
 suite calls.
 
 Usage:
-  python3 scripts/consolidate_ketubot_pages.py            # write both files
-  python3 scripts/consolidate_ketubot_pages.py --check    # verify, exit 1 on mismatch
+  python3 scripts/consolidate_legacy_pages.py --tractate ketubot
+  python3 scripts/consolidate_legacy_pages.py --tractate kiddushin --check
 """
 import argparse
 import hashlib
@@ -27,21 +27,29 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 
-# (path, key holding the page list or None if the file IS the list)
-PAGE_SOURCES = [
-    ('results/v5/pages_2-39.json', 'pages'),
-    ('results/v5/pages_40-60.json', 'pages'),
-    ('results/v7/ketubot_pages_61-112.json', None),
-]
-TRIAGE_SOURCES = [
-    'results/v7/event_triage_2-60.json',
-    'results/v7/event_triage_61-112.json',
-]
-
-PAGES_OUT = 'results/sefaria/ketubot.json'
-TRIAGE_OUT = 'results/triage/ketubot.json'
-
-EXPECTED_PAGES = 222  # 76 + 42 + 104
+# Per tractate: where the pages are, where the triage is, and how many dapim there
+# must be. `pages` entries are (path, key holding the list, or None if the file IS a list).
+# EXPECTED is asserted, not inferred — a source file quietly losing a page would otherwise
+# consolidate cleanly and show up later as a recall miss.
+SOURCES = {
+    'ketubot': {
+        'name': 'Ketubot',
+        'daf_range': '2a-112b',
+        'pages': [('results/v5/pages_2-39.json', 'pages'),        # 76
+                  ('results/v5/pages_40-60.json', 'pages'),       # 42
+                  ('results/v7/ketubot_pages_61-112.json', None)],  # 104
+        'triage': ['results/v7/event_triage_2-60.json',
+                   'results/v7/event_triage_61-112.json'],
+        'expected': 222,
+    },
+    'kiddushin': {
+        'name': 'Kiddushin',
+        'daf_range': '2a-82b',
+        'pages': [('results/v7/kiddushin_pages.json', None)],
+        'triage': ['results/v7/event_triage_kiddushin.json'],
+        'expected': 162,
+    },
+}
 
 
 def _load(rel, key):
@@ -60,10 +68,10 @@ def segment_digest(pages):
     return h.hexdigest()
 
 
-def collect_pages():
-    """Ordered, de-duplicated {ref, segments} across the three sources."""
+def collect_pages(spec):
+    """Ordered, de-duplicated {ref, segments} across this tractate's sources."""
     pages, seen = [], {}
-    for rel, key in PAGE_SOURCES:
+    for rel, key in spec['pages']:
         for p in _load(rel, key):
             ref = p['ref']
             if ref in seen:
@@ -74,9 +82,9 @@ def collect_pages():
     return pages
 
 
-def collect_triage():
+def collect_triage(spec):
     labels, seen = {}, {}
-    for rel in TRIAGE_SOURCES:
+    for rel in spec['triage']:
         for ref, types in _load(rel, 'triage_results').items():
             if ref in seen:
                 raise SystemExit(f'duplicate triage ref {ref!r}: {rel} and {seen[ref]}')
@@ -85,12 +93,13 @@ def collect_triage():
     return labels
 
 
-def build():
-    pages = collect_pages()
-    if len(pages) != EXPECTED_PAGES:
-        raise SystemExit(f'expected {EXPECTED_PAGES} pages, collected {len(pages)}')
+def build(tractate):
+    spec = SOURCES[tractate]
+    pages = collect_pages(spec)
+    if len(pages) != spec['expected']:
+        raise SystemExit(f'expected {spec["expected"]} pages, collected {len(pages)}')
 
-    triage = collect_triage()
+    triage = collect_triage(spec)
     missing = [p['ref'] for p in pages if p['ref'] not in triage]
     extra = [r for r in triage if r not in {p['ref'] for p in pages}]
     if missing or extra:
@@ -104,20 +113,21 @@ def build():
             raise SystemExit(f'{p["ref"]}: {len(triage[p["ref"]])} triage labels for '
                              f'{len(p["segments"])} segments — caches disagree about the text')
 
+    origins = ', '.join(rel for rel, _ in spec['pages'])
     pages_doc = {
-        'tractate': 'Ketubot',
-        'source': 'consolidated from results/v5/ and results/v7/ — never re-fetched',
-        'consolidated_at': '2026-09-15',
-        'daf_range': '2a-112b',
-        'note': ('Text only. Assembled by scripts/consolidate_ketubot_pages.py from the '
+        'tractate': spec['name'],
+        'source': f'consolidated from {origins} — never re-fetched',
+        'daf_range': spec['daf_range'],
+        'note': ('Text only. Assembled by scripts/consolidate_legacy_pages.py from the '
                  'pages already on disk, because the golden\'s segment indices are '
                  'anchored to them. Do not replace this with a fresh Sefaria fetch.'),
         'segment_digest': segment_digest(pages),
         'pages': pages,
     }
     triage_doc = {
-        'tractate': 'Ketubot',
-        'model': 'v7_event_triage (cached; see results/v7/event_triage_*.json)',
+        'tractate': spec['name'],
+        'model': 'v7_event_triage (cached; see the files named in `source`)',
+        'source': ', '.join(spec['triage']),
         'note': 'Consolidated, not re-run. Labels are reused as-is.',
         'triage_results': triage,
     }
@@ -127,13 +137,14 @@ def build():
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument('--tractate', required=True, choices=sorted(SOURCES))
     ap.add_argument('--check', action='store_true',
                     help='verify what is on disk; write nothing')
     args = ap.parse_args()
 
-    pages_doc, triage_doc = build()
-    pages_path = PROJECT_ROOT / PAGES_OUT
-    triage_path = PROJECT_ROOT / TRIAGE_OUT
+    pages_doc, triage_doc = build(args.tractate)
+    pages_path = PROJECT_ROOT / 'results' / 'sefaria' / f'{args.tractate}.json'
+    triage_path = PROJECT_ROOT / 'results' / 'triage' / f'{args.tractate}.json'
 
     if args.check:
         problems = []

@@ -89,7 +89,7 @@ def test_keys_parse_for_every_tractate_not_only_ketubot():
 
 def test_consolidated_ketubot_matches_its_sources():
     """`--check` rebuilds from the v5/v7 files and compares digests."""
-    r = subprocess.run([sys.executable, 'scripts/consolidate_ketubot_pages.py', '--check'],
+    r = subprocess.run([sys.executable, 'scripts/consolidate_legacy_pages.py', '--tractate', 'ketubot', '--check'],
                        cwd=ROOT, capture_output=True, text=True)
     assert r.returncode == 0, r.stderr
 

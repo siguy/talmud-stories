@@ -47,7 +47,7 @@ log = logging.getLogger(__name__)
 MODEL = 'gemini-3-flash-preview'
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
-KNOWN = ('gittin', 'yevamot', 'eruvin', 'ketubot')
+KNOWN = ('gittin', 'yevamot', 'eruvin', 'ketubot', 'kiddushin')
 
 # Which tractate's expert labels become the few-shot examples for each run.
 # **Never a tractate's own labels** — Critical Rule #2 and Lesson 2: an example drawn
@@ -58,6 +58,7 @@ FEW_SHOT_SOURCE = {
     'yevamot': 'ketubot',
     'eruvin': 'ketubot',
     'ketubot': 'kiddushin',
+    'kiddushin': 'ketubot',
 }
 
 

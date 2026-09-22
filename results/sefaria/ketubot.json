@@ -1,9 +1,8 @@
 {
   "tractate": "Ketubot",
-  "source": "consolidated from results/v5/ and results/v7/ — never re-fetched",
-  "consolidated_at": "2026-09-15",
+  "source": "consolidated from results/v5/pages_2-39.json, results/v5/pages_40-60.json, results/v7/ketubot_pages_61-112.json — never re-fetched",
   "daf_range": "2a-112b",
-  "note": "Text only. Assembled by scripts/consolidate_ketubot_pages.py from the pages already on disk, because the golden's segment indices are anchored to them. Do not replace this with a fresh Sefaria fetch.",
+  "note": "Text only. Assembled by scripts/consolidate_legacy_pages.py from the pages already on disk, because the golden's segment indices are anchored to them. Do not replace this with a fresh Sefaria fetch.",
   "segment_digest": "35794dc72ab15a2b4d9d3de681aa529cf93b4e9e954aba10923005507c9b63d0",
   "pages": [
     {

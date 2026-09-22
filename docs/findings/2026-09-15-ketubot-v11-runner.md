@@ -5,7 +5,7 @@ Item: [`ketubot-v11-runner`](../../work/done/2026-09-15-ketubot-v11-runner.md).
 Reproduce with
 
 ```bash
-python3 scripts/consolidate_ketubot_pages.py --check
+python3 scripts/consolidate_legacy_pages.py --tractate ketubot --check
 python3 scripts/run_new_tractate.py --tractate ketubot --dry-run
 ```
 
@@ -33,7 +33,7 @@ Lesson 2** — and produced a number that looked like every other tractate's.
 
 ## What was built
 
-**`scripts/consolidate_ketubot_pages.py`** — merges the five files into the current layout.
+**`scripts/consolidate_ketubot_pages.py`** *(renamed `consolidate_legacy_pages.py` 2026-09-22 when Kiddushin needed the same treatment; `--tractate` selects)* — merges the five files into the current layout.
 It copies the pages already on disk and never calls Sefaria: the golden's segment indices
 are anchored to that text, and a re-fetch can renumber them silently. It carries `ref` and
 `segments` only; the `v5` files also hold a `stories` key, which is v5 *detector output*
