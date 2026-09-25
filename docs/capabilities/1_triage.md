@@ -110,7 +110,7 @@ are unaffected; the new rule applies to future runs.
 > Ketubot **98.0%** (rule +1.4, matcher −0.7 — the 98.7% on record was the retired window),
 > Kiddushin **97.8%** (rule +2.2, matcher nothing). In
 > `results/recall/*_jeff2005_matches_liverule.json`; the board does **not** read them, and
-> what it should read is [`promote-liverule-denominator`](../../work/2026-09-07-promote-liverule-denominator.md).
+> what it should read is [`promote-liverule-denominator`](../../work/done/2026-09-07-promote-liverule-denominator.md).
 > → [`triage-live-rule-remeasured`](../findings/2026-09-07-triage-live-rule-remeasured.md)
 >
 > **Never quote a Triage figure without saying which rule and which matcher produced it.**

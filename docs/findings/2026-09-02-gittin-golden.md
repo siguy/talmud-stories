@@ -83,7 +83,7 @@ of aggadah his lists are full of — but *likely* is not a verdict, and this pro
 just been reminded that a passage is settled only by a ruling on that passage
 ([lesson](../../lessons/_a-policy-answer-does-not-certify-a-case.md)). They are recorded as
 `indicated`, they stay out of the golden, and they go on the next page he sees.
-→ [`gittin-two-unjudged-yes`](../../work/2026-09-02-gittin-two-unjudged-yes.md)
+→ [`gittin-two-unjudged-yes`](../../work/done/2026-09-02-gittin-two-unjudged-yes.md)
 
 ## Why the builder imports the recall module instead of re-implementing the match
 

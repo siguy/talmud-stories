@@ -85,7 +85,8 @@ def test_separate_incident_is_added_beside_and_only_there():
     out = d._find_adjacent_twins('X 1a', segs, [D, N, N, D],
                                  [{'start_segment': 1, 'end_segment': 1}])
     assert out == [{'start_segment': 2, 'end_segment': 2, 'classification': 'YES',
-                    'source': 'twin_pass', 'twin_of': [1, 1], 'reasoning': 'r'}]
+                    'source': 'twin_pass', 'twin_of': [1, 1], 'reasoning': 'r',
+                    'one_sentence_summary': 'r'}]
     assert d.twin_verdicts[0]['verdict'] == 'separate_incident'
 
 

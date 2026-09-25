@@ -84,7 +84,7 @@ of:
 
 Nothing here distinguishes them, and nothing should try to — that is a verdict, and
 verdicts come from Jeff. The 11 top-confidence cases go on the next review page:
-[`work/2026-09-03-loose-credited-proposals.md`](../../work/2026-09-03-loose-credited-proposals.md).
+[`work/2026-09-03-loose-credited-proposals.md`](../../work/done/2026-09-03-loose-credited-proposals.md).
 
 ## The rule worth keeping
 

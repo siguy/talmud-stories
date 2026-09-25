@@ -44,7 +44,7 @@ actual score."* So the change is
 14-segment window is *also* "too loose", credits 35 proposals as matching his list when
 they do not, and **a re-run cannot fix it** — it is a scoring defect over artifacts we
 already hold, repaired by re-scoring for free →
-[`loose-credited-proposals`](2026-09-03-loose-credited-proposals.md).
+[`loose-credited-proposals`](done/2026-09-03-loose-credited-proposals.md).
 
 ## AND IT RUNS AFTER THE THINKING EXPERIMENT — a second ordering the board cannot see
 

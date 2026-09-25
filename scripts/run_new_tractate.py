@@ -49,6 +49,18 @@ CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
 KNOWN = ('gittin', 'yevamot', 'eruvin', 'ketubot', 'kiddushin')
 
+# Every tractate reads `results/sefaria/<t>.json` and `results/triage/<t>.json`. Ketubot
+# and Kiddushin predate that layout; `scripts/consolidate_legacy_pages.py` copies their
+# v5/v7-era files there verbatim (never re-fetched; `--check` verifies the text digest).
+#
+# Integration note, 2026-09-25: main had meanwhile added a per-tractate override dict
+# that read Kiddushin's v7 files in place. Both solved the same problem; one mechanism is
+# kept because two ways to read one tractate is how a run ends up on text nobody checked.
+# Consolidation is the one that can express Ketubot (three page files, two triage files),
+# and for Kiddushin it yields byte-identical text, so no result changes. The Kiddushin
+# artifact main produced through the override records `source: kiddushin_pages.json` and
+# is still exactly reproducible.
+
 # Which tractate's expert labels become the few-shot examples for each run.
 # **Never a tractate's own labels** — Critical Rule #2 and Lesson 2: an example drawn
 # from a page being scored teaches the model that page's answer. Ketubot cannot use
@@ -178,8 +190,8 @@ def main():
 
     src = PROJECT_ROOT / 'results' / 'sefaria' / f'{args.tractate}.json'
     data = json.loads(src.read_text())
-    pages = data['pages']
-    name = data.get('tractate') or args.tractate.title()
+    pages = data['pages'] if isinstance(data, dict) else data
+    name = (data.get('tractate') if isinstance(data, dict) else None) or args.tractate.title()
     if args.refs:
         want = [r.strip() for r in args.refs.split(',')]
         pages = [p for p in pages if p['ref'] in want]
@@ -261,17 +273,30 @@ def main():
         log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
 
     t0 = time.time()
+    out.parent.mkdir(parents=True, exist_ok=True)
+    # Stage 2 checkpoints beside the output and resumes from it on a re-run of the same
+    # command; removed once the run has been written in full.
+    checkpoint = str(out) + '.partial.json'
     results = detector.run_pipeline(pages, triage_results=triage,
-                                    delay=args.delay, tractate=name)
+                                    delay=args.delay, tractate=name,
+                                    checkpoint_path=checkpoint)
     elapsed = time.time() - t0
 
     results['version'] = 'v11'
     results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
                            'elapsed_seconds': round(elapsed, 1),
                            'pages': len(pages), 'source': src.name,
-                           'ground_truth': f'{FEW_SHOT_SOURCE[args.tractate]} (cross-tractate)'}
-    out.parent.mkdir(parents=True, exist_ok=True)
+                           'ground_truth': f'{FEW_SHOT_SOURCE[args.tractate]} (cross-tractate)',
+                           'resumed_pages': getattr(detector, 'resumed_pages', 0),
+                           'stage2_errors': getattr(detector, 'stage2_errors', [])}
+    if results['run_meta']['resumed_pages']:
+        log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)
+    if results['run_meta']['stage2_errors']:
+        log.warning('%d page(s) have a Stage 2 error and NO verdict: %s',
+                    len(results['run_meta']['stage2_errors']), results['run_meta']['stage2_errors'])
     out.write_text(json.dumps(results, indent=2, ensure_ascii=False))
+    if os.path.exists(checkpoint):
+        os.remove(checkpoint)
 
     stories = sum(1 for p in results['pages'] for s in p.get('stories', [])
                   if s.get('classification') != 'NOT_A_STORY')

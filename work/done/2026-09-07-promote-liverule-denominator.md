@@ -12,7 +12,7 @@ superseded_by:
 # The board reports the artifacts; the code says something else
 
 **Self-contained.** Read
-[`2026-09-07-triage-live-rule-remeasured`](../docs/findings/2026-09-07-triage-live-rule-remeasured.md).
+[`2026-09-07-triage-live-rule-remeasured`](../../docs/findings/2026-09-07-triage-live-rule-remeasured.md).
 **Not a measurement — a decision, with the measurement already done.** **Cost: none.**
 
 ## The problem
@@ -54,3 +54,14 @@ Needs Simon, at integration on main, with STATUS — not on a branch. Whichever 
 ## When done
 
 `## Outcome` here, then `python3 scripts/board.py finish 2026-09-07-promote-liverule-denominator`.
+
+## Outcome
+
+**Option 3, 2026-09-16 — the cell prints both.** `board.py recalls()` now reads the named
+variants beside the denominator — `_liverule` for Triage under the shipped rule, `_v11` for
+Detection under the current detector — and renders `96.6% artifact · **98.0% code**`
+where they differ. The unsuffixed file is still the denominator and is not touched. A
+default-off experiment (`_twinall`) is deliberately not read: it is not code we ship.
+Pinned by a test. The reason for both rather than one: this project was bitten three
+times in a fortnight by a number that was right for its own question and quoted against
+another; two labelled numbers cannot be misquoted that way.

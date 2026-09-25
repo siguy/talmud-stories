@@ -199,3 +199,21 @@ def test_the_awaiting_list_names_only_what_is_really_blocked():
             assert f"`{item['slug']}`" in state, (
                 f"{item['slug']} awaits {stale}, which is answered, and the board says "
                 f"nothing. A stale await must be named so it gets cleared.")
+
+
+def test_board_prints_artifact_and_code_side_by_side_and_ignores_experiments():
+    """Decided 2026-09-16: where the artifact on disk is behind the shipped code, the
+    cell carries both numbers. The shipped-code figure comes only from the named
+    variants (_liverule, _v11); a default-off experiment (_twinall) is never read."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+    import board
+    rc = board.recalls()
+    assert "shipped_code" in rc["ketubot"] and "triage" in rc["ketubot"]["shipped_code"]
+    assert rc["ketubot"]["shipped_code"]["triage"] > rc["ketubot"]["triage"]
+    assert "detection_given_triage" in rc["kiddushin"]["shipped_code"]
+    # Yevamot has a _twinall variant on disk and nothing else: must show NO code figure
+    assert "shipped_code" not in rc.get("yevamot", {})
+    state = (Path(__file__).resolve().parents[1] / "STATE.md").read_text()
+    assert "artifact · **98.0% code**" in state

@@ -83,7 +83,7 @@ is the integration step on main.
 
 1. The loose-credit population — 35 proposals, 11 of them top-confidence — drops to
    **Gittin 0, Ketubot 0, Kiddushin 1**.
-   [`2026-09-03-loose-credited-proposals`](../2026-09-03-loose-credited-proposals.md) is now
+   [`2026-09-03-loose-credited-proposals`](2026-09-03-loose-credited-proposals.md) is now
    a one-case item, not an eleven-case one; its `results/recall/proposal_credit_audit.json`
    has been rewritten here.
 2. **One entry left the Gittin golden**, and the guardrail was the reason it got looked at:

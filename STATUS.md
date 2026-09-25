@@ -60,7 +60,7 @@ twin pass above.
 *Every recall cell below is measured under exact-phrase anchoring on the **shipped
 artifacts**. Two measured improvements are NOT in the cells because neither is the
 shipped default: the live Triage rule (Ketubot 98.0 / Kiddushin 97.8, see
-[`promote-liverule-denominator`](work/2026-09-07-promote-liverule-denominator.md)) and
+[`promote-liverule-denominator`](work/done/2026-09-07-promote-liverule-denominator.md)) and
 the twin pass (Yevamot Detection **94.1%**, `TWIN_PASS=1 TWIN_TRIGGER=all`, off by
 default). Read a cell as "what the artifact on disk holds", never as the ceiling.*
 
@@ -577,7 +577,7 @@ taught to read `results/v7/ketubot_pages_*.json` rather than `results/sefaria/`;
 of plumbing, then ~30 min of run. Kiddushin (3) and Gittin (1) after.
 
 **3. Decide what the board's cells describe** —
-[`promote-liverule-denominator`](work/2026-09-07-promote-liverule-denominator.md). Simon's
+[`promote-liverule-denominator`](work/done/2026-09-07-promote-liverule-denominator.md). Simon's
 call. Recommended: print both per row.
 
 **4. `HABITUAL` as narrative evidence** —
