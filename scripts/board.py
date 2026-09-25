@@ -642,6 +642,15 @@ def _is_verdict(v: dict) -> bool:
     return any(k in v for k in VERDICT_KEYS) or bool(v.get("notes"))
 
 
+def _declared_non_expert(data):
+    """The shared rule, loaded by path so the board needs nothing on sys.path."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("expert_rounds", ROOT / "scripts/expert_rounds.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.declared_non_expert(data)
+
+
 def unfolded_verdict_files() -> list[tuple[str, int]]:
     """
     Verdict files on disk that no ruler consumed, with how many verdicts each holds.
@@ -654,8 +663,17 @@ def unfolded_verdict_files() -> list[tuple[str, int]]:
         used |= set(rounds_for(t))
     out = []
     for p in sorted((ROOT / "validation/feedback").glob("*.json")):
-        if p.name in used or "Simon" in p.name:
+        if p.name in used:
             continue
+        # A declared non-expert round is not a lost expert round, and listing it under
+        # "a round Jeff gave us" sends the reader after a backlog that does not exist.
+        # This was `"Simon" in p.name` — a filename, case-sensitive — which let
+        # `..._simon_prescreen_...` through (scripts/expert_rounds.py has the history).
+        try:
+            if _declared_non_expert(json.loads(p.read_text())):
+                continue
+        except (json.JSONDecodeError, OSError):
+            pass
         n = _verdict_count(p)
         if n:
             out.append((p.name, n))

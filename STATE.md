@@ -81,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     23 item(s) in work/done/
+closed     26 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -133,6 +133,7 @@ closed     1 item(s) in work/done/
 |---|---|---|
 | `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
 | `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
+| `results/expert_lists/ketubot_2005.json` | **BLIND** | 149 parsed · 149 blind · 149 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
@@ -154,7 +155,6 @@ naming an empty file as a lost round buries the one that is not.
 
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
-- `validation/feedback/review_2026-09-15_bundle_simon_prescreen_2026-09-16.json` — **8 verdicts**
 
 ## Open with Jeff
 
@@ -168,4 +168,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: f7aa8fdb31f33272 -->
+<!-- board-checksum: 91f3724afe0f0474 -->

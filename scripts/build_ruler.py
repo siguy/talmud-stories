@@ -77,6 +77,7 @@ def _load(name, path):
 # already published for Ketubot (Lesson: same script, or the comparison is meaningless).
 recall = _load('measure_recall', 'scripts/measure_recall_vs_expert_list.py')
 kid = _load('parse_kiddushin_list', 'scripts/parse_kiddushin_list.py')
+declared_non_expert = _load('expert_rounds', 'scripts/expert_rounds.py').declared_non_expert
 
 ACCEPTED = {'correct', 'approve', 'reject_remove', 'adjust'}
 REJECTED = {'incorrect', 'confirm_remove'}
@@ -86,6 +87,8 @@ REJECTED = {'incorrect', 'confirm_remove'}
 # would turn a recorded uncertainty back into a false certainty.
 BORDERLINE = {'borderline'}
 REVIEW_GLOBS = ['validation/feedback/*.json', 'jeff comms/*.json']
+
+# Whose verdicts are ground truth — one shared rule; see scripts/expert_rounds.py.
 REVIEW_KEY = re.compile(r'^(.+?)_(\d+)-(\d+)$')
 
 # Conservative note triage. Order matters: the first hit wins.
@@ -154,6 +157,11 @@ def load_reviews(tractate):
                 continue
             items = data.get('reviews') or data.get('feedback')
             if not isinstance(items, dict):
+                continue
+            who = declared_non_expert(data)
+            if who:
+                log.warning('SKIPPED %s: %d verdict(s) by %r, a declared non-expert '
+                            'reviewer — not ground truth', path.name, len(items), who)
                 continue
             for key, val in items.items():
                 if not isinstance(val, dict):
