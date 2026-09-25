@@ -339,6 +339,49 @@ Two lessons in that:
   section explaining what was wrong and why. A project that hides its wrong turns teaches
   nobody, including its future self.
 
+## The Helper That Forgot the Rules (2026-09-25)
+
+The "twin pass" was a good idea that worked: after the main detector finds a story, ask
+about the passage right next to it — *is this a separate incident?* It recovered every
+twin story Jeff's Yevamot list had that we'd missed. It also proposed eight passages his
+list didn't have. You threw out four; Jeff threw out three more; one was a real find.
+
+When you line up Jeff's three rejections, they're all the same kind of thing: the
+Gemara *commenting* on the story next door, or a bare report of what a rabbi did with
+nothing following. And here's the twist: **the main detector already knows to reject
+those.** Its prompt has said "fewer than two distinct actions → not a story" since May.
+The twin pass is a *separate* prompt, and nobody copied the rules across. It only asked
+"same actors or different?" — so it cheerfully re-admitted, one passage at a time, the
+exact things the main detector had been told to throw out.
+
+It's like hiring a second bouncer for the side door and forgetting to give them the list.
+The fix was to give them the list — Jeff's own words for each reason — and then check it
+cheaply: instead of re-running the whole detector (hours, and everything else could shift),
+we re-asked just the 21 twin questions already on disk, old wording vs new, same day. The
+old wording gave the same 21 answers it gave two weeks ago, which proves the model hadn't
+drifted and the wording was the only thing that changed. The new wording drops 3 of the 7
+known-bad additions — and one passage from Jeff's 2005 list, which under his *current*
+rules looks like a legal ruling. We kept the change and wrote the loss down, rather than
+hide it.
+
+### And a second thing: a label with nowhere to go
+
+Back in February Jeff wrote "this is a borderline story" ten times. Our golden had no
+"borderline" box, so a script filed each one under "low confidence" with a prefix that
+*reads* like Jeff's words. For six months the dataset said something he never said. We
+found them only because the script had kept his original sentence. **When someone gives
+you an answer your form has no box for, keep the answer and add the box — don't round.**
+(Lesson 42.)
+
+### The mistake I made in the same session
+
+I told you the "biblical characters are out of scope" rule was brand new — "never written
+down". It had been in the pipeline since May, with a filter and everything; it's recorded
+in `docs/capabilities/3_classification.md`, which the project's own route says to read
+*before* starting work on a capability. I skipped that step, caught it while updating the
+docs, and corrected the finding in place with a note saying so. The lesson is the route's
+lesson: the record exists so you don't re-discover (or re-announce) what's already known.
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.
@@ -357,4 +400,4 @@ Two lessons in that:
 
 **Few-shot learning:** Showing a model a few examples of what you want before asking it to do the task. Like giving someone three sample paintings and saying "find more like these." The risk is the model focuses on surface features (same colors) instead of deeper patterns (same artistic movement).
 
-**Ground truth / Golden dataset:** The definitive set of correct answers, verified by an expert. Everything else is measured against this. Ours has 187 entries labeled by Jeff Rubenstein, 164 of them accepted as stories.
+**Ground truth / Golden dataset:** The definitive set of correct answers, verified by an expert. Everything else is measured against this. The Ketubot one has 187 entries labeled by Jeff Rubenstein; `GOLDEN_COUNTS` in `tests/test_bookkeeping.py` has the live counts, and since 2026-09-25 it includes a BORDERLINE class.

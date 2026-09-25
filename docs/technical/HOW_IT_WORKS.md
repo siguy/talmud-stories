@@ -89,8 +89,28 @@ Classification uses **6 criteria**:
 - **LOW_CONFIDENCE**: 3-4 criteria, OR 1 event + discussion (borderline stories)
 - **NOT_A_STORY**: <3 criteria OR disqualifier
 
+The goldens add two labels the detector does not emit (2026-09-25): **BORDERLINE**
+(Jeff's own column — speech with conflict, R-C2) and **OUT_OF_SCOPE** (a story, but of
+biblical characters, R-S1).
+
 **Automatic Disqualifiers → NOT_A_STORY:**
 Mishna sections, hypothetical cases, habitual actions, pure legal rulings, legal deliberation, legal debate settings
+
+### Stage 2b: Twin Pass (v11, on by default since 2026-09-25)
+
+The Talmud often tells the same shape of anecdote two or three times in a row. Stage 2
+tends to return one and stop. So after Stage 2, for each free segment beside a found
+story, one narrow call: *here is story A, here is the segment next to it — separate
+incident, same story, or not a story?* Adds only; never moves or drops a story.
+
+- Code: `_find_adjacent_twins()` / `_twin_prompt()` in `src/story_detector_v11.py`
+- Flags: `TWIN_PASS` (default `1`; `0` = off), `TWIN_TRIGGER` (default `all`;
+  `labelled` asks only beside NARRATIVE_EVENT / VERBAL_ACT segments), `TWIN_REACH` (1)
+- Its `not_a_story` option names Jeff's rejections: Gemara commentary on A, a bare
+  report with nothing following, a seating description, a biblical episode
+  (`docs/STORY_RULES.md` R-B4, R-C5, R-S1)
+- A failed call adds nothing and is counted on `twin_failures`
+- Findings: `docs/findings/2026-09-14-twin-pass.md`, `2026-09-25-jeff-verdicts-scope-commentary-reports.md`
 
 ### Stage 3: Adversarial Validation (disabled)
 

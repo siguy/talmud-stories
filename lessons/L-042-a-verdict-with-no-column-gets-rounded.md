@@ -29,5 +29,5 @@ prefix was fixed text we could strip. Without the first, the distinction would b
 
 - A new answer category in feedback is a **schema question first**, not a mapping.
 - Never prefix our words onto a quote of his; put our mapping in its own field.
-- Relabel from **his words only**. The other 65 `LOW_CONFIDENCE` entries may well be
+- Relabel from **his words only**. The other 64 `LOW_CONFIDENCE` entries may well be
   borderline too — that is his call, not an inference from ours.

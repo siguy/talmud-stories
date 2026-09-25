@@ -71,12 +71,23 @@ post-biblical figures."*
 - **Status:** settled for biblical episodes retold. **Not** a judgment that they are not
   stories — he marked confidence *right* on both, "that it is a story. But not our kind of
   story." So they get their own label, **`OUT_OF_SCOPE`**, never `NOT_A_STORY`.
-- **It was always there.** Neither passage is on his 2005 Gittin list: the rule was
-  applied in 2005 and simply never written down.
+- **Not new as a rule — new in its wording and its label.** It has been in the pipeline
+  since v8 Wave 2 (2026-05-24, Issue #6(b), from his 2026-04-23 Kiddushin review): a
+  Stage 2 disqualifier ("Biblical narrative… We catalog rabbinic stories") and
+  `filter_biblical_actor_stories()` at Stage 4j, which demotes to `NOT_A_STORY`. Neither
+  passage is on his 2005 Gittin list either. What 2026-09-23 adds is the boundary —
+  *rabbis and post-biblical figures* — and that the right label is `OUT_OF_SCOPE`, which
+  the filter does not yet emit. *(The first draft of this entry, earlier the same day,
+  said the rule had never been written down. It had; it was in
+  `docs/capabilities/3_classification.md`, unread — route step 2.)*
+- **Why the filter missed all three:** it tests the actor list against a fixed name
+  set, and *Nebuzaradan, Benayahu, Ashmedai, Doeg, Amasa* are not in it — any unlisted
+  actor makes a story "not biblical-only". A name list has a long tail by construction;
+  adding these five would fit three cases (Lesson 18). Not changed.
 - **Rate, measured first** (Lesson 18): by the detector's summaries, **3 proposals of ~560**
-  across Gittin, Kiddushin, Yevamot and Ketubot are biblical episodes (Gittin 57b:0-4,
+  across Gittin, Kiddushin, Yevamot and Ketubot got past the filter (Gittin 57b:0-4,
   68a:7-12; Yevamot 77a:0, Doeg and the lineage of David — unjudged). No accepted entry
-  in any golden is one. A small false-positive source, not a recall risk.
+  in any golden is one.
 - **Applied:** Gittin 57b:0-4 and 68a:7-12 are in `gittin_canonical.json`'s
   `out_of_scope` list — neither entries nor unlabelled (`build_gittin_golden.py`). In the
   twin-pass question since 2026-09-25.
@@ -173,8 +184,11 @@ uprooted. (two actions, causal connection)"*
 - Ketubot 15a:0: *"a legal discussion discussing facts of an incident and their
   consequences, but not enough of the incident is given."*
 
-- **Status:** settled on those four. It is his 2026-09-01 test (*"two actions, causal
-  connection"*) stated from the other side: one act, however it is introduced — even
+- **Status:** settled on those four. **Our prompt already said it**: Stage 2's disqualifier
+  "Fewer than 2 distinct actions, OR no change/conflict" dates from Wave 3 Item 3
+  (2026-05-25), written by us from abstract patterns. It now has his words and his cases
+  behind it. It is his 2026-09-01 test (*"two actions, causal connection"*) stated from
+  the other side: one act, however it is introduced — even
   *מעשה ב…* — is a precedent, not a story. It is also the other half of R-C3: a custom
   with **no** one-time event after it (Mar Zutra *"would score"*) stays a custom.
 - **Rate, indicated not measured:** 10 accepted Ketubot entries carry a single event in
@@ -229,7 +243,10 @@ audience's understanding of the story."* And on Yevamot 15a: *"the gemara's comm
 the story. It does tell you about what R. Akiva was thinking, but it is not part of the
 story."*
 
-- **Status:** settled. Stronger than R-B2 in two ways: *excluded*, not "need not be
+- **Status:** settled. Its mechanical cousin is old — Stage 4a trims trailing stam
+  segments, and Wave 2's `trim_trailing_stam_segments` fired 0 times
+  ([4_boundaries](capabilities/4_boundaries.md)) — but those trim by marker; this is a
+  rule about *what the text is*, in his words. Stronger than R-B2 in two ways: *excluded*, not "need not be
   quoted", and it covers commentary **inside or after** a story — including where the
   commentary revises the story or adds a detail to it.
 - **Applied:** Kiddushin 39b golden 8-8 → **7-7** (segment 7 is the incident; his 2005

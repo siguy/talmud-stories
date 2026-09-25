@@ -1,4 +1,4 @@
-# Jeff's ten verdicts: a scope rule, a commentary rule, a "report is not a story" rule — and the twin pass goes on
+# Jeff's ten verdicts: three rules in his words — and why the twin pass was breaking them
 
 **2026-09-25.** Status: verdicts **measured** (his words, one file); golden changes
 **applied**; twin-pass prompt change **measured on the additions already on disk** —
@@ -27,14 +27,21 @@ structured field empty).
 
 ## What it means — four rules ([STORY_RULES.md](../STORY_RULES.md))
 
-- **R-S1, new — scope is rabbis and post-biblical figures.** A biblical episode retold is
-  a story, and not ours. His 2005 Gittin list omits both passages, so the rule is twenty
-  years old and was simply never written down. Rate: 3 proposals of ~560 across four
-  tractates; no accepted golden entry. Edges queued as `jeff:scope-edges`.
-- **R-B4, new — the Gemara's commentary on a story is not the story**, even where it
+- **R-S1, newly worded — scope is rabbis and post-biblical figures.** A biblical episode
+  retold is a story, and not ours. **The rule itself is not new**: it has been a Stage 2
+  disqualifier and a Stage 4j filter (`filter_biblical_actor_stories`) since v8 Wave 2,
+  2026-05-24, and his 2005 Gittin list omits both passages. What is new is its boundary
+  and its label — `OUT_OF_SCOPE`, where the filter writes `NOT_A_STORY`. The filter
+  missed all three biblical proposals (Gittin 57b, 68a; Yevamot 77a) because it checks a
+  fixed name list and *Nebuzaradan, Benayahu, Ashmedai, Doeg, Amasa* are not on it.
+  Rate: 3 proposals of ~560 across four tractates; no accepted golden entry. Edges
+  queued as `jeff:scope-edges`. *(Corrected the same day: the first draft said the rule
+  had never been written down. `docs/capabilities/3_classification.md` records it; it was
+  not read before drafting — the step the route in CLAUDE.md exists for.)*
+- **R-B4, his words for part of an old practice — the Gemara's commentary on a story is not the story**, even where it
   revises the story or adds a detail. Stronger than R-B2 (excluded, not optional) and it
   covers commentary inside a story as well as after it.
-- **R-C5, new — a bare report of what someone did is not a story.** One act, however
+- **R-C5, his words for a disqualifier we already had — a bare report of what someone did is not a story.** Stage 2 has said "fewer than 2 distinct actions" since Wave 3; now it has his cases. One act, however
   introduced, is a precedent. His 2026-09-01 test (*two actions, causal connection*) from
   the other side, and the unfinished half of R-C3.
 - **R-C2, settled — speech alone is BORDERLINE with conflict, NOT without.** The rule he
@@ -60,7 +67,7 @@ Gittin entries unchanged.
 **Why the 10 are not scope creep.** In 2026 rounds he wrote *"low confidence/borderline"*
 and *"It should be 'low confidence,' a borderline story"* — one category with two names.
 The golden could hold only one, and rounded. Now that BORDERLINE is a column, those go
-where he put them. The other 65 `LOW_CONFIDENCE` entries were **not** touched: the word is
+where he put them. The other 64 `LOW_CONFIDENCE` entries were **not** touched: the word is
 his to use, and inferring it for him would be the thing this register exists to stop.
 
 **How the immutable harness sees it:** BORDERLINE and LOW_CONFIDENCE are both "story" to
@@ -69,6 +76,13 @@ one golden story becoming a non-story. `OUT_OF_SCOPE` is outside `stories[]`, so
 proposal there scores as a false positive, which is what R-S1 says it is.
 
 ## The twin pass: on by default, with his reasons in its question
+
+**The mechanism.** Stage 2 already disqualifies biblical narrative and "fewer than 2
+distinct actions" (Wave 3 Item 3), and Stage 4a trims trailing stam. The twin pass is a
+separate prompt, and it carried **none** of that: it asked only *same actors or
+different?* So it re-admitted, one segment at a time, the shapes Stage 2 had been told to
+reject. Jeff's three rejections are what that looks like. Putting his reasons into the
+twin question is restoring what the main prompt already had, not a new idea.
 
 **Why now.** The twin pass made 12 Yevamot additions; 4 are on his list by the strict
 matcher and all 8 others are now judged: 1 yes (105a:13), 3 no (Jeff), 4 no (Simon's
@@ -116,12 +130,17 @@ Read it honestly:
 
 ## Not done, on purpose
 
-- **The page-level Stage 2 prompt does not carry R-S1, R-B4 or R-C5.** That is a detector
+- **The page-level Stage 2 prompt does not carry R-B4 or R-C5** (it has carried a
+  biblical disqualifier since v8). That is a detector
   change on every page and needs a scored two-arm run with a same-code repeat (Lesson 22).
   The twin question is narrower, so it could be measured by re-asking.
 - **No bulk relabel on R-C5.** 10 accepted Ketubot entries have one event by the
   detector's own count; that is a screen, not his judgment (Lesson 18, Lesson 27).
 - **The blind lists are untouched.** `yevamot_050` keeps its place as a story.
+
+- **The biblical filter still writes `NOT_A_STORY`, not `OUT_OF_SCOPE`, and its name list
+  is the reason it missed three.** Changing either is a detector change; left for a
+  measured item rather than fitted to three cases.
 
 ## Two defects in the review page, for its next build
 
