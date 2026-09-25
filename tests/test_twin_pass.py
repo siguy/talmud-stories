@@ -10,12 +10,55 @@ import importlib
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import src.story_detector_v11 as mod  # noqa: E402
 from src.event_triage import EventType  # noqa: E402
 
 N, V, D = EventType.NARRATIVE_EVENT, EventType.VERBAL_ACT, EventType.DELIBERATION
+
+
+@pytest.fixture(autouse=True)
+def _labelled_trigger(monkeypatch):
+    """The mechanics below are written against the labelled trigger, so they can show
+    a label being ignored. The shipped default is `all` -- pinned separately."""
+    monkeypatch.setenv('TWIN_TRIGGER', 'labelled')
+
+
+def test_the_pass_is_on_by_default_and_asks_every_neighbour(monkeypatch):
+    """ON since 2026-09-25, trigger `all` (the labelled one cannot see Yevamot 121b).
+    Turning either back is a detector change and needs its own measurement."""
+    monkeypatch.delenv('TWIN_PASS', raising=False)
+    monkeypatch.delenv('TWIN_TRIGGER', raising=False)
+    assert (mod.TWIN_PASS_DEFAULT, mod.TWIN_TRIGGER_DEFAULT) == ('1', 'all')
+    d = _detector()
+    cands = d._twin_candidates([{'start_segment': 2, 'end_segment': 2}],
+                               [D, D, N, D, D], n_segments=5)
+    assert [c['segment'] for c in cands] == [1, 3]
+
+
+def test_all_trigger_asks_a_neighbour_with_no_label(monkeypatch):
+    """Found by the default flip, 2026-09-25: under `all`, a caller with fewer labels than
+    segments crashed the candidate builder instead of asking."""
+    monkeypatch.setenv('TWIN_TRIGGER', 'all')
+    cands = _detector()._twin_candidates([{'start_segment': 1, 'end_segment': 1}],
+                                         [D, N], n_segments=3)
+    assert [(c['segment'], c['label']) for c in cands] == [(0, D.value), (2, None)]
+
+
+def test_the_question_carries_jeffs_2026_09_23_rejections():
+    """Every twin-pass addition Jeff rejected on 2026-09-23 was one of these shapes
+    (docs/STORY_RULES.md R-B4, R-C5, R-S1). Dropping one from the question should be a
+    decision, not an edit that slips through."""
+    segs = [{'hebrew': 'א', 'english': 'a'}] * 3
+    prompt = _detector()._twin_prompt('X 1a', segs, 1, 1, 2)
+    for phrase in ("the Gemara's commentary ON story A",
+                   'a bare report of what someone did',
+                   'a description of who sat where',
+                   'actors are biblical figures'):
+        assert phrase in prompt, phrase
 
 
 def _detector():

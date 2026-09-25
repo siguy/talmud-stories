@@ -60,6 +60,7 @@ Its cost lands in this capability's false-negative column, so it is recorded her
 | 2026-08-30 | **Ketubot 77a diagnosed** over 8 re-runs of identical code | **measured:** segs 13-14 proposed in 7 of 8 runs, classified `NOT_A_STORY` in 6 of those 7, every run citing the same three prompt disqualifiers. A Classification failure sitting on proposal-level variance | `abdc4af` |
 | 2026-08-30 | **Mishnah filter cost measured** by scoring twice through the immutable harness | **measured: 4 of Ketubot's 15 golden false negatives — 27%.** Folding them back moves golden recall 0.9085 → 0.9329, precision unchanged. Blind recall identical at 96.0% both ways | `804a097`, [`mishnah_filter_delta`](../findings/2026-08-30-mishnah-filter-delta.md) |
 | 2026-08-30 | **Mishnah tagger chapter-boundary bug fixed** — the tagger read only `מתני׳`/`גמ׳`, but Sefaria opens a new chapter's first Mishnah with the chapter incipit, so `גמ׳` came first and everything before it was back-tagged as Mishnah | **fixed and measured: Ketubot TP 149 → 151, FN 15 → 13, golden recall 90.9% → 92.1%**, precision and merge unchanged. 72 segments on 12 pages, every change a correction | `8fd68de` |
+| 2026-09-25 | **Jeff's 2026-09-23 verdicts applied.** R-C2 settled (speech alone: BORDERLINE with conflict, NOT without); R-C5 (a bare report is not a story) and R-S1 (scope: rabbis and post-biblical figures) in his words. Ketubot gains a BORDERLINE class: 2 by verdict, 10 where he had written *borderline* and we had rounded to LOW (Lesson 42); 15a:0 → NOT | applied; `accepted` 164 → 163. **Not** applied: a bulk R-C5 relabel of the 10 single-event entries — a screen, not his judgment | [`jeff-verdicts`](../findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md) |
 
 ## What we reverted, and why
 
@@ -128,10 +129,13 @@ precision is superseded by `4de7135`.
 - **Harness:** `scripts/evaluate_golden.py` — **IMMUTABLE**, never modified during an
   experiment. **Always pass `--output`**: it defaults to overwriting
   `docs/golden/v7/baseline_ketubot.json`, an irreplaceable historical record (`46d90b2`).
-- **Goldens:** `results/canonical/ketubot_canonical.json` — 222 pages, **187 entries, 164
-  accepted** (YES 59 / HIGH 28 / LOW 77 / NOT_A_STORY 23);
+- **Goldens:** `results/canonical/ketubot_canonical.json` — 222 pages, **187 entries, 163
+  accepted** (YES 59 / HIGH 28 / LOW 64 / BORDERLINE 12 / NOT_A_STORY 24);
   `kiddushin_canonical.json` — 162 pages, **96 entries, 85 accepted** (44/8/33/11).
-  Verified 2026-08-30. Quote them the same way — entries against entries, accepted
+  Verified 2026-09-25; `GOLDEN_COUNTS` in `tests/test_bookkeeping.py` is the live source.
+  **BORDERLINE is its own class** (R-C2) and counts as accepted here, as in Gittin.
+- **Out of scope is its own label** (R-S1): `OUT_OF_SCOPE`, kept outside `stories[]`
+  (Gittin's `out_of_scope`). The Stage 4j biblical filter still writes `NOT_A_STORY`. Quote them the same way — entries against entries, accepted
   against accepted, never one of each (`6d1f917`).
 - **Never verify with the composite score.** It is built from ratios over pages already in
   the golden, so *deleting* expert validations makes it go **up**. Verify with counts and

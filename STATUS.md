@@ -1,12 +1,29 @@
 # STATUS — where the project is today
 
-**Last rewritten: 2026-09-15** (integration of #47, #48, #49). Rewritten every session, never appended.
+**Last rewritten: 2026-09-15** (integration of #47, #48, #49); **updated 2026-09-25** for Jeff's
+2026-09-23 verdicts (the section directly below, and the Jeff / Next sections). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
 ---
 
-## The headline
+## 2026-09-25 — Jeff answered the page: all 10 verdicts
+
+- **Goldens moved by his word only.** Ketubot: 12 → `BORDERLINE` (2 this round, 10 where
+  he had written "borderline" and we had rounded it to LOW — Lesson 42), 15a:0 → NOT;
+  `accepted` 164 → 163. Kiddushin 39b → segment 7. Gittin 57b / 68a → `OUT_OF_SCOPE`.
+  Yevamot 105a:13 is a new story not on his list (banked; no Yevamot golden yet).
+- **Rules in his words** ([STORY_RULES](docs/STORY_RULES.md)): R-S1 scope = rabbis and
+  post-biblical figures; R-B4 Gemara commentary is not the story; R-C5 a bare report is
+  not a story; R-C2 speech alone is BORDERLINE with conflict. The pipeline already had
+  parts of R-S1 and R-C5 — the news is his wording, his cases and the labels.
+- **Twin pass ON by default.** Its prompt carried none of Stage 2's disqualifiers, which
+  is why it re-admitted what he rejected. Now it does; re-asked on the 21 additions on
+  disk it drops 3 of 7 known-false and **one story on his 2005 list (Yevamot 78a:13)**.
+  No shipped artifact is under the new default yet — the cells below predate it.
+→ [`jeff-verdicts`](docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md)
+
+## The headline (2026-09-15)
 
 **The largest class of Detection miss is named, measured, and recovered — on one
 tractate.** 18 of the 38 stories we miss across four blind lists sit **one segment from
@@ -16,8 +33,8 @@ row with different actors — R. Zadok and the noblewoman, then Rav Kahana and t
 noblewoman — and the detector returns one and stops. A targeted pass that shows the model
 the story it found *and* the segment beside it, and asks one narrow question, recovers
 them: **Yevamot 89.2% → 94.1%**, all six of that tractate's twin misses by name, nothing
-lost, 0 span repairs, **9 extra proposals** for Jeff per tractate. Merged, **default off**
-until he has seen those nine.
+lost, 0 span repairs, **9 extra proposals** for Jeff per tractate. Merged default off;
+**on by default since 2026-09-25**, after his verdicts.
 → [`miss-anatomy`](docs/findings/2026-09-07-miss-anatomy.md) ·
 [`twin-pass`](docs/findings/2026-09-14-twin-pass.md)
 
@@ -61,8 +78,8 @@ twin pass above.
 artifacts**. Two measured improvements are NOT in the cells because neither is the
 shipped default: the live Triage rule (Ketubot 98.0 / Kiddushin 97.8, see
 [`promote-liverule-denominator`](work/done/2026-09-07-promote-liverule-denominator.md)) and
-the twin pass (Yevamot Detection **94.1%**, `TWIN_PASS=1 TWIN_TRIGGER=all`, off by
-default). Read a cell as "what the artifact on disk holds", never as the ceiling.*
+the twin pass (Yevamot Detection **94.1%**, `TWIN_PASS=1 TWIN_TRIGGER=all` — **the
+default since 2026-09-25**, but no artifact has been re-run under it). Read a cell as "what the artifact on disk holds", never as the ceiling.*
 
 | capability | metric | Ketubot | Kiddushin | Gittin | **Yevamot** | gate |
 |---|---|---|---|---|---|---|
@@ -526,13 +543,12 @@ corrections we owe, the full sent log, and the ask order.
 2026-09-03, see below; `jeff:mishnah-scope`, `jeff:opening-formula` and `jeff:axes-round`
 closed 2026-09-01/02). Still unanswered and still blocking capability 4:
 `jeff:boundary-end-rule`, asked 2026-08-30, answered *"I will get to all this soon."*
-`jeff:speech-act-policy` is **partly answered** — no general rule, `borderline` is the
-right column — with only the general policy for ~12 thin passages still open; the three
-Gittin cases it named are settled.
+`jeff:speech-act-policy` is **answered (2026-09-23)** — R-C2. New and free:
+`jeff:scope-edges` (Elijah with a rabbi; a biblical exemplum inside a rabbinic story;
+Titus / Yannai / Agrippa).
 
-**One review page is queued and not yet sent — this is the next concrete thing to do,
-not a code change.** It bundles three sources that would otherwise be three separate
-asks:
+**The review page was sent 2026-09-16 and came back complete 2026-09-23** — see the top
+of this file. What it carried, for the record:
 - the **1 top-confidence proposal** credited to his list by the search window but never
   actually overlapping it — Kiddushin 39b 8-10 (`work/2026-09-03-loose-credited-proposals.md`).
   **It was 11 until 2026-09-03**; the other 10 were the window, not proposals needing a
@@ -564,12 +580,11 @@ so the regenerated page stayed comparable to what Jeff actually saw. Point it at
 
 ## Next — items in [`work/`](work/), each self-contained
 
-**1. Send the review page to Jeff — now with the twin pass's nine extras on it.** This was
-the top item before the fortnight and it still is; it just grew. The 1 window-credited
-proposal, the 2 Gittin extras, the 3 speech-act entries, **plus the 9 Yevamot proposals
-the twin pass added that his 2005 list does not carry** (`results/v11/twin_pass/yevamot_full_twinall.json`,
-`source: twin_pass`). His verdicts on those nine are what turns `TWIN_PASS` on by default.
-One page, not four asks. No code.
+**1. ~~Send the review page~~ — done; answered 2026-09-23, applied 2026-09-25.** Next in
+its place: **re-run a tractate under the new default** (twin pass on, new wording) so the
+cells stop describing the old detector, and so the one thing the re-ask cannot see — a
+neighbour the new wording would *add* — gets measured. Then 6c of
+[`story-criteria`](work/2026-08-30-story-criteria.md), now unblocked.
 
 **2. Run the twin pass on Ketubot.** 7 of the 18 corpus twin misses are there and it is
 the one tractate the pass has not touched. Needs `run_new_tractate.py` — or a sibling —

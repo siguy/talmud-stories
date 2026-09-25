@@ -55,11 +55,38 @@ _spec.loader.exec_module(recall)
 RUN = PROJECT_ROOT / 'results/v11/gittin/gittin_v11.json'
 EXPERT = PROJECT_ROOT / 'results/expert_lists/gittin_2005.json'
 VERDICTS = PROJECT_ROOT / 'validation/feedback/gittin_axes_review_2026-09-02.json'
+# Later rounds that carry Gittin passages among others. Only Gittin keys are read.
+LATER_VERDICTS = [PROJECT_ROOT / 'validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json']
+
+# R-S1 (Jeff, 2026-09-23): the collection is rabbis and post-biblical figures. These two
+# he judged to be real stories about biblical characters -- "a full blown story, but it
+# is about biblical characters... not our kind of story". The axis form has no scope
+# question, so he answered `no` and said why in the note; the mapping is by key, not by
+# reading his prose. They are NOT written as NOT_A_STORY (he said they are stories) and
+# NOT into pages[].stories[] (the corpus is in-scope stories, and the immutable harness
+# would score a proposal there as a hit). They go to `out_of_scope`.
+OUT_OF_SCOPE = {'Gittin 57b_0-4': 'biblical', 'Gittin 68a_7-12': 'biblical'}
 
 # His three axis answers, in the vocabulary the goldens already speak. `borderline` is
 # deliberately NOT folded into either side: he asked for contested cases to be kept and
 # flagged (2026-07-06), and a golden that rounds them is the thing he declined.
 VERDICT_TO_CLASSIFICATION = {'yes': 'YES', 'borderline': 'BORDERLINE', 'no': 'NOT_A_STORY'}
+
+
+def verdict_label(key, v, rnd):
+    """One axis verdict, in the golden's vocabulary, with where it came from."""
+    return {
+        'classification': VERDICT_TO_CLASSIFICATION[v['is_story']],
+        'label_source': 'expert_verdict',
+        'expert_answer': v['is_story'],
+        'expert_notes': v['notes'],
+        'review_key': key,
+        'review_date': rnd['date'],
+        'schema_version': rnd['schema_version'],
+        'detector_version': v['detector_version'],
+        'applies_to': v['applies_to'],
+        'classification_shown': v['classification_shown'],
+    }
 
 
 def load_run():
@@ -74,14 +101,14 @@ def load_run():
     return pages, proposals
 
 
-def strict_matches(pages, expert_stories):
+def strict_matches(pages, expert_stories, run=RUN):
     """expert story id -> the proposal keys whose span overlaps its own segments.
 
     The SAME narrowing measure_strict_recall.py uses -- imported from the same module
     rather than re-implemented, because a golden built on a second, subtly different
     notion of "matched" would disagree with the recall figure and nothing would say why.
     """
-    units, spans, *_ = recall.load_detected([str(RUN)])
+    units, spans, *_ = recall.load_detected([str(run)])
     index = defaultdict(set)
     for i, (_, _, gs) in enumerate(units):
         for g in gs:
@@ -94,7 +121,7 @@ def strict_matches(pages, expert_stories):
                 (story.get('start_segment'), story.get('end_segment')))
 
     locate, fell_back = recall.make_locator('exact', units, index,
-                                            recall.word_corpus([str(RUN)], units))
+                                            recall.word_corpus([str(run)], units))
     out = {}
     for story in expert_stories:
         gs = recall.grams(story['text'])
@@ -121,6 +148,7 @@ def build():
     pages, proposals = load_run()
     expert_stories = recall.load_expert_json(str(EXPERT), 'recall')
     verdicts = json.loads(VERDICTS.read_text())
+    later = [json.loads(p.read_text()) for p in LATER_VERDICTS]
 
     matches = strict_matches(pages, expert_stories)
 
@@ -133,18 +161,31 @@ def build():
         if k not in proposals:
             log.warning('verdict %s matches no proposal in the run -- skipped', key)
             continue
-        labels[k] = {
-            'classification': VERDICT_TO_CLASSIFICATION[v['is_story']],
-            'label_source': 'expert_verdict',
-            'expert_answer': v['is_story'],
-            'expert_notes': v['notes'],
-            'review_key': key,
-            'review_date': verdicts['date'],
-            'schema_version': verdicts['schema_version'],
-            'detector_version': v['detector_version'],
-            'applies_to': v['applies_to'],
-            'classification_shown': v['classification_shown'],
-        }
+        labels[k] = verdict_label(key, v, verdicts)
+
+    # ---- label pass 1b: later rounds, Gittin keys only. Out-of-scope keys are set
+    # aside here and never become entries.
+    out_of_scope = []
+    for rnd in later:
+        for key, v in rnd['reviews'].items():
+            if not v['page_ref'].startswith('Gittin '):
+                continue
+            k = (v['page_ref'], v['start_segment'], v['end_segment'])
+            if k not in proposals:
+                log.warning('verdict %s matches no proposal in the run -- skipped', key)
+                continue
+            if key in OUT_OF_SCOPE:
+                out_of_scope.append({'ref': v['page_ref'], 'start_segment': v['start_segment'],
+                                     'end_segment': v['end_segment'],
+                                     'classification': 'OUT_OF_SCOPE',
+                                     'scope': OUT_OF_SCOPE[key], 'rule': 'R-S1',
+                                     'detector_classification': proposals[k][1].get('classification'),
+                                     'one_sentence_summary': proposals[k][1].get('one_sentence_summary'),
+                                     **{f: x for f, x in verdict_label(key, v, rnd).items()
+                                        if f != 'classification'}})
+                labels[k] = None      # judged: not unlabelled, and not an entry
+                continue
+            labels[k] = verdict_label(key, v, rnd)
 
     # ---- label pass 2: his 2005 list. Weaker, and it never overwrites a verdict.
     missing = []
@@ -155,7 +196,7 @@ def build():
             continue
         for k in hits:
             if k in labels:
-                continue          # a verdict already speaks for this span
+                continue          # a verdict already speaks for this span (or set it aside)
             labels[k] = {
                 'classification': 'YES',
                 'label_source': 'expert_blind_list',
@@ -173,6 +214,8 @@ def build():
         kept = []
         for story in page.get('stories', []):
             k = (page['ref'], story.get('start_segment'), story.get('end_segment'))
+            if k in labels and labels[k] is None:
+                continue          # out of scope -- listed in `out_of_scope`
             if k not in labels:
                 unlabelled.append({'ref': page['ref'],
                                    'start_segment': story.get('start_segment'),
@@ -203,10 +246,12 @@ def build():
         'expert_list': str(EXPERT.relative_to(PROJECT_ROOT)),
         'verdict_source': str(VERDICTS.relative_to(PROJECT_ROOT)),
         'verdict_date': verdicts['date'],
+        'later_verdict_sources': [str(p.relative_to(PROJECT_ROOT)) for p in LATER_VERDICTS],
         'label_sources': dict(src),
         'classification_distribution': dict(dist),
         'recall_denominator': len(expert_stories),
         'unlabelled_proposals': unlabelled,
+        'out_of_scope': out_of_scope,
         'known_missing_stories': [
             {'id': s['id'], 'ref': s['ref'], 'text': s['text']} for s in missing],
         'how_to_read_this': [
@@ -218,6 +263,9 @@ def build():
             'contested cases to be kept and flagged (2026-07-06).',
             'Every entry carries an expert label. Proposals with no expert evidence are '
             'in unlabelled_proposals, not in pages[].stories[].',
+            'out_of_scope holds passages he judged to be stories but outside the '
+            'collection (R-S1: rabbis and post-biblical figures). They are neither '
+            'entries nor NOT_A_STORY, and a detector proposing one is a false positive.',
             'Count entries against entries and accepted against accepted, never one of '
             'each (STATE.md).',
         ],
@@ -241,6 +289,7 @@ def main():
     log.info('label sources: %s', golden['label_sources'])
     log.info('classifications: %s', golden['classification_distribution'])
     log.info('unlabelled proposals (NOT in the golden): %d', len(golden['unlabelled_proposals']))
+    log.info('out of scope (R-S1, NOT in the golden): %d', len(golden['out_of_scope']))
     log.info('his stories no proposal covers strictly: %d', len(golden['known_missing_stories']))
 
     out = Path(args.out)

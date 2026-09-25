@@ -6,6 +6,9 @@
   "expert_list": "results/expert_lists/gittin_2005.json",
   "verdict_source": "validation/feedback/gittin_axes_review_2026-09-02.json",
   "verdict_date": "2026-09-02",
+  "later_verdict_sources": [
+    "validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json"
+  ],
   "label_sources": {
     "expert_blind_list": 109,
     "expert_verdict": 25
@@ -114,12 +117,6 @@
       "detector_classification": "LOW_CONFIDENCE"
     },
     {
-      "ref": "Gittin 57b",
-      "start_segment": 0,
-      "end_segment": 4,
-      "detector_classification": "YES"
-    },
-    {
       "ref": "Gittin 58b",
       "start_segment": 14,
       "end_segment": 14,
@@ -138,12 +135,6 @@
       "detector_classification": "NOT_A_STORY"
     },
     {
-      "ref": "Gittin 68a",
-      "start_segment": 7,
-      "end_segment": 12,
-      "detector_classification": "YES"
-    },
-    {
       "ref": "Gittin 74b",
       "start_segment": 16,
       "end_segment": 16,
@@ -160,6 +151,46 @@
       "start_segment": 9,
       "end_segment": 10,
       "detector_classification": "NOT_A_STORY"
+    }
+  ],
+  "out_of_scope": [
+    {
+      "ref": "Gittin 57b",
+      "start_segment": 0,
+      "end_segment": 4,
+      "classification": "OUT_OF_SCOPE",
+      "scope": "biblical",
+      "rule": "R-S1",
+      "detector_classification": "YES",
+      "one_sentence_summary": "Nebuzaradan attempts to silence the bubbling blood of the murdered prophet Zechariah through mass slaughter, but eventually repents and converts to Judaism upon realizing the severity of divine retribution.",
+      "label_source": "expert_verdict",
+      "expert_answer": "no",
+      "expert_notes": "This is a full blown story, but it is about biblical characters, not rabbis. So it is not in the class of stories that we are looking at. (I put the confidence is right, that it is a story. But not our kind of story.)",
+      "review_key": "Gittin 57b_0-4",
+      "review_date": "2026-09-23",
+      "schema_version": "axes-2",
+      "detector_version": "v10-notrim+v11+v7",
+      "applies_to": "base",
+      "classification_shown": "YES"
+    },
+    {
+      "ref": "Gittin 68a",
+      "start_segment": 7,
+      "end_segment": 12,
+      "classification": "OUT_OF_SCOPE",
+      "scope": "biblical",
+      "rule": "R-S1",
+      "detector_classification": "YES",
+      "one_sentence_summary": "King Solomon sends Benayahu to capture Ashmedai, the king of demons, using a magic chain and wine in order to facilitate the building of the Temple. The epic narrative of Solomon's capture of Ashmedai to obtain the shamir, Ashmedai's subsequent trickery to usurp the throne, and Solomon's eventual return from exile.",
+      "label_source": "expert_verdict",
+      "expert_answer": "no",
+      "expert_notes": "Again, this is a full story but about biblical characters. So not in our scope, which is rabbis and post-biblical figures.",
+      "review_key": "Gittin 68a_7-12",
+      "review_date": "2026-09-23",
+      "schema_version": "axes-2",
+      "detector_version": "v10-notrim+v11+v7",
+      "applies_to": "base",
+      "classification_shown": "YES"
     }
   ],
   "known_missing_stories": [
@@ -184,6 +215,7 @@
     "label_source is not decoration. expert_verdict judged THIS span. expert_blind_list only says a story is there -- the extent is unvalidated.",
     "BORDERLINE is neither accepted nor rejected. Do not round it. He asked for contested cases to be kept and flagged (2026-07-06).",
     "Every entry carries an expert label. Proposals with no expert evidence are in unlabelled_proposals, not in pages[].stories[].",
+    "out_of_scope holds passages he judged to be stories but outside the collection (R-S1: rabbis and post-biblical figures). They are neither entries nor NOT_A_STORY, and a detector proposing one is a false positive.",
     "Count entries against entries and accepted against accepted, never one of each (STATE.md)."
   ],
   "pages": [

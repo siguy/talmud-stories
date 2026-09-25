@@ -1717,7 +1717,7 @@
         {
           "start_segment": 1,
           "end_segment": 1,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -1776,6 +1776,15 @@
               "old": "NOT_A_STORY",
               "new": "LOW_CONFIDENCE",
               "note": "Jeff: 'low confidence' (re-adding to golden as LOW)"
+            },
+            {
+              "date": "2026-09-23",
+              "source": "review_2026-09-16_bundle_jeff_2026-09-23",
+              "rule": "R-C2",
+              "note": "Jeff: This is borderline. It is mostly speech acts: A rabbi permits a groom to have sex on Shabbat, the rabbis respond, and he responds back. So technically there is not enough actions. But there is conflict and some implied change, so it is borderline.",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -2057,7 +2066,7 @@
         {
           "start_segment": 9,
           "end_segment": 9,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -2113,6 +2122,15 @@
               "reason": "Jeff noted borderline/low confidence: Yes, the change is minimal. It is a borderline story. But the erasoning is correct.",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"Yes, the change is minimal. It is a borderline story. But the erasoning is correct.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -3382,7 +3400,7 @@
         {
           "start_segment": 0,
           "end_segment": 0,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -3435,6 +3453,15 @@
               "reason": "Jeff noted borderline/low confidence: Correct. This is a borderline It lacks specificity.  It also starts in the previous line (0n 12a) with Rav Ashi's statement. This is the second half of his statement. But it has change and temporal progresion. So \"low confidence\" is perfect",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"Correct. This is a borderline It lacks specificity.  It also starts in the previous line (0n 12a) with Rav Ashi's statement. This is the second half of his statement. But it has change and temporal progresion. So \"low confidence\" is perfect\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -3885,7 +3912,7 @@
         {
           "start_segment": 11,
           "end_segment": 11,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -3939,6 +3966,15 @@
               "reason": "Jeff's canonical review: It should be \"low confidence,\" a borderline story. There are two events but no causality.",
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "canonical_review_2026-03-17",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"It should be \"low confidence,\" a borderline story. There are two events but no causality.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "mishnah",
@@ -4041,7 +4077,7 @@
         {
           "start_segment": 0,
           "end_segment": 0,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "NOT_A_STORY",
           "criteria": {
             "identifiable_characters": {
               "met": false,
@@ -4092,6 +4128,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-09-23",
+              "source": "review_2026-09-16_bundle_jeff_2026-09-23",
+              "rule": "R-C5",
+              "note": "Jeff: This is just not enough to go on to be counted as a story or even a narrative. It is a legal discussion discussing facts of an incident and their consequences, but not enough of the incident is given.",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "NOT_A_STORY"
+            }
           ]
         }
       ]
@@ -10524,7 +10571,7 @@
         {
           "start_segment": 6,
           "end_segment": 6,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -10573,6 +10620,15 @@
               "reason": "Jeff noted borderline/low confidence: This is a borderline story. It is basically one event, though two verbs are used. He forced a man to give charity. Also , the first part of the excerpt (וְלָא אֲמַרַן, אֶלָּא דְּלָא אֲמִיד, אֲבָל אֲמִיד — כָּפֵינַן לֵיהּ עַל כֻּרְחֵיהּ.) is not part of the story.",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"This is a borderline story. It is basically one event, though two verbs are used. He forced a man to give charity. Also , the first part of the excerpt (וְלָא אֲמַרַן, אֶלָּא דְּלָא אֲמִיד, אֲבָל אֲמִיד — כָּפֵינַן לֵיהּ עַל כֻּרְחֵיהּ.) is not part of the story.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -11494,7 +11550,7 @@
         {
           "start_segment": 4,
           "end_segment": 5,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -11545,6 +11601,15 @@
               "reason": "Jeff noted borderline/low confidence: Excellent. The story should start with the word קָרִיבֵיהּ. The sentence before it is a legal ruling. It is relevant to the story, but not part of the story. The story should be marked a borderline story since it is mainly talk",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"Excellent. The story should start with the word קָרִיבֵיהּ. The sentence before it is a legal ruling. It is relevant to the story, but not part of the story. The story should be marked a borderline story since it is mainly talk\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -12018,7 +12083,7 @@
         {
           "start_segment": 13,
           "end_segment": 14,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -12070,6 +12135,15 @@
               "reason": "Jeff noted borderline/low confidence: This should be marked a borderline story, since there is basically one event and then a legal ruling and discussion",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"This should be marked a borderline story, since there is basically one event and then a legal ruling and discussion\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -12194,7 +12268,7 @@
         {
           "start_segment": 22,
           "end_segment": 22,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -12246,6 +12320,15 @@
               "reason": "Jeff: story continues on 54b",
               "source": "canonical_review_2026-03-17",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"The story finished on the next page of Talmud with one more line, and it is a borderline story\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "spans_pages": [
@@ -13465,7 +13548,7 @@
         {
           "start_segment": 5,
           "end_segment": 9,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -13515,6 +13598,15 @@
               "reason": "Jeff noted borderline/low confidence: This should be marked as a borderline story. There is mainly dialogue. But events are mentioned.",
               "source": "v5.1_2026-02-05",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-05",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"This should be marked as a borderline story. There is mainly dialogue. But events are mentioned.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -20110,7 +20202,7 @@
         {
           "start_segment": 13,
           "end_segment": 14,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -20161,6 +20253,15 @@
               "reason": "Jeff noted borderline/low confidence: This should be classified as a borderline story. After the woman comes to court, it is all dialogue.",
               "source": "v5.1_2026-02-20",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-20",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"This should be classified as a borderline story. After the woman comes to court, it is all dialogue.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -24149,7 +24250,7 @@
         {
           "start_segment": 17,
           "end_segment": 18,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -24202,6 +24303,15 @@
               "reason": "Jeff says borderline/low confidence: This should be low confidence/borderline. It is basically a situation, namely that Ravina possesses wine of his own and of hi nephew, and goes and asks for a legal ruling about it. The change in outcome is absent, or at best, implied. There are not really multiple events.",
               "source": "v5.1_2026-02-20",
               "auto_applied": true
+            },
+            {
+              "date": "2026-09-25",
+              "source": "v5.1_2026-02-20",
+              "rule": "R-C2",
+              "note": "His word, from that round, rounded to LOW_CONFIDENCE when the golden had no BORDERLINE column: \"This should be low confidence/borderline. It is basically a situation, namely that Ravina possesses wine of his own and of hi nephew, and goes and asks for a legal ruling about it. The change in outcome is absent, or at best, implied. There are not really multiple events.\"",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
             }
           ],
           "corpus": "talmud",
@@ -28124,7 +28234,7 @@
         {
           "start_segment": 11,
           "end_segment": 11,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -28171,6 +28281,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-09-23",
+              "source": "review_2026-09-16_bundle_jeff_2026-09-23",
+              "rule": "R-C2",
+              "note": "Jeff: Again, mainly a dialogue, so lacking the actions necessary for a story. But has conflict, so can be borderline.",
+              "action": "reclassify",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE"
+            }
           ]
         },
         {
@@ -28367,6 +28488,91 @@
     "already_present": []
   },
   "rules_applied": [
-    "R-C1"
-  ]
+    "R-C1",
+    "R-C2",
+    "R-C5"
+  ],
+  "jeff_2026_09_23": {
+    "source": "validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json",
+    "applied": [
+      {
+        "key": "Ketubot 7a_1-1",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "review_2026-09-16_bundle_jeff_2026-09-23"
+      },
+      {
+        "key": "Ketubot 112a_11-11",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "review_2026-09-16_bundle_jeff_2026-09-23"
+      },
+      {
+        "key": "Ketubot 15a_0-0",
+        "old": "LOW_CONFIDENCE",
+        "new": "NOT_A_STORY",
+        "source": "review_2026-09-16_bundle_jeff_2026-09-23"
+      },
+      {
+        "key": "Ketubot 8a_9-9",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 12b_0-0",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 14b_11-11",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "canonical_review_2026-03-17"
+      },
+      {
+        "key": "Ketubot 49b_6-6",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 52b_4-5",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 54a_13-14",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 54a_22-22",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 60b_5-9",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-05"
+      },
+      {
+        "key": "Ketubot 85a_13-14",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-20"
+      },
+      {
+        "key": "Ketubot 100b_17-18",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE",
+        "source": "v5.1_2026-02-20"
+      }
+    ]
+  }
 }

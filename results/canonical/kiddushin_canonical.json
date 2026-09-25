@@ -7111,8 +7111,8 @@
       ],
       "stories": [
         {
-          "start_segment": 8,
-          "end_segment": 8,
+          "start_segment": 7,
+          "end_segment": 7,
           "classification": "LOW_CONFIDENCE",
           "spans_pages": null,
           "start_segment_page2": null,
@@ -7124,6 +7124,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-09-23",
+              "source": "review_2026-09-16_bundle_jeff_2026-09-23",
+              "action": "rebound",
+              "rule": "R-B4",
+              "old_range": "8-8",
+              "new_range": "7-7",
+              "note": "Segment 7 is the incident R. Ya'akov reports (his 2005 list, kiddushin_041, begins there; his 2026-04-23 note: 'The previous line should be included'). Segments 8-10 are the Gemara's commentary: \"This is a tricky case but it is actually part of the Gemara's commentary on the story. In this commentary the gemara revises some of the story, or adds some details. But these are of the Gemara's efforts to resolve certain issues. So I would not include them in the story at all, although, at some level, they influence the audience's understanding of the story.\""
+            }
           ]
         },
         {
@@ -14805,6 +14816,16 @@
     }
   ],
   "rules_applied": [
-    "R-C1"
-  ]
+    "R-C1",
+    "R-B4"
+  ],
+  "jeff_2026_09_23": {
+    "source": "validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json",
+    "applied": [
+      {
+        "key": "Kiddushin 39b_8-8 -> 7-7",
+        "source": "review_2026-09-16_bundle_jeff_2026-09-23"
+      }
+    ]
+  }
 }

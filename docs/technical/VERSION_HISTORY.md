@@ -26,6 +26,23 @@
 | v9 Wave 3 | May 2026 | Embedded + text-span | Multi-story-per-page + embedded-story few-shots + sharper not-a-story rules (prompt); text_span_* sub-segment edits (post-processor). Ketubot composite 0.9162→0.9170 (recall +0.044, −7 FNs); Kiddushin 0.8962→0.8859 (5 new finds incl. Jeff's flagged-missing 33a — shipped per Lesson 13). |
 | v10 Wave 4 | Jun 2026 | LLM char-offset spans | Replaced regex boundary editing with LLM-emitted character offsets. **FAILED** — 55% of cuts sever a word (Lesson 16, 18). |
 | v10 no-trim | Aug 2026 | Revert | Spans stripped, segment-level boundaries restored. Composite unchanged 0.9171. `results/v10/wave4_notrim/`. |
+| v11 twin pass default | Sep 2026 | Detection | Twin pass ON by default (`TWIN_PASS=1`, `TWIN_TRIGGER=all`) with Jeff's 2026-09-23 rejection shapes in its question. Yevamot 89.2%→94.1% when measured (2026-09-14). Goldens gain BORDERLINE (Ketubot) and OUT_OF_SCOPE (Gittin). This table is not the v11 history; `src/story_detector_v11.py`'s docstring and `docs/capabilities/` are. |
+
+---
+
+## v11: Twin Pass On by Default + Jeff's 2026-09-23 Verdicts (2026-09-25)
+
+**Goal:** Act on Jeff's 10 verdicts — goldens, rules, and the twin pass's false additions.
+
+**Changes:**
+1. `TWIN_PASS_DEFAULT='1'`, `TWIN_TRIGGER_DEFAULT='all'` in `src/story_detector_v11.py`. `TWIN_PASS=0` = control arm.
+2. `_twin_prompt()` split out; `not_a_story` now lists Gemara commentary on the story, a bare report, a seating description, a biblical episode (R-B4, R-C5, R-S1). Run fingerprint includes it.
+3. Fix: `TWIN_TRIGGER=all` crashed on a neighbour with no Stage 1 label.
+4. Goldens: `scripts/apply_jeff_2026-09-23_verdicts.py` (Ketubot, Kiddushin); `scripts/build_gittin_golden.py` reads the new verdict file and writes `out_of_scope`.
+
+**Measured** (`scripts/rejudge_twin_additions.py`, 21 additions re-asked): old wording 21/21 reproduced; new drops 3/7 known-false, 1/8 known-good (Yevamot 78a:13).
+
+**Writeup:** `docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md`
 
 ---
 

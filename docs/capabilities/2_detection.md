@@ -71,6 +71,8 @@ the credit is being counted twice.
 | 2026-09-02 | **"It is filled in by the translator"** — Jeff's stated cause for two `HIGH_CONFIDENCE` rejections, screened corpus-wide with no API calls | **measured: the mechanism is real and does NOT explain the rejections.** Hebrew is truncated on **197/301** proposal segments (65%); his two cases sit at expansion 4.51 and 5.89 against a corpus median of 2.05, so he read them right. But the passages he rejects sit *lower* on expansion than the ones he accepts (2.42 vs 2.59), and above ratio 2.5 only 62% are rejected against 83% below it. **Ablation not run** | [`english_first`](../findings/2026-09-02-english-first-prompt.md) |
 | 2026-09-02 | **Gittin's denominator corrected — the expert retracted one of his own entries.** `gittin_075` (57a, the Sadducee on the land's fertility): *"I agree that this is not a story and should not have been included. The list was wrong. Great to have the AI correct it!"* We proposed nothing there, so it scored as a miss | **measured: strict recall 108/112 = 96.4% → 108/111 = 97.3%.** The remaining misses are three, not four — 38b, 46b, 57a Beitar — and all three are things he confirmed *are* stories. Annotated, not deleted: `counts_for_recall: false` with his words and the date; `blind` stays true, because the entry was blind, it is simply not a story | [`recall_denominator`](../findings/2026-09-02-gittin-recall-denominator.md) |
 | 2026-08-30 | Five stories from Jeff's blind list added to the Ketubot golden (20a, 53a, 67b, 72b, 82b) — a *double* miss, never detected and never labelled, so the harness was structurally unable to penalise them | golden 182 → 187; golden recall 0.9371 → 0.9085 (**the drop is the deliverable**); blind recall untouched at 96.0%; golden coverage of Jeff's list 96.6% → 100% | `2e61035` |
+| 2026-09-14 | **The twin pass** — after Stage 2, ask of each free segment beside a found story: *separate incident, same story, or not a story?* Its own prompt; the page prompt untouched (`_find_adjacent_twins`) | **measured: Yevamot 89.2% → 94.1%, Kiddushin 88.9% → 90.0%** (`TWIN_TRIGGER=all`), every adjacent twin by name; +8 Yevamot proposals not on his list | [`twin-pass`](../findings/2026-09-14-twin-pass.md) |
+| 2026-09-25 | **Twin pass ON by default**, with Jeff's 2026-09-23 rejection shapes in its question (commentary on the neighbour, a bare report, a seating description, a biblical episode). The twin prompt had carried none of Stage 2's disqualifiers, so it re-admitted what Stage 2 rejects | **measured by re-asking the 21 additions on disk:** old wording 21/21 reproduced; new drops 3 of 7 known-false and **1 of 8 known-good — Yevamot 78a:13, on his 2005 list** (a legal ruling under his 2026 rules). Only drops are visible to a re-ask | [`jeff-verdicts`](../findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md) |
 
 ## What we reverted, and why
 
@@ -121,6 +123,9 @@ rejections, because the check behind the claim was narrower than the claim:
   not price: Flash 117/127 (92.1%) vs Pro 115/127 (90.6%) on Jeff's labels
   (**CIRCULAR**), with Pro 4× the cost and 3× slower — Pro is too conservative on
   borderline stories (`5ec53e3`).
+- **The twin pass, ON by default since 2026-09-25** (`TWIN_PASS=1`, `TWIN_TRIGGER=all`;
+  `TWIN_PASS=0` for a control arm). Adds only. **No shipped artifact has been produced
+  under the 2026-09-25 wording yet** — the measured outputs below predate it.
 - **Post-processing that affects coverage:** Stage 4b/4c cross-page merge (Cases 1–5),
   4d stitching, 4f continuation check, all in `src/story_detector_v11.py`.
 - **The measured outputs:** `results/v10/wave4_notrim/*.json` — segment-level boundaries,
