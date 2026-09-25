@@ -51,14 +51,13 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `span-truncation-rate` | `talmud-stories` | **1 FILES** |
+| `span-truncation-rate` | `talmud-stories` | **2 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `main` | `pr3-default` | **6 FILES** |
-| `recent-work-plans-d0818b` | `recent-work-plans-d0818b` | clean |
+| `jeff-feedback-golden-dataset-a2739b` | `recent-work-plans-d0818b` | **17 FILES** |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 41 items, never deleted
+## Done — 42 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -103,4 +102,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Two identical runs differ by 12.8 points — pin a model and measure the noise floor](work/done/2026-09-08-bench-is-not-reproducible.md) | detection, triage, boundaries, classification | [2026-09-09-broken-prompt-explains-everything.md](docs/findings/2026-09-09-broken-prompt-explains-everything.md) |
 | [Ask about the segment next door — a targeted twin check after detection](work/done/2026-09-14-adjacent-twin-check.md) | detection | [2026-09-14-twin-pass.md](docs/findings/2026-09-14-twin-pass.md) |
 | [Stage 2 has no checkpoint — a 503 at page 32 discards 31 pages of detection](work/done/2026-09-15-stage2-checkpoint.md) | detection | — |
-<!-- board-checksum: 8fb1068a92e64321 -->
+| [Jeff's 2026-09-23 verdicts — into the goldens, the rule register, and the twin pass](work/done/2026-09-25-jeff-2026-09-23-verdicts.md) | classification, boundaries, detection | [2026-09-25-jeff-verdicts-scope-commentary-reports.md](docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md) |
+<!-- board-checksum: 70adc7e7e4ada353 -->

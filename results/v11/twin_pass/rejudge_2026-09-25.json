@@ -1,0 +1,320 @@
+{
+  "old_rev": "HEAD",
+  "rows": [
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 15a",
+      "segment": 14,
+      "beside": [
+        15,
+        15
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B describes an incident involving Rabbi Akiva and the New Year for trees, while Passage A describes an incident involving Shammai the Elder and a newborn in a sukka.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a piece of legal reasoning (a resolution of a contradiction) explaining Rabbi Akiva's uncertainty regarding a specific ruling, rather than a narrative incident with a plot or outcome.",
+      "label": "drop",
+      "label_source": "jeff 2026-09-23"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 17a",
+      "segment": 4,
+      "beside": [
+        5,
+        5
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features a different set of actors (Rav Yosef, Rav Kahana, Rav Yehuda) and a distinct topic (the destruction of Tarmod) compared to the lineage story of Rav Hamnuna in Passage A.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a description of who sat where followed by a discussion of a tradition regarding the city of Tarmod, lacking a narrative arc or consequence.",
+      "label": "drop",
+      "label_source": "jeff 2026-09-23"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 34b",
+      "segment": 6,
+      "beside": [
+        7,
+        7
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B contains a distinct narrative involving Rava and the daughter of Rav Hisda, which serves as a separate precedent to the story of the anonymous woman and Rav Yosef in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B contains a distinct narrative incident involving Rava and the daughter of Rav Hisda, which serves as a counter-example to the preceding legal ruling, whereas Passage A is a separate case involving Rav Yosef and an anonymous woman.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 43a",
+      "segment": 12,
+      "beside": [
+        13,
+        13
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features a distinct legal debate between Ameimar and Rav Ashi, whereas Passage A describes a specific historical incident involving Rava and an anonymous person's feast.",
+      "new": "separate_incident",
+      "new_reason": "Passage B is a distinct dialogue between Ameimar and Rav Ashi regarding a specific ruling, whereas Passage A is a separate anonymous challenge to that ruling based on a different incident involving Rava.",
+      "label": "drop",
+      "label_source": "simon 2026-09-16"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 45a",
+      "segment": 17,
+      "beside": [
+        16,
+        16
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new set of actors (the residents of Bei Mikhsei and Rabba) and a distinct legal scenario (a half-slave) while following the same thematic pattern as Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B introduces a new set of actors (the residents of Bei Mikhsei and Rabba) and a distinct legal scenario (a half-slave) compared to the previous rulings in Passage A.",
+      "label": "drop",
+      "label_source": "simon 2026-09-16"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 63a",
+      "segment": 6,
+      "beside": [
+        7,
+        7
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features Rabbi Elazar addressing a plowed field, whereas Passage A features Rav addressing sheaves of grain, following a parallel narrative structure with the same concluding formula.",
+      "new": "separate_incident",
+      "new_reason": "Passage B features Rabbi Elazar addressing a field with a specific punchline, while Passage A features Rav and Rava in a distinct, subsequent incident using a similar formula.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 78a",
+      "segment": 11,
+      "beside": [
+        12,
+        12
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B and Passage A follow the same structural form of an objection (metiv) raised by different Amoraim (Rav Yosef vs. Rava) using different Tannaitic sources to address the same legal principle.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a legal citation of a Mishnaic ruling (Rabbi Tarfon) used as a proof-text in a dialectical objection, rather than a narrative incident involving specific historical actors.",
+      "label": "drop",
+      "label_source": "simon 2026-09-16"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 78a",
+      "segment": 13,
+      "beside": [
+        12,
+        12
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new transmission of a ruling by Rav Dimi in the name of Rabbi Yoḥanan, featuring different legal subjects and a distinct legal conclusion from the preceding baraita about Minyamin.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a legal ruling (halakhic statement) reported by Rav Dimi in the name of Rabbi Yoḥanan, followed by the Gemara's analytical inference, rather than a narrative incident or story.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 101b",
+      "segment": 13,
+      "beside": [
+        14,
+        14
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features Rav Pappa and Rav Huna, son of Rav Yehoshua, performing a specific act of halitza with five judges, which is a distinct historical event from the encounter between Rav Ashi and Rav Kahana in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B describes a distinct event involving Rav Pappa and Rav Huna, son of Rav Yehoshua, which follows the same structural pattern and resolution as the event in Passage A involving Rav Kahana and Rav Yehuda.",
+      "label": "drop",
+      "label_source": "simon 2026-09-16"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 105a",
+      "segment": 13,
+      "beside": [
+        14,
+        14
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features different historical actors (Rabba and Abaye) and a distinct outcome (specific lifespans of 40 and 60 years) compared to the anonymous family in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B is a distinct narrative involving different protagonists (Rabba and Abaye) and their specific lifespans, serving as a separate biographical illustration of the same theological principle found in Passage A.",
+      "label": "keep",
+      "label_source": "jeff 2026-09-23"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 106b",
+      "segment": 9,
+      "beside": [
+        7,
+        8
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new protagonist, Mar Zutra, and a distinct action regarding the physical preparation of the halitza document, separate from the dialogue between Rav Ashi and Rav Kahana in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B introduces a new protagonist, Mar Zutra, performing a distinct action regarding the preparation of the halitza document, followed by a challenge from Mar bar Idi and a final halakhic resolution.",
+      "label": "drop",
+      "label_source": "jeff 2026-09-23"
+    },
+    {
+      "tractate": "yevamot",
+      "ref": "Yevamot 121b",
+      "segment": 14,
+      "beside": [
+        15,
+        16
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B contains two distinct incidents involving different deceased individuals (Hivvai and the horseman) and different rabbis (Rav Yosef/Rava) than the incident involving Hasa and Rav Nahman in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B contains two distinct incidents involving different protagonists (Hivvai and the horseman of Pumbedita) and different rabbis (Rav Yosef/Rava) than the story of Hasa in Passage A.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 31b",
+      "segment": 3,
+      "beside": [
+        1,
+        2
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new set of actors (Rav Ya’akov bar Avuh and Abaye) and a distinct scenario regarding the reversal of service between parents and children, independent of the narrative about Avimi.",
+      "new": "separate_incident",
+      "new_reason": "Passage B introduces a new set of actors (Rav Ya’akov bar Avuh and Abaye) and a distinct scenario regarding the reversal of parental service, independent of the narrative about Avimi and Rabbi Abbahu.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 31b",
+      "segment": 5,
+      "beside": [
+        4,
+        4
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new protagonist, Rav Yosef, and a distinct set of actions and subsequent biographical anecdotes regarding Rabbi Yoḥanan and Abaye, independent of Rabbi Tarfon's narrative.",
+      "new": "separate_incident",
+      "new_reason": "Passage B introduces a new protagonist, Rav Yosef, and a distinct narrative action regarding his mother's footsteps, followed by a separate biographical discussion regarding Rabbi Yoḥanan and Abaye.",
+      "label": null,
+      "label_source": null
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 33a",
+      "segment": 17,
+      "beside": [
+        16,
+        16
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new set of actors (Abaye and Rav Nachman) and describes their specific physical practices regarding elders, distinct from the standing/reverence discussion in Passage A.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a collection of bare reports describing the habitual practices of Abaye, Rava, and Rav Nahman regarding assistance to the elderly, lacking a narrative arc or a specific consequential event.",
+      "label": null,
+      "label_source": null
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 39a",
+      "segment": 2,
+      "beside": [
+        1,
+        1
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new set of actors (Rav Yehuda and Rabbi Yoḥanan) and a distinct interaction (a sent query and response) regarding the same legal topic discussed in Passage A.",
+      "new": "separate_incident",
+      "new_reason": "Passage B introduces a new set of actors (Rav Yehuda and Rabbi Yoḥanan) and a distinct interaction involving a sent query and a formal response, following the previous anecdotes about Levi, Shmuel, and the Sages of Pumbedita.",
+      "label": null,
+      "label_source": null
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 39b",
+      "segment": 12,
+      "beside": [
+        13,
+        13
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B describes a specific incident involving a son and a mother bird as the catalyst for Aher's sin, while Passage A offers an alternative tradition involving the tongue of Hutzpit the Meturgeman.",
+      "new": "separate_incident",
+      "new_reason": "Passage B describes a specific incident involving a son and a mother bird that led Elisha ben Avuya to sin, which is distinct from the incident in Passage A involving the tongue of Chutzpit the Meturgeman.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 60b",
+      "segment": 7,
+      "beside": [
+        8,
+        8
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B records Rabbi Zeira's perspective while in Babylonia regarding Rav Huna's tradition, whereas Passage A records his discovery of a different tradition from Rabbi Asi upon his arrival in Eretz Yisrael.",
+      "new": "separate_incident",
+      "new_reason": "Passage B describes a specific historical situation involving Rabbi Zeira and the scholars in Babylonia regarding Rav Huna's tradition, which is distinct from his later discovery in Eretz Yisrael described in Passage A.",
+      "label": null,
+      "label_source": null
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 71a",
+      "segment": 3,
+      "beside": [
+        4,
+        5
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B features a different protagonist (Rabbi Hanina bar Hama) delivering the same legal verdict as Passage A but in a distinct historical context and transmission chain.",
+      "new": "not_a_story",
+      "new_reason": "Passage B is a bare report of a tradition cited by Rabbi Hanina bar Hama as a legal precedent or ruling, lacking the narrative structure, conflict, or sequence of events found in the subsequent story about Rabbi Pinehas.",
+      "label": null,
+      "label_source": null
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 72a",
+      "segment": 4,
+      "beside": [
+        3,
+        3
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B introduces a new set of actors (Rav Ika bar Avin and Rav Hananel) and a different geographical location (Hillazon Nihavnad), following the same structural formula as Passage A regarding lineage status.",
+      "new": "separate_incident",
+      "new_reason": "Passage B features a distinct set of actors (Rav Ika bar Avin, Abaye, and Rav Hananel) and a specific conflict regarding a different geographical location (Hillazon Nihavnad) and a personal motive (a yevama), independent of the events in Passage A.",
+      "label": "keep",
+      "label_source": "his 2005 list (strict)"
+    },
+    {
+      "tractate": "kiddushin",
+      "ref": "Kiddushin 72a",
+      "segment": 9,
+      "beside": [
+        10,
+        10
+      ],
+      "old": "separate_incident",
+      "old_reason": "Passage B is a dialogue between Rabbi Yehuda HaNasi and Levi regarding ethnic/social descriptions, whereas Passage A is a deathbed prophetic declaration by Rabbi Yehuda HaNasi regarding specific Babylonian locations.",
+      "new": "separate_incident",
+      "new_reason": "Passage B is a distinct dialogue between Rabbi Yehuda HaNasi and Levi regarding ethnic and social descriptions, whereas Passage A is a deathbed prophetic monologue concerning specific Babylonian locations and their genealogical status.",
+      "label": null,
+      "label_source": null
+    }
+  ]
+}

@@ -60,6 +60,33 @@ below should be applied to.
 
 ---
 
+## Scope — whose stories?
+
+### R-S1 · The collection is stories about rabbis and post-biblical figures
+**Jeff, 2026-09-23, on Gittin 57b (Nebuzaradan) and 68a (Solomon and Ashmedai):** *"This
+is a full blown story, but it is about biblical characters, not rabbis. So it is not in
+the class of stories that we are looking at."* — *"not in our scope, which is rabbis and
+post-biblical figures."*
+
+- **Status:** settled for biblical episodes retold. **Not** a judgment that they are not
+  stories — he marked confidence *right* on both, "that it is a story. But not our kind of
+  story." So they get their own label, **`OUT_OF_SCOPE`**, never `NOT_A_STORY`.
+- **It was always there.** Neither passage is on his 2005 Gittin list: the rule was
+  applied in 2005 and simply never written down.
+- **Rate, measured first** (Lesson 18): by the detector's summaries, **3 proposals of ~560**
+  across Gittin, Kiddushin, Yevamot and Ketubot are biblical episodes (Gittin 57b:0-4,
+  68a:7-12; Yevamot 77a:0, Doeg and the lineage of David — unjudged). No accepted entry
+  in any golden is one. A small false-positive source, not a recall risk.
+- **Applied:** Gittin 57b:0-4 and 68a:7-12 are in `gittin_canonical.json`'s
+  `out_of_scope` list — neither entries nor unlabelled (`build_gittin_golden.py`). In the
+  twin-pass question since 2026-09-25.
+- **Edges, open** (`jeff:scope-edges`): Elijah appearing to a rabbi (Gittin 6b, Kiddushin
+  40a); a biblical exemplum cited *inside* a rabbinic story (Kiddushin 32b, Abraham
+  serving guests); post-biblical non-rabbis (Titus, King Yannai, Agrippa). All three are
+  in the golden today and read as in scope under his wording; that is our reading, not his.
+
+---
+
 ## Classification — is it a story?
 
 ### R-C1 · A Mishnah story belongs to the Mishnah; the Talmud's quotation of it is Talmudic
@@ -77,12 +104,25 @@ Bavli Gittin 10b."*
   boundary scorer (`WITHHELD`), the axis review UI. **Blind to it:** `evaluate_golden.py`,
   which is immutable — use `report_mishnah_filter_delta.py`.
 
-### R-C2 · Speech alone can be a story when there is conflict and change — and it is borderline
+### R-C2 · Speech alone is BORDERLINE when there is conflict — and not a story when there is not
 **Jeff, 2026-09-01:** *"Sometimes dialogue can be counted as stories… when there is
 conflict and implied change. But these would always be borderline. Unfortunately there are
 no real hard and fast rules, that is, unless we make one."*
+**Jeff, 2026-09-23, confirming the rule we proposed on the three cases that turn on it:**
+Ketubot 7a:1 — *"mostly speech acts… technically there is not enough actions. But there
+is conflict and some implied change, so it is borderline."* Ketubot 112a:11 — *"mainly a
+dialogue, so lacking the actions necessary for a story. But has conflict, so can be
+borderline."* (Being mocked is conflict; it is not an event.)
 
-- **Status:** open as a general policy, and his answer invites **us** to propose the rule.
+- **Status:** **settled 2026-09-23.** Speech with no event beyond speaking: `BORDERLINE`
+  if there is conflict, `NOT_A_STORY` if there is not. Quasi-speech-acts count as speech
+  (*retracted, considered, responded, sent a question* — his list, 2026-09-02).
+- **Applied to the Ketubot golden, 2026-09-25:** 7a:1 and 112a:11 by his verdict, and
+  **10 more** where he had written *"borderline"* in his own words in an earlier round
+  and our auto-applier rounded it to `LOW_CONFIDENCE`, because the golden had no such
+  column. In those rounds he used the two as one category (*"low confidence/borderline"*).
+  Each carries his quote (`scripts/apply_jeff_2026-09-23_verdicts.py`). The other
+  `LOW_CONFIDENCE` entries were **not** touched: the word is his to use, not ours to infer.
 - **Settled instances:** Gittin 57a (the fertility exchange) is **not** a story — *"The
   list was wrong. Great to have the AI correct it!"* Gittin 43a is **low confidence at
   most**. Gittin 25a is **high confidence**.
@@ -122,6 +162,27 @@ uprooted. (two actions, causal connection)"*
   the passage is never proposed, so the failure is in Detection's reach and not in the
   criteria. Pinned by `tests/test_prompt_carries_the_rules.py`.
 
+### R-C5 · A bare report of what someone did is not a story — the act has to lead somewhere
+**Jeff, 2026-09-23**, four passages, one shape:
+- Yevamot 15a (R. Akiva's etrog): *"There is no real story here, just a report of what
+  R. Akiva did."*
+- Yevamot 106b (Mar Zutra's ḥalitza document): *"just a description of what Mar Zutra
+  did… even if it were against him, the narrative ends there. There is no continuation."*
+- Yevamot 17a: *"a description of rabbi's sitting in a certain arrangement. But then they
+  just have a discussion."*
+- Ketubot 15a:0: *"a legal discussion discussing facts of an incident and their
+  consequences, but not enough of the incident is given."*
+
+- **Status:** settled on those four. It is his 2026-09-01 test (*"two actions, causal
+  connection"*) stated from the other side: one act, however it is introduced — even
+  *מעשה ב…* — is a precedent, not a story. It is also the other half of R-C3: a custom
+  with **no** one-time event after it (Mar Zutra *"would score"*) stays a custom.
+- **Rate, indicated not measured:** 10 accepted Ketubot entries carry a single event in
+  the detector's own `multiple_events` field (two of them now ruled: 15a:0 no, 112a:11
+  borderline). Kiddushin and Gittin entries carry no such field, so they cannot be
+  screened without a run. **Do not bulk-relabel on this count** (Lesson 18, Lesson 27).
+- **Applied:** Ketubot 15a:0 → `NOT_A_STORY`. In the twin-pass question since 2026-09-25.
+
 ---
 
 ## Boundaries — where does it start and end?
@@ -154,6 +215,27 @@ wrong under both standards (Lesson 24).
 ### R-B3 · Where a ruling is what makes the passage a story, is the ruling in?
 - **Status:** **open** (`jeff:boundary-end-rule`). Blocks
   [`work/2026-08-30-second-story-guard.md`](../work/2026-08-30-second-story-guard.md).
+- **Indicated, 2026-09-23:** on Yevamot 106b he wrote *"then you have the gemara making a
+  legal ruling, which is not part of the narrative at all."* That leans to *cut the
+  ruling*. It does not settle R-B3: 106b is not a story, so it is not the case R-B3 asks
+  about — a ruling that is what makes a passage a story.
+
+### R-B4 · The Gemara's commentary on a story is not part of the story
+**Jeff, 2026-09-23, on Kiddushin 39b 8-10:** *"it is actually part of the Gemara's
+commentary on the story. In this commentary the gemara revises some of the story, or adds
+some details. But these are of the Gemara's efforts to resolve certain issues. So I would
+not include them in the story at all, although, at some level, they influence the
+audience's understanding of the story."* And on Yevamot 15a: *"the gemara's comment about
+the story. It does tell you about what R. Akiva was thinking, but it is not part of the
+story."*
+
+- **Status:** settled. Stronger than R-B2 in two ways: *excluded*, not "need not be
+  quoted", and it covers commentary **inside or after** a story — including where the
+  commentary revises the story or adds a detail to it.
+- **Applied:** Kiddushin 39b golden 8-8 → **7-7** (segment 7 is the incident; his 2005
+  entry `kiddushin_041` and his 2026-04-23 note both start there). In the twin-pass
+  question since 2026-09-25 — Yevamot 15a:14, one of his three twin-pass rejections, is the
+  Gemara's commentary on the story beside it (the other two are R-C5).
 
 ---
 

@@ -778,8 +778,9 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 stories = merged
 
         # Twin pass (2026-09-14). Gated; off means not called, zero calls, nothing
-        # else in this method changes. See _find_adjacent_twins.
-        if os.getenv('TWIN_PASS', '0') == '1':
+        # else in this method changes. See _find_adjacent_twins. ON by default since
+        # 2026-09-25 (TWIN_PASS_DEFAULT).
+        if os.getenv('TWIN_PASS', TWIN_PASS_DEFAULT) == '1':
             real_stories = [s for s in stories
                             if s.get('classification') not in ('NOT_A_STORY', None)]
             if real_stories:
@@ -856,11 +857,14 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 # Measured 2026-09-14 because Yevamot 121b seg 14 holds two of Jeff's
                 # stories after a legal question and Stage 1 labelled the whole
                 # segment DELIBERATION -- the labelled trigger can never ask about it.
-                if os.getenv('TWIN_TRIGGER', 'labelled') != 'all':
+                if os.getenv('TWIN_TRIGGER', TWIN_TRIGGER_DEFAULT) != 'all':
                     if idx >= len(event_types) or event_types[idx] not in self.TWIN_TRIGGER_LABELS:
                         continue
                 seen.add(idx)
-                out.append({'segment': idx, 'beside': (a, b), 'label': event_types[idx].value})
+                # Under `all` a neighbour may have no Stage 1 label (a caller passing
+                # fewer labels than segments); it is still asked, and says so.
+                label = event_types[idx].value if idx < len(event_types) else None
+                out.append({'segment': idx, 'beside': (a, b), 'label': label})
         return out
 
     def _find_adjacent_twins(self, ref: str, segments: List[Dict],
@@ -887,37 +891,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         found = []
         for c in cands:
             idx = c['segment']; a, b = c['beside']
-            def heb(i):
-                return re.sub(r'<[^>]+>', '', segments[i].get('hebrew') or '')
-            def eng(i):
-                return re.sub(r'<[^>]+>', '', segments[i].get('english') or '')
-            story_text = '\n'.join(f'[{i}] {heb(i)}\n    {eng(i)}' for i in range(a, b + 1))
-            prompt = f"""You are comparing two adjacent passages from {ref} in the Babylonian Talmud.
-
-## PASSAGE A — a story already identified (segments {a}-{b})
-{story_text}
-
-## PASSAGE B — the segment immediately {'before' if idx < a else 'after'} it (segment {idx})
-[{idx}] {heb(idx)}
-    {eng(idx)}
-
-## THE QUESTION
-The Talmud often places several incidents of the SAME FORM one after another —
-different actors, the same shape, sometimes the same closing words, with nothing
-between them. Each such incident is its own story.
-
-Is PASSAGE B:
-- "separate_incident": its own story — its own actor(s) and its own outcome, even if
-  told in almost the same words as A, or sharing A's formula or verdict;
-- "same_story": part of A — the same actors continuing the same event, or A's
-  aftermath/discussion;
-- "not_a_story": legal reasoning, a citation, a ruling, a list, or a hypothetical.
-
-Answer in JSON only:
-{{"verdict": "separate_incident" | "same_story" | "not_a_story",
-  "classification": "YES" | "HIGH_CONFIDENCE" | "LOW_CONFIDENCE",   (only if separate_incident)
-  "reason": "<one sentence>"}}
-"""
+            prompt = self._twin_prompt(ref, segments, a, b, idx)
             try:
                 content = self._call_google(prompt, max_tokens=512, json_mode=True)
                 result = self._parse_json_response(content) if content else None
@@ -945,6 +919,56 @@ Answer in JSON only:
                     'one_sentence_summary': result.get('reason', ''),
                 })
         return found
+
+    def _twin_prompt(self, ref: str, segments: List[Dict], a: int, b: int, idx: int) -> str:
+        """The twin question for segment `idx` beside story a-b.
+
+        Its own method so the wording can be re-asked of additions already on disk
+        without re-running Stage 2 (scripts/rejudge_twin_additions.py). The
+        `not_a_story` examples are Jeff's, 2026-09-23 (docs/STORY_RULES.md R-B4, R-C5,
+        R-S1): each twin-pass addition he rejected was one of them.
+        """
+        def heb(i):
+            return re.sub(r'<[^>]+>', '', segments[i].get('hebrew') or '')
+        def eng(i):
+            return re.sub(r'<[^>]+>', '', segments[i].get('english') or '')
+        story_text = '\n'.join(f'[{i}] {heb(i)}\n    {eng(i)}' for i in range(a, b + 1))
+        return f"""You are comparing two adjacent passages from {ref} in the Babylonian Talmud.
+
+## PASSAGE A — a story already identified (segments {a}-{b})
+{story_text}
+
+## PASSAGE B — the segment immediately {'before' if idx < a else 'after'} it (segment {idx})
+[{idx}] {heb(idx)}
+    {eng(idx)}
+
+## THE QUESTION
+The Talmud often places several incidents of the SAME FORM one after another —
+different actors, the same shape, sometimes the same closing words, with nothing
+between them. Each such incident is its own story.
+
+Is PASSAGE B:
+- "separate_incident": its own story — its own actor(s) and its own outcome, even if
+  told in almost the same words as A, or sharing A's formula or verdict;
+- "same_story": part of A — the same actors continuing the same event, or A's
+  aftermath/discussion;
+- "not_a_story": legal reasoning, a citation, a ruling, a list, or a hypothetical —
+  and also each of these, which look like incidents and are not:
+  * the Gemara's commentary ON story A — its questions and answers about A, a
+    harmonisation, what a character must have thought, a detail it adds to or
+    revises in A. Commentary on a story is not part of any story;
+  * a bare report of what someone did or used to do, where nothing follows from the
+    act — no second event, no consequence, no continuation. A single act cited as a
+    precedent is not a story, however it is introduced;
+  * a description of who sat where, followed only by discussion;
+  * a story whose actors are biblical figures. This collection is stories about
+    rabbis and post-biblical figures; a biblical episode retold is out of scope.
+
+Answer in JSON only:
+{{"verdict": "separate_incident" | "same_story" | "not_a_story",
+  "classification": "YES" | "HIGH_CONFIDENCE" | "LOW_CONFIDENCE",   (only if separate_incident)
+  "reason": "<one sentence>"}}
+"""
 
     def _find_additional_stories(self, ref: str, segments: List[Dict],
                                   event_types: List[EventType],
@@ -1324,7 +1348,8 @@ Return JSON:
         parts = [
             inspect.getsource(type(self).build_detection_prompt),
             _SERIES_RULE, _SERIES_RULE_SECOND_PASS,
-            os.getenv('TWIN_PASS', '0'), os.getenv('TWIN_TRIGGER', 'labelled'),
+            inspect.getsource(type(self)._twin_prompt),
+            os.getenv('TWIN_PASS', TWIN_PASS_DEFAULT), os.getenv('TWIN_TRIGGER', TWIN_TRIGGER_DEFAULT),
             os.getenv('TWIN_REACH', '1'),
             self.model_name or '', str(self.thinking_level),
         ]
@@ -2868,6 +2893,16 @@ def filter_biblical_actor_stories(pages: List[Dict]) -> int:
 # Moved to src/model_config.py on 2026-09-03 so event_triage can use it without a cycle.
 # Re-exported under the original name: it is referenced by tests and by call sites here.
 _supports_thinking_level = supports_thinking_level
+
+
+# The twin pass (_find_adjacent_twins), ON by default since 2026-09-25. Measured
+# 2026-09-14/15: Yevamot 89.2% -> 94.1%, Kiddushin 88.9% -> 90.0%, with TWIN_TRIGGER=all
+# (the labelled trigger cannot see Yevamot 121b). Turned on after Jeff's 2026-09-23
+# verdicts on its non-listed additions, with his rejection reasons written into the
+# question -- docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md.
+# TWIN_PASS=0 still gives the pre-2026-09-25 detector for a control arm.
+TWIN_PASS_DEFAULT = '1'
+TWIN_TRIGGER_DEFAULT = 'all'
 
 
 # The parallel-series clause, added 2026-09-07. Measured 2026-09-07: 18 of 38

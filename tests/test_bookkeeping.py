@@ -39,7 +39,10 @@ BASELINE_KETUBOT_SHA = "e5e46fd7ac174b2a52c4030ed71bb603c2f79067"
 # The irreplaceable data. An unchanged composite beside a changed count is the signature
 # of silent loss, so we assert the counts and never the score.
 GOLDEN_COUNTS = {
-    "ketubot": {"pages": 222, "entries": 187, "accepted": 164},
+    # 164 -> 163 on 2026-09-25: Ketubot 15a:0 is NOT_A_STORY by Jeff's 2026-09-23
+    # verdict. The 12 entries that became BORDERLINE the same day stay `accepted` under
+    # this test's definition, as Gittin's do (scripts/apply_jeff_2026-09-23_verdicts.py).
+    "ketubot": {"pages": 222, "entries": 187, "accepted": 163},
     "kiddushin": {"pages": 162, "entries": 96, "accepted": 85},
     # Gittin, 2026-09-02. `accepted` here counts BORDERLINE, because that is what this
     # test's definition has always meant (anything not NOT_A_STORY) and silently
@@ -60,7 +63,10 @@ GITTIN_SHAPE = {
     # -1 blind-list label and +1 unlabelled proposal, 2026-09-03: see the note above.
     "label_sources": {"expert_blind_list": 109, "expert_verdict": 25},
     "classification_distribution": {"YES": 112, "BORDERLINE": 4, "NOT_A_STORY": 18},
-    "unlabelled_proposals": 24,
+    # 24 -> 22 on 2026-09-25: Gittin 57b:0-4 and 68a:7-12 were judged (2026-09-23) --
+    # stories, but of biblical characters (R-S1). They moved to `out_of_scope`, not in.
+    "unlabelled_proposals": 22,
+    "out_of_scope": 2,
     "known_missing_stories": 3,
 }
 
@@ -375,6 +381,16 @@ def test_the_gittin_golden_keeps_its_two_kinds_of_evidence_apart():
     assert d["classification_distribution"] == GITTIN_SHAPE["classification_distribution"]
     assert len(d["unlabelled_proposals"]) == GITTIN_SHAPE["unlabelled_proposals"]
     assert len(d["known_missing_stories"]) == GITTIN_SHAPE["known_missing_stories"]
+    assert len(d["out_of_scope"]) == GITTIN_SHAPE["out_of_scope"]
+
+    # OUT_OF_SCOPE is a judgement that a passage IS a story and is not ours. Written as
+    # an entry, the immutable harness would score the detector's proposal there as a hit;
+    # written as NOT_A_STORY, it would contradict what he said.
+    entry_keys = {(pg["ref"], s["start_segment"], s["end_segment"])
+                  for pg in d["pages"] for s in pg.get("stories", [])}
+    for o in d["out_of_scope"]:
+        assert o["classification"] == "OUT_OF_SCOPE" and o["rule"] == "R-S1"
+        assert (o["ref"], o["start_segment"], o["end_segment"]) not in entry_keys
 
     for s in stories:
         assert s.get("label_source") in ("expert_verdict", "expert_blind_list"), (
