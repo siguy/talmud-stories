@@ -57,7 +57,16 @@ at* is 110 of the 249 accepted golden entries (Ketubot 77, Kiddushin 33). The bu
   **Bundled into [`loose-credited-proposals`](done/2026-09-03-loose-credited-proposals.md)**
   as part of the single next review page, alongside the 11 loose-window cases and the
   Gittin extras — three separate asks would waste three of Jeff's replies on one round.
-- **6c — implement.** **BLOCKED on 6b by design**, not by circumstance.
+  **ANSWERED 2026-09-23** — the three came back on the 10-passage page: 7a:1 and 112a:11
+  **borderline** (conflict), 15a:0 **no**. R-C2 is settled
+  ([STORY_RULES](../docs/STORY_RULES.md), [finding](../docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md)).
+  Applied to the Ketubot golden, plus 10 entries he had called "borderline" in his own
+  words — including 54a:22 and 85a:13-14, which are *also* boundary bugs (both things can
+  be true; the boundary fix is still owed).
+- **6c — implement.** **Unblocked 2026-09-25.** What it now means: Stage 2 emits
+  `BORDERLINE` for speech-with-conflict (R-C2) and carries R-C5 / R-B4 in Jeff's words.
+  A page-level prompt change — needs the scored two-arm run with a same-code repeat
+  (Lesson 22) and the gates below. Not started.
 
 ## Guardrails
 
