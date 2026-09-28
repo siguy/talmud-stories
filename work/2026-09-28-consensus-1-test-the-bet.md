@@ -45,9 +45,14 @@ on a passage Jeff has judged, they agree with him — in particular they do not 
    synchronous `messages.create`, structured output via `output_config.format`,
    `stop_reason == "refusal"` counted as a failure. **Read the `claude-api` skill
    before writing this.** `--dry-run` prints call count and estimated cost.
-4. **Run** once per backend over every scored span (~300 each). Record model, prompt
+4. **Smoke test first — 20 spans, stop if it fails.** 10 of his \`yes\` and 10 of his \`no\`
+   (BLIND-est available: Gittin 2026-09-02 first), both models. Put the answers beside
+   his in a table and read it. The one question: **when both models agree, do they call
+   a story something he said is not?** If yes on more than 2 of the 10 \`no\`s, stop and
+   write that up as the finding. Otherwise continue.
+5. **Run** once per backend over every scored span (~300 each). Record model, prompt
    sha, commit. Then **repeat the Gemini run once** to report its own spread (Lesson 43).
-5. **Report** (per tractate and pooled, Wilson 95% intervals):
+6. **Report** (per tractate and pooled, Wilson 95% intervals):
    inter-model agreement; when agreed, agreement with his `no`s and with his `yes`es
    separately; list stories called `not`; on splits, which model sides with him; the
    rules cited in every disagreement with him; failures.
