@@ -37,7 +37,7 @@ labels already on disk.
 
 ## 3. Phase 1 — test the bet on every labelled span on disk
 
-**Item:** [`consensus-1-test-the-bet`](../../work/2026-09-28-consensus-1-test-the-bet.md).
+**Item:** [`consensus-1-test-the-bet`](../../work/done/2026-09-28-consensus-1-test-the-bet.md).
 ~600 model calls, no detector run.
 
 - **Unit judged:** the span Jeff judged, exactly as he saw it — not a detector candidate.

@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     16 item(s) in work/done/
+closed     17 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -116,8 +116,8 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-open       2026-09-28-consensus-1-test-the-bet
-closed     8 item(s) in work/done/
+open       2026-09-28-consensus-2-yevamot-round   ← blocked: 2026-09-28-consensus-1-test-the-bet, 2026-09-28-review-page-scope-and-quote
+closed     9 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -171,4 +171,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: acdb5af93026d7f8 -->
+<!-- board-checksum: 919b6af8e3c08a6d -->
