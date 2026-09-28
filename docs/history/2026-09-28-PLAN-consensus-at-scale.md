@@ -1,200 +1,146 @@
 # PLAN — Consensus at scale: machines argue, Jeff settles only the disagreements
 
-**Written 2026-09-28. Status: planned, not started.** Simon approved the direction and a
-Claude model as a second, independent judge (2026-09-28). Each phase is a self-contained
-item in `work/`, listed at the end. Read [`FRAMEWORK.md`](../../FRAMEWORK.md),
-[`docs/STORY_RULES.md`](../STORY_RULES.md) and
+**Written 2026-09-28; cut to two phases the same day after a three-way plan review**
+(§7 records what was cut and why). Status: planned, not started. Simon approved the
+direction and a Claude model as an independent second judge (2026-09-28).
+
+Read [`FRAMEWORK.md`](../../FRAMEWORK.md), [`docs/STORY_RULES.md`](../STORY_RULES.md) and
 [`2026-09-27-detector-is-not-deterministic`](../findings/2026-09-27-detector-is-not-deterministic.md)
 first.
 
 ---
 
-## 1. The problem, in one paragraph
+## 1. The bet, in one sentence
 
-Jeff's attention is the only scarce resource in this project; API calls are not. A full
-Yevamot run is ~590 Gemini calls. Review throughput is measured: 25 bounded passages came
-back in a day, 95 open-ended ones drew 1 verdict (`comms/JEFF.md`). And the detector is not
-deterministic — identical runs disagree on 3 of 102 of his stories, each time by *not
-looking at all*. So today we spend few calls and ask him about everything. This plan
-inverts that: spend calls freely to (a) find more, (b) judge every candidate against the
-rules **he already stated**, (c) measure how often a unanimous machine verdict agrees with
-him — and send him only what the machines disagree about, plus a small audit.
+**When two independent models, each given Jeff's rule register, agree on whether a
+passage is a story, they agree with Jeff often enough that he only needs to see the
+passages they disagree on — plus a random audit that keeps that claim measured.**
 
-## 2. Principles this plan is built from (each one earned, with its source)
+Everything else (pooling runs, examining every page, narrow per-rule judges, batch
+tooling) is only worth building if this is true. So the bet is tested first, cheaply, on
+labels already on disk.
+
+## 2. Principles (each one earned)
 
 | principle | from |
 |---|---|
-| A **narrow question beats a broad instruction** | the twin pass recovered every twin a "find everything" prompt missed (2026-09-14) |
-| **Rules in his words, one per decision**, with his cases | `docs/STORY_RULES.md` |
-| **The golden is the product; the blind lists are the instrument** — never tune toward the instrument | STORY_RULES §"Two artifacts" |
-| **BLIND vs CIRCULAR** on every dataset | FRAMEWORK |
-| **Contested cases are kept and flagged**, never silently resolved; `borderline` is a column | Jeff, 2026-07-06 and 2026-09-01; Lesson 42 |
-| **Never use labelled examples from the pages being evaluated** | Lesson 2 |
-| **Anchor to text units, never character offsets** | Lesson 16 |
-| **Measure a rate before building a rule** | Lesson 18 |
-| **Same-code repeats**; a delta means nothing without the spread | Lesson 22, Lesson 43 |
-| **A failed call is counted, never read as a verdict** | Lesson 21 |
-| **Send him 25, not 150** | `comms/JEFF.md` sent log |
-| **Machine agreement is not evidence.** Five runs of one model agree on its systematic mistakes. Consensus is *measured* against him before it is trusted, and never written into a golden as his label | this plan |
+| Jeff's attention is the scarce resource; API calls are not | ~590 calls per Yevamot run; 25 bounded passages answered in a day, 95 open-ended drew 1 |
+| Rules in his words, one per decision | `docs/STORY_RULES.md` |
+| **Machine agreement is not evidence.** Consensus is measured against him, never written into a golden as his label | this plan |
+| BLIND vs CIRCULAR on every dataset — and now a third label, **rule-informed** | FRAMEWORK; §4 below |
+| Contested cases are kept and flagged; `borderline` and `out_of_scope` are answers, not roundings | Jeff 2026-07-06, 2026-09-23; Lesson 42 |
+| A failed call is counted, never read as a verdict | Lesson 21 |
+| Join by overlap, and say what happens when one span meets two verdicts | Lesson 36 |
+| Report the spread; one run is not a measurement | Lesson 22, Lesson 43 |
+| Send him 25, not 150 | `comms/JEFF.md` |
+| Keep one tractate untouched as the final exam | Eruvin: never run, no rule drawn from it, his 2005 list predates the project |
 
-## 3. Architecture
+## 3. Phase 1 — test the bet on every labelled span on disk
 
-```
-            ┌────────────── RECALL ──────────────┐   ┌──────────── JUDGMENT ────────────┐
- Sefaria →  Stage 1 labels (no page skipped)      →   candidate pool (every proposal,     
-            Stage 2 + twin pass × N runs (Gemini)      "found in k of N", unioned by overlap)
-                                                   →   RULE PANEL, per candidate:
-                                                        one narrow judge per STORY_RULES rule
-                                                        × 2 model families (Gemini, Claude)
-                                                        each answer cites segment indices
-                                                   →   TIERS
-                                                        consensus-story    → corpus, "machine consensus"
-                                                        consensus-not      → dropped, audited
-                                                        contested          → Jeff queue (≤25/round)
-                                                        out-of-scope       → R-S1 catalogue
-                                                   →   JEFF: contested + random audit
-                                                        every verdict → golden (as HIS label)
-                                                                      → regression case for its judge
-                                                                      → a new rule when no judge covers it
-```
+**Item:** [`consensus-1-test-the-bet`](../../work/2026-09-28-consensus-1-test-the-bet.md).
+~600 model calls, no detector run.
 
-### 3a. Recall layer
-- **No page is skipped.** `examine_all_pages` exists in v11 (tested; only ever adds pages).
-  Simon accepted the call cost on 2026-09-03 (`work/2026-09-03-examine-all-pages.md`).
-- **N runs, N = 5 to start**, pooled by segment overlap; each candidate carries
-  `found_in: k/N` and the classification each run gave it. N is a measured choice
-  (phase B reports recall against N = 1…5), not a guess.
+- **Unit judged:** the span Jeff judged, exactly as he saw it — not a detector candidate.
+  That isolates *does the judgment agree with him* from *did a run find it* (review
+  finding: joining to pooled runs would leave Ketubot/Kiddushin with nothing to join to).
+- **One judge prompt**, carrying the whole of `STORY_RULES.md` (rules, his words, his
+  cases). Output: `story | borderline | not | out_of_scope | unsure`, the rule(s) relied
+  on, and the segment indices relied on. Split into narrower judges **only** where
+  phase 1 shows a specific rule failing — "a narrow question beats a broad one" was
+  proven for *finding* stories (the twin pass), not yet for classifying them.
+- **Two model families:** `gemini-3-flash-preview` (the detector's) and
+  **`claude-opus-5`**. Plain synchronous calls at this size; batch and caching wait until
+  a full-Bavli run is actually scheduled.
+- **Labels** from `scripts/build_ruler.py`'s `load_reviews()` and the five 2005 lists,
+  cleaned: Simon's test round excluded; a bare `incorrect` with no readable objection is
+  **unknown**, not *not a story* (it may be a boundary complaint); `applies_to:
+  corrected` rows reported separately.
+- **Measured, per tractate and pooled, with Wilson intervals:**
+  - how often the two models agree;
+  - when they agree, how often Jeff agrees — **on his `no`s separately** (the costly
+    error: a non-story published as consensus) and on his `yes`es;
+  - stories on his 2005 lists the models call `not` (the other costly error);
+  - where they split, which model sides with him;
+  - which rule each disagreement with Jeff cites.
 
-### 3b. Judgment layer — the rule panel
-One judge per question, each a small prompt carrying **only** its rule, Jeff's words,
-and his precedent cases (from `STORY_RULES.md`), asking yes / no / unsure with the segment
-indices it relied on:
+## 4. What phase 1 can and cannot conclude — said now, not after
 
-| judge | question | rule |
-|---|---|---|
-| J-actual | Does it narrate something that happened (not a hypothetical, not a legal case)? | Jeff 2026-07-06 criteria |
-| J-event | Beyond speech, does something happen? Quasi-speech-acts (*retracted, considered, responded, sent a question*) are speech | R-C2, his 2026-09-02 list |
-| J-conflict | If speech only: is there conflict and implied change? | R-C2 |
-| J-report | Is it a bare report of one act with nothing following? | R-C5 |
-| J-custom | Is it a custom? If so, does a one-time event follow? | R-C3 |
-| J-commentary | Is this the Gemara's commentary on a story rather than the story? | R-B4 |
-| J-scope | Are the actors biblical figures in a biblical episode? | R-S1 |
-| J-mishnah | Is it the Mishnah's own copy of the story? | R-C1 (already deterministic, Stage 4g — re-used, not re-asked) |
-| J-bounds | Where does it start and end (segment + Hebrew phrase, never offset)? | R-B1, R-B2, R-B4 |
+The negatives are the constraint. Approximately: Ketubot ~24 `NOT_A_STORY` and
+Kiddushin ~11 (**CIRCULAR** — their labels shaped the detector's prompts); Gittin 18 and
+Yevamot 3 `no` (**rule-informed** — R-C5, R-B4, R-S1 were written from these very
+verdicts, so a judge carrying the register has seen their reasoning). A Wilson lower
+bound ≥ 90% needs ~35 agreeing rows with no error, ~50 with one. **No subset reaches
+that cleanly.**
 
-**Composition is code, not a model.** The verdict is computed from the judges' answers by
-a written decision table (e.g. *actual ∧ event ∧ ¬report ∧ ¬commentary ∧ ¬scope →
-story; speech-only ∧ conflict → borderline; scope → out-of-scope*). The table is the rule
-register made executable, so a change to it is reviewable and a disagreement can be traced
-to one rule.
+So phase 1 reports **indicated**, never measured. Its decision is go / no-go, fixed now:
 
-**Two model families, same judges.** `gemini-3-flash-preview` (the detector's model) and
-**`claude-opus-5`** (Simon, 2026-09-28). Independence is the point: the same model asked
-five times reduces noise, not bias. Claude runs through the **Batch API** (50% off, no
-latency need) with the judge prompt as a **cached prefix**; structured output via
-`output_config.format`; adaptive thinking; effort measured in phase C, not assumed.
+| outcome | decision |
+|---|---|
+| both models agree with each other on ≥ 80% of spans, **and** agreed verdicts contradict his `no` on ≤ 2 spans across all four tractates, **and** ≤ 2 of his list stories are called `not` | **go** to phase 2 |
+| otherwise | **no-go** — record which rule the errors cite; the panel may still rank a review queue, but nothing is called consensus |
 
-### 3c. Tiers
-A candidate is **consensus** only when all of: found in ≥ k of N runs (k set in phase D),
-both model families' decision tables agree, and no judge answered `unsure`. Everything
-else is **contested**. Thresholds are fixed in phase D **before** looking at held-out
-agreement, and reported both ways if revised (Lesson 37: principled boundary vs tuned
-threshold).
+The real, measured error rate comes from the phase 2 audit, round by round.
 
-### 3d. Jeff's loop
-- **Contested queue, ≤25 per round**, ranked by information: a split on a rule he has
-  never ruled on outranks a new instance of a settled rule; within that, stories found in
-  fewer runs first (the fragile ones).
-- **Audit sample, ~10 per round**, drawn at random from the consensus tiers — this is what
-  keeps the consensus error rate *measured* after launch, and what grows the scarce
-  negative labels.
-- **Every verdict does three jobs:** it enters the golden as *his* label (never the
-  panel's); it becomes a regression case for the judge it bears on; and if no judge covers
-  his reason, it is a candidate new rule for the register — *annotate, never move* the
-  blind lists.
-- **`jeff:review-error-rate` becomes answerable.** Instead of "what error rate can you
-  live with?", phase E shows him a measured rate for the consensus tier and asks whether
-  that is good enough to publish flagged.
+## 4a. Why these tractates
 
-## 4. Calibration — how we know consensus means anything
+- **Phase 1: all four labelled tractates**, because the scarce thing is his negatives,
+  not tractates. Each is reported separately; pooled only for the go/no-go.
+- **Phase 2: Yevamot.** Three same-code runs are already on disk (a free 3-run pool);
+  it has no golden yet, and its golden item is waiting on exactly a round like this; he
+  has just reviewed five Yevamot passages; his 102-story list covers recall.
+- **Eruvin: untouched.** No detector run, no rule, no prompt. It is the clean exam for the
+  whole approach once it works; using it earlier spends the only one we have.
 
-**Frozen before any judge is written** (phase A), so the exam cannot drift toward the
-answers:
+## 5. Phase 2 — the first round under consensus (only on a go)
 
-- **Labels:** every expert verdict on disk (`map_verdict_vocabularies.py`: 605 banked,
-  plus the 2026-09-02 Gittin 25 and 2026-09-23 page) and the five 2005 lists (positives
-  only — a list says a story exists, never that something is not one).
-- **Held out:** every page cited as a precedent in any judge prompt is **excluded** from
-  calibration (Lesson 2). The precedents are the cases quoted in `STORY_RULES.md`.
-- **Split and labelled:** BLIND = Gittin + Yevamot verdicts and all five lists (the
-  headline); CIRCULAR = Ketubot + Kiddushin verdicts (their prompts were built from
-  Ketubot labels). Reported separately, never pooled.
-- **Negatives are scarce — count them first.** Roughly: Gittin 18 `no`, Yevamot 4,
-  Ketubot 24 `NOT_A_STORY`, Kiddushin 11. Simon's pre-screen `no`s are **not** expert
-  labels and are reported as a separate row. With n this small, report intervals, and
-  expect the audit sample (3d) to be the real source of negatives.
-- **Version-matched** (Lesson 36): a verdict judges the span he saw; match candidates by
-  overlap, and report how many verdicts could not be matched.
+**Item:** [`consensus-2-yevamot-round`](../../work/2026-09-28-consensus-2-yevamot-round.md).
 
-## 5. Gates — fixed now, before measuring
+- **Candidates:** the union, by overlap, of the three same-code Yevamot runs on disk
+  (`results/v11/twin_pass/yevamot_full_twinall.json`, `yevamot_full_twin2.json`,
+  `yevamot_full_twin2_r2.json`), each carrying `found_in: k/3`. Overlap chains are not
+  merged transitively (A∩B, B∩C ≠ one candidate) — tested. `mishnah_stories[]` is read and
+  kept as its own tier (R-C1), decided explicitly in a comment.
+- **Tiers:** consensus = both models agree and neither is `unsure`; contested = anything
+  else. **k is not a threshold in round 1** — it ranks the queue (fewest runs first).
+- **Jeff's page:** ≤25 contested, ranked (splits on a rule he has never ruled on first),
+  **plus an audit sampled from both consensus tiers** (~5 consensus-story, ~5
+  consensus-not), shuffled in and not marked as audit.
+- **Every verdict:** into a new Yevamot golden as *his* label (builder pattern of
+  `build_gittin_golden.py`); audit agreement recorded as the live error rate; a
+  disagreement becomes a regression case for the prompt; a reason no rule covers becomes a
+  candidate rule in STORY_RULES, in his words.
+- **The email** asks `jeff:review-error-rate` with the phase 1 indication and says the
+  audit will turn it into a measurement; carries the free ask `jeff:scope-edges`.
 
-| phase | passes if | if it fails |
-|---|---|---|
-| B pooled recall | pooled-N Detection recall on Yevamot and Gittin ≥ best single run + 2 stories, **and** the spread across single runs is reported | keep N = 2 union; stop increasing N |
-| C panel mechanics | 0 uncounted failures; every judge answer cites ≥1 real segment; decision table unit-tested on every STORY_RULES precedent | fix before D |
-| D consensus quality (BLIND) | consensus-story tier agrees with his verdicts/lists **≥ 95%**, lower 95% bound ≥ 90%; consensus-not tier contains **≤ 1** story on his lists per tractate | publish nothing as consensus; use the panel only to *rank* the queue |
-| D workload | contested queue ≤ 40 per tractate | tighten nothing to hit it — report it; the queue size is a finding, not a knob |
-| E first round | Jeff returns the page; his agreement with the audit sample is recorded | the audit is the fallback measurement |
+## 6. Shipped now, separately
 
-## 6. Cost (estimates; phase B/C measure the real numbers)
+[`review-page-scope-and-quote`](../../work/2026-09-28-review-page-scope-and-quote.md) — the
+two defects Jeff hit on 2026-09-23 (no "a story, but out of scope" answer; the doubled
+Hebrew quote capture). Independent of this plan; needed before phase 2's page.
 
-- **Gemini recall:** ~590 calls per Yevamot run with triage; examine-all-pages roughly
-  doubles the pages → ~1,200 × N = 5 → **~6,000 calls per tractate**.
-- **Claude judges:** ~180–300 candidates × ~8 judges ≈ **2,400 calls per tractate**,
-  median passage ~830 English characters plus Hebrew; judge prompt cached. At Opus 5
-  batch rates, order of **$10–40 per tractate** — to be measured in phase C on one
-  tractate before any other runs.
-- **Gemini judges:** same count, cheaper.
-- The whole Bavli is ~22× Yevamot. Cost is not the constraint; Jeff's rounds are.
+## 7. What the review cut, and why (2026-09-28)
 
-## 7. What this plan does NOT do
+Three reviewers (convention/ceremony, correctness/statistics, simplicity) independently
+reached one verdict: the first draft built the whole system before running the cheap test
+that could kill it. Deferred until the phase 2 audit shows they are needed:
 
-- It does not change the shipped detector's defaults or artifacts. Everything writes to
-  `results/consensus/` until a phase-D finding says otherwise.
-- It does not write any machine verdict into a golden as an expert label.
-- It does not touch `evaluate_golden.py` or the blind lists.
-- It does not re-propose Ein Yaakov, a cold read, or a fixed panel (`comms/JEFF.md`,
-  "Things he decided").
+| cut | why |
+|---|---|
+| **Pooling 5 new runs + examine-all-pages** (~6,000 calls/tractate) | Off the critical path for the bet; and it changed two variables at once. Three runs already exist. Examine-all-pages stays its own item (`2026-09-03-examine-all-pages`) — note `run_new_tractate.py` documents `--examine-all-pages` but does not implement it |
+| **Eight per-rule judges + a decision table** | A second hypothesis nested in the first. One register-wide prompt citing its rule still traces each disagreement to a rule. Decompose only where a rule fails |
+| **A standalone calibration builder with a pinned hash** | `build_ruler.py` already joins lists, proposals and verdicts; a git commit is the freeze |
+| **The ≥95% / ≥90% gate** | Not measurable on the labels that exist (§4). Replaced by an honest go/no-go and a measured audit |
+| **Batch API, cache tuning, an effort pilot** | Right at Bavli scale, premature at ~600 calls |
+| **A k-of-N threshold** | Fixed after seeing the pools, it would be tuned; in round 1 k only ranks |
+| **Five findings documents** | One finding per phase |
 
-## 8. Risks named up front
+Corrections the review found in the first draft, carried into the items: Yevamot has 3
+expert `no`s, not 4; the detector's fingerprint is `_stage2_fingerprint`, not
+`run_fingerprint`; Gittin and Yevamot labels are rule-informed, not BLIND; per-rule judges
+would have needed an `n/a` answer to avoid sending everything to contested.
 
-1. **Correlated error** — both models share a misreading (e.g. dialectic narrated as
-  action). Mitigation: calibration measures it; the audit keeps measuring it.
-2. **Judge prompts drift into few-shot overfitting** — precedents are his cases, and their
-  pages are excluded from calibration; a test pins that list.
-3. **The decision table becomes a tuned threshold** — it may only encode stated rules;
-  every row cites one.
-4. **Jeff's answers are rounded into our columns** (Lesson 42) — the review page keeps a
-  free-text reason and the out-of-scope answer as its own option.
-5. **Run-to-run variance hides in averages** — every figure is reported with its spread.
+## 8. What this plan does not do
 
-## 9. The phases (items in `work/`)
-
-| phase | item | depends on | parallel with |
-|---|---|---|---|
-| A | [`consensus-a-calibration-set`](../../work/2026-09-28-consensus-a-calibration-set.md) — freeze the exam | — | B |
-| B | [`consensus-b-pooled-recall`](../../work/2026-09-28-consensus-b-pooled-recall.md) — N runs, no page skipped | — | A |
-| C | [`consensus-c-rule-panel`](../../work/2026-09-28-consensus-c-rule-panel.md) — judges, decision table, two models | A | B |
-| D | [`consensus-d-calibrate`](../../work/2026-09-28-consensus-d-calibrate.md) — measure consensus vs Jeff; set tiers | A, B, C | — |
-| E | [`consensus-e-jeff-round`](../../work/2026-09-28-consensus-e-jeff-round.md) — first contested + audit page | D | — |
-
-**On concurrency:** A and B write disjoint paths, so they can run side by side. `board.py
-lanes` nonetheless puts every item in one serial lane, because
-`2026-09-03-rerun-all-tractates` declares the whole of `results/`. Do not run A or B
-while that item is running.
-
-Relationship to open items: **`extra-story-discriminator`** asks the same question
-(which unlisted proposals are worth his time) with detector features; phase D answers it
-with the panel and should record the comparison there. **`examine-all-pages`** is phase
-B's switch. **`story-criteria` 6c** (put R-C2/R-C5/R-B4 into Stage 2) is not blocked by
-this plan, but a panel that works makes it less urgent — decide after D.
+It changes no detector default or shipped artifact, writes no machine verdict into a
+golden, does not touch `evaluate_golden.py` or the blind lists, and does not touch
+Eruvin. It does not re-propose Ein Yaakov, a cold read, or a fixed panel.
