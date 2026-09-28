@@ -173,6 +173,17 @@ resolved** ([ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedbac
 He also offered to recruit colleagues to seed some tractates and cross-check against his
 old lists. **That offer has not been taken up.**
 
+### Consensus at scale — machines judge, Jeff settles disagreements (2026-09-28, in progress)
+
+The first attempt at **throughput** rather than fidelity: two model families judge each
+passage against the rule register; Jeff would see only their disagreements plus a blind
+audit. Phase 1 (the bet, on labels already on disk) was a **no-go** whose cause was the
+register itself (R-C0 missing, R-C5 over-glossed), now corrected; phase 1b re-runs it once
+the API spend caps are raised. **Lesson for this capability: an incomplete rulebook is
+invisible until something applies it literally** — the judge did what the register said.
+→ [plan](../history/2026-09-28-PLAN-consensus-at-scale.md) ·
+[finding](../findings/2026-09-28-consensus-phase1.md)
+
 ## Untried
 
 - ~~Make the reviewer say which thing is wrong~~ — **BUILT 2026-08-31** (Phases A and B

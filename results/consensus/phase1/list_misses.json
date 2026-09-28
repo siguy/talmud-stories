@@ -1,0 +1,682 @@
+[
+ {
+  "id": "ketubot_013",
+  "ref": "Ketubot 20a",
+  "cells": 2,
+  "jw": 30,
+  "pw": 66,
+  "cov": 1.0,
+  "share": 0.52,
+  "reason": "The passage describes a legal precedent involving bar Shatya embedded within a dictum, but it functions as a bare report of a situation and conflicting testimony rather than a narrative with distinct actions or a developed event.",
+  "rules": [
+   "R-C4",
+   "R-C5"
+  ],
+  "jtext": "בר שטיא זבין נכסי אתו בי תרי אמרי כשהוא שוטה זבין ואתו בי תרי ואמרי כשהוא חלים זבין אמר רב אשי אוקי תרי להדי תרי"
+ },
+ {
+  "id": "ketubot_022",
+  "ref": "Ketubot 27a",
+  "cells": 1,
+  "jw": 45,
+  "pw": 53,
+  "cov": 1.0,
+  "share": 0.82,
+  "reason": "This passage is a quotation of a Mishnah (Eduyot 8:2) used as a proof in a legal discussion, which under R-C1 is withheld when it is just the Talmud's citation of the Mishnah. Furthermore, per R-C5, it functions as a report of a legal precedent and testimony rather than a narrative with a sequence of actions and change.",
+  "rules": [
+   "R-C1",
+   "R-C5"
+  ],
+  "jtext": "העיד רבי יוסי הכהן ורבי זכריה בן הקצב על בת ישראל שהורהנה באשקלון וריחקוה בני משפחתה ועדיה מעידים עליה שלא נסתרה ושלא נטמאה ואמרו חכמים"
+ },
+ {
+  "id": "ketubot_038",
+  "ref": "Ketubot 54a",
+  "cells": 3,
+  "jw": 30,
+  "pw": 30,
+  "cov": 0.89,
+  "share": 0.92,
+  "reason": "The passage consists of two brief reports of legal precedents where a father's instructions were followed by a price change and a rabbi's ruling. Under R-C5, a bare report of what someone did that ends with a legal ruling rather than a narrative continuation is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא דאמר להו נדוניא לברת זל נדוניא א ר אידי בר אבין פורנא ליתמי ההוא דאמר להו ארבע מאה זוזי מן חמרא לברת אייקר חמרא"
+ },
+ {
+  "id": "ketubot_044",
+  "ref": "Ketubot 60b",
+  "cells": 1,
+  "jw": 24,
+  "pw": 36,
+  "cov": 1.0,
+  "share": 0.66,
+  "reason": "The passage contains a bare report of an incident (a woman strangling her child) used as a legal precedent, which lacks the necessary actions or development to be a story (R-C5). Furthermore, the subsequent discussion about the woman being insane is Gemara commentary on the incident, which is excluded under R-B4.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "לאו אדעתין והלכתא מת מותר גמלתו אסור מר בר רב אשי אמר אפילו מת נמי אסור דלמא קטלה ליה ואזלא ומינסבא הוה עובדא וחנקתיה"
+ },
+ {
+  "id": "ketubot_046",
+  "ref": "Ketubot 61a",
+  "cells": 1,
+  "jw": 19,
+  "pw": 52,
+  "cov": 1.0,
+  "share": 0.42,
+  "reason": "The passage consists of bare reports of what Rav Anan bar Taḥalifa and Rav Ashi did (or what happened to them) as precedents for a legal discussion. Under R-C5, a report of an act that does not lead to a continuation or further narrative development is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "אמר רב ענן בר תחליפא הוה קאימנא קמיה דמר שמואל ואייתו ליה תבשילא דארדי ואי לאו דיהב לי איסתכני"
+ },
+ {
+  "id": "ketubot_048",
+  "ref": "Ketubot 61a",
+  "cells": 1,
+  "jw": 15,
+  "pw": 52,
+  "cov": 1.0,
+  "share": 0.33,
+  "reason": "The passage consists of bare reports of what Rav Anan bar Taḥalifa and Rav Ashi did (or what happened to them) as precedents for a legal discussion, without a developed narrative or continuation beyond the single act of receiving food.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רב פפא אמר אפילו תמרתא דהנוניתא כללא דמילתא כל דאית ליה ריחא ואית ליה קיוהא"
+ },
+ {
+  "id": "ketubot_047",
+  "ref": "Ketubot 61a",
+  "cells": 1,
+  "jw": 18,
+  "pw": 52,
+  "cov": 1.0,
+  "share": 0.4,
+  "reason": "The passage consists of bare reports of what Rav Anan bar Taḥalifa and Rav Ashi did (or what happened to them) as precedents for a legal discussion, without a continuation or a narrative arc. Under R-C5, a report of an act that does not lead anywhere beyond the act itself is not a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "אמר רב אשי הוה קאימנא קמיה דרב כהנא ואייתו ליה גרגלידי דליפתא בחלא ואי לאו דיהב לי איסתכני"
+ },
+ {
+  "id": "ketubot_049",
+  "ref": "Ketubot 61a",
+  "cells": 1,
+  "jw": 24,
+  "pw": 24,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of the habitual practices of two rabbis and the resulting status of their relationship with Elijah; it lacks a specific one-time event or narrative development.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "אבוה בר איהי ומנימין בר איהי חד ספי מכל מינא ומינא וחד ספי מחד מינא מר משתעי אליהו בהדיה ומר לא משתעי אליהו בהדיה"
+ },
+ {
+  "id": "ketubot_050",
+  "ref": "Ketubot 61a",
+  "cells": 1,
+  "jw": 29,
+  "pw": 29,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of the habitual practices of two rabbis and the resulting status of their relationship with Elijah; it lacks a specific one-time event or narrative development.",
+  "rules": [
+   "R-C5",
+   "R-C3"
+  ],
+  "jtext": "הנהו תרתין חסידי ואמרי לה רב מרי ורב פנחס בני רב חסדא מר קדים ספי ומר מאחר ספי דקדים ספי אליהו משתעי בהדיה דמאחר ספי"
+ },
+ {
+  "id": "ketubot_065",
+  "ref": "Ketubot 65b",
+  "cells": 1,
+  "jw": 32,
+  "pw": 32,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of a legal interaction consisting of speech acts (requesting and apportioning) without conflict or a one-time event that leads to a change or narrative continuation.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "דביתהו דרב יוסף בריה דרבא אתאי לקמיה דרב נחמיה בריה דרב יוסף אמרה ליה פסוק לי מזוני פסק לה פסוק לי חמרא פסק לה אמר"
+ },
+ {
+  "id": "ketubot_071",
+  "ref": "Ketubot 67b",
+  "cells": 1,
+  "jw": 45,
+  "pw": 45,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage describes a habitual practice of providing meat to a pauper rather than a one-time event, which falls under the rule that a bare report of an act without continuation is not a story. Furthermore, the majority of the passage consists of Gemara commentary and legal resolution of the incident's details, which is excluded under rule R-B4.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "תנו רבנן מעשה באנשי גליל העליון שלקחו לעני בן טובים אחד מציפורי ליטרא בשר בכל יום ליטרא בשר מאי רבותא אמר רב הונא ליטרא בשר"
+ },
+ {
+  "id": "ketubot_076",
+  "ref": "Ketubot 67b",
+  "cells": 1,
+  "jw": 16,
+  "pw": 16,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage describes a habitual practice (Rabbi Abba 'would wrap' and 'would toss') rather than a specific one-time event. Under rules R-C3 and R-C5, a bare report of a custom or a description of what a rabbi did that does not lead to a specific incident or change is not considered a story.",
+  "rules": [
+   "R-C3",
+   "R-C5"
+  ],
+  "jtext": "רבי אבא הוה צייר זוזי בסודריה ושדי ליה לאחוריה וממצי נפשיה לבי עניי ומצלי עיניה מרמאי"
+ },
+ {
+  "id": "ketubot_101",
+  "ref": "Ketubot 85b",
+  "cells": 1,
+  "jw": 14,
+  "pw": 14,
+  "cov": 0.77,
+  "share": 0.77,
+  "reason": "The passage is a bare report of a legal incident and a rabbi's ruling without sufficient narrative development or conflict; it functions as a legal precedent rather than a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא דאמר להו נכסיי לטוביה שכיב אתא טוביה א ר יוחנן הרי בא טוביה"
+ },
+ {
+  "id": "ketubot_112",
+  "ref": "Ketubot 100b",
+  "cells": 1,
+  "jw": 22,
+  "pw": 23,
+  "cov": 0.86,
+  "share": 0.82,
+  "reason": "The passage is a bare report of a single action taken by Rav Kahana (delaying the sale of beer) followed by his rationale; it lacks the conflict, change, or second action required to constitute a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רב כהנא הוה בידיה שכרא דרב משרשיא בר חילקאי יתמא שהייה עד ריגלא אמר אע ג דנפל ביה איצצתא מייתי זוזא חריפא"
+ },
+ {
+  "id": "ketubot_137",
+  "ref": "Ketubot 111b",
+  "cells": 1,
+  "jw": 22,
+  "pw": 27,
+  "cov": 1.0,
+  "share": 0.81,
+  "reason": "The passage is a report of a physical fact (the size of a turnip) used as an illustration for a future prophecy, rather than a narrative with a sequence of actions or conflict that leads somewhere.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "עתידה חטה שתהא כשתי כליות של שור הגדול ואל תתמה שהרי שועל קינן בלפת ושקלוהו ומצאו בו ששים ליטרין בליטרא של צפורי"
+ },
+ {
+  "id": "ketubot_141",
+  "ref": "Ketubot 111b",
+  "cells": 1,
+  "jw": 26,
+  "pw": 26,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of what Rami bar Yeḥezkel saw and said upon arriving in Benei Berak. Under R-C5, a description of an act or observation that does not lead to a continuation or change is a precedent or report rather than a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רמי בר יחזקאל איקלע לבני ברק חזנהו להנהו עיזי דקאכלן תותי תאיני וקנטיף דובשא מתאיני וחלבא טייף מנייהו ומיערב בהדי הדדי אמר היינו זבת חלב"
+ },
+ {
+  "id": "ketubot_142",
+  "ref": "Ketubot 111b",
+  "cells": 1,
+  "jw": 19,
+  "pw": 50,
+  "cov": 0.78,
+  "share": 0.33,
+  "reason": "The passage consists of bare reports of what rabbis saw or did (walking in honey, seeing a region) without a plot, conflict, or an event that leads to a change or continuation. According to R-C5, a description of an incident that ends there without further narrative development is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "א ר יעקב בן דוסתאי מלוד לאונו שלשה מילין פעם אחת קדמתי בנשף והלכתי עד קרסולי בדבש של תאינים"
+ },
+ {
+  "id": "ketubot_143",
+  "ref": "Ketubot 111b",
+  "cells": 2,
+  "jw": 44,
+  "pw": 63,
+  "cov": 0.84,
+  "share": 0.55,
+  "reason": "The passage consists of bare reports and descriptions of what various rabbis saw or experienced regarding the fertility of the land. Under rule R-C5, these are reports of facts or observations that do not lead to a continuation or a narrative event, and thus do not constitute a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "אמר ר ל לדידי חזי לי זבת חלב ודבש של צפורי והוי שיתסר מילין אשיתסר מילין אמר רבה בר בר חנה לדידי חזי לי זבת"
+ },
+ {
+  "id": "kiddushin_012",
+  "ref": "Kiddushin 21b",
+  "cells": 3,
+  "jw": 65,
+  "pw": 65,
+  "cov": 0.77,
+  "share": 0.77,
+  "reason": "The passage consists of a halakhic dilemma followed by a dialogue between Rav Nahman and Rav Anan. Under R-C2 and R-C5, this is not a story because it is a report of a legal discussion and speech acts without a one-time event or narrative action.",
+  "rules": [
+   "R-C2",
+   "R-C5"
+  ],
+  "jtext": "איבעיא להו עבד עברי כהן מהו שימסור לו רבו שפחה כנענית חידוש הוא לא שנא כהנים ול ש ישראל או דילמא שאני כהנים הואיל וריבה"
+ },
+ {
+  "id": "kiddushin_022",
+  "ref": "Kiddushin 30a",
+  "cells": 2,
+  "jw": 75,
+  "pw": 85,
+  "cov": 0.85,
+  "share": 0.74,
+  "reason": "Segment [2] is a report of a habitual practice or etymological explanation of the term 'Soferim', and segment [3] is a dialogue regarding a legal/technical dilemma without a narrative event or change.",
+  "rules": [
+   "R-C2",
+   "R-C5"
+  ],
+  "jtext": "לפיכך נקראו ראשונים סופרים שהיו סופרים כל האותיות שבתורה שהיו אומרים וא ו דגחון חציין של אותיות של ס ת דרש דרש חציין של תיבות"
+ },
+ {
+  "id": "kiddushin_028",
+  "ref": "Kiddushin 31b",
+  "cells": 1,
+  "jw": 35,
+  "pw": 35,
+  "cov": 0.91,
+  "share": 0.94,
+  "reason": "The passage consists entirely of a dialogue regarding a hypothetical or habitual situation ('how should I act?') rather than a specific narrative event. Under R-C2 and R-C5, speech without a concrete action or conflict leading to a change does not constitute a story.",
+  "rules": [
+   "R-C2",
+   "R-C5"
+  ],
+  "jtext": "אמר ליה רב יעקב בר אבוה לאביי כגון אנא דעד דאתינא מבי רב אבא מדלי לי כסא ואמא מזגה לי היכי איעביד א ל מאמך"
+ },
+ {
+  "id": "kiddushin_051",
+  "ref": "Kiddushin 45b",
+  "cells": 1,
+  "jw": 23,
+  "pw": 23,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of a single act (a man betrothing a girl with vegetables) followed by a legal ruling by Ravina. Under rule R-C5, a report of what someone did that leads only to a legal discussion rather than a narrative continuation is not a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא גברא דקדיש בכישא דירקא בשוקא אמר רבינא אפילו למאן דאמר חוששין שמא נתרצה האב הני מילי דרך כבוד אבל דרך בזיון לא"
+ },
+ {
+  "id": "kiddushin_055",
+  "ref": "Kiddushin 50a",
+  "cells": 1,
+  "jw": 30,
+  "pw": 30,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of an incident used as a legal precedent followed by the Gemara's commentary and analysis of the ruling. Under R-C5 and R-B4, a report that leads only to a legal discussion rather than a narrative continuation is not a story.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "ההוא גברא דזבנינהו לניכסיה אדעתא למיסק לארץ ישראל לסוף לא סליק אמר רב אשי אי בעי סליק איכא דאמרי אי בעי לא סליק מאי בינייהו"
+ },
+ {
+  "id": "kiddushin_078",
+  "ref": "Kiddushin 72a",
+  "cells": 1,
+  "jw": 20,
+  "pw": 63,
+  "cov": 1.0,
+  "share": 0.34,
+  "reason": "The passage begins with a report of a single act (a man identifying his hometown) which triggers a legal discussion about geography and lineage. Under R-C5, a bare report of an act that leads only to a discussion is not a story, and the subsequent geographical debate constitutes Gemara commentary/analysis excluded by R-B4.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "ההוא גברא דאמר להו אנא מן שוט מישוט עמד רבי יצחק נפחא על רגליו ואמר שוט מישוט בין הנהרות עומדת"
+ },
+ {
+  "id": "kiddushin_085",
+  "ref": "Kiddushin 80b",
+  "cells": 4,
+  "jw": 91,
+  "pw": 93,
+  "cov": 0.93,
+  "share": 0.91,
+  "reason": "The passage consists of a legal debate between Abba Shaul and the Rabbis regarding seclusion during mourning, followed by a bare reference to an incident in segment [5] that lacks the necessary actions or narrative detail to constitute a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "תניא כל שלשים יום יוצא בחיק ונקבר באשה אחת ושני אנשים אבל לא באיש אחד ושתי נשים אבא שאול אומר אף באיש אחד ושתי נשים"
+ },
+ {
+  "id": "gittin_031",
+  "ref": "Gittin 34a",
+  "cells": 1,
+  "jw": 19,
+  "pw": 19,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of a man's statement and his failure to meet a condition, which serves as a legal precedent rather than a story. Under R-C5, a report of what someone did that lacks a narrative continuation or an event following the speech act is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא דאמר להו אי לא נסיבנא עד תלתין יומין ליהוי גיטא כי מטו תלתין יומין אמר להו הא טרחנא"
+ },
+ {
+  "id": "gittin_053",
+  "ref": "Gittin 46b",
+  "cells": 1,
+  "jw": 11,
+  "pw": 11,
+  "cov": 1.0,
+  "share": 1.0,
+  "reason": "The passage is a bare report of a man's action and his appearance before a rabbi, but the narrative ends before any event or change occurs; the continuation in the context is a legal discussion of facts.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא גברא דזבין נפשיה ללודאי אתא לקמיה דרבי אמי אמר ליה"
+ },
+ {
+  "id": "gittin_057",
+  "ref": "Gittin 52a",
+  "cells": 1,
+  "jw": 39,
+  "pw": 39,
+  "cov": 0.82,
+  "share": 0.82,
+  "reason": "The passage is a bare report of a neighbor's actions and Rabbi Yehoshua ben Levi's silence, which serves as a legal precedent rather than a story with conflict or change. The remainder of the segment is Gemara commentary explaining the rabbi's reasoning through a dictum of Rabbi Yosei.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "ההוא אפוטרופוס דהוה בשבבותיה דר יהושע בן לוי דהוה קא מזבין ארעא וזבין תורי ולא אמר ליה ולא מידי סבר לה כר יוסי דתניא א"
+ },
+ {
+  "id": "gittin_092",
+  "ref": "Gittin 63b",
+  "cells": 3,
+  "jw": 44,
+  "pw": 61,
+  "cov": 1.0,
+  "share": 0.77,
+  "reason": "Segment [2] is a bare report of a rabbi's legal ruling in a specific incident without narrative development. Segments [3] and [4] consist of a legal discussion and commentary on the facts of a case rather than a story with actions and change.",
+  "rules": [
+   "R-C5",
+   "R-B4"
+  ],
+  "jtext": "ההיא דהוו קרו לה נפאתה אזול סהדי כתוב תפאתה אמר רב יצחק בר שמואל בר מרתא משמיה דרב עשו עדים שליחותן מתקיף לה רבה מי"
+ },
+ {
+  "id": "gittin_098",
+  "ref": "Gittin 69b",
+  "cells": 1,
+  "jw": 13,
+  "pw": 26,
+  "cov": 0.92,
+  "share": 0.44,
+  "reason": "The passage is a bare report of a medical treatment performed by Ravin of Neresh for Rav Ashi's daughter. Under rule R-C5, a report of what someone did that lacks continuation or further narrative development is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רבין דמן נרש עבד לה לברתיה דרב אשי מאה וחמשין מהני דידן ואתסיא"
+ },
+ {
+  "id": "gittin_099",
+  "ref": "Gittin 69b",
+  "cells": 1,
+  "jw": 12,
+  "pw": 27,
+  "cov": 1.0,
+  "share": 0.46,
+  "reason": "The passage contains a medical remedy followed by a brief report of a goat lacking a spleen after drinking blacksmith's water; this is a bare report of a phenomenon used as evidence, lacking the actions, conflict, or narrative development required for a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההיא עיזא דהות שתיא מיא דבי נפחא אישתחיט ולא אישתכח לה טחלא"
+ },
+ {
+  "id": "gittin_100",
+  "ref": "Gittin 69b",
+  "cells": 1,
+  "jw": 12,
+  "pw": 23,
+  "cov": 0.73,
+  "share": 0.36,
+  "reason": "The passage is a bare report of a medical remedy followed by a single act where Rav Shimi bar Ashi applied it. Under R-C5, a report of what a rabbi did that lacks continuation or further conflict is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רב שימי בר אשי עבד ליה לההוא עובד כוכבים לדבר אחר ואיתסי"
+ },
+ {
+  "id": "gittin_110",
+  "ref": "Gittin 89a",
+  "cells": 1,
+  "jw": 43,
+  "pw": 44,
+  "cov": 0.85,
+  "share": 0.83,
+  "reason": "The passage is a report of a legal query and ruling regarding a rumor. Under R-C5 and R-C2, it lacks the necessary actions or conflict to be a story, as it is primarily a speech-based legal discussion of facts and their consequences.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "ההיא דנפק עלה קלא דאיקדשה באציפא דתוחלא בעינא דבי שיפי שלחה רב אידי בר אבין לקמיה דאביי כי האי גוונא מאי אמר ליה אפי למאן"
+ },
+ {
+  "id": "gittin_111",
+  "ref": "Gittin 89a",
+  "cells": 2,
+  "jw": 28,
+  "pw": 28,
+  "cov": 0.92,
+  "share": 0.92,
+  "reason": "The passage is a bare report of a rumor followed by a legal ruling by Rava. It lacks the distinct actions and narrative development required for a story, functioning instead as a legal precedent or case study.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "ההיא דנפק עלה קלא דאיקדשה לחד מבני פלניא אמר רבא אפי למאן דאמר לא מבטלינן קלא בהא מבטלינן קלא מימר אמרי עיינו בהו רבנן בקידושי"
+ },
+ {
+  "id": "gittin_112",
+  "ref": "Gittin 89a",
+  "cells": 1,
+  "jw": 28,
+  "pw": 29,
+  "cov": 0.85,
+  "share": 0.79,
+  "reason": "The passage is a bare report of a precedent and a legal ruling without a narrative arc or continuation. Under rule R-C5, a description of what was done or said in a legal context that ends there is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההיא דנפק עלה קלא דאיקדשה לקטן הנראה כגדול א ל רב מרדכי לרב אשי הוה עובדא ואמרו עדיין לא הגיע לפלגות ראובן שנאמר לפלגות ראובן"
+ },
+ {
+  "id": "yevamot_008",
+  "ref": "Yevamot 31a",
+  "cells": 2,
+  "jw": 30,
+  "pw": 35,
+  "cov": 0.93,
+  "share": 0.78,
+  "reason": "The passage is a report of a legal incident involving Bar Shatya and conflicting witnesses, but it functions as a precedent for Rav Ashi's ruling rather than a narrative. Under R-C5, a report of an act that ends with a legal ruling or discussion without further narrative development is not considered a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "בר שטיא זבין נכסי אתו בי תרי ואמרי כשהוא חלים זבין ואתו בי תרי ואמרו כשהוא שוטה זבין ואמר רב אשי אוקי תרי להדי תרי"
+ },
+ {
+  "id": "yevamot_015",
+  "ref": "Yevamot 45b",
+  "cells": 4,
+  "jw": 38,
+  "pw": 64,
+  "cov": 0.84,
+  "share": 0.6,
+  "reason": "The passage consists of a bare report of an action (the slave immersing a woman) followed by a legal discussion and the citation of precedents. Under R-C5 and R-C2, a report of an act that leads only to a legal ruling or discussion without further narrative action or conflict does not constitute a story.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "עבדיה דרבי חייא בר אמי אטבלה לההיא עובדת כוכבים לשם אנתתא אמר רב יוסף יכילנא לאכשורי בה ובברתה בה כדרב אסי דאמר רב אסי מי"
+ },
+ {
+  "id": "yevamot_014",
+  "ref": "Yevamot 45a",
+  "cells": 1,
+  "jw": 37,
+  "pw": 37,
+  "cov": 0.82,
+  "share": 0.82,
+  "reason": "The passage consists of bare reports of legal rulings given by Rav Yehuda and Rava to individuals who came before them. Under R-C5 and R-C2, these are speech acts or descriptions of what a rabbi did that lack the necessary actions, conflict, or narrative continuation to be considered a story.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "ואף רב מתנה מורה בה להיתירא ואף רב יהודה מורה בה להיתירא דכי אתא לקמיה דרב יהודה א ל זיל איטמר או נסיב בת מינך"
+ },
+ {
+  "id": "yevamot_017",
+  "ref": "Yevamot 45b",
+  "cells": 1,
+  "jw": 13,
+  "pw": 28,
+  "cov": 0.75,
+  "share": 0.41,
+  "reason": "The passage consists of two brief reports of rabbis responding to verbal aspersions with legal reasoning; under R-C5 and R-C2, a bare report of a speech act without further action or narrative development does not constitute a story.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "ההוא דהוו קרו ליה בר ארמאה אמר ריב ל מי לא טבל לקריו"
+ },
+ {
+  "id": "yevamot_016",
+  "ref": "Yevamot 45b",
+  "cells": 3,
+  "jw": 13,
+  "pw": 47,
+  "cov": 1.0,
+  "share": 0.33,
+  "reason": "The passage consists of legal reasoning and brief reports of rulings (Rav Asi and R. Yehoshua ben Levi) regarding the status of individuals. Under R-C5, a bare report of what a rabbi said or did in a legal context without a narrative continuation or a sequence of actions does not constitute a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "ההוא דהוו קרו ליה בר ארמייתא אמר רב אסי מי לא טבלה לנדותה"
+ },
+ {
+  "id": "yevamot_027",
+  "ref": "Yevamot 61b",
+  "cells": 1,
+  "jw": 35,
+  "pw": 36,
+  "cov": 1.0,
+  "share": 0.97,
+  "reason": "The passage is a report of a brief interaction between rabbis regarding a legal investigation; it lacks the necessary conflict or change to constitute a story and functions as a bare report of what they did.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "רבי אליעזר אומר כהן לא ישא את הקטנה אמר ליה רב חסדא לרבה פוק עיין בה דלאורתא בעי לה רב הונא מינך נפק עיין בה"
+ },
+ {
+  "id": "yevamot_030",
+  "ref": "Yevamot 63a",
+  "cells": 1,
+  "jw": 18,
+  "pw": 52,
+  "cov": 0.71,
+  "share": 0.26,
+  "reason": "The passage consists of homiletical dicta followed by a brief report of a rabbi addressing an inanimate object (the land). Under R-C5 and R-C2, a bare report of an act or speech without conflict or a sequence of events leading to a change does not constitute a story.",
+  "rules": [
+   "R-C2",
+   "R-C5"
+  ],
+  "jtext": "רבי אלעזר חזיא לההיא ארעא דשדי ביה כרבא לפותיא א ל אי תשדייה לאורכיך הפוכי בעיסקא טב מינך"
+ },
+ {
+  "id": "yevamot_031",
+  "ref": "Yevamot 63a",
+  "cells": 1,
+  "jw": 16,
+  "pw": 39,
+  "cov": 1.0,
+  "share": 0.41,
+  "reason": "The passage contains a bare report of Rav addressing sheaves of grain and a subsequent legal/homiletical dictum by Rava. Under R-C5, a report of a single act that leads only to a discussion or ends there is not a story, and the dialogue with the grain lacks the conflict required for a borderline verdict under R-C2.",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "jtext": "רב על לביני שיבלי חזנהו דקא נייפן אמר להו אי נייפת איתנופי הפוכי בעיסקא טב מינך"
+ },
+ {
+  "id": "yevamot_084",
+  "ref": "Yevamot 116b",
+  "cells": 1,
+  "jw": 31,
+  "pw": 39,
+  "cov": 1.0,
+  "share": 0.76,
+  "reason": "The passage is a bare report of a single event (finding a corpse in a boat) that serves as a legal precedent for a decree, which falls under the rule that a report of what someone did without further narrative continuation is not a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "מעשה באדם שהיה מעביר מי חטאת ואפר חטאת בירדן ובספינה ונמצא כזית מן המת תחוב בקרקעית של ספינה באותה שעה אמרו לא ישא אדם מי"
+ },
+ {
+  "id": "yevamot_086",
+  "ref": "Yevamot 120b",
+  "cells": 1,
+  "jw": 22,
+  "pw": 22,
+  "cov": 0.95,
+  "share": 0.95,
+  "reason": "The passage is a bare report of an observation by Rabba bar bar Hanna used to support a legal point, followed by a brief resolution by Abaye; it lacks the narrative development or conflict required for a story.",
+  "rules": [
+   "R-C5"
+  ],
+  "jtext": "אמר רבה בר בר חנה לדידי חזי לי ההוא טייעא דשקיל ספסירא וגיידיה לגמליה ולא אפסיקתיה לנערותיה אמר אביי ההיא כחישא הויא"
+ },
+ {
+  "id": "yevamot_099",
+  "ref": "Yevamot 122b",
+  "cells": 1,
+  "jw": 25,
+  "pw": 31,
+  "cov": 0.88,
+  "share": 0.7,
+  "reason": "This passage is the Mishnah itself (marked by the formula 'MISHNA'), and according to rule R-C1, the Mishnah's own text is not technically part of the Talmudic catalogue.",
+  "rules": [
+   "R-C1"
+  ],
+  "jtext": "משנה מעשה בבני לוי שהלכו לצוער עיר התמרים וחלה אחד מהם והביאוהו בפונדק ובחזרתם אמרו לפונדקית איה חברינו נומית להם מת וקברתיו והשיאו את אשתו"
+ },
+ {
+  "id": "yevamot_100",
+  "ref": "Yevamot 122b",
+  "cells": 2,
+  "jw": 63,
+  "pw": 61,
+  "cov": 0.93,
+  "share": 0.96,
+  "reason": "The passage consists of the Gemara's commentary and revision of a story already told in the Mishnah (segment 1), which under rule R-B4 is not part of the story. Furthermore, it functions as a legal discussion of the facts of an incident rather than a narrative with a new event (R-C5).",
+  "rules": [
+   "R-B4",
+   "R-C5"
+  ],
+  "jtext": "גמ מאי גריעותא דפונדקית אמר רב כהנא פונדקית עובדת כוכבים היתה ומסיחה לפי תומה היתה זה מקלו וזה תרמילו וזה קבר שקברתיו בו וכן תני"
+ }
+]

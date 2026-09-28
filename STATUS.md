@@ -1,12 +1,36 @@
 # STATUS — where the project is today
 
 **Last rewritten: 2026-09-15** (integration of #47, #48, #49); **updated 2026-09-25** for Jeff's
-2026-09-23 verdicts, and **2026-09-28** for the determinism correction (the two sections
-directly below). Rewritten every session, never appended.
+2026-09-23 verdicts, and **2026-09-28** for the determinism correction and consensus phase 1
+(the three sections directly below). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
 ---
+
+## 2026-09-28 (later) — consensus phase 1: no-go, and the cause was our rulebook
+
+The plan ([`consensus-at-scale`](docs/history/2026-09-28-PLAN-consensus-at-scale.md)): two
+model families judge every passage against `STORY_RULES.md`; Jeff sees only their
+disagreements plus a blind audit. **Phase 1 tested it on every span he has labelled.**
+- **No-go (indicated).** Models agree 84% (flattered by easy cases — Gittin 11/18), only 1
+  agreed `story` on his `no`, but Gemini calls **47 of 444 of his list stories** `not`, and
+  both call `not` on 10 of 76 of his reviewed `yes`es — **every one citing R-C5**.
+- **Cause, measured:** the passage was right (31/47 fully covered); the **register** was
+  wrong. His July rule — *"A man stole a cow… Rava ruled… you may have a story"* — was never
+  in it, and our 2026-09-25 R-C5 gloss said the opposite. 21 of the 47 are exactly that
+  shape. **Fixed:** R-C0 added in his words, R-C5 corrected, the line between them sent to
+  him as `jeff:report-vs-incident` (Lesson 44).
+- **The same gloss is in the shipped twin-pass question** — item
+  `twin-pass-r-c5-wording`, to be measured, not edited blind.
+- **Also found:** `build_ruler.py` / `map_verdict_vocabularies.py` read an old `correct` as
+  "a story" even where the detector showed `NOT_A_STORY` (his *no*) — item
+  `verdicts-read-against-the-call-shown`. Claude's run-to-run spread is **unmeasured** (the
+  3/20 was across a prompt change).
+- **Blocked on money:** Gemini hit its **monthly spend cap**; Anthropic is **out of
+  credit**. Phase 1b (`consensus-1b-corrected-register`, ~$45 Claude) resumes when both are
+  raised. Phase 2 stays blocked until a go.
+→ [`consensus-phase1`](docs/findings/2026-09-28-consensus-phase1.md) §7–§9
 
 ## 2026-09-28 — the detector is NOT deterministic; compare runs in pairs
 

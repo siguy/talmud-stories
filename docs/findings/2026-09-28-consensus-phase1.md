@@ -140,3 +140,99 @@ Claude's spread is therefore not small; the agreement figures carry it.
   maps `base_binary correct → is_story=yes` regardless of what the reviewer was shown, so
   the 87 `correct`-on-`NOT_A_STORY` verdicts of 2026-02-05 read there as *yes*. Not fixed
   here (out of this item's `writes:`); it should be.
+
+---
+
+## 7. Why it failed — diagnosis (2026-09-28, same day, after the run)
+
+**Measured on the outputs above; no new model calls.** Scripts and data:
+`scripts/diagnose_phase1_list_misses.py` → `results/consensus/phase1/list_misses.json`;
+the hand sort → `results/consensus/phase1/list_misses_categories.json`.
+
+### 7a. The passage was right; the rule was wrong
+
+The first suspect was the unit: the judge sees the segments the recall matcher located,
+and a truncated passage would read as a "bare report". It is not that. Of the 47 list
+stories Gemini called `not`, **31 had ≥ 90% of his story's text inside the passage, 16 had
+60–90%, none had less.** His stories there are short — median 26 Hebrew words — and the
+judge read all of them.
+
+### 7b. What the 47 are, read one by one
+
+| shape | n | example |
+|---|---|---|
+| **an incident, then a ruling** — something happens to someone, a rabbi or court responds | **21** | *"A certain man said: my property to Toviya. He died. Toviya came. R. Yoḥanan said…"* (Ketubot 85b) |
+| a single act with an outcome, or a first-person incident | 10 | *"Rav Shimi bar Ashi treated a gentile for it, and he was healed"* (Gittin 69b) |
+| an eyewitness wonder (*"I myself saw…"*) | 5 | the fertility of the Land, Ketubot 111b |
+| a habitual practice | 4 | R. Abba tying coins in his scarf, Ketubot 67b |
+| speech only | 4 | Kiddushin 31b |
+| a rule applied to the wrong thing | 3 | R-C1 to a Mishnah *cited* in the Gemara (which R-C1 calls Talmudic); R-B4 to the Gemara's retelling |
+
+Every one of the 47 cites R-C5. **All 10** of his reviewed `yes`es that both models called
+`not` have the same shapes (Toviya's bequest; the court forcing a master to free a slave;
+a palm tree left in a will; the Land's wonders) and all cite R-C5.
+
+### 7c. The cause: the register was missing the rule that bounds R-C5 — and R-C5 carried our gloss
+
+On 2026-07-06 Jeff gave the project's foundational criteria: *"Legal problems/cases are
+hypothetical… Stories are about events that happened"*; and, explicitly, *"A man stole
+another man's cow and sold it. Rava ruled…. In this case you may have a story."* Halakhic
+stories are in scope. **None of that was in `docs/STORY_RULES.md`**, which was begun on
+2026-09-01 from his Gittin answers and never back-filled from July. Then on 2026-09-25 R-C5
+was written from four 2026-09-23 cases with a gloss of ours — *"one act, however it is
+introduced — even מעשה ב… — is a precedent, not a story"* — which says the opposite of the
+cow case. A judge given exactly the register, faithfully applied it.
+
+**So the no-go measures our register, not the bet.** Fixed in `STORY_RULES.md` the same day:
+R-C0 added in his July words; the R-C5 gloss removed and recorded as a correction; the line
+between them written as **our proposal**, flagged for him (`jeff:report-vs-incident`).
+The same gloss is in the shipped twin-pass question (`_twin_prompt`, 2026-09-25) — see §9.
+
+### 7d. The rest of the disagreement
+
+- **His `borderline`s** (Gemini alone, 38): 20 `story`, 15 `not`, 3 `borderline`. The register
+  defines borderline only for speech-with-conflict (R-C2); his February borderlines are
+  broader — *"one event"*, *"lacks specificity"*, *"no causality"*, *"lacks real change"*. The
+  judge was never told that. Not a model failure; an unwritten rule.
+- **His `no`s the models call `borderline`** (5 agreed): four Ketubot February `no`s given
+  before `borderline` was an answer he could choose, one Gittin *"legal problem and answer"*.
+
+## 8. Corrections to §1–§5 (2026-09-28, same day)
+
+- **The 84% inter-model agreement is flattered by easy cases.** On Ketubot spans the
+  detector had already called `NOT_A_STORY` and he confirmed, the models agree 76/82. On
+  Gittin — the hard cases, unlisted extras he judged on the axis page — they agree 11/18 on
+  his `no`s and 1/3 on his `yes`es. Agreement depends on what is in the set; quote it by
+  stratum, never pooled.
+- **"Claude's spread is not small (3 of 20)" is withdrawn as a measurement.** The two
+  smoke runs used **different prompts** (the segment-numbering fix of §5 came between them),
+  so the difference is a prompt change plus sampling, not sampling alone. Claude's run-to-run
+  spread is **unmeasured**. (Claude Opus 5 takes no temperature parameter, so it should be
+  assumed nonzero until a same-prompt repeat measures it.)
+- **Gemini the judge is steady where Gemini the detector is not** — 0 of 359 review
+  verdicts moved on a full repeat, against 3 of 102 stories flipping between identical
+  detector runs (Lesson 43). Suspected, not measured: one short question per call vs a long
+  page with chained calls (iterative pass, twin pass) that compound small differences.
+- **`map_verdict_vocabularies.py` and `build_ruler.py` read an old `correct` as "accepted as a
+  story" whatever the detector had shown.** Before 2026-09-02 the rounds asked *is the
+  detector's call correct?*; a `correct` on a `NOT_A_STORY` call is his **no** (87 of the 128
+  verdicts of 2026-02-05). This item's labels read them correctly; those two scripts do not,
+  so the per-round "precision" in `results/rulers/*_ruler.json` is partly agreement with the
+  detector's call. Size not measured. Item:
+  [`verdicts-read-against-the-call-shown`](../../work/2026-09-28-verdicts-read-against-the-call-shown.md).
+
+## 9. What happens next
+
+1. **Re-run phase 1 on the corrected register** —
+   [`consensus-1b-corrected-register`](../../work/2026-09-28-consensus-1b-corrected-register.md).
+   Started 2026-09-28 and stopped at once: **the Gemini project hit its monthly spend cap**
+   (all 997 calls `failed` with 429, counted, none scored; `full_v2_gemini.json` resumes
+   them). Claude is also out of credit. **Both are Simon's to raise.** The §4 go/no-go is
+   unchanged; the result is labelled *same-data* — the register was corrected after seeing
+   these failures, so a pass here is indicated, and the Yevamot audit remains the real test.
+2. **The twin-pass question carries the same gloss** —
+   [`twin-pass-r-c5-wording`](../../work/2026-09-28-twin-pass-r-c5-wording.md). A detector
+   change: measured with a repeat per arm, not edited blind.
+3. **Ask him where the line falls** — `jeff:report-vs-incident` in `comms/JEFF.md`, with the
+   cases above on both sides.
+4. **Phase 2 stays blocked** until a go.
