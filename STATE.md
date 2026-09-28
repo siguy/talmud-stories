@@ -104,6 +104,7 @@ history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
+open       2026-09-28-consensus-c-rule-panel   ← blocked: 2026-09-28-consensus-a-calibration-set
 closed     11 item(s) in work/done/
 ```
 
@@ -116,6 +117,7 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
+open       2026-09-28-consensus-a-calibration-set
 closed     8 item(s) in work/done/
 ```
 
@@ -170,4 +172,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: f44c8954dcb19eb9 -->
+<!-- board-checksum: 48884b470f5563c6 -->
