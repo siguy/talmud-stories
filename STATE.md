@@ -116,6 +116,7 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
+open       2026-09-28-consensus-1-test-the-bet
 closed     8 item(s) in work/done/
 ```
 
@@ -170,4 +171,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: f44c8954dcb19eb9 -->
+<!-- board-checksum: acdb5af93026d7f8 -->
