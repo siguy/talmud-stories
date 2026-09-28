@@ -1,11 +1,26 @@
 # STATUS — where the project is today
 
 **Last rewritten: 2026-09-15** (integration of #47, #48, #49); **updated 2026-09-25** for Jeff's
-2026-09-23 verdicts (the section directly below, and the Jeff / Next sections). Rewritten every session, never appended.
+2026-09-23 verdicts, and **2026-09-28** for the determinism correction (the two sections
+directly below). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
 ---
+
+## 2026-09-28 — the detector is NOT deterministic; compare runs in pairs
+
+Two identical full Yevamot runs (twin pass on, same code, same day) scored **93.1% and
+92.2%** and disagreed on **3 of Jeff's 102 stories** — each one proposed in one run and
+absent in the other, not even as `NOT_A_STORY` (45a:16 LOW, **59b:6 HIGH**, 78a:17 LOW).
+The 2026-09-09 "spread 0.0" was three repeats on a 20-page slice, too small to see ~1 flip
+per 35 pages (Lesson 43). **Any one-story delta between single full-tractate runs is noise.**
+- **Survives:** the twin pass, 89.2% → 92.2–94.1% over three runs (+3 to +5 stories).
+- **Retracted:** old vs new twin wording is indistinguishable; the "predicted 78a loss";
+  the Kiddushin twin gain of one story is indicated, not measured.
+- **Two runs, union:** 96/102 (94.1%) for 5 more accepted proposals than either run alone.
+→ [`detector-is-not-deterministic`](docs/findings/2026-09-27-detector-is-not-deterministic.md) ·
+[`yevamot-rerun`](docs/findings/2026-09-27-yevamot-rerun-new-default.md)
 
 ## 2026-09-25 — Jeff answered the page: all 10 verdicts
 
@@ -60,8 +75,9 @@ attempt at the twin problem spliced an instruction into the detection prompt and
 its f-string early: `{few_shot_section}` went to the model as literal text, every call
 lost its examples, recall fell 83.3% → 50.7%, and nothing raised. It was blamed on model
 drift, on thinking levels, on run-to-run variance, before the prompt was diffed. The
-detector is in fact **deterministic** — three repeats, identical story sets, spread 0.0 —
-so single runs are comparable and every "noise floor" claim from those nights is void.
+detector looked **deterministic** on the slice — three repeats, identical story sets —
+and every "noise floor" claim from those nights is void. *(Corrected 2026-09-28: not at
+full-tractate scale — identical Yevamot runs differ by 3 of 102 stories. See the top.)*
 The check that ends it is one command: **diff the rendered prompt against the last
 known-good.** A test now fails if any placeholder survives into a built prompt.
 → [`broken-prompt`](docs/findings/2026-09-09-broken-prompt-explains-everything.md)
@@ -218,8 +234,9 @@ becoming "no stories". Also carries the series-clause detour: `SERIES_RULE`, mea
 
 **Instruments that earned their place this fortnight:** `span_repairs` — 0 / 90 / 237
 separated three conditions recall alone read as noise; `scripts/score_noise_floor_slice.py`
-— repeats on a fixed 20-page slice, ~4 min a run, deterministic, so a one-run comparison
-is a measurement.
+— repeats on a fixed 20-page slice, ~4 min a run. *(Corrected 2026-09-28: zero spread on
+the slice did not mean a one-run comparison is a measurement at full-tractate scale;
+repeat each arm.)*
 
 ## What changed 2026-09-03 — the matcher
 
