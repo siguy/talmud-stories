@@ -1,4 +1,4 @@
-# Yevamot under the new default: 94.1% → 93.1%, and the one story lost is the one the re-ask predicted
+# Yevamot under the new default: 94.1% → 93.1% (92.2% on a repeat)
 
 **2026-09-27.** Status: **measured** (one full run, BLIND vs Jeff's 2005 list, exact matcher).
 Item: [`yevamot-rerun-new-default`](../../work/done/2026-09-27-yevamot-rerun-new-default.md).
@@ -48,3 +48,12 @@ The twin pass only adds after Stage 2, so these are either **run-to-run variatio
 commit touched Stage 2's flow). **Suspected, not measured** — telling them apart needs a
 same-code repeat (Lesson 22). It does not touch the recall figure: the list-level diff is
 exactly one story, and that one is a twin addition.
+
+## Correction (2026-09-27, same day)
+
+A same-code repeat scored **92.2%** and disagreed with this run on 3 of Jeff's stories.
+The detector is not deterministic at full-tractate scale, so: the 94.1 → 93.1 difference
+is **inside the noise**; the claim that the lost story *"is the one the re-ask predicted"*
+is **retracted** (in the repeat, `yevamot_050` was found through a page-level proposal,
+78a:17, that this run did not make); and the "page-level Stage 2 moved" section above is
+**run-to-run variation**, not code drift. → [`detector-is-not-deterministic`](2026-09-27-detector-is-not-deterministic.md)

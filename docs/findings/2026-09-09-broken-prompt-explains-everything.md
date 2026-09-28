@@ -96,3 +96,12 @@ variance — were all external, all plausible, and all wrong.
 
 **The cheap check that would have ended it on the first night: diff the rendered prompt
 against the last known-good one.** It cost one command and was run on the third night.
+
+## Correction (2026-09-27)
+
+*"At temperature 0.1 this detector is effectively deterministic, and a single run is
+comparable to another single run"* is **wrong at full-tractate scale.** Two identical
+full Yevamot runs disagree on 3 of 102 of Jeff's stories and on 13 page-level proposals.
+The 0.0 spread was real on the 20-page slice; the slice was too small to see a rate of
+roughly one flip per 35 pages. The rest of this finding — the broken prompt and what it
+caused — is unaffected. → [`detector-is-not-deterministic`](2026-09-27-detector-is-not-deterministic.md)

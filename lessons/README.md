@@ -52,3 +52,4 @@ when it lands on main, so two sessions cannot claim the same number (four did on
 | 40 | 2026-09-01 | [A guard can verify the wrong property and pass forever](L-040-a-guard-can-verify-the-wrong-property.md) |
 | 41 | 2026-09-03 | [A similarity score that can only grow cannot reject a wrong answer](L-041-a-score-that-can-only-grow-cannot-reject.md) |
 | 42 | 2026-09-25 | [A verdict with no column to go in gets rounded, and the rounding looks like his](L-042-a-verdict-with-no-column-gets-rounded.md) |
+| 43 | 2026-09-27 | [Zero spread on a small slice is not determinism](L-043-zero-spread-on-a-slice-is-not-determinism.md) |
