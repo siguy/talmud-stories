@@ -53,11 +53,11 @@ staleness check: it changes whenever anyone edits anything.*
 |---|---|---|
 | `span-truncation-rate` | `talmud-stories` | **2 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `jeff-feedback-golden-dataset-a2739b` | `recent-work-plans-d0818b` | **17 FILES** |
+| `yevamot-rerun-new-default` | `recent-work-plans-d0818b` | **4 FILES** |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 42 items, never deleted
+## Done — 43 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -103,4 +103,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Ask about the segment next door — a targeted twin check after detection](work/done/2026-09-14-adjacent-twin-check.md) | detection | [2026-09-14-twin-pass.md](docs/findings/2026-09-14-twin-pass.md) |
 | [Stage 2 has no checkpoint — a 503 at page 32 discards 31 pages of detection](work/done/2026-09-15-stage2-checkpoint.md) | detection | — |
 | [Jeff's 2026-09-23 verdicts — into the goldens, the rule register, and the twin pass](work/done/2026-09-25-jeff-2026-09-23-verdicts.md) | classification, boundaries, detection | [2026-09-25-jeff-verdicts-scope-commentary-reports.md](docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md) |
-<!-- board-checksum: 70adc7e7e4ada353 -->
+| [Re-run Yevamot under the new default (twin pass on, 2026-09-25 wording)](work/done/2026-09-27-yevamot-rerun-new-default.md) | detection | [2026-09-27-yevamot-rerun-new-default.md](docs/findings/2026-09-27-yevamot-rerun-new-default.md) |
+<!-- board-checksum: ede4838c670a0d49 -->

@@ -81,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     24 item(s) in work/done/
+closed     25 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -170,4 +170,4 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-<!-- board-checksum: beafc2e6f647c1fc -->
+<!-- board-checksum: f44c8954dcb19eb9 -->
