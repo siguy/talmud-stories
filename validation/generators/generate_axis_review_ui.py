@@ -65,7 +65,10 @@ from review_ui_core import DISPLAY_CSS, DISPLAY_JS  # noqa: E402
 RUN_DIR = ROOT / 'results' / 'v10' / 'wave4_notrim'
 OUT_DIR = ROOT / 'validation' / 'ui'
 
-SCHEMA_VERSION = 'axes-2'
+# axes-3 (2026-09-28): `is_story` gains `out_of_scope` -- "a story, but not our kind"
+# (R-S1). On 2026-09-23 Jeff had to say it as `no` + `confidence: right` + a note,
+# which is an answer with no column getting rounded (Lesson 42).
+SCHEMA_VERSION = 'axes-3'
 
 TRACTATES = {
     'kiddushin': dict(title='Kiddushin', files=['kiddushin_v10_notrim.json'],
@@ -214,6 +217,7 @@ __DISPLAY_CSS__
   .axis-btn.v-yes.selected { background: #2c7a7b; color: white; border-color: #2c7a7b; }
   .axis-btn.v-borderline.selected { background: #b7791f; color: white; border-color: #b7791f; }
   .axis-btn.v-no.selected { background: #c53030; color: white; border-color: #c53030; }
+  .axis-btn.v-scope.selected { background: #6b46c1; color: white; border-color: #6b46c1; }
   .axis-btn.plain.selected { background: #4a5568; color: white; border-color: #4a5568; }
   .disclose { margin-left: auto; background: #f7fafc; color: #48606f;
               border: 1px dashed #cbd5e1 !important; }
@@ -462,6 +466,7 @@ function buildCard(story, idx) {
     +   '<button class="axis-btn v-yes ' + sel('yes') + '" data-axis="is_story" data-value="yes" onclick="setAxis(\'' + story.key + '\', \'is_story\', \'yes\', ' + idx + ')">Yes</button>'
     +   '<button class="axis-btn v-borderline ' + sel('borderline') + '" data-axis="is_story" data-value="borderline" onclick="setAxis(\'' + story.key + '\', \'is_story\', \'borderline\', ' + idx + ')">Borderline</button>'
     +   '<button class="axis-btn v-no ' + sel('no') + '" data-axis="is_story" data-value="no" onclick="setAxis(\'' + story.key + '\', \'is_story\', \'no\', ' + idx + ')">No</button>'
+    +   '<button class="axis-btn v-scope ' + sel('out_of_scope') + '" data-axis="is_story" data-value="out_of_scope" title="A real story, but about biblical figures or otherwise outside the collection" onclick="setAxis(\'' + story.key + '\', \'is_story\', \'out_of_scope\', ' + idx + ')">A story, but out of scope</button>'
     +   '<button class="axis-btn flag-btn ' + (v.display_problem ? 'selected' : '') + '" data-axis="display_problem" onclick="toggleDisplay(\'' + story.key + '\', ' + idx + ')">&#9888; Display problem</button>'
     +   '<button class="axis-btn disclose" data-role="disclose" onclick="toggleAxes(' + idx + ', this)">Something else is wrong &#9662;</button>'
     + '</div>'
@@ -523,7 +528,17 @@ function grabInto(key, field, idx) {
   v[field] = sel.trim();
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="' + field + '-text"]');
-  if (box) box.value = v[field];
+  if (box) { box.value = v[field]; selectForReplace(box); }
+}
+
+// After a grab, leave the box's text SELECTED, so a paste that follows replaces
+// it rather than appending to it. Yevamot 105a (2026-09-23) came back with the
+// start quote twice -- once as grabbed (no comma), once pasted after it (with the
+// comma). The grab itself never doubles; a grab followed by a paste did. We do
+// not "clean" his text afterwards: what he typed is what he meant to type.
+function selectForReplace(box) {
+  if (box.focus) box.focus();
+  if (box.select) box.select();
 }
 
 // Typing Hebrew is a transcription risk and a chore; the text is already on the
@@ -537,7 +552,7 @@ function grabSelection(key, idx) {
   v.quote = sel.trim();
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="quote-text"]');
-  if (box) box.value = v.quote;
+  if (box) { box.value = v.quote; selectForReplace(box); }
 }
 
 function toggleDisplay(key, idx) {

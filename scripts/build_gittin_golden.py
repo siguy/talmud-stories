@@ -70,7 +70,8 @@ OUT_OF_SCOPE = {'Gittin 57b_0-4': 'biblical', 'Gittin 68a_7-12': 'biblical'}
 # His three axis answers, in the vocabulary the goldens already speak. `borderline` is
 # deliberately NOT folded into either side: he asked for contested cases to be kept and
 # flagged (2026-07-06), and a golden that rounds them is the thing he declined.
-VERDICT_TO_CLASSIFICATION = {'yes': 'YES', 'borderline': 'BORDERLINE', 'no': 'NOT_A_STORY'}
+VERDICT_TO_CLASSIFICATION = {'yes': 'YES', 'borderline': 'BORDERLINE', 'no': 'NOT_A_STORY',
+                             'out_of_scope': 'OUT_OF_SCOPE'}  # routed to out_of_scope, never an entry
 
 
 def verdict_label(key, v, rnd):
@@ -174,11 +175,13 @@ def build():
             if k not in proposals:
                 log.warning('verdict %s matches no proposal in the run -- skipped', key)
                 continue
-            if key in OUT_OF_SCOPE:
+            # axes-3 pages ask it directly; the 2026-09-23 round predates that and is
+            # mapped by key above.
+            if key in OUT_OF_SCOPE or v['is_story'] == 'out_of_scope':
                 out_of_scope.append({'ref': v['page_ref'], 'start_segment': v['start_segment'],
                                      'end_segment': v['end_segment'],
                                      'classification': 'OUT_OF_SCOPE',
-                                     'scope': OUT_OF_SCOPE[key], 'rule': 'R-S1',
+                                     'scope': OUT_OF_SCOPE.get(key, 'stated'), 'rule': 'R-S1',
                                      'detector_classification': proposals[k][1].get('classification'),
                                      'one_sentence_summary': proposals[k][1].get('one_sentence_summary'),
                                      **{f: x for f, x in verdict_label(key, v, rnd).items()

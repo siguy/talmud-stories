@@ -237,6 +237,35 @@ setField(s1.key, 'quote_end', '\u05d5\u05db\u05df \u05d4\u05dc\u05db\u05d4');
 report.boundaries = { start: verdicts[s1.key].quote_start,
                       end: verdicts[s1.key].quote_end };
 
+// --- R-S1: "a story, but out of scope" is its own answer ----------------------
+// Jeff, 2026-09-23, had no column for it and wrote it as `no` + a note.
+const s2 = STORIES[2];
+const card2 = buildCard(s2, 2).innerHTML;
+document.getElementById('card-2').innerHTML = card2;
+report.outOfScope = {
+  button: /data-axis="is_story" data-value="out_of_scope"/.test(card2),
+  clicks: clickIn(card2, byAxisValue('is_story', 'out_of_scope')),
+  value: verdicts[s2.key].is_story,
+  complete: isComplete(verdicts[s2.key]),
+};
+
+// --- a grab leaves the box selected, so a paste replaces instead of appending --
+// Yevamot 105a came back with the start quote twice: a grab, then a paste after it.
+{
+  const box = { value: 'OLD', focused: false, selected: false,
+                focus() { this.focused = true; }, select() { this.selected = true; } };
+  const cardEl = document.getElementById('card-2');
+  const prevQS = cardEl.querySelector;
+  cardEl.querySelector = sel => (sel === '[data-role="quote_start-text"]' ? box : null);
+  const prevWindow = globalThis.window;
+  globalThis.window = { getSelection: () => '\u05de\u05e2\u05e9\u05d4 \u05d1' };
+  grabInto(s2.key, 'quote_start', 2);
+  report.grab = { value: box.value, stored: verdicts[s2.key].quote_start,
+                  focused: box.focused, selected: box.selected };
+  globalThis.window = prevWindow;
+  cardEl.querySelector = prevQS;
+}
+
 // --- D/F/G: the export ------------------------------------------------------
 const exported = buildExport();
 report.export = {
@@ -382,9 +411,25 @@ class AxisReviewUiTest(unittest.TestCase):
         for row in exp['rows']:
             self.assertEqual(row['detector_version'], self.version,
                              'a verdict belongs to the version it judged (Lesson 36)')
-        self.assertEqual(exp['schema_version'], 'axes-2')
+        self.assertEqual(exp['schema_version'], 'axes-3')
         self.assertEqual(exp['applies_to'], 'base',
                          'base vs corrected data must be stated, never inferred (Lesson 3)')
+
+    def test_out_of_scope_is_its_own_answer(self):
+        o = self.report['outOfScope']
+        self.assertTrue(o['button'], 'no out-of-scope button (R-S1, Lesson 42)')
+        self.assertEqual(o['clicks'], 1)
+        self.assertEqual(o['value'], 'out_of_scope')
+        self.assertTrue(o['complete'], 'out of scope is a complete answer, one click')
+        row = next(r for r in self.report['export']['rows'] if r['is_story'] == 'out_of_scope')
+        self.assertEqual(row['is_story'], 'out_of_scope', 'exported verbatim, not rounded')
+
+    def test_a_grab_leaves_the_box_selected_so_a_paste_replaces_it(self):
+        g = self.report['grab']
+        self.assertEqual(g['value'], g['stored'])
+        self.assertEqual(g['value'].count('\u05de\u05e2\u05e9\u05d4'), 1, 'the grab doubled its text')
+        self.assertTrue(g['focused'] and g['selected'],
+                        'a paste after a grab would append (Yevamot 105a, 2026-09-23)')
 
     # E ---------------------------------------------------------------------
     def test_E_display_problem_is_a_field_not_a_note(self):
