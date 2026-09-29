@@ -14,9 +14,9 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | 96.6% artifact · **98.0% code** · n=149 B | 90.3% artifact · **90.4% code** B | STATUS · C | STATUS | 4 rounds | ⬜ |
-| **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 1 rounds | ⬜ |
+| **Ketubot** | 96.6% artifact · **98.0% code** · n=149 B | 90.3% artifact · **90.4% code** B | STATUS · C | STATUS | 6 rounds | ⬜ |
+| **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 5 rounds | ⬜ |
+| **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Yevamot** | 100.0% · n=102 B | 89.2% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     17 item(s) in work/done/
+closed     18 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -155,8 +155,6 @@ naming an empty file as a lost round buries the one that is not.
 
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
-- `validation/feedback/review_2026-09-15_bundle_simon_prescreen_2026-09-16.json` — **8 verdicts**
-- `validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json` — **10 verdicts**
 
 ## Open with Jeff
 
@@ -173,4 +171,4 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident
-<!-- board-checksum: 62c989dbee6aa776 -->
+<!-- board-checksum: a78b0f079a95d8cc -->

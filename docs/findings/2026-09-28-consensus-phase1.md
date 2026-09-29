@@ -219,7 +219,7 @@ The same gloss is in the shipped twin-pass question (`_twin_prompt`, 2026-09-25)
   verdicts of 2026-02-05). This item's labels read them correctly; those two scripts do not,
   so the per-round "precision" in `results/rulers/*_ruler.json` is partly agreement with the
   detector's call. Size not measured. Item:
-  [`verdicts-read-against-the-call-shown`](../../work/2026-09-28-verdicts-read-against-the-call-shown.md).
+  [`verdicts-read-against-the-call-shown`](../../work/done/2026-09-28-verdicts-read-against-the-call-shown.md).
 
 ## 9. What happens next
 

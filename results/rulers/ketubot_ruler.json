@@ -8,6 +8,8 @@
  "golden": "results/canonical/ketubot_canonical.json",
  "review_rounds": {
   "canonical_review_anonymous_2026-03-17.json": 185,
+  "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 1,
+  "review_2026-09-16_bundle_jeff_2026-09-23.json": 3,
   "v5_1_feedback_anonymous_2026-02-05 (1).json": 125,
   "v5_1_feedback_anonymous_2026-02-20.json": 109,
   "v8_delta_feedback_anonymous_2026-02-26.json": 49
@@ -71,6 +73,14 @@
       "boundary": 7,
       "merge": 1
      },
+     "story_precision": {
+      "read_as": {
+       "yes": 150,
+       "no": 13
+      },
+      "precision": 0.92,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 173,
      "precision_all_causes": 0.879,
      "precision_classification_only": 0.948,
@@ -84,11 +94,39 @@
       "unclassified": 9,
       "confidence": 3
      },
+     "story_precision": {
+      "read_as": {
+       "yes": 10,
+       "no": 4,
+       "borderline": 10,
+       "unknown": 2
+      },
+      "precision": 0.714,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 36,
      "precision_all_causes": 0.667,
      "precision_classification_only": 1.0,
      "unclassified_notes": 9,
      "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
+    },
+    "review_2026-09-16_bundle_jeff_2026-09-23.json": {
+     "accepted": 0,
+     "rejected": 0,
+     "by_kind": {},
+     "borderline": 2,
+     "story_precision": {
+      "read_as": {
+       "borderline": 2
+      },
+      "precision": null,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
+     "judged": 0,
+     "precision_all_causes": null,
+     "precision_classification_only": null,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
     },
     "v5_1_feedback_anonymous_2026-02-20.json": {
      "accepted": 98,
@@ -97,6 +135,15 @@
       "classification": 1,
       "confidence": 2,
       "boundary": 1
+     },
+     "story_precision": {
+      "read_as": {
+       "borderline": 16,
+       "yes": 79,
+       "no": 4
+      },
+      "precision": 0.952,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
      },
      "judged": 102,
      "precision_all_causes": 0.961,
@@ -114,12 +161,25 @@
       "confidence": 1,
       "classification": 2
      },
+     "story_precision": {
+      "read_as": {
+       "yes": 31,
+       "unknown": 7,
+       "borderline": 3,
+       "no": 2
+      },
+      "precision": 0.939,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 43,
      "precision_all_causes": 0.465,
      "precision_classification_only": 0.953,
      "unclassified_notes": 9,
      "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
     }
+   },
+   "excluded_rounds": {
+    "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 1
    },
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
   },
@@ -173,13 +233,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 2b_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 2b_11-11",
      "verdict": "correct",
-     "note": "This is a story, as it has events and change. It is correct that the rabbi, Shmuel, is not a character in the story. The story is about an anonymous man, \"a certain man.\" Stories can be about unnamed people. The story ends with the man's statement. Shmuel's ruling is a legal ruling that need not be quoted with the story."
+     "note": "This is a story, as it has events and change. It is correct that the rabbi, Shmuel, is not a character in the story. The story is about an anonymous man, \"a certain man.\" Stories can be about unnamed people. The story ends with the man's statement. Shmuel's ruling is a legal ruling that need not be quoted with the story.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -229,13 +295,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -313,25 +385,37 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8b_6-10",
      "verdict": "approve",
-     "note": "The interpretation is correct. The highlight has to be adjusted as here it is still the continuation of the story without the first half."
+     "note": "The interpretation is correct. The highlight has to be adjusted as here it is still the continuation of the story without the first half.",
+     "read_as": "no",
+     "read_why": "approve on NEEDS_REVIEW",
+     "shown": "NEEDS_REVIEW"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8b_6-10",
      "verdict": "incorrect",
-     "note": "This is the second half of the story that with Ketubot 8b (segments 3-5). It is one long story"
+     "note": "This is the second half of the story that with Ketubot 8b (segments 3-5). It is one long story",
+     "read_as": "unknown",
+     "read_why": "incorrect on NOT_A_STORY; merge objection",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8b_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8b_3-5",
      "verdict": "correct",
-     "note": "This is indeed a story but the selection is only half the story. It is cut off in mid dialogue. The rest of the story is in the next selection, but these should be combined into one story."
+     "note": "This is indeed a story but the selection is only half the story. It is cut off in mid dialogue. The rest of the story is in the next selection, but these should be combined into one story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "overlap",
@@ -381,13 +465,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8b_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8b_13-13",
      "verdict": "correct",
-     "note": "correct, but the story ends with  לְהוֹצִיא בִּכְלֵי פִשְׁתָּן. Rav Pappa's statement is not part of the story. It is a comment on the story."
+     "note": "correct, but the story ends with  לְהוֹצִיא בִּכְלֵי פִשְׁתָּן. Rav Pappa's statement is not part of the story. It is a comment on the story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -437,7 +527,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -491,13 +584,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10a_9-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 10a_9-10",
      "verdict": "correct",
-     "note": "Again, it is perfectly find to have an anonymous character. This is a borderline story since it is mainly speech acts, not really events."
+     "note": "Again, it is perfectly find to have an anonymous character. This is a borderline story since it is mainly speech acts, not really events.",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -547,7 +646,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10a_11-11",
      "verdict": "correct",
-     "note": "Definitely a story"
+     "note": "Definitely a story",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -597,13 +699,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10b_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 10b_1-1",
      "verdict": "incorrect",
-     "note": "This is definitely a story. There are multiple events in a causal relationship. The end of the story implies change: that the man can maintain his marriage and need not suspect or divorce the woman."
+     "note": "This is definitely a story. There are multiple events in a causal relationship. The end of the story implies change: that the man can maintain his marriage and need not suspect or divorce the woman.",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -657,13 +765,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 10b_3-3",
      "verdict": "incorrect",
-     "note": "This is definitely a story. The anonymous character does not weaken the confidence. Ther eis a temporal progression: after the woman and man come to Rabban Gamliel he checks about her family."
+     "note": "This is definitely a story. The anonymous character does not weaken the confidence. Ther eis a temporal progression: after the woman and man come to Rabban Gamliel he checks about her family.",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "overlap",
@@ -713,13 +827,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 10b_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 10b_6-6",
      "verdict": "incorrect",
-     "note": "This too is a story. There is causality and temporal progression: after the woman speak to the rabbi he takes them to a bathhouse and feeds them, and then checks the woman again. The outcome is a change too"
+     "note": "This too is a story. There is causality and temporal progression: after the woman speak to the rabbi he takes them to a bathhouse and feeds them, and then checks the woman again. The outcome is a change too",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -773,7 +893,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 17a_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "overlap",
@@ -897,7 +1020,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 20b_0-0",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -947,7 +1073,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 21b_0-0",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -997,7 +1126,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 22a_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1055,7 +1187,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 23a_13-16",
      "verdict": "correct",
-     "note": "Classification and reasoning are correct. The last few words are not part of the story but are the Gemara's comment on the story: ( טַעְמָא דְּלָא אֲתוֹ עֵדִים, הָא אֲתוֹ עֵדִים, מִיתַּסְרָא?)"
+     "note": "Classification and reasoning are correct. The last few words are not part of the story but are the Gemara's comment on the story: ( טַעְמָא דְּלָא אֲתוֹ עֵדִים, הָא אֲתוֹ עֵדִים, מִיתַּסְרָא?)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1105,7 +1240,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1155,7 +1293,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1215,13 +1356,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_4-4",
      "verdict": "correct",
-     "note": "The next paragraph should be included, as it is the continuation of the story.  זִימְנִין הָווּ יָתְבִי קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲתָא כִּי הָא מַעֲשֶׂה לְקַמֵּיהּ. אֲמַר לֵיהּ רֵישׁ לָקִישׁ: רְאִיתִיו שֶׁחִילֵּק עַל הַגּוֹרֶן? אֲמַר לֵיהּ רַבִּי יוֹחָנָן: וְאִם אֵין שָׁם גּוֹרֶן, בָּטְלָה כְּהוּנָּה? הֲדַר חַזְיֵיהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת, אֲמַר: שָׁמְעַתְּ מִילֵּי דְּבַר נַפָּחָא, וְלָא אֲמַרְתְּ לַן מִשְּׁמֵיהּ?"
+     "note": "The next paragraph should be included, as it is the continuation of the story.  זִימְנִין הָווּ יָתְבִי קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲתָא כִּי הָא מַעֲשֶׂה לְקַמֵּיהּ. אֲמַר לֵיהּ רֵישׁ לָקִישׁ: רְאִיתִיו שֶׁחִילֵּק עַל הַגּוֹרֶן? אֲמַר לֵיהּ רַבִּי יוֹחָנָן: וְאִם אֵין שָׁם גּוֹרֶן, בָּטְלָה כְּהוּנָּה? הֲדַר חַזְיֵיהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת, אֲמַר: שָׁמְעַתְּ מִילֵּי דְּבַר נַפָּחָא, וְלָא אֲמַרְתְּ לַן מִשְּׁמֵיהּ?",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_5-5",
      "verdict": "incorrect",
-     "note": "This should be merged with the previous story, as it is really the continuation of that story, and not a separate story"
+     "note": "This should be merged with the previous story, as it is really the continuation of that story, and not a separate story",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; merge objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1275,7 +1422,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 26a_1-1",
      "verdict": "correct",
-     "note": "This is a story, but the boundaries are incorrect. The first half of the story is not included here but should be included too. This part needs to be included: מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהָיָה מֵסִיחַ לְפִי תּוּמּוֹ, וְאָמַר: זְכוּרַנִי כְּשֶׁאֲנִי תִּינוֹק וּמוּרְכָּב עַל כְּתֵיפוֹ שֶׁל אַבָּא, וְהוֹצִיאוּנִי מִבֵּית הַסֵּפֶר, וְהִפְשִׁיטוּנִי אֶת כּוּתׇּנְתִּי, וְהַטְבִּילוּנִי לֶאֱכוֹל בִּתְרוּמָה לָעֶרֶב."
+     "note": "This is a story, but the boundaries are incorrect. The first half of the story is not included here but should be included too. This part needs to be included: מַעֲשֶׂה בְּאָדָם אֶחָד שֶׁהָיָה מֵסִיחַ לְפִי תּוּמּוֹ, וְאָמַר: זְכוּרַנִי כְּשֶׁאֲנִי תִּינוֹק וּמוּרְכָּב עַל כְּתֵיפוֹ שֶׁל אַבָּא, וְהוֹצִיאוּנִי מִבֵּית הַסֵּפֶר, וְהִפְשִׁיטוּנִי אֶת כּוּתׇּנְתִּי, וְהַטְבִּילוּנִי לֶאֱכוֹל בִּתְרוּמָה לָעֶרֶב.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1364,7 +1514,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_1-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1418,7 +1571,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1474,25 +1630,37 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_15-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_15-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 27b_17-17",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -1546,7 +1714,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 28a_5-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1600,7 +1771,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 28b_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1654,7 +1828,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 49b_12-12",
      "verdict": "correct",
-     "note": "The boundaries of the stories are not correct. The story continues with the next few words on 50a, which should be merged."
+     "note": "The boundaries of the stories are not correct. The story continues with the next few words on 50a, which should be merged.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1782,13 +1959,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 52b_4-5",
      "verdict": "incorrect",
-     "note": "The classification as low confidence is correct. The boundaries of the story are not correct. It should start with קָרִיבֵיהּ דְּרַבִּי יוֹחָנָן הֲוָה לְהוּ אִיתַּת אַבָּא and the previous words omitted."
+     "note": "The classification as low confidence is correct. The boundaries of the story are not correct. It should start with קָרִיבֵיהּ דְּרַבִּי יוֹחָנָן הֲוָה לְהוּ אִיתַּת אַבָּא and the previous words omitted.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 52b_4-5",
      "verdict": "correct",
-     "note": "Excellent. The story should start with the word קָרִיבֵיהּ. The sentence before it is a legal ruling. It is relevant to the story, but not part of the story. The story should be marked a borderline story since it is mainly talk"
+     "note": "Excellent. The story should start with the word קָרִיבֵיהּ. The sentence before it is a legal ruling. It is relevant to the story, but not part of the story. The story should be marked a borderline story since it is mainly talk",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1854,13 +2037,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 52b_17-17",
      "verdict": "approve",
-     "note": "The reasoning is correct. Here we just have highlighted the first part of the story so we need the continuation from the next page too."
+     "note": "The reasoning is correct. Here we just have highlighted the first part of the story so we need the continuation from the next page too.",
+     "read_as": "yes",
+     "read_why": "approve on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 52b_17-17",
      "verdict": "incorrect",
-     "note": "This is the beginning of a story that continues on the next page of Talmud, the next selection here, Ketubot 53a (Segments 0-3)"
+     "note": "This is the beginning of a story that continues on the next page of Talmud, the next selection here, Ketubot 53a (Segments 0-3)",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1949,7 +2138,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 53a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2042,13 +2234,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 54a_13-14",
      "verdict": "incorrect",
-     "note": "The classification of the story as low confidence is correct. The boundaries of the story are incorrect. The final line is the Talmud's question on the story and should be omitted:  וְעַד הֵיכָא נְהַרְדְּעָא — עַד הֵיכָא דְּסָגֵי קַבָּא דִנְהַרְדְּעָא."
+     "note": "The classification of the story as low confidence is correct. The boundaries of the story are incorrect. The final line is the Talmud's question on the story and should be omitted:  וְעַד הֵיכָא נְהַרְדְּעָא — עַד הֵיכָא דְּסָגֵי קַבָּא דִנְהַרְדְּעָא.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 54a_13-14",
      "verdict": "correct",
-     "note": "This should be marked a borderline story, since there is basically one event and then a legal ruling and discussion"
+     "note": "This should be marked a borderline story, since there is basically one event and then a legal ruling and discussion",
+     "read_as": "borderline",
+     "read_why": "correct on YES; his note says borderline (Lesson 42)",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2098,7 +2296,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 54a_20-20",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2156,25 +2357,37 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 54a_22-22",
      "verdict": "incorrect",
-     "note": "The classification is correct. The continuation of the story on the next page should also be included. That is, a merge of the pages is required. These words from 54a that should be included here are: ״ארבע מאה זוזי מן חמרא לברת״. אייקר חמרא. אמר רב יוסף: רווחא ליתמי."
+     "note": "The classification is correct. The continuation of the story on the next page should also be included. That is, a merge of the pages is required. These words from 54a that should be included here are: ״ארבע מאה זוזי מן חמרא לברת״. אייקר חמרא. אמר רב יוסף: רווחא ליתמי.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 54a_22-22",
      "verdict": "incorrect",
-     "note": "The story finished on the next page of Talmud with one more line, and it is a borderline story"
+     "note": "The story finished on the next page of Talmud with one more line, and it is a borderline story",
+     "read_as": "borderline",
+     "read_why": "incorrect on NOT_A_STORY; confidence objection saying borderline",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 54a_21-21",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 54a_21-21",
      "verdict": "incorrect",
-     "note": "This should be marked a borderline story. There is a temporal progression, in that someone order a dowry be given to his daughter and then (as a later time) the dowry depreciated. There is weak causality, as the result of the depreciated dowry is just a ruling by a rabbi."
+     "note": "This should be marked a borderline story. There is a temporal progression, in that someone order a dowry be given to his daughter and then (as a later time) the dowry depreciated. There is weak causality, as the result of the depreciated dowry is just a ruling by a rabbi.",
+     "read_as": "borderline",
+     "read_why": "incorrect on NOT_A_STORY; confidence objection saying borderline",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "overlap",
@@ -2267,13 +2480,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 56b_11-11",
      "verdict": "adjust",
-     "note": "The merge is correct. But the story actually ends with the next line, which completes's Shmuel's statement אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה."
+     "note": "The merge is correct. But the story actually ends with the next line, which completes's Shmuel's statement אֲבָל חֲכָמִים אוֹמְרִים: מְשַׁהֶא אָדָם אֶת אִשְׁתּוֹ שְׁתַּיִם וְשָׁלֹשׁ שָׁנִים בְּלֹא כְּתוּבָּה.",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 56b_11-11",
      "verdict": "incorrect",
-     "note": "This is the beginning of a story that continues on the next page of Talmud"
+     "note": "This is the beginning of a story that continues on the next page of Talmud",
+     "read_as": "unknown",
+     "read_why": "incorrect on NOT_A_STORY; boundary objection",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -2323,13 +2542,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 60a_2-2",
      "verdict": "approve",
-     "note": "The \"Our interpretation\" is correct, so the boundaries in the highlight should be adjusted accordingly."
+     "note": "The \"Our interpretation\" is correct, so the boundaries in the highlight should be adjusted accordingly.",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 60a_2-2",
      "verdict": "correct",
-     "note": "This is indeed a story but the last line should not be included. That is a follow-up question. that comes after the story.  ( סוֹמֵא מְנָא יָדַע? אָמַר רַב אָשֵׁי: בְּרֵיחָא וּבְטַעְמָא. is not part of the story)"
+     "note": "This is indeed a story but the last line should not be included. That is a follow-up question. that comes after the story.  ( סוֹמֵא מְנָא יָדַע? אָמַר רַב אָשֵׁי: בְּרֵיחָא וּבְטַעְמָא. is not part of the story)",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2387,13 +2612,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 60b_2-3",
      "verdict": "correct",
-     "note": "The classification and reasoning are correct. The boundaries of the story need adjusting. It should start with אֲרִיסֵיהּ דְּאַבָּיֵי and the next paragraph should be in cluded, as it is Abaye's reflection on the story: אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר."
+     "note": "The classification and reasoning are correct. The boundaries of the story need adjusting. It should start with אֲרִיסֵיהּ דְּאַבָּיֵי and the next paragraph should be in cluded, as it is Abaye's reflection on the story: אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 60b_2-3",
      "verdict": "correct",
-     "note": "This is a story. But too much is quoted at the beginning and not enough at the end. The line אָמַר עוּלָּא: הֲלָכָה כְּרַבִּי יְהוּדָה. וְאָמַר מָר עוּקְבָא: לִי הִתִּיר רַבִּי חֲנִינָא לָשֵׂאת לְאַחַר חֲמִשָּׁה עָשָׂר חֹדֶשׁ is not part of the story. It is a legal ruling. And Abaye's statement at the end is part of the story since he refers to the story direclty (אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר.)"
+     "note": "This is a story. But too much is quoted at the beginning and not enough at the end. The line אָמַר עוּלָּא: הֲלָכָה כְּרַבִּי יְהוּדָה. וְאָמַר מָר עוּקְבָא: לִי הִתִּיר רַבִּי חֲנִינָא לָשֵׂאת לְאַחַר חֲמִשָּׁה עָשָׂר חֹדֶשׁ is not part of the story. It is a legal ruling. And Abaye's statement at the end is part of the story since he refers to the story direclty (אָמַר אַבָּיֵי: הַאי מִילְּתָא דַאֲמוּר רַבָּנַן אֲפִילּוּ בֵּיעֲתָא בְּכוּתָּחָא לָא לִישְׁרֵי אִינִישׁ בִּמְקוֹם רַבֵּיהּ, לָא מִשּׁוּם דְּמִיחֲזֵי כְּאַפְקִירוּתָא, אֶלָּא מִשּׁוּם דְּלָא מִסְתַּיְּיעָא מִילְּתָא לְמֵימְרָא. דְּהָא אֲנָא הֲוָה גְּמִירְנָא לֵיהּ לְהָא דְּרַב וּשְׁמוּאֵל, אֲפִילּוּ הָכִי לָא מִסְתַּיְּיעָא לִי מִילְּתָא לְמֵימַר.)",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "overlap",
@@ -2447,7 +2678,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 60b_5-9",
      "verdict": "incorrect",
-     "note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story."
+     "note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2497,7 +2731,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 60b_5-9",
      "verdict": "incorrect",
-     "note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story."
+     "note": "The classification is correct. But the story should end with הָא רַב נַחְמָן שְׁרָא לְהוּ לְבֵי רֵישׁ גָּלוּתָא! שָׁאנֵי בֵּי רֵישׁ גָּלוּתָא דְּלָא הָדְרִי בְּהוּ. The following lines is the Talmud's discussion about the story, which does proceed to quote another story.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2582,13 +2819,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series."
+     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food."
+     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2638,13 +2881,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series."
+     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food."
+     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2694,13 +2943,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series."
+     "note": "Reasoning is correct. I think the next two paragraphs could be included too. They are two more brief anecdotes in this series.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 61a_12-12",
      "verdict": "correct",
-     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food."
+     "note": "Correct, and reasoning is correct.  These could be flagged as \"edge cases\" or \"borderline\" Stories.  Also, the next sections of the Gemara could be included here, as they are similar brief narratives about giving food.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2824,19 +3079,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 61a_15-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 61a_15-15",
      "verdict": "correct",
-     "note": "Correct, but this story is cut off in the middle. It continues on the next page of Talmud (61b). The entire story should be highlighted/identified, not just this first part."
+     "note": "Correct, but this story is cut off in the middle. It continues on the next page of Talmud (61b). The entire story should be highlighted/identified, not just this first part.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 61a_15-15",
      "verdict": "incorrect",
-     "note": "Same problem as in previous cases above. The continuation of the story is the top lnes on the next page, in this case 61b. The top lines should be highlighted with the beginning of the story on 61a (דַּחֲוַור אַפֵּיהּ, שְׁקַל בְּאֶצְבַּעְתֵּיהּ אַנַּח לֵיהּ בְּפוּמֵּיהּ. אֲמַר לֵיהּ: אַפְסַדְתְּ לִסְעוֹדְתָּא דְּמַלְכָּא. אֲמַרוּ לֵיהּ: אַמַּאי תִּיעְבֵּיד הָכִי? אֲמַר לְהוּ: מַאן דְּעָבֵיד הָכִי פְּסִיל לְמַאֲכַל דְּמַלְכָּא. אֲמַרוּ לֵיהּ: אַמַּאי? אֲמַר לְהוּ: דָּבָר אַחֵר חֲזַאי בֵּיהּ. בְּדַקוּ וְלָא אַשְׁכַּחוּ. שְׁקַל אֶצְבַּעְתֵּיהּ, אַנַּח עֲלֵיהּ, אֲמַר לְהוּ: הָכָא מִי בָּדְקִיתוּ? בְּדַקוּ אַשְׁכַּחוּ. אֲמַרוּ לֵיהּ רַבָּנַן: מַאי טַעְמָא סָמְכַתְּ אַנִּיסָּא? אֲמַר לְהוּ: חֲזַאי רוּחַ צָרַעַת דְּקָא פָרְחָה עִילָּוֵיהּ.) What is highlighted on 61b here is a separate story"
+     "note": "Same problem as in previous cases above. The continuation of the story is the top lnes on the next page, in this case 61b. The top lines should be highlighted with the beginning of the story on 61a (דַּחֲוַור אַפֵּיהּ, שְׁקַל בְּאֶצְבַּעְתֵּיהּ אַנַּח לֵיהּ בְּפוּמֵּיהּ. אֲמַר לֵיהּ: אַפְסַדְתְּ לִסְעוֹדְתָּא דְּמַלְכָּא. אֲמַרוּ לֵיהּ: אַמַּאי תִּיעְבֵּיד הָכִי? אֲמַר לְהוּ: מַאן דְּעָבֵיד הָכִי פְּסִיל לְמַאֲכַל דְּמַלְכָּא. אֲמַרוּ לֵיהּ: אַמַּאי? אֲמַר לְהוּ: דָּבָר אַחֵר חֲזַאי בֵּיהּ. בְּדַקוּ וְלָא אַשְׁכַּחוּ. שְׁקַל אֶצְבַּעְתֵּיהּ, אַנַּח עֲלֵיהּ, אֲמַר לְהוּ: הָכָא מִי בָּדְקִיתוּ? בְּדַקוּ אַשְׁכַּחוּ. אֲמַרוּ לֵיהּ רַבָּנַן: מַאי טַעְמָא סָמְכַתְּ אַנִּיסָּא? אֲמַר לְהוּ: חֲזַאי רוּחַ צָרַעַת דְּקָא פָרְחָה עִילָּוֵיהּ.) What is highlighted on 61b here is a separate story",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; merge objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2886,19 +3150,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 61b_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 61b_1-1",
      "verdict": "correct",
-     "note": "The reasoning is absolutely correct."
+     "note": "The reasoning is absolutely correct.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 61b_1-1",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2948,19 +3221,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62a_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62a_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 62a_4-4",
      "verdict": "incorrect",
-     "note": "This is clearly a story. Keep as a \"Yes\""
+     "note": "This is clearly a story. Keep as a \"Yes\"",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3010,13 +3292,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3066,13 +3354,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3122,13 +3416,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3178,13 +3478,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3252,31 +3558,46 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_6-7",
      "verdict": "approve",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_6-7",
      "verdict": "correct",
-     "note": "Correct identification of a story but again it is cut off in the middle. The final line here and the continuation in the next story should be highlighted as they are all one story. IT ends with  בְּעָא עֲלַהּ רַחֲמֵי וְאִיתַּסִּיאַת in the selection below."
+     "note": "Correct identification of a story but again it is cut off in the middle. The final line here and the continuation in the next story should be highlighted as they are all one story. IT ends with  בְּעָא עֲלַהּ רַחֲמֵי וְאִיתַּסִּיאַת in the selection below.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_9-9",
      "verdict": "approve",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_9-9",
      "verdict": "correct",
-     "note": "This is the end part of the story that begins with the previous selection. It is all one story. There is a legal deliberation, as noted by the \"weakeners applied\" here, but that deliberation is part of a larger story, not an independent legal tradition"
+     "note": "This is the end part of the story that begins with the previous selection. It is all one story. There is a legal deliberation, as noted by the \"weakeners applied\" here, but that deliberation is part of a larger story, not an independent legal tradition",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 62b_9-9",
      "verdict": "incorrect",
-     "note": "This is the second part of a story that begins above. It is not an independent story but should go with what preceded it."
+     "note": "This is the second part of a story that begins above. It is not an independent story but should go with what preceded it.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; merge objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3330,7 +3651,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3384,13 +3708,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3448,19 +3778,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 62b_14-14",
      "verdict": "approve",
-     "note": "The highlight now is correct. The boundaries of the story are correct."
+     "note": "The highlight now is correct. The boundaries of the story are correct.",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 62b_14-14",
      "verdict": "correct",
-     "note": "Yes, it is a famous tory and it does continue on the next page, as noted in the reasoning. Ideally, the entire story should be highlighted as one unit. Here just the first half is highlighted."
+     "note": "Yes, it is a famous tory and it does continue on the next page, as noted in the reasoning. Ideally, the entire story should be highlighted as one unit. Here just the first half is highlighted.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 62b_14-14",
      "verdict": "incorrect",
-     "note": "The merge is not correct. The top of 63a should be included with the beginning of the story on 62b. What is highlighted here on 62b is an independant story"
+     "note": "The merge is not correct. The top of 63a should be included with the beginning of the story on 62b. What is highlighted here on 62b is an independant story",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3510,19 +3849,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 63a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 63a_2-2",
      "verdict": "correct",
-     "note": "Correct. The \"weakner\" is not really a weakener. The story has an abrupt end, that is true, but that is just the nature of this story. Some stories end abruptly for effect."
+     "note": "Correct. The \"weakner\" is not really a weakener. The story has an abrupt end, that is true, but that is just the nature of this story. Some stories end abruptly for effect.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 63a_2-2",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3572,19 +3920,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 63b_8-8",
      "verdict": "approve",
-     "note": "Out interpretation is correct, and the change should be implemented so that the boundaries are correct."
+     "note": "Out interpretation is correct, and the change should be implemented so that the boundaries are correct.",
+     "read_as": "yes",
+     "read_why": "approve on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 63b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 63b_8-8",
      "verdict": "correct",
-     "note": "The story does continue from one page to the next. The last line is the Talmud's summary and need not be included with the story itself (הַשְׁתָּא דְּלָא אִתְּמַר לָא הָכִי וְלָא הָכִי, תְּפַסָה — לָא מַפְּקִינַן מִינַּהּ, לָא תְּפַסָה — לָא יָהֲבִינַן לַהּ.). That is, this line should not be highlighted."
+     "note": "The story does continue from one page to the next. The last line is the Talmud's summary and need not be included with the story itself (הַשְׁתָּא דְּלָא אִתְּמַר לָא הָכִי וְלָא הָכִי, תְּפַסָה — לָא מַפְּקִינַן מִינַּהּ, לָא תְּפַסָה — לָא יָהֲבִינַן לַהּ.). That is, this line should not be highlighted.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3638,13 +3995,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 65a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 65a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3694,19 +4057,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 65a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 65a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 65a_10-10",
      "verdict": "correct",
-     "note": "correct, but the classification has an error. The woman does not drink the wine. It is borderline/low confidence because it is mainly the actions of a court. But it has drama, change etc."
+     "note": "correct, but the classification has an error. The woman does not drink the wine. It is borderline/low confidence because it is mainly the actions of a court. But it has drama, change etc.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3756,19 +4128,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 65a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 65a_11-11",
      "verdict": "correct",
-     "note": "The assessment is absolutely correct, although there is no \"breaking of the bench\" as mentioned in the classification reasoning. That is an error."
+     "note": "The assessment is absolutely correct, although there is no \"breaking of the bench\" as mentioned in the classification reasoning. That is an error.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 65a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3818,13 +4199,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 66b_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 66b_9-9",
      "verdict": "correct",
-     "note": "Correct. This is a borderline story."
+     "note": "Correct. This is a borderline story.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3882,7 +4269,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 66b_10-12",
      "verdict": "correct",
-     "note": "All correct. This is very subtle but following the question on the story, which is a non-narrative interruption (וְנַקְדִּימוֹן בֶּן גּוּרְיוֹן לָא עֲבַד צְדָקָה? וְהָתַנְיָא: אָמְרוּ עָלָיו עַל נַקְדִּימוֹן בֶּן גּוּרְיוֹן..) there is a type of continuation and conclusion to the story that ideally would be included with the text. This is the continuation/conclusion: תניא: אמר רבי אלעזר ברבי צדוק: אראה בנחמה, אם לא ראיתיה שהיתה מלקטת שעורים מבין טלפי סוסים בעכו. קראתי עליה מקרא זה: ״אם לא תדעי לך היפה בנשים צאי לך בעקבי הצאן ורעי את גדיותיך״. אל תקרי ״גדיותיך״, אלא ״גויותיך״.  The rabbis says he say her, namely the daughter of Nakdimon ben Guryon. So it is part of the same story"
+     "note": "All correct. This is very subtle but following the question on the story, which is a non-narrative interruption (וְנַקְדִּימוֹן בֶּן גּוּרְיוֹן לָא עֲבַד צְדָקָה? וְהָתַנְיָא: אָמְרוּ עָלָיו עַל נַקְדִּימוֹן בֶּן גּוּרְיוֹן..) there is a type of continuation and conclusion to the story that ideally would be included with the text. This is the continuation/conclusion: תניא: אמר רבי אלעזר ברבי צדוק: אראה בנחמה, אם לא ראיתיה שהיתה מלקטת שעורים מבין טלפי סוסים בעכו. קראתי עליה מקרא זה: ״אם לא תדעי לך היפה בנשים צאי לך בעקבי הצאן ורעי את גדיותיך״. אל תקרי ״גדיותיך״, אלא ״גויותיך״.  The rabbis says he say her, namely the daughter of Nakdimon ben Guryon. So it is part of the same story",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4010,13 +4400,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_3-3",
      "verdict": "correct",
-     "note": "This is correct. It is a borderline story. However, the preceding story about Hillel was skipped, and should have been identified as an independent story: אָמְרוּ עָלָיו עַל הִלֵּל הַזָּקֵן שֶׁלָּקַח לְעָנִי בֶּן טוֹבִים אֶחָד סוּס לִרְכּוֹב עָלָיו וְעֶבֶד לָרוּץ לְפָנָיו. פַּעַם אַחַת לֹא מָצָא עֶבֶד לָרוּץ לְפָנָיו, וְרָץ לְפָנָיו שְׁלֹשָׁה מִילִין."
+     "note": "This is correct. It is a borderline story. However, the preceding story about Hillel was skipped, and should have been identified as an independent story: אָמְרוּ עָלָיו עַל הִלֵּל הַזָּקֵן שֶׁלָּקַח לְעָנִי בֶּן טוֹבִים אֶחָד סוּס לִרְכּוֹב עָלָיו וְעֶבֶד לָרוּץ לְפָנָיו. פַּעַם אַחַת לֹא מָצָא עֶבֶד לָרוּץ לְפָנָיו, וְרָץ לְפָנָיו שְׁלֹשָׁה מִילִין.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4072,37 +4468,55 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": "It could be classified as \"yes\". Rather than \"high confidence\""
+     "note": "It could be classified as \"yes\". Rather than \"high confidence\"",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": "It could be classified as \"yes\". Rather than \"high confidence\""
+     "note": "It could be classified as \"yes\". Rather than \"high confidence\"",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_5-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_5-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4156,25 +4570,37 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": "It could be classified as \"yes\". Rather than \"high confidence\""
+     "note": "It could be classified as \"yes\". Rather than \"high confidence\"",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_5-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_5-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "overlap",
@@ -4228,13 +4654,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_11-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_11-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4294,25 +4726,37 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_15-15",
      "verdict": "incorrect",
-     "note": "The classification is correct. But the borders of the story still have to be adjusted per my original note. The story ends with קָם בַּזְבְּזֵיהּ לְפַלְגֵיהּ מָמוֹנֵיהּ"
+     "note": "The classification is correct. But the borders of the story still have to be adjusted per my original note. The story ends with קָם בַּזְבְּזֵיהּ לְפַלְגֵיהּ מָמוֹנֵיהּ",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_15-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 67b_15-15",
      "verdict": "incorrect",
-     "note": "This is clearly a story. It can be kept as \"yes.\" But the boundaries of the story are a little off. The story ends with Mar Ukva distributing his money to charity. The next part is the Talmud's question on the story (הֵיכִי עֲבַד הָכִי? וְהָאָמַר רַבִּי אִילְעַאי, בְּאוּשָׁא הִתְקִינוּ: הַמְבַזְבֵּז — אַל יְבַזְבֵּז יוֹתֵר מֵחוֹמֶשׁ! הָנֵי מִילֵּי מֵחַיִּים, שֶׁמָּא יֵרֵד מִנְּכָסָיו. אֲבָל לְאַחַר מִיתָה לֵית לַן בַּהּ.)"
+     "note": "This is clearly a story. It can be kept as \"yes.\" But the boundaries of the story are a little off. The story ends with Mar Ukva distributing his money to charity. The next part is the Talmud's question on the story (הֵיכִי עֲבַד הָכִי? וְהָאָמַר רַבִּי אִילְעַאי, בְּאוּשָׁא הִתְקִינוּ: הַמְבַזְבֵּז — אַל יְבַזְבֵּז יוֹתֵר מֵחוֹמֶשׁ! הָנֵי מִילֵּי מֵחַיִּים, שֶׁמָּא יֵרֵד מִנְּכָסָיו. אֲבָל לְאַחַר מִיתָה לֵית לַן בַּהּ.)",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4401,13 +4845,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 67b_17-17",
      "verdict": "incorrect",
-     "note": "the classification is correct. But the boundaries are not. The story continues, and a merge is required with the text at the top of 68a. The following should be quoted too as part of the story: בטלי כסף או בטלי זהב? אמר, היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן היינו חוטאין בכל יום, שנאמר: וקרא עליך אל ה' והיה בך חטא."
+     "note": "the classification is correct. But the boundaries are not. The story continues, and a merge is required with the text at the top of 68a. The following should be quoted too as part of the story: בטלי כסף או בטלי זהב? אמר, היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן היינו חוטאין בכל יום, שנאמר: וקרא עליך אל ה' והיה בך חטא.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 67b_17-17",
      "verdict": "correct",
-     "note": "This is correct. But the previous line should be considered low-confidence story. It is a narrative but lacks real change, so borderline. רַבִּי אַבָּא הֲוָה צָיַיר זוּזֵי בְּסוּדָרֵיהּ, וְשָׁדֵי לֵיהּ לַאֲחוֹרֵיהּ, וּמַמְצֵי נַפְשֵׁיהּ לְבֵי עַנְיֵי, וּמַצְלֵי עֵינֵיהּ מֵרַמָּאֵי. Also, this story is cut off and the ending, on the next page of Talmud, is omitted. This should be included from 68a: בטלי כסף או בטלי זהב? אמר: היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן, היינו חוטאין בכל יום, שנאמר: ״וקרא עליך אל ה׳ והיה בך חטא״."
+     "note": "This is correct. But the previous line should be considered low-confidence story. It is a narrative but lacks real change, so borderline. רַבִּי אַבָּא הֲוָה צָיַיר זוּזֵי בְּסוּדָרֵיהּ, וְשָׁדֵי לֵיהּ לַאֲחוֹרֵיהּ, וּמַמְצֵי נַפְשֵׁיהּ לְבֵי עַנְיֵי, וּמַצְלֵי עֵינֵיהּ מֵרַמָּאֵי. Also, this story is cut off and the ending, on the next page of Talmud, is omitted. This should be included from 68a: בטלי כסף או בטלי זהב? אמר: היינו דאמר רבי אלעזר: בואו ונחזיק טובה לרמאין, שאלמלא הן, היינו חוטאין בכל יום, שנאמר: ״וקרא עליך אל ה׳ והיה בך חטא״.",
+     "read_as": "yes",
+     "read_why": "hand reading: \"borderline\" is said of the previous line, not of the span",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4457,13 +4907,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 69a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 69a_10-10",
      "verdict": "correct",
-     "note": "Correct reasoning. This is a borderline or low-confidence story"
+     "note": "Correct reasoning. This is a borderline or low-confidence story",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4525,19 +4981,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 69a_14-16",
      "verdict": "approve",
-     "note": "The boundaries are correct now"
+     "note": "The boundaries are correct now",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 69a_14-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 69a_14-16",
      "verdict": "incorrect",
-     "note": "The merge is not correct. Again, the top lines of 69b continue the story and should be included (גופא דעובדא היכי הוה, א\"ל: הכי והכי הוה מעשה. אמר ליה: גברא דלא ידע מאי ניהו מרזיחא, שלח ליה לרב הונא הונא חברין? ). What is highlighted here on 69b is an independent story"
+     "note": "The merge is not correct. Again, the top lines of 69b continue the story and should be included (גופא דעובדא היכי הוה, א\"ל: הכי והכי הוה מעשה. אמר ליה: גברא דלא ידע מאי ניהו מרזיחא, שלח ליה לרב הונא הונא חברין? ). What is highlighted here on 69b is an independent story",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4599,19 +5064,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 69b_10-12",
      "verdict": "correct",
-     "note": "Classification is correct. Merge is required. The story continues with a few words from the top of 70a. ר' מאחר היא, דאמר מצוה לקיים דברי המת. So the story identification should also be changed to Ketubot 69b-70a"
+     "note": "Classification is correct. Merge is required. The story continues with a few words from the top of 70a. ר' מאחר היא, דאמר מצוה לקיים דברי המת. So the story identification should also be changed to Ketubot 69b-70a",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 69b_10-12",
      "verdict": "correct",
-     "note": "Correct reasoning. Yes, the legal texts and issue plays a part in a biographical type event. The only error is that the story is cut off without the answer to the final question that is the real conclusion to the story. It should include the following words:  ר' מאחר היא, דאמר מצוה לקיים דברי המת."
+     "note": "Correct reasoning. Yes, the legal texts and issue plays a part in a biographical type event. The only error is that the story is cut off without the answer to the final question that is the real conclusion to the story. It should include the following words:  ר' מאחר היא, דאמר מצוה לקיים דברי המת.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 69b_10-12",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4743,13 +5217,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 77b_6-8",
      "verdict": "correct",
-     "note": "Correct reasoning. Boundaries are not exact. The story begins with the previous line: רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא."
+     "note": "Correct reasoning. Boundaries are not exact. The story begins with the previous line: רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 77b_6-8",
      "verdict": "correct",
-     "note": "Reasoning is correct but the story starts one line earlier with R. Yehoshua ben Levi's name:  רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא?"
+     "note": "Reasoning is correct but the story starts one line earlier with R. Yehoshua ben Levi's name:  רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִיכְרָךְ בְּהוּ וְעָסֵיק בַּתּוֹרָה. אָמַר: ״אַיֶּלֶת אֲהָבִים וְיַעֲלַת חֵן״, אִם חֵן מַעֲלָה עַל לוֹמְדֶיהָ, אַגּוֹנֵי לָא מַגְּנָא?",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4807,13 +5287,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 77b_9-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 77b_9-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4871,13 +5357,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 78b_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 78b_11-11",
      "verdict": "correct",
-     "note": "Reasoning is correct. It continue onto the next page. That part should be quoted with the story."
+     "note": "Reasoning is correct. It continue onto the next page. That part should be quoted with the story.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4931,13 +5423,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 80a_4-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 80a_4-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4991,13 +5489,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 80b_1-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 80b_1-2",
      "verdict": "correct",
-     "note": "Reasoning is correct. The first line with Rav Pappa's statement should be omitted, since it is not really part of the story. The story starts: דְּהָהִיא אִיתְּתָא דְּעַיִּילָה לֵיהּ"
+     "note": "Reasoning is correct. The first line with Rav Pappa's statement should be omitted, since it is not really part of the story. The story starts: דְּהָהִיא אִיתְּתָא דְּעַיִּילָה לֵיהּ",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5047,13 +5551,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 82a_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 82a_3-3",
      "verdict": "correct",
-     "note": "Correct again. This is a borderline story."
+     "note": "Correct again. This is a borderline story.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5150,19 +5660,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 84b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 84b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 84b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5212,19 +5731,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 84b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 84b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 84b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5274,13 +5802,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 84b_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 84b_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5342,19 +5876,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 84b_11-11",
      "verdict": "approve",
-     "note": "The new boundaries and merge are now correct"
+     "note": "The new boundaries and merge are now correct",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 84b_11-11",
      "verdict": "correct",
-     "note": "Yes, but the narrative continues on the next page, the segment below. This is just the first half of the story"
+     "note": "Yes, but the narrative continues on the next page, the segment below. This is just the first half of the story",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 84b_11-11",
      "verdict": "incorrect",
-     "note": "The classification is correct. However, the highlighted text is not correct. The continuation of the story on 84b is not quoted. It should be included. The top line of 85a, which is not highlighted here, is the end of that story (אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: קָאקֵי חִיוָּרֵי, מְשַׁלְּחֵי גְּלִימֵי דְאִינָשֵׁי! הָכִי אָמַר רַב נַחְמָן: וְהוּא שֶׁתְּפָסָהּ מֵחַיִּים).  Then the highlighted portion on 85a, the story of Avimi bar R. Abahu, is a different story that should have its own entry."
+     "note": "The classification is correct. However, the highlighted text is not correct. The continuation of the story on 84b is not quoted. It should be included. The top line of 85a, which is not highlighted here, is the end of that story (אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: קָאקֵי חִיוָּרֵי, מְשַׁלְּחֵי גְּלִימֵי דְאִינָשֵׁי! הָכִי אָמַר רַב נַחְמָן: וְהוּא שֶׁתְּפָסָהּ מֵחַיִּים).  Then the highlighted portion on 85a, the story of Avimi bar R. Abahu, is a different story that should have its own entry.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -5408,19 +5951,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 85a_3-4",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -5470,13 +6022,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_7-7",
      "verdict": "correct",
-     "note": "The reasoning is correct. It is a brief narrative that introduces a legal ruling, but there is enough action for it to be a story"
+     "note": "The reasoning is correct. It is a brief narrative that introduces a legal ruling, but there is enough action for it to be a story",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5540,37 +6098,55 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_8-8",
      "verdict": "correct",
-     "note": "Correct but the boundaries are wrong. THe next paragraph is part of the story. This paragraph is identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story."
+     "note": "Correct but the boundaries are wrong. THe next paragraph is part of the story. This paragraph is identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_8-8",
      "verdict": "correct",
-     "note": "Correct, but this is the first half of the story. It continues with the next segment.  The evidence is that this segment refers back to Rav Hisda's daughter in this segment. So it is one story."
+     "note": "Correct, but this is the first half of the story. It continues with the next segment.  The evidence is that this segment refers back to Rav Hisda's daughter in this segment. So it is one story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_8-8",
      "verdict": "correct",
-     "note": "Correct but the boundaries are wrong. THe next paragraph is part of the story. This paragraph is identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story."
+     "note": "Correct but the boundaries are wrong. THe next paragraph is part of the story. This paragraph is identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_8-8",
      "verdict": "correct",
-     "note": "Correct, but this is the first half of the story. It continues with the next segment.  The evidence is that this segment refers back to Rav Hisda's daughter in this segment. So it is one story."
+     "note": "Correct, but this is the first half of the story. It continues with the next segment.  The evidence is that this segment refers back to Rav Hisda's daughter in this segment. So it is one story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_9-10",
      "verdict": "correct",
-     "note": "Correct but the boundaries are wrong. See the previous comment . This selection is part of the previous story in the previous paragraph of gemara.  This selection should not be identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story but combined with the previous story (הָהִיא אִיתְּתָא דְּאִיחַיַּיבָא שְׁבוּעָה בֵּי דִינָא דְּרָבָא. אֲמַרָה לֵיהּ בַּת רַב חִסְדָּא: יָדְעָנָא בָּהּ דַּחֲשׁוּדָה אַשְּׁבוּעָה. אַפְכַהּ רָבָא לִשְׁבוּעָה אַשֶּׁכְּנֶגְדָּהּ.)"
+     "note": "Correct but the boundaries are wrong. See the previous comment . This selection is part of the previous story in the previous paragraph of gemara.  This selection should not be identified as an independent story (Ketubot 8sa [segments 9-10]). But it is the continuation of this story but combined with the previous story (הָהִיא אִיתְּתָא דְּאִיחַיַּיבָא שְׁבוּעָה בֵּי דִינָא דְּרָבָא. אֲמַרָה לֵיהּ בַּת רַב חִסְדָּא: יָדְעָנָא בָּהּ דַּחֲשׁוּדָה אַשְּׁבוּעָה. אַפְכַהּ רָבָא לִשְׁבוּעָה אַשֶּׁכְּנֶגְדָּהּ.)",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_9-10",
      "verdict": "correct",
-     "note": "This is the continuation of the story of the previous selection. It refers back to Rav Hisda's daughter."
+     "note": "This is the continuation of the story of the previous selection. It refers back to Rav Hisda's daughter.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5620,13 +6196,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85a_13-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85a_13-14",
      "verdict": "correct",
-     "note": "This should be classified as a borderline story. After the woman comes to court, it is all dialogue."
+     "note": "This should be classified as a borderline story. After the woman comes to court, it is all dialogue.",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5680,13 +6262,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85b_1-1",
      "verdict": "correct",
-     "note": "Yes, this is a borderline story but it has more than enough to be included."
+     "note": "Yes, this is a borderline story but it has more than enough to be included.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5736,13 +6324,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85b_3-3",
      "verdict": "correct",
-     "note": "Agreed. A borderline / low confidence story."
+     "note": "Agreed. A borderline / low confidence story.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5792,13 +6386,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85b_4-4",
      "verdict": "correct",
-     "note": "borderline, but enough for a borderline story."
+     "note": "borderline, but enough for a borderline story.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5848,13 +6448,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 85b_5-5",
      "verdict": "correct",
-     "note": "Classification reasoning is correct."
+     "note": "Classification reasoning is correct.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5908,13 +6514,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 85b_9-9",
      "verdict": "adjust",
-     "note": "The merge is now correct. However, the boundaries of the story need adjustment. The last line is the Talmud's comment on the story and not part of the story itself. This line should be omitted: מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי. [1]."
+     "note": "The merge is now correct. However, the boundaries of the story need adjustment. The last line is the Talmud's comment on the story and not part of the story itself. This line should be omitted: מֵעִיקָּרָא מַאי סְבַר, וּלְבַסּוֹף מַאי סְבַר? מֵעִיקָּרָא סְבַר: ״וּמִבְּשָׂרְךָ לֹא תִתְעַלָּם״, וּלְבַסּוֹף סָבַר: אָדָם חָשׁוּב שָׁאנֵי. [1].",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 85b_9-9",
      "verdict": "incorrect",
-     "note": "The merge is not correct. As in the previous cases, the top lines of the next page, the continuation of the story, are not included. This is the continuation at the top of 86a: תיזיל ותיחלה לכתובתה דאמה לגבי אבוה, ותירתה מיניה. שמעה, אזלה אחילתה. אמר רב נחמן: עשינו עצמינו כעורכי הדיינין.   The classification is correct."
+     "note": "The merge is not correct. As in the previous cases, the top lines of the next page, the continuation of the story, are not included. This is the continuation at the top of 86a: תיזיל ותיחלה לכתובתה דאמה לגבי אבוה, ותירתה מיניה. שמעה, אזלה אחילתה. אמר רב נחמן: עשינו עצמינו כעורכי הדיינין.   The classification is correct.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; merge objection -- a story, mis-drawn",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5972,19 +6584,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 91a_19-20",
      "verdict": "approve",
-     "note": "The merge and boundaries are now correct."
+     "note": "The merge and boundaries are now correct.",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 91a_19-20",
      "verdict": "correct",
-     "note": "all correct but the end of the story is not quoted. It should include the next words in the Talmudic passage: זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין."
+     "note": "all correct but the end of the story is not quoted. It should include the next words in the Talmudic passage: זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 91a_19-20",
      "verdict": "incorrect",
-     "note": "Again, the continuation of the story at the top of 91b (זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין ) should have been included with the story on 91a that begins תָּא שְׁמַע: דְּנִיכְסֵי דְּבֵי בַּר צַרְצוּר. That line is not given here.  The story on 91b is a separate story that should have its own entry.  (Also, the last two lines of this story on 91b should not be included as they are the anonymous Talmud's comments on the story.  (...וְטִירְפָא, בְּכַמָּה כָּתְבִינַן?)"
+     "note": "Again, the continuation of the story at the top of 91b (זכו בהן יורשין, כך מועטין ונתרבו זכו בהן יורשין ) should have been included with the story on 91a that begins תָּא שְׁמַע: דְּנִיכְסֵי דְּבֵי בַּר צַרְצוּר. That line is not given here.  The story on 91b is a separate story that should have its own entry.  (Also, the last two lines of this story on 91b should not be included as they are the anonymous Talmud's comments on the story.  (...וְטִירְפָא, בְּכַמָּה כָּתְבִינַן?)",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; merge objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6038,7 +6659,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 91b_2-7",
      "verdict": "correct",
-     "note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק."
+     "note": "The boundaries of the story are not correct. The legal discussion following the story need not be quoted. The story should end with: וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6092,7 +6716,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 91b_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6146,13 +6773,19 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 91b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 91b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6206,19 +6839,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 91b_15-16",
      "verdict": "correct",
-     "note": "The legal discussions that follows the story need not be quoted. The story ends וַאֲתָא אִיהוּ וְקָא מְעַרְעַר"
+     "note": "The legal discussions that follows the story need not be quoted. The story ends וַאֲתָא אִיהוּ וְקָא מְעַרְעַר",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 91b_15-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 91b_15-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6280,7 +6922,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 94b_6-9",
      "verdict": "approve",
-     "note": "All correct now"
+     "note": "All correct now",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6346,19 +6991,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 94b_10-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 94b_10-12",
      "verdict": "correct",
-     "note": "correct. it is a marginal story. But the story is cut off again. The full story should be highlighted. The continuation is: טירפא מאייר ואילך! א\"ל: יכלי למימר לך את בר חד בניסן את. מאי תקנתיה? נכתבו הרשאה להדדי."
+     "note": "correct. it is a marginal story. But the story is cut off again. The full story should be highlighted. The continuation is: טירפא מאייר ואילך! א\"ל: יכלי למימר לך את בר חד בניסן את. מאי תקנתיה? נכתבו הרשאה להדדי.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 94b_10-12",
      "verdict": "correct",
-     "note": "Perfect. The continuation on 95a is included with the beginning of the story on 94b."
+     "note": "Perfect. The continuation on 95a is included with the beginning of the story on 94b.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6408,13 +7062,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 97a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 97a_10-10",
      "verdict": "correct",
-     "note": "This could even be high confidence, despite its brevity. The classification reasoning is slightly erroneous. That it is qualified as \"beyond the letter of the law\" does not impact its status as a story. This phrase just impacts whether it should serve as a legal precedent. So this should not be a \"weakening\" criterion"
+     "note": "This could even be high confidence, despite its brevity. The classification reasoning is slightly erroneous. That it is qualified as \"beyond the letter of the law\" does not impact its status as a story. This phrase just impacts whether it should serve as a legal precedent. So this should not be a \"weakening\" criterion",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6464,13 +7124,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 97a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 97a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6520,13 +7186,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 100b_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 100b_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6580,13 +7252,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 100b_17-18",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 100b_17-18",
      "verdict": "incorrect",
-     "note": "This should be low confidence/borderline. It is basically a situation, namely that Ravina possesses wine of his own and of hi nephew, and goes and asks for a legal ruling about it. The change in outcome is absent, or at best, implied. There are not really multiple events."
+     "note": "This should be low confidence/borderline. It is basically a situation, namely that Ravina possesses wine of his own and of hi nephew, and goes and asks for a legal ruling about it. The change in outcome is absent, or at best, implied. There are not really multiple events.",
+     "read_as": "borderline",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection saying borderline",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6648,13 +7326,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103a_2-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103a_2-3",
      "verdict": "incorrect",
-     "note": "This could be high confidence. It does trigger a legal comparison, but the events themselves are enough for a story. Also, the rulings of Ravina and Rav Avira should be included in the story itself, as they are the conclusion of the narrative."
+     "note": "This could be high confidence. It does trigger a legal comparison, but the events themselves are enough for a story. Also, the rulings of Ravina and Rav Avira should be included in the story itself, as they are the conclusion of the narrative.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -6704,19 +7388,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "adjust",
-     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא"
+     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b"
+     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)"
+     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6766,19 +7459,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "adjust",
-     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא"
+     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b"
+     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)"
+     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6832,19 +7534,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "adjust",
-     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא"
+     "note": "The merge is correct but the next paragraph should also be included:הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה: כֹּל דַּהֲוָה בְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי, מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא. הָהוּא כּוֹבֵס כֹּל יוֹמָא הֲוָה אָתֵי קַמֵּיהּ, הָהוּא יוֹמָא לָא אֲתָא. כֵּיוָן דִּשְׁמַע הָכִי, סְלֵיק לְאִיגָּרָא וּנְפַל לְאַרְעָא וּמִית. יָצְתָה בַּת קוֹל וְאָמְרָה: אַף הַהוּא כּוֹבֵס מְזוּמָּן הוּא לְחַיֵּי הָעוֹלָם הַבָּא",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b"
+     "note": "This is certainly a story but it continues onto the next page. It should be with its continuation of 103b. The last line quoted here ends in the middle and continues with the first line of 103b",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103a_24-32",
      "verdict": "correct",
-     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)"
+     "note": "The continuation of the story on 103b is included. In fact, the next paragraph should also be included, as the story continues (...הָהוּא יוֹמָא דְּאַשְׁכָּבְתֵּיהּ דְּרַבִּי נְפַקָא בַּת קָלָא וַאֲמַרָה)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6894,19 +7605,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103b_3-3",
      "verdict": "correct",
-     "note": "Identification is correct. However, it is also part of a longer story and should be quoted with the rest of the story."
+     "note": "Identification is correct. However, it is also part of a longer story and should be quoted with the rest of the story.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103b_3-3",
      "verdict": "correct",
-     "note": "This section, with the section above that is not highlighted, and the section below that is not highlighted  (שִׁמְעוֹן בְּנִי חָכָם — מַאי קָאָמַר? הָכִי קָאָמַר: אַף עַל פִּי שֶׁשִּׁמְעוֹן בְּנִי חָכָם, גַּמְלִיאֵל בְּנִי נָשִׂיא.), is the continuation of the story on the previous page of Talmud."
+     "note": "This section, with the section above that is not highlighted, and the section below that is not highlighted  (שִׁמְעוֹן בְּנִי חָכָם — מַאי קָאָמַר? הָכִי קָאָמַר: אַף עַל פִּי שֶׁשִּׁמְעוֹן בְּנִי חָכָם, גַּמְלִיאֵל בְּנִי נָשִׂיא.), is the continuation of the story on the previous page of Talmud.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -6960,13 +7680,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103b_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103b_8-9",
      "verdict": "correct",
-     "note": "Reasoning is correct. The continuation, אֵימָא, רַבִּי חֲנִינָא נָח נַפְשֵׁיהּ וְרַבִּי אַפָּס כְּדִיתֵיב יְתֵיב, וְלָא הֲוָה לֵיהּ לְלֵוִי אִינִישׁ לְמֵיתַב גַּבֵּיהּ וְקָאָתֵי? אִיבָּעֵית אֵימָא: לֵוִי לְרַבִּי אַפָּס מִיכָּף הֲוָה כַּיִיף לֵיהּ., should be included as it is an alternative version of the ends of the story."
+     "note": "Reasoning is correct. The continuation, אֵימָא, רַבִּי חֲנִינָא נָח נַפְשֵׁיהּ וְרַבִּי אַפָּס כְּדִיתֵיב יְתֵיב, וְלָא הֲוָה לֵיהּ לְלֵוִי אִינִישׁ לְמֵיתַב גַּבֵּיהּ וְקָאָתֵי? אִיבָּעֵית אֵימָא: לֵוִי לְרַבִּי אַפָּס מִיכָּף הֲוָה כַּיִיף לֵיהּ., should be included as it is an alternative version of the ends of the story.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7016,13 +7742,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103b_14-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103b_14-15",
      "verdict": "correct",
-     "note": "Correct, this is a borderline story"
+     "note": "Correct, this is a borderline story",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7155,7 +7887,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 104b_7-14",
      "verdict": "correct",
-     "note": "Correct, but Rava's final ruling, which concludes the long dialogue, should also be quoted. אֲמַר לַהּ רָבָא: בְּהָא לֵיכָּא לְמֵימַר טָעוּת סוֹפֵר הוּא, דִּבְהָא אֲפִילּוּ רַבָּה בַּר שֵׁילָא טָעֵי. This line should be the end of the story."
+     "note": "Correct, but Rava's final ruling, which concludes the long dialogue, should also be quoted. אֲמַר לַהּ רָבָא: בְּהָא לֵיכָּא לְמֵימַר טָעוּת סוֹפֵר הוּא, דִּבְהָא אֲפִילּוּ רַבָּה בַּר שֵׁילָא טָעֵי. This line should be the end of the story.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -7205,13 +7940,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7261,7 +8002,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_9-9",
      "verdict": "correct",
-     "note": "Reasoning and weakeners are correct. This is really two stories, one about Ameimar, and a separate, also borderline story, about Mar Uqba."
+     "note": "Reasoning and weakeners are correct. This is really two stories, one about Ameimar, and a separate, also borderline story, about Mar Uqba.",
+     "read_as": "yes",
+     "read_why": "hand reading: \"borderline\" is said of a second story inside the span, not of the span",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7311,7 +8055,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_9-9",
      "verdict": "correct",
-     "note": "Reasoning and weakeners are correct. This is really two stories, one about Ameimar, and a separate, also borderline story, about Mar Uqba."
+     "note": "Reasoning and weakeners are correct. This is really two stories, one about Ameimar, and a separate, also borderline story, about Mar Uqba.",
+     "read_as": "yes",
+     "read_why": "hand reading: \"borderline\" is said of a second story inside the span, not of the span",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7365,19 +8112,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 105b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7431,19 +8187,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 105b_12-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7505,19 +8270,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105b_14-16",
      "verdict": "approve",
-     "note": "The merge and boundaries are now correct"
+     "note": "The merge and boundaries are now correct",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105b_14-16",
      "verdict": "correct",
-     "note": "All correct, but the full story should be cited, which continues on the next page. This should be included: אמר: האי עשה והאי עשה, עשה דכבוד תורה עדיף, סלקיה לדינא דיתמי ואחתיה לדיניה. כיון דחזא בעל דיניה יקרא דקא עביד ליה, איסתתם טענתיה.  רב ענן, הוה רגיל אליהו דאתי גביה, דהוה מתני ליה סדר דאליהו, כיון דעבד הכי איסתלק. יתיב בתעניתא ובעא רחמי ואתא. כי אתא הוה מבעית ליה בעותי, ועבד תיבותא ויתיב קמיה, עד דאפיק ליה סידריה. והיינו דאמרי: סדר דאליהו רבה, סדר אליהו זוטא."
+     "note": "All correct, but the full story should be cited, which continues on the next page. This should be included: אמר: האי עשה והאי עשה, עשה דכבוד תורה עדיף, סלקיה לדינא דיתמי ואחתיה לדיניה. כיון דחזא בעל דיניה יקרא דקא עביד ליה, איסתתם טענתיה.  רב ענן, הוה רגיל אליהו דאתי גביה, דהוה מתני ליה סדר דאליהו, כיון דעבד הכי איסתלק. יתיב בתעניתא ובעא רחמי ואתא. כי אתא הוה מבעית ליה בעותי, ועבד תיבותא ויתיב קמיה, עד דאפיק ליה סידריה. והיינו דאמרי: סדר דאליהו רבה, סדר אליהו זוטא.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 105b_14-16",
      "verdict": "incorrect",
-     "note": "The classification is correct. The merge is not accurate. The top lines of 106a should be included (ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.   ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה. ) What is highlighted on 106a is an independant story"
+     "note": "The classification is correct. The merge is not accurate. The top lines of 106a should be included (ר' ישמעאל בר' יוסי, הוה רגיל אריסיה דהוה מייתי ליה כל מעלי שבתא כנתא דפירי, יומא חד אייתי ליה בה' בשבתא, א\"ל: מאי שנא האידנא? א\"ל: דינא אית לי, ואמינא, אגב אורחי אייתי ליה למר. לא קביל מיניה, א\"ל: פסילנא לך לדינא. אותיב זוזא דרבנן וקדיינין ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה.   ר' ישמעאל בר אלישע אייתי ליה ההוא גברא ראשית הגז, אמר ליה: מהיכא את? א\"ל: מדוך פלן. ומהתם להכא לא הוה כהן למיתבא ליה? א\"ל: דינא אית לי, ואמינא, אגב אורחאי אייתי ליה למר. א\"ל: פסילנא לך לדינא. לא קביל מיניה. אותיב ליה זוגא דרבנן וקדייני ליה. בהדי דקאזיל ואתי, אמר: אי בעי טעין הכי, ואי בעי טעין הכי, אמר: תיפח נפשם של מקבלי שוחד, ומה אני שלא נטלתי, ואם נטלתי שלי נטלתי - כך, מקבלי שוחד על אחת כמה וכמה. ) What is highlighted on 106a is an independant story",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -7622,13 +8396,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 109b_3-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 109b_3-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -7682,19 +8462,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 109b_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 109b_10-11",
      "verdict": "correct",
-     "note": "Correct. Could even be high confidence as there are clearly two events. The deathbed will and then the division of property."
+     "note": "Correct. Could even be high confidence as there are clearly two events. The deathbed will and then the division of property.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 109b_10-11",
      "verdict": "incorrect",
-     "note": "This is low confidence. Mainly a case and legal ruling"
+     "note": "This is low confidence. Mainly a case and legal ruling",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7748,13 +8537,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 109b_12-12",
      "verdict": "correct",
-     "note": "The following lines should be quoted too, as they are the rabbis deliberation about the case: יָתֵיב רַב אָשֵׁי וְקָא קַשְׁיָא לֵיהּ: מִי קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא, אוֹ לָא? אֲמַר לֵיהּ רַב מָרְדֳּכַי לְרַב אָשֵׁי: הָכִי אָמַר אֲבִימִי מֵהַגְרוֹנְיָא מִשְּׁמֵיהּ דְּרָבָא: קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא"
+     "note": "The following lines should be quoted too, as they are the rabbis deliberation about the case: יָתֵיב רַב אָשֵׁי וְקָא קַשְׁיָא לֵיהּ: מִי קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא, אוֹ לָא? אֲמַר לֵיהּ רַב מָרְדֳּכַי לְרַב אָשֵׁי: הָכִי אָמַר אֲבִימִי מֵהַגְרוֹנְיָא מִשְּׁמֵיהּ דְּרָבָא: קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 109b_12-12",
      "verdict": "correct",
-     "note": "Yes, correct. But the next line should be included too, the rabbinic deliberation over the incident: יָתֵיב רַב אָשֵׁי וְקָא קַשְׁיָא לֵיהּ: מִי קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא, אוֹ לָא? אֲמַר לֵיהּ רַב מָרְדֳּכַי לְרַב אָשֵׁי: הָכִי אָמַר אֲבִימִי מֵהַגְרוֹנְיָא מִשְּׁמֵיהּ דְּרָבָא: קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא."
+     "note": "Yes, correct. But the next line should be included too, the rabbinic deliberation over the incident: יָתֵיב רַב אָשֵׁי וְקָא קַשְׁיָא לֵיהּ: מִי קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא, אוֹ לָא? אֲמַר לֵיהּ רַב מָרְדֳּכַי לְרַב אָשֵׁי: הָכִי אָמַר אֲבִימִי מֵהַגְרוֹנְיָא מִשְּׁמֵיהּ דְּרָבָא: קָרוּ אִינָשֵׁי לִתְרֵי פַּלְגֵי דִּיקְלֵי דִּיקְלָא.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7804,19 +8599,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111a_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111a_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 111a_9-9",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7870,13 +8674,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111a_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111a_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -7961,13 +8771,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111a_23-25",
      "verdict": "incorrect",
-     "note": "I think something got confused here. The first selection, from 111a, is a low-confidence story. The second passage highlighted here, from 111b, is not a story"
+     "note": "I think something got confused here. The first selection, from 111a, is a low-confidence story. The second passage highlighted here, from 111b, is not a story",
+     "read_as": "yes",
+     "read_why": "incorrect on NOT_A_STORY; classification objection",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 111a_23-25",
      "verdict": "incorrect",
-     "note": "This is separate. It is not even a story. It should be classifid as \"not a story\""
+     "note": "This is separate. It is not even a story. It should be classifid as \"not a story\"",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8017,13 +8833,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8073,13 +8895,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8129,13 +8957,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8189,13 +9023,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_19-20",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_19-20",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -8245,13 +9085,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_21-21",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_21-21",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8301,19 +9147,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "approve",
-     "note": "The merge and boundaries are now correct."
+     "note": "The merge and boundaries are now correct.",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "incorrect",
-     "note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry"
+     "note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; merge objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -8367,19 +9222,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "approve",
-     "note": "The merge and boundaries are now correct."
+     "note": "The merge and boundaries are now correct.",
+     "read_as": "yes",
+     "read_why": "approve on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 111b_22-22",
      "verdict": "incorrect",
-     "note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry"
+     "note": "The merge is incorrect. The story from 111b continues with the first line on 112a, which is not quoted here. That line is: והויא כמבי מיכסי עד אקרא דתולבנקי, כ\"ב פרסי אורכא ופותיא שיתא פרסי. What is quoted here from Ketubot 112a is a separate story and should have its own entry",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; merge objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -8433,13 +9297,19 @@
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 112a_1-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 112a_1-2",
      "verdict": "reject_remove",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "reject_remove: a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -8493,19 +9363,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 112a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 112a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 112a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -8590,13 +9469,53 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 112a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
+    },
+    {
+     "round": "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json",
+     "key": "Ketubot 112a_11-11",
+     "verdict": "correct",
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "excluded round: Simon's pre-screen -- not an expert verdict",
+     "shown": null,
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    },
+    {
+     "round": "review_2026-09-16_bundle_jeff_2026-09-23.json",
+     "key": "Ketubot 112a_11-11",
+     "verdict": "borderline",
+     "note": "Again, mainly a dialogue, so lacking the actions necessary for a story. But has conflict, so can be borderline.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
+     "axes": {
+      "extent": "right",
+      "confidence": "right",
+      "grouping": "right",
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 112a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8646,13 +9565,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 112a_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 112a_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8702,13 +9627,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 112a_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 112a_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8738,7 +9669,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 3a_9-9",
      "verdict": "adjust",
-     "note": "The boundaries of this story are correct. There seems to be some confusion in the \"note\" and in \"our interpretation\" as this story is entirely on 3a, not 2b. So this does not need adjustment."
+     "note": "The boundaries of this story are correct. There seems to be some confusion in the \"note\" and in \"our interpretation\" as this story is entirely on 3a, not 2b. So this does not need adjustment.",
+     "read_as": "yes",
+     "read_why": "adjust: a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8768,19 +9702,28 @@
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 6b_2-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 6b_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 6b_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "overlap",
@@ -8810,13 +9753,36 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 7a_1-1",
      "verdict": "incorrect",
-     "note": "There are no events. This is just a legal discussion."
+     "note": "There are no events. This is just a legal discussion.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
+    },
+    {
+     "round": "review_2026-09-16_bundle_jeff_2026-09-23.json",
+     "key": "Ketubot 7a_1-1",
+     "verdict": "borderline",
+     "note": "This is borderline. It is mostly speech acts: A rabbi permits a groom to have sex on Shabbat, the rabbis respond, and he responds back. So technically there is not enough actions. But there is conflict and some implied change, so it is borderline.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
+     "axes": {
+      "extent": "right",
+      "confidence": "right",
+      "grouping": "right",
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 7a_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -8846,13 +9812,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 7a_2-2",
      "verdict": "incorrect",
-     "note": "Not a story. The reasoning is correct but leads to the conclusion it is not even a story"
+     "note": "Not a story. The reasoning is correct but leads to the conclusion it is not even a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 7a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -8882,13 +9854,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8a_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8a_6-6",
      "verdict": "correct",
-     "note": "The reasoning is correct"
+     "note": "The reasoning is correct",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -8918,13 +9896,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8a_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8a_9-9",
      "verdict": "correct",
-     "note": "Yes, the change is minimal. It is a borderline story. But the erasoning is correct."
+     "note": "Yes, the change is minimal. It is a borderline story. But the erasoning is correct.",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -8954,13 +9938,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 8a_13-13",
      "verdict": "incorrect",
-     "note": "There is too little change or causality to be high confidence. It should be low confidence"
+     "note": "There is too little change or causality to be high confidence. It should be low confidence",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 8a_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -8990,13 +9980,19 @@
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 9a_5-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 9a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "overlap",
@@ -9026,7 +10022,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 11b_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -9056,7 +10055,10 @@
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 11b_12-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "overlap",
@@ -9086,13 +10088,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 12b_0-0",
      "verdict": "incorrect",
-     "note": "The change from Yes to Low confidence is correct. But the boundaries of the story are not. The first line is missing from the previous page of Talmud (12a). It should start with אמר רב אשי: שתי תקנות הוו, מעיקרא תקינו לבתולה ארבע מאות זוז, ולאלמנה מנה."
+     "note": "The change from Yes to Low confidence is correct. But the boundaries of the story are not. The first line is missing from the previous page of Talmud (12a). It should start with אמר רב אשי: שתי תקנות הוו, מעיקרא תקינו לבתולה ארבע מאות זוז, ולאלמנה מנה.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 12b_0-0",
      "verdict": "correct",
-     "note": "Correct. This is a borderline It lacks specificity.  It also starts in the previous line (0n 12a) with Rav Ashi's statement. This is the second half of his statement. But it has change and temporal progresion. So \"low confidence\" is perfect"
+     "note": "Correct. This is a borderline It lacks specificity.  It also starts in the previous line (0n 12a) with Rav Ashi's statement. This is the second half of his statement. But it has change and temporal progresion. So \"low confidence\" is perfect",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9122,7 +10130,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 13b_16-16",
      "verdict": "incorrect",
-     "note": "Not even a story. Just a legal decision. The \"action\" is in what they tell the rabbi. But that is just the dialogue. The only events are the couple asking the rabbis for a ruling. So it is not a story"
+     "note": "Not even a story. Just a legal decision. The \"action\" is in what they tell the rabbi. But that is just the dialogue. The only events are the couple asking the rabbis for a ruling. So it is not a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9152,7 +10163,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 15b_2-2",
      "verdict": "incorrect",
-     "note": "Not a story. This is just a reference to the story mentioned in the Talmud above. A rabbi overlooked what another rabbi said about this incident.  That does not constitute a story"
+     "note": "Not a story. This is just a reference to the story mentioned in the Talmud above. A rabbi overlooked what another rabbi said about this incident.  That does not constitute a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9182,7 +10196,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 17a_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -9212,7 +10229,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 17a_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9242,7 +10262,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 21a_10-11",
      "verdict": "incorrect",
-     "note": "low confidence. It is mostly a legal case. The action \"explaining\" is dialogue, not really an action."
+     "note": "low confidence. It is mostly a legal case. The action \"explaining\" is dialogue, not really an action.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9272,7 +10295,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 21b_7-8",
      "verdict": "incorrect",
-     "note": "It is all a legal discussion. The actions mentioned in the reasoning, \"stating, objecting, asking questions\" are all part of a dialogue, and not really events"
+     "note": "It is all a legal discussion. The actions mentioned in the reasoning, \"stating, objecting, asking questions\" are all part of a dialogue, and not really events",
+     "read_as": "no",
+     "read_why": "incorrect on HIGH_CONFIDENCE; classification objection",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9302,7 +10328,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25a_9-10",
      "verdict": "incorrect",
-     "note": "Not a story. The one event, that a rabbi found another in the study hall, is not really an event in a story"
+     "note": "Not a story. The one event, that a rabbi found another in the study hall, is not really an event in a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9332,7 +10361,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 25b_6-6",
      "verdict": "incorrect",
-     "note": "It should be low confidence. Two events, but no real causality."
+     "note": "It should be low confidence. Two events, but no real causality.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; confidence objection -- a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "overlap",
@@ -9362,7 +10394,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 26a_9-9",
      "verdict": "incorrect",
-     "note": "This is part of a legal discussion. It is a hypothetical scenario. Not a story"
+     "note": "This is part of a legal discussion. It is a hypothetical scenario. Not a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9392,7 +10427,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 26b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -9422,13 +10460,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 40b_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 40b_11-11",
      "verdict": "incorrect",
-     "note": "The events here are rabbis making legal arguments. True, one rabbi went to the place of another rabbi to recite his tradition. But that is not really an event that makes for a story."
+     "note": "The events here are rabbis making legal arguments. True, one rabbi went to the place of another rabbi to recite his tradition. But that is not really an event that makes for a story.",
+     "read_as": "no",
+     "read_why": "incorrect; his note says it is not a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9458,13 +10502,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 42b_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 42b_8-8",
      "verdict": "incorrect",
-     "note": "The main actions, experiencing difficulty and \"resolving\" a difficult legal issue, are not events, but just parts of a legal dicussion."
+     "note": "The main actions, experiencing difficulty and \"resolving\" a difficult legal issue, are not events, but just parts of a legal dicussion.",
+     "read_as": "no",
+     "read_why": "incorrect; his note says it is not a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -9494,13 +10544,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 49b_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 49b_6-6",
      "verdict": "correct",
-     "note": "This is a borderline story. It is basically one event, though two verbs are used. He forced a man to give charity. Also , the first part of the excerpt (וְלָא אֲמַרַן, אֶלָּא דְּלָא אֲמִיד, אֲבָל אֲמִיד — כָּפֵינַן לֵיהּ עַל כֻּרְחֵיהּ.) is not part of the story."
+     "note": "This is a borderline story. It is basically one event, though two verbs are used. He forced a man to give charity. Also , the first part of the excerpt (וְלָא אֲמַרַן, אֶלָּא דְּלָא אֲמִיד, אֲבָל אֲמִיד — כָּפֵינַן לֵיהּ עַל כֻּרְחֵיהּ.) is not part of the story.",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9530,7 +10586,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 50b_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9560,13 +10619,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 50b_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 50b_6-6",
      "verdict": "incorrect",
-     "note": "This is a borderline story. The reasoning is correct that there is minimal causality. But there is some, and some change. It should be marked a borderline story."
+     "note": "This is a borderline story. The reasoning is correct that there is minimal causality. But there is some, and some change. It should be marked a borderline story.",
+     "read_as": "borderline",
+     "read_why": "incorrect on NOT_A_STORY; confidence objection saying borderline",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -9596,13 +10661,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 50b_9-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 50b_9-10",
      "verdict": "correct",
-     "note": "This should be marked a borderline story, since it is just one real event and then discussion"
+     "note": "This should be marked a borderline story, since it is just one real event and then discussion",
+     "read_as": "borderline",
+     "read_why": "correct on HIGH_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9632,7 +10703,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 51b_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -9662,7 +10736,10 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 52a_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -9692,13 +10769,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 56a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-05 (1).json",
      "key": "Ketubot 56a_2-2",
      "verdict": "incorrect",
-     "note": "This is a legal debate. There is a setting for the debate of one sage sitting before another. But it is just a debate"
+     "note": "This is a legal debate. There is a setting for the debate of one sage sitting before another. But it is just a debate",
+     "read_as": "no",
+     "read_why": "incorrect; his note says it is not a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9728,13 +10811,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 63b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 63b_7-7",
      "verdict": "correct",
-     "note": "excellent reasoning. This is indeed \"low confidence\" or \"borderline\""
+     "note": "excellent reasoning. This is indeed \"low confidence\" or \"borderline\"",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9764,13 +10853,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 65a_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 65a_5-5",
      "verdict": "correct",
-     "note": "Absolutely correct. This should be classified as a low confidence or  \"borderline\" story. The one correction is the story begins with דְּאָמַר רַבִּי אֲבָהוּ אָמַר רַבִּי יוֹחָנָן: מַעֲשֶׂה בְּכַלָּתוֹ, not with the legal ruling preceding the borderline story"
+     "note": "Absolutely correct. This should be classified as a low confidence or  \"borderline\" story. The one correction is the story begins with דְּאָמַר רַבִּי אֲבָהוּ אָמַר רַבִּי יוֹחָנָן: מַעֲשֶׂה בְּכַלָּתוֹ, not with the legal ruling preceding the borderline story",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9800,13 +10895,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 68a_16-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 68a_16-16",
      "verdict": "incorrect",
-     "note": "This is not a story. The assessment is more or less correct, but there is not enough here even to be a low-confidence story.  It is an account of one act. There is no real change in the outcome after that one act."
+     "note": "This is not a story. The assessment is more or less correct, but there is not enough here even to be a low-confidence story.  It is an account of one act. There is no real change in the outcome after that one act.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9836,13 +10937,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 69a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 69a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9872,13 +10979,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 74a_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 74a_11-11",
      "verdict": "correct",
-     "note": "correct. This should be marked as a borderline story."
+     "note": "correct. This should be marked as a borderline story.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9908,19 +11021,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 80a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 80a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 80a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9950,7 +11072,10 @@
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 81b_3-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -9980,13 +11105,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 84b_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 84b_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10039,19 +11170,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 86a_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 86a_4-4",
      "verdict": "correct",
-     "note": "borderline"
+     "note": "borderline",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 86a_4-4",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10081,13 +11221,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 86a_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 86a_8-8",
      "verdict": "correct",
-     "note": "borderline, but a story"
+     "note": "borderline, but a story",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10117,13 +11263,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 88a_8-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 88a_8-8",
      "verdict": "incorrect",
-     "note": "this is not enough even for a borderline story. There is just the report that an incident happened and a legal ruling"
+     "note": "this is not enough even for a borderline story. There is just the report that an incident happened and a legal ruling",
+     "read_as": "no",
+     "read_why": "hand reading: \"this is not enough even for a borderline story\" -- the word is negated",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10153,13 +11305,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 90b_12-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 90b_12-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -10189,13 +11347,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 94a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 94a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -10248,13 +11412,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 96a_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 96a_7-7",
      "verdict": "correct",
-     "note": "Classification reasoning is absolutely correct."
+     "note": "Classification reasoning is absolutely correct.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10284,13 +11454,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 98a_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 98a_1-1",
      "verdict": "correct",
-     "note": "The reasoning is correct. It is borderline/low confidence."
+     "note": "The reasoning is correct. It is borderline/low confidence.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10320,13 +11496,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 98a_6-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 98a_6-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10356,13 +11538,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 99b_7-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 99b_7-9",
      "verdict": "correct",
-     "note": "the reasoning is correct"
+     "note": "the reasoning is correct",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     }
    ],
    "verdict_match": "exact",
@@ -10392,13 +11580,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 100a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 100a_8-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10451,31 +11645,46 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103b_20-21",
      "verdict": "approve",
-     "note": "The \"our interpretation is correct.\"  The change should be implemented by adding this portion to the story on this same page about Rabbi Yehudah HaNasi's death."
+     "note": "The \"our interpretation is correct.\"  The change should be implemented by adding this portion to the story on this same page about Rabbi Yehudah HaNasi's death.",
+     "read_as": "yes",
+     "read_why": "approve on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 103b_20-21",
      "verdict": "correct",
-     "note": "This is really the continuation of the story of Ketubot 103b, segments 8-9. The gemara digresses a little but this part here is the continuation of the words of Rabbi Yehudah HaNasi on his deathbed that actually starts 103a segments 24-32."
+     "note": "This is really the continuation of the story of Ketubot 103b, segments 8-9. The gemara digresses a little but this part here is the continuation of the words of Rabbi Yehudah HaNasi on his deathbed that actually starts 103a segments 24-32.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103b_20-21",
      "verdict": "correct",
-     "note": "It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation."
+     "note": "It would be better to include this with the previous story, rather than as an independent story. As the classification correctly states, this story is \"within the larger deathbed cycle.\" The English translation from Sefaria correctly introduces the story, \"The Gemara returns to the narrative...\" indicating it is a continuation.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 103b_24-25",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 103b_24-25",
      "verdict": "incorrect",
-     "note": "It is correct that the story continues on 104a but the top line should be highlighted too, as it is the continuation of the story too. That is, the words דְּמִדַּלְיָא וּבְסִים אַוֵּירָא  should be included in the highlighted story."
+     "note": "It is correct that the story continues on 104a but the top line should be highlighted too, as it is the continuation of the story too. That is, the words דְּמִדַּלְיָא וּבְסִים אַוֵּירָא  should be included in the highlighted story.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "overlap",
@@ -10505,13 +11714,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 105a_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 105a_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10541,13 +11756,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 106a_3-3",
      "verdict": "incorrect",
-     "note": "This should be \"high confidence\". There is minimal action. Mainly a request and a rejections"
+     "note": "This should be \"high confidence\". There is minimal action. Mainly a request and a rejections",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; confidence objection -- a story",
+     "shown": "YES"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 106a_3-3",
      "verdict": "incorrect",
-     "note": ""
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "bare incorrect, no readable objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10577,13 +11798,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 107b_8-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 107b_8-10",
      "verdict": "correct",
-     "note": "Correct. This is a borderline story, as it consists largely of legal discussions and rulings. But it does involve specific incidents."
+     "note": "Correct. This is a borderline story, as it consists largely of legal discussions and rulings. But it does involve specific incidents.",
+     "read_as": "borderline",
+     "read_why": "correct on LOW_CONFIDENCE; his note says borderline (Lesson 42)",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10613,13 +11840,19 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 110b_24-24",
      "verdict": "incorrect",
-     "note": "Not a story. It is just one action and then explanation for it."
+     "note": "Not a story. It is just one action and then explanation for it.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 110b_24-24",
      "verdict": "incorrect",
-     "note": "THe story of R. Zeira avoiding his teacher is a borderline or low-confidence story. But here, the next line of that story on 111a is not quoted, but the passage that appears later on 111a. The part that should go with this story about R. Zeira is the first line on 111a, ״בבלה יובאו ושמה יהיו עד יום פקדי אותם נאם ה׳. That should end this borderline story. The story about Ula highlighter here on 111a is a separate story."
+     "note": "THe story of R. Zeira avoiding his teacher is a borderline or low-confidence story. But here, the next line of that story on 111a is not quoted, but the passage that appears later on 111a. The part that should go with this story about R. Zeira is the first line on 111a, ״בבלה יובאו ושמה יהיו עד יום פקדי אותם נאם ה׳. That should end this borderline story. The story about Ula highlighter here on 111a is a separate story.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -10649,19 +11882,28 @@
      "round": "canonical_review_anonymous_2026-03-17.json",
      "key": "Ketubot 111b_4-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "no",
+     "read_why": "correct on NOT_A_STORY",
+     "shown": "NOT_A_STORY"
     },
     {
      "round": "v5_1_feedback_anonymous_2026-02-20.json",
      "key": "Ketubot 111b_4-5",
      "verdict": "correct",
-     "note": "Yes, very low confidence. The preceding line should also be included since it begins the story: אָמַר רַבִּי אֶלְעָזָר: עַמֵּי הָאֲרָצוֹת אֵינָן חַיִּים, שֶׁנֶּאֱמַר: ״מֵתִים בַּל יִחְיוּ וְגוֹ׳״, תַּנְיָא נָמֵי הָכִי: ״מֵתִים בַּל יִחְיוּ״, יָכוֹל לַכֹּל — תַּלְמוּד לוֹמַר: ״רְפָאִים בַּל יָקוּמוּ״, בִּמְרַפֶּה עַצְמוֹ מִדִּבְרֵי תוֹרָה הַכָּתוּב מְדַבֵּר."
+     "note": "Yes, very low confidence. The preceding line should also be included since it begins the story: אָמַר רַבִּי אֶלְעָזָר: עַמֵּי הָאֲרָצוֹת אֵינָן חַיִּים, שֶׁנֶּאֱמַר: ״מֵתִים בַּל יִחְיוּ וְגוֹ׳״, תַּנְיָא נָמֵי הָכִי: ״מֵתִים בַּל יִחְיוּ״, יָכוֹל לַכֹּל — תַּלְמוּד לוֹמַר: ״רְפָאִים בַּל יָקוּמוּ״, בִּמְרַפֶּה עַצְמוֹ מִדִּבְרֵי תוֹרָה הַכָּתוּב מְדַבֵּר.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "v8_delta_feedback_anonymous_2026-02-26.json",
      "key": "Ketubot 111b_4-5",
      "verdict": "incorrect",
-     "note": "It is not a story"
+     "note": "It is not a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",

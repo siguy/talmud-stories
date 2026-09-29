@@ -15,13 +15,17 @@ superseded_by:
 exists — then the plan (`docs/history/2026-09-28-PLAN-consensus-at-scale.md` §4, whose
 go/no-go is unchanged). **Do not touch Eruvin.**
 
-## Before you start — two things only Simon can do
+## Before you start
 
-- **Gemini:** the project hit its **monthly spend cap** on 2026-09-28 (AI Studio → spend).
-- **Anthropic:** the account is **out of credit** (Console → billing). Phase 1 cost $8.94
-  for 403 Claude calls (~$0.022 each at effort `medium`); this item needs ~2,000 → ~$45.
-  Raise the item's cap: `BUDGET_USD` in `scripts/judge_labelled_spans.py` counts every
-  earlier run's Claude spend against it.
+- **Money: done (Simon, 2026-09-29).** The Gemini monthly cap was raised and the Anthropic
+  account has credit. `BUDGET_USD` in `scripts/judge_labelled_spans.py` is **75** — it
+  counts every earlier run's Claude spend in `results/consensus/phase1/` ($8.94), and this
+  item needs ~$44 (full + same-prompt repeat at ~$0.022/call). Always `--dry-run` first.
+- **Labels: current.** `results/consensus/phase1/labels.json` was rebuilt on 2026-09-29
+  after the register changed; only `cited_in_rules` moved (18 spans — the corrected R-C0 /
+  R-C5 now quote those pages as cases). Report cited and not-cited separately, as before.
+- **The reading of old verdicts** now lives in `scripts/verdict_reading.py` (shared with
+  the rulers) — behaviour identical to phase 1.
 
 ## Method
 

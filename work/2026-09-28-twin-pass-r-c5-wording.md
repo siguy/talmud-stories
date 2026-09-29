@@ -24,6 +24,16 @@ the act… A single act cited as a precedent is not a story, however it is intro
 rejected 21 incident-plus-ruling stories on his lists. The twin pass may be rejecting the
 same shape beside a found story.
 
+## Status (2026-09-29)
+
+**Step 1 is done; steps 2–3 are what remains.** The wording in `_twin_prompt()` was
+corrected on 2026-09-29 (R-C5 as corrected + R-C0's cow case; `tests/test_twin_pass.py`
+pins both and pins the old gloss absent). It is the shipped default **unmeasured** —
+restoring his July rule was judged safer than keeping a wording that contradicts it, but
+it is a detector change and must now be measured. The last commit with the old wording
+is the parent of the commit that changed it (`git log -S"however it is introduced" --
+src/story_detector_v11.py`).
+
 ## Method
 
 1. Reword the bullet to R-C5 as corrected (what someone did or used to do, cited as

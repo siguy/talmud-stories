@@ -56,9 +56,13 @@ def test_the_question_carries_jeffs_2026_09_23_rejections():
     prompt = _detector()._twin_prompt('X 1a', segs, 1, 1, 2)
     for phrase in ("the Gemara's commentary ON story A",
                    'a bare report of what someone did',
+                   # R-C0 bounds R-C5: the incident-plus-ruling shape IS a story. The
+                   # unbounded gloss rejected 21 of his list stories (2026-09-28).
+                   'Rava ruled',
                    'a description of who sat where',
                    'actors are biblical figures'):
         assert phrase in prompt, phrase
+    assert 'however it is introduced' not in prompt, 'the R-C5 gloss removed on 2026-09-29'
 
 
 def _detector():

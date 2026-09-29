@@ -5,7 +5,7 @@ tractate: [ketubot, kiddushin]
 blocked_by: []
 awaiting: []
 writes: [scripts/map_verdict_vocabularies.py, scripts/build_ruler.py, results/rulers/, tests/test_verdict_vocabulary_map.py, tests/test_build_ruler.py]
-finding:
+finding: docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md
 superseded_by:
 ---
 
@@ -39,3 +39,18 @@ Also known: the committed `results/rulers/*_ruler.json` are already stale agains
 ## When done
 
 Finding, `## Outcome`, `python3 scripts/board.py finish 2026-09-28-verdicts-read-against-the-call-shown`.
+
+## Outcome
+
+**Done, 2026-09-29.** → [finding](../../docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md)
+
+- The reading moved to `scripts/verdict_reading.py`; `judge_labelled_spans.py`,
+  `build_ruler.py` and `map_verdict_vocabularies.py` all use it (phase 1 labels unchanged
+  except `cited_in_rules`, which follows the corrected register).
+- Rulers: `story_precision` per round beside the unchanged published fields — ~0.92–0.95 on
+  the story-by-story rounds; Kiddushin's "68%" is 0.928; wave 4's "11 of 15 incorrect" is
+  1.0 as a classification. Simon's pre-screen no longer scored as Jeff's
+  (`excluded_rounds`). Rulers regenerated (they were stale).
+- Vocabulary map: 109 yes→no, 66 no→yes; lossy 129 → 57.
+- Tests: `tests/test_verdict_reading.py`. Not checked: whether any golden builder shares
+  the defect.

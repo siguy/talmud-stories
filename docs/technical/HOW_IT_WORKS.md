@@ -107,8 +107,9 @@ incident, same story, or not a story?* Adds only; never moves or drops a story.
 - Flags: `TWIN_PASS` (default `1`; `0` = off), `TWIN_TRIGGER` (default `all`;
   `labelled` asks only beside NARRATIVE_EVENT / VERBAL_ACT segments), `TWIN_REACH` (1)
 - Its `not_a_story` option names Jeff's rejections: Gemara commentary on A, a bare
-  report with nothing following, a seating description, a biblical episode
-  (`docs/STORY_RULES.md` R-B4, R-C5, R-S1)
+  report of what someone did or used to do with no one responding, a seating
+  description, a biblical episode (`docs/STORY_RULES.md` R-B4, R-C5, R-S1) — and, since
+  2026-09-29, says an incident followed by a ruling IS a story (R-C0)
 - A failed call adds nothing and is counted on `twin_failures`
 - Findings: `docs/findings/2026-09-14-twin-pass.md`, `2026-09-25-jeff-verdicts-scope-commentary-reports.md`
 
