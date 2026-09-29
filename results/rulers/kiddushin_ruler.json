@@ -8,6 +8,8 @@
  "review_rounds": {
   "kiddushin_review_2026-04-23.json": 96,
   "kiddushin_review_2026-05-26 (1).json": 1,
+  "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 1,
+  "review_2026-09-16_bundle_jeff_2026-09-23.json": 1,
   "wave4_kiddushin_review_2026-07-06.json": 15
  },
  "verdict_mapping": {
@@ -64,6 +66,13 @@
       "boundary": 5,
       "unclassified": 6
      },
+     "story_precision": {
+      "read_as": {
+       "yes": 15
+      },
+      "precision": 1.0,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 15,
      "precision_all_causes": 0.267,
      "precision_classification_only": 1.0,
@@ -71,7 +80,7 @@
      "bounds_note": "true classification precision lies between these two; the gap is 6 unreadable notes plus the boundary/merge/confidence rejections"
     },
     "kiddushin_review_2026-04-23.json": {
-     "accepted": 60,
+     "accepted": 59,
      "rejected": 29,
      "by_kind": {
       "confidence": 10,
@@ -79,9 +88,17 @@
       "boundary": 3,
       "classification": 7
      },
-     "judged": 89,
-     "precision_all_causes": 0.674,
-     "precision_classification_only": 0.921,
+     "story_precision": {
+      "read_as": {
+       "yes": 77,
+       "no": 6
+      },
+      "precision": 0.928,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
+     "judged": 88,
+     "precision_all_causes": 0.67,
+     "precision_classification_only": 0.92,
      "unclassified_notes": 9,
      "bounds_note": "true classification precision lies between these two; the gap is 9 unreadable notes plus the boundary/merge/confidence rejections"
     },
@@ -91,12 +108,41 @@
      "by_kind": {
       "unclassified": 1
      },
+     "story_precision": {
+      "read_as": {
+       "yes": 1
+      },
+      "precision": 1.0,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 1,
      "precision_all_causes": 0.0,
      "precision_classification_only": 1.0,
      "unclassified_notes": 1,
      "bounds_note": "true classification precision lies between these two; the gap is 1 unreadable notes plus the boundary/merge/confidence rejections"
+    },
+    "review_2026-09-16_bundle_jeff_2026-09-23.json": {
+     "accepted": 0,
+     "rejected": 1,
+     "by_kind": {
+      "confidence": 1
+     },
+     "story_precision": {
+      "read_as": {
+       "no": 1
+      },
+      "precision": 0.0,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
+     "judged": 1,
+     "precision_all_causes": 0.0,
+     "precision_classification_only": 1.0,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
     }
+   },
+   "excluded_rounds": {
+    "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 1
    },
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
   },
@@ -150,13 +196,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 8b_2-2",
      "verdict": "incorrect",
-     "note": "High confidence. There is conflict, change, and several actions."
+     "note": "High confidence. There is conflict, change, and several actions.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 8b_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -210,13 +262,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 8b_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 8b_14-14",
      "verdict": "incorrect",
-     "note": "The English highlight is correct but the Hebrew is cut off. It continues wiht line 0 on the next page (Kiddushin 9a)"
+     "note": "The English highlight is correct but the Hebrew is cut off. It continues wiht line 0 on the next page (Kiddushin 9a)",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; display objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -270,13 +328,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 9a_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "kiddushin_review_2026-05-26 (1).json",
      "key": "Kiddushin 9a_1-1",
      "verdict": "incorrect",
-     "note": "The words crossed out here are part of the story. This is not the talmud's introduction"
+     "note": "The words crossed out here are part of the story. This is not the talmud's introduction",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -326,13 +390,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 9a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 9a_2-2",
      "verdict": "incorrect",
-     "note": "The story is cut off. These words should be included: מִיקַּדְּשַׁתְּ לִי״? אֲמַרָה לֵיהּ: ״שְׁדִי מִישְׁדָּא״. אָמַר רַב זְבִיד: כֹּל ״שְׁדִי מִישְׁדָּא״ לָאו כְּלוּם הוּא  The English above is correctbut does not correspond to the Hebrew"
+     "note": "The story is cut off. These words should be included: מִיקַּדְּשַׁתְּ לִי״? אֲמַרָה לֵיהּ: ״שְׁדִי מִישְׁדָּא״. אָמַר רַב זְבִיד: כֹּל ״שְׁדִי מִישְׁדָּא״ לָאו כְּלוּם הוּא  The English above is correctbut does not correspond to the Hebrew",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -427,13 +497,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 12a_13-13",
      "verdict": "correct",
-     "note": "boundary issue: the story should end with: אִי אִית בַּהּ שָׁוֶה פְּרוּטָה – אִין, אִי לָא – לָא.  The next sentence, וְאִי לֵית בַּהּ שָׁוֶה פְּרוּטָה לָא?, is the anonymous talmud's reaction to the story. Not the story itself."
+     "note": "boundary issue: the story should end with: אִי אִית בַּהּ שָׁוֶה פְּרוּטָה – אִין, אִי לָא – לָא.  The next sentence, וְאִי לֵית בַּהּ שָׁוֶה פְּרוּטָה לָא?, is the anonymous talmud's reaction to the story. Not the story itself.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12a_13-15",
      "verdict": "correct",
-     "note": "This is correct but repeats much of what is above (Kiddushin 12a :: seg 13-13). It also includes two stories, each of which begins הָהוּא גַּבְרָא (sections 13 and 14)"
+     "note": "This is correct but repeats much of what is above (Kiddushin 12a :: seg 13-13). It also includes two stories, each of which begins הָהוּא גַּבְרָא (sections 13 and 14)",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -491,7 +567,10 @@
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12a_13-15",
      "verdict": "correct",
-     "note": "This is correct but repeats much of what is above (Kiddushin 12a :: seg 13-13). It also includes two stories, each of which begins הָהוּא גַּבְרָא (sections 13 and 14)"
+     "note": "This is correct but repeats much of what is above (Kiddushin 12a :: seg 13-13). It also includes two stories, each of which begins הָהוּא גַּבְרָא (sections 13 and 14)",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -541,13 +620,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 12b_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12b_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -597,13 +682,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 12b_10-10",
      "verdict": "correct",
-     "note": "Boundary issue. This continuation on 13a is not part of the story. It is clearly separated from the story by the bottom lines on 12b. So only the part on 12b, should be quoted. That excerpt is correct."
+     "note": "Boundary issue. This continuation on 13a is not part of the story. It is clearly separated from the story by the bottom lines on 12b. So only the part on 12b, should be quoted. That excerpt is correct.",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12b_10-10",
      "verdict": "incorrect",
-     "note": "Here is the story: הָהוּא גַּבְרָא דְּקַדֵּישׁ בְּצִיפְּתָא דְאָסָא, אֲמַרוּ לֵיהּ: וְהָא לֵית בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לְהוּ: תִּיקְדּוֹשׁ בְּאַרְבַּע זוּזֵי דְּאִית בַּהּ. שְׁקַלְתַּהּ וְאִישְׁתִּיקָא."
+     "note": "Here is the story: הָהוּא גַּבְרָא דְּקַדֵּישׁ בְּצִיפְּתָא דְאָסָא, אֲמַרוּ לֵיהּ: וְהָא לֵית בַּהּ שָׁוֶה פְּרוּטָה! אֲמַר לְהוּ: תִּיקְדּוֹשׁ בְּאַרְבַּע זוּזֵי דְּאִית בַּהּ. שְׁקַלְתַּהּ וְאִישְׁתִּיקָא.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -653,13 +744,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 13a_3-3",
      "verdict": "incorrect",
-     "note": "Yes, a full story. More than two actions and conflict and change."
+     "note": "Yes, a full story. More than two actions and conflict and change.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 13a_3-3",
      "verdict": "incorrect",
-     "note": "The story continues a little. These words are part of the story: לַהּ: אִי יָהֵיבְנָא לִיךְ מִיקַּדְּשַׁתְּ לִי? שְׁקַלְתֵּיהּ וְאִישְׁתִּיקָה"
+     "note": "The story continues a little. These words are part of the story: לַהּ: אִי יָהֵיבְנָא לִיךְ מִיקַּדְּשַׁתְּ לִי? שְׁקַלְתֵּיהּ וְאִישְׁתִּיקָה",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -791,13 +888,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 22b_18-18",
      "verdict": "correct",
-     "note": "Minor issue. The next few words should be included, וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, since it is an alternative version of the story."
+     "note": "Minor issue. The next few words should be included, וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, since it is an alternative version of the story.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 22b_18-18",
      "verdict": "incorrect",
-     "note": "Nothing should have been trimmed here. That is, all of 18 is the story."
+     "note": "Nothing should have been trimmed here. That is, all of 18 is the story.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -859,13 +962,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 25a_1-3",
      "verdict": "correct",
-     "note": "Boundary issue. The story continues through the next two lines (4-5): וְאֵלּוּ הֵם: רָאשֵׁי אֶצְבָּעוֹת יָדַיִם וְרַגְלַיִם, וְרָאשֵׁי אׇזְנַיִם, וְרֹאשׁ הַחוֹטֶם, וְרֹאשׁ הַגְּוִיָּיה וְרָאשֵׁי דַדִּים שֶׁבָּאִשָּׁה. רַבִּי יְהוּדָה אוֹמֵר: אַף שֶׁבָּאִישׁ. וְתָנֵי עֲלַהּ: בְּכוּלָּם עֶבֶד יוֹצֵא בָּהֶם לְחֵירוּת. רַבִּי אוֹמֵר: אַף הַסֵּירוּס. בֶּן עַזַּאי אוֹמֵר: אַף הַלָּשׁוֹן. 5אָמַר מָר: רַבִּי אוֹמֵר אַף הַסֵּירוּס. סֵירוּס דְּמַאי? אִילֵּימָא סֵירוּס דְּגִיד, הַיְינוּ גְּוִיָּיה. אֶלָּא לָאו: סֵירוּס דְּבֵיצִים?"
+     "note": "Boundary issue. The story continues through the next two lines (4-5): וְאֵלּוּ הֵם: רָאשֵׁי אֶצְבָּעוֹת יָדַיִם וְרַגְלַיִם, וְרָאשֵׁי אׇזְנַיִם, וְרֹאשׁ הַחוֹטֶם, וְרֹאשׁ הַגְּוִיָּיה וְרָאשֵׁי דַדִּים שֶׁבָּאִשָּׁה. רַבִּי יְהוּדָה אוֹמֵר: אַף שֶׁבָּאִישׁ. וְתָנֵי עֲלַהּ: בְּכוּלָּם עֶבֶד יוֹצֵא בָּהֶם לְחֵירוּת. רַבִּי אוֹמֵר: אַף הַסֵּירוּס. בֶּן עַזַּאי אוֹמֵר: אַף הַלָּשׁוֹן. 5אָמַר מָר: רַבִּי אוֹמֵר אַף הַסֵּירוּס. סֵירוּס דְּמַאי? אִילֵּימָא סֵירוּס דְּגִיד, הַיְינוּ גְּוִיָּיה. אֶלָּא לָאו: סֵירוּס דְּבֵיצִים?",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 25a_1-3",
      "verdict": "incorrect",
-     "note": "The words crossed out are part of the story. ( לֵיהּ: מַתְנִיתָא בְּעוֹ מִינָּךְ. דִּתְנַן: עֶשְׂרִים וְאַרְבָּעָה רָאשֵׁי אֵבָרִים שֶׁבָּאָדָם כּוּלָּם אֵין מְטַמְּאִין מִשּׁוּם מִחְיָה,). Otherwise it ends with אֲמַר."
+     "note": "The words crossed out are part of the story. ( לֵיהּ: מַתְנִיתָא בְּעוֹ מִינָּךְ. דִּתְנַן: עֶשְׂרִים וְאַרְבָּעָה רָאשֵׁי אֵבָרִים שֶׁבָּאָדָם כּוּלָּם אֵין מְטַמְּאִין מִשּׁוּם מִחְיָה,). Otherwise it ends with אֲמַר.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -915,7 +1024,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 25a_17-17",
      "verdict": "correct",
-     "note": "Boundary should be adjusted to the story alone without the transition to the story. It should start: מַעֲשֶׂה בְּשִׁפְחָה שֶׁל בֵּית רַבִּי שֶׁטָּבְלָה, וְעָלְתָה וְנִמְצָא עֶצֶם בֵּין שִׁינֶּיהָ, וְהִצְרִיכָהּ רַבִּי טְבִילָה אַחֶרֶת."
+     "note": "Boundary should be adjusted to the story alone without the transition to the story. It should start: מַעֲשֶׂה בְּשִׁפְחָה שֶׁל בֵּית רַבִּי שֶׁטָּבְלָה, וְעָלְתָה וְנִמְצָא עֶצֶם בֵּין שִׁינֶּיהָ, וְהִצְרִיכָהּ רַבִּי טְבִילָה אַחֶרֶת.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1008,7 +1120,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 26b_2-2",
      "verdict": "incorrect",
-     "note": "High Confidence."
+     "note": "High Confidence.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1062,7 +1177,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 26b_4-5",
      "verdict": "correct",
-     "note": "Minor boundary issue. The last sentence is the Talmud's conclusion. The story should end with וְקִיְּימוּ חֲכָמִים אֶת דְּבָרָיו"
+     "note": "Minor boundary issue. The last sentence is the Talmud's conclusion. The story should end with וְקִיְּימוּ חֲכָמִים אֶת דְּבָרָיו",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1116,7 +1234,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 29b_10-12",
      "verdict": "correct",
-     "note": "Boundary issue: The legal source before the story need not be quoted as it is not part of the story proper. The story begins: כִּי הָא דְּרַב יַעֲקֹב"
+     "note": "Boundary issue: The legal source before the story need not be quoted as it is not part of the story proper. The story begins: כִּי הָא דְּרַב יַעֲקֹב",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1166,7 +1287,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 29b_15-15",
      "verdict": "incorrect",
-     "note": "The passage on 29b should be marked \"high confidence.\"  The continuation included here on 30a is not part of the story. One way you know this is because it is there is some material that interrupts after the passage on 29b before this line on 30a. This seems to be an error as this same line is quoted with the next story."
+     "note": "The passage on 29b should be marked \"high confidence.\"  The continuation included here on 30a is not part of the story. One way you know this is because it is there is some material that interrupts after the passage on 29b before this line on 30a. This seems to be an error as this same line is quoted with the next story.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1216,13 +1340,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 30a_7-7",
      "verdict": "incorrect",
-     "note": "Yes. This is a story. There is an action, speech-act or question, and change."
+     "note": "Yes. This is a story. There is an action, speech-act or question, and change.",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "LOW_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 30a_7-7",
      "verdict": "incorrect",
-     "note": "The story is cut off, and seems to end in the middle of a word. It should include ךָ בְּחֹרֵב״? מִכָּאן וְאֵילָךְ, רַבִּי חִיָּיא בַּר אַבָּא לָא טָעֵים אוּמְצָא עַד דְּמַקְרֵי לְיָנוֹקָא וּמוֹסְפֵיהּ"
+     "note": "The story is cut off, and seems to end in the middle of a word. It should include ךָ בְּחֹרֵב״? מִכָּאן וְאֵילָךְ, רַבִּי חִיָּיא בַּר אַבָּא לָא טָעֵים אוּמְצָא עַד דְּמַקְרֵי לְיָנוֹקָא וּמוֹסְפֵיהּ",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1315,7 +1445,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31a_3-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1365,7 +1498,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31a_7-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1419,7 +1555,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31a_7-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1469,7 +1608,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31a_12-12",
      "verdict": "incorrect",
-     "note": "Yes, this is a story. Boundary issue. The line on 31b is not part of the story. Again, it is clear from the fact that it is not continuous with the story on 31a but that other material interrupts. For a continuation on the next page of Talmud to be a true continuation, there can be no intervening material."
+     "note": "Yes, this is a story. Boundary issue. The line on 31b is not part of the story. Again, it is clear from the fact that it is not continuous with the story on 31a but that other material interrupts. For a continuation on the next page of Talmud to be a true continuation, there can be no intervening material.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1523,7 +1665,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31b_1-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1608,7 +1753,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31b_4-4",
      "verdict": "incorrect",
-     "note": "Yes. This is a story. Two actions with a causal relationship. It also involved a type of conflict in R. Tarfon's brag and the rebuke by the rabbis."
+     "note": "Yes. This is a story. Two actions with a causal relationship. It also involved a type of conflict in R. Tarfon's brag and the rebuke by the rabbis.",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1666,7 +1814,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 31b_6-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1720,7 +1871,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 32a_6-6",
      "verdict": "incorrect",
-     "note": "Low confidence, as we don't really have the conclusion to the event. It is just one event."
+     "note": "Low confidence, as we don't really have the conclusion to the event. It is just one event.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; confidence objection -- a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -1770,7 +1924,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 32b_1-1",
      "verdict": "incorrect",
-     "note": "Yes, this is a story"
+     "note": "Yes, this is a story",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1820,7 +1977,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 32b_2-2",
      "verdict": "incorrect",
-     "note": "Yes, this is a story. Also a boundary issue. It should end with וְלָא קָם מִקַּמֵּיהּ וְאִיקְּפַד. The following words are the Talmud's comment"
+     "note": "Yes, this is a story. Also a boundary issue. It should end with וְלָא קָם מִקַּמֵּיהּ וְאִיקְּפַד. The following words are the Talmud's comment",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1878,7 +2038,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 32b_3-5",
      "verdict": "correct",
-     "note": "Boundary issue. The story proper begins מַעֲשֶׂה בְּרַבִּי אֱלִיעֶזֶר וְרַבִּי יְהוֹשֻׁעַ. The preceding  words are a later halakhic statement by a later rabbi and not part of the story"
+     "note": "Boundary issue. The story proper begins מַעֲשֶׂה בְּרַבִּי אֱלִיעֶזֶר וְרַבִּי יְהוֹשֻׁעַ. The preceding  words are a later halakhic statement by a later rabbi and not part of the story",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -1971,7 +2134,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 33a_6-6",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2021,7 +2187,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 33a_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2071,7 +2240,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 33a_15-15",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2121,7 +2293,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 33b_12-12",
      "verdict": "incorrect",
-     "note": "Low confidence. It is much the same story pattern as #38, the preceding story, which is marked correctly as low confidence."
+     "note": "Low confidence. It is much the same story pattern as #38, the preceding story, which is marked correctly as low confidence.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2175,7 +2350,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 39a_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2219,16 +2397,44 @@
    "detector_classification": [
     "HIGH_CONFIDENCE"
    ],
-   "in_golden": false,
+   "in_golden": true,
    "verdicts": [
     {
-     "round": "kiddushin_review_2026-04-23.json",
-     "key": "Kiddushin 39b_8-8",
+     "round": "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json",
+     "key": "Kiddushin 39b_8-10",
      "verdict": "correct",
-     "note": "Boundary issue. The previous line should be included as that is where the story appears, albeit hypothetically in this line. But that is what R. Yaakov saw."
+     "note": "segment 7 is the story",
+     "read_as": "unknown",
+     "read_why": "excluded round: Simon's pre-screen -- not an expert verdict",
+     "shown": null,
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    },
+    {
+     "round": "review_2026-09-16_bundle_jeff_2026-09-23.json",
+     "key": "Kiddushin 39b_8-10",
+     "verdict": "incorrect",
+     "note": "This is a tricky case but it is actually part of the Gemara's commentary on the story. In this commentary the gemara revises some of the story, or adds some details. But these are of the Gemara's efforts to resolve certain issues. So I would not include them in the story at all, although, at some level, they influence the audience's understanding of the story.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
+     "axes": {
+      "extent": null,
+      "confidence": "too_high",
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
     }
    ],
-   "verdict_match": "overlap",
+   "verdict_match": "exact",
    "expert_accepted": true,
    "objection_kind": null
   },
@@ -2279,7 +2485,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 39b_13-13",
      "verdict": "incorrect",
-     "note": "Yes, this is a story. He saw a terrible event and then went out and sinned. Two events, causality, change."
+     "note": "Yes, this is a story. He saw a terrible event and then went out and sinned. Two events, causality, change.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2333,7 +2542,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 39b_15-15",
      "verdict": "correct",
-     "note": "Boundary issue. The final comment based on the verse  (״גִּבֹּרֵי כֹחַ עֹשֵׂי דְבָרוֹ לִשְׁמֹעַ בְּקוֹל דְּבָרוֹ״ – כְּגוֹן רַבִּי צָדוֹק וַחֲבֵירָיו.) is not part of the story but actually goes with teh following story"
+     "note": "Boundary issue. The final comment based on the verse  (״גִּבֹּרֵי כֹחַ עֹשֵׂי דְבָרוֹ לִשְׁמֹעַ בְּקוֹל דְּבָרוֹ״ – כְּגוֹן רַבִּי צָדוֹק וַחֲבֵירָיו.) is not part of the story but actually goes with teh following story",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2418,7 +2630,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 40a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2468,7 +2683,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 40b_7-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2565,7 +2783,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 44b_6-6",
      "verdict": "correct",
-     "note": "Boundary issue. This is the middle of the story. It starts אִיתְּמַר: קְטַנָּה שֶׁנִּתְקַדְּשָׁה שֶׁלֹּא לְדַעַת אָבִיהָ, אָמַר שְׁמוּאֵל: צְרִיכָה גֵּט, וּצְרִיכָה מֵיאוּן. אָמַר קַרְנָא: דְּבָרִים בְּגוֹ: אִם גֵּט, לָמָּה מֵיאוּן? אִם מֵיאוּן, לָמָּה גֵּט?"
+     "note": "Boundary issue. This is the middle of the story. It starts אִיתְּמַר: קְטַנָּה שֶׁנִּתְקַדְּשָׁה שֶׁלֹּא לְדַעַת אָבִיהָ, אָמַר שְׁמוּאֵל: צְרִיכָה גֵּט, וּצְרִיכָה מֵיאוּן. אָמַר קַרְנָא: דְּבָרִים בְּגוֹ: אִם גֵּט, לָמָּה מֵיאוּן? אִם מֵיאוּן, לָמָּה גֵּט?",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2658,7 +2879,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 45b_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2712,7 +2936,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 45b_3-3",
      "verdict": "correct",
-     "note": "Boundary issue."
+     "note": "Boundary issue.",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2805,7 +3032,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 50a_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2855,7 +3085,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 50a_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -2905,7 +3138,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 52b_1-1",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -2955,7 +3191,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 52b_2-2",
      "verdict": "correct",
-     "note": "Boundary issue. The story ends מַאן אַחֲלָךְ? The rest is the gemara's commentary on this mishnah"
+     "note": "Boundary issue. The story ends מַאן אַחֲלָךְ? The rest is the gemara's commentary on this mishnah",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3005,7 +3244,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 52b_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3063,7 +3305,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 52b_12-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3160,7 +3405,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 57a_0-1",
      "verdict": "correct",
-     "note": "Boundary issue. Story should begin with כִּדְתַנְיָא: שִׁמְעוֹן הָעַמְסוֹנִי וְאָמְרִי לַהּ נְחֶמְיָה"
+     "note": "Boundary issue. Story should begin with כִּדְתַנְיָא: שִׁמְעוֹן הָעַמְסוֹנִי וְאָמְרִי לַהּ נְחֶמְיָה",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3214,7 +3462,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 58a_2-4",
      "verdict": "incorrect",
-     "note": "low confidence. It is mainly discussion of a legal issue. The only narrative elements are extremely minor: the setting, that the sages were standing in a certain place, and then they went to another rabbi to ask him."
+     "note": "low confidence. It is mainly discussion of a legal issue. The only narrative elements are extremely minor: the setting, that the sages were standing in a certain place, and then they went to another rabbi to ask him.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3311,7 +3562,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 59a_3-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3361,7 +3615,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 59a_4-4",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3419,7 +3676,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 59a_5-7",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3473,7 +3733,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 66a_5-5",
      "verdict": "incorrect",
-     "note": "Yes. This is clearly a story. Several events, causality and change."
+     "note": "Yes. This is clearly a story. Several events, causality and change.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3539,7 +3802,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 66a_7-11",
      "verdict": "correct",
-     "note": "Boundary issue. The story starts  מַעֲשֶׂה בִּינַאי הַמֶּלֶךְ"
+     "note": "Boundary issue. The story starts  מַעֲשֶׂה בִּינַאי הַמֶּלֶךְ",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3609,7 +3875,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 66b_0-5",
      "verdict": "correct",
-     "note": "boundary issue. It should begin: מַעֲשֶׂה בִּמְגוֹרָה שֶׁל דִּסְקִים"
+     "note": "boundary issue. It should begin: מַעֲשֶׂה בִּמְגוֹרָה שֶׁל דִּסְקִים",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -3750,7 +4019,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 70a_11-16",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3843,7 +4115,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 71a_4-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -3967,7 +4242,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 71b_2-2",
      "verdict": "correct",
-     "note": "Boundary issue. The next line should be included in the story (בִּימֵי רַבִּי בִּקְּשׁוּ לַעֲשׂוֹת בָּבֶל עִיסָּה לְאֶרֶץ יִשְׂרָאֵל. אָמַר לָהֶן: קוֹצִים אַתֶּם מְשִׂימִים לִי בֵּין עֵינַי? רְצוֹנְכֶם, יִטָּפֵל עִמָּכֶם רַבִּי חֲנִינָא בַּר חָמָא. 3נִטְפַּל עִמָּהֶם רַבִּי חֲנִינָא בַּר חָמָא, אָמַר לָהֶם: כָּךְ מְקוּבְּלַנִי מֵרַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי שֶׁאָמַר מִשּׁוּם אָבִיו: כׇּל אֲרָצוֹת עִיסָּה לְאֶרֶץ יִשְׂרָאֵל וְאֶרֶץ יִשְׂרָאֵל עִיסָּה לְבָבֶל.)"
+     "note": "Boundary issue. The next line should be included in the story (בִּימֵי רַבִּי בִּקְּשׁוּ לַעֲשׂוֹת בָּבֶל עִיסָּה לְאֶרֶץ יִשְׂרָאֵל. אָמַר לָהֶן: קוֹצִים אַתֶּם מְשִׂימִים לִי בֵּין עֵינַי? רְצוֹנְכֶם, יִטָּפֵל עִמָּכֶם רַבִּי חֲנִינָא בַּר חָמָא. 3נִטְפַּל עִמָּהֶם רַבִּי חֲנִינָא בַּר חָמָא, אָמַר לָהֶם: כָּךְ מְקוּבְּלַנִי מֵרַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי שֶׁאָמַר מִשּׁוּם אָבִיו: כׇּל אֲרָצוֹת עִיסָּה לְאֶרֶץ יִשְׂרָאֵל וְאֶרֶץ יִשְׂרָאֵל עִיסָּה לְבָבֶל.)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4033,7 +4311,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 71b_4-8",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on HIGH_CONFIDENCE",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4083,7 +4364,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 72a_3-3",
      "verdict": "correct",
-     "note": "Boundary issue. The story ends with: שׁוֹט מֵישׁוֹט בֵּין הַנְּהָרוֹת עוֹמֶדֶת. The rest is the gemara's commentary."
+     "note": "Boundary issue. The story ends with: שׁוֹט מֵישׁוֹט בֵּין הַנְּהָרוֹת עוֹמֶדֶת. The rest is the gemara's commentary.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4168,7 +4452,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 72a_10-10",
      "verdict": "correct",
-     "note": "Boundary issue. The story ends with הַיּוֹם נוֹלַד רַב יְהוּדָה בְּבָבֶל.. The rest is a separate tradition."
+     "note": "Boundary issue. The story ends with הַיּוֹם נוֹלַד רַב יְהוּדָה בְּבָבֶל.. The rest is a separate tradition.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4218,7 +4505,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 73a_5-5",
      "verdict": "incorrect",
-     "note": "Yes. This is a story, given the action (a public exposition) and the response (stoning)."
+     "note": "Yes. This is a story, given the action (a public exposition) and the response (stoning).",
+     "read_as": "yes",
+     "read_why": "incorrect; his note says it is a story",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4272,7 +4562,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 76b_9-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4322,7 +4615,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 79b_6-7",
      "verdict": "correct",
-     "note": "Boundary issue. The words introducing the story here (וְנֵימָא מִדְּמַתְנִיתָא לָא פְּלִיגִי, אָמוֹרָאֵי נָמֵי לָא פְּלִיגִי! וְתִסְבְּרָא? הָא) and following the story ( וְאִי סָלְקָא דַּעְתָּךְ לָא פְּלִיגִי, אַמַּאי קָא מִקְּפֵיד?) should not be quoted"
+     "note": "Boundary issue. The words introducing the story here (וְנֵימָא מִדְּמַתְנִיתָא לָא פְּלִיגִי, אָמוֹרָאֵי נָמֵי לָא פְּלִיגִי! וְתִסְבְּרָא? הָא) and following the story ( וְאִי סָלְקָא דַּעְתָּךְ לָא פְּלִיגִי, אַמַּאי קָא מִקְּפֵיד?) should not be quoted",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4372,7 +4668,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 80a_4-4",
      "verdict": "correct",
-     "note": "The attribution of the tradition need not be quoted with the story (אָמַר רַבִּי שִׁמְעוֹן בֶּן פַּזִּי, אָמַר רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִשּׁוּם בַּר קַפָּרָא:)"
+     "note": "The attribution of the tradition need not be quoted with the story (אָמַר רַבִּי שִׁמְעוֹן בֶּן פַּזִּי, אָמַר רַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי מִשּׁוּם בַּר קַפָּרָא:)",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4434,7 +4733,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 80b_11-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4484,7 +4786,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_2-2",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4573,7 +4878,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_10-11",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4623,7 +4931,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4673,7 +4984,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_13-13",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4727,7 +5041,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81a_14-14",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4785,7 +5102,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81b_1-3",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on YES",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -4909,7 +5229,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 81b_14-14",
      "verdict": "incorrect",
-     "note": "High confidence"
+     "note": "High confidence",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; confidence objection -- a story",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4939,7 +5262,10 @@
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 7b_9-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4969,7 +5295,10 @@
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 8a_9-10",
      "verdict": "incorrect",
-     "note": "The first two words, כֹּהֵן עִילָּוֵיהּ, are not part of the story. With line 10, the statement of Rav Ashi is not part of the story. It should start with כִּי הָא דְּמָר בַּר רַב אָשֵׁי"
+     "note": "The first two words, כֹּהֵן עִילָּוֵיהּ, are not part of the story. With line 10, the statement of Rav Ashi is not part of the story. It should start with כִּי הָא דְּמָר בַּר רַב אָשֵׁי",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -4999,13 +5328,19 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 12b_4-4",
      "verdict": "incorrect",
-     "note": "low confidence."
+     "note": "low confidence.",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; confidence objection -- a story",
+     "shown": "HIGH_CONFIDENCE"
     },
     {
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12b_4-4",
      "verdict": "incorrect",
-     "note": "Boundary issue. The story continues nin the Hebrew through the next three words.  וּפְרַשׁוּ רַבָּנַן מִינַּהּ is part of the story. Otherwise it is too brief and just a datum."
+     "note": "Boundary issue. The story continues nin the Hebrew through the next three words.  וּפְרַשׁוּ רַבָּנַן מִינַּהּ is part of the story. Otherwise it is too brief and just a datum.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; boundary objection -- a story, mis-drawn",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -5035,7 +5370,10 @@
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 12b_8-8",
      "verdict": "incorrect",
-     "note": "The story is: הָהוּא חַתְנָא דַּחֲלֵיף אַבָּבָא דְּבֵי חֲמוּהּ וְנַגְּדֵיהּ רַב שֵׁשֶׁת! The corresponding Englihs: But there was a certain son-in-law who passed by the entrance of his father-in-law’s house and Rav Sheshet flogged him due to licentiousness"
+     "note": "The story is: הָהוּא חַתְנָא דַּחֲלֵיף אַבָּבָא דְּבֵי חֲמוּהּ וְנַגְּדֵיהּ רַב שֵׁשֶׁת! The corresponding Englihs: But there was a certain son-in-law who passed by the entrance of his father-in-law’s house and Rav Sheshet flogged him due to licentiousness",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5088,7 +5426,10 @@
      "round": "wave4_kiddushin_review_2026-07-06.json",
      "key": "Kiddushin 20a_12-14",
      "verdict": "incorrect",
-     "note": "Section 14 is not part of he story. It is the end of the baraita. The story ends  עִמְּךָ בַּמַּאֲכָל וְעִמְּךָ בַּמִּשְׁתֶּה. Separately, this is a very low confidence story."
+     "note": "Section 14 is not part of he story. It is the end of the baraita. The story ends  עִמְּךָ בַּמַּאֲכָל וְעִמְּךָ בַּמִּשְׁתֶּה. Separately, this is a very low confidence story.",
+     "read_as": "yes",
+     "read_why": "incorrect on LOW_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5141,7 +5482,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 26b_10-10",
      "verdict": "incorrect",
-     "note": "Low confidence, as mainly a legal statement with no real change.  Also, boundary issue. Last few words should not be included (שְׁמַע מִינַּהּ בָּעֵינַן צְבוּרִים בַּהּ! שָׁאנֵי הָתָם, כִּי הֵיכִי דְּלָא לַיטְרְחִינְהוּ.)"
+     "note": "Low confidence, as mainly a legal statement with no real change.  Also, boundary issue. Last few words should not be included (שְׁמַע מִינַּהּ בָּעֵינַן צְבוּרִים בַּהּ! שָׁאנֵי הָתָם, כִּי הֵיכִי דְּלָא לַיטְרְחִינְהוּ.)",
+     "read_as": "yes",
+     "read_why": "incorrect on HIGH_CONFIDENCE; boundary objection -- a story, mis-drawn",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5171,7 +5515,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 29b_18-18",
      "verdict": "incorrect",
-     "note": "Not a story. This is just a statement about his past, but there is no narrative."
+     "note": "Not a story. This is just a statement about his past, but there is no narrative.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5201,7 +5548,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 32a_8-12",
      "verdict": "incorrect",
-     "note": "Not a story, as it is all dialogue. Basically a legal discussion and rebuke. But still all dialogue."
+     "note": "Not a story, as it is all dialogue. Basically a legal discussion and rebuke. But still all dialogue.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5231,7 +5581,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 33a_16-16",
      "verdict": "correct",
-     "note": "Boundary issue. The story begins with  רַבִּי יוֹחָנָן הֲוָה קָאֵי מִקַּמֵּי סָבֵי דְאַרְמָאֵ. The preceding words are the talmudic discussion but not part of the story."
+     "note": "Boundary issue. The story begins with  רַבִּי יוֹחָנָן הֲוָה קָאֵי מִקַּמֵּי סָבֵי דְאַרְמָאֵ. The preceding words are the talmudic discussion but not part of the story.",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5261,7 +5614,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 38a_0-0",
      "verdict": "incorrect",
-     "note": "Not a story. And the excerpt here is the middle of line, which is actually part of a legal discussion about the biblical past."
+     "note": "Not a story. And the excerpt here is the middle of line, which is actually part of a legal discussion about the biblical past.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5291,7 +5647,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 38a_4-6",
      "verdict": "incorrect",
-     "note": "Not a story. This is about a biblical character and biblical verses. We focus on stories of the rabbis and rabbinic times."
+     "note": "Not a story. This is about a biblical character and biblical verses. We focus on stories of the rabbis and rabbinic times.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5321,7 +5680,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 39a_1-1",
      "verdict": "incorrect",
-     "note": "Not a story. There a couple of statements, and just one event, a mention of two rabbis supplying each other with food. But no change or conflict or other actions."
+     "note": "Not a story. There a couple of statements, and just one event, a mention of two rabbis supplying each other with food. But no change or conflict or other actions.",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5351,7 +5713,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 39a_12-13",
      "verdict": "incorrect",
-     "note": "Not a story. One action followed by a legal discussion."
+     "note": "Not a story. One action followed by a legal discussion.",
+     "read_as": "no",
+     "read_why": "incorrect on HIGH_CONFIDENCE; classification objection",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5381,7 +5746,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 41a_3-3",
      "verdict": "incorrect",
-     "note": "This is not even a story of low confidence. Just a mention of two independent events."
+     "note": "This is not even a story of low confidence. Just a mention of two independent events.",
+     "read_as": "no",
+     "read_why": "hand reading: \"This is not even a story of low confidence\" -- read as a confidence objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5457,7 +5825,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 50a_5-5",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5510,7 +5881,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 52a_4-6",
      "verdict": "incorrect",
-     "note": "This is just a reference to the Mishnah' story. The rest is just legal comments about the Mishnah"
+     "note": "This is just a reference to the Mishnah' story. The rest is just legal comments about the Mishnah",
+     "read_as": "no",
+     "read_why": "incorrect; his note says it is not a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "overlap",
@@ -5540,7 +5914,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 60b_8-8",
      "verdict": "incorrect",
-     "note": "This is just a report of a legal tradition. That the rabbis \"went up there\" and found another rabbi saying the tradition is not enough for a story"
+     "note": "This is just a report of a legal tradition. That the rabbis \"went up there\" and found another rabbi saying the tradition is not enough for a story",
+     "read_as": "no",
+     "read_why": "incorrect on LOW_CONFIDENCE; classification objection",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5570,7 +5947,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 65b_8-9",
      "verdict": "incorrect",
-     "note": "Low confidence. There is just one event and a legal discussion about it. This is low confidence."
+     "note": "Low confidence. There is just one event and a legal discussion about it. This is low confidence.",
+     "read_as": "yes",
+     "read_why": "incorrect on YES; confidence objection -- a story",
+     "shown": "YES"
     }
    ],
    "verdict_match": "exact",
@@ -5623,7 +6003,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 71b_9-9",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5653,7 +6036,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 72b_10-10",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5683,7 +6069,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 72b_4-4",
      "verdict": "incorrect",
-     "note": "This is a biblical story. It is not about the rabbis"
+     "note": "This is a biblical story. It is not about the rabbis",
+     "read_as": "out_of_scope",
+     "read_why": "hand reading: \"This is a biblical story. It is not about the rabbis\" -- R-S1 says OUT_OF_SCOPE, never NOT_A_STORY",
+     "shown": "HIGH_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",
@@ -5713,7 +6102,10 @@
      "round": "kiddushin_review_2026-04-23.json",
      "key": "Kiddushin 80b_12-12",
      "verdict": "correct",
-     "note": ""
+     "note": "",
+     "read_as": "yes",
+     "read_why": "correct on LOW_CONFIDENCE",
+     "shown": "LOW_CONFIDENCE"
     }
    ],
    "verdict_match": "exact",

@@ -927,6 +927,13 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         without re-running Stage 2 (scripts/rejudge_twin_additions.py). The
         `not_a_story` examples are Jeff's, 2026-09-23 (docs/STORY_RULES.md R-B4, R-C5,
         R-S1): each twin-pass addition he rejected was one of them.
+
+        2026-09-29: the R-C5 bullet carried our gloss "a single act cited as a precedent is
+        not a story, however it is introduced", which contradicts his 2026-07-06 rule
+        (R-C0: an incident followed by a ruling can be a story). A judge given the same
+        gloss rejected 21 such stories on his lists (finding 2026-09-28-consensus-phase1
+        sec. 7). Reworded to R-C5 as corrected, with R-C0's case. UNMEASURED at the time
+        of the change -- work/2026-09-28-twin-pass-r-c5-wording.md measures it.
         """
         def heb(i):
             return re.sub(r'<[^>]+>', '', segments[i].get('hebrew') or '')
@@ -957,9 +964,11 @@ Is PASSAGE B:
   * the Gemara's commentary ON story A — its questions and answers about A, a
     harmonisation, what a character must have thought, a detail it adds to or
     revises in A. Commentary on a story is not part of any story;
-  * a bare report of what someone did or used to do, where nothing follows from the
-    act — no second event, no consequence, no continuation. A single act cited as a
-    precedent is not a story, however it is introduced;
+  * a bare report of what someone did or used to do, cited as evidence of his view or
+    as his practice, where no one responds and nothing follows. BUT an incident that
+    happens to someone, followed by a response — a court acts, a rabbi rules, someone
+    acts — IS a story: "A man stole another man's cow and sold it. Rava ruled…"
+    (so answer "separate_incident" for that shape);
   * a description of who sat where, followed only by discussion;
   * a story whose actors are biblical figures. This collection is stories about
     rabbis and post-biblical figures; a biblical episode retold is out of scope.

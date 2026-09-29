@@ -6,7 +6,9 @@
  ],
  "golden": "results/canonical/gittin_canonical.json",
  "review_rounds": {
-  "gittin_axes_review_2026-09-02.json": 25
+  "gittin_axes_review_2026-09-02.json": 25,
+  "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 2,
+  "review_2026-09-16_bundle_jeff_2026-09-23.json": 2
  },
  "verdict_mapping": {
   "accepted": [
@@ -39,8 +41,8 @@
   "classification": {
    "kind": "CIRCULAR",
    "proposals": 158,
-   "with_verdict": 25,
-   "without_verdict": 133,
+   "with_verdict": 27,
+   "without_verdict": 131,
    "per_round": {
     "gittin_axes_review_2026-09-02.json": {
      "accepted": 3,
@@ -49,12 +51,44 @@
       "classification": 18
      },
      "borderline": 4,
+     "story_precision": {
+      "read_as": {
+       "borderline": 4,
+       "no": 18,
+       "yes": 3
+      },
+      "precision": 0.143,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
      "judged": 21,
      "precision_all_causes": 0.143,
      "precision_classification_only": 0.143,
      "unclassified_notes": 0,
      "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
+    },
+    "review_2026-09-16_bundle_jeff_2026-09-23.json": {
+     "accepted": 0,
+     "rejected": 2,
+     "by_kind": {
+      "classification": 1,
+      "boundary": 1
+     },
+     "story_precision": {
+      "read_as": {
+       "out_of_scope": 2
+      },
+      "precision": null,
+      "means": "of the proposals the detector calls a story, the share he says IS one, his answer read against the call he was shown; borderline, out_of_scope and unknown are in neither side"
+     },
+     "judged": 2,
+     "precision_all_causes": 0.0,
+     "precision_classification_only": 0.5,
+     "unclassified_notes": 0,
+     "bounds_note": "true classification precision lies between these two; the gap is 0 unreadable notes plus the boundary/merge/confidence rejections"
     }
+   },
+   "excluded_rounds": {
+    "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json": 2
    },
    "note": "Precision per round, not pooled: each round judged a different detector version. adjust/approve/reject_remove count as ACCEPTED."
   },
@@ -5668,6 +5702,9 @@
      "key": "Gittin 10b_6-6",
      "verdict": "borderline",
      "note": "The words וּתְרֵי לָא? at the beginning and אָמַר אַבָּיֵי, תְּנִי: ״עֵדוֹ״ at the end are not part of the story. The words וְהָא קָתָנֵי are technically not part of the story, but are the Talmudic method of introducing the story, so they could be retained.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -5798,6 +5835,9 @@
      "key": "Gittin 19a_15-15",
      "verdict": "incorrect",
      "note": "Basically just one action, and it is a speech-act (That Rav Pappa instructed, i.e., told someone what to do.  Not enough for a story.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -5836,6 +5876,9 @@
      "key": "Gittin 19a_16-16",
      "verdict": "correct",
      "note": "This is a very minimal story, but qualifies as a story.",
+     "read_as": "yes",
+     "read_why": "is_story=yes",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -5897,6 +5940,9 @@
      "key": "Gittin 19b_6-6",
      "verdict": "incorrect",
      "note": "There is not enough causality and change. Just an account of how Rav Yehuda read documents and signed, and how scribe read to R. Elezar. No real story here. Also, the part from  וְדַוְוקָא רַב נַחְמָן to the end is not part of the source (the account of Rav Yeuhuda and Ulla) , but a later Talmudic comment.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -5935,6 +5981,9 @@
      "key": "Gittin 20a_9-9",
      "verdict": "borderline",
      "note": "The last three words are not part of the story.   Very borderline as the main actions are verbal. Expounding and praising.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -5973,6 +6022,9 @@
      "key": "Gittin 25a_10-10",
      "verdict": "borderline",
      "note": "This is borderline, not high confidence.  It is also a little ambiguous depending how one understands וְנִמְצְאוּ , which could just mean that everyone now realized they were lazy/enthusiastic, which would not be a real action.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6011,6 +6063,9 @@
      "key": "Gittin 27a_7-7",
      "verdict": "incorrect",
      "note": "This is just a ruling and the talmud tries to determine the precise circumstances of the ruling. But there is no real story",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6072,6 +6127,9 @@
      "key": "Gittin 32b_2-2",
      "verdict": "incorrect",
      "note": "not enough action",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6156,6 +6214,9 @@
      "key": "Gittin 34a_13-13",
      "verdict": "incorrect",
      "note": "This is mainly a legal problem. It is based on what a man said, but not enough action.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6263,6 +6324,9 @@
      "key": "Gittin 43a_13-14",
      "verdict": "borderline",
      "note": "Most of the narrative is about teaching and speech acts. The only actions are that the rabbi \"went back\" and placed an interpreter/loudspeaker. But \"went back\" can just mean he started over.",
+     "read_as": "borderline",
+     "read_why": "is_story=borderline",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6301,6 +6365,9 @@
      "key": "Gittin 43b_4-4",
      "verdict": "correct",
      "note": "The  last sentence is not part of the story (כְּמַאן? כְּרַבִּי יוֹחָנָן בֶּן בְּרוֹקָה, דְּאָמַר: עַל שְׁנֵיהֶם הוּא אוֹמֵר: ״וַיְבָרֶךְ אוֹתָם אֱלֹהִים וַיֹּאמֶר וְגוֹ׳ פְּרוּ וּרְבוּ וּמִלְאוּ וְגוֹ׳״)",
+     "read_as": "yes",
+     "read_why": "is_story=yes",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6339,6 +6406,9 @@
      "key": "Gittin 44a_8-11",
      "verdict": "incorrect",
      "note": "This is a hypothetical legal problem. Only at the end R. Ami sends a message and ruling. But that is not a real story.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6400,6 +6470,9 @@
      "key": "Gittin 46a_12-12",
      "verdict": "incorrect",
      "note": "If you look at the Aramaic/Hebrew, there is no story. It is filled in by the translator. Not enough to go on here.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6455,9 +6528,44 @@
     "YES"
    ],
    "in_golden": false,
-   "verdicts": [],
-   "verdict_match": null,
-   "expert_accepted": null,
+   "verdicts": [
+    {
+     "round": "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json",
+     "key": "Gittin 57b_0-4",
+     "verdict": "correct",
+     "note": "",
+     "read_as": "unknown",
+     "read_why": "excluded round: Simon's pre-screen -- not an expert verdict",
+     "shown": null,
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    },
+    {
+     "round": "review_2026-09-16_bundle_jeff_2026-09-23.json",
+     "key": "Gittin 57b_0-4",
+     "verdict": "incorrect",
+     "note": "This is a full blown story, but it is about biblical characters, not rabbis. So it is not in the class of stories that we are looking at. (I put the confidence is right, that it is a story. But not our kind of story.)",
+     "read_as": "out_of_scope",
+     "read_why": "is_story=no, note puts it outside the scope (R-S1)",
+     "shown": null,
+     "axes": {
+      "extent": "right",
+      "confidence": "right",
+      "grouping": "right",
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
    "objection_kind": null
   },
   {
@@ -6507,6 +6615,9 @@
      "key": "Gittin 59a_16-16",
      "verdict": "incorrect",
      "note": "Just one real action, that Bonyam sent a gift to rabbi. Rav Dimi arriving in Bavel is not a second action. Just that he reported the tradition upon arriving.",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6545,6 +6656,9 @@
      "key": "Gittin 59a_19-19",
      "verdict": "incorrect",
      "note": "It is really a legal discussion. The description of Rav Ashi standing in a certain way, does not add much action",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6583,6 +6697,9 @@
      "key": "Gittin 59b_21-21",
      "verdict": "incorrect",
      "note": "This is all just about asking for a legal ruling. It is sent to a rabbi but there is no story",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6661,9 +6778,44 @@
     "YES"
    ],
    "in_golden": false,
-   "verdicts": [],
-   "verdict_match": null,
-   "expert_accepted": null,
+   "verdicts": [
+    {
+     "round": "review_2026-09-15_bundle_simon_prescreen_2026-09-16.json",
+     "key": "Gittin 68a_7-12",
+     "verdict": "correct",
+     "note": "starts here: The Master said: Here they interpreted it: Male demons and female demons. The Gemara asks: Why was it necessary for Solomon, the author of Ecclesiastes, to have male demons and female demons? The Gemara answers: As it is written with regard to the building of the Temple: “For the house, when it was being built, was built of stone made ready at the quarry; and there was neither hammer nor axe nor any tool of iron heard in the house, while it was being built” (I Kings 6:7). Solomon said to the sages: How shall I make it so that the stone will be precisely cut without using iron? They said to him: There is a creature called a shamir that can cut the stones, which Moses brought and used to cut the stones of the ephod.",
+     "read_as": "unknown",
+     "read_why": "excluded round: Simon's pre-screen -- not an expert verdict",
+     "shown": null,
+     "axes": {
+      "extent": null,
+      "confidence": null,
+      "grouping": null,
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    },
+    {
+     "round": "review_2026-09-16_bundle_jeff_2026-09-23.json",
+     "key": "Gittin 68a_7-12",
+     "verdict": "incorrect",
+     "note": "Again, this is a full story but about biblical characters. So not in our scope, which is rabbis and post-biblical figures.",
+     "read_as": "out_of_scope",
+     "read_why": "is_story=no, note puts it outside the scope (R-S1)",
+     "shown": null,
+     "axes": {
+      "extent": "starts_wrong",
+      "confidence": "right",
+      "grouping": "right",
+      "display_problem": false
+     },
+     "detector_version": "v10-notrim+v11+v7",
+     "applies_to": "base"
+    }
+   ],
+   "verdict_match": "exact",
+   "expert_accepted": true,
    "objection_kind": null
   },
   {
@@ -6690,6 +6842,9 @@
      "key": "Gittin 70a_9-9",
      "verdict": "incorrect",
      "note": "This is just a statement of Elijah to R. Natan. There is no other action",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6728,6 +6883,9 @@
      "key": "Gittin 70a_22-22",
      "verdict": "correct",
      "note": "It is a minimal story, but there are two acts and change. Only this part is the story: וְהָא מְעוּרַת עֲבַדָה לֵיהּ לְעַבְדַּהּ תְּלָת מִינַּיְיהוּ, וּמִית!",
+     "read_as": "yes",
+     "read_why": "is_story=yes",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6766,6 +6924,9 @@
      "key": "Gittin 74b_4-4",
      "verdict": "incorrect",
      "note": "THis is the same as 46a above",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6850,6 +7011,9 @@
      "key": "Gittin 76b_19-19",
      "verdict": "incorrect",
      "note": "Just a legal discussion",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6888,6 +7052,9 @@
      "key": "Gittin 78b_8-8",
      "verdict": "incorrect",
      "note": "It is a legal ruling based on a case. But no real story",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6926,6 +7093,9 @@
      "key": "Gittin 80b_1-2",
      "verdict": "incorrect",
      "note": "It is a legal discussion at a distance. They send the question and answer to each other",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -6964,6 +7134,9 @@
      "key": "Gittin 82a_4-4",
      "verdict": "incorrect",
      "note": "This is a legal ruling by R. Ami",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -7002,6 +7175,9 @@
      "key": "Gittin 86b_24-25",
      "verdict": "incorrect",
      "note": "A legal question. While the rabbi died in the meantime, that event does not figure in a story. It is all a question and answer",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,
@@ -7040,6 +7216,9 @@
      "key": "Gittin 88a_11-11",
      "verdict": "incorrect",
      "note": "A legal problem and answer",
+     "read_as": "no",
+     "read_why": "is_story=no",
+     "shown": null,
      "axes": {
       "extent": null,
       "confidence": null,

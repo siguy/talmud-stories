@@ -144,6 +144,17 @@ def expert_stories(tractate, cfg):
             for s in stories if not s['duplicate_of']]
 
 
+def _verdict_reading():
+    """scripts/verdict_reading.py, loaded on first use (it reads review pages from disk)."""
+    global _VR
+    if _VR is None:
+        _VR = _load('verdict_reading', 'scripts/verdict_reading.py')
+    return _VR
+
+
+_VR = None
+
+
 def load_reviews(tractate):
     """Every verdict on disk for this tractate, keyed by (ref, start, end)."""
     out, rounds = defaultdict(list), Counter()
@@ -184,6 +195,14 @@ def load_reviews(tractate):
                 entry = {
                     'round': path.name, 'key': key, 'verdict': verdict,
                     'note': (val.get('note') or val.get('notes') or '').strip()}
+                # What his answer MEANS, read against the call he was shown
+                # (scripts/verdict_reading.py). An old `correct` on a NOT_A_STORY call
+                # is his NO; `verdict` above keeps the raw token, so the metrics that
+                # were published from it stay reproducible (2026-09-29).
+                label, why, shown = _verdict_reading().read_verdict(
+                    path.name, key, verdict, entry['note'], axes is not None,
+                    classify_objection)
+                entry.update(read_as=label, read_why=why, shown=shown)
                 if axes is not None:
                     entry['axes'] = axes
                     # Lesson 36: a verdict is a fact about the version it judged.
@@ -383,10 +402,25 @@ def metrics(entries, props):
     blind = [e for e in entries if e['expert_listed'] and e['expert_blind']]
     found = [e for e in blind if e['detector_proposed']]
 
-    per_round = {}
+    per_round, excluded_rounds = {}, Counter()
     for p in props:
+        # Is this a story? -- counted only over proposals the detector calls a story,
+        # with his answer READ against what he was shown (2026-09-29). The fields
+        # above/below keep the raw-token counting the 86% / 68% were published from;
+        # they measure agreement with the call he was shown, over every proposal
+        # including the detector's own NOT_A_STORY calls.
+        story_call = p['classification'] not in (None, 'NOT_A_STORY')
         for v in p['verdicts']:
+            # Not an expert's verdict (Simon's test round and pre-screen): counted and
+            # named, never scored as his (Lesson 38). Found 2026-09-29 -- the pre-screen
+            # had been scored as a review round since it landed.
+            if v['round'] in _verdict_reading().EXCLUDED:
+                excluded_rounds[v['round']] += 1
+                continue
             r = per_round.setdefault(v['round'], {'accepted': 0, 'rejected': 0, 'by_kind': Counter()})
+            if story_call:
+                s = r.setdefault('read_as_on_story_calls', Counter())
+                s[v.get('read_as') or 'unknown'] += 1
             if v['verdict'] in BORDERLINE:
                 r.setdefault('borderline', 0)
                 r['borderline'] += 1
@@ -406,6 +440,15 @@ def metrics(entries, props):
                 r['by_kind'][objection_from_axes(v.get('axes'))
                              or classify_objection([v['note']])] += 1
     for name, r in per_round.items():
+        s = r.pop('read_as_on_story_calls', Counter())
+        yes, no = s.get('yes', 0), s.get('no', 0)
+        r['story_precision'] = {
+            'read_as': dict(s),
+            'precision': round(yes / (yes + no), 3) if (yes + no) else None,
+            'means': ('of the proposals the detector calls a story, the share he says IS one, '
+                      'his answer read against the call he was shown; borderline, '
+                      'out_of_scope and unknown are in neither side'),
+        }
         n = r['accepted'] + r['rejected']
         r['judged'] = n
         # LOWER bound: every rejection counted, whatever it objected to.
@@ -444,6 +487,7 @@ def metrics(entries, props):
             'with_verdict': len(judged),
             'without_verdict': len(props) - len(judged),
             'per_round': per_round,
+            'excluded_rounds': dict(excluded_rounds),
             'note': 'Precision per round, not pooled: each round judged a different '
                     'detector version. adjust/approve/reject_remove count as ACCEPTED.',
         },

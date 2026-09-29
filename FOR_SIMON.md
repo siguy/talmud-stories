@@ -417,6 +417,22 @@ What's next: the rulebook is fixed; the re-run waits on topping up both API acco
 with real examples: where exactly is the line between "a report of what someone did" and
 "something happened and a rabbi ruled"?
 
+### The day after: the "68%" was never a precision number (2026-09-29)
+
+While digging into the judge's failure, we found an older, quieter mistake. Jeff's early
+review pages asked him *"is the detector's call correct?"* — so when the detector said
+"not a story" and Jeff clicked **correct**, he meant **"right, it's not a story."** Two of
+our scripts read every "correct" as "yes, a story", and every "incorrect" as "no" — even
+when Jeff's complaint was only that the story started one line too late.
+
+So the precision figures quoted for months (Kiddushin "68%", the scary "11 of 15
+incorrect" from July) were really measuring *how often Jeff agreed with whatever the
+detector showed him*, boundary complaints included. Read properly, the detector's story
+calls were right about **92–95%** of the time, and all 15 of those July "incorrects" were
+real stories with the wrong edges. The old numbers are kept next to the new ones, so
+nothing silently changes meaning — that's a habit worth keeping: **when you fix how a
+number is computed, publish the new one beside the old, don't overwrite it.**
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.

@@ -41,6 +41,13 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 
 
+def _load(name):
+    spec = importlib.util.spec_from_file_location(name, REPO / 'scripts' / f'{name}.py')
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 def _round_sources():
     """The round -> detector-version map, imported rather than re-derived.
 
@@ -188,6 +195,8 @@ def _verdicts_in(path: Path, vocab: str):
 def main() -> int:
     sources = _round_sources()
     rows, per_round, unknown = [], {}, []
+    vr, ruler = _load('verdict_reading'), _load('build_ruler')
+    reread = Counter()
     for rel, cfg in sorted(ROUND_VOCAB.items()):
         path = REPO / rel
         if not path.exists():
@@ -202,6 +211,19 @@ def main() -> int:
             except UnknownVerdict as exc:
                 unknown.append(dict(round=rel, key=key, verdict=token, error=str(exc)))
                 continue
+            # Read against the call he was SHOWN (scripts/verdict_reading.py, 2026-09-29):
+            # before the axes UI the button meant "the detector's call is correct", so a
+            # `correct` on a NOT_A_STORY call is his NO. `is_story_by_token` keeps what
+            # this table alone would say, so the change is visible row by row.
+            label, why, shown = vr.read_verdict(path.name, key, token,
+                                                (extra or {}).get('note') or (extra or {}).get('notes') or '',
+                                                False, ruler.classify_objection)
+            shape['is_story_by_token'] = shape['is_story']
+            shape['read_as'], shape['read_why'], shape['shown'] = label, why, shown
+            if label in ('yes', 'no', 'borderline') and label != shape['is_story']:
+                shape['is_story'] = label
+                shape['lossy'] = False
+                reread[f"{shape['is_story_by_token']}->{label}"] += 1
             counts[token] += 1
             shapes[shape['is_story']] += 1
             rows.append(dict(round=path.name, key=key, applies_to=cfg['applies_to'],
@@ -222,6 +244,7 @@ def main() -> int:
                     'and cannot be un-pooled after the fact. These rows are marked, '
                     'not guessed. Phase B stops the pooling going forward.'),
         recovered_extent=sum(1 for r in rows if r['extent']),
+        reread_against_shown_call=dict(reread),
         by_round=per_round, rows=rows)
     dest = REPO / 'results' / 'rulers' / 'verdict_vocabulary_map.json'
     dest.write_text(json.dumps(out, ensure_ascii=False, indent=2))
@@ -237,6 +260,7 @@ def main() -> int:
               f"n={info['mapped']:3d}{drop}")
     print(f"\nlossy (a bare `incorrect`, un-poolable): {lossy}")
     print(f"extent recovered from a structured field: {out['recovered_extent']}")
+    print(f"re-read against the call he was shown: {dict(reread)}")
     if unknown:
         print(f"\nUNMAPPED VERDICTS ({len(unknown)}) — the gate fails:")
         for u in unknown:

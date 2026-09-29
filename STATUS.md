@@ -1,12 +1,27 @@
 # STATUS — where the project is today
 
 **Last rewritten: 2026-09-15** (integration of #47, #48, #49); **updated 2026-09-25** for Jeff's
-2026-09-23 verdicts, and **2026-09-28** for the determinism correction and consensus phase 1
-(the three sections directly below). Rewritten every session, never appended.
+2026-09-23 verdicts, **2026-09-28** for the determinism correction and consensus phase 1,
+and **2026-09-29** for the fixes (the four sections directly below). Rewritten every session, never appended.
 Read this first. Companion: [`FRAMEWORK.md`](FRAMEWORK.md) — how we measure and what
 counts as good enough. Language and capability names come from there.
 
 ---
+
+## 2026-09-29 — fixes done; next is consensus phase 1b (ready to run)
+
+- **Classification precision is a number now, not a range.** Old verdicts re-read against
+  the call Jeff was shown (`scripts/verdict_reading.py`): story precision **~0.92–0.95** on
+  every story-by-story round — Kiddushin's quoted "68%" is **0.928**, wave 4's "11 of 15
+  incorrect" is **1.0** as a classification (all 15 were extent complaints). The published
+  figures are kept beside it, unchanged. Simon's pre-screen had been scored as Jeff's in
+  every ruler — now excluded and counted.
+  → [`verdicts-read-against-the-call-shown`](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md)
+- **Twin-pass wording corrected** (R-C5 as fixed + R-C0's cow case) — shipped, **unmeasured**;
+  `work/2026-09-28-twin-pass-r-c5-wording.md` measures it.
+- **Money unblocked** (Simon): Gemini cap raised, Anthropic funded; the judge's budget is $75.
+- **Next:** `work/2026-09-28-consensus-1b-corrected-register.md` — the phase 1 test on the
+  corrected register, both models, plus a same-prompt repeat of each.
 
 ## 2026-09-28 (later) — consensus phase 1: no-go, and the cause was our rulebook
 
