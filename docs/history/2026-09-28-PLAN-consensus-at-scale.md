@@ -114,7 +114,7 @@ The real, measured error rate comes from the phase 2 audit, round by round.
 
 ## 6. Shipped now, separately
 
-[`review-page-scope-and-quote`](../../work/2026-09-28-review-page-scope-and-quote.md) — the
+[`review-page-scope-and-quote`](../../work/done/2026-09-28-review-page-scope-and-quote.md) — the
 two defects Jeff hit on 2026-09-23 (no "a story, but out of scope" answer; the doubled
 Hebrew quote capture). Independent of this plan; needed before phase 2's page.
 

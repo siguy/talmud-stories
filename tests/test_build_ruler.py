@@ -271,3 +271,15 @@ def test_an_axes_round_produces_no_unclassified_notes():
              for vs in out.values() for v in vs]
     assert 'unclassified' not in kinds
     assert sorted(kinds) == ['boundary', 'classification', 'confidence']
+
+
+def test_out_of_scope_is_neither_accepted_nor_rejected():
+    """axes-3 (R-S1): a real story that is not ours. Counting it as `incorrect` would
+    make a scope ruling read as a classification failure; as `correct`, it would put a
+    biblical episode in the corpus."""
+    out, rounds = _load_axes_round({
+        'Kiddushin 8b_14-14': {'is_story': 'out_of_scope', 'notes': 'biblical'}})
+    assert sum(rounds.values()) == 1, 'an out-of-scope verdict was skipped'
+    v = out[('Kiddushin 8b', 14, 14)][0]
+    assert v['verdict'] == 'out_of_scope'
+    assert v['verdict'] not in ruler.ACCEPTED and v['verdict'] not in ruler.REJECTED

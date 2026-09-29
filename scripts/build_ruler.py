@@ -85,6 +85,9 @@ REJECTED = {'incorrect', 'confirm_remove'}
 # silently resolved (2026-07-06 ledger, Part 2(d)) -- and counting it either way
 # would turn a recorded uncertainty back into a false certainty.
 BORDERLINE = {'borderline'}
+# `out_of_scope` (axes-3, R-S1): a real story that is not in the collection. Also in
+# neither set -- it is not a rejection of the story, and not an acceptance into it.
+OUT_OF_SCOPE = {'out_of_scope'}
 REVIEW_GLOBS = ['validation/feedback/*.json', 'jeff comms/*.json']
 REVIEW_KEY = re.compile(r'^(.+?)_(\d+)-(\d+)$')
 
@@ -191,7 +194,8 @@ def load_reviews(tractate):
     return out, rounds
 
 
-AXES_TO_VERDICT = {'yes': 'correct', 'no': 'incorrect', 'borderline': 'borderline'}
+AXES_TO_VERDICT = {'yes': 'correct', 'no': 'incorrect', 'borderline': 'borderline',
+                   'out_of_scope': 'out_of_scope'}
 
 # An axes-1 verdict states its objection instead of burying it in prose, so the
 # ruler reads it rather than guessing. This is the whole point of Phase B: with
@@ -386,6 +390,9 @@ def metrics(entries, props):
             if v['verdict'] in BORDERLINE:
                 r.setdefault('borderline', 0)
                 r['borderline'] += 1
+            elif v['verdict'] in OUT_OF_SCOPE:
+                r.setdefault('out_of_scope', 0)
+                r['out_of_scope'] += 1
             elif v['verdict'] in ACCEPTED:
                 r['accepted'] += 1
                 # An accepted entry can still carry an axis complaint -- "it IS a
