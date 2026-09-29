@@ -1,0 +1,958 @@
+{
+ "meta": {
+  "set": "smoke",
+  "prompt": "src/prompts/judge_register_v1.md",
+  "prompt_sha": "a7d4200c3333",
+  "rules_sha": "775710f4d23f",
+  "commit": "f93695ca053c0c03320b7167f2990ce4f90ed7af",
+  "started": "2026-09-28T09:30:20",
+  "backends": {
+   "gemini": {
+    "model": "gemini-3-flash-preview",
+    "thinking_level": null,
+    "temperature": 0.1
+   },
+   "claude": {
+    "model": "claude-opus-5",
+    "effort": "medium",
+    "thinking": "adaptive",
+    "sdk": "0.75.0"
+   }
+  },
+  "claude_usage": {
+   "input": 37183,
+   "output": 5613,
+   "cache_write": 31320,
+   "cache_read": 93960,
+   "calls": 20
+  },
+  "claude_usd": 0.569,
+  "finished": "2026-09-28T09:31:19"
+ },
+ "rows": [
+  {
+   "id": "review:Gittin 70a_22-22",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 70a_22-22",
+   "label": "yes",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 70a",
+     22
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a specific incident involving Me’oret and her slave that serves as a counter-example to a legal dictum. It meets the criteria of having distinct actions (making the slave perform acts) and a causal consequence (the slave died).",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a legal/medical dictum with a brief anecdotal counter-example: a woman made her slave do three of these things and he died. It is a bare report cited as evidence, with no development, and the actors are not rabbis; not enough incident to constitute a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 19a_16-16",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 19a_16-16",
+   "label": "yes",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 19a",
+     16
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains two distinct actions with a causal connection: an individual performed a prohibited legal act, and Rav Kahana responded by ordering him to be flogged. This meets the requirement for a story as it goes beyond a bare report of a custom and includes a specific event with conflict and consequence.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5",
+      "R-C4"
+     ],
+     "unknown_rules": [],
+     "reason": "A one-line precedent: someone traced signatures on ordinary documents and Rav Kahana had him flogged — two causally linked actions with conflict, but so terse that it borders on a bare legal report with no continuation (R-C5).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 43b_4-4",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 43b_4-4",
+   "label": "yes",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 43b",
+     4
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a bare report of a legal precedent involving a single act (the master being forced to emancipate the woman) with no further narrative development or continuation. According to R-C5, a report of what someone did that ends there is not a story, even if introduced by the formula 'An incident occurred'.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a brief precedent report (\"an incident involving one woman...they forced her master\") cited to settle a legal question, with no development beyond the single act; the rest is the Gemara's legal discussion, so under R-C5 it is a precedent, not a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 112a_16-16",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 112a_16-16",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 112a",
+     16
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage describes a one-time event (Rabbi Zeira crossing the river) followed by a dialogue with conflict (the Sadducee's mockery and the Rabbi's response), meeting the criteria for a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C3",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "There is a concrete one-time event (Rabbi Zeira, finding no ferry, crossing the Jordan by rope) followed by conflict — the Sadducee's mockery and Rabbi Zeira's retort — so it goes beyond speech alone and beyond a bare report.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Yevamot 105a_13-13",
+   "kind": "review",
+   "tractate": "Yevamot",
+   "key": "Yevamot 105a_13-13",
+   "label": "yes",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 105a",
+     13
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C4",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a story embedded within the dicta of Rabba and Abaye; it describes a specific biographical outcome (living 40 vs 60 years) resulting from their distinct actions, meeting the requirement for multiple actions and a causal connection.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is two dicta about atonement for the house of Eli plus a bare biographical note that Rabba lived forty years and Abaye sixty; there is no sequence of events, no conflict and no change, only a report illustrating the statements.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 103b_24-25",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 103b_24-25",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 103b",
+     24
+    ],
+    [
+     "Ketubot 103b",
+     25
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a report of Rabbi Yehuda HaNasi's location and illness used to resolve a contradiction between baraitot; it lacks the distinct actions and narrative development required for a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a brief factual note resolving a contradiction about where Rabbi Yehuda HaNasi lay ill; it reports a single circumstance (he was moved to Tzippori for its air) with no developed action, conflict or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 32a_6-6",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 32a_6-6",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 32a",
+     6
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-B1",
+      "R-C3",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a specific one-time event involving Rabba bar Rav Huna and Rav Huna with a clear action, intent, and causal connection. While segment 2 includes Gemara commentary, the core incident is a distinct rabbinic story introduced by a formula.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The core is a one-act report — Rav Huna tore a silk garment to test whether his son would become angry — with the rest being the Gemara's legal objections and answers, which are not part of the narrative (R-B4); there is implied conflict and a tacit outcome (the son did not become angry), so it sits at the borderline rather than being a developed story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 91b_8-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 91b_8-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 91b",
+     8
+    ],
+    [
+     "Ketubot 91b",
+     9
+    ],
+    [
+     "Ketubot 91b",
+     10
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C4",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a distinct narrative incident involving a debtor, a creditor, and a purchaser with multiple actions and a causal connection. Following rule R-B4, the legal analysis by Rav Yosef and Abaye in segment [4] is excluded as it is the Gemara's commentary on the story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a legal case-report about an anonymous debtor, purchaser and creditor, presented only as the factual basis for the halakhic dispute between Rav Yosef and Abaye; like Ketubot 15a:0 it is a legal discussion of an incident's facts and consequences rather than a narrative, and the Gemara's comparison to the mishna is discussion, not story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 26b_4-5",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 26b_4-5",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 26b",
+     4
+    ],
+    [
+     "Kiddushin 26b",
+     5
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-B1",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a complete narrative about a post-biblical figure with multiple actions (becoming sick, seeking advice, acquiring land, making a declaration) and a resolution (the Sages fulfilling his words). It begins with a standard introductory formula as per R-B1.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C4",
+      "R-B1"
+     ],
+     "unknown_rules": [],
+     "reason": "Though embedded in a legal proof and introduced by 'Rav Yehuda said Rav said', the ma'aseh narrates a connected sequence of events — a man falls ill, seeks to give his movables, is advised by the Sages, buys a plot near Jerusalem, makes his declaration, dies, and the Sages uphold his words — which satisfies the two-actions-with-causal-connection test; the attributive formula in [2] is included per R-B1.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 27a_7-7",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 27a_7-7",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 27a",
+     7
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a bare report of a legal ruling (ma'aseh) issued by Rabba regarding a lost document, followed by a discussion of the legal circumstances. It lacks the distinct actions, conflict, or narrative development required to be classified as a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a bare report that Rabba issued a practical ruling about a found bill of divorce, followed by amoraic disagreement over the circumstances; there is one act, no continuation, conflict or change — a legal precedent rather than a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 34a_13-13",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 34a_13-13",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 34a",
+     13
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a specific incident involving a man's attempt to delay a divorce deadline, which includes two distinct speech acts and a conflict regarding his intent. Although it is embedded within a legal discussion, the incident itself constitutes a story under R-C4 and R-C2.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "An anonymous man's conditional statement followed by legal analysis; it is a bare legal case with speech acts only, not enough incident or continuation to form a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 59b_21-21",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 59b_21-21",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 59b",
+     21
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage consists of a single speech act (sending a question) which, according to R-C2 and R-C5, is a report of an act or a quasi-speech-act that does not constitute a story without further action or conflict.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is only the opening fragment of a halakhic inquiry sent to Rabbi Ḥelbo — a speech act with no conflict and no completed event; the continuation lies in the context segment.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 44a_8-11",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 44a_8-11",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 44a",
+     8
+    ],
+    [
+     "Gittin 44a",
+     9
+    ],
+    [
+     "Gittin 44a",
+     10
+    ],
+    [
+     "Gittin 44a",
+     11
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3,
+      5
+     ],
+     "rules": [
+      "R-C2",
+      "R-C4",
+      "R-B1"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a narrative sequence where a legal dilemma is raised, a rabbi instructs another to search for a source, the search is performed, and a formal ruling is sent out. This involves multiple actions and a resolution, fitting the criteria for a story embedded within a legal discussion.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a legal inquiry and its resolution — a question raised before R. Ami, an instruction to check a baraita, and R. Ami's dispatched ruling — consisting of speech acts and quasi-speech acts with no conflict or narrative event that leads anywhere.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 59a_16-16",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 59a_16-16",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 59a",
+     16
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a bare report of a gift sent by Bonyam ben Nunyam to Rabbi Yehuda HaNasi followed by a description of the items; it lacks the necessary actions, conflict, or narrative continuation required for a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a lexical explanation attached to a bare report that someone sent Rabbi Yehuda HaNasi fine fabrics; there is a single act with no continuation, conflict, or change (R-C5).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 19b_6-6",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 19b_6-6",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 19b",
+     6
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C5",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage contains a dialogue between Rav Yehuda and Ulla involving conflict (Rav Yehuda's distress vs. Ulla's correction) and implied change, which fits the borderline definition in R-C2. However, much of the segment consists of a report of habitual practices and Gemara commentary, which are excluded under R-C5 and R-B4.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage reports Rav Yehuda's habitual practice of straining to read and sign, followed by Ulla's corrective advice and the Gemara's qualification — essentially a report plus speech act with no consequent event; the mild tension between the practice and Ulla's counsel (implied change) makes it borderline rather than a full story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 32b_2-2",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 32b_2-2",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 32b",
+     2
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a bare report of Ravina finding Rav Naḥman bar Yitzḥak in a specific physical posture while considering a legal dilemma. Under R-C5 and R-C2, a report of a single act or a speech-based dilemma without conflict or a sequence of events leading to a change does not constitute a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a bare vignette — Ravina finds Rav Naḥman bar Yitzḥak leaning on a doorpost pondering a halakhic dilemma, which is left unresolved. There is no second action, no conflict and no change, only the setting for a legal question (R-C5, R-C2).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 19a_15-15",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 19a_15-15",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 19a",
+     15
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a report of a legal instruction given by Rav Pappa to an ox herder. Under rule R-C5, a bare report of what a rabbi did or an instruction he gave without a subsequent narrative event or conflict does not constitute a story.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a legal ruling plus a bare report that Rav Pappa instructed Pappa the ox herder to use saliva; there is a single instructional act with no further event, conflict, or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 74b_4-4",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 74b_4-4",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 74b",
+     4
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is a direct quotation of the Mishnah used as a heading for the Gemara's discussion. Under rule R-C1, the Talmud's quotation of a Mishnah story is only included when it is part of the Gemara's own citation or analysis, whereas the initial printing of the Mishnah text itself is withheld.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C1",
+      "R-B1"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is the Gemara's citation of the Mishnah's incident at Tzaidan (the man's condition, the lost coat, the Sages' ruling), which Jeff explicitly allowed as includable when the Talmud quotes a Mishnah story (R-C1, naming Gittin 74b); the segment opens with the attribution and מעשה formula that begins the story (R-B1), even though the Gemara's own question is attached.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 46a_12-12",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 46a_12-12",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 46a",
+     12
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C1",
+      "R-B1"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a Talmudic quotation of a story from the Mishnah, which is explicitly included under rule R-C1. The segment includes the opening formula 'Rabbi Yosei, son of Rabbi Yehuda, said' as required by rule R-B1.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is an abbreviated citation of the Tzaidan precedent (מעשה בציידן וכו׳) followed by the Gemara's technical question about why the mishna taught it; the incident itself is a bare legal precedent with no developed action or outcome beyond the ruling, so under R-C5 it is not a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 70b_1-8",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 70b_1-8",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 70b",
+     1
+    ],
+    [
+     "Kiddushin 70b",
+     2
+    ],
+    [
+     "Kiddushin 70b",
+     3
+    ],
+    [
+     "Kiddushin 70b",
+     4
+    ],
+    [
+     "Kiddushin 70b",
+     5
+    ],
+    [
+     "Kiddushin 70b",
+     6
+    ],
+    [
+     "Kiddushin 70b",
+     7
+    ],
+    [
+     "Kiddushin 70b",
+     8
+    ]
+   ],
+   "answers": {
+    "gemini": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "rules": [
+      "R-B1",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a complex narrative involving a series of one-time events, conflict between rabbis, and a dramatic resolution where a crowd attempts to stone Rav Yehuda. It follows the rule that a story can be framed by a custom or legal discussion but becomes a story once specific actions and causal connections occur.",
+     "error": null
+    },
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+     ],
+     "rules": [
+      "R-C3",
+      "R-C4"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a sustained rabbinic narrative of Rav Yehuda before Rav Naḥman, with multiple linked events (producing the summons, the litigant's arrival, Rav Mattana's timely appearance, the public proclamation, torn marriage contracts, the attempted stoning and the dam in the river), full of conflict and consequence.",
+     "error": null
+    }
+   }
+  }
+ ]
+}

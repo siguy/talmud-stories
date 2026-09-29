@@ -1,5 +1,14 @@
 # PLAN — Consensus at scale: machines argue, Jeff settles only the disagreements
 
+> **Where this stands (2026-09-28, end of day).** Phase 1 ran and was a **no-go** — and the
+> cause was our rule register, not the bet: it lacked Jeff's July rule that an incident
+> followed by a ruling can be a story (now R-C0), and R-C5 carried a gloss of ours saying
+> the opposite. Both fixed in `STORY_RULES.md`. Next is **phase 1b**
+> ([`consensus-1b-corrected-register`](../../work/2026-09-28-consensus-1b-corrected-register.md)),
+> blocked only on money: Gemini hit its monthly spend cap and Anthropic is out of credit.
+> Phase 2 stays blocked until a go. Full diagnosis:
+> [`consensus-phase1`](../findings/2026-09-28-consensus-phase1.md) §7–§9.
+
 **Written 2026-09-28; cut to two phases the same day after a three-way plan review**
 (§7 records what was cut and why). Status: planned, not started. Simon approved the
 direction and a Claude model as an independent second judge (2026-09-28).
@@ -37,7 +46,7 @@ labels already on disk.
 
 ## 3. Phase 1 — test the bet on every labelled span on disk
 
-**Item:** [`consensus-1-test-the-bet`](../../work/2026-09-28-consensus-1-test-the-bet.md).
+**Item:** [`consensus-1-test-the-bet`](../../work/done/2026-09-28-consensus-1-test-the-bet.md).
 ~600 model calls, no detector run.
 
 - **Unit judged:** the span Jeff judged, exactly as he saw it — not a detector candidate.

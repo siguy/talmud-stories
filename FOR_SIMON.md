@@ -382,6 +382,41 @@ in `docs/capabilities/3_classification.md`, which the project's own route says t
 docs, and corrected the finding in place with a note saying so. The lesson is the route's
 lesson: the record exists so you don't re-discover (or re-announce) what's already known.
 
+## The Judge That Followed the Rulebook Too Well (2026-09-28)
+
+The idea: Jeff is the bottleneck, API calls are cheap. So give two different AIs Jeff's
+rulebook, have each judge every passage, and only send Jeff the ones they disagree on
+(plus a few random "agreed" ones, unmarked, to check them honestly). Before building any of
+it, we tested the bet on every passage Jeff had already judged.
+
+It failed — and the *way* it failed was the lesson. The AIs threw out 47 stories from
+Jeff's own 2005 lists, all for the same reason: rule R-C5, "a bare report of what someone
+did is not a story." When I read the 47 one by one, 21 were the same shape: *"A certain man
+left his property to Toviya. He died. Toviya came. Rabbi Yoḥanan ruled…"* And back in July
+Jeff had said, almost word for word, that this shape **is** a story: *"A man stole a cow…
+Rava ruled… you may have a story."*
+
+That July rule was never copied into the rulebook. And when I wrote R-C5 on Sept 25, I
+summarised Jeff's four examples with a sentence of my own — "one act, however it is
+introduced, is not a story" — that went further than he did. It read like a faithful
+summary. It said the opposite of his July rule. Nobody noticed, because nobody had ever
+followed the rulebook *literally*. The AI judge did, and fell straight into the hole.
+
+Think of it like handing a new employee the company handbook and nothing else: every gap
+and every overstatement in the handbook becomes their mistake. That is actually the most
+useful thing the test produced — **a cheap way to audit a rulebook is to give it, alone, to
+a model and see where it disagrees with the expert in bulk.** (Lesson 44.)
+
+Two smaller honesty points from the same day: the headline "84% agreement" was inflated by
+easy cases (on the hard Gittin cases it was 11 of 18), and a claim that Claude gives
+different answers run to run turned out to compare two *different* prompts — so that is
+unmeasured, not proven.
+
+What's next: the rulebook is fixed; the re-run waits on topping up both API accounts
+(Gemini hit a monthly cap, Anthropic ran out of credit). And Jeff gets one sharp question
+with real examples: where exactly is the line between "a report of what someone did" and
+"something happened and a rabbi ruled"?
+
 ## What's Next
 
 1. **Score Kiddushin** once Jeff reviews. If 0.85+ composite, the detector generalizes and we can scale to more tractates.

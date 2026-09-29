@@ -100,6 +100,29 @@ post-biblical figures."*
 
 ## Classification — is it a story?
 
+### R-C0 · A story narrates something that happened — and an incident followed by a ruling can be one
+**Jeff, 2026-07-06** (`docs/findings/2026-07-06-jeff-story-definition-criteria.md`, from
+`jeff comms/Simon Brief Questions.docx`):
+- *"Legal problems/cases are hypothetical and do not refer to events that happened.
+  Stories are about events that happened (even if the story is fictional)."* — "**If** I
+  steal a cow…" is a legal case; "**A certain man** stole a cow…" is not.
+- *"A man stole another man's cow and sold it. Rava ruled…. In this case you may have a
+  story."* The narrated event is the story; the ruling is its resolution, not a
+  disqualifier.
+- *"we have included halakhic stories, which Ein Yaakov generally omits… our purpose is a
+  database of all stories."*
+- *"an emotional reaction, e.g., 'Rabbi X was embarrassed'… generally should be considered
+  events/actions and count toward a story."*
+- *"By most traditional definitions of a story, speech-acts don't count"* — minimally
+  there must be some action beyond the speech (see R-C2 for the borderline).
+
+- **Status:** settled 2026-07-06 — **and missing from this register until 2026-09-28.**
+  The omission is the main reason consensus phase 1 failed: a judge given R-C5 without
+  R-C0 rejected the incident-plus-ruling stories on his lists (the `ההוא גברא ד…` /
+  *"a certain man…, Rav X ruled"* shape) as "bare reports"
+  ([`consensus-phase1`](findings/2026-09-28-consensus-phase1.md) §7).
+  **Read R-C5 against this rule, never alone.**
+
 ### R-C1 · A Mishnah story belongs to the Mishnah; the Talmud's quotation of it is Talmudic
 **Jeff, 2026-09-01:** *"10a is just the Mishnah itself, that the printers included in the
 printing of the Talmud, but not technically part of the Talmud… the second instances
@@ -184,13 +207,25 @@ uprooted. (two actions, causal connection)"*
 - Ketubot 15a:0: *"a legal discussion discussing facts of an incident and their
   consequences, but not enough of the incident is given."*
 
-- **Status:** settled on those four. **Our prompt already said it**: Stage 2's disqualifier
-  "Fewer than 2 distinct actions, OR no change/conflict" dates from Wave 3 Item 3
-  (2026-05-25), written by us from abstract patterns. It now has his words and his cases
-  behind it. It is his 2026-09-01 test (*"two actions, causal connection"*) stated from
-  the other side: one act, however it is introduced — even
-  *מעשה ב…* — is a precedent, not a story. It is also the other half of R-C3: a custom
-  with **no** one-time event after it (Mar Zutra *"would score"*) stays a custom.
+- **Status:** settled **on those four cases — and only those.** Its limit is R-C0: an
+  incident followed by a ruling can be a story, and his 2005 lists hold dozens of them.
+- **Correction, 2026-09-28.** This entry was written on 2026-09-25 with a gloss of ours —
+  *"one act, however it is introduced — even מעשה ב… — is a precedent, not a story"* —
+  that goes past his words and contradicts R-C0. A judge given that gloss rejected 47 of
+  the stories on his 2005 lists and 10 stories he had accepted in review
+  ([`consensus-phase1`](findings/2026-09-28-consensus-phase1.md) §7). Removed.
+- **Where the line falls — our proposal, not his rule** (`jeff:report-vs-incident`):
+  *not a story* — what someone **did or used to do**, cited as evidence of his view or as
+  his practice, with no one responding and nothing following (Akiva's etrog, Mar Zutra's
+  practice, a seating, an incident only alluded to). *A story* — **something happens to
+  someone** and a person responds: a court, a rabbi's ruling, an action (R-C0's cow). Every
+  one of his four R-C5 cases and the July cow case fall on the side this puts them. Open
+  between them: a one-line eyewitness wonder (*"I myself saw…"*, Ketubot 111b), which he
+  accepted in review and lists in 2005.
+- Stage 2's older disqualifier "Fewer than 2 distinct actions, OR no change/conflict"
+  (Wave 3 Item 3, 2026-05-25) is ours, from abstract patterns — not this rule. It is also
+  the other half of R-C3: a custom with **no** one-time event after it (Mar Zutra *"would
+  score"*) stays a custom.
 - **Rate, indicated not measured:** 10 accepted Ketubot entries carry a single event in
   the detector's own `multiple_events` field (two of them now ruled: 15a:0 no, 112a:11
   borderline). Kiddushin and Gittin entries carry no such field, so they cannot be

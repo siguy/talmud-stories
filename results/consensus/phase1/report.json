@@ -1,0 +1,1338 @@
+{
+ "review": {
+  "pooled": {
+   "rows": 364,
+   "both_answered": 235,
+   "models_agree": 197,
+   "agreed_matches_him": 157,
+   "agreed_on_his_no": 93,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 5,
+   "agreed_on_his_yes": 76,
+   "agreed_not_on_his_yes": 10,
+   "gemini_answered": 364,
+   "gemini_matches_him": 268,
+   "gemini_not_on_his_yes": 28,
+   "claude_answered": 235,
+   "claude_matches_him": 177,
+   "claude_not_on_his_yes": 15,
+   "agreed_on_his_borderline": 26,
+   "agreed_story_on_his_borderline": 10,
+   "gemini_story_on_his_no": 10,
+   "claude_story_on_his_no": 2,
+   "agreed_not_on_his_no": 87,
+   "agreed_borderline_on_his_borderline": 3,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "agreed_story_on_his_yes": 65,
+   "agreed_not_on_his_borderline": 13,
+   "agreed_borderline_on_his_yes": 1,
+   "failures": {
+    "claude": {
+     "failed": 129
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 13,
+    "claude": 20,
+    "neither": 5
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 55,
+    "claude:R-C5": 43,
+    "gemini:R-C2": 33,
+    "claude:R-C2": 29,
+    "gemini:R-B1": 13,
+    "gemini:R-C4": 12,
+    "gemini:R-B4": 10,
+    "claude:R-C4": 8,
+    "gemini:R-C3": 5,
+    "claude:R-B4": 5,
+    "gemini:R-S1": 5,
+    "gemini:R-C1": 3,
+    "claude:R-C1": 3,
+    "claude:R-B2": 3,
+    "claude:R-B1": 1,
+    "claude:R-C3": 1
+   },
+   "agreement_rate": 0.838,
+   "agreement_wilson": [
+    0.786,
+    0.88
+   ],
+   "agreed_right_on_his_no": 87,
+   "agreed_right_on_his_no_wilson": [
+    0.866,
+    0.97
+   ],
+   "agreed_right_on_his_yes": 65,
+   "agreed_right_on_his_yes_wilson": [
+    0.759,
+    0.917
+   ]
+  },
+  "Ketubot": {
+   "rows": 232,
+   "both_answered": 208,
+   "models_agree": 180,
+   "agreed_matches_him": 144,
+   "agreed_on_his_no": 82,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 4,
+   "agreed_on_his_yes": 75,
+   "agreed_not_on_his_yes": 9,
+   "gemini_answered": 232,
+   "gemini_matches_him": 170,
+   "gemini_not_on_his_yes": 12,
+   "claude_answered": 208,
+   "claude_matches_him": 158,
+   "claude_not_on_his_yes": 13,
+   "agreed_story_on_his_yes": 65,
+   "agreed_on_his_borderline": 23,
+   "agreed_story_on_his_borderline": 8,
+   "agreed_not_on_his_borderline": 13,
+   "agreed_borderline_on_his_borderline": 2,
+   "agreed_borderline_on_his_yes": 1,
+   "gemini_story_on_his_no": 5,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 77,
+   "failures": {
+    "claude": {
+     "failed": 24
+    }
+   },
+   "splits_side_with_him": {
+    "neither": 4,
+    "gemini": 10,
+    "claude": 14
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 38,
+    "claude:R-C5": 38,
+    "claude:R-C2": 26,
+    "gemini:R-C2": 21,
+    "gemini:R-B1": 10,
+    "gemini:R-C4": 9,
+    "claude:R-C4": 7,
+    "claude:R-B4": 4,
+    "gemini:R-C3": 4,
+    "claude:R-B2": 3,
+    "gemini:R-S1": 3,
+    "gemini:R-B4": 2,
+    "claude:R-C3": 1,
+    "gemini:R-C1": 1,
+    "claude:R-C1": 1
+   },
+   "agreement_rate": 0.865,
+   "agreement_wilson": [
+    0.812,
+    0.905
+   ],
+   "agreed_right_on_his_no": 77,
+   "agreed_right_on_his_no_wilson": [
+    0.865,
+    0.974
+   ],
+   "agreed_right_on_his_yes": 65,
+   "agreed_right_on_his_yes_wilson": [
+    0.772,
+    0.926
+   ]
+  },
+  "Kiddushin": {
+   "rows": 101,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 101,
+   "gemini_matches_him": 78,
+   "gemini_not_on_his_yes": 15,
+   "gemini_story_on_his_no": 0,
+   "failures": {
+    "claude": {
+     "failed": 101
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 15,
+    "gemini:R-B4": 6,
+    "gemini:R-C2": 6,
+    "gemini:R-S1": 2
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Gittin": {
+   "rows": 27,
+   "both_answered": 27,
+   "models_agree": 17,
+   "agreed_matches_him": 13,
+   "agreed_on_his_no": 11,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 1,
+   "agreed_on_his_yes": 1,
+   "agreed_not_on_his_yes": 1,
+   "gemini_answered": 27,
+   "gemini_matches_him": 16,
+   "gemini_not_on_his_yes": 1,
+   "claude_answered": 27,
+   "claude_matches_him": 19,
+   "claude_not_on_his_yes": 2,
+   "agreed_on_his_borderline": 3,
+   "agreed_story_on_his_borderline": 2,
+   "gemini_story_on_his_no": 5,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 10,
+   "agreed_borderline_on_his_borderline": 1,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "failures": {},
+   "splits_side_with_him": {
+    "gemini": 3,
+    "claude": 6,
+    "neither": 1
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C2": 6,
+    "claude:R-C5": 5,
+    "gemini:R-B1": 3,
+    "claude:R-C2": 3,
+    "gemini:R-C4": 3,
+    "gemini:R-C1": 2,
+    "claude:R-C1": 2,
+    "gemini:R-B4": 2,
+    "gemini:R-C5": 2,
+    "claude:R-C4": 1,
+    "gemini:R-C3": 1,
+    "claude:R-B1": 1,
+    "claude:R-B4": 1
+   },
+   "agreement_rate": 0.63,
+   "agreement_wilson": [
+    0.442,
+    0.785
+   ],
+   "agreed_right_on_his_no": 10,
+   "agreed_right_on_his_no_wilson": [
+    0.623,
+    0.984
+   ],
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": [
+    0.0,
+    0.793
+   ]
+  },
+  "Yevamot": {
+   "rows": 4,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 4,
+   "gemini_matches_him": 4,
+   "gemini_story_on_his_no": 0,
+   "gemini_not_on_his_yes": 0,
+   "failures": {
+    "claude": {
+     "failed": 4
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {},
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  }
+ },
+ "review_not_cited": {
+  "pooled": {
+   "rows": 329,
+   "both_answered": 212,
+   "models_agree": 179,
+   "agreed_matches_him": 142,
+   "agreed_on_his_no": 84,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 5,
+   "agreed_on_his_yes": 73,
+   "agreed_not_on_his_yes": 10,
+   "gemini_answered": 329,
+   "gemini_matches_him": 240,
+   "gemini_not_on_his_yes": 27,
+   "claude_answered": 212,
+   "claude_matches_him": 159,
+   "claude_not_on_his_yes": 14,
+   "gemini_story_on_his_no": 9,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 78,
+   "agreed_story_on_his_yes": 62,
+   "agreed_on_his_borderline": 22,
+   "agreed_story_on_his_borderline": 8,
+   "agreed_not_on_his_borderline": 12,
+   "agreed_borderline_on_his_borderline": 2,
+   "agreed_borderline_on_his_yes": 1,
+   "failures": {
+    "claude": {
+     "failed": 117
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 11,
+    "claude": 17,
+    "neither": 5
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 55,
+    "claude:R-C5": 41,
+    "gemini:R-C2": 30,
+    "claude:R-C2": 27,
+    "gemini:R-B1": 12,
+    "gemini:R-C4": 12,
+    "gemini:R-B4": 9,
+    "claude:R-C4": 8,
+    "gemini:R-C3": 5,
+    "claude:R-B4": 5,
+    "gemini:R-S1": 5,
+    "claude:R-B2": 3,
+    "claude:R-C3": 1
+   },
+   "agreement_rate": 0.844,
+   "agreement_wilson": [
+    0.789,
+    0.887
+   ],
+   "agreed_right_on_his_no": 78,
+   "agreed_right_on_his_no_wilson": [
+    0.853,
+    0.967
+   ],
+   "agreed_right_on_his_yes": 62,
+   "agreed_right_on_his_yes_wilson": [
+    0.75,
+    0.914
+   ]
+  },
+  "Ketubot": {
+   "rows": 216,
+   "both_answered": 192,
+   "models_agree": 167,
+   "agreed_matches_him": 132,
+   "agreed_on_his_no": 73,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 4,
+   "agreed_on_his_yes": 72,
+   "agreed_not_on_his_yes": 9,
+   "gemini_answered": 216,
+   "gemini_matches_him": 157,
+   "gemini_not_on_his_yes": 12,
+   "claude_answered": 192,
+   "claude_matches_him": 144,
+   "claude_not_on_his_yes": 12,
+   "agreed_story_on_his_yes": 62,
+   "agreed_on_his_borderline": 22,
+   "agreed_story_on_his_borderline": 8,
+   "agreed_not_on_his_borderline": 12,
+   "agreed_borderline_on_his_borderline": 2,
+   "agreed_borderline_on_his_yes": 1,
+   "gemini_story_on_his_no": 5,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 68,
+   "failures": {
+    "claude": {
+     "failed": 24
+    }
+   },
+   "splits_side_with_him": {
+    "neither": 4,
+    "gemini": 9,
+    "claude": 12
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 38,
+    "claude:R-C5": 36,
+    "claude:R-C2": 25,
+    "gemini:R-C2": 19,
+    "gemini:R-B1": 10,
+    "gemini:R-C4": 9,
+    "claude:R-C4": 7,
+    "claude:R-B4": 4,
+    "gemini:R-C3": 4,
+    "claude:R-B2": 3,
+    "gemini:R-S1": 3,
+    "gemini:R-B4": 2,
+    "claude:R-C3": 1
+   },
+   "agreement_rate": 0.87,
+   "agreement_wilson": [
+    0.815,
+    0.91
+   ],
+   "agreed_right_on_his_no": 68,
+   "agreed_right_on_his_no_wilson": [
+    0.849,
+    0.97
+   ],
+   "agreed_right_on_his_yes": 62,
+   "agreed_right_on_his_yes_wilson": [
+    0.763,
+    0.923
+   ]
+  },
+  "Kiddushin": {
+   "rows": 92,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 92,
+   "gemini_matches_him": 70,
+   "gemini_not_on_his_yes": 14,
+   "gemini_story_on_his_no": 0,
+   "failures": {
+    "claude": {
+     "failed": 92
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 15,
+    "gemini:R-C2": 6,
+    "gemini:R-B4": 5,
+    "gemini:R-S1": 2
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Gittin": {
+   "rows": 20,
+   "both_answered": 20,
+   "models_agree": 12,
+   "agreed_matches_him": 10,
+   "agreed_on_his_no": 11,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 1,
+   "agreed_on_his_yes": 1,
+   "agreed_not_on_his_yes": 1,
+   "gemini_answered": 20,
+   "gemini_matches_him": 12,
+   "gemini_not_on_his_yes": 1,
+   "claude_answered": 20,
+   "claude_matches_him": 15,
+   "claude_not_on_his_yes": 2,
+   "gemini_story_on_his_no": 4,
+   "claude_story_on_his_no": 0,
+   "agreed_not_on_his_no": 10,
+   "failures": {},
+   "splits_side_with_him": {
+    "gemini": 2,
+    "claude": 5,
+    "neither": 1
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "claude:R-C5": 5,
+    "gemini:R-C2": 5,
+    "gemini:R-C4": 3,
+    "gemini:R-B1": 2,
+    "gemini:R-B4": 2,
+    "gemini:R-C5": 2,
+    "claude:R-C2": 2,
+    "claude:R-C4": 1,
+    "gemini:R-C3": 1,
+    "claude:R-B4": 1
+   },
+   "agreement_rate": 0.6,
+   "agreement_wilson": [
+    0.387,
+    0.781
+   ],
+   "agreed_right_on_his_no": 10,
+   "agreed_right_on_his_no_wilson": [
+    0.623,
+    0.984
+   ],
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": [
+    0.0,
+    0.793
+   ]
+  },
+  "Yevamot": {
+   "rows": 1,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 1,
+   "gemini_matches_him": 1,
+   "gemini_not_on_his_yes": 0,
+   "failures": {
+    "claude": {
+     "failed": 1
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {},
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  }
+ },
+ "review_cited": {
+  "pooled": {
+   "rows": 35,
+   "both_answered": 23,
+   "models_agree": 18,
+   "agreed_matches_him": 15,
+   "agreed_on_his_no": 9,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 3,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 35,
+   "gemini_matches_him": 28,
+   "claude_answered": 23,
+   "claude_matches_him": 18,
+   "agreed_on_his_borderline": 4,
+   "agreed_story_on_his_borderline": 2,
+   "agreed_borderline_on_his_borderline": 1,
+   "gemini_story_on_his_no": 1,
+   "claude_story_on_his_no": 1,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "gemini_not_on_his_yes": 1,
+   "claude_not_on_his_yes": 1,
+   "agreed_story_on_his_yes": 3,
+   "agreed_not_on_his_no": 9,
+   "agreed_not_on_his_borderline": 1,
+   "failures": {
+    "claude": {
+     "failed": 12
+    }
+   },
+   "splits_side_with_him": {
+    "claude": 3,
+    "gemini": 2
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C1": 3,
+    "claude:R-C1": 3,
+    "gemini:R-C2": 3,
+    "claude:R-C2": 2,
+    "claude:R-C5": 2,
+    "claude:R-B1": 1,
+    "gemini:R-B1": 1,
+    "gemini:R-B4": 1
+   },
+   "agreement_rate": 0.783,
+   "agreement_wilson": [
+    0.581,
+    0.903
+   ],
+   "agreed_right_on_his_no": 9,
+   "agreed_right_on_his_no_wilson": [
+    0.701,
+    1.0
+   ],
+   "agreed_right_on_his_yes": 3,
+   "agreed_right_on_his_yes_wilson": [
+    0.438,
+    1.0
+   ]
+  },
+  "Ketubot": {
+   "rows": 16,
+   "both_answered": 16,
+   "models_agree": 13,
+   "agreed_matches_him": 12,
+   "agreed_on_his_no": 9,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 3,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 16,
+   "gemini_matches_him": 13,
+   "gemini_not_on_his_yes": 0,
+   "claude_answered": 16,
+   "claude_matches_him": 14,
+   "claude_not_on_his_yes": 1,
+   "agreed_story_on_his_yes": 3,
+   "gemini_story_on_his_no": 0,
+   "claude_story_on_his_no": 0,
+   "agreed_not_on_his_no": 9,
+   "agreed_on_his_borderline": 1,
+   "agreed_not_on_his_borderline": 1,
+   "failures": {},
+   "splits_side_with_him": {
+    "gemini": 1,
+    "claude": 2
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "claude:R-C5": 2,
+    "gemini:R-C2": 2,
+    "claude:R-C2": 1,
+    "gemini:R-C1": 1,
+    "claude:R-C1": 1
+   },
+   "agreement_rate": 0.812,
+   "agreement_wilson": [
+    0.57,
+    0.934
+   ],
+   "agreed_right_on_his_no": 9,
+   "agreed_right_on_his_no_wilson": [
+    0.701,
+    1.0
+   ],
+   "agreed_right_on_his_yes": 3,
+   "agreed_right_on_his_yes_wilson": [
+    0.438,
+    1.0
+   ]
+  },
+  "Kiddushin": {
+   "rows": 9,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 9,
+   "gemini_matches_him": 8,
+   "gemini_not_on_his_yes": 1,
+   "gemini_story_on_his_no": 0,
+   "failures": {
+    "claude": {
+     "failed": 9
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-B4": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Gittin": {
+   "rows": 7,
+   "both_answered": 7,
+   "models_agree": 5,
+   "agreed_matches_him": 3,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 7,
+   "gemini_matches_him": 4,
+   "claude_answered": 7,
+   "claude_matches_him": 4,
+   "agreed_on_his_borderline": 3,
+   "agreed_story_on_his_borderline": 2,
+   "agreed_borderline_on_his_borderline": 1,
+   "gemini_story_on_his_no": 1,
+   "claude_story_on_his_no": 1,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "failures": {},
+   "splits_side_with_him": {
+    "claude": 1,
+    "gemini": 1
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C1": 2,
+    "claude:R-C1": 2,
+    "gemini:R-C2": 1,
+    "claude:R-C2": 1,
+    "claude:R-B1": 1,
+    "gemini:R-B1": 1
+   },
+   "agreement_rate": 0.714,
+   "agreement_wilson": [
+    0.359,
+    0.918
+   ],
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Yevamot": {
+   "rows": 3,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 3,
+   "gemini_matches_him": 3,
+   "gemini_story_on_his_no": 0,
+   "failures": {
+    "claude": {
+     "failed": 3
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {},
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  }
+ },
+ "list": {
+  "pooled": {
+   "rows": 448,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 444,
+   "gemini_matches_him": 365,
+   "gemini_not_on_his_yes": 47,
+   "failures": {
+    "gemini": {
+     "invalid": 4
+    },
+    "claude": {
+     "failed": 448
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 56,
+    "gemini:R-C2": 43,
+    "gemini:R-B4": 8,
+    "gemini:R-C3": 4,
+    "gemini:R-C4": 2,
+    "gemini:R-C1": 2,
+    "gemini:R-B1": 2,
+    "gemini:R-B2": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Ketubot": {
+   "rows": 146,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 145,
+   "gemini_matches_him": 120,
+   "gemini_not_on_his_yes": 18,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 146
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 20,
+    "gemini:R-C2": 8,
+    "gemini:R-C3": 4,
+    "gemini:R-B4": 2,
+    "gemini:R-C4": 1,
+    "gemini:R-C1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Kiddushin": {
+   "rows": 89,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 88,
+   "gemini_matches_him": 74,
+   "gemini_not_on_his_yes": 7,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 89
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C2": 10,
+    "gemini:R-C5": 10,
+    "gemini:R-B4": 2,
+    "gemini:R-B1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Gittin": {
+   "rows": 111,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 110,
+   "gemini_matches_him": 91,
+   "gemini_not_on_his_yes": 10,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 111
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C2": 11,
+    "gemini:R-C5": 11,
+    "gemini:R-B4": 2,
+    "gemini:R-B2": 1,
+    "gemini:R-B1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Yevamot": {
+   "rows": 102,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 101,
+   "gemini_matches_him": 80,
+   "gemini_not_on_his_yes": 12,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 102
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 15,
+    "gemini:R-C2": 14,
+    "gemini:R-B4": 2,
+    "gemini:R-C4": 1,
+    "gemini:R-C1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  }
+ },
+ "corrected": {
+  "pooled": {
+   "rows": 185,
+   "both_answered": 167,
+   "models_agree": 138,
+   "agreed_matches_him": 89,
+   "agreed_on_his_no": 17,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 6,
+   "agreed_on_his_yes": 120,
+   "agreed_not_on_his_yes": 35,
+   "gemini_answered": 184,
+   "gemini_matches_him": 129,
+   "gemini_not_on_his_yes": 38,
+   "claude_answered": 168,
+   "claude_matches_him": 93,
+   "claude_not_on_his_yes": 43,
+   "agreed_story_on_his_yes": 79,
+   "gemini_story_on_his_no": 2,
+   "claude_story_on_his_no": 1,
+   "agreed_borderline_on_his_yes": 6,
+   "agreed_on_his_borderline": 1,
+   "agreed_not_on_his_borderline": 1,
+   "agreed_not_on_his_no": 10,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 17
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 26,
+    "claude": 3
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "claude:R-C5": 61,
+    "claude:R-C2": 44,
+    "gemini:R-C5": 40,
+    "gemini:R-C2": 17,
+    "gemini:R-C3": 4,
+    "claude:R-C3": 4,
+    "gemini:R-C1": 4,
+    "claude:R-C1": 3,
+    "gemini:R-B4": 3,
+    "gemini:R-B1": 2,
+    "claude:R-B4": 2,
+    "gemini:R-C4": 1,
+    "claude:R-B3": 1,
+    "claude:R-B2": 1
+   },
+   "agreement_rate": 0.826,
+   "agreement_wilson": [
+    0.762,
+    0.876
+   ],
+   "agreed_right_on_his_no": 10,
+   "agreed_right_on_his_no_wilson": [
+    0.36,
+    0.784
+   ],
+   "agreed_right_on_his_yes": 79,
+   "agreed_right_on_his_yes_wilson": [
+    0.57,
+    0.737
+   ]
+  },
+  "Ketubot": {
+   "rows": 185,
+   "both_answered": 167,
+   "models_agree": 138,
+   "agreed_matches_him": 89,
+   "agreed_on_his_no": 17,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 6,
+   "agreed_on_his_yes": 120,
+   "agreed_not_on_his_yes": 35,
+   "gemini_answered": 184,
+   "gemini_matches_him": 129,
+   "gemini_not_on_his_yes": 38,
+   "claude_answered": 168,
+   "claude_matches_him": 93,
+   "claude_not_on_his_yes": 43,
+   "agreed_story_on_his_yes": 79,
+   "gemini_story_on_his_no": 2,
+   "claude_story_on_his_no": 1,
+   "agreed_borderline_on_his_yes": 6,
+   "agreed_on_his_borderline": 1,
+   "agreed_not_on_his_borderline": 1,
+   "agreed_not_on_his_no": 10,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 17
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 26,
+    "claude": 3
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "claude:R-C5": 61,
+    "claude:R-C2": 44,
+    "gemini:R-C5": 40,
+    "gemini:R-C2": 17,
+    "gemini:R-C3": 4,
+    "claude:R-C3": 4,
+    "gemini:R-C1": 4,
+    "claude:R-C1": 3,
+    "gemini:R-B4": 3,
+    "gemini:R-B1": 2,
+    "claude:R-B4": 2,
+    "gemini:R-C4": 1,
+    "claude:R-B3": 1,
+    "claude:R-B2": 1
+   },
+   "agreement_rate": 0.826,
+   "agreement_wilson": [
+    0.762,
+    0.876
+   ],
+   "agreed_right_on_his_no": 10,
+   "agreed_right_on_his_no_wilson": [
+    0.36,
+    0.784
+   ],
+   "agreed_right_on_his_yes": 79,
+   "agreed_right_on_his_yes_wilson": [
+    0.57,
+    0.737
+   ]
+  }
+ },
+ "all_scored": {
+  "pooled": {
+   "rows": 812,
+   "both_answered": 235,
+   "models_agree": 197,
+   "agreed_matches_him": 157,
+   "agreed_on_his_no": 93,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 5,
+   "agreed_on_his_yes": 76,
+   "agreed_not_on_his_yes": 10,
+   "gemini_answered": 808,
+   "gemini_matches_him": 633,
+   "gemini_not_on_his_yes": 75,
+   "claude_answered": 235,
+   "claude_matches_him": 177,
+   "claude_not_on_his_yes": 15,
+   "agreed_on_his_borderline": 26,
+   "agreed_story_on_his_borderline": 10,
+   "gemini_story_on_his_no": 10,
+   "claude_story_on_his_no": 2,
+   "agreed_not_on_his_no": 87,
+   "agreed_borderline_on_his_borderline": 3,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "agreed_story_on_his_yes": 65,
+   "agreed_not_on_his_borderline": 13,
+   "agreed_borderline_on_his_yes": 1,
+   "failures": {
+    "gemini": {
+     "invalid": 4
+    },
+    "claude": {
+     "failed": 577
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 13,
+    "claude": 20,
+    "neither": 5
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 111,
+    "gemini:R-C2": 76,
+    "claude:R-C5": 43,
+    "claude:R-C2": 29,
+    "gemini:R-B4": 18,
+    "gemini:R-B1": 15,
+    "gemini:R-C4": 14,
+    "gemini:R-C3": 9,
+    "claude:R-C4": 8,
+    "gemini:R-C1": 5,
+    "claude:R-B4": 5,
+    "gemini:R-S1": 5,
+    "claude:R-C1": 3,
+    "claude:R-B2": 3,
+    "claude:R-B1": 1,
+    "claude:R-C3": 1,
+    "gemini:R-B2": 1
+   },
+   "agreement_rate": 0.838,
+   "agreement_wilson": [
+    0.786,
+    0.88
+   ],
+   "agreed_right_on_his_no": 87,
+   "agreed_right_on_his_no_wilson": [
+    0.866,
+    0.97
+   ],
+   "agreed_right_on_his_yes": 65,
+   "agreed_right_on_his_yes_wilson": [
+    0.759,
+    0.917
+   ]
+  },
+  "Ketubot": {
+   "rows": 378,
+   "both_answered": 208,
+   "models_agree": 180,
+   "agreed_matches_him": 144,
+   "agreed_on_his_no": 82,
+   "agreed_story_on_his_no": 1,
+   "agreed_borderline_on_his_no": 4,
+   "agreed_on_his_yes": 75,
+   "agreed_not_on_his_yes": 9,
+   "gemini_answered": 377,
+   "gemini_matches_him": 290,
+   "gemini_not_on_his_yes": 30,
+   "claude_answered": 208,
+   "claude_matches_him": 158,
+   "claude_not_on_his_yes": 13,
+   "agreed_story_on_his_yes": 65,
+   "agreed_on_his_borderline": 23,
+   "agreed_story_on_his_borderline": 8,
+   "agreed_not_on_his_borderline": 13,
+   "agreed_borderline_on_his_borderline": 2,
+   "agreed_borderline_on_his_yes": 1,
+   "gemini_story_on_his_no": 5,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 77,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 170
+    }
+   },
+   "splits_side_with_him": {
+    "neither": 4,
+    "gemini": 10,
+    "claude": 14
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 58,
+    "claude:R-C5": 38,
+    "gemini:R-C2": 29,
+    "claude:R-C2": 26,
+    "gemini:R-C4": 10,
+    "gemini:R-B1": 10,
+    "gemini:R-C3": 8,
+    "claude:R-C4": 7,
+    "claude:R-B4": 4,
+    "gemini:R-B4": 4,
+    "claude:R-B2": 3,
+    "gemini:R-S1": 3,
+    "gemini:R-C1": 2,
+    "claude:R-C3": 1,
+    "claude:R-C1": 1
+   },
+   "agreement_rate": 0.865,
+   "agreement_wilson": [
+    0.812,
+    0.905
+   ],
+   "agreed_right_on_his_no": 77,
+   "agreed_right_on_his_no_wilson": [
+    0.865,
+    0.974
+   ],
+   "agreed_right_on_his_yes": 65,
+   "agreed_right_on_his_yes_wilson": [
+    0.772,
+    0.926
+   ]
+  },
+  "Kiddushin": {
+   "rows": 190,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 189,
+   "gemini_matches_him": 152,
+   "gemini_not_on_his_yes": 22,
+   "gemini_story_on_his_no": 0,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 190
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 25,
+    "gemini:R-C2": 16,
+    "gemini:R-B4": 8,
+    "gemini:R-S1": 2,
+    "gemini:R-B1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  },
+  "Gittin": {
+   "rows": 138,
+   "both_answered": 27,
+   "models_agree": 17,
+   "agreed_matches_him": 13,
+   "agreed_on_his_no": 11,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 1,
+   "agreed_on_his_yes": 1,
+   "agreed_not_on_his_yes": 1,
+   "gemini_answered": 137,
+   "gemini_matches_him": 107,
+   "gemini_not_on_his_yes": 11,
+   "claude_answered": 27,
+   "claude_matches_him": 19,
+   "claude_not_on_his_yes": 2,
+   "agreed_on_his_borderline": 3,
+   "agreed_story_on_his_borderline": 2,
+   "gemini_story_on_his_no": 5,
+   "claude_story_on_his_no": 1,
+   "agreed_not_on_his_no": 10,
+   "agreed_borderline_on_his_borderline": 1,
+   "agreed_on_his_out_of_scope": 2,
+   "agreed_out_of_scope_on_his_out_of_scope": 2,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 111
+    }
+   },
+   "splits_side_with_him": {
+    "gemini": 3,
+    "claude": 6,
+    "neither": 1
+   },
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C2": 17,
+    "gemini:R-C5": 13,
+    "claude:R-C5": 5,
+    "gemini:R-B1": 4,
+    "gemini:R-B4": 4,
+    "claude:R-C2": 3,
+    "gemini:R-C4": 3,
+    "gemini:R-C1": 2,
+    "claude:R-C1": 2,
+    "claude:R-C4": 1,
+    "gemini:R-C3": 1,
+    "claude:R-B1": 1,
+    "claude:R-B4": 1,
+    "gemini:R-B2": 1
+   },
+   "agreement_rate": 0.63,
+   "agreement_wilson": [
+    0.442,
+    0.785
+   ],
+   "agreed_right_on_his_no": 10,
+   "agreed_right_on_his_no_wilson": [
+    0.623,
+    0.984
+   ],
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": [
+    0.0,
+    0.793
+   ]
+  },
+  "Yevamot": {
+   "rows": 106,
+   "both_answered": 0,
+   "models_agree": 0,
+   "agreed_matches_him": 0,
+   "agreed_on_his_no": 0,
+   "agreed_story_on_his_no": 0,
+   "agreed_borderline_on_his_no": 0,
+   "agreed_on_his_yes": 0,
+   "agreed_not_on_his_yes": 0,
+   "gemini_answered": 105,
+   "gemini_matches_him": 84,
+   "gemini_story_on_his_no": 0,
+   "gemini_not_on_his_yes": 12,
+   "failures": {
+    "gemini": {
+     "invalid": 1
+    },
+    "claude": {
+     "failed": 106
+    }
+   },
+   "splits_side_with_him": {},
+   "rules_cited_when_disagreeing_with_him": {
+    "gemini:R-C5": 15,
+    "gemini:R-C2": 14,
+    "gemini:R-B4": 2,
+    "gemini:R-C4": 1,
+    "gemini:R-C1": 1
+   },
+   "agreement_rate": null,
+   "agreement_wilson": null,
+   "agreed_right_on_his_no": 0,
+   "agreed_right_on_his_no_wilson": null,
+   "agreed_right_on_his_yes": 0,
+   "agreed_right_on_his_yes_wilson": null
+  }
+ }
+}

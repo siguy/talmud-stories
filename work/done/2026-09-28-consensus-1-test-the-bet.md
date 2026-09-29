@@ -5,15 +5,15 @@ tractate: [ketubot, kiddushin, gittin, yevamot]
 blocked_by: []
 awaiting: []
 writes: [scripts/judge_labelled_spans.py, src/prompts/judge_register_v1.md, results/consensus/phase1/, tests/test_judge_labelled_spans.py, requirements.txt]
-finding:
+finding: docs/findings/2026-09-28-consensus-phase1.md
 superseded_by:
 ---
 
 # Consensus 1 — test the bet
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), the plan
-[`consensus-at-scale`](../docs/history/2026-09-28-PLAN-consensus-at-scale.md) §1–4 (the go/no-go in §4 was fixed before this ran — do
-not move it), and [`docs/STORY_RULES.md`](../docs/STORY_RULES.md) in full.
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), the plan
+[`consensus-at-scale`](../../docs/history/2026-09-28-PLAN-consensus-at-scale.md) §1–4 (the go/no-go in §4 was fixed before this ran — do
+not move it), and [`docs/STORY_RULES.md`](../../docs/STORY_RULES.md) in full.
 **Do not use Eruvin for anything.**
 
 ## The claim to test
@@ -72,3 +72,26 @@ labelled **indicated**.
 
 Finding `docs/findings/<date>-consensus-phase1.md`, `## Outcome`,
 `python3 scripts/board.py finish 2026-09-28-consensus-1-test-the-bet`.
+
+## Outcome
+
+**No-go (indicated)** — [`2026-09-28-consensus-phase1`](../../docs/findings/2026-09-28-consensus-phase1.md).
+
+- Two criteria met on the spans both models answered (Ketubot + Gittin): agreement
+  **197/235 = 84% [79–88]**; agreed `story` on his `no` **1** (plus 5 agreed `borderline`,
+  all R-C2, four on February `no`s that predate the category).
+- The list criterion fails: Gemini alone calls **47 of 444** of his 2005 list stories
+  `not`; on his review `yes`es Claude followed Gemini's `not` 10 times of 11, so the
+  consensus count projects to ~43 against a limit of 2. Both models agree `not` on 10 of
+  76 of his review `yes`es. **Why:** the models apply R-C5 (*a bare report is not a
+  story*) far more broadly than he does — it is cited in 98 of 229 rule citations on
+  answers that disagree with him.
+- **Incomplete, and said so:** the Anthropic account ran out of credit after 403 of 997
+  Claude calls; Kiddushin, Yevamot and every list story have no Claude answer. The 594
+  failed calls are counted as failures, never scored. `run` resumes them. The decision
+  does not wait on them (finding §3).
+- Gemini repeat: 0 of 359 review verdicts moved. Claude, across two smoke runs: 3 of 20.
+- Labels: old verdicts read against the classification he was **shown** — 98 Ketubot
+  `no`s, not the ~24 the plan expected. Found on the way: `map_verdict_vocabularies.py`
+  reads `correct` as *yes* whatever he was shown (not fixed here).
+- Cost: Claude $8.94.
