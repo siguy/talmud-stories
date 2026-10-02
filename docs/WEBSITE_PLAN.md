@@ -1,5 +1,10 @@
 # Talmud Story Detection Website Plan
 
+> **Superseded 2026-10-02.** GitHub Pages is retired; the public page is
+> https://simonbrief.com/talmud-stories, built in the `simonbrief-hub` repo
+> (`app/talmud-stories/`). Why: [`2026-10-02-public-site-moved-to-hub`](findings/2026-10-02-public-site-moved-to-hub.md).
+> Kept as the record of the old site's design.
+
 This document defines the structure and content for the GitHub Pages site. Update this file when making changes to the website.
 
 ---

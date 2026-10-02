@@ -57,11 +57,11 @@ staleness check: it changes whenever anyone edits anything.*
 | `span-truncation-rate` | `talmud-stories` | **2 FILES** |
 | `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `phase1-followups` | `recent-work-plans-d0818b` | **23 FILES** |
-| `(detached)` | `state-work-review-40b153` | clean |
+| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | **11 FILES** |
+| `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 46 items, never deleted
+## Done — 47 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -111,4 +111,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Consensus 1 — test the bet: do two models agreeing mean Jeff agrees?](work/done/2026-09-28-consensus-1-test-the-bet.md) | classification, review | [2026-09-28-consensus-phase1.md](docs/findings/2026-09-28-consensus-phase1.md) |
 | [Review page — an "out of scope" answer, and the doubled Hebrew quote](work/done/2026-09-28-review-page-scope-and-quote.md) | review | — |
 | [Read an old `correct` against the call Jeff was shown — map_verdict_vocabularies and build_ruler](work/done/2026-09-28-verdicts-read-against-the-call-shown.md) | classification | [2026-09-29-verdicts-read-against-the-call-shown.md](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md) |
-<!-- board-checksum: cdcde468509697fe -->
+| [Move the public project page to the Vercel hub, current and in plain language; retire GitHub Pages](work/done/2026-10-02-public-site-refresh.md) | publication | [2026-10-02-public-site-moved-to-hub.md](docs/findings/2026-10-02-public-site-moved-to-hub.md) |
+<!-- board-checksum: 76c89f97d45ce16a -->

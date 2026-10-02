@@ -9,7 +9,7 @@ talmud-stories/
 ├── CLAUDE.md                    # AI collaboration guide
 ├── README.md                    # This file
 ├── requirements.txt             # Python dependencies
-├── index.html                   # GitHub Pages entry
+├── index.html                   # Pointer to simonbrief.com/talmud-stories (Pages retired 2026-10-02)
 │
 ├── src/                         # Core detection code
 │   ├── story_detector_v7.py     # Current detection script (v7)

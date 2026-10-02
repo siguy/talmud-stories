@@ -38,6 +38,8 @@ provisional precisely because that question has not been answered
 | 2026-07-06 | **Jeff re-specifies the end product.** Not a static published corpus: a **living, crowd-sourced, editable database**. Any scholar can flag *not a story* / *remove*, mark **borderline**, or suggest additions, gradually; he or a small editor group finalises; **contested and borderline cases are kept and flagged, not silently resolved**. Three extra per-story columns: **notes, references to scholarship, Yerushalmi parallels** | recorded as a decision; **nothing built** | [ledger Part 2(d)](../../validation/feedback/jeff_2026-07-06_feedback_ledger.md) |
 | 2026-08-28 | **Jeff has already designed the schema he asked for.** His 2005 Ketubot table has four columns — מיקום / טקסט / מקבילות / הערות (location / text / parallels / notes) — with the parallels column already populated with Yerushalmi and midrashic references | measured, and it is a free design input: adopt his shape rather than inventing one | [`recall_measurement` §2](../findings/2026-08-28-recall-measurement-ketubot.md) |
 | 2026-08-30 | The accuracy claim the resource would carry becomes quotable: recall stated as **loose *and* strict**, precision as a **range**, every number naming its dataset and saying BLIND or CIRCULAR | this is the substrate a published error rate is made of; see [`FRAMEWORK.md` §3](../../FRAMEWORK.md) | `4de7135`, `2cd1094` |
+| 2026-08-31 | Hand-corrected site stats (384 pages / 249 stories / 96% recall) committed | **never went live**: every GitHub Pages build since 2026-05-25 had errored, so the public site kept showing the February numbers | [`public-site-moved-to-hub`](../findings/2026-10-02-public-site-moved-to-hub.md) |
+| 2026-10-02 | **Explainer moved to the hub:** one plain-language page at https://simonbrief.com/talmud-stories (repo `simonbrief-hub`, `app/talmud-stories/`). Three dated numbers instead of one "accuracy", and a "what we got wrong" section. **GitHub Pages retired**; the four root pages were removed and `index.html` is now a pointer | shipped | hub `a427d40`; [`public-site-moved-to-hub`](../findings/2026-10-02-public-site-moved-to-hub.md) |
 
 ## What we reverted, and why
 
@@ -79,10 +81,11 @@ is the most a hand-written page can honestly do. A generated site is untried —
 There is no publication artifact. There are two things that are sometimes mistaken for
 one:
 
-- **The explainer site** — `index.html`, `approach.html`, `validation.html`,
-  `history.html` at the repo root, served by GitHub Pages, maintained per
-  [`docs/WEBSITE_PLAN.md`](../WEBSITE_PLAN.md). It describes the project. It does not
-  contain the stories, and its statistics are stale (above).
+- **The explainer page** — https://simonbrief.com/talmud-stories, in the `simonbrief-hub`
+  repo since 2026-10-02 (GitHub Pages is retired). It describes the project. It does not
+  contain the stories. Its figures are **typed by hand and dated** (Simon's decision,
+  2026-10-02); the `AS_OF` constant at the top of `app/talmud-stories/page.tsx` dates them,
+  and the sources are listed in `docs/brainstorms/2026-10-02-public-page-copy.md`.
 - **The review UIs** — `validation/ui/*.html`, generated per round by
   `validation/generators/*.py`. These *do* contain stories with text in both languages,
   and since `b394489` they render both languages from one code path with the proposed span
@@ -165,8 +168,9 @@ Everything. Listed in the order the dependencies fall, not by size:
   number without its dataset is the mistake FRAMEWORK §3 says cost this project months.
 - **Make the goldens complete** before calling them a resource — fold in every verdict,
   and add the stories we never proposed (`work/2026-08-30-golden-completeness.md`).
-- **Generate the public site's statistics instead of typing them.** They were corrected
-  by hand on 2026-08-31 and dated, which buys time rather than solving it: nothing
+- **Generate the public site's statistics instead of typing them.** *Considered and
+  declined for now, 2026-10-02 (Simon): by hand, dated.* They were corrected by hand on
+  2026-08-31 and dated, which buys time rather than solving it: nothing
   regenerates these pages, so they will drift again. `scripts/board.py` already derives
   the same values for `STATE.md`; emitting a small JSON the site reads would end the
   problem class.
@@ -175,6 +179,6 @@ Everything. Listed in the order the dependencies fall, not by size:
   *catalogued separately*. That is a publication-shape question (one bucket or two) as
   much as a classification one
   ([`mishnah_filter_delta`](../findings/2026-08-30-mishnah-filter-delta.md)).
-- **Nothing here has been declined.** Unlike the other five capabilities, this one has no
+- **Little here has been declined** (only the generated statistics, above). Unlike the other five capabilities, this one has few
   failures to record and no dead ends to avoid — which is precisely why it is the least
   understood of the six.

@@ -125,7 +125,7 @@ closed     10 item(s) in work/done/
 gate       not yet defined
 history    docs/capabilities/6_publication.md
 open       —
-closed     1 item(s) in work/done/
+closed     2 item(s) in work/done/
 ```
 
 ## Ground truth on hand
@@ -171,4 +171,4 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident
-<!-- board-checksum: a78b0f079a95d8cc -->
+<!-- board-checksum: a662a99be781ef6a -->
