@@ -38,6 +38,13 @@ and [`comms/JEFF.md`](../comms/JEFF.md). **Only on a phase 1 go.**
    drawn at random, shuffled together, audit items not marked. Build it with the axis
    review UI (after `review-page-scope-and-quote`); check it in the browser — Hebrew +
    English, story highlighted.
+   **A consensus `not` never deletes a story (Simon, 2026-10-02).** A candidate that is on
+   his 2005 list, or that any run proposed as a story (any class), and that both models call
+   `not` goes to a kept **`consensus_not_kept`** tier with both reasons, not out of the
+   catalogue. Phase 1b's 9 such list stories (`results/consensus/phase1/compare_1b.json`,
+   `criteria_v2.list_called_not_by_both`) were all real edge cases (scholarly exchange,
+   habit, alluded incident, commentary), stories our own detector also missed or rated
+   LOW. Losing them is the error that matters for the catalogue.
 4. **Email draft** in `comms/` (Simon sends): what changed, in one line;
    `jeff:review-error-rate` asked with phase 1's indicated figure; `jeff:scope-edges`.
 5. **When he answers:** build `yevamot_canonical.json` with a builder on the
