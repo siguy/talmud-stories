@@ -164,3 +164,20 @@ would have needed an `n/a` answer to avoid sending everything to contested.
 It changes no detector default or shipped artifact, writes no machine verdict into a
 golden, does not touch `evaluate_golden.py` or the blind lists, and does not touch
 Eruvin. It does not re-propose Ein Yaakov, a cold read, or a fixed panel.
+
+## 9. Lenses — the rule panel, revived (2026-10-02)
+
+§7 cut the per-rule judges with *"decompose only where a rule fails."* 1b (finding §10g)
+showed which: every agreed error sits on one feature: report vs incident, speech without
+conflict, habit, an alluded-to incident, commentary, scope. So the panel comes back, scoped
+to the evidence and tested before it is used:
+
+1. [`rule-panel-lenses`](../../work/2026-10-02-rule-panel-lenses.md): one narrow judge per
+   feature, the verdict computed by a decision table in code, both arms, scored on the same
+   997 units against 1b's single lens. No Jeff time.
+2. [`jeff-feature-questions`](../../work/2026-10-02-jeff-feature-questions.md): ask him
+   about feature boundaries with contrast pairs; record **his own sureness** on every answer;
+   rank his page by what one answer would settle. After 1.
+
+Phase 2 (§5) uses whichever panel the lenses item shows matches him better.
+
