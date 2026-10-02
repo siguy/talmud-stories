@@ -1,0 +1,276 @@
+{
+ "01": {
+  "reason": "Continues the narrative of Rabbi Zekharya ben HaKatzav: after the Sages forbid his wife, he responds by housing her in his courtyard with the children as chaperones.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "02": {
+  "reason": "A question about his parents' habit and Abaye's answer; speech only, no conflict and no event.",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "verdict": "not"
+ },
+ "03": {
+  "reason": "Rabbi Yohanan's relatives seize a cow, go to two rabbis who rule against each other, and Rabbi Yohanan responds; an incident with rulings and a reaction.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "04": {
+  "reason": "Heirs come before Rav Amram, refuse his advice, he threatens them and sends them to Rav Nahman, who rules; an incident with conflict and resolution.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "verdict": "story"
+ },
+ "05": {
+  "reason": "Halakhic discussion; the incident of the woman is only alluded to in a single phrase, with no narration in the text.",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "verdict": "not"
+ },
+ "06": {
+  "reason": "A habitual frame followed by a one-time event: Yehuda stays late one day, Rabbi Yannai declares him dead, and he dies.",
+  "rules": [
+   "R-C3"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "07": {
+  "reason": "A bare report that Rabbi was ill in Tzippori and had been moved there, used in a discussion of geography; nothing follows from it.",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "verdict": "not"
+ },
+ "08": {
+  "reason": "King Yannai's feast, the provocation and the killing of the Sages: a full narrative about post-biblical figures, so in scope.",
+  "rules": [
+   "R-C0",
+   "R-S1"
+  ],
+  "segments": [
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "verdict": "story"
+ },
+ "09": {
+  "reason": "A dispute with Rava over charity, settled when his sister arrives unexpectedly with exactly that food; events, conflict and resolution.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "verdict": "story"
+ },
+ "10": {
+  "reason": "A woman lies to unsuitable suitors, later betroths herself, the Sages question her and she explains, and a ruling follows.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "11": {
+  "reason": "The passage gives only the opening of Rabban Gamliel's verbal transfer of tithes on the ship: speech with no conflict and no event beyond it.",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "verdict": "not"
+ },
+ "12": {
+  "reason": "Rav Sheila permits a drowned man's wife to remarry, Rav wants to excommunicate him, they send to him, he admits his error, and they react.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "verdict": "story"
+ },
+ "13": {
+  "reason": "Ravina, holding an orphan's wine and taking his own to sell, comes to Rav Ashi, who rules; a halakhic incident followed by a ruling.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "verdict": "story"
+ },
+ "14": {
+  "reason": "The 400 captive children drown themselves after hearing the oldest one's exposition: post-biblical events with a clear sequence of actions.",
+  "rules": [
+   "R-C0",
+   "R-S1"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "verdict": "story"
+ },
+ "15": {
+  "reason": "A reported question and answer about a halakha, followed by a ruling; speech only with no conflict.",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "verdict": "not"
+ },
+ "16": {
+  "reason": "A widow comes before Rav Yosef with requests that he grants, ending in her sharp retort about silk; mostly speech with some conflict.",
+  "rules": [
+   "R-C2",
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "borderline"
+ },
+ "17": {
+  "reason": "Purely legal argument about marriage-contract values; no narrated event.",
+  "rules": [],
+  "segments": [],
+  "verdict": "not"
+ },
+ "18": {
+  "reason": "Ulla's visit leads to an exchange about lineage and his advice to Rav Yehuda; almost entirely dialogue, with some tension, and the exegetical asides are commentary.",
+  "rules": [
+   "R-C2",
+   "R-B4"
+  ],
+  "segments": [
+   2,
+   3,
+   6
+  ],
+  "verdict": "borderline"
+ },
+ "19": {
+  "reason": "The man from Nehardea insults Rav Yehuda, is excommunicated, and summons him to Rav Nahman, ending with the would-be stoning and the dam; an extended narrative.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3,
+   4,
+   5,
+   6,
+   7,
+   8,
+   9,
+   10,
+   11,
+   12,
+   13,
+   14,
+   15,
+   16
+  ],
+  "verdict": "story"
+ },
+ "20": {
+  "reason": "Court incidents before Rava: he reverses an oath on his wife's word about a suspect woman, then refuses Rav Pappa's lone testimony and explains why when challenged. Events followed by rulings.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3,
+   4
+  ],
+  "verdict": "story"
+ },
+ "21": {
+  "reason": "The apprentice schemes to take his master's wife, the master divorces her, and he ends up serving the couple in tears: a full narrative about post-biblical figures.",
+  "rules": [
+   "R-C0",
+   "R-S1"
+  ],
+  "segments": [
+   2,
+   3,
+   4,
+   5
+  ],
+  "verdict": "story"
+ },
+ "22": {
+  "reason": "A husband spends money collecting his wife's inheritance and takes one dinar, then comes before Rabbi Ami, who rules, and the Rabbis challenge him; an incident with a ruling.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "verdict": "story"
+ },
+ "23": {
+  "reason": "Levi teaches the ruling in Rabbi's name and gets no praise, then teaches it anonymously and is praised; a short incident with actions and a response.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "24": {
+  "reason": "A launderer misses Rabbi's funeral, throws himself from a roof on hearing the Divine Voice, and a second Divine Voice answers; a clear chain of events.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ },
+ "25": {
+  "reason": "A case comes before Rabbi: a man's incidental remark about captivity with his mother, and Rabbi permits her to marry a priest; an incident followed by a ruling.",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "verdict": "story"
+ }
+}
