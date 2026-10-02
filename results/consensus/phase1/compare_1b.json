@@ -1,0 +1,1953 @@
+{
+ "criteria_v2": {
+  "agreement": {
+   "k": 291,
+   "n": 363,
+   "rate": 0.802,
+   "wilson": [
+    0.758,
+    0.839
+   ],
+   "pass": true
+  },
+  "agreed_story_on_his_no": {
+   "n": 4,
+   "ids": [
+    "review:Gittin 88a_11-11",
+    "review:Ketubot 111a_23-25",
+    "review:Ketubot 50a_10-10",
+    "review:Ketubot 50b_4-5"
+   ],
+   "pass": false
+  },
+  "list_called_not_by_both": {
+   "n": 9,
+   "of": 444,
+   "ids": [
+    "list:ketubot_050",
+    "list:ketubot_076",
+    "list:kiddushin_012",
+    "list:kiddushin_016",
+    "list:kiddushin_022",
+    "list:kiddushin_028",
+    "list:kiddushin_085",
+    "list:yevamot_072",
+    "list:yevamot_100"
+   ],
+   "wilson": [
+    0.011,
+    0.038
+   ],
+   "pass": false
+  },
+  "list_called_not_by_each": {
+   "gemini": 10,
+   "claude": 39
+  },
+  "list_answered_by_each": {
+   "gemini": 444,
+   "claude": 448
+  }
+ },
+ "criteria_repeat": {
+  "agreement": {
+   "k": 295,
+   "n": 364,
+   "rate": 0.81,
+   "wilson": [
+    0.767,
+    0.847
+   ],
+   "pass": true
+  },
+  "agreed_story_on_his_no": {
+   "n": 5,
+   "ids": [
+    "review:Gittin 80b_1-2",
+    "review:Gittin 88a_11-11",
+    "review:Ketubot 111a_23-25",
+    "review:Ketubot 50b_4-5",
+    "review:Ketubot 8b_11-12"
+   ],
+   "pass": false
+  },
+  "list_called_not_by_both": {
+   "n": 8,
+   "of": 445,
+   "ids": [
+    "list:ketubot_050",
+    "list:ketubot_076",
+    "list:kiddushin_012",
+    "list:kiddushin_022",
+    "list:kiddushin_028",
+    "list:kiddushin_085",
+    "list:yevamot_072",
+    "list:yevamot_100"
+   ],
+   "wilson": [
+    0.009,
+    0.035
+   ],
+   "pass": false
+  },
+  "list_called_not_by_each": {
+   "gemini": 10,
+   "claude": 38
+  },
+  "list_answered_by_each": {
+   "gemini": 445,
+   "claude": 448
+  }
+ },
+ "spread": {
+  "gemini": {
+   "review_paired": 363,
+   "corrected_paired": 185,
+   "review_unpaired": 1,
+   "corrected_moved": 1,
+   "list_paired": 444,
+   "list_unpaired": 4
+  },
+  "claude": {
+   "list_paired": 448,
+   "corrected_paired": 185,
+   "review_paired": 364,
+   "review_moved": 21,
+   "list_moved": 34,
+   "corrected_moved": 12
+  }
+ },
+ "list_misses": [
+  {
+   "id": "ketubot_013",
+   "ref": "Ketubot 20a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_022",
+   "ref": "Ketubot 27a",
+   "shape": "a rule misapplied",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C1"
+    ],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_038",
+   "ref": "Ketubot 54a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_044",
+   "ref": "Ketubot 60b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C4"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_046",
+   "ref": "Ketubot 61a",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_048",
+   "ref": "Ketubot 61a",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_047",
+   "ref": "Ketubot 61a",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_049",
+   "ref": "Ketubot 61a",
+   "shape": "habitual practice",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C3"
+    ],
+    "claude": [
+     "R-C3",
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_050",
+   "ref": "Ketubot 61a",
+   "shape": "habitual practice",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C5",
+     "R-C3"
+    ],
+    "claude": [
+     "R-C3",
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_065",
+   "ref": "Ketubot 65b",
+   "shape": "speech / dialogue",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_071",
+   "ref": "Ketubot 67b",
+   "shape": "habitual practice",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-B1",
+     "R-B4"
+    ],
+    "claude": [
+     "R-C5",
+     "R-B4"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_076",
+   "ref": "Ketubot 67b",
+   "shape": "habitual practice",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5",
+     "R-C3"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_101",
+   "ref": "Ketubot 85b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_112",
+   "ref": "Ketubot 100b",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_137",
+   "ref": "Ketubot 111b",
+   "shape": "eyewitness wonder report",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_141",
+   "ref": "Ketubot 111b",
+   "shape": "eyewitness wonder report",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": []
+   }
+  },
+  {
+   "id": "ketubot_142",
+   "ref": "Ketubot 111b",
+   "shape": "eyewitness wonder report",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "ketubot_143",
+   "ref": "Ketubot 111b",
+   "shape": "eyewitness wonder report",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "kiddushin_012",
+   "ref": "Kiddushin 21b",
+   "shape": "speech / dialogue",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C2",
+     "R-C5"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "kiddushin_022",
+   "ref": "Kiddushin 30a",
+   "shape": "speech / dialogue",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C2",
+     "R-C5"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "kiddushin_028",
+   "ref": "Kiddushin 31b",
+   "shape": "speech / dialogue",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C2",
+     "R-C5"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "kiddushin_051",
+   "ref": "Kiddushin 45b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "kiddushin_055",
+   "ref": "Kiddushin 50a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "kiddushin_078",
+   "ref": "Kiddushin 72a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "kiddushin_085",
+   "ref": "Kiddushin 80b",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "gittin_031",
+   "ref": "Gittin 34a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "gittin_053",
+   "ref": "Gittin 46b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "gittin_057",
+   "ref": "Gittin 52a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "gittin_092",
+   "ref": "Gittin 63b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5",
+     "R-B4"
+    ]
+   }
+  },
+  {
+   "id": "gittin_098",
+   "ref": "Gittin 69b",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "gittin_099",
+   "ref": "Gittin 69b",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "gittin_100",
+   "ref": "Gittin 69b",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "gittin_110",
+   "ref": "Gittin 89a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "gittin_111",
+   "ref": "Gittin 89a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "gittin_112",
+   "ref": "Gittin 89a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_008",
+   "ref": "Yevamot 31a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "yevamot_015",
+   "ref": "Yevamot 45b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": []
+   }
+  },
+  {
+   "id": "yevamot_014",
+   "ref": "Yevamot 45a",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_017",
+   "ref": "Yevamot 45b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "borderline",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "yevamot_016",
+   "ref": "Yevamot 45b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   }
+  },
+  {
+   "id": "yevamot_027",
+   "ref": "Yevamot 61b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-B1"
+    ],
+    "claude": [
+     "R-C5",
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_030",
+   "ref": "Yevamot 63a",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C5",
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_031",
+   "ref": "Yevamot 63a",
+   "shape": "single act with an outcome, or a first-person incident",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C5",
+     "R-C2"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_084",
+   "ref": "Yevamot 116b",
+   "shape": "incident_plus_ruling",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-B1"
+    ],
+    "claude": []
+   }
+  },
+  {
+   "id": "yevamot_086",
+   "ref": "Yevamot 120b",
+   "shape": "eyewitness wonder report",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C4"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_099",
+   "ref": "Yevamot 122b",
+   "shape": "a rule misapplied",
+   "v1_gemini": "not",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story",
+   "v2_rules": {
+    "gemini": [
+     "R-C1"
+    ],
+    "claude": [
+     "R-C1"
+    ]
+   }
+  },
+  {
+   "id": "yevamot_100",
+   "ref": "Yevamot 122b",
+   "shape": "a rule misapplied",
+   "v1_gemini": "not",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not",
+   "v2_rules": {
+    "gemini": [
+     "R-B4",
+     "R-C5"
+    ],
+    "claude": [
+     "R-B4"
+    ]
+   }
+  }
+ ],
+ "v1_agreed_not_on_yes": [
+  {
+   "id": "review:Gittin 43b_4-4",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  },
+  {
+   "id": "review:Ketubot 100b_16-16",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not"
+  },
+  {
+   "id": "review:Ketubot 103b_24-25",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not"
+  },
+  {
+   "id": "review:Ketubot 105a_13-13",
+   "v2_gemini": "not",
+   "v2_claude": "not",
+   "rep_gemini": "not",
+   "rep_claude": "not"
+  },
+  {
+   "id": "review:Ketubot 109b_12-12",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  },
+  {
+   "id": "review:Ketubot 111b_12-12",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  },
+  {
+   "id": "review:Ketubot 111b_21-21",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  },
+  {
+   "id": "review:Ketubot 111b_22-22",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  },
+  {
+   "id": "review:Ketubot 69a_12-12",
+   "v2_gemini": "story",
+   "v2_claude": "not",
+   "rep_gemini": "story",
+   "rep_claude": "not"
+  },
+  {
+   "id": "review:Ketubot 85b_5-5",
+   "v2_gemini": "story",
+   "v2_claude": "story",
+   "rep_gemini": "story",
+   "rep_claude": "story"
+  }
+ ],
+ "his_no_to_story": [
+  {
+   "id": "review:Gittin 19a_15-15",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific incident where Rav Pappa gave a ruling/instruction to a specific individual, Pappa the ox herder. According to R-C0, an incident followed by a ruling counts as a story, as it refers to an event that happened rather than a purely hypothetical legal case.",
+    "claude": "A bare report that Rav Pappa instructed Pappa the ox herder, cited as precedent; nothing follows."
+   }
+  },
+  {
+   "id": "review:Gittin 19b_6-6",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2",
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific incident where Rav Yehuda is in distress (an emotional state/action) and Ulla responds to him with a ruling/advice. This interaction between post-biblical figures constitutes a story under R-C0 and R-C2, as it contains conflict (Rav Yehuda's struggle) and a resolution through dialogue.",
+    "claude": "Rav Yehuda's practice of struggling to read, followed by Ulla's advice: speech with no conflict and nothing following."
+   }
+  },
+  {
+   "id": "review:Gittin 32b_2-2",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event that happened (Ravina finding Rav Nachman bar Yitzhak leaning on a door) rather than a hypothetical legal case. Under R-C0 and R-C2, the physical action of leaning and the interaction between the two rabbis constitute enough of an event to be considered a story.",
+    "claude": "A frame (Ravina found him leaning on a door) for an unresolved halakhic dilemma. Nothing happens and nothing follows."
+   }
+  },
+  {
+   "id": "review:Gittin 34a_13-13",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C2",
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage describes a specific event involving 'a certain man' who made a conditional statement and later attempted to change it, followed by a legal discussion of the consequences. Under rule R-C0, an incident involving a specific person followed by a ruling or legal analysis counts as a story.",
+    "claude": "A man's conditional statement and later contrary claim, used as a legal case and analyzed; only speech, no action or resolution beyond legal discussion."
+   }
+  },
+  {
+   "id": "review:Gittin 27a_7-7",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This is a halakhic story where an incident (a bill of divorce found in a flax house) is followed by a practical ruling by Rabba. According to R-C0, such narrated events followed by a ruling count as stories.",
+    "claude": "Rabba 'performed an action' on a found bill of divorce; the incident is only alluded to and the passage is a dispute about its circumstances, not enough of the incident is given."
+   }
+  },
+  {
+   "id": "review:Gittin 46a_12-12",
+   "tractate": "Gittin",
+   "cited_in_rules": true,
+   "v1": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C1",
+     "R-B1"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage quotes an incident from the Mishnah involving a specific event (a man vowing to divorce his wife and doing so) followed by a rabbinic ruling, which qualifies as a story under R-C0. Per R-C1, the Talmud's citation of a Mishnah story is included in the catalogue.",
+    "claude": "The Tzaidan incident is only alluded to (\"etc.\"). The segment is the Gemara's question about why the mishna cites it."
+   }
+  },
+  {
+   "id": "review:Gittin 59a_16-16",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5",
+     "R-B4"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event that happened (Bonyam ben Nunyam sending a gift to Rabbi Yehuda HaNasi) rather than a hypothetical legal case. Under R-C0, an event that happened counts as a story even if it is used to illustrate a point about the nature of certain fabrics.",
+    "claude": "A single report that a gift of fabrics was sent to Rabbi, followed by glosses on the fabric terms; nothing follows."
+   }
+  },
+  {
+   "id": "review:Gittin 59a_19-19",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C4"
+    ],
+    "claude": [
+     "R-C2",
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage contains an embedded story within Rav Mordekhai's speech, describing a specific one-time event where Rav Ashi was standing with one foot on a step and provided a ruling. This meets the criteria of an incident followed by a ruling being a story, even when embedded in a dictum.",
+    "claude": "An account of how a ruling was transmitted and its attribution corrected; speech and quasi-speech (sent, said) with no real conflict or event beyond it."
+   }
+  },
+  {
+   "id": "review:Gittin 74b_4-4",
+   "tractate": "Gittin",
+   "cited_in_rules": true,
+   "v1": {
+    "gemini": "not",
+    "claude": "story"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C1"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This is a Talmudic citation of a story from the Mishnah (R-C1). It describes a specific event that happened ('a certain man...') followed by a rabbinic ruling, which qualifies as a story under R-C0.",
+    "claude": "The passage only alludes to the Tzaidan incident (\"etc.\") and asks what the Mishnah means. The incident itself is not told here."
+   }
+  },
+  {
+   "id": "review:Gittin 80b_1-2",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This is an incident-plus-ruling story where a specific event (a bill of divorce written with a governor's name) leads to a legal dilemma and a resolution by Rabba. According to R-C0, such cases are considered stories because they narrate an event that happened rather than a hypothetical case.",
+    "claude": "A legal query about a bill of divorce is sent and answered; this is only quasi-speech (sending a question), with no event or conflict."
+   }
+  },
+  {
+   "id": "review:Gittin 82a_4-4",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This is an incident where people came before a rabbi with a specific case and he issued a ruling. According to R-C0, an incident followed by a ruling counts as a story, as it narrates an event that happened rather than a hypothetical legal problem.",
+    "claude": "The incident is only alluded to: they came before Rabbi Ami and he ruled. Not enough of the incident is given."
+   }
+  },
+  {
+   "id": "review:Gittin 86b_24-25",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2",
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific historical event where a request was sent, but the recipient died before answering, leading to a resolution through his son's testimony. This contains action, conflict (the death interrupting the inquiry), and a resolution, fitting the definition of a story about rabbis.",
+    "claude": "A halakhic query sent and an answer relayed; Rav Huna's death is incidental. Quasi-speech acts with no conflict."
+   }
+  },
+  {
+   "id": "review:Gittin 88a_11-11",
+   "tractate": "Gittin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   },
+   "v2_reason": {
+    "gemini": "This is a classic 'incident followed by a ruling' story where a specific case ('a certain marriage contract') is brought before a rabbi, leading to a legal conflict and resolution between Rabbi Abbahu and Rabbi Yirmeya.",
+    "claude": "A marriage contract was brought before Rabbi Abbahu, he meant to validate it, and Rabbi Yirmeya objected: an incident with a response."
+   }
+  },
+  {
+   "id": "review:Ketubot 111a_23-25",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C3",
+     "R-C4"
+    ],
+    "claude": []
+   },
+   "v2_reason": {
+    "gemini": "Segment [2] contains an embedded story (ma'aseh) about a specific man who intended to leave Eretz Yisrael but changed his behavior after hearing a teaching. While segments [3] and [4] are part of the same letter, they consist of advice and dicta rather than narrative events.",
+    "claude": "Ilfa's incident: a man lovesick for a woman wanted to leave the Land, heard this teaching, and stayed and suffered until he died. Segments 3-4 are advice in a letter."
+   }
+  },
+  {
+   "id": "review:Ketubot 40b_11-11",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event where Rav Pappa traveled to a different location and spoke with Rav Shimi bar Ashi. This contains action beyond a simple speech-act and involves a conflict regarding the correct attribution of a legal tradition.",
+    "claude": "Transmission of a tradition and its variant; speech only, without conflict."
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_0-0",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "not",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "not",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-B2",
+     "R-B4"
+    ],
+    "claude": [
+     "R-B4"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage consists of the Gemara's legal analysis and commentary on a story that began in the preceding context segment. Under rules R-B2 and R-B4, the legal discussion and commentary following a narrative are not considered part of the story itself.",
+    "claude": "The passage holds the resolution of the incident (Rabbi Yonatan forced the sons to feed their father, hence the man kissed his foot); the remainder is Gemara commentary and not part of the story."
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_0-1",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event in a study hall involving named rabbis, featuring a physical setting, a speech act that triggers a conflict (the crowd clamoring), and a resolution through dialogue between Rav Yosef and Rav Hamnuna.",
+    "claude": "A study-hall scene: a teaching, a clamour of objection, and Rav Yosef's defence. Mostly speech, but with conflict."
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_10-10",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": []
+   },
+   "v2_reason": {
+    "gemini": "The passage contains a narrative event where Rav Yitzḥak bar Yosef finds Rabbi Abbahu in a specific location (the congregation of Usha), engages in dialogue with him, and repeats a teaching forty times until he masters it. This constitutes a sequence of actions and a change in the character's state of knowledge, going beyond a bare report or a simple dictum.",
+    "claude": "Rav Yitzhak bar Yosef found Rabbi Abbahu at Usha, asked who taught the halakha, then learned it from him forty times until it was fixed in his memory: a narrated event that goes beyond speech."
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_4-5",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": []
+   },
+   "v2_reason": {
+    "gemini": "Segment [2] narrates a specific incident involving Rabbi Banai and orphans who came before Shmuel, followed by Shmuel's ruling. Under R-C0, an incident followed by a ruling counts as a story, while segment [3] is excluded as Gemara commentary/analysis under R-B4.",
+    "claude": "Orphans' property is held by Rabbi Banai; they come before Shmuel, who orders support. Brief, but an incident with a ruling."
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_7-7",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event where Rabbi Ami and Rabbi Asi intended to act and were challenged by Rabbi Ya’akov bar Idi. This contains both a mental action/intent and a speech-act involving conflict and implied change, satisfying the criteria for a rabbinic story.",
+    "claude": "The rabbis only intended to rule and were rebuked. Speech only, but with conflict."
+   }
+  },
+  {
+   "id": "review:Ketubot 56a_2-2",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This passage narrates a specific event where Rav Hanina sat before Rabbi Yannai and was rebuked; it contains both a physical action and a dialogue with conflict and implied change.",
+    "claude": "Purely speech — R. Yannai rebukes Rav Hanina's ruling and sends him out — but with clear conflict."
+   }
+  },
+  {
+   "id": "review:Ketubot 68a_16-16",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C5"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage contains a report of a specific incident ('Ma'aseh') where Rabbi Yehuda HaNasi took action by giving a specific amount to an orphan. Under rule R-C0, an incident followed by a ruling or action counts as a story, distinguishing it from the bare reports or legal discussions described in R-C5.",
+    "claude": "The incident is only alluded to (Rabbi gave one-twelfth) as evidence in a legal argument. Too little of the incident is given."
+   }
+  },
+  {
+   "id": "review:Ketubot 69a_0-0",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event involving Rav, Rabbi Yehuda HaNasi, and Rabbi Ḥiyya, including a physical action (attaching a question between lines of a letter) and a dialogue with conflict/resolution.",
+    "claude": "Rav sends a halakhic question in a letter, R. Hiyya asks for clarification, and Rabbi answers. Quasi-speech acts with no conflict."
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_10-10",
+   "tractate": "Ketubot",
+   "cited_in_rules": true,
+   "v1": {
+    "gemini": "borderline",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-B1"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "This passage narrates a specific event that happened (a question asked in a specific location with an eyewitness present) followed by a ruling, which qualifies as a story under R-C0. Per R-B1, the introductory formula and the alternative version frame are included.",
+    "claude": "A halakhic question and answer reported by an earwitness; speech only, no conflict and no event beyond the exchange."
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_8-8",
+   "tractate": "Ketubot",
+   "cited_in_rules": true,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "not",
+    "claude": "story"
+   },
+   "rep": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C1",
+     "R-C5"
+    ],
+    "claude": [
+     "R-C1",
+     "R-S1"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage is a quotation of a Mishnah (Nazir 19b) used as a legal precedent, which under R-C1 belongs to the Mishnah catalogue. Furthermore, it is a bare report of a ruling without a narrative event or continuation, falling under the exclusion described in R-C5.",
+    "claude": "Queen Helene's vow during her son's war, her immigration, and Beit Hillel's ruling, quoted by the Talmud from the Mishnah: incident plus ruling about a post-biblical figure."
+   }
+  },
+  {
+   "id": "review:Ketubot 88a_8-8",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-B1"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage describes a specific incident that came before a rabbi for a ruling, which qualifies as a story under R-C0. It includes the opening formula attributing the event to Rav Aha Sar HaBira as per R-B1.",
+    "claude": "The incident before Rabbi Yitzhak is only alluded to. The passage is his legal statement."
+   }
+  },
+  {
+   "id": "review:Ketubot 8a_6-6",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates specific historical events involving rabbis (Levi and Rav Asi) attending weddings and performing specific actions (reciting blessings), which fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "claude": "A bare report of how many blessings Levi and Rav Asi recited at weddings, cited as evidence of practice. Nothing follows."
+   }
+  },
+  {
+   "id": "review:Ketubot 8a_13-13",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event that happened (Rav Haviva visiting a circumcision) followed by a ruling, which fits the definition of a story under rule R-C0.",
+    "claude": "A bare report of the blessing Rav Haviva recited, followed only by a halakhic ruling against him; nothing follows the act."
+   }
+  },
+  {
+   "id": "review:Ketubot 8b_11-12",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "story",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C3"
+    ],
+    "claude": [
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage begins with a habitual frame describing the institution of ten cups, but segment 3 narrates a specific sequence of events: the addition of four cups, the people becoming intoxicated, and the Sages subsequently rescinding the ordinance.",
+    "claude": "A history of a rabbinic enactment about cups of wine in a house of mourning, not a narrated incident involving particular people."
+   }
+  },
+  {
+   "id": "review:Ketubot 99b_7-9",
+   "tractate": "Ketubot",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event where Rav Naḥman visited Sura and was approached by two rabbis with a legal problem. This interaction contains conflict and dialogue that leads to a specific ruling, satisfying the criteria for a halakhic story.",
+    "claude": "Rav Nahman's arrival frames a purely legal question-and-answer exchange with no conflict or event beyond speech."
+   }
+  },
+  {
+   "id": "review:Kiddushin 32a_8-12",
+   "tractate": "Kiddushin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "borderline",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C2"
+    ],
+    "claude": [
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific incident where Rav Yehuda corrects his father's teaching, followed by Shmuel's intervention and rebuke. This contains action and conflict beyond mere legal discussion, fitting the definition of a story about rabbis.",
+    "claude": "A teaching exchange where a son corrects his father and Shmuel rebukes the son. Dialogue only, but with interpersonal conflict."
+   }
+  },
+  {
+   "id": "review:Kiddushin 39a_1-1",
+   "tractate": "Kiddushin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C5",
+     "R-C2"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates specific actions and interactions between rabbis (Levi asking Shmuel to supply food, and Rav Avya and Rabba bar Rav Hanan supplying each other), which constitutes a story under R-C0 rather than a hypothetical legal case.",
+    "claude": "Levi's request and the rabbis' practice of supplying each other are reported as evidence for a halakhic position. Nothing happens and nothing follows."
+   }
+  },
+  {
+   "id": "review:Kiddushin 39a_12-13",
+   "tractate": "Kiddushin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [],
+    "claude": [
+     "R-C2",
+     "R-C5"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "The passage narrates a specific event where Rav Yosef was planting seeds and was challenged by Abaye, followed by Rav Yosef's subsequent retraction based on the precedent of Rav's actions. This fits the definition of an incident involving rabbis followed by a ruling or resolution.",
+    "claude": "Rav Yosef plants mixed seeds, Abaye challenges him, and after a legal dialogue Rav Yosef retracts; this is mostly halakhic dialogue with conflict and implied change, but has little action."
+   }
+  },
+  {
+   "id": "review:Kiddushin 52a_4-6",
+   "tractate": "Kiddushin",
+   "cited_in_rules": false,
+   "v1": {
+    "gemini": "not",
+    "claude": null
+   },
+   "v2": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "rep": {
+    "gemini": "story",
+    "claude": "not"
+   },
+   "v2_rules": {
+    "gemini": [
+     "R-C1"
+    ],
+    "claude": [
+     "R-C5",
+     "R-C1"
+    ]
+   },
+   "v2_reason": {
+    "gemini": "Segment [2] contains a citation of a story from the Mishnah ('An incident occurred involving five women...'). According to R-C1, while the original Mishnah story belongs to the Mishnah, the Talmud's quotation of it is considered a Talmudic story.",
+    "claude": "The Mishnah incident is only alluded to by its heading; the passage is Rav's legal derivations from it."
+   }
+  }
+ ],
+ "his_no_story_per_model": {
+  "v1": {
+   "gemini": 10,
+   "claude": 2
+  },
+  "v2": {
+   "gemini": 32,
+   "claude": 6
+  },
+  "repeat": {
+   "gemini": 32,
+   "claude": 6
+  }
+ }
+}

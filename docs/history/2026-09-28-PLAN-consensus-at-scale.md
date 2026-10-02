@@ -4,10 +4,13 @@
 > cause was our rule register, not the bet: it lacked Jeff's July rule that an incident
 > followed by a ruling can be a story (now R-C0), and R-C5 carried a gloss of ours saying
 > the opposite. Both fixed in `STORY_RULES.md`. Next is **phase 1b**
-> ([`consensus-1b-corrected-register`](../../work/2026-09-28-consensus-1b-corrected-register.md)),
+> ([`consensus-1b-corrected-register`](../../work/done/2026-09-28-consensus-1b-corrected-register.md)),
 > blocked only on money: Gemini hit its monthly spend cap and Anthropic is out of credit.
 > **2026-09-29:** money unblocked; the judge's budget raised to $75; the twin-pass wording
 > and the verdict-reading defect fixed. **Phase 1b is ready to run.**
+> **2026-10-01: phase 1b — no-go again** (finding §10). §4 unchanged.
+> **2026-10-02: phase 2 rewritten (§5)** — the panel routes and labels, it clears nothing; it no
+> longer waits for a go.
 > Phase 2 stays blocked until a go. Full diagnosis:
 > [`consensus-phase1`](../findings/2026-09-28-consensus-phase1.md) §7–§9.
 
@@ -102,26 +105,32 @@ The real, measured error rate comes from the phase 2 audit, round by round.
 - **Eruvin: untouched.** No detector run, no rule, no prompt. It is the clean exam for the
   whole approach once it works; using it earlier spends the only one we have.
 
-## 5. Phase 2 — the first round under consensus (only on a go)
+## 5. Phase 2 — the first round with the panel as a router (rewritten 2026-10-02)
 
 **Item:** [`consensus-2-yevamot-round`](../../work/2026-09-28-consensus-2-yevamot-round.md).
 
-- **Candidates:** the union, by overlap, of the three same-code Yevamot runs on disk
-  (`results/v11/twin_pass/yevamot_full_twinall.json`, `yevamot_full_twin2.json`,
-  `yevamot_full_twin2_r2.json`), each carrying `found_in: k/3`. Overlap chains are not
-  merged transitively (A∩B, B∩C ≠ one candidate) — tested. `mishnah_stories[]` is read and
-  kept as its own tier (R-C1), decided explicitly in a comment.
-- **Tiers:** consensus = both models agree and neither is `unsure`; contested = anything
-  else. **k is not a threshold in round 1** — it ranks the queue (fewest runs first).
-- **Jeff's page:** ≤25 contested, ranked (splits on a rule he has never ruled on first),
-  **plus an audit sampled from both consensus tiers** (~5 consensus-story, ~5
-  consensus-not), shuffled in and not marked as audit.
-- **Every verdict:** into a new Yevamot golden as *his* label (builder pattern of
-  `build_gittin_golden.py`); audit agreement recorded as the live error rate; a
-  disagreement becomes a regression case for the prompt; a reason no rule covers becomes a
-  candidate rule in STORY_RULES, in his words.
-- **The email** asks `jeff:review-error-rate` with the phase 1 indication and says the
-  audit will turn it into a measurement; carries the free ask `jeff:scope-edges`.
+**Why the rewrite (Simon, 2026-10-02).** Phases 1 and 1b were no-go under §4, and §4 stands:
+agreement is not enough to mark a passage done. But 1b's agreed errors are few and all at
+the borderline: 2.0% of his list stories rejected, 3.1% of his `no`s accepted, and 2–3 of
+those accepted `no`s read as stories his early labels missed (finding §10). So
+phase 2 no longer waits for a go; it changes what agreement is used for. **The panel sorts
+Jeff's queue and labels tiers. It never deletes and never finalises.**
+
+- **Candidates:** every proposal of the three same-code Yevamot runs on disk, any class,
+  unioned by overlap (not transitively), each with `found_in: k/3`. `mishnah_stories[]` kept
+  as its own tier (R-C1).
+- **Tiers:** `agreed_story` (a catalogue candidate, sampled for audit), `split` (to Jeff,
+  ranked: different rules cited first), `agreed_not_kept` (kept and flagged, sampled for
+  audit; a story on his list is never removed), `mishnah`.
+- **Jeff's page:** ≤25 splits + 5 `agreed_story` + 5 `agreed_not_kept`, shuffled, audit unmarked.
+- **What it measures:** per-tier audit agreement, Wilson-bounded, round by round. That is the
+  real error rate §4 said phase 1 could not give.
+- **Escalation, fixed before the round:** ≥2 of 5 `agreed_story` rejected, or any accepted
+  story among 5 `agreed_not_kept` → that tier gets full review next round.
+- **Every verdict** into a new Yevamot golden as his label; a disagreement becomes a regression
+  case tagged with its edge class; a reason no rule covers becomes a candidate rule in his words.
+- **The email** carries `jeff:report-vs-incident` with three of his February `no`s that read as
+  stories under his July rule, then `jeff:review-error-rate` and `jeff:scope-edges`.
 
 ## 6. Shipped now, separately
 
@@ -155,3 +164,20 @@ would have needed an `n/a` answer to avoid sending everything to contested.
 It changes no detector default or shipped artifact, writes no machine verdict into a
 golden, does not touch `evaluate_golden.py` or the blind lists, and does not touch
 Eruvin. It does not re-propose Ein Yaakov, a cold read, or a fixed panel.
+
+## 9. Lenses — the rule panel, revived (2026-10-02)
+
+§7 cut the per-rule judges with *"decompose only where a rule fails."* 1b (finding §10g)
+showed which: every agreed error sits on one feature: report vs incident, speech without
+conflict, habit, an alluded-to incident, commentary, scope. So the panel comes back, scoped
+to the evidence and tested before it is used:
+
+1. [`rule-panel-lenses`](../../work/2026-10-02-rule-panel-lenses.md): one narrow judge per
+   feature, the verdict computed by a decision table in code, both arms, scored on the same
+   997 units against 1b's single lens. No Jeff time.
+2. [`jeff-feature-questions`](../../work/2026-10-02-jeff-feature-questions.md): ask him
+   about feature boundaries with contrast pairs; record **his own sureness** on every answer;
+   rank his page by what one answer would settle. After 1.
+
+Phase 2 (§5) uses whichever panel the lenses item shows matches him better.
+
