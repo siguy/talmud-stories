@@ -42,7 +42,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Screen the untried triage-recall options before spending another tractate run](work/2026-09-03-triage-recall-options.md) | triage | — | — |
 | [Split runs of formulaically parallel stories — we return one representative](work/2026-09-07-formulaic-cluster-splitting.md) | detection | ketubot, kiddushin, gittin, yevamot | — |
 | [Stage 1 counts NARRATIVE_EVENT and ignores HABITUAL — decide whether that is right](work/2026-09-07-habitual-is-narrative-evidence.md) | triage | ketubot, kiddushin, gittin, yevamot | — |
-| [Consensus 2 — the first Yevamot round under consensus (contested + audit)](work/2026-09-28-consensus-2-yevamot-round.md) | review, classification | yevamot | **blocked:** `2026-09-28-consensus-1b-corrected-register`, `2026-09-28-review-page-scope-and-quote` · awaiting `jeff:report-vs-incident` |
+| [Consensus 2 — the first Yevamot round with the panel as a router (it sorts Jeff's queue; it clears nothing)](work/2026-09-28-consensus-2-yevamot-round.md) | review, classification | yevamot | — |
 | [The shipped twin-pass question carries the R-C5 gloss — correct and measure it](work/2026-09-28-twin-pass-r-c5-wording.md) | detection | yevamot | awaiting `jeff:report-vs-incident` |
 
 <!-- board-live:start -->
@@ -56,8 +56,8 @@ staleness check: it changes whenever anyone edits anything.*
 | `span-truncation-rate` | `talmud-stories` | **2 FILES** |
 | `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `main` | `recent-work-plans-d0818b` | clean |
-| `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | **12 FILES** |
+| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | clean |
+| `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | **3 FILES** |
 <!-- board-live:end -->
 
 ## Done — 47 items, never deleted
@@ -111,4 +111,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Consensus 1b — re-run the phase 1 test on the corrected register (R-C0 restored, R-C5 gloss removed)](work/done/2026-09-28-consensus-1b-corrected-register.md) | classification, review | [2026-09-28-consensus-phase1.md](docs/findings/2026-09-28-consensus-phase1.md) |
 | [Review page — an "out of scope" answer, and the doubled Hebrew quote](work/done/2026-09-28-review-page-scope-and-quote.md) | review | — |
 | [Read an old `correct` against the call Jeff was shown — map_verdict_vocabularies and build_ruler](work/done/2026-09-28-verdicts-read-against-the-call-shown.md) | classification | [2026-09-29-verdicts-read-against-the-call-shown.md](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md) |
-<!-- board-checksum: 600a086bef96c4d5 -->
+<!-- board-checksum: 249aaa9b91a43348 -->
