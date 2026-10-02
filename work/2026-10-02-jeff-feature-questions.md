@@ -11,6 +11,12 @@ superseded_by:
 
 # Ask Jeff about classes, not passages
 
+> **Progress, 2026-10-02.** Steps 1 and 4 done: `scripts/build_contrast_pairs.py` →
+> `results/consensus/contrast_pairs.json` (4 questions × 2 passages, each choice checked
+> against the panel's deciding feature), and the email in Simon's Gmail drafts
+> (`comms/2026-10-02-email-jeff-DRAFT.md`). **Still open:** step 2 (his own sureness, required,
+> on the review page) and step 3 (page ranking). Finish when his answers come back.
+
 **Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), [`comms/JEFF.md`](../comms/JEFF.md),
 [`docs/STORY_RULES.md`](../docs/STORY_RULES.md), and the rule-panel finding
 (`docs/findings/2026-10-02-rule-panel-lenses.md`). Eruvin untouched.

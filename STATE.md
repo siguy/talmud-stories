@@ -163,12 +163,17 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:scope-edges` | Your scope is *"rabbis and post-biblical figures"* (2026-09-23). Three edges we read as **in** — confirm or correct: (1) Elijah appearing to a rabbi (Gittin 6b, Kiddushin 40a); (2) a biblical figure cited *inside* a rabbinic story (Kiddushin 32b — Rabban Gamliel serving, justified by Abraham); (3) post-biblical non-rabbis — Titus, King Yannai, Agrippa. |
-| `jeff:report-vs-incident` | Where is the line between a **report** of what someone did (not a story — your Yevamot 15a etrog, 106b Mar Zutra, 17a, Ketubot 15a) and an **incident followed by a ruling** (a story — your July cow case)? Our proposal: *what someone did or used to do, cited as evidence or practice, with no one responding* is a report; *something happens to someone and a person responds — a court, a ruling, an action* is a story. Confirm, or correct with cases. Show both sides: Ketubot 85b (Toviya), Gittin 43b (the court forces the master), Gittin 69b (*"he treated him and he was healed"*), Ketubot 111b (*"I myself saw…"*), Ketubot 67b (R. Abba's coins, habitual). **Added 2026-10-02 — three of your own February `no`s that both models now read as stories under the July rule:** Ketubot 50b:4 (orphan daughters come before Shmuel, who orders R. Banai to support them), 50a:10 (R. Yitzḥak finds R. Abbahu at Usha and learns the halakha forty times), 111a:23 (the lovesick man who stayed in the Land until he died, told in a letter). Were those `no`s about the passage, or about the span we showed you? |
+| `jeff:alluded-incident` | An incident told in a line or two inside a legal argument, as evidence for one side: a story? Cases: Kiddushin 80b (the widow at the grave), Yevamot 107b (Pishon's wife). |
+| `jeff:speech-conflict-line` | In a scholarly exchange, when does a sharp remark make it conflict (borderline, R-C2) rather than discussion? Cases: Ketubot 21b (Rav Ashi to Ameimar), 53a (Rav Ḥisda to Ravin bar Ḥanina). |
+| `jeff:custom-without-event` | A habit with no one-time event: a story? Cases: Ketubot 61a (two pious men and Elijah), 67b (R. Abba's coins). |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
-- `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident
-<!-- board-checksum: 224bd618f5f1dc5b -->
+
+**Answered — these can conclude now, and their `awaiting:` is stale:**
+
+- `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
+<!-- board-checksum: 2942e44a45362548 -->
