@@ -4,10 +4,12 @@
 > cause was our rule register, not the bet: it lacked Jeff's July rule that an incident
 > followed by a ruling can be a story (now R-C0), and R-C5 carried a gloss of ours saying
 > the opposite. Both fixed in `STORY_RULES.md`. Next is **phase 1b**
-> ([`consensus-1b-corrected-register`](../../work/2026-09-28-consensus-1b-corrected-register.md)),
+> ([`consensus-1b-corrected-register`](../../work/done/2026-09-28-consensus-1b-corrected-register.md)),
 > blocked only on money: Gemini hit its monthly spend cap and Anthropic is out of credit.
 > **2026-09-29:** money unblocked; the judge's budget raised to $75; the twin-pass wording
 > and the verdict-reading defect fixed. **Phase 1b is ready to run.**
+> **2026-10-01: phase 1b — no-go again** (finding §10). §4 unchanged. Phase 2 stays blocked,
+> now awaiting `jeff:report-vs-incident`.
 > Phase 2 stays blocked until a go. Full diagnosis:
 > [`consensus-phase1`](../findings/2026-09-28-consensus-phase1.md) §7–§9.
 

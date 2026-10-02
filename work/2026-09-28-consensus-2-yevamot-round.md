@@ -3,7 +3,7 @@ title: Consensus 2 — the first Yevamot round under consensus (contested + audi
 capability: [review, classification]
 tractate: [yevamot]
 blocked_by: [2026-09-28-consensus-1b-corrected-register, 2026-09-28-review-page-scope-and-quote]
-awaiting: []
+awaiting: [jeff:report-vs-incident]
 writes: [scripts/pool_runs.py, scripts/route_consensus.py, tests/test_pool_runs.py, results/consensus/phase2/, validation/ui/, comms/, comms/JEFF.md, scripts/build_yevamot_golden.py, results/canonical/yevamot_canonical.json, tests/test_bookkeeping.py]
 finding:
 superseded_by:
@@ -15,6 +15,11 @@ superseded_by:
 > `docs/findings/2026-09-28-consensus-phase1.md` §7). This starts only on a **go** from
 > `consensus-1b-corrected-register`. The board cannot see "go"; this line and `blocked_by`
 > are the guard.
+>
+> **Still blocked, 2026-10-01.** Phase 1b was **also a no-go** (finding §10): 4–5 agreed
+> `story` on his `no`s and 8–9 list stories called `not` by both, against limits of 2.
+> The errors sit on the R-C0 / R-C5 line he has not drawn yet, so `awaiting:` now names that
+> question. Closing 1b cleared `blocked_by`; that does **not** mean go.
 
 **Self-contained.** Read the plan [`consensus-at-scale`](../docs/history/2026-09-28-PLAN-consensus-at-scale.md) §5, the phase 1 finding,
 and [`comms/JEFF.md`](../comms/JEFF.md). **Only on a phase 1 go.**

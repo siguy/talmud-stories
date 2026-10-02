@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     18 item(s) in work/done/
+closed     19 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -116,8 +116,8 @@ open       2026-08-30-eruvin-review-ui   ← blocked: 2026-08-30-eruvin-classifi
 open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classification
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
-open       2026-09-28-consensus-1b-corrected-register
-closed     10 item(s) in work/done/
+open       2026-09-28-consensus-2-yevamot-round   ← blocked: 2026-09-28-consensus-1b-corrected-register, 2026-09-28-review-page-scope-and-quote · awaiting: jeff:report-vs-incident
+closed     11 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -170,5 +170,6 @@ naming an empty file as a lost round buries the one that is not.
 Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
+- `2026-09-28-consensus-2-yevamot-round` — jeff:report-vs-incident
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident
-<!-- board-checksum: a78b0f079a95d8cc -->
+<!-- board-checksum: fbb2a38bcb011360 -->

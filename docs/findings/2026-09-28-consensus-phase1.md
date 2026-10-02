@@ -6,6 +6,12 @@ Item: [`consensus-1-test-the-bet`](../../work/done/2026-09-28-consensus-1-test-t
 **The Claude arm is incomplete**: the Anthropic account ran out of credit after 403 of
 997 calls (§5). The decision below does not depend on the missing calls, and §4 says why.
 
+**Update 2026-10-01 — §10, phase 1b on the corrected register: no-go again (same-data /
+indicated).** Agreement 80%, but 4 agreed `story` on his `no`s and 9 list stories called
+`not` by both (limits 2 and 2); a same-prompt repeat gives 5 and 8. The R-C0 fix overshot:
+Gemini's list `not`s fell 47 → 10 while its `story` on his `no`s rose 10 → 32. The Claude
+arm ran as Claude Code subagents, not the API (§10a).
+
 ## 1. The answer
 
 | §4 criterion | threshold | result | |
@@ -224,7 +230,7 @@ The same gloss is in the shipped twin-pass question (`_twin_prompt`, 2026-09-25)
 ## 9. What happens next
 
 1. **Re-run phase 1 on the corrected register** —
-   [`consensus-1b-corrected-register`](../../work/2026-09-28-consensus-1b-corrected-register.md).
+   [`consensus-1b-corrected-register`](../../work/done/2026-09-28-consensus-1b-corrected-register.md).
    Started 2026-09-28 and stopped at once: **the Gemini project hit its monthly spend cap**
    (all 997 calls `failed` with 429, counted, none scored; `full_v2_gemini.json` resumes
    them). Claude is also out of credit. **Both are Simon's to raise.** The §4 go/no-go is
@@ -236,3 +242,225 @@ The same gloss is in the shipped twin-pass question (`_twin_prompt`, 2026-09-25)
 3. **Ask him where the line falls** — `jeff:report-vs-incident` in `comms/JEFF.md`, with the
    cases above on both sides.
 4. **Phase 2 stays blocked** until a go.
+
+---
+
+## 10. Phase 1b — the same test on the corrected register (2026-10-01): **no-go again (same-data / indicated)**
+
+Item: [`consensus-1b-corrected-register`](../../work/done/2026-09-28-consensus-1b-corrected-register.md).
+Same labels (`labels.json`), same prompt file, register as corrected on 2026-09-28 (R-C0
+added, R-C5 gloss removed): prompt sha `f13af144f32d`, rules sha `88c035b7e7b1`.
+**Same-data:** the register was corrected after seeing §1–§7's failures on these very
+spans, so whatever this shows is *indicated*. The phase 2 audit would be the real test,
+and it does not start (§4 of the plan).
+
+### 10a. What ran — and the one change to the method
+
+| arm | model | how | ok / invalid / failed |
+|---|---|---|---|
+| Gemini, full | `gemini-3-flash-preview`, thinking off, T 0.1 | API, one call per span (resumed the 997 rows stopped by the 429 cap) | 992 / 5 / 0 |
+| Gemini, repeat | same | same | 994 / 3 / 0 |
+| Claude, full | **Opus 5.5 as a Claude Code subagent**, not `claude-opus-5` via the API | 40 subagents × 25 spans | 997 / 0 / 0 |
+| Claude, repeat | same | 40 subagents, **re-shuffled** (seed 2 vs 1) | 997 / 0 / 0 |
+
+- **Why the Claude arm changed:** on 2026-10-01 the Anthropic account still refused every
+  call (*"credit balance is too low"*, 997/997 failed, $0), and Simon declined to fund API
+  calls. He chose subagents over a second Gemini model (same family, correlated errors) or
+  no go/no-go. `scripts/judge_via_subagents.py` exports each span's **exact** user prompt
+  (from `judge_labelled_spans.user_prompt`) and the exact system prompt; each subagent
+  `cat`s the prompt file, then its 25 passage files, and writes one JSON object; `import`
+  runs every answer through the same `ask()` validation the API arms use.
+- **What differs from the API arm, and could matter:** (1) the model is Opus 5.5, not Opus
+  5; (2) 25 spans share one context, not one call each — the batches are seeded shuffles,
+  so batch-mates are unrelated, and the repeat re-shuffles them, so **the Claude spread
+  below includes batch-mate effects**; (3) the judge prompt arrives as a file, not as the
+  system prompt; (4) no structured-output constraint (every answer still parsed, 0 invalid).
+- **Two leaks closed before any answer was scored.** Span ids say `list:` for a story on his
+  list — the label itself — so files are numbered, never named; ids live in a `keys/` folder
+  no agent is told about. And a subagent's tool output is cut off past ~30 KB: the
+  transcripts were audited for each passage's last 150 characters, **5 of 997** run-1 spans
+  had not been seen in full, and those 5 were re-judged one file at a time by a fresh agent
+  (marked `rejudged` in the output). The repeat, told to `cat` at most 3 files at a time,
+  saw 997/997 in full.
+- **Cost:** Gemini not metered; Claude **$0 API**, ~81 subagents at ~150k tokens each on
+  Simon's plan. A crash in the Claude budget tally (it tripped on `list_misses.json`, a
+  list) was fixed first — the only edit to `judge_labelled_spans.py`.
+
+### 10b. The answer — §4, fixed in advance, not moved
+
+| §4 criterion | threshold | run 1 | repeat | |
+|---|---|---|---|---|
+| models agree with each other (review spans) | ≥ 80% | **291/363 = 80.2% [75.8–83.9]** | 295/364 = 81.0% [76.7–84.7] | met, by 0–4 spans |
+| agreed verdicts contradict his `no` | ≤ 2 | **4** agreed `story` (+ 2 agreed `borderline`) | **5** | **fails** |
+| his list stories called `not` (by both) | ≤ 2 | **9 of 444 [1.1–3.8%]** | **8 of 445** | **fails** |
+
+**No-go, on both runs.** The repeat moves each failing count by one; both stay at more than
+double the limit. Phase 2 stays blocked.
+
+**What the correction did** (v1 = §3, old register; Claude v1 answered 403 rows):
+
+| | v1 | 1b run 1 | 1b repeat |
+|---|---|---|---|
+| list stories Gemini alone calls `not` | **47** of 444 | **10** | 10 |
+| list stories Claude alone calls `not` | (none reached) | **39** of 448 | 38 |
+| list stories both call `not` | (≈43 projected) | **9** | 8 |
+| his `no`s Gemini calls `story` | 10 of 130 | **32** of 130 | 32 |
+| his `no`s Claude calls `story` | 2 of 108 | 6 of 130 | 6 |
+| agreed `story` on his `no` | 1 | **4** | 5 |
+| his reviewed `yes`es both call `not` | 10 of 76 | 1 (Ketubot 105a:13) | 1 |
+
+The fix landed on the miss it was aimed at and **overshot on the other side**: Gemini
+stopped dropping his list stories (47 → 10) and started accepting his rejections (10 → 32).
+Claude moved much less in either direction.
+
+### 10c. By stratum (run 1; `report --markdown`, never pooled only)
+
+| review spans | both answered | models agree [95%] | agreed on his `no`: right · `story` · `borderline` | agreed on his `yes`: right · `not` | splits: Gemini / Claude / neither sides with him |
+|---|---|---|---|---|---|
+| pooled | 363 | 291 = 80% [76–84] | 84/90 · 4 · 2 | 165/173 · 7 | 23 / 33 / 16 |
+| Ketubot (CIRCULAR) | 231 | 195 = 84% [79–88] | 73/77 · 3 · 1 | 95/96 · 1 | 7 / 15 / 14 |
+| Kiddushin (CIRCULAR) | 101 | 82 = 81% [72–88] | 4/5 · 0 · 1 | 69/76 · 6 | 13 / 4 / 2 |
+| Gittin (rule-informed) | 27 | **11 = 41% [24–59]** | 4/5 · 1 · 0 | 1/1 · 0 | 2 / **14** / 0 |
+| Yevamot (rule-informed) | 4 | 3 = 75% [30–95] | 3/3 · 0 · 0 | — | 1 / 0 / 0 |
+| cited in STORY_RULES | 35 | 29 = 83% [67–92] | 12/12 · 0 · 0 | 11/12 · 1 | 1 / 4 / 1 |
+| not cited | 328 | 262 = 80% [75–84] | 72/78 · 4 · 2 | 154/161 · 6 | 22 / 29 / 15 |
+| **list** (BLIND lists, positives only) | 444 | 378 = 85% [82–88] | — | 363/378 · **9** | 60 / 2 / 4 |
+| corrected (Ketubot, reported apart) | 185 | 151 = 82% [75–86] | 7/11 · 3 · 1 | 128/139 · 10 | 20 / 12 / 2 |
+
+Gittin — his hard, unlisted extras — is where the 80% breaks: 41%, and on 14 of 16 splits
+Claude is the one siding with him. Gemini calls `story` on **13 of his 18** Gittin `no`s.
+Ketubot's 84% is still carried by spans the detector itself had called `NOT_A_STORY` (§8).
+
+### 10d. Spread (Lesson 43)
+
+| | review moved | list moved | corrected moved |
+|---|---|---|---|
+| Gemini, same prompt, same day | 0 of 363 | 0 of 444 | 1 of 185 |
+| Claude subagents, same prompt, re-shuffled batches | **21 of 364 (5.8%)** | **34 of 448 (7.6%)** | 12 of 185 (6.5%) |
+
+**Claude's run-to-run spread is measured now — about 6–8% of verdicts — and it is ~20× Gemini
+the judge's.** It includes what batch-mates do, so it is an upper bound for one-call-per-span
+Claude, but it is the spread of the arm actually used. Every Claude-side count above carries
+it: of the 47, Claude says `not` to 22 in run 1 and 24 in the repeat, mostly different ones.
+
+### 10e. The 47 list misses of phase 1, one by one
+
+Gemini v1 called all 47 `not`. Shapes are §7b's hand sort. Cells read *run 1 / repeat*.
+
+| list id | ref | shape (§7b) | Gemini | Claude |
+|---|---|---|---|---|
+| ketubot_013 | Ketubot 20a | incident + ruling | story / story | story / **not** |
+| ketubot_022 | Ketubot 27a | a rule misapplied | story / story | story / story |
+| ketubot_038 | Ketubot 54a | incident + ruling | story / story | story / story |
+| ketubot_044 | Ketubot 60b | incident + ruling | story / story | **not** / **not** |
+| ketubot_046 | Ketubot 61a | single act / first-person | story / story | **not** / story |
+| ketubot_048 | Ketubot 61a | single act / first-person | story / story | story / **not** |
+| ketubot_047 | Ketubot 61a | single act / first-person | story / story | story / **not** |
+| ketubot_049 | Ketubot 61a | habitual practice | story / story | **not** / **not** |
+| ketubot_050 | Ketubot 61a | habitual practice | **not** / **not** | **not** / **not** |
+| ketubot_065 | Ketubot 65b | speech / dialogue | story / story | story / story |
+| ketubot_071 | Ketubot 67b | habitual practice | story / story | **not** / **not** |
+| ketubot_076 | Ketubot 67b | habitual practice | **not** / **not** | **not** / **not** |
+| ketubot_101 | Ketubot 85b | incident + ruling | story / story | story / story |
+| ketubot_112 | Ketubot 100b | single act / first-person | story / story | **not** / **not** |
+| ketubot_137 | Ketubot 111b | eyewitness wonder | story / story | story / story |
+| ketubot_141 | Ketubot 111b | eyewitness wonder | story / story | story / story |
+| ketubot_142 | Ketubot 111b | eyewitness wonder | story / story | story / story |
+| ketubot_143 | Ketubot 111b | eyewitness wonder | story / story | story / story |
+| kiddushin_012 | Kiddushin 21b | speech / dialogue | **not** / **not** | **not** / **not** |
+| kiddushin_022 | Kiddushin 30a | speech / dialogue | **not** / **not** | **not** / **not** |
+| kiddushin_028 | Kiddushin 31b | speech / dialogue | **not** / **not** | **not** / **not** |
+| kiddushin_051 | Kiddushin 45b | incident + ruling | story / story | story / story |
+| kiddushin_055 | Kiddushin 50a | incident + ruling | story / story | story / story |
+| kiddushin_078 | Kiddushin 72a | incident + ruling | story / story | **not** / **not** |
+| kiddushin_085 | Kiddushin 80b | single act / first-person | **not** / **not** | **not** / **not** |
+| gittin_031 | Gittin 34a | incident + ruling | story / story | story / **not** |
+| gittin_053 | Gittin 46b | incident + ruling | story / story | story / story |
+| gittin_057 | Gittin 52a | incident + ruling | story / story | **not** / **not** |
+| gittin_092 | Gittin 63b | incident + ruling | story / story | story / story |
+| gittin_098 | Gittin 69b | single act / first-person | story / story | story / story |
+| gittin_099 | Gittin 69b | single act / first-person | story / story | **not** / **not** |
+| gittin_100 | Gittin 69b | single act / first-person | story / story | **not** / **not** |
+| gittin_110 | Gittin 89a | incident + ruling | story / story | story / story |
+| gittin_111 | Gittin 89a | incident + ruling | story / story | **not** / story |
+| gittin_112 | Gittin 89a | incident + ruling | story / story | **not** / **not** |
+| yevamot_008 | Yevamot 31a | incident + ruling | story / story | story / story |
+| yevamot_015 | Yevamot 45b | incident + ruling | story / story | story / story |
+| yevamot_014 | Yevamot 45a | incident + ruling | story / story | **not** / **not** |
+| yevamot_017 | Yevamot 45b | incident + ruling | story / story | story / bord. |
+| yevamot_016 | Yevamot 45b | incident + ruling | story / story | story / story |
+| yevamot_027 | Yevamot 61b | incident + ruling | story / story | **not** / **not** |
+| yevamot_030 | Yevamot 63a | single act / first-person | story / story | **not** / **not** |
+| yevamot_031 | Yevamot 63a | single act / first-person | story / story | **not** / **not** |
+| yevamot_084 | Yevamot 116b | incident + ruling | story / story | story / story |
+| yevamot_086 | Yevamot 120b | eyewitness wonder | story / story | story / story |
+| yevamot_099 | Yevamot 122b | a rule misapplied | story / story | story / story |
+| yevamot_100 | Yevamot 122b | a rule misapplied | **not** / **not** | **not** / **not** |
+- **Moved to `story` under both models in both runs: 20 of 47** — 11 of the 21
+  incident-plus-ruling (Toviya's bequest, Ketubot 85b; Ketubot 54a; Kiddushin 45b, 50a;
+  Gittin 46b, 63b, 89a:110; Yevamot 31a, 45b ×2, 116b), all five eyewitness wonders
+  (Ketubot 111b ×4, Yevamot 120b), one single act (Gittin 69b:098), one speech case
+  (Ketubot 65b), and two of the three rules-misapplied cases (Ketubot 27a, Yevamot
+  122b:099). This is R-C0 working as written.
+- **Gemini moved 40 of 47; Claude moved 25 (run 1) / 22 (repeat).** Claude still says `not`
+  to 7 of the 21 incident-plus-ruling stories in run 1 and to 7 of the 10 single-act ones,
+  citing R-C5 — Claude reads *"the act has to lead somewhere"* more strictly than Gemini.
+- **Still `not` under all four answers: 7** — Ketubot 61a:050 and 67b:076 (habitual
+  practice), Kiddushin 21b, 30a, 31b (speech / dialogue), Kiddushin 80b:085 (incident only
+  alluded to), Yevamot 122b:100 (Gemara commentary on the Mishnah's story). Gemini's 7
+  remaining `not`s among the 47 are exactly these. Two list stories outside the 47 join
+  them: Kiddushin 26a:016 (run 1 only) and Yevamot 107b:072 (Pishon's wife, alluded to).
+
+**The 10 agreed `not`s on his reviewed `yes`es** (§1): **5 now agreed `story`** in both runs
+(Ketubot 85b:5 Toviya, 109b:12, 111b:12 / :21 / :22 the Land's wonders); **4 are splits** —
+Gemini `story`, Claude `not` (Ketubot 69a:12, 100b:16, 103b:24–25; Gittin 43b:4 split in
+run 1, agreed `story` in the repeat); **1 is still agreed `not`** in both runs (Ketubot
+105a:13, R-C5).
+
+### 10f. Did any of his `no`s flip to `story`? Yes — that is the cost of the correction
+
+**Agreed `story` on his `no`** (criterion 2), with his words:
+
+| span | his note | run 1 | repeat | the models' reading |
+|---|---|---|---|---|
+| Gittin 88a:11 | *"A legal problem and answer"* | story | story | R-C0: a contract brought before R. Abbahu, R. Yirmeya objects — new: v1 agreed `borderline` |
+| Ketubot 50b:4–5 | *"correct. It is a legal discussion with legal reasoning."* | story | story | R-C0: orphans come before Shmuel, who rules — new |
+| Ketubot 50a:10 | (no note; a `correct` on `NOT_A_STORY`, 2026-02-05) | story | Claude `borderline` | R. Yitzḥak finds R. Abbahu at Usha and learns a halakha forty times — new |
+| Ketubot 111a:23–25 | *"It is not even a story"* | story | story | R-C4: a man's love-sickness inside Ilfa's letter — unchanged from v1 |
+| Gittin 80b:1–2 | | not (split) | **story** | repeat only |
+| Ketubot 8b:11–12 | | not (split) | **story** | repeat only |
+
+Beyond the agreed ones, **Gemini alone now calls `story` on 32 of his 130 `no`s** (v1: 10) —
+13 of 18 on Gittin, 15 on Ketubot, 4 on Kiddushin — mostly citing nothing or R-C2, on
+passages he called a legal problem, a legal discussion, or speech. Claude does it on 6.
+
+### 10g. Why it failed — diagnosis, the way §7 did it (no new calls; no rule touched)
+
+Read one by one, every remaining error sits on a line **the register does not settle** —
+the models apply it as written.
+
+1. **The R-C0 / R-C5 line, from the other side** (criterion 2). R-C0 says an incident
+   followed by a ruling *can* be a story; it does not say when a case brought to a rabbi is
+   instead *"a legal problem and answer"* (his Gittin 88a words) or *"a legal discussion with
+   legal reasoning"* (Ketubot 50b). Without that line, Gemini reads R-C0 as covering every
+   case-before-a-rabbi, and three of his `no`s become agreed `story`. This is exactly the
+   open question `jeff:report-vs-incident` (`comms/JEFF.md`) — and his two notes here are
+   cases to send with it, on the *not a story* side. **Indicated** (4–5 spans, same-data).
+2. **The 2005 lists vs the 2026 rules** (criterion 3). Of the 9 list stories both call
+   `not`: 4 are scholarly exchanges (Kiddushin 21b, 26a, 30a, 31b) — R-C2 says speech
+   without conflict is not a story, his 2005 list keeps them; 2 are habitual practice with no
+   one-time event (Ketubot 61a, 67b) — R-C3/R-C5 as written say that stays a custom; 2 are
+   incidents only alluded to (Kiddushin 80b, Yevamot 107b) — R-C5's proposed line names
+   *"an incident only alluded to"* as not a story; 1 is the Gemara's commentary on a Mishnah
+   story (Yevamot 122b:100) — R-B4. The register's own principle is that his lists are
+   evidence and a rule that contradicts one is an *annotation*, not an edit. Four of the nine
+   contradict **our own** wording (R-C5's proposed line; the custom-stays-a-custom note);
+   five contradict **his** rules (R-C2 ×4, R-B4 ×1).
+   **Measured** on these 9; what it implies about the rules is a question for him.
+3. **Claude's spread is as large as the margin.** 6–8% of Claude verdicts move between
+   re-shuffled runs; criterion counts move by ±1. Both runs still fail by more than that,
+   so the decision does not depend on it — but any future pass by one span would.
+
+So nothing here argues for re-wording the prompt or moving a threshold. The next information
+is his: where the case-before-a-rabbi line falls, and whether a 2005-list story that R-C2,
+R-C3 or the alluded-incident line rejects is an exception or a sign the rule is too broad.
