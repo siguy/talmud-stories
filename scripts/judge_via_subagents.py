@@ -38,17 +38,19 @@ log = logging.getLogger('consensus-subagent')
 WORK_DIR = j.OUT_DIR / 'subagent'          # batch files + raw answers, kept as evidence
 
 
-def export(run, seed, batch):
+def export(run, seed, batch, system=None, sha=None, work_dir=None):
+    """Defaults are the single-question judge; run_rule_panel.py passes its own prompt."""
+    system, sha, work_dir = system or j.system_prompt(), sha or j.prompt_sha(), work_dir or WORK_DIR
     labels = json.loads((j.OUT_DIR / 'labels.json').read_text())
     units = j.select('full', labels)
     texts = {t: j.Text(t) for t in {u['tractate'] for u in units}}
     order = list(units)
     random.Random(seed).shuffle(order)
-    d = WORK_DIR / run
+    d = work_dir / run
     (d / 'batches').mkdir(parents=True, exist_ok=True)   # what the agents read: text only
     (d / 'keys').mkdir(parents=True, exist_ok=True)      # span ids -- never shown to an agent
     (d / 'answers').mkdir(parents=True, exist_ok=True)
-    (d / 'system_prompt.md').write_text(j.system_prompt())
+    (d / 'system_prompt.md').write_text(system)
     n = 0
     for i in range(0, len(order), batch):
         items = []
@@ -67,19 +69,21 @@ def export(run, seed, batch):
         n += 1
     (d / 'manifest.json').write_text(json.dumps({
         'run': run, 'seed': seed, 'batch': batch, 'batches': n, 'units': len(order),
-        'prompt_sha': j.prompt_sha(),
+        'prompt_sha': sha,
         'rules_sha': __import__('hashlib').sha256(j.RULES_PATH.read_bytes()).hexdigest()[:12],
         'exported': time.strftime('%Y-%m-%dT%H:%M:%S')}, indent=1))
-    log.info('exported %d units into %d batches under %s (prompt %s)', len(order), n, d, j.prompt_sha())
+    log.info('exported %d units into %d batches under %s (prompt %s)', len(order), n, d, sha)
 
 
-def import_(run, model):
-    d = WORK_DIR / run
+def import_(run, model, system=None, sha=None, work_dir=None, out_path=None, asker=None, prompt_name=None):
+    """`asker(backend, system, prompt, passage)` validates one answer; default is the judge's ask()."""
+    system, sha, work_dir = system or j.system_prompt(), sha or j.prompt_sha(), work_dir or WORK_DIR
+    asker = asker or j.ask
+    d = work_dir / run
     man = json.loads((d / 'manifest.json').read_text())
-    if man['prompt_sha'] != j.prompt_sha():
+    if man['prompt_sha'] != sha:
         raise RuntimeError('prompt changed since export -- re-export')
     labels = {u['id']: u for u in json.loads((j.OUT_DIR / 'labels.json').read_text())['units']}
-    system = j.system_prompt()
     # Spans an agent did not see in full (its tool output was cut off -- found by auditing
     # the transcripts) were re-judged one file at a time by a fresh agent; those answers
     # replace the originals, and the row says so.
@@ -115,17 +119,17 @@ def import_(run, model):
             else:
                 def backend(_s, _u):
                     raise RuntimeError('no answer from the subagent for this span')
-            ans = j.ask(backend, system, it['prompt'], set(it['passage']))
+            ans = asker(backend, system, it['prompt'], set(it['passage']))
             rows.append({**{k: u[k] for k in ('id', 'kind', 'tractate', 'key', 'label', 'evidence',
                                                'cited_in_rules', 'cells')},
                          'answers': {'claude': ans}, **({'rejudged': True} if rejudged else {})})
-    meta = {'set': 'full', 'prompt': str(j.PROMPT_PATH.relative_to(PROJECT_ROOT)),
-            'prompt_sha': j.prompt_sha(), 'rules_sha': man.get('rules_sha'),
+    meta = {'set': 'full', 'prompt': prompt_name or str(j.PROMPT_PATH.relative_to(PROJECT_ROOT)),
+            'prompt_sha': sha, 'rules_sha': man.get('rules_sha'),
             'backends': {'claude': {'model': model, 'via': 'Claude Code subagent (Agent tool), not the API',
                                     'batch': man['batch'], 'seed': man['seed']}},
             'claude_usd': 0.0, 'missing_batches': missing_batches, 'rejudged': sorted(redo),
             'imported': time.strftime('%Y-%m-%dT%H:%M:%S')}
-    out = j.OUT_DIR / f'{run}.json'
+    out = out_path or j.OUT_DIR / f'{run}.json'
     out.write_text(json.dumps({'meta': meta, 'rows': rows}, ensure_ascii=False, indent=1) + '\n')
     log.info('wrote %s: %s; missing batches %s', out,
              dict(Counter(r['answers']['claude']['outcome'] for r in rows)), missing_batches)

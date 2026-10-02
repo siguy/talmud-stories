@@ -4,15 +4,15 @@ capability: [classification, review]
 tractate: [ketubot, kiddushin, gittin, yevamot]
 blocked_by: []
 awaiting: []
-writes: [src/consensus/, src/prompts/judges/, scripts/run_rule_panel.py, tests/test_rule_panel.py, results/consensus/panel/, docs/findings/2026-10-02-rule-panel-lenses.md]
-finding:
+writes: [src/consensus/, src/prompts/judges/, scripts/run_rule_panel.py, scripts/judge_via_subagents.py, tests/test_rule_panel.py, results/consensus/panel/, docs/findings/2026-10-02-rule-panel-lenses.md]
+finding: docs/findings/2026-10-02-rule-panel-lenses.md
 superseded_by:
 ---
 
 # Rule panel — one question per feature, a decision table in code
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then
-[`docs/STORY_RULES.md`](../docs/STORY_RULES.md) in full, then the consensus finding
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then
+[`docs/STORY_RULES.md`](../../docs/STORY_RULES.md) in full, then the consensus finding
 `docs/findings/2026-09-28-consensus-phase1.md` §7 and §10, then the plan
 `docs/history/2026-09-28-PLAN-consensus-at-scale.md` §9. Eruvin untouched.
 
@@ -84,3 +84,25 @@ Report it **same-data / indicated**: the precedents and these labels overlap.
 
 Finding `docs/findings/2026-10-02-rule-panel-lenses.md`, `## Outcome`,
 `python3 scripts/board.py finish 2026-10-02-rule-panel-lenses`.
+
+## Outcome
+
+**2026-10-02. A worse classifier, a sharp diagnostic. Indicated, same-data**
+([finding](../../docs/findings/2026-10-02-rule-panel-lenses.md)). Run as a diagnostic (Simon):
+one run per arm, both 997/997 valid; the Claude transcripts were audited clean.
+
+- **Test 1 fails.** The panel's agreed errors are higher than the single question's: 8 vs 4
+  `story` on his `no`s, 17 vs 9 list stories rejected by both. Claude alone rejects 77 list
+  stories (single question: 39). The single question stays the judge.
+- **Test 2 passes.** 205 of 207 arm-splits differ on exactly one feature; speech/conflict,
+  alluded-only and response cover 90%.
+- **The finding that matters:** the two decision rows that encode **our** wording (an alluded
+  incident is not a story; a custom with no event stays a custom) cause 54 of Claude's 112 and
+  12 of Gemini's 29 rejections of his `yes`es. And every `no` of his that a model called `story`
+  passes all nine features, so a tenth feature is missing: is the incident the point, or only the
+  vehicle for a ruling? Four questions for Jeff follow (finding §4) and go to
+  `jeff-feature-questions` as contrast pairs.
+- Built: `panel_v1.md`, `src/consensus/decide.py` (tested on the register's cases),
+  `scripts/run_rule_panel.py`; `judge_via_subagents.py` generalised (single-question
+  re-import verified identical). STORY_RULES, the single-question prompt and plan §4 unchanged.
+

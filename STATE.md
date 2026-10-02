@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     19 item(s) in work/done/
+closed     20 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -117,7 +117,7 @@ open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classifi
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
 open       2026-09-28-consensus-2-yevamot-round
-closed     11 item(s) in work/done/
+closed     12 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -171,4 +171,4 @@ Items that can finish but cannot conclude until he answers:
 
 - `2026-08-30-second-story-guard` — jeff:boundary-end-rule
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident
-<!-- board-checksum: 7a02737a66c7875a -->
+<!-- board-checksum: 224bd618f5f1dc5b -->

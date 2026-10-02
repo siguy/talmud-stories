@@ -1,0 +1,455 @@
+{
+ "outcomes": {
+  "gemini": {
+   "ok": 997
+  },
+  "claude": {
+   "ok": 997
+  }
+ },
+ "criteria_panel": {
+  "agreement": {
+   "k": 283,
+   "n": 364,
+   "rate": 0.777,
+   "wilson": [
+    0.732,
+    0.817
+   ],
+   "pass": false
+  },
+  "agreed_story_on_his_no": {
+   "n": 8,
+   "ids": [
+    "review:Gittin 86b_24-25",
+    "review:Gittin 88a_11-11",
+    "review:Ketubot 111a_23-25",
+    "review:Ketubot 50a_0-0",
+    "review:Ketubot 50a_10-10",
+    "review:Ketubot 50b_4-5",
+    "review:Ketubot 8b_11-12",
+    "review:Kiddushin 39a_12-13"
+   ],
+   "pass": false
+  },
+  "list_called_not_by_both": {
+   "n": 17,
+   "of": 448,
+   "ids": [
+    "list:ketubot_049",
+    "list:ketubot_050",
+    "list:ketubot_071",
+    "list:ketubot_076",
+    "list:ketubot_142",
+    "list:ketubot_143",
+    "list:kiddushin_012",
+    "list:kiddushin_016",
+    "list:kiddushin_022",
+    "list:kiddushin_028",
+    "list:kiddushin_085",
+    "list:yevamot_030",
+    "list:yevamot_031",
+    "list:yevamot_034",
+    "list:yevamot_050",
+    "list:yevamot_051",
+    "list:yevamot_100"
+   ],
+   "wilson": [
+    0.024,
+    0.06
+   ],
+   "pass": false
+  },
+  "list_called_not_by_each": {
+   "gemini": 20,
+   "claude": 77
+  },
+  "list_answered_by_each": {
+   "gemini": 448,
+   "claude": 448
+  }
+ },
+ "criteria_single_lens_1b": {
+  "agreement": {
+   "k": 291,
+   "n": 363,
+   "rate": 0.802,
+   "wilson": [
+    0.758,
+    0.839
+   ],
+   "pass": true
+  },
+  "agreed_story_on_his_no": {
+   "n": 4,
+   "ids": [
+    "review:Gittin 88a_11-11",
+    "review:Ketubot 111a_23-25",
+    "review:Ketubot 50a_10-10",
+    "review:Ketubot 50b_4-5"
+   ],
+   "pass": false
+  },
+  "list_called_not_by_both": {
+   "n": 9,
+   "of": 444,
+   "ids": [
+    "list:ketubot_050",
+    "list:ketubot_076",
+    "list:kiddushin_012",
+    "list:kiddushin_016",
+    "list:kiddushin_022",
+    "list:kiddushin_028",
+    "list:kiddushin_085",
+    "list:yevamot_072",
+    "list:yevamot_100"
+   ],
+   "wilson": [
+    0.011,
+    0.038
+   ],
+   "pass": false
+  },
+  "list_called_not_by_each": {
+   "gemini": 10,
+   "claude": 39
+  },
+  "list_answered_by_each": {
+   "gemini": 444,
+   "claude": 448
+  }
+ },
+ "attribution": {
+  "gemini": {
+   "matches_him": {
+    "True": 693,
+    "False": 119
+   },
+   "his_yes_called_not": {
+    "event_after_custom (ours)": 10,
+    "response_or_consequence": 7,
+    "commentary": 5,
+    "actual": 4,
+    "alluded_only (ours)": 2,
+    "conflict": 1
+   },
+   "his_no_called_story": {
+    "(no row fired: every feature read as story)": 26
+   },
+   "his_no_called_story_features_yes": {
+    "actual": 26,
+    "event_beyond_speech": 26,
+    "response_or_consequence": 26
+   }
+  },
+  "claude": {
+   "his_yes_called_not": {
+    "alluded_only (ours)": 47,
+    "conflict": 25,
+    "response_or_consequence": 25,
+    "event_after_custom (ours)": 7,
+    "actual": 4,
+    "commentary": 4
+   },
+   "matches_him": {
+    "True": 605,
+    "False": 207
+   },
+   "his_no_called_story": {
+    "(no row fired: every feature read as story)": 9
+   },
+   "his_no_called_story_features_yes": {
+    "actual": 9,
+    "event_beyond_speech": 9,
+    "response_or_consequence": 9
+   }
+  }
+ },
+ "agreed_errors": {
+  "his_yes_both_not": [
+   [
+    "corrected:Ketubot 105a_13-13",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "corrected:Ketubot 111b_22-22",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "corrected:Ketubot 13b_0-0",
+    "actual",
+    "actual"
+   ],
+   [
+    "corrected:Ketubot 15a_0-0",
+    "alluded_only",
+    "commentary"
+   ],
+   [
+    "corrected:Ketubot 17a_10-10",
+    "actual",
+    "alluded_only"
+   ],
+   [
+    "corrected:Ketubot 17a_2-2",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "corrected:Ketubot 17a_3-3",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "corrected:Ketubot 17a_6-6",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "corrected:Ketubot 25b_6-6",
+    "response_or_consequence",
+    "alluded_only"
+   ],
+   [
+    "corrected:Ketubot 54a_22-22",
+    "conflict",
+    "conflict"
+   ],
+   [
+    "corrected:Ketubot 56b_11-11",
+    "response_or_consequence",
+    "conflict"
+   ],
+   [
+    "corrected:Ketubot 8a_6-6",
+    "response_or_consequence",
+    "alluded_only"
+   ],
+   [
+    "list:ketubot_049",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "list:ketubot_050",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "list:ketubot_071",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "list:ketubot_076",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "list:ketubot_142",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "list:ketubot_143",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "list:kiddushin_012",
+    "actual",
+    "actual"
+   ],
+   [
+    "list:kiddushin_016",
+    "commentary",
+    "actual"
+   ],
+   [
+    "list:kiddushin_022",
+    "event_after_custom",
+    "actual"
+   ],
+   [
+    "list:kiddushin_028",
+    "actual",
+    "actual"
+   ],
+   [
+    "list:kiddushin_085",
+    "actual",
+    "alluded_only"
+   ],
+   [
+    "list:yevamot_030",
+    "response_or_consequence",
+    "conflict"
+   ],
+   [
+    "list:yevamot_031",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "list:yevamot_034",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "list:yevamot_050",
+    "actual",
+    "conflict"
+   ],
+   [
+    "list:yevamot_051",
+    "conflict",
+    "conflict"
+   ],
+   [
+    "list:yevamot_100",
+    "commentary",
+    "commentary"
+   ],
+   [
+    "review:Ketubot 105a_13-13",
+    "event_after_custom",
+    "alluded_only"
+   ],
+   [
+    "review:Ketubot 111b_22-22",
+    "response_or_consequence",
+    "response_or_consequence"
+   ],
+   [
+    "review:Kiddushin 33a_16-16",
+    "event_after_custom",
+    "event_after_custom"
+   ],
+   [
+    "review:Kiddushin 39b_8-8",
+    "commentary",
+    "commentary"
+   ],
+   [
+    "review:Kiddushin 71b_9-9",
+    "alluded_only",
+    "alluded_only"
+   ],
+   [
+    "review:Kiddushin 80b_11-11",
+    "alluded_only",
+    "alluded_only"
+   ],
+   [
+    "review:Kiddushin 80b_12-12",
+    "response_or_consequence",
+    "alluded_only"
+   ],
+   [
+    "review:Kiddushin 8a_10-10",
+    "response_or_consequence",
+    "alluded_only"
+   ]
+  ],
+  "his_no_both_story": [
+   [
+    "corrected:Ketubot 104a_1-5"
+   ],
+   [
+    "review:Gittin 86b_24-25"
+   ],
+   [
+    "review:Gittin 88a_11-11"
+   ],
+   [
+    "review:Ketubot 111a_23-25"
+   ],
+   [
+    "review:Ketubot 50a_0-0"
+   ],
+   [
+    "review:Ketubot 50a_10-10"
+   ],
+   [
+    "review:Ketubot 50b_4-5"
+   ],
+   [
+    "review:Ketubot 8b_11-12"
+   ],
+   [
+    "review:Kiddushin 39a_12-13"
+   ]
+  ]
+ },
+ "feature_answers_differ_between_arms": {
+  "conflict": 121,
+  "response_or_consequence": 108,
+  "alluded_only": 108,
+  "event_beyond_speech": 98,
+  "event_after_custom": 43,
+  "custom": 40,
+  "commentary": 27,
+  "actual": 18,
+  "biblical_actors": 1
+ },
+ "splits_by_number_of_deciding_features_that_differ": {
+  "1": 205,
+  "2": 2
+ },
+ "splits_deciding_feature": {
+  "conflict": 79,
+  "alluded_only": 76,
+  "response_or_consequence": 32,
+  "commentary": 8,
+  "event_after_custom": 7,
+  "actual": 7
+ },
+ "split_count": 207,
+ "single_to_panel_moved": {
+  "gemini": {
+   "list:story->borderline": 13,
+   "review:story->not": 11,
+   "list:story->not": 10,
+   "review:not->story": 9,
+   "review:story->borderline": 8,
+   "corrected:story->borderline": 7,
+   "review:out_of_scope->not": 5,
+   "corrected:not->story": 4,
+   "list:borderline->story": 4,
+   "corrected:story->not": 3,
+   "corrected:not->borderline": 3,
+   "review:borderline->story": 2,
+   "review:borderline->not": 2,
+   "corrected:borderline->story": 1,
+   "list:borderline->not": 1,
+   "list:not->story": 1,
+   "review:not->borderline": 1
+  },
+  "claude": {
+   "list:story->not": 34,
+   "review:story->not": 18,
+   "corrected:story->not": 13,
+   "list:borderline->story": 11,
+   "list:story->borderline": 10,
+   "list:borderline->not": 9,
+   "review:not->unsure": 6,
+   "corrected:story->borderline": 5,
+   "review:not->story": 5,
+   "list:not->story": 4,
+   "review:borderline->not": 4,
+   "review:borderline->story": 4,
+   "review:story->borderline": 4,
+   "corrected:borderline->not": 3,
+   "corrected:not->story": 2,
+   "corrected:story->unsure": 2,
+   "list:borderline->unsure": 2,
+   "review:story->unsure": 2,
+   "corrected:borderline->story": 1,
+   "list:not->unsure": 1,
+   "review:borderline->unsure": 1,
+   "review:out_of_scope->unsure": 1
+  }
+ }
+}

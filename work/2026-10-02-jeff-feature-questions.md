@@ -2,7 +2,7 @@
 title: Ask Jeff about classes, not passages — contrast pairs per feature, his own sureness on every answer, and a page ranked by what he would teach us
 capability: [review, classification]
 tractate: []
-blocked_by: [2026-10-02-rule-panel-lenses]
+blocked_by: []
 awaiting: []
 writes: [validation/generators/generate_axis_review_ui.py, validation/generators/review_ui_core.py, tests/test_review_ui_symmetry.py, tests/test_axis_review_ui.py, scripts/build_contrast_pairs.py, results/consensus/contrast_pairs.json, comms/JEFF.md, scripts/verdict_reading.py]
 finding:

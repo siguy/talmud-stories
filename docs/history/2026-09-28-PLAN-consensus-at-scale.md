@@ -172,7 +172,7 @@ showed which: every agreed error sits on one feature: report vs incident, speech
 conflict, habit, an alluded-to incident, commentary, scope. So the panel comes back, scoped
 to the evidence and tested before it is used:
 
-1. [`rule-panel-lenses`](../../work/2026-10-02-rule-panel-lenses.md): one narrow judge per
+1. [`rule-panel-lenses`](../../work/done/2026-10-02-rule-panel-lenses.md): one narrow judge per
    feature, the verdict computed by a decision table in code, both arms, scored on the same
    997 units against 1b's single lens. No Jeff time.
 2. [`jeff-feature-questions`](../../work/2026-10-02-jeff-feature-questions.md): ask him
@@ -180,4 +180,10 @@ to the evidence and tested before it is used:
    rank his page by what one answer would settle. After 1.
 
 Phase 2 (§5) uses whichever panel the lenses item shows matches him better.
+
+**2026-10-02, result:** as a classifier the panel is worse (8 vs 4 agreed `story` on his `no`s;
+17 vs 9 list stories rejected); as a diagnostic it is sharp: 205 of 207 splits turn on one
+feature, and our own two rows (alluded-only, custom-stays-custom) cause about half the
+rejections of his stories. The single question stays the judge for phase 2; the panel picks
+Jeff's questions ([finding](../findings/2026-10-02-rule-panel-lenses.md)).
 
