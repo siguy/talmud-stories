@@ -41,31 +41,33 @@ Things we tried, and what we learned
 
 3. Our first AI judge rejected many of your listed stories. The fault was ours: your July rule about the stolen cow was missing from our rulebook, and a note of ours said the opposite. Restoring your words fixed most of it.
 
-4. We broke "is this a story?" into nine smaller questions: did something happen, is it only speech, is it a habit, and so on. That made a worse judge, but it showed exactly which four lines need your ruling. Two of the four are lines we drew ourselves, and your 2005 lists disagree with them.
+4. We broke "is this a story?" into nine smaller questions: did something happen, is it only speech, is it a habit, and so on. That made a worse judge, but it showed exactly which four lines need your ruling. In each of the four, your recent notes and your 2005 lists point different ways.
 
 Eight passages to rule on
 
+Why these matter: in each question, two of your own rulings point in different directions, usually a recent note against your 2005 list. The AI applies whichever rule it is given, consistently, so until we know which you intend, it will be consistently wrong on one side. Each line also covers far more than its two examples. On the roughly 1,000 passages we tested, the two AI judges split on question 1 in 76 passages, on question 2 in 79 and on question 3 in 32, and on question 4 they rejected 17 of your listed stories.
+
 For each one, please reply with its code and one word: story, borderline, or not. Add a line on why if you like. For example: "1A story, 1B not". The links open the passage on Sefaria in Hebrew and English.
 
-Question 1. An incident told in a line or two inside a legal argument, as evidence for one side. Is it a story? This line is ours, not yours. Your lists keep these incidents, so we suspect we are wrong.
+Question 1. An incident told in a line or two inside a legal argument, as evidence for one side. Is it a story? Your two rulings: on Ketubot 15a (September) you wrote "a legal discussion discussing facts of an incident and their consequences, but not enough of the incident is given": not a story. But your 2005 lists keep both passages below, which are exactly that shape. Which should win, or where is the line between them?
 
 1A. Kiddushin 80b (the last segment): The Rabbis worry about temptation even in mourning, "like that incident": a widow at her husband's grave sleeps with the guard of an executed man's body, and when that body is stolen she has her husband dug up to replace it. https://www.sefaria.org/Kiddushin.80b.9-12?lang=bi
 
 1B. Yevamot 107b: Beit Hillel cite the wife of Pishon the camel driver, who refused him in his absence; Beit Shammai answer that he cheated her, so the Sages cheated him. https://www.sefaria.org/Yevamot.107b.8?lang=bi
 
-Question 2. In a scholarly exchange, when does a sharp remark make it conflict (borderline, under your rule) rather than ordinary discussion (not a story)? Both passages are on your 2005 lists, and our two AI judges split on exactly this point.
+Question 2. In a scholarly exchange, when does a sharp remark make it conflict? Your two rulings: your September rule says speech alone is borderline when there is conflict and not a story when there is not. But your 2005 lists keep scholarly exchanges like the two below, as full stories. Our two AI judges split on exactly this point.
 
 2A. Ketubot 21b: Ameimar praises a ruling. Rav Ashi: "Because your mother's father praised it, you praise it too? Rava already refuted it." https://www.sefaria.org/Ketubot.21b.1?lang=bi
 
 2B. Ketubot 53a: Ravin bar Ḥanina repeats a ruling in R. Elazar's name; Rav Ḥisda answers: "Had you not said it in the name of a great man, I would have called it an injustice." https://www.sefaria.org/Ketubot.53a.12?lang=bi
 
-Question 3. A case brought to a rabbi who rules: when is it a story, and when is it "a legal problem and answer"? You accepted Toviya (Ketubot 85b: a man leaves his property "to Toviya", Toviya comes, R. Yoḥanan rules). You rejected Gittin 80b, a question about a get sent to Rabba by letter, as "a legal discussion at a distance". You marked both passages below "not a story" in February, before your July rule, and under that rule we would now call them stories. Were those "no"s about the passage itself, or about how much text we showed you?
+Question 3. A case brought to a rabbi who rules: when is it a story, and when is it "a legal problem and answer"? You accepted Toviya (Ketubot 85b: a man leaves his property "to Toviya", Toviya comes, R. Yoḥanan rules). You rejected Gittin 80b, a question about a get sent to Rabba by letter, as "a legal discussion at a distance". Your two rulings: in February you marked both passages below "not a story" (on 3A: "a legal discussion with legal reasoning"). Your July rule ("a man stole another man's cow and sold it. Rava ruled... you may have a story") points the other way, and under it we would call them stories. Were the February "no"s about the passage itself, or about how much text we showed you?
 
 3A. Ketubot 50b: Orphans' property is held by R. Banai; the orphan daughters come before Shmuel, who tells him to support them from it. (The Gemara then analyses the ruling.) https://www.sefaria.org/Ketubot.50b.5-6?lang=bi
 
 3B. Ketubot 50a: R. Yitzḥak bar Yosef finds R. Abbahu in the assembly at Usha, asks who taught the Usha ordinance, and learns it from him forty times until it is "as if in his pocket". https://www.sefaria.org/Ketubot.50a.11?lang=bi
 
-Question 4. A rabbi's habit, with no single "one day…" event. Is it a story? Your Beitar rule covers a habit followed by a one-time event. The idea that a habit alone is not a story is our note, not yours, and your 2005 lists keep both passages below.
+Question 4. A rabbi's habit, with no single "one day…" event. Is it a story? Your two rulings: on Yevamot 106b (September) Mar Zutra's practice was "just a description of what Mar Zutra did… There is no continuation": not a story. But your 2005 lists keep the two habits below. (Your Beitar rule covers a habit followed by a one-time event, which these do not have.)
 
 4A. Ketubot 61a: Two pious men: one fed the waiter before the meal, the other after it. Elijah spoke with the first and not with the second. https://www.sefaria.org/Ketubot.61a.15?lang=bi
 
