@@ -496,9 +496,11 @@ def run(set_name, backend_names, out_path, dry_run, workers):
     cost = ClaudeCost()
     lock = threading.Lock()
     # The cap is for the whole item: every earlier run's Claude spend counts against it.
-    spent = sum(json.loads(f.read_text()).get('meta', {}).get('claude_usd', 0)
-                for f in OUT_DIR.glob('*.json')
-                if f.resolve() != out_path.resolve() and f.name != 'labels.json')
+    # Only run outputs carry a `meta`; other artifacts share the directory
+    # (list_misses.json is a list) and are skipped, not crashed on.
+    runs = [json.loads(f.read_text()) for f in OUT_DIR.glob('*.json')
+            if f.resolve() != out_path.resolve() and f.name != 'labels.json']
+    spent = sum(r['meta'].get('claude_usd', 0) for r in runs if isinstance(r, dict) and 'meta' in r)
     cap = BUDGET_USD - spent
 
     def save():

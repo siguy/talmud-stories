@@ -1,0 +1,156 @@
+{
+ "built_from": [
+  "results/consensus/panel/report.json",
+  "results/consensus/phase1/labels.json"
+ ],
+ "questions": [
+  {
+   "slug": "jeff:alluded-incident",
+   "feature": "alluded_only",
+   "question": "An incident told in a line or two inside a legal argument, as evidence for one side: is it a story?",
+   "his_words": null,
+   "ours": "Our draft line (not yours) says an incident only alluded to is not a story. Your 2005 lists keep such incidents, so we think our line is wrong.",
+   "reach_splits": 76,
+   "reach_his_yes_rejected": 49,
+   "examples": [
+    {
+     "id": "list:kiddushin_085",
+     "refs": "Kiddushin 80b:9–12",
+     "his_label": "yes",
+     "summary": "The Rabbis worry about temptation even in mourning, \"like that incident\": a widow at her husband's grave sleeps with the guard of an executed man's body, and when that body is stolen she has her husband dug up to replace it.",
+     "sefaria": "https://www.sefaria.org/Kiddushin.80b.9-12?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": "actual",
+      "claude": "alluded_only"
+     },
+     "english": "The Gemara comments: Shall we say the mishna is not in accordance with the opinion of Abba Shaul, as it is taught in a baraita: If a child dies any time during the first thirty days after his birth, he is not given a proper funeral but is carried out held in their bosom, not on a bier, and buried by one woman and two men. But he may not be buried by one man and two women, due to the prohibition against seclusion. Abba Shaul says: He may even be buried by one man and two women. This indicates that Abba Shaul deems it permitted for a man to be secluded with two women. The Gemara rejects this: You can even say that the mishna is in accordance with the opinion of Abba Shaul, as he permits it only in the case of the baraita, because at the time of acute mourning, i.e., immediately after a close relative has died, one’s inclination to sin is broken, and there is no concern that he might come to sin. And the Rabbis, who render seclusion forbidden even then, hold in accordance with the statement of Rabbi Yitzḥak, as Rabbi Yitzḥak says as follows with regard to the verse: “Why does a living man complain, a powerful man due to his sins?” (Lamentations 3:39): Even at the time of a person’s acute mourning, his inclination to sin overpowers him. The Gemara asks: And how does Abba Shaul explain this verse? The Gemara answers: When that was written, it was written with regard to one who complains about God’s ways. And this is what the verse is saying: Why does one complain about God’s ways and claim that he has been treated unjustly? Has he overpowered his sins? God responds: The life I have given him is sufficient for him, and he deserves no more. And the Rabbis are concerned about the possibility of sin even in times of acute mourning, like that incident involving a certain woman, as there was an incident where she removed her husband from his grave. When visiting her husband’s grave, she engaged in intercourse with a man who was tasked with guarding the body of one executed by the king. Meanwhile, that body was taken, and she suggested that they disinter her husband so that the guard could claim that he fulfilled his task properly. This demonstrates that even at a time of mourning one may succumb to temptation.",
+     "hebrew": "נֵימָא מַתְנִיתִין דְּלָא כְּאַבָּא שָׁאוּל, דְּתַנְיָא: כׇּל שְׁלֹשִׁים יוֹם – יוֹצֵא בְּחֵיק, וְנִקְבָּר בְּאִשָּׁה אַחַת וּשְׁנֵי אֲנָשִׁים, אֲבָל לֹא בְּאִישׁ אֶחָד וּשְׁתֵּי נָשִׁים. אַבָּא שָׁאוּל אוֹמֵר: אַף בְּאִישׁ אֶחָד וּשְׁתֵּי נָשִׁים. אֲפִילּוּ תֵּימָא אַבָּא שָׁאוּל, בִּשְׁעַת אֲנִינוּת תְּבִיר יִצְרֵיהּ. וְרַבָּנַן סָבְרִי לַהּ כְּרַבִּי יִצְחָק. דְּאָמַר רַבִּי יִצְחָק: ״מַה יִּתְאוֹנֵן אָדָם חָי גֶּבֶר עַל חֲטָאָיו״ – אֲפִילּוּ בִּשְׁעַת אֲנִינוּתוֹ שֶׁל אָדָם יִצְרוֹ מִתְגַּבֵּר עָלָיו. וְאַבָּא שָׁאוּל? כִּי כְּתִיב הָהוּא – בְּמִתְרַעֵם עַל מִדּוֹתָיו כְּתִיב, וְהָכִי קָאָמַר: מָה יִתְרַעֵם עַל מִדּוֹתָיו, וְכִי גָּבַר עַל חֲטָאָיו? דַּיּוֹ חַיִּים שֶׁנָּתַתִּי לוֹ! וְרַבָּנַן? כִּי הָהוּא מַעֲשֶׂה דְּהַהִיא אִיתְּתָא דַּהֲוָה עוֹבָדָא וְאַפֵּיקְתֵּיהּ."
+    },
+    {
+     "id": "list:yevamot_072",
+     "refs": "Yevamot 107b:8",
+     "his_label": "yes",
+     "summary": "Beit Hillel cite the wife of Pishon the camel driver, who refused him in his absence; Beit Shammai answer that he cheated her, so the Sages cheated him.",
+     "sefaria": "https://www.sefaria.org/Yevamot.107b.8?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": null,
+      "claude": "alluded_only"
+     },
+     "english": "§ It is taught in the mishna: Beit Shammai say: The refusal must take place specifically in the presence of the husband, but Beit Hillel say: Either in his presence or in his absence. It is taught in a baraita: Beit Hillel said to Beit Shammai: But didn’t the wife of Pishon the camel driver refuse him in his absence? Beit Shammai said to Beit Hillel: Pishon the camel driver measured using a defective standard, as he did not properly take care of the property she brought into the marriage, and therefore the Sages measured him with a defective standard [midda kefusha]. The marriage in that case was annulled by the Sages and the refusal was not treated as a standard refusal.",
+     "hebrew": "בֵּית שַׁמַּאי אוֹמְרִים: בְּפָנָיו וְכוּ׳. תַּנְיָא, אָמְרוּ לָהֶן בֵּית הִלֵּל לְבֵית שַׁמַּאי: וַהֲלֹא פִּישׁוֹן הַגַּמָּל מֵיאֲנָה אִשְׁתּוֹ שֶׁלֹּא בְּפָנָיו! אָמְרוּ לָהֶן בֵּית שַׁמַּאי לְבֵית הִלֵּל: פִּישׁוֹן הַגַּמָּל בְּמִדָּה כְּפוּשָׁה מָדַד, לְפִיכָךְ מָדְדוּ לוֹ בְּמִדָּה כְּפוּשָׁה."
+    }
+   ]
+  },
+  {
+   "slug": "jeff:speech-conflict-line",
+   "feature": "conflict",
+   "question": "In a scholarly exchange, when does a sharp remark make it conflict (borderline under R-C2) rather than just discussion (not a story)?",
+   "his_words": "R-C2 (2026-09-02): speech alone is borderline when there is conflict, and not a story when there is not.",
+   "ours": "Both are on your 2005 lists. The two AI judges split on exactly this point: sharp words, but is it conflict?",
+   "reach_splits": 79,
+   "reach_his_yes_rejected": 26,
+   "examples": [
+    {
+     "id": "list:ketubot_015",
+     "refs": "Ketubot 21b:1",
+     "his_label": "yes",
+     "summary": "Ameimar praises a ruling. Rav Ashi: \"Because your mother's father praised it, you praise it too? Rava already refuted it.\"",
+     "sefaria": "https://www.sefaria.org/Ketubot.21b.1?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": null,
+      "claude": "conflict"
+     },
+     "english": "The Gemara relates: Ravnai, brother of Rabbi Ḥiyya bar Abba, happened to come and sell sesame, and he said that this is what Shmuel said: A witness and a judge join together to testify. Ameimar said: How excellent is this halakha. Rav Ashi said to Ameimar: Due to the fact that Rami bar Ḥama, father of your mother, praised it, you also praise [mekallesat] it? Rava already refuted that statement and proved it incorrect.",
+     "hebrew": "אִיקְּלַע רַבְנַאי אֲחוּהּ דְּרַבִּי חִיָּיא בַּר אַבָּא לְמִזְבַּן שׁוּמְשְׁמֵי וַאֲמַר: הָכִי אָמַר שְׁמוּאֵל: עֵד וְדַיָּין מִצְטָרְפִין. אֲמַר אַמֵּימָר: כַּמָּה מְעַלְּיָא הָא שְׁמַעְתָּא! אֲמַר לֵיהּ רַב אָשֵׁי לְאַמֵּימָר: מִשּׁוּם דְּקַלְּסַהּ אֲבוּהּ דְּאִמָּךְ, אַתְּ נָמֵי מְקַלְּסַתְּ לַהּ?! כְּבָר פַּרְכַהּ רָבָא."
+    },
+    {
+     "id": "list:ketubot_033",
+     "refs": "Ketubot 53a:12",
+     "his_label": "yes",
+     "summary": "Ravin bar Ḥanina repeats a ruling in R. Elazar's name; Rav Ḥisda answers: \"Had you not said it in the name of a great man, I would have called it an injustice.\"",
+     "sefaria": "https://www.sefaria.org/Ketubot.53a.12?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": "conflict",
+      "claude": "conflict"
+     },
+     "english": "Ravin bar Ḥanina sat before Rav Ḥisda, and he sat and said the following halakha in the name of Rabbi Elazar: One who forgoes her right to collect her marriage contract from her husband does not receive her sustenance from him. Rav Ḥisda said to him: Had you not said this halakha to me in the name of a great man, I would have said to you that this is an injustice, in accordance with the verse “who rewards evil for good, evil shall not depart from his house” (Proverbs 17:13). After she relinquishes to her husband her right to her marriage contract, which was a favor to her husband, she loses her sustenance as well.",
+     "hebrew": "יָתֵיב רָבִין בַּר חֲנִינָא קַמֵּיהּ דְּרַב חִסְדָּא, וְיָתֵיב וְקָאָמַר מִשְּׁמֵיהּ דְּרַבִּי אֶלְעָזָר: מוֹחֶלֶת כְּתוּבָּתָהּ לְבַעְלָהּ — אֵין לָהּ מְזוֹנוֹת. אֲמַר לֵיהּ: אִי לָאו דְּקָאָמְרַתְּ לִי מִשְּׁמֵיהּ דְּגַבְרָא רַבָּא, הֲוָה אָמֵינָא לָךְ: ״מֵשִׁיב רָעָה תַּחַת טוֹבָה לֹא תָמוּשׁ רָעָה מִבֵּיתוֹ״?!"
+    }
+   ]
+  },
+  {
+   "slug": "jeff:report-vs-incident",
+   "feature": "response_or_consequence",
+   "question": "A case brought to a rabbi who rules: when is it a story (your July stolen-cow case), and when is it \"a legal problem and answer\"?",
+   "his_words": "You accepted Toviya (Ketubot 85b: a man leaves his property \"to Toviya\", Toviya comes, R. Yoḥanan rules). You rejected Gittin 80b (a question about a get sent by letter to Rabba, and his reply) as \"a legal discussion at a distance\", and Gittin 88a as \"a legal problem and answer\".",
+   "ours": "Our proposal: something happens to someone and a person responds = story; a question asked and answered = not. Both passages below are ones you marked \"not a story\" in February, before your July rule. Under our proposal both would now be stories.",
+   "reach_splits": 32,
+   "reach_his_yes_rejected": 32,
+   "examples": [
+    {
+     "id": "review:Ketubot 50b_4-5",
+     "refs": "Ketubot 50b:5–6",
+     "his_label": "no",
+     "summary": "Orphans' property is held by R. Banai; the orphan daughters come before Shmuel, who tells him to support them from it. (The Gemara then analyses the ruling.)",
+     "sefaria": "https://www.sefaria.org/Ketubot.50b.5-6?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": null,
+      "claude": null
+     },
+     "english": "The Gemara suggests: Come and hear a resolution to this dilemma: In the possession of Rabbi Banai, the brother of Rabbi Ḥiyya bar Abba, there was movable property belonging to orphans, deposited with him by their father. The orphan daughters came before Shmuel, who said to Rabbi Banai: Go and sustain the daughters from the property. What, is it not correct to say that this means he should provide them with sustenance, and this would indicate that Shmuel holds in accordance with the opinion of Rav Yitzḥak bar Yosef, that the Sages instituted an ordinance in the upper chamber that daughters are entitled to their sustenance even from movable property? The Gemara refutes this claim: No, there it is stated in reference to their livelihood, and Shmuel conforms to his standard line of reasoning, as Shmuel said: With regard to livelihood, i.e., the dowry granted to daughters from their father’s estate, the court assesses the amount they receive in accordance with the status of the father.",
+     "hebrew": "תָּא שְׁמַע: בִּידֵיהּ דְּרַבִּי בַּנַּאי אֲחוּהּ דְּרַבִּי חִיָּיא בַּר אַבָּא הֲווֹ מִטַּלְטְלִין דְּיַתְמֵי. אֲתוֹ לְקַמֵּיהּ דִּשְׁמוּאֵל. אֲמַר לֵיהּ: זִיל זוּן. מַאי לָאו לִמְזוֹנֵי, וְכִדְרַב יִצְחָק בַּר יוֹסֵף סְבִירָא לֵיהּ? לָא, הָתָם לְפַרְנָסָה הֲוַאי. וּשְׁמוּאֵל לְטַעְמֵיהּ, דְּאָמַר שְׁמוּאֵל: לְפַרְנָסָה שָׁמִין בָּאָב."
+    },
+    {
+     "id": "review:Ketubot 50a_10-10",
+     "refs": "Ketubot 50a:11",
+     "his_label": "no",
+     "summary": "R. Yitzḥak bar Yosef finds R. Abbahu in the assembly at Usha, asks who taught the Usha ordinance, and learns it from him forty times until it is \"as if in his pocket\".",
+     "sefaria": "https://www.sefaria.org/Ketubot.50a.11?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": null,
+      "claude": null
+     },
+     "english": "§ Rabbi Yosei bar Ḥanina said: In Usha the Sages instituted that in the case of a woman who sold her usufruct property, which is property that belongs to her but whose produce belongs to her husband, in her husband’s lifetime, and then she died, the husband can repossess it from the purchasers. The Gemara relates: Rav Yitzḥak bar Yosef found Rabbi Abbahu standing among the congregation [ukhlusa] of Usha. He said to him: Who is the Master who disseminated the halakha that was instituted in Usha? He said to him: Rabbi Yosei bar Ḥanina. He learned it from Rabbi Abbahu forty times, and from that point onward he remembered it so well that it seemed to him as though it were placed in his pocket.",
+     "hebrew": "אָמַר רַבִּי יוֹסֵי בַּר חֲנִינָא, בְּאוּשָׁא הִתְקִינוּ: הָאִשָּׁה שֶׁמָּכְרָה בְּנִכְסֵי מְלוֹג בְּחַיֵּי בַּעְלָהּ וּמֵתָה, הַבַּעַל מוֹצִיא מִיַּד הַלָּקוֹחוֹת. אַשְׁכְּחֵיהּ רַב יִצְחָק בַּר יוֹסֵף לְרַבִּי אֲבָהוּ דַּהֲוָה קָאֵי בְּאוּכְלוּסָא דְאוּשָׁא, אֲמַר לֵיהּ: מַאן מָרַהּ דִּשְׁמַעְתָּא דְאוּשָׁא? אֲמַר לֵיהּ: רַבִּי יוֹסֵי בַּר חֲנִינָא. תְּנָא מִינֵּיהּ אַרְבְּעִין זִימְנִין, וְדָמֵי לֵיהּ כְּמַאן דְּמַנְּחָא לֵיהּ בְּכִיסְתֵּיהּ."
+    }
+   ]
+  },
+  {
+   "slug": "jeff:custom-without-event",
+   "feature": "event_after_custom",
+   "question": "A rabbi's habit, with no single \"one day…\" event: is it a story?",
+   "his_words": "R-C3 (2026-09-01, Beitar): a habit can frame a story when a one-time event follows.",
+   "ours": "Our note (not yours) says a habit with no one-time event stays a habit, not a story. Your 2005 lists keep both passages below.",
+   "reach_splits": 7,
+   "reach_his_yes_rejected": 17,
+   "examples": [
+    {
+     "id": "list:ketubot_050",
+     "refs": "Ketubot 61a:15",
+     "his_label": "yes",
+     "summary": "Two pious men: one fed the waiter before the meal, the other after it. Elijah spoke with the first and not with the second.",
+     "sefaria": "https://www.sefaria.org/Ketubot.61a.15?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": "event_after_custom",
+      "claude": "event_after_custom"
+     },
+     "english": "Similarly, the Gemara relates an incident with regard to two pious men, and some say they were Rav Mari and Rav Pineḥas, the sons of Rav Ḥisda: One Sage would give the waiter something to eat before the meal, and the other Sage would give the waiter something to eat after the guests had eaten. With regard to the one who gave it to him earlier, Elijah spoke with him. But with regard to the one who gave it to him later, Elijah did not speak with him.",
+     "hebrew": "הָנְהוּ תַּרְתֵּין חֲסִידֵי, וְאָמְרִי לַהּ: רַב מָרִי וְרַב פִּנְחָס בְּנֵי רַב חִסְדָּא, מָר קָדֵים סָפֵי, וּמָר מְאַחַר סָפֵי. דְּקָדֵים סָפֵי — אֵלִיָּהוּ מִשְׁתַּעֵי בַּהֲדֵיהּ, דִּמְאַחַר סָפֵי — לָא מִשְׁתַּעֵי אֵלִיָּהוּ בַּהֲדֵיהּ."
+    },
+    {
+     "id": "list:ketubot_076",
+     "refs": "Ketubot 67b:17",
+     "his_label": "yes",
+     "summary": "R. Abba would tie coins in his scarf and toss it over his shoulder to the poor, watching from the corner of his eye for swindlers.",
+     "sefaria": "https://www.sefaria.org/Ketubot.67b.17?lang=bi",
+     "panel_deciding_feature": {
+      "gemini": "event_after_custom",
+      "claude": "event_after_custom"
+     },
+     "english": "The Gemara recounts more stories related to charity. Rabbi Abba would wrap coins in his scarf and toss the money behind him over his shoulder. And he would place himself at the homes of the poor without being seen, so the poor could receive the aid without being embarrassed. And he would incline his eyes just enough so he could safeguard the handouts from swindlers who might take the money dishonestly.",
+     "hebrew": "רַבִּי אַבָּא הֲוָה צָיַיר זוּזֵי בְּסוּדָרֵיהּ, וְשָׁדֵי לֵיהּ לַאֲחוֹרֵיהּ, וּמַמְצֵי נַפְשֵׁיהּ לְבֵי עַנְיֵי, וּמַצְלֵי עֵינֵיהּ מֵרַמָּאֵי."
+    }
+   ]
+  }
+ ]
+}
