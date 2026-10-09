@@ -46,5 +46,11 @@ They judge spans from `results/v11/twin_pass/yevamot_full_twinall.json`.
 | 17a:4 | no | Seating arrangement, then discussion (R-C5) |
 | 106b:9 | no | Mar Zutra's practice, no continuation; the ruling is not narrative (R-C5) |
 
+**Added 2026-10-09 — Jeff's 2026-10-07 answer (email 1B):** Yevamot **107b:7** (Pishon's
+wife) is **not** a story — *"one thing Pishon's wife did—without change or causality"*
+(R-C5). It is on his 2005 list (`yevamot_072`): the list entry stays, annotated in
+`results/expert_lists/superseded_by_rule.json`, and must **not** enter this golden as a
+list-derived story. Read it in as an `expert_verdict` `NOT_A_STORY`.
+
 Simon's pre-screen `no`s on 43a:12, 45a:17, 78a:11, 101b:13 are **not** expert labels and
 do not enter this golden.

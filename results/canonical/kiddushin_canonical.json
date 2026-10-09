@@ -14394,7 +14394,7 @@
         {
           "start_segment": 11,
           "end_segment": 11,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "spans_pages": null,
           "start_segment_page2": null,
           "end_segment_page2": null,
@@ -14405,6 +14405,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-07",
+              "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+              "action": "reclassify",
+              "rule": "R-C6",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE",
+              "note": "Jeff (1A): borderline. This is an unusual case, as the “incident” is not narrated in full, and has to be filled in based on the context and with the help of the Talmudic commentaries. If the Talmud had provided the entire story, it would have counted as a story. But since so much is missing and basically conjectured, or filled in through an oral tradition that the Talmudic commentaries had access to, we should consider it borderline."
+            }
           ]
         },
         {
@@ -14817,7 +14828,8 @@
   ],
   "rules_applied": [
     "R-C1",
-    "R-B4"
+    "R-B4",
+    "R-C6"
   ],
   "jeff_2026_09_23": {
     "source": "validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json",
@@ -14825,6 +14837,17 @@
       {
         "key": "Kiddushin 39b_8-8 -> 7-7",
         "source": "review_2026-09-16_bundle_jeff_2026-09-23"
+      }
+    ]
+  },
+  "jeff_2026_10_07": {
+    "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+    "applied": [
+      {
+        "key": "Kiddushin 80b_11-11",
+        "question": "1A",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE"
       }
     ]
   }

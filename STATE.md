@@ -14,10 +14,10 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | 96.6% artifact · **98.0% code** · n=149 B | 90.3% artifact · **90.4% code** B | STATUS · C | STATUS | 6 rounds | ⬜ |
+| **Ketubot** | 96.6% artifact · **98.0% code** · n=147 B | 90.8% artifact · **90.4% code** B | STATUS · C | STATUS | 6 rounds | ⬜ |
 | **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 5 rounds | ⬜ |
 | **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Yevamot** | 100.0% · n=102 B | 89.2% B | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Yevamot** | 100.0% · n=101 B | 89.1% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
@@ -81,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     25 item(s) in work/done/
+closed     26 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     20 item(s) in work/done/
+closed     21 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -136,9 +136,10 @@ closed     2 item(s) in work/done/
 | `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
+| `results/expert_lists/superseded_by_rule.json` | **UNKNOWN** | **shape not recognised by `board.py`** — top-level keys: `entries`, `match`, `what`, `why` |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
 | `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 134 entries · 116 accepted |
-| `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 187 entries · 163 accepted |
+| `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 189 entries · 162 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/gittin_ruler.json` | **JOINED** | denominator 111 · found 108 |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 130 |
@@ -163,9 +164,6 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:scope-edges` | Your scope is *"rabbis and post-biblical figures"* (2026-09-23). Three edges we read as **in** — confirm or correct: (1) Elijah appearing to a rabbi (Gittin 6b, Kiddushin 40a); (2) a biblical figure cited *inside* a rabbinic story (Kiddushin 32b — Rabban Gamliel serving, justified by Abraham); (3) post-biblical non-rabbis — Titus, King Yannai, Agrippa. |
-| `jeff:alluded-incident` | An incident told in a line or two inside a legal argument, as evidence for one side: a story? Cases: Kiddushin 80b (the widow at the grave), Yevamot 107b (Pishon's wife). |
-| `jeff:speech-conflict-line` | In a scholarly exchange, when does a sharp remark make it conflict (borderline, R-C2) rather than discussion? Cases: Ketubot 21b (Rav Ashi to Ameimar), 53a (Rav Ḥisda to Ravin bar Ḥanina). |
-| `jeff:custom-without-event` | A habit with no one-time event: a story? Cases: Ketubot 61a (two pious men and Elijah), 67b (R. Abba's coins). |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 
@@ -176,4 +174,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: e0e09a4e2e57e283 -->
+<!-- board-checksum: 12c1a71ed43b17f5 -->

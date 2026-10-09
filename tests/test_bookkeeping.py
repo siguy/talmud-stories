@@ -42,7 +42,10 @@ GOLDEN_COUNTS = {
     # 164 -> 163 on 2026-09-25: Ketubot 15a:0 is NOT_A_STORY by Jeff's 2026-09-23
     # verdict. The 12 entries that became BORDERLINE the same day stay `accepted` under
     # this test's definition, as Gittin's do (scripts/apply_jeff_2026-09-23_verdicts.py).
-    "ketubot": {"pages": 222, "entries": 187, "accepted": 163},
+    # 187/163 -> 189/162 on 2026-10-09: Jeff's 2026-10-07 verdicts. 21b:0, 53a:11, 50b:4
+    # -> NOT_A_STORY; 50a:10 (BORDERLINE) and 61a:14 (YES) added
+    # (scripts/apply_jeff_2026-10-07_verdicts.py).
+    "ketubot": {"pages": 222, "entries": 189, "accepted": 162},
     "kiddushin": {"pages": 162, "entries": 96, "accepted": 85},
     # Gittin, 2026-09-02. `accepted` here counts BORDERLINE, because that is what this
     # test's definition has always meant (anything not NOT_A_STORY) and silently

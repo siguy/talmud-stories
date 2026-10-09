@@ -356,6 +356,10 @@ def recalls() -> dict:
     never measured for as long as the value lived only in prose.
     """
     def measure(rows):
+        # A list story Jeff has since ruled not a story (results/expert_lists/
+        # superseded_by_rule.json) is not a loss when we miss it, so it leaves the
+        # denominator. Rows written before that file existed carry no flag and count.
+        rows = [r for r in rows if r.get("counts_for_recall", True)]
         return {"n": len(rows),
                 "triage": sum(1 for r in rows if r["survived_triage"]) / len(rows),
                 # A story on pages that were all skipped cannot have been proposed,

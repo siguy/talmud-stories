@@ -243,6 +243,11 @@ def build_labels():
                      list_blind=s.get('blind', True), list_ref=s['ref'],
                      cited_in_rules=any(c[0] in cited for c in cells), verdicts=[])
             hit = sorted({k for c in cells for k in review_no.get(tuple(c), [])})
+            # His explicit later ruling on this very list entry (2026-10-07 on): a `not`
+            # supersedes it like a review `no` does. A `borderline` keeps it in, as `yes`.
+            ruling = s.get('superseded_by_rule')
+            if ruling and not s.get('counts_for_recall', True):
+                hit.append(f"{ruling['rule']} {ruling['date']}")
             if hit:
                 superseded.append(dict(u, superseded_by=hit))
             else:

@@ -54,15 +54,15 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `span-truncation-rate` | `talmud-stories` | **322 FILES** |
-| `consensus-phase1` | `agent-a5263a2ba820d9f0f` | **194 FILES** |
-| `jeff-comms-review-92c526` | `jeff-comms-review-92c526` | clean |
-| `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | **498 FILES** |
-| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | **157 FILES** |
-| `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | **12 FILES** |
+| `span-truncation-rate` | `talmud-stories` | **3 FILES** |
+| `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
+| `jeff-comms-review-92c526` | `jeff-comms-review-92c526` | **22 FILES** |
+| `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
+| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | clean |
+| `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 49 items, never deleted
+## Done — 50 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -115,4 +115,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Read an old `correct` against the call Jeff was shown — map_verdict_vocabularies and build_ruler](work/done/2026-09-28-verdicts-read-against-the-call-shown.md) | classification | [2026-09-29-verdicts-read-against-the-call-shown.md](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md) |
 | [Move the public project page to the Vercel hub, current and in plain language; retire GitHub Pages](work/done/2026-10-02-public-site-refresh.md) | publication | [2026-10-02-public-site-moved-to-hub.md](docs/findings/2026-10-02-public-site-moved-to-hub.md) |
 | [Rule panel — split "is it a story?" into one narrow question per feature, then decide in code; does it match Jeff better than the single question?](work/done/2026-10-02-rule-panel-lenses.md) | classification, review | [2026-10-02-rule-panel-lenses.md](docs/findings/2026-10-02-rule-panel-lenses.md) |
-<!-- board-checksum: 0288ba530df870a5 -->
+| [Apply Jeff's 2026-10-07 rulings (four lines, seven passages)](work/done/2026-10-09-jeff-2026-10-07-rulings.md) | classification, detection | [2026-10-09-jeff-answers-four-lines.md](docs/findings/2026-10-09-jeff-answers-four-lines.md) |
+<!-- board-checksum: cc49dfbfee543b9f -->
