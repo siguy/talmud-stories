@@ -48,8 +48,21 @@ RULED = {
 }
 
 
+# labels.json corrections found 2026-10-09 (docs/findings/2026-10-09-borderline-definition-test.md):
+# two merge approvals read as `no` by an old verdict_reading branch (fixed there), and one
+# March `no` his own 2026-09-23 verdict on the same span supersedes.
+LABEL_FIXES = {
+    'corrected:Ketubot 104a_1-5': 'yes',        # approve on NEEDS_REVIEW = approved a merge
+    'corrected:Ketubot 8b_6-10': 'yes',         # same; his note: "the continuation of the story"
+    'corrected:Ketubot 7a_1-1': 'borderline',   # 2026-03-17 `no`, superseded by 2026-09-23 borderline
+}
+
+
 def current_labels(rows):
     lab = {i: r['label'] for i, r in rows.items()}
+    for i, new in LABEL_FIXES.items():
+        if i in lab:
+            lab[i] = new
     for i, (_, new) in RULED.items():
         if new and i in lab:
             lab[i] = new

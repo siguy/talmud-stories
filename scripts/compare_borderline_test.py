@@ -30,13 +30,18 @@ P = j.OUT_DIR
 QUOTED_IN_RC7 = {'review:Ketubot 10a_9-10', 'review:Ketubot 60b_5-6', 'review:Ketubot 85a_13-14',
                  'review:Gittin 20a_9-9', 'review:Ketubot 50b_9-10', 'review:Ketubot 51a_1-2',
                  'review:Ketubot 77a_8-8', 'corrected:Ketubot 14b_11-11', 'review:Ketubot 50b_6-6',
-                 'review:Ketubot 100b_17-18'}
+                 'review:Ketubot 100b_17-18',
+                 # added when R-C7 was narrowed (v5 / judge_register_v3), excluded for all runs
+                 'review:Kiddushin 39a_12-13', 'corrected:Ketubot 110b_24-24', 'review:Gittin 46a_12-12',
+                 'review:Gittin 74b_4-4', 'corrected:Ketubot 7a_1-1', 'review:Kiddushin 32a_8-12'}
 
 
 def main():
     ids = set((P / 'borderline_test_ids.txt').read_text().splitlines()) - {''}   # ids contain spaces
     v3, rows = verdicts('full_v3_gemini.json', 'full_v3_claude.json')
     v4, _ = verdicts('bl_v4_gemini.json', 'bl_v4_claude.json')
+    v5, _ = verdicts('bl_v5_gemini.json', 'bl_v5_claude.json')   # judge_register_v3: R-C7 narrowed
+    RUNS = (('v3', v3), ('v4', v4), ('v5', v5))
     lab = current_labels(rows)
     quoted = (QUOTED_IN_RC7 | set(RULED)) & ids
     scored = sorted(ids - quoted)
@@ -44,17 +49,18 @@ def main():
     md = [f'{len(scored)} scored ({len(quoted)} quoted in the rules excluded)']
     for m in M:
         tab = {}
-        for run, v in (('v3', v3), ('v4', v4)):
+        for run, v in RUNS:
             tab[run] = {l: dict(Counter(v[i][m] for i in scored if lab[i] == l))
                         for l in ('yes', 'borderline', 'no')}
-        moved = Counter((v3[i][m], v4[i][m]) for i in scored if v3[i][m] != v4[i][m])
+        moved = Counter((v3[i][m], v5[i][m]) for i in scored if v3[i][m] != v5[i][m])
         out['by_model'][m] = {'table': tab, 'moved': {f'{a}->{b}': n for (a, b), n in moved.most_common()}}
-        md += [f'\n**{m}** — his label → judge verdict', '| his | v3 (old borderline) | v4 (R-C7) |', '|---|---|---|']
-        md += [f"| {l} | {tab['v3'][l]} | {tab['v4'][l]} |" for l in ('yes', 'borderline', 'no')]
+        md += [f'\n**{m}** — his label → judge verdict', '| his | v3 (old) | v4 (R-C7) | v5 (R-C7 narrowed) |',
+               '|---|---|---|---|']
+        md += [f"| {l} | {tab['v3'][l]} | {tab['v4'][l]} | {tab['v5'][l]} |" for l in ('yes', 'borderline', 'no')]
         md.append(f"moved: {out['by_model'][m]['moved']}")
     # the consensus criteria on this subset
     agreed = lambda v, i: v[i]['gemini'] if v[i]['gemini'] and v[i]['gemini'] == v[i]['claude'] else None
-    for run, v in (('v3', v3), ('v4', v4)):
+    for run, v in RUNS:
         both = [i for i in scored if v[i]['gemini'] and v[i]['claude']]
         pos = lambda x: x in ('story', 'borderline')
         agree_pos = sum(1 for i in both if pos(v[i]['gemini']) == pos(v[i]['claude']))

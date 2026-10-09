@@ -295,17 +295,25 @@ together they fall into four shapes. Each line below is his, on the passage name
    mentioned"* (Ketubot 60b:5); *"After the woman comes to court, it is all dialogue"*
    (Ketubot 85a); *"Very borderline as the main actions are verbal"* (Gittin 20a). With
    conflict and no event at all, this is R-C2.
-2. **One real event, then discussion or a ruling.** *"just one real event and then
-   discussion"* (Ketubot 50b:9); *"really just one event, then a legal discussion"*
-   (Ketubot 51a); *"one event following by a ruling. But it has an implied change"*
-   (Ketubot 77a).
+2. **One real event, then discussion or a ruling — borderline only if something changes as
+   a result.** *"one event following by a ruling. But it has an implied change"* (Ketubot
+   77a). Without a change it is **not**: his later words are *"Not a story. One action
+   followed by a legal discussion"* (Kiddushin 39a, 2026-04) and *"just one action and then
+   explanation for it"* (Ketubot 110b). *Corrected 2026-10-09:* this shape first read "one
+   event, then discussion" → borderline, from his February notes (Ketubot 50b:9, 51a: *"just
+   one real event and then discussion"*). His later rulings are stricter, and they win.
 3. **Events, but weak causality or little change.** *"There are two events but no
    causality"* (Ketubot 14b); *"minimal causality. But there is some, and some change"*
    (Ketubot 50b:6); *"The change in outcome is absent, or at best, implied"* (Ketubot 100b).
-4. **An incident only alluded to** — R-C6.
+4. **An incident only alluded to, but sketched** — R-C6: enough of it is told that a reader
+   can follow it with the commentaries' help (Kiddushin 80b). An incident only **named** —
+   *"an incident in Tzaidan"*, with nothing of it told — is **not**: *"there is no story. It
+   is filled in by the translator. Not enough to go on"* (Gittin 46a, 74b).
 
 - **The line with `not`.** Borderline needs **at least one real event** — something that
-  happened to or was done by someone, beyond speaking. It is `not` when nothing happened:
+  happened to or was done by someone, beyond speaking. Raising a difficulty, resolving it,
+  ruling, teaching or rebuking are speech, not events: *"There are no events. This is just a
+  legal discussion"* (Ketubot 7a, 2026-03); *"all dialogue"* (Kiddushin 32a). It is `not` when nothing happened:
   a hypothetical, ordinary debate (R-C2), commentary (R-B4), a bare report or custom that
   leads nowhere (R-C5), or a case brought to a rabbi where **coming before him is the only
   event** (R-C0's limit, Ketubot 50b:4). Where a passage sits between, **prefer

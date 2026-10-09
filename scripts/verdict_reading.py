@@ -194,6 +194,12 @@ def label_old(verdict, shown, note, hand, classify_objection):
     if shown is None:
         return 'unknown', 'the classification he was shown is not on disk'
     storyish = shown in STORY_CALLS
+    if shown == 'NEEDS_REVIEW' and verdict == 'approve':
+        # NEEDS_REVIEW is not a classification: in the 2026-03-17 canonical round it flagged a
+        # MERGE or cross-page proposal on a passage already taken as a story. Approving it is
+        # "yes, merge it into the story beside it" -- a story, never his `no` (found 2026-10-09
+        # on Ketubot 104a:1-5, the death of Rabbi, which this branch used to label `no`).
+        return 'yes', 'approve on NEEDS_REVIEW: approved a merge of a story'
     if verdict in ('correct', 'approve'):
         if not storyish:
             return 'no', f'{verdict} on {shown}'
