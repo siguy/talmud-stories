@@ -1,0 +1,121 @@
+{
+ "units": 287,
+ "excluded_quoted": [
+  "corrected:Ketubot 14b_11-11",
+  "list:ketubot_015",
+  "list:ketubot_033",
+  "list:kiddushin_085",
+  "list:yevamot_072",
+  "review:Gittin 20a_9-9",
+  "review:Ketubot 100b_17-18",
+  "review:Ketubot 10a_9-10",
+  "review:Ketubot 50a_10-10",
+  "review:Ketubot 50b_4-5",
+  "review:Ketubot 50b_6-6",
+  "review:Ketubot 50b_9-10",
+  "review:Ketubot 51a_1-2",
+  "review:Ketubot 60b_5-6",
+  "review:Ketubot 77a_8-8",
+  "review:Ketubot 85a_13-14"
+ ],
+ "scored": 271,
+ "by_model": {
+  "gemini": {
+   "table": {
+    "v3": {
+     "yes": {
+      "story": 80,
+      "borderline": 9
+     },
+     "borderline": {
+      "story": 21,
+      "borderline": 2,
+      "not": 6
+     },
+     "no": {
+      "story": 23,
+      "borderline": 13,
+      "not": 112,
+      "out_of_scope": 5
+     }
+    },
+    "v4": {
+     "yes": {
+      "borderline": 49,
+      "story": 38,
+      "not": 2
+     },
+     "borderline": {
+      "story": 16,
+      "borderline": 9,
+      "not": 4
+     },
+     "no": {
+      "story": 15,
+      "borderline": 36,
+      "not": 99,
+      "out_of_scope": 3
+     }
+    }
+   },
+   "moved": {
+    "story->borderline": 53,
+    "not->borderline": 19,
+    "story->not": 5,
+    "not->story": 2,
+    "out_of_scope->not": 2,
+    "borderline->story": 1,
+    "borderline->not": 1
+   }
+  },
+  "claude": {
+   "table": {
+    "v3": {
+     "yes": {
+      "not": 89
+     },
+     "borderline": {
+      "story": 12,
+      "borderline": 5,
+      "not": 12
+     },
+     "no": {
+      "story": 4,
+      "not": 142,
+      "borderline": 7
+     }
+    },
+    "v4": {
+     "yes": {
+      "not": 33,
+      "borderline": 56
+     },
+     "borderline": {
+      "borderline": 18,
+      "not": 5,
+      "story": 6
+     },
+     "no": {
+      "story": 3,
+      "borderline": 22,
+      "not": 128
+     }
+    }
+   },
+   "moved": {
+    "not->borderline": 77,
+    "story->borderline": 7
+   }
+  }
+ },
+ "v3": {
+  "agree_story_vs_not": "143/271",
+  "both_not_on_his_yes_or_borderline": 4,
+  "both_story_or_borderline_on_his_no": 9
+ },
+ "v4": {
+  "agree_story_vs_not": "193/271",
+  "both_not_on_his_yes_or_borderline": 2,
+  "both_story_or_borderline_on_his_no": 19
+ }
+}

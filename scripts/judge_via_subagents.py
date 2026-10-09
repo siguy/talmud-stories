@@ -38,11 +38,11 @@ log = logging.getLogger('consensus-subagent')
 WORK_DIR = j.OUT_DIR / 'subagent'          # batch files + raw answers, kept as evidence
 
 
-def export(run, seed, batch, system=None, sha=None, work_dir=None):
+def export(run, seed, batch, system=None, sha=None, work_dir=None, set_name='full'):
     """Defaults are the single-question judge; run_rule_panel.py passes its own prompt."""
     system, sha, work_dir = system or j.system_prompt(), sha or j.prompt_sha(), work_dir or WORK_DIR
     labels = json.loads((j.OUT_DIR / 'labels.json').read_text())
-    units = j.select('full', labels)
+    units = j.select(set_name, labels)
     texts = {t: j.Text(t) for t in {u['tractate'] for u in units}}
     order = list(units)
     random.Random(seed).shuffle(order)
@@ -68,7 +68,7 @@ def export(run, seed, batch, system=None, sha=None, work_dir=None):
             (sd / f'{k:02d}.txt').write_text(it['prompt'] + '\n')
         n += 1
     (d / 'manifest.json').write_text(json.dumps({
-        'run': run, 'seed': seed, 'batch': batch, 'batches': n, 'units': len(order),
+        'run': run, 'set': set_name, 'seed': seed, 'batch': batch, 'batches': n, 'units': len(order),
         'prompt_sha': sha,
         'rules_sha': __import__('hashlib').sha256(j.RULES_PATH.read_bytes()).hexdigest()[:12],
         'exported': time.strftime('%Y-%m-%dT%H:%M:%S')}, indent=1))
@@ -123,7 +123,7 @@ def import_(run, model, system=None, sha=None, work_dir=None, out_path=None, ask
             rows.append({**{k: u[k] for k in ('id', 'kind', 'tractate', 'key', 'label', 'evidence',
                                                'cited_in_rules', 'cells')},
                          'answers': {'claude': ans}, **({'rejudged': True} if rejudged else {})})
-    meta = {'set': 'full', 'prompt': prompt_name or str(j.PROMPT_PATH.relative_to(PROJECT_ROOT)),
+    meta = {'set': man.get('set', 'full'), 'prompt': prompt_name or str(j.PROMPT_PATH.relative_to(PROJECT_ROOT)),
             'prompt_sha': sha, 'rules_sha': man.get('rules_sha'),
             'backends': {'claude': {'model': model, 'via': 'Claude Code subagent (Agent tool), not the API',
                                     'batch': man['batch'], 'seed': man['seed']}},
@@ -142,6 +142,7 @@ def main():
     e.add_argument('--run', required=True)
     e.add_argument('--seed', type=int, required=True)
     e.add_argument('--batch', type=int, default=25)
+    e.add_argument('--set', default='full', help='full | ids:<file of unit ids>')
     i = sub.add_parser('import')
     i.add_argument('--run', required=True)
     i.add_argument('--model', required=True)
@@ -150,7 +151,7 @@ def main():
                         handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'),
                                   logging.StreamHandler(sys.stdout)])
     if args.cmd == 'export':
-        export(args.run, args.seed, args.batch)
+        export(args.run, args.seed, args.batch, set_name=args.set)
     else:
         import_(args.run, args.model)
 

@@ -57,13 +57,13 @@ staleness check: it changes whenever anyone edits anything.*
 |---|---|---|
 | `span-truncation-rate` | `talmud-stories` | **3 FILES** |
 | `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
-| `jeff-comms-review-92c526` | `jeff-comms-review-92c526` | **9 FILES** |
+| `jeff-comms-review-92c526` | `jeff-comms-review-92c526` | **12 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
 | `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | clean |
 | `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 51 items, never deleted
+## Done — 52 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -116,6 +116,7 @@ staleness check: it changes whenever anyone edits anything.*
 | [Read an old `correct` against the call Jeff was shown — map_verdict_vocabularies and build_ruler](work/done/2026-09-28-verdicts-read-against-the-call-shown.md) | classification | [2026-09-29-verdicts-read-against-the-call-shown.md](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md) |
 | [Move the public project page to the Vercel hub, current and in plain language; retire GitHub Pages](work/done/2026-10-02-public-site-refresh.md) | publication | [2026-10-02-public-site-moved-to-hub.md](docs/findings/2026-10-02-public-site-moved-to-hub.md) |
 | [Rule panel — split "is it a story?" into one narrow question per feature, then decide in code; does it match Jeff better than the single question?](work/done/2026-10-02-rule-panel-lenses.md) | classification, review | [2026-10-02-rule-panel-lenses.md](docs/findings/2026-10-02-rule-panel-lenses.md) |
+| [Test a wider borderline definition (R-C7, judge prompt v2)](work/done/2026-10-09-borderline-definition-test.md) | classification | [2026-10-09-borderline-definition-test.md](docs/findings/2026-10-09-borderline-definition-test.md) |
 | [Re-run both consensus judges on the register with Jeff's 2026-10-07 rulings](work/done/2026-10-09-consensus-v3-after-jeff-rulings.md) | classification | [2026-10-09-consensus-v3.md](docs/findings/2026-10-09-consensus-v3.md) |
 | [Apply Jeff's 2026-10-07 rulings (four lines, seven passages)](work/done/2026-10-09-jeff-2026-10-07-rulings.md) | classification, detection | [2026-10-09-jeff-answers-four-lines.md](docs/findings/2026-10-09-jeff-answers-four-lines.md) |
-<!-- board-checksum: fd29d90c76e0ce2d -->
+<!-- board-checksum: 8e51232cb1a45c4f -->
