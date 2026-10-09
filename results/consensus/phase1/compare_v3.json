@@ -1,0 +1,440 @@
+{
+ "v2": {
+  "labels_as_run": {
+   "agreement": {
+    "k": 291,
+    "n": 363,
+    "rate": 0.802,
+    "wilson": [
+     0.758,
+     0.839
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 4,
+    "ids": [
+     "review:Gittin 88a_11-11",
+     "review:Ketubot 111a_23-25",
+     "review:Ketubot 50a_10-10",
+     "review:Ketubot 50b_4-5"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 9,
+    "of": 444,
+    "ids": [
+     "list:ketubot_050",
+     "list:ketubot_076",
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:kiddushin_085",
+     "list:yevamot_072",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "current": {
+   "agreement": {
+    "k": 291,
+    "n": 363,
+    "rate": 0.802,
+    "wilson": [
+     0.758,
+     0.839
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 3,
+    "ids": [
+     "review:Gittin 88a_11-11",
+     "review:Ketubot 111a_23-25",
+     "review:Ketubot 50b_4-5"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 8,
+    "of": 441,
+    "ids": [
+     "list:ketubot_050",
+     "list:ketubot_076",
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:kiddushin_085",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "current_excl_ruled": {
+   "agreement": {
+    "k": 289,
+    "n": 361,
+    "rate": 0.801,
+    "wilson": [
+     0.756,
+     0.839
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 2,
+    "ids": [
+     "review:Gittin 88a_11-11",
+     "review:Ketubot 111a_23-25"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 5,
+    "of": 438,
+    "ids": [
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "tally_current": {
+   "split": 115,
+   "both_right_loose": 831,
+   "both_right_strict": 752,
+   "both_wrong": 46,
+   "missing": 5
+  },
+  "per_model_verdicts": {
+   "gemini": {
+    "story": 831,
+    "not": 129,
+    "borderline": 24,
+    "out_of_scope": 8,
+    "null": 5
+   },
+   "claude": {
+    "not": 231,
+    "story": 699,
+    "borderline": 64,
+    "out_of_scope": 3
+   }
+  }
+ },
+ "v3": {
+  "labels_as_run": {
+   "agreement": {
+    "k": 275,
+    "n": 364,
+    "rate": 0.755,
+    "wilson": [
+     0.709,
+     0.797
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 1,
+    "ids": [
+     "review:Ketubot 111a_23-25"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 17,
+    "of": 446,
+    "ids": [
+     "list:ketubot_015",
+     "list:ketubot_033",
+     "list:ketubot_044",
+     "list:ketubot_065",
+     "list:ketubot_071",
+     "list:ketubot_076",
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:gittin_057",
+     "list:gittin_111",
+     "list:yevamot_014",
+     "list:yevamot_031",
+     "list:yevamot_050",
+     "list:yevamot_072",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "current": {
+   "agreement": {
+    "k": 275,
+    "n": 364,
+    "rate": 0.755,
+    "wilson": [
+     0.709,
+     0.797
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 1,
+    "ids": [
+     "review:Ketubot 111a_23-25"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 14,
+    "of": 443,
+    "ids": [
+     "list:ketubot_044",
+     "list:ketubot_065",
+     "list:ketubot_071",
+     "list:ketubot_076",
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:gittin_057",
+     "list:gittin_111",
+     "list:yevamot_014",
+     "list:yevamot_031",
+     "list:yevamot_050",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "current_excl_ruled": {
+   "agreement": {
+    "k": 273,
+    "n": 362,
+    "rate": 0.754,
+    "wilson": [
+     0.707,
+     0.796
+    ]
+   },
+   "agreed_story_on_his_no": {
+    "n": 1,
+    "ids": [
+     "review:Ketubot 111a_23-25"
+    ]
+   },
+   "list_called_not_by_both": {
+    "n": 13,
+    "of": 440,
+    "ids": [
+     "list:ketubot_044",
+     "list:ketubot_065",
+     "list:ketubot_071",
+     "list:kiddushin_012",
+     "list:kiddushin_016",
+     "list:kiddushin_022",
+     "list:kiddushin_028",
+     "list:gittin_057",
+     "list:gittin_111",
+     "list:yevamot_014",
+     "list:yevamot_031",
+     "list:yevamot_050",
+     "list:yevamot_100"
+    ]
+   }
+  },
+  "tally_current": {
+   "split": 140,
+   "both_right_loose": 801,
+   "both_right_strict": 684,
+   "both_wrong": 54,
+   "missing": 2
+  },
+  "per_model_verdicts": {
+   "gemini": {
+    "story": 782,
+    "not": 172,
+    "borderline": 33,
+    "out_of_scope": 8,
+    "null": 2
+   },
+   "claude": {
+    "not": 291,
+    "story": 590,
+    "borderline": 113,
+    "out_of_scope": 3
+   }
+  }
+ },
+ "ruled_passages": [
+  {
+   "q": "1A",
+   "id": "list:kiddushin_085",
+   "his_now": "borderline",
+   "v2": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v3": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   }
+  },
+  {
+   "q": "1B",
+   "id": "list:yevamot_072",
+   "his_now": "no",
+   "v2": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v3": {
+    "gemini": "not",
+    "claude": "not"
+   }
+  },
+  {
+   "q": "2A",
+   "id": "list:ketubot_015",
+   "his_now": "no",
+   "v2": {
+    "gemini": "story",
+    "claude": "borderline"
+   },
+   "v3": {
+    "gemini": "not",
+    "claude": "not"
+   }
+  },
+  {
+   "q": "2B",
+   "id": "list:ketubot_033",
+   "his_now": "no",
+   "v2": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   },
+   "v3": {
+    "gemini": "not",
+    "claude": "not"
+   }
+  },
+  {
+   "q": "3A",
+   "id": "review:Ketubot 50b_4-5",
+   "his_now": "no",
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v3": {
+    "gemini": "not",
+    "claude": "not"
+   }
+  },
+  {
+   "q": "3B",
+   "id": "review:Ketubot 50a_10-10",
+   "his_now": "borderline",
+   "v2": {
+    "gemini": "story",
+    "claude": "story"
+   },
+   "v3": {
+    "gemini": "borderline",
+    "claude": "borderline"
+   }
+  },
+  {
+   "q": "4A",
+   "id": "list:ketubot_050",
+   "his_now": "yes",
+   "v2": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v3": {
+    "gemini": "story",
+    "claude": "story"
+   }
+  },
+  {
+   "q": "4B",
+   "id": "list:ketubot_076",
+   "his_now": null,
+   "v2": {
+    "gemini": "not",
+    "claude": "not"
+   },
+   "v3": {
+    "gemini": "not",
+    "claude": "not"
+   }
+  }
+ ],
+ "moved": [
+  {
+   "model": "claude",
+   "from": "story",
+   "to": "borderline",
+   "n": 66
+  },
+  {
+   "model": "claude",
+   "from": "story",
+   "to": "not",
+   "n": 48
+  },
+  {
+   "model": "gemini",
+   "from": "story",
+   "to": "not",
+   "n": 44
+  },
+  {
+   "model": "claude",
+   "from": "borderline",
+   "to": "not",
+   "n": 31
+  },
+  {
+   "model": "claude",
+   "from": "not",
+   "to": "borderline",
+   "n": 17
+  },
+  {
+   "model": "gemini",
+   "from": "story",
+   "to": "borderline",
+   "n": 13
+  },
+  {
+   "model": "gemini",
+   "from": "borderline",
+   "to": "not",
+   "n": 5
+  },
+  {
+   "model": "gemini",
+   "from": "not",
+   "to": "borderline",
+   "n": 3
+  },
+  {
+   "model": "gemini",
+   "from": "not",
+   "to": "story",
+   "n": 3
+  },
+  {
+   "model": "claude",
+   "from": "borderline",
+   "to": "story",
+   "n": 3
+  },
+  {
+   "model": "claude",
+   "from": "not",
+   "to": "story",
+   "n": 2
+  },
+  {
+   "model": "gemini",
+   "from": "borderline",
+   "to": "story",
+   "n": 2
+  }
+ ]
+}
