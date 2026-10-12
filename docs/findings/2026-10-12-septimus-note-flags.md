@@ -32,7 +32,14 @@ Passages the note-drafter thought are not stories, are cut off, or look garbled.
 - **ketubot Ketubot 111b** (`ketubot-111b-13-13`, story): Opens with 'Similarly', so it continues earlier material; it is a short report of wonders more than a full story.
 - **ketubot Ketubot 111b** (`ketubot-111b-22-22`, story): Reads as a list of eyewitness claims rather than a story with a plot.
 - **ketubot Ketubot 112a** (`ketubot-112a-11-11`, borderline): Short boasting exchange, so only borderline as a story.
-- **kiddushin Kiddushin 39b** (`kiddushin-39b-13-13`, story): Begins mid-sentence and never names the man who saw this; the earlier part of the passage is missing.
+- **kiddushin Kiddushin 12b** (`kiddushin-12b-10-10`, story): Starts with a story but segments 1-3 are mostly legal debate, and segment 1 begins mid-sentence.
+- **kiddushin Kiddushin 22b** (`kiddushin-22b-18-18`, story): First segment ends mid-sentence with a side comment about the slave being an adult.
+- **kiddushin Kiddushin 25a** (`kiddushin-25a-1-3`, story): Ends in the middle of Rav Hisda's technical answer; the final segment is mostly legal explanation.
+- **kiddushin Kiddushin 26b** (`kiddushin-26b-4-5`, story): Ends with an open legal question rather than a closing line, and begins with a framing note about the man's health.
+- **kiddushin Kiddushin 29b** (`kiddushin-29b-15-15`, story): The second segment is a separate, unrelated teaching about marriage age (Rava and Rabbi Natan bar Ami), not part of the story.
+- **kiddushin Kiddushin 31a** (`kiddushin-31a-12-12`, story): Second segment is a fragment of commentary and the text may be cut off.
+- **kiddushin Kiddushin 32b** (`kiddushin-32b-1-1`, story): Begins as an objection in the middle of a debate ('Is that so?'), and the start may be cut off.
+- **kiddushin Kiddushin 39b** (`kiddushin-39b-13-13`, story): Starts mid-thought ('he saw'); Elisha ben Avuya is not named in this excerpt and the opening is cut off.
 - **kiddushin Kiddushin 45b** (`kiddushin-45b-3-3`, story): Ends at the surprise betrothal; the ruling on whether it is valid is not in the passage.
 - **kiddushin Kiddushin 52b** (`kiddushin-52b-12-14`, story): Ends with Rabbi Yosei's defense; no final ruling is stated.
 - **kiddushin Kiddushin 57a** (`kiddushin-57a-0-1`, story): Begins with 'The Gemara answers', so it opens mid-discussion.
