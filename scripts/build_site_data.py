@@ -86,7 +86,8 @@ def build(tractate, path, reviewed):
                     "in_mishnah": in_mishnah,
                     # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
                     "reviewed": reviewed and not in_mishnah,
-                    "summary": s.get("one_sentence_summary", ""),
+                    # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
+                    "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
                     # ref + index locate a segment exactly, so feedback on one can be traced to the source.
                     "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                                  for r, g in segs],

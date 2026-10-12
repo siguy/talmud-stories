@@ -94,7 +94,7 @@
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span>') +
-        '<p class="summary">' + esc(s.summary) + '</p>' + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
+        (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +
         feedbackMarkup() + '<div class="pager actions">' + (prev ? '<a class="btn" href="#/s/' + prev.id + '">← Previous</a>' : '<span></span>') + (next ? '<a class="btn" href="#/s/' + next.id + '">Next →</a>' : '') + '</div>';
