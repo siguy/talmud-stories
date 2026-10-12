@@ -71,9 +71,9 @@ def build(tractate, path, reviewed):
                 if t is None:
                     continue
                 ps = pieces(pages, i, s)
-                segs = [g for _, gs in ps for g in gs]
+                segs = [(r, g) for r, gs in ps for g in gs]
                 assert segs, (tractate, p["ref"], s)
-                if not NIKUD.search("".join(g.get("hebrew") or "" for g in segs)):
+                if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                     print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
                 stories.append({
                     "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
@@ -82,11 +82,14 @@ def build(tractate, path, reviewed):
                     "refs": [r for r, _ in ps],
                     "start_segment": int(s["start_segment"]),
                     "tier": t,
+                    "classification": s.get("classification"),
                     "in_mishnah": in_mishnah,
                     # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
                     "reviewed": reviewed and not in_mishnah,
                     "summary": s.get("one_sentence_summary", ""),
-                    "segments": [{"he": clean(g.get("hebrew")), "en": clean(g.get("english"))} for g in segs],
+                    # ref + index locate a segment exactly, so feedback on one can be traced to the source.
+                    "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
+                                 for r, g in segs],
                 })
     return stories
 

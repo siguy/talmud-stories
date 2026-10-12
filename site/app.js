@@ -85,7 +85,7 @@
       if (!s) { app.innerHTML = '<p>Story not found. <a href="#/">Home</a></p>'; return; }
       var siblings = d.stories.filter(function (x) { return x.tier === s.tier; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var i = siblings.indexOf(s), prev = siblings[i - 1], next = siblings[i + 1];
-      var segs = s.segments.map(function (g) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div></div>'; }).join("");
+      var segs = s.segments.map(function (g, n) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div><button class="flag" data-seg="' + n + '" aria-label="Report a problem with this passage" title="Report a problem with this passage">⚑ Report</button></div>'; }).join("");
       app.innerHTML = '<div class="crumb"><a href="#/t/' + t + (s.tier === "borderline" ? "?tab=borderline" : "") + '">← ' + NAME[t] + '</a></div>' +
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
@@ -93,11 +93,71 @@
         '<p class="summary">' + esc(s.summary) + '</p>' + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +
-        '<div class="pager actions">' + (prev ? '<a class="btn" href="#/s/' + prev.id + '">← Previous</a>' : '<span></span>') + (next ? '<a class="btn" href="#/s/' + next.id + '">Next →</a>' : '') + '</div>';
+        feedbackMarkup() + '<div class="pager actions">' + (prev ? '<a class="btn" href="#/s/' + prev.id + '">← Previous</a>' : '<span></span>') + (next ? '<a class="btn" href="#/s/' + next.id + '">Next →</a>' : '') + '</div>';
       var btn = document.getElementById("read-btn");
       function label() { btn.textContent = read.has(id) ? "✓ Marked as read" : "Mark as read"; btn.setAttribute("aria-pressed", read.has(id)); }
       label();
       btn.addEventListener("click", function () { toggleRead(id); label(); });
+      wireFeedback(s);
+    });
+  }
+
+  // ---- feedback: inline per story; fills in the story's details itself ------------------------
+  var CATS = [["hebrew", "The Hebrew text looks wrong"], ["translation", "The English is wrong or unclear"], ["not_story", "This isn't really a story"],
+              ["boundary", "The story starts or ends in the wrong place"], ["other", "Something else"]];
+  var CFG = window.SEPTIMUS_CONFIG || {};
+  function plain(h) { var d = document.createElement("div"); d.innerHTML = h; return (d.textContent || "").trim(); }
+  function feedbackMarkup() {
+    return '<details class="fb" id="fb"><summary>Report a problem or suggest a fix</summary><form id="fb-form" novalidate>' +
+      '<div class="about" id="fb-about"></div>' +
+      '<div><label for="fb-cat">What\'s the problem?</label><select id="fb-cat">' +
+      CATS.map(function (c) { return '<option value="' + c[0] + '">' + esc(c[1]) + '</option>'; }).join("") + '</select></div>' +
+      '<div><label for="fb-comment">Tell us more (optional, except for "Something else")</label><textarea id="fb-comment" maxlength="4000"></textarea></div>' +
+      '<div><label for="fb-name">Your name (optional)</label><input type="text" id="fb-name" maxlength="120" autocomplete="name"></div>' +
+      '<div class="hp" aria-hidden="true"><label>Leave empty <input type="text" id="fb-website" tabindex="-1" autocomplete="off"></label></div>' +
+      '<button class="btn" id="fb-send" type="submit">Send</button><div id="fb-msg" role="status"></div></form></details>';
+  }
+  function wireFeedback(s) {
+    var seg = null; // null = about the whole story
+    function about() {
+      var el = document.getElementById("fb-about");
+      if (seg == null) { el.textContent = "About this whole story (" + refLabel(s) + ")."; return; }
+      var g = s.segments[seg];
+      el.innerHTML = 'About this passage — <button type="button" class="linkbtn" id="fb-whole">report on the whole story instead</button><q>' + esc(plain(g.en).slice(0, 160)) + '…</q>';
+      document.getElementById("fb-whole").addEventListener("click", function () { seg = null; about(); });
+    }
+    about();
+    app.querySelectorAll(".flag").forEach(function (b) {
+      b.addEventListener("click", function () {
+        seg = +b.dataset.seg; about();
+        var d = document.getElementById("fb"); d.open = true; d.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    });
+    document.getElementById("fb-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var g = seg == null ? null : s.segments[seg], msg = document.getElementById("fb-msg");
+      var cat = document.getElementById("fb-cat").value, comment = document.getElementById("fb-comment").value.trim();
+      if (cat === "other" && !comment) { msg.className = "msg"; msg.textContent = "Please add a few words so we know what you mean."; return; }
+      var payload = {
+        story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs, tier: s.tier, classification: s.classification,
+        reviewed: s.reviewed, in_mishnah: s.in_mishnah, summary: s.summary, category: cat, comment: comment,
+        segment: g ? { ref: g.ref, index: g.i, he: plain(g.he), en: plain(g.en) } : null,
+        name: document.getElementById("fb-name").value.trim(), website: document.getElementById("fb-website").value,
+        page_url: location.href.slice(0, 300)
+      };
+      var send = document.getElementById("fb-send"); send.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
+      function done(ok, text) { send.disabled = false; msg.className = "msg"; msg.innerHTML = text; if (ok) document.getElementById("fb-comment").value = ""; }
+      function fallback() {
+        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + cat;
+        var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(payload, null, 1) + "\n```";
+        var url = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body.slice(0, 6000));
+        window.open(url, "_blank", "noopener");
+        done(true, "Opened GitHub with your note filled in — press “Submit new issue” there to send it.");
+      }
+      if (!CFG.feedbackEndpoint) { fallback(); return; }
+      fetch(CFG.feedbackEndpoint, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); done(true, "Thank you — your note was sent."); })
+        .catch(function () { done(false, 'Sorry, that did not send. <button type="button" class="linkbtn" id="fb-alt">Send via GitHub instead</button>'); document.getElementById("fb-alt").addEventListener("click", fallback); });
     });
   }
 

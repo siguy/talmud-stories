@@ -31,3 +31,19 @@ def test_hebrew_carries_nikud():
     for t in GOLDEN_COUNTS:
         d = json.loads((ROOT / f"site/data/{t}.json").read_text())
         assert all(nik.search("".join(g["he"] for g in s["segments"])) for s in d["stories"]), t
+
+
+def test_every_segment_can_be_located_for_feedback():
+    for t in GOLDEN_COUNTS:
+        d = json.loads((ROOT / f"site/data/{t}.json").read_text())
+        assert all(g["ref"] and isinstance(g["i"], int) for s in d["stories"] for g in s["segments"]), t
+        assert all(s["classification"] for s in d["stories"]), t
+
+
+def test_feedback_worker_builds_a_safe_issue():
+    import shutil
+    if not shutil.which("node"):
+        import pytest
+        pytest.skip("node not installed")
+    r = subprocess.run(["node", str(ROOT / "worker/test_worker.mjs")], capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr
