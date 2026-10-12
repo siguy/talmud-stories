@@ -265,7 +265,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends \"As there is no valid testimony to rely on,\" and next segment completes \"let the land remain in the possession of Bar Shatya.\""
+   },
    "reviewed": false,
    "summary": "Bar Shatya, a man with intermittent insanity, sold property, leading to a dispute between witnesses that Rav Ashi resolved by maintaining the status quo of ownership.",
    "segments": [
@@ -280,6 +284,12 @@
      "i": 0,
      "he": "וְאַרְעָא אוֹקְמַהּ בְּחֶזְקַת בַּר שָׁטְיָא!",
      "en": "<b>let the land remain in the possession of Bar Shatya.</b> Since no substantiated proof was brought forth, the land remains in the hands of its current possessor. As such, the same should be true with regard to cases of betrothal and divorce whose status is uncertain; the woman should remain in her former presumptive status."
+    },
+    {
+     "ref": "Yevamot 31b",
+     "i": 1,
+     "he": "אֶלָּא אָמַר אַבָּיֵי: ״יַגִּיד עָלָיו רֵיעוֹ״. תְּנָא בְּקִידּוּשִׁין, וְהוּא הַדִּין לְגֵירוּשִׁין. תְּנָא בְּגֵירוּשִׁין, וְהוּא הַדִּין לְקִידּוּשִׁין.",
+     "en": "<b>Rather,</b> Rabba’s understanding of the mishna must be rejected, and <b>Abaye said:</b> The mishna should be understood according to that which is written: <b>“His fellow speaks of him”</b> (Job 36:33). This principle teaches that a related case can be inferred from the single case cited. The mishna <b>teaches</b> the case where it is uncertain whether the item is closer to him or closer to her <b>with regard to betrothal, and the same is true with regard to divorce</b> if it is uncertain whether the bill of divorce fell closer to him or closer to her. Similarly, the mishna <b>teaches</b> the case of bills that were written in a questionable manner <b>with regard to divorce, and the same is true with regard to betrothal.</b>"
     }
    ]
   },
@@ -847,10 +857,20 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Opens 'And the world was desolate of Torah' as a continuation; preceding segment gives 'twelve thousand pairs of students... died... because they did not treat each other with respect'."
+   },
    "reviewed": false,
    "summary": "After 24,000 of his students died in a plague for failing to respect one another, Rabbi Akiva traveled to the South and raised a new generation of five great scholars who restored the Torah.",
    "segments": [
+    {
+     "ref": "Yevamot 62b",
+     "i": 8,
+     "he": "רַבִּי עֲקִיבָא אוֹמֵר: לָמַד תּוֹרָה בְּיַלְדוּתוֹ — יִלְמוֹד תּוֹרָה בְּזִקְנוּתוֹ. הָיוּ לוֹ תַּלְמִידִים בְּיַלְדוּתוֹ — יִהְיוּ לוֹ תַּלְמִידִים בְּזִקְנוּתוֹ, שֶׁנֶּאֱמַר: ״בַּבֹּקֶר זְרַע אֶת זַרְעֶךָ וְגוֹ׳״. אָמְרוּ: שְׁנֵים עָשָׂר אָלֶף זוּגִים תַּלְמִידִים הָיוּ לוֹ לְרַבִּי עֲקִיבָא מִגְּבָת עַד אַנְטִיפְרַס, וְכוּלָּן מֵתוּ בְּפֶרֶק אֶחָד, מִפְּנֵי שֶׁלֹּא נָהֲגוּ כָּבוֹד זֶה לָזֶה.",
+     "en": "<b>Rabbi Akiva says</b> that the verse should be understood as follows: If one <b>studied Torah in his youth he should study</b> more <b>Torah in his old age;</b> if <b>he had students in his youth he should have</b> additional <b>students in his old age, as it is stated: “In the morning sow your seed, etc.” They said</b> by way of example that <b>Rabbi Akiva had twelve thousand pairs of students</b> in an area of land that stretched <b>from Gevat to Antipatris</b> in Judea, <b>and they all died in one period</b> of time, <b>because they did not treat each other with respect.</b>"
+    },
     {
      "ref": "Yevamot 62b",
      "i": 9,
@@ -1215,13 +1235,18 @@
    "tractate": "yevamot",
    "ref": "Yevamot 75b",
    "refs": [
-    "Yevamot 75b"
+    "Yevamot 75b",
+    "Yevamot 76a"
    ],
    "start_segment": 15,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"Rav Pappi said: Because you come\" is cut mid-sentence; ruling follows in next segment"
+   },
    "reviewed": false,
    "summary": "In Mata Meḥasya, Mar bar Rav Ashi performed a surgical procedure on a man with a genital deformity to make him halakhically fit.",
    "segments": [
@@ -1230,6 +1255,12 @@
      "i": 15,
      "he": "הָהוּא עוֹבָדָא דַּהֲוָה בְּמָתָא מַחְסֵיָא, שַׁפְּיֵיהּ מָר בַּר רַב אָשֵׁי כְּקוּלְמוֹס וְאַכְשְׁרֵיהּ. הָהוּא עוֹבָדָא דַּהֲוָה בְּפוּמְבְּדִיתָא, אִיסְתְּתִים גּוּבְתָּא דְּשִׁכְבַת זֶרַע, וְאַפֵּיק בִּמְקוֹם קְטַנִּים. סְבַר רַב בִּיבִי בַּר אַבָּיֵי לְאַכְשׁוֹרֵי. אָמַר רַב פַּפִּי: מִשּׁוּם דְּאַתּוּ",
      "en": "The Gemara relates: <b>A certain incident</b> actually <b>occurred in</b> the town of <b>Mata Meḥasya,</b> where a man’s member was cut like a gutter. <b>Mar bar Rav Ashi cut</b> back the flesh on all sides until it was <b>like a quill and</b> thereby <b>rendered him fit</b> to enter into the congregation. <b>A certain incident occurred in Pumbedita,</b> where <b>the seminal duct</b> of a certain man <b>became blocked, and he emitted</b> semen <b>through the urinary duct. Rav Beivai bar Abaye thought to render him fit,</b> as his genitals were neither crushed nor severed. <b>Rav Pappi said: Because you come</b>"
+    },
+    {
+     "ref": "Yevamot 76a",
+     "i": 0,
+     "he": "מִמּוּלָאֵי, אָמְרִיתוּ מִילֵּי מוּלְיָתָא? בִּמְקוֹמָהּ — מְבַשְּׁלָה, שֶׁלֹּא בִּמְקוֹמָהּ — לָא מְבַשְּׁלָה.",
+     "en": "<b>from truncated [<i>mimula’ei</i>] people,</b> as Rav Beivai’s family traced their lineage to the house of Eli, all of whose descendants were destined to be short-lived (see I Samuel 2:31), <b>you speak truncated [<i>mulayata</i>]</b> and unsound <b>matters.</b> When the semen passes through <b>its</b> proper <b>place, it fertilizes;</b> but if it does <b>not</b> pass through <b>its</b> proper <b>place, it does not fertilize.</b> Since he cannot father children, he is like one whose testicles have been crushed, and therefore he may not enter into the congregation."
     }
    ]
   },
@@ -1238,16 +1269,27 @@
    "tractate": "yevamot",
    "ref": "Yevamot 77a",
    "refs": [
+    "Yevamot 76b",
     "Yevamot 77a"
    ],
    "start_segment": 0,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Segment opens \"Doeg raised before them all those objections\", so the preceding segment's \"He went to the study hall and asked\" supplies the setup."
+   },
    "reviewed": false,
    "summary": "During a debate over David's lineage, Doeg silences the sages with objections, but Amasa intervenes just as Doeg prepares to publicly disqualify David.",
    "segments": [
+    {
+     "ref": "Yevamot 76b",
+     "i": 16,
+     "he": "מִיָּד: ״וַיֹּאמֶר הַמֶּלֶךְ שְׁאַל אַתָּה בֶּן מִי זֶה הָעָלֶם״. הָתָם קָרֵי לֵיהּ ״נַעַר״, הָכָא קָרֵי לֵיהּ ״עֶלֶם״? הָכִי קָא אֲמַר לֵיהּ: הֲלָכָה נִתְעַלְּמָה מִמְּךָ — צֵא וּשְׁאַל בְּבֵית הַמִּדְרָשׁ. שָׁאַל, אֲמַרוּ לֵיהּ: ״עַמּוֹנִי״, וְלֹא עַמּוֹנִית. ״מוֹאָבִי״, וְלֹא מוֹאָבִית.",
+     "en": "<b>Immediately: “And the king said, inquire you whose son is this lad”</b> (I Samuel 17:56). The Gemara comments: <b>There,</b> in the previous verse, Saul <b>calls him youth [<i>na’ar</i>],</b> and <b>here he calls him lad [<i>elem</i>].</b> This change in the wording hints at the following discussion. Saul <b>said to</b> Doeg <b>as follows:</b> The <b><i>halakha</i> is hidden [<i>nitalma</i>] from you,</b> and you are ignorant of the law. <b>Go and inquire</b> about the matter <b>in the study hall. He</b> went to the study hall and <b>asked. They said to him:</b> The <i>halakha</i> is: <b>An Ammonite</b> man is forbidden, <b>but not an Ammonite woman; a Moabite</b> man is forbidden, <b>but not a Moabite woman.</b>"
+    },
     {
      "ref": "Yevamot 77a",
      "i": 0,
@@ -1559,7 +1601,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "'Rather, say that this is what Rabbi Elazar bar Tzadok meant: They sought to promote a slave' gives the actual incident outcome."
+   },
    "reviewed": false,
    "summary": "Rabbi Elazar bar Tzadok recounts how his testimony about seeing a man receive teruma in one town nearly led a court in another town to mistakenly grant that man priestly status.",
    "segments": [
@@ -1574,6 +1620,12 @@
      "i": 10,
      "he": "הֶעֱלוּ סָלְקָא דַּעְתָּךְ?! הַשְׁתָּא בְּהֶמְתָּן שֶׁל צַדִּיקִים אֵין הַקָּדוֹשׁ בָּרוּךְ הוּא מֵבִיא תַּקָּלָה עַל יָדָן, צַדִּיקִים עַצְמָן לֹא כׇּל שֶׁכֵּן!",
      "en": "The Gemara asks: Can it <b>enter your mind</b> that <b>they</b> actually <b>promoted</b> him? <b>Now</b> consider: If, even <b>through the animals of the righteous, the Holy One, Blessed be He, does not bring</b> about <b>a stumbling block,</b> then through <b>the righteous themselves, all the more so</b> is it <b>not</b> so that He does not bring about stumbling blocks?"
+    },
+    {
+     "ref": "Yevamot 99b",
+     "i": 11,
+     "he": "אֶלָּא אֵימָא: בִּקְּשׁוּ לְהַעֲלוֹת עֶבֶד לַכְּהוּנָּה עַל פִּי. חֲזָא בְּאַתְרֵיהּ דְּרַבִּי יוֹסֵי — וַאֲזַל וְאַסְהֵיד בְּאַתְרֵיהּ דְּרַבִּי יְהוּדָה.",
+     "en": "<b>Rather, say</b> that this is what Rabbi Elazar bar Tzadok meant: <b>They sought to promote a slave to</b> the presumptive status of <b>priesthood on</b> the basis of <b>my word.</b> How did this happen? Rabbi Elazar bar Tzadok <b>saw</b> a man receiving <i>teruma</i> <b>in Rabbi Yosei’s locale and went and testified in Rabbi Yehuda’s locale</b> about what he saw, not realizing that this testimony would be sufficient grounds to assume that the man is a priest. Since <i>teruma</i> is distributed there only to priests, the slave was almost promoted to the presumptive status of priesthood erroneously."
     }
    ]
   },
@@ -1663,7 +1715,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends at 'what did Rabbi Meir see...?'; the next segment gives the answer 'Rabbi Ya'akov says in the name of Rabbi Meir: One may perform ḥalitza using a soft leather shoe ab initio'."
+   },
    "reviewed": false,
    "summary": "Rabbi Yosei travels to Netzivin and interviews an Elder to discover how Rabbi Yehuda ben Beteira performed the halitza ceremony.",
    "segments": [
@@ -1678,6 +1734,12 @@
      "i": 8,
      "he": "אָמַר לִי: רָאִיתִי שֶׁחָלַץ הַרְבֵּה פְּעָמִים. בְּמִנְעָל אוֹ בְּסַנְדָּל? אָמַר לִי: וְכִי חוֹלְצִין בְּמִנְעָל?! (וְהַתּוֹרָה אָמְרָה ״נַעֲלוֹ״, וְלֹא מִנְעָלוֹ), אָמַרְתִּי לוֹ: אִם כֵּן, מָה רָאָה רַבִּי מֵאִיר לוֹמַר חָלְצָה בְּמִנְעָל חֲלִיצָתָהּ כְּשֵׁירָה?!",
      "en": "<b>He said to me: I saw that he</b> conducted <b><i>ḥalitza</i> many times.</b> I asked him: <b>Using a</b> soft leather <b>shoe or a</b> hard leather <b>sandal? He said to me: Does anyone</b> allow <b>performing <i>ḥalitza</i> with a</b> soft leather <b>shoe? But the Torah said: “His shoe [<i>na’alo</i>]”</b> (Deuteronomy 25:9) <b>and not: His shoe [<i>minalo</i>]. I said to him: If so, what did Rabbi Meir see that</b> made <b>him say</b> that if <b>a woman performed <i>ḥalitza</i> using</b> a soft leather <b>shoe her <i>ḥalitza</i> is valid?</b>"
+    },
+    {
+     "ref": "Yevamot 102a",
+     "i": 9,
+     "he": "רַבִּי יַעֲקֹב אוֹמֵר מִשְּׁמוֹ: חוֹלְצִין בְּמִנְעָל לְכַתְּחִלָּה. וּמַאן דְּאָמַר לְכַתְּחִלָּה לָא, מַאי טַעְמָא?",
+     "en": "<b>Rabbi Ya’akov says in the name</b> of Rabbi Meir: <b>One may perform <i>ḥalitza</i> using</b> a soft leather <b>shoe <i>ab initio</i>.</b> The Gemara explains: <b>And for the one who said one may not</b> perform <i>ḥalitza</i> with a soft leather <b>shoe <i>ab initio</i>, what is the reason</b> for this?"
     }
    ]
   },
@@ -1785,7 +1847,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Third question (\"Is there writing in Heaven that is not truth?\") is answered in the next two segments"
+   },
    "reviewed": false,
    "summary": "Levi travels to rural villages to teach but is stumped by three questions, forcing him to return to the study hall for the answers.",
    "segments": [
@@ -1800,6 +1866,18 @@
      "i": 9,
      "he": "לָא הֲוָה בִּידֵיהּ. אֲתָא שַׁאֵיל בֵּי מִדְרְשָׁא, אֲמַרוּ לֵיהּ: מִי כְּתִיב ״וְחָלְצָה בַּיָּד״? וּמִי כְּתִיב ״וְיָרְקָה רוֹק״?",
      "en": "<b>He did not have</b> an answer <b>at hand</b> to these questions, so <b>he came and asked</b> at <b>the house of study. They said to him</b> in response to the first question: <b>Does it say</b> in the Torah: <b>And she shall remove</b> the shoe <b>by hand?</b> Clearly, she may remove the shoe in any manner and there is no reason to disqualify an armless woman. With regard to the second question, they said: <b>And does it say</b> in the verse: <b>And she shall spit saliva?</b> It merely states: “And she shall spit,” indicating that even if she spits blood the <i>ḥalitza</i> is valid."
+    },
+    {
+     "ref": "Yevamot 105a",
+     "i": 10,
+     "he": "״אֲבָל אַגִּיד לָךְ הָרָשׁוּם בִּכְתָב אֱמֶת״, וְכִי יֵשׁ כְּתָב שֶׁאֵינוֹ אֱמֶת?",
+     "en": "With regard to the verse cited in the third question: <b>“But I will declare to you that which is inscribed in the writing of truth,”</b> about which you ask: <b>But is there writing</b> in Heaven <b>that is not truth?</b>"
+    },
+    {
+     "ref": "Yevamot 105a",
+     "i": 11,
+     "he": "לָא קַשְׁיָא: כָּאן בִּגְזַר דִּין שֶׁיֵּשׁ עִמּוֹ שְׁבוּעָה. כָּאן בִּגְזַר דִּין שֶׁאֵין עִמּוֹ שְׁבוּעָה.",
+     "en": "This is <b>not difficult. Here,</b> i.e., a writing of truth, refers to <b>a sentence of judgment accompanied by an oath;</b> this is called “writing of truth” as it cannot ever be canceled. <b>There,</b> i.e., the inferred untruthful writing, refers to <b>a sentence of judgment that is not accompanied by an oath,</b> as it could be canceled if conditions change."
     }
    ]
   },
@@ -2164,7 +2242,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends 'Rabbi Pedat said to him: Go' - answer 'and lead boys and girls' is next segment."
+   },
    "reviewed": false,
    "summary": "Rav Yitzḥak bar Bisna loses the keys to the study hall on Shabbat and seeks a solution from Rabbi Pedat.",
    "segments": [
@@ -2179,6 +2261,12 @@
      "i": 0,
      "he": "דְּבַר טְלֵי וְטַלְיָא וְלִיטַיְּילוּ הָתָם, דְּאִי מַשְׁכְּחִי לְהוּ, מַיְיתֵי לְהוּ. אַלְמָא קָסָבַר: קָטָן אוֹכֵל נְבֵלוֹת — אֵין בֵּית דִּין מְצֻוִּוין לְהַפְרִישׁוֹ. לֵימָא מְסַיַּיע לֵיהּ: לֹא יֹאמַר אָדָם לְתִינוֹק ״הָבֵא לִי מַפְתֵּחַ״, ״הָבֵא לִי חוֹתָם״, אֶלָּא מַנִּיחוֹ תּוֹלֵשׁ, מַנִּיחוֹ זוֹרֵק.",
      "en": "<b>and lead boys and girls and let them walk there</b> where the keys were lost, <b>and if they find the keys they will bring them</b> to you of their own accord, without you saying anything to them. The Gemara comments: <b>Apparently,</b> Rabbi Pedat <b>maintains</b> that with regard to <b>a minor</b> who <b>eats</b> meat from <b>unslaughtered animals</b> or violates other prohibitions, <b>the court is not commanded to prevent him</b> from doing so. The Gemara comments: <b>Let us say that</b> the following source <b>supports his</b> opinion: <b>A person may not tell a child</b> on Shabbat: <b>Bring me a key, or: Bring me</b> my <b>seal</b> from the public domain. <b>However, he may allow</b> the child to <b>detach</b> plants and <b>allow him</b> to <b>throw</b> in the public domain. This shows that one need not be strict with a child who transgresses a prohibition, but one may not tell a child to transgress a prohibition."
+    },
+    {
+     "ref": "Yevamot 114a",
+     "i": 1,
+     "he": "אָמַר אַבָּיֵי: ״תּוֹלֵשׁ״ — בְּעָצִיץ שֶׁאֵינוֹ נָקוּב, ״זוֹרֵק״ — בְּכַרְמְלִית דְּרַבָּנַן.",
+     "en": "The Gemara rejects this suggestion: <b>Abaye said</b> that this is no proof, as it is possible that <b>detaching</b> plants is referring <b>to an unperforated flowerpot,</b> as the prohibition against detaching plants from a vessel of this kind applies by rabbinic law. Similar, when it states: <b>Throw,</b> this can be referring to throwing <b>in a <i>karmelit</i></b> rather than the public domain. A <i>karmelit</i> is an intermediate domain between public and private domains, which has the status of a public domain <b>by rabbinic</b> law. However, perhaps one is obligated to stop the child if he is transgressing a Torah prohibition."
     }
    ]
   },
@@ -2193,7 +2281,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends with the burnt man and palm; next segment gives the verdict reaction: 'her statement is substantiated by facts'."
+   },
    "reviewed": false,
    "summary": "A fire breaks out during a wedding ceremony, and the bride screams for help as witnesses find a charred body they believe to be the groom.",
    "segments": [
@@ -2202,6 +2294,12 @@
      "i": 3,
      "he": "הָהוּא גַּבְרָא דִּבְשִׁילְהֵי הִלּוּלֵיהּ אִיתְּלַי נוּרָא בֵּי (גנני) [גְּנָנֵיהּ]. אֲמַרָה לְהוּ דְּבֵיתְהוּ: ״חֲזוֹ גַּבְרַאי! חֲזוֹ גַּבְרַאי!״ אֲתוֹ, חֲזוֹ גַּבְרָא חָרוֹכָא דִּשְׁדֵי, וּפִסְּתָא דִּידָא דְּשַׁדְיָא.",
      "en": "§ The Gemara relates: There was <b>a certain man who</b> got married. <b>At the end of his wedding a fire broke out in the bridal chamber,</b> where the bride and groom were standing, during the ceremony. <b>His wife</b> screamed and <b>said to them: Look at my husband, look at my husband! They went and saw</b> an unrecognizable <b>burnt man fallen down, and a palm</b> of a hand <b>lying</b> there."
+    },
+    {
+     "ref": "Yevamot 115a",
+     "i": 4,
+     "he": "סָבַר רַב חִיָּיא בַּר אָבִין לְמֵימַר: הַיְינוּ ״עִישְּׁינוּ עָלֵינוּ בַּיִת, עִישְּׁינוּ עָלֵינוּ מְעָרָה״. אָמַר רָבָא: מִי דָּמֵי? הָתָם לָא קָאָמְרָה ״חֲזוֹ גַּבְרַאי, חֲזוֹ גַּבְרַאי״. וְעוֹד, גַּבְרָא חָרוֹכָא דִּשְׁדֵי, וּפִסְּתָא דִּידָא דְּשַׁדְיָא.",
+     "en": "<b>Rav Ḥiyya bar Avin thought to say: This is</b> the same as the case of: <b>They set our house</b> on fire and the house became filled with <b>smoke,</b> or: <b>They set our cave</b> on fire to <b>smoke</b> us out, i.e., we cannot rely on her claim that her husband died. <b>Rava said: Is</b> this case <b>comparable</b> to those? <b>There she did not say: Look at my husband, look at my husband. And furthermore,</b> there is another difference: Here, there is <b>a burnt man who has fallen down and a palm that is lying</b> there. In other words, her statement is substantiated by facts."
     }
    ]
   },

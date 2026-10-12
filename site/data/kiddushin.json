@@ -207,7 +207,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment ends mid-sentence 'this slave was an adult man,' and finishes in 'departed to life by receiving a slave'."
+   },
    "reviewed": true,
    "summary": "Mar Zutra visits the dying convert Rabbi Yehuda and, realizing the man has no heirs, instructs Rabbi Yehuda's slave to perform an act of service for him so that he may legally acquire the slave before the property becomes ownerless. Following the death of Rabbi Yehuda from India, Mar Zutra acquires his slave through a specific act of possession performed just before the death.",
    "segments": [
@@ -222,6 +226,12 @@
      "i": 0,
      "he": "זֶה פֵּירַשׁ לְמִיתָה, וְזֶה פֵּירַשׁ לְחַיִּים.",
      "en": "and <b>this</b> person, Rabbi Yehuda from India, <b>departed to death, and that</b> individual, Mar Zutra, <b>departed to life</b> by receiving a slave."
+    },
+    {
+     "ref": "Kiddushin 23a",
+     "i": 1,
+     "he": "וְאִיכָּא דְּאָמְרִי קָטָן הֲוָה, וּדְלָא כְּאַבָּא שָׁאוּל, דְּתַנְיָא: גֵּר שֶׁמֵּת וּבִזְבְּזוּ יִשְׂרָאֵל נְכָסָיו, וְהָיוּ בָּהֶן עֲבָדִים, בֵּין גְּדוֹלִים בֵּין קְטַנִּים – קָנוּ עַצְמָן בְּנֵי חוֹרִין. אַבָּא שָׁאוּל אוֹמֵר: גְּדוֹלִים – קָנוּ עַצְמָן בְּנֵי חוֹרִין, קְטַנִּים – כׇּל הַמַּחְזִיק בָּהֶן זָכָה בָּהֶן.",
+     "en": "<b>And there are</b> those <b>who say</b> that this slave <b>was a minor, and</b> Mar Zutra did <b>not</b> act <b>in accordance with</b> the opinion of <b>Abba Shaul. As it is taught</b> in a <i>baraita</i>: With regard to <b>a convert who dies</b> without heirs <b>and Jews plundered his property,</b> as it is considered ownerless, <b>and among</b> his possessions <b>were slaves,</b> then, <b>whether</b> the slaves were <b>adults or minors, they acquire</b> ownership of <b>themselves</b> and become <b>freemen,</b> as they can acquire themselves from the ownerless property. <b>Abba Shaul says: Adult</b> slaves <b>acquire</b> ownership of <b>themselves</b> and become <b>freemen.</b> But with regard to <b>minor</b> slaves, <b>anyone who takes possession of them acquires them.</b> According to the opinion of Abba Shaul, Mar Zutra did not have to hasten to acquire the slave during Rabbi Yehuda’s lifetime before the slave would acquire himself. He could have waited until Rabbi Yehuda died before acquiring the slave."
     }
    ]
   },
@@ -1009,10 +1019,20 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Starts with bare 'Abaye said: From where do I say this claim of mine?'; previous segment gives the dilemma about one witness and the silent husband."
+   },
    "reviewed": true,
    "summary": "Mar Shmuel sends a messenger to find his late student, and the messenger returns claiming he saw the student's wife committing adultery.",
    "segments": [
+    {
+     "ref": "Kiddushin 66a",
+     "i": 4,
+     "he": "אִיבַּעְיָא לְהוּ: אִשְׁתּוֹ זִינְּתָה בְּעַד אֶחָד וְשׁוֹתֵק, מַהוּ? אָמַר אַבָּיֵי: נֶאֱמָן. רָבָא אָמַר: אֵינוֹ נֶאֱמָן. הָוֵי דָּבָר שֶׁבְּעֶרְוָה, וְאֵין דָּבָר שֶׁבְּעֶרְוָה פָּחוֹת מִשְּׁנַיִם.",
+     "en": "§ <b>A dilemma was raised before</b> the Sages: If a husband is told <b>by one witness</b> that <b>his wife committed adultery, and</b> the husband remains <b>silent, what is</b> the <i>halakha</i>? <b>Abaye said:</b> The witness is <b>deemed credible. Rava said: He is not deemed credible.</b> Why not? Because <b>it is a matter involving forbidden relations, and there is no matter</b> of testimony <b>for forbidden sexual relations</b> that can be attested to by <b>fewer than two</b> witnesses."
+    },
     {
      "ref": "Kiddushin 66a",
      "i": 5,
@@ -1073,13 +1093,18 @@
    "tractate": "kiddushin",
    "ref": "Kiddushin 70a",
    "refs": [
-    "Kiddushin 70a"
+    "Kiddushin 70a",
+    "Kiddushin 70b"
    ],
    "start_segment": 11,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends \"This is what Shmuel says:\" and the quote completes in the next segment (\"One may not send greetings to a woman even with a messenger\")."
+   },
    "reviewed": true,
    "summary": "After a man from Neharde’a insults Rav Yehuda in a butcher shop and summons him to court, Rav Yehuda travels to Neharde’a and engages in a sharp-witted exchange with the judge, Rav Naḥman.",
    "segments": [
@@ -1118,6 +1143,12 @@
      "i": 16,
      "he": "נְשַׁדַּר לֵיהּ מָר שְׁלָמָא לְיַלְתָּא. אֲמַר לֵיהּ: הָכִי אָמַר שְׁמוּאֵל: קוֹל בָּאִשָּׁה עֶרְוָה. אֶפְשָׁר עַל יְדֵי שָׁלִיחַ. אֲמַר לֵיהּ: הָכִי אָמַר שְׁמוּאֵל:",
      "en": "Later on, Rav Naḥman suggested: <b>Let the Master send</b> greetings of <b>peace to</b> my wife <b>Yalta.</b> Rav Yehuda <b>said to him: This is what Shmuel says: A woman’s voice is</b> considered <b>nakedness,</b> and one may not speak with her. Rav Naḥman responded: It is <b>possible</b> to send your regards <b>with a messenger.</b> Rav Yehuda <b>said to him: This is what Shmuel says:</b>"
+    },
+    {
+     "ref": "Kiddushin 70b",
+     "i": 0,
+     "he": "אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה. עַל יְדֵי בַּעְלָהּ! אֲמַר לֵיהּ: הָכִי אָמַר שְׁמוּאֵל: אֵין שׁוֹאֲלִין בִּשְׁלוֹם אִשָּׁה כְּלָל. שְׁלַחָה לֵיהּ דְּבֵיתְהוּ: שְׁרִי לֵיהּ תִּגְרֵיהּ דְּלָא נִישַׁוְּויָךְ כִּשְׁאָר עַם הָאָרֶץ.",
+     "en": "<b>One may not send greetings to a woman</b> even with a messenger, as this may cause the messenger and the woman to relate to each other inappropriately. Rav Naḥman countered by suggesting that he send his greetings <b>with her husband,</b> which would remove all concerns. Rav Yehuda <b>said to him: This is what Shmuel says: One may not send greetings to a woman at all.</b> Yalta, <b>his wife,</b> who overheard that Rav Yehuda was getting the better of the exchange, <b>sent</b> a message <b>to him: Release him</b> and conclude your business with him, <b>so that he not equate you with another ignoramus.</b>"
     }
    ]
   },
@@ -1226,7 +1257,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Rabbi Yoḥanan's speech continues in the next segment: \"Rabbi Yoḥanan continued: If we say a reason not to marry my daughter...\""
+   },
    "reviewed": true,
    "summary": "Ze’eiri avoids Rabbi Yoḥanan's marriage proposals until he is forced to carry him across a puddle, at which point Rabbi Yoḥanan challenges his refusal.",
    "segments": [
@@ -1235,6 +1270,12 @@
      "i": 2,
      "he": "זְעֵירִי הֲוָה קָא מִישְׁתְּמִיט מִינֵּיהּ דְּרַבִּי יוֹחָנָן דַּהֲוָה אָמַר לֵיהּ: נְסֵיב בְּרַתִּי. יוֹמָא חַד הֲווֹ קָאָזְלִי בְּאוֹרְחָא, מְטוֹ לְעוּרְקְמָא דְמַיָּא, אַרְכְּבֵיהּ לְרַבִּי יוֹחָנָן אַכַּתְפֵּיהּ וְקָא מְעַבַּר לֵיהּ. אֲמַר לֵיהּ: אוֹרָיְיתַן כְּשֵׁרָה, בְּנָתִין לָא כְּשֵׁרָן? מַאי דַּעְתָּיךְ,",
      "en": "The Gemara relates: The Sage <b>Ze’eiri,</b> a Babylonian, <b>was avoiding Rabbi Yoḥanan,</b> who was from Eretz Yisrael, <b>since</b> the latter kept <b>saying to him: Marry my daughter. One day,</b> when <b>they were walking along the way, they arrived at</b> a large <b>puddle of water.</b> Ze’eiri <b>lifted Rabbi Yoḥanan upon his shoulders and carried him over</b> the puddle out of respect. Rabbi Yoḥanan <b>said to him: Our Torah is fit</b> and worthy of honor in your eyes, and yet <b>our daughters are not fit? What is your reason</b> for not wanting to marry my daughter?"
+    },
+    {
+     "ref": "Kiddushin 71b",
+     "i": 3,
+     "he": "אִילֵּימָא מִדִּתְנַן: עֲשָׂרָה יוּחֲסִין עָלוּ מִבָּבֶל כָּהֲנֵי לְוִיֵּי – אַטּוּ כָּהֲנֵי לְוִיֵּי וְיִשְׂרְאֵלֵי כּוּלְּהוּ סְלִיקוּ? כִּי הֵיכִי דְּאִישְׁתְּיוּר מֵהָנֵי אִישְׁתְּיוּר נָמֵי מֵהָנֵי! אִישְׁתְּמִיטְתֵּיהּ הָא דְּאָמַר רַבִּי אֶלְעָזָר: לֹא עָלָה עֶזְרָא מִבָּבֶל עַד שֶׁעֲשָׂאָהּ כְּסוֹלֶת נְקִיָּיה וְעָלָה.",
+     "en": "Rabbi Yoḥanan continued: <b>If we say a reason</b> not to marry my daughter is <b>from that which we learned</b> in a mishna (69a): There were <b>ten</b> categories of <b>lineage</b> among the Jews who <b>ascended from Babylonia: Priests, Levites,</b> Israelites, as well as many of flawed lineage, and you are concerned about the <i>mamzerim</i> among those who live in Eretz Yisrael, <b>is that to say</b> that <b>all of the priests, Levites, and Israelites ascended</b> to Eretz Yisrael? Certainly, Jews of unflawed lineage remained in Babylonia. <b>Just as there remained from these</b> unflawed categories in Babylonia, <b>there also remained</b> individuals <b>from these,</b> the flawed categories. Therefore, marrying only Babylonians will not alleviate your concern. The Gemara comments: In fact, <b>this statement of Rabbi Elazar escaped</b> Rabbi Yoḥanan: <b>Ezra did not ascend from Babylonia until he made it like fine flour, and</b> then <b>he ascended.</b> Accordingly, the people who remained in Babylonia were all of unflawed lineage."
     }
    ]
   },

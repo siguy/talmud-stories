@@ -36,13 +36,18 @@
    "tractate": "gittin",
    "ref": "Gittin 5b",
    "refs": [
-    "Gittin 5b"
+    "Gittin 5b",
+    "Gittin 6a"
    ],
    "start_segment": 21,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "'Rav Ashi said:' is completed by 'Even if he heard the sound of the quill'."
+   },
    "reviewed": true,
    "summary": "Rabba bar bar Hana brings a divorce document that was only partially written in his presence to Rabbi Elazar, who rules it valid.",
    "segments": [
@@ -51,6 +56,12 @@
      "i": 21,
      "he": "רַבָּה בַּר בַּר חָנָה אַיְיתִי גִּיטָּא, פַּלְגָא אִיכְּתַב קַמֵּיהּ וּפַלְגָא לָא אִיכְּתַב קַמֵּיהּ. אֲתָא לְקַמֵּיהּ דְּרַבִּי אֶלְעָזָר, אֲמַר לֵיהּ: אֲפִילּוּ לֹא כָּתַב בּוֹ אֶלָּא שִׁיטָה אַחַת לִשְׁמָהּ, שׁוּב אֵינוֹ צָרִיךְ. רַב אָשֵׁי אָמַר:",
      "en": "The Gemara further relates: <b>Rabba bar bar Ḥana brought a bill of divorce, half</b> of which <b>was written in his presence and half</b> of which <b>was not written in his presence. He came before Rabbi Elazar</b> to clarify the <i>halakha</i> in this case. Rabbi Elazar <b>said to him: Even</b> if the scribe <b>wrote only one line of it for her sake</b> in the presence of the agent, <b>he is no longer required</b> to observe further, as it can be assumed that he wrote all of it for her sake. <b>Rav Ashi said:</b>"
+    },
+    {
+     "ref": "Gittin 6a",
+     "i": 0,
+     "he": "אֲפִילּוּ קַן קוּלְמוֹסָא וְקַן מְגִילְּתָא.",
+     "en": "<b>Even</b> if he <b>heard the sound of the quill [<i>kulmusa</i>] and the sound of the scroll</b> when the scribe was writing the bill of divorce for the sake of that woman, this is sufficient."
     }
    ]
   },
@@ -152,7 +163,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"they sought to feed him something that carried a great prohibition... a limb from a living animal\" gives what actually happened"
+   },
    "reviewed": true,
    "summary": "Because Rabbi Hanina ben Gamliel imposed excessive fear on his household, his servants were driven to serve him a limb from a living animal to hide a mistake.",
    "segments": [
@@ -167,6 +182,12 @@
      "i": 2,
      "he": "וּמַנּוּ? רַבִּי חֲנִינָא בֶּן גַּמְלִיאֵל. הֶאֱכִילוּהוּ סָלְקָא דַּעְתָּךְ?! הַשְׁתָּא בְּהֶמְתָּן שֶׁל צַדִּיקִים אֵין הַקָּדוֹשׁ בָּרוּךְ הוּא מֵבִיא תַּקָּלָה עַל יָדָם, צַדִּיקִים עַצְמָן לֹא כׇּל שֶׁכֵּן?",
      "en": "The Gemara asks: <b>And who was</b> this individual? The Gemara answers: <b>Rabbi Ḥanina ben Gamliel.</b> The Gemara asks: <b>Would it enter your mind</b> to say that <b>they</b> actually <b>fed him</b> forbidden food? <b>Now</b> consider that <b>the Holy One, Blessed be He, does not cause an error</b> to be performed <b>through the animals of the righteous.</b> With regard to <b>the righteous themselves</b> is it <b>not all the more so?</b> How can you say that Rabbi Ḥanina ben Gamliel ate forbidden food?"
+    },
+    {
+     "ref": "Gittin 7a",
+     "i": 3,
+     "he": "אֶלָּא בִּקְּשׁוּ לְהַאֲכִילוֹ דָּבָר גָּדוֹל. וּמַאי נִיהוּ? אֵבֶר מִן הַחַי.",
+     "en": "<b>Rather,</b> it means that <b>they sought to feed him something</b> that carried <b>a great</b> prohibition. <b>And what was this? A limb from a living</b> animal. One day the animal they brought him was missing a limb, and as the members of his household were very fearful they severed a limb from a living animal to make his meal appear whole, and he almost ate it."
     }
    ]
   },
@@ -303,7 +324,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "'Rabbi Yirmeya elaborates: The reason for the ruling in the mishna...' completes his rebuke/correction."
+   },
    "reviewed": true,
    "summary": "While Rav Huna and Rav Yitzḥak bar Yosef are debating a law, they wake up the dozing Rabbi Yirmeya, who rebukes them as 'children' and corrects their legal understanding.",
    "segments": [
@@ -324,6 +349,12 @@
      "i": 11,
      "he": "אַדְּהָכִי אִיתְּעַר בְּהוּ רַבִּי יִרְמְיָה. אֲמַר לְהוּ: דַּרְדְּקֵי! הָכִי אָמַר רַבִּי יוֹחָנָן: הַתּוֹפֵס לְבַעַל חוֹב בִּמְקוֹם שֶׁחָב לַאֲחֵרִים – לֹא קָנָה. וְאִם תֹּאמַר: מִשְׁנָתֵינוּ!",
      "en": "<b>In the meantime Rabbi Yirmeya woke up, due to their</b> conversation, as he was not sleeping deeply. <b>He said to them: Children [<i>dardekei</i>], this is</b> what <b>Rabbi Yoḥanan says: One who seizes</b> property on behalf <b>of a creditor in a case where it is to the detriment of others does not acquire. And if you say</b> that <b>the mishna</b> apparently teaches the opposite, as the agent acquires the bill of manumission on behalf of the slave despite the fact that this causes a loss for the master, that case is different."
+    },
+    {
+     "ref": "Gittin 11b",
+     "i": 12,
+     "he": "כׇּל הָאוֹמֵר ״תְּנוּ״, כְּאוֹמֵר ״זְכוּ״ דָּמֵי.",
+     "en": "Rabbi Yirmeya elaborates: The reason for the ruling in the mishna is that <b>anyone who says: Give</b> to so-and-so, <b>is like one who says: Acquire</b> on behalf of so-and-so. Since the master said: Give this bill of manumission to my slave, the agent immediately acquires it on the slave’s behalf, despite the fact that the bill is to the detriment of the master. However, this <i>halakha</i> has no bearing on a case where a person independently seizes property on behalf of another, and by doing so acts to the disadvantage of others."
     }
    ]
   },
@@ -396,13 +427,18 @@
    "tractate": "gittin",
    "ref": "Gittin 14a",
    "refs": [
-    "Gittin 14a"
+    "Gittin 14a",
+    "Gittin 14b"
    ],
    "start_segment": 18,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "Only the introduction 'had a silver vessel in Neharde'a'; incident continues through 'Had they killed Dostai, who would give Yannai another son like me?'."
+   },
    "reviewed": true,
    "summary": "Rabbi Ahai sends agents to retrieve a silver vessel from Neharde'a, leading to a confrontation with the possessors. Rabbi Ahai sends two agents to retrieve a vessel from Neharde'a, where they are intimidated and one is physically tormented by frightening men, leading to a later discussion on why one agent did not defend the other.",
    "segments": [
@@ -411,6 +447,30 @@
      "i": 18,
      "he": "רַבִּי אַחַי בְּרַבִּי יֹאשִׁיָּה הֲוָה לֵיהּ אִיסְפְּקָא דְכַסְפָּא בִּנְהַרְדְּעָא,",
      "en": "The Gemara further relates: <b>Rabbi Aḥai, son of Rabbi Yoshiya, had a silver vessel [<i>ispeka</i>] in</b> the city of <b>Neharde’a.</b>"
+    },
+    {
+     "ref": "Gittin 14b",
+     "i": 0,
+     "he": "אֲמַר לְהוּ לְרַבִּי דּוֹסְתַּאי בַּר רַבִּי יַנַּאי וּלְרַבִּי יוֹסֵי בַּר כֵּיפַר: בַּהֲדֵי דְּאָתֵיתוּ, אַתְיוּהּ נִיהֲלִי. אֲזוּל, יַהֲבֵיהּ נִיהֲלֵיהּ. אָמְרִי לְהוּ: נִקְנֵי מִינַּיְיכוּ; אָמְרִי לְהוּ: לָא. אָמְרִי לְהוּ: אַהְדְּרֵיהּ נִיהֲלַן.",
+     "en": "Rabbi Aḥai <b>said to Rabbi Dostai bar Rabbi Yannai and to Rabbi Yosei bar Keifar: When you come</b> from Neharde’a <b>bring</b> the vessel <b>to me. They went</b> to Neharde’a and the people who were in possession of the vessel <b>gave it to them.</b> After handing over the vessel, those people <b>said to them: Let us perform</b> an act of <b>acquisition with you,</b> so that you will be responsible for the vessel until you reach Rabbi Aḥai. The agents <b>said to them: No;</b> we do not want to do this. <b>They said to them:</b> If so, <b>return</b> the vessel <b>to us,</b> as we do not wish to transfer it in such a manner that we retain responsibility."
+    },
+    {
+     "ref": "Gittin 14b",
+     "i": 1,
+     "he": "רַבִּי דּוֹסְתַּאי בְּרַבִּי יַנַּאי אֲמַר לְהוּ: אִין; רַבִּי יוֹסֵי בַּר כֵּיפַר אֲמַר לְהוּ: לָא. הֲווֹ קָא מְצַעֲרוּ לֵיהּ, אֲמַר לֵיהּ: חֲזִי מָר הֵיכִי קָא עָבֵיד! אֲמַר לְהוּ: טָב רְמוֹ לֵיהּ.",
+     "en": "<b>Rabbi Dostai, son of Rabbi Yannai, said to them: Yes,</b> I am willing to return it. However, <b>Rabbi Yosei bar Keifar said to them: No,</b> as you do not have the right to retract in this situation. <b>They tormented</b> Rabbi Yosei bar Keifar to force him to agree to return the vessel. Rabbi Yosei bar Keifar <b>said to</b> Rabbi Dostai: <b>See,</b> my <b>Master, what</b> they are <b>doing</b> to me. Rabbi Dostai <b>said to them:</b> You are acting <b>well; hit him.</b>"
+    },
+    {
+     "ref": "Gittin 14b",
+     "i": 2,
+     "he": "כִּי אֲתוֹ לְגַבֵּיהּ, אֲמַר לֵיהּ: חֲזִי מָר, לָא מִיסָּתְיֵיהּ דְּלָא סַיְּיעַן, אֶלָּא אֲמַר לְהוּ נָמֵי ״טָב רְמוֹ לֵיהּ״! אֲמַר לֵיהּ: אַמַּאי תֶּיעְבֵּד הָכִי?",
+     "en": "<b>When</b> these <b>two</b> agents <b>came before</b> Rabbi Aḥai, Rabbi Yosei bar Keifar <b>said to him: See,</b> my <b>Master, not only did</b> Rabbi Dostai <b>not support me; rather, he</b> even <b>said to them:</b> You are acting <b>well; hit him.</b> Rabbi Aḥai <b>said to</b> Rabbi Dostai: <b>Why did you do this?</b>"
+    },
+    {
+     "ref": "Gittin 14b",
+     "i": 3,
+     "he": "אֲמַר לֵיהּ: אוֹתָן בְּנֵי אָדָם – הֵן אַמָּה, וְכוֹבָעָן אַמָּהּ, וּמְדַבְּרִין מֵחֶצְיֵיהֶן, וּשְׁמוֹתֵיהֶן מְבוֹהָלִין: ׳אַרְדָּא׳ וְ׳אַרְטָא׳ וּ׳פִילֵי בְּרֵישׁ׳; אוֹמְרִין ״כְּפוֹתוּ״ – כּוֹפְתִין; אוֹמְרִין ״הֲרוֹגוּ״ – הוֹרְגִין; אִילּוּ הָרְגוּ אֶת דּוֹסְתַּאי, מִי נָתַן לְיַנַּאי אַבָּא בַּר כְּמוֹתִי.",
+     "en": "Rabbi Dostai <b>said to him: Those people</b> who were in possession of the vessel, <b>they are</b> the size of <b>a cubit, and their hats were a cubit, and they spoke from their midpoints, and their names were frightening: Arda and Arta and Pili Bereish.</b> If one were to <b>say to them: Restrain</b> this person, <b>they would restrain</b> him. If one were to <b>say</b> to them: <b>Kill</b> him, <b>they would kill. Had they killed Dostai,</b> i.e., me, <b>who would give Yannai,</b> my <b>father,</b> another <b>son like me?</b>"
     }
    ]
   },
@@ -419,13 +479,18 @@
    "tractate": "gittin",
    "ref": "Gittin 14b",
    "refs": [
-    "Gittin 14b"
+    "Gittin 14b",
+    "Gittin 15a"
    ],
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends \"she said: Give\" and next segment completes \"my brooch to my daughter... the Sages fulfilled her statement. Rabbi Elazar said ... buried by their mother\"."
+   },
    "reviewed": true,
    "summary": "A story is cited about the mother of the sons of Rokhel who, while ill, gave instructions for her expensive brooch to be given to her daughter. A sick woman's verbal gift of an expensive brooch to her daughter is upheld by the Sages after her death, prompting a harsh curse from Rabbi Elazar against her sons.",
    "segments": [
@@ -434,6 +499,12 @@
      "i": 17,
      "he": "אָמְרוּ לוֹ: מַעֲשֶׂה בְּאִמָּן שֶׁל בְּנֵי רוֹכֵל שֶׁהָיְתָה חוֹלָה, וְאָמְרָה: ״תִּינָּתֵן",
      "en": "<b>They said to</b> Rabbi Elazar: Didn’t <b>an incident</b> of this kind occur <b>with regard to the mother</b> of the family <b>of the sons of Rokhel, who was ill, and she said: Give</b>"
+    },
+    {
+     "ref": "Gittin 15a",
+     "i": 0,
+     "he": "כְּבִינְתִּי לְבִתִּי, וְהִיא בִּשְׁנֵים עָשָׂר מָנֶה״, וּמֵתָה, וְקִיְּימוּ חֲכָמִים אֶת דְּבָרֶיהָ! אָמַר לָהֶם: בְּנֵי רוֹכֵל תִּקְבְּרֵם אִמָּם.",
+     "en": "<b>my brooch [<i>kevinati</i>] to my daughter, and</b> the brooch is worth <b>twelve hundred dinars. And</b> this woman subsequently <b>died, and the Sages fulfilled her statement.</b> Rabbi Elazar <b>said to them</b> that <b>the sons of Rokhel should be buried by their mother,</b> i.e., he cursed them. Rabbi Elazar meant that it is not possible to bring a proof from this incident, as these sons were wicked people. Consequently, when dealing with them the Sages did not act in accordance with the <i>halakha</i>, but allowed their mother to give this valuable piece of jewelry to their sister, circumventing the <i>halakhot</i> of inheritance."
     }
    ]
   },
@@ -442,13 +513,18 @@
    "tractate": "gittin",
    "ref": "Gittin 16b",
    "refs": [
-    "Gittin 16b"
+    "Gittin 16b",
+    "Gittin 17a"
    ],
    "start_segment": 14,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment ends 'in came a certain'; next completes 'Persian priest took the lamp... Rabba said: Merciful One!'."
+   },
    "reviewed": true,
    "summary": "Rav Yehuda and Rabba visit the ailing Rabba bar bar Hana and take the opportunity to ask him a legal question about bills of divorce. A Persian priest removes a lamp from before Rabba during a Persian holiday, leading Rabba to pray for relief from Persian rule.",
    "segments": [
@@ -457,6 +533,12 @@
      "i": 14,
      "he": "רַבָּה בַּר בַּר חָנָה חֲלַשׁ, עוּל לְגַבֵּיהּ רַב יְהוּדָה וְרַבָּה, לְשַׁיּוֹלֵי בֵּיהּ. בְּעוֹ מִינֵּיהּ: שְׁנַיִם שֶׁהֵבִיאוּ גֵּט מִמְּדִינַת הַיָּם, צְרִיכִין שֶׁיֹּאמְרוּ ״בְּפָנֵינוּ נִכְתַּב וּבְפָנֵינוּ נֶחְתַּם״, אוֹ אֵין צְרִיכִין? אָמַר לָהֶם: אֵין צְרִיכִין – מָה אִילּוּ יֹאמְרוּ ״בְּפָנֵינוּ גֵּירְשָׁהּ״, מִי לָא מְהֵימְנִי?! אַדְּהָכִי, אֲתָא הָהוּא",
      "en": "§ The Gemara relates: <b>Rabba bar bar Ḥana was weak,</b> and <b>Rav Yehuda and Rabba entered to</b> visit <b>him</b> and <b>to inquire</b> about <b>his</b> well-being. While they were there, <b>they raised a dilemma before him:</b> With regard to <b>two</b> people <b>who brought a bill of divorce from a country overseas, are they required to say: It was written in our presence and it was signed in our presence, or are they not required</b> to issue this declaration? <b>He said to them: They are not required</b> to say it, for the following reason: <b>What if they said: She was divorced in our presence, wouldn’t they be deemed credible?</b> Therefore, they do not have to state the declaration. <b>In the meantime,</b> while they were sitting there, <b>in came a certain</b>"
+    },
+    {
+     "ref": "Gittin 17a",
+     "i": 0,
+     "he": "חַבְרָא, שְׁקַלָה לִשְׁרָגָא מִקַּמַּיְיהוּ. אֲמַר: רַחֲמָנָא! אוֹ בְּטוּלָּךְ, אוֹ בְּטוּלָּא דְּבַר עֵשָׂו.",
+     "en": "<b>Persian priest [<i>ḥabbara</i>]</b> and <b>took the lamp [<i>sheragga</i>] from before them.</b> It was a Persian holiday on which the Persians prohibited the public from maintaining light outside their temple. Rabba, who was from Eretz Yisrael, <b>said: Merciful One!</b> Let us live <b>either in Your shadow or in the shadow of the descendants of Esau,</b> the Romans."
     }
    ]
   },
@@ -465,13 +547,18 @@
    "tractate": "gittin",
    "ref": "Gittin 18b",
    "refs": [
-    "Gittin 18b"
+    "Gittin 18b",
+    "Gittin 19a"
    ],
    "start_segment": 6,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"Rabbi Yehoshua ben Levi said to him:\" has the ruling in the next segment"
+   },
    "reviewed": true,
    "summary": "A man instructs ten people to write a divorce document, but they sign it at different times, leading him to seek and receive a validating ruling from Rabbi Yehoshua ben Levi.",
    "segments": [
@@ -480,6 +567,12 @@
      "i": 6,
      "he": "הָהוּא דַּאֲמַר לְהוּ לַעֲשָׂרָה: ״כִּתְבוּ גֵּט לְאִשְׁתִּי״; חֲתוּם בֵּי תְרֵי מִינַּיְיהוּ בְּיוֹמֵיהּ, וְאִינָךְ – מִכָּאן וְעַד עֲשָׂרָה יָמִים. אֲתָא לְקַמֵּיהּ דְּרַבִּי יְהוֹשֻׁעַ בֶּן לֵוִי, אֲמַר לֵיהּ:",
      "en": "It is told: There was <b>a certain person who said to ten</b> men: <b>Write a bill of divorce for my wife. Two of them signed that day and the others</b> signed after a delay <b>from now until ten days</b> later. <b>He came before Rabbi Yehoshua ben Levi</b> to ask what the <i>halakha</i> is with regard to such a bill of divorce. Rabbi Yehoshua ben Levi <b>said to him:</b>"
+    },
+    {
+     "ref": "Gittin 19a",
+     "i": 0,
+     "he": "כְּדַאי הוּא רַבִּי שִׁמְעוֹן לִסְמוֹךְ עָלָיו בִּשְׁעַת הַדְּחָק.",
+     "en": "<b>Rabbi Shimon,</b> who permitted using a bill of divorce that was written during the day and signed at night, <b>is worthy of being relied upon in exigent circumstances.</b> Therefore, once such a bill of divorce has been written and given, the woman is divorced."
     }
    ]
   },
@@ -1217,13 +1310,18 @@
    "tractate": "gittin",
    "ref": "Gittin 38a",
    "refs": [
-    "Gittin 38a"
+    "Gittin 38a",
+    "Gittin 38b"
    ],
    "start_segment": 16,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment ends mid-sentence 'was emancipated by one of them,'; next: 'and the court forced her master to emancipate her'."
+   },
    "reviewed": true,
    "summary": "Abaye discusses a case of a maidservant in Pumbedita being used for sin and cites a precedent where the court forced a master to free a woman in a similar predicament. A court forces a master to emancipate his maidservant because people were taking liberties with her.",
    "segments": [
@@ -1238,6 +1336,12 @@
      "i": 17,
      "he": "וְאַבָּיֵי – מִשּׁוּם אִיסּוּרָא לָא?! הָאָמַר רַב חֲנִינָא בַּר רַב קַטִּינָא אָמַר רַבִּי יִצְחָק: מַעֲשֶׂה בְּאִשָּׁה אַחַת שֶׁחֶצְיָהּ שִׁפְחָה וְחֶצְיָהּ בַּת חוֹרִין,",
      "en": "The Gemara asks: <b>And</b> does <b>Abaye</b> hold that one <b>cannot</b> emancipate a slave even <b>due to a prohibition</b> that is being violated? <b>Didn’t Rav Ḥanina bar Rav Ketina say</b> that <b>Rav Yitzḥak says:</b> There was <b>an incident involving a woman</b> who was <b>a half-maidservant half-free woman,</b> as she had belonged to two masters and was emancipated by one of them,"
+    },
+    {
+     "ref": "Gittin 38b",
+     "i": 0,
+     "he": "וְכָפוּ אֶת רַבָּהּ וַעֲשָׂאָהּ בַּת חוֹרִין, וְאָמַר רַב נַחְמָן בַּר יִצְחָק: מִנְהַג הֶפְקֵר נָהֲגוּ בָּהּ!",
+     "en": "<b>and</b> the court <b>forced her master</b> to emancipate her, <b>and he made her a free woman. And Rav Naḥman bar Yitzḥak said</b> in explanation of why they forced him to do this: <b>They took liberties with her,</b> i.e., people engaged in sexual intercourse with her freely. This demonstrates that it is permitted to free a slave to prevent people from violating prohibitions."
     }
    ]
   },
@@ -1304,7 +1408,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Next segment gives Ravina's reply: \"Ravina said to them: I hold in accordance with the report of Rav Dimi\" and the conclusion \"the halakha is in accordance with the opinion of Ravina\"."
+   },
    "reviewed": true,
    "summary": "A group of slaves whose gentile masters died sought legal status from Ravina, who instructed them to find the heirs of their original Jewish masters to receive manumission.",
    "segments": [
@@ -1313,6 +1421,12 @@
      "i": 12,
      "he": "הָהוּא דִּסְקַרְתָּא דְּעַבְדֵי דְּאִזְדַּבַּן לְגוֹי. כְּלוֹ מָרְווֹתָא בָּתְרָאֵי, אֲתוֹ לְקַמֵּיהּ דְּרָבִינָא, אֲמַר לְהוּ: זִילוּ אַהְדַּרוּ אַבְּנֵי מָרְווֹתָא קַמָּאֵי, וְיִכְתְּבוּ לְכוּ גִּיטָּא דְחֵרוּתָא. אֲמַרוּ לֵיהּ רַבָּנַן לְרָבִינָא, וְהָאָמַר אַמֵּימָר: הַמַּפְקִיר עַבְדּוֹ וָמֵת – אוֹתוֹ הָעֶבֶד אֵין לוֹ תַּקָּנָה!",
      "en": "The Gemara relates: There was an incident involving <b>a certain city</b> [<b><i>diskarta</i></b>] <b>of slaves that was sold to gentiles.</b> When <b>their final</b> gentile <b>masters died,</b> the slaves <b>came before Ravina</b> and said that since they had no masters, they wanted to be considered full-fledged Jews. <b>He said to them: Go and return to the children of your first masters and</b> have them <b>write for you bills of manumission</b> so that you will be considered freemen in every respect. <b>The Rabbis said to Ravina: But didn’t Ameimar say</b> that with regard to <b>one who renounces ownership of his slave and dies,</b> there is <b>no remedy for that slave?</b> Similarly, if one sells his slave to a gentile, he no longer has the right to the slave’s labor and can no longer write a bill of manumission for him."
+    },
+    {
+     "ref": "Gittin 40a",
+     "i": 13,
+     "he": "אֲמַר לְהוּ: אֲנָא כְּרַב דִּימִי סְבִירָא לִי. אֲמַרוּ לֵיהּ: דְּרַב דִּימִי טָעוּתָא הִיא! אֲמַר לְהוּ: מַאי טָעוּתָא – דְּלָא אַמְרַהּ בִּלְשׁוֹן שִׁחְרוּר; הָא אַמְרַהּ בִּלְשׁוֹן שִׁחְרוּר – הָכִי נָמֵי! וְהִלְכְתָא כְּרָבִינָא.",
+     "en": "Ravina <b>said to them: I hold in accordance with</b> the report of <b>Rav Dimi,</b> who said that Rabbi Yoḥanan says that the heirs can give a bill of manumission. <b>They,</b> the Rabbis, <b>said to him:</b> That <b>which Rav Dimi</b> said <b>is erroneous. He said to them: What</b> is <b>erroneous</b> about Rav Dimi’s statement? The reason it is erroneous is <b>that he did not state this using a formulation of emancipation, but</b> if <b>he</b> had <b>stated this using a formulation of emancipation,</b> then <b>indeed</b> they would be able to write a bill of manumission. The Gemara concludes: <b>And the <i>halakha</i> is in accordance with</b> the opinion of <b>Ravina,</b> that the original masters can write a bill of manumission for the slaves."
     }
    ]
   },
@@ -1321,13 +1435,18 @@
    "tractate": "gittin",
    "ref": "Gittin 40a",
    "refs": [
-    "Gittin 40a"
+    "Gittin 40a",
+    "Gittin 40b"
    ],
    "start_segment": 14,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"and the slave should jingle the dinars before him. The child will want the money and he will decide to emancipate him\" completes the sentence and outcome."
+   },
    "reviewed": true,
    "summary": "A partner in a slave tried to prevent the slave's full emancipation by transferring his share to his minor son, but Rav Pappa ruled that the court would appoint a guardian to complete the emancipation.",
    "segments": [
@@ -1342,6 +1461,12 @@
      "i": 15,
      "he": "שַׁלְחַהּ רַב יוֹסֵף בְּרֵיהּ דְּרָבָא לְקַמֵּיהּ דְּרַב פָּפָּא, שְׁלַח לֵיהּ: ״כַּאֲשֶׁר עָשָׂה כֵּן יֵעָשֶׂה לּוֹ, גְּמוּלוֹ יָשִׁיב לוֹ בְּרֹאשׁוֹ״ – אֲנַן קִים לַן בְּיָנוֹקָא דִּמְקָרְבָא דַּעְתֵּיהּ לְגַבֵּי זוּזֵי; מוֹקְמִינַן לֵיהּ אַפּוֹטְרוֹפּוֹס,",
      "en": "<b>Rav Yosef, son of Rava, sent before Rav Pappa</b> the question of what the <i>halakha</i> is in this circumstance. <b>He sent to him</b> a response that paraphrased biblical verses: <b>As he has done, so shall it be done to him, his dealing shall return upon his own head</b> (see Leviticus 24:19 and Obadiah 1:15). In other words, since the master acted deceitfully to circumvent the ruling of the Sages, one should deal with him deceitfully. <b>We know that a child is attracted to money. We</b> will <b>appoint a steward for</b> the child, who will clarify the slave’s market value,"
+    },
+    {
+     "ref": "Gittin 40b",
+     "i": 0,
+     "he": "וּמְקַרְקֵישׁ לֵיהּ זוּזֵי, וְכָתֵב לֵיהּ גִּיטָּא דְחֵירוּתָא עַל שְׁמֵיהּ.",
+     "en": "<b>and</b> the slave <b>should jingle the dinars</b> before <b>him.</b> The child will want the money and he will decide to emancipate him, <b>and they should write him a bill of emancipation in his name.</b>"
     }
    ]
   },
@@ -1385,7 +1510,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"the reason that he was forced to emancipate her was because she was unable to marry\" answers the question raised"
+   },
    "reviewed": true,
    "summary": "The court forced a master to emancipate his half-maidservant because her ambiguous status led men to treat her licentiously.",
    "segments": [
@@ -1394,6 +1523,12 @@
      "i": 4,
      "he": "אָמַר רַב הוּנָא בַּר קַטִּינָא אָמַר רַבִּי יִצְחָק: מַעֲשֶׂה בְּאִשָּׁה אַחַת שֶׁחֶצְיָהּ שִׁפְחָה וְחֶצְיָהּ בַּת חוֹרִין, וְכָפוּ אֶת רַבָּהּ וַעֲשָׂאָהּ בַּת חוֹרִין. כְּמַאן? כְּרַבִּי יוֹחָנָן בֶּן בְּרוֹקָה, דְּאָמַר: עַל שְׁנֵיהֶם הוּא אוֹמֵר: ״וַיְבָרֶךְ אוֹתָם אֱלֹהִים וַיֹּאמֶר וְגוֹ׳ פְּרוּ וּרְבוּ וּמִלְאוּ וְגוֹ׳״",
      "en": "§ <b>Rav Huna bar Ketina says</b> that <b>Rabbi Yitzḥak says: An incident</b> occurred <b>involving one woman who was a half-maidservant half-free woman, and they forced her master</b> to emancipate her, <b>and he made her a free woman.</b> The Gemara asks: <b>In accordance with whose</b> opinion is it? Is it <b>in accordance with</b> the opinion of <b>Rabbi Yoḥanan ben Beroka, who says: For both</b> Adam and Eve the verse <b>states: “And God blessed them, and</b> God <b>said</b> to them: <b>Be fruitful, and multiply, and replenish</b> the earth and subdue it” (Genesis 1:28), indicating that the mitzva to procreate is incumbent upon women as well, and therefore a half-maidservant half-free woman must be freed to enable her to procreate?"
+    },
+    {
+     "ref": "Gittin 43b",
+     "i": 5,
+     "he": "אָמַר רַב נַחְמָן בַּר יִצְחָק: לֹא, מִנְהַג הֶפְקֵר נָהֲגוּ בָּהּ.",
+     "en": "<b>Rav Naḥman bar Yitzḥak said: No,</b> it need not be in accordance with the opinion of Rabbi Yoḥanan ben Beroka, as the reason that he was forced to emancipate her was because she was unable to marry, and other men <b>took liberties with her,</b> i.e., engaged in intercourse with her. Consequently, the court forced her master to emancipate her so that she could marry."
     }
    ]
   },
@@ -1593,13 +1728,18 @@
    "tractate": "gittin",
    "ref": "Gittin 46b",
    "refs": [
-    "Gittin 46b"
+    "Gittin 46b",
+    "Gittin 47a"
    ],
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 3,
+    "reason": "Quote 'Redeem me' is in next segment and outcome ends 'Go, because they do not allow me to redeem you.'"
+   },
    "reviewed": true,
    "summary": "A man who sold himself to gladiators comes to Rabbi Ami seeking redemption. A man who sold himself to gladiators seeks redemption from Rabbi Ami, but is refused after the Sages prove he is a willful transgressor.",
    "segments": [
@@ -1608,6 +1748,24 @@
      "i": 17,
      "he": "הָהוּא גַּבְרָא דְּזַבֵּין נַפְשֵׁיהּ לְלוּדָאֵי. אֲתָא לְקַמֵּיהּ דְּרַבִּי אַמֵּי, אֲמַר לֵיהּ:",
      "en": "The Gemara relates: <b>A certain man sold himself to gladiators [<i>luda’ei</i>]. He came before Rabbi Ami</b> and <b>said to him:</b>"
+    },
+    {
+     "ref": "Gittin 47a",
+     "i": 0,
+     "he": "פִּירְקַן! אֲמַר לֵיהּ: תְּנַן: הַמּוֹכֵר עַצְמוֹ וְאֶת בָּנָיו לַגּוֹיִם – אֵין פּוֹדִין אוֹתוֹ, אֲבָל פּוֹדִין אֶת הַבָּנִים – מִשּׁוּם קִלְקוּלָא, וְכׇל שֶׁכֵּן הָכָא דְּאִיכָּא קְטָלָא.",
+     "en": "<b>Redeem me.</b> Rabbi Ami <b>said to him: We learned</b> in a mishna: With regard to <b>one who sells himself and his children</b> as slaves <b>to gentiles, he is not redeemed. However, his children are redeemed due to the harm</b> of becoming assimilated among the gentiles, <b>and all the more so here, where there is</b> a concern that leaving him in bondage may lead to his <b>death,</b> he should be redeemed."
+    },
+    {
+     "ref": "Gittin 47a",
+     "i": 1,
+     "he": "אֲמַרוּ לֵיהּ רַבָּנַן לְרַבִּי אַמֵּי: הַאי יִשְׂרָאֵל מוּמָר הוּא, דְּקָא חָזוּ לֵיהּ דְּקָאָכֵיל נְבֵילוֹת וּטְרֵיפוֹת! אֲמַר לְהוּ: אֵימָא לְתֵיאָבוֹן הוּא דְּקָאָכֵיל.",
+     "en": "<b>The Sages said to Rabbi Ami: This</b> man <b>is a Jewish apostate, as they saw him when he was eating</b> unslaughtered <b>animal carcasses and animals with a wound that will cause them to die within twelve months [<i>tereifot</i>]. He said to them: Say</b> that <b>he was eating</b> them <b>due to</b> his <b>appetite,</b> not because he is an apostate, but because he was overcome by temptation."
+    },
+    {
+     "ref": "Gittin 47a",
+     "i": 2,
+     "he": "אֲמַרוּ לֵיהּ: וְהָא זִמְנִין דְּאִיכָּא הֶיתֵּירָא וְאִיסּוּרָא קַמֵּיהּ, וְשָׁבֵיק הֶיתֵּירָא וְאָכֵיל אִיסּוּרָא! אֲמַר לֵיהּ: זִיל, לָא קָא שָׁבְקִי לִי דְּאֶפְרְקִינָּךְ.",
+     "en": "<b>They said to him: But</b> there are <b>times when there are permitted and forbidden</b> foods <b>before him, and he sets aside the permitted</b> food <b>and eats the forbidden</b> food, indicating that it is not temptation alone that causes him to transgress. Once he heard this, Rabbi Ami <b>said to</b> that man: <b>Go,</b> because <b>they do not allow me to redeem you.</b>"
     }
    ]
   },
@@ -1911,10 +2069,20 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Begins 'Rav Sheizevi said: This means that he is liable...' referring to Rava's objection about karet in the previous segment."
+   },
    "reviewed": true,
    "summary": "When students laughed at Rav Sheizevi for a seemingly impossible legal claim, Rava rebuked them and explained the depth of the statement.",
    "segments": [
+    {
+     "ref": "Gittin 55b",
+     "i": 5,
+     "he": "מֵתִיב רָבָא: גָּנַב וְהִקְדִּישׁ, וְאַחַר כָּךְ טָבַח וּמָכַר – מְשַׁלֵּם תַּשְׁלוּמֵי כֶפֶל, וְאֵינוֹ מְשַׁלֵּם תַּשְׁלוּמֵי אַרְבָּעָה וַחֲמִשָּׁה. וְתָנֵי עֲלַהּ: בַּחוּץ כִּי הַאי גַוְונָא – עָנוּשׁ כָּרֵת. וְאִי אָמְרַתְּ יֵאוּשׁ כְּדִי לָא קָנֵי, כָּרֵת מַאי עֲבִידְתֵּיהּ?",
+     "en": "<b>Rava raises an objection</b> from what was learned in a mishna (<i>Bava Kamma</i> 74a): If <b>one stole</b> an animal <b>and consecrated</b> it, <b>and afterward he slaughtered or sold</b> it, <b>he pays double payment</b> like a thief (see Exodus 22:3), <b>but he does not pay fourfold or fivefold payment,</b> as one must ordinarily pay when he slaughters or sells an ox or a sheep that he stole from another person (Exodus 21:37). <b>And it is taught</b> in a <i>baraita</i> <b>with regard to</b> this mishna: If one slaughtered an animal <b>outside</b> the Temple <b>in a case like this,</b> he is <b>punishable by <i>karet</i></b> for having sacrificed an offering outside the Temple. <b>And if you say</b> that the owner’s <b>despair</b> of recovering an item that was stolen from him <b>does not by itself</b> enable the thief to <b>acquire</b> the stolen item, <b>what is the relevance of</b> mentioning <b><i>karet</i>?</b> The punishment of <i>karet</i> should not apply, as the thief cannot consecrate an animal that does not belong to him."
+    },
     {
      "ref": "Gittin 55b",
      "i": 6,
@@ -1928,13 +2096,18 @@
    "tractate": "gittin",
    "ref": "Gittin 55b",
    "refs": [
-    "Gittin 55b"
+    "Gittin 55b",
+    "Gittin 56a"
    ],
    "start_segment": 15,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "Cut at \"do not embarrass me\"; outcome through \"the war between the Jews and the Romans began\" is 56a#0-#3"
+   },
    "reviewed": true,
    "summary": "A man's servant mistakenly invites his enemy, Bar Kamtza, to a feast, leading the host to publicly demand his departure despite Bar Kamtza's pleas to stay. The humiliation of Bar Kamtza at a feast leads him to sabotage a Roman sacrifice, resulting in the destruction of the Second Temple.",
    "segments": [
@@ -1955,6 +2128,30 @@
      "i": 17,
      "he": "אֲתָא, אַשְׁכְּחֵיהּ דַּהֲוָה יָתֵיב. אֲמַר לֵיהּ: מִכְּדֵי הָהוּא גַּבְרָא בְּעֵל דְּבָבֵאּ דְּהָהוּא גַּבְרָא הוּא, מַאי בָּעֵית הָכָא? קוּם פּוֹק! אֲמַר לֵיהּ: הוֹאִיל וַאֲתַאי, שִׁבְקַן וְיָהֵיבְנָא לָךְ דְּמֵי מָה דְּאָכֵילְנָא וְשָׁתֵינָא.",
      "en": "The man who was hosting the feast <b>came and found</b> bar Kamtza <b>sitting</b> at the feast. The host <b>said to</b> bar Kamtza. <b>That man is the enemy [<i>ba’al devava</i>] of that man,</b> that is, you are my enemy. <b>What</b> then <b>do you want here? Arise</b> and <b>leave.</b> Bar Kamtza <b>said to him: Since I have</b> already <b>come, let me stay and I will give you money</b> for <b>whatever I eat and drink.</b> Just do not embarrass me by sending me out."
+    },
+    {
+     "ref": "Gittin 56a",
+     "i": 0,
+     "he": "אֲמַר לֵיהּ: לָא. אֲמַר לֵיהּ: יָהֵיבְנָא לָךְ דְּמֵי פַּלְגָא דִּסְעוֹדְתָּיךְ! אֲמַר לֵיהּ: לָא. אֲמַר לֵיהּ: יָהֵיבְנָא לָךְ דְּמֵי כּוּלַּהּ סְעוֹדְתָּיךְ! אֲמַר לֵיהּ: לָא. נַקְטֵיהּ בִּידֵיהּ וְאוֹקְמֵיהּ וְאַפְּקֵיהּ.",
+     "en": "The host <b>said to him: No,</b> you must leave. Bar Kamtza <b>said to him: I will give you money for half of the feast;</b> just do not send me away. The host <b>said to him: No,</b> you must leave. Bar Kamtza then <b>said to him: I will give you money for the entire feast;</b> just let me stay. The host <b>said to him: No,</b> you must leave. Finally, the host <b>took</b> bar Kamtza <b>by his hand, stood him up, and took him out.</b>"
+    },
+    {
+     "ref": "Gittin 56a",
+     "i": 1,
+     "he": "אָמַר: הוֹאִיל וַהֲווֹ יָתְבִי רַבָּנַן וְלָא מַחוֹ בֵּיהּ, שְׁמַע מִינַּהּ קָא נִיחָא לְהוּ, אֵיזִיל אֵיכוֹל בְּהוּ קוּרְצָא בֵּי מַלְכָּא. אֲזַל אֲמַר לֵיהּ לְקֵיסָר: מְרַדוּ בָּךְ יְהוּדָאֵי! אֲמַר לֵיהּ: מִי יֵימַר? אֲמַר לֵיהּ: שַׁדַּר לְהוּ קוּרְבָּנָא, חָזֵית אִי מַקְרְבִין לֵיהּ.",
+     "en": "After having been cast out from the feast, bar Kamtza <b>said</b> to himself: <b>Since the Sages were sitting</b> there <b>and did not protest</b> the actions of the host, although they saw how he humiliated me, <b>learn from it that they were content</b> with what he did. <b>I will</b> therefore <b>go and inform [<i>eikhul kurtza</i>] against them to the king. He went</b> and <b>said to the emperor: The Jews have rebelled against you.</b> The emperor <b>said to him: Who says</b> that this is the case? Bar Kamtza <b>said to him:</b> Go and test them; <b>send them an offering</b> to be brought in honor of the government, and <b>see whether they</b> will <b>sacrifice it.</b>"
+    },
+    {
+     "ref": "Gittin 56a",
+     "i": 2,
+     "he": "אֲזַל שַׁדַּר בִּידֵיהּ עִגְלָא תִּלְתָּא. בַּהֲדֵי דְּקָאָתֵי שְׁדָא בֵּיהּ מוּמָא בְּנִיב שְׂפָתַיִם, וְאָמְרִי לַהּ בְּדוּקִּין שֶׁבָּעַיִן – דּוּכְתָּא דִּלְדִידַן הָוֵה מוּמָא, וּלְדִידְהוּ לָאו מוּמָא הוּא.",
+     "en": "The emperor <b>went and sent with him</b> a choice <b>three-year-old calf. While</b> bar Kamtza <b>was coming</b> with the calf to the Temple, <b>he made a blemish on</b> the calf’s <b>upper lip. And some say</b> he made the blemish <b>on</b> its <b>eyelids, a place where according to us,</b> i.e., <i>halakha</i>, it <b>is a blemish, but according to them,</b> gentile rules for their offerings, it <b>is not a blemish.</b> Therefore, when bar Kamtza brought the animal to the Temple, the priests would not sacrifice it on the altar since it was blemished, but they also could not explain this satisfactorily to the gentile authorities, who did not consider it to be blemished."
+    },
+    {
+     "ref": "Gittin 56a",
+     "i": 3,
+     "he": "סְבוּר רַבָּנַן לְקָרוֹבֵיהּ מִשּׁוּם שְׁלוֹם מַלְכוּת. אֲמַר לְהוּ רַבִּי זְכַרְיָה בֶּן אַבְקוּלָס: יֹאמְרוּ בַּעֲלֵי מוּמִין קְרֵיבִין לְגַבֵּי מִזְבֵּחַ! סְבוּר לְמִיקְטְלֵיהּ דְּלָא לֵיזִיל וְלֵימָא. אֲמַר לְהוּ רַבִּי זְכַרְיָה: יֹאמְרוּ מֵטִיל מוּם בַּקֳּדָשִׁים יֵהָרֵג!",
+     "en": "The blemish notwithstanding, <b>the Sages thought to sacrifice</b> the animal as an offering <b>due to</b> the imperative to maintain <b>peace</b> with the <b>government. Rabbi Zekharya ben Avkolas said to them:</b> If the priests do that, people <b>will say</b> that <b>blemished</b> animals <b>may be sacrificed</b> as offerings <b>on the altar.</b> The Sages said: If we do not sacrifice it, then we must prevent bar Kamtza from reporting this to the emperor. The Sages <b>thought to kill him so that he would not go and speak</b> against them. <b>Rabbi Zekharya said to them:</b> If you kill him, people <b>will say</b> that <b>one who makes a blemish on sacrificial</b> animals <b>is to be killed.</b> As a result, they did nothing, bar Kamtza’s slander was accepted by the authorities, and consequently the war between the Jews and the Romans began."
     }
    ]
   },
@@ -2186,13 +2383,18 @@
    "tractate": "gittin",
    "ref": "Gittin 56b",
    "refs": [
-    "Gittin 56b"
+    "Gittin 56b",
+    "Gittin 57a"
    ],
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "Story ends mid-scene: Titus's punishment (\"Every day his ashes are gathered\") and the Balaam and Jesus scenes follow in 57a#0-3."
+   },
    "reviewed": true,
    "summary": "Onkelos raises the spirit of his uncle Titus to ask about the importance of the Jewish people before converting. Onkelos uses necromancy to summon Titus, Balaam, and Jesus to ask about the status of the Jewish people and their own punishments in the afterlife.",
    "segments": [
@@ -2201,6 +2403,30 @@
      "i": 17,
      "he": "אוּנְקְלוֹס בַּר קְלוֹנִיקוּס בַּר אֲחָתֵיהּ דְּטִיטוּס הֲוָה. בָּעֵי לְאִיגַּיּוֹרֵי, אֲזַל אַסְּקֵיהּ לְטִיטוּס בִּנְגִידָא, אֲמַר לֵיהּ: מַאן חֲשִׁיב בְּהָהוּא עָלְמָא? אֲמַר לֵיהּ: יִשְׂרָאֵל. מַהוּ לְאִידַּבּוֹקֵי בְּהוּ? אֲמַר לֵיהּ: מִילַּיְיהוּ נְפִישִׁין, וְלָא מָצֵית לְקַיּוֹמִינְהוּ. זִיל אִיגָּרִי בְּהוּ בְּהָהוּא עָלְמָא וְהָוֵית רֵישָׁא, דִּכְתִיב: ״הָיוּ צָרֶיהָ לְרֹאשׁ וְגוֹ׳״ – כׇּל הַמֵּיצַר לְיִשְׂרָאֵל נַעֲשָׂה רֹאשׁ. אֲמַר לֵיהּ: דִּינֵיהּ דְּהָהוּא גַּבְרָא בְּמַאי? אֲמַר לֵיהּ:",
      "en": "§ The Gemara relates: <b>Onkelos bar Kalonikos, the son of Titus’s sister, wanted to convert</b> to Judaism. <b>He went</b> and <b>raised Titus</b> from the grave <b>through necromancy,</b> and <b>said to him: Who is</b> most <b>important in that world</b> where you are now? Titus <b>said to him: The Jewish people.</b> Onkelos asked him: <b>Should I</b> then <b>attach</b> myself <b>to them</b> here in this world? Titus <b>said to him: Their commandments are numerous, and you will not be able to fulfill them.</b> It is best that you do as follows: <b>Go</b> out and <b>battle against them in that world, and you will become the chief, as it is written: “Her adversaries [<i>tzareha</i>] have become the chief”</b> (Lamentations 1:5), which means: <b>Anyone who distresses [<i>meitzer</i>] Israel will become the chief.</b> Onkelos <b>said to him: What is the punishment of that man,</b> a euphemism for Titus himself, in the next world? Titus <b>said to him:</b>"
+    },
+    {
+     "ref": "Gittin 57a",
+     "i": 0,
+     "he": "בְּמַאי דִּפְסַיק אַנַּפְשֵׁיהּ – כֹּל יוֹמָא מְכַנְּשִׁי לֵיהּ לְקִיטְמֵיהּ וְדָיְינִי לֵיהּ, וְקָלוּ לֵיהּ וּמְבַדְּרוּ [לֵיהּ] אַשַּׁב יַמֵּי.",
+     "en": "<b>That which he decreed against himself,</b> as he undergoes the following: <b>Every day his ashes are gathered, and they judge him, and they burn him, and they scatter him over the seven seas.</b>"
+    },
+    {
+     "ref": "Gittin 57a",
+     "i": 1,
+     "he": "אֲזַל אַסְּקֵיהּ לְבִלְעָם בִּנְגִידָא, אֲמַר לֵיהּ: מַאן חֲשִׁיב בְּהָהוּא עָלְמָא? אֲמַר לֵיהּ: יִשְׂרָאֵל. מַהוּ לְאִידַּבּוֹקֵי בְּהוּ? אֲמַר לֵיהּ: ״לֹא תִדְרוֹשׁ שְׁלוֹמָם וְטוֹבָתָם כׇּל הַיָּמִים״. אֲמַר לֵיהּ: דִּינֵיהּ דְּהָהוּא גַּבְרָא בְּמַאי? אֲמַר לֵיהּ: בְּשִׁכְבַת זֶרַע רוֹתַחַת.",
+     "en": "Onkelos then <b>went and raised Balaam</b> from the grave <b>through necromancy. He said to him: Who is</b> most <b>important in that world</b> where you are now? Balaam <b>said to him: The Jewish people.</b> Onkelos asked him: <b>Should I</b> then <b>attach</b> myself <b>to them</b> here in this world? Balaam <b>said to him: You shall not seek their peace or their welfare all the days</b> (see Deuteronomy 23:7). Onkelos <b>said to him: What is the punishment of that man,</b> a euphemism for Balaam himself, in the next world? Balaam <b>said to him:</b> He is cooked <b>in boiling semen,</b> as he caused Israel to engage in licentious behavior with the daughters of Moab."
+    },
+    {
+     "ref": "Gittin 57a",
+     "i": 2,
+     "he": "אֲזַל אַסְּקֵיהּ בִּנְגִידָא לְיֵשׁוּ הַנּוֹצְרִי, אֲמַר לֵיהּ: מַאן חֲשִׁיב בְּהָהוּא עָלְמָא? אֲמַר לֵיהּ: יִשְׂרָאֵל. מַהוּ לְאִדַּבּוֹקֵי בְּהוּ? אֲמַר לֵיהּ: טוֹבָתָם דְּרוֹשׁ, רָעָתָם לֹא תִּדְרוֹשׁ, כׇּל הַנּוֹגֵעַ בָּהֶן כְּאִילּוּ נוֹגֵעַ בְּבָבַת עֵינוֹ.",
+     "en": "Onkelos then <b>went</b> and <b>raised Jesus the Nazarene</b> from the grave <b>through necromancy.</b> Onkelos <b>said to him: Who is</b> most <b>important in that world</b> where you are now? Jesus <b>said to him: The Jewish people.</b> Onkelos asked him: <b>Should I</b> then <b>attach</b> myself <b>to them</b> in this world? Jesus <b>said to him: Their welfare you shall seek, their misfortune you shall not seek,</b> for <b>anyone who touches them is</b> regarded <b>as if he were touching the apple of his eye</b> (see Zechariah 2:12)."
+    },
+    {
+     "ref": "Gittin 57a",
+     "i": 3,
+     "he": "אֲמַר לֵיהּ: דִּינֵיהּ דְּהָהוּא גַּבְרָא בְּמַאי? אֲמַר לֵיהּ: בְּצוֹאָה רוֹתַחַת. דְּאָמַר מָר: כׇּל הַמַּלְעִיג עַל דִּבְרֵי חֲכָמִים נִידּוֹן בְּצוֹאָה רוֹתַחַת. תָּא חֲזִי מָה בֵּין פּוֹשְׁעֵי יִשְׂרָאֵל לִנְבִיאֵי אוּמּוֹת הָעוֹלָם.",
+     "en": "Onkelos <b>said to him: What is the punishment of that man,</b> a euphemism for Jesus himself, in the next world? Jesus <b>said to him:</b> He is punished <b>with boiling excrement. As the Master said: Anyone who mocks the words of the Sages will be sentenced to boiling excrement.</b> And this was his sin, as he mocked the words of the Sages. The Gemara comments: <b>Come</b> and <b>see the difference between the sinners of Israel and the prophets of the nations of the world.</b> As Balaam, who was a prophet, wished Israel harm, whereas Jesus the Nazarene, who was a Jewish sinner, sought their well-being."
     }
    ]
   },
@@ -2408,10 +2634,20 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "previous segment introduces \"they would bring Jewish children, tie them to the foot of their beds\", explaining \"they did this\""
+   },
    "reviewed": true,
    "summary": "Two Jewish children tied to a Roman bed discuss which Torah verse describes their current suffering.",
    "segments": [
+    {
+     "ref": "Gittin 58a",
+     "i": 4,
+     "he": "מֵעִיקָּרָא, חֲשִׁיבִי דְרוֹמָאֵי הֲווֹ נָקְטִי בִּלְיוֹנָא דְגוּשְׁפַּנְקָא, וּמְשַׁמְּשִׁי עַרְסַיְיהוּ; מִכָּאן וְאֵילָךְ, מַיְיתוּ בְּנֵי יִשְׂרָאֵל וְאָסְרִי בְּכַרְעֵי דְּפוּרַיְיהוּ, וּמְשַׁמְּשִׁי.",
+     "en": "The Gemara relates that <b>initially the noblemen of Rome would keep an image</b> imprinted <b>on a seal</b> by their beds <b>and engage in sexual intercourse</b> opposite that image, so that they would beget children of similar beauty. <b>From this</b> point <b>forward,</b> from the time of the Great Revolt, <b>they would bring Jewish children, tie them to the foot of their beds, and engage in sexual intercourse</b> across from them, because they were so handsome."
+    },
     {
      "ref": "Gittin 58a",
      "i": 5,
@@ -2431,10 +2667,20 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 1,
+    "end_forward": 0,
+    "reason": "Starts \"And when the enemy entered there\"; the previous segment introduces the four hundred synagogues of Beitar."
+   },
    "reviewed": true,
    "summary": "During the fall of Beitar, schoolchildren fight back with pens before being captured and burned alive in their Torah scrolls.",
    "segments": [
+    {
+     "ref": "Gittin 58a",
+     "i": 6,
+     "he": "אָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל מִשּׁוּם רַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל, מַאי דִּכְתִיב: ״עֵינִי עוֹלְלָה לְנַפְשִׁי מִכֹּל בְּנוֹת עִירִי״? אַרְבַּע מֵאוֹת בָּתֵּי כְנֵסִיּוֹת הָיוּ בִּכְרַךְ בֵּיתֵּר, וּבְכׇל אַחַת וְאַחַת הָיוּ בָּהּ אַרְבַּע מֵאוֹת מְלַמְּדֵי תִּינוֹקוֹת, וְכׇל אֶחָד וְאֶחָד הָיוּ לְפָנָיו אַרְבַּע מֵאוֹת תִּינוֹקוֹת שֶׁל בֵּית רַבָּן,",
+     "en": "<b>Rav Yehuda says</b> that <b>Shmuel says in the name of Rabban Shimon ben Gamliel: What</b> is the meaning of that <b>which is written: “My eye affects my soul because of all the daughters of my city”</b> (Lamentations 3:51)? <b>There were four hundred synagogues in the city of Beitar, and in each and every one of them there were four hundred schoolteachers, and each and every one</b> of these teachers <b>had four hundred schoolchildren.</b>"
+    },
     {
      "ref": "Gittin 58a",
      "i": 7,
@@ -2791,13 +3037,18 @@
    "tractate": "gittin",
    "ref": "Gittin 65b",
    "refs": [
-    "Gittin 65b"
+    "Gittin 65b",
+    "Gittin 66a"
    ],
    "start_segment": 15,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends at 'Rabbi Zeira said:'; the quote is 'Let Rabbi Avina lift his basket and go to Rav Huna his teacher'."
+   },
    "reviewed": true,
    "summary": "As Geneiva was being led to his execution in chains, he commanded that four hundred dinars from his wine in Nehar Panya be given to Rabbi Avina. Following Geneiva's execution and deathbed bequest, Rabbi Avina travels to his teacher Rav Huna to establish the legal validity of the gift.",
    "segments": [
@@ -2806,6 +3057,12 @@
      "i": 15,
      "he": "<big><strong>גְּמָ׳</strong></big> גְּנִיבָא יוֹצֵא בְּקוֹלָר הֲוָה, כִּי הֲוָה קָא נָפֵיק, אָמַר: הַבוּ אַרְבַּע מְאָה זוּזֵי לְרַבִּי אֲבִינָא, מֵחַמְרָא דִּנְהַר פַּנְיָא. אָמַר רַבִּי זֵירָא:",
      "en": "<strong>GEMARA:</strong> The Gemara relates: <b>Geneiva was</b> one who <b>went out in a neck chain</b> to be executed. <b>When he was going out, he said</b> to the people there as his dying bequest: <b>Give four hundred dinars to Rabbi Avina from wine</b> that I have in the city of <b>Nehar Panya. Rabbi Zeira said:</b>"
+    },
+    {
+     "ref": "Gittin 66a",
+     "i": 0,
+     "he": "דְּרָא רַבִּי אֲבִינָא לְסִילְּתֵיהּ, וַאֲזַל לְגַבֵּי דְּרַב הוּנָא רַבֵּיהּ – דְּאָמַר רַב הוּנָא: גִּיטּוֹ כְּמַתְּנָתוֹ, מַה מַתְּנָתוֹ, אִם עָמַד – חוֹזֵר, אַף גִּיטּוֹ, אִם עָמַד – חוֹזֵר.",
+     "en": "Let <b>Rabbi Avina lift his basket and go to Rav Huna his teacher,</b> as in order to acquire the item he must rely on the opinion of his teacher, <b>as Rav Huna said:</b> The legal status of <b>one’s bill of divorce</b> is <b>like</b> that of <b>his gift. Just as</b> with regard to a <b>gift</b> given by one on <b>his</b> deathbed, <b>if he</b> recovered from his illness and <b>arose</b> from his deathbed, <b>he revokes</b> his gift, <b>so too,</b> with regard to <b>his bill of divorce</b> given by one on his deathbed, <b>if he</b> recovered from his illness and <b>arose</b> from his deathbed, <b>he revokes</b> the bill of divorce."
     }
    ]
   },
@@ -2924,13 +3181,18 @@
    "tractate": "gittin",
    "ref": "Gittin 67b",
    "refs": [
-    "Gittin 67b"
+    "Gittin 67b",
+    "Gittin 68a"
    ],
    "start_segment": 18,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 4,
+    "reason": "Ends \"the servants said to the Exilarch:\" and the quote continues in the next segment; the pit episode and Rav Ḥisda's question close it."
+   },
    "reviewed": true,
    "summary": "Rav Sheshet proves to the Exilarch that his servants are untrustworthy, leading the servants to attempt to frame Rav Sheshet for eating forbidden meat. The Exilarch's servants attempt to frame and then physically injure Rav Sheshet by digging a hidden pit, but he avoids the trap with the help of Rav Hisda.",
    "segments": [
@@ -2957,6 +3219,30 @@
      "i": 21,
      "he": "לְבָתַר דְּאָכֵיל, אָמְרִי לֵיהּ:",
      "en": "<b>After he ate,</b> the servants realized what he had done and they wanted to show the Exilarch that Rav Sheshet did not eat the meat that was given to him. Therefore, the servants <b>said to</b> the Exilarch:"
+    },
+    {
+     "ref": "Gittin 68a",
+     "i": 0,
+     "he": "אִיגְּנִיב לַן כָּסָא דְכַסְפָּא! בַּהֲדֵי דְּקָא מְעַיְּינִי וְאָתוּ, אַשְׁכְּחוּהָ דִּכְרִוכָה בְּסוּדָרֵיהּ.",
+     "en": "<b>A silver cup was stolen from us,</b> and they searched everyone for it. <b>When they were checking they found</b> the piece of meat <b>wrapped in his scarf.</b>"
+    },
+    {
+     "ref": "Gittin 68a",
+     "i": 1,
+     "he": "אָמְרִי לֵיהּ: חֲזִי מָר, דְּלָא מֵיכַל קָא בָּעֵי – אֶלָּא לְצַעוֹרַן! אֲמַר לְהוּ: אֲנָא מֵיכָל אֲכַלִי, וּטְעַמִי בֵּיהּ טַעְמָא דְחִיוָּרָא. אָמְרִי לֵיהּ: חִיוָּרָא לָא עֲבִיד לַן הָאִידָּנָא. אֲמַר לְהוּ: בְּדַקוּ בְּדוּכְתֵּיהּ; דְּאָמַר רַב חִסְדָּא: אוּכָּמָא בְּחִיוָּרָא, וְחִיוָּרָא בְּאוּכַּמְתָּא – לָקוּתָא הִיא. בְּדוּק אַשְׁכְּחוּהּ.",
+     "en": "The Exilarch’s servants <b>said to</b> the Exilarch: <b>See Master,</b> i.e., the Exilarch, Rav Sheshet <b>does not desire to eat, rather</b> he wishes only <b>to afflict us.</b> Even after everything that was done for him he did not eat from the Exilarch’s meal. Rav Sheshet <b>said to them: I ate and I tasted the taste of white</b> leprous spots <b>in</b> the meat and therefore I did not eat it. <b>They said to</b> the Exilarch: <b>We did not prepare</b> an animal with <b>white</b> spots <b>today.</b> Rav Sheshet <b>said to them: Check the</b> skin <b>in</b> the <b>place</b> of the portion that I was given. He issued this instruction in accordance with the statement of Rav Ḥisda, <b>as Rav Ḥisda said: Black</b> spots <b>within white</b> skin <b>and white</b> spots <b>within black</b> skin <b>are an affliction</b> and a sign of disease. <b>They checked</b> and <b>found</b> that the animal was afflicted in this manner, and the Exilarch’s servants became even angrier with him."
+    },
+    {
+     "ref": "Gittin 68a",
+     "i": 2,
+     "he": "כִּי קָא נָפֵיק, כְּרוֹ לֵיהּ בֵּירָא וּשְׁדוֹ לֵיהּ צִיפְּתָא עִילָּוֵיהּ, וְאָמְרִי לֵיהּ: לֵיתֵי מָר לֵינַח. נְחַר לֵיהּ רַב חִסְדָּא מֵאֲחוֹרֵיהּ. אֲמַר לֵיהּ לְיָנוֹקָא: פְּסוֹק לִי פְּסוּקָיךְ, אֲמַר לֵיהּ: ״נְטֵה לְךָ עַל יְמִינְךָ אוֹ עַל שְׂמֹאלֶךָ״. אֲמַר לֵיה לְשַׁמָּעֵיהּ: מַאי קָא חָזֵית? אֲמַר לֵיהּ: צִיפְּיתָא דְּשַׁדְיָא. אֲמַר לֵיהּ: הֲדַר מִינַּהּ.",
+     "en": "<b>When</b> Rav Sheshet <b>was exiting</b> the house of the Exilarch the servants <b>dug a pit and placed a reed mat [<i>tzifta</i>] on top of it</b> so that the pit would not be noticed. <b>And they said to</b> Rav Sheshet: <b>The Master,</b> i.e., Rav Sheshet, <b>should come and rest</b> for a short time, and they intended for him to fall and be hurt. <b>Rav Ḥisda,</b> who was also present, <b>snorted [<i>neḥar</i>] to him from behind</b> in order to signal to him. Rav Sheshet <b>said to a child</b> who was there: <b>Recite your verse for me</b> that you studied today. The child <b>said to him: “Turn to your right or to your left”</b> (II Samuel 2:21). Rav Sheshet, who was blind, <b>said to his servant: What do you see?</b> His servant <b>said to him:</b> I see <b>a mat that</b> has been <b>placed</b> on the ground. Rav Sheshet <b>said to him: Turn away from it</b> and we will go around it."
+    },
+    {
+     "ref": "Gittin 68a",
+     "i": 3,
+     "he": "לְבָתַר דִּנְפַק, אֲמַר לֵיהּ רַב חִסְדָּא: מְנָא הֲוָה יָדַע מָר? אֲמַר לֵיהּ: חֲדָא – דִּנְחַר לִי מָר. וְעוֹד – דִּפְסַק לִי יָנוֹקָא פְּסוּקָא. וְעוֹד – דַּחֲשִׁידִי עַבְדֵי דְּלָא מְעַלּוּ.",
+     "en": "<b>After</b> Rav Sheshet <b>left</b> the Exilarch’s house, <b>Rav Ḥisda said to him: From where did the Master,</b> i.e., Rav Sheshet, <b>know</b> that the servants had dug a pit in that place? Rav Sheshet <b>said to him:</b> There were several matters that raised my suspicions. <b>One, that the Master,</b> i.e., Rav Ḥisda, <b>snorted to me</b> to signal that I should beware. <b>And additionally, when the child recited the verse</b> for me it alluded to this matter. <b>And additionally, servants are suspect of not</b> acting <b>according to a high standard,</b> and I suspected that they would attempt to cause me harm."
     }
    ]
   },
@@ -3057,13 +3343,18 @@
    "tractate": "gittin",
    "ref": "Gittin 72a",
    "refs": [
-    "Gittin 72a"
+    "Gittin 72a",
+    "Gittin 72b"
    ],
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "'Rav Huna is uncertain' finishes with 'if Rabbi Yosei says that the date...' in the next segment."
+   },
    "reviewed": true,
    "summary": "Rav Huna and Rav Naḥman visit the ailing Rabba bar Avuh to clarify whether the halakha follows Rabbi Yosei regarding the validity of dates in documents.",
    "segments": [
@@ -3078,6 +3369,12 @@
      "i": 18,
      "he": "בְּעָא מִינֵּיהּ. אֲמַר לֵיהּ, הָכִי אֲמַר רַב: הֲלָכָה כְּרַבִּי יוֹסֵי. לְבָתַר דִּנְפַק אֲמַר לֵיהּ: הַיְינוּ טַעְמָא דְּרַבִּי יוֹסֵי – דְּקָסָבַר: זְמַנּוֹ שֶׁל שְׁטָר מוֹכִיחַ עָלָיו! אֶלָּא מְסַפְּקָא לֵיהּ",
      "en": "Rav Naḥman <b>asked of</b> Rabba bar Avuh what the <i>halakha</i> is. Rabba bar Avuh <b>said to him: So said Rav:</b> The <b><i>halakha</i></b> is <b>in accordance with</b> the opinion of <b>Rabbi Yosei. After he left</b> Rav Huna <b>said to</b> Rav Naḥman: <b>This is the reason</b> for the opinion <b>of Rabbi Yosei, as he holds: The date</b> written <b>in a document proves</b> when <b>it</b> takes effect. From this incident it is clear that Rav Huna holds that the <i>halakha</i> is in accordance with Rabbi Yosei, as Rav Huna certainly accepted the opinion that Rabba bar Avuh said in the name of Rav. <b>Rather,</b> it is necessary to say that Rav Huna <b>is uncertain</b>"
+    },
+    {
+     "ref": "Gittin 72b",
+     "i": 0,
+     "he": "אִי אָמַר רַבִּי יוֹסֵי בְּעַל פֶּה, אִי לָא אָמַר.",
+     "en": "<b>if Rabbi Yosei says</b> that the date on which a document is written proves when it takes effect even when the husband stated <b>a verbal</b> condition as he handed it over, or <b>if</b> Rabbi Yosei <b>does not say</b> his principle in such a case."
     }
    ]
   },
@@ -3424,13 +3721,18 @@
    "tractate": "gittin",
    "ref": "Gittin 89a",
    "refs": [
-    "Gittin 89a"
+    "Gittin 89a",
+    "Gittin 89b"
    ],
    "start_segment": 19,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Sentence breaks off at \"was betrothed\"; completed by \"to one of the sons of so-and-so\" and Rava's ruling to suppress the rumor."
+   },
    "reviewed": true,
    "summary": "A rumor circulates that a certain woman was betrothed, leading into a case involving a minor who looks like an adult.",
    "segments": [
@@ -3439,6 +3741,12 @@
      "i": 19,
      "he": "הָהִיא דִּנְפַק עֲלַהּ קָלָא, דְּאִיקַּדַּשָׁה",
      "en": "<b>A rumor circulated that a certain</b> woman <b>was betrothed</b>"
+    },
+    {
+     "ref": "Gittin 89b",
+     "i": 0,
+     "he": "לְחַד מִבְּנֵי פְּלָנְיָא, אָמַר רָבָא: אֲפִילּוּ לְמַאן דְּאָמַר לָא מְבַטְּלִינַן קָלָא, בְּהָא מְבַטְּלִינַן קָלָא; מֵימָר אָמְרִי: עַיִּינוּ בְּהוּ רַבָּנַן בְּקִידּוּשֵׁי, וְקִידּוּשֵׁי קָטָן הֲווֹ.",
+     "en": "<b>to one of the sons of so-and-so,</b> who had both adult and minor sons. The son to whom she was betrothed was not specified. <b>Rava said: Even according to the one who says</b> that <b>we do not suppress a rumor, in this</b> case <b>we suppress the rumor.</b> People will not slander her. Rather, <b>they will say</b> that <b>the Sages investigated the betrothal and</b> concluded that <b>it was the betrothal of a minor.</b>"
     }
    ]
   },

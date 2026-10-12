@@ -56,3 +56,14 @@ def test_every_story_has_a_note_and_none_is_approved_unreviewed():
         notes = json.loads((ROOT / f"site/data/notes/{t}.json").read_text())["notes"]
         assert {s["id"] for s in stories} == set(notes), t
         assert all(len(n["note"]) <= 800 and "<" not in n["note"] for n in notes.values()), t
+
+
+def test_boundary_extensions_are_display_only_and_bounded():
+    ext = json.loads((ROOT / "site/data/boundary_extensions.json").read_text())
+    by_id = {s["id"]: s for t in (*GOLDEN_COUNTS, "yevamot") for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]}
+    assert ext and set(ext) <= set(by_id)
+    for i, e in ext.items():
+        assert 0 <= e["start_back"] <= 2 and 0 <= e["end_forward"] <= 4, i
+        assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 4, i
+    # the golden itself is never rewritten: ids still encode the golden's own range
+    assert all(s["id"].count("-") == 3 for s in by_id.values())

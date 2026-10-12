@@ -701,13 +701,18 @@
    "tractate": "ketubot",
    "ref": "Ketubot 49b",
    "refs": [
-    "Ketubot 49b"
+    "Ketubot 49b",
+    "Ketubot 50a"
    ],
    "start_segment": 12,
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "'He wrote a document stating that he was giving his property to his sons,' continues 'and I forced them to feed him'."
+   },
    "reviewed": true,
    "summary": "Rabbi Ḥanina and Rabbi Yonatan were standing together when a man approached and kissed Rabbi Yonatan.",
    "segments": [
@@ -716,6 +721,12 @@
      "i": 12,
      "he": "אִיבַּעְיָא לְהוּ: הִלְכְתָא כְּווֹתֵיהּ אוֹ לֵית הִלְכְתָא כְּווֹתֵיהּ? תָּא שְׁמַע: דְּרַבִּי חֲנִינָא וְרַבִּי יוֹנָתָן הֲווֹ קָיְימִי, אֲתָא הָהוּא גַּבְרָא גְּחֵין וְנַשְּׁקֵיהּ לְרַבִּי יוֹנָתָן אַכַּרְעֵיהּ, אֲמַר לֵיהּ רַבִּי חֲנִינָא: מַאי הַאי? אֲמַר לֵיהּ: כּוֹתֵב נְכָסָיו לְבָנָיו הוּא,",
      "en": "<b>A dilemma was raised before</b> the scholars: Is <b>the <i>halakha</i> in accordance with</b> the opinion of Rabbi Ile’a, <b>or is the <i>halakha</i> not in accordance with his</b> opinion? The Gemara answers: <b>Come</b> and <b>hear, as Rabbi Ḥanina and Rabbi Yonatan were standing</b> together, and <b>a certain man approached, bent over, and kissed Rabbi Yonatan on his foot. Rabbi Ḥanina said to</b> Rabbi Yonatan: <b>What is this?</b> Why does he owe you such a mark of gratitude? <b>He said to him: He wrote</b> a document stating that he was giving <b>his property to his sons,</b>"
+    },
+    {
+     "ref": "Ketubot 50a",
+     "i": 0,
+     "he": "וְעַשִּׂיתִינְהוּ (לְזֻנֵיהּ) [וְזָנוּהּ]. אִי אָמְרַתְּ בִּשְׁלָמָא לָאו דִּינָא, מִשּׁוּם הָכִי עַשִּׂיינְהוּ. אֶלָּא אִי אָמְרַתְּ דִּינָא — עַשֹּׂיִינְהוּ בָּעֵי?",
+     "en": "<b>and I forced them to feed him,</b> for which he is grateful. The Gemara interprets this incident in light of the issue at hand: <b>Granted, if you say</b> that this was <b>not</b> according to the <b><i>halakha</i>,</b> i.e., the man’s sons had the right to refrain from sustaining him, <b>due to that</b> reason Rabbi Yonatan had to <b>force them</b> to feed their father; <b>but if you say</b> this is the <b><i>halakha</i>,</b> i.e., the man’s sons were required to sustain him, why did he <b>need to force them</b> to provide the sustenance of their own accord? The court could have simply requisitioned the necessary amount from the property. This shows that the <i>halakha</i> is not in accordance with the opinion of Rabbi Ile’a."
     }
    ]
   },
@@ -812,7 +823,11 @@
    "tier": "borderline",
    "classification": "BORDERLINE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Sentence breaks off at \"in his will:\"; completed by \"Four hundred dinars of this wine you should give to my daughter... Rav Yosef said: The gain goes to the male orphans.\""
+   },
    "reviewed": true,
    "summary": "A certain person said to his heirs, in his will: The relatives of Rabbi Yoḥanan, burdened by their father's wasteful wife, sought advice from Rabbi Yoḥanan and later a ruling from Reish Lakish after their father's death, leading to conflicting opinions on her support.",
    "segments": [
@@ -827,6 +842,12 @@
      "i": 0,
      "he": "״אַרְבַּע מְאָה זוּזֵי מִן חַמְרָא לִבְרַת״. אִיַּיקַּר חַמְרָא. אָמַר רַב יוֹסֵף: רַוְוחָא לְיַתְמֵי.",
      "en": "<b>Four hundred dinars of</b> this <b>wine</b> you should give <b>to</b> my <b>daughter,</b> and <b>the wine</b> subsequently <b>appreciated</b> in value, so that some money remained. <b>Rav Yosef said:</b> The <b>gain</b> goes <b>to the</b> male <b>orphans,</b> i.e., they are entitled to the leftover sum."
+    },
+    {
+     "ref": "Ketubot 54b",
+     "i": 1,
+     "he": "קָרִיבֵיהּ דְּרַבִּי יוֹחָנָן הֲוָה לְהוּ אִיתַּת אַבָּא דַּהֲוָה קָמַפְסְדָה מְזוֹנֵי. אֲתוֹ לְקַמֵּיהּ דְּרַבִּי יוֹחָנָן. אֲמַר לְהוּ: אֵיזִילוּ וֶאֱמַרוּ לֵיהּ לַאֲבוּכוֹן דִּנְיַיחֵד לַהּ אַרְעָא לִמְזוֹנַהּ.",
+     "en": "The Gemara relates: <b>The relatives of Rabbi Yoḥanan had a wife of</b> their <b>father who would diminish</b> his resources by spending wastefully on her <b>sustenance. They came before Rabbi Yoḥanan</b> to ask his advice. <b>He said to them: Go and say to your father that he should set aside</b> a certain portion of <b>land for her sustenance.</b> If she agrees to accept this land for her sustenance she has thereby relinquished her claim to the rest of the estate."
     }
    ]
   },
@@ -1289,13 +1310,18 @@
    "tractate": "ketubot",
    "ref": "Ketubot 63b",
    "refs": [
-    "Ketubot 63b"
+    "Ketubot 63b",
+    "Ketubot 64a"
    ],
    "start_segment": 8,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "\"There are those who say... if she rebelled, she did not lose her right to her worn clo[thes]\" continues in the next segment"
+   },
    "reviewed": true,
    "summary": "When Rav Zevid's daughter-in-law rebelled while holding a garment, a group of sages convened and ruled that a rebellious woman loses her rights to her worn clothes.",
    "segments": [
@@ -1304,6 +1330,12 @@
      "i": 8,
      "he": "כַּלְּתֵיהּ דְּרַב זְבִיד אִימְּרַדָא, הֲוָה תְּפִיסָא חַד שֵׁירָא. יְתֵיב אַמֵּימָר וּמָר זוּטְרָא וְרַב אָשֵׁי, וִיתֵיב רַב גַּמָּדָא גַּבַּיְיהוּ. יָתְבִי וְקָאָמְרִי: מָרְדָה — הִפְסִידָה בְּלָאוֹתֶיהָ קַיָּימִין. אֲמַר לְהוּ רַב גַּמָּדָא: מִשּׁוּם דְּרַב זְבִיד גַּבְרָא רַבָּה, מַחְנִיפִיתוּ לֵיהּ? וְהָאָמַר רַב כָּהֲנָא: מִיבַּעְיָא בָּעֵי רָבָא, וְלָא פְּשִׁיט? אִיכָּא דְּאָמְרִי, יָתְבִי וְקָאָמְרִי, מָרְדָה — לֹא הִפְסִידָה בְּלָאוֹתֶיהָ קַיָּימִין. אֲמַר לְהוּ רַב גַּמָּדָא:",
      "en": "It is related that <b>the daughter-in-law of Rav Zevid rebelled</b> against her husband. <b>She was holding a certain garment</b> in her hands. <b>Ameimar, Mar Zutra, and Rav Ashi were sitting, and Rav Gamda was sitting with them. They sat and said:</b> If a woman <b>rebelled, she lost</b> her right to <b>her worn clothes,</b> meaning she has forfeited the clothes she brought with her for her dowry even if they are still in existence. <b>Rav Gamda said to them: Because Rav Zevid is a great man,</b> are <b>you</b> willing to <b>flatter him</b> with regard to this <i>halakha</i>? <b>Didn’t Rav Kahana say: Rava raises a dilemma</b> about this issue with regard to worn clothes, <b>and he did not resolve it?</b> Yet you reached a decision out of respect for Rav Zevid. This is inappropriate. <b>There are</b> those <b>who say</b> that this incident happened differently, as these three Sages <b>sat and said:</b> If she <b>rebelled, she did not lose</b> her right to <b>her worn clothes. Rav Gamda said to them:</b>"
+    },
+    {
+     "ref": "Ketubot 64a",
+     "i": 0,
+     "he": "מִשּׁוּם דְּרַב זְבִיד גַּבְרָא רַבָּה הוּא, אָפְכִיתוּ לֵיהּ לְדִינָא עִילָּוֵיהּ? הָאָמַר רַב כָּהֲנָא: מִיבַּעְיָא בָּעֵי לַהּ רָבָא, וְלָא פְּשִׁיט?! הַשְׁתָּא דְּלָא אִתְּמַר לָא הָכִי וְלָא הָכִי, תְּפַסָה — לָא מַפְּקִינַן מִינַּהּ, לָא תְּפַסָה — לָא יָהֲבִינַן לַהּ.",
+     "en": "<b>Because Rav Zevid is a great man,</b> and due to his piety and humility he would not challenge the ruling, <b>you twist the judgment against him? Didn’t Rav Kahana say: Rava raises a dilemma</b> with regard to this issue <b>and did not resolve</b> it, so how did you rule that she may retain her worn clothes? The Gemara summarizes: <b>Now that it was not stated</b> and concluded <b>this way or that way, if she seized</b> an item of her possessions, <b>we do not take it away from her,</b> but if she <b>did not seize</b> it, <b>we do not give</b> it to <b>her.</b>"
     }
    ]
   },
@@ -2163,7 +2195,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Ends at the purchaser's offer; outcome is Rami bar Hama's comparison and Rava's reply 'it would be cruel on his part to refuse to take the money'."
+   },
    "reviewed": true,
    "summary": "",
    "segments": [
@@ -2178,6 +2214,18 @@
      "i": 3,
      "he": "שְׁקַל אַלְפָּא זוּזֵי וְקָא אָזֵיל לְגַבֵּיהּ, אֲמַר לֵיהּ: אִי שַׁוְיָא לָךְ אַלְפָּא זוּזֵי — לְחַיֵּי, וְאִי לָא — שְׁקֹיל אַלְפָּא זוּזֵי וְאִיסְתַּלַּק.",
      "en": "The purchaser <b>took one thousand dinars and went to</b> the creditor. <b>He said to him: If</b> the first mansion that you repossessed is <b>worth one thousand dinars to you, very well,</b> let it be yours in exchange for the entire sum that is owed to you, <b>and if not, take</b> these <b>one thousand dinars and abrogate</b> your rights to both of the mansions, leaving them both in my possession."
+    },
+    {
+     "ref": "Ketubot 91b",
+     "i": 4,
+     "he": "סְבַר רָמֵי בַּר חָמָא לְמֵימַר: הַיְינוּ מַתְנִיתִין אִם אָמְרוּ יְתוֹמִים ״הֲרֵי אָנוּ מַעֲלִין עַל נִכְסֵי אָבִינוּ יָפֶה דִּינָר״.",
+     "en": "<b>Rami bar Ḥama thought to say</b> that <b>this</b> case <b>is</b> identical to that which is taught in <b>the mishna: If the orphans say: We inflate</b> the value of <b>our father’s property by a dinar,</b> the court does not listen to them. This appears to be the case here as well, and the value of the mansion should not be assessed at higher than its market value."
+    },
+    {
+     "ref": "Ketubot 91b",
+     "i": 5,
+     "he": "אֲמַר לֵיהּ רָבָא: מִי דָּמֵי? הָתָם — אִית לְהוּ פְּסֵידָא לְיַתְמֵי, הָכָא — מִי אִית לֵיהּ פְּסֵידָא? אַלְפָּא יָהֵיב וְאַלְפָּא שָׁקֵיל!",
+     "en": "<b>Rava said to him: Are</b> the two cases <b>comparable? There,</b> in the mishna, <b>the</b> other <b>orphans</b> whose mother’s marriage contract was of lesser value will suffer a financial <b>loss</b> if the property is assessed at a value greater than it is actually worth. <b>Here,</b> in the case of the creditor, <b>does he incur a loss? He lent one thousand</b> dinars <b>and took one thousand</b> dinars; consequently, it would be cruel on his part to refuse to take the money and to insist on taking the second mansion from the purchaser."
     }
    ]
   },
@@ -2192,7 +2240,11 @@
    "tier": "story",
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Ends with the purchaser's offer; next segment gives the resolution \"It would be cruel on his part to refuse to take the money\"."
+   },
    "reviewed": true,
    "summary": "Similar to the previous case, a purchaser of two small tracts of land attempts to pay off a creditor in cash to save the land from repossession.",
    "segments": [
@@ -2207,6 +2259,12 @@
      "i": 9,
      "he": "שְׁקַל מְאָה זוּזֵי וְקָאָזֵיל לְגַבֵּיהּ וַאֲמַר לֵיהּ: אִי שָׁוְיָא לָךְ מְאָה זוּזֵי — לְחַיֵּי, וְאִי לָא — שְׁקוֹל מְאָה זוּזֵי וְאִיסְתַּלַּק.",
      "en": "The purchaser <b>took one hundred dinars and went to</b> the creditor. <b>He said to him: If</b> this tract is <b>worth one hundred dinars to you, very well, and if not, take one hundred dinars and abrogate</b> your rights to both of the tracts, leaving them both in my possession."
+    },
+    {
+     "ref": "Ketubot 91b",
+     "i": 10,
+     "he": "סָבַר רַב יוֹסֵף לְמֵימַר: הַיְינוּ מַתְנִיתִין אִם אָמְרוּ יְתוֹמִים כּוּ׳. אֲמַר לֵיהּ אַבָּיֵי: מִי דָּמֵי? הָתָם — אִית לְהוּ פְּסֵידָא לְיַתְמֵי, הָכָא — מַאי פְּסֵידָא אִית לֵיהּ? מְאָה יָהֵיב, מְאָה שָׁקֵיל.",
+     "en": "<b>Rav Yosef thought to say</b> that this case <b>is</b> identical to that which is taught in <b>the mishna,</b> whereby <b>if the orphans say:</b> We inflate the value of our father’s property by a dinar, the court does not listen to them. <b>Abaye said to him: Are</b> the two cases <b>comparable? There,</b> in the mishna, <b>the</b> other <b>orphans</b> suffer <b>a</b> financial <b>loss</b> if the property is assessed at a value greater than it is actually worth; <b>here, what loss</b> does the creditor <b>incur? He lent one hundred</b> dinars <b>and took one hundred</b> dinars. It would be cruel on his part to refuse to take the money and to insist on taking the land from the purchaser."
     }
    ]
   },
@@ -2250,7 +2308,11 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 1,
+    "reason": "Segment 15 ends at setup ('I will not reimburse you'); next: 'His mother died... Rava said to him: ... did he not take upon himself to guarantee it against his own objections'."
+   },
    "reviewed": true,
    "summary": "A man sells the rights to his mother's marriage contract and later tries to reclaim it after her death, but Rava rules he is bound by his own sale.",
    "segments": [
@@ -2259,6 +2321,12 @@
      "i": 15,
      "he": "הָהוּא גַּבְרָא דְּזַבְּנַהּ לִכְתוּבְּתַהּ דְּאִימֵּיהּ בְּטוֹבַת הֲנָאָה, וַאֲמַר לֵיהּ: אִי אָתְיָא אֵם וּמְעַרְעֲרָא, לָא מְפַצֵּינָא לָךְ.",
      "en": "§ The Gemara relates that there was <b>a certain man who sold</b> the rights to <b>his mother’s marriage contract for</b> a certain <b>financial advantage,</b> i.e., he received a certain sum on the condition that if he would inherit his mother’s marriage contract, which would occur if his mother’s husband would die prior to his mother, the purchaser would obtain the right to collect the money. <b>And he told</b> the purchaser: <b>If</b> my <b>mother comes and objects</b> to the sale, <b>I will not reimburse you</b> for your purchase."
+    },
+    {
+     "ref": "Ketubot 91b",
+     "i": 16,
+     "he": "שְׁכִיבָא אִימֵּיהּ וְלָא (אִי)עַרְעַרָא, וַאֲתָא אִיהוּ וְקָא מְעַרְעַר. סְבַר רָמֵי בַּר חָמָא לְמֵימַר: אִיהוּ בִּמְקוֹם אִימֵּיהּ קָאֵי. אֲמַר לֵיהּ רָבָא: נְהִי דְּאַחְרָיוּת דִּידַהּ לָא קַבֵּיל עֲלֵיהּ, אַחְרָיוּת דִּידֵיהּ מִי לָא קַבֵּיל?",
+     "en": "<b>His mother died</b> after her husband died, <b>and</b> had <b>not objected</b> to the sale. <b>He,</b> however, <b>came and contested</b> the sale. <b>Rami bar Ḥama thought to say</b> that <b>he stands in his mother’s place</b> and since he is her proxy, he has the right to object to the sale. <b>Rava said to him: Granted that he did not take upon himself</b> to <b>guarantee</b> the sale against his mother’s objections, but <b>did he not take upon himself</b> to <b>guarantee</b> it against <b>his own</b> objections? When he sold the right to collect the marriage contract, he most certainly guaranteed that he would not renege on the sale."
     }
    ]
   },
