@@ -4,13 +4,13 @@
 Reads (read-only): results/canonical/{ketubot,kiddushin,gittin}_canonical.json and
 results/v11/yevamot/yevamot_v11.json. Writes site/data/index.json + site/data/<tractate>.json.
 
-Tiers (decided 2026-10-12): `story` = anything the golden accepts that is not BORDERLINE;
-`borderline` = BORDERLINE, shown separately. NOT_A_STORY never ships. Yevamot has no expert
+Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` = BORDERLINE, shown
+separately. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
 round: its stories are detector output, flagged `reviewed: false`.
 
-mishnah_stories[] is deliberately NOT exported: Stage 4g withheld those on purpose and whether
-Mishnah-internal stories belong is Jeff's scope question (CLAUDE.md, data-structure rule).
-The count withheld is reported in index.json so the omission is visible, not silent.
+mishnah_stories[] (Stage 4g's withheld Mishnah-internal stories) IS exported, per Simon
+2026-10-12: flagged `in_mishnah: true` and `reviewed: false` (detector output, never shown to
+Jeff; whether they count is still his scope question).
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -42,7 +42,9 @@ def clean(html):
 def tier(classification):
     if classification == "NOT_A_STORY":
         return None
-    return "borderline" if classification == "BORDERLINE" else "story"
+    if classification == "BORDERLINE":
+        return "borderline"
+    return "story" if classification in ("YES", "HIGH_CONFIDENCE") else None
 
 
 def pieces(pages, i, s):
@@ -61,45 +63,46 @@ def pieces(pages, i, s):
 def build(tractate, path, reviewed):
     d = json.loads((ROOT / path).read_text())
     pages = d["pages"]
-    stories, withheld = [], 0
+    stories = []
     for i, p in enumerate(pages):
-        withheld += len(p.get("mishnah_stories", []))
-        for s in p.get("stories", []):
-            t = tier(s.get("classification"))
-            if t is None:
-                continue
-            ps = pieces(pages, i, s)
-            segs = [g for _, gs in ps for g in gs]
-            assert segs, (tractate, p["ref"], s)
-            heb = "".join(clean(g.get("hebrew")) + " " for g in segs).strip()
-            if not NIKUD.search(heb):
-                print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
-            stories.append({
-                "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
-                "tractate": tractate,
-                "ref": p["ref"],
-                "refs": [r for r, _ in ps],
-                "start_segment": int(s["start_segment"]),
-                "tier": t,
-                "reviewed": reviewed,
-                "summary": s.get("one_sentence_summary", ""),
-                "segments": [{"he": clean(g.get("hebrew")), "en": clean(g.get("english"))} for g in segs],
-            })
-    return stories, withheld
+        for in_mishnah, key in ((False, "stories"), (True, "mishnah_stories")):
+            for s in p.get(key, []):
+                t = tier(s.get("classification"))
+                if t is None:
+                    continue
+                ps = pieces(pages, i, s)
+                segs = [g for _, gs in ps for g in gs]
+                assert segs, (tractate, p["ref"], s)
+                if not NIKUD.search("".join(g.get("hebrew") or "" for g in segs)):
+                    print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
+                stories.append({
+                    "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
+                    "tractate": tractate,
+                    "ref": p["ref"],
+                    "refs": [r for r, _ in ps],
+                    "start_segment": int(s["start_segment"]),
+                    "tier": t,
+                    "in_mishnah": in_mishnah,
+                    # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
+                    "reviewed": reviewed and not in_mishnah,
+                    "summary": s.get("one_sentence_summary", ""),
+                    "segments": [{"he": clean(g.get("hebrew")), "en": clean(g.get("english"))} for g in segs],
+                })
+    return stories
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     index = {"tractates": []}
     for t, (path, reviewed) in SOURCES.items():
-        stories, withheld = build(t, path, reviewed)
+        stories = build(t, path, reviewed)
         ids = [s["id"] for s in stories]
         assert len(ids) == len(set(ids)), f"{t}: duplicate story ids"
         (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories},
                                                   ensure_ascii=False, indent=1))
         n = {k: sum(1 for s in stories if s["tier"] == k) for k in ("story", "borderline")}
-        index["tractates"].append({"tractate": t, "reviewed": reviewed, **n, "mishnah_withheld": withheld})
-        print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} mishnah_withheld={withheld}")
+        index["tractates"].append({"tractate": t, "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"])})
+        print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} in_mishnah={index['tractates'][-1]['in_mishnah']}")
     (OUT / "index.json").write_text(json.dumps(index, indent=1))
 
 

@@ -12,10 +12,15 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def test_site_data_counts_match_the_goldens():
     subprocess.run([sys.executable, str(ROOT / "scripts/build_site_data.py")], check=True, capture_output=True)
-    for t, want in GOLDEN_COUNTS.items():
+    for t in GOLDEN_COUNTS:
         d = json.loads((ROOT / f"site/data/{t}.json").read_text())
-        assert len(d["stories"]) == want["accepted"], t
-        assert all(s["reviewed"] for s in d["stories"])
+        g = json.loads((ROOT / f"results/canonical/{t}_canonical.json").read_text())
+        shipped = ("YES", "HIGH_CONFIDENCE", "BORDERLINE")  # LOW_CONFIDENCE is not shipped
+        n = sum(1 for p in g["pages"] for k in ("stories", "mishnah_stories")
+                for s in p.get(k, []) if s.get("classification") in shipped)
+        assert len(d["stories"]) == n, t
+        assert not any(s["tier"] == "story" and s["in_mishnah"] and s["reviewed"] for s in d["stories"])
+        assert all(s["reviewed"] for s in d["stories"] if not s["in_mishnah"])
         assert all(g["he"] and g["en"] for s in d["stories"] for g in s["segments"])
     y = json.loads((ROOT / "site/data/yevamot.json").read_text())
     assert y["stories"] and not any(s["reviewed"] for s in y["stories"])

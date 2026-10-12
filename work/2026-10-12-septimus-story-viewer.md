@@ -26,7 +26,7 @@ Audience: non-scholars, phones. Not a review tool; a reading tool with a feedbac
 **Phase 1 — Data export (DONE 2026-10-12).** `scripts/build_site_data.py` reads the goldens
 (`results/canonical/{ketubot,kiddushin,gittin}_canonical.json`) and writes one static
 `site/data/<tractate>.json` plus an `index.json`.
-- Include only `classification` in {YES-tier}; BORDERLINE shown in a separate, labelled
+- Ship YES + HIGH_CONFIDENCE as "story", BORDERLINE as its own tier; LOW_CONFIDENCE not shipped; Mishnah-internal stories included, flagged.
   "Possible stories" tier (or omitted — Phase 0 decision). `NOT_A_STORY` never ships.
 - Each story: id, tractate, daf/amud, segment range, Hebrew (with nikud), English,
   title/one-line summary (if absent: generate, then mark as machine-written).
