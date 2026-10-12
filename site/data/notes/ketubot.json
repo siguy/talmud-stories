@@ -466,22 +466,27 @@
    "approved": false
   },
   "ketubot-49b-12-12": {
-   "note": "To settle whether the law follows Rabbi Ile'a, the Gemara cites a story of Rabbi Hanina and Rabbi Yonatan standing together. A man came, bent over, and kissed Rabbi Yonatan's foot. Rabbi Hanina asked why, and Rabbi Yonatan began to explain that the man had written a document giving his property to his sons. The text breaks off before the explanation and the ruling.",
+   "note": "Scholars ask whether the law follows Rabbi Ile'a's view about a father being supported by his children. As evidence, the Gemara tells of a man who kissed Rabbi Yonatan's foot, because the man had given his property to his sons and Rabbi Yonatan forced them to feed him. The Gemara reasons that if the sons were legally required to support him, the court could simply have taken the money from the property, so forcing them suggests they were not required. It concludes the law does not follow Rabbi Ile'a.",
    "people": [
     {
-     "name": "Rabbi Ḥanina",
-     "about": "asked why the man kissed Rabbi Yonatan's foot"
+     "name": "Rabbi Ile'a",
+     "about": ""
     },
     {
      "name": "Rabbi Yonatan",
-     "about": "the man kissed his foot"
+     "about": ""
     },
     {
-     "name": "Rabbi Ile'a",
-     "about": "his opinion is the subject of the question"
+     "name": "Rabbi Hanina",
+     "about": ""
     }
    ],
-   "terms": [],
+   "terms": [
+    {
+     "term": "halakha",
+     "meaning": "Jewish law; the accepted ruling."
+    }
+   ],
    "approved": false
   },
   "ketubot-50a-10-10": {
@@ -549,17 +554,21 @@
    "approved": false
   },
   "ketubot-54a-22-22": {
-   "note": "A man's will told his heirs to give four hundred dinars' worth of a certain wine to his daughter. The wine later rose in value, leaving extra money. Rav Yosef ruled that the extra goes to the male heirs.",
+   "note": "Two short cases follow. A man's will told his heirs to give his daughter four hundred dinars' worth of his wine; the wine rose in value, leaving extra money, and Rav Yosef ruled the extra goes to the sons. Then the sons of Rabbi Yohanan's relatives complained that their father's wife was wastefully draining his estate; Rabbi Yohanan advised having the father set aside land for her support, which, if she accepts it, ends her claim on the rest of the estate.",
    "people": [
     {
      "name": "Rav Yosef",
-     "about": "gave the ruling"
+     "about": ""
+    },
+    {
+     "name": "Rabbi Yohanan",
+     "about": ""
     }
    ],
    "terms": [
     {
-     "term": "dinar",
-     "meaning": "A coin used in the Talmud as a unit of money."
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who has died."
     }
    ],
    "approved": false
@@ -865,25 +874,33 @@
    "approved": false
   },
   "ketubot-63b-8-8": {
-   "note": "Rav Zevid's daughter-in-law rebelled against her husband while holding a garment. Ameimar, Mar Zutra and Rav Ashi said that a rebellious wife loses her claim to her worn clothes, but Rav Gamda accused them of flattering the great Rav Zevid. He pointed out that Rava had raised this question and left it unresolved. In another version the three sages said she did not lose her claim, and Rav Gamda began to reply, but the text ends there.",
+   "note": "When Rav Zevid's daughter-in-law rebelled against her husband, three Sages said she loses her right to her worn clothes. Rav Gamda objected that they were flattering Rav Zevid, since Rava had left this question unresolved. In another version they ruled the opposite, and he gave the same objection. The conclusion is that since the question is undecided, if she already holds the item it is not taken from her, but if she does not, it is not given to her.",
    "people": [
     {
      "name": "Rav Zevid",
-     "about": "a great man, whose daughter-in-law rebelled"
+     "about": ""
     },
     {
      "name": "Rav Gamda",
-     "about": "accused the sages of flattering Rav Zevid"
+     "about": ""
     },
     {
-     "name": "Ameimar, Mar Zutra and Rav Ashi",
-     "about": "the three sages who ruled"
+     "name": "Ameimar",
+     "about": ""
+    },
+    {
+     "name": "Mar Zutra",
+     "about": ""
+    },
+    {
+     "name": "Rav Ashi",
+     "about": ""
     }
    ],
    "terms": [
     {
-     "term": "rebellious wife (moredet)",
-     "meaning": "A wife who refuses her husband's marital rights, who loses some financial claims."
+     "term": "rebelled",
+     "meaning": "Here, a wife who refuses to live with her husband as a wife."
     }
    ],
    "approved": false
@@ -1520,27 +1537,49 @@
    "approved": false
   },
   "ketubot-91b-2-3": {
-   "note": "A man owed a creditor one thousand dinars and sold two mansions for five hundred each. The creditor took one mansion from its buyer to cover part of the debt and then wanted the second one too. The second buyer offered the creditor a choice: keep the first mansion in full payment of the thousand dinars if it is worth that, or take a thousand dinars and give up any claim to both mansions. The passage ends with this offer, without saying how it was settled.",
-   "people": [],
+   "note": "A man owed a creditor one thousand dinars and sold two mansions for five hundred each. The creditor took one mansion from a buyer, then came for the second. The buyer offered the creditor the full thousand dinars to give up both. Rami bar Hama compared this to a rule that orphans cannot inflate a property's value, but Rava said the cases differ: here the creditor loses nothing, so it would be cruel for him to refuse the money.",
+   "people": [
+    {
+     "name": "Rami bar Hama",
+     "about": ""
+    },
+    {
+     "name": "Rava",
+     "about": ""
+    }
+   ],
    "terms": [
     {
      "term": "creditor",
-     "meaning": "A person who is owed money."
+     "meaning": "Someone who is owed money."
     },
     {
-     "term": "repossess",
-     "meaning": "To take back property because a debt was not paid."
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who has died."
     }
    ],
    "approved": false
   },
   "ketubot-91b-8-9": {
-   "note": "A man owed a creditor 100 dinars and sold two small fields to a buyer, 50 dinars each. The creditor took one field from the buyer as partial payment, then came to take the second. The buyer offered the creditor 100 dinars in cash: if the field is worth that much to you, fine; if not, take the cash and give up your claim on both fields. The passage ends before the creditor's answer or any ruling.",
-   "people": [],
+   "note": "A man owed a creditor one hundred dinars and sold two small fields for fifty each. The creditor took one field from a buyer, then came for the other. The buyer offered the full hundred dinars so the creditor would give up both fields. Rav Yosef compared this to a rule that orphans cannot inflate a property's value, but Abaye said the creditor loses nothing here, so it would be cruel of him to refuse the money.",
+   "people": [
+    {
+     "name": "Rav Yosef",
+     "about": ""
+    },
+    {
+     "name": "Abaye",
+     "about": ""
+    }
+   ],
    "terms": [
     {
-     "term": "repossess",
-     "meaning": "When a debtor does not pay, the creditor can take land that the debtor sold, even from the person who bought it."
+     "term": "creditor",
+     "meaning": "Someone who is owed money."
+    },
+    {
+     "term": "orphans",
+     "meaning": "Here, the heirs of a man who has died."
     }
    ],
    "approved": false
@@ -1566,17 +1605,21 @@
    "approved": false
   },
   "ketubot-91b-15-15": {
-   "note": "A man sold to a buyer his possible future right to collect his mother's marriage contract money, which he would get only if he inherited it. He told the buyer that if his mother objected to the sale, he would not repay the buyer. The passage as given ends there, with no ruling shown.",
+   "note": "A man sold his right to collect his mother's marriage contract payment (if he later inherited it), saying he would not repay the buyer if his mother objected. She died without objecting, but he himself then contested the sale. Rami bar Hama thought he could object in her place. Rava replied that although he did not guarantee against her objection, he did guarantee against his own, so the sale stands.",
    "people": [
     {
+     "name": "Rami bar Hama",
+     "about": ""
+    },
+    {
      "name": "Rava",
-     "about": "a rabbi of the Talmud"
+     "about": ""
     }
    ],
    "terms": [
     {
-     "term": "marriage contract (ketubah)",
-     "meaning": "a document promising a wife a sum of money, paid when the marriage ends by divorce or the husband's death."
+     "term": "marriage contract",
+     "meaning": "The ketubah, a written sum a husband owes his wife on divorce or death."
     }
    ],
    "approved": false
