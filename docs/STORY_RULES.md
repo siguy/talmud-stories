@@ -50,6 +50,13 @@ we never overwrite it.
 | A rule he states implies an old entry is wrong | **Annotate, never move.** The target keeps his 2005 value; the annotation says which rule applies and what that rule would make it. |
 | We think an entry is wrong | It stays. Put it on the list for the next round and let him rule. |
 | We want a number under the new rule | Score with `--standard`, which reads the annotation. Two standards, two numbers, both reproducible from one file. |
+| He rules that a list entry is **not** a story | The entry keeps its 2005 text; the ruling goes in [`results/expert_lists/superseded_by_rule.json`](../results/expert_lists/superseded_by_rule.json) and the entry **leaves the recall denominator** — missing a non-story is not a loss. `borderline` is recorded and still counts. `measure_recall_vs_expert_list.py --standard 2005` reproduces the old number. |
+
+**His recent rulings outrank his 2005 lists** (Jeff, via Simon, 2026-10-09): the lists were
+initial, non-comprehensive attempts, inconsistencies in them are expected, and his recent
+thinking is what we follow. So a conflict between a list entry and a settled rule is **not a
+question for him** — apply the rule and annotate the entry. Ask only when the rule itself is
+unclear.
 
 **Why not just fix the evidence.** The blind lists are the only thing in this project that
 can tell us we are wrong. Editing them toward our own output turns the ruler into a mirror
@@ -122,6 +129,12 @@ post-biblical figures."*
   *"a certain man…, Rav X ruled"* shape) as "bare reports"
   ([`consensus-phase1`](findings/2026-09-28-consensus-phase1.md) §7).
   **Read R-C5 against this rule, never alone.**
+- **Its limit, Jeff 2026-10-07** (Ketubot 50b:4, the orphan daughters before Shmuel):
+  *"The daughters do come to a rabbi, and he then makes a ruling. But there is not really
+  another action or change that is narrated."* — **not a story.** Coming before a rabbi and
+  being ruled on is not enough; the incident needs **another narrated action or change**
+  besides the ruling. The cow case has one (*stole and sold*). His February `no` on this
+  passage stands — it was about the passage, not the span we showed him.
 
 ### R-C1 · A Mishnah story belongs to the Mishnah; the Talmud's quotation of it is Talmudic
 **Jeff, 2026-09-01:** *"10a is just the Mishnah itself, that the printers included in the
@@ -160,6 +173,16 @@ borderline."* (Being mocked is conflict; it is not an event.)
 - **Settled instances:** Gittin 57a (the fertility exchange) is **not** a story — *"The
   list was wrong. Great to have the AI correct it!"* Gittin 43a is **low confidence at
   most**. Gittin 25a is **high confidence**.
+- **Ordinary scholarly back-and-forth is not conflict — Jeff, 2026-10-07**
+  (`jeff:speech-conflict-line`): Ketubot 21b:0 — *"That one rabbis praises a ruling and
+  another rebukes him or questions the praise is not that exceptional in Talmudic dialogue,
+  so I would not count it as a story."* Ketubot 53a:11 — *"No conflict or change… This is
+  standard rabbinic dialogue and not a story."* Both are on his 2005 Ketubot list; both are
+  now `NOT_A_STORY` in the golden and out of the recall denominator. A rebuke, a challenge
+  or a sharp retort is normal Talmudic discourse; conflict for R-C2 has to be more than that.
+- **Teaching is speech — Jeff, 2026-10-07**, Ketubot 50a:10 (learned forty times *"as if in
+  his pocket"*): *"since it is mainly about rabbinic teaching, speech-acts, I would still
+  consider it borderline."* Added to the golden as `BORDERLINE`.
 - **Implied by it:** `borderline` must be a first-class verdict, which the axis review UI
   emits and the pipeline does not yet.
 
@@ -185,6 +208,14 @@ the one time event — One day the emperor's daughter…"*
   `tests/test_prompt_carries_the_rules.py` so it is not silently dropped while it is still
   ineffective. The shipped Gittin artifact remains the pre-change run.
   Item: [`work/2026-09-02-habitual-frame.md`](../work/done/2026-09-02-habitual-frame.md).
+
+- **A habit that leads to a change is a story — Jeff, 2026-10-07**
+  (`jeff:custom-without-event`), Ketubot 61a:14, the two pious men: *"there are at least two
+  actions and change. The pious man's continuous action, feeding the waiter before the
+  meal, leads to a change—that Elijah visits him."* So no single "one day…" is needed when
+  the habit itself **causes** something. A habit that leads nowhere stays a custom (R-C5,
+  Mar Zutra). Added to the golden as `YES`. **Open:** Ketubot 67b:17 (R. Abba's coins) —
+  he left it blank; re-asked.
 
 ### R-C4 · A story may be embedded inside a dictum
 **Jeff, 2026-09-01, on Gittin 38b:** the dialogue *"includes a story, in R. Yohanan's
@@ -230,7 +261,29 @@ uprooted. (two actions, causal connection)"*
   the detector's own `multiple_events` field (two of them now ruled: 15a:0 no, 112a:11
   borderline). Kiddushin and Gittin entries carry no such field, so they cannot be
   screened without a run. **Do not bulk-relabel on this count** (Lesson 18, Lesson 27).
+- **A fifth case, Jeff 2026-10-07** — Yevamot 107b (Pishon's wife), **on his 2005 list**:
+  *"The Talmud just mentions an event here—one thing Pishon's wife did—without change or
+  causality."* Not a story; out of the Yevamot recall denominator.
+- **The line with R-C0, as he drew it on 2026-10-07:** what he keeps asking for is **at
+  least two actions and a change** (61a: *"at least two actions and change"*; 107b:
+  *"without change or causality"*; 50b: *"not really another action or change"*). That is
+  close to the Stage 2 disqualifier below — now with his words behind it.
 - **Applied:** Ketubot 15a:0 → `NOT_A_STORY`. In the twin-pass question since 2026-09-25.
+
+### R-C6 · An incident only alluded to — filled in from the commentaries — is BORDERLINE
+**Jeff, 2026-10-07** (`jeff:alluded-incident`), Kiddushin 80b:11 (the widow and the guard,
+cited *"like that incident"*): *"the 'incident' is not narrated in full, and has to be
+filled in based on the context and with the help of the Talmudic commentaries. If the
+Talmud had provided the entire story, it would have counted as a story. But since so much
+is missing and basically conjectured… we should consider it borderline."*
+
+- **Status:** settled on that case. An incident the Talmud **alludes to** as evidence, which
+  a reader can only reconstruct with the commentaries, is `BORDERLINE` — not `NOT_A_STORY`.
+  Kept in the corpus and in the recall denominator.
+- **Where it stops:** if what *is* told is a single act with no change, R-C5 applies and it
+  is not a story (Yevamot 107b, the same day).
+- **Applied:** Kiddushin 80b:11 `LOW_CONFIDENCE` → `BORDERLINE`
+  (`scripts/apply_jeff_2026-10-07_verdicts.py`).
 
 ---
 

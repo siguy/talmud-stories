@@ -5557,7 +5557,7 @@
         {
           "start_segment": 0,
           "end_segment": 0,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "NOT_A_STORY",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -5610,6 +5610,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-07",
+              "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+              "action": "reclassify",
+              "rule": "R-C2",
+              "old": "LOW_CONFIDENCE",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (2A): not a story. There is not really enough conflict here to make the dialogue into a story. That one rabbis praises a ruling and another rebukes him or questions the praise is not that exceptional in Talmudic dialogue, so I would not count it as a story."
+            }
           ]
         },
         {
@@ -10828,7 +10839,31 @@
           "hebrew": "זֶה מִדְרָשׁ דָּרַשׁ רַבִּי אֶלְעָזָר לִפְנֵי חֲכָמִים כּוּ׳."
         }
       ],
-      "stories": [],
+      "stories": [
+        {
+          "start_segment": 10,
+          "end_segment": 10,
+          "classification": "BORDERLINE",
+          "one_sentence_summary": "Rav Yitzhak bar Yosef finds R. Abbahu in the assembly at Usha, asks who taught the Usha ordinance, and learns it from him forty times until it is \"as if in his pocket\".",
+          "source": "jeff_verdict",
+          "rules": [
+            "R-C1",
+            "R-C2"
+          ],
+          "provenance": {
+            "source": "jeff_verdict",
+            "added": "2026-10-09",
+            "verdict_date": "2026-10-07",
+            "verdict_source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+            "question": "3B",
+            "his_words": "borderline. That one rabbi learned from another rabbi 40 times could be considered 40 events, even if they are mainly verbal, i.e., one rabbi teaching another. But then we are told the student knew is very well (=as if it was in his pocket), which could be considered a second event, and a change. But since it is mainly about rabbinic teaching, speech-acts, I would still consider it borderline.",
+            "added_by": "scripts/apply_jeff_2026-10-07_verdicts.py",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level, as shown to him in the 2026-10-02 email (Sefaria link). He ruled on the passage, not on a start/end."
+          },
+          "corpus": "talmud"
+        }
+      ],
       "skipped_by_triage": true
     },
     {
@@ -10894,7 +10929,7 @@
         {
           "start_segment": 4,
           "end_segment": 4,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "NOT_A_STORY",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -10945,6 +10980,17 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-07",
+              "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+              "action": "reclassify",
+              "rule": "R-C0",
+              "old": "LOW_CONFIDENCE",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (3A): not a story. The daughters do come to a rabbi, and he then makes a ruling. But there is not really another action or change that is narrated."
+            }
           ]
         },
         {
@@ -11770,7 +11816,7 @@
         {
           "start_segment": 11,
           "end_segment": 11,
-          "classification": "YES",
+          "classification": "NOT_A_STORY",
           "one_sentence_summary": "Ravin bar Hanina sat before Rav Hisda and reported in Rabbi Elazar's name that a woman who forgoes her marriage contract loses her sustenance; Rav Hisda replied that had it not come to him in a great man's name he would have called it rewarding evil for good.",
           "continuation": {
             "continues_from_previous_page": false,
@@ -11819,6 +11865,15 @@
                 "loss_detail": "The page survived triage and was examined. Stage 2 proposed one span on it (segments 12-12, which is in the golden); segment 11 was read and nothing was proposed there."
               },
               "auto_applied": true
+            },
+            {
+              "date": "2026-10-07",
+              "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+              "action": "reclassify",
+              "rule": "R-C2",
+              "old": "YES",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (2B): not a story. No conflict or change. Rav Hisda is just explaining why he accepts the ruling, which is because it is attributed to a great rabbi. This is standard rabbinic dialogue and not a story."
             }
           ],
           "corpus": "talmud",
@@ -13757,6 +13812,29 @@
           "rules": [
             "R-C1"
           ]
+        },
+        {
+          "start_segment": 14,
+          "end_segment": 14,
+          "classification": "YES",
+          "one_sentence_summary": "Two pious men: one fed the waiter before the meal, the other after it; Elijah spoke with the first and not with the second.",
+          "source": "jeff_verdict",
+          "rules": [
+            "R-C1",
+            "R-C3"
+          ],
+          "provenance": {
+            "source": "jeff_verdict",
+            "added": "2026-10-09",
+            "verdict_date": "2026-10-07",
+            "verdict_source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+            "question": "4A",
+            "his_words": "story. In this case there are at least two actions and change. The pious man’s continuous action, feeding the waiter before the meal, leads to a change—that Elijah visits him. (And the reverse for the other pious man)",
+            "added_by": "scripts/apply_jeff_2026-10-07_verdicts.py",
+            "expert_confirmed_boundaries": false,
+            "boundary_caveat": "Segment-level, as shown to him in the 2026-10-02 email (Sefaria link). He ruled on the passage, not on a start/end."
+          },
+          "corpus": "talmud"
         },
         {
           "start_segment": 15,
@@ -28490,7 +28568,9 @@
   "rules_applied": [
     "R-C1",
     "R-C2",
-    "R-C5"
+    "R-C5",
+    "R-C0",
+    "R-C3"
   ],
   "jeff_2026_09_23": {
     "source": "validation/feedback/review_2026-09-16_bundle_jeff_2026-09-23.json",
@@ -28572,6 +28652,41 @@
         "old": "LOW_CONFIDENCE",
         "new": "BORDERLINE",
         "source": "v5.1_2026-02-20"
+      }
+    ]
+  },
+  "jeff_2026_10_07": {
+    "source": "jeff comms/10-7-2026/Brief response, 10.7.docx",
+    "applied": [
+      {
+        "key": "Ketubot 21b_0-0",
+        "question": "2A",
+        "old": "LOW_CONFIDENCE",
+        "new": "NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 53a_11-11",
+        "question": "2B",
+        "old": "YES",
+        "new": "NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 50b_4-4",
+        "question": "3A",
+        "old": "LOW_CONFIDENCE",
+        "new": "NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 50a_10-10",
+        "question": "3B",
+        "old": null,
+        "new": "BORDERLINE"
+      },
+      {
+        "key": "Ketubot 61a_14-14",
+        "question": "4A",
+        "old": null,
+        "new": "YES"
       }
     ]
   }

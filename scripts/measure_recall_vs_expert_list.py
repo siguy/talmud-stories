@@ -206,6 +206,41 @@ def load_expert_json(path, which):
     return stories
 
 
+SUPERSEDED = Path(__file__).parent.parent / 'results/expert_lists/superseded_by_rule.json'
+
+
+def apply_superseded(rows, tractate, path=SUPERSEDED):
+    """Stamp each row with Jeff's later ruling on it, if he has made one.
+
+    His 2005 lists were initial, non-comprehensive attempts, and where a later ruling
+    of his disagrees, the later ruling wins (his words, via Simon, 2026-10-09). The row
+    keeps its 2005 text -- the list is evidence and is never edited -- but a story he
+    now calls `not` gets `counts_for_recall: False` and leaves the denominator, because
+    missing a non-story is not a loss. A `borderline` ruling is recorded and still
+    counts: borderline stories stay in the corpus.
+
+    Every row gets `counts_for_recall` and `superseded_by_rule` (None when no ruling),
+    so readers filter on a field rather than re-deriving the match. Idempotent. A rule
+    that matches no row, or several, raises (Lesson 38): absence is quiet.
+    """
+    rules = [r for r in json.loads(Path(path).read_text())['entries']
+             if r['tractate'].lower() == tractate.lower()]
+    for row in rows:
+        row['superseded_by_rule'] = None
+        row['counts_for_recall'] = row.get('counts_for_recall', True)
+    for rule in rules:
+        hits = [r for r in rows if r['ref'] == rule['ref'] and r['text'].startswith(rule['text_starts'])]
+        if len(hits) != 1:
+            raise ValueError(f"{rule['ref']} {rule['text_starts']!r}: matched {len(hits)} list rows, "
+                             f"expected exactly 1 ({path.name})")
+        hits[0]['superseded_by_rule'] = {k: rule[k] for k in ('ruling', 'rule', 'date', 'source', 'his_words')}
+        hits[0]['counts_for_recall'] = hits[0]['counts_for_recall'] and rule['counts_for_recall']
+        log.info('SUPERSEDED %s (%s, %s): Jeff %s -- %s', rule['ref'], rule['rule'], rule['date'],
+                 rule['ruling'], 'leaves the recall denominator' if not rule['counts_for_recall']
+                 else 'still counts')
+    return rows
+
+
 def load_detected(paths):
     """Returns (units, spans, withheld, triage, rejected).
 
@@ -518,6 +553,9 @@ def main():
                     help='how to locate an expert story in the text: `fuzzy` is the '
                          '4-gram window aligner; `exact` anchors on phrases unique '
                          'corpus-wide and falls back to fuzzy per story (see locate_exact)')
+    ap.add_argument('--standard', default='current', choices=['current', '2005'],
+                    help="current: apply Jeff's later rulings (results/expert_lists/superseded_by_rule.json); "
+                         "2005: the list exactly as he wrote it")
     ap.add_argument('--out')
     args = ap.parse_args()
 
@@ -554,6 +592,15 @@ def main():
                      'only_rejected': covered(rejected) and not covered(accepted),
                      'in_mishnah_filtered': covered(withheld),
                      'in_golden': covered(golden) if args.golden else None})
+
+    # His later rulings, applied to the list (see apply_superseded). `--standard 2005`
+    # scores against the list as he wrote it, so both numbers stay reproducible.
+    all_rows = rows
+    if args.standard == 'current':
+        apply_superseded(all_rows, args.tractate)
+        rows = [r for r in all_rows if r['counts_for_recall']]
+        log.info('STANDARD current: %d of %d list stories count for recall (%d superseded by a later ruling)',
+                 len(rows), len(all_rows), len(all_rows) - len(rows))
 
     if args.matcher == 'exact':
         log.info('MATCHER exact: %d/%d stories anchored on a corpus-unique phrase, '
@@ -628,7 +675,9 @@ def main():
         if not r['in_detector']:
             log.info('  MISS %s: %s', r['ref'], r['text'][:80])
     if args.out:
-        Path(args.out).write_text(json.dumps(rows, ensure_ascii=False, indent=1))
+        # Every row is written, superseded ones included and flagged, so a list id derived
+        # from row position (`judge_labelled_spans.py`) never shifts.
+        Path(args.out).write_text(json.dumps(all_rows, ensure_ascii=False, indent=1))
         log.info('wrote %s', args.out)
 
 

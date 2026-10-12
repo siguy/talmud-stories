@@ -42,9 +42,9 @@ of four branches on 2026-08-30 had never committed anything.
 | [Screen the untried triage-recall options before spending another tractate run](work/2026-09-03-triage-recall-options.md) | triage | — | — |
 | [Split runs of formulaically parallel stories — we return one representative](work/2026-09-07-formulaic-cluster-splitting.md) | detection | ketubot, kiddushin, gittin, yevamot | — |
 | [Stage 1 counts NARRATIVE_EVENT and ignores HABITUAL — decide whether that is right](work/2026-09-07-habitual-is-narrative-evidence.md) | triage | ketubot, kiddushin, gittin, yevamot | — |
-| [Consensus 1b — re-run the phase 1 test on the corrected register (R-C0 restored, R-C5 gloss removed)](work/2026-09-28-consensus-1b-corrected-register.md) | classification, review | ketubot, kiddushin, gittin, yevamot | — |
-| [Consensus 2 — the first Yevamot round under consensus (contested + audit)](work/2026-09-28-consensus-2-yevamot-round.md) | review, classification | yevamot | **blocked:** `2026-09-28-consensus-1b-corrected-register`, `2026-09-28-review-page-scope-and-quote` |
+| [Consensus 2 — the first Yevamot round with the panel as a router (it sorts Jeff's queue; it clears nothing)](work/2026-09-28-consensus-2-yevamot-round.md) | review, classification | yevamot | — |
 | [The shipped twin-pass question carries the R-C5 gloss — correct and measure it](work/2026-09-28-twin-pass-r-c5-wording.md) | detection | yevamot | awaiting `jeff:report-vs-incident` |
+| [Ask Jeff about classes, not passages — contrast pairs per feature, his own sureness on every answer, and a page ranked by what he would teach us](work/2026-10-02-jeff-feature-questions.md) | review, classification | — | — |
 
 <!-- board-live:start -->
 ## In flight
@@ -54,14 +54,15 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `span-truncation-rate` | `talmud-stories` | **2 FILES** |
+| `span-truncation-rate` | `talmud-stories` | **3 FILES** |
 | `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
+| `jeff-comms-review-92c526` | `jeff-comms-review-92c526` | **22 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
-| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | **11 FILES** |
+| `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | clean |
 | `2026-09-28-consensus-1b-corrected-register` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 47 items, never deleted
+## Done — 50 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -109,7 +110,10 @@ staleness check: it changes whenever anyone edits anything.*
 | [Jeff's 2026-09-23 verdicts — into the goldens, the rule register, and the twin pass](work/done/2026-09-25-jeff-2026-09-23-verdicts.md) | classification, boundaries, detection | [2026-09-25-jeff-verdicts-scope-commentary-reports.md](docs/findings/2026-09-25-jeff-verdicts-scope-commentary-reports.md) |
 | [Re-run Yevamot under the new default (twin pass on, 2026-09-25 wording)](work/done/2026-09-27-yevamot-rerun-new-default.md) | detection | [2026-09-27-yevamot-rerun-new-default.md](docs/findings/2026-09-27-yevamot-rerun-new-default.md) |
 | [Consensus 1 — test the bet: do two models agreeing mean Jeff agrees?](work/done/2026-09-28-consensus-1-test-the-bet.md) | classification, review | [2026-09-28-consensus-phase1.md](docs/findings/2026-09-28-consensus-phase1.md) |
+| [Consensus 1b — re-run the phase 1 test on the corrected register (R-C0 restored, R-C5 gloss removed)](work/done/2026-09-28-consensus-1b-corrected-register.md) | classification, review | [2026-09-28-consensus-phase1.md](docs/findings/2026-09-28-consensus-phase1.md) |
 | [Review page — an "out of scope" answer, and the doubled Hebrew quote](work/done/2026-09-28-review-page-scope-and-quote.md) | review | — |
 | [Read an old `correct` against the call Jeff was shown — map_verdict_vocabularies and build_ruler](work/done/2026-09-28-verdicts-read-against-the-call-shown.md) | classification | [2026-09-29-verdicts-read-against-the-call-shown.md](docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md) |
 | [Move the public project page to the Vercel hub, current and in plain language; retire GitHub Pages](work/done/2026-10-02-public-site-refresh.md) | publication | [2026-10-02-public-site-moved-to-hub.md](docs/findings/2026-10-02-public-site-moved-to-hub.md) |
-<!-- board-checksum: 76c89f97d45ce16a -->
+| [Rule panel — split "is it a story?" into one narrow question per feature, then decide in code; does it match Jeff better than the single question?](work/done/2026-10-02-rule-panel-lenses.md) | classification, review | [2026-10-02-rule-panel-lenses.md](docs/findings/2026-10-02-rule-panel-lenses.md) |
+| [Apply Jeff's 2026-10-07 rulings (four lines, seven passages)](work/done/2026-10-09-jeff-2026-10-07-rulings.md) | classification, detection | [2026-10-09-jeff-answers-four-lines.md](docs/findings/2026-10-09-jeff-answers-four-lines.md) |
+<!-- board-checksum: cc49dfbfee543b9f -->
