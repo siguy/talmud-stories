@@ -68,3 +68,9 @@ body[data-lang=he] .en,body[data-lang=en] .he{display:none}
 .fb .hp{position:absolute;left:-9999px;height:0;overflow:hidden}
 .fb .msg{padding:.6rem .8rem;border-radius:8px;background:var(--chip)}
 .fb .linkbtn{background:none;border:0;color:var(--accent);text-decoration:underline;cursor:pointer;padding:0}
+
+.note{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;margin:.75rem 0 1rem}
+.note>summary{padding:.8rem 1rem;cursor:pointer;font-weight:700;min-height:44px}
+.note>p,.note>ul,.note>h3{margin:.4rem 1rem}
+.note ul{padding-left:1.1rem}.note h3{font:700 .95rem Cardo,Georgia,serif;color:var(--gold-ink);margin-top:.8rem}
+.note .fine{font-size:.8rem;color:var(--muted);padding-bottom:.7rem}

@@ -80,7 +80,11 @@
 
   function story(id) {
     var t = id.split("-")[0];
-    return getJSON("data/" + t + ".json").then(function (d) {
+    var draftMode = /[?&]notes=draft/.test(location.search) || !!CFG.showDraftNotes;
+    var notesP = getJSON("data/notes/" + t + ".json").catch(function () { return { notes: {} }; });
+    return Promise.all([getJSON("data/" + t + ".json"), notesP]).then(function (both) {
+      var d = both[0], note = both[1].notes[id];
+      if (note && !note.approved && !draftMode) note = null; // unreviewed AI drafts never reach readers
       var s = d.stories.filter(function (x) { return x.id === id; })[0];
       if (!s) { app.innerHTML = '<p>Story not found. <a href="#/">Home</a></p>'; return; }
       var siblings = d.stories.filter(function (x) { return x.tier === s.tier; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
@@ -90,7 +94,7 @@
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span>') +
-        '<p class="summary">' + esc(s.summary) + '</p>' + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
+        '<p class="summary">' + esc(s.summary) + '</p>' + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +
         feedbackMarkup() + '<div class="pager actions">' + (prev ? '<a class="btn" href="#/s/' + prev.id + '">← Previous</a>' : '<span></span>') + (next ? '<a class="btn" href="#/s/' + next.id + '">Next →</a>' : '') + '</div>';
@@ -107,6 +111,14 @@
               ["boundary", "The story starts or ends in the wrong place"], ["other", "Something else"]];
   var CFG = window.SEPTIMUS_CONFIG || {};
   function plain(h) { var d = document.createElement("div"); d.innerHTML = h; return (d.textContent || "").trim(); }
+  function noteMarkup(n) {
+    if (!n) return "";
+    var h = '<details class="note"' + (n.approved ? '' : ' open') + '><summary>Background: what\'s going on here?' +
+      (n.approved ? '' : ' <span class="chip">DRAFT — not yet reviewed</span>') + '</summary><p>' + esc(n.note) + '</p>';
+    if (n.people.length) h += '<h3>Who\'s who</h3><ul>' + n.people.map(function (p) { return '<li><b>' + esc(p.name) + '</b>' + (p.about ? ' — ' + esc(p.about) : '') + '</li>'; }).join("") + '</ul>';
+    if (n.terms.length) h += '<h3>Words to know</h3><ul>' + n.terms.map(function (t) { return '<li><b>' + esc(t.term) + '</b> — ' + esc(t.meaning) + '</li>'; }).join("") + '</ul>';
+    return h + '<p class="fine">Written with the help of AI' + (n.approved ? ' and reviewed by a person' : '') + '. Spot a mistake? Use “Report a problem” below.</p></details>';
+  }
   function feedbackMarkup() {
     return '<details class="fb" id="fb"><summary>Report a problem or suggest a fix</summary><form id="fb-form" novalidate>' +
       '<div class="about" id="fb-about"></div>' +
