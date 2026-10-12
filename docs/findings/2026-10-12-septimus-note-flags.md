@@ -1,0 +1,125 @@
+# Septimus viewer: drafter flags
+
+Passages the note-drafter thought are not stories, are cut off, or look garbled. For the project team; not shown on the site. Indicated, not measured.
+
+- **ketubot Ketubot 8a** (`ketubot-8a-12-12`, story): Two loosely related incidents combined; the second (Rav Taḥlifa) is a ruling about blessings more than a story.
+- **ketubot Ketubot 12b** (`ketubot-12b-0-0`, borderline): Describes a historical change in law rather than a narrative about individuals; may not be a story.
+- **ketubot Ketubot 14b** (`ketubot-14b-11-11`, borderline): Short Mishna incident that mainly sets up a ruling; the outcome is a legal ruling rather than an ending to the story.
+- **ketubot Ketubot 20a** (`ketubot-20a-2-3`, story): Begins mid-discussion ('Rather...') and is mostly a legal ruling using a case as an example.
+- **ketubot Ketubot 26a** (`ketubot-26a-0-1`, story): Opens mid-discussion with 'The Gemara answers'; the story is told to support a legal point.
+- **ketubot Ketubot 26b** (`ketubot-26b-7-7`, story): Opens mid-discussion with 'Rava raised an objection'; this is a mishna case used in a legal debate.
+- **ketubot Ketubot 49b** (`ketubot-49b-6-6`, borderline): Short precedent cited for a legal point; arguably an example rather than a story.
+- **ketubot Ketubot 49b** (`ketubot-49b-12-12`, story): Text appears cut off at the end, mid-sentence ('...to his sons,'); the outcome is missing.
+- **ketubot Ketubot 50a** (`ketubot-50a-10-10`, borderline): More of a short anecdote about learning a ruling than a full story.
+- **ketubot Ketubot 54a** (`ketubot-54a-22-22`, borderline): Very short legal case; the machine summary describes a different story (Rabbi Yoḥanan's relatives) and does not match the text.
+- **ketubot Ketubot 54b** (`ketubot-54b-1-2`, story): Machine summary is only a placeholder ('Restored from Ketubot 54a merge').
+- **ketubot Ketubot 60b** (`ketubot-60b-5-9`, borderline): Mostly a legal discussion with a short anecdote at the start and an incident at the end; may not be a single story.
+- **ketubot Ketubot 61b** (`ketubot-61b-1-1`, story): Machine summary is only a placeholder ('Restored from Ketubot 61a merge'); the text does not say whether she married him.
+- **ketubot Ketubot 63a** (`ketubot-63a-2-2`, story): Machine summary is only a placeholder ('Restored from Ketubot 62b merge').
+- **ketubot Ketubot 63b** (`ketubot-63b-8-8`, story): Text appears cut off at the end ('Rav Gamda said to them:'); the second version's outcome is missing.
+- **ketubot Ketubot 69b** (`ketubot-69b-10-12`, story): Only the first part is the story (Ilfa and the older man); the last two sections are legal discussion and a new mishna, so the passage runs on past the story's end.
+- **ketubot Ketubot 80b** (`ketubot-80b-1-2`, story): Begins mid-discussion with a comment by Rav Pappa about an earlier statement, so the setup is partly cut off.
+- **ketubot Ketubot 82b** (`ketubot-82b-9-12`, story): This is a historical account of how a law developed, not a story about a particular event.
+- **ketubot Ketubot 84b** (`ketubot-84b-10-10`, story): The text ends with Rabbi Abba's objection; the final ruling is not stated.
+- **ketubot Ketubot 85a** (`ketubot-85a-13-14`, borderline): Short and ambiguous: the ending is a sharp rebuke whose point is not fully explained in the passage, so it may not be a full story.
+- **ketubot Ketubot 86a** (`ketubot-86a-4-4`, story): Very short fragment that refers back to an earlier case ('like this one') that is not included, so it lacks its setup and may not stand alone as a story.
+- **ketubot Ketubot 91b** (`ketubot-91b-2-3`, story): Ends with the buyer's offer; the outcome is not given in the passage.
+- **ketubot Ketubot 91b** (`ketubot-91b-8-9`, story): Text ends with the buyer's offer; the creditor's response and the ruling are not included.
+- **ketubot Ketubot 91b** (`ketubot-91b-15-15`, story): Cut off at the end: the outcome is missing. The machine summary mentions Rava ruling the man is bound by his sale, but that ruling is not in this text.
+- **ketubot Ketubot 103a** (`ketubot-103a-2-3`, story): Text ends with the renter's reply; no ruling or outcome is given.
+- **ketubot Ketubot 103a** (`ketubot-103a-24-32`, story): Long passage made of several linked stories and discussions, not one single story.
+- **ketubot Ketubot 106a** (`ketubot-106a-2-3`, story): Starts with the end of the previous story (Rav Anan and Elijah), then begins a new one about Rav Yosef that is cut off with no outcome.
+- **ketubot Ketubot 111b** (`ketubot-111b-13-13`, story): Opens with 'Similarly', so it continues earlier material; it is a short report of wonders more than a full story.
+- **ketubot Ketubot 111b** (`ketubot-111b-22-22`, story): Reads as a list of eyewitness claims rather than a story with a plot.
+- **ketubot Ketubot 112a** (`ketubot-112a-11-11`, borderline): Short boasting exchange, so only borderline as a story.
+- **kiddushin Kiddushin 39b** (`kiddushin-39b-13-13`, story): Begins mid-sentence and never names the man who saw this; the earlier part of the passage is missing.
+- **kiddushin Kiddushin 45b** (`kiddushin-45b-3-3`, story): Ends at the surprise betrothal; the ruling on whether it is valid is not in the passage.
+- **kiddushin Kiddushin 52b** (`kiddushin-52b-12-14`, story): Ends with Rabbi Yosei's defense; no final ruling is stated.
+- **kiddushin Kiddushin 57a** (`kiddushin-57a-0-1`, story): Begins with 'The Gemara answers', so it opens mid-discussion.
+- **kiddushin Kiddushin 66a** (`kiddushin-66a-5-5`, story): Opens mid-argument ('this claim of mine'), so the point Abaye is proving is not in the passage.
+- **kiddushin Kiddushin 70a** (`kiddushin-70a-11-16`, story): Cut off at the end: the last sentence stops mid-quote, and the court case outcome is not shown.
+- **kiddushin Kiddushin 70b** (`kiddushin-70b-1-8`, story): Opens mid-story: it continues the Rav Yehuda and Rav Nahman account from the previous passage.
+- **kiddushin Kiddushin 71a** (`kiddushin-71a-4-5`, story): Begins as a continuation ('with regard to the same issue'), so the earlier context is missing.
+- **kiddushin Kiddushin 71b** (`kiddushin-71b-2-2`, story): Ends on Rabbi Yohanan's question; Ze'eiri's answer is not in the passage.
+- **kiddushin Kiddushin 80b** (`kiddushin-80b-11-11`, borderline): A brief example inside a larger discussion rather than a full story; it begins mid-discussion and the people are unnamed.
+- **gittin Gittin 5b** (`gittin-5b-21-21`, story): Text ends mid-sentence with 'Rav Ashi said:' and his comment is missing.
+- **gittin Gittin 7a** (`gittin-7a-1-2`, story): Cut off: the objection is raised but the answer (what actually happened) is not included.
+- **gittin Gittin 10b** (`gittin-10b-6-6`, borderline): More a legal discussion that cites a past incident than a full narrative.
+- **gittin Gittin 11b** (`gittin-11b-9-11`, story): Ends mid-argument; the explanation of why the cases differ is not included.
+- **gittin Gittin 14a** (`gittin-14a-18-18`, story): Cut off after the first sentence; the machine summary describes events that are not in this text.
+- **gittin Gittin 14b** (`gittin-14b-17-17`, story): Cut off mid-sentence; the machine summary's details (brooch, daughter, curse) are not in this text.
+- **gittin Gittin 16b** (`gittin-16b-14-14`, story): Cut off mid-sentence ('in came a certain'); the later events in the machine summary are not in this text.
+- **gittin Gittin 18b** (`gittin-18b-6-6`, story): Cut off before the ruling; the machine summary's claim that he validated it is not in this text.
+- **gittin Gittin 19a** (`gittin-19a-16-16`, story): Very short; closer to a brief precedent than a full story, and the reason for the flogging is not stated.
+- **gittin Gittin 20a** (`gittin-20a-9-9`, borderline): More a legal explanation with a short anecdote than a full story.
+- **gittin Gittin 25a** (`gittin-25a-10-10`, borderline): Begins mid-discussion and is a brief precedent more than a full story; the father is not named.
+- **gittin Gittin 27a** (`gittin-27a-4-5`, story): Starts mid-argument and stops at the source Rabba found, without the resolution.
+- **gittin Gittin 33b** (`gittin-33b-11-11`, story): Text stops at Rabbi Yoshiya's instruction; the story's end is not shown, though it works as a self-contained anecdote.
+- **gittin Gittin 34a** (`gittin-34a-11-11`, story): Cut off: the ruling on whether the divorce takes effect is not in the text.
+- **gittin Gittin 35a** (`gittin-35a-10-13`, story): Combines two incidents; the first repeats the previous story.
+- **gittin Gittin 36a** (`gittin-36a-2-2`, story): Starts mid-discussion ("this matter applies only to..."); the machine summary names Rav Ashi but the text says Ravina.
+- **gittin Gittin 38a** (`gittin-38a-16-17`, story): Cut off at the end mid-sentence (the half-free woman case); also repeats the previous story.
+- **gittin Gittin 39b** (`gittin-39b-13-14`, story): Starts in the middle of a discussion about Rabbi Shimon's view; the passage does not state what that view is.
+- **gittin Gittin 40a** (`gittin-40a-12-12`, story): Ends on the Rabbis' objection; Ravina's response is not included.
+- **gittin Gittin 40a** (`gittin-40a-14-15`, story): Cut off mid-sentence; the final outcome (how the child is persuaded to free the slave) is missing.
+- **gittin Gittin 43a** (`gittin-43a-13-14`, borderline): Borderline as a story: it is mostly a legal debate with a short retraction scene.
+- **gittin Gittin 43b** (`gittin-43b-4-4`, story): Ends on a question; the Gemara's answer is not included.
+- **gittin Gittin 45a** (`gittin-45a-9-9`, story): Ends on Rav Ḥisda's reply; whether the slave was returned is not stated.
+- **gittin Gittin 46b** (`gittin-46b-17-17`, story): Cut off: ends mid-sentence before the man's request or the ruling; the machine summary's claim of refusal is not in this text.
+- **gittin Gittin 54b** (`gittin-54b-9-9`, story): Ends without a clear resolution and the reasoning is compressed; reviewer should check the note matches the intended reading.
+- **gittin Gittin 54b** (`gittin-54b-18-18`, story): Outcome seems to contradict the previous story (Rabbi Ami) on whether the scribe is believed to disqualify the scroll; the text itself does not explain, so the reviewer should check how the two sit together.
+- **gittin Gittin 55b** (`gittin-55b-6-6`, story): Begins mid-discussion (starts with 'This means that...'), so what the original claim was is not in the passage.
+- **gittin Gittin 55b** (`gittin-55b-15-17`, story): Cut off: the passage stops while bar Kamtza is still pleading, before the host's answer and before the link to the Temple's destruction. The Gemara claims Jerusalem fell because of this incident.
+- **gittin Gittin 56a** (`gittin-56a-14-17`, story): Cut off: it stops in the middle of Rabban Yochanan's reply to Vespasian, so the outcome of the meeting is not in this passage.
+- **gittin Gittin 56b** (`gittin-56b-17-17`, story): Cut off: ends at Titus about to describe his punishment; the rest of the scene (with Balaam and Jesus mentioned in the machine summary) is not in this passage.
+- **gittin Gittin 57a** (`gittin-57a-14-15`, story): Starts mid-discussion ('One of them began...'); the reason these stories are being told is not in the passage.
+- **gittin Gittin 58a** (`gittin-58a-5-5`, story): Begins mid-story: 'they did this to two children' is not explained, so what was done to the children is not in the passage.
+- **gittin Gittin 58a** (`gittin-58a-7-7`, story): Very short and starts mid-account ('when the enemy entered there'); the place is not named in this passage.
+- **gittin Gittin 58b** (`gittin-58b-9-10`, story): Ends with Rav Huna's objection and no stated final ruling; the case turns on the technical rule about the Sicarii.
+- **gittin Gittin 65b** (`gittin-65b-15-15`, story): Cut off at the end: the passage stops at 'Rabbi Zeira said:' with no ruling.
+- **gittin Gittin 67b** (`gittin-67b-18-21`, story): Cut off at the end: it stops mid-sentence as the servants speak to the Exilarch. The machine summary mentions a pit and Rav Hisda, which are not in this text.
+- **gittin Gittin 69b** (`gittin-69b-6-6`, story): Mostly a medical remedy with a short report attached; only the last sentence is a story.
+- **gittin Gittin 69b** (`gittin-69b-11-11`, story): Mostly a remedy; the goat is a one-line proof, not a full story. The text does not say why the missing spleen matters.
+- **gittin Gittin 70a** (`gittin-70a-1-1`, story): Mostly a remedy with a one-line report attached; not a full story.
+- **gittin Gittin 70a** (`gittin-70a-22-22`, story): Starts mid-discussion: 'these actions' are named in the preceding text, which is not included. Barely a story.
+- **gittin Gittin 72a** (`gittin-72a-17-18`, story): Cut off at the end: the final sentence stops mid-thought ('Rav Huna is uncertain...').
+- **gittin Gittin 77a** (`gittin-77a-7-7`, story): Reads more as a legal teaching with a short anecdote than as a full story.
+- **gittin Gittin 89a** (`gittin-89a-19-19`, story): Cut off: only the first sentence of the account is present, and there is no outcome.
+- **yevamot Yevamot 15a** (`yevamot-15a-16-16`, story): Reads as a brief reported incident used as proof in a legal argument; the Gemara's reply is not included, so it may be cut off at the end.
+- **yevamot Yevamot 21b** (`yevamot-21b-1-2`, story): Mostly a personal recollection ending in a legal explanation; borderline as a story.
+- **yevamot Yevamot 31a** (`yevamot-31a-11-11`, story): Short precedent cited inside a legal argument rather than a full story.
+- **yevamot Yevamot 32b** (`yevamot-32b-5-10`, story): Mostly a legal dispute with a repeated oath scene; the passage ends without a resolution.
+- **yevamot Yevamot 37b** (`yevamot-37b-5-8`, story): Partly a legal discussion about reported actions of Sages; may be cut off at the start since it begins in the middle of an argument.
+- **yevamot Yevamot 45b** (`yevamot-45b-6-6`, story): Reads as a set of reported rulings, not a single clear event; and the account is disputed within the passage.
+- **yevamot Yevamot 45b** (`yevamot-45b-8-8`, story): Reads more like a reported ruling than a story.
+- **yevamot Yevamot 46a** (`yevamot-46a-9-9`, story): Brief, and the purpose of the bridle is not spelled out in the passage; it is used as an illustration in a legal argument.
+- **yevamot Yevamot 46b** (`yevamot-46b-13-13`, story): Very short and ends before any outcome; the reason for waiting a day is not in the text.
+- **yevamot Yevamot 60b** (`yevamot-60b-14-14`, story): Cited inside a legal argument; the opening question refers to material not included.
+- **yevamot Yevamot 62b** (`yevamot-62b-3-4`, story): Mostly a legal discussion with a short anecdote at the end; opens mid-argument.
+- **yevamot Yevamot 62b** (`yevamot-62b-9-10`, story): Opens mid-account: the cause of the earlier students' deaths (failing to respect each other) is not in this text.
+- **yevamot Yevamot 65b** (`yevamot-65b-15-17`, story): Seems to combine two separate stories (Rav Nachman's case duplicates the previous story, then Yehudit's).
+- **yevamot Yevamot 75a** (`yevamot-75a-18-18`, story): Mostly a legal question using a case as evidence; the ending is only Rav's doubt, and the case's resolution is unclear.
+- **yevamot Yevamot 75b** (`yevamot-75b-15-15`, story): Cut off at the end: Rav Pappi's response and the ruling in the second case are missing.
+- **yevamot Yevamot 77a** (`yevamot-77a-0-0`, story): Starts in the middle of the account; the setup of Doeg's challenge is missing, and the Amasa link is hard to follow.
+- **yevamot Yevamot 78a** (`yevamot-78a-12-12`, story): Mostly a legal argument built around a short quoted anecdote, and Minyamin's plan is changed by the Gemara's correction.
+- **yevamot Yevamot 90b** (`yevamot-90b-10-10`, story): Opens with 'And again,' continuing the previous incident, and ends with legal discussion.
+- **yevamot Yevamot 98a** (`yevamot-98a-3-3`, story): Brief incident quoted as a proof inside a legal argument, and it starts mid-discussion; not really a standalone story.
+- **yevamot Yevamot 98a** (`yevamot-98a-5-5`, story): Short report cited as a proof in a legal argument; ends on the Gemara's question, not a clear resolution.
+- **yevamot Yevamot 99b** (`yevamot-99b-9-10`, story): Very short and incomplete as a story; the Gemara questions its own account and the outcome is unclear. The machine summary does not match the text.
+- **yevamot Yevamot 101b** (`yevamot-101b-3-3`, story): Brief anecdote used as a source for a legal point, starting mid-argument; not a full story.
+- **yevamot Yevamot 101b** (`yevamot-101b-14-14`, story): Mostly a short account about legal procedure rather than a narrative with a plot.
+- **yevamot Yevamot 102a** (`yevamot-102a-7-8`, story): Ends on an open question in the middle of a legal dispute; the Elder's answer is not included.
+- **yevamot Yevamot 105a** (`yevamot-105a-8-9`, story): The passage seems cut off: the third question (Daniel 10:21) gets no answer in this text.
+- **yevamot Yevamot 105b** (`yevamot-105b-3-10`, story): The start is about how to pray, a separate scene that sets up the story; the main account begins when Yehuda HaNasi enters.
+- **yevamot Yevamot 106a** (`yevamot-106a-3-3`, story): Very short and written as a legal precedent, not a full story.
+- **yevamot Yevamot 106b** (`yevamot-106b-7-8`, story): More a legal discussion with a short scene at the start than a full story; there is no event beyond the exchange.
+- **yevamot Yevamot 108b** (`yevamot-108b-10-11`, story): Opens in the middle of a legal question and serves as evidence for a ruling; it is not a full standalone story.
+- **yevamot Yevamot 108b** (`yevamot-108b-14-14`, story): Only a short variant of the preceding account (one versus two messengers) with no setup of its own; not a standalone story.
+- **yevamot Yevamot 113b** (`yevamot-113b-15-15`, story): Ends with legal analysis; the story itself gives no result of the key search.
+- **yevamot Yevamot 115a** (`yevamot-115a-3-3`, story): Cut off at the end: the outcome (whether the burnt body counts as identified and what happens to the wife) is not in the passage.
+- **yevamot Yevamot 115a** (`yevamot-115a-10-10`, story): The passage is mostly a legal challenge to a precedent; its ending is the objection, not a resolution.
+- **yevamot Yevamot 115b** (`yevamot-115b-7-7`, story): More a legal question about identifying a dead man's name than a story; the dispute is left open.
+- **yevamot Yevamot 120b** (`yevamot-120b-7-7`, story): Quoted as part of a legal challenge; the story is a short precedent and the passage ends on the question, not a resolution.
+- **yevamot Yevamot 121a** (`yevamot-121a-7-7`, story): Marked as part of a Mishnah and reads as a list of precedents rather than a developed story.
+- **yevamot Yevamot 122a** (`yevamot-122a-3-3`, story): Brief list of precedents continuing the previous passage, not a developed story.
+- **yevamot Yevamot 122a** (`yevamot-122a-10-12`, story): Mixes a story with a list of disputed rulings at the end.

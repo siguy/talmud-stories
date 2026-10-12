@@ -13,6 +13,7 @@ go to docs/findings/2026-10-12-septimus-note-flags.md for the project team, neve
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -20,6 +21,12 @@ DATA = ROOT / "site" / "data"
 OUT = DATA / "notes"
 TRACTATES = ["ketubot", "kiddushin", "gittin", "yevamot"]
 TAG = re.compile(r"<[^>]+>")
+
+
+def fold(s):
+    """Lowercase, no diacritics/apostrophes: 'Naḥman' must match 'Nahman'."""
+    s = unicodedata.normalize("NFD", str(s).lower())
+    return re.sub(r"[^a-z ]", "", "".join(c for c in s if not unicodedata.combining(c)))
 
 
 def clean(s, n):
@@ -60,9 +67,9 @@ def main(parts_dir):
             if not rec or not clean(rec.get("note"), 800):
                 continue
             n = norm(rec)
-            english = TAG.sub(" ", " ".join(g["en"] for g in s["segments"])).lower()
+            english = fold(TAG.sub(" ", " ".join(g["en"] for g in s["segments"])))
             for p in n["people"]:  # a named person must actually be in the passage
-                key = re.sub(r"^(rabbi|rav|rabbah|rabba|reish|rabban|r\.)\s+", "", p["name"].lower()).split()
+                key = re.sub(r"^(rabbi|rav|rabbah|rabba|reish|rabban|r)\s+", "", fold(p["name"])).split()
                 if key and key[0] not in english:
                     warns.append(f"{s['id']}: person '{p['name']}' not found in the English")
             n["approved"] = bool(prev.get(s["id"], {}).get("approved")) and prev[s["id"]].get("note") == n["note"]
