@@ -93,7 +93,8 @@
       app.innerHTML = '<div class="crumb"><a href="#/t/' + t + (s.tier === "borderline" ? "?tab=borderline" : "") + '">← ' + NAME[t] + '</a></div>' +
         '<h1>' + esc(refLabel(s)) + '</h1>' +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
-        (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span>') +
+        (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
+        (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
         '<div class="actions"><button id="read-btn" class="btn primary" aria-pressed="' + read.has(id) + '"></button>' +
         '<a class="btn" href="' + sefariaUrl(s) + '" target="_blank" rel="noopener">Open on Sefaria</a></div>' +

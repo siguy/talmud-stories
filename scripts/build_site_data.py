@@ -84,6 +84,7 @@ def build(tractate, path, reviewed):
                     "tier": t,
                     "classification": s.get("classification"),
                     "in_mishnah": in_mishnah,
+                    "extended": None,
                     # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
                     "reviewed": reviewed and not in_mishnah,
                     # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
@@ -92,7 +93,43 @@ def build(tractate, path, reviewed):
                     "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                                  for r, g in segs],
                 })
+    return apply_extensions(tractate, stories, pages)
+
+
+EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
+MAX_BACK, MAX_FWD = 2, 4
+
+
+def apply_extensions(tractate, stories, pages):
+    """Display-only: widen a cut-off story by whole neighbouring segments (never the golden).
+
+    site/data/boundary_extensions.json: {story_id: {start_back, end_forward, reason}}, produced by
+    reviewing each cut-off story against its real neighbouring segments. Ids, tiers and the
+    golden are untouched; an extended story says so (`extended`), so the page can tell the reader.
+    """
+    if not EXT.exists():
+        return stories
+    ext = json.loads(EXT.read_text())
+    flat = [(p["ref"], g) for p in pages for g in p["segments"]]
+    pos = {(r, g.get("index")): k for k, (r, g) in enumerate(flat)}
+    for s in stories:
+        e = ext.get(s["id"])
+        if not e or not (e.get("start_back") or e.get("end_forward")):
+            continue
+        sb, ef = int(e.get("start_back") or 0), int(e.get("end_forward") or 0)
+        assert 0 <= sb <= MAX_BACK and 0 <= ef <= MAX_FWD, (s["id"], sb, ef)
+        a, z = s["segments"][0], s["segments"][-1]
+        ka, kz = pos[(a["ref"], a["i"])], pos[(z["ref"], z["i"])]
+        lo, hi = max(0, ka - sb), min(len(flat) - 1, kz + ef)
+        s["segments"] = [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
+                         for r, g in flat[lo:hi + 1]]
+        s["extended"] = {"start_back": ka - lo, "end_forward": hi - kz, "reason": cap_reason(e.get("reason"))}
+        s["refs"] = list(dict.fromkeys(g["ref"] for g in s["segments"]))
     return stories
+
+
+def cap_reason(r):
+    return str(r or "")[:300]
 
 
 def main():
