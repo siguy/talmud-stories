@@ -78,7 +78,9 @@ from verdict_reading import (  # noqa: E402
     SCOPE_NOTE, HAND_LABELS, BORDERLINE_NOTE, label_axes, label_old,
     _embedded, _git_show, _shown_from_pages, shown_v5_2_60, shown_v5_61_112, shown_v8_delta,
     shown_canonical, shown_in_file, shown_run)
-PROMPT_PATH = PROJECT_ROOT / 'src/prompts/judge_register_v1.md'
+# JUDGE_PROMPT selects another version (judge_register_v2.md: borderline widened to R-C7,
+# 2026-10-09). The default stays v1 so every earlier run's prompt_sha still reproduces.
+PROMPT_PATH = PROJECT_ROOT / os.environ.get('JUDGE_PROMPT', 'src/prompts/judge_register_v1.md')
 RULES_PATH = PROJECT_ROOT / 'docs/STORY_RULES.md'
 ENV_PATH = Path('/Users/simonbrief/talmud-stories/.env')
 
@@ -103,7 +105,8 @@ LIST_MATCHES = {t: f'results/recall/{t.lower()}_jeff2005_matches.json' for t in 
 VERDICTS = ('story', 'borderline', 'not', 'out_of_scope', 'unsure')
 LABEL_TO_VERDICT = {'yes': 'story', 'no': 'not', 'borderline': 'borderline',
                     'out_of_scope': 'out_of_scope'}
-RULE_IDS = {'R-S1', 'R-C1', 'R-C2', 'R-C3', 'R-C4', 'R-C5', 'R-B1', 'R-B2', 'R-B3', 'R-B4'}
+RULE_IDS = {'R-S1', 'R-C0', 'R-C1', 'R-C2', 'R-C3', 'R-C4', 'R-C5', 'R-C6', 'R-C7',
+            'R-B1', 'R-B2', 'R-B3', 'R-B4'}
 
 MODELS = {'gemini': 'gemini-3-flash-preview', 'claude': 'claude-opus-5'}
 CLAUDE_EFFORT = 'medium'
@@ -445,6 +448,13 @@ def smoke_set(units):
 
 def select(set_name, labels):
     units = labels['units']
+    if set_name.startswith('ids:'):
+        # a fixed subset, one unit id per line -- for a diagnostic re-run on chosen units
+        want = set(Path(set_name[4:]).read_text().split('\n')) - {''}
+        chosen = [u for u in units if u['id'] in want]
+        if len(chosen) != len(want):
+            raise ValueError(f'{len(want) - len(chosen)} ids in {set_name[4:]} are not in labels.json')
+        return chosen
     if set_name == 'smoke':
         return smoke_set(units)
     if set_name == 'full':
@@ -694,7 +704,7 @@ def main():
     sub = ap.add_subparsers(dest='cmd', required=True)
     sub.add_parser('labels')
     r = sub.add_parser('run')
-    r.add_argument('--set', choices=('smoke', 'full'), required=True)
+    r.add_argument('--set', required=True, help="smoke | full | ids:<file of unit ids>")
     r.add_argument('--backend', choices=('gemini', 'claude', 'both'), required=True)
     r.add_argument('--out', required=True)
     r.add_argument('--dry-run', action='store_true')

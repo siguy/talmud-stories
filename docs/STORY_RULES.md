@@ -285,6 +285,44 @@ is missing and basically conjectured… we should consider it borderline."*
 - **Applied:** Kiddushin 80b:11 `LOW_CONFIDENCE` → `BORDERLINE`
   (`scripts/apply_jeff_2026-10-07_verdicts.py`).
 
+### R-C7 · BORDERLINE means part of a story, not all of it — what his borderline verdicts share
+**Our grouping of his words, 2026-10-09 — not a rule he stated.** He has ruled about forty
+passages `borderline` (before 2026-09 he wrote it as *"low confidence/borderline"*). Read
+together they fall into four shapes. Each line below is his, on the passage named.
+
+1. **Mainly speech, but something happens.** *"a borderline story since it is mainly speech
+   acts, not really events"* (Ketubot 10a); *"There is mainly dialogue. But events are
+   mentioned"* (Ketubot 60b:5); *"After the woman comes to court, it is all dialogue"*
+   (Ketubot 85a); *"Very borderline as the main actions are verbal"* (Gittin 20a). With
+   conflict and no event at all, this is R-C2.
+2. **One real event, then discussion or a ruling.** *"just one real event and then
+   discussion"* (Ketubot 50b:9); *"really just one event, then a legal discussion"*
+   (Ketubot 51a); *"one event following by a ruling. But it has an implied change"*
+   (Ketubot 77a). **Open — his rulings disagree over time** (`jeff:one-event-then-ruling`):
+   borderline in February 2026, but *"Not a story. One action followed by a legal
+   discussion"* (Kiddushin 39a, April) and Ketubot 50b:4 `not` (October). Narrowing this
+   shape to the later words was measured on 2026-10-09 and reverted: it returned 19 of his
+   yes/borderline passages to `not` to save one of his `no`s
+   (`docs/findings/2026-10-09-borderline-definition-test.md`, v5).
+3. **Events, but weak causality or little change.** *"There are two events but no
+   causality"* (Ketubot 14b); *"minimal causality. But there is some, and some change"*
+   (Ketubot 50b:6); *"The change in outcome is absent, or at best, implied"* (Ketubot 100b).
+4. **An incident only alluded to** — R-C6. (Narrowing this to "sketched, not merely named"
+   was reverted with shape 2: Ketubot 60b:7-9 and 74a:11 are named-only incidents he called
+   borderline himself; Gittin 46a and 74b are named-only incidents he called `not`.)
+
+- **The line with `not`.** Borderline needs **at least one real event** — something that
+  happened to or was done by someone, beyond speaking. Raising a difficulty, resolving it,
+  ruling, teaching or rebuking are speech, not events: *"There are no events. This is just a
+  legal discussion"* (Ketubot 7a, 2026-03); *"all dialogue"* (Kiddushin 32a). It is `not` when nothing happened:
+  a hypothetical, ordinary debate (R-C2), commentary (R-B4), a bare report or custom that
+  leads nowhere (R-C5), or a case brought to a rabbi where **coming before him is the only
+  event** (R-C0's limit, Ketubot 50b:4). Where a passage sits between, **prefer
+  `borderline` to `not`**: borderline stories stay in the catalogue.
+- **Status:** ours, to confirm with him. Written because the consensus judge, given
+  `borderline` as R-C2 alone, sent passages of these shapes to `not`
+  (`docs/findings/2026-10-09-consensus-v3.md`).
+
 ---
 
 ## Boundaries — where does it start and end?
