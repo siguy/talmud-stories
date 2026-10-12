@@ -23,7 +23,7 @@ Audience: non-scholars, phones. Not a review tool; a reading tool with a feedbac
 
 **Phase 0 — Decisions (before any code).** See "Open questions" below.
 
-**Phase 1 — Data export (~half day).** `scripts/build_site_data.py` reads the goldens
+**Phase 1 — Data export (DONE 2026-10-12).** `scripts/build_site_data.py` reads the goldens
 (`results/canonical/{ketubot,kiddushin,gittin}_canonical.json`) and writes one static
 `site/data/<tractate>.json` plus an `index.json`.
 - Include only `classification` in {YES-tier}; BORDERLINE shown in a separate, labelled
