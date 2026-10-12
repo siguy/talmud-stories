@@ -1,4 +1,4 @@
-# Email to Jeff — 2026-10-11 (DRAFT, in Simon's Gmail drafts, reply in the 2026-10-02 thread)
+# Email to Jeff — sent 2026-10-11 (reply in the 2026-10-02 thread)
 
 **To:** jr6@nyu.edu
 **Subject:** Re: Talmud stories: how the system works now, some results, and 8 quick rulings
