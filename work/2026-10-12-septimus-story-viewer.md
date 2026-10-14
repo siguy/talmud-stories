@@ -11,7 +11,7 @@ superseded_by:
 
 # Story viewer for the Septimus family (mobile, Sefaria-style)
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this. **Full plan: [`docs/technical/septimus-viewer-plan.md`](../docs/technical/septimus-viewer-plan.md)** (architecture, status, acceptance criteria, risks).
 
 ## The problem
 
