@@ -92,3 +92,34 @@ unlisted URL; dedication page for Joe Septimus, worded by Daniel.
 
 Write the finding to `docs/findings/2026-10-12-septimus-viewer.md`, add `## Outcome`,
 then `python3 scripts/board.py finish 2026-10-12-septimus-story-viewer`.
+
+---
+
+## Handoff to a local Claude (written 2026-10-14)
+
+**State:** Phases 1–4 are built. Stacked draft PRs: #61 (plan + data) → #63 (viewer) → #64 (feedback) →
+#66 (notes + boundary extensions, branch `septimus/phase-4-notes`, has everything). Tracking issue: #62.
+The site is static, in `site/`; `python3 -m http.server` from there runs it. Tests: `python3 -m pytest tests/test_site_data.py tests/test_bookkeeping.py -q`.
+The wider suite has 16 failures that are identical on `main` (missing files/modules in the cloud container), not ours.
+
+**Do, in order**
+1. **Vercel (needs the user's login):** `cd site && npx vercel` → project name `talmud-stories`, framework Other, no build.
+   `npx vercel --prod` for production. `site/vercel.json` already sets noindex. Prefer a preview URL for review.
+2. **Feedback worker (user's Cloudflare + GitHub accounts):** follow `worker/README.md`; then set `feedbackEndpoint`
+   in `site/config.js` and redeploy. The worker files issues labelled `story-feedback` (JSON block inside).
+3. **Review with the user** at `<site>/?notes=draft`. Notes ship only when `approved: true`:
+   `python3 scripts/approve_notes.py --tractate ketubot` or `--ids <id> ...` (`--revoke` undoes).
+4. **Decide the 40 display-only boundary extensions** (`site/data/boundary_extensions.json`, one entry per story).
+   Delete an entry and rerun `python3 scripts/build_site_data.py` to drop it. Least certain: the 6 with `start_back: 1`
+   (e.g. `yevamot-77a-0-0`) and `yevamot-102a-7-8`. Extensions are display-only; the golden is never edited, and how much
+   of a story's end to show is Jeff's open question (`jeff:boundary-end-rule`).
+5. After changing notes or extensions, rebuild: `python3 scripts/build_site_data.py`; for notes, `scripts/build_site_notes.py <parts_dir>`
+   (the drafting parts were in a cloud scratch dir and are NOT in the repo; edit `site/data/notes/<tractate>.json` directly instead).
+
+**Still open (the user's call):** Daniel's dedication wording (placeholder in `site/app.js`, "In memory of Joe Septimus.");
+whether to keep Yevamot (shown as not reviewed); 90 stories the note-drafters flagged as possibly cut off / not stories
+(`docs/findings/2026-10-12-septimus-note-flags.md`: the golden still decides what ships, flags are a second opinion).
+
+**Rules that bind this work:** never edit `results/canonical/*` or `scripts/evaluate_golden.py`; do not rewrite `STATUS.md`;
+verify with counts not the composite score; ship set = classification YES + HIGH_CONFIDENCE, BORDERLINE as its own tier,
+LOW_CONFIDENCE not shipped, Mishnah-internal stories included and flagged (user decisions, 2026-10-12).
