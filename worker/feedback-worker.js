@@ -59,6 +59,7 @@ export default {
       headers: { Authorization: `Bearer ${env.GITHUB_TOKEN}`, Accept: "application/vnd.github+json", "User-Agent": "septimus-feedback", "Content-Type": "application/json" },
       body: JSON.stringify(issue),
     });
+    if (!r.ok) console.error("github", r.status, (await r.text()).slice(0, 300)); // visible in the host's logs, never sent to the browser
     return new Response(r.ok ? "ok" : "upstream error", { status: r.ok ? 200 : 502, headers: cors(env) });
   },
 };
