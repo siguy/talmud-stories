@@ -20,9 +20,10 @@ gcloud services enable cloudfunctions.googleapis.com run.googleapis.com cloudbui
 if ! gcloud secrets describe github-feedback-token >/dev/null 2>&1; then
   gcloud secrets create github-feedback-token --replication-policy=automatic
 fi
-read -r -s -p "Paste the GitHub fine-grained token (hidden), then Enter: " TOKEN; echo
+if [ -n "${GITHUB_FEEDBACK_TOKEN:-}" ]; then TOKEN="$GITHUB_FEEDBACK_TOKEN"   # non-interactive: export it in YOUR shell, never paste it into a chat
+else read -r -s -p "Paste the GitHub fine-grained token (hidden), then Enter: " TOKEN; echo; fi
 printf '%s' "$TOKEN" | gcloud secrets versions add github-feedback-token --data-file=-
-unset TOKEN
+unset TOKEN GITHUB_FEEDBACK_TOKEN
 # the function's runtime service account must be able to read the secret
 SA="$(gcloud projects describe "$PROJECT" --format='value(projectNumber)')-compute@developer.gserviceaccount.com"
 gcloud secrets add-iam-policy-binding github-feedback-token --member="serviceAccount:$SA" --role=roles/secretmanager.secretAccessor >/dev/null
