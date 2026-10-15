@@ -15,7 +15,7 @@ def test_site_data_counts_match_the_goldens():
     for t in GOLDEN_COUNTS:
         d = json.loads((ROOT / f"site/data/{t}.json").read_text())
         g = json.loads((ROOT / f"results/canonical/{t}_canonical.json").read_text())
-        shipped = ("YES", "HIGH_CONFIDENCE", "BORDERLINE")  # LOW_CONFIDENCE is not shipped
+        shipped = ("YES", "HIGH_CONFIDENCE")  # BORDERLINE and LOW_CONFIDENCE are not shipped
         n = sum(1 for p in g["pages"] for k in ("stories", "mishnah_stories")
                 for s in p.get(k, []) if s.get("classification") in shipped)
         assert len(d["stories"]) == n, t
