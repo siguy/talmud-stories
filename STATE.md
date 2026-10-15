@@ -124,7 +124,7 @@ closed     12 item(s) in work/done/
 ```
 gate       not yet defined
 history    docs/capabilities/6_publication.md
-open       —
+open       2026-10-12-septimus-story-viewer
 closed     2 item(s) in work/done/
 ```
 
@@ -154,6 +154,8 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 Counts are measured; files holding zero verdicts are not listed, because
 naming an empty file as a lost round buries the one that is not.
 
+- `validation/feedback/axis_review round 2026-09-15 — 14 passages, four questions_review_2026-09-16  - simon.json` — **8 verdicts**
+- `validation/feedback/axis_review round 2026-09-16 — 10 passages, four questions_review_2026-09-23.json` — **10 verdicts**
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
@@ -174,4 +176,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 65b736c678d510fd -->
+<!-- board-checksum: a10686f479a17edf -->
