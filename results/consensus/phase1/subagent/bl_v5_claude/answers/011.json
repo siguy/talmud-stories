@@ -1,0 +1,14 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Elijah's advice to Rabbi Natan is pure speech, dietary counsel with no event and no conflict."},
+"02": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3, 4], "reason": "Mainly a scholarly exchange, but something happens: Mar Yehuda finds them at the doorway, they fall silent, and they go to Rabba, who rebukes them. Mostly speech with minor events, so borderline."},
+"03": {"verdict": "not", "rules": [], "segments": [], "reason": "Pure legal discussion and objection about a hypothetical case; nothing happened."},
+"04": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "R. Yohanan's relatives come to him about their stepmother's medical costs, he advises them, and afterwards he regrets having acted as a legal advisor. That is more than one action, and his regret is a change."},
+"05": {"verdict": "not", "rules": ["R-C0", "R-C7"], "segments": [], "reason": "Rav Nahman's arrival in Sura only frames a halakhic question and his answer; besides the question nothing happens and nothing changes."},
+"06": {"verdict": "not", "rules": ["R-C5", "R-C7"], "segments": [], "reason": "A report of one act (Rav Kahana held the orphan's beer until the festival) plus his rationale. One action and an explanation, with no change or response."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "One rabbi praises a ruling and another rebukes the praise. That is ordinary Talmudic dialogue, which Jeff ruled not a story on Ketubot 21b."},
+"08": {"verdict": "borderline", "rules": ["R-C6"], "segments": [5], "reason": "The widow who removed her husband from the grave is only alluded to and has to be filled in from the commentaries, so it is borderline per Jeff's ruling on Kiddushin 80b. Segments 2-4 are legal discussion."},
+"09": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "A habitual practice (Rav Aha dancing with the bride on his shoulders) followed by a halakhic question and answer. The custom leads to no event or change."},
+"10": {"verdict": "not", "rules": [], "segments": [], "reason": "Legal argumentation over hypothetical consecration cases; no event."},
+"11": {"verdict": "borderline", "rules": ["R-C7", "R-C0"], "segments": [2], "reason": "A man comes before Rav Nahman with a claim and Rav Nahman orders him flogged. It is mainly speech with a court action implied, matching Jeff's borderline note on Ketubot 10a."},
+"12": {"verdict": "borderline", "rules": ["R-C7", "R-C3"], "segments": [2], "reason": "The aftermath of the Mishnah's incident: after the ruling, R. Zekharya housed his wife in his courtyard and arranged their movements around her sons. This is a change resulting from the ruling, but the passage is only part of the story and is told as habitual practice."}
+}

@@ -1,0 +1,9232 @@
+{
+ "meta": {
+  "set": "ids:results/consensus/phase1/borderline_test_ids.txt",
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "2d2aa1bf7cd7",
+  "rules_sha": "8049f69a9eb8",
+  "backends": {
+   "claude": {
+    "model": "Opus 5.5 (Claude Code subagent)",
+    "via": "Claude Code subagent (Agent tool), not the API",
+    "batch": 25,
+    "seed": 1
+   }
+  },
+  "claude_usd": 0.0,
+  "missing_batches": [],
+  "rejudged": [],
+  "imported": "2026-10-09T07:52:43"
+ },
+ "rows": [
+  {
+   "id": "review:Ketubot 7a_3-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_3-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yehuda's ruling is said to arise from an incident that took place, but the incident is only alluded to, not narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 78b_8-8",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 78b_8-8",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 78b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "An incident is cited as precedent (bill lost, halitza required) but only alluded to in one line; one event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59b_7-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59b_7-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59b",
+     7
+    ],
+    [
+     "Ketubot 59b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Terminological discussion and Rabbi Hiyya's teachings; nothing happens.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 9a_10-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 9a_10-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 9a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-S1",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion about the biblical David and Bathsheba incident, which is referenced, not narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 39a_1-1",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 39a_1-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 39a",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A statement and reports of sages' practice regarding orla; no incident leads anywhere.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_030",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_030",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 51a",
+     1
+    ],
+    [
+     "Ketubot 51a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Orphans come before Rava, he rules, the sages challenge and he justifies; one event followed by a ruling and legal discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_011",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_011",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 14a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Yehuda's report of a yevama coming to perform halitza before Rabbi Tarfon, who instructs them to call out; one event, mainly speech, cited as proof.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_004",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_004",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 9a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A narrated incident (man picking dates, woman asks, he proposes betrothal) followed by a ruling; mostly speech with little change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 6b_11-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 6b_11-11",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 6b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Purely a scholarly question and answer between Rava bar Rav Hanan and Abaye.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 4a_2-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 4a_2-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 4a",
+     2
+    ],
+    [
+     "Ketubot 4a",
+     3
+    ],
+    [
+     "Ketubot 4a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal rulings and a baraita describing a hypothetical case; no event that happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6"
+     ],
+     "unknown_rules": [],
+     "reason": "The Queen Helene nazirite incident is only alluded to via Beit Hillel's ruling and must be filled in from context.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_078",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_078",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Eyewitness report of a woman coming before Ameimar, the brothers' remark and his silence; an incident cited as evidence, mainly speech with little change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_031",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_031",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 34a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man gives a conditional divorce and after thirty days claims he tried; real events but mostly speech and the outcome is left to legal discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_047",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_047",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 61a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Two first-person anecdotes of food brought and shared with the attendant; real events but weak causality and change, cited as evidence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_9-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_9-10",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     9
+    ],
+    [
+     "Ketubot 50b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Someone comes before Rav Yosef, who rules, followed by ordinary scholarly challenge; coming before the rabbi is the only event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_036",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_036",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 54a",
+     13
+    ],
+    [
+     "Ketubot 54a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A couple comes before Rav Nahman, he recognises her accent, rules, is corrected and reverses; some event and change but mainly dialogue and ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 38a_4-6",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 38a_4-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 38a",
+     4
+    ],
+    [
+     "Kiddushin 38a",
+     5
+    ],
+    [
+     "Kiddushin 38a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-S1"
+     ],
+     "unknown_rules": [],
+     "reason": "Exegetical derivation of Moses' birth and death dates; no narrated incident.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 98a_1-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 98a_1-1",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 98a",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A woman seizes a silver cup toward her ketuba and demands sustenance; Rava rules. One real event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_064",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_064",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 54b",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A scribe comes before Rabbi Abbahu and a legal Q&A follows; coming before the rabbi is the only narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 44a_8-11",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 44a_8-11",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 44a",
+     8
+    ],
+    [
+     "Gittin 44a",
+     9
+    ],
+    [
+     "Gittin 44a",
+     10
+    ],
+    [
+     "Gittin 44a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A hypothetical legal question, a search for a source, and a ruling sent out; ordinary scholarly process with no incident.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 56a_2-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 56a_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 56a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A sage states a halakha and is rebuked; ordinary rabbinic dialogue, not conflict in the R-C2 sense.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50a_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Medical advice reported in Abaye's mother's name; general statements, no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_105",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_105",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 77a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Hiyya teaches a ruling publicly twice and receives different reactions; teaching speech-acts with a small narrated reaction.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_082",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_082",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 77a",
+     13
+    ],
+    [
+     "Ketubot 77a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Elazar recites a ruling before Shmuel and is mocked; later Rabbi Zeira, travelling to Israel, finds it taught there and retorts. Mainly speech with some events and conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 99b_7-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 99b_7-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 99b",
+     7
+    ],
+    [
+     "Ketubot 99b",
+     8
+    ],
+    [
+     "Ketubot 99b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Nahman visits Sura and answers halakhic questions; standard scholarly dialogue with no conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 111a_10-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 111a_10-11",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 111a",
+     10
+    ],
+    [
+     "Ketubot 111a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before R. Hanina with a question and receives a sharp ruling; coming before the rabbi is the only narrated event (R-C0's limit, like Ketubot 50b:4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 6a_1-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 6a_1-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 6a",
+     1
+    ],
+    [
+     "Ketubot 6a",
+     2
+    ],
+    [
+     "Ketubot 6a",
+     3
+    ],
+    [
+     "Ketubot 6a",
+     4
+    ],
+    [
+     "Ketubot 6a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Purely legal discussion of conflicting attributions and halakhic principles; no event is narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 40b_11-11",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 40b_11-11",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 40b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A Sage reports a teaching to another, who replies with a different version of the tradition; ordinary scholarly transmission with no event or conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 32b_2-2",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 32b_2-2",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 32b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravina finds R. Nahman bar Yitzhak pondering a dilemma that remains unresolved; a bare frame for a legal question with no action leading anywhere.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 3b_1-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 3b_1-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 3b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A baraita describing a custom and rulings about wedding days; a custom with no one-time event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_015",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_015",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 45b",
+     9
+    ],
+    [
+     "Yevamot 45b",
+     10
+    ],
+    [
+     "Yevamot 45b",
+     11
+    ],
+    [
+     "Yevamot 45b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      4,
+      5
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A slave immerses a gentile woman for intimacy and Rav Yosef rules on her status, followed by two brief incidents of men called 'son of an Aramean' and rulings; one real event each, then legal reasoning.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 59a_19-19",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 59a_19-19",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 59a",
+     19
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A dispute over attribution of a ruling, settled by Rav Mordekhai recalling what Rav Ashi said; scholarly transmission of speech without a real event or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 60b_5-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 60b_5-6",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 60b",
+     5
+    ],
+    [
+     "Ketubot 60b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbis intend to act on a baraita, and an old woman tells them of her own incident in which Rav Nahman prohibited it; there is a real event and an implied change, but the incident is only alluded to and the rest is legal discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 21b_7-8",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 21b_7-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 21b",
+     7
+    ],
+    [
+     "Ketubot 21b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Abba teaches, Rav Safra objects, and Rabbi Abba reports the chain of questions to Rav; standard rabbinic dialogue with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_053",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_053",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 79b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "The Sages seek to permit the Gibeonites and Rabbi objects with an argument; considering a ruling is quasi-speech and the exchange is ordinary halakhic debate.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_017",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_017",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 45b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "People cast aspersions on two men's lineage and rabbis rule they are valid; something happened to someone and a rabbi responded, but it is one event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 104a_1-5",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 104a_1-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 104a",
+     1
+    ],
+    [
+     "Ketubot 104a",
+     2
+    ],
+    [
+     "Ketubot 104a",
+     3
+    ],
+    [
+     "Ketubot 104a",
+     4
+    ],
+    [
+     "Ketubot 104a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "The death of Rabbi Yehuda HaNasi: the Sages' fast and prayers, the maidservant's prayer and throwing the jug, his death, bar Kappara's announcement and Rabbi's final prayer; multiple actions with clear causality and change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 6a_6-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 6a_6-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 6a",
+     6
+    ],
+    [
+     "Ketubot 6a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Rav Hisda's objection quoting a mishna about legal cases; no narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 49b_4-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49b_4-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "A habitual description of what Rav Hisda would say when such cases came before him, followed by exegetical discussion; a custom with no one-time event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 85b_3-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 85b_3-3",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 85b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man deposits a silver goblet with Hasa, Hasa dies without instructions, and Rav Nahman rules on ownership; an incident with more than one action followed by a ruling, like R-C0's cow case.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 88a_8-8",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 88a_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 88a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "An incident is said to have come before R. Yitzhak but nothing of it is narrated; only his ruling is given.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_001",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_001",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 5b",
+     19
+    ],
+    [
+     "Gittin 5b",
+     20
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Bar Haddaya consults two sets of rabbis who give differing rulings; coming before rabbis is the only event and the rest is halakhic speech.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 20a_12-15",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 20a_12-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 20a",
+     12
+    ],
+    [
+     "Kiddushin 20a",
+     13
+    ],
+    [
+     "Kiddushin 20a",
+     14
+    ],
+    [
+     "Kiddushin 20a",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Abaye invites questions and a Sage challenges his exegesis; ordinary scholarly back-and-forth with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_075",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_075",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 71a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Tarfon's eyewitness account of ascending the platform and hearing the High Priest conceal the Name is a real event, but it has little causality or change and serves as evidence for a historical practice.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 76b_19-19",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 76b_19-19",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 76b",
+     19
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Elazar questions an elder about a past case where a court permitted a woman to remarry; the incident is only alluded to and must be reconstructed from context.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 110b_24-24",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 110b_24-24",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 110b",
+     24
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Zeira avoids his teacher because he wants to emigrate against his teacher's view; a real action with conflict, but only the opening of a narrative, followed by legal-exegetical justification.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 49b_6-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49b_6-6",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C5",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rava coerced Rav Natan bar Ami and collected 400 dinars for charity; a real event cited as precedent, with minimal narrative development.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal analysis of the style of a mishna; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_7-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Ami and R. Asi consider a ruling and R. Yaakov bar Idi rebukes them; considering is quasi-speech and the rebuke is ordinary rabbinic discourse.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 72a_3-3",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 72a_3-3",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 72a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man states his origin and R. Yitzhak Nappaha stands and declares where it is, followed by legal discussion; speech without conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 86a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 86a_8-8",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 86a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C6"
+     ],
+     "unknown_rules": [],
+     "reason": "An actual incident is briefly recounted: a debtor improperly attached his money to a gentile and the Sages forced him to sell his land. It is one event plus a ruling, told only in summary inside a dialogue, so it is borderline.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 69a_12-12",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 69a_12-12",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravina's collection of the dowry is cited as a precedent. The ruling is the only act, and no other narrated action or change goes with it.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_033",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_033",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravin bar Hanina states a halakha and Rav Hisda sharply questions it. This is ordinary rabbinic dialogue, with no event and no real conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 7a_1-1",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_1-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Ami's ruling, the Sages' challenge and his response are mostly speech. There is conflict and an implied change, so it is borderline (the shape of Ketubot 7a:1).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_9-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_9-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A baraita records that Rabbi ruled like Rabbi Ya'akov, cited only as a usage of the term 'ruled'. It is a bare report of a ruling and nothing happens.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 4a_0-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 4a_0-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 4a",
+     0
+    ],
+    [
+     "Ketubot 4a",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "These are general laws for a wedding interrupted by a death, with conditions and qualifications. Nothing in them happened to anyone.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_063",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_063",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 54b",
+     13
+    ],
+    [
+     "Gittin 54b",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A scribe confesses that he wrote the divine names without proper intent, and Rabbi Ami rules that he loses his wage. There is a prior act and a consequence, but it is mainly a dialogue and a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 82a_4-4",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 82a_4-4",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 82a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "People come before Rabbi Ami and he gives a ruling. Coming before a rabbi is the only event, and no other action or change is narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_005",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_005",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 10b",
+     3
+    ],
+    [
+     "Kiddushin 10b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "An exchange of letters about a halakhic question, which is quasi-speech. The mild challenge is ordinary scholarly back-and-forth, not conflict, and no event follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 51b_15-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 51b_15-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 51b",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yehuda's general ruling about kidnapped women, and the Rabbis' objections, are a legal discussion of a class of cases, not a narrated incident.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 90b_12-14",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 90b_12-14",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 90b",
+     12
+    ],
+    [
+     "Ketubot 90b",
+     13
+    ],
+    [
+     "Ketubot 90b",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabba reports finding the Sages discussing a dispute and giving them his view. It is purely scholarly discussion, with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 111a_23-25",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 111a_23-25",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 111a",
+     23
+    ],
+    [
+     "Ketubot 111a",
+     24
+    ],
+    [
+     "Ketubot 111a",
+     25
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C4"
+     ],
+     "unknown_rules": [],
+     "reason": "Embedded in the letter is Ilfa's incident: a man pining for a woman sought to leave the Land, heard the teaching, and stayed and suffered until he died. It has several actions, causality and change. The letter's advice in [3]-[4] is not narrative.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11a_2-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11a_2-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11a",
+     2
+    ],
+    [
+     "Ketubot 11a",
+     3
+    ],
+    [
+     "Ketubot 11a",
+     4
+    ],
+    [
+     "Ketubot 11a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Huna's ruling on converting a minor, and the Gemara's analysis of it, are pure legal discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_4-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_4-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     4
+    ],
+    [
+     "Ketubot 50b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Orphan daughters come before Shmuel, who rules on their support. Coming before the rabbi is the only event, which is not a story (Ketubot 50b:4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 54a_22-22",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 54a_22-22",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 54a",
+     22
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage is only the opening words of an incident (a man's instruction in his will) that is completed in the following segment. At most it is part of a case of one event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 9b_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 9b_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 9b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C3",
+      "R-S1"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a general custom of David's soldiers and an exegesis of a verse, offered as a legal explanation. No narrated event is in the passage itself.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 2a_7-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 2a_7-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 2a",
+     7
+    ],
+    [
+     "Ketubot 2a",
+     8
+    ],
+    [
+     "Ketubot 2a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Hypothetical legal dilemmas about illness and menstruation delaying a wedding. No event happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 3b_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 3b_7-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 3b",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rava explains a hypothetical case of a general coming to a city. This is legal analysis, not a narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 26b_0-0",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 26b_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 26b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "This is a hypothetical scenario of witnesses raising and lowering a man's priestly status, built to explain a dispute. It is a legal case, not an event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 54a_21-21",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 54a_21-21",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 54a",
+     21
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man's will leaves a dowry, prices then fall, and Rav Idi rules on the surplus. It is a real case, but one event plus a ruling with little change, so it is borderline rather than not.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 2a_5-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 2a_5-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 2a",
+     5
+    ],
+    [
+     "Ketubot 2a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "These are legal inferences about a groom's obligation to provide sustenance, framed as general cases. Nothing happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 12b_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 12b_0-0",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 12b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "An institutional history: the court raised widows' marriage contracts when priests demeaned widows, then restored them when men avoided widows. There are events, causality and change, but they are collective and habitual, told as legal background.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 25b_4-4",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 25b_4-4",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 25b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man testifies before Reish Lakish and Rabbi Elazar challenges him. This is the first half of an incident that is completed only in the following context (Reish Lakish's harsh look). On its own it is mostly speech and part of a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 69a_10-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 69a_10-10",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A woman comes before Ameimar, her brothers speak, and he stays silent. This is cited as evidence of his view. Coming before the rabbi is the only event, and the rest is speech.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Yevamot 106b_9-9",
+   "kind": "review",
+   "tractate": "Yevamot",
+   "key": "Yevamot 106b_9-9",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Yevamot 106b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A description of Mar Zutra's practice in writing a halitza document, an objection, and a ruling. The narrative does not continue (Yevamot 106b).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_095",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_095",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 67a",
+     5
+    ],
+    [
+     "Gittin 67a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A student questions his father's ruling and is told to be silent; this is speech only, and a rebuke like this is ordinary rabbinic dialogue rather than conflict that makes a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 52a_4-6",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 52a_4-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 52a",
+     4
+    ],
+    [
+     "Kiddushin 52a",
+     5
+    ],
+    [
+     "Kiddushin 52a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C1",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "The Talmud cites the Mishnah's incident of the five women only by allusion and then derives halakhot from it; one incident plus a ruling, followed by legal analysis.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_11-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_11-11",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A legal statement and an objection from a hypothetical mishnaic case; nothing is narrated as having happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 49a_5-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49a_5-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A Mishnah reporting a teaching expounded before the Sages at Yavne; no event beyond the teaching and no conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 103b_24-25",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 103b_24-25",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 103b",
+     24
+    ],
+    [
+     "Ketubot 103b",
+     25
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi falls ill and is moved to Tzippori: real events, but only a fragment of his death narrative, embedded in Gemara harmonization with little change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_051",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_051",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 78b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Students ask Rabbi Eliezer a halakhic question and he answers; speech only, with no conflict or event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 12b_4-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 12b_4-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 12b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A Mishnah stating a hypothetical case of competing claims and the Sages' opinions; it is a legal case, not an event that happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_113",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_113",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     17
+    ],
+    [
+     "Ketubot 100b",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravina holds an orphan's wine, asks Rav Ashi and is told to take it along; some events and a ruling, but the change in outcome is at most implied.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 103b_14-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 103b_14-15",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 103b",
+     14
+    ],
+    [
+     "Ketubot 103b",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi falls ill, Rabbi Hiyya visits and finds him crying, and they exchange words; real events and emotion, but it is mainly dialogue with little change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 66b_9-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 66b_9-9",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 66b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "The Sages award Nakdimon's daughter a large perfume allowance, and she blesses them and they answer amen; one real event followed by speech, with little further change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_037",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_037",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 63b",
+     15
+    ],
+    [
+     "Yevamot 63b",
+     16
+    ],
+    [
+     "Yevamot 63b",
+     17
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      4
+     ],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "The Sages challenge Ben Azzai for not practicing what he preaches and he answers; speech only, but with personal conflict over his life choice.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_099",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_099",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 69b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A goat drank blacksmith's water and was found to have no spleen when slaughtered; events with causality, but it is cited only as evidence for a remedy.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 77a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 77a_8-8",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 77a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "The Sidon tanner's widow incident is one event followed by the Sages' ruling, with an implied change; this is the Mishnah's own copy (R-C1).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 100b_17-18",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 100b_17-18",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     17
+    ],
+    [
+     "Ketubot 100b",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravina holds an orphan's wine, asks Rav Ashi and is told to take it along; some events and a ruling, but the change in outcome is at most implied.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 12a_8-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 12a_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 12a",
+     8
+    ],
+    [
+     "Ketubot 12a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "Descriptions of former wedding customs in Judea and the Galilee, with no one-time event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 85a_9-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 85a_9-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 85a",
+     9
+    ],
+    [
+     "Ketubot 85a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A document is brought to Rava and Rav Pappa's testimony is rejected; after that it is all dialogue, with implied conflict over trust.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_10-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_10-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rava retracts on the basis of a baraita describing a hypothetical slander case; legal discussion, not a narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 111a_10-11",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 111a_10-11",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 111a",
+     10
+    ],
+    [
+     "Ketubot 111a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man whose brother died abroad asks Rabbi Hanina whether to go down for levirate marriage and is rebuked; one background event, then a question and a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_027",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_027",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 61b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Hisda tells Rabba to study a baraita and Rabba does; a study frame for a halakhic explanation, with no conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 55a_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 55a_7-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 55a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A hypothetical legal case about witnesses and a deed of gift, with two schools' opinions and the halakha.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_062",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_062",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 97b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Yudan's sons are freed and Rav Aha permits them to marry each other's wives, and Rava challenges him; one event followed by a ruling and ordinary debate.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 25b_2-2",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 25b_2-2",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 25b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man testifies before Rabbi Ami and the man he testified about is elevated to the priesthood; essentially one incident plus a ruling, though the ruling produces a change of status.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 90b_12-14",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 90b_12-14",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 90b",
+     12
+    ],
+    [
+     "Ketubot 90b",
+     13
+    ],
+    [
+     "Ketubot 90b",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabba reports finding scholars discussing a dispute and offering his view; standard scholarly dialogue with no event or conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 4b_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 4b_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 4b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A halakhic clarification about where a groom and his menstruating wife sleep; no narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 38a_0-0",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 38a_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 38a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-S1",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "An exegetical inference about biblical Israel offering the omer before eating; a fragment of reasoning, not a narrated story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 8a_9-9",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8a_9-9",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A report of Rav Ashi's blessing practice on a visit, cited as halakhic precedent; nothing follows and no change occurs.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 68a_16-16",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 68a_16-16",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 68a",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A one-line precedent (Rabbi gave one-twelfth) cited as evidence, a single act with no narrated change, followed by legal analysis.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 49b_5-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49b_5-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rava's habitual response to such cases is a speech-act practice with no particular event or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59b_9-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59b_9-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59b",
+     9
+    ],
+    [
+     "Ketubot 59b",
+     10
+    ],
+    [
+     "Ketubot 59b",
+     11
+    ],
+    [
+     "Ketubot 59b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion of a baraita about a hypothetical vow; no event narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_011",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_011",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 36b",
+     13
+    ],
+    [
+     "Yevamot 36b",
+     14
+    ],
+    [
+     "Yevamot 36b",
+     15
+    ],
+    [
+     "Yevamot 37a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Halakhic transmission dispute and a sarcastic retort; ordinary rabbinic dialogue with a retraction (quasi-speech), no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Yevamot 17a_4-4",
+   "kind": "review",
+   "tractate": "Yevamot",
+   "key": "Yevamot 17a_4-4",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Yevamot 17a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A description of rabbis' seating arrangement followed by a discussion, exactly the Yevamot 17a case Jeff ruled not a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 27b_16-16",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 27b_16-16",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 27b",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "One real event (he held his wife's hand throughout the gentile occupation of Jerusalem) followed by the Sages' ruling; mainly testimony and ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_072",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_072",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 107b",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Pishon's wife's refusal is the Yevamot 107b case Jeff ruled not a story: one act mentioned without change or causality.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 86b_24-25",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 86b_24-25",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 86b",
+     24
+    ],
+    [
+     "Gittin 86b",
+     25
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Mainly a halakhic query and answer, but a real event intervenes (Rav Huna dies before the question arrives, and his son answers).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 88a_11-11",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 88a_11-11",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 88a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A document brought before R. Abbahu and a colleague's correction; coming before a rabbi and a ruling is the only event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 82a_3-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 82a_3-3",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 82a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Mostly dialogue between brothers, but with real conflict over the yevama and inheritance and an implied resolution (dividing the property).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 110b_24-24",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 110b_24-24",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 110b",
+     24
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Zeira's avoiding his teacher because he wished to emigrate is a real action with conflict, but little is narrated and it shifts to halakhic justification.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 33a_16-16",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 33a_16-16",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 33a",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Habitual practices of R. Yohanan and Rava regarding elders, cited as practice; nothing follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 94a_8-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 94a_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 94a",
+     8
+    ],
+    [
+     "Ketubot 94a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Nahman visits and is asked a halakhic question which he answers; speech with no conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 49a_2-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49a_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A hypothetical legal case and its derivation; no event happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 51a_1-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 51a_1-2",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 51a",
+     1
+    ],
+    [
+     "Ketubot 51a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Orphans come before Rava, he orders support and defends it against the Sages; essentially one event followed by legal discussion (cf. Jeff on Ketubot 51a).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 39b_8-10",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 39b_8-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Kiddushin 39b",
+     8
+    ],
+    [
+     "Kiddushin 39b",
+     9
+    ],
+    [
+     "Kiddushin 39b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The Gemara's commentary on R. Ya'akov's story of the boy who fell, not the story itself (the Kiddushin 39b case).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 10a_9-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 10a_9-10",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 10a",
+     9
+    ],
+    [
+     "Ketubot 10a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before Rabban Gamliel with a claim and receives a parable; mainly speech acts with an underlying event (Jeff's Ketubot 10a borderline).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 107b_8-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 107b_8-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 107b",
+     8
+    ],
+    [
+     "Ketubot 107b",
+     9
+    ],
+    [
+     "Ketubot 107b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Cases came before Rabbi and R. Yishmael and were ruled on, then a scholarly exchange; coming before a rabbi is the only event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 10a_9-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 10a_9-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 10a",
+     9
+    ],
+    [
+     "Ketubot 10a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before Rabban Gamliel with a claim and receives a parable; mainly speech acts with an underlying event (Jeff's Ketubot 10a borderline).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 57b_0-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 57b_0-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 57b",
+     0
+    ],
+    [
+     "Ketubot 57b",
+     1
+    ],
+    [
+     "Ketubot 57b",
+     2
+    ],
+    [
+     "Ketubot 57b",
+     3
+    ],
+    [
+     "Ketubot 57b",
+     4
+    ],
+    [
+     "Ketubot 57b",
+     5
+    ],
+    [
+     "Ketubot 57b",
+     6
+    ],
+    [
+     "Ketubot 57b",
+     7
+    ],
+    [
+     "Ketubot 57b",
+     8
+    ],
+    [
+     "Ketubot 57b",
+     9
+    ],
+    [
+     "Ketubot 57b",
+     10
+    ],
+    [
+     "Ketubot 57b",
+     11
+    ],
+    [
+     "Ketubot 57b",
+     12
+    ],
+    [
+     "Ketubot 57b",
+     13
+    ],
+    [
+     "Ketubot 57b",
+     14
+    ],
+    [
+     "Ketubot 57b",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-S1"
+     ],
+     "unknown_rules": [],
+     "reason": "Mishnah and halakhic discussion of betrothal periods and teruma; the only narrative element is a biblical verse analyzed exegetically.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_2-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_2-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     2
+    ],
+    [
+     "Ketubot 50b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Report of Rav's practice of sustaining orphan girls, followed by a conceptual dilemma; no event follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 74a_11-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 74a_11-11",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 74a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "An actual incident is alluded to (conditional betrothal, then forced divorce) but only summarized as precedent for the ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 14b_11-11",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 14b_11-11",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 14b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "Mishnah incident: a girl is raped at the spring, followed by a ruling on her marriage; events with weak causality (Jeff's Ketubot 14b borderline).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 19b_6-6",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 19b_6-6",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 19b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yehuda's habitual difficulty and Ulla's advice citing others' practice; custom and speech with no conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 53b_11-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 53b_11-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53b",
+     11
+    ],
+    [
+     "Ketubot 53b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A halakhic dilemma raised by Reish Lakish and left unresolved; nothing happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 46a_12-12",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 46a_12-12",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 46a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "The Tzaidan incident is only alluded to (\"an incident in Tzaidan etc.\") as the Gemara asks why the Mishnah cites it; the events are not narrated here.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 80b_1-2",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 80b_1-2",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 80b",
+     1
+    ],
+    [
+     "Gittin 80b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bill of divorce with an unusual dating is sent to Rabba as a question and he rules; the only narrated event is bringing the case for a ruling (R-C0's limit).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 8a_9-10",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 8a_9-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 8a",
+     9
+    ],
+    [
+     "Kiddushin 8a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Two single acts (Rav Kahana taking a cloth, Mar bar Rav Ashi buying one) cited as precedents for a legal point, with no change or continuation.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 26a_9-9",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 26a_9-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 26a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A hypothetical case constructed by the Gemara (\"with what are we dealing here\"), not an event that happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 100b_16-16",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 100b_16-16",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A report of what Rav Kahana did with an orphan's beer, with his rationale, cited as practice; one act, no change or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_2-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_2-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     2
+    ],
+    [
+     "Ketubot 11b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A legal statement reported before Shmuel and his disagreement; ordinary scholarly exchange with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11a_12-13",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11a_12-13",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11a",
+     12
+    ],
+    [
+     "Ketubot 11a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Analytical explanation of why Abaye and Rava chose different sources; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_078",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_078",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 72a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man states his origin and R. Yitzhak Nappaha stands and responds, followed by legal-geographic discussion; mainly speech with a minimal event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 8a_9-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8a_9-9",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Ashi's visit is the frame for reporting his practice of reciting wedding blessings; a description of practice with no change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_110",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_110",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 89a",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A rumor about a betrothal is sent to Abaye and he rules; the case coming for a ruling is the only event, with no further action or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 49b_6-6",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49b_6-6",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rava coerced Rav Natan bar Ami and extracted 400 zuz for charity: a real event with some change, but cited briefly as a precedent with no continuation.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 5b_0-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 5b_0-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 5b",
+     0
+    ],
+    [
+     "Ketubot 5b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Homiletic and anatomical teachings about ears and fingers; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 10b_6-6",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 10b_6-6",
+   "label": "borderline",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 10b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C1",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "The Gemara quotes the Mishnah's incident (bill of divorce brought to Rabban Gamliel, which he validated), which R-C1 says may be included, but it is one event followed by a ruling and textual discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 85b_1-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 85b_1-1",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 85b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man deposits pearls with R. Meyasha, who dies without instructions; the parties come before R. Ami, who rules. An incident with several narrated events resolved by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 29b_18-18",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 29b_18-18",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 29b",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Hisda's self-report about marrying at sixteen, a statement about himself with no narrated event or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_5-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50a_5-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50a",
+     5
+    ],
+    [
+     "Ketubot 50a",
+     6
+    ],
+    [
+     "Ketubot 50a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal enactments and teaching advice, including Abaye quoting his mother; dicta, no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_2-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_2-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     2
+    ],
+    [
+     "Ketubot 58a",
+     3
+    ],
+    [
+     "Ketubot 58a",
+     4
+    ],
+    [
+     "Ketubot 58a",
+     5
+    ],
+    [
+     "Ketubot 58a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Tannaitic dispute and analysis about teruma allotments; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 52a_2-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 52a_2-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 52a",
+     2
+    ],
+    [
+     "Ketubot 52a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Natan asked Sumakhos a legal question and was answered; scholarly speech with no conflict or event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 41a_3-3",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 41a_3-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 41a",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Safra's and Rava's habitual Shabbat preparations cited as practice; customs that lead nowhere.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 8a_9-9",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 8a_9-9",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 8a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Kahana took a cloth at a redemption and declared its value: a single act cited as precedent, with no change or continuation.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 61a_12-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 61a_12-12",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 61a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Two brief first-person incidents (waiters given food and so spared danger), cited as evidence for a rule; real events but slight, with little change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 67b_3-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 67b_3-3",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 67b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "A habitual practice (daily meat for a poor man) followed by discussion of its novelty; a custom with no one-time event or change following.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 12a_13-13",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 12a_13-13",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 12a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man betrothed a woman with a bundle of rags and Rav Shimi bar Hiyya examined it to rule; one event followed by a ruling and legal discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_1-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_1-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Analytical question about the practical difference between two opinions; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_040",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_040",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 38a",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "One real event (men sinning with the maidservant in Pumbedita) followed only by Abaye's hypothetical statement and Ravina's ruling; no further action or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 53b_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 53b_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Abaye's retort to Ravin is ordinary scholarly back-and-forth with no event beyond speech.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_112",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_112",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 89b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A rumor circulated about a woman (one event), followed by a cited precedent and ruling; little action or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 65a_5-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 65a_5-5",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 65a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "The Sages apportion wine to Nakdimon's daughter-in-law, she blesses them, and they pointedly withhold amen: several actions with a response and an ironic turn.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59b_3-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59b_3-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59b",
+     3
+    ],
+    [
+     "Ketubot 59b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Pure legal analysis of konamot and liens; nothing happens.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 10a_7-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 10a_7-8",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 10a",
+     7
+    ],
+    [
+     "Ketubot 10a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before Rav Nahman and is ordered flogged: mainly speech with a ruling; segment 3 is the Gemara's commentary.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_7-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report that R. Yohanan issued a ruling in Tzaidan, followed by discussion; no narrated event beyond the ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_6-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_6-6",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Courts rule and collect from movables, and Rav Nahman threatens to reverse them: events and conflict, but mostly rulings with weak causality and implied change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_016",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_016",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 45b",
+     10
+    ],
+    [
+     "Yevamot 45b",
+     11
+    ],
+    [
+     "Yevamot 45b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      4
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Men taunted as sons of Arameans, and rabbis rule on their status: one event followed by a ruling; segments 2-3 are legal explanation.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 6b_2-3",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 6b_2-3",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 6b",
+     2
+    ],
+    [
+     "Ketubot 6b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Halakhic objection and response between Amoraim; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_070",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_070",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 69a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Simlai's remark to his mamzer host is speech only, cited as evidence, with nothing following and no conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_075",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_075",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 113a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Malkiyyu married off the deaf-mute and wrote a ketubah, and Rava praises it: real actions but cited as a precedent, with little narrative development.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_030",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_030",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 63a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Elazar sees a field and makes an aphorism to it; no event beyond seeing and speaking, no change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50a_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "The passage holds the end of the story begun in context (the man gave his property away, R. Yonatan forced his sons to feed him, the man kissed his feet); the rest of the segment is Gemara commentary.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 68a_16-16",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 68a_16-16",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 68a",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A one-line report that Rabbi gave an orphan one-twelfth, cited as evidence; no narrative.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_094",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_094",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 81b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Hanan visits Rav Kahana, sees an animal before him, and questions him: a real event but mainly dialogue; the Abaye/Rav Sheshet lines are bare practices.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59b_0-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59b_0-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59b",
+     0
+    ],
+    [
+     "Ketubot 59b",
+     1
+    ],
+    [
+     "Ketubot 59b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal analogies and objections only; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 32a_8-12",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 32a_8-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 32a",
+     8
+    ],
+    [
+     "Kiddushin 32a",
+     9
+    ],
+    [
+     "Kiddushin 32a",
+     10
+    ],
+    [
+     "Kiddushin 32a",
+     11
+    ],
+    [
+     "Kiddushin 32a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      4,
+      5,
+      6
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A son corrects his father's teaching and Shmuel rebukes him for disrespect: all speech, about teaching, with some interpersonal conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_002",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_002",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 5b",
+     21
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabba bar bar Hana brings a partly-witnessed get and comes before R. Elazar, who rules: one event then a ruling, with no further change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 9b_4-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 9b_4-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 9b",
+     4
+    ],
+    [
+     "Ketubot 9b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A legal statement and its analysis; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 5b_2-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 5b_2-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 5b",
+     2
+    ],
+    [
+     "Ketubot 5b",
+     3
+    ],
+    [
+     "Ketubot 5b",
+     4
+    ],
+    [
+     "Ketubot 5b",
+     5
+    ],
+    [
+     "Ketubot 5b",
+     6
+    ],
+    [
+     "Ketubot 5b",
+     7
+    ],
+    [
+     "Ketubot 5b",
+     8
+    ],
+    [
+     "Ketubot 5b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A chain of theoretical halakhic dilemmas; nothing happens.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_12-14",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_12-14",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     12
+    ],
+    [
+     "Ketubot 11b",
+     13
+    ],
+    [
+     "Ketubot 11b",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Scholarly objection and rebuttal about a ruling; ordinary Talmudic dialogue, not conflict in the R-C2 sense.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 20a_9-9",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 20a_9-9",
+   "label": "borderline",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 20a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Levi expounds a law twice and is first not praised, then praised: an event with a reaction, but the actions are mainly verbal.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 15a_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 15a_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 15a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A legal discussion of an incident in the wagons of Tzippori with too little of the incident given.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Yevamot 15a_14-14",
+   "kind": "review",
+   "tractate": "Yevamot",
+   "key": "Yevamot 15a_14-14",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Yevamot 15a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-B4",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "The Gemara's explanation of what R. Akiva was thinking about the etrog; commentary, not story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 85a_13-14",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 85a_13-14",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 85a",
+     13
+    ],
+    [
+     "Ketubot 85a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A woman obligated to swear comes to court; after that it is litigants' and judges' dialogue with a ruling and a rebuke, mainly speech with one real event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11a_8-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11a_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11a",
+     8
+    ],
+    [
+     "Ketubot 11a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Pure legal dialectic about minors' conversion; nothing happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_6-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_6-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A hypothetical challenge and answer between scholars; ordinary dialogue with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 8b_6-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8b_6-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8b",
+     6
+    ],
+    [
+     "Ketubot 8b",
+     7
+    ],
+    [
+     "Ketubot 8b",
+     8
+    ],
+    [
+     "Ketubot 8b",
+     9
+    ],
+    [
+     "Ketubot 8b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      5,
+      6
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "Part of the condolence visit for Rav Hiyya bar Abba's son: Reish Lakish has his disseminator recite blessings, mainly speech; segment 4 is the Gemara's comment, not story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 69a_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 69a_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav sends a question and Rabbi answers after Rabbi Hiyya's clarifying question; quasi-speech without real conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 69a_12-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 69a_12-12",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report of how Ravina allotted property, cited as evidence for a legal point; no response or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 6b_12-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 6b_12-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 6b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A legal objection from a mishna; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 86a_4-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 86a_4-4",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 86a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C6"
+     ],
+     "unknown_rules": [],
+     "reason": "An incident only alluded to, with Rafram pressuring Rav Ashi into a ruling and collection; one event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 42b_8-8",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 42b_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 42b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A difficulty unresolved for 22 years until Rav Yosef became head and resolved it; mostly teaching, with an event and some change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_101",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_101",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 72a",
+     17
+    ],
+    [
+     "Gittin 72a",
+     18
+    ],
+    [
+     "Gittin 72b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Huna and Rav Nahman visit the ill Rabba bar Avuh and ask him a question; mainly dialogue with minor events. Segment 4 is Gemara commentary.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 57a_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 57a_0-0",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 57a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A marriage contract is lost and the couple come before Rav Yosef, who rules; one real event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 34a_13-13",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 34a_13-13",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 34a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man sets a conditional divorce, and when the date arrives he claims he said a different date; mostly speech followed by legal analysis.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_7-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal exposition of the mishna; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_10-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50a_10-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yitzhak bar Yosef finds Rabbi Abbahu and learns the Usha teaching forty times; mainly teaching, which Jeff ruled borderline.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_051",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_051",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 45b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man betroths a minor with vegetables in the market, then Ravina rules; one event followed by a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59b_5-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59b_5-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59b",
+     5
+    ],
+    [
+     "Ketubot 59b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A mishna listing legal obligations; general law, not an event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 111b_4-5",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 111b_4-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 111b",
+     4
+    ],
+    [
+     "Ketubot 111b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A dialogue between Rabbi Yohanan and Rabbi Elazar with conflict, an emotional reaction and a conciliatory turn; mainly speech.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 103b_24-25",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 103b_24-25",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 103b",
+     24
+    ],
+    [
+     "Ketubot 103b",
+     25
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A fragment of the account of Rabbi's illness: he falls ill and is moved to Tzippori, embedded in Gemara discussion; part of a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_064",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_064",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 102a",
+     7
+    ],
+    [
+     "Yevamot 102a",
+     8
+    ],
+    [
+     "Yevamot 102a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Yosei travels to Netzivin, meets an elder and questions him; one real event, then mainly dialogue.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_10-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_10-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A question asked and answered, reported for its ruling; speech without conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 53b_13-13",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 53b_13-13",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53b",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A legal dilemma; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 100b_16-16",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 100b_16-16",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A report of what Rav Kahana did with an orphan's beer and his rationale; no response or consequence follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_0-1",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_0-1",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     0
+    ],
+    [
+     "Ketubot 50b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Hamnuna teaches, the audience clamors against him, and Rav Yosef defends him; mainly speech with conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 8a_13-13",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8a_13-13",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report of a blessing Rav Haviva recited, followed by a ruling against it; no development.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7b_2-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7b_2-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 7b",
+     2
+    ],
+    [
+     "Ketubot 7b",
+     3
+    ],
+    [
+     "Ketubot 7b",
+     4
+    ],
+    [
+     "Ketubot 7b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Exegetical discussion of verses; Shmuel's instruction to bring ten men is a cited speech, not a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 99b_7-9",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 99b_7-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 99b",
+     7
+    ],
+    [
+     "Ketubot 99b",
+     8
+    ],
+    [
+     "Ketubot 99b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Nahman's visit to Sura only frames a halakhic question-and-answer; ordinary scholarly dialogue with no conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 85b_4-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 85b_4-4",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 85b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man deposited silk, the custodian died without instruction, they came before Rabbi Abba who ruled; narrated incident with actions and a change, resolved by a ruling (the cow shape).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 60b_7-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 60b_7-9",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 60b",
+     7
+    ],
+    [
+     "Ketubot 60b",
+     8
+    ],
+    [
+     "Ketubot 60b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      4
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Mostly legal discussion; the only narrative is a one-line allusion to an incident where a woman strangled her child, cited as evidence and not narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50a_9-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50a_9-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A general dictum about bringing a child to school and its harmonization; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11a_10-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11a_10-11",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11a",
+     10
+    ],
+    [
+     "Ketubot 11a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "A legal objection and answer from a mishna; no narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_11-13",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_11-13",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     11
+    ],
+    [
+     "Ketubot 7a",
+     12
+    ],
+    [
+     "Ketubot 7a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-S1"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion of wedding benedictions; the reference to Boaz is a proof-text, not a narrated story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_146",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_146",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 112a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A baraita on Judean yield plus a Sadducee's remark praising his land; speech without conflict or a narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 51b_8-9",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 51b_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 51b",
+     8
+    ],
+    [
+     "Ketubot 51b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav's objection silences Shmuel's father and Rav then applies a mocking verse to him; mainly speech, but with conflict and a reaction (silence).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 20a_12-14",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 20a_12-14",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 20a",
+     12
+    ],
+    [
+     "Kiddushin 20a",
+     13
+    ],
+    [
+     "Kiddushin 20a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Abaye's boast and a scholar's challenge followed by a baraita; standard rabbinic dialogue without an event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_019",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_019",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 25b",
+     3
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before R. Yehoshua ben Levi testifying to another's Levite status and he elevates him; one event and a ruling with a change of status, but little more narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 25a_9-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 25a_9-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 25a",
+     9
+    ],
+    [
+     "Ketubot 25a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Huna found the Sages sitting and discussing, and he answered them; a setting followed only by legal discussion (like Yevamot 17a).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_0-0",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_0-0",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal discussion of slave defects; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 43a_13-14",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 43a_13-14",
+   "label": "borderline",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 43a",
+     13
+    ],
+    [
+     "Gittin 43a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabba bar Rav Huna taught publicly, was challenged, then appointed an interpreter and publicly retracted; mainly teaching/speech but with an action and a change (Jeff: low confidence at most on Gittin 43a).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 60b_8-8",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 60b_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 60b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Zeira finding R. Asi sitting and teaching serves only to transmit a ruling; no story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 50b_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 50b_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 50b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Elazar only thought to rule and a student cautioned him; speech about a ruling not made, with no event or real conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_003",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_003",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 6a",
+     18
+    ],
+    [
+     "Gittin 6b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Kahana brought a bill of divorce and asked Rav, who ruled; one routine act followed by a ruling and legal explanation.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:gittin_062",
+   "kind": "list",
+   "tractate": "Gittin",
+   "key": "gittin_062",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 54b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A man's claim (speech) brought before R. Ami, a ruling and R. Asi's objection; coming before the rabbi is the only event beyond speech (R-C0 limit, Ketubot 50b:4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58a_9-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58a_9-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58a",
+     9
+    ],
+    [
+     "Ketubot 58a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal analysis of a mishna; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 69a_10-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 69a_10-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 69a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "An eyewitness report that a woman came before Ameimar and he stayed silent, cited as evidence of his view; coming before him is the only event and nothing follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 3b_3-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 3b_3-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 3b",
+     3
+    ],
+    [
+     "Ketubot 3b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Gemara's explanation of a government decree as background to a law; no narrated incident.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 42b_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 42b_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 42b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A difficulty unresolved for twenty-two years until Rav Yosef became head of the academy and resolved it; mainly teaching, but one real event with a change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_035",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_035",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 63b",
+     0
+    ],
+    [
+     "Yevamot 63b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yehuda teaching his son quips that his mother is 'more bitter than death'; teaching speech with implied domestic conflict; segment 3 is Gemara commentary (R-B4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_14-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_14-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     14
+    ],
+    [
+     "Ketubot 7a",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal discussion of wedding celebration days; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 39a_12-13",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 39a_12-13",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 39a",
+     12
+    ],
+    [
+     "Kiddushin 39a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Yosef mixed seeds and planted, Abaye challenged him, and he later retracted citing Rav's garden; one real action, then mainly dialogue with a change of view.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59a_6-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59a_6-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59a",
+     6
+    ],
+    [
+     "Ketubot 59a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Legal discussion of Shmuel's rulings on vows; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 53a_12-13",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 53a_12-13",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53a",
+     12
+    ],
+    [
+     "Ketubot 53a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man whose betrothed died comes before the rabbis and receives a ruling, followed by scholarly challenge; coming before them is the only event (R-C0's limit, as Ketubot 50b:4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 58b_2-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 58b_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 58b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A Mishnah stating a hypothetical legal case and a dispute; nothing happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 88a_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 88a_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 88a",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "An incident is said to have come before R. Yitzhak, but nothing of it is narrated beyond his ruling; coming before the rabbi is the only event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 8a_6-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8a_6-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Two bare reports of how many wedding blessings Levi and Rav Asi recited, cited as evidence of practice; nothing follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_012",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_012",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 17b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Ordinary scholarly exchange about a custom, with an incident cited only as evidence of the practice; no consequence follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 49b_10-10",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 49b_10-10",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 49b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Yehuda reports an incident he was involved in only as the occasion of a ruling; no narrated action beyond the ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 8b_11-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8b_11-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8b",
+     11
+    ],
+    [
+     "Ketubot 8b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Mostly an account of an ordinance, but it narrates that the Sages added cups, people became drunk, and the Sages restored the earlier rule: events with change, though collective and schematic.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 107b_8-10",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 107b_8-10",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 107b",
+     8
+    ],
+    [
+     "Ketubot 107b",
+     9
+    ],
+    [
+     "Ketubot 107b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Two transmitted versions of cases that came before Rabbi and R. Yishmael, known only by their rulings, followed by standard scholarly discussion.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 40b_11-11",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 40b_11-11",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 40b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Transmission of a teaching and a disagreement over its version; ordinary scholarly dialogue with no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 72b_10-10",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 72b_10-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 72b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Ameimar's permission and Rav Ashi's challenge are a ruling plus ordinary scholarly back-and-forth; no further action or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 8a_6-6",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 8a_6-6",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 8a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Bare reports of how many blessings were recited at two weddings, cited as evidence; nothing follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_2-2",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report of Rav Zevid's ruling or practice, with no response or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_4-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_4-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     4
+    ],
+    [
+     "Ketubot 11b",
+     5
+    ],
+    [
+     "Ketubot 11b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion of hypothetical cases; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 100b_17-18",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 100b_17-18",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     17
+    ],
+    [
+     "Ketubot 100b",
+     18
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravina is taking his own wine to sell and asks Rav Ashi about the orphan's wine; a real situation and action precede the ruling, but the outcome is only implied.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7a_4-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_4-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     4
+    ],
+    [
+     "Ketubot 7a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Standard halakhic dialogue between Rav Pappi and Rav Pappa; no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_038",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_038",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 54a",
+     21
+    ],
+    [
+     "Ketubot 54a",
+     22
+    ],
+    [
+     "Ketubot 54b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      4
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Two cases where a father's will met a change in prices, followed by a ruling: real events and a change, but mainly one event then a ruling.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 63b_7-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 63b_7-7",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 63b",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Mar Zutra compelled a rebellious wife to stay, and from that couple R. Hanina of Sura was born: an incident with action and consequence; the Gemara's rejection of it as precedent is commentary (R-B4).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_034",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_034",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53a",
+     12
+    ],
+    [
+     "Ketubot 53a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man whose betrothed died comes before the rabbis and is ruled on, then a scholarly challenge; coming before them is the only event (R-C0's limit).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 40b_7-7",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 40b_7-7",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 40b",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "The sages reclining in Lod debate study versus action and reach a consensus; mainly speech, with disagreement and a resolution but no event beyond speaking.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 52a_14-14",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 52a_14-14",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 52a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Levi intends to act on a baraita and Rav corrects him with a teaching; ordinary halakhic exchange with no event that follows.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 27a_7-7",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 27a_7-7",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 27a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report that Rabba ruled on a found bill of divorce according to his view, with alternate versions of the place; no response or consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_045",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_045",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 61a",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Shapur's daughter: her mother ate etrogim and she was so fragrant she was placed before her father atop the spices; a brief anecdote with some causality, embedded in a list of folk sayings.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 3b_8-8",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 3b_8-8",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 3b",
+     8
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A baraita describing a hypothetical case and its law; no event that happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_134",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_134",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 111a",
+     10
+    ],
+    [
+     "Ketubot 111a",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before R. Hanina to ask about levirate marriage and receives a sharp answer; coming before the rabbi and the reply are the only events.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_003",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_003",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 15b",
+     5
+    ],
+    [
+     "Yevamot 15b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "R. Yehoshua answers a halakhic question and testifies about families' lineage as evidence; speech without conflict and a report cited as proof.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_038",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_038",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 64b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Mainly speech (the Rabbis urge him to marry, he deflects), but a real event lies behind it: he became impotent from Rav Huna's discourse.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 13b_16-16",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 13b_16-16",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 13b",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A couple coming before Rav Yosef with competing claims; coming before the rabbi is the only narrated event, and the passage is a fragment.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 7b_5-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7b_5-5",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 7b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Shmuel's instruction to Rav Hana is cited as a teaching about publicizing a halakha; speech only, no event or conflict.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 15b_2-2",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 15b_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 15b",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-B4"
+     ],
+     "unknown_rules": [],
+     "reason": "Only a note on where the Mishnah's incident took place, inside legal discussion; nothing is narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 4a_5-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 4a_5-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 4a",
+     5
+    ],
+    [
+     "Ketubot 4a",
+     6
+    ],
+    [
+     "Ketubot 4a",
+     7
+    ],
+    [
+     "Ketubot 4a",
+     8
+    ],
+    [
+     "Ketubot 4a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Hypothetical legal cases and their analysis; no event that happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 56a_2-2",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 56a_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 56a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A rabbi states a ruling and is sharply rebuked; ordinary scholarly back-and-forth with no other event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_056",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_056",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 85a",
+     3
+    ],
+    [
+     "Yevamot 85a",
+     4
+    ],
+    [
+     "Yevamot 85a",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      4
+     ],
+     "rules": [
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbis arrive in a town, are asked a question, debate, and go before the local rabbi who corrects them; mostly speech, with some events.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Yevamot 105a_13-13",
+   "kind": "review",
+   "tractate": "Yevamot",
+   "key": "Yevamot 105a_13-13",
+   "label": "yes",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 105a",
+     13
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabba and Abaye's practice of Torah and kindness leads to longer lives than their cursed lineage allowed; there is a change, but it is reported briefly within exegesis, with weak narration.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 54a_13-14",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 54a_13-14",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 54a",
+     13
+    ],
+    [
+     "Ketubot 54a",
+     14
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A couple comes before Rav Nahman, who notices her accent and rules, then reverses his ruling when corrected; mostly dialogue, with a small change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:yevamot_028",
+   "kind": "list",
+   "tractate": "Yevamot",
+   "key": "yevamot_028",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Yevamot 62b",
+     3
+    ],
+    [
+     "Yevamot 62b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Mainly speech (the Rabbis urge Rav Sheshet to marry, he deflects), with a real underlying event: his impotence from Rav Huna's discourse.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 45b_1-1",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 45b_1-1",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 45b",
+     1
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "One real event (betrothal with vegetables in the market) followed by a ruling; no further action or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 53b_4-6",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 53b_4-6",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 53b",
+     4
+    ],
+    [
+     "Ketubot 53b",
+     5
+    ],
+    [
+     "Ketubot 53b",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A halakhic question-and-answer between Rav Hisda and Rav Yosef; standard dialogue, no event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 94b_10-12",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 94b_10-12",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 94b",
+     10
+    ],
+    [
+     "Ketubot 94b",
+     11
+    ],
+    [
+     "Ketubot 94b",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Two deeds come before Rav Yosef, he rules, and the losing party argues; coming before the rabbi and his ruling are the only events.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 25a_10-10",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 25a_10-10",
+   "label": "borderline",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 25a",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "An incident cited briefly as evidence: the daughters raced ahead of the sons; real events, but only alluded to with little narration.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 59b_21-21",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 59b_21-21",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 59b",
+     21
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "A question sent to a rabbi, which is a quasi-speech act with no further event within the passage.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 59a_16-16",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 59a_16-16",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 59a",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report that a wealthy man sent Rabbi gifts, followed by an explanation of the fabrics; one act with no change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 74b_4-4",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 74b_4-4",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Gittin 74b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C6",
+      "R-C1"
+     ],
+     "unknown_rules": [],
+     "reason": "The Gemara quotes the Mishnah's Tzaidan incident only by allusion ('an incident in Tzaidan etc.') and then discusses it; an incident alluded to rather than narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 7a_2-2",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 7a_2-2",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": true,
+   "cells": [
+    [
+     "Ketubot 7a",
+     2
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "A bare report of a rabbi's ruling or his own practice; one act with no continuation or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_15-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_15-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A baraita stating a hypothetical legal case; nothing happened.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 55b_1-4",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 55b_1-4",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 55b",
+     1
+    ],
+    [
+     "Ketubot 55b",
+     2
+    ],
+    [
+     "Ketubot 55b",
+     3
+    ],
+    [
+     "Ketubot 55b",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion of a deathbed gift; no narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 5a_10-12",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 5a_10-12",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 5a",
+     10
+    ],
+    [
+     "Ketubot 5a",
+     11
+    ],
+    [
+     "Ketubot 5a",
+     12
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Exegetical teaching and a scholarly challenge to it; ordinary discourse, not a story.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_005",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_005",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 10a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before Rav Nahman with a claim, and Rav Nahman orders him flogged; mainly speech, with a minimal event and consequence.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 19a_15-15",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 19a_15-15",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 19a",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Pappa's instruction to Pappa the ox herder is cited as a precedent for a ruling; one act with no change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Kiddushin 7b_9-10",
+   "kind": "review",
+   "tractate": "Kiddushin",
+   "key": "Kiddushin 7b_9-10",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 7b",
+     9
+    ],
+    [
+     "Kiddushin 7b",
+     10
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "One real event (a betrothal with silk) followed by a dispute over the ruling; segment 3 is legal discussion only.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 9a_5-7",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 9a_5-7",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 9a",
+     5
+    ],
+    [
+     "Ketubot 9a",
+     6
+    ],
+    [
+     "Ketubot 9a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C5",
+      "R-S1"
+     ],
+     "unknown_rules": [],
+     "reason": "Legal discussion that only alludes to the biblical David and Bathsheba incident; no story is narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Gittin 70a_9-9",
+   "kind": "review",
+   "tractate": "Gittin",
+   "key": "Gittin 70a_9-9",
+   "label": "no",
+   "evidence": "rule-informed",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Gittin 70a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Elijah's advice to Rabbi Natan is a single piece of speech with no event, conflict or change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_062",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_062",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 58a",
+     2
+    ],
+    [
+     "Kiddushin 58a",
+     3
+    ],
+    [
+     "Kiddushin 58a",
+     4
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2,
+      3,
+      4
+     ],
+     "rules": [
+      "R-C2",
+      "R-C7"
+     ],
+     "unknown_rules": [],
+     "reason": "Mar Yehuda finds the two scholars, poses a contradiction, they fall silent and go to Rabba, who rebukes the questioner; some events, but it is mainly a scholarly exchange.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 11b_8-9",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 11b_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 11b",
+     8
+    ],
+    [
+     "Ketubot 11b",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Purely legal argumentation (Rav Nahman's objection and Rava's resolution); no narrated event.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 52b_4-5",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 52b_4-5",
+   "label": "borderline",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 52b",
+     4
+    ],
+    [
+     "Ketubot 52b",
+     5
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "story",
+     "segments": [
+      2,
+      3
+     ],
+     "rules": [
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "Rabbi Yohanan's relatives come to him, he advises them to fix a sum with the doctor, and he later regrets acting like a legal advisor: events followed by a change of mind.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 94a_8-9",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 94a_8-9",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 94a",
+     8
+    ],
+    [
+     "Ketubot 94a",
+     9
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C0",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Nahman arriving in Sura and being asked a halakhic question is only a frame for a legal answer; nothing else happens.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_112",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_112",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 100b",
+     16
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C5"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Kahana holds an orphan's beer until the Festival and explains why: one real act with its rationale, little change or outcome.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:ketubot_015",
+   "kind": "list",
+   "tractate": "Ketubot",
+   "key": "ketubot_015",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 21b",
+     0
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Ravnai reports Shmuel's ruling, Ameimar praises it and Rav Ashi rebukes him: ordinary scholarly back-and-forth, which Jeff ruled not a story (Ketubot 21b:0).",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "list:kiddushin_085",
+   "kind": "list",
+   "tractate": "Kiddushin",
+   "key": "kiddushin_085",
+   "label": "yes",
+   "evidence": "BLIND list",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Kiddushin 80b",
+     8
+    ],
+    [
+     "Kiddushin 80b",
+     9
+    ],
+    [
+     "Kiddushin 80b",
+     10
+    ],
+    [
+     "Kiddushin 80b",
+     11
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      5
+     ],
+     "rules": [
+      "R-C6"
+     ],
+     "unknown_rules": [],
+     "reason": "Segments 2-4 are legal discussion; segment 5 only alludes to the incident of the woman who removed her husband from the grave, which must be filled in from commentaries.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 17a_6-6",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 17a_6-6",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 17a",
+     6
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C2"
+     ],
+     "unknown_rules": [],
+     "reason": "Rav Aha's habit of dancing with the bride on his shoulders is a real action, followed by a question and his answer; mainly speech with no further change.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "review:Ketubot 59a_13-15",
+   "kind": "review",
+   "tractate": "Ketubot",
+   "key": "Ketubot 59a_13-15",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 59a",
+     13
+    ],
+    [
+     "Ketubot 59a",
+     14
+    ],
+    [
+     "Ketubot 59a",
+     15
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "not",
+     "segments": [],
+     "rules": [],
+     "unknown_rules": [],
+     "reason": "Hypothetical legal analogies and objections; no event is narrated.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 10a_7-7",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 10a_7-7",
+   "label": "yes",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 10a",
+     7
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C0"
+     ],
+     "unknown_rules": [],
+     "reason": "A man comes before Rav Nahman with a claim and is ordered flogged; Jeff called Ketubot 10a borderline as it is mainly speech acts.",
+     "error": null
+    }
+   }
+  },
+  {
+   "id": "corrected:Ketubot 27b_17-17",
+   "kind": "corrected",
+   "tractate": "Ketubot",
+   "key": "Ketubot 27b_17-17",
+   "label": "no",
+   "evidence": "CIRCULAR",
+   "cited_in_rules": false,
+   "cells": [
+    [
+     "Ketubot 27b",
+     17
+    ]
+   ],
+   "answers": {
+    "claude": {
+     "outcome": "ok",
+     "verdict": "borderline",
+     "segments": [
+      2
+     ],
+     "rules": [
+      "R-C7",
+      "R-C3"
+     ],
+     "unknown_rules": [],
+     "reason": "Continuation of Rabbi Zekharya ben HaKatzav's case: after the ruling he houses his wife in his courtyard and arranges her comings and goings, real actions in response but habitual and with little further change.",
+     "error": null
+    }
+   }
+  }
+ ]
+}
