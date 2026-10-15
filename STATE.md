@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     21 item(s) in work/done/
+closed     23 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -176,4 +176,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: f9eea1e08f520521 -->
+<!-- board-checksum: a10686f479a17edf -->
