@@ -4,8 +4,8 @@
 Reads (read-only): results/canonical/{ketubot,kiddushin,gittin}_canonical.json and
 results/v11/yevamot/yevamot_v11.json. Writes site/data/index.json + site/data/<tractate>.json.
 
-Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` = BORDERLINE, shown
-separately. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
+Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` was shown
+separately until 2026-10-15, now NOT shipped. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
 round: its stories are detector output, flagged `reviewed: false`.
 
 mishnah_stories[] (Stage 4g's withheld Mishnah-internal stories) IS exported, per Simon
@@ -42,8 +42,7 @@ def clean(html):
 def tier(classification):
     if classification == "NOT_A_STORY":
         return None
-    if classification == "BORDERLINE":
-        return "borderline"
+    # BORDERLINE is not shipped (Simon, 2026-10-15); it was a separate tier before that.
     return "story" if classification in ("YES", "HIGH_CONFIDENCE") else None
 
 
