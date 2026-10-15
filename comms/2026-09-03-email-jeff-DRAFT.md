@@ -1,6 +1,19 @@
 # DRAFT email to Jeff — the speech-act word list (Wave 6 Phase 6b)
 
-**Not sent.** Simon to review, edit, send from his own client.
+**NOT SENT, AND MUST BE REWRITTEN BEFORE IT IS.** Its central claim was measured on
+2026-09-08 and does not hold → [`span-truncation-rate`](../docs/findings/2026-09-08-span-truncation-rate.md).
+
+The section below beginning *"Now the unexpected part"* tells Jeff that most of what reads
+as speech-only is our boundaries stopping early. Across all 365 accepted golden spans that
+is **5 cases, not most** — and **four of the five passages cited below as illustrations are
+confounded**: the "revealed action" belongs to a *different* story that begins within two
+segments, not to the one we showed him. Only Ketubot 111a survives.
+
+What replaces it: the criteria question is **larger** than we said, not smaller — 37 spans
+across three tractates read as speech-only and stay that way when the surrounding text is
+included. That is the question to put to him, and his word list stands.
+
+Simon to review, edit, send from his own client.
 Evidence: [`quasi-speech-acts and the span confound`](../docs/findings/2026-09-03-quasi-speech-acts-and-the-span-confound.md)
 and [`the 6-entry screen`](../docs/findings/2026-09-03-speech-act-blast-radius.md).
 
