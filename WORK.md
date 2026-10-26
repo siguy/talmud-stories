@@ -56,15 +56,15 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `phase-4-notes` | `talmud-stories` | **2 FILES** |
+| `remove-borderline` | `talmud-stories` | **2 FILES** |
 | `consensus-phase1` | `agent-a5263a2ba820d9f0f` | clean |
-| `(detached)` | `jeff-comms-review-92c526` | clean |
+| `story-classification-consistency-c0ee8f` | `jeff-comms-review-92c526` | **12 FILES** |
 | `project-progress-planning-939998` | `kiddushin-recall-boundary-c52c91` | clean |
 | `talmud-stories-update-plan-5b2c31` | `recent-work-plans-d0818b` | clean |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 52 items, never deleted
+## Done — 53 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -120,4 +120,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Test a wider borderline definition (R-C7, judge prompt v2)](work/done/2026-10-09-borderline-definition-test.md) | classification | [2026-10-09-borderline-definition-test.md](docs/findings/2026-10-09-borderline-definition-test.md) |
 | [Re-run both consensus judges on the register with Jeff's 2026-10-07 rulings](work/done/2026-10-09-consensus-v3-after-jeff-rulings.md) | classification | [2026-10-09-consensus-v3.md](docs/findings/2026-10-09-consensus-v3.md) |
 | [Apply Jeff's 2026-10-07 rulings (four lines, seven passages)](work/done/2026-10-09-jeff-2026-10-07-rulings.md) | classification, detection | [2026-10-09-jeff-answers-four-lines.md](docs/findings/2026-10-09-jeff-answers-four-lines.md) |
-<!-- board-checksum: 3bf2d5b93d49bea1 -->
+| [Apply Jeff's 2026-10-25 reply — one event then a ruling is not a story; 65a borderline](work/done/2026-10-26-apply-jeff-2026-10-25-verdicts.md) | classification | [reply.md](jeff comms/10-25-2026/reply.md) |
+<!-- board-checksum: e59e302b1cb443c1 -->

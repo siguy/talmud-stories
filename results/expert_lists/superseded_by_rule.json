@@ -1,55 +1,120 @@
 {
-  "what": "2005 list entries that Jeff has since ruled on. The list keeps its value (it is evidence of what he wrote in 2005); this file is the annotation beside it. An entry with counts_for_recall=false leaves the recall denominator. Read by scripts/measure_recall_vs_expert_list.py (apply_superseded), scripts/board.py and scripts/judge_labelled_spans.py.",
-  "why": "Jeff, via Simon, 2026-10-09: the 2005 lists were initial, non-comprehensive attempts; inconsistencies are expected; his recent rulings win. A story he now says is not a story is not a loss when we miss it.",
-  "match": "tractate + ref + text_starts (the opening of the list entry's Hebrew, exactly as the list has it). A rule that matches nothing, or more than one row, is an error, never a skip (Lesson 38).",
-  "entries": [
-    {
-      "tractate": "Yevamot",
-      "ref": "Yevamot 107b",
-      "list_id": "yevamot_072",
-      "text_starts": "אמרו להן בית הלל לבית שמאי: והלא פישון הגמל",
-      "ruling": "not",
-      "counts_for_recall": false,
-      "rule": "R-C5",
-      "date": "2026-10-07",
-      "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (1B)",
-      "his_words": "not a story. The Talmud just mentions an event here—one thing Pishon’s wife did—without change or causality."
-    },
-    {
-      "tractate": "Ketubot",
-      "ref": "Ketubot 21b",
-      "list_id": "ketubot_015",
-      "text_starts": "איקלע רבנאי אחוה דר' חייא בר אבא",
-      "ruling": "not",
-      "counts_for_recall": false,
-      "rule": "R-C2",
-      "date": "2026-10-07",
-      "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (2A)",
-      "his_words": "not a story. There is not really enough conflict here to make the dialogue into a story. That one rabbis praises a ruling and another rebukes him or questions the praise is not that exceptional in Talmudic dialogue, so I would not count it as a story."
-    },
-    {
-      "tractate": "Ketubot",
-      "ref": "Ketubot 53a",
-      "list_id": "ketubot_033",
-      "text_starts": "יתיב רבין בר חנינא קמיה דרב חסדא",
-      "ruling": "not",
-      "counts_for_recall": false,
-      "rule": "R-C2",
-      "date": "2026-10-07",
-      "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (2B)",
-      "his_words": "not a story. No conflict or change. Rav Hisda is just explaining why he accepts the ruling, which is because it is attributed to a great rabbi. This is standard rabbinic dialogue and not a story."
-    },
-    {
-      "tractate": "Kiddushin",
-      "ref": "Kiddushin 80b",
-      "list_id": "kiddushin_085",
-      "text_starts": "תניא: כל שלשים יום - יוצא בחיק",
-      "ruling": "borderline",
-      "counts_for_recall": true,
-      "rule": "R-C6",
-      "date": "2026-10-07",
-      "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (1A)",
-      "his_words": "borderline. This is an unusual case, as the “incident” is not narrated in full, and has to be filled in based on the context and with the help of the Talmudic commentaries."
-    }
-  ]
+ "what": "2005 list entries that Jeff has since ruled on. The list keeps its value (it is evidence of what he wrote in 2005); this file is the annotation beside it. An entry with counts_for_recall=false leaves the recall denominator. Read by scripts/measure_recall_vs_expert_list.py (apply_superseded), scripts/board.py and scripts/judge_labelled_spans.py.",
+ "why": "Jeff, via Simon, 2026-10-09: the 2005 lists were initial, non-comprehensive attempts; inconsistencies are expected; his recent rulings win. A story he now says is not a story is not a loss when we miss it.",
+ "match": "tractate + ref + text_starts (the opening of the list entry's Hebrew, exactly as the list has it). A rule that matches nothing, or more than one row, is an error, never a skip (Lesson 38).",
+ "entries": [
+  {
+   "tractate": "Yevamot",
+   "ref": "Yevamot 107b",
+   "list_id": "yevamot_072",
+   "text_starts": "אמרו להן בית הלל לבית שמאי: והלא פישון הגמל",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C5",
+   "date": "2026-10-07",
+   "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (1B)",
+   "his_words": "not a story. The Talmud just mentions an event here—one thing Pishon’s wife did—without change or causality."
+  },
+  {
+   "tractate": "Ketubot",
+   "ref": "Ketubot 21b",
+   "list_id": "ketubot_015",
+   "text_starts": "איקלע רבנאי אחוה דר' חייא בר אבא",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C2",
+   "date": "2026-10-07",
+   "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (2A)",
+   "his_words": "not a story. There is not really enough conflict here to make the dialogue into a story. That one rabbis praises a ruling and another rebukes him or questions the praise is not that exceptional in Talmudic dialogue, so I would not count it as a story."
+  },
+  {
+   "tractate": "Ketubot",
+   "ref": "Ketubot 53a",
+   "list_id": "ketubot_033",
+   "text_starts": "יתיב רבין בר חנינא קמיה דרב חסדא",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C2",
+   "date": "2026-10-07",
+   "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (2B)",
+   "his_words": "not a story. No conflict or change. Rav Hisda is just explaining why he accepts the ruling, which is because it is attributed to a great rabbi. This is standard rabbinic dialogue and not a story."
+  },
+  {
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 80b",
+   "list_id": "kiddushin_085",
+   "text_starts": "תניא: כל שלשים יום - יוצא בחיק",
+   "ruling": "borderline",
+   "counts_for_recall": true,
+   "rule": "R-C6",
+   "date": "2026-10-07",
+   "source": "jeff comms/10-7-2026/Brief response, 10.7.docx (1A)",
+   "his_words": "borderline. This is an unusual case, as the “incident” is not narrated in full, and has to be filled in based on the context and with the help of the Talmudic commentaries."
+  },
+  {
+   "tractate": "Ketubot",
+   "ref": "Ketubot 51a",
+   "list_id": "ketubot_030",
+   "text_starts": "ההוא יתום ויתומה דאתו לקמיה דרבא",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (Q1)",
+   "his_words": "these cases and similar ones are not a story rather than that they are borderline. ... Shmuel orders R. Benai to sustain the daughters. You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly. So probably better to consider such cases as not even stories rather than borderline.",
+   "tier": "direct"
+  },
+  {
+   "tractate": "Ketubot",
+   "ref": "Ketubot 65b",
+   "list_id": "ketubot_065",
+   "text_starts": "דביתהו דרב יוסף בריה דרבא אתאי לקמיה דרב נחמיה",
+   "ruling": "borderline",
+   "counts_for_recall": true,
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (2A)",
+   "his_words": "Borderline. In this case, it is a little more than a ruling. It is a courtroom drama, and the rabbi \"apportions\" wine for the woman, that is, grants her a wine allowance. I think this creates more dynamism, that is, more change. So it is borderline. Had the rabbi just stated something, (\"Said R. Ami...\") it would not even be borderline.",
+   "tier": "direct"
+  },
+  {
+   "tractate": "Yevamot",
+   "ref": "Yevamot 45a",
+   "list_id": "yevamot_014",
+   "text_starts": "ואף רב מתנה מורה בה להיתירא",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (2B)",
+   "his_words": "Yes, I think we can reject this one. Not a story.",
+   "tier": "direct"
+  },
+  {
+   "tractate": "Gittin",
+   "ref": "Gittin 89a",
+   "list_id": "gittin_111",
+   "text_starts": "ההיא דנפק עלה קלא דאיקדשה לחד מבני פלניא",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (2C)",
+   "his_words": "This one too should not be considered a story",
+   "tier": "direct"
+  },
+  {
+   "tractate": "Ketubot",
+   "ref": "Ketubot 53a",
+   "list_id": "ketubot_034",
+   "text_starts": "יתיב ר\"נ ועולא ואבימי בר רב פפי",
+   "ruling": "not",
+   "counts_for_recall": false,
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (Q1)",
+   "his_words": "these cases and similar ones are not a story rather than that they are borderline. ... Shmuel orders R. Benai to sustain the daughters. You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly. So probably better to consider such cases as not even stories rather than borderline.",
+   "tier": "description"
+  }
+ ]
 }

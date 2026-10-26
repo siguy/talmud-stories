@@ -135,6 +135,22 @@ post-biblical figures."*
   being ruled on is not enough; the incident needs **another narrated action or change**
   besides the ruling. The cow case has one (*stole and sold*). His February `no` on this
   passage stands — it was about the passage, not the span we showed him.
+- **Not even borderline, Jeff 2026-10-25** (`jeff comms/10-25-2026/reply.md`, Q1): one
+  event, then a ruling or a discussion, and nothing changes afterwards — *"these cases and
+  similar ones are not a story rather than that they are borderline."* An order that only
+  *implies* the outcome does not count: *"Shmuel orders R. Benai to sustain the daughters.
+  You could argue that the interaction implies that R. Benai did so. But it is not really
+  stated explicitly."* This replaces his February borderlines on the shape (R-C7 shape 2).
+- **Where the limit stops, Jeff 2026-10-25** (Ketubot 65a:10, 2A): a ruling that is itself
+  an act that changes something keeps a passage **borderline** — *"it is a little more than
+  a ruling. It is a courtroom drama, and the rabbi 'apportions' wine for the woman… this
+  creates more dynamism, that is, more change. … Had the rabbi just stated something,
+  ('Said R. Ami...') it would not even be borderline."* Yevamot 45a:16 (2B) and Gittin
+  89a:19 (2C), a case before a rabbi and his ruling: **not**.
+- **Applied:** `scripts/apply_jeff_2026-10-25_verdicts.py`. Its `direct` tier is the
+  passages he named; its `description` tier is his own February borderlines whose note
+  names this shape (Ketubot 53a:12; held back: 54a:13-14, where Rav Nahman changes his ruling, and 77a:8, the Mishnah story he affirmed under R-C1) — "similar ones" is his word, which
+  passages are similar is ours, so that tier is applied separately.
 
 ### R-C1 · A Mishnah story belongs to the Mishnah; the Talmud's quotation of it is Talmudic
 **Jeff, 2026-09-01:** *"10a is just the Mishnah itself, that the printers included in the
@@ -298,12 +314,13 @@ together they fall into four shapes. Each line below is his, on the passage name
 2. **One real event, then discussion or a ruling.** *"just one real event and then
    discussion"* (Ketubot 50b:9); *"really just one event, then a legal discussion"*
    (Ketubot 51a); *"one event following by a ruling. But it has an implied change"*
-   (Ketubot 77a). **Open — his rulings disagree over time** (`jeff:one-event-then-ruling`):
-   borderline in February 2026, but *"Not a story. One action followed by a legal
-   discussion"* (Kiddushin 39a, April) and Ketubot 50b:4 `not` (October). Narrowing this
-   shape to the later words was measured on 2026-10-09 and reverted: it returned 19 of his
-   yes/borderline passages to `not` to save one of his `no`s
-   (`docs/findings/2026-10-09-borderline-definition-test.md`, v5).
+   (Ketubot 77a). **Withdrawn by him, 2026-10-25** (`jeff:one-event-then-ruling`): *"these
+   cases and similar ones are not a story rather than that they are borderline"* — see
+   R-C0. **This is no longer a borderline shape**, unless the ruling is itself an act that
+   changes something (Ketubot 65a, R-C0). *History:* the narrowing to his later words was
+   measured on 2026-10-09 and reverted as costing 19 of his yes/borderline passages
+   (`docs/findings/2026-10-09-borderline-definition-test.md`, v5); his answer makes the
+   ones of this shape correct rejections, not costs.
 3. **Events, but weak causality or little change.** *"There are two events but no
    causality"* (Ketubot 14b); *"minimal causality. But there is some, and some change"*
    (Ketubot 50b:6); *"The change in outcome is absent, or at best, implied"* (Ketubot 100b).

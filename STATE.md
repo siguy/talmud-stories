@@ -14,10 +14,10 @@ provenance is a bug in the generator (FRAMEWORK §3).
 
 | | Triage | Detection | Classification | Boundaries | Review | Publication |
 |---|---|---|---|---|---|---|
-| **Ketubot** | 96.6% artifact · **98.0% code** · n=147 B | 90.8% artifact · **90.4% code** B | STATUS · C | STATUS | 6 rounds | ⬜ |
+| **Ketubot** | 97.2% artifact · **98.0% code** · n=145 B | 90.8% artifact · **90.4% code** B | STATUS · C | STATUS | 6 rounds | ⬜ |
 | **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 5 rounds | ⬜ |
-| **Gittin** | 100.0% · n=111 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
-| **Yevamot** | 100.0% · n=101 B | 89.1% B | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Gittin** | 100.0% · n=110 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
+| **Yevamot** | 100.0% · n=100 B | 89.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
 | **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     23 item(s) in work/done/
+closed     24 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -138,8 +138,8 @@ closed     2 item(s) in work/done/
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
 | `results/expert_lists/superseded_by_rule.json` | **UNKNOWN** | **shape not recognised by `board.py`** — top-level keys: `entries`, `match`, `what`, `why` |
 | `results/expert_lists/yevamot_2005.json` | **BLIND** | 102 parsed · 102 blind · 102 count for recall |
-| `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 134 entries · 116 accepted |
-| `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 189 entries · 162 accepted |
+| `results/canonical/gittin_canonical.json` | **CIRCULAR** | 178 pages · 134 entries · 115 accepted |
+| `results/canonical/ketubot_canonical.json` | **CIRCULAR** | 222 pages · 190 entries · 160 accepted |
 | `results/canonical/kiddushin_canonical.json` | **CIRCULAR** | 162 pages · 96 entries · 85 accepted |
 | `results/rulers/gittin_ruler.json` | **JOINED** | denominator 111 · found 108 |
 | `results/rulers/ketubot_ruler.json` | **JOINED** | denominator 149 · found 130 |
@@ -154,8 +154,6 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 Counts are measured; files holding zero verdicts are not listed, because
 naming an empty file as a lost round buries the one that is not.
 
-- `validation/feedback/axis_review round 2026-09-15 — 14 passages, four questions_review_2026-09-16  - simon.json` — **8 verdicts**
-- `validation/feedback/axis_review round 2026-09-16 — 10 passages, four questions_review_2026-09-23.json` — **10 verdicts**
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
@@ -176,4 +174,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: a10686f479a17edf -->
+<!-- board-checksum: b0ba75844c6739a4 -->
