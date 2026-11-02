@@ -11051,7 +11051,7 @@
         {
           "start_segment": 9,
           "end_segment": 10,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "NOT_A_STORY",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -11101,6 +11101,18 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-25",
+              "source": "jeff comms/10-25-2026/reply.md",
+              "action": "reclassify",
+              "rule": "R-C0",
+              "tier": "direct",
+              "old": "LOW_CONFIDENCE",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (Q1, 2026-10-25): these cases and similar ones are not a story rather than that they are borderline. ... Shmuel orders R. Benai to sustain the daughters. You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly. So probably better to consider such cases as not even stories rather than borderline. -- his February note on this passage: \"just one real event and then discussion\""
+            }
           ]
         }
       ]
@@ -11179,7 +11191,31 @@
           "hebrew": "דְּאִי רַבִּי מֵאִיר, הָאָמַר: אַחְרָיוּת — לָאו טָעוּת סוֹפֵר הוּא. דִּתְנַן: מָצָא שִׁטְרֵי חוֹב — אִם"
         }
       ],
-      "stories": [],
+      "stories": [
+        {
+          "start_segment": 1,
+          "end_segment": 2,
+          "classification": "NOT_A_STORY",
+          "one_sentence_summary": "Orphans come before Rava, who tells the trustees to give the boy more so his sister is provided for; the Sages challenge him.",
+          "source": "jeff_verdict",
+          "rules": [
+            "R-C1",
+            "R-C0"
+          ],
+          "corpus": "talmud",
+          "provenance": {
+            "source": "jeff_verdict",
+            "added": "2026-10-25",
+            "verdict_date": "2026-10-25",
+            "verdict_source": "jeff comms/10-25-2026/reply.md",
+            "question": "Q1",
+            "his_words": "these cases and similar ones are not a story rather than that they are borderline. ... Shmuel orders R. Benai to sustain the daughters. You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly. So probably better to consider such cases as not even stories rather than borderline.",
+            "february_words": "really just one event, then a legal discussion",
+            "added_by": "apply_jeff_2026-10-25_verdicts.py",
+            "expert_confirmed_boundaries": false
+          }
+        }
+      ],
       "skipped_by_triage": true
     },
     {
@@ -11884,7 +11920,7 @@
         {
           "start_segment": 12,
           "end_segment": 12,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "NOT_A_STORY",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -11934,6 +11970,18 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-25",
+              "source": "jeff comms/10-25-2026/reply.md",
+              "action": "reclassify",
+              "rule": "R-C0",
+              "tier": "description",
+              "old": "LOW_CONFIDENCE",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (Q1, 2026-10-25): these cases and similar ones are not a story rather than that they are borderline. ... Shmuel orders R. Benai to sustain the daughters. You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly. So probably better to consider such cases as not even stories rather than borderline. -- his February note on this passage: \"Basically one event and a discussion about it.\""
+            }
           ]
         }
       ]
@@ -15245,7 +15293,7 @@
         {
           "start_segment": 10,
           "end_segment": 10,
-          "classification": "LOW_CONFIDENCE",
+          "classification": "BORDERLINE",
           "criteria": {
             "identifiable_characters": {
               "met": true,
@@ -15298,6 +15346,18 @@
           "corpus": "talmud",
           "rules": [
             "R-C1"
+          ],
+          "corrections": [
+            {
+              "date": "2026-10-25",
+              "source": "jeff comms/10-25-2026/reply.md",
+              "action": "reclassify",
+              "rule": "R-C0",
+              "tier": "direct",
+              "old": "LOW_CONFIDENCE",
+              "new": "BORDERLINE",
+              "note": "Jeff (2A, 2026-10-25): Borderline. In this case, it is a little more than a ruling. It is a courtroom drama, and the rabbi \"apportions\" wine for the woman, that is, grants her a wine allowance. I think this creates more dynamism, that is, more change. So it is borderline. Had the rabbi just stated something, (\"Said R. Ami...\") it would not even be borderline."
+            }
           ]
         },
         {
@@ -28687,6 +28747,39 @@
         "question": "4A",
         "old": null,
         "new": "YES"
+      }
+    ]
+  },
+  "jeff_2026_10_25": {
+    "source": "jeff comms/10-25-2026/reply.md",
+    "applied": [
+      {
+        "key": "Ketubot 50b_9-10",
+        "question": "Q1",
+        "tier": "direct",
+        "old": "LOW_CONFIDENCE",
+        "new": "NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 51a_1-2",
+        "question": "Q1",
+        "tier": "direct",
+        "old": null,
+        "new": "NOT_A_STORY"
+      },
+      {
+        "key": "Ketubot 65a_10-10",
+        "question": "2A",
+        "tier": "direct",
+        "old": "LOW_CONFIDENCE",
+        "new": "BORDERLINE"
+      },
+      {
+        "key": "Ketubot 53a_12-12",
+        "question": "Q1",
+        "tier": "description",
+        "old": "LOW_CONFIDENCE",
+        "new": "NOT_A_STORY"
       }
     ]
   }

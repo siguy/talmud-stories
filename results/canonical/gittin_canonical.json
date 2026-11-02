@@ -14,11 +14,11 @@
     "expert_verdict": 25
   },
   "classification_distribution": {
-    "YES": 112,
     "BORDERLINE": 4,
-    "NOT_A_STORY": 18
+    "NOT_A_STORY": 19,
+    "YES": 111
   },
-  "recall_denominator": 111,
+  "recall_denominator": 110,
   "unlabelled_proposals": [
     {
       "ref": "Gittin 4a",
@@ -18533,12 +18533,24 @@
           "one_sentence_summary": "A rumor circulates that a certain woman was betrothed, leading into a case involving a minor who looks like an adult.",
           "detector_classification": "HIGH_CONFIDENCE",
           "corpus": "talmud",
-          "classification": "YES",
+          "classification": "NOT_A_STORY",
           "label_source": "expert_blind_list",
           "expert_list_id": "gittin_111",
           "expert_list_ref": "Gittin 89a",
           "expert_list_text": "ההיא דנפק עלה קלא דאיקדשה לחד מבני פלניא, אמר רבא: אפי' למאן דאמר לא מבטלינן קלא, בהא מבטלינן קלא, מימר אמרי: עיינו בהו רבנן בקידושי, וקידושי קטן הוו.",
-          "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span."
+          "label_means": "his 2005 list names a story that this span overlaps. It does NOT validate the extent -- no one has judged this span.",
+          "corrections": [
+            {
+              "date": "2026-10-25",
+              "source": "jeff comms/10-25-2026/reply.md",
+              "action": "reclassify",
+              "rule": "R-C0",
+              "tier": "direct",
+              "old": "YES",
+              "new": "NOT_A_STORY",
+              "note": "Jeff (2C, 2026-10-25): This one too should not be considered a story"
+            }
+          ]
         }
       ],
       "mishnah_stories": [],
@@ -18787,5 +18799,17 @@
       "mishnah_stories": [],
       "skipped_by_triage": true
     }
-  ]
+  ],
+  "jeff_2026_10_25": {
+    "source": "jeff comms/10-25-2026/reply.md",
+    "applied": [
+      {
+        "key": "Gittin 89a_19-19",
+        "question": "2C",
+        "tier": "direct",
+        "old": "YES",
+        "new": "NOT_A_STORY"
+      }
+    ]
+  }
 }

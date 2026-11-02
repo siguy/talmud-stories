@@ -45,7 +45,10 @@ GOLDEN_COUNTS = {
     # 187/163 -> 189/162 on 2026-10-09: Jeff's 2026-10-07 verdicts. 21b:0, 53a:11, 50b:4
     # -> NOT_A_STORY; 50a:10 (BORDERLINE) and 61a:14 (YES) added
     # (scripts/apply_jeff_2026-10-07_verdicts.py).
-    "ketubot": {"pages": 222, "entries": 189, "accepted": 162},
+    # 189/162 -> 190/159 on 2026-10-26: Jeff's 2026-10-25 reply (one event then a ruling is
+    # not a story). 50b:9-10, 53a:12 -> NOT_A_STORY; 51a:1-2 added as NOT_A_STORY;
+    # 65a:10 -> BORDERLINE (scripts/apply_jeff_2026-10-25_verdicts.py --tier description).
+    "ketubot": {"pages": 222, "entries": 190, "accepted": 160},
     "kiddushin": {"pages": 162, "entries": 96, "accepted": 85},
     # Gittin, 2026-09-02. `accepted` here counts BORDERLINE, because that is what this
     # test's definition has always meant (anything not NOT_A_STORY) and silently
@@ -56,7 +59,8 @@ GOLDEN_COUNTS = {
     # `ההוא דאמר להו: אי לא נסיבנא` at 34a:11 — the man who did not MARRY within 30
     # days. 34a:9 is the near-identical neighbour, the man who did not RETURN. Nobody
     # labelled it; it is an unlabelled proposal now, which is what it always was.
-    "gittin": {"pages": 178, "entries": 134, "accepted": 116},
+    # 116 -> 115 on 2026-10-26: Gittin 89a:19 NOT_A_STORY by Jeff's 2026-10-25 reply (2C).
+    "gittin": {"pages": 178, "entries": 134, "accepted": 115},
 }
 
 # Gittin is the first golden built from two kinds of expert evidence, and the first to
@@ -65,7 +69,8 @@ GOLDEN_COUNTS = {
 GITTIN_SHAPE = {
     # -1 blind-list label and +1 unlabelled proposal, 2026-09-03: see the note above.
     "label_sources": {"expert_blind_list": 109, "expert_verdict": 25},
-    "classification_distribution": {"YES": 112, "BORDERLINE": 4, "NOT_A_STORY": 18},
+    # YES 112 -> 111, NOT 18 -> 19 on 2026-10-26: Gittin 89a:19 (Jeff, 2026-10-25, 2C).
+    "classification_distribution": {"YES": 111, "BORDERLINE": 4, "NOT_A_STORY": 19},
     # 24 -> 22 on 2026-09-25: Gittin 57b:0-4 and 68a:7-12 were judged (2026-09-23) --
     # stories, but of biblical characters (R-S1). They moved to `out_of_scope`, not in.
     "unlabelled_proposals": 22,

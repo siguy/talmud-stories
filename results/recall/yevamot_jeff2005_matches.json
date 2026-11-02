@@ -433,8 +433,14 @@
   "only_rejected": false,
   "in_mishnah_filtered": false,
   "in_golden": null,
-  "superseded_by_rule": null,
-  "counts_for_recall": true
+  "superseded_by_rule": {
+   "ruling": "not",
+   "rule": "R-C0",
+   "date": "2026-10-25",
+   "source": "jeff comms/10-25-2026/reply.md (2B)",
+   "his_words": "Yes, I think we can reject this one. Not a story."
+  },
+  "counts_for_recall": false
  },
  {
   "id": "yevamot_015",

@@ -40,5 +40,5 @@ def test_a_ruling_that_matches_no_row_raises(tmp_path):
 
 
 def test_unruled_rows_still_count():
-    rows = apply_superseded([{"ref": "Ketubot 2b", "text": "x"}], "Gittin")
+    rows = apply_superseded([{"ref": "Eruvin 2b", "text": "x"}], "Eruvin")   # a tractate he has not ruled on
     assert rows[0]["counts_for_recall"] is True and rows[0]["superseded_by_rule"] is None
