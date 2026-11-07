@@ -1390,7 +1390,13 @@ Return JSON:
             print("  checkpoint was written by a different prompt/flags/model -- NOT resumed")
             return {}
         wanted = {p.get('ref') for p in pages_to_process}
-        return {ref: r for ref, r in blob.get('done', {}).items() if ref in wanted}
+        # A page whose call failed is not done: drop it so this run asks again
+        # (2026-11-07 review, finding 7).
+        done = {ref: r for ref, r in blob.get('done', {}).items() if ref in wanted}
+        retry = [ref for ref, r in done.items() if r.get('stage2_error')]
+        if retry:
+            print(f"  checkpoint: {len(retry)} failed page(s) will be retried: {', '.join(retry)}")
+        return {ref: r for ref, r in done.items() if ref not in retry}
 
     def _write_checkpoint(self, path: str, done: Dict) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -1509,6 +1515,9 @@ Return JSON:
         all_results = []
         done = self._load_checkpoint(checkpoint_path, pages_to_process)
         self.resumed_pages = len(done)
+        # Rebuilt from what this run holds, so it never carries a failure that has
+        # since been retried, nor forgets one that was resumed.
+        self.stage2_errors = [ref for ref, r in done.items() if r.get('stage2_error')]
         if done:
             print(f"  RESUMED {len(done)} page(s) from checkpoint {checkpoint_path}")
         for i, page in enumerate(pages_to_process):
