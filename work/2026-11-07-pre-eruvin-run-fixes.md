@@ -26,20 +26,20 @@ the run first means scoring a defect as a recall number.
 
 ## Must land before the run (P1 + the P2s that change the number)
 
-- [ ] **1** 4c `merge_cross_page_stories`: require the page-1 story to end at the page's last
+- [x] **1** 4c `merge_cross_page_stories`: require the page-1 story to end at the page's last
       segment, or delete 4c (4b case 4 covers the flagged seg-0 case). Test: the Gittin 36a
       shape (one-segment story mid-page, flag only on the other side) must not merge.
-- [ ] **2** Sort `stories` by `start_segment` at the end of `detect_stories`, after
+- [x] **2** Sort `stories` by `start_segment` at the end of `detect_stories`, after
       `validate_story_spans`; 4b/4c select the boundary story by max `end_segment` / min
       `start_segment`. Test: a twin appended after a flagged boundary story.
-- [ ] **3** `_call_stage2`: after the second empty / truncated / unparseable response, raise
+- [x] **3** `_call_stage2`: after the second empty / truncated / unparseable response, raise
       so `_detect_with_retry` records `stage2_error`; count the no-candidates branch. Test:
       failure injection — a mocked `""` twice must produce `stage2_error`, never `stories: []`
       (Lesson 21, Lesson 31).
-- [ ] **4** `measure_recall_vs_expert_list.py` and `measure_strict_recall.py`: read
+- [x] **4** `measure_recall_vs_expert_list.py` and `measure_strict_recall.py`: read
       `stage2_error`; rows on a failed page are `call_failed`, out of both denominators,
       counted in the log.
-- [ ] **7** `_load_checkpoint` drops entries carrying `stage2_error` so a resumed run retries
+- [x] **7** `_load_checkpoint` drops entries carrying `stage2_error` so a resumed run retries
       them, and rebuilds `stage2_errors` from what it did resume.
 - [ ] **6** `run_meta`: detector module name (from the import, not a literal), twin-pass env
       (`TWIN_PASS`, `TWIN_TRIGGER`, `TWIN_REACH`), `SERIES_RULE`, `_stage2_fingerprint`, git
@@ -69,7 +69,7 @@ the run first means scoring a defect as a recall number.
 - [ ] **15** `measure_strict_recall.py` applies `superseded_by_rule.json`; regenerate the
       Yevamot / Gittin strict files.
 - [ ] **16** `audit_miss_anatomy.py` derives its tractates from `board.TRACTATES`.
-- [ ] **17** `tests/__init__.py`; retire or mark manual `test_wave4_ship_gate` (it calls a
+- [x] **17** `tests/__init__.py`; retire or mark manual `test_wave4_ship_gate` (it calls a
       retired model with a live key).
 
 ## Not before the run — P3s in the finding
