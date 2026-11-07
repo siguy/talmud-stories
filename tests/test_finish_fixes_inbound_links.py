@@ -123,7 +123,7 @@ def test_the_link_checker_sees_untracked_files():
     is not a guard you can rely on the moment it matters most — right after you write a
     file (Lesson 38).
     """
-    import test_bookkeeping
+    from tests import test_bookkeeping  # tests/ is a package (tests/__init__.py)
     probe = ROOT / 'ZZ_SCRATCH_untracked_link_probe.md'
     try:
         probe.write_text('[nope](does/not/exist/at/all.md)\n')
