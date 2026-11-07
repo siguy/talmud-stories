@@ -66,3 +66,51 @@ def test_4b_case_4_still_merges_the_flagged_seg0_case():
     merge_cross_page_stories_v7([p1, p2], triage)
     assert p1['stories'][0]['spans_pages'] == ['G 36a', 'G 36b']
     assert p2['stories'] == []
+
+
+# --- Finding 2 -------------------------------------------------------------------
+
+def _boundary_and_twin():
+    """Page 1's list as the twin pass leaves it: the flagged boundary story first,
+    a mid-page twin appended after it. Page 2's list: a twin appended after the
+    seg-0 story."""
+    boundary = story(10, 13, to_next=True, summary='boundary')
+    twin1 = story(4, 5, summary='twin on page 1')
+    first = story(0, 2, from_prev=True, summary='continuation')
+    twin2 = story(6, 7, summary='twin on page 2')
+    p1 = page('G 36a', [boundary, twin1])
+    p2 = page('G 36b', [twin2, first])
+    return p1, p2, boundary, twin1, first, twin2
+
+
+def test_4c_picks_the_boundary_stories_not_the_list_ends():
+    p1, p2, boundary, twin1, first, twin2 = _boundary_and_twin()
+    merge_cross_page_stories([p1, p2])
+    assert boundary.get('spans_pages') == ['G 36a', 'G 36b']
+    assert boundary['end_segment_page2'] == 2
+    assert 'spans_pages' not in twin1
+    assert p2['stories'] == [twin2], 'the wrong page-2 story was removed'
+
+
+def test_4b_picks_the_boundary_stories_not_the_list_ends():
+    p1, p2, boundary, twin1, first, twin2 = _boundary_and_twin()
+    triage = {'G 36a': [D] * 13 + [N], 'G 36b': [N] + [D] * 13}
+    merge_cross_page_stories_v7([p1, p2], triage)
+    assert boundary.get('spans_pages') == ['G 36a', 'G 36b']
+    assert boundary['end_segment_page2'] == 2
+    assert 'spans_pages' not in twin1
+    assert p2['stories'] == [twin2], 'the wrong page-2 story was removed'
+
+
+def test_detect_stories_returns_stories_in_page_order(monkeypatch):
+    """The twin pass appends; detect_stories must hand Stage 4 a sorted list."""
+    import src.story_detector_v11 as mod
+    d = mod.V7StoryDetector.__new__(mod.V7StoryDetector)
+    d.client = object(); d.ground_truth = None; d.ground_truth_db = None
+    monkeypatch.setenv('TWIN_PASS', '1')
+    monkeypatch.setattr(d, 'build_detection_prompt', lambda *a, **k: 'prompt')
+    monkeypatch.setattr(d, '_call_stage2', lambda ref, p: [story(10, 13, to_next=True)])
+    monkeypatch.setattr(d, '_find_additional_stories', lambda *a, **k: [])
+    monkeypatch.setattr(d, '_find_adjacent_twins', lambda *a, **k: [story(4, 5)])
+    out = d.detect_stories('G 36a', page('G 36a', [])['segments'], [D] * 14)
+    assert [s['start_segment'] for s in out] == [4, 10]
