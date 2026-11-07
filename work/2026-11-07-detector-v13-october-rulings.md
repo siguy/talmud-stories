@@ -57,7 +57,7 @@ for `fix/pre-eruvin-run-path` to merge, then build.
    `grep -l story_detector_v11 tests/`) so they pin v13; v11's own tests stay on v11.
    `test_prompt_is_fully_substituted` must pass on v13 — the 2026-09-09 incident was a
    prompt edit that ended an f-string early and lost every few-shot.
-5. **Measure on the Yevamot slice** (`results/v11/v13_slice/slice.txt`, 20 pages), the
+5. **Measure on the Yevamot slice** (copy `results/v11/twin_pass/slice.txt` to `results/v11/v13_slice/slice.txt`; 20 pages), the
    configuration every shipped number comes from (`gemini-3-flash-preview`, thinking off,
    twin pass on): v11 twice, v13 twice, same day. `python3 scripts/score_noise_floor_slice.py results/v11/v13_slice`
    gives mean recall, spread and `span_repairs` per arm. ~4 min and a few cents a run.
