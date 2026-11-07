@@ -168,6 +168,10 @@ def validate_story_spans(ref: str, stories: List[Dict], n_segments: int):
     return kept, repairs
 
 
+class EmptyStage2Response(RuntimeError):
+    """Stage 2 came back empty, truncated or unparseable on both attempts."""
+
+
 class V7StoryDetector:
     """
     v7 story detection with event-annotated constrained prompt.
@@ -466,6 +470,9 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 config=types.GenerateContentConfig(**config_kwargs),
             )
             if not response.candidates:
+                # Same failed call as the empty-parts branch below; count it too.
+                print("  EMPTY RESPONSE from model (no candidates)")
+                self.empty_responses = getattr(self, 'empty_responses', []) + ['NO_CANDIDATES']
                 return ""
             # A candidate can come back with content=None or parts=None — MAX_TOKENS
             # spent on thinking, or a safety stop. That is a FAILED call, not an
@@ -830,7 +837,10 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             if attempt == 0:
                 print(f"    Retrying {ref} (JSON parse failed)...")
                 time.sleep(1)
-        return []
+        # Two empty / truncated / unparseable responses are a FAILED call, not "no
+        # stories" (Lesson 21; 2026-11-07 review, finding 3). Raise so the page is
+        # recorded with stage2_error and the scorer can keep it out of Detection.
+        raise EmptyStage2Response(f'{ref}: Stage 2 returned no parseable response twice')
 
     # Segment labels that make a neighbour worth asking about. Stage 1 already computed
     # these; they are the trigger so that no lexical rule is (Lesson 15).
@@ -1401,6 +1411,9 @@ Return JSON:
         for n in range(attempts):
             try:
                 return self.detect_stories(ref, segments, events, prev_ctx, next_ctx), None
+            except EmptyStage2Response as e:
+                # Already asked twice inside _call_stage2; record it, keep the run going.
+                return [], f"EmptyStage2Response: {e}"
             except Exception as e:  # noqa: BLE001 - classify, then decide
                 code = getattr(e, 'code', None) or getattr(e, 'status_code', None)
                 retryable = code in self.RETRYABLE_STATUS or 'UNAVAILABLE' in str(e)
