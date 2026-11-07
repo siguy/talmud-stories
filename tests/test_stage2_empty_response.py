@@ -59,3 +59,22 @@ def test_no_candidates_is_counted_like_empty_parts():
         generate_content=lambda **k: SimpleNamespace(candidates=[])))
     assert d._call_google('p') == ''
     assert len(getattr(d, 'empty_responses', [])) == 1
+
+
+def test_a_failed_second_pass_keeps_the_first_pass_stories(monkeypatch):
+    """The "find more stories" pass is an EXTRA call. Its failure must not delete the
+    first pass's parsed stories, and must not fail the page -- it is counted instead."""
+    monkeypatch.setenv('TWIN_PASS', '0')
+    d = V7StoryDetector.__new__(V7StoryDetector)
+    d.client = object(); d.model_name = 'test-model'; d.thinking_level = None
+    d.ground_truth = None; d.ground_truth_db = None
+    monkeypatch.setattr(d, 'build_detection_prompt', lambda ref, *a, **k: ref)
+    first = '{"stories": [{"start_segment": 0, "end_segment": 0, "classification": "HIGH_CONFIDENCE"}]}'
+    monkeypatch.setattr(d, '_call_google',
+                        lambda prompt, *a, **k: first if prompt == 'X 1a' else '')
+    monkeypatch.setattr('time.sleep', lambda *_: None)
+    out = d.run_pipeline(PAGES[1:2], triage_results=TRIAGE, delay=0)
+    page = out['pages'][0]
+    assert 'stage2_error' not in page
+    assert [s['classification'] for s in page['stories']] == ['HIGH_CONFIDENCE']
+    assert d.pass2_failures == ['X 1a']

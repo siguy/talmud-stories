@@ -773,10 +773,16 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         real_stories = [s for s in stories
                         if s.get('classification') not in ('NOT_A_STORY', None)]
         if real_stories:
-            extra = self._find_additional_stories(
-                ref, segments, event_types, real_stories,
-                prev_page_context, next_page_context,
-            )
+            # An EXTRA call: if it fails, keep the first pass's stories and count the
+            # failure; only a first-pass failure fails the page (Lesson 21).
+            try:
+                extra = self._find_additional_stories(
+                    ref, segments, event_types, real_stories,
+                    prev_page_context, next_page_context,
+                )
+            except EmptyStage2Response:
+                self.pass2_failures = getattr(self, 'pass2_failures', []) + [ref]
+                extra = []
             if extra:
                 merged = self._merge_nonoverlapping(stories, extra)
                 added = len(merged) - len(stories)
