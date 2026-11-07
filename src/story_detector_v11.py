@@ -2408,6 +2408,14 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
         if last_story.get('spans_pages'):
             continue
 
+        # A story that ends mid-page cannot continue onto the next page: the
+        # segments between it and the break belong to something else. Same gap
+        # rule 4d/4f enforce. Without it Gittin 36a's one-segment story at seg 2
+        # of 14 was bridged to 36b and 36b's own first story deleted (2026-11-07
+        # review, finding 1).
+        if last_story.get('end_segment') != len(page_n.get('segments', [])) - 1:
+            continue
+
         last_cont = last_story.get('continuation', {})
         first_cont = first_story.get('continuation', {})
 
@@ -2435,6 +2443,7 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
             last_story['spans_pages'] = [page_n['ref'], page_n1['ref']]
             last_story['start_segment_page2'] = first_story.get('start_segment')
             last_story['end_segment_page2'] = first_story.get('end_segment')
+            last_story['cross_page_merge_legacy'] = True  # findable, like 4b's marker
 
             # Remove the first story from page N+1 (it's merged into page N)
             stories_n1.pop(0)
