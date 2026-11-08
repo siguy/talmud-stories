@@ -18,7 +18,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import src.story_detector_v13 as detector_module  # noqa: E402  (the live detector)
+import src.story_detector_v14 as detector_module  # noqa: E402  (the live detector)
 from src.event_triage import EventType  # noqa: E402
 
 PLACEHOLDER = re.compile(r'\{[a-z_]{3,}\}')
@@ -46,7 +46,7 @@ def test_no_unsubstituted_placeholder_reaches_the_model():
         'almost certainly split by a concatenation')
 
 
-def test_v13_has_one_prompt_and_no_series_gate(monkeypatch):
+def test_live_detector_has_one_prompt_and_no_series_gate(monkeypatch):
     """v13 dropped SERIES_RULE (off, unmeasured, superseded by the twin pass). Setting
     the old env var must change nothing — v11 keeps the gate, frozen."""
     assert not hasattr(detector_module, '_SERIES_RULE')

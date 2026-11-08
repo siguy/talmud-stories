@@ -42,7 +42,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.ground_truth import EventType                       # noqa: E402
-from src.story_detector_v13 import V7StoryDetector             # noqa: E402  (live detector)
+from src.story_detector_v14 import V7StoryDetector             # noqa: E402  (live detector)
 
 PAGES = [
     {"ref": "Ketubot 2a", "segments": [{"index": i, "english": f"a{i}", "hebrew": ""} for i in range(4)]},
@@ -134,7 +134,7 @@ def test_the_bypass_only_ever_adds_pages():
 
 # ------------------------------------------------------------------- the old spelling
 
-def test_v13_has_no_skip_triage_alias():
+def test_live_detector_has_no_skip_triage_alias():
     """Dropped in v13: its last caller (tests/ablation_test.py) was archived 2026-11-07.
     v11 keeps the alias, frozen; v7-v10 keep the stub (pinned below)."""
     with pytest.raises(TypeError, match="skip_triage"):
