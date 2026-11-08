@@ -185,7 +185,7 @@ archive/                          # Old versions (reference only)
 | `docs/findings/2026-03-25-golden-dataset-v10.md` | v10 session writeup |
 | `docs/findings/2026-03-25-overfitting-and-generalization-research.md` | Why prompt engineering has a ceiling |
 | `docs/technical/new_tractate_workflow.md` | Step-by-step for new tractates |
-| `src/story_detector_v*.py` | **The highest-numbered file is the active detector; every lower one is a frozen ship point — never edit those in place.** `ls src/story_detector_v*.py` is the source of truth; a version number written in this file is not. What each version changed: its own module docstring, and `docs/golden/`. |
+| `src/story_detector_v*.py` | **The active detector is the module `scripts/run_new_tractate.py` imports as `detector_module`; every other version file is frozen — a ship point, or a measured record that was not adopted (v13/v14, 2026-11-07, finding named in their docstrings) — never edit those in place.** `grep -n 'as detector_module' scripts/run_new_tractate.py` is the source of truth; a version number written in this file is not. *Until 2026-11-07 this row said "the highest-numbered file is active"; v14 made that false.* What each version changed: its own module docstring, and `docs/golden/`. |
 | `src/event_triage.py` | Stage 1 event classification |
 | `src/ground_truth.py` | Ground Truth DB (Jeff's labels) |
 | `results/v7/kiddushin_v7.json` | Kiddushin v7 results, pre-Wave-1 |
