@@ -6,8 +6,16 @@ Work item: [`work/2026-11-08-septimus-signup.md`](../../work/2026-11-08-septimus
 ## 1. Goal
 
 Daniel Septimus wants family, friends and community to **collectively learn every story** by the first
-yahrzeit of his father, Joe Septimus (about 9–10 months out; **exact date not confirmed**, Simon to confirm with Daniel).
-Jeff Rubenstein is fine with it. v1 = the **bare minimum** that lets this happen; everything else waits for v2.
+yahrzeit of his father, Joe Septimus. Jeff Rubenstein is fine with it. v1 = the **bare minimum** that lets this happen;
+everything else waits for v2.
+
+**Deadline.** Joe Septimus died on **8 Elul**. 8 Elul 5786 = Friday 21 August 2026, so the first yahrzeit is
+**8 Elul 5787 = Friday 10 September 2027** (computed with `pyluach`; 5787 is a leap year, which is why it falls in
+September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.js`), never hard-coded.
+
+**Sequencing.** The story finder runs across all of Shas first
+([`shas-finder-plan.md`](shas-finder-plan.md)); this sign-up reads the list that produces. PR a below
+(word counts) can land on today's four tractates in the meantime; the sign-up opens to the public on list v1.
 
 ## 2. The numbers that shape the design (measured 2026-11-08 on `site/data/*.json`)
 
@@ -112,30 +120,54 @@ Security rules (no server code in v1):
   progress on the new list. Splits/merges with ambiguous matches are printed for a person to decide, never guessed.
 - New stories in v2 simply start unclaimed. Progress is always reported against the **current** list.
 
-## 8. Backend: options and recommendation
+## 8. Backend: decision
 
 The static site cannot hold shared state; it needs sign-in and a small database.
 
 | | Firebase Auth + Firestore | Supabase (Postgres + Auth) | Vercel functions + hosted Postgres + Auth.js |
 |---|---|---|---|
 | Google SSO | Built in, one switch | Needs a Google OAuth client set up in GCP, pasted into Supabase | Needs the same OAuth client plus Auth.js code |
-| Cost at hundreds of users | Free tier covers it (50k reads/day). On `simon-main` (billing already linked) it is pay-as-you-go: cents/month | Free tier, but **free projects pause after a week without traffic** — a real risk over 10 months | Free tiers, but three services to keep alive |
+| Free tier | Spark: no card, so it can never charge | Free projects **pause after a week without traffic**: a real risk over 10 months | Free tiers, but three services to keep alive |
 | Code we must own | Static pages + security rules. **No server** | Static pages + row-level-security SQL | A server (API routes), schema, migrations |
-| For a non-engineer owner | Google Cloud console Simon already uses; data viewable in a web table | One more account and dashboard | Most moving parts |
-| Data export | Console, `gcloud firestore export`, or a small script → CSV | SQL / CSV, easiest | SQL / CSV |
-| Fits Simon's accounts | Google Cloud (`simon-main`, logged in; feedback endpoint already there) | New account | Vercel (yes) + a DB vendor |
+| For a non-engineer owner | Google console Simon already uses; data viewable as a table | One more account | Most moving parts |
+| Data export | `firebase auth:export` (sign-ups) + a small script for claims | SQL / CSV | SQL / CSV |
 
-**Recommendation: Firebase Auth + Firestore on the existing Google Cloud project `simon-main`.** Site stays on Vercel.
-Fewest moving parts, no server to keep running, Google sign-in is native, and it lives where the feedback endpoint
-already lives. Set a $5 budget alert on the project.
+**Decision: Firebase Auth + Firestore, on a NEW Google Cloud project, on the free Spark plan. Site stays on Vercel.**
 
-Notes: the Firebase web config (including its "API key") is meant to be public and goes in `site/config.js`; access
-is controlled by the security rules and the authorised-domain list, not by hiding it. Restrict the key to the site's
-domain in the console. No other secret is needed in v1.
+**(a) Can v1 stay on Spark (no billing)? Yes.** Checked against what v1 needs:
+- Google sign-in: free on Spark.
+- Firestore: free on Spark up to 50,000 reads, 20,000 writes and 1 GB per day.
+- Security rules and client-side transactions both work on Spark. Assignment (§6) is a client transaction that
+  re-reads each claim doc it writes, and the rules (§6) stop anyone writing a claim that is not theirs or not free.
+  That is safe without a server: the worst a malicious signed-in user can do is claim many free stories under their
+  own account, which a person can see and undo in the console.
+- **Cloud Functions need Blaze** (billing, card). v1 uses none. The later broadcast email does not need them either:
+  export the sign-up emails (`firebase auth:export`) and send one BCC email from Gmail.
+- **The one Spark risk is the daily read quota.** The progress page reads claim docs; at ~3,000 stories, loading
+  every tractate's claims costs up to 3,000 reads. Design for it: overall and per-tractate totals use Firestore
+  `count()` queries (one read per 1,000 docs counted); a tractate's per-story claims load only when someone opens that
+  tractate. Indicated budget at a busy day (100 visits × ~200 reads) ≈ 20,000 reads, within the 50,000. On Spark,
+  exceeding it means reads fail until midnight Pacific; it never costs money. If a launch email is going to hundreds
+  of people at once, switch to Blaze that day with a $5 budget alert (cents at this volume).
 
-**What Simon does after confirming (~10 min, his login):** add Firebase to `simon-main`, enable Google sign-in,
-create the Firestore database, add the site's domain to authorised domains, copy the web config. Claude writes the rules
-and a deploy command for them.
+**(b) Hosting: Vercel** (already live; the feedback endpoint already allows its origin). Sign-in uses
+`signInWithPopup` with the default `<project>.firebaseapp.com` auth domain: no proxy, no extra OAuth setup.
+Known limit: Google blocks sign-in inside in-app browsers (WhatsApp, Instagram, Gmail's viewer); the sign-in button
+detects these and says "open this page in Safari/Chrome". Firebase Hosting would only be needed if popups fail on a
+browser we must support; switching later is a config change, not a rewrite.
+
+**(c) Data export for Simon:** `firebase auth:export signups.csv --format=csv` (names and emails) and
+`scripts/export_signups.py` (claims and progress → CSV, using his own `gcloud` login). Both run on his machine.
+Firestore's managed export (`gcloud firestore export`) needs Blaze and is not used.
+
+The Firebase web config (including its "API key") is meant to be public and goes in `site/config.js`; access is
+controlled by the security rules and the authorised-domain list. No secret exists in v1.
+
+**Setup is agent-driven, on Simon's machine** (this cloud container has no Google credentials):
+[`firebase/setup.sh`](../../firebase/setup.sh) is idempotent (safe to re-run) and
+[`firebase/LOCAL_CLAUDE_PROMPT.md`](../../firebase/LOCAL_CLAUDE_PROMPT.md) is the prompt a local Claude Code session
+runs. Two steps have no command line and are clicks in the Firebase console (~2 min): enable the Google sign-in
+provider, and add `talmud-stories.vercel.app` to authorised domains.
 
 ## 9. Build order (one PR each, branch `septimus/signup-*`, titles start `[Septimus]`)
 
@@ -158,14 +190,14 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 | A boundary change in a later list breaks someone's progress | Overlap map + migration script (§7); nothing is ever deleted |
 | Emails collected without saying so | Sign-in screen says: "We'll use your email only to send occasional reminders about this project." |
 | Yevamot stories are not expert-reviewed | Already labelled "not yet reviewed"; whether they count toward "all the stories" is Simon/Daniel's call |
-| Yahrzeit date unconfirmed | Not used in v1 logic; shown on the page only once confirmed |
+| Yahrzeit date unconfirmed | Config value; shown as "by 8 Elul 5787" once Daniel confirms |
 
 ## 11. Open questions
 
-1. **Backend:** Firebase on `simon-main` (recommended) — confirm. *(asked 2026-11-08)*
+1. **Backend:** Firebase on a new project, Spark plan, Vercel hosting (§8). Confirm when the finder plan is approved.
 2. Time model: one-time total (default) vs minutes per week.
-3. Exact yahrzeit date; Daniel's wording for the Joe Septimus page.
-4. Does Yevamot (not yet reviewed) count toward "all the stories" for the progress bar?
+3. Daniel to confirm the yahrzeit (Friday 10 September 2027) and supply the wording for the Joe Septimus page.
+4. Do the "not yet reviewed" tractates count toward "all the stories" on the progress bar? (Default: yes, labelled.)
 
 ## 12. Found while planning (fixed in PR a)
 
