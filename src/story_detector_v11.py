@@ -653,6 +653,9 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
           - 'skipped'          : LLM error. NO regex fallback (it over-trims —
                                  Jeff 2026-06-03); fail loud.
 
+        A story with `spans_pages` is asked for its START only and carries
+        `text_span_end_skipped: 'spans_pages'`: it ends on the next page.
+
         Returns counts keyed by those outcomes.
         """
         counts = {'clause_llm': 0, 'clause_kept_full': 0,
@@ -679,7 +682,13 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 if not start_ranges or not end_ranges:
                     continue
 
-                if len(start_ranges) == 1 and len(end_ranges) == 1:
+                # A story that runs on into the next page does not END in this
+                # segment, so there is no end to choose; only the start is asked
+                # (2026-11-07 review, finding 11: 10 shipped cases cut the end).
+                cross_page = bool(story.get('spans_pages'))
+                if cross_page:
+                    story['text_span_end_skipped'] = 'spans_pages'
+                if len(start_ranges) == 1 and (cross_page or len(end_ranges) == 1):
                     # Nothing to choose between: the segment is one clause.
                     story['text_span_source'] = 'no_clause_split'
                     counts['no_clause_split'] += 1
@@ -722,7 +731,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 # that standard the cap undoes the trims that remove real
                 # overshoots (ends running past even the 2005 outer limit go
                 # 10 -> 16 of 105). See docs/findings/2026-08-30-trim-asymmetry.md
-                if ec < len(end_ranges) - 1:
+                if not cross_page and ec < len(end_ranges) - 1:
                     offset = end_ranges[ec][1]
                     _assert_word_boundary(end_heb, offset, page.get('ref', '?'),
                                           end, 'end')
