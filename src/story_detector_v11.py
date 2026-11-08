@@ -1081,6 +1081,13 @@ Answer in JSON only:
         story_end = story.get('end_segment', 0)
         return story_end < last_seg_idx
 
+    def _note_stage4_failure(self, stage: str, ref: str) -> None:
+        """A 4d/4f call that raised or came back unparseable. Counted, not only
+        printed: otherwise a run whose every call failed reads as one where no story
+        continued (Lesson 38; 2026-11-07 review, P3)."""
+        self.stage4_call_failures = getattr(self, 'stage4_call_failures', []) + [(stage, ref)]
+        print(f"  Stage {stage} call failed for {ref} (counted in stage4_call_failures)")
+
     def stitch_cross_page_continuation(self, all_results: List[Dict],
                                         pages: List[Dict],
                                         triage_results: Dict[str, List[EventType]],
@@ -1204,6 +1211,8 @@ Return JSON:
                     else:
                         result = self._parse_json_response(content)
 
+                    if result is None:
+                        self._note_stage4_failure('4d', ref)
                     if result and result.get('continues_on_page'):
                         end_seg = result.get('end_segment')
                         if end_seg is not None:
@@ -1219,6 +1228,7 @@ Return JSON:
 
                 except Exception as e:
                     print(f"  Stitch error for {ref}: {e}")
+                    self._note_stage4_failure('4d', ref)
 
         return stitched
 
@@ -1359,6 +1369,8 @@ Return JSON:
                 else:
                     result = self._parse_json_response(content)
 
+                if result is None:
+                    self._note_stage4_failure('4f', ref)
                 if result and result.get('continues'):
                     end_seg = result.get('end_segment')
                     if end_seg is not None:
@@ -1375,6 +1387,7 @@ Return JSON:
 
             except Exception as e:
                 print(f"  Continuation check error for {ref}: {e}")
+                self._note_stage4_failure('4f', ref)
 
         return extended
 
@@ -1672,6 +1685,7 @@ Return JSON:
         all_results = merge_cross_page_stories(all_results)
 
         # 4d: Stitch unmerged boundary stories via targeted LLM calls
+        self.stage4_call_failures = []   # this run's 4d/4f failures, written below
         stitch_count = self.stitch_cross_page_continuation(
             all_results, pages, triage_results, delay=delay
         )
@@ -1760,6 +1774,9 @@ Return JSON:
             # Always written, including as `[]`. A key that appears only when
             # something went wrong reads as absence of the check itself.
             'span_repairs': repairs,
+            # (stage, ref) for every 4d/4f call that raised or was unparseable;
+            # always written, `[]` included, for the same reason.
+            'stage4_call_failures': list(self.stage4_call_failures),
         }
 
 
