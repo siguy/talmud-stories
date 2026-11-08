@@ -8,6 +8,9 @@ the opposite of what they were written for. A third arm (§ "Third arm") puts ea
 on the 2026-10-07 or the 2026-10-25 wording. All of this is **indicated**: two runs per arm,
 the same day.
 
+**Then v14** (three one-line edits aimed at those errors) fixed one of three, halved
+another, and still finds 34/36 against v11's 35/36: **the runner stays on v11** (§ v14).
+
 Item: [`work/done/2026-11-07-detector-v13-october-rulings.md`](../../work/done/2026-11-07-detector-v13-october-rulings.md).
 Code: `src/story_detector_v13.py` = the fixed v11 (PRs #69–#71) + v12's 2026-10-07 wording,
 byte for byte + the 2026-10-25 rulings (R-C0, R-C7 shape 2) + no `SERIES_RULE`, no
@@ -141,7 +144,72 @@ Measure v14 the same way (two v14 runs and two v11 runs, same slice, same day); 
 merge has no candidate sentence yet. 78b:9 waits on Jeff: `jeff:question-and-answer` in
 `comms/JEFF.md`.
 
+## v14 — the three edits, measured
+
+**v14** = v13 + exactly the three one-line edits proposed above (`src/story_detector_v14.py`,
+docstring lists them; nothing else differs, pinned by
+`tests/test_new_detector_code_is_v11_code.py`). Measured the same way, later the same day:
+two v14 runs and **two fresh v11 runs** side by side, same slice, same config, Stage 1
+cache byte-identical, scored by `score_noise_floor_slice.py`. **Indicated**, n = 2.
+
+| arm | run 1 | run 2 | mean recall | spread | proposals | span repairs |
+|---|---|---|---|---|---|---|
+| v11 (first pair) | 35/36 | 35/36 | 97.2% | 0.0 | 41.5 | 0 |
+| v11 (fresh pair) | 35/36 | 35/36 | 97.2% | 0.0 | 41.5 | 0 |
+| v12wording | 35/36 | 35/36 | 97.2% | 0.0 | 41.0 | 0 |
+| v13 | 34/36 | 34/36 | 94.4% | 0.0 | 41.0 | 0 |
+| v14 | 34/36 | 34/36 | 94.4% | 0.0 | 42.5 | 0 |
+
+v11 repeated itself across all four runs on every list story. Stage 2 errors and twin
+failures: 0 in every run.
+
+The targets, runs in order v11 ×2 · v11 fresh ×2 · v12wording ×2 · v13 ×2 · v14 ×2:
+
+| passage | v11 | v11 fresh | v12w | v13 | v14 |
+|---|---|---|---|---|---|
+| 78b:13–20 David and the Gibeonites | N N | N N | N H | Y Y | **N H** |
+| 105b:14–15 Gemara commentary | – – | – – | L L | L L | **L L** |
+| 65b:12 an ordered divorce | – Y | Y Y | – – | L L | **– –** |
+| 90b:9, 90b:10 | L, L ×2 | L, L ×2 | merged H ×2 | merged H ×2 | **H, H ×2 — split again** |
+| 78b:9 R. Eliezer's Q&A (list story) | L L | L L | L L | – – | **– –** |
+
+**Verdict per edit:**
+
+1. *"he himself apportions or hands over"* — **did what it was aimed at.** 65b:12 is out
+   in both v14 runs, as in the v12wording arm. (Note the fresh v11 pair proposes it as YES
+   in both runs: v11 is not "right" here either; only Jeff's 2026-10-25 rule says it should
+   be out.)
+2. *R-B4 sentence on the R-C6 line* — **did not.** 105b:14–15 is still `LOW_CONFIDENCE` in
+   both v14 runs. Either the cause is not that line, or the model does not read the
+   Gemara's questions about a Mishnah incident as "an incident told in full elsewhere".
+3. *"to rabbis or post-biblical figures"* — **half.** 78b:13–20 is back to `NOT_A_STORY`
+   ("Biblical narrative") in run 1 and `HIGH_CONFIDENCE` in run 2 — the same 1-of-2 as
+   the v12wording arm. It undid what the 2026-10-25 lines added, not what the 2026-10-07
+   wording started.
+
+**What else moved in both v14 runs:** 90b:9 and 90b:10 are split again, each `HIGH`
+(no edit aimed at it; v11 has them as two `LOW`s). 102a:13 is a new `NOT_A_STORY` proposal
+in both runs (it adds nothing to `stories` a reader counts as found). 63a:13 stays one grade
+below v11 (`HIGH`), as in every arm with the 2026-10-07 wording. 78b:9 stays dropped.
+
+**Decision rule** (set before the runs): the runner moves to v14 only if v14 finds at least
+as many list stories as v11 in both runs **and** makes neither the R-S1 nor the R-B4 error
+in either run. v14 finds 34 against 35, makes the R-B4 error in both runs and the R-S1 error
+in one. **The runner points back at v11.**
+
+## Where this leaves the detector
+
+- `scripts/run_new_tractate.py` imports **v11** again. v11 is the only wording measured
+  without an error the register names, across four same-day runs.
+- v13 and v14 stay in `src/` as frozen, measured records. **CLAUDE.md's rule that the
+  highest-numbered file is the active detector is now false** — v14 is highest and is not
+  what runs. That needs a decision (amend the rule, or move v13/v14 out of the
+  version sequence) before this merges.
+- What is still unexplained: 105b:14–15 (the R-B4 error, from the 2026-10-07 wording,
+  sentence unknown) and the David 1-of-2. The next arm that would locate them is a
+  one-sentence-at-a-time ablation of v12's 2026-10-07 block, not another rewording.
+
 ## Files
 
-- `results/v11/v13_slice/{v11,v12wording,v13}_r{1,2}.json` — the six runs; `*.score.json` — recall per story
+- `results/v11/v13_slice/{v11,v11fresh,v12wording,v13,v14}_r{1,2}.json` — the ten runs; `*.score.json` — recall per story
 - `slice.txt` — the 20 refs
