@@ -178,6 +178,8 @@ def label_axes(verdict, note):
         return 'yes', 'is_story=yes'
     if verdict == 'borderline':
         return 'borderline', 'is_story=borderline'
+    if verdict == 'out_of_scope':   # axes-3 (2026-09-28): his own button, R-S1
+        return 'out_of_scope', 'is_story=out_of_scope (R-S1)'
     if verdict == 'incorrect':
         if SCOPE_NOTE.search(note or ''):
             return 'out_of_scope', 'is_story=no, note puts it outside the scope (R-S1)'

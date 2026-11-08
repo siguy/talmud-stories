@@ -73,3 +73,11 @@ def test_notes_still_mined_when_nothing_structured():
     targets, _ = bts.targets_for_item('k', item, 'r.json', SEGS)
     assert [t['direction'] for t in targets] == ['start']
     assert targets[0]['harvest_rule'].endswith('_start')
+
+
+# --- should-land: verdict_reading.label_axes knows the axes-3 token -----------
+def test_label_axes_reads_out_of_scope():
+    vr_spec = importlib.util.spec_from_file_location('vr', ROOT / 'scripts' / 'verdict_reading.py')
+    vr = importlib.util.module_from_spec(vr_spec)
+    vr_spec.loader.exec_module(vr)
+    assert vr.label_axes('out_of_scope', '') == ('out_of_scope', 'is_story=out_of_scope (R-S1)')
