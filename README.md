@@ -15,7 +15,6 @@ talmud-stories/
 │   ├── story_detector_v7.py     # Current detection script (v7)
 │   ├── event_triage.py          # Event triage (Stage 1)
 │   ├── ground_truth.py          # Ground Truth DB (Jeff's labels)
-│   ├── post_processing.py       # Mechanical post-processing rules
 │   ├── story_detector_v6.py     # Previous detection script (v6)
 │   └── story_detector_v5.py     # Previous detection script (v5.1)
 │
@@ -46,11 +45,7 @@ talmud-stories/
 │   ├── technical/               # How it works
 │   └── communication/           # Expert reviewer materials
 │
-├── tests/                       # Test implementations
-│   ├── v7_regression_test.py    # Regression test vs Jeff's labels
-│   ├── model_comparison.py      # Multi-model comparison runner
-│   ├── ablation_test.py         # Ablation test framework
-│   └── v5_categorical/          # Historical tests
+├── tests/                       # pytest suite: python3 -m pytest tests/ -q
 │
 └── archive/                     # Old versions (reference)
 ```
@@ -138,12 +133,6 @@ GEMINI_MODEL=gemini-3-flash-preview PYTHONPATH=. python3 src/story_detector_v7.p
 python3 scripts/run_ketubot_61_112.py               # Full run
 python3 scripts/run_ketubot_61_112.py --triage-only  # Triage only
 python3 scripts/run_ketubot_61_112.py --resume       # Resume from saved triage
-
-# Model comparison (run detection + regression test)
-PYTHONPATH=. python3 tests/model_comparison.py --model gemini-3.8-flash
-
-# Regression test (compare against Jeff's labels)
-PYTHONPATH=. python3 tests/v7_regression_test.py
 ```
 
 ### View Results
