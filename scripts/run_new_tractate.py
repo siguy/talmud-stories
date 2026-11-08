@@ -12,8 +12,7 @@ caches triage to `results/triage/<tractate>.json`, writes the run to
 Two things it does NOT do, on purpose:
 
   - **It never invents triage labels.** Cached labels are reused as-is; a page
-    with no entry is UNKNOWN, not DELIBERATION. The `--examine-all-pages` flag
-    only ever ADDS pages to Stage 2 (see tests/test_examine_all_pages.py).
+    with no entry is UNKNOWN, not DELIBERATION.
   - **It uses no few-shot example from the tractate it is running on.** Ground
     truth comes from Ketubot only — cross-tractate, so it cannot overfit the
     pages being scored (Lesson 2).
@@ -35,7 +34,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.model_config import default_thinking_level  # noqa: E402
+from src.model_config import default_model, default_thinking_level  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -44,7 +43,6 @@ logging.basicConfig(
               logging.StreamHandler(sys.stdout)])
 log = logging.getLogger(__name__)
 
-MODEL = 'gemini-3-flash-preview'
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
 KNOWN = ('gittin', 'yevamot', 'eruvin', 'kiddushin')
@@ -128,24 +126,35 @@ def load_ground_truth(GroundTruthDB):
     return db
 
 
-def main():
+def build_parser():
+    """Env first: --model and --thinking defaults read GEMINI_MODEL / GEMINI_THINKING_LEVEL,
+    which live in .env. Building the parser before load_env() read them too early."""
+    env = load_env()
+    log.info('env loaded from %s', env or 'the environment only')
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--tractate', required=True, choices=KNOWN)
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
-    ap.add_argument('--model', default=MODEL)
+    ap.add_argument('--model', default=default_model())
     ap.add_argument('--thinking', default=default_thinking_level(),
                     help='low|medium|high (Gemini 3.x)')
     ap.add_argument('--delay', type=float, default=DELAY)
     ap.add_argument('--retriage', action='store_true',
                     help='re-run Stage 1 for the --refs pages (all pages if no --refs); '
                          'other pages keep their cached labels (costs money)')
-    args = ap.parse_args()
+    return ap
 
-    env = load_env()
-    log.info('env loaded from %s', env or 'the environment only')
+
+
+def make_triager(EventTriager, args):
+    """Stage 1 must reason at the same depth as Stage 2 (finding 9)."""
+    return EventTriager(model_name=args.model, thinking_level=args.thinking)
+
+
+def main():
+    args = build_parser().parse_args()
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
@@ -173,7 +182,7 @@ def main():
         log.info('triage cache: %d pages from %s', len(cached), cache.name)
     todo = plan_triage(pages, cached, args.retriage)
     if todo:
-        triager = EventTriager(model_name=args.model)
+        triager = make_triager(EventTriager, args)
         if not triager.client:
             log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))

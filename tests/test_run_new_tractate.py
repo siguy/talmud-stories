@@ -91,3 +91,25 @@ def test_summary_logs_counts_and_warns_on_failed_refs(caplog):
     msgs = [(r.levelname, r.getMessage()) for r in caplog.records]
     assert any(l == 'WARNING' and 'X 1a' in m for l, m in msgs)
     assert any(l == 'INFO' and '3 pages' in m for l, m in msgs)
+
+
+# ---- Finding 9: triage and detection share one thinking level ----
+def test_triager_and_detector_get_the_same_thinking_level(monkeypatch):
+    from src.story_detector_v11 import V7StoryDetector
+    monkeypatch.delenv('GEMINI_THINKING_LEVEL', raising=False)
+    args = runner.build_parser().parse_args(
+        ['--tractate', 'gittin', '--thinking', 'low'])
+    triager = runner.make_triager(EventTriager, args)
+    detector = V7StoryDetector(api_key='x', model_name=args.model,
+                               thinking_level=args.thinking)
+    assert triager.thinking_level == detector.thinking_level == 'low'
+
+
+def test_env_is_loaded_before_the_parser_defaults(monkeypatch):
+    monkeypatch.delenv('GEMINI_THINKING_LEVEL', raising=False)
+    calls = []
+    monkeypatch.setattr(runner, 'load_env', lambda: calls.append('env'))
+    monkeypatch.setattr(runner, 'default_thinking_level',
+                        lambda: calls.append('default') or None)
+    runner.build_parser()
+    assert calls[:2] == ['env', 'default']
