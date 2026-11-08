@@ -105,8 +105,7 @@ open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
 open       2026-11-07-pre-eruvin-run-fixes
-open       2026-11-07-review-ui-fixes
-closed     11 item(s) in work/done/
+closed     12 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -119,7 +118,7 @@ open       2026-08-30-gittin-review-ui   ← blocked: 2026-08-30-gittin-classifi
 open       2026-08-30-yevamot-expert-round   ← blocked: 2026-08-30-yevamot-review-ui
 open       2026-08-30-yevamot-review-ui   ← blocked: 2026-08-30-yevamot-classification
 open       2026-09-28-consensus-2-yevamot-round
-closed     12 item(s) in work/done/
+closed     13 item(s) in work/done/
 ```
 
 ### 6 Publication
@@ -176,4 +175,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: bc05c6dec91da3ed -->
+<!-- board-checksum: 4da4df659e653541 -->
