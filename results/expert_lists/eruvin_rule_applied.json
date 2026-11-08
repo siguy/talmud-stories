@@ -1,0 +1,1191 @@
+{
+ "what": "Eruvin 2005 list entries re-judged against Jeff's later rules by two independent Claude judges (opus, sonnet), 2026-11-08. NOT Jeff's rulings: a sensitivity denominator, kept apart from superseded_by_rule.json on purpose (that file is his words only, and judge_labelled_spans.py reads it as labels).",
+ "rule_for_exclusion": "excluded = both judges said NOT_A_STORY. A split or any BORDERLINE stays in.",
+ "known_weakness": "Consensus phase 1 (docs/findings/2026-09-28-consensus-phase1.md): this kind of judge over-rejects stories Jeff accepted. Here both judges reject 14 passages the detector found.",
+ "entries": [
+  {
+   "id": "eruvin_001",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "A man plants poles and stretches a vine (two acts), the case comes before the Sages and they permit it: the cow-and-ruling shape."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "Poles planted, vine stretched, case brought to the Sages and a ruling: several actions plus resolution."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_002",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "R. Yehoshua goes to R. Yohanan ben Nuri and stretches a vine, but the passage is mostly a question and answer with no change."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Yehoshua goes, finds Yohanan ben Nuri among trees, stretches a vine and asks; several narrated actions and an outcome."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_003",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rav Nahman acts, Rav Sheshet has Gada pull the reeds out, Gada is imprisoned and called out again: several actions, conflict and consequence."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Sheshet sends the attendant, attendant is jailed, Sheshet goes to the door and frees him: many actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_004",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "One event (finding the disciple in an alley with one side post), then an instruction and a short exchange; it is not stated that anything was done."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Eliezer visits, finds the alley, instructs; mostly speech with a mild disagreement."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_005",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "R. Meir's account of studying with two masters is mostly dialogue about ink, though habitual acts and a change of teacher are told."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Meir recalls two teachers' reactions to his ink trick; one real event, mostly speech."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_006",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "Three years of dispute settled by a Divine Voice: conflict and change carried almost wholly by speech; the explanation after it is Gemara commentary."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Events, but weak causality or little change",
+    "reason": "Three-year dispute, Divine Voice, ruling for Hillel: events with an aggadic explanation, weak narration."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_007",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "The elders visit and find him sitting a certain way, then rebuke him; one event then discussion, and nothing changes."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Elders visit and find him seated oddly, then rebuke him; conflict, but close to a seating then discussion."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_008",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "is not that exceptional in Talmudic dialogue, so I would not count it as a story.",
+    "reason": "An argument over whether Rav said a ruling and then retracted it is ordinary transmission dialogue with no event."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Report of a retracted ruling and Rava's oath: scholarly attribution dispute with no narrated event."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_009",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The attendant is sent, the side post falls, Rav signals him to stop, then a challenge and an answer: several actions and a change."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rav sends for water, post falls, signals the attendant, Huna objects, Rav rebukes: multiple actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_010",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "A challenge about walking to Daniel's synagogue answered by Marei going out and showing the ruins; one act beyond speech, little change."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Hisda challenges Marei, who goes out and shows him ruins: one action after speech, with conflict."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_011",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "R. Akiva in prison: the guard pours out the water, Akiva chooses washing over drinking, and the Sages react."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Akiva imprisoned, guard halves the water, Akiva refuses to eat: actions and consequence."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_012",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "Rav Adda leaving for the study hall and his wife's protest is mainly a dialogue with conflict over neglecting the children."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Wife asks, Adda answers sharply; dialogue with conflict and a departure, thin on events."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_013",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "Mar Yehuda visits and sees people carrying, asks, and is told whose view his host follows; one event then a discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline",
+    "reason": "One arrival and observation, then challenge and reply; nothing else narrated."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_014",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "is not that exceptional in Talmudic dialogue, so I would not count it as a story.",
+    "reason": "A dilemma, an answer, and Hizkiya's praise of R. Yohanan are scholarly exchange with no event."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "Legal problems/cases are hypothetical and do not refer to events that happened",
+    "reason": "Hypothetical perforation question and scholarly exchange."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_015",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "The woman builds a partition, a man plows, Rav Nahman awards him the land, and she comes and cries out: several actions and a change."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "Partition built, plowing, case before Nahman, possession awarded, woman cries out: actions and ruling."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_016",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rav Huna bar Hinnana sets up the reeds, Rava pulls them out, others collect them, and the Exilarch rebukes the rabbis: actions, conflict, consequence."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Exilarch asks, Huna builds, Rava pulls the reeds out, rabbis challenge, Exilarch quotes verse: several actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_017",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C3",
+    "jeff_quote": "After the custom you have the one time event",
+    "reason": "R. Zeira's habit of sitting at the entrance leads to a one-time exchange with a schoolchild, whose view becomes the halakha; mostly speech."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Zeira sits at the door, a child corrects his blessing ruling; small incident, mostly speech."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_018",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "R. Hanina eats the onion, falls deathly ill, his colleagues pray and he recovers."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Hanina eats the onion, falls ill, colleagues pray, he recovers: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_019",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion.",
+    "reason": "The rabbis sit together and analyse the mishna; a seating followed by a discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion",
+    "reason": "Rabbis sit and debate a mishna; seating then discussion."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_020",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "An army arrives and Rav Nahman orders seats made in the marsh; it is not stated they were made, and a legal objection follows."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Army occupies the study hall, Nahman improvises seating, then a halakhic objection."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_021",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "This is standard rabbinic dialogue and not a story.",
+    "reason": "Rava challenges Rav Nahman with a baraita and he falls silent; scholarly dialogue with no event."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Rava questions Nahman on a baraita, Nahman is silent: scholarly exchange."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_022",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The deer is brought and slaughtered, two rabbis eat and Rav Sheshet refuses, and later he asks that the source not be told: actions and conflict."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Deer incident with Nahman and Hisda eating and Sheshet refusing; conflict, then legal argument."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_023",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Turnips arrive, Rava permits them, the merchants start bringing more, and Rava forbids them: events and a ruling that changes."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Rava sees withered turnips, permits purchase, later sees increased deliveries and prohibits: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_024",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "Myrtles are cut and the rest is rulings, objections and a question sent to Rava; one event then legal discussion."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "Myrtles cut, Ravina permits, Rava bar Tahalifa objects, they go to ask; incident plus ruling but mostly argument."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_025",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The rabbis send Rav Yeimar, Rav Hisda sees him, wine is brought and he recites the blessing, which settles the practice they sent him to learn."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rabbis send Yeimar, Hisda greets him, wine is brought, kiddush recited, halakha drawn: several actions."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_026",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "There is no real story here, just a report of what R. Akiva did.",
+    "reason": "Seated before R. Akiva, the students see him swallow an egg to show them the halakha; a report of what he did, with no response or consequence."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "just a report of what R. Akiva did",
+    "reason": "Akiva swallowing an egg on the Ninth of Av is a single act cited as precedent."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_027",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "R. Yehoshua enters to annul Rabban Gamliel's ruling and R. Yohanan ben Nuri stands to oppose him, so the ruling holds: conflict carried by speech."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Yehoshua enters to annul, Yohanan stands and objects, no one contests: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_028",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "Nehemya strays past the limit and Rav Nahman says to make a human partition; it is not stated it was done, and discussion follows."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Nehemya strays beyond the limit, Hisda raises it with Nahman, who offers a remedy; mostly speech."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_029",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C0",
+    "jeff_quote": "it is a little more than a ruling.",
+    "reason": "The wedding party carries water through a human partition and Shmuel has them flogged; one act followed by a punishment that is more than a stated ruling."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Wedding party uses people as partition, Shmuel has them flogged: action and consequence."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_030",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The attendants bring the flasks in, try again the next Shabbat, and Rava forbids them: two actions and a change."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Flasks brought in via the crowd, next week Rava forbids it: two events and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_031",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C3",
+    "jeff_quote": "After the custom you have the one time event",
+    "reason": "After the custom of leaving weapons near the wall comes the one-time disaster, and then the enactment it caused."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Weapons left, enemies chase, crush and kill each other, rule enacted: causal narrative."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_032",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "R. Tarfon is benighted, sleeps outside, the cowherds find him, he enters and teaches all day."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Tarfon benighted, found by cowherds, enters and teaches: several actions."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_033",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "There is no real story here, just a report of what R. Akiva did.",
+    "reason": "Rabbi rules once like R. Elazar and later comments on it; a report of a single ruling with nothing following."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "One real event, then discussion or a ruling",
+    "reason": "Rabbi acts like Elazar, later remembers and comments; thin event with a halakhic frame."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_034",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "This is standard rabbinic dialogue and not a story.",
+    "reason": "Missing the study hall, R. Elazar asks R. Asi what was said there; transmission of a ruling, all speech."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline",
+    "reason": "Eliezer meets Asi and asks what was said; one meeting then halakhic discussion."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_035",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion.",
+    "reason": "While walking, Rabba and Rav Yosef discuss where to set their Shabbat residence; a setting followed by halakhic discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion",
+    "reason": "Two travelers agree on a lodging place; a travel frame for a legal discussion."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_036",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rav Yehuda bar Ishtata brings fruit, sets out, is told to lodge after one step, and rises early to go home: a chain of actions with a consequence."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Natan lets him descend a step, tells him to lodge, he rises and goes home: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_037",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "By most traditional definitions of a story, speech-acts don't count",
+    "reason": "A Judean describes the colour of his cloak; one exchange, with no event or conflict."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Judean says he has a cloak, asked its colour, replies; precise speech, no conflict or event."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_038",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "mainly a dialogue, so lacking the actions necessary for a story. But has conflict, so can be borderline.",
+    "reason": "The Galilean's garbled calls draw mockery; speech with conflict and no further event."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Galilean asks for amar and is mocked; conflict but speech only."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_039",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "Two Galilean women's slips of speech, one of them before a judge, turn into insults; mostly speech, with some conflict."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Two women garble their words, one before a judge; mockery and conflict, speech only."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_040",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "By most traditional definitions of a story, speech-acts don't count",
+    "reason": "The maidservant's riddling way of speaking is a habitual speech pattern that leads nowhere."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a custom leading nowhere",
+    "reason": "Maidservant's habitual riddling speech; a custom that leads nowhere."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_041",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "By most traditional definitions of a story, speech-acts don't count",
+    "reason": "R. Yosei bar Asyan's habitual riddling speech; no event and no conflict."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a custom leading nowhere",
+    "reason": "Yosei bar Asyan's habitual riddle phrases; a custom."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_042",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "By most traditional definitions of a story, speech-acts don't count",
+    "reason": "R. Abbahu's riddles and a riddling answer about R. Elai are wordplay with no event narrated."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a custom leading nowhere",
+    "reason": "Abbahu's riddle speech and a wordplay exchange; no event or change."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_043",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "R. Yehoshua ben Hananya's three defeats: the hostess over-salts the beans, he takes the wrong road and turns back, with actions, conflict and outcomes."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Yehoshua eats the beans, hostess over-salts them, he stops eating: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_044",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "R. Yosei HaGelili asks Berurya the way and she rebukes him; a meeting, then speech with conflict."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Yosei meets Berurya and is rebuked for wordiness; conflict, speech only."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_045",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "Berurya finds a student whispering his studies and kicks him, then teaches; a physical act and conflict but no stated change."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Berurya kicks a whispering student and rebukes him; an act plus speech, minimal change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_046",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C3",
+    "jeff_quote": "The pious man's continuous action, feeding the waiter before the meal, leads to a change",
+    "reason": "The student's habit of studying in a whisper leads to his forgetting everything after three years; the second line (a guilty student spared) is thinner."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C3",
+    "jeff_quote": "leads to a change",
+    "reason": "Student who whispered forgot his learning; second student liable for burning, spared for serving a great man: habit leading to consequence."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_047",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rava goes to appease Rav Yosef, mixes the cup, is recognised by its taste, and is made to expound: actions, conflict, reconciliation."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rava goes to appease Yosef, mixes the wine, Yosef recognises him: several actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_048",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C3",
+    "jeff_quote": "After the custom you have the one time event",
+    "reason": "R. Elazar's habit of leaving his cloak while he studies is followed by the one time a man came to take it and found a serpent guarding it."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C3",
+    "jeff_quote": "leads to a change",
+    "reason": "Habitual leaving of his cloak, then one time a person finds a serpent on it."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_049",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "R. Perida's student fails to learn, is taught four hundred more times, and a Divine Voice rewards R. Perida."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Perida teaches four hundred times, interrupted once, student fails, Divine Voice rewards him: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_050",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "R. Zeira's eiruv for the whole city is questioned by Abaye and explained; one act followed by discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline",
+    "reason": "Zeira made an eiruv, Abaye questions him; one act then discussion."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_051",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The townspeople come, Rav Yosef sends Abaye, Abaye goes and examines the houses, revises several plans, and understands his teacher's warning."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Abaye sent to make an eiruv, goes, inspects, reasons through options; actions framing mostly reasoning."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_052",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "This is standard rabbinic dialogue and not a story.",
+    "reason": "Abaye and Rav Yosef discuss whether R. Yitzhak's ruling is tradition or reasoning; scholarly dialogue."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Abaye challenges Yosef on Yitzhak's ruling; scholarly dialogue."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_053",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "is not that exceptional in Talmudic dialogue, so I would not count it as a story.",
+    "reason": "Mar Yehuda tells the residents to move their eiruv and Rava calls him argumentative; one sighting, an instruction and an ordinary rebuke."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Mar Yehuda instructs the residents, Rava calls him argumentative; one event and conflict."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_054",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "There is no real story here, just a report of what R. Akiva did.",
+    "reason": "Ravina inspects a knife in Babylonia and justifies it when Rav Ashi asks; one act cited for its halakha, then discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Ravina and Ashi discuss whether Hamnuna issued rulings; scholarly dialogue."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_055",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "Ravina's host shows him a knife, he sends it to Rava, and they discuss why; one event then a ruling and discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Host shows the knife, Ravina sends him to Rava, host objects; challenge and reply only."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_056",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "The guests arrive, the host brings a knife, they argue, R. Elazar inspects it himself and is punished: actions with a consequence."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Guests, a knife shown, objection and reply; ordinary scholarly exchange."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_057",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Ravina sees a man tie his donkey to a palm, rebukes him, is ignored, and puts him under a ban, then asks about his own conduct."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Ravina shouts at the man tying his donkey, man ignores him, Ravina calls for excommunication, Ashi objects."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_058",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "A student rules before R. Eliezer, who predicts his death, and he dies within the year; Imma Shalom questions him."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Disciple rules before Eliezer, Eliezer predicts, disciple dies, wife challenges him: actions and consequence."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_059",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "The gentile refuses to rent out his domain and the neighbours ask Abaye, who rules; a refusal then a ruling."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "One real event, then discussion or a ruling",
+    "reason": "Gentile refuses to rent, neighbors ask Abaye, advice given; event then ruling."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_060",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Rabban Gamliel's journey from Akko to Keziv: the loaves, the gentile, the vow, walking off the wine, then dismounting to annul the vow."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Gamliel on the donkey finds loaves, orders Elai, then the gentile, with further exchange: many actions."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_061",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "Reish Lakish and the students reach an inn, debate, rent the room, and later ask R. Afes, who approves; mostly halakhic dialogue with some acts."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion",
+    "reason": "Rabbis arrive at an inn and debate the law; arrival then discussion."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_062",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "The three rabbis at the inn debate, rent on an elder's word, and later ask R. Yohanan; mostly dialogue, with a few events."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "One real event, then discussion or a ruling",
+    "reason": "Rabbis at the inn debate, rent, then ask Yohanan who approves; some actions, mostly argument."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_063",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "The circumcision water spills and Rabba and Abaye trade proposals; it is not stated what was done."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline",
+    "reason": "Water spills, Rabba proposes, Abaye objects, Rabba alternates; a ruling after a single event."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_064",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "The water spills and Rava and Rav Mesharshiya discuss the mother's condition; one event then discussion, with the outcome not stated."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline",
+    "reason": "Water spills, Rava proposes, Mesharshiya objects; ruling after a single event."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_065",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "You could argue that the interaction implies that R. Benai did so. But it is not really stated explicitly.",
+    "reason": "The water spills, Rava proposes renouncing his courtyard, and Ravina objects; an order whose outcome is not stated, then discussion."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C0",
+    "jeff_quote": "the rabbi 'apportions' wine for the woman",
+    "reason": "Water spills, Rava orders belongings moved and renounces the courtyard; his act changes things, then a challenge."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_066",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "R. Elazar has Rav Beruna show him Shmuel's lodging, goes and confronts Shmuel, and Shmuel falls silent: events beyond speech, conflict, an implied change."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Elazar goes to Shmuel to check, objects, Shmuel is silent; movement plus challenge."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_067",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "",
+    "jeff_quote": "",
+    "reason": "Ivut puts up a side post, Shmuel permits it, after Shmuel dies Rav Anan throws it down, and Ivut protests: actions, conflict, change."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "",
+    "reason": "Ivut erects a side post, Shmuel permits, after his death Anan throws it down: actions and change."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_068",
+   "opus": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "The daughter-in-law is caught by nightfall, her mother-in-law makes an eiruv, R. Hiyya forbids it, and R. Yishmael rebukes him."
+   },
+   "sonnet": {
+    "verdict": "STORY",
+    "rule": "R-C0",
+    "jeff_quote": "A man stole another man's cow and sold it. Rava ruled…. In this case you may have a story.",
+    "reason": "Daughter-in-law delayed, mother-in-law makes the eiruv, case before Hiyya who forbids, Yishmael objects."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_069",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "The superintendent refuses to rent and the neighbours ask R. Zeira, who rules; a refusal then a ruling."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "One real event, then discussion or a ruling",
+    "reason": "Gentile refuses to rent, neighbours ask Zeira, he says the wife may; event then ruling."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_070",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C0",
+    "jeff_quote": "these cases and similar ones are not a story rather than that they are borderline.",
+    "reason": "The same refusal, taken to three rabbis in turn until one rules; asking questions is speech, so it is one event then a ruling."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "One real event, then discussion or a ruling",
+    "reason": "Gentile refuses, neighbours go to three rabbis, Yehuda rules; several attempts, then ruling."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_071",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "This is standard rabbinic dialogue and not a story.",
+    "reason": "R. Elazar checks a ruling with Rav, raises a difficulty, and Rav resolves it; the walk to Rav's lodging frames an ordinary exchange."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "Mainly speech, but something happens",
+    "reason": "Elazar checks Beruna's claim with Rav and objects; a parallel to 066."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_072",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C7",
+    "jeff_quote": "There is mainly dialogue. But events are mentioned",
+    "reason": "Ben Bonyas and another man arrive and Rabbi orders room made for them by their wealth; mostly speech, with arrivals and implied honour."
+   },
+   "sonnet": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline",
+    "reason": "Rabbi honors the wealthy visitors and Yishmael objects, Rabbi retorts; conflict, mostly speech."
+   },
+   "excluded": false
+  },
+  {
+   "id": "eruvin_073",
+   "opus": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "a description of rabbi's sitting in a certain arrangement. But then they just have a discussion.",
+    "reason": "Abaye sits teaching, Rav Safra objects, Abaye falls silent and reports to Rav Yosef; a seating followed by legal discussion."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C2",
+    "jeff_quote": "standard rabbinic dialogue and not a story",
+    "reason": "Abaye recites, Safra objects from a mishna; scholarly challenge."
+   },
+   "excluded": true
+  },
+  {
+   "id": "eruvin_074",
+   "opus": {
+    "verdict": "BORDERLINE",
+    "rule": "R-C2",
+    "jeff_quote": "when there is conflict and implied change. But these would always be borderline.",
+    "reason": "A man knocks on Rav Menashe's door on Shabbat and Ulla curses him; one small event and a hostile remark, with no change."
+   },
+   "sonnet": {
+    "verdict": "NOT_A_STORY",
+    "rule": "R-C5",
+    "jeff_quote": "just a report of what R. Akiva did",
+    "reason": "Ulla curses a man who knocks; a single act and remark with no consequence."
+   },
+   "excluded": false
+  }
+ ]
+}
