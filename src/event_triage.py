@@ -7,6 +7,7 @@ Increment 2 of v7 hybrid pipeline.
 """
 
 import json
+import logging
 import os
 
 from src.model_config import (default_model, default_thinking_level,
@@ -24,6 +25,8 @@ try:
 except ImportError:
     GOOGLE_AI_AVAILABLE = False
 
+
+log = logging.getLogger(__name__)
 
 class EventTriager:
     """Classify every segment on a page into event types."""
@@ -185,7 +188,7 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
                 full_text += part.text
             return full_text
         except Exception as e:
-            print(f"  Gemini API error: {e}")
+            log.error(f"  Gemini API error: {e}")
             raise
 
     def _parse_json_response(self, content: str) -> Optional[Dict]:
@@ -211,7 +214,7 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
                 try:
                     return json.loads(repaired)
                 except json.JSONDecodeError as e:
-                    print(f"  JSON parse error (after repair): {e}")
+                    log.error(f"  JSON parse error (after repair): {e}")
                     return None
         return None
 
@@ -233,7 +236,7 @@ choose DELIBERATION. Legal discussions with settings are DELIBERATION.
             # legal passage, and should_skip_page() would then discard the page. Stage 1
             # discards leave no trace anywhere downstream, so that loss is permanent and
             # invisible (FRAMEWORK 1.1). Fail OPEN and say so. -> Lesson 21
-            print(f"  TRIAGE FAILED on {ref}: response unparseable; keeping the page")
+            log.warning(f"  TRIAGE FAILED on {ref}: response unparseable; keeping the page")
             return [EventType.TRIAGE_FAILED] * len(segments)
 
         # Parse event types

@@ -12,8 +12,7 @@ caches triage to `results/triage/<tractate>.json`, writes the run to
 Two things it does NOT do, on purpose:
 
   - **It never invents triage labels.** Cached labels are reused as-is; a page
-    with no entry is UNKNOWN, not DELIBERATION. The `--examine-all-pages` flag
-    only ever ADDS pages to Stage 2 (see tests/test_examine_all_pages.py).
+    with no entry is UNKNOWN, not DELIBERATION.
   - **It uses no few-shot example from the tractate it is running on.** Ground
     truth comes from Ketubot only — cross-tractate, so it cannot overfit the
     pages being scored (Lesson 2).
@@ -28,6 +27,7 @@ import argparse
 import json
 import logging
 import os
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -35,7 +35,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.model_config import default_thinking_level  # noqa: E402
+from src.model_config import default_model, default_thinking_level  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -44,7 +44,6 @@ logging.basicConfig(
               logging.StreamHandler(sys.stdout)])
 log = logging.getLogger(__name__)
 
-MODEL = 'gemini-3-flash-preview'
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
 KNOWN = ('gittin', 'yevamot', 'eruvin', 'kiddushin')
@@ -75,6 +74,97 @@ def load_env():
     return None
 
 
+def version_of(module):
+    """'src.story_detector_v11' -> 'v11'. The run says which detector it ran, not which
+    one this file hoped it would."""
+    return module.__name__.rsplit('_', 1)[-1]
+
+
+def _git_rev():
+    try:
+        return subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=PROJECT_ROOT, text=True,
+                              capture_output=True, timeout=10).stdout.strip() or None
+    except Exception:
+        return None
+
+
+def build_run_meta(args, detector, module, elapsed, pages, src_name, triage_summary):
+    """Everything a later reader needs to attribute this run's numbers to a configuration.
+    Counters the detector already keeps (and nothing wrote down) are recorded too: a twin
+    pass whose calls all failed must not look like one that found nothing (Lesson 38)."""
+    return {
+        'model': args.model, 'thinking_level': args.thinking,
+        'elapsed_seconds': round(elapsed, 1),
+        'pages': len(pages), 'source': src_name,
+        'ground_truth': 'ketubot-only (cross-tractate)',
+        'detector_module': module.__name__,
+        'twin_pass': os.getenv('TWIN_PASS', module.TWIN_PASS_DEFAULT),
+        'twin_trigger': os.getenv('TWIN_TRIGGER', module.TWIN_TRIGGER_DEFAULT),
+        'twin_reach': os.getenv('TWIN_REACH', '1'),
+        'series_rule': os.getenv('SERIES_RULE', '0'),
+        'stage2_fingerprint': detector._stage2_fingerprint(),
+        'git_rev': _git_rev(),
+        'refs': args.refs, 'retriage': args.retriage,
+        'triage_failed': {'count': triage_summary['failed'],
+                          'refs': triage_summary['failed_refs']},
+        'resumed_pages': getattr(detector, 'resumed_pages', 0),
+        'stage2_errors': getattr(detector, 'stage2_errors', []),
+        'truncated_responses': len(getattr(detector, 'truncated_responses', [])),
+        'empty_responses': len(getattr(detector, 'empty_responses', [])),
+        'twin_verdicts': len(getattr(detector, 'twin_verdicts', [])),
+        'twin_failures': [list(f) for f in getattr(detector, 'twin_failures', [])],
+        'pass2_failures': list(getattr(detector, 'pass2_failures', [])),
+    }
+
+
+def load_triage_cache(cache):
+    """The existing Stage 1 cache as {ref: [EventType]}; empty if there is none.
+    Always loaded -- even under --retriage -- because write_cache() dumps this dict
+    wholesale, and starting it empty overwrote a whole tractate with a few pages."""
+    from src.ground_truth import EventType
+    if not cache.exists():
+        return {}
+    raw = json.loads(cache.read_text()).get('triage_results', {})
+    return {ref: [EventType(v) for v in evs] for ref, evs in raw.items()}
+
+
+def plan_triage(pages, cached, retriage):
+    """Pages that need Stage 1. Under --retriage, drop ONLY these pages' labels from
+    `cached` (in place) so every other page's label survives the cache rewrite."""
+    if retriage:
+        for p in pages:
+            cached.pop(p['ref'], None)
+    # A cached page whose labels are ALL TRIAGE_FAILED holds no judgment at all (the page
+    # fails open into Stage 2); retry it on the next run rather than trust it forever.
+    from src.ground_truth import EventType
+    return [p for p in pages if p['ref'] not in cached
+            or (cached[p['ref']]
+                and all(e == EventType.TRIAGE_FAILED for e in cached[p['ref']]))]
+
+
+def log_triage_summary(triage, pages=None):
+    """Send Stage 1's counts to project.log -- failed pages by name.
+
+    With `pages`, "skipped" uses the predicate run_pipeline uses: should_skip_page AND no
+    canonical story introducer on the page (the lexical override forces Stage 2 anyway)."""
+    from src.event_triage import EventTriager
+    from src.story_detector_v11 import _page_has_story_introducer
+    s = EventTriager.summarize_triage(triage)
+    if pages is not None:
+        by_ref = {p['ref']: p for p in pages}
+        s['skipped'] = sum(1 for ref, evs in triage.items()
+                           if EventTriager.should_skip_page(evs)
+                           and not (ref in by_ref and _page_has_story_introducer(by_ref[ref])))
+        s['kept'] = s['total_pages'] - s['skipped']
+        s['skip_rate'] = f"{100 * s['skipped'] / max(s['total_pages'], 1):.0f}%"
+    log.info('Stage 1 summary: %d pages, %d skipped, %d kept (%s skip rate), %d failed',
+             s['total_pages'], s['skipped'], s['kept'], s['skip_rate'], s['failed'])
+    if s['failed_refs']:
+        log.warning('Stage 1 FAILED on %d page(s), kept open for Stage 2: %s',
+                    s['failed'], s['failed_refs'])
+    return s
+
+
 def load_ground_truth(GroundTruthDB):
     """Ketubot labels only. Running on Gittin/Yevamot/Eruvin, every example is
     cross-tractate, so no page being scored can appear in its own prompt."""
@@ -91,27 +181,40 @@ def load_ground_truth(GroundTruthDB):
     return db
 
 
-def main():
+def build_parser():
+    """Env first: --model and --thinking defaults read GEMINI_MODEL / GEMINI_THINKING_LEVEL,
+    which live in .env. Building the parser before load_env() read them too early."""
+    env = load_env()
+    log.info('env loaded from %s', env or 'the environment only')
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--tractate', required=True, choices=KNOWN)
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
-    ap.add_argument('--model', default=MODEL)
+    ap.add_argument('--model', default=default_model())
     ap.add_argument('--thinking', default=default_thinking_level(),
                     help='low|medium|high (Gemini 3.x)')
     ap.add_argument('--delay', type=float, default=DELAY)
     ap.add_argument('--retriage', action='store_true',
-                    help='re-run Stage 1 even if a cache exists (costs money)')
-    args = ap.parse_args()
+                    help='re-run Stage 1 for the --refs pages (all pages if no --refs); '
+                         'other pages keep their cached labels (costs money)')
+    return ap
 
-    env = load_env()
-    log.info('env loaded from %s', env or 'the environment only')
+
+
+def make_triager(EventTriager, args):
+    """Stage 1 must reason at the same depth as Stage 2 (finding 9)."""
+    return EventTriager(model_name=args.model, thinking_level=args.thinking)
+
+
+def main():
+    args = build_parser().parse_args()
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
-    from src.story_detector_v11 import V7StoryDetector
+    from src import story_detector_v11 as detector_module
+    V7StoryDetector = detector_module.V7StoryDetector
 
     override = SOURCES.get(args.tractate, {})
     src = PROJECT_ROOT / override.get('pages', f'results/sefaria/{args.tractate}.json')
@@ -130,15 +233,12 @@ def main():
 
     # ---- Stage 1 --------------------------------------------------------
     cache = PROJECT_ROOT / override.get('triage', f'results/triage/{args.tractate}.json')
-    cached = {}
-    if cache.exists() and not args.retriage:
-        raw = json.loads(cache.read_text()).get('triage_results', {})
-        cached = {ref: [EventType(v) for v in evs] for ref, evs in raw.items()}
+    cached = load_triage_cache(cache)
+    if cached:
         log.info('triage cache: %d pages from %s', len(cached), cache.name)
-
-    todo = [p for p in pages if p['ref'] not in cached]
+    todo = plan_triage(pages, cached, args.retriage)
     if todo:
-        triager = EventTriager(model_name=args.model)
+        triager = make_triager(EventTriager, args)
         if not triager.client:
             log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))
@@ -168,9 +268,7 @@ def main():
         log.info('triage cache written: %s (%d pages)', cache, len(cached))
 
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
-    skip = sum(1 for evs in triage.values() if EventTriager.should_skip_page(evs))
-    log.info('Stage 1 summary: %d pages, %d skipped, %d kept (%.0f%% skip rate)',
-             len(triage), skip, len(triage) - skip, 100 * skip / max(len(triage), 1))
+    triage_summary = log_triage_summary(triage, pages)
     if args.triage_only:
         return 0
 
@@ -192,13 +290,9 @@ def main():
                                     checkpoint_path=checkpoint)
     elapsed = time.time() - t0
 
-    results['version'] = 'v11'
-    results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
-                           'elapsed_seconds': round(elapsed, 1),
-                           'pages': len(pages), 'source': src.name,
-                           'ground_truth': 'ketubot-only (cross-tractate)',
-                           'resumed_pages': getattr(detector, 'resumed_pages', 0),
-                           'stage2_errors': getattr(detector, 'stage2_errors', [])}
+    results['version'] = version_of(detector_module)
+    results['run_meta'] = build_run_meta(args, detector, detector_module, elapsed, pages,
+                                         src.name, triage_summary)
     if results['run_meta']['resumed_pages']:
         log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)
     if results['run_meta']['stage2_errors']:

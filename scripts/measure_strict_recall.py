@@ -43,6 +43,16 @@ recall = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(recall)
 
 
+def select_stories(stories, tractate, standard):
+    """`current` applies Jeff's later rulings (the step measure_recall_vs_expert_list.py
+    applies), so this scorer and the matches file share one denominator; `2005` is the
+    list exactly as he wrote it."""
+    if standard == 'current':
+        recall.apply_superseded(stories, tractate)
+        stories = [s for s in stories if s['counts_for_recall']]
+    return stories
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -56,20 +66,22 @@ def main():
     ap.add_argument('--matcher', default='exact', choices=['fuzzy', 'exact'],
                     help='see measure_recall_vs_expert_list.locate_exact')
     ap.add_argument('--expert-filter', default='recall', choices=['recall', 'blind', 'all'])
+    ap.add_argument('--standard', default='current', choices=['current', '2005'],
+                    help="current: apply Jeff's later rulings (as measure_recall_vs_expert_list "
+                         "does); 2005: the list exactly as he wrote it")
     ap.add_argument('--out')
     ap.add_argument('--show', type=int, default=10, help='how many loose-only cases to print')
     args = ap.parse_args()
 
     stories = (recall.load_expert_json(args.expert_json, args.expert_filter)
                if args.expert_json else recall.parse_expert_doc(args.expert_doc, args.tractate))
+    stories = select_stories(stories, args.tractate, args.standard)
     units, spans, withheld, triage, rejected, accepted = recall.load_detected(args.detected)
-    index = recall.build_index(units) if hasattr(recall, 'build_index') else None
-    if index is None:
-        from collections import defaultdict
-        index = defaultdict(set)
-        for i, (_, _, gs) in enumerate(units):
-            for g in gs:
-                index[g].add(i)
+    from collections import defaultdict
+    index = defaultdict(set)
+    for i, (_, _, gs) in enumerate(units):
+        for g in gs:
+            index[g].add(i)
 
     corpus = recall.word_corpus(args.detected, units)
     locator, fell_back = recall.make_locator(args.matcher, units, index, corpus)

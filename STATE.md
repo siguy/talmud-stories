@@ -42,7 +42,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 - Ketubot: **87.2% loose / 87.2% strict** on 149 stories
 - Kiddushin: **84.4% loose / 83.3% strict** on 90 stories
 - Gittin: **97.3% loose / 97.3% strict** on 111 stories
-- Yevamot: **94.1% loose / 89.2% strict** on 102 stories (no ruler yet — no expert round on this tractate)
+- Yevamot: **89.0% loose / 89.0% strict** on 100 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -175,4 +175,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 25500238e7970b39 -->
+<!-- board-checksum: 1f66b4e5ddf26a09 -->
