@@ -4,7 +4,7 @@ capability: [classification, detection]
 tractate: [eruvin, yevamot]
 blocked_by: [2026-11-07-pre-eruvin-run-fixes]
 awaiting: []
-writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, docs/findings/2026-11-07-detector-v13-slice.md, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_model_default.py, tests/test_examine_all_pages.py, tests/test_prompt_carries_the_rules.py, tests/test_run_new_tractate.py, tests/test_v13_code_is_v11_code.py]
+writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, docs/findings/2026-11-07-detector-v13-slice.md, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_model_default.py, tests/test_examine_all_pages.py, tests/test_prompt_carries_the_rules.py, tests/test_run_new_tractate.py, tests/test_v13_code_is_v11_code.py, comms/JEFF.md]
 finding:
 superseded_by:
 ---
@@ -117,3 +117,9 @@ on v13.
 - **Why not ship:** two new errors the register already forbids, and the rule it was
   built for has no visible effect. Next: a v13-minus-step-2 arm (v11 code + v12 wording)
   on the same slice to locate the wording behind the two errors, then a v14.
+- **Third arm, same day** (v11 code + v12's 2026-10-07 wording only, `df29904`): 35/36 both
+  runs. It introduces the 105b commentary error and the 90b merge, and starts the 78b
+  biblical error (1 of 2 runs); the 2026-10-25 lines finish it (2 of 2, YES), drop 78b:9 and
+  add 65b:12 as borderline — likely our word "enforces", not his "apportions". No single
+  sentence; three one-line v14 edits proposed in the finding, not written. 78b:9 is now
+  `jeff:question-and-answer` in `comms/JEFF.md`.
