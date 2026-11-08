@@ -101,7 +101,9 @@ def build_run_meta(args, detector, module, elapsed, pages, src_name, triage_summ
         'twin_pass': os.getenv('TWIN_PASS', module.TWIN_PASS_DEFAULT),
         'twin_trigger': os.getenv('TWIN_TRIGGER', module.TWIN_TRIGGER_DEFAULT),
         'twin_reach': os.getenv('TWIN_REACH', '1'),
-        'series_rule': os.getenv('SERIES_RULE', '0'),
+        # v13 dropped the gate; recording the env var there would claim an arm it ignored.
+        'series_rule': (os.getenv('SERIES_RULE', '0') if hasattr(module, '_SERIES_RULE')
+                        else None),
         'stage2_fingerprint': detector._stage2_fingerprint(),
         'git_rev': _git_rev(),
         'refs': args.refs, 'retriage': args.retriage,
@@ -213,7 +215,7 @@ def main():
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
-    from src import story_detector_v11 as detector_module
+    from src import story_detector_v11 as detector_module  # v13/v14 measured, not adopted: docs/findings/2026-11-07-detector-v13-slice.md
     V7StoryDetector = detector_module.V7StoryDetector
 
     override = SOURCES.get(args.tractate, {})

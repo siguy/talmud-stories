@@ -27,7 +27,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.ground_truth import EventType                        # noqa: E402
-from src.story_detector_v11 import V7StoryDetector            # noqa: E402
+from src.story_detector_v14 import V7StoryDetector            # noqa: E402  (live detector)
 
 SEGMENTS = [{'index': i, 'english': f'e{i}', 'hebrew': f'h{i}'} for i in range(3)]
 

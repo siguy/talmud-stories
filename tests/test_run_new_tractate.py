@@ -95,7 +95,7 @@ def test_summary_logs_counts_and_warns_on_failed_refs(caplog):
 
 # ---- Finding 9: triage and detection share one thinking level ----
 def test_triager_and_detector_get_the_same_thinking_level(monkeypatch):
-    from src.story_detector_v11 import V7StoryDetector
+    from src.story_detector_v13 import V7StoryDetector
     monkeypatch.delenv('GEMINI_THINKING_LEVEL', raising=False)
     args = runner.build_parser().parse_args(
         ['--tractate', 'gittin', '--thinking', 'low'])
@@ -130,7 +130,7 @@ class _FakeDetector:
 
 
 def test_run_meta_carries_the_configuration(monkeypatch):
-    from src import story_detector_v11 as mod
+    from src import story_detector_v13 as mod
     monkeypatch.setenv('TWIN_PASS', '0')
     monkeypatch.delenv('TWIN_TRIGGER', raising=False)
     args = runner.build_parser().parse_args(
@@ -156,8 +156,8 @@ def test_run_meta_carries_the_configuration(monkeypatch):
 
 
 def test_version_comes_from_the_module_name():
-    from src import story_detector_v11 as mod
-    assert runner.version_of(mod) == 'v11'
+    from src import story_detector_v13 as mod
+    assert runner.version_of(mod) == 'v13'
 
 
 # ---- P3: the logged skip rate counts what Stage 2 really skips ----

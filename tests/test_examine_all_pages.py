@@ -42,7 +42,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.ground_truth import EventType                       # noqa: E402
-from src.story_detector_v11 import V7StoryDetector             # noqa: E402
+from src.story_detector_v14 import V7StoryDetector             # noqa: E402  (live detector)
 
 PAGES = [
     {"ref": "Ketubot 2a", "segments": [{"index": i, "english": f"a{i}", "hebrew": ""} for i in range(4)]},
@@ -134,22 +134,12 @@ def test_the_bypass_only_ever_adds_pages():
 
 # ------------------------------------------------------------------- the old spelling
 
-def test_skip_triage_alias_still_works_and_warns():
-    """Callers exist (tests/ablation_test.py:196). The alias keeps them running."""
-    seen: dict = {}
-    with pytest.warns(DeprecationWarning, match="examine_all_pages"):
-        detector_that_records_labels(seen).run_pipeline(
-            PAGES, triage_results={k: list(v) for k, v in CACHED.items()},
-            delay=0, skip_triage=True, tractate="Ketubot")
-    assert set(seen) == {"Ketubot 2a", "Ketubot 2b"}
-    assert seen["Ketubot 2a"] == CACHED["Ketubot 2a"], "the alias must not resurrect the stub"
-
-
-def test_passing_both_spellings_is_refused():
-    with pytest.raises(TypeError, match="both"):
+def test_live_detector_has_no_skip_triage_alias():
+    """Dropped in v13: its last caller (tests/ablation_test.py) was archived 2026-11-07.
+    v11 keeps the alias, frozen; v7-v10 keep the stub (pinned below)."""
+    with pytest.raises(TypeError, match="skip_triage"):
         detector_that_records_labels({}).run_pipeline(
-            PAGES, triage_results=dict(CACHED), delay=0,
-            examine_all_pages=True, skip_triage=True)
+            PAGES, triage_results=dict(CACHED), delay=0, skip_triage=True)
 
 
 # ----------------------------------------------------------- the frozen versions stay put

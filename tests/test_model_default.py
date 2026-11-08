@@ -19,6 +19,8 @@ from src.model_config import DEFAULT_MODEL, default_model  # noqa: E402
 
 LIVE_ENTRY_POINTS = [
     "src/story_detector_v11.py",
+    "src/story_detector_v13.py",
+    "src/story_detector_v14.py",
     "src/event_triage.py",
     "scripts/run_new_tractate.py",
     "scripts/run_clause_labeling.py",
