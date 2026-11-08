@@ -191,6 +191,10 @@ def main() -> int:
 def test_wave4_ship_gate():
     """pytest entry point. Marked skip when API key missing."""
     import pytest
+    # Opt-in: a superseded Wave 4 (v10) gate that calls the live API with a retired
+    # model, so it costs money and fails in the regular suite (2026-11-07 review, #17).
+    if os.getenv("RUN_WAVE4_LIVE_GATE") != "1":
+        pytest.skip("live Wave 4 gate; set RUN_WAVE4_LIVE_GATE=1 to run it")
     if not os.getenv("GOOGLE_API_KEY"):
         pytest.skip("GOOGLE_API_KEY not set")
     assert main() == 0, "Wave 4 ship gate failed (see stdout)"

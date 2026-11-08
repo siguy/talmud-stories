@@ -36,7 +36,8 @@ import tempfile
 from collections import defaultdict, namedtuple
 from pathlib import Path
 
-Triage = namedtuple('Triage', 'examined skipped')
+# `failed`: pages whose Stage 2 call failed (`stage2_error`) -- examined by nobody.
+Triage = namedtuple('Triage', 'examined skipped failed', defaults=(frozenset(),))
 
 PROJECT_ROOT = Path(__file__).parent.parent
 logging.basicConfig(
@@ -264,9 +265,11 @@ def load_detected(paths):
     """
     units, spans, withheld = [], defaultdict(list), defaultdict(list)
     rejected, accepted = defaultdict(list), defaultdict(list)
-    examined, skipped = set(), set()
+    examined, skipped, failed = set(), set(), set()
     for path in paths:
         for page in json.loads(Path(path).read_text())['pages']:
+            if page.get('stage2_error'):
+                failed.add(page['ref'])
             spans[page['ref']] += [(s['start_segment'], s['end_segment']) for s in page.get('stories', [])]
             for s in page.get('stories', []):
                 table = rejected if s.get('classification') == 'NOT_A_STORY' else accepted
@@ -277,7 +280,7 @@ def load_detected(paths):
             (skipped if page.get('skipped_by_triage') else examined).add(page['ref'])
     daf = lambda ref: (int(re.search(r'(\d+)', ref).group(1)), 0 if ref.rstrip()[-1] == 'a' else 1)
     units.sort(key=lambda u: (daf(u[0]), u[1]))
-    return units, spans, withheld, Triage(examined, skipped), rejected, accepted
+    return units, spans, withheld, Triage(examined, skipped, failed), rejected, accepted
 
 
 def locate(story_grams, units, index, max_window=14, seeds=12):
@@ -592,6 +595,11 @@ def main():
                      'only_rejected': covered(rejected) and not covered(accepted),
                      'in_mishnah_filtered': covered(withheld),
                      'in_golden': covered(golden) if args.golden else None})
+        # Every page the story sits on had its Stage 2 call fail: nothing was asked, so
+        # it is neither found nor missed (2026-11-07 review, finding 4). Written only
+        # when true, so a run with no failures scores byte-identically to before.
+        if pages_touched and all(ref in triage.failed for ref in pages_touched):
+            rows[-1]['call_failed'] = True
 
     # His later rulings, applied to the list (see apply_superseded). `--standard 2005`
     # scores against the list as he wrote it, so both numbers stay reproducible.
@@ -601,6 +609,17 @@ def main():
         rows = [r for r in all_rows if r['counts_for_recall']]
         log.info('STANDARD current: %d of %d list stories count for recall (%d superseded by a later ruling)',
                  len(rows), len(all_rows), len(all_rows) - len(rows))
+
+    # A story on a failed call leaves both denominators -- end-to-end and given-triage --
+    # because no capability was measured on it. Counted and named, never silent.
+    failed_rows = [r for r in rows if r.get('call_failed')]
+    rows = [r for r in rows if not r.get('call_failed')]
+    log.info('CALL FAILED: %d list stories sit only on the %d page(s) whose Stage 2 call '
+             'failed -- excluded from every denominator below', len(failed_rows),
+             len(triage.failed))
+    for r in failed_rows:
+        log.warning('  CALL-FAILED %s (pages %s): %s', r['ref'], ','.join(r['pages_touched']),
+                    r['text'][:70])
 
     if args.matcher == 'exact':
         log.info('MATCHER exact: %d/%d stories anchored on a corpus-unique phrase, '

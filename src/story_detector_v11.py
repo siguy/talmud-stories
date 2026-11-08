@@ -168,6 +168,10 @@ def validate_story_spans(ref: str, stories: List[Dict], n_segments: int):
     return kept, repairs
 
 
+class EmptyStage2Response(RuntimeError):
+    """Stage 2 came back empty, truncated or unparseable on both attempts."""
+
+
 class V7StoryDetector:
     """
     v7 story detection with event-annotated constrained prompt.
@@ -466,6 +470,9 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 config=types.GenerateContentConfig(**config_kwargs),
             )
             if not response.candidates:
+                # Same failed call as the empty-parts branch below; count it too.
+                print("  EMPTY RESPONSE from model (no candidates)")
+                self.empty_responses = getattr(self, 'empty_responses', []) + ['NO_CANDIDATES']
                 return ""
             # A candidate can come back with content=None or parts=None — MAX_TOKENS
             # spent on thinking, or a safety stop. That is a FAILED call, not an
@@ -766,10 +773,16 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         real_stories = [s for s in stories
                         if s.get('classification') not in ('NOT_A_STORY', None)]
         if real_stories:
-            extra = self._find_additional_stories(
-                ref, segments, event_types, real_stories,
-                prev_page_context, next_page_context,
-            )
+            # An EXTRA call: if it fails, keep the first pass's stories and count the
+            # failure; only a first-pass failure fails the page (Lesson 21).
+            try:
+                extra = self._find_additional_stories(
+                    ref, segments, event_types, real_stories,
+                    prev_page_context, next_page_context,
+                )
+            except EmptyStage2Response:
+                self.pass2_failures = getattr(self, 'pass2_failures', []) + [ref]
+                extra = []
             if extra:
                 merged = self._merge_nonoverlapping(stories, extra)
                 added = len(merged) - len(stories)
@@ -802,6 +815,10 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         if repairs:
             self.span_repairs = getattr(self, 'span_repairs', []) + repairs
 
+        # The second pass and the twin pass APPEND, so the list is not in page order
+        # until it is sorted. Stage 4 reads the page's boundary stories from it
+        # (2026-11-07 review, finding 2). Spans are integers after the check above.
+        stories.sort(key=lambda s: (s['start_segment'], s['end_segment']))
         return stories
 
     def _call_stage2(self, ref: str, prompt: str) -> List[Dict]:
@@ -826,7 +843,10 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
             if attempt == 0:
                 print(f"    Retrying {ref} (JSON parse failed)...")
                 time.sleep(1)
-        return []
+        # Two empty / truncated / unparseable responses are a FAILED call, not "no
+        # stories" (Lesson 21; 2026-11-07 review, finding 3). Raise so the page is
+        # recorded with stage2_error and the scorer can keep it out of Detection.
+        raise EmptyStage2Response(f'{ref}: Stage 2 returned no parseable response twice')
 
     # Segment labels that make a neighbour worth asking about. Stage 1 already computed
     # these; they are the trigger so that no lexical rule is (Lesson 15).
@@ -1376,7 +1396,13 @@ Return JSON:
             print("  checkpoint was written by a different prompt/flags/model -- NOT resumed")
             return {}
         wanted = {p.get('ref') for p in pages_to_process}
-        return {ref: r for ref, r in blob.get('done', {}).items() if ref in wanted}
+        # A page whose call failed is not done: drop it so this run asks again
+        # (2026-11-07 review, finding 7).
+        done = {ref: r for ref, r in blob.get('done', {}).items() if ref in wanted}
+        retry = [ref for ref, r in done.items() if r.get('stage2_error')]
+        if retry:
+            print(f"  checkpoint: {len(retry)} failed page(s) will be retried: {', '.join(retry)}")
+        return {ref: r for ref, r in done.items() if ref not in retry}
 
     def _write_checkpoint(self, path: str, done: Dict) -> None:
         Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -1397,6 +1423,9 @@ Return JSON:
         for n in range(attempts):
             try:
                 return self.detect_stories(ref, segments, events, prev_ctx, next_ctx), None
+            except EmptyStage2Response as e:
+                # Already asked twice inside _call_stage2; record it, keep the run going.
+                return [], f"EmptyStage2Response: {e}"
             except Exception as e:  # noqa: BLE001 - classify, then decide
                 code = getattr(e, 'code', None) or getattr(e, 'status_code', None)
                 retryable = code in self.RETRYABLE_STATUS or 'UNAVAILABLE' in str(e)
@@ -1492,6 +1521,9 @@ Return JSON:
         all_results = []
         done = self._load_checkpoint(checkpoint_path, pages_to_process)
         self.resumed_pages = len(done)
+        # Rebuilt from what this run holds, so it never carries a failure that has
+        # since been retried, nor forgets one that was resumed.
+        self.stage2_errors = [ref for ref, r in done.items() if r.get('stage2_error')]
         if done:
             print(f"  RESUMED {len(done)} page(s) from checkpoint {checkpoint_path}")
         for i, page in enumerate(pages_to_process):
@@ -2162,6 +2194,26 @@ def refine_boundaries_with_event_tags(pages: List[Dict],
     return changes
 
 
+def _story_ending_last(stories: List[Dict]) -> Optional[Dict]:
+    """The story that reaches furthest down the page -- the one that can continue
+    onto the next page. Chosen by extent, never by list position: the twin pass
+    appends, so list-last is not page-last (2026-11-07 review, finding 2)."""
+    ends = [s for s in stories if isinstance(s.get('end_segment'), int)]
+    return max(ends, key=lambda s: s['end_segment']) if ends else None
+
+
+def _story_starting_first(stories: List[Dict]) -> Optional[Dict]:
+    """The story nearest the top of the page -- the one a previous page's story
+    can continue into. Chosen by extent, never by list position."""
+    starts = [s for s in stories if isinstance(s.get('start_segment'), int)]
+    return min(starts, key=lambda s: s['start_segment']) if starts else None
+
+
+def _remove_story(stories: List[Dict], story: Dict) -> None:
+    """Remove this exact story (by identity, not by equal contents)."""
+    stories[:] = [s for s in stories if s is not story]
+
+
 def merge_cross_page_stories_v7(pages: List[Dict],
                                  triage_results: Dict[str, List[EventType]]) -> List[Dict]:
     """
@@ -2210,8 +2262,8 @@ def merge_cross_page_stories_v7(pages: List[Dict],
             continue
 
         # Find boundary stories
-        last_story_n = stories_n[-1] if stories_n else None
-        first_story_n1 = stories_n1[0] if stories_n1 else None
+        last_story_n = _story_ending_last(stories_n)
+        first_story_n1 = _story_starting_first(stories_n1)
 
         # Case: Page N has NOT_A_STORY at boundary, Page N+1 has real story at start
         if (last_story_n and first_story_n1 and
@@ -2237,7 +2289,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
                 last_story_n['one_sentence_summary'] = f"{summary_n} {summary_n1}"
 
             # Remove from page N+1
-            stories_n1.pop(0)
+            _remove_story(stories_n1, first_story_n1)
             page_n1['stories'] = stories_n1
 
             print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
@@ -2259,7 +2311,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
             last_story_n['cross_page_merge_v7'] = True
 
             # Remove from page N+1
-            stories_n1.pop(0)
+            _remove_story(stories_n1, first_story_n1)
             page_n1['stories'] = stories_n1
 
             print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
@@ -2280,7 +2332,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
             last_story_n['end_segment_page2'] = first_story_n1.get('end_segment')
             last_story_n['cross_page_merge_v7'] = True
 
-            stories_n1.pop(0)
+            _remove_story(stories_n1, first_story_n1)
             page_n1['stories'] = stories_n1
 
             print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} (LOW_CONFIDENCE) "
@@ -2325,7 +2377,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
                 elif summary_n1:
                     last_story_n['one_sentence_summary'] = summary_n1
 
-                stories_n1.pop(0)
+                _remove_story(stories_n1, first_story_n1)
                 page_n1['stories'] = stories_n1
 
                 print(f"  Cross-page merge (v7): {ref_n} → {ref_n1} ({merged_cls}) "
@@ -2371,7 +2423,7 @@ def merge_cross_page_stories_v7(pages: List[Dict],
                 elif summary_n1:
                     last_story_n['one_sentence_summary'] = summary_n1
 
-                stories_n1.pop(0)
+                _remove_story(stories_n1, first_story_n1)
                 page_n1['stories'] = stories_n1
 
                 print(f"  Cross-page merge (v7) [seg0 fix]: {ref_n} → {ref_n1} "
@@ -2401,11 +2453,21 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
             continue
 
         # Check if last story on page N continues to page N+1
-        last_story = stories_n[-1]
-        first_story = stories_n1[0]
+        last_story = _story_ending_last(stories_n)
+        first_story = _story_starting_first(stories_n1)
+        if last_story is None or first_story is None:
+            continue
 
         # Fix A: Skip if already merged by a previous pass (e.g. 4b)
         if last_story.get('spans_pages'):
+            continue
+
+        # A story that ends mid-page cannot continue onto the next page: the
+        # segments between it and the break belong to something else. Same gap
+        # rule 4d/4f enforce. Without it Gittin 36a's one-segment story at seg 2
+        # of 14 was bridged to 36b and 36b's own first story deleted (2026-11-07
+        # review, finding 1).
+        if last_story.get('end_segment') != len(page_n.get('segments', [])) - 1:
             continue
 
         last_cont = last_story.get('continuation', {})
@@ -2435,9 +2497,10 @@ def merge_cross_page_stories(pages: List[Dict]) -> List[Dict]:
             last_story['spans_pages'] = [page_n['ref'], page_n1['ref']]
             last_story['start_segment_page2'] = first_story.get('start_segment')
             last_story['end_segment_page2'] = first_story.get('end_segment')
+            last_story['cross_page_merge_legacy'] = True  # findable, like 4b's marker
 
             # Remove the first story from page N+1 (it's merged into page N)
-            stories_n1.pop(0)
+            _remove_story(stories_n1, first_story)
             page_n1['stories'] = stories_n1
 
             print(f"  Merged cross-page story: {page_n['ref']} → {page_n1['ref']} ({merged_cls})")

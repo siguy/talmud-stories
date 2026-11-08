@@ -74,11 +74,18 @@ def main():
     corpus = recall.word_corpus(args.detected, units)
     locator, fell_back = recall.make_locator(args.matcher, units, index, corpus)
 
-    rows, loose, strict = [], 0, 0
+    rows, loose, strict, call_failed = [], 0, 0, 0
     for s in stories:
         gs = recall.grams(s['text'])
         cov, lo, hi = locator(s)
         window = [(units[i][0], units[i][1]) for i in range(lo, hi + 1)] if lo is not None else []
+        # Every page under the story had its Stage 2 call fail: not a miss, and not in
+        # the denominator (2026-11-07 review, finding 4).
+        if window and all(ref in triage.failed for ref, _ in window):
+            call_failed += 1
+            rows.append({'id': s.get('id'), 'ref': window[0][0], 'call_failed': True,
+                         'matcher': args.matcher, 'text': s['text'][:120]})
+            continue
         tight = [(units[i][0], units[i][1]) for i in range(lo, hi + 1)
                  if max(recall.overlap_frac(units[i][2], gs),
                         recall.overlap_frac(gs, units[i][2])) > 0.50] if lo is not None else []
@@ -94,9 +101,11 @@ def main():
                      'loose': in_loose, 'strict': in_strict, 'matcher': args.matcher,
                      'text': s['text'][:120]})
 
-    n = len(stories)
+    n = len(stories) - call_failed
     log.info('%s: %d expert stories (--expert-filter %s, --matcher %s)',
              args.tractate, n, args.expert_filter, args.matcher)
+    log.info('CALL FAILED: %d list stories sit only on pages whose Stage 2 call failed '
+             '-- excluded from the denominator', call_failed)
     if args.matcher == 'exact' and fell_back:
         log.warning('%d story(s) had no corpus-unique phrase and fell back to the 4-gram '
                     'aligner: %s', len(fell_back), ', '.join(map(str, fell_back)))
@@ -104,13 +113,13 @@ def main():
              loose, n, 100 * loose / n)
     log.info('STRICT recall: %d/%d = %.1f%%  — proposal overlapping the story\'s own segments',
              strict, n, 100 * strict / n)
-    only_loose = [r for r in rows if r['loose'] and not r['strict']]
+    only_loose = [r for r in rows if r.get('loose') and not r.get('strict')]
     log.info('%d story(s) credited by the loose test only — check these by name before '
              'quoting the loose figure', len(only_loose))
     for r in only_loose[:args.show]:
         log.info('  loose-only %s %s (window %d segs, tight %d): %s',
                  r['id'], r['ref'], r['window_segments'], r['tight_segments'], r['text'][:70])
-    missed = [r for r in rows if not r['loose']]
+    missed = [r for r in rows if not r.get('loose') and not r.get('call_failed')]
     for r in missed[:args.show]:
         log.info('  MISSED %s %s: %s', r['id'], r['ref'], r['text'][:70])
 
@@ -119,6 +128,7 @@ def main():
         Path(args.out).write_text(json.dumps(
             {'tractate': args.tractate, 'denominator': n, 'matcher': args.matcher,
              'recall_loose': round(loose / n, 4), 'recall_strict': round(strict / n, 4),
+             'call_failed': call_failed,
              'stories': rows}, indent=2, ensure_ascii=False))
         log.info('wrote %s', args.out)
     return 0

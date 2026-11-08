@@ -104,6 +104,7 @@ history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
+open       2026-11-07-pre-eruvin-run-fixes
 closed     11 item(s) in work/done/
 ```
 
@@ -174,4 +175,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: b0ba75844c6739a4 -->
+<!-- board-checksum: 25500238e7970b39 -->

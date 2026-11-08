@@ -123,3 +123,31 @@ def test_client_error_is_not_retried(monkeypatch, tmp_path):
     d.detect_stories = detect
     with pytest.raises(Bad):
         _run(d, tmp_path)
+
+
+def test_a_failed_page_is_retried_on_resume_and_counted(monkeypatch, tmp_path):
+    """A page that failed after retries was checkpointed as done, so a resumed run never
+    asked again, and `stage2_errors` forgot every failure from before the resume
+    (2026-11-07 review, finding 7)."""
+    first = _detector(monkeypatch, fail_on='X 3a', fail_forever=True)
+    _run(first, tmp_path)
+    assert first.stage2_errors == ['X 3a']
+
+    # Resume: the failed page is asked again; this time it works.
+    second = _detector(monkeypatch)
+    out = _run(second, tmp_path)
+    assert second.calls == ['X 3a'], 'the failed page was not retried (or others were)'
+    assert _stories(out)['X 3a'][0]['classification'] == 'YES'
+    assert not getattr(second, 'stage2_errors', [])
+
+
+def test_stage2_errors_describe_this_run_after_a_resume(monkeypatch, tmp_path):
+    """The same detector, resumed after a failure that then succeeds: its stage2_errors
+    must describe the finished run, not accumulate the failure it has since retried."""
+    d = _detector(monkeypatch, fail_on='X 3a', fail_forever=True)
+    _run(d, tmp_path)
+    assert d.stage2_errors == ['X 3a']
+    d.detect_stories = lambda ref, *a: [{'start_segment': 0, 'end_segment': 0,
+                                         'classification': 'YES'}]
+    _run(d, tmp_path)
+    assert d.stage2_errors == []

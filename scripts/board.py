@@ -360,6 +360,9 @@ def recalls() -> dict:
         # superseded_by_rule.json) is not a loss when we miss it, so it leaves the
         # denominator. Rows written before that file existed carry no flag and count.
         rows = [r for r in rows if r.get("counts_for_recall", True)]
+        # A story on a page whose Stage 2 call failed was never asked about, so it is
+        # neither found nor missed -- the scorer leaves it out of both denominators.
+        rows = [r for r in rows if not r.get("call_failed")]
         return {"n": len(rows),
                 "triage": sum(1 for r in rows if r["survived_triage"]) / len(rows),
                 # A story on pages that were all skipped cannot have been proposed,
