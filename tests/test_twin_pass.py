@@ -14,7 +14,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import src.story_detector_v11 as mod  # noqa: E402
+import src.story_detector_v13 as mod  # noqa: E402  (the live detector)
 from src.event_triage import EventType  # noqa: E402
 
 N, V, D = EventType.NARRATIVE_EVENT, EventType.VERBAL_ACT, EventType.DELIBERATION

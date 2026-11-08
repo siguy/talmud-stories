@@ -18,20 +18,13 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-import importlib  # noqa: E402
-
-import src.story_detector_v11 as detector_module  # noqa: E402
+import src.story_detector_v13 as detector_module  # noqa: E402  (the live detector)
 from src.event_triage import EventType  # noqa: E402
 
 PLACEHOLDER = re.compile(r'\{[a-z_]{3,}\}')
 
 
-def _prompt(monkeypatch, series_rule):
-    # `_SERIES_RULE` is read at import time, so the env var must be set BEFORE the
-    # module is (re)loaded. Setting it afterwards silently changes nothing — which is
-    # also true of a real run, where the flag comes from the process environment.
-    monkeypatch.setenv('SERIES_RULE', series_rule)
-    importlib.reload(detector_module)
+def _prompt():
     V7StoryDetector = detector_module.V7StoryDetector
     pages = json.loads(Path('results/sefaria/yevamot.json').read_text())
     pages = pages['pages'] if isinstance(pages, dict) else pages
@@ -46,27 +39,18 @@ def _prompt(monkeypatch, series_rule):
         [EventType(l) for l in labels], None, None)
 
 
-@pytest.mark.parametrize('series_rule', ['0', '1'])
-def test_no_unsubstituted_placeholder_reaches_the_model(monkeypatch, series_rule):
-    prompt = _prompt(monkeypatch, series_rule)
-    leftover = PLACEHOLDER.findall(prompt)
+def test_no_unsubstituted_placeholder_reaches_the_model():
+    leftover = PLACEHOLDER.findall(_prompt())
     assert not leftover, (
-        f'unsubstituted placeholder(s) in the prompt with SERIES_RULE={series_rule}: '
-        f'{leftover} — an f-string was almost certainly split by a concatenation')
+        f'unsubstituted placeholder(s) in the prompt: {leftover} — an f-string was '
+        'almost certainly split by a concatenation')
 
 
-def test_the_gated_clause_changes_nothing_else(monkeypatch):
-    """Off must be byte-identical to on-minus-the-clause.
-
-    A gated experiment arm is only a control if the control path is the same prompt.
-    """
-    off = _prompt(monkeypatch, '0')
-    on = _prompt(monkeypatch, '1')
-    assert len(on) > len(off), 'SERIES_RULE=1 did not add the clause'
-    assert 'SERIES OF PARALLEL INCIDENTS' in on
+def test_v13_has_one_prompt_and_no_series_gate(monkeypatch):
+    """v13 dropped SERIES_RULE (off, unmeasured, superseded by the twin pass). Setting
+    the old env var must change nothing — v11 keeps the gate, frozen."""
+    assert not hasattr(detector_module, '_SERIES_RULE')
+    off = _prompt()
+    monkeypatch.setenv('SERIES_RULE', '1')
+    assert _prompt() == off
     assert 'SERIES OF PARALLEL INCIDENTS' not in off
-    # Removing the clause text from the treatment prompt must give back the control.
-    start = on.index('### A SERIES OF PARALLEL INCIDENTS')
-    end = on.index('## EMBEDDED STORIES')
-    assert on[:start] + on[end:] == off, (
-        'the gate changes the prompt beyond the clause itself — whitespace included')
