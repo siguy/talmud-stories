@@ -113,3 +113,48 @@ def test_env_is_loaded_before_the_parser_defaults(monkeypatch):
                         lambda: calls.append('default') or None)
     runner.build_parser()
     assert calls[:2] == ['env', 'default']
+
+
+# ---- Finding 6: run_meta carries the run's configuration ----
+class _FakeDetector:
+    resumed_pages = 0
+    stage2_errors = []
+    truncated_responses = [900, 1200]
+    empty_responses = ['NO_CANDIDATES']
+    twin_failures = [('X 1a', 3)]
+    twin_verdicts = [{}, {}, {}]
+    pass2_failures = ['X 2b']
+
+    def _stage2_fingerprint(self):
+        return 'abc123'
+
+
+def test_run_meta_carries_the_configuration(monkeypatch):
+    from src import story_detector_v11 as mod
+    monkeypatch.setenv('TWIN_PASS', '0')
+    monkeypatch.delenv('TWIN_TRIGGER', raising=False)
+    args = runner.build_parser().parse_args(
+        ['--tractate', 'gittin', '--refs', 'X 1a', '--retriage'])
+    meta = runner.build_run_meta(
+        args, _FakeDetector(), mod, elapsed=12.34, pages=[{}], src_name='s.json',
+        triage_summary={'failed': 1, 'failed_refs': ['X 1a']})
+    for key in ('detector_module', 'twin_pass', 'twin_trigger', 'twin_reach',
+                'series_rule', 'stage2_fingerprint', 'git_rev', 'refs', 'retriage',
+                'triage_failed', 'truncated_responses', 'empty_responses',
+                'twin_failures', 'twin_verdicts', 'pass2_failures',
+                'model', 'thinking_level', 'stage2_errors', 'resumed_pages'):
+        assert key in meta, key
+    assert meta['detector_module'] == mod.__name__
+    assert meta['twin_pass'] == '0'                       # env wins
+    assert meta['twin_trigger'] == mod.TWIN_TRIGGER_DEFAULT  # module default otherwise
+    assert meta['stage2_fingerprint'] == 'abc123'
+    assert meta['refs'] == 'X 1a' and meta['retriage'] is True
+    assert meta['triage_failed'] == {'count': 1, 'refs': ['X 1a']}
+    assert meta['truncated_responses'] == 2 and meta['twin_verdicts'] == 3
+    assert meta['twin_failures'] == [['X 1a', 3]] and meta['pass2_failures'] == ['X 2b']
+    json.dumps(meta)                                      # must serialise
+
+
+def test_version_comes_from_the_module_name():
+    from src import story_detector_v11 as mod
+    assert runner.version_of(mod) == 'v11'

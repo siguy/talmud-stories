@@ -27,6 +27,7 @@ import argparse
 import json
 import logging
 import os
+import subprocess
 import sys
 import time
 from pathlib import Path
@@ -71,6 +72,49 @@ def load_env():
                     os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
             return env
     return None
+
+
+def version_of(module):
+    """'src.story_detector_v11' -> 'v11'. The run says which detector it ran, not which
+    one this file hoped it would."""
+    return module.__name__.rsplit('_', 1)[-1]
+
+
+def _git_rev():
+    try:
+        return subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=PROJECT_ROOT, text=True,
+                              capture_output=True, timeout=10).stdout.strip() or None
+    except Exception:
+        return None
+
+
+def build_run_meta(args, detector, module, elapsed, pages, src_name, triage_summary):
+    """Everything a later reader needs to attribute this run's numbers to a configuration.
+    Counters the detector already keeps (and nothing wrote down) are recorded too: a twin
+    pass whose calls all failed must not look like one that found nothing (Lesson 38)."""
+    return {
+        'model': args.model, 'thinking_level': args.thinking,
+        'elapsed_seconds': round(elapsed, 1),
+        'pages': len(pages), 'source': src_name,
+        'ground_truth': 'ketubot-only (cross-tractate)',
+        'detector_module': module.__name__,
+        'twin_pass': os.getenv('TWIN_PASS', module.TWIN_PASS_DEFAULT),
+        'twin_trigger': os.getenv('TWIN_TRIGGER', module.TWIN_TRIGGER_DEFAULT),
+        'twin_reach': os.getenv('TWIN_REACH', '1'),
+        'series_rule': os.getenv('SERIES_RULE', '0'),
+        'stage2_fingerprint': detector._stage2_fingerprint(),
+        'git_rev': _git_rev(),
+        'refs': args.refs, 'retriage': args.retriage,
+        'triage_failed': {'count': triage_summary['failed'],
+                          'refs': triage_summary['failed_refs']},
+        'resumed_pages': getattr(detector, 'resumed_pages', 0),
+        'stage2_errors': getattr(detector, 'stage2_errors', []),
+        'truncated_responses': len(getattr(detector, 'truncated_responses', [])),
+        'empty_responses': len(getattr(detector, 'empty_responses', [])),
+        'twin_verdicts': len(getattr(detector, 'twin_verdicts', [])),
+        'twin_failures': [list(f) for f in getattr(detector, 'twin_failures', [])],
+        'pass2_failures': list(getattr(detector, 'pass2_failures', [])),
+    }
 
 
 def load_triage_cache(cache):
@@ -158,7 +202,8 @@ def main():
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
-    from src.story_detector_v11 import V7StoryDetector
+    from src import story_detector_v11 as detector_module
+    V7StoryDetector = detector_module.V7StoryDetector
 
     override = SOURCES.get(args.tractate, {})
     src = PROJECT_ROOT / override.get('pages', f'results/sefaria/{args.tractate}.json')
@@ -234,13 +279,9 @@ def main():
                                     checkpoint_path=checkpoint)
     elapsed = time.time() - t0
 
-    results['version'] = 'v11'
-    results['run_meta'] = {'model': args.model, 'thinking_level': args.thinking,
-                           'elapsed_seconds': round(elapsed, 1),
-                           'pages': len(pages), 'source': src.name,
-                           'ground_truth': 'ketubot-only (cross-tractate)',
-                           'resumed_pages': getattr(detector, 'resumed_pages', 0),
-                           'stage2_errors': getattr(detector, 'stage2_errors', [])}
+    results['version'] = version_of(detector_module)
+    results['run_meta'] = build_run_meta(args, detector, detector_module, elapsed, pages,
+                                         src.name, triage_summary)
     if results['run_meta']['resumed_pages']:
         log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)
     if results['run_meta']['stage2_errors']:
