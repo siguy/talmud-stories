@@ -81,7 +81,6 @@ from src.model_config import (default_model, default_thinking_level,
 import re
 import pathlib
 import time
-import warnings
 from pathlib import Path
 from typing import Dict, List, Optional, Any, Tuple
 
@@ -348,7 +347,7 @@ the page — not only the most prominent one. Two stories are distinct when
 they have different protagonists, different settings, or are separated by
 halakhic discussion (even a single intervening segment). Do not stop after
 finding the first story; scan all segments.
-""" + _SERIES_RULE + f"""
+
 ## EMBEDDED STORIES — DETECT THESE TOO
 
 Stories often appear INSIDE other Talmudic structures (baraitot, objections).
@@ -1077,7 +1076,6 @@ Answer in JSON only:
             "not include in the prior pass. A second story is distinct if it "
             "has different protagonists, a different setting, or is separated "
             "from the prior stories by halakhic discussion (even one segment).\n"
-            + _SERIES_RULE_SECOND_PASS
             + "Return ONLY stories that do NOT overlap the already-detected "
             "segment ranges. If there are no additional stories, return "
             '{"page_ref": "' + ref + '", "stories": []}.\n'
@@ -1446,7 +1444,6 @@ Return JSON:
         import hashlib, inspect
         parts = [
             inspect.getsource(type(self).build_detection_prompt),
-            _SERIES_RULE, _SERIES_RULE_SECOND_PASS,
             inspect.getsource(type(self)._twin_prompt),
             os.getenv('TWIN_PASS', TWIN_PASS_DEFAULT), os.getenv('TWIN_TRIGGER', TWIN_TRIGGER_DEFAULT),
             os.getenv('TWIN_REACH', '1'),
@@ -1514,7 +1511,6 @@ Return JSON:
                      examine_all_pages: bool = False,
                      enable_adversarial: bool = False,
                      tractate: str = 'Ketubot',
-                     skip_triage: Optional[bool] = None,
                      checkpoint_path: Optional[str] = None) -> Dict:
         """
         Full v7 pipeline: triage → detect → (adversarial) → (boundary refine)
@@ -1533,22 +1529,7 @@ Return JSON:
             examine_all_pages: If True, run Stage 2 on every page — overriding Stage 1's
                 skip verdict and ONLY that. The labels are still real.
             tractate: Tractate name for output metadata
-            skip_triage: deprecated spelling of `examine_all_pages`
         """
-        if skip_triage is not None:
-            if examine_all_pages:
-                raise TypeError(
-                    'pass either examine_all_pages or skip_triage, not both — they are '
-                    'the same argument and skip_triage is the deprecated spelling')
-            warnings.warn(
-                'skip_triage is deprecated and misnamed; use examine_all_pages. It never '
-                'skipped Stage 1 — until 2026-09-01 it replaced Stage 1 output with '
-                'all-DELIBERATION, a verdict Stage 2, the cross-page context, boundary '
-                'refinement and post-processing all believed. See '
-                'docs/findings/2026-09-01-contaminated-no-triage-ablation.md',
-                DeprecationWarning, stacklevel=2)
-            examine_all_pages = skip_triage
-
         # Stage 1: Event Triage.
         #
         # Runs whenever labels were not supplied — INCLUDING under examine_all_pages.
@@ -3069,41 +3050,6 @@ _supports_thinking_level = supports_thinking_level
 # TWIN_PASS=0 still gives the pre-2026-09-25 detector for a control arm.
 TWIN_PASS_DEFAULT = '1'
 TWIN_TRIGGER_DEFAULT = 'all'
-
-
-# The parallel-series clause, added 2026-09-07. Measured 2026-09-07: 18 of 38
-# Detection misses had a proposal ONE segment away, and in 18 of 18 that proposal was
-# a DIFFERENT story -- almost always the missed story's formulaic twin. We were
-# returning one representative of a run.
-# DEFAULT OFF. It is written but NOT measured: the run meant to measure it hit the
-# model breakage recorded in the same commit. Set SERIES_RULE=1 for the treatment arm.
-# Do not turn the default on without a scored two-arm run and a same-code repeat.
-# -> docs/findings/2026-09-07-miss-anatomy.md
-_SERIES_RULE = "" if os.getenv("SERIES_RULE", "0") == "0" else """
-### A SERIES OF PARALLEL INCIDENTS IS N STORIES, NOT ONE
-
-Stories are frequently placed in a RUN: several incidents of the same form,
-one after another, with different actors and no discussion between them.
-Each incident is its OWN story. Return one entry per incident.
-
-Adjacency does NOT merge them. Neither does a shared opening formula, a
-shared closing line, a shared verdict, or a shared narrator. Those are the
-marks of a SERIES -- they are the reason the incidents sit together, not
-evidence that they are one story.
-
-Ask of each incident: does it have its own actor and its own outcome? If
-yes, it is its own story, even where the incident beside it is told in
-almost the same words. Do NOT return one representative of a run and stop.
-"""
-
-_SERIES_RULE_SECOND_PASS = "" if os.getenv("SERIES_RULE", "0") == "0" else (
-    "MOST IMPORTANTLY: look for further incidents of the SAME FORM as "
-    "one already detected -- a run of parallel cases with different "
-    "actors, told in almost the same words, with nothing between them. "
-    "Each such incident is its own story. A shared formula, a shared "
-    "closing line or a shared verdict is the mark of a series, not of "
-    "a single story.\n"
-)
 
 
 CLAUSE_TERMINATORS = '.:?!'
