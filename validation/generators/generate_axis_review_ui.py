@@ -155,6 +155,22 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
     return stories, '+'.join(sorted(versions))
 
 
+def failed_pages(paths: List[Path]) -> List[str]:
+    """Refs of pages whose Stage 2 call failed (`stage2_error`), in run order.
+
+    Such a page emits no card, so on the review page it is indistinguishable from
+    a page with no stories -- one the reviewer would in effect confirm although
+    nobody examined it (2026-11-07 review, P2-3). The header names them and the
+    build refuses unless `--allow-failed`.
+    """
+    out: List[str] = []
+    for p in paths:
+        for page in json.loads(Path(p).read_text())['pages']:
+            if page.get('stage2_error'):
+                out.append(page.get('ref', '?'))
+    return out
+
+
 PAGE = r"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -270,6 +286,7 @@ __DISPLAY_CSS__
   <div class="header">
     <h1>__TITLE__ — Story Review</h1>
     __NOTE__
+    __FAILED__
     <p>Hebrew and English are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language — the story is highlighted inside the full text.</p>
     <div class="howto">
       <b>If an entry is right, click <span style="color:#2c7a7b">Yes</span> and move on — that is the whole review for it.</b><br>
@@ -734,8 +751,18 @@ init();
 </html>"""
 
 
+def _failed_line(failed: List[str] | None) -> str:
+    if not failed:
+        return ''
+    n = len(failed)
+    return (f'    <p class="failed-pages" style="color:#9b2c2c;"><b>{n} page'
+            f'{"" if n == 1 else "s"} not examined (call failed): {", ".join(failed)}</b>'
+            f' — no entry below comes from {"it" if n == 1 else "them"}; an absence there'
+            f' is not a "no story".</p>\n')
+
+
 def generate_html(title: str, stories: List[Dict], detector_version: str,
-                  note: str | None = None) -> str:
+                  note: str | None = None, failed: List[str] | None = None) -> str:
     data_json = json.dumps(stories, ensure_ascii=True).replace('</', '<\\/')
     n_cross = sum(1 for s in stories if s.get('spans_pages'))
     n_mish = sum(1 for s in stories if s.get('mishnah_withheld'))
@@ -751,6 +778,7 @@ def generate_html(title: str, stories: List[Dict], detector_version: str,
             # Whole line, newline included, so a page with no note is byte-identical
             # to the ones already banked (tests/test_review_ui_axes.py).
             .replace('    __NOTE__\n', f'    <p><b>{note}</b></p>\n' if note else '')
+            .replace('    __FAILED__\n', _failed_line(failed))
             .replace('__STORIES__', data_json))
 
 
@@ -773,6 +801,9 @@ def main(argv=None) -> int:
     ap.add_argument('--listed', help='JSON list of {ref,start_segment,end_segment} the expert '
                                      'ALSO has, so the page can show where we agree')
     ap.add_argument('--note', help='one line shown under the page title')
+    ap.add_argument('--allow-failed', action='store_true',
+                    help='build even if some pages carry stage2_error (they are named '
+                         'in the header); without it such a run is refused')
     args = ap.parse_args(argv)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -781,6 +812,13 @@ def main(argv=None) -> int:
             ap.error('--run needs --title and --out')
         paths = [Path(r) if Path(r).is_absolute() else ROOT / r for r in args.run]
         stories, version = build_data(paths)
+        failed = failed_pages(paths)
+        if failed:
+            print(f"  {len(failed)} page(s) not examined (stage2_error): {', '.join(failed)}")
+            if not args.allow_failed:
+                print('  REFUSING to build: re-run those pages, or pass --allow-failed '
+                      'to build with them named in the header')
+                return 1
         if args.only:
             keep = {(o['ref'], o['start_segment'], o['end_segment'])
                     for o in json.loads(Path(args.only).read_text())}
@@ -802,7 +840,7 @@ def main(argv=None) -> int:
                                        st['end_segment']) in listed
             agreed = sum(1 for st in stories if st['expert_listed'])
             print(f"  agreement: {agreed} of {len(stories)} entries are on the expert's list")
-        html = generate_html(args.title, stories, version, note=args.note)
+        html = generate_html(args.title, stories, version, note=args.note, failed=failed)
         out = OUT_DIR / args.out
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)
@@ -819,7 +857,7 @@ def main(argv=None) -> int:
             print(f"  SKIP {slug}: missing {[str(m.relative_to(ROOT)) for m in missing]}")
             continue
         stories, version = build_data(paths)
-        html = generate_html(cfg['title'], stories, version)
+        html = generate_html(cfg['title'], stories, version, failed=failed_pages(paths))
         out = OUT_DIR / cfg['out']
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)

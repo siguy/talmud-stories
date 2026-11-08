@@ -292,3 +292,64 @@ class VerdictsSurviveAReload(unittest.TestCase):
                  ' setItem() { throw new Error("blocked"); } };\n'
         got = run_page_js(self.html, PERSIST_AUDIT_BROKEN, broken)
         self.assertTrue(got['ok'], 'blocked storage must not break answering')
+
+
+# ---------------------------------------------------------------------------
+# 3. Pages whose Stage 2 call failed are named, and refuse the build by default.
+# ---------------------------------------------------------------------------
+def _with_failed_page() -> dict:
+    data = copy.deepcopy(json.loads(FIXTURE.read_text()))
+    page = data['pages'][2]                       # Kiddushin 50b
+    page['stories'] = []
+    page['mishnah_stories'] = []
+    page['stage2_error'] = 'ResourceExhausted: 429'
+    return data
+
+
+class PagesNotExaminedAreNamed(unittest.TestCase):
+    """Finding P2-3: a page whose call failed emitted no card and no count, so it
+    looked exactly like a page with no stories — one Jeff would 'confirm'."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.gen = _load_generator()
+        cls.path = write_fixture(_with_failed_page())
+        cls.out = Path(tempfile.mkdtemp()) / 'page.html'
+
+    @classmethod
+    def tearDownClass(cls):
+        os.unlink(cls.path)
+
+    def test_failed_pages_are_counted(self):
+        self.assertEqual(self.gen.failed_pages([self.path]), ['Kiddushin 50b'])
+        self.assertEqual(self.gen.failed_pages([FIXTURE]), [])
+
+    def test_the_build_refuses_without_allow_failed(self):
+        rc = self.gen.main(['--run', str(self.path), '--title', 'Kiddushin',
+                            '--out', str(self.out)])
+        self.assertNotEqual(rc, 0, 'a run with failed pages must not build silently')
+        self.assertFalse(self.out.exists())
+
+    def test_with_allow_failed_the_header_names_them(self):
+        rc = self.gen.main(['--run', str(self.path), '--title', 'Kiddushin',
+                            '--out', str(self.out), '--allow-failed'])
+        self.assertEqual(rc, 0)
+        html = self.out.read_text()
+        self.assertTrue('1 page not examined (call failed): Kiddushin 50b' in html,
+                        'the header must name the pages nobody examined')
+
+    def test_a_clean_run_has_no_such_line(self):
+        stories, version = self.gen.build_data([FIXTURE])
+        self.assertFalse('not examined' in self.gen.generate_html('K', stories, version))
+
+
+class OutAnywhere(unittest.TestCase):
+    """Finding P3: `--out` outside validation/ui/ wrote the file then crashed on
+    `out.relative_to(ROOT)`."""
+
+    def test_out_outside_the_repo_builds_and_returns_0(self):
+        gen = _load_generator()
+        out = Path(tempfile.mkdtemp()) / 'scratch.html'
+        rc = gen.main(['--run', str(FIXTURE), '--title', 'Kiddushin', '--out', str(out)])
+        self.assertEqual(rc, 0)
+        self.assertTrue(out.exists())
