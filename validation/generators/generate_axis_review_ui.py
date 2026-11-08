@@ -45,8 +45,10 @@ wave 4 page uses, guarded by `tests/test_review_ui_symmetry.py`. This page
 therefore cannot show Hebrew and English at different extents unless that test
 also fails.
 
-Reads `results/v10/wave4_notrim/` -- the honest segment-level output. The
-reverted char-offset spans of `results/v10/wave4/` are not shown at all.
+With no arguments it reads `results/v10/wave4_notrim/` (segment-level only).
+A v11 run's clause spans (`text_span_start/end`) are drawn as a <mark> inside
+the highlighted rows: that is the boundary we claim and the one the scorer
+scores. The reverted Wave 4 char-offset spans are never read.
 
 Usage:  python3 validation/generators/generate_axis_review_ui.py
 """
@@ -120,6 +122,11 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
                         # of them are passages his own list already has.
                         'expert_listed': None,
                     }
+                    # The clause span is OUR claimed boundary, and the one
+                    # score_boundary_targets.py scores. Carried so the page can draw it.
+                    for k in ('text_span_start', 'text_span_end', 'text_span_end_skipped'):
+                        if s.get(k) is not None:
+                            item[k] = s[k]
                     # A boundary correction needs text on BOTH sides of our span, and
                     # 8 of the 25 Gittin entries had fewer than two lines of context on
                     # one side — two of them ended on the last segment of the daf, with
@@ -268,6 +275,7 @@ __DISPLAY_CSS__
       <b>If an entry is right, click <span style="color:#2c7a7b">Yes</span> and move on — that is the whole review for it.</b><br>
       If something is off, use <b>“Something else is wrong”</b> to say <i>what</i>: the extent, the confidence level, or whether it should be split or merged. A passage can be a story <i>and</i> have the wrong extent — those are separate questions on purpose, because we have been unable to tell them apart and it has sent us fixing the wrong things.<br>
       If the <b>extent</b> is wrong, a box opens for the Hebrew: <b>highlight the words in the text above and press “Use highlighted text”</b> — no need to type them. There are two boxes, <b>where the story should start</b> and <b>where it should end</b>; fill either or both. Below them you can instead point at one passage and say whether it <i>belongs in the story</i> or <i>should be cut</i>.<br>
+      <b>Highlighted rows</b> are the segments the story sits in. Where part of the Hebrew is also <mark class="span-in">marked like this</mark>, the mark is our <b>claimed extent</b> — the exact words we say the story starts and ends with — and the rest of the highlight is context. Judge the boundary against the mark.<br>
       If the <b>page itself</b> is broken — text missing, Hebrew not matching — click <b>⚠ Display problem</b>. That is our bug, not a judgement about the passage.
     </div>
     <div class="stats">
@@ -328,9 +336,25 @@ const AXIS_LABELS = {
   grouping: { right: 'Right', split: 'Should be split', merge: 'Merge with neighbour' }
 };
 
-// The shared core builds the text; this page passes NO span hook, because
-// wave4_notrim carries segment-level boundaries only. The reverted char-offset
-// spans are not shown here at all -- 55% of them cut mid-word.
+// Our CLAIMED extent, as a <mark> inside the highlighted rows. v11 narrows a
+// story to clause boundaries (`text_span_start/end`, raw-string offsets,
+// [start, end)), and that narrower extent is what score_boundary_targets.py
+// scores. Highlighting only the whole segments showed Jeff a boundary we never
+// claimed: all 5 Gittin boundary notes asked to cut text the span already
+// excluded (2026-11-07 review, P1-1). A story with no span draws no mark -- its
+// claimed extent IS the highlighted segments. A story that runs onto the next
+// daf has no end on this one, so a `text_span_end` it carries (pre-PR-#71 runs
+// do) is ignored. The old reason for passing null here -- Wave 4 char offsets,
+// 55% mid-word -- does not apply: clause spans sit on punctuation by construction.
+function claimedSpan(story, i, heb) {
+  const s = story.text_span_start, e = story.text_span_end;
+  const endClaimed = !!e && !story.text_span_end_skipped && !story.spans_pages;
+  if (!s && !endClaimed) return [null, null];
+  const lo = (s && i === s.segment) ? s.char_offset : 0;
+  const hi = (endClaimed && i === e.segment) ? e.char_offset : heb.length;
+  return [lo, hi];
+}
+
 function buildTextDisplay(story) {
   // The neighbouring daf is drawn by the SAME grid builder, so its Hebrew and
   // English pair exactly like the rest. The synthetic start/end simply pick the
@@ -344,7 +368,7 @@ function buildTextDisplay(story) {
     const lastIdx = story.prev_page_segments.reduce((m, s) => Math.max(m, s.index), 0);
     out += edge(story.prev_page_segments, 'end of ' + story.prev_page_ref, lastIdx + 1);
   }
-  out += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, null);
+  out += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, claimedSpan);
   // A story that already continues onto the next daf gets that page from
   // buildContinuation below; showing it twice would read as two passages.
   if (story.next_page_segments && !story.spans_pages) {
