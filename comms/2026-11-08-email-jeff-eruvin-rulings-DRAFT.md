@@ -1,52 +1,28 @@
-Subject: Eruvin: 20 passages where your later rulings and your 2005 list may disagree
+Subject: Eruvin: 20 passages to confirm against your later rulings (page attached)
 
 Dear Jeff,
 
-Quick context: we have now run our story finder on Eruvin, a tractate it had never seen, and scored it against your 2005 list of 74 stories. This is the last 2005 list we will score, so we want to get the measurement exactly right.
+Quick context: we have now run our story finder on Eruvin, a tractate it had never seen, and scored it against your 2005 list of 74 stories. This is the last 2005 list we will score, so we want the measurement exactly right.
 
-You have already told us that your later rulings take precedence over your 2005 list, and we are applying them that way. What we need now is your confirmation on these specific passages, because it decides how accurate our finder really is.
+You have already told us that your later rulings take precedence over your 2005 list, and we are applying them that way. What we need now is your confirmation on 20 specific passages, because it decides how accurate our finder really is.
 
-How we picked them: we applied your rulings since 2005 (speech alone is borderline at most, a bare report of one act is not a story, scholarly back-and-forth is not conflict, one event followed by a ruling is not a story) to all 74 entries, without knowing which ones our program had found. Two independent readers flagged 19 as probably not stories under those rulings, and split on a 20th. These are our guesses at what you would say, not your rulings. We would rather have yours.
+The page is attached (eruvin_2005_rulings.html). Open it in any browser. Each passage is shown in context, Hebrew and English side by side, with the part from your list highlighted. The only question that matters is the first one: story, borderline, or not a story. Everything else on the page is optional. When you are done, press Save Review and send us the file it downloads. Or just reply with the item numbers and one word each.
 
-For each passage below, please answer: story, borderline, or not a story. A few words on the reason are a bonus, but not required.
+How we picked them: we applied your rulings since 2005 (speech alone is borderline at most, a bare report of one act is not a story, scholarly back-and-forth is not conflict, one event followed by a ruling is not a story) to all 74 entries, without knowing which ones our program had found. Two independent readers flagged 19 as probably not stories under those rulings, and split on a 20th. These are our guesses, not your rulings.
 
-Group 1: one event, then a challenge, a ruling or a discussion
-1. Eruvin 13b, the elders of Beit Shammai and Beit Hillel visit R. Yohanan ben HaHoranit and find him sitting in the sukkah with his table inside the house. Beit Shammai ask "is that proof?" and Beit Hillel say he has never kept the sukkah mitzvah. (Our readers split on this one. We think it is a story.)
-2. Eruvin 24a, Mar Yehuda comes to the house of Rav Huna bar Yehuda, sees people carrying among trees not planted in rows, and asks whether he does not hold like Avimi; Rav Huna replies that he holds like Rav Nahman.
-3. Eruvin 47a, R. Eliezer does not go into the study house, meets R. Asi standing outside and asks what was said inside; then a halakhic discussion.
-4. Eruvin 59b, R. Zeira made an eiruv for R. Hiyya's city and left no section out; Abaye asks why, and an answer follows.
-5. Eruvin 63a, Ravina visits Mehoza and his host shows him a slaughtering knife; Ravina tells him to take it to Rava, and the host objects that Rava allows a scholar to check it himself.
-6. Eruvin 67a, a child's hot water spilled; Rabba proposes a solution, Abaye objects, Rabba changes it.
-7. Eruvin 68a, a child's hot water spilled; Rava proposes asking the mother, Mesharshiya objects.
+The 20 are grouped on the page by shape:
 
-Group 2: scholars talking or sitting, with little or no event
-8. Eruvin 14b, Rav says the halakha is not like R. Yose, then denies saying it; Rava swears he heard it.
-9. Eruvin 24a, Hezekiah asks about a hole that is plugged and reopened, followed by a scholarly exchange.
-10. Eruvin 32b, R. Hiyya bar Abba, R. Asi and Rava bar Natan sit and work through the status of a tree, and Rav Nahman joins in.
-11. Eruvin 37b, Rava questions Rav Nahman about a baraita and Rav Nahman is silent.
-12. Eruvin 51a, Rabba and Rav Yosef travel together and agree on a place to stay for Shabbat; the frame leads into a legal discussion.
-13. Eruvin 60a, R. Yitzhak gives a ruling; Abaye asks Rav Yosef whether it is tradition or reasoning.
-14. Eruvin 63a, Ravina and Rav Ashi discuss whether Rav Hamnuna issued rulings in his teacher's lifetime, which Ravina uses to justify his own practice.
-15. Eruvin 103a, Abaye is teaching and Rav Safra objects from a mishna.
+Group 1, items 1 to 7: one event, then a challenge, a ruling or a discussion (Eruvin 13b, 24a, 47a, 59b, 63a, 67a, 68a)
 
-Group 3: one act cited as precedent
-16. Eruvin 41a, R. Yehuda recalls that the Ninth of Av once fell on Shabbat eve while they sat before R. Akiva, and R. Akiva swallowed a lightly cooked egg without salt to show the students they need not complete the fast.
+Group 2, items 8 to 15: scholars talking or sitting, with little or no event (Eruvin 14b, 24a, 32b, 37b, 51a, 60a, 63a, 103a)
 
-Group 4: how a person speaks (wise or precise speech)
-17. Eruvin 53b, a man of Judea says "I have a cloak to sell" and is asked what colour; shows precise speech.
-18. Eruvin 53b, the maidservant in Rabbi's house speaks in riddles and says "the ladle is knocking against the jug".
-19. Eruvin 53b, R. Yose bar Asyan, when speaking in the language of the sages, says "prepare for me an ox in judgment on a poor mountain".
-20. Eruvin 53b, R. Abbahu, when speaking in the language of the sages, says "make the coals the colour of an etrog..." and the rabbis ask him where R. Ilai is hidden.
+Group 3, item 16: one act cited as precedent (Eruvin 41a)
 
-What your answers will tell us. Our program found 68 of your 74 as written, 91.9 percent. The six it missed are items 1, 8, 10, 13, 19 and 20. The other 14 items were found. Depending on what you rule, the score can land anywhere from 90 percent to 100 percent:
-- If you keep all 20 as stories, nothing changes: 91.9 percent.
-- If you rule out the five we missed that our readers agreed on (items 8, 10, 13, 19, 20) and keep everything else, we score 68 of 69, 98.6 percent.
-- If you rule out all 19 our readers agreed on, we score 54 of 55, 98.2 percent.
-- If you rule out only passages we found and keep the ones we missed, we score as low as 54 of 60, 90.0 percent.
-- Each missed passage you rule out raises the score by about 1.3 points. Each found passage you rule out lowers it by about 0.1.
-Your answers also tell us how many of the things our program proposes are over-inclusive, which is the other half of its accuracy.
+Group 4, items 17 to 20: how a person speaks, wise or precise speech (four passages on Eruvin 53b)
 
-So the short version: we found most of what is on your list, and the open question is how much of your list still counts under your current rules. We cannot tell how good the finder really is until you tell us which 2005 entries you would still stand behind.
+What your answers tell us: our program found 68 of your 74 as written, 91.9 percent. Depending on your rulings the score lands anywhere from 90 percent to 100 percent. Each of the six we missed that you rule out raises it by about 1.3 points, and each one we found that you rule out lowers it by about 0.1. They also show how many of the things our program proposes are over-inclusive, which is the other half of its accuracy.
+
+In short: we found most of what is on your list, and we cannot say how good the finder really is until you tell us which 2005 entries you still stand behind.
 
 Thank you,
 Simon
