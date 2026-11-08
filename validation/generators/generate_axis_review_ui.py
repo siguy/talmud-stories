@@ -432,6 +432,13 @@ function isComplete(v) { return !!(v && v.is_story); }
 // ---------------------------------------------------------------------------
 const STORAGE_KEY = 'axis-review:' + TRACTATE + ':' + DETECTOR_VERSION;
 
+// The last time this verdict changed. Exported per verdict so the pace of a
+// round can be read off the file (5_review's gate is "days, not weeks").
+function changed(key) {
+  ensure(key).answered_at = new Date().toISOString();
+  persist();
+}
+
 function persist() {
   try { localStorage.setItem(STORAGE_KEY, JSON.stringify(verdicts)); } catch (e) {}
   showSaved();
@@ -606,11 +613,11 @@ function setAxis(key, axis, value, idx) {
     }
   }
   updateProgress();
-  persist();
+  changed(key);
 }
 
-function setQuote(key, text) { ensure(key).quote = text; persist(); }
-function setField(key, field, text) { ensure(key)[field] = text; persist(); }
+function setQuote(key, text) { ensure(key).quote = text; changed(key); }
+function setField(key, field, text) { ensure(key)[field] = text; changed(key); }
 
 // Same as grabSelection, but writes into a named field, so START and END are
 // two separate statements rather than one quote whose direction we have to
@@ -624,7 +631,7 @@ function grabInto(key, field, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v[field] = sel.trim();
-  persist();
+  changed(key);
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="' + field + '-text"]');
   if (box) { box.value = v[field]; selectForReplace(box); }
@@ -649,7 +656,7 @@ function grabSelection(key, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v.quote = sel.trim();
-  persist();
+  changed(key);
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="quote-text"]');
   if (box) { box.value = v.quote; selectForReplace(box); }
@@ -658,7 +665,7 @@ function grabSelection(key, idx) {
 function toggleDisplay(key, idx) {
   const v = ensure(key);
   v.display_problem = !v.display_problem;
-  persist();
+  changed(key);
   const card = document.getElementById('card-' + idx);
   if (card) {
     const btn = card.querySelector('.axis-btn[data-axis="display_problem"]');
@@ -677,7 +684,7 @@ function toggleAxes(idx, btn) {
   if (btn) btn.classList.toggle('open', open);
 }
 
-function setNotes(key, notes) { ensure(key).notes = notes; persist(); }
+function setNotes(key, notes) { ensure(key).notes = notes; changed(key); }
 
 // The whole reason this exists. On the first real round (Gittin, 2026-09-02) every
 // structured field came back empty and five boundary corrections arrived as prose --
@@ -737,7 +744,12 @@ function buildExport() {
       // and the single quote box could not.
       quote_start: v.quote_start || '',
       quote_end: v.quote_end || '',
-      notes: v.notes || ''
+      notes: v.notes || '',
+      // Additions (2026-11-07): the file-level schema_version, repeated per
+      // verdict so a merged file still says which page shape each came from,
+      // and when it was last changed.
+      schema_version: SCHEMA_VERSION,
+      answered_at: v.answered_at || null
     };
   });
   return {

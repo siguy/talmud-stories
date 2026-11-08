@@ -467,3 +467,34 @@ class ListedFilterIsRendered(unittest.TestCase):
 
     def test_the_unlisted_filter_keeps_only_unlisted_entries(self):
         self.assertEqual(self.r['nUnlisted'], 1)
+
+
+# ---------------------------------------------------------------------------
+# Should-land: every verdict carries schema_version and answered_at, so
+# verdicts-per-hour can be measured from the file (5_review: "days, not weeks").
+# ---------------------------------------------------------------------------
+STAMP_AUDIT = r"""
+init();
+setAxis(STORIES[0].key, 'is_story', 'yes', 0);
+setNotes(STORIES[1].key, 'x'); setAxis(STORIES[1].key, 'is_story', 'no', 1);
+const rows = Object.values(buildExport().reviews);
+console.log(JSON.stringify(rows.map(r => ({ sv: r.schema_version, at: r.answered_at,
+                                             keys: Object.keys(r) }))));
+"""
+
+
+class EveryVerdictIsStamped(unittest.TestCase):
+    def test_schema_version_and_answered_at_per_verdict(self):
+        _need_node()
+        gen = _load_generator()
+        stories, version = gen.build_data([FIXTURE])
+        rows = run_page_js(gen.generate_html('Kiddushin', stories, version), STAMP_AUDIT)
+        self.assertEqual(len(rows), 2)
+        for r in rows:
+            self.assertEqual(r['sv'], gen.SCHEMA_VERSION)
+            self.assertRegex(r['at'] or '', r'^\d{4}-\d\d-\d\dT\d\d:\d\d')
+        # additions only: the fields build_ruler.py / verdict_reading.py read are all there
+        for k in ('is_story', 'extent', 'confidence', 'grouping', 'display_problem',
+                  'detector_version', 'applies_to', 'quote', 'quote_polarity',
+                  'quote_start', 'quote_end', 'notes'):
+            self.assertIn(k, rows[0]['keys'])
