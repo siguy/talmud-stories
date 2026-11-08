@@ -498,3 +498,64 @@ class EveryVerdictIsStamped(unittest.TestCase):
                   'detector_version', 'applies_to', 'quote', 'quote_polarity',
                   'quote_start', 'quote_end', 'notes'):
             self.assertIn(k, rows[0]['keys'])
+
+
+# ---------------------------------------------------------------------------
+# Should-land: throughput. "37 of 154", keys y / b / n / j, a classification filter.
+# None of it changes the export shape.
+# ---------------------------------------------------------------------------
+KEYS_AUDIT = r"""
+init();
+const key = (k, tag) => onKey({ key: k, target: { tagName: tag || 'BODY' },
+                                 preventDefault() {} });
+key('j');                       // first unreviewed card becomes current
+const first = currentIdx;
+key('y');                       // answers it
+const afterY = verdicts[STORIES[first].key] && verdicts[STORIES[first].key].is_story;
+key('y');                       // pressing again must not clear it
+const afterYY = verdicts[STORIES[first].key].is_story;
+key('j');
+const second = currentIdx;
+key('n', 'TEXTAREA');           // typing in a box is never a shortcut
+const typed = verdicts[STORIES[second].key] ? verdicts[STORIES[second].key].is_story : null;
+key('b');
+const afterB = verdicts[STORIES[second].key].is_story;
+const progress = document.getElementById('progressText').textContent;
+setClassFilter('LOW_CONFIDENCE');
+const nLow = STORIES.filter(passesFilter).length;
+setClassFilter('');
+const nAll = STORIES.filter(passesFilter).length;
+console.log(JSON.stringify({ first, second, afterY, afterYY, typed, afterB, progress,
+                             nLow, nAll, total: STORIES.length,
+                             wantLow: STORIES.filter(s => s.classification === 'LOW_CONFIDENCE').length }));
+"""
+
+
+class ThroughputControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        _need_node()
+        gen = _load_generator()
+        stories, version = gen.build_data([FIXTURE])
+        cls.html = gen.generate_html('Kiddushin', stories, version)
+        cls.r = run_page_js(cls.html, KEYS_AUDIT)
+
+    def test_j_moves_to_the_next_unreviewed_and_y_b_answer_it(self):
+        r = self.r
+        self.assertEqual(r['first'], 0)
+        self.assertEqual(r['afterY'], 'yes')
+        self.assertEqual(r['afterYY'], 'yes', 'a repeated key must set, not toggle off')
+        self.assertEqual(r['second'], 1, 'j skips the card just answered')
+        self.assertIsNone(r['typed'], 'a key typed into a text box answered a card')
+        self.assertEqual(r['afterB'], 'borderline')
+
+    def test_progress_is_a_number(self):
+        self.assertEqual(self.r['progress'], f"2 of {self.r['total']} reviewed")
+
+    def test_classification_filter(self):
+        self.assertEqual(self.r['nLow'], self.r['wantLow'])
+        self.assertGreater(self.r['nLow'], 0)
+        self.assertEqual(self.r['nAll'], self.r['total'])
+
+    def test_the_keys_are_explained_on_the_page(self):
+        self.assertTrue('keyboard' in self.html.lower())

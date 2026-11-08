@@ -226,6 +226,8 @@ PAGE = r"""<!DOCTYPE html>
   .story-card.cls-HIGH_CONFIDENCE { border-left-color: #3182ce; }
   .story-card.cls-LOW_CONFIDENCE { border-left-color: #d69e2e; }
   .story-card.reviewed { opacity: 0.6; }
+  .story-card.current { outline: 3px solid #2c7a7b; outline-offset: 2px; opacity: 1; }
+  .progress-text { font-size: 13px; color: #48606f; margin: 0 0 6px; }
   .story-header { display: flex; align-items: center; gap: 10px;
                   flex-wrap: wrap; margin-bottom: 12px; }
   .story-title { font-weight: 600; font-size: 15px; }
@@ -312,6 +314,7 @@ __DISPLAY_CSS__
       If something is off, use <b>“Something else is wrong”</b> to say <i>what</i>: the extent, the confidence level, or whether it should be split or merged. A passage can be a story <i>and</i> have the wrong extent — those are separate questions on purpose, because we have been unable to tell them apart and it has sent us fixing the wrong things.<br>
       If the <b>extent</b> is wrong, a box opens for the Hebrew: <b>highlight the words in the text above and press “Use highlighted text”</b> — no need to type them. There are two boxes, <b>where the story should start</b> and <b>where it should end</b>; fill either or both. Below them you can instead point at one passage and say whether it <i>belongs in the story</i> or <i>should be cut</i>.<br>
       <b>Highlighted rows</b> are the segments the story sits in. Where part of the Hebrew is also <mark class="span-in">marked like this</mark>, the mark is our <b>claimed extent</b> — the exact words we say the story starts and ends with — and the rest of the highlight is context. Judge the boundary against the mark.<br>
+      <b>Keyboard</b> (when not typing in a box): <b>j</b> jumps to the next unreviewed entry, then <b>y</b> / <b>b</b> / <b>n</b> answer Yes / Borderline / No for it.<br>
       If the <b>page itself</b> is broken — text missing, Hebrew not matching — click <b>⚠ Display problem</b>. That is our bug, not a judgement about the passage.
     </div>
     <div class="stats">
@@ -332,9 +335,16 @@ __DISPLAY_CSS__
     <button onclick="setFilter('mishnah', this)">in a Mishnah</button>
     <button data-role="filter-unlisted" style="display: none" onclick="setFilter('unlisted', this)">not on your list</button>
     <button data-role="filter-listed" style="display: none" onclick="setFilter('listed', this)">on your list</button>
+    <select onchange="setClassFilter(this.value)" title="Show only one detector classification">
+      <option value="">every classification</option>
+      <option value="HIGH_CONFIDENCE">HIGH_CONFIDENCE</option>
+      <option value="YES">YES</option>
+      <option value="LOW_CONFIDENCE">LOW_CONFIDENCE</option>
+    </select>
     <button class="save-btn" onclick="saveResults()">Save Review</button>
   </div>
 
+  <p class="progress-text" id="progressText"></p>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%;"></div></div>
 
   <div id="storiesContainer"></div>
@@ -354,6 +364,8 @@ const SCHEMA_VERSION = "__SCHEMA_VERSION__";
 const HEBREW_FIRST = true;   // the Hebrew is the text; the English translates it
 const verdicts = {};
 let activeFilter = 'all';
+let classFilter = '';      // '' = every classification
+let currentIdx = null;     // the card the keyboard acts on
 
 __DISPLAY_JS__
 
@@ -477,6 +489,7 @@ function setFilter(f, btn) {
 }
 
 function passesFilter(story) {
+  if (classFilter && story.classification !== classFilter) return false;
   if (activeFilter === 'all') return true;
   if (activeFilter === 'unreviewed') return !isComplete(verdicts[story.key]);
   if (activeFilter === 'cross') return !!story.spans_pages;
@@ -486,12 +499,64 @@ function passesFilter(story) {
   return true;
 }
 
+function setClassFilter(c) { classFilter = c || ''; render(); }
+
+// ---------------------------------------------------------------------------
+// KEYBOARD. j = next unreviewed entry (in the current filter); y / b / n answer
+// is_story for the current entry. A key SETS the answer, never toggles it off --
+// a second press must not undo the first. Never fires while typing in a box.
+// ---------------------------------------------------------------------------
+const KEY_ANSWERS = { y: 'yes', b: 'borderline', n: 'no' };
+
+function setCurrent(idx) {
+  if (currentIdx !== null) {
+    const old = document.getElementById('card-' + currentIdx);
+    if (old) old.classList.remove('current');
+  }
+  currentIdx = idx;
+  const card = document.getElementById('card-' + idx);
+  if (card) {
+    card.classList.add('current');
+    if (card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function nextUnreviewed() {
+  const from = currentIdx === null ? -1 : currentIdx;
+  for (let step = 1; step <= STORIES.length; step++) {
+    const i = (from + step) % STORIES.length;
+    if (passesFilter(STORIES[i]) && !isComplete(verdicts[STORIES[i].key])) return i;
+  }
+  return null;
+}
+
+function onKey(e) {
+  const tag = (e.target && e.target.tagName || '').toUpperCase();
+  if (tag === 'TEXTAREA' || tag === 'INPUT' || tag === 'SELECT') return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = (e.key || '').toLowerCase();
+  if (k === 'j') {
+    const i = nextUnreviewed();
+    if (i !== null) setCurrent(i);
+    if (e.preventDefault) e.preventDefault();
+  } else if (KEY_ANSWERS[k] && currentIdx !== null) {
+    const st = STORIES[currentIdx];
+    if ((verdicts[st.key] || {}).is_story !== KEY_ANSWERS[k])
+      setAxis(st.key, 'is_story', KEY_ANSWERS[k], currentIdx);
+    if (e.preventDefault) e.preventDefault();
+  }
+}
+if (typeof document !== 'undefined' && document.addEventListener)
+  document.addEventListener('keydown', onKey);
+
 function render() {
   const container = document.getElementById('storiesContainer');
   container.innerHTML = '';
   STORIES.forEach((story, idx) => {
     if (!passesFilter(story)) return;
-    container.appendChild(buildCard(story, idx));
+    const card = buildCard(story, idx);
+    if (idx === currentIdx) card.classList.add('current');
+    container.appendChild(card);
   });
   updateProgress();
 }
@@ -712,6 +777,8 @@ function updateProgress() {
   const done = Object.keys(verdicts).filter(k => isComplete(verdicts[k])).length;
   const bar = document.getElementById('progressFill');
   if (bar) bar.style.width = (done / STORIES.length * 100) + '%';
+  const txt = document.getElementById('progressText');
+  if (txt) txt.textContent = done + ' of ' + STORIES.length + ' reviewed';
 }
 
 function buildExport() {
