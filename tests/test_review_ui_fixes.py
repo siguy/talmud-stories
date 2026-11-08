@@ -209,3 +209,86 @@ class ClaimedSpanIsMarked(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
+
+
+# ---------------------------------------------------------------------------
+# 2. Verdicts survive a reload: localStorage keyed by tractate + detector version.
+# ---------------------------------------------------------------------------
+STORAGE_STUB = r"""
+const _store = (typeof SEED !== 'undefined') ? Object.assign({}, SEED) : {};
+const localStorage = {
+  getItem: k => (k in _store ? _store[k] : null),
+  setItem: (k, v) => { _store[k] = String(v); },
+  removeItem: k => { delete _store[k]; }
+};
+"""
+
+PERSIST_AUDIT_FIRST = r"""
+init();
+const s0 = STORIES[0], s1 = STORIES[1];
+setAxis(s0.key, 'is_story', 'yes', 0);
+setAxis(s1.key, 'extent', 'ends_wrong', 1);
+setField(s1.key, 'quote_end', 'QEND');
+setNotes(s1.key, 'a note');
+console.log(JSON.stringify({ store: _store,
+  saved: document.getElementById('savedCount').textContent }));
+"""
+
+PERSIST_AUDIT_RELOAD = r"""
+init();
+const s0 = STORIES[0], s1 = STORIES[1];
+console.log(JSON.stringify({
+  v0: verdicts[s0.key] || null, v1: verdicts[s1.key] || null,
+  saved: document.getElementById('savedCount').textContent,
+  exported: Object.keys(buildExport().reviews)
+}));
+"""
+
+PERSIST_AUDIT_BROKEN = r"""
+init();
+setAxis(STORIES[0].key, 'is_story', 'yes', 0);
+console.log(JSON.stringify({ ok: isComplete(verdicts[STORIES[0].key]) }));
+"""
+
+
+class VerdictsSurviveAReload(unittest.TestCase):
+    """Finding P1-2: `const verdicts = {}` and nothing else. A reload, a crash or a
+    closed tab lost every answer; Eruvin is ~150 cards over several evenings."""
+
+    @classmethod
+    def setUpClass(cls):
+        _need_node()
+        gen = _load_generator()
+        stories, version = gen.build_data([FIXTURE])
+        cls.version = version
+        cls.html = gen.generate_html('Kiddushin', stories, version)
+        cls.first = run_page_js(cls.html, PERSIST_AUDIT_FIRST, STORAGE_STUB)
+        seed = 'const SEED = ' + json.dumps(cls.first['store']) + ';\n'
+        cls.reload = run_page_js(cls.html, PERSIST_AUDIT_RELOAD, seed + STORAGE_STUB)
+
+    def test_every_change_is_written_under_tractate_and_version(self):
+        keys = list(self.first['store'])
+        self.assertEqual(len(keys), 1, f'expected one storage key, got {keys}')
+        self.assertIn('Kiddushin', keys[0])
+        self.assertIn(self.version, keys[0],
+                      'a verdict belongs to the version it judged (Lesson 36): two '
+                      'versions of one tractate must not share saved answers')
+
+    def test_a_reload_restores_every_field(self):
+        self.assertEqual(self.reload['v0']['is_story'], 'yes')
+        v1 = self.reload['v1']
+        self.assertEqual(v1['extent'], 'ends_wrong')
+        self.assertEqual(v1['quote_end'], 'QEND')
+        self.assertEqual(v1['notes'], 'a note')
+        self.assertEqual(len(self.reload['exported']), 1,
+                         'the restored complete verdict must reach the export')
+
+    def test_the_header_says_how_many_are_saved(self):
+        self.assertIn('1', self.first['saved'])
+        self.assertIn('saved locally', self.reload['saved'])
+
+    def test_a_page_without_storage_still_works(self):
+        broken = 'const localStorage = { getItem() { throw new Error("blocked"); },' \
+                 ' setItem() { throw new Error("blocked"); } };\n'
+        got = run_page_js(self.html, PERSIST_AUDIT_BROKEN, broken)
+        self.assertTrue(got['ok'], 'blocked storage must not break answering')

@@ -283,6 +283,7 @@ __DISPLAY_CSS__
       <div class="stat">detector: <strong>__DETECTOR_VERSION__</strong></div>
       <div class="stat">cross-page: <strong>__N_CROSS__</strong></div>
       <div class="stat">withheld from Mishnah: <strong>__N_MISHNAH__</strong></div>
+      <div class="stat" id="savedCount" title="Kept in this browser as you go; Save Review still makes the file to send">0 saved locally</div>
     </div>
   </div>
 
@@ -379,10 +380,42 @@ function buildTextDisplay(story) {
 
 function isComplete(v) { return !!(v && v.is_story); }
 
+// ---------------------------------------------------------------------------
+// PERSISTENCE. Every change is written to this browser's localStorage, so a
+// reload, a crash or a closed tab loses nothing (2026-11-07 review, P1-2: the
+// page kept answers only in memory). Keyed by tractate AND detector version:
+// a verdict belongs to the version it judged (Lesson 36), so a page rebuilt from
+// a new run starts clean rather than inheriting answers about other proposals.
+// Save Review still produces the file to send -- this is a safety net, not a
+// channel. Storage can be blocked (private window, file:// policy); then the
+// page works exactly as before.
+// ---------------------------------------------------------------------------
+const STORAGE_KEY = 'axis-review:' + TRACTATE + ':' + DETECTOR_VERSION;
+
+function persist() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(verdicts)); } catch (e) {}
+  showSaved();
+}
+
+function restore() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) Object.assign(verdicts, JSON.parse(raw));
+  } catch (e) {}
+}
+
+function showSaved() {
+  const n = Object.keys(verdicts).filter(k => isComplete(verdicts[k])).length;
+  const el = document.getElementById('savedCount');
+  if (el) el.textContent = n + ' saved locally';
+}
+
 // 'right' is an answer, not a complaint: the quote box is for a wrong extent.
 function isExtentWrong(extent) { return !!extent && extent !== 'right'; }
 
 function init() {
+  restore();
+  showSaved();
   // Show the two list filters only when the page was built with --listed.
   const known = STORIES.some(s => s.expert_listed !== null && s.expert_listed !== undefined);
   if (known) document.querySelectorAll('[data-role^="filter-"]').forEach(b => b.style.display = '');
@@ -502,7 +535,7 @@ function buildCard(story, idx) {
     + '</div>'
     + '<textarea class="notes-input" rows="2" placeholder="Anything else, in your own words '
     +   '&mdash; if it is about where the story starts or ends, the boxes above capture it better"'
-    +   ' oninput="notesTyped(' + idx + ')"'
+    +   ' oninput="notesTyped(' + idx + '); setNotes(\'' + story.key + '\', this.value)"'
     +   ' onchange="setNotes(\'' + story.key + '\', this.value)">'
     +   esc(String(v.notes || '')) + '</textarea>';
   return card;
@@ -533,10 +566,11 @@ function setAxis(key, axis, value, idx) {
     }
   }
   updateProgress();
+  persist();
 }
 
-function setQuote(key, text) { ensure(key).quote = text; }
-function setField(key, field, text) { ensure(key)[field] = text; }
+function setQuote(key, text) { ensure(key).quote = text; persist(); }
+function setField(key, field, text) { ensure(key)[field] = text; persist(); }
 
 // Same as grabSelection, but writes into a named field, so START and END are
 // two separate statements rather than one quote whose direction we have to
@@ -550,6 +584,7 @@ function grabInto(key, field, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v[field] = sel.trim();
+  persist();
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="' + field + '-text"]');
   if (box) { box.value = v[field]; selectForReplace(box); }
@@ -574,6 +609,7 @@ function grabSelection(key, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v.quote = sel.trim();
+  persist();
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="quote-text"]');
   if (box) { box.value = v.quote; selectForReplace(box); }
@@ -582,6 +618,7 @@ function grabSelection(key, idx) {
 function toggleDisplay(key, idx) {
   const v = ensure(key);
   v.display_problem = !v.display_problem;
+  persist();
   const card = document.getElementById('card-' + idx);
   if (card) {
     const btn = card.querySelector('.axis-btn[data-axis="display_problem"]');
@@ -600,7 +637,7 @@ function toggleAxes(idx, btn) {
   if (btn) btn.classList.toggle('open', open);
 }
 
-function setNotes(key, notes) { ensure(key).notes = notes; }
+function setNotes(key, notes) { ensure(key).notes = notes; persist(); }
 
 // The whole reason this exists. On the first real round (Gittin, 2026-09-02) every
 // structured field came back empty and five boundary corrections arrived as prose --
