@@ -92,7 +92,24 @@ def plan_triage(pages, cached, retriage):
     if retriage:
         for p in pages:
             cached.pop(p['ref'], None)
-    return [p for p in pages if p['ref'] not in cached]
+    # A cached page whose labels are ALL TRIAGE_FAILED holds no judgment at all (the page
+    # fails open into Stage 2); retry it on the next run rather than trust it forever.
+    from src.ground_truth import EventType
+    return [p for p in pages if p['ref'] not in cached
+            or (cached[p['ref']]
+                and all(e == EventType.TRIAGE_FAILED for e in cached[p['ref']]))]
+
+
+def log_triage_summary(triage):
+    """Send Stage 1's counts to project.log -- failed pages by name."""
+    from src.event_triage import EventTriager
+    s = EventTriager.summarize_triage(triage)
+    log.info('Stage 1 summary: %d pages, %d skipped, %d kept (%s skip rate), %d failed',
+             s['total_pages'], s['skipped'], s['kept'], s['skip_rate'], s['failed'])
+    if s['failed_refs']:
+        log.warning('Stage 1 FAILED on %d page(s), kept open for Stage 2: %s',
+                    s['failed'], s['failed_refs'])
+    return s
 
 
 def load_ground_truth(GroundTruthDB):
@@ -186,9 +203,7 @@ def main():
         log.info('triage cache written: %s (%d pages)', cache, len(cached))
 
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
-    skip = sum(1 for evs in triage.values() if EventTriager.should_skip_page(evs))
-    log.info('Stage 1 summary: %d pages, %d skipped, %d kept (%.0f%% skip rate)',
-             len(triage), skip, len(triage) - skip, 100 * skip / max(len(triage), 1))
+    triage_summary = log_triage_summary(triage)
     if args.triage_only:
         return 0
 

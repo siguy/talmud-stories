@@ -57,3 +57,37 @@ def test_no_retriage_only_does_pages_missing_from_cache(tmp_path):
 
 def test_missing_cache_loads_empty(tmp_path):
     assert runner.load_triage_cache(tmp_path / 'nope.json') == {}
+
+
+# ---- Finding 14: Stage 1 failures reach the log; failed pages get retried ----
+import logging  # noqa: E402
+
+from src.event_triage import EventTriager  # noqa: E402
+
+
+def test_cached_all_failed_page_is_retriaged_without_flag(tmp_path):
+    cache = tmp_path / 't.json'
+    _write_cache(cache, {'X 1a': [F, F], 'X 1b': [D], 'X 2a': [F, D]})
+    cached = runner.load_triage_cache(cache)
+    todo = runner.plan_triage(_pages('X 1a', 'X 1b', 'X 2a'), cached, retriage=False)
+    # 1a is all TRIAGE_FAILED -> retried; 2a has a real label too -> left alone
+    assert [p['ref'] for p in todo] == ['X 1a']
+
+
+def test_triage_failure_is_logged_not_printed(monkeypatch, caplog):
+    t = EventTriager(api_key='x')
+    t.client = object()
+    monkeypatch.setattr(t, '_call_google', lambda prompt: 'not json at all')
+    with caplog.at_level(logging.WARNING):
+        out = t.triage_page('X 1a', [{'index': 0, 'english': 'a', 'hebrew': 'b'}])
+    assert out == [F]                                    # still fails open
+    assert any('TRIAGE FAILED on X 1a' in r.getMessage() for r in caplog.records)
+
+
+def test_summary_logs_counts_and_warns_on_failed_refs(caplog):
+    triage = {'X 1a': [F], 'X 1b': [D], 'X 2a': [N]}
+    with caplog.at_level(logging.INFO):
+        runner.log_triage_summary(triage)
+    msgs = [(r.levelname, r.getMessage()) for r in caplog.records]
+    assert any(l == 'WARNING' and 'X 1a' in m for l, m in msgs)
+    assert any(l == 'INFO' and '3 pages' in m for l, m in msgs)
