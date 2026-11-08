@@ -319,6 +319,7 @@ __DISPLAY_CSS__
 
   <div id="exportArea" class="hidden" style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
     <h3>Review Export</h3>
+    <p id="exportWarning" style="color:#9b2c2c; font-weight:600; margin-top:8px;"></p>
     <textarea class="export-box" id="exportData" readonly></textarea>
     <button class="save-btn" onclick="downloadJSON()" style="margin-top: 10px;">Download JSON</button>
   </div>
@@ -729,7 +730,31 @@ function buildExport() {
   };
 }
 
+// A card where the reviewer said something -- an extent, a quote, a note, a
+// flag -- but never answered "is it a story" is ABSENT from the export (property
+// F: an unanswered card is not a verdict). That is right, and it was silent
+// (2026-11-07 review, P2-5). Name them at Save so the answer can be added.
+function hasAnyAnswer(v) {
+  if (!v) return false;
+  return !!(v.extent || v.confidence || v.grouping || v.quote_polarity || v.display_problem
+            || (v.quote || '').trim() || (v.quote_start || '').trim()
+            || (v.quote_end || '').trim() || (v.notes || '').trim());
+}
+
+function unansweredWithInput() {
+  return STORIES.filter(st => !isComplete(verdicts[st.key]) && hasAnyAnswer(verdicts[st.key]))
+                .map(st => st.page_ref + ' seg ' + st.start_segment + '-' + st.end_segment);
+}
+
 function saveResults() {
+  const missing = unansweredWithInput();
+  const warn = document.getElementById('exportWarning');
+  if (warn) warn.textContent = missing.length
+    ? missing.length + ' entr' + (missing.length === 1 ? 'y has' : 'ies have')
+      + ' comments but no answer to "Is it a story?", so ' + (missing.length === 1 ? 'it is' : 'they are')
+      + ' NOT in this export: ' + missing.join('; ')
+      + '. Click Yes / Borderline / No on ' + (missing.length === 1 ? 'it' : 'them') + ' and Save again.'
+    : '';
   document.getElementById('exportData').value = JSON.stringify(buildExport(), null, 2);
   document.getElementById('exportArea').classList.remove('hidden');
   document.getElementById('exportArea').scrollIntoView({ behavior: 'smooth' });

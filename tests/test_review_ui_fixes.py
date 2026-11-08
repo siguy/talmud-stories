@@ -353,3 +353,48 @@ class OutAnywhere(unittest.TestCase):
         rc = gen.main(['--run', str(FIXTURE), '--title', 'Kiddushin', '--out', str(out)])
         self.assertEqual(rc, 0)
         self.assertTrue(out.exists())
+
+
+# ---------------------------------------------------------------------------
+# 5. Save warns about cards with something said but no "is it a story" answer.
+# ---------------------------------------------------------------------------
+DROPPED_AUDIT = r"""
+init();
+const [a, b, c, d] = STORIES;
+setAxis(a.key, 'is_story', 'yes', 0);           // complete
+setAxis(b.key, 'extent', 'ends_wrong', 1);      // extent only
+setNotes(c.key, 'only a note');                 // note only
+setAxis(d.key, 'is_story', 'no', 3); setAxis(d.key, 'is_story', 'no', 3);  // set then cleared
+saveResults();
+console.log(JSON.stringify({
+  warning: document.getElementById('exportWarning').textContent,
+  exported: Object.keys(buildExport().reviews),
+  b: b.page_ref + ' seg ' + b.start_segment + '-' + b.end_segment,
+  c: c.page_ref + ' seg ' + c.start_segment + '-' + c.end_segment,
+  d: d.page_ref + ' seg ' + d.start_segment + '-' + d.end_segment
+}));
+"""
+
+
+class SaveWarnsAboutUnansweredCards(unittest.TestCase):
+    """Finding P2-5: a note, extent or quote with no `is_story` click is absent
+    from the export (by design — F), and nothing said so."""
+
+    @classmethod
+    def setUpClass(cls):
+        _need_node()
+        gen = _load_generator()
+        stories, version = gen.build_data([FIXTURE])
+        html = gen.generate_html('Kiddushin', stories, version)
+        cls.r = run_page_js(html, DROPPED_AUDIT)
+
+    def test_the_warning_names_each_card_with_unexported_answers(self):
+        w = self.r['warning']
+        self.assertIn('2 ', w)
+        self.assertIn(self.r['b'], w)
+        self.assertIn(self.r['c'], w)
+        self.assertNotIn(self.r['d'], w, 'a cleared answer is not an answer')
+
+    def test_the_export_itself_is_unchanged(self):
+        self.assertEqual(len(self.r['exported']), 1,
+                         'unanswered cards stay ABSENT from the export (property F)')
