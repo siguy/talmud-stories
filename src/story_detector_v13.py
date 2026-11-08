@@ -265,7 +265,7 @@ a CAUSAL CHAIN of EVENTS with TEMPORAL PROGRESSION resulting in CHANGE.
 
 1. **YES** — Definitively a story: ≥5 criteria met, no disqualifiers
 2. **HIGH_CONFIDENCE** — Likely a story: 4-5 criteria met, minor weakeners
-3. **LOW_CONFIDENCE** — Borderline story: 1 real event + discussion, or 3-4 criteria
+3. **LOW_CONFIDENCE** — Borderline story: 3-4 criteria, or one of the BORDERLINE shapes below
 4. **NOT_A_STORY** — Rejected: legal discussion, hypothetical, or <3 criteria
 
 ## THE 6 CRITERIA
@@ -300,6 +300,11 @@ a CAUSAL CHAIN of EVENTS with TEMPORAL PROGRESSION resulting in CHANGE.
   was injured…) followed by a ruling IS a story — the narrated incident is the story.
 - A single thing someone did, mentioned without change or causality — one act, then the
   discussion moves on — is not a story (Jeff Rubenstein, 2026-10-07).
+- One event, then a ruling or a discussion, and nothing changes afterwards. This is NOT a
+  story, and not borderline either (Jeff Rubenstein, 2026-10-25: "not a story rather than
+  that they are borderline"). An order that only IMPLIES its outcome — someone is told to
+  do something and the passage never says it was done — is not a change: "it is not
+  really stated explicitly."
 - Rabbi stating legal opinion (not acting in narrative)
 - Legal deliberation (thinking, considering, difficulty resolving)
 - Legal debate with setting (sitting before another = just a debate)
@@ -322,7 +327,11 @@ a CAUSAL CHAIN of EVENTS with TEMPORAL PROGRESSION resulting in CHANGE.
 
 ## BORDERLINE → LOW_CONFIDENCE (not NOT_A_STORY)
 
-One real event + discussion about it → LOW_CONFIDENCE
+One real event, then a ruling that is ITSELF an act that changes something — the rabbi
+  does more than state: he allots, hands over or enforces something, and the situation
+  moves → LOW_CONFIDENCE (Jeff Rubenstein, 2026-10-25: "it is a little more than a
+  ruling… this creates more dynamism, that is, more change"). A rabbi who only states a
+  ruling "would not even be borderline" → NOT_A_STORY.
 Mainly dialogue but with some real events → LOW_CONFIDENCE
 Weak causality but some change → LOW_CONFIDENCE
 Speech with real conflict and implied change (more than ordinary debate) → LOW_CONFIDENCE
@@ -1032,6 +1041,10 @@ Is PASSAGE B:
     not a story;
   * a case brought to a rabbi who rules, with nothing else narrated besides coming and
     the ruling;
+  * one event, then a ruling or a discussion, and nothing changes afterwards — not a
+    story and not borderline. An order whose outcome is only implied, never stated, is
+    not a change. (Only a ruling that is itself an act that changes something keeps such
+    a passage: then answer "separate_incident" with "LOW_CONFIDENCE".)
   * a story whose actors are biblical figures. This collection is stories about
     rabbis and post-biblical figures; a biblical episode retold is out of scope.
 
