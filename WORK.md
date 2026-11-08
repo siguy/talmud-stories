@@ -57,7 +57,7 @@ staleness check: it changes whenever anyone edits anything.*
 |---|---|---|
 | `remove-borderline` | `talmud-stories` | **2 FILES** |
 | `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
-| `eruvin-run-v11` | `p2-detector-stage4-788e26` | **4 FILES** |
+| `eruvin-run-v11` | `p2-detector-stage4-788e26` | **2 FILES** |
 | `main` | `recent-work-plans-d0818b` | clean |
 | `(detached)` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
@@ -67,8 +67,8 @@ staleness check: it changes whenever anyone edits anything.*
 | item | capability | finding |
 |---|---|---|
 | [Write the history of each capability](work/done/2026-08-30-capability-histories.md) | triage, detection, classification, boundaries, review, publication | — |
-| [Eruvin — detection](work/done/2026-08-30-eruvin-detection.md) | detection | — |
-| [Eruvin — triage](work/done/2026-08-30-eruvin-triage.md) | triage | — |
+| [Eruvin — detection](work/done/2026-08-30-eruvin-detection.md) | detection | [2026-11-08-eruvin-v11-run.md](docs/findings/2026-11-08-eruvin-v11-run.md) |
+| [Eruvin — triage](work/done/2026-08-30-eruvin-triage.md) | triage | [2026-11-08-eruvin-v11-run.md](docs/findings/2026-11-08-eruvin-v11-run.md) |
 | [Fetch Gittin, Yevamot and Eruvin from Sefaria](work/done/2026-08-30-fetch-new-tractates.md) | triage, detection | — |
 | [Gittin — expert round](work/done/2026-08-30-gittin-expert-round.md) | review | — |
 | [Gittin — golden](work/done/2026-08-30-gittin-golden.md) | classification | — |
@@ -123,4 +123,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Apply Jeff's 2026-10-25 reply — one event then a ruling is not a story; 65a borderline](work/done/2026-10-26-apply-jeff-2026-10-25-verdicts.md) | classification | [reply.md](jeff comms/10-25-2026/reply.md) |
 | [Detector v13 — v12's 2026-10-07 wording plus the 2026-10-25 rulings, measured on the slice before Eruvin](work/done/2026-11-07-detector-v13-october-rulings.md) | classification, detection | — |
 | [Review UI — show the boundary we claim, keep the verdicts, name the pages not examined](work/done/2026-11-07-review-ui-fixes.md) | review, boundaries | [2026-11-07-review-ui-review.md](docs/findings/2026-11-07-review-ui-review.md) |
-<!-- board-checksum: 13f58934fe818754 -->
+<!-- board-checksum: 70ba57e58b068392 -->

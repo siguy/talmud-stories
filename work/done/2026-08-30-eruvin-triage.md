@@ -4,8 +4,8 @@ capability: [triage]
 tractate: [eruvin]
 blocked_by: []
 awaiting: []
-writes: [results/triage/eruvin.json]
-finding:
+writes: [results/triage/eruvin.json, results/v11/eruvin/eruvin_v11.json, results/v11/eruvin/eruvin_v11_r2.json, results/recall/eruvin_jeff2005_matches.json, results/recall/eruvin_jeff2005_matches_r2.json, results/recall/eruvin_strict.json, results/recall/eruvin_strict_r2.json]
+finding: docs/findings/2026-11-08-eruvin-v11-run.md
 superseded_by:
 ---
 
