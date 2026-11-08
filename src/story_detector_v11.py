@@ -1704,6 +1704,10 @@ Return JSON:
         if mishnah_filtered:
             print(f"  Mishnah filter: {mishnah_filtered} stories moved to mishnah_stories")
 
+        # DECISION (CLAUDE.md, Lesson 27): 4h-4l and dedup below read `stories[]`
+        # only and deliberately do NOT process `mishnah_stories` -- a withheld story
+        # gets no snap, trim, biblical filter, text span or duplicate check. It is
+        # kept as 4g left it, so readers see what was withheld, not a re-edited copy.
         # 4h (Wave 2 Issue #3): snap story start to canonical introducer
         snapped = snap_start_to_introducer(all_results)
         if snapped:
