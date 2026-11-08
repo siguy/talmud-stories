@@ -10,6 +10,9 @@ the same day.
 
 **Then v14** (three one-line edits aimed at those errors) fixed one of three, halved
 another, and still finds 34/36 against v11's 35/36: **the runner stays on v11** (§ v14).
+**Corrected the same day** (§ Correction): the one list story v13/v14 lose may be his newer
+rule working, so the recall comparison was unfair to them; the decision rests on the two
+errors alone.
 
 Item: [`work/done/2026-11-07-detector-v13-october-rulings.md`](../../work/done/2026-11-07-detector-v13-october-rulings.md).
 Code: `src/story_detector_v13.py` = the fixed v11 (PRs #69–#71) + v12's 2026-10-07 wording,
@@ -196,6 +199,46 @@ below v11 (`HIGH`), as in every arm with the 2026-10-07 wording. 78b:9 stays dro
 as many list stories as v11 in both runs **and** makes neither the R-S1 nor the R-B4 error
 in either run. v14 finds 34 against 35, makes the R-B4 error in both runs and the R-S1 error
 in one. **The runner points back at v11.**
+
+## Correction (same day, after review with Simon) — the recall half of the decision rule was unfair
+
+The decision rule had two halves: (a) v14 finds at least as many list stories as v11, and
+(b) v14 makes neither the R-S1 nor the R-B4 error. **Half (a) was the wrong test.** The one
+list story v13/v14 lose, 78b:9, is a question to a sage and his answer — exactly what R-C2
+and v12's 2026-10-07 line say is *not* a story. Dropping it may be the October wording
+doing what it was written to do. Jeff has not ruled on that passage, so it is now a
+question for him (`jeff:question-and-answer`); until he answers it should not count for
+or against either arm. **Set 78b:9 aside and v13, v14 and v11 tie on list stories (34 of
+the other 35).**
+
+The outcome stands on half (b) alone, and it is thinner than the sections above make it:
+
+- **David (78b:13–20) is a real v13/v14 regression, not v11 luck.** v11's prompt has
+  carried the "Biblical narrative" disqualifier since 2026-08-30, and in all four v11 runs
+  the model cites it by name. v13/v14 carry the same line; the October sentences pull the
+  model off it. The R-S1 rule is Jeff's, stated outright (2026-09-23).
+- **105b:14–15 is our reading of R-B4**, a rule he stated outright, applied to a passage
+  he has not seen. Defensible, not a verdict.
+- **Precision has no ground truth here.** The 2005 list can say what we missed, not
+  everything we wrongly added — it is not comprehensive, and Jeff has said so. Every
+  "error" in this finding was found by reading passages against the register.
+
+The same miss in **every** arm, 14b:15 (R. Yoḥanan ben Nuri's proposed decree, *"they did
+not manage to finish the matter before the hour became turbulent"*), is a story with an
+event and a change on the last segment of 14b, continuing onto 15a — a Detection miss,
+probably cross-page, not a speech question. It does not separate the arms.
+
+**What would fix v13/v14's two errors** (not done; either is a v15, since v13 and v14 are
+frozen records):
+
+- *David*: the code-level `filter_biblical_actor_stories()` already exists and missed this
+  passage only because the model listed "King David, the Gibeonites" and *Gibeonites* is
+  not in `_BIBLICAL_ACTORS`, so the filter read a non-biblical actor. Adding the biblical
+  peoples (Gibeonites, Philistines, Amalekites, Moabites, Ammonites, Edomites, Canaanites…)
+  would catch it whatever the prompt says. Count what else it touches on every tractate
+  on disk first (Lesson 27; no API calls).
+- *105b*: no code path. Ablate v12's 2026-10-07 additions one sentence at a time on the
+  slice (≈5 arms × 2 runs) to find the sentence, then reword it.
 
 ## Where this leaves the detector
 
