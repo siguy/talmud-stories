@@ -142,10 +142,21 @@ def plan_triage(pages, cached, retriage):
                 and all(e == EventType.TRIAGE_FAILED for e in cached[p['ref']]))]
 
 
-def log_triage_summary(triage):
-    """Send Stage 1's counts to project.log -- failed pages by name."""
+def log_triage_summary(triage, pages=None):
+    """Send Stage 1's counts to project.log -- failed pages by name.
+
+    With `pages`, "skipped" uses the predicate run_pipeline uses: should_skip_page AND no
+    canonical story introducer on the page (the lexical override forces Stage 2 anyway)."""
     from src.event_triage import EventTriager
+    from src.story_detector_v11 import _page_has_story_introducer
     s = EventTriager.summarize_triage(triage)
+    if pages is not None:
+        by_ref = {p['ref']: p for p in pages}
+        s['skipped'] = sum(1 for ref, evs in triage.items()
+                           if EventTriager.should_skip_page(evs)
+                           and not (ref in by_ref and _page_has_story_introducer(by_ref[ref])))
+        s['kept'] = s['total_pages'] - s['skipped']
+        s['skip_rate'] = f"{100 * s['skipped'] / max(s['total_pages'], 1):.0f}%"
     log.info('Stage 1 summary: %d pages, %d skipped, %d kept (%s skip rate), %d failed',
              s['total_pages'], s['skipped'], s['kept'], s['skip_rate'], s['failed'])
     if s['failed_refs']:
@@ -257,7 +268,7 @@ def main():
         log.info('triage cache written: %s (%d pages)', cache, len(cached))
 
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
-    triage_summary = log_triage_summary(triage)
+    triage_summary = log_triage_summary(triage, pages)
     if args.triage_only:
         return 0
 

@@ -158,3 +158,13 @@ def test_run_meta_carries_the_configuration(monkeypatch):
 def test_version_comes_from_the_module_name():
     from src import story_detector_v11 as mod
     assert runner.version_of(mod) == 'v11'
+
+
+# ---- P3: the logged skip rate counts what Stage 2 really skips ----
+def test_summary_does_not_count_introducer_pages_as_skipped(caplog):
+    triage = {'X 1a': [D], 'X 1b': [D]}            # Stage 1 would skip both
+    pages = [{'ref': 'X 1a', 'segments': [{'hebrew': 'עובדא הוה'}]},
+             {'ref': 'X 1b', 'segments': [{'hebrew': 'מעשה בחסיד אחד'}]}]  # introducer
+    with caplog.at_level(logging.INFO):
+        runner.log_triage_summary(triage, pages)
+    assert any('1 skipped, 1 kept' in r.getMessage() for r in caplog.records)

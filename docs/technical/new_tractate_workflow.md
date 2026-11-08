@@ -52,7 +52,9 @@ Deterministic refinement + targeted LLM calls:
 - **4f:** Continuation check (targeted LLM for stories near page boundaries WITHOUT continuation flags — asks "does THIS story continue?" not "find a story"). ~$0.03 per tractate. Added for Kiddushin run, caught 3 additional cross-page stories.
 - Duplicate story detection
 
-**Reference implementation:** `scripts/run_kiddushin.py` demonstrates the full workflow.
+**Runner for a new tractate:** `scripts/run_new_tractate.py --tractate <t>` runs Stages 1, 2 and 4 on `results/sefaria/<t>.json` (triage cache `results/triage/<t>.json`, output `results/v11/<t>/<t>_v11.json`). `--refs` smoke-tests a few pages; `--retriage` re-runs Stage 1 for just those pages. Its `run_meta` records the detector, twin-pass settings and failure counters.
+
+**Older reference implementation:** `scripts/run_kiddushin.py` demonstrates the full workflow.
 
 ## Step 5: Generate Review UI
 
@@ -121,9 +123,10 @@ output, it is the only thing that can measure recall.
 python3 scripts/measure_recall_vs_expert_list.py \
   --expert-json results/expert_lists/<tractate>_2005.json --expert-filter recall \
   --tractate <Tractate> \
-  --detected results/<run>/<tractate>_output.json \
-  --golden results/canonical/<tractate>_canonical.json \
+  --detected results/v11/<tractate>/<tractate>_v11.json \
   --out results/recall/<tractate>_jeff2005_matches.json
+# --golden results/canonical/<tractate>_canonical.json   # OPTIONAL: omit on a first run,
+#                                                         # no golden exists yet
 ```
 
 Before trusting the list, **check it is actually blind**: `scripts/check_appendix_coverage.py`
