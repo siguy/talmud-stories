@@ -103,6 +103,16 @@ def load_segments():
         for page in json.loads(Path(path).read_text())['pages']:
             segs.setdefault(page['ref'], {}).update(
                 {s['index']: s['hebrew'] for s in page.get('segments', [])})
+    # Gittin and Yevamot: the tractates the axes rounds reviewed. Their verdicts'
+    # quotes could not be located at all while only Ketubot/Kiddushin were loaded.
+    for rel in ('results/v11/gittin/gittin_v11.json', 'results/v11/yevamot/yevamot_v11.json'):
+        path = PROJECT_ROOT / rel
+        if not path.exists():
+            log.warning('segment source missing: %s', rel)
+            continue
+        for page in json.loads(path.read_text())['pages']:
+            segs.setdefault(page['ref'], {}).update(
+                {s['index']: s['hebrew'] for s in page.get('segments', [])})
     kid = PROJECT_ROOT / 'results/v7/kiddushin_pages.json'
     if kid.exists():
         for page in json.loads(kid.read_text()):
@@ -198,6 +208,97 @@ def locate_near(quote, ref, segs, side='start'):
     return None
 
 
+# The axes export states boundaries in fields (validation/generators/
+# generate_axis_review_ui.py): `quote_start` / `quote_end` are "the story should
+# START / END with these words" -- story text by construction, so polarity is
+# `include` -- and `quote` + `quote_polarity` points at one passage whose direction
+# comes from the `extent` axis. Nothing read them until 2026-11-07 (review finding
+# P2-4), so the first structured boundaries Jeff gave (2026-09-23) were never scored.
+#
+# Matching is by TEXT, never by the verdict's (ref, start, end) key: the round
+# judged an older detector version, and an exact-key join makes a re-bounded story
+# read as deleted (Lesson 36). A structured quote and a notes-mined quote for the
+# same verdict and direction are one boundary said twice; the structured one wins.
+EXTENT_DIRECTIONS = {'starts_wrong': ('start',), 'ends_wrong': ('end',)}
+
+
+def _target(ref, direction, quote, polarity, rule, note, path, key, segs):
+    """Locate one boundary. Returns (target, None) or (None, unresolved record)."""
+    anchor_side = direction
+    if polarity == 'exclude':
+        anchor_side = 'start' if direction == 'end' else 'end'
+    rec = {'ref': ref, 'direction': direction, 'quote': quote.strip(),
+           'note': note, 'source_round': os.path.basename(path),
+           'review_key': str(key), 'harvest_rule': rule,
+           'quote_polarity': polarity, 'anchor_verified': False}
+    hit = locate_near(quote, ref, segs, anchor_side) if ref else None
+    if not hit:
+        return None, rec
+    if polarity == 'exclude':
+        shift = -1 if direction == 'end' else 1
+        hit['clause'] = max(0, min(hit['clause'] + shift, hit['n_clauses'] - 1))
+    elif polarity in ('mixed', 'unclear'):
+        rec['needs_human'] = True
+    rec.update(hit)
+    return rec, None
+
+
+def structured_quotes(item):
+    """[(direction, quote, polarity, rule)] from an axes export's quote fields."""
+    out = []
+    if (item.get('quote_start') or '').strip():
+        out.append(('start', item['quote_start'], 'include', 'axes_quote_start'))
+    if (item.get('quote_end') or '').strip():
+        out.append(('end', item['quote_end'], 'include', 'axes_quote_end'))
+    q, pol = (item.get('quote') or '').strip(), item.get('quote_polarity')
+    if q and pol in ('include', 'exclude'):
+        for d in EXTENT_DIRECTIONS.get(item.get('extent'), ()):
+            out.append((d, q, pol, 'axes_quote'))
+    return out
+
+
+def targets_for_item(key, item, path, segs):
+    """Every boundary target one review verdict yields: structured fields first,
+    then the notes regex for any direction the fields did not already state."""
+    targets, unresolved = [], []
+    ref = page_ref_from(key, item)
+    note = (item.get('notes') or item.get('note') or '').strip()
+    stated = set()
+    for direction, quote, polarity, rule in structured_quotes(item):
+        t, miss = _target(ref, direction, quote, polarity, rule, note, path, key, segs)
+        stated.add(direction)
+        (targets.append(t) if t else unresolved.append(miss))
+
+    if not note:
+        return targets, unresolved
+    quote = longest_hebrew_quote(note)
+    if not quote:
+        return targets, unresolved
+
+    # A full-story quote anchors BOTH edges; anything else anchors one.
+    if FULL_STORY_RE.search(note):
+        sides, rule = ('start', 'end'), 'full_story_quote'
+    elif START_RE.search(note):
+        sides, rule = ('start',), ('v1_start' if START_RE_V1.search(note) else 'widened_start')
+    elif END_RE.search(note):
+        sides, rule = ('end',), ('v1_end' if END_RE_V1.search(note) else 'widened_end')
+    else:
+        return targets, unresolved
+
+    polarity = 'include' if rule == 'full_story_quote' else quote_polarity(note)
+    for direction in sides:
+        if direction in stated:
+            continue
+        # Where the boundary sits relative to the quote:
+        #   include + end   -> the quote's LAST clause (story runs through it)
+        #   include + start -> the quote's FIRST clause
+        #   exclude + end   -> the clause BEFORE the quote starts
+        #   exclude + start -> the clause AFTER the quote ends
+        t, miss = _target(ref, direction, quote, polarity, rule, note, path, key, segs)
+        (targets.append(t) if t else unresolved.append(miss))
+    return targets, unresolved
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--out', default='tests/expert_boundary_targets.json')
@@ -211,49 +312,9 @@ def main():
             sorted(glob.glob(str(PROJECT_ROOT / 'jeff comms/*.json')))
     for path in files:
         for key, item in review_items(path):
-            note = (item.get('notes') or item.get('note') or '').strip()
-            if not note:
-                continue
-            quote = longest_hebrew_quote(note)
-            if not quote:
-                continue
-            ref = page_ref_from(key, item)
-
-            # A full-story quote anchors BOTH edges; anything else anchors one.
-            if FULL_STORY_RE.search(note):
-                sides, rule = ('start', 'end'), 'full_story_quote'
-            elif START_RE.search(note):
-                sides, rule = ('start',), ('v1_start' if START_RE_V1.search(note) else 'widened_start')
-            elif END_RE.search(note):
-                sides, rule = ('end',), ('v1_end' if END_RE_V1.search(note) else 'widened_end')
-            else:
-                continue
-
-            polarity = 'include' if rule == 'full_story_quote' else quote_polarity(note)
-            for direction in sides:
-                # Where the boundary sits relative to the quote:
-                #   include + end   -> the quote's LAST clause (story runs through it)
-                #   include + start -> the quote's FIRST clause
-                #   exclude + end   -> the clause BEFORE the quote starts
-                #   exclude + start -> the clause AFTER the quote ends
-                anchor_side = direction
-                if polarity == 'exclude':
-                    anchor_side = 'start' if direction == 'end' else 'end'
-                rec = {'ref': ref, 'direction': direction, 'quote': quote.strip(),
-                       'note': note, 'source_round': os.path.basename(path),
-                       'review_key': str(key), 'harvest_rule': rule,
-                       'quote_polarity': polarity, 'anchor_verified': False}
-                hit = locate_near(quote, ref, segs, anchor_side) if ref else None
-                if not hit:
-                    unresolved.append(rec)
-                    continue
-                if polarity == 'exclude':
-                    shift = -1 if direction == 'end' else 1
-                    hit['clause'] = max(0, min(hit['clause'] + shift, hit['n_clauses'] - 1))
-                elif polarity in ('mixed', 'unclear'):
-                    rec['needs_human'] = True
-                rec.update(hit)
-                targets.append(rec)
+            got, missed = targets_for_item(key, item, path, segs)
+            targets.extend(got)
+            unresolved.extend(missed)
 
     out = {
         '_comment': 'Sub-segment boundary targets extracted from Jeff Rubenstein review '
@@ -270,7 +331,7 @@ def main():
     log.info('resolved %d targets, %d unresolved -> %s', len(targets), len(unresolved), args.out)
 
     from collections import Counter
-    tr = Counter('Ketubot' if 'Ketubot' in (t['ref'] or '') else 'Kiddushin' for t in targets)
+    tr = Counter((t['ref'] or '?').rsplit(' ', 1)[0] for t in targets)
     log.info('by tractate: %s | by direction: %s', dict(tr),
              dict(Counter(t['direction'] for t in targets)))
     return 0

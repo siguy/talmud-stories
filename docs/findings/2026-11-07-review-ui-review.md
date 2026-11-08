@@ -91,3 +91,11 @@ layout defect, fixed; the 2026-09-23 round returned 9 populated extent axes — 
 works, nothing downstream reads what it captures (P2 #4). The docstring at
 `generate_axis_review_ui.py:44–46` names the wrong symmetry test; pairing on this page is
 covered by `test_hebrew_leads_and_still_pairs_with_the_english`.
+
+## Update — 2026-11-07, fixes landed
+
+`work/done/2026-11-07-review-ui-fixes.md`. P1-1, P1-2, P2-3..6 fixed; P3 `--out`, dead
+filter, `label_axes`, per-verdict timestamps and the workflow pointer fixed; the
+`--listed` input writer is still manual. **Correction to P1-1:** re-read against the
+marked span, 4 of the 5 Gittin boundary notes agree with what we claimed; 70a agrees on
+its start but its end (וּמִית!) is a real correction the mark does not absorb.
