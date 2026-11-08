@@ -2,13 +2,13 @@ Subject: Eruvin: 20 passages where your later rulings and your 2005 list may dis
 
 Dear Jeff,
 
-Quick context: we have now run our story finder on Eruvin, a tractate it had never seen, and scored it against your 2005 list of 74 stories. This is the last 2005 list we will score, and we want the measurement to be as accurate as it can be. That depends on one thing only you can settle: where your later rulings and your 2005 list disagree, which one governs?
+Quick context: we have now run our story finder on Eruvin, a tractate it had never seen, and scored it against your 2005 list of 74 stories. This is the last 2005 list we will score, so we want to get the measurement exactly right.
 
-We have been assuming the later rulings win, since you described the 2005 lists as initial and not comprehensive. Please tell us if that is wrong. If it is right, we only need your verdict on 20 of the 74 passages, listed below.
+You have already told us that your later rulings take precedence over your 2005 list, and we are applying them that way. What we need now is your confirmation on these specific passages, because it decides how accurate our finder really is.
 
-How we picked them: we took your rulings since 2005 (speech alone is borderline at most, a bare report of one act is not a story, scholarly back-and-forth is not conflict, one event followed by a ruling is not a story) and applied them to all 74 entries, without knowing which ones our program had found. Two independent readers flagged 19 as probably not stories under those rulings, and split on a 20th. These are our guesses at what you would say, not your rulings. We would rather have yours.
+How we picked them: we applied your rulings since 2005 (speech alone is borderline at most, a bare report of one act is not a story, scholarly back-and-forth is not conflict, one event followed by a ruling is not a story) to all 74 entries, without knowing which ones our program had found. Two independent readers flagged 19 as probably not stories under those rulings, and split on a 20th. These are our guesses at what you would say, not your rulings. We would rather have yours.
 
-For each passage, please answer: story, borderline, or not a story. A word or two on the reason is a bonus, but not required.
+For each passage below, please answer: story, borderline, or not a story. A few words on the reason are a bonus, but not required.
 
 Group 1: one event, then a challenge, a ruling or a discussion
 1. Eruvin 13b, the elders of Beit Shammai and Beit Hillel visit R. Yohanan ben HaHoranit and find him sitting in the sukkah with his table inside the house. Beit Shammai ask "is that proof?" and Beit Hillel say he has never kept the sukkah mitzvah. (Our readers split on this one. We think it is a story.)
