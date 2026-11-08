@@ -2842,7 +2842,8 @@ def trim_trailing_stam_segments(pages: List[Dict]) -> int:
 # `criteria.identifiable_characters.evidence` field, which the Stage 2
 # prompt populates with a short comma-separated list of named actors.
 
-# Surface form is checked case-insensitively as a substring of `evidence`.
+# Each name is matched case-insensitively as a WHOLE TOKEN of `evidence` -- never a
+# substring, or 'eli' fires inside Eliezer and Elijah (2026-11-07 review, finding 13).
 _BIBLICAL_ACTORS = frozenset({
     # Patriarchs and matriarchs
     'adam', 'eve', 'noah', 'abraham', 'sarah', 'isaac', 'rebecca',
@@ -2872,13 +2873,27 @@ _BIBLICAL_ACTORS = frozenset({
 })
 
 # A handful of common rabbinic actor names; if any appear, the story is
-# NOT biblical-only.
+# NOT biblical-only. 'samuel' is here as well as in the biblical list on purpose:
+# it is the prophet or the amora, and an ambiguous name alone must not demote.
 _RABBINIC_SIGNAL = (
-    'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
-    'mar ', 'abaye', 'rava', 'shmuel', 'samuel',  # 'samuel' overlaps
+    'rabbi ', 'rav ', 'rabban ', 'r. ', 'reish lakish', 'resh lakish',
+    'mar ', 'abaye', 'rava', 'shmuel', 'samuel',
     'hillel', 'shammai', 'akiva', 'akiba', 'meir', 'judah hanasi',
     'yehuda hanasi', 'tanna', 'amora',
 )
+
+
+def _names_token(name: str, text: str) -> bool:
+    """True if `name` occurs in `text` as whole token(s), case-insensitively.
+
+    `'r. '` / `'rav '` keep their meaning: the trailing space only said "a title,
+    not the start of a longer word", which the word boundary now says.
+    """
+    name = name.strip()
+    # No end boundary after a final '.', as in 'r.': 'R.Eliezer' is still a title.
+    tail = r'(?!\w)' if name[-1].isalnum() else ''
+    pattern = r'(?<!\w)' + re.escape(name) + tail
+    return re.search(pattern, text, flags=re.IGNORECASE) is not None
 
 
 def _actors_are_biblical_only(evidence: str) -> bool:
@@ -2887,25 +2902,13 @@ def _actors_are_biblical_only(evidence: str) -> bool:
         return False
     low = evidence.lower()
 
-    # Quick reject: if any rabbinic signal is present, not biblical-only.
-    # "Samuel" alone is ambiguous (prophet vs amora). Treat as biblical
-    # unless explicitly "Rav Samuel" / "Rabbi Samuel".
-    if any(sig in low for sig in _RABBINIC_SIGNAL):
-        # 'samuel' in _RABBINIC_SIGNAL — guard
-        # Only count as rabbinic if the rabbi prefix is present, not bare
-        # mentions of an ambiguous name.
-        rabbinic_strong = any(s in low for s in [
-            'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
-            'mar ', 'abaye', 'rava ', 'rava\n', 'hillel', 'shammai',
-            'akiva', 'akiba', 'rabbi meir', 'judah hanasi', 'yehuda hanasi',
-            'tanna', 'amora',
-        ])
-        if rabbinic_strong:
-            return False
+    # Any rabbinic signal -- including the ambiguous 'samuel' -- and it is not
+    # biblical-only.
+    if any(_names_token(sig, low) for sig in _RABBINIC_SIGNAL):
+        return False
 
     # Hit if any biblical name is mentioned.
-    has_biblical = any(name in low for name in _BIBLICAL_ACTORS)
-    if not has_biblical:
+    if not any(_names_token(name, low) for name in _BIBLICAL_ACTORS):
         return False
 
     # Additional check: tokenize by commas/and and see whether ANY token
@@ -2919,7 +2922,7 @@ def _actors_are_biblical_only(evidence: str) -> bool:
         p = p.strip()
         if not p:
             continue
-        if any(name in p for name in _BIBLICAL_ACTORS):
+        if any(_names_token(name, p) for name in _BIBLICAL_ACTORS):
             continue
         if any(g in p for g in generic_descriptors):
             continue
@@ -2954,6 +2957,10 @@ def filter_biblical_actor_stories(pages: List[Dict]) -> int:
                 story['filtered_as_biblical'] = True
                 story['classification_pre_biblical_filter'] = story.get('classification')
                 story['classification'] = 'NOT_A_STORY'
+                # R-S1: a passage dropped for SCOPE says so. Classification stays in
+                # the four-value vocabulary every reader knows; the label rides beside it.
+                story['out_of_scope'] = True
+                story['scope_reason'] = 'biblical_actors'
                 demoted += 1
     return demoted
 
