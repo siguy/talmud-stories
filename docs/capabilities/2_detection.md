@@ -116,8 +116,11 @@ rejections, because the check behind the claim was narrower than the claim:
 
 ## Current best — the exact configuration
 
-- **Detector:** `src/story_detector_v11.py` (the highest-numbered file is the active one;
-  every lower one is a frozen ship point). Stage 2 = `detect_stories()`.
+- **Detector:** `src/story_detector_v11.py` — the active detector is whichever module
+  `scripts/run_new_tractate.py` imports as `detector_module`
+  (`grep -n 'as detector_module' scripts/run_new_tractate.py`); every other version file
+  is frozen, a ship point or (v13/v14, 2026-11-07) a measured record not adopted —
+  `docs/findings/2026-11-07-detector-v13-slice.md`. Stage 2 = `detect_stories()`.
 - **Model:** `gemini-3-flash-preview` for the production detection runs; the model is
   read from `GEMINI_MODEL`. Gemini 3 Flash was chosen over Gemini 3 Pro on measurement,
   not price: Flash 117/127 (92.1%) vs Pro 115/127 (90.6%) on Jeff's labels

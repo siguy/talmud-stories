@@ -3,6 +3,8 @@
 Talmud Story Detection v13 = fixed v11 code + v12 wording + 2026-10-25 rulings.
 UNMEASURED at creation (2026-11-07); measured the same day on the 20-page Yevamot slice
 beside v11 -- docs/findings/2026-11-07-detector-v13-slice.md.
+NOT ADOPTED (2026-11-07): measured on the Yevamot slice and not made the active detector;
+the runner stays on v11. Why: docs/findings/2026-11-07-detector-v13-slice.md. Frozen.
 
 v13 = v11 as of the pre-Eruvin fixes (PRs #69-#71: 4c boundary check, sorted stories,
 failed calls flagged, cross-page stories left whole, ...) PLUS, prompt wording only:

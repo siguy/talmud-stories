@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
 Talmud Story Detection v14 = v13 + three sentence edits from the slice measurement.
-UNMEASURED at creation (2026-11-07). The edits, prompt wording only, each aimed at one
+NOT ADOPTED (2026-11-07): measured on the Yevamot slice and not made the active detector;
+the runner stays on v11. Why: docs/findings/2026-11-07-detector-v13-slice.md. Frozen.
+UNMEASURED at creation (2026-11-07), measured the same day. The edits, prompt wording only, each aimed at one
 passage of docs/findings/2026-11-07-detector-v13-slice.md:
   1. 2026-10-25 borderline line: "he allots, hands over or enforces something" ->
      "he himself apportions or hands over something" (his word; "enforces" was ours).
