@@ -4,7 +4,7 @@ capability: [classification, detection]
 tractate: [eruvin, yevamot]
 blocked_by: [2026-11-07-pre-eruvin-run-fixes]
 awaiting: []
-writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, docs/findings/2026-11-07-detector-v13-slice.md, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_model_default.py, tests/test_examine_all_pages.py, tests/test_prompt_carries_the_rules.py, tests/test_run_new_tractate.py, tests/test_v13_code_is_v11_code.py, comms/JEFF.md]
+writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, docs/findings/2026-11-07-detector-v13-slice.md, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_model_default.py, tests/test_examine_all_pages.py, tests/test_prompt_carries_the_rules.py, tests/test_run_new_tractate.py, tests/test_new_detector_code_is_v11_code.py, src/story_detector_v14.py, comms/JEFF.md]
 finding:
 superseded_by:
 ---
@@ -105,7 +105,7 @@ on v13.
   in the Stage 2 criteria and the twin-pass question. `grep -c "event + discussion"` = 0.
   `SERIES_RULE` and the `skip_triage` alias dropped. The runner imports v13.
 - Tests: prompt/twin/rules/examine-all/runner tests follow v13; v11's fix tests stay on
-  v11 and `tests/test_v13_code_is_v11_code.py` pins that v13's code is v11's except five
+  v11 and `tests/test_new_detector_code_is_v11_code.py, src/story_detector_v14.py` pins that v13's code is v11's except five
   named prompt/version functions, so they still vouch for v13. (`writes:` named
   `tests/test_default_model.py`; the file is `tests/test_model_default.py`.)
 - Slice, BLIND Yevamot list, 2 runs per arm, same day (indicated): v11 35/36 both runs,
@@ -123,3 +123,8 @@ on v13.
   add 65b:12 as borderline — likely our word "enforces", not his "apportions". No single
   sentence; three one-line v14 edits proposed in the finding, not written. 78b:9 is now
   `jeff:question-and-answer` in `comms/JEFF.md`.
+- **v14** (v13 + the three edits), 2 runs beside 2 fresh v11 runs, same day: 34/36 both
+  runs vs v11 35/36 (all four v11 runs). Edit 1 worked (65b:12 out), edit 2 did not
+  (105b:14–15 still LOW), edit 3 worked in one run of two (78b:13–20). By the decision rule
+  set before the runs, **the runner points back at v11**; v13 and v14 stay as measured
+  records. Open: CLAUDE.md's "highest-numbered file is the active detector" is now false.
