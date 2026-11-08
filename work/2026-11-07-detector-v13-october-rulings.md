@@ -49,19 +49,25 @@ for `fix/pre-eruvin-run-path` to merge, then build.
      something (*"the rabbi 'apportions' wine… more change"*); a bare statement by the rabbi
      *"would not even be borderline"*.
    - Make the same change in the twin-pass question's disqualifier list.
-3. Module docstring: "v13 = fixed v11 code + v12 wording + 2026-10-25 rulings; UNMEASURED
+3. **Drop the dead weight while copying, since v13 is a new file and v11 stays frozen:** the
+   `SERIES_RULE` flag and both `_SERIES_RULE*` strings (off, unmeasured, superseded by the
+   twin pass), and the deprecated `skip_triage` alias with its `TypeError`/`DeprecationWarning`
+   branch (its last caller, `tests/ablation_test.py`, moved to `archive/legacy_tests/` on
+   2026-11-07). Retarget `tests/test_prompt_is_fully_substituted.py` to the single prompt and
+   delete `test_skip_triage_alias_still_works_and_warns` for v13 (v7–v10 keep the stub, pinned).
+4. Module docstring: "v13 = fixed v11 code + v12 wording + 2026-10-25 rulings; UNMEASURED
    at creation". `run_pipeline` returns `'version': 'v13'`; `run_new_tractate.py` imports
    v13 and takes its version string from the module, not a literal (review finding 6).
-4. Update the tests that import the detector by version (`tests/test_prompt_is_fully_substituted.py`,
+5. Update the tests that import the detector by version (`tests/test_prompt_is_fully_substituted.py`,
    `tests/test_twin_pass.py`, `tests/test_default_model.py` `LIVE_ENTRY_POINTS`, and any other
    `grep -l story_detector_v11 tests/`) so they pin v13; v11's own tests stay on v11.
    `test_prompt_is_fully_substituted` must pass on v13 — the 2026-09-09 incident was a
    prompt edit that ended an f-string early and lost every few-shot.
-5. **Measure on the Yevamot slice** (copy `results/v11/twin_pass/slice.txt` to `results/v11/v13_slice/slice.txt`; 20 pages), the
+6. **Measure on the Yevamot slice** (copy `results/v11/twin_pass/slice.txt` to `results/v11/v13_slice/slice.txt`; 20 pages), the
    configuration every shipped number comes from (`gemini-3-flash-preview`, thinking off,
    twin pass on): v11 twice, v13 twice, same day. `python3 scripts/score_noise_floor_slice.py results/v11/v13_slice`
    gives mean recall, spread and `span_repairs` per arm. ~4 min and a few cents a run.
-6. **Read the delta by name, not by the mean.** The new wording is *supposed* to drop list
+7. **Read the delta by name, not by the mean.** The new wording is *supposed* to drop list
    stories Jeff has since ruled out (the `superseded_by_rule.json` denominator already
    excludes 107b and 45a). A v13 loss that is one of his `not`s is the rule working; a loss
    that is a story he affirms (61a-shape habit-that-causes, 65a-shape ruling-that-acts) is a
