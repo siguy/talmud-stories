@@ -45,8 +45,10 @@ wave 4 page uses, guarded by `tests/test_review_ui_symmetry.py`. This page
 therefore cannot show Hebrew and English at different extents unless that test
 also fails.
 
-Reads `results/v10/wave4_notrim/` -- the honest segment-level output. The
-reverted char-offset spans of `results/v10/wave4/` are not shown at all.
+With no arguments it reads `results/v10/wave4_notrim/` (segment-level only).
+A v11 run's clause spans (`text_span_start/end`) are drawn as a <mark> inside
+the highlighted rows: that is the boundary we claim and the one the scorer
+scores. The reverted Wave 4 char-offset spans are never read.
 
 Usage:  python3 validation/generators/generate_axis_review_ui.py
 """
@@ -103,6 +105,14 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
             for withheld, group in ((False, page.get('stories') or []),
                                     (True, page.get('mishnah_stories') or [])):
                 for s in group:
+                    # NOT_A_STORY: DECIDED, not overlooked (2026-11-07 review, P2-6).
+                    # Not shown as cards: this page asks the reviewer about the
+                    # passages we CLAIM are stories, and these are claims the
+                    # detector itself withdrew. Showing them would add ~13% more
+                    # cards to the bottleneck to test a cause the recall harness
+                    # already measures without him ("proposed-then-NOT_A_STORY").
+                    # They are COUNTED in the header (rejected_count) so the
+                    # reviewer knows they exist and can ask to see them.
                     if s.get('classification') == 'NOT_A_STORY':
                         continue
                     item = {
@@ -120,6 +130,11 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
                         # of them are passages his own list already has.
                         'expert_listed': None,
                     }
+                    # The clause span is OUR claimed boundary, and the one
+                    # score_boundary_targets.py scores. Carried so the page can draw it.
+                    for k in ('text_span_start', 'text_span_end', 'text_span_end_skipped'):
+                        if s.get(k) is not None:
+                            item[k] = s[k]
                     # A boundary correction needs text on BOTH sides of our span, and
                     # 8 of the 25 Gittin entries had fewer than two lines of context on
                     # one side — two of them ended on the last segment of the daf, with
@@ -146,6 +161,33 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
                             item['end_segment_page2'] = s.get('end_segment_page2', 0)
                     stories.append(item)
     return stories, '+'.join(sorted(versions))
+
+
+def rejected_count(paths: List[Path]) -> int:
+    """How many NOT_A_STORY proposals build_data leaves out (see the comment there)."""
+    n = 0
+    for p in paths:
+        for page in json.loads(Path(p).read_text())['pages']:
+            for key in ('stories', 'mishnah_stories'):
+                n += sum(1 for s in page.get(key) or []
+                         if s.get('classification') == 'NOT_A_STORY')
+    return n
+
+
+def failed_pages(paths: List[Path]) -> List[str]:
+    """Refs of pages whose Stage 2 call failed (`stage2_error`), in run order.
+
+    Such a page emits no card, so on the review page it is indistinguishable from
+    a page with no stories -- one the reviewer would in effect confirm although
+    nobody examined it (2026-11-07 review, P2-3). The header names them and the
+    build refuses unless `--allow-failed`.
+    """
+    out: List[str] = []
+    for p in paths:
+        for page in json.loads(Path(p).read_text())['pages']:
+            if page.get('stage2_error'):
+                out.append(page.get('ref', '?'))
+    return out
 
 
 PAGE = r"""<!DOCTYPE html>
@@ -184,6 +226,8 @@ PAGE = r"""<!DOCTYPE html>
   .story-card.cls-HIGH_CONFIDENCE { border-left-color: #3182ce; }
   .story-card.cls-LOW_CONFIDENCE { border-left-color: #d69e2e; }
   .story-card.reviewed { opacity: 0.6; }
+  .story-card.current { outline: 3px solid #2c7a7b; outline-offset: 2px; opacity: 1; }
+  .progress-text { font-size: 13px; color: #48606f; margin: 0 0 6px; }
   .story-header { display: flex; align-items: center; gap: 10px;
                   flex-wrap: wrap; margin-bottom: 12px; }
   .story-title { font-weight: 600; font-size: 15px; }
@@ -263,11 +307,14 @@ __DISPLAY_CSS__
   <div class="header">
     <h1>__TITLE__ — Story Review</h1>
     __NOTE__
+    __FAILED__
     <p>Hebrew and English are shown side by side, one row per segment, so the two always cover the <b>same extent</b>. Nothing is cut in either language — the story is highlighted inside the full text.</p>
     <div class="howto">
       <b>If an entry is right, click <span style="color:#2c7a7b">Yes</span> and move on — that is the whole review for it.</b><br>
       If something is off, use <b>“Something else is wrong”</b> to say <i>what</i>: the extent, the confidence level, or whether it should be split or merged. A passage can be a story <i>and</i> have the wrong extent — those are separate questions on purpose, because we have been unable to tell them apart and it has sent us fixing the wrong things.<br>
       If the <b>extent</b> is wrong, a box opens for the Hebrew: <b>highlight the words in the text above and press “Use highlighted text”</b> — no need to type them. There are two boxes, <b>where the story should start</b> and <b>where it should end</b>; fill either or both. Below them you can instead point at one passage and say whether it <i>belongs in the story</i> or <i>should be cut</i>.<br>
+      <b>Highlighted rows</b> are the segments the story sits in. Where part of the Hebrew is also <mark class="span-in">marked like this</mark>, the mark is our <b>claimed extent</b> — the exact words we say the story starts and ends with — and the rest of the highlight is context. Judge the boundary against the mark.<br>
+      <b>Keyboard</b> (when not typing in a box): <b>j</b> jumps to the next unreviewed entry, then <b>y</b> / <b>b</b> / <b>n</b> answer Yes / Borderline / No for it.<br>
       If the <b>page itself</b> is broken — text missing, Hebrew not matching — click <b>⚠ Display problem</b>. That is our bug, not a judgement about the passage.
     </div>
     <div class="stats">
@@ -275,6 +322,8 @@ __DISPLAY_CSS__
       <div class="stat">detector: <strong>__DETECTOR_VERSION__</strong></div>
       <div class="stat">cross-page: <strong>__N_CROSS__</strong></div>
       <div class="stat">withheld from Mishnah: <strong>__N_MISHNAH__</strong></div>
+      <div class="stat" title="Passages the detector proposed and then itself judged not a story. Ask if you want to see them.">we rejected ourselves (not shown): <strong>__N_REJECTED__</strong></div>
+      <div class="stat" id="savedCount" title="Kept in this browser as you go; Save Review still makes the file to send">0 saved locally</div>
     </div>
   </div>
 
@@ -284,15 +333,25 @@ __DISPLAY_CSS__
     <button onclick="setFilter('unreviewed', this)">unreviewed</button>
     <button onclick="setFilter('cross', this)">cross-page</button>
     <button onclick="setFilter('mishnah', this)">in a Mishnah</button>
+    <button data-role="filter-unlisted" style="display: none" onclick="setFilter('unlisted', this)">not on your list</button>
+    <button data-role="filter-listed" style="display: none" onclick="setFilter('listed', this)">on your list</button>
+    <select onchange="setClassFilter(this.value)" title="Show only one detector classification">
+      <option value="">every classification</option>
+      <option value="HIGH_CONFIDENCE">HIGH_CONFIDENCE</option>
+      <option value="YES">YES</option>
+      <option value="LOW_CONFIDENCE">LOW_CONFIDENCE</option>
+    </select>
     <button class="save-btn" onclick="saveResults()">Save Review</button>
   </div>
 
+  <p class="progress-text" id="progressText"></p>
   <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width: 0%;"></div></div>
 
   <div id="storiesContainer"></div>
 
   <div id="exportArea" class="hidden" style="background: white; padding: 20px; border-radius: 10px; margin-top: 20px;">
     <h3>Review Export</h3>
+    <p id="exportWarning" style="color:#9b2c2c; font-weight:600; margin-top:8px;"></p>
     <textarea class="export-box" id="exportData" readonly></textarea>
     <button class="save-btn" onclick="downloadJSON()" style="margin-top: 10px;">Download JSON</button>
   </div>
@@ -305,6 +364,8 @@ const SCHEMA_VERSION = "__SCHEMA_VERSION__";
 const HEBREW_FIRST = true;   // the Hebrew is the text; the English translates it
 const verdicts = {};
 let activeFilter = 'all';
+let classFilter = '';      // '' = every classification
+let currentIdx = null;     // the card the keyboard acts on
 
 __DISPLAY_JS__
 
@@ -328,9 +389,25 @@ const AXIS_LABELS = {
   grouping: { right: 'Right', split: 'Should be split', merge: 'Merge with neighbour' }
 };
 
-// The shared core builds the text; this page passes NO span hook, because
-// wave4_notrim carries segment-level boundaries only. The reverted char-offset
-// spans are not shown here at all -- 55% of them cut mid-word.
+// Our CLAIMED extent, as a <mark> inside the highlighted rows. v11 narrows a
+// story to clause boundaries (`text_span_start/end`, raw-string offsets,
+// [start, end)), and that narrower extent is what score_boundary_targets.py
+// scores. Highlighting only the whole segments showed Jeff a boundary we never
+// claimed: all 5 Gittin boundary notes asked to cut text the span already
+// excluded (2026-11-07 review, P1-1). A story with no span draws no mark -- its
+// claimed extent IS the highlighted segments. A story that runs onto the next
+// daf has no end on this one, so a `text_span_end` it carries (pre-PR-#71 runs
+// do) is ignored. The old reason for passing null here -- Wave 4 char offsets,
+// 55% mid-word -- does not apply: clause spans sit on punctuation by construction.
+function claimedSpan(story, i, heb) {
+  const s = story.text_span_start, e = story.text_span_end;
+  const endClaimed = !!e && !story.text_span_end_skipped && !story.spans_pages;
+  if (!s && !endClaimed) return [null, null];
+  const lo = (s && i === s.segment) ? s.char_offset : 0;
+  const hi = (endClaimed && i === e.segment) ? e.char_offset : heb.length;
+  return [lo, hi];
+}
+
 function buildTextDisplay(story) {
   // The neighbouring daf is drawn by the SAME grid builder, so its Hebrew and
   // English pair exactly like the rest. The synthetic start/end simply pick the
@@ -344,7 +421,7 @@ function buildTextDisplay(story) {
     const lastIdx = story.prev_page_segments.reduce((m, s) => Math.max(m, s.index), 0);
     out += edge(story.prev_page_segments, 'end of ' + story.prev_page_ref, lastIdx + 1);
   }
-  out += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, null);
+  out += buildGrid(story.page_segments || [], story.start_segment, story.end_segment, story, claimedSpan);
   // A story that already continues onto the next daf gets that page from
   // buildContinuation below; showing it twice would read as two passages.
   if (story.next_page_segments && !story.spans_pages) {
@@ -355,10 +432,49 @@ function buildTextDisplay(story) {
 
 function isComplete(v) { return !!(v && v.is_story); }
 
+// ---------------------------------------------------------------------------
+// PERSISTENCE. Every change is written to this browser's localStorage, so a
+// reload, a crash or a closed tab loses nothing (2026-11-07 review, P1-2: the
+// page kept answers only in memory). Keyed by tractate AND detector version:
+// a verdict belongs to the version it judged (Lesson 36), so a page rebuilt from
+// a new run starts clean rather than inheriting answers about other proposals.
+// Save Review still produces the file to send -- this is a safety net, not a
+// channel. Storage can be blocked (private window, file:// policy); then the
+// page works exactly as before.
+// ---------------------------------------------------------------------------
+const STORAGE_KEY = 'axis-review:' + TRACTATE + ':' + DETECTOR_VERSION;
+
+// The last time this verdict changed. Exported per verdict so the pace of a
+// round can be read off the file (5_review's gate is "days, not weeks").
+function changed(key) {
+  ensure(key).answered_at = new Date().toISOString();
+  persist();
+}
+
+function persist() {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(verdicts)); } catch (e) {}
+  showSaved();
+}
+
+function restore() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) Object.assign(verdicts, JSON.parse(raw));
+  } catch (e) {}
+}
+
+function showSaved() {
+  const n = Object.keys(verdicts).filter(k => isComplete(verdicts[k])).length;
+  const el = document.getElementById('savedCount');
+  if (el) el.textContent = n + ' saved locally';
+}
+
 // 'right' is an answer, not a complaint: the quote box is for a wrong extent.
 function isExtentWrong(extent) { return !!extent && extent !== 'right'; }
 
 function init() {
+  restore();
+  showSaved();
   // Show the two list filters only when the page was built with --listed.
   const known = STORIES.some(s => s.expert_listed !== null && s.expert_listed !== undefined);
   if (known) document.querySelectorAll('[data-role^="filter-"]').forEach(b => b.style.display = '');
@@ -373,6 +489,7 @@ function setFilter(f, btn) {
 }
 
 function passesFilter(story) {
+  if (classFilter && story.classification !== classFilter) return false;
   if (activeFilter === 'all') return true;
   if (activeFilter === 'unreviewed') return !isComplete(verdicts[story.key]);
   if (activeFilter === 'cross') return !!story.spans_pages;
@@ -382,12 +499,64 @@ function passesFilter(story) {
   return true;
 }
 
+function setClassFilter(c) { classFilter = c || ''; render(); }
+
+// ---------------------------------------------------------------------------
+// KEYBOARD. j = next unreviewed entry (in the current filter); y / b / n answer
+// is_story for the current entry. A key SETS the answer, never toggles it off --
+// a second press must not undo the first. Never fires while typing in a box.
+// ---------------------------------------------------------------------------
+const KEY_ANSWERS = { y: 'yes', b: 'borderline', n: 'no' };
+
+function setCurrent(idx) {
+  if (currentIdx !== null) {
+    const old = document.getElementById('card-' + currentIdx);
+    if (old) old.classList.remove('current');
+  }
+  currentIdx = idx;
+  const card = document.getElementById('card-' + idx);
+  if (card) {
+    card.classList.add('current');
+    if (card.scrollIntoView) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function nextUnreviewed() {
+  const from = currentIdx === null ? -1 : currentIdx;
+  for (let step = 1; step <= STORIES.length; step++) {
+    const i = (from + step) % STORIES.length;
+    if (passesFilter(STORIES[i]) && !isComplete(verdicts[STORIES[i].key])) return i;
+  }
+  return null;
+}
+
+function onKey(e) {
+  const tag = (e.target && e.target.tagName || '').toUpperCase();
+  if (tag === 'TEXTAREA' || tag === 'INPUT' || tag === 'SELECT') return;
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = (e.key || '').toLowerCase();
+  if (k === 'j') {
+    const i = nextUnreviewed();
+    if (i !== null) setCurrent(i);
+    if (e.preventDefault) e.preventDefault();
+  } else if (KEY_ANSWERS[k] && currentIdx !== null) {
+    const st = STORIES[currentIdx];
+    if ((verdicts[st.key] || {}).is_story !== KEY_ANSWERS[k])
+      setAxis(st.key, 'is_story', KEY_ANSWERS[k], currentIdx);
+    if (e.preventDefault) e.preventDefault();
+  }
+}
+if (typeof document !== 'undefined' && document.addEventListener)
+  document.addEventListener('keydown', onKey);
+
 function render() {
   const container = document.getElementById('storiesContainer');
   container.innerHTML = '';
   STORIES.forEach((story, idx) => {
     if (!passesFilter(story)) return;
-    container.appendChild(buildCard(story, idx));
+    const card = buildCard(story, idx);
+    if (idx === currentIdx) card.classList.add('current');
+    container.appendChild(card);
   });
   updateProgress();
 }
@@ -478,7 +647,7 @@ function buildCard(story, idx) {
     + '</div>'
     + '<textarea class="notes-input" rows="2" placeholder="Anything else, in your own words '
     +   '&mdash; if it is about where the story starts or ends, the boxes above capture it better"'
-    +   ' oninput="notesTyped(' + idx + ')"'
+    +   ' oninput="notesTyped(' + idx + '); setNotes(\'' + story.key + '\', this.value)"'
     +   ' onchange="setNotes(\'' + story.key + '\', this.value)">'
     +   esc(String(v.notes || '')) + '</textarea>';
   return card;
@@ -509,10 +678,11 @@ function setAxis(key, axis, value, idx) {
     }
   }
   updateProgress();
+  changed(key);
 }
 
-function setQuote(key, text) { ensure(key).quote = text; }
-function setField(key, field, text) { ensure(key)[field] = text; }
+function setQuote(key, text) { ensure(key).quote = text; changed(key); }
+function setField(key, field, text) { ensure(key)[field] = text; changed(key); }
 
 // Same as grabSelection, but writes into a named field, so START and END are
 // two separate statements rather than one quote whose direction we have to
@@ -526,6 +696,7 @@ function grabInto(key, field, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v[field] = sel.trim();
+  changed(key);
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="' + field + '-text"]');
   if (box) { box.value = v[field]; selectForReplace(box); }
@@ -550,6 +721,7 @@ function grabSelection(key, idx) {
   if (!sel.trim()) return;
   const v = ensure(key);
   v.quote = sel.trim();
+  changed(key);
   const card = document.getElementById('card-' + idx);
   const box = card && card.querySelector('[data-role="quote-text"]');
   if (box) { box.value = v.quote; selectForReplace(box); }
@@ -558,6 +730,7 @@ function grabSelection(key, idx) {
 function toggleDisplay(key, idx) {
   const v = ensure(key);
   v.display_problem = !v.display_problem;
+  changed(key);
   const card = document.getElementById('card-' + idx);
   if (card) {
     const btn = card.querySelector('.axis-btn[data-axis="display_problem"]');
@@ -576,7 +749,7 @@ function toggleAxes(idx, btn) {
   if (btn) btn.classList.toggle('open', open);
 }
 
-function setNotes(key, notes) { ensure(key).notes = notes; }
+function setNotes(key, notes) { ensure(key).notes = notes; changed(key); }
 
 // The whole reason this exists. On the first real round (Gittin, 2026-09-02) every
 // structured field came back empty and five boundary corrections arrived as prose --
@@ -604,6 +777,8 @@ function updateProgress() {
   const done = Object.keys(verdicts).filter(k => isComplete(verdicts[k])).length;
   const bar = document.getElementById('progressFill');
   if (bar) bar.style.width = (done / STORIES.length * 100) + '%';
+  const txt = document.getElementById('progressText');
+  if (txt) txt.textContent = done + ' of ' + STORIES.length + ' reviewed';
 }
 
 function buildExport() {
@@ -636,7 +811,12 @@ function buildExport() {
       // and the single quote box could not.
       quote_start: v.quote_start || '',
       quote_end: v.quote_end || '',
-      notes: v.notes || ''
+      notes: v.notes || '',
+      // Additions (2026-11-07): the file-level schema_version, repeated per
+      // verdict so a merged file still says which page shape each came from,
+      // and when it was last changed.
+      schema_version: SCHEMA_VERSION,
+      answered_at: v.answered_at || null
     };
   });
   return {
@@ -651,7 +831,31 @@ function buildExport() {
   };
 }
 
+// A card where the reviewer said something -- an extent, a quote, a note, a
+// flag -- but never answered "is it a story" is ABSENT from the export (property
+// F: an unanswered card is not a verdict). That is right, and it was silent
+// (2026-11-07 review, P2-5). Name them at Save so the answer can be added.
+function hasAnyAnswer(v) {
+  if (!v) return false;
+  return !!(v.extent || v.confidence || v.grouping || v.quote_polarity || v.display_problem
+            || (v.quote || '').trim() || (v.quote_start || '').trim()
+            || (v.quote_end || '').trim() || (v.notes || '').trim());
+}
+
+function unansweredWithInput() {
+  return STORIES.filter(st => !isComplete(verdicts[st.key]) && hasAnyAnswer(verdicts[st.key]))
+                .map(st => st.page_ref + ' seg ' + st.start_segment + '-' + st.end_segment);
+}
+
 function saveResults() {
+  const missing = unansweredWithInput();
+  const warn = document.getElementById('exportWarning');
+  if (warn) warn.textContent = missing.length
+    ? missing.length + ' entr' + (missing.length === 1 ? 'y has' : 'ies have')
+      + ' comments but no answer to "Is it a story?", so ' + (missing.length === 1 ? 'it is' : 'they are')
+      + ' NOT in this export: ' + missing.join('; ')
+      + '. Click Yes / Borderline / No on ' + (missing.length === 1 ? 'it' : 'them') + ' and Save again.'
+    : '';
   document.getElementById('exportData').value = JSON.stringify(buildExport(), null, 2);
   document.getElementById('exportArea').classList.remove('hidden');
   document.getElementById('exportArea').scrollIntoView({ behavior: 'smooth' });
@@ -673,8 +877,19 @@ init();
 </html>"""
 
 
+def _failed_line(failed: List[str] | None) -> str:
+    if not failed:
+        return ''
+    n = len(failed)
+    return (f'    <p class="failed-pages" style="color:#9b2c2c;"><b>{n} page'
+            f'{"" if n == 1 else "s"} not examined (call failed): {", ".join(failed)}</b>'
+            f' — no entry below comes from {"it" if n == 1 else "them"}; an absence there'
+            f' is not a "no story".</p>\n')
+
+
 def generate_html(title: str, stories: List[Dict], detector_version: str,
-                  note: str | None = None) -> str:
+                  note: str | None = None, failed: List[str] | None = None,
+                  n_rejected: int = 0) -> str:
     data_json = json.dumps(stories, ensure_ascii=True).replace('</', '<\\/')
     n_cross = sum(1 for s in stories if s.get('spans_pages'))
     n_mish = sum(1 for s in stories if s.get('mishnah_withheld'))
@@ -687,9 +902,11 @@ def generate_html(title: str, stories: List[Dict], detector_version: str,
             .replace('__N_TOTAL__', str(len(stories)))
             .replace('__N_CROSS__', str(n_cross))
             .replace('__N_MISHNAH__', str(n_mish))
+            .replace('__N_REJECTED__', str(n_rejected))
             # Whole line, newline included, so a page with no note is byte-identical
             # to the ones already banked (tests/test_review_ui_axes.py).
             .replace('    __NOTE__\n', f'    <p><b>{note}</b></p>\n' if note else '')
+            .replace('    __FAILED__\n', _failed_line(failed))
             .replace('__STORIES__', data_json))
 
 
@@ -707,11 +924,14 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--run', nargs='+', help='run file(s) to read instead of the banked set')
     ap.add_argument('--title')
-    ap.add_argument('--out', help='file name under validation/ui/')
+    ap.add_argument('--out', help='file name under validation/ui/, or any absolute path')
     ap.add_argument('--only', help='JSON list of {ref,start_segment,end_segment} to keep')
     ap.add_argument('--listed', help='JSON list of {ref,start_segment,end_segment} the expert '
                                      'ALSO has, so the page can show where we agree')
     ap.add_argument('--note', help='one line shown under the page title')
+    ap.add_argument('--allow-failed', action='store_true',
+                    help='build even if some pages carry stage2_error (they are named '
+                         'in the header); without it such a run is refused')
     args = ap.parse_args(argv)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -720,6 +940,13 @@ def main(argv=None) -> int:
             ap.error('--run needs --title and --out')
         paths = [Path(r) if Path(r).is_absolute() else ROOT / r for r in args.run]
         stories, version = build_data(paths)
+        failed = failed_pages(paths)
+        if failed:
+            print(f"  {len(failed)} page(s) not examined (stage2_error): {', '.join(failed)}")
+            if not args.allow_failed:
+                print('  REFUSING to build: re-run those pages, or pass --allow-failed '
+                      'to build with them named in the header')
+                return 1
         if args.only:
             keep = {(o['ref'], o['start_segment'], o['end_segment'])
                     for o in json.loads(Path(args.only).read_text())}
@@ -741,13 +968,14 @@ def main(argv=None) -> int:
                                        st['end_segment']) in listed
             agreed = sum(1 for st in stories if st['expert_listed'])
             print(f"  agreement: {agreed} of {len(stories)} entries are on the expert's list")
-        html = generate_html(args.title, stories, version, note=args.note)
+        html = generate_html(args.title, stories, version, note=args.note, failed=failed,
+                             n_rejected=rejected_count(paths))
         out = OUT_DIR / args.out
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)
         print(f"  {args.title}: {len(stories)} entries "
               f"({sum(1 for s in stories if s['mishnah_withheld'])} withheld from a Mishnah) "
-              f"-> {out.relative_to(ROOT)}")
+              f"-> {out}")
         print(f"      version={version}  {dict(cls)}")
         return 0
 
@@ -758,7 +986,8 @@ def main(argv=None) -> int:
             print(f"  SKIP {slug}: missing {[str(m.relative_to(ROOT)) for m in missing]}")
             continue
         stories, version = build_data(paths)
-        html = generate_html(cfg['title'], stories, version)
+        html = generate_html(cfg['title'], stories, version, failed=failed_pages(paths),
+                             n_rejected=rejected_count(paths))
         out = OUT_DIR / cfg['out']
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)

@@ -58,16 +58,34 @@ Deterministic refinement + targeted LLM calls:
 
 ## Step 5: Generate Review UI
 
+The page is the per-axis review UI (`generate_axis_review_ui.py`). The older
+`generate_review_ui.py` is retired.
+
 ```bash
-python3 validation/generators/generate_review_ui.py --input results/v7/tractate_output.json --output validation/ui/tractate_review.html
+python3 validation/generators/generate_axis_review_ui.py \
+    --run results/v11/<tractate>/<tractate>_v11.json --title <Tractate> \
+    --out validation/ui/axis_<tractate>_review.html
 ```
 
-The review UI shows each detected story with:
-- English and Hebrew text side by side
-- Story text highlighted in context
-- Classification and confidence level
-- Verdict buttons (correct / incorrect / approve / adjust)
-- Notes field for boundary and merge corrections
+Optional: `--only <keys.json>` restricts the page to a list of
+`{ref, start_segment, end_segment}` (the "unlisted ask"); `--listed <keys.json>`
+badges the entries the expert's own list already has. No script writes that file
+yet; build it by **strict** overlap, never the recall window (see
+`scripts/audit_proposal_credit.py` for why).
+
+The build **refuses** if any page carries `stage2_error` — re-run those pages, or pass
+`--allow-failed` and they are named in the page header as not examined.
+
+Each card shows:
+- Hebrew and English side by side, one row per segment, story rows highlighted
+- our **claimed extent** as a `<mark>` inside the highlight when the run has clause spans
+- one required question, *is it a story* (yes / borderline / no / out of scope); extent,
+  confidence and grouping behind a disclosure, independent of it
+- Hebrew quote boxes for a wrong boundary, filled by highlighting the text
+
+Answers are kept in the browser's localStorage as the reviewer goes; **Save Review**
+produces the JSON to send back, and warns about any card with comments but no answer.
+Open the page in a browser before sending it (Critical Rule 1).
 
 ## Step 6: Expert Review
 
