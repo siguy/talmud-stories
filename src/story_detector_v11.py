@@ -2814,6 +2814,11 @@ def trim_trailing_stam_segments(pages: List[Dict]) -> int:
             end = story.get('end_segment')
             if start is None or end is None or end <= start:
                 continue
+            # A story that continues onto the next page does not end here: trimming
+            # page 1's last segment would leave a hole before the page break
+            # (2026-11-07 review, finding 12: Yevamot 87a, 95a).
+            if story.get('spans_pages'):
+                continue
 
             orig_end = end
             cur_end = end
