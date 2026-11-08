@@ -330,6 +330,8 @@ __DISPLAY_CSS__
     <button onclick="setFilter('unreviewed', this)">unreviewed</button>
     <button onclick="setFilter('cross', this)">cross-page</button>
     <button onclick="setFilter('mishnah', this)">in a Mishnah</button>
+    <button data-role="filter-unlisted" style="display: none" onclick="setFilter('unlisted', this)">not on your list</button>
+    <button data-role="filter-listed" style="display: none" onclick="setFilter('listed', this)">on your list</button>
     <button class="save-btn" onclick="saveResults()">Save Review</button>
   </div>
 

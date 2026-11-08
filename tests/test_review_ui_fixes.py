@@ -430,3 +430,40 @@ class RejectedProposalsAreADecision(unittest.TestCase):
         html = self.gen.generate_html('K', stories, version,
                                       n_rejected=self.gen.rejected_count([self.path]))
         self.assertTrue('we rejected ourselves (not shown): <strong>1</strong>' in html)
+
+
+# ---------------------------------------------------------------------------
+# Should-land: the listed / unlisted filter exists on the page, hidden until
+# the page was built with --listed (init() shows it). Its branches were dead.
+# ---------------------------------------------------------------------------
+LISTED_AUDIT = r"""
+const shown = [];
+document.querySelectorAll = sel => sel === '[data-role^="filter-"]'
+  ? [{ style: { display: 'none' }, set _(v) {} }].map(b => (shown.push(b), b)) : [];
+init();
+activeFilter = 'unlisted';
+const nUnlisted = STORIES.filter(passesFilter).length;
+console.log(JSON.stringify({ revealed: shown.map(b => b.style.display), nUnlisted }));
+"""
+
+
+class ListedFilterIsRendered(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        _need_node()
+        gen = _load_generator()
+        stories, version = gen.build_data([FIXTURE])
+        stories[0]['expert_listed'] = False
+        for s in stories[1:]:
+            s['expert_listed'] = True
+        cls.html = gen.generate_html('Kiddushin', stories, version)
+        cls.r = run_page_js(cls.html, LISTED_AUDIT)
+
+    def test_buttons_exist_hidden_and_init_reveals_them(self):
+        for role in ('filter-listed', 'filter-unlisted'):
+            self.assertTrue(re.search(r'<button[^>]*data-role="%s"[^>]*display: ?none' % role,
+                                      self.html), f'no hidden {role} button on the page')
+        self.assertEqual(self.r['revealed'], [''], 'init() did not reveal the list filters')
+
+    def test_the_unlisted_filter_keeps_only_unlisted_entries(self):
+        self.assertEqual(self.r['nUnlisted'], 1)
