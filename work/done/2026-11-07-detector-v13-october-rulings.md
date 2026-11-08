@@ -4,16 +4,16 @@ capability: [classification, detection]
 tractate: [eruvin, yevamot]
 blocked_by: [2026-11-07-pre-eruvin-run-fixes]
 awaiting: []
-writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_default_model.py]
+writes: [src/story_detector_v13.py, scripts/run_new_tractate.py, results/v11/v13_slice/, docs/findings/2026-11-07-detector-v13-slice.md, tests/test_prompt_is_fully_substituted.py, tests/test_twin_pass.py, tests/test_model_default.py, tests/test_examine_all_pages.py, tests/test_prompt_carries_the_rules.py, tests/test_run_new_tractate.py, tests/test_v13_code_is_v11_code.py]
 finding:
 superseded_by:
 ---
 
 # Detector v13: the current rule register in the prompt, measured before it runs on Eruvin
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md), then
-[`docs/STORY_RULES.md`](../docs/STORY_RULES.md) R-C0, R-C2, R-C5, R-C7, then finding 10 of
-[`2026-11-07-pre-eruvin-code-review.md`](../docs/findings/2026-11-07-pre-eruvin-code-review.md).
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md), then
+[`docs/STORY_RULES.md`](../../docs/STORY_RULES.md) R-C0, R-C2, R-C5, R-C7, then finding 10 of
+[`2026-11-07-pre-eruvin-code-review.md`](../../docs/findings/2026-11-07-pre-eruvin-code-review.md).
 
 ## The decision (Simon, 2026-11-07)
 
@@ -93,3 +93,27 @@ for `fix/pre-eruvin-run-path` to merge, then build.
 Finding to `docs/findings/<date>-detector-v13-slice.md`, `## Outcome` here, then
 `python3 scripts/board.py finish detector-v13-october-rulings`. Then the Eruvin items open
 on v13.
+
+## Outcome
+
+**Built and measured; recommendation is not to run Eruvin on v13 as it stands.** Finding:
+[`docs/findings/2026-11-07-detector-v13-slice.md`](../../docs/findings/2026-11-07-detector-v13-slice.md).
+
+- `src/story_detector_v13.py`: fixed v11 + v12's 2026-10-07 lines byte for byte + the
+  2026-10-25 rulings (one event then a ruling/discussion and no change → NOT_A_STORY;
+  implied outcome is not a change; a ruling that is itself an act stays LOW_CONFIDENCE),
+  in the Stage 2 criteria and the twin-pass question. `grep -c "event + discussion"` = 0.
+  `SERIES_RULE` and the `skip_triage` alias dropped. The runner imports v13.
+- Tests: prompt/twin/rules/examine-all/runner tests follow v13; v11's fix tests stay on
+  v11 and `tests/test_v13_code_is_v11_code.py` pins that v13's code is v11's except five
+  named prompt/version functions, so they still vouch for v13. (`writes:` named
+  `tests/test_default_model.py`; the file is `tests/test_model_default.py`.)
+- Slice, BLIND Yevamot list, 2 runs per arm, same day (indicated): v11 35/36 both runs,
+  v13 34/36 both runs, spread 0, span repairs 0 everywhere. The one list story lost
+  (78b:9, a question and answer) is the register applied but unruled by Jeff. v13 also
+  kept a biblical episode (78b:13–20, YES) and Gemara commentary (105b:14–15) that v11
+  rejects (R-S1, R-B4), merged two incidents at 90b, and the 2026-10-25 rule moved no
+  proposal to NOT_A_STORY.
+- **Why not ship:** two new errors the register already forbids, and the rule it was
+  built for has no visible effect. Next: a v13-minus-step-2 arm (v11 code + v12 wording)
+  on the same slice to locate the wording behind the two errors, then a v14.
