@@ -22,34 +22,62 @@ to the misses (Lesson 21's shape: a partition that does not sum is not a partiti
 import argparse
 import collections
 import json
+import logging
 import re
+import sys
 from pathlib import Path
 
-# The shipped run per tractate -- the same artifacts the recall harness scores.
-RUNS = {
+ROOT = Path(__file__).parent.parent
+sys.path.insert(0, str(Path(__file__).parent))
+import board  # noqa: E402  (TRACTATES: one list, so a new tractate is seen)
+
+log = logging.getLogger(__name__)
+
+# Only the two tractates that predate the runner keep their own paths; every other tractate
+# follows the runner's convention, so adding one to board.TRACTATES is enough.
+LEGACY_RUNS = {
     "ketubot": [
         "results/v10/wave4_notrim/ketubot_v10_2-60_notrim.json",
         "results/v10/wave4_notrim/ketubot_v10_61-112_notrim.json",
     ],
     "kiddushin": ["results/v10/wave4_notrim/kiddushin_v10_notrim.json"],
-    "gittin": ["results/v11/gittin/gittin_v11.json"],
-    "yevamot": ["results/v11/yevamot/yevamot_v11.json"],
 }
 # Cached Stage 1 labels. These are per-segment and per-daf; they are the only
 # committed measure of "how much of this daf is legal argument".
-TRIAGE = {
+LEGACY_TRIAGE = {
     "ketubot": ["results/v7/event_triage_2-60.json", "results/v7/event_triage_61-112.json"],
     "kiddushin": ["results/v7/event_triage_kiddushin.json"],
-    "gittin": ["results/triage/gittin.json"],
-    "yevamot": ["results/triage/yevamot.json"],
 }
+
+
+def runs_for(t):
+    return LEGACY_RUNS.get(t) or [f"results/v11/{t}/{t}_v11.json"]
+
+
+def triage_for(t):
+    return LEGACY_TRIAGE.get(t) or [f"results/triage/{t}.json"]
+
+
+def available(tractates):
+    """The tractates whose run, triage cache and matches file all exist; others are logged."""
+    out = []
+    for t in tractates:
+        needed = runs_for(t) + triage_for(t) + [f"results/recall/{t}_jeff2005_matches.json"]
+        missing = [p for p in needed if not (ROOT / p).exists()]
+        if missing:
+            log.warning("skipping %s: missing %s", t, ", ".join(missing))
+        else:
+            out.append(t)
+    return out
+
+
 NARRATIVE_LABELS = {"NARRATIVE_EVENT", "HABITUAL"}
 
 
 def load_triage(tractate):
     out = {}
-    for path in TRIAGE[tractate]:
-        blob = json.loads(Path(path).read_text())
+    for path in triage_for(tractate):
+        blob = json.loads((ROOT / path).read_text())
         out.update(blob.get("triage_results", blob))
     return out
 
@@ -61,8 +89,8 @@ def load_run(tractate):
     FOUND and then removed, which is a different answer from never proposed (Lesson 27).
     """
     proposals, segments = collections.defaultdict(list), {}
-    for path in RUNS[tractate]:
-        blob = json.loads(Path(path).read_text())
+    for path in runs_for(tractate):
+        blob = json.loads((ROOT / path).read_text())
         for page in blob["pages"] if isinstance(blob, dict) else blob:
             ref = page["ref"]
             segments[ref] = page.get("segments") or []
@@ -108,7 +136,7 @@ def build(tractates):
     for tractate in tractates:
         triage = load_triage(tractate)
         proposals, segments = load_run(tractate)
-        expert = json.loads(Path(f"results/recall/{tractate}_jeff2005_matches.json").read_text())
+        expert = json.loads((ROOT / f"results/recall/{tractate}_jeff2005_matches.json").read_text())
         located = [s for s in expert if s.get("located")]
         per_daf = collections.Counter(s["located"][0][0] for s in located)
 
@@ -201,10 +229,11 @@ def report(rows):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--tractates", nargs="*", default=list(RUNS))
+    ap.add_argument("--tractates", nargs="*", default=board.TRACTATES)
     ap.add_argument("--out")
     args = ap.parse_args()
-    rows = build(args.tractates)
+    logging.basicConfig(level=logging.INFO, format='%(levelname)s %(message)s')
+    rows = build(available(args.tractates))
     report(rows)
     if args.out:
         Path(args.out).parent.mkdir(parents=True, exist_ok=True)

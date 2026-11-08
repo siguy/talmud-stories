@@ -23,7 +23,18 @@ sys.path.insert(0, str(Path(__file__).parent))
 from measure_recall_vs_expert_list import apply_superseded, log  # noqa: E402
 
 ROOT = Path(__file__).parent.parent
-TRACTATES = ['Ketubot', 'Kiddushin', 'Gittin', 'Yevamot']
+import board  # noqa: E402  (one tractate list for the whole repo)
+
+
+def tractates_with_matches():
+    """board.TRACTATES that have a matches file; the rest are logged and skipped."""
+    out = []
+    for t in board.TRACTATES:
+        if (ROOT / f'results/recall/{t}_jeff2005_matches.json').exists():
+            out.append(t.title())
+        else:
+            log.warning('%s: no results/recall/%s_jeff2005_matches.json yet -- skipped', t.title(), t)
+    return out
 
 
 def recall(rows):
@@ -34,7 +45,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument('--dry-run', action='store_true')
     args = ap.parse_args()
-    for tractate in TRACTATES:
+    for tractate in tractates_with_matches():
         path = ROOT / f'results/recall/{tractate.lower()}_jeff2005_matches.json'
         rows = json.loads(path.read_text())
         before = recall(rows)
