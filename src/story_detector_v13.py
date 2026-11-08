@@ -1,5 +1,28 @@
 #!/usr/bin/env python3
 """
+Talmud Story Detection v13 = fixed v11 code + v12 wording + 2026-10-25 rulings.
+UNMEASURED at creation (2026-11-07); measured the same day on the 20-page Yevamot slice
+beside v11 -- docs/findings/2026-11-07-detector-v13-slice.md.
+
+v13 = v11 as of the pre-Eruvin fixes (PRs #69-#71: 4c boundary check, sorted stories,
+failed calls flagged, cross-page stories left whole, ...) PLUS, prompt wording only:
+  - v12's 2026-10-07 lines, byte for byte (src/story_detector_v12.py, never run):
+    habit that causes a change is a story (R-C3); ordinary scholarly exchange is not
+    conflict (R-C2); case + ruling needs another narrated action or change (R-C0 limit);
+    a single act with no change is not a story (R-C5); an alluded-to incident is
+    borderline (R-C6).
+  - Jeff Rubenstein's 2026-10-25 reply (docs/STORY_RULES.md R-C0, R-C7 shape 2):
+    one event, then a ruling or a discussion, and nothing changes afterwards ->
+    NOT_A_STORY, not borderline; an order that only implies its outcome is not a
+    change; a ruling that is itself an act that changes something stays
+    LOW_CONFIDENCE. Replaces the withdrawn "one real event + discussion ->
+    LOW_CONFIDENCE" in both the Stage 2 criteria and the twin-pass question.
+  Stated as abstract rules: no passage he ruled on is quoted (Lesson 2 / Lesson 8).
+And with dead weight dropped (v11 keeps both): the SERIES_RULE flag and its two
+strings (off, unmeasured, superseded by the twin pass), and the deprecated
+`skip_triage` alias of `examine_all_pages`.
+
+--- v11 docstring follows ---
 Talmud Story Detection v11: v10 + Wave 5 clause-selection text spans (history below).
 
 v10 = v9 (Wave 1+2+3) PLUS:
@@ -1790,7 +1813,7 @@ Return JSON:
 
         return {
             'tractate': tractate,
-            'version': 'v11',
+            'version': 'v13',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
             'span_stats': span_counts,
