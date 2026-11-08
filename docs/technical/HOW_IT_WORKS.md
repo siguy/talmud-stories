@@ -121,7 +121,7 @@ Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 
 ### Stage 4: Boundary Refinement + Cross-Page Merge
 
-The order `run_pipeline` in `src/story_detector_v11.py` executes (2026-11-07 review). There is no 4e. `src/post_processing.py` and `src/clause_roles.py` are not on this path.
+The order `run_pipeline` in `src/story_detector_v11.py` executes (2026-11-07 review). There is no 4e and no separate post-processing stage: `run_pipeline` carries its own Stage 4. `src/clause_roles.py` is not on this path.
 
 - **4a** `refine_boundaries_with_event_tags` — trims DELIBERATION segments off story edges using the Stage 1 labels, with a guard for narrative rulings.
 - **4b** `merge_cross_page_stories_v7` — merges the page-N story reaching the page break with the page-N+1 story nearest its top, using triage NARRATIVE_EVENT labels at the boundary.
@@ -150,15 +150,6 @@ The order `run_pipeline` in `src/story_detector_v11.py` executes (2026-11-07 rev
 - Three new disqualifier rules: all-verbal exchanges, biblical-only narratives, requirement of ≥2 distinct actions + change/conflict. Per Lesson 8 these are abstract patterns only — no Kiddushin-specific examples.
 
 **Duplicate Detection:** Flag stories that appear to be the same passage quoted on multiple pages.
-
-### Stage 5: Post-Processing (`src/post_processing.py`)
-
-Optional mechanical rules applied after LLM detection:
-
-- **Rule 3 (v6 ensemble):** If v6 didn't find a story AND page has ≤1 NARRATIVE_EVENT → demote to NOT_A_STORY. Catches legal misidentifications on law-heavy pages.
-- Rules 1 (single-event filter) and 2 (duplicate reclassification) are disabled — caused regressions in testing.
-
-With gemini-2.0-flash, post-processing adds +2.4% (89.8% → from 87.4%). With gemini-3-flash, post-processing adds nothing (model already at 92.1%).
 
 ## Example Classification
 
