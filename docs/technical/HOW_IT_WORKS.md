@@ -121,49 +121,28 @@ Pattern: Detector Defense → Jeff's Advocate → Adjudicator
 
 ### Stage 4: Boundary Refinement + Cross-Page Merge
 
-**Boundary Refinement:** Trim DELIBERATION segments from story edges using triage event types. If a story starts/ends with segments classified as DELIBERATION in Stage 1, shrink the boundary inward. A guard prevents trimming segments that contain narrative rulings integral to the story.
+The order `run_pipeline` in `src/story_detector_v11.py` executes (2026-11-07 review). There is no 4e. `src/post_processing.py` and `src/clause_roles.py` are not on this path.
 
-**Cross-Page Merge (v8 improved):** Uses triage NARRATIVE_EVENT types at page boundaries to detect story fragments, even when one side is classified NOT_A_STORY:
-1. Check if last segment of page N has NARRATIVE_EVENT in triage
-2. Check if first segment of page N+1 has NARRATIVE_EVENT in triage
-3. If both sides have narrative events and one side has a detected story, promote and merge
-4. **(v8) Case 4 merge:** Detects real stories that span pages even when neither side was flagged as a continuation
-5. **(v8) Relaxed legacy merge:** Uses OR logic (either side has narrative events) instead of requiring both
-6. **(v8) Post-detection stitching:** A second pass after all merges catches stories that were split across pages but not caught by the initial boundary checks
+- **4a** `refine_boundaries_with_event_tags` — trims DELIBERATION segments off story edges using the Stage 1 labels, with a guard for narrative rulings.
+- **4b** `merge_cross_page_stories_v7` — merges the page-N story reaching the page break with the page-N+1 story nearest its top, using triage NARRATIVE_EVENT labels at the boundary.
+- **4c** `merge_cross_page_stories` (legacy) — merges on a continuation flag, only when the page-N story ends at the page's last segment; stamps `cross_page_merge_legacy`.
+- **4d** `stitch_cross_page_continuation` (LLM) — for a flagged story nothing merged, asks where it ends on the next page; failures go to `stage4_call_failures`.
+- **4f** `continuation_check` (LLM) — for an unflagged story ending at the page's last segment, asks whether the next page continues it; failures go to `stage4_call_failures`.
+- **4g** `filter_mishnah_only_stories` — moves stories wholly inside a Mishnah block to `mishnah_stories` (see the warning below).
+- **4h** `snap_start_to_introducer` — moves a multi-segment story's page-1 start to a canonical introducer (`ההוא ד`, `מעשה ב`, …) within reach.
+- **4i** `trim_trailing_stam_segments` — drops trailing segments that open with a stam-Talmud marker, keeping ≥2; skips stories with `spans_pages`.
+- **4j** `filter_biblical_actor_stories` — demotes a story whose named actors are only biblical (whole-name match) to `NOT_A_STORY`, with `out_of_scope` / `scope_reason: biblical_actors`.
+- **4k** `extract_text_spans_via_clauses` (LLM, one call per story, paced by `delay`) — the model picks a clause index in the first/last segment and we compute the offset; no end span on a story with `spans_pages`.
+- **4l** `extend_start_over_opening_formula` (R-B1) — extends a start back over the formula that introduces the story; runs after 4k because it moves a clause index.
+- **dedup** `detect_duplicate_stories` — flags stories that duplicate another.
 
-Result: 16 cross-page stories on Ketubot 61-112 (up from 7 in v7). 12 cross-page stories on Kiddushin.
-
-**Stage 4f: Continuation Check (new — added for Kiddushin run)**
-
-After all merge passes, checks stories near page boundaries that were NOT flagged as continuing. Unlike stitch (4d) which only fires when `continues_to_next_page` is already set, this catches stories where the LLM didn't set the flag.
-
-How it works:
-1. Find the last story on each page that ends within 3 segments of the page boundary
-2. Skip if already merged or already has continuation flags
-3. Send LLM: story text + first 8 segments of next page
-4. Ask: "Is the top of the next page a direct continuation of THIS specific story? Same characters, same situation?"
-5. Conservative — requires same characters and narrative flow, not just thematic similarity
-
-Why this works better than the sliding-window approach (which produced 28 false positives): it asks about a SPECIFIC story's continuation, not "find any story at this boundary." Binary yes/no, not open-ended detection.
-
-Cost: ~$0.03 per tractate (20-30 small API calls).
-Result on Kiddushin: 3 additional cross-page stories caught (including Dama ben Netina, 31a→31b).
-
-**Stage 4g (v8 Wave 1): Mishnah-only filter** — `filter_mishnah_only_stories`. Moves stories entirely within a Mishnah block (Sefaria `מתני׳`/`גמ׳` markers) out of `stories` and into `mishnah_stories`. `NOT_A_STORY` entries are exempt. Each moved story is stamped `filtered_as_mishnah: true`.
+4h–4l and dedup read `stories[]` only; `mishnah_stories` is deliberately left as 4g wrote it.
 
 > **A move is a deletion to every reader that doesn't know the key.** Nothing downstream reads `mishnah_stories` — not `scripts/evaluate_golden.py`, not `scripts/measure_recall_vs_expert_list.py`, not the review UI generators. So a story the detector found and this stage dropped scores identically to one it never found. **Measured 2026-08-30:** the filter accounts for **4 of Ketubot's 15 golden false negatives (27%)**, and all 4 are stories Jeff marked correct in review. On Kiddushin its one case is `NOT_A_STORY` in the golden, so there the filter is right.
 >
 > Report it before trusting any golden number: `python3 scripts/report_mishnah_filter_delta.py --detected <runs>`. The recall harness now prints what was withheld (without moving the headline number). **The scope premise is an open question for Jeff** — see [`docs/findings/2026-08-30-mishnah-filter-delta.md`](../findings/2026-08-30-mishnah-filter-delta.md) and Lesson 27.
 >
 > Known defect, separate from the scope question: `_tag_mishnah_segments()` mislabels Gemara as Mishnah at chapter boundaries, where Sefaria uses the chapter incipit in `<big><strong>` instead of `מתני׳`. 7 pages affected (Ketubot 54b, 65b, 70a, 95b, 101b; Kiddushin 41a, 58b).
-
-**Stage 4h (v8 Wave 2): Start-boundary snap** — `snap_start_to_introducer`. For each multi-segment story: if a canonical Hebrew introducer (`ההוא ד`, `ההיא`, `מעשה ב`, `כי הא ד`, `כדתניא`) starts the segment immediately BEFORE detector's start, extend start back. If one starts a segment in `[start+1..start+3]`, snap start forward. Pure-Python, no LLM.
-
-**Stage 4i (v8 Wave 2): End-boundary trim** — `trim_trailing_stam_segments`. Walks story from end inward, drops trailing segments that open with stam-Talmud markers (`שמע מינה`, `מאי טעמא`, `אי הכי`, `שאני`, `תא שמע`, `מיתיבי`, etc.) as long as ≥2 segments remain.
-
-**Stage 4j (v8 Wave 2): Biblical-actor filter** — `filter_biblical_actor_stories`. Demotes stories whose `criteria.identifiable_characters.evidence` names only biblical figures (Moses, David, Ezra, Nebuchadnezzar, "Jewish people" collective, etc.) to NOT_A_STORY. The catalog is for rabbinic stories.
-
-**Stage 4k (v9 Wave 3): Text-internal boundary edits** — `edit_text_internal_boundaries`. For each real story: search the first segment for the earliest canonical introducer at a word boundary, search the last segment for the latest stam-Talmud marker at a full word boundary. When found mid-segment, records `text_span_start = {segment, char_offset, introducer}` and/or `text_span_end = {segment, char_offset, marker}`. Char offsets are in the original (with-nikud) text. The evaluation harness reads only `start_segment` / `end_segment`, so these fields are score-neutral — the change shows up in the review UI (slice rendered with strikethrough + highlight) but not in the metric. Closes the segment-level gap from Lesson 12.
 
 **Wave 3 Stage 2 prompt changes (v9):**
 - "MULTIPLE STORIES PER PAGE" section — detect every distinct story; follow with iterative pass (one extra Stage 2 call listing already-detected ranges) when ≥1 story found.
