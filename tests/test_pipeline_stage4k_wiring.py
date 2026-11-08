@@ -58,7 +58,7 @@ def _detector(calls):
     d.stitch_cross_page_continuation = lambda *a, **k: 0              # type: ignore
     d.continuation_check = lambda *a, **k: 0                          # type: ignore
 
-    def spans(pages):
+    def spans(pages, delay=0.0):           # run_pipeline passes its delay (finding 8)
         calls.append('clauses')
         return {'clause_llm': 1, 'clause_kept_full': 0,
                 'no_clause_split': 0, 'skipped': 0}

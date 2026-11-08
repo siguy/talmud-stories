@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Talmud Story Detection v10: v9 baseline + Wave 4 LLM-side text-span emission.
+Talmud Story Detection v11: v10 + Wave 5 clause-selection text spans (history below).
 
 v10 = v9 (Wave 1+2+3) PLUS:
   - Wave 5 (v11): CLAUSE SELECTION replaces character offsets.
@@ -630,7 +630,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         ec = max(0, min(ec, len(end_clauses) - 1))
         return {'start_clause': sc, 'end_clause': ec}
 
-    def extract_text_spans_via_clauses(self, pages: List[Dict]) -> Dict[str, int]:
+    def extract_text_spans_via_clauses(self, pages: List[Dict],
+                                       delay: float = 0.0) -> Dict[str, int]:
         """
         Wave 5 (v11) replacement for Wave 4's extract_text_spans_via_llm.
 
@@ -652,6 +653,11 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                                  one clause. Named, logged, never silent.
           - 'skipped'          : LLM error. NO regex fallback (it over-trims —
                                  Jeff 2026-06-03); fail loud.
+
+        A story with `spans_pages` is asked for its START only and carries
+        `text_span_end_skipped: 'spans_pages'`: it ends on the next page.
+
+        `delay` seconds are slept after each model call (run_pipeline passes its own).
 
         Returns counts keyed by those outcomes.
         """
@@ -679,7 +685,13 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 if not start_ranges or not end_ranges:
                     continue
 
-                if len(start_ranges) == 1 and len(end_ranges) == 1:
+                # A story that runs on into the next page does not END in this
+                # segment, so there is no end to choose; only the start is asked
+                # (2026-11-07 review, finding 11: 10 shipped cases cut the end).
+                cross_page = bool(story.get('spans_pages'))
+                if cross_page:
+                    story['text_span_end_skipped'] = 'spans_pages'
+                if len(start_ranges) == 1 and (cross_page or len(end_ranges) == 1):
                     # Nothing to choose between: the segment is one clause.
                     story['text_span_source'] = 'no_clause_split'
                     counts['no_clause_split'] += 1
@@ -690,6 +702,10 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     [_clause_text_for_display(start_heb, r) for r in start_ranges],
                     [_clause_text_for_display(end_heb, r) for r in end_ranges],
                 )
+                # One call per story: pace them like 4d/4f do, or a long run meets
+                # a 429 here (2026-11-07 review, finding 8).
+                if delay > 0:
+                    time.sleep(delay)
                 if llm is None:
                     print(f"  WARN clause-span LLM error on {page.get('ref', '?')} "
                           f"story {start}-{end}: leaving spans absent")
@@ -722,7 +738,7 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                 # that standard the cap undoes the trims that remove real
                 # overshoots (ends running past even the 2005 outer limit go
                 # 10 -> 16 of 105). See docs/findings/2026-08-30-trim-asymmetry.md
-                if ec < len(end_ranges) - 1:
+                if not cross_page and ec < len(end_ranges) - 1:
                     offset = end_ranges[ec][1]
                     _assert_word_boundary(end_heb, offset, page.get('ref', '?'),
                                           end, 'end')
@@ -1065,6 +1081,13 @@ Answer in JSON only:
         story_end = story.get('end_segment', 0)
         return story_end < last_seg_idx
 
+    def _note_stage4_failure(self, stage: str, ref: str) -> None:
+        """A 4d/4f call that raised or came back unparseable. Counted, not only
+        printed: otherwise a run whose every call failed reads as one where no story
+        continued (Lesson 38; 2026-11-07 review, P3)."""
+        self.stage4_call_failures = getattr(self, 'stage4_call_failures', []) + [(stage, ref)]
+        print(f"  Stage {stage} call failed for {ref} (counted in stage4_call_failures)")
+
     def stitch_cross_page_continuation(self, all_results: List[Dict],
                                         pages: List[Dict],
                                         triage_results: Dict[str, List[EventType]],
@@ -1188,6 +1211,8 @@ Return JSON:
                     else:
                         result = self._parse_json_response(content)
 
+                    if result is None:
+                        self._note_stage4_failure('4d', ref)
                     if result and result.get('continues_on_page'):
                         end_seg = result.get('end_segment')
                         if end_seg is not None:
@@ -1203,6 +1228,7 @@ Return JSON:
 
                 except Exception as e:
                     print(f"  Stitch error for {ref}: {e}")
+                    self._note_stage4_failure('4d', ref)
 
         return stitched
 
@@ -1343,6 +1369,8 @@ Return JSON:
                 else:
                     result = self._parse_json_response(content)
 
+                if result is None:
+                    self._note_stage4_failure('4f', ref)
                 if result and result.get('continues'):
                     end_seg = result.get('end_segment')
                     if end_seg is not None:
@@ -1359,12 +1387,15 @@ Return JSON:
 
             except Exception as e:
                 print(f"  Continuation check error for {ref}: {e}")
+                self._note_stage4_failure('4f', ref)
 
         return extended
 
     CHECKPOINT_EVERY = 5
-    # Server-side failures worth a second try; a 4xx is our fault and stays fatal.
-    RETRYABLE_STATUS = (500, 502, 503, 504)
+    # Server-side failures worth a second try; a 4xx is our fault and stays fatal --
+    # except 429, a rate limit, which waits out like a 503 (2026-11-07 review, finding 8).
+    RETRYABLE_STATUS = (429, 500, 502, 503, 504)
+    RETRYABLE_TEXT = ('UNAVAILABLE', 'RESOURCE_EXHAUSTED')
 
     def _stage2_fingerprint(self) -> str:
         """What a checkpoint must have been written by, for a resume to be honest.
@@ -1428,7 +1459,8 @@ Return JSON:
                 return [], f"EmptyStage2Response: {e}"
             except Exception as e:  # noqa: BLE001 - classify, then decide
                 code = getattr(e, 'code', None) or getattr(e, 'status_code', None)
-                retryable = code in self.RETRYABLE_STATUS or 'UNAVAILABLE' in str(e)
+                retryable = (code in self.RETRYABLE_STATUS
+                             or any(t in str(e) for t in self.RETRYABLE_TEXT))
                 last = f"{type(e).__name__}: {str(e)[:200]}"
                 if not retryable:
                     raise
@@ -1526,83 +1558,86 @@ Return JSON:
         self.stage2_errors = [ref for ref, r in done.items() if r.get('stage2_error')]
         if done:
             print(f"  RESUMED {len(done)} page(s) from checkpoint {checkpoint_path}")
-        for i, page in enumerate(pages_to_process):
-            ref = page.get('ref', '')
-            segments = page.get('segments', [])
-            if ref in done:
-                all_results.append(done[ref])
-                continue
-            # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
-            # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
-            # what the cross-page context blocks below already do; the old
-            # all-DELIBERATION default was the same fabrication as the removed stub, one
-            # page at a time.
-            events = triage_results.get(ref, [])
+        # The final write is in a `finally`: a crash mid-loop must not lose the pages
+        # finished since the last periodic checkpoint (2026-11-07 review, finding 8).
+        try:
+            for i, page in enumerate(pages_to_process):
+                ref = page.get('ref', '')
+                segments = page.get('segments', [])
+                if ref in done:
+                    all_results.append(done[ref])
+                    continue
+                # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
+                # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
+                # what the cross-page context blocks below already do; the old
+                # all-DELIBERATION default was the same fabrication as the removed stub, one
+                # page at a time.
+                events = triage_results.get(ref, [])
 
-            # Build cross-page context
-            prev_ctx = None
-            next_ctx = None
-            page_idx = next((j for j, p in enumerate(pages)
-                             if p.get('ref') == ref), None)
-            if page_idx is not None:
-                if page_idx > 0:
-                    prev_page = pages[page_idx - 1]
-                    prev_segs = prev_page.get('segments', [])
-                    prev_ref = prev_page.get('ref', '')
-                    prev_events = triage_results.get(prev_ref, []) if triage_results else []
-                    if prev_segs:
-                        lines = []
-                        for s in prev_segs[-5:]:
-                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
-                            heb = s.get('hebrew', '')[:200]
-                            idx = s.get('index', 0)
-                            et = prev_events[idx].value if idx < len(prev_events) else "UNKNOWN"
-                            lines.append(f"[{et}] Prev Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
-                        prev_ctx = '\n'.join(lines)
-                if page_idx < len(pages) - 1:
-                    next_page = pages[page_idx + 1]
-                    next_segs = next_page.get('segments', [])
-                    next_ref = next_page.get('ref', '')
-                    next_events = triage_results.get(next_ref, []) if triage_results else []
-                    if next_segs:
-                        lines = []
-                        for s in next_segs[:5]:
-                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
-                            heb = s.get('hebrew', '')[:200]
-                            idx = s.get('index', 0)
-                            et = next_events[idx].value if idx < len(next_events) else "UNKNOWN"
-                            lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
-                        next_ctx = '\n'.join(lines)
+                # Build cross-page context
+                prev_ctx = None
+                next_ctx = None
+                page_idx = next((j for j, p in enumerate(pages)
+                                 if p.get('ref') == ref), None)
+                if page_idx is not None:
+                    if page_idx > 0:
+                        prev_page = pages[page_idx - 1]
+                        prev_segs = prev_page.get('segments', [])
+                        prev_ref = prev_page.get('ref', '')
+                        prev_events = triage_results.get(prev_ref, []) if triage_results else []
+                        if prev_segs:
+                            lines = []
+                            for s in prev_segs[-5:]:
+                                eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                                heb = s.get('hebrew', '')[:200]
+                                idx = s.get('index', 0)
+                                et = prev_events[idx].value if idx < len(prev_events) else "UNKNOWN"
+                                lines.append(f"[{et}] Prev Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                            prev_ctx = '\n'.join(lines)
+                    if page_idx < len(pages) - 1:
+                        next_page = pages[page_idx + 1]
+                        next_segs = next_page.get('segments', [])
+                        next_ref = next_page.get('ref', '')
+                        next_events = triage_results.get(next_ref, []) if triage_results else []
+                        if next_segs:
+                            lines = []
+                            for s in next_segs[:5]:
+                                eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                                heb = s.get('hebrew', '')[:200]
+                                idx = s.get('index', 0)
+                                et = next_events[idx].value if idx < len(next_events) else "UNKNOWN"
+                                lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                            next_ctx = '\n'.join(lines)
 
-            print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
-            stories, stage2_error = self._detect_with_retry(
-                ref, segments, events, prev_ctx, next_ctx)
+                print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
+                stories, stage2_error = self._detect_with_retry(
+                    ref, segments, events, prev_ctx, next_ctx)
 
-            # Build page result
-            page_result = {
-                'ref': ref,
-                'segments': segments,
-                'stories': stories,
-            }
-            if stage2_error:
-                # A page whose call failed is UNKNOWN, not empty (Lesson 21). It stays
-                # in the run, marked, so the scorer and the reader can see it.
-                page_result['stage2_error'] = stage2_error
-                self.stage2_errors = getattr(self, 'stage2_errors', []) + [ref]
-            all_results.append(page_result)
-            done[ref] = page_result
-            if checkpoint_path and (len(done) % self.CHECKPOINT_EVERY == 0):
+                # Build page result
+                page_result = {
+                    'ref': ref,
+                    'segments': segments,
+                    'stories': stories,
+                }
+                if stage2_error:
+                    # A page whose call failed is UNKNOWN, not empty (Lesson 21). It stays
+                    # in the run, marked, so the scorer and the reader can see it.
+                    page_result['stage2_error'] = stage2_error
+                    self.stage2_errors = getattr(self, 'stage2_errors', []) + [ref]
+                all_results.append(page_result)
+                done[ref] = page_result
+                if checkpoint_path and (len(done) % self.CHECKPOINT_EVERY == 0):
+                    self._write_checkpoint(checkpoint_path, done)
+
+                story_count = sum(1 for s in stories
+                                  if s.get('classification') != 'NOT_A_STORY')
+                print(f"    → {len(stories)} candidates, {story_count} stories")
+
+                if delay > 0 and i < len(pages_to_process) - 1:
+                    time.sleep(delay)
+        finally:
+            if checkpoint_path:
                 self._write_checkpoint(checkpoint_path, done)
-
-            story_count = sum(1 for s in stories
-                              if s.get('classification') != 'NOT_A_STORY')
-            print(f"    → {len(stories)} candidates, {story_count} stories")
-
-            if delay > 0 and i < len(pages_to_process) - 1:
-                time.sleep(delay)
-
-        if checkpoint_path:
-            self._write_checkpoint(checkpoint_path, done)
 
         # Add skipped pages with empty stories
         for page in pages:
@@ -1650,6 +1685,7 @@ Return JSON:
         all_results = merge_cross_page_stories(all_results)
 
         # 4d: Stitch unmerged boundary stories via targeted LLM calls
+        self.stage4_call_failures = []   # this run's 4d/4f failures, written below
         stitch_count = self.stitch_cross_page_continuation(
             all_results, pages, triage_results, delay=delay
         )
@@ -1668,6 +1704,10 @@ Return JSON:
         if mishnah_filtered:
             print(f"  Mishnah filter: {mishnah_filtered} stories moved to mishnah_stories")
 
+        # DECISION (CLAUDE.md, Lesson 27): 4h-4l and dedup below read `stories[]`
+        # only and deliberately do NOT process `mishnah_stories` -- a withheld story
+        # gets no snap, trim, biblical filter, text span or duplicate check. It is
+        # kept as 4g left it, so readers see what was withheld, not a re-edited copy.
         # 4h (Wave 2 Issue #3): snap story start to canonical introducer
         snapped = snap_start_to_introducer(all_results)
         if snapped:
@@ -1696,7 +1736,7 @@ Return JSON:
         span_counts = {'clause_llm': 0, 'clause_kept_full': 0,
                        'no_clause_split': 0, 'skipped': 0}
         if self.client:
-            span_counts = self.extract_text_spans_via_clauses(all_results)
+            span_counts = self.extract_text_spans_via_clauses(all_results, delay=delay)
             print(
                 "  Text-span (Wave 5 clause selection): "
                 f"llm={span_counts['clause_llm']} "
@@ -1730,7 +1770,7 @@ Return JSON:
 
         return {
             'tractate': tractate,
-            'version': 'v10',
+            'version': 'v11',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
             'span_stats': span_counts,
@@ -1738,6 +1778,9 @@ Return JSON:
             # Always written, including as `[]`. A key that appears only when
             # something went wrong reads as absence of the check itself.
             'span_repairs': repairs,
+            # (stage, ref) for every 4d/4f call that raised or was unparseable;
+            # always written, `[]` included, for the same reason.
+            'stage4_call_failures': list(self.stage4_call_failures),
         }
 
 
@@ -2805,6 +2848,11 @@ def trim_trailing_stam_segments(pages: List[Dict]) -> int:
             end = story.get('end_segment')
             if start is None or end is None or end <= start:
                 continue
+            # A story that continues onto the next page does not end here: trimming
+            # page 1's last segment would leave a hole before the page break
+            # (2026-11-07 review, finding 12: Yevamot 87a, 95a).
+            if story.get('spans_pages'):
+                continue
 
             orig_end = end
             cur_end = end
@@ -2828,7 +2876,8 @@ def trim_trailing_stam_segments(pages: List[Dict]) -> int:
 # `criteria.identifiable_characters.evidence` field, which the Stage 2
 # prompt populates with a short comma-separated list of named actors.
 
-# Surface form is checked case-insensitively as a substring of `evidence`.
+# Each name is matched case-insensitively as a WHOLE TOKEN of `evidence` -- never a
+# substring, or 'eli' fires inside Eliezer and Elijah (2026-11-07 review, finding 13).
 _BIBLICAL_ACTORS = frozenset({
     # Patriarchs and matriarchs
     'adam', 'eve', 'noah', 'abraham', 'sarah', 'isaac', 'rebecca',
@@ -2858,13 +2907,27 @@ _BIBLICAL_ACTORS = frozenset({
 })
 
 # A handful of common rabbinic actor names; if any appear, the story is
-# NOT biblical-only.
+# NOT biblical-only. 'samuel' is here as well as in the biblical list on purpose:
+# it is the prophet or the amora, and an ambiguous name alone must not demote.
 _RABBINIC_SIGNAL = (
-    'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
-    'mar ', 'abaye', 'rava', 'shmuel', 'samuel',  # 'samuel' overlaps
+    'rabbi ', 'rav ', 'rabban ', 'r. ', 'reish lakish', 'resh lakish',
+    'mar ', 'abaye', 'rava', 'shmuel', 'samuel',
     'hillel', 'shammai', 'akiva', 'akiba', 'meir', 'judah hanasi',
     'yehuda hanasi', 'tanna', 'amora',
 )
+
+
+def _names_token(name: str, text: str) -> bool:
+    """True if `name` occurs in `text` as whole token(s), case-insensitively.
+
+    `'r. '` / `'rav '` keep their meaning: the trailing space only said "a title,
+    not the start of a longer word", which the word boundary now says.
+    """
+    name = name.strip()
+    # No end boundary after a final '.', as in 'r.': 'R.Eliezer' is still a title.
+    tail = r'(?!\w)' if name[-1].isalnum() else ''
+    pattern = r'(?<!\w)' + re.escape(name) + tail
+    return re.search(pattern, text, flags=re.IGNORECASE) is not None
 
 
 def _actors_are_biblical_only(evidence: str) -> bool:
@@ -2873,25 +2936,13 @@ def _actors_are_biblical_only(evidence: str) -> bool:
         return False
     low = evidence.lower()
 
-    # Quick reject: if any rabbinic signal is present, not biblical-only.
-    # "Samuel" alone is ambiguous (prophet vs amora). Treat as biblical
-    # unless explicitly "Rav Samuel" / "Rabbi Samuel".
-    if any(sig in low for sig in _RABBINIC_SIGNAL):
-        # 'samuel' in _RABBINIC_SIGNAL — guard
-        # Only count as rabbinic if the rabbi prefix is present, not bare
-        # mentions of an ambiguous name.
-        rabbinic_strong = any(s in low for s in [
-            'rabbi ', 'rav ', 'rabban ', 'reish lakish', 'resh lakish',
-            'mar ', 'abaye', 'rava ', 'rava\n', 'hillel', 'shammai',
-            'akiva', 'akiba', 'rabbi meir', 'judah hanasi', 'yehuda hanasi',
-            'tanna', 'amora',
-        ])
-        if rabbinic_strong:
-            return False
+    # Any rabbinic signal -- including the ambiguous 'samuel' -- and it is not
+    # biblical-only.
+    if any(_names_token(sig, low) for sig in _RABBINIC_SIGNAL):
+        return False
 
     # Hit if any biblical name is mentioned.
-    has_biblical = any(name in low for name in _BIBLICAL_ACTORS)
-    if not has_biblical:
+    if not any(_names_token(name, low) for name in _BIBLICAL_ACTORS):
         return False
 
     # Additional check: tokenize by commas/and and see whether ANY token
@@ -2905,7 +2956,7 @@ def _actors_are_biblical_only(evidence: str) -> bool:
         p = p.strip()
         if not p:
             continue
-        if any(name in p for name in _BIBLICAL_ACTORS):
+        if any(_names_token(name, p) for name in _BIBLICAL_ACTORS):
             continue
         if any(g in p for g in generic_descriptors):
             continue
@@ -2940,6 +2991,10 @@ def filter_biblical_actor_stories(pages: List[Dict]) -> int:
                 story['filtered_as_biblical'] = True
                 story['classification_pre_biblical_filter'] = story.get('classification')
                 story['classification'] = 'NOT_A_STORY'
+                # R-S1: a passage dropped for SCOPE says so. Classification stays in
+                # the four-value vocabulary every reader knows; the label rides beside it.
+                story['out_of_scope'] = True
+                story['scope_reason'] = 'biblical_actors'
                 demoted += 1
     return demoted
 
