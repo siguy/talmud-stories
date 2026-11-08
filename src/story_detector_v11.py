@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Talmud Story Detection v10: v9 baseline + Wave 4 LLM-side text-span emission.
+Talmud Story Detection v11: v10 + Wave 5 clause-selection text spans (history below).
 
 v10 = v9 (Wave 1+2+3) PLUS:
   - Wave 5 (v11): CLAUSE SELECTION replaces character offsets.
@@ -1770,7 +1770,7 @@ Return JSON:
 
         return {
             'tractate': tractate,
-            'version': 'v10',
+            'version': 'v11',
             'pages': all_results,
             'triage_summary': EventTriager.summarize_triage(triage_results),
             'span_stats': span_counts,

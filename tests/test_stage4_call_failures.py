@@ -67,3 +67,9 @@ def test_key_is_written_when_nothing_failed(monkeypatch):
     d = _detector(monkeypatch, lambda *a, **k: '{"continues_on_page": false, "continues": false}')
     out = _run(d)
     assert out['stage4_call_failures'] == []
+
+
+def test_result_names_this_detector(monkeypatch):
+    # run_pipeline said 'v10' -- the runner overwrote it with a literal (P3).
+    d = _detector(monkeypatch, lambda *a, **k: '{"continues_on_page": false, "continues": false}')
+    assert _run(d)['version'] == 'v11'
