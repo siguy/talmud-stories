@@ -398,3 +398,35 @@ class SaveWarnsAboutUnansweredCards(unittest.TestCase):
     def test_the_export_itself_is_unchanged(self):
         self.assertEqual(len(self.r['exported']), 1,
                          'unanswered cards stay ABSENT from the export (property F)')
+
+
+# ---------------------------------------------------------------------------
+# 6. NOT_A_STORY proposals: a stated decision, not a silent `continue`.
+# ---------------------------------------------------------------------------
+class RejectedProposalsAreADecision(unittest.TestCase):
+    """Finding P2-6: 22 of Yevamot's 168 proposals were dropped with no stated
+    decision. Decision (2026-11-07): not shown as cards -- the page asks about our
+    claims, and these are claims we withdrew -- but COUNTED in the header, so the
+    reviewer knows they exist and can ask for them."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.gen = _load_generator()
+        data = copy.deepcopy(json.loads(FIXTURE.read_text()))
+        data['pages'][0]['stories'][0]['classification'] = 'NOT_A_STORY'
+        cls.path = write_fixture(data)
+
+    @classmethod
+    def tearDownClass(cls):
+        os.unlink(cls.path)
+
+    def test_they_are_not_cards(self):
+        stories, _ = self.gen.build_data([self.path])
+        self.assertFalse(any(s['classification'] == 'NOT_A_STORY' for s in stories))
+
+    def test_they_are_counted_and_the_header_says_so(self):
+        self.assertEqual(self.gen.rejected_count([self.path]), 1)
+        stories, version = self.gen.build_data([self.path])
+        html = self.gen.generate_html('K', stories, version,
+                                      n_rejected=self.gen.rejected_count([self.path]))
+        self.assertTrue('we rejected ourselves (not shown): <strong>1</strong>' in html)

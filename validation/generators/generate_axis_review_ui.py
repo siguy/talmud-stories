@@ -105,6 +105,14 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
             for withheld, group in ((False, page.get('stories') or []),
                                     (True, page.get('mishnah_stories') or [])):
                 for s in group:
+                    # NOT_A_STORY: DECIDED, not overlooked (2026-11-07 review, P2-6).
+                    # Not shown as cards: this page asks the reviewer about the
+                    # passages we CLAIM are stories, and these are claims the
+                    # detector itself withdrew. Showing them would add ~13% more
+                    # cards to the bottleneck to test a cause the recall harness
+                    # already measures without him ("proposed-then-NOT_A_STORY").
+                    # They are COUNTED in the header (rejected_count) so the
+                    # reviewer knows they exist and can ask to see them.
                     if s.get('classification') == 'NOT_A_STORY':
                         continue
                     item = {
@@ -153,6 +161,17 @@ def build_data(paths: List[Path]) -> tuple[List[Dict], str]:
                             item['end_segment_page2'] = s.get('end_segment_page2', 0)
                     stories.append(item)
     return stories, '+'.join(sorted(versions))
+
+
+def rejected_count(paths: List[Path]) -> int:
+    """How many NOT_A_STORY proposals build_data leaves out (see the comment there)."""
+    n = 0
+    for p in paths:
+        for page in json.loads(Path(p).read_text())['pages']:
+            for key in ('stories', 'mishnah_stories'):
+                n += sum(1 for s in page.get(key) or []
+                         if s.get('classification') == 'NOT_A_STORY')
+    return n
 
 
 def failed_pages(paths: List[Path]) -> List[str]:
@@ -300,6 +319,7 @@ __DISPLAY_CSS__
       <div class="stat">detector: <strong>__DETECTOR_VERSION__</strong></div>
       <div class="stat">cross-page: <strong>__N_CROSS__</strong></div>
       <div class="stat">withheld from Mishnah: <strong>__N_MISHNAH__</strong></div>
+      <div class="stat" title="Passages the detector proposed and then itself judged not a story. Ask if you want to see them.">we rejected ourselves (not shown): <strong>__N_REJECTED__</strong></div>
       <div class="stat" id="savedCount" title="Kept in this browser as you go; Save Review still makes the file to send">0 saved locally</div>
     </div>
   </div>
@@ -787,7 +807,8 @@ def _failed_line(failed: List[str] | None) -> str:
 
 
 def generate_html(title: str, stories: List[Dict], detector_version: str,
-                  note: str | None = None, failed: List[str] | None = None) -> str:
+                  note: str | None = None, failed: List[str] | None = None,
+                  n_rejected: int = 0) -> str:
     data_json = json.dumps(stories, ensure_ascii=True).replace('</', '<\\/')
     n_cross = sum(1 for s in stories if s.get('spans_pages'))
     n_mish = sum(1 for s in stories if s.get('mishnah_withheld'))
@@ -800,6 +821,7 @@ def generate_html(title: str, stories: List[Dict], detector_version: str,
             .replace('__N_TOTAL__', str(len(stories)))
             .replace('__N_CROSS__', str(n_cross))
             .replace('__N_MISHNAH__', str(n_mish))
+            .replace('__N_REJECTED__', str(n_rejected))
             # Whole line, newline included, so a page with no note is byte-identical
             # to the ones already banked (tests/test_review_ui_axes.py).
             .replace('    __NOTE__\n', f'    <p><b>{note}</b></p>\n' if note else '')
@@ -865,7 +887,8 @@ def main(argv=None) -> int:
                                        st['end_segment']) in listed
             agreed = sum(1 for st in stories if st['expert_listed'])
             print(f"  agreement: {agreed} of {len(stories)} entries are on the expert's list")
-        html = generate_html(args.title, stories, version, note=args.note, failed=failed)
+        html = generate_html(args.title, stories, version, note=args.note, failed=failed,
+                             n_rejected=rejected_count(paths))
         out = OUT_DIR / args.out
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)
@@ -882,7 +905,8 @@ def main(argv=None) -> int:
             print(f"  SKIP {slug}: missing {[str(m.relative_to(ROOT)) for m in missing]}")
             continue
         stories, version = build_data(paths)
-        html = generate_html(cfg['title'], stories, version, failed=failed_pages(paths))
+        html = generate_html(cfg['title'], stories, version, failed=failed_pages(paths),
+                             n_rejected=rejected_count(paths))
         out = OUT_DIR / cfg['out']
         out.write_text(html, encoding='utf-8')
         cls = Counter(s['classification'] for s in stories)
