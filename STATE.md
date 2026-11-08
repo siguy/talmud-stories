@@ -18,7 +18,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 | **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 5 rounds | ⬜ |
 | **Gittin** | 100.0% · n=110 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Yevamot** | 100.0% · n=100 B | 89.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Eruvin** | 97.3% · n=74 B | 94.4% B | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
 
@@ -43,6 +43,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 - Kiddushin: **84.4% loose / 83.3% strict** on 90 stories
 - Gittin: **97.3% loose / 97.3% strict** on 111 stories
 - Yevamot: **89.0% loose / 89.0% strict** on 100 stories (no ruler yet — no expert round on this tractate)
+- Eruvin: **91.9% loose / 91.9% strict** on 74 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -62,26 +63,26 @@ types none.
 ```
 gate       ≥98% · PROVISIONAL
 history    docs/capabilities/1_triage.md
-open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     12 item(s) in work/done/
+open       2026-09-07-habitual-is-narrative-evidence
+closed     13 item(s) in work/done/
 ```
 
 ### 2 Detection
 ```
 gate       ≥95% · PROVISIONAL
 history    docs/capabilities/2_detection.md
-open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     27 item(s) in work/done/
+open       2026-09-03-density-mechanism
+closed     28 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -176,4 +177,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 11832235700c8db7 -->
+<!-- board-checksum: 6123fa6f9f1959b6 -->
