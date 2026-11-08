@@ -768,7 +768,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--run', nargs='+', help='run file(s) to read instead of the banked set')
     ap.add_argument('--title')
-    ap.add_argument('--out', help='file name under validation/ui/')
+    ap.add_argument('--out', help='file name under validation/ui/, or any absolute path')
     ap.add_argument('--only', help='JSON list of {ref,start_segment,end_segment} to keep')
     ap.add_argument('--listed', help='JSON list of {ref,start_segment,end_segment} the expert '
                                      'ALSO has, so the page can show where we agree')
@@ -808,7 +808,7 @@ def main(argv=None) -> int:
         cls = Counter(s['classification'] for s in stories)
         print(f"  {args.title}: {len(stories)} entries "
               f"({sum(1 for s in stories if s['mishnah_withheld'])} withheld from a Mishnah) "
-              f"-> {out.relative_to(ROOT)}")
+              f"-> {out}")
         print(f"      version={version}  {dict(cls)}")
         return 0
 
