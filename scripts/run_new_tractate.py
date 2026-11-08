@@ -75,6 +75,26 @@ def load_env():
     return None
 
 
+def load_triage_cache(cache):
+    """The existing Stage 1 cache as {ref: [EventType]}; empty if there is none.
+    Always loaded -- even under --retriage -- because write_cache() dumps this dict
+    wholesale, and starting it empty overwrote a whole tractate with a few pages."""
+    from src.ground_truth import EventType
+    if not cache.exists():
+        return {}
+    raw = json.loads(cache.read_text()).get('triage_results', {})
+    return {ref: [EventType(v) for v in evs] for ref, evs in raw.items()}
+
+
+def plan_triage(pages, cached, retriage):
+    """Pages that need Stage 1. Under --retriage, drop ONLY these pages' labels from
+    `cached` (in place) so every other page's label survives the cache rewrite."""
+    if retriage:
+        for p in pages:
+            cached.pop(p['ref'], None)
+    return [p for p in pages if p['ref'] not in cached]
+
+
 def load_ground_truth(GroundTruthDB):
     """Ketubot labels only. Running on Gittin/Yevamot/Eruvin, every example is
     cross-tractate, so no page being scored can appear in its own prompt."""
@@ -103,7 +123,8 @@ def main():
                     help='low|medium|high (Gemini 3.x)')
     ap.add_argument('--delay', type=float, default=DELAY)
     ap.add_argument('--retriage', action='store_true',
-                    help='re-run Stage 1 even if a cache exists (costs money)')
+                    help='re-run Stage 1 for the --refs pages (all pages if no --refs); '
+                         'other pages keep their cached labels (costs money)')
     args = ap.parse_args()
 
     env = load_env()
@@ -130,13 +151,10 @@ def main():
 
     # ---- Stage 1 --------------------------------------------------------
     cache = PROJECT_ROOT / override.get('triage', f'results/triage/{args.tractate}.json')
-    cached = {}
-    if cache.exists() and not args.retriage:
-        raw = json.loads(cache.read_text()).get('triage_results', {})
-        cached = {ref: [EventType(v) for v in evs] for ref, evs in raw.items()}
+    cached = load_triage_cache(cache)
+    if cached:
         log.info('triage cache: %d pages from %s', len(cached), cache.name)
-
-    todo = [p for p in pages if p['ref'] not in cached]
+    todo = plan_triage(pages, cached, args.retriage)
     if todo:
         triager = EventTriager(model_name=args.model)
         if not triager.client:
