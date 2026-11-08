@@ -135,6 +135,7 @@ closed     2 item(s) in work/done/
 | dataset | kind | size |
 |---|---|---|
 | `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
+| `results/expert_lists/eruvin_rule_applied.json` | **UNKNOWN** | **shape not recognised by `board.py`** — top-level keys: `entries`, `known_weakness`, `rule_for_exclusion`, `what` |
 | `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
@@ -177,4 +178,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 6123fa6f9f1959b6 -->
+<!-- board-checksum: 984e455b3acb4343 -->
