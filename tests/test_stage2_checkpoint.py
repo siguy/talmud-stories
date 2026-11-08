@@ -63,7 +63,7 @@ def _stories(result):
 def test_resume_is_byte_identical_and_recorded(monkeypatch, tmp_path):
     clean = _run(_detector(monkeypatch), tmp_path, checkpoint=False)
 
-    # First run: a hard crash at page 6 (after checkpoint 5 was written).
+    # First run: a hard crash at page 6 (periodic checkpoint at 5; the crash writes 6).
     crashing = _detector(monkeypatch)
     inner = crashing.detect_stories
     def crash(ref, *a):
@@ -79,8 +79,10 @@ def test_resume_is_byte_identical_and_recorded(monkeypatch, tmp_path):
     resumed_d = _detector(monkeypatch)
     resumed = _run(resumed_d, tmp_path)
     assert _stories(resumed) == _stories(clean)
-    assert resumed_d.resumed_pages == 5, 'the five checkpointed pages were not resumed'
-    assert resumed_d.calls == ['X 5a', 'X 6a', 'X 7a'], 'resumed pages were re-detected'
+    # Six, not five: since 2026-11-07 (finding 8) the crash itself writes the
+    # checkpoint, so X 5a -- finished after the periodic write -- is not lost.
+    assert resumed_d.resumed_pages == 6, 'the six finished pages were not resumed'
+    assert resumed_d.calls == ['X 6a', 'X 7a'], 'resumed pages were re-detected'
 
 
 def test_checkpoint_from_a_different_prompt_is_refused(monkeypatch, tmp_path):

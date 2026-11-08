@@ -630,7 +630,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
         ec = max(0, min(ec, len(end_clauses) - 1))
         return {'start_clause': sc, 'end_clause': ec}
 
-    def extract_text_spans_via_clauses(self, pages: List[Dict]) -> Dict[str, int]:
+    def extract_text_spans_via_clauses(self, pages: List[Dict],
+                                       delay: float = 0.0) -> Dict[str, int]:
         """
         Wave 5 (v11) replacement for Wave 4's extract_text_spans_via_llm.
 
@@ -655,6 +656,8 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
 
         A story with `spans_pages` is asked for its START only and carries
         `text_span_end_skipped: 'spans_pages'`: it ends on the next page.
+
+        `delay` seconds are slept after each model call (run_pipeline passes its own).
 
         Returns counts keyed by those outcomes.
         """
@@ -699,6 +702,10 @@ If no stories found: {{"page_ref": "{ref}", "stories": []}}
                     [_clause_text_for_display(start_heb, r) for r in start_ranges],
                     [_clause_text_for_display(end_heb, r) for r in end_ranges],
                 )
+                # One call per story: pace them like 4d/4f do, or a long run meets
+                # a 429 here (2026-11-07 review, finding 8).
+                if delay > 0:
+                    time.sleep(delay)
                 if llm is None:
                     print(f"  WARN clause-span LLM error on {page.get('ref', '?')} "
                           f"story {start}-{end}: leaving spans absent")
@@ -1372,8 +1379,10 @@ Return JSON:
         return extended
 
     CHECKPOINT_EVERY = 5
-    # Server-side failures worth a second try; a 4xx is our fault and stays fatal.
-    RETRYABLE_STATUS = (500, 502, 503, 504)
+    # Server-side failures worth a second try; a 4xx is our fault and stays fatal --
+    # except 429, a rate limit, which waits out like a 503 (2026-11-07 review, finding 8).
+    RETRYABLE_STATUS = (429, 500, 502, 503, 504)
+    RETRYABLE_TEXT = ('UNAVAILABLE', 'RESOURCE_EXHAUSTED')
 
     def _stage2_fingerprint(self) -> str:
         """What a checkpoint must have been written by, for a resume to be honest.
@@ -1437,7 +1446,8 @@ Return JSON:
                 return [], f"EmptyStage2Response: {e}"
             except Exception as e:  # noqa: BLE001 - classify, then decide
                 code = getattr(e, 'code', None) or getattr(e, 'status_code', None)
-                retryable = code in self.RETRYABLE_STATUS or 'UNAVAILABLE' in str(e)
+                retryable = (code in self.RETRYABLE_STATUS
+                             or any(t in str(e) for t in self.RETRYABLE_TEXT))
                 last = f"{type(e).__name__}: {str(e)[:200]}"
                 if not retryable:
                     raise
@@ -1535,83 +1545,86 @@ Return JSON:
         self.stage2_errors = [ref for ref, r in done.items() if r.get('stage2_error')]
         if done:
             print(f"  RESUMED {len(done)} page(s) from checkpoint {checkpoint_path}")
-        for i, page in enumerate(pages_to_process):
-            ref = page.get('ref', '')
-            segments = page.get('segments', [])
-            if ref in done:
-                all_results.append(done[ref])
-                continue
-            # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
-            # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
-            # what the cross-page context blocks below already do; the old
-            # all-DELIBERATION default was the same fabrication as the removed stub, one
-            # page at a time.
-            events = triage_results.get(ref, [])
+        # The final write is in a `finally`: a crash mid-loop must not lose the pages
+        # finished since the last periodic checkpoint (2026-11-07 review, finding 8).
+        try:
+            for i, page in enumerate(pages_to_process):
+                ref = page.get('ref', '')
+                segments = page.get('segments', [])
+                if ref in done:
+                    all_results.append(done[ref])
+                    continue
+                # A page with no triage entry is UNKNOWN, not deliberative. `[]` renders as
+                # "[UNKNOWN] Seg N" in the prompt (build_prompt's own fallback) and matches
+                # what the cross-page context blocks below already do; the old
+                # all-DELIBERATION default was the same fabrication as the removed stub, one
+                # page at a time.
+                events = triage_results.get(ref, [])
 
-            # Build cross-page context
-            prev_ctx = None
-            next_ctx = None
-            page_idx = next((j for j, p in enumerate(pages)
-                             if p.get('ref') == ref), None)
-            if page_idx is not None:
-                if page_idx > 0:
-                    prev_page = pages[page_idx - 1]
-                    prev_segs = prev_page.get('segments', [])
-                    prev_ref = prev_page.get('ref', '')
-                    prev_events = triage_results.get(prev_ref, []) if triage_results else []
-                    if prev_segs:
-                        lines = []
-                        for s in prev_segs[-5:]:
-                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
-                            heb = s.get('hebrew', '')[:200]
-                            idx = s.get('index', 0)
-                            et = prev_events[idx].value if idx < len(prev_events) else "UNKNOWN"
-                            lines.append(f"[{et}] Prev Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
-                        prev_ctx = '\n'.join(lines)
-                if page_idx < len(pages) - 1:
-                    next_page = pages[page_idx + 1]
-                    next_segs = next_page.get('segments', [])
-                    next_ref = next_page.get('ref', '')
-                    next_events = triage_results.get(next_ref, []) if triage_results else []
-                    if next_segs:
-                        lines = []
-                        for s in next_segs[:5]:
-                            eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
-                            heb = s.get('hebrew', '')[:200]
-                            idx = s.get('index', 0)
-                            et = next_events[idx].value if idx < len(next_events) else "UNKNOWN"
-                            lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
-                        next_ctx = '\n'.join(lines)
+                # Build cross-page context
+                prev_ctx = None
+                next_ctx = None
+                page_idx = next((j for j, p in enumerate(pages)
+                                 if p.get('ref') == ref), None)
+                if page_idx is not None:
+                    if page_idx > 0:
+                        prev_page = pages[page_idx - 1]
+                        prev_segs = prev_page.get('segments', [])
+                        prev_ref = prev_page.get('ref', '')
+                        prev_events = triage_results.get(prev_ref, []) if triage_results else []
+                        if prev_segs:
+                            lines = []
+                            for s in prev_segs[-5:]:
+                                eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                                heb = s.get('hebrew', '')[:200]
+                                idx = s.get('index', 0)
+                                et = prev_events[idx].value if idx < len(prev_events) else "UNKNOWN"
+                                lines.append(f"[{et}] Prev Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                            prev_ctx = '\n'.join(lines)
+                    if page_idx < len(pages) - 1:
+                        next_page = pages[page_idx + 1]
+                        next_segs = next_page.get('segments', [])
+                        next_ref = next_page.get('ref', '')
+                        next_events = triage_results.get(next_ref, []) if triage_results else []
+                        if next_segs:
+                            lines = []
+                            for s in next_segs[:5]:
+                                eng = re.sub(r'<[^>]+>', '', s.get('english', ''))[:300]
+                                heb = s.get('hebrew', '')[:200]
+                                idx = s.get('index', 0)
+                                et = next_events[idx].value if idx < len(next_events) else "UNKNOWN"
+                                lines.append(f"[{et}] Next Seg {idx}:\n  English: {eng}\n  Hebrew: {heb}")
+                            next_ctx = '\n'.join(lines)
 
-            print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
-            stories, stage2_error = self._detect_with_retry(
-                ref, segments, events, prev_ctx, next_ctx)
+                print(f"  [{i+1}/{len(pages_to_process)}] Detecting on {ref}...")
+                stories, stage2_error = self._detect_with_retry(
+                    ref, segments, events, prev_ctx, next_ctx)
 
-            # Build page result
-            page_result = {
-                'ref': ref,
-                'segments': segments,
-                'stories': stories,
-            }
-            if stage2_error:
-                # A page whose call failed is UNKNOWN, not empty (Lesson 21). It stays
-                # in the run, marked, so the scorer and the reader can see it.
-                page_result['stage2_error'] = stage2_error
-                self.stage2_errors = getattr(self, 'stage2_errors', []) + [ref]
-            all_results.append(page_result)
-            done[ref] = page_result
-            if checkpoint_path and (len(done) % self.CHECKPOINT_EVERY == 0):
+                # Build page result
+                page_result = {
+                    'ref': ref,
+                    'segments': segments,
+                    'stories': stories,
+                }
+                if stage2_error:
+                    # A page whose call failed is UNKNOWN, not empty (Lesson 21). It stays
+                    # in the run, marked, so the scorer and the reader can see it.
+                    page_result['stage2_error'] = stage2_error
+                    self.stage2_errors = getattr(self, 'stage2_errors', []) + [ref]
+                all_results.append(page_result)
+                done[ref] = page_result
+                if checkpoint_path and (len(done) % self.CHECKPOINT_EVERY == 0):
+                    self._write_checkpoint(checkpoint_path, done)
+
+                story_count = sum(1 for s in stories
+                                  if s.get('classification') != 'NOT_A_STORY')
+                print(f"    → {len(stories)} candidates, {story_count} stories")
+
+                if delay > 0 and i < len(pages_to_process) - 1:
+                    time.sleep(delay)
+        finally:
+            if checkpoint_path:
                 self._write_checkpoint(checkpoint_path, done)
-
-            story_count = sum(1 for s in stories
-                              if s.get('classification') != 'NOT_A_STORY')
-            print(f"    → {len(stories)} candidates, {story_count} stories")
-
-            if delay > 0 and i < len(pages_to_process) - 1:
-                time.sleep(delay)
-
-        if checkpoint_path:
-            self._write_checkpoint(checkpoint_path, done)
 
         # Add skipped pages with empty stories
         for page in pages:
@@ -1705,7 +1718,7 @@ Return JSON:
         span_counts = {'clause_llm': 0, 'clause_kept_full': 0,
                        'no_clause_split': 0, 'skipped': 0}
         if self.client:
-            span_counts = self.extract_text_spans_via_clauses(all_results)
+            span_counts = self.extract_text_spans_via_clauses(all_results, delay=delay)
             print(
                 "  Text-span (Wave 5 clause selection): "
                 f"llm={span_counts['clause_llm']} "
