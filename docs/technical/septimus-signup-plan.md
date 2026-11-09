@@ -25,7 +25,11 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 | Kiddushin | 53 | 11,961 | 184 | 1.3 | 0.9 |
 | Gittin | 118 | 25,987 | 181 | 2.9 | 1.9 |
 | Yevamot | 95 | 21,985 | 163 | 2.4 | 1.6 |
-| **All** | **367** | **85,983** | **176** | **9.6** | **6.2** |
+| Berakhot | 74 | 19,042 | 164 | 2.1 | 1.4 |
+| **All** | **441** | **105,025** | **175** | **11.7** | **7.6** |
+
+Berakhot (added 2026-11-09) ships only the passages **both consensus judges call a story** — detector v14
+output, not reviewed by Jeff (`scripts/build_site_data.py`, `strong_yes_cells`).
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate

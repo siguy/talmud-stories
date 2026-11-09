@@ -2,7 +2,7 @@
 """Export the stories for the Septimus family viewer (work/2026-10-12-septimus-story-viewer.md).
 
 Reads (read-only): results/canonical/{ketubot,kiddushin,gittin}_canonical.json and
-results/v11/yevamot/yevamot_v11.json. Writes site/data/index.json + site/data/<tractate>.json.
+results/v11/yevamot/yevamot_v11.json, and Berakhot (below). Writes site/data/index.json + site/data/<tractate>.json.
 
 Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` = BORDERLINE, shown
 separately. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
@@ -11,6 +11,13 @@ round: its stories are detector output, flagged `reviewed: false`.
 mishnah_stories[] (Stage 4g's withheld Mishnah-internal stories) IS exported, per Simon
 2026-10-12: flagged `in_mishnah: true` and `reviewed: false` (detector output, never shown to
 Jeff; whether they count is still his scope question).
+
+Berakhot (Simon, 2026-11-09): detector v14 output (results/v14/berakhot/run1.json),
+`reviewed: false`, and ONLY the `story` passages both consensus judges call a story
+(results/consensus/berakhot/{gemini,claude}.json, prompt judge_register_v2.md) -- the
+strong-yes set. A v14 span (any classification but NOT_A_STORY, LOW_CONFIDENCE
+included) ships if its segments overlap such a unit. Borderline, split
+and out-of-scope passages (the five biblical episodes, R-S1) do not ship.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -28,7 +35,21 @@ SOURCES = {
     "kiddushin": ("results/canonical/kiddushin_canonical.json", True),
     "gittin": ("results/canonical/gittin_canonical.json", True),
     "yevamot": ("results/v11/yevamot/yevamot_v11.json", False),
+    "berakhot": ("results/v14/berakhot/run1.json", False),
 }
+CONSENSUS = {"berakhot": "results/consensus/berakhot"}
+
+
+def strong_yes_cells(tractate):
+    """Cells (page ref, segment index) of units BOTH judges call `story`; None = no filter."""
+    d = CONSENSUS.get(tractate)
+    if not d:
+        return None
+    verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
+                   if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
+    units = json.loads((ROOT / d / "units.json").read_text())["units"]
+    return {tuple(c) for u in units if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "story"
+            for c in u["cells"]}
 NIKUD = re.compile("[ְ-ׇ]")
 KEEP = {"b", "i", "strong", "em", "big", "small", "br"}
 TAG = re.compile(r"<(/?)([a-zA-Z0-9]+)[^>]*>")
@@ -64,16 +85,22 @@ def pieces(pages, i, s):
 def build(tractate, path, reviewed):
     d = json.loads((ROOT / path).read_text())
     pages = d["pages"]
+    strong = strong_yes_cells(tractate)
     stories = []
     for i, p in enumerate(pages):
         for in_mishnah, key in ((False, "stories"), (True, "mishnah_stories")):
             for s in p.get(key, []):
                 t = tier(s.get("classification"))
-                if t is None:
-                    continue
                 ps = pieces(pages, i, s)
                 segs = [(r, g) for r, gs in ps for g in gs]
                 assert segs, (tractate, p["ref"], s)
+                if strong is not None:
+                    # The judges' agreement is the gate: a LOW_CONFIDENCE span both call a story ships;
+                    # a detector `story` they do not both call one does not. NOT_A_STORY never ships.
+                    hit = {(r, g.get("index")) for r, g in segs} & strong
+                    t = "story" if hit and s.get("classification") != "NOT_A_STORY" else None
+                if t is None:
+                    continue
                 if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                     print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
                 stories.append({

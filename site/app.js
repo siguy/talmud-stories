@@ -1,7 +1,7 @@
 (function () {
   "use strict";
-  var HE = { ketubot: "כתובות", kiddushin: "קידושין", gittin: "גיטין", yevamot: "יבמות" };
-  var NAME = { ketubot: "Ketubot", kiddushin: "Kiddushin", gittin: "Gittin", yevamot: "Yevamot" };
+  var HE = { ketubot: "כתובות", kiddushin: "קידושין", gittin: "גיטין", yevamot: "יבמות", berakhot: "ברכות" };
+  var NAME = { ketubot: "Ketubot", kiddushin: "Kiddushin", gittin: "Gittin", yevamot: "Yevamot", berakhot: "Berakhot" };
   var app = document.getElementById("app");
   var cache = {}, index = null;
 
@@ -49,7 +49,7 @@
         }).join("");
         app.innerHTML = '<h1>Stories of the Talmud</h1>' +
           '<p class="dedication">In memory of Joe Septimus.</p>' +
-          '<p class="lede">The narrative stories found in four tractates of the Babylonian Talmud, with the Hebrew and an English translation. Pick a tractate to start reading.</p>' + cards;
+          '<p class="lede">The narrative stories found in five tractates of the Babylonian Talmud, with the Hebrew and an English translation. Pick a tractate to start reading.</p>' + cards;
       });
     });
   }

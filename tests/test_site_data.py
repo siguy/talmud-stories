@@ -24,6 +24,9 @@ def test_site_data_counts_match_the_goldens():
         assert all(g["he"] and g["en"] for s in d["stories"] for g in s["segments"])
     y = json.loads((ROOT / "site/data/yevamot.json").read_text())
     assert y["stories"] and not any(s["reviewed"] for s in y["stories"])
+    # Berakhot ships only what both consensus judges call a story: never reviewed, never borderline.
+    b = json.loads((ROOT / "site/data/berakhot.json").read_text())
+    assert b["stories"] and not any(s["reviewed"] or s["tier"] != "story" for s in b["stories"])
 
 
 def test_hebrew_carries_nikud():
@@ -71,7 +74,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 
 # Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
 # A change here is a change to the list; update §2 in the same commit.
-SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985}
+SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985, "berakhot": 19042}
 
 
 def test_every_story_has_words_and_reading_minutes():
