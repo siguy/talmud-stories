@@ -30,7 +30,7 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 
 **Only definite stories ship** — the rule, and why it is kept apart from the scholarly
 catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
-the 18 borderlines and 3 Mishnah stories from the reviewed tractates, cut Yevamot from 95
+the 19 borderlines and 3 Mishnah stories from the reviewed tractates, cut Yevamot from 95
 (one v11 run) to 40 (YES/HIGH in both v14 runs and a story to both judges), and added Berakhot.
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
