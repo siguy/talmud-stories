@@ -64,11 +64,11 @@ staleness check: it changes whenever anyone edits anything.*
 | `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
 | `eruvin-run-v11` | `p2-detector-stage4-788e26` | clean |
 | `main` | `recent-work-plans-d0818b` | clean |
-| `v14-berakhot` | `shas-v14-berakhot-6246c0` | **9 FILES** |
+| `v14-berakhot` | `shas-v14-berakhot-6246c0` | **12 FILES** |
 | `v14-yevamot` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 57 items, never deleted
+## Done — 58 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -129,4 +129,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Review UI — show the boundary we claim, keep the verdicts, name the pages not examined](work/done/2026-11-07-review-ui-fixes.md) | review, boundaries | [2026-11-07-review-ui-review.md](docs/findings/2026-11-07-review-ui-review.md) |
 | [v14 vs v11 on Berakhot — what moved, and what the consensus judges say](work/done/2026-11-08-v14-vs-v11-berakhot.md) | detection, classification | [2026-11-08-v14-vs-v11-berakhot.md](docs/findings/2026-11-08-v14-vs-v11-berakhot.md) |
 | [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
-<!-- board-checksum: 54f795aefd20fcb4 -->
+| [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
+<!-- board-checksum: 027ef03d9b18bb45 -->
