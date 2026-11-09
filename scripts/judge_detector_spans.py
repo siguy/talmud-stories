@@ -22,7 +22,7 @@ the catalogue, so for agreement it counts as `not`, separately flagged (CLAUDE.m
     ... import --model <what ran>
     ... report
 
-Output under results/consensus/berakhot/. No Claude API call is ever made here.
+Output under results/consensus/<tractate>/ (JUDGE_TRACTATE, default Berakhot). No Claude API call is ever made here.
 """
 import argparse
 import hashlib
@@ -43,14 +43,23 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import judge_labelled_spans as j  # noqa: E402
 
 log = logging.getLogger('judge-detector-spans')
-TRACTATE = 'Berakhot'
-j.TEXT_SOURCES[TRACTATE] = ['results/sefaria/berakhot.json']
-OUT = PROJECT_ROOT / 'results/consensus/berakhot'
-RUNS = {
-    'v11': 'results/v11/berakhot/berakhot_v11.json',
-    'v14_r1': 'results/v14/berakhot/run1.json',
-    'v14_r2': 'results/v14/berakhot/run2.json',
+# JUDGE_TRACTATE picks the tractate (default Berakhot, so the 2026-11-08 run reproduces).
+# Yevamot added 2026-11-09 for the Septimus site filter (docs/technical/septimus-story-filter.md):
+# the two v14 full-tractate runs only.
+TRACTATES = {
+    'Berakhot': {'text': 'results/sefaria/berakhot.json', 'out': 'results/consensus/berakhot',
+                 'runs': {'v11': 'results/v11/berakhot/berakhot_v11.json',
+                          'v14_r1': 'results/v14/berakhot/run1.json',
+                          'v14_r2': 'results/v14/berakhot/run2.json'}},
+    'Yevamot': {'text': 'results/sefaria/yevamot.json', 'out': 'results/consensus/yevamot',
+                'runs': {'v14_r1': 'results/v11/v14_yevamot/run1.json',
+                         'v14_r2': 'results/v11/v14_yevamot/run2.json'}},
 }
+TRACTATE = os.environ.get('JUDGE_TRACTATE', 'Berakhot')
+assert TRACTATE in TRACTATES, f'JUDGE_TRACTATE must be one of {sorted(TRACTATES)} (never Eruvin)'
+j.TEXT_SOURCES[TRACTATE] = [TRACTATES[TRACTATE]['text']]
+OUT = PROJECT_ROOT / TRACTATES[TRACTATE]['out']
+RUNS = TRACTATES[TRACTATE]['runs']
 CALL = {'YES': 'story', 'HIGH_CONFIDENCE': 'story', 'LOW_CONFIDENCE': 'borderline', 'NOT_A_STORY': 'not'}
 RANK = {'not': 0, 'borderline': 1, 'story': 2}
 GEMINI_USD = {'input': 0.50, 'output': 3.00}   # per M tokens, docs/technical/shas-finder-plan.md
@@ -301,9 +310,9 @@ def report():
             u = units[i]
             lines.append(f"  {i:26s} {run}={u['calls'][run]['cls']:15s} judges={G[i]}  "
                          f"G:{gans[i]['rules']} C:{cans[i]['rules']} | {u['summary'][:90]}")
-    # moved passages
+    # moved passages (v11 vs v14 -- only where a v11 run was judged, i.e. Berakhot)
     moved = []
-    for i, u in units.items():
+    for i, u in (units.items() if 'v11' in RUNS else ()):
         k11 = u['calls']['v11']['call'] != 'not'
         k14 = [u['calls'][r]['call'] != 'not' for r in ('v14_r1', 'v14_r2')]
         if k11 and not any(k14):

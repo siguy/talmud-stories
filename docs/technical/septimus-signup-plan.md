@@ -17,19 +17,21 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 ([`shas-finder-plan.md`](shas-finder-plan.md)); this sign-up reads the list that produces. PR a below
 (word counts) can land on today's four tractates in the meantime; the sign-up opens to the public on list v1.
 
-## 2. The numbers that shape the design (measured 2026-11-08 on `site/data/*.json`; re-measured after the PR a rebuild)
+## 2. The numbers that shape the design (re-measured 2026-11-09 after the definite-only filter; re-measure after any rebuild)
 
 | | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
 |---|---|---|---|---|---|
-| Ketubot | 101 | 26,050 | 176 | 2.9 | 1.9 |
-| Kiddushin | 53 | 11,961 | 184 | 1.3 | 0.9 |
-| Gittin | 118 | 25,987 | 181 | 2.9 | 1.9 |
-| Yevamot | 95 | 21,985 | 163 | 2.4 | 1.6 |
+| Ketubot | 87 | 23,819 | 192 | 2.6 | 1.7 |
+| Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
+| Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
+| Yevamot | 40 | 10,938 | 198 | 1.2 | 0.8 |
 | Berakhot | 64 | 17,934 | 181 | 2.0 | 1.3 |
-| **All** | **431** | **103,917** | **176** | **11.5** | **7.5** |
+| **All** | **354** | **89,701** | **188** | **10.0** | **6.5** |
 
-Berakhot (added 2026-11-09) ships only passages v14 grades YES/HIGH_CONFIDENCE **in both runs** and both consensus judges
-call a story — the judges narrow, never promote (Lesson 45). Detector v14 output, not reviewed by Jeff (`scripts/build_site_data.py`, `strong_yes_cells`).
+**Only definite stories ship** — the rule, and why it is kept apart from the scholarly
+catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
+the 18 borderlines and 3 Mishnah stories from the reviewed tractates, cut Yevamot from 95
+(one v11 run) to 40 (YES/HIGH in both v14 runs and a story to both judges), and added Berakhot.
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate

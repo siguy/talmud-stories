@@ -1,0 +1,141 @@
+{
+ "units": 184,
+ "outcomes": {
+  "gemini": {
+   "ok": 184
+  },
+  "claude": {
+   "ok": 184
+  }
+ },
+ "prompt": "src/prompts/judge_register_v2.md",
+ "prompt_sha": "84bfb33fd32a",
+ "rules_sha": "6a2d8e563ab7",
+ "agreement": {
+  "v14_r1": {
+   "gemini": {
+    "n": 184,
+    "three_way": 120,
+    "kept_vs_not": 153,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 24,
+     "borderline->not": 17,
+     "borderline->story": 22,
+     "not->borderline": 4,
+     "not->not": 23,
+     "not->story": 7,
+     "story->borderline": 11,
+     "story->not": 3,
+     "story->story": 73
+    }
+   },
+   "claude": {
+    "n": 184,
+    "three_way": 82,
+    "kept_vs_not": 108,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 18,
+     "borderline->not": 41,
+     "borderline->story": 4,
+     "not->borderline": 8,
+     "not->not": 23,
+     "not->story": 3,
+     "story->borderline": 22,
+     "story->not": 24,
+     "story->story": 41
+    }
+   }
+  },
+  "v14_r2": {
+   "gemini": {
+    "n": 184,
+    "three_way": 118,
+    "kept_vs_not": 151,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 23,
+     "borderline->not": 17,
+     "borderline->story": 22,
+     "not->borderline": 5,
+     "not->not": 23,
+     "not->story": 8,
+     "story->borderline": 11,
+     "story->not": 3,
+     "story->story": 72
+    }
+   },
+   "claude": {
+    "n": 184,
+    "three_way": 86,
+    "kept_vs_not": 110,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 20,
+     "borderline->not": 38,
+     "borderline->story": 4,
+     "not->borderline": 8,
+     "not->not": 25,
+     "not->story": 3,
+     "story->borderline": 20,
+     "story->not": 25,
+     "story->story": 41
+    }
+   }
+  }
+ },
+ "judges_agree": {
+  "n": 184,
+  "three_way": 97,
+  "kept_vs_not": 127
+ },
+ "judges_vs_version": {
+  "v14_r1": [
+   "Yevamot 15a:12-12",
+   "Yevamot 21b:15-15",
+   "Yevamot 37a:4-4",
+   "Yevamot 42b:8-8",
+   "Yevamot 45b:8-8",
+   "Yevamot 45b:9-9",
+   "Yevamot 45b:12-12",
+   "Yevamot 49b:5-5",
+   "Yevamot 60b:10-10",
+   "Yevamot 60b:11-11",
+   "Yevamot 61b:2-2",
+   "Yevamot 76b:10-Yevamot 77a:0",
+   "Yevamot 78b:13-20",
+   "Yevamot 85a:3-5",
+   "Yevamot 97a:6-6",
+   "Yevamot 101b:13-13",
+   "Yevamot 102a:13-13",
+   "Yevamot 106b:9-9",
+   "Yevamot 107b:7-7",
+   "Yevamot 115b:10-Yevamot 116a:1",
+   "Yevamot 122a:10-12",
+   "Yevamot 122a:15-Yevamot 122b:1"
+  ],
+  "v14_r2": [
+   "Yevamot 15a:12-12",
+   "Yevamot 21b:15-15",
+   "Yevamot 37a:4-4",
+   "Yevamot 42b:8-8",
+   "Yevamot 45b:8-8",
+   "Yevamot 45b:9-9",
+   "Yevamot 45b:12-12",
+   "Yevamot 49b:5-5",
+   "Yevamot 60b:10-10",
+   "Yevamot 60b:11-11",
+   "Yevamot 61b:2-2",
+   "Yevamot 76b:10-Yevamot 77a:0",
+   "Yevamot 78b:13-20",
+   "Yevamot 85a:3-5",
+   "Yevamot 97a:6-6",
+   "Yevamot 102a:13-13",
+   "Yevamot 106b:9-9",
+   "Yevamot 107b:7-7",
+   "Yevamot 115b:10-Yevamot 116a:1",
+   "Yevamot 121b:7-7",
+   "Yevamot 122a:10-12",
+   "Yevamot 122a:15-Yevamot 122b:1"
+  ]
+ },
+ "moved": [],
+ "moved_sides": {}
+}

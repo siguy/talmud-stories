@@ -1,24 +1,18 @@
 #!/usr/bin/env python3
 """Export the stories for the Septimus family viewer (work/2026-10-12-septimus-story-viewer.md).
 
-Reads (read-only): results/canonical/{ketubot,kiddushin,gittin}_canonical.json and
-results/v11/yevamot/yevamot_v11.json, and Berakhot (below). Writes site/data/index.json + site/data/<tractate>.json.
+THE FILTER IS docs/technical/septimus-story-filter.md -- read it before changing anything here.
+In one line: **only definite stories reach the site.** It is a PUBLICATION filter, stricter than
+the scholarly catalogue, and it never writes back: goldens, detector runs and judge outputs are
+read-only here, and borderlines and maybes stay in the scholarly work where they matter.
 
-Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` = BORDERLINE, shown
-separately. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
-round: its stories are detector output, flagged `reviewed: false`.
+    reviewed tractate (Jeff's golden)  -> his YES / HIGH_CONFIDENCE in stories[] only
+    unreviewed tractate (detector)     -> YES / HIGH_CONFIDENCE in EVERY run listed, in stories[],
+                                          AND both consensus judges call the passage a story
 
-mishnah_stories[] (Stage 4g's withheld Mishnah-internal stories) IS exported, per Simon
-2026-10-12: flagged `in_mishnah: true` and `reviewed: false` (detector output, never shown to
-Jeff; whether they count is still his scope question).
-
-Berakhot (Simon, 2026-11-09): detector v14 output (results/v14/berakhot/run1.json),
-`reviewed: false`, and ONLY the `story` passages both consensus judges call a story
-(results/consensus/berakhot/{gemini,claude}.json, prompt judge_register_v2.md) -- the
-strong-yes set. A v14 span ships only if it is YES/HIGH_CONFIDENCE AND its segments
-overlap such a unit -- both gates, the judges never override the detector's grade -- AND
-run2 also grades an overlapping span YES/HIGH (the detector is not deterministic). Borderline, split
-and out-of-scope passages (the five biblical episodes, R-S1) do not ship.
+Never shipped: BORDERLINE (Simon 2026-10-15), LOW_CONFIDENCE (2026-10-12), NOT_A_STORY,
+mishnah_stories[] (Stage 4g withheld them; never shown to Jeff, never judged), and a judge
+`out_of_scope` (biblical, R-S1). A second gate may narrow, never promote (Lesson 45).
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -31,29 +25,30 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data"
 
+# runs: the first is exported (its boundaries and summaries are shown); every run must agree.
+# consensus: results/consensus/<tractate> (judge_detector_spans.py), None for a reviewed golden.
 SOURCES = {
-    "ketubot": ("results/canonical/ketubot_canonical.json", True),
-    "kiddushin": ("results/canonical/kiddushin_canonical.json", True),
-    "gittin": ("results/canonical/gittin_canonical.json", True),
-    "yevamot": ("results/v11/yevamot/yevamot_v11.json", False),
-    "berakhot": ("results/v14/berakhot/run1.json", False),
+    "ketubot": {"runs": ["results/canonical/ketubot_canonical.json"], "reviewed": True, "consensus": None},
+    "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True, "consensus": None},
+    "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True, "consensus": None},
+    "yevamot": {"runs": ["results/v11/v14_yevamot/run1.json", "results/v11/v14_yevamot/run2.json"],
+                "reviewed": False, "consensus": "results/consensus/yevamot"},
+    "berakhot": {"runs": ["results/v14/berakhot/run1.json", "results/v14/berakhot/run2.json"],
+                 "reviewed": False, "consensus": "results/consensus/berakhot"},
 }
-CONSENSUS = {"berakhot": "results/consensus/berakhot"}
-# The detector is not deterministic: a story is definite only if EVERY run grades it YES/HIGH.
-# Each extra run listed here must also hold a YES/HIGH span overlapping the shipped one.
-CORROBORATE = {"berakhot": ["results/v14/berakhot/run2.json"]}
+DEFINITE = ("YES", "HIGH_CONFIDENCE")
 
 
 def definite_cells(path):
     """Cells of YES/HIGH_CONFIDENCE spans in stories[] (never mishnah_stories) of one run."""
     pages = json.loads((ROOT / path).read_text())["pages"]
     return {(r, g.get("index")) for i, p in enumerate(pages) for s in p.get("stories", [])
-            if tier(s.get("classification")) == "story" for r, gs in pieces(pages, i, s) for g in gs}
+            if s.get("classification") in DEFINITE for r, gs in pieces(pages, i, s) for g in gs}
 
 
 def strong_yes_cells(tractate):
-    """Cells (page ref, segment index) of units BOTH judges call `story`; None = no filter."""
-    d = CONSENSUS.get(tractate)
+    """Cells (page ref, segment index) of units BOTH judges call `story`; None = no judge gate."""
+    d = SOURCES[tractate]["consensus"]
     if not d:
         return None
     verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
@@ -61,6 +56,8 @@ def strong_yes_cells(tractate):
     units = json.loads((ROOT / d / "units.json").read_text())["units"]
     return {tuple(c) for u in units if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "story"
             for c in u["cells"]}
+
+
 NIKUD = re.compile("[ְ-ׇ]")
 KEEP = {"b", "i", "strong", "em", "big", "small", "br"}
 TAG = re.compile(r"<(/?)([a-zA-Z0-9]+)[^>]*>")
@@ -73,11 +70,8 @@ def clean(html):
 
 
 def tier(classification):
-    if classification == "NOT_A_STORY":
-        return None
-    if classification == "BORDERLINE":
-        return "borderline"
-    return "story" if classification in ("YES", "HIGH_CONFIDENCE") else None
+    """Only definite stories ship: BORDERLINE, LOW_CONFIDENCE and NOT_A_STORY never do."""
+    return "story" if classification in DEFINITE else None
 
 
 def pieces(pages, i, s):
@@ -93,49 +87,46 @@ def pieces(pages, i, s):
     return out
 
 
-def build(tractate, path, reviewed):
-    d = json.loads((ROOT / path).read_text())
-    pages = d["pages"]
+def build(tractate):
+    src = SOURCES[tractate]
+    reviewed = src["reviewed"]
+    pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
     strong = strong_yes_cells(tractate)
-    others = [definite_cells(q) for q in CORROBORATE.get(tractate, [])]
+    others = [definite_cells(q) for q in src["runs"][1:]]
     stories = []
     for i, p in enumerate(pages):
-        for in_mishnah, key in ((False, "stories"), (True, "mishnah_stories")):
-            for s in p.get(key, []):
-                t = tier(s.get("classification"))
-                ps = pieces(pages, i, s)
-                segs = [(r, g) for r, gs in ps for g in gs]
-                assert segs, (tractate, p["ref"], s)
-                if strong is not None and (t != "story" or not {(r, g.get("index")) for r, g in segs} & strong):
-                    # The judges can only NARROW the detector's `story` tier, never promote: a span ships
-                    # only if the detector says YES/HIGH_CONFIDENCE AND both judges call it a story.
-                    # (2026-11-09: letting the judges promote LOW_CONFIDENCE shipped 8 stories that were
-                    # not definite -- Simon: only definite stories reach the site. Lesson 45.)
-                    t = None
-                if t == "story" and any(not {(r, g.get("index")) for r, g in segs} & o for o in others):
-                    t = None   # graded below YES/HIGH (or not proposed) in another run: not definite
-                if t is None:
-                    continue
-                if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
-                    print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
-                stories.append({
-                    "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
-                    "tractate": tractate,
-                    "ref": p["ref"],
-                    "refs": [r for r, _ in ps],
-                    "start_segment": int(s["start_segment"]),
-                    "tier": t,
-                    "classification": s.get("classification"),
-                    "in_mishnah": in_mishnah,
-                    "extended": None,
-                    # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
-                    "reviewed": reviewed and not in_mishnah,
-                    # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
-                    "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
-                    # ref + index locate a segment exactly, so feedback on one can be traced to the source.
-                    "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
-                                 for r, g in segs],
-                })
+        for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
+            t = tier(s.get("classification"))
+            ps = pieces(pages, i, s)
+            segs = [(r, g) for r, gs in ps for g in gs]
+            assert segs, (tractate, p["ref"], s)
+            cells = {(r, g.get("index")) for r, g in segs}
+            # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
+            if strong is not None and not cells & strong:
+                t = None   # not a story to BOTH judges
+            if any(not cells & o for o in others):
+                t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
+            if t is None:
+                continue
+            if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
+                print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
+            stories.append({
+                "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
+                "tractate": tractate,
+                "ref": p["ref"],
+                "refs": [r for r, _ in ps],
+                "start_segment": int(s["start_segment"]),
+                "tier": t,
+                "classification": s.get("classification"),
+                "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
+                "extended": None,
+                "reviewed": reviewed,
+                # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
+                "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
+                # ref + index locate a segment exactly, so feedback on one can be traced to the source.
+                "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
+                             for r, g in segs],
+            })
     return apply_extensions(tractate, stories, pages)
 
 
@@ -198,8 +189,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     wpm = reading_wpm()
     index = {"reading_wpm": wpm, "tractates": []}
-    for t, (path, reviewed) in SOURCES.items():
-        stories = add_reading_time(build(t, path, reviewed), wpm)
+    for t in SOURCES:
+        reviewed = SOURCES[t]["reviewed"]
+        stories = add_reading_time(build(t), wpm)
         ids = [s["id"] for s in stories]
         assert len(ids) == len(set(ids)), f"{t}: duplicate story ids"
         (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories},
