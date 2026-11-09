@@ -31,6 +31,7 @@
   function dafKey(ref) { var m = /(\d+)([ab])/.exec(ref); return m ? m[1] * 2 + (m[2] === "b" ? 1 : 0) : 0; }
   function refLabel(s) { return s.refs.length > 1 ? s.refs[0] + " – " + s.refs[1].split(" ").pop() : s.ref; }
   function sefariaUrl(s) { return "https://www.sefaria.org/" + encodeURIComponent(s.ref.replace(" ", ".")) + "?lang=bi"; }
+  function mins(n) { return n ? '<span class="mins">' + n + ' min</span>' : ''; }
   function toggleRead(id) { if (read.has(id)) read.delete(id); else read.add(id); save("septimus-read", Array.from(read)); }
 
   function home() {
@@ -42,7 +43,7 @@
           var done = ids.filter(function (id) { return read.has(id); }).length;
           return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + HE[t.tractate] + '</span>' +
             '<div class="card-name">' + NAME[t.tractate] + '</div>' +
-            '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') +
+            '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') + (t.minutes ? ' · about ' + Math.max(1, Math.round(t.minutes / 60)) + ' h in all' : '') +
             (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
             '<div class="bar-track"><div class="bar-fill" style="width:' + (ids.length ? 100 * done / ids.length : 0) + '%"></div></div>' +
             '<div class="card-meta">' + done + ' of ' + ids.length + ' read</div></a>';
@@ -70,7 +71,7 @@
         var daf = s.ref.split(" ").pop();
         if (daf !== last) { html += '<h2>' + esc(NAME[t]) + ' ' + esc(daf) + '</h2>'; last = daf; }
         html += '<a class="row' + (read.has(s.id) ? " read" : "") + '" href="#/s/' + s.id + '"><span class="check">' + (read.has(s.id) ? "✓" : "") + '</span><span>' +
-          '<span class="row-ref">' + esc(refLabel(s)) + '</span>' + (s.in_mishnah ? '<span class="chip">Mishnah</span>' : '') +
+          '<span class="row-ref">' + esc(refLabel(s)) + '</span>' + mins(s.minutes) + (s.in_mishnah ? '<span class="chip">Mishnah</span>' : '') +
           '<div class="row-sum">' + esc(s.summary) + '</div></span></a>';
       });
       app.innerHTML = html;
@@ -91,7 +92,7 @@
       var i = siblings.indexOf(s), prev = siblings[i - 1], next = siblings[i + 1];
       var segs = s.segments.map(function (g, n) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div><button class="flag" data-seg="' + n + '" aria-label="Report a problem with this passage" title="Report a problem with this passage">⚑ Report</button></div>'; }).join("");
       app.innerHTML = '<div class="crumb"><a href="#/t/' + t + (s.tier === "borderline" ? "?tab=borderline" : "") + '">← ' + NAME[t] + '</a></div>' +
-        '<h1>' + esc(refLabel(s)) + '</h1>' +
+        '<h1>' + esc(refLabel(s)) + '</h1>' + (s.minutes ? '<p class="readtime">' + s.words + ' words · about ' + s.minutes + ' min to read</p>' : '') +
         (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
         (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +

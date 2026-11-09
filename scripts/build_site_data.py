@@ -15,6 +15,7 @@ Jeff; whether they count is still his scope question).
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
 import json
+import math
 import re
 import sys
 from pathlib import Path
@@ -31,6 +32,13 @@ SOURCES = {
 NIKUD = re.compile("[ְ-ׇ]")
 KEEP = {"b", "i", "strong", "em", "big", "small", "br"}
 TAG = re.compile(r"<(/?)([a-zA-Z0-9]+)[^>]*>")
+# Reading time for the sign-up (docs/technical/septimus-signup-plan.md §2): words of the English the
+# reader is SHOWN (after display-only extensions), HTML stripped. 150 wpm = study pace, not skim pace.
+READING_WPM = 150
+# Which story list this is. Bumped by hand when a new list is built (plan §7); not a build timestamp,
+# so rebuilding the same inputs gives byte-identical output.
+LIST = {"version": "pre-v1", "dated": "2026-11-09",
+        "note": "Four tractates; story list v1 will cover all of Shas."}
 SUP = re.compile(r"<sup\b.*?</sup>|<i class=\"footnote\">.*?</i>", re.S)
 
 
@@ -128,21 +136,34 @@ def apply_extensions(tractate, stories, pages):
     return stories
 
 
+def words_of(story):
+    return len(TAG.sub(" ", " ".join(g["en"] for g in story["segments"])).split())
+
+
+def add_reading_time(stories):
+    for s in stories:
+        s["words"] = words_of(s)
+        s["minutes"] = max(1, math.ceil(s["words"] / READING_WPM))
+    return stories
+
+
 def cap_reason(r):
     return str(r or "")[:300]
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
-    index = {"tractates": []}
+    index = {"list": LIST, "reading_wpm": READING_WPM, "tractates": []}
     for t, (path, reviewed) in SOURCES.items():
-        stories = build(t, path, reviewed)
+        stories = add_reading_time(build(t, path, reviewed))
         ids = [s["id"] for s in stories]
         assert len(ids) == len(set(ids)), f"{t}: duplicate story ids"
         (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories},
                                                   ensure_ascii=False, indent=1))
         n = {k: sum(1 for s in stories if s["tier"] == k) for k in ("story", "borderline")}
-        index["tractates"].append({"tractate": t, "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"])})
+        index["tractates"].append({"tractate": t, "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
+                                   "words": sum(s["words"] for s in stories),
+                                   "minutes": sum(s["minutes"] for s in stories)})
         print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} in_mishnah={index['tractates'][-1]['in_mishnah']}")
     (OUT / "index.json").write_text(json.dumps(index, indent=1))
 

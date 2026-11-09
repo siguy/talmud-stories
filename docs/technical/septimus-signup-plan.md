@@ -36,7 +36,9 @@ Words = whitespace tokens of the English with HTML stripped (the Davidson transl
   over 30 days would assign a fraction of a story per day.
 
 **Reading speed:** default **150 words/minute** ("study pace": Talmud English is dense and readers stop to think).
-One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(words / wpm)` minutes, minimum 1.
+One constant, `READING_WPM` in `scripts/build_site_data.py`, exported as `index.json.reading_wpm`. Each story carries
+`words` and `minutes` = `ceil(words / wpm)`, minimum 1 (built 2026-11-09, PR a). Rounding up per story makes the
+sum ~12.4 h for today's list against ~9.6 h of raw reading; assignment sums `words / wpm`, not the rounded minutes.
 
 ## 3. Scope
 

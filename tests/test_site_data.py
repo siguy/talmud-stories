@@ -67,3 +67,19 @@ def test_boundary_extensions_are_display_only_and_bounded():
         assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 4, i
     # the golden itself is never rewritten: ids still encode the golden's own range
     assert all(s["id"].count("-") == 3 for s in by_id.values())
+
+
+def test_every_story_has_words_and_a_reading_time():
+    """Sign-up assigns by time (docs/technical/septimus-signup-plan.md §2): words of the English shown, at READING_WPM."""
+    import math
+    idx = json.loads((ROOT / "site/data/index.json").read_text())
+    wpm = idx["reading_wpm"]
+    assert wpm == 150 and idx["list"]["version"] and idx["list"]["dated"]
+    for row in idx["tractates"]:
+        stories = json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]
+        for s in stories:
+            en = re.sub(r"<[^>]+>", " ", " ".join(g["en"] for g in s["segments"]))
+            assert s["words"] == len(en.split()) > 0, s["id"]
+            assert s["minutes"] == max(1, math.ceil(s["words"] / wpm)), s["id"]
+        assert row["words"] == sum(s["words"] for s in stories)
+        assert row["minutes"] == sum(s["minutes"] for s in stories)

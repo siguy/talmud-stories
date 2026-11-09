@@ -1,32 +1,46 @@
 {
+ "list": {
+  "version": "pre-v1",
+  "dated": "2026-11-09",
+  "note": "Four tractates; story list v1 will cover all of Shas."
+ },
+ "reading_wpm": 150,
  "tractates": [
   {
    "tractate": "ketubot",
    "reviewed": true,
    "story": 87,
-   "borderline": 13,
-   "in_mishnah": 0
+   "borderline": 14,
+   "in_mishnah": 0,
+   "words": 26050,
+   "minutes": 222
   },
   {
    "tractate": "kiddushin",
    "reviewed": true,
    "story": 52,
    "borderline": 1,
-   "in_mishnah": 0
+   "in_mishnah": 0,
+   "words": 11961,
+   "minutes": 105
   },
   {
    "tractate": "gittin",
    "reviewed": true,
-   "story": 115,
+   "story": 114,
    "borderline": 4,
-   "in_mishnah": 3
+   "in_mishnah": 3,
+   "words": 25987,
+   "minutes": 227
   },
   {
    "tractate": "yevamot",
    "reviewed": false,
    "story": 95,
    "borderline": 0,
-   "in_mishnah": 5
+   "in_mishnah": 5,
+   "words": 21985,
+   "minutes": 189
   }
  ]
 }
