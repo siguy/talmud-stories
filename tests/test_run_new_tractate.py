@@ -168,3 +168,51 @@ def test_summary_does_not_count_introducer_pages_as_skipped(caplog):
     with caplog.at_level(logging.INFO):
         runner.log_triage_summary(triage, pages)
     assert any('1 skipped, 1 kept' in r.getMessage() for r in caplog.records)
+
+
+# ---- 2026-11-09: any fetched tractate runs; every call's tokens are counted ----
+def test_any_tractate_resolves_to_its_sefaria_file():
+    pages, cache = runner.source_paths('berakhot')
+    assert pages == ROOT / 'results' / 'sefaria' / 'berakhot.json'
+    assert cache == ROOT / 'results' / 'triage' / 'berakhot.json'
+    assert runner.source_paths('kiddushin')[0] == ROOT / 'results' / 'v7' / 'kiddushin_pages.json'
+
+
+def test_parser_accepts_a_tractate_outside_the_old_list():
+    args = runner.build_parser().parse_args(['--tractate', 'Berakhot'])
+    assert args.tractate == 'berakhot'
+
+
+class _Usage:
+    def __init__(self, i, o, t):
+        self.prompt_token_count, self.candidates_token_count, self.thoughts_token_count = i, o, t
+
+
+class _Resp:
+    def __init__(self, usage):
+        self.usage_metadata = usage
+
+
+class _Models:
+    def __init__(self, responses):
+        self.responses = list(responses)
+
+    def generate_content(self, **kw):
+        return self.responses.pop(0)
+
+
+class _Client:
+    def __init__(self, responses):
+        self.models = _Models(responses)
+
+
+def test_meter_counts_tokens_and_never_reads_a_missing_count_as_zero():
+    m = runner.TokenMeter()
+    c = m.attach(_Client([_Resp(_Usage(100, 20, 5)), _Resp(None), _Resp(_Usage(50, 10, None))]), 'stage2_and_4')
+    for _ in range(3):
+        c.models.generate_content(model='x', contents='y')
+    assert m.tally['stage2_and_4'] == {'calls': 3, 'unmetered': 1, 'input': 150, 'output': 30, 'thinking': 5}
+
+
+def test_meter_ignores_a_missing_client():
+    assert runner.TokenMeter().attach(None, 'stage1') is None

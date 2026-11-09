@@ -102,7 +102,13 @@ deterministic: Lesson 43) doubles the cost. **Not in list v1.** It is a candidat
 3. **Build list v1**: `site/data/` for all tractates with the same ship rule (YES + HIGH_CONFIDENCE = story,
    BORDERLINE its own tier, LOW_CONFIDENCE not shipped), dated, `list_version: v1`.
 
-The detector is the module `scripts/run_new_tractate.py` imports (v11 today); v13/v14 were measured and not adopted.
+**Configuration ("latest rules, most accurate process", Simon 2026-11-09):** the runner's defaults. Detector = the
+module `scripts/run_new_tractate.py` imports (v11, with the 2026-11-07 run-path fixes); model `gemini-3-flash-preview`,
+thinking off, twin pass on, Stage 1 rule `N>=1`. This is the configuration measured best on Yevamot (92–94%, BLIND).
+The newest rule wording (v13/v14, which carries Jeff's 2026-10-07 and 2026-10-25 rulings) was measured on a slice and
+made more errors, so it is **not** used (`docs/findings/2026-11-07-detector-v13-slice.md`). Jeff's rulings still
+reach the list where they matter: through the goldens and `STORY_RULES.md`, not the detector prompt.
+Step 0 status: runner takes any fetched tractate and records `run_meta.tokens` per stage (done 2026-11-09, tested).
 No prompt or model change rides on this run. If one is proposed, it is its own measured item with a same-code repeat.
 
 ## 5. How quality is gated without an expert round
@@ -135,4 +141,7 @@ limits allow; that is one lane, not several.
 
 1. ~~Where are the other tractates?~~ Answered 2026-11-09: only Eruvin, on Simon's machine, held for Jeff.
 2. ~~Run Eruvin now?~~ Answered: no, wait for Jeff.
-3. Approve ~$5 for the Berakhot calibration run, then the re-quoted total.
+3. ~~Approve Berakhot?~~ Approved 2026-11-09 (~$5), "latest rules and the most accurate version of the process".
+   Read as: the runner's measured-best configuration (§4). Runs on Simon's machine: this cloud container cannot reach
+   Sefaria or Gemini. Prompt: [`shas-run-local-prompt.md`](shas-run-local-prompt.md).
+4. Approve the re-quoted total for the other 31, once Berakhot has measured it.

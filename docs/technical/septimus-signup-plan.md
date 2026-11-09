@@ -49,6 +49,14 @@ One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(wor
 5. **Progress (the field):** per tractate, every story with words, minutes and status (open / taken / learned),
    plus "N of M learned, K left" overall and per tractate. Visible without signing in.
 6. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
+7. **Landing page + sign-in flow (critical, Simon 2026-11-09; not built yet).** One screen before sign-in: what this
+   is (learning every story in the Talmud together, in memory of Joe Septimus, by 8 Elul 5787), what "a story" means
+   here (narratives found by software and checked by a scholar, Jeff Rubenstein; unreviewed tractates say so), the
+   progress so far, and one button: "Sign in with Google to join". After sign-in: the minutes-per-week question, then
+   "Your stories". Nothing else is asked.
+8. **Which list this is**, shown on the landing page and the progress page: "Story list v1, dated <date>:
+   stories our software rates as most likely; it will grow as the work improves." From `index.json`'s
+   `list_version` / `published_at`.
 
 The existing reader (cards, daf lists, story pages, Hebrew/English, "Open on Sefaria", feedback form, approved notes)
 keeps working unchanged; the sign-up wraps it. The per-device "mark as read" checkmark stays as it is.
@@ -62,21 +70,24 @@ keeps working unchanged; the sign-up wraps it. The per-device "mark as read" che
 - AI "explain what's going on" buttons; collaboration; personalised reminders; rich profiles.
 - Context before/after a story beyond the existing "Open on Sefaria" link.
 
-## 4. Sign-up by time: default and the open question
+## 4. Sign-up by time: minutes per week (decided)
 
-**Default (proposed): a one-time total.** "I'll give 15 minutes." No schedule, no per-day amount, no deadline
-other than the yahrzeit. Reason: the whole list is ~10 hours, so per-day framing assigns fractions of a story.
-People who want more press "Give more time" and get another batch.
+**Decided (Simon, from his call with Daniel, 2026-11-09): people choose minutes per week**, until the yahrzeit.
+Buttons: 5 / 10 / 15 / 30 min a week + "other". The system converts that to a total
+(`minutes/week × weeks left until the yahrzeit`) and assigns stories for **the next 4 weeks** at a time, so nobody
+is handed months of stories up front and the pool is not emptied by a few early sign-ups. When a person's batch is
+learned (or 4 weeks pass), "Get next stories" assigns the next batch at the same rate.
+`users/{uid}.minutesPerWeek` replaces `pledgedMinutes` in §5.
 
-Alternative discussed on the call: **minutes per week until the yahrzeit**. Not v1 unless Simon/Daniel prefer it;
-it changes only the copy and the multiplier (minutes/week × weeks left), not the data model.
+Scale check: 15 min/week ≈ 15 stories/month per person. Today's 367 stories (~10 h) need about 40 people at 15
+min/week for one month; ~3,000 stories (~80 h) over ~43 weeks need about 8 people at 15 min/week, or more people at less.
 
 ## 5. Data model (Firestore)
 
 Three things, nothing more:
 
 ```
-users/{uid}         { name, email, createdAt, pledgedMinutes,   // from Google; pledged = running total
+users/{uid}         { name, email, createdAt, minutesPerWeek,   // from Google; the rate they chose
                       community: null }                         // reserved for the post-sign-up question (Later)
 claims/{storyId}    { uid, list: "v1", assignedAt, doneAt: null | timestamp }
                     // doc id = story id → at most one live claim per story, enforced by the database
