@@ -37,6 +37,8 @@ totals. Pinned in `tests/test_site_data.py` (`SITE_WORDS`).
 - So the sign-up unit is **minutes**, not hours, and a **one-time total** is enough (see §4). A per-day schedule
   over 30 days would assign a fraction of a story per day.
 
+**Not displayed (Simon, 2026-11-09):** `words` and `minutes` are for assignment only; the site does not show them.
+
 **Reading speed:** default **150 words/minute** ("study pace": Talmud English is dense and readers stop to think).
 One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(words / wpm)` minutes, minimum 1.
 
@@ -48,7 +50,7 @@ One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(wor
 3. **Sign up by time:** "How much time will you give?" — buttons 5 / 15 / 30 / 60 min + "other". The system **assigns**
    unclaimed stories that add up to about that time.
 4. **My stories:** the assigned list, each linking to the existing story page; a **"Mark as learned"** button.
-5. **Progress (the field):** per tractate, every story with words, minutes and status (open / taken / learned),
+5. **Progress (the field):** per tractate, every story with its status (open / taken / learned),
    plus "N of M learned, K left" overall and per tractate. Visible without signing in.
 6. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
 7. **Landing page + sign-in flow (critical, Simon 2026-11-09; not built yet).** One screen before sign-in: what this
