@@ -16,7 +16,8 @@ Berakhot (Simon, 2026-11-09): detector v14 output (results/v14/berakhot/run1.jso
 `reviewed: false`, and ONLY the `story` passages both consensus judges call a story
 (results/consensus/berakhot/{gemini,claude}.json, prompt judge_register_v2.md) -- the
 strong-yes set. A v14 span ships only if it is YES/HIGH_CONFIDENCE AND its segments
-overlap such a unit -- both gates, the judges never override the detector's grade. Borderline, split
+overlap such a unit -- both gates, the judges never override the detector's grade -- AND
+run2 also grades an overlapping span YES/HIGH (the detector is not deterministic). Borderline, split
 and out-of-scope passages (the five biblical episodes, R-S1) do not ship.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
@@ -38,6 +39,16 @@ SOURCES = {
     "berakhot": ("results/v14/berakhot/run1.json", False),
 }
 CONSENSUS = {"berakhot": "results/consensus/berakhot"}
+# The detector is not deterministic: a story is definite only if EVERY run grades it YES/HIGH.
+# Each extra run listed here must also hold a YES/HIGH span overlapping the shipped one.
+CORROBORATE = {"berakhot": ["results/v14/berakhot/run2.json"]}
+
+
+def definite_cells(path):
+    """Cells of YES/HIGH_CONFIDENCE spans in stories[] (never mishnah_stories) of one run."""
+    pages = json.loads((ROOT / path).read_text())["pages"]
+    return {(r, g.get("index")) for i, p in enumerate(pages) for s in p.get("stories", [])
+            if tier(s.get("classification")) == "story" for r, gs in pieces(pages, i, s) for g in gs}
 
 
 def strong_yes_cells(tractate):
@@ -86,6 +97,7 @@ def build(tractate, path, reviewed):
     d = json.loads((ROOT / path).read_text())
     pages = d["pages"]
     strong = strong_yes_cells(tractate)
+    others = [definite_cells(q) for q in CORROBORATE.get(tractate, [])]
     stories = []
     for i, p in enumerate(pages):
         for in_mishnah, key in ((False, "stories"), (True, "mishnah_stories")):
@@ -100,6 +112,8 @@ def build(tractate, path, reviewed):
                     # (2026-11-09: letting the judges promote LOW_CONFIDENCE shipped 8 stories that were
                     # not definite -- Simon: only definite stories reach the site. Lesson 45.)
                     t = None
+                if t == "story" and any(not {(r, g.get("index")) for r, g in segs} & o for o in others):
+                    t = None   # graded below YES/HIGH (or not proposed) in another run: not definite
                 if t is None:
                     continue
                 if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):

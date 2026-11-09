@@ -25,10 +25,10 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 | Kiddushin | 53 | 11,961 | 184 | 1.3 | 0.9 |
 | Gittin | 118 | 25,987 | 181 | 2.9 | 1.9 |
 | Yevamot | 95 | 21,985 | 163 | 2.4 | 1.6 |
-| Berakhot | 66 | 18,014 | 177 | 2.0 | 1.3 |
-| **All** | **433** | **103,997** | **176** | **11.6** | **7.5** |
+| Berakhot | 64 | 17,934 | 181 | 2.0 | 1.3 |
+| **All** | **431** | **103,917** | **176** | **11.5** | **7.5** |
 
-Berakhot (added 2026-11-09) ships only passages v14 grades YES/HIGH_CONFIDENCE **and** both consensus judges
+Berakhot (added 2026-11-09) ships only passages v14 grades YES/HIGH_CONFIDENCE **in both runs** and both consensus judges
 call a story — the judges narrow, never promote (Lesson 45). Detector v14 output, not reviewed by Jeff (`scripts/build_site_data.py`, `strong_yes_cells`).
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),

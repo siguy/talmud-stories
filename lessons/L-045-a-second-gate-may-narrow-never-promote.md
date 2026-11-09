@@ -27,3 +27,11 @@ code computed something closer to their union.
 `tests/test_site_data.py::test_no_low_confidence_or_not_a_story_ships` — every shipped
 story in every tractate is YES, HIGH_CONFIDENCE or BORDERLINE (tier `borderline`), never
 LOW_CONFIDENCE or NOT_A_STORY.
+
+## Same day, the same error one level down
+
+The export then read **one** v14 run. v14 is not deterministic (two runs kept 189 and 187);
+2 shipped stories were YES in run 1 and LOW in run 2 — not definite either. A story now
+ships only if every listed run grades it YES/HIGH (`CORROBORATE` in `build_site_data.py`):
+64 stories. **Definite means definite in every measurement we hold**, not in the one we
+happened to pick.

@@ -74,7 +74,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 
 # Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
 # A change here is a change to the list; update §2 in the same commit.
-SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985, "berakhot": 18014}
+SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985, "berakhot": 17934}
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -101,3 +101,16 @@ def test_no_low_confidence_or_not_a_story_ships():
         for s in json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]:
             assert s["classification"] in ("YES", "HIGH_CONFIDENCE", "BORDERLINE"), s["id"]
             assert (s["tier"] == "borderline") == (s["classification"] == "BORDERLINE"), s["id"]
+
+
+def test_berakhot_stories_are_definite_in_every_run_and_to_both_judges():
+    """Lesson 45: the detector is not deterministic, so a shipped Berakhot story must be YES/HIGH in
+    every run listed in CORROBORATE as well as the one exported, and both judges must call it a story."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    strong = b.strong_yes_cells("berakhot")
+    runs = [b.definite_cells(b.SOURCES["berakhot"][0])] + [b.definite_cells(q) for q in b.CORROBORATE["berakhot"]]
+    for s in json.loads((ROOT / "site/data/berakhot.json").read_text())["stories"]:
+        cells = {(g["ref"], g["i"]) for g in s["segments"]}
+        assert cells & strong, s["id"]
+        assert all(cells & r for r in runs), s["id"]
