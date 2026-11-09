@@ -15,8 +15,8 @@ Jeff; whether they count is still his scope question).
 Berakhot (Simon, 2026-11-09): detector v14 output (results/v14/berakhot/run1.json),
 `reviewed: false`, and ONLY the `story` passages both consensus judges call a story
 (results/consensus/berakhot/{gemini,claude}.json, prompt judge_register_v2.md) -- the
-strong-yes set. A v14 span (any classification but NOT_A_STORY, LOW_CONFIDENCE
-included) ships if its segments overlap such a unit. Borderline, split
+strong-yes set. A v14 span ships only if it is YES/HIGH_CONFIDENCE AND its segments
+overlap such a unit -- both gates, the judges never override the detector's grade. Borderline, split
 and out-of-scope passages (the five biblical episodes, R-S1) do not ship.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
@@ -94,11 +94,12 @@ def build(tractate, path, reviewed):
                 ps = pieces(pages, i, s)
                 segs = [(r, g) for r, gs in ps for g in gs]
                 assert segs, (tractate, p["ref"], s)
-                if strong is not None:
-                    # The judges' agreement is the gate: a LOW_CONFIDENCE span both call a story ships;
-                    # a detector `story` they do not both call one does not. NOT_A_STORY never ships.
-                    hit = {(r, g.get("index")) for r, g in segs} & strong
-                    t = "story" if hit and s.get("classification") != "NOT_A_STORY" else None
+                if strong is not None and (t != "story" or not {(r, g.get("index")) for r, g in segs} & strong):
+                    # The judges can only NARROW the detector's `story` tier, never promote: a span ships
+                    # only if the detector says YES/HIGH_CONFIDENCE AND both judges call it a story.
+                    # (2026-11-09: letting the judges promote LOW_CONFIDENCE shipped 8 stories that were
+                    # not definite -- Simon: only definite stories reach the site. Lesson 45.)
+                    t = None
                 if t is None:
                     continue
                 if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):

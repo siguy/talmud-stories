@@ -74,7 +74,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 
 # Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
 # A change here is a change to the list; update §2 in the same commit.
-SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985, "berakhot": 19042}
+SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985, "berakhot": 18014}
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -91,3 +91,13 @@ def test_every_story_has_words_and_reading_minutes():
             assert s["minutes"] == max(1, math.ceil(s["words"] / wpm)), s["id"]
         assert row["words"] == sum(s["words"] for s in stories) == SITE_WORDS[t], t
         assert row["minutes"] == sum(s["minutes"] for s in stories), t
+
+
+def test_no_low_confidence_or_not_a_story_ships():
+    """Only definite stories reach the site (Simon, 2026-10-12; again 2026-11-09, Lesson 45).
+    A later gate (e.g. the consensus judges on Berakhot) may narrow this, never promote past it."""
+    index = json.loads((ROOT / "site/data/index.json").read_text())
+    for row in index["tractates"]:
+        for s in json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]:
+            assert s["classification"] in ("YES", "HIGH_CONFIDENCE", "BORDERLINE"), s["id"]
+            assert (s["tier"] == "borderline") == (s["classification"] == "BORDERLINE"), s["id"]
