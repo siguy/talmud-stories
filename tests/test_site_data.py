@@ -67,3 +67,24 @@ def test_boundary_extensions_are_display_only_and_bounded():
         assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 4, i
     # the golden itself is never rewritten: ids still encode the golden's own range
     assert all(s["id"].count("-") == 3 for s in by_id.values())
+
+
+# Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
+# A change here is a change to the list; update §2 in the same commit.
+SITE_WORDS = {"ketubot": 26050, "kiddushin": 11961, "gittin": 25987, "yevamot": 21985}
+
+
+def test_every_story_has_words_and_reading_minutes():
+    import math
+    wpm = int(re.search(r"readingWpm:\s*(\d+)", (ROOT / "site/config.js").read_text()).group(1))
+    index = json.loads((ROOT / "site/data/index.json").read_text())
+    assert index["reading_wpm"] == wpm
+    tag = re.compile(r"<[^>]+>")
+    for row in index["tractates"]:
+        t = row["tractate"]
+        stories = json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]
+        for s in stories:
+            assert s["words"] == sum(len(tag.sub(" ", g["en"]).split()) for g in s["segments"]) > 0, s["id"]
+            assert s["minutes"] == max(1, math.ceil(s["words"] / wpm)), s["id"]
+        assert row["words"] == sum(s["words"] for s in stories) == SITE_WORDS[t], t
+        assert row["minutes"] == sum(s["minutes"] for s in stories), t
