@@ -192,7 +192,7 @@ def log_triage_summary(triage, pages=None):
     With `pages`, "skipped" uses the predicate run_pipeline uses: should_skip_page AND no
     canonical story introducer on the page (the lexical override forces Stage 2 anyway)."""
     from src.event_triage import EventTriager
-    from src.story_detector_v11 import _page_has_story_introducer
+    from src.story_detector_v14 import _page_has_story_introducer
     s = EventTriager.summarize_triage(triage)
     if pages is not None:
         by_ref = {p['ref']: p for p in pages}
@@ -258,7 +258,7 @@ def main():
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
-    from src import story_detector_v11 as detector_module  # v13/v14 measured, not adopted: docs/findings/2026-11-07-detector-v13-slice.md
+    from src import story_detector_v14 as detector_module  # adopted 2026-11-08 (Simon): docs/findings/2026-11-08-v14-vs-v11-yevamot.md
     V7StoryDetector = detector_module.V7StoryDetector
 
     src, cache = source_paths(args.tractate)
