@@ -1,0 +1,193 @@
+{
+ "01": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Ze'iri's innkeeper dies, he goes to her grave, asks, and she reveals where the money is with a request: several actions and a change."
+ },
+ "02": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rav Ahai's son fails to consummate, the father investigates, finds the Torah scroll, and rebukes them: multiple actions, causality, resolution."
+ },
+ "03": {
+  "verdict": "not",
+  "rules": [
+   "R-C2",
+   "R-C0"
+  ],
+  "segments": [],
+  "reason": "A halakhic dilemma with a dispute and Rava's ruling; no narrated event beyond asking."
+ },
+ "04": {
+  "verdict": "story",
+  "rules": [
+   "R-C1",
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "The Talmud quotes R. Tarfon's Mishnah incident: he reclined on the road, endangered himself from bandits, and the Sages rebuked him; the Talmudic quotation can be included."
+ },
+ "05": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rav Ashi's one-line first-person report of a dream followed by his rise to greatness: events with minimal narration, cited as proof."
+ },
+ "06": {
+  "verdict": "not",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "A halakhic question to Rav Sheshet answered by pointing to study-hall practice; no event."
+ },
+ "07": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7",
+   "R-C6"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A baraita fragment of the oven of Akhnai: the purities are burned and R. Eliezer ostracized; real events but only a fragment of a story told elsewhere."
+ },
+ "08": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Mar son of Ravina is thirsty, a miracle creates a spring, and he drinks: a need, a miraculous event and a change."
+ },
+ "09": {
+  "verdict": "not",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "Rav Sheshet's habitual practice with his explanation; a custom that leads nowhere."
+ },
+ "10": {
+  "verdict": "not",
+  "rules": [
+   "R-C0",
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "Rabba bar Mari observes Rava's practice and approves it; a visit and a ruling with no change."
+ },
+ "11": {
+  "verdict": "not",
+  "rules": [
+   "R-C5",
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "R. Yohanan's custom of sitting at the immersion gates and an exchange with the Sages; a habit that leads to no narrated event, and only ordinary dialogue."
+ },
+ "12": {
+  "verdict": "not",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "R. Yirmeya sees R. Hiyya bar Abba's practice and comments; speech without conflict or event."
+ },
+ "13": {
+  "verdict": "not",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "A terminological question and clarification in the study hall; ordinary dialogue, no event."
+ },
+ "14": {
+  "verdict": "not",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "Rava's report of his practice at the Exilarch's, followed by Gemara's discussion; a custom with no one-time event."
+ },
+ "15": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "reason": "Rav Nahman errs and restarts Grace after Meals, then is questioned and cites a ruling; one real event followed by halakhic dialogue."
+ },
+ "16": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7",
+   "R-C3"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Abaye reports changing his practice after hearing a teaching; a change, but mainly a report of practice with little narration."
+ },
+ "17": {
+  "verdict": "not",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "A bare report of R. Abbahu's practice."
+ },
+ "18": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Mar Zutra visits when mourning befalls Rav Ashi and recites a combined blessing; one event followed by a liturgical speech act."
+ },
+ "19": {
+  "verdict": "story",
+  "rules": [
+   "R-C0",
+   "R-S1"
+  ],
+  "segments": [
+   2,
+   3,
+   4
+  ],
+  "reason": "R. Sheila's flogging of the man, denunciation, trial, Elijah's testimony, his release with authority, and killing the informer: a full story with conflict and change."
+ },
+ "20": {
+  "verdict": "not",
+  "rules": [
+   "R-C0",
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "Rav Nahman's jug and the Usha case brought to Rav Asi are halakhic reports followed by rulings; no narrated change beyond the ruling."
+ }
+}

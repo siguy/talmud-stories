@@ -1,0 +1,3661 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 224
+  },
+  "imported": "2026-11-09T00:13:30"
+ },
+ "rows": [
+  {
+   "id": "Berakhot 30a:18-Berakhot 30b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel's account of the day the king's army came and the Sages could not pray, so he prayed alone: a real event, but cited as evidence for a ruling with little development.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "An explanation of Rabbi Yirmeya's status and a brief exchange of speech with no conflict and no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly dialogue, but Rabbi Yohanan's astonishment and change of understanding about the long-lived Babylonians is an emotional reaction and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:27-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel transmits a teaching to Hiyya bar Rav; speech only, no conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A student leaves his tefillin, a prostitute takes them and shames him, he kills himself, and an enactment follows: several actions with causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Hyperbolic habitual reports of rabbis eating Genosar fruit; Reish Lakish's habit leads to confusion and the Nasi sending men to bring him home, giving some causality within a habitual frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 48a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "King Yannai and Shimon ben Shatah: an oath, Shimon brought and seated, conflict over honor, and his drinking a cup before blessing; post-biblical figures, multiple actions and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yishmael reports three instructions an angel told him; speech only, no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira sees Rabbi Yirmeya's excessive joy and rebukes him, who answers; mainly speech with an observed emotional state and mild conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Avya's illness and absence from the lecture, then Abaye's placating dialogue; one real event followed by halakhic discussion, mainly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Bena'a dreamed, went to twenty-four interpreters, and all their interpretations came true: a sequence of actions with an outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Report of Rabbi Yehuda HaNasi's practice and an explanatory exchange; no event follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:15-Berakhot 54b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full narrative of the Emorites' ambush and the miracle at Arnon, but about biblical Israel, not rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's practice of bowing, questioned and justified by citing others' practice; a report of conduct leading to discussion only.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 52b:23-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Huna bar Yehuda observes Rava's order of blessings and challenges it; standard scholarly back-and-forth with no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Shimi bar Hiyya arrives and hurries to eat, then Rav and Shmuel discuss the zimmun; one real event followed by halakhic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "A heretic torments Rabbi Yehoshua ben Levi; he sets up a rooster to curse him, falls asleep at the moment, and draws a conclusion: actions, conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Ameimar considered instituting a practice and Rav Ashi told him it was abolished; considering and speech only.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbis visit a place, are asked a question they cannot answer, and go from rabbi to rabbi until answered; mainly quasi-speech acts with some movement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "At the Exilarch's house Rav Hama rises to gather a hundred and Ravina stops him citing Rava's ruling; one action followed by a ruling, mainly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar bar Hana only intended to institute a practice and Rav Hisda answered him; no event beyond a considered plan and speech, no conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A prayer leader says emet twice and Rabba mocks him: one small event followed mainly by a mocking remark, with some conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "Elazar ben Hanokh doubted handwashing, was ostracized, died, and the court placed a stone on his coffin: several actions with causal change, quoted by the Gemara.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbis meet on the road, exchange blessings, and their gaze causes Rav Hanina's death: multiple actions and a dramatic change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:27-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yohanan ben Zakkai's son falls ill, Hanina ben Dosa prays and the son lives, followed by the exchange with his wife: actions, causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The blessing over pullets, ridicule, bar Kappara's anger, and both students dying within the year: multiple actions with conflict and outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of how Rav prayed at Geniva's house, cited only to derive halakhot; nothing follows and no one responds.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yitzhak observes Abaye's practice and asks a halakhic question which Abaye answers; ordinary scholarly exchange about a practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A matron insults Rabbi Yehuda and he retorts; speech only, but with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:17-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hanina's eyewitness report of Rabbi hanging his tefillin is cited as evidence and then discussed; a bare report with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7b:26-Berakhot 8a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A dialogue in which Rabbi Yitzhak urges Rav Nahman to pray with the congregation; speech without real conflict or a narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A prayer leader adds praises and Rabbi Hanina waits and rebukes him with a parable: one event followed mainly by a rebuke with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yishmael sees a student afraid and calls him a sinner, who retorts with a verse; mostly speech with an emotional event and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Beivai twice considers a plan and is twice taught otherwise; only intentions and teaching, no narrated event or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina reports Rav Yehuda's instruction on seeing feces, cited as halakhic evidence; a bare report with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Hillel hears a scream and declares confidence it is not from his house, followed by verse exegesis; one event with little change, mainly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi tells Rav to wash, Rav trembles in fear, Rabbi Hiyya explains; mainly speech with an emotional reaction but little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Elazar and Rabbi Yishmael switch postures at Shema, leading to a confrontation and justification: actions, conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa refuses to sit until the bed is lifted and a dead baby is found, giving rise to a rule: actions with causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hisda stops to pray, Rav Sheshet learns of it and has himself stood up to pray: several actions with a causal change in conduct.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ze'iri's innkeeper dies, he goes to her grave, asks, and she reveals where the money is with a request: several actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25b:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ahai's son fails to consummate, the father investigates, finds the Torah scroll, and rebukes them: multiple actions, causality, resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakhic dilemma with a dispute and Rava's ruling; no narrated event beyond asking.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The Talmud quotes R. Tarfon's Mishnah incident: he reclined on the road, endangered himself from bandits, and the Sages rebuked him; the Talmudic quotation can be included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ashi's one-line first-person report of a dream followed by his rise to greatness: events with minimal narration, cited as proof.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakhic question to Rav Sheshet answered by pointing to study-hall practice; no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita fragment of the oven of Akhnai: the purities are burned and R. Eliezer ostracized; real events but only a fragment of a story told elsewhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar son of Ravina is thirsty, a miracle creates a spring, and he drinks: a need, a miraculous event and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:28-28",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Sheshet's habitual practice with his explanation; a custom that leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar Mari observes Rava's practice and approves it; a visit and a ruling with no change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Yohanan's custom of sitting at the immersion gates and an exchange with the Sages; a habit that leads to no narrated event, and only ordinary dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Yirmeya sees R. Hiyya bar Abba's practice and comments; speech without conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A terminological question and clarification in the study hall; ordinary dialogue, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's report of his practice at the Exilarch's, followed by Gemara's discussion; a custom with no one-time event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:21-Berakhot 49b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Nahman errs and restarts Grace after Meals, then is questioned and cites a ruling; one real event followed by halakhic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye reports changing his practice after hearing a teaching; a change, but mainly a report of practice with little narration.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report of R. Abbahu's practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar Zutra visits when mourning befalls Rav Ashi and recites a combined blessing; one event followed by a liturgical speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Sheila's flogging of the man, denunciation, trial, Elijah's testimony, his release with authority, and killing the informer: a full story with conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:23-Berakhot 22b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Nahman's jug and the Usha case brought to Rav Asi are halakhic reports followed by rulings; no narrated change beyond the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:25-31",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full narrative of God bringing illness on Hezekiah, Isaiah's visit and their confrontation, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Ben Azzai followed Rabbi Akiva and observed his conduct, then a rebuke and retort; one real event, the rest speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man is attacked by a lion and miraculously rescued, then comes before Rava who rules: something happens to someone and a rabbi responds.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 6b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man prays behind the synagogue, Elijah appears as an Arab, rebukes him and kills him: multiple actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 6b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira saw the Sages running, judged them, then heard a teaching and changed his own practice; mainly speech and learning with a small change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "A baraita taught before Rabbi Yohanan, cut off mid-sentence; no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "The elders visited Rabbi Yohanan ben HaHoranit and found him in the sukka; an incident cited as evidence, mostly speech and disputed in its telling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira falls ill, Rabbi Abbahu vows a feast, he recovers, the feast is held and bread is broken: several actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira's harm (bringing myrtle to the king's palace) is only alluded to within a halakhic exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A habitual practice of Rav Ami and Rav Asi with an explanation; a custom that leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Kahana accompanied Rav Shimi bar Ashi, then a question and a teaching; one event followed by discussion with no change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3b:28-29",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "David's lyre, his nightly study and the Sages' counsel about sustenance and war concern a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 63b:4-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     7,
+     18,
+     19,
+     20
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The rabbis entered the vineyard at Yavne and each opened with a homily; the event is a frame and the content is teaching, which is speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that Ravina did not interrupt hallel for Rav bar Shaba, cited as evidence with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Og's attempt to crush Israel with a mountain and Moses killing him is a full story about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ben Zoma saw a crowd and recited a blessing, then explains his view; a single act with no response or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:26-26",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The bathhouse collapses under Rabbi Abbahu, a miracle occurs and he saves 101 men: events with a clear change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Bread is brought at Rav Yehuda's son's wedding preparations and he hears them bless; then a halakhic dispute. Events exist but it is mainly dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Yehuda bar Natan sighed (an emotional reaction) and Rav Hamnuna rebuked him with verses; mainly speech with one small event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye was excessively joyful, Rabba rebuked him and Abaye answered; mainly speech with one small event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava and Rabbi Zeira at the Exilarch: food sent, one eats and one abstains, then a halakhic exchange. Real events but mainly speech with no change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Eliezer's students pursue him room to room to console him for his maidservant; multiple actions, conflict and his rebuke.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hisda recounts reciting Grace at the Exilarch's and Rav Sheshet's angry reaction, which leads to his refusing to teach; event, conflict and consequence, though largely dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 32b:29-Berakhot 33a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The pious man ignores the officer's greeting while praying, is threatened, appeases him with an argument, and goes home in peace; full narrative with change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An eyewitness report of what Rabbi Yohanan did, cited as evidence in a legal argument; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A hyperbolic description of King Yannai's city's produce; no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita taught before Rava and his scholarly reply; ordinary dialogue, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "Honi's demand for rain is only alluded to in Shimon ben Shatah's message and must be filled in from context.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A tanna recites a baraita and Rav Nahman praises him with a pun; speech only, no conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18a:12-Berakhot 18b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yonatan's fringes drag in the cemetery and Rabbi Hiyya rebukes him; one event then dialogue; segment 4 is exegesis, not narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The emperor and Shapur challenge the rabbis to predict their dreams; they ponder all day and dream it at night; action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A student stammers before Rabbi Yehuda ben Beteira and is told to speak; one event followed by speech, little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Giddel's habitual practice and a challenge with his retort; a custom that leads to no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A eulogizer's praise is challenged by Rav Nahman; mainly speech with some conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ashi sees the Sages overly merry at his son's wedding, breaks a costly glass, and they become sad; action, cause and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:15-Berakhot 38b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira asks to meet the praised son of Rav Zevid, hears his blessing and is annoyed; the final explanation in segment 3 is the Gemara's commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Mishnah incident: Rabban Gamliel recites Shema on his wedding night, students question, he replies; one act then dialogue. It is Mishnah text (R-C1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57b:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Habitual practices of Rava and Mar son of Ravina and Rav Ashi's statement; customs leading nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yehuda falls sick and recovers, is visited, and an exchange about blessing follows; events but mainly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Vegetables brought, two eat and Mar Zutra abstains, then a halakhic exchange; events but mainly speech with no change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A parable (mashal) of a king's feast and a poor man who pushes in: narrated events, fictional, but unresolved and not about rabbis; little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:22-Berakhot 24b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An eyewitness report of Rabbi's habitual conduct during prayer, cited as evidence; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 64a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba and Rav Yosef: the question sent to Eretz Yisrael, Rav Yosef declines because of the astrologers, Rabba presides, then Rav Yosef; actions, causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Kahana hides under Rav's bed, hears him, speaks, is told to leave; actions and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina reports a scholar's ruling and Rava endorses it; ordinary scholarly exchange, with Rav Hisda's habitual cursing as a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man solicits a woman, she rebukes him, he immediately desists; two actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Huna eats and does not bless; Rav Nahman responds with a ruling. One act followed by a ruling, no further change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Describes the habitual protective practices of Rav Hisda's daughter for Rava before and after his appointment; customs that lead nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Mishnah episode: Rabban Gamliel accepts condolences for his slave, students challenge, he explains. One act then mainly speech with some conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:2-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira riding is only the setting for a halakhic question and answer, followed by Gemara discussion; no conflict or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yehuda, impure, is asked to teach, descends and immerses, teaches, is challenged and explains; several actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ulla and Rav Hisda walking; Rav Hisda sighs at the ruined house, Ulla tries to console him, sees he is not settled, and consoles again; events, emotion and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 21b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Halakhic exegetical debate between Rabbi Yehuda and ben Azzai; no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rami bar Hama excludes Rav Menashya from zimmun, dies, and Rava attributes his death to it; act and consequence (followed by Gemara discussion).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabban Yohanan ben Zakkai's deathbed: students visit, he weeps, explains, blesses them, instructions at his death.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yosei enters a ruin to pray, Elijah guards and converses with him, he hears the heavenly voice; a narrated personal encounter with a rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A biblical fragment: Hezekiah turns to the wall and prays; biblical character, not rabbinic.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav bar Shaba's interpretation is laughed at and Rav Kahana rebukes the laughers; mainly speech with conflict, then legal explanation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A student prolongs prayer, students complain, Rabbi Eliezer answers; one real event then mainly speech with some conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Two rabbis get drunk at a wedding and miss Shema, come before R. Yehoshua ben Levi who rules; an incident plus ruling with little change after.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hamnuna's eyewitness account: he is sent, goes, finds the phylacteries and infers Rava's purpose; real actions, but little change or consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "One event (Rabban Gamliel bathes as a mourner) followed by his students' challenge and his reply; mainly speech with conflict, and a Mishnah story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar Rav Huna visits the Exilarch and recites the blessing; Rav Hisda derides it. An event plus a speech exchange with some conflict, no further change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The arrival and seating only frame a teaching and an ordinary halakhic exchange between Rami bar Hama and Rav Hisda; no event or change beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56a:1-Berakhot 56b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The Bar Haddaya narrative: paid and unpaid dream interpretations, fulfilled outcomes, Rava's discovery and curse, Bar Haddaya's exile and execution; many actions with causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 45b:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Three sages eat, deliberate, each blesses separately, then come before Mareimar who rules they missed the zimmun; real actions but the ruling changes nothing.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 26a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar Zutra visits, sees the Torah scroll partition, challenges Mar bar Rav Ashi, who concedes; mainly speech around an observed practice, little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rav Hama's practice of immersing on Passover eve, followed by a ruling; nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yishmael ben Elisha enters the Holy of Holies, sees God, is asked to bless Him, blesses, and God nods; a narrated one-time incident with response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 61b:15-Berakhot 62a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye moves Rabba's bricks to test him, Rabba enters and restores them and reacts; actions with response. Segment 3 adds Akiva's account of following R. Yehoshua and Ben Azzai's rebuke.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 53b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Two students: one returns to bless and finds a purse of gold, the other does not and is eaten by a lion; actions with consequences.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 35b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's habit of drinking wine on Passover eve cited as evidence within a legal discussion; a bare report of practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:14-Berakhot 28a:11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The deposition of Rabban Gamliel: the student's question, R. Yehoshua made to stand, the people's revolt, appointment of R. Elazar ben Azarya, the opened study hall, and the reconciliation; extended narrative with conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:12-Berakhot 43a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "After Rav's death his students eat, cannot resolve a question, Rav Adda bar Ahava rends his garment again in grief, and an elder resolves it; actions, emotion and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira's argument about transmitters; the lupin question put to R. Yohanan is cited as evidence, a question and ruling with no other narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:23-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rabbi Yohanan's habitual posture for reciting Shema, cited in legal discussion; no event follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A heretic challenges Rabbi Abbahu on the order of Psalms and he answers; speech only, but with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report of what Mar Zutra did (based his meal on the dough and blessed), cited as halakhic evidence; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yehoshua ben Levi reports advice the Angel of Death told him; speech only with no conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "Only a citation heading of the Mishnah incident of Rabban Gamliel's sons returning and asking; a question and ruling, barely alluded to here.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira sits at the doorway and Rabbi Natan emerges, but the passage is mainly a dialogue about who stated a halakha; little change beyond confirming an attribution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 40a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava bar Shmuel visits the Exilarch, breaks bread at once contrary to his own ruling, is challenged and explains; an incident with a response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The sky clouds over, the people pray the post-Shabbat prayer, the sun reappears, they ask Rabbi and he rules; events with change followed by a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14b:15-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav's order of washing, Shema and phylacteries is reported as evidence of his practice and then debated; nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 48a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba tests the young Abaye and Rava; Rava points to the ceiling, Abaye goes outside and points to the sky, and Rabba predicts their greatness; actions and an outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Speech only: Rabbi Yannai sends Rabbi Hanina Kara out for stating a rejected halakha; a sharp rebuke with some conflict but no event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Theodosius institutes a custom and Shimon ben Shatah sends a threat of excommunication; a custom plus a message, with conflict but little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:26-26",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabban Gamliel's son falls ill, messengers are sent, Hanina ben Dosa prays, they record the hour and it matches the healing; full narrative with change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:16-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Huna's wine sours, sages visit and rebuke him, he repents and his loss is restored; multiple actions, conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 29b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Elijah's advice to Rav Yehuda is a bare saying followed by halakhic discussion; no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 45b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa's interrupting his meal for his son is a single act cited as evidence and explained away; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 36b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident of removing flowers from a pomegranate and caper-bush, with differing results, is cited as evidence; an event with change but barely narrated and with no human response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 43a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "At Rabbi's meal Rav is told to wash, trembles in fear, and Rabbi Hiyya reassures him; mainly speech but an emotional reaction occurs.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakha passed by whispering from teacher to student and then taught publicly; transmission of teaching is speech with no conflict or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Three sages eating together each claim the right to lead Grace citing their purity; mainly dialogue with prior immersions mentioned.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16a:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "While Rabbis Ami and Asi tie Rabbi Elazar's wedding canopy he goes to the study hall, hears a teaching, returns and tells them, and they are gratified; a frame narrative with several actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye asks Rav Yosef which blessing to recite and receives an answer; ordinary question-and-answer with no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 53b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar bar Hana forgets to bless, devises a ruse, goes back, blesses and finds a golden dove; several actions with a consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 37a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "At a meal in Jericho Rabban Gamliel gives Akiva permission, Akiva recites the abridged blessing, Gamliel rebukes him and Akiva answers; action plus conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Abba, avoiding Rav Yehuda because he wants to emigrate, goes secretly to hear a teaching before leaving and is satisfied; several actions in a narrative frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 63a:22-Berakhot 63b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Hanina's intercalation abroad, the envoys' dispute, the threat of ban, and the people's tearful reversal: many actions, conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira asks to have water poured over him and explains why; one real event, mostly halakhic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravin's donkey goes first, Abaye takes offense, at the synagogue Ravin defers and explains: actions, conflict and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15b:26-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita taught before Rava and his elaboration; teaching only, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Hooligans torment Rabbi Meir, he prays for their death, Beruria corrects him, he prays and they repent: actions with causal change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Aha enters and the students and he exchange words about who leads Grace; one minor event, then speech and a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 41b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hamnuna blesses the dates first, is challenged and answers; one act followed mainly by halakhic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:24-Berakhot 31a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "At his son's wedding Mar sees excess joy, breaks a costly cup, and the Sages become sad: action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbis sitting together and sharing teachings, plus Rava's habitual practice cited as illustration; no event leads anywhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakhic exchange between Rav Hisda and Rav Huna; speech only, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A prayer leader's wording, Rabba's praise and Abaye's challenge: ordinary scholarly back-and-forth around a speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbis' dreams followed by their appointments, cited as evidence for dream interpretation; events with weak narrated causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rafram reads the call to bless and omits a word, the congregation cries out in response, and Rava rebukes him: act, reaction and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yosef telling his servant to bring water is a bare report of practice cited as evidence, with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man speaks ill of the dead Shmuel and a falling reed fractures his skull: two events with a causal link.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 40b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Binyamin the shepherd's blessing followed by Rav's ruling: one act, then a ruling and discussion, nothing changes.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "A dangerous bathroom, Rabbi Ami and Rabbi Asi enter alone unharmed, and explain when asked; habitual events with little narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Samuel, Eli and Hannah: a full narrative but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The pious man, his wife's mockery, nights in the cemetery, overheard spirits, his saved crops, the quarrel and its consequence: a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakhic reply about olive size; the olive brought before Rabbi Yohanan is only alluded to as evidence with no narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel's habitual response to dreams: a custom of speech that leads to no event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "At a wedding Rav Hamnuna Zuti answers the request to sing with a dirge to temper the merriment; mainly speech, with an implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hiyya's sons go to the villages, forget their learning and are distressed; real events and a change, opening the story that continues.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "One real act (Mar Zutra throws fruit to Rav Ashi), then a halakhic exchange about it; mainly dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60b:11-Berakhot 61a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Akiva is refused lodging, loses candle, rooster and donkey, and is saved from the army: multiple events and a change. Segment 2 is the dictum it illustrates.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3b:0-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "Purely legal discussion of the reasons not to enter a ruin; no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Reports of rabbis' practice in breaking bread, with a question about it; no event follows and nothing changes.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 61b:5-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The martyrdom of Rabbi Akiva: decree, Pappos's challenge, arrests, execution, heavenly voice; full narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yohanan falls ill, Rabbi Hanina visits and raises him up: events with a change (healing).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hiyya bar Abba falls ill, Rabbi Yohanan visits and heals him: events and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A Roman pushes Rabbi Elazar out of the bathroom and is killed by a serpent: action, consequence, change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:20-Berakhot 23b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Reports of what Rabbi Yohanan and Rav Nahman used to do with books and tefillin; habitual practice cited as evidence, nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A heretic mocks Berurya with a verse and she rebukes him; speech only, but with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 43b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa blesses in the wrong order at Rav Huna's house, is challenged and evades; one act then dialogue with some conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel goes to the cemetery to find his father, gets Levi admitted, and learns where the orphans' money is: many events and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar son of Ravina is attacked by a camel, a wall opens and he is saved; afterwards he blesses at the sites. Events, miracle, change; the closing ruling is not part of it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 21b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "A halakhic question and a transmitted ruling about interrupting prayer; no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hanina ben Dosa confronts the arvad, it bites him and dies, he carries it to the study hall: full narrative with change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Yalta, refused the cup, breaks four hundred barrels and rebukes Ulla: action, conflict, response. Segment 2 is an interposed baraita.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 2a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabban Gamliel's sons come home late without reciting Shema and he rules; one event then a ruling, nothing else changes (and it is the Mishnah itself).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The heretic's dreams are interpreted, a woman arrives and exposes his theft of a dead man's cloak, and he goes and finds the coins: several events with a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Safra enters the bathroom, Rabbi Abba coughs and is invited in, then rebukes him on coming out: a narrated incident with actions and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A dialogue about remedies for turnips, with Rav Pappa's wife's practice cited as evidence; no narrated event that leads anywhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that Rav Mordekhai accompanied Rav Shimi bar Ashi a certain distance; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:22-Berakhot 29a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel HaKatan institutes the blessing, forgets it the next year, struggles for hours and is not removed: events with a change; segments 5-9 are the Gemara's discussion of it (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yohanan visits the sick Rabbi Elazar, light fills the room, both weep, and he raises him up and heals him: multiple actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 35b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's instruction to his students; speech only, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Embedded in Rabbi El'a's instruction is a single incident: Rav Beruna once juxtaposed redemption and prayer and rejoiced all day; one event with an emotional reaction, cited as evidence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 17a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rabban Yohanan ben Zakkai's habitual practice of greeting first; no event follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Blind Rav Sheshet goes to greet the king, outwits the heretic, blesses the king, and the heretic is blinded or destroyed: a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Eliezer falls ill and his students visit, but the rest is his teaching; mainly speech with one real event (R-C7 shape 1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Embedded incident: Rabbi Eliezer entered the synagogue, found no quorum, freed his slave and completed the ten; something happens and he responds, with a change. The surrounding legal discussion is not part of it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A student leads prayer too briefly, the students complain, and Rabbi Eliezer answers with a verse; one event, then mainly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33a:30-30",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A transmitted halakhic question and answer; speech only, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Ben Dama tells a dream and Rabbi Yishmael interprets it; speech only, no conflict and no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 36a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina sees Mar bar Rav Ashi's practice and challenges it with a mishna; ordinary scholarly challenge followed by legal discussion, no change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10b:39-40",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Tarfon recounts reclining on the road to recite Shema and being endangered by bandits, and the Sages rebuke him; a real event, tersely told, followed mainly by speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Adda bar Ahava tears a garment off a woman, it turns out she is a non-Jew, he is assessed four hundred zuz, and he quips about her name: events, consequence and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rabbi Ami and Rabbi Asi's habitual practice of praying where they studied; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Bar Kappara tells dreams and Rabbi interprets them; speech only, without conflict or a narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 59a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ketina walks by a necromancer's house, an earthquake rumbles, he asks aloud and the necromancer calls out to him and answers: a narrated encounter with several events and a response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report of a practice (Abaye's mother raised a lamb to accompany him), followed only by the Gemara's objection and answer; nothing follows from the act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A real incident (Rav Pappa visits, food is brought after the meal, he eats) followed by a challenge and his halakhic answer; mainly a vehicle for the ruling, with little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hiyya bar Ashi's report of Rav's habitual practice (washing, blessing, teaching), cited as evidence for a halakha; no one-time event or change.",
+    "error": null
+   }
+  }
+ ]
+}

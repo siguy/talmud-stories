@@ -1,0 +1,3962 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "7206dbc0f9e260a31d66e295e32bea778034ca3f",
+  "finished": "2026-11-09T00:10:40",
+  "outcomes": {
+   "ok": 224
+  }
+ },
+ "rows": [
+  {
+   "id": "Berakhot 2a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that narrates a specific one-time event (returning from a wedding) followed by a ruling, which satisfies the criteria for a story under R-C0. It contains multiple actions—returning, speaking, and responding—and is not a mere hypothetical or bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Yosei) encountering Elijah, involving multiple actions, dialogue with conflict/instruction, and a change in the protagonist's knowledge. Per R-B1, the opening formula 'Tanya' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3b:0-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a standard legal discussion (sugya) analyzing a Tannaitic teaching through hypothetical cases and dialectical objections. It contains no narrated events, actions, or post-biblical figures, consisting entirely of speech-acts and scholarly back-and-forth.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 3b:28-29",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with multiple actions and dialogue, but it is about King David and Ahitophel, who are biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a tanna teaching a baraita, which constitutes a speech-act or teaching rather than a narrated event. Under R-C2 and R-C7, standard rabbinic dialogue or teaching without conflict or a specific incident is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving post-biblical figures (rabbis) with a sequence of actions: a character falls ill, a visitor arrives, a dialogue ensues, and a physical action (giving a hand) results in a change of state (healing/standing up).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabbi Yoḥanan and Rabbi Ḥanina) where an action (falling ill) leads to an interaction and a change in state (being stood up/healed).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic narrative involving specific post-biblical figures (Rabbi Yoḥanan and Rabbi Elazar) and a sequence of actions: a visit, a miraculous display of light, an emotional dialogue, and a physical healing that changes the character's state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 5b:16-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rav Huna and his contemporaries involving a specific event (the wine turning to vinegar), a dialogue of conflict and rebuke, a change in the protagonist's behavior, and a miraculous resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 6b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a change in Rabbi Zeira's behavior (from criticizing the Sages to running himself) based on a specific realization. However, it is framed as a habitual change ('I too run') rather than a single one-time event, which aligns with the borderline criteria for events with limited change or habitual frames.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 6b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific individual and Elijah the Prophet, containing multiple actions (praying, appearing as an Arab, speaking, and killing) and a clear change in state. Under R-S1, Elijah appearing to a post-biblical figure is considered in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a post-biblical figure, Rabbi Yishmael ben Elisha, involving a specific one-time event with actions (entering the sanctum, seeing a vision, speaking, and receiving a nod) and a clear change or resolution. It includes the opening formula 'tanya' as per rule R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Yehoshua ben Levi) that begins with a habitual frame (the heretic's behavior) and transitions to a specific one-time event ('One day...') involving multiple actions and a change in the protagonist's perspective.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 7b:26-Berakhot 8a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between two rabbis regarding a specific incident (Rav Nahman's absence from synagogue). While it is primarily speech-acts, it contains conflict and a specific situational context, fitting the borderline criteria for dialogue with conflict or implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (Rabbi Yoḥanan's initial disbelief/confoundment) and an implied change in his understanding. Under R-C2 and R-C7 shape 1, speech-heavy interactions with conflict are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific change in behavior (Abaye's shift from praying in the synagogue to praying where he studies) triggered by a one-time event (hearing a specific teaching). This meets the criteria of a narrated action and change beyond a bare report of custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what the rabbis used to do (a habitual practice) cited as evidence of their legal view, with no specific event, change, or continuation narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of what Rabbi Abbahu used to do (a habitual practice) cited as a halakhic precedent. Under R-C5, a description of a rabbi's practice that lacks a one-time event, continuation, or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8a:28-28",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav Sheshet used to do (a habitual practice) cited as evidence of his view, with no one-time event or change following the habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events where Rav Beivai bar Abaye attempts to act on a plan, is corrected by another figure, and then attempts a second course of action before being corrected again. This contains multiple actions, conflict, and change beyond mere legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 8b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rav Pappa) involving multiple actions—visiting, refusing to sit, and lifting the bed—which lead to a discovery and a change in the situation. It follows the 'incident plus ruling' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (sages getting drunk at a wedding) followed by a specific action (coming before a rabbi) and a ruling that resolves the situation. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a quotation of a story from the Mishnah (R-C1) involving post-biblical figures (Rabban Gamliel and his sons). It narrates a specific event (returning from a wedding hall) followed by an interaction and a ruling, which qualifies as a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident (Rabbi Zeira being forced to bring a myrtle branch to the king) and a dialogue involving conflict over the interpretation of that event. Under R-C7 shape 1 and 2, it is borderline because it consists of a single event followed by a ruling/discussion and is primarily composed of speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 9b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event (Rav Beruna's joy after a specific prayer) but is framed within a speech-act (Rabbi El'a's instruction to Ulla) and lacks a continuation or further change beyond the emotional reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving post-biblical figures (Rabbi Meir and Berurya) with a clear sequence of events: the hooligans cause anguish, Meir intends to pray for their death, Berurya intervenes with a dialogue that creates conflict and change, and the story concludes with a specific action and its successful outcome (repentance).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue (speech acts) between a heretic and Berurya. While it lacks physical action, it contains clear conflict and mockery, which fits the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a heretic and Rabbi Abbahu. Under R-C2 and R-C7, speech-only interactions with conflict (the heretic's challenge) are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10a:25-31",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative with conflict, dialogue, and a change in state (Hezekiah's illness and the interaction with Isaiah), but the characters are biblical figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving King Hezekiah, a biblical character. According to R-S1, stories about biblical figures are considered out of scope for this catalogue, which focuses on rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 10b:39-40",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Rabbi Tarfon traveling and reclining) that led to a change in state (endangerment) and a response from others (the Sages' rebuke). Under R-C0, the incident followed by a ruling or response constitutes a story, and R-B1 includes the introductory formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative incident involving post-biblical figures (Rabbi Yishmael and Rabbi Elazar ben Azarya) with specific actions, conflict, and dialogue. Per R-B1, the story includes the opening formula 'The Sages taught' and the introductory legal position of Beit Hillel which frames the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story quoted in the Talmud (R-C1) that narrates a specific historical incident involving post-biblical figures (the elders and R. Yohanan ben HaHoranit). It contains multiple actions—traveling, visiting, and a verbal exchange—that go beyond a bare legal report (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story embedded within a dictum where a rabbi narrates a specific one-time event (traveling on the road and reclining) that led to a change in state (danger from highwaymen) and a subsequent response from his colleagues.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice (what he 'would' do) cited as evidence for a legal view, with no specific one-time event or change following the habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 11b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures (Rabbi Abba and Rabbi Yosei bar Abba) who visit a place, are asked a question, fail to answer, and travel to seek a ruling from other rabbis. This contains multiple actions and a resolution, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a sage's thought or intention followed by a colleague's verbal objection; it consists entirely of speech-acts and standard rabbinic dialogue without a narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a standard rabbinic dialogue consisting of a thought and a verbal response with no physical action or change. Under R-C2 and R-C7, speech alone without conflict or a resulting event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 12a:27-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where one rabbi invites another to hear a teaching; there is no action, conflict, or change narrated beyond the act of speaking.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two rabbis where an action (extending the prayer) is observed and leads to a response and instruction. This contains both a physical setting/action and a speech-act that resolves the situation, meeting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Rav and Rabbi Hiyya regarding an observation of Rabbi Yehuda HaNasi's behavior. While it is primarily a speech-act (dialogue) about a practice, it includes a specific observation of a physical action (passing hands over the face) and contains a mild conflict/correction, fitting the borderline criteria for speech with conflict or implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 13b:23-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of Rabbi Yoḥanan's habitual practice used as a legal precedent; it lacks a specific one-time event, conflict, or narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single action (Ravina not interrupting his prayer) cited as a challenge to a legal ruling. Under R-C5 and the limit of R-C0, a single act that leads to no further narrated change or response is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where a person leads the service before Rabba and Rabba reacts with a mocking retort. This meets the criteria of an event followed by a response/conflict, and the inclusion of the introductory formula 'Rabbi Abbahu said...' is required by rule R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 14b:15-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     7,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrated incidents involving Rav: a specific sequence of ritual actions in segment [2] and a habitual practice witnessed by Rav Hiyya bar Ashi in segment [7]. Segment [9] provides a narrative resolution to the conflict by explaining the 'messenger was at fault,' which constitutes a change or causal explanation beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue and a report of a scholar's teaching without any narrated action or change. Under R-C2 and R-C7, speech-acts and legal discussions without conflict or events do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, specifically a rabbi teaching a baraita and another rabbi analyzing its authorship. Under R-C2 and R-C7, speech-acts without an accompanying event or conflict do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 15b:26-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard rabbinic dialogue where one sage teaches a baraita and another provides examples. Under R-C2 and R-C7, speech-acts without conflict or a narrated event beyond the dialogue do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16a:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (tying a canopy, going to the study hall, and returning) with a clear sequence of actions and a resolution. Per R-C0, the inclusion of a legal ruling within the narrative does not disqualify it as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (ma'aseh) involving Rabban Gamliel. It contains a specific event (marriage and recitation of Shema), dialogue with students involving conflict/challenge, and a resolution that demonstrates a change or specific action beyond a mere ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story involving a specific event (Rabban Gamliel bathing), a conflict with his students, and a resolution. Although it is a Mishnah story, rule R-C1 states that the Talmud's quotation of such stories is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical narrative about Rabban Gamliel that includes a specific event (the death of Tavi and the acceptance of condolences) followed by a dialogue and ruling. Although it is a Mishnah story, rule R-C1 dictates that it is included in the catalogue as a Talmudic citation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 16b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a one-time event (the death of a maidservant) followed by a series of distinct actions (the rabbi moving through different rooms and the students following him) and a resolution through a ruling. It meets the criteria of having multiple actions and a change in the situation beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 17a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice (always greeting others first) used as an exemplum, with no specific one-time event, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18a:12-Berakhot 18b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrated event (walking in a cemetery with dragging fringes) and includes conflict between two rabbis, but it transitions into a lengthy exegetical discussion. Under R-C7 shape 1 and 2, a passage that is mainly speech or one event followed by discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (the sons of Rabbi Hiyya) who travel, experience a change (forgetting their learning), and engage in a dialogue driven by their emotional distress. This contains both action and conflict beyond mere legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-year narrative with distinct actions, conflict, and change involving a post-biblical pious man. It follows the rule that an incident used to challenge a legal point is a story, and it includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Ze'iri) involving a sequence of events: depositing money, the death of the innkeeper, and a journey to the cemetery to speak with the deceased. It satisfies R-C0 as it narrates events that happened with a clear change and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 18b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Shmuel and his father (post-biblical figures) involving a specific crisis, a journey to the cemetery, dialogue with the dead, and a resolution that changes the status of Levi and the orphans' money.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific one-time event ('There was once someone who spoke...') where an action (speaking ill of the dead) leads to a physical consequence (a reed falling and fracturing his skull). It satisfies R-C0 as it describes an event that happened rather than a hypothetical case, and it avoids R-C5 because the action leads to a clear change and continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Elazar ben Hanokh (doubting the ritual, being excommunicated, and the court stoning his coffin upon death), which meets the criteria of an incident with actions and a change in status. Although it is a quotation from the Mishnah, under rule R-C1, the Talmud's citation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a Talmudic quotation of a Mishnah story (R-C1) consisting of a speech-act (a message sent) with conflict between Shimon ben Shataḥ and Ḥoni, but without the primary actions of the incident narrated in full (R-C2, R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving post-biblical figures (Theodosius of Rome and Shimon ben Shataḥ) where an action (instituting a custom) leads to a conflict and a response (a message threatening ostracism). Under R-C0 and R-C2, the presence of conflict and the interaction between the figures elevates this beyond a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('On that day') involving multiple actions (gathering, burning, and ostracizing) and a significant change in the status of a rabbi. It includes the opening formula 'And it was taught' as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 19b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (the students laughing at Rav bar Shaba) and a resolution (Rav Kahana's rebuke and explanation), which fits the criteria for a borderline story based on speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative about Rav Adda bar Ahava, featuring multiple actions (seeing, ripping, being assessed a fine) and a resolution with a change in state. Although embedded within a dialogue as an exemplum, it meets the criteria for a story under R-C4 and R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame ('Rav Giddel was accustomed'), which R-C3 allows if an event follows. While the interaction is primarily dialogue (speech-acts), there is conflict/challenge from the Sages and a sharp retort, which fits the borderline criteria for speech with conflict under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 20a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Rabbi Yoḥanan sitting at the gates) that functions as a frame for a specific interaction and dialogue with the Sages. Under rule R-C3, a habitual frame is a story when it includes a specific event or change, and here the dialogue regarding the 'evil eye' constitutes a narrated incident with conflict and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 21b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, including a legal dilemma, a report of a teaching brought by Rav Dimi, and a final halakhic ruling. There are no narrated events or actions beyond speech-acts, and the scholarly disagreement does not constitute the type of conflict required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 21b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal argumentation regarding the derivation of a ruling. There are no narrated events or actions beyond the speech-act of the debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific rabbi and his disciples with multiple actions (walking, asking, immersing, teaching) and a resolution that explains the rabbi's personal stringency. It follows the 'incident plus ruling/explanation' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident involving a student and Rabbi Yehuda ben Beteira where an action (the student hesitating) leads to a response and a change in behavior. Per R-B1, the opening formula and the preceding dictum are included as the frame for the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a chain of specific historical actions (whispering a ruling from one sage to another) and a concluding change in behavior (teaching it publicly in the market). While it involves speech-acts, the sequence of transmission and the conflict regarding how it was taught provide the necessary narrative action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative incident ('an incident involving one...') with a specific event, dialogue, and a change in outcome (the man desisting). It includes the opening formula 'As it was taught' as per R-B1 and meets the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal debate between Rav Huna and Rav Hisda without any narrated action or event. Under R-C2 and R-C7, speech-acts without conflict or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rabbi Zeira in a bathhouse, including an action (ordering his attendant to pour water) and a dialogue with Rabbi Hiyya bar Abba that results in a halakhic explanation. This meets the criteria of an incident involving post-biblical figures with narrated actions beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22a:23-Berakhot 22b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical action (Rav Nahman preparing a jug) and an incident in Usha where people came to ask a rabbi, but it is primarily structured around legal speech and rulings. Under R-C7 shape 2 and R-C0, an incident followed by a ruling with implied change is borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where three rabbis ate together and engaged in a competitive dialogue regarding who should lead the blessing. This contains both action (eating together) and conflict/interaction between the figures that goes beyond a simple legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 22b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what a rabbi used to do (a habit) cited as a legal precedent, followed by a ruling that the halakha does not follow him. Under R-C5 and the limits of R-C0, a description of a practice that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a standard rabbinic dialogue consisting of a legal dilemma and a disagreement between rabbis. Under R-C0 and R-C7, coming before a rabbi for a ruling without another narrated action or change is not a story, and speech-acts alone without conflict or events do not qualify.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (placing phylacteries, theft, public shaming, suicide) and a clear causal connection leading to a change in law. It follows the 'incident followed by a ruling' pattern established in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 23a:20-Berakhot 23b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes the habitual practices of Rabbi Yoḥanan and Rav Naḥman ('When we would walk after... he would give/not give') rather than a specific one-time event. Under R-C3 and R-C5, a custom or habit that does not lead to a specific incident or change is considered a bare report of practice and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('I was once standing before Rava') involving multiple actions: a request, a discovery of an object, and a realization. Per R-C0 and R-C3, this is a story because it describes an incident that happened rather than a hypothetical case or a bare custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:17-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what a rabbi did ('I saw Rabbi hang his phylacteries') cited as evidence for a legal discussion. Under R-C5 and R-C0, a single act that leads only to a ruling or a discussion of its legality, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24a:22-Berakhot 24b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice and physical actions during prayer, cited as evidence of proper conduct rather than as a narrative event that leads to a change or response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 24b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Rabbi Abba and Rav Yehuda) with specific actions: avoiding a teacher, going to a study hall, and a concluding reaction. It meets the criteria of a story because it describes a one-time incident with a change in the protagonist's state of mind.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a standard rabbinic dialogue consisting of a legal dilemma and a response; the reference to students on mats is an observation of a general state of affairs used as evidence, not a narrated event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Ravina and Rav Yehuda of Difti ('I was standing before... he saw... he said to me'), which constitutes an incident followed by a ruling or instruction as defined in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dictum followed by a single speech-act where Rav Yosef instructs his servant to act according to a specific ruling. Under R-C0 and R-C5, a single act or instruction that merely illustrates a legal position without further narrated action, conflict, or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 25b:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav Ahai and his son with multiple actions (arranging a marriage, entering the canopy, an unsuccessful attempt, and an investigation) leading to a discovery and a change in the situation. It fits the definition of a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 26a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event where Mar Zutra visits Rav Ashi, observes a specific action (the partition), and engages in a dialogue that leads to a change or admission ('it did not enter my mind'). This meets the criteria of an incident involving post-biblical figures that goes beyond a bare report or legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav and Rabbi Yirmeya bar Abba with multiple actions (praying, finishing, and refraining from moving) that lead to a resolution/ruling. Under R-C0, an incident followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rav and Rabbi Yirmeya bar Abba regarding a specific incident. While it is primarily speech-based, it describes a real event (Rav praying early) and contains a linguistic conflict/distinction that illustrates their relationship, fitting the borderline shape of speech with implied change or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once the sky became overcast...') involving a post-biblical figure (Avidan) and a community, followed by a ruling from Rabbi Yehuda HaNasi. Under R-C0, an incident followed by a ruling counts as a story, and the inclusion of the introductory formula 'Didn't Avidan say' is required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 27b:14-Berakhot 28a:11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative (the deposition of Rabban Gamliel) featuring multiple actions, conflict, and significant change. It begins with a formal opening formula and includes both miraculous events and courtroom-style drama.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Rabbi Zeira sitting in the doorway) that leads to a specific one-time event: Rabbi Natan bar Tovi emerging and a dialogue ensuing. This interaction includes multiple actions and a change (Rabbi Zeira learning the ruling forty times to resolve his uncertainty), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Avya falling ill and missing a lecture) followed by a dialogue with conflict and resolution where Abaye attempts to placate Rav Yosef. Under R-C0 and R-C2, this contains both actions and a dynamic interaction beyond standard legal debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Rabbi Eliezer and his students) where a specific incident—falling ill and being visited—leads to a dialogue and teaching. Per R-B1, the story includes the opening formula 'The Sages taught'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure, Rabban Yoḥanan ben Zakkai, featuring a specific one-time event (falling ill and dying) with multiple actions, dialogue, and a clear change of state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 28b:22-Berakhot 29a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a clear narrative about Shmuel HaKatan instituting a blessing and later forgetting it while leading prayer, which constitutes a one-time event with specific actions. Following R-B4, the subsequent legal debate and commentary (segments 5-9) are excluded from the story itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 29b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage records a speech-act where Elijah appears to a rabbi to offer moral and practical instruction. Under R-C2 and R-C7, dialogue with a post-biblical figure that lacks a narrated action or change beyond the speech itself is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated one-time event involving two rabbis on a journey where an action (stopping to pray) leads to a change in behavior and a dialogue that resolves the conflict between their legal positions. It fits the criteria of a story because it describes a specific incident that happened rather than a hypothetical case or a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30a:18-Berakhot 30b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story embedded within Shmuel's dictum (R-C4). It describes a specific one-time event—the arrival of the king's army—which disrupted the usual custom and led to a specific action and change in Shmuel's behavior (R-C3, R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between two rabbis with a clear conflict and a sharp retort ('Go and read your verses outside'). Under R-C2 and R-C7, speech-based interactions with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Abaye and Rabba with a conflict regarding proper conduct, but it lacks significant physical action beyond the speech-acts and the state of being joyful.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a specific interaction between two rabbis involving an observation and a dialogue with conflict (a rebuke). Under R-C2 and R-C7 shape 1, speech-heavy interactions with conflict but minimal physical action are classified as borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 30b:24-Berakhot 31a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Mar son of Ravina and the Sages) with multiple actions—making a feast, seeing the joy, and breaking a cup—which results in a change of emotional state (sadness).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rav Ashi) involving multiple actions (making a feast, seeing the Sages, bringing a cup, breaking it) and a resulting change in the emotional state of the characters (they became sad).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech acts (a request to sing and the response) with no physical action or change narrated. However, it contains conflict regarding the appropriate mood of the wedding feast, which aligns with the borderline shape for dialogue-heavy passages.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Rav Kahana accompanying Rav Shimi bar Ashi) that leads to a dialogue and a change in the characters' state (reminding the rabbi of a teaching). This fits the definition of a story as an event that happened between post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's practice (accompanying his mentor) that does not lead to any further action, conflict, or change. Under R-C5, a description of what a rabbi did without a continuation or narrated event is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a parable involving a king and a poor man used to illustrate a biblical character's (Hannah's) prayer. Under rule R-S1, stories about biblical characters or their immediate illustrative parables are considered out of scope for the catalogue of rabbinic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 31b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with dialogue, conflict, and action, but it is a retelling of a biblical episode involving Samuel, Eli, and Hannah. Under rule R-S1, stories about biblical characters are considered out of scope for this specific catalogue of rabbinic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 32b:29-Berakhot 33a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (a pious man) and an officer. It contains multiple actions, conflict, and a resolution where the officer is appeased and the man returns home, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Hanina ben Dosa) involving multiple actions, a one-time event (the arvad incident), and a resolution. It includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33a:30-30",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a report of a legal question and answer between rabbis with no conflict or change narrated. Under R-C2 and R-C5, standard rabbinic dialogue or a bare report of a ruling does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:2-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrated event (Rabbi Zeira riding a donkey) and a dialogue with conflict regarding a legal ruling. However, the bulk of the passage is a standard legal discussion (segments 3-7) that interrupts the narrative before returning to the resolution of the dialogue in segment 8.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a man acted (led prayer) and a dialogue with conflict followed between Rabba and Abaye. Under R-C0, an incident involving a specific person ('a certain man') that leads to a rabbinic interaction counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 33b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific event involving a post-biblical figure (Rabbi Hanina) and a prayer leader. It contains multiple actions (descending before the ark, reciting praises, waiting, and rebuking) and a clear conflict regarding the proper way to address God.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (Rabbi Eliezer) and a student. It contains multiple actions (descending before the ark, prolonging prayer, students complaining) and a resolution through the rabbi's response, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (a student and Rabbi Eliezer) with a clear action, conflict (the students' protest), and a resolution through the rabbi's response. It follows the 'incident followed by a ruling/response' shape defined as a story in R-C0 and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rava bowing) followed by a dialogue with conflict (the Sages questioning his practice). Under R-C7 shape 1 and 2, an incident followed by a discussion or mainly speech acts is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:26-26",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabban Gamliel and R. Hanina ben Dosa) involving multiple actions, conflict/dialogue, and a clear change in state (the healing of the son). It includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 34b:27-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (Rabbi Hanina ben Dosa and Rabbi Yohanan ben Zakkai) involving a specific event—the illness of a son—followed by actions and a clear change in state (the son lived).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 35b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (Rava's instruction to his students) without any narrated action, conflict, or change following the request. Under R-C2 and R-C7, standard rabbinic dialogue or teaching without an event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 35b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual practice of Rava used as evidence in a legal discussion about the properties of wine. Under R-C5, a bare report of what someone used to do that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 36a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Ravina finding Mar bar Rav Ashi eating caper buds) followed by a dialogue and a legal challenge. Under R-C7 shape 1 and 2, this is borderline because it consists of one event followed by a speech-act and a legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 36b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 is a bare report of a botanical experiment used as evidence for a legal definition, lacking human characters or narrative change. Segment 3 is a report of a rabbi's habitual practice followed by a legal ruling, which does not constitute a story under the criteria for actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 37a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving post-biblical figures (Rabban Gamliel and Rabbi Akiva) with specific actions (eating, jumping to bless) and a conflict in dialogue that leads to a resolution based on a legal principle.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal inquiry and response between Abaye and Rav Yosef regarding the proper blessing for a food item. This is standard rabbinic dialogue without conflict or narrated action, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Mar Zutra used to do or did on one occasion as a matter of personal practice. It lacks a continuation, a response from another person, or a change in outcome, which under R-C5 makes it a precedent rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving named rabbis (Rava and Ravina) and a student. It includes an emotional/mental state (Rava's confusion) and a specific action (Ravina intervening to clarify), which goes beyond a bare legal ruling or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38a:15-Berakhot 38b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day he happened to come before him') following a habitual frame, involving multiple actions and a conflict where Rabbi Zeira rebukes the guest's choice of blessing.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where people came and asked Rabbi Yoḥanan a question about a lupin boiled seven times and he issued a ruling. This follows the R-C0 criteria where an incident followed by a ruling counts as a story, and it is embedded within a larger scholarly dictum as described in R-C4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 38b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person eyewitness report of a specific event ('I saw Rabbi Yoḥanan eat a salted olive') followed by an action (reciting a blessing). Under R-C0 and the editor's 2005 lists, such 'one-line eyewitness wonders' are accepted as stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion that merely alludes to an incident (bringing an olive to Rabbi Yoḥanan) as evidence for a halakhic measure. It lacks the actions, conflict, or change necessary to be considered even a borderline story, functioning instead as a bare report or precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving rabbis and students with multiple actions, conflict (ridicule and anger), and a tragic change in outcome (the students' death). It follows the R-C0 criteria for a story as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a brief interaction between a rabbi and a tanna involving dialogue and a pun. While it contains conflict/resolution in the form of a verbal exchange and a name-play, it lacks significant physical action or change, placing it in the borderline category of speech-based incidents.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of the habitual practices of Rav Kahana and Rabbi Zeira followed by a standard rabbinic dialogue between Ravina and Rav Ashi. There is no specific event or change narrated, only descriptions of conduct cited as halakhic precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 39b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a habitual practice (what the rabbis would do when the opportunity presented itself) cited as a precedent, with no specific one-time event, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 40a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rava bar Shmuel visits the Exilarch and breaks bread immediately, followed by a dialogue and a ruling that resolves the apparent contradiction with his previous teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 40b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Binyamin the shepherd) who performed an action (eating and reciting a blessing) followed by a rabbi's ruling (Rav). This fits the criteria of a story where an event happened and led to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 41b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rav Hisda and Rav Hamnuna) sitting at a meal, where an action (taking and blessing dates) leads to a conflict and dialogue. Under R-C0 and R-C7, the presence of multiple actions and a resolution through a sharp retort or change in understanding qualifies it as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific event involving Rav Huna eating a large quantity of loaves followed by a dialogue and a ruling from Rav Nachman. Under rule R-C0, an incident followed by a ruling counts as a story, as it narrates an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Yehuda preparing for his son's wedding) and a subsequent interaction involving conflict and a ruling. Under R-C0 and R-C2, the combination of a narrated incident, dialogue with conflict, and a resolution constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Pappa visits a home, eats after a meal, and is challenged by his hosts. This contains multiple actions and a resolution through a ruling, fitting the definition of a halakhic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rava and Rabbi Zeira) with multiple actions—visiting, the table being removed, food being sent, and one rabbi eating while the other abstains—followed by a dialogue and ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where one rabbi visits another and observes his actions, followed by a verbal interaction and approval. This constitutes a narrated incident with multiple actions and a resolution, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Yitzḥak visiting Abaye) and an action (Abaye reciting multiple blessings) followed by a dialogue and a resolution. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 42b:12-Berakhot 43a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event following the death of Rav, involving multiple actions (traveling, eating, debating, and Rav Adda bar Ahava rending his garment) and a resolution provided by the arrival of an elder.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 43a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event involving post-biblical figures (Rav, R. Hiyya, and Rabbi) with specific actions, an emotional reaction ('trembling'), and a resolution through dialogue. While it begins with a dictum, the story itself illustrates the rule through a concrete incident that happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 43b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Pappa visits a house and performs an action (blessing the myrtle first) that leads to a conflict and dialogue. It contains multiple actions, a change in the situation through the interaction, and a resolution regarding Rav Pappa's motivation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 begins with a habitual frame ('When we would go...') but segment 3 describes a specific sequence of events where Shimon ben Lakish eats until incapacitated, Rabbi Yohanan reports it, and the Nasi sends authorities to retrieve him. This constitutes a narrated action and change beyond a mere report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a historical fact or custom (King Yannai's city and its production) cited by Rav Dimi. It lacks a narrated event, conflict, or change, and functions as a speech-act without a story following it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ameimar, Mar Zutra, and Rav Ashi) where an action occurs (vegetables are brought and some eat while one refuses) followed by a dialogue with conflict regarding their conduct. This meets the criteria for a story as it describes a specific incident rather than a hypothetical legal case or a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 44b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C3",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue (speech-act) and a report of a habitual practice (Rav Pappa's wife's cooking method) used as evidence in a legal/medical discussion. Under R-C3 and R-C5, a habit without a one-time event is generally not a story, but the specific mention of the wife's action following the dialogue aligns with the borderline shape of 'mainly speech, but something happens' (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 45b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav Pappa did, cited as a challenge to a legal ruling. Under R-C5 and the limits of R-C0, a single act with no continuation or narrated change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 45b:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures who eat together, face a dilemma, act upon it by blessing individually, and then receive a ruling from Mareimar. This fits the criteria of an incident followed by a ruling where there is a narrated action and change beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (rabbis) containing multiple actions, a change in state (illness to recovery), and a specific event (the feast) with dialogue and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Mar Zutra visited Rav Ashi and an incident of mourning occurred, leading to a specific action (the recitation of a unique blessing). This meets the criteria of a story as it describes an event that happened with a change in circumstances and a subsequent response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 46b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific rabbis (Rav, Rabbi Hiyya, and Rabbi) that includes actions beyond speech, specifically Rav trembling and the interaction between the figures during a meal.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (traveling on the road) involving two rabbis, featuring an emotional reaction (Abaye's offense), conflict (the verbal exchange), and a resolution through a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific event (Rabba bar bar Hana arriving early at a wedding house to teach his son), but the remainder is standard rabbinic dialogue and legal debate. Under R-C7 shape 1 and R-C2, a passage that is mainly speech-acts but contains an initial event or conflict is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Shimi bar Ḥiyya arrives and eats hurriedly, followed by a dialogue between Rav and Shmuel that resolves his status for the meal. This contains multiple actions and a conflict of opinion regarding the meal's conclusion, meeting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav Aḥa entered a meal and interacted with students, followed by a ruling. Under R-C0, an incident involving a post-biblical figure that includes an action and a resolution/ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rami bar Hama excluding Rav Menashya) followed by a significant change or consequence (Rami bar Hama's death and Rava's causal explanation), which meets the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 47b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabbi Eliezer entering a synagogue, finding no quorum, and freeing a slave to complete it. This is a one-time event with specific actions and a change in status, fitting the definition of a story even though it is cited within a legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 48a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Abaye and Rava as children) with multiple actions—answering, pointing, and going outside—leading to a change in state (Rabba's recognition of their future greatness).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 48a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (King Yannai and Shimon ben Shataḥ) with multiple actions, conflict, and a resolution. It meets the criteria of a story about events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabba bar Rav Huna visited the Exilarch and performed an action (concluding a blessing with two themes), followed by a conflict in the form of Rav Hisda's derisive rebuke and a legal challenge.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated one-time event where Rav Hisda visited the Exilarch and Rav Sheshet reacted with physical anger ('stiffened his neck like a snake'), which constitutes a change and conflict beyond mere legal dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 49a:21-Berakhot 49b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi (Rav Nahman) erred and took a physical action (returning to the beginning of the prayer), followed by a dialogue and a ruling that resolves the incident. This fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where two rabbis visited the Exilarch's house and one took action to gather a group, which was then resolved by a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it contains actions beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual practice ('When we would eat...') rather than a one-time event, but it includes an emotional reaction and conflict (the Exilarch becoming angry) that explains the change in behavior. Under R-C7 shape 1 and 3, it qualifies as borderline because it contains actions and conflict beyond simple legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rafram bar Pappa came to a synagogue and acted in a way that caused a public reaction and a subsequent rebuke from Rava. This contains multiple actions and a conflict, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 50b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (eating together and throwing fruit) followed by a conflict and dialogue. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical case, and it contains multiple actions beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue/speech-act between a rabbi and an angel. While it lacks physical action, it is considered borderline because it involves a supernatural encounter and implied conflict with angels of destruction, fitting the criteria for speech-based borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (the Angel of Death speaking to a rabbi), which generally does not count as a story. However, it is categorized as borderline because it involves a supernatural encounter and conflict/implied danger (the angel dancing with a sword and license to destroy).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 51b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [3] contains a full narrative with multiple actions (arising in a rage, breaking barrels), conflict between Yalta and Ulla, and a sharp resolution. Segment [2] is a legal teaching (baraita) that interrupts the narrative flow and is not part of the story itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 52b:23-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Huna bar Yehuda visits Rava and observes an action, followed by a dialogue involving conflict over a ritual practice. Under R-C0, an incident followed by a ruling or explanation counts as a story, and the interaction here contains more than just standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 53b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two students with distinct actions (returning vs. not returning) and clear consequences/changes (finding gold vs. being eaten by a lion), satisfying the requirement for more than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 53b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabba bar bar Hana) involving a specific incident, a dilemma, a deceptive action to resolve it, and a miraculous outcome. It satisfies R-C0 as it narrates events that happened and includes multiple actions and a change in state (finding the dove).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man (attacked by a lion and rescued) followed by a ruling from Rava. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Mar, son of Ravina) where a sequence of actions occurs: he was walking, became thirsty, a miracle happened, and he drank. This meets the criteria of a story as it describes a one-time event with a change in state, rather than a mere legal precedent or a habitual custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a wild camel attack and a miraculous rescue) involving a post-biblical figure, Mar son of Ravina. It includes multiple actions and a change in state, followed by the character's subsequent habitual practice of reciting a blessing.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54a:15-Berakhot 54b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with characters, conflict, and a miraculous resolution, but it is a retelling of a biblical episode involving the Israelites in the wilderness and the Emorites, which falls outside the scope of stories about rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions and change, but it concerns biblical figures (Og and Moses) rather than rabbis or post-biblical figures, placing it outside the catalogue's scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 54b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Yehuda falling sick and recovering) followed by a visit and a dialogue that results in a change of legal status (his exemption from a blessing). Under R-C0, this is a story because it describes an event that happened to a rabbi rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (Rabbi Yehuda) and a matron. It contains a dialogue with conflict (the matron's insult) and describes a specific action/habit that leads to a physical change (the appearance of his face), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrative frame of three rabbis sitting together and speaking, but the content is almost entirely speech-acts consisting of legal/ritual advice. While it includes a brief report of Rava's habit when ill, it lacks a specific one-time event or change, placing it in the borderline category of 'mainly speech, but something happens' or 'bare reports'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Shmuel's habitual practice and speech-acts in response to dreams, but it lacks a specific one-time event, change, or causal narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 55b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One time, I dreamed a dream and went to each of them') involving a post-biblical figure, Rabbi Bena'a, which resulted in a change or realization ('all of them were realized in me'). It includes the opening formula attributing the story as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories where a rabbi interacts with a post-biblical ruler; each follows a pattern of dialogue leading to a specific action (thinking all day) and a resulting change (seeing the dream).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56a:1-Berakhot 56b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complex narrative with multiple actions, conflict, and change. It begins with a habitual frame (R-C3) but moves into a specific series of events involving Abaye, Rava, and Bar Haddaya, concluding with a dramatic resolution and the death of the antagonist.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue (a dream report and its interpretation) without any narrated physical action or change in the present. Under R-C2 and R-C7 shape 1, speech-only interactions are considered borderline when they involve specific figures and a meaningful exchange, even if they lack the actions required for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue between Bar Kappara and Rabbi regarding dream interpretation. Under R-C2 and R-C7, speech-only passages with conflict or interaction but no physical action are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 56b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a series of interactions between a rabbi and a heretic. It moves beyond mere dialogue into narrated events and changes, specifically the arrival of a woman who confirms the rabbi's interpretation and the heretic finding a hidden treasure as predicted.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person report by Rav Ashi of a specific event (the dream) followed by a change in status (ascending to greatness). While it is a bare report of an incident used to confirm a teaching, it meets the criteria for borderline because it narrates a real event with a resulting change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific events that happened to named rabbis (dreaming and subsequently being appointed to office) rather than a hypothetical legal case or a general custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 57b:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes the habitual practices of Rava and Mar son of Ravina (what they 'would' do) and a statement by Rav Ashi, but these are bare reports of customs or views that do not lead to a specific one-time event, change, or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a specific one-time event where Ben Zoma saw a multitude on the Temple Mount and reacted with a blessing. While segment [3] describes his habitual sayings and general worldview, the initial incident qualifies as a story under R-C0 and R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rav Sheshet (a post-biblical figure) involving multiple actions, conflict with a heretic, and a dramatic resolution where the heretic is punished. It meets the criteria for a story as it narrates a specific event with change and causality rather than a mere legal ruling or custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58a:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Sheila) involving multiple actions, conflict with an informer and the Persian authorities, and a clear change in outcome where the rabbi is vindicated and kills his pursuer.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Ulla and Rav Hisda walk along a road and encounter a ruined house, which triggers an emotional reaction (sighing) and a dialogue. Under R-C0 and R-C7, the combination of the physical action (walking/encountering), the emotional event (sighing), and the subsequent dialogue with conflict/resolution constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 58b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions: rabbis walking on a road, a meeting, a dialogue with conflict, and a dramatic change where the rabbis' gaze causes a character's death.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 59a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event involving Rav Ketina walking on a road and encountering an earthquake at a necromancer's house, followed by a dialogue and a change in the situation. It includes an opening formula and a specific incident ('Rav Ketina was once walking...') rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative incident involving Hillel the Elder (a post-biblical figure) where an event (hearing a scream) leads to a specific action/speech-act reflecting his character. Per R-B1, the opening formula is included; per R-B4, the subsequent legal commentary by Rava is technically distinct but the passage as a whole contains the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rabbi Yishmael) and a student. It contains physical action (walking in the marketplace), an emotional state (the student being afraid), and a dialogue with conflict/rebuke that leads to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a physical action (walking and sighing) followed by a dialogue with conflict/rebuke. Under R-C2 and R-C7 shape 1, it is borderline because it is primarily a speech-act exchange but contains a real event and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60a:26-26",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Abbahu) involving a specific one-time event (the floor collapsing) and a miraculous action (saving 101 men) that leads to a change in state and a concluding statement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 60b:11-Berakhot 61a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Rabbi Akiva with multiple actions, causal connections, and a clear change in outcome. Although it is embedded within a dictum (R-C4) and begins with an opening formula (R-B1), the sequence of events—being refused lodging, the loss of his animals, and the subsequent raid on the city—constitutes a classic rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 61b:5-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-B1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rabbi Akiva and Pappos ben Yehuda, featuring multiple actions, conflict with the Roman empire, a parable, and a tragic resolution with a change of state (execution and heavenly reward).",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 61b:15-Berakhot 62a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific incident between Abaye and Rabba involving physical actions (moving bricks) and conflict. Segment [3] is a classic Tannaitic story introduced by a formula (R-B1) that includes specific actions (entering, observing) and a dialogue with conflict between Rabbi Akiva and Ben Azzai.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('I once entered') involving post-biblical figures, which includes physical actions and a dialogue containing conflict and a retort. Per R-B1, the opening formula is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions (entering, hiding, observing), conflict between the characters, and a resolution. It meets the criteria of an event that happened to post-biblical figures (rabbis) rather than a mere legal hypothetical or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about specific rabbis (Ami and Asi) and a particular location in Tiberias. It describes a habitual danger (demons harming pairs) followed by the specific actions of the rabbis and their dialogue with the Sages, meeting the criteria for a post-biblical story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (raising a lamb for protection) rather than a one-time event, which under R-C3 and R-C5 often counts as a custom or report. However, because it involves a specific post-biblical figure (Abaye) and implies a change in his environment to avoid harm, it fits the borderline shape of a 'minimal event' or 'habitual frame' described in R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a change in behavior (from rattling a nut to constructing a window and placing a hand) triggered by a specific life event (Rava becoming head of the yeshiva), which satisfies the requirement for actions and change beyond a mere custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('a certain eulogizer went') involving a post-biblical figure and a rabbi, containing both action and a dialogue with conflict. Under R-C0 and R-C2, the interaction between the eulogizer and Rav Nahman constitutes a story rather than a mere legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two rabbis (Rav Safra and Rabbi Abba) with multiple actions: entering, coughing, speaking, and a subsequent rebuke. This meets the criteria of a story about post-biblical figures where an incident leads to a change or interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 62b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a rabbi and a Roman, featuring multiple actions (entering, pushing, leaving, a serpent attacking) and a clear change in state/outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 63a:22-Berakhot 63b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Hanina and the scholars) involving a series of actions, conflict, and a clear change in the emotional state and behavior of the community. It follows the rule that dialogue with conflict and implied change constitutes a story, and it includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 63b:4-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrated event of the Rabbis entering the academy in Yavne (R-C7 shape 1), but the vast majority of the text consists of speech-acts (homilies and teachings). While it contains post-biblical figures and a framing event, the lack of further action or change beyond the delivery of these sermons places it in the borderline category.",
+    "error": null
+   }
+  },
+  {
+   "id": "Berakhot 64a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical rabbis involving multiple actions, conflict (the choice of a leader), and a clear change or outcome over time. It follows the rule that a story narrates events that happened, including a specific one-time event (the query to Eretz Yisrael) and its long-term consequences.",
+    "error": null
+   }
+  }
+ ]
+}
