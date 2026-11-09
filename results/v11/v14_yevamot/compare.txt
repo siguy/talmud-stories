@@ -1,0 +1,62 @@
+== recall (counts_for_recall)
+v11_twin2_r1   end-to-end 93/100 = 93.0%   given-triage 93/100
+v11_twin2_r2   end-to-end 93/100 = 93.0%   given-triage 93/100
+v11_twinall    end-to-end 94/100 = 94.0%   given-triage 94/100
+v14_r1         end-to-end 95/100 = 95.0%   given-triage 95/100
+v14_r2         end-to-end 93/100 = 93.0%   given-triage 93/100
+== list stories that differ between runs
+yevamot_011 Yevamot 36b ['Yevamot 36b', 13] ['Yevamot 37a', 0] v11_twin2_r1=0 v11_twin2_r2=0 v11_twinall=0 v14_r1=1 v14_r2=0 | rejected-only: {'v11_twin2_r1': False, 'v11_twin2_r2': False, 'v11_twinall': False, 'v14_r1': True, 'v14_r2': False} | רבינא משמיה דרבא אמר: אם אשת ישראל היא - חולצת, ואם אשת כהן היא - אינה חולצת, רב משרשיא מש
+yevamot_023 Yevamot 59b ['Yevamot 59b', 6] ['Yevamot 59b', 6] v11_twin2_r1=1 v11_twin2_r2=0 v11_twinall=1 v14_r1=1 v14_r2=1 | rejected-only: {'v11_twin2_r1': False, 'v11_twin2_r2': False, 'v11_twinall': False, 'v14_r1': False, 'v14_r2': False} | מעשה בריבה אחת בהיתלו שהיתה מכבדת את הבית, ורבעה כלב כופרי מאחריה, והכשירה רבי לכהונה. אמר
+yevamot_050 Yevamot 78a ['Yevamot 78a', 13] ['Yevamot 78a', 17] v11_twin2_r1=0 v11_twin2_r2=1 v11_twinall=1 v14_r1=1 v14_r2=1 | rejected-only: {'v11_twin2_r1': False, 'v11_twin2_r2': False, 'v11_twinall': False, 'v14_r1': False, 'v14_r2': False} | כי אתא רב דימי אמר רבי יוחנן: מצרי שני שנשא מצרית ראשונה - בנה שני הואי; אלמא, בתר אימיה ש
+yevamot_051 Yevamot 78b ['Yevamot 78b', 9] ['Yevamot 78b', 9] v11_twin2_r1=1 v11_twin2_r2=1 v11_twinall=1 v14_r1=1 v14_r2=0 | rejected-only: {'v11_twin2_r1': False, 'v11_twin2_r2': False, 'v11_twinall': False, 'v14_r1': False, 'v14_r2': False} | שאלו את רבי אליעזר: ממזרת לאחר עשרה דרי, מהו? אמר להם: מי יתן לי דור שלישי ואטהרנו.
+== V14-ONLY (both v14, no v11): 8
+  Yevamot 110b:11-13  twin2_r1=N twin2_r2=N twinall=N v14_r1=L v14_r2=L  dq=['Legal debate with setting', 'Pure legal ruling without narrative', 'Rabbi stating legal opinion']  | Rav Nahman encounters Rav Adda bar Ahava and Rav Hana in the Pumbedita market and engages them in a legal deba
+  Yevamot 41a:12-12  twin2_r1=N twin2_r2=N twinall=N v14_r1=L v14_r2=L  dq=['Legal deliberation', 'Legal debate with setting', 'Rabbi stating legal opinion']  | Rava is silenced by Rav Hamnuna's legal objection and later reflects on a possible rebuttal after Hamnuna leav
+  Yevamot 41a:12-14  twin2_r1=N twin2_r2=N twinall=N v14_r1=L v14_r2=L  dq=[]  | After being silenced by Rav Hamnuna's legal objection, Rava waits for him to leave the study hall before artic
+  Yevamot 42b:3-3  twin2_r1=N twin2_r2=N twinall=N v14_r1=L v14_r2=L  dq=['Legal debate with setting', 'A passage whose entire activity is verbal exchange']  | Rabbi Elazar misses the study hall session and asks Rabbi Asi to report the legal rulings stated there.
+  Yevamot 42b:8-8  twin2_r1=- twin2_r2=- twinall=- v14_r1=H v14_r2=H  dq=[]  | Passage B features a distinct interaction between Rabbi Zerika and Rabbi Abbahu, whereas Passage A describes a
+  Yevamot 42b:9-10  twin2_r1=N twin2_r2=N twinall=N v14_r1=L v14_r2=L  dq=['Habitual action', 'Legal ruling without narrative', 'A passage whose entire activity is verbal exchange']  | While walking and leaning on his attendant, Rabbi Abbahu answers a series of legal questions about the authori
+  Yevamot 60b:10-10  twin2_r1=- twin2_r2=- twinall=- v14_r1=L v14_r2=L  dq=[]  | The Gemara explains that during the war with Midian, the Israelites identified which girls were of age by pass
+  Yevamot 60b:11-11  twin2_r1=- twin2_r2=- twinall=- v14_r1=L v14_r2=L  dq=[]  | The Gemara describes a physical test involving wine barrels used to determine the virginity of the women of Ja
+== V11-ONLY (all v11, no v14): 8
+  Yevamot 102b:0-0  twin2_r1=L twin2_r2=L twinall=L v14_r1=N v14_r2=N  dq=[]  | The Sages observe Rav Yehuda walking in the market wearing five pairs of shoes, proving that such a practice e
+  Yevamot 122a:0-1  twin2_r1=L twin2_r2=L twinall=L v14_r1=- v14_r2=-  dq=[]  | A woman whose case was unresolved for three festivals is sent by Rav Adda bar Ahava to Rav Yosef, who finally 
+  Yevamot 36a:6-6  twin2_r1=L twin2_r2=L twinall=L v14_r1=N v14_r2=N  dq=[]  | Rabbi Elazar, skeptical of Reish Lakish's ruling, leaves the study hall to search the Mishnah and successfully
+  Yevamot 39b:8-8  twin2_r1=L twin2_r2=L twinall=L v14_r1=N v14_r2=N  dq=[]  | When levirate couples came before Rav, he would inform them that the choice between marriage and halitza was e
+  Yevamot 43a:12-12  twin2_r1=Y twin2_r2=Y twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B describes a distinct legal confrontation between Ameimar and Rav Ashi, whereas Passage A describes a
+  Yevamot 57a:6-6  twin2_r1=L twin2_r2=L twinall=L v14_r1=N v14_r2=N  dq=[]  | Rabbi Yoḥanan poses a legal question to Rabbi Oshaya, who remains silent and does not provide an answer.
+  Yevamot 57a:12-12  twin2_r1=L twin2_r2=L twinall=L v14_r1=N v14_r2=N  dq=[]  | Rabbi Aḥa bar Ḥinnana arrives from the south carrying a baraita that addresses the previous legal dilemma.
+  Yevamot 65b:12-12  twin2_r1=L twin2_r2=L twinall=L v14_r1=- v14_r2=-  dq=[]  | A woman came before Rabbi Yoḥanan in the synagogue of Caesarea seeking a divorce, and he ruled that the husban
+== grade: 22
+  Yevamot 104b:8-8  twin2_r1=N twin2_r2=N twinall=N v14_r1=- v14_r2=-  dq=['Pure legal ruling without narrative', 'Fewer than 2 distinct actions', 'Legal debate with setting']  | A legal ruling regarding a yevama who spat is sent from Eretz Yisrael to Shmuel's father.
+  Yevamot 104b:17-17  twin2_r1=- twin2_r2=- twinall=- v14_r1=N v14_r2=N  dq=['Hypothetical case', 'Rabbi stating legal opinion', 'Legal deliberation', 'Fewer than 2 distinct actions']  | The Gemara cites a baraita to challenge Rabbi Akiva's view on whether spitting is indispensable for the validi
+  Yevamot 105a:5-7  twin2_r1=H twin2_r2=H twinall=H v14_r1=Y v14_r2=Y  dq=[]  | A woman who spat before her halitza ceremony came before Rabbi Ami, leading to a debate between him and Rabbi 
+  Yevamot 105a:8-9  twin2_r1=Y twin2_r2=Y twinall=Y v14_r1=H v14_r2=H  dq=[]  | Levi travels to rural villages to teach but is stumped by three questions, forcing him to return to the study 
+  Yevamot 106b:9-9  twin2_r1=Y twin2_r2=Y twinall=Y v14_r1=L v14_r2=L  dq=[]  | Passage B introduces a new protagonist, Mar Zutra, and a distinct event involving a legal challenge by Mar bar
+  Yevamot 113b:15-15  twin2_r1=Y twin2_r2=Y twinall=Y v14_r1=H v14_r2=H  dq=[]  | Rav Yitzḥak bar Bisna loses the keys to the study hall on Shabbat and consults Rabbi Pedat, who suggests a met
+  Yevamot 115a:3-3  twin2_r1=H twin2_r2=H twinall=H v14_r1=Y v14_r2=Y  dq=[]  | A wedding ends in tragedy when a fire breaks out in the bridal chamber, and the wife identifies a charred body
+  Yevamot 116b:3-3  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | A woman comes to Rabbi Yehuda's court and is coached by the attendants on how to fake mourning rituals so that
+  Yevamot 116b:9-9  twin2_r1=Y twin2_r2=Y twinall=Y v14_r1=H v14_r2=H  dq=[]  | During a wheat harvest, a man is killed by a snake, leading his wife to testify in court, which then verifies 
+  Yevamot 121a:3-3  twin2_r1=L twin2_r2=L twinall=L v14_r1=H v14_r2=H  dq=[]  | Rav Dimi of Neharde’a permitted a woman to remarry after her husband's body was recovered from the water three
+  Yevamot 31a:11-11  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | A man named Bar Shatya, who suffered from intermittent insanity, sold land, leading to conflicting witness tes
+  Yevamot 32b:5-10  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | Rabbi Ḥiyya and Bar Kappara engage in a series of heated disputes where they both jump and swear by the Temple
+  Yevamot 45b:6-6  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | Rabbi Yosei bar Avin visits a certain place and rules that the child of an unmarried woman and a slave is fit 
+  Yevamot 45b:8-8  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | Rava validates the lineage of Rav Mari bar Raḥel and subsequently appoints him to a position of communal autho
+  Yevamot 48b:12-12  twin2_r1=L twin2_r2=L twinall=L v14_r1=H v14_r2=H  dq=[]  | Three rabbis recount a historical incident where the residents of a city in Eretz Yisrael sold their slaves to
+  Yevamot 60b:18-18  twin2_r1=L twin2_r2=L twinall=L v14_r1=Y v14_r2=Y  dq=[]  | A priest who married a young convert defends his choice to Rav Nachman bar Yitzchak by citing a ruling of Rabb
+  Yevamot 65b:14-14  twin2_r1=H twin2_r2=H twinall=H v14_r1=L v14_r2=L  dq=[]  | A woman seeking a divorce was initially rebuffed by Rabbi Ami, but after she argued that she needed children t
+  Yevamot 65b:15-15  twin2_r1=H,Y twin2_r2=H,Y twinall=H,Y v14_r1=L,Y v14_r2=L,Y  dq=[]  | A woman successfully persuaded Rav Naḥman to compel her husband to divorce her by arguing that she needed chil
+  Yevamot 65b:15-17  twin2_r1=H,Y twin2_r2=H,Y twinall=H,Y v14_r1=L,Y v14_r2=L,Y  dq=[]  | Yehudit, the wife of Rabbi Ḥiyya, disguised herself to ask her husband if women are commanded to procreate; up
+  Yevamot 66a:1-1  twin2_r1=L twin2_r2=L twinall=L v14_r1=H v14_r2=H  dq=[]  | A woman who was half-slave and half-free was unable to marry, so the court compelled her master to liberate he
+  Yevamot 71a:14-19  twin2_r1=- twin2_r2=- twinall=- v14_r1=N v14_r2=N  dq=['Hypothetical case', 'Legal deliberation', 'Rabbi stating legal opinion', 'Pure legal ruling without narrative']  | The sages debate whether a child who is not yet of age for circumcision (or is recovering from illness) is leg
+  Yevamot 95a:7-7  twin2_r1=L twin2_r2=L twinall=L v14_r1=Y v14_r2=Y  dq=[]  | A man who had relations with his mother-in-law was brought before Rav Yehuda and flogged, though Rav Yehuda no
+== noise (one-sided, not consistent): 9
+  Yevamot 105b:14-15  twin2_r1=- twin2_r2=- twinall=- v14_r1=L v14_r2=-  dq=[]  | A couple performs halitza while in prison, and Rabbi Akiva subsequently rules the act valid.
+  Yevamot 15a:14-14  twin2_r1=- twin2_r2=- twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B describes an incident involving Rabbi Akiva and the New Year for trees, whereas Passage A describes 
+  Yevamot 17a:4-4  twin2_r1=- twin2_r2=- twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B features a different set of actors (Rav Yosef, Rav Kahana, Rav Yehuda) and a different subject matte
+  Yevamot 45a:16-16  twin2_r1=L twin2_r2=- twinall=L v14_r1=- v14_r2=-  dq=[]  | Rav Yehuda advises a man of flawed lineage to go and conceal his identity or marry someone of similar status.
+  Yevamot 45a:17-17  twin2_r1=Y twin2_r2=- twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B introduces a new set of actors (the residents of Bei Mikhsei and Rabba) and a distinct legal scenari
+  Yevamot 61b:2-2  twin2_r1=N twin2_r2=L twinall=N v14_r1=N v14_r2=N  dq=['Legal debate with setting', 'Rabbi stating legal opinion', 'Legal deliberation']  | Rav Hisda tells Rabba to prepare a legal explanation for Rav Huna regarding a priest marrying a minor, and Rab
+  Yevamot 77a:0-0  twin2_r1=H twin2_r2=H twinall=- v14_r1=- v14_r2=-  dq=[]  | Doeg challenges David's legitimacy in the assembly, silencing them until a counter-tradition is brought to val
+  Yevamot 78a:11-11  twin2_r1=- twin2_r2=- twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B and Passage A are two distinct objections (metiv) raised by different Amoraim (Rav Yosef and Rava) u
+  Yevamot 78a:13-13  twin2_r1=- twin2_r2=- twinall=Y v14_r1=- v14_r2=-  dq=[]  | Passage B introduces a new transmission of a ruling by Rav Dimi in the name of Rabbi Yoḥanan, featuring differ
