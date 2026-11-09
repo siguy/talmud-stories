@@ -2,6 +2,7 @@
 # One-time Firebase setup for the Septimus sign-up (docs/technical/septimus-signup-plan.md §8).
 # Run on Simon's machine, where gcloud is logged in. Idempotent: every step checks before it acts.
 # Free Spark plan: this script never links billing. Nothing it prints is secret.
+# Separate project: every command passes --project, so gcloud's default project and simon-main are untouched.
 #   PROJECT_ID=septimus-stories ./firebase/setup.sh
 set -euo pipefail
 PROJECT_ID=${PROJECT_ID:-septimus-stories}   # must be globally unique; pick another if taken
@@ -9,7 +10,7 @@ LOCATION=${LOCATION:-nam5}                   # Firestore multi-region (US). Cann
 APP_NAME=${APP_NAME:-septimus-site}
 command -v gcloud >/dev/null || { echo "install gcloud first"; exit 1; }
 command -v firebase >/dev/null || npm i -g firebase-tools
-firebase login --no-localhost 2>/dev/null || true   # no-op if already logged in
+firebase login:list 2>/dev/null | grep -qi "logged in" || firebase login   # asks only if not logged in
 
 # 1. Project
 if ! gcloud projects describe "$PROJECT_ID" >/dev/null 2>&1; then

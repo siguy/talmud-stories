@@ -23,14 +23,14 @@ LOW_CONFIDENCE excluded), dated.
 
 ## Method
 
-Plan §4: pre-flight (runner generalised, token logging, no API calls) → Eruvin, scored once on its BLIND list →
-the other 32 in plan order, one per commit → build list v1.
+Plan §4: pre-flight (runner generalised, token logging, no API calls) → Berakhot as the cost calibration → the other
+31 in plan order, one per commit → build list v1. Eruvin was run on Simon's machine and is held for Jeff.
 
 ## How you know it worked
 
 - Every tractate's output covers every Sefaria page, with zero `stage2_error` pages.
-- Eruvin recall reported end-to-end and given-the-page-survived-triage, on the BLIND list, with denominators.
-- Real cost per page measured from Eruvin's token log, and the rest re-quoted before it is spent.
+- When Jeff releases Eruvin: its recall reported end-to-end and given-triage, on the BLIND list, with denominators.
+- Real cost per page measured from Berakhot's token log, and the rest re-quoted before it is spent.
 
 ## Guardrails
 

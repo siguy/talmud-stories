@@ -15,8 +15,8 @@ Nothing here has been run. No API calls before Simon approves the plan and the c
 | Eruvin | Sefaria pages fetched (207), **never run** | 74 | 0 | — |
 | 32 others | nothing | none | 0 | — |
 
-Simon reports having run 5 or 6 tractates. **Only the four above are in the repo**; any other run lives only on his
-machine (see §8, the one question).
+**Eruvin has been run on Simon's machine** (not in the repo) and is **held until Jeff reviews it** (Simon,
+2026-11-09). No other tractate has been run.
 
 Recall is measured on Jeff's 2005 lists (BLIND). Story precision on reviewed rounds, read against the call Jeff was
 shown, is ~0.92–0.95 (CIRCULAR, `docs/findings/2026-09-29-verdicts-read-against-the-call-shown.md`).
@@ -27,7 +27,8 @@ Standard Vilna pagination; pages = amudim from 2a to the last daf.
 
 | Order | Tractate | Last daf | Pages | Status |
 |---|---|---|---|---|
-| 1 | **Eruvin** | 105 | 208 | fetched; blind list exists |
+| — | **Eruvin** | 105 | 208 | run locally; held for Jeff |
+| 1 | — | | | (Berakhot is first) |
 | 2 | Berakhot | 64 | 126 | |
 | 3 | Shabbat | 157 | 312 | |
 | 4 | Pesachim | 121 | 240 | |
@@ -63,8 +64,7 @@ Standard Vilna pagination; pages = amudim from 2a to the last daf.
 | — | Yevamot, Ketubot, Gittin, Kiddushin | — | 804 | done |
 | | **Total to run** | | **4,610** | |
 
-Order: Eruvin first (the only new tractate with a blind list, so the one place the run gets a real recall number);
-then Seder Moed and the narrative-rich Nashim/Nezikin tractates; the technical Kodashim/Taharot tractates last.
+Order: Berakhot first (small, story-rich: the cost calibration run); then Seder Moed and the narrative-rich Nashim/Nezikin tractates; the technical Kodashim/Taharot tractates last.
 Excluded: Shekalim (its Gemara is Yerushalmi), Kinnim and Middot (no Gemara). The page counts are from Vilna
 pagination and are confirmed per tractate when the Sefaria fetch runs (Eruvin's cache holds 207, not 208).
 
@@ -78,12 +78,12 @@ Estimate per page (Gemini 3 Flash, twin pass on, rounded up): triage ~6k tokens 
 
 | | Pages | Cost (estimated) | Wall time, one at a time |
 |---|---|---|---|
-| Eruvin | 207 | ~$8 | ~20 min |
-| All 33 remaining | 4,610 | **~$185** (range $90–$370) | ~7 hours |
+| Berakhot (calibration) | 126 | ~$5 | ~11 min |
+| All 32 remaining (Eruvin held) | 4,402 | **~$175** (range $90–$350) | ~6.5 hours |
 
 The range is wide because the token counts are guesses. **Step 0 makes it a measurement:** record token usage in
-`run_meta` (a few lines in `scripts/run_new_tractate.py`, no change to detection), run Eruvin, and price the rest
-from Eruvin's real tokens before spending more. If Eruvin comes in more than 50% above the estimate, stop and
+`run_meta` (a few lines in `scripts/run_new_tractate.py`, no change to detection), run Berakhot, and price the rest
+from its real tokens before spending more. If Berakhot comes in more than 50% above the estimate, stop and
 re-quote to Simon.
 
 A second run per tractate (the union of two runs catches ~3–5 more stories per 100, because the detector is not
@@ -95,11 +95,9 @@ deterministic: Lesson 43) doubles the cost. **Not in list v1.** It is a candidat
    #69–#73 merged, but it has no Outcome. Generalise the runner past its hard-coded `KNOWN` tractate list
    (`scripts/run_new_tractate.py:49`) and the `SOURCES` map; add Sefaria fetch for any tractate; add token logging.
    Tests for each (failure injection where a failure could be stamped as "no stories": Lesson 21).
-1. **Eruvin.** Fetch is cached. Smoke test on 2 pages, then the full run. Score recall against
-   `results/expert_lists/eruvin_2005.json` **once** (BLIND; filter on `counts_for_recall`), end-to-end and
-   given-the-page-survived-triage, both named. STATUS has Eruvin on hold "until a review round returns": running it
-   uses up the last untouched blind test, so this needs Simon's OK (§8 lists it).
-2. **The other 32**, in the order above: fetch → run → structural checks (§5). One tractate per commit, so a
+1. **Eruvin: held** until Jeff reviews it (Simon, 2026-11-09). Its local run joins the repo when he has; it is then
+   scored once against `results/expert_lists/eruvin_2005.json` (BLIND), end-to-end and given-triage, both named.
+2. **The other 32**, Berakhot first (smoke test on 2 pages, then full; price the rest from its tokens): fetch → run → structural checks (§5). One tractate per commit, so a
    failure re-runs one tractate, not Shas.
 3. **Build list v1**: `site/data/` for all tractates with the same ship rule (YES + HIGH_CONFIDENCE = story,
    BORDERLINE its own tier, LOW_CONFIDENCE not shipped), dated, `list_version: v1`.
@@ -120,7 +118,7 @@ No prompt or model change rides on this run. If one is proposed, it is its own m
 ## 6. What Simon does
 
 1. Answer §8.
-2. Approve the Eruvin spend (~$8) and then the rest (~$185, re-quoted from Eruvin's real tokens).
+2. Approve the Berakhot calibration (~$5), then the rest (~$175, re-quoted from Berakhot's real tokens).
 3. Provide a Gemini API key through the secure credential form when the run starts (never in chat). Alternatively,
    run the commands on his own machine, where `.env` already has the key.
 4. Read 10 stories from any tractate that fails the indicated-quality check.
@@ -135,6 +133,6 @@ limits allow; that is one lane, not several.
 
 ## 8. Open questions
 
-1. **Where are the other tractates you ran?** Only Ketubot, Kiddushin, Gittin and Yevamot are in the repo. *(asked 2026-11-08)*
-2. OK to run Eruvin now (it uses the last untouched blind list), or keep holding it?
-3. Approve ~$8 for Eruvin, then the re-quoted total.
+1. ~~Where are the other tractates?~~ Answered 2026-11-09: only Eruvin, on Simon's machine, held for Jeff.
+2. ~~Run Eruvin now?~~ Answered: no, wait for Jeff.
+3. Approve ~$5 for the Berakhot calibration run, then the re-quoted total.

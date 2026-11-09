@@ -156,6 +156,17 @@ Known limit: Google blocks sign-in inside in-app browsers (WhatsApp, Instagram, 
 detects these and says "open this page in Safari/Chrome". Firebase Hosting would only be needed if popups fail on a
 browser we must support; switching later is a config change, not a rewrite.
 
+Hosting on Google Cloud instead of Vercel (not proposed; for the record):
+
+| | Vercel (today) | Firebase Hosting (same new project) | Cloud Storage bucket / Cloud Run |
+|---|---|---|---|
+| Cost | Free | Free on Spark (10 GB stored, 360 MB/day transferred; ample for a text site) | Bucket needs a load balancer for HTTPS on a custom domain (~$18/month); Cloud Run needs billing |
+| Sign-in | Popup; auth runs on a second domain | Same domain as auth: popup **and** redirect both work, fewest browser quirks | Same as Vercel |
+| Deploy | `git push` deploys automatically, previews per PR | `firebase deploy` by hand, or a GitHub Action | Script or Action |
+| Everything in one place | No: site on Vercel, data on Google | Yes | Yes |
+
+If sign-in proves flaky on phones, Firebase Hosting is the move; otherwise Vercel's push-to-deploy wins.
+
 **(c) Data export for Simon:** `firebase auth:export signups.csv --format=csv` (names and emails) and
 `scripts/export_signups.py` (claims and progress → CSV, using his own `gcloud` login). Both run on his machine.
 Firestore's managed export (`gcloud firestore export`) needs Blaze and is not used.
