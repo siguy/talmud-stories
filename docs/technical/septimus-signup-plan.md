@@ -145,6 +145,8 @@ The static site cannot hold shared state; it needs sign-in and a small database.
 
 **Decision: Firebase Auth + Firestore, on a NEW Google Cloud project, on the free Spark plan. Site stays on Vercel.**
 
+**Project: `septimus-stories`** (created 2026-11-08; Firestore `nam5`; Google sign-in on; authorised domain `talmud-stories.vercel.app`, a placeholder: add the final domain there when it exists).
+
 **(a) Can v1 stay on Spark (no billing)? Yes.** Checked against what v1 needs:
 - Google sign-in: free on Spark.
 - Firestore: free on Spark up to 50,000 reads, 20,000 writes and 1 GB per day.
