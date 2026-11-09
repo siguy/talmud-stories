@@ -46,7 +46,49 @@ log = logging.getLogger(__name__)
 
 CHECKPOINT = 10  # pages between triage-cache writes
 DELAY = 0.5
-KNOWN = ('gittin', 'yevamot', 'eruvin', 'kiddushin')
+# Any tractate with fetched text runs (scripts/fetch_tractate_pages.py --tractates <Name>).
+# Until 2026-11-09 this was a closed list of four; Shas needs all 37.
+
+
+def source_paths(tractate):
+    """(pages, triage cache) for a tractate: the SOURCES override, else results/sefaria/<t>.json."""
+    o = SOURCES.get(tractate, {})
+    return (PROJECT_ROOT / o.get('pages', f'results/sefaria/{tractate}.json'),
+            PROJECT_ROOT / o.get('triage', f'results/triage/{tractate}.json'))
+
+
+class TokenMeter:
+    """Counts what each stage's Gemini calls cost, from the response's own usage_metadata.
+
+    Wraps `client.models.generate_content` on one client instance; the detector code is
+    untouched. A response without usage_metadata is counted under `unmetered`, never as zero
+    tokens, so a missing count cannot read as a free call (Lesson 38). Added 2026-11-09 so
+    the Shas run is priced from a measurement, not an estimate (docs/technical/shas-finder-plan.md §3)."""
+    FIELDS = (('prompt_token_count', 'input'), ('candidates_token_count', 'output'),
+              ('thoughts_token_count', 'thinking'))
+
+    def __init__(self):
+        self.tally = {}
+
+    def attach(self, client, stage):
+        if client is None:
+            return client
+        models = client.models
+        orig = models.generate_content
+        t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0})
+
+        def metered(*a, **kw):
+            r = orig(*a, **kw)
+            t['calls'] += 1
+            u = getattr(r, 'usage_metadata', None)
+            if u is None:
+                t['unmetered'] += 1
+            else:
+                for src, dst in self.FIELDS:
+                    t[dst] += int(getattr(u, src, None) or 0)
+            return r
+        models.generate_content = metered
+        return client
 
 # Where each tractate's text and cached Stage 1 labels live. The three new tractates were
 # fetched to results/sefaria/ on 2026-08-30; Kiddushin predates that layout and keeps its
@@ -190,7 +232,8 @@ def build_parser():
     log.info('env loaded from %s', env or 'the environment only')
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--tractate', required=True, choices=KNOWN)
+    ap.add_argument('--tractate', required=True, type=str.lower,
+                    help='any tractate with fetched text in results/sefaria/<tractate>.json')
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
@@ -218,8 +261,13 @@ def main():
     from src import story_detector_v11 as detector_module  # v13/v14 measured, not adopted: docs/findings/2026-11-07-detector-v13-slice.md
     V7StoryDetector = detector_module.V7StoryDetector
 
-    override = SOURCES.get(args.tractate, {})
-    src = PROJECT_ROOT / override.get('pages', f'results/sefaria/{args.tractate}.json')
+    src, cache = source_paths(args.tractate)
+    if not src.exists():
+        log.error('no text for %s at %s -- fetch it first: '
+                  'python3 scripts/fetch_tractate_pages.py --tractates %s',
+                  args.tractate, src, args.tractate.title())
+        return 1
+    meter = TokenMeter()
     data = json.loads(src.read_text())
     pages = data['pages'] if isinstance(data, dict) else data
     name = (data.get('tractate') if isinstance(data, dict) else None) or args.tractate.title()
@@ -234,13 +282,13 @@ def main():
              sum(len(p['segments']) for p in pages))
 
     # ---- Stage 1 --------------------------------------------------------
-    cache = PROJECT_ROOT / override.get('triage', f'results/triage/{args.tractate}.json')
     cached = load_triage_cache(cache)
     if cached:
         log.info('triage cache: %d pages from %s', len(cached), cache.name)
     todo = plan_triage(pages, cached, args.retriage)
     if todo:
         triager = make_triager(EventTriager, args)
+        meter.attach(triager.client, 'stage1')
         if not triager.client:
             log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))
@@ -279,6 +327,7 @@ def main():
                                model_name=args.model, thinking_level=args.thinking)
     if not detector.client:
         log.error('no Gemini client — set GOOGLE_API_KEY'); return 1
+    meter.attach(detector.client, 'stage2_and_4')
 
     t0 = time.time()
     out = Path(args.output) if args.output else (
@@ -295,6 +344,9 @@ def main():
     results['version'] = version_of(detector_module)
     results['run_meta'] = build_run_meta(args, detector, detector_module, elapsed, pages,
                                          src.name, triage_summary)
+    # Stage 1 tokens are this invocation's only: cached pages cost nothing now.
+    results['run_meta']['tokens'] = meter.tally
+    log.info('tokens: %s', json.dumps(meter.tally))
     if results['run_meta']['resumed_pages']:
         log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)
     if results['run_meta']['stage2_errors']:
