@@ -79,8 +79,8 @@ is handed months of stories up front and the pool is not emptied by a few early 
 learned (or 4 weeks pass), "Get next stories" assigns the next batch at the same rate.
 `users/{uid}.minutesPerWeek` replaces `pledgedMinutes` in §5.
 
-Scale check: 15 min/week ≈ 15 stories/month per person. Today's 367 stories (~10 h) need about 40 people at 15
-min/week for one month; ~3,000 stories (~80 h) over ~43 weeks need about 8 people at 15 min/week, or more people at less.
+Scale check (mean story 234 words ≈ 1.6 min at 150 wpm): 15 min/week ≈ 40 stories/month per person. Today's 367
+stories (~10 h) need about 10 people at 15 min/week for one month; ~3,000 stories (~80 h) over ~43 weeks need about 8 people at 15 min/week, or more people at less.
 
 ## 5. Data model (Firestore)
 
