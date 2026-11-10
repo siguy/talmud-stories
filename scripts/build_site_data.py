@@ -6,13 +6,17 @@ In one line: **only definite stories reach the site.** It is a PUBLICATION filte
 the scholarly catalogue, and it never writes back: goldens, detector runs and judge outputs are
 read-only here, and borderlines and maybes stay in the scholarly work where they matter.
 
-    reviewed tractate (Jeff's golden)  -> his YES / HIGH_CONFIDENCE in stories[] only
-    unreviewed tractate (detector)     -> YES / HIGH_CONFIDENCE in EVERY run listed, in stories[],
-                                          AND both consensus judges call the passage a story
+    reviewed tractate (Jeff's golden)  -> YES / HIGH_CONFIDENCE in stories[] WITH Jeff's own evidence
+                                          behind it (a yes verdict, or his 2005 list) -- the golden
+                                          also carries detector calls he never saw
+    unreviewed tractate (detector)     -> YES / HIGH_CONFIDENCE in EVERY run listed, in stories[]
 
 Never shipped: BORDERLINE (Simon 2026-10-15), LOW_CONFIDENCE (2026-10-12), NOT_A_STORY,
-mishnah_stories[] (Stage 4g withheld them; never shown to Jeff, never judged), and a judge
-`out_of_scope` (biblical, R-S1). A second gate may narrow, never promote (Lesson 45).
+mishnah_stories[] (Stage 4g withheld them; never shown to Jeff). A second gate may narrow,
+never promote (Lesson 45). The consensus judges are NOT a gate here (Simon 2026-11-09): the
+Gemini judge is the detector's own model and adds almost nothing; the Claude judge drops ~13% of
+the detector stories Jeff calls yes. They stay in the scholarly work -- except for one narrowing: a passage BOTH judges call
+`out_of_scope` (biblical characters, R-S1) does not ship.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -26,16 +30,29 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data"
 
 # runs: the first is exported (its boundaries and summaries are shown); every run must agree.
-# consensus: results/consensus/<tractate> (judge_detector_spans.py), None for a reviewed golden.
+# ruler: results/rulers/<t>_ruler.json (scripts/build_ruler.py) -- where Jeff's evidence is read.
 SOURCES = {
-    "ketubot": {"runs": ["results/canonical/ketubot_canonical.json"], "reviewed": True, "consensus": None},
-    "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True, "consensus": None},
-    "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True, "consensus": None},
-    "yevamot": {"runs": ["results/v11/v14_yevamot/run1.json", "results/v11/v14_yevamot/run2.json"],
-                "reviewed": False, "consensus": "results/consensus/yevamot"},
-    "berakhot": {"runs": ["results/v14/berakhot/run1.json", "results/v14/berakhot/run2.json"],
-                 "reviewed": False, "consensus": "results/consensus/berakhot"},
+    "ketubot": {"runs": ["results/canonical/ketubot_canonical.json"], "reviewed": True},
+    "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True},
+    "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True},
+    "yevamot": {"runs": ["results/v11/v14_yevamot/run1.json", "results/v11/v14_yevamot/run2.json"], "reviewed": False,
+                "scope_judges": "results/consensus/yevamot"},
+    "berakhot": {"runs": ["results/v14/berakhot/run1.json", "results/v14/berakhot/run2.json"], "reviewed": False,
+                 "scope_judges": "results/consensus/berakhot"},
 }
+
+
+def biblical_cells(tractate):
+    """Cells of passages BOTH judges call `out_of_scope` (biblical characters, R-S1). The judges are
+    used for this one narrowing only -- Jeff excludes biblical stories, and the detector does not."""
+    d = SOURCES[tractate].get("scope_judges")
+    if not d:
+        return set()
+    verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
+                   if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
+    units = json.loads((ROOT / d / "units.json").read_text())["units"]
+    return {tuple(c) for u in units
+            if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
 DEFINITE = ("YES", "HIGH_CONFIDENCE")
 
 
@@ -46,16 +63,23 @@ def definite_cells(path):
             if s.get("classification") in DEFINITE for r, gs in pieces(pages, i, s) for g in gs}
 
 
-def strong_yes_cells(tractate):
-    """Cells (page ref, segment index) of units BOTH judges call `story`; None = no judge gate."""
-    d = SOURCES[tractate]["consensus"]
-    if not d:
-        return None
-    verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
-                   if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
-    units = json.loads((ROOT / d / "units.json").read_text())["units"]
-    return {tuple(c) for u in units if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "story"
-            for c in u["cells"]}
+# Golden-entry fields that record Jeff's own answer on that entry (later rounds than the ruler reads).
+JEFF_FIELDS = ("review_verdict", "label_source", "expert_answer", "source")
+
+
+def jeff_evidence_cells(tractate):
+    """Cells Jeff has said yes to: on his 2005 list, or a verdict read as `yes` (scripts/verdict_reading.py,
+    via the ruler). Simon's own pre-screen round is not Jeff's and does not count."""
+    entries = json.loads((ROOT / f"results/rulers/{tractate}_ruler.json").read_text())["entries"]
+    out = set()
+    for e in entries:
+        yes = any(v.get("read_as") == "yes" and "simon" not in v.get("round", "") for v in e.get("verdicts", []))
+        if not (e.get("expert_listed") or yes):
+            continue
+        out |= {tuple(c) for c in e.get("expert_segments") or []}
+        if yes:
+            out |= {(r, i) for r, a, b in e.get("detector_span") or [] for i in range(a, b + 1)}
+    return out
 
 
 NIKUD = re.compile("[ְ-ׇ]")
@@ -91,9 +115,10 @@ def build(tractate):
     src = SOURCES[tractate]
     reviewed = src["reviewed"]
     pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
-    strong = strong_yes_cells(tractate)
+    jeff = jeff_evidence_cells(tractate) if reviewed else None
+    biblical = biblical_cells(tractate)
     others = [definite_cells(q) for q in src["runs"][1:]]
-    stories = []
+    stories, seen = [], set()
     for i, p in enumerate(pages):
         for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
             t = tier(s.get("classification"))
@@ -102,16 +127,25 @@ def build(tractate):
             assert segs, (tractate, p["ref"], s)
             cells = {(r, g.get("index")) for r, g in segs}
             # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
-            if strong is not None and not cells & strong:
-                t = None   # not a story to BOTH judges
+            if jeff is not None and not cells & jeff and not any(s.get(k) for k in JEFF_FIELDS):
+                t = None   # in the golden, but a detector call Jeff never answered
+            if cells & biblical:
+                t = None   # biblical characters, out of scope (R-S1): both judges say so
             if any(not cells & o for o in others):
                 t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
             if t is None:
                 continue
+            sid = f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}"
+            if sid in seen:
+                # The detector can propose the identical span twice (Yevamot 15a:16, v14 run1). One passage
+                # is one story on the site; the duplicate is counted and named, never silently dropped.
+                print(f"  duplicate span, shipped once: {sid}", file=sys.stderr)
+                continue
+            seen.add(sid)
             if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                 print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
             stories.append({
-                "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
+                "id": sid,
                 "tractate": tractate,
                 "ref": p["ref"],
                 "refs": [r for r, _ in ps],

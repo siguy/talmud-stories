@@ -36,3 +36,13 @@ The export then read **one** v14 run. v14 is not deterministic (two runs kept 18
 ships only if every listed run grades it YES/HIGH (`SOURCES[t]["runs"]` in `build_site_data.py`):
 64 stories. **Definite means definite in every measurement we hold**, not in the one we
 happened to pick.
+
+## And the opposite error: a gate that narrows too hard
+
+Correcting the above, the next export required **both** consensus judges to call a passage a
+story. Yevamot fell from 83 detector-definite passages to 40. Measured against Jeff's verdicts on
+the detector's YES/HIGH calls, the Gemini judge (the detector's own model) passes almost
+everything, and the Claude judge drops ~13% of what he calls yes. A narrowing gate still has to
+be **measured against the expert** before it ships; "stricter" is not the same as "more right".
+Simon chose the detector's own grade in both runs (91% Jeff-yes where reviewed); the judges now
+remove only what both call biblical.

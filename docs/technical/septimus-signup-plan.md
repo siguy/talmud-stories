@@ -21,17 +21,18 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 
 | | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
 |---|---|---|---|---|---|
-| Ketubot | 87 | 23,819 | 192 | 2.6 | 1.7 |
+| Ketubot | 86 | 23,755 | 194 | 2.6 | 1.7 |
 | Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
 | Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
-| Yevamot | 40 | 10,938 | 198 | 1.2 | 0.8 |
-| Berakhot | 64 | 17,934 | 181 | 2.0 | 1.3 |
-| **All** | **354** | **89,701** | **188** | **10.0** | **6.5** |
+| Yevamot | 82 | 17,643 | 162 | 2.0 | 1.3 |
+| Berakhot | 112 | 24,396 | 144 | 2.7 | 1.8 |
+| **All** | **443** | **102,804** | **172** | **11.4** | **7.4** |
 
 **Only definite stories ship** — the rule, and why it is kept apart from the scholarly
 catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
-the 19 borderlines and 3 Mishnah stories from the reviewed tractates, cut Yevamot from 95
-(one v11 run) to 40 (YES/HIGH in both v14 runs and a story to both judges), and added Berakhot.
+the 19 borderlines and 3 Mishnah stories from the reviewed tractates and one Ketubot detector
+call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in both v14 runs
+(82, after 7 biblical passages and one duplicate span); and added Berakhot the same way (112).
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate
