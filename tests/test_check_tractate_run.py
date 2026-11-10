@@ -121,6 +121,24 @@ def test_g1_empty_english_is_counted_not_failed(tmp_path):
     assert r.status == 'green' and r.measured['empty_english'] == 1 and any('empty English' in n for n in r.notes)
 
 
+def test_g1_amud_blank_in_source_is_noted_not_red(tmp_path):
+    """Nazir 33b (2026-11-09): Sefaria's own index counts 0 segments there. Its absence is
+    expected and named; a real missing page beside it is still red."""
+    def m(f):
+        d = f['results/sefaria/tamid.json']
+        gone = d['pages'].pop(2)['ref']
+        d['sefaria_shape'][gone] = 0
+    r = C.g1_text(build(tmp_path, m))
+    assert r.status == 'green', r.failures
+    assert any('blank in the source' in n for n in r.notes)
+
+    def m2(f):
+        m(f)
+        f['results/sefaria/tamid.json']['pages'].pop(4)
+    r = C.g1_text(build(tmp_path / 'b', m2))
+    assert r.status == 'red' and any('differ from the Sefaria index' in x for x in r.failures)
+
+
 # ---- G2
 def test_g2_all_failed_page_and_unlabelled_page_are_red(tmp_path):
     def m(f):

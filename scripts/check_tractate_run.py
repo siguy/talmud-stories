@@ -164,7 +164,13 @@ def g1_text(P, shape=None):
     refs = [p['ref'] for p in pages]
     shape = shape or d.get('sefaria_shape')
     if shape:
-        missing, extra = sorted(set(shape) - set(refs)), sorted(set(refs) - set(shape))
+        # An amud Sefaria's index counts as 0 segments is blank in the source (Nazir 33b):
+        # its absence is expected, noted by name, not a missing page.
+        blank = sorted(r for r in shape if not shape[r] and r not in set(refs))
+        missing = sorted(r for r in set(shape) - set(refs) if shape[r])
+        extra = sorted(set(refs) - set(shape))
+        if blank:
+            r.note(f'blank in the source (index counts 0 segments), not fetched: {blank}')
         if missing or extra:
             r.red(f'pages differ from the Sefaria index: missing {missing[:8]}, extra {extra[:8]}')
         diffs = {p['ref']: (shape[p['ref']], len(p['segments'])) for p in pages
@@ -174,11 +180,16 @@ def g1_text(P, shape=None):
     else:
         r.amber('Sefaria shape index not available (older fetch): page count NOT checked against Sefaria')
     nums = [daf_number(x) for x in refs]
+    # Amudim blank in the source are an expected gap, not a missing page.
+    blank_nums = {daf_number(x) for x in (shape or {}) if not shape[x]} - {None}
     if None in nums:
         r.red(f'unparseable refs: {[x for x, n in zip(refs, nums) if n is None][:5]}')
-    elif nums != list(range(nums[0], nums[0] + len(nums))):
-        gaps = sorted(set(range(nums[0], nums[-1] + 1)) - set(nums))
-        r.red(f'refs not contiguous (daf numbers missing: {gaps[:10]}) or out of order')
+    elif nums != sorted(nums) or len(set(nums)) != len(nums):
+        r.red('refs out of order or repeated')
+    else:
+        gaps = sorted(set(range(nums[0], nums[-1] + 1)) - set(nums) - blank_nums)
+        if gaps:
+            r.red(f'refs not contiguous (daf numbers missing: {gaps[:10]}) or out of order')
     empty_pages = [p['ref'] for p in pages if not p.get('segments')]
     if empty_pages:
         r.red(f'pages with no segments: {empty_pages[:8]}')
