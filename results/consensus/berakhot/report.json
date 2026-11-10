@@ -1,0 +1,368 @@
+{
+ "units": 224,
+ "outcomes": {
+  "gemini": {
+   "ok": 224
+  },
+  "claude": {
+   "ok": 224
+  }
+ },
+ "prompt": "src/prompts/judge_register_v2.md",
+ "prompt_sha": "84bfb33fd32a",
+ "rules_sha": "6a2d8e563ab7",
+ "agreement": {
+  "v11": {
+   "gemini": {
+    "n": 224,
+    "three_way": 150,
+    "kept_vs_not": 188,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 22,
+     "borderline->not": 15,
+     "borderline->story": 26,
+     "not->borderline": 1,
+     "not->not": 17,
+     "not->story": 6,
+     "story->borderline": 12,
+     "story->not": 14,
+     "story->story": 111
+    }
+   },
+   "claude": {
+    "n": 224,
+    "three_way": 101,
+    "kept_vs_not": 152,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 17,
+     "borderline->not": 38,
+     "borderline->story": 8,
+     "not->borderline": 6,
+     "not->not": 18,
+     "story->borderline": 43,
+     "story->not": 28,
+     "story->story": 66
+    }
+   }
+  },
+  "v14_r1": {
+   "gemini": {
+    "n": 224,
+    "three_way": 151,
+    "kept_vs_not": 190,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 23,
+     "borderline->not": 14,
+     "borderline->story": 29,
+     "not->borderline": 2,
+     "not->not": 24,
+     "not->story": 10,
+     "story->borderline": 10,
+     "story->not": 8,
+     "story->story": 104
+    }
+   },
+   "claude": {
+    "n": 224,
+    "three_way": 115,
+    "kept_vs_not": 164,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 20,
+     "borderline->not": 38,
+     "borderline->story": 8,
+     "not->borderline": 5,
+     "not->not": 30,
+     "not->story": 1,
+     "story->borderline": 41,
+     "story->not": 16,
+     "story->story": 65
+    }
+   }
+  },
+  "v14_r2": {
+   "gemini": {
+    "n": 224,
+    "three_way": 150,
+    "kept_vs_not": 190,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 22,
+     "borderline->not": 14,
+     "borderline->story": 30,
+     "not->borderline": 3,
+     "not->not": 25,
+     "not->story": 10,
+     "story->borderline": 10,
+     "story->not": 7,
+     "story->story": 103
+    }
+   },
+   "claude": {
+    "n": 224,
+    "three_way": 113,
+    "kept_vs_not": 164,
+    "confusion_version_to_judge": {
+     "borderline->borderline": 18,
+     "borderline->not": 39,
+     "borderline->story": 9,
+     "not->borderline": 6,
+     "not->not": 31,
+     "not->story": 1,
+     "story->borderline": 42,
+     "story->not": 14,
+     "story->story": 64
+    }
+   }
+  }
+ },
+ "judges_agree": {
+  "n": 224,
+  "three_way": 134,
+  "kept_vs_not": 182
+ },
+ "judges_vs_version": {
+  "v11": [
+   "Berakhot 3b:0-8",
+   "Berakhot 3b:28-29",
+   "Berakhot 6b:9-9",
+   "Berakhot 8a:19-19",
+   "Berakhot 8a:25-25",
+   "Berakhot 8a:28-28",
+   "Berakhot 10a:25-31",
+   "Berakhot 13b:23-24",
+   "Berakhot 14a:4-4",
+   "Berakhot 17a:9-9",
+   "Berakhot 22a:21-21",
+   "Berakhot 22b:11-11",
+   "Berakhot 23a:20-Berakhot 23b:0",
+   "Berakhot 24a:17-19",
+   "Berakhot 25a:7-7",
+   "Berakhot 25b:14-14",
+   "Berakhot 31a:15-15",
+   "Berakhot 31b:20-21",
+   "Berakhot 35b:17-17",
+   "Berakhot 38a:0-0",
+   "Berakhot 38a:1-1",
+   "Berakhot 39a:1-1",
+   "Berakhot 44a:4-4",
+   "Berakhot 45b:16-16",
+   "Berakhot 54a:15-Berakhot 54b:0",
+   "Berakhot 54b:3-5",
+   "Berakhot 55b:13-13",
+   "Berakhot 57b:21-21"
+  ],
+  "v14_r1": [
+   "Berakhot 3b:28-29",
+   "Berakhot 8a:19-19",
+   "Berakhot 8a:28-28",
+   "Berakhot 10a:25-31",
+   "Berakhot 11a:22-22",
+   "Berakhot 13b:23-24",
+   "Berakhot 14a:4-4",
+   "Berakhot 23a:20-Berakhot 23b:0",
+   "Berakhot 24a:17-19",
+   "Berakhot 24a:22-Berakhot 24b:0",
+   "Berakhot 25a:7-7",
+   "Berakhot 31a:15-15",
+   "Berakhot 31b:20-21",
+   "Berakhot 33a:30-30",
+   "Berakhot 39b:9-9",
+   "Berakhot 39b:10-10",
+   "Berakhot 44a:4-4",
+   "Berakhot 45b:16-16",
+   "Berakhot 54a:15-Berakhot 54b:0",
+   "Berakhot 54b:3-5",
+   "Berakhot 57b:21-21"
+  ],
+  "v14_r2": [
+   "Berakhot 3b:28-29",
+   "Berakhot 8a:19-19",
+   "Berakhot 10a:7-8",
+   "Berakhot 10a:25-31",
+   "Berakhot 11a:22-22",
+   "Berakhot 11b:14-14",
+   "Berakhot 13b:23-24",
+   "Berakhot 14a:4-4",
+   "Berakhot 23a:9-9",
+   "Berakhot 23a:20-Berakhot 23b:0",
+   "Berakhot 24a:17-19",
+   "Berakhot 24a:22-Berakhot 24b:0",
+   "Berakhot 25a:7-7",
+   "Berakhot 31a:15-15",
+   "Berakhot 31b:20-21",
+   "Berakhot 39b:9-9",
+   "Berakhot 44a:4-4",
+   "Berakhot 45b:16-16",
+   "Berakhot 54a:15-Berakhot 54b:0",
+   "Berakhot 54b:3-5",
+   "Berakhot 57b:21-21"
+  ]
+ },
+ "moved": [
+  {
+   "id": "Berakhot 3b:0-8",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage is a standard legal discussion (sugya) analyzing a Tannaitic teaching through hypothetical cases and dialectical objections. It contains no narrated events, actions, or post-biblical figures, consisting entirely of speech-acts and scholarly back-and-forth.",
+   "claude_reason": "Purely legal discussion of the reasons not to enter a ruin; no event."
+  },
+  {
+   "id": "Berakhot 6b:9-9",
+   "tag": "v14-only",
+   "gemini": "borderline",
+   "claude": "borderline",
+   "gemini_reason": "The passage describes a change in Rabbi Zeira's behavior (from criticizing the Sages to running himself) based on a specific realization. However, it is framed as a habitual change ('I too run') rather than a single one-time event, which aligns with the borderline criteria for events with limited change or habitual frames.",
+   "claude_reason": "Rabbi Zeira saw the Sages running, judged them, then heard a teaching and changed his own practice; mainly speech and learning with a small change."
+  },
+  {
+   "id": "Berakhot 8a:25-25",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage is a bare report of what Rabbi Abbahu used to do (a habitual practice) cited as a halakhic precedent. Under R-C5, a description of a rabbi's practice that lacks a one-time event, continuation, or change is not considered a story.",
+   "claude_reason": "A bare report of R. Abbahu's practice."
+  },
+  {
+   "id": "Berakhot 11a:22-22",
+   "tag": "v11-only",
+   "gemini": "story",
+   "claude": "story",
+   "gemini_reason": "The passage contains a story embedded within a dictum where a rabbi narrates a specific one-time event (traveling on the road and reclining) that led to a change in state (danger from highwaymen) and a subsequent response from his colleagues.",
+   "claude_reason": "The Talmud quotes R. Tarfon's Mishnah incident: he reclined on the road, endangered himself from bandits, and the Sages rebuked him; the Talmudic quotation can be included."
+  },
+  {
+   "id": "Berakhot 17a:9-9",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "This is a bare report of a rabbi's habitual practice (always greeting others first) used as an exemplum, with no specific one-time event, conflict, or change narrated.",
+   "claude_reason": "A report of Rabban Yohanan ben Zakkai's habitual practice of greeting first; no event follows."
+  },
+  {
+   "id": "Berakhot 22a:21-21",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage consists entirely of standard rabbinic dialogue and legal debate between Rav Huna and Rav Hisda without any narrated action or event. Under R-C2 and R-C7, speech-acts without conflict or change do not constitute a story.",
+   "claude_reason": "A halakhic exchange between Rav Hisda and Rav Huna; speech only, no event."
+  },
+  {
+   "id": "Berakhot 22b:11-11",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "This is a bare report of what a rabbi used to do (a habit) cited as a legal precedent, followed by a ruling that the halakha does not follow him. Under R-C5 and the limits of R-C0, a description of a practice that leads to no further action or change is not a story.",
+   "claude_reason": "A report of Rav Hama's practice of immersing on Passover eve, followed by a ruling; nothing follows from it."
+  },
+  {
+   "id": "Berakhot 24a:22-Berakhot 24b:0",
+   "tag": "v14-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "This is a bare report of a rabbi's habitual practice and physical actions during prayer, cited as evidence of proper conduct rather than as a narrative event that leads to a change or response.",
+   "claude_reason": "An eyewitness report of Rabbi's habitual conduct during prayer, cited as evidence; nothing follows."
+  },
+  {
+   "id": "Berakhot 25b:14-14",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage consists of a legal dictum followed by a single speech-act where Rav Yosef instructs his servant to act according to a specific ruling. Under R-C0 and R-C5, a single act or instruction that merely illustrates a legal position without further narrated action, conflict, or change does not constitute a story.",
+   "claude_reason": "Rav Yosef telling his servant to bring water is a bare report of practice cited as evidence, with nothing following."
+  },
+  {
+   "id": "Berakhot 34b:6-6",
+   "tag": "v11-only",
+   "gemini": "borderline",
+   "claude": "not",
+   "gemini_reason": "The passage contains a real event (Rava bowing) followed by a dialogue with conflict (the Sages questioning his practice). Under R-C7 shape 1 and 2, an incident followed by a discussion or mainly speech acts is considered borderline.",
+   "claude_reason": "Rava's practice of bowing, questioned and justified by citing others' practice; a report of conduct leading to discussion only."
+  },
+  {
+   "id": "Berakhot 35b:17-17",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage describes a habitual practice of Rava used as evidence in a legal discussion about the properties of wine. Under R-C5, a bare report of what someone used to do that leads to no further action or change is not a story.",
+   "claude_reason": "Rava's habit of drinking wine on Passover eve cited as evidence within a legal discussion; a bare report of practice."
+  },
+  {
+   "id": "Berakhot 38a:0-0",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage consists entirely of a legal inquiry and response between Abaye and Rav Yosef regarding the proper blessing for a food item. This is standard rabbinic dialogue without conflict or narrated action, which does not constitute a story.",
+   "claude_reason": "Abaye asks Rav Yosef which blessing to recite and receives an answer; ordinary question-and-answer with no event."
+  },
+  {
+   "id": "Berakhot 38a:1-1",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "This is a bare report of what Mar Zutra used to do or did on one occasion as a matter of personal practice. It lacks a continuation, a response from another person, or a change in outcome, which under R-C5 makes it a precedent rather than a story.",
+   "claude_reason": "A bare report of what Mar Zutra did (based his meal on the dough and blessed), cited as halakhic evidence; nothing follows."
+  },
+  {
+   "id": "Berakhot 38b:9-9",
+   "tag": "v11-only",
+   "gemini": "story",
+   "claude": "not",
+   "gemini_reason": "The passage contains a specific incident where people came and asked Rabbi Yoḥanan a question about a lupin boiled seven times and he issued a ruling. This follows the R-C0 criteria where an incident followed by a ruling counts as a story, and it is embedded within a larger scholarly dictum as described in R-C4.",
+   "claude_reason": "Rabbi Zeira's argument about transmitters; the lupin question put to R. Yohanan is cited as evidence, a question and ruling with no other narrated action."
+  },
+  {
+   "id": "Berakhot 39a:1-1",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage is a legal discussion that merely alludes to an incident (bringing an olive to Rabbi Yoḥanan) as evidence for a halakhic measure. It lacks the actions, conflict, or change necessary to be considered even a borderline story, functioning instead as a bare report or precedent.",
+   "claude_reason": "A halakhic reply about olive size; the olive brought before Rabbi Yohanan is only alluded to as evidence with no narrative."
+  },
+  {
+   "id": "Berakhot 39b:9-9",
+   "tag": "v14-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage consists of bare reports of the habitual practices of Rav Kahana and Rabbi Zeira followed by a standard rabbinic dialogue between Ravina and Rav Ashi. There is no specific event or change narrated, only descriptions of conduct cited as halakhic precedent.",
+   "claude_reason": "Reports of rabbis' practice in breaking bread, with a question about it; no event follows and nothing changes."
+  },
+  {
+   "id": "Berakhot 42b:3-3",
+   "tag": "v11-only",
+   "gemini": "story",
+   "claude": "not",
+   "gemini_reason": "The passage narrates a specific event where one rabbi visits another and observes his actions, followed by a verbal interaction and approval. This constitutes a narrated incident with multiple actions and a resolution, fitting the definition of a story rather than a bare legal report.",
+   "claude_reason": "Rabba bar Mari observes Rava's practice and approves it; a visit and a ruling with no change."
+  },
+  {
+   "id": "Berakhot 42b:4-4",
+   "tag": "v11-only",
+   "gemini": "story",
+   "claude": "not",
+   "gemini_reason": "The passage narrates a specific event (Rabbi Yitzḥak visiting Abaye) and an action (Abaye reciting multiple blessings) followed by a dialogue and a resolution. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical legal case.",
+   "claude_reason": "Rabbi Yitzhak observes Abaye's practice and asks a halakhic question which Abaye answers; ordinary scholarly exchange about a practice."
+  },
+  {
+   "id": "Berakhot 55b:13-13",
+   "tag": "v11-only",
+   "gemini": "not",
+   "claude": "not",
+   "gemini_reason": "The passage describes Shmuel's habitual practice and speech-acts in response to dreams, but it lacks a specific one-time event, change, or causal narrative arc.",
+   "claude_reason": "Shmuel's habitual response to dreams: a custom of speech that leads to no event or change."
+  },
+  {
+   "id": "Berakhot 56b:2-2",
+   "tag": "v11-only",
+   "gemini": "borderline",
+   "claude": "not",
+   "gemini_reason": "The passage consists entirely of dialogue between Bar Kappara and Rabbi regarding dream interpretation. Under R-C2 and R-C7, speech-only passages with conflict or interaction but no physical action are considered borderline.",
+   "claude_reason": "Bar Kappara tells dreams and Rabbi interprets them; speech only, without conflict or a narrated event."
+  }
+ ],
+ "moved_sides": {
+  "claude:v11": 3,
+  "claude:v14": 17,
+  "gemini:v11": 8,
+  "gemini:v14": 12
+ }
+}
