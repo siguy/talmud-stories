@@ -77,7 +77,9 @@ def collect(slug):
         if not both:
             continue
         gv, cv = g.get(u['id']), c.get(u['id'])
-        drops = cv == 'out_of_scope' and (gv == 'out_of_scope' or u['id'] in alone)
+        flagged = gv == 'out_of_scope' or u['id'] in alone
+        drops = flagged and cv == 'not'                      # the site's one judge narrowing (Simon 2026-11-10)
+        biblical_flag = flagged and cv == 'out_of_scope'      # ships, left out of Jeff's catalogue
         why = []
         if (gv == 'out_of_scope') != (cv == 'out_of_scope') and u['id'] not in alone:
             why.append(f'judges disagree (Gemini {gv}, Claude {cv or "not asked"})')
@@ -87,7 +89,7 @@ def collect(slug):
         if hits:
             why.append('biblical name in summary: ' + ', '.join(hits))
         entry = {'tractate': slug, 'id': u['id'], 'summary': u.get('summary'), 'gemini': gv, 'claude': cv,
-                 'site': 'DROPPED' if drops else 'SHIPS', 'why': why, 'segments': segments(text, u['cells'])}
+                 'site': 'DROPPED' if drops else ('SHIPS, BIBLICAL' if biblical_flag else 'SHIPS'), 'why': why, 'segments': segments(text, u['cells'])}
         if why:
             biblical.append(entry)
         if not drops:
@@ -95,23 +97,16 @@ def collect(slug):
     return biblical, shipped, one_run
 
 
-# G5 compares a tractate's density with every OTHER run tractate, so its range widens as the run grows: once
-# Keritot (0.30/page) was in, Zevachim (0.54) stopped being flagged. Sampling uses the range G5 reported when it
-# first fired on 2026-11-09 (0.59-3.57), fixed, so a tractate cannot leave the list by others joining the run.
-DENSITY_RANGE_AT_FIRST_FIRE = (0.59, 3.57)
-
-
 def g5_density_amber(slug):
-    d = C.g5_density(T.Paths(slug, ROOT)).measured.get('stories_per_examined_page')
-    lo, hi = DENSITY_RANGE_AT_FIRST_FIRE
-    return d is not None and not lo <= d <= hi
+    """G5's density warning (pinned to the Berakhot/Yevamot baselines since 2026-11-10, so it cannot drift)."""
+    return any('per examined page' in w for w in C.g5_density(T.Paths(slug, ROOT)).warnings)
 
 
 def card(e):
     segs = ''.join(f'<tr><td class=ref>{html.escape(r)}</td><td class=he dir=rtl>{h}</td><td class=en>{en}</td></tr>'
                    for r, h, en in e['segments'])
     why = ''.join(f'<li>{html.escape(w)}</li>' for w in e.get('why', []))
-    return (f'<section class="card {e["site"].lower()}"><h3>{html.escape(e["id"])} <span class=tag>{e["site"]}</span></h3>'
+    return (f'<section class="card {e["site"].split(",")[0].lower()}"><h3>{html.escape(e["id"])} <span class=tag>{e["site"]}</span></h3>'
             f'<p class=sum>{html.escape(e.get("summary") or "")}</p><ul>{why}</ul>'
             f'<p class=j>Gemini: {e.get("gemini")} · Claude: {e.get("claude") or "not asked"}</p>'
             f'<table>{segs}</table></section>')
@@ -131,7 +126,7 @@ table{border-collapse:collapse;width:100%}td{border-top:1px solid var(--line);pa
         by_t.setdefault(e['tractate'], []).append(e)
     parts = [f'<h1>Shas run: reading lists</h1><p>{len(biblical)} passages on the biblical list; '
              f'{sum(len(v) for v in samples.values())} random stories from density-amber tractates. '
-             'Every passage below is definite in both runs. SHIPS = on the site as built; DROPPED = removed by the judges.</p>',
+             'Every passage below is definite in both runs. SHIPS = on the site; SHIPS, BIBLICAL = on the site, flagged and left out of Jeff&#39;s catalogue; DROPPED = Gemini says biblical and Claude says not a story.</p>',
              '<h2>1. The biblical list</h2>']
     for t, es in by_t.items():
         es = sorted(es, key=lambda e: e['site'] != 'SHIPS')      # what ships first: that is what a reader sees

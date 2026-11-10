@@ -53,12 +53,14 @@ DECISIONS = 'results/shas_run/decisions.json'   # Simon's rulings on red gates (
 
 
 def decisions(root):
-    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}) from Simon's rulings file."""
+    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}, {tractate: [unit ids hand-flagged
+    biblical]}) from Simon's rulings file."""
     p = Path(root) / DECISIONS
     if not p.exists():
-        return set(), {}
+        return set(), {}, {}
     d = json.loads(p.read_text())
-    return set(d['g4_accepted']['tractates']), d['claude_alone']['units']
+    return (set(d['g4_accepted']['tractates']), d['claude_alone']['units'],
+            d.get('biblical_flag', {}).get('units', {}))
 
 
 def claude_alone(P):
@@ -373,8 +375,10 @@ def g5_density(P):
         return r
     ex = sum(1 for p in run['pages'] if examined(p))
     dens = kept_stories(run) / ex if ex else 0.0
+    # Compared with the two pre-run baselines only (plan §2.2: Berakhot 1.8, Yevamot 1.5 per examined page). Against
+    # every other run tractate the range widened as the run grew: Keritot's 0.30 unflagged Zevachim's 0.54 (2026-11-10).
     others = {}
-    for t in P.others():
+    for t in (P.sibling(b) for b in OUT_OF_SCOPE_BASELINES if b != P.slug):
         try:
             o = json.loads(Path(t.run(1)).read_text())
             e = sum(1 for p in o['pages'] if examined(p))

@@ -35,7 +35,16 @@ kept there; it is just not shown to families.
 - the adopted detector grades it `YES` or `HIGH_CONFIDENCE` **in every run listed** (two) — the
   detector is not deterministic, so one run's YES is not definite;
 - it is in `stories[]`;
-- it is **not** a passage both consensus judges call `out_of_scope` (biblical characters, R-S1).
+- it is **not** a passage the Gemini judge calls `out_of_scope` and the Claude judge calls `not` — not a story
+  at all (Simon, 2026-11-10).
+
+**Biblical stories ship** (Simon, 2026-11-10: fine for the site "as long as they are classified as stories outside
+of the fact they have biblical figure"; flag them and exclude them for Jeff's scholarly project). A story is
+flagged `biblical: true` when both judges call it `out_of_scope` (or Claude alone, under
+`results/shas_run/decisions.json`), when it is hand-flagged there, or when Stage 4j demoted it for biblical-only
+actors. For a 4j demotion the site reads the grade **from before** that filter
+(`classification_pre_biblical_filter`). This removes a filter rather than letting a gate promote: the both-runs
+rule still applies to that grade. Jeff's catalogue excludes every flagged story.
 
 Shown with `reviewed: false` and the page's "not yet checked by a scholar" notice.
 
@@ -55,7 +64,7 @@ the scholarly work, where a disagreement is a question worth asking.
 - `mishnah_stories[]` — withheld by Stage 4g, never shown to Jeff
 - a golden story Jeff never answered
 - an unreviewed story the detector grades below YES/HIGH in any run
-- a passage both judges call `out_of_scope` (biblical)
+- a passage Gemini calls `out_of_scope` and Claude calls `not` (not a story at all)
 - the same span proposed twice ships once (counted and named on stderr)
 
 ## The one principle behind every line
@@ -91,3 +100,7 @@ definite answer.
 - 2026-11-09, later — Simon: the judges are not the gate. Unreviewed tractates ship the detector's
   YES/HIGH in both runs (Yevamot 82, Berakhot 112), minus biblical passages both judges flag.
   Reviewed tractates ship only stories with Jeff's own yes behind them (Ketubot 17a:3 removed).
+- 2026-11-10 — Simon: biblical stories ship, flagged `biblical` and excluded from Jeff's catalogue,
+  including those Stage 4j demoted. The one judge narrowing becomes Gemini-biblical plus
+  Claude-not-a-story (5 passages across Shas, per `docs/findings/2026-11-10-shas-accuracy.md`). The site
+  went from 1,803 to 1,897 stories, 102 of them flagged.
