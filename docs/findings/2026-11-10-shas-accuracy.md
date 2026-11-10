@@ -83,11 +83,11 @@ the site. That a story is on his list is Jeff's own evidence. Whether that shoul
 | measurement | kind | result |
 |---|---|---|
 | Jeff's verdicts on calls shown to him as YES/HIGH (Ketubot, Kiddushin, Gittin, detector v5–v11, last verdict per passage) | **CIRCULAR**, older versions | 139 yes / 11 borderline / 9 no (+4 unknown, 3 out of scope) → **87.4% yes** |
-| shipped v14 stories that overlap a story on Jeff's blind list | **BLIND lower bound** | Eruvin **50/73 = 68.5%**, Yevamot **60/82 = 73.2%** |
-| the same, plus Claude's grading of every shipped story *not* on his list (`results/shas_run/accuracy/unlisted_shipped_grades.json`, 45 stories, each with its reason) | **indicated** (Claude, not Jeff) | Eruvin: 9 yes / 7 borderline / 7 no → **80.8%** yes, 90.4% yes-or-borderline. Yevamot: 13 / 8 / 1 → **89.0%**, 98.8% |
+| shipped v14 stories that overlap a story on Jeff's blind list | **BLIND lower bound** | Eruvin **50/73 = 68.5%**, Yevamot **60/85 = 70.6%** (85 since biblical stories ship; 3 of them biblical, none on his list, as R-S1 predicts) |
+| the same, plus Claude's grading of every shipped story *not* on his list (`results/shas_run/accuracy/unlisted_shipped_grades.json`, 48 stories, each with its reason) | **indicated** (Claude, not Jeff) | Eruvin: 9 yes / 7 borderline / 7 no → **80.8%** yes, 90.4% yes-or-borderline. Yevamot: 15 / 9 / 1 → **88.2%**, 98.8% |
 | the Gemini scope judge on the 1,541 judge units that overlap a shipped story | **indicated**, and not independent (same model as the detector) | 90.0% story, 5.6% borderline, 3.9% not |
 
-**Reading:** the circular figure (87%), the Claude-graded blind estimate (81–89%) and the Gemini judge (90%) all
+**Reading:** the circular figure (87%), the Claude-graded blind estimate (81–88%) and the Gemini judge (90%) all
 fall around **85%**. That is at the provisional gate, not clearly over it. **It is not verified:** none of the three
 is Jeff grading a random sample of what v14 ships. The 7 Eruvin "no"s follow a pattern. Three are the Gemara quoting
 a Mishnah story, which Jeff has called "no" before (Gittin 46a, 74b). The others are an enactment, a habitual
@@ -113,7 +113,8 @@ figure is 139 of 159 judged (87.4%) when borderline counts against.
 
 1,420 of 1,526 definite passages are definite in both runs (**93.1%**) over the 32 run tractates. 9 are under 90% and
 ship by Simon's ruling. **Note:** `docs/findings/2026-11-10-shas-run.md` says 93.7% (1,281 of 1,367). Its own table
-sums to 1,420 / 1,526, so the 93.7% does not reproduce. It is probably from an earlier snapshot.
+sums to 1,420 / 1,526, so the 93.7% does not reproduce. It is probably from an earlier snapshot. *Corrected in the base
+(`1ef317d`) while this finding was in review.*
 
 ## 3. The reading lists
 
@@ -137,6 +138,11 @@ sums to 1,420 / 1,526, so the 93.7% does not reproduce. It is probably from an e
     has no effect. Across all of Shas that split occurs on **43 judge units, 5 of which overlap a shipped story:
     exactly these 5.** (indicated: my reading of all 5)
 
+**Since resolved in the base** (`3df8464`, Simon 2026-11-10, merged into this branch): biblical stories now ship,
+flagged `biblical`. Gemini-out-of-scope plus Claude-not-a-story now **drops** the passage, so none of the 5
+non-stories is on the site. Megillah 7a:2-3 and Sanhedrin 113a:10-13 carry the flag. The 45/45 reading above stands:
+the flag is right on every passage it was set on.
+
 **The two-run disagreements** (`jeff_two_run_disagreements.json`, 106 passages, definite in exactly one run; 79 are
 story/borderline and 27 story/not). I read a random sample of 20 (seed 20261110). 12 read as stories, 4 borderline,
 and 4 not stories or biblical (Taanit 24a, Sukkah 31a, which is only a fragment, Sotah 13a, Taanit 27b). **Most of
@@ -150,21 +156,21 @@ site loses Jeff's stories. (indicated)
 
 1. **Precision of the site is not verified.** To verify it, ask Jeff (or a second scholar) to grade a **random sample
    of shipped v14 stories, about 60, stratified across tractate types**: halakhic, aggadic-heavy (Sanhedrin,
-   Megillah), and Kodashim. That costs his time and no model spend. The axis review UI already exports what is
-   needed. Until then, ~85% is indicated.
+   Megillah), and Kodashim. That costs his time and no model spend. **That sample now exists in the base**
+   (`08d336a`: 59 stories, `validation/ui/shas_precision_sample.html`, the ask drafted and **not sent**). Until he
+   answers, ~85% is indicated.
 2. **Recall for the 32 tractates with no list is not verified.** Only Eruvin is a held-out blind test of v14. Jeff's
    2005 lists cover 5 tractates. Whether he has lists for others is a question for him, not something we can check
    here. Without them, the best check left is the same random-sample review aimed at recall: have him read a few
    random pages *triage skipped* and a few with no story found. That would put a rough number on what is missing
    where there is no list.
 3. **The site shows about two-thirds of Jeff's stories, and nobody chose that number.** The both-runs-definite rule
-   was chosen for precision. Its cost to recall is first measured here. Two decisions for Simon follow. They narrow
+   was chosen for precision. Its cost to recall is first measured here. Two decisions followed; one is still open. They narrow
    or widen the site, so they are his to make, not this finding's:
    - should a story on Jeff's own list (the Ketubot and Kiddushin goldens) ship when the old detector called it LOW?
      The site does not show 63 of the 149 Ketubot stories Jeff listed, or 38 of the 90 Kiddushin ones. 53 and 37 of
      those are LOW in the golden or missing from it;
-   - should Claude's "not a story" drop a passage that Gemini calls out of scope? That would remove the 5 non-stories
-     above, and it only narrows.
+   - ~~should Claude's "not a story" drop a passage that Gemini calls out of scope?~~ Decided yes in the base.
 4. **A defect found along the way:** under the default `--standard current`, `measure_recall_vs_expert_list.py`
    **raises on the Ketubot .doc** (`superseded_by_rule.json`'s Ketubot 21b entry matches 0 rows). This script uses
    `--standard 2005` for Ketubot, which affects only the CIRCULAR site-recall row. The Ketubot recall cell in
