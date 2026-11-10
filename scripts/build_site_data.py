@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """Export the stories for the Septimus family viewer (work/2026-10-12-septimus-story-viewer.md).
 
-Reads (read-only): results/canonical/{ketubot,kiddushin,gittin}_canonical.json and
-results/v11/yevamot/yevamot_v11.json. Writes site/data/index.json + site/data/<tractate>.json.
+THE FILTER IS docs/technical/septimus-story-filter.md -- read it before changing anything here.
+In one line: **only definite stories reach the site.** It is a PUBLICATION filter, stricter than
+the scholarly catalogue, and it never writes back: goldens, detector runs and judge outputs are
+read-only here, and borderlines and maybes stay in the scholarly work where they matter.
 
-Tiers (decided 2026-10-12): `story` = YES or HIGH_CONFIDENCE; `borderline` = BORDERLINE, shown
-separately. LOW_CONFIDENCE is NOT shipped (Simon, 2026-10-12). NOT_A_STORY never ships. Yevamot has no expert
-round: its stories are detector output, flagged `reviewed: false`.
+    reviewed tractate (Jeff's golden)  -> YES / HIGH_CONFIDENCE in stories[] WITH Jeff's own evidence
+                                          behind it (a yes verdict, or his 2005 list) -- the golden
+                                          also carries detector calls he never saw
+    unreviewed tractate (detector)     -> YES / HIGH_CONFIDENCE in EVERY run listed, in stories[]
 
-mishnah_stories[] (Stage 4g's withheld Mishnah-internal stories) IS exported, per Simon
-2026-10-12: flagged `in_mishnah: true` and `reviewed: false` (detector output, never shown to
-Jeff; whether they count is still his scope question).
+Never shipped: BORDERLINE (Simon 2026-10-15), LOW_CONFIDENCE (2026-10-12), NOT_A_STORY,
+mishnah_stories[] (Stage 4g withheld them; never shown to Jeff). A second gate may narrow,
+never promote (Lesson 45). The consensus judges are NOT a gate here (Simon 2026-11-09): the
+Gemini judge is the detector's own model and adds almost nothing; the Claude judge drops ~13% of
+the detector stories Jeff calls yes. They stay in the scholarly work -- except for one narrowing: a passage BOTH judges call
+`out_of_scope` (biblical characters, R-S1) does not ship.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -23,12 +29,59 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data"
 
+# runs: the first is exported (its boundaries and summaries are shown); every run must agree.
+# ruler: results/rulers/<t>_ruler.json (scripts/build_ruler.py) -- where Jeff's evidence is read.
 SOURCES = {
-    "ketubot": ("results/canonical/ketubot_canonical.json", True),
-    "kiddushin": ("results/canonical/kiddushin_canonical.json", True),
-    "gittin": ("results/canonical/gittin_canonical.json", True),
-    "yevamot": ("results/v11/yevamot/yevamot_v11.json", False),
+    "ketubot": {"runs": ["results/canonical/ketubot_canonical.json"], "reviewed": True},
+    "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True},
+    "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True},
+    "yevamot": {"runs": ["results/v11/v14_yevamot/run1.json", "results/v11/v14_yevamot/run2.json"], "reviewed": False,
+                "scope_judges": "results/consensus/yevamot"},
+    "berakhot": {"runs": ["results/v14/berakhot/run1.json", "results/v14/berakhot/run2.json"], "reviewed": False,
+                 "scope_judges": "results/consensus/berakhot"},
 }
+
+
+def biblical_cells(tractate):
+    """Cells of passages BOTH judges call `out_of_scope` (biblical characters, R-S1). The judges are
+    used for this one narrowing only -- Jeff excludes biblical stories, and the detector does not."""
+    d = SOURCES[tractate].get("scope_judges")
+    if not d:
+        return set()
+    verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
+                   if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
+    units = json.loads((ROOT / d / "units.json").read_text())["units"]
+    return {tuple(c) for u in units
+            if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
+DEFINITE = ("YES", "HIGH_CONFIDENCE")
+
+
+def definite_cells(path):
+    """Cells of YES/HIGH_CONFIDENCE spans in stories[] (never mishnah_stories) of one run."""
+    pages = json.loads((ROOT / path).read_text())["pages"]
+    return {(r, g.get("index")) for i, p in enumerate(pages) for s in p.get("stories", [])
+            if s.get("classification") in DEFINITE for r, gs in pieces(pages, i, s) for g in gs}
+
+
+# Golden-entry fields that record Jeff's own answer on that entry (later rounds than the ruler reads).
+JEFF_FIELDS = ("review_verdict", "label_source", "expert_answer", "source")
+
+
+def jeff_evidence_cells(tractate):
+    """Cells Jeff has said yes to: on his 2005 list, or a verdict read as `yes` (scripts/verdict_reading.py,
+    via the ruler). Simon's own pre-screen round is not Jeff's and does not count."""
+    entries = json.loads((ROOT / f"results/rulers/{tractate}_ruler.json").read_text())["entries"]
+    out = set()
+    for e in entries:
+        yes = any(v.get("read_as") == "yes" and "simon" not in v.get("round", "") for v in e.get("verdicts", []))
+        if not (e.get("expert_listed") or yes):
+            continue
+        out |= {tuple(c) for c in e.get("expert_segments") or []}
+        if yes:
+            out |= {(r, i) for r, a, b in e.get("detector_span") or [] for i in range(a, b + 1)}
+    return out
+
+
 NIKUD = re.compile("[ְ-ׇ]")
 KEEP = {"b", "i", "strong", "em", "big", "small", "br"}
 TAG = re.compile(r"<(/?)([a-zA-Z0-9]+)[^>]*>")
@@ -41,11 +94,8 @@ def clean(html):
 
 
 def tier(classification):
-    if classification == "NOT_A_STORY":
-        return None
-    if classification == "BORDERLINE":
-        return "borderline"
-    return "story" if classification in ("YES", "HIGH_CONFIDENCE") else None
+    """Only definite stories ship: BORDERLINE, LOW_CONFIDENCE and NOT_A_STORY never do."""
+    return "story" if classification in DEFINITE else None
 
 
 def pieces(pages, i, s):
@@ -61,39 +111,56 @@ def pieces(pages, i, s):
     return out
 
 
-def build(tractate, path, reviewed):
-    d = json.loads((ROOT / path).read_text())
-    pages = d["pages"]
-    stories = []
+def build(tractate):
+    src = SOURCES[tractate]
+    reviewed = src["reviewed"]
+    pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
+    jeff = jeff_evidence_cells(tractate) if reviewed else None
+    biblical = biblical_cells(tractate)
+    others = [definite_cells(q) for q in src["runs"][1:]]
+    stories, seen = [], set()
     for i, p in enumerate(pages):
-        for in_mishnah, key in ((False, "stories"), (True, "mishnah_stories")):
-            for s in p.get(key, []):
-                t = tier(s.get("classification"))
-                if t is None:
-                    continue
-                ps = pieces(pages, i, s)
-                segs = [(r, g) for r, gs in ps for g in gs]
-                assert segs, (tractate, p["ref"], s)
-                if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
-                    print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
-                stories.append({
-                    "id": f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}",
-                    "tractate": tractate,
-                    "ref": p["ref"],
-                    "refs": [r for r, _ in ps],
-                    "start_segment": int(s["start_segment"]),
-                    "tier": t,
-                    "classification": s.get("classification"),
-                    "in_mishnah": in_mishnah,
-                    "extended": None,
-                    # Mishnah-internal stories were never shown to Jeff, whatever the tractate.
-                    "reviewed": reviewed and not in_mishnah,
-                    # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
-                    "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
-                    # ref + index locate a segment exactly, so feedback on one can be traced to the source.
-                    "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
-                                 for r, g in segs],
-                })
+        for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
+            t = tier(s.get("classification"))
+            ps = pieces(pages, i, s)
+            segs = [(r, g) for r, gs in ps for g in gs]
+            assert segs, (tractate, p["ref"], s)
+            cells = {(r, g.get("index")) for r, g in segs}
+            # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
+            if jeff is not None and not cells & jeff and not any(s.get(k) for k in JEFF_FIELDS):
+                t = None   # in the golden, but a detector call Jeff never answered
+            if cells & biblical:
+                t = None   # biblical characters, out of scope (R-S1): both judges say so
+            if any(not cells & o for o in others):
+                t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
+            if t is None:
+                continue
+            sid = f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}"
+            if sid in seen:
+                # The detector can propose the identical span twice (Yevamot 15a:16, v14 run1). One passage
+                # is one story on the site; the duplicate is counted and named, never silently dropped.
+                print(f"  duplicate span, shipped once: {sid}", file=sys.stderr)
+                continue
+            seen.add(sid)
+            if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
+                print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
+            stories.append({
+                "id": sid,
+                "tractate": tractate,
+                "ref": p["ref"],
+                "refs": [r for r, _ in ps],
+                "start_segment": int(s["start_segment"]),
+                "tier": t,
+                "classification": s.get("classification"),
+                "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
+                "extended": None,
+                "reviewed": reviewed,
+                # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
+                "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
+                # ref + index locate a segment exactly, so feedback on one can be traced to the source.
+                "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
+                             for r, g in segs],
+            })
     return apply_extensions(tractate, stories, pages)
 
 
@@ -156,8 +223,9 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     wpm = reading_wpm()
     index = {"reading_wpm": wpm, "tractates": []}
-    for t, (path, reviewed) in SOURCES.items():
-        stories = add_reading_time(build(t, path, reviewed), wpm)
+    for t in SOURCES:
+        reviewed = SOURCES[t]["reviewed"]
+        stories = add_reading_time(build(t), wpm)
         ids = [s["id"] for s in stories]
         assert len(ids) == len(set(ids)), f"{t}: duplicate story ids"
         (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories},

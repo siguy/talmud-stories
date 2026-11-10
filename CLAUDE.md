@@ -276,6 +276,7 @@ archive/                          # Old versions (reference only)
 | `docs/findings/2026-09-01-board-guards-verify-the-wrong-property.md` | **Why `board.py --check` passing means less than it looks.** Three defects behind a green check; the STATE/code triage disagreement is still open |
 | `lessons/` | Durable rules from past sessions. Read before starting; append after any correction. |
 | `FOR_SIMON.md` | Plain-English project explanation |
+| [`docs/technical/septimus-story-filter.md`](docs/technical/septimus-story-filter.md) | **What reaches the Septimus family site: definite stories only** — applied in `scripts/build_site_data.py`, and kept apart from the scholarly catalogue, where borderlines and maybes are the work. A later gate may narrow what ships, never promote (L-045) |
 
 ## Git Tags
 - `v10-golden-ketubot` — golden dataset checkpoint
