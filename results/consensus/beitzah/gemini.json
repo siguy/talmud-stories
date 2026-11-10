@@ -1,0 +1,1110 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-10T00:02:06",
+  "outcomes": {
+   "ok": 64
+  }
+ },
+ "rows": [
+  {
+   "id": "Beitzah 4a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a host coming before a rabbi with a question and receiving a ruling. Under R-C0 and R-C5, this is a bare report of a legal case where coming before the rabbi is the only event and no further action or change is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 4a:18-Beitzah 4b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav Pappa and a man who came before him with a legal problem. It contains multiple actions (coming before the rabbi, being sent away, returning the next day) and a resolution that includes a ruling and an explanation of a change in the rabbi's own reasoning.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 4b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi's ritual practice (reciting havdala) cited as evidence of his legal position within a standard rabbinic dialogue. Under R-C5 and R-C7, a bare report of a practice that leads only to a discussion and lacks a narrated event or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 5a:9-Beitzah 5b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rabbi Eliezer and his students, including an action (seeking to render the vineyard ownerless) and a resolution through dialogue. It begins with a standard opening formula as per R-B1 and describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 6a:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ravina and Rav Ashi) where an emotional state ('he was sad') leads to a dialogue and conflict regarding a legal situation. Under R-C0 and R-C2, the presence of an emotional reaction and the conflict between the characters regarding the ruling elevate this beyond a standard legal discussion into a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 6b:11-Beitzah 7a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man attempted to buy eggs for incubation, was misled, and brought the case to Rabbi Ami. Under R-C0, an incident involving a specific action followed by a rabbinic ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 7a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage follows the 'incident followed by a ruling' shape defined in R-C0; it narrates a specific event (a man requesting fertilized eggs and being given unfertilized ones) followed by a legal resolution from Rabbi Ami.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 7b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's practice (Rav Mari took action) cited as a legal precedent. According to R-C5 and the limit of R-C0, a description of what a rabbi did without a narrated change or a second action following the incident does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 7b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a general legal principle followed by a bare report of an incident involving a chicken, which lacks a rabbinic actor, change, or causality beyond the single act mentioned.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 9b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where the sons of Rabbi Hiyya traveled, issued a ruling, and were subsequently corrected by their father. This contains multiple actions and a change in the legal status of the object, satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 9b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident where Rabbi Ḥiyya’s sons permitted a certain action and were subsequently rebuked and ordered to reverse their ruling by their father. It contains multiple actions, conflict between the characters, and a change in the legal status of the object following the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 11b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dictum by Shmuel followed by a bare report of Rav Adda bar Ahava's habitual practice. Under R-C5, a description of what a rabbi used to do that leads to no further action, change, or conflict is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 12b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man coming before a rabbi and receiving a ruling, but there is no other narrated action or change beyond the ruling itself. Under R-C0 and R-C7, an incident where coming before a rabbi is the only event is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 12b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a host and a rabbi that includes multiple actions (having an item, asking a question, the rabbi not knowing, and traveling to another rabbi) followed by a ruling. According to R-C0, an incident followed by a ruling counts as a story when there is narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 13b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of what the wives of Rav and Rabbi Hiyya used to do (peeling barley by the cupful) cited as evidence in a legal discussion. Under R-C5 and R-C7, a habitual practice or report that leads to no further action, change, or conflict is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 14a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief incident where Rav Sheshet hears a sound and reacts to it, which constitutes a real event beyond speech. However, it is borderline because it consists of a single event followed by a dialectical discussion (R-C7 shape 2) and involves speech-acts with conflict regarding household practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 14b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Pappi visited Mar Shmuel and refused to eat porridge based on his observations of the food's preparation. It contains multiple actions (visiting, bringing food, refusing to eat, observing details) and fits the criteria of a rabbinic incident that goes beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 15a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific historical incident ('due to an incident that occurred') as the basis for a ruling, but the narrative details are missing and must be filled in from commentaries. Under R-C6 and R-C7 shape 4, such named-only or sketched incidents are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 15a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi's ruling followed by a standard scholarly challenge and resolution. Under R-C0 and R-C7, a case where coming before a rabbi or a ruling is the only event, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 15b:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative introduced by a formal opening formula ('מעשה ב...'). It describes a specific one-time event involving a rabbi and his students, containing multiple actions, conflict (the students' shame), and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 16b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific individual (the blind man) and Mar Shmuel, featuring emotional reactions, dialogue, and a change in the rabbi's ruling over time. It satisfies R-C0 as an incident followed by a ruling with narrated change, and R-C3 as it moves from a recurring situation to a specific outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 16b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where a rabbi performed an action and another rabbi responded with a sharp rebuke. While it involves a ruling, the emotional conflict and the specific act of Rav Tahlifa make it more than a bare report, fitting the borderline shape of speech with conflict and a single event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 19a:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue and hypothetical legal cases used to explain a Tannaitic dispute. Rava's report of finding the Sages sitting and speaking is a framing device for a scholarly discussion rather than a narrative event, and the cases of the man running or the man coming to ask a question are presented as 'for example' (hypotheticals) rather than incidents that actually occurred.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 20a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of a man giving an order followed by a rabbi's ruling, which Jeff classifies as not a story because there is no other narrated action or change beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 20a:11-Beitzah 20b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Hillel, Bava ben Buta) with multiple actions, conflict between the schools, and a clear change in the legal status quo. Per R-B1, the opening formula 'The Sages taught... There was an incident' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 20b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (disciples of Hillel and Shammai) with multiple actions: bringing an offering, an encounter, a dialogue with conflict, and a resolution where one party is silenced and departs. This exceeds a bare report or speech-act because the verbal rebuke leads to a physical change in the scene (the departure of the antagonist).",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 21a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage contains a narrative interaction with conflict and change: Rav Huna dismisses a scholar with a sharp retort ('a raven flies'), followed by a private exchange with his son where he explains his emotional and physical state. It goes beyond a simple ruling or speech act by depicting a specific courtroom drama and a subsequent change in the audience's understanding of the rabbi's behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 21a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Shimon the Timnite and Rabbi Yehuda ben Bava) with multiple actions—a military threat, a slaughtering of a calf, and a subsequent interaction in the study hall. Per R-C0, the inclusion of a legal rebuke or ruling does not disqualify the passage as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 21b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal debate (midrash halakha) between Rabbi Yosei HaGelili and Rabbi Akiva regarding the interpretation of a biblical verse. There are no narrated events, actions, or incidents, which are required for a story under R-C0 and R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 21b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The first part is a report of a public teaching (speech-act), and the second part describes a habitual practice (what the rabbis 'would say') that leads to no specific event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 22a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Ulla visits Rav Yehuda and an action is performed by a servant, followed by a legal challenge and a response. This fits the criteria of an incident followed by a ruling or resolution as defined in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 22a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of an event (Ameimar painting his eye) followed by a legal discussion and ruling. Under R-C7 shape 2 and R-C0, an incident followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 22a:16-Beitzah 22b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a standard rabbinic dialogue consisting of a ruling and a subsequent legal challenge and defense. Under R-C0 and R-C5, a ruling alone without a narrated incident or change is not a story, and the dialogue lacks the conflict required by R-C2 to be considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 22b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes the habitual practices of the house of Rabban Gamliel as observed by Rabbi Eliezer bar Tzadok. Under R-C3 and R-C5, a description of a custom or a habit that does not lead to a specific one-time event or change is considered a report of practice rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 23a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a public teaching followed by a scholarly dialogue and conflict between rabbis. Under R-C2 and R-C7, speech-heavy interactions with conflict but minimal physical action are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 23a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident where a post-biblical figure (Theodosius) instituted a custom, which triggered a response and conflict from the Sages. Under R-C0 and R-C3, this is a story because the custom led to a specific one-time event (the Sages sending a message of rebuke).",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 24a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story about a gentile bringing fish to Rabban Gamliel and his subsequent ruling. Under R-C0, an incident followed by a ruling counts as a story, and under R-C1, the Talmud's quotation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 24b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story within a dictum where Rav narrates a specific historical event involving himself, Levi, and Rabbi Yehuda HaNasi. It describes a change (Rabbi changing his ruling) and a subsequent action/consequence (Rav retracting while Levi did not), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 25b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving an old man who went out in a litter, followed by a query to a rabbi and his subsequent ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 25b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of past actions by Aḥi Shakkaya and Rav Naḥman bar Yitzḥak cited as legal precedents. Under R-C5, these are descriptions of what someone did that lead nowhere and lack the narrative change or causality required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 25b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a rabbi sending an emissary on a journey, the death of the intended recipient, and the emissary finding an alternative rabbi to resolve the mission. This contains multiple actions and a change in circumstances beyond a simple legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 25b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal precedent (Rav Nahman permitting Yalta to use poles) cited as a challenge in a legal discussion. It lacks a narrated incident or change beyond the ruling itself, falling under the category of a report of what someone did rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 25b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Ameimar and Mar Zutra used to do (a habitual practice) cited as a precedent or custom, with no specific one-time event, conflict, or change following the habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 26b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi bringing a baraita (teaching) from one location to another, which is a speech-act or a report of scholarly transmission rather than a narrative event. Under R-C2 and R-C5, a report of what someone did that leads only to a legal discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 27a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rabbi Yehuda Nesia and multiple actions: sending the animal to two different rabbis, their hesitation, and the intervention of other rabbis. This contains multiple actions and a sequence of events beyond a bare ruling, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 27a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a man makes a resolution, travels to Eretz Yisrael, finds Rabbi Zeira, and engages in a dialogue that results in a change of understanding regarding a legal tradition. This contains multiple actions and a resolution beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 27a:14-Beitzah 27b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event involving Rava and a man with a firstborn animal, featuring multiple actions (washing hair, looking, returning the next day) and a dialogue that resolves the incident. While it begins with a habitual frame regarding Ami of Vardina, it transitions into a specific narrative incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 27b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story about Rabbi Tarfon entering the study hall to resolve a specific incident. Under R-C1, Mishnah stories quoted in the Talmud are included, and under R-C0, an incident involving a specific action (entering the study hall) followed by a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 28a:5-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two brief reports of what rabbis did: weighing meat portions (segment 2) and an incident involving seven fish (segment 7). Under R-C0 and R-C7, these are borderline because they consist of a single event followed by a legal discussion or a question of character, rather than a fully developed narrative with change or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 28a:19-Beitzah 28b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rav Nehemya) observing an action by Rava (running a knife over a basket), followed by a dialogue and a change in understanding of the rabbi's intent. This fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 28b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Abaye and his master, Rabba, featuring physical action (running a knife over a millstone), dialogue with conflict/deception, and an emotional/intellectual perception of intent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 29a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving post-biblical figures (Abba Shaul ben Botnit and his colleagues) who take action by collecting jugs and bringing them to Jerusalem. This leads to a dialogue with the Temple treasurers and a resolution regarding the use of the goods, meeting the criteria for a story with multiple actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 29b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a public teaching followed by a sharp retort (conflict) and an instruction to go see the local practice. Under R-C2 and R-C7 shape 1, speech-heavy interactions with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 29b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where the wives of rabbis perform a specific action (sifting flour in an unusual way) followed by a verbal response or observation by the rabbis that confirms or explains the practice. These are narrated events that happened rather than hypothetical legal cases, fitting the definition of a halakhic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 30a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi instituting a legal practice (takkanah) without any narrated event, conflict, or change following the ruling. Under R-C5 and the limits of R-C0, a description of what a rabbi did or ordered that leads nowhere is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 30a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a standard rabbinic dialogue between Rav Hanan bar Rava and Rav Ashi regarding legal practice. There are no narrated events or actions beyond speech-acts, and the mention of women filling jugs is a general observation of practice rather than a specific incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 30a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal reasoning between Rava bar Rav Hanin and Abaye regarding the enforcement of prohibitions. There are no narrated events or actions beyond speech-acts, and the mention of women's behavior is cited as a general observation of practice rather than a specific incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 32b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Shabbetai bar Marinus traveled to Babylonia and was refused both business and food, leading to a specific reaction and change in his perception of the community. Per R-B1, the introductory formula and the dictum it illustrates are included as the frame of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 32b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents (Rabbi Hiyya's wife and Rava's attendant) where a specific event—a brick falling or a request for a roast—leads to a change in legal status or action. These are not merely hypothetical cases but narrated events involving post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 33a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal challenge to Rava's view using a quoted instruction to his attendant as evidence. This is a speech-act cited as a precedent for a legal position without conflict or a narrated event following the speech, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 36b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the leak) followed by multiple actions (coming before a rabbi, a ruling, and a subsequent deliberation) that lead to a clear change and resolution (the millhouse collapsing and the character's emotional reaction). It satisfies the requirement for more than a bare report or a simple ruling by including a causal sequence of events and a narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 36b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain mouse was discovered') followed by a rabbi's action and instruction ('Rav Ashi said... take hold of it... and remove it'). Under R-C0, this is a story because it describes an event that happened and includes a narrated action beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 38a:8-Beitzah 38b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Abba travels to Eretz Yisrael, encounters a group of rabbis, and engages in a dialogue that includes emotional reactions and conflict (the rabbis laughing at him twice). This contains multiple actions and a clear interpersonal change/conflict beyond a simple legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Beitzah 40a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a post-biblical figure (Rav Hana bar Hanilai) involving a specific incident (hanging meat on a door) followed by a ruling from Rav Huna. Under R-C0, the narrated event of hanging the meat provides the necessary action beyond the ruling to qualify as a story.",
+    "error": null
+   }
+  }
+ ]
+}

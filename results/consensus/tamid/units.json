@@ -1,0 +1,295 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/tamid/run1.json",
+   "v14_r2": "results/v14/tamid/run2.json"
+  },
+  "spans": {
+   "v14_r1": 9,
+   "v14_r2": 9
+  },
+  "units": 9,
+  "built": "2026-11-10T00:11:12"
+ },
+ "units": [
+  {
+   "id": "Tamid 27b:6-6",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 27b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shimon HaTzaddik went out to meet Alexander the Great while wearing his priestly vestments."
+  },
+  {
+   "id": "Tamid 27b:10-11",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 27b",
+     10
+    ],
+    [
+     "Tamid 27b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rav Safra was in the bathroom, Rabbi Abba cleared his throat to see if it was occupied, and Rav Safra's invitation to enter led to a later rebuke about modesty."
+  },
+  {
+   "id": "Tamid 27b:15-15",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 27b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A student died after drinking from a cup his teacher had used without first pouring out a bit of the water."
+  },
+  {
+   "id": "Tamid 27b:17-17",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 27b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The overseer of the Temple Mount would check on the guards at night."
+  },
+  {
+   "id": "Tamid 28a:8-8",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 28a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Two priests racing for the altar service collided, resulting in one breaking his leg, which led the court to replace the race with a lottery."
+  },
+  {
+   "id": "Tamid 29b:0-0",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 29b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Tzadok recounts an incident where three hundred priests were required to move the massive golden vine of the Temple."
+  },
+  {
+   "id": "Tamid 30b:6-6",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 30b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Diglai recounts how his father's goats in Mikhvar would sneeze from the scent of the incense being prepared in the Jerusalem Temple."
+  },
+  {
+   "id": "Tamid 31b:14-Tamid 32a:13",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 31b",
+     14
+    ],
+    [
+     "Tamid 32a",
+     0
+    ],
+    [
+     "Tamid 32a",
+     1
+    ],
+    [
+     "Tamid 32a",
+     2
+    ],
+    [
+     "Tamid 32a",
+     3
+    ],
+    [
+     "Tamid 32a",
+     4
+    ],
+    [
+     "Tamid 32a",
+     5
+    ],
+    [
+     "Tamid 32a",
+     6
+    ],
+    [
+     "Tamid 32a",
+     7
+    ],
+    [
+     "Tamid 32a",
+     8
+    ],
+    [
+     "Tamid 32a",
+     9
+    ],
+    [
+     "Tamid 32a",
+     10
+    ],
+    [
+     "Tamid 32a",
+     11
+    ],
+    [
+     "Tamid 32a",
+     12
+    ],
+    [
+     "Tamid 32a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Alexander of Macedon initiates a series of ten philosophical inquiries to the Elders of the Negev. Alexander of Macedon engages in a series of philosophical and practical exchanges with the Elders of the Negev, leading to his successful expedition through the Mountains of Darkness to a city of women."
+  },
+  {
+   "id": "Tamid 32b:0-3",
+   "tractate": "Tamid",
+   "cells": [
+    [
+     "Tamid 32b",
+     0
+    ],
+    [
+     "Tamid 32b",
+     1
+    ],
+    [
+     "Tamid 32b",
+     2
+    ],
+    [
+     "Tamid 32b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Alexander the Great journeys to the entrance of the Garden of Eden, where he is given a symbolic eyeball that outweighs all his gold until it is covered with dust."
+  }
+ ]
+}

@@ -1,0 +1,2870 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:23",
+  "outcomes": {
+   "ok": 166
+  }
+ },
+ "rows": [
+  {
+   "id": "Pesachim 3b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving two students and Rav, where a speech-act (the choice of language) leads to a concrete change in action (Rav refusing to speak with one of them). This meets the criteria of an event followed by a response or change, rather than a bare report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 3b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Hillel/Rabbi and their students) where a specific dialogue leads to a prediction and a subsequent change in status (the student becoming a ruler in Israel). This satisfies the requirement for multiple actions and a narrated change beyond a simple ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 3b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving three priests where a speech-act leads to a concrete action (investigation) and a change in status (discovery of disqualification), meeting the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 3b:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rabbi Yehuda ben Beteira) and a gentile. It contains multiple actions, conflict, and a clear change in outcome (the gentile is caught and killed) resulting from the rabbi's clever intervention.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 3b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (rabbis) involving multiple actions: a mission to check on a colleague, the discovery of his death, the symbolic act of rending a garment, and a dialogue with a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 3b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Yoḥanan's return from the villages) followed by a dialogue containing conflict (the mockery by the Sages), which satisfies the criteria for a story beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 4a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav arrives in Eretz Yisrael and engages in a dialogue with Rabbi Hiyya that involves conflict and implied change (the realization of death). This is followed by a concrete action (removing shoes and going to the bathhouse) which serves as a resolution and a basis for legal rulings, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 4a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a person's habitual speech used as evidence for his lineage, with no narrated event, conflict, or change following the statement. Under R-C5 and R-C2, a habit that leads only to a scholarly observation rather than a one-time incident or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 4a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a man's habitual behavior leads to an investigation by the Sages, which results in a discovery about his lineage. Under R-C0 and R-C3, this constitutes a story because the habit leads to a distinct action and a change in knowledge.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 5b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage consists entirely of a speech-act (a ruling/instruction) without any narrated action or change following it. Under R-C2 and the limits of R-C0, a rabbi's order or standard rabbinic dialogue without an event or conflict is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 8b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage consists entirely of a legal dilemma and dialogue between students and Rav without any narrated action or change. Under R-C0 and R-C2, a case brought before a rabbi that results only in a ruling or a statement of 'I do not know' is standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 9a:10-Pesachim 9b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a maidservant and a priest followed by a ruling from the Sages. Under R-C0, an incident followed by a ruling counts as a story, and under R-B1, the opening formula is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 13a:10-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a complete narrative incident (a man depositing a bag, mice boring holes, and a series of interactions with Rabbi Yehuda HaNasi) that leads to a change in status (the order to sell). While segments [3]-[6] discuss and refine the details of the story, they function as the Gemara's commentary and legal analysis of the event, which under R-B4 are excluded from the story itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 13b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard rabbinic dialogue where a teacher corrects a student's recitation of a baraita; this is a speech-act without conflict or a narrated event beyond the dialogue itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 15b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage consists entirely of standard rabbinic dialogue (a challenge and a response) without any narrated action or event. Under R-C2 and R-C7, speech-acts alone without conflict or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 16a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (an instruction to raise a legal difficulty) without any narrated action or event. Under R-C2 and R-C7, standard rabbinic dialogue or the preparation for a legal discussion does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 19a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi leaving to analyze a matter and finding a source; this is a report of a scholarly act (speech-act equivalent) that leads only to a legal discussion and citation, lacking the necessary action or change to constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 20a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a Tanna reciting a baraita before a rabbi followed by a standard philological correction; this is a speech-act within a scholarly dialogue and lacks the actions or events necessary for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 22b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where a rabbi's habitual practice (interpreting all 'etim') leads to a crisis and a change (his withdrawal), followed by a dialogue with his students and a resolution by Rabbi Akiva. Under R-C0 and R-C3, this sequence of actions and the resulting change constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 25b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man comes before Rava with a life-or-death dilemma, followed by Rava's ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves a real-world event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 25b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where one rabbi finds another performing a physical action (rubbing his daughter with prohibited olives), followed by a dialogue involving conflict and a defense of the action. Under R-C0, this is a narrated incident rather than a hypothetical case, and it contains more than just speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 29a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi retracting a legal position based on a baraita; this is a standard scholarly speech-act or change of mind without a narrated event or action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 30a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (a threat/instruction) directed at pot merchants. While it lacks physical action, it contains conflict and an implied change in market behavior, fitting the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 30a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident followed by a ruling' shape; it narrates a specific event that happened ('a certain oven that they smeared') followed by a rabbinic action/ruling, which Jeff defines as a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 30b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal dialogue between Ravina and Rav Ashi regarding the preparation of knives. Under R-C2 and R-C7, standard rabbinic dialogue or speech-acts without a narrated event or conflict do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 30b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dilemma raised before a rabbi followed by his ruling; while the rabbi mentions an observation ('I saw that they sweat'), this is cited as evidence for a legal conclusion rather than a narrated event or change, making it standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 33a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists only of a rabbi's arrival followed by a legal teaching; there is no narrated action, conflict, or change that would constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 34a:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between rabbis with a clear conflict (a challenge to their teaching) and a change in state (the students being silenced and then asking for the challenger's own tradition). Under R-C2 and R-C7 shape 1, speech-heavy passages with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 34b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Ravin traveling and presenting a teaching) followed by a dialogue with significant conflict and a sharp retort, which fits the borderline criteria for speech-based narratives with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 35a:12-Pesachim 35b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific interaction where students debate a ruling while their teacher dozes, followed by the teacher waking up to intervene. This contains a real event and conflict beyond standard dialogue, fitting the 'mainly speech but something happens' borderline shape.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 36a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (Rabbi Yehoshua's instruction to his sons) followed by a standard rabbinic dialogue and revision of the statement. There is no narrated action or change beyond the speech itself, making it a report of a practice or teaching rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 37a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal dialogue between Baitos ben Zonin and the Sages without any narrated action or event. Under R-C2 and R-C7, standard scholarly back-and-forth or legal discussion without conflict or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 37a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once I followed my father') involving post-biblical figures (Rabban Gamliel, R. Tzadok) and includes multiple actions: entering a home, bringing food, and a dialogue that resolves a legal tension. Segment 3 is excluded as it is the Gemara's variant version and commentary on the dialogue rather than the narrative action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 38b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative of a specific historical interaction between Rabbi Ilai and his teachers, involving multiple actions (asking, going, returning, reciting) and an emotional reaction from Rabbi Eliezer. It goes beyond a bare legal ruling by depicting a sequence of events and a dialogue with conflict/excitement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 39a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: the protagonist searched among students and then appeared before a specific rabbi who conceded to his view. This contains multiple actions and a change in state (from not finding a colleague to finding one), satisfying the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 39a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter where Ravina finds Rav Aḥa performing an action (searching for herbs), leading to a dialogue with conflict and a change of mind (implied in segment 2 and concluded in segment 3). Under R-C0 and R-C7, the presence of a real event followed by a dialogue that results in a change constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 40a:18-Pesachim 40b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a habitual practice (what Mar's mother used to do) cited as evidence of a legal view, with no specific event, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 40b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a boat capsizing) followed by a rabbi's ruling, a challenge to that ruling, and a subsequent change in the rabbi's decision. This sequence of events and the resulting change in the ruling satisfy the criteria for a story under R-C0 and R-C5.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 40b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rav Pappi permits an action for the Exilarch's cooks, followed by a critical response from Rava. Under R-C7 (shape 2), an incident followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 42a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('On the next day') involving a misunderstanding and a subsequent interaction between the townspeople and Rav Mattana. It contains multiple actions and a resolution, fitting the criteria for a rabbinic story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 43a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident about a specific person ('a certain man from the West') who performed a series of actions (visited, requested a dip, heard the name, and stopped eating) which led to a change in outcome. It fits the criteria of a story rather than a legal hypothetical or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 48a:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a dialogue between Rabbi Yirmeya and Rabbi Zeira regarding the acceptance of a teaching. While it consists primarily of speech-acts, it contains conflict (one accepts, the other does not) and a specific interaction between named post-biblical figures, fitting the borderline shape of 'mainly speech but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 49a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Tzadok and Zonin) with multiple actions: Zonin arrives and makes an announcement, and the narrator follows his father to perform the removal. Per R-B1, the opening formula 'It was taught' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 49a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a rabbi married a woman, became ill, and interpreted the illness as a response to his marriage. This contains multiple actions and a change in state (becoming ill) following an event, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 49a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Idi bar Avin marrying a priest's daughter) that leads to a distinct change or outcome (the birth of two ordained sons), meeting the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 49a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue (speech acts) regarding a past event (exile) with an element of conflict or challenge from others, fitting the borderline shape of speech with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 49b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Akiva and his students regarding his past feelings. While it is primarily speech-acts, it contains conflict (the students' challenge) and describes a change in Akiva's status from ignoramus to rabbi, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 50a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Yosef became ill and had a near-death experience, followed by a dialogue with his father about what he witnessed. Although embedded within a dictum, it contains multiple actions and a change in state (illness to recovery) that meets the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 50a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a mental action (Rava thought to expound) and a speech act (the old man's response) that creates a conflict or correction. Under R-C2 and R-C7 shape 1, dialogue with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 50b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (the custom of the residents of Beit She'an) but follows it with a specific one-time event where their children come before Rabbi Yoḥanan and receive a ruling. Under R-C3, a custom that leads to a specific event is a story, and under R-C0, an incident followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 50b:11-Pesachim 51a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific incident where the residents of Hozai came before Rav Yosef and he issued a ruling that included a physical action (letting a non-priest eat in their presence). However, the narrative quickly dissolves into a standard legal discussion and debate between Abaye, Rav Yosef, and Rav Ashi, making it a case of one event followed by a ruling and discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving post-biblical figures (the sons of Rabban Gamliel) that goes beyond a bare report; it includes a specific event in Kabul, a public reaction (conflict), and a subsequent action (Hillel stealing away) that demonstrates a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time incident involving post-biblical figures (Yehuda and Hillel) that follows a description of a local custom. It meets the criteria for a story because it narrates multiple actions—the brothers wearing the shoes, the townspeople denouncing them, and the brothers responding by removing the shoes—leading to a change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event involving Rabban Shimon ben Gamliel that follows a habitual frame (the custom in Akko). It includes multiple actions and a change—the rabbi sitting, the city denouncing him, and the rabbi moving to the ground—which satisfies the criteria for a story even though it is followed by Gemara commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabba bar bar Hana eating, being visited, and concealing his food) followed by a conflict and a sharp retort from Abaye. It meets the criteria of having multiple actions and a change in the situation beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a speech-act where Rabba bar bar Hana instructs his son based on an eyewitness event (seeing Rabbi Yoḥanan eat). While it contains a report of an action, it is primarily a dialogue/instruction with minimal change, fitting the borderline shape of speech containing an event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 51a:11-Pesachim 51b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once I followed...') involving multiple actions (following into a garden, taking cabbage, eating, and giving) and a dialogue that resolves the incident. Although embedded within a dictum as a precedent, it meets the criteria for a story because it describes a concrete event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 52a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Natan traveling) followed by a legal response and a dialogue between rabbis regarding the punishment. Under R-C0, an incident followed by a ruling or action counts as a story, and the presence of conflict and multiple versions of the interaction provides the necessary narrative change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 52b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Safra travels with a jug of wine and encounters a conflict between two scholars regarding a ruling. It includes multiple actions (traveling, questioning, choosing a side) and a resolution involving Rav Yosef's emotional/mocking reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 52b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rabbi Elai did (chopping down a palm tree) cited as a precedent for a legal discussion. Under R-C5 and the limit of R-C0, it is not a story because the act does not lead to a continuation, response, or change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 53a:13-Pesachim 53b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story about Todos of Rome who instituted a custom, which led to a specific one-time event where the Sages sent him a message and threatened him with ostracism. This follows the rule that a custom leading to a specific action or conflict constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 53b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a clear narrative about Ulla riding a donkey with his companions, featuring physical action, conflict (the angry look), and a resolution through dialogue. It begins with an opening formula and includes a concluding verse applied to the characters' actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 54a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a metaphorical application of a biblical verse to two rabbis followed by a standard legal discussion and a report of communal practice. There are no narrated actions or events that lead to a change, only speech-acts and scholarly analysis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 54a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Adam, the first man, discovering fire and breeding the first mule. While it is a story with actions and change, it is about a biblical figure rather than a rabbi or post-biblical figure, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 55b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a pedagogical interaction where a rabbi tests his students by raising a contradiction between legal sources. This is standard rabbinic dialogue and scholarly back-and-forth rather than a story, as it lacks a narrated event or change beyond the speech-act of teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 55b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah passage describing the habitual practices of the residents of Jericho and the Sages' reaction to them. Under R-C1, a Mishnah story belongs to the Mishnah, and under R-C5, a report of what a group used to do (a custom) without a specific one-time event following it is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 56a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a continuation of a Mishnah passage describing the habitual practices of the residents of Jericho and the Sages' response; it is a report of customs and legal precedents rather than a narrated event with change or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 56a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of specific historical actions taken by King Hezekiah and the reactions of the Sages. While it constitutes a story with actions and consequences, it is about a biblical figure and is therefore out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 56a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative involving Jacob and his sons, but it is about biblical characters rather than rabbis or post-biblical figures, placing it outside the collection's scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Bohayan and his son) with multiple actions: the son designates produce, the father finds the poor, and the father intervenes with a specific offer and explanation. It meets the criteria of a story because it describes a specific incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing the distribution of hides, but transitions into a specific sequence of actions and changes: the powerful priests took hides by force, the owners responded by consecrating them, and this led to the specific historical outcome of plating the sanctuary in gold. Per R-C3 and R-C0, this causal chain of events constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific sequence of events: powerful people took property by force, and the owners responded by standing and consecrating the property to Heaven. This contains multiple actions and a clear change in the status of the property, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a series of laments and speech-acts (woe is me) describing the general conduct of priestly houses. There is no specific event, action, or change narrated, making it a report of a situation rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a series of four 'cries' or declarations by the Temple courtyard regarding various figures. Under R-C2 and R-C5, these are speech-acts and bare reports of character or habitual practice (like wrapping hands in silk) without a narrated event, conflict, or change following the speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 57b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions, conflict, and a clear change in the protagonist's state (the severing of his hands). It follows the 'one-time event' pattern described in R-C3 and meets the criteria for a story about post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 62b:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident between Rabbi Simlai and Rabbi Yoḥanan involving multiple actions (coming before him, pressuring him, throwing a clod of dirt) and a change in the rabbi's attitude toward the student. It contains conflict and dialogue that leads to a resolution, meeting the criteria for a story beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 64b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (an old man being crushed) that occurred within a habitual frame (the Passover crowds in the days of Hillel). It includes a distinct action and a resulting change (the naming of that specific Passover), fitting the criteria for a rabbinic-era story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 64b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving King Agrippa, a post-biblical figure in scope. It contains a specific action (the king's request and the priest's counting method) that leads to a change in knowledge and a specific outcome (the naming of the 'Passover of the crowded').",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 66a:2-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative about Hillel's rise to leadership, containing multiple actions, conflict (the forgotten law and Hillel's rebuke), and a clear change in status (his appointment as Nasi). It follows the rule that an incident leading to a ruling or a change in status constitutes a story, and it includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 66b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Hillel and the sons of Beteira involving a legal question and a response. While it is primarily speech-acts, it contains conflict (the challenge of the question and Hillel's admission of forgetting) and an implied change in the legal situation, fitting the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 68a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a tanna reciting a baraita and a rabbi correcting its wording. This is standard rabbinic dialogue and scholarly back-and-forth without any real-world action or event beyond the speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 68b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Rav Yosef's custom on Shavuot) rather than a one-time event, and it consists primarily of a speech-act. While it shows personal reflection and 'dynamism' regarding his status, the lack of a specific narrative incident following the habit places it in the borderline category.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 68b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (reviewing studies every thirty days) that includes a physical action and a speech act. Under R-C3 and R-C7, a habit that involves physical action and speech is borderline, especially as it is followed by a standard rabbinic dialogue/commentary rather than a one-time event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 69a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with significant conflict, including a sharp rebuke and a curse ('his death will be with slaughter'), which fits the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 70b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event where Yehuda ben Dortai and his son took the action of separating and moving to the south due to a religious dispute. This constitutes a narrated incident with a change of location and a specific motivation, followed by a speech-act that provides the resolution/conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 71a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a legal teaching (dictum) transmitted by Ravin in the name of Rabbi Elazar. It consists entirely of a speech-act regarding halakhic obligations with no narrated action, conflict, or change, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 72a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical setting (finding the rabbi in a crowd) and a repeated action (learning forty times), but it is primarily a speech-act of teaching. Under R-C2 and R-C7, teaching and dialogue with minimal action are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 72b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes two rabbis sitting together and reporting legal dicta; this is standard rabbinic dialogue and speech-acts without conflict or a narrated event, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 72b:26-Pesachim 73a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabbi Tarfon and Rabban Gamliel) that includes a specific event (missing the study hall), a meeting, and a dialogue that resolves the conflict. Per R-B1, the opening formula 'As it was taught in a baraita: There was an incident' is included as part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 73a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (a father instructing his son to ask a legal question) without any narrated action, conflict, or change following the speech. Under R-C2 and R-C5, a dialogue or instruction that serves only to introduce a legal discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 74a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a report of what two rabbis used to call a specific object, which constitutes speech-acts or habitual naming without any narrated event, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 74b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Ravin the Elder and Rav (wrapping a dove in dough and the subsequent interaction), which fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 74b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rava visited the Exilarch and was served a breaded goose, followed by his reaction and statement. Under R-C0, an incident involving a post-biblical figure that narrates an action beyond a mere ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 75a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage quotes a story from the Mishnah involving Rabban Gamliel and his servant Tavi. It is classified as borderline because it consists entirely of a speech-act (an instruction) with no narrated action or change following it, though it functions as a precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 76a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened ('a particular young bird fell') followed by a rabbi's ruling and a subsequent reaction by Rava praising the ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes a real event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 76b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a legal teaching followed by a report of a specific incident ('a certain fish...') and a ruling by Rava of Parzikiyya. Under R-C0 and R-C5, this is a bare report of a ruling where the only narrated action is the incident itself and the rabbi's prohibition, which does not lead to a further change or continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 84a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a legal dialogue and a report of a contradiction, but it includes a specific interpersonal conflict and an emotional reaction ('Do not trouble me') that leads to a change (Rabbi Yoḥanan's retraction).",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 86b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav Huna visits Rav Naḥman bar Yitzḥak and performs several distinct actions (identifying himself, sitting, accepting a cup, drinking). This sequence of events is followed by a dialogue that explains his conduct, meeting the criteria for a story rather than a bare legal report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 86b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi visits a house, performs actions (accepting and drinking a cup), and engages in a dialogue involving conflict/challenge regarding his conduct. This fits the definition of a story as an event that happened with multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 87a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving dialogue and actions between God and the prophet Hosea. However, because it is a retelling of a biblical episode involving biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 87b:2-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative involving Hosea and God, including dialogue, conflict, and a change in the protagonist's actions. However, because it is about biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 87b:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between an apostate and Rabbi Hanina/Rabbi Oshaya; while it contains conflict and a sharp retort, it is primarily composed of speech acts with minimal physical action, fitting the borderline criteria for dialogue with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 88a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Ulla's visit to Pumbedita) involving multiple actions and a clear change in the character's perspective caused by a physical event (indigestion). It moves from a general statement about dates to a one-time incident that leads to a reversal of Ulla's initial assessment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 88b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (a king, queen, and Rabban Gamliel) that includes multiple actions—slaughtering the offerings, the slaves' inquiry, and the referral to the rabbi—culminating in a ruling that resolves the situation. Per R-B1, the opening formula 'it was taught' and the 'incident' marker are included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 88b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a one-time event (finding a lizard) that leads to a series of actions, a test, and a change in status (the meal being declared pure). It follows the R-C0 principle where an incident followed by a ruling constitutes a story, and R-C3 as it describes a specific 'one day' event following a habitual frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 89a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of an outcome (daughters preceded sons) cited as evidence of a trait (enthusiasm vs laziness). Under R-C5 and R-C7, a single act or result that leads nowhere and lacks a subsequent event or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 89b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (rabbis) with multiple actions, conflict, and a resolution. It begins with a specific incident (mixing bread), includes dialogue and legal debate as part of the plot, and concludes with a change in state (dividing the meal) and a subsequent humorous event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 90b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a tanna reciting a baraita before a rabbi followed by a scholarly correction; this is standard rabbinic dialogue and teaching (speech-acts) without a narrated event or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 93b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion using biblical prooftexts and a bare report by Rabbi Hanina of an observation ('I myself saw that place'). Under R-C5 and R-C2, a report of a fact or a speech-act without a narrated event, conflict, or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 94a:12-Pesachim 94b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story involving a Divine Voice responding to Nebuchadnezzar's hubris, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 100a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person report of a specific event (Mareimar happening upon a lecture where a tanna recited a baraita and a rabbi accepted it), which goes beyond a bare report of a custom. However, it is framed as a speech-act within a legal discussion and the event itself is minimal, leading directly back into a ruling/difficulty, making it borderline under the criteria for one real event followed by discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 100a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story introduced by a formula ('And there was an incident') that narrates a specific event (reclining in Akko) followed by a dialogue with conflict and a resolution that changes the halakhic outcome. Under R-C0 and R-C1, this is a full story even though it is quoted from a Tannaitic source and involves a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 100b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabba bar Rav Huna visited the Exilarch and performed a series of actions (table brought, spread a cloth, recited kiddush). This constitutes a story under R-C0 as it describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 101a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice ('many times... he would descend') cited as evidence for a legal view, with no specific one-time event or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 101a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the lamp being extinguished) that led to a change of location and a subsequent action (reciting kiddush again). Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical case, and it contains multiple actions and a change of state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 101a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual practice and a recurring instruction given by Rabba to his students rather than a one-time event. Under R-C5 and R-C3, a custom or habit that does not lead to a specific narrated change or incident is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 103a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi visits another's home and an action occurs (bringing items and reciting blessings) followed by a dialogue of conflict/challenge. Under R-C0, this is a narrated incident involving post-biblical figures rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 103a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Ya’akov bar Abba visited Rava's house and observed a specific action (reciting two blessings), followed by a dialogue involving conflict/questioning and a resolution. This meets the criteria of an incident followed by a ruling or explanation as defined in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 103b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rav Beruna, Rav Hananel, and Rav Yeiva) where a sequence of actions occurs: the students request a cup for Grace, change their minds, and are then corrected by the server. This fits the definition of a story as an event that happened, where the ruling serves as the resolution to the narrated actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 103b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where three rabbis are sitting at a meal and performing distinct actions, followed by a dialogue involving conflict and explanation of their behavior. Under R-C0, this is more than a legal case as it describes a specific incident with multiple actors and actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 103b:5-Pesachim 104a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Ya’akov bar Abba’s visit to Rava) involving concrete actions like lighting a torch and reciting Havdala, followed by a dialogue and a ruling on the optimal manner of the mitzva.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 104b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (Ulla's arrival, the sending of a proxy, the observation, and the return) and a clear conflict/resolution in the form of Rav Yehuda's rebuke of his son's pride. It goes beyond a simple ruling or speech act by narrating a specific one-time event with interpersonal change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 105a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific event involving post-biblical figures (Rav Hananya and Rav Hamnuna) where an action (sitting at a meal) leads to a request and a rabbinic ruling. Under R-C0, an incident followed by a ruling counts as a story, whereas segments [3] and [4] are the subsequent legal discussion and commentary excluded by R-B2 and R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 105a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav Huna saw a man drinking and rebuked him, which constitutes a narrated event followed by a ruling/action as defined in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 106a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rav Ashi visits Meḥoza and faces a social/legal dilemma. It contains multiple actions (arriving, being asked to recite kiddush, reciting the blessing, observing the elder) and a resolution where the protagonist gains insight.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 106b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (visiting, forgetting/tasting, and reciting havdala) followed by a dialogue and a change in the expected behavior (Rav Asi allowing his guest to follow a different ruling). It fits the criteria of a story because it describes a specific incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 107a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving Ameimar's visits, including actions (fasting, waiting for wine) and a change in his behavior/ruling the following year. It fits the criteria of a story because it describes what happened in a specific incident rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 107a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Levi sends beer to Rabbi Yehuda HaNasi, followed by a sequence of actions: the tasting, the verbal praise, the physical consequence (pain at night), and a concluding reaction. This contains multiple actions and a change in state, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 107a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief incident where Rav Huna finds Rav reciting kiddush over beer, followed by a dialogue exchange with conflict/mockery. Under R-C7 shape 1 and 2, it is borderline because it consists of a single event followed by a speech-act with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 108a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where students reclined on each other's knees at Rabba's house, followed by a change in behavior and a ruling when they moved to Rav Yosef's house. This contains multiple actions and a resolution, fitting the definition of a halakhic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a report of the habitual practices of Abaye and Rav Nahman bar Yitzhak regarding drinking in pairs. Under R-C5 and R-C3, a description of what someone used to do or a custom that does not lead to a specific one-time event or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rava bar Livai was injured following a specific action (drinking four cups), which Rava then interprets. This meets the criteria of an incident involving multiple actions and a change in state (the injury) rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110a:13-Pesachim 110b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a speech-act (a witch teaching Ameimar an incantation) without any narrated event, conflict, or change following it. Under R-C2 and R-C5, a bare report of speech or a teaching that does not lead to a specific incident is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time incident ('the barrel burst') that follows a description of a rabbi's habitual practice, meeting the criteria for a story under R-C3 and R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and a clear change in outcome. It follows the pattern of R-C3, where a habitual frame (the man's daily drinking) leads to a specific 'one day' event that results in a tragic resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 110b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to an incident involving Rabba bar Naḥmani ('like that incident') as evidence for a legal position, but the narrative is not provided in full and must be reconstructed from context or commentaries.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 111a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving 'a certain man' where an action (passing over water while riding and wearing shoes) leads to a physical change (shoes shrinking and feet shriveling). This meets the criteria of a story as an event that happened with a clear change or outcome, rather than a bare report or a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 111b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story about post-biblical figures (demons) where a specific event is narrated: a demon's warning to her son and the subsequent death of the father and son. This meets the criteria of having multiple actions and a change in state, even though it is embedded within a legal/descriptive dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 111b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event ('Once a Torah scholar...') following a habitual/descriptive frame. It narrates multiple actions—the scholar fleeing and the demon grabbing a tree—resulting in a clear change where the demon bursts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 111b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, conflict, and change: a man is endangered by demons, a sage fails to help and is mocked by the demons (conflict), and a second sage successfully drives them away.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 111b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (Abaye, Rav Pappa, and Rav Huna) where an action (switching positions) is taken in response to a sighting, followed by a dialogue that explains the change. It meets the criteria of having multiple actions and a change in the situation, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 112a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Rabbi Shimon visiting Rabbi Akiva in prison) with dialogue containing conflict and a change in the protagonist's stance. While it frames a list of teachings, the interaction itself constitutes a narrated incident beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 112b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to an incident involving Rav Pappa as evidence for a ruling, but the narrative itself is not provided in the text and must be filled in from commentaries. According to R-C6, such alluded incidents are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 112b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Hanina ben Dosa) encountering a demon. It follows the pattern of a habitual frame ('Initially...') leading to a specific one-time event ('Once...') that results in a permanent change or resolution regarding the demon's presence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 112b:16-Pesachim 113a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Abaye and a post-biblical figure (Agrat) involving conflict and a decree that changes the status quo. While segment 3 and the end of segment 2 contain Gemara commentary explaining why the decree's effect is not visible today, the core narrative in segment 2 constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 113a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech-acts (Rav's advice to his son) without any narrated action, conflict, or change following the dialogue. Under R-C2 and R-C5, a report of a rabbi's teaching or a speech without an accompanying event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 113b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav Safra's face lit up and Rava responded with a story about Rav Hanina and Rav Oshaya. The embedded narrative about the cobblers describes a habitual practice that leads to a specific change/outcome (the prostitutes swearing by their lives), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 113b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rav Pappa) where an action (testifying alone) leads to a specific consequence (the lashing of the witness) and a verbal exchange that resolves the event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 114a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (quoting a proverb) without any narrated action or event. Under R-C2 and R-C5, a report of what someone said or a general teaching without conflict or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 114b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal definition by Rav Huna followed by a report of Rava's habitual practice. Under R-C5, a bare report of what a rabbi used to do as an expression of his view or practice, without a specific event or change following it, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 115b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event where Abaye reacts to the table being removed, leading to a change in the ritual proceedings (exemption from Ma Nishtana). This follows a general custom frame but describes a distinct incident with action and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 116a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a rabbi and his servant with dialogue that leads to a specific action and change in the ritual situation (exempting the questions and beginning the recitation). It fits the 'incident followed by a ruling/action' criteria of R-C0 and contains the conflict/resolution required for speech-based narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 116b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of Mareimar inquiring about the practices of Rav Yosef and Rav Sheshet. While it is primarily a report of speech-acts and standard rabbinic inquiry, it describes specific historical actions (the blind rabbis reciting the Haggadah) that challenge a legal premise, fitting the borderline shape of dialogue with implied conflict or events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 117a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an observation ('I saw a book of Psalms...') used as evidence in a legal discussion about the status of a word, with no continuation, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 117a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual practice of Rabba's (saying something humorous before teaching) rather than a one-time event. Under R-C3 and R-C5, a custom or habit that does not lead to a specific change or a unique incident is considered a bare report and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 117a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal debate followed by a bare report of an observation ('I saw a book of Psalms'). Under R-C5 and R-C7, a report of what someone saw or did that leads only to a scholarly conclusion is standard rabbinic dialogue and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 117b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates two distinct incidents where a prayer leader performed an action before a rabbi, resulting in a change or resolution (Rava's silent retraction and Rav Pappa's praise). These are not hypothetical cases but specific events involving post-biblical figures that lead to a narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 117b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Ravina and Mareimar where a prayer leader's actions caused a conflict (the crowd silencing him), which was resolved by a rabbi's ruling and a subsequent change in the crowd's behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with actions, dialogue, and an emotional change (Adam's tears and subsequent settling of his mind). However, it is about a biblical character (Adam) rather than a rabbi or post-biblical figure, placing it outside the collection's scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118a:19-Pesachim 118b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains full-blown stories with actions, dialogue, and change, but the characters are biblical (Abraham, Nimrod, Nebuchadnezzar, Hananiah, Mishael, Azariah) and angels, which falls under the OUT_OF_SCOPE label for biblical episodes retold.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story involving dialogue and action (the spewing out of the Egyptians), but it concerns biblical characters (God, the Angel of the Sea, and the Egyptians) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with actions and change, but it retells a biblical episode involving Sisera and the Kishon River rather than post-biblical figures or rabbis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Rabbi Yishmael falling ill) and a subsequent exchange of messages, but the content is primarily the transmission of teachings (speech-acts). Under R-C7 shape 1 and R-C2, dialogue with minimal action beyond the speech is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 119b:2-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about a future feast involving Abraham, Isaac, Jacob, Moses, Joshua, and David. While it is a story with dialogue and action, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 120b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Abaye observing Rabba dozing) and a dialogue, but it follows the shape of one event followed by a ruling or legal citation. Under R-C7 shape 2 and R-C2, this interaction between rabbis with a minimal action is classified as borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 121b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Simlai attends a ceremony, is asked a question, and travels to the study hall to resolve it. This contains multiple actions and a change in the protagonist's state of knowledge, satisfying the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 7
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Eruvin 26a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Hezekiah fell ill and Isaiah set up an academy at his door: a brief narrated event about biblical figures, offered as exegesis of a verse.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 96b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that Jonah's wife made the pilgrimage and was not reprimanded, cited as legal evidence; nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 96a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of the practices of Michal and Jonah's wife, cited as proof in a legal argument; there is no incident and nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 22b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line report that Joshua laid out roads, used to explain a legal status; it is a bare report about a biblical figure, not a narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 18a:26-27",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "Homiletic exegesis of how God built Eve; there is no narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 55b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An eyewitness statement about the size of a place, cited as evidence in a halakhic objection; nothing happens and no one responds.",
+    "error": null
+   }
+  },
+  {
+   "id": "Eruvin 19a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "An eschatological teaching about Abraham raising sinners from Gehenna: a general description, not an event that happened.",
+    "error": null
+   }
+  }
+ ]
+}

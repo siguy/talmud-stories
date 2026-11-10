@@ -1,0 +1,70 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 3
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Bava Metzia 87a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Abraham's weaning feast, the nations' gossip, Sarah nursing their children and Isaac's face changing is a full story with conflict and resolution, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Metzia 87a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A series of etiologies (Abraham prayed and aging began, Jacob and illness, Elisha's three illnesses), each a bare report of a biblical figure's act, and biblical in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Metzia 86b:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Abraham sends Eliezer out, disbelieves him, goes out himself and finds God at the door: a narrated episode about biblical figures.",
+    "error": null
+   }
+  }
+ ]
+}

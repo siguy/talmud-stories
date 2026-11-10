@@ -1,0 +1,6679 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/sanhedrin/run1.json",
+   "v14_r2": "results/v14/sanhedrin/run2.json"
+  },
+  "spans": {
+   "v14_r1": 239,
+   "v14_r2": 240
+  },
+  "units": 241,
+  "built": "2026-11-09T23:28:13"
+ },
+ "units": [
+  {
+   "id": "Sanhedrin 4a:3-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 4a",
+     3
+    ],
+    [
+     "Sanhedrin 4a",
+     4
+    ],
+    [
+     "Sanhedrin 4a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After his students leave, Rabbi Yehuda ben Roetz pursues them to provide a superior textual proof for the laws of impurity following childbirth."
+  },
+  {
+   "id": "Sanhedrin 5a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar Zutra errs in a legal ruling and consults Rav Yosef, who determines his liability based on whether the litigants accepted him."
+  },
+  {
+   "id": "Sanhedrin 5a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar Hana errs in a judgment in Babylonia and seeks a ruling from Rabbi Hiyya regarding his liability."
+  },
+  {
+   "id": "Sanhedrin 5a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar Rav Huna asserts his independent judicial authority during a dispute with the Exilarch's household."
+  },
+  {
+   "id": "Sanhedrin 5a:9-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5a",
+     9
+    ],
+    [
+     "Sanhedrin 5a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hiyya secures judicial and ritual authorization from Rabbi Yehuda HaNasi for his nephews, Rabba bar Hana and Rav, as they depart for Babylonia."
+  },
+  {
+   "id": "Sanhedrin 5b:5-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5b",
+     5
+    ],
+    [
+     "Sanhedrin 5b",
+     6
+    ],
+    [
+     "Sanhedrin 5b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi visits a town where people are mistakenly kneading dough in impurity due to a scholar's imprecise teaching, leading the Sages to decree that students must receive formal permission to rule."
+  },
+  {
+   "id": "Sanhedrin 5b:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Tanḥum son of Rabbi Ami arrives in Hatar and issues a ruling, but is rebuked by the locals for ruling in the presence of a more senior rabbi."
+  },
+  {
+   "id": "Sanhedrin 5b:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 5b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥiyya encounters a priest's son standing in a cemetery and rebukes him for ignoring his status and the laws of impurity."
+  },
+  {
+   "id": "Sanhedrin 7a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about silence, and Shmuel identifies a biblical verse that mirrors the sentiment."
+  },
+  {
+   "id": "Sanhedrin 7a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by speaks about the frequency of theft and divine punishment, prompting Shmuel to cite a supporting verse."
+  },
+  {
+   "id": "Sanhedrin 7a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about the righteous escaping pits, which Shmuel links to a verse in Proverbs."
+  },
+  {
+   "id": "Sanhedrin 7a:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about accepting a court's judgment joyfully, and Shmuel provides a biblical source."
+  },
+  {
+   "id": "Sanhedrin 7a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about laziness, and Shmuel connects it to a verse in Ecclesiastes."
+  },
+  {
+   "id": "Sanhedrin 7a:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about a trusted friend turning against him, and Shmuel cites a parallel verse from Psalms."
+  },
+  {
+   "id": "Sanhedrin 7a:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by recites a proverb about how love affects the perception of physical space, and Rav Huna provides biblical parallels."
+  },
+  {
+   "id": "Sanhedrin 7b:5-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7b",
+     5
+    ],
+    [
+     "Sanhedrin 7b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When an unlearned judge appointed by the Nasi's house asks Yehuda bar Naḥmani to act as his interpreter, Yehuda instead delivers a public sermon comparing the judge to a lifeless idol."
+  },
+  {
+   "id": "Sanhedrin 7b:18-Sanhedrin 8a:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 7b",
+     18
+    ],
+    [
+     "Sanhedrin 8a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav's host approaches him for a legal ruling, leading Rav to disqualify himself due to their personal relationship. After Rav disqualifies himself from judging his host, Rav Kahana takes the case and must sternly rebuke the host for acting as if his relationship with Rav places him above the law."
+  },
+  {
+   "id": "Sanhedrin 9b:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 9b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Yoḥanan ben Zakkai once conducted a cross-examination of witnesses by asking about the specific physical characteristics of the stems of the fig tree where the event occurred."
+  },
+  {
+   "id": "Sanhedrin 11a:0-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     0
+    ],
+    [
+     "Sanhedrin 11a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When an extra person arrives for a secret intercalation meeting, Shmuel HaKatan falsely claims to be the intruder to save the actual uninvited person from shame."
+  },
+  {
+   "id": "Sanhedrin 11a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "To protect a student who ate garlic from being shamed by Rabbi Yehuda HaNasi, Rabbi Hiyya pretends it was him and leaves, prompting the whole class to follow."
+  },
+  {
+   "id": "Sanhedrin 11a:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman claims a rabbi betrothed her; Rabbi Meir writes her a divorce to save the anonymous rabbi from embarrassment, and all other rabbis follow suit."
+  },
+  {
+   "id": "Sanhedrin 11a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While sages are reclining in Jericho, a Divine Voice declares one among them is worthy of prophecy, and they all look to Shmuel HaKatan."
+  },
+  {
+   "id": "Sanhedrin 11a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "In Yavne, a Divine Voice again identifies Shmuel HaKatan as worthy, and at his death, he prophesies the coming persecutions."
+  },
+  {
+   "id": "Sanhedrin 11a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "It describes a distinct historical event involving a different protagonist (Yehuda ben Bava) and a specific narrative outcome regarding his eulogy."
+  },
+  {
+   "id": "Sanhedrin 11a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabban Gamliel is delayed while visiting a Roman official in Syria, leading the court to intercalate the year contingent on his future approval."
+  },
+  {
+   "id": "Sanhedrin 11b:1-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 11b",
+     1
+    ],
+    [
+     "Sanhedrin 11b",
+     2
+    ],
+    [
+     "Sanhedrin 11b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel sits on the Temple Mount and dictates letters to his scribe Yoḥanan addressed to the Galilee and the Diaspora regarding the timing of tithes and the intercalation of the year."
+  },
+  {
+   "id": "Sanhedrin 12a:5-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 12a",
+     5
+    ],
+    [
+     "Sanhedrin 12a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "During Roman persecution, a coded message is sent to Rava describing how scholars were captured and how the court successfully intercalated the year in secret despite the governor's interference."
+  },
+  {
+   "id": "Sanhedrin 12a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 12a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Shimon cites an incident where Rabbi Akiva, while imprisoned, intercalated three years in a row."
+  },
+  {
+   "id": "Sanhedrin 12a:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 12a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda cites an incident where King Hezekiah intercalated the year due to ritual impurity and subsequently prayed for forgiveness."
+  },
+  {
+   "id": "Sanhedrin 12b:0-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 12b",
+     0
+    ],
+    [
+     "Sanhedrin 12b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Hezekiah, king of Judea, intercalates the year improperly due to ritual impurity and prays to God for forgiveness."
+  },
+  {
+   "id": "Sanhedrin 13b:11-Sanhedrin 14a:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 13b",
+     11
+    ],
+    [
+     "Sanhedrin 14a",
+     0
+    ],
+    [
+     "Sanhedrin 14a",
+     1
+    ],
+    [
+     "Sanhedrin 14a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Gemara introduces the heroic act of Rabbi Yehuda ben Bava, who saved the tradition of ordaining judges and the laws of fines from being lost to the Jewish people. During a Roman persecution, Rabbi Yehuda ben Bava secretly ordains five students in a desolate mountain pass and sacrifices his life to ensure their escape when Roman soldiers arrive."
+  },
+  {
+   "id": "Sanhedrin 14a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 14a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan is distressed because Rav Shemen bar Abba was not present to be ordained when the opportunity arose."
+  },
+  {
+   "id": "Sanhedrin 14a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 14a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan repeatedly fails to ordain Rabbi Ḥanina and Rabbi Hoshaya due to unforeseen circumstances, until they explain it is due to their descent from the house of Eli."
+  },
+  {
+   "id": "Sanhedrin 14a:9-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 14a",
+     9
+    ],
+    [
+     "Sanhedrin 14a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira initially hides to avoid the burden of leadership, but after hearing a teaching on its virtues, he accepts ordination and is celebrated with a wedding-like song."
+  },
+  {
+   "id": "Sanhedrin 14a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 14a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Whenever Rabbi Abbahu visited the emperor's palace, the noblewomen would come out and sing a song of praise to him."
+  },
+  {
+   "id": "Sanhedrin 16a:18-Sanhedrin 16b:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 16a",
+     18
+    ],
+    [
+     "Sanhedrin 16a",
+     19
+    ],
+    [
+     "Sanhedrin 16a",
+     20
+    ],
+    [
+     "Sanhedrin 16b",
+     0
+    ],
+    [
+     "Sanhedrin 16b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Gemara describes King David's nightly routine of Torah study triggered by a self-playing lyre, followed by a morning delegation of Sages who convince him to authorize military expansion to solve the nation's economic crisis."
+  },
+  {
+   "id": "Sanhedrin 17a:3-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 17a",
+     3
+    ],
+    [
+     "Sanhedrin 17a",
+     4
+    ],
+    [
+     "Sanhedrin 17a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Moses conducts a lottery with 72 slips to select 70 Elders for the Sanhedrin."
+  },
+  {
+   "id": "Sanhedrin 17a:6-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 17a",
+     6
+    ],
+    [
+     "Sanhedrin 17a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Moses uses a lottery to determine which of the firstborn must pay five shekels for redemption."
+  },
+  {
+   "id": "Sanhedrin 17a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 17a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Eldad and Medad remain in the camp out of humility rather than participating in the lottery."
+  },
+  {
+   "id": "Sanhedrin 18b:10-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 18b",
+     10
+    ],
+    [
+     "Sanhedrin 18b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages overhear three cattle herders describing seasonal signs to determine if the month is Adar, which ultimately aligns with the Sages' own calculations for intercalating the year."
+  },
+  {
+   "id": "Sanhedrin 19a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 19a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Two families in Jerusalem fought over who should walk first in the consolation line, leading the Sages to reverse the custom so that mourners walk past the people."
+  },
+  {
+   "id": "Sanhedrin 19a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 19a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yosei instituted specific communal regulations in the city of Tzippori regarding mourning customs and public conduct."
+  },
+  {
+   "id": "Sanhedrin 19a:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 19a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Menashya bar Ute recounts asking Rabbi Yoshiya the Great a question about the consolation line while they were in the cemetery of Huzal."
+  },
+  {
+   "id": "Sanhedrin 19a:15-Sanhedrin 19b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 19a",
+     15
+    ],
+    [
+     "Sanhedrin 19a",
+     16
+    ],
+    [
+     "Sanhedrin 19b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When King Yannai's slave committed murder, Shimon ben Shataḥ summoned the King to court and demanded he stand for judgment, leading to a tense standoff with the other judges. Shimon ben Shataḥ attempts to rally the judges against King Yannai, but they look down in fear, prompting his rebuke."
+  },
+  {
+   "id": "Sanhedrin 19b:18-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 19b",
+     18
+    ],
+    [
+     "Sanhedrin 19b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Palti son of Laish places a sword between himself and Michal to ensure he does not touch her, remaining chaste until she returns to David."
+  },
+  {
+   "id": "Sanhedrin 20a:15-Sanhedrin 20b:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 20a",
+     15
+    ],
+    [
+     "Sanhedrin 20b",
+     0
+    ],
+    [
+     "Sanhedrin 20b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravin reports that Rav Taḥlifa, who frequented the leather market, identified the 'dargash' as a leather bed, resolving a scholarly debate through personal experience."
+  },
+  {
+   "id": "Sanhedrin 21b:14-14",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 21b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Solomon married Pharaoh's daughter, the angel Gabriel planted a pole in the sea which eventually became the site where Rome was built."
+  },
+  {
+   "id": "Sanhedrin 22a:12-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 22a",
+     12
+    ],
+    [
+     "Sanhedrin 22a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abishag challenges King David's virility, leading him to summon Bathsheba."
+  },
+  {
+   "id": "Sanhedrin 22b:21-21",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 22b",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When asked about the High Priest's haircut, Rabbi Yehuda HaNasi points to his son-in-law Ben Elasa, who spent a fortune to maintain that specific style as a visual reference."
+  },
+  {
+   "id": "Sanhedrin 24a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 24a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi teaches a prohibition on Shabbat insulation but immediately defers when Rabbi Yishmael cites his father's contrary ruling."
+  },
+  {
+   "id": "Sanhedrin 25a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 25a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Two witnesses testify that bar Binittos lent money with interest, and Rava disqualifies him from serving as a judge or witness."
+  },
+  {
+   "id": "Sanhedrin 25a:9-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 25a",
+     9
+    ],
+    [
+     "Sanhedrin 25a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A slaughterer caught selling non-kosher meat is disqualified by Rav Nahman, but after the slaughterer performs physical acts of penance, Rav Nahman considers reinstating him until Rava warns it might be a ruse."
+  },
+  {
+   "id": "Sanhedrin 25b:23-Sanhedrin 26a:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 25b",
+     23
+    ],
+    [
+     "Sanhedrin 26a",
+     0
+    ],
+    [
+     "Sanhedrin 26a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira's father, acting as a tax collector, would protect the townspeople and rabbis by warning them to hide whenever the regional head tax collector arrived. Rabbi Zeira's father, a tax collector, protected his community from over-taxation and ensured on his deathbed that surplus funds he collected were returned to their owner."
+  },
+  {
+   "id": "Sanhedrin 26a:7-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 26a",
+     7
+    ],
+    [
+     "Sanhedrin 26a",
+     8
+    ],
+    [
+     "Sanhedrin 26a",
+     9
+    ],
+    [
+     "Sanhedrin 26a",
+     10
+    ],
+    [
+     "Sanhedrin 26a",
+     11
+    ],
+    [
+     "Sanhedrin 26a",
+     12
+    ],
+    [
+     "Sanhedrin 26a",
+     13
+    ],
+    [
+     "Sanhedrin 26a",
+     14
+    ],
+    [
+     "Sanhedrin 26a",
+     15
+    ],
+    [
+     "Sanhedrin 26a",
+     16
+    ],
+    [
+     "Sanhedrin 26a",
+     17
+    ],
+    [
+     "Sanhedrin 26a",
+     18
+    ],
+    [
+     "Sanhedrin 26a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling to intercalate the year, Reish Lakish's constant legal rebukes annoy his colleagues so much that they trap him on a roof, leading to a series of mutual insults and a confrontation before Rabbi Yoḥanan."
+  },
+  {
+   "id": "Sanhedrin 26a:20-Sanhedrin 26b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 26a",
+     20
+    ],
+    [
+     "Sanhedrin 26a",
+     21
+    ],
+    [
+     "Sanhedrin 26a",
+     22
+    ],
+    [
+     "Sanhedrin 26a",
+     23
+    ],
+    [
+     "Sanhedrin 26a",
+     24
+    ],
+    [
+     "Sanhedrin 26a",
+     25
+    ],
+    [
+     "Sanhedrin 26a",
+     26
+    ],
+    [
+     "Sanhedrin 26b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The wicked minister Shebna attempts to betray King Hezekiah to Sennacherib, but through prophetic intervention and divine punishment, his conspiracy is thwarted and he meets a gruesome end. The Assyrians, realizing Shebna's promised support has failed, torture and kill him by dragging him behind their horses."
+  },
+  {
+   "id": "Sanhedrin 26b:15-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 26b",
+     15
+    ],
+    [
+     "Sanhedrin 26b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa bar Shmuel attempts to validate a gift deed signed by known robbers, but Rava corrects him, stating that Torah-level robbers are disqualified without a court proclamation."
+  },
+  {
+   "id": "Sanhedrin 26b:25-25",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 26b",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Zevid disqualified two of his tenant farmers from testifying after they were caught stealing small amounts of barley and dates."
+  },
+  {
+   "id": "Sanhedrin 26b:26-28",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 26b",
+     26
+    ],
+    [
+     "Sanhedrin 26b",
+     27
+    ],
+    [
+     "Sanhedrin 26b",
+     28
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Pappa excommunicates gravediggers for burying a body on a festival, but Rav Huna son of Rav Yehoshua reinstates them, arguing they mistakenly believed they were performing a mitzvah."
+  },
+  {
+   "id": "Sanhedrin 27a:20-Sanhedrin 27b:8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 27a",
+     20
+    ],
+    [
+     "Sanhedrin 27b",
+     0
+    ],
+    [
+     "Sanhedrin 27b",
+     1
+    ],
+    [
+     "Sanhedrin 27b",
+     2
+    ],
+    [
+     "Sanhedrin 27b",
+     3
+    ],
+    [
+     "Sanhedrin 27b",
+     4
+    ],
+    [
+     "Sanhedrin 27b",
+     5
+    ],
+    [
+     "Sanhedrin 27b",
+     6
+    ],
+    [
+     "Sanhedrin 27b",
+     7
+    ],
+    [
+     "Sanhedrin 27b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Exilarch orders Rav Abba bar Ya’akov to investigate and potentially blind Bar Ḥama for murder, leading to witnesses coming forward. After Rav Pappi provides a legal defense that leads to bar Ḥama's acquittal in a murder case, bar Ḥama kisses the rabbi's feet and pledges to pay his taxes for life."
+  },
+  {
+   "id": "Sanhedrin 28a:31-Sanhedrin 28b:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 28a",
+     31
+    ],
+    [
+     "Sanhedrin 28b",
+     0
+    ],
+    [
+     "Sanhedrin 28b",
+     1
+    ],
+    [
+     "Sanhedrin 28b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav travels to a specific location to purchase parchment scrolls, where he is subsequently asked a legal question."
+  },
+  {
+   "id": "Sanhedrin 28b:18-22",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 28b",
+     18
+    ],
+    [
+     "Sanhedrin 28b",
+     19
+    ],
+    [
+     "Sanhedrin 28b",
+     20
+    ],
+    [
+     "Sanhedrin 28b",
+     21
+    ],
+    [
+     "Sanhedrin 28b",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Yosef initially intends to validate a gift deed signed by relatives, but after a persistent challenge from Abaye regarding the interpretation of Shmuel's ruling, he instructs the recipient to use an alternative legal method."
+  },
+  {
+   "id": "Sanhedrin 28b:27-Sanhedrin 29a:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 28b",
+     27
+    ],
+    [
+     "Sanhedrin 29a",
+     0
+    ],
+    [
+     "Sanhedrin 29a",
+     1
+    ],
+    [
+     "Sanhedrin 29a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The relatives of Mar Ukva's deceased wife come before him for a legal judgment after their formal kinship has ended. Mar Ukva refuses to adjudicate a case for his former in-laws, clarifying that his refusal stems from their refusal to obey the law rather than a legal disqualification due to kinship."
+  },
+  {
+   "id": "Sanhedrin 29b:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man hides witnesses in his bed canopy to overhear a debtor's admission, but the debtor later denies the seriousness of the statement."
+  },
+  {
+   "id": "Sanhedrin 29b:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man hides witnesses in a grave to overhear a debtor's admission, but the debtor refuses to acknowledge them as formal witnesses."
+  },
+  {
+   "id": "Sanhedrin 29b:5-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     5
+    ],
+    [
+     "Sanhedrin 29b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man known for his many debts publicly admits to owing specific people, but Rav Nachman rules the admission invalid as it may have been a lie to hide his wealth."
+  },
+  {
+   "id": "Sanhedrin 29b:7-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     7
+    ],
+    [
+     "Sanhedrin 29b",
+     8
+    ],
+    [
+     "Sanhedrin 29b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A miserly man admits to debts on his deathbed; his heirs pay half following one rabbi's ruling but are exempted from the rest by Rabbi Hiyya."
+  },
+  {
+   "id": "Sanhedrin 29b:20-20",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara investigates whether the scribes of Abaye and Rava are familiar with a specific legal requirement, and they confirm that they are."
+  },
+  {
+   "id": "Sanhedrin 29b:21-Sanhedrin 30a:4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 29b",
+     21
+    ],
+    [
+     "Sanhedrin 30a",
+     0
+    ],
+    [
+     "Sanhedrin 30a",
+     1
+    ],
+    [
+     "Sanhedrin 30a",
+     2
+    ],
+    [
+     "Sanhedrin 30a",
+     3
+    ],
+    [
+     "Sanhedrin 30a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B introduces a new case involving a specific document and its legal validity, distinct from the general inquiry into the scribes' knowledge in Passage A."
+  },
+  {
+   "id": "Sanhedrin 30a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 30a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man distressed over his father's hidden inheritance is visited by a dream figure who reveals the money's location and that it is second tithe, leading to a rabbinic ruling."
+  },
+  {
+   "id": "Sanhedrin 30b:1-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 30b",
+     1
+    ],
+    [
+     "Sanhedrin 30b",
+     2
+    ],
+    [
+     "Sanhedrin 30b",
+     3
+    ],
+    [
+     "Sanhedrin 30b",
+     4
+    ],
+    [
+     "Sanhedrin 30b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Shimon ben Elyakim successfully maneuvers to have Rabbi Yosei ordained by Rabbi Yohanan during a classroom exchange, though Rabbi Yohanan later questions the necessity of the ordination based on the simplicity of Yosei's teaching."
+  },
+  {
+   "id": "Sanhedrin 30b:16-21",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 30b",
+     16
+    ],
+    [
+     "Sanhedrin 30b",
+     17
+    ],
+    [
+     "Sanhedrin 30b",
+     18
+    ],
+    [
+     "Sanhedrin 30b",
+     19
+    ],
+    [
+     "Sanhedrin 30b",
+     20
+    ],
+    [
+     "Sanhedrin 30b",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nahman bar Yitzhak meets Rav Huna son of Rav Yehoshua and discusses a legal contradiction, leading to a display of the latter's self-defeating dialectical brilliance."
+  },
+  {
+   "id": "Sanhedrin 31a:5-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A case involving conflicting testimony about whether wine or oil was delivered comes before Rabbi Ami, who rules that the defendant must pay for the cheaper item."
+  },
+  {
+   "id": "Sanhedrin 31a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi validates a case where witnesses disagreed on which floor an event occurred by combining their testimony."
+  },
+  {
+   "id": "Sanhedrin 31a:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ami expels a student from the study hall after a rumor surfaces that the student revealed a secret from twenty-two years prior."
+  },
+  {
+   "id": "Sanhedrin 31a:23-24",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31a",
+     23
+    ],
+    [
+     "Sanhedrin 31a",
+     24
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A child loses a case in Rav Naḥman's court and leaves crying, which prompts witnesses to come forward and provide the necessary testimony regarding his father's affairs."
+  },
+  {
+   "id": "Sanhedrin 31a:25-Sanhedrin 31b:3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31a",
+     25
+    ],
+    [
+     "Sanhedrin 31a",
+     26
+    ],
+    [
+     "Sanhedrin 31a",
+     27
+    ],
+    [
+     "Sanhedrin 31a",
+     28
+    ],
+    [
+     "Sanhedrin 31b",
+     0
+    ],
+    [
+     "Sanhedrin 31b",
+     1
+    ],
+    [
+     "Sanhedrin 31b",
+     2
+    ],
+    [
+     "Sanhedrin 31b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman holding a promissory note claims it has already been repaid, leading Rav Naḥman to rule on her credibility based on the fact that she could have destroyed the document."
+  },
+  {
+   "id": "Sanhedrin 31b:16-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 31b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages of Tiberias send a letter to Mar Ukva regarding a complaint brought by Ukvan against his brother Yirmeya."
+  },
+  {
+   "id": "Sanhedrin 33a:7-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 33a",
+     7
+    ],
+    [
+     "Sanhedrin 33a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Tarfon ruled a cow without a womb to be non-kosher and fed it to dogs, but the Sages of Yavne later ruled such animals permitted based on medical practices in Alexandria."
+  },
+  {
+   "id": "Sanhedrin 34b:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 34b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A blind man in Rabbi Yoḥanan's neighborhood served as a judge, and Rabbi Yoḥanan did not intervene to stop him."
+  },
+  {
+   "id": "Sanhedrin 36a:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 36a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav mentions that when he sat in the court of Rabbi Yehuda HaNasi, they would begin the voting process with him."
+  },
+  {
+   "id": "Sanhedrin 37a:5-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 37a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic challenges Rav Kahana on how a husband and wife can be secluded during her menstruation without sinning, and Rav Kahana credits the Torah's protection."
+  },
+  {
+   "id": "Sanhedrin 37a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 37a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Zeira befriends local hooligans despite the Sages' disapproval, and upon his death, they are moved to repent."
+  },
+  {
+   "id": "Sanhedrin 37b:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 37b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Shimon ben Shataḥ recounts witnessing a murder in a ruin where, due to legal constraints on circumstantial evidence, he could not convict the man, but divine justice intervened via a snake."
+  },
+  {
+   "id": "Sanhedrin 38a:1-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 38a",
+     1
+    ],
+    [
+     "Sanhedrin 38a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During a meal, Rabbi Yehuda HaNasi plies the sons of Rabbi Ḥiyya with wine to get them to speak, leading them to prophesy the end of his own dynasty."
+  },
+  {
+   "id": "Sanhedrin 38b:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 38b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When God consulted groups of angels about creating man, He incinerated the first two groups who objected before the third group agreed to remain silent."
+  },
+  {
+   "id": "Sanhedrin 38b:17-17",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 38b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct narrative incident involving a confrontation between Rabbi Akiva and Rabbi Elazar ben Azarya, featuring a specific rebuke and a resolution regarding the interpretation of divine thrones."
+  },
+  {
+   "id": "Sanhedrin 38b:18-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 38b",
+     18
+    ],
+    [
+     "Sanhedrin 38b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic challenges Rav Idit regarding the divinity of Metatron, and Rav Idit provides a linguistic refutation."
+  },
+  {
+   "id": "Sanhedrin 38b:20-20",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 38b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a heretic challenged Rabbi Yishmael on a verse, a laundryman asked for permission to respond and silenced the heretic with a parable."
+  },
+  {
+   "id": "Sanhedrin 39a:1-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     1
+    ],
+    [
+     "Sanhedrin 39a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The emperor's daughter defends God against a charge of being a 'thief' by demonstrating with a piece of meat that seeing the process of creation would have made the result unappealing to Adam."
+  },
+  {
+   "id": "Sanhedrin 39a:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel uses the emperor's physical distress over his distant son to refute the emperor's claim that he knows where God 'sits'."
+  },
+  {
+   "id": "Sanhedrin 39a:4-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     4
+    ],
+    [
+     "Sanhedrin 39a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel uses a sieve of spinning quinces and the emperor's own teeth to demonstrate the absurdity of the emperor's claim that he can count the stars."
+  },
+  {
+   "id": "Sanhedrin 39a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct polemical encounter between the same characters but addressing a completely different theological topic (dualism vs. monotheism) through a new scriptural challenge."
+  },
+  {
+   "id": "Sanhedrin 39a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B features different protagonists (Rabban Gamliel and the Emperor) and a distinct theological argument compared to the magus and Ameimar in Passage A."
+  },
+  {
+   "id": "Sanhedrin 39a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A magus claims that the upper and lower halves of Ameimar's body belong to different gods, and Ameimar refutes him by asking how one god allows the other's waste to pass through his domain."
+  },
+  {
+   "id": "Sanhedrin 39a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Emperor proposes that Jews and Romans become one people, but when Rabbi Tanhum outwits him by suggesting the Romans circumcise themselves, the Emperor sentences him to the beasts."
+  },
+  {
+   "id": "Sanhedrin 39a:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel physically strikes the emperor's servant to set up a demonstration using the sun to explain how the Divine Presence can be in many places at once."
+  },
+  {
+   "id": "Sanhedrin 39a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While being mocked by a heretic, Rabbi Abbahu is approached by a student, and he uses the student's query to formulate a response to the heretic."
+  },
+  {
+   "id": "Sanhedrin 39b:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 39b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "During the splitting of the Red Sea, the ministering angels wanted to sing praise, but God stopped them because the Egyptians were drowning."
+  },
+  {
+   "id": "Sanhedrin 40a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 40a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "The Mishna records an incident where Yochanan ben Zakkai rigorously examined witnesses regarding the specific details of fig stems at the scene of a crime."
+  },
+  {
+   "id": "Sanhedrin 41a:20-Sanhedrin 41b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 41a",
+     20
+    ],
+    [
+     "Sanhedrin 41a",
+     21
+    ],
+    [
+     "Sanhedrin 41a",
+     22
+    ],
+    [
+     "Sanhedrin 41a",
+     23
+    ],
+    [
+     "Sanhedrin 41a",
+     24
+    ],
+    [
+     "Sanhedrin 41a",
+     25
+    ],
+    [
+     "Sanhedrin 41a",
+     26
+    ],
+    [
+     "Sanhedrin 41a",
+     27
+    ],
+    [
+     "Sanhedrin 41b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Zakkai cross-examines witnesses in a murder trial by asking highly specific questions about the physical characteristics of the fig tree where the crime occurred."
+  },
+  {
+   "id": "Sanhedrin 41b:4-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 41b",
+     4
+    ],
+    [
+     "Sanhedrin 41b",
+     5
+    ],
+    [
+     "Sanhedrin 41b",
+     6
+    ],
+    [
+     "Sanhedrin 41b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana and Rav Safra are encountered by Rami bar Ḥama, who challenges their learning on Sanhedrin, leading to a sharp resolution and mutual respect."
+  },
+  {
+   "id": "Sanhedrin 42a:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 42a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mareimar and Mar Zutra would support each other physically by leaning on one another's shoulders while reciting the blessing over the new moon."
+  },
+  {
+   "id": "Sanhedrin 43a:19-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 43a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara records that Jesus the Nazarene was hanged on the eve of Passover after a crier spent forty days seeking witnesses for his defense to no avail."
+  },
+  {
+   "id": "Sanhedrin 43a:21-25",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 43a",
+     21
+    ],
+    [
+     "Sanhedrin 43a",
+     22
+    ],
+    [
+     "Sanhedrin 43a",
+     23
+    ],
+    [
+     "Sanhedrin 43a",
+     24
+    ],
+    [
+     "Sanhedrin 43a",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The five disciples of Jesus are brought to court one by one, each attempting to save themselves using a biblical verse related to their name, only to be refuted by the judges and sentenced to death."
+  },
+  {
+   "id": "Sanhedrin 43b:5-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 43b",
+     5
+    ],
+    [
+     "Sanhedrin 43b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Joshua asks God to identify the sinner in the camp, is told to use lots, identifies Achan, and persuades him to confess."
+  },
+  {
+   "id": "Sanhedrin 44a:15-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 44a",
+     15
+    ],
+    [
+     "Sanhedrin 44a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After Rabbi Sheila publicly lectured that Joshua was personally sinful, Rav waited for him to leave and then appointed an interpreter to teach the public that Joshua was actually blameless."
+  },
+  {
+   "id": "Sanhedrin 44a:18-Sanhedrin 44b:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 44a",
+     18
+    ],
+    [
+     "Sanhedrin 44a",
+     19
+    ],
+    [
+     "Sanhedrin 44b",
+     0
+    ],
+    [
+     "Sanhedrin 44b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Joshua encounters an angel near Jericho, challenges him, and upon learning his identity, bows down to receive a rebuke regarding the neglect of Torah and sacrifices."
+  },
+  {
+   "id": "Sanhedrin 44b:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 44b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man being led to execution makes a conditional confession to ensure his atonement if he is actually innocent of the specific crime."
+  },
+  {
+   "id": "Sanhedrin 46a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 46a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer cites a historical incident where Shimon ben Shataḥ executed eighty witches in Ashkelon on a single day."
+  },
+  {
+   "id": "Sanhedrin 46a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 46a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "During the Greek period, a man was stoned for riding a horse on Shabbat as an emergency measure by the court."
+  },
+  {
+   "id": "Sanhedrin 46b:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 46b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "King Shapur of Persia challenges Rav Ḥama to find a Torah source for the requirement of burial, and Rav Ḥama is unable to answer."
+  },
+  {
+   "id": "Sanhedrin 47a:0-0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 47a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "King Hezekiah intentionally disgraced his father Ahaz's remains by dragging them on ropes to secure him spiritual atonement."
+  },
+  {
+   "id": "Sanhedrin 47a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 47a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "On his deathbed, Rabbi Yehuda HaNasi instructed his disciples to only eulogize him in large cities rather than small towns."
+  },
+  {
+   "id": "Sanhedrin 47b:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 47b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "People used dirt from Rav's grave to cure fevers and consulted Shmuel, who ruled the practice permissible because the ground itself is not forbidden like a corpse."
+  },
+  {
+   "id": "Sanhedrin 48b:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 48b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Joab refuses to leave the sanctuary when Solomon sends Benaiah to execute him, leading to a negotiation over the consequences of his death."
+  },
+  {
+   "id": "Sanhedrin 49a:1-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 49a",
+     1
+    ],
+    [
+     "Sanhedrin 49a",
+     2
+    ],
+    [
+     "Sanhedrin 49a",
+     3
+    ],
+    [
+     "Sanhedrin 49a",
+     4
+    ],
+    [
+     "Sanhedrin 49a",
+     5
+    ],
+    [
+     "Sanhedrin 49a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "King Solomon interrogates Joab regarding the deaths of Abner and Amasa, with Joab offering legal defenses for his actions."
+  },
+  {
+   "id": "Sanhedrin 52a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 52a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Elazar ben Tzadok recounts witnessing the execution of a priest's daughter by burning with branches, which the Sages later dismiss as the act of an unskilled court."
+  },
+  {
+   "id": "Sanhedrin 52a:25-25",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 52a",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Nadav and Avihu walk behind Moses and Aaron and express a desire to lead in their place."
+  },
+  {
+   "id": "Sanhedrin 52b:1-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 52b",
+     1
+    ],
+    [
+     "Sanhedrin 52b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ḥama bar Toviyya executes Imrata bat Talei, a priest's daughter, by burning her with bundles of branches after she committed adultery."
+  },
+  {
+   "id": "Sanhedrin 52b:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 52b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B describes a distinct historical incident involving a different court and a different set of actors, cited as a Mishnaic precedent rather than a continuation of the Amoraic event in Passage A."
+  },
+  {
+   "id": "Sanhedrin 52b:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 52b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Tzadok recalls a childhood memory of riding on his father's shoulders and witnessing the execution of a priest's daughter by burning."
+  },
+  {
+   "id": "Sanhedrin 53b:5-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 53b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yitzḥak arrives from Eretz Yisrael and recites a baraita regarding Rabbi Yehuda's legal opinion on sin-offerings."
+  },
+  {
+   "id": "Sanhedrin 56b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 56b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yitzḥak arrives from Eretz Yisrael and presents an alternative homiletical derivation for the Noahide laws."
+  },
+  {
+   "id": "Sanhedrin 57b:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 57b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Ya’akov bar Aḥa finds a book of Aggadot in Rav's study hall containing legal rulings regarding Noahide laws."
+  },
+  {
+   "id": "Sanhedrin 58b:20-20",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 58b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna physically cut off the hand of a man who was known for habitually striking others."
+  },
+  {
+   "id": "Sanhedrin 59b:22-23",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 59b",
+     22
+    ],
+    [
+     "Sanhedrin 59b",
+     23
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While walking on a journey, Rabbi Shimon ben Halafta is threatened by lions, prays, and receives meat from heaven which satisfies the lions and provides a specimen for legal inquiry."
+  },
+  {
+   "id": "Sanhedrin 61a:11-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 61a",
+     11
+    ],
+    [
+     "Sanhedrin 61a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hamnuna is searching for his lost oxen when he is met by Rabba, who uses the opportunity to pose a legal contradiction regarding idol worship."
+  },
+  {
+   "id": "Sanhedrin 62a:4-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 62a",
+     4
+    ],
+    [
+     "Sanhedrin 62a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zakkai recites a baraita before Rabbi Yoḥanan, who rejects the teaching as incorrect and orders him to teach it outside the study hall."
+  },
+  {
+   "id": "Sanhedrin 63b:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 63b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ulla arrives from Eretz Yisrael and tells Rava he stayed in Kalnevo, leading to a discussion on whether mentioning the name of a place named after an idol is permitted."
+  },
+  {
+   "id": "Sanhedrin 63b:17-17",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 63b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara relates how Hezekiah's mother saved him from his father's attempt to sacrifice him to an idol by rubbing him with fireproof salamander blood."
+  },
+  {
+   "id": "Sanhedrin 63b:21-Sanhedrin 64a:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 63b",
+     21
+    ],
+    [
+     "Sanhedrin 63b",
+     22
+    ],
+    [
+     "Sanhedrin 64a",
+     0
+    ],
+    [
+     "Sanhedrin 64a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Elijah finds a starving child in Jerusalem and offers to save him if he says a prayer to God, but the child refuses. A starving child in Jerusalem refuses Elijah's help to avoid mentioning God's name and dies while embracing his idol."
+  },
+  {
+   "id": "Sanhedrin 64a:3-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 64a",
+     3
+    ],
+    [
+     "Sanhedrin 64a",
+     4
+    ],
+    [
+     "Sanhedrin 64a",
+     5
+    ],
+    [
+     "Sanhedrin 64a",
+     6
+    ],
+    [
+     "Sanhedrin 64a",
+     7
+    ],
+    [
+     "Sanhedrin 64a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Sages of the Second Temple period capture and neutralize the personified evil inclinations for idolatry and sexual immorality."
+  },
+  {
+   "id": "Sanhedrin 64a:9-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 64a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A gentile woman vows to worship every idol if she recovers from illness, but she finds the worship of Ba'al-Peor so disgusting that she refuses to do it."
+  },
+  {
+   "id": "Sanhedrin 64a:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 64a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A Jew named Sabbeta tries to degrade the idol Ba'al-Peor by defecating on it, only to be told by its priests that this is the highest form of its worship."
+  },
+  {
+   "id": "Sanhedrin 64a:14-15",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 64a",
+     14
+    ],
+    [
+     "Sanhedrin 64a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Menashe throws a stone at an idol to show contempt, only to learn it was a Mercury idol where stone-throwing is the standard worship, making him liable."
+  },
+  {
+   "id": "Sanhedrin 65b:10-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 65b",
+     10
+    ],
+    [
+     "Sanhedrin 65b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Turnus Rufus challenges Rabbi Akiva to prove that Shabbat is special and that the current day is indeed Shabbat, to which Akiva cites the Sabbatyon river and necromancy as proof."
+  },
+  {
+   "id": "Sanhedrin 65b:16-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 65b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rava creates a golem and sends it to Rabbi Zeira, who, upon realizing it cannot speak, returns it to dust."
+  },
+  {
+   "id": "Sanhedrin 65b:17-17",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 65b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hanina and Rav Oshaya would study the Book of Creation every Friday, resulting in the creation of a calf which they would then eat."
+  },
+  {
+   "id": "Sanhedrin 67a:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 67a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara records that the court in Lod used the entrapment method described in the Mishna to catch and hang an inciter named Ben Setada on the eve of Passover."
+  },
+  {
+   "id": "Sanhedrin 67b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 67b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman tries to collect dust from under Rabbi Hanina's feet for sorcery, but he tells her to proceed if she can, as he trusts in God's exclusive power."
+  },
+  {
+   "id": "Sanhedrin 67b:16-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 67b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav tells Rabbi Hiyya about an Arab he saw who appeared to slaughter a camel and then bring it back to life with a drum beat."
+  },
+  {
+   "id": "Sanhedrin 67b:17-17",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 67b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ze'eiri buys a donkey in Alexandria that turns into a wooden plank when it touches water, revealing it was a magical illusion."
+  },
+  {
+   "id": "Sanhedrin 67b:18-18",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 67b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Yannai thwarts an innkeeper's attempt to turn him into a scorpion and instead turns her into a donkey, which he then rides to the market."
+  },
+  {
+   "id": "Sanhedrin 68a:0-9",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 68a",
+     0
+    ],
+    [
+     "Sanhedrin 68a",
+     1
+    ],
+    [
+     "Sanhedrin 68a",
+     2
+    ],
+    [
+     "Sanhedrin 68a",
+     3
+    ],
+    [
+     "Sanhedrin 68a",
+     4
+    ],
+    [
+     "Sanhedrin 68a",
+     5
+    ],
+    [
+     "Sanhedrin 68a",
+     6
+    ],
+    [
+     "Sanhedrin 68a",
+     7
+    ],
+    [
+     "Sanhedrin 68a",
+     8
+    ],
+    [
+     "Sanhedrin 68a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Sages visit the dying Rabbi Eliezer, who laments the loss of his untapped wisdom before passing away mid-sentence, leading to the lifting of his ostracism and a dramatic mourning by Rabbi Akiva."
+  },
+  {
+   "id": "Sanhedrin 69b:16-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 69b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Kahana presents a legal derivation to Rav Zevid, who provides an alternative biblical source for the same conclusion."
+  },
+  {
+   "id": "Sanhedrin 70b:1-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 70b",
+     1
+    ],
+    [
+     "Sanhedrin 70b",
+     2
+    ],
+    [
+     "Sanhedrin 70b",
+     3
+    ],
+    [
+     "Sanhedrin 70b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Bathsheba rebukes her son Solomon for his conduct by tying him to a pillar and reminding him of the vows and efforts she made to have a worthy son, leading to his repentance."
+  },
+  {
+   "id": "Sanhedrin 71a:19-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 71a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer son of Rabbi Tzadok and Rabbi Shimon of Akko provide eyewitness accounts of ruins and marked stones to prove that leprous houses actually existed in history."
+  },
+  {
+   "id": "Sanhedrin 72a:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 72a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Burglars steal rams from Rava and later try to return them, but Rava refuses to accept them because he believes the law grants the thief ownership of the stolen goods in a life-threatening break-in."
+  },
+  {
+   "id": "Sanhedrin 74a:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 74a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages gathered in the upper story of the house of Nitza in Lod, voted, and established the laws of martyrdom."
+  },
+  {
+   "id": "Sanhedrin 74a:19-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 74a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man comes to Rabba for advice after a local lord threatens to kill him unless he murders someone else, and Rabba tells him to accept death instead."
+  },
+  {
+   "id": "Sanhedrin 75a:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 75a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man becomes deathly ill with passion for a woman, but the Sages rule that he must die rather than be allowed any illicit contact with her, even for medical reasons."
+  },
+  {
+   "id": "Sanhedrin 76b:15-15",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 76b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man confined another person's animal in the sun until it died, leading Ravina and Rav Aha bar Rav to dispute whether he is liable for damages."
+  },
+  {
+   "id": "Sanhedrin 80b:5-Sanhedrin 81a:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 80b",
+     5
+    ],
+    [
+     "Sanhedrin 80b",
+     6
+    ],
+    [
+     "Sanhedrin 80b",
+     7
+    ],
+    [
+     "Sanhedrin 80b",
+     8
+    ],
+    [
+     "Sanhedrin 80b",
+     9
+    ],
+    [
+     "Sanhedrin 81a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yehuda corrects his father Rav Yeḥezkel's teaching of a Mishna, leading Shmuel to praise Rav Yehuda's sharpness."
+  },
+  {
+   "id": "Sanhedrin 82a:4-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 82a",
+     4
+    ],
+    [
+     "Sanhedrin 82a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The grandfather of Rabbi Perida finds the skull of King Jehoiakim and hides it in a chest out of respect, but his wife finds it and, suspecting it belongs to a former lover, burns it."
+  },
+  {
+   "id": "Sanhedrin 82a:10-Sanhedrin 82b:5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 82a",
+     10
+    ],
+    [
+     "Sanhedrin 82a",
+     11
+    ],
+    [
+     "Sanhedrin 82a",
+     12
+    ],
+    [
+     "Sanhedrin 82a",
+     13
+    ],
+    [
+     "Sanhedrin 82a",
+     14
+    ],
+    [
+     "Sanhedrin 82b",
+     0
+    ],
+    [
+     "Sanhedrin 82b",
+     1
+    ],
+    [
+     "Sanhedrin 82b",
+     2
+    ],
+    [
+     "Sanhedrin 82b",
+     3
+    ],
+    [
+     "Sanhedrin 82b",
+     4
+    ],
+    [
+     "Sanhedrin 82b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Zimri publicly defies Moses by bringing a Midianite woman before him, leading Pinehas to intervene when Moses is unable to act. Pinehas executes Zimri and Cozbi through a ruse, presents their bodies to God to halt the plague, and is subsequently vindicated by God against the mockery of the tribes."
+  },
+  {
+   "id": "Sanhedrin 84b:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 84b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav and Mar son of Ravina refused to let their sons perform minor surgeries on them to prevent the sons from accidentally violating the capital prohibition against wounding a parent."
+  },
+  {
+   "id": "Sanhedrin 86a:0-0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 86a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A reciter of traditions presents a baraita to Rav Sheshet, who corrects the legal ruling based on Rabbi Shimon's view."
+  },
+  {
+   "id": "Sanhedrin 88b:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 88b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoshiya travels to the South to present three traditions he received from Zeira, but the local scholars only accept two of them."
+  },
+  {
+   "id": "Sanhedrin 88b:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 88b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "The Gemara describes how the failure of the disciples of Shammai and Hillel to properly apprentice led to the proliferation of legal disputes and the fragmentation of the Torah."
+  },
+  {
+   "id": "Sanhedrin 89a:14-18",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 89a",
+     14
+    ],
+    [
+     "Sanhedrin 89a",
+     15
+    ],
+    [
+     "Sanhedrin 89a",
+     16
+    ],
+    [
+     "Sanhedrin 89a",
+     17
+    ],
+    [
+     "Sanhedrin 89a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara elaborates on the biblical account of Zedekiah son of Chenaanah's false prophecy to Ahab, explaining the supernatural cause (the spirit of Naboth) and how Jehoshaphat identified the fraud."
+  },
+  {
+   "id": "Sanhedrin 89a:19-20",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 89a",
+     19
+    ],
+    [
+     "Sanhedrin 89a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes how Hananiah son of Azzur came to issue a false prophecy by overhearing Jeremiah and applying his own logical deduction."
+  },
+  {
+   "id": "Sanhedrin 89b:8-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 89b",
+     8
+    ],
+    [
+     "Sanhedrin 89b",
+     9
+    ],
+    [
+     "Sanhedrin 89b",
+     10
+    ],
+    [
+     "Sanhedrin 89b",
+     11
+    ],
+    [
+     "Sanhedrin 89b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Satan challenges God to test Abraham's devotion, leading to the Binding of Isaac and Satan's failed attempt to intercept Abraham on his way to the mountain."
+  },
+  {
+   "id": "Sanhedrin 89b:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 89b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ishmael boasts to Isaac about his circumcision at age thirteen, prompting Isaac to declare he would sacrifice his entire life to God."
+  },
+  {
+   "id": "Sanhedrin 90b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 90b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Heretics challenge Rabban Gamliel to find a source for the resurrection of the dead in the Torah, Prophets, and Writings, and he eventually provides a verse that satisfies the requirement."
+  },
+  {
+   "id": "Sanhedrin 90b:13-14",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 90b",
+     13
+    ],
+    [
+     "Sanhedrin 90b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Romans question Rabbi Yehoshua ben Hananya about resurrection and God's foreknowledge, leading to a debate over the interpretation of a verse."
+  },
+  {
+   "id": "Sanhedrin 90b:15-15",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 90b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer son of Rabbi Yosei recounts how he refuted the Samaritan denial of resurrection by pointing out contradictions in their own version of the Torah."
+  },
+  {
+   "id": "Sanhedrin 90b:19-19",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 90b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Queen Cleopatra asks Rabbi Meir whether the dead will be resurrected naked or clothed, and he answers using the analogy of a grain of wheat."
+  },
+  {
+   "id": "Sanhedrin 90b:20-Sanhedrin 91a:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 90b",
+     20
+    ],
+    [
+     "Sanhedrin 91a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Roman Emperor challenges Rabban Gamliel on how dust can return to life, a conversation that continues with the Emperor's daughter on the following page. The Emperor's daughter intervenes in a debate between her father and Rabban Gamliel, using a parable of craftsmen to prove the possibility of resurrection."
+  },
+  {
+   "id": "Sanhedrin 91a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic challenges Rabbi Ami regarding resurrection, and the Rabbi responds with a parable about a king and his servants."
+  },
+  {
+   "id": "Sanhedrin 91a:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Geviha ben Pesisa engages in a sharp verbal exchange with a heretic who mocks the belief in resurrection."
+  },
+  {
+   "id": "Sanhedrin 91a:5-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     5
+    ],
+    [
+     "Sanhedrin 91a",
+     6
+    ],
+    [
+     "Sanhedrin 91a",
+     7
+    ],
+    [
+     "Sanhedrin 91a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Geviha ben Pesisa represents the Jews before Alexander the Great against the people of Afrikiya, winning the debate so decisively that the opponents flee the land."
+  },
+  {
+   "id": "Sanhedrin 91a:9-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     9
+    ],
+    [
+     "Sanhedrin 91a",
+     10
+    ],
+    [
+     "Sanhedrin 91a",
+     11
+    ],
+    [
+     "Sanhedrin 91a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Geviha ben Pesisa defeats the Egyptians in a legal battle before Alexander the Great by demanding unpaid wages for the Israelites' 430 years of labor."
+  },
+  {
+   "id": "Sanhedrin 91a:13-14",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     13
+    ],
+    [
+     "Sanhedrin 91a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Geviha ben Pesisa defends the Jewish claim to the land of Canaan against the descendants of Ishmael and Keturah before Alexander the Great."
+  },
+  {
+   "id": "Sanhedrin 91a:16-Sanhedrin 91b:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 91a",
+     16
+    ],
+    [
+     "Sanhedrin 91b",
+     0
+    ],
+    [
+     "Sanhedrin 91b",
+     1
+    ],
+    [
+     "Sanhedrin 91b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Antoninos challenges Rabbi Yehuda HaNasi on how the body and soul can be judged if they can each blame the other."
+  },
+  {
+   "id": "Sanhedrin 92b:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 92b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Eliezer describes how the dead revived by Ezekiel stood up, sang a song of praise, and then died again."
+  },
+  {
+   "id": "Sanhedrin 92b:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 92b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While Nebuchadnezzar casts the three youths into the furnace, Ezekiel revives the dead in the Dura Valley, who then physically strike the king, forcing him to praise God."
+  },
+  {
+   "id": "Sanhedrin 93a:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 93a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When Hananiah, Mishael, and Azariah emerged from the furnace, the nations of the world struck the Jewish people in the face for failing to serve such a powerful God."
+  },
+  {
+   "id": "Sanhedrin 93a:12-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 93a",
+     12
+    ],
+    [
+     "Sanhedrin 93a",
+     13
+    ],
+    [
+     "Sanhedrin 93a",
+     14
+    ],
+    [
+     "Sanhedrin 93a",
+     15
+    ],
+    [
+     "Sanhedrin 93a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ahab and Zedekiah attempt to seduce Nebuchadnezzar's daughter under the guise of prophecy, leading the king to cast them into a furnace along with Joshua the High Priest to test their holiness."
+  },
+  {
+   "id": "Sanhedrin 93b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 93b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Bar Koziva claims to be the Messiah, but the Sages test his supernatural discernment and, finding him lacking, put him to death."
+  },
+  {
+   "id": "Sanhedrin 94a:4-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 94a",
+     4
+    ],
+    [
+     "Sanhedrin 94a",
+     5
+    ],
+    [
+     "Sanhedrin 94a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "In a heavenly deliberation, the Attribute of Justice successfully argues against Hezekiah becoming the Messiah despite the Earth's singing in his favor."
+  },
+  {
+   "id": "Sanhedrin 94b:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 94b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "King Hezekiah enforces universal Torah study by placing a sword at the study hall door, resulting in a generation of unprecedented scholarship."
+  },
+  {
+   "id": "Sanhedrin 95a:2-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 95a",
+     2
+    ],
+    [
+     "Sanhedrin 95a",
+     3
+    ],
+    [
+     "Sanhedrin 95a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Sennacherib arrives at Jerusalem on the final day of the city's vulnerability but delays his attack out of arrogance, leading to his downfall."
+  },
+  {
+   "id": "Sanhedrin 95a:6-14",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 95a",
+     6
+    ],
+    [
+     "Sanhedrin 95a",
+     7
+    ],
+    [
+     "Sanhedrin 95a",
+     8
+    ],
+    [
+     "Sanhedrin 95a",
+     9
+    ],
+    [
+     "Sanhedrin 95a",
+     10
+    ],
+    [
+     "Sanhedrin 95a",
+     11
+    ],
+    [
+     "Sanhedrin 95a",
+     12
+    ],
+    [
+     "Sanhedrin 95a",
+     13
+    ],
+    [
+     "Sanhedrin 95a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "David is lured into a trap by Satan and nearly killed by the giant Ishbibenob, but is saved through the miraculous intervention of Abishai ben Zeruiah."
+  },
+  {
+   "id": "Sanhedrin 95b:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 95b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When Jacob attempts to leave after praying, God causes the sun to set prematurely so that the righteous man will stay at His 'inn' for the night."
+  },
+  {
+   "id": "Sanhedrin 95b:15-Sanhedrin 96a:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 95b",
+     15
+    ],
+    [
+     "Sanhedrin 96a",
+     0
+    ],
+    [
+     "Sanhedrin 96a",
+     1
+    ],
+    [
+     "Sanhedrin 96a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "God appears to the defeated Sennacherib as an old man and mocks his predicament, leading Sennacherib to ask how he can disguise himself. Sennacherib is tricked by God into a series of tasks that lead him to fashion an idol from Noah's ark, resulting in his sons murdering him after he vows to sacrifice them."
+  },
+  {
+   "id": "Sanhedrin 96a:11-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 96a",
+     11
+    ],
+    [
+     "Sanhedrin 96a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Nebuchadnezzar, acting as a scribe, runs four paces to correct a letter that placed God's name after the king's, until he is stopped by the angel Gabriel."
+  },
+  {
+   "id": "Sanhedrin 96b:1-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 96b",
+     1
+    ],
+    [
+     "Sanhedrin 96b",
+     2
+    ],
+    [
+     "Sanhedrin 96b",
+     3
+    ],
+    [
+     "Sanhedrin 96b",
+     4
+    ],
+    [
+     "Sanhedrin 96b",
+     5
+    ],
+    [
+     "Sanhedrin 96b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Nebuzaradan breaches Jerusalem's gates, burns the Temple, and attempts to silence the boiling blood of the murdered prophet Zechariah by slaughtering thousands, eventually leading him to repent and convert."
+  },
+  {
+   "id": "Sanhedrin 96b:9-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 96b",
+     9
+    ],
+    [
+     "Sanhedrin 96b",
+     10
+    ],
+    [
+     "Sanhedrin 96b",
+     11
+    ],
+    [
+     "Sanhedrin 96b",
+     12
+    ],
+    [
+     "Sanhedrin 96b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ammon and Moab convince a hesitant Nebuchadnezzar to invade Jerusalem by using scriptural interpretations to argue that God will not protect the city."
+  },
+  {
+   "id": "Sanhedrin 97a:5-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 97a",
+     5
+    ],
+    [
+     "Sanhedrin 97a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Tavut, a man of absolute truth, tells a single white lie to protect his wife's privacy, resulting in the tragic death of his two sons."
+  },
+  {
+   "id": "Sanhedrin 97b:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 97b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Elijah the prophet appears to Rav Yehuda and provides a calculation for the minimum duration of the world and the timing of the Messiah's arrival."
+  },
+  {
+   "id": "Sanhedrin 97b:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 97b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hanan bar Tahlifa reports finding a man who possessed an ancient Hebrew scroll found in the Roman archives detailing the timeline of the world."
+  },
+  {
+   "id": "Sanhedrin 98a:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 98a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "King Shapur mocks the idea of the Messiah arriving on a donkey, and Shmuel retorts that the king's horses cannot compare to the Messiah's miraculous donkey."
+  },
+  {
+   "id": "Sanhedrin 98a:14-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 98a",
+     14
+    ],
+    [
+     "Sanhedrin 98a",
+     15
+    ],
+    [
+     "Sanhedrin 98a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Levi is directed by Elijah to the Messiah in Rome, where he is told the Messiah will come 'today,' only to learn later that this refers to the day Israel repents."
+  },
+  {
+   "id": "Sanhedrin 98a:17-Sanhedrin 98b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 98a",
+     17
+    ],
+    [
+     "Sanhedrin 98a",
+     18
+    ],
+    [
+     "Sanhedrin 98a",
+     19
+    ],
+    [
+     "Sanhedrin 98a",
+     20
+    ],
+    [
+     "Sanhedrin 98b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yosei ben Kisma provides his students with a miraculous sign involving water turning to blood and gives them final instructions before his death."
+  },
+  {
+   "id": "Sanhedrin 99a:0-0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 99a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic asks Rabbi Abbahu when the Messiah will come, and the Rabbi responds that it will be a time of darkness for the heretic's people."
+  },
+  {
+   "id": "Sanhedrin 99b:3-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 99b",
+     3
+    ],
+    [
+     "Sanhedrin 99b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "King Manasseh sits and mocks the Torah by questioning the necessity of seemingly trivial verses, leading to his classification as a blasphemer."
+  },
+  {
+   "id": "Sanhedrin 99b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 99b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Timna seeks to convert but is rejected by the Patriarchs, leading her to become a concubine to Eliphaz, son of Esau."
+  },
+  {
+   "id": "Sanhedrin 100a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 100a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa accidentally used a disrespectful term for Sages and subsequently fasted to atone for it."
+  },
+  {
+   "id": "Sanhedrin 100a:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 100a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While mending Torah scroll mantles, Levi bar Shmuel and Rav Huna bar Ḥiyya spoke dismissively of the Scroll of Esther and were rebuked by Rav Yehuda."
+  },
+  {
+   "id": "Sanhedrin 100a:5-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 100a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B describes a distinct event involving Rabbi Yirmeya and an elder, which serves as the narrative catalyst for the discussion that leads into the story in Passage A."
+  },
+  {
+   "id": "Sanhedrin 100a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 100a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A student who mocked Rabbi Yoḥanan's teaching about the future glory of Jerusalem saw a vision of angels confirming the teaching, but was ultimately punished by the Rabbi for his initial lack of faith."
+  },
+  {
+   "id": "Sanhedrin 101a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 101a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Yitzḥak bar Shmuel bar Marta uses oil at an inn that causes boils, leading a woman in the market to identify the cause as the evil spirit of Ḥamat."
+  },
+  {
+   "id": "Sanhedrin 101a:10-Sanhedrin 101b:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 101a",
+     10
+    ],
+    [
+     "Sanhedrin 101a",
+     11
+    ],
+    [
+     "Sanhedrin 101a",
+     12
+    ],
+    [
+     "Sanhedrin 101a",
+     13
+    ],
+    [
+     "Sanhedrin 101a",
+     14
+    ],
+    [
+     "Sanhedrin 101a",
+     15
+    ],
+    [
+     "Sanhedrin 101a",
+     16
+    ],
+    [
+     "Sanhedrin 101b",
+     0
+    ],
+    [
+     "Sanhedrin 101b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rabbi Eliezer falls ill and despairs, his students visit him, and Rabbi Akiva's optimistic perspective on suffering causes the bedridden sage to sit up and listen."
+  },
+  {
+   "id": "Sanhedrin 101b:14-Sanhedrin 102a:1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 101b",
+     14
+    ],
+    [
+     "Sanhedrin 102a",
+     0
+    ],
+    [
+     "Sanhedrin 102a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Jeroboam manipulates the righteous elders of Israel into signing a blank check of authority by seating them next to wicked men, eventually forcing them to support idolatry."
+  },
+  {
+   "id": "Sanhedrin 102a:16-16",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 102a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "God grabs Jeroboam's garment and offers him a place in Paradise alongside the Son of Jesse, but Jeroboam refuses when he learns David will lead the procession."
+  },
+  {
+   "id": "Sanhedrin 102a:17-Sanhedrin 102b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 102a",
+     17
+    ],
+    [
+     "Sanhedrin 102b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abbahu, who used to lecture on the three wicked kings, fell ill and vowed to stop lecturing about them. After recovering from an illness during which he vowed to stop lecturing on the three wicked kings, Rabbi Abbahu resumes his lectures and justifies it to his questioning students."
+  },
+  {
+   "id": "Sanhedrin 102b:1-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 102b",
+     1
+    ],
+    [
+     "Sanhedrin 102b",
+     2
+    ],
+    [
+     "Sanhedrin 102b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "King Manasseh appears to Rav Ashi in a dream to rebuke him for calling the kings 'colleagues,' proving his superior knowledge and explaining the irresistible urge for idolatry in his generation."
+  },
+  {
+   "id": "Sanhedrin 103b:6-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 103b",
+     6
+    ],
+    [
+     "Sanhedrin 103b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Manasseh increases the number of faces on his idol from one to four to ensure it is seen by the Divine Presence from all directions."
+  },
+  {
+   "id": "Sanhedrin 103b:10-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 103b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Amon commits incest with his mother, who then rebukes him by arguing that the shame outweighs the pleasure."
+  },
+  {
+   "id": "Sanhedrin 103b:11-11",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 103b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Jehoiakim claims he has no need for God's light because of his gold, but his advisors remind him that the gold also belongs to God."
+  },
+  {
+   "id": "Sanhedrin 103b:15-15",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 103b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The ministering angels attempt to destroy Micah for his idolatry, but God stops them because Micah provided food for travelers."
+  },
+  {
+   "id": "Sanhedrin 104a:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 104a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B describes a distinct, failed attempt to bury the skull that precedes the events in Passage A, featuring a specific supernatural outcome (the skull emerging from the grave) not found in the subsequent passage."
+  },
+  {
+   "id": "Sanhedrin 104a:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 104a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Perida's grandfather found Jehoiakim's skull and hid it respectfully in a chest, but his wife found it, grew jealous thinking it was a relic of a former wife, and burned it."
+  },
+  {
+   "id": "Sanhedrin 104a:15-Sanhedrin 104b:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 104a",
+     15
+    ],
+    [
+     "Sanhedrin 104b",
+     0
+    ],
+    [
+     "Sanhedrin 104b",
+     1
+    ],
+    [
+     "Sanhedrin 104b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Two Jews are taken captive on Mount Carmel and begin a journey with their captor, during which they demonstrate their wisdom. Two Jewish captives deduce specific details about a camel they cannot see clearly, leading their captor to verify their wisdom and subsequently honor them with a feast."
+  },
+  {
+   "id": "Sanhedrin 104b:12-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 104b",
+     12
+    ],
+    [
+     "Sanhedrin 104b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When the Great Assembly sought to exclude Solomon from the World-to-Come, the image of his father David and a Divine Voice intervened to stop them."
+  },
+  {
+   "id": "Sanhedrin 105a:2-2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 105a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ten men visit the prophet Ezekiel and argue that since God 'sold' the Jewish people into exile, He no longer has a claim over them."
+  },
+  {
+   "id": "Sanhedrin 105b:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 105b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Levi attempts to time a curse against a harassing heretic using a rooster, but falls asleep and concludes that one should not curse even heretics."
+  },
+  {
+   "id": "Sanhedrin 106a:7-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 106a",
+     7
+    ],
+    [
+     "Sanhedrin 106a",
+     8
+    ],
+    [
+     "Sanhedrin 106a",
+     9
+    ],
+    [
+     "Sanhedrin 106a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Balaam advises Balak to use prostitutes and wine to seduce the Israelites into idolatry, leading to a specific narrative of a man being lured into worshipping an idol in exchange for sex."
+  },
+  {
+   "id": "Sanhedrin 106b:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 106b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic asks Rabbi Hanina if he knows Balaam's age at death, and the Rabbi deduces it from a verse in Psalms."
+  },
+  {
+   "id": "Sanhedrin 106b:13-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 106b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that when Rav Yehuda would remove his shoe to pray for rain, it would fall immediately, unlike the prayers of later generations."
+  },
+  {
+   "id": "Sanhedrin 107a:1-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 107a",
+     1
+    ],
+    [
+     "Sanhedrin 107a",
+     2
+    ],
+    [
+     "Sanhedrin 107a",
+     3
+    ],
+    [
+     "Sanhedrin 107a",
+     4
+    ],
+    [
+     "Sanhedrin 107a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "David requests to be tested by God, who subjects him to an ordeal involving Bathsheba, which David fails after being tricked by Satan appearing as a bird."
+  },
+  {
+   "id": "Sanhedrin 107a:12-12",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 107a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Hushai the Archite meets David in mourning and challenges him on his marriage to a 'beautiful woman' (yefat toar), leading to a discussion on biblical exegesis."
+  },
+  {
+   "id": "Sanhedrin 107a:17-Sanhedrin 107b:3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 107a",
+     17
+    ],
+    [
+     "Sanhedrin 107b",
+     0
+    ],
+    [
+     "Sanhedrin 107b",
+     1
+    ],
+    [
+     "Sanhedrin 107b",
+     2
+    ],
+    [
+     "Sanhedrin 107b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "David is afflicted with leprosy for six months, during which time the Divine Presence and the Sanhedrin abandon him. David asks God for a sign of forgiveness, which is realized years later when Solomon is only able to open the Temple gates by invoking his father's merit, shaming David's enemies."
+  },
+  {
+   "id": "Sanhedrin 107b:4-10",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 107b",
+     4
+    ],
+    [
+     "Sanhedrin 107b",
+     5
+    ],
+    [
+     "Sanhedrin 107b",
+     6
+    ],
+    [
+     "Sanhedrin 107b",
+     7
+    ],
+    [
+     "Sanhedrin 107b",
+     8
+    ],
+    [
+     "Sanhedrin 107b",
+     9
+    ],
+    [
+     "Sanhedrin 107b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Elisha attempts to bring his student Gehazi to repentance, but Gehazi refuses and is ultimately cursed with leprosy for his greed and for leading others to sin."
+  },
+  {
+   "id": "Sanhedrin 107b:11-13",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 107b",
+     11
+    ],
+    [
+     "Sanhedrin 107b",
+     12
+    ],
+    [
+     "Sanhedrin 107b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Yehoshua ben Peraḥya flees to Egypt with his student, but upon their return, a misunderstanding leads Yehoshua to reject the student, who eventually turns to idolatry after a final accidental rejection."
+  },
+  {
+   "id": "Sanhedrin 108a:21-Sanhedrin 108b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 108a",
+     21
+    ],
+    [
+     "Sanhedrin 108a",
+     22
+    ],
+    [
+     "Sanhedrin 108b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Noah rebukes his generation, who respond by defiantly clearing vineyards and questioning why the flood has not yet arrived."
+  },
+  {
+   "id": "Sanhedrin 108b:21-Sanhedrin 109a:2",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 108b",
+     21
+    ],
+    [
+     "Sanhedrin 109a",
+     0
+    ],
+    [
+     "Sanhedrin 109a",
+     1
+    ],
+    [
+     "Sanhedrin 109a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Jewish community decides to send Nahum of Gam Zo to deliver a gift to the Roman emperor because he is known for experiencing miracles. Nahum of Gam Zo is robbed of a gift for the emperor, but the earth used to replace the stolen jewels turns out to be miraculous, leading to a Roman victory and Nahum's reward."
+  },
+  {
+   "id": "Sanhedrin 109a:15-15",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Rabbi Yosei teaches the methods of theft used in Sodom, thieves in Tzippori immediately use those methods, leading the townspeople to blame the Rabbi."
+  },
+  {
+   "id": "Sanhedrin 109a:16-Sanhedrin 109b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109a",
+     16
+    ],
+    [
+     "Sanhedrin 109b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "An orphan in Sodom is forced to herd cattle under an unfair law, so he kills the cattle and uses the Sodomites' own logic to justify taking the hides. An orphan in Sodom kills the oxen he was forced to herd and successfully claims their hides by turning the city's corrupt laws against its citizens."
+  },
+  {
+   "id": "Sanhedrin 109b:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A launderer visiting Sodom is extorted for a ferry fee he didn't use and then physically assaulted and charged for the 'service' of bloodletting."
+  },
+  {
+   "id": "Sanhedrin 109b:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When a Sodomite judge orders Eliezer to pay the man who wounded him, Eliezer strikes the judge and tells him to take the payment from the fee now owed to him."
+  },
+  {
+   "id": "Sanhedrin 109b:5-5",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Eliezer avoids the infamous Sodomite bed, which was used to stretch or cut guests, by claiming he was in mourning and could not sleep on a bed."
+  },
+  {
+   "id": "Sanhedrin 109b:7-7",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Eliezer tricks a wedding guest into fleeing by pretending the guest invited him, allowing Eliezer to eat the man's food without being caught by the city's cruel laws."
+  },
+  {
+   "id": "Sanhedrin 109b:8-8",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A young woman in Sodom is brutally executed by being covered in honey and left for hornets after she is caught secretly feeding the poor."
+  },
+  {
+   "id": "Sanhedrin 109b:15-Sanhedrin 110a:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 109b",
+     15
+    ],
+    [
+     "Sanhedrin 110a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The wife of On, son of Peleth, saves her husband from Korah's fate by getting him drunk and sitting at their tent door with her hair uncovered to prevent the rebels from entering. The wife of On, son of Peleth, saves her husband from the fate of Korah's rebellion by sitting immodestly at the entrance of their tent, causing the rebels to turn away until the ground had already swallowed the rest of the assembly."
+  },
+  {
+   "id": "Sanhedrin 110a:16-Sanhedrin 110b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 110a",
+     16
+    ],
+    [
+     "Sanhedrin 110b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabba bar bar Hana relates how an Arab merchant guided him in the desert to the spot where the sons of Korah were swallowed. Rabba bar bar Ḥana is shown by an Arab guide the site where Korah's followers were swallowed, witnessing their periodic punishment and their admission of Moses' truth."
+  },
+  {
+   "id": "Sanhedrin 111a:3-3",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 111a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B contains a complete narrative unit involving a specific interaction between Rav Kahana and Rav regarding the interpretation of a verse, which is distinct from the physical interaction described in Passage A."
+  },
+  {
+   "id": "Sanhedrin 111a:4-4",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 111a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana washes his hair and sits before Rav, who quotes a verse that Rav Kahana mistakenly interprets as a curse upon himself."
+  },
+  {
+   "id": "Sanhedrin 111a:6-6",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 111a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar son of Rabbi Yosei meets an old man in Alexandria who offers to show him where the Egyptians killed his ancestors."
+  },
+  {
+   "id": "Sanhedrin 111b:1-1",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 111b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hagga, while climbing the stairs of a study hall, hears a child reciting a biblical verse that serves as a proof-text for the preceding theological discussion about God's patience."
+  },
+  {
+   "id": "Sanhedrin 113a:10-Sanhedrin 113b:0",
+   "tractate": "Sanhedrin",
+   "cells": [
+    [
+     "Sanhedrin 113a",
+     10
+    ],
+    [
+     "Sanhedrin 113a",
+     11
+    ],
+    [
+     "Sanhedrin 113a",
+     12
+    ],
+    [
+     "Sanhedrin 113a",
+     13
+    ],
+    [
+     "Sanhedrin 113a",
+     14
+    ],
+    [
+     "Sanhedrin 113a",
+     15
+    ],
+    [
+     "Sanhedrin 113b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Elijah and Ahab visit Hiel during his mourning for his sons, leading Elijah to swear a drought in response to Hiel's skepticism of Joshua's curse, which eventually leads to Elijah seeking the key to resurrection."
+  }
+ ]
+}

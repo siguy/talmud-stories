@@ -1,0 +1,187 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:08:01",
+  "outcomes": {
+   "ok": 9
+  }
+ },
+ "rows": [
+  {
+   "id": "Horayot 3b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes the habitual practices of Rav Huna and Rav Ashi (what they 'would' do) as examples of judicial caution, but it lacks a specific one-time event or a change in outcome resulting from these habits.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 10a:18-Horayot 10b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabban Gamliel and Rabbi Yehoshua) featuring a journey, a specific one-time event (the bread running out), dialogue with conflict/tension, and a clear change in outcome where the rabbi decides to and eventually does appoint two students to leadership.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 10b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (coming before a rabbi) and a narrated change (the acquisition of land), but it is primarily composed of dialogue and a verbal proclamation. Under R-C7 shape 1 and 2, an incident that is mainly speech or one event followed by a ruling/proclamation is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 12a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Josiah, King of Judea, who sees a verse in the Torah and commands an action (sequestering the Ark). While this constitutes a story with an event and a change, it is about a biblical character rather than a rabbi or post-biblical figure, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 12a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story involving a miraculous event, emotional reactions (concern), and a resolution via a Divine Voice. However, it is about biblical figures (Moses and Aaron) rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 12b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving Yosef ben Eilim with multiple actions and a clear change in status: he was appointed, then prevented from serving by his brethren. This exceeds a bare report or legal precedent as it describes a conflict and a specific outcome for the individual involved.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 13b:10-Horayot 14a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative involving a conspiracy, conflict, and resolution between post-biblical figures (R-S1). It begins with a habitual frame (R-C3) and an opening formula (R-B1) and proceeds through multiple actions and changes of state, including the later commentary/dialogue between Rabbi and his son which revises the naming convention (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 14a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (Rav Yosef and Rabba) where a question was sent, a response received, and a specific action (refusal of office) led to a change in outcome (Rabba reigning first). It also includes a habitual action that illustrates the character's deference during that period.",
+    "error": null
+   }
+  },
+  {
+   "id": "Horayot 14a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (rabbis) with multiple actions: the group sets a condition for leadership, a competition of statements occurs, and Abaye is ultimately appointed as the head. This contains the necessary action, conflict, and change in status required for a story.",
+    "error": null
+   }
+  }
+ ]
+}

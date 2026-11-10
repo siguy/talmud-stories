@@ -1,0 +1,8181 @@
+{
+ "updated": "2026-11-10T06:09:27",
+ "git_rev": "02756d22e3f8c76462e073b37e5e08d0f452b7b1",
+ "through": "export",
+ "cost_usd": 0,
+ "tractates": {
+  "bava_batra": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Bava Batra 27b': (24, 23), 'Bava Batra 60b': (22, 21), 'Bava Batra 91b': (18, 17), 'Bava Batra 159b': (16, 15), 'Bava Batra 176b': (3, 2)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Bava Batra 17a:6', 'Bava Batra 73a:1', 'Bava Batra 102b:7', 'Bava Batra 108a:1', 'Bava Batra 139b:5']"
+       ],
+       "measured": {
+        "pages": 350,
+        "segments": 3799,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 350,
+        "labelled": 350,
+        "triage_sha1": "3f5068cfcb026489305b2eee388d116fdd600817"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 2"
+       ],
+       "measured": {
+        "pages": 350,
+        "examined": 153,
+        "kept_stories": 213,
+        "elapsed_seconds": 2053.5,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 2"
+       ],
+       "measured": {
+        "pages": 350,
+        "examined": 153,
+        "kept_stories": 210,
+        "elapsed_seconds": 2066.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:13",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         213,
+         210
+        ],
+        "definite_passages": 129,
+        "definite_in_both": 125,
+        "definite_both_share": 0.969
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.392,
+        "examined": 153,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 246,
+         "out_of_scope": 11,
+         "rate": 0.0447
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "1 unit(s) with no valid Gemini answer, decided by Claude alone (Simon, 2026-11-10, results/shas_run/decisions.json): ['Bava Batra 132b:8-Bava Batra 133a:1']"
+       ],
+       "notes": [],
+       "measured": {
+        "units": 246,
+        "rows": 246,
+        "outcomes": {
+         "ok": 245,
+         "invalid": 1
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.392,
+        "examined": 153,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 246,
+         "out_of_scope": 11,
+         "rate": 0.0447
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:13",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/bava_batra-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "shabbat": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Shabbat 56b': (20, 19), 'Shabbat 102a': (13, 12), 'Shabbat 129b': (18, 17), 'Shabbat 143a': (15, 14), 'Shabbat 157b': (3, 2)}",
+        "18 segment(s) with empty English (counted, not a failure): ['Shabbat 36b:1', 'Shabbat 47b:6', 'Shabbat 51b:5', 'Shabbat 67b:15', 'Shabbat 76b:4', 'Shabbat 82a:10', 'Shabbat 90b:5', 'Shabbat 96a:2', 'Shabbat 105a:7', 'Shabbat 107a:3', 'Shabbat 111b:3', 'Shabbat 115a:1']"
+       ],
+       "measured": {
+        "pages": 312,
+        "segments": 3773,
+        "vowel_share": 0.995,
+        "empty_english": 18
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 312,
+        "labelled": 312,
+        "triage_sha1": "2ee9ca0b60fcb2d186e67c465cf1412b4eb7c595"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 312,
+        "examined": 157,
+        "kept_stories": 208,
+        "elapsed_seconds": 2046.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 2"
+       ],
+       "measured": {
+        "pages": 312,
+        "examined": 157,
+        "kept_stories": 210,
+        "elapsed_seconds": 2045.1,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:14",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         208,
+         210
+        ],
+        "definite_passages": 125,
+        "definite_in_both": 118,
+        "definite_both_share": 0.944
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 5.9% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.325,
+        "examined": 157,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 256,
+         "out_of_scope": 15,
+         "rate": 0.0586
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 256,
+        "rows": 256,
+        "outcomes": {
+         "ok": 256
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 5.9% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.325,
+        "examined": 157,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 256,
+         "out_of_scope": 15,
+         "rate": 0.0586
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:14",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/shabbat-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "chullin": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Chullin 26b': (19, 18), 'Chullin 67b': (16, 15), 'Chullin 129b': (18, 17), 'Chullin 134b': (25, 24), 'Chullin 142a': (10, 9)}",
+        "7 segment(s) with empty English (counted, not a failure): ['Chullin 42a:1', 'Chullin 78a:3', 'Chullin 83b:1', 'Chullin 89b:1', 'Chullin 103b:14', 'Chullin 117b:4', 'Chullin 138b:1']"
+       ],
+       "measured": {
+        "pages": 281,
+        "segments": 4388,
+        "vowel_share": 1.0,
+        "empty_english": 7
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 281,
+        "labelled": 281,
+        "triage_sha1": "7c45190a0983af46b4b1c13dfe8507560d5a9c1b"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 281,
+        "examined": 126,
+        "kept_stories": 196,
+        "elapsed_seconds": 1837.3,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 281,
+        "examined": 126,
+        "kept_stories": 192,
+        "elapsed_seconds": 1833.6,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:14",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         196,
+         192
+        ],
+        "definite_passages": 111,
+        "definite_in_both": 105,
+        "definite_both_share": 0.9459
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.556,
+        "examined": 126,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 225,
+         "out_of_scope": 2,
+         "rate": 0.0089
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 225,
+        "rows": 225,
+        "outcomes": {
+         "ok": 225
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.556,
+        "examined": 126,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 225,
+         "out_of_scope": 2,
+         "rate": 0.0089
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:15",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/chullin-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "pesachim": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Pesachim 57b': (3, 2), 'Pesachim 73b': (16, 15), 'Pesachim 86b': (13, 12), 'Pesachim 99a': (5, 4), 'Pesachim 121b': (3, 2)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Pesachim 21a:6', 'Pesachim 42a:13', 'Pesachim 50a:21', 'Pesachim 65b:8', 'Pesachim 92b:2']"
+       ],
+       "measured": {
+        "pages": 240,
+        "segments": 3514,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 240,
+        "labelled": 240,
+        "triage_sha1": "b0ff7f4b840b04e3685d537080dc41c5d94c4356"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 240,
+        "examined": 104,
+        "kept_stories": 135,
+        "elapsed_seconds": 1337.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 240,
+        "examined": 104,
+        "kept_stories": 138,
+        "elapsed_seconds": 1343.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:15",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         135,
+         138
+        ],
+        "definite_passages": 80,
+        "definite_in_both": 74,
+        "definite_both_share": 0.925
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 6.6% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.298,
+        "examined": 104,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 166,
+         "out_of_scope": 11,
+         "rate": 0.0663
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 166,
+        "rows": 166,
+        "outcomes": {
+         "ok": 166
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 6.6% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.298,
+        "examined": 104,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 166,
+         "out_of_scope": 11,
+         "rate": 0.0663
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:15",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/pesachim-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "zevachim": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 3 page(s): {'Zevachim 57b': (12, 11), 'Zevachim 88b': (15, 14), 'Zevachim 120b': (3, 2)}",
+        "11 segment(s) with empty English (counted, not a failure): ['Zevachim 15b:7', 'Zevachim 31b:12', 'Zevachim 36b:14', 'Zevachim 47a:10', 'Zevachim 66a:5', 'Zevachim 70b:13', 'Zevachim 83a:13', 'Zevachim 92a:4', 'Zevachim 98b:4', 'Zevachim 106a:7', 'Zevachim 112a:9']"
+       ],
+       "measured": {
+        "pages": 238,
+        "segments": 3814,
+        "vowel_share": 1.0,
+        "empty_english": 11
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 238,
+        "labelled": 238,
+        "triage_sha1": "4e38187d112e8defcaf2323e02fcc60b3c35cf42"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 238,
+        "examined": 48,
+        "kept_stories": 26,
+        "elapsed_seconds": 369.5,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 238,
+        "examined": 48,
+        "kept_stories": 28,
+        "elapsed_seconds": 385.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:15",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         26,
+         28
+        ],
+        "definite_passages": 11,
+        "definite_in_both": 11,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 6.5% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.542,
+        "examined": 48,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 46,
+         "out_of_scope": 3,
+         "rate": 0.0652
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 46,
+        "rows": 46,
+        "outcomes": {
+         "ok": 46
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 6.5% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.542,
+        "examined": 48,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 46,
+         "out_of_scope": 3,
+         "rate": 0.0652
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:16",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/zevachim-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "bava_kamma": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Bava Kamma 55a': (16, 15), 'Bava Kamma 83a': (12, 11), 'Bava Kamma 93a': (20, 19), 'Bava Kamma 111a': (21, 20), 'Bava Kamma 119b': (21, 20)}",
+        "4 segment(s) with empty English (counted, not a failure): ['Bava Kamma 17a:11', 'Bava Kamma 36a:7', 'Bava Kamma 46a:5', 'Bava Kamma 62b:5']"
+       ],
+       "measured": {
+        "pages": 236,
+        "segments": 4309,
+        "vowel_share": 1.0,
+        "empty_english": 4
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 236,
+        "labelled": 236,
+        "triage_sha1": "7961f092f8aec88d7bb55ed6e8a371f0cb873a9d"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 236,
+        "examined": 82,
+        "kept_stories": 96,
+        "elapsed_seconds": 1017.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 2"
+       ],
+       "measured": {
+        "pages": 236,
+        "examined": 82,
+        "kept_stories": 97,
+        "elapsed_seconds": 987.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:16",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "87.9% of passages definite in either run are definite in both (51/58; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         96,
+         97
+        ],
+        "definite_passages": 58,
+        "definite_in_both": 51,
+        "definite_both_share": 0.8793
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.171,
+        "examined": 82,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 120,
+         "out_of_scope": 4,
+         "rate": 0.0333
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 120,
+        "rows": 120,
+        "outcomes": {
+         "ok": 120
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.171,
+        "examined": 82,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 120,
+         "out_of_scope": 4,
+         "rate": 0.0333
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:16",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/bava_kamma-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "bava_metzia": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Bava Metzia 116a': (9, 8), 'Bava Metzia 119a': (6, 5)}",
+        "8 segment(s) with empty English (counted, not a failure): ['Bava Metzia 21a:5', 'Bava Metzia 33b:5', 'Bava Metzia 44a:6', 'Bava Metzia 60b:6', 'Bava Metzia 75b:13', 'Bava Metzia 83a:10', 'Bava Metzia 94a:14', 'Bava Metzia 103a:14']"
+       ],
+       "measured": {
+        "pages": 235,
+        "segments": 3658,
+        "vowel_share": 1.0,
+        "empty_english": 8
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 235,
+        "labelled": 235,
+        "triage_sha1": "1cf76c10f8fdf3d9ebc3961e0cc9ab7bba90aaac"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 235,
+        "examined": 117,
+        "kept_stories": 164,
+        "elapsed_seconds": 1570.1,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 235,
+        "examined": 117,
+        "kept_stories": 169,
+        "elapsed_seconds": 1663.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:17",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         164,
+         169
+        ],
+        "definite_passages": 103,
+        "definite_in_both": 98,
+        "definite_both_share": 0.9515
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.402,
+        "examined": 117,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 193,
+         "out_of_scope": 3,
+         "rate": 0.0155
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 193,
+        "rows": 193,
+        "outcomes": {
+         "ok": 193
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.402,
+        "examined": 117,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 193,
+         "out_of_scope": 3,
+         "rate": 0.0155
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:17",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/bava_metzia-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "sanhedrin": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 8 page(s): {'Sanhedrin 22b': (23, 22), 'Sanhedrin 31b': (21, 20), 'Sanhedrin 39b': (22, 21), 'Sanhedrin 42a': (20, 19), 'Sanhedrin 49a': (17, 16), 'Sanhedrin 68a': (13, 12)}",
+        "3 segment(s) with empty English (counted, not a failure): ['Sanhedrin 18a:3', 'Sanhedrin 75a:5', 'Sanhedrin 90a:13']"
+       ],
+       "measured": {
+        "pages": 224,
+        "segments": 4163,
+        "vowel_share": 0.9998,
+        "empty_english": 3
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 224,
+        "labelled": 224,
+        "triage_sha1": "d3843da1ef5b08a44650b5a6f187fcee674d3332"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 224,
+        "examined": 130,
+        "kept_stories": 216,
+        "elapsed_seconds": 1974.3,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 224,
+        "examined": 130,
+        "kept_stories": 215,
+        "elapsed_seconds": 1971.8,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:17",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         216,
+         215
+        ],
+        "definite_passages": 129,
+        "definite_in_both": 121,
+        "definite_both_share": 0.938
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 25.3% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.662,
+        "examined": 130,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 241,
+         "out_of_scope": 61,
+         "rate": 0.2531
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "1 unit(s) with no valid Gemini answer, decided by Claude alone (Simon, 2026-11-10, results/shas_run/decisions.json): ['Sanhedrin 113a:10-Sanhedrin 113b:0']"
+       ],
+       "notes": [],
+       "measured": {
+        "units": 241,
+        "rows": 241,
+        "outcomes": {
+         "ok": 240,
+         "invalid": 1
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 25.3% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.662,
+        "examined": 130,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 241,
+         "out_of_scope": 61,
+         "rate": 0.2531
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:17",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/sanhedrin-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "menachot": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Menachot 110a': (24, 23)}",
+        "12 segment(s) with empty English (counted, not a failure): ['Menachot 13a:5', 'Menachot 17a:14', 'Menachot 38a:2', 'Menachot 52b:10', 'Menachot 63b:7', 'Menachot 72b:17', 'Menachot 76b:13', 'Menachot 83b:8', 'Menachot 87a:19', 'Menachot 94a:9', 'Menachot 100b:7', 'Menachot 104b:11']"
+       ],
+       "measured": {
+        "pages": 217,
+        "segments": 3782,
+        "vowel_share": 1.0,
+        "empty_english": 12
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 217,
+        "labelled": 217,
+        "triage_sha1": "379231a753683ebdb0be1d72d721a81033e67519"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 217,
+        "examined": 65,
+        "kept_stories": 71,
+        "elapsed_seconds": 759.8,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 217,
+        "examined": 65,
+        "kept_stories": 74,
+        "elapsed_seconds": 785.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:18",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         71,
+         74
+        ],
+        "definite_passages": 39,
+        "definite_in_both": 37,
+        "definite_both_share": 0.9487
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 9.8% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.092,
+        "examined": 65,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 92,
+         "out_of_scope": 9,
+         "rate": 0.0978
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 92,
+        "rows": 92,
+        "outcomes": {
+         "ok": 92
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 9.8% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.092,
+        "examined": 65,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 92,
+         "out_of_scope": 9,
+         "rate": 0.0978
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:18",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/menachot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "eruvin": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Eruvin 105a': (12, 11)}",
+        "9 segment(s) with empty English (counted, not a failure): ['Eruvin 17b:13', 'Eruvin 26b:15', 'Eruvin 41b:4', 'Eruvin 52b:14', 'Eruvin 61b:9', 'Eruvin 76a:5', 'Eruvin 82a:8', 'Eruvin 89a:2', 'Eruvin 95a:20']"
+       ],
+       "measured": {
+        "pages": 207,
+        "segments": 3645,
+        "vowel_share": 1.0,
+        "empty_english": 9
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 207,
+        "labelled": 207,
+        "triage_sha1": "7870307a0994def0208f2f1ed7b9cea7b049c5d1"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 207,
+        "examined": 109,
+        "kept_stories": 143,
+        "elapsed_seconds": 1461.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 207,
+        "examined": 109,
+        "kept_stories": 144,
+        "elapsed_seconds": 1447.5,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:18",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         143,
+         144
+        ],
+        "definite_passages": 81,
+        "definite_in_both": 73,
+        "definite_both_share": 0.9012
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.312,
+        "examined": 109,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 178,
+         "out_of_scope": 7,
+         "rate": 0.0393
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 178,
+        "rows": 178,
+        "outcomes": {
+         "ok": 178
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.312,
+        "examined": 109,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 178,
+         "out_of_scope": 7,
+         "rate": 0.0393
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:19",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/eruvin-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "nedarim": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Nedarim 45a': (3, 2), 'Nedarim 48b': (8, 7), 'Nedarim 53b': (9, 8), 'Nedarim 63b': (9, 8), 'Nedarim 91b': (7, 6)}",
+        "6 segment(s) with empty English (counted, not a failure): ['Nedarim 13b:5', 'Nedarim 20b:12', 'Nedarim 32b:8', 'Nedarim 60a:2', 'Nedarim 66b:8', 'Nedarim 79a:9']"
+       ],
+       "measured": {
+        "pages": 180,
+        "segments": 1504,
+        "vowel_share": 1.0,
+        "empty_english": 6
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 180,
+        "labelled": 180,
+        "triage_sha1": "0cbeac5bfb94651792330351c3620726da64ac02"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 180,
+        "examined": 58,
+        "kept_stories": 72,
+        "elapsed_seconds": 711.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 180,
+        "examined": 58,
+        "kept_stories": 76,
+        "elapsed_seconds": 734.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:19",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         72,
+         76
+        ],
+        "definite_passages": 44,
+        "definite_in_both": 41,
+        "definite_both_share": 0.9318
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.241,
+        "examined": 58,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 88,
+         "out_of_scope": 4,
+         "rate": 0.0455
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "1 unit(s) with no valid Gemini answer, decided by Claude alone (Simon, 2026-11-10, results/shas_run/decisions.json): ['Nedarim 48a:5-6']"
+       ],
+       "notes": [],
+       "measured": {
+        "units": 88,
+        "rows": 88,
+        "outcomes": {
+         "ok": 87,
+         "invalid": 1
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.241,
+        "examined": 58,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 88,
+         "out_of_scope": 4,
+         "rate": 0.0455
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:19",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/nedarim-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "yoma": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 3 page(s): {'Yoma 21b': (15, 14), 'Yoma 46b': (11, 10), 'Yoma 88a': (12, 11)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Yoma 28a:8', 'Yoma 39a:4', 'Yoma 62a:6', 'Yoma 68b:10', 'Yoma 73b:11']"
+       ],
+       "measured": {
+        "pages": 173,
+        "segments": 2268,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 173,
+        "labelled": 173,
+        "triage_sha1": "e61569570a645414e58b45bcd917dcae5e3824cf"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 173,
+        "examined": 64,
+        "kept_stories": 96,
+        "elapsed_seconds": 875.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 173,
+        "examined": 64,
+        "kept_stories": 94,
+        "elapsed_seconds": 865.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:19",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         96,
+         94
+        ],
+        "definite_passages": 56,
+        "definite_in_both": 56,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.5,
+        "examined": 64,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 113,
+         "out_of_scope": 6,
+         "rate": 0.0531
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 113,
+        "rows": 113,
+        "outcomes": {
+         "ok": 113
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.5,
+        "examined": 64,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 113,
+         "out_of_scope": 6,
+         "rate": 0.0531
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:20",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/yoma-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "avodah_zarah": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "1 segment(s) with empty English (counted, not a failure): ['Avodah Zarah 49b:16']"
+       ],
+       "measured": {
+        "pages": 150,
+        "segments": 2131,
+        "vowel_share": 1.0,
+        "empty_english": 1
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 150,
+        "labelled": 150,
+        "triage_sha1": "10f772fe5db4182ab4a0e1f286650098f87523d8"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 2"
+       ],
+       "measured": {
+        "pages": 150,
+        "examined": 103,
+        "kept_stories": 146,
+        "elapsed_seconds": 1421.1,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 3"
+       ],
+       "measured": {
+        "pages": 150,
+        "examined": 103,
+        "kept_stories": 145,
+        "elapsed_seconds": 1443.3,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:20",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         146,
+         145
+        ],
+        "definite_passages": 89,
+        "definite_in_both": 88,
+        "definite_both_share": 0.9888
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.417,
+        "examined": 103,
+        "compared_with": {
+         "arakhin": 1.043,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 170,
+         "out_of_scope": 5,
+         "rate": 0.0294
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 170,
+        "rows": 170,
+        "outcomes": {
+         "ok": 170
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.417,
+        "examined": 103,
+        "compared_with": {
+         "arakhin": 1.043,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 170,
+         "out_of_scope": 5,
+         "rate": 0.0294
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:20",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/avodah_zarah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "niddah": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 5 page(s): {'Niddah 12b': (11, 10), 'Niddah 39b': (12, 11), 'Niddah 57a': (17, 16), 'Niddah 59a': (17, 16), 'Niddah 73a': (16, 15)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Niddah 21a:2', 'Niddah 31b:16', 'Niddah 48a:9', 'Niddah 54b:8', 'Niddah 64b:3']"
+       ],
+       "measured": {
+        "pages": 143,
+        "segments": 2660,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 143,
+        "labelled": 143,
+        "triage_sha1": "63b347d2e0e038c603f97463e5cf293123734d71"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 143,
+        "examined": 75,
+        "kept_stories": 86,
+        "elapsed_seconds": 894.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 143,
+        "examined": 75,
+        "kept_stories": 92,
+        "elapsed_seconds": 939.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:20",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         86,
+         92
+        ],
+        "definite_passages": 48,
+        "definite_in_both": 48,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.147,
+        "examined": 75,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 104,
+         "out_of_scope": 2,
+         "rate": 0.0192
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 104,
+        "rows": 104,
+        "outcomes": {
+         "ok": 104
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.147,
+        "examined": 75,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 104,
+         "out_of_scope": 2,
+         "rate": 0.0192
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:20",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/niddah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "nazir": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "blank in the source (index counts 0 segments), not fetched: ['Nazir 33b']",
+        "segment counts differ from the index on 2 page(s): {'Nazir 8b': (12, 11), 'Nazir 66b': (5, 4)}",
+        "7 segment(s) with empty English (counted, not a failure): ['Nazir 16a:2', 'Nazir 20b:1', 'Nazir 30b:9', 'Nazir 34a:8', 'Nazir 47a:4', 'Nazir 57a:2', 'Nazir 61a:4']"
+       ],
+       "measured": {
+        "pages": 129,
+        "segments": 1297,
+        "vowel_share": 1.0,
+        "empty_english": 7
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 129,
+        "labelled": 129,
+        "triage_sha1": "d03c0e5c030e39d4064902ab9e8e46f751e269e1"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 129,
+        "examined": 24,
+        "kept_stories": 15,
+        "elapsed_seconds": 221.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 129,
+        "examined": 24,
+        "kept_stories": 15,
+        "elapsed_seconds": 215.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:21",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         15,
+         15
+        ],
+        "definite_passages": 9,
+        "definite_in_both": 9,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.625,
+        "examined": 24,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 26,
+         "out_of_scope": 1,
+         "rate": 0.0385
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 26,
+        "rows": 26,
+        "outcomes": {
+         "ok": 26
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.625,
+        "examined": 24,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 26,
+         "out_of_scope": 1,
+         "rate": 0.0385
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:21",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/nazir-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "bekhorot": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Bekhorot 52b': (18, 17), 'Bekhorot 61a': (14, 13)}",
+        "7 segment(s) with empty English (counted, not a failure): ['Bekhorot 13a:7', 'Bekhorot 19b:3', 'Bekhorot 26b:6', 'Bekhorot 31a:12', 'Bekhorot 37a:13', 'Bekhorot 43a:2', 'Bekhorot 46a:3']"
+       ],
+       "measured": {
+        "pages": 119,
+        "segments": 1955,
+        "vowel_share": 1.0,
+        "empty_english": 7
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 119,
+        "labelled": 119,
+        "triage_sha1": "ff20581a32067775102f3e7c792ee2aeac9cd76d"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 119,
+        "examined": 50,
+        "kept_stories": 44,
+        "elapsed_seconds": 521.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 119,
+        "examined": 50,
+        "kept_stories": 43,
+        "elapsed_seconds": 525.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:21",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         44,
+         43
+        ],
+        "definite_passages": 23,
+        "definite_in_both": 23,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.88,
+        "examined": 50,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 59,
+         "out_of_scope": 1,
+         "rate": 0.0169
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 59,
+        "rows": 59,
+        "outcomes": {
+         "ok": 59
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.88,
+        "examined": 50,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 59,
+         "out_of_scope": 1,
+         "rate": 0.0169
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:21",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/bekhorot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "sukkah": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 110,
+        "segments": 1361,
+        "vowel_share": 1.0,
+        "empty_english": 0
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 110,
+        "labelled": 110,
+        "triage_sha1": "0a921fd715532b7e3f32629929cebabc920df63d"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 110,
+        "examined": 46,
+        "kept_stories": 52,
+        "elapsed_seconds": 554.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 110,
+        "examined": 46,
+        "kept_stories": 52,
+        "elapsed_seconds": 561.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:21",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "82.9% of passages definite in either run are definite in both (29/35; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         52,
+         52
+        ],
+        "definite_passages": 35,
+        "definite_in_both": 29,
+        "definite_both_share": 0.8286
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.13,
+        "examined": 46,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 70,
+         "out_of_scope": 2,
+         "rate": 0.0286
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 70,
+        "rows": 70,
+        "outcomes": {
+         "ok": 70
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.13,
+        "examined": 46,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 70,
+         "out_of_scope": 2,
+         "rate": 0.0286
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:22",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/sukkah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "shevuot": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Shevuot 29b': (16, 15), 'Shevuot 49b': (16, 15)}",
+        "6 segment(s) with empty English (counted, not a failure): ['Shevuot 14a:10', 'Shevuot 19b:11', 'Shevuot 36b:3', 'Shevuot 38b:6', 'Shevuot 44b:6', 'Shevuot 49a:2']"
+       ],
+       "measured": {
+        "pages": 96,
+        "segments": 1553,
+        "vowel_share": 1.0,
+        "empty_english": 6
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "labelled": 96,
+        "triage_sha1": "6ef88a6b837a6c7a5fc4887a471743fbf8a8102d"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "examined": 19,
+        "kept_stories": 26,
+        "elapsed_seconds": 252.6,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "examined": 19,
+        "kept_stories": 26,
+        "elapsed_seconds": 269.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:22",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "83.3% of passages definite in either run are definite in both (10/12; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         26,
+         26
+        ],
+        "definite_passages": 12,
+        "definite_in_both": 10,
+        "definite_both_share": 0.8333
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.368,
+        "examined": 19,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 32,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 32,
+        "rows": 32,
+        "outcomes": {
+         "ok": 32
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.368,
+        "examined": 19,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 32,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:22",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/shevuot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "sotah": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Sotah 49b': (20, 19)}",
+        "8 segment(s) with empty English (counted, not a failure): ['Sotah 14a:10', 'Sotah 19a:5', 'Sotah 23b:12', 'Sotah 27b:1', 'Sotah 31a:12', 'Sotah 32a:3', 'Sotah 42a:6', 'Sotah 44b:8']"
+       ],
+       "measured": {
+        "pages": 96,
+        "segments": 1634,
+        "vowel_share": 1.0,
+        "empty_english": 8
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "labelled": 96,
+        "triage_sha1": "2765be146a7211601698938bf7b75f36919842e5"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "examined": 40,
+        "kept_stories": 42,
+        "elapsed_seconds": 465.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 96,
+        "examined": 40,
+        "kept_stories": 40,
+        "elapsed_seconds": 460.3,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:22",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "75.9% of passages definite in either run are definite in both (22/29; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         42,
+         40
+        ],
+        "definite_passages": 29,
+        "definite_in_both": 22,
+        "definite_both_share": 0.7586
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 37.3% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.05,
+        "examined": 40,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 59,
+         "out_of_scope": 22,
+         "rate": 0.3729
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 59,
+        "rows": 59,
+        "outcomes": {
+         "ok": 59
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 37.3% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.05,
+        "examined": 40,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 59,
+         "out_of_scope": 22,
+         "rate": 0.3729
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:22",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/sotah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "beitzah": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Beitzah 15a': (15, 14), 'Beitzah 40b': (4, 3)}",
+        "3 segment(s) with empty English (counted, not a failure): ['Beitzah 23b:9', 'Beitzah 29b:8', 'Beitzah 35b:5']"
+       ],
+       "measured": {
+        "pages": 78,
+        "segments": 1149,
+        "vowel_share": 1.0,
+        "empty_english": 3
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 78,
+        "labelled": 78,
+        "triage_sha1": "b21cb4d6ee6fa65bd8ee6dc2f960d5f1a6ff17a2"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 78,
+        "examined": 42,
+        "kept_stories": 55,
+        "elapsed_seconds": 572.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 78,
+        "examined": 42,
+        "kept_stories": 55,
+        "elapsed_seconds": 565.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:22",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         55,
+         55
+        ],
+        "definite_passages": 33,
+        "definite_in_both": 30,
+        "definite_both_share": 0.9091
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.31,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 64,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 64,
+        "rows": 64,
+        "outcomes": {
+         "ok": 64
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.31,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 64,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:23",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/beitzah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "rosh_hashanah": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Rosh Hashanah 35a': (13, 12)}",
+        "3 segment(s) with empty English (counted, not a failure): ['Rosh Hashanah 22a:11', 'Rosh Hashanah 25b:5', 'Rosh Hashanah 29b:3']"
+       ],
+       "measured": {
+        "pages": 67,
+        "segments": 1024,
+        "vowel_share": 1.0,
+        "empty_english": 3
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 67,
+        "labelled": 67,
+        "triage_sha1": "f5c60b96e816696c5b3b1201713c049abe22b4e6"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 67,
+        "examined": 31,
+        "kept_stories": 42,
+        "elapsed_seconds": 399.1,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 67,
+        "examined": 31,
+        "kept_stories": 43,
+        "elapsed_seconds": 404.8,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:23",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         42,
+         43
+        ],
+        "definite_passages": 26,
+        "definite_in_both": 26,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 5.8% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.355,
+        "examined": 31,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 52,
+         "out_of_scope": 3,
+         "rate": 0.0577
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 52,
+        "rows": 52,
+        "outcomes": {
+         "ok": 52
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 5.8% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.355,
+        "examined": 31,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 52,
+         "out_of_scope": 3,
+         "rate": 0.0577
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:23",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/rosh_hashanah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "arakhin": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Arakhin 29a': (24, 23)}",
+        "7 segment(s) with empty English (counted, not a failure): ['Arakhin 7b:13', 'Arakhin 13b:15', 'Arakhin 17a:7', 'Arakhin 19a:2', 'Arakhin 21b:11', 'Arakhin 24a:10', 'Arakhin 27a:5']"
+       ],
+       "measured": {
+        "pages": 65,
+        "segments": 1182,
+        "vowel_share": 1.0,
+        "empty_english": 7
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "labelled": 65,
+        "triage_sha1": "b0bb597da468e9b20f3d93c0cc96092a39d488a0"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "examined": 23,
+        "kept_stories": 24,
+        "elapsed_seconds": 266.5,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "examined": 23,
+        "kept_stories": 24,
+        "elapsed_seconds": 265.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:23",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         24,
+         24
+        ],
+        "definite_passages": 15,
+        "definite_in_both": 15,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 12.1% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.043,
+        "examined": 23,
+        "compared_with": {
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 33,
+         "out_of_scope": 4,
+         "rate": 0.1212
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 33,
+        "rows": 33,
+        "outcomes": {
+         "ok": 33
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 12.1% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.043,
+        "examined": 23,
+        "compared_with": {
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 33,
+         "out_of_scope": 4,
+         "rate": 0.1212
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:23",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/arakhin-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "temurah": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 4 page(s): {'Temurah 13b': (17, 16), 'Temurah 24a': (30, 29), 'Temurah 27b': (19, 18), 'Temurah 34a': (21, 20)}",
+        "3 segment(s) with empty English (counted, not a failure): ['Temurah 17b:1', 'Temurah 21b:13', 'Temurah 31a:11']"
+       ],
+       "measured": {
+        "pages": 65,
+        "segments": 1146,
+        "vowel_share": 1.0,
+        "empty_english": 3
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "labelled": 65,
+        "triage_sha1": "590fa250829db2765192335d89e93e0ffec1d053"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "examined": 8,
+        "kept_stories": 8,
+        "elapsed_seconds": 89.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 65,
+        "examined": 8,
+        "kept_stories": 8,
+        "elapsed_seconds": 96.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:24",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "80.0% of passages definite in either run are definite in both (4/5; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         8,
+         8
+        ],
+        "definite_passages": 5,
+        "definite_in_both": 4,
+        "definite_both_share": 0.8
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 22.2% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.0,
+        "examined": 8,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 2,
+         "rate": 0.2222
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 9,
+        "rows": 9,
+        "outcomes": {
+         "ok": 9
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 22.2% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.0,
+        "examined": 8,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 2,
+         "rate": 0.2222
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:24",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/temurah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "megillah": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 61,
+        "segments": 1213,
+        "vowel_share": 1.0,
+        "empty_english": 0
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 61,
+        "labelled": 61,
+        "triage_sha1": "9951a118b95df4d66c2a072a62287c2cfed508d5"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 61,
+        "examined": 42,
+        "kept_stories": 64,
+        "elapsed_seconds": 615.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 61,
+        "examined": 42,
+        "kept_stories": 62,
+        "elapsed_seconds": 615.1,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:24",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "86.0% of passages definite in either run are definite in both (37/43; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         64,
+         62
+        ],
+        "definite_passages": 43,
+        "definite_in_both": 37,
+        "definite_both_share": 0.8605
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 14.6% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.524,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 82,
+         "out_of_scope": 12,
+         "rate": 0.1463
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 82,
+        "rows": 82,
+        "outcomes": {
+         "ok": 82
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 14.6% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.524,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 82,
+         "out_of_scope": 12,
+         "rate": 0.1463
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:24",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/megillah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "taanit": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "3 segment(s) with empty English (counted, not a failure): ['Taanit 15a:2', 'Taanit 18b:12', 'Taanit 26a:1']"
+       ],
+       "measured": {
+        "pages": 59,
+        "segments": 895,
+        "vowel_share": 1.0,
+        "empty_english": 3
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 59,
+        "labelled": 59,
+        "triage_sha1": "838cabeef7afa4720d3a9155db874d293eff9c3d"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 59,
+        "examined": 42,
+        "kept_stories": 94,
+        "elapsed_seconds": 755.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 59,
+        "examined": 42,
+        "kept_stories": 94,
+        "elapsed_seconds": 750.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:24",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "84.6% of passages definite in either run are definite in both (66/78; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         94,
+         94
+        ],
+        "definite_passages": 78,
+        "definite_in_both": 66,
+        "definite_both_share": 0.8462
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.238,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 107,
+         "out_of_scope": 5,
+         "rate": 0.0467
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 107,
+        "rows": 107,
+        "outcomes": {
+         "ok": 107
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.238,
+        "examined": 42,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 107,
+         "out_of_scope": 5,
+         "rate": 0.0467
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:25",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/taanit-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "moed_katan": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Moed Katan 11a': (21, 20), 'Moed Katan 29a': (7, 6)}",
+        "1 segment(s) with empty English (counted, not a failure): ['Moed Katan 13b:13']"
+       ],
+       "measured": {
+        "pages": 55,
+        "segments": 1024,
+        "vowel_share": 1.0,
+        "empty_english": 1
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 55,
+        "labelled": 55,
+        "triage_sha1": "c8ab94aaceac89ea417ebf6d469bfe8cb0c19083"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 55,
+        "examined": 39,
+        "kept_stories": 86,
+        "elapsed_seconds": 707.6,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 55,
+        "examined": 39,
+        "kept_stories": 89,
+        "elapsed_seconds": 734.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:25",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         86,
+         89
+        ],
+        "definite_passages": 59,
+        "definite_in_both": 54,
+        "definite_both_share": 0.9153
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.205,
+        "examined": 39,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 99,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 99,
+        "rows": 99,
+        "outcomes": {
+         "ok": 99
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.205,
+        "examined": 39,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 99,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:25",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/moed_katan-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "keritot": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Keritot 28b': (9, 8)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Keritot 8b:2', 'Keritot 11b:4', 'Keritot 17a:24', 'Keritot 20b:5', 'Keritot 23b:10']"
+       ],
+       "measured": {
+        "pages": 54,
+        "segments": 1210,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 54,
+        "labelled": 54,
+        "triage_sha1": "5c81aacdac50ca7a2e103ab31730de060dc5dab0"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 54,
+        "examined": 10,
+        "kept_stories": 3,
+        "elapsed_seconds": 91.9,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 54,
+        "examined": 10,
+        "kept_stories": 3,
+        "elapsed_seconds": 93.0,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:25",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         3,
+         3
+        ],
+        "definite_passages": 2,
+        "definite_in_both": 2,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 9.1% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.3,
+        "examined": 10,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.271,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 11,
+         "out_of_scope": 1,
+         "rate": 0.0909
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 11,
+        "rows": 11,
+        "outcomes": {
+         "ok": 11
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 9.1% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.3,
+        "examined": 10,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.271,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 11,
+         "out_of_scope": 1,
+         "rate": 0.0909
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:25",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/keritot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "chagigah": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Chagigah 27a': (9, 8)}",
+        "1 segment(s) with empty English (counted, not a failure): ['Chagigah 20b:5']"
+       ],
+       "measured": {
+        "pages": 51,
+        "segments": 734,
+        "vowel_share": 1.0,
+        "empty_english": 1
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 51,
+        "labelled": 51,
+        "triage_sha1": "443e0f602187ee21c809bd927356fc898479b1ef"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 51,
+        "examined": 20,
+        "kept_stories": 45,
+        "elapsed_seconds": 329.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "span_repairs = 1"
+       ],
+       "measured": {
+        "pages": 51,
+        "examined": 20,
+        "kept_stories": 43,
+        "elapsed_seconds": 340.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:25",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         45,
+         43
+        ],
+        "definite_passages": 33,
+        "definite_in_both": 30,
+        "definite_both_share": 0.9091
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.25,
+        "examined": 20,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.476
+        ],
+        "gemini_out_of_scope": {
+         "units": 49,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 49,
+        "rows": 49,
+        "outcomes": {
+         "ok": 49
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 2.25,
+        "examined": 20,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.476
+        ],
+        "gemini_out_of_scope": {
+         "units": 49,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:26",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/chagigah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "makkot": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 46,
+        "segments": 709,
+        "vowel_share": 0.9986,
+        "empty_english": 0
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 46,
+        "labelled": 46,
+        "triage_sha1": "0977869cd49d68317e96e6a961625916d54ee462"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 46,
+        "examined": 17,
+        "kept_stories": 19,
+        "elapsed_seconds": 202.6,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 46,
+        "examined": 17,
+        "kept_stories": 19,
+        "elapsed_seconds": 206.4,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:26",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "87.5% of passages definite in either run are definite in both (7/8; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         19,
+         19
+        ],
+        "definite_passages": 8,
+        "definite_in_both": 7,
+        "definite_both_share": 0.875
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.118,
+        "examined": 17,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 24,
+         "out_of_scope": 1,
+         "rate": 0.0417
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "1 unit(s) with no valid Gemini answer, decided by Claude alone (Simon, 2026-11-10, results/shas_run/decisions.json): ['Makkot 11a:20-Makkot 11b:2']"
+       ],
+       "notes": [],
+       "measured": {
+        "units": 24,
+        "rows": 24,
+        "outcomes": {
+         "ok": 23,
+         "invalid": 1
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.118,
+        "examined": 17,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 24,
+         "out_of_scope": 1,
+         "rate": 0.0417
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:26",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/makkot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "meilah": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Meilah 14b': (10, 9), 'Meilah 22a': (4, 3)}",
+        "4 segment(s) with empty English (counted, not a failure): ['Meilah 8a:1', 'Meilah 10b:5', 'Meilah 18a:6', 'Meilah 20a:10']"
+       ],
+       "measured": {
+        "pages": 41,
+        "segments": 513,
+        "vowel_share": 1.0,
+        "empty_english": 4
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 41,
+        "labelled": 41,
+        "triage_sha1": "51bc8bf74f59d887eb369d2a692498e798949880"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 41,
+        "examined": 5,
+        "kept_stories": 3,
+        "elapsed_seconds": 42.8,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 41,
+        "examined": 5,
+        "kept_stories": 3,
+        "elapsed_seconds": 42.5,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:26",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         3,
+         3
+        ],
+        "definite_passages": 2,
+        "definite_in_both": 2,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.6,
+        "examined": 5,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 4,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 4,
+        "rows": 4,
+        "outcomes": {
+         "ok": 4
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 0.6,
+        "examined": 5,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 4,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:26",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/meilah-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "horayot": {
+   "overall": "amber",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 1 page(s): {'Horayot 14a': (7, 6)}",
+        "2 segment(s) with empty English (counted, not a failure): ['Horayot 6b:9', 'Horayot 9b:9']"
+       ],
+       "measured": {
+        "pages": 25,
+        "segments": 450,
+        "vowel_share": 1.0,
+        "empty_english": 2
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 25,
+        "labelled": 25,
+        "triage_sha1": "fbbda5aa5782af21c31b953ed030cae022c66c8f"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 25,
+        "examined": 8,
+        "kept_stories": 8,
+        "elapsed_seconds": 97.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 25,
+        "examined": 8,
+        "kept_stories": 8,
+        "elapsed_seconds": 94.7,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:26",
+     "gates": {
+      "g4": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "50.0% of passages definite in either run are definite in both (3/6; under 90%): shipped by Simon's 2026-11-10 ruling (results/shas_run/decisions.json)"
+       ],
+       "notes": [],
+       "measured": {
+        "kept": [
+         8,
+         8
+        ],
+        "definite_passages": 6,
+        "definite_in_both": 3,
+        "definite_both_share": 0.5
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 22.2% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.0,
+        "examined": 8,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 2,
+         "rate": 0.2222
+        }
+       }
+      }
+     },
+     "color": "amber",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 9,
+        "rows": 9,
+        "outcomes": {
+         "ok": 9
+        }
+       }
+      },
+      "g5": {
+       "status": "amber",
+       "failures": [],
+       "warnings": [
+        "Gemini calls 22.2% of units out of scope, above the baselines (3.1%, 5.4%): the biblical list needs a close look"
+       ],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.0,
+        "examined": 8,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "tamid": 1.143,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 2,
+         "rate": 0.2222
+        }
+       }
+      }
+     },
+     "color": "amber"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:27",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/horayot-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  },
+  "tamid": {
+   "overall": "green",
+   "steps": {
+    "fetch": {
+     "state": "skipped",
+     "gates": {
+      "g1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [
+        "segment counts differ from the index on 2 page(s): {'Tamid 33a': (14, 13), 'Tamid 33b': (12, 11)}",
+        "5 segment(s) with empty English (counted, not a failure): ['Tamid 28b:6', 'Tamid 30a:3', 'Tamid 30b:11', 'Tamid 32b:6', 'Tamid 33a:6']"
+       ],
+       "measured": {
+        "pages": 17,
+        "segments": 205,
+        "vowel_share": 1.0,
+        "empty_english": 5
+       }
+      }
+     },
+     "color": "green"
+    },
+    "triage": {
+     "state": "skipped",
+     "gates": {
+      "g2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 17,
+        "labelled": 17,
+        "triage_sha1": "d9565a832b2856b4be62fd76b63c72cfd1950fb0"
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run1": {
+     "state": "skipped",
+     "gates": {
+      "g3:run1": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 17,
+        "examined": 7,
+        "kept_stories": 8,
+        "elapsed_seconds": 83.2,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "run2": {
+     "state": "skipped",
+     "gates": {
+      "g3:run2": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "pages": 17,
+        "examined": 7,
+        "kept_stories": 8,
+        "elapsed_seconds": 80.3,
+        "fingerprint": "b3ad98bbb0315592",
+        "retries": {
+         "stage2_and_4": 0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "pair": {
+     "state": "done",
+     "started": "06:09:27",
+     "gates": {
+      "g4": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "kept": [
+         8,
+         8
+        ],
+        "definite_passages": 5,
+        "definite_in_both": 5,
+        "definite_both_share": 1.0
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.143,
+        "examined": 7,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green",
+     "rc": 0,
+     "seconds": 0
+    },
+    "units": {
+     "state": "skipped",
+     "color": "green"
+    },
+    "gemini": {
+     "state": "skipped",
+     "gates": {
+      "g6:gemini": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "units": 9,
+        "rows": 9,
+        "outcomes": {
+         "ok": 9
+        }
+       }
+      },
+      "g5": {
+       "status": "green",
+       "failures": [],
+       "warnings": [],
+       "notes": [],
+       "measured": {
+        "stories_per_examined_page": 1.143,
+        "examined": 7,
+        "compared_with": {
+         "arakhin": 1.043,
+         "avodah_zarah": 1.417,
+         "bava_batra": 1.392,
+         "bava_kamma": 1.171,
+         "bava_metzia": 1.402,
+         "beitzah": 1.31,
+         "bekhorot": 0.88,
+         "berakhot": 1.783,
+         "chagigah": 2.25,
+         "chullin": 1.556,
+         "eruvin": 1.312,
+         "horayot": 1.0,
+         "keritot": 0.3,
+         "makkot": 1.118,
+         "megillah": 1.524,
+         "meilah": 0.6,
+         "menachot": 1.092,
+         "moed_katan": 2.205,
+         "nazir": 0.625,
+         "nedarim": 1.241,
+         "niddah": 1.147,
+         "pesachim": 1.298,
+         "rosh_hashanah": 1.355,
+         "sanhedrin": 1.662,
+         "shabbat": 1.325,
+         "shevuot": 1.368,
+         "sotah": 1.05,
+         "sukkah": 1.13,
+         "taanit": 2.238,
+         "temurah": 1.0,
+         "yevamot": 1.453,
+         "yoma": 1.5,
+         "zevachim": 0.542
+        },
+        "range": [
+         0.15,
+         4.5
+        ],
+        "gemini_out_of_scope": {
+         "units": 9,
+         "out_of_scope": 0,
+         "rate": 0.0
+        }
+       }
+      }
+     },
+     "color": "green"
+    },
+    "export": {
+     "state": "done",
+     "started": "06:09:27",
+     "rc": 0,
+     "attempts": 1,
+     "seconds": 0,
+     "log": "results/shas_run/logs/tamid-export.log",
+     "color": "green"
+    }
+   },
+   "cost_usd": 0
+  }
+ },
+ "counts": {
+  "green": 13,
+  "amber": 19,
+  "red": 0,
+  "running": 0,
+  "pending": 0
+ }
+}

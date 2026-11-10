@@ -1,0 +1,1978 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T23:32:09",
+  "outcomes": {
+   "ok": 113
+  }
+ },
+ "rows": [
+  {
+   "id": "Yoma 3b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a scholarly disagreement between Rabbi Yoḥanan and Rabbi Yehoshua ben Levi regarding the derivation of laws. Under R-C2 and R-C7, standard rabbinic dialogue or teaching without conflict or a narrated event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 4a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story about Moses ascending Mount Sinai and being covered by a cloud. According to R-S1, stories about biblical characters are considered out of scope for this catalogue, which focuses on rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 9a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of an administrative act (sending emissaries) used to explain the historical background of a legal decree. It lacks the necessary continuation, conflict, or second action required to constitute a story under R-C5 and the limits of R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 9b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Reish Lakish was swimming and Rabba bar bar Hana assisted him, followed by a dialogue containing conflict and a rebuke. This meets the criteria of a story as it describes a real incident involving post-biblical figures that leads to a significant interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 10a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Rav Haviva traveling and presenting a difficulty) followed by a sharp verbal conflict and a rebuke. Under R-C2 and R-C7 shape 1, dialogue with conflict and a minor action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 10a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a theological debate and speech-acts between Rav and his students regarding future events. Under R-C2 and R-C7, standard rabbinic dialogue without a narrated event or action beyond speaking does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 11a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific person (an examiner in Tzippori) and a sequence of actions (examining mezuzot, being caught, and being fined) that lead to a change in state. Per R-C0, this is a story even though it is followed by a legal discussion, and per R-B1, the opening formula is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 12b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical incident involving Yosef ben Elem that narrates a specific event (the disqualification and appointment) followed by a ruling from the Sages. Under R-C0, an incident followed by a ruling counts as a story, and although it is a Mishnah story, R-C1 allows its inclusion when quoted in the Talmud.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 15a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a physical demonstration by Rav Yehuda to explain a term in the Gemara, which is a speech-act or teaching gesture rather than a narrated event or story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 18a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story about post-biblical figures (Marta bat Baitos and King Yannai) involving a specific action (bringing a half-se'a of dinars) that leads to a change (the appointment of Yehoshua ben Gamla).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 18b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes the habitual actions of Rav and Rav Nahman when visiting specific towns. Under R-C3 and R-C7, a habit that involves a specific action and implied change (entering a temporary marriage) is considered borderline, as it is more than a bare report but lacks a specific 'one-day' narrative event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 19b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (a Sadducee High Priest) that includes multiple actions, dialogue with conflict, and a clear change/resolution in the form of his death or divine punishment. It begins with a standard opening formula and moves from a specific incident to a one-time event with causal consequences.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 19b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rav and his students) where an action (gesturing) occurs during a specific circumstance (reciting Shema), leading to a resolution of the pronunciation conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 19b:15-Yoma 20a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Elijah and Rav Yehuda, brother of Rav Salla Hasida. It contains dialogue with conflict (the question of why the Messiah has not come) and specific events (the sins in Nehardea) that lead to a change in understanding regarding Satan's power on Yom Kippur.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 20b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rav and Rabbi Sheila involving a specific one-time event (Rav happening to visit and acting as a disseminator), conflict between the characters, and a change in the situation when Rav's identity is revealed.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 20b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving King Agrippa (a post-biblical figure in scope per R-S1) with multiple actions: he was traveling, heard a voice, and subsequently sent gifts. This meets the criteria of an event leading to a change or response, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 21a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event where the Sages prayed for mercy and a change occurred (the sound was eliminated). Under R-C0 and R-C7 shape 2, a single event followed by a result or change is at least borderline, even if the narrative is minimal.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 21b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an eyewitness report ('I saw...') by a post-biblical figure, which Jeff's 2005 lists and reviews generally include. However, as it is a single event (a sighting) used as evidence in a legal/theological discussion without further action or change, it fits the 'borderline' criteria for a bare report or a one-event incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 22a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time incident involving two priests that resulted in a physical injury (a broken leg), which then led to a change in institutional practice (the court instituting a lottery). This meets the criteria of having multiple actions and a clear change or resolution following an event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 22b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rav Nahman bar Yitzhak) who experiences a frightful dream, responds with an action, and undergoes a change in behavior after a second event. Although it concerns the honor of a biblical figure, the protagonist and the actions are rabbinic, placing it in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 23a:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (running, stabbing, standing to speak, crying, and the father's arrival) and a clear change in state. Although it is a Mishnah/Tosefta story quoted in the Talmud, rule R-C1 explicitly includes such citations as Talmudic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 23a:15-Yoma 23b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving Rabbi Tzadok's public reaction to a murder and the father's shocking response to his son's death. It contains multiple actions, emotional reactions, and dialogue that lead to a change in the crowd's state (increased weeping) and a moral conclusion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 25b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a post-biblical figure's action (Ben Katin making spigots) cited as evidence for a legal discussion, with no continuation, conflict, or narrated change following the act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 26b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event (a priest pouring water on his feet) followed by a distinct action and change (the people pelting him with etrogim). Although it is a Mishnah story quoted in the Gemara, it is cataloged as a Talmudic story per R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 27a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event ('I found Abaye explaining to his son'), but it is primarily a speech-act involving rabbinic teaching. Under R-C7 shape 1 and R-C2, such dialogue-heavy interactions with minimal action are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 27a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage consists entirely of standard rabbinic dialogue where one rabbi poses a difficulty and resolves it. Under R-C2 and R-C7, speech-acts such as raising a difficulty or resolving it do not count as events, and there is no conflict or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Rabbi Yishmael ben Pabi) that includes multiple actions—his mother making the tunic, him donning it, performing a service, and transferring it to the public—meeting the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Rabbi Elazar ben Harsum) where an action (his mother making a tunic) leads to a conflict and change (his fellow priests preventing him from wearing it). While the segment includes subsequent Gemara commentary and an explanation by Abaye, the core narrative constitutes a story under R-C0, and the commentary is excluded from the story's essence per R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a hypothetical legal case or a general procedure in the Heavenly court ('If he says... they say to him') rather than a specific event that happened. Under R-C0 and R-C5, this is a legal discussion or a general report of practice without a narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing Hillel's custom, but transitions into a specific 'one time' event where he is barred from the study hall, leading to a series of actions (climbing the roof, being covered in snow) and a resolution by Shemaya and Avtalyon.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One time...') where the protagonist is pressed into service by his own servants, involving action, dialogue, and conflict. This follows a habitual frame describing his general conduct, which fits the criteria for a story under R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with dialogue, conflict, and actions, but it is about the biblical character Joseph and Potiphar's wife rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 36b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a man leading prayers before Rabba) followed by a dialogue involving conflict over a ruling. Under R-C7 shape 1 and R-C2, speech-heavy interactions with conflict and a specific incident are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 37a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a post-biblical figure's donation (ben Gamla) and the fact that he was praised for it, which lacks the necessary actions, conflict, or narrated change to constitute a story. Under R-C5, a description of what someone did that leads to no further narrative continuation is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 37a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a series of bare reports describing what various figures did or used to do (making gold handles, chandeliers, or spigots) as acts of piety or donation. Under R-C5, these are descriptions of practice or precedents that do not lead to a narrated change or a specific event, and thus do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 37b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a description of a custom or a habitual occurrence (the chandelier reflecting light at sunrise) rather than a one-time event that leads to a change or action. Under R-C5 and the limit of R-C3, a report of a practice or a physical object's function without a specific incident following it is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 37b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an object fashioned by Queen Helene followed by a legal discussion regarding its implications for teaching children. Under R-C5 and the limits of R-C0, a description of what someone did that leads only to a legal discussion without further narrated action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Nicanor, a post-biblical figure, involving a specific voyage, a storm, and a miraculous resolution. It includes multiple actions, emotional reactions, and a clear change in state, starting with the Tannaitic opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is part of the Mishnah itself, which is generally excluded from the Talmudic catalogue (R-C1). Furthermore, it is a bare report of what certain figures did or did not do without a narrated event, change, or continuation (R-C5).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and a clear change: the Sages dismiss the House of Garmu, attempt to replace them with Alexandrian craftsmen, fail to achieve the same quality, and eventually negotiate the return of the original craftsmen with doubled wages. It includes the opening formula 'The Sages taught' as per R-B1 and meets the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a specific historical incident involving the House of Avtinas, the Sages, and craftsmen from Alexandria. It contains multiple actions, conflict (the refusal to teach and the hiring of replacements), and a change in outcome (the doubling of wages and the return of the original craftsmen).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event ('One time I was walking') and a dialogue with conflict (a rebuke), but it consists entirely of speech acts without further narrated action or change, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Yishmael ben Loga and a descendant of the House of Avtinas) with multiple actions—going to a field, laughing, crying, and a dialogue with conflict regarding the secret herb. Per R-B1, the opening formula attributing the story is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One time I found...') involving a post-biblical figure (an old man of the House of Avtinas) and includes multiple actions: finding the man, a dialogue with conflict/resolution regarding the secret scroll, and a concluding reaction from Rabbi Akiva.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a post-biblical narrative about Ben Kamtzar that includes a specific action (writing with four quills), a dialogue/confrontation with the Sages, and a change in status or resolution (his failure to respond and subsequent condemnation). It follows the pattern of an incident followed by a ruling or evaluation as described in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 38b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures (Doeg ben Yosef and his mother) that includes a habitual action leading to a tragic one-time event and change of state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 39a:14-Yoma 39b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a description of habitual miracles during the tenure of Shimon HaTzaddik (R-C3), but transitions into a specific one-time incident involving a priest who took a double portion and was shamed for it (R-C5). This incident contains a specific action and a lasting change in the man's status, meeting the criteria for a story (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 39b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a post-biblical figure (Shimon HaTzaddik) that includes a specific one-time event (the vision of the man in black) leading to a change (his illness and death). It follows the pattern of a habitual frame leading to a specific incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 39b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the doors opening) followed by a distinct action and speech-act by a post-biblical figure (Rabban Yoḥanan ben Zakkai scolding them), which constitutes a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 39b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a miraculous phenomenon rather than a story; it lacks a specific one-time event, conflict, or change, and the mention of the distance is a scholarly comment rather than a narrative action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 39b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two bare reports of sensory experiences (goats sneezing and an old man smelling incense) cited as evidence of the incense's potency. These are habitual or one-time reports that do not lead to any further action, conflict, or change, falling under the rule that a description of what someone did or saw without continuation is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 42a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the death of Ravya bar Kisi) occurring on the same day as a scholarly dispute, which leads to a change (the creation of a mnemonic). This satisfies the requirement for an action or event beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 43b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a tanna and Rabbi Yoḥanan involving a conflict (the rabbi rebuking the tanna and ordering him to teach outside). Under R-C2 and R-C7, speech with conflict but no other physical action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 47a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a post-biblical figure (Rabbi Yishmael ben Kimḥit) where a specific incident (spittle spraying on his clothes) leads to a change in status and a subsequent action (his brother serving in his stead).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 47a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a post-biblical figure (Rabbi Yishmael ben Kimḥit) where a specific incident (saliva spraying) leads to a change in status and a subsequent action (his brother serving in his stead).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 47a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between the Sages and Kimhit, containing dialogue with conflict/disagreement and a description of her actions. It follows the 'incident plus ruling/response' shape and includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 52b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving King Josiah's decision and action to hide the Ark. While it is a story, it is about a biblical figure rather than a rabbi or post-biblical figure, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 53a:23-Yoma 53b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing the customs of R. Elazar and Rava, but it transitions into a specific event where Rav Yosef is informed of Rava's actions and responds with a blessing, fulfilling the requirement for a narrated change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 53b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrated events: Rava observing Abaye's prayer practice and correcting him, followed by Rav Hiyya's eyewitness report of both rabbis' subsequent actions. This meets the criteria of an incident involving post-biblical figures that leads to a change or specific response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 53b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Hanina ben Dosa) involving multiple actions and changes in state (walking, rain falling, praying, rain stopping, returning home, and rain returning). The final sentence by Rav Yosef is a commentary on the story's significance, which under R-B4 is excluded from the narrative itself but follows a clear story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 53b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a High Priest and other priests, featuring multiple actions (extending prayer, counting/entering, emerging) and a dialogue-based resolution. It includes the opening formula 'The Sages taught' as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 54a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative about a priest who discovers the hidden Ark and dies before revealing its location, followed by a variant version involving two priests and a fire. It meets the criteria of having multiple actions, conflict, and a clear change in state (the death of the protagonist).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 54b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about the destruction of the Temple and the actions of the gentiles toward the cherubs. While it contains actions and dialogue, it concerns a biblical-era event and characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 56b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain person who descended before Rava and made a mistake in his prayer, followed by Rava's corrective ruling. This fits the 'incident followed by a ruling' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 56b:15-Yoma 57a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a rabbi and a Sadducee. While it lacks physical actions, it contains conflict (the Sadducee's challenge) and fits the borderline shape of 'mainly speech, but something happens' or 'speech with conflict' as defined in R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 57a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person eyewitness account of a specific event ('I saw it in Rome') that serves as more than a bare report; it is a 'one-line eyewitness wonder' of the type Jeff has accepted as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 57a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where one rabbi rebukes the teaching of others. Under rule R-C2, standard rabbinic dialogue or a sharp retort in a scholarly context does not constitute the conflict required for a story, and there is no other narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 59a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of speech acts (testimony) regarding past events with a clear conflict between the two High Priests. Under R-C2 and R-C7 shape 1, dialogue with conflict and implied change/action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 66a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a named post-biblical figure (Arsela) and includes distinct actions and conflict (the Babylonians plucking hair). It follows a description of a general custom in segment 1, fitting the pattern of a one-time event following a habitual frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 66b:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue and speech-acts (asking and answering), which normally disqualifies it under R-C2. However, there is clear conflict and tension between the students' persistent questioning and Rabbi Eliezer's dismissive or evasive retorts, which fits the borderline criteria for speech with conflict (R-C7 shape 1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 66b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a woman with a sharp retort (conflict), but lacks a physical event or change beyond the speech act itself. Under R-C2 and R-C7 shape 1, speech with conflict but no other action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 69a:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Shimon HaTzaddik, a post-biblical figure in scope, featuring multiple actions, conflict, and a clear change in outcome. It follows the pattern of a habitual frame (the date) leading into a specific one-time event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 69b:5-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with actions, conflict, and change, but it is about biblical figures (Ezra, Zechariah, and the Men of the Great Assembly) and biblical events retold. Under rule R-S1, such biblical episodes are classified as out_of_scope rather than rabbinic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 71b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Shemaya and Avtalyon) with a clear sequence of events: the crowd shifting their attention, a confrontation, and a sharp verbal exchange that resolves the conflict. Per R-B1, the opening formula 'The Sages taught in a baraita: There was an incident' is included as part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 73a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (teaching a halakha) followed by a physical gesture of conflict (turning their faces away). Under R-C2 and R-C7 shape 1, dialogue or teaching with conflict and a minimal physical action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 75b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame regarding rabbis finding quail, but transitions into a specific one-time event ('One day...') involving Rava, a child's speech, and a change in Rava's understanding regarding Rav Hisda's death.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 75b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a biblical citation, a geographical observation by Rabba bar bar Hana ('I saw that site'), and a Tannaitic teaching about camp procedure. It is a bare report of facts and practices rather than a narrated event that leads to a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 76a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Shimon ben Yohai and his students involving a parable and a teaching. While it is primarily speech-based, it is categorized as borderline because it involves an interaction (the students asking and the rabbi responding) with a specific teaching context, fitting the shape of speech with conflict or pedagogical change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 76a:4-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrative setting of rabbis sitting together and features a sharp verbal conflict between Rabbi Tarfon and Rabbi Elazar HaModa'i. Under R-C2 and R-C7, speech-heavy passages with conflict and a narrative frame are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77a:1-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative involving dialogue, conflict, and physical action among angels and God, but it is about biblical characters (Michael, Gabriel, and figures from the books of Ezekiel and Daniel) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Shammai the Elder where his refusal to act led to a decree by others, constituting a change and a resolution to a conflict. Under R-C0, this is a story about an event that happened to a post-biblical figure, not a mere hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of an action ('I saw Ze’iri, who went...') cited as evidence in a legal dilemma, which Jeff classifies as a report rather than a story. Under R-C5 and the limit of R-C0, a single act that leads only to a discussion or a dispute over the facts of the report, without a narrated change or continuation, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific incident where a group of people came before a rabbi and received a ruling, which includes conflict and dialogue between Rav Yosef and Abaye. Under R-C0 and R-C7 shape 1, an incident followed by a ruling with dialogue and conflict is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis standing at a riverbank and a student calling out to them, followed by a ruling that resolves the situation. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 78a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific post-biblical figures (the Exilarch, Rafram, and Ravina) with a clear sequence of actions: the absence from a lecture, a subsequent meeting, and a dialogue driven by conflict (the need to appease the Exilarch). It satisfies R-C0 as it describes an incident that happened, and R-C2 as the dialogue contains conflict and results in a change of the Exilarch's attitude.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 78a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual custom of Rabbi Yehoshua ben Levi as reported by his host, but it lacks a specific one-time event or change resulting from this habit. Under R-C3 and R-C5, a bare report of what someone used to do that leads nowhere is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 78a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a habitual practice or custom (R-C5) followed by a standard rabbinic dialogue regarding the accuracy of the report. Under R-C2, scholarly back-and-forth or a challenge regarding a ruling does not constitute the type of conflict required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 78b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains multiple eyewitness accounts of rabbis performing specific actions (wearing cork sandals) followed by dialogue and rulings, which satisfies the criteria for a story under R-C0 and R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 79a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabban Yoḥanan ben Zakkai and Rabban Gamliel where specific actions (bringing food, ordering it moved) occur. Although it is a Mishnah story quoted in the Gemara, it is included in the catalogue under rule R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 79a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rabbi Tzadok with multiple distinct actions (taking the food in a cloth, eating it outside the sukka, and not reciting the blessing) that demonstrate a change or specific halakhic stance in action, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 79b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person report of an incident ('they brought before us... and we ate') involving post-biblical figures. Under R-C0 and R-C7, it is borderline because it consists of a single event cited within a legal discussion to establish a precedent, lacking further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 81b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a rabbi's public teaching, a subsequent action by the community a year later, and the rabbi's emotional reaction and response. This contains multiple actions, conflict, and a change in the rabbi's stance from a general ruling to a specific rebuke.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 82b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic example of an incident followed by a ruling as defined in R-C0. It narrates a specific event (a man coming before Rava with a life-and-death dilemma) and Rava's response, which includes both a ruling and a famous logical justification.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 82b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions and a change: a woman craves food, a rabbi intervenes with a specific instruction, the instruction succeeds, and the outcome is the birth of a famous rabbi. It follows the R-C0 principle where an incident followed by a ruling/action constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 82b:2-Yoma 83a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a pregnant woman and Rabbi Hanina, featuring multiple actions (coming to the rabbi, whispering, the woman's refusal) and a clear change or outcome (the birth of a wicked person). It follows the 'incident plus ruling/response' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 83b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person narrative by Rabbi Yoḥanan about a specific event ('Once I was seized with bulmos') involving actions (running to the east side of a tree) and a resolution. Although embedded within a series of legal dicta, it describes a real event that happened to a rabbi rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 83b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabbi Yehuda and Rabbi Yosei) featuring multiple actions, a change in circumstances (both rabbis falling ill), and a resolution with a humorous retort. It satisfies R-C0 as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 83b:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical rabbis (Meir, Yehuda, and Yosei) involving a series of specific actions, conflict with an innkeeper, and a tragic change in outcome (the recovery of the purses and the death of the wife).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 83b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where two rabbis (Rabbi Yehuda and Rabbi Yosei) arrived at a house, analyzed the landlord's name, and took the action of refusing to enter. This constitutes a narrated incident with specific actors and a change in behavior based on the event, fitting the definition of a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 84a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] is a complete narrative with multiple actions (going to a healer, a dialogue with conflict, a vow, and a public act) and a change in state. Segment [3] is excluded as it is the Gemara's commentary/analysis of the story's ethical implications rather than part of the narrative itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 84a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Yoḥanan suffered from a disease, performed a specific action (preparing medicine on Shabbat), and experienced a change (he was cured). This is followed by a dialogue and ruling regarding the legality of his actions, which fits the criteria of an incident followed by a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 85a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief incident introduced by the formula 'There was an incident' (Ma'aseh haya) which serves as a precedent for a legal ruling. While it reports a specific event (finding the lower people alive), it is a bare report with minimal narrative development, fitting the borderline shape of one real event followed by or supporting a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 85a:12-Yoma 85b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrative setting (rabbis walking on a road) but consists entirely of speech-acts (legal derivations). Under R-C2 and R-C7 shape 1, dialogue with a narrative frame and multiple participants is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 86a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between two rabbis in a specific location (Rome), which provides a narrative setting. However, because it is composed entirely of speech-acts (a question and an answer) without further action or change, it fits the borderline criteria for dialogue with a specific historical frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 86a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Abaye's habitual practice when buying meat to avoid the appearance of theft, which constitutes a bare report of a custom or a 'habitual frame' that does not lead to a specific one-time event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about rabbis involving multiple actions (going to the house, water being poured, coming out to greet) and a clear change in the relationship from conflict to appeasement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice (what he 'would' do) rather than a one-time event. Under R-C5 and R-C3, a custom that does not lead to a specific incident or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, conflict, and a dramatic change in outcome (the butcher's death). It follows the pattern of a one-time event occurring after a habitual frame or initial situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87a:16-Yoma 87b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures (Rav and Rabbi Hanina) where a repetitive action (returning to the beginning) leads to a conflict and a significant change in their relationship, followed by a long-term effort at resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a dream) that leads to a deliberate change in action (Rabbi Hanina's refusal to be appeased) to achieve a specific outcome. This meets the criteria of an event leading to a change or consequence beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where bar Hamdudei observes Shmuel standing up in response to the prayer leader, which constitutes a real event beyond speech. However, it follows the shape of a single event used to support a legal ruling or definition, which falls under the borderline criteria.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 87b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Ulla bar Rav led a prayer and Rava responded with praise, which constitutes an action and a reaction. However, because the core of the event is a speech-act (the recitation of a prayer) followed by a ruling/praise, it fits the borderline criteria of 'mainly speech' or 'one event followed by a ruling'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 88a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a tanna reciting a teaching before Rav Nahman followed by a brief philological clarification; it consists entirely of speech-acts without any narrated action, conflict, or change.",
+    "error": null
+   }
+  }
+ ]
+}

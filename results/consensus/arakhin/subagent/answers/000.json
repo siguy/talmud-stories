@@ -1,0 +1,6 @@
+{
+  "01": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "A narrated exchange between God and the angel of the sea with conflict and an outcome (the sea spews out the Egyptians), but it is a biblical episode at the Red Sea, not about rabbis or post-biblical figures."},
+  "02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A dialogue between the angels and God explaining why hallel is not said on the Days of Awe; speech only, with no event and no conflict."},
+  "03": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "A one-line chronological report that Nebuchadnezzar conquered Jehoiakim in his second year, cited for dating; a bare report about biblical figures with nothing following."},
+  "04": {"verdict": "borderline", "rules": ["R-C7", "R-S1"], "segments": [2], "reason": "Mostly a list of calendrical coincidences around the Temple's destruction, but it narrates one dramatic event: the priests were singing and were cut off mid-verse by the conquering gentiles. The First Temple setting is near the biblical edge of scope, and 'likewise the Second' extends it into the post-biblical period."}
+}

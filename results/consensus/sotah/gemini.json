@@ -1,0 +1,1081 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:07:01",
+  "outcomes": {
+   "ok": 59
+  }
+ },
+ "rows": [
+  {
+   "id": "Sotah 7b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with actions, conflict, and change (the rolling bones of Judah being reassembled and his entry into the heavenly study hall), but it concerns biblical figures (Judah and Moses) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 9a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a named post-biblical figure (Minyamin) and a specific action (marrying a first-generation convert), but it is primarily a speech-act expressing a plan for the future. Under R-C7 shape 1 and R-C2, dialogue with implied change or conflict is borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 9b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Samson uprooting and grinding mountains. While it is a story, it is about a biblical character rather than a rabbi or post-biblical figure, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 11b:3-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with actions, conflict, and change, but it is about biblical characters (the generation of the Exodus) rather than rabbis or post-biblical figures. Under rule R-S1, such biblical episodes retold are classified as out_of_scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 12a:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with actions, dialogue, and change, but it is about biblical characters (Amram, Miriam, and Pharaoh) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with multiple actions and conflict (the birth of Moses, the father's kiss, the casting into the river, and the father's rebuke), but it is about biblical characters (Miriam, Amram, and Moses) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event with actions and change (kings coming for war but instead hanging their crowns in honor), but it concerns biblical figures (Jacob, Joseph, and the sons of Esau/Ishmael) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with conflict and action involving the burial of Jacob and the death of Esau, but it concerns biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:12-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative with dialogue and actions (Moses retrieving Joseph's casket), but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13b:26-Sotah 14a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (the Roman monarchy/messengers) searching for the grave of Moses. Although it concerns a biblical site, the actors and the incident are post-biblical, placing it in scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 15b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a scholarly dialogue and a challenge to a legal explanation. Under R-C2 and R-C7, speech-acts without a narrated event or change are standard rabbinic dialogue and do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 18b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of a specific person (Neḥunya) testifying before the rabbis and their subsequent ruling/acceptance. While it uses the 'incident' formula, it describes a single act of testimony followed by a ruling, which fits the borderline shape of one real event followed by a legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 20a:8-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person narrative of Rabbi Meir's apprenticeship under Rabbi Akiva and Rabbi Yishmael, featuring specific actions and a dialogue-driven conflict regarding the use of iron sulfate. Segments [4] through [8] are excluded as they constitute the Gemara's commentary and dialectical resolution of the story's details rather than the narrative itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 21a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Hillel and Shevna) where an action (the offer to divide wealth and reward) leads to a dramatic change or resolution (the intervention of a Divine Voice).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 22a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story within a dictum of Rabbi Yoḥanan (R-C4) about a specific maiden who performed a physical action (falling on her face) and spoke a prayer. This is a narrated event that happened rather than a hypothetical case (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 22a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between Rabbi Yohanan and a widow, involving both a habitual action (her daily travel) and a specific dialogue that results in a change of understanding or a moral lesson. It fits the criteria of an event involving a post-biblical figure followed by a meaningful exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 22b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a famous deathbed dialogue between King Yannai and his wife. While it is primarily a speech act, it involves post-biblical historical figures in a moment of conflict/instruction, fitting the borderline shape of dialogue with implied change or historical weight.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 24b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and citing a baraita as part of a legal discussion. Under R-C2 and R-C5, a report of a rabbi's speech or the act of bringing a teaching is standard rabbinic dialogue and does not constitute a story without a following event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 25a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical interaction where Rabbi Yoshiya traveled to the South and presented rulings to his colleagues, resulting in a conflict where they agreed on two points but rejected the third. Under R-C2 and R-C7, this is borderline because it is primarily a report of speech-acts and legal positions, but contains a specific event of travel and a conflict between scholars.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 27b:5-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a series of events occurring 'on that same day' (the day R. Elazar ben Azarya was appointed), which provides a historical narrative frame. While it consists largely of speech-acts (interpretations), the emotional reaction and exclamation of Rabbi Yehoshua regarding Rabban Yohanan ben Zakkai in segments [3] and [10] create a sense of conflict and change in the intellectual landscape, fitting the borderline criteria for speech with conflict/implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 28a:18-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal discussion (Midrash Halakha) and standard rabbinic dialogue between Rabbi Akiva and Rabbi Yishmael regarding biblical verses. There are no narrated events or actions that happened to these figures, only speech-acts and hypothetical legal derivations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 31a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving two students and Rava, where the students report their dreams and Rava provides a ruling/interpretation that confirms their status. It contains multiple actions (sitting, speaking, dreaming) and a resolution, fitting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 32a:9-Sotah 32b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving the Jewish people crossing the Jordan and the ceremony at Mount Gerizim and Mount Ebal. While it is a full-blown story with actions and change, it is about biblical characters and events rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 33a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories about post-biblical figures (Yoḥanan the High Priest and Shimon HaTzaddik) embedded within a legal discussion. These stories narrate specific events—hearing a Divine Voice and the subsequent verification of its message—which involve action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 33a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue and commentary on the preceding stories. The mention of Gabriel teaching Joseph seventy languages is a brief dictum or allusion to a biblical figure rather than a narrated rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 33b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical encounter and conflict between Rabbi Elazar and the Samaritans. While it consists entirely of speech acts, the presence of conflict and the implied change (proving their books false) makes it borderline under R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 33b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (the crossing of the Jordan) involving biblical figures and the Ark of the Covenant. While it is a narrative of events, it falls under the category of biblical episodes retold rather than stories about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 34a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Abba Halafta and others) who performed two distinct actions—standing on the stones and measuring them—which led to a discovery of their weight. This exceeds a 'bare report' and meets the criteria for a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with dialogue, conflict, and a change in the audience's behavior (silence and listening), but it is about biblical characters (Joshua, Caleb, and the generation of the desert) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event with actions and dialogue involving the biblical spies in Canaan. While it is a story, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving the miraculous crossing of the Jordan and the death of Uzzah, but it is composed entirely of biblical characters and events rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of miraculous events and actions involving the Jewish people's entrance into the land under Joshua. While it is a full-blown story with actions and change, it is about biblical characters and events rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving the hornet and the Amorites during the conquest of Canaan. While it contains actions and change, it is a retelling of a biblical episode involving biblical-era figures and is therefore out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a dialogue and interaction between Joshua and the children of Joseph. While it contains the actions and conflict of a story, it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with action, conflict, and change, but it is about the biblical figure Joseph rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:18-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with multiple actions, conflict, and change, but it concerns biblical figures (Joseph and Pharaoh) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:22-Sotah 37a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative about the tribes of Israel, Nahshon ben Amminadab, and Moses at the Red Sea. While it is a story, it concerns biblical characters and events rather than rabbis or post-biblical figures, placing it out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 39a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and his disciples. While it lacks physical action, it fits the borderline shape of speech-acts that describe personal conduct and habits, similar to other cases of rabbinic teaching or dialogue ruled borderline by Jeff.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 40a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of a rabbi's personal practice and a change in his behavior ('I also do not recite them anymore') after observing another rabbi. Under R-C7 shape 3, it is borderline because it narrates a specific change in action, though it is close to a bare report of practice (R-C5).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 40a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [3] contains a full narrative incident with dialogue and conflict between the wives that leads to a specific response from Rabbi Abbahu. Segment [2] provides the habitual frame of Rabbi Abbahu's self-perception which is challenged by the specific event he witnessed regarding Rabbi Abba of Akko.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 40a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where the Sages decided to appoint Rabbi Abbahu, but he observed Rabbi Abba's financial distress and acted to change the outcome by declining the position. This contains multiple actions and a clear change in the situation, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 40a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a crowd's preference caused an emotional reaction (embarrassment/offense), followed by a dialogue and a specific one-time reversal of a habit (R-C3) to resolve the conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 41a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated one-time event involving King Agrippa, a post-biblical figure, which follows a description of the general custom. It contains multiple actions, emotional reactions, and dialogue that result in a change of state (the crowd's reassurance).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 41b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving King Agrippa (a post-biblical figure) during the Hakhel ceremony. It includes distinct actions (standing to read), emotional reactions (tears), and a response from the Sages and the people, followed by a divine consequence (sentencing to destruction).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 42a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with actions and conflict (Irijah seizing Jeremiah), but it is a retelling of a biblical episode involving biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 45a:22-Sotah 45b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific event (Abaye's boast) followed by a sage's challenge, which constitutes conflict. However, the resolution is entirely a legal discussion and ruling, fitting the borderline shape of speech-acts with conflict but limited action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 46b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Kahana accompanying Rav Shimi bar Ashi) and a subsequent action (arriving at a destination and initiating a dialogue). Under R-C0, this is a narrated event that happened rather than a hypothetical case, and the dialogue follows a physical action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 46b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single act (accompanying a rabbi) that leads nowhere and has no continuation, conflict, or change. Under R-C5 and the limits of R-C0, a description of what a rabbi did without a following incident or ruling is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 46b:18-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving actions, conflict, and change (Elisha, the mocking youths, and the bears), but it is about a biblical character rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 47a:0-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue, disputes, and homiletical interpretations (midrash) concerning biblical characters (Elisha, Balak, Ruth), which are out of scope under R-S1. Furthermore, it lacks a narrated event involving rabbis; it contains only speech-acts and legal/theological discussions about biblical events rather than a new rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 47a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event and dialogue between Elisha and Gehazi, which constitutes a story; however, because it concerns biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 47a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Yehoshua ben Perahya, King Yannai, and Jesus) involving multiple actions, conflict, and a significant change in status (excommunication and apostasy). It follows the pattern of a historical frame leading into a specific one-time event as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 48a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident where Yoḥanan the High Priest investigated a problem, addressed the people, and instituted a specific ordinance. This follows R-C0 as an incident leading to a ruling with narrated action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 48a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains more than a bare report or ruling; it narrates a sequence of actions (Rav Huna nullifying song, Rav Hisda belittling the prohibition) that lead to a significant change in the economic state of the world (abundance followed by scarcity). This fits the criteria of at least two actions and a clear change or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 48b:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific one-time events involving post-biblical figures (Hillel and Shmuel HaKatan) including a supernatural occurrence, the sages' reaction, and subsequent deaths/eulogies, which satisfies the requirement for action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 49a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (Rav Huna and his family) featuring multiple actions, dialogue, and a clear change in the situation (the date being passed from father to son to grandson). It meets the criteria for a story as it narrates a specific event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 49a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rav Aha and his grandson) with multiple actions—raising the child, a request for water, and a refusal—leading to a change in relationship and a concluding folk saying.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 49b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where Rabba bar Rav Huna performs an action (making a tambourine), followed by a distinct second action and change (his father breaking it) and a subsequent ruling/instruction. This meets the criteria for a story as it involves more than a bare report or a simple speech-act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 49b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (the Hasmonean kings) that includes a specific one-time event (the pig on the wall) leading to a change (the shuddering of the land and the subsequent decree). It follows the rule that a story may begin with a habitual frame and includes the opening formula as part of the story's context.",
+    "error": null
+   }
+  }
+ ]
+}

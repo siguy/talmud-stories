@@ -1,0 +1,8 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "A bare report that King Josiah buried the Ark after reading a verse, cited to answer who buried it; one act with nothing following, and about a biblical king."},
+"02": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "When the gentiles entered the Second Temple they saw the embracing cherubs, took them to the market, mocked Israel and debased them: several actions and a consequence, set in post-biblical history."},
+"03": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 4, 5, 6, 7, 8], "reason": "A full heavenly narrative (Michael, Gabriel punished and replaced, Dubiel swallowing the decree) set around the First Temple's destruction and Daniel; it concerns God, angels and biblical-era events, not rabbis; segment 3 is a rabbinic comment."},
+"04": {"verdict": "not", "rules": ["R-S1"], "segments": [], "reason": "A tannaitic dispute over the chronology of Moses entering the cloud at Sinai; exegesis of a biblical episode, not a narrated story."},
+"05": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 5, 6, 7, 8], "reason": "The capture of the evil inclination in the days of Nehemiah, guided by Zechariah the prophet, is a full story with events and change, but its actors are biblical figures retold aggadically (like Gittin 57b), so it falls under R-S1; segment 4 is a rabbinic comment."},
+"06": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "Potiphar's wife repeatedly seducing and threatening Joseph, who refuses, is a story about a biblical figure."}
+}

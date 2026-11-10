@@ -1,0 +1,169 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 9
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Menachot 43b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "David enters the bathhouse, despairs at standing without a mitzva, remembers his circumcision and is comforted, then composes a psalm: a narrative with emotion and change about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 53b:4-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Abraham found in the Temple at its destruction pleads with God, weeps, and is answered by a Divine Voice: a narrative about a biblical patriarch.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 85a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Pharaoh's magicians mock Moses and he retorts with a proverb: a speech exchange with conflict in a biblical episode, at most borderline and out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 29b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses ascends, is shown Rabbi Akiva's study hall, is dismayed then reassured, and sees Akiva's martyrdom: a full narrative with multiple actions and change, and in scope because Rabbi Akiva is a central figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 29a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A list of three matters God showed Moses with His finger is an exegetical statement with no narrated incident, and concerns a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 29a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A brief incident (maaseh) in which the Temple candelabrum was found overweight and refined eighty times until it reached a talent; real actions and an outcome, but cited only as evidence in the discussion with little development.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 110a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Continuation of Hezekiah's vow to the princes, who go to Alexandria and build an altar: narrated events set in a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 29a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita that fire models of the vessels descended and Moses copied them is an exegetical claim with no developed incident, and about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Menachot 29a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Gabriel girded and showed Moses the candelabrum is a single exegetical report with no continuation, about biblical figures.",
+    "error": null
+   }
+  }
+ ]
+}

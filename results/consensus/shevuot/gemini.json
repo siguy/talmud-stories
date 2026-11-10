@@ -1,0 +1,570 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:05:47",
+  "outcomes": {
+   "ok": 32
+  }
+ },
+ "rows": [
+  {
+   "id": "Shevuot 15b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific habitual action of a rabbi (reciting verses and falling asleep) followed by a legal challenge and resolution. Under R-C7 shape 2, a single event followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 18b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical action (throwing a clod of earth) that goes beyond a mere speech-act, creating a dramatic incident with conflict between two post-biblical figures. Under R-C0 and R-C2, this physical interaction and the emotional reaction it implies constitute a story rather than a standard legal dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 26a:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving Rav Kahana and Rav Asi that includes actions (standing before their teacher, disagreeing, and coming to clarify), conflict (the mutual oaths and the subsequent realization of a false oath), and a resolution/ruling by Rav.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 28b:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event (Eifa's brother meeting him) followed by a series of speech acts involving conflict and rebuke ('You have confused the issue'). Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 29b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a wonder or a fact cited as evidence in a legal discussion, lacking any narrated action, conflict, or change beyond the description of the snake's size.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 30a:13-Shevuot 30b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man comes before a rabbi for a ruling, accompanied by a message from another rabbi that creates conflict and internal deliberation. While it contains speech-acts and a legal interpretation, the interaction and the rabbi's change in perspective provide the 'dynamism' and 'implied change' characteristic of a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 30b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rav Huna's wife and Rav Nachman) with a clear conflict, a plan of action, and a resolution. It goes beyond a simple ruling or speech act by describing a 'courtroom drama' and a specific physical action (the duck ruse) intended to change the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 30b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav bar Sherevya and Rav Pappa with multiple actions (seating the litigants, the agent kicking/standing the litigant) and a resolution involving the rabbi's internal reasoning. It meets the criteria of R-C0 as an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 30b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Yeimar came before Ameimar to testify, followed by a physical action (seating the witnesses) and a courtroom interaction involving Rav Ashi. This contains multiple actions and a 'courtroom drama' dynamic that exceeds a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 32b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific man who snatched an ingot and the subsequent courtroom drama before Rabbi Ami and Rabbi Abba. It satisfies R-C0 as it contains multiple actions (snatching, coming to court, bringing a witness) and a resolution through a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 34a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rabbi Shimon ben Shataḥ, including a pursuit, a confrontation, and a miraculous resolution (the snake bite). It satisfies R-C0 as it contains multiple actions and a clear change/outcome, and R-B1 by including the introductory formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 34b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event ('a certain individual...'), a conflict (the denial), and a resolution through a rabbi's ruling (Reish Lakish). Under R-C0, an incident followed by a ruling counts as a story, especially when it contains narrated actions beyond speech, such as the witnesses' observation of the man's physical presence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 34b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man, a claim, and the emergence of witnesses, followed by a ruling from Rav Nahman. This fits the criteria of an incident followed by a ruling where actions beyond speech (urinating by the column) are narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 36a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between two rabbis where one recites a text and the other responds with a corrective instruction. While it is primarily a speech-act, it describes a real event with conflict/correction, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 36a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a student reciting a verse and a rabbi responding with a correction. Under R-C2 and R-C7, this is borderline because it is primarily a speech-act interaction with minimal action, yet it contains a specific interpersonal encounter and a directive that implies a change in the student's behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 36a:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and teaching a specific version of a text followed by a scholarly conclusion; this is standard rabbinic dialogue and teaching (speech-acts) rather than a narrated event with change or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 39b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific incident ('the reed of Rava') as a precedent for a legal procedure, but the narrative details are not provided in the text itself and must be filled in from commentaries or parallel sources. Under R-C6 and R-C7 shape 4, such alluded-to incidents are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 41b:8-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving specific (though unnamed) individuals where an event occurs (a loan repayment contrary to a condition) followed by a rabbinic ruling. Under R-C0, these are considered stories because they narrate events that happened rather than hypothetical legal cases.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 41b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific legal case ('a certain person') with multiple actions—a claim, a denial, and the bringing of witnesses—followed by a rabbinic ruling that resolves the event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 41b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific incident (a man claiming repayment and the debtor naming false witnesses) followed by a rabbinic ruling and discussion. Under rule R-C0, the narrated event of the claim and the witnesses' denial constitutes the story, and the ruling provides the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 41b:14-Shevuot 42a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific legal case ('a certain person') where an event occurs—a dispute over the value of gallnuts used for repayment—followed by the arrival of witnesses and a rabbinic ruling. Under R-C0, the narrated event followed by a ruling constitutes a story, as it describes a specific change in status (the debtor being declared a presumptive liar) rather than a hypothetical legal problem.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 42a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving 'a certain person' and a legal dispute that actually occurred, followed by the rulings of Rav Nahman and Rav Pappa. According to R-C0, an incident followed by a ruling counts as a story, especially when it involves a narrated event beyond a mere hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 42a:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains multiple incidents where a specific person performed actions (making a credibility agreement and then repaying in front of witnesses) followed by rabbinic rulings. Under R-C0, these 'certain man' cases with narrated actions and subsequent rulings qualify as stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 45b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an encounter between two rabbis (Rav Sheshet and Rabba bar Shmuel) and a dialogue, but the content is primarily a speech-act of teaching a baraita. Under R-C2 and R-C7 shape 1, dialogue with minimal action beyond the verbal exchange is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 46b:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a legal discussion of hypothetical cases, but segment 4 contains an incident where Rava expropriates items from orphans. This is an incident followed by a ruling (R-C0) that is only alluded to (R-C6), making it borderline under the criteria for courtroom drama with implied change (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 47a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain man snatched') followed by a courtroom interaction and a ruling. Under R-C0, an incident followed by a ruling counts as a story, and the presence of multiple actions (snatching, coming to court, bringing a witness) and a change in legal status (being declared liable to pay) satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of speech-acts (sending questions and responses) with conflict and implied change, specifically Rabbi Ami's rebuke and the shift in the legal discussion. Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion about Rav Nahman's uncertainty; the mention of him 'ruling in an actual case' is a bare report of a ruling used as evidence of his legal stance, with no narrated incident or change following it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Nahman's arrival and the visit of other rabbis) followed by a dialogue with conflict regarding a legal ruling. Under R-C2 and R-C7, speech-heavy passages with conflict and a single event are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case brought before a rabbi followed by a discussion of his reasoning, but it lacks a second narrated action or change beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case brought before rabbis, but it consists only of a single event (the death of a creditor) followed by a legal discussion and ruling. Under R-C0 and R-C7, a case where coming before a rabbi is the only narrated action and no further change or event is explicitly stated is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shevuot 48b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a judge and a scholar with multiple actions (ruling, challenging, and appealing to Rav Hama) and a resolution. It fits the criteria of a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  }
+ ]
+}

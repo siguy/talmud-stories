@@ -1,0 +1,431 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:08:19",
+  "outcomes": {
+   "ok": 23,
+   "invalid": 1
+  }
+ },
+ "rows": [
+  {
+   "id": "Makkot 3b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Shmuel and Rav Mattana with a physical command ('do not sit on your feet') and conflict/urgency, which moves it beyond standard dialogue. However, because it is primarily a speech-act used to introduce a halakhic derivation, it fits the borderline criteria for dialogue with conflict and minimal action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 4a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rav Yosef and Abaye regarding a forgotten teaching; while it is primarily speech-acts, it contains conflict (the correction of a teacher by a student) and an implied change in Rav Yosef's state of knowledge, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 5b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident of a woman bringing multiple sets of witnesses followed by a courtroom drama involving Reish Lakish, Rabbi Elazar, and Rabbi Yoḥanan. It contains multiple actions, conflict, and an emotional reaction (glaring angrily) that goes beyond standard legal dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 5b:16-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yehuda ben Tabbai and Shimon ben Shataḥ) that includes a specific past event (the execution of a witness), a conflict/dialogue, and a significant change in the protagonist's behavior and status. It follows the rule that an incident followed by a ruling or a change in status counts as a story, and it includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 6b:10-Makkot 7a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] describes a specific incident where foreign speakers came before Rava and he acted by installing an interpreter, followed by a legal resolution. Segment [3] is a borderline case involving a specific legal situation (Ile’a and Tuviyya) followed by a rabbinic discussion, fitting the shape of one event followed by a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 10a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rav Hisda) and the Angel of Death, featuring multiple actions, conflict, and a change in outcome (the breaking of the tree leading to his death).",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 10a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a homiletical teaching followed by a single action where the Sages 'cast their eyes' upon Rava. Under R-C7 shape 1 and 2, a passage that is mainly speech/teaching with one real event or implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 11a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an observation ('I saw...') used as evidence for a legal position, with no subsequent action, change, or continuation. Under R-C5, a description of what someone did or a practice that leads nowhere is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 11a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated one-time event (a man being eaten by a lion) that leads to a specific change in status (Elijah ceasing to speak with the Rabbi). Although embedded within a dictum, it meets the criteria for a story because it describes an incident that actually happened and its causal consequences.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 11a:17-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative with actions, conflict, and change, but it is about biblical figures (King David and Ahithophel) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 11a:20-Makkot 11b:2",
+   "answer": {
+    "outcome": "invalid",
+    "verdict": null,
+    "rules": null,
+    "segments": null,
+    "reason": null,
+    "error": "segments ['2', '3', '4', '5'] are not integers"
+   }
+  },
+  {
+   "id": "Makkot 14a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage contains a narrated event involving post-biblical figures (Rabbi Akiva, Rabban Gamliel, and Rabbi Yehoshua) traveling to a specific location (the meat market of Emmaus) for a specific purpose (buying meat for a wedding feast). While it centers on a legal question, the inclusion of these specific actions and the setting beyond mere dialogue qualifies it as a story under R-C0 and R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 15a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict where a rabbi denies his own previous ruling and is challenged by a student's oath. Under R-C2 and R-C7 shape 1, speech with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 16a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative interaction between Rabbi Yoḥanan and Rabbi Elazar involving a challenge, an action (going out and searching), and a discovery, which constitutes more than a simple speech act or legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 16b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a teacher's negligence, a rabbi's vow, and a subsequent restoration by another rabbi. This constitutes multiple actions and a change in status, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 16b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident ('a certain person who ate...') followed by a ruling and an action (Rav Yehuda flogged him), which satisfies the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 21a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a physical gesture used by Rav Sheshet to illustrate a legal teaching. Under R-C5 and the limit of R-C0, a description of what a rabbi used to do that leads to no further action, change, or response is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 21a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of Rav Beivai bar Abaye's personal practice (being fastidious about ashes on a wound) followed by a legal dictum by Rav Ashi. Under R-C5 and R-C0, a description of what a rabbi used to do that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 21b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a scholarly debate with sharp dialogue and conflict, specifically Rabbi Yannai's metaphor of the 'gem beneath the shard' and Reish Lakish's retort. While it is primarily standard rabbinic dialogue, the presence of this specific conflict and the implied change in the status of the legal argument makes it borderline under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 23a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a Galilean delivering a homiletical interpretation (speech-act) before Rav Hisda. There is no narrated action, conflict, or change, making it a standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 24a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific incident involving Rav Safra to illustrate a biblical verse, but the narrative details (the recitation of Shema and the price negotiation) are not explicitly stated in the text and must be filled in from commentaries. Under R-C6 and R-C7 shape 4, such alluded incidents are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 24a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an emotional reaction ('he would cry') which counts as an event or action under R-C0, but since the passage is primarily a speech-act (a homiletical reaction to a verse) with minimal change, it fits the borderline criteria in R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 24a:32-Makkot 24b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical rabbis walking on a road, hearing a sound, and reacting with distinct emotional actions (weeping and laughing). This contains conflict and a resolution through dialogue that goes beyond standard legal discussion, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Makkot 24b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Akiva and the Sages) traveling to Jerusalem, performing actions (rending garments, weeping, laughing), and engaging in a dialogue with conflict and resolution.",
+    "error": null
+   }
+  }
+ ]
+}

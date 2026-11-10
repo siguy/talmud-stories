@@ -1,0 +1,257 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 15
+  },
+  "imported": "2026-11-10T06:15:38"
+ },
+ "rows": [
+  {
+   "id": "Shabbat 156a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A midrashic dialogue between Abraham and God about astrology and his heir; whatever narrative there is concerns biblical figures, and it is mostly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 113b:4-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Elazar's verse-by-verse exegesis of Ruth and Samuel; interpretation of biblical verses, not a narrated incident, and biblical in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 30a:8-Shabbat 30b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full narrative of David asking God about his death and the Angel of Death contriving to interrupt his study, but its characters are biblical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 149b:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Nebuchadnezzar's descent into Gehenna, the dead trembling and a Divine Voice answering is a narrated episode about a biblical figure; segment 3 begins a separate exegesis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 89a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Satan searching for the Torah and Moses being rewarded for his humility is a story with search, conflict and outcome, but about biblical and heavenly figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 88b:6-Shabbat 89a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses ascends, argues with the angels, wins and receives gifts: a full story, but about Moses, not rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 87a:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita listing three things Moses did on his own initiative, followed by derivations of his reasoning; exegetical discussion of biblical acts, not a narrated story in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 89a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Satan confusing the people about Moses' return, with their reactions and the vision of his bier, is a narrative about the biblical generation of the Golden Calf.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 89a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses finds God tying crowns to letters and is rebuked for not greeting Him; a brief, mostly verbal episode about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 146a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "An aggadic statement about the serpent's contamination and a scholarly exchange between Rav Aha and Rav Ashi; no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 87b:0-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "A calendrical-legal discussion of the dates of the Exodus and Sinai, with baraitot cited as proofs; no story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 30b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Solomon sends a question to the study hall about his dead father and receives a ruling, continuing the David narrative; biblical characters, followed by Rav Tanhum's conclusion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 149b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Nebuchadnezzar's attempt on Zedekiah and the miracle that foiled it is a narrated event, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 98b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "A one-line tannaitic teaching that the Tabernacle's middle bar stood by miracle; exegesis, no narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Shabbat 55a:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God's command to Gabriel and the attribute of justice's challenge, leading God to retract, is a narrated heavenly episode set in Ezekiel's Jerusalem, biblical rather than rabbinic.",
+    "error": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,4726 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/eruvin/run1.json",
+   "v14_r2": "results/v14/eruvin/run2.json"
+  },
+  "spans": {
+   "v14_r1": 175,
+   "v14_r2": 173
+  },
+  "units": 178,
+  "built": "2026-11-10T00:15:23"
+ },
+ "units": [
+  {
+   "id": "Eruvin 2b:14-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 2b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yehuda teaches a specific halakha to Hiyya bar Rav in the presence of Rav, who then corrects the wording of the ruling."
+  },
+  {
+   "id": "Eruvin 6a:3-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 6a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna cites a specific historical incident where Rav traveled to Damharyia and performed a physical act to settle a legal dispute."
+  },
+  {
+   "id": "Eruvin 6b:6-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 6b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Anan points to the physical practice of Shmuel, who would enter and exit through the partially earth-filled gateways of Neharde'a without them being locked."
+  },
+  {
+   "id": "Eruvin 6b:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 6b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Upon arriving in Neharde'a, Rav Nahman ordered the removal of earth that was blocking the city gates so that they could be functional for locking."
+  },
+  {
+   "id": "Eruvin 6b:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 6b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "In a specific crooked alleyway in Neharde'a, the authorities applied the stringencies of both Rav and Shmuel, necessitating the installation of doors."
+  },
+  {
+   "id": "Eruvin 7a:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 7a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Akiva harvested an etrog on the first of Shevat and separated two different tithes because he was unsure which legal opinion regarding the New Year for trees was correct."
+  },
+  {
+   "id": "Eruvin 7b:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 7b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef recalls an incident in a shepherds' village where an alleyway terminated in a backyard and Rav Yehuda ruled that no additional halakhic measures were required."
+  },
+  {
+   "id": "Eruvin 8a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 8a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A case regarding an alleyway bounded by the sea and a refuse heap was brought before Rabbi Yehuda HaNasi, who declined to issue a definitive ruling of permission or prohibition."
+  },
+  {
+   "id": "Eruvin 8a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 8a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mareimar used to close the alleyways of Sura with nets due to concerns about the river."
+  },
+  {
+   "id": "Eruvin 8a:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 8a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The residents of Sura placed a rolled mat in a crooked alleyway to permit carrying, but Rav Hisda ruled that their action did not satisfy the requirements of either Rav or Shmuel."
+  },
+  {
+   "id": "Eruvin 9a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 9a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Zakkai recites a baraita regarding the status of the area between side posts, Rabbi Yoḥanan rejects the teaching and tells him to go teach it elsewhere."
+  },
+  {
+   "id": "Eruvin 10a:5-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 10a",
+     5
+    ],
+    [
+     "Eruvin 10a",
+     6
+    ],
+    [
+     "Eruvin 10a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef forgot his learning due to illness, and his student Abaye reminded him of a legal principle Rav Yosef himself had previously taught."
+  },
+  {
+   "id": "Eruvin 11a:12-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 11a",
+     12
+    ],
+    [
+     "Eruvin 11a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man from Beit Ḥortan constructed a partition for his vineyard using poles and vines, leading to a dispute between Rabbi Yoḥanan and Reish Lakish over its validity for Shabbat and diverse kinds."
+  },
+  {
+   "id": "Eruvin 11b:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 11b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Yoḥanan cites an incident where Rabbi Yehoshua traveled to study with Rabbi Yoḥanan ben Nuri to clarify a legal point about partitions."
+  },
+  {
+   "id": "Eruvin 11b:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 11b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rav Aḥa encounters the students of Rav Ashi and inquires about their teacher's ruling regarding doorframe markings."
+  },
+  {
+   "id": "Eruvin 11b:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 11b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Naḥman built a doorway at the Exilarch's house according to his legal view, which Rav Sheshet then ordered his attendant to tear down."
+  },
+  {
+   "id": "Eruvin 11b:27-Eruvin 12a:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 11b",
+     27
+    ],
+    [
+     "Eruvin 12a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer traveled to Ovelin and found his disciple, Rabbi Yosei ben Perida, living in an alleyway with only one side post, leading to a confrontation. Rabbi Eliezer visits his disciple in Ovelin and instructs him to add a second side post to his alleyway despite the disciple's hesitation."
+  },
+  {
+   "id": "Eruvin 12a:14-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 12a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef recalls an incident where Rav Yehuda permitted a courtyard breached by a sea inlet using only a single upright board."
+  },
+  {
+   "id": "Eruvin 13a:7-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 13a",
+     7
+    ],
+    [
+     "Eruvin 13a",
+     8
+    ],
+    [
+     "Eruvin 13a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Meir recounts his time as a student moving between Rabbi Yishmael and Rabbi Akiva, focusing on their conflicting reactions to his use of iron sulfate in ink and Yishmael's warning about the dangers of scribal errors."
+  },
+  {
+   "id": "Eruvin 13b:9-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 13b",
+     9
+    ],
+    [
+     "Eruvin 13b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After a three-year dispute between Beit Shammai and Beit Hillel, a Divine Voice declares both views valid but establishes the law like Beit Hillel due to their humble and respectful conduct."
+  },
+  {
+   "id": "Eruvin 13b:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 13b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Beit Shammai and Beit Hillel debated for two and a half years whether it is better for man to have been created, finally concluding that it is better not to have been created, but since he is, he must act righteously."
+  },
+  {
+   "id": "Eruvin 14a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 14a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yehuda teaches a specific version of a Mishnaic ruling to Ḥiyya bar Rav in front of Rav, who then corrects the wording."
+  },
+  {
+   "id": "Eruvin 15a:16-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 15a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rav and Rav Huna were sitting in an alleyway, the side post fell down, leading Rav to gesture that a nearby palm tree could not be used as a replacement."
+  },
+  {
+   "id": "Eruvin 15a:18-18",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 15a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara mentions a specific balcony at the house of Bar Ḥavu over which Abaye and Rava disagreed."
+  },
+  {
+   "id": "Eruvin 16b:26-Eruvin 17a:1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 16b",
+     26
+    ],
+    [
+     "Eruvin 16b",
+     27
+    ],
+    [
+     "Eruvin 16b",
+     28
+    ],
+    [
+     "Eruvin 17a",
+     0
+    ],
+    [
+     "Eruvin 17a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nahman teaches a ruling, is challenged for following a minority opinion, and subsequently appoints a speaker to publicly retract his statement as an error."
+  },
+  {
+   "id": "Eruvin 18a:26-27",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 18a",
+     26
+    ],
+    [
+     "Eruvin 18a",
+     27
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A homiletical interpretation of Genesis describes God braiding Eve's hair before presenting her to Adam."
+  },
+  {
+   "id": "Eruvin 19a:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 19a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara describes how Abraham the Patriarch stands at the entrance of Gehenna to rescue and raise up the sinners of Israel."
+  },
+  {
+   "id": "Eruvin 21a:10-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 21a",
+     10
+    ],
+    [
+     "Eruvin 21a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Ḥisda questions Marei about his long Shabbat walks, and Marei takes him out to physically show him the ruins that legally extend the city limits."
+  },
+  {
+   "id": "Eruvin 21b:11-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 21b",
+     11
+    ],
+    [
+     "Eruvin 21b",
+     12
+    ],
+    [
+     "Eruvin 21b",
+     13
+    ],
+    [
+     "Eruvin 21b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While imprisoned, Rabbi Akiva refuses to drink the limited water brought to him, insisting on using it for ritual hand-washing instead, even at the risk of his life."
+  },
+  {
+   "id": "Eruvin 22a:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 22a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Mattana is confronted by his wife about how to feed their children as he prepares to leave for the study hall."
+  },
+  {
+   "id": "Eruvin 22b:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 22b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Dimi recalls seeing Abaye's head positioned between the pillars of the study hall while Rabbi Yoḥanan was teaching, signifying Abaye's deep concentration."
+  },
+  {
+   "id": "Eruvin 22b:18-18",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 22b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Joshua established the roads of Eretz Yisrael, designating convenient paths for the public and inconvenient ones for individuals."
+  },
+  {
+   "id": "Eruvin 23a:7-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 23a",
+     7
+    ],
+    [
+     "Eruvin 23a",
+     8
+    ],
+    [
+     "Eruvin 23a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Elai recounts three unique rulings he heard from Rabbi Eliezer and describes how he searched unsuccessfully among all of Eliezer's disciples to find anyone else who had heard them."
+  },
+  {
+   "id": "Eruvin 24a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 24a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar Yehuda visits Rav Huna bar Yehuda, observes people carrying in a garden not planted in rows, and questions the practice until Rav Huna explains he follows Rav Nachman's lenient ruling."
+  },
+  {
+   "id": "Eruvin 24a:14-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 24a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Hizkiya praises his student Rabbi Yohanan for resolving a legal difficulty using Hizkiya's own teachings."
+  },
+  {
+   "id": "Eruvin 24b:3-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 24b",
+     3
+    ],
+    [
+     "Eruvin 24b",
+     4
+    ],
+    [
+     "Eruvin 24b",
+     5
+    ],
+    [
+     "Eruvin 24b",
+     6
+    ],
+    [
+     "Eruvin 24b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages discuss how to permit carrying in a specific large yard in Pum Nahara by debating the placement of side posts relative to the town and a nearby river path."
+  },
+  {
+   "id": "Eruvin 25a:22-22",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 25a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman attempts to claim a deceased convert's property by building a partition, but Rav Nachman awards the land to a man who subsequently performed the more effective act of plowing."
+  },
+  {
+   "id": "Eruvin 25b:7-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 25b",
+     7
+    ],
+    [
+     "Eruvin 25b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When a mansion wall bordering an orchard falls, Rav Beivai attempts to permit carrying there based on the inner wall, but Rav Pappi insults his lineage and rejects the ruling."
+  },
+  {
+   "id": "Eruvin 25b:9-Eruvin 26a:6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 25b",
+     9
+    ],
+    [
+     "Eruvin 25b",
+     10
+    ],
+    [
+     "Eruvin 26a",
+     0
+    ],
+    [
+     "Eruvin 26a",
+     1
+    ],
+    [
+     "Eruvin 26a",
+     2
+    ],
+    [
+     "Eruvin 26a",
+     3
+    ],
+    [
+     "Eruvin 26a",
+     4
+    ],
+    [
+     "Eruvin 26a",
+     5
+    ],
+    [
+     "Eruvin 26a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Exilarch asks Rav Huna bar Ḥinnana to permit his orchard pavilion for Shabbat use, leading Rav Huna to construct a reed fence, which Rava then encounters. Rava dismantles a reed partition erected by Rav Huna bar Ḥinnana for the Exilarch, leading his students to collect the reeds and the Exilarch to curse them for ruining his Shabbat arrangement."
+  },
+  {
+   "id": "Eruvin 26a:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 26a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Isaiah established a Torah academy at the entrance of King Hezekiah's home when the king fell ill."
+  },
+  {
+   "id": "Eruvin 27a:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 27a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda ben Gadish testifies before Rabbi Eliezer that his father's household used to purchase fish brine with second-tithe money."
+  },
+  {
+   "id": "Eruvin 28a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 28a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara explains a contradiction in Rav's rulings by narrating how his arrival in Babylonia and observation of local eating habits caused him to change his mind regarding green grain."
+  },
+  {
+   "id": "Eruvin 28b:2-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 28b",
+     2
+    ],
+    [
+     "Eruvin 28b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Zeira, exhausted from study, sits at the academy gate to honor scholars and encounters a school child whose lesson on blessings becomes the established law."
+  },
+  {
+   "id": "Eruvin 28b:22-22",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 28b",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yirmeya travels to villages and is unable to answer a question about eiruv until he returns to the study hall."
+  },
+  {
+   "id": "Eruvin 29a:3-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 29a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava, in a boastful mood, compares himself to Ben Azzai and invites questions, leading a sage to ask him about the measure of apples for an eiruv."
+  },
+  {
+   "id": "Eruvin 29a:17-17",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 29a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Shimon ben Elazar reports an incident where Rabbi Meir was in Ardiska and a man approached him regarding an eiruv."
+  },
+  {
+   "id": "Eruvin 29b:2-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 29b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina falls deathly ill after eating half an onion containing toxins, but survives after his colleagues pray for him."
+  },
+  {
+   "id": "Eruvin 30a:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 30a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Hana recounts traveling with Rabbi Yohanan to eat the sweet fruits of Genosar, where the group members would each consume ten fruits."
+  },
+  {
+   "id": "Eruvin 34b:7-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 34b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When an army occupied the study hall in Nehardea, Rav Nahman instructed his students to create alternative seating by compressing reeds in the marshes."
+  },
+  {
+   "id": "Eruvin 36b:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 36b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yitzḥak arrived from Eretz Yisrael and taught a version of the Mishna that reversed the rulings regarding gentiles and Sages."
+  },
+  {
+   "id": "Eruvin 37b:8-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 37b",
+     8
+    ],
+    [
+     "Eruvin 37b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava challenges Rav Nachman with a baraita regarding retroactive designation, and Rav Nachman remains silent because he had not heard that specific tradition."
+  },
+  {
+   "id": "Eruvin 38b:7-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 38b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Upon the death of Rav Huna, Rav Hisda enters the study hall to point out a contradiction in Rav's legal rulings."
+  },
+  {
+   "id": "Eruvin 39b:6-Eruvin 40a:2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 39b",
+     6
+    ],
+    [
+     "Eruvin 39b",
+     7
+    ],
+    [
+     "Eruvin 39b",
+     8
+    ],
+    [
+     "Eruvin 39b",
+     9
+    ],
+    [
+     "Eruvin 39b",
+     10
+    ],
+    [
+     "Eruvin 39b",
+     11
+    ],
+    [
+     "Eruvin 40a",
+     0
+    ],
+    [
+     "Eruvin 40a",
+     1
+    ],
+    [
+     "Eruvin 40a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A deer is brought to the Exilarch's house on a festival, leading to a physical dispute where Rav Nahman and Rav Hisda eat the meat while Rav Sheshet refuses, followed by Rav Sheshet's later investigation into the ruling."
+  },
+  {
+   "id": "Eruvin 40a:3-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 40a",
+     3
+    ],
+    [
+     "Eruvin 40a",
+     4
+    ],
+    [
+     "Eruvin 40a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rava initially permits buying turnips brought by gentiles on a festival because they were withered, but later prohibits them when he sees merchants specifically targeting Jewish customers."
+  },
+  {
+   "id": "Eruvin 40a:6-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 40a",
+     6
+    ],
+    [
+     "Eruvin 40a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After canopy makers cut myrtles on a festival, Ravina permits their use, but following objections from other sages, Rava rules that one must wait the time it takes to cut them before using them."
+  },
+  {
+   "id": "Eruvin 40b:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 40b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yirmeya bar Abba observes Rav praying early and confirms that Rav has thereby accepted the prohibitions of the Sabbath early."
+  },
+  {
+   "id": "Eruvin 40b:15-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 40b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages send Rav Yeimar the Elder to observe whether Rav Hisda recites the Sheheḥeyanu blessing on Rosh HaShana, and he reports back that he saw him recite it over wine."
+  },
+  {
+   "id": "Eruvin 41a:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 41a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda recounts how Rabbi Akiva publicly ate a lightly cooked egg on the eve of the Ninth of Av to demonstrate that one need not complete the fast when it coincides with the eve of Shabbat."
+  },
+  {
+   "id": "Eruvin 41a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 41a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After Rabban Gamliel's death, Rabbi Yehoshua enters the study hall to annul one of his rulings, but is stopped by Rabbi Yoḥanan ben Nuri who argues the 'body' must follow the 'head'."
+  },
+  {
+   "id": "Eruvin 41a:7-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 41a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Tzadok recounts how his family once celebrated their traditional festival when it coincided with the Ninth of Av, choosing not to complete the fast."
+  },
+  {
+   "id": "Eruvin 41a:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 41a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef, having lost his memory due to illness, is reminded by his student Abaye of a legal ruling that Rav Yosef himself had previously taught."
+  },
+  {
+   "id": "Eruvin 41b:8-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 41b",
+     8
+    ],
+    [
+     "Eruvin 41b",
+     9
+    ],
+    [
+     "Eruvin 41b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Four prominent sages are on a boat that travels beyond the Shabbat limit; while two stay put, Rabban Gamliel and Rabbi Elazar walk the boat, and later Gamliel permits them all to disembark at port because he observed they were within the limit before dark."
+  },
+  {
+   "id": "Eruvin 43a:2-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 43a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A group of Sages travel from Pelandarsin by boat and find themselves at sea as Shabbat begins."
+  },
+  {
+   "id": "Eruvin 43a:16-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 43a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Seven teachings delivered in Sura on Shabbat morning appeared in Pumbedita by that evening, implying a miraculous traversal of the Shabbat limit."
+  },
+  {
+   "id": "Eruvin 43b:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 43b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel uses a special tube to determine that his boat had entered the Shabbat limit before nightfall, allowing his companions to disembark."
+  },
+  {
+   "id": "Eruvin 43b:15-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 43b",
+     15
+    ],
+    [
+     "Eruvin 43b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Neḥemya son of Rav Ḥanilai accidentally wanders outside the Shabbat limit while studying, and Rav Ḥisda asks Rav Naḥman to arrange a human partition to bring him back."
+  },
+  {
+   "id": "Eruvin 44b:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 44b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Members of a wedding party used a human partition to bring water on Shabbat, and Shmuel punished them for doing so knowingly."
+  },
+  {
+   "id": "Eruvin 44b:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 44b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rava's attendants used the crowd following him to bring flasks into his house on Shabbat, but Rava forbade them from doing it again the next week."
+  },
+  {
+   "id": "Eruvin 44b:6-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 44b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara records three instances where straw, fodder, and water were brought to Levi, Ze'eiri, and Rav Shimi bar Hiyya using human partitions."
+  },
+  {
+   "id": "Eruvin 45a:8-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 45a",
+     8
+    ],
+    [
+     "Eruvin 45a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A historical incident where Jewish defenders left their weapons at the city wall on Shabbat, leading to a disastrous enemy pursuit and a fatal stampede among the Jews."
+  },
+  {
+   "id": "Eruvin 45a:20-21",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 45a",
+     20
+    ],
+    [
+     "Eruvin 45a",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Tarfon was stranded outside a city on Shabbat eve and only entered the next morning after cowherds informed him he was actually within the city's limit."
+  },
+  {
+   "id": "Eruvin 45b:9-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 45b",
+     9
+    ],
+    [
+     "Eruvin 45b",
+     10
+    ],
+    [
+     "Eruvin 45b",
+     11
+    ],
+    [
+     "Eruvin 45b",
+     12
+    ],
+    [
+     "Eruvin 45b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye recites a tradition to Rav Safra, defends it, and later reports the conversation to Rav Yosef who offers a better defense."
+  },
+  {
+   "id": "Eruvin 46a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 46a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi ruled like Rabbi Elazar but later realized he was in the minority, subsequently justifying his decision as valid for emergency situations."
+  },
+  {
+   "id": "Eruvin 47a:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 47a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Ḥiyya bar Ashi teaches a law to Ḥiyya bar Rav in Rav's presence, and Rav instructs him to include the final halakhic ruling."
+  },
+  {
+   "id": "Eruvin 47a:16-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 47a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer misses the study hall, meets Rabbi Asi, and asks what was taught, learning that the halakha follows Rabbi Yosei."
+  },
+  {
+   "id": "Eruvin 47b:0-0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 47b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Yosef the priest traveled to Tzeidan outside of Eretz Yisrael to study Torah with his chosen teacher."
+  },
+  {
+   "id": "Eruvin 47b:12-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 47b",
+     12
+    ],
+    [
+     "Eruvin 47b",
+     13
+    ],
+    [
+     "Eruvin 47b",
+     14
+    ],
+    [
+     "Eruvin 47b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After rams were brought to Mavrakhta on Shabbat, Rava initially permitted Meḥoza residents to buy them but changed his ruling after Ravina pointed out a legal contradiction."
+  },
+  {
+   "id": "Eruvin 48a:0-0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 48a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yosei son of Rabbi Ḥanina laughs upon hearing Rabbi Ḥiyya's stringent ruling regarding iron partitions in a ditch."
+  },
+  {
+   "id": "Eruvin 48a:15-18",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 48a",
+     15
+    ],
+    [
+     "Eruvin 48a",
+     16
+    ],
+    [
+     "Eruvin 48a",
+     17
+    ],
+    [
+     "Eruvin 48a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Mesharshiya sends his son to challenge Rav Pappa with a technical difficulty about measurements, leading Rav Pappa to remark that such over-precision would make learning impossible."
+  },
+  {
+   "id": "Eruvin 49a:16-17",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 49a",
+     16
+    ],
+    [
+     "Eruvin 49a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Abba questions Rav Yehuda about Shmuel's ruling on dividing an eiruv while they are in an olive press."
+  },
+  {
+   "id": "Eruvin 51a:2-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 51a",
+     2
+    ],
+    [
+     "Eruvin 51a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling, Rabba designates a specific palm tree as their Shabbat residence and convinces a skeptical Rav Yosef to agree by falsely attributing the supporting logic to Rabbi Yosei."
+  },
+  {
+   "id": "Eruvin 51a:15-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 51a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Pappa recalls how Rava tested the students with a legal question regarding the diagonal measurements of a pillar in the public domain."
+  },
+  {
+   "id": "Eruvin 51b:7-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 51b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda recounts how two wealthy families distributed food during a famine and the paupers used the 'eiruv by foot' method to reach them."
+  },
+  {
+   "id": "Eruvin 51b:13-Eruvin 52a:1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 51b",
+     13
+    ],
+    [
+     "Eruvin 52a",
+     0
+    ],
+    [
+     "Eruvin 52a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar Rav Hanan used to travel from Artibbena to Pumbedita on Shabbat."
+  },
+  {
+   "id": "Eruvin 52a:16-Eruvin 52b:1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 52a",
+     16
+    ],
+    [
+     "Eruvin 52b",
+     0
+    ],
+    [
+     "Eruvin 52b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yehuda bar Ishtata brought fruit to Rav Natan, who waited for him to begin his departure before telling him to stay the night, thereby establishing his Shabbat residence for the next day's journey."
+  },
+  {
+   "id": "Eruvin 53a:11-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53a",
+     11
+    ],
+    [
+     "Eruvin 53a",
+     12
+    ],
+    [
+     "Eruvin 53a",
+     13
+    ],
+    [
+     "Eruvin 53a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan recalls his eighteen-day stay at Rabbi Oshaya's academy, describing the extreme physical crowding of the students and the specific lesson he emerged with."
+  },
+  {
+   "id": "Eruvin 53b:3-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An anonymous person asks the people of Judea about the spelling of certain words and receives a pluralistic linguistic response."
+  },
+  {
+   "id": "Eruvin 53b:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Judean man uses a clever metaphor to describe the color of a cloak he is selling."
+  },
+  {
+   "id": "Eruvin 53b:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Galilean man is mocked because his poor pronunciation makes it unclear if he wants a lamb, wine, wool, or a donkey."
+  },
+  {
+   "id": "Eruvin 53b:6-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A Galilean woman's attempt to invite her friend for milk results in a garbled, nonsensical sentence due to her accent."
+  },
+  {
+   "id": "Eruvin 53b:7-7",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman appearing before a judge to report a stolen board misspeaks so severely that she ends up telling the judge that his feet do not touch the ground."
+  },
+  {
+   "id": "Eruvin 53b:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new protagonist (the maidservant of Rabbi Yehuda HaNasi) and a new scenario involving enigmatic speech, serving as a thematic contrast to the previous story about the Galilean woman."
+  },
+  {
+   "id": "Eruvin 53b:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B describes a distinct, recurring habit of Rabbi Abbahu using enigmatic language in a domestic setting, whereas Passage A is a specific dialogue between the Sages and Rabbi Abbahu regarding Rabbi Elai."
+  },
+  {
+   "id": "Eruvin 53b:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages ask Rabbi Abbahu where Rabbi Elai is, and he answers using a complex riddle about a priestly girl."
+  },
+  {
+   "id": "Eruvin 53b:16-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B is a distinct narrative incident involving Rabbi Elai and a group of questioners, featuring a specific verbal exchange and a clever metaphorical response, which is independent of Rabbi Yehoshua's story in Passage A."
+  },
+  {
+   "id": "Eruvin 53b:17-19",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     17
+    ],
+    [
+     "Eruvin 53b",
+     18
+    ],
+    [
+     "Eruvin 53b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Hananya is humbled by an innkeeper who over-salts his food to rebuke him for not leaving a portion for the poor/servants as required by etiquette."
+  },
+  {
+   "id": "Eruvin 53b:20-20",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A young girl corrects Rabbi Yehoshua for walking through a private field on a path created by trespassers."
+  },
+  {
+   "id": "Eruvin 53b:21-22",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     21
+    ],
+    [
+     "Eruvin 53b",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua takes a path described as 'short but long' and finds it blocked, leading him to praise the wisdom of a young boy who outwitted him."
+  },
+  {
+   "id": "Eruvin 53b:23-23",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     23
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Berurya rebukes Rabbi Yosei HaGelili for using too many words when asking for directions, citing the rule against excessive talk with women."
+  },
+  {
+   "id": "Eruvin 53b:24-Eruvin 54a:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 53b",
+     24
+    ],
+    [
+     "Eruvin 54a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Berurya discovers a student studying silently and physically rebukes him, arguing that Torah must be recited aloud to be retained. Berurya kicks a student who was whispering his studies and explains that Torah must be studied with one's whole body to be retained."
+  },
+  {
+   "id": "Eruvin 54a:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 54a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A student of Rabbi Eliezer was liable for death by fire, but the Rabbis spared him because he had served a great scholar."
+  },
+  {
+   "id": "Eruvin 54a:21-24",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 54a",
+     21
+    ],
+    [
+     "Eruvin 54a",
+     22
+    ],
+    [
+     "Eruvin 54a",
+     23
+    ],
+    [
+     "Eruvin 54a",
+     24
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "On the eve of Yom Kippur, Rava seeks to appease Rav Yosef by secretly mixing his wine; Rav Yosef recognizes Rava's skill and reconciles with him through a series of scriptural interpretations."
+  },
+  {
+   "id": "Eruvin 54b:3-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 54b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Pedat was so engrossed in Torah study in the lower marketplace of Tzippori that he was unaware his cloak was left behind in the upper marketplace."
+  },
+  {
+   "id": "Eruvin 54b:19-21",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 54b",
+     19
+    ],
+    [
+     "Eruvin 54b",
+     20
+    ],
+    [
+     "Eruvin 54b",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Perida patiently teaches a struggling student 400 times twice over after an interruption, leading a Divine Voice to grant him and his generation the World-to-Come."
+  },
+  {
+   "id": "Eruvin 55b:14-14",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 55b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan testifies that he personally saw the location of the Israelites' camp and describes its size."
+  },
+  {
+   "id": "Eruvin 57b:12-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 57b",
+     12
+    ],
+    [
+     "Eruvin 57b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Safra questions Rava about the Shabbat limits of two cities, and Rava takes him out to show him submerged wall foundations that justify the measurement."
+  },
+  {
+   "id": "Eruvin 59b:9-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 59b",
+     9
+    ],
+    [
+     "Eruvin 59b",
+     10
+    ],
+    [
+     "Eruvin 59b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira establishes an eiruv for a whole city based on a precedent, but Abaye corrects him by explaining that the physical layout of the city changed when a garbage dump was cleared."
+  },
+  {
+   "id": "Eruvin 60a:6-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 60a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The residents of Kakunya ask Rav Yosef for help with their eiruv, leading Abaye through a series of legal retractions until he realizes the depth of the warning Rav Yosef gave him."
+  },
+  {
+   "id": "Eruvin 61a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 61a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi instituted a movement restriction between the cities of Geder and Hamtan to prevent the residents of Geder from assaulting the residents of Hamtan during Shabbat festivities."
+  },
+  {
+   "id": "Eruvin 61b:7-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 61b",
+     7
+    ],
+    [
+     "Eruvin 61b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar Yehuda instructs the residents of Mavrakhta to move their eiruvin to a more advantageous spot, but Rava rebukes him for following a minority legal opinion."
+  },
+  {
+   "id": "Eruvin 61b:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 61b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabban Gamliel recounts how his father urged them to quickly establish possession of an alleyway after a Sadducee neighbor renounced his rights, before the neighbor could retract."
+  },
+  {
+   "id": "Eruvin 62b:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 62b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda consistently refused to answer even simple dietary questions during the lifetime of his teacher, Rav Huna."
+  },
+  {
+   "id": "Eruvin 62b:12-Eruvin 63a:3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 62b",
+     12
+    ],
+    [
+     "Eruvin 63a",
+     0
+    ],
+    [
+     "Eruvin 63a",
+     1
+    ],
+    [
+     "Eruvin 63a",
+     2
+    ],
+    [
+     "Eruvin 63a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda issued rulings in the town of Kafri while his teacher Rav Huna was still alive. Ravina examines a slaughtering knife in the jurisdiction of his teacher Rav Ashi, leading to a confrontation and a debate over the propriety of his actions."
+  },
+  {
+   "id": "Eruvin 63a:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 63a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While visiting Meḥoza, Ravina is asked by his host to check a slaughtering knife, but he refuses out of respect for the local sage, Rava."
+  },
+  {
+   "id": "Eruvin 63a:7-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 63a",
+     7
+    ],
+    [
+     "Eruvin 63a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar from Hagronya ignores the honor of the local sage by checking a slaughtering knife himself and is subsequently punished for his lack of deference."
+  },
+  {
+   "id": "Eruvin 63a:11-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 63a",
+     11
+    ],
+    [
+     "Eruvin 63a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While sitting with his teacher, Ravina sees a man violating a law and shouts to stop him, later receiving his teacher's approval for acting in his presence to prevent a sin."
+  },
+  {
+   "id": "Eruvin 63a:15-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 63a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Eliezer predicts the death of a disciple who issued a ruling in his presence, and the prediction comes true."
+  },
+  {
+   "id": "Eruvin 63b:10-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 63b",
+     10
+    ],
+    [
+     "Eruvin 63b",
+     11
+    ],
+    [
+     "Eruvin 63b",
+     12
+    ],
+    [
+     "Eruvin 63b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When a gentile named Lahman bar Ristak refused to rent his domain to his Jewish neighbors, they consulted Abaye, who instructed them to renounce their domains to a single individual to bypass the restriction."
+  },
+  {
+   "id": "Eruvin 64a:0-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 64a",
+     0
+    ],
+    [
+     "Eruvin 64a",
+     1
+    ],
+    [
+     "Eruvin 64a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Jewish neighbors unable to rent an alleyway from a gentile seek advice from Abaye and Rava, leading to a practical solution involving becoming the gentile's 'hired laborers.'"
+  },
+  {
+   "id": "Eruvin 64a:9-Eruvin 64b:2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 64a",
+     9
+    ],
+    [
+     "Eruvin 64a",
+     10
+    ],
+    [
+     "Eruvin 64a",
+     11
+    ],
+    [
+     "Eruvin 64b",
+     0
+    ],
+    [
+     "Eruvin 64b",
+     1
+    ],
+    [
+     "Eruvin 64b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Two rabbis parting ways at a river ferry engage in a series of legal inquiries regarding intoxication and property."
+  },
+  {
+   "id": "Eruvin 64b:4-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 64b",
+     4
+    ],
+    [
+     "Eruvin 64b",
+     5
+    ],
+    [
+     "Eruvin 64b",
+     6
+    ],
+    [
+     "Eruvin 64b",
+     7
+    ],
+    [
+     "Eruvin 64b",
+     8
+    ],
+    [
+     "Eruvin 64b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabban Gamliel travels from Akko to the Ladder of Tyre, interacting with a gentile over a found loaf and delaying a legal ruling for a petitioner until the effects of the wine he drank have worn off."
+  },
+  {
+   "id": "Eruvin 65a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 65a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "The mother of Mar son of Ravina used to prepare seven fresh garments for him each week to avoid lice."
+  },
+  {
+   "id": "Eruvin 65a:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 65a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda's daughter asks him why he does not sleep more, and he replies that there will be plenty of time for sleep in the grave."
+  },
+  {
+   "id": "Eruvin 65b:2-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 65b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A case regarding two courtyards with a Jew and a gentile is brought before Rabbi Yehuda HaNasi and Rabbi Hiyya, who both prohibit carrying."
+  },
+  {
+   "id": "Eruvin 65b:14-17",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 65b",
+     14
+    ],
+    [
+     "Eruvin 65b",
+     15
+    ],
+    [
+     "Eruvin 65b",
+     16
+    ],
+    [
+     "Eruvin 65b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Reish Lakish and students arrive at an inn on Shabbat and decide to rent from the landlord despite legal uncertainty, later receiving approval from Rabbi Afes."
+  },
+  {
+   "id": "Eruvin 65b:18-Eruvin 66a:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 65b",
+     18
+    ],
+    [
+     "Eruvin 65b",
+     19
+    ],
+    [
+     "Eruvin 65b",
+     20
+    ],
+    [
+     "Eruvin 66a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Three rabbis at an inn debate whether to rent from a gentile who arrived on Shabbat; they follow the elder's advice to rent and later consult Rabbi Yohanan."
+  },
+  {
+   "id": "Eruvin 67b:15-Eruvin 68a:1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 67b",
+     15
+    ],
+    [
+     "Eruvin 67b",
+     16
+    ],
+    [
+     "Eruvin 67b",
+     17
+    ],
+    [
+     "Eruvin 67b",
+     18
+    ],
+    [
+     "Eruvin 68a",
+     0
+    ],
+    [
+     "Eruvin 68a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When warm water for a baby's circumcision spills on Shabbat, Rabba and Abaye debate how to obtain more, eventually resulting in the water being brought."
+  },
+  {
+   "id": "Eruvin 68a:2-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 68a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new set of actors (Rabba bar Rav Hanan and Abaye) and a distinct narrative event regarding the failure to establish an eiruv, following the conclusion of the previous legal debate."
+  },
+  {
+   "id": "Eruvin 68a:10-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 68a",
+     10
+    ],
+    [
+     "Eruvin 68a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When a baby's water spills, Rava attempts to allow a gentile to heat water by claiming the mother might need it, despite Rav Mesharshiya's observation that she is healthy enough to eat dates."
+  },
+  {
+   "id": "Eruvin 68a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 68a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "In another case of spilled water, Rava physically moves his belongings and himself to a different part of the house to legally renounce his courtyard rights and allow the water to be moved."
+  },
+  {
+   "id": "Eruvin 68b:0-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 68b",
+     0
+    ],
+    [
+     "Eruvin 68b",
+     1
+    ],
+    [
+     "Eruvin 68b",
+     2
+    ],
+    [
+     "Eruvin 68b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rava attempts to find a legal loophole to provide warm water for a baby's circumcision on Shabbat after it spilled, but is challenged by Ravina."
+  },
+  {
+   "id": "Eruvin 68b:13-16",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 68b",
+     13
+    ],
+    [
+     "Eruvin 68b",
+     14
+    ],
+    [
+     "Eruvin 68b",
+     15
+    ],
+    [
+     "Eruvin 68b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel recounts an incident where a Sadducee neighbor renounced his rights, and Gamliel urged the residents to finish their work before the neighbor could prohibit them."
+  },
+  {
+   "id": "Eruvin 69a:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 69a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man wearing a prohibited ring on Shabbat hides it when he sees Rabbi Yehuda Nesia, leading the Sage to conclude that such a person still retains the legal capacity to renounce rights in a domain."
+  },
+  {
+   "id": "Eruvin 72b:15-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 72b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda reports an incident where Ben Nappaḥa owned five courtyards in Usha and the Sages ruled that only his actual residence affected the eiruv laws."
+  },
+  {
+   "id": "Eruvin 73a:3-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 73a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye reminds Rav Yosef of a legal tradition that Rav Yosef had forgotten due to an illness."
+  },
+  {
+   "id": "Eruvin 73a:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 73a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav and Rabbi Hiyya are cited as having relied on their teachers' eiruv while studying in their academies."
+  },
+  {
+   "id": "Eruvin 74a:5-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 74a",
+     5
+    ],
+    [
+     "Eruvin 74a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar hears Rav Beruna teaching a law in Shmuel's name, asks to be shown where Shmuel is staying, and goes there to confront Shmuel with a contradiction, leaving Shmuel silent."
+  },
+  {
+   "id": "Eruvin 74a:7-Eruvin 74b:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 74a",
+     7
+    ],
+    [
+     "Eruvin 74b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ivut bar Ihi installed a side post in his alleyway (which lacked the standard number of houses) and Shmuel permitted its use. After Shmuel's death, Rav Anan physically removes a side post from Ivut bar Ihi's alleyway to enforce a stricter legal standard, leading to a verbal confrontation."
+  },
+  {
+   "id": "Eruvin 75a:2-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 75a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yosef recalls hearing Rabbi Tavla repeat the word 'gentile' twice during a lesson and realizes it referred to both an alleyway and a courtyard."
+  },
+  {
+   "id": "Eruvin 75b:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 75b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Beivai corrects the Sages, explaining that Rav Yosef misattributed a law to Rabbi Yehuda HaNasi because his illness caused him to forget that Rav Beivai had actually cited it in the name of Rav Adda bar Ahava."
+  },
+  {
+   "id": "Eruvin 76a:1-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 76a",
+     1
+    ],
+    [
+     "Eruvin 76a",
+     2
+    ],
+    [
+     "Eruvin 76a",
+     3
+    ],
+    [
+     "Eruvin 76a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Raḥava poses a complex legal scenario regarding eiruvin in two courtyards to the Sages, who then provide a ruling based on the visibility of the houses."
+  },
+  {
+   "id": "Eruvin 80a:6-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 80a",
+     6
+    ],
+    [
+     "Eruvin 80a",
+     7
+    ],
+    [
+     "Eruvin 80a",
+     8
+    ],
+    [
+     "Eruvin 80a",
+     9
+    ],
+    [
+     "Eruvin 80a",
+     10
+    ],
+    [
+     "Eruvin 80a",
+     11
+    ],
+    [
+     "Eruvin 80a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After Rabbi Hiyya prohibited Rabbi Oshaya's daughter-in-law from returning from a bathhouse despite an eiruv made by her mother-in-law, Rabbi Ya'akov traveled to the Ladder of Tyre to confirm the exact legal grounds for the ruling."
+  },
+  {
+   "id": "Eruvin 80a:17-18",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 80a",
+     17
+    ],
+    [
+     "Eruvin 80a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a gentile superintendent refused to rent his domain to his Jewish neighbors, Rabbi Zeira ruled that they could rent it from the man's wife without his knowledge."
+  },
+  {
+   "id": "Eruvin 80a:19-19",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 80a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A similar incident occurred where a superintendent refused to rent his domain, and the neighbors sought a ruling from Rav Yehuda bar Oshaya."
+  },
+  {
+   "id": "Eruvin 81a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 81a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "In the days of Mar Shmuel, a loaf of lentil bread was so unpalatable that when he threw it to his dog, the animal would not eat it."
+  },
+  {
+   "id": "Eruvin 83a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 83a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Bonyos sends an ancient se'a measure from Na'usa to Rabbi Yehuda HaNasi, who then measures its volume in eggs."
+  },
+  {
+   "id": "Eruvin 85b:1-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 85b",
+     1
+    ],
+    [
+     "Eruvin 85b",
+     2
+    ],
+    [
+     "Eruvin 85b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Elazar travels to Rav's lodging to clarify a legal ruling regarding ruins and the laws of carrying on Shabbat."
+  },
+  {
+   "id": "Eruvin 85b:18-Eruvin 86a:1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 85b",
+     18
+    ],
+    [
+     "Eruvin 86a",
+     0
+    ],
+    [
+     "Eruvin 86a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The son of Bonyas visits Rabbi Yehuda HaNasi, who, recognizing his wealth by his attire, instructs his attendants to accord him great honor. Rabbi Yehuda HaNasi honors the son of Bonyas for his wealth, increasing the honor after Rabbi Yishmael describes the family's vast maritime and land holdings."
+  },
+  {
+   "id": "Eruvin 86b:9-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 86b",
+     9
+    ],
+    [
+     "Eruvin 86b",
+     10
+    ],
+    [
+     "Eruvin 86b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The people of Tzippori forgot to bring a Torah scroll to the synagogue before Shabbat, but were able to bring it on Shabbat by relying on sheets already spread over pillars as partitions."
+  },
+  {
+   "id": "Eruvin 87a:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 87a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Yehuda cites an incident where the residents of Avel drew water from a channel on Shabbat based on the Elders' ruling regarding suspended partitions."
+  },
+  {
+   "id": "Eruvin 87a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 87a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda recounts how residents drew water from a channel running between Avel and Tzippori under the Elders' guidance, which the Sages later attribute to the channel's small dimensions."
+  },
+  {
+   "id": "Eruvin 89b:4-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 89b",
+     4
+    ],
+    [
+     "Eruvin 89b",
+     5
+    ],
+    [
+     "Eruvin 89b",
+     6
+    ],
+    [
+     "Eruvin 89b",
+     7
+    ],
+    [
+     "Eruvin 89b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav Yosef forgets his teachings due to illness, his student Abaye reminds him of a previous ruling, leading Rav Yosef to recall and clarify his position."
+  },
+  {
+   "id": "Eruvin 91a:1-3",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 91a",
+     1
+    ],
+    [
+     "Eruvin 91a",
+     2
+    ],
+    [
+     "Eruvin 91a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi and Rabbi Yehuda recount specific historical practices of carrying items between domains in Tekoa and during times of religious persecution."
+  },
+  {
+   "id": "Eruvin 93b:8-8",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 93b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Ravina meets Rav Aḥa and asks if he has a tradition regarding Mareimar's ruling on partitions, to which Rav Aḥa replies in the negative."
+  },
+  {
+   "id": "Eruvin 93b:12-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 93b",
+     12
+    ],
+    [
+     "Eruvin 93b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav and Shmuel disagree on the legal status of carrying in courtyards after a dividing wall collapses on Shabbat."
+  },
+  {
+   "id": "Eruvin 94a:1-2",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 94a",
+     1
+    ],
+    [
+     "Eruvin 94a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rav and Shmuel are sitting in a courtyard, a wall collapses, leading Shmuel to order a cloak hung as a partition while Rav physically demonstrates his disapproval."
+  },
+  {
+   "id": "Eruvin 96a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 96a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites traditions that Michal the daughter of Saul wore phylacteries and Jonah's wife made pilgrimage to Jerusalem without the Sages objecting."
+  },
+  {
+   "id": "Eruvin 96b:1-1",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 96b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara mentions that Jonah's wife used to perform the pilgrimage to Jerusalem and the Sages did not protest."
+  },
+  {
+   "id": "Eruvin 96b:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 96b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Zeira instructs his son Ahava to go and teach a specific baraita regarding ritual fringes to the Sages."
+  },
+  {
+   "id": "Eruvin 98b:15-Eruvin 99a:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 98b",
+     15
+    ],
+    [
+     "Eruvin 99a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While Rav Ḥinnana bar Shelamiya was teaching a version of the mishna to Ḥiyya bar Rav, Rav overheard and rebuked him for teaching a minority opinion as if it were the law."
+  },
+  {
+   "id": "Eruvin 99b:16-17",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 99b",
+     16
+    ],
+    [
+     "Eruvin 99b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An incident involving an alleyway bounded by the sea and a garbage dump was brought before Rabbi Yehuda HaNasi, who declined to rule on its status due to concerns that the boundaries might change."
+  },
+  {
+   "id": "Eruvin 100a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 100a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye asks Rav Yosef about using a palm tree that grows through his roof, and Rav Yosef provides a ruling."
+  },
+  {
+   "id": "Eruvin 100b:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 100b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav arrived in Apsetaya and, seeing a need for a religious safeguard, prohibited the residents from climbing even stripped trees."
+  },
+  {
+   "id": "Eruvin 101a:9-9",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 101a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic insults Rabbi Yehoshua ben Hananya by comparing Jews to thorns, but the Rabbi retorts by showing the biblical verse actually refers to their protective nature."
+  },
+  {
+   "id": "Eruvin 101a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 101a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "The Sages cite an incident in the poultry dealers' market in Jerusalem where shopkeepers would lock their doors and place the keys in windows above the doors on Shabbat."
+  },
+  {
+   "id": "Eruvin 101b:0-0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 101b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Rabbis cite a historical practice in the Jerusalem poultry market where merchants locked their shops and stored keys in windows above ten handbreadths high."
+  },
+  {
+   "id": "Eruvin 101b:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 101b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Eliezer and Rabbi Yosei dispute a historical incident in Tiberias regarding whether Rabban Gamliel arrived and prohibited or permitted the use of a specific door bolt."
+  },
+  {
+   "id": "Eruvin 102a:5-5",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Tavla visits Meḥoza and observes people using a door bolt in a specific way without correcting them, implying its permissibility."
+  },
+  {
+   "id": "Eruvin 102a:6-6",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Avya visits Neharde’a and stops a man from using a door bolt that was only tied with a flimsy reed."
+  },
+  {
+   "id": "Eruvin 102a:10-10",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "In Rabbi Pedat's house, ten people would move a massive beam to secure the door, and he permitted it because it functioned as a utensil."
+  },
+  {
+   "id": "Eruvin 102a:11-11",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar Shmuel permitted his household to use a large mortar to secure a door on Shabbat."
+  },
+  {
+   "id": "Eruvin 102a:14-15",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102a",
+     14
+    ],
+    [
+     "Eruvin 102a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna consults Rav about providing shade for his rams on Shabbat, and Rav instructs him to leave part of the mat unrolled to allow for a permissible extension of the tent."
+  },
+  {
+   "id": "Eruvin 102b:11-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 102b",
+     11
+    ],
+    [
+     "Eruvin 102b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar bar Rav Ashi observes his father, Rav Ashi, replacing a bandage that fell onto a pillow and questions him based on Rav Hisda's restrictive ruling, which Rav Ashi then rejects."
+  },
+  {
+   "id": "Eruvin 103a:17-19",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 103a",
+     17
+    ],
+    [
+     "Eruvin 103a",
+     18
+    ],
+    [
+     "Eruvin 103a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye is silenced by Rav Safra's legal objection and later brings the matter to Rav Yosef, who provides him with a rebuttal."
+  },
+  {
+   "id": "Eruvin 104a:12-12",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 104a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava realizes he made a legal error and appoints a public speaker to announce his retraction and the correct tradition."
+  },
+  {
+   "id": "Eruvin 104a:13-13",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 104a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While visiting Rav Menashe, Ulla hears a man knocking on the door and curses him for desecrating Shabbat with the noise."
+  },
+  {
+   "id": "Eruvin 104a:24-Eruvin 104b:0",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 104a",
+     24
+    ],
+    [
+     "Eruvin 104a",
+     25
+    ],
+    [
+     "Eruvin 104b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ameimar initially permitted the use of a water wheel in Mehoza, but upon seeing how it was being used, he reversed his ruling."
+  },
+  {
+   "id": "Eruvin 104b:4-4",
+   "tractate": "Eruvin",
+   "cells": [
+    [
+     "Eruvin 104b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When the exiles returned from Babylonia, they camped at a specific well and the prophets Haggai, Zechariah, and Malachi permitted its use."
+  }
+ ]
+}

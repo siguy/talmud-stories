@@ -1,0 +1,1242 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:05:36",
+  "outcomes": {
+   "ok": 70
+  }
+ },
+ "rows": [
+  {
+   "id": "Sukkah 2b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical narrative involving Queen Helene and the Elders, featuring a specific incident (the Elders entering and exiting) and a subsequent dialogue/conflict regarding the legal implications of that event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 7a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Ashi finds Rav Kahana performing an action (building a sukkah), followed by a dialogue with conflict regarding the legal interpretation of Rava's ruling. Under R-C0, this is an incident with a narrated action and interaction, not a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 7b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case (halakhic dispute) regarding a hypothetical scenario ('one who establishes...') rather than a report of a specific event that happened. Under R-C0 and R-C5, it is a legal discussion of facts and consequences without a narrated incident or action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 9a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard rabbinic dialogue where one rabbi quotes a ruling to another and receives a rebuttal; there is no action or change beyond the speech-act itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 10b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Minyamin) and a rabbi (Rav Ashi) where an action (spreading a wet shirt) leads to a conflict and dialogue that results in a change or specific instruction. Under R-C0, this is a story because it describes an event that happened followed by a resolution, rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 10b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where rabbis visit the Exilarch and are lodged in a sukkah, involving multiple actions (visiting, lodging, silence) and a dialogue with conflict regarding their previous legal rulings. This meets the criteria of a 'courtroom drama' or incident with dynamism beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 11a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict (Rav Yosef turning his face away in anger) and a bare report of Rav Amram's practice. Under R-C2 and R-C7, speech with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 11a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a character coming before a rabbi and receiving a ruling, but there is no further action or change narrated beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event and the narrative ends at the ruling is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 11b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a person coming before a rabbi for a ruling, but there is no other narrated action or change beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 14b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time incident ('we brought boards... and we roofed... and we sat') involving post-biblical figures (Rabbi Yehuda and his colleagues). It contains multiple actions and a conflict/response from others ('They said to him'), meeting the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 14b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Nahman visits Sura and is approached by other rabbis, followed by a subsequent interaction with Rav Huna. This contains multiple actions, conflict between the rabbis' views, and a resolution through dialogue, meeting the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 16b:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One time they forgot...') involving post-biblical figures (the people of Tzippori and Rav Dimi) that includes actions, a problem, and a resolution. It follows the pattern of a story framed by a custom or legal question as described in R-C3 and R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 17a:5-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific encounter where Rabba found the Sages of the school of Rav sitting and engaged them in a debate. While it consists entirely of dialogue (speech-acts), it contains the conflict and intellectual exchange required for a borderline classification under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 18a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and teaching (speech-acts) without any narrated action or event. Under R-C2 and R-C7, ordinary scholarly back-and-forth or a request for clarification does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 18a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal teaching and a subsequent dialogue clarifying that teaching; there are no narrated events or actions beyond speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 19a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Ashi finds Rav Kahana performing an action (roofing a portico), followed by a dialogue involving conflict and a physical response where Rav Kahana shows him a specific feature of the construction. This meets the criteria of an incident with action and change beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 19b:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Abaye finding Rav Yosef sleeping in a canopy) followed by a dialogue with conflict regarding Rav Yosef's conduct. Under R-C0, an incident followed by a ruling or justification counts as a story, and the presence of conflict moves it beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 20a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act by Reish Lakish praising Rabbi Hiyya followed by a report of a legal ruling; it lacks a narrated event or action beyond standard rabbinic dialogue and teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 20b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rabbi Hananya traveling to Babylonia, meeting an elder, and later presenting the case to Rabbi Yehoshua who ruled on it. This fits the criteria of an incident followed by a ruling with multiple actions and a change in status (the agreement/ruling).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 20b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (ma'aseh) involving post-biblical figures (Rabban Gamliel and Tavi). It contains a specific event (Tavi sleeping under the bed) followed by a verbal interaction and a change in status/ruling, meeting the criteria of R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 21b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a citation of a Mishnah story and a Baraita that alludes to an incident involving Tavi the slave. While it is mainly speech-acts (learning from conversation), it refers to a specific event and contains conflict/legal tension, fitting the borderline shapes of an incident only alluded to or a story consisting mainly of speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 23a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving post-biblical figures (rabbis) with multiple actions—traveling on a ship, building a sukka, and the wind uprooting it—followed by a dialogue that serves as a resolution to the event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 25b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of Rabbi Zeira's personal practice and feelings, cited as evidence in a legal discussion. It lacks the necessary actions, conflict, or change required for a story, falling under the rule that a description of what a rabbi did without further continuation is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 26a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event ('One time I felt pain...') involving a specific action and a ruling that resolves it, which distinguishes it from a bare report of a custom or a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 26a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "These are bare reports of legal permissions granted by rabbis in specific instances. Under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only event, without further narrated action or change, does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 26b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) involving post-biblical figures (R-S1). It narrates specific incidents where food was brought to rabbis and they responded with actions and speech that changed the status of the event, meeting the criteria for a story (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 27a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving post-biblical figures (Rabban Yoḥanan ben Zakkai/Rabban Gamliel and Rabbi Tzadok) where specific actions are narrated (bringing food, taking it in a cloth, eating) followed by rulings or behavioral outcomes. Although these are Mishnah stories quoted in the Gemara, rule R-C1 specifies that such citations are included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 27a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a post-biblical figure (Agrippas's steward) and a rabbi. While it contains conflict in the form of a rebuke in segment 2, it is composed entirely of speech-acts without narrated actions or changes, fitting the borderline criteria for dialogue with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 27b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Elai going to greet his teacher) followed by a verbal interaction and a rebuke, which constitutes a change or conflict. Per R-B1, the opening formula 'The Sages taught' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 27b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving post-biblical figures (Rabbi Eliezer and Yoḥanan) with multiple actions, dialogue, and a clear change in the situation when the rabbi exits the sukkah. It includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 28a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time incident where Rabbi Eliezer traveled to the Upper Galilee and was questioned. It contains multiple actions, conflict (the people's challenge to his authority), and a resolution through his response, meeting the criteria for a story beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 28a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of the habitual practices and character traits of Rabban Yoḥanan ben Zakkai. Under R-C5 and R-C3, a description of what someone used to do that does not lead to a specific one-time event or change is considered a custom or report rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 28a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that narrates a specific event (visiting a rabbi) with actions and dialogue that lead to a change or conflict (the rebuke from Beit Shammai), fitting the definition of a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 28a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story about Shammai the Elder taking physical action (removing plaster and roofing a bed) in response to a specific event (his daughter-in-law giving birth). Under R-C1, Mishnah stories quoted in the Talmud are included, and under R-C0, this is a narrated event involving post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 28b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Talmudic quotation of a Mishnah story involving Shammai the Elder. It narrates a specific event (the birth) followed by a concrete action (removing the plaster and roofing over the bed) that changes the physical environment for the minor.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 29a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the wind blowing splinters) followed by an action (Rav Yosef ordering his vessels moved) and a dialogue involving conflict over the legal standard. This meets the criteria for a story as it describes a real incident with change and interaction rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 30a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a parable (mashal) which functions as a story embedded within a rabbinic dictum. It narrates a specific event (a king passing a customs house) with dialogue, conflict (the servants' challenge), and a resolution that explains the king's action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 30a:7-Sukkah 30b:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a rabbi giving legal advice to merchants followed by a standard Gemara legal discussion; there is no narrated event or action beyond the speech-act of instruction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 31a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama involving an old woman and Rav Nahman with multiple actions: she comes before him, screams, and rebukes him, leading to his specific ruling. It satisfies R-C0 as an incident followed by a ruling with significant conflict and change in the woman's status from claimant to being awarded only monetary value.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 31a:17-Sukkah 31b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical practice (bequeathing lulavim) that leads to a conflict and response from the Sages. Under R-C0 and R-C3, a habit that leads to an event or interaction counts as a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 34b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (a threat/warning) with conflict and implied change, which fits the borderline criteria for dialogue-based stories. While it lacks a narrated physical action, the interaction between Shmuel and the merchants creates the 'courtroom drama' or 'dynamism' described in the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 36b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Akiva arriving with a giant etrog) followed by a response and a ruling from the Sages. Unlike the bare report in Yevamot 15a, this incident includes a specific setting, a distinct action, and a subsequent conflict/resolution regarding its status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 36b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1), which the editor excludes from the Talmudic catalogue. Furthermore, it describes a habitual practice of the men of Jerusalem without a specific event or change, which constitutes a bare report (R-C5).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 37a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving post-biblical figures (the prominent residents of Jerusalem) performing a specific action (binding lulavim with gold), followed by a dialogue/conflict with the Sages. Per R-B1, the opening formula 'It is taught... Rabbi Meir said' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 37a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a rabbi's instruction or teaching to a group of workers, which constitutes a speech-act without a narrated event, conflict, or change. Under R-C0 and R-C5, a bare report of a rabbi's statement or practice that does not lead to a continuation or an action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 41b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story involving multiple post-biblical figures (Rabban Gamliel and his colleagues) and a sequence of distinct actions (traveling, buying, taking, and gifting) that resolve a specific situation. Although it is a Mishnah story cited in the Gemara, it meets the criteria for inclusion as a Talmudic story under R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 42b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual custom that leads to a specific one-time crisis (people striking one another) and a subsequent change in the law by the court. Under R-C0 and R-C3, this sequence of action, conflict, and resolution constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 43b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One time...') involving conflict between the Boethusians and the Sages' supporters, featuring multiple actions and a clear change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 44b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a person brings a willow branch to a rabbi, who then performs a specific action (waving it without a blessing). Under R-C0, an incident followed by a ruling or a specific change in action counts as a story, and these go beyond bare reports by including multiple actors and a specific interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 44b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving a man coming before a rabbi with a legal problem. It contains multiple actions and changes beyond a simple ruling: the man begins to leave, the rabbi praises his integrity, and the man returns to seek further guidance, creating the 'dynamism' and 'change' required by the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 44b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person report of an incident ('There was an incident that happened with me') involving a specific event (traveling home and finding no food). While it borders on a bare report (R-C5), the presence of a specific action and a resulting change/outcome (the lack of food) aligns with the 'borderline' shape of one real event used to support a ruling (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 46a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of the habitual practices of Rava, Rav Pappi, and the school of Rav Ashi regarding blessings. Under R-C5 and R-C7, these are descriptions of what rabbis used to do cited as evidence for a legal view, with no specific one-time event, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 48b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue between two post-biblical figures (heretics). While there is clear conflict and mocking, there are no physical actions or events narrated, placing it in the borderline category for speech-based conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 48b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a rabbi and a heretic. While it contains conflict and a sharp retort, it lacks physical action or a narrated change in the world, making it borderline under the rules for speech-based passages.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 48b:11-Sukkah 49a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving a post-biblical figure (a Sadducee) where an action (pouring water on feet) leads to a conflict (pelting with etrogim) and a physical change (damage to the altar). It includes the opening formula 'The Sages taught' as per R-B1, while segment 3 is excluded as it transitions into a general legal dictum about altar requirements.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 49a:3-Sukkah 49b:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a report of a historical Temple practice (the collection of congealed wine) and subsequent legal and homiletic discussions. Under R-C5, a bare report of what was done without a specific one-time event or change is not a story, and the remaining segments are standard rabbinic dialogue and legal analysis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 51b:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing the customs of the Alexandrian synagogue (R-C3), but transitions into a specific one-time event where Alexander the Great arrives and slaughters the community (R-C0). Although Alexander is a historical figure, he is considered post-biblical and thus in scope (R-S1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 52a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about the rabbi Abaye involving multiple actions (hearing, following, leaning against a doorpost), an emotional reaction (regret), and a resolution provided by a post-biblical figure (the Elder).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 52b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific individual (the son of Marta) performing a physical action (carrying bull thighs) and a subsequent reaction/change where his fellow priests intervene and stop him. This moves beyond a bare report of a custom into a narrated incident with conflict and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 53a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Hillel the Elder's habitual behavior and speech during a specific festival. While it contains a situational frame (the Celebration of the Place of the Drawing), it consists entirely of speech-acts without a specific one-time event or change, placing it in the borderline category for dialogue-heavy rabbinic episodes.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 53a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Hillel sees a skull and addresses it, which constitutes an action and a change beyond mere speech. While the segment ends with a dictum by Rabbi Yoḥanan, that commentary is excluded from the story itself under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 53a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with actions, conflict, and change, but it is about King Solomon and biblical figures (Elihoreph and Ahijah) rather than rabbis or post-biblical figures. According to R-S1, such biblical episodes retold are considered out of scope for this collection.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 53a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Levi demonstrating a bow) that leads to a physical change (becoming lame), which satisfies the requirement for a story. While the passage includes Gemara commentary and a theological discussion about the cause of the injury, the core event is a narrated action involving post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 53a:12-Sukkah 53b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with actions, conflict, and change, but it is about King David and Ahithophel, who are biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 54a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and bringing a baraita to teach; this is a report of a speech-act (teaching) rather than a narrated event with conflict or change. Under R-C5 and R-C7, a report of what someone did that leads only to a legal discussion or teaching is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 54b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person account of Rabbi Zeira traveling from Babylonia to Eretz Yisrael and encountering a specific scholar. While it is primarily a report of a change in halakhic teaching (speech-acts), the physical movement and the discovery of a conflicting tradition provide the 'conflict and implied change' that characterizes a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 55a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of two rabbis establishing mnemonics for a liturgical sequence. It lacks any narrated action, conflict, or change, and functions as a technical/scholarly aid rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 55a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi instituting a liturgical practice (a 'speech-act') with no subsequent action, conflict, or change narrated. Under R-C5 and the limit of R-C0, a description of what a rabbi did that leads nowhere is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 56b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Miriam daughter of Bilga) involving multiple actions—apostatizing, kicking the altar, and the Sages responding by penalizing the watch—which results in a permanent change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sukkah 56b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event where the Bilga watch tarried and the watch of Yeshevav served in their place, leading to a permanent change in their division of the shewbread. This fits the criteria of a one-time event causing a change, distinct from the habitual frame mentioned in R-C3.",
+    "error": null
+   }
+  }
+ ]
+}

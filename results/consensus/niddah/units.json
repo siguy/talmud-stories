@@ -1,0 +1,2828 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/niddah/run1.json",
+   "v14_r2": "results/v14/niddah/run2.json"
+  },
+  "spans": {
+   "v14_r1": 104,
+   "v14_r2": 105
+  },
+  "units": 104,
+  "built": "2026-11-09T23:50:58"
+ },
+ "units": [
+  {
+   "id": "Niddah 4b:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 4b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A baraita presents a case of a woman who checks herself on Sunday and Wednesday to illustrate the laws of retroactive impurity."
+  },
+  {
+   "id": "Niddah 5b:12-12",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 5b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Avimi arrives from Bei Ḥozai and presents a baraita regarding the ritual impurity of a menstruating woman's bed."
+  },
+  {
+   "id": "Niddah 6a:11-Niddah 6b:1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 6a",
+     11
+    ],
+    [
+     "Niddah 6a",
+     12
+    ],
+    [
+     "Niddah 6b",
+     0
+    ],
+    [
+     "Niddah 6b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi rules according to Rabbi Eliezer, realizes it is a minority opinion, but decides to uphold the ruling based on Rabbi Eliezer's stature."
+  },
+  {
+   "id": "Niddah 6b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 6b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The maidservant of Rabban Gamliel was baking teruma loaves and checking herself regularly, only to find herself impure after the final loaf."
+  },
+  {
+   "id": "Niddah 6b:8-8",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 6b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "In a second incident, Rabban Gamliel's maidservant was sealing wine barrels and discovered she was impure after the final barrel."
+  },
+  {
+   "id": "Niddah 7b:4-5",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 7b",
+     4
+    ],
+    [
+     "Niddah 7b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While Rabbi Eliezer was alive, the community followed Rabbi Yehoshua's ruling to avoid validating Eliezer's Shammuti status, but they switched to Eliezer's ruling after his death."
+  },
+  {
+   "id": "Niddah 8a:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 8a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda ben Bava testifies about a rooster that was stoned in Jerusalem for killing a human."
+  },
+  {
+   "id": "Niddah 8b:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 8b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An anonymous elder approaches Rabbi Zeira to clarify that a specific ruling attributed to the Sages was actually stated by Rabbi Yoḥanan in the name of Rabbi Eliezer."
+  },
+  {
+   "id": "Niddah 9a:4-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 9a",
+     4
+    ],
+    [
+     "Niddah 9a",
+     5
+    ],
+    [
+     "Niddah 9a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "An elder asks Rabbi Yoḥanan about the legal status of a pregnant woman who missed a self-examination during her expected period, and the Rabbi provides a ruling based on a Mishna."
+  },
+  {
+   "id": "Niddah 9b:7-8",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 9b",
+     7
+    ],
+    [
+     "Niddah 9b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer cites an incident involving a girl in Haitlo whose ritual status was ruled leniently by the Sages after she missed three cycles."
+  },
+  {
+   "id": "Niddah 9b:9-9",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 9b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi ruled like Rabbi Eliezer and, upon remembering the opposition, justified his decision as valid for exigent circumstances."
+  },
+  {
+   "id": "Niddah 10b:3-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 10b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ravin and the seafarers arrive from Eretz Yisrael and report that a specific ruling was stated by Rabbi Shimon ben Yehotzadak."
+  },
+  {
+   "id": "Niddah 10b:10-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 10b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Tanna recites a baraita before Rabbi Elazar, who then questions the phrasing of the ruling."
+  },
+  {
+   "id": "Niddah 12b:0-0",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 12b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana recounts asking the wives of Rav Pappa and Rav Huna bar Rav Yehoshua about their conduct regarding examinations when their husbands return from the academy."
+  },
+  {
+   "id": "Niddah 13a:19-19",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 13a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While standing on a roof in Neharde’a, Rav Yehuda tells Shmuel he needs to urinate, and Shmuel instructs him on how to physically manage the act within the bounds of the law."
+  },
+  {
+   "id": "Niddah 13b:12-12",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 13b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi recalls a deaf woman in his neighborhood who was so proficient in checking for menstrual blood that she examined herself and her friends."
+  },
+  {
+   "id": "Niddah 14b:3-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 14b",
+     3
+    ],
+    [
+     "Niddah 14b",
+     4
+    ],
+    [
+     "Niddah 14b",
+     5
+    ],
+    [
+     "Niddah 14b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi praises Rabbi Ḥama to Rabbi Yishmael, but when they meet, Yishmael is unimpressed by Hama's legal preference and rebukes him."
+  },
+  {
+   "id": "Niddah 14b:23-Niddah 15a:1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 14b",
+     23
+    ],
+    [
+     "Niddah 15a",
+     0
+    ],
+    [
+     "Niddah 15a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar son of Rabbi Tzadok brings a question regarding the definition of 'after time' to the Sages in Usha."
+  },
+  {
+   "id": "Niddah 15b:10-11",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 15b",
+     10
+    ],
+    [
+     "Niddah 15b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A maidservant in Rimon threw a non-viable newborn into a pit, and after a priest looked inside, the Sages ruled him pure because animals likely dragged the body away."
+  },
+  {
+   "id": "Niddah 16b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 16b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehoshua's students complain that his adoption of Beit Shammai's strict ruling is too burdensome, to which he responds that it is better to be burdened in this world than the next."
+  },
+  {
+   "id": "Niddah 17b:3-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 17b",
+     3
+    ],
+    [
+     "Niddah 17b",
+     4
+    ],
+    [
+     "Niddah 17b",
+     5
+    ],
+    [
+     "Niddah 17b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabba bar Rav Huna observes Rami bar Shmuel and Rav Yitzḥak studying and then asks his father, Rav Huna, to clarify a legal ruling they were discussing."
+  },
+  {
+   "id": "Niddah 19b:20-Niddah 20a:1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 19b",
+     20
+    ],
+    [
+     "Niddah 20a",
+     0
+    ],
+    [
+     "Niddah 20a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites a past incident where Rabbi Meir attributed a woman's blood stain to a specific external cause to maintain her purity."
+  },
+  {
+   "id": "Niddah 20a:2-2",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While receiving medical treatment from a bloodletter, Ameimar observes his own blood to identify the specific shade of red discussed in the Mishna."
+  },
+  {
+   "id": "Niddah 20a:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Upon arriving in Pumbedita, Ulla sees an Arab man wearing a black garment and uses it to demonstrate to the Sages the exact shade of black mentioned in the Mishna."
+  },
+  {
+   "id": "Niddah 20a:25-Niddah 20b:0",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20a",
+     25
+    ],
+    [
+     "Niddah 20b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina broke a piece of earth to facilitate a blood examination, prompting a sharp rebuke from Rabbi Yishmael son of Rabbi Yosei."
+  },
+  {
+   "id": "Niddah 20b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ulla arrives in Pumbedita and refuses to examine blood out of respect for the local authority, citing Rabbi Elazar's similar conduct."
+  },
+  {
+   "id": "Niddah 20b:5-5",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman brings blood to Rabbi Elazar, who smells it and correctly identifies it as 'blood of desire,' rendering her pure."
+  },
+  {
+   "id": "Niddah 20b:6-7",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20b",
+     6
+    ],
+    [
+     "Niddah 20b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ifera Hurmiz tests Rava's ability to identify blood types; after he correctly identifies sixty samples, she tries to trick him with lice blood, to which he responds by sending her a comb."
+  },
+  {
+   "id": "Niddah 20b:10-12",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20b",
+     10
+    ],
+    [
+     "Niddah 20b",
+     11
+    ],
+    [
+     "Niddah 20b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Yalta challenges a ruling of impurity by taking her blood to another rabbi and explaining that the first rabbi only ruled strictly because he was suffering from eye pain."
+  },
+  {
+   "id": "Niddah 20b:19-20",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 20b",
+     19
+    ],
+    [
+     "Niddah 20b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi repeatedly changes his ruling on a blood sample as the lighting conditions change, leading him to lament his potential error."
+  },
+  {
+   "id": "Niddah 21a:11-11",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 21a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Hoshaya arrives from Nehardea and presents a baraita to challenge the previous legal interpretations of Shmuel and Rabbi Yohanan."
+  },
+  {
+   "id": "Niddah 21b:3-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 21b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Hoshaya arrives from Neharde’a bringing a baraita to challenge a legal ruling."
+  },
+  {
+   "id": "Niddah 22b:1-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 22b",
+     1
+    ],
+    [
+     "Niddah 22b",
+     2
+    ],
+    [
+     "Niddah 22b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Tzadok recounts two incidents where his father brought cases of unusual discharges to the Sages in Yavne, who consulted doctors and subsequently ruled the women pure."
+  },
+  {
+   "id": "Niddah 24a:9-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 24a",
+     9
+    ],
+    [
+     "Niddah 24a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The sons of Rabbi Ḥiyya return from the villages and report a stringent ruling they made, which Rabbi Ḥiyya then commands them to reverse because their stringency actually led to a leniency."
+  },
+  {
+   "id": "Niddah 24b:10-11",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 24b",
+     10
+    ],
+    [
+     "Niddah 24b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua is sent by Rabban Gamliel to investigate a ruling by Hanina regarding a snake-like fetus, only to be corrected on the road by Hanina's daughter-in-law who reminds him of his own forgotten tradition."
+  },
+  {
+   "id": "Niddah 24b:16-16",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 24b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct anecdotal report of Abba Shaul's observations as a gravedigger regarding the physical state of bones, separate from the specific narrative of the giant thighbone in Passage A."
+  },
+  {
+   "id": "Niddah 24b:17-17",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 24b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Abba Shaul recounts a tall tale about chasing a deer into the giant thighbone of a corpse and running three parasangs inside it."
+  },
+  {
+   "id": "Niddah 24b:18-18",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 24b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Abba Shaul describes falling into a burial cave and finding himself standing inside the eye socket of a giant corpse."
+  },
+  {
+   "id": "Niddah 25b:8-9",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 25b",
+     8
+    ],
+    [
+     "Niddah 25b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When a gestational sac is brought to Shmuel, he uses his expertise to determine the exact date of conception, leading to the arrest and confession of a husband who had intercourse with his wife while she was a niddah."
+  },
+  {
+   "id": "Niddah 25b:12-12",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 25b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "In the days of Rabbi Yannai, the Sages attempted to rule a woman pure in a specific case of a sandal fetus, but Yannai rebuked them for effectively 'purifying offspring'."
+  },
+  {
+   "id": "Niddah 26b:9-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 26b",
+     9
+    ],
+    [
+     "Niddah 26b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Shmuel and Rav's students are sitting together, they see Rav Yosef son of Rav Menashya hurrying toward them, and upon his arrival, Shmuel questions him to clarify Rav's ruling on afterbirths."
+  },
+  {
+   "id": "Niddah 27a:12-13",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 27a",
+     12
+    ],
+    [
+     "Niddah 27a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa offers a legal explanation to his teachers who laugh at its obviousness, leading him to conclude that one should speak up even at the risk of being mocked."
+  },
+  {
+   "id": "Niddah 27a:15-16",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 27a",
+     15
+    ],
+    [
+     "Niddah 27a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabba recounts finding the Sages of Rav's academy discussing the logic of Rabbi Shimon and his own counter-argument."
+  },
+  {
+   "id": "Niddah 27b:13-13",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 27b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An anonymous elder approaches Rabbi Ami to provide the scriptural basis for a ruling previously cited by Rabbi Ami in the name of Rabbi Yoḥanan."
+  },
+  {
+   "id": "Niddah 29a:24-24",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 29a",
+     24
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ravin arrives from Eretz Yisrael and reports that Rabbi Yosei son of Rabbi Hanina raised an objection against Rabbi Yehoshua ben Levi, though he cannot recall the details."
+  },
+  {
+   "id": "Niddah 30b:5-5",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 30b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Rabbis cite an incident where Queen Cleopatra experimented on her condemned maidservants to determine the timing of fetal formation."
+  },
+  {
+   "id": "Niddah 30b:10-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 30b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A second version of the Cleopatra incident is cited, where the results of her experiment supported Rabbi Yishmael's view that females take longer to form."
+  },
+  {
+   "id": "Niddah 31a:15-15",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 31a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man is prevented from joining a business voyage by a thorn injury, leading him to curse his fate until he learns the ship sank, changing his perspective to gratitude."
+  },
+  {
+   "id": "Niddah 31a:20-20",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 31a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Balaam is blinded as punishment for questioning God's involvement in human conception."
+  },
+  {
+   "id": "Niddah 31b:7-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 31b",
+     7
+    ],
+    [
+     "Niddah 31b",
+     8
+    ],
+    [
+     "Niddah 31b",
+     9
+    ],
+    [
+     "Niddah 31b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The students of Rabbi Shimon ben Yoḥai ask him a series of questions regarding the laws of childbirth and circumcision, and he provides homiletic and psychological reasons for them."
+  },
+  {
+   "id": "Niddah 31b:11-15",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 31b",
+     11
+    ],
+    [
+     "Niddah 31b",
+     12
+    ],
+    [
+     "Niddah 31b",
+     13
+    ],
+    [
+     "Niddah 31b",
+     14
+    ],
+    [
+     "Niddah 31b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Dostai answers a series of questions from his students regarding the differences between men and women, attributing them to the materials from which they were created."
+  },
+  {
+   "id": "Niddah 32a:5-5",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 32a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yosei and Rabbi Yehuda HaNasi cite historical incidents where infant girls were immersed in ritual baths due to early menstruation."
+  },
+  {
+   "id": "Niddah 33b:5-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 33b",
+     5
+    ],
+    [
+     "Niddah 33b",
+     6
+    ],
+    [
+     "Niddah 33b",
+     7
+    ],
+    [
+     "Niddah 33b",
+     8
+    ],
+    [
+     "Niddah 33b",
+     9
+    ],
+    [
+     "Niddah 33b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Pappa visits Rav Shmuel, who slaughters a bull for him but then embarrasses him with a legal contradiction he cannot solve, leading Pappa to seek a resolution from Rav Shimi bar Ashi."
+  },
+  {
+   "id": "Niddah 33b:17-19",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 33b",
+     17
+    ],
+    [
+     "Niddah 33b",
+     18
+    ],
+    [
+     "Niddah 33b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A Sadducee accidentally spits on the High Priest, causing him to fear impurity until the Sadducee's wife explains that they actually follow Rabbinic purity laws in secret."
+  },
+  {
+   "id": "Niddah 36a:15-15",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 36a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Shemen reports that Mar Zutra visited his town and ruled that the law follows both Rav and Levi stringently."
+  },
+  {
+   "id": "Niddah 36b:21-Niddah 37a:0",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 36b",
+     21
+    ],
+    [
+     "Niddah 36b",
+     22
+    ],
+    [
+     "Niddah 36b",
+     23
+    ],
+    [
+     "Niddah 36b",
+     24
+    ],
+    [
+     "Niddah 37a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Following Rav's death, Rav Asi attempts to force Sheila bar Avina to retract a ruling, leading to a misunderstanding of Rav's instructions, an excommunication, and Rav Asi's subsequent fatal illness. Following the death of Rav Asi, Sheila bar Avina prepares for his own imminent death to defend his legal rulings in the heavenly court, eventually dying with a miraculous sign of reconciliation."
+  },
+  {
+   "id": "Niddah 39a:15-Niddah 39b:2",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 39a",
+     15
+    ],
+    [
+     "Niddah 39a",
+     16
+    ],
+    [
+     "Niddah 39b",
+     0
+    ],
+    [
+     "Niddah 39b",
+     1
+    ],
+    [
+     "Niddah 39b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa poses a legal question to Rav Yehuda of Diskarta, who remains silent, leading Rav Pappa to attempt to resolve the matter himself."
+  },
+  {
+   "id": "Niddah 42a:12-13",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 42a",
+     12
+    ],
+    [
+     "Niddah 42a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Shmuel bar Bisna travels between Abaye, Rava, and Rav Yosef to confirm a legal ruling before returning to Abaye."
+  },
+  {
+   "id": "Niddah 42a:18-Niddah 42b:1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 42a",
+     18
+    ],
+    [
+     "Niddah 42a",
+     19
+    ],
+    [
+     "Niddah 42b",
+     0
+    ],
+    [
+     "Niddah 42b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira sends Rabbi Yirmeya to Rabbi Avin to hear an explanation of a ruling, and Yirmeya goes and asks him."
+  },
+  {
+   "id": "Niddah 42b:5-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 42b",
+     5
+    ],
+    [
+     "Niddah 42b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man asks Rava if he can circumcise a child on Shabbat, leading Rava to deduce from the child's crying before Shabbat that the birth had technically already begun, rendering the circumcision 'not in its time.'"
+  },
+  {
+   "id": "Niddah 43b:25-25",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 43b",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages inquired of the baraita reciters to determine the scriptural source of a specific law and discovered that multiple traditions existed."
+  },
+  {
+   "id": "Niddah 44b:1-1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 44b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites an incident where a mother died and her fetus continued to move three times after her death to challenge a legal assumption about the order of death."
+  },
+  {
+   "id": "Niddah 45a:8-9",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 45a",
+     8
+    ],
+    [
+     "Niddah 45a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Yusteni, a Roman noblewoman, visits Rabbi Yehuda HaNasi and challenges his legal definitions of maturity by revealing she gave birth at age seven."
+  },
+  {
+   "id": "Niddah 45a:15-17",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 45a",
+     15
+    ],
+    [
+     "Niddah 45a",
+     16
+    ],
+    [
+     "Niddah 45a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman consults Rabbi Akiva about her fitness for the priesthood after early intercourse, using a parable of a child and honey to describe her experience, leading to a discussion with his puzzled students."
+  },
+  {
+   "id": "Niddah 47a:14-14",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 47a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel examined his maidservant for signs of maturity and subsequently paid her four dinars to compensate for her humiliation."
+  },
+  {
+   "id": "Niddah 47b:14-14",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 47b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When people brought youths with delayed puberty to Rabbi Ḥiyya, he would command them to physically fatten or thin the youths to see if their biological signs would manifest under different physical conditions."
+  },
+  {
+   "id": "Niddah 48a:7-8",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 48a",
+     7
+    ],
+    [
+     "Niddah 48a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira travels to Eretz Yisrael to verify a legal tradition from Rabbi Elazar and discovers the ruling was a logical inference rather than a definitive tradition."
+  },
+  {
+   "id": "Niddah 48b:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 48b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina reports a specific case of a woman in his neighborhood whose left breast developed before her right, serving as the sole exception to the general rule."
+  },
+  {
+   "id": "Niddah 50a:3-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 50a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A blind man in Rabbi Yoḥanan's neighborhood would act as a judge, and Rabbi Yoḥanan notably refrained from stopping him despite legal precedents to the contrary."
+  },
+  {
+   "id": "Niddah 50b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 50b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When students laugh at Rabbi Zeira's seemingly illogical legal distinction regarding a wild chicken, Abaye rebukes them and explains the reasoning to protect the sage's honor."
+  },
+  {
+   "id": "Niddah 50b:6-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 50b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Marimar rules that the marsh hen is forbidden, the Sages observe its predatory behavior to confirm it is a bird of prey."
+  },
+  {
+   "id": "Niddah 51b:3-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 51b",
+     3
+    ],
+    [
+     "Niddah 51b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan ben Nuri challenges Rabbi Akiva regarding the status of spices, leading to a formal vote and conclusion by the Sages."
+  },
+  {
+   "id": "Niddah 52a:12-16",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 52a",
+     12
+    ],
+    [
+     "Niddah 52a",
+     13
+    ],
+    [
+     "Niddah 52a",
+     14
+    ],
+    [
+     "Niddah 52a",
+     15
+    ],
+    [
+     "Niddah 52a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Kahana prevents his colleagues from issuing a lenient ruling by citing an incident where Rabbi Yishmael's daughter attempted to refuse her marriage while already having a child, leading the Sages to formally vote and set the limit for refusal."
+  },
+  {
+   "id": "Niddah 52a:17-17",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 52a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yitzḥak and the disciples of Rabbi Ḥanina rule according to Rabbi Yehuda, and Rav Shemen bar Abba reports this to Rabbi Yoḥanan, who then takes the matter further."
+  },
+  {
+   "id": "Niddah 52a:24-Niddah 52b:1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 52a",
+     24
+    ],
+    [
+     "Niddah 52b",
+     0
+    ],
+    [
+     "Niddah 52b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava describes how Job blasphemed via a tempest and was answered by God in kind."
+  },
+  {
+   "id": "Niddah 52b:5-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 52b",
+     5
+    ],
+    [
+     "Niddah 52b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Shimon recounts how Hanina ben Hakhinai met him in Tzaidan and sent him to challenge Rabbi Akiva regarding the laws of refusal, only for Akiva to dismiss the cited testimony."
+  },
+  {
+   "id": "Niddah 53a:1-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 53a",
+     1
+    ],
+    [
+     "Niddah 53a",
+     2
+    ],
+    [
+     "Niddah 53a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava recounts finding the Sages in Rav's study hall and engaging them in a legal debate regarding the examination of stains."
+  },
+  {
+   "id": "Niddah 53b:10-13",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 53b",
+     10
+    ],
+    [
+     "Niddah 53b",
+     11
+    ],
+    [
+     "Niddah 53b",
+     12
+    ],
+    [
+     "Niddah 53b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira asks Rabbi Asi a legal question and is ignored, only to later overhear Rabbi Asi teaching the answer to others, leading to a confrontation."
+  },
+  {
+   "id": "Niddah 58a:13-13",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 58a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A woman who found blood on her loom came to Rabbi Yannai, who instructed her to re-enact her weaving movements to see if the threads could have touched her body."
+  },
+  {
+   "id": "Niddah 58a:15-15",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 58a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer b. Rabbi Yosei reports that he issued a restrictive ruling in Rome which was later praised by the Sages in the South."
+  },
+  {
+   "id": "Niddah 58b:5-6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 58b",
+     5
+    ],
+    [
+     "Niddah 58b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman brings a blood stain to Rabbi Akiva, who finds a way to rule her pure, subsequently explaining to his surprised students that the laws of stains were intended to be lenient."
+  },
+  {
+   "id": "Niddah 58b:8-8",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 58b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara mentions that Rabbi Meir and Rabbi Judah HaNasi once attributed stains to specific external substances."
+  },
+  {
+   "id": "Niddah 59a:10-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 59a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A woman brings a blood stain case to Rabbi Akiva, who rules her pure and explains to his surprised students that the laws of stains were not meant to be overly restrictive."
+  },
+  {
+   "id": "Niddah 59b:5-5",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 59b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Abba provides a legal ruling to a sage named Kala regarding the laws of blood found in urine."
+  },
+  {
+   "id": "Niddah 60b:7-9",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 60b",
+     7
+    ],
+    [
+     "Niddah 60b",
+     8
+    ],
+    [
+     "Niddah 60b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A baraita recounts an incident where two women were grinding and kindling an oven when blood was found on an olive leaf, leading the Sages to rule them both impure."
+  },
+  {
+   "id": "Niddah 61a:10-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 61a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Meir relates how a sycamore tree in Kefar Sava was thought to be impure, and though an initial search failed, a wind later uprooted it to reveal a skull in its roots."
+  },
+  {
+   "id": "Niddah 61a:11-11",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 61a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yosei tells of a cave in Shihin where a thorough search found nothing, but later a worker seeking shelter from rain accidentally discovered a corpse hidden beneath the floor."
+  },
+  {
+   "id": "Niddah 61a:12-12",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 61a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Abba Shaul relates that when Sages could not search a large area in Beit Horon, an old man pointed out the exact spot of impurity based on his past habits."
+  },
+  {
+   "id": "Niddah 61a:16-16",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 61a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Certain Galileans suspected of murder asked Rabbi Tarfon to hide them; he refused, fearing he might be harboring murderers, and advised them to hide themselves."
+  },
+  {
+   "id": "Niddah 62a:7-7",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 62a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel recounts how he questioned seafarers to identify the substance 'eshlag' and they described its origin in the crevices of pearls."
+  },
+  {
+   "id": "Niddah 63b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 63b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef, having forgotten his learning due to illness, is reminded of his own previous rulings by his student Abaye."
+  },
+  {
+   "id": "Niddah 64b:18-Niddah 65a:6",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 64b",
+     18
+    ],
+    [
+     "Niddah 65a",
+     0
+    ],
+    [
+     "Niddah 65a",
+     1
+    ],
+    [
+     "Niddah 65a",
+     2
+    ],
+    [
+     "Niddah 65a",
+     3
+    ],
+    [
+     "Niddah 65a",
+     4
+    ],
+    [
+     "Niddah 65a",
+     5
+    ],
+    [
+     "Niddah 65a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi ruled in a specific case that a virgin could attribute blood to her hymen for four nights spread across a twelve-month period."
+  },
+  {
+   "id": "Niddah 65a:7-8",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 65a",
+     7
+    ],
+    [
+     "Niddah 65a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Minyamin Saksana dies while traveling to Shmuel's location to implement a ruling by Rav, leading Shmuel to praise Rav's righteousness for being spared from having a mishap result from his teaching."
+  },
+  {
+   "id": "Niddah 65b:9-9",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 65b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A virgin married and Rabbi Yehuda HaNasi granted her four nights within a year to attribute bleeding to her hymen."
+  },
+  {
+   "id": "Niddah 66a:10-10",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 66a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi instructs Abdon to frighten a woman suffering from bleeding, causing her to expel a blood clot and be cured."
+  },
+  {
+   "id": "Niddah 66a:11-14",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 66a",
+     11
+    ],
+    [
+     "Niddah 66a",
+     12
+    ],
+    [
+     "Niddah 66a",
+     13
+    ],
+    [
+     "Niddah 66a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shmuel attempts to cure a woman by having Rav Dimi frighten her, but when no clot is expelled, he determines her condition is permanent."
+  },
+  {
+   "id": "Niddah 66a:22-22",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 66a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina delays his son's wedding to Rav Hanina's daughter to ensure compliance with Rava's ruling regarding the seven clean days after a marriage proposal."
+  },
+  {
+   "id": "Niddah 66b:4-4",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 66b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A maidservant of Rabbi Yehuda HaNasi immersed in a ritual bath, but was required to repeat it after a bone was discovered between her teeth."
+  },
+  {
+   "id": "Niddah 67a:1-1",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 67a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel's father implemented specific physical solutions, like digging holes and laying mats, to ensure his daughters could immerse in the ritual bath despite seasonal mud and shallow water."
+  },
+  {
+   "id": "Niddah 67b:17-Niddah 68a:0",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 67b",
+     17
+    ],
+    [
+     "Niddah 68a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Nahman bar Yitzhak attempts to reconcile the Exilarch's wife with her husband after a quarrel led her to refuse to immerse. Rav Naḥman bar Yitzḥak attempts to reconcile the Exilarch's wife with her husband, only to discover through her cryptic reply that she cannot immerse yet because she failed to wash her hair before sunset."
+  },
+  {
+   "id": "Niddah 68a:1-3",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 68a",
+     1
+    ],
+    [
+     "Niddah 68a",
+     2
+    ],
+    [
+     "Niddah 68a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After being challenged by Rav Pappa regarding a ruling on hair washing before immersion, Rava publicly retracts his opinion through an interpreter."
+  },
+  {
+   "id": "Niddah 68b:10-11",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 68b",
+     10
+    ],
+    [
+     "Niddah 68b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While walking on a road, Rabbi Yehuda HaNasi consults Rabbi Yosei and Rabbi Shimon regarding a woman's ritual purity status and later reflects on a specific question he neglected to ask."
+  },
+  {
+   "id": "Niddah 69a:19-19",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 69a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "In the town of Galaḥi, an orphan shepherd slaughters all the town's oxen and mockingly redistributes the hides using a nonsensical legal logic."
+  },
+  {
+   "id": "Niddah 69b:16-Niddah 70a:7",
+   "tractate": "Niddah",
+   "cells": [
+    [
+     "Niddah 69b",
+     16
+    ],
+    [
+     "Niddah 69b",
+     17
+    ],
+    [
+     "Niddah 69b",
+     18
+    ],
+    [
+     "Niddah 69b",
+     19
+    ],
+    [
+     "Niddah 69b",
+     20
+    ],
+    [
+     "Niddah 70a",
+     0
+    ],
+    [
+     "Niddah 70a",
+     1
+    ],
+    [
+     "Niddah 70a",
+     2
+    ],
+    [
+     "Niddah 70a",
+     3
+    ],
+    [
+     "Niddah 70a",
+     4
+    ],
+    [
+     "Niddah 70a",
+     5
+    ],
+    [
+     "Niddah 70a",
+     6
+    ],
+    [
+     "Niddah 70a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The wise people of Alexandria travel to Rabbi Yehoshua ben Ḥinnana to ask him twelve questions categorized into wisdom, aggada, ignorance, and behavior."
+  }
+ ]
+}

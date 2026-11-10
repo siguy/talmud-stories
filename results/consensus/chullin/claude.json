@@ -1,0 +1,51 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 2
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Chullin 91a:21-Chullin 91b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "Exegesis of verses about Jacob, Boaz, Abraham and Joseph, used to derive that a Torah scholar should not go out alone at night; no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full story with conflict and change (the moon complains, is diminished, is not comforted, and God calls for atonement), but it is a Creation episode between God and the moon, not about rabbis or post-biblical figures.",
+    "error": null
+   }
+  }
+ ]
+}

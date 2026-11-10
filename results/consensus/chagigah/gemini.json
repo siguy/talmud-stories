@@ -1,0 +1,889 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-10T00:10:44",
+  "outcomes": {
+   "ok": 49
+  }
+ },
+ "rows": [
+  {
+   "id": "Chagigah 3a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabbi Yehuda HaNasi and the mute students) that includes multiple actions—attending the study hall, a prayer for mercy, and a miraculous healing—resulting in a clear change of state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 3a:14-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (rabbis) visiting another rabbi, featuring dialogue with conflict and a resolution where the visitors reveal the 'pearl' of wisdom they were holding back. Per R-B1, the story includes the introductory formula 'The Sages taught: There was an incident'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 3b:0-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a homiletical lecture (derashah) and standard rabbinic dialogue without any narrated actions or events. According to R-C2 and R-C7, speech-acts and teaching do not constitute a story when there is no conflict or change beyond the dialogue itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 3b:5-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (rabbis) with multiple actions, conflict, and a supernatural change (the loss and restoration of eyes). It follows the 'incident plus ruling' shape and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 4b:10-Chagigah 5a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Rav Beivai bar Abaye and the Angel of Death, featuring specific events (the mistaken identity of Miriam), actions (the accidental scalding), and a dialogue that resolves the theological problem raised by the opening verse.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day...') involving a rabbi and a man on the road, containing multiple actions (walking, seeing, picking, speaking) and a change in understanding/causality as defined in R-C0 and R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rabbi Yannai observes an action (giving charity in public) and responds with a rebuke. This meets the criteria of a story because it narrates a one-time event involving a rabbi and another person, including a speech-act that involves conflict (embarrassment and rebuke).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative arc with conflict (the Sages' suspicion), multiple actions (sending bribes, the Sages' gaze, the King's messengers seizing Rava), and a clear change in state (Rava's imprisonment).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a rabbi and a post-biblical figure (the heretic) with multiple actions, conflict, and a clear change in outcome (the execution of the heretic). It follows the R-C0 criteria for a story as it narrates a specific event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Rabbi Yehoshua ben Hananya dying) and a dialogue with the Sages, but it is primarily a speech-act involving a teaching. Under R-C7 shape 1 and R-C2, dialogue with an event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Rabbi Ila ascending stairs and hearing a child) followed by an emotional reaction and speech, but the latter half of the segment transitions into a standard rabbinic discussion/commentary on the verse.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav Kahana and Rav with multiple actions (hiding, observing, speaking) and a resolution where Rav rebukes him and orders him to leave.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rabbi Yehuda HaNasi) with multiple actions: reading, the book falling, and an emotional reaction/speech. It meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case or a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi and Rabbi Hiyya) with multiple actions: traveling, arriving at a city, a conflict over status, and a specific one-time event (visiting the blind scholar) that results in a change (receiving a blessing).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:18-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story within a dialogue (R-C4) that begins with a habitual frame (greeting his teacher every day) but transitions into a specific event when the teacher grows elderly and a dialogue with conflict and change occurs (R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 5b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Rav Idi's travel) that leads to a specific one-time event: the Sages mocking him, his emotional reaction, and Rabbi Yoḥanan's subsequent intervention and public teaching. This sequence contains multiple actions, conflict, and a change in status/resolution, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 8b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a hypothetical legal case ('If one separated ten animals...') cited as a teaching of Rabbi Yoḥanan to resolve a contradiction, rather than a narrated event that actually happened. Under R-C0 and R-C2, this is standard rabbinic dialogue and legal discussion, lacking the actions or change necessary for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 11b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes a hypothetical scenario used to provide a logical reason for a legal ruling, rather than narrating an event that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 12a:19-Chagigah 12b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a real event (walking along the way) and dialogue between two rabbis, but it is primarily a speech-act regarding biblical exegesis. Under R-C7 shape 1, it is borderline because it is mainly dialogue but includes a physical setting and action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 13a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of events including an offer, a refusal based on age, a change in circumstances (growing old and the death of the teacher), and a subsequent interaction with a different rabbi. It contains multiple actions and a clear change over time, distinguishing it from a bare report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 13a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving Rav Yosef and the Elders of Pumbedita, including a request, a condition, an action (teaching the act of Creation), and a refusal. This constitutes a one-time event with multiple actions and a change in the situation, fitting the definition of a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 13a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('a certain youth') involving an action (expounding the electrum) and a dramatic change or consequence (fire consuming him). This meets the criteria for a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 13a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Hananya ben Hizkiya, a post-biblical figure, who took action (sitting in an upper chamber with 300 barrels of oil) to resolve a conflict (the suppression of the Book of Ezekiel). It follows the structure of an opening formula followed by a narrated event that leads to a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 13a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a youth reading Ezekiel and being burned by fire) followed by a response and a dialogue with Hananya ben Hizkiya, a post-biblical figure. It begins with a standard narrative formula and contains multiple actions and a change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 14a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two distinct dialogues between Rabbi Akiva and his colleagues (Rabbi Yosei HaGelili and Rabbi Elazar ben Azarya) involving sharp conflict and rebuke. Under R-C2 and R-C7, speech with conflict but no other narrated action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 14b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic narrative involving post-biblical figures (Rabban Yoḥanan ben Zakkai and Rabbi Elazar ben Arakh) with multiple actions, supernatural events, and a clear resolution. It begins with a standard opening formula (Tanu Rabbanan / Ma'aseh be...) which is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 14b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical rabbis (Rabbi Yehoshua and Rabbi Yosei) that includes specific actions, a miraculous one-time event (the clouds and angels appearing), and a resolution involving Rabban Yoḥanan ben Zakkai's response and dream.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 14b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative involving post-biblical figures (the four Sages) that describes a specific event (entering the orchard) followed by distinct actions and changes in state for each character (dying, losing one's mind, becoming a heretic, and emerging safely).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabbi Yehoshua and Ben Zoma) that includes specific actions (standing on a step, failing to stand in honor), a dialogue with conflict, and a concluding reaction by the rabbi to his students. It begins with a standard opening formula (Tanu Rabbanan/Ma'aseh b') which is included per rule R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Elisha ben Avuya (Aher), a post-biblical rabbinic figure, involving multiple actions, celestial events, and a clear change in status. It follows the pattern of a habitual or general frame (Aher's heresy) leading into specific one-time events (seeing Mitatron, the punishment of the angel, and the encounter with the prostitute).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Aher and Rabbi Meir with an implied conflict (Aher's status as an apostate), but it lacks physical actions or a change in state within the segment itself. Under R-C2 and R-C7 shape 1, speech-heavy interactions with conflict are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists primarily of dialogue and speech-acts between Aher and Rabbi Meir. However, it contains significant conflict and an implied change/resolution regarding Aher's status, which fits the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15a:11-Chagigah 15b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Meir and Elisha ben Avuya/Aher) with multiple actions, conflict, and a dramatic resolution. It begins with a standard opening formula and follows a sequence of events from the Shabbat boundary to the thirteen synagogues.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving post-biblical figures (Rabbi Meir and Rabbi Yoḥanan) whose specific declarations lead to supernatural changes at the grave of Aḥer. It satisfies the requirement for multiple actions and a change in state, moving from the initial Heavenly Court ruling to the rising and eventual extinguishing of smoke.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage contains multiple actions and a significant change: the daughter approaches the rabbi, a dialogue with conflict ensues, and a supernatural event (fire descending) occurs, leading to an emotional reaction and a change in the rabbi's perspective.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Rabba bar Sheila and Elijah the prophet. It contains dialogue with conflict and a clear change in outcome, as Rabba bar Sheila's defense of Rabbi Meir causes God to begin quoting Rabbi Meir's teachings.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical event (Shmuel finding Rav Yehuda crying) and an emotional reaction, which R-C0 counts as an action. However, it is primarily a dialogue consisting of a question and a scriptural explanation, fitting the borderline shape of 'mainly speech, but something happens' under R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a post-biblical figure and a rabbi. While it lacks physical action, it contains a philosophical challenge and a sharp retort, fitting the criteria for speech with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 15b:15-Chagigah 16a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a complete narrative event involving a post-biblical figure (Rabbi Akiva) where angels attempt to push him and God intervenes with a speech-act that changes the outcome. While segments [3-6] are rabbinic commentary on the story's background, the core event in segment [2] meets the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 16b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (the execution of a witness), a subsequent conflict between two rabbis, and a resulting change in behavior and emotional state. It includes a habitual frame (prostrating on the grave) that is linked to the specific incident and its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 16b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('On one occasion...') involving actions (bringing the calf, women placing hands) and a specific purpose, which fits the definition of a story even though it is used to support a legal argument.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 18a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific post-biblical figure (Alexa) and a rabbi (Rabbi Tarfon) where an action (gathering to eulogize) is met with a response/ruling that changes the outcome. Although it is a citation of a Mishnah story, under R-C1 the Talmud's quotation of it is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 20a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (clothes switched in a bathhouse) followed by a rabbinic ruling (Rabbi Akiva declared them impure), which fits the definition of a story under rule R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 20a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (a woman) and a rabbi, containing multiple actions (coming before the rabbi, an interrogation, and a discovery) that lead to a change in understanding or a resolution. Per R-B1, the opening formula 'And Rabba bar Avuh raised a further objection' is included as it introduces the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 20a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific woman and Rabbi Yishmael that includes multiple actions (coming before the rabbi, an interrogation, and a confession) leading to a resolution/ruling. It follows the 'incident plus ruling' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 22b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative arc with conflict, dialogue, and physical action: Rabbi Yehoshua rebukes Beit Shammai, is corrected by a student, and then performs a dramatic act of repentance (prostrating on graves and fasting) that results in a physical change (his teeth darkening).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 22b:19-Chagigah 23a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a man, a barrel, and a broken sandal strap that leads to a change in status (impurity) and a subsequent rabbinic ruling. Per R-C0, an incident followed by a ruling counts as a story, and per R-B1, the opening formula 'As Rav Yehuda said that Shmuel said' is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 23a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a person on a boat and the discovery of a corpse-fragment, which leads to a rabbinic ruling. Per R-C0, an incident followed by a ruling counts as a story, and per R-B1, the opening formula is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chagigah 25b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where an unnamed elder rebukes a rabbi and cites a Mishnaic precedent; there is no narrated action or event beyond this standard rabbinic dialogue.",
+    "error": null
+   }
+  }
+ ]
+}

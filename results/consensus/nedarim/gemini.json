@@ -1,0 +1,1549 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:32",
+  "outcomes": {
+   "ok": 87,
+   "invalid": 1
+  }
+ },
+ "rows": [
+  {
+   "id": "Nedarim 7b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man who said...') followed by an action ('He came before Rav Hisda') and a ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 7b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi and a woman (hearing a name in vain, excommunicating, and dissolving it), which constitutes multiple actions and a change in status. While it is followed by a legal analysis ('Learn three things from this'), the core incident is a story under R-C0, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 7b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of Mar Zutra's habitual practice (what he 'would' do) cited as a precedent for a legal rule, with no specific one-time event or change narrated. Under R-C5 and the limit of R-C3, a custom that leads nowhere is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 8b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a continuation of a legal discussion and a metaphorical statement about dreams; it contains no narrated events, actions, or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 8b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving post-biblical figures (Ravina and Rav Ashi) where an incident (the wife's vow) leads to an action (Ravina coming before the rabbi) and a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially as it describes a real event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 9b:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Shimon HaTzaddik and a post-biblical figure (the shepherd) involving a specific one-time event, dialogue with conflict, and a clear change in the protagonist's status. It includes the opening formula as required by R-B1 and meets the criteria for a story under R-C0 as it narrates an incident followed by a response and praise.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 12b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dispute between Tannaim and a subsequent Gemara analysis of their rationales. There are no narrated events or actions, only hypothetical legal cases and speech-acts typical of standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 20a:13-Nedarim 20b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue (speech-acts) between Imma Shalom and her questioners, and between her and her husband. While it describes a habitual practice rather than a single event, it is considered borderline because it contains conflict (the contradiction raised by the Gemara) and implied change/action through the description of the husband's behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 20b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two incidents of women coming before rabbis to complain about their husbands' conduct followed by the rabbis' rulings. Under R-C0 and R-C7 shape 2, a case where coming before a rabbi is the primary event followed by a ruling is considered borderline rather than a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 21b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('a certain person who came before Rav Huna') followed by a dialogue and a ruling that changes the legal status of the person's vow, fitting the criteria for a halakhic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 21b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a person coming before a rabbi and receiving a ruling based on a brief dialogue, which Jeff has ruled is not a story unless there is another narrated action or change beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 21b:8-Nedarim 22a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains three separate incidents of people coming before rabbis for rulings. While each follows the 'incident plus ruling' shape described in R-C0, they are extremely brief and consist almost entirely of dialogue, fitting the borderline shape of 'one real event, then a ruling' (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes a person coming before a rabbi and receiving a ruling with no other narrated action or change. Under R-C0 and R-C7 shape 2, an interaction where coming before a rabbi is the only event and is followed only by a ruling is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Ulla and Rabbi Yoḥanan) with multiple actions, conflict (a murder), and a resolution through a rabbinic ruling. It follows the 'one-time event' pattern described in R-C3 and meets the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a woman coming before a rabbi and his subsequent refusal to rule on her vow. Under R-C0 and R-C7, coming before a rabbi followed only by a ruling or a refusal to rule, without any other narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Kahana visits Rav Yosef and a conflict arises regarding an invitation to eat, involving a vow and a response. While the segment includes Gemara commentary (R-B4), the core incident contains multiple actions and dialogue with conflict, meeting the criteria for a story under R-C0 and R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions and a clear change: a student is brought to a rabbi, a conflict arises during the dialogue leading to an emotional reaction ('Rav Naḥman became upset'), and this conflict directly causes the student to find a new legal opening to dissolve his own vow.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 22b:10-Nedarim 23a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (rabbis) involving multiple actions and a change in state. It includes the physical movement of the Sages between sun and shade, which provides the 'dynamism' and 'narrated action' beyond a simple ruling required by R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 23a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a rabbi coming before the Sages, a physical action by a third party (the launderer hitting him), and a subsequent change in the situation that allows for the dissolution of the vow.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 23a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific sequence of events involving post-biblical figures (Abaye and his wife): a conflict over a daughter's marriage, a vow made as a threat, a subsequent action that defies that vow, and a resolution before a rabbi. It satisfies R-C0 as it contains multiple actions and a change in status (the dissolution of the vow) following the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 23a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative incident involving a man, his wife, and Rabbi Yosei, featuring a specific event (the vow and its defiance) followed by a rabbinic ruling. Although it is a Tannaitic parallel to the preceding Gemara story, it is included as a Talmudic citation of a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 23b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a single event (Rav Huna bar Hinnana's intention to teach) followed by a dialogue containing conflict (Rava's rebuke). Under R-C2 and R-C7 shape 1, speech with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 25a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rava) and a specific incident involving a man's deceitful oath. It contains multiple actions, conflict, and a dramatic change/resolution when the cane is broken and the money is revealed, satisfying the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 25a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event about a specific snake in the days of King Shapur (a post-biblical figure) that swallowed thirteen bundles of straw. This is a one-time incident used to challenge a legal premise, meeting the criteria for a story rather than a bare report or hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 25b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific incident involving Rav Kahana and Rav Asi where they take conflicting oaths. While it is primarily composed of speech-acts (oaths), there is conflict and implied change in their understanding, fitting the borderline criteria for dialogue-based narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 27a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a certain man who deposited documents and made a conditional statement, followed by an event (being impeded) and a subsequent ruling by Rav Huna and Rava. Under R-C0, an incident followed by a ruling counts as a story, as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 27b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain man') involving a sequence of actions—making a stipulation, attempting to return, being blocked by a ferry, and calling out—followed by a rabbinic ruling by Shmuel.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 29b:8-Nedarim 30a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving rabbis (sitting, dozing, waking up) and a conflict where the dozing rabbi wakes up to challenge and correct the legal reasoning of his students. This contains both physical actions and a dynamic interaction beyond standard scholarly dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 31a:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a hypothetical legal case ('one who takes a vessel...') followed by a standard rabbinic dialogue and dialectical analysis of a Mishnah. There are no narrated events that actually happened to specific individuals.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 31b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event that happened ('a certain middleman took a donkey... an accident occurred') followed by a rabbinic ruling and dialogue. Under R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated action (taking the donkey to sell) beyond just coming before the rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 32a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with actions and change involving Moses, Zipporah, and angels, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 32a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with actions, emotional reactions, and dialogue, but it is about the biblical figure Abraham rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 32b:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with dialogue, conflict, and a change in status (the transfer of the priesthood), but the characters are biblical figures (Abraham, Melchizedek, and God) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 36a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Tannaitic report of a specific incident ('There was an incident') where daughters preceded sons in a race to Jerusalem, resulting in a change of status/characterization (the daughters were found to be motivated). Under R-C1, the Talmud's quotation of such a story is included, and under R-C0, it narrates an event that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 39b:17-Nedarim 40a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Helbo fell ill and Rav Kahana took action by making an announcement. This frame contains an embedded story about Rabbi Akiva visiting a student, which includes multiple actions, conflict, and a change in the student's health.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 40a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of speech-acts by Rava during his illness with no other narrated actions. However, it contains conflict (the mention of those who hate him) and an implied change in his condition, fitting the borderline criteria for dialogue-heavy passages.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 40b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Shmuel's father used to do (his practice) without any specific one-time event, conflict, or change following the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 41a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rav Yosef falling ill, losing his memory, and Abaye restoring it through review. It includes both actions and a dialogue with conflict/resolution where Abaye corrects Rav Yosef's forgetfulness.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 41a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabbi Yehuda HaNasi and Rabbi Hiyya) involving a specific sequence of events: an illness causing memory loss, the intervention of a launderer who had overheard the studies, and a resolution where the knowledge is restored and the rabbi acknowledges the launderer's contribution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 41a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a man riding a mule, a moment of fright, a fall, and a death. This contains multiple actions and a clear change (death), satisfying the criteria for a story rather than a bare report or legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 41a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving multiple actions (a frog carrying a scorpion, the scorpion stinging a man) and a clear change (the man's death), followed by a rabbi's reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 48a:5-6",
+   "answer": {
+    "outcome": "invalid",
+    "verdict": null,
+    "rules": null,
+    "segments": null,
+    "reason": null,
+    "error": "segments ['2', '3'] are not integers"
+   }
+  },
+  {
+   "id": "Nedarim 48b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man who had a son who seized...') followed by a dialogue and a legal problem arising from that event. Under R-C0, an incident involving a specific person that leads to a ruling or legal question is considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a rabbi and a doctor with multiple actions (falling ill, visiting, seeing the gourd, leaving) and a dramatic resolution. It meets the criteria of a story about post-biblical figures where an incident occurs and leads to a change or specific outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rabba finds Rav Huna eating with his fingers, followed by a dialogue and an explanation. This interaction involves a specific incident and a change in understanding through the exchange, meeting the criteria for a story beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two rabbis dining together. It contains both physical actions (eating with fingers vs. a fork) and a dialogue with conflict and sharp retorts, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabbi Yehuda and Rabbi Shimon) where an action occurs (figs are brought and one rabbi eats while the other refuses) followed by a dialogue that resolves the tension. This meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between two rabbis involving a physical observation (ruddy face) and a report of a past event (going to the field and eating beets) that explains a change in state. It contains more than just speech-acts, as the dialogue describes a concrete incident that occurred.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a rabbi and a matronita. While it contains conflict (the accusation of drunkenness) and implied change (the rabbi's defense), it lacks physical actions beyond the speech-act, making it borderline under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a heretic with clear conflict (an insult and a retort), but lacks a narrated physical action or event beyond the speech itself. Under R-C2 and R-C7, speech with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a habitual practice (what the rabbis used to do) cited as an example of their attitude toward labor, with no specific event, conflict, or change following the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 49b:11-Nedarim 50a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing Rabbi Yehuda's poverty and shared cloak, but transitions into a specific 'one-time event' (R-C3) when the Nasi decrees a fast. It contains multiple actions, conflict, and a miraculous change (the appearance of gold) that resolves the incident (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50a:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative featuring multiple actions, dialogue, conflict, and a clear change in status. It follows the rule that a story narrates events that happened, including a miraculous appearance by Elijah and a dramatic resolution involving a vow's dissolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50a:5-Nedarim 50b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains several distinct narratives about how Rabbi Akiva became wealthy. While it begins with a list (habitual frame), it transitions into specific one-time events with actions and changes, such as the sailors finding the log and the incident with the lady's loan.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving a post-biblical figure (Rav Gamda) and sailors, featuring multiple actions (giving money, buying a monkey, the monkey escaping, digging) and a clear change in outcome (finding pearls).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving a post-biblical figure (Rabbi Yehoshua) and an emperor's daughter. It contains dialogue with conflict (R-C2) and a specific one-time action where the daughter changes her behavior based on the rabbi's words, leading to a physical change/consequence (the wine spoiling), which satisfies the requirement for a story beyond mere speech (R-C0, R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a woman coming to court, a dialogue with conflict (disparaging a rabbi), and a dramatic physical change/outcome where the woman dies following a ruling of excommunication.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Shmuel's medical practice) rather than a one-time event, which under R-C5 and R-C3 often counts as a custom. However, it includes a specific emotional reaction and change (his household tearing their hair in grief), which aligns with the borderline shape of 'events with weak causality or little change' described in R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 50b:8-Nedarim 51a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains three distinct stories about Rabbi Yehuda HaNasi and post-biblical figures. Segment 2 follows the R-C0 pattern of an incident (giving a slave to be taught) followed by a ruling/reaction; segments 3-5 contain full narratives with actions, conflict, and change, including a habitual frame that leads to a specific event (R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 51a:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a wedding) involving rabbis and post-biblical figures, featuring multiple actions, conflict (the humiliation of Rabbi), and a clear change in outcome where Ben Elasa leaves in protest.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 52a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story (ma'aseh) involving Rabbi Tarfon and Rabbi Yehuda, but it consists of a single event (a ruling on eggs) followed by a legal discussion. Under R-C7 shape 2, an incident followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 52b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabbi Tarfon and Rabbi Yehuda ('an incident where Rabbi Tarfon prohibited me...') followed by a ruling and a response. Under R-C0, an incident followed by a ruling counts as a story, and R-B1 dictates including the opening formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 55a:4-Nedarim 55b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-stage narrative involving a legal dispute that escalates into a personal conflict (Rav Yosef's anger) and concludes with a one-time event of reconciliation on Yom Kippur eve. It meets the criteria for a story as it contains multiple actions, emotional reactions, and a clear change in the relationship between the characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 57b:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events where Yishmael of Kefar Yamma brings a dilemma to multiple rabbis (Rabbi Ami, then Rabbi Yitzhak Nappaha, then back to Rabbi Ami). This constitutes a 'courtroom drama' or interaction with multiple actions and a change in the rabbi's ability to rule, fitting the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 62a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific rabbis (Rabbi and R. Yosei bar R. Yehuda) arriving at a location and acting. It contains multiple actions (arriving, eating/refraining, the owner speaking) and a change or conflict regarding the owner's true intent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 62a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi arrives at a location, eats, and interacts with his attendant who refuses to eat. This contains multiple actions and a resolution through a ruling, meeting the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 62a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific incident (Rabbi Tarfon being mistaken for a thief and nearly drowned), a resolution (the man fleeing upon realizing the rabbi's identity), and a subsequent emotional reaction (Rabbi Tarfon's lifelong distress). It meets the criteria of having multiple actions and a change in state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 62b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (Rav Ashi selling a forest) followed by a dialogue and a ruling/justification. Under R-C0, an incident followed by a ruling counts as a story, as it contains a narrated action beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 63a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a legal statement and a report of a rabbi's habitual teaching (Rabbi Yosei would say) regarding the calendar and fasting. It contains no narrated event, action, or change, and is characterized as standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 65a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions, conflict, and change, but it is about biblical figures (Zedekiah and Nebuchadnezzar) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 65b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving a specific man, a vow, and a legal interaction with Rabbi Akiva that results in a change (the dissolution of the vow). Although it is a Mishnah story, rule R-C1 dictates that its appearance in the Talmud is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 66a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific incident (a man vowing against his niece), multiple actions (bringing her to the house, beautifying her, questioning the man), and a resolution (the ruling and the emotional reaction of Rabbi Yishmael). Although it is a Mishnah story, rule R-C1 dictates that it is included in the catalogue as a Talmudic citation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 66b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific actions (making a gold tooth) and a subsequent event (the eulogy upon his death) involving Rabbi Yishmael. While it expands on a Mishnah story, it is presented here as a Talmudic citation with additional narrative details and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 66b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man's vow and the subsequent actions of Rabbi Yehuda and Rabbi Shimon. It contains multiple actions, a clear conflict between the rabbis' approaches to the situation, and a resolution (or refusal thereof) that changes the status of the woman's vow.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 66b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories about men who made vows and the subsequent actions taken by their wives and rabbis to resolve them. These are not hypothetical legal cases but narrated incidents involving specific post-biblical figures (Rabban Shimon ben Gamliel and Rabbi Yishmael) that lead to a change in status or a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 66b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Bava ben Buta) and a specific incident involving a Babylonian man and his wife. It contains multiple actions, conflict (the husband's anger and the wife's misunderstanding), and a resolution where the rabbi's blessing changes the outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 76b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of the habitual practices of Hiyya bar Rav and Rabba bar Rav Huna regarding how they conducted themselves when dissolving vows. Under R-C5, a description of what a rabbi used to do that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 77a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict regarding the interpretation of a previous event (Rav's silence). Under R-C2 and R-C7, speech-acts with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 77a:9-Nedarim 77b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav did (attending to a vow in a specific manner) cited as evidence for a legal position, without any subsequent action, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 77b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where Rabban Gamliel alights from a donkey, wraps himself, sits, and dissolves a vow. Under R-C0, this is a story because it describes a specific event that happened with multiple actions leading to a resolution, and under R-C1, the Talmud's quotation of a Mishnah or Baraita story is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 77b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident involving the son of Rav Huna bar Avin whose vow was dissolved by Sages, followed by a specific instruction to seek mercy. Under R-C0 and R-C7 shape 2, an incident followed by a ruling or instruction is at least borderline, as it narrates a real event beyond a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 78a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rav Asi bar Natan has a difficulty, travels to Neharde’a, fails to find Rav Sheshet, and pursues him to Meḥoza to ask his question. This contains multiple actions and a change of location, meeting the criteria for a story rather than a bare report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 81a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Isi bar Yehuda's absence) and a subsequent encounter with Vardimus, containing both action and dialogue with a clear conflict/resolution regarding a legal difficulty.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 89b:5-Nedarim 90a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific individual ('a certain man') involving multiple actions (vowing, attempting to study, being misled, marrying, and being smeared with clay) and a resolution through a rabbi's intervention. It follows the R-C0 principle that an incident followed by a ruling or legal resolution constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 90b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi testing his students with a hypothetical legal question; this is standard rabbinic dialogue and teaching (speech-acts) without a narrated event or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 91a:7-Nedarim 91b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage follows the structure of a story by establishing a habitual frame (the woman's custom of washing her husband's hands) followed by a specific 'one day' event that leads to a conflict and a rabbinic ruling. Under R-C0, the narrated incident of the woman's claim and the husband's denial constitutes a story, with Rav Nahman's ruling serving as the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 91b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a woman and her husband followed by a ruling from Rav Nahman. Under R-C0, an incident involving a 'certain man' or 'certain woman' that includes narrated actions and a resolution by a rabbi counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 91b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving specific actions (fleeing through a wall, a snake tasting cress, an adulterer warning a husband) followed by Rava's rulings. Under R-C0, an incident followed by a ruling counts as a story when there is narrated action beyond the ruling itself.",
+    "error": null
+   }
+  }
+ ]
+}

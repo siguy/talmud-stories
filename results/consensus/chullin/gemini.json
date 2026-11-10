@@ -1,0 +1,3928 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T23:07:13",
+  "outcomes": {
+   "ok": 225
+  }
+ },
+ "rows": [
+  {
+   "id": "Chullin 5b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an eyewitness report of an action ('I saw Rabbi Yoḥanan ate...') followed by Rabbi Zeira's reaction and internal conflict. While it borders on a bare report (R-C5), the inclusion of a specific observed event and the subsequent 'wondering' of another rabbi provides the minimal action and change required for a borderline classification under R-C0 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 6a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rabbi Meir sends Rabbi Shimon, an encounter with an elder occurs, Rabbi Shimon returns to report the incident, and a ruling is issued as a result. This fits the criteria of an incident followed by a ruling that changes the legal status, involving post-biblical rabbinic figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 6a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of events including a mission, an encounter with an elder, and a subsequent report that leads to a collective rabbinic action and change in legal status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 6a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Zeira and Rav Asi) arriving at an inn, eating (or refusing) a dish, and a subsequent investigation that resolves a conflict regarding a religious mishap. It contains multiple actions, dialogue, and a change in understanding, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 6b:4-Chullin 7a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (Rabbi Meir eating in Beit She'an) followed by a ruling and a subsequent conflict between Rabbi Yehuda HaNasi and his family. It meets the criteria for a story because it includes multiple actions, a courtroom-like drama, and a resolution through a speech-act that justifies a change in practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 7a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure, Rabbi Pinehas ben Yair, involving multiple actions, conflict with the river, and a clear change in the environment (the parting of the water). It follows the pattern of a specific one-time event following a general thematic introduction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 7a:13-Chullin 7b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Pineḥas ben Ya’ir) involving a specific incident at an inn. It contains multiple actions (arriving, offering food, the donkey refusing, tithing) and a clear change in the situation (the donkey finally eating) following the rabbi's intervention.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 7b:3-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yehuda HaNasi and Rabbi Pinehas ben Yair) with multiple actions, dialogue, conflict regarding the white mules, and a supernatural resolution where a mountain rises between them.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 7b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where a woman attempts an action (taking dust for sorcery) and Rabbi Hanina responds with a speech-act that results in a change or resolution (the sorcery being rendered ineffective). This fits the criteria of an incident involving a post-biblical figure with conflict and a narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 10a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is an incident followed by a ruling, which fits the definition of a story under R-C0. The passage narrates a specific event ('that was the incident') involving a person finding a displaced windpipe, followed by the Sages' resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 10b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a ruling (Rav Yosef deeming animals forbidden) used as a precedent for a legal discussion. Under R-C0 and R-C5, a single act that leads only to a discussion of its legal alignment, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 15a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a tanna recited a teaching and Rav took the action of silencing him. This contains more than just speech, as the silencing is a narrated action and change in the interaction, fitting the 'incident followed by a ruling/response' model.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 15a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a tanna reciting a baraita and Rav responding with a legal challenge. Under R-C2 and R-C7, standard rabbinic dialogue or scholarly back-and-forth without a narrated event or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 15b:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes hypothetical legal cases ('in a case where one had...') used to explain the reasoning of Rabbi Meir and Rabbi Yehuda, rather than narrating events that actually happened. Under R-C0 and R-C5, these are legal discussions of facts and consequences without a narrated incident or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 15b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, legal objections, and the citation of a baraita to resolve a contradiction between legal opinions. There are no narrated events or actions involving rabbis or post-biblical figures that would constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 16a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a hypothetical legal case ('In the case of a certain person who...') used to illustrate a ruling by Rav Pappa, rather than a narrated event that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 17a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action by Shmuel's father (notching and sending knives) that leads to a specific response/ruling from the Sages in Eretz Yisrael. Under R-C7 shape 2 and R-C3, a habit that leads to a change or interaction is at least borderline, though it lacks a specific 'one day' event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 17b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (sitting together, a knife being brought, an examination performed) followed by a ruling/approval. This meets the criteria of an incident that actually happened with multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 18a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a specific incident involving a slaughterer and several rabbis. It contains multiple actions (ostracizing, visiting, examining the knife) and a change in the character's status (from disqualified to fit) following a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 18b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Zeira eating meat in Eretz Yisrael) followed by a conflict with local scholars and an emotional reaction (Rav Yosef was angry) that leads to further dialogue. This sequence of action, conflict, and emotional change satisfies the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 18b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Reish Lakish ruled on a case and Rabbi Yochanan responded with a sharp rebuke. While it is primarily a report of a ruling and a speech-act, the presence of conflict between the two rabbis makes it a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 19a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a ruling by Rav Nahman followed by a dialogue with conflict and a sharp retort. Under R-C0 and R-C7 shape 1, a ruling followed by a dialogue with conflict is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 19a:18-Chullin 19b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative incident where people come to Rav Huna for a ruling, leading to an emotional reaction (Rav Yehuda was angry) and a subsequent admission of error by Rav Huna. This sequence of action, conflict, and change satisfies the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 19b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi coming to a location and being asked a question, which is the only event. Under R-C0 and R-C7, a case where coming before a rabbi and receiving a ruling is the only action does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 19b:4-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains multiple narrated actions and changes of location (sitting in a specific arrangement, traveling to Eretz Yisrael to report the rulings) and concludes with a conflict involving a mocking retort ('Gentile, gentile'), which elevates it beyond a standard legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 21a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Zeira travels and encounters Rabbi Ami, leading to a dialogue with conflict and a visible emotional reaction ('was astonished for a moment') that results in a change of the legal formulation. This meets the criteria for a story as it contains actions beyond mere speech and a narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 24b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event or demonstration of Rabbi Hanina's physical prowess at age eighty, which goes beyond a bare report of a custom and includes a causal explanation of how his mother's actions in his youth led to this change in his old age.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 26b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi traveling to state a halakha and engage in a scholarly discussion. Under R-C2 and R-C7, ordinary scholarly back-and-forth and speech-acts without a distinct event or conflict do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 27b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between Rabban Yoḥanan ben Zakkai and a Roman official, followed by a distinct action where the rabbi observes his students' reaction and addresses them. This contains conflict and a change in the rabbi's explanation, moving it beyond a simple speech-act or legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 28a:14-Chullin 28b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a 'courtroom drama' or legal incident where a specific event (a duck with a bloody neck) leads to a dialogue and a resolution. Under R-C0, an incident followed by a ruling counts as a story, and the interaction between Rava and his son Yosef provides the 'dynamism' and change required to distinguish it from a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 30b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a bull and the actions of Rav Yitzḥak bar Shmuel bar Marta, followed by a dialogue and a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it includes narrated actions beyond just the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 30b:15-Chullin 31a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rava examined an arrow and used it to slaughter a bird in flight. While the subsequent segments [4-5] involve legal discussion and commentary on the event (R-B4), the initial incident contains multiple actions and a change in state (the slaughter) that qualifies as a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 31b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a sequence of actions (Rava believed he was being put off, went out, examined sources, and discovered a baraita) that resolve a conflict in a dialogue. While it involves a legal ruling, the narrated change in Rava's understanding through specific actions makes it a borderline story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 32a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between rabbis where a question is met with an emotional reflection on a past relationship. Under R-C2 and R-C7, speech-acts with conflict or emotional depth that imply a state of affairs are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 33b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a quotation of a Mishnah story (R-C1) which is mainly a speech-act (teaching) but includes a specific historical frame ('On that day') and conflict/change regarding the leadership at Yavne, fitting the borderline criteria for speech with conflict (R-C2, R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 37b:9-Chullin 38a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Shmuel finding Rav's students) and a dialogue with a degree of conflict/critique regarding Rav's ruling. However, it is primarily composed of speech-acts and legal inquiry, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 39b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story quoted in the Talmud, which contains multiple actions (saying, ascending, falling, dying) and a ruling that resolves the incident. Under R-C0, the narrated events followed by a ruling constitute a story, and under R-C1, the Talmud's quotation of a Mishnah story is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 39b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Arabs and Jewish slaughterers followed by a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story when there is a narrated action (giving the rams and specifying the intent) beyond just the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 43b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Rabba and Abaye) where an incident (an animal brought for inspection) leads to multiple actions (checking the outside, a dialogue/challenge, turning the gullet over) and a change in state (the discovery of blood and a ruling). Per R-C0, the ruling is the resolution of the narrated event, and the interaction between the rabbis provides the necessary dynamism beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 43b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a bull and a ruling by Rava, which is then followed by a second action where the matter circulates to Rabbi Abba, who reverses the ruling and orders Rava to pay damages. This sequence of events, conflict between rabbis, and resulting change (the financial liability) satisfies the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 44a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech-acts and standard rabbinic dialogue regarding legal principles and rulings. There is no narrated action or event beyond the act of speaking, and the scholarly disagreement does not constitute the type of conflict required for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 44b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific incident ('a certain animal') involving multiple actions and changes: Rav begins an inspection, his students challenge his method, he sends it to another rabbi, and that rabbi rules it kosher and purchases the meat. It satisfies R-C0 as it contains narrated actions beyond a simple ruling, including the specific detail of the purchase.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 44b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rabba permitted a carcass and purchased meat, followed by a conflict (a challenge from his wife) and a response. This contains both a physical action and a dialogue with conflict, meeting the criteria for a story rather than a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 44b:11-Chullin 45a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of the habitual practices of Rabbi Elazar and Rabbi Zeira regarding gifts and invitations, which Jeff classifies as a bare report or custom that leads nowhere. The dialogue provided is an explanation of their views rather than a conflict-driven event or a one-time incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 45b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's inspection of a bird to confirm a physical anatomical detail. Under R-C5 and R-C0, it is not a story because it consists of a single act that leads to no continuation, ruling, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 45b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a rabbi traveling to report a ruling to another rabbi, resulting in a sharp verbal conflict. Under R-C2 and R-C7 shape 1, dialogue with conflict and a minimal physical action (going) is considered a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 45b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of a student sitting before a rabbi and performing an action (checking nerve tissue) followed by a ruling. Under R-C0 and R-C7, a case where coming before a rabbi and being ruled on is the only event, with no further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 45b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Levi was sitting in a bathhouse and observed a man bang his head, followed by Levi's reaction and a subsequent discussion of the ruling's implications. This fits the criteria of a story about a post-biblical figure where an event occurs and leads to a specific observation or ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 45b:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (coming before a rabbi, bringing a fat kid, then a lean kid) and a change in the rabbi's approach from demonstration to verbal teaching. It fits R-C0 as it describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 46a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving multiple actions (bringing the bird, checking it, receiving a summons, and leaving) and a change in the situation. It fits the definition of a story because it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 46a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (an army arriving) and a subsequent action (rabbis fleeing and meeting another rabbi), which satisfies the requirement for a story beyond a mere legal ruling. Although it contains dialogue and a ruling, the narrated flight and encounter provide the necessary action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 47a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about post-biblical figures (Mareimar and Rav Aha) involving multiple actions: bringing a case to a rabbi, a dialogue with a third party at the door, and a return to the rabbi that results in a conflict and a final ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 47a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case where an incident (an animal being brought before a rabbi) is followed by a specific action and interaction (Rav Ashi's intent to rule and Rav Huna's intervention) that changes the outcome, fitting the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 47b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Natan) involving a specific incident, a diagnosis, a subsequent action by the woman, and a successful outcome. Per R-B1, the story includes the introductory formula and the legal context that frames the citation of the baraita.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 47b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Natan) involving a specific one-time event with multiple actions, a conflict (the danger to the child), and a clear change in outcome (the child survived and was named after the rabbi).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 47b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabbi Hananya's illness and the visit of the scholars) followed by a concrete action and ruling (bringing the lung and deeming it kosher). This meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic halakhic story where an incident (liver infestation) leads to a series of actions (traveling to Yavne three times) and a final resolution/ruling. Under R-C0, the narrated events and the change in status from uncertainty to permission constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of Rav Neḥemya's technical practice (examining a lung in tepid water) followed by a meta-discussion about which legal case the report refers to. There is no narrated event that leads to a change or resolution beyond the report of the act itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48a:14-Chullin 48b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] is a clear story with multiple actions (walking, seeing, offering meat/credit) and a resolution involving a rabbi's refusal to rule. Segments [3]-[4] describe a habitual action (walking in the market) that results in a specific observation and a change in legal understanding (the rabbi's silence as a ruling), which fits the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what the rabbis did (passing through a market and remaining silent) cited as evidence of their legal stance, with no further action, change, or continuation narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48b:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama involving a specific incident (a needle found in a lung) that is brought before multiple rabbis. It contains multiple actions, conflict (objections raised by Rabbi Yirmeya), and a change in outcome where Rabbi Ami eventually reverses his initial thought and issues a final ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a needle found in a bronchus) and the action of bringing it before the rabbis, but it results in no change or ruling, only a lack of decision. Under R-C7 shape 2 and R-C0, an incident followed by a non-ruling or discussion is borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 48b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain needle was found') followed by a rabbi's thought and a subsequent interaction/ruling by Rav Ashi. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions or a 'courtroom drama' dynamic.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 49a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident-plus-ruling' story where a specific event (a needle found in a liver) leads to a conflict between rabbis and a final resolution by Ravina that includes a dramatic action (taking the robe of the mistaken judge).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 49a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a physical finding (a date pit in a gallbladder) followed by Rav Ashi's report of Rav Kahana's habitual teaching on the matter. Under R-C0 and R-C5, this is a legal discussion of facts or a bare report of a teaching rather than a story, as there is no narrated action or change following the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 49b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of a legal problem brought before a rabbi where the only narrated event is the act of coming before him for a ruling. Under R-C0 and R-C7, an incident where coming before the rabbi is the only action and is followed only by a ruling or discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 49b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a halakhic story where a specific individual (Manyumin) experiences a real event (honey being left uncovered) and brings the case to a rabbi for a ruling. Under R-C0, the narrated incident followed by the ruling and the subsequent dialogue constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 50a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rav Avya observes Rabbi Ami eating the fat after a specific action was performed, which serves as a precedent. Under R-C0, an incident that actually happened (as opposed to a hypothetical case) counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 50a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rabbi Hanina and his attendant with multiple actions (standing, speaking, hesitating) and a resolution. It meets the criteria of R-C0 as it describes an event that happened, and the attendant's hesitation provides the conflict/emotional reaction required by R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 50a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where an anonymous man travels from Babylonia to Eretz Yisrael to clarify a ruling. This journey constitutes a physical action and change of location that frames the subsequent dialogue, meeting the criteria for a story beyond a bare legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 50a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (bringing the intestines, Rava's failed comparison, the son's physical intervention) and a resolution where the rabbi praises his son's wisdom. It fits R-C0 as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 51a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a nested narrative structure: a framing story about Abaye's physical pursuit of Rav Avira (sending messages, traveling, and climbing a roof) and an embedded story about a specific incident that came before Rabbi Yehuda HaNasi. It meets the criteria of having multiple actions, conflict, and a resolution beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 51a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Ravina's kid (seeing barley, jumping, and falling) followed by a legal ruling from Rav Ashi. Under R-C0, an incident followed by a ruling counts as a story because it describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 51a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain ewe') involving multiple actions: the animal's condition, a diagnosis, a challenge, an inspection, and a discovery. This meets the criteria for a story as it contains more than two actions and a change/resolution (the inspection confirming Ravina's suspicion).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 51b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a bull falling and a rabbi's subsequent action of taking meat, followed by a dialogue and a ruling. This fits the criteria of an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 52b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a cat and a hen at Rav Kahana's house, containing multiple actions (pursuing, entering, the door shutting, striking the door) and a resulting change or discovery (the venom found on the door).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 52b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a cat pursuing a hen in Rav Kahana's house, featuring multiple actions and a clear physical outcome (the blood on the door). Under R-C0, this is a story about an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 52b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists solely of a rabbi initiating a legal inquiry. Under R-C2 and R-C7, speech-acts such as asking a question or standard rabbinic dialogue do not constitute a story when no actions or events follow.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 53a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident (a fox/cat/dog clawing a ewe in a specific location) followed by a ruling from the Sages, which fits the definition of a halakhic story. Per R-B1, the opening attributions are included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 53b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story embedded within a legal discussion (R-C4) about a specific incident involving a basket of birds brought before Rav, who sent them to Shmuel, who then strangled and discarded them. This constitutes a narrated event with multiple actions and a clear outcome/change, satisfying the criteria for a story (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 53b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain duck... entered... came out') followed by a rabbi's ruling. Under rule R-C0, the narrated event of the duck's injury constitutes a story, and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 53b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where a specific lung was brought before Rav Ashi and Rav Kahana, followed by a physical description of the event (the lung disintegrating) and a subsequent ruling. This fits the criteria of an incident followed by a ruling with a narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 54a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about post-biblical figures (the house of Yosef the hunter) who performed a specific action (striking the sciatic nerve) and then came before a rabbi for a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 54a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case where the only narrated event is coming before a rabbi for a ruling. Under R-C0 and R-C7, an incident where coming before a rabbi is the only action and no further change or event is narrated does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 54b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Rabbi Hana and Rabbi Yohanan) with multiple actions: a request for a coin, an attempt to rise, and a physical prevention from doing so. Under R-C0, this is a story because it describes an incident that happened, including an emotional/respectful reaction and a resolution through a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 55b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rabba bar bar Hana found shriveled lungs and brought the case to the study hall. Under R-C0, an incident followed by a ruling counts as a story, especially as it involves multiple actions (walking, finding, coming, asking) and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Ze'eiri traveling to Neharde'a and sending a message) and a change (his retraction of a previous ruling), but it is primarily composed of speech-acts and legal transmission. Under R-C7 shape 1, passages that are mainly speech but contain a real event are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal inquiry between Rav Nahman and Rav Anan regarding the views of Shmuel and Rav. There are no narrated events or actions beyond speech-acts, and the scholarly back-and-forth does not constitute the type of conflict required for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a halakhic story where a specific incident (a hen with a broken skull) is narrated, followed by an action (sending it to a rabbi), a ruling (deeming it kosher), and a subsequent dialogue that resolves the legal tension.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident where a specific rabbi (Rabbi Yehoshua ben Levi) has a hen, sends it to another rabbi for a ruling, and a dialogue with a resolution follows. Under R-C0, an incident involving a specific event followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rabbi Yitzḥak bar Yosef) who sent a hen to a rabbi for a ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes a concrete event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabbi Simai and Rabbi Tzadok) that includes specific actions (traveling to Lod, spending Shabbat in Ono) followed by a ruling. Under R-C0, the narrated events followed by a ruling constitute a story, and R-B1 dictates including the opening formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 56b:14-Chullin 57a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (a Roman) performing a medical procedure through a deceptive act. It contains multiple actions, conflict, and a clear change in state (the man's recovery).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 57a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of a person bringing an item to a rabbi for a ruling; under R-C0 and R-C7, coming before a rabbi and receiving a ruling is not enough to constitute a story without another narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 57a:7-Chullin 57b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrative episodes involving Rabbi Abba: first, his physical encounter and dialogue with Rav Yirmeya bar Abba (who is actively inspecting birds), and second, his journey to Eretz Yisrael where he confronts Rabbi Zeira. These interactions involve conflict over legal traditions and specific actions (going, finding, inspecting, and traveling) that move beyond bare legal reports.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 57b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a dialogue (speech-acts) containing a conflict over a legal ruling. It includes an incident only alluded to as evidence ('a certain ewe in our neighborhood'), which fits the borderline criteria for speech with conflict and sketched incidents.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 57b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories about Rabbi Shimon ben Halafta's experiments with his hens. Each incident involves multiple actions (dislocation/removal of feathers, medical intervention, and recovery) that lead to a change in the animal's state, satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 57b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure, Rabbi Shimon ben Halafta, performing a specific experiment. It contains multiple actions (spreading a cloak, marking an ant, lifting the cloak) and a clear change in state (the ants killing the first ant) leading to a conclusion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 58b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident followed by a ruling' shape which Jeff defines as a story in R-C0; it narrates a specific event (an animal with two ceca was brought) and a subsequent action/resolution by a rabbi (Ravina ruled it a tereifa).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 58b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case involving a physical anomaly in an animal and a rabbi's thought process or ruling, which Jeff classifies as a 'bare report' or 'legal discussion' rather than a story. Under R-C0 and R-C5, a case where the only event is coming before a rabbi for a ruling without further narrated action or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 58b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a case brought before a rabbi followed by a ruling and a brief dialogue, but it lacks a second narrated action or change beyond the ruling itself. Under R-C0 and R-C7 (shape 2), an incident where coming before a rabbi is the only event and the outcome is merely a legal determination is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 58b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a testimony given before a rabbi regarding a legal ruling, which functions as a precedent rather than a story. Under R-C5 and the limit of R-C0, a single act of testifying or ruling without further narrated action or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 59a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person account by Rabbi Abbahu of a specific incident ('There was an incident in which I was involved') where he performed an action, faced a physical consequence, and took a corrective measure. This goes beyond a bare report of practice or a legal dictum by narrating a specific event with change and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 59a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving specific post-biblical figures (Rav and Shmuel) and a sequence of events: a deer is brought, a ruling is made, a dialogue ensues, a test is performed in an oven, and a miraculous change occurs (the meat falling apart), followed by a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 59b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a karkoz goat at the Exilarch's house, followed by conflicting actions (Rav Ahai forbidding and Rav Shmuel eating) and a resolution sent from Eretz Yisrael. This contains multiple actions, conflict, and a change in status (the halakhic ruling), satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 59b:8-Chullin 60a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrative episodes involving Rabbi Yehoshua ben Hananya and the Roman Emperor. Both episodes feature specific actions (praying for a lion, standing the emperor in the sun) that lead to dramatic changes and resolutions, satisfying the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rabbi Yehoshua) and a Roman emperor. It contains multiple actions, a conflict (the emperor's hubris), and a clear change/resolution through the destruction of the meals.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rabbi Yehoshua) and the daughter of the emperor. It contains multiple actions, a change in state (the daughter being stricken with leprosy), and follows the R-C3 pattern where a custom is described but then a 'one day' event occurs that resolves the narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with dialogue, conflict, and change regarding the creation of the moon, but it is about biblical characters (God and the Moon) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rav Nahman bar Pappa) where an action (planting) and a problem (not sprouting) lead to a change (sprouting) through a specific act (prayer). This fits the definition of a story as an event that happened, rather than a hypothetical legal case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 60b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a single speech-act (an instruction to write and explain a term) without any narrated action, conflict, or change following it. Under R-C2 and R-C7, speech alone without conflict or an event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 62b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a duck in Mar Shmuel's house where an action (placing it in the sun) led to a change (the gizzard softening and becoming peelable). Under R-C0, this is a narrated event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 63a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific past event involving a bird that sat on a field and was killed by a stone, which functions as a story rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 67b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue (speech-acts) between Ravina, his mother, and Rav Mesharshiyya. While it contains conflict regarding the permissibility of the worms and an implied action of eating, it lacks the narrated physical events required for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 68b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a scholar arriving and citing a baraita as part of a legal challenge. This is a speech-act within standard rabbinic dialogue and lacks the narrated actions or events required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 68b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal debate between Rav Yehuda and Ulla. Under R-C2, speech alone without an accompanying event or action is not a story, and the respectful retort regarding the dust of Rav and Shmuel does not constitute the type of narrative conflict required for a borderline classification.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 74a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (Rav Yosef turning his face away in anger) and an implied change in the legal understanding, which fits the criteria for a borderline story based on speech acts with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 75b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Zeira ascending and Rav Asi finding him) followed by a dialogue that describes a past incident involving Rabbi Yoḥanan and Reish Lakish. It contains multiple actions and a specific historical setting beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 75b:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man's animal was attacked by a bear, leading him to seek a ruling from Rav Ashi. Under rule R-C0, an incident followed by a ruling and a subsequent dialogue/conflict constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76a:4-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a legal dialogue (speech acts) between Ulla and Rav Yehuda, but it contains a specific conflict (Rav Yehuda's silence/defeat) and a subsequent internal monologue/change of mind after Ulla leaves, which fits the borderline criteria for speech with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Rabbi Abba and a Sage with conflict (a rebuke), but it is primarily composed of speech-acts and a ruling. Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech-acts and standard rabbinic dialogue regarding a legal definition. There is no narrated event, conflict, or change beyond the transmission of a teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a bird was brought before Rav Ashi for examination. It contains multiple actions (standing before, bringing, examining, breaking apart) and a change in the state of knowledge (finding fifteen, then finding sixteen).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a fledgling at the house of Rabbi Yitzhak, followed by a ruling from Rabbi Yohanan. According to R-C0, an incident followed by a ruling counts as a story, especially when it involves a specific event ('a certain fledgling') rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 76b:20-Chullin 77a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific incident where a case was brought before Rabba, followed by a ruling, a challenge by Rav Pappa, and a change in Rabba's state (his silence). This meets the criteria of an incident followed by a ruling with additional narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 77a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain case') involving multiple actions: the bone breaking, the owner coming before Abaye, Abaye delaying for three festivals, and the owner being sent to and appearing before Rava. This exceeds a bare ruling or report and contains the 'dynamism' and 'change' required by the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 79a:12-Chullin 79b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 contains a specific incident where a rabbi gives an instruction to his servant, which constitutes a speech-act with implied action and change. However, segment 3 is the Gemara's analytical commentary on the legal implications of that act and is excluded under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 80a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, including an objection, a question, and a report of a ruling. There are no narrated events or actions beyond these speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 84a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a heretic and Rava. While it lacks physical actions, it contains conflict in the form of a theological/legal challenge and a sharp retort, which fits the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 84b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a public teaching followed by a sharp rebuke and a command to remove the speaker's interpreter. This constitutes a speech-act with conflict and an implied change in the social/academic setting, fitting the borderline criteria for dialogue with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 85b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rabbi Hiyya's flax is infested, he seeks help, and Rabbi Yehuda HaNasi provides a solution involving a physical action (slaughtering a bird). This contains multiple actions and a change of state, fitting the definition of a story even though it is followed by a legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 86b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where rabbis are standing in a marketplace, are rebuked by another rabbi, and their subsequent actions (one entering the study hall, one not) lead to a dialogue about a legal dilemma. This contains multiple actions, conflict, and a change in state beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 86b:12-Chullin 87a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a narrated event involving specific post-biblical figures (Rav Beruna and Rav Hananel) sitting at a meal, making a request, and being rebuked by Rav Yeiva. This includes action, dialogue with conflict, and a ruling that resolves the incident, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 87a:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving Rabbi Yehuda HaNasi and two heretics, containing multiple actions (fasting, a meal, a suicide, and a divine voice) and a clear change in state. It follows the R-C0 principle where a narrated incident leads to a ruling or divine confirmation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 91a:21-Chullin 91b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates and interprets biblical episodes (Jacob wrestling the angel, Boaz at the threshing floor, Abraham's journey) to derive moral and legal lessons. While these are full-blown stories, they are about biblical characters rather than rabbis or post-biblical figures, placing them out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 91b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific setting and action (going to the meat market to buy an animal for a wedding feast), but the core of the segment is a speech-act (a question about a biblical verse). Under R-C2 and R-C7, dialogue with a narrated event or setting is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 92b:13-Chullin 93a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of the habitual practices of Rabba, Rabbi Yohanan, and Rabbi Asi regarding fat removal, followed by standard legal discussion and speech-acts. Under R-C5 and R-C0, these descriptions of what rabbis 'would do' as precedents do not constitute a story because they lack a specific event, conflict, or narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 93a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving multiple actions (peeling, cutting, and a father intervening) and a change in the situation through a ruling. It fits the criteria of a halakhic story where an incident is followed by a rabbinic resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Shmuel and his attendant with multiple actions (crossing the river, giving an order, the attendant acting, and Shmuel's emotional reaction) and a change in state (becoming angry). Under R-C0, an emotional reaction counts as an event, and the passage describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ulla visiting Rav Yehuda and the opening of barrels), but it is followed immediately by a legal resolution and discussion, fitting the borderline shape of one real event followed by a ruling or discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a clear narrative incident involving a specific individual ('a certain individual') where a series of actions (sending the barrel, inviting guests) leads to a tragic change and resolution (the host hanging himself). Although it follows a general rule, it is a one-time event that illustrates the law through a complete narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94a:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, causal connections, and a tragic change in state (the deaths of the family members). It follows the 'incident involving a certain man' shape described in R-C0 and contains a one-time event following a general rule.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94b:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific rabbis (Mar Zutra, Rava, and Rav Safra) with a clear sequence of actions: traveling, meeting, a misunderstanding, and a resulting dialogue with emotional impact ('upset him'). Under R-C0, the incident and the subsequent interaction constitute a story, and under R-B1, the opening formula is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 94b:14-Chullin 95a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     6
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a butcher and his fellow, followed by a ruling and reaction from Rabbi Yehuda HaNasi. Under R-C0, an incident followed by a ruling counts as a story, and segment 5 is excluded as it is the Gemara's commentary on the rabbi's reasoning (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95a:11-Chullin 95b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav at a river where a man lost an animal head and retrieved two, followed by Rav's ruling and a dialogue with his students. Under R-C0, an incident followed by a ruling is a story, and under R-B1, the introductory formula and attribution are included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rav that includes multiple actions (traveling, seeing a ferry, looking through a door, knocking) and a specific one-time event that leads to a change or resolution (Rav refusing to eat the meat). It fits the criteria of a story about a post-biblical figure with clear causality and action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of events involving conflict and change: Shmuel's reaction to Rabbi Yohanan's greeting leads to a series of actions (sending calculations and legal rulings) which changes Rabbi Yohanan's perception of him. The story concludes with a specific one-time event where Rabbi Yohanan consults a child and interprets a verse as a sign to cancel his journey.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi arrives at a location and ravens drop meat, followed by a ruling that resolves the situation. This contains multiple actions and a change in status, fitting the definition of a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (losing meat) followed by a subsequent action (coming before a rabbi) and a ruling that resolves the incident. Under R-C0, this sequence of a narrated incident plus a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (losing a side of meat) followed by a rabbi's ruling, which fits the definition of a halakhic story where an incident leads to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 95b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (losing and finding a skein) followed by a rabbi's ruling, which fits the definition of a story under R-C0 because there is a narrated action beyond just the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 96a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific individual (bar Peyoli) and a rabbi (Shmuel). It contains multiple actions (cutting, rebuking, dropping a knife) and an emotional reaction ('became afraid') that leads to a change in the interaction, satisfying the criteria for a story rather than a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 96b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal challenge based on a hypothetical case ('a kid that was roasted') rather than a narrated event that actually happened. Under R-C0 and R-C2, this is standard rabbinic dialogue and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 97a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates multiple specific incidents (a goat roasted with fat, a non-kosher fish in a pot) that were brought before Rabbi Yoḥanan for a ruling. Under R-C0, an incident followed by a ruling counts as a story, and these contain specific actions (roasting, falling into a pot, coming to ask) beyond mere legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 97b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('those animal thighs that were salted') followed by a conflict between rabbis and a resolution by a third party, which satisfies the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 98a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain olive-bulk... fell') followed by a rabbi's thought and a response from other rabbis. Under R-C0, an incident followed by a ruling or interaction is a story, as it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 98a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a half-olive-bulk of fat falling into a pot, followed by an action (Mar bar Rav Ashi's attempt to measure it) and a resolution through his father's rebuke and ruling. This fits the criteria of an incident followed by a ruling with multiple actions and a change in the legal outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 98a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a person coming before a rabbi and receiving a ruling, but there is no other narrated action or change beyond the speech-act of the ruling itself. Under R-C0 and R-C7, coming before a rabbi for a ruling without further dynamic action is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 98a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a person coming before a rabbi and the rabbi issuing a ruling based on his father's precedent. Under R-C0 and R-C7, coming before a rabbi followed only by a ruling or speech-act, without another narrated action or change, is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 98a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man coming before a rabbi and the rabbi issuing a ruling in the form of a question; under R-C0 and R-C7, coming before a rabbi is not enough of an action to constitute a story if no other event or change is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 99b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man coming before a rabbi, a secondary interaction with a figure at the gate, and a subsequent conflict/resolution when the man returns. This contains multiple actions and a change in the rabbi's demeanor ('Who is this who is bothering me?'), satisfying the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 100a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific action (Rav appointing a disseminator) to express a legal disagreement, which constitutes a speech-act with conflict. Under R-C2 and R-C7 shape 1, dialogue or teaching with conflict and a minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 101b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a historical event (a time of persecution and the sending of a directive from Eretz Yisrael) that explains a legal ruling, but it is embedded within a standard rabbinic dialogue and lacks a full narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 103b:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between Rabbi Elazar and Rabbi Asi where an action (forgetting a teaching) leads to a conflict and a resolution (reminding him). It contains more than just speech-acts, as it describes Rabbi Asi's silence and the specific intent of Rabbi Elazar to restore his colleague's memory.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 104b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Yitzḥak visits Rav Ashi and performs actions (eating cheese then meat without washing) that lead to a conflict with the household members. This interaction includes actions, dialogue, and a resolution/explanation, satisfying the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Abaye's daily patrol) but transitions into a specific 'one day' event involving an encounter with a sharecropper. This encounter includes dialogue and a change in outcome (the prevention of theft), satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Rav Asi's daily patrol) but transitions to a specific one-time event (the flooding channel) involving multiple actions and a change in outcome, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day...') involving a man and the angel of poverty, featuring multiple actions (eating over grass, uprooting the grass) and a clear change/resolution. It follows the pattern of a habitual frame leading to a specific incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis and a matron with multiple actions (refusing a seat, an incantation, a counter-incantation) and a clear change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions, conflict, and a resolution. It follows a habitual frame about gutters (R-C3) with a specific one-time event involving porters, a demon, and a courtroom-style drama before Mar bar Rav Ashi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 105b:18-Chullin 106a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific event involving a post-biblical figure (a demon servant in Rav Pappa's house) that includes multiple actions, dialogue, and a resolution regarding the 'foul waters' mentioned in the preceding custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 106a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific incident ('fed pig meat') as evidence for a legal point, but the narrative details are missing from the text itself and must be filled in from commentaries or context. According to R-C6 and R-C7 shape 4, such alluded incidents are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 106a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to specific incidents (the host, the lentils, and the theft) that are not narrated in full within the text itself and must be filled in from commentaries. Under R-C6 and R-C7, such sketched or named-only incidents are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 106a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (attendants bringing fruit, the rabbis eating without washing, and their subsequent actions) which serves as a precedent. Under R-C0, this is a story because it describes actions and changes in state rather than a hypothetical legal case, and it includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 106b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi's teaching and a witness's report of that teaching ('I was standing before... and he said'), which constitutes standard rabbinic dialogue or a speech-act without a narrated event or change. Under R-C0 and R-C2, speech alone without conflict or a following incident does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what two rabbis did (preparing vessels of a certain size) cited as a precedent or custom, with no continuation, conflict, or subsequent event following the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage quotes a Mishnah story about Rabbi Tzadok performing specific actions (taking food in a cloth and eating it). While it is a report of a rabbi's practice, it functions as a borderline story because it contains a real event/action, though it is cited here within a legal discussion to prove a point.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107a:13-Chullin 107b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Shmuel finds Rav acting in a certain way, leading to a dialogue with conflict and a resolution. It includes the opening formula as per R-B1 and describes an action beyond a mere ruling as per R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific event where Rabbi Zeira encounters Rabbi Ami and Rabbi Asi, leading to a conflict (rebuke) and dialogue. Segment [3] is excluded as it is the Gemara's commentary/explanation of the legal background rather than part of the narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 contains a narrated incident involving two rabbis with specific actions (cutting meat, feeding, and eating) and a dialogue exchange. Segment 3 is excluded as it constitutes the Gemara's commentary and analytical effort to resolve the legal dilemma using the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 107b:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Shmuel and his father) with multiple actions, conflict (the teacher striking the child), and dialogue. Per R-C0, the fact that it concludes with a legal ruling does not disqualify it as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 109b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief interaction where Rabbi Elazar instructs his attendant to perform an action so he can eat. While it involves a speech-act and a ruling, it describes a specific incident with an implied change in practice, fitting the borderline shape of 'one real event followed by a ruling'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 109b:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident where Yalta challenges her husband with a theological argument (speech with conflict) leading to a concrete action where Rav Nahman orders his cooks to prepare a specific dish for her. Under R-C0, the narrated event of the request and the subsequent action/ruling by the rabbi constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 110a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical encounter between Rabbi Elazar, Ze'eiri, and Rav Yitzhak bar Avudimi. It contains multiple actions (ascending, finding, asking, showing, and speaking) and addresses a conflict regarding the source of Rav's ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 110a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav arrived in a location, overheard a conversation, and took action by staying there and issuing a ruling to address the situation. This fits the criteria of an incident followed by a ruling that results in a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 110a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific rabbis (Ravin and Rav Yitzḥak bar Yosef) arriving at a house and acting (eating or refusing to eat), followed by a dialogue and a justification. It describes a specific incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 110a:5-Chullin 110b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rami bar Tamrei travels to Sura and eats udders, leading to a courtroom drama before Rav Hisda. It contains multiple actions, conflict, and a resolution where the rabbi acknowledges the protagonist's sharpness, meeting the criteria for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 110b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events: Abaye commissions Rav Safra to ask a question, Rav Safra travels to Eretz Yisrael and encounters Rav Zerika, and Rav Zerika reports a specific past action (cooking for Rabbi Ami). This contains multiple actions and a change of location/interaction that goes beyond a bare report or a standard legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where rabbis arrived at a house and were served a meal, which functions as a story that resolves a legal question through action rather than just a ruling. It meets the criteria of having multiple actions (arriving, being served, eating) and a change in the state of the legal inquiry.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Rav bar Shabba and Rav Nahman) with multiple actions: a visit, an offering of food, a refusal to eat, and a resolution through a command. It fits the R-C0 criteria of an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific visit and a mealtime incident involving multiple actions (visiting, serving food, finding a problematic liver) and a dialogue that results in a practical instruction. Under R-C0, this is a story because it describes events that happened to specific rabbis rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111a:12-Chullin 111b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Ashi visits a location and observes an action, followed by a conflict in the form of a sharp rebuke. This meets the criteria of an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story about Rabbi Ami breaking a bowl after meat was salted in it, which constitutes a specific event with a physical action and a change in state. Under R-C0 and R-C4, this incident-plus-ruling/action shape qualifies as a story even when embedded within a legal dictum or discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav's visit, his physical ailment, the preparation of a remedy, and his subsequent reaction to the taste of a dish. This contains multiple actions and a change in understanding, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (bringing food, refusing to eat, a dialogue with conflict, and a follow-up inquiry) that leads to a change in understanding. It fits the criteria of a rabbinic story with conflict and specific incidents rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 111b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two rabbis sitting at a river ford, their distinct actions (eating specific foods), and a subsequent dialogue with conflict ('Orphan!') and resolution. This meets the criteria of a story as it describes an incident that happened rather than a hypothetical case, and contains more than just speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 112a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a young bird falling into a jug, followed by a rabbi's ruling and a subsequent reaction from Rava. Under rule R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 112a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of the habitual practices of Shmuel, Rav Huna, and Rava regarding a loaf of bread, followed by a legal discussion explaining their reasoning. Under R-C5 and R-C0, these are descriptions of what rabbis used to do cited as evidence of their views, lacking a specific one-time event or a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 112b:4-Chullin 113a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Rav Mari bar Raḥel) where an event occurred (meat was salted) followed by a specific action (he came before Rava) and a ruling. Per R-C0, an incident followed by a ruling counts as a story, and the subsequent legal discussion in segments 4-5 is excluded per R-B2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 113a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav Sheshet used to do (a habitual practice) cited as a precedent for a legal discussion, with no specific event, change, or continuation following the report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 116a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segments [3-4] constitute a story about Levi visiting a specific person's home, being served a meal, and later defending his reaction in a dialogue with Rabbi Yehuda HaNasi. Segment [2] is a report of local customs (R-C5) and serves as a frame, but the specific incident involving Levi and the subsequent dialogue with Rabbi meet the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 116b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a rabbi's arrival and his subsequent legal teaching; it contains no narrated action, conflict, or change beyond the speech-act of reporting a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 121b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal dilemma raised by a rabbi and a response from an elder citing a ruling. Under R-C2 and R-C7, speech-acts and standard rabbinic dialogue without a narrated event or action do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 124a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech acts (a dialogue between Rav Nahman and Ulla), but it contains significant conflict and a sharp retort ('I would not have listened to him'), which qualifies it as borderline under rule R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 124a:21-Chullin 124b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical encounter where Rav Oshaya travels to Eretz Yisrael and reports a conflict between Ulla and Rav Nahman to Rabbi Ami, leading to a second encounter where a misunderstanding about a ruling is discovered and resolved through dialogue. While it contains significant speech, it describes a sequence of events (traveling, finding, reporting, and a subsequent meeting) with conflict and change in understanding, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 124b:12-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage contains a narrated incident with a clear conflict and change: a rabbi evades a difficult question with a distraction ('a raven flies'), is rebuked by his son for disrespecting a great scholar, and explains his emotional/physical state as the cause. It moves beyond standard rabbinic dialogue into a courtroom-like drama with actions and reactions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 127a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once I went...') involving a post-biblical figure, Rav Huna bar Torta, witnessing an action that leads to a change (the emergence of an arvad) and a subsequent interaction with a rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 128a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a Mishnah/Tosefta story (R-C1) consisting of a rabbi's teaching. While it is primarily a speech-act, it describes a specific pedagogical setting ('Rabbi Akiva would teach this') and is part of a larger interaction involving conflict and a change of mind (R-C2, R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 128a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction where Rabbi Yehuda challenges his teacher, leading to a distinct action and change: Rabbi Akiva's retraction of his previous ruling. This satisfies the requirement for more than just speech, as the dialogue results in a narrated change of state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 128b:21-Chullin 129a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific event (Rabbi Asi missing the study hall and meeting Rabbi Zeira), but the remainder is entirely dialogue regarding a legal difficulty. Under R-C2 and R-C7, speech-heavy passages with a minimal event frame are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 131a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('a certain Levite') involving an action (snatching gifts), a response (people coming to tell Rav), and a resolution through Rav's rebuke. Under R-C0, an incident involving a post-biblical figure that leads to a rabbinic response or ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 131b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific practice of Ulla followed by a conflict in the form of a legal objection from Rava. Under R-C2 and R-C7, speech-based interactions with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 132a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what several rabbis did (eating priestly gifts on account of their wives) cited as evidence of a legal practice, with no further action, conflict, or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 132b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of events involving specific post-biblical figures (Rabbi Tavla and Rav Nahman) and a specific incident (the priest's financial distress and subsequent partnership). It contains multiple actions, conflict between the rabbis' rulings, and a 'courtroom drama' dynamic that goes beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 132b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rava and Rav Nahman bar Yitzhak did as a matter of legal practice. Under R-C5, a description of a rabbi's action that lacks a narrated incident, continuation, or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 133a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a series of changes in Abaye's personal practice as a priest, which fits the 'habitual frame leading to change' shape. However, it is primarily a first-person report of his internal reasoning and speech-acts, making it borderline under the criteria for actions and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 133a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative containing multiple actions and a change: rabbis visit a home, a meal is prepared, a request for priestly gifts is made and granted, a dream occurs, and a subsequent inquiry to Rav Yosef leads to a clarification of the law based on the event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 134b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (Levi sowing and finding no poor people) followed by an action (coming before a rabbi) and a ruling that resolves the situation. Under R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated action beyond just the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 134b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi and a sack of money, containing an action (rushing to acquire it) and a resolution that clarifies the nature of that action. Under R-C0, this is more than a bare report because it describes a dynamic incident with a specific actor rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 137b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Isi bar Hini and Rabbi Yoḥanan involving multiple actions (ascending, finding, teaching) and a dialogue with significant conflict and emotional reaction regarding the honor of Rav. It includes a vivid flashback memory of a past event (sparks between Rav and Rabbi) and concludes with a sharp retort that changes the dynamic of the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 139b:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event witnessed by Rav Kahana involving multiple actions, dialogue with conflict, and a clear change in outcome (the pigeon being slaughtered). Segment 3 is included as it contains the Gemara's immediate discussion and alternative explanation of the events in the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 141b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a 'certain man' who clipped a bird's wings, followed by a physical action (flogging) and a specific instruction from Rav Yehuda. It meets the criteria of an event that happened leading to a change or response, rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 141b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man comes before a rabbi, followed by a dialogue and a physical action (Rava catching the bird) that changes the situation. This satisfies the requirement for a story as it contains multiple actions and a resolution beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 141b:20-Chullin 142a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific event involving post-biblical figures (Levi bar Simon and Rav Yehuda) followed by a ruling from Shmuel that involves a physical action (banging on the nest). While segments [3] and [4] are legal discussion, the initial incident contains multiple actions and a resolution, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Chullin 142a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event with multiple actions (climbing, sending the bird, falling) and a tragic change (death) that serves as the basis for a theological ruling. Although framed as a case, the context in segment [3] confirms Rabbi Ya'akov saw this as a real incident (ma'aseh).",
+    "error": null
+   }
+  }
+ ]
+}
