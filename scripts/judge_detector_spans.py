@@ -207,11 +207,37 @@ def gemini(dry_run, workers):
 
 # ---- Claude arm (subagents; same layout as judge_via_subagents.py) -----------
 
-def export(seed, batch):
+def gemini_out_of_scope_ids():
+    """Ids of the units Gemini answered `out_of_scope` (outcome ok). Refuses unless Gemini's answers
+    are COMPLETE and valid: the Claude subset is only the whole story if Gemini's answers are final
+    (a unit Gemini failed on would silently drop out of the subset and ship as 'not biblical')."""
+    from check_tractate_run import g6_judge
+    P = T.Paths(T.resolve(TRACTATE), PROJECT_ROOT)
+    P.consensus = OUT                         # the directory this module is working in
+    res = g6_judge(P, 'gemini')
+    if res.status == 'red':
+        raise SystemExit('refusing to export a Claude subset: the Gemini answers are not final (gate g6 red):\n  '
+                         + '\n  '.join(res.failures))
+    rows = json.loads((OUT / 'gemini.json').read_text())['rows']
+    return {r['id'] for r in rows if r['answer'].get('outcome') == 'ok' and r['answer'].get('verdict') == 'out_of_scope'}
+
+
+def export(seed, batch, only_gemini_out_of_scope=False):
     units, text = load_units(), j.Text(TRACTATE)
+    d = OUT / 'subagent'
+    if only_gemini_out_of_scope:
+        # Claude's answer can change the site only where Gemini already said out_of_scope (a passage is
+        # removed when BOTH do), so only those units go to the subagents: ~10 per tractate, not ~200.
+        # It is exact only with Gemini's answers final and EVERY flagged unit answered: gate g6 and the
+        # site build both refuse otherwise.
+        if any((d / 'keys').glob('*.json')):
+            raise SystemExit(f'{d / "keys"} already holds an export: move subagent/ aside first, a subset export '
+                             'must not mix with an old one')
+        flagged = gemini_out_of_scope_ids()
+        units = [u for u in units if u['id'] in flagged]
+        log.info('subset export: %d unit(s) Gemini called out_of_scope', len(units))
     order = list(units)
     random.Random(seed).shuffle(order)
-    d = OUT / 'subagent'
     for sub in ('batches', 'keys', 'answers'):
         (d / sub).mkdir(parents=True, exist_ok=True)
     (d / 'system_prompt.md').write_text(j.system_prompt())
@@ -231,9 +257,10 @@ def export(seed, batch):
         n += 1
     (d / 'manifest.json').write_text(json.dumps({
         'seed': seed, 'batch': batch, 'batches': n, 'units': len(order), **prompt_meta(),
-        'largest_file_bytes': max(sizes), 'files_over_30kb': sum(s > 30_000 for s in sizes),
+        'only_gemini_out_of_scope': only_gemini_out_of_scope,
+        'largest_file_bytes': max(sizes, default=0), 'files_over_30kb': sum(s > 30_000 for s in sizes),
         'exported': time.strftime('%Y-%m-%dT%H:%M:%S')}, indent=1))
-    log.info('exported %d units into %d batches; largest file %d bytes', len(order), n, max(sizes))
+    log.info('exported %d units into %d batches; largest file %d bytes', len(order), n, max(sizes, default=0))
 
 
 def import_(model):
@@ -266,6 +293,7 @@ def import_(model):
             rows.append({'id': it['id'], 'answer': j.ask(backend, system, it['prompt'], set(it['passage']))})
     meta = {**prompt_meta(), 'backend': {'model': model, 'via': 'Claude Code subagent (Agent tool), not the API',
                                          'seed': man['seed'], 'batch': man['batch']},
+            'subset': 'gemini_out_of_scope' if man.get('only_gemini_out_of_scope') else None,
             'missing_batches': missing, 'outcomes': dict(Counter(r['answer']['outcome'] for r in rows)),
             'imported': time.strftime('%Y-%m-%dT%H:%M:%S')}
     (OUT / 'claude.json').write_text(json.dumps({'meta': meta, 'rows': rows}, ensure_ascii=False, indent=1) + '\n')
@@ -363,6 +391,8 @@ def main():
     e = sub.add_parser('export')
     e.add_argument('--seed', type=int, required=True)
     e.add_argument('--batch', type=int, default=20)
+    e.add_argument('--only-gemini-out-of-scope', action='store_true',
+                   help='export only the units Gemini called out_of_scope (needs final Gemini answers)')
     i = sub.add_parser('import')
     i.add_argument('--model', required=True)
     sub.add_parser('report')
@@ -376,7 +406,7 @@ def main():
     elif args.cmd == 'gemini':
         return gemini(args.dry_run, args.workers)
     elif args.cmd == 'export':
-        export(args.seed, args.batch)
+        export(args.seed, args.batch, args.only_gemini_out_of_scope)
     elif args.cmd == 'import':
         import_(args.model)
     else:

@@ -86,6 +86,13 @@ def biblical_cells(tractate):
         return set()
     verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
                    if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
+    # A passage is removed only when BOTH judges say out_of_scope, so a flagged unit with no valid Claude answer
+    # would read as "not biblical" and ship (Lesson 21/38: absence reads as a decision). Refuse, naming them.
+    # This is what makes the cheap "Claude judges only Gemini's flagged units" export exact (plan §2.5).
+    unanswered = sorted(i for i, v in verdict["gemini"].items() if v == "out_of_scope" and i not in verdict["claude"])
+    if unanswered:
+        raise SystemExit(f"site build refused: {tractate}: {len(unanswered)} unit(s) Gemini called out_of_scope "
+                         f"have no Claude answer with outcome ok: {unanswered[:8]}")
     units = json.loads((ROOT / d / "units.json").read_text())["units"]
     return {tuple(c) for u in units
             if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
@@ -264,7 +271,7 @@ def check_unreviewed_gates():
         if src["reviewed"]:
             continue
         P = T.Paths(t, ROOT)
-        for r in [C.g3_run(P, 1), C.g3_run(P, 2), C.g4_pair(P), C.g6_judge(P, "gemini")]:
+        for r in [C.g3_run(P, 1), C.g3_run(P, 2), C.g4_pair(P), C.g6_judge(P, "gemini"), C.g6_judge(P, "claude")]:
             if r.status == "red":
                 bad.append(f"{t} {r.gate}: {'; '.join(r.failures)[:300]}")
     if bad:

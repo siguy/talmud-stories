@@ -120,7 +120,8 @@ def test_unreviewed_stories_are_definite_in_every_run():
         assert len(b.SOURCES[t]["runs"]) >= 2, t
         runs = [b.definite_cells(q) for q in b.SOURCES[t]["runs"]]
         biblical = b.biblical_cells(t)
-        assert biblical, t
+        if t in b.EXISTING:       # a newer tractate may have no biblical passage at all
+            assert biblical, t
         for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
             assert all(cells & r for r in runs), s["id"]
