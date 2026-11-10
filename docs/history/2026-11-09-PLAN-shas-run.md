@@ -371,6 +371,40 @@ against the files before it went in):
 - **Smaller:** cost figures made consistent; seven Batch rounds, not six; caching discount stated exactly; triage
   prompt size includes the page; evidence labels; terms defined; driver simplified; parallels deferred.
 
+## Pre-flight built (2026-11-09 evening) and what the code corrected
+
+§4 items 1-7 are built and tested, no Gemini call made (`work/2026-11-08-shas-finder-run.md`). Where the code
+disagreed with this plan:
+
+- **G1 needs the Sefaria index saved.** "Page count equals Sefaria's shape index" cannot be read offline from the
+  existing files: the fetch now stores `sefaria_shape` in each text file. Berakhot, Yevamot, Gittin and Eruvin were
+  fetched without it, so G1 is **amber** on them ("page count not checked"), not red. Vowel points on Berakhot are
+  99.7% of segments, not 100% (the 100% in G1's baseline is Yevamot, Eruvin, Gittin).
+- **G3 and G4 need two fields no old run recorded:** `triage_sha1` and `detector_sha1` (hash of
+  `src/story_detector_v14.py`) are new in `run_meta`. On the four existing v14 runs they are absent, so G3/G4 are
+  amber there; every run made from now on carries them.
+- **`service_tier` is not reported by the installed `google-genai` 1.60.0** (added in 1.69.0). The wrapper records
+  `not_reported` rather than guessing; `traffic_type` is used if present. The tier actually used is therefore only
+  known from the request, which is standard.
+- **Retries nest.** Stage 2's first pass already retries 3 times (15 s steps) above the new wrapper's 5 tries
+  (30/60/120/120 s). A call that never recovers can hold a worker ~6 min per try, ~18 min before the page is
+  recorded as an error. Acceptable at 8 workers; it is why G3 counts `retries` and `retries_exhausted` per stage.
+- **Berakhot's v11 run is not committed on this branch** (`results/v11/berakhot/berakhot_v11.json` exists only in the
+  `berakhot-shas-local-run-*` worktree). Berakhot's judge `units.json` is committed and unchanged, but cannot be
+  rebuilt here without copying that file in. Not needed for the Shas run.
+- **G5's out-of-scope rate needs the Gemini judge,** so the density half is checked after the pair and the rate
+  half after the judge (the driver refreshes G5 then).
+- **The driver stops at the Claude judge.** It runs fetch, triage, run 1, run 2, pair (G4+G5), units, Gemini,
+  and the subset export; the subagents, `import` and G6-claude are a person's step in a Claude Code session.
+- **The site build now refuses on a red gate** (G3, G4, G6 gemini and claude) for every unreviewed tractate, and
+  includes a tractate only when both runs and the Gemini judge are on disk. A tractate with a run but no judge is
+  named on stderr, not dropped silently.
+- **Home page:** reads `index.json` only; "N of M read" counts saved ids by the tractate's slug prefix, so a story
+  that later leaves the shipped list still counts until the id is cleared (capped at M).
+- **Lanes:** `board.py lanes` puts the Shas item in the one big serial lane with the septimus-signup item (both write
+  `site/`, `tests/test_site_data.py`, `scripts/build_site_data.py`) and with `2026-11-07-pre-eruvin-run-fixes`
+  (`scripts/run_new_tractate.py`). The lane count is 1 for these; the Wednesday run itself is separate processes.
+
 ## Not done here
 
 No API calls, runs or code. The cost is an estimate from two measured v14 runs and three unmeasured assumptions

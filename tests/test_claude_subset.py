@@ -24,7 +24,9 @@ def jd(monkeypatch, tmp_path):
     spec.loader.exec_module(m)
     P = build(tmp_path, slug='tamid')
     monkeypatch.setattr(m, 'OUT', Path(P.consensus))
-    m.j.TEXT_SOURCES['Tamid'] = [str(P.text)]          # absolute: PROJECT_ROOT / absolute == absolute
+    # judge_labelled_spans is imported once per process and reads JUDGE_PROMPT at import: pin v2 here
+    monkeypatch.setattr(m.j, 'PROMPT_PATH', ROOT / 'src/prompts/judge_register_v2.md')
+    monkeypatch.setitem(m.j.TEXT_SOURCES, 'Tamid', [str(P.text)])          # absolute: PROJECT_ROOT / absolute == absolute
     return m
 
 
