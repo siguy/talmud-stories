@@ -59,10 +59,15 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `signup-plan` | `talmud-stories` | **4 FILES** |
+| `remove-borderline` | `talmud-stories` | **2 FILES** |
+| `shas-berakhot` | `berakhot-shas-local-run-a26611` | clean |
+| `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
+| `eruvin-run-v11` | `p2-detector-stage4-788e26` | clean |
+| `main` | `recent-work-plans-d0818b` | clean |
+| `v14-yevamot` | `state-work-review-40b153` | **5 FILES** |
 <!-- board-live:end -->
 
-## Done — 55 items, never deleted
+## Done — 56 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -121,4 +126,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Apply Jeff's 2026-10-25 reply — one event then a ruling is not a story; 65a borderline](work/done/2026-10-26-apply-jeff-2026-10-25-verdicts.md) | classification | [reply.md](jeff comms/10-25-2026/reply.md) |
 | [Detector v13 — v12's 2026-10-07 wording plus the 2026-10-25 rulings, measured on the slice before Eruvin](work/done/2026-11-07-detector-v13-october-rulings.md) | classification, detection | — |
 | [Review UI — show the boundary we claim, keep the verdicts, name the pages not examined](work/done/2026-11-07-review-ui-fixes.md) | review, boundaries | [2026-11-07-review-ui-review.md](docs/findings/2026-11-07-review-ui-review.md) |
-<!-- board-checksum: eaba23cf62565b51 -->
+| [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
+<!-- board-checksum: 395ad196b5e944c9 -->

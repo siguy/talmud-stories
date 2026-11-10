@@ -50,10 +50,12 @@ def test_functions_match_v11_except_the_listed_ones(version):
     assert not stale, f'listed as different but identical — drop from ALLOWED: {stale}'
 
 
-def test_the_runner_imports_v11():
-    """v13 and v14 were measured on the Yevamot slice and not adopted (2026-11-07):
-    neither found as many list stories as v11, and both kept Gemara commentary as a
-    story. Moving the runner is a detector decision, so it is pinned here."""
+def test_the_runner_imports_v14():
+    """v14 became the active detector on 2026-11-08 (Simon), after the full-Yevamot
+    comparison: recall tied v11, and v14 follows Jeff's October rulings where v11 does
+    not (docs/findings/2026-11-08-v14-vs-v11-yevamot.md). Before that the runner was
+    pinned to v11 (2026-11-07 slice finding). Moving the runner is a detector decision,
+    so it is pinned here."""
     src = (ROOT / 'scripts/run_new_tractate.py').read_text(encoding='utf-8')
     imports = [l for l in src.splitlines() if 'import' in l and 'story_detector_v' in l]
-    assert len(imports) == 2 and all('story_detector_v11' in l for l in imports), imports
+    assert len(imports) == 2 and all('story_detector_v14' in l for l in imports), imports
