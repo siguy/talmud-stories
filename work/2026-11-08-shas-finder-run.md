@@ -4,7 +4,7 @@ capability: [triage, detection, classification, publication]
 tractate: [eruvin]
 blocked_by: []
 awaiting: []
-writes: [scripts/run_new_tractate.py, results/sefaria/, results/triage/, results/v11/, results/recall/, site/data/, scripts/build_site_data.py, tests/]
+writes: [scripts/run_new_tractate.py, scripts/run_shas.py, scripts/check_tractate_run.py, scripts/tractates.py, scripts/fetch_tractate_pages.py, scripts/judge_detector_spans.py, scripts/build_site_data.py, site/, results/sefaria/, results/triage/, results/v14/, results/consensus/, results/shas_run/, tests/]
 finding:
 superseded_by:
 ---
@@ -22,6 +22,14 @@ The Septimus sign-up (`work/2026-11-08-septimus-signup.md`) needs every story in
 LOW_CONFIDENCE excluded), dated.
 
 ## Method
+
+**Current plan: [`docs/history/2026-11-09-PLAN-shas-run.md`](../docs/history/2026-11-09-PLAN-shas-run.md)**: v14, two runs
+per tractate, standard Gemini tier, deadline Sunday 2026-11-15. It supersedes the v11 / one-run method below.
+Pre-flight code (plan §4 items 1-7) is built: `scripts/run_shas.py` (driver), `scripts/check_tractate_run.py` (gates G1-G6),
+`scripts/tractates.py` (the one tractate table). `site/` is in `writes:` because the sign-up work also writes it
+(`board.py lanes` shows that conflict).
+
+*Older method, kept for the record:*
 
 Plan §4: pre-flight (runner generalised, token logging, no API calls) → Berakhot as the cost calibration → the other
 31 in plan order, one per commit → build list v1. Eruvin was run on Simon's machine and is held for Jeff.

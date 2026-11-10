@@ -37,7 +37,9 @@ import requests
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
+import tractates  # noqa: E402  (the one slug/English/Hebrew table)
 from src.story_detector_v6 import get_page_with_segments  # noqa: E402  (the existing client)
 from scripts.measure_recall_vs_expert_list import (DAF_HEADER, SPAN_HEADER,  # noqa: E402
                                                    anchor_span_refs, gematria, gram_index,
@@ -110,7 +112,7 @@ def amud_name(i):
 
 def get_shape(tractate):
     """Real daf range and per-amud segment counts, straight from Sefaria's index."""
-    resp = requests.get(f"{SEFARIA_SHAPE}/{tractate}", timeout=15)
+    resp = requests.get(f"{SEFARIA_SHAPE}/{tractate.replace(' ', '_')}", timeout=15)
     resp.raise_for_status()
     chapters = resp.json()[0]['chapters']
     filled = [i for i, n in enumerate(chapters) if n]
@@ -123,7 +125,7 @@ def get_shape(tractate):
 
 def fetch(tractate, delay, force):
     """Fetch every amud, resuming from cache. Never re-fetches what is already cached."""
-    out_path = OUT_DIR / f"{tractate.lower()}.json"
+    out_path = OUT_DIR / f"{tractates.slug_of(tractate)}.json"
     refs, expected = get_shape(tractate)
 
     cached = {}
@@ -156,6 +158,8 @@ def fetch(tractate, delay, force):
         'fetched_at': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
         'daf_range': f"{refs[0].split()[-1]}-{refs[-1].split()[-1]}",
         'note': 'Text only — no detector has been run on this tractate.',
+        # Sefaria's own segment count per amud, kept so gate G1 can check the page set offline.
+        'sefaria_shape': expected,
         'pages': pages,
     }, ensure_ascii=False), encoding='utf-8')
 
@@ -220,16 +224,18 @@ def verify(tractate, pages, expected):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--tractates', nargs='+', default=DEFAULT_TRACTATES)
+    ap.add_argument('--tractates', nargs='+', default=DEFAULT_TRACTATES,
+                    help="Sefaria names, e.g. Gittin or 'Bava Batra' (any Bavli tractate)")
     ap.add_argument('--delay', type=float, default=0.3, help='seconds between Sefaria calls')
     ap.add_argument('--force', action='store_true', help='ignore cache and re-fetch')
     ap.add_argument('--verify-only', action='store_true', help='re-run checks against the cache')
     args = ap.parse_args()
 
     reports = []
-    for tractate in args.tractates:
+    # Validated against the table; the English spelling is what Sefaria's refs use.
+    for tractate in [tractates.english(tractates.resolve(t)) for t in args.tractates]:
         if args.verify_only:
-            path = OUT_DIR / f"{tractate.lower()}.json"
+            path = OUT_DIR / f"{tractates.slug_of(tractate)}.json"
             pages = json.loads(path.read_text())['pages']
             _, expected = get_shape(tractate)
         else:

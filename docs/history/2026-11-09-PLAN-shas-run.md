@@ -109,8 +109,8 @@ one line per tractate and step to `results/shas_run/status.json` and to `project
 | **G1 text** | fetch | page count equals Sefaria's shape index; refs contiguous; every page has segments; every segment has Hebrew; Hebrew carries vowel points on ≥ 95% of segments; **empty English is counted and listed, not a failure** | empty English: Yevamot 12, Eruvin 9, Gittin 7 segments; vowel points 100% on all three |
 | **G2 triage** | triage | every page labelled; no page whose labels are all `TRIAGE_FAILED`, read from the cache file; SHA of the cache recorded | — |
 | **G3 run health** | each run | every fetched page in the output; `stage2_errors = 0`; `truncated_responses = 0`; `tokens.*.unmetered = 0`; `pass2_failures`, `twin_failures`, `stage4_call_failures` **≤ 3 each, listed** (they only lose *additions*, and the both-runs rule only narrows); `empty_responses ≤ 2`, listed; detector `src.story_detector_v14`, model `gemini-3-flash-preview`, thinking off, `twin_trigger = all`; **triage SHA unchanged** (the run did not re-triage); span repairs ≤ 3; `resumed_pages = 0`, else amber | v14 runs: pass2 failures 1 in 2 of 4 runs (Berakhot 42a, Yevamot 59b), twin 0, empty 0–2, span repairs 0–2 |
-| **G4 two runs agree** | run 2 | same `stage2_fingerprint` and same hash of `src/story_detector_v14.py` (not `git_rev`, which any commit flips); same triage SHA; kept-story counts within 10%; ≥ 90% of passages definite in either run are definite in both (to be confirmed against Berakhot and Yevamot before Wednesday, and the number written here) | kept: Berakhot 189 / 187, Yevamot 154 / 151 |
-| **G5 density** | G4 | stories per examined page within the range of the run tractates, **and** the Gemini out-of-scope rate per tractate no higher than Berakhot's and Yevamot's. Outside either: amber, Simon reads | 1.8 and 1.5 per examined page; out of scope 7/224 and 10/184 units |
+| **G4 two runs agree** | run 2 | same `stage2_fingerprint` and same hash of `src/story_detector_v14.py` (not `git_rev`, which any commit flips); same triage SHA; kept-story counts within 10%; ≥ 90% of passages definite in either run are definite in both (**measured 2026-11-09:** 116 of 126 = 92.1% on Berakhot, 83 of 90 = 92.2% on Yevamot; a passage is a group of YES/HIGH spans from the two runs that share a cell; n = 2, so the 90% line is **indicated**, set just under both) | kept: Berakhot 189 / 187, Yevamot 154 / 151 |
+| **G5 density** | G4 | stories per examined page within the range of the run tractates, **and** the Gemini out-of-scope rate per tractate no higher than Berakhot's and Yevamot's. Outside either: amber, Simon reads. *Implemented as:* density outside 0.5 × the lowest to 2 × the highest density of the other run tractates; out-of-scope rate above the larger of the two baselines (5.4%). The rate needs the Gemini judge, so it shows as pending until that has run | 1.8 and 1.5 per examined page; out of scope 7/224 and 10/184 units |
 | **G6 judges** | each judge | 0 `failed` / `invalid` after one resume; prompt SHA `84bfb33fd32a` (v2). **For Claude: every unit Gemini called `out_of_scope` has a Claude answer with outcome `ok`; the site build refuses otherwise** | Berakhot 224/224 valid |
 | **G7 site** | build | `python3 -m pytest tests/ -q` (L-045's guards) | 514 passed, 1 skipped on main today |
 
@@ -370,6 +370,40 @@ against the files before it went in):
 - **Biblical handling** is weakest where biblical material is densest. → targeted list for Simon, G5 rate, Q11.
 - **Smaller:** cost figures made consistent; seven Batch rounds, not six; caching discount stated exactly; triage
   prompt size includes the page; evidence labels; terms defined; driver simplified; parallels deferred.
+
+## Pre-flight built (2026-11-09 evening) and what the code corrected
+
+§4 items 1-7 are built and tested, no Gemini call made (`work/2026-11-08-shas-finder-run.md`). Where the code
+disagreed with this plan:
+
+- **G1 needs the Sefaria index saved.** "Page count equals Sefaria's shape index" cannot be read offline from the
+  existing files: the fetch now stores `sefaria_shape` in each text file. Berakhot, Yevamot, Gittin and Eruvin were
+  fetched without it, so G1 is **amber** on them ("page count not checked"), not red. Vowel points on Berakhot are
+  99.7% of segments, not 100% (the 100% in G1's baseline is Yevamot, Eruvin, Gittin).
+- **G3 and G4 need two fields no old run recorded:** `triage_sha1` and `detector_sha1` (hash of
+  `src/story_detector_v14.py`) are new in `run_meta`. On the four existing v14 runs they are absent, so G3/G4 are
+  amber there; every run made from now on carries them.
+- **`service_tier` is not reported by the installed `google-genai` 1.60.0** (added in 1.69.0). The wrapper records
+  `not_reported` rather than guessing; `traffic_type` is used if present. The tier actually used is therefore only
+  known from the request, which is standard.
+- **Retries nest.** Stage 2's first pass already retries 3 times (15 s steps) above the new wrapper's 5 tries
+  (30/60/120/120 s). A call that never recovers can hold a worker ~6 min per try, ~18 min before the page is
+  recorded as an error. Acceptable at 8 workers; it is why G3 counts `retries` and `retries_exhausted` per stage.
+- **Berakhot's v11 run is not committed on this branch** (`results/v11/berakhot/berakhot_v11.json` exists only in the
+  `berakhot-shas-local-run-*` worktree). Berakhot's judge `units.json` is committed and unchanged, but cannot be
+  rebuilt here without copying that file in. Not needed for the Shas run.
+- **G5's out-of-scope rate needs the Gemini judge,** so the density half is checked after the pair and the rate
+  half after the judge (the driver refreshes G5 then).
+- **The driver stops at the Claude judge.** It runs fetch, triage, run 1, run 2, pair (G4+G5), units, Gemini,
+  and the subset export; the subagents, `import` and G6-claude are a person's step in a Claude Code session.
+- **The site build now refuses on a red gate** (G3, G4, G6 gemini and claude) for every unreviewed tractate, and
+  includes a tractate only when both runs and the Gemini judge are on disk. A tractate with a run but no judge is
+  named on stderr, not dropped silently.
+- **Home page:** reads `index.json` only; "N of M read" counts saved ids by the tractate's slug prefix, so a story
+  that later leaves the shipped list still counts until the id is cleared (capped at M).
+- **Lanes:** `board.py lanes` puts the Shas item in the one big serial lane with the septimus-signup item (both write
+  `site/`, `tests/test_site_data.py`, `scripts/build_site_data.py`) and with `2026-11-07-pre-eruvin-run-fixes`
+  (`scripts/run_new_tractate.py`). The lane count is 1 for these; the Wednesday run itself is separate processes.
 
 ## Not done here
 

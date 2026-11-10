@@ -29,17 +29,53 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "site" / "data"
 
+sys.path.insert(0, str(ROOT / "scripts"))
+import tractates as T  # noqa: E402  (the one slug/English/Hebrew table; file locations by convention)
+
 # runs: the first is exported (its boundaries and summaries are shown); every run must agree.
 # ruler: results/rulers/<t>_ruler.json (scripts/build_ruler.py) -- where Jeff's evidence is read.
-SOURCES = {
+# The three reviewed tractates are listed by hand (their evidence is Jeff's). Every other tractate
+# is "unreviewed": two v14 runs plus the consensus judges' scope answers, at the paths
+# scripts/tractates.py gives, so a new tractate needs no edit here.
+REVIEWED = {
     "ketubot": {"runs": ["results/canonical/ketubot_canonical.json"], "reviewed": True},
     "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True},
     "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True},
-    "yevamot": {"runs": ["results/v11/v14_yevamot/run1.json", "results/v11/v14_yevamot/run2.json"], "reviewed": False,
-                "scope_judges": "results/consensus/yevamot"},
-    "berakhot": {"runs": ["results/v14/berakhot/run1.json", "results/v14/berakhot/run2.json"], "reviewed": False,
-                 "scope_judges": "results/consensus/berakhot"},
 }
+SITE_HELD = ("eruvin",)       # held for Jeff (docs plan §7 Q4): never on the site until Simon says so
+EXISTING = ("yevamot", "berakhot")   # shipped before the Shas run; kept in this order after the reviewed three
+
+
+def unreviewed_source(slug):
+    P = T.Paths(slug, ROOT)
+    rel = lambda p: str(p.relative_to(ROOT))
+    return {"runs": [rel(P.run(1)), rel(P.run(2))], "reviewed": False, "scope_judges": rel(P.consensus)}
+
+
+def judged(slug):
+    """True when both runs and the Gemini judge's answers are on disk: the tractate is ready for the site build."""
+    P = T.Paths(slug, ROOT)
+    return P.run(1).exists() and P.run(2).exists() and (P.consensus / "gemini.json").exists()
+
+
+def discover():
+    """(sources, skipped): every tractate in the table with both runs and a judge, in the table's order,
+    and the ones with a run on disk that are NOT ready (named, never silently dropped)."""
+    src = dict(REVIEWED)
+    for slug in EXISTING:
+        src[slug] = unreviewed_source(slug)
+    skipped = []
+    for slug in T.SLUGS:
+        if slug in src or slug in SITE_HELD:
+            continue
+        if judged(slug):
+            src[slug] = unreviewed_source(slug)
+        elif T.Paths(slug, ROOT).run(1).exists() or T.Paths(slug, ROOT).run(2).exists():
+            skipped.append(slug)
+    return src, skipped
+
+
+SOURCES, NOT_READY = discover()
 
 
 def biblical_cells(tractate):
@@ -50,6 +86,13 @@ def biblical_cells(tractate):
         return set()
     verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
                    if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
+    # A passage is removed only when BOTH judges say out_of_scope, so a flagged unit with no valid Claude answer
+    # would read as "not biblical" and ship (Lesson 21/38: absence reads as a decision). Refuse, naming them.
+    # This is what makes the cheap "Claude judges only Gemini's flagged units" export exact (plan §2.5).
+    unanswered = sorted(i for i, v in verdict["gemini"].items() if v == "out_of_scope" and i not in verdict["claude"])
+    if unanswered:
+        raise SystemExit(f"site build refused: {tractate}: {len(unanswered)} unit(s) Gemini called out_of_scope "
+                         f"have no Claude answer with outcome ok: {unanswered[:8]}")
     units = json.loads((ROOT / d / "units.json").read_text())["units"]
     return {tuple(c) for u in units
             if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
@@ -219,9 +262,28 @@ def cap_reason(r):
     return str(r or "")[:300]
 
 
+def check_unreviewed_gates():
+    """Every unreviewed tractate must have passed its run, pair and judge gates (scripts/check_tractate_run.py).
+    A red gate stops the build, naming it: a tractate that failed must not ship by being on disk."""
+    import check_tractate_run as C
+    bad = []
+    for t, src in SOURCES.items():
+        if src["reviewed"]:
+            continue
+        P = T.Paths(t, ROOT)
+        for r in [C.g3_run(P, 1), C.g3_run(P, 2), C.g4_pair(P), C.g6_judge(P, "gemini"), C.g6_judge(P, "claude")]:
+            if r.status == "red":
+                bad.append(f"{t} {r.gate}: {'; '.join(r.failures)[:300]}")
+    if bad:
+        raise SystemExit("site build refused, a gate is red:\n  " + "\n  ".join(bad))
+
+
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     wpm = reading_wpm()
+    if NOT_READY:
+        print(f"NOT on the site (a run exists but not both runs and the Gemini judge): {NOT_READY}", file=sys.stderr)
+    check_unreviewed_gates()
     index = {"reading_wpm": wpm, "tractates": []}
     for t in SOURCES:
         reviewed = SOURCES[t]["reviewed"]
@@ -232,7 +294,7 @@ def main():
                                                   ensure_ascii=False, indent=1))
         n = {k: sum(1 for s in stories if s["tier"] == k) for k in ("story", "borderline")}
         words, minutes = sum(s["words"] for s in stories), sum(s["minutes"] for s in stories)
-        index["tractates"].append({"tractate": t, "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
+        index["tractates"].append({"tractate": t, "name": T.english(t), "he": T.hebrew(t), "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
                                    "words": words, "minutes": minutes})
         print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} "
               f"in_mishnah={index['tractates'][-1]['in_mishnah']} words={words} minutes={minutes}")
