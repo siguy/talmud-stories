@@ -82,7 +82,7 @@ open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
 open       2026-09-03-density-mechanism
-closed     28 item(s) in work/done/
+closed     30 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -95,7 +95,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     25 item(s) in work/done/
+closed     28 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -181,4 +181,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: ee2435f474aee92f -->
+<!-- board-checksum: 040ef592c8e6f176 -->
