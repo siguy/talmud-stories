@@ -180,7 +180,11 @@ def gemini(dry_run, workers):
         return 3
     from dotenv import load_dotenv
     load_dotenv(j.ENV_PATH)
-    call, info = j.gemini_backend()
+    # Retry on 429/503 and count tokens, through the detector's own wrapper (2026-11-10: unretried, 182 calls failed
+    # on the per-minute token limit; unmetered, the run report missed ~$15 that AI Studio billed).
+    from run_new_tractate import TokenMeter
+    meter = TokenMeter()
+    call, info = j.gemini_backend(meter)
     out_path = OUT / 'gemini.json'
     prior = json.loads(out_path.read_text()) if out_path.exists() else {}
     if prior and prior['meta']['prompt_sha'] != j.prompt_sha():
@@ -198,7 +202,9 @@ def gemini(dry_run, workers):
             log.info('gemini %-28s -> %s %s', u['id'], ans['outcome'], ans['verdict'] or ans['error'][:80])
     commit = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=PROJECT_ROOT, capture_output=True, text=True).stdout.strip()
     meta = {**prompt_meta(), 'backend': info, 'commit': commit, 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'),
-            'outcomes': dict(Counter(r['answer']['outcome'] for r in rows.values()))}
+            'outcomes': dict(Counter(r['answer']['outcome'] for r in rows.values())),
+            # One tally per invocation, kept across resumes; the driver charges the step with the newest one.
+            'token_log': (prior.get('meta') or {}).get('token_log', []) + [meter.tally]}
     out_path.write_text(json.dumps({'meta': meta, 'rows': list(rows.values())}, ensure_ascii=False, indent=1) + '\n')
     log.info('wrote %s %s', out_path, meta['outcomes'])
     return 0

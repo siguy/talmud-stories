@@ -174,6 +174,14 @@ def test_running_one_tractate_keeps_the_others_record_and_skipped_steps_keep_the
     assert st['cost_usd'] == round(st['tractates'][A]['cost_usd'] + st['tractates'][B]['cost_usd'], 2) > 0
 
 
+def test_the_gemini_judge_step_is_charged_from_its_token_log(tmp_path):
+    """2026-11-10: the judge was unmetered, so the run report missed what AI Studio billed for it."""
+    tally = {'judge': {'input': 1_000_000, 'output': 0, 'thinking': 0, 'cached_input': 0}}
+    fake, dst = setup(tmp_path, mutate={(A, 'gemini'): lambda d: d['meta'].update(token_log=[tally])})
+    _, st = drive(dst, fake, slugs=(A,))
+    assert st['tractates'][A]['steps']['gemini']['cost_usd'] == 0.5
+
+
 def test_a_partial_triage_cache_is_resumed_not_taken_as_done(tmp_path):
     """2026-11-10: a 2-page cache from the smoke test made Taanit's triage look finished."""
     fake, dst = setup(tmp_path)

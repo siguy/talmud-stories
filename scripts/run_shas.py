@@ -47,7 +47,7 @@ log = logging.getLogger('run-shas')
 STEPS = ['fetch', 'triage', 'run1', 'run2', 'pair', 'units', 'gemini', 'export']
 DEPENDS = {'fetch': [], 'triage': ['fetch'], 'run1': ['triage'], 'run2': ['triage'],
            'pair': ['run1', 'run2'], 'units': ['pair'], 'gemini': ['units'], 'export': ['gemini']}
-LIMITS = {'fetch': 3, 'gemini': 2}          # per step; everything else shares MAX_PARALLEL
+LIMITS = {'fetch': 3, 'gemini': 1}   # per step; others share MAX_PARALLEL. gemini 1: two judges beside 8 runs hit 3M input tokens/min (2026-11-10)
 MAX_PARALLEL = 8
 # Already done or held: the 31 tractates of the run are the table minus these (plan §0).
 ALREADY_RUN = ('berakhot', 'yevamot', 'ketubot', 'kiddushin', 'gittin')
@@ -237,8 +237,14 @@ class Driver:
             info['tokens'] = tok
             if st.get('resumed') and colour == 'green':
                 colour = 'amber'
-        elif step == 'gemini' and colour != 'red':
-            info['note'] = 'Claude judge waits for a person (subagents): then import and g6 claude'
+        if step == 'gemini':
+            # Charged even when red: Google bills a call whatever its answer was (2026-11-10, ~$15 unseen).
+            log_ = (json.loads((P.consensus / 'gemini.json').read_text()).get('meta') or {}).get('token_log') or []
+            if log_:
+                info['tokens'] = log_[-1]
+                info['cost_usd'] = cost_usd(log_[-1])
+            if colour != 'red':
+                info['note'] = 'Claude judge waits for a person (subagents): then import and g6 claude'
         return dict(info, state='done', color=colour)
 
     # ---- the loop ------------------------------------------------------------------------
