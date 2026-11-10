@@ -339,9 +339,8 @@ larger future job, and only if Flex proves unusable.
 
 ## 7. Decide before starting (only Simon can answer these)
 
-1. **Standard or Flex?** Recommendation: **standard** (~$145). Flex saves ~$73 but adds a library upgrade and slower
-   calls in the deadline week.
-2. **Budget:** a billing alert at **$200**?
+1. ~~Standard or Flex?~~ **Standard** (Simon, 2026-11-09).
+2. ~~Budget?~~ **Billing alert at $200** (Simon, 2026-11-09).
 3. ~~Merge #82 → #84 first?~~ Done 2026-11-09.
 4. **Eruvin.** Held for Jeff. Should the site show it by Sunday? Two fresh v14 runs (~$5 standard), shipped
    `reviewed: false` like the others. Does "held" mean from the site too, or only from the scholarly record?
