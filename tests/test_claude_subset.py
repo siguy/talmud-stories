@@ -84,7 +84,7 @@ def test_site_build_refuses_a_flagged_unit_with_no_claude_answer(tmp_path, monke
     build(tmp_path, slug='tamid')
     monkeypatch.setattr(b, 'ROOT', tmp_path)
     monkeypatch.setitem(b.SOURCES, 'tamid', b.unreviewed_source('tamid'))
-    assert b.biblical_cells('tamid')                                  # complete: fine, and the unit is removed
+    assert b.judge_cells('tamid')[0]                                  # complete: fine, and the unit is flagged
     c = tmp_path / 'results/consensus/tamid/claude.json'
     d = json.loads(c.read_text())
     for bad in (None, {'outcome': 'invalid', 'verdict': None}, {'outcome': 'failed', 'verdict': None}):
@@ -93,7 +93,7 @@ def test_site_build_refuses_a_flagged_unit_with_no_claude_answer(tmp_path, monke
             rows.append({'id': 'Tamid 25a:0-1', 'answer': bad})
         c.write_text(json.dumps({**d, 'rows': rows}))
         with pytest.raises(SystemExit) as e:
-            b.biblical_cells('tamid')
+            b.judge_cells('tamid')
         assert 'Tamid 25a:0-1' in str(e.value)
 
 
@@ -106,7 +106,7 @@ def test_a_subset_claude_file_is_enough_for_the_site(tmp_path, monkeypatch):
     c = tmp_path / 'results/consensus/tamid/claude.json'
     d = json.loads(c.read_text())
     c.write_text(json.dumps({**d, 'rows': [r for r in d['rows'] if r['id'] == 'Tamid 25a:0-1']}))
-    assert b.biblical_cells('tamid') == {('Tamid 25a', 0), ('Tamid 25a', 1)}
+    assert b.judge_cells('tamid') == ({('Tamid 25a', 0), ('Tamid 25a', 1)}, set())
 
 
 def test_site_build_stops_on_a_red_gate_for_an_unreviewed_tractate(tmp_path, monkeypatch):
@@ -122,3 +122,26 @@ def test_site_build_stops_on_a_red_gate_for_an_unreviewed_tractate(tmp_path, mon
     with pytest.raises(SystemExit) as e:
         b.check_unreviewed_gates()
     assert 'tamid g3:run1' in str(e.value)
+
+
+def test_biblical_flags_and_ships_and_only_gemini_biblical_plus_claude_not_drops(tmp_path, monkeypatch):
+    """Simon 2026-11-10: biblical stories ship, flagged for Jeff's catalogue; a passage Gemini calls biblical and
+    Claude calls not a story is dropped."""
+    import build_site_data as b
+    build(tmp_path, slug='tamid')
+    monkeypatch.setattr(b, 'ROOT', tmp_path)
+    monkeypatch.setitem(b.SOURCES, 'tamid', b.unreviewed_source('tamid'))
+    c = tmp_path / 'results/consensus/tamid/claude.json'
+    d = json.loads(c.read_text())
+    for r in d['rows']:
+        if r['id'] == 'Tamid 25a:0-1':
+            r['answer'] = {'outcome': 'ok', 'verdict': 'not'}
+    c.write_text(json.dumps(d))
+    assert b.judge_cells('tamid') == (set(), {('Tamid 25a', 0), ('Tamid 25a', 1)})
+
+
+def test_site_reads_the_grade_from_before_the_biblical_actor_filter():
+    import build_site_data as b
+    s = {'classification': 'NOT_A_STORY', 'filtered_as_biblical': True, 'classification_pre_biblical_filter': 'YES'}
+    assert b.site_classification(s) == 'YES'
+    assert b.site_classification({'classification': 'BORDERLINE'}) == 'BORDERLINE'

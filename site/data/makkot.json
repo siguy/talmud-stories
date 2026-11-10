@@ -12,6 +12,7 @@
    "start_segment": 16,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -49,6 +50,7 @@
    "start_segment": 12,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -65,6 +67,45 @@
    "minutes": 2
   },
   {
+   "id": "makkot-11a-20-20",
+   "tractate": "makkot",
+   "ref": "Makkot 11a",
+   "refs": [
+    "Makkot 11a",
+    "Makkot 11b"
+   ],
+   "start_segment": 20,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Eli tells Samuel that God should punish him if he hides any part of the prophecy. The Gemara describes how Judah's bones rattled in his coffin for forty years due to his self-imposed ostracism until Moses prayed for him, allowing his body to rest and his soul to enter the heavenly academy.",
+   "segments": [
+    {
+     "ref": "Makkot 11a",
+     "i": 20,
+     "he": "אָמַר רַבִּי אֲבָהוּ: קִלְלַת חָכָם – אֲפִילּוּ עַל תְּנַאי הִיא בָּאָה. מְנָלַן? מֵעֵלִי, דְּקָאָמַר לֵיהּ [עֵלִי] לִשְׁמוּאֵל: ״כֹּה יַעֲשֶׂה לְּךָ אֱלֹהִים וְכֹה יוֹסִיף אִם תְּכַחֵד מִמֶּנִּי דָּבָר״. וְאַף עַל גַּב דִּכְתִיב: ״וַיַּגֶּד לוֹ שְׁמוּאֵל אֶת כׇּל הַדְּבָרִים וְלֹא כִחֵד מִמֶּנּוּ״, [וַאֲפִילּוּ הָכִי] כְּתִיב: ״וְלֹא הָלְכוּ בָנָיו בִּדְרָכָיו וְגוֹ׳״.",
+     "en": "The Gemara cites a similar statement: <b>Rabbi Abbahu says:</b> With regard to <b>the curse of a Sage, even</b> if it is stated <b>conditionally, it comes</b> to realization. <b>From where do we</b> derive this? It is derived <b>from</b> an incident involving <b>Eli</b> the High Priest, <b>as Eli said to Samuel,</b> after the latter had received a prophetic vision with regard to Eli, that his sons do not follow his path: <b>“Therefore may God do to you, and more also, if you hide any matter from me</b> of all the matters that He spoke unto you” (I Samuel 3:17). <b>And even though it is written</b> immediately thereafter: <b>“And Samuel told him all the matters, and did not hide from him”</b> (I Samuel 3:18), <b>it is written</b> at the time of Samuel’s death: <b>“And his sons did not follow in his ways”</b> (I Samuel 8:3), indicating that God did to Samuel as he prophesied with regard to Eli, and his own sons did not follow his path. Despite the fact that Eli stated the curse conditionally, Samuel was affected by the curse."
+    },
+    {
+     "ref": "Makkot 11b",
+     "i": 1,
+     "he": "כׇּל אוֹתָן אַרְבָּעִים שָׁנָה שֶׁהָיוּ יִשְׂרָאֵל בַּמִּדְבָּר, עַצְמוֹתָיו שֶׁל יְהוּדָה הָיוּ מְגוּלְגָּלִין בָּאָרוֹן, עַד שֶׁעָמַד מֹשֶׁה וּבִקֵּשׁ עָלָיו רַחֲמִים. אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, מִי גָּרַם לִרְאוּבֵן שֶׁיּוֹדֶה – יְהוּדָה, ״וְזֹאת לִיהוּדָה... שְׁמַע ה׳ קוֹל יְהוּדָה״.",
+     "en": "<b>Throughout those forty years that</b> the children of <b>Israel were in the wilderness, Judah’s bones were rattling in the coffin,</b> detached from one another, because the ostracism that he declared upon himself remained in effect, <b>until Moses stood and entreated</b> God to have <b>mercy upon him.</b> Moses <b>said before Him: Master of the Universe, who caused Reuben to confess</b> his sin with Bilhah? It was <b>Judah.</b> Judah’s confession to his sin with Tamar led Reuben to confess to his own sin. Moses continued: <b>“And this is for Judah…hear God, the voice of Judah”</b> (Deuteronomy 33:7)."
+    },
+    {
+     "ref": "Makkot 11b",
+     "i": 2,
+     "he": "עָאל אִיבְרֵיהּ לְשָׁפָא, לָא הֲוָה קָא מְעַיְּילִי לֵיהּ לִמְתִיבְתָּא דְּרָקִיעַ, ״וְאֶל עַמּוֹ תְּבִיאֶנּוּ״. לָא הֲוָה קָא יָדַע לְמִישְׁקַל וּמִיטְרַח בִּשְׁמַעְתָּא בַּהֲדֵי רַבָּנַן, ״יָדָיו רַב לוֹ״. לָא הֲוָה יָדַע לְפָרוֹקֵי קוּשְׁיָא, ״וְעֵזֶר מִצָּרָיו תִּהְיֶה״.",
+     "en": "At that point <b>his limbs entered</b> their designated <b>place [<i>leshafa</i>]</b> and no longer rattled, but the Heavenly court still <b>would not</b> allow <b>him</b> to <b>enter the heavenly academy.</b> Moses continued: <b>“And bring him to his people”</b> (Deuteronomy 33:7), so that he may join the other righteous people in Heaven. That request was also granted, but Judah <b>did not know</b> how <b>to engage in the give-and-take of <i>halakha</i> with the Sages</b> in the heavenly academy. Moses continued: <b>“His hands shall contend for him”</b> (Deuteronomy 33:7). That request was also granted, but Judah <b>did not know</b> how <b>to resolve</b> any <b>difficulty</b> raised to reject his opinion until Moses prayed: <b>“And You shall be a help against his adversaries”</b> (Deuteronomy 33:7)."
+    }
+   ],
+   "words": 394,
+   "minutes": 3
+  },
+  {
    "id": "makkot-16b-5-5",
    "tractate": "makkot",
    "ref": "Makkot 16b",
@@ -74,6 +115,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -99,6 +141,7 @@
    "start_segment": 6,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -125,6 +168,7 @@
    "start_segment": 32,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -156,6 +200,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,

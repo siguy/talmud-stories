@@ -53,12 +53,14 @@ DECISIONS = 'results/shas_run/decisions.json'   # Simon's rulings on red gates (
 
 
 def decisions(root):
-    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}) from Simon's rulings file."""
+    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}, {tractate: [unit ids hand-flagged
+    biblical]}) from Simon's rulings file."""
     p = Path(root) / DECISIONS
     if not p.exists():
-        return set(), {}
+        return set(), {}, {}
     d = json.loads(p.read_text())
-    return set(d['g4_accepted']['tractates']), d['claude_alone']['units']
+    return (set(d['g4_accepted']['tractates']), d['claude_alone']['units'],
+            d.get('biblical_flag', {}).get('units', {}))
 
 
 def claude_alone(P):

@@ -12,6 +12,7 @@
    "start_segment": 3,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -49,6 +50,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -80,6 +82,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -117,6 +120,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -142,6 +146,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -174,6 +179,7 @@
    "start_segment": 18,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -205,6 +211,7 @@
    "start_segment": 0,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -236,6 +243,7 @@
    "start_segment": 2,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -261,6 +269,7 @@
    "start_segment": 3,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -286,6 +295,7 @@
    "start_segment": 6,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -311,6 +321,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -336,6 +347,7 @@
    "start_segment": 8,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -361,6 +373,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -386,6 +399,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -423,6 +437,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -455,6 +470,7 @@
    "start_segment": 11,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -498,6 +514,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -523,6 +540,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -545,6 +563,57 @@
    "minutes": 2
   },
   {
+   "id": "sanhedrin-16a-18-20",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 16a",
+   "refs": [
+    "Sanhedrin 16a",
+    "Sanhedrin 16b"
+   ],
+   "start_segment": 18,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "The Gemara describes King David's nightly routine of Torah study triggered by a self-playing lyre, followed by a morning delegation of Sages who convince him to authorize military expansion to solve the nation's economic crisis.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 16a",
+     "i": 18,
+     "he": "אֶלָּא, כִּי הָא דְּאָמַר רַב אַחָא בַּר בִּיזְנָא אָמַר רַבִּי שִׁמְעוֹן חֲסִידָא: כִּנּוֹר הָיָה תָּלוּי לְמַעְלָה מִמִּטָּתוֹ שֶׁל דָּוִד. כֵּיוָן שֶׁהִגִּיעַ חֲצוֹת לַיְלָה, רוּחַ צְפוֹנִית מְנַשֶּׁבֶת בּוֹ וְהָיָה מְנַגֵּן מֵאֵלָיו. מִיָּד הָיָה דָּוִד עוֹמֵד וְעוֹסֵק בְּתוֹרָה עַד שֶׁעָלָה עַמּוּד הַשַּׁחַר. כֵּיוָן שֶׁעָלָה עַמּוּד הַשַּׁחַר, נִכְנְסוּ חַכְמֵי יִשְׂרָאֵל אֶצְלוֹ.",
+     "en": "<b>Rather,</b> the proof is <b>like that which Rav Aḥa bar Bizna says</b> that <b>Rabbi Shimon Ḥasida says: A lyre hung above David’s bed, and once midnight arrived, the northern</b> midnight <b>wind would blow on it and</b> cause the lyre to <b>play on its own. David would immediately rise</b> from his bed <b>and study Torah until the dawn arrived. Once dawn arrived, the Sages of Israel</b> would <b>enter to</b> advise <b>him</b> with regard to the various concerns of the nation and the economy."
+    },
+    {
+     "ref": "Sanhedrin 16a",
+     "i": 19,
+     "he": "אָמְרוּ לוֹ: אֲדוֹנֵינוּ הַמֶּלֶךְ, עַמְּךָ יִשְׂרָאֵל צְרִיכִין לְפַרְנָסָה. אָמַר לָהֶן: לְכוּ וְהִתְפַּרְנְסוּ זֶה מִזֶּה. אָמְרוּ לוֹ: אֵין הַקּוֹמֶץ מַשְׂבִּיעַ אֶת הָאֲרִי, וְאֵין הַבּוֹר מִתְמַלֵּא מֵחוּלְיָיתוֹ. אָמַר לָהֶם: לְכוּ פִּשְׁטוּ יְדֵיכֶם בִּגְדוּד.",
+     "en": "One time <b>they said to him: Our master the king, your nation, Israel, requires sustenance.</b> King David <b>said to them: Go and sustain one another,</b> i.e., provide each other with whatever is lacking. The Sages <b>said to him</b> in response, citing a parable: A single <b>handful [<i>hakometz</i>]</b> of food <b>does not satisfy a lion, and a cistern</b> will <b>not be filled</b> merely <b>from</b> the rain that falls directly into <b>its mouth,</b> but other water must be channeled in. So too, the nation cannot sustain itself using its own resources. King David then <b>told them: Go and take up arms with the troops</b> in battle in order to expand our borders and provide our people with the opportunity to earn a livelihood."
+    },
+    {
+     "ref": "Sanhedrin 16a",
+     "i": 20,
+     "he": "מִיָּד יוֹעֲצִין בַּאֲחִיתוֹפֶל, וְנִמְלָכִין בְּסַנְהֶדְרִין, וְשׁוֹאֲלִין בְּאוּרִים וְתוּמִּים. אָמַר רַב יוֹסֵף: מַאי קְרָא?",
+     "en": "The Sages <b>immediately sought advice from Ahithophel</b> to determine whether or not it was appropriate to go to war at that time and how they should conduct themselves; <b>and they consulted the Sanhedrin</b> in order to receive the requisite permission to wage a war under those circumstances; <b>and they asked the <i>Urim VeTummim</i></b> whether or not they should go to war, and whether or not they would be successful. <b>Rav Yosef says: What</b> is <b>the verse</b> from which this <i>aggada</i> is derived?"
+    },
+    {
+     "ref": "Sanhedrin 16b",
+     "i": 0,
+     "he": "״וְאַחֲרֵי אֲחִיתֹפֶל בְּנָיָהוּ בֶּן יְהוֹיָדָע וְאֶבְיָתָר וְשַׂר צָבָא לַמֶּלֶךְ יוֹאָב״. ״אֲחִיתוֹפֶל״ – זֶה יוֹעֵץ, וְכֵן הוּא אוֹמֵר: ״וַעֲצַת אֲחִיתֹפֶל אֲשֶׁר יָעַץ וְגוֹ׳״. וּ״בְנָיָהוּ בֶּן יְהוֹיָדָע״ – זוֹ סַנְהֶדְרִין. ״אֶבְיָתָר״ – אֵלּוּ אוּרִים וְתוּמִּים.",
+     "en": "It is: <b>And after Ahithophel was Benaiah, son of Jehoiada; and Ebiathar; and the general of the king’s army, Yoav</b> (see I Chronicles 27:34). The individuals named in this verse correspond to the roles in the <i>aggada</i> as follows: <b>Ahithophel is</b> the <b>advisor</b> whose counsel they sought first with regard to going to war, <b>and so it says: “Now the advice of Ahithophel, which he counseled</b> in those days, was like that of a man who inquires of the word of God; so was the counsel of Ahithophel both with David and with Absalom” (II Samuel 16:23). <b>And Benaiah, son of Jehoiada</b> corresponds to <b>the Sanhedrin,</b> since he was the head of the Sanhedrin, and <b>Ebiathar</b> corresponds to <b>the <i>Urim VeTummim</i>,</b> as Ebiathar, son of Ahimelech the priest would oversee inquiries directed to the <i>Urim VeTummim</i> (see I Samuel 23:9)."
+    },
+    {
+     "ref": "Sanhedrin 16b",
+     "i": 1,
+     "he": "וְכֵן הוּא אוֹמֵר: ״וּבְנָיָהוּ בֶּן יְהוֹיָדָע עַל הַכְּרֵתִי וְעַל הַפְּלֵתִי״. וְלָמָּה נִקְרָא שְׁמָן כְּרֵתִי וּפְלֵתִי? כְּרֵתִי – שֶׁכּוֹרְתִין דִּבְרֵיהֶן, וּפְלֵתִי – שֶׁמּוּפְלָאִין מַעֲשֵׂיהֶן. וְאַחַר כָּךְ ״שַׂר הַצָּבָא לַמֶּלֶךְ יוֹאָב״.",
+     "en": "<b>And so it says</b> with regard to the position of Benaiah, son of Jehoiada, as head of the Sanhedrin: <b>“And Benaiah, son of Jehoiada, was over the <i>Kereti</i> and over the <i>Peleti</i>”</b> (II Samuel 20:23). <b>And why was</b> the Sanhedrin <b>called <i>Kereti</i> and <i>Peleti</i>?</b> It was called <b><i>Kereti</i></b> because <b>they were decisive [<i>shekoretin</i>] in their pronouncements.</b> It was called <b><i>Peleti</i></b> because <b>their actions</b> and wisdom <b>were wondrous [<i>shemufla’in</i>],</b> as <i>Peleti</i> and <i>mufla’in</i> share the same root. According to the order of the verse, upon being instructed by King David to go to war, the Sages first consulted with Ahithophel, then with the Sanhedrin, and then they would ask the <i>Urim VeTummim</i>; <b>and</b> only <b>thereafter</b> was <b>the general of the king’s army, Yoav,</b> given the command to ready the army for battle."
+    }
+   ],
+   "words": 566,
+   "minutes": 4
+  },
+  {
    "id": "sanhedrin-19a-9-9",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 19a",
@@ -554,6 +623,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -580,6 +650,7 @@
    "start_segment": 15,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -618,6 +689,7 @@
    "start_segment": 23,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -655,6 +727,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -743,6 +816,75 @@
    "minutes": 7
   },
   {
+   "id": "sanhedrin-26a-20-26",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 26a",
+   "refs": [
+    "Sanhedrin 26a",
+    "Sanhedrin 26b"
+   ],
+   "start_segment": 20,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "The wicked minister Shebna attempts to betray King Hezekiah to Sennacherib, but through prophetic intervention and divine punishment, his conspiracy is thwarted and he meets a gruesome end. The Assyrians, realizing Shebna's promised support has failed, torture and kill him by dragging him behind their horses.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 20,
+     "he": "מַאי קֶשֶׁר רְשָׁעִים? שֶׁבְנָא הֲוָה דָּרֵישׁ בִּתְלֵיסַר רִבְּוָותָא, חִזְקִיָּה הֲוָה דָּרֵישׁ בְּחַד סַר רִבְּוָותָא.",
+     "en": "§ The Gemara asks: <b>What</b> is the source of the <i>halakha</i> that <b>a conspiracy of wicked people</b> is not counted as part of a group? The Gemara answers: <b>Shebna,</b> a steward and a minister in King Hezekiah’s court, was a prominent and influential figure. <b>He would teach</b> Torah <b>to</b> an audience of <b>130,000</b> followers, whereas King <b>Hezekiah would teach</b> Torah <b>to</b> an audience of merely <b>110,000</b> followers."
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 21,
+     "he": "כִּי אֲתָא סַנְחֵרִיב וְצַר עֲלַהּ דִּירוּשְׁלֶם, כְּתַב שֶׁבְנָא פִּתְקָא שְׁדָא בְּגִירָא: ״שֶׁבְנָא וְסִיעָתוֹ הִשְׁלִימוּ, חִזְקִיָּה וְסִיעָתוֹ לֹא הִשְׁלִימוּ״. שֶׁנֶּאֱמַר: ״כִּי הִנֵּה הָרְשָׁעִים יִדְרְכוּן קֶשֶׁת כּוֹנְנוּ חִצָּם עַל יֶתֶר״.",
+     "en": "<b>When Sennacherib came and besieged Jerusalem, Shebna wrote a note and shot</b> it over the wall <b>with an arrow.</b> It read: <b>Shebna and his camp have appeased</b> Sennacherib and are ready to surrender; <b>Hezekiah and his camp have not appeased</b> Sennacherib. <b>As it is stated</b> in allusion to this incident: <b>“For behold, the wicked bend the bow, they have made ready their arrow upon the string”</b> (Psalms 11:2)."
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 22,
+     "he": "הֲוָה קָא מִסְתְּפֵי חִזְקִיָּה, אֲמַר: דִּילְמָא חַס וְשָׁלוֹם נָטְיָה דַּעְתֵּיהּ דְּקוּדְשָׁא בְּרִיךְ הוּא בָּתַר רוּבָּא, כֵּיוָן דְּרוּבָּא מִימַּסְרִי אִינְהוּ נָמֵי מִימַּסְרִי. בָּא נָבִיא וְאָמַר לוֹ: ״לֹא תֹאמְרוּן קֶשֶׁר לְכֹל אֲשֶׁר יֹאמַר הָעָם הַזֶּה קָשֶׁר״, כְּלוֹמַר, קֶשֶׁר רְשָׁעִים הוּא, וְקֶשֶׁר רְשָׁעִים אֵינוֹ מִן הַמִּנְיָן.",
+     "en": "<b>Hezekiah was afraid. He said: Perhaps, God forbid, the opinion of the Holy One, Blessed be He, will follow the majority;</b> and <b>since the majority have submitted</b> to the Assyrians, even <b>those</b> who have not submitted <b>will also be submitted</b> into their hands. <b>The prophet</b> Isaiah then <b>came and said to him: “Say not: A conspiracy, concerning all of which this people say: A conspiracy”</b> (Isaiah 8:12). <b>Meaning, it is a conspiracy of wicked people, and a conspiracy of wicked people is not counted.</b> Therefore, although they are many, they are not considered the majority."
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 23,
+     "he": "הָלַךְ לַחְצֹב לוֹ קֶבֶר בְּקִבְרֵי בֵּית דָּוִד. בָּא נָבִיא וְאָמַר לוֹ: ״מָה לְּךָ פֹה וּמִי לְךָ פֹה כִּי חָצַבְתָּ לְּךָ פֹּה קָבֶר... הִנֵּה ה׳ מְטַלְטֶלְךָ טַלְטֵלָה גָּבֶר״.",
+     "en": "Shebna <b>went to carve out a grave for himself among the graves of the house of David,</b> as he thought that the kingship would be given to him. <b>The prophet</b> Isaiah then <b>came and said to him: “What have you here, and whom have you here, that you have carved out a grave for yourself here?</b> You, who have carved yourself out a grave on high, and hollowed a habitation for yourself in the rock? <b>Behold, the Lord will make you wander like the wandering of a man;</b> and he will wind you round and round” (Isaiah 22:16–17)."
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 24,
+     "he": "אָמַר רַב: טִלְטוּלָא דְּגַבְרָא קָשֵׁי מִדְּאִיתְּתָא.",
+     "en": "The Gemara mentions tangentially: <b>Rav says</b> that <b>the wandering of a man is more difficult than that of a woman.</b> He derives it from the expression “like the wandering of a man.”"
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 25,
+     "he": "״וְעֹטְךָ עָטֹה״ – אָמַר רַבִּי יוֹסֵי בְּרַבִּי חֲנִינָא: מְלַמֵּד שֶׁפָּרְחָה בּוֹ צָרַעַת. כְּתִיב הָכָא ״וְעֹטְךָ עָטֹה״, וּכְתִיב הָתָם ״וְעַל שָׂפָם יַעְטֶה״.",
+     "en": "With regard to the phrase: <b>“And he will wind you round and round,” Rabbi Yosei, son of Rabbi Ḥanina, says:</b> This <b>teaches that</b> Shebna <b>developed leprosy; it is written here: “And he will wind you round and round [<i>ve’otkha ato</i>],” and it is written there,</b> in the Torah, with regard to a leper: “And the leper in whom the plague is, his clothes shall be torn, and the hair of his head shall go loose, <b>and he shall cover his upper lip [<i>ya’te</i>]”</b> (Leviticus 13:45). The Hebrew word for upper lip is from the same root as the verb in the verse cited from Isaiah."
+    },
+    {
+     "ref": "Sanhedrin 26a",
+     "i": 26,
+     "he": "״צָנוֹף יִצְנׇפְךָ צְנֵפָה כַּדּוּר אֶל אֶרֶץ רַחֲבַת יָדָיִם וְגוֹ׳״. תָּנָא: הוּא בִּיקֵּשׁ קְלוֹן בֵּית אֲדֹנָיו, לְפִיכָךְ נֶהְפַּךְ כְּבוֹדוֹ לְקָלוֹן. כִּי הֲוָה נָפֵיק אִיהוּ, אֲתָא גַּבְרִיאֵל אַחְדֵּיהּ לְדַשָּׁא בְּאַפֵּי מַשְׁרְיָיתֵיהּ.",
+     "en": "The Gemara continues to interpret the prophecy about Shebna: <b>“He will violently roll and toss you like a ball into a large country;</b> there you shall die, and there shall be the chariots of your glory, you shame of your lord’s house” (Isaiah 22:18). A <i>baraita</i> <b>taught: He,</b> Shebna, <b>desired shame for his master’s house; therefore his glory turned to shame.</b> This is what happened to him: <b>When he was going out</b> of the gate of Jerusalem to submit to the Assyrians, the angel <b>Gabriel came</b> and <b>held the gate in front of his camp</b> so they could not follow him. Consequently, he went out by himself."
+    },
+    {
+     "ref": "Sanhedrin 26b",
+     "i": 0,
+     "he": "אֲמַרוּ לֵיהּ: מַשְׁירְיָיתָךְ הֵיכָא? אֲמַר: הֲדַרוּ בִּי. אֲמַרוּ לֵיהּ: אִם כֵּן, אַחוֹכֵי קָא מַחְיְיכַתְּ בַּן! נְקָבוּהוּ בַּעֲקָבָיו וּתְלָאוּהוּ בְּזַנְבֵי סוּסֵיהֶם, וְהָיוּ מְגָרְרִין אוֹתוֹ עַל הַקּוֹצִים וְעַל הַבַּרְקָנִין.",
+     "en": "The Assyrians <b>said to him: Where is your camp?</b> Shebna <b>said: They backed out on me. They said to him: If so, you are mocking us;</b> you led us to believe that behind you stands a large camp of supporters. <b>They punched holes in his heels and hung him by the tails of their horses, and dragged him on the thorns and on the bristles.</b>"
+    }
+   ],
+   "words": 641,
+   "minutes": 5
+  },
+  {
    "id": "sanhedrin-26b-26-28",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 26b",
@@ -752,6 +894,7 @@
    "start_segment": 26,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -790,6 +933,7 @@
    "start_segment": 20,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -870,6 +1014,7 @@
    "start_segment": 31,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -913,6 +1058,7 @@
    "start_segment": 18,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -963,6 +1109,7 @@
    "start_segment": 27,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1006,6 +1153,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1044,6 +1192,7 @@
    "start_segment": 21,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1099,6 +1248,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1148,6 +1298,7 @@
    "start_segment": 10,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1173,6 +1324,7 @@
    "start_segment": 23,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1205,6 +1357,7 @@
    "start_segment": 25,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1272,6 +1425,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1303,6 +1457,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1328,6 +1483,7 @@
    "start_segment": 2,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1353,6 +1509,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1375,6 +1532,32 @@
    "minutes": 2
   },
   {
+   "id": "sanhedrin-38b-4-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 38b",
+   "refs": [
+    "Sanhedrin 38b"
+   ],
+   "start_segment": 4,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "When God consulted groups of angels about creating man, He incinerated the first two groups who objected before the third group agreed to remain silent.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 38b",
+     "i": 4,
+     "he": "אָמְרוּ לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, ״מָה אֱנוֹשׁ כִּי תִזְכְּרֶנּוּ וּבֶן אָדָם כִּי תִפְקְדֶנּוּ״? הוֹשִׁיט אֶצְבָּעוֹ קְטַנָּה בֵּינֵיהֶן וּשְׂרָפָם. וְכֵן כַּת שְׁנִיָּה. כַּת שְׁלִישִׁית אָמְרוּ לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, רִאשׁוֹנִים שֶׁאָמְרוּ לְפָנֶיךָ מָה הוֹעִילוּ? כָּל הָעוֹלָם כּוּלּוֹ שֶׁלְּךָ הוּא. כׇּל מָה שֶׁאַתָּה רוֹצֶה לַעֲשׂוֹת בְּעוֹלָמְךָ – עֲשֵׂה.",
+     "en": "The angels <b>said before him: Master of the Universe: “What is man that You are mindful of him? And the son of man that You think of him?”</b> (Psalms 8:5), i.e., a creature such as this is not worth creating. God <b>outstretched His small finger among them and burned them</b> with fire. <b>And the same</b> occurred with <b>a second group</b> of angels. The <b>third group</b> of angels that He asked <b>said before Him: Master of the Universe, the first</b> two groups <b>who spoke</b> their mind <b>before You, what did they accomplish? The entire world is Yours; whatever You wish to do in Your world, do.</b> God then created the first person."
+    }
+   ],
+   "words": 111,
+   "minutes": 1
+  },
+  {
    "id": "sanhedrin-38b-17-17",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 38b",
@@ -1384,6 +1567,7 @@
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1409,6 +1593,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1440,6 +1625,7 @@
    "start_segment": 4,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1471,6 +1657,7 @@
    "start_segment": 6,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1496,6 +1683,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1521,6 +1709,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1537,6 +1726,32 @@
    "minutes": 1
   },
   {
+   "id": "sanhedrin-39b-4-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 39b",
+   "refs": [
+    "Sanhedrin 39b"
+   ],
+   "start_segment": 4,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "During the splitting of the Red Sea, the ministering angels wanted to sing praise, but God stopped them because the Egyptians were drowning.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 39b",
+     "i": 4,
+     "he": "דְּאָמַר רַבִּי שְׁמוּאֵל בַּר נַחְמָן אָמַר רַבִּי יוֹנָתָן: מַאי דִּכְתִיב ״וְלֹא קָרַב זֶה אֶל זֶה כׇּל הַלָּיְלָה״? בְּאוֹתָהּ שָׁעָה בִּקְּשׁוּ מַלְאֲכֵי הַשָּׁרֵת לוֹמַר שִׁירָה לִפְנֵי הַקָּדוֹשׁ בָּרוּךְ הוּא. אָמַר לָהֶן הַקָּדוֹשׁ בָּרוּךְ הוּא: מַעֲשֵׂה יָדַי טוֹבְעִין בַּיָּם וְאַתֶּם אוֹמְרִים שִׁירָה לְפָנַי?",
+     "en": "The Gemara comments: <b>As Rabbi Shmuel bar Naḥman says</b> that <b>Rabbi Yonatan says: What</b> is the meaning of that <b>which is written</b> in the passage describing the splitting of the Red Sea: <b>“And the one came not near the other all the night”</b> (Exodus 14:20)? <b>At that time the ministering angels desired to recite a song before the Holy One, Blessed be He. The Holy One, Blessed be He, said to them: My handiwork,</b> i.e., the Egyptians, <b>are drowning in the sea, and you are reciting a song before Me?</b> Apparently, God is not gladdened by the downfall of the wicked."
+    }
+   ],
+   "words": 101,
+   "minutes": 1
+  },
+  {
    "id": "sanhedrin-43a-19-19",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 43a",
@@ -1546,6 +1761,7 @@
    "start_segment": 19,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1571,6 +1787,7 @@
    "start_segment": 21,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1611,6 +1828,51 @@
    "minutes": 3
   },
   {
+   "id": "sanhedrin-44a-18-19",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 44a",
+   "refs": [
+    "Sanhedrin 44a",
+    "Sanhedrin 44b"
+   ],
+   "start_segment": 18,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Joshua encounters an angel near Jericho, challenges him, and upon learning his identity, bows down to receive a rebuke regarding the neglect of Torah and sacrifices.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 44a",
+     "i": 18,
+     "he": "״וַיְהִי בִּהְיוֹת יְהוֹשֻׁעַ בִּירִיחוֹ וַיִּשָּׂא עֵינָיו וַיַּרְא וְגוֹ׳ וַיֹּאמֶר לֹא כִּי אֲנִי שַׂר צְבָא ה׳ עַתָּה בָאתִי [וַיִּפֹּל יְהוֹשֻׁעַ אֶל פָּנָיו אַרְצָה וַיִּשְׁתָּחוּ]״. הֵיכִי עָבֵיד הָכִי? וְהָאָמַר רַבִּי יוֹחָנָן: אָסוּר לוֹ לְאָדָם שֶׁיִּתֵּן שָׁלוֹם לַחֲבֵירוֹ בַּלַּיְלָה, חָיְישִׁינַן שֶׁמָּא שֵׁד הוּא!",
+     "en": "The verse states: <b>“And it came to pass when Joshua was by Jericho that he lifted up his eyes and looked,</b> and, behold, a man stood over against him with his sword drawn in his hand: And Joshua went to him and said to him, Are you for us or for our adversaries? <b>And he said: No, but I am captain of the host of the Lord; I have now come. And Joshua fell on his face to the earth, and bowed down”</b> (Joshua 5:13–14). The Gemara asks: <b>How could</b> Joshua <b>do so,</b> bowing down to a stranger at night? <b>But doesn’t Rabbi Yoḥanan say:</b> It is <b>prohibited for a person to greet another</b> whom he does not recognize <b>at night,</b> as <b>we are concerned that perhaps</b> the one he doesn’t recognize <b>is a demon?</b> Why was Joshua not concerned about this possibility?"
+    },
+    {
+     "ref": "Sanhedrin 44a",
+     "i": 19,
+     "he": "שָׁאנֵי הָתָם, דְּקָאָמַר לֵיהּ: ״אֲנִי שַׂר צְבָא ה׳ עַתָּה בָאתִי וְגוֹ׳״. וְדִילְמָא מְשַׁקְּרִי? גְּמִירִי דְּלָא מַפְּקִי שֵׁם שָׁמַיִם לְבַטָּלָה.",
+     "en": "The Gemara answers: <b>It is different there, as</b> the stranger <b>said to</b> Joshua: <b>“I am captain of the host of the Lord; I have now come.”</b> The Gemara asks: <b>But perhaps</b> he was in fact a demon and <b>he was lying?</b> The Gemara answers: It <b>is learned</b> as a tradition <b>that</b> demons <b>do not utter the name of Heaven in vain,</b> and since this figure mentioned the name of Heaven, he must have been speaking the truth."
+    },
+    {
+     "ref": "Sanhedrin 44b",
+     "i": 0,
+     "he": "אֲמַר לֵיהּ: אֶמֶשׁ בִּיטַּלְתֶּם תָּמִיד שֶׁל בֵּין הָעַרְבַּיִם, וְעַכְשָׁיו בִּיטַּלְתֶּם תַּלְמוּד תּוֹרָה. עַל אֵיזֶה מֵהֶן בָּאתָ? אֲמַר לֵיהּ: ״עַתָּה בָּאתִי״.",
+     "en": "The Gemara understands the words of the angel that Joshua encountered as a rebuke for some offense Joshua committed: The angel <b>said to</b> Joshua: <b>Yesterday,</b> in the afternoon, <b>you neglected</b> sacrificing <b>the daily afternoon offering</b> because you were engaged in warfare, <b>and now,</b> when it is dark, <b>you neglected Torah study.</b> Joshua asked him: <b>For which of</b> these sins <b>have you come</b> to reprove me? The angel <b>said to him: “I have now come,”</b> i.e., the fact that I did not come before, but waited until now, when it is dark, indicates that the sin of neglecting Torah study is the more severe one."
+    },
+    {
+     "ref": "Sanhedrin 44b",
+     "i": 1,
+     "he": "מִיָּד ״וַיָּלֶן יְהוֹשֻׁעַ בַּלַּיְלָה הַהוּא בְּתוֹךְ הָעֵמֶק״, וְאָמַר רַבִּי יוֹחָנָן: מְלַמֵּד שֶׁלָּן בְּעוּמְקָהּ שֶׁל הֲלָכָה.",
+     "en": "Joshua <b>immediately</b> acted to rectify the matter by deciding that he must devote more time to Torah study, as it is stated: <b>“And Joshua lodged that night”</b> (Joshua 8:9) <b>“into the midst of the valley [<i>ha’emek</i>]”</b> (Joshua 8:13). <b>And Rabbi Yoḥanan says:</b> This <b>teaches that he lodged</b> all night <b>in the depth [<i>be’omekah</i>] of <i>halakha</i>,</b> thereby atoning for his previous neglect of Torah study."
+    }
+   ],
+   "words": 393,
+   "minutes": 3
+  },
+  {
    "id": "sanhedrin-44b-10-10",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 44b",
@@ -1620,6 +1882,7 @@
    "start_segment": 10,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1645,6 +1908,7 @@
    "start_segment": 11,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1661,29 +1925,30 @@
    "minutes": 1
   },
   {
-   "id": "sanhedrin-47a-0-0",
+   "id": "sanhedrin-48b-12-12",
    "tractate": "sanhedrin",
-   "ref": "Sanhedrin 47a",
+   "ref": "Sanhedrin 48b",
    "refs": [
-    "Sanhedrin 47a"
+    "Sanhedrin 48b"
    ],
-   "start_segment": 0,
+   "start_segment": 12,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
-   "summary": "King Hezekiah intentionally disgraced his father Ahaz's remains by dragging them on ropes to secure him spiritual atonement.",
+   "summary": "Joab refuses to leave the sanctuary when Solomon sends Benaiah to execute him, leading to a negotiation over the consequences of his death.",
    "segments": [
     {
-     "ref": "Sanhedrin 47a",
-     "i": 0,
-     "he": "תָּא שְׁמַע: ״נִבְזֶה בְּעֵינָיו נִמְאָס״ – זֶה חִזְקִיָּהוּ מֶלֶךְ יְהוּדָה, שֶׁגֵּירַר עַצְמוֹת אָבִיו עַל מִטָּה שֶׁל חֲבָלִים. וְאִי מִשּׁוּם יְקָרָא דְחַיֵּי הוּא, מַאי טַעְמָא?",
-     "en": "The Gemara suggests: <b>Come</b> and <b>hear</b> a proof from what was taught with regard to the verse: <b>“In his eyes a vile person is despised,</b> but he honors them that fear the Lord” (Psalms 15:4). <b>This</b> is referring to <b>Hezekiah, king of Judea, who dragged the bones of his father,</b> Ahaz, <b>on a bier</b> made <b>of ropes,</b> and he did not bury Ahaz in a manner befitting a king in order to disgrace him for his sinful conduct. <b>And if</b> the eulogy and other funeral rites are meant <b>to honor the living, what is the reason</b> that he acted this way, in a manner that brought disgrace upon himself and all of the Jewish people?"
+     "ref": "Sanhedrin 48b",
+     "i": 12,
+     "he": "״וַיָּשֶׁב בְּנָיָהוּ אֶת הַמֶּלֶךְ דָּבָר לֵאמֹר כֹּה דִבֶּר יוֹאָב וְכֹה עָנָנִי״. אֲמַר לֵיהּ: זִיל אֵימָא לֵיהּ: תַּרְתֵּי לָא תַּעֲבֵיד בְּהַאי גַּבְרָא. אִי קָטְלַתְּ לֵיהּ, קַבֵּול לָטוּתֵיהּ דְּלַטְיֵיהּ אֲבוּךְ. וְאִי לָא, שִׁבְקֵיהּ דְּלֵיקוּ בְּלָטוּתֵיהּ דְּלַטְיֵיהּ אֲבוּךְ. ״וַיֹּאמֶר לוֹ הַמֶּלֶךְ עֲשֵׂה כַּאֲשֶׁר דִּבֶּר וּפְגַע בּוֹ וּקְבַרְתּוֹ״.",
+     "en": "§ The Gemara continues to discuss the incident involving Joab. After Joab took refuge in the Sanctuary and King Solomon sent Benaiah, son of Jehoiada, to fall upon him, Benaiah ordered Joab to leave the sanctuary, whereupon Joab refused. The verse then states: <b>“And Benaiah brought the king word back, saying: So said Joab, and so he answered me”</b> (I Kings 2:30). The Gemara explains: Joab <b>said to him: Go and say to</b> Solomon: <b>You cannot perform two</b> actions <b>to this man,</b> i.e., to me, Joab. <b>If you kill him,</b> i.e., me, <b>you</b> and your descendants <b>will receive the curses with which your father cursed me. And if</b> you do <b>not</b> wish to receive those curses, <b>let him go so that he may receive the curses with which your father cursed him.</b> And the next verse states: <b>“And the king said to him: Do as he has said, and fall upon him, and bury him.”</b> Solomon thereby accepted his father’s curses upon himself and his descendants."
     }
    ],
-   "words": 115,
-   "minutes": 1
+   "words": 166,
+   "minutes": 2
   },
   {
    "id": "sanhedrin-52b-1-2",
@@ -1695,6 +1960,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1726,6 +1992,7 @@
    "start_segment": 3,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1751,6 +2018,7 @@
    "start_segment": 22,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1767,6 +2035,107 @@
    "minutes": 1
   },
   {
+   "id": "sanhedrin-63b-21-22",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 63b",
+   "refs": [
+    "Sanhedrin 63b",
+    "Sanhedrin 64a"
+   ],
+   "start_segment": 21,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Elijah finds a starving child in Jerusalem and offers to save him if he says a prayer to God, but the child refuses. A starving child in Jerusalem refuses Elijah's help to avoid mentioning God's name and dies while embracing his idol.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 63b",
+     "i": 21,
+     "he": "תָּא שְׁמַע: ״וְנָתַתִּי פִּגְרֵיכֶם עַל פִּגְרֵי גִּלּוּלֵיכֶם״. אָמַר: אֵלִיָּהוּ הַצַּדִּיק הָיָה מְחַזֵּר עַל תְּפוּחֵי רָעָב שֶׁבִּירוּשָׁלַיִם. פַּעַם אַחַת מָצָא תִּינוֹק שֶׁהָיָה תָּפוּחַ וּמוּטָל בָּאַשְׁפָּה.",
+     "en": "The Gemara suggests: <b>Come</b> and <b>hear</b> a proof that the Jewish people engaged in idol worship for its own sake and not for the sake of engaging in forbidden sexual relations: In interpretation of the verse: <b>“And I shall cast your carcasses upon the carcasses of your idols”</b> (Leviticus 26:30), the Sages <b>say</b> that <b>Elijah the Righteous,</b> the prophet, <b>would search for those who were swollen with hunger in Jerusalem. He once found a child who was swollen</b> with hunger <b>and lying in the garbage.</b>"
+    },
+    {
+     "ref": "Sanhedrin 63b",
+     "i": 22,
+     "he": "אָמַר לוֹ: מֵאֵיזֶה מִשְׁפָּחָה אַתָּה? אָמַר לוֹ: מִמִּשְׁפָּחָה פְּלוֹנִית אֲנִי. אָמַר לוֹ: כְּלוּם נִשְׁתַּיֵּיר מֵאוֹתָהּ מִשְׁפָּחָה? אָמַר לוֹ: לָאו, חוּץ מִמֶּנִּי. אָמַר לוֹ: אִם אֲנִי מְלַמֶּדְךָ דָּבָר שֶׁאַתָּה חַי בּוֹ, אַתָּה לָמֵד? אָמַר לוֹ: הֵן. אָמַר לוֹ: אֱמוֹר בְּכׇל יוֹם ״שְׁמַע יִשְׂרָאֵל ה׳ אֱלֹהֵינוּ ה׳ אֶחָד״. אָמַר לוֹ:",
+     "en": "Elijah <b>said to</b> the child: <b>From which family are you?</b> The child <b>said to him: I am from such and such family.</b> Elijah <b>said to him: Isn’t</b> there anyone <b>left from that family?</b> The child <b>said to him: No</b> one is left <b>besides me.</b> Elijah <b>said to him: If I teach you something through which you will live, will you learn</b> it? The child <b>said to him: Yes.</b> Elijah <b>said to him: Say every day “Listen Israel, the Lord is our God; the Lord is One”</b> (Deuteronomy 6:4). The child <b>said to him:</b>"
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 0,
+     "he": "הַס, שֶׁלֹּא לְהַזְכִּיר בְּשֵׁם ה׳, שֶׁלֹּא לִימְּדוֹ אָבִיו וְאִמּוֹ.",
+     "en": "<b>Hush, so as not to mention the name of the Lord</b> (see Amos 6:10). The child did not want to even hear the mention of the name of the Lord, <b>which his father and his mother did not teach him.</b>"
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 1,
+     "he": "מִיָּד הוֹצִיא יִרְאָתוֹ מֵחֵיקוֹ, וּמְחַבְּקָהּ וּמְנַשְּׁקָהּ, עַד שֶׁנִּבְקְעָה כְּרֵיסוֹ וְנָפְלָה יִרְאָתוֹ לָאָרֶץ, וְנָפַל הוּא עָלֶיהָ, לְקַיֵּים מַה שֶׁנֶּאֱמַר: ״וְנָתַתִּי אֶת פִּגְרֵיכֶם עַל פִּגְרֵי גִּלּוּלֵיכֶם״. בָּתַר דַּאֲבִיקוּ בֵּיהּ.",
+     "en": "<b>Immediately,</b> the child <b>removed his god from his bosom and</b> began <b>hugging it and kissing it, until his stomach burst</b> from hunger, <b>and his god fell to the earth and he fell upon it, in fulfillment of that</b> which <b>is stated: “And I shall cast your carcasses upon the carcasses of your idols”</b> (Leviticus 26:30). This incident demonstrates that the Jewish people engaged in idol worship for its own sake. The Gemara answers: This also occurred <b>after</b> the Jewish people <b>became attached to</b> idol worship."
+    }
+   ],
+   "words": 303,
+   "minutes": 3
+  },
+  {
+   "id": "sanhedrin-64a-3-8",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 64a",
+   "refs": [
+    "Sanhedrin 64a"
+   ],
+   "start_segment": 3,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "The Sages of the Second Temple period capture and neutralize the personified evil inclinations for idolatry and sexual immorality.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 3,
+     "he": "יְתַבוּ תְּלָתָא יוֹמֵי בְּתַעֲנִיתָא, בָּעוּ רַחֲמֵי. נְפַל לְהוּ פִּיתְקָא מֵרְקִיעָא דַּהֲוָה כְּתִיב בַּהּ: ״אֱמֶת״.",
+     "en": "The Gemara continues to relate the story of the prayer in the days of Nehemiah: The people <b>fasted for three days</b> and <b>prayed for mercy.</b> In response to their prayer <b>a note fell for them from the heavens in which was written: Truth,</b> indicating that God accepted their request."
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 4,
+     "he": "אָמַר רַבִּי חֲנִינָא: שְׁמַע מִינַּהּ, חוֹתָמוֹ שֶׁל הַקָּדוֹשׁ בָּרוּךְ הוּא ׳אֱמֶת׳.",
+     "en": "The Gemara makes a parenthetical observation. <b>Rabbi Ḥanina says: Conclude from it</b> that <b>the seal of the Holy One, Blessed be He, is truth.</b>"
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 5,
+     "he": "נְפַק כְּגוּרְיָא דְנוּרָא מִבֵּית קָדְשֵׁי הַקֳּדָשִׁים. אֲמַר לְהוּ נָבִיא לְיִשְׂרָאֵל: הַיְינוּ יִצְרָא דַּעֲבוֹדָה זָרָה. בַּהֲדֵי דְּקָתָפְסִי לֵיהּ, אִישְׁתְּמִיט בִּינִיתָא מִינֵּיהּ, וַאֲזַל קָלֵיהּ בְּאַרְבַּע מְאָה פַּרְסֵי. אָמְרוּ: הֵיכִי נֶיעְבֵּד? דִּילְמָא מִשְּׁמַיָּא מְרַחֲמִי עֲלֵיהּ.",
+     "en": "<b>The form of a fiery lion cub came forth from the chamber of the Holy of Holies.</b> Zechariah, <b>the prophet, said to the Jewish people: This is the</b> evil <b>inclination for idol worship. When they caught hold of it one of its hairs fell out, and</b> it let out a shriek of pain that <b>was heard for four hundred parasangs [<i>parsei</i>]. They said: What should we do</b> to kill it? <b>Perhaps Heaven will have mercy upon it</b> if we attempt to kill it, as it will certainly scream even more."
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 6,
+     "he": "אֲמַר לְהוּ נָבִיא: שַׁדְיוּהּ בְּדוּדָא דַאֲבָרָא, וְכַסְּיוּהּ בַּאֲבָרָא, דְּשָׁיֵיף קָלֵיהּ. דִּכְתִיב: ״וַיֹּאמֶר זֹאת הָרִשְׁעָה וַיַּשְׁלֵךְ אוֹתָהּ אֶל תּוֹךְ הָאֵיפָה וַיַּשְׁלֵךְ אֶת הָאֶבֶן הָעוֹפֶרֶת אֶל פִּיהָ״.",
+     "en": "<b>The prophet said to them: Throw it into a container</b> made <b>of lead and cover it with lead, as</b> lead <b>absorbs sound. As it is written: “And he said: This is the evil one. And he cast it down into the midst of the measure, and he cast a stone of lead upon its opening”</b> (Zechariah 5:8). They followed this advice and were freed of the evil inclination for idol worship."
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 7,
+     "he": "אָמְרִי: הוֹאִיל וְעֵת רָצוֹן הוּא, נִיבְעֵי רַחֲמֵי אַיִּצְרָא דַעֲבֵירָה. בְּעוֹ רַחֲמֵי, אִימְּסַר בִּידַיְיהוּ.",
+     "en": "When they saw that the evil inclination for idol worship was delivered into their hands as they requested, the Sages <b>said: Since it is an auspicious time, let us pray for mercy concerning the</b> evil <b>inclination for sin</b> concerning sexual matters. <b>They prayed for mercy, and it was</b> also <b>delivered into their hands.</b>"
+    },
+    {
+     "ref": "Sanhedrin 64a",
+     "i": 8,
+     "he": "חַבְשׁוּהּ תְּלָתָא יוֹמֵי. בְּעוֹ בֵּיעֲתָא בַּת יוֹמָא לְחוֹלֶה, וְלָא אַשְׁכַּחוּ. אֲמַרוּ: הֵיכִי נַעֲבֵיד? נִיבְעֵי פַּלְגָא? פַּלְגָא מֵרְקִיעָא לָא יָהֲבִי. כַּחְלִינְהוּ לְעֵינֵיהּ. אַהֲנִי בֵּיהּ דְּלָא מִיגָּרֵי אִינִישׁ בְּקָרִיבְתֵּיהּ.",
+     "en": "The Sages <b>imprisoned it for three days.</b> At that time, people <b>searched for a one-day-old</b> fresh <b>egg for the sick but could not find</b> one. Since the inclination to reproduce was quashed, the chickens stopped laying eggs. <b>They said: What should we do?</b> If <b>we pray for half,</b> i.e., that only half its power be annulled, nothing will be achieved, because <b>Heaven does not grant half</b> gifts, only whole gifts. What did they do? <b>They gouged</b> out <b>its eyes,</b> and this <b>was effective in</b> limiting <b>it</b> to the extent <b>that a person is no</b> longer <b>aroused to</b> commit incest with <b>his</b> close <b>relatives.</b>"
+    }
+   ],
+   "words": 392,
+   "minutes": 3
+  },
+  {
    "id": "sanhedrin-64a-9-9",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 64a",
@@ -1776,6 +2145,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1801,6 +2171,7 @@
    "start_segment": 12,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1826,6 +2197,7 @@
    "start_segment": 14,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1857,6 +2229,7 @@
    "start_segment": 10,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1888,6 +2261,7 @@
    "start_segment": 16,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1913,6 +2287,7 @@
    "start_segment": 16,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1938,6 +2313,7 @@
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1963,6 +2339,7 @@
    "start_segment": 18,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -1988,6 +2365,7 @@
    "start_segment": 0,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2067,6 +2445,7 @@
    "start_segment": 6,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2083,6 +2462,50 @@
    "minutes": 1
   },
   {
+   "id": "sanhedrin-70b-1-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 70b",
+   "refs": [
+    "Sanhedrin 70b"
+   ],
+   "start_segment": 1,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Bathsheba rebukes her son Solomon for his conduct by tying him to a pillar and reminding him of the vows and efforts she made to have a worthy son, leading to his repentance.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 70b",
+     "i": 1,
+     "he": "״דִּבְרֵי לְמוּאֵל מֶלֶךְ מַשָּׂא אֲשֶׁר יִסְּרַתּוּ אִמּוֹ״. אָמַר רַבִּי יוֹחָנָן מִשּׁוּם רַבִּי שִׁמְעוֹן בֶּן יוֹחַי: מְלַמֵּד שֶׁכְּפָאַתּוּ אִמּוֹ עַל הָעַמּוּד וְאָמְרָה לוֹ, ״מַה בְּרִי וּמַה בַּר בִּטְנִי וּמֶה בַּר נְדָרָי״. ״מַה בְּרִי״ – הַכֹּל יוֹדְעִים שֶׁאָבִיךְ יְרֵא שָׁמַיִם הֲוָה, עַכְשָׁיו יֹאמְרוּ אִמּוֹ גָּרְמָה לוֹ.",
+     "en": "§ The Gemara continues its discussion of wine. Referring to the verse that states: <b>“The words of King Lemuel, the burden with which his mother corrected him”</b> (Proverbs 31:1), <b>Rabbi Yoḥanan says in the name of Rabbi Shimon ben Yoḥai:</b> This <b>teaches that</b> when Solomon’s <b>mother</b> Bathsheba saw Solomon engaged in excessive drinking, she <b>bound him to a pillar</b> to have him flogged. <b>And she said to him: “What, my son? And what, son of my womb? And what, son of my vows?”</b> (Proverbs 31:2). She meant: <b>“What, my son?” Everyone knows that your father,</b> David, <b>was a God-fearing</b> man, and <b>now,</b> when they see you sin, <b>they will</b> all <b>say</b> that <b>his mother caused him</b> to drink, i.e., that you engage in these behaviors because you are my son."
+    },
+    {
+     "ref": "Sanhedrin 70b",
+     "i": 2,
+     "he": "״וּמַה בַּר בִּטְנִי״ – כׇּל הַנָּשִׁים שֶׁל בֵּית אָבִיךָ, כֵּיוָן שֶׁמִּתְעַבְּרוֹת, שׁוּב אֵינָן רוֹאוֹת פְּנֵי הַמֶּלֶךְ. וַאֲנִי דָּחַקְתִּי וְנִכְנַסְתִּי, כְּדֵי שֶׁיְּהֵא לִי בֵּן מְזוֹרָז וּמְלוּבָּן.",
+     "en": "<b>“And what, son of my womb?”</b> That is to say: With regard to <b>all of the women of your father’s house, once they conceive they no longer see the face of the king, but I pushed</b> myself in <b>and entered</b> the king’s chamber while I was pregnant, <b>so that I might have a son who is strong and fair-skinned.</b> There are times during a woman’s pregnancy when intercourse is beneficial for the development of the fetus. Bathsheba was telling Solomon: I did my utmost to ensure that you have extra strength and beauty, and now you use that strength and appeal to pursue drink."
+    },
+    {
+     "ref": "Sanhedrin 70b",
+     "i": 3,
+     "he": "״וּמָה בַּר נְדָרָי״ – כָּל נָשִׁים שֶׁל בֵּית אָבִיךָ הָיוּ נוֹדְרוֹת: ״יְהֵא לִי בֵּן הָגוּן לַמַּלְכוּת״, וַאֲנִי נָדַרְתִּי וְאָמַרְתִּי: ״יְהֵא לִי בֵּן זָרִיז וּמְמוּלָּא בַּתּוֹרָה וְהָגוּן לִנְבִיאוּת״.",
+     "en": "<b>“And what, son of my vows?”</b> That is to say: With regard to <b>all of</b> the <b>women of your father’s house, they would take vows</b> while they were pregnant, saying: <b>Let me have a son who is fit to be king. But I,</b> by contrast, <b>took a vow and said: Let me have a son who is diligent and filled with</b> knowledge of <b>the Torah and fit for prophecy.</b>"
+    },
+    {
+     "ref": "Sanhedrin 70b",
+     "i": 4,
+     "he": "״אַל לַמְלָכִים לְמוֹאֵל, אַל לַמְלָכִים שְׁתוֹ יָיִן״. ״אַל לַמְלָכִים״ – אָמְרָה לוֹ: מָה לְךָ אֵצֶל מְלָכִים שֶׁשּׁוֹתִים יַיִן וּמִשְׁתַּכְּרִים וְאוֹמְרִים לָמָּה לָנוּ אֵל? ״וּלְרוֹזְנִים אֵי שֵׁכָר״ – מִי שֶׁכׇּל רָזֵי עוֹלָם גְּלוּיִים לוֹ יִשְׁתֶּה יַיִן וְיִשְׁתַּכֵּר? אִיכָּא דְּאָמְרִי: מִי שֶׁכׇּל רוֹזְנֵי עוֹלָם מַשְׁכִּימִין לְפִתְחוֹ יִשְׁתֶּה יַיִן וְיִשְׁתַּכֵּר?",
+     "en": "It is further stated there: <b>“It is not for kings, O Lemoel, it is not for kings to drink wine;</b> nor for princes to say: Where is strong drink?” (Proverbs 31:4). The Gemara provides an explanation of the meaning of each part of this verse. <b>“It is not for kings”:</b> Bathsheba <b>said to</b> her son Solomon: <b>What have you to do with kings who drink wine and become intoxicated and say: Why [<i>lamma</i>] do we need God [<i>El</i>]?</b> The Gemara continues to explain the verse. <b>“Nor for princes [<i>rozenim</i>] to say: Where is strong drink?”</b> This means that <b>one</b> like Solomon, <b>to whom all the secrets [<i>razei</i>] of the world are revealed, should he drink wine and become intoxicated?</b> Alternatively, <b>there are</b> those <b>who say</b> that this part of the verse should be understood as follows: <b>One</b> like Solomon, <b>to whom all the princes of the world rise early</b> to come <b>to his door, should he drink wine and become intoxicated?</b>"
+    }
+   ],
+   "words": 472,
+   "minutes": 4
+  },
+  {
    "id": "sanhedrin-72a-13-13",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 72a",
@@ -2092,6 +2515,7 @@
    "start_segment": 13,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2117,6 +2541,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2142,6 +2567,7 @@
    "start_segment": 4,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2164,6 +2590,143 @@
    "minutes": 3
   },
   {
+   "id": "sanhedrin-82a-10-14",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 82a",
+   "refs": [
+    "Sanhedrin 82a",
+    "Sanhedrin 82b"
+   ],
+   "start_segment": 10,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Zimri publicly defies Moses by bringing a Midianite woman before him, leading Pinehas to intervene when Moses is unable to act. Pinehas executes Zimri and Cozbi through a ruse, presents their bodies to God to halt the plague, and is subsequently vindicated by God against the mockery of the tribes.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 82a",
+     "i": 10,
+     "he": "״וַיֹּאמֶר מֹשֶׁה אֶל שֹׁפְטֵי יִשְׂרָאֵל וְגוֹ׳״. הָלַךְ שִׁבְטוֹ שֶׁל שִׁמְעוֹן אֵצֶל זִמְרִי בֶּן סָלוּא, אָמְרוּ לוֹ: הֵן דָּנִין דִּינֵי נְפָשׁוֹת וְאַתָּה יוֹשֵׁב וְשׁוֹתֵק?! מָה עָשָׂה? עָמַד וְקִיבֵּץ עֶשְׂרִים וְאַרְבָּעָה אֶלֶף מִיִּשְׂרָאֵל וְהָלַךְ אֵצֶל כׇּזְבִּי. אֲמַר לַהּ: הִשָּׁמֵיעִי לִי. אָמְרָה לוֹ: בַּת מֶלֶךְ אֲנִי, וְכֵן צִוָּה לִי אָבִי: לֹא תִּשָּׁמְעִי אֶלָּא לַגָּדוֹל שֶׁבָּהֶם. אֲמַר לַהּ: אַף הוּא נְשִׂיא שֵׁבֶט הוּא, וְלָא עוֹד אֶלָּא שֶׁהוּא גָּדוֹל מִמֶּנּוּ, שֶׁהוּא שֵׁנִי לַבֶּטֶן וְהוּא שְׁלִישִׁי לַבֶּטֶן.",
+     "en": "It is stated: <b>“And Moses said to the judges of Israel:</b> Each of you shall slay his men who have adhered unto Ba’al-Peor” (Numbers 25:5). <b>The tribe of Simeon went to Zimri, son of Salu,</b> their leader, and <b>said to him: They are judging</b> cases of <b>capital law</b> and executing us <b>and you are sitting and are silent? What did</b> Zimri <b>do? He arose and gathered twenty-four thousand</b> people <b>from</b> the children of <b>Israel, and went to Cozbi,</b> daughter of Zur, princess of Midian, and <b>said to her: Submit to me</b> and engage in intercourse with me. <b>She said to him: I am the daughter of a king, and this</b> is what <b>my father commanded me: Submit only to the greatest of them.</b> Zimri <b>said to her: He, too,</b> referring to himself, <b>is the head of a tribe; moreover, he is greater than</b> Moses, <b>as he is the second of the womb,</b> as he descends from Simeon, the second son of Jacob, <b>and</b> Moses <b>is the third of the womb,</b> as he descends from Levi, the third son of Jacob."
+    },
+    {
+     "ref": "Sanhedrin 82a",
+     "i": 11,
+     "he": "תְּפָשָׂהּ בִּבְלוֹרִיתָהּ וֶהֱבִיאָהּ אֵצֶל מֹשֶׁה. אָמַר לוֹ: בֶּן עַמְרָם, זוֹ אֲסוּרָה אוֹ מוּתֶּרֶת? וְאִם תֹּאמַר אֲסוּרָה, בַּת יִתְרוֹ מִי הִתִּירָה לָךְ? נִתְעַלְּמָה מִמֶּנּוּ הֲלָכָה. גָּעוּ כּוּלָּם בִּבְכִיָּה, וְהַיְינוּ דִּכְתִיב: ״וְהֵמָּה בֹכִים פֶּתַח אֹהֶל מוֹעֵד״. וּכְתִיב: ״וַיַּרְא פִּנְחָס בֶּן אֶלְעָזָר״.",
+     "en": "<b>He seized her by her forelock and brought her before Moses.</b> Zimri <b>said to</b> Moses: <b>Son of Amram, is this</b> woman <b>forbidden or permitted? And if you say</b> that she <b>is forbidden,</b> as for <b>the daughter of Yitro</b> to whom you are married, <b>who permitted her to you? The <i>halakha</i></b> with regard to the proper course of action when encountering a Jewish man engaging in intercourse with a gentile woman <b>eluded</b> Moses. <b>All</b> of the members of the Sanhedrin <b>bawled in</b> their <b>weeping, and that is</b> the meaning of that <b>which is written: “And they are crying at the entrance of the Tent of Meeting”</b> (Numbers 25:6). <b>And it is written</b> thereafter: <b>“And Pinehas, son of Elazar,</b> son of Aaron the priest, <b>saw</b> and arose from the midst of the congregation and took a spear in his hand” (Numbers 25:7)."
+    },
+    {
+     "ref": "Sanhedrin 82a",
+     "i": 12,
+     "he": "מָה רָאָה? אָמַר רַב: רָאָה מַעֲשֶׂה וְנִזְכַּר הֲלָכָה. אָמַר לוֹ: אֲחִי אֲבִי אַבָּא, לֹא כָּךְ לִימַּדְתַּנִי בְּרִדְתְּךָ מֵהַר סִינַי: הַבּוֹעֵל אֲרָמִית קַנָּאִין פּוֹגְעִין בּוֹ? אָמַר לוֹ: קַרְיָינָא דְּאִיגַּרְתָּא אִיהוּ לֶיהֱוֵי פַּרְוָונְקָא.",
+     "en": "The Gemara asks: <b>What did</b> Pinehas <b>see</b> that led him to arise and take action? <b>Rav says: He saw the incident</b> taking place before him <b>and he remembered the <i>halakha</i>. He said to</b> Moses: <b>Brother of the father of my father,</b> as Moses was the brother of his grandfather Aaron, <b>did you not teach me this during your descent from Mount Sinai: One who engages in intercourse with a gentile woman, zealots strike him?</b> Moses <b>said to him: Let the one who reads the letter be the agent [<i>parvanka</i>]</b> to fulfill its contents."
+    },
+    {
+     "ref": "Sanhedrin 82a",
+     "i": 13,
+     "he": "וּשְׁמוּאֵל אָמַר: רָאָה שֶׁאֵין חׇכְמָה וְאֵין תְּבוּנָה וְאֵין עֵצָה לְנֶגֶד ה׳. כׇּל מָקוֹם שֶׁיֵּשׁ חִילּוּל הַשֵּׁם, אֵין חוֹלְקִין כָּבוֹד לָרַב. רַבִּי יִצְחָק אָמַר רַבִּי אֱלִיעֶזֶר: רָאָה שֶׁבָּא מַלְאָךְ וְהִשְׁחִית בָּעָם.",
+     "en": "<b>And Shmuel says:</b> Pinehas <b>saw</b> and considered the meaning of the verse: <b>“There is neither wisdom nor understanding nor counsel against the Lord”</b> (Proverbs 21:30), which the Sages interpreted to mean: <b>Anywhere that there is desecration of the Lord’s name, one does not show respect to the teacher.</b> In those situations, one need not consult his teacher, but must immediately proceed to right the wrong that is transpiring. Therefore, he took the spear and took immediate action. <b>Rabbi Yitzḥak</b> says that <b>Rabbi Eliezer says: He saw that an angel came and destroyed among the people</b> in punishment for the sin of Zimri, and he realized that he must take immediate action to ameliorate the situation."
+    },
+    {
+     "ref": "Sanhedrin 82a",
+     "i": 14,
+     "he": "״וַיָּקׇם מִתּוֹךְ הָעֵדָה וַיִּקַּח רֹמַח בְּיָדוֹ״. מִיכָּן, שֶׁאֵין נִכְנָסִין בִּכְלֵי זַיִין לְבֵית הַמִּדְרָשׁ. שָׁלַף שְׁנָנָהּ וְהִנִּיחָהּ בְּאוּנְקָלוֹ, וְהָיָה",
+     "en": "It is written with regard to Pinehas: <b>“He arose from amidst the assembly and he took a spear in his hand”</b> (Numbers 25:7). <b>From here,</b> where it is written that he took the spear only after he arose from the assembly, it is derived <b>that one does not enter the study hall with a weapon.</b> The assembly in this context is referring to the seat of the Sanhedrin. Pinehas <b>removed the blade of</b> the spear <b>and placed it in his garment [<i>be’unkalo</i>]</b> and held the shaft of the spear like a walking stick, <b>and he was</b>"
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 0,
+     "he": "נִשְׁעָן וְהוֹלֵךְ עַל מַקְלוֹ, וְכֵיוָן שֶׁהִגִּיעַ אֵצֶל שִׁבְטוֹ שֶׁל שִׁמְעוֹן אָמַר: הֵיכָן מָצִינוּ שֶׁשִּׁבְטוֹ שֶׁל לֵוִי גָּדוֹל מִשֶּׁל שִׁמְעוֹן? אָמְרוּ: הַנִּיחוּ לוֹ, אַף הוּא לַעֲשׂוֹת צְרָכָיו נִכְנַס. הִתִּירוּ פְּרוּשִׁין אֶת הַדָּבָר.",
+     "en": "<b>walking, leaning on his</b> walking <b>stick,</b> the shaft of the spear. <b>And once he reached the tribe of Simeon he said: Where did we find that the tribe of Levi is greater than that of Simeon?</b> If all the members of your tribe submit to the temptation of the women of Moab, I may do so as well. After hearing that statement, the members of the tribe of Simeon <b>said: Allow him</b> to enter; like us, <b>he too is entering to attend to his needs</b> and engage in intercourse with the Moabite women. They rejoiced and said: Apparently, <b>the pious</b> and God-fearing <b>have permitted</b> this <b>matter,</b> as Pinehas is one of them."
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 1,
+     "he": "אָמַר רַבִּי יוֹחָנָן: שִׁשָּׁה נִסִּים נַעֲשׂוּ לוֹ לְפִנְחָס. אֶחָד, שֶׁהָיָה לוֹ לְזִמְרִי לִפְרוֹשׁ וְלֹא פֵּירַשׁ. וְאֶחָד, שֶׁהָיָה לוֹ לְדַבֵּר וְלֹא דִּבֵּר. וְאֶחָד, שֶׁכִּוֵּון בְּזַכְרוּתוֹ שֶׁל אִישׁ וּבְנַקְבוּתָהּ שֶׁל אִשָּׁה. וְאֶחָד, שֶׁלֹּא נִשְׁמְטוּ מִן הָרוֹמַח. וְאֶחָד, שֶׁבָּא מַלְאָךְ וְהִגְבִּיהַּ אֶת הַמַּשְׁקוֹף. וְאֶחָד, שֶׁבָּא מַלְאָךְ וְהִשְׁחִית בָּעָם.",
+     "en": "<b>Rabbi Yoḥanan says: Six miracles were performed for Pinehas</b> when he killed Zimri. <b>One</b> is <b>that Zimri should have separated himself</b>  from Cozbi, <b>and he did not separate himself.</b> Had he done so, it would have been prohibited for Pinehas to kill him. <b>And one</b> is <b>that</b> Zimri <b>should have spoken</b> and alerted the members of his tribe to come to his assistance, <b>and he did not speak. And one</b> is <b>that</b> Pinehas <b>directed</b> the spear precisely <b>to the male genitals of</b> Zimri <b>and to the female genitals of</b> Cozbi so that the reason that he killed them would be evident. <b>And one</b> is <b>that</b> Zimri and Cozbi <b>did not fall from the spear. And one</b> is <b>that an angel came and raised the lintel</b> of that chamber so that Pinehas could emerge holding them aloft on the spear. <b>And one</b> is <b>that an angel came and caused destruction among the people,</b> distracting them from interfering with the actions of Pinehas."
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 2,
+     "he": "בָּא וַחֲבָטָן לִפְנֵי הַמָּקוֹם, אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, עַל אֵלּוּ יִפְּלוּ עֶשְׂרִים וְאַרְבָּעָה אֶלֶף מִיִּשְׂרָאֵל? שֶׁנֶּאֱמַר ״וַיִּהְיוּ הַמֵּתִים בַּמַּגֵּפָה אַרְבָּעָה וְעֶשְׂרִים אָלֶף״. וְהַיְינוּ דִּכְתִיב: ״וַיַּעֲמֹד פִּינְחָס וַיְפַלֵּל״.",
+     "en": "Pinehas <b>came and slammed them</b> on the ground <b>before the Omnipresent</b> and <b>said before Him: Master of the Universe, will twenty-four thousand</b> of the children <b>of Israel fall due to these</b> sinners? <b>As it is stated: “And those that died in the plague were twenty-four thousand”</b> (Numbers 25:9). <b>And that is</b> the meaning of that <b>which is written: “And Pinehas stood and wrought judgment</b> and the plague was stayed” (Psalms 106:30)."
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 3,
+     "he": "אָמַר רַבִּי אֶלְעָזָר: ״וַיִּתְפַּלֵּל״ לֹא נֶאֱמַר, אֶלָּא ״וַיְפַלֵּל״. מְלַמֵּד כִּבְיָכוֹל, שֶׁעָשָׂה פְּלִילוּת עִם קוֹנוֹ. בִּקְּשׁוּ מַלְאֲכֵי הַשָּׁרֵת לְדׇחֳפוֹ. אָמַר לָהֶן: הַנִּיחוּ לוֹ, קַנַּאי בֶּן קַנַּאי הוּא, מֵשִׁיב חֵימָה בֶּן מֵשִׁיב חֵימָה הוּא.",
+     "en": "<b>Rabbi Elazar says:</b> It <b>is not stated</b> in the verse: <b>And prayed [<i>vayitpallel</i>]; rather,</b> it is stated <b><i>vayefalel</i>.</b> This <b>teaches that</b> Pinehas, <b>as it were, wrought judgment [<i>pelilut</i>] with his Creator. The ministering angels sought to push him</b> away because he spoke harshly to God. The Holy One, Blessed be He, <b>said to them: Leave him be; he is a zealot, son of a zealot,</b> from the tribe of Levi, who was zealous in avenging the violation of his sister Dinah; <b>he is an alleviator of wrath, son of an alleviator of wrath,</b> a descendant of Aaron, who alleviated the wrath of God during the plague that followed the assembly of Korah."
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 4,
+     "he": "הִתְחִילוּ שְׁבָטִים מְבַזִּין אוֹתוֹ: רְאִיתֶם בֶּן פּוּטִי זֶה, שֶׁפִּיטֵּם אֲבִי אִמּוֹ עֲגָלִים לַעֲבוֹדָה זָרָה, וְהָרַג נְשִׂיא שֵׁבֶט מִיִּשְׂרָאֵל? בָּא הַכָּתוּב וְיִחֲסוֹ: ״פִּנְחָס בֶּן אֶלְעָזָר בֶּן אַהֲרֹן הַכֹּהֵן״.",
+     "en": "<b>The tribes began to demean</b> Pinehas: <b>Did you see this son of Puti,</b> so-called because his mother was one of the daughters of Putiel (see Exodus 6:25), and they interpreted homiletically: <b>As</b> Yitro, <b>the father of his mother,</b> according to one rabbinic tradition, <b>fattened [<i>shepittem</i>] calves for idol worship, and he</b> impudently <b>killed the prince of a tribe of Israel</b> without a trial. In response, <b>the verse comes and provides his lineage</b> as <b>“Pinehas, son of Elazar, son of Aaron the priest”</b> (Numbers 25:11). It is due to that lineage that he zealously executed Zimri."
+    },
+    {
+     "ref": "Sanhedrin 82b",
+     "i": 5,
+     "he": "אָמַר לוֹ הַקָּדוֹשׁ בָּרוּךְ הוּא לְמֹשֶׁה: הַקְדֵּם לוֹ שָׁלוֹם, שֶׁנֶּאֱמַר: ״לָכֵן אֱמֹר הִנְנִי נוֹתֵן לוֹ אֶת בְּרִיתִי שָׁלוֹם״. וּרְאוּיָה כַּפָּרָה זוֹ שֶׁתְּהֵא מְכַפֶּרֶת וְהוֹלֶכֶת לְעוֹלָם.",
+     "en": "<b>The Holy One, Blessed be He, said to Moses: Be the first to</b> greet Pinehas with a blessing of <b>peace,</b> to honor him before the people, <b>as it is stated: “Therefore say: I hereby give to him My covenant of peace”</b> (Numbers 25:12), and it is stated: “And it shall be unto him and to his descendants after him a covenant of eternal priesthood, because he was zealous for his God and he atoned for the children of Israel” (Numbers 25:13), <b>and this atonement</b> that he facilitated <b>is worthy of continuing to atone forever.</b>"
+    }
+   ],
+   "words": 1281,
+   "minutes": 9
+  },
+  {
+   "id": "sanhedrin-89b-8-12",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 89b",
+   "refs": [
+    "Sanhedrin 89b"
+   ],
+   "start_segment": 8,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Satan challenges God to test Abraham's devotion, leading to the Binding of Isaac and Satan's failed attempt to intercept Abraham on his way to the mountain.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 89b",
+     "i": 8,
+     "he": "אָמַר רַבִּי יוֹחָנָן מִשּׁוּם רַבִּי יוֹסֵי בֶּן זִימְרָא: אַחַר דְּבָרָיו שֶׁל שָׂטָן, דִּכְתִיב ״וַיִּגְדַּל הַיֶּלֶד וַיִּגָּמַל וְגוֹ׳״. אָמַר שָׂטָן לִפְנֵי הַקָּדוֹשׁ בָּרוּךְ הוּא: רִבּוֹנוֹ שֶׁל עוֹלָם, זָקֵן זֶה חֲנַנְתּוֹ לְמֵאָה שָׁנָה פְּרִי בֶטֶן, מִכׇּל סְעוּדָה שֶׁעָשָׂה לֹא הָיָה לוֹ תּוֹר אֶחָד אוֹ גּוֹזָל אֶחָד לְהַקְרִיב לְפָנֶיךָ? אָמַר לוֹ: כְּלוּם עָשָׂה אֶלָּא בִּשְׁבִיל בְּנוֹ? אִם אֲנִי אוֹמֵר לוֹ ״זְבַח אֶת בִּנְךָ לְפָנַי״ מִיָּד זוֹבְחוֹ. מִיָּד ״וְהָאֱלֹהִים נִסָּה אֶת אַבְרָהָם״.",
+     "en": "<b>Rabbi Yoḥanan said in the name of Rabbi Yosei ben Zimra:</b> This means <b>after the statement [<i>devarav</i>] of Satan, as it is written: “And the child grew, and was weaned,</b> and Abraham prepared a great feast on the day that Isaac was weaned” (Genesis 21:8). <b>Satan said before the Holy One, Blessed be He: Master of the Universe, this old man, you favored him with a product of the womb,</b> i.e., a child, <b>at one hundred years</b> of age. <b>From the entire feast that he prepared, did he not have</b> even <b>one dove or one pigeon to sacrifice before You</b> as a thanks-offering? God <b>said to</b> Satan: <b>Did</b> Abraham <b>prepare</b> the feast for any reason <b>but for his son? If I say to him: Sacrifice your son before Me,</b> he would <b>immediately slaughter him. Immediately,</b> after these matters, the verse states: <b>“And God tried Abraham.”</b>"
+    },
+    {
+     "ref": "Sanhedrin 89b",
+     "i": 9,
+     "he": "״וַיֹּאמֶר קַח נָא אֶת בִּנְךָ״. אָמַר רַבִּי שִׁמְעוֹן בַּר אַבָּא: אֵין ״נָא״ אֶלָּא לְשׁוֹן בַּקָּשָׁה. מָשָׁל לְמֶלֶךְ בָּשָׂר וָדָם שֶׁעָמְדוּ עָלָיו מִלְחָמוֹת הַרְבֵּה, וְהָיָה לוֹ גִּבּוֹר אֶחָד וְנִצְּחָן. לְיָמִים עָמְדָה עָלָיו מִלְחָמָה חֲזָקָה. אָמַר לוֹ: בְּבַקָּשָׁה מִמְּךָ, עֲמוֹד לִי בְּמִלְחָמָה זוֹ, שֶׁלֹּא יֹאמְרוּ רִאשׁוֹנוֹת אֵין בָּהֶם מַמָּשׁ. אַף הַקָּדוֹשׁ בָּרוּךְ הוּא אָמַר לְאַבְרָהָם: נִיסֵּיתִיךָ בְּכַמָּה נִסְיוֹנוֹת וְעָמַדְתָּ בְּכֻלָּן. עַכְשָׁיו עֲמוֹד לִי בְּנִסָּיוֹן זֶה, שֶׁלֹּא יֹאמְרוּ אֵין מַמָּשׁ בָּרִאשׁוֹנִים.",
+     "en": "The Torah continues: <b>“And He said: Take, please [<i>na</i>], your son”</b> (Genesis 22:2). <b>Rabbi Shimon bar Abba says:</b> The word <b><i>na</i> is nothing other than an expression of entreaty.</b> Why did God request rather than command that Abraham take his son? The Gemara cites <b>a parable of a flesh-and-blood king who confronted many wars. And he had one warrior</b> fighting for him, <b>and he overcame</b> his enemies. <b>Over time,</b> there was <b>a fierce war confronting him.</b> The king <b>said to</b> his warrior: <b>I entreat you, stand</b> firm <b>for me in this war,</b> so <b>that</b> others <b>will not say: There is no substance in the first</b> victories, and you are not a true warrior. Likewise, <b>the Holy One, Blessed be He, also said to Abraham: I have tried you with several ordeals, and you have withstood them all. Now, stand</b> firm <b>in this ordeal for Me, so that</b> others <b>will not say: There is no substance in the first</b> ordeals."
+    },
+    {
+     "ref": "Sanhedrin 89b",
+     "i": 10,
+     "he": "״אֶת בִּנְךָ״. שְׁנֵי בָּנִים יֵשׁ לִי. ״אֶת יְחִידְךָ״. זֶה יָחִיד לְאִמּוֹ וְזֶה יָחִיד לְאִמּוֹ. ״אֲשֶׁר אָהַבְתָּ״. תַּרְוַיְיהוּ רָחֵימְנָא לְהוּ. ״אֶת יִצְחָק״. וְכׇל כָּךְ לָמָּה? כְּדֵי שֶׁלֹּא תִּטָּרֵף דַּעְתּוֹ עָלָיו.",
+     "en": "God said to Abraham: “Please take your son, your only, whom you love, Isaac” (Genesis 22:2). When God said: <b>“Your son,”</b> Abraham said: <b>I have two sons.</b> When God said: <b>“Your only,”</b> Abraham said: <b>This</b> son <b>is an only</b> son <b>to his mother, and that</b> son <b>is an only</b> son <b>to his mother.</b> When God said: <b>“Whom you love,”</b> Abraham said: <b>I love both of them.</b> Then God said: <b>“Isaac.” And why</b> did God prolong His command to <b>that extent?</b> Why did He not say Isaac’s name from the outset? God did so, <b>so that</b> Abraham’s <b>mind would not be confused</b> by the trauma."
+    },
+    {
+     "ref": "Sanhedrin 89b",
+     "i": 11,
+     "he": "קְדָמוֹ שָׂטָן לַדֶּרֶךְ. אָמַר לוֹ: ״הֲנִסָּה דָבָר אֵלֶיךָ תִּלְאֶה... הִנֵּה יִסַּרְתָּ רַבִּים וְיָדַיִם רָפוֹת תְּחַזֵּק. כּוֹשֵׁל יְקִימוּן מִלֶּיךָ... כִּי עַתָּה תָּבוֹא אֵלֶיךָ וַתֵּלֶא״. אָמַר לוֹ: ״אֲנִי בְּתֻמִּי אֵלֵךְ״.",
+     "en": "<b>Satan preceded</b> Abraham <b>to the path</b> that he took to bind his son and <b>said to him: “If one ventures a word to you, will you be weary…you have instructed many, and you have strengthened the weak hands. Your words have upheld him that was falling…but now it comes upon you, and you are weary”</b> (Job 4:2–5). Do you now regret what you are doing? Abraham <b>said to him</b> in response: “And <b>I will walk with my integrity”</b> (Psalms 26:11)."
+    },
+    {
+     "ref": "Sanhedrin 89b",
+     "i": 12,
+     "he": "אָמַר לוֹ: ״הֲלֹא יִרְאָתְךָ כִּסְלָתֶךָ״. אָמַר לוֹ: ״זְכׇר נָא מִי הוּא נָקִי אָבָד״. כֵּיוָן דַּחֲזָא דְּלָא קָא שָׁמַיע לֵיהּ, אֲמַר לֵיהּ: ״וְאֵלַי דָּבָר יְגֻנָּב״. כָּךְ שָׁמַעְתִּי מֵאֲחוֹרֵי הַפַּרְגּוֹד: ״הַשֶּׂה לְעוֹלָה״ וְאֵין יִצְחָק לְעוֹלָה. אָמַר לוֹ: כָּךְ עוֹנְשׁוֹ שֶׁל בַּדַּאי, שֶׁאֲפִילּוּ אָמַר אֱמֶת אֵין שׁוֹמְעִין לוֹ.",
+     "en": "Satan <b>said to</b> Abraham: <b>“Is not your fear of God your foolishness?”</b> (Job 4:6). In other words, your fear will culminate in the slaughter of your son. Abraham <b>said to him: “Remember, please, whoever perished, being innocent”</b> (Job 4:7). God is righteous and His pronouncements are just. <b>Once</b> Satan <b>saw that</b> Abraham <b>was not heeding him, he said to him: “Now a word was secretly brought to me,</b> and my ear received a whisper thereof” (Job 4:12). <b>This</b> is what <b>I heard from behind the</b> heavenly <b>curtain [<i>pargod</i>],</b> which demarcates between God and the ministering angels: <b>The sheep is to</b> be sacrificed as <b>a burnt-offering, and Isaac is not to</b> be sacrificed as <b>a burnt-offering.</b> Abraham <b>said to him:</b> Perhaps that is so. However, <b>this is the punishment of the liar, that even</b> if <b>he speaks the truth,</b> others <b>do not listen to him.</b> Therefore, I do not believe you and will fulfill that which I was commanded to perform."
+    }
+   ],
+   "words": 654,
+   "minutes": 5
+  },
+  {
    "id": "sanhedrin-90b-20-20",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 90b",
@@ -2174,6 +2737,7 @@
    "start_segment": 20,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2205,6 +2769,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2248,6 +2813,7 @@
    "start_segment": 9,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2291,6 +2857,7 @@
    "start_segment": 13,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2313,6 +2880,108 @@
    "minutes": 2
   },
   {
+   "id": "sanhedrin-92b-10-10",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 92b",
+   "refs": [
+    "Sanhedrin 92b"
+   ],
+   "start_segment": 10,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "While Nebuchadnezzar casts the three youths into the furnace, Ezekiel revives the dead in the Dura Valley, who then physically strike the king, forcing him to praise God.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 92b",
+     "i": 10,
+     "he": "תָּנוּ רַבָּנַן: בְּשָׁעָה שֶׁהִפִּיל נְבוּכַדְנֶצַּר הָרָשָׁע אֶת חֲנַנְיָה מִישָׁאֵל וַעֲזַרְיָה לְכִבְשַׁן הָאֵשׁ, אָמַר לוֹ הַקָּדוֹשׁ בָּרוּךְ הוּא לִיחֶזְקֵאל: לֵךְ וְהַחְיֵיה מֵתִים בְּבִקְעַת דּוּרָא. כֵּיוָן שֶׁהֶחְיָיה אוֹתָן, בָּאוּ עֲצָמוֹת וְטָפְחוּ לוֹ לְאוֹתוֹ רָשָׁע עַל פָּנָיו. אָמַר: מָה טִיבָן שֶׁל אֵלּוּ? אָמְרוּ לוֹ: חַבְרֵיהֶן שֶׁל אֵלּוּ מְחַיֶּיה מֵתִים בְּבִקְעַת דּוּרָא. פָּתַח וְאָמַר: ״אָתוֹהִי כְּמָה רַבְרְבִין וְתִמְהוֹהִי כְּמָה תַקִּיפִין מַלְכוּתֵיהּ מַלְכוּת עָלַם וְשׇׁלְטָנֵהּ עִם דָּר וְדָר וְגוֹ׳״.",
+     "en": "§ <b>The Sages taught</b> in a <i>baraita</i>: <b>At the moment that Nebuchadnezzar the wicked cast Hananiah, Mishael, and Azariah into the fiery furnace, the Holy One, Blessed be He, said to Ezekiel: Go and revive the dead in the Dura Valley. Once</b> Ezekiel <b>revived them, the bones came and struck</b> Nebuchadnezzar, <b>that wicked</b> man, <b>in his face.</b> Nebuchadnezzar <b>said: What is the nature of these?</b> His servants <b>said to him: The friend of these</b> three, Hananiah, Mishael, and Azariah, <b>is reviving</b> the <b>dead in the Dura Valley.</b> Nebuchadnezzar <b>began and said: “How great are His signs and how mighty are His wonders; His kingdom is an everlasting kingdom and His dominion is from generation to generation”</b> (Daniel 3:33)."
+    }
+   ],
+   "words": 119,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-93a-1-1",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 93a",
+   "refs": [
+    "Sanhedrin 93a"
+   ],
+   "start_segment": 1,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "When Hananiah, Mishael, and Azariah emerged from the furnace, the nations of the world struck the Jewish people in the face for failing to serve such a powerful God.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 1,
+     "he": "אָמַר רַבִּי תַּנְחוּם בַּר חֲנִילַאי: בְּשָׁעָה שֶׁיָּצְאוּ חֲנַנְיָה מִישָׁאֵל וַעֲזַרְיָה מִכִּבְשַׁן הָאֵשׁ, בָּאוּ כׇּל אוּמּוֹת הָעוֹלָם וְטָפְחוּ לְשׂוֹנְאֵיהֶן שֶׁל יִשְׂרָאֵל עַל פְּנֵיהֶם. אָמְרוּ לָהֶם: יֵשׁ לָכֶם אֱלוֹהַּ כָּזֶה, וְאַתֶּם מִשְׁתַּחֲוִים לַצֶּלֶם?! מִיָּד פָּתְחוּ וְאָמְרוּ: ״לְךָ ה׳ הַצְּדָקָה וְלָנוּ בֹּשֶׁת הַפָּנִים כַּיּוֹם הַזֶּה״.",
+     "en": "§ <b>Rabbi Tanḥum bar Ḥanilai says: At the moment that Hananiah, Mishael, and Azariah emerged from the fiery furnace, all the nations of the world came and struck the enemies of Israel,</b> a euphemism for the Jewish people, <b>in the face</b> and <b>said to them: You have a God</b> with capabilities <b>like that and you bow to the graven image? Immediately</b> Hananiah, Mishael, and Azariah <b>began and said: “Lord, righteousness is Yours, but we are shamefaced, as of this day”</b> (Daniel 9:7)."
+    }
+   ],
+   "words": 82,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-93a-12-16",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 93a",
+   "refs": [
+    "Sanhedrin 93a"
+   ],
+   "start_segment": 12,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Ahab and Zedekiah attempt to seduce Nebuchadnezzar's daughter under the guise of prophecy, leading the king to cast them into a furnace along with Joshua the High Priest to test their holiness.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 12,
+     "he": "״יַעַן אֲשֶׁר עָשׂוּ נְבָלָה בְּיִשְׂרָאֵל וַיְנַאֲפוּ אֶת נְשֵׁי רֵעֵיהֶם״. מַאי עֲבוּד? אֲזוּל לְגַבֵּי בְּרַתֵּיה דִּנְבוּכַדְנֶצַּר. אַחְאָב אֲמַר לַהּ: ״כֹּה אָמַר ה׳ הִשָּׁמֵיעִי אֶל צִדְקִיָּה״. וְצִדְקִיָּה אֲמַר: ״כֹּה אָמַר ה׳ הִשָּׁמֵיעִי אֶל אַחְאָב״. אֲזַלָה וַאֲמַרָה לֵיהּ לַאֲבוּהּ. אֲמַר לַהּ: אֱלֹהֵיהֶם שֶׁל אֵלּוּ שׂוֹנֵא זִימָּה הוּא. כִּי אָתוּ לְגַבָּךְ, שַׁדְּרִינְהוּ לְגַבַּאי.",
+     "en": "The verse states: <b>“Because they have committed baseness in Israel, and have committed adultery with the wives of their neighbors”</b> (Jeremiah 29:23). <b>What did they do?</b> The Gemara relates: <b>They went to the daughter of Nebuchadnezzar. Ahab said to her: So says the Lord: Submit to Zedekiah</b> and engage in intercourse with him. <b>And Zedekiah said</b> to her: <b>So says the Lord: Submit to Ahab</b> and engage in intercourse with him. <b>She went and said to her father</b> what they said to her. Nebuchadnezzar <b>said to her: The God of these</b> people <b>abhors lewdness,</b> so this is likely a false prophecy. <b>When they come to you, send them to me.</b>"
+    },
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 13,
+     "he": "כִּי אֲתוֹ לְגַבַּהּ, שַׁדַּרְתַּנְהוּ לְגַבֵּי אֲבוּהָ. אֲמַר לְהוּ: מַאן אֲמַר לְכוֹן? אֲמַרוּ: הַקָּדוֹשׁ בָּרוּךְ הוּא. וְהָא חֲנַנְיָה מִישָׁאֵל וַעֲזַרְיָה שְׁאֵלְתִּינְהוּ, וַאֲמַרוּ לִי: אָסוּר! אֲמַרוּ לֵיהּ: אֲנַן נָמֵי נְבִיאֵי כְּוָותַיְיהוּ. לְדִידְהוּ לָא אֲמַר לְהוּ, לְדִידַן אֲמַר לַן. אֲמַר לְהוּ: אֲנָא בָּעֵינָא דְּאֶיבְדְּקִינְכוּ, כִּי הֵיכִי דִּבְדַקְתִּינְהוּ לַחֲנַנְיָה מִישָׁאֵל וַעֲזַרְיָה.",
+     "en": "<b>When they came to her, she sent them to her father.</b> Nebuchadnezzar <b>said to them: Who told you</b> to do this? <b>They said:</b> It was <b>the Holy One, Blessed be He.</b> Nebuchadnezzar said: <b>But haven't I asked Hananiah, Mishael, and Azariah</b> about this <b>and they said to me: It is prohibited? They said to him: We too are prophets like they are.</b> God <b>did not say</b> this prophecy <b>to them; He said</b> it <b>to us.</b> Nebuchadnezzar <b>said to them:</b> If so, <b>I wish to put you to the test</b> to determine if you are righteous, <b>just as I put Hananiah, Mishael, and Azariah to the test.</b>"
+    },
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 14,
+     "he": "אֲמַרוּ לֵיהּ: אִינּוּן תְּלָתָא הֲווֹ, וַאֲנַן תְּרֵין. אֲמַר לְהוּ: בְּחַרוּ לְכוֹן מַאן דְּבָעֵיתוּ בַּהֲדַיְיכוּ. אֲמַרוּ: יְהוֹשֻׁעַ כֹּהֵן גָּדוֹל. סָבְרִי: לֵיתֵי יְהוֹשֻׁעַ דִּנְפִישׁ זְכוּתֵיהּ וּמַגְּנָא עֲלַן.",
+     "en": "Ahab and Zedekiah <b>said to</b> Nebuchadnezzar: <b>They were three and we are</b> only <b>two,</b> and our merit is not great enough to save us from the fire. Nebuchadnezzar <b>said to them: Choose for yourselves</b> a third person, <b>whomever you wish,</b> to be put to the test <b>with you. They said</b> to him: We choose <b>Joshua the High Priest.</b> They chose him because <b>they thought: Let Joshua</b> the High Priest <b>come</b> with us, <b>since his merit is great and it will protect us.</b>"
+    },
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 15,
+     "he": "אַחְתְיוּהּ, שְׁדִינְהוּ. אִינְהוּ אִיקְּלוֹ, יְהוֹשֻׁעַ כֹּהֵן גָּדוֹל אִיחֲרֻךְ אִיחֲרוֹכֵי מָאנֵיהּ, שֶׁנֶּאֱמַר: ״וַיַּרְאֵנִי אֶת יְהוֹשֻׁעַ הַכֹּהֵן הַגָּדוֹל עֹמֵד לִפְנֵי מַלְאַךְ ה׳ וְגוֹ׳״, וּכְתִיב: ״וַיֹּאמֶר ה׳ אֶל הַשָּׂטָן יִגְעַר ה׳ בְּךָ וְגוֹ׳״.",
+     "en": "<b>They took</b> the three of <b>them down</b> and <b>cast them</b> into the furnace. <b>They were burned,</b> and as for <b>Joshua the High Priest, his garments were singed, as it is stated: “And He showed me Joshua the High Priest, standing before the angel of the Lord,</b> and Satan was standing at his right to thwart him” (Zechariah 3:1). <b>And it is written: “And the Lord said to Satan, the Lord shall rebuke you,</b> Satan, the Lord Who has chosen Jerusalem shall rebuke you; is this man not a firebrand plucked from fire?” (Zechariah 3:2). This is an allusion to the fact that he was delivered from the fiery furnace, although he was slightly singed."
+    },
+    {
+     "ref": "Sanhedrin 93a",
+     "i": 16,
+     "he": "אֲמַר לֵיהּ: יָדַעְנָא דְּצַדִּיקָא אַתְּ, אֶלָּא מַאי טַעְמָא אַהְנְיָא בָּךְ פּוּרְתָּא נוּרָא? חֲנַנְיָה מִישָׁאֵל וַעֲזַרְיָה לָא אַהְנְיָא בְּהוּ כְּלָל! אֲמַר לֵיהּ: אִינְהוּ תְּלָתָא הֲווֹ, וַאֲנָא חַד. אָמַר לֵיהּ: וְהָא אַבְרָהָם יָחִיד הֲוָה? הָתָם לָא הֲווֹ רְשָׁעִים בַּהֲדֵיהּ, וְלָא אִתְיְהִיב רְשׁוּתָא לְנוּרָא. הָכָא הֲווֹ רְשָׁעִים בַּהֲדַי, וְאִתְיְהִיב רְשׁוּתָא לְנוּרָא. הַיְינוּ דְּאָמְרִי אִינָשֵׁי: תְּרֵי אוּדֵי יַבִּישֵׁי וְחַד רַטִּיבָא, אוֹקְדוּהּ יַבִּישֵׁי לְרַטִּיבָא.",
+     "en": "Nebuchadnezzar <b>said to</b> Joshua the High Priest: <b>I know you are righteous</b> because you were delivered from the fire, <b>but what is the reason</b> that <b>the fire was slightly effective concerning you,</b> and for <b>Hananiah, Mishael, and Azariah</b> the fire <b>was not effective concerning them at all,</b> and their garments were not singed? Joshua the High Priest <b>said to him: They were three</b> righteous people, <b>and I am one.</b> Nebuchadnezzar <b>said to him: But wasn’t Abraham one</b> person, and when he was cast into the furnace the fire had no effect? Joshua answered him: <b>There,</b> in the case of Abraham, <b>there were no wicked people with him, and license</b> to cause damage <b>was not given to the fire. Here,</b> in this case, <b>there were wicked</b> people <b>with me, and license</b> to cause damage <b>was given to the fire.</b> The Gemara adds that <b>this</b> explains the adage <b>that people say:</b> If there are <b>two dry firebrands and one moist one</b> in a fire, <b>the dry</b> firebrands <b>burn the moist one.</b>"
+    }
+   ],
+   "words": 581,
+   "minutes": 4
+  },
+  {
    "id": "sanhedrin-93b-7-7",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 93b",
@@ -2322,6 +2991,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2338,6 +3008,365 @@
    "minutes": 1
   },
   {
+   "id": "sanhedrin-94a-4-6",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 94a",
+   "refs": [
+    "Sanhedrin 94a"
+   ],
+   "start_segment": 4,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "In a heavenly deliberation, the Attribute of Justice successfully argues against Hezekiah becoming the Messiah despite the Earth's singing in his favor.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 94a",
+     "i": 4,
+     "he": "אָמְרָה מִדַּת הַדִּין לִפְנֵי הַקָּדוֹשׁ בָּרוּךְ הוּא: רִבּוֹנוֹ שֶׁל עוֹלָם, וּמָה דָּוִד מֶלֶךְ יִשְׂרָאֵל שֶׁאָמַר כַּמָּה שִׁירוֹת וְתִשְׁבָּחוֹת לְפָנֶיךָ – לֹא עֲשִׂיתוֹ מָשִׁיחַ, חִזְקִיָּה שֶׁעָשִׂיתָ לוֹ כׇּל הַנִּסִּים הַלָּלוּ וְלֹא אָמַר שִׁירָה לְפָנֶיךָ – תַּעֲשֵׂהוּ מָשִׁיחַ? לְכָךְ נִסְתַּתֵּם.",
+     "en": "<b>The attribute of justice said before the Holy One, Blessed be He: Master of the Universe, and if</b> with regard to <b>David, king of Israel, who recited several songs and praises before You, You did not designate him</b> as the <b>Messiah,</b> then with regard to <b>Hezekiah, for whom You performed all these miracles,</b> delivering him from Sennacherib and healing his illness, <b>and he did not recite praise before You, will You designate him</b> as the <b>Messiah?</b> It is <b>for that</b> reason that the <i>mem</i> <b>was closed,</b> because there was an opportunity for redemption that was thwarted."
+    },
+    {
+     "ref": "Sanhedrin 94a",
+     "i": 5,
+     "he": "מִיָּד פָּתְחָה הָאָרֶץ וְאָמְרָה לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, אֲנִי אוֹמֶרֶת לְפָנֶיךָ שִׁירָה תַּחַת צַדִּיק זֶה, וַעֲשֵׂהוּ מָשִׁיחַ. פָּתְחָה וְאָמְרָה שִׁירָה לְפָנָיו, שֶׁנֶּאֱמַר: ״מִכְּנַף הָאָרֶץ זְמִרֹת שָׁמַעְנוּ צְבִי לַצַּדִּיק וְגוֹ׳״.",
+     "en": "<b>Immediately, the earth began and stated before Him: Master of the Universe, I</b> will <b>recite song before You in place of that righteous person,</b> i.e., Hezekiah, <b>and designate him</b> as the <b>Messiah.</b> The earth <b>began and recited a song before Him, as it is stated: “From the uttermost part of the earth have we heard songs: Glory to the righteous.</b> But I said, my secret is mine, my secret is mine, woe unto me. The treacherous deal treacherously; the treacherous deal very treacherously” (Isaiah 24:16)."
+    },
+    {
+     "ref": "Sanhedrin 94a",
+     "i": 6,
+     "he": "אָמַר שַׂר הָעוֹלָם לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, צִבְיוֹנוֹ עֲשֵׂה לַצַּדִּיק זֶה! יָצְאָה בַּת קוֹל וְאָמְרָה: רָזִי לִי, רָזִי לִי. אָמַר נָבִיא: אוֹי לִי, אוֹי לִי, עַד מָתַי? יָצְאָה בַּת קוֹל וְאָמְרָה: ״בֹּגְדִים בָּגָדוּ וּבֶגֶד בּוֹגְדִים בָּגָדוּ״. וְאָמַר רָבָא, וְאִיתֵּימָא רַבִּי יִצְחָק: עַד דְּאָתוּ בָּזוֹזֵי וּבָזוֹזֵי דְּבָזוֹזֵי.",
+     "en": "<b>The angel</b> appointed to oversee <b>the world said before Him: Master of the Universe, perform the will of this righteous</b> person. <b>A Divine Voice emerged and said: “My secret is Mine, My secret is Mine”;</b> this matter will remain secret, as I am not yet bringing the redemption. <b>The prophet said: “Woe unto me,” woe unto me; until when</b> will the exile continue? <b>A Divine Voice emerged and said: “The treacherous deal treacherously; the treacherous deal very treacherously”</b> (Isaiah 24:16). <b>And Rava, and some say Rabbi Yitzḥak, says: Until looters and looters of looters come,</b> the Messiah will not come."
+    }
+   ],
+   "words": 281,
+   "minutes": 2
+  },
+  {
+   "id": "sanhedrin-94b-13-13",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 94b",
+   "refs": [
+    "Sanhedrin 94b"
+   ],
+   "start_segment": 13,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "King Hezekiah enforces universal Torah study by placing a sword at the study hall door, resulting in a generation of unprecedented scholarship.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 94b",
+     "i": 13,
+     "he": "מָה עָשָׂה? נָעַץ חֶרֶב עַל פֶּתַח בֵּית הַמִּדְרָשׁ, וְאָמַר: כׇּל מִי שֶׁאֵינוֹ עוֹסֵק בַּתּוֹרָה יִדָּקֵר בְּחֶרֶב זוֹ. בָּדְקוּ מִדָּן וְעַד בְּאֵר שֶׁבַע, וְלֹא מָצְאוּ עַם הָאָרֶץ. מִגְּבָת וְעַד אַנְטִיפְרַס, וְלֹא מָצְאוּ תִּינוֹק וְתִינוֹקֶת, אִישׁ וְאִשָּׁה, שֶׁלֹּא הָיוּ בְּקִיאִין בְּהִלְכוֹת טוּמְאָה וְטׇהֳרָה.",
+     "en": "<b>What did</b> Hezekiah <b>do</b> to ensure Torah study? <b>He inserted a sword at the entrance of the study hall and said: Anyone who does not engage in Torah</b> study <b>shall be stabbed with this sword.</b> As a result, <b>they searched from Dan</b> in the north <b>to Beersheba</b> in the south, <b>and did not find an ignoramus.</b> They searched <b>from Gevat to Antipatris and did not find a male child, or a female child,</b> or <b>a man, or a woman who was not expert</b> even <b>in the</b> complex <b><i>halakhot</i> of ritual purity and impurity.</b>"
+    }
+   ],
+   "words": 93,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-95a-2-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 95a",
+   "refs": [
+    "Sanhedrin 95a"
+   ],
+   "start_segment": 2,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Sennacherib arrives at Jerusalem on the final day of the city's vulnerability but delays his attack out of arrogance, leading to his downfall.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 2,
+     "he": "מַאי ״עוֹד הַיּוֹם בְּנֹב לַעֲמֹד״? אָמַר רַב הוּנָא: אוֹתוֹ הַיּוֹם נִשְׁתַּיֵּיר מֵעֲוֹנָהּ שֶׁל נוֹב. אָמְרִי לֵיהּ כַּלְדָּאֵי: אִי אָזְלַתְּ הָאִידָּנָא – יָכְלַתְּ לַהּ, וְאִי לָא – לָא יָכְלַתְּ לַהּ. אוֹרְחָא דִּבְעָא לְסַגּוֹיֵי בְּעַשְׂרָה יוֹמֵי, סַגֵּא בְּחַד יוֹמָא.",
+     "en": "The Gemara asks: <b>What</b> is the meaning of the phrase: <b>“This very day shall he halt at Nov”</b> (Isaiah 10:32)? <b>Rav Huna says: That</b> was the final <b>day</b> that <b>remained from</b> the punishment that the Jewish people received from <b>the sin of Nov</b> (see I Samuel, chapter 22). <b>The astrologers said to</b> Sennacherib: <b>If you go</b> and conquer them <b>now, you will overcome</b> the Jewish people; <b>and if not, you will not overcome</b> the Jewish people. The Gemara relates: <b>He walked</b> and traversed <b>in one day a road</b> upon <b>which one must walk for ten days</b> in order to traverse it."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 3,
+     "he": "כִּי מְטוֹ לִירוּשְׁלֶם, שְׁדוֹ לֵיהּ בִּיסְתַּרְקֵי, עַד דִּסְלֵיק וִיתֵיב מֵעִילָּוֵי שׁוּרָא, עַד דְּחַזְיַוהּ לְכוּלַּהּ יְרוּשְׁלֶם. כִּי חַזְיַיהּ, אִיזּוּטַר בְּעֵינֵיהּ. אָמַר: הֲלָא דָּא הִיא קַרְתָּא דִּירוּשְׁלֶם דַּעֲלַהּ אַרְגֵּישִׁית כֹּל מַשְׁירְיָתַי, וַעֲלַהּ כַּבֵּשִׁית כֹּל מְדִינָתָא? הֲלָא הִיא זְעֵירָא וְחַלָּשָׁא מִכֹּל כַּרְכֵי עַמְמַיָּא דְּכַבֵּשִׁית בִּתְקוֹף יְדַי? עֲלַהּ וְקָם וּמָנֵיד בְּרֵישֵׁיהּ, מוֹבֵיל וּמַיְיתֵי בִּידֵיהּ עַל טוּר בֵּית מַקְדְּשָׁא דִּבְצִיּוֹן וְעַל עֲזַרְתָּא דְּבִירוּשְׁלֶם.",
+     "en": "<b>When they arrived in Jerusalem they cast mats [<i>bistarkei</i>] for</b> Sennacherib and piled them high <b>until he ascended and sat above the wall, to the extent that he</b> was able to <b>see the entire</b> city of <b>Jerusalem. When he saw it, it</b> seemed <b>small in his eyes</b> and <b>he said: Is this the city of Jerusalem for which I have disrupted all my camps and for which I have conquered all</b> these <b>countries? Is it smaller and weaker than all the cities of the nations that I have conquered with my might? He went up and shook his head</b> in contempt, and dismissively <b>waved his hand at the Temple Mount that is in Zion and at the courtyard that is in Jerusalem.</b>"
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 4,
+     "he": "אָמְרִי: נִישְׁדֵּי בֵּיהּ יְדָא הָאִידָּנָא. אֲמַר לְהוּ: תָּמְהִיתוּ, לִמְחַר אַיְיתוֹ לִי כֹּל חַד וְחַד מִינַּיְיכוּ גּוּלְמוֹ הֲרַג מִינֵּיהּ. מִיָּד: ״וַיְהִי בַּלַּיְלָה הַהוּא וַיֵּצֵא מַלְאַךְ ה׳ וַיַּךְ בְּמַחֲנֵה אַשּׁוּר מֵאָה שְׁמוֹנִים וַחֲמִשָּׁה אָלֶף וַיַּשְׁכִּימוּ בַבֹּקֶר וְהִנֵּה כֻלָּם פְּגָרִים מֵתִים״. אָמַר רַב פָּפָּא: הַיְינוּ דְּאָמְרִי אִינָשֵׁי: בָּת דִּינָא – בְּטַל דִּינָא.",
+     "en": "His officers <b>said</b> to him: <b>Let us attack now</b> and begin the conquest of Jerusalem. Sennacherib <b>said to them: You are weary. Tomorrow, each and every one of you will bring me a piece</b> of a stone <b>from</b> the wall equivalent in size to the <b>seal [<i>gulmo harag</i>]</b> of a letter, and this will suffice to breach the wall and vanquish the city. The verse recounts that <b>immediately: “And it came to pass that night, that the angel of the Lord went forth and smote in the camp of the Assyrians one hundred and eighty-five thousand; and when men arose in the morning, behold, they were all dead corpses”</b> (II Kings 19:35). <b>Rav Pappa says</b> that <b>this</b> is in accordance with the adage <b>that people say:</b> When <b>quarrel lies</b> and is delayed overnight, <b>the quarrel is nullified.</b> Since Jerusalem was not conquered that day, the decree was voided."
+    }
+   ],
+   "words": 375,
+   "minutes": 3
+  },
+  {
+   "id": "sanhedrin-95a-6-14",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 95a",
+   "refs": [
+    "Sanhedrin 95a"
+   ],
+   "start_segment": 6,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "David is lured into a trap by Satan and nearly killed by the giant Ishbibenob, but is saved through the miraculous intervention of Abishai ben Zeruiah.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 6,
+     "he": "רְצוֹנְךָ יִכְלֶה זַרְעֶךָ, אוֹ תִּמָּסֵר בְּיַד אוֹיֵב? אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, מוּטָב אֶמָּסֵר בְּיַד אוֹיֵב וְלֹא יִכְלֶה זַרְעִי.",
+     "en": "God said to David: Your arrival in Nov and your misleading Ahimelech the priest generated the chain of events, and therefore you must be punished. You may choose the punishment. <b>Is it your desire</b> that <b>your descendants will cease</b> to exist <b>or</b> that <b>you will be handed to the enemy?</b> David <b>said before Him: Master of the Universe, it is preferable</b> that <b>I will be handed to the enemy and my descendants will not cease</b> to exist."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 7,
+     "he": "יוֹמָא חַד נְפַק לִשְׁכוֹר בָּזָאֵי, אֲתָא שָׂטָן וְאִידְּמִי לֵיהּ כְּטַבְיָא. פְּתַק בֵּיהּ גִּירָא וְלָא מַטְיֵיהּ. מַשְׁכֵיהּ עַד דְּאַמְטְיֵיהּ לְאֶרֶץ פְּלִשְׁתִּים. כִּדְחַזְיֵיהּ יִשְׁבִּי בְּנוֹב אֲמַר: הַיְינוּ הַאי דְּקַטְלֵיהּ לְגׇלְיָת אֲחִי. כַּפְתֵיהּ, קַמְטֵיהּ, אוֹתְבֵיהּ וְשַׁדְיֵיהּ תּוּתֵי בֵּי סַדְיָיא. אִתְעֲבִיד לֵיהּ נִיסָּא, מָכָא לֵיהּ אַרְעָא מִתּוּתֵיהּ. הַיְינוּ דִּכְתִיב: ״תַּרְחִיב צַעֲדִי תַחְתָּי וְלֹא מָעֲדוּ קַרְסֻלָּי״.",
+     "en": "<b>One day</b> David <b>went to hunt</b> with <b>a falcon [<i>liskor bazzai</i>]. Satan came and appeared to him as a deer. He shot an arrow at</b> the deer, <b>and</b> the arrow <b>did not reach it.</b> Satan <b>led</b> David to follow the deer <b>until he reached the land of the Philistines. When Ishbibenob saw</b> David <b>he said: This is that</b> person <b>who killed Goliath, my brother. He bound him, doubled him over, and placed him</b> on the ground, <b>and</b> then he <b>cast him under</b> the beam <b>of an olive press</b> to crush him. <b>A miracle was performed for him, and the earth opened beneath him</b> so he was not crushed by the beam. <b>That is</b> the meaning of that <b>which is written: “You have enlarged my steps beneath me, that my feet did not slip”</b> (Psalms 18:37)."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 8,
+     "he": "הָהוּא יוֹמָא אַפַּנְיָא דְּמַעֲלֵי שַׁבְּתָא הֲוָה. אֲבִישַׁי בֶּן צְרוּיָה הֲוָה קָא חָיֵיף רֵישֵׁיהּ בְּאַרְבְּעָא גַּרְבֵי דְּמַיָּא. חֲזִינְהוּ כִּתְמֵי דְּמָא. אִיכָּא דְּאָמְרִי: אֲתָא יוֹנָה אִיטְּרִיף קַמֵּיהּ. אֲמַר: כְּנֶסֶת יִשְׂרָאֵל לְיוֹנָה אִימְּתִילָא, שֶׁנֶּאֱמַר ״כַּנְפֵי יוֹנָה נֶחְפָּה בַכֶּסֶף״. שְׁמַע מִינַּהּ דָּוִד מַלְכָּא דְּיִשְׂרָאֵל בְּצַעֲרָא שְׁרֵי. אֲתָא לְבֵיתֵיהּ וְלָא אַשְׁכְּחֵיהּ. אֲמַר, תְּנַן: אֵין רוֹכְבִין עַל סוּסוֹ וְאֵין יוֹשְׁבִין עַל כִּסְאוֹ וְאֵין מִשְׁתַּמְּשִׁין בְּשַׁרְבִיטוֹ. בִּשְׁעַת הַסַּכָּנָה מַאי? אֲתָא שְׁאֵיל בֵּי מִדְרְשָׁא. אֲמַרוּ לֵיהּ: בִּשְׁעַת הַסַּכָּנָה שַׁפִּיר דָּמֵי.",
+     "en": "The Gemara relates: <b>That day at dusk on Shabbat eve, Abishai ben Zeruiah shampooed his hair with four jugs of water</b> in preparation for Shabbat. <b>He saw four bloodstains. There are</b> those <b>who say: A dove came and fluttered</b> its wings <b>before him.</b> Abishai <b>said: The congregation of Israel is likened to a dove, as it is stated: “You shall shine as the wings of a dove covered with silver</b> and her pinions with yellow gold” (Psalms 68:14); <b>conclude from it</b> that <b>David, king of Israel, is in a state of distress. He came to</b> David’s <b>house and did not find him.</b> Abishai <b>said</b> that <b>we learned</b> in a mishna (22a): <b>One may not ride on</b> the king’s <b>horse, and one may not sit on his throne, and one may not use his scepter. In a period of danger, what</b> is the <i>halakha</i>? <b>He came</b> and <b>asked</b> in <b>the study hall</b> what the ruling is in that situation. <b>They said to him: In a period of danger</b> one may <b>well</b> do so."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 9,
+     "he": "רַכְבֵיהּ לְפִרְדֵּיהּ וְקָם וַאֲזַל. קְפַצָה לֵיהּ אַרְעָא. בַּהֲדֵי דְּקָא מְסַגֵּי, חַזְיַיהּ לְעׇרְפָּה אִמֵּיהּ דַּהֲוָות נָוְולָא. כִּי חֲזֵיתֵיהּ, פְּסַקְתֵּהּ לְפִילְכַּהּ, שְׁדָתֵיהּ עִילָּוֵיהּ, סְבַרָא לְמִקְטְלֵיהּ. אֲמַרָה לֵיהּ: עֻלֵם, אַיְיתִי לִי פְּלַךְ! פַּתְקֵיהּ בְּרֵישׁ מוֹחַהּ, וְקַטְלַהּ.",
+     "en": "<b>He mounted</b> the king’s <b>mule and arose and went</b> to the land of the Philistines. <b>The land</b> miraculously <b>contracted for him</b> and he arrived quickly. <b>As he was progressing he saw Orpah,</b> Ishbibenob’s <b>mother,</b> who was <b>spinning</b> thread with a spindle. <b>When she saw him, she removed her spindle and threw it at him, intending to kill</b> him. After failing to do so, <b>she said to</b> Abishai: <b>Young man, bring me</b> my <b>spindle. He threw</b> the spindle and struck her <b>at the top of her brain and killed her.</b>"
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 10,
+     "he": "כַּד חַזְיֵיהּ יִשְׁבִּי בְּנוֹב, אֲמַר: הַשְׁתָּא הָווּ בֵּי תְרֵין וְקָטְלִין לִי. פַּתְקֵיהּ לְדָוִד לְעֵילָּא, וְדָץ לֵיהּ לְרוּמְחֵיהּ. אֲמַר: נִיפּוֹל עֲלֵהּ וְנִקְּטַל. אֲמַר אֲבִישַׁי שֵׁם, אוֹקְמֵיהּ לְדָוִד בֵּין שְׁמַיָּא לְאַרְעָא.",
+     "en": "<b>When Ishbibenob saw him, he said: Now they are two,</b> David and Abishai, <b>and they will kill me. He threw David up</b> in the air, <b>and stuck his spear</b> into the ground. <b>He said: Let</b> David <b>fall upon it and die. Abishai recited</b> a sacred <b>name</b> of God and <b>suspended David between heaven and earth</b> so that he would not fall."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 11,
+     "he": "וְנֵימָא לֵיהּ אִיהוּ? אֵין חָבוּשׁ מוֹצִיא עַצְמוֹ מִבֵּית הָאֲסוּרִין.",
+     "en": "The Gemara asks: <b>And let</b> David <b>himself recite</b> the name of God and save himself. Why did he need Abishai? The Gemara answers: <b>A prisoner does not release himself from a prison</b> but requires someone else to release him. Similarly, one in danger is incapable of rescuing himself."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 12,
+     "he": "אֲמַר לֵיהּ: מַאי בָּעֵית הָכָא? אֲמַר לֵיהּ: הָכִי אֲמַר לִי קוּדְשָׁא בְּרִיךְ הוּא, וְהָכִי אַהְדַּרִי לֵיהּ. אֲמַר לֵיהּ: אֵפֹךְ צְלוֹתָיךְ! בַּר בְּרָךְ קִירָא לִיזְבּוֹן, וְאַתְּ לָא תִּצְטַעַר.",
+     "en": "Abishai <b>said to</b> David: <b>What do you seek here</b> and why did you fall into Ishbibenob’s hands? David <b>said to him: This</b> is what <b>the Holy One, Blessed be He, said to me, and this</b> is what <b>I responded to Him;</b> the time to submit to my enemy has arrived. Abishai <b>said to him: Reverse your prayer</b> and pray that your descendants will cease to exist rather than that you will be handed to the enemy, in accordance with the adage that people say: <b>Let your son’s son</b> be a poor peddler and <b>sell wax, and you will not suffer.</b> Do not limit your expenses to leave an inheritance for your descendants."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 13,
+     "he": "אֲמַר לֵיהּ: אִי הָכִי, סַיַּיע בַּהֲדַן. הַיְינוּ דִּכְתִיב: ״וַיַּעֲזׇר לוֹ אֲבִישַׁי בֶּן צְרוּיָה״. אָמַר רַב יְהוּדָה אָמַר רַב: שֶׁעֲזָרוֹ בִּתְפִלָּה. אֲמַר אֲבִישַׁי שֵׁם וְאַחֲתֵיהּ.",
+     "en": "David <b>said to him: If so, help me. That is</b> the meaning of that <b>which is written: “And Abishai, son of Zeruiah, came to his aid,</b> and smote the Philistine and killed him” (II Samuel 21:17). <b>Rav Yehuda says</b> that <b>Rav says:</b> This means <b>that he came to his aid in prayer. Abishai recited</b> another sacred <b>name</b> of God <b>and caused</b> David to <b>land</b> safely after being suspended between heaven and earth, and they fled."
+    },
+    {
+     "ref": "Sanhedrin 95a",
+     "i": 14,
+     "he": "הֲוָה קָא רָדֵיף בָּתְרַיְיהוּ. כִּי מְטֹא קוּבֵּי, אָמְרִי: קוּם בֵּיהּ. כִּי מְטֹא בֵּי תְרֵי, אָמְרִי: בִּתְרֵי גּוּרְיָוָן קַטְלוּהּ לְאַרְיָא. אָמְרִי לֵיהּ: זִיל אִשְׁתְּכַח לְעׇרְפָּה אִימָּיךְ בְּקִיבְרָא. כִּי אַדְכַּרוּ לֵיהּ שְׁמָא דְּאִימֵּיהּ, כְּחַשׁ חֵילֵיהּ וְקַטְלוּהּ. הַיְינוּ דִּכְתִיב: ״אָז נִשְׁבְּעוּ אַנְשֵׁי דָוִד לוֹ לֵאמֹר לֹא תֵצֵא עוֹד אִתָּנוּ לַמִּלְחָמָה וְלֹא תְכַבֶּה אֶת נֵר יִשְׂרָאֵל״.",
+     "en": "Ishbibenob <b>pursued them,</b> intending to kill them. <b>When they reached</b> the place named <b>Kuvi they said:</b> The name of the place is an abbreviation for the phrase meaning: <b>Stand</b> and battle <b>against him [<i>kum beih</i>]. When they reached</b> a place called <b>Bei Terei,</b> David and Abishai <b>said: With two [<i>bitrei</i>] cubs they killed the lion,</b> meaning they expected to be successful. <b>They said to</b> Ishbibenob: <b>Go find Orpah, your mother, in the grave. When they mentioned his mother’s name to him</b> and told him she died, <b>his strength diminished, and they killed him.</b> The Gemara notes: <b>It is</b> after this <b>that it is written: “Then David’s men took an oath to him saying: You shall not go with us to war anymore and you will not douse the lamp of Israel”</b> (II Samuel 21:17)."
+    }
+   ],
+   "words": 910,
+   "minutes": 7
+  },
+  {
+   "id": "sanhedrin-95b-15-15",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 95b",
+   "refs": [
+    "Sanhedrin 95b",
+    "Sanhedrin 96a"
+   ],
+   "start_segment": 15,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "God appears to the defeated Sennacherib as an old man and mocks his predicament, leading Sennacherib to ask how he can disguise himself. Sennacherib is tricked by God into a series of tasks that lead him to fashion an idol from Noah's ark, resulting in his sons murdering him after he vows to sacrifice them.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 95b",
+     "i": 15,
+     "he": "אֲתָא קוּדְשָׁא בְּרִיךְ הוּא, וְאִדְּמִי לֵיהּ כְּגַבְרָא סָבָא. אֲמַר לֵיהּ: כִּי אָזְלַתְּ לְגַבֵּי מַלְכֵי מִזְרָח וּמַעֲרָב דְּאַיְיתִיתִינְהוּ לִבְנַיְיהוּ וּקְטַלְתִּינְהוּ, מַאי אָמְרַתְּ לְהוּ? אֲמַר לֵיהּ: הַהוּא גַּבְרָא בְּהָהוּא פַּחְדָּא נָמֵי יָתֵיב. אֲמַר לֵיהּ: הֵיכִי נַעֲבֵיד? אֲמַר לֵיהּ: זִיל",
+     "en": "Rather, this is the incident depicted in the verse: <b>The Holy One, Blessed be He, came and appeared to</b> Sennacherib <b>as an old man.</b> God <b>said to him: When you go to the kings of the east and the west whose children you brought and killed, what will you say to them?</b> Sennacherib <b>said to</b> the Holy One, Blessed be He: <b>That man,</b> referring to himself, <b>also sits</b> overcome <b>with the same fear,</b> as I do not know what to say to them. Sennacherib <b>said to</b> the Holy One, Blessed be He: <b>What should we do?</b> The Holy One, Blessed be He, <b>said to him: Go</b>"
+    },
+    {
+     "ref": "Sanhedrin 96a",
+     "i": 0,
+     "he": "וְשַׁנִּי נַפְשָׁךְ. בְּמַאי אֵישַׁנֵּי? אֲמַר לֵיהּ: זִיל אַיְיתִי לִי מַסְפְּרָא וְאֶיגְזְיָיךְ אֲנָא. מֵהֵיכָא אַיְיתֵי? אֲמַר לֵיהּ: עוּל לְהָהוּא בֵּיתָא וְאַיְיתֵי. אֲזַל, אַשְׁכְּחִינְהוּ לְמַלְאֲכֵי שָׁרֵת וְאִידְּמוֹ לֵיהּ כְּגַבְרֵי, וַהֲווֹ קָא טָחֲנִי קַשְׁיָיתָא.",
+     "en": "<b>and change your</b> appearance so that they will not recognize you. Sennacherib asked him: <b>With what shall I change</b> it? God <b>said to him: Go bring me scissors and I will shear you</b> Myself. Sennacherib asked: <b>From where should I bring</b> the scissors? The Holy One, Blessed be He, <b>said to him: Go to that house and bring</b> them. <b>He went</b> and <b>found ministering angels,</b> who <b>came and appeared to</b> Sennacherib <b>as men; and</b> the angels <b>were grinding date pits.</b>"
+    },
+    {
+     "ref": "Sanhedrin 96a",
+     "i": 1,
+     "he": "אֲמַר לְהוּ: הַבוּ לִי מַסְפְּרָא. אֲמַרוּ לֵיהּ: טְחוֹן חַד גְּרִיוָא דְּקַשְׁיָיתָא וְנִיתֵּן לָךְ. טְחַן חַד גְּרִיוָא דְּקַשְׁיָיתָא וִיהַבוּ לֵיהּ מַסְפַּרְתָּא. עַד דַּאֲתָא, אִיחֲשַׁךְ. אֲמַרוּ לֵיהּ: זִיל אַיְיתִי נוּרָא. אֲזַל וְאַיְיתִי נוּרָא. בַּהֲדֵי דְּקָא נָפַח לֵיהּ, אִתְּלִי בֵּיהּ נוּרָא בְּדִיקְנֵיהּ. אֲזַל גַּזְיֵיהּ לְרֵישֵׁיהּ וְדִיקְנֵיהּ. (אֲמַרוּ): הַיְינוּ דִּכְתִיב ״וְגַם אֶת הַזָּקָן תִּסְפֶּה״. אָמַר רַב פָּפָּא, הַיְינוּ דְּאָמְרִי אִינָשֵׁי: ״גָּרֵירְתֵּיהּ לְאַרְמָאָה שְׁפַר לֵיהּ, אַיתְלֵי לֵיהּ נוּרָא בְּדִיקְנֵיהּ וְלָא שָׂבְעַתְּ חוּכָא מִינֵּיהּ״.",
+     "en": "Sennacherib <b>said to them: Give me scissors.</b> The ministering angels <b>said to him: Grind a <i>se’a</i> of pits and we will give</b> it <b>to you. He ground a <i>se’a</i> of pits and they gave him scissors. By</b> the time <b>he came</b> back with the scissors <b>it grew dark.</b> The Holy One, Blessed be He, <b>said to</b> Sennacherib: <b>Go</b> and <b>bring fire</b> to provide light. Sennacherib <b>went and brought fire. While he was fanning it, the fire ignited his beard</b> and <b>it spread</b> and <b>sheared his head and his beard.</b> The Sages <b>said: This is</b> the meaning of that <b>which is written: “And it shall also destroy the beard”</b> (Isaiah 7:20). <b>Rav Pappa says</b> that <b>this</b> is in accordance with the adage <b>that people say: If you scorch a gentile</b> and <b>it is pleasant for him, ignite a fire in his beard and you will never tire of ridiculing him.</b> It means that if one does not protest when others ridicule him, they will escalate the ridicule. The adage is based upon this incident involving Sennacherib."
+    },
+    {
+     "ref": "Sanhedrin 96a",
+     "i": 2,
+     "he": "אֲזַל, אַשְׁכַּח דַּפָּא מִתֵּיבוּתָא דְּנֹחַ. אָמַר: הַיְינוּ אֱלָהָא רַבָּא דְּשֵׁיזְבֵיהּ לְנֹחַ מִטּוֹפָנָא. אֲמַר: אִי אָזֵיל הָהוּא גַּבְרָא וּמַצְלַח, מְקָרֵב לְהוּ לִתְרֵין בְּנוֹהִי קַמָּךְ. שְׁמַעוּ בְּנוֹהִי וְקַטְלוּהּ. הַיְינוּ דִּכְתִיב: ״וַיְהִי הוּא מִשְׁתַּחֲוֶה בֵּית נִסְרֹךְ אֱלֹהָיו וְאַדְרַמֶּלֶךְ וְשַׂרְאֶצֶר בָּנָיו הִכֻּהוּ בַחֶרֶב וְגוֹ׳״.",
+     "en": "Sennacherib <b>went and found a beam from Noah’s ark,</b> from which he fashioned a god. <b>He said: This</b> beam <b>is the great god who delivered Noah from the flood. He said: If that man,</b> referring to himself, <b>goes and succeeds, he will sacrifice his two sons before you. His sons heard</b> his commitment <b>and killed him. This is</b> the meaning of that <b>which is written: “And it came to pass as he was worshipping in the house of Nisroch his god that Adrammelech and Sarezer, his sons, smote him with the sword,</b> and they fled to Ararat” (II Kings 19:37), where Noah’s ark had come to rest. The Gemara explains that this interpretation is based upon the etymological similarity between <i>neser</i>, the Hebrew term for beam, and Nisroch, the god that Sennacherib fashioned from a beam."
+    }
+   ],
+   "words": 498,
+   "minutes": 4
+  },
+  {
+   "id": "sanhedrin-96a-11-12",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 96a",
+   "refs": [
+    "Sanhedrin 96a"
+   ],
+   "start_segment": 11,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Nebuchadnezzar, acting as a scribe, runs four paces to correct a letter that placed God's name after the king's, until he is stopped by the angel Gabriel.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 96a",
+     "i": 11,
+     "he": "נְבוּכַדְנֶאצַּר סָפְרֵיהּ דְּבַלְאֲדָן הֲוָה. הָהִיא שַׁעְתָּא לָא הֲוָה הָתָם. כִּי אֲתָא, אֲמַר לְהוּ: הֵיכִי כָּתְבִיתוּ? אֲמַרוּ לֵיהּ: הָכִי כָּתְבִינַן. אֲמַר לְהוּ: קְרֵיתוּ לֵיהּ ״אֱלָהָא רַבָּא״ וְכָתְבִיתוּ לֵיהּ לְבַסּוֹף? אָמַר: אֶלָּא הָכִי כְּתוּבוּ: ״שְׁלָם לֶאֱלָהָא רַבָּא, שְׁלָם לְקַרְתָּא דִּירוּשְׁלֶם, שְׁלָם לְמַלְכָּא חִזְקִיָּה״. אָמְרִי לֵיהּ: קַרְיָינָא דְּאִיגַּרְתָּא אִיהוּ לֶיהֱוֵי פַּרְוַונְקָא.",
+     "en": "<b>Nebuchadnezzar was the scribe of Baladan,</b> and <b>at that time he was not there. When he came</b> there <b>he said to</b> the other scribes: <b>How did you write</b> the king’s message? <b>They said to him: We wrote this:</b> Greetings to King Hezekiah, greetings to the city of Jerusalem, and greetings to the great God, as we were commanded. Nebuchadnezzar <b>said to</b> the scribes: <b>You called him: The great God, and you wrote Him at the end</b> of the list of greetings? <b>He said: Rather, write this: Greetings to the great God, greetings to the city of Jerusalem,</b> and <b>greetings to King Hezekiah.</b> The scribes <b>said to</b> Nebuchadnezzar: <b>The one who reads the letter, let him be the messenger.</b> You gave the advice; you correct the text."
+    },
+    {
+     "ref": "Sanhedrin 96a",
+     "i": 12,
+     "he": "רְהַט בָּתְרֵיהּ, כִּדְרָהֵיט אַרְבַּע פְּסִיעוֹת, אֲתָא גַּבְרִיאֵל וְאוֹקְמֵיהּ. אָמַר רַבִּי יוֹחָנָן: אִילְמָלֵא לֹא בָּא גַּבְרִיאֵל וְהֶעֱמִידוֹ, לֹא הָיָה תַּקָּנָה לְשׂוֹנְאֵיהֶם שֶׁל יִשְׂרָאֵל.",
+     "en": "Nebuchadnezzar <b>pursued</b> the messenger to take the letter from him and revise it. <b>When he ran four paces,</b> the angel <b>Gabriel came and stopped his</b> pursuit. <b>Rabbi Yoḥanan says: If Gabriel had not come and stopped his</b> pursuit <b>there would have been no remedy for the enemies of the Jewish people,</b> a euphemism for the Jewish people. Had Nebuchadnezzar succeeded in revising the letter, his reward would have been so great that he would have been able to destroy the Jewish people, as he desired."
+    }
+   ],
+   "words": 211,
+   "minutes": 2
+  },
+  {
+   "id": "sanhedrin-96b-1-6",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 96b",
+   "refs": [
+    "Sanhedrin 96b"
+   ],
+   "start_segment": 1,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Nebuzaradan breaches Jerusalem's gates, burns the Temple, and attempts to silence the boiling blood of the murdered prophet Zechariah by slaughtering thousands, eventually leading him to repent and convert.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 1,
+     "he": "אָמַר רָבָא: טְעוֹן תְּלָת מְאָה כּוּדַנְיָיתָא נַרְגָּא דְפַרְזְלָא דְּשָׁלֵיט בְּפַרְזְלָא שַׁדַּר לֵיהּ נְבוּכַדְנֶצַּר לִנְבוּזַרְאֲדָן. כּוּלְּהוּ בְּלַעְתִּינְהוּ חַד דַּשָּׁא דִּירוּשְׁלֶם, שֶׁנֶּאֱמַר: ״פִּתּוּחֶיהָ יָּחַד בְּכַשִּׁיל וְכֵילַפֹּת יַהֲלֹמוּן״. בָּעֵי לְמִיהְדַּר, אָמַר: מִסְתְּפֵינָא דְּלָא לִיעְבְּדוּ בִּי כִּי הֵיכִי דַּעֲבַדוּ בְּסַנְחֵרִיב.",
+     "en": "§ The Gemara proceeds to discuss the role of Nebuzaradan in the destruction of the Temple. <b>Rava says: Nebuchadnezzar sent to Nebuzaradan three hundred mules laden with iron axes that cut iron. All of them were incapacitated</b> in the attempt to breach <b>one gate of Jerusalem, as it is stated: “And now they pound its carved work together with hatchet and with hammers”</b> (Psalms 74:6). Nebuzaradan <b>sought to return</b> to Babylonia and <b>said: I am afraid.</b> I want to ensure <b>that they will not do to me just as they did to Sennacherib,</b> whose downfall was in Jerusalem."
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 2,
+     "he": "נָפְקָא קָלָא וְאָמַר: ״שָׁוַור בַּר שָׁוַור, נְבוּזַרְאֲדָן, שְׁוַור דִּמְטָא זִימְנָא דְּמַקְדְּשָׁא חֲרִיב וְהֵיכְלָא מִיקְּלֵי״. פָּשׁ לֵיהּ חַד נַרְגָּא. אֲתָא מַחְיֵיהּ בְּקוֹפָא, וְאִיפְּתַח, שֶׁנֶּאֱמַר: ״יִוָּדַע כְּמֵבִיא לְמָעְלָה בִּסְבׇךְ עֵץ קַרְדֻּמּוֹת״.",
+     "en": "A Divine <b>Voice emerged and said: Leaper, son of a leaper; Nebuzaradan, take</b> the <b>leap, as the time has arrived for the Temple to be destroyed and the Sanctuary to burn. One ax remained for him</b> to use. <b>He went and struck</b> the gate <b>with the dull end</b> of the ax <b>and it opened, as it is stated: “He became known as the wielder of axes upward in a thicket of trees”</b> (Psalms 74:5). At the appropriate time the gate was breached as though the ax were cutting trees."
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 3,
+     "he": "הֲוָה קָטֵיל וְאָזֵל, עַד דִּמְטָא לְהֵיכְלָא. אַדְלֵיק בֵּיהּ נוּרָא. גְּבַהּ הֵיכְלָא. דְּרַכוּ בֵּיהּ מִן שְׁמַיָּא, שֶׁנֶּאֱמַר: ״גַּת דָּרַךְ ה׳ לִבְתוּלַת בַּת יְהוּדָה״. קָא זִיחָא דַּעְתֵּיהּ. נְפַקָא בַּת קָלָא וַאֲמַרָה לֵיהּ: עַמָּא קְטִילָא קָטְלַתְּ, הֵיכְלָא קַלְיָא קְלֵית, קִימְחָא טְחִינָא טְחֵינְתְּ, שֶׁנֶּאֱמַר: ״קְחִי רֵחַיִם וְטַחֲנִי קָמַח גַּלִּי צַמָּתֵךְ חֶשְׂפִּי שֹׁבֶל גַּלִּי שׁוֹק עִבְרִי נְהָרוֹת״. ״חִטִּים״ לֹא נֶאֱמַר, אֶלָּא ״קֶמַח״.",
+     "en": "<b>He was proceeding and killing until he reached the Sanctuary.</b> When he reached the Sanctuary, <b>he ignited a fire in it. The Sanctuary rose,</b> seeking to enter Heaven so that it would not burn. <b>They trod upon it from Heaven</b> and returned it to its place, <b>as it is stated: “The Lord has trodden the virgin, the daughter of Judah, as in a winepress”</b> (Lamentations 1:15). Nebuzaradan <b>became haughty,</b> taking pride in his conquest. <b>A Divine Voice emerged and said to him:</b> Your haughtiness is unwarranted, as <b>you killed a nation</b> that was already <b>dead, you burned a Sanctuary</b> that was already <b>burned,</b> and <b>you ground flour</b> that was already <b>ground, as it is stated</b> with regard to Babylonia: <b>“Take millstones and grind flour; uncover your locks, tuck up the train, uncover the leg, pass over rivers”</b> (Isaiah 47:2). <b>It was not stated:</b> Grind <b>wheat, but</b> “grind <b>flour,”</b> indicating that all the destruction had already been wrought by God, and the role played by the enemy was insignificant."
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 4,
+     "he": "חֲזָא דְּמֵיהּ דִּזְכַרְיָה דַּהֲוָה קָא רָתַח. אָמַר לְהוּ: מַאי הַאי? אֲמַרוּ לֵיהּ: דַּם זְבָחִים הוּא דְּאִישְׁתְּפִיךְ. אֲמַר לְהוּ: אַיְיתֵי וַאֲנַסֵּי אִי מִדְּמוּ. כַּסִּי וְלָא אִידְּמוֹ. אֲמַר לְהוּ: גַּלּוֹ לִי, וְאִי לָא סָרֵיקְנָא לְכוּ לְבִשְׂרַיְיכוּ בְּמַסְרֵיקָא דְּפַרְזְלָא.",
+     "en": "When he reached the Sanctuary, <b>he saw the blood of Zechariah</b> the priest <b>boiling.</b> It had not calmed since he was killed in the Temple (see II Chronicles 24:20–22). Nebuzaradan <b>said to</b> the priests there: <b>What is this? They said to him: It is the blood of offerings that was spilled.</b> Nebuzaradan <b>said to them: Bring</b> animals <b>and I will test</b> to determine <b>if</b> the blood of the animals <b>is similar</b> to the blood that is boiling. <b>He slaughtered</b> the animals <b>and</b> their blood <b>was not similar</b> to the boiling blood. Nebuzaradan <b>said to</b> the priests: <b>Reveal</b> the source of that blood <b>to me, and if not I will comb your flesh with an iron comb.</b>"
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 5,
+     "he": "אֲמַרוּ לֵיהּ: הַאי כֹּהֵן וְנָבִיא הוּא, דְּאִינַּבִּי לְהוּ לְיִשְׂרָאֵל בְּחוּרְבָּנָא דִּירוּשְׁלֶם, וְקַטְלוּהּ. אֲמַר לְהוּ: אֲנָא מְפַיֵּיסְנָא לֵיהּ. אַיְיתִי רַבָּנַן, קָטֵיל עִילָּוֵיהּ, וְלָא נָח. אַיְיתִי דַּרְדַּקֵּי דְּבֵי רַב, קָטֵיל עִילָּוֵיהּ, וְלָא נָח. אַיְיתִי פִּרְחֵי כְהוּנָּה, קָטֵיל עִילָּוֵיהּ, וְלָא נָח. עַד דִּי קְטַל עִילָּוֵיהּ תִּשְׁעִין וְאַרְבְּעָה רִיבּוֹא, וְלָא נָח.",
+     "en": "The priests <b>said to</b> Nebuzaradan: <b>This</b> blood <b>is</b> the blood of <b>a priest and a prophet who prophesied for the Jewish people with regard to the destruction of Jerusalem and whom they killed. He said to</b> the priests: <b>I will pacify</b> the blood so the boiling will stop. <b>He brought the Sages</b> and <b>killed them over</b> the blood <b>and</b> its boiling <b>did not cease. He brought schoolchildren</b> and <b>killed them over</b> the blood <b>and</b> its boiling <b>did not cease. He brought young priests</b> and <b>killed them over</b> the blood <b>and</b> its boiling <b>did not cease.</b> He continued killing <b>until he killed 940,000</b> people <b>over</b> the blood, <b>and</b> its boiling <b>did not cease.</b>"
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 6,
+     "he": "קְרַב לְגַבֵּיהּ, אֲמַר: זְכַרְיָה, זְכַרְיָה, טוֹבִים שֶׁבָּהֶן אִיבַּדְתִּים. נִיחָא לָךְ דְּאֶיקְטְלִינְהוּ לְכוּלְּהוּ? מִיָּד נָח. הַרְהַר תְּשׁוּבָה בְּדַעְתֵּיהּ, אֲמַר: מָה הֵם שֶׁלֹּא אִיבְּדוּ אֶלָּא נֶפֶשׁ אַחַת כָּךְ, הָהוּא גַּבְרָא מָה תֶּיהְוֵי עֲלֵיהּ? עֲרַק, שַׁדַּר פּוּרְטֵיתָא לְבֵיתֵיהּ, וְאִיתְגַּיַּיר.",
+     "en": "Nebuzaradan <b>approached</b> the blood and <b>said: Zechariah, Zechariah, the worthy among them I killed</b> on your behalf. <b>Is it satisfactory for you that I kill them all? Immediately</b> the boiling <b>ceased.</b> Nebuzaradan <b>contemplated repentance. He said: If they, who caused only one person to perish,</b> gained atonement only after all <b>this</b> killing, then with regard to <b>that man,</b> referring to himself, <b>what will be</b> required <b>for him</b> to gain atonement? <b>He deserted</b> his army and <b>dispatched</b> a last <b>will to his house and converted.</b>"
+    }
+   ],
+   "words": 667,
+   "minutes": 5
+  },
+  {
+   "id": "sanhedrin-96b-9-13",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 96b",
+   "refs": [
+    "Sanhedrin 96b"
+   ],
+   "start_segment": 9,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Ammon and Moab convince a hesitant Nebuchadnezzar to invade Jerusalem by using scriptural interpretations to argue that God will not protect the city.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 9,
+     "he": "אָמַר עוּלָּא: עַמּוֹן וּמוֹאָב שִׁיבָבֵי בִּישֵׁי דִּירוּשְׁלֶם הֲווֹ. כֵּיוָן דְּשַׁמְעִינְהוּ לִנְבִיאֵי דְּקָא מִיתְנַבְּאִי לְחוּרְבָּנָא דִּירוּשְׁלֶם, שְׁלַחוּ לִנְבוּכַדְנֶצַּר: פּוֹק וְתָא. אָמַר: מִסְתְּפֵינָא דְּלָא לִיעְבְּדוּ לִי כְּדַעֲבַדוּ בְּקַמָּאֵי.",
+     "en": "§ On a related note, the Gemara describes the events that led to the destruction of the Temple. <b>Ulla says: Ammon and Moab were bad neighbors of Jerusalem. Once they heard the prophets who prophesied about the destruction of the Jerusalem, they sent to Nebuchadnezzar: Emerge</b> from your dwelling place <b>and come</b> conquer them. Nebuchadnezzar <b>said</b> to them: <b>I am afraid.</b> I want to ensure <b>that they will not do to me just as they did to</b> my <b>predecessors.</b>"
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 10,
+     "he": "שְׁלַחוּ לֵיהּ: ״כִּי אֵין הָאִישׁ בְּבֵיתוֹ הָלַךְ בְּדֶרֶךְ מֵרָחוֹק״, וְאֵין אִישׁ אֶלָּא הַקָּדוֹשׁ בָּרוּךְ הוּא, שֶׁנֶּאֱמַר: ״ה׳ אִישׁ מִלְחָמָה״. שְׁלַח לְהוּ: בְּקָרִיבָא הוּא וְאָתֵי. שְׁלַחוּ לֵיהּ: ״הָלַךְ בְּדֶרֶךְ מֵרָחוֹק״. שְׁלַח לְהוּ: אִית לְהוּ צַדִּיקֵי דְּבָעוּ רַחֲמֵי וּמַיְיתוּ לֵיהּ.",
+     "en": "Ammon and Moab <b>sent to him</b> that it is written: <b>“For the <i>ish</i> is not at home; he is gone on a long journey”</b> (Proverbs 7:19), <b>and <i>ish</i></b> is referring to <b>no</b> one <b>but the Holy One, Blessed be He, as it is stated: “The Lord is an <i>ish</i> of war”</b> (Exodus 15:3). Nebuchadnezzar <b>sent to them</b> in response: <b>He is in a nearby</b> location, <b>and He will come.</b> They <b>sent to</b> Nebuchadnezzar: <b>“He has gone on a journey from afar”</b> (Proverbs 7:19). Nebuchadnezzar <b>said to them: They have righteous</b> among them <b>who will pray for mercy and bring Him</b> to return."
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 11,
+     "he": "שְׁלַחוּ לֵיהּ: ״צְרוֹר הַכֶּסֶף לָקַח בְּיָדוֹ״, וְאֵין כֶּסֶף אֶלָּא צַדִּיקִים, שֶׁנֶּאֱמַר: ״וָאֶכְּרֶהָ לִּי בַּחֲמִשָּׁה עָשָׂר כָּסֶף וְחֹמֶר שְׂעֹרִים וְלֵתֶךְ שְׂעֹרִים״.",
+     "en": "Ammon and Moab <b>sent to</b> Nebuchadnezzar: <b>“He has taken a bundle of <i>kesef</i> with him”</b> (Proverbs 7:20), <b>and <i>kesef</i></b> is referring to <b>nothing other than the righteous, as it is stated: “So I bought her to me for fifteen pieces of <i>kesef</i> and for a <i>kor</i> of barley and a half-<i>kor</i> of barley”</b> (Hosea 3:2). The inference is that God acquired the congregation of Israel due to the presence of righteous people among them, and Ammon and Moab sent a message to Nebuchadnezzar that God had already taken the righteous and they no longer offered protection."
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 12,
+     "he": "שְׁלַח לְהוּ: הָדְרִי רַשִּׁיעֵי בִּתְשׁוּבָה, וּבָעוּ רַחֲמֵי וּמַיְיתוּ לֵיהּ. שְׁלַחוּ לֵיהּ: כְּבָר קָבַע לָהֶן זְמַן, שֶׁנֶּאֱמַר ״לְיוֹם הַכֶּסֶא יָבֹא בֵּיתוֹ״. אֵין כֶּסֶא אֶלָּא זְמַן, שֶׁנֶּאֱמַר ״בַּכֵּסֶה לְיוֹם חַגֵּנוּ״. שְׁלַח לְהוּ: סִיתְוָוא הוּא, וְלָא מָצֵינָא דְּאָתֵי מִתַּלְגָא וּמִמִּיטְרָא.",
+     "en": "Nebuchadnezzar <b>sent to them:</b> Perhaps <b>the wicked will repent</b> and become righteous <b>and they will pray for mercy and they will bring Him</b> to return. Ammon and Moab <b>sent to</b> Nebuchadnezzar: <b>God already designated the time of their</b> redemption, <b>as it is stated: “On the day of the <i>keseh</i>, He will come home”</b> (Proverbs 7:20), and <b><i>keseh</i></b> is referring to <b>nothing other than</b> a designated <b>time, as it is stated:</b> “Sound a <i>shofar</i> at the New Moon, <b>at the <i>keseh</i> on the day of our feast”</b> (Psalms 81:4). Since there is a time designated for redemption, until then you can do as you please. Nebuchadnezzar <b>sent to them: It is winter</b> now <b>and I cannot come</b> and conquer Jerusalem <b>due to the snow and the rain.</b>"
+    },
+    {
+     "ref": "Sanhedrin 96b",
+     "i": 13,
+     "he": "שְׁלַחוּ לֵיהּ: תָּא אַשִּׁינָּא דְּטוּרָא, שֶׁנֶּאֱמַר: ״שִׁלְחוּ כַר מוֹשֵׁל אֶרֶץ מִסֶּלַע מִדְבָּרָה אֶל הַר בַּת צִיּוֹן״. שְׁלַח לְהוּ: אִי אָתֵינָא, לֵית לִי דּוּכְתָּא דְּיָתֵיבְנָא בֵּיהּ. שְׁלַחוּ לֵיהּ: קְבָרוֹת שֶׁלָּהֶם מְעוּלִּין מִפַּלְטֵירִין שֶׁלְּךָ, דִּכְתִיב: ״בָּעֵת הַהִיא נְאֻם ה׳ יוֹצִיאוּ אֶת עַצְמוֹת מַלְכֵי יְהוּדָה וְאֶת עַצְמוֹת שָׂרָיו וְאֶת עַצְמוֹת הַכֹּהֲנִים וְאֵת עַצְמוֹת הַנְּבִיאִים וְאֵת עַצְמוֹת יוֹשְׁבֵי יְרוּשָׁלִָים מִקִּבְרֵיהֶם וּשְׁטָחוּם לַשֶּׁמֶשׁ וְלַיָּרֵחַ וּלְכֹל צְבָא הַשָּׁמַיִם אֲשֶׁר אֲהֵבוּם וַאֲשֶׁר עֲבָדוּם וַאֲשֶׁר הָלְכוּ אַחֲרֵיהֶם״.",
+     "en": "Ammon and Moab <b>sent to him: Come on the peaks of mountains,</b> where the rain does not pool, <b>as it is stated: “Send the lamb to the ruler of the land from the peaks of the wilderness to the mount of the daughter of Zion”</b> (Isaiah 16:1). Nebuchadnezzar <b>sent to them: If I come</b> to Jerusalem, <b>I</b> will <b>have no place to dwell</b> while laying siege to the city. Ammon and Moab <b>sent to him: Their burial caves are superior to your palaces,</b> and you can clear the caves and dwell there, <b>as it is written: “At that time, says the Lord, they shall remove the bones of the kings of Judea, and the bones of his princes, and the bones of the priests, and the bones of the prophets and the bones of the inhabitants of Jerusalem from their graves; and they shall spread them before the sun and the moon and all of the hosts of heaven, whom they have loved, and whom they have served, and after whom they have walked”</b> (Jeremiah 8:1–2). Ultimately Nebuchadnezzar came to conquer Judea and removed the corpses to make room for his army."
+    }
+   ],
+   "words": 597,
+   "minutes": 4
+  },
+  {
    "id": "sanhedrin-97a-5-6",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 97a",
@@ -2347,6 +3376,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2378,6 +3408,7 @@
    "start_segment": 2,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2403,6 +3434,7 @@
    "start_segment": 14,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2441,6 +3473,7 @@
    "start_segment": 17,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2481,6 +3514,64 @@
    "minutes": 2
   },
   {
+   "id": "sanhedrin-99b-3-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 99b",
+   "refs": [
+    "Sanhedrin 99b"
+   ],
+   "start_segment": 3,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "King Manasseh sits and mocks the Torah by questioning the necessity of seemingly trivial verses, leading to his classification as a blasphemer.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 99b",
+     "i": 3,
+     "he": "תָּנוּ רַבָּנַן: ״וְהַנֶּפֶשׁ אֲשֶׁר תַּעֲשֶׂה בְּיָד רָמָה״ – זֶה מְנַשֶּׁה בֶּן חִזְקִיָּה, שֶׁהָיָה יוֹשֵׁב וְדוֹרֵשׁ בְּהַגָּדוֹת שֶׁל דּוֹפִי.",
+     "en": "§ <b>The Sages taught</b> in a <i>baraita</i> that with regard to the verse: <b>“But the person who acts high-handedly,</b> whether he is born in the land, or a stranger, that person blasphemes the Lord” (Numbers 15:30), <b>this</b> is a reference to <b>Manasseh ben Hezekiah,</b> king of Israel, <b>who would sit and teach flawed</b> interpretations of Torah <b>narratives.</b>"
+    },
+    {
+     "ref": "Sanhedrin 99b",
+     "i": 4,
+     "he": "אָמַר: וְכִי לֹא הָיָה לוֹ לְמֹשֶׁה לִכְתּוֹב אֶלָּא ״וַאֲחוֹת לוֹטָן תִּמְנָע״, ״וְתִמְנַע הָיְתָה פִילֶגֶשׁ לֶאֱלִיפַז״, ״וַיֵּלֶךְ רְאוּבֵן בִּימֵי קְצִיר חִטִּים וַיִּמְצָא דוּדָאִים בַּשָּׂדֶה״? יָצְאָה בַּת קוֹל וְאָמְרָה לוֹ: ״תֵּשֵׁב בְּאָחִיךָ תְדַבֵּר בְּבֶן אִמְּךָ תִּתֶּן דֹּפִי. אֵלֶּה עָשִׂיתָ וְהֶחֱרַשְׁתִּי דִּמִּיתָ הֱיוֹת אֶהְיֶה כָמוֹךָ אוֹכִיחֲךָ וְאֶעֶרְכָה לְעֵינֶיךָ״.",
+     "en": "Manasseh <b>said: But did Moses need to write only</b> insignificant matters that teach nothing, for example: <b>“And Lotan’s sister was Timna”</b> (Genesis 36:22), or: <b>“And Timna was concubine to Eliphaz,</b> son of Esau” (Genesis 36:12), or: <b>“And Reuben went in the days of the wheat harvest and found <i>duda’im</i> in the field”</b> (Genesis 30:14)? <b>A Divine Voice emerged and said to him: “You sit and speak against your brother; you slander your own mother’s son. These things you have done, and should I have kept silence, you would imagine that I was like you, but I will reprove you, and set the matter before your eyes”</b> (Psalms 50:20–21). The verses in the Torah are not empty matters, with regard to which you can decide their import."
+    }
+   ],
+   "words": 183,
+   "minutes": 2
+  },
+  {
+   "id": "sanhedrin-99b-7-7",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 99b",
+   "refs": [
+    "Sanhedrin 99b"
+   ],
+   "start_segment": 7,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Timna seeks to convert but is rejected by the Patriarchs, leading her to become a concubine to Eliphaz, son of Esau.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 99b",
+     "i": 7,
+     "he": "בָּעֲיָא לְאִיגַּיּוֹרֵי. בָּאתָה אֵצֶל אַבְרָהָם, יִצְחָק וְיַעֲקֹב, וְלֹא קִבְּלוּהָ. הָלְכָה וְהָיְתָה פִילֶגֶשׁ לֶאֱלִיפַז בֶּן עֵשָׂו. אָמְרָה: מוּטָב תְּהֵא שִׁפְחָה לְאוּמָּה זוֹ וְלֹא תְּהֵא גְּבִירָה לְאוּמָּה אַחֶרֶת. נְפַק מִינַּהּ עֲמָלֵק, דְּצַעֲרִינְהוּ לְיִשְׂרָאֵל. מַאי טַעְמָא? דְּלָא אִיבְּעִי לְהוּ לְרַחוֹקַהּ.",
+     "en": "Timna <b>sought to convert. She came before Abraham, Isaac, and Jacob, and they did not accept her. She went and became a concubine of Eliphaz, son of Esau, and said,</b> referring to herself: <b>It is preferable that she will be a maidservant for this nation, and she will not be a noblewoman for another nation.</b> Ultimately, <b>Amalek,</b> son of Eliphaz, <b>emerged from her,</b> and that tribe <b>afflicted the Jewish people. What is the reason</b> that the Jewish people were punished by suffering at the hand of Amalek? It is due to the fact <b>that they should not have rejected her</b> when she sought to convert. Therefore, the verse is significant."
+    }
+   ],
+   "words": 110,
+   "minutes": 1
+  },
+  {
    "id": "sanhedrin-100a-3-3",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 100a",
@@ -2490,6 +3581,7 @@
    "start_segment": 3,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2515,6 +3607,7 @@
    "start_segment": 5,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2540,6 +3633,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2565,6 +3659,7 @@
    "start_segment": 8,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2590,6 +3685,7 @@
    "start_segment": 10,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2642,6 +3738,32 @@
    "minutes": 4
   },
   {
+   "id": "sanhedrin-102a-16-16",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 102a",
+   "refs": [
+    "Sanhedrin 102a"
+   ],
+   "start_segment": 16,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "God grabs Jeroboam's garment and offers him a place in Paradise alongside the Son of Jesse, but Jeroboam refuses when he learns David will lead the procession.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 102a",
+     "i": 16,
+     "he": "״אַחַר הַדָּבָר הַזֶּה לֹא שָׁב יָרׇבְעָם מִדַּרְכּוֹ הָרָעָה״. מַאי ״אַחַר״? אָמַר רַבִּי אַבָּא: אַחַר שֶׁתְּפָשׂוֹ הַקָּדוֹשׁ בָּרוּךְ הוּא לְיָרׇבְעָם בְּבִגְדוֹ, וְאָמַר לוֹ: חֲזוֹר בְּךָ, וַאֲנִי וְאַתָּה וּבֶן יִשַׁי נְטַיֵּיל בְּגַן עֵדֶן. אָמַר לוֹ: מִי בָּרֹאשׁ? בֶּן יִשַׁי בָּרֹאשׁ. אִי הָכִי, לָא בָּעֵינָא.",
+     "en": "The verse states: <b>“And after this matter, Jeroboam returned not from his evil way”</b> (I Kings 13:33). To <b>what</b> event is the verse alluding, when it states: <b>“After</b> this matter”? <b>Rabbi Abba says:</b> It is <b>after the Holy One, Blessed be He, grabbed Jeroboam by his garment,</b> i.e., he sent prophets and implored him, <b>and said to him: Repent, and you and I and</b> the <b>son of Yishai will stroll</b> together <b>in the Garden of Eden.</b> Jeroboam <b>said to Him: Who</b> will walk <b>in the lead?</b> God <b>said to</b> Jeroboam: The <b>son of Yishai</b> will walk <b>in the lead.</b> Jeroboam said: <b>If so, I do not wish</b> to repent."
+    }
+   ],
+   "words": 109,
+   "minutes": 1
+  },
+  {
    "id": "sanhedrin-102a-17-17",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 102a",
@@ -2652,6 +3774,7 @@
    "start_segment": 17,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2683,6 +3806,7 @@
    "start_segment": 1,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2720,6 +3844,7 @@
    "start_segment": 7,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2745,6 +3870,7 @@
    "start_segment": 8,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2771,6 +3897,7 @@
    "start_segment": 15,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2814,6 +3941,7 @@
    "start_segment": 12,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2845,6 +3973,7 @@
    "start_segment": 8,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2861,6 +3990,213 @@
    "minutes": 1
   },
   {
+   "id": "sanhedrin-106a-7-10",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 106a",
+   "refs": [
+    "Sanhedrin 106a"
+   ],
+   "start_segment": 7,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Balaam advises Balak to use prostitutes and wine to seduce the Israelites into idolatry, leading to a specific narrative of a man being lured into worshipping an idol in exchange for sex.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 106a",
+     "i": 7,
+     "he": "אָמַר לָהֶם: אֱלֹהֵיהֶם שֶׁל אֵלּוּ שׂוֹנֵא זִימָּה הוּא, וְהֵם מִתְאַוִּים לִכְלֵי פִשְׁתָּן. בּוֹא וְאַשִּׂיאֲךָ עֵצָה: עֲשֵׂה לָהֶן קְלָעִים, וְהוֹשֵׁיב בָּהֶן זוֹנוֹת, זְקֵינָה מִבַּחוּץ וְיַלְדָּה מִבִּפְנִים, וְיִמְכְּרוּ לָהֶן כְּלֵי פִשְׁתָּן.",
+     "en": "Balaam <b>said to them: The God of these</b> Jewish people <b>despises lewdness, and they desire linen garments,</b> as they have no new garments; <b>come, and I will give you advice. Make for them</b> enclosures using wall <b>hangings and seat prostitutes in them,</b> with <b>an old woman outside</b> the enclosure <b>and a young woman inside, and</b> have the women <b>sell them linen garments.</b>"
+    },
+    {
+     "ref": "Sanhedrin 106a",
+     "i": 8,
+     "he": "עָשָׂה לָהֶן קְלָעִים מֵהַר שֶׁלֶג עַד בֵּית הַיְשִׁימוֹת, וְהוֹשִׁיב בָּהֶן זוֹנוֹת, זְקֵינָה מִבַּחוּץ וְיַלְדָּה מִבִּפְנִים. וּבְשָׁעָה שֶׁיִּשְׂרָאֵל אוֹכְלִין וְשׁוֹתִין וּשְׂמֵחִין וְיוֹצְאִין לְטַיֵּיל בְּשׁוּק, אוֹמֶרֶת לוֹ הַזְּקֵינָה: אִי אַתָּה מְבַקֵּשׁ כְּלֵי פִשְׁתָּן? זְקֵינָה אוֹמֶרֶת לוֹ בְּשָׁוֶה, וְיַלְדָּה אוֹמֶרֶת לוֹ בְּפָחוֹת, שְׁתַּיִם וְשָׁלֹשׁ פְּעָמִים.",
+     "en": "Balak <b>made for them</b> enclosures using wall <b>hangings from the snow mountain,</b> the Ḥermon, <b>until Beit HaYeshimot, and he sat prostitutes in them,</b> with <b>an old woman outside and a young woman on the inside. And at the time when Jewish people were eating and drinking and were glad and going out to stroll in the marketplace, the old woman would say to</b> a Jew: <b>Aren’t you seeking linen garments?</b> He would enter the enclosure and ask the price, <b>the old woman would quote him</b> a price <b>equal</b> to its value, <b>and the young woman would quote him</b> a price <b>less</b> than its value. That scenario would repeat itself <b>two or three times.</b>"
+    },
+    {
+     "ref": "Sanhedrin 106a",
+     "i": 9,
+     "he": "וְאַחַר כָּךְ אוֹמֶרֶת לוֹ: הֲרֵי אַתְּ כְּבֶן בַּיִת, שֵׁב בְּרוֹר לְעַצְמְךָ. וְצַרְצוּרי שֶׁל יַיִן עַמּוֹנִי מוּנָּח אֶצְלָהּ, וַעֲדַיִין לֹא נֶאֱסַר יַיִן שֶׁל עַמּוֹנִי וְלֹא יַיִן שֶׁל גּוֹיִם. אָמְרָה לוֹ: רְצוֹנֶךָ שֶׁתִּשְׁתֶּה כּוֹס שֶׁל יַיִן? כֵּיוָן שֶׁשָּׁתָה, בָּעַר בּוֹ.",
+     "en": "<b>And thereafter she would say to him: You are like a member of our household, sit</b> and <b>choose for yourself</b> the merchandise that you want. <b>And a jug of Ammonite wine was placed near her, and</b> neither <b>Ammonite wine nor gentile wine had been prohibited yet</b> for Jews. <b>She said to him: Is it your wish to drink a cup of wine? Once he drank</b> the wine, his evil inclination <b>burned within him.</b>"
+    },
+    {
+     "ref": "Sanhedrin 106a",
+     "i": 10,
+     "he": "אֲמַר לָהּ: הִשָּׁמֵיעִי לִי. הוֹצִיאָה יִרְאָתָהּ מִתּוֹךְ חֵיקָהּ, אָמְרָה לוֹ: עֲבוֹד לָזֶה! אֲמַר לָהּ: הֲלֹא יְהוּדִי אֲנִי? אָמְרָה לוֹ: וּמָה אִיכְפַּת לְךָ? כְּלוּם מְבַקְּשִׁים מִמְּךָ אֶלָּא פִּיעוּר? [וְהוּא אֵינוֹ יוֹדֵעַ שֶׁעֲבוֹדָתָהּ בְּכָךְ]. וְלֹא עוֹד אֶלָּא שֶׁאֵינִי מַנַּחְתְּךָ עַד שֶׁתִּכְפּוֹר בְּתוֹרַת מֹשֶׁה רַבְּךָ, שֶׁנֶּאֱמַר: ״הֵמָּה בָּאוּ בַּעַל פְּעוֹר וַיִּנָּזְרוּ לַבֹּשֶׁת וַיִּהְיוּ שִׁקּוּצִים כְּאׇהֳבָם״.",
+     "en": "<b>He</b> then <b>said to her: Submit to me</b> and engage in intercourse with me. <b>She</b> then <b>removed</b> the <b>idol</b> that <b>she worshipped from her lap and said to him: Worship this. He said to her: Am I not Jewish?</b> I am therefore forbidden from engaging in idol worship. <b>She said to him: And what is your concern? We are asking you to do nothing more than defecate</b> in its presence. <b>But he does not know that its worship</b> is conducted <b>in that</b> manner. Once he did so, she said to him: <b>Moreover, I will not leave you until you deny the Torah of Moses your teacher, as it is stated: “But when they came to Ba’al-Peor they separated themselves to the shameful item; and they became detestable like that which they loved”</b> (Hosea 9:10). They devoted themselves to the disgrace of defecation, and detested the name of God."
+    }
+   ],
+   "words": 396,
+   "minutes": 3
+  },
+  {
+   "id": "sanhedrin-107a-1-5",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 107a",
+   "refs": [
+    "Sanhedrin 107a"
+   ],
+   "start_segment": 1,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "David requests to be tested by God, who subjects him to an ordeal involving Bathsheba, which David fails after being tricked by Satan appearing as a bird.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 1,
+     "he": "אָמַר רַב יְהוּדָה אָמַר רַב: לְעוֹלָם אַל יָבִיא אָדָם עַצְמוֹ לִידֵי נִסָּיוֹן, שֶׁהֲרֵי דָּוִד מֶלֶךְ יִשְׂרָאֵל הֵבִיא עַצְמוֹ לִידֵי נִסָּיוֹן וְנִכְשָׁל. אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, מִפְּנֵי מָה אוֹמְרִים ״אֱלֹהֵי אַבְרָהָם, אֱלֹהֵי יִצְחָק וֵאלֹהֵי יַעֲקֹב״, וְאֵין אוֹמְרִים ״אֱלֹהֵי דָוִד״? אָמַר: אִינְהוּ מִינְּסוּ לִי וְאַתְּ לָא מִינַּסֵּית לִי. אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, בְּחָנֵנִי וְנַסֵּנִי, שֶׁנֶּאֱמַר: ״בְּחָנֵנִי ה׳ וְנַסֵּנִי וְגוֹ׳״.",
+     "en": "§ Apropos Ahithophel, the Gemara relates the events that led to his death. <b>Rav Yehuda says</b> that <b>Rav says: A person should never bring himself to</b> undergo <b>an ordeal, as David, king of Israel, brought himself to</b> undergo <b>an ordeal and failed.</b> David <b>said before</b> God: <b>Master of the Universe, for what</b> reason <b>does one say</b> in prayer: <b>God of Abraham, God of Isaac, and God of Jacob, and one does not say: God of David?</b> God <b>said</b> to David: <b>They have undergone ordeals before Me, and you have not undergone an ordeal before Me.</b> David <b>said before Him: Examine me and subject me to an ordeal, as it is stated: “Examine me, Lord, and subject me to an ordeal;</b> try my kidneys and my heart” (Psalms 26:2)."
+    },
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 2,
+     "he": "אֲמַר: מְינַסֵּינָא לָךְ, וְעָבֵידְנָא מִילְּתָא בַּהֲדָךְ, דִּלְדִידְהוּ לָא הוֹדַעְתִּינְהוּ, וְאִילּוּ אֲנָא קָא מוֹדַעְנָא לָךְ דִּמְנַסֵּינָא לָךְ בִּדְבַר עֶרְוָה. מִיָּד, ״וַיְהִי לְעֵת הָעֶרֶב וַיָּקׇם דָּוִד מֵעַל מִשְׁכָּבוֹ וְגוֹ׳״.",
+     "en": "God <b>said</b> to him: <b>I will subject you to an ordeal, and I will perform a matter for you</b> that I did not perform for the Patriarchs, <b>as for them, I did not inform them</b> of the nature of the ordeal, <b>while I am informing you that I will subject you to an ordeal involving a matter of</b> a married woman, with whom <b>relations</b> are <b>forbidden. Immediately,</b> it is written: <b>“And it came to pass one evening that David rose from his bed”</b> (II Samuel 11:2)."
+    },
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 3,
+     "he": "אָמַר רַב יְהוּדָה: שֶׁהָפַךְ מִשְׁכָּבוֹ שֶׁל לַיְלָה לְמִשְׁכָּבוֹ שֶׁל יוֹם, וְנִתְעַלְּמָה מִמֶּנּוּ הֲלָכָה. אֵבֶר קָטָן יֵשׁ בָּאָדָם, מַשְׂבִּיעוֹ – רָעֵב, וּמַרְעִיבוֹ – שָׂבֵעַ.",
+     "en": "<b>Rav Yehuda says:</b> Once David heard the nature of his ordeal, he sought to prevent himself from experiencing lust. <b>He transformed his nighttime bed into his daytime bed,</b> i.e., he engaged in intercourse with his wives during the day, in an attempt to quell his lust. <b>But a <i>halakha</i>,</b> i.e., a Torah statement, <b>escaped him: There is a small limb in man</b> that he employs in sexual intercourse. If <b>he starves</b> the limb, and does not overindulge, it <b>is satiated; but</b> if <b>he satiates</b> the limb and overindulges in sexual intercourse, it <b>is starving,</b> and desires more. Therefore, his plan had the opposite effect."
+    },
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 4,
+     "he": "״וַיִּתְהַלֵּךְ עַל גַּג בֵּית הַמֶּלֶךְ וַיַּרְא אִשָּׁה רוֹחֶצֶת מֵעַל הַגָּג וְהָאִשָּׁה טוֹבַת מַרְאֶה מְאֹד״. בַּת שֶׁבַע הֲוָה קָא חָיְיפָא רֵישָׁא תּוּתֵי חַלְּתָא. אֲתָא שָׂטָן, אִידְּמִי לֵיהּ כְּצִיפַּרְתָּא. פְּתַק בֵּיהּ גִּירָא, פַּתְקַהּ לְחַלְּתָא, אִיגַּלַּיה וְחַזְיַיהּ.",
+     "en": "The verse states: <b>“And he walked upon the roof of the king’s house; from the roof he saw a woman bathing, and the woman was very fair to look upon”</b> (II Samuel 11:2). <b>Bathsheba was shampooing her head behind a beehive,</b> which concealed her from sight. <b>Satan came and appeared to</b> David <b>as a bird.</b> David <b>shot an arrow at</b> the bird, the arrow <b>severed the beehive,</b> Bathsheba <b>was exposed, and</b> David <b>saw her.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 5,
+     "he": "מִיָּד: ״וַיִּשְׁלַח דָּוִד וַיִּדְרֹשׁ לָאִשָּׁה וַיֹּאמֶר הֲלוֹא זֹאת בַּת שֶׁבַע בַּת אֱלִיעָם אֵשֶׁת אוּרִיָּה הַחִתִּי. וַיִּשְׁלַח דָּוִד מַלְאָכִים וַיִּקָּחֶהָ וַתָּבוֹא אֵלָיו וַיִּשְׁכַּב עִמָּהּ וְהִיא מִתְקַדֶּשֶׁת מִטֻּמְאָתָהּ וַתָּשׇׁב אֶל בֵּיתָהּ״. וְהַיְינוּ דִּכְתִיב: ״בָּחַנְתָּ לִבִּי פָּקַדְתָּ לַּיְלָה צְרַפְתַּנִי בַל תִּמְצָא זַמֹּתִי בַּל יַעֲבׇר פִּי״. אָמַר: אִיכּוֹ זְמָמָא נְפַל בְּפוּמֵּיהּ דְּמַאן דְּסָנֵי לִי, וְלָא אֲמַר כִּי הָא מִילְּתָא!",
+     "en": "<b>Immediately,</b> it is written: <b>“And David sent and inquired after the woman. And one said: Is not this Bathsheba, daughter of Eliam, the wife of Uriah the Hittite? And David sent messengers, and took her, and she came to him, and he lay with her, for she was purified from her impurity, and then she returned to her house”</b> (II Samuel 11:3–4). <b>And that is</b> the meaning of that <b>which is written: “You have proved my heart; You have visited me in the night: You have tried me, but You find nothing; let no presumptuous thought pass my lips”</b> (Psalms 17:3). David <b>said: Oh, that a muzzle would have fallen upon the mouth of the one who hates me,</b> a euphemism for his own mouth, <b>and I would not have said anything like that</b> and I would have withstood the ordeal."
+    }
+   ],
+   "words": 534,
+   "minutes": 4
+  },
+  {
+   "id": "sanhedrin-107a-17-17",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 107a",
+   "refs": [
+    "Sanhedrin 107a",
+    "Sanhedrin 107b"
+   ],
+   "start_segment": 17,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "David is afflicted with leprosy for six months, during which time the Divine Presence and the Sanhedrin abandon him. David asks God for a sign of forgiveness, which is realized years later when Solomon is only able to open the Temple gates by invoking his father's merit, shaming David's enemies.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 107a",
+     "i": 17,
+     "he": "אָמַר רַב יְהוּדָה אָמַר רַב: שִׁשָּׁה חֳדָשִׁים נִצְטָרַע דָּוִד, וְנִסְתַּלְּקָה הֵימֶנּוּ שְׁכִינָה, וּפֵירְשׁוּ מִמֶּנּוּ סַנְהֶדְרִין. נִצְטָרַע – דִּכְתִיב: ״תְּחַטְּאֵנִי בְאֵזוֹב וְאֶטְהָר תְּכַבְּסֵנִי וּמִשֶּׁלֶג אַלְבִּין״. נִסְתַּלְּקָה הֵימֶנּוּ שְׁכִינָה – דִּכְתִיב: ״הָשִׁיבָה לִּי שְׂשׂוֹן יִשְׁעֶךָ וְרוּחַ נְדִיבָה תִסְמְכֵנִי״. וּפֵרְשׁוּ מִמֶּנּוּ סַנְהֶדְרִין – דִּכְתִיב: ״יָשׁוּבוּ לִי יְרֵאֶיךָ וְגוֹ׳״. שִׁשָּׁה חֳדָשִׁים מְנָלַן? דִּכְתִיב: ״וְהַיָּמִים אֲשֶׁר מָלַךְ דָּוִד עַל יִשְׂרָאֵל אַרְבָּעִים שָׁנָה״.",
+     "en": "<b>Rav Yehuda says</b> that <b>Rav says:</b> For <b>six months David was afflicted with leprosy and the Divine Presence abandoned him and</b> the members of <b>the Sanhedrin dissociated</b> themselves <b>from him. He was afflicted with leprosy, as it is stated: “Purge me with hyssop and I shall be clean; wash me, and I shall be whiter than snow”</b> (Psalms 51:9), indicating that he required purification like a leper. <b>The Divine Presence abandoned him, as it is stated: “Restore me to joy of Your salvation; and uphold me with a willing spirit”</b> (Psalms 51:14). <b>And</b> the members of <b>the Sanhedrin dissociated</b> themselves <b>from him, as it is stated: “Let those who fear You turn to me,</b> and those who have known Your testimonies” (Psalms 119:79). <b>From where do we</b> derive that this lasted for <b>six months?</b> It is derived <b>as it is written: “And the days that David reigned over Israel were forty years;</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 0,
+     "he": "״בְּחֶבְרוֹן מָלַךְ שֶׁבַע שָׁנִים וּבִירוּשָׁלִַים מָלַךְ שְׁלֹשִׁים וְשָׁלֹשׁ שָׁנִים״, וּכְתִיב: ״בְּחֶבְרוֹן מָלַךְ עַל יְהוּדָה שֶׁבַע שָׁנִים וְשִׁשָּׁה חֳדָשִׁים וְגוֹ׳״, וְהָנֵי שִׁשָּׁה חֳדָשִׁים לָא קָחָשֵׁיב. שְׁמַע מִינַּהּ נִצְטָרַע.",
+     "en": "<b>in Hebron he reigned seven years, and in Jerusalem he reigned thirty-three years”</b> (I Kings 2:11). <b>And it is written: “In Hebron he reigned over Judah seven years and six months</b> and in Jerusalem he reigned for thirty-three years over all Israel and Judah” (II Samuel 5:5). <b>And those six months,</b> the prophet <b>did not tally</b> them as part of the forty years of King David’s reign. <b>Conclude from it</b> that there were six months that he was not considered king because he <b>was afflicted with leprosy.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 1,
+     "he": "אָמַר לְפָנָיו: רִבּוֹנוֹ שֶׁל עוֹלָם, מְחוֹל לִי עַל אוֹתוֹ עָוֹן! מָחוּל לָךְ. ״עֲשֵׂה עִמִּי אוֹת לְטוֹבָה וְיִרְאוּ שֹׂנְאַי וְיֵבֹשׁוּ כִּי אַתָּה ה׳ עֲזַרְתַּנִי וְנִחַמְתָּנִי״. אֲמַר לֵיהּ: בְּחַיֶּיךָ אֵינִי מוֹדִיעַ, אֲבָל אֲנִי מוֹדִיעַ בְּחַיֵּי שְׁלֹמֹה בִּנְךָ.",
+     "en": "David <b>said before Him</b> after this: <b>Master of the Universe, pardon me for this sin.</b> God said to him: <b>It is forgiven for you.</b> David requested: <b>“Perform on my behalf a sign for good, that they that hate me may see it and be put to shame”</b> (Psalms 86:17); show me a sign in my lifetime so that everyone will know that You have forgiven me. God <b>said to him: In your lifetime I will not make</b> it <b>known</b> that you were forgiven, <b>but I will make</b> it <b>known in the lifetime of your son, Solomon.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 2,
+     "he": "בְּשָׁעָה שֶׁבָּנָה שְׁלֹמֹה אֶת בֵּית הַמִּקְדָּשׁ, בִּיקֵּשׁ לְהַכְנִיס אָרוֹן לְבֵית קׇדְשֵׁי הַקֳּדָשִׁים. דָּבְקוּ שְׁעָרִים זֶה בָּזֶה. אָמַר עֶשְׂרִים וְאַרְבָּעָה רְנָנוֹת וְלֹא נַעֲנָה. אָמַר: ״שְׂאוּ שְׁעָרִים רָאשֵׁיכֶם וְהִנָּשְׂאוּ פִּתְחֵי עוֹלָם וְיָבוֹא מֶלֶךְ הַכָּבוֹד. מִי זֶה מֶלֶךְ הַכָּבוֹד ה׳ עִזּוּז וְגִבּוֹר ה׳ גִּבּוֹר מִלְחָמָה״. וְנֶאֱמַר: ״שְׂאוּ שְׁעָרִים רָאשֵׁיכֶם וּשְׂאוּ פִּתְחֵי עוֹלָם וְיָבוֹא מֶלֶךְ הַכָּבוֹד וְגוֹ׳״, וְלֹא נַעֲנָה.",
+     "en": "The Gemara explains: <b>When Solomon built the Temple</b> and <b>sought to bring the Ark into the Holy of Holies,</b> the <b>gates clung together</b> and could not be opened. Solomon <b>uttered twenty-four songs</b> of praise, <b>and</b> his prayer <b>was not answered. He said: “Lift up your heads, you gates, and be you lifted up, you everlasting doors, that the King of glory may come in. Who is the King of glory? The Lord strong and mighty, the Lord mighty in battle”</b> (Psalms 24:7-8). <b>And it is stated: “Lift up your heads, you gates, yea, lift them up, you everlasting doors, that the King of glory may come in.</b> Who then is the King of glory? The Lord of hosts; He is the King of glory. Selah” (Psalms 24:9-10), <b>and he was not answered.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 3,
+     "he": "כֵּיוָן שֶׁאָמַר: ״ה׳ אֱלֹהִים אַל תָּשֵׁב פְּנֵי מְשִׁיחֶךָ זָכְרָה לְחַסְדֵי דָּוִיד עַבְדֶּךָ״, מִיָּד נַעֲנָה. בְּאוֹתָהּ שָׁעָה נֶהְפְּכוּ פְּנֵי שׂוֹנְאֵי דָּוִד כְּשׁוּלֵי קְדֵירָה, וְיָדְעוּ כׇּל יִשְׂרָאֵל שֶׁמָּחַל לוֹ הַקָּדוֹשׁ בָּרוּךְ הוּא עַל אוֹתוֹ הֶעָוֹן.",
+     "en": "<b>Once he said: “O Lord God, turn not away the face of Your anointed; remember the good deeds of David Your servant”</b> (II Chronicles 6:42), <b>he was immediately answered,</b> and the gates opened (II Chronicles 7:1). <b>At that moment, the faces of all of David’s enemies turned</b> dark <b>like the</b> charred <b>bottom of a pot. And all of the Jewish people knew that the Holy One, Blessed be He, had forgiven him for that sin,</b> as it was only by David’s merit that Solomon’s prayer was answered."
+    }
+   ],
+   "words": 554,
+   "minutes": 4
+  },
+  {
+   "id": "sanhedrin-107b-4-10",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 107b",
+   "refs": [
+    "Sanhedrin 107b"
+   ],
+   "start_segment": 4,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Elisha attempts to bring his student Gehazi to repentance, but Gehazi refuses and is ultimately cursed with leprosy for his greed and for leading others to sin.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 4,
+     "he": "גֵּחֲזִי, דִּכְתִיב: ״וַיֵּלֶךְ אֱלִישָׁע דַּמֶּשֶׂק״. לְהֵיכָא אֲזַל? אָמַר רַבִּי יוֹחָנָן: שֶׁהָלַךְ לְהַחֲזִיר גֵּחֲזִי בִּתְשׁוּבָה, וְלֹא חָזַר. אָמַר לוֹ: חֲזוֹר בָּךְ. אָמַר לוֹ: כָּךְ מְקוּבְּלַנִי מִמְּךָ: הַחוֹטֵא וּמַחְטִיא אֶת הָרַבִּים אֵין מַסְפִּיקִין בְּיָדוֹ לַעֲשׂוֹת תְּשׁוּבָה.",
+     "en": "§ The mishna states that <b>Gehazi,</b> the attendant of Elisha, has no share in the World-to-Come. The Gemara explains that this is <b>as it is written: And Elisha went to Damascus</b> (see II Kings 8:7). <b>Where did he go,</b> and for what purpose? <b>Rabbi Yoḥanan says: He went to cause Gehazi to repent, but he did not repent.</b> Elisha <b>said to him: Repent.</b> Gehazi <b>said to him: This</b> is the tradition that <b>I received from you: Whoever sins and causes the masses to sin is not given the opportunity to repent.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 5,
+     "he": "מַאי עֲבַד? אִיכָּא דְּאָמְרִי: אֶבֶן שׁוֹאֶבֶת תָּלָה לְחַטַּאת יָרׇבְעָם, וְהֶעֱמִידָהּ בֵּין שָׁמַיִם לָאָרֶץ. וְאִיכָּא דְּאָמְרִי: שֵׁם חָקַק בְּפִיהָ, וְהָיְתָה מַכְרֶזֶת וְאוֹמֶרֶת ״אָנֹכִי״ וְ״לֹא יִהְיֶה לְךָ״.",
+     "en": "<b>What did he do</b> that caused the masses to sin? <b>There are</b> those <b>who say</b> that <b>he hung a magnetic rock on Jeroboam’s sin,</b> i.e., on the golden calf that Jeroboam established as an idol, so that <b>he suspended it between heaven and earth,</b> i.e., he caused it to hover above the ground. This seemingly miraculous occurrence caused the people to worship it even more devoutly than before. <b>And there are</b> those <b>who say: He engraved</b> the sacred <b>name</b> of God <b>on its mouth, and it would declare and say: “I am</b> the Lord your God” (Exodus 20:2), <b>and: “You shall not have</b> other gods” (Exodus 20:3). The idol would quote the two prohibitions from the Ten Commandments that prohibit idol worship, causing the people to worship it even more devoutly than before."
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 6,
+     "he": "וְאִיכָּא דְּאָמְרִי: רַבָּנַן דְּחָה מִקַּמֵּיהּ, שֶׁנֶּאֱמַר: ״וַיֹּאמְרוּ בְנֵי הַנְּבִיאִים אֶל אֱלִישָׁע הִנֵּה [נָא] הַמָּקוֹם אֲשֶׁר אֲנַחְנוּ יֹשְׁבִים שָׁם לְפָנֶיךָ צַר מִמֶּנּוּ״, מִכְּלָל דְּעַד הַשְׁתָּא לָא הֲווֹ פָּיְישִׁי.",
+     "en": "<b>And there are</b> those <b>who say:</b> Gehazi <b>pushed the Sages</b> away <b>from</b> coming <b>before him,</b> i.e., he prevented them from learning from Elisha, <b>as it is stated: “And the sons of the prophets said to Elisha, behold this place where we are staying before you is too cramped for us”</b> (II Kings 6:1). It may be derived <b>by inference that until now they were not numerous</b> and the place was not <b>cramped</b> for them, as Gehazi would turn people away."
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 7,
+     "he": "תָּנוּ רַבָּנַן: לְעוֹלָם תְּהֵא שְׂמֹאל דּוֹחָה וְיָמִין מְקָרֶבֶת, לֹא כֶּאֱלִישָׁע שֶׁדְּחָפוֹ לְגֵחֲזִי בִּשְׁתֵּי יָדַיִם, וְלֹא כִּיהוֹשֻׁעַ בֶּן פְּרַחְיָה שֶׁדְּחָפוֹ לְיֵשׁוּ הַנּוֹצְרִי בִּשְׁתֵּי יָדַיִם.",
+     "en": "<b>The Sages taught: Always have the left</b> hand <b>drive</b> sinners <b>away and the right draw</b> them <b>near,</b> so that the sinner will not totally despair of atonement. This is <b>unlike Elisha, who pushed away Gehazi with his two hands</b> and caused him to lose his share in the World-to-Come, <b>and unlike Yehoshua ben Peraḥya, who pushed away Jesus the Nazarene with his two hands.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 8,
+     "he": "גֵּחֲזִי, דִּכְתִיב: ״וַיֹּאמֶר נַעֲמָן הוֹאֵל וְקַח כִּכָּרָיִם וַיִּפְרׇץ בּוֹ וַיָּצַר כִּכְּרַיִם כֶּסֶף וְגוֹ׳״. ״וַיֹּאמֶר אֵלָיו אֱלִישָׁע מֵאַיִן גֵּחֲזִי וַיֹּאמֶר לֹא הָלַךְ עַבְדְּךָ אָנֶה וָאָנָה. וַיֹּאמֶר אֵלָיו לֹא לִבִּי הָלַךְ כַּאֲשֶׁר הָפַךְ אִישׁ מֵעַל מֶרְכַּבְתּוֹ לִקְרָאתֶךָ הַעֵת לָקַחַת אֶת הַכֶּסֶף וְלָקַחַת בְּגָדִים וְזֵיתִים וּכְרָמִים וְצֹאן וּבָקָר וַעֲבָדִים וּשְׁפָחוֹת״. וּמִי שְׁקַל כּוּלֵּי הַאי? כֶּסֶף וּבְגָדִים הוּא דִּשְׁקַל!",
+     "en": "Elisha drove <b>Gehazi</b> away, <b>as it is written: “And Naaman said: Be content, take two talents. And he urged him, and bound two talents of silver</b> in two bags, with two changes of garments” (II Kings 5:23). Naaman offered Gehazi payment for the help Elisha had given him. The verse states: <b>“And Elisha said to him: Where from, Gehazi? And he said: Your servant went nowhere at all. And he said to him: Went not my heart with you, when the man turned back from his chariot to meet you? Is it the time to receive silver and to receive garments, and olive groves, and vineyards, and sheep and cattle, and menservants and maidservants?”</b> (II Kings 5:25-26). The Gemara asks: <b>And did</b> Gehazi <b>take all that? It is</b> merely <b>silver and garments that he took.</b>"
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 9,
+     "he": "אָמַר רַבִּי יִצְחָק: בְּאוֹתָהּ שָׁעָה הָיָה אֱלִישָׁע יוֹשֵׁב וְדוֹרֵשׁ בִּשְׁמוֹנָה שְׁרָצִים. נַעֲמָן שַׂר צְבָא מֶלֶךְ אֲרָם הָיָה מְצוֹרָע. אֲמַרָה לֵיהּ הָהִיא רָבִיתָא דְּאִישְׁתְּבַאי מֵאַרְעָא יִשְׂרָאֵל: אִי אָזְלַתְּ לְגַבַּי אֱלִישָׁע מַסֵּי לָךְ. כִּי אֲתָא, אֲמַר לֵיהּ: זִיל טְבוֹל בְּיַרְדֵּן. אֲמַר לֵיהּ: אַחוֹכֵי קָא מְחַיְּיכַתְּ בִּי? אָמְרִי לֵיהּ הָנְהוּ דַּהֲווֹ בַּהֲדֵיהּ: מַאי נָפְקָא לָךְ מִינַּהּ? זִיל נַסִּי. אֲזַל וּטְבַל בְּיַרְדְּנָא וְאִיתַּסִּי. אֲתָא אַיְיתִי לֵיהּ כֹּל הָנֵי דְּנָקֵיט. לָא צְבָא לְקַבּוֹלֵי מִינֵּיהּ. גֵּחֲזִי אִיפְּטַר מִקַּמֵּיהּ אֱלִישָׁע, אֲזַל שְׁקַל מַאי דִּשְׁקַל וְאַפְקֵיד.",
+     "en": "<b>Rabbi Yitzḥak says:</b> This was the incident involving Gehazi: <b>At that moment, Elisha was sitting and teaching</b> the <i>halakhot</i> of the <b>eight</b> impure <b>creeping animals.</b> Now <b>Naaman, the general of the army of Aram, was a leper. A certain young Jewish woman who had been taken captive from Eretz Yisrael said to him: If you go to Elisha, he will heal you. When</b> Naaman <b>came</b> to him, Elisha <b>said to him: Go immerse in the Jordan.</b> Naaman <b>said to him: Are you mocking me</b> by suggesting that this will cure me? <b>Those</b> companions <b>who were with</b> Naaman <b>said to him: What is the difference to you? Go, try</b> it. Naaman <b>went and immersed in the Jordan and was healed.</b> Naaman <b>came</b> and <b>brought to</b> Elisha <b>all those</b> items <b>that he had</b> taken with him from Aram, and Elisha <b>did not agree to receive</b> them <b>from him. Gehazi took leave from before Elisha</b> and <b>went</b> and <b>took</b> from Naaman <b>what he took, and</b> he <b>deposited</b> them."
+    },
+    {
+     "ref": "Sanhedrin 107b",
+     "i": 10,
+     "he": "כִּי אֲתָא, חַזְיַיהּ אֱלִישָׁע לְצָרַעַת דַּהֲוָה פָּרְחָה עִלָּוֵיה רֵישֵׁיהּ. אֲמַר לֵיהּ: רָשָׁע! הִגִּיעַ עֵת לִיטּוֹל שְׂכַר שְׁמֹנָה שְׁרָצִים. ״וְצָרַעַת נַעֲמָן תִּדְבַּק בְּךָ וּבְזַרְעֲךָ לְעוֹלָם וַיֵּצֵא מִלְּפָנָיו מְצֹרָע כַּשָּׁלֶג״. ״וְאַרְבָּעָה אֲנָשִׁים הָיוּ מְצֹרָעִים פֶּתַח הַשָּׁעַר״ – אָמַר רַבִּי יוֹחָנָן: גֵּחֲזִי וּשְׁלֹשֶׁת בָּנָיו.",
+     "en": "<b>When</b> Gehazi <b>came, Elisha saw the leprosy that had grown on</b> Gehazi’s <b>head.</b> Elisha <b>said to him: Wicked one! The time has arrived to take</b> your <b>reward for</b> studying the matter of <b>the eight creeping animals.</b> Since the silver Gehazi received was his reward for studying the matter of the eight creeping animals, Elisha enumerated eight items that Gehazi sought to purchase with the silver that he took. Then Elisha said to Gehazi: <b>“The leprosy of Naaman shall cleave to you and to your seed forever. And he went out of his presence a leper as white as snow”</b> (II Kings 5:27). With regard to the verse: <b>“And there were four men afflicted with leprosy at the entrance of the gate”</b> (II Kings 7:3), <b>Rabbi Yoḥanan says:</b> These were <b>Gehazi and his three sons,</b> as he and his descendants were cursed."
+    }
+   ],
+   "words": 809,
+   "minutes": 6
+  },
+  {
    "id": "sanhedrin-107b-11-13",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 107b",
@@ -2870,6 +4206,7 @@
    "start_segment": 11,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2898,6 +4235,45 @@
    "minutes": 3
   },
   {
+   "id": "sanhedrin-108a-21-22",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 108a",
+   "refs": [
+    "Sanhedrin 108a",
+    "Sanhedrin 108b"
+   ],
+   "start_segment": 21,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Noah rebukes his generation, who respond by defiantly clearing vineyards and questioning why the flood has not yet arrived.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 108a",
+     "i": 21,
+     "he": "דָּרֵשׁ רַבִּי יוֹסֵי דְּמִן קֵסָרִי: מַאי דִּכְתִיב ״קַל הוּא עַל פְּנֵי מַיִם תְּקֻלַּל חֶלְקָתָם בָּאָרֶץ״? מְלַמֵּד שֶׁהָיָה נֹחַ הַצַּדִּיק מוֹכִיחַ בָּהֶם וְאוֹמֵר לָהֶם: עֲשׂוּ תְּשׁוּבָה, וְאִם לָאו הַקָּדוֹשׁ בָּרוּךְ הוּא מֵבִיא עֲלֵיכֶם אֶת הַמַּבּוּל וּמַקְפֶּה נִבְלַתְכֶם עַל הַמַּיִם כְּזִיקִין, שֶׁנֶּאֱמַר: ״קַל הוּא עַל פְּנֵי מַיִם״. וְלֹא עוֹד, אֶלָּא שֶׁלּוֹקְחִין מֵהֶם קְלָלָה לְכׇל בָּאֵי עוֹלָם, שֶׁנֶּאֱמַר: ״תְּקֻלַּל חֶלְקָתָם בָּאָרֶץ",
+     "en": "<b>Rabbi Yosei from Caesarea taught: What</b> is the meaning of that <b>which is written: “He is swift upon the face of the waters; their portion is cursed in the earth;</b> he turns not by way of the vineyards” (Job 24:18)? This <b>teaches that Noah the righteous would rebuke</b> the people of his generation <b>and say to them: Repent. And if</b> you do <b>not, the Holy One, Blessed be He, will bring a flood upon you and float your corpses on the water like wineskins</b> filled with air that float on water, <b>as it is stated: “He is swift upon the face of the waters.” Moreover, a curse is taken from them to all who enter the world,</b> as people will curse others, saying: They shall be like the generation of the flood. <b>As it is stated: “Their portion is cursed in the earth.”</b>"
+    },
+    {
+     "ref": "Sanhedrin 108a",
+     "i": 22,
+     "he": "לֹא יִפְנֶה דֶּרֶךְ כְּרָמִים״, מְלַמֵּד שֶׁהָיוּ מְפַנִּים דֶּרֶךְ כְּרָמִים. אָמְרוּ לוֹ: וּמִי מְעַכֵּב? אָמַר לָהֶם: פְּרֵידָה אַחַת יֵשׁ לִי לְהוֹצִיא מִכֶּם.",
+     "en": "The conclusion of that verse: <b>“He turns not by way of the vineyards,” teaches that they would clear a path through vineyards. They said to</b> Noah: <b>And who is preventing</b> the flood from coming? Noah <b>said to them: I have one pigeon,</b> Methuselah, who will die at his appointed time, which I must <b>remove from among you</b> before the flood."
+    },
+    {
+     "ref": "Sanhedrin 108b",
+     "i": 0,
+     "he": "אִם כֵּן, לֹא נְפַנֶּה דֶּרֶךְ כְּרָמִים.",
+     "en": "They said to him: <b>If so we will not clear a path through vineyards,</b> i.e., we will continue to sin."
+    }
+   ],
+   "words": 223,
+   "minutes": 2
+  },
+  {
    "id": "sanhedrin-108b-21-21",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 108b",
@@ -2908,6 +4284,7 @@
    "start_segment": 21,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2942,6 +4319,202 @@
    "minutes": 3
   },
   {
+   "id": "sanhedrin-109a-16-16",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109a",
+   "refs": [
+    "Sanhedrin 109a",
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 16,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "An orphan in Sodom is forced to herd cattle under an unfair law, so he kills the cattle and uses the Sodomites' own logic to justify taking the hides. An orphan in Sodom kills the oxen he was forced to herd and successfully claims their hides by turning the city's corrupt laws against its citizens.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109a",
+     "i": 16,
+     "he": "אָמְרִי: דְּאִית לֵיהּ חַד תּוֹרָא – מַרְעֵי חַד יוֹמָא, דְּלֵית לֵיהּ – לִירְעֵי תְּרֵי יוֹמֵי. הָהוּא יַתְמָא בַּר אַרְמַלְתָּא, יְהַבוּ לֵיהּ תּוֹרֵי לְמִרְעֵיה. אֲזַל, שַׁקְלִינְהוּ וְקַטְלִינְהוּ. אֲמַר לְהוּ:",
+     "en": "The people of Sodom <b>would say:</b> Anyone <b>who has one ox shall herd</b> the city’s oxen <b>for one day.</b> Anyone <b>who does not have</b> any oxen <b>shall herd</b> the city’s oxen <b>for two days.</b> The Gemara relates: <b>They gave oxen to a certain orphan, son of a widow, to herd. He went</b> and <b>took them and killed them.</b> The orphan <b>said</b> to the people of Sodom:"
+    },
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 0,
+     "he": "דְּאִית לֵיהּ תּוֹרָא – נִשְׁקוֹל חַד מַשְׁכָּא, דְּלֵית לֵיהּ תּוֹרָא – נִשְׁקוֹל תְּרֵי מַשְׁכֵּי. אֲמַרוּ לֵיהּ: מַאי הַאי? אֲמַר לְהוּ: סוֹף דִּינָא כִּתְחִילַּת דִּינָא. מָה תְּחִילַּת דִּינָא? דְּאִית לֵיהּ תּוֹרָא – מַרְעֵי חַד יוֹמָא, דְּלֵית לֵיהּ תּוֹרֵי – מַרְעֵי תְּרֵי יוֹמֵי. אַף סוֹף דִּינָא: דְּאִית לֵיהּ חַד תּוֹרָא – לִשְׁקוֹל חַד, דְּלֵית לֵיהּ תּוֹרָא – לִשְׁקוֹל תְּרֵי.",
+     "en": "<b>Let</b> anyone <b>who has one ox take one hide</b> and <b>let</b> anyone <b>who does not have an ox take two hides.</b> The people of Sodom <b>said to</b> the orphan: <b>What</b> is the reason for <b>this?</b> The orphan <b>said to them: The ultimate rule is parallel to the initial rule; just as the initial rule</b> is that anyone <b>who has one ox shall herd</b> the city’s animals <b>for one day</b> and anyone who <b>does not have</b> any <b>oxen shall herd</b> the city’s animals <b>for two days, so too, the ultimate rule</b> is: <b>Let</b> anyone <b>who has one ox take one</b> hide and <b>let</b> anyone <b>who does not have</b> an <b>ox take two</b> hides."
+    }
+   ],
+   "words": 178,
+   "minutes": 2
+  },
+  {
+   "id": "sanhedrin-109b-3-3",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 3,
+   "tier": "story",
+   "classification": "HIGH_CONFIDENCE",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "A launderer visiting Sodom is extorted for a ferry fee he didn't use and then physically assaulted and charged for the 'service' of bloodletting.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 3,
+     "he": "דְּעָבַר בְּמַבָּרָא – יְהֵיב אַרְבְּעָה זוּזֵי, דְּעָבַר בְּמַיָּא – יָהֵיב תְּמָנְיָא זוּזֵי. זִימְנָא חֲדָא אֲתָא הָהוּא כּוֹבֵס, אִיקְּלַע לְהָתָם. אֲמַרוּ לֵיהּ: הַב אַרְבְּעָה זוּזֵי. אָמַר לְהוּ: אֲנָא בְּמַיָּא עֲבַרִי. אֲמַרוּ לֵיהּ: אִם כֵּן, הַב תְּמָנְיָא דַּעֲבַרְתְּ בְּמַיָּא. לָא יְהַב. פַּדְיוּהּ. אֲתָא לְקַמֵּיהּ דְּדַיָּינָא. אֲמַר לֵיהּ: הַב לֵיהּ אַגְרָא דִּשְׁקַל לָךְ דְּמָא, וּתְמָנְיָא זוּזֵי דַּעֲבַרְתְּ בְּמַיָּא.",
+     "en": "And they instituted an ordinance: One <b>who crossed</b> the river <b>on a ferry gives four dinars,</b> and one <b>who crossed</b> the river <b>in the water gives eight dinars. One time a certain launderer came</b> and <b>arrived there.</b> The people of Sodom <b>said to him: Give four dinars</b> as payment for the ferry. <b>He said to them: I crossed in the water. They said to him: If so, give eight</b> dinars, <b>as you crossed in the water. He did not give</b> the payment, and they struck him and <b>wounded him. He came before the judge</b> to seek compensation. The judge <b>said to him: Give</b> your assailant <b>a fee, as he let your blood, and eight dinars, as you crossed</b> the river <b>in the water.</b>"
+    }
+   ],
+   "words": 123,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-109b-4-4",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 4,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "When a Sodomite judge orders Eliezer to pay the man who wounded him, Eliezer strikes the judge and tells him to take the payment from the fee now owed to him.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 4,
+     "he": "אֱלִיעֶזֶר עֶבֶד אַבְרָהָם אִיתְרְמִי הָתָם, פַּדְיוּהּי. אֲתָא לְקַמֵּיהּ דַּיָּינָא. אֲמַר לֵיהּ: הַב לֵיהּ אַגְרָא דִּשְׁקַל לָךְ דְּמָא. שְׁקַל גְּלָלָא, פַּדְיֵוהּ אִיהוּ לְדַיָּינָא. אֲמַר: מַאי הַאי? אֲמַר לֵיהּ: אַגְרָא דִּנְפַק לִי מִינָּךְ, הַב נִיהֲלֵיהּ לְהַאי, וְזוּזֵי דִּידִי כִּדְקָיְימִי קָיְימִי.",
+     "en": "<b>Eliezer, servant of Abraham, happened</b> to come <b>there,</b> and <b>they wounded him. He came before the judge</b> to seek compensation. The judge <b>said to him: Give</b> your assailant <b>a fee, as he let your blood. He took a stone</b> and <b>he wounded the judge.</b> The judge <b>said: What</b> is <b>this?</b> Eliezer <b>said to him: The fee that is</b> to be <b>paid to me by you, give it to that</b> person who wounded me, <b>and my money will remain where it remains.</b>"
+    }
+   ],
+   "words": 81,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-109b-5-5",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 5,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Eliezer avoids the infamous Sodomite bed, which was used to stretch or cut guests, by claiming he was in mourning and could not sleep on a bed.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 5,
+     "he": "הָוְיָא לְהוּ פּוּרְיְיתָא דַּהֲווֹ מַגְנִי עֲלַהּ אוֹרְחִין. כִּי מַאֲרֵיךְ – גָּיְיזִי לֵיהּ, כִּי גוּץ – מָתְחִין לֵיהּ. אֱלִיעֶזֶר עֶבֶד אַבְרָהָם אִקְּלַע לְהָתָם. אֲמַרוּ לֵיהּ: קוּם גְּנִי אַפּוּרְיָא. אֲמַר לְהוֹן: נִדְרָא נְדַרִי מִן יוֹמָא דְּמִיתַת אִמָּא לָא גָּנֵינָא אַפּוּרְיָא.",
+     "en": "The Gemara continues to discuss the sins of the people of Sodom: <b>They had beds on which they would lay their guests; when</b> a guest <b>was longer</b> than the bed <b>they</b> would <b>cut him,</b> and <b>when</b> a guest <b>was shorter</b> than the bed <b>they would stretch him. Eliezer, servant of Abraham, happened</b> to come <b>there. They said to him: Come lie on the bed. He said to them: I took a vow</b> that <b>since the day my mother died I do not lie on a bed.</b>"
+    }
+   ],
+   "words": 86,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-109b-7-7",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 7,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Eliezer tricks a wedding guest into fleeing by pretending the guest invited him, allowing Eliezer to eat the man's food without being caught by the city's cruel laws.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 7,
+     "he": "הָכִי אַתְנוֹ בֵּינַיְיהוּ: כֹּל מַאן דְּמַזְמֵין גַּבְרָא לְבֵי הִילּוּלָא, לְשַׁלַּח גְּלִימָא. הֲוִי הַאי הִילּוּלָא, אִקְּלַע אֱלִיעֶזֶר לְהָתָם וְלָא יְהַבוּ לֵיהּ נַהֲמָא. כִּי בָּעֵי לְמִסְעַד, אֲתָא אֱלִיעֶזֶר וִיתֵיב לְסֵיפָא דְּכוּלְּהוּ. אֲמַרוּ לֵיהּ: מַאן אַזְמְנָךְ לְהָכָא? אֲמַר לֵיהּ לְהָהוּא [דְּיָתֵיב]: אַתְּ זַמֵּנְתַּן. [אֲמַר: דִילְמָא שָׁמְעִי בִּי דַּאֲנָא אַזְמֵינְתֵּיהּ וּמְשַׁלְּחִי לֵיהּ מָאנֵיהּ דְּהַאי גַּבְרָא.] שְׁקַל גְּלִימֵיהּ הָהוּא דְּיָתֵיב גַּבֵּיהּ וּרְהַט לְבָרָא. וְכֵן עֲבַד לְכוּלְּהוּ עַד דְּנָפְקִי כּוּלְּהוּ וְאַכְלַאּ אִיהוּ לִסְעוּדְתָּא.",
+     "en": "<b>This</b> is what the people of Sodom <b>stipulated among themselves: Whoever invites a man to a wedding, his cloak will be removed. There was this wedding,</b> and <b>Eliezer,</b> servant of Abraham, <b>arrived there and they did not give him bread. When he sought to dine, Eliezer came and sat at the end,</b> behind <b>everyone. They said to him: Who invited you to here? He said to the one sitting</b> next to him: <b>You invited me.</b> That man <b>said</b> to himself: <b>Perhaps they will hear that I invited him and they will remove the garment of that man,</b> referring to himself. <b>The one who sat next to him took his cloak and ran outside. And likewise,</b> Eliezer <b>did</b> the same <b>for all of them until they all left, and he ate the meal.</b>"
+    }
+   ],
+   "words": 132,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-109b-8-8",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b"
+   ],
+   "start_segment": 8,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "A young woman in Sodom is brutally executed by being covered in honey and left for hornets after she is caught secretly feeding the poor.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 8,
+     "he": "הַוְיָא הָהִיא רָבִיתָא דַּהֲוָת קָא מַפְּקָא רִיפְתָּא לְעַנְיָא בְּחַצְבָּא. אִיגַּלַּאי מִלְּתָא, שַׁפְיוּהָ דּוּבְשָׁא, וְאוֹקְמוּהָ עַל אִיגַּר שׁוּרָא. אֲתֹא זִיבּוּרֵי וְאַכְלוּהָ. וְהַיְינוּ דִּכְתִיב: ״וַיֹּאמֶר ה׳ זַעֲקַת סְדֹם וַעֲמֹרָה כִּי רָבָּה״. וְאָמַר רַב יְהוּדָה אָמַר רַב: עַל עִיסְקֵי רִיבָה.",
+     "en": "<b>There was a young woman who would take bread out to the poor people in a pitcher</b> so the people of Sodom would not see it. <b>The matter was revealed,</b> and <b>they smeared her with honey and positioned her on the wall</b> of the city, and <b>the hornets came and consumed her. And that is</b> the meaning of that <b>which is written: “And the Lord said: Because the cry of Sodom and Gomorrah is great [<i>rabba</i>]”</b> (Genesis 18:20). <b>And Rav Yehuda says</b> that <b>Rav says:</b> <i>Rabba</i> is an allusion to the <b>matter of the young woman [<i>riva</i>]</b> who was killed for her act of kindness. It is due to that sin that the fate of the people of Sodom was sealed."
+    }
+   ],
+   "words": 125,
+   "minutes": 1
+  },
+  {
+   "id": "sanhedrin-109b-15-15",
+   "tractate": "sanhedrin",
+   "ref": "Sanhedrin 109b",
+   "refs": [
+    "Sanhedrin 109b",
+    "Sanhedrin 110a"
+   ],
+   "start_segment": 15,
+   "tier": "story",
+   "classification": "YES",
+   "biblical": true,
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "The wife of On, son of Peleth, saves her husband from Korah's fate by getting him drunk and sitting at their tent door with her hair uncovered to prevent the rebels from entering. The wife of On, son of Peleth, saves her husband from the fate of Korah's rebellion by sitting immodestly at the entrance of their tent, causing the rebels to turn away until the ground had already swallowed the rest of the assembly.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109b",
+     "i": 15,
+     "he": "אָמַר רַב: ״אוֹן בֶּן פֶּלֶת אִשְׁתּוֹ הִצִּילַתּוּ. אֲמַרָה לֵיהּ: מַאי נָפְקָא לָךְ מִינַּהּ? אִי מָר רַבָּה – אַנְתְּ תַּלְמִידָא, וְאִי מָר רַבָּה – אַנְתְּ תַּלְמִידָא. אֲמַר לַהּ: מַאי אֶעֱבֵיד? הֲוַאי בְּעֵצָה וְאִשְׁתְּבַעִי לִי בַּהֲדַיְיהוּ. אֲמַרָה לֵיהּ: יָדַעְנָא דְּכוּלַּהּ כְּנִישְׁתָּא קַדִּישְׁתָּא נִינְהוּ, דִּכְתִיב: ״כִּי כׇל הָעֵדָה כֻּלָּם קְדֹשִׁים״. אֲמַרָה לֵיהּ: תּוּב, דַּאֲנָא מַצֵּילְנָא לָךְ. אַשְׁקִיתֵיהּ חַמְרָא וְאַרְוִיתֵיהּ וְאַגְנִיתֵיהּ גַּוַּאי. וִיתִבָא עַל בָּבָא,",
+     "en": "<b>Rav says: On, son of Peleth,</b> did not repent on his own; rather, <b>his wife saved him. She said to him: What is the difference to you? If</b> this <b>Master,</b> Moses, is <b>the great</b> one, <b>you</b> are <b>the student. And if</b> this <b>Master,</b> Korah, is <b>the great</b> one, <b>you</b> are <b>the student.</b> Why are you involving yourself in this matter? On <b>said to her: What shall I do? I was</b> one of those <b>who took counsel and I took an oath with them</b> that I would be with them. <b>She said to him: I know that the entire assembly is holy, as it is written: “For all the assembly is holy”</b> (Numbers 16:3), and they observe the restrictions of modesty. <b>She said to him: Sit, for I will save you. She gave him wine to drink and caused him to become drunk and laid him</b> on a bed <b>inside</b> their tent. <b>She sat at the entrance</b> of the tent"
+    },
+    {
+     "ref": "Sanhedrin 110a",
+     "i": 0,
+     "he": "וּסְתַרְתֵּהּ לְמַזְּיַהּ, כֹּל דַּאֲתָא חַזְיַהּ הֲדַר. אַדְּהָכִי וְהָכִי, אִבְּלַעוּ לְהוּ.",
+     "en": "<b>and exposed her hair</b> as though she were bathing. <b>Anyone who came</b> and <b>saw her</b> stepped <b>back. In the meantime</b> the assembly of Korah <b>was swallowed</b> into the ground, and On, son of Peleth, was spared."
+    }
+   ],
+   "words": 195,
+   "minutes": 2
+  },
+  {
    "id": "sanhedrin-110a-16-16",
    "tractate": "sanhedrin",
    "ref": "Sanhedrin 110a",
@@ -2952,6 +4525,7 @@
    "start_segment": 16,
    "tier": "story",
    "classification": "YES",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -2983,6 +4557,7 @@
    "start_segment": 3,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -3008,6 +4583,7 @@
    "start_segment": 6,
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
+   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -3033,6 +4609,7 @@
    "start_segment": 10,
    "tier": "story",
    "classification": "YES",
+   "biblical": true,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -3076,6 +4653,7 @@
    "start_segment": 0,
    "tier": "story",
    "classification": "YES",
+   "biblical": true,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
