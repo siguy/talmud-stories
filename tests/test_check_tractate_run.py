@@ -48,23 +48,24 @@ def _run(refs, tokens=True, **meta):
             'stage4_call_failures': [], 'run_meta': m}
 
 
-def build(tmp, mutate=None):
+def build(tmp, mutate=None, slug='tamid'):
     """A tractate that passes every gate; `mutate(files)` edits the dict of json files first."""
-    refs = [f'Tamid {n}{a}' for n in range(25, 28) for a in 'ab']
+    nm = slug.title()
+    refs = [f'{nm} {n}{a}' for n in range(25, 28) for a in 'ab']
     files = {
-        'results/sefaria/tamid.json': {'tractate': 'Tamid', 'sefaria_shape': {r: 3 for r in refs}, 'pages': [_page(r) for r in refs]},
-        'results/triage/tamid.json': {'tractate': 'Tamid', 'triage_results': {r: ['DELIBERATION'] for r in refs}},
+        f'results/sefaria/{slug}.json': {'tractate': nm, 'sefaria_shape': {r: 3 for r in refs}, 'pages': [_page(r) for r in refs]},
+        f'results/triage/{slug}.json': {'tractate': nm, 'triage_results': {r: ['DELIBERATION'] for r in refs}},
     }
-    tri = json.dumps(files['results/triage/tamid.json'], indent=2, ensure_ascii=False)
+    tri = json.dumps(files[f'results/triage/{slug}.json'], indent=2, ensure_ascii=False)
     sha = hashlib.sha1(tri.encode()).hexdigest()
     for n in (1, 2):
-        files[f'results/v14/tamid/run{n}.json'] = _run(refs, triage_sha1=sha)
-    units = [{'id': 'Tamid 25a:0-1', 'cells': [['Tamid 25a', 0], ['Tamid 25a', 1]]},
-             {'id': 'Tamid 26a:0-1', 'cells': [['Tamid 26a', 0], ['Tamid 26a', 1]]}]
-    files['results/consensus/tamid/units.json'] = {'meta': {}, 'units': units}
+        files[f'results/v14/{slug}/run{n}.json'] = _run(refs, triage_sha1=sha)
+    units = [{'id': f'{nm} 25a:0-1', 'cells': [[f'{nm} 25a', 0], [f'{nm} 25a', 1]]},
+             {'id': f'{nm} 26a:0-1', 'cells': [[f'{nm} 26a', 0], [f'{nm} 26a', 1]]}]
+    files[f'results/consensus/{slug}/units.json'] = {'meta': {}, 'units': units}
     ans = lambda v, o='ok': {'outcome': o, 'verdict': v if o == 'ok' else None}
     for who in ('gemini', 'claude'):
-        files[f'results/consensus/tamid/{who}.json'] = {
+        files[f'results/consensus/{slug}/{who}.json'] = {
             'meta': {'prompt_sha': C.JUDGE_PROMPT_SHA, 'missing_batches': []},
             'rows': [{'id': units[0]['id'], 'answer': ans('out_of_scope')}, {'id': units[1]['id'], 'answer': ans('story')}]}
     if mutate:
@@ -73,8 +74,8 @@ def build(tmp, mutate=None):
         p = Path(tmp) / rel
         p.parent.mkdir(parents=True, exist_ok=True)
         # the triage file is written with the exact text its sha was taken of
-        p.write_text(json.dumps(obj, indent=2, ensure_ascii=False) if rel.endswith('triage/tamid.json') else json.dumps(obj, ensure_ascii=False))
-    return Paths(SLUG, tmp)
+        p.write_text(json.dumps(obj, indent=2, ensure_ascii=False) if '/triage/' in rel else json.dumps(obj, ensure_ascii=False))
+    return Paths(slug, tmp)
 
 
 def statuses(P):

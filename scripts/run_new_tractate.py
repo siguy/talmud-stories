@@ -395,6 +395,9 @@ def main():
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
     triage_summary = log_triage_summary(triage, pages)
     if args.triage_only:
+        # Stage 1 is metered here and nowhere else (the run's run_meta only sees Stage 2+4);
+        # scripts/run_shas.py reads this line to price triage.
+        log.info('triage tokens: %s', json.dumps(meter.tally))
         return 0
 
     # ---- Stages 2 + 4 ---------------------------------------------------

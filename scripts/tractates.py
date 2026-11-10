@@ -33,11 +33,32 @@ TABLE = [
 ]
 
 
+# Last daf of each tractate (Sefaria's index; the fetch itself reads the real range from it).
+# Used ONLY to run the longest tractates first, before their text exists to count.
+# Tamid's Gemara starts at 25b, so it is far shorter than its last daf says.
+LAST_DAF = {
+    'Berakhot': 64, 'Shabbat': 157, 'Eruvin': 105, 'Pesachim': 121, 'Rosh Hashanah': 35, 'Yoma': 88,
+    'Sukkah': 56, 'Beitzah': 40, 'Taanit': 31, 'Megillah': 32, 'Moed Katan': 29, 'Chagigah': 27,
+    'Yevamot': 122, 'Ketubot': 112, 'Nedarim': 91, 'Nazir': 66, 'Sotah': 49, 'Gittin': 90,
+    'Kiddushin': 82, 'Bava Kamma': 119, 'Bava Metzia': 119, 'Bava Batra': 176, 'Sanhedrin': 113,
+    'Makkot': 24, 'Shevuot': 49, 'Avodah Zarah': 76, 'Horayot': 14, 'Zevachim': 120, 'Menachot': 110,
+    'Chullin': 142, 'Bekhorot': 61, 'Arakhin': 34, 'Temurah': 34, 'Keritot': 28, 'Meilah': 22,
+    'Tamid': 33, 'Niddah': 73,
+}
+
+
 def slug_of(english):
     return english.strip().lower().replace(' ', '_')
 
 
 SLUGS = {slug_of(e): {'english': e, 'hebrew': h} for e, h in TABLE}
+
+
+def approx_pages(slug):
+    """Rough page (amud) count, for ordering only."""
+    if slug == 'tamid':
+        return 17
+    return 2 * (LAST_DAF[english(slug)] - 1)
 
 
 def english(slug):
