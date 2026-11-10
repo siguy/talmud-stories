@@ -82,6 +82,15 @@ def cost_usd(tokens):
     return round(usd, 4)
 
 
+def triage_complete(P):
+    """Triage is done only when every fetched page has a label. A partial cache (the 2-page smoke test left one for
+    Taanit) is work to resume, not a finished step (2026-11-10)."""
+    if not (P.triage.exists() and P.text.exists()):
+        return False
+    labels = json.loads(P.triage.read_text()).get('triage_results', {})
+    return all(p['ref'] in labels for p in json.loads(P.text.read_text())['pages'])
+
+
 def triage_tokens_from_log(path):
     """Stage 1's meter tally, from the `triage tokens: {...}` line the runner logs."""
     try:
@@ -136,7 +145,7 @@ class Driver:
     # ---- outputs and gates --------------------------------------------------------
     def output_exists(self, slug, step):
         P = T.Paths(slug, self.root)
-        return {'fetch': lambda: P.text.exists(), 'triage': lambda: P.triage.exists(),
+        return {'fetch': lambda: P.text.exists(), 'triage': lambda: triage_complete(P),
                 'run1': lambda: P.run(1).exists(), 'run2': lambda: P.run(2).exists(),
                 'pair': lambda: False,                                       # computed, never skipped
                 'units': lambda: (P.consensus / 'units.json').exists(),
@@ -253,10 +262,21 @@ class Driver:
 
     def _write_status(self):
         with self.lock:
-            tr = {}
+            # Merge into what is on disk: a run over some tractates must not erase the others' record, and a step
+            # skipped this time (its output already there) keeps the cost it was charged when it ran (2026-11-10).
+            try:
+                prior = json.loads(self.status_path.read_text()).get('tractates', {})
+            except (FileNotFoundError, json.JSONDecodeError):
+                prior = {}
+            tr = dict(prior)
             for s in self.slugs:
-                tr[s] = {'overall': self.overall(s), 'steps': {k: v for k, v in self.state[s].items() if k in self.wanted}}
-                tr[s]['cost_usd'] = round(sum(v.get('cost_usd', 0) for v in self.state[s].values()), 4)
+                old = (prior.get(s) or {}).get('steps', {})
+                steps = {k: v for k, v in self.state[s].items() if k in self.wanted}
+                for k, v in steps.items():
+                    if v.get('state') == 'skipped' and 'cost_usd' not in v and old.get(k, {}).get('cost_usd'):
+                        v['cost_usd'] = old[k]['cost_usd']
+                tr[s] = {'overall': self.overall(s), 'steps': {**old, **steps}}
+                tr[s]['cost_usd'] = round(sum(v.get('cost_usd', 0) for v in tr[s]['steps'].values()), 4)
             doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%S'), 'git_rev': self.rev, 'through': self.through,
                    'cost_usd': round(sum(t['cost_usd'] for t in tr.values()), 2), 'tractates': tr,
                    'counts': {c: sum(1 for t in tr.values() if t['overall'] == c)

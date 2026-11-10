@@ -162,3 +162,28 @@ def test_default_set_is_the_32_remaining_tractates():   # 31 + Eruvin, unheld 20
 def test_cost_counts_cached_input_at_the_cached_price():
     t = {'x': {'input': 1_000_000, 'cached_input': 500_000, 'output': 0, 'thinking': 0}}
     assert R.cost_usd(t) == round(0.5 * 0.5 + 0.5 * 0.05, 4)
+
+
+def test_running_one_tractate_keeps_the_others_record_and_skipped_steps_keep_their_cost(tmp_path):
+    """2026-11-10: `--tractates makkot` rewrote status.json down to Makkot, and a re-settle reported cost $0."""
+    fake, dst = setup(tmp_path)
+    drive(dst, fake)
+    _, st = drive(dst, fake, slugs=(A,))
+    assert set(st['tractates']) == {A, B}
+    assert st['tractates'][A]['steps']['triage']['cost_usd'] == 0.8          # skipped now, charged when it ran
+    assert st['cost_usd'] == round(st['tractates'][A]['cost_usd'] + st['tractates'][B]['cost_usd'], 2) > 0
+
+
+def test_a_partial_triage_cache_is_resumed_not_taken_as_done(tmp_path):
+    """2026-11-10: a 2-page cache from the smoke test made Taanit's triage look finished."""
+    fake, dst = setup(tmp_path)
+    src_text = json.loads((fake.src / f'results/sefaria/{A}.json').read_text())
+    (dst / 'results/sefaria').mkdir(parents=True)
+    (dst / f'results/sefaria/{A}.json').write_text(json.dumps(src_text))
+    one = src_text['pages'][0]['ref']
+    (dst / 'results/triage').mkdir(parents=True)
+    (dst / f'results/triage/{A}.json').write_text(json.dumps({'triage_results': {one: ['DELIBERATION']}}))
+    P = T.Paths(A, dst)
+    assert not R.triage_complete(P)
+    drive(dst, fake, slugs=(A,), through='triage')
+    assert (A, 'triage') in fake.calls and R.triage_complete(P)
