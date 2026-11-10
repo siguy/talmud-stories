@@ -63,7 +63,8 @@ def test_every_story_has_a_note_and_none_is_approved_unreviewed():
 
 def test_boundary_extensions_are_display_only_and_bounded():
     ext = json.loads((ROOT / "site/data/boundary_extensions.json").read_text())
-    by_id = {s["id"]: s for t in (*GOLDEN_COUNTS, "yevamot", "berakhot") for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]}
+    index = json.loads((ROOT / "site/data/index.json").read_text())["tractates"]
+    by_id = {s["id"]: s for r in index for s in json.loads((ROOT / f"site/data/{r['tractate']}.json").read_text())["stories"]}
     assert ext
     # an extension whose story the filter does not ship is inert, and kept
     for i, e in ((i, e) for i, e in ext.items() if i in by_id):
@@ -74,7 +75,9 @@ def test_boundary_extensions_are_display_only_and_bounded():
 
 
 # Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
-# A change here is a change to the list; update §2 in the same commit.
+# A change here is a change to the list; update §2 in the same commit. These are the five tractates
+# shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
+# run has no pin here (its total is checked against its own stories below); add one when it ships.
 SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 17643, "berakhot": 24396}
 
 
@@ -90,7 +93,9 @@ def test_every_story_has_words_and_reading_minutes():
         for s in stories:
             assert s["words"] == sum(len(tag.sub(" ", g["en"]).split()) for g in s["segments"]) > 0, s["id"]
             assert s["minutes"] == max(1, math.ceil(s["words"] / wpm)), s["id"]
-        assert row["words"] == sum(s["words"] for s in stories) == SITE_WORDS[t], t
+        assert row["words"] == sum(s["words"] for s in stories), t
+        if t in SITE_WORDS:
+            assert row["words"] == SITE_WORDS[t], t
         assert row["minutes"] == sum(s["minutes"] for s in stories), t
 
 
@@ -115,7 +120,8 @@ def test_unreviewed_stories_are_definite_in_every_run():
         assert len(b.SOURCES[t]["runs"]) >= 2, t
         runs = [b.definite_cells(q) for q in b.SOURCES[t]["runs"]]
         biblical = b.biblical_cells(t)
-        assert biblical, t
+        if t in b.EXISTING:       # a newer tractate may have no biblical passage at all
+            assert biblical, t
         for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
             assert all(cells & r for r in runs), s["id"]
@@ -132,3 +138,25 @@ def test_reviewed_stories_carry_jeffs_evidence():
         unbacked = [s["id"] for s in stories if not {(g["ref"], g["i"]) for g in s["segments"]} & jeff]
         assert not unbacked, (t, unbacked)
     assert "ketubot-17a-3-3" not in {s["id"] for s in json.loads((ROOT / "site/data/ketubot.json").read_text())["stories"]}
+
+
+def test_index_rows_carry_the_names_the_page_shows_and_every_tractate_is_in_the_table():
+    """The home page draws from index.json alone (it never opens a tractate file), so each row must carry
+    the English and Hebrew names, taken from the one table in scripts/tractates.py."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import tractates as T
+    index = json.loads((ROOT / "site/data/index.json").read_text())["tractates"]
+    assert index
+    for r in index:
+        assert r["name"] == T.english(r["tractate"]) and r["he"] == T.hebrew(r["tractate"]), r["tractate"]
+        assert "-" not in r["tractate"], "a slug with a hyphen would break story ids (<slug>-<daf>-<a>-<b>)"
+    assert [r["tractate"] for r in index[:5]] == ["ketubot", "kiddushin", "gittin", "yevamot", "berakhot"]
+
+
+def test_site_app_has_no_hard_coded_tractate_list():
+    app = (ROOT / "site/app.js").read_text()
+    for name in ("Ketubot", "Berakhot", "כתובות"):
+        assert name not in app, name
+    # the home page must not open the tractate files
+    home = app[app.index("function home()"):app.index("function tractate(")]
+    assert 'getJSON("data/" +' not in home
