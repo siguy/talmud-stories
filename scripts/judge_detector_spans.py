@@ -218,7 +218,9 @@ def gemini_out_of_scope_ids():
         raise SystemExit('refusing to export a Claude subset: the Gemini answers are not final (gate g6 red):\n  '
                          + '\n  '.join(res.failures))
     rows = json.loads((OUT / 'gemini.json').read_text())['rows']
-    return {r['id'] for r in rows if r['answer'].get('outcome') == 'ok' and r['answer'].get('verdict') == 'out_of_scope'}
+    from check_tractate_run import claude_alone      # Simon's 2026-11-10 ruling: no valid Gemini answer -> Claude decides
+    return ({r['id'] for r in rows if r['answer'].get('outcome') == 'ok' and r['answer'].get('verdict') == 'out_of_scope'}
+            | claude_alone(P))
 
 
 def export(seed, batch, only_gemini_out_of_scope=False):

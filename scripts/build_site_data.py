@@ -89,13 +89,18 @@ def biblical_cells(tractate):
     # A passage is removed only when BOTH judges say out_of_scope, so a flagged unit with no valid Claude answer
     # would read as "not biblical" and ship (Lesson 21/38: absence reads as a decision). Refuse, naming them.
     # This is what makes the cheap "Claude judges only Gemini's flagged units" export exact (plan §2.5).
+    # Units the Gemini judge could not answer validly twice: Claude decides alone (Simon, 2026-11-10; a narrowing).
+    import check_tractate_run as C
+    alone = set(C.decisions(ROOT)[1].get(tractate, []))
     unanswered = sorted(i for i, v in verdict["gemini"].items() if v == "out_of_scope" and i not in verdict["claude"])
+    unanswered += sorted(alone - set(verdict["claude"]))
     if unanswered:
         raise SystemExit(f"site build refused: {tractate}: {len(unanswered)} unit(s) Gemini called out_of_scope "
                          f"have no Claude answer with outcome ok: {unanswered[:8]}")
     units = json.loads((ROOT / d / "units.json").read_text())["units"]
     return {tuple(c) for u in units
-            if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
+            if verdict["claude"].get(u["id"]) == "out_of_scope"
+            and (verdict["gemini"].get(u["id"]) == "out_of_scope" or u["id"] in alone) for c in u["cells"]}
 DEFINITE = ("YES", "HIGH_CONFIDENCE")
 
 

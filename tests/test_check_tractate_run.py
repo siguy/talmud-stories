@@ -292,6 +292,50 @@ def test_g6_gemini_failed_row_missing_unit_and_wrong_prompt_are_red(tmp_path):
     assert C.g6_judge(build(tmp_path / 'c', m3), 'gemini').status == 'red'
 
 
+def _rulings(f, g4=(), alone=None):
+    f['results/shas_run/decisions.json'] = {'g4_accepted': {'tractates': list(g4)},
+                                            'claude_alone': {'units': alone or {}}}
+
+
+def test_g4_below_threshold_is_amber_only_for_a_tractate_simon_ruled_on(tmp_path):
+    refs = [f'Tamid {n}a' for n in range(25, 35)]
+
+    def m(f, ruled):
+        f['results/sefaria/tamid.json']['pages'] = [_page(r) for r in refs]
+        a, b = _run(refs), _run(refs)
+        for run in (a, b):
+            for p in run['pages']:
+                p['stories'] = [_story(0, 0)]
+                p.pop('skipped_by_triage', None)
+        b['pages'][0]['stories'] = [_story(2, 2)]
+        f['results/v14/tamid/run1.json'], f['results/v14/tamid/run2.json'] = a, b
+        _rulings(f, g4=['tamid'] if ruled else ['sotah'])
+    assert C.g4_pair(build(tmp_path / 'no', lambda f: m(f, False))).status == 'red'
+    r = C.g4_pair(build(tmp_path / 'yes', lambda f: m(f, True)))
+    assert r.status == 'amber' and any('ruling' in w for w in r.warnings)
+
+
+def test_g4_ruling_never_excuses_different_code(tmp_path):
+    def m(f):
+        f['results/v14/tamid/run2.json']['run_meta']['detector_sha1'] = 'other'
+        _rulings(f, g4=['tamid'])
+    assert C.g4_pair(build(tmp_path, m)).status == 'red'
+
+
+def test_g6_invalid_gemini_row_is_amber_only_when_ruled_and_then_claude_must_answer_it(tmp_path):
+    uid = 'Tamid 26a:0-1'
+
+    def m(f, ruled, claude_ok=True):
+        f['results/consensus/tamid/gemini.json']['rows'][1]['answer'] = {'outcome': 'invalid', 'verdict': None}
+        if not claude_ok:
+            f['results/consensus/tamid/claude.json']['rows'].pop(1)
+        _rulings(f, alone={'tamid': [uid]} if ruled else {})
+    assert C.g6_judge(build(tmp_path / 'a', lambda f: m(f, False)), 'gemini').status == 'red'
+    assert C.g6_judge(build(tmp_path / 'b', lambda f: m(f, True)), 'gemini').status == 'amber'
+    assert C.g6_judge(build(tmp_path / 'c', lambda f: m(f, True)), 'claude').status == 'green'
+    assert C.g6_judge(build(tmp_path / 'd', lambda f: m(f, True, claude_ok=False)), 'claude').status == 'red'
+
+
 # ---- the table
 def test_slugs_follow_the_convention_and_keep_existing_names():
     assert resolve('Bava Batra') == 'bava_batra' == resolve('bava batra') == resolve('bava_batra')

@@ -49,6 +49,20 @@ NIKUD = re.compile('[ְ-ׇ]')
 # G5 baselines, measured: kept stories per examined page 1.8 (Berakhot), 1.5 (Yevamot); Gemini
 # out-of-scope units 7/224 and 10/184. The two are read from disk, these are only the fallback.
 OUT_OF_SCOPE_BASELINES = ('berakhot', 'yevamot')
+DECISIONS = 'results/shas_run/decisions.json'   # Simon's rulings on red gates (G4, G6); see the file
+
+
+def decisions(root):
+    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}) from Simon's rulings file."""
+    p = Path(root) / DECISIONS
+    if not p.exists():
+        return set(), {}
+    d = json.loads(p.read_text())
+    return set(d['g4_accepted']['tractates']), d['claude_alone']['units']
+
+
+def claude_alone(P):
+    return set(decisions(P.root)[1].get(P.slug, []))
 DENSITY_LOW, DENSITY_HIGH = 0.5, 2.0   # amber outside [0.5 x lowest, 2 x highest] of run tractates
 
 
@@ -330,6 +344,9 @@ def g4_pair(P):
     share = both / passages if passages else 0.0
     if not passages:
         r.red('no definite passage in either run')
+    elif share < DEFINITE_BOTH_MIN and P.slug in decisions(P.root)[0]:
+        r.amber(f'{100 * share:.1f}% of passages definite in either run are definite in both ({both}/{passages}; '
+                f'under {100 * DEFINITE_BOTH_MIN:.0f}%): shipped by Simon\'s 2026-11-10 ruling ({DECISIONS})')
     elif share < DEFINITE_BOTH_MIN:
         r.red(f'only {100 * share:.1f}% of passages definite in either run are definite in both '
               f'({both}/{passages}; need {100 * DEFINITE_BOTH_MIN:.0f}%)')
@@ -411,7 +428,12 @@ def g6_judge(P, who):
         r.red(f'{len(extra)} row(s) for units that do not exist: {extra[:5]}')
     if (d.get('meta') or {}).get('prompt_sha') != JUDGE_PROMPT_SHA:
         r.red(f"judge prompt sha {(d.get('meta') or {}).get('prompt_sha')}, expected {JUDGE_PROMPT_SHA}")
-    bad = Counter(x['answer'].get('outcome') for x in rows if x['answer'].get('outcome') != 'ok')
+    alone = claude_alone(P) if who == 'gemini' else set()
+    ruled = sorted(x['id'] for x in rows if x['answer'].get('outcome') != 'ok' and x['id'] in alone)
+    if ruled:
+        r.amber(f'{len(ruled)} unit(s) with no valid Gemini answer, decided by Claude alone '
+                f'(Simon, 2026-11-10, {DECISIONS}): {ruled}')
+    bad = Counter(x['answer'].get('outcome') for x in rows if x['answer'].get('outcome') != 'ok' and x['id'] not in alone)
     if bad:
         r.red(f'{sum(bad.values())} row(s) not ok: {dict(bad)}')
     if (d.get('meta') or {}).get('missing_batches'):
@@ -425,7 +447,7 @@ def g6_judge(P, who):
         g = load_json(Path(P.consensus) / 'gemini.json', r, 'gemini.json (Claude is judged against it)')
         if g is not None:
             flagged = {x['id'] for x in g['rows'] if x['answer'].get('outcome') == 'ok'
-                       and x['answer'].get('verdict') == 'out_of_scope'}
+                       and x['answer'].get('verdict') == 'out_of_scope'} | claude_alone(P)
             unanswered = sorted(flagged - ok_ids)
             if unanswered:
                 r.red(f'{len(unanswered)} unit(s) Gemini called out_of_scope have no Claude answer with outcome ok '
