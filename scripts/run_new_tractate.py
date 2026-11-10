@@ -127,17 +127,26 @@ class TokenMeter:
         models = client.models
         orig = models.generate_content
         t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0,
-                                                   'retries': 0, 'retries_exhausted': 0})
+                                                   'retries': 0, 'retries_exhausted': 0, 'cached_input': 0,
+                                                   'model_versions': {}, 'service_tiers': {}})
 
         def metered(*a, **kw):
             r = call_with_retry(orig, t, a, kw)
             t['calls'] += 1
+            # What Google says it served: which model, and which tier. A field the installed
+            # library does not carry is recorded as 'not_reported', never guessed.
+            mv = getattr(r, 'model_version', None) or 'not_reported'
+            t['model_versions'][mv] = t['model_versions'].get(mv, 0) + 1
             u = getattr(r, 'usage_metadata', None)
+            tier = getattr(u, 'service_tier', None) or getattr(u, 'traffic_type', None) or 'not_reported'
+            tier = getattr(tier, 'value', tier)
+            t['service_tiers'][str(tier)] = t['service_tiers'].get(str(tier), 0) + 1
             if u is None:
                 t['unmetered'] += 1
             else:
                 for src, dst in self.FIELDS:
                     t[dst] += int(getattr(u, src, None) or 0)
+                t['cached_input'] += int(getattr(u, 'cached_content_token_count', None) or 0)
             return r
         models.generate_content = metered
         return client
@@ -180,6 +189,24 @@ def _git_rev():
                               capture_output=True, timeout=10).stdout.strip() or None
     except Exception:
         return None
+
+
+def sha1_of(path):
+    import hashlib
+    return hashlib.sha1(Path(path).read_bytes()).hexdigest()
+
+
+def served_by(tally):
+    """One-line summary of what Google served, from the per-stage tally: the model_version(s),
+    the tier(s), and the cached input tokens (implicit caching). Feeds run_meta and the cost."""
+    def merged(key):
+        out = {}
+        for t in tally.values():
+            for k, n in t.get(key, {}).items():
+                out[k] = out.get(k, 0) + n
+        return out
+    return {'model_version': merged('model_versions'), 'service_tier': merged('service_tiers'),
+            'cached_content_token_count': sum(t.get('cached_input', 0) for t in tally.values())}
 
 
 def build_run_meta(args, detector, module, elapsed, pages, src_name, triage_summary):
@@ -394,6 +421,11 @@ def main():
                                          src.name, triage_summary)
     # Stage 1 tokens are this invocation's only: cached pages cost nothing now.
     results['run_meta']['tokens'] = meter.tally
+    results['run_meta'].update(served_by(meter.tally))
+    # Fingerprints of the two inputs that must not move between run 1 and run 2 (G3, G4): the
+    # triage cache this run read, and the detector file it ran. git_rev flips on any commit.
+    results['run_meta']['triage_sha1'] = sha1_of(cache) if cache.exists() else None
+    results['run_meta']['detector_sha1'] = sha1_of(detector_module.__file__)
     log.info('tokens: %s', json.dumps(meter.tally))
     if results['run_meta']['resumed_pages']:
         log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)

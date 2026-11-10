@@ -212,7 +212,9 @@ def test_meter_counts_tokens_and_never_reads_a_missing_count_as_zero():
     for _ in range(3):
         c.models.generate_content(model='x', contents='y')
     assert m.tally['stage2_and_4'] == {'calls': 3, 'unmetered': 1, 'input': 150, 'output': 30, 'thinking': 5,
-                                             'retries': 0, 'retries_exhausted': 0}
+                                             'retries': 0, 'retries_exhausted': 0, 'cached_input': 0,
+                                             'model_versions': {'not_reported': 3},
+                                             'service_tiers': {'not_reported': 3}}
 
 
 def test_meter_ignores_a_missing_client():
@@ -315,3 +317,30 @@ def test_triage_cache_write_is_atomic(tmp_path, monkeypatch):
     runner.write_triage_cache(cache, 'X', 'm', {'X 1a': [D], 'X 1b': [N]})
     assert set(json.loads(cache.read_text())['triage_results']) == {'X 1a', 'X 1b'}
     assert not list(tmp_path.glob('*.tmp'))
+
+
+# ---- Shas pre-flight item 3: record what Google served ----
+class _Usage2(_Usage):
+    def __init__(self, i, o, t, cached, tier):
+        super().__init__(i, o, t)
+        self.cached_content_token_count, self.service_tier = cached, tier
+
+
+def test_meter_records_model_version_cached_tokens_and_tier():
+    r1 = _Resp(_Usage2(100, 10, 0, 40, 'standard'))
+    r1.model_version = 'gemini-3-flash-preview-0001'
+    r2 = _Resp(_Usage2(100, 10, 0, None, None))      # a response with no cache and no tier
+    m = runner.TokenMeter()
+    c = m.attach(_Client([r1, r2]), 'stage2_and_4')
+    for _ in range(2):
+        c.models.generate_content(model='x', contents='y')
+    s = runner.served_by(m.tally)
+    assert s['cached_content_token_count'] == 40
+    assert s['model_version'] == {'gemini-3-flash-preview-0001': 1, 'not_reported': 1}
+    assert s['service_tier'] == {'standard': 1, 'not_reported': 1}   # never guessed
+
+
+def test_sha1_of_is_the_content_fingerprint(tmp_path):
+    f = tmp_path / 'a'
+    f.write_text('x')
+    assert runner.sha1_of(f) == '11f6ad8ec52a2984abaafd7c3b516503785c2072'
