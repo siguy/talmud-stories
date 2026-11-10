@@ -95,16 +95,9 @@ def collect(slug):
     return biblical, shipped, one_run
 
 
-# G5 compares a tractate's density with every OTHER run tractate, so its range widens as the run grows: once
-# Keritot (0.30/page) was in, Zevachim (0.54) stopped being flagged. Sampling uses the range G5 reported when it
-# first fired on 2026-11-09 (0.59-3.57), fixed, so a tractate cannot leave the list by others joining the run.
-DENSITY_RANGE_AT_FIRST_FIRE = (0.59, 3.57)
-
-
 def g5_density_amber(slug):
-    d = C.g5_density(T.Paths(slug, ROOT)).measured.get('stories_per_examined_page')
-    lo, hi = DENSITY_RANGE_AT_FIRST_FIRE
-    return d is not None and not lo <= d <= hi
+    """G5's density warning (pinned to the Berakhot/Yevamot baselines since 2026-11-10, so it cannot drift)."""
+    return any('per examined page' in w for w in C.g5_density(T.Paths(slug, ROOT)).warnings)
 
 
 def card(e):

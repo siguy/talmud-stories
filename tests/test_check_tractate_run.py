@@ -249,6 +249,17 @@ def test_g5_density_outside_the_range_is_amber_not_red(tmp_path):
     assert r.status == 'amber'
 
 
+def test_g5_range_comes_from_the_baselines_and_another_tractate_cannot_move_it(tmp_path):
+    """2026-11-10: Keritot (0.30/page) joining the run widened the range and unflagged Zevachim."""
+    def m(f, sparse_neighbour):
+        f['results/v14/berakhot/run1.json'] = _run([f'Berakhot {n}a' for n in range(2, 8)])
+        if sparse_neighbour:
+            f['results/v14/keritot/run1.json'] = _run([f'Keritot {n}a' for n in range(2, 30)])
+    a = C.g5_density(build(tmp_path / 'a', lambda f: m(f, False)))
+    b = C.g5_density(build(tmp_path / 'b', lambda f: m(f, True)))
+    assert a.measured['range'] == b.measured['range'] and set(b.measured['compared_with']) == {'berakhot'}
+
+
 def test_g5_without_the_judge_says_pending_in_a_note(tmp_path):
     P = build(tmp_path)
     (Path(P.consensus) / 'gemini.json').unlink()
