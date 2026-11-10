@@ -211,8 +211,107 @@ def test_meter_counts_tokens_and_never_reads_a_missing_count_as_zero():
     c = m.attach(_Client([_Resp(_Usage(100, 20, 5)), _Resp(None), _Resp(_Usage(50, 10, None))]), 'stage2_and_4')
     for _ in range(3):
         c.models.generate_content(model='x', contents='y')
-    assert m.tally['stage2_and_4'] == {'calls': 3, 'unmetered': 1, 'input': 150, 'output': 30, 'thinking': 5}
+    assert m.tally['stage2_and_4'] == {'calls': 3, 'unmetered': 1, 'input': 150, 'output': 30, 'thinking': 5,
+                                             'retries': 0, 'retries_exhausted': 0}
 
 
 def test_meter_ignores_a_missing_client():
     assert runner.TokenMeter().attach(None, 'stage1') is None
+
+
+# ---- Shas pre-flight item 1: retry every Gemini call; write the triage cache atomically ----
+import os  # noqa: E402
+
+
+class _Err(Exception):
+    def __init__(self, code, msg='boom'):
+        super().__init__(msg)
+        self.code = code
+
+
+def _tally():
+    return {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0,
+            'retries': 0, 'retries_exhausted': 0}
+
+
+def test_retry_recovers_from_429_then_503_and_counts_each_retry():
+    seq = [_Err(429), _Err(503), 'ok']
+    waited = []
+
+    def fn():
+        v = seq.pop(0)
+        if isinstance(v, Exception):
+            raise v
+        return v
+    t = _tally()
+    assert runner.call_with_retry(fn, t, sleep=waited.append) == 'ok'
+    assert t['retries'] == 2 and t['retries_exhausted'] == 0
+    assert waited == [30, 60]
+
+
+def test_retry_gives_up_after_five_tries_and_raises_the_real_error():
+    n = []
+
+    def fn():
+        n.append(1)
+        raise _Err(503, 'still busy')
+    t = _tally()
+    try:
+        runner.call_with_retry(fn, t, sleep=lambda s: None)
+        assert False, 'must raise: a dead call is not an empty answer (Lesson 21)'
+    except _Err as e:
+        assert e.code == 503
+    assert len(n) == 5 and t['retries'] == 4 and t['retries_exhausted'] == 1
+
+
+def test_non_retryable_error_is_raised_at_once():
+    n = []
+
+    def fn():
+        n.append(1)
+        raise _Err(400, 'bad request')
+    t = _tally()
+    try:
+        runner.call_with_retry(fn, t, sleep=lambda s: None)
+        assert False
+    except _Err:
+        pass
+    assert len(n) == 1 and t['retries'] == 0
+
+
+def test_meter_wraps_every_call_with_retry(monkeypatch):
+    """The wrapper installed on a client retries, and counts the retry under that stage."""
+    seq = [_Err(429), type('R', (), {'usage_metadata': None})()]
+
+    class Models:
+        def generate_content(self, *a, **kw):
+            v = seq.pop(0)
+            if isinstance(v, Exception):
+                raise v
+            return v
+    client = type('C', (), {'models': Models()})()
+    monkeypatch.setattr(runner.time, 'sleep', lambda s: None)
+    m = runner.TokenMeter()
+    m.attach(client, 'stage1')
+    client.models.generate_content(model='x')
+    assert m.tally['stage1']['retries'] == 1 and m.tally['stage1']['calls'] == 1
+    assert m.tally['stage1']['unmetered'] == 1
+
+
+def test_triage_cache_write_is_atomic(tmp_path, monkeypatch):
+    cache = tmp_path / 't.json'
+    runner.write_triage_cache(cache, 'X', 'm', {'X 1a': [D]})
+    before = cache.read_text()
+    # a crash while writing the new version must leave the old file whole
+    real = os.replace
+    monkeypatch.setattr(runner.os, 'replace', lambda a, b: (_ for _ in ()).throw(OSError('crash')))
+    try:
+        runner.write_triage_cache(cache, 'X', 'm', {'X 1a': [D], 'X 1b': [N]})
+    except OSError:
+        pass
+    monkeypatch.setattr(runner.os, 'replace', real)
+    assert cache.read_text() == before
+    assert json.loads(before)['triage_results'] == {'X 1a': [D.value]}
+    runner.write_triage_cache(cache, 'X', 'm', {'X 1a': [D], 'X 1b': [N]})
+    assert set(json.loads(cache.read_text())['triage_results']) == {'X 1a', 'X 1b'}
+    assert not list(tmp_path.glob('*.tmp'))

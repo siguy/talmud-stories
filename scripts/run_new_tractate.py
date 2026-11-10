@@ -57,6 +57,57 @@ def source_paths(tractate):
             PROJECT_ROOT / o.get('triage', f'results/triage/{tractate}.json'))
 
 
+# ---- retry with backoff (added 2026-11-09 for the Shas run) ---------------------------
+# Google answers 429 ("slow down") or 503 ("too busy") under load. Before this, only Stage 2's
+# first pass retried; triage raised and stopped the tractate, and the twin, stitch, continuation
+# and clause-span calls failed once and were skipped. Retrying here covers every call, because
+# every call goes through TokenMeter.metered. The detector code is untouched.
+RETRY_STATUS = (429, 503)
+RETRY_TEXT = ('RESOURCE_EXHAUSTED', 'UNAVAILABLE', 'overloaded', 'Too Many Requests')
+RETRY_WAITS = (30, 60, 120, 120)     # seconds before try 2, 3, 4, 5 -> 5 tries in all
+
+
+def is_retryable(exc):
+    """True for a 429/503 -- read from the exception's status code, else from its text."""
+    code = getattr(exc, 'code', None) or getattr(exc, 'status_code', None)
+    return code in RETRY_STATUS or any(t in str(exc) for t in RETRY_TEXT)
+
+
+def call_with_retry(fn, tally, args=(), kwargs=None, sleep=time.sleep, waits=RETRY_WAITS):
+    """Call fn; on a retryable error wait and try again. Every retry is counted in `tally`
+    ('retries'), and a call that still fails after the last try is counted in
+    'retries_exhausted' and re-raised -- the caller sees the real error, never an empty result
+    (Lesson 21). A non-retryable error is raised at once."""
+    kwargs = kwargs or {}
+    for n in range(len(waits) + 1):
+        try:
+            return fn(*args, **kwargs)
+        except Exception as e:  # noqa: BLE001 - classify, then decide
+            if not is_retryable(e):
+                raise
+            if n == len(waits):
+                tally['retries_exhausted'] += 1
+                log.error('Gemini call failed after %d tries: %s', n + 1, str(e)[:200])
+                raise
+            tally['retries'] += 1
+            log.warning('Gemini %s, retry %d/%d in %ds', getattr(e, 'code', '?'), n + 1,
+                        len(waits), waits[n])
+            sleep(waits[n])
+
+
+def write_triage_cache(cache, name, model, labels):
+    """Write the Stage 1 cache atomically: temp file, then os.replace. Two runs of one tractate
+    read this file at the same moment the triage run may be rewriting it, and a half-written
+    file reads as 'no labels' (a re-triage of the tractate, or worse)."""
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    tmp = cache.with_name(cache.name + '.tmp')
+    tmp.write_text(json.dumps(
+        {'tractate': name, 'model': model,
+         'triage_results': {r: [e.value for e in evs] for r, evs in labels.items()}},
+        indent=2, ensure_ascii=False))
+    os.replace(tmp, cache)
+
+
 class TokenMeter:
     """Counts what each stage's Gemini calls cost, from the response's own usage_metadata.
 
@@ -75,10 +126,11 @@ class TokenMeter:
             return client
         models = client.models
         orig = models.generate_content
-        t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0})
+        t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0,
+                                                   'retries': 0, 'retries_exhausted': 0})
 
         def metered(*a, **kw):
-            r = orig(*a, **kw)
+            r = call_with_retry(orig, t, a, kw)
             t['calls'] += 1
             u = getattr(r, 'usage_metadata', None)
             if u is None:
@@ -294,11 +346,7 @@ def main():
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))
 
         def write_cache():
-            cache.parent.mkdir(parents=True, exist_ok=True)
-            cache.write_text(json.dumps(
-                {'tractate': name, 'model': args.model,
-                 'triage_results': {r: [e.value for e in evs] for r, evs in cached.items()}},
-                indent=2, ensure_ascii=False))
+            write_triage_cache(cache, name, args.model, cached)
 
         # Checkpoint every CHECKPOINT pages. Writing the cache only at the end
         # means one bad page throws away the whole tractate's Stage 1 spend --
