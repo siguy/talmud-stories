@@ -51,7 +51,7 @@ LIMITS = {'fetch': 3, 'gemini': 2}          # per step; everything else shares M
 MAX_PARALLEL = 8
 # Already done or held: the 31 tractates of the run are the table minus these (plan §0).
 ALREADY_RUN = ('berakhot', 'yevamot', 'ketubot', 'kiddushin', 'gittin')
-HELD = ('eruvin',)                           # held for Jeff; `--tractates eruvin` runs it anyway
+HELD = ()      # Eruvin was held for Jeff until Simon's 2026-11-09 decision: it goes on the site with the rest
 JUDGE_PROMPT = 'src/prompts/judge_register_v2.md'
 PRICE = {'input': 0.50, 'cached_input': 0.05, 'output': 3.00}   # $ per million tokens, standard tier
 JUDGE_EXPORT_SEED = 1

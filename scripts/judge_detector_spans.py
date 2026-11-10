@@ -47,7 +47,7 @@ log = logging.getLogger('judge-detector-spans')
 # tractate works by convention (scripts/tractates.py): 'berakhot', 'Bava Batra' or 'bava_batra'.
 # Text, runs and the output directory come from tractates.Paths; the two v14 runs are the judged
 # versions. Berakhot also carries its v11 run, the comparison the 2026-11-08 finding reported.
-# Eruvin stays refused: held for Jeff, the untouched final exam.
+# Eruvin was refused (held for Jeff) until Simon's 2026-11-09 decision to put it on the site.
 sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 import tractates as T  # noqa: E402
 
@@ -55,7 +55,6 @@ import tractates as T  # noqa: E402
 def tractate_config(name):
     """{'text', 'out', 'runs'} (repo-relative paths) for a tractate name or slug."""
     slug = T.resolve(name)
-    assert slug != 'eruvin', 'never Eruvin: held for Jeff (docs plan §7 Q4)'
     P = T.Paths(slug, PROJECT_ROOT)
     rel = lambda p: str(p.relative_to(PROJECT_ROOT))
     runs = {'v14_r1': rel(P.run(1)), 'v14_r2': rel(P.run(2))}
@@ -187,7 +186,7 @@ def gemini(dry_run, workers):
     if prior and prior['meta']['prompt_sha'] != j.prompt_sha():
         raise RuntimeError('prompt changed since this output was started')
     rows = {r['id']: r for r in prior.get('rows', [])}
-    todo = [u for u in units if rows.get(u['id'], {}).get('answer', {}).get('outcome') in (None, 'failed')]
+    todo = [u for u in units if rows.get(u['id'], {}).get('answer', {}).get('outcome') in (None, 'failed', 'invalid')]   # plan G6: one resume re-asks both
     log.info('gemini: %d calls to make', len(todo))
 
     def one(u):

@@ -42,7 +42,7 @@ REVIEWED = {
     "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True},
     "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True},
 }
-SITE_HELD = ("eruvin",)       # held for Jeff (docs plan §7 Q4): never on the site until Simon says so
+SITE_HELD = ()   # Eruvin was held (plan §7 Q4) until Simon's 2026-11-09 decision: it ships like every other tractate
 EXISTING = ("yevamot", "berakhot")   # shipped before the Shas run; kept in this order after the reviewed three
 
 

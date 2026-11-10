@@ -153,9 +153,9 @@ def test_dry_run_runs_and_writes_nothing(tmp_path, capsys):
     assert 'niddah' in capsys.readouterr().out
 
 
-def test_default_set_is_the_31_remaining_tractates():
+def test_default_set_is_the_32_remaining_tractates():   # 31 + Eruvin, unheld 2026-11-09
     s = R.default_tractates()
-    assert len(s) == 31 and 'eruvin' not in s and 'berakhot' not in s and 'bava_batra' in s
+    assert len(s) == 32 and 'eruvin' in s and 'berakhot' not in s and 'bava_batra' in s
     assert R.by_size(ROOT, s)[0] == 'bava_batra'            # 350 pages, the longest
 
 
