@@ -1,0 +1,39 @@
+{
+ "01": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rav Ketina walks by a necromancer's house, an earthquake rumbles, he asks aloud and the necromancer calls out to him and answers: a narrated encounter with several events and a response."
+ },
+ "02": {
+  "verdict": "not",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "A bare report of a practice (Abaye's mother raised a lamb to accompany him), followed only by the Gemara's objection and answer; nothing follows from the act."
+ },
+ "03": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7",
+   "R-C2"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A real incident (Rav Pappa visits, food is brought after the meal, he eats) followed by a challenge and his halakhic answer; mainly a vehicle for the ruling, with little change."
+ },
+ "04": {
+  "verdict": "not",
+  "rules": [
+   "R-C5"
+  ],
+  "segments": [],
+  "reason": "Rav Hiyya bar Ashi's report of Rav's habitual practice (washing, blessing, teaching), cited as evidence for a halakha; no one-time event or change."
+ }
+}

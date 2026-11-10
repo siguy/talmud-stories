@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
 Talmud Story Detection v14 = v13 + three sentence edits from the slice measurement.
-NOT ADOPTED (2026-11-07): measured on the Yevamot slice and not made the active detector;
-the runner stays on v11. Why: docs/findings/2026-11-07-detector-v13-slice.md. Frozen.
+ACTIVE since 2026-11-08 (Simon's decision): the runner imports this module. Not adopted on
+2026-11-07 (docs/findings/2026-11-07-detector-v13-slice.md); adopted after the full-Yevamot
+comparison tied v11 on recall and followed Jeff's October rulings where v11 does not
+(docs/findings/2026-11-08-v14-vs-v11-yevamot.md). Known open: R-S1 biblical passages kept.
 UNMEASURED at creation (2026-11-07), measured the same day. The edits, prompt wording only, each aimed at one
 passage of docs/findings/2026-11-07-detector-v13-slice.md:
   1. 2026-10-25 borderline line: "he allots, hands over or enforces something" ->

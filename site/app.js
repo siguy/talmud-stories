@@ -1,7 +1,8 @@
 (function () {
   "use strict";
-  var HE = { ketubot: "כתובות", kiddushin: "קידושין", gittin: "גיטין", yevamot: "יבמות" };
-  var NAME = { ketubot: "Ketubot", kiddushin: "Kiddushin", gittin: "Gittin", yevamot: "Yevamot" };
+  // Tractate names come from data/index.json (written by scripts/build_site_data.py from the one table in
+  // scripts/tractates.py), so a new tractate needs no edit here. Filled in by loadIndex().
+  var HE = {}, NAME = {};
   var app = document.getElementById("app");
   var cache = {}, index = null;
 
@@ -33,24 +34,31 @@
   function sefariaUrl(s) { return "https://www.sefaria.org/" + encodeURIComponent(s.ref.replace(" ", ".")) + "?lang=bi"; }
   function toggleRead(id) { if (read.has(id)) read.delete(id); else read.add(id); save("septimus-read", Array.from(read)); }
 
-  function home() {
+  function loadIndex() {
     return getJSON("data/index.json").then(function (idx) {
       index = idx;
-      return Promise.all(idx.tractates.map(function (t) { return getJSON("data/" + t.tractate + ".json"); })).then(function (all) {
-        var cards = idx.tractates.map(function (t, i) {
-          var ids = all[i].stories.filter(function (s) { return s.tier === "story"; }).map(function (s) { return s.id; });
-          var done = ids.filter(function (id) { return read.has(id); }).length;
-          return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + HE[t.tractate] + '</span>' +
-            '<div class="card-name">' + NAME[t.tractate] + '</div>' +
-            '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') +
-            (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
-            '<div class="bar-track"><div class="bar-fill" style="width:' + (ids.length ? 100 * done / ids.length : 0) + '%"></div></div>' +
-            '<div class="card-meta">' + done + ' of ' + ids.length + ' read</div></a>';
-        }).join("");
-        app.innerHTML = '<h1>Stories of the Talmud</h1>' +
-          '<p class="dedication">In memory of Joe Septimus.</p>' +
-          '<p class="lede">The narrative stories found in four tractates of the Babylonian Talmud, with the Hebrew and an English translation. Pick a tractate to start reading.</p>' + cards;
-      });
+      idx.tractates.forEach(function (t) { NAME[t.tractate] = t.name; HE[t.tractate] = t.he; });
+      return idx;
+    });
+  }
+
+  // The home page reads ONLY the counts in index.json (36 tractate files are ~8 MB; a phone should not
+  // fetch them to draw a list). "Read" progress is the saved story ids that begin with the tractate's
+  // slug and a hyphen (ids are <slug>-<daf>-<start>-<end>, slugs have no hyphen), capped at the count.
+  function home() {
+    return loadIndex().then(function (idx) {
+      var cards = idx.tractates.map(function (t) {
+        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0; }).length);
+        return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + esc(t.he) + '</span>' +
+          '<div class="card-name">' + esc(t.name) + '</div>' +
+          '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') +
+          (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
+          '<div class="bar-track"><div class="bar-fill" style="width:' + (t.story ? 100 * done / t.story : 0) + '%"></div></div>' +
+          '<div class="card-meta">' + done + ' of ' + t.story + ' read</div></a>';
+      }).join("");
+      app.innerHTML = '<h1>Stories of the Talmud</h1>' +
+        '<p class="dedication">In memory of Joe Septimus.</p>' +
+        '<p class="lede">The narrative stories found in ' + idx.tractates.length + ' tractates of the Babylonian Talmud, with the Hebrew and an English translation. Pick a tractate to start reading.</p>' + cards;
     });
   }
 
@@ -177,9 +185,11 @@
   function route() {
     var h = location.hash.slice(1) || "/", q = h.split("?"), parts = q[0].split("/"), p;
     window.scrollTo(0, 0);
-    if (parts[1] === "t" && NAME[parts[2]]) p = tractate(parts[2], (/tab=(\w+)/.exec(q[1] || "") || [])[1]);
-    else if (parts[1] === "s") p = story(parts[2]);
-    else p = home();
+    p = loadIndex().then(function () {
+      if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2], (/tab=(\w+)/.exec(q[1] || "") || [])[1]);
+      if (parts[1] === "s") return story(parts[2]);
+      return home();
+    });
     p.catch(function () { app.innerHTML = '<p class="notice">Could not load the stories. Please check your connection and reload.</p>'; });
   }
   window.addEventListener("hashchange", route);

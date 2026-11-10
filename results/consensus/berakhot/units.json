@@ -1,0 +1,7070 @@
+{
+ "meta": {
+  "runs": {
+   "v11": "results/v11/berakhot/berakhot_v11.json",
+   "v14_r1": "results/v14/berakhot/run1.json",
+   "v14_r2": "results/v14/berakhot/run2.json"
+  },
+  "spans": {
+   "v11": 217,
+   "v14_r1": 217,
+   "v14_r2": 215
+  },
+  "units": 224,
+  "built": "2026-11-09T00:09:32"
+ },
+ "units": [
+  {
+   "id": "Berakhot 2a:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 2a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabban Gamliel's sons return late from a wedding and are told by their father that they may still recite the Shema as long as dawn has not yet broken."
+  },
+  {
+   "id": "Berakhot 3a:11-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 3a",
+     11
+    ],
+    [
+     "Berakhot 3a",
+     12
+    ],
+    [
+     "Berakhot 3a",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yosei enters a ruin in Jerusalem to pray and is met by Elijah the Prophet, who protects him and then teaches him the impropriety of entering ruins and the laws of praying on the road."
+  },
+  {
+   "id": "Berakhot 3b:0-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 3b",
+     0
+    ],
+    [
+     "Berakhot 3b",
+     1
+    ],
+    [
+     "Berakhot 3b",
+     2
+    ],
+    [
+     "Berakhot 3b",
+     3
+    ],
+    [
+     "Berakhot 3b",
+     4
+    ],
+    [
+     "Berakhot 3b",
+     5
+    ],
+    [
+     "Berakhot 3b",
+     6
+    ],
+    [
+     "Berakhot 3b",
+     7
+    ],
+    [
+     "Berakhot 3b",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Yosei enters a ruin in Jerusalem to pray, where he is met by Elijah the Prophet who teaches him about the dangers of ruins and the mourning of the Divine Presence."
+  },
+  {
+   "id": "Berakhot 3b:28-29",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 3b",
+     28
+    ],
+    [
+     "Berakhot 3b",
+     29
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A miraculous lyre wakes King David at midnight to study Torah, leading into a morning audience where the Sages present the economic and military needs of Israel."
+  },
+  {
+   "id": "Berakhot 5a:23-23",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 5a",
+     23
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A tanna recites a teaching about Torah and charity before Rabbi Yoḥanan."
+  },
+  {
+   "id": "Berakhot 5b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 5b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yoḥanan visits his sick student Rabbi Ḥiyya bar Abba and heals him by taking his hand."
+  },
+  {
+   "id": "Berakhot 5b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 5b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rabbi Yoḥanan himself falls ill, Rabbi Ḥanina visits and heals him."
+  },
+  {
+   "id": "Berakhot 5b:13-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 5b",
+     13
+    ],
+    [
+     "Berakhot 5b",
+     14
+    ],
+    [
+     "Berakhot 5b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yoḥanan visits the ailing Rabbi Elazar in a dark room, shares a moment of weeping over the beauty of the human body that will decay, and then heals him."
+  },
+  {
+   "id": "Berakhot 5b:16-19",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 5b",
+     16
+    ],
+    [
+     "Berakhot 5b",
+     17
+    ],
+    [
+     "Berakhot 5b",
+     18
+    ],
+    [
+     "Berakhot 5b",
+     19
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After Rav Huna's wine turns to vinegar, Sages convince him to treat his tenant farmer more fairly, leading to the miraculous restoration of his wine."
+  },
+  {
+   "id": "Berakhot 6b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 6b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira recounts how he initially disapproved of Sages running on Shabbat until he learned of the religious merit in rushing to a lecture."
+  },
+  {
+   "id": "Berakhot 6b:19-19",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 6b",
+     19
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Elijah the Prophet, disguised as an Arab, encounters and rebukes a man for praying behind a synagogue without facing it."
+  },
+  {
+   "id": "Berakhot 7a:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 7a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yishmael ben Elisha relates how he entered the Holy of Holies and was asked by God for a blessing, which he then provided."
+  },
+  {
+   "id": "Berakhot 7a:18-18",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 7a",
+     18
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Levi attempts to time a curse against a harassing heretic using a rooster's crest as a sign, but he falls asleep and later concludes that cursing is improper."
+  },
+  {
+   "id": "Berakhot 7b:26-Berakhot 8a:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 7b",
+     26
+    ],
+    [
+     "Berakhot 7b",
+     27
+    ],
+    [
+     "Berakhot 8a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yitzḥak questions Rav Naḥman on why he did not attend the synagogue and attempts to find a way for him to hear communal prayer despite his weakness."
+  },
+  {
+   "id": "Berakhot 8a:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan is surprised to hear of elderly people in Babylonia until he is told they spend their time in synagogues."
+  },
+  {
+   "id": "Berakhot 8a:18-18",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8a",
+     18
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye describes how he changed his personal prayer location after hearing a teaching about the importance of the place of Torah study."
+  },
+  {
+   "id": "Berakhot 8a:19-19",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8a",
+     19
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ami and Rabbi Asi avoided the thirteen synagogues in Tiberias to pray specifically in the place where they studied."
+  },
+  {
+   "id": "Berakhot 8a:25-25",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8a",
+     25
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Abbahu would physically exit the synagogue specifically between Torah readers to avoid showing contempt for the scroll."
+  },
+  {
+   "id": "Berakhot 8a:28-28",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8a",
+     28
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rav Sheshet would turn his face away from the communal Torah reading to focus on his own study of the Oral Law."
+  },
+  {
+   "id": "Berakhot 8b:1-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8b",
+     1
+    ],
+    [
+     "Berakhot 8b",
+     2
+    ],
+    [
+     "Berakhot 8b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Beivai bar Abaye attempts to find a time to catch up on his Torah portions but is twice corrected by other sages regarding the proper timing."
+  },
+  {
+   "id": "Berakhot 8b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 8b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Pappa visits an Aramean woman and narrowly avoids a trap by insisting on checking the bed before sitting, discovering a dead child hidden beneath the sheets."
+  },
+  {
+   "id": "Berakhot 9a:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 9a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Two sages get drunk at a wedding and sleep past the time for Shema, leading them to seek a post-facto ruling from Rabbi Yehoshua ben Levi."
+  },
+  {
+   "id": "Berakhot 9a:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 9a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel's sons return late from a wedding and consult their father on whether they can still fulfill the obligation of Shema."
+  },
+  {
+   "id": "Berakhot 9b:16-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 9b",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira challenges the claim that one who juxtaposes redemption and prayer is never harmed by citing a time he was forced to perform a task for the king, which Rabbi Yosei then reinterprets as a merit."
+  },
+  {
+   "id": "Berakhot 9b:17-17",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 9b",
+     17
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi El'a tells Ulla to greet Rav Beruna, noting a specific incident where Beruna's successful juxtaposition of redemption and prayer resulted in him smiling the entire day."
+  },
+  {
+   "id": "Berakhot 10a:1-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10a",
+     1
+    ],
+    [
+     "Berakhot 10a",
+     2
+    ],
+    [
+     "Berakhot 10a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Berurya convinces her husband Rabbi Meir to pray for the repentance of their troublesome neighbors rather than their death, leading to their successful repentance."
+  },
+  {
+   "id": "Berakhot 10a:4-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10a",
+     4
+    ],
+    [
+     "Berakhot 10a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Berurya rebuts a heretic's mocking interpretation of a verse in Isaiah by pointing to the end of the verse."
+  },
+  {
+   "id": "Berakhot 10a:7-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10a",
+     7
+    ],
+    [
+     "Berakhot 10a",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Abbahu explains to a heretic why the juxtaposition of certain psalms is not a difficulty for those who use the method of 'semukhin'."
+  },
+  {
+   "id": "Berakhot 10a:25-31",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10a",
+     25
+    ],
+    [
+     "Berakhot 10a",
+     26
+    ],
+    [
+     "Berakhot 10a",
+     27
+    ],
+    [
+     "Berakhot 10a",
+     28
+    ],
+    [
+     "Berakhot 10a",
+     29
+    ],
+    [
+     "Berakhot 10a",
+     30
+    ],
+    [
+     "Berakhot 10a",
+     31
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "King Hezekiah and the prophet Isaiah clash over Hezekiah's impending death and his reasons for not procreating, ending with Hezekiah's defiant turn to prayer."
+  },
+  {
+   "id": "Berakhot 10b:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10b",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Following a harsh prophecy from Isaiah, King Hezekiah turns to the wall and prays to God for mercy."
+  },
+  {
+   "id": "Berakhot 10b:39-40",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 10b",
+     39
+    ],
+    [
+     "Berakhot 10b",
+     40
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Tarfon recounts how he endangered himself by reclining to recite Shema on the road according to Beit Shammai, only to be told by the Sages that he deserved the danger for ignoring Beit Hillel."
+  },
+  {
+   "id": "Berakhot 11a:14-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 11a",
+     14
+    ],
+    [
+     "Berakhot 11a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yishmael and Rabbi Elazar ben Azarya physically swap positions while reciting Shema to demonstrate their differing allegiances to the schools of Hillel and Shammai."
+  },
+  {
+   "id": "Berakhot 11a:20-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 11a",
+     20
+    ],
+    [
+     "Berakhot 11a",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The elders of both schools visit Rabbi Yoḥanan ben HaḤoranit in his Sukka and debate the validity of his practice based on his physical setup."
+  },
+  {
+   "id": "Berakhot 11a:22-22",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 11a",
+     22
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Passage B features a distinct protagonist (Rabbi Tarfon) and a specific event (traveling on a road) with a unique outcome (danger from highwaymen and a rebuke from the Sages), separate from the Sukkot incident in Passage A."
+  },
+  {
+   "id": "Berakhot 11b:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 11b",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ḥiyya bar Ashi observes Rav's habitual practice of washing his hands and reciting a blessing before teaching Sifra."
+  },
+  {
+   "id": "Berakhot 11b:20-20",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 11b",
+     20
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abba and Rabbi Yosei bar Abba visit a town where they are asked a question they cannot answer, leading them to seek the answer from Rav Matna."
+  },
+  {
+   "id": "Berakhot 12a:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 12a",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabba bar bar Hana considers instituting the Ten Commandments in the Sura liturgy but is stopped by Rav Hisda."
+  },
+  {
+   "id": "Berakhot 12a:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 12a",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ameimar considers instituting the Ten Commandments in Neharde’a but is stopped by Rav Ashi."
+  },
+  {
+   "id": "Berakhot 12a:27-27",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 12a",
+     27
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Shmuel calls Hiyya bar Rav to share a legal tradition from Hiyya's father regarding the mechanics of bowing in prayer."
+  },
+  {
+   "id": "Berakhot 13b:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 13b",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yirmeya observes Rabbi Ḥiyya bar Abba extending the word 'Ehad' excessively during Shema and instructs him on the proper limit of intent."
+  },
+  {
+   "id": "Berakhot 13b:17-17",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 13b",
+     17
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav tells Rabbi Ḥiyya that he did not see Rabbi Yehuda HaNasi recite Shema, only to be told that the Rabbi's act of passing his hand over his eyes was the recitation."
+  },
+  {
+   "id": "Berakhot 13b:23-24",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 13b",
+     23
+    ],
+    [
+     "Berakhot 13b",
+     24
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that Rabbi Yoḥanan used to recite Shema while leaning on his back because his corpulence made other positions difficult."
+  },
+  {
+   "id": "Berakhot 14a:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 14a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav bar Shaba visited Ravina while he was reciting Hallel, but Ravina did not stop to greet him because he did not consider him sufficiently important."
+  },
+  {
+   "id": "Berakhot 14b:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 14b",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A prayer leader repeats the word 'emet' twice while leading the service before Rabba, prompting Rabba to mock him for his excessive precision."
+  },
+  {
+   "id": "Berakhot 14b:15-22",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 14b",
+     15
+    ],
+    [
+     "Berakhot 14b",
+     16
+    ],
+    [
+     "Berakhot 14b",
+     17
+    ],
+    [
+     "Berakhot 14b",
+     18
+    ],
+    [
+     "Berakhot 14b",
+     19
+    ],
+    [
+     "Berakhot 14b",
+     20
+    ],
+    [
+     "Berakhot 14b",
+     21
+    ],
+    [
+     "Berakhot 14b",
+     22
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara discusses Rav's ritual order of prayer and phylacteries, eventually explaining a specific instance where he deviated because a messenger brought his phylacteries late."
+  },
+  {
+   "id": "Berakhot 15a:2-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 15a",
+     2
+    ],
+    [
+     "Berakhot 15a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ravina points out a scholar from Eretz Yisrael to Rava who reported a ruling that one may clean hands with earth if water is unavailable."
+  },
+  {
+   "id": "Berakhot 15b:22-23",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 15b",
+     22
+    ],
+    [
+     "Berakhot 15b",
+     23
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Oshaya recites a baraita regarding the writing of the Mezuzah before Rava, who then identifies the Tanna of the baraita as Rabbi Yehuda."
+  },
+  {
+   "id": "Berakhot 15b:26-27",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 15b",
+     26
+    ],
+    [
+     "Berakhot 15b",
+     27
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Ovadya recites a baraita about enunciating the Shema before Rava, who then lists specific phonetic examples."
+  },
+  {
+   "id": "Berakhot 16a:2-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 16a",
+     2
+    ],
+    [
+     "Berakhot 16a",
+     3
+    ],
+    [
+     "Berakhot 16a",
+     4
+    ],
+    [
+     "Berakhot 16a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rabbi Ami and Rabbi Asi were preparing a wedding canopy for Rabbi Elazar, Elazar went to the study hall, learned a law about errors in Shema from Rabbi Yohanan, and returned to share it with them."
+  },
+  {
+   "id": "Berakhot 16a:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 16a",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabban Gamliel recited the Shema on his wedding night despite the general exemption for grooms, explaining to his students that he is too delicate to forgo it."
+  },
+  {
+   "id": "Berakhot 16b:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 16b",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabban Gamliel bathes on the first night of mourning for his wife, defending his action to his students by claiming he is exceptionally delicate."
+  },
+  {
+   "id": "Berakhot 16b:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 16b",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabban Gamliel accepts condolences for his deceased slave Tavi, explaining to his surprised students that Tavi was uniquely virtuous."
+  },
+  {
+   "id": "Berakhot 16b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 16b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rabbi Eliezer's maidservant dies, he repeatedly moves from room to room to avoid his students' attempts to console him, eventually telling them that such consolation is not practiced for slaves."
+  },
+  {
+   "id": "Berakhot 17a:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 17a",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara records that Rabban Yoḥanan ben Zakkai was always the first to offer a greeting to anyone he encountered, including non-Jews in the marketplace."
+  },
+  {
+   "id": "Berakhot 18a:12-Berakhot 18b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 18a",
+     12
+    ],
+    [
+     "Berakhot 18a",
+     13
+    ],
+    [
+     "Berakhot 18b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While walking in a cemetery, Rabbi Ḥiyya tells Rabbi Yonatan to lift his dragging ritual fringes so as not to mock the dead, leading to a discussion on whether the deceased are aware of the living."
+  },
+  {
+   "id": "Berakhot 18b:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 18b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The sons of Rabbi Ḥiyya travel to the villages and forget their studies, leading them to wonder if their deceased father is aware of their distress."
+  },
+  {
+   "id": "Berakhot 18b:6-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 18b",
+     6
+    ],
+    [
+     "Berakhot 18b",
+     7
+    ],
+    [
+     "Berakhot 18b",
+     8
+    ],
+    [
+     "Berakhot 18b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A pious man eavesdrops on spirits in a cemetery to learn future agricultural conditions, but his wife's indiscretion eventually causes the spirits to realize they are being watched and fall silent."
+  },
+  {
+   "id": "Berakhot 18b:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 18b",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ze'iri loses track of money he deposited with an innkeeper when she dies, so he visits her grave to ask her where it is hidden."
+  },
+  {
+   "id": "Berakhot 18b:13-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 18b",
+     13
+    ],
+    [
+     "Berakhot 18b",
+     14
+    ],
+    [
+     "Berakhot 18b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After being accused of stealing orphans' money left with his late father, Shmuel visits the cemetery to speak with his father's spirit and learns the money's secret location."
+  },
+  {
+   "id": "Berakhot 19a:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19a",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man who spoke disparagingly of the deceased Mar Shmuel was immediately punished when a reed fell from the ceiling and fractured his skull."
+  },
+  {
+   "id": "Berakhot 19a:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19a",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B features different actors (Akavya ben Mahalalel and Elazar ben Hanokh) and a distinct event involving the stoning of a coffin, serving as a separate example in a list of causes for excommunication."
+  },
+  {
+   "id": "Berakhot 19a:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19a",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Honi HaMe’aggel drew a circle and refused to leave until God brought rain, prompting Shimon ben Shetach to send a message that he deserved ostracism for his arrogance."
+  },
+  {
+   "id": "Berakhot 19a:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Theodosius of Rome instituted a custom of eating roasted goats on Passover, leading Shimon ben Shetach to send a warning that he would have been ostracized if he weren't Theodosius."
+  },
+  {
+   "id": "Berakhot 19a:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Following the dispute over the Oven of Akhnai, the Sages gathered all the food Rabbi Eliezer had ruled pure, burned it in his presence, and excommunicated him."
+  },
+  {
+   "id": "Berakhot 19b:9-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 19b",
+     9
+    ],
+    [
+     "Berakhot 19b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When students laughed at Rav bar Shaba's legal interpretation, Rav Kahana rebuked them and affirmed the speaker's greatness and the validity of his reasoning."
+  },
+  {
+   "id": "Berakhot 20a:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 20a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Ahava tears a garment off a woman he believes is Jewish and immodest, only to discover she is Samaritan and he must pay a fine."
+  },
+  {
+   "id": "Berakhot 20a:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 20a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Giddel sits at the gates of the women's mikveh to instruct them, and when challenged by the Sages, he claims he is immune to temptation."
+  },
+  {
+   "id": "Berakhot 20a:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 20a",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan sits at the gates of the immersion site so that women will see his beauty and have beautiful children."
+  },
+  {
+   "id": "Berakhot 21b:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 21b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Dimi arrives from Eretz Yisrael to report the legal opinion of Rabbi Yehuda and Rabbi Shimon regarding interrupting prayer for Kaddish."
+  },
+  {
+   "id": "Berakhot 21b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 21b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yehuda challenges Ben Azzai's method of deriving the death penalty for sorcery from juxtaposed verses."
+  },
+  {
+   "id": "Berakhot 22a:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda, while walking by a river in a state of impurity, is asked by his students for a lesson, leading him to immerse himself before teaching them."
+  },
+  {
+   "id": "Berakhot 22a:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A student hesitates to recite Torah before Rabbi Yehuda ben Beteira due to his impurity, but the Rabbi commands him to speak, asserting that Torah words cannot become impure."
+  },
+  {
+   "id": "Berakhot 22a:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A lenient ruling regarding immersion is passed secretly from Nahum to Rabbi Akiva to Ben Azzai, who then broadcasts it publicly in the market."
+  },
+  {
+   "id": "Berakhot 22a:19-19",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     19
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man attempts to solicit a woman for a sin, but she reminds him of the arduous ritual immersion required afterward, causing him to immediately desist."
+  },
+  {
+   "id": "Berakhot 22a:21-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B features a distinct dialogue between Rav Hisda and Rav Huna regarding the validity of hot water for immersion, which is a separate event from Rabbi Zeira's bathhouse incident in Passage A."
+  },
+  {
+   "id": "Berakhot 22a:22-22",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     22
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rabbi Zeira is bathing, he asks his attendant for nine kav of water for purification, prompting a legal inquiry from Rabbi Hiyya bar Abba."
+  },
+  {
+   "id": "Berakhot 22a:23-Berakhot 22b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22a",
+     23
+    ],
+    [
+     "Berakhot 22a",
+     24
+    ],
+    [
+     "Berakhot 22b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nahman creates a special jug for purification, but subsequent legal reports from Eretz Yisrael lead Rav Yosef to declare the practice (and the jug) obsolete."
+  },
+  {
+   "id": "Berakhot 22b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While eating a meal together, Rav Pappa offers to lead Grace because he purified himself with nine kav of water, but Rava bar Shmuel rejects his offer, arguing that such purification is only valid for the sick."
+  },
+  {
+   "id": "Berakhot 22b:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 22b",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B introduces a new actor, Rav Hama, and a specific ritual context (Passover eve) to illustrate a distinct instance of the same legal principle discussed in Passage A."
+  },
+  {
+   "id": "Berakhot 23a:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 23a",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina and Rav Adda bar Mattana disagree on whether one can wear phylacteries to urinate and bring the question to Rava for a ruling."
+  },
+  {
+   "id": "Berakhot 23a:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 23a",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A student's phylacteries are stolen by a prostitute who uses them to falsely accuse him of solicitation, leading the student to commit suicide."
+  },
+  {
+   "id": "Berakhot 23a:20-Berakhot 23b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 23a",
+     20
+    ],
+    [
+     "Berakhot 23b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Hana describes how Rabbi Yohanan would entrust students with his books before entering a bathroom but would insist on holding his own phylacteries. Rava recalls how Rabbi Nahman would entrust his students with his books before entering a bathroom but would insist on holding his phylacteries himself for protection."
+  },
+  {
+   "id": "Berakhot 24a:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 24a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hamnuna relates how Rava sent him to fetch his phylacteries, leading him to discover they were kept in Rava's bed even on the night of his wife's immersion."
+  },
+  {
+   "id": "Berakhot 24a:17-19",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 24a",
+     17
+    ],
+    [
+     "Berakhot 24a",
+     18
+    ],
+    [
+     "Berakhot 24a",
+     19
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina reports seeing Rabbi Yehuda HaNasi hanging his phylacteries, which prompts a legal discussion on the proper way to store them."
+  },
+  {
+   "id": "Berakhot 24a:22-Berakhot 24b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 24a",
+     22
+    ],
+    [
+     "Berakhot 24b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina testifies to seeing Rabbi Yehuda HaNasi perform various involuntary actions during prayer."
+  },
+  {
+   "id": "Berakhot 24b:7-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 24b",
+     7
+    ],
+    [
+     "Berakhot 24b",
+     8
+    ],
+    [
+     "Berakhot 24b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Abba, attempting to avoid his teacher Rav Yehuda so he can move to Eretz Yisrael, happens upon a tanna reciting a law about prayer and expresses that hearing this law alone made his journey worthwhile."
+  },
+  {
+   "id": "Berakhot 25a:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 25a",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When asked about the status of flatulence during prayer, Rav Sheshet points to the students in the study hall who sleep and study together on mats without concern."
+  },
+  {
+   "id": "Berakhot 25a:20-20",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 25a",
+     20
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While Ravina was standing before Rav Yehuda of Difti, Rav Yehuda spotted feces and instructed Ravina to examine whether it had dried sufficiently to allow for sacred speech."
+  },
+  {
+   "id": "Berakhot 25b:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 25b",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yosef instructs his servant to bring him a quarter-log of water so that he may nullify urine in accordance with the ruling of Rabbi Zakkai."
+  },
+  {
+   "id": "Berakhot 25b:23-23",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 25b",
+     23
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Ahai investigates why his son cannot consummate his marriage and discovers a Torah scroll on the bed, which he removes to resolve the issue."
+  },
+  {
+   "id": "Berakhot 26a:0-0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 26a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar Zutra visits Rav Ashi and, seeing a Torah scroll on a chest, places a pitcher on the chest to create a double-vessel partition."
+  },
+  {
+   "id": "Berakhot 27a:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 27a",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav visits Geniva and prays early for Shabbat, then waits for Rabbi Yirmeya bar Abba to finish praying behind him before stepping back."
+  },
+  {
+   "id": "Berakhot 27b:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 27b",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yirmeya bar Abba questions Rav after observing him praying the Shabbat prayer early."
+  },
+  {
+   "id": "Berakhot 27b:6-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 27b",
+     6
+    ],
+    [
+     "Berakhot 27b",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "On a cloudy day, a community mistakenly prays the evening prayer early and receives a ruling from Rabbi Yehuda HaNasi that their prayer is valid."
+  },
+  {
+   "id": "Berakhot 27b:14-Berakhot 28a:11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 27b",
+     14
+    ],
+    [
+     "Berakhot 27b",
+     15
+    ],
+    [
+     "Berakhot 27b",
+     16
+    ],
+    [
+     "Berakhot 27b",
+     17
+    ],
+    [
+     "Berakhot 27b",
+     18
+    ],
+    [
+     "Berakhot 27b",
+     19
+    ],
+    [
+     "Berakhot 27b",
+     20
+    ],
+    [
+     "Berakhot 27b",
+     21
+    ],
+    [
+     "Berakhot 28a",
+     0
+    ],
+    [
+     "Berakhot 28a",
+     1
+    ],
+    [
+     "Berakhot 28a",
+     2
+    ],
+    [
+     "Berakhot 28a",
+     3
+    ],
+    [
+     "Berakhot 28a",
+     4
+    ],
+    [
+     "Berakhot 28a",
+     5
+    ],
+    [
+     "Berakhot 28a",
+     6
+    ],
+    [
+     "Berakhot 28a",
+     7
+    ],
+    [
+     "Berakhot 28a",
+     8
+    ],
+    [
+     "Berakhot 28a",
+     9
+    ],
+    [
+     "Berakhot 28a",
+     10
+    ],
+    [
+     "Berakhot 28a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After Rabban Gamliel publicly humiliates Rabbi Yehoshua over a legal dispute regarding the evening prayer, the Sages revolt and depose him from the Nasi's position."
+  },
+  {
+   "id": "Berakhot 28a:15-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 28a",
+     15
+    ],
+    [
+     "Berakhot 28a",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira, tired from study, sits at a doorway to honor passing Sages but instead receives and memorizes a teaching from Rabbi Natan bar Tovi."
+  },
+  {
+   "id": "Berakhot 28b:0-0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 28b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Avya misses Rav Yosef's lecture due to illness, and upon his return the next day, Abaye facilitates a conversation to ease the tension."
+  },
+  {
+   "id": "Berakhot 28b:5-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 28b",
+     5
+    ],
+    [
+     "Berakhot 28b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Eliezer falls ill, his students visit him and he provides them with ethical guidelines for life and prayer."
+  },
+  {
+   "id": "Berakhot 28b:7-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 28b",
+     7
+    ],
+    [
+     "Berakhot 28b",
+     8
+    ],
+    [
+     "Berakhot 28b",
+     9
+    ],
+    [
+     "Berakhot 28b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabban Yoḥanan ben Zakkai, on his deathbed, weeps before his students out of fear of divine judgment and gives final instructions before passing."
+  },
+  {
+   "id": "Berakhot 28b:22-Berakhot 29a:5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 28b",
+     22
+    ],
+    [
+     "Berakhot 28b",
+     23
+    ],
+    [
+     "Berakhot 29a",
+     0
+    ],
+    [
+     "Berakhot 29a",
+     1
+    ],
+    [
+     "Berakhot 29a",
+     2
+    ],
+    [
+     "Berakhot 29a",
+     3
+    ],
+    [
+     "Berakhot 29a",
+     4
+    ],
+    [
+     "Berakhot 29a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shmuel HaKatan institutes the blessing against heretics at the request of Rabban Gamliel, but a year later, he forgets the very blessing he created while leading the congregation. Shmuel HaKatan forgot a blessing while leading prayer and paused for hours to remember it, yet the congregation did not remove him."
+  },
+  {
+   "id": "Berakhot 29b:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 29b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Elijah the Prophet appears to Rav Yehuda and provides him with ethical guidance and instructions on how to pray before setting out on a journey."
+  },
+  {
+   "id": "Berakhot 30a:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30a",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While walking with Rav Sheshet, Rav Hisda stops to pray, leading the blind Rav Sheshet to inquire via his servant and then comment on the practice."
+  },
+  {
+   "id": "Berakhot 30a:18-Berakhot 30b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30a",
+     18
+    ],
+    [
+     "Berakhot 30b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel recounts that he only ever prayed the Musaf prayer individually once, on the day the king's army arrived in Neharde'a and disrupted the community."
+  },
+  {
+   "id": "Berakhot 30b:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30b",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B features a distinct set of actors (Rabbi Hanina Kara and Rabbi Yannai) and a specific interaction/dialogue regarding a legal ruling, separate from the narrative about Shmuel in Neharde'a."
+  },
+  {
+   "id": "Berakhot 30b:20-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30b",
+     20
+    ],
+    [
+     "Berakhot 30b",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabba rebukes Abaye for excessive joy, but Abaye explains that his joy is restrained because he is wearing phylacteries."
+  },
+  {
+   "id": "Berakhot 30b:22-23",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30b",
+     22
+    ],
+    [
+     "Berakhot 30b",
+     23
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Zeira rebukes Rabbi Yirmeya for being too joyful, and Yirmeya responds that his phylacteries maintain his awe."
+  },
+  {
+   "id": "Berakhot 30b:24-Berakhot 31a:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 30b",
+     24
+    ],
+    [
+     "Berakhot 31a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar, son of Ravina, holds a wedding feast for his son and observes the Sages becoming excessively joyful. Mar son of Ravina breaks an expensive cup at his son's wedding to temper the excessive joy of the Sages."
+  },
+  {
+   "id": "Berakhot 31a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Ashi breaks a valuable white glass cup at his son's wedding to instill a sense of gravity in the joyous Sages."
+  },
+  {
+   "id": "Berakhot 31a:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31a",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "At a wedding feast, Rav Hamnuna Zuti responds to a request for a song by singing about death to temper the excessive joy."
+  },
+  {
+   "id": "Berakhot 31a:13-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31a",
+     13
+    ],
+    [
+     "Berakhot 31a",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana accompanies Rav Shimi bar Ashi on a journey, and upon reaching a palm grove, their conversation leads to a teaching about the land of Israel."
+  },
+  {
+   "id": "Berakhot 31a:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Mordekhai accompanies Rav Shimi bar Ashi from Hagronya to Bei Keifei."
+  },
+  {
+   "id": "Berakhot 31b:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31b",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A parable describes a poor man who, after being ignored by a king's servants at the door, pushes his way inside to speak to the king directly."
+  },
+  {
+   "id": "Berakhot 31b:20-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 31b",
+     20
+    ],
+    [
+     "Berakhot 31b",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Eli seeks a priest to slaughter a sacrifice, the young Samuel intervenes with a legal ruling; Eli sentences him to death for ruling in his teacher's presence, prompting Hannah to intervene."
+  },
+  {
+   "id": "Berakhot 32b:29-Berakhot 33a:1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 32b",
+     29
+    ],
+    [
+     "Berakhot 32b",
+     30
+    ],
+    [
+     "Berakhot 33a",
+     0
+    ],
+    [
+     "Berakhot 33a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A pious man praying on the road ignores an officer's greeting, leading to a confrontation where the man must explain his actions to save his life. A pious man explains to an angry officer why he did not interrupt his prayer to greet him, leading the officer to be appeased."
+  },
+  {
+   "id": "Berakhot 33a:7-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 33a",
+     7
+    ],
+    [
+     "Berakhot 33a",
+     8
+    ],
+    [
+     "Berakhot 33a",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Hanina ben Dosa allows a dangerous arvad to bite him, resulting in the creature's death, and uses the event to teach that sin, not the creature, is what kills."
+  },
+  {
+   "id": "Berakhot 33a:30-30",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 33a",
+     30
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yosei asks Rabbi Yoḥanan a legal question in Sidon regarding Havdala."
+  },
+  {
+   "id": "Berakhot 33b:2-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 33b",
+     2
+    ],
+    [
+     "Berakhot 33b",
+     3
+    ],
+    [
+     "Berakhot 33b",
+     4
+    ],
+    [
+     "Berakhot 33b",
+     5
+    ],
+    [
+     "Berakhot 33b",
+     6
+    ],
+    [
+     "Berakhot 33b",
+     7
+    ],
+    [
+     "Berakhot 33b",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While Rabbi Zeira is riding a donkey and Rabbi Ḥiyya bar Avin follows on foot, they discuss whether a specific halakha follows Rabbi Eliezer."
+  },
+  {
+   "id": "Berakhot 33b:18-18",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 33b",
+     18
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A prayer leader uses a forbidden formula in front of Rabba, who praises him only to provoke Abaye into correcting the leader based on the Mishna."
+  },
+  {
+   "id": "Berakhot 33b:20-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 33b",
+     20
+    ],
+    [
+     "Berakhot 33b",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥanina patiently waits for a prayer leader to finish an excessively long list of divine attributes before rebuking him for attempting to exhaust God's praise."
+  },
+  {
+   "id": "Berakhot 34a:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 34a",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A student leads prayer at great length in front of Rabbi Eliezer, prompting complaints from other students which the Rabbi rebuffs by citing Moses' long prayer."
+  },
+  {
+   "id": "Berakhot 34a:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 34a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "In a mirror incident to the previous story, a student leads prayer very briefly, and Rabbi Eliezer defends him against student protests by citing Moses' short prayer for Miriam."
+  },
+  {
+   "id": "Berakhot 34b:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 34b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava bows during the thanksgiving blessing and justifies his practice to the Sages by citing the examples of Rav Nahman and Rav Sheshet."
+  },
+  {
+   "id": "Berakhot 34b:26-26",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 34b",
+     26
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabban Gamliel sends messengers to Rabbi Hanina ben Dosa to pray for his sick son, and Hanina correctly predicts the boy's recovery based on the fluency of his prayer."
+  },
+  {
+   "id": "Berakhot 34b:27-27",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 34b",
+     27
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rabbi Yohanan ben Zakkai's son falls ill, he asks his student Rabbi Hanina ben Dosa to pray, who does so in a specific physical posture and achieves a recovery."
+  },
+  {
+   "id": "Berakhot 35b:8-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 35b",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava instructs his students to stay in their fields during the harvest months of Nisan and Tishrei so they can support themselves for the rest of the year."
+  },
+  {
+   "id": "Berakhot 35b:17-17",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 35b",
+     17
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava would drink wine throughout the day on the eve of Passover to stimulate his appetite for the evening's matza."
+  },
+  {
+   "id": "Berakhot 36a:21-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 36a",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina encounters Mar bar Rav Ashi eating caper buds while discarding the berries and questions his legal reasoning for doing so."
+  },
+  {
+   "id": "Berakhot 36b:11-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 36b",
+     11
+    ],
+    [
+     "Berakhot 36b",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An empirical experiment was conducted where flowers were removed from pomegranates and caper-bushes to see if the fruit would survive, resulting in a halakhic ruling based on the outcome."
+  },
+  {
+   "id": "Berakhot 37a:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 37a",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While dining in Jericho, Rabbi Akiva hurries to recite an abbreviated blessing over dates before Rabban Gamliel can insist on the full Grace after Meals."
+  },
+  {
+   "id": "Berakhot 38a:0-0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B contains a distinct dialogue between Abaye and Rav Yosef regarding a specific food item, which is followed by Passage A's separate account of Mar Zutra's personal practice."
+  },
+  {
+   "id": "Berakhot 38a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Mar Zutra treats a specific type of dough as bread by basing his meal on it and reciting the full blessings for bread."
+  },
+  {
+   "id": "Berakhot 38a:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a student asks Rava about 'terima', Rava is initially confused by the term until Ravina clarifies it, leading Rava to recall and state the relevant law."
+  },
+  {
+   "id": "Berakhot 38a:15-Berakhot 38b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38a",
+     15
+    ],
+    [
+     "Berakhot 38b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira hears praise for the son of Rav Zevid's expertise in blessings and asks to meet him, eventually observing him recite a blessing when he visits."
+  },
+  {
+   "id": "Berakhot 38b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B describes a distinct event involving a lupin boiled seven times and a specific ruling by Rabbi Yoḥanan, which serves as a separate precedent from the salted olive incident in Passage A."
+  },
+  {
+   "id": "Berakhot 38b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 38b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥiyya bar Abba reports seeing Rabbi Yoḥanan eat a salted olive and recite blessings before and after."
+  },
+  {
+   "id": "Berakhot 39a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 39a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Yoḥanan is served a large salted olive, eats it, and recites a blessing, which the Gemara uses to discuss the minimum volume required for a blessing."
+  },
+  {
+   "id": "Berakhot 39a:3-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 39a",
+     3
+    ],
+    [
+     "Berakhot 39a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While sitting at a meal, one of Bar Kappara's students recites a blessing out of the preferred order and is mocked by his peer, leading to Bar Kappara's anger and the premature death of both students."
+  },
+  {
+   "id": "Berakhot 39b:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 39b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a tanna named Shalman recited a ruling about combining bread pieces, Rav Naḥman bar Yitzḥak praised him with a pun on his name."
+  },
+  {
+   "id": "Berakhot 39b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 39b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi reports seeing Rav Kahana's specific physical practice of breaking bread, leading to a discussion with Ravina about the optics of such an action."
+  },
+  {
+   "id": "Berakhot 39b:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 39b",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B is a distinct narrative unit featuring different actors (Rav Ami and Rav Asi) performing a specific action with a specific object (the eiruv bread) followed by their own explanatory response."
+  },
+  {
+   "id": "Berakhot 40a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 40a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava bar Shmuel visits the House of the Exilarch and immediately breaks bread before salt is served, despite his own ruling to the contrary."
+  },
+  {
+   "id": "Berakhot 40b:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 40b",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Binyamin the shepherd ate bread and recited a brief Aramaic blessing, which Rav subsequently validated as fulfilling his obligation."
+  },
+  {
+   "id": "Berakhot 41b:3-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 41b",
+     3
+    ],
+    [
+     "Berakhot 41b",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While dining together, Rav Hamnuna prioritizes a blessing over dates over pomegranates, leading to a legal exchange where he impresses Rav Ḥisda with his scriptural reasoning."
+  },
+  {
+   "id": "Berakhot 42a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna eats thirteen large loaves without blessing, prompting Rav Nahman to tell him that such a quantity constitutes a full meal regardless of the bread's status."
+  },
+  {
+   "id": "Berakhot 42a:2-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42a",
+     2
+    ],
+    [
+     "Berakhot 42a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While at a wedding feast for his son, Rav Yehuda hears guests reciting the blessing for bread over dessert-bread and corrects their error."
+  },
+  {
+   "id": "Berakhot 42a:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa visits Rav Huna bar Natan and eats food served after the meal without a blessing, leading to a discussion on when a meal is officially concluded."
+  },
+  {
+   "id": "Berakhot 42a:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "At the Exilarch's house, Rava eats food sent after the table was cleared while Rabbi Zeira refuses, leading to a discussion on whether clearing the table ends the meal's blessing coverage."
+  },
+  {
+   "id": "Berakhot 42b:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabba bar Mari visits Rava and observes him reciting blessings on wine both before and after a meal, confirming the practice is correct."
+  },
+  {
+   "id": "Berakhot 42b:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42b",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yitzḥak bar Yosef visits Abaye on a festival and questions why he blesses every cup of wine, to which Abaye explains he keeps changing his mind about drinking more."
+  },
+  {
+   "id": "Berakhot 42b:12-Berakhot 43a:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 42b",
+     12
+    ],
+    [
+     "Berakhot 42b",
+     13
+    ],
+    [
+     "Berakhot 43a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Following Rav's funeral, his students stop to eat by a river and realize they are unsure of the laws of Grace after Meals, leading Rav Adda bar Ahava to tear his garment in mourning for their lost source of knowledge. Following Rav's funeral, his students struggle with a legal question regarding the meal's blessings until Rav Adda bar Ahava performs an act of mourning and an elder arrives to resolve the difficulty."
+  },
+  {
+   "id": "Berakhot 43a:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 43a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rav and Rabbi Hiyya sit before Rabbi at a meal, which serves as a setting for a legal dictum about washing hands."
+  },
+  {
+   "id": "Berakhot 43b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 43b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Pappa visits Rav Huna son of Rav Ika and is questioned for blessing a myrtle branch before scented oil."
+  },
+  {
+   "id": "Berakhot 44a:2-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 44a",
+     2
+    ],
+    [
+     "Berakhot 44a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes the physical effects on various rabbis who ate the exceptionally sweet and lush fruits of Genosar."
+  },
+  {
+   "id": "Berakhot 44a:4-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 44a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new actor (Rav Dimi reporting on King Yannai) and a different location and subject matter (sardines for fig-cutters on the King's Mountain) compared to the previous stories about Rabbis eating fruits of Genosar."
+  },
+  {
+   "id": "Berakhot 44b:14-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 44b",
+     14
+    ],
+    [
+     "Berakhot 44b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ameimar, Mar Zutra, and Rav Ashi are served raw vegetables, and while the others eat, Mar Zutra abstains to follow a specific ruling by Rabbi Yitzḥak."
+  },
+  {
+   "id": "Berakhot 44b:22-22",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 44b",
+     22
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa describes how his wife would cook turnips and then break the pot to neutralize their harmful effects."
+  },
+  {
+   "id": "Berakhot 45b:16-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 45b",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa interrupted his own meal to act as the third person for his son Abba Mar's zimmun."
+  },
+  {
+   "id": "Berakhot 45b:17-18",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 45b",
+     17
+    ],
+    [
+     "Berakhot 45b",
+     18
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Three rabbis ate together and, unable to decide who should lead, blessed individually, only to be told later by Mareimar that they missed the opportunity for zimmun."
+  },
+  {
+   "id": "Berakhot 46a:0-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 46a",
+     0
+    ],
+    [
+     "Berakhot 46a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Abbahu vows to make a feast if the ailing Rabbi Zeira recovers, and upon Zeira's recovery, he fulfills the vow and hosts a banquet where they discuss the protocol for reciting Grace after Meals."
+  },
+  {
+   "id": "Berakhot 46b:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 46b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Mar Zutra visits Rav Ashi during a time of mourning and recites a unique combined blessing of 'Who is good and does good' and 'the true Judge'."
+  },
+  {
+   "id": "Berakhot 46b:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 46b",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While dining with Rabbi Yehuda HaNasi, Rav is told to wash his hands and trembles in fear of a rebuke, only to be told he was actually being invited to lead the Grace after Meals."
+  },
+  {
+   "id": "Berakhot 47a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling on donkeys, Ravin does not defer to Abaye on the road but does so at a doorway, leading to a clarification of the laws of deference."
+  },
+  {
+   "id": "Berakhot 47a:6-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47a",
+     6
+    ],
+    [
+     "Berakhot 47a",
+     7
+    ],
+    [
+     "Berakhot 47a",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "During wedding preparations for his son, Rabba bar bar Hana teaches his son meal etiquette, which is then discussed by other present sages."
+  },
+  {
+   "id": "Berakhot 47a:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Shimi bar Hiyya arrives late to a meal with Rav and Shmuel and eats hurriedly to join them for Zimmun, only to be told they have already finished."
+  },
+  {
+   "id": "Berakhot 47a:12-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47a",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Aha enters a meal of Rav's students and corrects their assumption that he should be the one to recite the blessing."
+  },
+  {
+   "id": "Berakhot 47b:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rami bar Ḥama refuses to include Rav Menashya in a zimmun because he lacked service to scholars, and Rava later attributes Rami's death to this slight."
+  },
+  {
+   "id": "Berakhot 47b:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 47b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer enters a synagogue lacking a quorum and frees his slave so that the prayer service can proceed."
+  },
+  {
+   "id": "Berakhot 48a:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 48a",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "As children sitting before Rabba, Rava and Abaye demonstrate their understanding of God's omnipresence by pointing to the ceiling and the sky."
+  },
+  {
+   "id": "Berakhot 48a:4-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 48a",
+     4
+    ],
+    [
+     "Berakhot 48a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After King Yannai executes the Sages, his wife brings her brother Shimon ben Shataḥ out of hiding to recite Grace after Meals, which he does after drinking a cup of wine to justify the blessing."
+  },
+  {
+   "id": "Berakhot 49a:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 49a",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar Rav Huna visits the Exilarch and recites a blessing with two themes, prompting a legal observation from Rav Hisda."
+  },
+  {
+   "id": "Berakhot 49a:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 49a",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Zeira asks Rav Hisda to teach Mishna, but Rav Hisda declines, claiming he has not yet mastered the laws of Grace after Meals."
+  },
+  {
+   "id": "Berakhot 49a:21-Berakhot 49b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 49a",
+     21
+    ],
+    [
+     "Berakhot 49b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Giddel bar Manyumi is present, Rav Nahman makes a mistake in the Grace after Meals by omitting the Shabbat formula. Giddel bar Manyumi observes Rav Nahman making a mistake in Grace after Meals and repeating the entire prayer, leading to a discussion on the proper procedure for such an error."
+  },
+  {
+   "id": "Berakhot 50a:12-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 50a",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ravina and Rav Ḥama bar Buzi attend a banquet where Rav Ḥama tries to gather a hundred people for a special blessing, but Ravina stops him, citing Rava's ruling that the formula doesn't change for larger groups."
+  },
+  {
+   "id": "Berakhot 50a:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 50a",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B features a different protagonist (Rava) and a distinct conflict regarding the logistics of the Exilarch's meal, separate from the halakhic dispute about zimmun formulas in Passage A."
+  },
+  {
+   "id": "Berakhot 50a:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 50a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rafram bar Pappa omits the word 'HaMevorakh' while leading the Torah service, causing the entire congregation to protest loudly."
+  },
+  {
+   "id": "Berakhot 50b:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 50b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While dining with Ameimar and Rav Ashi, Mar Zutra throws fruit to Rav Ashi, prompting a rebuke and a discussion on the permissibility of throwing food."
+  },
+  {
+   "id": "Berakhot 51a:12-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 51a",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Suriel the angel appears to Rabbi Yishmael ben Elisha and gives him three practical warnings regarding morning routines and hygiene."
+  },
+  {
+   "id": "Berakhot 51a:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 51a",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Angel of Death speaks to Rabbi Yehoshua ben Levi, warning him against certain morning habits and standing before women returning from a funeral."
+  },
+  {
+   "id": "Berakhot 51b:5-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 51b",
+     5
+    ],
+    [
+     "Berakhot 51b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Ulla refuses to send the cup of blessing to Rav Nahman's wife Yalta, she reacts by destroying four hundred barrels of wine, leading to a further exchange between them."
+  },
+  {
+   "id": "Berakhot 52b:23-24",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 52b",
+     23
+    ],
+    [
+     "Berakhot 52b",
+     24
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna bar Yehuda visits Rava's house and questions why Rava recites the blessing over spices before the light, leading to a legal clarification."
+  },
+  {
+   "id": "Berakhot 53b:16-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 53b",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Two students forget to bless after a meal; the one who follows Beit Shammai's rule to return finds gold, while the one who follows Beit Hillel's leniency is eaten by a lion."
+  },
+  {
+   "id": "Berakhot 53b:17-17",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 53b",
+     17
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabba bar bar Hana realizes he forgot to bless after a meal while traveling, lies to his caravan that he forgot a dove so he can return to the spot, and is rewarded by finding a literal golden dove."
+  },
+  {
+   "id": "Berakhot 54a:10-10",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54a",
+     10
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man walking by the Euphrates is attacked by a lion and miraculously saved, leading him to recite a blessing at the site."
+  },
+  {
+   "id": "Berakhot 54a:11-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar, son of Ravina, is saved from thirst in a valley when a miracle causes a spring to appear."
+  },
+  {
+   "id": "Berakhot 54a:12-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54a",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Mar, son of Ravina, narrowly escapes a wild camel attack in Meḥoza when a wall miraculously opens for him."
+  },
+  {
+   "id": "Berakhot 54a:15-Berakhot 54b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54a",
+     15
+    ],
+    [
+     "Berakhot 54b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Two lepers walking behind the Israelite camp witness the miraculous events at the streams of Arnon."
+  },
+  {
+   "id": "Berakhot 54b:3-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54b",
+     3
+    ],
+    [
+     "Berakhot 54b",
+     4
+    ],
+    [
+     "Berakhot 54b",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Og the giant attempts to crush the Israelites with a mountain, but is trapped by his own teeth and killed by Moses."
+  },
+  {
+   "id": "Berakhot 54b:18-18",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 54b",
+     18
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rav Yehuda recovers from illness, his visiting colleagues recite a blessing that he accepts as fulfilling his own requirement to offer thanks."
+  },
+  {
+   "id": "Berakhot 55a:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 55a",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A matronita insults Rabbi Yehuda's healthy complexion as being like a sinner's, prompting him to explain that it actually results from his disciplined bathroom habits and constant study."
+  },
+  {
+   "id": "Berakhot 55b:10-12",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 55b",
+     10
+    ],
+    [
+     "Berakhot 55b",
+     11
+    ],
+    [
+     "Berakhot 55b",
+     12
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ameimar, Mar Zutra, and Rav Ashi sit together and agree to each share a novel teaching, resulting in a series of instructions regarding dreams, the evil eye, and sickness."
+  },
+  {
+   "id": "Berakhot 55b:13-13",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 55b",
+     13
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B introduces a new actor, Shmuel, and describes his specific ritualized response to dreams, which is distinct from the group conversation of Ameimar, Mar Zutra, and Rav Ashi in Passage A."
+  },
+  {
+   "id": "Berakhot 55b:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 55b",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Bena'a recounts how he took a dream to twenty-four different interpreters in Jerusalem, and despite their different interpretations, every single one was fulfilled."
+  },
+  {
+   "id": "Berakhot 56a:0-0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 56a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Roman Emperor challenges Rabbi Yehoshua to predict his dream, and the Rabbi describes a vivid scene of the Emperor being captured by Persians."
+  },
+  {
+   "id": "Berakhot 56a:1-Berakhot 56b:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 56a",
+     1
+    ],
+    [
+     "Berakhot 56a",
+     2
+    ],
+    [
+     "Berakhot 56a",
+     3
+    ],
+    [
+     "Berakhot 56a",
+     4
+    ],
+    [
+     "Berakhot 56a",
+     5
+    ],
+    [
+     "Berakhot 56a",
+     6
+    ],
+    [
+     "Berakhot 56a",
+     7
+    ],
+    [
+     "Berakhot 56a",
+     8
+    ],
+    [
+     "Berakhot 56a",
+     9
+    ],
+    [
+     "Berakhot 56a",
+     10
+    ],
+    [
+     "Berakhot 56a",
+     11
+    ],
+    [
+     "Berakhot 56a",
+     12
+    ],
+    [
+     "Berakhot 56a",
+     13
+    ],
+    [
+     "Berakhot 56a",
+     14
+    ],
+    [
+     "Berakhot 56a",
+     15
+    ],
+    [
+     "Berakhot 56a",
+     16
+    ],
+    [
+     "Berakhot 56a",
+     17
+    ],
+    [
+     "Berakhot 56a",
+     18
+    ],
+    [
+     "Berakhot 56b",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The professional dream interpreter Bar Haddaya gives Rava bad interpretations because he didn't pay, leading to personal tragedy for Rava, a confrontation on a ship, and Bar Haddaya's eventual flight to Rome. Bar Haddaya is executed by the Romans by being tied to two bent cedar trees which, when released, tear him in half."
+  },
+  {
+   "id": "Berakhot 56b:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 56b",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Dama asks Rabbi Yishmael to interpret a dream about his cheeks falling off."
+  },
+  {
+   "id": "Berakhot 56b:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 56b",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Passage B features a different set of actors (Bar Kappara and Rabbi Yehuda HaNasi) and a distinct series of dream interpretations compared to the interaction in Passage A."
+  },
+  {
+   "id": "Berakhot 56b:3-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 56b",
+     3
+    ],
+    [
+     "Berakhot 56b",
+     4
+    ],
+    [
+     "Berakhot 56b",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A heretic challenges Rabbi Yishmael's dream interpretations, but is proven wrong by a woman's testimony and Rabbi Yishmael's clever decoding of a dream about Cappadocia."
+  },
+  {
+   "id": "Berakhot 57a:9-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 57a",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi recounts how he saw a goose in a dream and acted upon it, resulting in his appointment as head of the academy."
+  },
+  {
+   "id": "Berakhot 57a:16-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 57a",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna son of Rav Yehoshua both have dreams that are fulfilled by their respective appointments to leadership positions."
+  },
+  {
+   "id": "Berakhot 57b:21-21",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 57b",
+     21
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava and Mar son of Ravina perform symbolic physical actions upon seeing the ruins and earth of Babylonia to express its cursed status."
+  },
+  {
+   "id": "Berakhot 58a:2-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 58a",
+     2
+    ],
+    [
+     "Berakhot 58a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Zoma sees a massive crowd on the Temple Mount and recites a blessing, using the occasion to reflect on the labor required for human sustenance compared to the ease of a modern guest."
+  },
+  {
+   "id": "Berakhot 58a:9-11",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 58a",
+     9
+    ],
+    [
+     "Berakhot 58a",
+     10
+    ],
+    [
+     "Berakhot 58a",
+     11
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The blind Rav Sheshet goes to greet the king and is mocked by a heretic, but he proves his spiritual perception and the heretic is subsequently punished."
+  },
+  {
+   "id": "Berakhot 58a:12-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 58a",
+     12
+    ],
+    [
+     "Berakhot 58a",
+     13
+    ],
+    [
+     "Berakhot 58a",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Sheila is reported to the Persian authorities for exercising judicial power, miraculously survives their interrogation, and then kills the informer to prevent further danger."
+  },
+  {
+   "id": "Berakhot 58b:1-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 58b",
+     1
+    ],
+    [
+     "Berakhot 58b",
+     2
+    ],
+    [
+     "Berakhot 58b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While walking, Ulla and Rav Hisda pass the ruins of a famously hospitable home, prompting Rav Hisda to sigh and Ulla to offer theological consolation."
+  },
+  {
+   "id": "Berakhot 58b:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 58b",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna meet Rav Hanina on the road and inform him of the blessings they recited upon seeing him."
+  },
+  {
+   "id": "Berakhot 59a:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 59a",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rav Ketina is traveling, an earthquake occurs at the home of a necromancer, leading to a confrontation where Rav Ketina debunk's the necromancer's explanation for the phenomenon."
+  },
+  {
+   "id": "Berakhot 60a:15-15",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 60a",
+     15
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Hillel the Elder, hearing a scream while returning to his city, expresses certainty that the tragedy is not occurring in his own home."
+  },
+  {
+   "id": "Berakhot 60a:16-16",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 60a",
+     16
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While walking in the marketplace of Zion, Rabbi Yishmael notices his student's fear and rebukes him, citing a verse that associates fear with sin."
+  },
+  {
+   "id": "Berakhot 60a:17-17",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 60a",
+     17
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Yehuda bar Natan sighs while following Rav Hamnuna, who warns him that such expressions of fear can bring about actual suffering."
+  },
+  {
+   "id": "Berakhot 60a:26-26",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 60a",
+     26
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When a bathhouse floor collapses, Rabbi Abbahu miraculously survives by standing on a pillar and physically supporting 101 men to safety."
+  },
+  {
+   "id": "Berakhot 60b:11-Berakhot 61a:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 60b",
+     11
+    ],
+    [
+     "Berakhot 60b",
+     12
+    ],
+    [
+     "Berakhot 61a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Akiva is refused lodging in a city and forced to sleep in a field, where he loses his lamp and animals to various mishaps, only to discover the next morning that these losses kept him hidden while the city was captured."
+  },
+  {
+   "id": "Berakhot 61b:5-9",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 61b",
+     5
+    ],
+    [
+     "Berakhot 61b",
+     6
+    ],
+    [
+     "Berakhot 61b",
+     7
+    ],
+    [
+     "Berakhot 61b",
+     8
+    ],
+    [
+     "Berakhot 61b",
+     9
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Akiva defies a Roman ban on Torah study, is imprisoned alongside Pappos ben Yehuda, and eventually undergoes a brutal execution while heroically reciting the Shema."
+  },
+  {
+   "id": "Berakhot 61b:15-Berakhot 62a:0",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 61b",
+     15
+    ],
+    [
+     "Berakhot 62a",
+     0
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Abaye secretly moves the bricks in Rabba's bathroom to see if he is particular about the direction of his seat, and Rabba moves them back. Rabbi Akiva follows Rabbi Yehoshua into a bathroom to observe and learn his private conduct."
+  },
+  {
+   "id": "Berakhot 62a:1-1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Azzai follows Rabbi Akiva into a bathroom to observe his conduct and learn from him."
+  },
+  {
+   "id": "Berakhot 62a:2-2",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     2
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Kahana hides under Rav's bed to learn proper conduct during intimacy and is rebuked by Rav when he speaks up."
+  },
+  {
+   "id": "Berakhot 62a:6-6",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     6
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ami and Rabbi Asi safely enter a demon-infested bathroom in Tiberias by following a specific tradition, much to the surprise of their colleagues."
+  },
+  {
+   "id": "Berakhot 62a:7-7",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     7
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye's mother raised a lamb to protect him from demons when he went to the bathroom."
+  },
+  {
+   "id": "Berakhot 62a:8-8",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     8
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rava's wife provided him with protection from demons while he was in the bathroom, increasing the level of protection once he became the head of the yeshiva."
+  },
+  {
+   "id": "Berakhot 62a:14-14",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62a",
+     14
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nahman rebukes a eulogizer for claiming a deceased man was modest, arguing that such a trait can only be known by someone who accompanied him to the bathroom."
+  },
+  {
+   "id": "Berakhot 62b:3-3",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62b",
+     3
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Safra invites Rabbi Abba into the bathroom after Abba coughs at the door, leading to a rebuke from Abba about proper conduct."
+  },
+  {
+   "id": "Berakhot 62b:5-5",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 62b",
+     5
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After a Roman pushes Rabbi Elazar out of a bathroom, a serpent kills the Roman, leading Elazar to cite a verse on divine protection."
+  },
+  {
+   "id": "Berakhot 63a:22-Berakhot 63b:1",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 63a",
+     22
+    ],
+    [
+     "Berakhot 63a",
+     23
+    ],
+    [
+     "Berakhot 63a",
+     24
+    ],
+    [
+     "Berakhot 63a",
+     25
+    ],
+    [
+     "Berakhot 63a",
+     26
+    ],
+    [
+     "Berakhot 63b",
+     0
+    ],
+    [
+     "Berakhot 63b",
+     1
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Sages of Eretz Yisrael send two scholars to Babylonia to undermine Hanina's independent authority over the calendar through a series of public legal confrontations. The Babylonian community, upon hearing a harsh ultimatum from the Sages of Eretz Yisrael regarding Hanina's independent calendar, weeps and submits to the central authority of Zion."
+  },
+  {
+   "id": "Berakhot 63b:4-22",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 63b",
+     4
+    ],
+    [
+     "Berakhot 63b",
+     5
+    ],
+    [
+     "Berakhot 63b",
+     6
+    ],
+    [
+     "Berakhot 63b",
+     7
+    ],
+    [
+     "Berakhot 63b",
+     8
+    ],
+    [
+     "Berakhot 63b",
+     9
+    ],
+    [
+     "Berakhot 63b",
+     10
+    ],
+    [
+     "Berakhot 63b",
+     11
+    ],
+    [
+     "Berakhot 63b",
+     12
+    ],
+    [
+     "Berakhot 63b",
+     13
+    ],
+    [
+     "Berakhot 63b",
+     14
+    ],
+    [
+     "Berakhot 63b",
+     15
+    ],
+    [
+     "Berakhot 63b",
+     16
+    ],
+    [
+     "Berakhot 63b",
+     17
+    ],
+    [
+     "Berakhot 63b",
+     18
+    ],
+    [
+     "Berakhot 63b",
+     19
+    ],
+    [
+     "Berakhot 63b",
+     20
+    ],
+    [
+     "Berakhot 63b",
+     21
+    ],
+    [
+     "Berakhot 63b",
+     22
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages gather in the academy at Yavne and begin a series of homilies honoring their hosts."
+  },
+  {
+   "id": "Berakhot 64a:2-4",
+   "tractate": "Berakhot",
+   "cells": [
+    [
+     "Berakhot 64a",
+     2
+    ],
+    [
+     "Berakhot 64a",
+     3
+    ],
+    [
+     "Berakhot 64a",
+     4
+    ]
+   ],
+   "calls": {
+    "v11": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rabba and Rav Yosef were candidates for head of the yeshiva, Rav Yosef deferred to Rabba for twenty-two years, maintaining extreme humility until it was his time to lead."
+  }
+ ]
+}

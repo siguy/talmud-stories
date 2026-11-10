@@ -1,0 +1,202 @@
+{
+ "01": {
+  "verdict": "not",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [],
+  "reason": "A convert comes before the rabbi and is told to wait until tomorrow; coming before a rabbi and his instruction is the only event, and the outcome is only implied."
+ },
+ "02": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A bill of divorce is found, the Sages search the region and witnesses testify, but the passage then turns to Abaye's and Rava's legal analysis with no resolution narrated; real events with little change."
+ },
+ "03": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rav Aha bar Ya'akov falls ill, is suspended from the cedar, is cured, and explains how he alone escaped impotence; several narrated actions with a change."
+ },
+ "04": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "After Rabbi Yohanan's and Rav Nahman's dicta, Rava tells his wife the Sages gossip about her and she answers; mainly speech, but with conflict and an implied event (her bearing children)."
+ },
+ "05": {
+  "verdict": "not",
+  "rules": [
+   "R-C0",
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "A ruling permitting the freed sons to marry, challenged by Rava and defended; ruling plus ordinary scholarly back-and-forth, with no further narrated action or change."
+ },
+ "06": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7",
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Ulla's remark shames Rav Hamnuna (an emotional reaction counts as an event) and a short exchange restores his standing; mainly dialogue, but something happens and changes."
+ },
+ "07": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A woman comes before Rav Yosef, is rebuked, and confesses; after she comes to him it is all dialogue, though the dialogue reveals real events and a turn."
+ },
+ "08": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A family whose members die young consults Rabban Yohanan ben Zakkai, follows his advice, lives, and is renamed after him; multiple actions with clear causality and change."
+ },
+ "09": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C6",
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "An incident cited briefly as a challenge: a man made a betrothal feast and Rava caused him to forfeit it; real events, but only alluded to as evidence."
+ },
+ "10": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Something happened to a girl (assaulted by a dog while sweeping) and Rabbi responded by ruling her fit for the priesthood; an incident followed by a ruling in the shape of the cow case."
+ },
+ "11": {
+  "verdict": "not",
+  "rules": [
+   "R-C2"
+  ],
+  "segments": [],
+  "reason": "The Sages sought to permit the Gibeonites and Rabbi answered with an argument; speech and quasi-speech only, ordinary legal discussion without a narrated event."
+ },
+ "12": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2,
+   3
+  ],
+  "reason": "Rabbi Hiyya bar Abba visits Gavla, sees laxity, says nothing, then comes before Rabbi Yohanan who orders a declaration; real events, but the outcome is only implied by the order."
+ },
+ "13": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2,
+   3,
+   4
+  ],
+  "reason": "A yevama spits before removing the shoe, Rabbi Ami rules, Rabbi Abba bar Memel suspects he is being put off, goes out, checks and finds Rabbi Ami was right; events with conflict and a change."
+ },
+ "14": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rav Ashi hands his slave Minyamin to Ravina and Rav Aha for immersion with a warning, and they bridle him, loosen and tighten it; a sequence of narrated actions."
+ },
+ "15": {
+  "verdict": "not",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [],
+  "reason": "Bar Shatya's sale, contradictory testimony and Rav Ashi's ruling, cited as a legal precedent; one event followed by testimony and a ruling, with nothing further narrated."
+ },
+ "16": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Those involved hired two messengers who went and asked Rabbi Akiva in prison and Rabbi Yehuda ben Beteira, both of whom prohibited; real actions beyond coming before a rabbi, but little change narrated."
+ },
+ "17": {
+  "verdict": "out_of_scope",
+  "rules": [
+   "R-S1"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "The Ammonites and Moabites seizing the Torah scrolls when the gentiles entered the First Temple is a biblical-era episode expounded from Lamentations, not about rabbis or post-biblical figures."
+ },
+ "18": {
+  "verdict": "story",
+  "rules": [
+   "R-C0"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rabbi Akiva turns the garden's entrance toward the cemetery to stop Rabbi Elazar ben Azarya taking tithe, and Rabbi Elazar reacts; action, conflict and response."
+ },
+ "19": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C0",
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "A couple comes before Rava, he rules, is challenged with a baraita and retracts; a case before a rabbi whose ruling changes, which is a little more than a bare ruling."
+ },
+ "20": {
+  "verdict": "borderline",
+  "rules": [
+   "R-C2",
+   "R-C7"
+  ],
+  "segments": [
+   2
+  ],
+  "reason": "Rabbi Elazar wonders, goes out, checks the mishnayot and finds support; mainly about study and teaching, but with a real action leading to a discovery."
+ }
+}

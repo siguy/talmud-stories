@@ -34,8 +34,10 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
 from src.model_config import default_model, default_thinking_level  # noqa: E402
+import tractates  # noqa: E402  (the one slug/English/Hebrew table; scripts/tractates.py)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,10 +53,61 @@ DELAY = 0.5
 
 
 def source_paths(tractate):
-    """(pages, triage cache) for a tractate: the SOURCES override, else results/sefaria/<t>.json."""
-    o = SOURCES.get(tractate, {})
-    return (PROJECT_ROOT / o.get('pages', f'results/sefaria/{tractate}.json'),
-            PROJECT_ROOT / o.get('triage', f'results/triage/{tractate}.json'))
+    """(pages, triage cache) for a tractate, by the convention in scripts/tractates.py:
+    results/sefaria/<slug>.json and results/triage/<slug>.json, except the few legacy files."""
+    P = tractates.Paths(tractate, PROJECT_ROOT)
+    return P.text, P.triage
+
+
+# ---- retry with backoff (added 2026-11-09 for the Shas run) ---------------------------
+# Google answers 429 ("slow down") or 503 ("too busy") under load. Before this, only Stage 2's
+# first pass retried; triage raised and stopped the tractate, and the twin, stitch, continuation
+# and clause-span calls failed once and were skipped. Retrying here covers every call, because
+# every call goes through TokenMeter.metered. The detector code is untouched.
+RETRY_STATUS = (429, 503)
+RETRY_TEXT = ('RESOURCE_EXHAUSTED', 'UNAVAILABLE', 'overloaded', 'Too Many Requests')
+RETRY_WAITS = (30, 60, 120, 120)     # seconds before try 2, 3, 4, 5 -> 5 tries in all
+
+
+def is_retryable(exc):
+    """True for a 429/503 -- read from the exception's status code, else from its text."""
+    code = getattr(exc, 'code', None) or getattr(exc, 'status_code', None)
+    return code in RETRY_STATUS or any(t in str(exc) for t in RETRY_TEXT)
+
+
+def call_with_retry(fn, tally, args=(), kwargs=None, sleep=time.sleep, waits=RETRY_WAITS):
+    """Call fn; on a retryable error wait and try again. Every retry is counted in `tally`
+    ('retries'), and a call that still fails after the last try is counted in
+    'retries_exhausted' and re-raised -- the caller sees the real error, never an empty result
+    (Lesson 21). A non-retryable error is raised at once."""
+    kwargs = kwargs or {}
+    for n in range(len(waits) + 1):
+        try:
+            return fn(*args, **kwargs)
+        except Exception as e:  # noqa: BLE001 - classify, then decide
+            if not is_retryable(e):
+                raise
+            if n == len(waits):
+                tally['retries_exhausted'] += 1
+                log.error('Gemini call failed after %d tries: %s', n + 1, str(e)[:200])
+                raise
+            tally['retries'] += 1
+            log.warning('Gemini %s, retry %d/%d in %ds', getattr(e, 'code', '?'), n + 1,
+                        len(waits), waits[n])
+            sleep(waits[n])
+
+
+def write_triage_cache(cache, name, model, labels):
+    """Write the Stage 1 cache atomically: temp file, then os.replace. Two runs of one tractate
+    read this file at the same moment the triage run may be rewriting it, and a half-written
+    file reads as 'no labels' (a re-triage of the tractate, or worse)."""
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    tmp = cache.with_name(cache.name + '.tmp')
+    tmp.write_text(json.dumps(
+        {'tractate': name, 'model': model,
+         'triage_results': {r: [e.value for e in evs] for r, evs in labels.items()}},
+        indent=2, ensure_ascii=False))
+    os.replace(tmp, cache)
 
 
 class TokenMeter:
@@ -75,33 +128,30 @@ class TokenMeter:
             return client
         models = client.models
         orig = models.generate_content
-        t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0})
+        t = self.tally.setdefault(stage, {'calls': 0, 'unmetered': 0, 'input': 0, 'output': 0, 'thinking': 0,
+                                                   'retries': 0, 'retries_exhausted': 0, 'cached_input': 0,
+                                                   'model_versions': {}, 'service_tiers': {}})
 
         def metered(*a, **kw):
-            r = orig(*a, **kw)
+            r = call_with_retry(orig, t, a, kw)
             t['calls'] += 1
+            # What Google says it served: which model, and which tier. A field the installed
+            # library does not carry is recorded as 'not_reported', never guessed.
+            mv = getattr(r, 'model_version', None) or 'not_reported'
+            t['model_versions'][mv] = t['model_versions'].get(mv, 0) + 1
             u = getattr(r, 'usage_metadata', None)
+            tier = getattr(u, 'service_tier', None) or getattr(u, 'traffic_type', None) or 'not_reported'
+            tier = getattr(tier, 'value', tier)
+            t['service_tiers'][str(tier)] = t['service_tiers'].get(str(tier), 0) + 1
             if u is None:
                 t['unmetered'] += 1
             else:
                 for src, dst in self.FIELDS:
                     t[dst] += int(getattr(u, src, None) or 0)
+                t['cached_input'] += int(getattr(u, 'cached_content_token_count', None) or 0)
             return r
         models.generate_content = metered
         return client
-
-# Where each tractate's text and cached Stage 1 labels live. The three new tractates were
-# fetched to results/sefaria/ on 2026-08-30; Kiddushin predates that layout and keeps its
-# v7-era files. Same shape either way: pages[] of {ref, segments[]}, and a triage cache
-# with a `triage_results` map. Added 2026-09-15 so the twin pass could be measured on a
-# tractate with cross-tractate few-shots (Ketubot's are Ketubot's own -- Critical Rule 2).
-SOURCES = {
-    'kiddushin': {
-        'pages': 'results/v7/kiddushin_pages.json',
-        'triage': 'results/v7/event_triage_kiddushin.json',
-    },
-}
-
 
 def load_env():
     """Read .env from this worktree, falling back to the primary checkout —
@@ -128,6 +178,24 @@ def _git_rev():
                               capture_output=True, timeout=10).stdout.strip() or None
     except Exception:
         return None
+
+
+def sha1_of(path):
+    import hashlib
+    return hashlib.sha1(Path(path).read_bytes()).hexdigest()
+
+
+def served_by(tally):
+    """One-line summary of what Google served, from the per-stage tally: the model_version(s),
+    the tier(s), and the cached input tokens (implicit caching). Feeds run_meta and the cost."""
+    def merged(key):
+        out = {}
+        for t in tally.values():
+            for k, n in t.get(key, {}).items():
+                out[k] = out.get(k, 0) + n
+        return out
+    return {'model_version': merged('model_versions'), 'service_tier': merged('service_tiers'),
+            'cached_content_token_count': sum(t.get('cached_input', 0) for t in tally.values())}
 
 
 def build_run_meta(args, detector, module, elapsed, pages, src_name, triage_summary):
@@ -192,7 +260,7 @@ def log_triage_summary(triage, pages=None):
     With `pages`, "skipped" uses the predicate run_pipeline uses: should_skip_page AND no
     canonical story introducer on the page (the lexical override forces Stage 2 anyway)."""
     from src.event_triage import EventTriager
-    from src.story_detector_v11 import _page_has_story_introducer
+    from src.story_detector_v14 import _page_has_story_introducer
     s = EventTriager.summarize_triage(triage)
     if pages is not None:
         by_ref = {p['ref']: p for p in pages}
@@ -232,8 +300,8 @@ def build_parser():
     log.info('env loaded from %s', env or 'the environment only')
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--tractate', required=True, type=str.lower,
-                    help='any tractate with fetched text in results/sefaria/<tractate>.json')
+    ap.add_argument('--tractate', required=True, type=tractates.resolve_arg,
+                    help="any Bavli tractate with fetched text: 'berakhot', 'Bava Batra' or 'bava_batra'")
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
@@ -258,19 +326,19 @@ def main():
 
     from src.event_triage import EventTriager
     from src.ground_truth import GroundTruthDB, EventType
-    from src import story_detector_v11 as detector_module  # v13/v14 measured, not adopted: docs/findings/2026-11-07-detector-v13-slice.md
+    from src import story_detector_v14 as detector_module  # adopted 2026-11-08 (Simon): docs/findings/2026-11-08-v14-vs-v11-yevamot.md
     V7StoryDetector = detector_module.V7StoryDetector
 
     src, cache = source_paths(args.tractate)
     if not src.exists():
         log.error('no text for %s at %s -- fetch it first: '
                   'python3 scripts/fetch_tractate_pages.py --tractates %s',
-                  args.tractate, src, args.tractate.title())
+                  args.tractate, src, tractates.english(args.tractate))
         return 1
     meter = TokenMeter()
     data = json.loads(src.read_text())
     pages = data['pages'] if isinstance(data, dict) else data
-    name = (data.get('tractate') if isinstance(data, dict) else None) or args.tractate.title()
+    name = (data.get('tractate') if isinstance(data, dict) else None) or tractates.english(args.tractate)
     if args.refs:
         want = [r.strip() for r in args.refs.split(',')]
         pages = [p for p in pages if p['ref'] in want]
@@ -294,11 +362,7 @@ def main():
         log.info('Stage 1: triaging %d page(s) not in cache', len(todo))
 
         def write_cache():
-            cache.parent.mkdir(parents=True, exist_ok=True)
-            cache.write_text(json.dumps(
-                {'tractate': name, 'model': args.model,
-                 'triage_results': {r: [e.value for e in evs] for r, evs in cached.items()}},
-                indent=2, ensure_ascii=False))
+            write_triage_cache(cache, name, args.model, cached)
 
         # Checkpoint every CHECKPOINT pages. Writing the cache only at the end
         # means one bad page throws away the whole tractate's Stage 1 spend --
@@ -320,6 +384,9 @@ def main():
     triage = {p['ref']: cached[p['ref']] for p in pages if p['ref'] in cached}
     triage_summary = log_triage_summary(triage, pages)
     if args.triage_only:
+        # Stage 1 is metered here and nowhere else (the run's run_meta only sees Stage 2+4);
+        # scripts/run_shas.py reads this line to price triage.
+        log.info('triage tokens: %s', json.dumps(meter.tally))
         return 0
 
     # ---- Stages 2 + 4 ---------------------------------------------------
@@ -346,6 +413,11 @@ def main():
                                          src.name, triage_summary)
     # Stage 1 tokens are this invocation's only: cached pages cost nothing now.
     results['run_meta']['tokens'] = meter.tally
+    results['run_meta'].update(served_by(meter.tally))
+    # Fingerprints of the two inputs that must not move between run 1 and run 2 (G3, G4): the
+    # triage cache this run read, and the detector file it ran. git_rev flips on any commit.
+    results['run_meta']['triage_sha1'] = sha1_of(cache) if cache.exists() else None
+    results['run_meta']['detector_sha1'] = sha1_of(detector_module.__file__)
     log.info('tokens: %s', json.dumps(meter.tally))
     if results['run_meta']['resumed_pages']:
         log.warning('RESUMED %d page(s) from %s', results['run_meta']['resumed_pages'], checkpoint)

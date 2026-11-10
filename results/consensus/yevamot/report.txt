@@ -1,0 +1,54 @@
+units 184; gemini outcomes {'ok': 184}; claude outcomes {'ok': 184}
+v14_r1  vs gemini: 3-way 120/184 = 65.2%  kept-vs-not 153/184 = 83.2%  {('borderline', 'borderline'): 24, ('borderline', 'not'): 17, ('borderline', 'story'): 22, ('not', 'borderline'): 4, ('not', 'not'): 23, ('not', 'story'): 7, ('story', 'borderline'): 11, ('story', 'not'): 3, ('story', 'story'): 73}
+v14_r1  vs claude: 3-way 82/184 = 44.6%  kept-vs-not 108/184 = 58.7%  {('borderline', 'borderline'): 18, ('borderline', 'not'): 41, ('borderline', 'story'): 4, ('not', 'borderline'): 8, ('not', 'not'): 23, ('not', 'story'): 3, ('story', 'borderline'): 22, ('story', 'not'): 24, ('story', 'story'): 41}
+v14_r2  vs gemini: 3-way 118/184 = 64.1%  kept-vs-not 151/184 = 82.1%  {('borderline', 'borderline'): 23, ('borderline', 'not'): 17, ('borderline', 'story'): 22, ('not', 'borderline'): 5, ('not', 'not'): 23, ('not', 'story'): 8, ('story', 'borderline'): 11, ('story', 'not'): 3, ('story', 'story'): 72}
+v14_r2  vs claude: 3-way 86/184 = 46.7%  kept-vs-not 110/184 = 59.8%  {('borderline', 'borderline'): 20, ('borderline', 'not'): 38, ('borderline', 'story'): 4, ('not', 'borderline'): 8, ('not', 'not'): 25, ('not', 'story'): 3, ('story', 'borderline'): 20, ('story', 'not'): 25, ('story', 'story'): 41}
+judges agree 3-way 97/184; kept-vs-not 127/184
+== both judges agree, v14_r1 differs (kept-vs-not): 22
+  Yevamot 15a:12-12          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rabbi Akiva collected an etrog on the first of Shevat and tithed it twice to satisfy the o
+  Yevamot 21b:15-15          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C5', 'R-C7'] C:['R-C2', 'R-C5'] | Ameimar permits a relationship, but Rav Hillel challenges him by testifying that he saw a 
+  Yevamot 37a:4-4            v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C0'] | An incident occurred where a man betrothed a woman within three months of her divorce and 
+  Yevamot 42b:8-8            v14_r1=HIGH_CONFIDENCE judges=not  G:['R-C2', 'R-C7'] C:['R-C2'] | Passage B features a distinct interaction between Rabbi Zerika and Rabbi Abbahu, whereas P
+  Yevamot 45b:8-8            v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | Rava validates the lineage of Rav Mari bar Raḥel and appoints him to a position of authori
+  Yevamot 45b:9-9            v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | The slave of Rabbi Ḥiyya bar Ami immerses a gentile woman for marriage, and Rav Yosef late
+  Yevamot 45b:12-12          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C7'] C:['R-C0', 'R-C5'] | Rabbis defend the status of individuals whose lineage was questioned by pointing out that 
+  Yevamot 49b:5-5            v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rabbi Shimon ben Azzai recounts finding a genealogical scroll in Jerusalem that recorded s
+  Yevamot 60b:10-10          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-S1'] C:['R-B4', 'R-S1'] | The Gemara explains that during the war with Midian, the Israelites identified which girls
+  Yevamot 60b:11-11          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-S1'] C:['R-B4', 'R-S1'] | The Gemara describes a physical test involving wine barrels used to determine the virginit
+  Yevamot 61b:2-2            v14_r1=NOT_A_STORY     judges=borderline  G:['R-C0', 'R-C7'] C:['R-C2', 'R-C7'] | Rav Hisda tells Rabba to investigate the reason for Rabbi Eliezer's ruling because Rav Hun
+  Yevamot 76b:10-Yevamot 77a:0 v14_r1=YES             judges=not  G:['R-S1'] C:['R-S1'] | During David's rise to fame, Saul and Doeg question his lineage and legal status as a desc
+  Yevamot 78b:13-20          v14_r1=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1'] | During a three-year famine, King David systematically investigates the sins of the people 
+  Yevamot 85a:3-5            v14_r1=NOT_A_STORY     judges=borderline  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C7', 'R-C2'] | Rav Pappa and Rav Huna arrive in Hintzevu and are asked a legal question regarding the mar
+  Yevamot 97a:6-6            v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C3', 'R-C5'] C:['R-C5', 'R-C2'] | When people brought cases of delayed maturity to Rava, he would instruct them to change th
+  Yevamot 101b:13-13         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | It records a specific historical action taken by Rav Pappa and Rav Huna, son of Rav Yehosh
+  Yevamot 102a:13-13         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav explains that he only permits certain sandals because he once witnessed his uncle, Rab
+  Yevamot 106b:9-9           v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | It describes a specific ritual practice of Mar Zutra that is challenged by Mar bar Idi and
+  Yevamot 107b:7-7           v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Beit Hillel cites a historical precedent where the wife of Pishon the camel driver success
+  Yevamot 115b:10-Yevamot 116a:1 v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | Rava bar Avuh collects money based on two promissory notes found in Meḥoza with palindromi
+  Yevamot 122a:10-12         v14_r1=WITHHELD        judges=story  G:['R-C0', 'R-C1', 'R-C3'] C:['R-C1', 'R-C0'] | Rabbi Akiva travels to Babylonia and receives a tradition from Nehemya, which he brings ba
+  Yevamot 122a:15-Yevamot 122b:1 v14_r1=WITHHELD        judges=story  G:['R-C0', 'R-C1', 'R-C3'] C:['R-C0', 'R-C1'] | A group of Levites leave a sick companion at an inn; upon their return, the innkeeper info
+== both judges agree, v14_r2 differs (kept-vs-not): 22
+  Yevamot 15a:12-12          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rabbi Akiva collected an etrog on the first of Shevat and tithed it twice to satisfy the o
+  Yevamot 21b:15-15          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C5', 'R-C7'] C:['R-C2', 'R-C5'] | Ameimar permits a relationship, but Rav Hillel challenges him by testifying that he saw a 
+  Yevamot 37a:4-4            v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C0'] | An incident occurred where a man betrothed a woman within three months of her divorce and 
+  Yevamot 42b:8-8            v14_r2=HIGH_CONFIDENCE judges=not  G:['R-C2', 'R-C7'] C:['R-C2'] | Passage B features a distinct interaction between Rabbi Zerika and Rabbi Abbahu, whereas P
+  Yevamot 45b:8-8            v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | Rava validates the lineage of Rav Mari bar Raḥel and appoints him to a position of authori
+  Yevamot 45b:9-9            v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | The slave of Rabbi Ḥiyya bar Ami immerses a gentile woman for marriage, and Rav Yosef late
+  Yevamot 45b:12-12          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C7'] C:['R-C0', 'R-C5'] | Rabbis defend the status of individuals whose lineage was questioned by pointing out that 
+  Yevamot 49b:5-5            v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rabbi Shimon ben Azzai recounts finding a genealogical scroll in Jerusalem that recorded s
+  Yevamot 60b:10-10          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-S1'] C:['R-B4', 'R-S1'] | The Gemara explains that during the war with Midian, the Israelites identified which girls
+  Yevamot 60b:11-11          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-S1'] C:['R-B4', 'R-S1'] | The Gemara describes a physical test involving wine barrels used to determine the virginit
+  Yevamot 61b:2-2            v14_r2=NOT_A_STORY     judges=borderline  G:['R-C0', 'R-C7'] C:['R-C2', 'R-C7'] | Rav Hisda tells Rabba to investigate the reason for Rabbi Eliezer's ruling because Rav Hun
+  Yevamot 76b:10-Yevamot 77a:0 v14_r2=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1'] | During David's rise to fame, Saul and Doeg question his lineage and legal status as a desc
+  Yevamot 78b:13-20          v14_r2=YES             judges=not  G:['R-S1'] C:['R-S1'] | During a three-year famine, King David systematically investigates the sins of the people 
+  Yevamot 85a:3-5            v14_r2=NOT_A_STORY     judges=borderline  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C7', 'R-C2'] | Rav Pappa and Rav Huna arrive in Hintzevu and are asked a legal question regarding the mar
+  Yevamot 97a:6-6            v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C3', 'R-C5'] C:['R-C5', 'R-C2'] | When people brought cases of delayed maturity to Rava, he would instruct them to change th
+  Yevamot 102a:13-13         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav explains that he only permits certain sandals because he once witnessed his uncle, Rab
+  Yevamot 106b:9-9           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | It describes a specific ritual practice of Mar Zutra that is challenged by Mar bar Idi and
+  Yevamot 107b:7-7           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Beit Hillel cites a historical precedent where the wife of Pishon the camel driver success
+  Yevamot 115b:10-Yevamot 116a:1 v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C5', 'R-C7'] C:['R-C5'] | Rava bar Avuh collects money based on two promissory notes found in Meḥoza with palindromi
+  Yevamot 121b:7-7           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C7'] C:['R-B4', 'R-C5'] | Despite his father's merit in providing water to the public, the son of Neḥunya the well d
+  Yevamot 122a:10-12         v14_r2=WITHHELD        judges=story  G:['R-C0', 'R-C1', 'R-C3'] C:['R-C1', 'R-C0'] | Rabbi Akiva travels to Babylonia and receives a tradition from Nehemya, which he brings ba
+  Yevamot 122a:15-Yevamot 122b:1 v14_r2=WITHHELD        judges=story  G:['R-C0', 'R-C1', 'R-C3'] C:['R-C0', 'R-C1'] | A group of Levites leave a sick companion at an inn; upon their return, the innkeeper info
+== moved passages: 0
+judges side with: {}

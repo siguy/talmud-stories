@@ -1,0 +1,212 @@
+{
+ "meta": {
+  "v2a": {
+   "prompt": "src/prompts/judge_register_v2.md",
+   "prompt_sha": "84bfb33fd32a",
+   "rules_sha": "6a2d8e563ab7",
+   "commit": "cece0574346ef4a6d2954e683f15a618bf87025a",
+   "finished": "2026-11-09T07:35:08"
+  },
+  "v2b": {
+   "prompt": "src/prompts/judge_register_v2.md",
+   "prompt_sha": "84bfb33fd32a",
+   "rules_sha": "6a2d8e563ab7",
+   "commit": "cece0574346ef4a6d2954e683f15a618bf87025a",
+   "finished": "2026-11-09T07:36:55"
+  },
+  "v4a": {
+   "prompt": "src/prompts/judge_register_v4.md",
+   "prompt_sha": "3ad3966c4525",
+   "rules_sha": "6a2d8e563ab7",
+   "commit": "cece0574346ef4a6d2954e683f15a618bf87025a",
+   "finished": "2026-11-09T07:38:36"
+  },
+  "v4b": {
+   "prompt": "src/prompts/judge_register_v4.md",
+   "prompt_sha": "3ad3966c4525",
+   "rules_sha": "6a2d8e563ab7",
+   "commit": "cece0574346ef4a6d2954e683f15a618bf87025a",
+   "finished": "2026-11-09T07:40:16"
+  }
+ },
+ "units": 287,
+ "excluded_quoted": 45,
+ "failed_any_run": 2,
+ "scored": 240,
+ "table": {
+  "yes": {
+   "v2a": {
+    "borderline": 41,
+    "story": 31,
+    "not": 16
+   },
+   "v2b": {
+    "borderline": 41,
+    "story": 31,
+    "not": 16
+   },
+   "v4a": {
+    "story": 33,
+    "borderline": 28,
+    "not": 27
+   },
+   "v4b": {
+    "story": 34,
+    "not": 28,
+    "borderline": 26
+   }
+  },
+  "borderline": {
+   "v2a": {
+    "story": 14,
+    "not": 7,
+    "borderline": 4
+   },
+   "v2b": {
+    "story": 14,
+    "not": 7,
+    "borderline": 4
+   },
+   "v4a": {
+    "story": 16,
+    "not": 8,
+    "borderline": 1
+   },
+   "v4b": {
+    "story": 16,
+    "not": 8,
+    "borderline": 1
+   }
+  },
+  "no": {
+   "v2a": {
+    "not": 93,
+    "borderline": 21,
+    "story": 10,
+    "out_of_scope": 3
+   },
+   "v2b": {
+    "not": 95,
+    "borderline": 20,
+    "story": 9,
+    "out_of_scope": 3
+   },
+   "v4a": {
+    "not": 97,
+    "borderline": 16,
+    "story": 10,
+    "out_of_scope": 4
+   },
+   "v4b": {
+    "not": 98,
+    "borderline": 14,
+    "story": 11,
+    "out_of_scope": 4
+   }
+  }
+ },
+ "flips": {
+  "v2a-v2b": {
+   "n": 2,
+   "moves": {
+    "borderline->not": 1,
+    "story->not": 1
+   }
+  },
+  "v4a-v4b": {
+   "n": 5,
+   "moves": {
+    "borderline->not": 3,
+    "not->story": 1,
+    "borderline->story": 1
+   }
+  },
+  "v2a-v4a": {
+   "n": 36,
+   "moves": {
+    "borderline->not": 19,
+    "borderline->story": 7,
+    "story->borderline": 3,
+    "not->borderline": 2,
+    "not->story": 2,
+    "story->not": 2,
+    "not->out_of_scope": 1
+   }
+  },
+  "v2b-v4b": {
+   "n": 35,
+   "moves": {
+    "borderline->not": 19,
+    "borderline->story": 8,
+    "not->story": 3,
+    "story->borderline": 3,
+    "story->not": 1,
+    "not->out_of_scope": 1
+   }
+  }
+ },
+ "consistent": {
+  "borderline->not": {
+   "yes": [
+    "corrected:Ketubot 100b_17-18",
+    "corrected:Ketubot 107b_8-10",
+    "corrected:Ketubot 111a_10-11",
+    "corrected:Ketubot 8a_6-6",
+    "list:ketubot_113",
+    "list:ketubot_134",
+    "review:Ketubot 111a_10-11",
+    "review:Kiddushin 33a_16-16",
+    "review:Kiddushin 7b_9-10",
+    "review:Kiddushin 8a_9-10",
+    "review:Kiddushin 8a_9-9"
+   ],
+   "borderline": [
+    "review:Ketubot 107b_8-10",
+    "review:Ketubot 86a_8-8"
+   ],
+   "no": [
+    "corrected:Ketubot 52a_14-14",
+    "review:Gittin 88a_11-11",
+    "review:Ketubot 7b_5-5",
+    "review:Ketubot 8a_6-6",
+    "review:Kiddushin 60b_8-8"
+   ]
+  },
+  "story->not": {
+   "yes": [
+    "list:gittin_064"
+   ],
+   "borderline": [],
+   "no": []
+  },
+  "not->borderline": {
+   "yes": [],
+   "borderline": [],
+   "no": []
+  },
+  "story->borderline": {
+   "yes": [
+    "corrected:Ketubot 8b_6-10",
+    "list:kiddushin_062",
+    "list:yevamot_038"
+   ],
+   "borderline": [],
+   "no": []
+  },
+  "borderline->story": {
+   "yes": [
+    "corrected:Ketubot 69a_10-10",
+    "list:ketubot_012",
+    "list:ketubot_078",
+    "list:yevamot_027",
+    "list:yevamot_028"
+   ],
+   "borderline": [
+    "review:Ketubot 69a_10-10"
+   ],
+   "no": [
+    "review:Ketubot 69a_0-0"
+   ]
+  }
+ }
+}

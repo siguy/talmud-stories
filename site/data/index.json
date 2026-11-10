@@ -1,32 +1,60 @@
 {
+ "reading_wpm": 150,
  "tractates": [
   {
    "tractate": "ketubot",
+   "name": "Ketubot",
+   "he": "\u05db\u05ea\u05d5\u05d1\u05d5\u05ea",
    "reviewed": true,
-   "story": 87,
-   "borderline": 13,
-   "in_mishnah": 0
+   "story": 86,
+   "borderline": 0,
+   "in_mishnah": 0,
+   "words": 23755,
+   "minutes": 201
   },
   {
    "tractate": "kiddushin",
+   "name": "Kiddushin",
+   "he": "\u05e7\u05d9\u05d3\u05d5\u05e9\u05d9\u05df",
    "reviewed": true,
    "story": 52,
-   "borderline": 1,
-   "in_mishnah": 0
+   "borderline": 0,
+   "in_mishnah": 0,
+   "words": 11861,
+   "minutes": 104
   },
   {
    "tractate": "gittin",
+   "name": "Gittin",
+   "he": "\u05d2\u05d9\u05d8\u05d9\u05df",
    "reviewed": true,
-   "story": 115,
-   "borderline": 4,
-   "in_mishnah": 3
+   "story": 111,
+   "borderline": 0,
+   "in_mishnah": 0,
+   "words": 25149,
+   "minutes": 219
   },
   {
    "tractate": "yevamot",
+   "name": "Yevamot",
+   "he": "\u05d9\u05d1\u05de\u05d5\u05ea",
    "reviewed": false,
-   "story": 95,
+   "story": 82,
    "borderline": 0,
-   "in_mishnah": 5
+   "in_mishnah": 0,
+   "words": 17643,
+   "minutes": 156
+  },
+  {
+   "tractate": "berakhot",
+   "name": "Berakhot",
+   "he": "\u05d1\u05e8\u05db\u05d5\u05ea",
+   "reviewed": false,
+   "story": 112,
+   "borderline": 0,
+   "in_mishnah": 0,
+   "words": 24396,
+   "minutes": 215
   }
  ]
 }

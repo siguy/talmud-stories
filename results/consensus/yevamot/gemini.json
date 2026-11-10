@@ -1,0 +1,3268 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "3f85059db42f8098a11bcb17a578a4d2be0009dd",
+  "finished": "2026-11-09T09:31:04",
+  "outcomes": {
+   "ok": 184
+  }
+ },
+ "rows": [
+  {
+   "id": "Yevamot 14a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Rabbi Abbahu's habitual practice of moving a lamp in one place but not another, which functions as a report of conduct (R-C5). However, it includes a specific motivation (deference to Rabbi Yoḥanan) and an interaction with his servant, aligning with the borderline shape of a real event followed by legal discussion or weak causality (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rabban Gamliel's daughter and brother, followed by a concrete action (levirate marriage) taken by Rabban Gamliel. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical case, and it contains multiple actions and a change in status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rabbi Akiva did, cited as evidence of his practice or view, with no continuation or subsequent action narrated. Under rule R-C5, such a description of a single act is considered a precedent rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (Sukkah 2:8) quoted in the Talmud, which Jeff rules should be included (R-C1). It narrates a specific incident with multiple actions (gave birth, removed mortar, placed covering) that goes beyond a bare report (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('an incident involving the Yehu water trough') where an action was taken ('Beit Shammai sent messengers and they widened it') following a legal dispute. Under R-C0, an incident followed by a ruling or action is a story, and per R-C1, the Talmud's quotation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative about Rabbi Elazar bar Tzadok bringing olives to Rabbi Yoḥanan the Ḥorani, the latter's refusal, and the subsequent interaction with Elazar's father. This sequence of actions and dialogue constitutes a story, while segments [4] and [5] are excluded as they consist of the Gemara's legal commentary and analysis of the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 15b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict and an implied change in the rabbi's willingness to testify, but it is primarily composed of speech acts. Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 16a:2-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative involving multiple rabbis (post-biblical figures) with specific actions, dialogue, conflict, and a resolution. It moves from a general problem (the ruling of Rabbi Dosa) to a specific one-time event (the visit of the Sages to his home) and includes a subsequent encounter with his brother.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 16b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (the warriors of Tarmod plundering the daughters of Jerusalem while others plundered gold), which meets the criteria for a story. However, it describes a biblical-era event involving the destruction of the First Temple and is used to explain a verse from Lamentations, placing it outside the scope of rabbinic or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 16b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event with actions and dialogue (Ammon and Moab plundering the Sanctuary and attempting to burn the Torah). However, it concerns biblical figures/nations in a biblical setting rather than rabbis or post-biblical figures, placing it out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 17a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a dialogue (speech-acts) with conflict and an emotional reaction ('was ashamed'), which Jeff classifies as borderline. While it contains a change in status regarding the rabbi's lineage, it follows the shape of speech with conflict and implied change rather than a full-blown narrative of actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 18b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue and a report of how a teaching was transmitted. Under R-C2 and R-C5, speech-acts and reports of scholarly transmission without a narrated event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 21b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists primarily of speech-acts and internal reflection regarding a teaching, but it includes a specific event (the astrologers' prediction) and a change in the protagonist's understanding. Under R-C7 shape 1 and 3, this qualifies as borderline because there is a narrated incident and change, even if the actions are largely verbal.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 21b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a bare report of a rabbi's ruling (Ameimar) followed by a standard scholarly dialogue between Rav Hillel and Rav Ashi. Under R-C0 and R-C5, a ruling without a narrated incident or change is not a story, and under R-C2 and R-C7, ordinary rabbinic debate and speech-acts do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 25b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific character (an armed bandit) and a sequence of events (being taken out to be executed, making a declaration, and the subsequent marriage of the widow). Per R-C0, the fact that it is cited as a precedent or followed by a ruling does not disqualify it, and per R-B1, the opening formula and the dialogue with Rabbi Yehuda are included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 31a:11-Yevamot 31b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (Bar Shatya sold property) followed by a conflict of testimony and a rabbinic ruling by Rav Ashi that resolves the incident. Under R-C0, an incident followed by a ruling counts as a story, as it contains both a narrated action and a change in legal status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 32b:5-Yevamot 33a:7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     14,
+     15
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a series of dramatic interactions between Rabbi Hiyya and Bar Kappara, including jumping up and swearing oaths, which constitutes conflict and action beyond standard rabbinic dialogue. However, it is classified as borderline because it is primarily composed of speech acts and legal deliberation regarding the rulings of Rabbi Yehuda HaNasi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 34b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Rava and his wife involving conflict (gossip/accusation) and an implied change or resolution, but it consists entirely of speech acts without narrated physical action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 34b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('A certain woman who came before Rav Yosef') involving a conflict between her claim and the Sages' ruling, which is resolved by her confession of a specific action (intercourse with a gentile).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 36a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Elazar, motivated by a question, 'went out, checked, and found' a source. This sequence of actions (questioning, searching, and finding) constitutes a narrated incident that leads to a change in his knowledge, satisfying the requirement for more than a bare report or a simple ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 37a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rava's retraction) and a dialogue with conflict (the sarcastic rebuke), but it is primarily a report of a ruling change and its verbal reaction, fitting the borderline shape of speech with conflict and minimal action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 37a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal dispute followed by a brief report of a ruling in a specific case. Under R-C0 and R-C5, a bare report of a ruling without a narrated incident or a second action/change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 37b:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific event (Rav and Rav Nahman arriving at a place and making a public announcement), which constitutes more than just speech. However, the rest of the passage is a legal discussion analyzing the implications of those actions, making it a 'one real event then discussion' shape which Jeff classifies as borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 38a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case involving a hypothetical person of uncertain status and a yavam, followed by a ruling. Under R-C0 and R-C7, a case where the only event is coming before a court or rabbi for a ruling, without additional narrated action or change, is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 38a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a hypothetical legal case ('one of uncertain descent... and the sons of the yavam who came to divide') rather than a narrated event that happened to a specific person. Under R-C0 and R-C5, it is a legal discussion of facts and consequences without a story-like incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 39b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi's habitual practice of ruling when people come before him, but it lacks a specific narrated incident or a second action beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event and is followed only by a ruling is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 40a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving two rabbis where a speech-act (a ruling) leads to a physical action (the order to leave the study hall) and contains significant conflict, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 40a:24-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and speech-acts (teaching a baraita and questioning it) without any real-world action or event. Under R-C2 and R-C7, scholarly back-and-forth or a challenge regarding a ruling does not constitute the conflict or change necessary for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 41a:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rava's silence and the departure of Rav Hamnuna) followed by a series of internal speech-acts and self-corrections. Under R-C7 shape 1 and R-C2, dialogue or internal monologue with conflict/deliberation and an initial action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 41b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident where a man comes before a rabbi and a dialogue ensues with conflict/disagreement over a ruling. Under R-C7 (shape 1 and 2) and R-C2, this is borderline because it is primarily a speech-act (a legal inquiry and response) but involves a specific real-world event and interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 42b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rabbi Elazar missing the study hall and finding Rabbi Asi) followed by a dialogue about a ruling. Under R-C2 and R-C7, dialogue-heavy passages with minimal action or a single event leading to a ruling are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 42b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal response and the citation of a halakhic principle. Under R-C2 and R-C7, standard rabbinic dialogue or scholarly back-and-forth without a narrated event or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 42b:9-Yevamot 43a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a physical action (Rabbi Abbahu walking while leaning on his attendant) which frames the subsequent dialogue. While it consists largely of speech-acts and legal rulings, the specific narrative frame and the presence of conflict/challenge (R-C2) regarding the authority of a Mishnah make it a borderline story (R-C7 shape 1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 43a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a single event (preparing a feast) followed by a ruling (Rava causing the forfeit), which Jeff's latest rulings (R-C0, R-C7 shape 2) classify as not a story unless there is a further narrated action or change. This is a bare report of a legal incident used as a challenge in a discussion, lacking the necessary narrative development.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the redemption of captives and a pregnancy) followed by a ruling. Under R-C0 and R-C7 (shape 2), an incident followed by a ruling is considered borderline, as it contains at least one real event but the resolution is a legal statement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45a:11-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative arc starting with an opening formula, followed by a legal ruling that leads to a personal conflict, a sharp dialogue with a third party, and a final dramatic action where the man dies.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains reports of rabbis arriving at a location and issuing rulings on specific incidents (ovada). While these follow the 'incident plus ruling' shape of R-C0, the multiple conflicting reports and the focus on the legal outcome make it a borderline case under R-C7 shape 2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's ruling and appointment without a narrated incident or change beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single act followed by a ruling, which Jeff has clarified is not a story unless there is another narrated action or change. Per R-C0 and R-C7, a case where coming before a rabbi or receiving a ruling is the only event does not meet the threshold for a story or a borderline case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 45b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two instances where a person is called a name and a rabbi issues a ruling based on an implied previous action (immersion). Under R-C0 and R-C7, a case where coming before a rabbi for a ruling is the only event, without a second narrated action or change, is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 46a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Beloreya) where an action (slaves preempting her immersion) leads to a legal resolution by the Sages. Under R-C0, an incident followed by a ruling counts as a story, and R-C1 allows for the inclusion of such stories when quoted within the Talmudic discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 46a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Ashi's slave and two other rabbis, containing multiple actions (passing the slave, the warning, and the physical act with the bridle) that result in a change of status or resolution of a legal problem.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 46a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rabbi Hiyya bar Abba traveled to a location, witnessed several specific actions, and subsequently brought the case before Rabbi Yohanan for a ruling. This follows the R-C0 criteria where a narrated event followed by a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 46b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a convert came before a rabbi and an action followed (the rabbi's instruction to wait until the next day). Under R-C0, an incident followed by a ruling or instruction counts as a story, and under R-B1, the opening formula identifying the sages involved is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 47a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man came before Rabbi Yehuda') involving a concrete action and a subsequent ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 47b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown narrative reconstruction of the dialogue between Naomi and Ruth, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 48b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a sitting of rabbis (a common frame) who narrate a specific incident about a city and its slaves. While it describes a sequence of events (refusal, waiting, and selling), it is presented within a dialogue to serve a legal discussion, fitting the borderline shape of 'one real event followed by discussion'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 49a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (finding a scroll) that provides evidence for a legal position, but it lacks a continuation or a second action, placing it in the borderline category of a single event followed by a ruling or support for a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 49b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of Shimon ben Azzai finding a scroll and listing its contents. Under R-C5 and R-C0, this is a description of an act that does not lead to a narrated change or a specific incident involving a ruling, but rather serves as a citation of facts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 49b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative describing the trial, escape, and death of the prophet Isaiah at the hands of King Manasseh. However, because it concerns biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 52a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of a single act (Rav Sheshet lashing a man) cited as a legal precedent or counter-example in a discussion. Under R-C5 and the limits of R-C0, a single event that functions as a legal case without further narrated action or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 57a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage contains more than a simple legal query; it narrates a sequence of events including a rabbi's silence, a subsequent interaction with a different scholar, and a third party's intervention (Rabbi Yehuda Nesia) to address the perceived slight. The conflict between the scholars and the social drama regarding Rabbi Yoḥanan's honor elevate this from standard dialogue to a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 57a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a rabbi arriving and citing a baraita to resolve a legal dilemma. There is no narrated action, conflict, or change beyond the act of teaching and standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 58a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving with a text in hand to support a legal argument, which is a speech-act and a bare report of scholarly activity rather than a narrative event. Under R-C2 and R-C5, this is standard rabbinic dialogue and lacks the actions or change necessary to constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 59b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a girl being sodomized by a dog while sweeping) followed by a rabbinic ruling, which satisfies the criteria for a story under R-C0. Although it involves a ruling, the incident contains distinct actions and a change in status, distinguishing it from a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 60b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a miraculous event involving the frontplate of the High Priest used to identify the status of Midianite women. While it narrates a specific action and change, it is an episode about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 60b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving the identification of virgins among the inhabitants of Jabesh-gilead, which is a biblical episode from the Book of Judges. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 60b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rabbi Yehuda HaNasi sends Rabbi Romanus to investigate a city, an action is performed (examination), a discovery is made, and a ruling is issued. This fits the criteria of an incident followed by a ruling with multiple actions and change, even though it is embedded within a legal dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 60b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('A certain priest married...') followed by a dialogue with conflict and a resolution. Under R-C0, the priest's action and the rabbi's subsequent ruling/threat constitute a story, and the presence of conflict between the actors moves it beyond a bare speech-act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 61a:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a Mishnah story about Yehoshua ben Gamla and Marta bat Baitos, which is included as a Talmudic story when quoted in the Gemara (R-C1). Segment [4] expands this into a fuller narrative with additional actions and causal change (the payment of a bribe to secure the appointment), meeting the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 61b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction where Rav Hisda instructs Rabba to prepare for a question and Rabba performs the action of investigating. While it leads to a legal conclusion, the sequence of an instruction followed by a specific action ('He went and investigated it') constitutes more than a bare ruling or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 62a:0-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of events involving Moses (separating from his wife, breaking the tablets, and adding a day to the separation at Sinai). While these are full-blown stories with actions and divine responses, they are about a biblical character rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 62b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated interaction between the Rabbis and Rav Sheshet involving conflict (the Rabbis' challenge and his retort) and a specific physical change/event (Rav Sheshet becoming impotent due to the length of Rav Huna's discourse).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 62b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving Rabbi Akiva: the desolation of the world, his journey to the South to teach new students, and the subsequent restoration of Torah study. It describes a one-time historical event with clear change and causality following the tragedy mentioned in the context.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates an encounter between a rabbi and Elijah, which is an event, but the content is entirely a dialogue (speech-acts) regarding the interpretation of a verse. Under R-C2 and R-C7, an encounter that is mainly dialogue is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief incident where Rabbi Elazar observes a field and addresses it. While it involves a physical action (seeing the land) and a speech-act, it lacks significant change or conflict, fitting the borderline shape of 'mainly speech but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief incident where Rav enters a field and addresses the sheaves; however, it consists primarily of a speech-act (a rhetorical address) followed by a legalistic dictum by Rava, fitting the borderline shape of 'mainly speech but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-stage narrative involving specific post-biblical figures (Rav and R. Hiyya) with a clear sequence of events: a parting blessing, a discovery of its meaning through personal experience, a son's intervention, and a final resolution/instruction. It moves beyond a bare report or custom by narrating a specific change in behavior and a one-time dialogue between father and son.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63a:13-Yevamot 63b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories: the first (segment 2-3) describes Rabbi Hiyya's habitual kindness despite his wife's aggravation and his response to Rav, which constitutes a narrated event; the second (segments 3-4) describes a specific interaction between Rav Yehuda and his son during a teaching session.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 63b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue (speech acts) without physical action, but it contains a clear conflict where the Sages rebuke Ben Azzai for his personal conduct, and he offers a defense. Under R-C2 and R-C7, speech with conflict is considered a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 64b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict (the Sages' challenge and the rabbi's retort) and narrates a specific physical change/event (becoming impotent from the discourse) that explains the interaction, meeting the criteria for more than a bare ruling or speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 64b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Aha bar Ya'akov being afflicted by a disease, the physical action taken to cure him (suspending him from a cedar), and the successful outcome. This contains multiple actions and a change in state, distinguishing it from a bare report or a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 64b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events (three deaths) followed by a fourth sister's action and a rabbi's ruling, which fits the definition of a story under R-C0. Per R-B1, the opening formula and attribution are included as part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 64b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific one-time event involving multiple actions (two sisters' sons dying and a third coming to court) and a rabbinic ruling that resolves the incident. Under R-C0, an incident followed by a ruling counts as a story, and the specific setting of Yom Kippur on Shabbat provides the 'one day' event frame described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 64b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events (Abaye's marriage to Huma) following a legal report, involving multiple actions and a tragic change (the deaths of three husbands including Abaye). It satisfies the requirement for more than a bare ruling or custom by describing a one-time event with a clear outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 65b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific incident where rabbis reacted to a teaching by turning their faces, which constitutes a physical action beyond speech and indicates conflict. However, it remains borderline because it is primarily a report of a scholarly interaction and a debate over the identity of the speaker.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 65b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story under R-C0 because it narrates a specific incident (a woman coming before a rabbi) followed by a ruling. It contains conflict and a change in the rabbi's position based on the woman's argument, moving it beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 65b:15-Yevamot 66a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] is a borderline incident-plus-ruling case where the woman's argument creates conflict and change in the rabbi's decision. Segments [3]-[5] constitute a full story with multiple actions (changing clothes, asking a question, drinking a potion) and a clear narrative arc involving deception and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 66a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story introduced by the formula 'an incident with' (מעשה ב), involving a specific person and a sequence of actions (being half-slave, the court forcing the master, and the master freeing her) that result in a change of status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 66b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('A certain woman...') involving multiple actions—bringing a robe, the husband dying, and orphans using it as a shroud—followed by a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it contains narrated actions beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 67a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Shmuel and Rav Hana of Baghdad involving a command to gather ten men. While it is primarily a speech-act regarding a legal ruling, the specific instruction to gather an assembly creates a degree of narrated action and conflict with Shmuel's previous statement, fitting the borderline criteria for speech with implied change or action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 71a:14-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal dilemma (ba'ei) and subsequent dialectical discussion (standard rabbinic dialogue) regarding the status of an uncircumcised child. There are no narrated events or actions involving specific individuals, only hypothetical cases and speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 72a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a historical incident involving post-biblical figures (the people in the days of Ben Koziva) who underwent a specific action (re-circumcision) and experienced a change in state (fathering children). This event is cited within a dialogue between Rabbi Yehuda and his colleagues to resolve a conflict regarding the danger of the procedure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 72b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific event (Rabbi Yohanan sitting and expounding) and includes a conflict (an objection that leaves him silent), followed by a significant change where Rabbi Yohanan, impressed by his student, goes out to master a new corpus of study.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 72b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident followed by a ruling ('an incident occurred... and the Sages validated'), which R-C0 identifies as a potential story. However, because it is a bare report of a single act and its legal validation without further narrated action or change, it fits the borderline shape described in R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 75a:18-Yevamot 75b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man (climbing a tree, being punctured, and having children) followed by a rabbinic interaction and ruling by Rav. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 75b:15-Yevamot 76a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories introduced by 'a certain incident occurred'. Both involve a physical event (a medical condition or procedure) followed by a rabbinic action or ruling, and the second story includes a sharp verbal conflict between Rav Beivai and Rav Pappi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 76b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act by Minyamin regarding his marital history and future plans. While it lacks a narrated one-time event or change, it describes a specific post-biblical figure and his actions, fitting the borderline shape of 'mainly speech but events are mentioned'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 76b:10-Yevamot 77a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story involving conflict, dialogue, and dramatic action (Doeg's challenge to David's lineage and Amasa's armed defense of the halakha), but it is about biblical characters (Saul, David, Doeg, Amasa) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 77b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction where a sage arrives and presents a teaching, followed by a sharp rebuke and dismissal ('Go out and teach it outside'). While it is primarily a dialogue about a legal teaching, the conflict and the command to leave constitute a specific incident beyond standard scholarly discourse.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 78a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person report of a specific individual (Minyamin) and his personal plan for his lineage, which goes beyond a generic legal hypothetical. However, it is classified as borderline because it consists entirely of speech-acts and a statement of intent without a narrated action or change occurring within the passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 78a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of speech-acts (silence, a suggestion, and a retort) with conflict and a sharp retort ('Man of great skull'). Under R-C2 and R-C7 shape 1, dialogue with conflict but no physical action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 78b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue (speech-act) between students and a rabbi involving a question and a sharp response. Under R-C2 and R-C7, speech with conflict or a rhetorical retort but no other narrated action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 78b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a rabbi and a neighbor, containing multiple actions (declaring him a mamzer, the man weeping) and a resolution through speech that implies a change in the man's status or fate. Under R-C0, an incident followed by a ruling or interaction counts as a story, especially when it includes an emotional reaction like weeping.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 78b:13-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     7,
+     9
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story involving a famine, David's investigation of the people's sins, and his inquiry of the Urim VeTummim. However, because it is a retelling of a biblical episode (II Samuel 21) about biblical characters rather than rabbis, it is classified as out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 79a:1-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving King David, the Gibeonites, and the descendants of Saul, including specific actions like passing people before the Ark. However, because it is a retelling of biblical episodes (II Samuel 21) about biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 79b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical incident where Sages sought a ruling and Rabbi Yehuda HaNasi responded, but it consists entirely of speech-acts without further narrated action or change, fitting the borderline criteria for dialogue with conflict/deliberation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 79b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of a specific historical incident involving a named post-biblical figure (ben Megusat) where an action occurred (the brothers entered into levirate marriage) following a specific condition, which distinguishes it from a bare legal ruling or a general custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 80b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a woman's husband went overseas and Rava Tosfa'a issued a ruling. While it follows the 'incident plus ruling' shape of R-C0, it is a single event followed by a legal discussion of its source, which fits the borderline criteria in R-C7 shape 2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 80b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rabba bar Avuh orders an examination of Rav Nahman to determine his eligibility for marriage. While it involves a speech-act and a legal determination, it describes a real-world event with conflict/tension regarding Rav Nahman's physical status, fitting the borderline shape of 'one real event followed by discussion'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 83b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific one-time event involving a person from Biri who underwent a physical change (being torn open) and a subsequent action (fathering seven children). Under R-C0, this is a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 84a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rabbi Yehuda HaNasi traveled to study and was aggressively blocked by students. This contains action, conflict, and a change in outcome (he only learned one thing), which satisfies the criteria for a story beyond a mere speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 85a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (rabbis arriving at a town and being questioned) followed by a dialogue and a ruling. Under R-C7 shape 1 and 2, this is borderline because it is mainly speech-acts and a ruling, but contains a specific incident and conflict between the rabbis' interpretations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 85a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal inquiry and a response based on a baraita; it is standard rabbinic dialogue without any narrated action or event beyond the speech-act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 86b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving two post-biblical figures (Rabbi Akiva and Rabbi Elazar ben Azarya) with multiple actions—going, changing an entrance, and a verbal response—that demonstrate conflict and a change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 87a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi going to state a halakha followed by a scholarly discussion; this is standard rabbinic dialogue without conflict or a narrated event that leads to a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 90b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete story about a man who rode a horse on Shabbat and was brought to court and stoned. Although embedded within a dictum (R-C4) and introduced by a formula (R-B1), it narrates a specific event that happened followed by a court's response and change in the man's status (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 90b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man followed by a court's response and action, which meets the criteria for a story under R-C0. Unlike a bare report, it contains multiple actions (cohabiting, being brought to court, being flogged) and a change in the character's state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 91b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Pappa intended to take a legal action but was challenged by Rav Huna, leading to a change in outcome where Rav Pappa 'ceased' his original intention. This contains conflict and a clear change in the protagonist's course of action, satisfying the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 93a:7-Yevamot 93b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rabbi Yannai and his sharecropper, followed by an action (tithing), a consultation with Rabbi Hiyya, and a resolution involving a dream interpretation. This meets the criteria of an incident followed by a ruling with multiple actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 95a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific individual ('a certain man') who committed an act, followed by Rav Yehuda's response of bringing him to court and flogging him. Under R-C0, this is a story because it describes events that happened and includes actions beyond a mere ruling, and under R-B1, the opening formula of the dictum is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 96b:13-Yevamot 97a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a multi-stage narrative involving Rabbi Elazar, Rabbi Yoḥanan, and several other rabbis attempting to appease Yoḥanan's anger. It includes specific actions, emotional changes, and an embedded historical incident (the synagogue in Tiberias) that serves as a causal element in the dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 97a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes Rava's habitual practice and legal reasoning when cases were brought before him, rather than a specific one-time event or incident that leads to a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 97b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (the sons of Yudan being freed) followed by a rabbi's ruling and a subsequent dialogue. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves a specific named case rather than a hypothetical legal problem.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 98a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Niftayim the convert) who took a specific action (marrying his brother's wife) which then came before the Sages for a ruling. Under rule R-C0, an incident followed by a ruling counts as a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 98a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Ben Yasiyan and a convert, involving dialogue and a flashback to a specific event where Rabbi Akiva sat on a bench and issued a ruling. This contains multiple actions and a change in the narrator's understanding, moving it beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 99b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of a specific incident (testifying in court) that led to a change (a slave being promoted), but segment 3 is the Gemara's dialectical commentary questioning the event's reality. Under R-C7, a single event followed by discussion or a report that is only partially narrated is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 101b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event ('Once we were sitting... and a yevama came') involving a specific action and instruction by Rabbi Tarfon, which fits the definition of a story under R-C0 and R-C3. It is introduced by a formula as described in R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 101b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of Rav Pappa and Rav Huna conducting a case before five judges, which functions as a legal precedent rather than a story. Under R-C5 and the limits of R-C0, a description of what a rabbi did that ends without further action, change, or continuation is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 101b:14-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrative incidents involving rabbis (Rav Ashi/Rav Kahana and Rav Shmuel bar Yehuda/Rav Yehuda) where an action or request leads to a specific response and conflict. Segment [4] is excluded as it transitions into the Gemara's commentary and legal analysis of the preceding dialogue (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 102a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person narrative of an event (Rabbi Yosei's journey to Netzivin and his encounter with an Elder) that includes dialogue and a specific incident of inquiry. Per R-B1, the opening formula 'as it is taught' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 102a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav saw his uncle do, cited as evidence for his own legal view and practice. Under R-C5, a description of what someone did that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 102b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav Yehuda did, cited as evidence for the physical possibility of a legal case. It lacks a continuation, conflict, or any change in outcome, fitting the definition of a report rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 102b:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue (speech acts) between a rabbi and a heretic. While it lacks physical actions, it contains a clear conflict and a sharp retort, which fits the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 103b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving Abaye and Rav Yosef where a woman arrives for a ceremony, leading to a series of actions (giving a sandal) and a ruling that resolves the interaction. It meets the criteria of R-C0 as it describes an incident that actually happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 104a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabba bar Ḥiyya's performance of a ritual) followed by a verbal reaction/rebuke from Shmuel. Under R-C7 shape 2, an incident followed by a ruling or verbal response is often borderline, and while Shmuel's rebuke provides conflict, the lack of further narrated change keeps it from being a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 104b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal inquiry into a rabbi's opinion and the citation of a baraita regarding halakhic procedures; it contains no narrated events or actions beyond standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105a:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a woman came before a rabbi and performed an action (spitting), followed by a courtroom drama involving conflict between two rabbis and a change in the student's understanding after he 'went out and examined' the matter.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Levi travels to the villages, is asked questions, fails to answer, and returns to the house of study for a resolution. This contains multiple actions and a change in the protagonist's state of knowledge, satisfying the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story about Rabba and Abaye, who are post-biblical figures. It narrates specific actions (immersing in Torah and acts of kindness) that lead to a clear change in outcome (living forty and sixty years respectively), satisfying the requirement for events and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with a specific setting, a problem (the family dying young), an interaction with a rabbi, and a clear change in outcome (they lived and their name changed). It follows the pattern of an incident followed by a ruling/advice that results in a narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105b:3-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions, conflict between rabbis, and a clear change in outcome (Abdon's punishment). It includes an opening formula (R-B1), a habitual frame that leads to a specific event (R-C3), and a ruling that is integrated into the dramatic action (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 105b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Talmudic citation and expansion of a story from the Mishnah involving Rabbi Akiva. It narrates a specific event (a private halitza in prison) followed by a rabbinic ruling and subsequent clarification of the details, which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a woman and her unsuitable yavam, followed by a judicial interaction and a ruling by Rabbi Hiyya. Under rule R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama involving a specific incident where a woman comes before a rabbi, featuring dialogue with conflict and a deceptive action by the rabbi that changes the legal status of the parties.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106a:6-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav Pappa's sister-in-law and Abaye, featuring multiple actions, conflict, and a resolution. It concludes with a distinct one-time event where Abaye's gaze causes the death of Rav Pappa's parents, satisfying the requirement for change and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rabbi Hyrkanus did on one occasion which established a custom, but it lacks a continuation, conflict, or a second narrated action beyond the prompting itself. Under R-C5, a description of a rabbi's practice that leads only to a legal custom or discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rav Ashi finding Rav Kahana painstakingly prompting a woman) followed by a dialogue and a ruling. Under R-C7 shape 1 and 2, this is borderline because it involves an action and conflict but transitions into standard rabbinic dialogue and legal citation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of Mar Zutra's habitual practice (what he 'would' do) followed by a legal objection and a ruling on the halakha, which Jeff specifically ruled is not a story in this exact passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 106b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('Once we were sitting...') where a woman came before a rabbi and an action followed (the rabbi's instruction to the students and their subsequent recitation). Unlike a bare report, this contains multiple actions and a specific event frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 107b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a legal debate between Beit Hillel and Beit Shammai that merely alludes to a single act (the refusal of Pishon's wife) as a precedent; per Jeff's 2026-10-07 ruling on this specific case, it lacks the change or causality required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 108a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving the daughters-in-law of Abdan who rebelled, followed by a specific action where Rabbi Yehuda HaNasi sent Sages to investigate, and concludes with a dialogue containing conflict and a change in status (refusal of the husbands).",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 108b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event during a period of religious persecution where a person was hired for a specific sum to undertake a dangerous mission to consult rabbis in prison and abroad. This contains multiple actions and a resolution through the rabbis' rulings, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 108b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event where people were hired for a large sum to travel and seek rulings from rabbis in specific locations (prison and Netzivin). Under R-C0, this is a story because it describes an incident that happened followed by a ruling, containing more narrated action than a bare legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 110a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident in Neresh involving a bride-snatching event and the subsequent response of Rav's students. Under R-C0, an incident followed by a ruling or action counts as a story, and this case includes multiple actions (seizing the bride, the students' decision) and a clear change in legal status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 110b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event where Rav Nahman encounters two other rabbis in the marketplace of Pumbedita, but the content is almost entirely a legal dialogue. Under R-C2 and R-C7, a passage that is mainly speech but includes a real-world setting and conflict/disagreement is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 112a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a couple comes before a rabbi, he issues a ruling, a challenge is raised, and he retracts. This contains multiple actions and a change in the rabbi's position, satisfying the criteria for a story beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 113a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain man and Rav Malkiyyu, where the rabbi took action (marrying him off and writing a contract) followed by a ruling/justification by Rava. Under R-C0, an incident involving a rabbi and a post-biblical figure that leads to a ruling or change is considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 113b:15-Yevamot 114a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (losing the keys) followed by an action (coming before a rabbi) and a resolution/ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated event beyond just the legal appearance.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 114b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where a woman comes before Rava and engages in a dialogue that includes conflict (cross-examination) and a change in the rabbi's legal stance. Under R-C0, an incident followed by a ruling or a change in thought counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated one-time event involving a specific incident (a fire at a wedding) and multiple actions (the fire breaking out, the wife's outcry, and the people coming to see the remains). It satisfies the requirement for a story as it describes something that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific one-time event where Rabbi Akiva traveled to Neharde'a and encountered Nehemya of Beit D'li. The interaction involves more than just speech; it describes a physical journey and a meeting that leads to the transmission of a specific tradition, satisfying the requirement for an event followed by a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic incident-plus-ruling story where a specific event (scholars traveling on a boat that sank) is followed by a rabbi's action (Rabbi Yehuda HaNasi allowing the wives to marry). Under R-C0, the narrated event of the boat sinking provides the necessary action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific incident ('a certain man deposited...') rather than a hypothetical legal case. Under R-C0, the narration of the dispute (the deposit and the conflicting claims) constitutes a story, even if it serves a halakhic purpose.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (Yitzhak the Exilarch traveling and dying) followed by a report of a message being sent and a subsequent rabbinic ruling. Under R-C0, an incident followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story within Abaye's dictum (R-C4) about a specific incident (a bill of divorce being found) that led to an action (sending the question to Rabbi Yehuda Nesia) and a resolution (the ruling to examine the city). This follows the R-C0 principle that an incident followed by a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 115b:10-Yevamot 116a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion where Rava cites a precedent of a rabbi collecting on notes with common names. Under R-C5 and R-C0, this is a bare report of a ruling used as evidence in a debate rather than a story, as it lacks a narrated change or continuation beyond the legal act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 116a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific event ('a certain bill of divorce was found') involving an investigation by the Sages and conflicting testimony, followed by the rulings of Abaye and Rava. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions and a 'courtroom drama' dynamic.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 116b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a woman came to court and the people there took action by instructing her how to circumvent Rabbi Yehuda's stringency. This contains multiple actions and a specific incident rather than a hypothetical case or a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 116b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific actions (ten people going to harvest, a snake bite, a death) followed by a court's response and ruling, which fits the definition of a story under R-C0. It also includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 116b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (a man transporting ashes found a corpse in his boat) followed by a rabbinic ruling, which fits the definition of a story under R-C0. It also includes the opening formula and attribution as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 120a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Abba bar Marta) involving a specific problem (debt to the Exilarch), a clever action (disguising his forehead with wax), and a successful resolution (passing unrecognized). It meets the criteria of having multiple actions and a change in state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 120b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident ('they lowered a certain man... only his leg came up') followed by a rabbinic ruling, which qualifies as a story under R-C0. Although it is a Mishnah story quoted in the Gemara, R-C1 specifies that such citations are included in the Talmudic catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 120b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a one-line eyewitness wonder ('I myself saw...') involving a specific incident (cutting the camel) and its immediate outcome. Under the editor's 2005 lists and review practice, such narrated events are included as stories even when brief.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific event occurred (a man drowned and was recovered) followed by a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story because it narrates events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a Mishnah text (indicated by the formula 'MATNI') and not the Talmud's quotation or discussion of it. Under rule R-C1, Mishnah stories belong to the Mishnah and are excluded from the Talmudic catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving post-biblical figures (a blind man and a man in Asya) where specific actions occur followed by a rabbinic ruling. Although these are Mishnah stories, rule R-C1 dictates they are included in the catalogue as Talmudic citations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative starting with a specific incident ('a certain man drowned') followed by a ruling, a conflict between rabbis (Rav and Shmuel), a dialogue-based investigation, and a resolution where the original rabbi admits error. It meets the criteria of having multiple actions, conflict, and a change in the situation beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (fishing, entering a cave, waiting, notifying the family, returning home) and a clear change/resolution (finding his own funeral). It follows the R-C0 criteria for a story and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-B1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabban Gamliel and Rabbi Akiva) containing a one-time event (the shipwreck and survival) that follows a habitual frame. It includes multiple actions, dialogue, and a resolution that confirms a legal principle.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabbi Akiva and Rabbi Meir) involving a specific event (a shipwreck), a subsequent encounter, and a resolution. It includes the opening formula 'It is taught' as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage quotes a story from the Mishnah (R-C1) but only alludes to the incident ('fell into the Great Cistern etc.') without narrating the full action, requiring commentary to fill in the details (R-C6). Under R-C7, an incident only alluded to or sketched is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving post-biblical figures (Neḥunya and Rabbi Ḥanina ben Dosa) with a clear sequence of events: a girl falls into a pit, a rabbi is notified, and a miraculous rescue occurs. It includes the opening formula 'The Sages taught' as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an event (the death of Neḥunya's son) used as a proof-text for a theological dictum. It lacks the narrated action, dialogue, or causality required for a story, functioning instead as a historical example within a legal/homiletic discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific event (a gentile speaking offhandedly about a death) is followed by a rabbinic action and ruling (Rav Yosef allowing the wife to marry), which fits the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a gentile's report of a drowning) followed by a rabbi's reaction and a subsequent change in status (the wife marrying). It contains multiple actions and a clear outcome, fitting the definition of a story even though it involves a legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 121b:17-Yevamot 122a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions and characters: a gentile's threat, a woman's discovery, her journey between different rabbis (Abaye, Rav Adda bar Ahava, and Rav Yosef), and a final resolution. It meets the criteria of R-C0 as an incident followed by a ruling with significant narrated change and drama.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a Jew and gentile traveling) followed by a subsequent event (the gentile's report) and a resolution (the Sages' ruling). Under R-C0, an incident followed by a ruling counts as a story, as it contains multiple actions and a change in status for the wife.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific event (the death and burial of travelers) is reported by a witness, followed by a change in status (the Sages allowing the wives to marry). Per R-C0, an incident followed by a ruling counts as a story, and per R-C1, these are Talmudic citations of Mishnah stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a Mishnah, as indicated by the label 'MISHNA' and the Hebrew 'מתני׳'. Under rule R-C1, stories appearing in the Mishnah itself are excluded from the Talmudic catalogue, which only includes the Gemara's citations of such stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (indicated by its position before the Gemara heading and the formula 'And there was another incident'). Under R-C1, stories belonging to the Mishnah itself are not counted as Talmudic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that narrates a specific sequence of events: Rabbi Akiva's journey to Neharde'a, his encounter with Nehemya, and the subsequent report to Rabban Gamliel which leads to a change in legal practice. It satisfies R-C0 as it contains multiple actions and a clear resolution/change (the ruling on the wives of Tel Arza) following the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122a:15-Yevamot 122b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Levites and an innkeeper with multiple actions (traveling, falling ill, questioning, crying, and producing physical evidence) and a change in status (the wife is permitted to remarry). Per R-C1, the Talmud's quotation and expansion of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yevamot 122b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two versions of a full-blown story involving Rabbi Tarfon and a witness. It includes multiple actions (traveling, fighting soldiers, a dialogue about a name, and a death) followed by a rabbinic ruling and cross-examination, which satisfies the requirement for change and causality.",
+    "error": null
+   }
+  }
+ ]
+}

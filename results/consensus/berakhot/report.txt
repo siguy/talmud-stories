@@ -1,0 +1,103 @@
+units 224; gemini outcomes {'ok': 224}; claude outcomes {'ok': 224}
+v11     vs gemini: 3-way 150/224 = 67.0%  kept-vs-not 188/224 = 83.9%  {('borderline', 'borderline'): 22, ('borderline', 'not'): 15, ('borderline', 'story'): 26, ('not', 'borderline'): 1, ('not', 'not'): 17, ('not', 'story'): 6, ('story', 'borderline'): 12, ('story', 'not'): 14, ('story', 'story'): 111}
+v11     vs claude: 3-way 101/224 = 45.1%  kept-vs-not 152/224 = 67.9%  {('borderline', 'borderline'): 17, ('borderline', 'not'): 38, ('borderline', 'story'): 8, ('not', 'borderline'): 6, ('not', 'not'): 18, ('story', 'borderline'): 43, ('story', 'not'): 28, ('story', 'story'): 66}
+v14_r1  vs gemini: 3-way 151/224 = 67.4%  kept-vs-not 190/224 = 84.8%  {('borderline', 'borderline'): 23, ('borderline', 'not'): 14, ('borderline', 'story'): 29, ('not', 'borderline'): 2, ('not', 'not'): 24, ('not', 'story'): 10, ('story', 'borderline'): 10, ('story', 'not'): 8, ('story', 'story'): 104}
+v14_r1  vs claude: 3-way 115/224 = 51.3%  kept-vs-not 164/224 = 73.2%  {('borderline', 'borderline'): 20, ('borderline', 'not'): 38, ('borderline', 'story'): 8, ('not', 'borderline'): 5, ('not', 'not'): 30, ('not', 'story'): 1, ('story', 'borderline'): 41, ('story', 'not'): 16, ('story', 'story'): 65}
+v14_r2  vs gemini: 3-way 150/224 = 67.0%  kept-vs-not 190/224 = 84.8%  {('borderline', 'borderline'): 22, ('borderline', 'not'): 14, ('borderline', 'story'): 30, ('not', 'borderline'): 3, ('not', 'not'): 25, ('not', 'story'): 10, ('story', 'borderline'): 10, ('story', 'not'): 7, ('story', 'story'): 103}
+v14_r2  vs claude: 3-way 113/224 = 50.4%  kept-vs-not 164/224 = 73.2%  {('borderline', 'borderline'): 18, ('borderline', 'not'): 39, ('borderline', 'story'): 9, ('not', 'borderline'): 6, ('not', 'not'): 31, ('not', 'story'): 1, ('story', 'borderline'): 42, ('story', 'not'): 14, ('story', 'story'): 64}
+judges agree 3-way 134/224; kept-vs-not 182/224
+== both judges agree, v11 differs (kept-vs-not): 28
+  Berakhot 3b:0-8            v11=YES             judges=not  G:['R-C0', 'R-C2', 'R-C7'] C:[] | Rabbi Yosei enters a ruin in Jerusalem to pray, where he is met by Elijah the Prophet who 
+  Berakhot 3b:28-29          v11=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1', 'R-C3'] | A miraculous lyre wakes King David at midnight to study Torah, leading into a morning audi
+  Berakhot 6b:9-9            v11=absent          judges=borderline  G:['R-C3', 'R-C7'] C:['R-C7', 'R-C2'] | Rabbi Zeira recounts how he initially disapproved of Sages running on Shabbat until he lea
+  Berakhot 8a:19-19          v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rabbi Ami and Rabbi Asi avoided the thirteen synagogues in Tiberias to pray specifically i
+  Berakhot 8a:25-25          v11=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rabbi Abbahu would physically exit the synagogue specifically between Torah readers to avo
+  Berakhot 8a:28-28          v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rav Sheshet would turn his face away from the communal Torah reading to focus on his own s
+  Berakhot 10a:25-31         v11=YES             judges=not  G:['R-S1'] C:['R-S1'] | King Hezekiah and the prophet Isaiah clash over Hezekiah's impending death and his reasons
+  Berakhot 13b:23-24         v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | The Gemara notes that Rabbi Yoḥanan used to recite Shema while leaning on his back because
+  Berakhot 14a:4-4           v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav bar Shaba visited Ravina while he was reciting Hallel, but Ravina did not stop to gree
+  Berakhot 17a:9-9           v11=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | The Gemara records that Rabban Yoḥanan ben Zakkai was always the first to offer a greeting
+  Berakhot 22a:21-21         v11=YES             judges=not  G:['R-C2', 'R-C7'] C:['R-C2'] | Passage B features a distinct dialogue between Rav Hisda and Rav Huna regarding the validi
+  Berakhot 22b:11-11         v11=YES             judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Passage B introduces a new actor, Rav Hama, and a specific ritual context (Passover eve) t
+  Berakhot 23a:20-Berakhot 23b:0 v11=HIGH_CONFIDENCE judges=not  G:['R-C3', 'R-C5'] C:['R-C5'] | Rabba bar bar Hana describes how Rabbi Yohanan would entrust students with his books befor
+  Berakhot 24a:17-19         v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0', 'R-C7'] C:['R-C5', 'R-B4'] | Rabbi Hanina reports seeing Rabbi Yehuda HaNasi hanging his phylacteries, which prompts a 
+  Berakhot 25a:7-7           v11=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C2'] | When asked about the status of flatulence during prayer, Rav Sheshet points to the student
+  Berakhot 25b:14-14         v11=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C5', 'R-C7'] C:['R-C5'] | Rav Yosef instructs his servant to bring him a quarter-log of water so that he may nullify
+  Berakhot 31a:15-15         v11=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rav Mordekhai accompanies Rav Shimi bar Ashi from Hagronya to Bei Keifei.
+  Berakhot 31b:20-21         v11=YES             judges=not  G:['R-S1'] C:['R-S1'] | When Eli seeks a priest to slaughter a sacrifice, the young Samuel intervenes with a legal
+  Berakhot 35b:17-17         v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C2'] C:['R-C5'] | Rava would drink wine throughout the day on the eve of Passover to stimulate his appetite 
+  Berakhot 38a:0-0           v11=YES             judges=not  G:['R-C2', 'R-C7'] C:['R-C2'] | Passage B contains a distinct dialogue between Abaye and Rav Yosef regarding a specific fo
+  Berakhot 38a:1-1           v11=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Mar Zutra treats a specific type of dough as bread by basing his meal on it and reciting t
+  Berakhot 39a:1-1           v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C7'] C:['R-C5'] | Rabbi Yoḥanan is served a large salted olive, eats it, and recites a blessing, which the G
+  Berakhot 44a:4-4           v11=YES             judges=not  G:['R-C5', 'R-C2'] C:['R-C5'] | Passage B introduces a new actor (Rav Dimi reporting on King Yannai) and a different locat
+  Berakhot 45b:16-16         v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav Pappa interrupted his own meal to act as the third person for his son Abba Mar's zimmu
+  Berakhot 54a:15-Berakhot 54b:0 v11=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1'] | Two lepers walking behind the Israelite camp witness the miraculous events at the streams 
+  Berakhot 54b:3-5           v11=YES             judges=not  G:['R-S1'] C:['R-S1'] | Og the giant attempts to crush the Israelites with a mountain, but is trapped by his own t
+  Berakhot 55b:13-13         v11=YES             judges=not  G:['R-C5', 'R-C7'] C:['R-C5', 'R-C3'] | Passage B introduces a new actor, Shmuel, and describes his specific ritualized response t
+  Berakhot 57b:21-21         v11=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rava and Mar son of Ravina perform symbolic physical actions upon seeing the ruins and ear
+== both judges agree, v14_r1 differs (kept-vs-not): 21
+  Berakhot 3b:28-29          v14_r1=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1', 'R-C3'] | A miraculous lyre wakes King David at midnight to study Torah, leading into a morning audi
+  Berakhot 8a:19-19          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rabbi Ami and Rabbi Asi avoided the thirteen synagogues in Tiberias to pray specifically i
+  Berakhot 8a:28-28          v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rav Sheshet would turn his face away from the communal Torah reading to focus on his own s
+  Berakhot 10a:25-31         v14_r1=YES             judges=not  G:['R-S1'] C:['R-S1'] | King Hezekiah and the prophet Isaiah clash over Hezekiah's impending death and his reasons
+  Berakhot 11a:22-22         v14_r1=NOT_A_STORY     judges=story  G:['R-C0', 'R-C1', 'R-C4'] C:['R-C1', 'R-C0'] | Passage B features a distinct protagonist (Rabbi Tarfon) and a specific event (traveling o
+  Berakhot 13b:23-24         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | The Gemara notes that Rabbi Yoḥanan used to recite Shema while leaning on his back because
+  Berakhot 14a:4-4           v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav bar Shaba visited Ravina while he was reciting Hallel, but Ravina did not stop to gree
+  Berakhot 23a:20-Berakhot 23b:0 v14_r1=HIGH_CONFIDENCE judges=not  G:['R-C3', 'R-C5'] C:['R-C5'] | Rabba bar bar Hana describes how Rabbi Yohanan would entrust students with his books befor
+  Berakhot 24a:17-19         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0', 'R-C7'] C:['R-C5', 'R-B4'] | Rabbi Hanina reports seeing Rabbi Yehuda HaNasi hanging his phylacteries, which prompts a 
+  Berakhot 24a:22-Berakhot 24b:0 v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rabbi Hanina testifies to seeing Rabbi Yehuda HaNasi perform various involuntary actions d
+  Berakhot 25a:7-7           v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C2'] | When asked about the status of flatulence during prayer, Rav Sheshet points to the student
+  Berakhot 31a:15-15         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rav Mordekhai accompanies Rav Shimi bar Ashi from Hagronya to Bei Keifei.
+  Berakhot 31b:20-21         v14_r1=YES             judges=not  G:['R-S1'] C:['R-S1'] | When Eli seeks a priest to slaughter a sacrifice, the young Samuel intervenes with a legal
+  Berakhot 33a:30-30         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C2', 'R-C5'] C:['R-C2'] | Rabbi Yosei asks Rabbi Yoḥanan a legal question in Sidon regarding Havdala.
+  Berakhot 39b:9-9           v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C2', 'R-C0'] C:['R-C5'] | Rav Ashi reports seeing Rav Kahana's specific physical practice of breaking bread, leading
+  Berakhot 39b:10-10         v14_r1=YES             judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Passage B is a distinct narrative unit featuring different actors (Rav Ami and Rav Asi) pe
+  Berakhot 44a:4-4           v14_r1=YES             judges=not  G:['R-C5', 'R-C2'] C:['R-C5'] | Passage B introduces a new actor (Rav Dimi reporting on King Yannai) and a different locat
+  Berakhot 45b:16-16         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav Pappa interrupted his own meal to act as the third person for his son Abba Mar's zimmu
+  Berakhot 54a:15-Berakhot 54b:0 v14_r1=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1'] | Two lepers walking behind the Israelite camp witness the miraculous events at the streams 
+  Berakhot 54b:3-5           v14_r1=YES             judges=not  G:['R-S1'] C:['R-S1'] | Og the giant attempts to crush the Israelites with a mountain, but is trapped by his own t
+  Berakhot 57b:21-21         v14_r1=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rava and Mar son of Ravina perform symbolic physical actions upon seeing the ruins and ear
+== both judges agree, v14_r2 differs (kept-vs-not): 21
+  Berakhot 3b:28-29          v14_r2=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1', 'R-C3'] | A miraculous lyre wakes King David at midnight to study Torah, leading into a morning audi
+  Berakhot 8a:19-19          v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rabbi Ami and Rabbi Asi avoided the thirteen synagogues in Tiberias to pray specifically i
+  Berakhot 10a:7-8           v14_r2=NOT_A_STORY     judges=borderline  G:['R-C2', 'R-C7'] C:['R-C2'] | Rabbi Abbahu explains to a heretic why the juxtaposition of certain psalms is not a diffic
+  Berakhot 10a:25-31         v14_r2=YES             judges=not  G:['R-S1'] C:['R-S1'] | King Hezekiah and the prophet Isaiah clash over Hezekiah's impending death and his reasons
+  Berakhot 11a:22-22         v14_r2=NOT_A_STORY     judges=story  G:['R-C0', 'R-C1', 'R-C4'] C:['R-C1', 'R-C0'] | Passage B features a distinct protagonist (Rabbi Tarfon) and a specific event (traveling o
+  Berakhot 11b:14-14         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rav Ḥiyya bar Ashi observes Rav's habitual practice of washing his hands and reciting a bl
+  Berakhot 13b:23-24         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | The Gemara notes that Rabbi Yoḥanan used to recite Shema while leaning on his back because
+  Berakhot 14a:4-4           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav bar Shaba visited Ravina while he was reciting Hallel, but Ravina did not stop to gree
+  Berakhot 23a:9-9           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C2', 'R-C0'] | Ravina and Rav Adda bar Mattana disagree on whether one can wear phylacteries to urinate a
+  Berakhot 23a:20-Berakhot 23b:0 v14_r2=HIGH_CONFIDENCE judges=not  G:['R-C3', 'R-C5'] C:['R-C5'] | Rabba bar bar Hana describes how Rabbi Yohanan would entrust students with his books befor
+  Berakhot 24a:17-19         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0', 'R-C7'] C:['R-C5', 'R-B4'] | Rabbi Hanina reports seeing Rabbi Yehuda HaNasi hanging his phylacteries, which prompts a 
+  Berakhot 24a:22-Berakhot 24b:0 v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rabbi Hanina testifies to seeing Rabbi Yehuda HaNasi perform various involuntary actions d
+  Berakhot 25a:7-7           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C0', 'R-C2', 'R-C7'] C:['R-C2'] | When asked about the status of flatulence during prayer, Rav Sheshet points to the student
+  Berakhot 31a:15-15         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5'] C:['R-C5'] | Rav Mordekhai accompanies Rav Shimi bar Ashi from Hagronya to Bei Keifei.
+  Berakhot 31b:20-21         v14_r2=YES             judges=not  G:['R-S1'] C:['R-S1'] | When Eli seeks a priest to slaughter a sacrifice, the young Samuel intervenes with a legal
+  Berakhot 39b:9-9           v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C2', 'R-C0'] C:['R-C5'] | Rav Ashi reports seeing Rav Kahana's specific physical practice of breaking bread, leading
+  Berakhot 44a:4-4           v14_r2=YES             judges=not  G:['R-C5', 'R-C2'] C:['R-C5'] | Passage B introduces a new actor (Rav Dimi reporting on King Yannai) and a different locat
+  Berakhot 45b:16-16         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C0'] C:['R-C5'] | Rav Pappa interrupted his own meal to act as the third person for his son Abba Mar's zimmu
+  Berakhot 54a:15-Berakhot 54b:0 v14_r2=HIGH_CONFIDENCE judges=not  G:['R-S1'] C:['R-S1'] | Two lepers walking behind the Israelite camp witness the miraculous events at the streams 
+  Berakhot 54b:3-5           v14_r2=YES             judges=not  G:['R-S1'] C:['R-S1'] | Og the giant attempts to crush the Israelites with a mountain, but is trapped by his own t
+  Berakhot 57b:21-21         v14_r2=LOW_CONFIDENCE  judges=not  G:['R-C5', 'R-C3'] C:['R-C5'] | Rava and Mar son of Ravina perform symbolic physical actions upon seeing the ruins and ear
+== moved passages: 20
+  Berakhot 3b:0-8            v11-only  v11=YES v14=absent,absent  gemini=not ['R-C0', 'R-C2', 'R-C7']  claude=not [] | Rabbi Yosei enters a ruin in Jerusalem to pray, where he is met by Elijah the Pr
+  Berakhot 6b:9-9            v14-only  v11=absent v14=LOW_CONFIDENCE,LOW_CONFIDENCE  gemini=borderline ['R-C3', 'R-C7']  claude=borderline ['R-C7', 'R-C2'] | Rabbi Zeira recounts how he initially disapproved of Sages running on Shabbat un
+  Berakhot 8a:25-25          v11-only  v11=LOW_CONFIDENCE v14=absent,absent  gemini=not ['R-C5']  claude=not ['R-C5'] | Rabbi Abbahu would physically exit the synagogue specifically between Torah read
+  Berakhot 11a:22-22         v11-only  v11=YES v14=NOT_A_STORY,NOT_A_STORY  gemini=story ['R-C0', 'R-C1', 'R-C4']  claude=story ['R-C1', 'R-C0'] | Passage B features a distinct protagonist (Rabbi Tarfon) and a specific event (t
+  Berakhot 17a:9-9           v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=not ['R-C5']  claude=not ['R-C5'] | The Gemara records that Rabban Yoḥanan ben Zakkai was always the first to offer 
+  Berakhot 22a:21-21         v11-only  v11=YES v14=absent,absent  gemini=not ['R-C2', 'R-C7']  claude=not ['R-C2'] | Passage B features a distinct dialogue between Rav Hisda and Rav Huna regarding 
+  Berakhot 22b:11-11         v11-only  v11=YES v14=absent,absent  gemini=not ['R-C5', 'R-C0']  claude=not ['R-C5'] | Passage B introduces a new actor, Rav Hama, and a specific ritual context (Passo
+  Berakhot 24a:22-Berakhot 24b:0 v14-only  v11=NOT_A_STORY v14=LOW_CONFIDENCE,LOW_CONFIDENCE  gemini=not ['R-C5']  claude=not ['R-C5'] | Rabbi Hanina testifies to seeing Rabbi Yehuda HaNasi perform various involuntary
+  Berakhot 25b:14-14         v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=not ['R-C0', 'R-C2', 'R-C5', 'R-C7']  claude=not ['R-C5'] | Rav Yosef instructs his servant to bring him a quarter-log of water so that he m
+  Berakhot 34b:6-6           v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=borderline ['R-C0', 'R-C2', 'R-C7']  claude=not ['R-C5', 'R-C2'] | Rava bows during the thanksgiving blessing and justifies his practice to the Sag
+  Berakhot 35b:17-17         v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=not ['R-C5', 'R-C2']  claude=not ['R-C5'] | Rava would drink wine throughout the day on the eve of Passover to stimulate his
+  Berakhot 38a:0-0           v11-only  v11=YES v14=absent,absent  gemini=not ['R-C2', 'R-C7']  claude=not ['R-C2'] | Passage B contains a distinct dialogue between Abaye and Rav Yosef regarding a s
+  Berakhot 38a:1-1           v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=not ['R-C5']  claude=not ['R-C5'] | Mar Zutra treats a specific type of dough as bread by basing his meal on it and 
+  Berakhot 38b:9-9           v11-only  v11=YES v14=absent,absent  gemini=story ['R-C0', 'R-C3', 'R-C4']  claude=not ['R-C0', 'R-C5'] | Passage B describes a distinct event involving a lupin boiled seven times and a 
+  Berakhot 39a:1-1           v11-only  v11=LOW_CONFIDENCE v14=absent,absent  gemini=not ['R-C5', 'R-C7']  claude=not ['R-C5'] | Rabbi Yoḥanan is served a large salted olive, eats it, and recites a blessing, w
+  Berakhot 39b:9-9           v14-only  v11=absent v14=LOW_CONFIDENCE,LOW_CONFIDENCE  gemini=not ['R-C5', 'R-C2', 'R-C0']  claude=not ['R-C5'] | Rav Ashi reports seeing Rav Kahana's specific physical practice of breaking brea
+  Berakhot 42b:3-3           v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=story ['R-C0']  claude=not ['R-C0', 'R-C5'] | Rabba bar Mari visits Rava and observes him reciting blessings on wine both befo
+  Berakhot 42b:4-4           v11-only  v11=LOW_CONFIDENCE v14=NOT_A_STORY,NOT_A_STORY  gemini=story ['R-C0', 'R-C2']  claude=not ['R-C2', 'R-C5'] | Rabbi Yitzḥak bar Yosef visits Abaye on a festival and questions why he blesses 
+  Berakhot 55b:13-13         v11-only  v11=YES v14=absent,absent  gemini=not ['R-C5', 'R-C7']  claude=not ['R-C5', 'R-C3'] | Passage B introduces a new actor, Shmuel, and describes his specific ritualized 
+  Berakhot 56b:2-2           v11-only  v11=YES v14=NOT_A_STORY,NOT_A_STORY  gemini=borderline ['R-C2', 'R-C7']  claude=not ['R-C2'] | Passage B features a different set of actors (Bar Kappara and Rabbi Yehuda HaNas
+judges side with: {'claude:v11': 3, 'claude:v14': 17, 'gemini:v11': 8, 'gemini:v14': 12}

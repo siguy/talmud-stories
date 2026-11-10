@@ -17,23 +17,34 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 ([`shas-finder-plan.md`](shas-finder-plan.md)); this sign-up reads the list that produces. PR a below
 (word counts) can land on today's four tractates in the meantime; the sign-up opens to the public on list v1.
 
-## 2. The numbers that shape the design (measured 2026-11-08 on `site/data/*.json`)
+## 2. The numbers that shape the design (re-measured 2026-11-09 after the definite-only filter; re-measure after any rebuild)
 
 | | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
 |---|---|---|---|---|---|
-| Ketubot | 100 | 25,963 | 182 | 2.9 | 1.9 |
-| Kiddushin | 53 | 11,961 | 184 | 1.3 | 0.9 |
-| Gittin | 119 | 26,068 | 181 | 2.9 | 1.9 |
-| Yevamot | 95 | 21,985 | 163 | 2.4 | 1.6 |
-| **All** | **367** | **85,977** | **176** | **9.6** | **6.2** |
+| Ketubot | 86 | 23,755 | 194 | 2.6 | 1.7 |
+| Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
+| Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
+| Yevamot | 82 | 17,643 | 162 | 2.0 | 1.3 |
+| Berakhot | 112 | 24,396 | 144 | 2.7 | 1.8 |
+| **All** | **443** | **102,804** | **172** | **11.4** | **7.4** |
 
-Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss).
+**Only definite stories ship** — the rule, and why it is kept apart from the scholarly
+catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
+the 19 borderlines and 3 Mishnah stories from the reviewed tractates and one Ketubot detector
+call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in both v14 runs
+(82, after 7 biblical passages and one duplicate span); and added Berakhot the same way (112).
+
+Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
+over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate
+totals. Pinned in `tests/test_site_data.py` (`SITE_WORDS`).
 
 - One story is **about a minute** of reading. The longest is 2,674 words (~18 min at 150 wpm).
 - The **whole current list is under 10 hours**. With a few dozen people, everyone gets a handful of stories.
 - At Daniel's ~3,000 stories across Shas: roughly 700k words, **~80 hours at 150 wpm**. Still small.
 - So the sign-up unit is **minutes**, not hours, and a **one-time total** is enough (see §4). A per-day schedule
   over 30 days would assign a fraction of a story per day.
+
+**Not displayed (Simon, 2026-11-09):** `words` and `minutes` are for assignment only; the site does not show them.
 
 **Reading speed:** default **150 words/minute** ("study pace": Talmud English is dense and readers stop to think).
 One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(words / wpm)` minutes, minimum 1.
@@ -46,7 +57,7 @@ One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(wor
 3. **Sign up by time:** "How much time will you give?" — buttons 5 / 15 / 30 / 60 min + "other". The system **assigns**
    unclaimed stories that add up to about that time.
 4. **My stories:** the assigned list, each linking to the existing story page; a **"Mark as learned"** button.
-5. **Progress (the field):** per tractate, every story with words, minutes and status (open / taken / learned),
+5. **Progress (the field):** per tractate, every story with its status (open / taken / learned),
    plus "N of M learned, K left" overall and per tractate. Visible without signing in.
 6. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
 7. **Landing page + sign-in flow (critical, Simon 2026-11-09; not built yet).** One screen before sign-in: what this
