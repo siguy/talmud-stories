@@ -1,6 +1,6 @@
 # Plan: build the Septimus sign-up (what exists, what is missing, in what order)
 
-*Written 2026-11-09 (filed under the 11-10 plan name). Inventory of `main` at `2886e9b`. Design decisions live in
+*Written 2026-11-09 (filed under the 11-10 plan name). Inventory of `origin/main` at `bb1f91d` (after #85 Shas plan and #86 Shas pre-flight, re-done after a peer session noted the first pass used an old branch). Design decisions live in
 [`docs/technical/septimus-signup-plan.md`](../technical/septimus-signup-plan.md) (call it "the design"); this file
 is the **build** plan. Work item: [`work/2026-11-08-septimus-signup.md`](../../work/2026-11-08-septimus-signup.md).
 Nothing was deployed, no Firebase/Google Cloud setting changed, no code edited to produce this.*
@@ -14,11 +14,13 @@ assignment, no progress). The biggest gap is the whole client-side sign-up layer
 
 | Piece | Status | Evidence |
 |---|---|---|
-| Story reader (tractate cards, daf lists, story page, Hebrew/English, Sefaria link, feedback, AI notes) | **built** | `site/app.js:36-175`; `site/index.html` |
-| Per-device "mark as read" | **built** (browser-only, not shared) | `site/app.js:11,34,103-105` (localStorage `septimus-read`) |
+| Story reader (tractate cards, daf lists, story page, Hebrew/English, Sefaria link, feedback, AI notes) | **built** | `site/app.js` (home `:43-62`, tractate `:88`, story `:114`); `site/index.html` |
+| Tractate names from one table (`scripts/tractates.py`, 37 tractates) copied into `index.json` (`name`, `he`); home reads **only** `index.json` counts, not every tractate file (#86) | **built** | `scripts/tractates.py:1-30`; `site/app.js:7-8,62,67-83`; `site/data/index.json` |
+| Build finds each tractate's sources by convention; Eruvin held back (`SITE_HELD`) | **built** | `scripts/build_site_data.py` `REVIEWED`/`SITE_HELD`/`discover()` (~`:36-75`) |
+| Per-device "mark as read" | **built** (browser-only, not shared) | `site/app.js` (`read` set, localStorage `septimus-read`) (localStorage `septimus-read`) |
 | `words` and `minutes` per story, totals in `index.json` | **built** (#79) | `scripts/build_site_data.py:209-215,222-238`; `tests/test_site_data.py:78-95`; `site/data/index.json` |
 | Reading speed as one config value | **built** | `site/config.js:5` (`readingWpm: 150`), read by `build_site_data.py:202-206` |
-| Definite-only story filter | **built** | `build_site_data.py:56-65`; `docs/technical/septimus-story-filter.md` |
+| Definite-only story filter | **built** | `build_site_data.py` (`DEFINITE`); `docs/technical/septimus-story-filter.md` |
 | Firebase project `septimus-stories` (Spark, Firestore nam5, Google provider, authorised domain) | **built, outside the repo** (done by hand 2026-11-08; not re-verified here, no API calls allowed) | design §8; `site/config.js:9-16` (public web config, PR #78) |
 | Firebase setup script | **built** but only creates project, Firestore, provider notes | `firebase/setup.sh:24-39`; its step 6 deploys rules only `if firebase/firestore.rules exists` (`:37-40`), and that file does not exist |
 | **Firebase SDK loaded in the page** | **not built** | no `firebase` reference in `site/app.js` or `index.html` (config only) |
@@ -27,10 +29,11 @@ assignment, no progress). The biggest gap is the whole client-side sign-up layer
 | **Data model** (`users`, `claims`, `meta`) | **planned only** | design §5 (prose); nothing writes it |
 | **Minutes-per-week question** | **planned only**; *decided* (5/10/15/30 + other) | design §4; no UI |
 | **Assignment logic** (4-week batch, reading order, stale reclaim) | **planned only** | design §4, §6; no code |
-| **Progress tracking** (mark learned shared across devices, counts, field view) | **planned only** | design §3 items 4-5; today's progress bar is per-device (`app.js:43-48`) |
+| **Progress tracking** (mark learned shared across devices, counts, field view) | **planned only** | design §3 items 4-5; today's progress bar is per-device (`app.js:72-75`) |
 | **Landing page / "about the list" / About Joe Septimus** | **planned only** | design §3 items 6-8; `app.js:50-52` has one dedication line only |
 | `yahrzeit`, `list_version`, `published_at` fields | **planned only** | design §1, §7; absent from `site/config.js` and `site/data/index.json` |
-| Stable story ids | **built** (`<tractate>-<daf>-<start>-<end>`) | `build_site_data.py:148`, asserted unique `:229-230` |
+| Stable story ids | **built** (`<tractate>-<daf>-<start>-<end>`) | `build_site_data.py` (`"id": sid`), asserted unique per tractate |
+| Per-story catalogue for assignment (id, tractate, ref, words, minutes) | **not built** (home no longer needs it, assignment does) | `index.json` has per-tractate totals only |
 | Hosting + deploy | **built** (Vercel, push-to-deploy; whole site is `noindex`) | `site/vercel.json:1-5`; `.gitignore` has `.vercel`. Not re-verified live |
 | Feedback endpoint (Cloud Run worker) | **built** | `site/config.js:3`; `worker/` |
 | Data export for Simon (`scripts/export_signups.py`, `auth:export`) | **planned only** | design §8(c); script does not exist |
@@ -46,19 +49,19 @@ Two things in the design that the build must settle (details in §4):
 
 ## 2. What changes when ~36 tractates and ~2,500 stories arrive (Sunday 2026-11-15)
 
-Today's site was built for 5 tractates and 443 stories. Concretely, from the code:
+#86 already did part of this. Status of each concern, from the merged code:
 
-| Today | Problem at 36 tractates | Fix |
+| Concern | Now | Still to do |
 |---|---|---|
-| `home()` fetches **every** tractate JSON before drawing (`app.js:39`). Now ~1.4 MB; at 36 × ~300 KB ≈ **10 MB** on a phone | Slow first screen, burns mobile data, would hurt exactly the family members we most want | Home reads only `index.json` and a new light **`catalog.json`** (id, tractate, ref, words, minutes only; ~2,500 rows ≈ 200 KB). Full text loads only when a tractate/story is opened |
-| `HE` and `NAME` are hard-coded for 5 tractates (`app.js:3-4`); `route()` rejects any other (`app.js:180`) | The 31 new tractates would 404 | Names (English, Hebrew, Seder order) move into `index.json`, written by the build script |
-| One card per tractate, flat (`app.js:40-49`) | 36 cards is a long scroll | Group by Seder (Zeraim, Moed, Nashim, Nezikin, Kodashim, Tohorot) with collapsible headers |
-| Progress per card computed from all stories in memory (`app.js:41-48`) | Needs every tractate loaded | Counts come from the database (piece 5), totals from `index.json` |
-| `tests/test_site_data.py` asserts goldens and a note for every story (`:13-62`), `GOLDEN_COUNTS` is the five tractates | Fails or silently ignores the new ones. The notes test needs a notes file per tractate; new tractates will have none | Shas PR must decide: generate notes or relax the test for tractates with no notes (the reader already copes, `app.js:84`) |
-| `SITE_WORDS` pins five word totals (`test_site_data.py:78`) | Same | Shas PR re-pins from `index.json` |
-| Story ids are unique only per tractate file (`build_site_data.py:229`) | Safe today because the id starts with the tractate; confirm for the new ones | Add a cross-tractate uniqueness assertion |
-| ~80 hours of text at 150 wpm (design §2) | Fine for people, **big for the database read quota** | Progress design in piece 5 |
-| `index.json` has no list version or date | The landing page and the later "v2 list" migration need them | Shas PR adds `list_version: "v1"`, `published_at` |
+| Home page loaded every tractate file (~10 MB at 36) | **Fixed in #86**: home reads only `index.json` (`app.js:67-83`) | nothing |
+| Names hard-coded for 5 tractates | **Fixed in #86**: from `scripts/tractates.py` via `index.json` | nothing |
+| 36 flat cards is a long scroll | not done | Group by Seder (order is already in the table), collapsible; optional polish |
+| Assignment needs a per-story list (id, tractate, ref, words, minutes) | **not built**; the home no longer loads stories, so there is nothing to assign from without opening every file (~8 MB) | Build script writes `site/data/catalog.json` (~2,500 rows, ~200 KB), loaded only when someone taps "Get my stories" |
+| Progress per card (`app.js:72-75`) counts the *device's* read ticks against `index.json` totals | still per-device | piece 5 swaps in shared counts |
+| `tests/test_site_data.py` iterates `GOLDEN_COUNTS` (the five old tractates) for notes/evidence checks and `SITE_WORDS` pins five totals | new tractates are not covered by the notes test; word pins cover five | Shas PR decides; sign-up adds an all-tractates check that `catalog.json` equals `index.json` totals and ids are unique across tractates |
+| Eruvin | held out of the site on purpose (`SITE_HELD`) | assignment must read the catalog, never a directory listing, so held tractates never get claimed |
+| `index.json` has no `list_version` / `published_at` | absent | Shas PR or the integrate PR adds them |
+| Notes files exist for 4 tractates only | the reader copes with none (`app.js` notes `.catch`) | nothing for sign-up |
 
 Firestore (Spark) daily limits: 50,000 reads / 20,000 writes. The design's plan to *count* instead of *read* is right
 but 72 count queries per home visit would still be ~72 reads a visit. **Recommended:** the home page shows **one
@@ -88,8 +91,8 @@ The board is right about the shared files, but only some of this work touches th
 
 | Piece | Why |
 |---|---|
-| `catalog.json`, `index.json` additions, tractate names, `list_version` | Written by `build_site_data.py`, which Shas also edits |
-| `app.js` changes: lazy loading, Seder grouping, hooking in the sign-up screens, shared progress | Same file the Shas run edits |
+| `catalog.json`, `list_version` / `published_at` | Written by `build_site_data.py`, which Shas also edits |
+| `app.js` changes: Seder grouping, hooking in the sign-up screens, shared progress | Same file the Shas run edits |
 | `test_site_data.py` re-pin | Same file |
 | Final assignment dry-run on the real ~2,500-story list | Needs the data |
 
@@ -147,11 +150,10 @@ for browsing but the sign-up status is the one that counts.
 *Browser:* mark learned on tab 1 → overall count on a second browser profile rises after reload; per-tractate counts on
 the field sum to `index.json`'s story totals; a signed-out visitor sees progress but no buttons.
 
-**Piece 6 — Lazy loading and 36-tractate home page (the "Sunday" change).**
-Home reads `index.json` + `catalog.json` only; Seder grouping; names from `index.json`; test updates. Can be folded
-into the Shas merge PR or follow it immediately.
+**Piece 6 — `catalog.json` and the 36-tractate check (the "Sunday" change).**
+(Lazy home page and names already done in #86.) Build script writes `catalog.json`; optional Seder grouping; tests that catalog totals equal `index.json`. Fold into the Shas merge PR or follow it immediately.
 *Browser:* throttle to "Slow 4G" in Chromium: home draws in under ~3 s; network panel shows no tractate JSON fetched
-until one is tapped; every tractate opens and a story page renders in each of the 36 (script loops the list); Hebrew
+until one is tapped, and `catalog.json` only after "Get my stories"; every tractate opens and a story page renders in each of the 36 (script loops the list); Hebrew
 nikud and RTL still correct.
 
 **Piece 7 — Landing page, "which list is this", About Joe Septimus.**
