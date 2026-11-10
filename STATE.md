@@ -168,6 +168,7 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:scope-edges` | Your scope is *"rabbis and post-biblical figures"* (2026-09-23). Three edges we read as **in** — confirm or correct: (1) Elijah appearing to a rabbi (Gittin 6b, Kiddushin 40a); (2) a biblical figure cited *inside* a rabbinic story (Kiddushin 32b — Rabban Gamliel serving, justified by Abraham); (3) post-biblical non-rabbis — Titus, King Yannai, Agrippa. |
 | `jeff:question-and-answer` | Yevamot 78b:9 — the students ask R. Eliezer about a *mamzeret* after ten generations, and he answers *"Who will give me a third generation and I will declare him pure."* A question to a sage and his answer, nothing else narrated: **story, borderline, or not?** It is on your 2005 Yevamot list. |
+| `jeff:precision-sample` | Grade a random sample of 59 shipped, unreviewed v14 stories (stratified: aggadic / Kodashim+Niddah / halakhic) — yes, borderline or no. |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 
@@ -178,4 +179,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 1ac9b4c204451955 -->
+<!-- board-checksum: 8e5446e6c8c3b3cc -->
