@@ -43,20 +43,30 @@ sys.path.insert(0, str(PROJECT_ROOT))
 import judge_labelled_spans as j  # noqa: E402
 
 log = logging.getLogger('judge-detector-spans')
-# JUDGE_TRACTATE picks the tractate (default Berakhot, so the 2026-11-08 run reproduces).
-# Yevamot added 2026-11-09 for the Septimus site filter (docs/technical/septimus-story-filter.md):
-# the two v14 full-tractate runs only.
-TRACTATES = {
-    'Berakhot': {'text': 'results/sefaria/berakhot.json', 'out': 'results/consensus/berakhot',
-                 'runs': {'v11': 'results/v11/berakhot/berakhot_v11.json',
-                          'v14_r1': 'results/v14/berakhot/run1.json',
-                          'v14_r2': 'results/v14/berakhot/run2.json'}},
-    'Yevamot': {'text': 'results/sefaria/yevamot.json', 'out': 'results/consensus/yevamot',
-                'runs': {'v14_r1': 'results/v11/v14_yevamot/run1.json',
-                         'v14_r2': 'results/v11/v14_yevamot/run2.json'}},
-}
-TRACTATE = os.environ.get('JUDGE_TRACTATE', 'Berakhot')
-assert TRACTATE in TRACTATES, f'JUDGE_TRACTATE must be one of {sorted(TRACTATES)} (never Eruvin)'
+# JUDGE_TRACTATE picks the tractate (default Berakhot, so the 2026-11-08 run reproduces). Any Bavli
+# tractate works by convention (scripts/tractates.py): 'berakhot', 'Bava Batra' or 'bava_batra'.
+# Text, runs and the output directory come from tractates.Paths; the two v14 runs are the judged
+# versions. Berakhot also carries its v11 run, the comparison the 2026-11-08 finding reported.
+# Eruvin stays refused: held for Jeff, the untouched final exam.
+sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
+import tractates as T  # noqa: E402
+
+
+def tractate_config(name):
+    """{'text', 'out', 'runs'} (repo-relative paths) for a tractate name or slug."""
+    slug = T.resolve(name)
+    assert slug != 'eruvin', 'never Eruvin: held for Jeff (docs plan §7 Q4)'
+    P = T.Paths(slug, PROJECT_ROOT)
+    rel = lambda p: str(p.relative_to(PROJECT_ROOT))
+    runs = {'v14_r1': rel(P.run(1)), 'v14_r2': rel(P.run(2))}
+    if slug == 'berakhot':
+        runs = {'v11': 'results/v11/berakhot/berakhot_v11.json', **runs}
+    return {'text': rel(P.text), 'out': rel(P.consensus), 'runs': runs}
+
+
+_slug = T.resolve(os.environ.get('JUDGE_TRACTATE', 'Berakhot'))
+TRACTATE = T.english(_slug)           # English name: it is in every ref and in every unit
+TRACTATES = {TRACTATE: tractate_config(_slug)}
 j.TEXT_SOURCES[TRACTATE] = [TRACTATES[TRACTATE]['text']]
 OUT = PROJECT_ROOT / TRACTATES[TRACTATE]['out']
 RUNS = TRACTATES[TRACTATE]['runs']

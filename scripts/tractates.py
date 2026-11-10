@@ -77,6 +77,15 @@ def resolve(name):
     return s
 
 
+def resolve_arg(name):
+    """`resolve` for argparse: a bad name is a usage error listing the choices, not a traceback."""
+    import argparse
+    try:
+        return resolve(name)
+    except KeyError as e:
+        raise argparse.ArgumentTypeError(f'{e.args[0]} (choices: {", ".join(SLUGS)})')
+
+
 # Files that predate the convention. Their locations are history (committed, cited by findings
 # and tests), so they are listed here rather than moved.
 LEGACY = {

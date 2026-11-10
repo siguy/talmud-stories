@@ -34,8 +34,10 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 
 from src.model_config import default_model, default_thinking_level  # noqa: E402
+import tractates  # noqa: E402  (the one slug/English/Hebrew table; scripts/tractates.py)
 
 logging.basicConfig(
     level=logging.INFO,
@@ -51,10 +53,10 @@ DELAY = 0.5
 
 
 def source_paths(tractate):
-    """(pages, triage cache) for a tractate: the SOURCES override, else results/sefaria/<t>.json."""
-    o = SOURCES.get(tractate, {})
-    return (PROJECT_ROOT / o.get('pages', f'results/sefaria/{tractate}.json'),
-            PROJECT_ROOT / o.get('triage', f'results/triage/{tractate}.json'))
+    """(pages, triage cache) for a tractate, by the convention in scripts/tractates.py:
+    results/sefaria/<slug>.json and results/triage/<slug>.json, except the few legacy files."""
+    P = tractates.Paths(tractate, PROJECT_ROOT)
+    return P.text, P.triage
 
 
 # ---- retry with backoff (added 2026-11-09 for the Shas run) ---------------------------
@@ -150,19 +152,6 @@ class TokenMeter:
             return r
         models.generate_content = metered
         return client
-
-# Where each tractate's text and cached Stage 1 labels live. The three new tractates were
-# fetched to results/sefaria/ on 2026-08-30; Kiddushin predates that layout and keeps its
-# v7-era files. Same shape either way: pages[] of {ref, segments[]}, and a triage cache
-# with a `triage_results` map. Added 2026-09-15 so the twin pass could be measured on a
-# tractate with cross-tractate few-shots (Ketubot's are Ketubot's own -- Critical Rule 2).
-SOURCES = {
-    'kiddushin': {
-        'pages': 'results/v7/kiddushin_pages.json',
-        'triage': 'results/v7/event_triage_kiddushin.json',
-    },
-}
-
 
 def load_env():
     """Read .env from this worktree, falling back to the primary checkout —
@@ -311,8 +300,8 @@ def build_parser():
     log.info('env loaded from %s', env or 'the environment only')
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--tractate', required=True, type=str.lower,
-                    help='any tractate with fetched text in results/sefaria/<tractate>.json')
+    ap.add_argument('--tractate', required=True, type=tractates.resolve_arg,
+                    help="any Bavli tractate with fetched text: 'berakhot', 'Bava Batra' or 'bava_batra'")
     ap.add_argument('--refs', help='comma-separated refs; default is every fetched page')
     ap.add_argument('--output', help='default: results/v11/<tractate>/<tractate>_v11.json')
     ap.add_argument('--triage-only', action='store_true')
@@ -344,12 +333,12 @@ def main():
     if not src.exists():
         log.error('no text for %s at %s -- fetch it first: '
                   'python3 scripts/fetch_tractate_pages.py --tractates %s',
-                  args.tractate, src, args.tractate.title())
+                  args.tractate, src, tractates.english(args.tractate))
         return 1
     meter = TokenMeter()
     data = json.loads(src.read_text())
     pages = data['pages'] if isinstance(data, dict) else data
-    name = (data.get('tractate') if isinstance(data, dict) else None) or args.tractate.title()
+    name = (data.get('tractate') if isinstance(data, dict) else None) or tractates.english(args.tractate)
     if args.refs:
         want = [r.strip() for r in args.refs.split(',')]
         pages = [p for p in pages if p['ref'] in want]
