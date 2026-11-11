@@ -55,7 +55,21 @@ def main():
         log.info('%s: %d of %d shipped stories', name, len(pick), len(pool))
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / 'sample.json').write_text(json.dumps(sample, ensure_ascii=False, indent=1))
-    runs = sorted({str(T.Paths(s['tractate'], ROOT).run(1).relative_to(ROOT)) for s in sample})
+    # The review page reads a run's current grade, so a story Stage 4j demoted for biblical-only actors -- which the site
+    # ships under its pre-filter grade (septimus-story-filter.md) -- would be silently left out (Sanhedrin 99b:3-4 in
+    # this seed, 2026-11-10). The page gets temporary copies carrying the grade the site reads; the runs on disk are
+    # never edited.
+    import tempfile
+    tmp = Path(tempfile.mkdtemp(prefix='precision_sample_'))
+    runs = []
+    for t in sorted({s['tractate'] for s in sample}):
+        run = json.loads(T.Paths(t, ROOT).run(1).read_text())
+        for p in run['pages']:
+            for st in p.get('stories', []):
+                if st.get('filtered_as_biblical'):
+                    st['classification'] = st.get('classification_pre_biblical_filter')
+        (tmp / f'{t}_run1.json').write_text(json.dumps(run, ensure_ascii=False))
+        runs.append(str(tmp / f'{t}_run1.json'))
     only = OUT / 'only.json'
     only.write_text(json.dumps([{k: s[k] for k in ('ref', 'start_segment', 'end_segment')} for s in sample]))
     cmd = [sys.executable, 'validation/generators/generate_axis_review_ui.py', '--run', *runs,
@@ -63,9 +77,6 @@ def main():
            '--title', 'Talmud stories: a random sample to grade',
            '--note', 'Stories chosen at random from what the site shows, from every kind of tractate. '
                      'For each: is it a story?']
-    # Known gap: a story Stage 4j demoted (biblical-only actors) ships under its pre-filter grade, but the review page
-    # reads the run's current grade and leaves it out (Sanhedrin 99b:3-4 in this seed). Named, not redrawn: redrawing
-    # would bias the sample away from biblical stories.
     rc = subprocess.run(cmd, cwd=ROOT).returncode
     log.info('sample of %d written; review page rc=%d', len(sample), rc)
     return rc

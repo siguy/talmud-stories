@@ -49,9 +49,9 @@ V14_LISTED = {
 # Jeff-reviewed tractates: the site ships from their goldens, which were built WITH his lists and
 # verdicts, so their site recall is CIRCULAR and reported only as such.
 REVIEWED_LISTED = {
-    # --standard 2005: under the default ("current") the harness raises on Ketubot today -- the
-    # superseded_by_rule entry for Ketubot 21b matches 0 rows of the .doc parse. A pre-existing defect,
-    # recorded in the finding; the 2005 standard keeps every list row in the denominator.
+    # --standard 2005: when this was written the default ("current") raised on Ketubot, because a lowercase
+    # --tractate built refs no ruling matched. Fixed 2026-11-10 in measure_recall_vs_expert_list.py; 2005 is kept
+    # so the finding's CIRCULAR site-recall row reproduces as published.
     "ketubot": ["--expert-doc", "jeff comms/b.ketubot (1).doc", "--standard", "2005"],
     "kiddushin": ["--expert-json", "results/expert_lists/kiddushin_2005.json"],
     "gittin": ["--expert-json", "results/expert_lists/gittin_2005.json"],
