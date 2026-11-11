@@ -24,9 +24,9 @@ def test_audit_paths_for_a_tractate_with_no_hardcoded_entry():
 def test_audit_skips_and_logs_a_tractate_with_no_files(caplog):
     audit = _load('audit_miss_anatomy')
     with caplog.at_level('WARNING'):
-        got = audit.available(['gittin', 'eruvin'])
-    assert got == ['gittin']                       # eruvin has no run yet: skipped, no KeyError
-    assert any('eruvin' in r.getMessage() for r in caplog.records)
+        got = audit.available(['gittin', 'nonesuch'])
+    assert got == ['gittin']                       # no run for it: skipped, no KeyError
+    assert any('nonesuch' in r.getMessage() for r in caplog.records)
 
 
 def test_audit_default_covers_every_board_tractate_that_has_files():
@@ -36,10 +36,12 @@ def test_audit_default_covers_every_board_tractate_that_has_files():
     assert 'yevamot' in audit.available(board.TRACTATES)
 
 
-def test_stamp_lists_tractates_from_the_board_and_skips_missing(caplog):
+def test_stamp_lists_tractates_from_the_board_and_skips_missing(caplog, monkeypatch):
     stamp = _load('stamp_superseded_recall')
+    monkeypatch.setattr(stamp.board, 'TRACTATES', list(stamp.board.TRACTATES) + ['nonesuch'])
     with caplog.at_level('WARNING'):
         got = stamp.tractates_with_matches()
     assert 'Yevamot' in got and 'Gittin' in got
-    assert 'Eruvin' not in got                     # no matches file yet
-    assert any('Eruvin' in r.getMessage() for r in caplog.records)
+    assert 'Eruvin' in got                         # scored 2026-11-08
+    assert 'Nonesuch' not in got                   # no matches file: skipped and logged
+    assert any('Nonesuch' in r.getMessage() for r in caplog.records)

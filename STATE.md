@@ -18,7 +18,7 @@ provenance is a bug in the generator (FRAMEWORK §3).
 | **Kiddushin** | 95.6% artifact · **97.8% code** · n=90 B | 88.4% artifact · **90.9% code** B | STATUS · C | STATUS | 5 rounds | ⬜ |
 | **Gittin** | 100.0% · n=110 B | 97.3% B | STATUS · C | STATUS | 3 rounds | ⬜ |
 | **Yevamot** | 100.0% · n=100 B | 89.0% B | ⬜ | ⬜ | ⬜ | ⬜ |
-| **Eruvin** | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| **Eruvin** | 97.3% · n=74 B | 94.4% B | ⬜ | ⬜ | ⬜ | ⬜ |
 
 `B` = BLIND dataset (can measure recall) · `C` = CIRCULAR (precision only) · `⬜` = never measured.
 
@@ -43,6 +43,7 @@ is quoted **loose / strict** from `results/rulers/`, or from
 - Kiddushin: **84.4% loose / 83.3% strict** on 90 stories
 - Gittin: **97.3% loose / 97.3% strict** on 111 stories
 - Yevamot: **89.0% loose / 89.0% strict** on 100 stories (no ruler yet — no expert round on this tractate)
+- Eruvin: **91.9% loose / 91.9% strict** on 74 stories (no ruler yet — no expert round on this tractate)
 
 The loose test credits a proposal anywhere in the aligner's window and is
 provably over-credited in at least one case, so read it as an upper bound.
@@ -62,26 +63,26 @@ types none.
 ```
 gate       ≥98% · PROVISIONAL
 history    docs/capabilities/1_triage.md
-open       2026-08-30-eruvin-triage
 open       2026-08-30-gittin-triage
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     13 item(s) in work/done/
+open       2026-09-07-habitual-is-narrative-evidence
+closed     14 item(s) in work/done/
 ```
 
 ### 2 Detection
 ```
 gate       ≥95% · PROVISIONAL
 history    docs/capabilities/2_detection.md
-open       2026-08-30-eruvin-detection   ← blocked: 2026-08-30-eruvin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-gittin-detection   ← blocked: 2026-08-30-gittin-triage, 2026-08-30-two-amud-header-parser
 open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     30 item(s) in work/done/
+open       2026-09-03-density-mechanism
+closed     31 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -136,6 +137,7 @@ closed     3 item(s) in work/done/
 | dataset | kind | size |
 |---|---|---|
 | `results/expert_lists/eruvin_2005.json` | **BLIND** | 74 parsed · 74 blind · 74 count for recall |
+| `results/expert_lists/eruvin_rule_applied.json` | **UNKNOWN** | **shape not recognised by `board.py`** — top-level keys: `entries`, `known_weakness`, `rule_for_exclusion`, `what` |
 | `results/expert_lists/gittin_2005.json` | **BLIND** | 112 parsed · 112 blind · 111 count for recall |
 | `results/expert_lists/kiddushin_2005.json` | **BLIND** | 94 parsed (1 duplicate dropped) · 89 blind · 90 count for recall |
 | `results/expert_lists/kiddushin_comments_harvested.json` | **BLIND** | **11 anchored remarks** from 10 comments — not a story list, carries no recall denominator |
@@ -169,6 +171,7 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:scope-edges` | Your scope is *"rabbis and post-biblical figures"* (2026-09-23). Three edges we read as **in** — confirm or correct: (1) Elijah appearing to a rabbi (Gittin 6b, Kiddushin 40a); (2) a biblical figure cited *inside* a rabbinic story (Kiddushin 32b — Rabban Gamliel serving, justified by Abraham); (3) post-biblical non-rabbis — Titus, King Yannai, Agrippa. |
 | `jeff:question-and-answer` | Yevamot 78b:9 — the students ask R. Eliezer about a *mamzeret* after ten generations, and he answers *"Who will give me a third generation and I will declare him pure."* A question to a sage and his answer, nothing else narrated: **story, borderline, or not?** It is on your 2005 Yevamot list. |
 | `jeff:precision-sample` | Grade a random sample of 60 shipped, unreviewed v14 stories (stratified: aggadic / Kodashim+Niddah / halakhic) — yes, borderline or no. |
+| `jeff:eruvin-2005-vs-later-rules` | 20 Eruvin passages from his 2005 list that his later rulings may disqualify (14 we found, 6 we missed): story / borderline / not? Draft: `comms/2026-11-08-email-jeff-eruvin-rulings-DRAFT.md`. |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 
@@ -179,4 +182,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 198e0df24c56c90a -->
+<!-- board-checksum: fb2054055afdc82f -->
