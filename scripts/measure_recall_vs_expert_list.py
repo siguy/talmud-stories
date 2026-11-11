@@ -561,6 +561,14 @@ def main():
                          "2005: the list exactly as he wrote it")
     ap.add_argument('--out')
     args = ap.parse_args()
+    # One spelling of the name from here on. `--tractate ketubot` built list refs as "ketubot 21b", so Jeff's
+    # later ruling on "Ketubot 21b" matched no row and apply_superseded raised (found 2026-11-10, accuracy review).
+    sys.path.insert(0, str(Path(__file__).parent))
+    import tractates as T
+    try:
+        args.tractate = T.SLUGS[T.resolve(args.tractate)]['english']
+    except KeyError:
+        pass          # not in the table (a test fixture's made-up tractate): used as given
 
     expert = (parse_expert_doc(args.expert_doc, args.tractate) if args.expert_doc
               else load_expert_json(args.expert_json, args.expert_filter))

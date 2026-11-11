@@ -125,13 +125,17 @@ table{border-collapse:collapse;width:100%}td{border-top:1px solid var(--line);pa
     for e in biblical:
         by_t.setdefault(e['tractate'], []).append(e)
     parts = [f'<h1>Shas run: reading lists</h1><p>{len(biblical)} passages on the biblical list; '
-             f'{sum(len(v) for v in samples.values())} random stories from density-amber tractates. '
+             f'{sum(len(v) for v in samples.values())} spot-check stories from the sparsest tractates. '
              'Every passage below is definite in both runs. SHIPS = on the site; SHIPS, BIBLICAL = on the site, flagged and left out of Jeff&#39;s catalogue; DROPPED = Gemini says biblical and Claude says not a story.</p>',
-             '<h2>1. The biblical list</h2>']
+             '<h2>1. The biblical list</h2><p>Is each one flagged right? A biblical story stays on the site either way; '
+             'the flag only keeps it out of Jeff&#39;s catalogue.</p>']
     for t, es in by_t.items():
         es = sorted(es, key=lambda e: e['site'] != 'SHIPS')      # what ships first: that is what a reader sees
         parts.append(f'<h3>{T.SLUGS[t]["english"]} ({len(es)})</h3>' + ''.join(card(e) for e in es))
-    parts.append('<h2>2. Ten random stories per density-amber tractate</h2>')
+    parts.append('<h2>2. Spot-check: the sparsest tractates</h2><p>These four tractates have far fewer stories per page '
+                 'than the rest, so up to ten of the stories the site shows from each were picked at random. All are '
+                 'on the site. The question for each: <b>is this really a story?</b> If most are, the low count is the '
+                 'tractate (mostly law), not the detector failing.</p>')
     for t, es in samples.items():
         parts.append(f'<h3>{T.SLUGS[t]["english"]}</h3>' + ''.join(card(e) for e in es))
     return (f'<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">'
