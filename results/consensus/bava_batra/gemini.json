@@ -1,0 +1,4359 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:23",
+  "outcomes": {
+   "ok": 245,
+   "invalid": 1
+  }
+ },
+ "rows": [
+  {
+   "id": "Bava Batra 3b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of the habitual practice of Mareimar and Mar Zutra cited as a legal precedent; it lacks a specific one-time event, conflict, or change resulting from the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 3b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Ashi who saw cracks, demolished a synagogue, and moved his bed into the site until construction was complete. This contains multiple actions and a clear change in state, fitting the definition of a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 3b:13-Bava Batra 4a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative about Herod and Bava ben Buta, who are post-biblical figures in scope. It contains multiple actions, dialogue, conflict, and a clear change in state (Herod's rebellion, the girl's death, the blinding of the sage, and the eventual rebuilding of the Temple).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 5a:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving specific post-biblical figures (Ravina and Ronya) with multiple actions, a 'one day' event that changes the status of the conflict, and a resolution before a rabbi (Rava).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 5a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Ronya buying land) and a conflict (Ravina's intent to remove him), but it is resolved through a single speech-act (Rav Safra's proverb) without further narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 5b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of how certain rabbis acted in accordance with a legal opinion, followed by a halakhic ruling. It lacks a narrated incident, change, or causality beyond the statement of their practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 6b:12-Bava Batra 7a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving two residents and a collapsing house, which includes multiple actions and a conflict. Under R-C0, the ruling by Rav Hama serves as the resolution to this narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 7a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event ('a certain man built a wall') followed by a series of actions and a conflict between neighbors, concluding with a ruling by Rav Hama.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 7a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two brothers (dividing property and building a wall) followed by a conflict and a ruling by Rav Hama. Under R-C0, an incident followed by a ruling counts as a story because it describes something that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 7b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of an incident followed by a ruling where the only narrated event is the production of a document in court. Under R-C0 and R-C7, a case where coming before a rabbi is the only event and no other action or change is narrated is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 7b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story about a pious man whose habitual interaction with Elijah ceased after he performed the specific action of building a gatehouse. This fits the criteria of a habit leading to a change (R-C3) and is a story embedded within a legal discussion (R-C4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 7b:13-Bava Batra 8a:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories where a rabbi imposes a tax and is challenged by another rabbi. Under R-C0 and R-C7, these are stories because they involve a specific event (the imposition of the tax) followed by a conflict and dialogue that leads to a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, conflict, and a clear change in the protagonist's policy. It begins with a habitual/situational frame (the drought) and proceeds to a specific one-time event involving Rabbi Yehuda HaNasi and Yonatan ben Amram.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving the residents of Tiberias and Rabbi Yehuda HaNasi, featuring multiple actions (imposing a tax, coming to court, running away) and a clear change in outcome (the tax being canceled). Although it begins with a general dictum, the subsequent incident functions as a full narrative illustration of that principle.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabba imposing a tax) followed by a conflict and dialogue with Abaye. Under R-C0, an incident involving a specific person followed by a ruling or explanation counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8a:17-Bava Batra 8b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a post-biblical figure (Ifera Hurmiz) performs an action (sending a purse of money) which leads to a specific interaction and resolution between Rav Yosef and Abaye. This fits the criteria of an incident followed by a ruling or determination that involves more than just a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of an appointment ('Rabbi appointed two brothers') cited as legal evidence for Rabbi Hanina's view. Under R-C5 and the limits of R-C0, a single act that does not lead to a continuation, change, or further narrated action is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rava compelled Rav Natan bar Ami to give charity, which constitutes a real event beyond speech. However, it is presented as a bare report of a single action used to illustrate a legal point, fitting the borderline shape of one real event followed by or serving a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 8b:17-Bava Batra 9a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a change in a rabbi's habitual practice (sitting on mats, managing charity purses) triggered by hearing a specific ruling. Under R-C0 and R-C3, a habit that leads to a change can be a story, but since the 'actions' are minimal and the resolution is a change in personal religious practice rather than a narrative event, it fits the borderline shape of 'one real event followed by a ruling or change' (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 9a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving two butchers (an agreement, a violation, and an act of destruction) followed by a legal resolution before Rava. This meets the criteria of a story because it contains multiple actions and a change in status (the ruling) rather than being a bare report of a custom or a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 9a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('a certain poor person... came before Rav Pappa') followed by a conflict and dialogue between rabbis that results in a reinterpretation of a legal ruling. Under R-C0, this incident-plus-ruling shape counts as a story, and the presence of conflict between Rav Sama and Rav Pappa satisfies the requirements for narrative dynamism.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 9a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is merely an introductory formula for a teaching; it contains no narrated events, actions, or conflict, and the subsequent context is a standard rabbinic dialogue about biblical verses.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 9b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a dialogue involving conflict and mockery (R-C2) and transitions into a series of narrated actions and changes: a rabbi is offended, a student is punished with muteness and loss of memory, a mother intervenes with a dramatic gesture, and a prayer leads to a miraculous healing (R-C0). Per R-B1, the opening formula explaining the sage's nickname is included as the start of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 10a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific one-time event (the dream and the subsequent collection of charity) that leads to a change in outcome (the government only seizing the remainder). It fits the criteria of a story about a post-biblical figure (Rabban Yoḥanan ben Zakkai) with multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 10a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Pappa slipping on a ladder) followed by an emotional reaction and a dialogue that provides a resolution/interpretation of the event. This meets the criteria of a story as it describes a one-time incident involving a post-biblical figure that leads to a change or interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 10b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative about Yosef son of Rabbi Yehoshua, a post-biblical figure, who falls ill and experiences a vision of the afterlife. This is a full story with actions and change, distinct from the biblical Solomon dictum that introduces it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 10b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ifera Hurmiz and the rabbis) with multiple actions: sending money, refusing it, sending it to another, and accepting it. It also includes an emotional reaction (Rabbi Ami was angry) and conflict between the rabbis, which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 11a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This segment is the Gemara's commentary explaining the circumstances of a previous interaction between rabbis; it is not a story itself but an effort to resolve a difficulty in the preceding dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 11a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories about post-biblical figures (Binyamin the Righteous and King Munbaz). Both involve specific incidents (a woman's plea, the distribution of treasures), conflict or change (the threat of death followed by life extension, and a family dispute over wealth), and are introduced by standard formulae.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 12b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Mar bar Rav Ashi, beginning with a habitual frame (standing in the street) that leads to a one-time event (hearing the imbecile's prophecy) and a series of actions (traveling, detaining sages, and being appointed) that result in a change of status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 12b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rav Hisda's daughter and the rabbis) with actions, dialogue, and a prophetic change that is realized later. It goes beyond a bare report or simple speech act by establishing a scene and a causal interaction that leads to a narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 12b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain person bought land...') followed by a legal ruling from Rabba. Under rule R-C0, an incident followed by a ruling counts as a story because it describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 13b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two bare reports of past actions cited as legal precedents for the arrangement of scrolls. Under R-C5 and the limit of R-C0, these are descriptions of what someone did or a case brought for a ruling without a narrated change or subsequent action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 14a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of specific events involving post-biblical figures: Rav Huna's repeated attempts, Rav Aha's success, the Sages' reaction, and the resulting death of Rav Aha. It satisfies the requirement for multiple actions and a change in state (the death) following the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 14a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two instances of standard rabbinic dialogue where one sage reports a feat and another offers a skeptical or minimizing interpretation. Under R-C2 and R-C5, these are speech-acts and bare reports of deeds without a narrated event, conflict, or change following the dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 15a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific interaction between a Sage and Rabbi Shmuel bar Naḥmani involving a conflict of opinion. Under R-C2 and R-C7, it is borderline because it consists mainly of speech acts with minimal action, but contains a clear conflict and a specific setting.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 15b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving Job, including his piety, his suffering, his reaction, and God's response. However, as a story about a biblical character, it is classified as out of scope according to the editor's rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 16a:1-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     7,
+     9,
+     17,
+     18,
+     19,
+     20,
+     21
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative involving events, dialogue, and conflict between God, Satan, and Job, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 16b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the birth of a daughter) followed by an emotional reaction (Rabbi Shimon was upset) and a dialogue involving conflict between his father's consolation and Bar Kappara's sharp retort.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 16b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (Ravina and Rav Hama sitting before Rava) with physical actions (Rava dozing and then waking up) and a resolution where Rava intervenes in their debate. While it contains dialogue, the 'courtroom drama' of Rava waking up to correct them provides the necessary action and change beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 21a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-B1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about the historical development of the Jewish education system, featuring Yehoshua ben Gamla as a post-biblical figure. It moves from a habitual state (fathers teaching sons) through a series of specific institutional changes and challenges (students rebelling) to a final resolution, which constitutes more than a bare report or ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 21a:12-Bava Batra 21b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with multiple actions, conflict, and a resolution (Joab's confrontation with David and his teacher). However, it is about biblical characters (Joab and David) rather than rabbis or post-biblical figures, placing it out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 22a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal ruling by Rava regarding two rabbis, but it lacks a narrated incident or change beyond the ruling itself. Under R-C0 and R-C5, a bare report of a rabbi's permission or practice without a following action or continuation is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 22a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where basket sellers arrived and were prevented from selling, followed by their appearance before a rabbi and his ruling. Under R-C0, this sequence of a narrated event followed by a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 22a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (wool sellers bringing goods and being prevented from selling) followed by a legal interaction and a ruling that resolves the conflict. Under R-C0, an incident followed by a ruling counts as a story because it describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 22a:5-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-layered narrative involving specific events (the ship of figs, the testing of the scholar, the rotting of the figs) and a dramatic resolution (the death of Rav Adda bar Abba) with causal connections and multiple actions. It follows the pattern of a specific incident leading to a change in state, satisfying the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 22b:12-Bava Batra 23a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific incident involving Rav Yosef and bloodletters where a conflict (damage to dates) leads to a ruling and a courtroom-style dialogue. It meets the criteria of R-C0 as an incident followed by a ruling with narrated actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 23b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event where Rabbi Yirmeya was removed from the study hall following his speech-act. This constitutes a narrated action and a change in status beyond standard rabbinic dialogue, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 24a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal case where a barrel was found and a rabbi ruled it permitted; under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only event, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 24a:13-Bava Batra 24b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes an incident followed by a ruling, but the incident (finding jugs) and the ruling (permitting them) lack a second narrated action or change as required by R-C0 and R-C5. The remainder of the passage is Gemara commentary and legal discussion regarding the ruling, which is excluded under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 25a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between a rabbi and his servant involving a physical action (setting him in a direction to pray) and a speech act. Under R-C7 shape 1 and R-C2, it is borderline because it is primarily a dialogue/instruction with minimal action, yet it describes a real-world event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 25b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a named post-biblical figure (Pappei Yona’a) who built a mansion and faced a conflict with neighbors, followed by a ruling from Rav Ashi. Under R-C0, the narrated events of building and the shaking of the house constitute a story, and the ruling serves as the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 26a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving the household of bar Maryon and their flax-beating, followed by a legal ruling from Ravina. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 26a:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident between two rabbis involving specific actions (birds damaging a vineyard) and a conflict that leads to a change in the situation, where one rabbi refuses to cut the trees himself but permits the other to do so.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 26a:11-Bava Batra 26b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving two rabbis (Rav Pappa and Rav Huna) with specific actions (going, finding, digging, cutting) and a dialogue containing conflict and a resolution. It meets the criteria of a 'courtroom drama' or incident with change and causality beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 29b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rami bar Hama and Rav Ukva bar Hama) who performed multiple actions—purchasing a maidservant and alternating her use—which led to a conflict when a claimant emerged. This incident is followed by a ruling from Rava, satisfying the criteria for a story where an event leads to a rabbinic resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 29b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man coming before a rabbi for a ruling, but the only narrated event is the act of coming before the rabbi and the subsequent dialogue. Under R-C0 and R-C7 (shape 2), a case where coming before a rabbi is the only event and is followed by a ruling or legal discussion is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 30a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a sale and a subsequent dispute between a buyer and seller, followed by a ruling from Rav Nahman and a challenge by Rava. Under R-C0, the narrated event of the sale and the dispute constitutes a story, and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 30a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific legal dispute ('a certain person said to another') followed by a ruling from Rava. Under R-C0, the narrated event of the dispute and the subsequent ruling constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 30a:5-Bava Batra 30b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case involving a claimant and a possessor followed by a ruling from Rava. Under R-C0 and R-C7 (shape 2), an incident where the only narrated action is coming before a rabbi or a courtroom interaction followed by a ruling is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 30b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific legal dispute ('a certain person') followed by a ruling from Rava. Under R-C0, the narrated events of the purchase and the consultation with witnesses constitute the story, and the ruling serves as the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 30b:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "These are two distinct incidents involving 'a certain man' (ההוא גברא) that describe specific events (a land dispute and a courtroom-style interaction) followed by a ruling from Rava. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves more than just a simple statement of law.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 31a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama involving a specific incident ('this one says... that one says') followed by a ruling and a change in the defendant's claim. Under R-C0, an incident followed by a ruling counts as a story, especially when there is further action or change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 31a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case involving a dispute over land and a subsequent ruling by Rav Nahman. Under R-C0 and R-C7, a case where the only narrated event is coming before a rabbi for a ruling, without further action or change, is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 31b:4-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a litigant bringing new witnesses, followed by a courtroom drama where Rav Nahman changes his mind due to scholarly conflict and ultimately performs a physical action ('went out and performed an action'). This meets the criteria of an incident followed by a ruling that leads to a change and further action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 32a:6-Bava Batra 32b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific dispute ('a certain person') and a physical action (leaning and whispering) that leads to a change in the legal situation. Under R-C0, an incident followed by a ruling or legal resolution counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 32b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific person and a rabbi (Rava) with multiple actions (demanding payment, whispering a confession) and a change in the legal situation. Under R-C0, the 'a certain man' formula and the interaction with the rabbi constitute a story rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 32b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain guarantor') involving a financial dispute and a subsequent interaction between rabbis (Rav Idi bar Avin and Abaye) that results in a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 32b:8-Bava Batra 33a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a rumor about a rabbi, followed by a dialogue where the rabbi explains his actions and receives a ruling from Abaye. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves a specific event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 33a:3-Bava Batra 33b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the death of a relative and a dispute over a tree) followed by a change (the admission of the relative) and a rabbinic ruling by Rav Hisda. This fits the criteria of an incident followed by a ruling with narrated actions beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 33b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case (legal problem) presented as a dispute between two parties ('this one says... and that one says...') followed by a ruling, but it lacks a specific narrated action or change beyond the courtroom claims. Under R-C0 and R-C5, a bare report of a case brought for a ruling without further narrated events is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 33b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage follows the 'incident plus ruling' shape defined in R-C0; it narrates a specific event involving a certain man, his claim, and the bringing of witnesses, which is then resolved by Rav Nahman's ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 33b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain person') involving a land dispute and the presentation of a witness, which is then brought before a rabbi (Abaye) for a ruling. Under R-C0, an incident followed by a ruling or legal resolution counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 33b:7-Bava Batra 34a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident-plus-ruling' story where a specific event (snatching a piece of metal) is narrated, followed by a courtroom interaction and a legal resolution by Rabbi Ami and Rabbi Abba. Under rule R-C0, the narrated event of the theft followed by the rabbi's ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 34b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific incident ('a certain boat') involving multiple actions: a quarrel, a petition to the court, the court's seizure, a failed search for witnesses, and a subsequent request for release. Under R-C0, the fact that it includes rabbinic rulings does not disqualify it, as there is a clear sequence of narrated events and changes in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 36a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving goats eating barley and being seized, followed by a ruling from Shmuel's father. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 39a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Rabbi Yosei and the students of Rabbi Yoḥanan, but the interaction consists entirely of speech-acts regarding a legal definition. Under R-C2 and R-C7, dialogue with a specific setting but no action beyond speaking is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 39b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Giddel bar Minyumi and Rav Huna) where an action (lodging a protest) is followed by a later event (returning a year later) and a resolution via a ruling. This fits the criteria of an incident that leads to a change or ruling rather than a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 40b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man') involving a mortgage, a threat, and a subsequent legal ruling by Rava, which fits the criteria of an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 40b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain man') involving multiple actions (the marriage demand, the father's response to his son, and the secret instruction to witnesses) followed by a ruling from Rava. Under R-C0, the narrated events followed by a ruling constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 41a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving post-biblical figures (Rav Anan and Rav Nahman) where a physical event (a torrent sweeping land) leads to a series of actions (rebuilding a wall, coming before a rabbi) and a resolution through a ruling. Under R-C0, the narrated incident followed by a ruling constitutes a story, as it contains multiple actions and a change in status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 41a:9-Bava Batra 41b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a torrent sweeping a field and a wall being rebuilt in the wrong place) followed by a courtroom drama involving witnesses and a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 41b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man in a loft and a property dispute that comes before Rabbi Hiyya, meeting the criteria of an event followed by a ruling. Segment 3 is included as it describes Rav's eyewitness account of the interaction and the rabbi's reaction, which adds to the narrated change and dynamism.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 45a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal announcement or hypothetical case ('In a case of this Jew who sold...') rather than a report of a specific event that happened. Under R-C0 and R-C2, a public announcement of a ruling without a specific narrated incident or conflict does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 46a:7-Bava Batra 46b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific invitation by Abaye to Rava to observe an event ('Come and I will show you'), followed by a dialogue containing conflict and trickery. While it is primarily speech-based and serves a legal-illustrative purpose, the framing of a specific interaction between rabbis and the narrated conflict makes it a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 48b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Tavi and Pafi) where a physical action (suspending someone on a tree) leads to a change in status (a forced sale), followed by the actions of a rabbi (Rabba bar bar Hana) and a ruling by Rav Huna. This fits the criteria of an incident followed by a ruling being a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 51b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific action (Rav Hisda's ruling) followed by a dialogue involving conflict and a retort. Under R-C7 shape 1 and R-C2, it is borderline because it is primarily a speech-act exchange regarding a ruling, but contains enough interaction and conflict to be more than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 52a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving the wife of Rabba bar bar Hana and a subsequent ruling by Rav. Under rule R-C0, an incident followed by a ruling counts as a story, as it describes a one-time event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 52a:8-Bava Batra 52b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal objection by Rav Pappa citing a precedent where Rava removed items from orphans, but this is a bare report of a ruling used as evidence in a scholarly debate rather than a narrated story with change or causality. Under R-C0 and R-C5, a report of what a rabbi did or ruled without further action or continuation is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 54a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific woman and man, followed by a legal ruling and a subsequent emotional reaction (shouting) and dialogue, which satisfies the requirement for actions beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 54a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a rabbi's personal practice cited as evidence for a legal ruling, which falls under the category of a precedent rather than a story. According to R-C5 and the limits of R-C0, a description of what a rabbi did that leads nowhere and involves no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 54b:4-Bava Batra 55a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving Rav Huna and a legal dispute over land, which includes multiple actions (purchasing, plowing, coming before a judge) and a resolution through a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it contains more than one narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 57a:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case brought before rabbis followed by a ruling and discussion, but there is no narrated action or change beyond the ruling itself. Under R-C0 and R-C7, a case where coming before a rabbi is the only event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 58a:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Rabbi Bena'a, a post-biblical figure, and his interactions at the Cave of Machpelah. Although biblical figures appear, the protagonist is a rabbi, placing it in scope under R-S1, and it contains multiple actions and changes beyond simple speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 58a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (a magus and rabbis) containing multiple actions, conflict, and a clear change in outcome. It follows the pattern of a habitual frame (rummaging through graves) leading to a specific one-time event and its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 58a:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narratives involving Rabbi Bena’a: the first (segment 2) is a case of an enigmatic inheritance resolved by his ruling, and the second (segments 3-4) is a complex story involving a deathbed riddle, a courtroom test of character, and a subsequent legal conflict leading to the rabbi's imprisonment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 58a:11-Bava Batra 58b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of events following Rabbi Bena'a's imprisonment: his wife's clever riddle, his interpretation of it which leads to his release and appointment as a judge, and his subsequent actions in correcting the inscriptions at the gate. It contains multiple actions, conflict, and a clear change in the protagonist's status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 59a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi goes to consult his grandfather to resolve a legal dispute with his father, followed by a third party's emotional/praising reaction. This contains multiple actions and a resolution beyond mere speech-acts, fitting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 59a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man coming before a rabbi and being referred to another rabbi for a ruling, but there is no other narrated action or change beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 59b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific person who performed an action (opening windows) and then interacted with two rabbis who provided conflicting rulings. Under R-C0, an incident followed by a ruling counts as a story, and the presence of two distinct rabbinic interactions provides the necessary action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 60a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific incident involving Rabbi Ami and a litigant. It contains multiple actions (having a projection, coming before the rabbi, the verbal exchange) and a conflict where the litigant challenges the rabbi's ruling based on the rabbi's own behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 60a:12-Bava Batra 60b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions and a clear change: a man brings a case to Rabbi Yannai, who delays the ruling to secretly cut down his own tree at night before ordering the man to do the same. It satisfies R-C0 as an incident followed by a ruling that involves significant narrated action beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 60b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical narrative involving Rabbi Yehoshua and a group of ascetics. It contains a specific event (Rabbi Yehoshua joining them), a dialogue with conflict and resolution, and an opening formula (Tanu Rabbanan) that introduces the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 61b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case involving a single event (a man making a statement of sale) followed by a ruling from Rav Ashi. Under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only narrated action beyond the initial incident does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 62a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal case followed by a dialogue involving conflict (a challenge to Rav's ruling) and a non-verbal reaction (Rav's silence). Under R-C2 and R-C7, speech with conflict and a minimal action or implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 62b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Abaye seeing the bills of sale) that changes his understanding of Rabba's silence, but it is primarily a report of a past observation used to clarify a legal ruling. Under R-C7 shape 1 and 2, it is borderline because it involves a specific incident and implied change in the speaker's mind, but remains close to standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 68a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident plus ruling' story where a specific event (a sale and subsequent dispute) leads to a legal resolution before Rav Yosef. It meets the criteria of R-C0 as it narrates a real-world event involving post-biblical figures, and the start includes the introductory formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 71a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain person who said...') involving a one-time event (the gift and the discovery of the house's size) followed by a rabbinic ruling, which fits the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events (a wave appearing, seafarers striking it, and the wave abating) which constitutes a story under R-C0. Although it is framed as a habitual practice of seafarers, it describes a causal change in the world, fitting the criteria for a story rather than a bare custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once, seafarers recounted...') involving a journey and a miraculous encounter with a star, followed by a dialogue between waves. It fits the criteria of a post-biblical narrative with actions and change, introduced by a formulaic attribution to Rabba.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73a:10-Bava Batra 73b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving Rabba as an eyewitness and the post-biblical figure Hurmin. It includes a habitual frame that leads to a specific 'one day' event (the bridge jumping) and a final change in state (his execution by the king).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('I have seen') involving a post-biblical figure (Rabba) and includes multiple actions and a change in the environment (the animal casting feces and damming the Jordan), satisfying the requirement for more than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events (a frog swallowed by a snake, then by a raven) witnessed by a post-biblical figure, Rabba bar bar Hana, meeting the criteria for a story with multiple actions and change. It includes the introductory formula and the subsequent reaction by Rav Pappa bar Shmuel as part of the narrative unit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person narrative of a specific event involving a post-biblical figure (Rabba bar bar Hana) with multiple actions and a clear change in state (the fish being cast ashore, used for food, and its bones eventually used for construction).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabba bar bar Hana) involving a sequence of events: traveling, mistaking a fish for land, cooking, and a narrow escape. It meets the criteria of having multiple actions and a change in situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened to a post-biblical figure (Rabba bar bar Hana) involving a journey and a physical encounter with a giant fish. While it includes later commentary by Rav Dimi and Rav Ashi, the core is a narrated incident with action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rabba bar bar Hana) where an action (wanting to go down) leads to a response (a Divine Voice warning them) and a change in outcome. It fits the criteria of a story about a rabbi and includes multiple actions and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once we were traveling') involving a post-biblical figure, Rabba bar bar Hana, and includes multiple actions: seeing the geese, a dialogue with them, their physical response, and a subsequent interaction with Rabbi Elazar.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 73b:9-Bava Batra 74a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic narrative involving Rabba bar bar Hana and an Arab guide. It contains multiple actions, conflict (the inability to walk), and a resolution followed by a rebuke from the Sages, meeting the criteria for a story about a post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rabba bar bar Hana travels to Mount Sinai, witnesses a supernatural sight, and hears a Divine Voice. This is followed by a second action where he returns to the Sages and receives a rebuke/ruling, satisfying the requirement for multiple actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving Rabba bar bar Hana and an Arab merchant, featuring multiple actions (dipping wool, inserting a spear) and a supernatural encounter. While it mentions a habitual occurrence (the thirty-day cycle), it is framed as a specific one-time event where the protagonist witnesses and hears the souls of Korah's assembly.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person narrative account of a specific event involving Rabba bar bar Hana and an Arab guide. It contains multiple actions, a conflict (the missing basket), and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific one-time events ('Once we were traveling') involving post-biblical rabbis (Rabbi Yoḥanan and Rav Safra) encountering fantastic sea creatures. These are not hypothetical legal cases or bare reports of practice, but narrated incidents with specific actions and observations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74a:7-Bava Batra 74b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving Rabbi Yohanan and a diver that includes multiple actions (traveling, diving, a conflict with sharks, and a divine intervention) and a clear change or resolution. It follows the rule that stories are about events that happened, and it includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative of a specific event involving Rav Yehuda from India, featuring multiple actions, conflict, and change. Per R-B1, the opening formula attributing the story to Rav Yehuda is included as part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical rabbis (Rabbi Eliezer and Rabbi Yehoshua) that includes specific actions (traveling, sleeping, trembling, waking) and a dialogue resolving the event. Per R-B1, the opening formula 'The Sages taught' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Huna bar Natan and Ameimar) with multiple actions and a change (the meat repairing itself and coals remaining lit). Per R-B1, the opening attribution to Rav Ashi is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving dialogue, conflict, and a fatal action, but it concerns the creation of the world and biblical/mythological figures (God and the Minister of the Sea) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 75a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a rabbi and a post-biblical figure (the student). It contains a one-time event (the student's journey and vision) that follows a teaching frame, leading to a dramatic change and resolution (the student's death).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 75b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a one-line eyewitness wonder ('I myself saw...') which the editor's notes on R-C5 explicitly identify as an accepted story type. It includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 77b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav Pappa and Rav Shmuel bar Aha with multiple actions (transferring money via a threshold) and a subsequent change or emotional reaction (Rav Pappa going out to greet him in joy).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 82b:14-Bava Batra 83a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories: segment [2] is a Mishnah story (R-C1) quoted by the Talmud, and segments [3]-[4] describe a specific incident brought before Rav Yehuda. Both meet the criteria of R-C0 as they narrate events that happened followed by a ruling, and include the opening formulas as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 87a:9-Bava Batra 87b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative frame where Rabbi Elazar travels and seeks out a specific teacher (an action), but the core of the interaction is a scholarly dialogue regarding a contradiction between Mishnayot. Under R-C2 and R-C7, dialogue with conflict or a specific encounter is considered borderline rather than a full story or a non-story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 88a:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving specific individuals ('a certain man') where actions occur (lifting meat, a horseman seizing it; bringing pumpkins, people taking them) followed by rabbinic rulings. Under R-C0, an incident followed by a ruling counts as a story when there is a narrated action or change beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 89a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative about Shmuel and Karna that includes specific actions, dialogue with conflict, and a miraculous physical change (the growth in Karna's eye). It begins with a formulaic introduction and moves from a legal custom to a specific one-time event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 90b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rav Pappa bar Shmuel institutes a measure, faces conflict/dialogue from the Sages, and then attempts to distribute it to two different locations with varying outcomes. This contains multiple actions and a change in status (the naming of the measure in Paphunya), satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 90b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific actions taken by Shmuel and his father (selling and hoarding produce) which lead to a response and evaluation from the sages in Eretz Yisrael. This constitutes a change or resolution beyond a bare report of practice, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 90b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal ruling followed by a single speech-act where a rabbi instructs his servant. Under R-C0 and R-C5, this is a bare report of an instruction that does not lead to a narrated action, change, or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rabbi Elazar ben Azarya used to do, cited as evidence of his legal practice or view, with no continuation or one-time event following the habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91a:7-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains full-blown stories with actions, conflict, and change (e.g., Boaz's feasts, his refusal to invite Manoah, and the death of his children), but the characters are biblical figures (Elimelech, Naomi, Ruth, Boaz/Ibzan) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates events concerning the life and death of the biblical patriarch Abraham. While these are stories, they are about biblical characters rather than rabbis or post-biblical figures and are therefore out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a narrative event (the mourning of the nations) following the death of Abraham. While it is a story, it is about a biblical character and is therefore out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a series of 'I remember' statements by Rabbi Yoḥanan and Rabbi Elazar, which function as bare reports or eyewitness testimonies of past conditions rather than narrated stories with change or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 96b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's ruling in a case without any narrated incident or change beyond the ruling itself. According to R-C5 and the limit of R-C0, a description of what a rabbi did or ruled that lacks a second action or continuation is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 98b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Hanina traveled to the villages and engaged in a teaching interaction. This contains a narrated action (going out) and a resolution to a conflict (resolving the contradiction between verses), meeting the criteria for a story about a post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 100a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes people coming before a rabbi for a ruling, but there is no other narrated action or change beyond the ruling itself. Under R-C0 and R-C5, a case where coming before a rabbi is the only event is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 100b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rav Avya and the sister of Rami bar Pappa) followed by a critical ruling from Rav Yosef. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions like a death and a specific ritual performance.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 105a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete story about a rental dispute in Tzippori that was brought before post-biblical figures (Rabban Shimon ben Gamliel and Rabbi Yosei) for a ruling. Although it is a quotation of a Mishnah story, rule R-C1 specifies that the Talmud's citation of such a story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 106a:5-Bava Batra 106b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Pappa buying land and measuring it) followed by a legal dispute and a ruling by Abaye. Under R-C0, an incident followed by a ruling counts as a story, especially when it includes actions beyond the ruling itself like the purchase and measurement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 110a:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story involving the biblical character Jonathan (grandson of Moses) and King David, including dialogue, conflict, and a change in status. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 111a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a rabbi performs or intends to perform an action (a ruling) and is met with a sharp response from a colleague. Under R-C0 and R-C7, the presence of conflict and the specific action of issuing a ruling that is then challenged constitutes more than a bare report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 111a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal interaction (speech acts) and a ruling, but includes an emotional reaction ('he was embarrassed') and a sharp rebuke, which Jeff identifies as actions/conflict that elevate a dialogue to a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 111a:10-Bava Batra 111b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a clear narrative arc with multiple actions and conflict: Rabbi Yannai leans on his attendant, encounters Rabbi Yehuda Nesia, feels his cloak, engages in a sharp legal dialogue, and finally orders his attendant to lead him away in frustration. This exceeds a bare ruling or speech act by including physical movement, sensory interaction, and a change in the social situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 115b:1-Bava Batra 116a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about Rabban Yoḥanan ben Zakkai's confrontation with the Sadducees. It contains a one-time event (the debate), conflict (the Sadducee 'chattering' and the rabbi calling him an 'imbecile'), and a clear change/resolution (the Sages were victorious and established a festival). Segment [5] is excluded as it is Gemara commentary (R-B4) interrupting the baraita.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 116a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a speech-act by Rabbi Yoḥanan referring to a tragic event (the death of his ten sons) and displaying a physical object (the bone). While it is primarily a dictum used for scholarly identification, the inclusion of a specific action and implied emotional conflict makes it a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures: Rabbi Yosei bar Natan's lack of understanding, his physical journey to Neharde’a, his subsequent travel to Meḥoza, and his successful meeting with Rav Sheshet. This constitutes more than a bare report or a simple ruling, as it describes a one-time event with multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving the removal of guards by King Hoshea, but since it concerns biblical figures rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a historical event and a subsequent liturgical institution without a narrated action or change beyond the ruling. Under R-C5 and the limit of R-C0, a report of what was done or instituted that does not lead to a continuation or further action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about the lifespans and interactions of biblical figures (Adam, Methuselah, Shem, Jacob, Amram, Ahijah, and Elijah) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 122a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with multiple actions and divine intervention, but it is about biblical figures (Joshua and Elazar the High Priest) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 124b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a report of a rabbi's arrival and his subsequent teaching, followed by a standard rabbinic dialogue. Under R-C2 and R-C7, teaching and scholarly dialogue are speech-acts that do not constitute a story without an event or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 125a:5-Bava Batra 125b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a moribund man's bequest, the subsequent deaths of his daughter and grandmother, and a legal claim brought by the husband. Under R-C0, an incident followed by a ruling counts as a story, as it describes events that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 126a:9-Bava Batra 126b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a firstborn selling property, orphans being struck by purchasers, and a subsequent legal resolution by Rava. This fits the criteria of a story where an incident leads to a ruling and involves multiple actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 126b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man performed an action (dividing peppers equally) and subsequently came before a rabbi for a ruling that resolved the case. This fits the criteria of a story where an incident is followed by a ruling and involves more than one action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 126b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man coming before a rabbi and engaging in a dialogue about a legal claim, but there is no action or change narrated beyond the speech itself. Under R-C0 and R-C7, a case where coming before a rabbi is the only event and results in a ruling or discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 126b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a man coming before a rabbi and a dialogue regarding a legal status, which fits the 'one event followed by discussion' shape. While it contains conflict and implied change regarding the status of the firstborn, it is primarily composed of speech acts, placing it in the borderline category.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 127a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rav Pappa challenges Rava with a report from Ravin, leading to a distinct change in Rava's behavior where he publicly retracts his previous teaching and appoints an amora to announce his mistake. This constitutes more than a simple ruling, as it includes a conflict of information and a narrated change in the rabbi's public stance.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 127a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal inquiry sent to a rabbi and his response; under R-C0 and R-C7, a case where the only event is coming before a rabbi for a ruling without further narrated action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 131a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a dialogue between Rabbi Natan and Rabbi Yehuda HaNasi regarding a Mishnaic text. However, it includes a personal admission of 'immaturity' and 'insolence' (conflict/emotional reaction) and a change of mind by Rabbi Yehuda HaNasi, which fits the borderline criteria for speech-based narratives with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 132a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific person (the niece of Rabbi Yehuda the Baker) that was brought before the Sages for a ruling. Under R-C0, an incident followed by a ruling counts as a story, and under R-C1, the Talmud's quotation of a story from a Tannaitic source is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 132b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man... who said') followed by a rabbinic interaction and ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 132b:8-Bava Batra 133a:1",
+   "answer": {
+    "outcome": "invalid",
+    "verdict": null,
+    "rules": null,
+    "segments": null,
+    "reason": null,
+    "error": "unparseable: Extra data: line 11 column 4 (char 384); raw='[\\n  {\\n    \"verdict\": \"story\",\\n    \"rules\": [\\n      \"R-C0\"\\n    ],\\n    \"segments\": [\\n      2,\\n      3\\n    ],\\n    \"reason\": \"Segment 2 narrates a specific incident (\\'a certain man... one of his daughters'"
+   }
+  },
+  {
+   "id": "Bava Batra 133a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident about a dying man and his interaction with those around him, which is embedded within a dialogue between Rav Nahman and Rav Huna. Under R-C0 and R-C4, this constitutes a story because it describes a specific event that happened followed by a rabbinic ruling/confirmation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 133b:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a legal claim that leads to a courtroom interaction between Rav Ilish and Rava. It includes multiple actions, a ruling, and a specific emotional reaction ('Rav Ilish was embarrassed') which Jeff identifies as an event that counts toward a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 133b:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Yosef ben Yo'ezer and King Yannai) containing multiple actions, conflict (the son's behavior and the father's consecration), and a clear change of fortune involving a discovery and a subsequent transaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 133b:11-Bava Batra 134a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Yonatan ben Uzziel and Shammai) with multiple actions, conflict, and a change in state. It begins with a standard opening formula and contains a sequence of events (the transfer of property, the distribution, the confrontation, and the resolution) that goes beyond a bare report or a simple ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 134a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Talmudic story (a Mishnah story quoted in the Gemara) involving post-biblical figures. It contains multiple actions, dialogue with significant conflict, and a change in the situation (the consecration of the property) that goes beyond a bare report or a simple ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 134a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Yonatan ben Uzziel's study) that results in a supernatural event (birds being incinerated), which Jeff classifies as borderline when it involves a habit that leads to a change or action (R-C3, R-C7 shape 3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 134b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (an exclamation and a scholarly critique) without any narrated action or event. Under R-C2 and R-C7, standard rabbinic dialogue or a challenge to a ruling does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 134b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes standard rabbinic dialogue and scholarly back-and-forth; Rav Sheshet's hand gesture is a physical reaction to a teaching, but there is no narrated event or change beyond the speech-act of reporting and reacting to a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 135a:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a dying man and his wife, followed by a legal debate and a final ruling by Rava. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions and a change in the rabbi's position.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 135a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific incident ('A certain man...') and includes a ruling by Rava, which fits the R-C0 definition of a potential story. However, because the narrative consists almost entirely of a legal dialogue between Rav Yosef, Abaye, and Rava with no further action described, it falls into the borderline category of 'one real event, then discussion or a ruling' (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 136a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabba bar Avuh falling ill) and a subsequent visit by two rabbis, involving dialogue with conflict/hesitation and a resolution (the asking and the ruling). This meets the criteria for a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 136a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event where the Sages asked the scribes of Abaye and Rava and received an answer. While it is primarily a dialogue-driven inquiry within a legal discussion, the act of questioning and the discovery of the scribes' knowledge constitutes a real event with a change in the Sages' understanding, fitting the borderline criteria for speech with conflict or implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 137b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a woman and Rav Beivai bar Abaye with multiple actions (the woman's transfer of the tree, Rav Beivai's transfer to his son) and a resolution through Rav Huna's sharp rebuke and ruling. It meets the criteria of R-C0 as an incident followed by a ruling, and contains the conflict and change required to distinguish it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 140b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event beyond speech (the instruction to leave and the return the next day), but it functions primarily as a frame for a legal ruling. Under R-C7 shape 2, an incident followed by a ruling is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 141b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of an incident followed by a ruling where the only narrated action is the man's speech; there is no second action or change narrated beyond the rabbi's legal determination.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 142b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident that is only alluded to ('there was an incident') to serve as evidence in a legal discussion, which fits the definition of a borderline story. It describes a specific event (the fetus moving) but lacks full narration and is used to resolve a technical difficulty.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 142b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (an order to gather ten men) and a public declaration of a ruling. While it is primarily dialogue, the specific instruction to gather an assembly creates a sense of action and conflict with the previous ruling, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 142b:7-Bava Batra 143a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrated incident involving a man and his son (R-C0) and transitions into a courtroom-style drama between rabbis with significant conflict and personal retorts (R-C2, R-C7), including physical actions like nodding in the study hall.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 143a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man making a statement about his property followed by a rabbi's ruling. Under R-C0 and R-C5, this is a bare report of a legal case where the only event is the speech-act itself, which does not lead to a narrated change or further action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 143a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains bare reports of legal precedents where a rabbi made a ruling (Shmuel, R. Yohanan, and Rabbi Yehuda HaNasi). Under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only event, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 143b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an incident followed by a ruling where the only narrated action is the sending of a gift; there is no further action, conflict, or change narrated beyond the rabbi's determination of the law.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 143b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case introduced by 'a certain man', but it lacks a narrated resolution or change; it immediately transitions into a standard rabbinic dialogue about biblical linguistics. Under R-C0 and R-C5, a report of an incident that leads only to a discussion without a narrated action or ruling is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 143b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man's statement and his family situation as a setup for a legal debate between Rav Haviva and Mar bar Rav Ashi. Under R-C0 and R-C5, this is a legal case used to discuss the definition of terms rather than a story, as there is no narrated action or change following the initial incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 144a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (Rav Safra's father leaving money and Rav Safra investing it) followed by a conflict (the brothers suing him) and a resolution through a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 146a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a man's actions and his subsequent death, followed by a ruling from the Sages in Usha. Under R-C0, an incident followed by a ruling counts as a story, and R-B1 dictates including the opening formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 146a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a man sending gifts (a single act) with no narrated change or continuation, which falls under the R-C5 disqualifier. The subsequent discussion is Gemara commentary explaining the legal or descriptive significance of the act, which is excluded under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 146a:12-Bava Batra 146b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (following her, testing her, the dialogue), a tragic event (the ruin collapsing), and a subsequent ruling by the Sages. It follows the R-C0 criteria for a story and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 149a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving Issur the convert and Rava, featuring conflict (Rava's attempt to legally block the transfer) and implied change. While much of the passage is Rava's internal or external reasoning (speech-acts), it describes a real-world situation on a deathbed that leads to a resolution, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 150b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rav Pappa and Rav Shmuel bar Aha with multiple actions (transferring money via land, traveling, and meeting) and an emotional resolution, which satisfies the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a sequence of events (writing a deed, marrying, and being divorced) followed by a legal ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened and contains multiple actions beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific sequence of events involving the mother of Rami bar Hama and her conflicting deeds, followed by a 'courtroom drama' where two different rabbis issue rulings and then engage in a legal confrontation. It meets the criteria of R-C0 as it contains multiple actions (writing deeds, coming before rabbis) and a change in the legal status of the property.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (a mother's deathbed gift) followed by a legal challenge and a ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (writing a deed, a brother crying, a change of heart/second deed) and a resolution by a rabbi. It satisfies R-C0 as it describes a specific incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151a:11-Bava Batra 151b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (R-C3) that leads into a specific one-time event involving a property dispute between Rav Dimi and his sister. It contains multiple actions, conflict, and a courtroom drama before Rav Nahman that results in a change of outcome (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 151b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative incident (the mother of the sons of Rokhel falling ill, giving a command, and dying) followed by a ruling/outcome. Although it is a Mishnah story quoted in the Gemara, rule R-C1 states that such citations are included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 152b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical gesture and the act of arising, which go beyond pure speech, but it remains primarily a dialogue about a legal difficulty. Under R-C7 shape 1, it is borderline because it is mainly speech acts with minimal physical events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 153a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('a certain person') involving a narrated action (transferring property and recovering) followed by a ruling from Rav Huna. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 153a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories: segment [2] narrates a man coming to court and being sent to another jurisdiction to avoid a local legal conflict, while segments [3]-[4] describe a woman's persistent conflict with Rava, leading to a ruse, a curse, and a supernatural consequence (the sinking of his ship).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 153a:11-Bava Batra 153b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case (ההוא מַתַּנְתָּא) where the only narrated event is the existence of a deed with a missing formula, followed by a rabbinic debate. Under R-C0 and R-C5, a case that consists only of a situation and a ruling without a second narrated action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 154a:10-Bava Batra 154b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a complete story about an incident in Bnei Brak involving Rabbi Akiva, featuring multiple actions (selling property, dying, family contesting, coming to court) and a resolution. While it is embedded in a legal discussion (R-C4) and quoted from a Baraita (R-C1), it meets the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 155a:3-Bava Batra 155b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a complete story about an incident in Bnei Brak involving family conflict and a ruling by Rabbi Akiva. Segment [5] contains a second story about Rabbi Hiyya's active intervention and medical advice in cases brought before him, which constitutes more than a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 155b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man sold property and came before Rava, who issued a ruling. Under R-C0, an incident followed by a ruling counts as a story, especially as it includes additional narrated actions like the man emancipating his slaves.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 155b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions (selling property, throwing pits, questioning a scribe's fee) and a change in the rabbi's ruling based on the character's behavior. It follows the 'certain man' shape and contains the 'courtroom drama' and dynamism required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 156b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (quoted here in the Gemara) containing a specific one-time event (the mother's illness and deathbed instruction) followed by a response and a ruling, which meets the criteria for a narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 156b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (the man of Meron) who performs multiple actions (desiring to give gifts, acquiring land, and making a declaration) which lead to a change in status (the Sages upholding his statement). Per R-B1, the opening formula 'It is taught... Rabbi Eliezer said' is included as the frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 159b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a property sale and a subsequent dispute over a parcel of land, which then comes before Rav Nahman for a ruling. According to R-C0, an incident followed by a ruling counts as a story, as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 159b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case brought before a rabbi followed by a ruling and a scholarly challenge. Under R-C0 and R-C7, coming before a rabbi and being ruled on is not a story unless there is another narrated action or change; here, the interaction is entirely verbal and functions as a legal precedent for the subsequent dialectical discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 160b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story about a document brought before Rabbi Yehuda HaNasi. It meets the criteria of R-C0 and R-C4 as it narrates a specific event with multiple actions (bringing the document, a verbal exchange, and the physical act of opening it) that leads to a change in understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 164b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event where a man brought a document before Rabbi Yehuda HaNasi, followed by a dialogue involving conflict (a correction of the Rabbi's error) and a change in the Rabbi's understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 164b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case involving a document with an ambiguous date followed by a ruling; however, there is no narrated action or change beyond the ruling itself, which falls under the limit of R-C0 and R-C5.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 164b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving multiple actions (bringing a document, opening it, a disapproving look) and a dialogue with conflict and change. It meets the criteria of R-C0 as it is more than a bare ruling, containing a 'courtroom drama' and emotional reactions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 164b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving sitting, reciting, and a dialogue that includes conflict and a rebuke. It contains multiple actions and a clear interaction between post-biblical figures, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 165a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal ruling followed by standard rabbinic dialogue and a challenge. Under R-C2 and R-C7, speech-acts and scholarly back-and-forth without a narrated event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 165b:2-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of historical interactions between the academy and Rabbi Yirmeya, involving conflict (his previous expulsion) and a significant change in status (his readmission to the study hall) resulting from his humble and wise responses.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 166a:6-Bava Batra 166b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story from the Mishnah quoted in the Talmud. It contains a specific incident (the price of nests rising), a character's emotional reaction and oath, a subsequent action (entering the court and teaching), and a narrated change in the world (the price dropping that same day).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 166b:7-Bava Batra 167a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a document with ambiguous wording and a subsequent action where Rav Sherevya sends the case to Abaye for a ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 167a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific person ('a certain tax collector') coming before a rabbi, an interaction with dialogue, and a physical action (the collector pulling the parchment) that leads to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 167a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man committed forgery and was subsequently caught and coerced into a confession by Abaye. This follows the R-C0 criteria of an event that happened followed by a rabbinic action/ruling that resolves the case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 167a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a forgery) followed by a courtroom interaction where Abaye's investigation leads to a physical action (binding) and a change in state (the confession). This fits the criteria of an incident followed by a ruling or action that creates dynamism and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 167a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a forgery brought before Rava, featuring multiple actions (coming before the rabbi, a challenge, physical coercion, and a confession) and a change in state (the admission of the forgery).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 167b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a woman coming before a rabbi and a conflict regarding her identity, including a past interaction with other witnesses. Under R-C0, this is a story because it describes an event that happened with multiple actions and dialogue containing conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 168a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a rabbi (Rav Yirmeya bar Abba) and a woman, featuring a conflict over identification and a subsequent resolution/ruling by Abaye. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 168b:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific group of people (Arabs and landowners) and a specific rabbi (Abaye). It contains multiple actions and a change in the situation: the landowners come to court, Abaye initially refuses, they badger him, and he eventually devises a clever legal ruse to satisfy them.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 169b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a woman and her agent (giving money, purchasing land without a guarantee) followed by a legal resolution from Rav Nahman. Under rule R-C0, the narrated event of the purchase constitutes the story, and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 170a:16-Bava Batra 170b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama involving specific rabbis (Rav Yitzḥak bar Yosef, Rabbi Abba, and Rabbi Yitzḥak Nappaḥa) where an incident (a debt claim) leads to a legal interaction and a resolution. Under R-C0, an incident followed by a ruling or interaction counts as a story, and the 'courtroom drama' aspect provides the dynamism required to be more than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 171a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion (baraita) presenting a hypothetical case ('If one thousand dinars are owed...') and the conflicting rulings of Rabbi Yehuda and Rabbi Yosei. It does not narrate an event that actually happened to specific individuals, but rather outlines standard legal procedure and its rationale.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 171b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving specific rabbis (Rav Yitzḥak bar Yosef, Rabbi Abba, and Rabbi Ḥanina bar Pappi) that includes actions (coming before a judge), conflict (the refusal to pay without the return of the note), and a resolution through a ruling. Under R-C0, the ruling serves as the resolution to a narrated event, and the judge's emotional speech about the 'dust of Rav and Shmuel' adds the dynamism required to distinguish it from a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 172a:13-Bava Batra 172b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('a certain promissory note') presented in court, followed by a ruling and a subsequent interaction between rabbis. Under R-C0, an incident followed by a ruling counts as a story, and the inclusion of the opening formula 'Gemara' is consistent with R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 174a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a judge and Rav Hanin, containing multiple actions (permitting entry, overruling, and expelling) and a change in the situation. Under R-C0, the fact that it includes a ruling and a subsequent praise by Rava does not disqualify it, as the narrated events go beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 174a:12-Bava Batra 174b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "While the passage begins with a narrated incident (a guarantor repaying a debt), it immediately transitions into a standard legal debate between Rav Pappa and Rav Huna. Under R-C0 and R-C7, a single event followed by a ruling or discussion without a narrated change or further action is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 174b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a single event (a guarantor repaying a gentile) followed by a legal discussion between Rav Mordekhai and Rav Ashi. Under R-C0 and R-C7 (shape 2), one event followed by a ruling or discussion without a narrated change or further action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 174b:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Moshe bar Atzari and Rav Huna) with a clear sequence of events: financial distress, a proposed plan by Abaye, and a final discovery (that he was a priest) which creates a change in the situation and a resolution. It contains multiple actions and conflict beyond simple legal dialogue, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 175b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that narrates a specific incident brought before a rabbi (R-C0). It contains conflict and dialogue between Rabbi Yishmael and Ben Nannas (R-C2) and concludes with a significant change in Rabbi Yishmael's perspective, where he praises his opponent's wisdom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 176a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Talmudic citation of a Mishnah story (R-C1) involving an incident brought before a rabbi followed by a ruling and a praise of the opponent. Under R-C7 and R-C0, it is borderline because while it contains a real event (coming before the rabbi) and conflict (the debate with Ben Nannas), the passage as presented here is primarily a report of a ruling and subsequent legal discussion.",
+    "error": null
+   }
+  }
+ ]
+}

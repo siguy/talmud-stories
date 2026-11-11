@@ -1,0 +1,1114 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 62
+  },
+  "imported": "2026-11-10T06:15:38"
+ },
+ "rows": [
+  {
+   "id": "Sanhedrin 89b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Aggadic exchange between Ishmael and Isaac that prompts God's testing of Abraham; biblical characters, not rabbis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 113a:10-Sanhedrin 113b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segments 2-5 retell the Elijah/Ahab/Hiel narrative (biblical, out of scope), but 7-8 tell how Elijah, who habitually visited Rabbi Yosei of Tzippori, stayed away three days after being called difficult and then returned to confront him: an in-scope story with action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95b:15-Sanhedrin 96a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Full narrative of God shaving Sennacherib, the angels, the fire, and his sons killing him; a biblical king's story, outside the rabbinic scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26a:20-Sanhedrin 26b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     8,
+     9
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Narrative of Shebna's betrayal during Sennacherib's siege and his death at the Assyrians' hands; biblical figures. Segments 6-7 are exegetical commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 16a:18-Sanhedrin 16b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "David's lyre, the Sages' plea for sustenance and David's order to go to war form a narrative about a biblical king; segments 5-6 are exegesis of the verse.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Eldad and Medad decline greatness and God rewards them with lasting prophecy; a biblical episode, outside scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89a:14-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Exegetical discussion of why Zedekiah son of Chenaanah was culpable, quoting biblical verses; no narrated incident beyond the biblical account, which would be out of scope anyway.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Sennacherib's forced march, his contempt for Jerusalem and the destruction of his army; a story about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 92b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A tannaitic dispute over what Ezekiel's revived dead sang and whether it was a parable; the biblical event is only cited, not narrated as an in-scope story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Exegetical reports of what Manasseh, Ahaz and Amon did with an idol; bare reports about biblical kings with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Eliezer, servant of Abraham, wounds the Sodomite judge and turns his ruling against him; a story about a biblical character.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 64a:3-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "In Nehemiah's time the people fast and, at the prophet Zechariah's direction, capture and imprison the inclinations for idolatry and sexual sin; biblical-era figures. Segment 3 is commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 93a:12-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The false prophets Ahab and Zedekiah, Nebuchadnezzar's daughter, the fiery test and Joshua the High Priest; a complete story, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses' lottery for choosing the seventy Elders; a biblical episode retold, outside scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God burns groups of angels who object to creating man; a primordial/biblical narrative, not about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 63b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Hezekiah's father tried to burn him and his mother protected him with salamander blood; a brief incident about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "God rebukes the angels for wanting to sing while the Egyptians drown; a speech-centred aggadic episode set in the biblical period.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 102a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "God urges Jeroboam to repent and Jeroboam refuses; a dialogue about a biblical king, outside scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "David asks for an ordeal, Satan as a bird exposes Bathsheba, and David sins; a full story about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 48b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Joab's message to Solomon through Benaiah, and Solomon's order to kill him; a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96b:1-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full narrative of Nebuzaradan breaching Jerusalem, the boiling blood of Zechariah and his conversion; a story, but about a biblical-era figure (the editor ruled Nebuzaradan out of scope at Gittin 57b).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The young woman of Sodom who fed the poor, was discovered and killed: events with change, but set in biblical Sodom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "One-time incident of a launderer in Sodom who was wounded and then fined by the judge; a story, but about the biblical Sodomites.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "King Jehoiakim's defiant exchange is speech with conflict (at most borderline), and in any case concerns a biblical king, not rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89a:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Hananiah ben Azzur hears Jeremiah, infers and falsely prophesies; a biblical episode retold. Segment 3 is the Gemara's discussion, not story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 105a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Ten men come before Ezekiel and argue with him; mainly speech with conflict, and about a biblical prophet.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:15-Sanhedrin 110a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "On ben Peleth's wife saves him by getting him drunk and blocking the tent while Korah's band is swallowed; a full story about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 82a:10-Sanhedrin 82b:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Extended aggadic narrative of Zimri, Cozbi and Pinehas; a story about biblical characters. Segment 5 is alternative exegesis rather than narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 43b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Joshua casts lots, Achan protests and is persuaded to confess; a biblical episode retold.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 99b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "King Manasseh mocks Torah verses and a Divine Voice rebukes him; mostly speech with conflict, about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Hushai's exchange with David about idol worship; speech with conflict about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 99b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Timna seeks to convert, is rejected, becomes Eliphaz's concubine and Amalek descends from her; a story with consequences, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95a:6-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The long narrative of David captured by Ishbibenob and rescued by Abishai; a full story about biblical characters. Segment 7 is the Gemara's question and answer.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God makes the sun set early so Jacob will sleep at the site; a short miraculous incident about a patriarch, out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Amon's incest and his exchange with his mother; an act plus defiant speech, about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 70b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Bathsheba binds Solomon to a pillar and rebukes him for drinking; an event plus speech, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The angels seek to remove Micah and God rebukes the tribes over the concubine of Gibeah; aggadic retelling of biblical events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 47a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A single act (Hezekiah dragging his father's bones) cited as evidence in a legal argument, with nothing following; a bare report, and biblical in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52a:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Nadav and Avihu walking behind Moses and Aaron and God's response; a short incident about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Eliezer at the Sodom wedding tricks each guest into fleeing and eats the meal; a story, but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident (Hezekiah intercalated the year for impurity and then prayed for mercy), cited as precedent, but about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96b:9-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A narrated exchange of messages between Ammon and Moab and Nebuchadnezzar that ends with him coming to conquer Jerusalem; a story, but about biblical-era figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 92b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Ezekiel revives the dead, the bones strike Nebuchadnezzar, and he praises God: events with a reaction, but a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107b:4-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The Gehazi, Elisha and Naaman narrative (healing, Gehazi taking the gifts, leprosy) is a full story about biblical characters; the exegetical alternatives in between are Gemara commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The tail of the verse cited about Hezekiah, then a Tannaitic discussion of why he prayed for mercy; commentary on a biblical incident, with no new narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 108a:21-Sanhedrin 108b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Noah rebukes his generation and they answer him defiantly; a dialogue with conflict, but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19b:18-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Palti placing a sword between himself and Michal is a narrated act with a vow, but about biblical figures; the verse-by-verse reading that follows is commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 44a:18-Sanhedrin 44b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The angel rebukes Joshua and Joshua at once spends the night in Torah study: an encounter with a change, but a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89b:8-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Satan's accusation, God's test, and Satan confronting Abraham on the way form a story, but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 101b:14-Sanhedrin 102a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Jeroboam's council, which seats the wicked beside the righteous and gets Ahijah to sign, is a narrated scheme with consequences, but it concerns biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 94a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A heavenly exchange over making Hezekiah the Messiah, with the earth singing and a Divine Voice refusing; conflict and a thwarted outcome, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 93a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "After Hananiah, Mishael and Azariah come out of the furnace the nations strike Israel and they respond; events with a reaction, but from the Book of Daniel.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Eliezer, servant of Abraham, evades the bed of Sodom with a vow; a narrated encounter, but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 94b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Hezekiah plants a sword at the study hall and afterwards no ignoramus is found; an act with a consequence, but about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 21b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Gabriel plants a reed in the sea when Solomon marries Pharaoh's daughter and Rome is built on it; a narrated event, but tied to a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 49a:1-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Solomon puts Joab on trial for killing Abner and Amasa; a courtroom confrontation, but between biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses runs a lottery with slips to decide which firstborn must pay redemption; a narrated action solving a problem, but about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 106a:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Balaam's advice, Balak's tents of prostitutes, and the seduction to Baal-Peor are a full story, but a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:17-Sanhedrin 107b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "David's affliction and forgiveness, shown when the Temple gates open for Solomon, is a story with change, but about biblical kings; segment 3 is exegetical proof.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109a:16-Sanhedrin 109b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The orphan in Sodom kills the oxen and turns Sodom's own rule against it; an incident with conflict and a reversal, but set in biblical Sodom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Nebuchadnezzar, as Baladan's scribe, corrects the letter's order of greetings and runs after the messenger until Gabriel stops him; a story about biblical-era kings, outside scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 22a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Abishag proposes marriage to David, is refused, retorts, and David summons Bathsheba; a biblical episode.",
+    "error": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,125 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 6
+  },
+  "imported": "2026-11-10T06:15:38"
+ },
+ "rows": [
+  {
+   "id": "Yoma 52b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that King Josiah buried the Ark after reading a verse, cited to answer who buried it; one act with nothing following, and about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 54b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "When the gentiles entered the Second Temple they saw the embracing cherubs, took them to the market, mocked Israel and debased them: several actions and a consequence, set in post-biblical history.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 77a:1-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A full heavenly narrative (Michael, Gabriel punished and replaced, Dubiel swallowing the decree) set around the First Temple's destruction and Daniel; it concerns God, angels and biblical-era events, not rabbis; segment 3 is a rabbinic comment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 4a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A tannaitic dispute over the chronology of Moses entering the cloud at Sinai; exegesis of a biblical episode, not a narrated story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 69b:5-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The capture of the evil inclination in the days of Nehemiah, guided by Zechariah the prophet, is a full story with events and change, but its actors are biblical figures retold aggadically (like Gittin 57b), so it falls under R-S1; segment 4 is a rabbinic comment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Yoma 35b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Potiphar's wife repeatedly seducing and threatening Joseph, who refuses, is a story about a biblical figure.",
+    "error": null
+   }
+  }
+ ]
+}

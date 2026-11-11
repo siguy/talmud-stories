@@ -1,0 +1,927 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-10T00:00:26",
+  "outcomes": {
+   "ok": 52
+  }
+ },
+ "rows": [
+  {
+   "id": "Rosh Hashanah 6a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story quoted in the Talmud, which counts as Talmudic under R-C1. It narrates a specific past event ('we once had a cow... and we ate it') rather than a hypothetical case, satisfying the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 11a:0-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     8,
+     10,
+     13,
+     14,
+     15,
+     16,
+     19
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains full-blown stories and narrated events (the creation of the world, the birth of Isaac, Joseph's release from prison), but these are about biblical characters rather than rabbis or post-biblical figures. Under rule R-S1, such biblical episodes are considered stories but are classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 11b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story about the generation of the flood and Noah, involving actions by God and biblical figures. According to R-S1, biblical episodes retold are considered stories but are classified as out of scope for this catalogue of rabbinic and post-biblical narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 12a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving God and the generation of the Flood, which are biblical characters and episodes. Under rule R-S1, such narratives are considered stories but are classified as out of scope for this collection.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 14a:10-Rosh Hashanah 14b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rabbi Akiva did (picking an etrog and tithing) cited as a legal precedent. According to R-C5 and Jeff's specific ruling on this exact case in Yevamot 15a, a description of a rabbi's practice that does not lead to a further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 15b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rabbi Yohanan's silence) followed by a dialogue between two other rabbis observing the scene. Under R-C2 and R-C7, dialogue with conflict or an event-based frame is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 17a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rav Huna and Rav Pappa) containing multiple actions, an emotional reaction (embarrassment), and a significant change in state (recovery from near-death). It follows the pattern of a one-time event that illustrates a principle, meeting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 17b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a post-biblical figure (Beloreya) and rabbis involving a theological challenge and a response. Under R-C2 and R-C7, speech-based interactions with conflict or intellectual challenge are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 18a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a story embedded within a dictum (R-C4) about Rabba and Abaye. It narrates specific events that happened to them—their lineage, their distinct actions (Torah study vs. acts of kindness), and the resulting change in their lifespans (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 18a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a family suffering from a curse comes to a rabbi, receives advice, acts upon it, and experiences a change in outcome (they lived). This meets the criteria of having multiple actions and a clear change, and it includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 18b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rabbi Eliezer and Rabbi Yehoshua) with multiple actions (bathing, hair cutting) and a verbal response to the conflict. Although it is a citation of a Tannaitic source within a legal objection, it meets the criteria for a Talmudic story under R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 19a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (Yehuda ben Shammua and his colleagues) taking action that leads to a change in circumstances (the annulment of the decrees). It follows the pattern of a one-time event following a habitual frame (the matronita's regular visitors) as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 20a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a report of a statement made by Ulla upon his arrival, followed by a standard rabbinic dialogue explaining the reasoning behind a legal practice. There is no narrated action, conflict, or change beyond the speech-acts themselves.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 20b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Shmuel and Abba with clear conflict and a rebuke, which qualifies as borderline under R-C2 and R-C7 shape 1. Segment 4 is a separate report of a message sent, and segment 5 is commentary/explanation of the previous dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 21a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific rabbi (Levi) arriving in a location, making a provocative statement, and engaging in a dialogue with conflict (the demand for testimony) that results in a refusal based on a specific rationale.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 21a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where two rabbis visit a place, witness a practice, and fail to act, followed by an emotional reaction (anger) and a rebuke from Rabbi Yohanan. This contains multiple actions and a change in state beyond a simple legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 21a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories: segment 2 follows the R-C3 pattern where a habitual custom ('Rava would regularly') leads to a one-time event ('It once happened'), and segments 3-4 narrate a specific incident involving Rav Nahman and a messenger that results in a change of state and an emotional reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 21b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story involving a specific incident (Rabbi Akiva detaining witnesses) followed by a conflict and response from Rabban Gamliel. Although it is a Mishnah story, rule R-C1 dictates that it is included when appearing in the context of the Talmudic discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 22a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving post-biblical figures (Rabbi Akiva, Zefer, and Rabban Gamliel) with multiple actions and a clear change in status (the removal of Zefer from office). Although it quotes a Mishnah story, the Talmudic citation and the subsequent baraita containing the resolution make it a Talmudic story under rule R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 22a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story (ma'aseh) involving post-biblical figures. It narrates a specific sequence of events—seeing the moon, appearing before the priests, and then the court—resulting in a change of legal outcome (the acceptance and disqualification of different witnesses).",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 22b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a single act (Rabbi Nehorai going to testify) cited as a legal precedent. Under R-C5 and the limit of R-C0, a single action that does not lead to a narrated change or a specific ruling within the passage itself is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 22b:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a specific historical incident involving the Boethusians and the Sages. It contains multiple actions (hiring, testifying, confessing) and a clear change in outcome (the institution of a new legal decree).",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 23b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of a legal enactment (takkanah) by Rabban Gamliel the Elder rather than a story; it describes a change in law but lacks a specific narrated incident or event involving characters beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 24b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a brief interaction between Shmuel and Rav Yehuda involving a specific object (a seal) and a command to disfigure it. While it functions as a legal precedent and is heavy on speech, the command to 'blind its eyes' constitutes a specific action/change beyond standard dialogue, fitting the borderline criteria for courtroom-like drama or speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 24b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (Rav, Shmuel, etc.) entering a specific location and performing an action (praying) despite the presence of a statue. This constitutes more than a bare report or legal ruling, as it describes a concrete incident with multiple actors that serves as a precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 24b:13-Rosh Hashanah 25a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (R-C1) involving post-biblical figures (Rabban Gamliel, Rabbi Yehoshua). It contains multiple actions, conflict, and a clear emotional and narrative resolution (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 25a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates two distinct incidents involving Rabbi Hiyya: first, a specific one-time event where he sees the moon and throws a clump of earth at it, and second, a specific mission where Rabbi Yehuda HaNasi sends him to Ein Tav to sanctify the moon. These are narrated events involving rabbis that lead to actions and changes, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 25a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving the court's attempt to sanctify the moon and Rabban Gamliel's intervention. It includes multiple actions and a change in the people's understanding, specifically through the act of the eulogy in segment 3 which serves as a narrative resolution to the conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 25a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Akiva visits Rabbi Yehoshua and finds him in a state of emotional distress. This contains action, emotional reaction, and dialogue with conflict, meeting the criteria for a rabbinic story even though it is quoted from the Mishnah/Baraita.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 25b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical narrative involving Rabban Gamliel and Rabbi Yehoshua with multiple actions (taking a staff, rising, kissing) and a clear emotional resolution. Although it quotes a baraita that parallels the Mishnah, it is included as a Talmudic citation of the story per R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a linguistic observation made by Rabbi Akiva during his travels, cited as evidence for a word's meaning. It lacks the necessary actions, conflict, or change required for a story, and is essentially a speech-act used for scholarly teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of bare reports of what Rabbi Akiva heard during his travels, cited solely as linguistic evidence for biblical exegesis. There is no narrated action, conflict, or change following these observations, making them standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's travel and linguistic observation used to clarify a biblical term; it lacks a narrated event, conflict, or change, and functions as standard rabbinic dialogue/commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's observation of local customs used to clarify biblical vocabulary, which lacks the actions, conflict, or change required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26a:20-Rosh Hashanah 26b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a man comes before Levi with a complaint, leading to a sequence of actions: Levi's confusion, his trip to the study hall, and the resolution of the linguistic mystery.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where the Sages heard a maidservant speak, leading to a change in their understanding of a word. This fits the criteria of an event that happened involving post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day they heard...') involving post-biblical figures (the Sages and the maidservant of Rabbi) that leads to a change in their understanding of a word. It follows the pattern of a story frame leading to a specific incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day they heard...') involving post-biblical figures (the Sages and the maidservant of Rabbi Yehuda HaNasi). It contains multiple actions—the man curling his hair and the maidservant's rebuke—which lead to a change in the Sages' understanding of a word.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day they heard...') involving post-biblical figures (the Sages and Rabbi's maidservant) that leads to a change in their understanding. Per R-C3, the framing of the Sages' habitual ignorance does not disqualify the specific incident that follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 26b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day I was traveling...') involving a rabbi and a post-biblical figure (an Arab merchant) that includes actions and dialogue leading to a change in the Sages' understanding. It follows the pattern of a story framed by a linguistic problem, where the narrated incident provides the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 27a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi's intention to act (thought to act) followed by a ruling that corrects him, which falls under the limit of R-C0 where coming before a rabbi or a mere ruling is not enough of an action to constitute a story. According to R-C5 and R-C7, a bare report of a legal stance or a ruling without a narrated change or a second distinct action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 27a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where two rabbis established a practice, followed by the matter coming before the Rabbis and their subsequent ruling. This fits the criteria of an incident followed by a ruling with multiple actions and a change in status, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 28b:24-Rosh Hashanah 29a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (a rabbi's instruction to his servant) followed by a conceptual inference by the Gemara. There is no narrated action, conflict, or change in outcome, making it standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 29b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Rav Pappi's practice of reciting kiddush) that involves multiple parties and a change in their status (discharging their obligation). Under R-C3 and R-C7 shape 3, a habit that leads to a change or involves multiple actions is at least borderline, even if it lacks a specific 'one day' event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 29b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabban Yoḥanan ben Zakkai) involving a specific one-time event ('Once Rosh HaShana occurred on Shabbat') that includes conflict, action (sounding the shofar), and a change in the legal reality. Per R-C1, the Talmud's citation of this Tannaitic story is included, and per R-B1, the opening formula is part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 30b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that follows a habitual frame ('Initially...') with a specific one-time event ('Once...') that leads to a change in practice (R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 31b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a woman summoned to court and Ameimar's subsequent action of writing a document of excommunication. Under R-C0, this is a story because it describes events that happened (the summons, the travel, the refusal to follow, and the ruling/action) rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 31b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rabbi Eliezer and his students, featuring an intended action (seeking to render the vineyard ownerless) and a resolution through the students' response. It includes the opening formula 'And it was taught' as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 32a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('when the court sanctified the year in Usha') involving multiple actions by post-biblical figures and a resolution through dialogue. It follows the pattern of an incident followed by a ruling or reaction, which qualifies as a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 34a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's legal institution followed by a standard halakhic discussion. Under R-C5 and the limit of R-C0, a report of what a rabbi did or instituted that leads only to a legal debate without further narrated action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 34b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rabbi Abbahu was walking after Rabbi Yoḥanan and stopped reciting Shema due to filthy alleyways, followed by a dialogue and a ruling. This contains multiple actions and a specific event rather than a hypothetical case or a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 34b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Pappa bar Shmuel rose to pray and gave instructions to his attendant, followed by a ruling from Rava. Under R-C0, an incident followed by a ruling counts as a story because it describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  }
+ ]
+}

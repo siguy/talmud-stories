@@ -1,0 +1,3320 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/bava_kamma/run1.json",
+   "v14_r2": "results/v14/bava_kamma/run2.json"
+  },
+  "spans": {
+   "v14_r1": 121,
+   "v14_r2": 118
+  },
+  "units": 120,
+  "built": "2026-11-10T06:05:11"
+ },
+ "units": [
+  {
+   "id": "Bava Kamma 11a:10-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 11a",
+     10
+    ],
+    [
+     "Bava Kamma 11a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man who broke a borrowed ax is told by Rav to replace it with a new one, but Rav's colleagues challenge the ruling and Rav concedes through silence."
+  },
+  {
+   "id": "Bava Kamma 12a:0-0",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 12a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "After Rav Naḥman leaves the room, Ulla clarifies a legal ruling of Rabbi Elazar to the remaining students."
+  },
+  {
+   "id": "Bava Kamma 12a:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 12a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Judges in Neharde’a and Pumbedita collected slaves from orphans to pay debts, but Rav Naḥman ordered them to return the property."
+  },
+  {
+   "id": "Bava Kamma 17a:1-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 17a",
+     1
+    ],
+    [
+     "Bava Kamma 17a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes the unique funeral honors given to King Hezekiah, including a massive procession and the placement of a Torah scroll on his bier."
+  },
+  {
+   "id": "Bava Kamma 17a:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 17a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Hana describes his habit of following Rabbi Yohanan to ask questions and how the Rabbi would only answer after performing his post-lavatory rituals."
+  },
+  {
+   "id": "Bava Kamma 19b:16-16",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 19b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A donkey ate bread and broke the basket it was in, leading Rav Yehuda to rule that the owner must pay full damages for the bread and half for the basket."
+  },
+  {
+   "id": "Bava Kamma 20a:0-0",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 20a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A goat climbed a clay barrel to eat a turnip, breaking the barrel in the process, leading Rava to rule that the owner must pay full damages for both."
+  },
+  {
+   "id": "Bava Kamma 20a:15-Bava Kamma 20b:2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 20a",
+     15
+    ],
+    [
+     "Bava Kamma 20a",
+     16
+    ],
+    [
+     "Bava Kamma 20a",
+     17
+    ],
+    [
+     "Bava Kamma 20a",
+     18
+    ],
+    [
+     "Bava Kamma 20b",
+     0
+    ],
+    [
+     "Bava Kamma 20b",
+     1
+    ],
+    [
+     "Bava Kamma 20b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda tells Rami bar Hama about a legal dilemma regarding a squatter that was discussed in the academy while Rami bar Hama was absent."
+  },
+  {
+   "id": "Bava Kamma 20b:16-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 20b",
+     16
+    ],
+    [
+     "Bava Kamma 20b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abbahu misinterprets Rabbi Yohanan's silence as agreement with his legal conclusion, leading him to cite it in Yohanan's name."
+  },
+  {
+   "id": "Bava Kamma 21a:1-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 21a",
+     1
+    ],
+    [
+     "Bava Kamma 21a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abba bar Zavda sends a legal query to Rav Huna, but Rav Huna passes away before answering, leading his son Rabba to provide the ruling in his stead."
+  },
+  {
+   "id": "Bava Kamma 21a:8-8",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 21a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man built a mansion on land belonging to orphans, and Rav Nahman confiscated the building from him."
+  },
+  {
+   "id": "Bava Kamma 23b:12-12",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 23b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef asks Abaye to warn the Tarbu family about their damaging goats, but Abaye refuses, arguing that the burden of fencing lies with the victim."
+  },
+  {
+   "id": "Bava Kamma 27b:6-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 27b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites two incidents in Neharde’a and Pumbedita where pedestrians broke jugs and were held liable by Shmuel and Rava."
+  },
+  {
+   "id": "Bava Kamma 27b:11-12",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 27b",
+     11
+    ],
+    [
+     "Bava Kamma 27b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man caught his partner drawing water from their shared cistern out of turn and struck him with a hoe, an act Rav Naḥman later justified."
+  },
+  {
+   "id": "Bava Kamma 30b:19-19",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 30b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna and Rav Adda bar Ahava penalized people who left barley in the public domain by declaring their property ownerless."
+  },
+  {
+   "id": "Bava Kamma 31a:2-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 31a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna declared a group's barley ownerless after they were warned to remove it from the public domain and refused to comply."
+  },
+  {
+   "id": "Bava Kamma 32b:11-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 32b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava slaps Rav Shimi's sandal as a gesture of disparagement while refuting his legal explanation regarding the administration of lashes."
+  },
+  {
+   "id": "Bava Kamma 33b:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 33b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Taḥalifa recites a baraita concerning the sale or consecration of a goring ox in the presence of Rabbi Abbahu."
+  },
+  {
+   "id": "Bava Kamma 34b:16-16",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 34b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abbahu recites a baraita before Rabbi Yoḥanan, who rejects the teaching and tells him to go teach it outside the study hall."
+  },
+  {
+   "id": "Bava Kamma 35a:4-4",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 35a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An ox belonging to Rav Pappa had a toothache, broke into a vessel of beer, drank it, and was healed."
+  },
+  {
+   "id": "Bava Kamma 36b:11-16",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 36b",
+     11
+    ],
+    [
+     "Bava Kamma 36b",
+     12
+    ],
+    [
+     "Bava Kamma 36b",
+     13
+    ],
+    [
+     "Bava Kamma 36b",
+     14
+    ],
+    [
+     "Bava Kamma 36b",
+     15
+    ],
+    [
+     "Bava Kamma 36b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man who was slapped initially refuses a small fine and directs it to the poor, but when he tries to retract his donation, Rav Yosef rules that the court has already acquired it on behalf of the poor."
+  },
+  {
+   "id": "Bava Kamma 37a:2-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 37a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ḥanan the wicked slaps a man and is ordered by Rav Huna to pay a half-dinar fine, but he only possesses a clipped full dinar and cannot find change."
+  },
+  {
+   "id": "Bava Kamma 38a:12-12",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 38a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Roman government sends two officials to study Torah with the Sages, and after thorough study, they praise the Torah's truth while noting a legal discrepancy regarding damages caused by gentiles' oxen."
+  },
+  {
+   "id": "Bava Kamma 38a:14-Bava Kamma 38b:1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 38a",
+     14
+    ],
+    [
+     "Bava Kamma 38a",
+     15
+    ],
+    [
+     "Bava Kamma 38b",
+     0
+    ],
+    [
+     "Bava Kamma 38b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After the death of Rav Shmuel bar Yehuda's daughter, Ulla refuses to join the Sages in their standard Babylonian consolation and instead visits alone to offer a teaching about God's foresight. Ulla visits the mourning Rav Shmuel bar Yehuda and consoles him by explaining that God spares nations only for the sake of future righteous descendants, implying his daughter lacked such potential."
+  },
+  {
+   "id": "Bava Kamma 40a:12-18",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 40a",
+     12
+    ],
+    [
+     "Bava Kamma 40a",
+     13
+    ],
+    [
+     "Bava Kamma 40a",
+     14
+    ],
+    [
+     "Bava Kamma 40a",
+     15
+    ],
+    [
+     "Bava Kamma 40a",
+     16
+    ],
+    [
+     "Bava Kamma 40a",
+     17
+    ],
+    [
+     "Bava Kamma 40a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava praises Rav Aha bar Ya'akov to Rav Nahman, but when they meet, Rav Aha's questions are so difficult that Rav Nahman asks him to stop."
+  },
+  {
+   "id": "Bava Kamma 41b:6-7",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 41b",
+     6
+    ],
+    [
+     "Bava Kamma 41b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shimon HaAmasoni, who systematically interpreted the word 'et' in the Torah, abandoned his project when he reached the command to fear God, until Rabbi Akiva later resolved the difficulty."
+  },
+  {
+   "id": "Bava Kamma 41b:8-15",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 41b",
+     8
+    ],
+    [
+     "Bava Kamma 41b",
+     9
+    ],
+    [
+     "Bava Kamma 41b",
+     10
+    ],
+    [
+     "Bava Kamma 41b",
+     11
+    ],
+    [
+     "Bava Kamma 41b",
+     12
+    ],
+    [
+     "Bava Kamma 41b",
+     13
+    ],
+    [
+     "Bava Kamma 41b",
+     14
+    ],
+    [
+     "Bava Kamma 41b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Eliezer and Rabbi Akiva debate the derivation of ransom payments for an ox that kills."
+  },
+  {
+   "id": "Bava Kamma 42a:13-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 42a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Haggai arrives from the South bringing a baraita that supports Rav Adda bar Ahava's legal interpretation."
+  },
+  {
+   "id": "Bava Kamma 43b:14-16",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 43b",
+     14
+    ],
+    [
+     "Bava Kamma 43b",
+     15
+    ],
+    [
+     "Bava Kamma 43b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Dimi arrives from Eretz Yisrael to report Rabbi Yoḥanan's view on ransom, leading to a verbal challenge from Abaye."
+  },
+  {
+   "id": "Bava Kamma 43b:17-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 43b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ravin arrives from Eretz Yisrael and reports a legal tradition from Rabbi Yoḥanan regarding slaves."
+  },
+  {
+   "id": "Bava Kamma 46a:10-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 46a",
+     10
+    ],
+    [
+     "Bava Kamma 46a",
+     11
+    ],
+    [
+     "Bava Kamma 46a",
+     12
+    ],
+    [
+     "Bava Kamma 46a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav and Shmuel debate the legal status of a sale where an ox is found to be a gorer, focusing on whether the transaction is a mistake based on the majority of buyers' intentions."
+  },
+  {
+   "id": "Bava Kamma 48a:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 48a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman entered a house to bake, the homeowner's goat ate her dough and died, and Rava held her liable for the damages."
+  },
+  {
+   "id": "Bava Kamma 50a:18-20",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 50a",
+     18
+    ],
+    [
+     "Bava Kamma 50a",
+     19
+    ],
+    [
+     "Bava Kamma 50a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When the daughter of Neḥunya the ditchdigger falls into a deep cistern, Rabbi Ḥanina ben Dosa monitors her status through prayer until she is miraculously rescued by a ram led by an old man."
+  },
+  {
+   "id": "Bava Kamma 50a:21-21",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 50a",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Despite Neḥunya's dedication to providing water for the public, his own son died of thirst, illustrating God's strictness with the righteous."
+  },
+  {
+   "id": "Bava Kamma 50b:1-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 50b",
+     1
+    ],
+    [
+     "Bava Kamma 50b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man ignores a pious man's warning about throwing stones from his field into public property, only to later sell the field and trip over those same stones while walking in the public domain."
+  },
+  {
+   "id": "Bava Kamma 50b:16-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 50b",
+     16
+    ],
+    [
+     "Bava Kamma 50b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An ox falls into a shallow channel and the owner slaughters it immediately out of fear it will die, but Rav Nachman rules the meat forbidden because the owner did not wait to see if it would survive the impact."
+  },
+  {
+   "id": "Bava Kamma 51a:0-0",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 51a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nahman rules that an ox which fell into a shallow water channel and was immediately slaughtered is forbidden as a tereifa due to the impact of the fall."
+  },
+  {
+   "id": "Bava Kamma 55a:0-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 55a",
+     0
+    ],
+    [
+     "Bava Kamma 55a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥanina ben Agil, unable to get an answer from Rabbi Ḥiyya bar Abba regarding the Ten Commandments, travels to Rabbi Tanḥum who provides a tradition on the matter."
+  },
+  {
+   "id": "Bava Kamma 56b:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 56b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara discusses the legal liability of one who stands in front of an animal to direct it into a neighbor's field."
+  },
+  {
+   "id": "Bava Kamma 58b:14-15",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 58b",
+     14
+    ],
+    [
+     "Bava Kamma 58b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man cut down another's date palm and was brought before the Exilarch, who ordered him to pay one hundred zuz based on his own knowledge of the tree's value."
+  },
+  {
+   "id": "Bava Kamma 59a:16-18",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 59a",
+     16
+    ],
+    [
+     "Bava Kamma 59a",
+     17
+    ],
+    [
+     "Bava Kamma 59a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna son of Rav Yehoshua rule on the method of appraising a damaged date palm."
+  },
+  {
+   "id": "Bava Kamma 59a:19-Bava Kamma 59b:3",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 59a",
+     19
+    ],
+    [
+     "Bava Kamma 59b",
+     0
+    ],
+    [
+     "Bava Kamma 59b",
+     1
+    ],
+    [
+     "Bava Kamma 59b",
+     2
+    ],
+    [
+     "Bava Kamma 59b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Eliezer Ze’eira is questioned by the Exilarch's officials for wearing black shoes and proves his scholarly status through a legal challenge. Eliezer Ze’eira is questioned by the Exilarch's officials for wearing black shoes in mourning, proves his scholarly status by answering a difficult legal question about date palms, and is vindicated by Shmuel."
+  },
+  {
+   "id": "Bava Kamma 60a:17-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 60a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Upon hearing that the righteous are the first to perish in a plague, Rav Yosef weeps, and Abaye comforts him by explaining it is a kindness to spare them from seeing the coming evil."
+  },
+  {
+   "id": "Bava Kamma 60b:4-4",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 60b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "During a plague, Rava would close his windows to protect himself."
+  },
+  {
+   "id": "Bava Kamma 60b:10-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 60b",
+     10
+    ],
+    [
+     "Bava Kamma 60b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Ami and Rav Asi pull Rabbi Yitzḥak Nappaḥa in different directions regarding his teaching, leading him to compare himself to a man with two wives who pluck out all his hair."
+  },
+  {
+   "id": "Bava Kamma 60b:15-25",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 60b",
+     15
+    ],
+    [
+     "Bava Kamma 60b",
+     16
+    ],
+    [
+     "Bava Kamma 60b",
+     17
+    ],
+    [
+     "Bava Kamma 60b",
+     18
+    ],
+    [
+     "Bava Kamma 60b",
+     19
+    ],
+    [
+     "Bava Kamma 60b",
+     20
+    ],
+    [
+     "Bava Kamma 60b",
+     21
+    ],
+    [
+     "Bava Kamma 60b",
+     22
+    ],
+    [
+     "Bava Kamma 60b",
+     23
+    ],
+    [
+     "Bava Kamma 60b",
+     24
+    ],
+    [
+     "Bava Kamma 60b",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "The Gemara interprets the biblical story of David and the water from Bethlehem as a series of legal inquiries regarding damages."
+  },
+  {
+   "id": "Bava Kamma 62a:7-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 62a",
+     7
+    ],
+    [
+     "Bava Kamma 62a",
+     8
+    ],
+    [
+     "Bava Kamma 62a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man kicks another's safe into a river, leading the owner to claim it contained a pearl, which Rav Ashi then deliberates upon without reaching a final decision."
+  },
+  {
+   "id": "Bava Kamma 66b:13-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 66b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava notes that Rabba posed a legal difficulty to Rav Yosef for twenty-two years until Rav Yosef became head of the academy and resolved it."
+  },
+  {
+   "id": "Bava Kamma 71b:18-Bava Kamma 72a:2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 71b",
+     18
+    ],
+    [
+     "Bava Kamma 72a",
+     0
+    ],
+    [
+     "Bava Kamma 72a",
+     1
+    ],
+    [
+     "Bava Kamma 72a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava questions Rav Naḥman about a thief's liability for a shared animal, leading Rav Naḥman to rule one way in the evening and retract his position the following morning."
+  },
+  {
+   "id": "Bava Kamma 73a:3-3",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 73a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yirmeya of Difti reports that Rav Pappa once ruled according to Rava's view on conspiring witnesses, while Rav Ashi asserts the halakha follows Abaye."
+  },
+  {
+   "id": "Bava Kamma 74b:18-19",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 74b",
+     18
+    ],
+    [
+     "Bava Kamma 74b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabban Gamliel blinds his slave Tavi and joyfully tells Rabbi Yehoshua that the slave is now free, only to be told that his self-admission without witnesses is legally insufficient to grant freedom."
+  },
+  {
+   "id": "Bava Kamma 80a:3-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 80a",
+     3
+    ],
+    [
+     "Bava Kamma 80a",
+     4
+    ],
+    [
+     "Bava Kamma 80a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A pious man is prescribed goat's milk for his heart condition, but his friends shun him for keeping a goat in his house, leading him to confess this as his only sin before he dies."
+  },
+  {
+   "id": "Bava Kamma 80a:6-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 80a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yishmael recounts how his family's wealth in the Galilee was lost because they grazed animals improperly and judged cases individually."
+  },
+  {
+   "id": "Bava Kamma 80a:9-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 80a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An unmarried woman impulsively swears to marry anyone who will discipline her son, but the Sages intervene to dissolve the oath when unworthy men try to hold her to it."
+  },
+  {
+   "id": "Bava Kamma 80a:12-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 80a",
+     12
+    ],
+    [
+     "Bava Kamma 80a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav Huna justifies keeping sheep by saying his wife Hova watches them, Rav Adda bar Ahava curses her, resulting in the death of Rav Huna's children."
+  },
+  {
+   "id": "Bava Kamma 80a:14-Bava Kamma 80b:2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 80a",
+     14
+    ],
+    [
+     "Bava Kamma 80b",
+     0
+    ],
+    [
+     "Bava Kamma 80b",
+     1
+    ],
+    [
+     "Bava Kamma 80b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav, Shmuel, and Rav Asi arrive at a celebration, leading to a dilemma over the order in which they should enter the house. While Rav, Shmuel, and Rav Asi are politely debating who should enter a celebration first, a cat mauls a baby, prompting Rav to issue a harsh ruling against keeping cats."
+  },
+  {
+   "id": "Bava Kamma 81b:8-8",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 81b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "While walking with Rav Yehuda, Shmuel veers off the main road to avoid obstacles, demonstrating the practical application of Joshua's stipulations."
+  },
+  {
+   "id": "Bava Kamma 81b:9-10",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 81b",
+     9
+    ],
+    [
+     "Bava Kamma 81b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While walking, Rabbi Yehuda HaNasi and Rabbi Hiyya observe Rabbi Yehuda ben Kanosa refusing to veer off the road; Rabbi Hiyya explains his student's pious motivations, leading to a respectful encounter."
+  },
+  {
+   "id": "Bava Kamma 82a:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 82a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The prophets instituted the regular Monday and Thursday Torah readings after the Israelites became exhausted from traveling three days in the desert without the 'water' of Torah."
+  },
+  {
+   "id": "Bava Kamma 82b:15-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 82b",
+     15
+    ],
+    [
+     "Bava Kamma 82b",
+     16
+    ],
+    [
+     "Bava Kamma 82b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During the Hasmonean civil war, a Greek-wise elder advises the besiegers of Jerusalem to send up a pig instead of sacrificial animals, leading to a national catastrophe and subsequent rabbinic bans."
+  },
+  {
+   "id": "Bava Kamma 83a:0-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 83a",
+     0
+    ],
+    [
+     "Bava Kamma 83a",
+     1
+    ],
+    [
+     "Bava Kamma 83a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During the Hasmonean civil war, a Greek-wise elder advises the besiegers to send a pig instead of a sheep, leading to a miraculous earthquake and a rabbinic curse on raising pigs."
+  },
+  {
+   "id": "Bava Kamma 83a:7-7",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 83a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman enters a house to bake and is so frightened by a barking dog that she miscarries, despite the owner's claims that the dog is harmless."
+  },
+  {
+   "id": "Bava Kamma 84a:20-21",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 84a",
+     20
+    ],
+    [
+     "Bava Kamma 84a",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A donkey severs a child's hand, but the father refuses a court appraisal of the child's value as a slave, opting to compensate the child himself when he grows up."
+  },
+  {
+   "id": "Bava Kamma 84a:22-22",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 84a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An ox injures a child's hand, and when Rava orders an appraisal, the court officers challenge him based on his own jurisdictional rules."
+  },
+  {
+   "id": "Bava Kamma 84b:7-7",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 84b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara mentions that Rav Pappa once collected four hundred zuz as compensation for humiliation."
+  },
+  {
+   "id": "Bava Kamma 85a:9-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 85a",
+     9
+    ],
+    [
+     "Bava Kamma 85a",
+     10
+    ],
+    [
+     "Bava Kamma 85a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabba recounts finding the Sages in Rav's study hall debating the rationale behind Rabbi Yehuda's ruling on medical bandages."
+  },
+  {
+   "id": "Bava Kamma 87a:1-3",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 87a",
+     1
+    ],
+    [
+     "Bava Kamma 87a",
+     2
+    ],
+    [
+     "Bava Kamma 87a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef describes how his perspective on his own blindness and religious obligation shifted after hearing a teaching by Rabbi Hanina, changing his criteria for hosting a celebratory feast."
+  },
+  {
+   "id": "Bava Kamma 88a:20-Bava Kamma 88b:11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 88a",
+     20
+    ],
+    [
+     "Bava Kamma 88b",
+     0
+    ],
+    [
+     "Bava Kamma 88b",
+     1
+    ],
+    [
+     "Bava Kamma 88b",
+     2
+    ],
+    [
+     "Bava Kamma 88b",
+     3
+    ],
+    [
+     "Bava Kamma 88b",
+     4
+    ],
+    [
+     "Bava Kamma 88b",
+     5
+    ],
+    [
+     "Bava Kamma 88b",
+     6
+    ],
+    [
+     "Bava Kamma 88b",
+     7
+    ],
+    [
+     "Bava Kamma 88b",
+     8
+    ],
+    [
+     "Bava Kamma 88b",
+     9
+    ],
+    [
+     "Bava Kamma 88b",
+     10
+    ],
+    [
+     "Bava Kamma 88b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The mother of Rav Shmuel bar Abba married Rabbi Abba and subsequently transferred her property to her son. Rav Shmuel bar Abba successfully claims his mother's property before Rabbi Yirmeya, but his stepfather Rabbi Abba challenges the ruling before other sages, leading to a legal reversal."
+  },
+  {
+   "id": "Bava Kamma 89a:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 89a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna arrive from the study hall and cite a Mishnaic proof for the ordinance of Usha."
+  },
+  {
+   "id": "Bava Kamma 90b:1-4",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 90b",
+     1
+    ],
+    [
+     "Bava Kamma 90b",
+     2
+    ],
+    [
+     "Bava Kamma 90b",
+     3
+    ],
+    [
+     "Bava Kamma 90b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "A man who was fined for uncovering a woman's head tries to trick her into uncovering it herself to prove she isn't easily humiliated, but Rabbi Akiva maintains the fine."
+  },
+  {
+   "id": "Bava Kamma 90b:6-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 90b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man strikes another and Rabbi Yehuda Nesia rules that he must pay a Tyrian maneh in accordance with Rabbi Yosei HaGelili."
+  },
+  {
+   "id": "Bava Kamma 91a:20-22",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 91a",
+     20
+    ],
+    [
+     "Bava Kamma 91a",
+     21
+    ],
+    [
+     "Bava Kamma 91a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man who humiliated a woman by uncovering her head in public tries to avoid paying the fine by tricking her into uncovering her own head in public, but Rabbi Akiva maintains the penalty."
+  },
+  {
+   "id": "Bava Kamma 91b:15-15",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 91b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel fined a man ten gold coins for preemptively covering the blood of an animal slaughtered by someone else, thereby stealing the original slaughterer's mitzvah."
+  },
+  {
+   "id": "Bava Kamma 91b:18-18",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 91b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina attributes the untimely death of his son, Shivhat, to the fact that he cut down a fruit-bearing fig tree."
+  },
+  {
+   "id": "Bava Kamma 92a:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 92a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel tastes wine in dates brought by his sharecropper and, upon learning the palms grow among vines, orders them cut down to protect the more valuable grapes."
+  },
+  {
+   "id": "Bava Kamma 92a:2-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 92a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda sees date palms among his grapevines and instructs his sharecropper to uproot them because vines are more valuable."
+  },
+  {
+   "id": "Bava Kamma 92a:21-22",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 92a",
+     21
+    ],
+    [
+     "Bava Kamma 92a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Moses prays for Judah's bones to stop rolling in their coffin and for Judah to be admitted to the heavenly academy."
+  },
+  {
+   "id": "Bava Kamma 93a:17-18",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 93a",
+     17
+    ],
+    [
+     "Bava Kamma 93a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Yosef deposits a charity purse with a man who is negligent, leading to its theft and a subsequent ruling of liability."
+  },
+  {
+   "id": "Bava Kamma 94b:5-5",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 94b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A long-time thief attempts to repent, but his wife discourages him by pointing out that he will be left with nothing if he returns all his stolen goods, leading the Sages to institute an ordinance protecting penitents."
+  },
+  {
+   "id": "Bava Kamma 96b:6-8",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 96b",
+     6
+    ],
+    [
+     "Bava Kamma 96b",
+     7
+    ],
+    [
+     "Bava Kamma 96b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man steals oxen to plow his field and returns them, leading Rav Nahman to rule that he must pay the victim for the enhancement the oxen provided to his land, despite Rava's objections."
+  },
+  {
+   "id": "Bava Kamma 97a:4-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 97a",
+     4
+    ],
+    [
+     "Bava Kamma 97a",
+     5
+    ],
+    [
+     "Bava Kamma 97a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The household of Rav Yosef bar Ḥama used to seize the slaves of debtors to work them, leading to a confrontation where his son Rabba challenged the practice as appearing like forbidden interest."
+  },
+  {
+   "id": "Bava Kamma 98a:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 98a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna the son of Rav Yehoshua presided over a case involving the exchange of Agardemis coins at a specific rate."
+  },
+  {
+   "id": "Bava Kamma 98b:4-4",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 98b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ameimar rules on the liability of someone who burned another person's promissory note."
+  },
+  {
+   "id": "Bava Kamma 98b:10-10",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 98b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda encounters Rabba bar Shmuel and asks him if he has learned a baraita regarding returning stolen items."
+  },
+  {
+   "id": "Bava Kamma 99b:17-17",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 99b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man brings a slaughtered animal to Rav, who declares it non-kosher and exempts the butcher, leading Rav Kahana and Rav Asi to later comment to the man on the nature of the ruling."
+  },
+  {
+   "id": "Bava Kamma 99b:23-23",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 99b",
+     23
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman relies on Rabbi Hiyya's validation of a coin, but when it is later rejected by others, Hiyya instructs that she be compensated from his own funds."
+  },
+  {
+   "id": "Bava Kamma 100a:1-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 100a",
+     1
+    ],
+    [
+     "Bava Kamma 100a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Reish Lakish shows a coin to Rabbi Elazar for assessment and warns him that he is relying on his expert opinion, leading to a discussion on liability."
+  },
+  {
+   "id": "Bava Kamma 102a:8-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 102a",
+     8
+    ],
+    [
+     "Bava Kamma 102a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While sitting in a lesson, Rav Yosef physically turns his face away in disdain when Rav Huna issues a ruling he considers redundant."
+  },
+  {
+   "id": "Bava Kamma 103a:3-3",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 103a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana purchased flax that remained with the seller, and after it increased in value and was sold by the seller, Rav ruled on Rav Kahana's right to the profits."
+  },
+  {
+   "id": "Bava Kamma 103b:9-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 103b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A pious man who forgot which of two people he bought an item from seeks guidance from Rabbi Tarfon and Rabbi Akiva on how to properly pay his debt."
+  },
+  {
+   "id": "Bava Kamma 104b:1-2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 104b",
+     1
+    ],
+    [
+     "Bava Kamma 104b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Abba sends Rav Safra to collect a debt from Rav Yosef bar Ḥama, but Rava advises the debtor not to pay because a receipt from the agent wouldn't protect him if Rabbi Abba died before the agent returned."
+  },
+  {
+   "id": "Bava Kamma 104b:3-3",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 104b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa transfers a large debt to Rav Shmuel bar Abba using a legal loophole involving land, and later goes out to meet him upon his return."
+  },
+  {
+   "id": "Bava Kamma 106a:5-8",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 106a",
+     5
+    ],
+    [
+     "Bava Kamma 106a",
+     6
+    ],
+    [
+     "Bava Kamma 106a",
+     7
+    ],
+    [
+     "Bava Kamma 106a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Nahman sits and teaches a law, and Rav Aha bar Minyumi and Rami bar Hama challenge him with objections from a Mishna."
+  },
+  {
+   "id": "Bava Kamma 106a:17-18",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 106a",
+     17
+    ],
+    [
+     "Bava Kamma 106a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Gamda travels to Rav Ashi to report a legal tradition, which Rav Ashi and Rav Aha the Elder then discuss."
+  },
+  {
+   "id": "Bava Kamma 112a:13-14",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 112a",
+     13
+    ],
+    [
+     "Bava Kamma 112a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yirmeya's young brother-in-law physically locks him out of a house to protect his inheritance, leading to a court case where Rabbi Avin rules in the minor's favor."
+  },
+  {
+   "id": "Bava Kamma 112b:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 112b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yirmeya's minor brother-in-law locks him out of a house, leading to a legal dispute that travels from Rabbi Avin to Rabbi Abbahu regarding testimony against minors."
+  },
+  {
+   "id": "Bava Kamma 112b:15-15",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 112b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina delayed a legal authorization for twelve months because the creditor was a violent man who would not return property even if the claim was later overturned."
+  },
+  {
+   "id": "Bava Kamma 113a:5-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 113a",
+     5
+    ],
+    [
+     "Bava Kamma 113a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Asi visits Rav Kahana and observes him immediately ostracizing a woman for missing a single court summons, leading to a discussion on why the standard grace period for men does not apply to her."
+  },
+  {
+   "id": "Bava Kamma 113b:9-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 113b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel takes advantage of a gentile's error by purchasing a gold bowl at the price of an iron one, adding a single coin to the payment."
+  },
+  {
+   "id": "Bava Kamma 113b:10-10",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 113b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana and Ravina engage in transactions with gentiles where they benefit from the gentiles' counting errors."
+  },
+  {
+   "id": "Bava Kamma 113b:11-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 113b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While traveling, Rav Ashi tells his servant to take grapes if they belong to a gentile, but the servant points out that robbing a gentile is also prohibited."
+  },
+  {
+   "id": "Bava Kamma 114b:19-20",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 114b",
+     19
+    ],
+    [
+     "Bava Kamma 114b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man's offhand childhood memories of being called a priest-specific nickname lead Rabbi Yehuda HaNasi to formally recognize his priestly status."
+  },
+  {
+   "id": "Bava Kamma 114b:22-23",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 114b",
+     22
+    ],
+    [
+     "Bava Kamma 114b",
+     23
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "An incident involving a woman's eligibility for marriage comes before the sages, resulting in Rabbi Yehuda HaNasi permitting her to marry a priest."
+  },
+  {
+   "id": "Bava Kamma 115a:13-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 115a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Hanan the Wicked stole and sold a cloak, and Rav Huna ruled that the owner must reimburse the purchaser because the thief was insolvent."
+  },
+  {
+   "id": "Bava Kamma 115a:21-22",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 115a",
+     21
+    ],
+    [
+     "Bava Kamma 115a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Avimi bar Nazi accepted a stolen cloak as repayment for an old debt and then lent more money; Ravina later ruled on how much the original owner must pay to retrieve it."
+  },
+  {
+   "id": "Bava Kamma 115a:24-25",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 115a",
+     24
+    ],
+    [
+     "Bava Kamma 115a",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A thief from Naresh sold a stolen scroll which was then resold at a profit; Abaye and Rava debated and ruled on how the original owner and the various purchasers should settle the costs."
+  },
+  {
+   "id": "Bava Kamma 116a:9-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 116a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling in a caravan followed by a lion, Rav Safra offers his donkey as the nightly sacrifice, but the lion does not eat it, allowing Rav Safra to reclaim it the next morning."
+  },
+  {
+   "id": "Bava Kamma 116b:20-Bava Kamma 117a:0",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 116b",
+     20
+    ],
+    [
+     "Bava Kamma 116b",
+     21
+    ],
+    [
+     "Bava Kamma 117a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man informs thugs about the Exilarch's wheat, leading to its seizure and a subsequent ruling by Rav Nachman that the informant must pay for the loss."
+  },
+  {
+   "id": "Bava Kamma 117a:9-10",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117a",
+     9
+    ],
+    [
+     "Bava Kamma 117a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna bar Yehuda reports a ruling he made regarding an informer to Rava, who orders him to reverse the decision and return the money."
+  },
+  {
+   "id": "Bava Kamma 117a:12-13",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117a",
+     12
+    ],
+    [
+     "Bava Kamma 117a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A man is coerced into showing and carrying Rav Mari's wine for thugs, and Rav Ashi exempts him from liability."
+  },
+  {
+   "id": "Bava Kamma 117a:16-16",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Two people quarrel over a net and one gives it to a king's officer, leading to Abaye's ruling."
+  },
+  {
+   "id": "Bava Kamma 117a:17-Bava Kamma 117b:2",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117a",
+     17
+    ],
+    [
+     "Bava Kamma 117a",
+     18
+    ],
+    [
+     "Bava Kamma 117a",
+     19
+    ],
+    [
+     "Bava Kamma 117a",
+     20
+    ],
+    [
+     "Bava Kamma 117a",
+     21
+    ],
+    [
+     "Bava Kamma 117a",
+     22
+    ],
+    [
+     "Bava Kamma 117a",
+     23
+    ],
+    [
+     "Bava Kamma 117a",
+     24
+    ],
+    [
+     "Bava Kamma 117b",
+     0
+    ],
+    [
+     "Bava Kamma 117b",
+     1
+    ],
+    [
+     "Bava Kamma 117b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After killing an informer and fleeing to Eretz Yisrael on Rav's advice, Rav Kahana's intellectual prowess inadvertently offends Rabbi Yoḥanan, leading to Rav Kahana's death. Rabbi Yoḥanan travels to the burial cave of Rav Kahana, convinces a mystical serpent to let him enter, and resurrects Rav Kahana after realizing he had caused his death through a misunderstanding."
+  },
+  {
+   "id": "Bava Kamma 117b:3-6",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117b",
+     3
+    ],
+    [
+     "Bava Kamma 117b",
+     4
+    ],
+    [
+     "Bava Kamma 117b",
+     5
+    ],
+    [
+     "Bava Kamma 117b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After an informer causes Rabbi Abba's silk to be seized by gentiles, Rabbi Abba seeks a ruling from various sages until he finds a court that holds the informer liable."
+  },
+  {
+   "id": "Bava Kamma 117b:7-7",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man gives a deposited silver cup to thieves to save himself, and Rabba rules that he is exempt from reimbursing the owner."
+  },
+  {
+   "id": "Bava Kamma 117b:8-8",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man entrusted with funds for redeeming captives gives the money to thieves to save himself, and Rava rules he is not liable."
+  },
+  {
+   "id": "Bava Kamma 117b:9-9",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 117b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "On a ferry, a man pushes another's donkey into the water to prevent the boat from sinking, leading to a legal discussion on liability."
+  },
+  {
+   "id": "Bava Kamma 119a:1-1",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 119a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava purchases grapevine branches from a sharecropper and defends the legality of the act when challenged by Abaye."
+  },
+  {
+   "id": "Bava Kamma 119a:7-7",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 119a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hisda dismisses his sharecropper for being overly precise in weighing produce, suspecting him of theft."
+  },
+  {
+   "id": "Bava Kamma 119a:20-20",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 119a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Ravina visits Bei Mehoza, the local women donate expensive jewelry to him for charity, leading to a discussion on whether such large gifts may be accepted from women."
+  },
+  {
+   "id": "Bava Kamma 119b:11-11",
+   "tractate": "Bava Kamma",
+   "cells": [
+    [
+     "Bava Kamma 119b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Yehuda mentions that his son Yitzḥak was personally strict and would not take certain threads for himself."
+  }
+ ]
+}

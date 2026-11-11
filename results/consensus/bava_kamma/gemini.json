@@ -1,0 +1,2122 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:05:45",
+  "outcomes": {
+   "ok": 120
+  }
+ },
+ "rows": [
+  {
+   "id": "Bava Kamma 11a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man borrowed an ax') followed by a sequence of actions: the ax was broken, the man came before a rabbi, the rabbi ruled, other rabbis challenged him, and the first rabbi responded with silence. This contains multiple actions and a change in the legal outcome, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 12a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rav Nahman exiting) followed by a dialogue with conflict (Ulla's revelation and Rav Nahman's sharp retort about being evaded). Under R-C2 and R-C7 shape 1, speech with conflict and a minimal event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 12a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific incidents (judges collecting slaves) followed by a dramatic confrontation and ruling by Rav Nahman. This meets the criteria of an incident followed by a ruling that creates change or dynamism, which Jeff classifies as a story or courtroom drama.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 17a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Hezekiah, king of Judea, and Ahab, but as these are biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 17a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (R-C3) involving Rabba bar bar Hana and Rabbi Yoḥanan, which includes physical actions like washing hands and donning phylacteries. However, it is primarily a frame for a speech-act/ruling and lacks a specific 'one-day' event or significant change, fitting the borderline criteria for speech-heavy incidents (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 19b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific incident ('a certain donkey') involving a narrated action (ate bread and broke a basket) followed by a rabbinic ruling (Rav Yehuda obligated). According to R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated action beyond just coming before the rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 20a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic example of an incident followed by a ruling as defined in R-C0. It narrates a specific event that happened ('a certain goat... climbed... ate... broke') followed by Rava's legal resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 20a:15-Bava Kamma 20b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative interaction between Rav Hisda and Rami bar Hama involving a specific event (the folding of the scarf as an act of service) and a resolution where Rava comments on the outcome of their interaction. While much of the passage is legal dialogue, the physical act of service and the subsequent acceptance of the ruling constitute a story under R-C0 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 20b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific interaction between Rabbi Abbahu and Rabbi Yoḥanan involving a speech-act and a reaction (silence), followed by a misunderstanding of that silence. Under R-C2 and R-C7, it is borderline because it is primarily a dialogue/speech-act with conflict or implied change (the misunderstanding of the silence) rather than a full narrative of actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 21a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event (sending a message and the death of Rav Huna) that interrupts a legal inquiry, but it is primarily composed of speech-acts and legal rulings. Under R-C7 shape 1 and 2, an incident that is mainly speech or a single event followed by a ruling is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 21a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident ('a certain man built...') followed by multiple actions: the man ignored a rabbi's instruction to appease the orphans, leading to the rabbi's active intervention of confiscating the mansion. Under R-C0 and R-C5, this sequence of a narrated event followed by a change in outcome (the confiscation) constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 23b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving the Tarbu family's goats and a dialogue between Rav Yosef and Abaye. It contains conflict and a specific action (Rav Yosef's request to Abaye) beyond a bare legal ruling, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 27b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a ruling on an incident where the incident itself is not narrated beyond its occurrence. Under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only event mentioned, without further narrated action or change, does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 27b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident followed by a ruling' story. It narrates a specific event (a dispute over a cistern and a physical altercation) followed by Rav Nahman's ruling, which satisfies the requirement for narrated action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 30b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Rav Huna and Rav Adda bar Ahava did (declaring items ownerless) cited as evidence in a legal discussion. Under R-C5, a description of a rabbi's practice that does not lead to a continuation or a change in narrative state is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 31a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is the Gemara's commentary and clarification of a previous incident, which Jeff rules is not part of the story itself. Furthermore, it is a bare report of a status (being forewarned) rather than a narrated event with change or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 32b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical action (Rava slapping Rav Shimi's sandal) and a sharp rebuke, which constitutes conflict beyond standard scholarly dialogue. However, it is borderline because it is primarily a speech-act (a challenge to a legal argument) with minimal change or narrative development.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 33b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage is a report of a rabbi teaching a baraita (legal tradition) to another rabbi, which constitutes standard rabbinic dialogue or teaching rather than a story. There are no narrated events, actions, or changes beyond the speech-act of teaching a legal rule.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 34b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Abbahu and Rabbi Yoḥanan with clear conflict and a sharp retort ('Go out and teach it outside'). Under R-C2 and R-C7 shape 1, speech with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 35a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened ('a certain ox... had a toothache') involving multiple actions (went inside, broke the lid, drank) and a change in state (was cured). It is not a hypothetical legal case but a report of an incident at the house of Rav Pappa, a post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 36b:11-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man') that leads to a legal inquiry, a courtroom dialogue, and a final resolution where the man's change of heart regarding the fine is overruled by the rabbi. This meets the criteria of an incident followed by a ruling that involves narrated action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 37a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full story with multiple actions and a change in state: a man slaps another, is ruled against, and then performs a second action (another slap) to resolve a logistical problem with the payment. It satisfies R-C0 as an incident followed by a ruling that leads to further narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 38a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Roman officials and Sages) with multiple actions: sending officials, teaching/learning, and a final departure with a critical evaluation. It follows the R-C0 criteria of an event that happened, and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 38a:14-Bava Kamma 38b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the death of a rabbi's daughter) followed by a conflict between Ulla and the Sages, and a subsequent action where Ulla visits the mourner. Although the visit contains a biblical exemplum, the frame is a rabbinic narrative with multiple actions and dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 40a:12-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rava's praise leads to an invitation, followed by a meeting where a challenging dialogue occurs. The interaction includes conflict and a change in state, ending with Rav Nahman being overwhelmed and asking to be left alone.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 41b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a post-biblical figure (Shimon HaAmasoni) that describes a specific change in his life: he used to interpret all 'et' occurrences but then withdrew from the practice. It includes dialogue with his students and a resolution by Rabbi Akiva, meeting the criteria for a one-time event following a habitual frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 41b:8-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal debate regarding the interpretation of a verse. Under R-C2 and R-C7, speech-acts without a narrated event or action beyond the dialogue do not constitute a story, even when a sharp retort is present.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 42a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's arrival and his citation of a source to support a legal position; it lacks a narrated event, conflict, or change that would constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 43b:14-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal debate between Rav Dimi and Abaye regarding the interpretation of a verse. Under R-C2 and R-C7, speech-acts and scholarly back-and-forth do not constitute a story when no real-world event or action is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 43b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a standard rabbinic report of a teaching ('When Ravin came... he says') and a midrashic interpretation of a verse. There are no narrated actions or events beyond the speech-act of teaching, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 46a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case introduced as a hypothetical problem ('one who sells...') rather than a narrated event that happened to a specific person. Under R-C0 and R-C5, it is a legal discussion of facts and consequences without a narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 48a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic halakhic story where a specific incident ('a certain woman...') involving multiple actions (entering, eating, dying) is followed by a rabbinic ruling from Rava.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 50a:18-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about the daughter of Neḥunya falling into a cistern and being saved through the merit of her father and the prayer of R. Hanina ben Dosa. While segment [2] begins with a habitual frame (Neḥunya's custom), it leads directly into the one-time event of the daughter's fall, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 50a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a single tragic event (the death of Neḥunya's son) used as a proof-text for a theological dictum about divine justice. Under R-C5 and the limits of R-C0, a report of what happened without a narrated continuation or a specific interaction/ruling following the event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 50b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with a one-time event (the encounter), a conflict (the mockery), and a clear change in circumstances (the man selling his field and stumbling) that provides a resolution. It follows the 'incident' formula and includes the opening Tannaitic formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 50b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain man's ox and a subsequent ruling by Rav Nahman. Under R-C0, an incident followed by a ruling counts as a story, especially when it includes narrated actions like the owner slaughtering the ox and the rabbi's commentary on the owner's loss.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 51a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal debate and scholarly back-and-forth between Rava and Rav Nahman. Under rule R-C2 and R-C7, standard rabbinic dialogue without a narrated event or action is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 55a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists primarily of speech-acts (asking a question and being referred to another rabbi), but it includes a physical action where the protagonist 'went to him' (segment 3) to resolve the inquiry. Under R-C7, this fits the shape of a passage that is mainly dialogue but contains a real event and a change in location/interlocutor.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 56b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion of a hypothetical case ('one who stands another's animal') used to clarify a ruling, rather than a report of an event that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 58b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man cut down a date palm') followed by a courtroom drama involving the Exilarch and Rav Nahman. Under R-C0, an incident followed by a ruling counts as a story, especially when it includes multiple actions and a change of venue/ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 59a:16-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal action taken by rabbis to establish a precedent, with no continuation, change, or narrated incident following the act. Under R-C5 and the limits of R-C0, a description of what a rabbi did to implement a ruling without further narrative development is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 59a:19-Bava Kamma 59b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Eliezer Ze’eira) involving a specific incident (wearing black shoes), a conflict with the Exilarch's officials, an arrest, a scholarly challenge, and a resolution where Shmuel's ruling leads to the character's release.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 60a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rav Yosef and Abaye involving an emotional reaction (crying) and a theological conflict regarding the fate of the righteous. Under R-C2 and R-C7, speech with conflict and an emotional event is considered a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 60b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's habitual practice during a plague, cited as a precedent or custom rather than a narrated story with a specific event, change, or causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 60b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis (Rav Ami, Rav Asi, and R. Yitzhak Nappaha) with clear conflict and actions: the students repeatedly interrupt the teacher, leading him to respond with a parable that resolves the tension. This contains more than just speech-acts; it describes a dynamic interaction and a change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 60b:15-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story about King David and his mighty men breaking through Philistine lines, but because it is about biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 62a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man kicked a safe') followed by the owner coming to court and a rabbi's investigation. Under R-C0, an incident followed by a ruling or courtroom drama counts as a story because it contains actions beyond speech and a change in state (the legal investigation of the event).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 66b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical situation involving conflict (a difficulty posed for twenty-two years) and a change (the resolution upon Rav Yosef becoming head of the yeshiva), but it is primarily a speech-act/legal resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 71b:18-Bava Kamma 72a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a dialogue between Rava and Rav Nahman, but it includes a specific event (the morning retraction) and an emotional/physical explanation for the previous night's error (not having eaten meat). Under R-C2 and R-C7, speech with conflict or implied change that includes at least one real event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 73a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi taking action or ruling in accordance with a specific legal opinion, followed by a standard halakhic determination. Under R-C5 and the limits of R-C0, a report of a ruling without any other narrated action, change, or incident details does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 74b:18-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative involving post-biblical figures (Rabban Gamliel and Tavi) with specific actions (blinding the eye), emotional reactions (great joy), and a dialogue-based resolution with Rabbi Yehoshua. Although it is a Mishnah story quoted in the Gemara to challenge a ruling, R-C1 and R-C0 confirm such citations are included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 80a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (a pious man) containing multiple actions, conflict (the friends' rebuke), and a clear change or resolution at the time of death. It follows the 'Ma'aseh' formula and includes the opening introductory phrase as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 80a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story embedded in a dictum (R-C4) that narrates a specific historical change—the destruction of the family—caused by their actions (grazing and judging alone). It meets the criteria of having multiple actions and a clear causal outcome (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 80a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (a certain woman) with multiple actions—the son distressing her, her impulsive oath, and unworthy men responding—followed by a resolution from the Sages. This fits the criteria of an incident leading to a ruling where change or conflict is present.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 80a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict (a curse) that leads to a narrated change in the world (the death of Rav Huna's children). Per R-C0 and R-C2, this constitutes a story rather than a mere legal discussion because it includes a specific event and a tragic consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 80a:14-Bava Kamma 80b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where three rabbis visit a celebration, involving a conflict of etiquette and a dramatic incident where a cat injures a child, followed by a ruling. This meets the criteria of a story with multiple actions and a change in state.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 81b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Shmuel and Rav Yehuda were walking and Shmuel took a physical action (veering off the road) which prompted a dialogue and a ruling. This contains both action and change/resolution as required by R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 81b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi and Rabbi Hiyya) walking on a road. It contains multiple actions, conflict (Rabbi's rebuke of the student), and a resolution where the student's identity changes the outcome of the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 82a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving biblical figures (the Jews in the wilderness and the prophets among them) taking action to institute a practice. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 82b:15-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (the Hasmoneans) involving a specific one-time event (the pig incident) that leads to a change and a ruling. It follows the pattern of a habitual frame leading to a specific action as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 83a:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [3] contains a story embedded within a dictum (R-C4) about the tragic destruction of Rabban Gamliel's household, which narrates a specific historical event involving post-biblical figures. While segments [2] and [4] are legal discussions or bare reports of permissions, segment [3] describes a change of state from a thriving household to a state of loss with specific survivors.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 83a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a woman and a dog owner, featuring multiple actions (entering, barking, speaking) and a significant change or outcome (the miscarriage).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 84a:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom drama that begins with a specific incident (a donkey severing a child's hand) and includes multiple actions, conflict between the father and the court, and a resolution where the father chooses to pay the child himself to avoid the indignity of a slave appraisal.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 84a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (an ox chewing a child's hand) followed by a case brought before a rabbi and his ruling. Under R-C0, the narrated event constitutes the story and the ruling is its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 84b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of Rav Pappa collecting a fine and a dialogue between Rav Hisda and Rav Nahman that is standard rabbinic scholarly back-and-forth. Under R-C0 and R-C7, a ruling or a speech-act without a narrated action or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 85a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Rabba finding sages in the study hall and engaging in a legal debate; this is standard rabbinic dialogue and scholarly back-and-forth rather than a story with a narrated event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 87a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a personal reflection by Rav Yosef about his own reaction to a legal ruling. While it is primarily a speech-act (R-C2), it describes a change in his personal stance and an emotional/intellectual conflict regarding his status as a blind man, fitting the borderline shape of 'mainly speech but something happens' (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 88a:20-Bava Kamma 88b:11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     14
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (a mother transferring property to her son) followed by a legal dispute involving several rabbis and a ruling. Under R-C7 shape 2 and R-C0, this is borderline because it consists of an incident followed by a ruling and legal discussion, while the extensive scholarly debate in segments [4] through [13] functions as Gemara commentary on the story (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 89a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes rabbis arriving from a study hall and engaging in a legal discussion about a Mishnah and the ordinance of Usha. This is standard rabbinic dialogue consisting of speech-acts without any narrated event, action, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 90b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific incident, a legal ruling, a subsequent deceptive action by the defendant to challenge the ruling, and a final resolution by Rabbi Akiva. Under R-C0, the presence of multiple actions and a change in the situation (the man's attempt to exempt himself) qualifies it as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 90b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('a certain man who struck another') followed by a legal resolution before a rabbi, which fits the definition of a story under R-C0. It includes the opening formula 'Come and hear' as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 91a:20-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story quoted in the Talmud (R-C1) which narrates a specific incident (uncovering a woman's head) followed by a legal ruling and a subsequent action by the assailant (waiting for her and tricking her), meeting the requirement for multiple actions and change (R-C0). Segment 3 is excluded as it is the Gemara's legal discussion/commentary on the ruling (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 91b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man who preempted another's mitzva and the subsequent ruling by Rabban Gamliel. Under R-C0, an incident followed by a ruling counts as a story, and the inclusion of the opening formula 'as it is taught' is consistent with R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 91b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (the death of Rabbi Hanina's son following the cutting of a tree) which implies a causal change, but it is followed immediately by a legal ruling from Ravina. Under R-C7 shape 2 and R-C0, an incident followed by a ruling is often borderline or a story, but since the narrative is extremely brief and serves to illustrate a legal point, it fits the borderline criteria.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 92a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving multiple actions (bringing dates, eating, tasting, questioning) and a specific change or resolution where Shmuel orders the trees cut down. It follows the 'incident followed by a ruling/order' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 92a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Hisda saw date palms and ordered his sharecropper to uproot them. This contains multiple actions (seeing and ordering) and a change in the physical world, distinguishing it from a bare report or a purely legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 92a:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative describing the miraculous reassembly of Judah's bones and his entry into the heavenly study hall through Moses' prayer. However, because it concerns biblical figures (Judah and Moses) rather than rabbis or post-biblical figures, it is classified as out of scope according to rule R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 93a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a purse of charity, a bailee's negligence, and a subsequent ruling by Rav Yosef. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened and includes multiple actions beyond a simple legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 94b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man's desire to repent, his wife's discouraging speech, and his subsequent change in action (refraining from repentance), which then leads to a rabbinic ruling. Per R-B1, the story includes the introductory formula and the rabbi's attribution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 96b:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man') involving multiple actions (robbed, plowed, sowed, returned) followed by a courtroom drama with Rav Nahman and Rava. Under R-C0, an incident followed by a ruling is a story, especially when it includes 'more than a ruling' such as the dynamic interaction and penalizing intent described here.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 97a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav Yosef bar Hama's household seizing slaves, followed by a dialogue with his son that leads to a change in behavior ('I retract'). This fits the criteria of a story because it contains multiple actions, conflict, and a narrated change beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 98a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal precedent where the rabbis 'performed an action' (ruling on an exchange rate), which functions as a description of their practice rather than a narrative with a sequence of events or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 98b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rafram forced Rav Ashi to pay damages for burning a document. This meets the criteria of a story because it narrates a one-time event involving specific rabbis that resulted in a change (the collection of payment), following a general legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 98b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a meeting between two rabbis and a dialogue, which Jeff classifies as borderline when there is a specific interaction beyond standard legal debate. Under R-C7 shape 1, it is borderline because it is mainly speech acts but involves a specific narrated encounter ('Rav Hisda found Rabba bar Shmuel').",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 99b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man bringing a case before Rav, followed by a ruling and a subsequent interaction with Rav Kahana and Rav Asi. This meets the criteria of an incident followed by a ruling with additional narrated actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 99b:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a woman and Rabbi Hiyya, featuring multiple actions (presenting the coin, returning the next day with a complaint) and a resolution where the rabbi orders an exchange, which constitutes a change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 100a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (presenting a coin for assessment) followed by a dialogue with conflict regarding legal liability. Under R-C2 and R-C7, it is borderline because it is primarily a speech-act exchange about a ruling, but contains an initial action and implied change in legal status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 102a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a physical setting and a specific action (Rav Yosef turning his face in disdain) in response to a ruling, which constitutes conflict. However, it is primarily a vehicle for a speech-act and legal dialogue, fitting the borderline criteria for speech with conflict and minimal action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 103a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific rabbi (Rav Kahana) where multiple actions occur (giving money, flax appreciating, owner selling it) followed by a consultation and ruling from Rav. Under R-C0, the narrated events followed by a ruling constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 103b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a pious man who performed actions (purchased an item, forgot the seller, and sought rulings) followed by rabbinic resolutions. Under R-C0, an incident followed by a ruling counts as a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 104b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rabbi Abba, Rav Safra, and Rava, featuring multiple actions (traveling, requesting payment, refusing) and a conflict regarding the legal validity of the receipt that leads to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 104b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Pappa and Rav Shmuel bar Abba, including a legal transfer of funds and a subsequent emotional action (going out to meet him) that indicates change and resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 106a:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, including a legal objection and a resolution. Under R-C2 and R-C7, speech-acts without a narrated event or change beyond the discussion do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 106a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical action (Rav Gamda went) and a dialogue involving conflict/challenge between rabbis, but it is primarily focused on a legal discussion (speech-acts). Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 112a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the brother-in-law shutting the door) followed by a legal interaction with a rabbi. Under R-C7 shape 1 and 2, it is borderline because it consists of one real event followed by a dialogue and a ruling that does not explicitly state a change in the outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 112b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a matter circulating and coming before a rabbi for a ruling, which constitutes a courtroom drama or interaction (R-C0). It is borderline because it consists of one real event (the matter coming before Rabbi Abbahu) followed by a ruling and legal discussion (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 112b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a rabbi's practice (Ravina delaying for Mar Aha) cited as a legal precedent. Under R-C5 and the limit of R-C0, a single act that serves as a legal example without further narrated action, conflict, or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 113a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Asi visits Rav Kahana and observes a courtroom action (the writing of a document of ostracism) followed by a conflict and dialogue that results in a legal distinction. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 113b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Shmuel performs specific actions (purchasing a golden bowl at the price of iron and adding a dinar) which illustrates a legal dictum. Under R-C0 and R-C4, this is a story because it describes an event that happened rather than a hypothetical case, even though it is embedded within a statement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 113b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving Rav Kahana and Ravina; each narrates a specific event (a purchase) followed by a specific action or speech that changes the outcome or interaction, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 113b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav Ashi traveling, observing an orchard, and engaging in a dialogue with a gentile. It contains multiple actions and a conflict (the gentile's challenge) that leads to a resolution through Rav Ashi's explanation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 114b:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a person's childhood memories followed by a concrete action and change: Rabbi Yehuda HaNasi elevating him to the priesthood. It follows the R-C0 criteria of an incident leading to a ruling/action and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 114b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a child's testimony and a rabbi's subsequent action. It satisfies R-C0 as it contains multiple actions (capture, drawing water, gathering wood) and a change in status (the rabbi marrying her to a priest based on the event).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 115a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a named post-biblical figure (Hanan the Wicked) who stole and sold a cloak, followed by a legal case brought before Rav Huna and his subsequent ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical legal problem.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 115a:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic example of an incident followed by a ruling as defined in R-C0. It narrates specific actions (stealing a cloak, repaying a debt, identifying the thief) and concludes with a rabbi's ruling that resolves the case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 115a:24-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a theft and subsequent sales, followed by a legal ruling from Abaye and a challenge by Rava. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 116a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Safra that follows a habitual custom (feeding the lion). It contains multiple actions and a change in outcome (the lion not eating the donkey) that leads to a legal resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 116b:20-Bava Kamma 117a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man who showed piles of wheat') followed by a ruling from Rav Nahman, which R-C0 explicitly identifies as a story shape. It contains multiple actions and a change in state (the theft, the court appearance, and the subsequent dialogue between rabbis regarding the ruling's nature).",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Huna bar Yehuda traveling and appearing before Rava) followed by a report of a legal case and a subsequent ruling that changes the outcome (Rava ordering the reversal of the decision). Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple actions and a change in status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man and his actions (showing and carrying wine under coercion), followed by a ruling from Rav Ashi. Under R-C0, an incident followed by a ruling counts as a story, as it contains multiple actions and a change in legal status, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a quarrel and the act of handing property to an official, followed by a rabbinic ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117a:17-Bava Kamma 117b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complex, multi-stage narrative involving several post-biblical figures (Rav, Rav Kahana, Rabbi Yohanan) and a sequence of distinct actions: a killing, a flight to Eretz Yisrael, a classroom drama, a death by offense, and a supernatural resurrection.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain man and Rabbi Abba, followed by a courtroom drama where the case moves between different sets of rabbis. It meets the criteria of R-C0 as it contains multiple actions (showing the silk, sitting in judgment, going to another court) and a change in legal outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a bailee and thieves, followed by a ruling and a legal challenge. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a halakhic story where a specific incident (thieves coming and a man handing over a purse) is followed by a rabbinic ruling and a dialogue that resolves the case. Under R-C0, the narrated event of the theft and the subsequent ruling constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 117b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving multiple actions (bringing a donkey, the boat sinking, pushing the donkey into the river) followed by a rabbinic ruling and a dialogue that resolves the case. Under R-C0, an incident followed by a ruling counts as a story when there is narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 119a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rava purchasing grapevine branches) followed by a conflict and resolution (Abaye's challenge and Rava's ruling). Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 119a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a rabbi and a sharecropper, containing multiple actions (the sharecropper's conduct, Rav Hisda dismissing him) and a clear change in status/outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 119a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Ravina arrives at a location and women perform an action (tossing jewelry), followed by a dialogue and a ruling that resolves the incident. This fits the criteria of an incident followed by a ruling being a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 119b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a linguistic pun and a legal ruling by Rav Yehuda, followed by a report of his son's personal practice. There is no narrated action, conflict, or change, making it a bare report of a custom or view rather than a story.",
+    "error": null
+   }
+  }
+ ]
+}

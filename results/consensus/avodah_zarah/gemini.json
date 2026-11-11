@@ -1,0 +1,3008 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T23:47:05",
+  "outcomes": {
+   "ok": 170
+  }
+ },
+ "rows": [
+  {
+   "id": "Avodah Zarah 2b:1-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     14,
+     16
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative of a future event (the judgment of the nations) containing multiple actions, dialogue with conflict, and changes in state (entering and leaving disappointed). While it includes legal and exegetical commentary (R-B4), the core narrative follows the rule that a story narrates something that happened or will happen, even if fictional.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 3a:3-Avodah Zarah 3b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     11,
+     13
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative involving dialogue and actions (building a sukka, kicking it) between God and the nations of the world, but it is about biblical/mythological figures and the eschatological future rather than rabbis or post-biblical figures, placing it under the R-S1 label.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 4a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Abbahu and Rav Safra) that begins with a habitual frame (praising and tax remission) and transitions into a specific one-day event involving conflict, physical action (tormenting with a scarf), and a resolution through dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 4b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story involving dialogue and actions, but it is a retelling of a biblical episode concerning Balaam and his donkey rather than a story about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 4b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a rabbi and a heretic, featuring multiple actions (taking the rooster, waiting, falling asleep) and a clear change or resolution where the rabbi learns a moral lesson. It follows the 'one day' structure described in R-C3 and contains the narrated actions and change required by R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 5a:20-Avodah Zarah 5b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving Moses rebuking the Jewish people and citing the actions of Adam, but these are biblical characters and episodes rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 6b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a heretic sending a gift) involving post-biblical figures (Rabbi Yehuda Nesia and Reish Lakish). It includes an action, a dilemma, and a resolution through dialogue and a proposed physical act, meeting the criteria for a story rather than a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 6b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a seating arrangement and a rabbi stating a ruling. Under R-C0 and R-C5, a description of rabbis sitting followed by a ruling or discussion without further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 7a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a physical action and emotional reaction ('Rav Yosef turned his face away') indicating conflict and displeasure, which Jeff defines as an event. However, because the rest of the segment is standard rabbinic dialogue and legal analysis, it fits the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 8a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with actions and change, but it is about Adam the first man, a biblical character. Under rule R-S1, stories about biblical figures are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 8a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with actions, dialogue, and change, but it concerns Adam and Eve, who are biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 8b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a rabbi happened to visit a house, heard something, and took action by withdrawing. This contains multiple actions and a change in outcome, fitting the definition of a story rather than a bare report or legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 8b:4-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical historical figures (Romans, Greeks, and the Jewish people) involving a sequence of actions: a series of failed battles, a diplomatic partnership, a clever riddle-based negotiation, and a change in political status. It follows the pattern of a historical event narrated by a rabbi (Rav Dimi) rather than a biblical retelling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 8b:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Yehuda ben Bava) that includes a historical frame (the Roman decrees), specific actions (going to the mountains to ordain students), dialogue with conflict, and a tragic resolution (his martyrdom).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 9b:4-Avodah Zarah 10a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific incident ('a certain promissory note') and involves multiple actions and a change in the protagonist's state: the Sages deliberate, Rav Nahman rules, Rav Aha bar Ya'akov objects, and finally Rav Aha bar Ya'akov goes out and discovers the truth, resolving his internal doubt.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10a:13-Avodah Zarah 10b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific interactions between Rabbi Yehuda HaNasi and Antoninus (a post-biblical figure) involving symbolic actions that lead to changes in understanding and political strategy. While segment 3 contains a habitual frame ('every day'), it describes a specific pedagogical method that results in a change of the king's behavior, and segment 4 is excluded as it constitutes the Gemara's commentary on the story's motivations (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Antoninus's daughter and a series of symbolic actions (sending plants) between Antoninus and Rabbi Yehuda HaNasi. This sequence of actions and responses constitutes a story with conflict and change, going beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (sending gold hidden in wheat) that includes specific dialogue and a causal purpose for the future. Under R-C3, a habitual frame is a story when it describes events and interactions between post-biblical figures like Antoninus and Rabbi Yehuda HaNasi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing Antoninus's secret tunnel and his practice of killing servants, but transitions in segment 3 to a specific 'one day' event involving Rabbi Hanina bar Hama. This event includes multiple actions, conflict, and a supernatural change (the revival of the servant), meeting the criteria for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual frame (Antoninus's daily service) that includes specific actions and a dialogue reflecting a significant change in status or desire (the king's wish to serve the rabbi in the World-to-Come). Under R-C3, a habit that leads to a meaningful interaction or change counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:10-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Ketia bar Shalom, a post-biblical figure, involving a courtroom drama, a self-circumcision, an execution, and a Divine Voice. It follows the rule that post-biblical figures are in scope and that an incident followed by a ruling (Rabbi Akiva's) or a reaction (Rabbi Yehuda HaNasi's) constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 10b:15-Avodah Zarah 11a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual relationship (Antoninus attending to Rabbi) followed by a specific event (the death of the figures) and a speech-act response. Under R-C7 shape 1 and 3, it is borderline because it consists of a single event followed by a brief dialogue/reaction with minimal narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 11a:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Onkelos, a post-biblical figure, involving multiple actions (sending troops, conversion, dialogue, and placing a hand on a mezuzah) and a clear change in outcome where the emperor ceases his pursuit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 11a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving post-biblical figures (Rabban Gamliel and Onkelos) where a specific event—the burning of items upon a death—is recorded as an action that occurred, rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 11b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a description of a Roman custom or ritual ('Once every seventy years they bring...') rather than a one-time event. Under R-C3 and R-C5, a habitual frame or bare report of a practice that does not lead to a specific narrated incident or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 12b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident ('an incident involving one who swallowed...') followed by a rabbi's ruling and action. Under R-C0, an incident followed by a ruling counts as a story, as it describes a specific event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 12b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a legal precedent in Beit She'an where the Sages issued a ruling on adorned shops. Under R-C5 and the limit of R-C0, a report of a ruling without a narrated action or change beyond the ruling itself does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 13a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident involving Yosef the priest followed by a ruling from Rabbi Yohanan. Under R-C7 shape 2 and R-C0, an incident followed by a ruling is considered borderline or a story, as it narrates a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 13b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific event (Rabbi Yona finding Rabbi Elai at the entrance to Tyre), but the interaction consists entirely of a legal inquiry and response. Under R-C2 and R-C7, a passage that is mainly speech but contains a real event or setting is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 13b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving two rabbis performing actions (buying items) followed by a dialogue containing conflict and a misunderstanding. This meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 14b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and legal inquiry between Rav Hisda and Avimei regarding the interpretation of a Mishnah. Under R-C2 and R-C7, speech-acts without a narrated event or action do not constitute a story, even if they include a tradition about Abraham's tractate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 14b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Abaye and Rav Dimi regarding the definition of a term. While it is primarily speech-acts, it contains conflict (Abaye's challenge) and an implied change or resolution (Rav Dimi's explanation of the practical utility of his definition), fitting the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 15a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's ruling and the legal reasoning behind it, rather than a narrated event where an incident leads to a change or response. Under R-C5 and the limits of R-C0, a description of what a rabbi permitted without a specific incident or continuation does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 15a:10-Avodah Zarah 15b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a real event (Rav Huna sold a cow) followed by a dialogue and a legal justification. Under R-C7 shape 2 and R-C2, this is borderline because it consists of a single action followed by speech/ruling with implied conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 15b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabba selling a donkey) followed by a dialogue involving conflict and a justification of the action. Under R-C0, an incident followed by a ruling or response counts as a story, and the presence of conflict between Rabba and Abaye distinguishes it from standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 16a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of actions and changes where the household of Rabbi Yehuda HaNasi paid bribes to gradually abolish a pagan festival requirement. It meets the criteria of having multiple actions and a clear change in outcome, and it is introduced by a formal attribution formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 16b:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a travel narrative involving multiple actions (traveling to different cities), encounters with various rabbis, and a resolution in the form of a sharp retort and a change in the protagonist's understanding of a tradition's attribution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 16b:14-Avodah Zarah 17a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic narrative about Rabbi Eliezer and Rabbi Akiva (post-biblical figures) involving a sequence of events: arrest, trial, acquittal, and a subsequent dialogue that includes an embedded flashback story about an encounter in Tzippori. It follows the rule that an incident followed by a ruling or resolution counts as a story, and it includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 17a:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a woman comes before Rav Hisda to confess her sins, followed by his instruction to prepare shrouds and a narrated outcome (in one version she dies, in another she does not). This fits the criteria of an incident followed by a ruling or action that leads to a change or specific resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 17a:11-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-B1",
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Elazar ben Durdayya) containing multiple actions, dialogue, and a clear change in status (death and divine acceptance). Per R-B1, the story includes the opening formula 'They said about...'; per R-B4, the Gemara's subsequent commentary in segment [5] and Rabbi's reaction in segment [6] are included as they are integral to the narrative's resolution and reception.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 17a:16-Avodah Zarah 17b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving two rabbis walking a road, making a choice between paths, and experiencing a change in the environment (the prostitutes yielding) followed by a dialogue explaining the event. It meets the criteria of having multiple actions and a clear change/outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 17b:3-Avodah Zarah 18a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative of the arrest and trial of two rabbis, featuring multiple actions, conflict with Roman authorities, and miraculous changes in outcome. While it includes Gemara commentary (R-B4) and legal discussion (R-C0), the core is a series of narrated events starting from the Tannaitic formula (R-B1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 18a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrative episodes: a specific one-time event involving the daughter's interaction with Roman nobles (R-C4), and a subsequent scene where the family members go out to their execution and respond to their sentence (R-C0). These segments narrate events that happened to post-biblical figures and include actions, dialogue, and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 18a:5-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-length narrative about post-biblical rabbis (R. Yosei ben Kisma and R. Hanina ben Teradyon) featuring multiple actions, dialogue with conflict, and a tragic resolution. It includes the opening formula 'The Sages taught' as per R-B1 and concludes with the Divine Voice and Rabbi's reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 18a:13-Avodah Zarah 18b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complex, multi-event narrative involving Rabbi Meir and Berurya with clear actions, conflict, and change. It follows the pattern of a one-time event (the rescue mission) following a situational frame (the sister in the brothel).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 19a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about a specific event involving rabbis (Levi, R. Shimon, and Rabbi) with multiple actions, conflict over which book to study, and a resolution where the rabbi's teaching ironically validates Levi's desire to leave.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 19a:18-Avodah Zarah 19b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rav Hisda speaks to his students, they react by leaving him for another teacher, and he responds to their action. This sequence of speech, action, and reaction constitutes a story rather than a bare report or standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 19b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Alexandri's habitual proclamation leads to a crowd gathering and a subsequent interaction. This contains multiple actions and a change in the situation, fitting the definition of a story rather than a bare report or a custom that leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 20a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates two distinct incidents involving rabbis (Rabban Shimon ben Gamliel and Rabbi Akiva) that include specific actions, emotional reactions, and changes in state, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 20b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This segment is the Gemara's commentary or explanation of a previous incident, providing a detail to resolve a difficulty rather than narrating a story itself. Under R-B4 and R-C5, a bare report or a comment explaining the facts of an incident is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 22a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a halakhic story where an incident (the saffron growers' arrangement) is followed by a ruling, a challenge, and a narrated emotional reaction ('Rava was embarrassed') and resolution ('Ultimately, the matter was revealed'). Under R-C0, the narrated event and the rabbi's embarrassment count as actions/changes that constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 22a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a partnership over saplings and the subsequent action of the parties coming before Rava for a ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 22b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two eyewitness accounts of specific incidents ('I saw a certain man...') involving multiple actions and a change in state (buying, violating, and consuming). These are not bare reports of practice but narrated events used to resolve a legal dilemma, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 23b:10-Avodah Zarah 24a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     5,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a multi-part story about Dama ben Netina, featuring specific actions (refusing to wake his father, losing profit, the birth of a red heifer) and causal change (the reward of the heifer's birth). Although embedded in a legal discussion and cited as a precedent, it meets the criteria for a story under R-C0 and R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 25b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving post-biblical figures (students of Rabbi Akiva) with multiple actions, dialogue, conflict with bandits, and a resolution where the students' cleverness leads to a change in the bandits' attitude.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 25b:10-Avodah Zarah 26a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rav Menashe) that includes multiple actions: a journey, an encounter with thieves, a clever deception, a curse, and a long-term consequence resulting in a change of state (the thieves' failure and the weaver's death).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 26a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech acts (an insult and a retort) without physical action, but it contains significant conflict and an admission of past harm, fitting the borderline criteria for dialogue with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 27b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yishmael and Ben Dama) with multiple actions, conflict, and a clear change of state (the death of the character). It follows the 'incident plus ruling/reaction' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Yoḥanan) involving multiple actions, dialogue, conflict regarding an oath, and a change in state (the healing and the public revelation of the secret).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving a rabbi (Abaye): he attempted various remedies without success, received advice from a specific person (an Arab), performed a specific action, and experienced a change in state (being cured).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving multiple actions and a change: a heretic applied poison to Rabbi Abbahu's leg, and other rabbis intervened by licking it to prevent amputation. This meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28a:15-Avodah Zarah 28b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a real event (Rabbi Ya’akov suffering) followed by a rabbi's instruction, which fits the borderline shape of one event followed by a ruling or discussion. Per R-C0 and R-C7, this is borderline rather than 'not' because there is a specific historical incident involving a rabbi, even if the subsequent text is primarily medical instruction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a real event (Rabbi Abbahu's ear pain) followed by a rabbinic instruction, which fits the 'incident plus ruling' shape. However, because the resolution is primarily a medical instruction (speech-act) and the text does not explicitly narrate the action of the healing or the change in his condition, it falls into the borderline category of 'one real event followed by discussion'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events including a ruling, a conflict (mockery), a change in circumstances (the mocker falling ill), and a final resolution. This exceeds a bare report or a simple ruling by including multiple actions and a clear narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 28b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a maidservant's eye infection and injury) that leads to a change (Mar Shmuel issuing a new public ruling). This fits the criteria of an incident followed by a ruling where there is a narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 29a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person narrative by Rav Pappa involving a specific problem (illness), an interaction with a post-biblical figure (the Arab), a specific action (the remedy), and a change in state (he was healed). This meets the criteria of an incident that leads somewhere beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 29a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific rabbi (Rav Hana bar Bizna) and a barber. It contains a distinct action (getting a haircut), a conflict (the barber's threat), and an emotional/verbal response from the rabbi acknowledging his error.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 29b:4-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a framing action (traveling along the road) and a dialogue with conflict and diversion, but it is primarily composed of speech acts. Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Yannai becoming ill and the Sages visiting him) followed by a dialogue and a physical gesture ('motioned to them') that resolves a legal dilemma. Under R-C0 and R-C7, the presence of a physical setting and a non-verbal action beyond mere speech qualifies this as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving Shmuel and Ablet where a specific action (withdrawing the hand) occurs, followed by a ruling that resolves the situation. Under R-C0, an incident followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two brief reports where a person comes before a rabbi and receives a ruling. Under R-C0 and R-C5, coming before a rabbi for a ruling is not enough to constitute a story unless there is another narrated action or change, which is absent here.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rabbi Yannai (or Bar Hadaya) and a snake, featuring multiple actions and a change in the situation (the snake diluting the wine to reach it).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a named post-biblical figure's attendant (the water was exposed while he slept) followed by a visit to a rabbi and a ruling. This meets the criteria of having multiple actions and a change in status beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving ten people drinking from a barrel, where the specific outcome (the tenth person dying) provides the change and causality required for a story. Under R-C0, this is an event that happened rather than a hypothetical legal case, and it goes beyond a bare report by including a sequence of actions and a tragic resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 30b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event ('there was an incident') involving multiple actions and a change of state (nine ate and lived, the tenth ate and died). Per R-C0, this is a narrated event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 31a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Yohanan traveled to Parod and interacted with Rabbi Tanhum. It contains multiple actions (arriving, asking, teaching, and responding with a verse) and a change in state (the perpetuation of wisdom through a disciple), which satisfies the criteria for a story beyond mere legal dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 31b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('happened to come') involving a rabbi, consisting of multiple actions (being offered wine, refusing, being offered beer, refusing) and a change in the expected behavior. Unlike a bare report of a custom, this is a narrated incident with a specific setting and sequence of events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 33a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the seizure and return of wineskins) followed by a rabbi's ruling, which fits the definition of a story under R-C0. It contains multiple actions beyond speech, including the seizure, the use of the skins, their return, and the subsequent inquiry at the study hall.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 33b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where Ravina permits Rav Hiyya to pour beer, but Rav Hiyya goes and pours wine instead, followed by Ravina's reaction and reasoning. This constitutes a sequence of actions and a change beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 33b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi (filling vessels and placing them in the sun) followed by a physical change (they burst) and a subsequent dialogue/ruling by Rabbi Abba. This meets the criteria of having multiple actions and a change beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 33b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (Parzak seizing vessels and putting wine in them) followed by a ruling from Rav Yehuda. Under rule R-C0, this counts as a story because it describes a one-time event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 34a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rabbi Akiva travels to a location, is challenged by questions he cannot answer, and subsequently goes to the study hall to seek the resolution. This contains multiple actions and a change in the protagonist's state of knowledge, satisfying the criteria for a story beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 34b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a boat arriving at a port) followed by actions (placing guards) and a dialogue involving conflict and resolution between rabbis. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical case, and it contains multiple actions and a change in understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 35b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once Rabbi went out...') involving a rabbi and a gentile, which leads to a change in public perception ('the people thought that Rabbi permitted the bread'). Under R-C0 and R-C3, this is a story because it describes an incident that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 35b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once Rabbi went to a certain place') involving a rabbi and a concrete situation (seeing the students' lack of bread) that leads to an action/speech and a subsequent misunderstanding by the people. Per R-C0 and R-C3, this is a narrated incident rather than a hypothetical legal case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 35b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific action (Aivu eating gentile bread) followed by a social consequence and conflict (Rava's decree to ostracize him). This contains both a narrated event and a resolution that changes the character's status, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 36a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict that results in an emotional reaction ('Rav became embarrassed'), which counts as a change or event under R-C0 and R-C7. However, because it is primarily a speech-act interaction with minimal physical action, it fits the borderline criteria defined in R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 36b:19-Avodah Zarah 37a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] contains a specific incident where a student returns to his teacher, relays a conflicting view, and the teacher retracts his own ruling; this constitutes a real event with change and conflict. However, segments [3] and [4] are purely Gemara commentary and legal analysis of the ruling, which are excluded under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 37a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Yehuda Nesia traveling while leaning on his attendant) followed by a dialogue containing conflict and implied change regarding legal rulings. Under R-C0 and R-C2, the combination of a physical action and a dialogue with conflict constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 37b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents: Yosei ben Yo’ezer driving stakes to define domains, and people coming before Rabbi Yannai who instructs them to immerse. These are narrated events that happened rather than hypothetical legal cases, and the inclusion of the opening formula 'תניא' is consistent with rule R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 38b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving multiple actions and a tragic change: a rabbi arrives at a house, a legal dispute occurs, and a character is poisoned and dies as a result.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates two distinct incidents where rabbis travel to a location, are presented with a specific object, perform an action to investigate it (enclosing in a basket or holding to the light), and issue a ruling based on the change in their understanding. This fits the criteria of an incident followed by a ruling with narrated actions beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving post-biblical figures (Rav Ashi and Rabba bar bar Hana) where specific actions occur—enclosing a fish in a vessel and hearing a man's comment—leading to a change or resolution (permitting the fish or refraining from eating).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi hears a comment, chooses not to eat, and later discovers a non-kosher substance, which constitutes a change in state and a clear sequence of actions. Per R-C0, this is a story about an event that happened to a rabbi, including his emotional/spiritual reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (the death of Rabbi Levi) followed by a concrete action (people coming before Rabbi Yohanan) and a ruling. According to R-C0, an incident followed by a ruling counts as a story when there is a narrated change or action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific person performs an action (purchasing dye), seeks a ruling, and receives a resolution or a narrated interaction. Under R-C0, an incident followed by a ruling counts as a story, and the dialogue between Rav Huna and Hanan the Tailor adds the 'dynamism' and change required for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific woman and her actions across two marriages, which serves as more than a bare report of a ruling. Although it describes a habit, the change in her behavior following the change in her circumstances constitutes a story under R-C0 and R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 39b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a habitual practice ('a certain elder... who would smooth') cited as evidence for a legal prohibition. Under R-C5 and R-C7, a habit that does not lead to a specific one-time event or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 40a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (a ship arriving) followed by actions (Rav Huna going out and inspecting) and a resulting conflict between two rabbis that leads to a public drama with shofarot heralding opposing rulings.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 40b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yehuda HaNasi and Rabbi Yishmael ben Rabbi Yosei) with multiple actions, conflict, and a resolution. It begins with an opening formula (Tanu Rabbanan) and follows an incident (illness) through dialogue to a physical action and change (finding the wine, drinking, and being cured).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 41b:14-Avodah Zarah 42a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a maidservant and a priest, followed by a ruling from the Sages. Under R-C0, an incident followed by a ruling counts as a story, and under R-B1, the opening formula 'Rabbi Yehuda said' is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 43a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated one-time event ('Once, I was following...') involving multiple actions and a change in outcome: the rabbi finds an object, attempts to have it revoked, and eventually uses force to achieve the revocation. It fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 43a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event regarding the Hasmonean monarchy's construction of the Temple Candelabrum. It describes a sequence of actions and changes—starting with iron spits, then silver, and finally gold—which meets the criteria for a story embedded within a legal dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 43b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Shmuel and Rav Yehuda involving a command to disfigure a seal. While it is primarily a speech-act (a command/ruling), it involves conflict and an implied change to the object, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 43b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical situation where Shmuel's father and Levi entered a synagogue with a statue to pray, which constitutes a real event involving post-biblical figures. However, it is framed as a precedent within a legal discussion and consists of a single set of actions without a narrated change or resolution, fitting the borderline shape of an incident used to challenge a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 44b:0-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story involving a post-biblical figure (Rabban Gamliel) and a specific incident (bathing in Akko) that includes conflict, dialogue, and a change of setting (leaving the bathhouse to answer). Although it is a Mishnah story, rule R-C1 dictates that its appearance in the Talmud is catalogued as Talmudic.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 46a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a tanna reciting a baraita before a rabbi followed by a scholarly identification of the author; this is standard rabbinic dialogue and teaching without any narrated event, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 47a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and presenting a legal dilemma; this is standard rabbinic dialogue and a speech-act without any narrated action or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 48a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a Mishnah text. According to R-C1, a story in the Mishnah belongs to the Mishnah and is not technically part of the Talmudic catalogue, even if the printers included it in the layout.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 48b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Rav Sheshet and his attendant involving a specific instruction and conflict regarding legal propriety, but it is primarily a speech-act with implied action rather than a fully narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 49a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain garden...') followed by a query and a ruling, which fits the definition of a story under R-C0. It also includes the opening formula attributing the ruling to Rav Yehuda in the name of Shmuel, as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 49b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage follows the 'incident plus ruling' shape defined in R-C0; it narrates a specific event that happened to a certain man (the intermingling of wine) followed by his action of coming before a rabbi and the rabbi's resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 50a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving post-biblical figures (King Yannai and various Rabbis) where a specific incident—the destruction of a house and the repurposing of idolatrous stones—leads to a change in behavior and a conflict of practice among the Rabbis. It satisfies R-C0 as it describes events that happened followed by a resolution/ruling, and is in scope under R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 50a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving at a location and citing a baraita (legal teaching); this is a report of a speech-act/teaching without a narrated event, conflict, or change following it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 50b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of standard rabbinic dialogue and the resolution of a legal difficulty. Under R-C2 and R-C7, speech-acts and scholarly back-and-forth without a narrated event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 50b:2-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rabba bar Yirmeya arriving at a locale and presenting a baraita) followed by a lengthy dialectical resolution of a difficulty he raised. Under R-C7 (shape 2) and R-C0's limit, an incident followed by a ruling or discussion is borderline, especially when it involves conflict or a specific challenge like 'no carpenter can resolve this'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 53b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Ulla arriving and sitting on a damaged platform) followed by a conflict and dialogue with Rav Yehuda. Under R-C0, an incident followed by a ruling or discussion counts as a story, and the physical action of sitting provides the necessary event beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 54a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (Rav Nahman's instruction to the Rabbis) and a legal dictum by Rav Huna. There is no narrated event or action beyond standard rabbinic dialogue and the citation of a legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 54b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C1",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story involving post-biblical figures (the Sages in Rome) and gentiles. It is classified as borderline because it consists entirely of dialogue/speech-acts with conflict but no other narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 54b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between philosophers and Sages in Rome; while it is primarily a speech-act, the presence of conflict (the philosophical challenge) and the specific historical setting make it a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 54b:17-Avodah Zarah 55a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a philosopher with clear conflict and an embedded one-time event (the fire in the city), but it remains primarily a speech-based theological exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 56b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (the child) who is presented with a dilemma and responds. It contains multiple actions—learning, being asked, and responding—and includes dialogue with conflict/debate, which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 56b:4-Avodah Zarah 57a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a concrete incident (a Jew and gentile treading wine) and a specific action by a rabbi (Shmuel delaying his ruling), which fits the R-C0 definition of a story. However, the majority of the passage [3-4] consists of the Gemara's analytical commentary and hypothetical reasoning for Shmuel's delay, which under R-B4 is excluded from the narrative itself, leaving only a single event followed by discussion (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 57a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a gentile and a palm branch followed by a ruling and a subsequent dialogue with other rabbis. Under R-C0, an incident followed by a ruling counts as a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 57b:6-Avodah Zarah 58a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident in Meḥoza involving multiple actions (a gentile stirring wine, a storeowner throwing it into a barrel) followed by a legal conflict and a subsequent meeting between Rava and Rav Huna bar Rav Naḥman. This fits the criteria of an incident followed by a ruling or change, and contains significantly more than a bare report or speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 58a:6-Avodah Zarah 58b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a clear narrative incident involving specific rabbis and a 'certain man' where an action (pouring wine) leads to a discovery and a legal conflict. While segments [3]-[5] are Gemara commentary and analysis of the event (which R-B4 suggests excluding), segment [2] contains the complete narrative arc of the incident and the initial rulings.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 58b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Yirmeya traveled to a location, witnessed an action, and issued a ruling. This fits the criteria of an incident followed by a ruling where there is a narrated action beyond just the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 58b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Reish Lakish travels to a location, issues two rulings based on what he saw, and subsequently brings the case before Rabbi Yohanan who orders him to retract. This contains multiple actions, conflict between authorities, and a change in the legal status of the objects involved, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 59a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rabbi Hiyya bar Abba visited a location, observed several distinct actions, and subsequently brought the case before Rabbi Yohanan for a ruling. This fits the criteria of an incident followed by a ruling that results in a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 59b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (an etrog falling and a gentile jumping to retrieve it) followed by a rabbi's intervention and ruling. Under R-C0, the narrated event constitutes the story and the ruling provides the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 59b:4-Avodah Zarah 60a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a certain barrel and a gentile's action, followed by a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story if there is a narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 60a:7-Avodah Zarah 60b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a barrel splitting and a gentile jumping to encircle it) followed by a rabbinic ruling. Under R-C0, the narrated event constitutes the story and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 60b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single event (a gentile found in a winepress) followed by a legal ruling. Under R-C0 and R-C5, it is not a story because there is no second action or change narrated beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 61a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case (halakha) describing a hypothetical scenario ('one who purchases... or one who rents') rather than a specific event that happened to a particular person.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 61b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (the house of Parzak placing wine with sharecroppers) followed by a legal discussion and a ruling by Rava. Under R-C0 and R-C7 shape 2, an incident followed by a ruling is considered a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 61b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage follows the 'incident plus ruling' shape defined in R-C0; it narrates a specific event that happened ('a gentile was found standing among the barrels') followed by Rava's ruling, which distinguishes it from a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 62b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic halakhic story where a specific incident occurred (renting a ship and receiving wheat) followed by a rabbi's ruling that resolves the event. Under rule R-C0, the narrated event of the man renting the ship and receiving payment constitutes a story, and the ruling is its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 62b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the school of Rabbi Yannai borrowing and repaying produce) followed by a report to a rabbi and his subsequent ruling, which fits the criteria for a halakhic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 64a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (gentiles coming before a rabbi) followed by a ruling/instruction, which fits the borderline shape of an incident followed by a ruling where the interaction implies a change in status.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 64b:15-Avodah Zarah 65a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Yehuda sending a gift) followed by a dialogue involving conflict and a defense of the action. Under R-C0, an incident followed by a ruling or justification counts as a story, and the presence of conflict moves it beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 65a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific rabbi (Rava) and a post-biblical figure (bar Sheshakh). It contains multiple actions, dialogue with conflict, and a clear change in outcome where the minister's eye bursts following a royal summons.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 65a:15-Avodah Zarah 65b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving the father of Rav Aha who performed a series of actions (pouring wine, ferrying gentiles) and received payment, which was then brought before Abaye for a ruling. According to R-C0, an incident followed by a ruling constitutes a story, as it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 65b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a post-biblical figure (Boethus ben Zunen) where a specific event occurs (a barrel broke and fell on figs) followed by a ruling from the Sages. Under R-C0, an incident followed by a ruling counts as a story, and under R-C1, the Talmud's quotation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 65b:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain heap of wheat') followed by a rabbinic ruling, a challenge, and a subsequent change in the rabbi's action (retracting and issuing a new order). This sequence of event, conflict, and change satisfies the criteria for a story beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 68a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi raising a question and then searching for a source to answer it. This is standard rabbinic dialogue and scholarly activity rather than a story, as the only 'action' is the act of searching for a text to support a legal position.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 68b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('a certain mouse fell into a barrel') followed by a rabbi's ruling and a subsequent discussion of the ruling's rationale. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 69a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal dilemma followed by a report of a past ruling by Rav Kahana. According to R-C5 and the limit of R-C0, a bare report of a ruling or an incident only alluded to as a precedent without further narrated action or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 69a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and thought processes regarding a legal calculation. There is no narrated event or action beyond the speech-acts of thinking and saying, which does not meet the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event ('a gentile entered... locked the door') followed by a ruling from Rava. According to R-C0, the narrated event constitutes the story and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving multiple actions (hearing a quarrel, going outside, the gentile locking the door) followed by a rabbinic ruling. Under rule R-C0, an incident followed by a ruling counts as a story when there is narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a gentile found among wine barrels followed by a rabbi's ruling. Under rule R-C0, an incident followed by a ruling counts as a story, as it describes a narrated event rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('A gentile was found standing...') followed by a ruling from Rava, which fits the criteria for a story under R-C0. The subsequent legal discussion and objection do not disqualify the initial narrative event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a Jew and a gentile with multiple actions (sitting, drinking, hearing a sound, getting up, and leaving) followed by a rabbinic ruling. Under R-C0, the narrated event constitutes the story and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving a Jew and a gentile on a ship followed by a ruling from Rava. Under R-C0, an incident followed by a ruling counts as a story because it describes a narrated event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a lion and a gentile hiding, followed by a rabbinic ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes a specific event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('certain thieves who came... and opened') followed by a rabbinic ruling, which fits the criteria for a story under R-C0. It contains multiple actions (coming and opening) and a resolution via the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (a girl found with wine froth) followed by a rabbi's ruling. Under R-C0, the narrated event constitutes the story and the ruling is its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (an army entering Neharde'a and opening barrels) followed by a rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 70b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a wine shop owner and a gentile woman, followed by a rabbinic ruling in the study hall. Under R-C0, an incident followed by a ruling counts as a story, and the inclusion of the opening formula 'Rabbi Yitzhak said' is required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 72a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a man who promised land to one person but sold it to another, followed by a ruling from Rav Yosef. Under rule R-C0, an incident followed by a ruling counts as a story, especially when there is a narrated action (the sale to the second person) beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 72a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific man who made a promise and then sold land to another, followed by a rabbinic ruling. Under R-C0, the narrated event of the sale constitutes a story, and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 72b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident followed by a ruling' story where a specific event occurred (a man siphoned wine and a gentile touched the tube) followed by a rabbi's action/ruling. According to R-C0, the narrated event of the man siphoning and the gentile's touch constitutes the story, and the ruling is its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 72b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dictum by Mar Zutra followed by a report of Rabba bar Rav Huna's ruling or personal practice. Under R-C5 and the limit of R-C0, a bare report of a rabbi's ruling or habit that does not lead to a further narrated action or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 73a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what a rabbi did, cited as a precedent for a legal view. Under R-C5 and the limits of R-C0, a single act that does not lead to a response, change, or further narration is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 74b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving multiple actions and a change in the protagonist's understanding: a man requests help, Rabbi Hiyya gives an instruction, Rav inspects the winepress, makes an initial assessment, discovers a hidden crack, and changes his ruling. It fits the criteria of an incident followed by a ruling that contains dynamic action and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 74b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes Rava's habitual practice of sealing kegs as a legal precaution, which constitutes a bare report of a custom or a 'what someone used to do' cited as evidence of his legal view. Under R-C5 and the limits of R-C0, this is not a story because the action does not lead to a specific one-time event, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 75b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (buying a utensil) and a mental action (thinking to immerse it) followed by a dialogue with conflict/correction. Under R-C7 shape 1 and R-C2, dialogue with conflict and an underlying event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 75b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event that happened (a gentile giving a silver goblet as collateral) followed by the rabbi's actions (immersing and drinking from it). Under R-C0, an incident involving a post-biblical figure that includes narrated actions beyond a mere ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 76a:17-Avodah Zarah 76b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Rav Akavya) performing a series of actions (surrounding a cauldron with dough, filling it, and boiling it) to solve a practical problem. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical legal case, and it contains multiple actions leading to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Avodah Zarah 76b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Mar Yehuda, Bati bar Tuvi, and King Shapur) with multiple actions, dialogue, and conflict. It follows the pattern of a legal custom being illustrated by a 'one day' incident that leads to a change or specific interaction.",
+    "error": null
+   }
+  }
+ ]
+}

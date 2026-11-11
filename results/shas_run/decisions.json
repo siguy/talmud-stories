@@ -1,0 +1,45 @@
+{
+  "_what": "Simon's rulings on red gates, read by scripts/check_tractate_run.py (G4, G6), judge_detector_spans.py (the Claude subset) and build_site_data.py (the biblical drop). A ruling turns a red into an amber that names it; it never hides the measurement.",
+  "g4_accepted": {
+    "_ruling": "Simon, 2026-11-10: 'Ship them' -- same code, same triage, kept counts within 10%, pooled agreement 93.7%; the site ships only passages definite in both runs, so the one-run passages stay off either way and go on Jeff's disagreement list. Taanit added the same day ('Yes, same as the 8').",
+    "tractates": [
+      "bava_kamma",
+      "horayot",
+      "makkot",
+      "megillah",
+      "shevuot",
+      "sotah",
+      "sukkah",
+      "temurah",
+      "taanit"
+    ]
+  },
+  "claude_alone": {
+    "_ruling": "Simon, 2026-11-10: 'Claude decides alone' -- the Gemini judge gave an invalid answer twice on these units (a list, or segment numbers as text). Claude judges them; out_of_scope from Claude drops the passage (a narrowing). All go on the biblical reading list. Makkot 11a-b added 2026-11-10 under the same ruling (invalid twice, found after it was given).",
+    "units": {
+      "bava_batra": [
+        "Bava Batra 132b:8-Bava Batra 133a:1"
+      ],
+      "sanhedrin": [
+        "Sanhedrin 113a:10-Sanhedrin 113b:0"
+      ],
+      "nedarim": [
+        "Nedarim 48a:5-6"
+      ],
+      "makkot": [
+        "Makkot 11a:20-Makkot 11b:2"
+      ]
+    }
+  },
+  "biblical_flag": {
+    "_ruling": "Simon, 2026-11-10: biblical stories ship on the Septimus site and are flagged for exclusion from Jeff's catalogue. These units are biblical but neither judge flagged them both ways; found by the accuracy review (docs/findings/2026-11-10-shas-accuracy.md, PR #89).",
+    "units": {
+      "megillah": [
+        "Megillah 7a:2-3"
+      ],
+      "sanhedrin": [
+        "Sanhedrin 113a:10-Sanhedrin 113b:0"
+      ]
+    }
+  }
+}

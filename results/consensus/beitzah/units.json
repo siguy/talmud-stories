@@ -1,0 +1,1660 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/beitzah/run1.json",
+   "v14_r2": "results/v14/beitzah/run2.json"
+  },
+  "spans": {
+   "v14_r1": 64,
+   "v14_r2": 63
+  },
+  "units": 64,
+  "built": "2026-11-10T00:01:48"
+ },
+ "units": [
+  {
+   "id": "Beitzah 4a:15-16",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 4a",
+     15
+    ],
+    [
+     "Beitzah 4a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Ahava's host asks if he can roast eggs laid on a Festival for the following Shabbat, and the rabbi clarifies the restriction."
+  },
+  {
+   "id": "Beitzah 4a:18-Beitzah 4b:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 4a",
+     18
+    ],
+    [
+     "Beitzah 4a",
+     19
+    ],
+    [
+     "Beitzah 4b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man asks Rav Pappa about eggs laid on Shabbat, and Rav Pappa provides the answer when the man returns the next day."
+  },
+  {
+   "id": "Beitzah 4b:6-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 4b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that Rav Asi would perform Havdala between the two days of a Diaspora Festival due to his personal uncertainty about their sanctity."
+  },
+  {
+   "id": "Beitzah 5a:9-Beitzah 5b:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 5a",
+     9
+    ],
+    [
+     "Beitzah 5b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer attempts to declare his fourth-year vineyard ownerless to avoid the burden of transporting the fruit to Jerusalem, until his students intervene. Rabbi Eliezer attempts to declare his fourth-year vineyard ownerless to help the poor bring the fruit to Jerusalem, but his students stop him by revealing that the Sanhedrin had already voted to permit redeeming the fruit for money."
+  },
+  {
+   "id": "Beitzah 6a:5-8",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 6a",
+     5
+    ],
+    [
+     "Beitzah 6a",
+     6
+    ],
+    [
+     "Beitzah 6a",
+     7
+    ],
+    [
+     "Beitzah 6a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina notices Rav Ashi is sad on Rosh Hashanah because he forgot to set an eruv tavshilin, leading to a discussion on whether one can be set conditionally on the holiday itself."
+  },
+  {
+   "id": "Beitzah 6b:11-Beitzah 7a:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 6b",
+     11
+    ],
+    [
+     "Beitzah 7a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man attempts to buy eggs capable of hatching chicks but is given eggs from a slaughtered hen, leading to a claim of a mistaken transaction."
+  },
+  {
+   "id": "Beitzah 7a:2-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 7a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man asks for fertilized eggs but is sold unfertilized ones, resulting in Rabbi Ami ruling the sale void."
+  },
+  {
+   "id": "Beitzah 7b:1-1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 7b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Mari found an egg on a Festival morning and searched sixty houses to see if a rooster was nearby to permit the egg."
+  },
+  {
+   "id": "Beitzah 7b:2-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 7b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara notes an incident where a chicken crossed a rope bridge, contrary to the general rule."
+  },
+  {
+   "id": "Beitzah 9b:2-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 9b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The sons of Rabbi Ḥiyya return from a business trip and report a lenient ruling they issued regarding ladders, only to be ordered by their father to return and prohibit it."
+  },
+  {
+   "id": "Beitzah 9b:6-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 9b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "An alternative version of the incident where Rabbi Ḥiyya's sons report permitting the tilting of an attic ladder and are told by their father to reverse the ruling."
+  },
+  {
+   "id": "Beitzah 11b:1-1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 11b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Ahava would circumvent the restriction on salting meat on a Festival by salting pieces one by one and claiming each time that he preferred the current piece over the previous ones."
+  },
+  {
+   "id": "Beitzah 12b:12-12",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 12b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Tovi brings a bottle of teruma wine to Rav Yosef, who rules that he may bring it to a priest on the Festival."
+  },
+  {
+   "id": "Beitzah 12b:13-13",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 12b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The host of Rava bar Rav Hanan asks if he can crush mustard on a Festival; Rava bar Rav Hanan doesn't know and asks Rava, who permits it."
+  },
+  {
+   "id": "Beitzah 13b:9-9",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 13b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that the wives of Rav and Rabbi Hiyya would peel cups of barley for their husbands on Shabbat, challenging a restrictive ruling on the matter."
+  },
+  {
+   "id": "Beitzah 14a:8-9",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 14a",
+     8
+    ],
+    [
+     "Beitzah 14a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Sheshet hears the distinct sound of salt being pounded in his house on a Festival and concludes it is being done in a prohibited, non-tilted manner."
+  },
+  {
+   "id": "Beitzah 14b:1-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 14b",
+     1
+    ],
+    [
+     "Beitzah 14b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappi visits Mar Shmuel on a Festival and refuses to eat the porridge served to him because its appearance suggests the grain was pounded on the Festival itself."
+  },
+  {
+   "id": "Beitzah 15a:2-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 15a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara alludes to a historical tragedy involving spiked sandals on Shabbat which led to their prohibition."
+  },
+  {
+   "id": "Beitzah 15a:7-7",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 15a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Sheshet permits the Sages to send phylacteries on a Festival and Abaye challenges him from a Mishna."
+  },
+  {
+   "id": "Beitzah 15b:9-12",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 15b",
+     9
+    ],
+    [
+     "Beitzah 15b",
+     10
+    ],
+    [
+     "Beitzah 15b",
+     11
+    ],
+    [
+     "Beitzah 15b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During a day-long lecture by Rabbi Eliezer, successive groups of students leave to eat, prompting him to criticize those leaving and eventually comfort the remaining students who feared his rebuke was aimed at them."
+  },
+  {
+   "id": "Beitzah 16b:6-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 16b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar Shmuel notices his blind student is sad because he forgot to prepare an eiruv, and consoles him by allowing the student to rely on Shmuel's own eiruv."
+  },
+  {
+   "id": "Beitzah 16b:11-11",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 16b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Taḥlifa bar Avdimi issued a ruling following Shmuel's lenient view, prompting a sharp rebuke from Rav."
+  },
+  {
+   "id": "Beitzah 19a:3-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 19a",
+     3
+    ],
+    [
+     "Beitzah 19a",
+     4
+    ],
+    [
+     "Beitzah 19a",
+     5
+    ],
+    [
+     "Beitzah 19a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava encounters the Sages of the school of Rav debating the principle of intention in immersion and offers his own legal clarification."
+  },
+  {
+   "id": "Beitzah 20a:1-1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 20a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man leaves a bequest of 400 zuz to someone on the condition they marry his daughter, and Rav Pappa rules that the phrasing allows the recipient to take the money without the marriage."
+  },
+  {
+   "id": "Beitzah 20a:11-Beitzah 20b:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 20a",
+     11
+    ],
+    [
+     "Beitzah 20a",
+     12
+    ],
+    [
+     "Beitzah 20b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Hillel the Elder brings a sacrifice to the Temple against the view of Beit Shammai and uses a ruse to avoid their rebuke, leading to a shift in the power balance in the Temple courtyard. Baba ben Buta brings a large flock of sheep to the Temple courtyard to encourage the public to follow the view of Beit Hillel, successfully shifting the halakhic practice."
+  },
+  {
+   "id": "Beitzah 20b:1-1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 20b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A disciple of Beit Hillel is challenged by a disciple of Beit Shammai in the Temple and responds with a sharp verbal retort."
+  },
+  {
+   "id": "Beitzah 21a:1-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 21a",
+     1
+    ],
+    [
+     "Beitzah 21a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav Avya the Elder leaves following a legal query, Rabba questions his father Rav Huna for being dismissive, leading Rav Huna to explain he was physically exhausted."
+  },
+  {
+   "id": "Beitzah 21a:11-12",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 21a",
+     11
+    ],
+    [
+     "Beitzah 21a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda ben Bava encounters Shimon the Timnite and rebukes him for missing the study hall to slaughter a calf for gentile soldiers on a Festival."
+  },
+  {
+   "id": "Beitzah 21b:0-0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 21b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda ben Bava rebukes Shimon the Timnite for missing the study hall on a Festival to protect his property from soldiers."
+  },
+  {
+   "id": "Beitzah 21b:10-10",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 21b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava appoints Mar Shmuel to lecture on hosting gentiles, and the Gemara notes the visiting habits of Marimar and Mar Zutra on Festivals."
+  },
+  {
+   "id": "Beitzah 22a:5-5",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 22a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While Ulla is visiting Rav Yehuda, his servant tilts a lamp to make it extinguish faster, prompting a legal challenge from Rav Yehuda."
+  },
+  {
+   "id": "Beitzah 22a:14-14",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 22a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ameimar has his eye treated by a gentile on Shabbat, and Rav Ashi argues that Ameimar's blinking constitutes prohibited assistance in the act."
+  },
+  {
+   "id": "Beitzah 22a:16-Beitzah 22b:1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 22a",
+     16
+    ],
+    [
+     "Beitzah 22b",
+     0
+    ],
+    [
+     "Beitzah 22b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B describes a distinct event involving the same characters but occurring on a different day (Rosh HaShana vs. Shabbat) and addressing a different legal challenge regarding the status of the second day of the festival."
+  },
+  {
+   "id": "Beitzah 22b:10-11",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 22b",
+     10
+    ],
+    [
+     "Beitzah 22b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer bar Tzadok recounts his eyewitness observations of the specific way the household of Rabban Gamliel swept their floors and prepared incense on Festivals."
+  },
+  {
+   "id": "Beitzah 23a:3-4",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 23a",
+     3
+    ],
+    [
+     "Beitzah 23a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Geviha teaches an ambiguous ruling at the Exilarch's house and is challenged by Ameimar regarding its practical meaning."
+  },
+  {
+   "id": "Beitzah 23a:5-5",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 23a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Theodosius of Rome instituted a Passover custom resembling the Temple sacrifice, prompting the Sages to send him a message that he would be excommunicated if he were not a man of high standing."
+  },
+  {
+   "id": "Beitzah 24a:17-17",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 24a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "A gentile brings fish to Rabban Gamliel on a Festival, and the Rabbi rules that they are permitted to be used."
+  },
+  {
+   "id": "Beitzah 24b:5-5",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 24b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav recounts how he and Levi witnessed Rabbi Yehuda HaNasi change his legal ruling on fish brought by a gentile between one evening and the next morning."
+  },
+  {
+   "id": "Beitzah 25b:9-9",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 25b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ya’akov bar Idi reports an incident where an old man in his neighborhood used a litter on a Festival, leading to a ruling by Rabbi Yehoshua ben Levi."
+  },
+  {
+   "id": "Beitzah 25b:10-10",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 25b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Aḥi Shakkaya and Rav Naḥman bar Yitzḥak recount specific instances where they physically carried prominent rabbis on chairs between towns on a Festival."
+  },
+  {
+   "id": "Beitzah 25b:11-12",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 25b",
+     11
+    ],
+    [
+     "Beitzah 25b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Naḥman sends Ḥama bar Adda to Eretz Yisrael to clarify a law, but upon arrival, Ḥama finds the intended sage has died and consults Rabbi Zerika instead."
+  },
+  {
+   "id": "Beitzah 25b:13-13",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 25b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that Rav Naḥman permitted his wife Yalta to be carried on a chair on a Festival because she was afraid of falling."
+  },
+  {
+   "id": "Beitzah 25b:14-14",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 25b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "It describes a distinct event involving different actors (Ameimar and Mar Zutra) and provides specific justifications for their actions, following the previous incident about Yalta."
+  },
+  {
+   "id": "Beitzah 26b:4-4",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 26b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Oshaya arrives in Babylonia from Eretz Yisrael carrying a specific baraita regarding firstborn animals."
+  },
+  {
+   "id": "Beitzah 27a:3-3",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 27a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda Nesia sends a firstborn animal to Rabbi Ami for examination on a festival, but Rabbi Ami is stopped from doing so by an objection from Rabbi Zerika."
+  },
+  {
+   "id": "Beitzah 27a:5-5",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 27a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man travels from Babylonia to Eretz Yisrael specifically to clarify a legal tradition regarding Rabbi Shimon's opinion with Rabbi Zeira."
+  },
+  {
+   "id": "Beitzah 27a:14-Beitzah 27b:1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 27a",
+     14
+    ],
+    [
+     "Beitzah 27b",
+     0
+    ],
+    [
+     "Beitzah 27b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ami of Vardina's practice of not examining firstborns on Festivals is reported to Rabbi Ami, who approves of the practice. A priest brings a firstborn animal to Rava on the eve of a festival, and Rava investigates the physical cause of its blemish the following day."
+  },
+  {
+   "id": "Beitzah 27b:3-3",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 27b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "An incident occurred where people asked Rabbi Tarfon about moving a dead animal and impure halla on a festival, prompting him to go to the study hall."
+  },
+  {
+   "id": "Beitzah 28a:5-10",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 28a",
+     5
+    ],
+    [
+     "Beitzah 28a",
+     6
+    ],
+    [
+     "Beitzah 28a",
+     7
+    ],
+    [
+     "Beitzah 28a",
+     8
+    ],
+    [
+     "Beitzah 28a",
+     9
+    ],
+    [
+     "Beitzah 28a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥiyya and Rabbi Shimon weighed portions of meat against each other on a Festival to divide them."
+  },
+  {
+   "id": "Beitzah 28a:19-Beitzah 28b:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 28a",
+     19
+    ],
+    [
+     "Beitzah 28b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Neḥemya relates that he was standing before Rava while Rava was performing an action with a knife. Rav Neḥemya observes Rava sharpening a knife on a basket rim on a Festival and questions him, only for Rava to claim he is merely removing fat."
+  },
+  {
+   "id": "Beitzah 28b:1-1",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 28b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye observes his teacher Rabba sharpening a knife on a millstone on a Festival and notes that Rabba claimed it was only to remove fat."
+  },
+  {
+   "id": "Beitzah 29a:10-13",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 29a",
+     10
+    ],
+    [
+     "Beitzah 29a",
+     11
+    ],
+    [
+     "Beitzah 29a",
+     12
+    ],
+    [
+     "Beitzah 29a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Abba Shaul ben Botnit and his colleagues attempted to donate surplus wine and oil to the Temple to avoid profiting from measurement inaccuracies, and the treasurers eventually directed them to use the goods for communal needs."
+  },
+  {
+   "id": "Beitzah 29b:3-3",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 29b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rava bar Rav Huna taught a lenient ruling regarding sifting flour at the entrance of the academy, Rav Nachman sent his students to tell him his 'kindness' was unwanted and the law was already established otherwise."
+  },
+  {
+   "id": "Beitzah 29b:4-4",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 29b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The wives of Rav Yosef and Rav Ashi were sifting flour in an unusual way on a Festival to avoid a transgression, but their husbands told them to sift normally to ensure the bread would be of high quality."
+  },
+  {
+   "id": "Beitzah 30a:2-2",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 30a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava institutes a series of legal requirements in Mehoza regarding how people should modify their manner of carrying burdens on a Festival."
+  },
+  {
+   "id": "Beitzah 30a:3-5",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 30a",
+     3
+    ],
+    [
+     "Beitzah 30a",
+     4
+    ],
+    [
+     "Beitzah 30a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Hanan bar Rava questions Rav Ashi about why women are permitted to carry water jugs on Festivals without modification, and Rav Ashi provides a legal justification."
+  },
+  {
+   "id": "Beitzah 30a:6-8",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 30a",
+     6
+    ],
+    [
+     "Beitzah 30a",
+     7
+    ],
+    [
+     "Beitzah 30a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rava bar Rav Hanin asks Abaye why the Sages do not protest women clapping and dancing on Festivals, leading to the articulation of a legal principle regarding unwitting sinners."
+  },
+  {
+   "id": "Beitzah 32b:2-3",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 32b",
+     2
+    ],
+    [
+     "Beitzah 32b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shabbetai bar Marinus travels to Babylonia and, after being refused business and food by the wealthy residents, declares them to be descendants of the 'mixed multitude' rather than Abraham."
+  },
+  {
+   "id": "Beitzah 32b:10-10",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 32b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a brick fell into the oven of Rabbi Hiyya's wife on a Festival, he permitted her to sweep it out so she could bake."
+  },
+  {
+   "id": "Beitzah 33a:6-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 33a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava instructs his attendant to roast a duck for him and feed the innards to a cat."
+  },
+  {
+   "id": "Beitzah 36b:3-4",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 36b",
+     3
+    ],
+    [
+     "Beitzah 36b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Abaye's millhouse leaked on Shabbat, he sought advice from Rabbah but hesitated to use a legal loophole, resulting in the building's collapse."
+  },
+  {
+   "id": "Beitzah 36b:6-6",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 36b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A dead mouse was found in Rav Ashi's spice-house, and he ordered it removed by its tail on Shabbat."
+  },
+  {
+   "id": "Beitzah 38a:8-Beitzah 38b:0",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 38a",
+     8
+    ],
+    [
+     "Beitzah 38b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Upon ascending to Eretz Yisrael, Rabbi Abba prays that his teachings be well-received and subsequently encounters Rabbi Yoḥanan and other sages to discuss a Mishnaic ruling. When Rabbi Abba presents a legal analogy regarding nullification of property, the Sages mock him twice, even after he attempts to defend himself with a retort."
+  },
+  {
+   "id": "Beitzah 40a:8-8",
+   "tractate": "Beitzah",
+   "cells": [
+    [
+     "Beitzah 40a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Ḥana bar Ḥanilai hangs meat at his host's house and asks Rav Huna if he may carry it home on the Festival, receiving a ruling based on who performed the physical act of hanging."
+  }
+ ]
+}

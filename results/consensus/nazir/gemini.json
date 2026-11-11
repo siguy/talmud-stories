@@ -1,0 +1,472 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:35",
+  "outcomes": {
+   "ok": 26
+  }
+ },
+ "rows": [
+  {
+   "id": "Nazir 3a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between a post-biblical figure (the maidservant of Rabbi) and a man, which serves as a linguistic proof. Under R-C2 and R-C7, it is borderline because it consists entirely of a speech act with implied conflict/rebuke but lacks further narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 4a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a Mishnah and Gemara discussion regarding the legal formulas for a nazirite vow. While it references the biblical figure Samson, it does so as a legal hypothetical rather than a narrative event, and biblical figures are out of scope for the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 4b:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic story about Shimon HaTzaddik (a post-biblical figure) and a shepherd. It contains a clear sequence of events: the shepherd's internal struggle at the spring, his vow, his arrival at the Temple, and Shimon HaTzaddik's emotional reaction and physical response (kissing his head).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 8a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a complete narrative incident introduced by the formula 'מעשה היה' (there was an incident). It describes a specific sequence of actions—taking a vow, completing the terms, and dying—which satisfies the requirement for change and causality beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 8a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a hypothetical legal case ('one who says...') used to illustrate a Tannaitic dispute, rather than a narrated event that actually happened. Under R-C0 and R-C5, such legal problems and bare reports of hypothetical conditions are not considered stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 8b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific person who took a vow, completed it, and died. This satisfies the requirement for a story as it describes a one-time event with a change of state (completion and death) rather than a bare legal report or a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 10b:0-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes hypothetical legal cases ('where he said...', 'if it does not stand...') used to analyze the positions of Beit Shammai and Beit Hillel, rather than narrating events that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 11a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story introduced by the formula 'An incident occurred'. It narrates a specific event (a woman being poured a cup while intoxicated) followed by a response from the Sages, which fits the criteria for a story even though it is quoted from the Mishnah.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 19a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a brief dialogue between rabbis regarding a pedagogical choice, which constitutes standard rabbinic discourse without any narrated action, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 19b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Queen Helene, a post-biblical figure, featuring multiple actions (vowing, traveling, becoming impure) and a ruling by Beit Hillel that changes her status. Although it is part of a Mishnah, rule R-C1 dictates that the Talmud's quotation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 20a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1",
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion analyzing the facts and implications of a Mishnah story about Queen Helene. Under R-C1, the Talmud's citation of a Mishnah story is catalogued, but here the text is primarily Gemara commentary and a dilemma (R-B4) rather than the narration of the event itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 23a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes an emotional reaction (Rabbi Akiva crying), which counts as an event/action under R-C0, but since it is a habitual frame for a speech-act (teaching/homily) with no further change or conflict, it fits the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 23a:11-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     4,
+     8,
+     9
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a retelling of the biblical episode of Lot and his daughters to illustrate a verse. While it functions as a story with actions and causality, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 29b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Hanina and Rabban Gamliel) with multiple actions: a father's vow, an examination in court, a clever retort by the child, and a physical response (kissing the head) followed by a fulfilled prophecy. It includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 32b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that narrates a specific one-time event involving post-biblical figures (Nahum the Mede and the nazirites). It contains multiple actions—the nazirites' arrival, the dialogue with Nahum, his ruling, and the subsequent referral of the matter to the Rabbis—which satisfies the requirement for change and causality (R-C0, R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 44a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabbi Yitzhak and Rabbi Yehoshua ben Elisha) where a specific event (the father's death and the delayed notification) leads to an action (coming to ask the elders) and a resolution (the ruling). Per R-C0, an incident followed by a ruling counts as a story, and per R-B1, the opening formula is included.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 44b:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter where Abaye finds a group of scholars and engages them in a debate. While it is primarily standard rabbinic dialogue, the framing of the encounter and the direct interaction between Abaye and the group constitutes a borderline story under the shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 47a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical incident involving Miriam of Tarmod with multiple narrated actions (sprinkling blood, notification, going, finding) followed by a rabbinic ruling. Although it is a Mishnah story, the rule R-C1 specifies that the Talmud's quotation of it is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 49b:4-Nazir 50a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and emotional change: Rabbi Yehuda issues a ban, Sumakhos forces his way in, a conflict ensues over a teaching, and Rabbi Yosei intervenes to resolve the tension. It meets the criteria of having a one-time event (the death of R. Meir and the subsequent confrontation) and significant conflict beyond standard dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 52a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident introduced by the formula 'And an incident occurred', involving specific actions (bringing a box of bones, placing it, and doctors entering) and a resolution (the doctors' finding). This meets the criteria for a story as it describes a one-time event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 52b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a speech-act by Rabbi Shimon followed by a physical consequence (his teeth blackening from fasts of repentance). This fits the borderline shape of 'mainly speech but something happens' and 'one real event followed by a change'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 56b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event ('When I went to Ardaskeya, I found...') involving multiple rabbis and a dialogue that leads to a change in the attribution of a ruling. Per R-B1, the story includes the opening formula and the narrated encounter between Rabbi Eliezer, Rabbi Yehoshua ben Petter Rosh, and Rabbi Meir.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 57b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict (a sharp retort and a curse) that leads to a narrated change in the physical world: the death of Rav Huna's children. This satisfies the requirement for actions and change beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 59a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict regarding Rabbi Yoḥanan's personal conduct versus his legal ruling. Under R-C2 and R-C7, speech-based interactions with conflict and an implied change or explanation are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 59a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain man and Rabbi Ami, containing multiple actions (the man is brought for lashes, his armpit is exposed, the Rabbi observes him) and a change in outcome (the Rabbi cancels the punishment). This meets the criteria for a story as it is more than a bare report or a simple ruling, containing a 'courtroom drama' element that creates dynamism.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nazir 65a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving specific rabbis (Yeshevav and Akiva) where an action (finding corpses and wishing to rule a certain way) is followed by a response and a ruling. Although it is a Mishnah/Baraita story quoted in the Gemara, rule R-C1 permits its inclusion as a Talmudic story.",
+    "error": null
+   }
+  }
+ ]
+}

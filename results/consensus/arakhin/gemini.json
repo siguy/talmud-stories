@@ -1,0 +1,588 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T23:59:07",
+  "outcomes": {
+   "ok": 33
+  }
+ },
+ "rows": [
+  {
+   "id": "Arakhin 6a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage consists entirely of standard rabbinic dialogue regarding the transmission and attribution of a legal ruling. Under rule R-C2 and R-C7, speech-acts without an accompanying event or conflict do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 6b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of Rabbi Yannai's habitual practice (borrowing and repaying) cited as a challenge to a legal ruling. It lacks a specific one-time event, conflict, or narrated change, falling under the category of a precedent or custom rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 6b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the donation of a candelabrum) followed by a subsequent action (changing its purpose) and an emotional reaction (becoming angry), which satisfies the requirement for a story beyond a bare legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 7a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C6",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage refers to a specific incident ('there was an incident') involving a physical event (spasmodic motions), but it is an incident only alluded to as evidence within a legal discussion rather than narrated in full. Under the grouping of borderline shapes, this constitutes an incident alluded to or a single event followed by a ruling/discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 9b:15-Arakhin 10a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving Rabbi Yehuda HaNasi and his son, featuring a specific event (the establishment of deficient months), an emotional reaction (astonishment), and a resolution through dialogue. It follows the 'מעשה' formula and describes a one-time event rather than a hypothetical case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 10b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a dialogue between the ministering angels and God; while it contains conflict and a resolution, it is a story about biblical/celestial figures rather than rabbis or post-biblical humans, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 10b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct one-time events (the plating of the flute and the repair of the cymbal) that involve actions, a change in state (the sound becoming unpleasant), and a resolution (removing the repairs to restore the sound). These are post-biblical narratives involving the Temple and the Sages, fitting the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 10b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events (damage, bringing artisans from Alexandria, a failed repair, and a resolution) involving post-biblical figures (the Sages and artisans). It meets the criteria of having multiple actions and a change in state, rather than being a bare report or a legal hypothetical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 10b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events (the king's command, the widening, the decrease in water, and the restoration) that leads to a change and a moral resolution. It follows the pattern of a habitual frame (the Siloam's usual flow) leading into a one-time incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 11b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving two post-biblical figures (Rabbi Yehoshua and Rabbi Yoḥanan) where an action (going to assist) leads to a response and a change in behavior (being told to go back). Per R-B1, the opening formula 'as it is taught in a baraita' is included as part of the story's frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 11b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative describing a specific historical event with action and dialogue (the Levites singing as the Temple is destroyed). However, it concerns the destruction of the Temple and biblical-era figures (priests and Levites) rather than rabbis or post-biblical figures, placing it out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 12b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a historical event involving Nebuchadnezzar and Jehoiakim, which are biblical figures. According to rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 12b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (the prophets and priests of the Second Temple era) who performed a series of actions—dividing families, mixing lots, and drawing from a receptacle—to create a new communal structure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 15a:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving dialogue and action between God and the Angel of the Sea, but it concerns biblical events and characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 16a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rav Dimi and Rav Safra) with multiple actions: Rav Dimi falling ill, Rav Safra visiting him, and a dialogue containing conflict and a change in Rav Dimi's self-perception regarding his fulfillment of rabbinic law.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 16b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a recurring event (complaining to the rabbi) that led to a specific physical action (Akiva being lashed) and a resulting change in their relationship (increased love). Under R-C3, a habit that leads to a change or consequence counts as a story, and under R-C0, the physical punishment and emotional change constitute narrated actions beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 16b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving rabbis (Rav Huna, Hiyya bar Rav, and Shmuel) with multiple actions, dialogue, and conflict. It goes beyond a bare report or speech-act by including a sequence of events: sitting before a rabbi, a complaint, a commitment to change behavior, and a subsequent private explanation that reveals the characters' motivations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 19a:3-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story about the mother of Yirmatya (segment 2) and its subsequent quotation and expansion in the Gemara (segments 7-8). Under R-C1, the Talmudic citation of a Mishnah story is included, and the incident meets R-C0 as it narrates a specific event that happened (vowing, traveling to Jerusalem, and paying) rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 20a:26-28",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rava becoming sick and the Sages visiting him) followed by a legal discussion. Under R-C7 shape 2 and R-C0, an incident followed by a ruling or discussion is considered borderline rather than a full story if the primary content is dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 22a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a speech-act describing a physical interaction ('absorbed many blows') that implies conflict and change in the speaker's understanding, fitting the borderline shape of dialogue with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 22a:20-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a real event (Mareimar collecting a marriage contract from orphans) followed by a dialogue involving conflict and a resolution. Under R-C0 and R-C7, an incident followed by a ruling or discussion with implied change is at least borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 22a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of a rabbi's change in legal practice and his reasoning, which falls under the category of a bare report or custom that leads nowhere. According to R-C5 and R-C0, a statement of what a rabbi used to do versus what he does now without a specific narrated incident or second action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 22b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes an incident coming before a rabbi followed by a ruling, but lacks any other narrated action or change. Under R-C0 and R-C7, a case where coming before the rabbi is the only event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 23a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Moshe bar Atzrei and Rav Huna) where a financial crisis leads to a proposed plan, a conflict of opinions between Abaye and Rava, and a final revelation that changes the outcome. This contains multiple actions, dialogue with conflict, and a change in status (the discovery of the priesthood), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 23b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal discussion and hypothetical scenarios regarding the status of a guarantor. It lacks a narrated event or incident involving specific actions, functioning instead as standard rabbinic dialogue and legal analysis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 23b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man who sold his property and divorced his wife') followed by a legal interaction and ruling, which satisfies the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 24a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain man who sold his property and came before Rav Yeimar, followed by the rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story, as it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 27a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (ma'aseh) involving a specific incident where a man's action (consecrating a field) leads to a dialogue and a resulting change in status (losing the money and the field). Per R-C1, Mishnah stories are included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 28a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Rabbi Akiva and Rabbi Yeshevav) where an action (seeking to dispense property) is met with a response and conflict (his friend did not let him), satisfying the requirement for a story beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 28b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a scholar hearing a teaching and going before a rabbi to raise a difficulty. Under R-C2 and R-C7, this is standard rabbinic dialogue (speech-acts) without a narrated event or change beyond the discussion itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 29a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a certain man who dedicated property and came before a rabbi, followed by a ruling that includes a physical action (throwing coins into the river). This fits the definition of a story as an incident followed by a ruling with narrated action beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 31a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident (a conditional sale) and a conflict (the dispute between Rabbi Yehuda and the Rabbis over the facts of that incident). Under R-C2 and R-C7, a passage that is mainly dialogue or a report of an event used as a legal precedent with conflict is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 31b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (R-C1) that describes a habitual practice (the buyer concealing himself) leading to a specific historical change (Hillel's ordinance), which involves concrete actions like breaking a door (R-C3).",
+    "error": null
+   }
+  }
+ ]
+}

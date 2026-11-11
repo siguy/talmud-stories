@@ -1,0 +1,835 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/arakhin/run1.json",
+   "v14_r2": "results/v14/arakhin/run2.json"
+  },
+  "spans": {
+   "v14_r1": 32,
+   "v14_r2": 32
+  },
+  "units": 33,
+  "built": "2026-11-09T23:58:56"
+ },
+ "units": [
+  {
+   "id": "Arakhin 6a:14-14",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 6a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Kahana recites a legal tradition before Rav Zevid, who then provides an alternative version of that same tradition."
+  },
+  {
+   "id": "Arakhin 6b:0-0",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 6b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara mentions that Rabbi Yannai used to borrow and repay charity funds."
+  },
+  {
+   "id": "Arakhin 6b:5-5",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 6b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Sha’azrak the Arab donated a lamp to the synagogue, and a conflict arose between Rava and Raḥava when one of them changed its use before the donor's name was forgotten."
+  },
+  {
+   "id": "Arakhin 7a:19-19",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 7a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites an incident where a woman died and her fetus was observed moving three times after her death to challenge a medical assumption."
+  },
+  {
+   "id": "Arakhin 9b:15-Arakhin 10a:0",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 9b",
+     15
+    ],
+    [
+     "Arakhin 10a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi established nine deficient months in a single year, but was astonished when the new moon nevertheless appeared exactly on schedule."
+  },
+  {
+   "id": "Arakhin 10b:4-4",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 10b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The ministering angels ask God why Israel does not recite Hallel on Rosh HaShana, and God responds that it is inappropriate while the books of life and death are open."
+  },
+  {
+   "id": "Arakhin 10b:10-10",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 10b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A reed flute from the time of Moses was plated in gold by a king, but when its sound was ruined, the plating was removed to restore its beauty."
+  },
+  {
+   "id": "Arakhin 10b:11-11",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 10b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A copper mortar from the time of Moses was damaged and repaired by Alexandrian artisans, but it never regained its original quality."
+  },
+  {
+   "id": "Arakhin 10b:15-15",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 10b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A king attempted to increase the water flow of the Siloam pool by widening its opening, but when the water decreased, they returned it to its original size."
+  },
+  {
+   "id": "Arakhin 11b:5-5",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 11b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehoshua bar Hananya attempted to help Rabbi Yohanan ben Gudgeda close the Temple doors, but was turned away because their specific Levite duties (singer vs. gatekeeper) were not to be mixed."
+  },
+  {
+   "id": "Arakhin 11b:16-16",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 11b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "During the destruction of the First Temple, the Levites remained on their platform singing a specific psalm until the enemies arrived and conquered them."
+  },
+  {
+   "id": "Arakhin 12b:0-0",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 12b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Nebuchadnezzar ascends to Eretz Yisrael and conquers Jehoiakim in his second year."
+  },
+  {
+   "id": "Arakhin 12b:10-10",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 12b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "When only four priestly watches returned from Babylon, the prophets divided them into twenty-four and used a lottery system to assign their order."
+  },
+  {
+   "id": "Arakhin 15a:16-17",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 15a",
+     16
+    ],
+    [
+     "Arakhin 15a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "God negotiates with the Angel of the Sea to spew out the dead Egyptians onto dry land by offering the Kishon Brook as a guarantor for the return of the bodies."
+  },
+  {
+   "id": "Arakhin 16a:3-3",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 16a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When Rav Safra visits his ill brother Rav Dimi, Rav Dimi claims to have fulfilled all rabbinic dictates, leading Rav Safra to question him on a specific point regarding praising others."
+  },
+  {
+   "id": "Arakhin 16b:6-6",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 16b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan ben Nuri testifies that he frequently complained about Akiva to Rabban Shimon ben Gamliel, resulting in Akiva being lashed, which paradoxically increased Akiva's love for him."
+  },
+  {
+   "id": "Arakhin 16b:8-8",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 16b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While sitting before Shmuel, Ḥiyya bar Rav complained that Rav Huna was afflicting him, and Rav Huna accepted the rebuke in silence to demonstrate humility."
+  },
+  {
+   "id": "Arakhin 19a:3-9",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 19a",
+     3
+    ],
+    [
+     "Arakhin 19a",
+     4
+    ],
+    [
+     "Arakhin 19a",
+     5
+    ],
+    [
+     "Arakhin 19a",
+     6
+    ],
+    [
+     "Arakhin 19a",
+     7
+    ],
+    [
+     "Arakhin 19a",
+     8
+    ],
+    [
+     "Arakhin 19a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The mother of Yirmatya vowed to donate her daughter's weight and traveled to Jerusalem to pay that weight in gold to the Temple."
+  },
+  {
+   "id": "Arakhin 20a:26-28",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 20a",
+     26
+    ],
+    [
+     "Arakhin 20a",
+     27
+    ],
+    [
+     "Arakhin 20a",
+     28
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rava falls ill, Abaye and other Sages visit him and engage in a legal debate regarding the opinion of the Rabbis in a baraita about valuations."
+  },
+  {
+   "id": "Arakhin 22a:3-3",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 22a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rav Hisda recalls receiving physical blows from his teacher Avimi as a result of his questioning a specific legal tradition regarding the proclamation of orphans' property."
+  },
+  {
+   "id": "Arakhin 22a:20-22",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 22a",
+     20
+    ],
+    [
+     "Arakhin 22a",
+     21
+    ],
+    [
+     "Arakhin 22a",
+     22
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mareimar collects a marriage contract from the property of orphans, leading to a debate between Ravina and Ameimar regarding the legal justification for such an act."
+  },
+  {
+   "id": "Arakhin 22a:23-23",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 22a",
+     23
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Naḥman describes how he initially refused to collect debts from orphans until he heard a teaching from Rav Huna that changed his judicial practice."
+  },
+  {
+   "id": "Arakhin 22b:8-8",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 22b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A case was brought before Rabbi Yitzḥak Nappaḥa in Antioch, and he ruled that the court only collects a marriage contract in the husband's absence, not a standard debt."
+  },
+  {
+   "id": "Arakhin 23a:10-11",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 23a",
+     10
+    ],
+    [
+     "Arakhin 23a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Abaye advises Rav Huna to divorce his wife so she can collect her marriage contract from his father (the guarantor), but the plan fails when it is discovered that Rav Huna is a priest and cannot remarry her."
+  },
+  {
+   "id": "Arakhin 23b:0-1",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 23b",
+     0
+    ],
+    [
+     "Arakhin 23b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Moshe bar Atzrei acts as a guarantor for his son Rav Huna's wife's marriage contract, leading to legal complications when Rav Huna loses his property."
+  },
+  {
+   "id": "Arakhin 23b:4-4",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 23b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man sells his land and then divorces his wife, leading her to sue the buyers for her marriage contract payment, prompting a legal inquiry from Rav Yosef to Rav Pappa."
+  },
+  {
+   "id": "Arakhin 24a:5-5",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 24a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man who sold his property appeared before Rav Yeimar, who instructed the court to remove the man's phylacteries as part of the assets to be handed over."
+  },
+  {
+   "id": "Arakhin 27a:7-7",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 27a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "A man consecrated a poor-quality field to offload it, but when the Temple treasurers made him bid first to redeem it, he offered only a tiny sum."
+  },
+  {
+   "id": "Arakhin 28a:10-10",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 28a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "An incident is recounted where a man attempted to give more than a fifth of his property to charity, but was stopped by his colleague (either Rabbi Yeshevav or Rabbi Akiva)."
+  },
+  {
+   "id": "Arakhin 28b:7-8",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 28b",
+     7
+    ],
+    [
+     "Arakhin 28b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ḥizkiyya bar Biluto travels to Rabbi Abbahu to challenge a legal ruling regarding the dedication of movable property versus land."
+  },
+  {
+   "id": "Arakhin 29a:10-10",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 29a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man in Pumbedita dedicated his property and sought Rav Yehuda's guidance, who instructed him to desacralize it using four dinars and throwing them into the river."
+  },
+  {
+   "id": "Arakhin 31a:11-11",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 31a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda cites an incident where Baitos ben Zunin sold his field under the direction of Rabbi Elazar ben Azarya, allowing the buyer to consume the produce."
+  },
+  {
+   "id": "Arakhin 31b:17-17",
+   "tractate": "Arakhin",
+   "cells": [
+    [
+     "Arakhin 31b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "To prevent buyers from hiding on the final day of redemption to seize property permanently, Hillel instituted a procedure allowing sellers to deposit funds with the court and re-enter their homes."
+  }
+ ]
+}

@@ -63,8 +63,7 @@ def test_judge_config_by_convention_matches_the_hand_written_one_for_the_two_old
         'runs': {'v14_r1': 'results/v11/v14_yevamot/run1.json', 'v14_r2': 'results/v11/v14_yevamot/run2.json'}}
     c = j.tractate_config('Bava Batra')
     assert c['out'] == 'results/consensus/bava_batra' and c['runs']['v14_r2'] == 'results/v14/bava_batra/run2.json'
-    with pytest.raises(AssertionError):
-        j.tractate_config('eruvin')                       # still held for Jeff
+    assert j.tractate_config('eruvin')['out'] == 'results/consensus/eruvin'   # unheld 2026-11-09 (Simon)
 
 
 def test_judge_module_takes_a_multi_word_tractate_from_the_environment(monkeypatch):
@@ -87,6 +86,6 @@ def test_site_build_finds_a_new_tractate_only_when_runs_and_judge_are_there(tmp_
     assert list(src)[:5] == ['ketubot', 'kiddushin', 'gittin', 'yevamot', 'berakhot']
 
 
-def test_site_build_never_picks_up_eruvin(tmp_path, monkeypatch):
+def test_site_build_picks_up_eruvin_since_simons_2026_11_09_decision(tmp_path, monkeypatch):
     import build_site_data as b
-    assert 'eruvin' in b.SITE_HELD and 'eruvin' not in b.SOURCES
+    assert 'eruvin' not in b.SITE_HELD

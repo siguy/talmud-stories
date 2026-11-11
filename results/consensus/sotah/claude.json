@@ -1,0 +1,412 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 22
+  },
+  "imported": "2026-11-10T06:15:38"
+ },
+ "rows": [
+  {
+   "id": "Sotah 42a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Irijah seizes Jeremiah and brings him to the princes, cited as the outcome of Jeremiah's flattery; a narrated biblical episode about a prophet, not rabbis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The kings come to make war, see Joseph's crown on Jacob's casket and hang their own crowns: events with a change, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The miracles of Israel's crossing of the Jordan and the ceremony at Mount Ebal are narrated events from the time of Joshua; segments 3-4 are exegesis between them.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 33b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita describing how the Ark and priests led the Jordan crossing is a biblical episode; segment 3 is a list of places rather than narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 46b:18-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Elisha mocked by the youths, who curses them, and the bears that maul them is a full story, but about a biblical prophet; the interleaved interpretations are commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 47a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Elisha goes to Damascus to bring Gehazi to repent and Gehazi refuses: an action and a conflict, but between biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The spies climb the trees at the Canaanites' mourning meal and overhear them: a narrated biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The waters return, the Ark carries its bearers across, and Uzzah is punished for this: biblical events with a consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 7b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Judah's bones roll in the coffin until Moses prays, then they are restored step by step: a narrated sequence with change, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Joseph and Potiphar's wife, his father's image appearing and Joseph overcoming his desire, form a midrashic story about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 9b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A single act of Samson, uprooting and grinding two mountains, is an exegetical gloss with no continuation; it is biblical in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:18-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Pharaoh's astrologers object, Gabriel teaches Joseph the languages, Pharaoh's oath and its later use: a full story about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:6-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Esau blocks Jacob's burial, the dispute over the deed, and Hushim kills him: a full narrative with conflict and resolution, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 35a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Joshua is heckled and Caleb silences the people by a ruse: conflict and change among biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:12-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Moses learns from Serah where Joseph is buried and calls up his casket: a narrated story about biblical figures; segment 4 is an a fortiori argument.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The hornet stands at the Jordan and blinds and castrates the Canaanites: a narrated biblical-era event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "An exchange of words between Joshua and the tribe of Joseph with no event beyond speaking and no real conflict; biblical in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 12a:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Amram divorces his wife, Miriam rebukes him, and he remarries her with celebration: a story with change, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 32a:9-Sotah 32b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The ceremony of blessings and curses at Gerizim and Ebal is narrated as a sequence of events in Joshua's time.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 11b:3-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The righteous women in Egypt and the miraculous rescue of their infants is narrated with events and outcome, but concerns the biblical generation of the Exodus.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 36b:22-Sotah 37a:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Meir's and Rabbi Yehuda's accounts of the tribes at the Red Sea (Benjamin jumping in, Nahshon descending, Moses told to stop praying); a story about biblical characters. Segments 4 and 8 draw the moral rather than narrate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sotah 13a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Miriam's prophecy, the house filling with light, her father's kiss and then his blow when Moses is put in the river; a story about biblical figures.",
+    "error": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,1844 @@
+{
+ "recall_v14_blind": {
+  "eruvin": {
+   "held_out": true,
+   "counts": {
+    "listed": 74,
+    "survived_triage": 72,
+    "proposed_run1": 67,
+    "proposed_run2": 67,
+    "proposed_either": 68,
+    "story_run1": 64,
+    "story_run2": 64,
+    "definite_run1": 50,
+    "definite_run2": 51,
+    "definite_both": 49,
+    "on_site": 49
+   },
+   "harness": [
+    [
+     "RECALL vs expert list: 67/74 = 90.5%  (unlocated in text: 0)",
+     "TRIAGE recall: 72/74 = 97.3%  while examining 109/207 pages (53%); 2 lost outright",
+     "DETECTION recall given the page survived triage: 67/72 = 93.1%",
+     "CAUSE of the 7 misses: 2 triage discarded the page, 5 page examined and nothing proposed in range"
+    ],
+    [
+     "RECALL vs expert list: 67/74 = 90.5%  (unlocated in text: 0)",
+     "TRIAGE recall: 72/74 = 97.3%  while examining 109/207 pages (53%); 2 lost outright",
+     "DETECTION recall given the page survived triage: 67/72 = 93.1%",
+     "CAUSE of the 7 misses: 2 triage discarded the page, 5 page examined and nothing proposed in range"
+    ]
+   ],
+   "not_on_site": [
+    {
+     "ref": "Eruvin 11b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "הלך רבי יהושע אצל רבי יוחנן בן נורי ללמוד תורה, אף על פי שבקי בהלכות כלאים, ומצאו שיושב בי"
+    },
+    {
+     "ref": "Eruvin 13b",
+     "why": "not proposed in either run",
+     "text": "מעשה שהלכו זקני בית שמאי וזקני בית הלל לבקר את רבי יוחנן בן החורנית, ומצאוהו יושב ראשו ורו"
+    },
+    {
+     "ref": "Eruvin 14b",
+     "why": "triage discarded the page",
+     "text": "אמר רב יהודה בריה דרב שמואל [בר שילת] משמיה דרב: אין הלכה כרבי יוסי לא בהילמי ולא בלחיין. "
+    },
+    {
+     "ref": "Eruvin 24a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "מר יהודה אקלע לבי רב הונא בר יהודה: חזנהו להנהו דלא עבידי אצטבלאות, וקא מטלטלי בגוייהו. אמ"
+    },
+    {
+     "ref": "Eruvin 24a",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "בעי חזקיה: ניקב כמוציא זית וסתמו, וחזר וניקב כמוציא זית וסתמו עד שהשלימו למוציא רמון מהו? "
+    },
+    {
+     "ref": "Eruvin 32b",
+     "why": "triage discarded the page",
+     "text": "יתיב רבי חייא בר אבא ורבי אסי ורבא בר נתן, ויתיב רב נחמן גבייהו, ויתבי וקאמרי: האי אילן דק"
+    },
+    {
+     "ref": "Eruvin 37b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמר ליה רבא לרב נחמן: מאן האי תנא דאפילו בדרבנן לית ליה ברירה? דתניא, אמר לחמשה: הריני מער"
+    },
+    {
+     "ref": "Eruvin 43b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "נחמיה בריה דרב חנילאי משכתיה שמעתא ונפק חוץ לתחום. אמר ליה רב חסדא לרב נחמן: נחמיה תלמידך "
+    },
+    {
+     "ref": "Eruvin 46a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רבי אלעזר אומר: כל אשה שעברו עליה שלש עונות - דייה שעתה. ותניא: מעשה ועשה רבי כרבי אלעזר. "
+    },
+    {
+     "ref": "Eruvin 47a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ר' אלעזר לא על לבי מדרשא, אשכחיה לרבי אסי דהוה קאים. אמר ליה: מאי אמור בבי מדרשא? אמר ליה,"
+    },
+    {
+     "ref": "Eruvin 53b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "בני יהודה דייקי לישנא מאי היא? דההוא בר יהודה דאמר להו: טלית יש לי למכור. אמרו ליה: מאי גו"
+    },
+    {
+     "ref": "Eruvin 53b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "בני גליל דלא דייקי לישנא מאי היא? (דתניא) דההוא בר גלילא [דהוה קאזיל] ואמר להו: אמר למאן, "
+    },
+    {
+     "ref": "Eruvin 53b",
+     "why": "not proposed in either run",
+     "text": "רבי יוסי בר אסיין, כי הוה משתעי בלשון חכמה אמר: עשו לי שור במשפט בטור מסכן. וכד הוה שאיל ב"
+    },
+    {
+     "ref": "Eruvin 53b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רבי אבהו כי הוה משתעי בלשון חכמה הוה אמר הכי: אתריגו לפחמין, ארקיעו לזהבין, ועשו לי שני מג"
+    },
+    {
+     "ref": "Eruvin 54b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמרו עליו על רבי אלעזר שהיה יושב ועוסק בתורה בשוק התחתון של ציפורי, וסדינו מוטל בשוק העליו"
+    },
+    {
+     "ref": "Eruvin 60a",
+     "why": "not proposed in either run",
+     "text": "רבי יצחק אמר: אפילו בית אחד וחצר אחת. חצר אחת סלקא דעתך? - אלא אימא: בית אחד בחצר אחת. אמר"
+    },
+    {
+     "ref": "Eruvin 61b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "מר יהודה אשכחינהו לבני מברכתא דקא מותבי עירובייהו בבי כנישתא דבי אגובר. אמר להו: גוו ביה ט"
+    },
+    {
+     "ref": "Eruvin 63a",
+     "why": "not proposed in either run",
+     "text": "רבינא סר סכינא בבבל. אמר ליה רב אשי: מאי טעמא עבד מר הכי? - אמר ליה: והא רב המנונא אורי בח"
+    },
+    {
+     "ref": "Eruvin 63a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמר רבא: צורבא מרבנן חזי לנפשיה. רבינא איקלע למחוזא, אייתי אושפיזכניה סכינא וקא מחוי ליה. "
+    },
+    {
+     "ref": "Eruvin 63a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רבינא הוה יתיב קמיה דרב אשי, חזייה לההוא גברא דקא אסר ליה לחמריה בצינתא בשבתא, רמא ביה קלא"
+    },
+    {
+     "ref": "Eruvin 74a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "יתיב רב ברונא וקאמר להא שמעתא, אמר ליה רבי אלעזר בר בי רב: אמר שמואל הכי? - אמר ליה: אין. "
+    },
+    {
+     "ref": "Eruvin 80a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא טורזינא דהוה בשיבבותיה דרבי זירא, אמרו ליה: אוגיר לן רשותך. לא אוגיר להו. אתו לקמיה ד"
+    },
+    {
+     "ref": "Eruvin 80a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא טורזינא דהוה בשיבבותיה דרב יהודה בר אושעיא, אמרי ליה: אוגר לן רשותך. לא אוגר להו. אתו"
+    },
+    {
+     "ref": "Eruvin 85b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "יתיב רב ברונא וקאמר להא שמעתא. אמר ליה רבי אליעזר בר בי רב: אמר רב הכי? אמר ליה: אין. אחוי"
+    },
+    {
+     "ref": "Eruvin 103a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "יתיב אביי וקאמר להא שמעתא. איתיביה רב ספרא לאביי: היה קורא בספר על האסקופה, ונתגלגל הספר מ"
+    }
+   ],
+   "why_not_on_site": {
+    "proposed as a story, below YES/HIGH in at least one run": 15,
+    "not proposed in either run": 4,
+    "triage discarded the page": 2,
+    "proposed, but NOT_A_STORY in both runs": 4
+   }
+  },
+  "yevamot": {
+   "held_out": false,
+   "counts": {
+    "listed": 100,
+    "survived_triage": 100,
+    "proposed_run1": 95,
+    "proposed_run2": 93,
+    "proposed_either": 95,
+    "story_run1": 91,
+    "story_run2": 90,
+    "definite_run1": 67,
+    "definite_run2": 66,
+    "definite_both": 64,
+    "on_site": 64
+   },
+   "harness": [
+    [
+     "RECALL vs expert list: 95/100 = 95.0%  (unlocated in text: 0)",
+     "TRIAGE recall: 100/100 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 95/100 = 95.0%",
+     "CAUSE of the 5 misses: 0 triage discarded the page, 5 page examined and nothing proposed in range"
+    ],
+    [
+     "RECALL vs expert list: 93/100 = 93.0%  (unlocated in text: 0)",
+     "TRIAGE recall: 100/100 = 100.0%  while examining 106/242 pages (44%); 0 lost outright",
+     "DETECTION recall given the page survived triage: 93/100 = 93.0%",
+     "CAUSE of the 7 misses: 0 triage discarded the page, 7 page examined and nothing proposed in range"
+    ]
+   ],
+   "not_on_site": [
+    {
+     "ref": "Yevamot 14b",
+     "why": "not proposed in either run",
+     "text": "רבי יוחנן בן נורי: היאך הלכה זו רווחת בישראל? נעשה כדברי ב\"ש, הולד ממזר לדברי ב\"ה! נעשה כד"
+    },
+    {
+     "ref": "Yevamot 15b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "שאלו את ר' יהושע: צרת הבת, מהו? אמר להם: מחלוקת ב\"ש וב\"ה; והלכה כדברי מי? אמר להם: מפני מה"
+    },
+    {
+     "ref": "Yevamot 17a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "יתיב רב המנונא קמיה דעולא וקא הוי בשמעתא, אמר: מה גברא ומה גברא אי לאו דהרפניא מאתיה! אכסי"
+    },
+    {
+     "ref": "Yevamot 31a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "בר שטיא זבין נכסי, אתו בי תרי ואמרי כשהוא חלים זבין, ואתו בי תרי ואמרו כשהוא שוטה זבין, וא"
+    },
+    {
+     "ref": "Yevamot 36b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "רבינא משמיה דרבא אמר: אם אשת ישראל היא - חולצת, ואם אשת כהן היא - אינה חולצת, רב משרשיא מש"
+    },
+    {
+     "ref": "Yevamot 45b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "עבדיה דרבי חייא בר אמי אטבלה לההיא עובדת כוכבים לשם אנתתא, אמר רב יוסף: יכילנא לאכשורי בה "
+    },
+    {
+     "ref": "Yevamot 45b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא דהוו קרו ליה בר ארמייתא, אמר רב אסי: מי לא טבלה לנדותה?"
+    },
+    {
+     "ref": "Yevamot 45b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא דהוו קרו ליה בר ארמאה, אמר ריב\"ל: מי לא טבל לקריו?"
+    },
+    {
+     "ref": "Yevamot 57a",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "בעא מיניה רבי יוחנן מרבי אושעיא: פצוע דכא כהן שנשא בת גרים, מהו שיאכילנה בתרומה? אישתיק ול"
+    },
+    {
+     "ref": "Yevamot 61b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "רבי אליעזר אומר: כהן לא ישא את הקטנה. אמר ליה רב חסדא לרבה: פוק עיין בה, דלאורתא בעי לה רב"
+    },
+    {
+     "ref": "Yevamot 62b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמרי ליה רבנן לרב ששת: נסיב איתתא ואוליד בני, ואמר להו: בני ברתי בני נינהו! התם דחויי קמדח"
+    },
+    {
+     "ref": "Yevamot 63a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רב על לביני שיבלי, חזנהו דקא נייפן, אמר להו: אי נייפת איתנופי, הפוכי בעיסקא טב מינך."
+    },
+    {
+     "ref": "Yevamot 63b",
+     "why": "not proposed in either run",
+     "text": "אמרו ליה לר' יוחנן: אתו חברי לבבל! שגא נפל. אמרו ליה: מקבלי שוחדא, תריץ יתיב."
+    },
+    {
+     "ref": "Yevamot 63b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רבי אליעזר אומר: כל מי שאין עוסק בפריה ורביה - כאילו שופך דמים, שנאמר: שופך דם האדם באדם ד"
+    },
+    {
+     "ref": "Yevamot 64b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמרו ליה רבנן לר' אבא בר זבדא: נסיב איתתא ואוליד בני, ואמר להו: אי זכאי הוו לי מקמייתא! הת"
+    },
+    {
+     "ref": "Yevamot 64b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רב גידל איעקר מפרקיה דרב הונא. רבי חלבו איעקר מפרקיה דרב הונא. רב ששת איעקר מפרקיה דרב הונ"
+    },
+    {
+     "ref": "Yevamot 64b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "רב אחא בר יעקב אחדתיה סוסכינתא, תליוה בארזא דבי רב, ונפק מיניה כהוצא ירקא. אמר רב אחא בר י"
+    },
+    {
+     "ref": "Yevamot 65b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההיא דאתאי לקמיה דר' אמי, אמרה ליה: הב לי כתובה, אמר לה: זיל, לא מיפקדת, אמרה ליה: מסיבו ד"
+    },
+    {
+     "ref": "Yevamot 72b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "איתיביה רבי אלעזר לרבי יוחנן: אין לי אלא נימול לשמיני שאין נימול אלא ביום, מנין לרבות לתשע"
+    },
+    {
+     "ref": "Yevamot 78a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "כי אתא רב דימי אמר רבי יוחנן: מצרי שני שנשא מצרית ראשונה - בנה שני הואי; אלמא, בתר אימיה ש"
+    },
+    {
+     "ref": "Yevamot 78b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "שאלו את רבי אליעזר: ממזרת לאחר עשרה דרי, מהו? אמר להם: מי יתן לי דור שלישי ואטהרנו."
+    },
+    {
+     "ref": "Yevamot 78b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא דהוי בשבבותיה דר' אמי, אכריז עליה דממזרא, הוה בכי ואזיל, אמר ליה: חיים נתתי לך."
+    },
+    {
+     "ref": "Yevamot 79b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "בימי רבי בקשו להתיר נתינים, אמר להם רבי: חלקנו נתיר, חלק מזבח מי יתיר?"
+    },
+    {
+     "ref": "Yevamot 83b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "עביד ליה רבי יהודה לטומטום דבירי, דאותבוה אבי כורסיה ואיקרע ואוליד שבע בנין. ור' יהודה א\"ל"
+    },
+    {
+     "ref": "Yevamot 84a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "א\"ר: כשהלכתי ללמוד תורה אצל ר' אלעזר בן שמוע, חברו עלי תלמידיו כתרנגולים של בית בוקיא, ולא"
+    },
+    {
+     "ref": "Yevamot 85a",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "רב פפא ורב הונא בריה דרב יהושע איקלעו להינצבו לאתריה דרב אידי בר אבין, בעו מינייהו: הוזהרו"
+    },
+    {
+     "ref": "Yevamot 91b",
+     "why": "proposed, but NOT_A_STORY in both runs",
+     "text": "רב פפא סבר למיעבד עובדא במאי הוה לה למיעבד, אמר ליה רב הונא בריה דרב יהושע לרב פפא: והתניא"
+    },
+    {
+     "ref": "Yevamot 97b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "בני יודן אמתא אשתחרור, שרא להו רב אחא בר יעקב למינסב נשי דהדדי. אמר ליה רבא: והא רב ששת אס"
+    },
+    {
+     "ref": "Yevamot 108a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "כלתיה דאבדן אימרוד, שדר רבי זוגי דרבנן למיבדקינהו, אמרי להו נשי: חזו גברייכו דקאתו, אמרי ל"
+    },
+    {
+     "ref": "Yevamot 113a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא חרש דהוה בשבבותיה דרב מלכיו, אנסביה איתתא וכתב לה ארבע מאה זוזי מנכסיה; אמר רבא: מאן "
+    },
+    {
+     "ref": "Yevamot 114b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "סבר רבא למימר: רעבון אינו כמלחמה, דלא אמרה בדדמי; הדר אמר רבא: רעבון - הרי הוא כמלחמה, דהה"
+    },
+    {
+     "ref": "Yevamot 115b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא גברא דאפקיד שומשמי גבי חבריה, אמר ליה: הב לי שומשמי, אמר ליה: שקילתינהו. והא כן וכן ה"
+    },
+    {
+     "ref": "Yevamot 116a",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "ההוא גיטא דאשתכח בסורא, וכתיב ביה הכי: בסורא מתא אנא ענן בר חייא נהרדעא פטרית ותרכית פלוני"
+    },
+    {
+     "ref": "Yevamot 120b",
+     "why": "proposed as a story, below YES/HIGH in at least one run",
+     "text": "אמר רבה בר בר חנה: לדידי חזי לי ההוא טייעא, דשקיל ספסירא וגיידיה לגמליה, ולא אפסיקתיה לנער"
+    },
+    {
+     "ref": "Yevamot 122b",
+     "why": "not proposed in either run",
+     "text": "[משנה]. מעשה בבני לוי  שהלכו לצוער עיר התמרים וחלה אחד מהם, והביאוהו בפונדק, ובחזרתם אמרו "
+    },
+    {
+     "ref": "Yevamot 122b",
+     "why": "not proposed in either run",
+     "text": "גמ'. מאי גריעותא דפונדקית? אמר רב כהנא: פונדקית עובדת כוכבים היתה, ומסיחה לפי תומה היתה: ז"
+    }
+   ],
+   "why_not_on_site": {
+    "not proposed in either run": 4,
+    "proposed as a story, below YES/HIGH in at least one run": 27,
+    "proposed, but NOT_A_STORY in both runs": 5
+   }
+  }
+ },
+ "recall_reviewed_site_circular": {
+  "ketubot": {
+   "listed": 149,
+   "on_site": 86
+  },
+  "kiddushin": {
+   "listed": 90,
+   "on_site": 52
+  },
+  "gittin": {
+   "listed": 110,
+   "on_site": 108
+  }
+ },
+ "precision_jeff_verdicts_circular": {
+  "ketubot": {
+   "yes": 90,
+   "borderline": 8,
+   "unknown": 4,
+   "no": 4
+  },
+  "kiddushin": {
+   "yes": 49,
+   "no": 3,
+   "out_of_scope": 1
+  },
+  "gittin": {
+   "borderline": 3,
+   "no": 2,
+   "out_of_scope": 2
+  },
+  "total": {
+   "yes": 139,
+   "borderline": 11,
+   "unknown": 4,
+   "no": 9,
+   "out_of_scope": 3
+  },
+  "yes_share_of_yes_no_borderline": 0.874
+ },
+ "precision_blind_lower_bound": {
+  "eruvin": {
+   "shipped": 73,
+   "on_list": 50,
+   "lower_bound": 0.685,
+   "unlisted_ids": [
+    "eruvin-7a-9-9",
+    "eruvin-8a-5-5",
+    "eruvin-16b-26-28",
+    "eruvin-25b-7-8",
+    "eruvin-43b-10-10",
+    "eruvin-47b-0-0",
+    "eruvin-47b-12-15",
+    "eruvin-48a-15-18",
+    "eruvin-51b-7-7",
+    "eruvin-51b-13-13",
+    "eruvin-61a-12-12",
+    "eruvin-64a-0-2",
+    "eruvin-68a-2-2",
+    "eruvin-68b-0-3",
+    "eruvin-68b-13-16",
+    "eruvin-69a-8-8",
+    "eruvin-86b-9-11",
+    "eruvin-91a-1-3",
+    "eruvin-94a-1-2",
+    "eruvin-101b-0-0",
+    "eruvin-102a-14-15",
+    "eruvin-102b-11-12",
+    "eruvin-104a-24-25"
+   ],
+   "unlisted_graded": {
+    "borderline": 7,
+    "yes": 9,
+    "no": 7
+   },
+   "estimate_yes": 0.808,
+   "estimate_yes_or_borderline": 0.904
+  },
+  "yevamot": {
+   "shipped": 85,
+   "on_list": 60,
+   "lower_bound": 0.706,
+   "unlisted_ids": [
+    "yevamot-15a-15-15",
+    "yevamot-15a-16-16",
+    "yevamot-21b-1-2",
+    "yevamot-37b-5-8",
+    "yevamot-42b-8-8",
+    "yevamot-46b-13-13",
+    "yevamot-47a-7-7",
+    "yevamot-49b-6-7",
+    "yevamot-66a-1-1",
+    "yevamot-76b-10-16",
+    "yevamot-77b-8-9",
+    "yevamot-78a-12-12",
+    "yevamot-78b-13-20",
+    "yevamot-95a-7-7",
+    "yevamot-98a-3-3",
+    "yevamot-99b-9-10",
+    "yevamot-101b-14-14",
+    "yevamot-101b-15-16",
+    "yevamot-105a-8-9",
+    "yevamot-105a-13-13",
+    "yevamot-106b-7-8",
+    "yevamot-108b-10-11",
+    "yevamot-108b-14-14",
+    "yevamot-115a-7-7",
+    "yevamot-120b-7-7"
+   ],
+   "unlisted_graded": {
+    "yes": 15,
+    "borderline": 9,
+    "no": 1
+   },
+   "estimate_yes": 0.882,
+   "estimate_yes_or_borderline": 0.988
+  }
+ },
+ "coverage": {
+  "berakhot": {
+   "pages_text": 125,
+   "pages_run": [
+    125,
+    125
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    106,
+    106
+   ],
+   "skipped": [
+    19,
+    19
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "shabbat": {
+   "pages_text": 312,
+   "pages_run": [
+    312,
+    312
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    157,
+    157
+   ],
+   "skipped": [
+    155,
+    155
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "eruvin": {
+   "pages_text": 207,
+   "pages_run": [
+    207,
+    207
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    109,
+    109
+   ],
+   "skipped": [
+    98,
+    98
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "pesachim": {
+   "pages_text": 240,
+   "pages_run": [
+    240,
+    240
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    104,
+    104
+   ],
+   "skipped": [
+    136,
+    136
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "rosh_hashanah": {
+   "pages_text": 67,
+   "pages_run": [
+    67,
+    67
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    31,
+    31
+   ],
+   "skipped": [
+    36,
+    36
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "yoma": {
+   "pages_text": 173,
+   "pages_run": [
+    173,
+    173
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    64,
+    64
+   ],
+   "skipped": [
+    109,
+    109
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "sukkah": {
+   "pages_text": 110,
+   "pages_run": [
+    110,
+    110
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    46,
+    46
+   ],
+   "skipped": [
+    64,
+    64
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "beitzah": {
+   "pages_text": 78,
+   "pages_run": [
+    78,
+    78
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    42,
+    42
+   ],
+   "skipped": [
+    36,
+    36
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "taanit": {
+   "pages_text": 59,
+   "pages_run": [
+    59,
+    59
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    42,
+    42
+   ],
+   "skipped": [
+    17,
+    17
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "megillah": {
+   "pages_text": 61,
+   "pages_run": [
+    61,
+    61
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    42,
+    42
+   ],
+   "skipped": [
+    19,
+    19
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "moed_katan": {
+   "pages_text": 55,
+   "pages_run": [
+    55,
+    55
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    39,
+    39
+   ],
+   "skipped": [
+    16,
+    16
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "chagigah": {
+   "pages_text": 51,
+   "pages_run": [
+    51,
+    51
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    20,
+    20
+   ],
+   "skipped": [
+    31,
+    31
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "yevamot": {
+   "pages_text": 242,
+   "pages_run": [
+    242,
+    242
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    106,
+    106
+   ],
+   "skipped": [
+    136,
+    136
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    1
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "nedarim": {
+   "pages_text": 180,
+   "pages_run": [
+    180,
+    180
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    58,
+    58
+   ],
+   "skipped": [
+    122,
+    122
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "nazir": {
+   "pages_text": 129,
+   "pages_run": [
+    129,
+    129
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    24,
+    24
+   ],
+   "skipped": [
+    105,
+    105
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "sotah": {
+   "pages_text": 96,
+   "pages_run": [
+    96,
+    96
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    40,
+    40
+   ],
+   "skipped": [
+    56,
+    56
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "bava_kamma": {
+   "pages_text": 236,
+   "pages_run": [
+    236,
+    236
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    82,
+    82
+   ],
+   "skipped": [
+    154,
+    154
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "bava_metzia": {
+   "pages_text": 235,
+   "pages_run": [
+    235,
+    235
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    117,
+    117
+   ],
+   "skipped": [
+    118,
+    118
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "bava_batra": {
+   "pages_text": 350,
+   "pages_run": [
+    350,
+    350
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    153,
+    153
+   ],
+   "skipped": [
+    197,
+    197
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "sanhedrin": {
+   "pages_text": 224,
+   "pages_run": [
+    224,
+    224
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    130,
+    130
+   ],
+   "skipped": [
+    94,
+    94
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "makkot": {
+   "pages_text": 46,
+   "pages_run": [
+    46,
+    46
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    17,
+    17
+   ],
+   "skipped": [
+    29,
+    29
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "shevuot": {
+   "pages_text": 96,
+   "pages_run": [
+    96,
+    96
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    19,
+    19
+   ],
+   "skipped": [
+    77,
+    77
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "avodah_zarah": {
+   "pages_text": 150,
+   "pages_run": [
+    150,
+    150
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    103,
+    103
+   ],
+   "skipped": [
+    47,
+    47
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "horayot": {
+   "pages_text": 25,
+   "pages_run": [
+    25,
+    25
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    8,
+    8
+   ],
+   "skipped": [
+    17,
+    17
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "zevachim": {
+   "pages_text": 238,
+   "pages_run": [
+    238,
+    238
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    48,
+    48
+   ],
+   "skipped": [
+    190,
+    190
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "menachot": {
+   "pages_text": 217,
+   "pages_run": [
+    217,
+    217
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    65,
+    65
+   ],
+   "skipped": [
+    152,
+    152
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "chullin": {
+   "pages_text": 281,
+   "pages_run": [
+    281,
+    281
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    126,
+    126
+   ],
+   "skipped": [
+    155,
+    155
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "bekhorot": {
+   "pages_text": 119,
+   "pages_run": [
+    119,
+    119
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    50,
+    50
+   ],
+   "skipped": [
+    69,
+    69
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "arakhin": {
+   "pages_text": 65,
+   "pages_run": [
+    65,
+    65
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    23,
+    23
+   ],
+   "skipped": [
+    42,
+    42
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "temurah": {
+   "pages_text": 65,
+   "pages_run": [
+    65,
+    65
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    8,
+    8
+   ],
+   "skipped": [
+    57,
+    57
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "keritot": {
+   "pages_text": 54,
+   "pages_run": [
+    54,
+    54
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    10,
+    10
+   ],
+   "skipped": [
+    44,
+    44
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "meilah": {
+   "pages_text": 41,
+   "pages_run": [
+    41,
+    41
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    5,
+    5
+   ],
+   "skipped": [
+    36,
+    36
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "tamid": {
+   "pages_text": 17,
+   "pages_run": [
+    17,
+    17
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    7,
+    7
+   ],
+   "skipped": [
+    10,
+    10
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  },
+  "niddah": {
+   "pages_text": 143,
+   "pages_run": [
+    143,
+    143
+   ],
+   "same_pages_both_runs": true,
+   "every_text_page_in_runs": true,
+   "examined": [
+    75,
+    75
+   ],
+   "skipped": [
+    68,
+    68
+   ],
+   "same_triage": true,
+   "triage_failed": [
+    0,
+    0
+   ],
+   "stage2_errors": [
+    0,
+    0
+   ],
+   "stage4_call_failures": [
+    0,
+    0
+   ],
+   "detector": [
+    "src.story_detector_v14"
+   ]
+  }
+ },
+ "agreement_g4": {
+  "bava_batra": {
+   "status": "green",
+   "both": 125,
+   "passages": 129,
+   "share": 0.969
+  },
+  "shabbat": {
+   "status": "green",
+   "both": 118,
+   "passages": 125,
+   "share": 0.944
+  },
+  "chullin": {
+   "status": "green",
+   "both": 105,
+   "passages": 111,
+   "share": 0.9459
+  },
+  "pesachim": {
+   "status": "green",
+   "both": 74,
+   "passages": 80,
+   "share": 0.925
+  },
+  "zevachim": {
+   "status": "green",
+   "both": 11,
+   "passages": 11,
+   "share": 1.0
+  },
+  "bava_kamma": {
+   "status": "amber",
+   "both": 51,
+   "passages": 58,
+   "share": 0.8793
+  },
+  "bava_metzia": {
+   "status": "green",
+   "both": 98,
+   "passages": 103,
+   "share": 0.9515
+  },
+  "sanhedrin": {
+   "status": "green",
+   "both": 121,
+   "passages": 129,
+   "share": 0.938
+  },
+  "menachot": {
+   "status": "green",
+   "both": 37,
+   "passages": 39,
+   "share": 0.9487
+  },
+  "eruvin": {
+   "status": "green",
+   "both": 73,
+   "passages": 81,
+   "share": 0.9012
+  },
+  "nedarim": {
+   "status": "green",
+   "both": 41,
+   "passages": 44,
+   "share": 0.9318
+  },
+  "yoma": {
+   "status": "green",
+   "both": 56,
+   "passages": 56,
+   "share": 1.0
+  },
+  "avodah_zarah": {
+   "status": "green",
+   "both": 88,
+   "passages": 89,
+   "share": 0.9888
+  },
+  "niddah": {
+   "status": "green",
+   "both": 48,
+   "passages": 48,
+   "share": 1.0
+  },
+  "nazir": {
+   "status": "green",
+   "both": 9,
+   "passages": 9,
+   "share": 1.0
+  },
+  "bekhorot": {
+   "status": "green",
+   "both": 23,
+   "passages": 23,
+   "share": 1.0
+  },
+  "sukkah": {
+   "status": "amber",
+   "both": 29,
+   "passages": 35,
+   "share": 0.8286
+  },
+  "shevuot": {
+   "status": "amber",
+   "both": 10,
+   "passages": 12,
+   "share": 0.8333
+  },
+  "sotah": {
+   "status": "amber",
+   "both": 22,
+   "passages": 29,
+   "share": 0.7586
+  },
+  "beitzah": {
+   "status": "green",
+   "both": 30,
+   "passages": 33,
+   "share": 0.9091
+  },
+  "rosh_hashanah": {
+   "status": "green",
+   "both": 26,
+   "passages": 26,
+   "share": 1.0
+  },
+  "arakhin": {
+   "status": "green",
+   "both": 15,
+   "passages": 15,
+   "share": 1.0
+  },
+  "temurah": {
+   "status": "amber",
+   "both": 4,
+   "passages": 5,
+   "share": 0.8
+  },
+  "megillah": {
+   "status": "amber",
+   "both": 37,
+   "passages": 43,
+   "share": 0.8605
+  },
+  "taanit": {
+   "status": "amber",
+   "both": 66,
+   "passages": 78,
+   "share": 0.8462
+  },
+  "moed_katan": {
+   "status": "green",
+   "both": 54,
+   "passages": 59,
+   "share": 0.9153
+  },
+  "keritot": {
+   "status": "green",
+   "both": 2,
+   "passages": 2,
+   "share": 1.0
+  },
+  "chagigah": {
+   "status": "green",
+   "both": 30,
+   "passages": 33,
+   "share": 0.9091
+  },
+  "makkot": {
+   "status": "amber",
+   "both": 7,
+   "passages": 8,
+   "share": 0.875
+  },
+  "meilah": {
+   "status": "green",
+   "both": 2,
+   "passages": 2,
+   "share": 1.0
+  },
+  "horayot": {
+   "status": "amber",
+   "both": 3,
+   "passages": 6,
+   "share": 0.5
+  },
+  "tamid": {
+   "status": "green",
+   "both": 5,
+   "passages": 5,
+   "share": 1.0
+  }
+ },
+ "coverage_summary": {
+  "tractates": 34,
+  "pages": 4787,
+  "examined_run1": 2076,
+  "examined_share": 0.434,
+  "tractates_with_a_defect": []
+ },
+ "agreement_summary": {
+  "tractates": 32,
+  "definite_in_both": 1420,
+  "definite_passages": 1526,
+  "pooled_share": 0.931,
+  "under_90": [
+   "bava_kamma",
+   "horayot",
+   "makkot",
+   "megillah",
+   "shevuot",
+   "sotah",
+   "sukkah",
+   "taanit",
+   "temurah"
+  ]
+ }
+}

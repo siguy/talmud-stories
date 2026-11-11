@@ -1,0 +1,17 @@
+{
+  "01": {"verdict": "out_of_scope", "rules": ["R-S1", "R-C2"], "segments": [2, 3], "reason": "A midrashic dialogue between Abraham and God about astrology and his heir; whatever narrative there is concerns biblical figures, and it is mostly speech."},
+  "02": {"verdict": "not", "rules": ["R-S1", "R-B4"], "segments": [], "reason": "Rabbi Elazar's verse-by-verse exegesis of Ruth and Samuel; interpretation of biblical verses, not a narrated incident, and biblical in any case."},
+  "03": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "A full narrative of David asking God about his death and the Angel of Death contriving to interrupt his study, but its characters are biblical."},
+  "04": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Nebuchadnezzar's descent into Gehenna, the dead trembling and a Divine Voice answering is a narrated episode about a biblical figure; segment 3 begins a separate exegesis."},
+  "05": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "Satan searching for the Torah and Moses being rewarded for his humility is a story with search, conflict and outcome, but about biblical and heavenly figures."},
+  "06": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4, 5], "reason": "Moses ascends, argues with the angels, wins and receives gifts: a full story, but about Moses, not rabbis or post-biblical figures."},
+  "07": {"verdict": "not", "rules": ["R-S1", "R-C5"], "segments": [], "reason": "A baraita listing three things Moses did on his own initiative, followed by derivations of his reasoning; exegetical discussion of biblical acts, not a narrated story in scope."},
+  "08": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Satan confusing the people about Moses' return, with their reactions and the vision of his bier, is a narrative about the biblical generation of the Golden Calf."},
+  "09": {"verdict": "out_of_scope", "rules": ["R-S1", "R-C2"], "segments": [2], "reason": "Moses finds God tying crowns to letters and is rebuked for not greeting Him; a brief, mostly verbal episode about a biblical figure."},
+  "10": {"verdict": "not", "rules": [], "segments": [], "reason": "An aggadic statement about the serpent's contamination and a scholarly exchange between Rav Aha and Rav Ashi; no narrated event."},
+  "11": {"verdict": "not", "rules": [], "segments": [], "reason": "A calendrical-legal discussion of the dates of the Exodus and Sinai, with baraitot cited as proofs; no story."},
+  "12": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Solomon sends a question to the study hall about his dead father and receives a ruling, continuing the David narrative; biblical characters, followed by Rav Tanhum's conclusion."},
+  "13": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Nebuchadnezzar's attempt on Zedekiah and the miracle that foiled it is a narrated event, but about biblical figures."},
+  "14": {"verdict": "not", "rules": [], "segments": [], "reason": "A one-line tannaitic teaching that the Tabernacle's middle bar stood by miracle; exegesis, no narrative."},
+  "15": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4], "reason": "God's command to Gabriel and the attribute of justice's challenge, leading God to retract, is a narrated heavenly episode set in Ezekiel's Jerusalem, biblical rather than rabbinic."}
+}

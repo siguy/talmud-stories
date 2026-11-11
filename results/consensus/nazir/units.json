@@ -1,0 +1,718 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/nazir/run1.json",
+   "v14_r2": "results/v14/nazir/run2.json"
+  },
+  "spans": {
+   "v14_r1": 27,
+   "v14_r2": 26
+  },
+  "units": 26,
+  "built": "2026-11-09T23:35:47"
+ },
+ "units": [
+  {
+   "id": "Nazir 3a:2-2",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 3a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The maidservant of Rabbi Yehuda HaNasi rebukes a man for curling or growing his hair too long."
+  },
+  {
+   "id": "Nazir 4a:9-11",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 4a",
+     9
+    ],
+    [
+     "Nazir 4a",
+     10
+    ],
+    [
+     "Nazir 4a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Mishna lists various ways a person might declare themselves a nazirite like Samson, and the Gemara explains the necessity of each specific phrasing."
+  },
+  {
+   "id": "Nazir 4b:13-15",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 4b",
+     13
+    ],
+    [
+     "Nazir 4b",
+     14
+    ],
+    [
+     "Nazir 4b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shimon HaTzaddik recounts how he met a handsome shepherd who became a nazirite to overcome his vanity, leading Shimon to praise him as a model nazirite."
+  },
+  {
+   "id": "Nazir 8a:4-4",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 8a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Yehuda cites an incident where a man vowed to be a nazirite for the number of days in a solar year, and upon completing the 365 terms, he died."
+  },
+  {
+   "id": "Nazir 8a:7-8",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 8a",
+     7
+    ],
+    [
+     "Nazir 8a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man vows to be a nazirite if his grain pile reaches a certain amount, but when he goes to check, he finds the grain has been stolen or lost."
+  },
+  {
+   "id": "Nazir 8b:1-1",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 8b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda cites an incident where a man vowed naziriteship for the number of days in a solar year and died immediately upon completing the terms."
+  },
+  {
+   "id": "Nazir 10b:0-4",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 10b",
+     0
+    ],
+    [
+     "Nazir 10b",
+     1
+    ],
+    [
+     "Nazir 10b",
+     2
+    ],
+    [
+     "Nazir 10b",
+     3
+    ],
+    [
+     "Nazir 10b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara discusses the legal validity of a nazirite vow made on the condition of a cow standing up, debating the intent of the person making the vow."
+  },
+  {
+   "id": "Nazir 11a:0-0",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 11a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "An incident is recounted where an intoxicated woman was offered a cup of wine and declared herself a nazirite to avoid drinking it."
+  },
+  {
+   "id": "Nazir 19a:8-8",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 19a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Kahana and Rav Asi ask Rav why he did not use Shmuel's explanation for the Mishna, and Rav explains he thought they already understood it."
+  },
+  {
+   "id": "Nazir 19b:7-7",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 19b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Queen Helene vowed seven years of naziriteship for her son's safe return from war, fulfilled them abroad, and then traveled to Eretz Yisrael where the Sages ruled she must observe the term again."
+  },
+  {
+   "id": "Nazir 20a:1-2",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 20a",
+     1
+    ],
+    [
+     "Nazir 20a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Queen Helene vowed seven years of naziriteship for her son's safety, but upon arriving in Eretz Yisrael, Beit Hillel required her to observe the term again."
+  },
+  {
+   "id": "Nazir 23a:3-3",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 23a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Akiva would weep when reading the verse about unintentional sin, noting that even those who intend to sin but fail require atonement."
+  },
+  {
+   "id": "Nazir 23a:11-19",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 23a",
+     11
+    ],
+    [
+     "Nazir 23a",
+     12
+    ],
+    [
+     "Nazir 23a",
+     13
+    ],
+    [
+     "Nazir 23a",
+     14
+    ],
+    [
+     "Nazir 23a",
+     15
+    ],
+    [
+     "Nazir 23a",
+     16
+    ],
+    [
+     "Nazir 23a",
+     17
+    ],
+    [
+     "Nazir 23a",
+     18
+    ],
+    [
+     "Nazir 23a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A parable describes two men eating the Paschal lamb, where their differing intentions determine whether the act is righteous or a stumbling block."
+  },
+  {
+   "id": "Nazir 29b:8-9",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 29b",
+     8
+    ],
+    [
+     "Nazir 29b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A young Rabbi Hanina is brought by his father before Rabban Gamliel to determine the validity of a nazirite vow, and the boy cleverly resolves the legal uncertainty himself."
+  },
+  {
+   "id": "Nazir 32b:0-1",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 32b",
+     0
+    ],
+    [
+     "Nazir 32b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "When nazirites returning from exile found the Temple destroyed, Nahum the Mede attempted to dissolve their vows as an error, but the Sages disagreed with his reasoning."
+  },
+  {
+   "id": "Nazir 44a:1-2",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 44a",
+     1
+    ],
+    [
+     "Nazir 44a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yitzḥak the priest is informed of his father's death three years after the fact and is told by the sages that he may not become impure to the remains because the body is no longer whole."
+  },
+  {
+   "id": "Nazir 44b:4-6",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 44b",
+     4
+    ],
+    [
+     "Nazir 44b",
+     5
+    ],
+    [
+     "Nazir 44b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye encounters the students of Rav Natan bar Hoshaya and engages in a legal debate regarding the status of a zav who immersed that day."
+  },
+  {
+   "id": "Nazir 47a:3-3",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 47a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Miriam of Tarmod was in the process of offering her nazirite sacrifices when she was informed of her daughter's illness, only to find her dead and herself consequently impure, leading to a rabbinic ruling on her offerings."
+  },
+  {
+   "id": "Nazir 49b:4-Nazir 50a:0",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 49b",
+     4
+    ],
+    [
+     "Nazir 49b",
+     5
+    ],
+    [
+     "Nazir 50a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Following Rabbi Meir's death, Rabbi Yehuda bans Meir's students from his academy, but Sumakhos enters anyway and recites a teaching, provoking Yehuda's anger."
+  },
+  {
+   "id": "Nazir 52a:5-5",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 52a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A box of bones was brought to the synagogue of Tarsus, where Theodos the Physician and his colleagues examined them and determined they did not contain a complete spine from one individual."
+  },
+  {
+   "id": "Nazir 52b:5-5",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 52b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara notes that Rabbi Akiva's teeth turned black from the many fasts he undertook (likely in penance or intense devotion)."
+  },
+  {
+   "id": "Nazir 56b:8-9",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 56b",
+     8
+    ],
+    [
+     "Nazir 56b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer recounts his journey to Ardaskeya where he heard a tradition and his subsequent conversation with Rabbi Meir to verify its transmission history."
+  },
+  {
+   "id": "Nazir 57b:4-4",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 57b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Ahava questions Rav Huna on who shaves his sons' heads, and upon hearing it is Rav Huna's wife Hoba, he curses her that she should bury her sons."
+  },
+  {
+   "id": "Nazir 59a:3-3",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 59a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages observe that Rabbi Yoḥanan lacks armpit hair despite his ruling against shaving it, and Rabbi Shimon bar Abba explains it is due to his old age."
+  },
+  {
+   "id": "Nazir 59a:4-4",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 59a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man sentenced to lashes is spared by Rabbi Ami after his unshaven armpits are exposed, signaling to the Rabbi that the man is a scholar/pious person."
+  },
+  {
+   "id": "Nazir 65a:4-4",
+   "tractate": "Nazir",
+   "cells": [
+    [
+     "Nazir 65a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yeshevav examined a site and found three corpses, but Rabbi Akiva informed him that his effort to establish it as a graveyard was invalid because only corpses found for the first time count toward that status."
+  }
+ ]
+}

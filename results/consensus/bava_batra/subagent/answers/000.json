@@ -1,0 +1,14 @@
+{
+"01": {"verdict": "out_of_scope", "rules": ["R-S1", "R-B4"], "segments": [2, 3, 5], "reason": "The episode of Jonathan the priest of Micah, questioned by the Danites and later appointed by David, is a narrative about biblical characters; segment 4 is the Gemara's commentary on it."},
+"02": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2, 3], "reason": "A man bequeaths his property and one daughter then dies, a real event that changes the case, followed by rulings; the second case (segment 4) is a single act followed by a ruling and is not a story under R-C0's limit."},
+"03": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "A baraita narrating Job's afflictions, blasphemy and God's response is a story about a biblical figure, not a rabbi or post-biblical figure."},
+"04": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "A one-line report of what King Hoshea did, cited to explain the date, with nothing following; it is also about a biblical king."},
+"05": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "Aggadic traditions about Abraham's imprisonment and the nations mourning his death concern a biblical figure."},
+"06": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "The end of the lament of the nations' leaders at Abraham's death, part of a scene about a biblical figure."},
+"07": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "God commands the minister of the sea at creation, is refused, and kills him: a narrative with events and consequence, but about God and an angel at creation, not rabbis or post-biblical figures."},
+"08": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4], "reason": "A baraita describing Elazar and Joshua dividing the land by lot and Urim VeTummim is a narrative about biblical characters."},
+"09": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [4, 5, 6], "reason": "Boaz/Ibzan made feasts, excluded Manoah, and all his children died in his lifetime: events with consequence, but about biblical characters; segments 2-3 are exegesis of Ruth."},
+"10": {"verdict": "story", "rules": ["R-S1", "R-C0"], "segments": [9], "reason": "Most of the passage is biblical exegesis of Job (out of scope), but segment 9 narrates a post-biblical incident: Rav Aha bar Ya'akov taught in Paphunya and Satan came and kissed his feet, an act with a response."},
+"11": {"verdict": "not", "rules": [], "segments": [], "reason": "A baraita listing seven people whose lives spanned history; a genealogical chain, not a narrated event."},
+"12": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4], "reason": "Joab's slaughter, David's challenge, and Joab's confrontation with his teacher is a full story, but about biblical characters."}
+}

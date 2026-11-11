@@ -1,0 +1,65 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 3
+  },
+  "imported": "2026-11-10T06:15:38"
+ },
+ "rows": [
+  {
+   "id": "Rosh Hashanah 11b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A tannaitic dispute over the date the Flood began and how God altered the Kima constellation; exegesis, not a narrated story in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 12a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A single clause of the baraita about God bringing the Flood after altering Kima; exegetical, not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Rosh Hashanah 11a:0-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A tannaitic dispute about the months of creation, the Patriarchs' births and deaths, and biblical remembrances, with exegetical derivations; no narrated incident.",
+    "error": null
+   }
+  }
+ ]
+}

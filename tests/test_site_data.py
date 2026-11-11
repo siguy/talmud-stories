@@ -78,7 +78,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 17643, "berakhot": 24396}
+SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 19693, "berakhot": 26096}  # yevamot, berakhot: biblical stories back (Simon 2026-11-10)
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -111,7 +111,8 @@ def test_no_low_confidence_or_not_a_story_ships():
 
 def test_unreviewed_stories_are_definite_in_every_run():
     """Lesson 45: the detector is not deterministic, so a shipped story from an unreviewed tractate must be
-    YES/HIGH in EVERY listed run; and none may be a passage both judges call biblical (R-S1)."""
+    YES/HIGH in EVERY listed run; a passage Gemini calls biblical and Claude calls not a story never ships; and every
+    passage the judges call biblical ships FLAGGED (Simon 2026-11-10: biblical stories stay, excluded for Jeff)."""
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_site_data as b
     unreviewed = [t for t, src in b.SOURCES.items() if not src["reviewed"]]
@@ -119,13 +120,15 @@ def test_unreviewed_stories_are_definite_in_every_run():
     for t in unreviewed:
         assert len(b.SOURCES[t]["runs"]) >= 2, t
         runs = [b.definite_cells(q) for q in b.SOURCES[t]["runs"]]
-        biblical = b.biblical_cells(t)
+        biblical, drop = b.judge_cells(t)
         if t in b.EXISTING:       # a newer tractate may have no biblical passage at all
             assert biblical, t
         for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
             assert all(cells & r for r in runs), s["id"]
-            assert not cells & biblical, s["id"]
+            assert not cells & drop, s["id"]
+            if cells & biblical:
+                assert s["biblical"] is True, s["id"]
 
 
 def test_reviewed_stories_carry_jeffs_evidence():

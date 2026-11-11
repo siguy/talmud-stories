@@ -1,0 +1,2851 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/yoma/run1.json",
+   "v14_r2": "results/v14/yoma/run2.json"
+  },
+  "spans": {
+   "v14_r1": 114,
+   "v14_r2": 111
+  },
+  "units": 113,
+  "built": "2026-11-09T23:31:38"
+ },
+ "units": [
+  {
+   "id": "Yoma 3b:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 3b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Dimi arrives from Israel and reports the differing legal traditions of Rabbi Yoḥanan and Rabbi Yehoshua ben Levi regarding the source of the High Priest's sequestration."
+  },
+  {
+   "id": "Yoma 4a:9-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 4a",
+     9
+    ],
+    [
+     "Yoma 4a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A baraita describes Moses ascending Mount Sinai, being covered by a cloud for six days, and being called by God on the seventh day to receive the Torah."
+  },
+  {
+   "id": "Yoma 9a:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 9a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Yoḥanan the High Priest sent emissaries to investigate tithing practices and, upon finding neglect, instituted the decree of demai."
+  },
+  {
+   "id": "Yoma 9b:14-14",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 9b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While Reish Lakish is being helped out of the Jordan River by Rabba bar bar Ḥana, he rebukes him and all Babylonians for not returning to Israel en masse during the Second Temple period."
+  },
+  {
+   "id": "Yoma 10a:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 10a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ḥaviva bar Surmakei travels to Eretz Yisrael and presents a legal objection to a Sage, who rebukes him for his arrogance in questioning Rabbi Yehuda HaNasi."
+  },
+  {
+   "id": "Yoma 10a:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 10a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav's students, Rav Kahana and Rav Asi, challenge his prediction that Persia will fall to Rome on the grounds of justice, but Rav maintains it is a divine decree."
+  },
+  {
+   "id": "Yoma 11a:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 11a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "An examiner checking mezuzot in Tzippori during a time of religious persecution was caught and heavily fined by a Roman official."
+  },
+  {
+   "id": "Yoma 12b:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 12b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Yosef ben Elem of Tzippori was appointed as a temporary High Priest when the incumbent was disqualified, but was later barred from all priestly service once the original priest returned."
+  },
+  {
+   "id": "Yoma 15a:13-13",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 15a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yehuda physically demonstrates the motion of the priestly sprinkling (matzlif) by mimicking the action of a person using a whip."
+  },
+  {
+   "id": "Yoma 18a:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 18a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Marta bat Baitos brought a large sum of money to King Yannai to secure the appointment of Yehoshua ben Gamla as High Priest."
+  },
+  {
+   "id": "Yoma 18b:1-1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 18b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Whenever Rav or Rav Nachman would visit certain cities, they would publicly announce their desire for a woman to marry them for the duration of their stay."
+  },
+  {
+   "id": "Yoma 19b:3-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 19b",
+     3
+    ],
+    [
+     "Yoma 19b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A Sadducee High Priest performs the incense ritual according to his sect's view and is subsequently struck down and dies a gruesome death."
+  },
+  {
+   "id": "Yoma 19b:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 19b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B describes a distinct historical event involving Rav, Rav Hanan bar Rava, and Hiyya bar Rav, featuring a specific conflict (the pronunciation of a name) and a narrative resolution (Rav gesturing because he was reciting Shema)."
+  },
+  {
+   "id": "Yoma 19b:15-Yoma 20a:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 19b",
+     15
+    ],
+    [
+     "Yoma 20a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Elijah the Prophet appears to Rav Yehuda to explain that the Messiah has not come because even on Yom Kippur, people are engaging in sin."
+  },
+  {
+   "id": "Yoma 20b:4-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 20b",
+     4
+    ],
+    [
+     "Yoma 20b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav visits Rabbi Sheila's academy incognito and serves as his disseminator, but after a brief scholarly disagreement, Rabbi Sheila recognizes Rav's greatness and offers him his seat."
+  },
+  {
+   "id": "Yoma 20b:7-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 20b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "King Agrippa hears the powerful voice of Gevini the Crier from three parasangs away and sends him gifts in appreciation."
+  },
+  {
+   "id": "Yoma 21a:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 21a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages prayed for mercy to abolish the sound made by the soul as it departs from the body, and their prayer was granted."
+  },
+  {
+   "id": "Yoma 21b:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 21b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Hanina reports having seen the Temple fire crouched like a dog rather than a lion."
+  },
+  {
+   "id": "Yoma 22a:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 22a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "During a race to decide who would remove the altar ashes, one priest shoved another, causing a broken leg and leading the Court to replace the race with a lottery."
+  },
+  {
+   "id": "Yoma 22b:17-17",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 22b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav Naḥman bar Yitzḥak mocks the idea of King Saul's purity, he receives a terrifying dream that night and immediately begs Saul's remains for forgiveness."
+  },
+  {
+   "id": "Yoma 23a:10-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 23a",
+     10
+    ],
+    [
+     "Yoma 23a",
+     11
+    ],
+    [
+     "Yoma 23a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During a race to perform the altar service, one priest stabs another, leading to a public address by Rabbi Tzadok and a chilling display of concern for ritual purity over human life by the victim's father."
+  },
+  {
+   "id": "Yoma 23a:15-Yoma 23b:1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 23a",
+     15
+    ],
+    [
+     "Yoma 23b",
+     0
+    ],
+    [
+     "Yoma 23b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The father of a priest stabbed in the Temple arrives to find his son dying and immediately declares that the knife is still ritually pure because the boy has not yet expired."
+  },
+  {
+   "id": "Yoma 25b:7-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 25b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Katin replaced the two spouts of the Temple laver with twelve spigots so that all twelve priests involved in the daily offering could wash their hands and feet at the same time."
+  },
+  {
+   "id": "Yoma 26b:4-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 26b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "During the Sukkot water libation, a priest intentionally poured the water on his feet, leading the gathered people to pelt him with their etrogim."
+  },
+  {
+   "id": "Yoma 27a:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 27a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Shimi bar Ashi reports seeing Abaye explaining a legal derivation to his son regarding the validity of a non-priest performing slaughter."
+  },
+  {
+   "id": "Yoma 27a:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 27a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Hamnuna reports that Rabbi Elazar raised a difficulty regarding a verse and then resolved it himself."
+  },
+  {
+   "id": "Yoma 35b:3-3",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yishmael ben Piabi's mother made him an expensive tunic which he wore while performing the Temple service."
+  },
+  {
+   "id": "Yoma 35b:4-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar ben Harsum's mother made him an expensive, transparent tunic, but the other priests forbade him from wearing it because he appeared naked."
+  },
+  {
+   "id": "Yoma 35b:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new narrative framework involving the Heavenly court and the specific character of Hillel, distinct from the anecdote about Elazar ben Harsum's tunic."
+  },
+  {
+   "id": "Yoma 35b:6-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     6
+    ],
+    [
+     "Yoma 35b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Hillel the Elder, unable to pay the entry fee to the study hall, climbed onto the roof to listen to the sages and was nearly buried in snow until Shemaya and Avtalyon found and rescued him."
+  },
+  {
+   "id": "Yoma 35b:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The wealthy Rabbi Elazar ben Harsum was so unknown to his own servants because of his constant travel for Torah study that they once pressed him into forced labor on his own estate."
+  },
+  {
+   "id": "Yoma 35b:10-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 35b",
+     10
+    ],
+    [
+     "Yoma 35b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Joseph resists the verbal enticements and threats of Potiphar's wife."
+  },
+  {
+   "id": "Yoma 36b:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 36b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A prayer leader performs the confession according to Rabbi Meir's minority view, leading Rabba to challenge him and the leader to defend his choice based on a verse."
+  },
+  {
+   "id": "Yoma 37a:3-3",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 37a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Passage B features a distinct actor, Yehoshua ben Gamla, performing a specific act of Temple enhancement that follows the same formulaic praise as the actors in Passage A."
+  },
+  {
+   "id": "Yoma 37a:4-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 37a",
+     4
+    ],
+    [
+     "Yoma 37a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "The Mishna records the specific physical improvements and gold donations made to the Temple by Ben Katin, King Munbaz, and Queen Helene."
+  },
+  {
+   "id": "Yoma 37b:1-1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 37b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Queen Helene donated a gold chandelier to the Temple that reflected sunlight to signal the time for the morning Shema."
+  },
+  {
+   "id": "Yoma 37b:3-3",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 37b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Queen Helene made a golden tablet for the Temple inscribed with the Sota portion, which the Gemara uses to discuss the legality of writing partial Torah scrolls."
+  },
+  {
+   "id": "Yoma 38a:1-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     1
+    ],
+    [
+     "Yoma 38a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Nicanor travels to Egypt to bring copper doors for the Temple and, through his devotion during a storm at sea, witnesses a miracle where a lost door is restored."
+  },
+  {
+   "id": "Yoma 38a:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Passage B describes two distinct individuals, Hugras ben Levi and Ben Kamtzar, who are judged for their refusal to teach their crafts, which is a separate set of events from the House of Garmu story in Passage A."
+  },
+  {
+   "id": "Yoma 38a:6-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     6
+    ],
+    [
+     "Yoma 38a",
+     7
+    ],
+    [
+     "Yoma 38a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Sages attempt to replace the House of Garmu with Egyptian bakers for the Temple bread, but when the new bread fails, they are forced to rehire the original family at a higher cost."
+  },
+  {
+   "id": "Yoma 38a:9-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     9
+    ],
+    [
+     "Yoma 38a",
+     10
+    ],
+    [
+     "Yoma 38a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Similar to the House of Garmu, the House of Avtinas is replaced by Egyptian experts for the Temple incense, but they are reinstated when the replacements cannot replicate their unique technique."
+  },
+  {
+   "id": "Yoma 38a:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yishmael encounters a descendant of the House of Avtinas and rebukes him, only to learn of the family's extreme piety in avoiding any suspicion of personal use of the Temple incense."
+  },
+  {
+   "id": "Yoma 38a:13-13",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yishmael ben Loga recounts a trip to a field with a member of the House of Avtinas who emotionally identifies the secret herb used for the Temple incense."
+  },
+  {
+   "id": "Yoma 38a:14-14",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yoḥanan ben Nuri meets an old man from the House of Avtinas who gives him a scroll containing the family's secret incense formula."
+  },
+  {
+   "id": "Yoma 38b:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct narrative about Ben Kamtzar's refusal to share his scribal technique and the resulting communal condemnation, which serves as the catalyst for the discussion on the verse 'the name of the wicked shall rot' in Passage A."
+  },
+  {
+   "id": "Yoma 38b:3-3",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 38b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara relates the tragic story of Doeg ben Yosef, whose mother used to donate his weight in gold to the Temple daily but eventually slaughtered and ate him during a famine."
+  },
+  {
+   "id": "Yoma 39a:14-Yoma 39b:1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 39a",
+     14
+    ],
+    [
+     "Yoma 39a",
+     15
+    ],
+    [
+     "Yoma 39a",
+     16
+    ],
+    [
+     "Yoma 39b",
+     0
+    ],
+    [
+     "Yoma 39b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes the era of Shimon HaTzaddik's priesthood as a time of consistent miracles in the Temple, which declined into inconsistency and scarcity following his death."
+  },
+  {
+   "id": "Yoma 39b:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 39b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shimon HaTzaddik predicts his own death to his colleagues based on a change in the appearance of the figure who usually accompanied him into the Holy of Holies."
+  },
+  {
+   "id": "Yoma 39b:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 39b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When the Temple doors began opening on their own, Rabban Yoḥanan ben Zakkai scolded them, identifying it as a sign of the Temple's future destruction."
+  },
+  {
+   "id": "Yoma 39b:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 39b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An incident is recorded where the High Priest's voice was heard as far away as Jericho when he pronounced the Divine Name."
+  },
+  {
+   "id": "Yoma 39b:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 39b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Individual testimonies are provided regarding the physical effects of the Temple incense reaching as far as Jericho and the surrounding hills."
+  },
+  {
+   "id": "Yoma 42a:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 42a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "During a debate between Rabbi Yirmeya and Ravina, Ravya bar Kisi died, leading the sages to use his death as a mnemonic to remember the specific details of the legal dispute."
+  },
+  {
+   "id": "Yoma 43b:4-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 43b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A reciter of baraitot presents a ruling to Rabbi Yoḥanan, who rejects it and instructs him to remove that teaching from the house of study."
+  },
+  {
+   "id": "Yoma 47a:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 47a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "On Yom Kippur, Rabbi Yishmael ben Kimḥit was talking to an Arab in the market when saliva sprayed on his clothes, rendering him unfit for service and requiring his brother to take his place."
+  },
+  {
+   "id": "Yoma 47a:11-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 47a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "In another incident, Rabbi Yishmael ben Kimḥit was talking to an officer when saliva sprayed on him, leading his brother Yosef to serve as High Priest."
+  },
+  {
+   "id": "Yoma 47a:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 47a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages asked Kimḥit how she merited seven sons serving as High Priests, and she attributed it to her extreme modesty in never uncovering her hair even inside her home."
+  },
+  {
+   "id": "Yoma 52b:11-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 52b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "King Josiah, fearing the prophecy of exile, hides the Ark and other sacred vessels to prevent their capture."
+  },
+  {
+   "id": "Yoma 53a:23-Yoma 53b:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 53a",
+     23
+    ],
+    [
+     "Yoma 53a",
+     24
+    ],
+    [
+     "Yoma 53b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Gemara describes the extreme measures Rabbi Elazar and Rava took to walk backward when leaving their teachers, resulting in Rava's feet bleeding from hitting the doorway. After being told how Rava walks backward to honor him, the blind Rav Yosef blesses Rava to become a leader of the city."
+  },
+  {
+   "id": "Yoma 53b:4-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 53b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava observes Abaye bowing to the right at the end of his prayer and corrects him, explaining he should bow to his left first."
+  },
+  {
+   "id": "Yoma 53b:7-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 53b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling, Rabbi Hanina ben Dosa prays for rain to stop because he is suffering, and then prays for it to resume once he is safely home."
+  },
+  {
+   "id": "Yoma 53b:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 53b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A High Priest stays too long in the Holy of Holies, causing his colleagues to vote to go in after him, only to meet him as he finally exits."
+  },
+  {
+   "id": "Yoma 54a:6-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 54a",
+     6
+    ],
+    [
+     "Yoma 54a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A priest working in the Temple's woodshed accidentally discovers the hidden location of the Ark and dies immediately before he can tell anyone."
+  },
+  {
+   "id": "Yoma 54b:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 54b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Reish Lakish recounts how the gentiles, upon destroying the Temple, found the embracing cherubs and paraded them in the marketplace to mock the Jews' religious focus."
+  },
+  {
+   "id": "Yoma 56b:11-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 56b",
+     11
+    ],
+    [
+     "Yoma 56b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A prayer leader recites the Yom Kippur service order before Rava, who corrects him for mixing conflicting legal opinions in his liturgy."
+  },
+  {
+   "id": "Yoma 56b:15-Yoma 57a:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 56b",
+     15
+    ],
+    [
+     "Yoma 57a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A Sadducee challenges Rabbi Hanina regarding the impurity of the Jewish people."
+  },
+  {
+   "id": "Yoma 57a:6-6",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 57a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar son of Rabbi Yosei recounts seeing the captured Temple curtain in Rome after being granted access for healing the emperor's daughter."
+  },
+  {
+   "id": "Yoma 57a:11-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 57a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabbi Yirmeya insults the logic of the Babylonian Sages regarding a ruling on mixed blood."
+  },
+  {
+   "id": "Yoma 59a:4-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 59a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yishmael recounts that two High Priests from the First Temple era survived and each described their different physical methods of encircling the altar during the service."
+  },
+  {
+   "id": "Yoma 66a:11-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 66a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Yosei recounts how a man named Arsela led the scapegoat and how a ramp was built to protect the goat from Babylonian Jews who would pluck its hair."
+  },
+  {
+   "id": "Yoma 66b:6-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 66b",
+     6
+    ],
+    [
+     "Yoma 66b",
+     7
+    ],
+    [
+     "Yoma 66b",
+     8
+    ],
+    [
+     "Yoma 66b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Eliezer's students pepper him with various questions, but he evades answering any of them because he refuses to state anything he did not hear directly from his own teacher."
+  },
+  {
+   "id": "Yoma 66b:11-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 66b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A wise woman asks Rabbi Eliezer about the different punishments for the Golden Calf, and he dismissively tells her that a woman's wisdom is limited to the spindle."
+  },
+  {
+   "id": "Yoma 69a:9-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 69a",
+     9
+    ],
+    [
+     "Yoma 69a",
+     10
+    ],
+    [
+     "Yoma 69a",
+     11
+    ],
+    [
+     "Yoma 69a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shimon HaTzaddik leads a procession to meet Alexander the Great, who unexpectedly bows to him, leading to the salvation of the Temple and the destruction of the Samaritan temple on Mount Gerizim."
+  },
+  {
+   "id": "Yoma 69b:5-11",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 69b",
+     5
+    ],
+    [
+     "Yoma 69b",
+     6
+    ],
+    [
+     "Yoma 69b",
+     7
+    ],
+    [
+     "Yoma 69b",
+     8
+    ],
+    [
+     "Yoma 69b",
+     9
+    ],
+    [
+     "Yoma 69b",
+     10
+    ],
+    [
+     "Yoma 69b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Men of the Great Assembly pray to God to deliver the evil inclinations for idolatry and sexual sin into their hands, resulting in a supernatural struggle where they successfully abolish the urge for idolatry and weaken the urge for sexual sin."
+  },
+  {
+   "id": "Yoma 71b:1-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 71b",
+     1
+    ],
+    [
+     "Yoma 71b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When a crowd abandons a High Priest to follow the sages Shemaya and Avtalyon, the envious priest insults their convert ancestry, prompting them to retort that conduct matters more than lineage."
+  },
+  {
+   "id": "Yoma 73a:12-12",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 73a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ami and Rabbi Asi physically turn their faces away in silent protest when Rabbi Abbahu recites a ruling they disagree with, because they cannot openly contradict him due to his political ties."
+  },
+  {
+   "id": "Yoma 75b:7-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 75b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara recounts how various Amoraim found quail in their homes, specifically detailing a day when Rava's sharecropper failed to bring one, leading Rava to discover them on his roof."
+  },
+  {
+   "id": "Yoma 75b:13-13",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 75b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rabba bar bar Hana reports seeing the site of the Israelite camp and measuring its length."
+  },
+  {
+   "id": "Yoma 76a:1-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 76a",
+     1
+    ],
+    [
+     "Yoma 76a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The students of Rabbi Shimon ben Yoḥai ask why the manna fell daily rather than annually, and he explains it through a parable of a king and his son."
+  },
+  {
+   "id": "Yoma 76a:4-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 76a",
+     4
+    ],
+    [
+     "Yoma 76a",
+     5
+    ],
+    [
+     "Yoma 76a",
+     6
+    ],
+    [
+     "Yoma 76a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Tarfon, Rabbi Yishmael, and Rabbi Elazar HaModa’i debate the physical height of the manna that fell in the desert."
+  },
+  {
+   "id": "Yoma 77a:1-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 77a",
+     1
+    ],
+    [
+     "Yoma 77a",
+     2
+    ],
+    [
+     "Yoma 77a",
+     3
+    ],
+    [
+     "Yoma 77a",
+     4
+    ],
+    [
+     "Yoma 77a",
+     5
+    ],
+    [
+     "Yoma 77a",
+     6
+    ],
+    [
+     "Yoma 77a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A celestial narrative describing the replacement of Gabriel by the Persian angel Dubiel, the subsequent decrees against the Jews, and Gabriel's eventual intervention and struggle to destroy the decrees."
+  },
+  {
+   "id": "Yoma 77b:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 77b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shammai the Elder refused to wash even one hand to feed his children on Yom Kippur until the Sages intervened and decreed he must use both hands for their well-being."
+  },
+  {
+   "id": "Yoma 77b:7-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 77b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yitzhak bar bar Hana reports seeing Ze'iri cross water to visit his student Rav Hiyya bar Ashi."
+  },
+  {
+   "id": "Yoma 77b:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 77b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct narrative involving Rav Yosef and Abaye regarding the people of Bei Tarbu, featuring a specific conflict and resolution separate from the actors and location in Passage A."
+  },
+  {
+   "id": "Yoma 77b:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 77b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yehuda and Rav Shmuel bar Rav Yehuda were standing by a river when Rami bar Pappa called out from the opposite bank to ask if he could cross the water to join them."
+  },
+  {
+   "id": "Yoma 78a:4-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 78a",
+     4
+    ],
+    [
+     "Yoma 78a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Ravina misses the Exilarch's lecture due to a pool of water on the road, Rafram attempts to reconcile them the following day by discussing the legalities of crossing water in sandals."
+  },
+  {
+   "id": "Yoma 78a:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 78a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ze’eira bar Ḥama tells Rav Yosef about a specific practice his father, Rabbi Yehoshua ben Levi, had regarding using a damp cloth on Yom Kippur."
+  },
+  {
+   "id": "Yoma 78a:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 78a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new narrator, Rabba bar Mari, reporting a different version of the practice which leads to a distinct scholarly confrontation between Rabbi Ya’akov and Rabbi Yirmeya bar Taḥlifa."
+  },
+  {
+   "id": "Yoma 78b:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 78b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yitzḥak bar Naḥmani testifies that he saw Rabbi Yehoshua ben Levi wearing cork sandals on Yom Kippur and questioned him about the law."
+  },
+  {
+   "id": "Yoma 79a:1-1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 79a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B contains a distinct narrative incident involving Rabban Yoḥanan ben Zakkai and Rabban Gamliel that is structurally parallel to, but separate from, the incident involving Rabbi Tzadok in Passage A."
+  },
+  {
+   "id": "Yoma 79a:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 79a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Tzadok is given a small amount of food and demonstrates through his physical actions that it does not require the usual rituals of washing, eating in a sukka, or Grace after Meals."
+  },
+  {
+   "id": "Yoma 79b:1-1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 79b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi recalls an incident where he and his fellow students ate fruit and bread outside of a sukka while studying with Rabbi Elazar ben Shammua."
+  },
+  {
+   "id": "Yoma 81b:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 81b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Giddel bar Menashe rules that vinegar is not a beverage, leading his community to mistakenly drink it on Yom Kippur the following year, which provokes his anger and a clarifying rebuke."
+  },
+  {
+   "id": "Yoma 82b:0-0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 82b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man asks Rava if he may kill another person to save his own life after being threatened by a local ruler."
+  },
+  {
+   "id": "Yoma 82b:1-1",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 82b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A pregnant woman craves food on Yom Kippur, but after being whispered to about the holiness of the day, she desists and later gives birth to Rabbi Yoḥanan."
+  },
+  {
+   "id": "Yoma 82b:2-Yoma 83a:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 82b",
+     2
+    ],
+    [
+     "Yoma 83a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A pregnant woman refuses to stop her craving on Yom Kippur despite being whispered to, and she gives birth to a notorious sinner. The Gemara identifies Shabbetai the fruit-hoarder as a real-world example of the biblical verse describing the wicked as being estranged from the womb."
+  },
+  {
+   "id": "Yoma 83b:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 83b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B contains a distinct narrative incident involving Rabbi Yoḥanan's personal experience with bulmos and his specific actions at a fig tree, which is separate from the journey of Rabbi Yehuda and Rabbi Yosei in Passage A."
+  },
+  {
+   "id": "Yoma 83b:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 83b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling, Rabbi Yehuda is overcome by hunger and forcibly takes bread from a shepherd, leading Rabbi Yosei to accuse him of theft."
+  },
+  {
+   "id": "Yoma 83b:11-14",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 83b",
+     11
+    ],
+    [
+     "Yoma 83b",
+     12
+    ],
+    [
+     "Yoma 83b",
+     13
+    ],
+    [
+     "Yoma 83b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Meir's companions lose their money to a deceitful innkeeper but recover it through a clever ruse involving a food sign, which tragically results in the innkeeper killing his wife."
+  },
+  {
+   "id": "Yoma 83b:16-16",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 83b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Following their experience with Kidor, Rabbi Yehuda and Rabbi Yosei begin analyzing names and refuse to stay with a man named Bala."
+  },
+  {
+   "id": "Yoma 84a:3-4",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 84a",
+     3
+    ],
+    [
+     "Yoma 84a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yoḥanan seeks treatment for a gum disease from a noblewoman and uses a clever oath to extract and publicize her secret remedy."
+  },
+  {
+   "id": "Yoma 84a:6-7",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 84a",
+     6
+    ],
+    [
+     "Yoma 84a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yoḥanan prepares a remedy for himself on Shabbat and justifies his action to Rav Ḥiyya bar Abba."
+  },
+  {
+   "id": "Yoma 85a:8-8",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 85a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A brief report of an incident where rescuers found dead bodies in the upper layer of a collapsed building but continued digging and found survivors underneath."
+  },
+  {
+   "id": "Yoma 85a:12-Yoma 85b:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 85a",
+     12
+    ],
+    [
+     "Yoma 85a",
+     13
+    ],
+    [
+     "Yoma 85a",
+     14
+    ],
+    [
+     "Yoma 85b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While traveling, several prominent Sages are asked to provide the source for the rule that saving a life overrides Shabbat, and they each offer different biblical derivations."
+  },
+  {
+   "id": "Yoma 86a:5-5",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 86a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Matya ben Ḥarash visits Rabbi Elazar ben Azarya in Rome to ask him about Rabbi Yishmael's four categories of atonement."
+  },
+  {
+   "id": "Yoma 86a:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 86a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye would pay partners in a butcher shop separately and then reconcile the accounts to avoid the appearance of not paying."
+  },
+  {
+   "id": "Yoma 87a:13-13",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yirmeya attempts to appease Rabbi Abba by sitting at his door, only to have the maid accidentally pour dirty water on his head."
+  },
+  {
+   "id": "Yoma 87a:14-14",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B introduces a new protagonist, Rabbi Zeira, and describes his distinct habitual practice for reconciliation, which is independent of the specific encounter between Rabbi Yirmeya and Rabbi Abba in Passage A."
+  },
+  {
+   "id": "Yoma 87a:15-15",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav goes to appease a butcher who insulted him, but the butcher remains arrogant and is subsequently killed by a bone while working."
+  },
+  {
+   "id": "Yoma 87a:16-Yoma 87b:0",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87a",
+     16
+    ],
+    [
+     "Yoma 87b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rav is reciting Torah for Rabbi Yehuda HaNasi, he repeatedly restarts the portion as different sages enter the room. Rav repeatedly restarts his Torah reading as various sages enter the room, until Rabbi Ḥanina arrives and Rav refuses to restart again."
+  },
+  {
+   "id": "Yoma 87b:2-2",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥanina sees a dream foretelling Rav's rise to leadership and purposely avoids reconciling with him so that Rav will move to Babylon to fulfill the prophecy."
+  },
+  {
+   "id": "Yoma 87b:6-6",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Bar Hamdudei relates how he stood before Shmuel and observed him reciting a very brief confession."
+  },
+  {
+   "id": "Yoma 87b:10-10",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 87b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ulla bar Rav leads the Ne'ila prayer in front of Rava using a specific combination of verses, and Rava praises his choice."
+  },
+  {
+   "id": "Yoma 88a:9-9",
+   "tractate": "Yoma",
+   "cells": [
+    [
+     "Yoma 88a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Tanna recites a teaching about seminal emissions on Yom Kippur before Rav Nachman, leading to a linguistic clarification of the term 'arranged'."
+  }
+ ]
+}

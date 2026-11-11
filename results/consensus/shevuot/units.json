@@ -1,0 +1,820 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/shevuot/run1.json",
+   "v14_r2": "results/v14/shevuot/run2.json"
+  },
+  "spans": {
+   "v14_r1": 34,
+   "v14_r2": 34
+  },
+  "units": 32,
+  "built": "2026-11-10T06:05:14"
+ },
+ "units": [
+  {
+   "id": "Shevuot 15b:10-10",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 15b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Levi would recite protective verses against evil spirits at night until he fell asleep."
+  },
+  {
+   "id": "Shevuot 18b:3-3",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 18b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Yonatan asks for the biblical source of the prohibition of a menstruating woman, Rabbi Shimon throws a clod of earth at him in reproach for asking about such an obvious law."
+  },
+  {
+   "id": "Shevuot 26a:16-17",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 26a",
+     16
+    ],
+    [
+     "Shevuot 26a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Kahana and Rav Asi each swore that Rav had taught a different version of a halakha, and when they asked Rav for the truth, he told the one who was wrong that he was exempt because his heart 'compelled' him to believe he was right."
+  },
+  {
+   "id": "Shevuot 28b:8-10",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 28b",
+     8
+    ],
+    [
+     "Shevuot 28b",
+     9
+    ],
+    [
+     "Shevuot 28b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Avimi meets his brother Eifa at the academy and tests his knowledge of the laws of oaths, correcting his mistaken rulings."
+  },
+  {
+   "id": "Shevuot 29b:1-1",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 29b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara cites an incident from the time of King Shapur involving a giant snake that consumed thirteen stables of straw to challenge a Mishnaic ruling about impossible oaths."
+  },
+  {
+   "id": "Shevuot 30a:13-Shevuot 30b:0",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 30a",
+     13
+    ],
+    [
+     "Shevuot 30b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef sends a message to Rav Nachman asking him to judge Rav Ulla favorably in a pending trial, leading Rav Nachman to consider how to honor the request without biasing the court."
+  },
+  {
+   "id": "Shevuot 30b:3-3",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 30b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Nachman navigates the protocol of honoring the wife of a Torah scholar during a trial without intimidating her opponent."
+  },
+  {
+   "id": "Shevuot 30b:6-6",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 30b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "During a trial before Rav Pappa, a court agent physically forces an am ha'aretz to stand to honor the scholar Rav bar Sherevya."
+  },
+  {
+   "id": "Shevuot 30b:10-10",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 30b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ameimar seats all witnesses in a trial to honor Rav Yeimar, prompting a legal challenge from Rav Ashi regarding the requirement for witnesses to stand."
+  },
+  {
+   "id": "Shevuot 32b:4-5",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 32b",
+     4
+    ],
+    [
+     "Shevuot 32b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man snatches a silver ingot from another, leading to a court case before Rabbi Ami where the presence of only one witness creates a unique legal deadlock."
+  },
+  {
+   "id": "Shevuot 34a:17-18",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 34a",
+     17
+    ],
+    [
+     "Shevuot 34a",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Shimon ben Shataḥ witnesses a murder in a ruin but, unable to testify legally, leaves the man to divine justice, which arrives via a snake bite."
+  },
+  {
+   "id": "Shevuot 34b:2-2",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 34b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man denies a debt by claiming he never passed a certain column, but witnesses testify they saw him urinating there, leading to a discussion on his credibility."
+  },
+  {
+   "id": "Shevuot 34b:4-4",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 34b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A variation of the previous story where a man's denial of being near a column is disproven, but Rava defends him by saying people don't remember trivial acts like passing a pillar."
+  },
+  {
+   "id": "Shevuot 36a:20-20",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 36a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Kahana recites a Mishna before Rav Yehuda, who instructs him to use a euphemism when reciting curses."
+  },
+  {
+   "id": "Shevuot 36a:21-21",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 36a",
+     21
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "An anonymous sage recites a verse containing a curse before Rav Kahana, who tells him to use a euphemism."
+  },
+  {
+   "id": "Shevuot 36a:25-25",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 36a",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yitzhak arrives in Babylonia and recites a Mishna, leading Rav Yosef to conclude that their current version is correct."
+  },
+  {
+   "id": "Shevuot 39b:6-6",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 39b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara alludes to the famous incident of Rava's cane, where a debtor hid money inside a hollow staff to technically swear a true oath while deceiving his creditor."
+  },
+  {
+   "id": "Shevuot 41b:8-11",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 41b",
+     8
+    ],
+    [
+     "Shevuot 41b",
+     9
+    ],
+    [
+     "Shevuot 41b",
+     10
+    ],
+    [
+     "Shevuot 41b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A debtor repays a loan in front of ordinary witnesses despite a stipulation to use specific witnesses, and Abaye rules the repayment valid."
+  },
+  {
+   "id": "Shevuot 41b:12-12",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 41b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A debtor denies a loan existed, but the creditor's witnesses testify that the loan was made and already repaid, leading Abaye to rule on the debtor's status."
+  },
+  {
+   "id": "Shevuot 41b:13-13",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 41b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A debtor claims he repaid a loan in front of two witnesses, but the witnesses appear and testify that no such event occurred."
+  },
+  {
+   "id": "Shevuot 41b:14-Shevuot 42a:0",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 41b",
+     14
+    ],
+    [
+     "Shevuot 42a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A creditor demands 600 dinars, and the debtor claims he repaid the debt using gallnuts at a specific market rate. A debtor claims he repaid a debt with gallnuts at a high valuation, but witnesses prove the value was lower, leading Rava to declare him a falsifier."
+  },
+  {
+   "id": "Shevuot 42a:1-1",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 42a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A creditor presents a note, the debtor claims payment, and the creditor's admission of receiving money (even if for a different debt) leads Rav Nachman to rule the note is undermined."
+  },
+  {
+   "id": "Shevuot 42a:6-9",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 42a",
+     6
+    ],
+    [
+     "Shevuot 42a",
+     7
+    ],
+    [
+     "Shevuot 42a",
+     8
+    ],
+    [
+     "Shevuot 42a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man stipulates that his creditor is believed over him regarding repayment, then pays before witnesses, but is still held liable when the creditor denies payment."
+  },
+  {
+   "id": "Shevuot 45b:11-11",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 45b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Sheshet encounters Rabba bar Shmuel and asks him to cite any baraitot he knows concerning the laws of a hired worker."
+  },
+  {
+   "id": "Shevuot 46b:0-2",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 46b",
+     0
+    ],
+    [
+     "Shevuot 46b",
+     1
+    ],
+    [
+     "Shevuot 46b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara discusses the legal conditions under which a person is believed when claiming they purchased items found in their possession."
+  },
+  {
+   "id": "Shevuot 47a:7-9",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 47a",
+     7
+    ],
+    [
+     "Shevuot 47a",
+     8
+    ],
+    [
+     "Shevuot 47a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man snatches metal from another, and when the case comes before Rav Ami with only one witness, Rabbi Abba rules that the defendant must pay because his status as a 'suspect' prevents him from taking the required exculpatory oath."
+  },
+  {
+   "id": "Shevuot 48a:7-7",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Sages in Babylonia send a query to Rabbi Elazar in Eretz Yisrael regarding the nature of an oath, and he sends back a ruling."
+  },
+  {
+   "id": "Shevuot 48a:10-10",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef bar Minyumi reports that Rav Nahman once acted in a real case by splitting the disputed amount."
+  },
+  {
+   "id": "Shevuot 48b:3-3",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Nahman visits Sura and refuses a request from Rav Hisda and Rabba bar Rav Huna to overturn a ruling by Rav and Shmuel."
+  },
+  {
+   "id": "Shevuot 48b:4-4",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A case involving a deceased debtor and a guarantor is brought before Rav Pappa, who deliberates on the application of Rav and Shmuel's ruling."
+  },
+  {
+   "id": "Shevuot 48b:5-5",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rami bar Hama considers a case where a deceased creditor's brother seeks to collect from orphans, and Rava provides a legal rebuttal."
+  },
+  {
+   "id": "Shevuot 48b:8-8",
+   "tractate": "Shevuot",
+   "cells": [
+    [
+     "Shevuot 48b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A Torah scholar challenges a judge's ruling, promising to bring a letter from Eretz Yisrael to disprove it, to which the judge agrees to yield if the letter is produced."
+  }
+ ]
+}

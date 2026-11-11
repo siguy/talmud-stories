@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 4
+  },
+  "imported": "2026-11-10T06:15:36"
+ },
+ "rows": [
+  {
+   "id": "Arakhin 15a:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A narrated exchange between God and the angel of the sea with conflict and an outcome (the sea spews out the Egyptians), but it is a biblical episode at the Red Sea, not about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 10b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A dialogue between the angels and God explaining why hallel is not said on the Days of Awe; speech only, with no event and no conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 12b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line chronological report that Nebuchadnezzar conquered Jehoiakim in his second year, cited for dating; a bare report about biblical figures with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "Arakhin 11b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Mostly a list of calendrical coincidences around the Temple's destruction, but it narrates one dramatic event: the priests were singing and were cut off mid-verse by the conquering gentiles. The First Temple setting is near the biblical edge of scope, and 'likewise the Second' extends it into the post-biblical period.",
+    "error": null
+   }
+  }
+ ]
+}

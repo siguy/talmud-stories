@@ -1,0 +1,90 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 4
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Bava Kamma 92a:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Judah's bones roll in the coffin until Moses prays and they are restored step by step: a narrated sequence with change, about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 17a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of the honor shown at Hezekiah's burial, followed by a Tannaitic dispute over it; a single act with no continuation, and a biblical king in any case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 82a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Israel grows weary after three days without Torah and the prophets institute the readings: an event and a response, set in the biblical wilderness period.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Kamma 60b:15-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "David's longing, the warriors breaking through, and his halakhic question and the answer sent to him are a biblical episode; segments 3 and 8-12 are the Gemara's analysis of it.",
+    "error": null
+   }
+  }
+ ]
+}

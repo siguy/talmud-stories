@@ -1,0 +1,5863 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/chullin/run1.json",
+   "v14_r2": "results/v14/chullin/run2.json"
+  },
+  "spans": {
+   "v14_r1": 223,
+   "v14_r2": 221
+  },
+  "units": 225,
+  "built": "2026-11-09T23:06:11"
+ },
+ "units": [
+  {
+   "id": "Chullin 5b:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 5b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Asi reports seeing Rabbi Yoḥanan eat Samaritan slaughter, which leads Rabbi Zeira to resolve his doubt regarding whether a specific decree was accepted."
+  },
+  {
+   "id": "Chullin 6a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 6a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Meir sends Rabbi Shimon ben Elazar to fetch wine from Samaritans, but an old man intercepts him with a warning that leads to a change in legal status."
+  },
+  {
+   "id": "Chullin 6a:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 6a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yitzḥak ben Yosef is sent by Rabbi Abbahu to get wine but is warned by an elder, leading to a chain of reports that results in Rabbi Ammi and Rabbi Assi declaring Samaritans as gentiles."
+  },
+  {
+   "id": "Chullin 6a:11-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 6a",
+     11
+    ],
+    [
+     "Chullin 6a",
+     12
+    ],
+    [
+     "Chullin 6a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Zeira and Rav Asi visit an inn where Rav Asi eats eggs cooked in wine; Rabbi Zeira initially worries Rav Asi sinned but investigates and finds a legal justification."
+  },
+  {
+   "id": "Chullin 6b:4-Chullin 7a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 6b",
+     4
+    ],
+    [
+     "Chullin 6b",
+     5
+    ],
+    [
+     "Chullin 6b",
+     6
+    ],
+    [
+     "Chullin 7a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After hearing testimony that Rabbi Meir ate untithed produce in Beit She'an, Rabbi Yehuda HaNasi permits the region's produce, leading to a confrontation with his family which he resolves through a biblical interpretation."
+  },
+  {
+   "id": "Chullin 7a:9-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 7a",
+     9
+    ],
+    [
+     "Chullin 7a",
+     10
+    ],
+    [
+     "Chullin 7a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While on a mission to redeem captives, Rabbi Pineḥas ben Ya’ir commands the Ginai River to part for him and his companions, which it eventually does three times."
+  },
+  {
+   "id": "Chullin 7a:13-Chullin 7b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 7a",
+     13
+    ],
+    [
+     "Chullin 7b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Pineḥas ben Ya’ir arrives at an inn where his donkey refuses to eat the barley provided by the hosts. Rabbi Pineḥas ben Ya’ir's donkey refuses to eat until its food is properly tithed by the hosts."
+  },
+  {
+   "id": "Chullin 7b:3-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 7b",
+     3
+    ],
+    [
+     "Chullin 7b",
+     4
+    ],
+    [
+     "Chullin 7b",
+     5
+    ],
+    [
+     "Chullin 7b",
+     6
+    ],
+    [
+     "Chullin 7b",
+     7
+    ],
+    [
+     "Chullin 7b",
+     8
+    ],
+    [
+     "Chullin 7b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda HaNasi invites Rabbi Pineḥas ben Ya’ir to dine, but Pineḥas ultimately refuses due to the presence of dangerous mules, ending in a supernatural separation."
+  },
+  {
+   "id": "Chullin 7b:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 7b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A woman tries to perform sorcery against Rabbi Ḥanina by taking dust from under his feet, but he tells her it will not work because only God has power."
+  },
+  {
+   "id": "Chullin 10a:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 10a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An incident involving a bird with a displaced windpipe was brought before the Sages, who ruled that any uncertainty in slaughter results in invalidity."
+  },
+  {
+   "id": "Chullin 10b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 10b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yosef disqualified thirteen animals after discovering his knife was notched upon completing the final slaughter."
+  },
+  {
+   "id": "Chullin 15a:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 15a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Tanna recites a legal ruling regarding cooking on Shabbat before Rav, who then silences him."
+  },
+  {
+   "id": "Chullin 15a:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 15a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Nahman bar Yitzhak reports that a Tanna recited a law about slaughtering on Shabbat before Rav, who then challenged the Tanna's logic."
+  },
+  {
+   "id": "Chullin 15b:0-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 15b",
+     0
+    ],
+    [
+     "Chullin 15b",
+     1
+    ],
+    [
+     "Chullin 15b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "The Gemara concludes a discussion from the previous page regarding Rav silencing a tanna who recited a specific ruling about slaughtering on Shabbat."
+  },
+  {
+   "id": "Chullin 15b:13-15",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 15b",
+     13
+    ],
+    [
+     "Chullin 15b",
+     14
+    ],
+    [
+     "Chullin 15b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "The Gemara discusses a tanna reciting a baraita before Rav regarding slaughtering on Shabbat and the subsequent legal debate between Rabbi and Rabbi Ḥiyya."
+  },
+  {
+   "id": "Chullin 16a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 16a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa describes a case where one person binds another and diverts water onto him, causing his death, to define the legal status of direct force."
+  },
+  {
+   "id": "Chullin 17a:16-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 17a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel's father repeatedly notched knives in various ways and sent them from Babylonia to the Land of Israel to receive a definitive ruling on which types of notches disqualify a knife for slaughter."
+  },
+  {
+   "id": "Chullin 17b:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 17b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "While Ravina and Rav Aha were sitting before Rav Ashi, a knife was brought for inspection, and Rav Ashi had Rav Aha perform the physical examination to demonstrate the correct procedure."
+  },
+  {
+   "id": "Chullin 18a:4-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 18a",
+     4
+    ],
+    [
+     "Chullin 18a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A slaughterer is penalized by Rava bar Ḥinnana for not showing his knife, but Rav Ashi later examines the knife and reverses the ruling."
+  },
+  {
+   "id": "Chullin 18b:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 18b",
+     3
+    ],
+    [
+     "Chullin 18b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Upon moving to Eretz Yisrael, Rabbi Zeira eats meat slaughtered according to a local leniency, which provokes the anger of his former teacher Rav Yosef when he hears of it."
+  },
+  {
+   "id": "Chullin 18b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 18b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Resh Lakish permits a certain type of slaughter and Rabbi Yoḥanan comments on his leniency."
+  },
+  {
+   "id": "Chullin 19a:1-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 19a",
+     1
+    ],
+    [
+     "Chullin 19a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Nahman validates a specific type of slaughter and, when challenged on his source, responds that he does not know specific names but knows the tradition."
+  },
+  {
+   "id": "Chullin 19a:18-Chullin 19b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 19a",
+     18
+    ],
+    [
+     "Chullin 19a",
+     19
+    ],
+    [
+     "Chullin 19b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav Huna rules stringently on a case where Rav Yehuda ruled leniently, Rav Yehuda becomes angry, leading Rav Hisda to advise Rav Huna on whether to retract."
+  },
+  {
+   "id": "Chullin 19b:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 19b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Nahman arrives in Sura and is asked a legal question regarding the validity of a specific slaughtering technique."
+  },
+  {
+   "id": "Chullin 19b:4-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 19b",
+     4
+    ],
+    [
+     "Chullin 19b",
+     5
+    ],
+    [
+     "Chullin 19b",
+     6
+    ],
+    [
+     "Chullin 19b",
+     7
+    ],
+    [
+     "Chullin 19b",
+     8
+    ],
+    [
+     "Chullin 19b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Abba observes a legal exchange between Rav Kahana and Rav Yehuda and subsequently travels to Eretz Yisrael to report these rulings to Rabbi Elazar and Rabbi Yohanan."
+  },
+  {
+   "id": "Chullin 21a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 21a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Zeira arrived in Eretz Yisrael, he challenged Rabbi Ami's teaching on pinching, causing Rabbi Ami to be momentarily stunned before refining his position."
+  },
+  {
+   "id": "Chullin 24b:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 24b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara records that Rabbi Hanina, even at the age of eighty, was physically capable of standing on one leg to remove and put on his shoes."
+  },
+  {
+   "id": "Chullin 26b:1-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 26b",
+     1
+    ],
+    [
+     "Chullin 26b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Geviha from Bei Katil travels to Rav Ashi to challenge a legal ruling regarding the purification of temed."
+  },
+  {
+   "id": "Chullin 27b:10-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 27b",
+     10
+    ],
+    [
+     "Chullin 27b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A Roman official challenges Rabban Yoḥanan ben Zakkai on the origin of birds, leading the rabbi to give a superficial answer to the official and a deeper explanation to his confused students."
+  },
+  {
+   "id": "Chullin 28a:14-Chullin 28b:1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 28a",
+     14
+    ],
+    [
+     "Chullin 28b",
+     0
+    ],
+    [
+     "Chullin 28b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A bloody duck is brought to Rava's house, prompting a dilemma about whether its simanim were damaged before slaughter."
+  },
+  {
+   "id": "Chullin 30b:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 30b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yitzḥak bar Shmuel bar Marta enters a butcher shop and takes meat from a bull slaughtered with multiple cuts to demonstrate its validity, prompting a comment from Rabbi Zeira."
+  },
+  {
+   "id": "Chullin 30b:15-Chullin 31a:2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 30b",
+     15
+    ],
+    [
+     "Chullin 31a",
+     0
+    ],
+    [
+     "Chullin 31a",
+     1
+    ],
+    [
+     "Chullin 31a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rava examines an arrow for Rabbi Yona bar Taḥlifa and then successfully slaughters a bird in flight with it."
+  },
+  {
+   "id": "Chullin 31b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 31b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava, suspecting Rav Nahman was merely deflecting his legal objection, went out to investigate and discovered a baraita that confirmed Rav Nahman's position."
+  },
+  {
+   "id": "Chullin 32a:5-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 32a",
+     5
+    ],
+    [
+     "Chullin 32a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rav Kahana and Rav Asi question Rav on the specifics of an interruption in slaughter, Rav explains he was never bold enough with his uncle, Rabbi Hiyya, to ask for such clarification."
+  },
+  {
+   "id": "Chullin 33b:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 33b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "On the day Rabbi Elazar ben Azarya was appointed Nasi in Yavne, Rabbi Akiva expounded on the laws of ritual impurity in earthenware vessels."
+  },
+  {
+   "id": "Chullin 37b:9-Chullin 38a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 37b",
+     9
+    ],
+    [
+     "Chullin 38a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After Rav's death, Shmuel encounters Rav's students and asks them to clarify Rav's ruling regarding an animal in danger of imminent death."
+  },
+  {
+   "id": "Chullin 39b:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 39b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A healthy man orders a divorce for his wife and then immediately climbs a roof and falls to his death, leading to a debate on his intent."
+  },
+  {
+   "id": "Chullin 39b:17-17",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 39b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Arabs in Tzikuneya gave rams to Jewish slaughterers while declaring the blood and fat were for idols, prompting a legal inquiry to Rav Yosef."
+  },
+  {
+   "id": "Chullin 43b:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 43b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An animal with a suspected predator wound is brought to Rabba, who begins inspecting it from the outside until Abaye challenges him with his own legal ruling."
+  },
+  {
+   "id": "Chullin 43b:11-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 43b",
+     11
+    ],
+    [
+     "Chullin 43b",
+     12
+    ],
+    [
+     "Chullin 43b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After Rava rules a bull belonging to Rav Ukva's sons is a tereifa due to a complex slaughtering issue, Rabbi Abba hears of the case, declares the bull kosher, and orders Rava to compensate the owners."
+  },
+  {
+   "id": "Chullin 44a:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 44a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A bull belonging to Rav Ukva's sons is slaughtered in a questionable manner, leading to a strict ruling by Rava that is eventually overturned by Rabbi Abba, who orders financial compensation."
+  },
+  {
+   "id": "Chullin 44b:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 44b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When an animal with a cut windpipe was brought to Rav, his students challenged his inspection method, leading Rabba bar bar Hana to permit and eat the meat."
+  },
+  {
+   "id": "Chullin 44b:7-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 44b",
+     7
+    ],
+    [
+     "Chullin 44b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba's wife (daughter of Rav Hisda) questions him for buying meat from an animal he himself permitted, and he explains why it doesn't look like a conflict of interest."
+  },
+  {
+   "id": "Chullin 44b:11-Chullin 45a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 44b",
+     11
+    ],
+    [
+     "Chullin 45a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar consistently refused gifts and invitations from the Nasi's household, citing the verse that one who hates gifts shall live."
+  },
+  {
+   "id": "Chullin 45b:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 45b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Yirmeya inspects a bird and finds bean-like protrusions on its skull."
+  },
+  {
+   "id": "Chullin 45b:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 45b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Ḥiyya bar Yosef reports Rav's ruling to Shmuel, who dismisses Rav's knowledge of the subject."
+  },
+  {
+   "id": "Chullin 45b:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 45b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Natan bar Avin checks both the membrane and nerve tissue of a spinal cord while sitting before Rav, who tells him the second check is unnecessary."
+  },
+  {
+   "id": "Chullin 45b:17-17",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 45b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While in a bathhouse, Levi sees a man strike his head and remarks that the man's brain tissue has been fatally compromised."
+  },
+  {
+   "id": "Chullin 45b:19-20",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 45b",
+     19
+    ],
+    [
+     "Chullin 45b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Dimi bar Yitzḥak asks Rabbi Yehuda for a physical demonstration of a spinal boundary; after Rav Dimi brings a kid for the purpose, Rabbi Yehuda decides to teach him the verbal tradition instead."
+  },
+  {
+   "id": "Chullin 46a:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 46a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ulla recounts how Rabbi Shimon ben Pazi was inspecting an injured bird but was interrupted by a messenger from the Nasi and left before Ulla could see the conclusion."
+  },
+  {
+   "id": "Chullin 46a:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 46a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When an army arrived in Pumbedita, Rabba and Rav Yosef fled and were met by Rabbi Zeira, who shared a legal tradition with them."
+  },
+  {
+   "id": "Chullin 47a:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 47a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man brings a lung with an extra lobe to Mareimar, who deems it kosher; Rav Aha intercepts the man at the door and sends him back to clarify the ruling."
+  },
+  {
+   "id": "Chullin 47a:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 47a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rav Ashi intends to rule a lung with an extra lobe as non-kosher, Rav Huna Mar bar Avya informs him that such a feature is common in field-grazing animals, leading to a kosher ruling."
+  },
+  {
+   "id": "Chullin 47b:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 47b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Natan recounts traveling overseas and advising a woman whose sons died from circumcision to wait until the child's blood was properly absorbed."
+  },
+  {
+   "id": "Chullin 47b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 47b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Natan relates a second incident in Cappadocia where he diagnosed a 'green' child to prevent a third circumcision death."
+  },
+  {
+   "id": "Chullin 47b:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 47b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Rabbi Hananya was sick, Rabbi Natan and other scholars visited him and presented a liquefied lung, which Hananya ruled was kosher."
+  },
+  {
+   "id": "Chullin 48a:0-0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The residents of Asia Minor traveled to the Sanhedrin in Yavne three times regarding worm-infested livers until they finally received a ruling of permissibility."
+  },
+  {
+   "id": "Chullin 48a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Rav Neḥemya son of Rav Yosef physically examined a lung by inflating it in tepid water to check for leaks."
+  },
+  {
+   "id": "Chullin 48a:14-Chullin 48b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48a",
+     14
+    ],
+    [
+     "Chullin 48a",
+     15
+    ],
+    [
+     "Chullin 48b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While walking through the market, Rabbi Yitzḥak bar Yosef points out cystic lungs to Rabbi Yirmeya to discern his ruling based on whether he would eat the meat."
+  },
+  {
+   "id": "Chullin 48b:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ami and Rabbi Asi pass through the Tiberias market and observe lungs with hard growths without objecting to their sale."
+  },
+  {
+   "id": "Chullin 48b:4-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48b",
+     4
+    ],
+    [
+     "Chullin 48b",
+     5
+    ],
+    [
+     "Chullin 48b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A lung with a needle is shuttled between Rabbi Ami and Rabbi Yitzchak Nappaha, both of whom face objections from Rabbi Yirmeya until Rabbi Ami eventually rules it non-kosher."
+  },
+  {
+   "id": "Chullin 48b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A needle is found in a lung's bronchus and brought to the Sages, who refuse to issue a ruling because it conflicts with their established traditions."
+  },
+  {
+   "id": "Chullin 48b:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 48b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar son of Rav Yosef intends to rule a liver with a needle as treifa until Rav Ashi challenges him with a logical comparison to flesh."
+  },
+  {
+   "id": "Chullin 49a:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 49a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Huna Mar and Rav Adda bar Minyumi disagreed over a needle found in a liver, they brought the case to Ravina, who ruled it kosher."
+  },
+  {
+   "id": "Chullin 49a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 49a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi recalls Rav Kahana explaining how a date pit found in a gallbladder arrived there via the connecting ducts."
+  },
+  {
+   "id": "Chullin 49b:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 49b",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A case of an animal with a perforation sealed by non-kosher fat is brought to Rava, who rules it kosher based on Rav Sheshet's opinion and financial considerations."
+  },
+  {
+   "id": "Chullin 49b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 49b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Manyumin the jug maker asks Rava about honey left uncovered, and Rava permits it based on a Mishnaic ruling."
+  },
+  {
+   "id": "Chullin 50a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 50a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B contains a distinct narrative incident involving Rav Avya and Rabbi Ami that mirrors the structure of Passage A but features different actors and a completed action."
+  },
+  {
+   "id": "Chullin 50a:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 50a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Hanina tells his attendant to prepare fat for him to eat, but upon seeing the attendant's hesitation, he realizes the man is a Babylonian and tells him to throw it away."
+  },
+  {
+   "id": "Chullin 50a:9-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 50a",
+     9
+    ],
+    [
+     "Chullin 50a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An anonymous Babylonian man travels to Eretz Yisrael specifically to verify legal traditions from Rabbi Abba."
+  },
+  {
+   "id": "Chullin 50a:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 50a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rava is about to declare an animal non-kosher because test perforations don't match, his son Rav Mesharshiyya rubs the tissue until they match, leading to a kosher ruling."
+  },
+  {
+   "id": "Chullin 51a:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 51a",
+     3
+    ],
+    [
+     "Chullin 51a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Avira describes his eyewitness account of a specific case involving a needle in a reticulum that was brought before Rabbi Yehuda HaNasi while he was standing in the study hall."
+  },
+  {
+   "id": "Chullin 51a:6-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 51a",
+     6
+    ],
+    [
+     "Chullin 51a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Ravina's kid jumped through a skylight to reach barley and fell, leading Rav Ashi to rule that the animal is not a tereifa because it intentionally jumped."
+  },
+  {
+   "id": "Chullin 51a:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 51a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A ewe in Rav Chaviva's house was observed dragging its legs, leading Rav Yeimar and Ravina to debate whether the cause was rheumatism or a spinal injury."
+  },
+  {
+   "id": "Chullin 51b:6-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 51b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A bull fell and bellowed in a slaughterhouse, but Rav Yitzḥak bar Shmuel bar Marta immediately took its meat, justifying his action to the questioning Sages by citing Rav's tradition."
+  },
+  {
+   "id": "Chullin 52b:15-15",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 52b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A cat pursuing a hen into a room at Rav Kahana's house becomes trapped by a closing door and strikes it, leaving behind drops of venom."
+  },
+  {
+   "id": "Chullin 52b:18-18",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 52b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A repetition of the story of the cat at Rav Kahana's house, cited within an alternative version of the Talmudic discussion."
+  },
+  {
+   "id": "Chullin 52b:19-19",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 52b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Kahana asks Rav a legal question."
+  },
+  {
+   "id": "Chullin 53a:5-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 53a",
+     5
+    ],
+    [
+     "Chullin 53a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A fox clawed a ewe in the bathhouse of Beit Hini, and the case was brought before the Sages to determine if it was a tereifa."
+  },
+  {
+   "id": "Chullin 53b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 53b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A basket of birds with uncertain status was brought to Rav, who sent them to Shmuel, who then strangled them and threw them into the river to ensure they wouldn't be eaten."
+  },
+  {
+   "id": "Chullin 53b:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 53b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi's duck entered a reed thicket and emerged with blood on its throat, leading Rav Ashi to evaluate its status."
+  },
+  {
+   "id": "Chullin 53b:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 53b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi recalls a case brought before Rav Kahana involving a lung that looked like a shriveled date."
+  },
+  {
+   "id": "Chullin 54a:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 54a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The hunters of the house of Yosef would kill animals by striking the sciatic nerve and sought a ruling from Rabbi Yehuda ben Beteira on whether this rendered the animal a tereifa."
+  },
+  {
+   "id": "Chullin 54a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 54a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The hunters of Rav Pappa bar Abba killed animals by striking the kidney and were told by Rabbi Abba that they cannot add to the list of tereifot."
+  },
+  {
+   "id": "Chullin 54b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 54b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ḥana the money changer recounts how Rabbi Yoḥanan came to him to borrow a specific coin for a measurement and prevented Ḥana from standing up in his honor."
+  },
+  {
+   "id": "Chullin 55b:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 55b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Ḥana finds rams with shriveled lungs in the desert and brings the case to the study hall, where the Sages provide him with a physical test to determine if the condition was caused by heaven or man."
+  },
+  {
+   "id": "Chullin 56a:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ze’eiri travels to Neharde’a and sends a message back to the Sages retracting his previous legal ruling as an error."
+  },
+  {
+   "id": "Chullin 56a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B is a distinct incident involving a dialogue between Rav Nachman and Rav Anan regarding the rulings of Shmuel and Rav, whereas Passage A involves Rav Hana and Rav Mattana regarding a specific hen."
+  },
+  {
+   "id": "Chullin 56a:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Hana sends an injured hen to Rav Mattana, who inspects it and deems it kosher despite the broken skull bone, leading to a legal challenge."
+  },
+  {
+   "id": "Chullin 56b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehoshua ben Levi sends a hen that fell into fire to Rabbi Elazar HaKappar, who rules it kosher despite its green innards."
+  },
+  {
+   "id": "Chullin 56b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yitzḥak bar Yosef's hen falls into fire and is sent to Rabbi Abbahu, who rules it a tereifa."
+  },
+  {
+   "id": "Chullin 56b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Simai and Rabbi Tzadok travel to Lod and stop in Ono, where they issue a legal ruling."
+  },
+  {
+   "id": "Chullin 56b:14-Chullin 57a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 56b",
+     14
+    ],
+    [
+     "Chullin 57a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A Roman sees a man whose stomach ruptured after a fall and slaughters the man's son in front of him to trigger a physical reaction. A Roman man uses a deceptive trick to make a man's protruding intestines retract so he can sew him up and save his life."
+  },
+  {
+   "id": "Chullin 57a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 57a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A basket of birds with broken legs is brought to Rava, who inspects and permits them."
+  },
+  {
+   "id": "Chullin 57a:7-Chullin 57b:3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 57a",
+     7
+    ],
+    [
+     "Chullin 57a",
+     8
+    ],
+    [
+     "Chullin 57a",
+     9
+    ],
+    [
+     "Chullin 57b",
+     0
+    ],
+    [
+     "Chullin 57b",
+     1
+    ],
+    [
+     "Chullin 57b",
+     2
+    ],
+    [
+     "Chullin 57b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abba finds Rav Yirmeya bar Abba inspecting birds and they engage in a legal debate regarding Rav's rulings."
+  },
+  {
+   "id": "Chullin 57b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 57b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B describes a specific event involving a ewe in a neighborhood and a medical intervention, which prompts a response from Rabbi Yehoshua ben Levi, distinct from the hen incidents in Passage A."
+  },
+  {
+   "id": "Chullin 57b:6-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 57b",
+     6
+    ],
+    [
+     "Chullin 57b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Shimon ben Halafta treated a hen with a dislocated femur by splinting it with a reed, and it survived for a full year."
+  },
+  {
+   "id": "Chullin 57b:9-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 57b",
+     9
+    ],
+    [
+     "Chullin 57b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "To test a verse in Proverbs, Rabbi Shimon ben Halafta tricked an ant into misreporting shade to its colony, resulting in the colony killing the ant for its false report."
+  },
+  {
+   "id": "Chullin 58b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 58b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An animal with two ceca is brought to Ravina, who rules it a tereifa based on Rav Huna's principle."
+  },
+  {
+   "id": "Chullin 58b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 58b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi intends to rule an animal with a specific tube a tereifa until Rav Huna Mar bar Hiyya informs him it is common in wild animals."
+  },
+  {
+   "id": "Chullin 58b:6-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 58b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar bar Rav Ashi tries to permit an animal with a tube based on a previous precedent, but is corrected by Rav Oshaya."
+  },
+  {
+   "id": "Chullin 58b:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 58b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Natan bar Sheila, the head butcher of Tzippori, testifies before Rabbi Yehuda HaNasi regarding the status of an animal with two intestines."
+  },
+  {
+   "id": "Chullin 59a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 59a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abbahu recounts how he once ate a shekel of asafoetida and would have lost his skin to fever had he not immediately immersed in water."
+  },
+  {
+   "id": "Chullin 59a:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 59a",
+     3
+    ],
+    [
+     "Chullin 59a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A deer is brought to the Exilarch's house and permitted by Rav, but Shmuel performs a test in an oven that reveals the deer had been bitten by a snake, saving Rav from eating poisonous meat."
+  },
+  {
+   "id": "Chullin 59b:5-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 59b",
+     5
+    ],
+    [
+     "Chullin 59b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A dispute arises over the fat of a karkoz goat at the Exilarch's house, leading to a ruling sent from Eretz Yisrael favoring Rav Shmuel's permissive view while maintaining respect for Rav Ahai."
+  },
+  {
+   "id": "Chullin 59b:8-Chullin 60a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 59b",
+     8
+    ],
+    [
+     "Chullin 59b",
+     9
+    ],
+    [
+     "Chullin 59b",
+     10
+    ],
+    [
+     "Chullin 60a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Roman Emperor mocks the comparison of God to a lion, so Rabbi Yehoshua summons a supernatural lion whose roars cause physical devastation in Rome and terrify the Emperor. Rabbi Yehoshua ben Hananya proves to the Roman emperor that he cannot see God by showing him that he cannot even look directly at the sun."
+  },
+  {
+   "id": "Chullin 60a:1-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 60a",
+     1
+    ],
+    [
+     "Chullin 60a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Roman emperor tries to prepare a meal for God, but after six months of work, a rainstorm washes it away, leading him to concede."
+  },
+  {
+   "id": "Chullin 60a:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 60a",
+     3
+    ],
+    [
+     "Chullin 60a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After the emperor's daughter mocks God as a mere carpenter, Rabbi Yehoshua encounters her performing lowly labor in the market, leading her to retract her mockery."
+  },
+  {
+   "id": "Chullin 60b:1-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 60b",
+     1
+    ],
+    [
+     "Chullin 60b",
+     2
+    ],
+    [
+     "Chullin 60b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The moon complains about sharing greatness with the sun, leading God to diminish her size and subsequently offer various compensations and a sacrificial atonement to appease her."
+  },
+  {
+   "id": "Chullin 60b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 60b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Naḥman bar Pappa's seeds failed to grow until he prayed for mercy, resulting in rain and successful sprouting."
+  },
+  {
+   "id": "Chullin 60b:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 60b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Ḥisda instructs Rav Taḥlifa to record and explain specific terms in his book of aggada."
+  },
+  {
+   "id": "Chullin 62b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 62b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A duck in Mar Shmuel's house had a gizzard that wouldn't peel until they placed it in the sun to soften it."
+  },
+  {
+   "id": "Chullin 63a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 63a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Adda bar Shimi challenges a tradition about the raḥam bird by citing an incident where one hissed in a field and was immediately killed by a falling stone."
+  },
+  {
+   "id": "Chullin 67b:11-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 67b",
+     11
+    ],
+    [
+     "Chullin 67b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ravina asks his mother to hide worms in his fish so he can eat it, leading to a legal challenge from Rav Mesharshiyya."
+  },
+  {
+   "id": "Chullin 68b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 68b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Avimi arrives from Bei Ḥozai carrying a baraita to challenge the current legal discourse."
+  },
+  {
+   "id": "Chullin 68b:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 68b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ulla rebukes Rav Yehuda's challenge by expressing extreme reverence for the deceased Rav and Shmuel while maintaining his own legal position."
+  },
+  {
+   "id": "Chullin 74a:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 74a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While Rav Yosef is reciting traditions before Rav Huna, a colleague challenges his accuracy, leading Rav Yosef to react in anger before explaining the legal distinction that resolves the conflict."
+  },
+  {
+   "id": "Chullin 75b:5-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 75b",
+     5
+    ],
+    [
+     "Chullin 75b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Zeira arrives in Eretz Yisrael, Rav Asi confirms his teaching but describes how Resh Lakish once sat in silence waiting for Rabbi Yohanan to retract, leaving his own opinion unknown."
+  },
+  {
+   "id": "Chullin 75b:11-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 75b",
+     11
+    ],
+    [
+     "Chullin 75b",
+     12
+    ],
+    [
+     "Chullin 75b",
+     13
+    ],
+    [
+     "Chullin 75b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Adda bar Havu seeks counsel from Rav Ashi after a bear attacks his unique animal, and Rav Ashi instructs him to slaughter it immediately to ensure it remains kosher."
+  },
+  {
+   "id": "Chullin 76a:4-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76a",
+     4
+    ],
+    [
+     "Chullin 76a",
+     5
+    ],
+    [
+     "Chullin 76a",
+     6
+    ],
+    [
+     "Chullin 76a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Yehuda is silenced by Ulla in a legal debate, but after Ulla leaves, Rav Yehuda reflects on why he didn't offer a specific resolution and concludes his silence was justified."
+  },
+  {
+   "id": "Chullin 76a:12-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "An anonymous sage offers a stringent ruling while sitting before Rabbi Abba, who then instructs his students to ignore the ruling."
+  },
+  {
+   "id": "Chullin 76a:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Ya'akov recalls the measurement used in Rav Yehuda's study hall regarding the convergence of sinews."
+  },
+  {
+   "id": "Chullin 76b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Mar bar Rav Ashi recalls standing before his father when a bird was brought for inspection and Rav Ashi examined its sinews."
+  },
+  {
+   "id": "Chullin 76b:19-19",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76b",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ulla cites an incident where Rabbi Yitzḥak brought a fledgling with a broken leg to Rabbi Yoḥanan, who ruled it kosher because the skin and flesh combined to cover the bone."
+  },
+  {
+   "id": "Chullin 76b:20-Chullin 77a:3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 76b",
+     20
+    ],
+    [
+     "Chullin 77a",
+     0
+    ],
+    [
+     "Chullin 77a",
+     1
+    ],
+    [
+     "Chullin 77a",
+     2
+    ],
+    [
+     "Chullin 77a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A case of soft sinews covering a broken bone was brought before Rabba, who ruled the animal permitted."
+  },
+  {
+   "id": "Chullin 77a:4-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 77a",
+     4
+    ],
+    [
+     "Chullin 77a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Abaye delays ruling on a broken animal bone for three festivals, Rav Adda bar Mattana directs the owner to Rava, who provides a swift decision."
+  },
+  {
+   "id": "Chullin 79a:12-Chullin 79b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 79a",
+     12
+    ],
+    [
+     "Chullin 79b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Abba instructs his servant to carefully match the physical characteristics of mules before hitching them to his wagon to ensure they are of the same maternal species."
+  },
+  {
+   "id": "Chullin 80a:19-19",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 80a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Naḥman informs Rav Ashi that Ameimar actually permitted the consumption of the fat of forest goats, treating them as undomesticated animals."
+  },
+  {
+   "id": "Chullin 84a:9-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 84a",
+     9
+    ],
+    [
+     "Chullin 84a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ya’akov the heretic challenges Rava regarding the covering of blood for domesticated animals, and Rava refutes him using a verse comparing blood to water."
+  },
+  {
+   "id": "Chullin 84b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 84b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Eina teaches a law regarding covering blood on Shabbat at the Exilarch's gate, prompting Rabba to mock him and order his interpreter silenced."
+  },
+  {
+   "id": "Chullin 85b:11-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 85b",
+     11
+    ],
+    [
+     "Chullin 85b",
+     12
+    ],
+    [
+     "Chullin 85b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Ḥiyya seeks advice from Rabbi Yehuda HaNasi on how to deal with a moth infestation in his flax, and is told to slaughter a bird in a specific way to lure the pests away."
+  },
+  {
+   "id": "Chullin 86b:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 86b",
+     3
+    ],
+    [
+     "Chullin 86b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Ami finds Rabbi Abba and Rabbi Zeira outside the study hall in Caesarea, leading Zeira to enter and engage with students regarding a legal dilemma."
+  },
+  {
+   "id": "Chullin 86b:12-Chullin 87a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 86b",
+     12
+    ],
+    [
+     "Chullin 87a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Beruna and Rav Hananel ask for a cup of wine to recite Grace, but when they change their minds and ask to drink more, Rav Yeiva the Elder rules that their first request already concluded the meal."
+  },
+  {
+   "id": "Chullin 87a:5-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 87a",
+     5
+    ],
+    [
+     "Chullin 87a",
+     6
+    ],
+    [
+     "Chullin 87a",
+     7
+    ],
+    [
+     "Chullin 87a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A heretic challenges Rabbi Yehuda HaNasi and fails to find a rebuttal within three days, leading to the heretic's suicide and a celebratory meal for the Rabbi."
+  },
+  {
+   "id": "Chullin 91a:21-Chullin 91b:3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 91a",
+     21
+    ],
+    [
+     "Chullin 91a",
+     22
+    ],
+    [
+     "Chullin 91b",
+     0
+    ],
+    [
+     "Chullin 91b",
+     1
+    ],
+    [
+     "Chullin 91b",
+     2
+    ],
+    [
+     "Chullin 91b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Jacob remains alone to retrieve small pitchers and is subsequently attacked by an angel who wrestles with him until dawn."
+  },
+  {
+   "id": "Chullin 91b:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 91b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Akiva recounts traveling with Rabban Gamliel and Rabbi Yehoshua to a meat market to buy animals for a wedding, where he posed a question to them."
+  },
+  {
+   "id": "Chullin 92b:13-Chullin 93a:2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 92b",
+     13
+    ],
+    [
+     "Chullin 93a",
+     0
+    ],
+    [
+     "Chullin 93a",
+     1
+    ],
+    [
+     "Chullin 93a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes the differing physical practices of Rabba, Rabbi Yoḥanan, and Rabbi Asi regarding how they removed forbidden fat from kidneys."
+  },
+  {
+   "id": "Chullin 93a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 93a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Huna bar Ḥiyya finds his son Levi instructing a worker to peel a spleen more stringently than necessary and rebukes him for it."
+  },
+  {
+   "id": "Chullin 94a:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel becomes angry with his attendant after the attendant gives a deceptive gift to a ferryman while they are crossing a river."
+  },
+  {
+   "id": "Chullin 94a:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ulla visits Rav Yehuda, who opens wine barrels for him that had already been sold to a storekeeper."
+  },
+  {
+   "id": "Chullin 94a:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A man mistakenly believes a gift of wine is oil due to a deceptive layer of oil on top, invites guests he cannot afford to host, and kills himself in shame upon discovering the truth."
+  },
+  {
+   "id": "Chullin 94a:16-17",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94a",
+     16
+    ],
+    [
+     "Chullin 94a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "During a famine, three guests give their meager portions to the host's son, leading to a series of misunderstandings that result in the deaths of the host, his wife, and his son."
+  },
+  {
+   "id": "Chullin 94b:12-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94b",
+     12
+    ],
+    [
+     "Chullin 94b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar Zutra encounters Rava and Rav Safra on the road and mistakenly thinks they came to honor him, leading to a conflict over whether one should correct such a misconception."
+  },
+  {
+   "id": "Chullin 94b:14-Chullin 95a:3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 94b",
+     14
+    ],
+    [
+     "Chullin 95a",
+     0
+    ],
+    [
+     "Chullin 95a",
+     1
+    ],
+    [
+     "Chullin 95a",
+     2
+    ],
+    [
+     "Chullin 95a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A butcher taunts his fellow about not sharing meat, which reveals an incident of selling non-kosher meat to a gentile. A butcher taunts his friend for missing a meal, only to discover the friend ate the meat after the butcher improperly sold it to a gentile; Rabbi Yehuda HaNasi then rules on the status of the city's meat markets based on this incident."
+  },
+  {
+   "id": "Chullin 95a:11-Chullin 95b:1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95a",
+     11
+    ],
+    [
+     "Chullin 95b",
+     0
+    ],
+    [
+     "Chullin 95b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav is sitting by the river and observes a man washing an animal head, which then falls into the water. A man loses an animal head in a river and retrieves two, leading Rav to forbid both due to the uncertainty of their origin."
+  },
+  {
+   "id": "Chullin 95b:4-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     4
+    ],
+    [
+     "Chullin 95b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav visits his son-in-law and, after observing the meat through a door crack and seeing certain omens, refuses to eat the meal."
+  },
+  {
+   "id": "Chullin 95b:9-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     9
+    ],
+    [
+     "Chullin 95b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yohanan, impressed by Shmuel's wisdom, plans to visit him but cancels the trip after a child recites a verse he interprets as an omen of Shmuel's death."
+  },
+  {
+   "id": "Chullin 95b:15-15",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "On the eve of Yom Kippur, ravens drop meat, and Rav Kahana permits Rav Nahman to eat it."
+  },
+  {
+   "id": "Chullin 95b:16-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hiyya bar Avin loses meat in a wine cellar and is permitted to eat it by Rav Huna after identifying it through visual recognition."
+  },
+  {
+   "id": "Chullin 95b:17-17",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Hanina Hoza'a loses a side of meat and is permitted to eat it by Rav Nahman based on visual recognition."
+  },
+  {
+   "id": "Chullin 95b:18-18",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 95b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Natan bar Abaye loses ritual blue wool and is permitted to use it by Rav Hisda after identifying it."
+  },
+  {
+   "id": "Chullin 96a:6-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 96a",
+     6
+    ],
+    [
+     "Chullin 96a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While Bar Peyoli was removing a sciatic nerve in front of Shmuel, Shmuel's sharp rebuke caused him to drop his knife in fear, leading Shmuel to reassure him that his practice followed a valid (though different) legal opinion."
+  },
+  {
+   "id": "Chullin 96b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 96b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Huna presents a legal ruling regarding a kid roasted with its forbidden fat to challenge Shmuel's position on roasting."
+  },
+  {
+   "id": "Chullin 97a:1-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 97a",
+     1
+    ],
+    [
+     "Chullin 97a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "An incident is recounted where a goat was roasted with forbidden fat in the synagogue of Maon, and Rabbi Yoḥanan was consulted to determine its permissibility."
+  },
+  {
+   "id": "Chullin 97b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 97b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "When thighs were salted with the sciatic nerve in the Exilarch's house, Ravina and Rav Aha disagreed on their permissibility until Mar bar Rav Ashi ruled they were permitted."
+  },
+  {
+   "id": "Chullin 98a:6-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 98a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When forbidden fat fell into a pot of meat, Rav Asi proposed measuring the pot's absorption toward the nullification ratio, but the Rabbis corrected him."
+  },
+  {
+   "id": "Chullin 98a:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 98a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Mar bar Rav Ashi attempted to permit a mixture where fat fell into meat using a lower ratio, but his father, Rav Ashi, rebuked him and insisted on the standard measure."
+  },
+  {
+   "id": "Chullin 98a:12-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 98a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man brought a mixture to Rabban Gamliel, who ruled leniently by citing an even more lenient precedent from his father."
+  },
+  {
+   "id": "Chullin 98a:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 98a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A man brought a mixture to Rabbi Shimon, who ruled based on his father's precedent using specific ratios."
+  },
+  {
+   "id": "Chullin 98a:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 98a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A man brings a case to Rabbi Hiyya, who asks if there is a 1:30 ratio and prohibits it."
+  },
+  {
+   "id": "Chullin 99b:8-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 99b",
+     8
+    ],
+    [
+     "Chullin 99b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man seeking a ruling on a sciatic nerve is sent back and forth between Rabbi Hanina and Rabbi Yehuda bar Zevina, who is sitting at the gate, leading to a sharp clarification from Rabbi Hanina."
+  },
+  {
+   "id": "Chullin 100a:6-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 100a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav publicly challenges Rabba bar bar Hana's ruling by appointing a disseminator to announce a contrary position to the masses."
+  },
+  {
+   "id": "Chullin 101b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 101b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava explains a legal ruling by citing a historical incident where, due to religious persecution, a message was sent from the Land of Israel to inform the community that Yom Kippur would coincide with Shabbat."
+  },
+  {
+   "id": "Chullin 103b:10-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 103b",
+     10
+    ],
+    [
+     "Chullin 103b",
+     11
+    ],
+    [
+     "Chullin 103b",
+     12
+    ],
+    [
+     "Chullin 103b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar poses a legal question to Rabbi Asi specifically to remind him of a tradition Asi had forgotten, eventually prompting him by recalling how Asi used to recite it before Rabbi Yoḥanan."
+  },
+  {
+   "id": "Chullin 104b:11-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 104b",
+     11
+    ],
+    [
+     "Chullin 104b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Yitzḥak son of Rav Mesharshiyya visits Rav Ashi and eats meat immediately after cheese without washing his hands, defending his behavior to the household by distinguishing between day and night."
+  },
+  {
+   "id": "Chullin 105a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Abaye patrols his property and catches his sharecropper attempting to steal wood by claiming it was for Abaye's own house."
+  },
+  {
+   "id": "Chullin 105a:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Asi, while patrolling his property, discovers a flood and uses his own cloak to plug the breach, realizing the value of his vigilance."
+  },
+  {
+   "id": "Chullin 105b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "An angel of poverty tries to catch a man being careless with crumbs on grass, but the man outsmarts him by uprooting the grass and throwing it into the river."
+  },
+  {
+   "id": "Chullin 105b:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Hisda and Rabba bar Rav Huna engage in a magical duel with a matron who stops their boat after they refuse her a ride."
+  },
+  {
+   "id": "Chullin 105b:15-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105b",
+     15
+    ],
+    [
+     "Chullin 105b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar bar Rav Ashi summons and successfully sues a demon for breaking a barrel of wine belonging to porters."
+  },
+  {
+   "id": "Chullin 105b:18-Chullin 106a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 105b",
+     18
+    ],
+    [
+     "Chullin 106a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A demon serving in Rav Pappa's house explains his delay in fetching water by describing the 'foul waters' he had to wait to pass. A demon servant in Rav Pappa's house observes the family pouring out water before drinking and remarks that had he known they did this, he wouldn't have delayed his trips to the river."
+  },
+  {
+   "id": "Chullin 106a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 106a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Dimi reports an incident where a storekeeper served pig meat to a Jew because the Jew's failure to wash his hands led the storekeeper to believe he was a gentile."
+  },
+  {
+   "id": "Chullin 106a:2-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 106a",
+     2
+    ],
+    [
+     "Chullin 106a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "A failure to wash hands after a meal (final waters) leads to a host's wife being tricked by guests and subsequently killed by her husband."
+  },
+  {
+   "id": "Chullin 106a:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 106a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Hana observes Rabbi Ami and Rabbi Asi eating fruit without washing their hands and notes they did not offer him any."
+  },
+  {
+   "id": "Chullin 106b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 106b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Bar Hedya reports standing before Rabbi Ami and witnessing him indicate the proper hand-washing measurement for a legal ruling."
+  },
+  {
+   "id": "Chullin 107a:8-8",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Ya’akov and Rav Ashi each prepared specific vessels of a certain volume for washing their hands."
+  },
+  {
+   "id": "Chullin 107a:11-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Tzadok is given a small amount of food and chooses to eat it with a cloth outside of the Sukka."
+  },
+  {
+   "id": "Chullin 107a:13-Chullin 107b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107a",
+     13
+    ],
+    [
+     "Chullin 107b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel encounters Rav eating bread with his hands wrapped in a cloth and questions him. Shmuel finds Rav eating with a cloth instead of washing his hands, and Rav explains he does so because he is physically delicate."
+  },
+  {
+   "id": "Chullin 107b:1-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107b",
+     1
+    ],
+    [
+     "Chullin 107b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Zeira arrives in Eretz Yisrael and discovers Rabbi Ami and Rabbi Asi eating with their hands wrapped in wineskin scraps, leading to a confrontation about the legality of the practice."
+  },
+  {
+   "id": "Chullin 107b:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107b",
+     3
+    ],
+    [
+     "Chullin 107b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna bar Seḥora feeds a piece of meat directly to Rav Hamnuna while the latter is standing before him."
+  },
+  {
+   "id": "Chullin 107b:12-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 107b",
+     12
+    ],
+    [
+     "Chullin 107b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shmuel's father finds him crying because his teacher struck him for feeding a child without washing his hands; the father defends Shmuel, noting the teacher's legal error."
+  },
+  {
+   "id": "Chullin 109b:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 109b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Elazar instructs his attendant to tear an udder before roasting it so that he may eat it."
+  },
+  {
+   "id": "Chullin 109b:11-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 109b",
+     11
+    ],
+    [
+     "Chullin 109b",
+     12
+    ],
+    [
+     "Chullin 109b",
+     13
+    ],
+    [
+     "Chullin 109b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Yalta argues to her husband Rav Nachman that for every forbidden item there is a permitted equivalent, leading him to order his cooks to roast udders for her to provide the taste of meat and milk."
+  },
+  {
+   "id": "Chullin 110a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 110a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "absent"
+    }
+   },
+   "summary": "Passage B is a distinct narrative involving Rabbi Elazar, Ze'eiri, and Rav Yitzḥak bar Avudimi investigating the origins of Rav's ruling, whereas Passage A is the actual event of Rav in Tatlefush."
+  },
+  {
+   "id": "Chullin 110a:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 110a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav arrives in Tatlefush, overhears a woman asking how much milk is needed to cook meat, and decides to stay in the town to teach them the law."
+  },
+  {
+   "id": "Chullin 110a:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 110a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Ravin and Rav Yitzḥak bar Yosef are served udder at Rav Pappi's house; Rav Yitzḥak eats it while Ravin refuses, prompting a comment from Abaye."
+  },
+  {
+   "id": "Chullin 110a:5-Chullin 110b:2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 110a",
+     5
+    ],
+    [
+     "Chullin 110a",
+     6
+    ],
+    [
+     "Chullin 110a",
+     7
+    ],
+    [
+     "Chullin 110a",
+     8
+    ],
+    [
+     "Chullin 110a",
+     9
+    ],
+    [
+     "Chullin 110a",
+     10
+    ],
+    [
+     "Chullin 110b",
+     0
+    ],
+    [
+     "Chullin 110b",
+     1
+    ],
+    [
+     "Chullin 110b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rami bar Tamrei visits Sura and eats udders, leading the locals to bring him to Rav Ḥisda's court where he defends his unconventional behavior and lack of ritual garments. While Rav Hisda is questioning Rami bar Tamrei, a man is brought to court to be flogged for not honoring his parents, but Rami bar Tamrei intervenes by citing a baraita that limits the court's power to punish for that specific commandment."
+  },
+  {
+   "id": "Chullin 110b:3-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 110b",
+     3
+    ],
+    [
+     "Chullin 110b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye asks Rav Safra to inquire about liver preparation in Eretz Yisrael, and upon his return, they discuss the legal implications of the answer received."
+  },
+  {
+   "id": "Chullin 111a:1-1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Safra returns to Eretz Yisrael and asks Rabbi Zerika about cooking liver, who responds by describing a visit he made to the house of Yehuda."
+  },
+  {
+   "id": "Chullin 111a:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav bar Shabba visits Rav Naḥman and refuses to eat the liver served to him, leading Rav Naḥman to call him haughty."
+  },
+  {
+   "id": "Chullin 111a:6-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111a",
+     6
+    ],
+    [
+     "Chullin 111a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While visiting Rabba bar Rav Naḥman, Rabba bar Rav Huna discovers improperly prepared liver and instructs the household on how to correctly tear the arteries."
+  },
+  {
+   "id": "Chullin 111a:12-Chullin 111b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111a",
+     12
+    ],
+    [
+     "Chullin 111b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Ashi visits his father-in-law and observes his brother-in-law roasting liver on top of meat. Rav Ashi visits his father-in-law and rebukes his brother-in-law for roasting liver on top of meat, calling the practice haughty."
+  },
+  {
+   "id": "Chullin 111b:5-5",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye cites an incident where a bowl in Rabbi Ami's house cracked after salting meat, revealing absorbed blood."
+  },
+  {
+   "id": "Chullin 111b:13-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav visits his grandson, receives eye treatment in a bowl, and subsequently refuses to eat ginger served in that same bowl."
+  },
+  {
+   "id": "Chullin 111b:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Shmuel eats fish served in a meat bowl with dairy and offers some to Rabbi Elazar, who refuses because his own teacher (Rav) would not permit it."
+  },
+  {
+   "id": "Chullin 111b:15-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 111b",
+     15
+    ],
+    [
+     "Chullin 111b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Huna and Rav Hiyya bar Ashi, sitting on opposite sides of a river, mock each other's religious practices during their meals."
+  },
+  {
+   "id": "Chullin 112a:4-4",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 112a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A young bird falls into a jug of kutaḥ, and Rav Hinnana permits it, earning praise from Rava for his discernment."
+  },
+  {
+   "id": "Chullin 112a:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 112a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Gemara describes how Shmuel would throw bread contaminated by meat-blood to his dog, while Rav Huna would give it to his attendant."
+  },
+  {
+   "id": "Chullin 112b:4-Chullin 113a:1",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 112b",
+     4
+    ],
+    [
+     "Chullin 112b",
+     5
+    ],
+    [
+     "Chullin 113a",
+     0
+    ],
+    [
+     "Chullin 113a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Mari bar Raḥel accidentally salted kosher meat with tereifa meat and brought the case to Rava, who ruled the kosher meat prohibited."
+  },
+  {
+   "id": "Chullin 113a:12-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 113a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Sheshet used to salt his meat one piece at a time."
+  },
+  {
+   "id": "Chullin 116a:13-15",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 116a",
+     13
+    ],
+    [
+     "Chullin 116a",
+     14
+    ],
+    [
+     "Chullin 116a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Levi is served a peacock cooked in milk at the home of a bird hunter and remains silent, later explaining to Rabbi Yehuda HaNasi that he deferred to the local ruling of Rabbi Yehuda ben Beteira."
+  },
+  {
+   "id": "Chullin 116b:14-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 116b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Shmuel bar Rav Yitzḥak arrives in Babylonia from Eretz Yisrael and reports Rabbi Yoḥanan's ruling regarding curdling milk with rennet."
+  },
+  {
+   "id": "Chullin 121b:16-17",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 121b",
+     16
+    ],
+    [
+     "Chullin 121b",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A certain elder approaches Rabbi Elazar to resolve a legal dilemma by citing a tradition from Rabbi Yoḥanan regarding the validity of slaughter for impurity."
+  },
+  {
+   "id": "Chullin 124a:20-20",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 124a",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B is a distinct narrative encounter between Rav Nahman and Ulla in Babylonia, which Passage A later references and recounts as a past event when Rav Oshaya travels to Eretz Yisrael."
+  },
+  {
+   "id": "Chullin 124a:21-Chullin 124b:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 124a",
+     21
+    ],
+    [
+     "Chullin 124a",
+     22
+    ],
+    [
+     "Chullin 124a",
+     23
+    ],
+    [
+     "Chullin 124a",
+     24
+    ],
+    [
+     "Chullin 124a",
+     25
+    ],
+    [
+     "Chullin 124b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Oshaya travels to Eretz Yisrael and debates Rabbi Ami over the correct context of a ruling by Rabbi Yohanan, a dispute eventually clarified by the arrival of Ravin."
+  },
+  {
+   "id": "Chullin 124b:12-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 124b",
+     12
+    ],
+    [
+     "Chullin 124b",
+     13
+    ],
+    [
+     "Chullin 124b",
+     14
+    ],
+    [
+     "Chullin 124b",
+     15
+    ],
+    [
+     "Chullin 124b",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "When Rav Avya the Elder asks a difficult question, Rabba bar Rav Huna distracts him by pointing at a raven because he is too exhausted from his public lecture to answer."
+  },
+  {
+   "id": "Chullin 127a:15-16",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 127a",
+     15
+    ],
+    [
+     "Chullin 127a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Huna bar Torta witnesses the people of Va’ad crossbreeding a snake and a lizard, resulting in the birth of a dangerous arvad, which Rabbi Shimon the Righteous explains as a divine measure-for-measure punishment."
+  },
+  {
+   "id": "Chullin 128a:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 128a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Passage B and Passage A are two distinct historical testimonies by Rabbi Yehuda regarding Rabbi Akiva's shifting halakhic positions, each involving different subject matter and concluding with a change in Akiva's ruling."
+  },
+  {
+   "id": "Chullin 128a:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 128a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yehuda recounts how he challenged Rabbi Akiva's ruling on fat by citing Akiva's own teaching on endives, leading Akiva to retract and change his position."
+  },
+  {
+   "id": "Chullin 128b:21-Chullin 129a:2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 128b",
+     21
+    ],
+    [
+     "Chullin 129a",
+     0
+    ],
+    [
+     "Chullin 129a",
+     1
+    ],
+    [
+     "Chullin 129a",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Asi misses a session at the study hall, encounters Rabbi Zeira, and asks him to review the day's teachings to help resolve a legal difficulty."
+  },
+  {
+   "id": "Chullin 131a:7-7",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 131a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A Levite was snatching priestly gifts from children, and when Rav was informed, he rebuked the Levite's greed while noting the legal complexity of taxing Levites."
+  },
+  {
+   "id": "Chullin 131b:20-20",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 131b",
+     20
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ulla habitually gives priestly gifts to the daughters of priests, prompting Rava to challenge the legality of this practice using a baraita regarding meal offerings."
+  },
+  {
+   "id": "Chullin 132a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 132a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Several rabbis are noted for eating priestly gifts by virtue of being married to daughters of priests."
+  },
+  {
+   "id": "Chullin 132b:3-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 132b",
+     3
+    ],
+    [
+     "Chullin 132b",
+     4
+    ],
+    [
+     "Chullin 132b",
+     5
+    ],
+    [
+     "Chullin 132b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A priest follows Rabbi Tavla's advice to enter a partnership to avoid priestly gifts, but Rav Nahman rejects the arrangement and rebukes Rabbi Tavla for his ruling."
+  },
+  {
+   "id": "Chullin 132b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 132b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rava and Rav Nahman bar Yitzhak fined individuals who refused to give priestly gifts by seizing their property."
+  },
+  {
+   "id": "Chullin 133a:5-6",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 133a",
+     5
+    ],
+    [
+     "Chullin 133a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye recounts how he transitioned from seizing priestly gifts to refusing them entirely after learning the proper ethical and legal conduct for priests."
+  },
+  {
+   "id": "Chullin 133a:9-11",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 133a",
+     9
+    ],
+    [
+     "Chullin 133a",
+     10
+    ],
+    [
+     "Chullin 133a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rava and Rav Safra visit a host where Rava eats priestly gifts against a general ruling; Rav Safra receives a rebuking dream which Rav Yosef later explains was actually intended for Rava."
+  },
+  {
+   "id": "Chullin 134b:2-2",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 134b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Levi sowed crops in Kishar and, finding no poor people to collect the gleanings, consulted Rav Sheshet on how to proceed."
+  },
+  {
+   "id": "Chullin 134b:10-10",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 134b",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When a sack of coins was brought to the study hall for students, Rabbi Ami rushed to take it for himself (or for distribution)."
+  },
+  {
+   "id": "Chullin 137b:11-13",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 137b",
+     11
+    ],
+    [
+     "Chullin 137b",
+     12
+    ],
+    [
+     "Chullin 137b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Upon arriving in Eretz Yisrael, Isi bar Hini is corrected by Rabbi Yoḥanan regarding his terminology and his disrespectful manner of referring to the sage Rav."
+  },
+  {
+   "id": "Chullin 139b:13-14",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 139b",
+     13
+    ],
+    [
+     "Chullin 139b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Kahana recounts seeing rows of pigeons calling out to their master, including an exchange where one pigeon rebukes another for remaining silent."
+  },
+  {
+   "id": "Chullin 141b:9-9",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 141b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Yehuda flogs a man who clipped a mother bird's wings before sending it away and orders him to let the wings grow back so he can fulfill the mitzva correctly."
+  },
+  {
+   "id": "Chullin 141b:11-12",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 141b",
+     11
+    ],
+    [
+     "Chullin 141b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A man asks Rava about the status of a specific bird, and after the man releases it to fulfill the mitzva, Rava uses nets to catch it for himself."
+  },
+  {
+   "id": "Chullin 141b:20-Chullin 142a:0",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 141b",
+     20
+    ],
+    [
+     "Chullin 141b",
+     21
+    ],
+    [
+     "Chullin 142a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Levi bar Simon transfers his dovecote produce to Rav Yehuda, who then consults Shmuel on how to legally acquire them, leading Shmuel to tell him to bang on the nest."
+  },
+  {
+   "id": "Chullin 142a:3-3",
+   "tractate": "Chullin",
+   "cells": [
+    [
+     "Chullin 142a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A son obeys his father's request to collect fledglings, performs the mitzvah of sending away the mother bird, but falls to his death upon descending."
+  }
+ ]
+}

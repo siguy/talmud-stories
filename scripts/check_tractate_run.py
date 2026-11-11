@@ -49,6 +49,22 @@ NIKUD = re.compile('[ְ-ׇ]')
 # G5 baselines, measured: kept stories per examined page 1.8 (Berakhot), 1.5 (Yevamot); Gemini
 # out-of-scope units 7/224 and 10/184. The two are read from disk, these are only the fallback.
 OUT_OF_SCOPE_BASELINES = ('berakhot', 'yevamot')
+DECISIONS = 'results/shas_run/decisions.json'   # Simon's rulings on red gates (G4, G6); see the file
+
+
+def decisions(root):
+    """(g4_accepted tractates, {tractate: [unit ids Claude decides alone]}, {tractate: [unit ids hand-flagged
+    biblical]}) from Simon's rulings file."""
+    p = Path(root) / DECISIONS
+    if not p.exists():
+        return set(), {}, {}
+    d = json.loads(p.read_text())
+    return (set(d['g4_accepted']['tractates']), d['claude_alone']['units'],
+            d.get('biblical_flag', {}).get('units', {}))
+
+
+def claude_alone(P):
+    return set(decisions(P.root)[1].get(P.slug, []))
 DENSITY_LOW, DENSITY_HIGH = 0.5, 2.0   # amber outside [0.5 x lowest, 2 x highest] of run tractates
 
 
@@ -164,7 +180,13 @@ def g1_text(P, shape=None):
     refs = [p['ref'] for p in pages]
     shape = shape or d.get('sefaria_shape')
     if shape:
-        missing, extra = sorted(set(shape) - set(refs)), sorted(set(refs) - set(shape))
+        # An amud Sefaria's index counts as 0 segments is blank in the source (Nazir 33b):
+        # its absence is expected, noted by name, not a missing page.
+        blank = sorted(r for r in shape if not shape[r] and r not in set(refs))
+        missing = sorted(r for r in set(shape) - set(refs) if shape[r])
+        extra = sorted(set(refs) - set(shape))
+        if blank:
+            r.note(f'blank in the source (index counts 0 segments), not fetched: {blank}')
         if missing or extra:
             r.red(f'pages differ from the Sefaria index: missing {missing[:8]}, extra {extra[:8]}')
         diffs = {p['ref']: (shape[p['ref']], len(p['segments'])) for p in pages
@@ -174,11 +196,16 @@ def g1_text(P, shape=None):
     else:
         r.amber('Sefaria shape index not available (older fetch): page count NOT checked against Sefaria')
     nums = [daf_number(x) for x in refs]
+    # Amudim blank in the source are an expected gap, not a missing page.
+    blank_nums = {daf_number(x) for x in (shape or {}) if not shape[x]} - {None}
     if None in nums:
         r.red(f'unparseable refs: {[x for x, n in zip(refs, nums) if n is None][:5]}')
-    elif nums != list(range(nums[0], nums[0] + len(nums))):
-        gaps = sorted(set(range(nums[0], nums[-1] + 1)) - set(nums))
-        r.red(f'refs not contiguous (daf numbers missing: {gaps[:10]}) or out of order')
+    elif nums != sorted(nums) or len(set(nums)) != len(nums):
+        r.red('refs out of order or repeated')
+    else:
+        gaps = sorted(set(range(nums[0], nums[-1] + 1)) - set(nums) - blank_nums)
+        if gaps:
+            r.red(f'refs not contiguous (daf numbers missing: {gaps[:10]}) or out of order')
     empty_pages = [p['ref'] for p in pages if not p.get('segments')]
     if empty_pages:
         r.red(f'pages with no segments: {empty_pages[:8]}')
@@ -319,6 +346,9 @@ def g4_pair(P):
     share = both / passages if passages else 0.0
     if not passages:
         r.red('no definite passage in either run')
+    elif share < DEFINITE_BOTH_MIN and P.slug in decisions(P.root)[0]:
+        r.amber(f'{100 * share:.1f}% of passages definite in either run are definite in both ({both}/{passages}; '
+                f'under {100 * DEFINITE_BOTH_MIN:.0f}%): shipped by Simon\'s 2026-11-10 ruling ({DECISIONS})')
     elif share < DEFINITE_BOTH_MIN:
         r.red(f'only {100 * share:.1f}% of passages definite in either run are definite in both '
               f'({both}/{passages}; need {100 * DEFINITE_BOTH_MIN:.0f}%)')
@@ -345,8 +375,10 @@ def g5_density(P):
         return r
     ex = sum(1 for p in run['pages'] if examined(p))
     dens = kept_stories(run) / ex if ex else 0.0
+    # Compared with the two pre-run baselines only (plan §2.2: Berakhot 1.8, Yevamot 1.5 per examined page). Against
+    # every other run tractate the range widened as the run grew: Keritot's 0.30 unflagged Zevachim's 0.54 (2026-11-10).
     others = {}
-    for t in P.others():
+    for t in (P.sibling(b) for b in OUT_OF_SCOPE_BASELINES if b != P.slug):
         try:
             o = json.loads(Path(t.run(1)).read_text())
             e = sum(1 for p in o['pages'] if examined(p))
@@ -400,7 +432,12 @@ def g6_judge(P, who):
         r.red(f'{len(extra)} row(s) for units that do not exist: {extra[:5]}')
     if (d.get('meta') or {}).get('prompt_sha') != JUDGE_PROMPT_SHA:
         r.red(f"judge prompt sha {(d.get('meta') or {}).get('prompt_sha')}, expected {JUDGE_PROMPT_SHA}")
-    bad = Counter(x['answer'].get('outcome') for x in rows if x['answer'].get('outcome') != 'ok')
+    alone = claude_alone(P) if who == 'gemini' else set()
+    ruled = sorted(x['id'] for x in rows if x['answer'].get('outcome') != 'ok' and x['id'] in alone)
+    if ruled:
+        r.amber(f'{len(ruled)} unit(s) with no valid Gemini answer, decided by Claude alone '
+                f'(Simon, 2026-11-10, {DECISIONS}): {ruled}')
+    bad = Counter(x['answer'].get('outcome') for x in rows if x['answer'].get('outcome') != 'ok' and x['id'] not in alone)
     if bad:
         r.red(f'{sum(bad.values())} row(s) not ok: {dict(bad)}')
     if (d.get('meta') or {}).get('missing_batches'):
@@ -414,7 +451,7 @@ def g6_judge(P, who):
         g = load_json(Path(P.consensus) / 'gemini.json', r, 'gemini.json (Claude is judged against it)')
         if g is not None:
             flagged = {x['id'] for x in g['rows'] if x['answer'].get('outcome') == 'ok'
-                       and x['answer'].get('verdict') == 'out_of_scope'}
+                       and x['answer'].get('verdict') == 'out_of_scope'} | claude_alone(P)
             unanswered = sorted(flagged - ok_ids)
             if unanswered:
                 r.red(f'{len(unanswered)} unit(s) Gemini called out_of_scope have no Claude answer with outcome ok '

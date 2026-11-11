@@ -1,0 +1,110 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-10T00:09:29",
+  "outcomes": {
+   "ok": 4
+  }
+ },
+ "rows": [
+  {
+   "id": "Meilah 3b:8-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific interaction between Abaye, Rav Pappa, and Rabbi Abba involving a challenge and a resolution. While it is primarily composed of speech-acts and legal debate, it includes a change in state (Abaye's silence) and a physical action (Abaye going before Rabbi Abba), which fits the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Meilah 7a:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of specific events: Rabbi Shimon traveling to a village, an encounter with an old man, and subsequent interactions with colleagues and Rabbi Akiva. It follows the 'incident followed by a ruling' shape described in R-C0, containing multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Meilah 7b:2-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a scholarly debate between Reish Lakish and Rabbi Yohanan. While it is primarily speech-based, it includes a conflict and a resolution where one party is silenced and the other issues a sharp retort ('cut off the legs of the child'), fitting the borderline criteria for speech with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Meilah 17a:9-Meilah 17b:6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complex, multi-episodic narrative involving rabbis (R. Shimon ben Yohai, R. Elazar bar R. Yosei) traveling to Rome to nullify anti-Jewish decrees. It contains numerous actions, conflict, and change, including a ruse by R. Reuven ben Isterobeli and a supernatural encounter with a demon to cure the emperor's daughter.",
+    "error": null
+   }
+  }
+ ]
+}
