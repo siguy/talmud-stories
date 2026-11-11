@@ -1,5 +1,13 @@
 # Jeff's quasi-speech-act rule takes the count from 6 to 17 — and 9 of the 13 additions are the span defect again
 
+> **Its second claim is refuted, 2026-09-08.** The "9 of 13 are the span defect" result had
+> no control: extending a span walks into whatever comes next, and on a dense daf that is
+> often *another story*. Measured over all 365 accepted golden spans, **10 of 15 flips are a
+> neighbouring golden story** and genuine truncation is **5 spans, 1.4%**. Criteria cases
+> outnumber truncations 37 to 5, which reverses this finding's conclusion that "the dominant
+> defect is Boundaries, not criteria."
+> → [`span-truncation-rate`](2026-09-08-span-truncation-rate.md)
+
 **2026-09-03, later the same day.** Extends
 [`the speech-act contradiction touches 6 golden entries`](2026-09-03-speech-act-blast-radius.md)
 (PR #36). That finding is not overturned. Its central claim — *"three of the six are
