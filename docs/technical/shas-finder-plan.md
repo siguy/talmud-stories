@@ -68,7 +68,31 @@ Order: Berakhot first (small, story-rich: the cost calibration run); then Seder 
 Excluded: Shekalim (its Gemara is Yerushalmi), Kinnim and Middot (no Gemara). The page counts are from Vilna
 pagination and are confirmed per tractate when the Sefaria fetch runs (Eruvin's cache holds 207, not 208).
 
-## 3. Cost and time (estimated, not measured)
+## 3. Cost and time (measured on Berakhot 2026-11-08; the original estimate kept below)
+
+**Measured — Berakhot full run, 2026-11-08** (`results/v11/berakhot/berakhot_v11.json` → `run_meta.tokens`, 0
+unmetered calls). Prices: `gemini-3-flash-preview` Standard tier, $0.50 / M input, $3.00 / M output incl. thinking
+(aistudio.google.com/docs/pricing, read 2026-11-08).
+
+| Stage | Calls | Input tokens | Output tokens | Cost |
+|---|---|---|---|---|
+| Stage 1 (triage) | 123 | 652,958 | 128,326 | $0.71 |
+| Stage 2 + twin + Stage 4 | 699 | 2,622,303 | 254,709 | $2.08 |
+| **Total, 125 pages** | 822 | 3,275,261 | 383,035 | **$2.79 = $0.022 / page** |
+
+Thinking tokens: 0, since thinking is off. Two pages' triage came from the 2-page smoke test's cache (smoke cost $0.03,
+not counted above). Per page: triage ~5.3k in / 1.0k out; Stage 2 + twin ~21k in / 2.0k out. **Wall time was 39 min**
+(18.7 s/page): Stage 1 took 10 min, and Stage 2 onward took 29 min. `run_meta.elapsed_seconds` (1,738) times
+**Stage 2 onward only**, so the "242 pages in 21 minutes" for Yevamot below leaves out its triage too. Measured per
+page *examined* by Stage 2, Berakhot ran 16.4 s and Yevamot 11.9 s, about 1.4×. Both tractates examined 106 pages:
+Yevamot skipped 136 at triage, Berakhot 19. Indicated cause: Berakhot proposes more stories (212 vs 168), so it makes
+more twin and span calls, and its pages are longer (22 vs 16 segments/page).
+
+**Re-quote, the other 31 tractates (4,276 pages): ~$95** at $0.022/page (vs ~$175 estimated), and **~22 hours** one
+at a time at 18.7 s/page (vs ~6.5). Time scales with how many pages pass triage. Cost per page varies with how much each tractate triages in. Berakhot is story-dense, so this
+quote is more likely high than low.
+
+### The original estimate (2026-11-08, before measurement)
 
 Nothing on disk records tokens or dollars: `run_meta` has elapsed time only. Measured: the Yevamot v11 run did
 **242 pages in 21 minutes** (~5.2 s/page, twin pass on).
