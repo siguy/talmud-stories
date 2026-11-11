@@ -68,7 +68,7 @@ open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     12 item(s) in work/done/
+closed     13 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -81,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     29 item(s) in work/done/
+closed     30 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     28 item(s) in work/done/
+closed     29 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -128,7 +128,7 @@ history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
 open       2026-11-08-shas-finder-run
-closed     2 item(s) in work/done/
+closed     3 item(s) in work/done/
 ```
 
 ## Ground truth on hand
@@ -179,4 +179,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 8e5446e6c8c3b3cc -->
+<!-- board-checksum: a0815ce6b489f26d -->

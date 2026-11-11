@@ -1,0 +1,203 @@
+{
+ "what": "Claude's reading of every story the site ships on a tractate with a blind list that does NOT overlap a story on that list. Graded against docs/STORY_RULES.md from the shipped English and Hebrew. INDICATED, not measured: this is Claude's judgment, not Jeff's. Read by scripts/measure_shas_accuracy.py.",
+ "graded_by": "Claude (claude-opus-5-5), 2026-11-10, no model calls",
+ "grades": {
+  "eruvin": {
+   "eruvin-7a-9-9": {
+    "grade": "borderline",
+    "why": "R. Akiva's etrog: one act reported inside a baraita citation; a short maaseh"
+   },
+   "eruvin-8a-5-5": {
+    "grade": "borderline",
+    "why": "a case came before Rebbi and he said nothing; bare report (R-C5)"
+   },
+   "eruvin-16b-26-28": {
+    "grade": "yes",
+    "why": "Rav Nahman challenged, appoints an amora and publicly retracts: event and change"
+   },
+   "eruvin-25b-7-8": {
+    "grade": "yes",
+    "why": "the wall falls, Rav Beivai rules, Rav Pappi insults and overrules"
+   },
+   "eruvin-43b-10-10": {
+    "grade": "no",
+    "why": "the Gemara quoting the Mishnah's Rabban Gamliel boat story (Gittin 46a/74b precedent: Jeff 'no')"
+   },
+   "eruvin-47b-0-0": {
+    "grade": "borderline",
+    "why": "Yosef the priest went to his teacher in Tzeidan; one-line report (R-C5)"
+   },
+   "eruvin-47b-12-15": {
+    "grade": "yes",
+    "why": "rams at Mavrakhta: Rava permits, Ravina objects, Rava reverses"
+   },
+   "eruvin-48a-15-18": {
+    "grade": "no",
+    "why": "a father tells his son what to ask Rav Pappa; a hypothetical, speech only"
+   },
+   "eruvin-51b-7-7": {
+    "grade": "borderline",
+    "why": "the Memel and Guryon families' famine distributions; habitual 'would'"
+   },
+   "eruvin-51b-13-13": {
+    "grade": "borderline",
+    "why": "Rabba bar Rav Hanan's habit, then a halakhic exchange with Abaye"
+   },
+   "eruvin-61a-12-12": {
+    "grade": "no",
+    "why": "explains an enactment (Geder/Hamtan); no event narrated"
+   },
+   "eruvin-64a-0-2": {
+    "grade": "no",
+    "why": "the shipped extent is halakhic argument (R-B4); the summary describes text not in it"
+   },
+   "eruvin-68a-2-2": {
+    "grade": "borderline",
+    "why": "Rabba bar Rav Hanan and Abaye about the alley; speech, tail of the listed 68a story"
+   },
+   "eruvin-68b-0-3": {
+    "grade": "yes",
+    "why": "continuation of Jeff's listed 68a story (spilled hot water); a boundary split, not a new story"
+   },
+   "eruvin-68b-13-16": {
+    "grade": "no",
+    "why": "the Gemara quoting the Mishnah's Sadducee story, then commentary (R-B4)"
+   },
+   "eruvin-69a-8-8": {
+    "grade": "yes",
+    "why": "the man hides his coral ring from R. Yehuda Nesia"
+   },
+   "eruvin-86b-9-11": {
+    "grade": "yes",
+    "why": "Tzippori forgets the Torah scroll; sheets spread on the pillars"
+   },
+   "eruvin-91a-1-3": {
+    "grade": "no",
+    "why": "baraita on carrying between roofs; practices, not an event"
+   },
+   "eruvin-94a-1-2": {
+    "grade": "yes",
+    "why": "Rav and Shmuel, the wall falls, the cloak and the belt"
+   },
+   "eruvin-101b-0-0": {
+    "grade": "no",
+    "why": "the poultry market practice; habitual"
+   },
+   "eruvin-102a-14-15": {
+    "grade": "borderline",
+    "why": "Rav Huna asks Rav about shading his rams; consultation and instruction"
+   },
+   "eruvin-102b-11-12": {
+    "grade": "yes",
+    "why": "Mar bar Rav Ashi watches his father replace a bandage, challenges him"
+   },
+   "eruvin-104a-24-25": {
+    "grade": "yes",
+    "why": "Ameimar permits the wheel, sees flax soaking, reverses"
+   }
+  },
+  "yevamot": {
+   "yevamot-15a-15-15": {
+    "grade": "yes",
+    "why": "Shammai breaks the roof over his grandson's bed"
+   },
+   "yevamot-15a-16-16": {
+    "grade": "borderline",
+    "why": "Beit Shammai widen the Yehu trough; a report of an act"
+   },
+   "yevamot-21b-1-2": {
+    "grade": "borderline",
+    "why": "Rav Hisda's recollection and the astrologers; speech and reflection"
+   },
+   "yevamot-37b-5-8": {
+    "grade": "borderline",
+    "why": "Rav and Rav Nahman's announcements 'when he came to'; near-habitual"
+   },
+   "yevamot-42b-8-8": {
+    "grade": "no",
+    "why": "R. Zerika and R. Abbahu: a halakhic exchange"
+   },
+   "yevamot-46b-13-13": {
+    "grade": "yes",
+    "why": "a convert before R. Hiyya, told to wait for immersion (R-C0 shape)"
+   },
+   "yevamot-47a-7-7": {
+    "grade": "yes",
+    "why": "a man claims he converted in private; R. Yehuda questions and rules"
+   },
+   "yevamot-66a-1-1": {
+    "grade": "yes",
+    "why": "the half-slave woman; the court compels her master (R-C0 shape)"
+   },
+   "yevamot-77b-8-9": {
+    "grade": "borderline",
+    "why": "Rav Shmuel bar Yehuda recites; R. Yohanan: teach it outside; speech"
+   },
+   "yevamot-78a-12-12": {
+    "grade": "yes",
+    "why": "Minyamin the Egyptian convert; beside Jeff's listed 78a story (boundary)"
+   },
+   "yevamot-95a-7-7": {
+    "grade": "yes",
+    "why": "a man with his mother-in-law, flogged by Rav Yehuda"
+   },
+   "yevamot-98a-3-3": {
+    "grade": "yes",
+    "why": "Niftayim the convert's marriage comes before the Sages (R-C0 shape)"
+   },
+   "yevamot-99b-9-10": {
+    "grade": "yes",
+    "why": "R. Elazar bar Tzadok's one testimony that promoted a slave"
+   },
+   "yevamot-101b-14-14": {
+    "grade": "borderline",
+    "why": "Rav Ashi at Rav Kahana's, asked to make up five; mostly speech"
+   },
+   "yevamot-101b-15-16": {
+    "grade": "yes",
+    "why": "Rav Shmuel bar Yehuda reveals he is a convert; Rav Yehuda praises him"
+   },
+   "yevamot-105a-8-9": {
+    "grade": "yes",
+    "why": "Levi in the villages, stumped by three questions"
+   },
+   "yevamot-105a-13-13": {
+    "grade": "yes",
+    "why": "Rabba and Abaye's lifespans; Jeff himself called this a story on 2026-09-23"
+   },
+   "yevamot-106b-7-8": {
+    "grade": "yes",
+    "why": "Rav Ashi finds Rav Kahana coaching a yevama"
+   },
+   "yevamot-108b-10-11": {
+    "grade": "yes",
+    "why": "the time of danger: a messenger hired to ask R. Akiva in prison"
+   },
+   "yevamot-108b-14-14": {
+    "grade": "borderline",
+    "why": "the second version of the 108b incident; a variant, near-duplicate"
+   },
+   "yevamot-115a-7-7": {
+    "grade": "borderline",
+    "why": "R. Akiva meets Nehemya of Beit Deli; a transmitted tradition, speech"
+   },
+   "yevamot-120b-7-7": {
+    "grade": "borderline",
+    "why": "the Gemara quoting the Mishnah's Asya story (121a)"
+   },
+   "yevamot-49b-6-7": {
+    "grade": "yes",
+    "why": "Manasseh tries Isaiah, who hides in a cedar and is sawn; a story; biblical (flag correct, out of Jeff's scope R-S1)"
+   },
+   "yevamot-76b-10-16": {
+    "grade": "borderline",
+    "why": "Saul and Doeg on David's lineage, built verse by verse from I Samuel; mostly exegesis; biblical (flag correct)"
+   },
+   "yevamot-78b-13-20": {
+    "grade": "yes",
+    "why": "David's three-year famine and the Gibeonites; a story; biblical (flag correct)"
+   }
+  }
+ },
+ "note_2026-11-10_merge": "the last three Yevamot entries were added after the base began shipping biblical stories (Simon 2026-11-10)"
+}
