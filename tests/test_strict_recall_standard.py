@@ -29,3 +29,16 @@ def test_current_standard_matches_the_matches_file_denominator():
 
 def test_2005_standard_is_the_list_as_written():
     assert len(strict.select_stories(_yevamot(), 'Yevamot', '2005')) == len(_yevamot())
+
+
+def test_a_lowercase_tractate_still_applies_jeffs_later_rulings(tmp_path):
+    """2026-11-10: `--tractate ketubot` built list refs as "ketubot 21b", so the ruling on "Ketubot 21b"
+    matched no row and the harness raised under the default --standard current."""
+    import subprocess
+    out = tmp_path / 'k.json'
+    r = subprocess.run([sys.executable, 'scripts/measure_recall_vs_expert_list.py',
+                        '--expert-doc', 'jeff comms/b.ketubot (1).doc', '--tractate', 'ketubot',
+                        '--detected', 'results/canonical/ketubot_canonical.json', '--out', str(out)],
+                       cwd=ROOT, capture_output=True, text=True)
+    assert r.returncode == 0, r.stderr[-1500:]
+    assert sum(1 for row in json.loads(out.read_text()) if row.get('superseded_by_rule')) >= 1

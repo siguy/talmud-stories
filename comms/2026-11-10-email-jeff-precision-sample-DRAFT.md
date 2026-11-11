@@ -1,6 +1,6 @@
 # DRAFT — not sent. Simon decides whether and when (2026-11-10)
 
-**Subject:** A random sample of 59 stories to grade (about an hour)
+**Subject:** A random sample of 60 stories to grade (about an hour)
 
 Jeff,
 
@@ -11,16 +11,16 @@ We can measure how often it finds your stories: on Eruvin, which we held back fr
 9 in 10 of the stories on your list. We cannot yet measure how often what it shows is really a story. Our own
 checks put that at about 85%, but those are machines grading a machine.
 
-So here is the one thing that would settle it: a random sample of 59 stories from what the site shows, drawn
+So here is the one thing that would settle it: a random sample of 60 stories from what the site shows, drawn
 evenly from narrative-heavy tractates (Sanhedrin, Megillah, Taanit and others), from Kodashim and Niddah, and from
 the rest. The page shows the Hebrew and English side by side. For each story there is one required question,
 "is it a story?", answered yes, borderline or no. If you have time, the extent can be corrected too.
 
 [link to the review page]
 
-Your yes/borderline/no on these 59 would let us say how accurate the site is, by kind of tractate, rather than
-guess. Biblical stories are marked and stay out of the scholarly catalogue, per your scope, so grade them on
-whether they are stories.
+Your yes/borderline/no on these 60 would let us say how accurate the site is, by kind of tractate, rather than
+guess. A few are about biblical figures. Per your scope we flag those separately and keep them out of the
+scholarly catalogue, so please grade them only on whether they are stories.
 
 Thank you,
 Simon
