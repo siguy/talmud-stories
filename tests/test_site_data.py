@@ -128,7 +128,7 @@ def test_unreviewed_stories_are_definite_in_every_run():
             assert all(cells & r for r in runs), s["id"]
             assert not cells & drop, s["id"]
             if cells & biblical:
-                assert s["biblical"] is True, s["id"]
+                assert s["out_of_scope"] == "biblical", s["id"]
 
 
 def test_reviewed_stories_carry_jeffs_evidence():

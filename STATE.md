@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     29 item(s) in work/done/
+closed     30 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -128,7 +128,7 @@ history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
 open       2026-11-08-shas-finder-run
-closed     3 item(s) in work/done/
+closed     4 item(s) in work/done/
 ```
 
 ## Ground truth on hand
@@ -179,4 +179,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: a0815ce6b489f26d -->
+<!-- board-checksum: 328f39c4099c8e04 -->

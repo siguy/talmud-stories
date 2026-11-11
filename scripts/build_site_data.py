@@ -19,9 +19,11 @@ the detector stories Jeff calls yes. They stay in the scholarly work -- except f
 calls `out_of_scope` and Claude calls `not` (not a story at all) does not ship (Simon 2026-11-10).
 
 Biblical stories SHIP (Simon 2026-11-10: "as long as they are classified as stories outside of the fact they have
-biblical figures"). They carry `biblical: true` so the scholarly catalogue can exclude them (Jeff, R-S1). That covers
-both judges' `out_of_scope`, Claude alone under decisions.json, a hand flag in decisions.json, and Stage 4j's own
-biblical-actor demotion, whose pre-filter grade is what the site reads.
+biblical figures"). They carry `out_of_scope: "biblical"` so the scholarly catalogue can exclude them (Jeff, R-S1;
+null when in scope; the key names the reason, so another kind of out-of-scope passage is a new value, not a new key). That covers
+both judges' `out_of_scope`, Claude alone under decisions.json, a hand flag in decisions.json, and detector v15's
+biblical-actor rule (Stage 4j), re-applied here to the actor list every run already holds -- no model call, no re-run
+(docs/findings/2026-11-11-v15-biblical-flag.md). Where v14's 4j demoted a story, the site reads its pre-filter grade.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -36,6 +38,8 @@ OUT = ROOT / "site" / "data"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import tractates as T  # noqa: E402  (the one slug/English/Hebrew table; file locations by convention)
+sys.path.insert(0, str(ROOT))
+from src.story_detector_v15 import biblical_flag, story_evidence  # noqa: E402  (4j, flagging only)
 
 # runs: the first is exported (its boundaries and summaries are shown); every run must agree.
 # ruler: results/rulers/<t>_ruler.json (scripts/build_ruler.py) -- where Jeff's evidence is read.
@@ -108,6 +112,13 @@ def judge_cells(tractate):
                 if (flagged(u) and verdict["claude"].get(u["id"]) == "out_of_scope") or u["id"] in hand}
     drop = {tuple(c) for u in units for c in u["cells"] if flagged(u) and verdict["claude"].get(u["id"]) == "not"}
     return biblical, drop
+
+
+def detector_biblical(s):
+    """Stage 4j's flag, by v15's rule on the story's actor list. A story with no actor list (the Gittin and
+    Kiddushin goldens carry none) keeps whatever v14's 4j recorded -- absence is not a ruling (Lesson 38)."""
+    ev = story_evidence(s)
+    return biblical_flag(ev) if ev else bool(s.get("filtered_as_biblical"))
 
 
 def site_classification(s):
@@ -217,8 +228,9 @@ def build(tractate):
                 "start_segment": int(s["start_segment"]),
                 "tier": t,
                 "classification": site_classification(s),
-                # Biblical characters (R-S1): on the site, excluded from Jeff's scholarly catalogue.
-                "biblical": bool(cells & biblical) or bool(s.get("filtered_as_biblical")),
+                # Biblical characters (R-S1): on the site, excluded from Jeff's scholarly catalogue. Simon 2026-11-11:
+                # `out_of_scope: "biblical"`, not `biblical: true` -- the reason is the value.
+                "out_of_scope": "biblical" if (cells & biblical or detector_biblical(s)) else None,
                 "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
                 "extended": None,
                 "reviewed": reviewed,

@@ -44,7 +44,7 @@ def main():
             end = int(s['id'].rsplit('-', 1)[1])
             pools[stratum(t)].append({'tractate': t, 'id': s['id'], 'ref': s['ref'],
                                       'start_segment': s['start_segment'], 'end_segment': end,
-                                      'biblical': s.get('biblical', False)})
+                                      'biblical': s.get('out_of_scope') == 'biblical'})
     rng = random.Random(SEED)
     sample = []
     for name, pool in pools.items():
