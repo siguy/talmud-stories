@@ -16,7 +16,7 @@ Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 
 ## The claim to test / the problem
 
-Biblical stories ship on the Septimus site, flagged `biblical: true`, and the flag excludes them from Jeff's
+Biblical stories ship on the Septimus site, flagged (`out_of_scope: "biblical"` since 2026-11-11; `biblical: true` before), and the flag excludes them from Jeff's
 scholarly catalogue (Simon 2026-11-10; R-S1). v14's Stage 4j is a fixed name list that misses group actors,
 biblical peoples and places, and reads "God" as a non-biblical actor. The accuracy review found two biblical stories
 no automatic flag caught (Megillah 7a:2-3, Sanhedrin 113a:10-113b:0). Plan §2.5 of

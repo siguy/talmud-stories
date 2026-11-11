@@ -40,7 +40,7 @@ kept there; it is just not shown to families.
 
 **Biblical stories ship** (Simon, 2026-11-10: fine for the site "as long as they are classified as stories outside
 of the fact they have biblical figure"; flag them and exclude them for Jeff's scholarly project). A story is
-flagged `biblical: true` when both judges call it `out_of_scope` (or Claude alone, under
+flagged `out_of_scope: "biblical"` (null when in scope) when both judges call it `out_of_scope` (or Claude alone, under
 `results/shas_run/decisions.json`), when it is hand-flagged there, or when detector **v15's** Stage 4j rule
 (`biblical_flag` in `src/story_detector_v15.py`) says its actors are biblical. The v15 rule is re-applied at build
 time to the actor list every run already holds, so it needs no re-run; a story with no actor list keeps v14's 4j
@@ -109,4 +109,5 @@ definite answer.
 - 2026-11-11 — the detector's flag moves from v14's name list to v15's rule (Simon's 2026-11-10 approval). On the
   site: 1,897 stories unchanged, flagged 102 → 97 — five post-biblical stories v14 mistook for biblical (Elisha
   "Man of Wings" twice, Miriam of Tarmod, the pious man and Elijah, Elijah and the starving child). Every passage
-  v15 newly flags on a shipped story was already flagged by the judges or by hand.
+  v15 newly flags on a shipped story was already flagged by the judges or by hand. The field is renamed from
+  `biblical: true` to `out_of_scope: "biblical"` (Simon, 2026-11-11): the key says excluded, the value says why.

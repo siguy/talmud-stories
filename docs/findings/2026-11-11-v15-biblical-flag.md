@@ -1,6 +1,6 @@
 # Detector v15: a biblical flag that agrees with the judges (2026-11-11)
 
-**Bird's-eye.** Biblical stories now ship on the Septimus site with a `biblical` flag, and the flag is what keeps
+**Bird's-eye.** Biblical stories now ship on the Septimus site with an `out_of_scope: "biblical"` flag, and the flag is what keeps
 them out of Jeff's scholarly catalogue (R-S1, "rabbis and post-biblical figures"). So the detector's own biblical
 filter (Stage 4j) has to *flag* accurately rather than delete. v14's 4j caught 20 of the 141 passages the judges call
 biblical. v15's rule catches 135, flags nothing Jeff calls in scope, and on the site it removes five wrong flags and
@@ -89,7 +89,8 @@ both LOW, neither on the site.
 ## 6. On the site
 
 `build_site_data.py` now reads `biblical_flag()` on each story's actor list (falling back to v14's record where a
-story has none). Rebuilt `site/data`:
+story has none), and writes the flag as `out_of_scope: "biblical"` (null when in scope; was `biblical: true`).
+Rebuilt `site/data`:
 
 - **stories: 1,897 → 1,897**, every id unchanged (the flag never narrows or promotes);
 - **flagged biblical: 102 → 97.** The five removed are the post-biblical stories in §3 that ship (Shabbat 49a,
@@ -101,7 +102,8 @@ story has none). Rebuilt `site/data`:
 
 - The "only God and the people" rule also flags timeless heavenly scenes (angels ask God about Hallel, Arakhin 10b)
   and an eschatological trial (Avodah Zarah 3a). Neither is about rabbis or post-biblical figures, so R-S1 puts them
-  outside Jeff's scope too, but "biblical" is the wrong word for them. None ships today. Whether the site should call
-  the flag `out_of_scope` instead is Simon's to decide.
+  outside Jeff's scope too, but "biblical" is the wrong word for them. None ships today. Simon's answer (2026-11-11):
+  the site field is `out_of_scope: "biblical"`, so a reason such as these can later get its own value without a
+  new key. All flags carry `"biblical"` for now.
 - v15 is adopted **for flagging only**: the runner still imports v14 (§ Outcome of
   `work/done/2026-11-11-v15-biblical-flag.md`).
