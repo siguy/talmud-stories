@@ -1,0 +1,287 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/temurah/run1.json",
+   "v14_r2": "results/v14/temurah/run2.json"
+  },
+  "spans": {
+   "v14_r1": 9,
+   "v14_r2": 9
+  },
+  "units": 9,
+  "built": "2026-11-10T06:05:17"
+ },
+ "units": [
+  {
+   "id": "Temurah 8b:9-12",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 8b",
+     9
+    ],
+    [
+     "Temurah 8b",
+     10
+    ],
+    [
+     "Temurah 8b",
+     11
+    ],
+    [
+     "Temurah 8b",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Mar Zutra visits Rav Ashi's house and engages in a debate with the household members over the legality of the firstborn animal meat they served him."
+  },
+  {
+   "id": "Temurah 14a:22-Temurah 14b:1",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 14a",
+     22
+    ],
+    [
+     "Temurah 14a",
+     23
+    ],
+    [
+     "Temurah 14b",
+     0
+    ],
+    [
+     "Temurah 14b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Dimi arrives in Eretz Yisrael, hears Rav Yirmeya teaching a tradition that resolves a difficulty held by Rav Yosef in Babylonia, and expresses a desire to send him a letter."
+  },
+  {
+   "id": "Temurah 14b:2-4",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 14b",
+     2
+    ],
+    [
+     "Temurah 14b",
+     3
+    ],
+    [
+     "Temurah 14b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Dimi's intent to write a legal letter to Rav Yosef leads to a discussion on the prohibition of writing the Oral Law, resolved by the precedent of Rabbi Yoḥanan and Reish Lakish using written Aggada books."
+  },
+  {
+   "id": "Temurah 15b:16-18",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 15b",
+     16
+    ],
+    [
+     "Temurah 15b",
+     17
+    ],
+    [
+     "Temurah 15b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A pious man is prescribed goat's milk for a heart ailment, but his friends rebuke him for keeping a goat (which grazes on others' fields), leading him to confess this as his only sin before he dies."
+  },
+  {
+   "id": "Temurah 16a:2-6",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 16a",
+     2
+    ],
+    [
+     "Temurah 16a",
+     3
+    ],
+    [
+     "Temurah 16a",
+     4
+    ],
+    [
+     "Temurah 16a",
+     5
+    ],
+    [
+     "Temurah 16a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Following the death of Moses and the loss of thousands of laws, the people demand divine restoration of the halakha, but the leaders refuse on principle, leading God to instruct Joshua to lead the nation into war to occupy their minds."
+  },
+  {
+   "id": "Temurah 16a:8-10",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 16a",
+     8
+    ],
+    [
+     "Temurah 16a",
+     9
+    ],
+    [
+     "Temurah 16a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Othniel restores forgotten laws through his intellect and marries Achsah, who then strategically petitions her father Caleb for water-rich land to support her scholar-husband."
+  },
+  {
+   "id": "Temurah 18a:11-11",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 18a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Pappeyas testifies about a specific incident where his family owned a consecrated cow, ate the mother on Passover, and later sacrificed and ate its offspring as a peace offering."
+  },
+  {
+   "id": "Temurah 18b:5-5",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 18b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Pappeyas testifies about a specific incident where he owned a cow whose offspring was sacrificed as a peace offering on a festival following the mother's sacrifice on Passover."
+  },
+  {
+   "id": "Temurah 21a:11-11",
+   "tractate": "Temurah",
+   "cells": [
+    [
+     "Temurah 21a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Ben Antigonus brought firstborn animals from Babylonia to the Temple, but the authorities refused to accept them for sacrifice."
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 12
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Bava Batra 110a:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The episode of Jonathan the priest of Micah, questioned by the Danites and later appointed by David, is a narrative about biblical characters; segment 4 is the Gemara's commentary on it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 132b:8-Bava Batra 133a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man bequeaths his property and one daughter then dies, a real event that changes the case, followed by rulings; the second case (segment 4) is a single act followed by a ruling and is not a story under R-C0's limit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 15b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita narrating Job's afflictions, blasphemy and God's response is a story about a biblical figure, not a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line report of what King Hoshea did, cited to explain the date, with nothing following; it is also about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Aggadic traditions about Abraham's imprisonment and the nations mourning his death concern a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The end of the lament of the nations' leaders at Abraham's death, part of a scene about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 74b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God commands the minister of the sea at creation, is refused, and kills him: a narrative with events and consequence, but about God and an angel at creation, not rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 122a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita describing Elazar and Joshua dividing the land by lot and Urim VeTummim is a narrative about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 91a:7-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Boaz/Ibzan made feasts, excluded Manoah, and all his children died in his lifetime: events with consequence, but about biblical characters; segments 2-3 are exegesis of Ruth.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 16a:1-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     9
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Most of the passage is biblical exegesis of Job (out of scope), but segment 9 narrates a post-biblical incident: Rav Aha bar Ya'akov taught in Paphunya and Satan came and kissed his feet, an act with a response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 121b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "A baraita listing seven people whose lives spanned history; a genealogical chain, not a narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Bava Batra 21a:12-Bava Batra 21b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Joab's slaughter, David's challenge, and Joab's confrontation with his teacher is a full story, but about biblical characters.",
+    "error": null
+   }
+  }
+ ]
+}

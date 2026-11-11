@@ -1,0 +1,329 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/keritot/run1.json",
+   "v14_r2": "results/v14/keritot/run2.json"
+  },
+  "spans": {
+   "v14_r1": 11,
+   "v14_r2": 11
+  },
+  "units": 11,
+  "built": "2026-11-10T00:06:04"
+ },
+ "units": [
+  {
+   "id": "Keritot 5b:23-25",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 5b",
+     23
+    ],
+    [
+     "Keritot 5b",
+     24
+    ],
+    [
+     "Keritot 5b",
+     25
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Aaron worries that the oil on his beard constitutes a misuse of consecrated property until a Divine Voice reassures him."
+  },
+  {
+   "id": "Keritot 7a:11-11",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 7a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava retracts his legal opinion regarding whether a sin offering atones for one who refuses atonement after seeing a baraita."
+  },
+  {
+   "id": "Keritot 8a:1-3",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 8a",
+     1
+    ],
+    [
+     "Keritot 8a",
+     2
+    ],
+    [
+     "Keritot 8a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rabbi Hoshaya leaves bar Kappara to study with Rabbi Ḥiyya and later encounters bar Kappara to ask him a legal question about a zav."
+  },
+  {
+   "id": "Keritot 8a:15-15",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 8a",
+     15
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "When the price of bird nests in Jerusalem became exorbitant, Rabban Shimon ben Gamliel swore to lower it and did so by ruling that women with multiple uncertain births only need to bring one offering."
+  },
+  {
+   "id": "Keritot 13b:13-14",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 13b",
+     13
+    ],
+    [
+     "Keritot 13b",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rav Aḥa of Huzal asks Rav Ashi to dissolve a vow, but Rav Ashi refuses to rule until the next day because he has been drinking wine, leading to a debate about the effects of dilution."
+  },
+  {
+   "id": "Keritot 15a:5-6",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 15a",
+     5
+    ],
+    [
+     "Keritot 15a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Rabbi Akiva encounters Rabban Gamliel and Rabbi Yehoshua at a meat market in Emmaus while they are shopping for a wedding feast and asks them a complex legal question about forbidden relations."
+  },
+  {
+   "id": "Keritot 15a:27-Keritot 15b:1",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 15a",
+     27
+    ],
+    [
+     "Keritot 15b",
+     0
+    ],
+    [
+     "Keritot 15b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "In the same market setting, Rabbi Akiva asks the sages about the ritual impurity of a dangling limb."
+  },
+  {
+   "id": "Keritot 18a:9-9",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 18a",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "After being silenced by Rava's legal objection, Rav Nahman realizes the answer only after Rava has already departed."
+  },
+  {
+   "id": "Keritot 25a:5-5",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 25a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rava remains silent during a debate with Rav Hamnuna but later expresses the argument he should have made."
+  },
+  {
+   "id": "Keritot 25a:12-13",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 25a",
+     12
+    ],
+    [
+     "Keritot 25a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": true,
+     "cls": "WITHHELD"
+    }
+   },
+   "summary": "Bava ben Buta swears that he would have brought a guilt offering daily if the Sages had not restricted him to cases of actual uncertainty."
+  },
+  {
+   "id": "Keritot 28a:30-Keritot 28b:4",
+   "tractate": "Keritot",
+   "cells": [
+    [
+     "Keritot 28a",
+     30
+    ],
+    [
+     "Keritot 28a",
+     31
+    ],
+    [
+     "Keritot 28b",
+     0
+    ],
+    [
+     "Keritot 28b",
+     1
+    ],
+    [
+     "Keritot 28b",
+     2
+    ],
+    [
+     "Keritot 28b",
+     3
+    ],
+    [
+     "Keritot 28b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Temple courtyard personified cries out for the removal of the corrupt sons of Eli and the installation of Yohanan ben Nedavai, who was known for his prodigious appetite for sacrificial meat."
+  }
+ ]
+}

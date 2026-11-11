@@ -1,0 +1,183 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:05:52",
+  "outcomes": {
+   "ok": 9
+  }
+ },
+ "rows": [
+  {
+   "id": "Temurah 8b:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Mar Zutra visits Rav Ashi and is served meat, leading to a conflict regarding the legality of the purchase. This interaction includes actions, dialogue with conflict, and a resolution through legal debate, fitting the definition of a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 14a:22-Temurah 14b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific encounter where Rav Dimi finds Rav Yirmeya teaching and reacts with a plan to send a letter to Rav Yosef. While it is primarily dialogue and legal correction, the specific interaction and the conflict regarding Rav Yosef's previous ruling provide enough narrative change to meet the borderline criteria.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 14b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of homiletical teaching (midrash) and a report of the habitual practice of Rabbi Yohanan and Reish Lakish used as legal evidence, which lacks a specific one-time event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 15b:16-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (a pious man identified as a rabbi) involving multiple actions, conflict with colleagues, and a deathbed resolution. It follows the 'incident plus ruling' shape and includes the opening formula as per the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 16a:2-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative with dialogue, conflict, and change (Joshua's loss of knowledge and the threat of the people), but it is about biblical figures (Moses, Joshua, Pinehas, Elazar) rather than rabbis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 16a:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving the biblical characters Othniel, Caleb, and Achsah, including actions, dialogue, and conflict. Under rule R-S1, stories about biblical figures are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 18a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (testified by Rabbi Yehoshua and Rabbi Pappeyas) that narrates a specific past event involving the ownership and consumption of a cow and its offspring. Under R-C1, the Talmud's quotation of a Mishnah story is included, and under R-C0, it describes an event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 18b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a testimony about a specific historical event (Rabbi Pappeyas's cow) that goes beyond a legal rule or custom to describe a one-time incident that happened. Although it is a Mishnah story, it is quoted here in the Talmud and thus counts as Talmudic under R-C1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Temurah 21a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident involving ben Antigonus bringing animals and being rejected, which constitutes a real event. However, it is presented as a one-event case followed immediately by a legal resolution (Rav Hisda's ruling), making it borderline under the current criteria.",
+    "error": null
+   }
+  }
+ ]
+}

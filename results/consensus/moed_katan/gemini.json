@@ -1,0 +1,1763 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:38",
+  "outcomes": {
+   "ok": 99
+  }
+ },
+ "rows": [
+  {
+   "id": "Moed Katan 3b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrated historical event (Rabban Gamliel's court voting and nullifying a decree), which qualifies as a story under R-C0. However, the subsequent segments consist of rabbinic dialogue and legal questioning, making it a borderline case where one real event is followed by discussion (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 4a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ravina and Rabba Tosefa’a) who encounter a man performing an action on the road. This incident leads to a conflict and a legal discussion, which satisfies the criteria for a story under R-C0 as it is more than a bare report and contains a narrated change or interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 4b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue regarding the interpretation of a baraita. There are no narrated events or actions beyond speech-acts, and the scholarly disagreement does not constitute the type of conflict required for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 4b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a ruling given by Rav Yehuda to a specific family, cited as a legal precedent to challenge a Mishnah. Under R-C0 and R-C5, a ruling without a narrated incident or a second action leading to a change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 4b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of three bare reports of rabbis granting legal permission to various groups, followed by a brief justification. Under R-C0 and R-C5, these are precedents or rulings rather than stories, as there is no narrated action or change beyond the act of permitting.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 5a:23-Moed Katan 5b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific student's habitual behavior (raising difficulties daily but refraining on Festivals) which leads to a specific action and change: Rabbi Yannai praising him with a biblical verse. Under R-C3, a habit that leads to a change or specific response counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 8a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure involving multiple actions (saving money, the wife giving it away, the man refraining from travel) and a causal change. Per R-B1, the opening formula is included, and per R-C0, the resulting ruling is the story's resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 9a:19-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical rabbis (studying, taking leave, and returning the next morning) which leads to a change in action where Rabbi Shimon sends his son to receive a blessing. This fits the criteria of a story about rabbis where an incident leads to further narrated actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 9b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (rabbis) where a son visits sages for a blessing, receives a cryptic response, and returns to his father for an interpretation. It contains multiple actions, dialogue with conflict (the son's distress), and a change in understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 9b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a son taking leave of a rabbi, being sent back by his father for a blessing, the interaction with the rabbi, and the subsequent dialogue with the father where the blessing is misinterpreted and then explained. This contains multiple actions and a change in the son's understanding, moving beyond mere speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 9b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual action (Rav Hisda's wife adorning herself) that serves as the frame for a specific dialogue containing conflict between Rav Huna bar Hinnana and Rav Hisda. Under R-C2 and R-C7, speech-heavy passages with conflict and a specific incident frame are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 9b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions and a clear change: Rav Beivai's treatment of his daughter leads to a successful marriage, while a neighbor's attempt to imitate the act results in a death and a subsequent accusation. It fits the criteria of a story about post-biblical figures with narrated events and consequences.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 10a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav Huna hears a man acting and responds with a curse, which constitutes a conflict and an event beyond a mere ruling. Under R-C0 and R-C7, this interaction creates enough dynamism and change to be considered a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 10b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event involving Ravina (a post-biblical figure) who delayed a business sale and realized a profit. This constitutes a story because it describes a specific incident with multiple actions and a change in outcome, rather than a mere legal hypothetical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 10b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a case of a rabbi coming before another rabbi for a ruling where the only narrated event is the act of coming and asking. Under R-C0 and R-C5, a ruling following a single event with no further action or change narrated is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 11a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the Bedita River overflowing) followed by actions (everyone trapping fish) and a rabbinic resolution (Rava's ruling), which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 11a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents (Shmuel and Rava) where a specific action (preparing fish by pressing) leads to a change/outcome (the rabbi eating it), which Jeff defines as a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 11a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of an incident where Rav was served a specific type of fish, but it lacks a continuation, conflict, or any narrated change or action following the event. Under R-C5 and the limits of R-C0, a description of what someone did or what was brought before them that leads nowhere is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 11b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures (Mar and Maryon) where an action (detaching the ox) leads to a conflict and a verbal rebuke by Rav Ashi. Under R-C0, this is a story because it describes an event that happened followed by a reaction and a justification, rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving post-biblical figures (Mar Zutra, Rav Safra, and Rav Huna) where an action (building a mansion) leads to a distinct change or reaction (the rabbis refusing to enter). Unlike a bare report of a custom, this contains multiple actions and a clear resolution/consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's ruling on a specific case without any subsequent action, change, or narrated event following the ruling. Under R-C0 and R-C5, a case where coming before a rabbi and being ruled on is the only event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a real event (Rav Huna's crop being harvested) followed by a conflict in the form of a challenge and response between rabbis. Under R-C0 and R-C7, an incident followed by a ruling or legal discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav harvesting his crop) followed by a reaction and conflict (Shmuel was dismayed), which constitutes more than a bare ruling or speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific events that happened (Rabbi Yehuda Nesia went out and drank water) followed by an emotional reaction (Rabbi Ami was dismayed), which counts as an action/change under the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a legal dictum followed by a brief speech-act (a curse). Under R-C2 and R-C5, a bare report of a rabbi's reaction or standard rabbinic dialogue without a narrated event or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav Ashi that includes multiple actions (going to cut the forest, a dialogue with conflict, and an accident) leading to a change in behavior (he ceased his work). This fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rabbi Yannai harvests his orchard, the public reacts by delaying their own harvests the following year, and Rabbi Yannai responds by declaring his orchard ownerless. This contains multiple actions and a clear change in the protagonist's behavior, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav Yosef and Abaye, where an action (bringing in beams) is followed by a dialogue that functions as a resolution or justification. Under R-C0, an incident involving a post-biblical figure that leads to a ruling or explanation counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 12b:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a hypothetical legal question ('If one planned... and he died') and the start of a standard rabbinic dialogue. There is no actual event or incident narrated, only a speech-act without conflict or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 13a:15-Moed Katan 13b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific interaction where Rava tested his students and they responded, which constitutes a speech-act with conflict (a challenge/test). Under R-C2 and R-C7 shape 1, dialogue with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 13b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's ruling followed by a standard legal objection. Under R-C0 and R-C5, a case where coming before a rabbi for a ruling is the only event, without further narrated action or change, does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 16a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a butcher and Rav Tuvi bar Mattana, followed by multiple actions (ostracism, appeasement, and a legal dilemma) and a resolution through dialogue. Under R-C0, this is a story because it describes events that happened rather than a hypothetical case, and it contains the 'conflict and implied change' required for dialogue-heavy narratives under R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 16a:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving conflict (a mocking remark), an emotional reaction (anger), and a subsequent change in status (the rabbi's rejection and the thirty-day self-admonition). This exceeds the threshold for a story as it contains multiple actions and a clear causal sequence beyond simple speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 16a:22-Moed Katan 16b:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving Rabbi Yehuda HaNasi and Rabbi Hiyya, including a decree, a violation, a conflict, and a resolution. While it begins with a general decree (habitual frame), it transitions into a one-time event with multiple actions and changes in the relationship between the characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 16b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Mar Ukva's daily custom) but transitions to a specific 'one day' event involving a conflict, a speech act, and a resulting change in behavior (the self-imposed admonition).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 16b:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct stories: segment [2] narrates a specific incident involving a woman and a scholar that leads to a courtroom ruling by Rav Nahman, while segments [3]-[4] describe a specific interaction between Zutra bar Toviyya and Rav Yehuda that results in an emotional reaction and a change in behavior.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 17a:3-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a specific Torah scholar and Rav Yehuda, featuring multiple actions, conflict, and a clear sequence of events including ostracism, deathbed dialogue, and a supernatural resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 17a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (the maidservant of Rabbi) who observes an action and responds with a speech-act that carries legal and social consequences (excommunication). Under R-C0 and R-C2, the combination of a witnessed action and a consequential response constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 17a:13-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific rabbi (Reish Lakish) and a one-time event (the orchard incident) that includes multiple actions, conflict, and a change in status (the rabbi being excommunicated by a layman). Per R-C0, the subsequent ruling in the study hall serves as the resolution to the narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 17a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story within Rav Yosef's dictum about a specific dog that ate shoes, was excommunicated, and suffered a physical change (its tail caught fire). This meets the criteria of a narrated event with a change/outcome following a rabbinic act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 17a:24-Moed Katan 17b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving a Torah scholar and Rav Yosef, where a problem (suffering from a violent man) leads to a specific action (the ritual in the cemetery) and a clear change in outcome (the jug bursting and the man dying).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 18a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions, conflict between two post-biblical figures (Shmuel and Pineḥas), and a clear causal change where a spoken curse leads to a second event and a physical response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 18a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person eyewitness account of a specific event ('I once stood before Rabbi Yoḥanan... and he cut his nails') that goes beyond a bare report of a custom. It includes multiple actions—cutting with teeth and throwing—and serves as a narrative incident from which the Gemara later derives specific rulings.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 18a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a pair of Sages came before Rabbi Yehuda HaNasi and received a ruling. Under R-C0 and R-C7 (shape 2), an incident followed by a ruling is considered borderline, as it contains a real event but the primary focus is the legal outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 18b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an eyewitness report of a specific event ('I myself saw...') involving action and change in the physical world, which Jeff has historically accepted as a story even when brief. It functions as an incident-plus-ruling/discussion shape where the narrated event serves as the basis for the subsequent rabbinic debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 18b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving Rava and a specific man, where an initial action (the man's prayer and Rava's rebuke) leads to a subsequent change in circumstances (the marriage and the man's change of heart) and a final resolution. It meets the criteria of having multiple actions and a clear change in the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 19b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of rabbis sitting and discussing a legal ruling without any further action, conflict, or change. Under R-C5 and R-C7, a description of rabbis sitting in a certain arrangement to have a discussion is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Ravina arriving at Sura) followed by a dialogue and a ruling. Under R-C7 shape 2 and R-C0, an incident followed by a ruling is borderline if it contains at least one action beyond the speech act itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific person receives news of a death and comes before a rabbi for a ruling. Under R-C0, an incident followed by a ruling counts as a story because it narrates events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabbi Tzadok and Elisha ben Avuya with multiple actions (death, informing, asking, and ruling) that lead to a change in status, fitting the definition of a story even when cited as a legal precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20a:16-Moed Katan 20b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rav and Rabbi Hiyya, featuring dialogue with conflict (evasive answers) and a clear change in state where Rabbi Hiyya realizes his relatives have died and performs an action (removing shoes) to begin mourning.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (the death of Mar Ukva's brother-in-law and his intent to mourn) followed by an action (Rav Huna entering and finding him) and a ruling that resolves the situation. This fits the criteria of an incident followed by a ruling that results in a change or interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 20b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving a post-biblical figure (Ameimar) including a death, multiple actions (rending garments twice), and a change in state when he remembers a law and stands up to perform the act again.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 21a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an embedded story introduced by the formula 'There was an incident' (מעשה), narrating a specific event (the death of Rabbi Yosei's son) followed by a specific action (entering the study hall and expounding) that serves as a precedent.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 21a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a calamity befalling Rabba bar bar Hana) followed by his internal deliberation and interactions with other rabbis. Under R-C0, this is a story because it describes an incident that happened and includes multiple actions and dialogue that lead to a resolution regarding his conduct.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 21a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Yehuda bar Ilai) with multiple actions—the death of a son, entering the study hall, and a specific whispering arrangement—that resolve a legal problem. Per R-C1 and R-B1, the Talmud's quotation of a story from a baraita is included, along with its introductory formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 21b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (Rabbi Akiva) with specific actions—the death of his sons, the gathering of the people, and his standing on a bench to address them—which goes beyond a bare report or legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 22a:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: an anonymous person expresses a desire to travel, actually travels to Eretz Yisrael, finds the rabbi, and engages in a dialogue that results in a change of understanding regarding a legal ruling. This contains multiple actions and a clear narrative arc beyond simple legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 22b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving post-biblical figures with multiple actions (wishing to remove, another wishing to join, and the first refraining) that lead to a change in outcome, satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 22b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the death of the Nasi) followed by a specific action and instruction by Rav Hisda, meeting the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 23a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Yosef the Priest that includes multiple actions (speaking at the cemetery, marrying, and refraining from relations) and a change in status. While it serves as a precedent, it contains the 'another action or change' required by R-C0 beyond a simple ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 23a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of the personal practices of Abaye and Rava used as legal precedents. Under rule R-C5, a description of what a rabbi did that lacks a continuation, conflict, or a one-time event following the habit is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event ('an incident with one who...') that follows a general rule. It narrates a specific action (engaging in relations) and a subsequent change or consequence (pigs dragging the corpse), meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct one-time events: Shmuel receiving news of Rav's death and rending his garments, and Rabbi Yoḥanan doing the same for Rabbi Ḥanina. These are narrated incidents involving specific actions and emotional reactions, not merely legal hypotheticals or bare reports of practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident where Abaye finds Rav Yosef acting in a specific way (walking with a scarf), followed by a dialogue and a ruling. Under R-C7 shape 2 and R-C0, this is borderline because it contains one real event followed by a ruling/discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (teaching at the Nasi's house) followed by an emotional reaction and conflict (Rabbi Ami became angry and rebuked him). Under R-C0 and R-C2, an emotional reaction and conflict in dialogue move a speech-act toward a story, but since it is primarily a report of a teaching and a verbal retort, it fits the borderline shape described in R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (teaching in the pavilion) followed by an emotional reaction (becoming angry) and dialogue. While it is primarily speech-based, the conflict and the specific setting make it a borderline story under the criteria for speech with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi granting permission to another to teach and the subsequent legal dictum. Under R-C2 and R-C5, a report of teaching or a speech-act without a following event or conflict is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 24b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Ravina arriving at Sura) followed by a dialogue between rabbis. Under R-C2 and R-C7 shape 1, dialogue with a specific setting and interaction is considered borderline rather than a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event (the death of Rav Safra) followed by a series of actions and a conflict between Abaye and the Sages regarding the rending of garments. It meets the criteria for a story because it contains multiple actions, conflict, and a change in the Sages' intentions based on Abaye's intervention.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25a:8-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of concrete events following the death of Rav Huna, including a conflict over burial practices and a physical interaction during a eulogy. It meets the criteria of R-C0 as it contains multiple actions and changes beyond mere legal rulings, and includes a 'one-time event' following a custom as per R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25a:14-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events regarding the burial of Rav Huna in Eretz Yisrael, including dialogue with conflict/misunderstanding, specific actions by rabbis, and a supernatural event in the burial cave. While segments 4 and 5 contain legal discussion and commentary, they are embedded within the narrative of the burial and explain the actions of the characters (R-C0, R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25a:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the death and burial of Rav Hisda) involving multiple actions and interactions between the Sages, where a proposed action is met with a response and a ruling that resolves the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25a:23-Moed Katan 25b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabba bar Huna and Rav Hamnuna) with multiple actions, a supernatural conflict at the bridge, and a clear change/resolution involving the Arab's punishment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage records a specific event (the death of Ravina) and a subsequent action (the eulogizer speaking), but it consists almost entirely of a speech-act. Under R-C2 and R-C7, speech with a minimal event frame is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains dialogue with conflict followed by a concrete event and change: Rav Ashi is offended, the eulogizers' feet are physically transformed, and they are prevented from attending the funeral. This satisfies the requirement for actions and change beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rava came to the Tigris and commanded bar Avin to act, followed by bar Avin's response and prayer. This contains multiple actions and a specific incident frame beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events (praying for a child, the birth, and the father's death) that lead to a specific change and resolution. It fits the definition of a story as it describes an incident that happened to a post-biblical figure with multiple actions and a clear emotional and narrative arc.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (the death of Rabbi Yohanan) followed by a distinct action (Rabbi Yitzhak ben Elazar delivering a eulogy). Under R-C0, this constitutes a narrated event rather than a hypothetical case, and the eulogy provides the 'action beyond speech' required to move it past a mere dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rabbi Ami sitting for seven and thirty days) followed by a reaction and a ruling from Rabbi Abba. This meets the criteria of an incident that leads to a change or response, distinguishing it from a bare report or a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 25b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the death of Rabbi Zeira) followed by a distinct action (the eulogizer delivering a specific poetic lament). This contains more than just a ruling or a bare report, as the speech-act occurs within a narrated historical incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 26a:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rabbi Abba and the ostrich) that includes multiple actions and a change in state. It also contains an embedded report of a second incident involving a ruling, which qualifies as a story under the criteria that an incident followed by a ruling counts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 26b:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving specific rabbis (Rava and Abba bar Marta) with multiple actions (entering, standing the bed, overturning the bed) and a conflict expressed through Rava's rebuke.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the death of Rabban Gamliel) followed by actions and dialogue between rabbis and the household. Under R-C0, this is a story because it describes an incident that happened rather than a hypothetical case, and it includes multiple actions and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a speech-act (a definition of a term) without conflict, action, or change. Under R-C2 and R-C5, a bare report of a sage's statement or presence in a location is standard rabbinic dialogue and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27a:21-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a series of historical customs and the subsequent institutional changes made by the Sages to protect the honor of the poor. Under R-C3 and R-C5, these are habitual frames or bare reports of communal practice that do not narrate a specific one-time event or incident involving individual characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a description of a habitual custom (expensive burials) but transitions into a specific one-time event where Rabban Gamliel acted to change that custom. This fits the rule that a story starts at a custom but centers on the action and change that follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific incident where Rav Hamnuna arrives in a town, takes an action (excommunication), and then changes his ruling based on new information. It meets the criteria of having multiple actions and a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 27b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about a woman and Rav Huna with multiple actions, conflict, and a clear causal change (the deaths of the sons and the woman). Although it is embedded within a dictum by Rav Yehuda, the incident itself is a one-time event that illustrates the teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Yosef turning sixty and making a holiday) followed by a dialogue with Abaye that includes conflict and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Rav Huna's sudden death) followed by an emotional reaction from the Sages and a resolution/teaching that changes the interpretation of the event. This meets the criteria of an incident that leads to a change or response beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple actions and a change of state: a deathbed interaction followed by a post-mortem appearance in a dream. It meets the criteria of a one-time event with causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of real events involving post-biblical figures: a deathbed interaction followed by a post-mortem appearance in a dream. This constitutes more than a bare report or speech-act, as it includes a change of state (death) and a subsequent supernatural action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi and a post-biblical figure (the Angel of Death) where an action (eating teruma) and a dialogue with conflict lead to a change in outcome (the moment passed and he lived).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a post-biblical figure (Rav Sheshet) where an action occurs (the Angel of Death appears) followed by a dialogue that results in a change of location for the resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rav Ashi) and the Angel of Death. It contains multiple actions and a clear change/resolution: the appearance in the market, the granting of a thirty-day reprieve, the return on the thirtieth day, and the final explanation for the necessity of his death.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rav Hisda) and the Angel of Death, featuring multiple actions (sitting on a cedar, the cedar cracking) and a clear change in state (the rabbi becoming silent, allowing the angel to take him).",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Hiyya) involving a one-time event ('one day') with multiple actions, conflict, and a clear change in outcome (his death). It meets the criteria of R-C0 and R-C3 as a narrated event that actually happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "Moed Katan 28b:10-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     7,
+     8,
+     10
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical rabbis (Rabbi Yishmael and the four Elders) visiting a house of mourning. It includes specific actions, dialogue, and a sequence of events, starting with the formula 'The Sages taught'. Segments 6 and 9 are excluded as they are Gemara commentary or biblical citations embedded within the rabbinic narrative.",
+    "error": null
+   }
+  }
+ ]
+}

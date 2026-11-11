@@ -121,6 +121,24 @@ def test_g1_empty_english_is_counted_not_failed(tmp_path):
     assert r.status == 'green' and r.measured['empty_english'] == 1 and any('empty English' in n for n in r.notes)
 
 
+def test_g1_amud_blank_in_source_is_noted_not_red(tmp_path):
+    """Nazir 33b (2026-11-09): Sefaria's own index counts 0 segments there. Its absence is
+    expected and named; a real missing page beside it is still red."""
+    def m(f):
+        d = f['results/sefaria/tamid.json']
+        gone = d['pages'].pop(2)['ref']
+        d['sefaria_shape'][gone] = 0
+    r = C.g1_text(build(tmp_path, m))
+    assert r.status == 'green', r.failures
+    assert any('blank in the source' in n for n in r.notes)
+
+    def m2(f):
+        m(f)
+        f['results/sefaria/tamid.json']['pages'].pop(4)
+    r = C.g1_text(build(tmp_path / 'b', m2))
+    assert r.status == 'red' and any('differ from the Sefaria index' in x for x in r.failures)
+
+
 # ---- G2
 def test_g2_all_failed_page_and_unlabelled_page_are_red(tmp_path):
     def m(f):
@@ -231,6 +249,17 @@ def test_g5_density_outside_the_range_is_amber_not_red(tmp_path):
     assert r.status == 'amber'
 
 
+def test_g5_range_comes_from_the_baselines_and_another_tractate_cannot_move_it(tmp_path):
+    """2026-11-10: Keritot (0.30/page) joining the run widened the range and unflagged Zevachim."""
+    def m(f, sparse_neighbour):
+        f['results/v14/berakhot/run1.json'] = _run([f'Berakhot {n}a' for n in range(2, 8)])
+        if sparse_neighbour:
+            f['results/v14/keritot/run1.json'] = _run([f'Keritot {n}a' for n in range(2, 30)])
+    a = C.g5_density(build(tmp_path / 'a', lambda f: m(f, False)))
+    b = C.g5_density(build(tmp_path / 'b', lambda f: m(f, True)))
+    assert a.measured['range'] == b.measured['range'] and set(b.measured['compared_with']) == {'berakhot'}
+
+
 def test_g5_without_the_judge_says_pending_in_a_note(tmp_path):
     P = build(tmp_path)
     (Path(P.consensus) / 'gemini.json').unlink()
@@ -272,6 +301,50 @@ def test_g6_gemini_failed_row_missing_unit_and_wrong_prompt_are_red(tmp_path):
     def m3(f):
         f['results/consensus/tamid/gemini.json']['meta']['prompt_sha'] = 'deadbeef0000'
     assert C.g6_judge(build(tmp_path / 'c', m3), 'gemini').status == 'red'
+
+
+def _rulings(f, g4=(), alone=None):
+    f['results/shas_run/decisions.json'] = {'g4_accepted': {'tractates': list(g4)},
+                                            'claude_alone': {'units': alone or {}}}
+
+
+def test_g4_below_threshold_is_amber_only_for_a_tractate_simon_ruled_on(tmp_path):
+    refs = [f'Tamid {n}a' for n in range(25, 35)]
+
+    def m(f, ruled):
+        f['results/sefaria/tamid.json']['pages'] = [_page(r) for r in refs]
+        a, b = _run(refs), _run(refs)
+        for run in (a, b):
+            for p in run['pages']:
+                p['stories'] = [_story(0, 0)]
+                p.pop('skipped_by_triage', None)
+        b['pages'][0]['stories'] = [_story(2, 2)]
+        f['results/v14/tamid/run1.json'], f['results/v14/tamid/run2.json'] = a, b
+        _rulings(f, g4=['tamid'] if ruled else ['sotah'])
+    assert C.g4_pair(build(tmp_path / 'no', lambda f: m(f, False))).status == 'red'
+    r = C.g4_pair(build(tmp_path / 'yes', lambda f: m(f, True)))
+    assert r.status == 'amber' and any('ruling' in w for w in r.warnings)
+
+
+def test_g4_ruling_never_excuses_different_code(tmp_path):
+    def m(f):
+        f['results/v14/tamid/run2.json']['run_meta']['detector_sha1'] = 'other'
+        _rulings(f, g4=['tamid'])
+    assert C.g4_pair(build(tmp_path, m)).status == 'red'
+
+
+def test_g6_invalid_gemini_row_is_amber_only_when_ruled_and_then_claude_must_answer_it(tmp_path):
+    uid = 'Tamid 26a:0-1'
+
+    def m(f, ruled, claude_ok=True):
+        f['results/consensus/tamid/gemini.json']['rows'][1]['answer'] = {'outcome': 'invalid', 'verdict': None}
+        if not claude_ok:
+            f['results/consensus/tamid/claude.json']['rows'].pop(1)
+        _rulings(f, alone={'tamid': [uid]} if ruled else {})
+    assert C.g6_judge(build(tmp_path / 'a', lambda f: m(f, False)), 'gemini').status == 'red'
+    assert C.g6_judge(build(tmp_path / 'b', lambda f: m(f, True)), 'gemini').status == 'amber'
+    assert C.g6_judge(build(tmp_path / 'c', lambda f: m(f, True)), 'claude').status == 'green'
+    assert C.g6_judge(build(tmp_path / 'd', lambda f: m(f, True, claude_ok=False)), 'claude').status == 'red'
 
 
 # ---- the table

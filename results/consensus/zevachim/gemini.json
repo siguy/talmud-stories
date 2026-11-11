@@ -1,0 +1,829 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T22:39:20",
+  "outcomes": {
+   "ok": 46
+  }
+ },
+ "rows": [
+  {
+   "id": "Zevachim 2b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and speech-acts, specifically Ravina reporting a legal teaching by Rava. There is no conflict or event beyond the speech itself, which R-C2 and R-C7 define as not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 5a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a scholarly dialogue, but it includes a physical action (Reish Lakish lying on his stomach) and a sharp interpersonal conflict with a retort, which fits the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 10a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a standard legal dispute (itmar) and a retraction based on logical inference rather than a narrated event or incident. Under R-C0 and R-C2, scholarly back-and-forth and legal rulings without a preceding action do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 11b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a Mishnah story (R-C1) that alludes to a historical event—the installation of Rabbi Elazar ben Azarya—as a chronological frame for a legal tradition. Under R-C6 and R-C7, an incident that is only alluded to or serves as a frame for a ruling is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 12b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where an elder provides a scholarly cross-reference to Rabbi Yirmeya; there is no conflict, action, or change narrated beyond the dialogue itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 13a:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Akiva and Rabbi Tarfon with significant emotional conflict and a dramatic resolution. While it is primarily speech-based, Rabbi Tarfon's oath and his high-stakes praise of Akiva create the 'implied change' and 'conflict' necessary for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 15a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes rabbis arriving from a study hall and engaging in standard rabbinic dialogue/scholarly back-and-forth. Under R-C2 and R-C7, speech-acts without a narrated event or conflict beyond academic disagreement do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 18b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rav Huna arriving at an inn) followed by a dialogue involving a contradiction and a retort. Under R-C2 and R-C7, speech-heavy interactions with conflict or an initial action are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 19a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving post-biblical figures (Huna bar Natan and King Izgadar) with multiple actions—the belt being raised, the king lowering it, and the subsequent interaction with Ameimar—which fulfills the requirement for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 19a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal dilemma coming before a rabbi who then issues a ruling. Under R-C0 and R-C7, a case where coming before a rabbi is the only event and is followed only by a ruling or speech-act is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 19b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an emotional reaction ('face lit up') which counts as an event/action under R-C0, followed by a dialogue with conflict/rebuke. Per R-C2 and R-C7, a passage that is mainly speech but contains a real event or emotional change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 22b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific event where Reish Lakish 'shouted' or addressed a challenge to the Elders of the South, which constitutes a speech-act with conflict. Under R-C2 and R-C7, speech with conflict but no further narrated action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 25b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with a sharp conflict (the use of the insult 'imbecile'), which qualifies as borderline under the rule that speech with conflict and implied change is a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 30a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and making a statement about a legal position. Under R-C2 and R-C7, speech-acts without conflict or a following event do not constitute a story, but are considered standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 30b:8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between rabbis (Levi, Rabbi, and R. Shimon) involving a legal dilemma and a sharp retort. While it is primarily speech-based, it contains conflict and an interaction between specific post-biblical figures, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 38a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a physical demonstration by Rav Yehuda to explain a term, which is a speech-act or teaching gesture rather than a narrated event or incident that leads to change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 44a:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (a report of a statement and a rabbi's reaction) without any narrated action or change. Under R-C2 and R-C7, standard rabbinic dialogue or a sharp retort in a scholarly context does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 54b:2-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with actions, conflict, and change (David and Samuel searching for the Temple site, consulting the Book of Joshua, and deciding on a location). However, it is about biblical figures rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 57a:5-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a courtroom/academy drama featuring multiple post-biblical figures (Rabbi Tarfon, Rabbi Yosei HaGelili, Rabbi Akiva, and Rabbi Yishmael) with significant actions beyond speech, such as a student's first arrival, Akiva 'jumping' in, and Tarfon 'leaving'. The passage contains conflict, change in participants, and a resolution, meeting the criteria for a full story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 58a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: Rabbi Zeira expresses doubt, goes out to investigate, and successfully discovers a source. This constitutes a narrated action and change beyond mere speech, fitting the definition of a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 59a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Kahana traveled to Eretz Yisrael and discovered the specific verse that his teacher, Rav, had forgotten. This constitutes a narrated incident with a change (the recovery of lost knowledge) rather than a mere legal dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 60b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific event (Ravin traveling and stating a law) followed by a dialogue with significant conflict (the 'foolish Babylonians' rebuke). Under R-C2 and R-C7 shape 1, speech with conflict and a minimal event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 61b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a change in legal interpretation and architectural practice regarding the altar, but it is framed as a report of what 'they held' and 'they expanded' rather than a specific narrative event. Under R-C0 and R-C5, a report of a practice or a legal conclusion without a specific incident or change involving characters does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 62a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('On that day') involving the damaging of the altar and the subsequent action taken to repair it with salt. This constitutes a story under R-C0 as it describes an event that happened with multiple actions and a resolution, rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 62b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rabbi Tarfon and his nephews, containing action (sitting, speaking a deliberate error) and a resolution (the nephews' correction and the rabbi's retort). It goes beyond a bare report or standard dialogue by including a pedagogical 'trap' and a resulting conflict/change in the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 74a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where one rabbi reports a ruling to another and receives a legal rebuttal. Under R-C2 and R-C0, standard rabbinic dialogue or a ruling without a narrated action or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 76a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a student coming before a rabbi to discuss a legal objection, which is standard rabbinic dialogue. Under R-C2 and R-C7, speech-acts and scholarly back-and-forth without a distinct event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 80a:0-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a Mishnah describing hypothetical legal cases followed by a standard rabbinic dialogue between Rabbi Eliezer and Rabbi Yehoshua. There are no narrated events or actions that actually happened, only speech-acts and theoretical debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 81b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, including a report of what is said in Eretz Yisrael and subsequent scholarly challenges between Abaye, Rava Tosfa’a, and Ravina. Under R-C2 and R-C7, speech-acts and ordinary scholarly back-and-forth without a narrated event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 92a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (a request to gather ten men) and a legal dictum. While it lacks a narrated change or subsequent action, the specific request for a public assembly implies a degree of conflict or exceptionality in the dissemination of the ruling, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 94a:9-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Rav Hiyya bar Ashi standing before Rav and washing his shoes) cited as a precedent. Under R-C3 and R-C5, a habit that does not lead to a specific one-time event or change is generally not a story, but R-C7 shape 2 and 3 allow for borderline status when there is a real event (the washing) followed by a legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 95b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain oven...') followed by a rabbi's ruling. Under R-C0, this is considered a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 96b:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time meeting ('One day') between two rabbis that follows a habitual frame. It contains significant conflict, dialogue, and a series of actions (leaving a teacher, meeting, and a challenging intellectual exchange) that go beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 99b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a matter 'circulating' and coming before a rabbi, but the only action that follows is a speech-act (a scholarly question and teaching). Under R-C0 and R-C7, a case where coming before a rabbi is the only event and results only in a ruling or discussion without further narrated action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 100a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Yosef the Priest with multiple actions (wife died, he refused to become impure, his brothers voted and forced him) and a clear change in outcome. It is introduced by a formula (Ma'aseh b...) and describes a specific event that happened rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 102b:8-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a priest who immersed that day coming to court/Temple to demand his share, followed by a detailed dialogue of conflict and a final resolution where he leaves in disappointment. While it contains legal argumentation, the framing of the 'bathroom' incident and the descriptive ending of the three priests walking away satisfy the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 105b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with a physical action ('Do not sit down') and a sense of conflict or urgency in the demand for a ruling. Under R-C2 and R-C7, speech with conflict and a minor physical event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 108b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a standard rabbinic dialogue citing a biblical verse as a legal proof-text; it contains no narrative action or post-biblical events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 113a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Once, human bones were found') followed by a public action and conflict ('Rabbi Yehoshua stood upon his feet and said'). This contains more than just speech, as it describes a discovery and a physical reaction in a courtroom-like setting.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 113b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific eyewitness event ('I have seen...') involving multiple actions and a physical change in the world (the animal casting feces and damming the Jordan). This exceeds a bare report or legal case and constitutes a story under the rule that an event that happened counts as one.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 115b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard rabbinic dialogue where one rabbi sits before another and discusses the interpretation of a verse and a Mishnah. Under R-C2 and R-C7, scholarly back-and-forth and raising contradictions are considered speech-acts of legal discussion rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 115b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving events, dialogue, and emotional change, but the characters (Moses, Aaron, and the sons of Aaron) are biblical figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 116a:21-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving the kings of the nations and Balaam reacting to the giving of the Torah, but it is an expansion of a biblical episode involving biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 116b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Ifera Hurmiz and Rava) where an action (sending an offering) leads to further actions and instructions. It follows the 'incident plus ruling/instruction' shape defined as a story in R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 118a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and scholarly back-and-forth regarding the wording of a baraita. Under R-C2 and R-C7, speech-acts without a narrated event or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Zevachim 118b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Abaye and Rav Yosef involving conflict (a sharp rebuke/insult) and a challenge to a teaching, which fits the criteria for a borderline story based on speech with conflict.",
+    "error": null
+   }
+  }
+ ]
+}

@@ -1,0 +1,211 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 11
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Pesachim 118a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Adam weeps at God's decree, protests, and is comforted: a small aggadic narrative with emotion and change, but about a biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God negotiates with the angel of the sea, who then spews out the Egyptians and Israel sees them: a narrative with action and outcome, but a biblical episode retold.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 119b:2-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The eschatological feast where the cup passes from Abraham to David is a narrative scene, but its actors are biblical figures; segment 2 is a halakhic baraita about hallel and not part of it.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118a:19-Pesachim 118b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Gabriel and Yurkamo before God over Abraham's and Hananiah-Mishael-Azariah's furnaces, with God's decision and Gabriel's descent: a narrative about biblical figures and angels.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 94a:12-Pesachim 94b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Nebuchadnezzar's boast and the Divine Voice's rebuke is a speech exchange with conflict about a biblical figure, cited as a cosmological proof; at most a borderline story and out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 87a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "God and Hosea's exchange leading to the command to marry a harlot is a narrative about a biblical prophet.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 54a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Adam rubbing two stones to make fire and mating animals to produce a mule narrates events, but about the first man, a biblical figure; the surrounding material is cosmological discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 87b:2-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Hosea is rebuked, realizes his sin, prays and annuls the decree: a full narrative with change, but about a biblical prophet; segment 2 is only the verse quotation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 56a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita listing six acts of King Hezekiah and whether the Sages agreed is a catalogue of reports with no narrative continuation, and in any case about a biblical king.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 118b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Sisera's army is struck by the stars and swept away by the Kishon, after which the fish praise God: a narrative of a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "Pesachim 56a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Jacob loses the Divine Presence, fears for his sons, is reassured by their Shema and responds in praise: a narrative with change, but about biblical figures.",
+    "error": null
+   }
+  }
+ ]
+}

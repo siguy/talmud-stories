@@ -1,0 +1,1846 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-09T23:51:27",
+  "outcomes": {
+   "ok": 104
+  }
+ },
+ "rows": [
+  {
+   "id": "Niddah 4b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a hypothetical legal case used to illustrate a rule, rather than a report of an event that actually happened. According to R-C0, legal problems that are hypothetical do not count as stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 5b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Avimi coming from Bei Hozai and bringing a baraita) which serves as a challenge to a legal ruling. Under R-C7 shape 2, an incident followed by a legal discussion or ruling is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 6a:11-Niddah 6b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident where Rabbi Yehuda HaNasi performed an action, realized a conflict, and responded with a specific ruling. Per R-C0, an incident followed by a ruling counts as a story, and per R-B1, the opening formula is included; however, segment 5 and the following text constitute the Gemara's commentary and analysis of the story, which are excluded under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 6b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (Rabban Gamliel's maidservant) where a specific event occurs (finding impurity) followed by an interaction and a change in the rabbi's ruling based on the details of the event. It follows the R-C0 criteria for a story where an incident is followed by a ruling and contains multiple actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 6b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure (Rabban Gamliel's maidservant) that includes multiple actions (sealing barrels, washing, examining, finding impurity) and a dialogue with a rabbi that results in a change of ruling. Per R-C3, the habitual frame of sealing barrels leads into a specific one-time event of finding impurity and seeking a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 7b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict between Rabbi Eliezer and Rabbi Yehoshua, followed by a specific historical change: the community's shift in practice after Rabbi Eliezer's death. This meets the requirement for a story as it narrates a sequence of events and a change in status beyond a simple legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 8a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a legal testimony listing precedents and practices. While it mentions a specific event (a rooster being stoned), it is cited as a legal fact or ruling without any narrated action, change, or continuation beyond the report itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 8b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and speech-acts, specifically a question about the identity of the 'Rabbis' in a Mishnah and a report of Rabbi Yohanan's view provided by an elder. There are no narrated actions or events beyond this scholarly exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 9a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal inquiry and a scholarly response (standard rabbinic dialogue) without any narrated action or change. Under R-C2 and R-C7, speech-acts alone without conflict or an accompanying event do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 9b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a girl in Hitlo who stopped menstruating, followed by her coming before the Sages and their subsequent ruling. This fits the criteria of an event followed by a ruling, and includes the opening formula as required by the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 9b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-B1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident where Rabbi Yehuda HaNasi acts (rules) and subsequently experiences a change in state (remembering/regretting), followed by a second action (his statement justifying the ruling). This meets the requirement for at least two actions and a change, distinguishing it from a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 10b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a speech-act (stating a ruling) used to establish the attribution of a legal tradition. Under R-C2 and R-C5, a report of what someone said or did that leads only to a legal discussion without further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 10b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and a correction of a tanna's recitation. There are no narrated events or actions beyond speech-acts, and the scholarly back-and-forth does not constitute the type of conflict required for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 12b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of Rav Kahana asking the wives of the Sages about their husbands' conduct. While it is primarily a dialogue/inquiry about practice, it records a specific action (asking the household members) and their response, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 13a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event that happened to Rav Yehuda and Shmuel while standing on a roof, including a specific dialogue and a resulting instruction. Under R-C0, it is a story because it describes a real incident involving post-biblical figures rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 13b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event about a specific deaf woman in Rabbi's neighborhood who performed actions (examining herself and others) that serve as a counter-example to a legal assumption. Under R-C0 and R-C3, this is a story because it describes a real-world incident/person rather than a hypothetical case, and it is introduced by a formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 14b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a recommendation, a meeting, a test of character, and a resulting conflict. It goes beyond standard rabbinic dialogue by including actions (coming before the rabbi) and a distinct emotional/interpersonal conflict where one rabbi rebukes the other's judgment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 14b:23-Niddah 15a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Elazar and the Sages in Usha involving a specific inquiry and a response. While it is primarily composed of speech acts, it describes a historical interaction with conflict/disagreement regarding Rabbi Akiva's view, fitting the borderline criteria for speech-based narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 15b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a maidservant and a priest that leads to a ruling by the Sages. Under rule R-C0, an incident followed by a ruling counts as a story, and R-C1 allows for the inclusion of such stories when quoted in the Talmud.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 16b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech acts (a ruling and a dialogue), but it contains conflict between the rabbi and his students and an implied change in their perspective, which fits the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 17b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative frame where Rabba bar Rav Huna finds scholars learning and then brings a question to his father. While it involves conflict and a ruling, it is primarily composed of speech acts and legal discussion, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 19b:20-Niddah 20a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of what Rabbi Meir and Rabbi did (attributing stains to eye salve or sap) cited as a precedent within a legal discussion. Under R-C5, such reports of a single act that lead nowhere beyond the ruling are not considered stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving rabbis at a bloodletter, featuring multiple actions (removing blood, observing it) and a change in the blood's appearance that leads to a realization and a personal resolution by Rav Ashi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event where Ulla identifies a specific color and an action follows (the tearing of the garment and the payment of 400 dinars), satisfying the requirement for narrated change and action beyond a mere ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20a:25-Niddah 20b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a courtroom drama where people come before a rabbi (R-C0) and a conflict involving a curse (R-C2), but it is primarily composed of speech-acts and descriptions of habitual practices rather than a single narrated event with a clear change in outcome (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Ulla arrived in Pumbedita and blood was brought before him, but the resolution is a speech-act (a refusal to rule) rather than a change in outcome. Under R-C7 shape 2, an incident followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a woman bringing blood to a rabbi, followed by a series of actions: the rabbi smelling the blood, a ruling, a second rabbi following the woman, and her confirmation of the first rabbi's insight. This contains multiple actions and a clear change/resolution beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-event narrative involving post-biblical figures (Ifera Hurmiz and Rava) with a clear sequence of action, conflict (the son's skepticism), and a resolution involving a change in the woman's perception of the rabbis' wisdom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20b:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific incident involving Yalta and two rabbis, containing multiple actions (bringing blood, ruling, speaking, and changing a ruling) and conflict. Under R-C0, a ruling that follows an incident is a story, especially when there is 'dynamism' or change, as seen here when the second rabbi changes his ruling based on Yalta's testimony.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 20b:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific sequence of events involving Rabbi Yehuda HaNasi examining blood, changing his mind, and expressing an emotional reaction ('Woe is me'), which satisfies the criteria for a story. Segment [3] is excluded as it is the Gemara's commentary and legal analysis of the incident, which falls under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 21a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and citing a baraita to challenge a legal position. This is a report of a speech-act used for scholarly debate without a narrated event or change, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 21b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and citing a baraita as part of a legal challenge; this is standard rabbinic dialogue and lacks the actions or change necessary for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 22b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving post-biblical figures (Rabbi Tzadok and the Sages) where a specific event—a woman discharging an object—leads to a series of actions (consulting doctors) and a ruling. Per R-B1, the opening formula identifying the source and the father's role is included as part of the narrative frame.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 24a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where the sons of Rabbi Hiyya traveled, returned, and reported a ruling they made, which their father then corrected. This contains multiple actions and a change in the legal status of the woman involved, satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 24b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-stage narrative involving an initial event (the discharge), a ruling, a conflict (Rabban Gamliel summoning the nephew), and a resolution through a chance encounter that causes a change in the protagonist's memory. It contains multiple actions and a clear causal sequence beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 24b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Abba Shaul used to do and observe as a gravedigger; it describes a habitual state or practice that leads to no specific event, change, or continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 24b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event ('Once I ran after a deer') that follows a habitual frame ('I used to be a gravedigger'), which satisfies R-C3. It narrates specific actions and a change in understanding through the interaction with the Sages, meeting the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 24b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person narrative about a post-biblical figure (Abba Shaul) experiencing a specific one-time event ('Once a burial cave opened up'). Although it mentions a biblical character (Absalom), the story is about the rabbi's experience and interaction with the Sages, placing it in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 25b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific incident brought before a rabbi. It contains multiple actions (bringing the sac, calculating the days, binding the husband) and a clear change/resolution (the husband's confession).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 25b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical incident where Sages 'wished' to rule a certain way and Rabbi Yannai intervened with a rebuke. While it consists primarily of a speech-act and a ruling, the conflict between the Sages and Rabbi Yannai and the implied change in the legal outcome make it a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 26b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving rabbis sitting together, a character approaching, and a dialogue that includes conflict (the mocking of Rav Yosef) and an emotional reaction (the harsh look at Rav Yehuda). This contains multiple actions and a change in interpersonal dynamics, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 27a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue and a reaction (laughing) which constitutes conflict, but lacks significant physical action or change. Under R-C2 and R-C7 shape 1, speech with conflict and minimal events is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 27a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific event where Rabba encountered the Sages in the study hall and engaged in a debate with them. While it is primarily a speech-act (standard rabbinic dialogue), the framing of 'I found them sitting and saying' followed by a retort provides the minimal action and conflict required for a borderline classification.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 27b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where an elder explains a legal reason to Rabbi Ami; there is no action, conflict, or change narrated beyond the dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 29a:24-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a report of a rabbi raising a legal objection and a scholar's admission of ignorance regarding its details; this is standard rabbinic dialogue and lacks any narrated action or event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 30b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Cleopatra and Rabbi Yishmael) with multiple actions—sentencing, experimentation, and discovery—followed by a dialogue and conflict. It fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 30b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a post-biblical figure (Cleopatra) and her interaction with the Rabbis. It contains multiple actions (sentencing, experimenting, finding results) and a conflict/response from the Rabbis, meeting the criteria for a narrated event rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 31a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures (two merchants) where a physical action (a thorn penetrating) leads to an emotional reaction and a change in perspective following a later event (the ship sinking). Although it serves as an illustration of a verse, it contains multiple actions and a clear causal change, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 31a:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving the blinding of Balaam as a result of his speech, but since it concerns a biblical character rather than a rabbi or post-biblical figure, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 31b:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, specifically a series of questions and answers regarding the reasons for Torah laws. Under R-C2 and R-C7, speech-acts without a narrated event or action do not constitute a story, and ordinary scholarly back-and-forth is not considered the type of conflict required for a borderline verdict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 31b:11-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue, specifically a series of questions and answers regarding legal and theological reasons for various phenomena. Under R-C2 and R-C7, speech alone without conflict or a narrated event does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 32a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains three distinct incidents introduced by opening formulae that describe specific events (immersing a baby girl) that actually happened in specific locations. These are not hypothetical legal cases but narrated actions used as evidence of a phenomenon.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 33b:5-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving travel, a meeting with a Torah scholar, a hospitality act (slaughtering a bull), a scholarly conflict, and a resolution involving a third party. It contains multiple actions and a change in the protagonist's state (Rav Pappa's embarrassment and subsequent consultation with Rav Shimi bar Ashi).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 33b:17-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time incident involving a High Priest and a Sadducee, including physical actions, an emotional reaction ('his face turned green'), and a resolution through dialogue. It also includes a second brief narrative by Rabbi Yosei about a specific woman in his neighborhood who died.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 36a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a rabbi visiting a location and delivering a ruling. Under R-C2 and R-C7, teaching and speech-acts without conflict or a subsequent event do not constitute a story, and R-C5 excludes bare reports of what a rabbi did that lead to no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 36b:21-Niddah 37a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple post-biblical figures (Rav, Rav Asi, and Sheila bar Avina) with a clear sequence of events: a deathbed instruction, a linguistic misunderstanding leading to excommunication, a verbal confrontation, and a supernatural resolution following the deaths of the protagonists.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 39a:15-Niddah 39b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Rav Pappa and Rav Yehuda of Diskarta involving a question and a notable silence (conflict/reaction), which fits the borderline shape of 'mainly speech, but something happens'. The subsequent segments [4-6] are excluded as they constitute the Gemara's legal analysis and commentary on the preceding interaction (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 42a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of actions where a character travels between multiple rabbis (Abaye, Rava, Rav Yosef) and returns to the first, creating a 'courtroom drama' or interaction with clear conflict and a sharp retort ('spewing the same saliva'). This sequence of events and the resulting emotional/verbal conflict move it beyond a bare ruling into a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 42a:18-Niddah 42b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict and a physical action (Rabbi Yirmeya going to the study hall to ask Rabbi Avin), but it transitions into a standard legal discussion (segments 4-5) which is not part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 42b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific man coming before Rava, followed by Rava's suspicion, pursuit of the man, and a subsequent dialogue that reveals a specific incident. Under R-C0, the combination of the man's actions and Rava's response constitutes a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 43b:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard scholarly inquiry where the Sages asked reciters of traditions for clarification. Under R-C2 and R-C5, this is a report of a speech-act or a bare report of a scholarly check that leads to no change or narrative conflict, which does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 44b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific incident ('wasn’t there an incident') used as evidence in a legal discussion, but the event is not narrated in full and requires the Gemara's commentary to explain the context. Under R-C6 and R-C7 shape 4, such sketched or alluded-to incidents are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 45a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical encounter between a post-biblical figure (Yusteni) and a rabbi. It contains more than a simple ruling; it includes a dialogue with conflict/regret and the narration of Yusteni's personal past events (marrying at six and giving birth at seven) which provide the 'change' or 'action' beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 45a:15-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative incident involving a woman coming before Rabbi Akiva, a dialogue with a parable, and a subsequent interaction with students. It meets the R-C0 criteria of an event followed by a ruling and further action (the students' reaction and the rabbi's explanation).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 47a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Shmuel performed an action (examined his maidservant) which led to a subsequent change and resolution (paying her for humiliation). This satisfies the requirement for at least two actions and a change, distinguishing it from a bare report or a purely legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 47b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes a habitual practice or custom of Rabbi Hiyya rather than a one-time event. Under R-C3 and R-C5, a habit that does not lead to a specific narrated change or incident is considered a report of practice rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 48a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events: Rabbi Zeira expresses a desire to learn a ruling in person, travels to Eretz Yisrael, finds the rabbi, and engages in a dialogue that results in a change of understanding regarding the status of the ruling (from a definitive halakha to a logical inference).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 48b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident about a woman in the rabbi's neighborhood, but it is a bare report of a physical phenomenon used as evidence for a legal/biological claim. Under R-C7 shape 4, an incident that is sketched or named-only is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 50a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a real-world situation (a blind man acting as a judge) and a specific reaction (Rabbi Yohanan remaining silent), which moves it beyond a bare report. However, because the narrative consists of a single event followed immediately by a legal challenge and discussion, it fits the borderline shape of an incident followed by a ruling or discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 50b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (being laughed at and rebuked), which Jeff classifies as borderline when there is no other physical action. It fits the borderline shape of 'mainly speech, but something happens' (the mockery and Abaye's defense).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 50b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where the Sages observed the bird's behavior ('saw that it mauled and ate'), which led to a change in its legal status (Mareimar's ruling that it is prohibited). This follows the R-C0 principle that an incident followed by a ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 51b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue with conflict (a challenge to a ruling) followed by a formal resolution ('they counted and they concluded'). While it is mainly speech-acts, the formal assembly and change in legal consensus provide the 'implied change' and 'courtroom drama' elements that qualify as borderline under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 52a:12-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a nested story about Rabbi Yishmael's daughter (segment 3) which includes specific actions, emotional reaction, and conflict. This story is embedded within a larger narrative frame where Rav Kahana's colleagues intend to act, are rebuked by a precedent, and ultimately change their course of action (segment 6), meeting the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 52a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events where rabbis take a specific action, which is then reported through a chain of figures to the Nasi, who sends a constable to intervene. This contains multiple actions and a clear change in the situation, satisfying the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 52a:24-Niddah 52b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative dialogue between Job and God regarding his suffering and the nature of creation. While it is a story, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 52b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events: Hanina ben Hakhinai meeting Rabbi Shimon in Tzaidan, giving him a specific mission, and the subsequent interaction when Rabbi Shimon reaches Rabbi Akiva. It contains multiple actions, conflict regarding a legal testimony at Yavne, and a resolution through Rabbi Akiva's response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 53a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific encounter where Rava found the Sages sitting and engaged in a dialogue with them. While it is primarily composed of speech-acts and scholarly debate, the framing of 'I found them sitting' and the back-and-forth exchange constitutes a conflict of ideas and an event beyond standard anonymous legal discussion, fitting the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 53b:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a series of speech acts and scholarly dialogue with conflict (Rabbi Asi's initial silence and Rabbi Zeira's subsequent challenge). Under R-C2 and R-C7, dialogue with conflict and implied change—here, the rabbi remembering a forgotten law—is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 58a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific incident ('a certain woman') involving an event (finding blood), an action (coming before a rabbi), and a ruling that includes a specific instruction for action ('go and come'). Under R-C0, an incident followed by a ruling counts as a story, especially when it involves more than just a bare legal statement.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 58a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where a rabbi travels to Rome, issues a ruling, and then travels to the Sages in the south for confirmation. While it centers on a ruling, the movement between locations and the interaction with the Sages provide enough narrative change and action to meet the borderline criteria for a 'courtroom drama' or incident-plus-ruling shape.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 58b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (quoted in the Gemara) that narrates a specific incident involving a woman coming before a rabbi, followed by a ruling and a subsequent interaction with students. It meets the criteria of R-C0 as it contains multiple actions (coming, speaking, ruling, seeing students) and a change in the students' understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 58b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal precedent where rabbis attributed blood stains to external substances. Under R-C5, a report of what a rabbi did that lacks a continuation, change, or narrated action beyond the ruling is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 59a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a Mishnah story ('an incident involving one woman') rather than narrating it in full, which fits the borderline definition of an incident only alluded to or sketched. Under R-C1, the Talmud's citation of a Mishnah story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 59b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a report of a legal ruling given by Rabbi Abba to a specific person, but it lacks any narrated action or change beyond the ruling itself. Under R-C0 and R-C5, a bare report of a ruling without an accompanying incident or second action is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 60b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident brought before the Sages followed by a ruling, which R-C0 identifies as a potential story. However, because the incident is only alluded to in segment 2 and then filled in via a baraita in segments 3 and 4, it fits the borderline criteria of an incident only alluded to (R-C6) or one real event followed by a ruling (R-C7 shape 2).",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 61a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions (presuming, examining, wind blowing, uprooting, finding) and a clear change from the initial failed search to the eventual discovery. It follows the 'one day' structure described in R-C3 and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 61a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving workers entering a cave and discovering bones, which constitutes a change in the situation. Per R-B1, the opening formula 'It is taught... Rabbi Yosei said' is included as part of the story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 61a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving a post-biblical figure (Rabbi Yehoshua ben Hananya) performing a specific sequence of actions (soaking and spreading sheets) to solve a problem, leading to a discovery. It follows the 'incident followed by a result' structure and includes the opening formula as per the boundary rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 61a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (the people of Galilee) who take action by fleeing and seeking refuge with Rabbi Tarfon, followed by a dialogue and a resolution where the Rabbi instructs them to hide themselves.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 62a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a lexical identification by Rav Yehuda and a report by Shmuel of a question he asked seafarers. Under R-C2 and R-C5, speech-acts and bare reports of inquiry used to establish facts or definitions do not constitute a story as they lack a narrated event, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 63b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a single speech-act ('I did not hear this tradition') without any narrated action, conflict, or change. Under R-C2 and R-C7, standard rabbinic dialogue or a statement of not having heard a teaching does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 64b:18-Niddah 65a:6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of a ruling by Rabbi Yehuda HaNasi used as a legal precedent, followed by an extensive dialectical discussion. There is no narrated action or change beyond the ruling itself, which does not meet the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 65a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a sage traveling to a destination, his internal thought process/mistaken ruling, his sudden death on the road, and a subsequent reaction by Shmuel. This contains multiple actions and a significant change (the death) that resolves the conflict of the mistaken ruling, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 65b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a ruling given by Rabbi Yehuda HaNasi without any narrated action, change, or continuation beyond the ruling itself. Under R-C5 and the limit of R-C0, a report of what a rabbi did or ruled that lacks a second action or change is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 66a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a woman comes before a rabbi, followed by a distinct action (Abdon frightening her) and a physical change (the blood falling), which satisfies the requirement for more than just a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 66a:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains multiple narrated incidents where women come before rabbis with specific medical/spiritual problems and actions are taken (frightening the woman, changing immersion habits) leading to a change or resolution. These are not hypothetical legal cases but events that happened, fitting the criteria of rabbinic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 66a:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving Ravina and Rav Hanina with multiple actions (arranging a marriage, a dialogue about the date, and a subsequent delay of seven days). It meets the criteria of R-C0 as it describes an incident that happened rather than a hypothetical case, and includes a change in action (the delay) following the initial plan.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 66b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a post-biblical figure (Rabbi's maidservant) with multiple actions (immersing, ascending, finding a bone) and a resolution (Rabbi's ruling). Under R-C0, an incident followed by a ruling counts as a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 67a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what Shmuel's father used to do (a habitual practice) to facilitate his daughters' immersion, with no specific event, conflict, or change following the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 67b:17-Niddah 68a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving the wife of the Exilarch and Rav Nahman bar Yitzhak, featuring multiple actions (quarreling, going to appease, a dialogue with implied change/resolution) and a specific one-time event rather than a mere legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 68a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rava taught a ruling, was challenged by Rav Pappa, and subsequently performed the action of appointing an interpreter to publicly retract his statement. This sequence contains conflict, multiple actions, and a clear change in the protagonist's position, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 68b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical interaction between Rabbi Yehuda HaNasi and his teachers while walking on a road, which provides a narrative setting beyond a simple legal query. However, because the content is almost entirely a dialogue regarding a legal case, it falls under the borderline category for speech-based interactions with minimal action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 69a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving an orphan who slaughtered oxen and challenged the town's illogical customs. It contains multiple actions (giving oxen, slaughtering them, the dialogue) and a clear change or resolution through the orphan's clever retort.",
+    "error": null
+   }
+  },
+  {
+   "id": "Niddah 69b:16-Niddah 70a:7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a narrative frame of the people of Alexandria posing questions to Rabbi Yehoshua ben Chinnana, which constitutes a dialogue with conflict/challenge. While segments 10-14 transition into standard Gemara commentary and legal debate (R-B4), the initial interaction is a borderline story consisting of speech-acts and a specific historical setting.",
+    "error": null
+   }
+  }
+ ]
+}

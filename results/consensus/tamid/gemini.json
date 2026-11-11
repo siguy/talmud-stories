@@ -1,0 +1,188 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "d269f0a6e8e6ee11950725108551f31e1a026f57",
+  "finished": "2026-11-10T00:11:16",
+  "outcomes": {
+   "ok": 9
+  }
+ },
+ "rows": [
+  {
+   "id": "Tamid 27b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal commentary (stam) discussing the nature of the garments worn in a story told elsewhere; it does not narrate the events of the story itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 27b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Rav Safra and Rabbi Abba) with multiple actions (sitting, coughing, speaking) and a subsequent conflict/rebuke that constitutes a change in the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 27b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative incident ('a certain individual who drank...') with multiple actions and a tragic change (the student died), followed by a communal ruling. It begins with a standard opening formula and moves from a general custom to a specific one-time event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 27b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C1",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a quotation of a Mishnah (Middot 1:2) describing a habitual custom or procedure in the Temple. Under R-C1, Mishnah quotations are catalogued separately, and under R-C3 and R-C5, a description of a habit or custom that does not lead to a specific one-time event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 28a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time incident (two priests running, one shoving the other, a leg breaking) that leads to a change in institutional practice (the court instituting a lottery). This fits the criteria of an event followed by a ruling or change, distinguishing it from a bare report or custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 29b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single event (enlisting priests to move the vine) cited as evidence of exaggerated language. Under R-C5 and the limits of R-C0, it is not a story because the act does not lead to a continuation, change, or further narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 30b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual state or custom regarding the strength of the Temple incense, rather than a specific one-time event. Under R-C5 and R-C3, a report of what used to happen that does not lead to a change or a specific incident is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 31b:14-Tamid 32a:13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative about Alexander of Macedon, a post-biblical figure in scope per R-S1. It contains dialogue with conflict (R-C2), specific actions such as dressing the elders in purple (R-C0), and a transition from a general inquiry to a specific one-time military campaign (R-C3).",
+    "error": null
+   }
+  },
+  {
+   "id": "Tamid 32b:0-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Alexander the Great, who is a post-biblical figure and thus in scope according to R-S1. The passage contains multiple actions, dialogue, and a resolution involving a ruling/explanation by the Sages, satisfying the criteria for a story under R-C0.",
+    "error": null
+   }
+  }
+ ]
+}

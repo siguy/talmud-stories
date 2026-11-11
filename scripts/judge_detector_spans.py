@@ -47,7 +47,7 @@ log = logging.getLogger('judge-detector-spans')
 # tractate works by convention (scripts/tractates.py): 'berakhot', 'Bava Batra' or 'bava_batra'.
 # Text, runs and the output directory come from tractates.Paths; the two v14 runs are the judged
 # versions. Berakhot also carries its v11 run, the comparison the 2026-11-08 finding reported.
-# Eruvin stays refused: held for Jeff, the untouched final exam.
+# Eruvin was refused (held for Jeff) until Simon's 2026-11-09 decision to put it on the site.
 sys.path.insert(0, str(PROJECT_ROOT / 'scripts'))
 import tractates as T  # noqa: E402
 
@@ -55,7 +55,6 @@ import tractates as T  # noqa: E402
 def tractate_config(name):
     """{'text', 'out', 'runs'} (repo-relative paths) for a tractate name or slug."""
     slug = T.resolve(name)
-    assert slug != 'eruvin', 'never Eruvin: held for Jeff (docs plan §7 Q4)'
     P = T.Paths(slug, PROJECT_ROOT)
     rel = lambda p: str(p.relative_to(PROJECT_ROOT))
     runs = {'v14_r1': rel(P.run(1)), 'v14_r2': rel(P.run(2))}
@@ -181,13 +180,17 @@ def gemini(dry_run, workers):
         return 3
     from dotenv import load_dotenv
     load_dotenv(j.ENV_PATH)
-    call, info = j.gemini_backend()
+    # Retry on 429/503 and count tokens, through the detector's own wrapper (2026-11-10: unretried, 182 calls failed
+    # on the per-minute token limit; unmetered, the run report missed ~$15 that AI Studio billed).
+    from run_new_tractate import TokenMeter
+    meter = TokenMeter()
+    call, info = j.gemini_backend(meter)
     out_path = OUT / 'gemini.json'
     prior = json.loads(out_path.read_text()) if out_path.exists() else {}
     if prior and prior['meta']['prompt_sha'] != j.prompt_sha():
         raise RuntimeError('prompt changed since this output was started')
     rows = {r['id']: r for r in prior.get('rows', [])}
-    todo = [u for u in units if rows.get(u['id'], {}).get('answer', {}).get('outcome') in (None, 'failed')]
+    todo = [u for u in units if rows.get(u['id'], {}).get('answer', {}).get('outcome') in (None, 'failed', 'invalid')]   # plan G6: one resume re-asks both
     log.info('gemini: %d calls to make', len(todo))
 
     def one(u):
@@ -199,7 +202,9 @@ def gemini(dry_run, workers):
             log.info('gemini %-28s -> %s %s', u['id'], ans['outcome'], ans['verdict'] or ans['error'][:80])
     commit = subprocess.run(['git', 'rev-parse', 'HEAD'], cwd=PROJECT_ROOT, capture_output=True, text=True).stdout.strip()
     meta = {**prompt_meta(), 'backend': info, 'commit': commit, 'finished': time.strftime('%Y-%m-%dT%H:%M:%S'),
-            'outcomes': dict(Counter(r['answer']['outcome'] for r in rows.values()))}
+            'outcomes': dict(Counter(r['answer']['outcome'] for r in rows.values())),
+            # One tally per invocation, kept across resumes; the driver charges the step with the newest one.
+            'token_log': (prior.get('meta') or {}).get('token_log', []) + [meter.tally]}
     out_path.write_text(json.dumps({'meta': meta, 'rows': list(rows.values())}, ensure_ascii=False, indent=1) + '\n')
     log.info('wrote %s %s', out_path, meta['outcomes'])
     return 0
@@ -219,7 +224,9 @@ def gemini_out_of_scope_ids():
         raise SystemExit('refusing to export a Claude subset: the Gemini answers are not final (gate g6 red):\n  '
                          + '\n  '.join(res.failures))
     rows = json.loads((OUT / 'gemini.json').read_text())['rows']
-    return {r['id'] for r in rows if r['answer'].get('outcome') == 'ok' and r['answer'].get('verdict') == 'out_of_scope'}
+    from check_tractate_run import claude_alone      # Simon's 2026-11-10 ruling: no valid Gemini answer -> Claude decides
+    return ({r['id'] for r in rows if r['answer'].get('outcome') == 'ok' and r['answer'].get('verdict') == 'out_of_scope'}
+            | claude_alone(P))
 
 
 def export(seed, batch, only_gemini_out_of_scope=False):

@@ -174,8 +174,11 @@ def verify(tractate, pages, expected):
     report = {'tractate': tractate, 'pages': len(pages),
               'segments': sum(len(p['segments']) for p in pages)}
 
-    # 1. Every amud Sefaria says exists, we have.
-    report['missing_amudim'] = sorted(set(expected) - fetched)
+    # 1. Every amud Sefaria says exists, we have. An amud the index itself counts as 0
+    #    segments is blank in the source (Nazir 33b is one, 2026-11-09): absent by design,
+    #    named in its own key, never a failure -- and never silently dropped either.
+    report['blank_in_source'] = sorted(r for r in expected if expected[r] == 0)
+    report['missing_amudim'] = sorted(r for r in set(expected) - fetched if expected[r])
 
     # 2. Segment counts. A shortfall on a tractate-final page is the hadran (Hebrew-only
     #    closing formula, correctly dropped since it has no English). Anywhere else it
@@ -246,6 +249,8 @@ def main():
     for r in reports:
         print(f"\n{r['tractate']}: {r['pages']} dapim, {r['segments']} segments")
         print(f"  missing amudim:      {r['missing_amudim'] or 'none'}")
+        if r.get('blank_in_source'):
+            print(f"  blank in source:     {r['blank_in_source']} (Sefaria's index counts 0 segments)")
         print(f"  segment count diffs: {r['segment_count_diffs'] or 'none'}")
         e = r['expert_list']
         print(f"  expert list ({e.get('doc')}): {e.get('entries')} entries / "

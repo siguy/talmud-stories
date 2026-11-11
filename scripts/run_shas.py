@@ -47,11 +47,11 @@ log = logging.getLogger('run-shas')
 STEPS = ['fetch', 'triage', 'run1', 'run2', 'pair', 'units', 'gemini', 'export']
 DEPENDS = {'fetch': [], 'triage': ['fetch'], 'run1': ['triage'], 'run2': ['triage'],
            'pair': ['run1', 'run2'], 'units': ['pair'], 'gemini': ['units'], 'export': ['gemini']}
-LIMITS = {'fetch': 3, 'gemini': 2}          # per step; everything else shares MAX_PARALLEL
+LIMITS = {'fetch': 3, 'gemini': 1}   # per step; others share MAX_PARALLEL. gemini 1: two judges beside 8 runs hit 3M input tokens/min (2026-11-10)
 MAX_PARALLEL = 8
 # Already done or held: the 31 tractates of the run are the table minus these (plan §0).
 ALREADY_RUN = ('berakhot', 'yevamot', 'ketubot', 'kiddushin', 'gittin')
-HELD = ('eruvin',)                           # held for Jeff; `--tractates eruvin` runs it anyway
+HELD = ()      # Eruvin was held for Jeff until Simon's 2026-11-09 decision: it goes on the site with the rest
 JUDGE_PROMPT = 'src/prompts/judge_register_v2.md'
 PRICE = {'input': 0.50, 'cached_input': 0.05, 'output': 3.00}   # $ per million tokens, standard tier
 JUDGE_EXPORT_SEED = 1
@@ -80,6 +80,15 @@ def cost_usd(tokens):
         usd += ((t.get('input', 0) - cached) * PRICE['input'] + cached * PRICE['cached_input']
                 + (t.get('output', 0) + t.get('thinking', 0)) * PRICE['output']) / 1e6
     return round(usd, 4)
+
+
+def triage_complete(P):
+    """Triage is done only when every fetched page has a label. A partial cache (the 2-page smoke test left one for
+    Taanit) is work to resume, not a finished step (2026-11-10)."""
+    if not (P.triage.exists() and P.text.exists()):
+        return False
+    labels = json.loads(P.triage.read_text()).get('triage_results', {})
+    return all(p['ref'] in labels for p in json.loads(P.text.read_text())['pages'])
 
 
 def triage_tokens_from_log(path):
@@ -136,7 +145,7 @@ class Driver:
     # ---- outputs and gates --------------------------------------------------------
     def output_exists(self, slug, step):
         P = T.Paths(slug, self.root)
-        return {'fetch': lambda: P.text.exists(), 'triage': lambda: P.triage.exists(),
+        return {'fetch': lambda: P.text.exists(), 'triage': lambda: triage_complete(P),
                 'run1': lambda: P.run(1).exists(), 'run2': lambda: P.run(2).exists(),
                 'pair': lambda: False,                                       # computed, never skipped
                 'units': lambda: (P.consensus / 'units.json').exists(),
@@ -228,8 +237,14 @@ class Driver:
             info['tokens'] = tok
             if st.get('resumed') and colour == 'green':
                 colour = 'amber'
-        elif step == 'gemini' and colour != 'red':
-            info['note'] = 'Claude judge waits for a person (subagents): then import and g6 claude'
+        if step == 'gemini':
+            # Charged even when red: Google bills a call whatever its answer was (2026-11-10, ~$15 unseen).
+            log_ = (json.loads((P.consensus / 'gemini.json').read_text()).get('meta') or {}).get('token_log') or []
+            if log_:
+                info['tokens'] = log_[-1]
+                info['cost_usd'] = cost_usd(log_[-1])
+            if colour != 'red':
+                info['note'] = 'Claude judge waits for a person (subagents): then import and g6 claude'
         return dict(info, state='done', color=colour)
 
     # ---- the loop ------------------------------------------------------------------------
@@ -253,10 +268,21 @@ class Driver:
 
     def _write_status(self):
         with self.lock:
-            tr = {}
+            # Merge into what is on disk: a run over some tractates must not erase the others' record, and a step
+            # skipped this time (its output already there) keeps the cost it was charged when it ran (2026-11-10).
+            try:
+                prior = json.loads(self.status_path.read_text()).get('tractates', {})
+            except (FileNotFoundError, json.JSONDecodeError):
+                prior = {}
+            tr = dict(prior)
             for s in self.slugs:
-                tr[s] = {'overall': self.overall(s), 'steps': {k: v for k, v in self.state[s].items() if k in self.wanted}}
-                tr[s]['cost_usd'] = round(sum(v.get('cost_usd', 0) for v in self.state[s].values()), 4)
+                old = (prior.get(s) or {}).get('steps', {})
+                steps = {k: v for k, v in self.state[s].items() if k in self.wanted}
+                for k, v in steps.items():
+                    if v.get('state') == 'skipped' and 'cost_usd' not in v and old.get(k, {}).get('cost_usd'):
+                        v['cost_usd'] = old[k]['cost_usd']
+                tr[s] = {'overall': self.overall(s), 'steps': {**old, **steps}}
+                tr[s]['cost_usd'] = round(sum(v.get('cost_usd', 0) for v in tr[s]['steps'].values()), 4)
             doc = {'updated': time.strftime('%Y-%m-%dT%H:%M:%S'), 'git_rev': self.rev, 'through': self.through,
                    'cost_usd': round(sum(t['cost_usd'] for t in tr.values()), 2), 'tractates': tr,
                    'counts': {c: sum(1 for t in tr.values() if t['overall'] == c)

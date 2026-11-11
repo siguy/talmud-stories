@@ -1,0 +1,1437 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:07:16",
+  "outcomes": {
+   "ok": 82
+  }
+ },
+ "rows": [
+  {
+   "id": "Megillah 2b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a report of a rabbi's reasoning and scholarly hearing regarding a textual variant. Under R-C2 and R-C7, it is standard rabbinic dialogue or intellectual activity without a narrated event or change beyond the speech-act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 2b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a scholarly dictum followed by a standard rabbinic dialogue and legal challenge. There are no narrated events, actions, or changes beyond the speech-acts of the rabbis.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 3a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Yonatan ben Uzziel (a post-biblical figure) standing up to respond to a Divine Voice, followed by a second action where he seeks to translate the Hagiographa and is stopped by a second Divine intervention. This contains multiple actions, conflict, and a clear change in outcome (the cessation of his translation work).",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 3a:17-Megillah 3b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Joshua and an angel, including dialogue and actions, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 4a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue regarding the interpretation of a term, with no narrated actions or events beyond speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 5a:18-Megillah 5b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific one-time events involving Rabbi Yehuda HaNasi (planting, bathing, and a proposal to abolish a fast) followed by a conflict with the Sages and a corrective dialogue between later rabbis. It meets the criteria of having multiple actions, conflict, and a change in the understanding of the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 5b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi (Rav) and a certain man, where an action (planting flax) is followed by a response (a curse) and a change in the world (the flax never grew). This fits the definition of a story as an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 5b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's practice (reading the Megilla on two days) due to a legal doubt, which Jeff classifies as a description of what a rabbi did rather than a story. Under R-C5 and the limit of R-C0, there is no second action, change, or continuation beyond the report of the act itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 5b:17-Megillah 6a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific event from Rabbi Yoḥanan's childhood where he proposed an interpretation and later verified it with elders. While it is primarily a speech-act regarding geographical identifications, it includes a change in status (verification) and fits the borderline shape of 'one real event followed by discussion'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 6a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (the death of Rabbi Zeira) followed by a distinct action (the eulogizer delivering a specific lament), which fits the definition of a story about a post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 7a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical interaction between Esther and the Sages involving a request, a refusal based on fear of the nations, and a counter-argument. Although Esther is a biblical figure, her interaction with the post-biblical Sages (the Rabbis) places this in scope as a rabbinic story rather than a biblical retelling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 7a:20-Megillah 7b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where one rabbi sends a gift to another, followed by a response that provides a resolution or change in status (the fulfillment of the mitzvah). It contains both a physical action and a speech-act that together form a complete incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 7b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of specific events involving Rabba, Abaye, and Marei bar Mar, including the sending of gifts, the exchange of dialogue, and Abaye's subsequent meal. It contains multiple actions and a clear change in state (Abaye moving from satiation to extreme hunger).",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 7b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (rabbis) with multiple actions, a dramatic conflict (the slaughter), a supernatural change (the revival), and a subsequent dialogue that resolves the event. It follows a legal dictum but is a distinct one-time event rather than a mere report of practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 7b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Rav Ashi and Rav Kahana involving a specific setting and a learning event, but it is primarily composed of speech-acts and teaching. Under R-C2 and R-C7 shape 1, teaching and dialogue with minimal action are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 9a:10-Megillah 9b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about King Ptolemy and the seventy-two elders, involving a specific historical incident with multiple actions and a miraculous outcome. It includes the opening formula as per R-B1 and describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 9b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic incident-plus-ruling story involving a post-biblical figure (Yosef ben Elem). Under R-C0, the narrated event of the appointment followed by the Sages' ruling constitutes a story, and the opening formula is included per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 10a:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (a rabbi denying his own ruling and another rabbi swearing he heard it) and an implied change (the rabbi retracting his ruling due to a difficulty). Under R-C2 and R-C7, speech-heavy interactions with conflict and change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 10b:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with dialogue and conflict between the ministering angels and God, but it is about biblical/celestial figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 12a:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between Rabbi Shimon bar Yoḥai and his students. While it contains conflict and a resolution regarding the interpretation of biblical events, it lacks physical actions or a narrated event beyond the speech-act itself, placing it in the borderline category for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 12b:2-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative with dialogue, actions, and causal changes, but it is about biblical characters (Ahasuerus and Vashti) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 12b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story involving dialogue, conflict, and a clever resolution (the Sages' excuse to avoid judging Vashti). However, it is a retelling of a biblical episode from the Book of Esther involving biblical characters (Ahasuerus and the Sages identified as biblical figures), which places it out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 13a:21-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of actions and events involving King Ahasuerus, Esther, and Mordecai, but it is a retelling of a biblical episode rather than a story about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 13b:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with dialogue, actions, and change, but it is about biblical characters (Jacob, Rachel, and Leah) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 13b:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with dialogue and action, but it is a retelling of a biblical episode involving biblical characters (Bigthan, Teresh, and Mordecai) rather than a story about rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 13b:15-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown narrative expansion of the dialogue between Haman and Ahasuerus, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 14a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a parable (mashal) about hypothetical individuals used to illustrate a biblical event, rather than a story about rabbis or post-biblical figures. Under R-C0, legal or illustrative hypotheticals do not count as stories, and the subject matter (Ahasuerus and Haman) is biblical and thus out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 14a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Miriam and her father Amram, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 14a:21-Megillah 14b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown narrative with dialogue, conflict, and actions, but it is a retelling of the biblical encounter between David and Abigail. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 15b:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a dialogue between the Attribute of Justice and God regarding the Jewish people. While it contains conflict and speech-acts that would otherwise be borderline, it is a story about biblical/divine figures rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 15b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated encounter between Rabba bar Avuh and Elijah the Prophet. While the dialogue concerns a biblical character (Esther), the frame of the story involves a post-biblical rabbi and Elijah, which is explicitly considered in-scope under R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 16a:5-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions, dialogue, and change, but it is a retelling of the biblical story of Mordecai and Haman. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 17b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of Shimon HaPakuli arranging the blessings and the Elders establishing them, cited as a historical precedent for a legal order. Under R-C5 and R-C0, it lacks a narrated action or change following the event, and there is no conflict or continuation beyond the report itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 18a:24-28",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a series of narrated incidents where Sages encounter post-biblical figures (the maidservant of Rabbi and an Arab merchant) whose actions and speech resolve a specific intellectual problem. These are not merely legal rulings but one-time events involving interaction and a change in the Sages' understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 18b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabbi Meir who traveled to Asia, found no Megilla, and performed the actions of writing and reading one from memory. This is a one-time event with multiple actions and a clear outcome, distinguishing it from a bare report or legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 18b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rav Hisda found Rav Hananel performing an action (writing from memory), followed by a verbal interaction and a ruling. This meets the criteria of an incident that leads to a response or change, distinguishing it from a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 19a:21-Megillah 19b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a single event of a student reading before a rabbi followed by a ruling, which Jeff has ruled is not a story unless there is another narrated action or change. Coming before a rabbi and being ruled on is not enough to constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 20a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific past event involving post-biblical figures (Rabbi Yehuda as a minor and Rabbi Tarfon) with a clear conflict and response. Under R-C0 and R-C2, the interaction between the minor's action and the Elders' retort constitutes a story, and R-B1 includes the introductory formula.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 20a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific past event (Rabbi Yehuda HaNasi reading the Megilla as a minor) followed by a response/ruling from the Sages, which fits the definition of a story under R-C0. Segment [3] is excluded as it is the Gemara's analytical commentary on the dialogue, which falls under R-B4.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 21a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical change following a one-time event (the death of Rabban Gamliel), which caused a shift from the habitual practice of standing to the practice of sitting. This meets the criteria of having a narrated action that leads to a change, distinguishing it from a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 21b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a rabbi's practice (reciting a specific blessing) cited as a legal precedent. Under R-C0 and R-C5, a rabbi coming before another and performing a single act that leads to no further change or narrative continuation is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 21b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident where Rav Pappa visited a synagogue and praised a reader for an action. This meets the criteria of a story because it narrates a one-time event involving a post-biblical figure that includes an action and a response (praise), rather than being a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 22a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an incident alluded to by Rabbi Hananya Kara regarding his 'great distress' and interaction with Rabbi Hanina. While it is primarily a speech-act cited as legal evidence, it describes a specific past conflict and interaction between post-biblical figures, fitting the borderline criteria for an incident only partially narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 22a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('Rav once happened to come') involving multiple distinct actions and a conflict of practice (Rav's refusal to fall on his face while others did). Under R-C0, this is a story about an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 22b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving Rav visiting Babylonia, performing a liturgical action, and notably deviating from the behavior of the rest of the community. It contains multiple actions and a conflict of practice, fitting the definition of a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 22b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Levi and Rabbi Yehuda HaNasi) where an action (demonstrating kidda) leads to a physical change (becoming lame), satisfying the requirement for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 22b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of what someone saw a rabbi do (an eyewitness observation of a practice) with no continuation, change, or causality, which falls under the category of a report rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 23b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a report of a recurring event ('Many times I stood before Rabbi Yoḥanan') where the rabbi issues a command to stop reading. While it describes a habit or practice (R-C5), the inclusion of a specific speech-act/command directed at others creates enough of a scene to be considered borderline under the 'one real event then discussion' or 'mainly speech' shapes (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 24b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a first-person narrative about a specific event ('I was once walking...') that resolves a long-standing intellectual problem. It follows the pattern of a habitual frame leading to a one-time event that causes a change in understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 24b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident with multiple actions and conflict: Rabbi Hiyya insults Rabbi Shimon, who then goes to his father to report it, leading to a sharp retort. This exceeds a mere speech-act or legal ruling by including a sequence of events and an emotional reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 24b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual practice of an unnamed priest in Rav Huna's neighborhood used as a counter-example in a legal discussion. Under R-C5 and R-C0, a bare report of what someone used to do that leads to no specific event, change, or conflict is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 24b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a priest who 'would spread his hands' as a habitual practice cited to challenge a legal ruling, which constitutes a bare report of a custom rather than a narrated event. Under R-C0 and R-C5, a habit that leads to no change or specific incident is not a story, and the interaction is standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 25a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a prayer leader acting in the presence of Rabba, followed by Rabba's reaction and a dialogue with Abaye. Under R-C0, an incident involving a specific person followed by a rabbinic response or ruling constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 25a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a prayer leader and Rabbi Hanina, featuring a distinct action (the leader's addition to the prayer) followed by a sharp rebuke and conflict, which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 25b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving a specific man and Rabbi Eliezer, featuring a conflict (the rebuke) and a subsequent action (the examination of lineage) that leads to a change in status or discovery.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 25b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific incident involving Rabbi Hanina ben Gamliel in Kavul, where he intervenes in a synagogue reading and is subsequently praised by the Sages. This constitutes a narrated event with action, dialogue, and a resolution, which qualifies as a story even though it is quoted from the Tosefta/Mishnah context.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 26a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event (the sale of a synagogue to Rabbi Eliezer and his subsequent use of it) which is explicitly introduced as an incident (ma'aseh). Under R-C0, this is a story because it describes an event that happened to a post-biblical figure, and under R-C1, the Talmud's citation of a Mishnah or Tannaitic story is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 26b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a legal case where a rabbi comes before another rabbi for a ruling; under R-C0 and R-C7, coming before a rabbi and receiving a ruling without any further narrated action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 26b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi coming before other rabbis for a ruling on a specific case. Under R-C0 and R-C7 (shape 2), an incident that consists only of coming before a rabbi and receiving a ruling, without further narrated action or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 26b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident followed by a ruling' story where a specific event occurred (a synagogue was exposed to a corpse) and the actors took action (the priests came to Rava) leading to a resolution (Rava's ruling and instruction). Under R-C0, the narrated event of the priests coming to the rabbi and his specific instruction for action constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27a:23-Megillah 27b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event (Rav Huna decreeing a fast and Rav Hana visiting) followed by a series of actions: the imposition of charity, the request for its return, and a ruling that resolves the conflict. This fits the criteria of an incident followed by a ruling with multiple actions and a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Baitos ben Zunen and Rabbi Elazar ben Azarya, followed by a conflict/dialogue between Rabbi Yehuda and the Rabbis regarding the facts of that event. Under R-C0 and R-C2, the presence of a specific event and subsequent conflict over its details constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a one-time event (the mother selling her kerchief) that follows a description of habitual practice, which satisfies R-C3. This specific incident involves a change of state and action beyond mere speech, meeting the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific one-time events (the death of the mother and the death of the rabbi) that result in a clear change of state (the inheritance of wealth). Under R-C0 and R-C3, this constitutes a story because it describes actions that lead to a specific outcome or reward, rather than being a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving post-biblical figures (Rav and Rav Huna) with multiple actions, a blessing, and a subsequent event that fulfills that blessing. It meets the criteria of a story because it narrates specific events that happened, including a change in Rav Huna's circumstances and an emotional reaction from Rav.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue where a rabbi is asked a question and responds with a list of his lifelong practices. Under R-C2 and R-C7, speech-acts with minimal action or change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 27b:23-Megillah 28a:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a report of a rabbi's habitual practices (R-C5) and speech-acts without conflict or events (R-C2), followed by the Gemara's legal commentary and resolution of contradictions (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (a question and answer) without a narrated event or action. However, it falls under the borderline category as it involves a specific interaction between a rabbi and his disciples regarding his personal conduct.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Rav Huna and Rav Hana bar Hanilai with multiple actions (carrying a hoe, attempting to take it) and a dialogue containing conflict and a moral resolution. Under R-C0, this is an event that happened rather than a hypothetical case, and it contains the 'at least two actions and a change' required by the editor's recent rulings.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of Mar Zutra's habitual practice (what he 'would' do) cited as an illustration of a virtue, with no specific one-time event, conflict, or change following the habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event with physical action and conflict: Rabbi Akiva is beaten by attendants, flees, and climbs a tree. This sequence of actions and the resolution by Rabbi Neḥunya satisfies the criteria for a story beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between two rabbis with a clear conflict (the sharp retort 'are you wearied of my life?'), but it lacks a narrated action or change beyond the speech itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving two post-biblical figures (Rabbi Yehoshua ben Korḥa and Rabbi Yehuda HaNasi) at a specific time (the time of departure). It contains dialogue with conflict and a resolution that explains the logic of the blessing, moving beyond a simple speech-act into a narrated interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two rabbis stating their personal pious practices in the form of speech-acts. Under R-C2 and R-C5, a bare report of a habit or a speech-act without an accompanying event, conflict, or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Ravina, Rav Adda bar Mattana, and Rava where an event (rain falling) leads to a change of location and a subsequent action/explanation. This fits the criteria of a story about post-biblical figures where an incident occurs and is resolved.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a eulogy) involving a post-biblical figure (Reish Lakish) and includes a speech-act that expresses an emotional reaction and a change in the world (the loss of a great man).",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man died and people approached Rav Nahman to eulogize him, followed by his sharp response. This contains multiple actions and a conflict-driven interaction that goes beyond a bare report or standard legal dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 28b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated one-time event involving Reish Lakish and a man at a puddle, featuring multiple actions, dialogue with conflict, and a resolution where the rabbi teaches a law to justify the service. Although embedded within Ulla's dictum, it meets the criteria for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 29a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where the father of Shmuel and Levi were sitting in a synagogue, the Divine Presence arrived, and they reacted by leaving. This constitutes a one-time event with action and change following a discussion of habitual practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 29a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi (Rav Sheshet) with multiple actions, conflict with the ministering angels, and a resolution where God intervenes. It meets the criteria of a story as it describes an incident that happened rather than a hypothetical legal case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 30b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a legal discussion about communal practice on fast days. Abaye's statement is a description of a custom or procedure (speech-act) rather than a narration of a specific event that happened, which falls under the category of a bare report or standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Megillah 31b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened (Levi bar Buti stammering while reading) followed by a rabbi's response and ruling, which fits the definition of a story under R-C0.",
+    "error": null
+   }
+  }
+ ]
+}

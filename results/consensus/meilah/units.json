@@ -1,0 +1,192 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/meilah/run1.json",
+   "v14_r2": "results/v14/meilah/run2.json"
+  },
+  "spans": {
+   "v14_r1": 4,
+   "v14_r2": 4
+  },
+  "units": 4,
+  "built": "2026-11-10T00:09:26"
+ },
+ "units": [
+  {
+   "id": "Meilah 3b:8-11",
+   "tractate": "Meilah",
+   "cells": [
+    [
+     "Meilah 3b",
+     8
+    ],
+    [
+     "Meilah 3b",
+     9
+    ],
+    [
+     "Meilah 3b",
+     10
+    ],
+    [
+     "Meilah 3b",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Abaye recites a tradition from Rav Giddel, is silenced by Rav Pappa's objection, and later brings the matter to Rabbi Abba for resolution."
+  },
+  {
+   "id": "Meilah 7a:10-11",
+   "tractate": "Meilah",
+   "cells": [
+    [
+     "Meilah 7a",
+     10
+    ],
+    [
+     "Meilah 7a",
+     11
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Shimon recounts traveling to the village of Pani where an old man challenged him on Rabbi Akiva's rulings, leading Shimon to return to Rabbi Akiva to verify the teaching."
+  },
+  {
+   "id": "Meilah 7b:2-7",
+   "tractate": "Meilah",
+   "cells": [
+    [
+     "Meilah 7b",
+     2
+    ],
+    [
+     "Meilah 7b",
+     3
+    ],
+    [
+     "Meilah 7b",
+     4
+    ],
+    [
+     "Meilah 7b",
+     5
+    ],
+    [
+     "Meilah 7b",
+     6
+    ],
+    [
+     "Meilah 7b",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Continuing from the previous page, Rabbi Akiva defends his ruling to Rabbi Shimon, leading to a later debate where Rabbi Yoḥanan silences Reish Lakish regarding the nature of Akiva's response."
+  },
+  {
+   "id": "Meilah 17a:9-Meilah 17b:6",
+   "tractate": "Meilah",
+   "cells": [
+    [
+     "Meilah 17a",
+     9
+    ],
+    [
+     "Meilah 17a",
+     10
+    ],
+    [
+     "Meilah 17a",
+     11
+    ],
+    [
+     "Meilah 17a",
+     12
+    ],
+    [
+     "Meilah 17a",
+     13
+    ],
+    [
+     "Meilah 17a",
+     14
+    ],
+    [
+     "Meilah 17b",
+     0
+    ],
+    [
+     "Meilah 17b",
+     1
+    ],
+    [
+     "Meilah 17b",
+     2
+    ],
+    [
+     "Meilah 17b",
+     3
+    ],
+    [
+     "Meilah 17b",
+     4
+    ],
+    [
+     "Meilah 17b",
+     5
+    ],
+    [
+     "Meilah 17b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "After Rabbi Reuven ben Isterobeli successfully but temporarily nullifies Roman decrees against Jewish practice through disguise and clever argument, his identity is discovered and the Sages must find a new representative to go to Rome. Rabbi Shimon ben Yoḥai and Rabbi Elazar bar Rabbi Yosei travel to Rome to nullify anti-Jewish decrees, succeeding with the help of a demon who possesses the emperor's daughter."
+  }
+ ]
+}

@@ -1,0 +1,4303 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "547f4612f6b1897b47505c42ef027ef638e4a1bd",
+  "finished": "2026-11-10T00:15:29",
+  "outcomes": {
+   "ok": 240,
+   "invalid": 1
+  }
+ },
+ "rows": [
+  {
+   "id": "Sanhedrin 4a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains more than just a legal dialogue; it narrates a specific incident where the rabbi follows his students after they leave to offer a different explanation. This sequence of action (leaving, following, and re-addressing) constitutes a narrated event with change and movement beyond a simple speech-act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event that happened (Mar Zutra adjudicated a case and erred) followed by a subsequent action (he came before Rav Yosef) and a ruling that resolves the incident. Under R-C0, an incident followed by a ruling counts as a story, especially when it involves multiple narrated actions beyond just the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a rabbi (Rabba bar Hana) acted (adjudicated and erred) and then took a further action (came before Rabbi Hiyya), resulting in a ruling. This fits the criteria of an incident followed by a ruling with multiple narrated actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific conflict between Rabba bar Rav Huna and the house of the Exilarch, but it consists entirely of a speech act (a verbal retort) without further narrated action or change. Under R-C2 and R-C7 shape 1, dialogue with conflict but no other event is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of two parallel dialogues involving Rabbi Hiyya and Rabbi Yehuda HaNasi. While it is primarily composed of speech acts, it describes a specific historical interaction (the granting of rabbinic authorization) with a distinct outcome and conflict/variation between the two cases, fitting the borderline criteria for speech-heavy narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5b:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-B1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rabbi Yehuda HaNasi travels to a place, observes an action, and engages in a dialogue that reveals a misunderstanding. This incident leads directly to a change in the form of a new decree, satisfying the requirement for action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Tanḥum arriving and teaching) followed by a conflict (the locals challenging him) and a resolution (his admission of error). This contains multiple actions and a change in the character's state of mind, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 5b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Rabbi Hiyya and a man in a cemetery, involving an observation, a dialogue, and a revelation of a past event that explains the man's current status. It meets the criteria for a story as it describes an event that happened with conflict (the apparent violation of priestly law) and a resolution (the explanation of his status).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech act (a man reciting a proverb) followed by a rabbinic dialogue. Under R-C2 and R-C7, speech-heavy passages with minimal action are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech-acts (an aphorism followed by a rabbinic response) without any narrated action or event. Under R-C2 and R-C7, standard rabbinic dialogue or the citation of a proverb without conflict or change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (an aphorism) followed by a rabbinic dialogue citing a biblical verse, with no narrated action or change occurring. Under R-C2 and R-C7, standard rabbinic dialogue without conflict or events is not considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage records a man reciting an aphorism followed by a rabbi citing a supporting biblical verse; this is standard rabbinic dialogue and speech-acts without a narrated event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act (an aphorism) followed by a rabbinic dialogue comparing it to a biblical verse. There is no narrated action, conflict, or change occurring within the passage to constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a man reciting an aphorism while walking, which is a speech-act rather than a narrated event. Under R-C2 and R-C5, a report of someone speaking or a standard rabbinic dialogue without conflict or a one-time event leading to change does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage records a man reciting an aphorism followed by a rabbi citing biblical verses as support; there is no narrated action or event beyond the speech-act, and no conflict or change is depicted.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (the house of the Nasi and Yehuda bar Nahmani) with multiple actions: the appointment of an unlearned judge, the judge's request for an interpreter, the interpreter's physical action of bending over, and the subsequent conflict where the interpreter publicly rebukes the judge through a homily.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 7b:18-Sanhedrin 8a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving Rav and his host that leads to a change in the situation: Rav disqualifies himself and appoints Rav Kahana, who then confronts the host's behavior. It contains multiple actions and a resolution beyond a simple ruling, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 9b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a quotation of a Mishnah story (R-C1) that narrates a specific action by Ben Zakkai. However, it is a bare report of a single event used as a legal precedent, which fits the borderline shape of having one real event followed by or embedded in a legal discussion (R-C7).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions (inviting sages, finding an extra person, a confrontation, and a resolution) involving post-biblical figures. It follows the 'incident involving' formula and describes a specific event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving multiple post-biblical figures (Rabbi Yehuda HaNasi, Rabbi Hiyya) with a clear sequence of actions: a teacher's command, a student's self-sacrificing response to prevent embarrassment, and a follow-up dialogue the next morning that reveals the character's motivation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic story involving a specific incident (a woman coming to the study hall), a conflict (the unknown betrothal), and a series of actions (Rabbi Meir and the students writing divorces) that lead to a change in status. It is a Talmudic quotation of a Tannaitic story introduced by a formula, which is included per the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Hillel and the Sages) where a Divine Voice speaks and the Sages respond by identifying Hillel. It follows the pattern of a habitual frame (the use of the Divine Voice) leading into a specific incident with actions and a change in state (Hillel's death and eulogy).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (Shmuel HaKatan and the Sages) where a Divine Voice speaks and the Sages respond. It contains multiple actions and changes, including the reclining in the loft, the heavenly proclamation, the Sages' identification of the individual, and his deathbed prophecy.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical incident where the Sages intended to perform an action (eulogize Yehuda ben Bava) but were prevented by external circumstances. While it contains a real event and a post-biblical figure, it is borderline because it is a brief report of a single failed action without further narrative development.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific one-time event involving Rabban Gamliel and a Syrian officer, which leads to a conditional ruling and a subsequent resolution when he returns. Per R-B1, the story includes the opening formula 'The Sages taught' and the legal principle that frames the incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 11b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabban Gamliel and Yoḥanan the scribe) that includes specific actions—sitting, standing, and the dictation of letters—leading to a change in the calendar. Per R-B1, the story includes the opening formula 'As it is taught in a baraita'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving post-biblical figures (scholars from Tiberias and the court of the Nasi) who were apprehended by Roman soldiers and successfully established an intercalated year despite persecution. It contains multiple actions, conflict, and a change in outcome, fitting the definition of a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated incident involving Rabbi Akiva in prison followed by a response from the Sages. Unlike a bare report, this includes a specific setting (incarceration), a distinct action (intercalating three years), and a subsequent conflict/resolution with the Sages.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full incident involving Hezekiah, King of Judea, but as he is a biblical character, the story is classified as out of scope according to the editor's rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 12b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving actions and consequences (intercalating the year, praying for mercy, and encouraging the people), but the protagonist is Hezekiah, a biblical king. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 13b:11-Sanhedrin 14a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure, Rabbi Yehuda ben Bava, featuring a specific one-time event (the ordination during the Roman persecution) that includes multiple actions, dialogue, and a tragic change of state (his martyrdom). Although embedded within a legal discussion and introduced by a formula, it contains a complete dramatic arc with causality and conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 14a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving Rabbi Yoḥanan's emotional reaction (distress) and a concrete action (the Sages ordaining one person while being unable to ordain another due to his absence). This meets the criteria of an incident with change and action beyond a mere legal ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 14a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical incident involving rabbis (Rabbi Yohanan, Hanina, and Hoshaya) with multiple actions: Yohanan's persistent attempts, his emotional distress, and the dialogue where the students reveal their lineage to resolve the conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 14a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame (Rabbi Zeira hiding) that leads to a specific change in action (presenting himself for ordination) after hearing a dictum. This is followed by the narrated event of the ordination ceremony itself and the specific songs sung by the Sages.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 14a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a description of a custom or a habitual action (Rabbi Abbahu's arrival at the palace) without a specific one-time event or change following it. Under R-C3 and R-C5, a habit that leads nowhere is considered a bare report or custom rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 16a:18-Sanhedrin 16b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative with actions, dialogue, and causal change (the lyre awakening David, the Sages' petition, and the subsequent military mobilization), but it is about King David and other biblical figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with actions, conflict, and resolution, but it concerns the biblical figure Moses and the appointment of the Elders in the wilderness. Under rule R-S1, biblical episodes retold are considered out of scope for this collection.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with actions and dialogue involving Moses and the redemption of the firstborn. However, because it is a retelling of a biblical episode involving biblical characters, it is classified as out of scope according to rule R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 17a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with dialogue, action, and change involving Eldad and Medad, but since these are biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 18b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Sages overheard cattle herders and subsequently intercalated the year. This fits R-C0 as an incident followed by a ruling/action, and R-C3 as it moves from a general observation to a specific 'one day' event that leads to a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical change in custom triggered by a conflict between two families in Jerusalem. Under R-C3 and R-C4, even though it is framed as a baraita and describes a custom, the specific incident of the families fighting and the resulting decree constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of three reports of ordinances instituted by Rabbi Yosei in Tzippori. These are bare reports of rabbinic practice or legal enactments without a narrated event or change; the 'incident that happened' is only alluded to and not narrated, which under R-C5 and R-C6 does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi being asked a question in a specific location, but the interaction consists entirely of a speech-act (a legal ruling) without any subsequent action, conflict, or change. Under R-C0 and R-C2, a ruling following a single event (the asking) is not a story, and standard rabbinic dialogue regarding halakha is excluded.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19a:15-Sanhedrin 19b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (King Yannai and Shimon ben Shataḥ) with multiple actions, conflict, and a clear change in outcome. It follows the pattern of an incident leading to a ruling, which Jeff explicitly includes as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 19b:18-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with specific actions and dialogue (embedding a sword, weeping, and restraint), but it is about the biblical character Palti son of Laish rather than a rabbi or post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 20a:15-Sanhedrin 20b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a report of a sage's presence in a market to define a term, followed by standard rabbinic dialogue and legal definitions. Under R-C2 and R-C5, a report of where someone used to be that leads only to a definition or discussion, without a specific event or change, is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 21b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with actions and causal consequences (Gabriel planting a pole leading to the founding of Rome), but it is about the biblical figure King Solomon and the angel Gabriel, placing it out of scope for the rabbinic story catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 22a:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with dialogue, conflict, and action involving King David, Abishag, and Bathsheba. However, because it is about biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 22b:21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue and a report of a habitual action (spending money on haircuts) rather than a specific narrative event. However, it describes a real-world demonstration and an action taken by a post-biblical figure (Ben Elasa) to illustrate a point, fitting the borderline shape of 'mainly speech but something happens' or 'events with weak causality'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 24a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Rabbi Yehuda HaNasi makes a statement, is challenged by a student citing a precedent, and subsequently retracts his ruling. This constitutes a change in state and a narrated interaction between rabbis, fitting the definition of a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 25a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a legal case where witnesses testify and a rabbi issues a ruling. Under R-C0 and R-C5, a case where coming before a rabbi and being ruled on is the only event, without further narrated action or change, does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 25a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (a slaughterer selling non-kosher meat) followed by multiple actions and changes: a ruling by Rav Nahman, a physical act of remorse by the slaughterer, and a subsequent legal challenge by Rava. This meets the criteria of having at least two actions and a change beyond a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 25b:23-Sanhedrin 26a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing the father's tax collection practices, but it culminates in a specific one-time event and change: his deathbed confession and the order to return specific funds. This meets the criteria for a story as it narrates events that happened to a post-biblical figure and includes actions leading to a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26a:7-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     10,
+     11,
+     12,
+     13,
+     14
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-stage narrative involving specific rabbis (Reish Lakish, R. Hiyya, R. Shimon) with distinct actions, conflict, and a resolution. While segments [5] through [9] contain legal analysis and commentary (R-B4), the surrounding segments form a coherent story about a journey, a confrontation in the fields, a trick with a ladder, and a final sharp dialogue before Rabbi Yohanan.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26a:20-Sanhedrin 26b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     8,
+     9
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with multiple actions, conflict, and a dramatic resolution, but it is about biblical figures (Shebna, Hezekiah, Sennacherib) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case brought before a rabbi followed by a ruling/discussion, but there is no other narrated action or change beyond the interaction with the rabbi. Under R-C0 and R-C7 (shape 2), a case where coming before a rabbi is the only event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26b:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving the farmers of Rav Zevid who stole produce, followed by the rabbi's ruling to disqualify them. Under R-C0, an incident followed by a ruling counts as a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 26b:26-28",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (gravediggers burying a person on a festival) followed by multiple rabbinic actions and a conflict between Rav Pappa and Rav Huna. Under R-C0, an incident followed by a ruling or action counts as a story, and the dialogue here contains the conflict and change in status required for a narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 27a:20-Sanhedrin 27b:8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving Bar Hama, the Exilarch, and Rav Abba bar Ya'akov, which includes multiple actions (a murder, a court investigation, the bringing of witnesses) and a clear change in outcome (the acquittal and Bar Hama's subsequent gratitude). While the middle segments contain a legal discussion, they are embedded within the narrative frame of the courtroom drama and lead directly to the story's resolution in segment 11.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 28a:31-Sanhedrin 28b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving at a location and being asked a question, followed by a report of his ruling. Under R-C0 and R-C7, coming before a rabbi for a ruling without another narrated action or change is not a story, and R-C5 classifies such bare reports of legal incidents as non-narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 28b:18-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain deed of gift') involving a legal problem, followed by a courtroom drama with dialogue and a change in the rabbi's ruling. Under R-C0, an incident followed by a ruling counts as a story, especially when it contains the 'dynamism' of a courtroom interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 28b:27-Sanhedrin 29a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event involving post-biblical figures (Mar Ukva and his former relatives) coming to court. It contains multiple actions, conflict in the dialogue, and a resolution where the rabbi refuses to adjudicate, meeting the criteria for a story rather than a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident ('a certain man who hid witnesses') involving multiple actions and a resolution by a rabbi's ruling, which fits the criteria for a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a man hiding witnesses in a grave and a subsequent interaction, followed by a rabbi's ruling. Under R-C0, an incident involving a narrated action (hiding witnesses) followed by a ruling counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic 'incident plus ruling' story where a specific man makes a statement, is brought to court, and Rav Nachman issues a ruling. Per R-C0, the narrated event of the man's admission and the subsequent courtroom drama constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific individual (the 'mouse that lies on dinars') and his deathbed confession, followed by a sequence of actions including a lawsuit, a ruling by Rabbi Yishmael, a partial payment, and a second courtroom drama before Rabbi Hiyya. It satisfies R-C0 as it contains multiple narrated actions and changes beyond a simple ruling, including the heirs' attempt to overturn the first verdict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a fact-finding inquiry where the scribes were asked a question and answered; it lacks the necessary actions, conflict, or change to constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 29b:21-Sanhedrin 30a:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a legal case regarding a document's wording followed by a discussion of its validity; however, there is no narrated action or change beyond the legal analysis and the citation of rulings. Under R-C0 and R-C5, a report of a case that leads only to a legal discussion without further incident is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 30a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific event (a man distressed about lost money and a dream revealing its location) followed by a rabbinic ruling. Under R-C0, the narrated event constitutes the story and the ruling serves as its resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 30b:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (rabbis) that includes a specific one-time event ('One day') following a habitual frame. It contains multiple actions, conflict (the disappointing answer), and a permanent change (the ordination that cannot be revoked).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 30b:16-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is primarily a scholarly dialogue (speech-acts) between two rabbis, but it contains a specific encounter, a conflict of ideas, and an emotional resolution ('you have settled my mind') followed by a sharp retort, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a case brought before a rabbi followed by a ruling, but there is no other narrated action or change beyond the ruling itself. Under the limits of R-C0 and R-C7 shape 2, an incident where coming before a rabbi is the only event is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story because it narrates a specific incident that came before a rabbi and resulted in a ruling. Under R-C0, an incident followed by a ruling counts as a story, and unlike the 'bare reports' of R-C5, this contains the necessary actions (witnesses testifying and the rabbi combining them) to constitute a narrative event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about a specific event involving a post-biblical figure (Rav Ami) and a student. It contains multiple actions—the revealing of a secret, the emergence of a rumor, and the subsequent expulsion—which satisfies the requirement for change and causality beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31a:23-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving a child brought to court, including multiple actions (the child crying, people hearing him and offering testimony) and a change in the legal outcome. This exceeds the 'bare ruling' limit of R-C0 and R-C7 because the child's emotional reaction and the subsequent discovery of witnesses provide the necessary narrative dynamism.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31a:25-Sanhedrin 31b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a woman coming before a judge and a ruling being made, but according to R-C0 and R-C7, coming before a rabbi and being ruled on is not enough to constitute a story without another narrated action or change. Under R-C5, this is a legal discussion of the facts of an incident and its consequences rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 31b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where a man (Ukvan) complained to the Sages about his brother, leading to the Sages sending a letter to the Exilarch. While it involves a legal complaint and a ruling, it is borderline because it is primarily a speech-act (the sending of a letter) and an incident alluded to rather than a fully developed narrative with multiple actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 33a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving an incident (the cow's womb), a ruling by Rabbi Tarfon, a subsequent action (feeding it to dogs), a courtroom drama before the Sages in Yavne, and an emotional reaction from Rabbi Tarfon. Although it is a Mishnah story quoted in the Talmud, rule R-C1 explicitly includes such citations as Talmudic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 34b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (a blind man judging and Rabbi Yohanan refraining from protest), but it is followed immediately by a legal discussion and commentary on Rabbi Yohanan's reasoning. Under R-C7 shape 2 and R-C0, an incident followed by a ruling or discussion is often borderline, especially when the narrative does not continue beyond the initial situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 36a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a historical practice or seating arrangement ('I was among the quorum... they would commence from me') used as evidence in a legal discussion. It lacks a specific one-time event, conflict, or narrated change beyond the description of a habit.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 37a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between Rav Kahana and a heretic. While it contains conflict (the heretic's challenge) and an implied change or resolution through the rabbi's retort, it lacks physical actions or events beyond the speech-act itself, placing it in the borderline category.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 37a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rabbi Zeira) involving a habitual action (bringing hooligans close) that leads to a specific one-time event (his death) and a subsequent change in the characters (the hooligans repenting).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 37b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure, Rabbi Shimon ben Shataḥ, describing a specific one-time event (the pursuit into the ruin) followed by a dramatic resolution where the murderer is punished by a snake. It meets the criteria of having multiple actions and a clear change in state (the death of the murderer).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yehuda HaNasi and the sons of Rabbi Hiyya) with multiple actions: sitting at a meal, being served wine to induce speech, becoming inebriated, and a subsequent verbal conflict with an emotional reaction ('thorns in my eyes'). It follows the pattern of a specific event leading to a change or conflict as defined in R-C0 and R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with dialogue, action, and change, but it concerns God and the creation of man. Under rule R-S1, stories about biblical characters or events are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Akiva and Rabbi Elazar ben Azarya containing a sharp rebuke and conflict. Under R-C2 and R-C7, speech with conflict but no other narrated action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38b:18-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a heretic involving conflict and theological debate. Under R-C2 and R-C7, speech-based interactions with conflict but no physical action or change beyond the dialogue are classified as borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 38b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists primarily of speech acts (a heretic's challenge and a launderer's response), but it contains conflict and a specific interaction between a rabbi, a heretic, and a launderer that goes beyond standard scholarly dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific interaction between Rabban Gamliel, the Emperor, and the Emperor's daughter, featuring multiple actions (bringing meat, roasting it) and conflict that leads to a change in the Emperor's understanding. It satisfies the requirement for more than just speech-acts by including the physical demonstration with the meat.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a post-biblical figure (the emperor) and a rabbi (Rabban Gamliel). It contains actions beyond speech, specifically the emperor's physical moaning and groaning, which creates a dramatic conflict and leads to a change in the emperor's claim of knowledge.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific interactions between Rabban Gamliel and the emperor involving physical actions (bringing quinces, spinning a sieve, putting a hand in a mouth) and conflict that leads to a change in the emperor's understanding. These are not merely speech acts but narrated events involving a post-biblical figure.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a theological dialogue between a rabbi and the emperor. While it lacks physical actions, it contains conflict in the form of a polemical challenge and response, fitting the borderline criteria for speech-based interactions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a theological dialogue between a rabbi and an emperor. While it lacks physical actions, it contains conflict and a sharp retort, which fits the criteria for a borderline story based on speech acts with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a rabbi and a magus. While it contains conflict and a sharp retort, it lacks a physical action or change beyond the speech act itself, placing it in the borderline category for speech-based narratives.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative containing dialogue, multiple actions (throwing to the enclosure), a miraculous event, and a clear change in outcome for both the rabbi and the heretic.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event where Rabban Gamliel hits the emperor's servant to create a physical parable. This action, combined with the conflict between the rabbi and the emperor, moves it beyond a mere speech-act into a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue with conflict (the heretic's mockery) and a physical action (the student arriving), but it functions primarily as a setup for a teaching. Under R-C2 and R-C7, speech with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 39b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving the ministering angels and God during the splitting of the Red Sea. While it contains actions and dialogue, it is about biblical/celestial figures rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 40a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of a single action (Ben Zakkai's examination) cited as a precedent for a legal principle, with no continuation, change, or causality narrated beyond the act itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 41a:20-Sanhedrin 41b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a Mishnah story (R-C1) and a baraita parallel about Ben Zakkai examining witnesses. While it is an incident followed by a ruling/outcome (R-C0), the Talmudic discussion is primarily a legal and biographical analysis of the event's details and the actor's identity, making it borderline (R-C7 shape 2/3) rather than a full narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 41b:4-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated encounter between rabbis (Rav Kahana, Rav Safra, and Rami bar Hama) and includes conflict and a resolution through dialogue. However, because the actions are primarily speech-acts (studying, encountering, asking, and answering) and the core is a legal discussion, it fits the borderline shape of 'mainly speech, but something happens'.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 42a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a bare report of what Mareimar and Mar Zutra used to do (leaning on each other) as a custom, which Jeff rules is not a story if it does not lead to a one-time event or change. The remainder of the passage is standard rabbinic dialogue regarding the text of a blessing, which lacks the conflict required for a speech-only borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 43a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Jesus the Nazarene, a post-biblical figure, which places it in scope. It contains multiple actions and a change in state (the 40-day proclamation, the failure to find merit, and the execution), satisfying the criteria for a story rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 43a:21-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a post-biblical narrative involving the trial and execution of disciples of Jesus, which falls within the scope of post-biblical figures. It contains multiple actions (bringing them in) and conflict (the courtroom dialogue and rulings), satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 43b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with dialogue and action (casting lots, confrontation, and confession), but it is a retelling of the biblical episode of Joshua and Achan. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 44a:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between post-biblical figures (Rabbi Sheila and Rav) involving a public lecture, a departure, and a subsequent public rebuttal. This sequence of actions and the resulting conflict between the two rabbis constitutes a story rather than a mere legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 44a:18-Sanhedrin 44b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving an encounter between Joshua and an angel, including dialogue, conflict, and a change in Joshua's behavior. However, because it is a retelling of a biblical episode involving biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 44b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a post-biblical figure that includes a specific event (being taken to execution), a speech-act with conflict, and a response from the Sages that results in a change of status regarding the witnesses' responsibility. It follows the 'incident followed by a ruling' shape defined as a story in R-C0 and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 46a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to a specific historical incident involving Shimon ben Shataḥ and the hanging of women, but the incident is not narrated in full and is cited as a legal precedent. Under R-C6 and R-C7 shape 4, an incident only alluded to or sketched as evidence is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 46a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents where a specific action (riding a horse, public intercourse) is followed by a court response and a physical change in the actor's state (stoning, flogging). These meet the criteria of R-C0 as incidents followed by rulings that involve more than just speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 46b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific historical encounter between King Shapur and Rav Hama involving a challenge, a silence (action/reaction), and a subsequent sharp rebuke by Rav Aha bar Ya'akov, which constitutes conflict and change beyond a mere legal dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 47a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event where King Hezekiah dragged his father's bones on a rope bier. While this constitutes a story, it is about biblical characters and is therefore out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 47a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage records a specific deathbed instruction from Rabbi Yehuda HaNasi, which constitutes a speech-act with implied change/conflict regarding his burial honors. Under R-C7 shape 1 and R-C2, dialogue with conflict or implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 47b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where people took dirt from Rav's grave and others brought the case before Shmuel, who then issued a ruling. This fits the criteria of an incident followed by a ruling with multiple actions (taking dirt, coming to the rabbi, and the ruling itself).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 48b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving dialogue, conflict, and a resolution (the execution of Joab), but the characters are biblical figures (Joab, Benaiah, Solomon) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 49a:1-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story involving the judgment of Joab by King Solomon, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific character (a priest's daughter) and a sequence of actions (adultery, being wrapped in branches, and being burned) followed by a response from the Sages. Although it is a Mishnah story, the rules specify that the Talmud's quotation of such stories is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52a:25-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative involving characters, dialogue, and divine response, but it concerns biblical figures (Moses, Aaron, Nadav, and Avihu) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52b:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] narrates a specific historical event involving a post-biblical figure (Rav Hama bar Toviyya) and a specific action (the execution of Imrata bat Talei). Segment [3] is excluded as it is the Gemara's legal commentary and critique of the action, which under R-B4 is not part of the story itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1",
+     "R-C7",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage quotes a Mishnah story (R-C1) which is only alluded to in brief ('...and so on') rather than narrated in full (R-C6). Under R-C7, a passage that mentions an event followed by a brief rabbinic ruling or identification ('It was a court of the Sadducees') is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 52b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the execution of the priest's daughter) witnessed by a post-biblical figure (Rabbi Elazar ben Tzadok) and includes a subsequent interaction with the Sages. Per R-C1, the Talmud's quotation of a story found in the Mishnah or a Baraita is included in the catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 53b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a rabbi arriving and teaching a legal tradition; there is no narrated action, conflict, or change beyond the speech-act of teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 56b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a rabbi arriving and teaching a specific legal exposition. Under R-C2 and R-C5, a report of a teaching or a speech-act without a following event or change is standard rabbinic dialogue and not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 57b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a bare report of a rabbi finding a text in a book; the content found is purely legal/halakhic and no subsequent action, change, or event is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 58b:20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dictum followed by a specific action ('Rav Huna cut off the hand') that changes the situation. Under R-C0, an incident that goes beyond a mere ruling or speech-act to describe a physical action or change counts as a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 59b:22-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 is a full rabbinic story about Rabbi Shimon ben Halafta involving a specific event (encountering lions), a miracle (meat descending), and a subsequent ruling in the study hall. Segment 3 is excluded as it is a hypothetical legal discussion (Rabbi Zeira's question) following the story, which per R-C0 and R-B2 is not part of the narrative itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 61a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a real event (Rav Hamnuna losing his oxen and meeting Rabba), but the bulk of the interaction is a standard rabbinic dialogue/legal discussion. Under R-C7 shape 2, a passage with one real event followed by a ruling or discussion is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 62a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act (teaching a baraita) followed by a sharp retort and dismissal by Rabbi Yohanan. While it is primarily dialogue, the conflict and the implied change of the student being sent out of the study hall meet the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 63b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Ulla's arrival and lodging) followed by a dialogue with Rava that contains conflict and a resolution. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical case, and it contains more than just speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 63b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event with actions and a change in outcome (the father's attempt and the mother's intervention), but it is about the biblical figure Hezekiah and his parents, placing it outside the scope of rabbinic and post-biblical stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 63b:21-Sanhedrin 64a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, dialogue, and a tragic change in outcome. Although it features Elijah, he is interacting with a post-biblical child in Jerusalem, which falls within the scope of post-biblical figures and rabbis rather than biblical-only narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 64a:3-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions and changes, but it concerns biblical figures (Nehemiah, Zechariah) and events from the biblical period rather than rabbis or post-biblical figures. Segment 3 is excluded as it is a parenthetical rabbinic commentary on the story (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 64a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical gentile woman with multiple actions (falling ill, making a vow, recovering, and traveling to idols) and a clear change in her resolve upon encountering the priests of Peor. It includes the opening formula 'Rav Yehuda says that Rav says' as per R-B1 and falls within the post-biblical scope defined in R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 64a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure, Sabbeta ben Alas, involving multiple actions (renting a donkey, a dialogue, an act of defecation) and a clear change/outcome where his attempt to demean the idol is interpreted as worship by the priests.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 64a:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated event involving a specific rabbi (Rav Menashe) that includes multiple actions (traveling, throwing a stone, going to the study hall) and a resolution through a ruling. It follows the R-C0 criteria where an incident followed by a ruling constitutes a story, and the actions go beyond mere speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 65b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabbi Akiva and Turnus Rufus. While it is primarily speech-based, it contains significant conflict and a sharp retort that shames the interlocutor's father, fitting the criteria for a borderline story where dialogue includes conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 65b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving post-biblical figures (Rava and Rabbi Zeira) where an action (creating a man) leads to a specific interaction and a change in state (the golem returning to dust).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 65b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage describes a habitual action (studying Sefer Yetzira) that leads to a tangible change and outcome (the creation and eating of a calf), which fits the criteria for a story under R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 67a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving a post-biblical figure (Ben Setada) that includes an action (the court's procedure) and a clear change/outcome (his execution). Unlike a bare report of a custom, this is presented as a one-time incident that follows the general legal rule described in the preceding context.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 67b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving a specific action (the woman attempting to take dust) and a response from Rabbi Hanina. Under R-C0, it describes an event that happened, and the dialogue contains conflict and a resolution based on the rabbi's merit, distinguishing it from a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 67b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific eyewitness event involving a certain man (the Arab) performing a series of actions (slicing a camel, beating a drum) that lead to a change (the camel arising), followed by a rabbinic interaction that interprets the event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 67b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Ze'eiri) with multiple actions (buying, watering, transformation) and a resolution involving a refund and dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 67b:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Yannai) involving multiple actions, conflict (the sorcery attempt), and a clear change in state (the woman turning into a donkey and back). It meets the criteria of an event that happened rather than a legal hypothetical or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 68a:0-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a multi-layered narrative about the death of Rabbi Eliezer, containing specific one-time events, conflict with his son and colleagues, and a dramatic resolution where he dies while issuing a ruling. It also contains an embedded story in segment 8 about a specific incident involving the sorcery of cucumbers.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 69b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of standard rabbinic dialogue and speech-acts (stating a discussion and responding with a source) without any narrated action, conflict, or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 70b:1-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story involving actions (binding to a pillar) and dialogue, but it is about biblical characters (Solomon and Bathsheba) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 71a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct first-person or eyewitness accounts of post-biblical figures encountering specific historical locations. Rabbi Shimon's account includes a one-time event ('I once went') and a specific action ('I saw a place') that serves as more than a bare report of a custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 72a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened to a rabbi (rams were stolen) followed by a distinct action and change (the burglars returned them and Rava refused to accept them). This fits the criteria of an incident followed by a ruling or action that creates change, rather than a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 74a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical event where the Sages assembled, voted, and reached a conclusion in a named location (the upper story of the house of Nitza in Lod). While it results in a legal ruling, the narration of the assembly and the act of counting votes constitutes a 'courtroom drama' or specific incident beyond a bare dictum, fitting the borderline criteria for a narrated event followed by a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 74a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event where a man came before Rabba with a life-or-death dilemma. Under rule R-C0, an incident followed by a ruling counts as a story, as it describes a real event rather than a hypothetical case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 75a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident about a post-biblical figure ('a certain man') involving a sequence of events: he fell ill with passion, doctors were consulted, and the Sages issued a series of rulings that determined the outcome. It follows the R-C0 criteria for a story where an incident is followed by a ruling, and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 76b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific event that happened ('A certain man... and it died') followed by a ruling from Ravina and Rav Aha bar Rav. Under rule R-C0, an incident followed by a ruling counts as a story because it contains a narrated action beyond the ruling itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 80b:5-Sanhedrin 81a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a dialogue between Rav Yeḥezkel and his son Rav Yehuda regarding a Mishnah version, followed by a rebuke from Shmuel. While it is primarily speech-based, it involves conflict (the correction of a father) and a subsequent moral instruction, fitting the borderline shape of dialogue with conflict and implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 82a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (the grandfather of R. Perida) involving multiple actions, conflict with his wife, and a clear change in the state of the object (the skull). Although it concerns a biblical character's remains, the protagonist and the events are rabbinic/post-biblical, placing it in scope under R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 82a:10-Sanhedrin 82b:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full-blown story with multiple actions, dialogue, and change, but it is a retelling of the biblical episode of Zimri and Pinehas. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue of rabbinic stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 84b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of the habitual practices of Rav and Mar son of Ravina regarding their sons' medical assistance. Under R-C5, a description of what a rabbi used to do that leads to no further action or change is a precedent rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 86a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a standard rabbinic dialogue consisting of a tanna reciting a baraita and Rav Sheshet correcting him; it lacks the actions or conflict necessary to be considered even a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 88b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific event where the speaker traveled to the South and engaged in a legal dispute with colleagues. While it is primarily a report of a scholarly disagreement (speech-acts), the travel and the specific conflict over the ruling provide enough of an incident to meet the borderline criteria.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 88b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a historical report or general description of a sociological change rather than a specific event that happened to named individuals. Under R-C5 and R-C0, it lacks the specific narrated action or incident required to be considered a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89a:14-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving the false prophet Zedekiah, the spirit of Naboth, and the kings Ahab and Jehoshaphat. While it contains actions, conflict, and change, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89a:19-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment 2 is a full-blown story with actions and change (Jeremiah's prophecy, Hananiah's inference, and his subsequent public declaration), but it is about biblical characters (Hananiah and Jeremiah) and is therefore out of scope. Segment 3 is standard rabbinic dialogue (Rav Pappa and Abaye) discussing the case and is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89b:8-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative with dialogue, conflict, and action (Satan's challenge to God and his attempt to intercept Abraham). However, it is about biblical characters (Abraham, Isaac, Satan) rather than rabbis or post-biblical figures, placing it out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 89b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving dialogue and conflict between Ishmael and Isaac, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 90b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Rabban Gamliel and heretics which contains conflict ('they did not accept from him') and an implied change in the state of the debate, but lacks physical actions beyond the speech-act of asking and answering.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 90b:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between the Romans and Rabbi Yehoshua ben Hananya involving a theological challenge and a sharp retort. Under R-C2 and R-C7, speech-based interactions with conflict and implied change are considered borderline stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 90b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific encounter and conflict between Rabbi Eliezer and the Samaritans. While it consists primarily of speech acts, the presence of conflict and the implied change (the refutation/defeat of the opposing argument) makes it borderline under R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 90b:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between Queen Cleopatra and Rabbi Meir. Under R-C2 and R-C7, speech-only interactions are considered borderline when they involve conflict or a specific inquiry/challenge between a post-biblical figure and a rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 90b:20-Sanhedrin 91a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of speech acts (a challenge and a response via parable) between the Emperor, Rabban Gamliel, and the Emperor's daughter. While it contains conflict and an implied change in the Emperor's understanding, the lack of physical action beyond dialogue makes it borderline under R-C2 and R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a heretic involving conflict, which qualifies as borderline under R-C2. While it contains a parable with internal actions, the frame itself is primarily a speech-act exchange regarding a theological dispute.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue between a post-biblical figure and a heretic. While it lacks physical actions, it contains significant conflict and a sharp retort, fitting the criteria for a borderline speech-based story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Geviha ben Pesisa, a post-biblical figure, and Alexander of Macedon. It contains multiple actions (requesting permission, traveling, debating) and a clear change in outcome (the opponents fleeing and abandoning their property).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:9-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Alexander of Macedon) and a rabbinic-era figure (Geviha ben Pesisa). It contains multiple actions, conflict, and a clear change in outcome where the Egyptians flee after failing to find a response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about Geviha ben Pesisa, a post-biblical figure, interacting with the Sages and Alexander of Macedon. It contains multiple actions and a change in state (seeking permission, receiving it, and going to court) which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 91a:16-Sanhedrin 91b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about the Roman emperor Antoninos and Rabbi Yehuda HaNasi. Within their dialogue, Rabbi tells a parable that functions as a story with multiple actions, conflict (the theft of the fruit), and a resolution (the king's judgment).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 92b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story about the dead revived by Ezekiel, but since it concerns biblical characters and events rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 92b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative with multiple actions and change, but it concerns biblical figures (Nebuchadnezzar, Hananiah, Mishael, Azariah, and Ezekiel) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 93a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about biblical characters (Hananiah, Mishael, and Azariah) and their interaction with the nations of the world after the fiery furnace. According to R-S1, biblical episodes retold are considered stories but are labeled out_of_scope as they do not feature rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 93a:12-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with dialogue, action, and change, but it concerns biblical figures (Ahab, Zedekiah, Joshua the High Priest, and Nebuchadnezzar) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 93b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about Bar Koziva, a post-biblical figure, and his interaction with the Sages. It contains multiple actions (ruling, claiming to be Messiah, testing, and being killed) and a clear change in outcome, satisfying the criteria for a rabbinic-era story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 94a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving dialogue and conflict between the Attribute of Justice, the Earth, and the Divine Voice regarding the messianic status of King Hezekiah. However, because it concerns biblical figures and celestial entities rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 94b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving King Hezekiah (inserting a sword and issuing a decree) followed by a change in the population's knowledge. While it is a story, it is about a biblical figure rather than a rabbi or post-biblical figure, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about the biblical king Sennacherib and his siege of Jerusalem. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95a:6-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions, conflict, and change, but it is about biblical characters (David, Abishai, Ishbibenob) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with actions, dialogue, and divine intervention, but it is a retelling of a biblical episode concerning Jacob and is therefore out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 95b:15-Sanhedrin 96a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative with multiple actions and dialogue, but it concerns the biblical figure Sennacherib and the fulfillment of biblical verses rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative about Nebuchadnezzar and King Hezekiah, but it is about biblical characters rather than rabbis or post-biblical figures. Under rule R-S1, such biblical episodes retold are classified as out_of_scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96b:1-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story about the biblical figure Nebuzaradan and the destruction of the Temple. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue, which focuses on rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 96b:9-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative involving dialogue and conflict between Ammon, Moab, and Nebuchadnezzar regarding the destruction of the Temple, but it concerns biblical figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 97a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative embedded within a dictum by Rava. It contains a habitual frame (the custom of the town of Truth) followed by a specific one-time event (the neighbor knocking) that leads to a tragic change (the death of the sons) and a resolution (the sage being asked to leave).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 97b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and Elijah the prophet; while it is primarily speech-acts regarding the messianic era, the interaction with a post-biblical figure and the presence of a specific inquiry/response dynamic fits the borderline criteria for speech with conflict or implied change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 97b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Rav Hanan finding a man with a scroll) and includes a dialogue with conflict/discovery that leads to a change in knowledge. Under R-C0, this is a narrated incident involving post-biblical figures, not a hypothetical legal case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 98a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of dialogue between King Shapur and Shmuel. While it lacks physical actions, it contains conflict in the form of the King's mockery and Shmuel's sharp retort, which fits the criteria for a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 98a:14-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical rabbi (R. Yehoshua ben Levi) interacting with Elijah and the Messiah. It contains multiple actions, travel, and a specific one-time event that leads to a change in the protagonist's understanding.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 98a:17-Sanhedrin 98b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific interaction between a rabbi and his students involving dialogue, a miraculous event (the water turning to blood), and the rabbi's deathbed instructions. It meets the criteria for a story as it contains multiple actions, conflict regarding the request for a sign, and a supernatural change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 99a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue between a rabbi and a heretic with no physical action narrated. However, it contains conflict (the heretic feels cursed and the rabbi rebukes him), which fits the criteria for a borderline story under R-C2 and R-C7 shape 1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 99b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where King Manasseh (a biblical figure) mocked the Torah and received a response from a Divine Voice. While it contains the necessary action and change for a story under R-C0, it is about a biblical character and is therefore out of scope according to R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 99b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with actions, dialogue, and causal consequences, but it concerns biblical characters (Abraham, Isaac, Jacob, and Timna) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 100a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rav Pappa misspoke and subsequently took the action of fasting to atone. This contains multiple actions and a change in state, fitting the definition of a story rather than a bare report or legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 100a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (Levi bar Shmuel and Rav Huna bar Hiyya) performing an action (mending mantles), followed by a dialogue and a rebuke from Rav Yehuda that changes the status of their behavior to 'irreverence'. This meets the criteria of an incident followed by a ruling or response that constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 100a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a specific interaction between Rabbi Yirmeya, Rabbi Zeira, and an elder, involving a teaching and a subsequent concern about irreverence. While it is primarily composed of speech acts and dialogue, there is a distinct conflict regarding social protocol and implied change in the status of the elder's remark, fitting the borderline criteria for speech with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 100a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and a clear change: the student sets sail, sees a vision, returns to the rabbi, and is ultimately transformed into a pile of bones. It follows a habitual frame (the rabbi's teaching) with a specific one-time event as per R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 101a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rav Yitzḥak) involving a sequence of events: arriving at an inn, an action (rubbing oil), a resulting change (developing boils), an interaction with another character, and a resolution (being healed).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 101a:10-Sanhedrin 101b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct narrative accounts of rabbis visiting the ailing Rabbi Eliezer. These are one-time events involving specific actions (visiting, crying, laughing, asking to be supported) and dialogue that leads to a change in the characters' perspectives on suffering.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 101b:14-Sanhedrin 102a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full narrative about Jeroboam, the elders, and the trickery used to establish idol worship, but it is about biblical characters rather than rabbis or post-biblical figures. Under rule R-S1, such biblical episodes retold are classified as out_of_scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 102a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving dialogue and action between God and King Jeroboam, but because it concerns biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 102a:17-Sanhedrin 102b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific sequence of events involving a post-biblical figure (Rabbi Abbahu): he fell ill, made a vow, recovered, and then broke the vow, followed by a dialogue with his students. This fits the criteria of a story where a habit leads to a one-time event and change (R-C3) and contains multiple actions beyond mere speech (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 102b:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about the post-biblical rabbi Rav Ashi and his interaction with the biblical figure Manasseh in a dream. It contains multiple actions, conflict, and a change in Rav Ashi's perspective (from calling them 'colleagues' to 'teachers'), which satisfies the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates specific actions and changes involving biblical kings (Manasseh, Ahaz, Amon) and their placement of idols. While it constitutes a story, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrative dialogue and actions involving King Amon, a biblical figure. Under rule R-S1, stories about biblical characters are considered out of scope for this collection, which focuses on rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a dialogue and actions involving Jehoiakim, a biblical king of Judah. While it functions as a story, it is excluded from the catalogue's scope because it concerns biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 103b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story involving the ministering angels, the Holy One, and the biblical character Micah. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue of rabbinic and post-biblical stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 104a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a narrated event involving a post-biblical figure (Rabbi Perida's grandfather) who finds a skull and attempts to bury it multiple times with a supernatural result. While it serves to explain a biblical character's fate, the narrative focus is on the actions and discovery of the rabbi's ancestor.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 104a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving post-biblical figures (Rabbi Perida's grandfather and his wife) and their actions (wrapping the skull, the wife's jealousy, and the incineration). Although it concerns the skull of a biblical king, the narrative focus is on the actions and emotional reactions of the rabbinic-era characters, placing it in scope under R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 104a:15-Sanhedrin 104b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (captives and their captor) featuring a specific incident, dialogue, and a clear change in outcome where the captor releases them. It begins with a standard opening formula and contains multiple actions and causal connections.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 104b:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrative about the members of the Great Assembly, who are post-biblical figures and thus in scope under R-S1. The passage describes a sequence of supernatural events and conflict between the rabbis and Divine interventions, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 105a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving an event (ten people coming before the prophet), dialogue with conflict, and a divine resolution. However, it is about biblical characters (Ezekiel and the people of Israel) rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 105b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Yehoshua ben Levi) involving a specific one-time event ('One day...') that includes multiple actions, a change in state (dozing off), and a resolution/moral conclusion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 106a:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a detailed narrative with actions, dialogue, and change, but it concerns the biblical figures Balaam and Balak and the events at Shittim. According to R-S1, stories about biblical characters are out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 106b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a dialogue between a rabbi and a heretic with conflict (the heretic's mocking tone and the reference to Balaam's death). Under R-C2 and R-C7, speech-based interactions with conflict but no narrated action beyond the dialogue are considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 106b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a habitual action (Rav Yehuda removing his shoes) that leads to a specific change or event (rain falling), which fits the criteria for a story frame. However, because it is a brief report of a habit used to illustrate a theological point rather than a fully developed narrative, it aligns with the borderline shape of having events but minimal change or causality beyond the immediate act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown story with dialogue, action, and change, but it is about biblical characters (David and Bathsheba) rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a dialogue and interaction between David and Hushai the Archite. While it contains the elements of a story, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107a:17-Sanhedrin 107b:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains full-blown stories with actions, conflict, and change (David's leprosy and Solomon's opening of the Temple gates), but the characters are biblical figures rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107b:4-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a full-blown narrative about the biblical characters Elisha, Gehazi, and Naaman. Under rule R-S1, biblical episodes retold are considered out of scope for this catalogue, which focuses on rabbis and post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 107b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Yehoshua ben Perahya, King Yannai, and Jesus) involving multiple actions, conflict, and a significant change in outcome. It follows the pattern of a historical event leading to a specific one-time incident at an inn and a subsequent failed reconciliation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 108a:21-Sanhedrin 108b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with dialogue, conflict, and specific actions involving Noah and the generation of the flood. However, because it is a retelling of a biblical episode featuring biblical characters rather than rabbis or post-biblical figures, it is classified as out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 108b:21-Sanhedrin 109a:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C3",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Nahum of Gam Zo, a post-biblical figure, involving a sequence of events, conflict, and a clear resolution. It follows the pattern of R-C3 where a habitual frame (his custom of saying 'this too is for the best') leads into a specific one-time event ('one day').",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (the 300 tunnels excavated that night) following a teaching, followed by a conflict with the townspeople and a miraculous event at the rabbi's death. This contains multiple actions and a change in state, satisfying the criteria for a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109a:16-Sanhedrin 109b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about an orphan in Sodom who outwits the city's corrupt laws. While it contains actions, conflict, and change, it is about biblical-era Sodomites rather than rabbis or post-biblical figures, placing it out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a specific incident, conflict, and a ruling, but it is part of a cycle of stories about the biblical city of Sodom and its inhabitants, which falls under the exclusion for biblical characters and episodes.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and conflict, but the protagonist is Eliezer, the servant of Abraham, who is a biblical character. Under rule R-S1, stories about biblical figures are classified as out_of_scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with a custom, a specific event, and a resolution through dialogue, but the protagonist is Eliezer, the servant of Abraham, who is a biblical character.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with a habitual frame leading to a specific one-time event (R-C3), but the protagonist is Eliezer, the servant of Abraham, a biblical character. Under R-S1, stories about biblical figures are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with actions, conflict, and a tragic change, but it concerns the biblical inhabitants of Sodom rather than rabbis or post-biblical figures. Under rule R-S1, biblical episodes retold are considered out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 109b:15-Sanhedrin 110a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with dialogue, action, and change, but it concerns the biblical figure On, son of Peleth, during the rebellion of Korah. Under rule R-S1, stories about biblical characters are considered out of scope for this catalogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 110a:16-Sanhedrin 110b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person narrative about the post-biblical figure Rabba bar bar Hana and his interaction with an Arab guide. While it references biblical characters (Korah), the primary action involves the rabbi's journey and observations, placing it in scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 111a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two instances of dialogue with conflict (rebukes) regarding the interpretation of a verse. While it is mainly speech-acts, the second instance includes a physical setting ('Rav Kahana sat before Rav'), making it a borderline case of a story rather than pure legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 111a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident where Rav observes Rav Kahana's actions, leading to a dialogue with conflict and a moral lesson. This contains multiple actions (washing hair, sitting, speaking) and a change in understanding, meeting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 111a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rabbi Elazar enters Alexandria and encounters an old man, meeting the criteria for a post-biblical figure story. It includes the opening formula as per R-B1 and contains actions and dialogue beyond a bare legal report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 111b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rabbi Hagga) who performs an action (walking up stairs) and experiences a change or realization after hearing a child's speech. Under R-C0, this is a story because it describes an event that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Sanhedrin 113a:10-Sanhedrin 113b:0",
+   "answer": {
+    "outcome": "invalid",
+    "verdict": null,
+    "rules": null,
+    "segments": null,
+    "reason": null,
+    "error": "unparseable: Extra data: line 13 column 4 (char 318); raw='[\\n  {\\n    \"verdict\": \"out_of_scope\",\\n    \"rules\": [\\n      \"R-S1\"\\n    ],\\n    \"segments\": [\\n      2,\\n      3,\\n      4,\\n      5\\n    ],\\n    \"reason\": \"Segments 2-5 constitute a full-blown story involving '"
+   }
+  }
+ ]
+}

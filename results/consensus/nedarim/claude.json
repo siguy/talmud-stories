@@ -1,0 +1,110 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "claude-opus-5-5 (Claude Code subagent, 8 agents, subset batches)",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "subset": "gemini_out_of_scope",
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 5
+  },
+  "imported": "2026-11-10T06:15:37"
+ },
+ "rows": [
+  {
+   "id": "Nedarim 32b:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Melchizedek blesses Abraham before God, Abraham rebukes him, and the priesthood is transferred: a narrative with change, but about biblical characters; segment 4 is the Gemara's comment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 48a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The Beit Horon incident: a son gives his courtyard and feast to a friend so his vowing father can attend, the friend consecrates it, they quarrel, and the Sages rule; several actions and a change. It is a Mishnah story (R-C1).",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 65a:1-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Zedekiah's oath to Nebuchadnezzar, its annulment, and Nebuchadnezzar's confrontation with the Sanhedrin is a full story, but about biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 32a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The angels Af and Heima swallow Moses until Zipporah circumcises her son, and Moses then seeks to kill them: events and consequence, but about biblical characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Nedarim 32a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Abraham trembles at God's command and is reassured, then argues about his astrological fate; mainly dialogue with God about a biblical figure.",
+    "error": null
+   }
+  }
+ ]
+}

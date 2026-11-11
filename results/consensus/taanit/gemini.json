@@ -1,0 +1,1931 @@
+{
+ "meta": {
+  "prompt": "src/prompts/judge_register_v2.md",
+  "prompt_sha": "84bfb33fd32a",
+  "rules_sha": "6a2d8e563ab7",
+  "backend": {
+   "model": "gemini-3-flash-preview",
+   "thinking_level": null,
+   "temperature": 0.1
+  },
+  "commit": "00f4e9684cc8202647937c2e0b98ff2c9b335dfc",
+  "finished": "2026-11-10T06:07:46",
+  "outcomes": {
+   "ok": 107
+  }
+ },
+ "rows": [
+  {
+   "id": "Taanit 4b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a speech-act where Shmuel issues a challenge and a ruling; there is no narrated action or event beyond this standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 5a:3-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full story with events, conflict, and a miraculous resolution, but it is about the biblical prophet Joel and the people of his time rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 5b:7-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical encounter between Rav Nahman and Rabbi Yitzhak during a meal and their subsequent parting. It contains multiple actions (sitting, eating, asking, parting) and dialogue with conflict/challenge, fitting the definition of a rabbinic story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 7a:16-Taanit 7b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rabbi Yehoshua) and the Roman emperor's daughter. It contains multiple actions, conflict, and a clear change in state (the wine turning sour) resulting from the dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 8a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage alludes to the incident of the marten and the pit as evidence for a dictum, but the story itself is not narrated in the text and must be filled in from commentaries or external tradition.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 8b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Rabbi Shmuel bar Nahmani and a communal crisis. It contains a conflict between the Sages' plan and the Rabbi's counter-proposal, leading to a change in the community's course of action (praying for famine relief instead of plague relief).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 8b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event (a decree of persecution) followed by a specific action and dialogue by Rabbi Zeira to resolve the religious dilemma. It meets the criteria of an incident involving a post-biblical figure that leads to a change or resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific encounter between Rabbi Yoḥanan and the son of Reish Lakish. It contains actions (finding the boy, asking a question) and a dialogue with conflict and intellectual challenge, which moves beyond a bare legal report or standard rabbinic dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9a:4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Yoḥanan and the son of Reish Lakish) with multiple actions and a clear change. It moves from a chance encounter and dialogue to a moment of physical tension and a dramatic resolution where the mother intervenes to save her son.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9a:13-Taanit 9b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving post-biblical rabbis, including a change of location after a death, a specific conflict (gesturing/mockery), an emotional reaction (offense), and a resolution involving a dream and a subsequent parting. It meets the criteria for a story as it contains multiple actions and a clear change in the relationship between the characters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day') involving a rabbi's emotional reaction and a subsequent change in behavior by another figure, which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific, miraculous event involving a post-biblical figure (Rav Daniel bar Ketina). While it begins with a habitual frame ('Every day he would go'), it describes a specific change or outcome—the rain falling precisely where he indicated—which satisfies the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Ulla arrives in Babylonia, acts based on an observation, and experiences a change in expectation when the rain fails to fall, leading to a concluding retort. This fits the criteria of a story about a post-biblical figure with multiple actions and a causal sequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 9b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Ulla) where an action (eating dates) leads to a physical change and an emotional reaction (pain and a change of opinion). It satisfies the requirement for multiple actions and a narrated change beyond a mere ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 10a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a standard rabbinic dialogue where a question is asked and a ruling is given. Under R-C0 and R-C7, a case where coming before a rabbi is the only event and no further action or change is narrated does not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 11a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a bare report of Rav Pappa's habitual practice while traveling, cited to illustrate his legal reasoning regarding digestion. Under R-C5, a description of what a rabbi used to do that leads to no further action or change is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 11b:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where Mar Ukva traveled to a location, was challenged by questions he could not answer, and subsequently went to the study hall to resolve them. This sequence of actions and the resolution of his ignorance constitutes a story under R-C0, and it includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 12a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('once the Ninth of Av occurred...') involving a post-biblical figure, Rabbi Elazar son of Rabbi Tzadok, and his family. It contains multiple actions—postponing the fast and fasting partially—which lead to a specific outcome based on their family custom.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 12a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act ('I shall be in observance of a fast') and an implied conflict or social tension (excusing himself from the Nasi's house). Under R-C2 and R-C7, speech with conflict and implied change is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 12b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains an emotional reaction ('Rav Sheshet became angry') and a sharp retort in response to the Sages' report, which constitutes conflict. Under R-C2 and R-C7, dialogue with conflict and an emotional event is considered a borderline story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 12b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event where a rabbi visits a house, is offered food, and engages in a dialogue involving conflict over a legal ruling. This contains multiple actions and a specific incident rather than a hypothetical case or a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 13a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (the death of the sons and the subsequent act of bathing) involving post-biblical figures. Although it is cited as a legal precedent, it describes a one-time incident with a specific action and change in state, which qualifies as a story under R-C0.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 13b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident (the death of the sons) followed by a distinct action (the rabbi bathing in cold water), which satisfies the requirement for a story beyond a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 13b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a father granting his son permission to teach and the subsequent teaching itself. This is a speech-act regarding rabbinic instruction with no conflict or change, which constitutes standard rabbinic dialogue rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 14a:13-Taanit 14b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving Rabbi Yehuda Nesia and Rabbi Ami, featuring a sequence of actions (decreeing fasts, considering more) and a conflict/resolution through dialogue. It meets the criteria for a story as it describes an incident that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 14b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a legal query sent to a rabbi and his subsequent ruling. Under R-C2 and R-C0, speech-acts and rulings without an additional narrated action or change do not constitute a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 15a:11-Taanit 15b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a narrated incident involving post-biblical figures (Rabbi Halafta and Rabbi Hananya ben Teradyon) where a specific event occurs (the prayer leader's deviation) followed by a response from the Sages. Although it is a Mishnah story, it is included in the catalogue when quoted in the Talmud, and the opening formula is included per the rules.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 16a:10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a full-blown story with specific actions and dialogue (separating animals, tearing down buildings), but it is a retelling of the biblical episode of the people of Nineveh. According to R-S1, biblical episodes retold are considered out of scope for this catalogue of rabbinic and post-biblical stories.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 18a:1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (Yehuda ben Shammua) involving a crisis (Roman decrees), a series of actions (seeking advice, protesting), and a resolution (annulment of decrees). It includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 18b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (Nicanor and the Hasmoneans) with multiple actions and a clear change in outcome. It follows the pattern of a habitual frame (Nicanor's daily waving) leading to a one-time event (his defeat and mutilation), and includes the introductory formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 18b:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about post-biblical figures (Luleyanus, Pappas, and Trajan) involving a specific incident, dialogue with conflict, and a clear change in outcome (the execution followed by divine retribution).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 19a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a Mishnah story (quoted in the Gemara) that narrates specific historical events involving post-biblical figures (Elders) taking action in response to incidents. It meets the criteria of R-C0 as it describes events that happened followed by a communal ruling/action.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 19a:5-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative about Honi the Circle-Maker, a post-biblical figure. It contains multiple actions, conflict (the rain not falling as desired), and a resolution involving both the natural event and a response from Shimon ben Shetah.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 19a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic Mishnah story (ma'aseh) involving a post-biblical figure (Rabbi Tarfon) and a sequence of events: a decree, a change in weather, a rabbinic instruction, and the subsequent actions of the community.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 19b:14-Taanit 20a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic-era narrative about Nakdimon ben Guryon involving multiple actions, conflict with a Roman officer, and a miraculous resolution. It begins with a standard opening formula (Tanu Rabbanan) and follows a clear arc of change and causality.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 20a:15-Taanit 20b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full rabbinic narrative about Rabbi Elazar son of Rabbi Shimon, featuring multiple actions, conflict, and a character arc leading to a change in his behavior and teaching. It includes the opening formula as per R-B1 and is within scope as it concerns post-biblical rabbinic figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 20b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific one-time event ('One day...') following a habitual frame, involving multiple actions and a change in behavior based on the presence of a specific rabbi.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 20b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (bringing the rabbi, distracting him with halakha, moving the wine) and a clear change/resolution (the house collapses and the rabbi becomes angry). It fits the criteria of an event that happened to post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21a:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions, conflict, and change: the rabbis leave to work, encounter angels, and eventually part ways, leading to Ilfa's dramatic test of knowledge on a ship's mast. It follows the rule that a story narrates events that happened to specific rabbis, including their dialogue and subsequent actions.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21a:7-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about Nahum of Gam Zu, a post-biblical figure, containing multiple actions and significant changes. It includes a frame story about a collapsing house and an embedded flashback story explaining the cause of his physical condition.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Nahum of Gam Zu) featuring a sequence of events, conflict, and a resolution. It follows the pattern of a habitual frame (his custom of saying 'this too is for the good') leading into a specific one-time miraculous event.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21b:1-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a specific incident (three deaths in Drokart) followed by a rabbinic ruling and decree, which qualifies as a story under R-C0. It then transitions into a dialogue between two rabbis involving conflict and a change of intention (the proposal to move locations), which meets the criteria for a story through action and interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (a plague in Sura) and a change or resolution (the neighborhood being spared), which is attributed to the actions of a specific post-biblical figure. It meets the criteria of a story because it describes events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (a fire in Drokart) and a supernatural resolution (a dream revelation) that identifies a specific person's actions as the cause of the neighborhood's safety. This meets the criteria of a story about post-biblical figures with narrated actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists primarily of speech acts (a report, a decree, and a retort), but it contains conflict and an implied change in the community's status (the decree of a fast). Under R-C2 and R-C7 shape 1, dialogue with conflict and minimal action is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 21b:13-Taanit 22a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage begins with a habitual frame describing Abba the Bloodletter's merits, but transitions into a specific 'one day' event where Abaye sends Sages to test him, leading to a narrated incident involving stolen rugs and a resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 22a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates an emotional reaction ('Rava was distressed'), which counts as an event under R-C0, followed by a speech-act of comfort. It fits the borderline shape of 'mainly speech, but something happens' or 'one real event followed by a response' as described in R-C7.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 22a:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving a post-biblical figure (Rabbi Beroka) and Elijah. It moves from a habitual frame (R-C3) into specific one-time events and actions, such as the encounter with the prison guard and the jesters, which include conflict and change (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 22b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage is a full narrative involving actions and dialogue between Josiah and Jeremiah, but it is about biblical characters rather than rabbis or post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 22b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific incident involving wolves and children followed by a ruling from the Sages, which fits the criteria of a story where an event leads to a resolution. It also includes the opening formula attributing the story to Ulla in the name of Rabbi Shimon ben Yehotzadak.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 22b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a first-person eyewitness account ('I personally saw') of a specific event involving a post-biblical figure (Rabba bar bar Hana) and a second actor (the Arab), meeting the criteria for an incident that happened rather than a legal hypothetical or a bare report of practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific historical period involving a post-biblical figure (Shimon ben Shetaḥ) where a habitual rain pattern led to a tangible change and action: the growth of giant crops and the act of preserving them as a physical example for future generations.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a story about Herod, a post-biblical figure, and the building of the Second Temple. Although it describes a recurring event (rain falling at night), it functions as a narrative of a specific historical period with a sequence of actions and a clear change/outcome (the people knowing their work was favored by Heaven).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23a:3-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a classic rabbinic narrative about Honi the Circle-Maker, a post-biblical figure. It contains multiple actions, conflict, and change, and includes the opening formula and the subsequent interaction with Shimon ben Shetach.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23a:13-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about Honi HaMe'aggel, a post-biblical figure, featuring a sequence of events including a dialogue, a seventy-year sleep, and a tragic resolution. It follows the rule that a story starts with its introductory formula and includes actions that lead to a significant change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23a:17-Taanit 23b:6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full-blown narrative about post-biblical figures (Abba Hilkiyya and his wife) that begins with a habitual frame (R-C3) and transitions into a specific one-time event: the Sages' visit and the subsequent miracle on the roof. It contains multiple actions, conflict (the Sages' confusion at his behavior), and a clear change (the arrival of rain), followed by a dialogue that explains the preceding events.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific recurring event where schoolchildren are sent to Hanan HaNehba to request rain, followed by his specific prayer and action. Although framed as a habit (R-C3), it describes a concrete interaction and a change (the request for rain) involving post-biblical figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a speech-act by Rabbi Zerika describing the habitual practice of Rav Huna and Rav Hisda. It is a bare report of what they used to do without a specific event, conflict, or change narrated within the passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "While the passage begins with a habitual frame ('When the world was in need of rain...'), it narrates a specific sequence of actions—entering the house, speaking to the family, going to a secluded place, and praying—that results in a tangible change (the coming of rain) and a concluding dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day...') where an action (prostrating at the grave) leads to a supernatural change (horses getting stuck) and a resolution (the persecution ends). This satisfies the requirement for multiple actions and a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a series of one-time events involving Rabbi Mani and Rabbi Yitzḥak ben Elyashiv where specific requests lead to supernatural changes in the status of the father-in-law's family and Rabbi Mani's wife. It meets the criteria of having multiple actions, conflict, and explicit changes in the narrative world.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists entirely of a dialogue (speech acts) between students and a rabbi. While it contains conflict and an implied change in the rabbi's status regarding his powers, the lack of physical action beyond speaking makes it borderline under rule R-C2.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 23b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific change of state where a student left one rabbi to study under another. Under R-C0 and R-C3, this transition from a habitual state to a specific action constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Yosei from Yokrat) and his son, featuring a specific one-time event ('One day') that includes multiple actions, a miracle, and a tragic change in outcome (the son's death).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event ('One day') involving a rabbi and his daughter, containing multiple actions, dialogue, and a tragic change in outcome (the daughter's death).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage follows the structure of R-C3: it begins with a description of a habitual custom (the donkey's daily routine) and then narrates a specific 'one day' event (the incident with the sandals) that involves action and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage follows the structure of R-C3, beginning with a habitual frame (Elazar's custom of giving charity) that leads into a specific 'one day' event. It contains multiple actions, conflict, and a miraculous change, satisfying the criteria for a full story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events: a rabbi decrees a fast, experiences failure, expresses emotional distress (lamentation), and this leads to a change in the situation (rain falls). This satisfies the requirement for multiple actions and a change in outcome beyond a mere ruling or speech act.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving post-biblical figures (the Nasi's house, Rabbi Yoḥanan, and Reish Lakish) where an action occurs (declaring a fast without notice) followed by a dialogue and a ruling that resolves the situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events: a fast is declared, a rabbi offers a public rebuke via a parable, and the Nasi's servants respond by physically tormenting him until the townspeople intervene. This contains action, conflict, and a resolution beyond mere speech-acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving multiple actions (declaring a fast, leading the service, the weather changing) and a dialogue that reveals a causal connection between the character's deeds and the miraculous outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event (Rav's arrival and the prayer leader's successful prayer for rain) followed by a dialogue that explains the merit behind the miracle. It meets the criteria of a story as it describes events that happened with a clear change in the environment (the coming of rain) and interaction between figures.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a rabbi (Rav Nahman) where an action (decreeing a fast and praying) leads to an emotional reaction and a change in the physical world (rain falling).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24a:17-Taanit 24b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains a real event (Rabba decreeing a fast and praying for rain) followed by a dialogue involving conflict and comparison between generations. Under R-C2 and R-C7, a passage that is mainly speech but contains an event and conflict is considered borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative with multiple actions, causality, and change: Rav Yehuda's anger causes a famine, a plan is devised to show him the market, and his subsequent prayer brings rain and a divine warning from Elijah.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event that happened to Rav Mari (standing by the river and seeing a miracle) followed by his action and speech to the people. It meets the criteria of a story because it describes a one-time incident with multiple actions and a change in the situation (sand turning to flour).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical figure (Rava) involving multiple actions and a clear change: a fast is decreed, a dream is reported, and prayer leads to the arrival of rain. It satisfies the requirement for events that happened rather than a hypothetical legal case.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:6-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions and causal change: a court incident leads to a royal threat, which triggers a specific challenge to pray for rain out of season, resulting in a miraculous storm and a subsequent warning in a dream.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a sequence of events involving Rav Pappa (decreeing a fast, eating, and praying) followed by a conflict (mockery by Rav Naḥman) and an emotional reaction (embarrassment) that leads to a change in the physical world (rain coming). Under R-C0 and R-C2, the combination of actions, conflict, and a resulting change constitutes a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 24b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Hanina ben Dosa) involving multiple actions and changes: traveling, the onset of rain, a prayer, the cessation of rain, and a second prayer that reverses the outcome. It fits the definition of a story as a narrated event that happened rather than a legal hypothetical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rabbi Hanina's wife) and her neighbor, featuring multiple actions, conflict, and a miraculous change. While it begins with a habitual frame (heating the oven every Shabbat), it transitions into a distinct incident as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about Rabbi Hanina ben Dosa and his wife, featuring multiple actions, a supernatural event (the golden table leg), a dream, and a resolution that results in a change of state. It follows the criteria of R-C0 as a narrated event that happened rather than a legal hypothetical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Rabbi Hanina ben Dosa) and his daughter, featuring a conflict (the mistake with the vinegar), a response, and a miraculous change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative about a post-biblical figure (Rabbi Hanina ben Dosa) involving a conflict with neighbors, a verbal challenge, and a miraculous physical change where the goats bring back bears. It satisfies R-C0 as it narrates events that happened and includes multiple actions and a clear resolution.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rabbi Hanina ben Dosa) where a problem (short beams) is followed by an action (prayer/blessing) and a clear change in the physical world (the beams lengthening). It satisfies the requirement for multiple actions and a narrated change, and includes eyewitness testimony confirming the outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative with multiple actions (selling chickens, buying goats, hearing a claim) and a clear change in outcome where the property is returned. It follows a habitual frame or custom mentioned in the context and contains a one-time event as described in R-C3.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:10-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about a post-biblical rabbi (R. Elazar ben Pedat) involving a sequence of physical actions (bloodletting, eating garlic, falling asleep), a supernatural vision with dialogue, and a physical change (the ray of light) resulting from the interaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific sequence of events involving Rabbi Hama bar Hanina, including a decree, a dialogue with the community, and a miraculous resolution where his command to the sky results in rain. This contains multiple actions and a clear change in the situation, satisfying the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving a post-biblical figure (Levi) where an action (decreeing a fast and speaking harshly) leads to a clear change and physical consequence (rain falling and Levi becoming lame).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event involving a post-biblical figure (Rabbi Ḥiyya bar Lulyani) where an action (hearing the clouds) leads to a conflict (his prayer/protest) and a clear change in outcome (the clouds changing where they dropped the rain).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a complete narrative involving a post-biblical figure (Rabbi Eliezer) with multiple actions, conflict, and a clear change in outcome (rain falling). It begins with a standard opening formula as per R-B1 and describes a specific event rather than a legal hypothetical.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative involving post-biblical figures (Rabbi Eliezer and Rabbi Akiva) with multiple actions, a conflict (the Sages' whispering), and a resolution involving a Divine Voice. It follows the 'incident followed by a ruling/resolution' shape described in R-C0 and includes the opening formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a specific event ('I have seen') involving a post-biblical figure (Rabba) witnessing a supernatural action. It goes beyond a bare report or speech-act by narrating a specific encounter with the angel Ridya and the resulting change in the waters.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage contains two distinct incidents involving post-biblical figures (Rabbi Yehuda Nesia and Shmuel HaKatan) where a specific action (decreeing a fast) leads to a one-time event (rain falling) and a subsequent interaction or change in understanding. These are not merely legal cases or bare reports, as they involve conflict between the people's interpretation and the rabbi's response.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific event (Shmuel HaKatan decreeing a fast and rain falling) followed by a reaction from the people and a response from the rabbi. This contains multiple actions and a change in the audience's understanding, meeting the criteria for a story rather than a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 25b:15-Taanit 26a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "Segment [2] quotes a Mishnah story which is cataloged when cited in the Gemara (R-C1). Segment [3] contains a distinct rabbinic story about Rav Pappa where an event (decreeing a fast and rain falling) is followed by a specific action and ruling (reciting hallel before eating) that changes the expected procedure (R-C0).",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 26b:0-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage lists historical calamities involving biblical figures (Moses) and post-biblical figures (Apostemos, Beitar). While these are narrated events, they function as a list of historical reports or a 'bare report' of what happened rather than a rabbinic story, and those involving biblical figures are explicitly out of scope per R-S1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 26b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C3",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage describes a general custom or habitual practice of the daughters of Jerusalem rather than a specific one-time event. Under R-C3 and R-C5, a description of a habit that does not lead to a specific narrated change or incident is considered a custom or report rather than a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 27b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event involving post-biblical figures (the prophets and priestly representatives) who performed a series of actions—dividing, mixing lots, and drawing portions—that resulted in a change of status for the priestly watches.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 27b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative dialogue between Abraham and God regarding the survival of the Jewish people. While it is a story, it is about biblical characters rather than rabbis or post-biblical figures, placing it out of scope.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 28a:4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This passage narrates a specific historical event involving post-biblical figures (the people of the exile) who found the Temple chamber empty and took action to donate wood. It includes an opening formula, a narrated incident with a change in state, and a subsequent stipulation by the prophets, meeting the criteria for a rabbinic-era story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 28a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage consists of a citation from the Mishnah and a formulaic introductory question by the Sages. It does not narrate an event or action, but rather serves as the frame for the story that follows in the next segment.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 28a:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (the 'worthy and sin-fearing' of the Second Temple period) who used a clever ruse to bypass a specific historical decree. It contains a one-time event ('Once...'), multiple actions, dialogue, and a successful change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 28a:9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific historical event involving post-biblical figures (the descendants of Salmai) who used a clever ruse to bypass guards and bring wood to the Temple. It includes multiple actions, conflict with the authorities, and a successful resolution, starting from the introductory formula as per R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 28b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "The passage narrates a specific one-time event where Rav arrived in Babylonia and observed a local custom. It contains multiple actions (arriving, seeing, thinking to stop them, observing the omission) and a change in Rav's understanding/resolution, fitting the criteria for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 29a:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (Rabban Gamliel and a Roman officer) involving multiple actions, conflict, and a change in outcome. It includes the opening formula as required by R-B1.",
+    "error": null
+   }
+  },
+  {
+   "id": "Taanit 29a:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1",
+     "R-C0",
+     "R-B1"
+    ],
+    "unknown_rules": [],
+    "reason": "This is a full narrative about post-biblical figures (young priests during the First Temple destruction) containing multiple actions, dialogue, and a supernatural event. It begins with a standard opening formula and describes a specific historical incident rather than a legal case or a bare report.",
+    "error": null
+   }
+  }
+ ]
+}

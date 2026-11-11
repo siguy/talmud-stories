@@ -1,0 +1,11 @@
+{
+"01": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "David enters the bathhouse, despairs at standing without a mitzva, remembers his circumcision and is comforted, then composes a psalm: a narrative with emotion and change about a biblical king."},
+"02": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4, 5], "reason": "Abraham found in the Temple at its destruction pleads with God, weeps, and is answered by a Divine Voice: a narrative about a biblical patriarch."},
+"03": {"verdict": "out_of_scope", "rules": ["R-S1", "R-C2"], "segments": [2], "reason": "Pharaoh's magicians mock Moses and he retorts with a proverb: a speech exchange with conflict in a biblical episode, at most borderline and out of scope."},
+"04": {"verdict": "story", "rules": ["R-C0", "R-S1"], "segments": [2, 3, 4], "reason": "Moses ascends, is shown Rabbi Akiva's study hall, is dismayed then reassured, and sees Akiva's martyrdom: a full narrative with multiple actions and change, and in scope because Rabbi Akiva is a central figure."},
+"05": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "A list of three matters God showed Moses with His finger is an exegetical statement with no narrated incident, and concerns a biblical figure."},
+"06": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A brief incident (maaseh) in which the Temple candelabrum was found overweight and refined eighty times until it reached a talent; real actions and an outcome, but cited only as evidence in the discussion with little development."},
+"07": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Continuation of Hezekiah's vow to the princes, who go to Alexandria and build an altar: narrated events set in a biblical episode."},
+"08": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "A baraita that fire models of the vessels descended and Moses copied them is an exegetical claim with no developed incident, and about a biblical figure."},
+"09": {"verdict": "not", "rules": ["R-C5", "R-S1"], "segments": [], "reason": "Gabriel girded and showed Moses the candelabrum is a single exegetical report with no continuation, about biblical figures."}
+}

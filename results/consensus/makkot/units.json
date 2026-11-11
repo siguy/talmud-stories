@@ -1,0 +1,628 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/makkot/run1.json",
+   "v14_r2": "results/v14/makkot/run2.json"
+  },
+  "spans": {
+   "v14_r1": 25,
+   "v14_r2": 25
+  },
+  "units": 24,
+  "built": "2026-11-10T06:05:18"
+ },
+ "units": [
+  {
+   "id": "Makkot 3b:11-13",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 3b",
+     11
+    ],
+    [
+     "Makkot 3b",
+     12
+    ],
+    [
+     "Makkot 3b",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Shmuel commands Rav Mattana not to sit down until he provides a scriptural source for a specific law, which Rav Mattana then does."
+  },
+  {
+   "id": "Makkot 4a:6-6",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 4a",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Abaye reminds Rav Yosef of a legal tradition that Rav Yosef himself had taught but subsequently forgot due to his illness."
+  },
+  {
+   "id": "Makkot 5b:2-3",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 5b",
+     2
+    ],
+    [
+     "Makkot 5b",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A woman repeatedly brings sets of witnesses who are proven to be liars until Reish Lakish rules that she has established a presumptive status of dishonesty."
+  },
+  {
+   "id": "Makkot 5b:16-18",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 5b",
+     16
+    ],
+    [
+     "Makkot 5b",
+     17
+    ],
+    [
+     "Makkot 5b",
+     18
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Yehuda ben Tabbai erroneously executes a single witness to oppose Sadducee law, is rebuked by Shimon ben Shataḥ, and spends the rest of his life in mourning and penance at the victim's grave."
+  },
+  {
+   "id": "Makkot 6b:10-Makkot 7a:0",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 6b",
+     10
+    ],
+    [
+     "Makkot 7a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When foreign speakers came before Rava for judgment, he appointed an interpreter to mediate the testimony."
+  },
+  {
+   "id": "Makkot 10a:12-12",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 10a",
+     12
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "The Angel of Death is unable to take Rav Hisda while he is studying, so he breaks a cedar tree to distract him, allowing the Angel to seize his soul when he pauses."
+  },
+  {
+   "id": "Makkot 10a:17-17",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 10a",
+     17
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "The Rabbis cast their eyes upon Rava son of Rabbah bar Mari, resulting in him becoming a scholar in fulfillment of a verse."
+  },
+  {
+   "id": "Makkot 11a:8-8",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 11a",
+     8
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav observes that his uncle Rabbi Hiyya's phylacteries were sewn with linen, but the Gemara notes the law is not like him."
+  },
+  {
+   "id": "Makkot 11a:16-16",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 11a",
+     16
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Elijah the Prophet stops appearing to Rabbi Joshua ben Levi because a man was eaten by a lion within his vicinity, implying the Rabbi should have prayed for his generation."
+  },
+  {
+   "id": "Makkot 11a:17-19",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 11a",
+     17
+    ],
+    [
+     "Makkot 11a",
+     18
+    ],
+    [
+     "Makkot 11a",
+     19
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Ahithophel provides a solution to stop the rising depths when David dug the foundations of the Temple, but eventually falls victim to a curse."
+  },
+  {
+   "id": "Makkot 11a:20-Makkot 11b:2",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 11a",
+     20
+    ],
+    [
+     "Makkot 11b",
+     0
+    ],
+    [
+     "Makkot 11b",
+     1
+    ],
+    [
+     "Makkot 11b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Eli tells Samuel that God should punish him if he hides any part of the prophecy. The Gemara describes how Judah's bones rattled in his coffin for forty years due to his self-imposed ostracism until Moses prayed for him, allowing his body to rest and his soul to enter the heavenly academy."
+  },
+  {
+   "id": "Makkot 14a:6-7",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 14a",
+     6
+    ],
+    [
+     "Makkot 14a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Akiva encounters Rabban Gamliel and Rabbi Yehoshua in the meat market of Emmaus while they are shopping for a wedding feast and asks them a legal question regarding multiple transgressions."
+  },
+  {
+   "id": "Makkot 15a:0-0",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 15a",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabba bar bar Ḥana swears that Rabbi Yoḥanan taught a specific halakha despite Rabbi Yoḥanan's own denial."
+  },
+  {
+   "id": "Makkot 16a:10-10",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 16a",
+     10
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When Rabbi Elazar asks for clarification on a legal point, Rabbi Yoḥanan tells him to find it himself, leading Elazar to depart and successfully research the matter."
+  },
+  {
+   "id": "Makkot 16b:5-5",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 16b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Aha banned a negligent teacher from teaching via a public vow, but Ravina reinstated him because no other teacher was as precise."
+  },
+  {
+   "id": "Makkot 16b:6-6",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 16b",
+     6
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Passage B contains a distinct narrative incident involving a specific person who ate a prohibited creature and was subsequently flogged by Rav Yehuda, which is separate from the teacher incident in Passage A."
+  },
+  {
+   "id": "Makkot 21a:3-3",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 21a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Sheshet would gesture to his own head and beard to illustrate the locations of the 'edges' mentioned in the Mishna."
+  },
+  {
+   "id": "Makkot 21a:13-13",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 21a",
+     13
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "Rav Beivai bar Abaye was personally strict not to put ashes even on a bloodletting wound to avoid the appearance of a tattoo."
+  },
+  {
+   "id": "Makkot 21b:3-4",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 21b",
+     3
+    ],
+    [
+     "Makkot 21b",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabbi Yannai reports a ruling from a group session, and when Rabbi Yoḥanan notes it is already in the Mishna, Yannai uses a metaphor of lifting a shard to find a gem to claim credit for the insight."
+  },
+  {
+   "id": "Makkot 23a:5-5",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 23a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "A Galilean sage interprets a biblical verse before Rav Hisda to explain why donkey hide is used for the straps of the whip."
+  },
+  {
+   "id": "Makkot 24a:5-5",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 24a",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "While Rav Safra is praying, a buyer attempts to purchase an item and, receiving no response, repeatedly raises his offer."
+  },
+  {
+   "id": "Makkot 24a:14-14",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 24a",
+     14
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rabban Gamliel weeps upon reading a verse he interprets as impossible to fulfill, until his colleagues offer a more lenient interpretation."
+  },
+  {
+   "id": "Makkot 24a:32-Makkot 24b:0",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 24a",
+     32
+    ],
+    [
+     "Makkot 24b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "A group of Sages traveling to Rome hear the roar of the city from a distance and weep at its prosperity compared to Jerusalem's desolation. While traveling in Rome, the Sages weep upon hearing the city's prosperity, but Rabbi Akiva laughs, explaining that if the wicked prosper now, the reward for the righteous will be even greater."
+  },
+  {
+   "id": "Makkot 24b:1-2",
+   "tractate": "Makkot",
+   "cells": [
+    [
+     "Makkot 24b",
+     1
+    ],
+    [
+     "Makkot 24b",
+     2
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "The Sages visit the ruins of the Temple and weep at the sight of a fox in the Holy of Holies, but Rabbi Akiva laughs, explaining that this proves the eventual fulfillment of the prophecies of redemption."
+  }
+ ]
+}

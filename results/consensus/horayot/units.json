@@ -1,0 +1,275 @@
+{
+ "meta": {
+  "runs": {
+   "v14_r1": "results/v14/horayot/run1.json",
+   "v14_r2": "results/v14/horayot/run2.json"
+  },
+  "spans": {
+   "v14_r1": 9,
+   "v14_r2": 9
+  },
+  "units": 9,
+  "built": "2026-11-10T06:05:18"
+ },
+ "units": [
+  {
+   "id": "Horayot 3b:9-9",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 3b",
+     9
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Huna and Rav Ashi would habitually convene ten scholars to sit with them during judgments so that the responsibility for any error would be shared among the group."
+  },
+  {
+   "id": "Horayot 10a:18-Horayot 10b:0",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 10a",
+     18
+    ],
+    [
+     "Horayot 10a",
+     19
+    ],
+    [
+     "Horayot 10a",
+     20
+    ],
+    [
+     "Horayot 10b",
+     0
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "While traveling by ship, Rabbi Yehoshua uses his astronomical knowledge to prepare extra food, leading Rabban Gamliel to discover and eventually appoint two brilliant but impoverished students to leadership roles."
+  },
+  {
+   "id": "Horayot 10b:5-5",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 10b",
+     5
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "Rav Pappa and Rav Huna visit Rava, who questions them on their learning and their financial success."
+  },
+  {
+   "id": "Horayot 12a:1-1",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 12a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "King Josiah, fearing the prophecy of exile, commands that the Ark and other sacred vessels be hidden away."
+  },
+  {
+   "id": "Horayot 12a:6-7",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 12a",
+     6
+    ],
+    [
+     "Horayot 12a",
+     7
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    },
+    "v14_r2": {
+     "call": "not",
+     "withheld": false,
+     "cls": "NOT_A_STORY"
+    }
+   },
+   "summary": "During his anointing, Aaron worries that the oil on his beard constitutes a misuse of consecrated property, until a Divine Voice reassures him."
+  },
+  {
+   "id": "Horayot 12b:1-1",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 12b",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "HIGH_CONFIDENCE"
+    }
+   },
+   "summary": "Yosef ben Eilim was appointed as a temporary High Priest when the incumbent was disqualified, but was later barred from all priestly service to prevent rivalry."
+  },
+  {
+   "id": "Horayot 13b:10-Horayot 14a:1",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 13b",
+     10
+    ],
+    [
+     "Horayot 13b",
+     11
+    ],
+    [
+     "Horayot 13b",
+     12
+    ],
+    [
+     "Horayot 13b",
+     13
+    ],
+    [
+     "Horayot 13b",
+     14
+    ],
+    [
+     "Horayot 13b",
+     15
+    ],
+    [
+     "Horayot 13b",
+     16
+    ],
+    [
+     "Horayot 13b",
+     17
+    ],
+    [
+     "Horayot 14a",
+     0
+    ],
+    [
+     "Horayot 14a",
+     1
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    }
+   },
+   "summary": "Rabbi Meir and Rabbi Natan attempt to depose Rabban Shimon ben Gamliel over honor protocols, but the Nasi is tipped off, survives the challenge, and penalizes them by suppressing their names in the transmission of Torah."
+  },
+  {
+   "id": "Horayot 14a:3-3",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 14a",
+     3
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "When the academy needed a head, Rav Yosef and Rabba sought guidance from Eretz Yisrael, but Rav Yosef ultimately declined the position for twenty-two years."
+  },
+  {
+   "id": "Horayot 14a:4-4",
+   "tractate": "Horayot",
+   "cells": [
+    [
+     "Horayot 14a",
+     4
+    ]
+   ],
+   "calls": {
+    "v14_r1": {
+     "call": "story",
+     "withheld": false,
+     "cls": "YES"
+    },
+    "v14_r2": {
+     "call": "borderline",
+     "withheld": false,
+     "cls": "LOW_CONFIDENCE"
+    }
+   },
+   "summary": "A group of four sages held a competition to see whose legal reasoning could not be refuted, resulting in Abaye being appointed their leader."
+  }
+ ]
+}

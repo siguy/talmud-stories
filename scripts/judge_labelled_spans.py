@@ -367,11 +367,15 @@ def ask(backend, system, user, passage_numbers):
 
 # ---- backends ----------------------------------------------------------------
 
-def gemini_backend():
+def gemini_backend(meter=None):
+    """`meter` (a run_new_tractate.TokenMeter) is optional: given one, every call retries on 429/503 and is counted,
+    as the detector's are. Without it the behaviour is what it always was, so earlier runs reproduce."""
     from src.story_detector_v11 import V7StoryDetector
     det = V7StoryDetector(model_name=MODELS['gemini'])
     if det.model_name != MODELS['gemini']:
         raise RuntimeError(f'detector resolved model {det.model_name}')
+    if meter is not None:
+        meter.attach(det.client, 'judge')
 
     def call(system, user):
         out = det._call_google(system + '\n\n---\n\n' + user, max_tokens=2048, json_mode=True)

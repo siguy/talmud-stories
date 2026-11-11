@@ -15,8 +15,13 @@ Never shipped: BORDERLINE (Simon 2026-10-15), LOW_CONFIDENCE (2026-10-12), NOT_A
 mishnah_stories[] (Stage 4g withheld them; never shown to Jeff). A second gate may narrow,
 never promote (Lesson 45). The consensus judges are NOT a gate here (Simon 2026-11-09): the
 Gemini judge is the detector's own model and adds almost nothing; the Claude judge drops ~13% of
-the detector stories Jeff calls yes. They stay in the scholarly work -- except for one narrowing: a passage BOTH judges call
-`out_of_scope` (biblical characters, R-S1) does not ship.
+the detector stories Jeff calls yes. They stay in the scholarly work -- except for one narrowing: a passage Gemini
+calls `out_of_scope` and Claude calls `not` (not a story at all) does not ship (Simon 2026-11-10).
+
+Biblical stories SHIP (Simon 2026-11-10: "as long as they are classified as stories outside of the fact they have
+biblical figures"). They carry `biblical: true` so the scholarly catalogue can exclude them (Jeff, R-S1). That covers
+both judges' `out_of_scope`, Claude alone under decisions.json, a hand flag in decisions.json, and Stage 4j's own
+biblical-actor demotion, whose pre-filter grade is what the site reads.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -42,7 +47,7 @@ REVIEWED = {
     "kiddushin": {"runs": ["results/canonical/kiddushin_canonical.json"], "reviewed": True},
     "gittin": {"runs": ["results/canonical/gittin_canonical.json"], "reviewed": True},
 }
-SITE_HELD = ("eruvin",)       # held for Jeff (docs plan §7 Q4): never on the site until Simon says so
+SITE_HELD = ()   # Eruvin was held (plan §7 Q4) until Simon's 2026-11-09 decision: it ships like every other tractate
 EXISTING = ("yevamot", "berakhot")   # shipped before the Shas run; kept in this order after the reviewed three
 
 
@@ -78,24 +83,41 @@ def discover():
 SOURCES, NOT_READY = discover()
 
 
-def biblical_cells(tractate):
-    """Cells of passages BOTH judges call `out_of_scope` (biblical characters, R-S1). The judges are
-    used for this one narrowing only -- Jeff excludes biblical stories, and the detector does not."""
+def judge_cells(tractate):
+    """(biblical, drop): cells to FLAG as biblical (R-S1; shipped, excluded from Jeff's catalogue) and cells to DROP
+    (Gemini says out_of_scope, Claude says `not`: not a story at all -- the one narrowing, Simon 2026-11-10)."""
     d = SOURCES[tractate].get("scope_judges")
     if not d:
-        return set()
+        return set(), set()
     verdict = {m: {r["id"]: r["answer"].get("verdict") for r in json.loads((ROOT / d / f"{m}.json").read_text())["rows"]
                    if r["answer"].get("outcome") == "ok"} for m in ("gemini", "claude")}
-    # A passage is removed only when BOTH judges say out_of_scope, so a flagged unit with no valid Claude answer
-    # would read as "not biblical" and ship (Lesson 21/38: absence reads as a decision). Refuse, naming them.
-    # This is what makes the cheap "Claude judges only Gemini's flagged units" export exact (plan §2.5).
+    # Claude only judges Gemini's out_of_scope units, so a flagged unit with no valid Claude answer would read as
+    # "a story, not biblical" and ship unflagged (Lesson 21/38: absence reads as a decision). Refuse, naming them.
+    # Units the Gemini judge could not answer validly twice: Claude decides alone (Simon, 2026-11-10).
+    import check_tractate_run as C
+    alone = set(C.decisions(ROOT)[1].get(tractate, []))
+    hand = set(C.decisions(ROOT)[2].get(tractate, []))
     unanswered = sorted(i for i, v in verdict["gemini"].items() if v == "out_of_scope" and i not in verdict["claude"])
+    unanswered += sorted(alone - set(verdict["claude"]))
     if unanswered:
         raise SystemExit(f"site build refused: {tractate}: {len(unanswered)} unit(s) Gemini called out_of_scope "
                          f"have no Claude answer with outcome ok: {unanswered[:8]}")
     units = json.loads((ROOT / d / "units.json").read_text())["units"]
-    return {tuple(c) for u in units
-            if verdict["gemini"].get(u["id"]) == verdict["claude"].get(u["id"]) == "out_of_scope" for c in u["cells"]}
+    flagged = lambda u: verdict["gemini"].get(u["id"]) == "out_of_scope" or u["id"] in alone
+    biblical = {tuple(c) for u in units for c in u["cells"]
+                if (flagged(u) and verdict["claude"].get(u["id"]) == "out_of_scope") or u["id"] in hand}
+    drop = {tuple(c) for u in units for c in u["cells"] if flagged(u) and verdict["claude"].get(u["id"]) == "not"}
+    return biblical, drop
+
+
+def site_classification(s):
+    """The grade the site reads. Stage 4j demotes a story whose actors are only biblical; biblical stories ship
+    (Simon 2026-11-10), so the site reads the grade from before that filter -- and flags the story."""
+    if s.get("filtered_as_biblical"):
+        return s.get("classification_pre_biblical_filter")
+    return s.get("classification")
+
+
 DEFINITE = ("YES", "HIGH_CONFIDENCE")
 
 
@@ -103,7 +125,7 @@ def definite_cells(path):
     """Cells of YES/HIGH_CONFIDENCE spans in stories[] (never mishnah_stories) of one run."""
     pages = json.loads((ROOT / path).read_text())["pages"]
     return {(r, g.get("index")) for i, p in enumerate(pages) for s in p.get("stories", [])
-            if s.get("classification") in DEFINITE for r, gs in pieces(pages, i, s) for g in gs}
+            if site_classification(s) in DEFINITE for r, gs in pieces(pages, i, s) for g in gs}
 
 
 # Golden-entry fields that record Jeff's own answer on that entry (later rounds than the ruler reads).
@@ -159,12 +181,12 @@ def build(tractate):
     reviewed = src["reviewed"]
     pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
     jeff = jeff_evidence_cells(tractate) if reviewed else None
-    biblical = biblical_cells(tractate)
+    biblical, drop = judge_cells(tractate)
     others = [definite_cells(q) for q in src["runs"][1:]]
     stories, seen = [], set()
     for i, p in enumerate(pages):
         for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
-            t = tier(s.get("classification"))
+            t = tier(site_classification(s))
             ps = pieces(pages, i, s)
             segs = [(r, g) for r, gs in ps for g in gs]
             assert segs, (tractate, p["ref"], s)
@@ -172,8 +194,8 @@ def build(tractate):
             # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
             if jeff is not None and not cells & jeff and not any(s.get(k) for k in JEFF_FIELDS):
                 t = None   # in the golden, but a detector call Jeff never answered
-            if cells & biblical:
-                t = None   # biblical characters, out of scope (R-S1): both judges say so
+            if cells & drop:
+                t = None   # Gemini says biblical, Claude says not a story at all (Simon 2026-11-10)
             if any(not cells & o for o in others):
                 t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
             if t is None:
@@ -194,7 +216,9 @@ def build(tractate):
                 "refs": [r for r, _ in ps],
                 "start_segment": int(s["start_segment"]),
                 "tier": t,
-                "classification": s.get("classification"),
+                "classification": site_classification(s),
+                # Biblical characters (R-S1): on the site, excluded from Jeff's scholarly catalogue.
+                "biblical": bool(cells & biblical) or bool(s.get("filtered_as_biblical")),
                 "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
                 "extended": None,
                 "reviewed": reviewed,
