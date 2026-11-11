@@ -62,17 +62,18 @@ staleness check: it changes whenever anyone edits anything.*
 | `remove-borderline` | `talmud-stories` | **2 FILES** |
 | `shas-berakhot` | `berakhot-shas-local-run-a26611` | clean |
 | `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
+| `v15-biblical-flag` | `kind-swartz-f73303` | **13 FILES** |
 | `eruvin-run-v11` | `p2-detector-stage4-788e26` | clean |
 | `plan-shas-run-5e0644` | `plan-shas-run-5e0644` | clean |
 | `main` | `recent-work-plans-d0818b` | clean |
-| `shas-accuracy-review-8fc321` | `shas-accuracy-review-8fc321` | **6 FILES** |
+| `recall-without-lists` | `shas-accuracy-review-8fc321` | clean |
 | `signup-plan-4efb53` | `shas-preflight-d2ae6f` | clean |
-| `run-2026-11` | `shas-run` | clean |
+| `post-shas-run-fixes` | `shas-run` | clean |
 | `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
 | `v14-yevamot` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 59 items, never deleted
+## Done — 60 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -135,4 +136,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
 | [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
 | [Did we find the stories across Shas? Definition of done, stats, reading-list review](work/done/2026-11-10-shas-accuracy.md) | triage, detection, classification, publication | [2026-11-10-shas-accuracy.md](docs/findings/2026-11-10-shas-accuracy.md) |
-<!-- board-checksum: d9ce9452c4a70cc4 -->
+| [Detector v15 -- a biblical-actor flag (Stage 4j) accurate enough for the site](work/done/2026-11-11-v15-biblical-flag.md) | classification, publication | [2026-11-11-v15-biblical-flag.md](docs/findings/2026-11-11-v15-biblical-flag.md) |
+<!-- board-checksum: a6e4fb504f8dfe56 -->

@@ -27,6 +27,7 @@
 | v10 Wave 4 | Jun 2026 | LLM char-offset spans | Replaced regex boundary editing with LLM-emitted character offsets. **FAILED** — 55% of cuts sever a word (Lesson 16, 18). |
 | v10 no-trim | Aug 2026 | Revert | Spans stripped, segment-level boundaries restored. Composite unchanged 0.9171. `results/v10/wave4_notrim/`. |
 | v11 twin pass default | Sep 2026 | Detection | Twin pass ON by default (`TWIN_PASS=1`, `TWIN_TRIGGER=all`) with Jeff's 2026-09-23 rejection shapes in its question. Yevamot 89.2%→94.1% when measured (2026-09-14). Goldens gain BORDERLINE (Ketubot) and OUT_OF_SCOPE (Gittin). This table is not the v11 history; `src/story_detector_v11.py`'s docstring and `docs/capabilities/` are. |
+| v15 4j | Nov 2026 | Biblical flag | Stage 4j only: groups, peoples, God/angels with no rabbi, more names, Elijah with a person is IN. Adopted for **flagging only** (the runner stays on v14). Catches 135 of 141 judge-flagged passages vs v14's 20; site flagged 102→97. `docs/findings/2026-11-11-v15-biblical-flag.md` |
 
 ---
 
