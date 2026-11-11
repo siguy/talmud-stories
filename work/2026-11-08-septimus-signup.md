@@ -28,6 +28,9 @@ Four PRs on `septimus/signup-*`: (a) word counts + reading time in the export; (
 assignment; (c) my stories + mark learned + progress field; (d) Joe Septimus page placeholder. Backend: Firebase Auth +
 Firestore (pending Simon's confirmation, plan §8).
 
+**Build plan (inventory, order, schedule, what can start before the Shas PR):**
+[`docs/history/2026-11-10-PLAN-septimus-signup-build.md`](../docs/history/2026-11-10-PLAN-septimus-signup-build.md).
+
 ## How you know it worked
 
 - Every story carries `words` and `minutes`; totals match the plan's §2 table.
