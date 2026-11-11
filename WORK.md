@@ -57,20 +57,20 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `remove-borderline` | `talmud-stories` | **239 FILES** |
-| `shas-berakhot` | `berakhot-shas-local-run-a26611` | **135 FILES** |
-| `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **225 FILES** |
+| `remove-borderline` | `talmud-stories` | **2 FILES** |
+| `shas-berakhot` | `berakhot-shas-local-run-a26611` | clean |
+| `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
 | `eruvin-run-v11` | `p2-detector-stage4-788e26` | clean |
-| `plan-shas-run-5e0644` | `plan-shas-run-5e0644` | **40 FILES** |
-| `main` | `recent-work-plans-d0818b` | **175 FILES** |
-| `shas-accuracy-review-8fc321` | `shas-accuracy-review-8fc321` | **210 FILES** |
-| `signup-plan-4efb53` | `shas-preflight-d2ae6f` | **22 FILES** |
-| `run-2026-11` | `shas-run` | **205 FILES** |
-| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **39 FILES** |
-| `v14-yevamot` | `state-work-review-40b153` | **121 FILES** |
+| `plan-shas-run-5e0644` | `plan-shas-run-5e0644` | clean |
+| `main` | `recent-work-plans-d0818b` | clean |
+| `(detached)` | `shas-accuracy-review-8fc321` | clean |
+| `signup-plan-4efb53` | `shas-preflight-d2ae6f` | clean |
+| `run-2026-11` | `shas-run` | **9 FILES** |
+| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
+| `v14-yevamot` | `state-work-review-40b153` | clean |
 <!-- board-live:end -->
 
-## Done — 60 items, never deleted
+## Done — 61 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -134,4 +134,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [v14 vs v11 on Berakhot — what moved, and what the consensus judges say](work/done/2026-11-08-v14-vs-v11-berakhot.md) | detection, classification | [2026-11-08-v14-vs-v11-berakhot.md](docs/findings/2026-11-08-v14-vs-v11-berakhot.md) |
 | [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
 | [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
-<!-- board-checksum: 9815e725d969c24c -->
+| [Did we find the stories across Shas? Definition of done, stats, reading-list review](work/done/2026-11-10-shas-accuracy.md) | triage, detection, classification, publication | [2026-11-10-shas-accuracy.md](docs/findings/2026-11-10-shas-accuracy.md) |
+<!-- board-checksum: fe5c953c7348e111 -->
