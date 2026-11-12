@@ -157,6 +157,7 @@ they are invisible to every precision number. Lesson 1's failure, still live.
 Counts are measured; files holding zero verdicts are not listed, because
 naming an empty file as a lost round buries the one that is not.
 
+- `validation/feedback/2026-11-simon-precision-sample.json` — **60 verdicts**
 - `validation/feedback/gittin_axes_review_2026-09-02.json` — **25 verdicts**
 - `validation/feedback/ketubot_review_Jeffrey_Rubenstein_2026-01-08.json` — **25 verdicts**
 
@@ -179,4 +180,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 198e0df24c56c90a -->
+<!-- board-checksum: 7e70f5b5bdc74c36 -->
