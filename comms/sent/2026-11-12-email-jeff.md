@@ -1,4 +1,4 @@
-# DRAFT — not sent. Saved to Simon's Gmail drafts (2026-11-12)
+# Sent 2026-11-12 by Simon (Gmail message 1a1ce27e9df01ee7). Text as sent; review page shared with Jeff.
 
 **To:** Jeffrey.Rubenstein@nyu.edu
 **Subject:** Eight passages for your view, for the Joe Septimus site
