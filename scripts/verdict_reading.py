@@ -126,6 +126,9 @@ EXCLUDED = {
     'ketubot_review_Jeffrey_Rubenstein_2026-01-08.json':
         'keyed per daf, not per span (25 verdicts); load_reviews() cannot read it and it '
         'cannot be joined to a span mechanically (capture_january_round.py, Lesson 38)',
+    '2026-11-simon-precision-sample.json':
+        "Simon's own grading of the 60-story Shas precision sample (2026-11-12) -- the "
+        'project owner, not the expert; indicated only, never ground truth',
     'jeff_v4.1_validation.json': 'carries no span verdicts',
     'validations_v4_2026-01-25.json': 'carries no verdicts',
 }
