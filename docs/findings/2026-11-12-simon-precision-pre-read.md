@@ -30,4 +30,28 @@ Simon left notes on 11 of the 60 stories (10 yes, plus Shabbat 147a, borderline)
 - **Starts too late:** Berakhot 54b 0, Shabbat 147a 6, Menachot 68b 13 (unsure)
 - **An adjacent separate story, "did we catch it?":** Sotah 49a 9, Taanit 24b 9, Yevamot 105a 5-7, Yevamot 121a 10-13
 
-None was flagged as a display problem. Nobody has yet checked whether those adjacent stories are on the site separately.
+None was flagged as a display problem.
+
+## Are the flagged neighbours on the site? (checked 2026-11-12, measured)
+
+Each quoted passage was located in the text, then looked up in `site/data/` and in v14 run 1.
+
+| flagged | the passage Simon quoted | on the site? |
+|---|---|---|
+| Taanit 23b 10 | 23b 11-12 | yes, as its own story `taanit-23b-11-12` |
+| Taanit 24b 9 | 24b 10 | yes, `taanit-24b-10-10` |
+| Taanit 25a 4 | 25a 5 | yes, `taanit-25a-5-5` |
+| Sotah 49a 9 | 49a 10 | yes, `sotah-49a-10-10` |
+| Yevamot 105a 5-7 | 105a 8-9 | yes, `yevamot-105a-8-9` |
+| Yevamot 121a 10-13 | 121a 14 | yes, `yevamot-121a-14-14` |
+| Sanhedrin 11a 7 | 11a 8 (Yehuda ben Bava) | yes, `sanhedrin-11a-8-8` |
+| Shabbat 147a 6 | 147a 5 (Hyrcanus) | yes, `shabbat-147a-5-5` |
+| Sanhedrin 52b 3 | 52b 4 (the priest's daughter baraita) | **no**. Run 1 found it at LOW_CONFIDENCE, and the site ships definite stories only |
+| Berakhot 54b 0 | Berakhot 54a 15 (the two lepers) | **no**. The story starts on the previous page, where run 1 proposed nothing |
+
+Menachot 68b 13 and Sanhedrin 99b 3-4 carry no quote ("maybe", "not sure"), so they were not checked.
+
+So 8 of the 10 are on the site, each as a separate entry. What Simon read as a story cut short is
+mostly one narrative split into neighbouring entries: a grouping question, not a lost story. Two
+are really missing: one held back by the definite-only filter (L-045, working as designed), and one
+because the story starts on the page before.
