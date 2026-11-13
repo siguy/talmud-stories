@@ -14,22 +14,30 @@ week until the yahrzeit**; the committed group covers the whole story list. v1 =
 **8 Elul 5787 = Friday 10 September 2027** (computed with `pyluach`; 5787 is a leap year, which is why it falls in
 September). Daniel to confirm. A config value (`yahrzeit` in `site/config.js`), never hard-coded.
 
-**The list is complete** (Simon, 2026-11-13): all 37 tractates are on the site (`main` at `6105b19`). List
-versioning stays (§7) for a later v2.
+**The list covers all of Shas but its size is not final** (Simon, 2026-11-13): all 37 tractates are on the site,
+**about 1,800 stories**, and the count may move either way (a "how many did we miss" analysis and a possible
+ship-rule change are in progress). So every list is **dated**, every sizing number is **derived from the data at
+build time** (§2), and assignment must survive stories being added or removed mid-campaign (§7).
 
-## 2. The numbers that shape the design (measured 2026-11-13 on `site/data/`, `main` at `6105b19`)
+## 2. The numbers that shape the design
+
+**A dated snapshot, not the plan's inputs.** Measured 2026-11-13 on `site/data/` at `main` `6105b19` (1,897 stories);
+another session's site is already at 1,784. The build derives these numbers from the data every time
+(`index.json`: total stories, words, hours at `readingWpm`, whole-group minutes per week, people at 10 min/week,
+stories per 10 min), and the landing page, progress page and any text for Daniel read them from there. Nothing below is
+hard-coded anywhere.
 
 | | value |
 |---|---|
 | Tractates | 37 (3 reviewed by Jeff: Ketubot, Kiddushin, Gittin; 34 labelled "not yet reviewed") |
-| Stories | **1,897** |
+| Stories | 1,897 on that date (**about 1,800, not final**) |
 | English words | **428,045** (mean 226, median 166, longest 2,674) |
 | Weeks from a December 2026 launch to 10 Sep 2027 | ~40 |
 
 **Reading pace: one config value, `readingWpm` in `site/config.js`**, used for both the time shown per story and the
 weekly allocation. 150 wpm (today's value) is too fast for this (Simon, 2026-11-13): people read slowly, in Hebrew
 **and** English, and stop to think. Pace is measured in English words of the passage per minute. Options
-(arithmetic on 428,045 words, mean 226 words a story; 40 weeks):
+(snapshot arithmetic on the 2026-11-13 list: 428,045 words, mean 226 words a story; 40 weeks. Rebuilt from the data each build):
 
 | Pace | Shas once | Whole group per week, one pass | People at 10 min/week for one pass | Stories per 10 min/week | Passes if 200 people give 10 min/week |
 |---|---|---|---|---|---|
@@ -114,7 +122,7 @@ users/{uid}           { name, email, createdAt, minutesPerWeek, src,        // s
                         emailOptIn: true, active: true }
 assignments/{auto}    { uid, storyId, list: "v1", cycle, week,              // week = ISO week the job assigned it
                         assignedAt, doneAt: null | ts, releasedAt: null | ts }
-pool/state            { list: "v1", cycle, next: <index into story order>,  // server-only
+pool/state            { list: "v1", cycle, lastAssigned: <storyId>,        // server-only; an id, never an index
                         released: [storyId, …] }                            // returned stories, re-assigned first
 progress/summary      { learned, byTractate: {t: n}, cycles: {n: learned}, updatedAt }   // public, server-written
 meta/list             { current: "v1", publishedAt, launch, yahrzeit }
@@ -129,7 +137,7 @@ meta/list             { current: "v1", publishedAt, launch, yahrzeit }
 1. For each active user, roll-over check: their unfinished assignments older than **2 weeks** get `releasedAt` and
    their story ids go to `pool.released`.
 2. Budget = `minutesPerWeek` minus the reading time of their still-open (rolled-over) stories. If ≤ 0, no new stories.
-3. Take stories from `pool.released` first (oldest first), then from the pointer `pool.next` in order, adding stories
+3. Take stories from `pool.released` first (oldest first), then from the story after `pool.lastAssigned` in order, adding stories
    while the running total ≤ budget; always at least one story if budget > 0. At the end of the list, the pointer
    wraps and `cycle` increments (under the cycles option).
 4. Users are served in sign-up order, so each person's stories are consecutive and the list fills from the front.
@@ -144,7 +152,24 @@ Security rules: `users/{uid}` read/write by that user only (fields: `minutesPerW
 `src` on create); `assignments` readable by their owner, updatable by their owner on `doneAt` only, created only by
 the server; `pool`, `meta` server-only writes; `progress/summary` public read.
 
-## 7. List versions and stable ids
+## 7. List versions, stable ids, and lists that change mid-campaign
+
+**Nobody loses their place when stories are added or removed** (checked against the design, 2026-11-13):
+- A person's place is their **assignment rows**, each holding a `storyId`, not a position. Adding or removing other
+  stories does not touch them.
+- The pool pointer stores the **id of the last story assigned** (`pool.lastAssigned`), not an index. Each week the job
+  finds that id in the current order and continues after it. If that story was removed, it continues after the
+  nearest earlier story still on the list.
+- **Story added behind the pointer** (in a part of Shas the current cycle has passed): it joins `pool.released`, so it
+  is assigned first next week and the cycle stays complete. **Added ahead of the pointer:** it is simply reached in order.
+- **Story removed:** open assignments for it stay on the person's list, marked "no longer on the list", and drop off at
+  rollover; learned ones stay counted as history but not as progress on the current list. It is removed from
+  `pool.released` if queued there.
+- Progress is always reported against the current list version, with its date.
+- Tests for the weekly job (§9 c) include: add a story behind and ahead of the pointer, remove the pointer's story,
+  remove a story someone holds open; every user's open list and the pointer survive each.
+
+When ids change (a boundary moves, so `tractate-daf-start-end` changes):
 
 - v1 freezes today's ids (`tractate-daf-start-end`). `site/data/index.json` gains `list_version` and `published_at`.
 - A **new list (v2, …)** ships with `site/data/lists/v1_to_v2.json`: each v1 id → the v2 id it **overlaps most by
@@ -273,7 +298,7 @@ Everything else is in §12, for Daniel.
 
 > Hi Daniel, a few things to settle before we build the sign-up for learning all the Talmud stories in your father's memory:
 >
-> 1. **What does "finishing" mean?** All of Shas's ~1,900 stories is only about 60–95 hours of reading, so if a few
+> 1. **What does "finishing" mean?** All of Shas's stories (about 1,800 at the moment; the number isn't final) are only about 60–95 hours of reading, so if a few
 >    hundred people sign up, we'll get through everything many times over. My suggestion: we go through Shas together
 >    in order, and every time we reach the end, that's a siyum and we start the next round. Does that feel right, or
 >    would you rather something else (for example, each story read by several people at once)?
