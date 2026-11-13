@@ -1,10 +1,10 @@
 ---
 title: "Learn all the stories" sign-up for the Septimus yahrzeit (v1)
 capability: [publication]
-tractate: [ketubot, kiddushin, gittin, yevamot]
+tractate: []
 blocked_by: []
 awaiting: []
-writes: [site/, scripts/build_site_data.py, tests/test_site_data.py, docs/technical/septimus-signup-plan.md, firebase/]
+writes: [site/, scripts/build_site_data.py, tests/test_site_data.py, docs/technical/septimus-signup-plan.md, firebase/, functions/]
 finding:
 superseded_by:
 ---
@@ -18,22 +18,24 @@ assignment, list versions, backend choice, risks). Builds on the reader from
 
 ## The problem
 
-Daniel Septimus wants his community to collectively learn every story by his father Joe Septimus's first yahrzeit.
-People sign in with Google, say how much time they will give, get stories assigned, mark them learned, and everyone
-sees how many are left.
+Daniel Septimus wants his community to collectively learn every story in Shas by his father Joe Septimus's first
+yahrzeit (8 Elul 5787). People sign in with Google and commit minutes per week; each week they get consecutive
+stories in order through Shas, by email and on a My stories page; missed stories roll over 2 weeks, then return to
+the pool; when commitments exceed the list, stories are learned more than once.
 
 ## Method
 
-Four PRs on `septimus/signup-*`: (a) word counts + reading time in the export; (b) Google sign-in + sign-up by time +
-assignment; (c) my stories + mark learned + progress field; (d) Joe Septimus page placeholder. Backend: Firebase Auth +
-Firestore (pending Simon's confirmation, plan §8).
+PRs b–f in plan §9: landing + sign-in + commitment; weekly job (assignment, rollover, cycles); My stories + progress;
+weekly email; Joe Septimus page. (a, word counts, done in #79.) Backend: Firebase Auth + Firestore on
+`septimus-stories`, Blaze for the scheduled job and email (plan §8d).
 
 ## How you know it worked
 
-- Every story carries `words` and `minutes`; totals match the plan's §2 table.
-- At 390 px in a real browser: sign in, pledge 15 minutes, receive consecutive stories summing ≈15 minutes; a second
-  account cannot receive the same stories; marking learned shows on the progress field from another device.
-- Per-tractate counts on the progress field sum to the shipped story counts.
+- At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.
+- Emulator test over 3 simulated weeks: consecutive stories within each budget; a missed story rolls over 2 weeks,
+  then goes to someone else; re-running a week changes nothing.
+- A test weekly email to Simon renders on a phone and its unsubscribe link works.
+- Per-tractate progress counts add up to the stories learned.
 
 ## Guardrails
 

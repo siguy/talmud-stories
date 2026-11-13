@@ -1,146 +1,183 @@
 # "Learn all the stories" sign-up — plan (v1)
 
-*Written 2026-11-08. Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md) (do not rebuild it).
+*Written 2026-11-08; **rewritten 2026-11-13** for Simon's decisions after Daniel Septimus's reply (weekly
+commitments, weekly email, doubling up). Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md).
 Work item: [`work/2026-11-08-septimus-signup.md`](../../work/2026-11-08-septimus-signup.md).*
 
 ## 1. Goal
 
-Daniel Septimus wants family, friends and community to **collectively learn every story** by the first
-yahrzeit of his father, Joe Septimus. Jeff Rubenstein is fine with it. v1 = the **bare minimum** that lets this happen;
-everything else waits for v2.
+Daniel Septimus wants family, friends and community to **collectively learn every story in Shas** by the first
+yahrzeit of his father, Joe Septimus. Jeff Rubenstein is fine with it. People **commit to an amount of learning per
+week until the yahrzeit**; the committed group covers the whole story list. v1 = the bare minimum that makes that run.
 
 **Deadline.** Joe Septimus died on **8 Elul**. 8 Elul 5786 = Friday 21 August 2026, so the first yahrzeit is
 **8 Elul 5787 = Friday 10 September 2027** (computed with `pyluach`; 5787 is a leap year, which is why it falls in
-September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.js`), never hard-coded.
+September). Daniel to confirm. A config value (`yahrzeit` in `site/config.js`), never hard-coded.
 
-**Sequencing.** The story finder runs across all of Shas first
-([`shas-finder-plan.md`](shas-finder-plan.md)); this sign-up reads the list that produces. PR a below
-(word counts) can land on today's four tractates in the meantime; the sign-up opens to the public on list v1.
+**The list covers all of Shas but its size is not final** (Simon, 2026-11-13): all 37 tractates are on the site,
+**about 1,800 stories**, and the count may move either way (a "how many did we miss" analysis and a possible
+ship-rule change are in progress). So every list is **dated**, every sizing number is **derived from the data at
+build time** (§2), and assignment must survive stories being added or removed mid-campaign (§7).
 
-## 2. The numbers that shape the design (re-measured 2026-11-09 after the definite-only filter; re-measure after any rebuild)
+## 2. The numbers that shape the design
 
-| | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
+**A dated snapshot, not the plan's inputs.** Measured 2026-11-13 on `site/data/` at `main` `6105b19` (1,897 stories);
+another session's site is already at 1,784. The build derives these numbers from the data every time
+(`index.json`: total stories, words, hours at `readingWpm`, whole-group minutes per week, people at 10 min/week,
+stories per 10 min), and the landing page, progress page and any text for Daniel read them from there. Nothing below is
+hard-coded anywhere.
+
+| | value |
+|---|---|
+| Tractates | 37 (3 reviewed by Jeff: Ketubot, Kiddushin, Gittin; 34 labelled "not yet reviewed") |
+| Stories | 1,897 on that date (**about 1,800, not final**) |
+| English words | **428,045** (mean 226, median 166, longest 2,674) |
+| Weeks from a December 2026 launch to 10 Sep 2027 | ~40 |
+
+**Reading pace: one config value, `readingWpm` in `site/config.js`**, used for both the time shown per story and the
+weekly allocation. 150 wpm (today's value) is too fast for this (Simon, 2026-11-13): people read slowly, in Hebrew
+**and** English, and stop to think. Pace is measured in English words of the passage per minute. Options
+(snapshot arithmetic on the 2026-11-13 list: 428,045 words, mean 226 words a story; 40 weeks. Rebuilt from the data each build):
+
+| Pace | Shas once | Whole group per week, one pass | People at 10 min/week for one pass | Stories per 10 min/week | Passes if 200 people give 10 min/week |
 |---|---|---|---|---|---|
-| Ketubot | 86 | 23,755 | 194 | 2.6 | 1.7 |
-| Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
-| Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
-| Yevamot | 82 | 17,643 | 162 | 2.0 | 1.3 |
-| Berakhot | 112 | 24,396 | 144 | 2.7 | 1.8 |
-| **All** | **443** | **102,804** | **172** | **11.4** | **7.4** |
+| **75 wpm** (Simon's starting suggestion: slow, both languages) | 95 h | 143 min (2.4 h) | 14 | ~3.3 | 14 |
+| **100 wpm** (middle) | 71 h | 107 min | 11 | ~4.4 | 19 |
+| **120 wpm** (English-first, some Hebrew) | 59 h | 89 min | 9 | ~5.3 | 22 |
+| *150 wpm (today's value; too fast)* | *48 h* | *71 min* | *7* | *~6.6* | *28* |
 
-**Only definite stories ship** — the rule, and why it is kept apart from the scholarly
-catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
-the 19 borderlines and 3 Mishnah stories from the reviewed tractates and one Ketubot detector
-call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in both v14 runs
-(82, after 7 biblical passages and one duplicate span); and added Berakhot the same way (112).
+Whichever pace: a **handful of people covers Shas once; hundreds cover it many times. Doubling up is the normal
+case**, and "cover the entire thing" needs a definition (§4).
 
-Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
-over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate
-totals. Pinned in `tests/test_site_data.py` (`SITE_WORDS`).
-
-- One story is **about a minute** of reading. The longest is 2,674 words (~18 min at 150 wpm).
-- The **whole current list is under 10 hours**. With a few dozen people, everyone gets a handful of stories.
-- At Daniel's ~3,000 stories across Shas: roughly 700k words, **~80 hours at 150 wpm**. Still small.
-- So the sign-up unit is **minutes**, not hours, and a **one-time total** is enough (see §4). A per-day schedule
-  over 30 days would assign a fraction of a story per day.
-
-**Not displayed (Simon, 2026-11-09):** `words` and `minutes` are for assignment only; the site does not show them.
-
-**Reading speed:** default **150 words/minute** ("study pace": Talmud English is dense and readers stop to think).
-One constant in `site/config.js`, not hard-coded. Reading time shown = `ceil(words / wpm)` minutes, minimum 1.
+Words = whitespace tokens of the English shown, HTML stripped. Per story `minutes = ceil(words / readingWpm)`, min 1;
+assignment sums `words / readingWpm` (not the rounded minutes). **Shown as approximate** ("about 5 min") on story rows,
+story pages and the weekly email (Simon, 2026-11-13; supersedes "not displayed", 2026-11-09).
 
 ## 3. Scope
 
 ### v1 (build now)
-1. **Word count + reading time** per story in the data export (`scripts/build_site_data.py`), with tests.
-2. **Sign in with Google**, nothing else asked at sign-in.
-3. **Sign up by time:** "How much time will you give?" — buttons 5 / 15 / 30 / 60 min + "other". The system **assigns**
-   unclaimed stories that add up to about that time.
-4. **My stories:** the assigned list, each linking to the existing story page; a **"Mark as learned"** button.
-5. **Progress (the field):** per tractate, every story with its status (open / taken / learned),
-   plus "N of M learned, K left" overall and per tractate. Visible without signing in.
-6. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
-7. **Landing page + sign-in flow (critical, Simon 2026-11-09; not built yet).** One screen before sign-in: what this
-   is (learning every story in the Talmud together, in memory of Joe Septimus, by 8 Elul 5787), what "a story" means
-   here (narratives found by software and checked by a scholar, Jeff Rubenstein; unreviewed tractates say so), the
-   progress so far, and one button: "Sign in with Google to join". After sign-in: the minutes-per-week question, then
-   "Your stories". Nothing else is asked.
-8. **Which list this is**, shown on the landing page and the progress page: "Story list v1, dated <date>:
-   stories our software rates as most likely; it will grow as the work improves." From `index.json`'s
-   `list_version` / `published_at`.
+1. **Landing page** (one screen, before sign-in): what this is (learning every story in the Talmud together, in memory
+   of Joe Septimus, by 8 Elul 5787); what "a story" is here (narratives found by software; 3 tractates checked by a
+   scholar, Jeff Rubenstein, the rest labelled "not yet reviewed"); which list this is ("Story list v1, dated <date>");
+   progress so far; the launch date; one button, "Sign in with Google to join".
+2. **Sign in with Google**, nothing else asked. A `?src=<community>` link (e.g. `?src=hadar`) is recorded silently.
+3. **Commit:** one question after sign-in, "How many minutes a week will you learn until 8 Elul?" — 5 / 10 / 15 / 30
+   + "other". Changeable later. Nothing else asked.
+4. **Weekly assignment** (§6): each week, each committed person gets that week's stories, **consecutive, in order
+   through Shas**, adding up to their minutes.
+5. **My stories** (signed in): this week's stories plus rolled-over ones, each linking to the existing story page,
+   with **"Mark as learned"**. The page is the source of truth.
+6. **Weekly personal email**: "Your stories this week", links to each story and to My stories; one-click unsubscribe.
+   The email is the nudge.
+7. **Progress page** (public): stories learned, by tractate, and the coverage measure Daniel confirms (§12, question 1).
+8. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
 
 The existing reader (cards, daf lists, story pages, Hebrew/English, "Open on Sefaria", feedback form, approved notes)
-keeps working unchanged; the sign-up wraps it. The per-device "mark as read" checkmark stays as it is.
+keeps working unchanged; the sign-up wraps it.
 
 ### Later (not v1 — list, do not build)
-- One broadcast reminder email to everyone who signed up (v1 already keeps their email, see §5).
-- Post-sign-up "why are you participating?" dropdown (Hadar, Drisha, other community, family, friend, other) and the
-  honour board / pie chart. Data slot reserved: `users/{uid}.community` (§5).
-- "Pick my own stories" (tick unclaimed stories in the field). Cheap: same claim write as assignment.
-- "Take more" / second readers once every story is taken.
-- AI "explain what's going on" buttons; collaboration; personalised reminders; rich profiles.
-- Context before/after a story beyond the existing "Open on Sefaria" link.
+- **"Give me a story"** button: for (a) leftovers nobody committed to, (b) stories released by people who did not
+  read them, (c) uncommitted people who want to double up. Same assignment write, one story at a time.
+- Honour board / pie chart by community (data already collected via `?src=`).
+- **Co-readers** (Simon, 2026-11-13; explicitly not v1): people who read the same story get more context and
+  meaning and can talk with each other about it. **The only v1 implication:** keep per-story completion records
+  (who read which story, when). `assignments` already holds them (`uid`, `storyId`, `doneAt`), so v1 needs nothing
+  extra. **Privacy:** nobody is ever shown to another reader without opting in first; a future `users.showToCoReaders`
+  defaults to false, and v1 shows no one to anyone.
+- AI "explain what's going on" buttons; rich profiles; context beyond "Open on Sefaria".
 
-## 4. Sign-up by time: minutes per week (decided)
+## 4. The commitment mechanic
 
-**Decided (Simon, from his call with Daniel, 2026-11-09): people choose minutes per week**, until the yahrzeit.
-Buttons: 5 / 10 / 15 / 30 min a week + "other". The system converts that to a total
-(`minutes/week × weeks left until the yahrzeit`) and assigns stories for **the next 4 weeks** at a time, so nobody
-is handed months of stories up front and the pool is not emptied by a few early sign-ups. When a person's batch is
-learned (or 4 weeks pass), "Get next stories" assigns the next batch at the same rate.
-`users/{uid}.minutesPerWeek` replaces `pledgedMinutes` in §5.
+Each decision is marked **Simon decided** or **to confirm with Daniel** (Simon, 2026-11-13). Nothing that depends on
+a to-confirm item is built until Simon reports back (§9 marks which PRs wait).
 
-Scale check (mean story 234 words ≈ 1.6 min at 150 wpm): 15 min/week ≈ 40 stories/month per person. Today's 367
-stories (~10 h) need about 10 people at 15 min/week for one month; ~3,000 stories (~80 h) over ~43 weeks need about 8 people at 15 min/week, or more people at less.
+| | Decision | Status |
+|---|---|---|
+| Unit | **Minutes per week**, converted to stories by word count at `readingWpm` | Simon decided |
+| Reading pace | One config value; 75 / 100 / 120 wpm (§2) | **Simon to pick, then confirm with Daniel** |
+| Cadence | **Week by week** from the pool; no full schedule at sign-up | Simon decided |
+| Start | **Fixed launch date**: sign-ups open first, everyone starts the same week | Simon decided; **date to confirm with Daniel** |
+| Order | **In order through Shas** (site tractate order, then daf, then segment); **consecutive** stories per person | Simon decided |
+| Missed stories | **Roll over 2 weeks** on the person's list, then **released** to the pool | Simon decided |
+| More commitment than list | **Double up**: nobody turned away; stories learned more than once | Simon decided |
+| What "cover the entire thing" means | cycles / copies per story / per-person paths (below) | **To confirm with Daniel** |
+| Reminders | **Weekly personal email** + signed-in My stories page | Simon decided; **wording and sender to confirm with Daniel** |
+| Community attribution | **Per-community links** (`?src=...`), not an onboarding question | Simon decided; **list of communities to confirm with Daniel** |
+| Yahrzeit date | Friday 10 September 2027 (8 Elul 5787) | **To confirm with Daniel** |
+| Joe Septimus page | Structure + placeholder | **Wording from Daniel** |
+
+Options for the coverage question, so the answer can be one word:
+- **Cycles (proposed):** the group reads Shas front to back; when the end is reached, cycle 2 starts at the front.
+  The headline is "Shas completed N times", and each completion is a natural siyum. Released stories are re-assigned
+  within their cycle before the pointer moves on, so every cycle really is complete.
+- **Copies per story:** each story gets learned by up to K people at once (K = commitments ÷ list size), and the
+  pointer moves K times slower. Same arithmetic, less of a story: no moment of completion.
+- **Per-person path:** each person reads their own sequence from wherever they start. Simplest to explain, but the
+  group never "finishes" anything together.
 
 ## 5. Data model (Firestore)
 
-Three things, nothing more:
-
 ```
-users/{uid}         { name, email, createdAt, minutesPerWeek,   // from Google; the rate they chose
-                      community: null }                         // reserved for the post-sign-up question (Later)
-claims/{storyId}    { uid, list: "v1", assignedAt, doneAt: null | timestamp }
-                    // doc id = story id → at most one live claim per story, enforced by the database
-meta/list           { current: "v1", publishedAt: "2026-11-xx" }
+users/{uid}           { name, email, createdAt, minutesPerWeek, src,        // src from ?src=, first visit wins
+                        emailOptIn: true, active: true }
+assignments/{auto}    { uid, storyId, list: "v1", cycle, week,              // week = ISO week the job assigned it
+                        assignedAt, doneAt: null | ts, releasedAt: null | ts }
+pool/state            { list: "v1", cycle, lastAssigned: <storyId>,        // server-only; an id, never an index
+                        released: [storyId, …] }                            // returned stories, re-assigned first
+progress/summary      { learned, byTractate: {t: n}, cycles: {n: learned}, updatedAt }   // public, server-written
+meta/list             { current: "v1", publishedAt, launch, yahrzeit }
 ```
 
-- **Unclaimed** = no claim doc. **Taken** = claim with `doneAt == null`. **Learned** = `doneAt` set.
-- No names or emails in `claims` (the field view is public; it shows status, never who).
-- Who participated (for Daniel) = `users`, exportable (§8).
+- Assignments are **not** unique per story any more (doubling up); each row is one person's copy of one story.
+- No names or emails outside `users` (the progress page is public).
+- Export for Simon and Daniel: `users` (who joined, from where) and `assignments` (who learned what).
 
-## 6. Assignment algorithm
+## 6. Weekly assignment (server-side job, Monday morning US Eastern)
 
-1. Read all claims (one query) and the static story list for the current version.
-2. **Available** = no claim, or a claim that is **stale**: `doneAt == null` and `assignedAt` older than **30 days**
-   (constant). Stale claims return to the pool automatically; nobody has to release them.
-3. Order available stories in **reading order** (tractate order as on the home page, then daf, then segment), and take
-   from the **first open gap**, so a person gets **consecutive stories** (often the same daf) instead of a scatter,
-   and the list fills from the front, which makes "how many are left" honest.
-4. Add stories until the total minutes ≥ pledge. Always at least one story; stop before exceeding the pledge by more
-   than 50% unless that would mean zero stories.
-5. Write the claims in **one transaction** that re-checks each story is still available; if someone else got one first,
-   retry with the next (Firestore transactions retry automatically on conflict).
-6. **Not finishing:** after 30 days an unfinished claim is stale and can be reassigned; the original person still sees
-   it, marked "released — someone else may take it". Their "Mark as learned" still works if nobody has re-taken it.
-   A person can also press **"Give back"** on any unfinished story (deletes their claim).
-7. **Pool empty:** "Every story is taken. K are still being learned." No second readers in v1.
+1. For each active user, roll-over check: their unfinished assignments older than **2 weeks** get `releasedAt` and
+   their story ids go to `pool.released`.
+2. Budget = `minutesPerWeek` minus the reading time of their still-open (rolled-over) stories. If ≤ 0, no new stories.
+3. Take stories from `pool.released` first (oldest first), then from the story after `pool.lastAssigned` in order, adding stories
+   while the running total ≤ budget; always at least one story if budget > 0. At the end of the list, the pointer
+   wraps and `cycle` increments (under the cycles option).
+4. Users are served in sign-up order, so each person's stories are consecutive and the list fills from the front.
+5. One transaction updates `pool/state` and writes the week's assignments; the job is idempotent per week (re-running
+   it for a week that is already assigned changes nothing).
+6. Then the weekly email goes out (§8), and `progress/summary` is recomputed.
 
-Security rules (no server code in v1):
-- `claims`: anyone may read. Create only if signed in and `uid == auth.uid`. Take over only if the existing claim is
-  stale. Update only your own claim, only `doneAt`. Delete only your own unfinished claim.
-- `users/{uid}`: read/write only by that user.
-- `meta`: read-only for clients.
+**Marking learned** is a client write to the user's own assignment (`doneAt` only); a small trigger keeps
+`progress/summary` current between weekly runs.
 
-## 7. List versions and stable ids
+Security rules: `users/{uid}` read/write by that user only (fields: `minutesPerWeek`, `emailOptIn`, `active`, and
+`src` on create); `assignments` readable by their owner, updatable by their owner on `doneAt` only, created only by
+the server; `pool`, `meta` server-only writes; `progress/summary` public read.
+
+## 7. List versions, stable ids, and lists that change mid-campaign
+
+**Nobody loses their place when stories are added or removed** (checked against the design, 2026-11-13):
+- A person's place is their **assignment rows**, each holding a `storyId`, not a position. Adding or removing other
+  stories does not touch them.
+- The pool pointer stores the **id of the last story assigned** (`pool.lastAssigned`), not an index. Each week the job
+  finds that id in the current order and continues after it. If that story was removed, it continues after the
+  nearest earlier story still on the list.
+- **Story added behind the pointer** (in a part of Shas the current cycle has passed): it joins `pool.released`, so it
+  is assigned first next week and the cycle stays complete. **Added ahead of the pointer:** it is simply reached in order.
+- **Story removed:** open assignments for it stay on the person's list, marked "no longer on the list", and drop off at
+  rollover; learned ones stay counted as history but not as progress on the current list. It is removed from
+  `pool.released` if queued there.
+- Progress is always reported against the current list version, with its date.
+- Tests for the weekly job (§9 c) include: add a story behind and ahead of the pointer, remove the pointer's story,
+  remove a story someone holds open; every user's open list and the pointer survive each.
+
+When ids change (a boundary moves, so `tractate-daf-start-end` changes):
 
 - v1 freezes today's ids (`tractate-daf-start-end`). `site/data/index.json` gains `list_version` and `published_at`.
-- A **new list (v2, …)** is built by the same script and ships with `site/data/lists/v1_to_v2.json`:
-  each v1 id → the v2 id it **overlaps most by segments** (overlap, never an exact key — Lesson 36), or `null`.
-- A one-off migration script rewrites claims through that map: a learned v1 story stays learned on its v2 match;
-  a taken one stays taken. A v1 story with no match keeps its claim under its old id, counted as history, not as
-  progress on the new list. Splits/merges with ambiguous matches are printed for a person to decide, never guessed.
-- New stories in v2 simply start unclaimed. Progress is always reported against the **current** list.
+- A **new list (v2, …)** ships with `site/data/lists/v1_to_v2.json`: each v1 id → the v2 id it **overlaps most by
+  segments** (overlap, never an exact key — Lesson 36), or `null`.
+- A one-off migration rewrites assignments through that map: learned stays learned on its match; open stays open.
+  A v1 story with no match keeps its rows under its old id, counted as history. Ambiguous splits/merges are printed
+  for a person to decide, never guessed. The pool pointer is re-seated at the first v2 story not yet covered in the
+  current cycle.
 
 ## 8. Backend: decision
 
@@ -154,11 +191,13 @@ The static site cannot hold shared state; it needs sign-in and a small database.
 | For a non-engineer owner | Google console Simon already uses; data viewable as a table | One more account | Most moving parts |
 | Data export | `firebase auth:export` (sign-ups) + a small script for claims | SQL / CSV | SQL / CSV |
 
-**Decision: Firebase Auth + Firestore, on a NEW Google Cloud project, on the free Spark plan. Site stays on Vercel.**
+**Decision: Firebase Auth + Firestore, on a NEW Google Cloud project. Site stays on Vercel.**
+**Revised 2026-11-13: v1 now needs the Blaze plan** (pay-as-you-go, card on file), because of the weekly job and the
+weekly email (§8d). Everything below about Spark still holds for the parts that run in the browser.
 
 **Project: `septimus-stories`** (created 2026-11-08; Firestore `nam5`; Google sign-in on; authorised domain `talmud-stories.vercel.app`, a placeholder: add the final domain there when it exists).
 
-**(a) Can v1 stay on Spark (no billing)? Yes.** Checked against what v1 needs:
+**(a) What Spark covered (2026-11-08 analysis; superseded by (d) for the weekly job):**
 - Google sign-in: free on Spark.
 - Firestore: free on Spark up to 50,000 reads, 20,000 writes and 1 GB per day.
 - Security rules and client-side transactions both work on Spark. Assignment (§6) is a client transaction that
@@ -204,14 +243,33 @@ controlled by the security rules and the authorised-domain list. No secret exist
 runs. Two steps have no command line and are clicks in the Firebase console (~2 min): enable the Google sign-in
 provider, and add `talmud-stories.vercel.app` to authorised domains.
 
+**(d) Weekly job + email: why Blaze, what it costs (estimated 2026-11-13; check current price pages before enabling)**
+
+- The weekly assignment and email must run **without anyone's browser open**, so they are a scheduled Cloud Function
+  (Cloud Scheduler → function). Scheduled functions require **Blaze**. Doing assignment server-side is also safer than
+  the old client-transaction design: one writer, no races, simpler rules.
+- **Firebase/Google cost at this scale: about $0–2 a month** (estimated). A few hundred users means a few thousand
+  Firestore reads/writes a week and four job runs a month, well inside Blaze's free allowances; Cloud Scheduler gives
+  3 jobs free.
+- **Email needs a sending service and a domain.** Sending from a personal Gmail account is capped (~500/day) and
+  lands in spam at volume. A transactional email service (e.g. Resend, Postmark, Brevo, Amazon SES) with a verified
+  sending domain (SPF/DKIM DNS records) is the normal way. Cost: free tiers cover roughly a few hundred weekly
+  recipients; past that, typically **$15–20 a month** (SES is cheaper, ~$0.10 per 1,000, but more setup). The API key
+  lives in Google Secret Manager, never in the repo.
+- **Budget alert:** a **$10/month** budget alert on the project (email to Simon at 50% and 100%). Blaze has no hard
+  cap; the alert is the guard.
+- One-click unsubscribe in every email (link sets `emailOptIn: false`); required practice for bulk senders.
+
 ## 9. Build order (one PR each, branch `septimus/signup-*`, titles start `[Septimus]`)
 
 | PR | What | Done when |
 |---|---|---|
-| a | Word count + reading time in the export; tests | Every story has `words` and `minutes`; totals equal §2; tests pass |
-| b | Firebase wiring, Google sign-in, "how much time?", assignment, rules | At 390 px: sign in, pledge 15 min, get consecutive stories summing ≈15 min; a second account cannot get the same stories; rules tested in the Firestore emulator |
-| c | My stories, mark as learned, give back, progress field + counts | Marking learned updates the field on another device; counts per tractate add up to the story totals |
-| d | About Joe Septimus page | Linked from the home page; placeholder text clearly marked for Daniel |
+| ~~a~~ | Word count + reading time in the export | **Done** (#79) |
+| b | Landing page + Google sign-in + `?src=` + minutes-per-week question | At 390 px: land, read what it is, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator. **Buildable now** with placeholders for launch date, yahrzeit and community names |
+| c | Weekly job: rollover/release, assignment in order, pool pointer; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing. **Waits for** the coverage answer (Daniel) and the pace (Simon) |
+| d | My stories + mark as learned + progress page | Marking learned shows on the progress page; counts per tractate add up. **Waits for** c |
+| e | Weekly email (service + domain + unsubscribe) | A test send to Simon renders on a phone; unsubscribe link works. **Waits for** sender, wording (Daniel) and Blaze (Simon) |
+| f | About Joe Septimus page | Linked from the landing page; placeholder clearly marked for Daniel. **Buildable now** |
 
 Each verified in a real browser at phone width (Playwright, Chromium) before it is called done.
 `python3 -m pytest tests/test_site_data.py tests/test_bookkeeping.py -q` before each push.
@@ -220,23 +278,38 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 
 | Risk | Handling |
 |---|---|
-| The pool empties in days (list is ~10 h; a big launch could take it all at once) | Expected and fine — it means the goal is reachable. Message says so; second readers are a v2 option |
-| People take stories and vanish | 30-day stale rule returns them to the pool; "K still being learned" stays visible |
-| A boundary change in a later list breaks someone's progress | Overlap map + migration script (§7); nothing is ever deleted |
-| Emails collected without saying so | Sign-in screen says: "We'll use your email only to send occasional reminders about this project." |
-| Yevamot stories are not expert-reviewed | Already labelled "not yet reviewed"; whether they count toward "all the stories" is Simon/Daniel's call |
-| Yahrzeit date unconfirmed | Config value; shown as "by 8 Elul 5787" once Daniel confirms |
+| Heavy oversubscription makes "finish Shas" meaningless | Coverage definition (§12, question 1 for Daniel); the cycles option turns it into repeated siyumim |
+| People commit and vanish | 2-week grace, then release; released stories are re-assigned first |
+| Emails land in spam | Verified sending domain, low volume, plain content, unsubscribe link |
+| Blaze bills without a cap | $10/month budget alert; costs estimated at a few dollars |
+| A later list (v2) breaks someone's progress | Overlap map + migration (§7); nothing is ever deleted |
+| 34 of 37 tractates are not expert-reviewed | Labelled "not yet reviewed" on landing, list and story pages |
+| Sign-in blocked in WhatsApp/Instagram in-app browsers | Detect and say "open in Safari/Chrome" (§8b) |
+| Yahrzeit date unconfirmed | Config value; shown once Daniel confirms |
 
-## 11. Open questions
+## 11. Open questions for Simon (asked one per message, in this order)
 
-1. **Backend:** Firebase on a new project, Spark plan, Vercel hosting (§8). Confirm when the finder plan is approved.
-2. Time model: one-time total (default) vs minutes per week.
-3. Daniel to confirm the yahrzeit (Friday 10 September 2027) and supply the wording for the Joe Septimus page.
-4. Do the "not yet reviewed" tractates count toward "all the stories" on the progress bar? (Default: yes, labelled.)
+1. **Reading pace:** 75, 100 or 120 English words a minute (§2)? *(asked 2026-11-13)*
+2. OK to put a card on the `septimus-stories` project (Blaze) with a $10/month alert, for the weekly job and email?
 
-## 12. Found while planning (fixed in PR a)
+Everything else is in §12, for Daniel.
 
-`main`'s `site/data/` predates Jeff's 2026-10-25 rulings (#68). Rebuilding adds `ketubot-65a-10-10` (borderline) and
-drops `gittin-89a-19-19`, so 2 tests in `tests/test_site_data.py` fail on `main` (note set and extensions no longer
-match the story set). PR a rebuilds the data and reconciles the note/extension files; the new story's note stays hidden
-until approved.
+## 12. Questions for Daniel (plain English, ready to paste)
+
+> Hi Daniel, a few things to settle before we build the sign-up for learning all the Talmud stories in your father's memory:
+>
+> 1. **What does "finishing" mean?** All of Shas's stories (about 1,800 at the moment; the number isn't final) are only about 60–95 hours of reading, so if a few
+>    hundred people sign up, we'll get through everything many times over. My suggestion: we go through Shas together
+>    in order, and every time we reach the end, that's a siyum and we start the next round. Does that feel right, or
+>    would you rather something else (for example, each story read by several people at once)?
+> 2. **Launch date:** what week should everyone start together? Sign-ups would open a few weeks before.
+> 3. **The yahrzeit:** I've calculated 8 Elul 5787 as Friday 10 September 2027. Is that right?
+> 4. **Weekly email:** each person gets one email a week with links to their stories. Whose name should it come from,
+>    and is there wording you'd like (a line about your father, for example)?
+> 5. **Reading pace:** we estimate time per story assuming people read slowly, in Hebrew and English, and stop to
+>    think. We're thinking about [Simon's pick] words a minute, which makes a typical story about [N] minutes. Does that feel right?
+> 6. **Communities:** you mentioned Hadar, DN, Kesher and your Brooklyn communities. Each gets its own sign-up link so
+>    we can thank them by name later. What's the full list, and what should each be called?
+> 7. **A page about your father:** would you write a few paragraphs about him for the site, so people who didn't know
+>    him know whom they're learning for?
+
