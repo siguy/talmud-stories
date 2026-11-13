@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "One act (dragging a bench) followed by a rabbi's challenge and legal discussion; ordinary scholarly rebuke with nothing following."},
+"02": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Report of Helene's donation and a habitual phenomenon cited for a halakhic point; no incident or change."},
+"03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A frame of questions put to R. Yehoshua and his answers, followed by legal discussion; question-and-answer with no event is not a story."},
+"04": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Nahman decrees a fast, rain fails, he despairs and is upset, and rain comes: several events with causal change."},
+"05": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A teaching followed by women going out wearing the ornament: events with some causality but thin, cited as evidence."},
+"06": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Mainly speech about rulings, but Rabbi Tavla acted on a ruling and Rav Nahman threatens him: conflict with some event."},
+"07": {"verdict": "not", "rules": ["R-B4", "R-C5"], "segments": [], "reason": "A sage's added comment that Nehunya's son died, with a derashah; commentary on a story told elsewhere, a single reported event."},
+"08": {"verdict": "borderline", "rules": ["R-C3", "R-C7"], "segments": [2], "reason": "Shammai's habitual refusal leads to a decree forcing him to feed with two hands: some change, thinly narrated, then discussion."},
+"09": {"verdict": "story", "rules": ["R-C3"], "segments": [2], "reason": "Habit, then one day Mar Ukva fails to notice Shmuel accompanying him, Shmuel's remark, and Mar Ukva imposes admonition on himself: actions and change."},
+"10": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav's report of finding a scroll serves only to cite a teaching and his comment on it; nothing follows."},
+"11": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Hisda's daughter immersed early, caught cold, and died, her bier carried after Rava: multiple events with causality and change."},
+"12": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "A polemical exchange between a magus and Ameimar: speech only but with conflict."},
+"13": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "Ulla's report that Elul was intercalated and a discussion of its reason; speech and a bare report."},
+"14": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A teaching and the gesture of Rabbis Ami and Asi turning their faces away: mainly speech with conflict and a small act."},
+"15": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Exegetical narrative about the biblical spies and Canaanites."},
+"16": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A claim, a counterclaim and rabbinic rulings; a legal case with no narrated change."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A woman finds blood and comes before R. Yannai, who rules; coming before a rabbi and a ruling is the only event."},
+"18": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Women complain to Rabbi and Rav and receive rulings; nothing further happens."},
+"19": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2, 3, 4, 5, 6], "reason": "Mostly legal debate over a document's date, but Rav Aha suspects deflection, goes out, checks and finds Rav Nahman right: a small event and change."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A habitual wonder (goats sneezing from the incense) cited as evidence; no incident develops."}
+}

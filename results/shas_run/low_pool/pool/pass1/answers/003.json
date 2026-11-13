@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of how two elders in Sidon practiced and their reasons; nothing happens to anyone and nothing follows."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An elder transmits a tradition in the course of legal discussion; speech only, no event or conflict."},
+"03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An objection is sent to a sage and he and Rava assess it; quasi-speech and ordinary scholarly disagreement, no event."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rava's and Rav Nahman bar Yitzhak's fines are cited as bare reports of practice to support the law, with no narrated incident or development."},
+"05": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A legal dispute and a retraction of opinion; speech-acts with no event."},
+"06": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2, 3], "reason": "A polemical exchange between a Sadducee and R. Hanina: speech only, but with genuine conflict beyond ordinary scholarly debate."},
+"07": {"verdict": "story", "rules": ["R-B4"], "segments": [2], "reason": "R. Akiva ascends and descends safely, the angels seek to push him out and God intervenes: events with conflict and outcome. Segments 3-6 are the Gemara's exegetical commentary and not part of the story."},
+"08": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Yosef's exclamation questioning a reasoning; speech in legal discussion, no event."},
+"09": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "R. Zeira's death and the eulogy delivered over him: one real event, mostly speech, cited as evidence for a place-name."},
+"10": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "The sages meet on the road, exchange blessings, take offense, fix their gaze on him and he dies: events, conflict and a decisive change."},
+"11": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Mainly speech, but Rav Huna bar Hiyya's intended ruling is challenged and he is embarrassed (an emotional event) with a sharp rebuke: conflict plus some change."},
+"12": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A habitual custom (the ladies would sing to R. Abbahu) with no one-time event and nothing that follows."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question, a referral and an answer about an aggadic point; going to ask is only a setting for question and answer, no conflict or change."},
+"14": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Mar Zutra erred and came before Rav Yosef, who ruled; one incident followed by a ruling with nothing else changing, cited to resolve a dilemma."},
+"15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A passing allusion to a seller's call used for word meaning; no narrated incident with development."},
+"16": {"verdict": "borderline", "rules": ["R-C6", "R-C7"], "segments": [2], "reason": "Ben Antigonus brought firstborns from Babylonia and the Temple refused them: a real incident with two acts, only alluded to as a source for a legal contradiction."},
+"17": {"verdict": "not", "rules": ["R-C5", "R-B4", "R-C1"], "segments": [], "reason": "The Mishnah's report that R. Elazar ben Azarya's cow would go out with a strap is a habitual practice leading nowhere; the rest is legal commentary and the Gemara's gloss on it."},
+"18": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A man's habitual saying prompts an examination of his lineage that discovers his tribe: mostly speech, weak drama, but a real action and a finding."},
+"19": {"verdict": "borderline", "rules": ["R-C0"], "segments": [2], "reason": "A man promises land to one person, then sells it to another, and Rav Yosef rules: two narrated acts before the ruling (close to the stolen-and-sold cow), but brief and resolved only by a ruling."},
+"20": {"verdict": "not", "rules": ["R-C0", "R-C6"], "segments": [], "reason": "Incidents only alluded to in which a sage attributed a stain to a cause; the only act is the ruling itself, cited as a legal objection."}
+}

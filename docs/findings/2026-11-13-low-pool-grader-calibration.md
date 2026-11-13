@@ -38,3 +38,10 @@ that adds stories without lowering what "definite" means on the site.
 
 Next, if approved: grade the pool twice (~63 batches per pass), take both-passes-story, then Simon reads a
 random 60 of the would-be promotions; nothing ships unless at least 54 are real.
+
+## Pool graded — measured (2026-11-13, same day)
+
+`scripts/grade_low_pool.py`: all 1,259 pool spans graded twice (1,117 new per pass + 142 reused from calibration C2), 0 unscored.
+**80 spans both passes call `story`** (P1 26, P3 51, P4 3) — the bottom of the 80–200 indicated above.
+At the calibrated ~0.95 precision that is roughly 75 real stories. Nothing ships yet: Simon reviews a seeded random 60
+(`review_sample.json`) on `validation/ui/low_pool_promotions_review.html` (all 80 shown, sample first); ship only if >= 54 of 60 are yes.
