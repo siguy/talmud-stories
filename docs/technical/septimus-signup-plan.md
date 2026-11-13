@@ -61,7 +61,7 @@ story pages and the weekly email (Simon, 2026-11-13; supersedes "not displayed",
    with **"Mark as learned"**. The page is the source of truth.
 6. **Weekly personal email**: "Your stories this week", links to each story and to My stories; one-click unsubscribe.
    The email is the nudge.
-7. **Progress page** (public): stories learned, by tractate, and the coverage measure chosen in open question 1.
+7. **Progress page** (public): stories learned, by tractate, and the coverage measure Daniel confirms (§12, question 1).
 8. **About Joe Septimus** page: structure and a clearly marked placeholder; Daniel supplies the words.
 
 The existing reader (cards, daf lists, story pages, Hebrew/English, "Open on Sefaria", feedback form, approved notes)
