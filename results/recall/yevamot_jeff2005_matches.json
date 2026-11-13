@@ -1589,8 +1589,14 @@
   "only_rejected": false,
   "in_mishnah_filtered": false,
   "in_golden": null,
-  "superseded_by_rule": null,
-  "counts_for_recall": true
+  "superseded_by_rule": {
+   "ruling": "not",
+   "rule": "R-C2",
+   "date": "2026-11-12",
+   "source": "jeff comms/11-12-2026/reply.md (8 passages, item 6, Shabbat 147a) -- applied by rule, not named by him",
+   "his_words": "(his rule, on Shabbat 147a, 2026-11-12) Not a story. This is a legal ruling, a question and answer. It start with the setting, that Ulla visited Asi bar Hini. But that is not enough for a story."
+  },
+  "counts_for_recall": false
  },
  {
   "id": "yevamot_052",

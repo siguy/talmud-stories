@@ -64,7 +64,7 @@ def test_subset_export_refuses_to_mix_with_an_old_export(jd):
         _export(jd)
 
 
-def test_subset_import_marks_claude_json_as_a_subset_and_gate_g6_goes_green(jd):
+def test_subset_import_marks_claude_json_as_a_subset_and_gate_g6_goes_green(jd, monkeypatch):
     import check_tractate_run as C
     from tractates import Paths
     _export(jd)
@@ -75,6 +75,13 @@ def test_subset_import_marks_claude_json_as_a_subset_and_gate_g6_goes_green(jd):
     jd.import_('claude-test')
     d = json.loads((jd.OUT / 'claude.json').read_text())
     assert d['meta']['subset'] == 'gemini_out_of_scope' and [r['answer']['outcome'] for r in d['rows']] == ['ok']
+    # The judge prompt embeds docs/STORY_RULES.md (Scope..Triage), so its sha moves whenever a
+    # rule is added (2026-11-13: Jeff's 2026-11-12 rulings). G6's pin records the register the
+    # Shas run was judged under and must NOT follow it. This test is about subset marking, so it
+    # pins G6 to the prompt claude.json was written under (the fixture's gemini.json carries the
+    # old pin, which export() checks). A real re-judge under the new register is red at G6 until
+    # Simon re-pins -- by design.
+    monkeypatch.setattr(C, 'JUDGE_PROMPT_SHA', jd.j.prompt_sha())
     r = C.g6_judge(Paths('tamid', jd.OUT.parents[2]), 'claude')
     assert r.status == 'green', r.failures
 

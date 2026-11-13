@@ -129,6 +129,12 @@ EXCLUDED = {
     '2026-11-simon-precision-sample.json':
         "Simon's own grading of the 60-story Shas precision sample (2026-11-12) -- the "
         'project owner, not the expert; indicated only, never ground truth',
+    # Lives in `jeff comms/11-12-2026/`, outside REVIEW_GLOBS; named here so a copy into
+    # validation/feedback/ is already decided rather than raising.
+    'axis_eruvin_ 20 passages from your 2005 list_review_2026-11-12.json':
+        "Jeff's verdicts on 20 of his own 2005 Eruvin list entries (not detector spans: "
+        "classification_shown is FROM YOUR 2005 LIST); applied as annotations in "
+        'results/expert_lists/superseded_by_rule.json by apply_jeff_2026-11-12_verdicts.py',
     'jeff_v4.1_validation.json': 'carries no span verdicts',
     'validations_v4_2026-01-25.json': 'carries no verdicts',
 }
