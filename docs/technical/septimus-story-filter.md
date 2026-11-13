@@ -67,7 +67,16 @@ it matched on stderr, and names one that matched nothing.
 - **`include`** — an expert `story` verdict plus Simon's yes on a passage the filter held back. **The only way past
   the definite-only rule, one named passage at a time, never a rule.** One: Sanhedrin 52b:4 (R. Elazar son of
   R. Tzadok on his father's shoulders), LOW in both runs; Jeff 2026-11-12 *"I would include it"*, Simon 2026-11-13
-  *"Include this"*. It ships with `included_by` and `reviewed: true`.
+  *"Include this"*. On the site it reads as a regular story of its tractate (Simon 2026-11-13, *"just count it as a
+  regular story"*): no badge, no `reviewed`, no provenance field. Who decided lives in the decisions file only.
+
+## The card's summary
+
+A card shows the story's `one_sentence_summary` only when it is written for a reader. Two kinds are pipeline text and
+never shown: `[Restored from ... merge]` placeholders, and every **twin-pass** addition's, which v14 fills with the twin
+judge's `reason` (*"Passage B describes a distinct historical incident ..."*). For those the card takes the summary of
+the **same passage** (identical cells) in the other run; failing that it shows no summary line. Never invented.
+`tests/test_site_data.py::test_no_card_summary_is_pipeline_reasoning` guards it.
 
 **Why the detector's own grade, and not the judges** (Simon, 2026-11-09). Where Jeff reviewed
 the detector's YES/HIGH calls, 141 of 155 were his yes (91%), 8 borderline, 6 no — the rules
@@ -131,3 +140,7 @@ definite answer.
   Berakhot lepers out of scope (R-S1). All 102 flagged stories move to each file's `out_of_scope` list. Jeff's
   2026-11-12 verdicts applied as data (`septimus_site_decisions.json`): 12 passages removed (6 from the precision
   sample, 6 Eruvin), Sanhedrin 52b:4 included. The site went from 1,897 to 1,784 stories.
+- 2026-11-13, later — Simon: card text leak fixed. 76 shipped twin-pass cards showed the twin judge's reasoning as their
+  summary; none had a reader-facing summary of the same passage in the other run, so all 76 now show none (85 cards
+  with no summary in all, the other 9 Ketubot golden placeholders as before). Sanhedrin 52b:4 now reads as a regular story (`reviewed` and
+  `included_by` gone from the site data). Story count unchanged at 1,784.

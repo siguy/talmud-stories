@@ -99,6 +99,15 @@ def test_every_story_has_words_and_reading_minutes():
         assert row["minutes"] == sum(s["minutes"] for s in stories), t
 
 
+def _included(s):
+    """True when the story is a passage named in septimus_site_decisions.json `include` (who and when are there; the
+    site data deliberately carries no provenance field -- Simon 2026-11-13, 'just count it as a regular story')."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    cells = {(g["ref"], g["i"]) for g in s["segments"]}
+    return any(cells & b.decision_cells(e) for e in b.site_decisions()[2].get(s["tractate"], []))
+
+
 def test_no_low_confidence_or_not_a_story_ships():
     """Only definite stories reach the site (Simon, 2026-10-12; again 2026-11-09, Lesson 45).
     A later gate (e.g. the consensus judges on Berakhot) may narrow this, never promote past it."""
@@ -106,7 +115,7 @@ def test_no_low_confidence_or_not_a_story_ships():
     for row in index["tractates"]:
         for s in json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]:
             # the one exception is a passage named in septimus_site_decisions.json `include`, which says who and when
-            assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or s["included_by"], s["id"]
+            assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or _included(s), s["id"]
             assert s["tier"] == "story" and not s["in_mishnah"], s["id"]
 
 
@@ -128,8 +137,8 @@ def test_unreviewed_stories_are_definite_in_every_run():
         d = json.loads((ROOT / f"site/data/{t}.json").read_text())
         for s in d["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
-            assert all(cells & r for r in runs) or s["included_by"], s["id"]
-            assert not cells & drop or s["included_by"], s["id"]
+            assert all(cells & r for r in runs) or _included(s), s["id"]
+            assert not cells & drop or _included(s), s["id"]
             assert not s["biblical"], s["id"]
             assert not cells & biblical or s["extended"], s["id"]   # only a display extension may reach a biblical cell
         for s in d["out_of_scope"]:
@@ -201,11 +210,42 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
                 assert not {(g["ref"], g["i"]) for g in s["segments"]} & b.decision_cells(e), (s["id"], e["ref"])
 
 
-def test_sanhedrin_52b_4_is_included_with_its_provenance():
-    """Jeff 2026-11-12 'I would include it'; Simon 2026-11-13 'Include this'. LOW in both runs, so only the explicit
-    per-passage decision puts it on the site, and the story says who decided."""
-    s = {s["id"]: s for s in _site()["sanhedrin"]["stories"]}["sanhedrin-52b-4-4"]
-    assert s["included_by"] and "Jeff" in s["included_by"][0]["decided_by"] and "Simon" in s["included_by"][0]["decided_by"]
-    assert s["reviewed"] and s["classification"] == "LOW_CONFIDENCE"
-    included = [s for d in _site().values() for s in d["stories"] if s["included_by"]]
-    assert [s["id"] for s in included] == ["sanhedrin-52b-4-4"]
+def test_sanhedrin_52b_4_ships_as_a_regular_story():
+    """Jeff 2026-11-12 'I would include it'; Simon 2026-11-13 'Include this', then 'just count it as a regular story'.
+    LOW in both runs, so only the explicit per-passage decision puts it on the site; on the site it reads exactly like
+    any story of an unreviewed tractate -- no `reviewed`, no provenance field. Who decided stays in the decisions file."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    site = _site()
+    s = {s["id"]: s for s in site["sanhedrin"]["stories"]}["sanhedrin-52b-4-4"]
+    regular = next(x for x in site["sanhedrin"]["stories"] if x["id"] != s["id"])
+    assert set(s) == set(regular) and "included_by" not in s
+    assert not s["reviewed"] and s["tier"] == "story" and not site["sanhedrin"]["reviewed"]
+    entries = b.site_decisions()[2]["sanhedrin"]
+    assert len(entries) == 1 and "Jeff" in entries[0]["decided_by"] and "Simon" in entries[0]["decided_by"]
+    included = [x["id"] for d in site.values() for x in d["stories"] if _included(x)]
+    assert included == ["sanhedrin-52b-4-4"]
+
+
+# Pipeline reasoning a card must never show as a summary. Short on purpose, and each marker is the vocabulary of a
+# prompt that writes reasoning, not summaries: the twin-pass question names its two passages "PASSAGE A" / "PASSAGE B"
+# and asks whether B is a "separate_incident" / "same_story" (story_detector_v14._twin_prompt). The structural check
+# below catches the rest of that class (a twin reason that happens to avoid these words), so this list need not grow.
+REASONING_MARKERS = re.compile(r"\bPassages? [AB]\b|\bseparate_incident\b|\bsame_story\b|\bnot_a_story\b")
+
+
+def test_no_card_summary_is_pipeline_reasoning():
+    """2026-11-13: 78 cards showed the twin judge's argument ("Passage B describes a distinct historical incident ...")
+    because v14 copies that `reason` into a twin-pass story's one_sentence_summary. A card shows a reader-facing
+    summary or none (never invented)."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    site = _site()
+    leaks = [s["id"] for d in site.values() for s in d["stories"] if REASONING_MARKERS.search(s["summary"])]
+    assert not leaks, leaks
+    # structural: no shipped summary is a twin-pass `reason` from any run of its tractate
+    for t, d in site.items():
+        reasons = {s.get("reasoning") for q in b.SOURCES[t]["runs"] for p in json.loads((ROOT / q).read_text())["pages"]
+                   for s in p.get("stories", []) if s.get("source") == "twin_pass"} - {None, ""}
+        bad = [s["id"] for s in d["stories"] if s["summary"] in reasons]
+        assert not bad, (t, bad)

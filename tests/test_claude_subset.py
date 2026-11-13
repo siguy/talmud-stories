@@ -79,8 +79,8 @@ def test_subset_import_marks_claude_json_as_a_subset_and_gate_g6_goes_green(jd, 
     # rule is added (2026-11-13: Jeff's 2026-11-12 rulings). G6's pin records the register the
     # Shas run was judged under and must NOT follow it. This test is about subset marking, so it
     # pins G6 to the prompt claude.json was written under (the fixture's gemini.json carries the
-    # old pin, which export() checks). A real re-judge under the new register is red at G6 until
-    # Simon re-pins -- by design.
+    # old pin, which export() checks). Simon re-pinned on 2026-11-13 (check_tractate_run.py keeps the old
+    # pin in EARLIER_JUDGE_PROMPT_SHAS); the next register edit moves the sha again, and this stays decoupled.
     monkeypatch.setattr(C, 'JUDGE_PROMPT_SHA', jd.j.prompt_sha())
     r = C.g6_judge(Paths('tamid', jd.OUT.parents[2]), 'claude')
     assert r.status == 'green', r.failures

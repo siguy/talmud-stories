@@ -27,7 +27,9 @@ what the site reads) -- but they are written to each tractate file's `out_of_sco
 Per-passage decisions (results/shas_run/septimus_site_decisions.json, each with who decided and when):
   remove   -- Jeff ruled not / borderline on a passage the site shipped; matched by span OVERLAP (Lesson 36)
   include  -- an expert `story` verdict plus Simon's yes on a passage the filter held back (Sanhedrin 52b:4).
-              The only way past the definite-only filter, by name, never a rule.
+              The only way past the definite-only filter, by name, never a rule. On the site it reads like any
+              other story of its tractate (Simon 2026-11-13: "just count it as a regular story"): no badge, no
+              `reviewed`, no provenance field. Who decided lives in the decisions file, and the build names it.
 A decision that matches nothing is named on stderr.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
@@ -154,6 +156,28 @@ def definite_cells(path):
 JEFF_FIELDS = ("review_verdict", "label_source", "expert_answer", "source")
 
 
+def is_reader_summary(s):
+    """True when a story's `one_sentence_summary` is written for a reader. Two kinds are pipeline text and never shown:
+    "[Restored from ... merge]" bookkeeping placeholders, and every twin-pass addition's -- story_detector_v14
+    `_find_adjacent_twins` copies the twin judge's `reason` into it ("Passage B is a distinct incident ..."): the
+    model's argument that the segment is a separate story, not a summary of it."""
+    text = str(s.get("one_sentence_summary") or "")
+    return bool(text) and not text.startswith("[") and s.get("source") != "twin_pass"
+
+
+def reader_summaries(path):
+    """{frozenset(cells): reader-facing summary} for the stories[] of one run -- the source of a card's summary when
+    the exported run has none for the SAME passage (identical cells; an overlapping story is a different passage)."""
+    pages = json.loads((ROOT / path).read_text())["pages"]
+    out = {}
+    for i, p in enumerate(pages):
+        for s in p.get("stories", []):
+            if is_reader_summary(s):
+                out.setdefault(frozenset((r, g.get("index")) for r, gs in pieces(pages, i, s) for g in gs),
+                               s["one_sentence_summary"])
+    return out
+
+
 def jeff_evidence_cells(tractate):
     """Cells Jeff has said yes to: on his 2005 list, or a verdict read as `yes` (scripts/verdict_reading.py,
     via the ruler). Simon's own pre-screen round is not Jeff's and does not count."""
@@ -209,6 +233,7 @@ def build(tractate, matched=None):
     jeff = jeff_evidence_cells(tractate) if reviewed else None
     biblical, drop = judge_cells(tractate)
     others = [definite_cells(q) for q in src["runs"][1:]]
+    other_summaries = [reader_summaries(q) for q in src["runs"][1:]]
     stories, seen = [], set()
     for i, p in enumerate(pages):
         for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
@@ -241,6 +266,10 @@ def build(tractate, matched=None):
                 print(f"  duplicate span, shipped once: {sid}", file=sys.stderr)
                 continue
             seen.add(sid)
+            # The card's summary: the exported run's own when it is reader-facing, else the same passage's in another
+            # run, else none -- the page then shows no summary line. Never invented (no model call here).
+            summary = s["one_sentence_summary"] if is_reader_summary(s) else next(
+                (o[frozenset(cells)] for o in other_summaries if frozenset(cells) in o), "")
             if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                 print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
             stories.append({
@@ -255,13 +284,12 @@ def build(tractate, matched=None):
                 "biblical": bool(cells & biblical) or bool(s.get("filtered_as_biblical")),
                 "biblical_reason": ("consensus judges / decisions.json" if cells & biblical else
                                     "Stage 4j biblical-actor filter" if s.get("filtered_as_biblical") else None),
-                # who put a held-back passage on the site, and when (septimus_site_decisions.json `include`)
-                "included_by": [{"decided_by": e["decided_by"], "source": e["source"], "jeff": e["jeff"]} for e in include] or None,
                 "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
                 "extended": None,
-                "reviewed": reviewed or bool(include),   # an included passage carries Jeff's own `story`
-                # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
-                "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
+                # the tractate's own state: an included passage reads as a regular story (Simon 2026-11-13);
+                # its provenance stays in septimus_site_decisions.json, never on the card
+                "reviewed": reviewed,
+                "summary": summary,
                 # ref + index locate a segment exactly, so feedback on one can be traced to the source.
                 "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                              for r, g in segs],
