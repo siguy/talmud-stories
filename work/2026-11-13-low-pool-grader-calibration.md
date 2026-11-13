@@ -62,3 +62,8 @@ are a lower bound only. Report `golden_low_on_list` separately too.
 
 Write the finding to `docs/findings/<date>-<slug>.md`, add an `## Outcome` section
 below, and `git mv` this file to `work/done/`. **Never delete it.**
+
+## Results (2026-11-13, calibration step — item stays open for the pool grading)
+
+Both passes graded, 300/300 valid each. "Both passes say story": 32/33 = 0.97 (Wilson 0.85–1.00), **meets the bar**.
+Recall of Jeff's yes is only 32/141: the grader is strict. Finding: `docs/findings/2026-11-13-low-pool-grader-calibration.md`.

@@ -1,0 +1,4657 @@
+{
+ "meta": {
+  "pass": "pass1",
+  "prompt_sha": "88e8fff62716",
+  "rules_sha": "52854260f379",
+  "backend": {
+   "model": "claude-opus-5-5",
+   "via": "Claude Code subagent (Agent tool), not the API",
+   "seed": 1,
+   "batch": 20
+  },
+  "missing_batches": [],
+  "outcomes": {
+   "ok": 300
+  },
+  "imported": "2026-11-13T16:34:09"
+ },
+ "rows": [
+  {
+   "id": "C2:Yevamot 17a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly speech: Ulla's slight, Rav Hamnuna's shame and Ulla's rehabilitating reply. The shame is an emotional event, there is conflict and a resolution, but almost everything happens in dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 99b:16-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "A case brought to Rabbi, who gave no ruling. Coming before him is the only event, and segment 3 is the Gemara's explanation.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 82a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The brother's attempt to disqualify the yevama is a dispute carried on almost entirely in dialogue (offers and fears), with conflict but no narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 105a_13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rav Huna's habitual practice when litigants came, cited as precedent, with no one-time event and nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 81a_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav and Rav Yehuda walking behind a woman: a setting, then a dialogue with some tension. Mainly speech with little narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 80b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar Avuh's instruction is quoted inside the legal give-and-take to test an opinion. Nothing is narrated as having happened.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 52b_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Incident plus ruling: the brewer betroths with someone else's sediment, the owner finds him and comments, and Rava rules. There is more than coming before a rabbi, but little change beyond the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 39b_13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Aher sees Hutzpit's tongue dragged in the street, reacts and goes out to sin. Event, reaction and a causal change, about a post-biblical sage.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 45b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Reports of sages who visited and ruled on cases. Each is an incident followed only by a ruling, transmitted as halakhic testimony.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 55b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An eyewitness measurement of a place, cited as part of a legal objection. No incident is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 72b:3-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Yohanan expounds, R. Elazar refutes him and he falls silent, then Reish Lakish exposes the source and R. Yohanan goes and masters Torat Kohanim. Several actions, conflict and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 101b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A yevama came before R. Tarfon and he gave an instruction. The arrival is the only event, followed by a ruling, cited as a source for the law.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 104a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report of how Rabba bar Hiyya conducted halitza, with Shmuel's critical remark. That is ordinary scholarly criticism, with no continuation or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 24a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A visit that only frames a halakhic question and answer about carrying. The setting is not a second event (Shabbat 147a line).",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 6b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Anan answers a question by pointing to Shmuel's habitual silence about the Neharde'a gates. This is practice cited as evidence, not an event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 72a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita's argument cites the fact that many were recircumcised in Bar Kokhba's days as evidence. It is a general historical report inside legal debate, not a narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 102a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of a household practice in R. Pedat's house and his ruling that the beam is a utensil. It is a habitual practice that leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 78b_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line mention of a precedent case and the ruling requiring halitza. The incident is barely told and nothing else happens.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 52a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The Gemara cites an incident in which a suspected man passed his in-laws' door and Rav Sheshet flogged him. These are two real acts, but the incident is only alluded to as an objection within legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 8a_9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Two brief precedents (Rav Kahana valuing a cloth, Mar bar Rav Ashi buying one at a premium) are cited as legal evidence. Each is a single act with no development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 105b:14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The Gemara discusses the Mishnah's halitza incident (how it was known, where it happened); this is legal commentary on a story told elsewhere, not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 113a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Malkiyyu marries off the deaf-mute and writes a ketubah, then Rava praises his reasoning; real events but little change or consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 72b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita alludes to a single incident followed only by the Sages' ruling validating it; one event and a ruling with nothing else narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 21b_0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravnai reports a halakha, Ameimar praises it and Rav Ashi rebukes him; ordinary scholarly back-and-forth, which Jeff ruled is not a story (Ketubot 21b:0).",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85b_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A deposit and the bailee's death without instruction, then the case before Rav Nahman and his ruling; an incident with a ruling but little further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 83a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Bonyos sends a measure and Rabbi measures it; two events but weak causality and little change, cited as a metrological datum.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 64b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly an exchange of words between the Rabbis and R. Abba bar Zavda, with the event of his becoming impotent mentioned as explanation inside the legal give-and-take.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 11b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A setting (R. Yehoshua visits R. Yohanan ben Nuri among the trees) followed by a question and answer; per the Shabbat 147a ruling a setting plus Q&A is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 65a_10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Jeff ruled this passage (Ketubot 65a:10) borderline: the courtroom apportioning of wine is a little more than a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 115b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A deposit followed by a dispute in dialogue between depositor and bailee; one event, then conflict in speech, with the resolution outside the passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 12b_0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A historical account of the priestly court changing and restoring the ketubah ordinance in response to behavior; events and change, but told as legal history by collective actors with no narrated scene.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 80a:19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The superintendent refuses to rent, the neighbors go to three rabbis in turn until Rav Yehuda rules; some action beyond the ruling, but mainly a case brought for a halakhic answer.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 89b:4-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yosef forgot a teaching and Abaye reminds him; the passage is a scholarly exchange over the content of the halakha with no event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 24b:3-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A described yard prompts Abaye and Rava to discuss possible halakhic solutions; legal discussion with no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 103a_2-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man rents out a millstone, becomes rich, buys his own millstone and donkey, and demands money, leading to a dispute; several actions, change and conflict, an incident that leads to a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85b_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A deposit and Rav Dimi's death without instruction, then the case before Rabbi Abba and his ruling; incident plus ruling with little further change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 105b_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel crosses on a ferry, a man helps him, reveals he has a case, and Shmuel disqualifies himself; actions, causality and a change in outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 57b:12-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly a halakhic challenge, but Rava goes out and shows Rav Safra the submerged wall foundations, an action that resolves it.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 98a_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman seizes a cup and comes before Rava, who rules; one event then a ruling whose outcome is only implied, which Jeff ruled is not a story (2026-10-25).",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 6b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Nahman comes and instructs that the earth be cleared, followed by legal analysis of his view; a single instruction with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 42b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A setting (missed the study hall, met R. Asi) framing a question and answer about a ruling; like Shabbat 147a, not enough for a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 80a:17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The superintendent refuses to rent, the neighbours come before R. Zeira and he cites a ruling; one event then a ruling, with nothing changing afterwards.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 53a_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man whose betrothed died comes before the rabbis, who rule, and the passage turns to legal discussion; one event followed by a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 41a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Elazar b. Tzadok's family practice on one Ninth of Av is cited as evidence for a halakhic point; a report of what was done, with no response or development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 6a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav's ruling at Damharya is only alluded to as precedent within a scholarly dispute; a report of a ruling cited as evidence, inside ordinary debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 121b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "The Mishnah's incident is only referenced ('etc.'); the passage is the Gemara's discussion of why it counts as miraculous, commentary on a story told elsewhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 12b_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man betroths with a myrtle branch, the question is sent to Rav Yosef, who rules; one event then a ruling, with no outcome narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 82a_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "They came before R. Ami and he ruled; coming before a rabbi is the only event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 62b:3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The rabbis press Rav Sheshet to marry and he deflects, with the Gemara supplying that he had become impotent from Rav Huna's long discourses; mainly speech with some tension and an event mentioned.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85b_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man deposits pearls with R. Meyasha, who dies without instructions, and the parties come before R. Ami who awards them; narrated events plus a resolving ruling, like the cow case.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 49b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ben Azzai's finding a genealogy scroll is a single act reported to introduce its contents; nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 59a_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabba bar bar Hana gives Rav money to buy land and Rav buys it for himself; two actions with conflict and change, though the Gemara's justifications are commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 20a_12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye's boast and a sage's challenge followed by a baraita; ordinary scholarly back-and-forth with no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 31a_3-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A widow's son asks R. Eliezer, then goes to R. Yehoshua, who answers him sarcastically; mainly speech with some movement and a barbed exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 96a_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Shabbtai's daughter-in-law seized a saddlebag of coins and the Sages could not take it from her; a real incident, but only briefly reported as evidence for the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 94b_10-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Two deeds come before Rav Yosef, he rules and the losing party argues; a case before a rabbi with ruling and discussion, no other narrated event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Kiddushin 32a:6-Kiddushin 32a:6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Huna tears silk before his son to test whether he will get angry; a real act with intent, but the outcome is not narrated and the Gemara turns to commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 101b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa and Rav Huna b. R. Yehoshua conducted halitza before five; a bare report of a practice cited to explain the law.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 80a_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The judges report that Rav Yehuda ruled in a case of branches; an incident only alluded to as a precedent, with no narrated development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 97a_10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man sells land to Rav Pappa for oxen, no longer needs the money, and Rav Pappa returns the land; several actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 40b_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The sages gather in Lod, a question is put, they disagree and then reach a joint conclusion. It is almost all speech, with some conflict and a resolution, so borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 52b_4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Relatives come before R. Yohanan, who advises them, and he later regrets helping them. That is mostly a ruling, but his change of mind adds some change, so borderline rather than not.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 73a:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Statements by Rav and R. Hiyya about their own eiruv practice. Speech cited as a legal source, with no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 32b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A setting (Ravina finds Rav Nahman bar Yitzhak leaning on a door) that only frames a legal dilemma. Under the Shabbat 147a ruling a setting plus a question is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 72b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A case comes before the Sages and they rule. Coming before them is the only event, which is R-C0's limit.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 107b_8-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Cases came before Rabbi and R. Yishmael and they ruled, followed by scholarly discussion of the rulings. There is no event beyond bringing the case and no real conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 27b_15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man's incidental remark about his and his mother's captivity leads Rabbi to permit her to marry into the priesthood. It is essentially a case and a ruling, but the narrated captivity and the change in her status keep it borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 43a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident alluded to inside the legal discussion: a man held a feast on the ninetieth day and Rava made him forfeit it. The ruling is an act with a consequence, but the incident is only sketched.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 25b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man testifies before R. Ami, they exchange questions and answers, and R. Ami rules. Coming before the rabbi and his ruling is all that happens.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 73a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yosef says he has not heard a teaching and Abaye reminds him that he taught it. Ordinary scholarly dialogue with no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 56b_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "One line of background (Rami bar Hama's sister was married to Rav Avya) with no event in the passage itself.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 100b_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of what Rav Kahana did with an orphan's beer, given as his practice and reasoning. Nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 83b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident cited as evidence: the tumtum of Biri was operated on and later fathered seven children. It has events and change but is only alluded to inside a legal argument.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 76b:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Minyamin's statement of his own status and his marriage plans, cited as a legal source. It is speech and intention, not a narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 78b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The students ask R. Eliezer a question and he answers. The register rules this exact passage (Yevamot 78b:9) not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 86a_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident only alluded to: a debtor hid his money behind a gentile, so the Sages forced him to sell his land. It has an action and a consequence but is recounted only briefly inside legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Ketubot 25b:4-Ketubot 25b:5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Two linked incidents before Reish Lakish and R. Yohanan. Reish Lakish realizes R. Elazar had withheld the source, looks at him harshly and rebukes him: conflict, an emotional reaction and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 10a:5-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yosef says he has not heard a teaching and Abaye recites what he had taught them. Scholarly dialogue with no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 8a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "One act (residents put a rolled mat in an alleyway in Sura) followed only by Rav Hisda's legal critique. Nothing else happens.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 111b_4-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A dialogue between R. Yohanan and R. Elazar with disagreement, R. Yohanan's grief, and R. Elazar finding him a remedy. It is mainly speech but has conflict and an emotional change, like Ketubot 112a:11.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 13a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man snatches a belt from a seller, proposes betrothal, she takes it back in silence, and Rav Nahman rules. Several narrated actions followed by a ruling, like the cow case.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 65a_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The Sages apportion wine to Nakdimon's daughter-in-law, she blesses them and they withhold amen. The ruling is itself an act that changes something, but it is a thin courtroom incident (Ketubot 65a).",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 106a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "During a famine the Sages ask Rav Yosef to pray and he declines. One real event as the setting, then mainly speech with some tension.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 45b_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man betrothed a minor with vegetables in the market, then Ravina rules. One act followed by a ruling, with nothing else happening.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 74a_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident is only named ('this was an incident') and the Sages could not release her without a get. A named-only incident of the kind Jeff called borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 8a_6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Two reports of how many wedding blessings Levi and Rav Asi recited, cited as evidence of practice. Bare reports that lead nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 50b_9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A case comes before Rav Yosef, he rules, Abaye challenges and he clarifies. Coming before a rabbi plus a ruling and ordinary scholarly debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 13b_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A betrothed couple comes before Rav Yosef and state claims. Coming before a rabbi is the only event; the rest is claims and ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 102a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Avya visits Neharde'a, sees a bolt tied with a reed, and rules. A setting that only frames a ruling is not enough.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Ketubot 67b:17-Ketubot 68a:15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hanina's habitual gift, then one day his wife delivers it, overhears the pauper's luxury, and he responds. A habit followed by a one-time event and a change; segments 4 onward are legal discussion and Mishnah.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 59a_19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Transmission of a ruling and Rav Mordekhai's recollection of a question put to Rav Ashi on a step. A question and answer about attribution, with no event beyond speech and no real conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 112a_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A dialogue in which an Amorite mocks a resident of Eretz Yisrael about the palm's yield and is rebutted. Speech only, but with conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 63a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina visits Mehoza, his host shows him a knife, and he tells him to take it to Rava. A setting framing a halakhic exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 41a:12-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava falls silent and afterward reasons with himself about the answer he could have given. Ordinary scholarly reasoning, with no event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 10a_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes before Rav Nahman with a claim, and Rav Nahman orders him flogged. Mainly speech, though an act (flogging) is ordered; Jeff called Ketubot 10a borderline as mainly speech acts.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 8a_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ashi's practice with wedding blessings at Rav Kahana's house is reported as evidence for the halakha. A report of practice that leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 37a:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An amoraic dispute, then 'there was an incident' of a man who betrothed and fled, and Rafram ruled. The incident is only alluded to; weak, but there is a real event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 84b_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A creditor seized an ox from the orphans' herdsman, they dispute the timing, and Rav Nahman rules. A real seizure plus a dispute and ruling; thinner than the stole-and-sold case.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 70a_22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Me'oret made her slave perform three of the acts and he died, cited only as an objection. Events with causality and change, but alluded to in one line.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 8a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Mareimar's practice of blocking Sura's alleyways with nets, with his reason. A report of practice with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53b:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly a riddling exchange, but it implies a real event: Rabbi Abbahu fled south after consulting the Nasi. Speech dominates, so borderline at most.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 97a:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's habitual practice when cases came before him; a custom with no one-time event following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 100b:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav's visit to Apsetaya and his prohibition are cited only as evidence of a ruling; one act and a ruling, nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 69a_10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman comes before Ameimar, the brothers speak and he stays silent; cited as evidence of his view, with no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 52b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A sharecropper took onions from the field and betrothed a woman with them, then Rava ruled; close to the stole-and-sold shape, but essentially one incident and a ruling, followed by legal commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 7a_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report of Rav Zevid's ruling or his own act, cited for the halakha; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 48a:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A teaching and a sage laughing at it; scholarly reaction, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 111b_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line wonder: a fox nested in a turnip, which was weighed. Two events with weak causality and little change, cited as evidence for an exegetical claim.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 100b_17-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina comes before Rav Ashi with a question and gets a ruling; one situation and a ruling, nothing narrated as changing afterwards.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 34a_13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A man's conditional statement and later claim, followed by legal analysis; speech and a legal case, no ruling act or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A question put to the Judeans and their answer about a reading; question and answer only.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 116a:2-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A found bill of divorce, an investigation by the Sages and testimony are real events, but they lead only into the Abaye/Rava legal discussion with no narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 64a:9-Eruvin 64b:2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Two sages parting exchange halakhic teachings; a setting plus teaching speech, without conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 65a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hisda's daughter asks and he answers; a dialogue without conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 26b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The Madonite wished to give gifts, was advised, acquired land, made the gift, died, and the Sages carried out his words: several actions and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 104b:4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A historical note that returnees camped by the well and were permitted it by custom; a report cited for the law, nothing develops.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 97a_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A drought, everyone sold their mansions, wheat arrived, and Rav Nahman ordered the mansions returned: several events, a change, and a ruling that changes ownership.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Kiddushin 58a:2-Kiddushin 58a:4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar Yehuda poses a contradiction, the others are silent, and Rabba resolves it; ordinary scholarly back-and-forth, speech only.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 110b_24-24",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Zeira avoiding his teacher because he wanted to go up to the Land of Israel implies conflict and change, but it is only alluded to as a lead-in to Rav Yehuda's dictum.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 91b_15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man sold his mother's ketubah, she died, and he contested the sale; real events and conflict, but resolved only in Rami bar Hama and Rava's legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 14a:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of R. Abbahu's habitual practice in two places, cited as evidence and then discussed; nothing happens and nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 71b_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav's visit and examination is a single act alluded to as evidence in the legal argument, with no response or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 38a_4-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "An exegetical derivation of the dates of Moses' birth and death; no narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 68a_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident only named, in which Rabbi gave an orphan one-twelfth; a single ruling with no other action or change, used to reconcile sources.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 120b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C5",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A one-line eyewitness report (an Arab cut open his camel and it died at once) with two actions and a change, but cited as evidence inside legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 65a_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Parallel to the 65a courtroom scene: a widow comes before Rav Yosef, he apportions food and wine, and she retorts about silk; mainly dialogue with apportioning as the action.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A question and a cryptic answer; speech only, with no conflict and no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 60b_5-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa and Rav Huna were about to act, an old woman reports Rav Nahman's prohibition, and Rav Pappi rebukes them; mainly dialogue and legal discussion with some events and an implied change, plus a one-line alluded incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 88a_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A case came before R. Yitzhak in Antioch and he ruled; coming before a rabbi is the only event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Kiddushin 33b:12-Kiddushin 33b:12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Two rabbis stand up when R. Shimon bar Abba passes and he objects; real actions but mainly speech with little change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 111a_10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes to R. Hanina with a question and receives an answer; a setting plus question and answer is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85a_13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman obligated to an oath in Rav Beivai's court, the litigant's demand, her request and the order to write the document, then Rav Pappi's sharp retort; after she comes to court it is all dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 28b:22-22",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Yirmeya travels to the villages, cannot answer their question, and on returning learns the answer in the study hall; real movement and a small change, but mainly a question and answer.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 50b_6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Judges in Nehardea and Pumbedita ruled and collected, and Rav Nahman threatened to seize their houses unless they reversed; rulings that act on property plus conflict, but no narrated outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 84b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Judges ruled, Reish Lakish reversed their action, and R. Yohanan criticized him; acts that change something plus conflict, but brief and immediately used for legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 65b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman before R. Ami is refused, argues, and he reverses and rules to compel divorce; a court scene with conflict and change carried mainly by dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 12b_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A son-in-law passed his in-laws' door and Rav Sheshet flogged him; two actions linked causally, but minimal and cited as evidence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 84a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi went to study with R. Elazar ben Shamua, the students ganged up on him and prevented him, and he learned only one thing; actions, conflict and a consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 66b_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The Sages apportioned 400 gold coins for perfume to Nakdimon's daughter; she responded with a barbed blessing and they answered amen. An apportioning act followed mainly by speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 61a_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "First-person reports of being given food at Shmuel's and Rav Kahana's tables when they would otherwise have been endangered; minimal events cited as evidence for the rule.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 115b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A found bill of divorce is sent as a question to Rabbi Yehuda Nesia and answered with a ruling; nothing changes beyond the question and ruling, cited as proof in a legal argument.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 63b_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A briefly told incident: Mar Zutra compelled a rebellious wife and Rabbi Hanina of Sura was born of the union; there is an act and an outcome, but it is sketched as a precedent with little development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 6b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A ruling requiring doors on an alleyway in Neharde'a, followed by legal analysis; no narrated event beyond the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 67b_17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hanina's habitual gift is followed by a one-time event: his wife delivers it, observes the pauper's luxury and reports back, leading to his response.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 111a_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ulla dies abroad, the news reaches Rabbi Elazar, who laments, is told the coffin is coming, and responds; events with a reaction and development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 27a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A testimony about a household practice (buying brine with tithe money) and a scholarly reply, cited in legal argument; a bare report of practice.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 109b_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A testator's will and the estate he left set up a legal case that is then only discussed; no further narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 46a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi ruled like Rabbi Elazar and afterwards commented on it; a ruling and a statement, cited as legal evidence, with no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 61b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar Yehuda instructs townspeople about their eiruv and Rava rebukes him; instruction and ordinary scholarly rebuke, no change follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 29a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's boast and a sage's halakhic question with Rava's reply; speech only, ordinary scholarly exchange within the passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 8b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Several events (purchase, collateral given, price rises, sellers seek to cancel) then a ruling by Rabbi Ami; more than one event and a change, but it ends in a ruling with nothing after.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 43a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C6",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Only an allusion that teachings were said in two places on one Shabbat, used as a legal proof; the alluded content is speech, not a narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 44a_8-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A halakhic question, a search for a source and a ruling sent out; scholarly process and legal discussion rather than a narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 2b_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man sets a divorce condition, returns but is blocked by the ferry and calls out, then Shmuel rules; real events with some drama, ending in a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 37b:8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava poses a question and Rav Nahman is silent; speech in ordinary scholarly exchange, followed by Gemara commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 78a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Dimi's silence, Abaye's answer and Rav Dimi's praise; standard dialogue with no event or conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 30a_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Hiyya bar Abba encounters R. Yehoshua ben Levi rushing his grandson to synagogue, asks why, and thereafter changes his own conduct; events, response and lasting change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 50a_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C6",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident in Rav Hisda's study hall is only mentioned, not narrated, and the passage is the legal resolution from a mishna.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 66a_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The blind man is late, a messenger is sent, they cross paths, the messenger reports adultery, and the man comes before Shmuel; a sequence of events with consequences and a ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 15a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Akiva's etrog tithing is a bare report of what he did, cited as evidence; ruled not a story by the editor.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 62b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A report of Rav Hisda's practice of refusing to rule, cited as evidence; nothing follows from it.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 70a_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Elijah's advice to Rabbi Natan is pure speech, with no event and no conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 80b_1-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A divorce document is sent to Rabba as a question and he rules; nothing else is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 106b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A yevama comes before Rabbi Tarfon and he instructs the students, cited as a precedent; the instruction is speech and nothing changes.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 41a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Safra's and Rava's habitual Shabbat preparations are a custom cited as evidence and lead nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 79b:0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "The Sages propose permitting the Gibeonites and Rabbi answers rhetorically; it is a halakhic exchange with no event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 79b_6-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yosef acts on Rav's view and Shmuel takes offense with a sarcastic retort: one real act and an emotional reaction, but mainly speech. Segment 3 is the Gemara's analysis.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 102a:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav reports having seen Rabbi Hiyya use a laced sandal, cited as evidence for practice; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 76b_19-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Elazar puts a halakhic question to an elder; this is speech only, with no event narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 20a_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Levi teaches in two attributions and is first not praised, then praised, which is a change in his reception, but it is all teaching and speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 91b_8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A debtor sells two fields, the creditor seizes one and comes for the other, and the purchaser brings money and confronts him: several actions with conflict and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 45b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "People cast aspersions on two men and a rabbi rules on each; there is no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 44b_6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "The Sages switch the attributions and send the question to Rav, who swears an oath in response. The events are quasi-speech, but there is implied conflict over Shmuel.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 106b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Jeff named Mar Zutra's practice of writing the halitza passage as a bare report with no continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Kiddushin 39b:7-Kiddushin 39b:7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "A father sends his son for chicks and the son fulfills both mitzvot, then falls and dies: an incident with actions and a change. The exegetical conclusion is the Gemara's commentary.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 43a:2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C1"
+    ],
+    "unknown_rules": [],
+    "reason": "The Gemara quotes the Mishnah incident: the Sages' boat sails on Shabbat and they respond in different ways. A Talmudic citation of a Mishnah story can be included.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 11b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Aha meets Rav Ashi's students and asks a question, and they answer; a setting plus a question and answer is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 121b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "One real event, the death of Nehunya's son, is told as a coda to the preceding story and then becomes exegesis; it is part of a story, with little narrated here.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 102b:13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A heretic taunts Rabban Gamliel and he retorts: speech with real conflict, but no event beyond speaking.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 29b_15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hisda praises Rav Hamnuna, he comes to Rav Huna, who sees his uncovered head, turns his face away and bans him until he marries: several actions, conflict and a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 86b_24-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Mainly a sent question and a reply, but one real event intervenes (Rav Huna dies before it arrives) and his son answers instead; mostly speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 25a_17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The maidservant's immersion is cited inside a legal challenge: one incident and Rabbi's ruling, with no further narrated change; Jeff's 2026-10-25 limit makes that not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 19b_6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Yehuda's practice and Ulla's advice citing others' practice; a habit plus counsel with no event or change following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 21b:15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A ruling and a scholarly challenge citing a written list; legal discussion, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 25a_9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Huna found the Sages sitting and debating and he answered them; ordinary scholarly dialogue, the setting only frames the argument.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 96a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "Habitual practices of Michal and Jonah's wife cited as legal evidence; customs that lead nowhere (and biblical figures).",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 59a_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that Bonyam sent Rabbi fine linens, then lexical explanation; one act, no continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 63b:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Pure speech, but a personal reproach of Ben Azzai for not marrying and his defense carries conflict beyond routine debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 10a_9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes before Rabban Gamliel with a claim and receives a parable-ruling; coming before the rabbi is the only event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 15b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Only names the location of the Mishnah's incident as a legal answer; nothing is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 45b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava rules Mari bar Rachel fit and also appoints him an official, an act beyond the ruling, followed by legal justification.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53a:11-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Yohanan's reminiscences of studying with Rabbi Oshaya and seating density, with Gemara discussion; reports with no event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 105b_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Two incidents: a man removes a feather from Ameimar / covers spittle before Mar Ukva, is questioned, and the judge disqualifies himself; action, response and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 9a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A baraita recited and Rabbi Yohanan rejecting it; ordinary scholarly exchange.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 63a:11-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina sees a man desecrating Shabbat, protests, is ignored, excommunicates him, then asks Rav Ashi about it; multiple actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 65b:10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Abbahu teaches and Rabbi Ami and Rabbi Asi turn their faces in disagreement; mainly speech with a gesture of conflict, cited as evidence and analyzed.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 63a:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "An encounter with Elijah that only frames a question and answer of exegesis; setting plus Q&A is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Kiddushin 72a:10-Kiddushin 72b:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi's deathbed pronouncements embed a full incident: the people of Bireta DeSatya fished on Shabbat, were excommunicated, and became apostates.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 30a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "A habitual practice (following Rabbi Yohanan to eat Genosar fruit, his customary oath) cited for a legal point; no one-time event follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 103b_20-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Part of the narrative of Rabbi's death: he summons his sons, they enter, he transmits wisdom and the office of Nasi; actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 64b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "The impotence notices are bare reports, but Rav Aha bar Yaakov's illness, suspension from the cedar and healing are real events with change, though minimal and cited as illustration.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 38a_0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "A fragment of exegetical argument about Joshua 5:11; no narrated incident, and the referent is biblical.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 25b_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes before R. Yehoshua ben Levi, question and answer, and a status ruling; a case before a rabbi and his ruling is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 43b:15-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "One event (Nehemya straying beyond the limit) followed by a ruling on what to do; no outcome is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 60b_8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Zeira's arrival only frames a reported teaching; setting plus teaching is speech, not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 32b_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava pours drinks at his son's wedding, some sages stand and others do not, and he becomes angry: several actions, conflict and an emotional reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 41b:7-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes before R. Yosei with a question and receives a ruling with its scriptural basis; nothing else happens.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 27a_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A bare report that Rabba ruled in practice on a found bill of divorce, followed by disagreement on the details.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 103b_14-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi falls ill, R. Hiyya visits and finds him weeping (events and emotion), but the passage is mainly a question and answer with a quoted baraita.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 107b:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Pishon's wife's refusal is mentioned as a single event in a debate, without change or causality (ruled not by the editor).",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85a_7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A deposit, the heirs' claim and the woman's counterclaim are events, but after she comes before Rav Nahman it is dialogue and a ruling with no change narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 116b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman comes to court and is advised how to appear; nothing further is narrated, then legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 12a:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident cited as precedent: a case came before Rav Yehuda and he ruled; no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 67a:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel's instruction to Rav Hana is speech cited as evidence of his view.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 67b_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "A habitual charitable practice reported and then analysed; the custom leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 63a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav walks among sheaves and remarks on them; one act plus a saying, no change, followed by dicta.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 44b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Bare reports that items were brought to Levi, Zeiri and Rav Shimi bar Hiyya, with no continuation.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 22b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A complimentary remark in scholarly dialogue; speech only.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 54a:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A student's liability and the Rabbis' statement to spare him; no narrated event beyond the ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 29a:17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man comes before R. Meir about an onion eiruv and R. Meir confines him to his four cubits, a ruling that is itself an act changing the man's situation.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 59b_21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Only the opening of a sent question; a question and answer with no event and no conflict.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 31b_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Tarfon's habitual service of his mother leads to a one-time event: he boasts in the study hall and is rebuked, with a vivid counter-example.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 109b_10-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A real incident (a bequest, the orphans divide the estate and withhold the palm) followed by legal discussion and a proposed remedy; events with little narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 13b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A prolonged dispute between the schools resolved by a vote; mainly speech, but with conflict and a decision that changes things.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 66b_0-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident (the Yavne reservoir measured and found deficient) leads to a dispute between Tarfon and Akiva that ends with Tarfon conceding and praising Akiva; event, conflict and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 59a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravin goes to betroth a woman for his son and betroths her himself; several actions and a change, with the Gemara's justification attached.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 62b:12-Eruvin 63a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina examines a knife in his teacher's region and Rav Ashi challenges him; one real act followed mainly by dialogue with some conflict. Segments 2-3 are bare reports.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 60b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-S1",
+     "R-B4"
+    ],
+    "unknown_rules": [],
+    "reason": "Exegesis on a biblical verse explaining how virgins were identified; no narrated event of the catalogue's kind.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 50b_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ketubot 50b: the orphan daughters come before Shmuel and he orders sustenance; coming before a rabbi and a ruling, nothing else changes.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 39a_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Statements and habitual practices about orla cited as evidence; no event that leads anywhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 25b_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A case comes before Rabbi Yohanan, an exchange follows, and Reish Lakish looks harshly at Rabbi Elazar and rebukes him; mainly speech, but with conflict and an emotional reaction.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 87a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An alluded practice of drawing water from the Tzippori channel, cited as legal evidence; a custom with no event following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 31a:11-Yevamot 31b:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Bar Shatya's sale and conflicting witnesses, cited as a legal precedent and resolved by a ruling; a case and a ruling with no further narrated change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 52b_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man snatches coins from another and throws them to a woman as betrothal, then comes before Rava who rules; several actions followed by a ruling, like the cow case.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 42b:9-Yevamot 43a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A setting (Abbahu leaning on his attendant) framing a series of halakhic questions and answers; a setting plus Q&A is not a story.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 80b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident only alluded to (a husband abroad, a twelve-month pregnancy) and Rava Tosfa'a's ruling declaring the child fit, cited for legal analysis.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 72b_10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Ameimar permits a marriage and Rav Ashi challenges his source; a ruling and ordinary scholarly back-and-forth.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 102a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Tavla saw a bolt and said nothing, cited as legal evidence; a bare report with nothing following.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Ketubot 52b:17-Ketubot 53a:3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa forces Yehuda bar Mareimar into the house, his silence makes Abba of Sura write over all his property, and the exchange that follows; multiple actions, misunderstanding and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 86a_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident alluded to, in which Rafram presses Rav Ashi and Rav Ashi exacts full payment; a ruling that is itself an act, but the incident is barely told.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 100a_8-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi acts on a ruling, is challenged by Perata and reverses it: an action and a change, but the substance is a ruling and its retraction, so borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 112a:5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A couple comes before Rava, he rules, is challenged with a baraita and retracts; coming before him is the only event, the rest is ruling and speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 15a:18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "Mention that Abaye and Rava disagreed about a balcony all their lives is cited as evidence; no incident is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 15a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabban Gamliel's levirate marriage with his daughter's rival wife is cited as a legal precedent with no response or development; a bare report used as evidence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 74a:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Elazar goes to Shmuel's lodging to verify a teaching and confronts him, Shmuel falls silent: mainly speech with some action and a challenge.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 19a_15-15",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa instructed Pappa the ox herder to trace his name: a single ruling/practice reported as precedent, nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 72a_10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "Within Rabbi's deathbed statements is an embedded incident: the people of Bireta DeSatya fished on Shabbat, Rabbi Ahai excommunicated them, and they apostatized, with actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 32b:5-Yevamot 33a:7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Hiyya and Bar Kappara jump up and swear opposing oaths about what they heard from Rabbi: dramatic conflict, but mainly speech and argument; segments 8-15 are Gemara analysis (R-B4).",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 80b_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident of ten men carrying a woman out on a bier is only alluded to as evidence for Rav's ruling; per R-C6 an alluded incident is borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 40b:13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A question and answer between Rav Yirmeya bar Abba and Rav about abstaining from labor; speech without conflict or event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 110b:11-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Nahman found two scholars debating in the marketplace and disagreed with them: a setting framing standard scholarly dialogue.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 41a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Abaye reminds Rav Yosef of a teaching he had forgotten; ordinary scholarly exchange with no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 103a:17-19",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Safra's objections, Abaye's silence and Rav Yosef's suggested answer are ordinary Talmudic back-and-forth, not conflict in R-C2's sense.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 12a_13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man betrothed with rags and Rav Shimi assessed its value: a case brought for a ruling with no further narrated action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 47a:16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Eliezer missed the study hall and asked Rabbi Asi what was said; a setting plus question and answer.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 49b_6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's coercing Rav Natan bar Ami to give 400 zuz is a one-line report cited as precedent, with no development.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:golden:Ketubot 56b:11-Ketubot 57a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The ketubah was lost, the couple came before Rav Yosef, and the rest is a ruling and its revision; the order to write a new one only implies an outcome.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 32b_2-2",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa serves drinks at his son's wedding, Rav Yitzhak fails to stand, and Rav Pappa becomes angry: actions, conflict and an emotional reaction, though brief and cited as evidence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 112a_14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rabbi Elazar ascends to Israel, is ordained and seated in the intercalation council, responding each time; real events but little causality or drama.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 75b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Beivai corrects Rav Yosef's attribution and Rav Yosef realizes his error: scholarly dialogue about transmission, no narrated event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 97b:8-8",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The sons' freeing is the only event; the rest is a ruling and a scholarly challenge, with nothing changing afterwards.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 88a_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A document brought before a rabbi, his inclination to validate and a colleague's correction: a case and a ruling, no further narrated action.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 15b:5-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A question and answer to R. Yehoshua plus testimony about families' lineage cited as halakhic evidence; no event follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 81b_14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A visit and the act of placing the granddaughter on his lap, then a pointed exchange of halakhic rebukes; mainly speech but a real event occurs.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 32a_8-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "All dialogue about the correct text of a baraita, then Shmuel's admonition; teaching and correcting are speech, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 28a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [],
+    "unknown_rules": [],
+    "reason": "Gemara's resolution of a contradiction by dating Rav's statements; no narrative.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 33a_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Habitual practices of R. Yohanan and Rava cited as halakhic evidence; nothing follows.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 115b:10-Yevamot 116a:1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava's collection on two notes cited as a precedent, followed by legal analysis; a bare report.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 101a:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "An insult from a heretic and the sage's retort: speech only, but with real conflict beyond ordinary scholarly debate.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 7b_9-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A betrothal with silk serves only as the case for an amoraic dispute; one event, then legal discussion.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 78b:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Ami declares a neighbour a mamzer, the man goes about weeping, and R. Ami responds to console him: several actions, emotion and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 108a:7-7",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The daughters-in-law rebel, Rabbi sends Sages to examine them, and the women's retort shows their refusal: several events and a response.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 81a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Shmuel throwing lentil bread to his dog is a one-line report cited as evidence about the bread's edibility; it leads nowhere.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 80b_11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C6"
+    ],
+    "unknown_rules": [],
+    "reason": "The widow and the guard incident is only alluded to and must be filled in from the commentaries, which is borderline.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53b:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "A habitual manner of speech of R. Abbahu, no event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 20b_0-0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Kahana prompts Rav Ashi, who first does not remember, later remembers and testifies, notices Rav Kahana's hesitation and reassures him: actions and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 54a_13-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2,
+     3
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A couple comes before Rav Nahman, who identifies her by accent and rules, then reverses on being challenged; a case and ruling with a little more dynamism than a bare ruling.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 52b_17-17",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Pappa goes to write the marriage contract, Yehuda bar Mareimar comes out to greet him and takes leave at the door; real events but little change within the passage.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 54a_21-21",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A testator's instruction and a price change are the legal case for a ruling; nothing else is narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 7b:1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0",
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident brought before Rav Yehuda and his ruling, cited as evidence in a legal discussion; no further action or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 7a_1-1",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C2",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Ami's permission, the Sages' objection and his answer are speech with some conflict and implied change; no event beyond speaking.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 29b_18-18",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav Hisda's statement about his own early marriage is a dictum, not a narrated incident.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 43b_4-4",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C6",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "An incident (the master was forced to free a half-slave woman) is cited briefly as evidence and then discussed legally; events are present but barely narrated.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 102a:11-11",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "Mar Shmuel's permission to use a mortar is a ruling about a household object; nothing happens or changes.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 8b_13-13",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "Costly burials led people to abandon their dead until Rabban Gamliel had himself buried in linen and everyone followed: actions, causality and change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 98b:15-Eruvin 99a:0",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "Rav corrects a teacher's version of the mishna and the Gemara explains it; ordinary scholarly exchange and teaching.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 54b:3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C3"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Elazar's habit of leaving his cloak while absorbed in Torah leads to a one-time event: a man came to take it and found a serpent guarding it.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 54a_20-20",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "The widow sues the orphans, they object to her dress, she puts on all her clothes, and Ravina rules they are appraised: several actions with a consequence.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 45b:9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "One event (the slave immersed a gentile woman) followed only by Rav Yosef's ruling; nothing else happens.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 111a_23-25",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "story",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C4"
+    ],
+    "unknown_rules": [],
+    "reason": "Embedded in the brothers' letter is an incident of a man who wished to leave the Land for a woman, heard this teaching, and stayed suffering until his death.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Kiddushin 72a_3-3",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2",
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A man states where he is from and R. Yitzhak identifies the place, followed by legal discussion; speech without conflict or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 53b:6-6",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman's mispronounced sentence cited as a linguistic example; a single speech act with no event or change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 40a:23-23",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "R. Yannai sharply rebukes R. Hanina Kara's ruling; a rebuke is ordinary Talmudic discourse, with no event beyond speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Eruvin 104a:12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "Rava appoints an amora and publicly retracts his earlier teaching; a real act and a change, but mainly a teaching speech.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 60b:10-10",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "out_of_scope",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-S1"
+    ],
+    "unknown_rules": [],
+    "reason": "An exegetical account of how the Midianite girls were tested before the High Priest's frontplate, built on a biblical episode.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 26a_9-9",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A hypothetical scenario the Gemara constructs to resolve a legal difficulty; not an event.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Gittin 19a_16-16",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C0",
+     "R-C7"
+    ],
+    "unknown_rules": [],
+    "reason": "A man had witnesses trace their names on ordinary documents and Rav Kahana had him flogged; an act and a consequence, but told in one line.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 85b_5-5",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C0"
+    ],
+    "unknown_rules": [],
+    "reason": "A deathbed bequest, then Toviya comes and R. Yohanan rules; a case before a rabbi and his ruling with nothing further changing.",
+    "error": null
+   }
+  },
+  {
+   "id": "C2:Yevamot 114b:14-14",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "borderline",
+    "segments": [
+     2
+    ],
+    "rules": [
+     "R-C7",
+     "R-C2"
+    ],
+    "unknown_rules": [],
+    "reason": "A woman comes before Rava and a cross-examination follows that changes his ruling; mostly dialogue, but it leads to a change.",
+    "error": null
+   }
+  },
+  {
+   "id": "C1:Ketubot 69a_12-12",
+   "answer": {
+    "outcome": "ok",
+    "verdict": "not",
+    "segments": [],
+    "rules": [
+     "R-C5"
+    ],
+    "unknown_rules": [],
+    "reason": "Ravina's collection for Rav Ashi's daughter is cited as a legal precedent, a report of what was done with nothing following.",
+    "error": null
+   }
+  }
+ ]
+}
