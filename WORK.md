@@ -60,20 +60,19 @@ staleness check: it changes whenever anyone edits anything.*
 | branch | worktree | uncommitted |
 |---|---|---|
 | `remove-borderline` | `talmud-stories` | **2 FILES** |
-| `(detached)` | `boardwt` | clean |
 | `(detached)` | `berakhot-shas-local-run-a26611` | clean |
 | `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
 | `v15-biblical-flag` | `kind-swartz-f73303` | clean |
 | `(detached)` | `recent-work-plans-d0818b` | clean |
 | `sessions-cleanup-consolidate-fc92b3` | `sessions-cleanup-consolidate-fc92b3` | clean |
 | `recall-without-lists` | `shas-accuracy-review-8fc321` | clean |
-| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **4 FILES** |
+| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **9 FILES** |
 | `post-shas-run-fixes` | `shas-run` | **1 FILES** |
 | `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
 | `simon-precision-pre-read` | `simon-sample-review-b314ea` | clean |
 <!-- board-live:end -->
 
-## Done — 62 items, never deleted
+## Done — 63 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -136,7 +135,8 @@ staleness check: it changes whenever anyone edits anything.*
 | [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
 | [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
 | [Did we find the stories across Shas? Definition of done, stats, reading-list review](work/done/2026-11-10-shas-accuracy.md) | triage, detection, classification, publication | [2026-11-10-shas-accuracy.md](docs/findings/2026-11-10-shas-accuracy.md) |
+| [How many real stories are missing from the Septimus site?](work/done/2026-11-13-how-many-stories-we-miss.md) | triage, detection, classification, publication | [2026-11-13-how-many-stories-we-miss.md](docs/findings/2026-11-13-how-many-stories-we-miss.md) |
 | [Record Jeff's two 2026-11-12 replies as data and recount Eruvin recall](work/done/2026-11-13-jeff-2026-11-12-verdicts.md) | classification, detection, publication | [2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md](docs/findings/2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md) |
 | [Septimus site — biblical stories out of scope, Jeff's 2026-11-12 verdicts applied](work/done/2026-11-13-septimus-biblical-out-and-jeff-verdicts.md) | publication | — |
 | [Septimus site card text leak, Sanhedrin 52b:4 as a regular story, and the G6 judge-prompt re-pin](work/done/2026-11-13-site-card-text-and-g6-pin.md) | publication | — |
-<!-- board-checksum: 26c7e91b0fa64514 -->
+<!-- board-checksum: 8a777a40c91183e0 -->
