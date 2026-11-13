@@ -24,16 +24,26 @@ versioning stays (§7) for a later v2.
 | Tractates | 37 (3 reviewed by Jeff: Ketubot, Kiddushin, Gittin; 34 labelled "not yet reviewed") |
 | Stories | **1,897** |
 | English words | **428,045** (mean 226, median 166, longest 2,674) |
-| Reading time, all of Shas once | **47.6 h at 150 wpm** (the site's `readingWpm`); 35.7 h at 200 wpm |
 | Weeks from a December 2026 launch to 10 Sep 2027 | ~40 |
-| Whole-group reading needed to cover Shas once | **~71 min per week** |
 
-So **about 7 people at 10 minutes a week cover all of Shas once by the yahrzeit**. With hundreds of sign-ups,
-Shas is covered many times over: 200 people at 10 min/week read ~28 times the list. **Doubling up is the normal case**,
-and "cover the entire thing" needs a definition (§4, open question 1).
+**Reading pace: one config value, `readingWpm` in `site/config.js`**, used for both the time shown per story and the
+weekly allocation. 150 wpm (today's value) is too fast for this (Simon, 2026-11-13): people read slowly, in Hebrew
+**and** English, and stop to think. Pace is measured in English words of the passage per minute. Options
+(arithmetic on 428,045 words, mean 226 words a story; 40 weeks):
 
-Words = whitespace tokens of the English shown, HTML stripped; `minutes = ceil(words / readingWpm)`, min 1. Assignment
-sums `words / readingWpm` (not the rounded minutes). **Not displayed** (Simon, 2026-11-09): for assignment only.
+| Pace | Shas once | Whole group per week, one pass | People at 10 min/week for one pass | Stories per 10 min/week | Passes if 200 people give 10 min/week |
+|---|---|---|---|---|---|
+| **75 wpm** (Simon's starting suggestion: slow, both languages) | 95 h | 143 min (2.4 h) | 14 | ~3.3 | 14 |
+| **100 wpm** (middle) | 71 h | 107 min | 11 | ~4.4 | 19 |
+| **120 wpm** (English-first, some Hebrew) | 59 h | 89 min | 9 | ~5.3 | 22 |
+| *150 wpm (today's value; too fast)* | *48 h* | *71 min* | *7* | *~6.6* | *28* |
+
+Whichever pace: a **handful of people covers Shas once; hundreds cover it many times. Doubling up is the normal
+case**, and "cover the entire thing" needs a definition (§4).
+
+Words = whitespace tokens of the English shown, HTML stripped. Per story `minutes = ceil(words / readingWpm)`, min 1;
+assignment sums `words / readingWpm` (not the rounded minutes). **Shown as approximate** ("about 5 min") on story rows,
+story pages and the weekly email (Simon, 2026-11-13; supersedes "not displayed", 2026-11-09).
 
 ## 3. Scope
 
@@ -61,23 +71,34 @@ keeps working unchanged; the sign-up wraps it.
 - **"Give me a story"** button: for (a) leftovers nobody committed to, (b) stories released by people who did not
   read them, (c) uncommitted people who want to double up. Same assignment write, one story at a time.
 - Honour board / pie chart by community (data already collected via `?src=`).
-- AI "explain what's going on" buttons; collaboration; rich profiles; context beyond "Open on Sefaria".
+- **Co-readers** (Simon, 2026-11-13; explicitly not v1): people who read the same story get more context and
+  meaning and can talk with each other about it. **The only v1 implication:** keep per-story completion records
+  (who read which story, when). `assignments` already holds them (`uid`, `storyId`, `doneAt`), so v1 needs nothing
+  extra. **Privacy:** nobody is ever shown to another reader without opting in first; a future `users.showToCoReaders`
+  defaults to false, and v1 shows no one to anyone.
+- AI "explain what's going on" buttons; rich profiles; context beyond "Open on Sefaria".
 
-## 4. The commitment mechanic (decided 2026-11-13 unless marked open)
+## 4. The commitment mechanic
 
-| | Decision |
-|---|---|
-| Unit | **Minutes per week**, converted to stories by word count at `readingWpm` |
-| Cadence | **Week by week** from the pool; no full schedule at sign-up |
-| Start | **Fixed launch date**: sign-ups open first, everyone starts the same week |
-| Order | **In order through Shas** (tractate order of the site, then daf, then segment); each person gets **consecutive** stories |
-| Missed stories | **Roll over** on the person's list for a **grace period of 2 weeks**, then are **released** to the pool |
-| More commitment than list | **Double up**: nobody is turned away; stories get learned more than once |
-| Reminders | **Weekly personal email** + signed-in My stories page (supersedes "no personalised reminders") |
-| Community attribution | **Per-community links** (`?src=hadar`, `dn`, `kesher`, Daniel's Brooklyn communities), not an onboarding question |
-| **Open: what "cover the entire thing" means** under heavy oversubscription | Asked of Simon 2026-11-13 (§11, question 1) |
+Each decision is marked **Simon decided** or **to confirm with Daniel** (Simon, 2026-11-13). Nothing that depends on
+a to-confirm item is built until Simon reports back (§9 marks which PRs wait).
 
-Options for the open question, so the answer can be one word:
+| | Decision | Status |
+|---|---|---|
+| Unit | **Minutes per week**, converted to stories by word count at `readingWpm` | Simon decided |
+| Reading pace | One config value; 75 / 100 / 120 wpm (§2) | **Simon to pick, then confirm with Daniel** |
+| Cadence | **Week by week** from the pool; no full schedule at sign-up | Simon decided |
+| Start | **Fixed launch date**: sign-ups open first, everyone starts the same week | Simon decided; **date to confirm with Daniel** |
+| Order | **In order through Shas** (site tractate order, then daf, then segment); **consecutive** stories per person | Simon decided |
+| Missed stories | **Roll over 2 weeks** on the person's list, then **released** to the pool | Simon decided |
+| More commitment than list | **Double up**: nobody turned away; stories learned more than once | Simon decided |
+| What "cover the entire thing" means | cycles / copies per story / per-person paths (below) | **To confirm with Daniel** |
+| Reminders | **Weekly personal email** + signed-in My stories page | Simon decided; **wording and sender to confirm with Daniel** |
+| Community attribution | **Per-community links** (`?src=...`), not an onboarding question | Simon decided; **list of communities to confirm with Daniel** |
+| Yahrzeit date | Friday 10 September 2027 (8 Elul 5787) | **To confirm with Daniel** |
+| Joe Septimus page | Structure + placeholder | **Wording from Daniel** |
+
+Options for the coverage question, so the answer can be one word:
 - **Cycles (proposed):** the group reads Shas front to back; when the end is reached, cycle 2 starts at the front.
   The headline is "Shas completed N times", and each completion is a natural siyum. Released stories are re-assigned
   within their cycle before the pointer moves on, so every cycle really is complete.
@@ -219,11 +240,11 @@ provider, and add `talmud-stories.vercel.app` to authorised domains.
 | PR | What | Done when |
 |---|---|---|
 | ~~a~~ | Word count + reading time in the export | **Done** (#79) |
-| b | Landing page + Google sign-in + `?src=` + minutes-per-week question | At 390 px: land, read what it is, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator |
-| c | Weekly job: rollover/release, assignment in order, pool pointer, cycles; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing |
-| d | My stories + mark as learned + progress page | Marking learned shows on the progress page; counts per tractate add up |
-| e | Weekly email (service + domain + unsubscribe) | A test send to Simon renders on a phone; unsubscribe link works |
-| f | About Joe Septimus page | Linked from the landing page; placeholder clearly marked for Daniel |
+| b | Landing page + Google sign-in + `?src=` + minutes-per-week question | At 390 px: land, read what it is, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator. **Buildable now** with placeholders for launch date, yahrzeit and community names |
+| c | Weekly job: rollover/release, assignment in order, pool pointer; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing. **Waits for** the coverage answer (Daniel) and the pace (Simon) |
+| d | My stories + mark as learned + progress page | Marking learned shows on the progress page; counts per tractate add up. **Waits for** c |
+| e | Weekly email (service + domain + unsubscribe) | A test send to Simon renders on a phone; unsubscribe link works. **Waits for** sender, wording (Daniel) and Blaze (Simon) |
+| f | About Joe Septimus page | Linked from the landing page; placeholder clearly marked for Daniel. **Buildable now** |
 
 Each verified in a real browser at phone width (Playwright, Chromium) before it is called done.
 `python3 -m pytest tests/test_site_data.py tests/test_bookkeeping.py -q` before each push.
@@ -232,7 +253,7 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 
 | Risk | Handling |
 |---|---|
-| Heavy oversubscription makes "finish Shas" meaningless | Coverage definition (open question 1); the cycles option turns it into repeated siyumim |
+| Heavy oversubscription makes "finish Shas" meaningless | Coverage definition (§12, question 1 for Daniel); the cycles option turns it into repeated siyumim |
 | People commit and vanish | 2-week grace, then release; released stories are re-assigned first |
 | Emails land in spam | Verified sending domain, low volume, plain content, unsubscribe link |
 | Blaze bills without a cap | $10/month budget alert; costs estimated at a few dollars |
@@ -243,10 +264,27 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 
 ## 11. Open questions for Simon (asked one per message, in this order)
 
-1. **What does "cover the entire thing" mean** with hundreds of sign-ups: cycles through Shas (proposed), copies per
-   story, or per-person paths? (§4) *(asked 2026-11-13)*
-2. **Launch date** (the first week everyone starts), and how long sign-ups are open before it.
-3. **Email sender:** which domain the weekly email comes from (e.g. `simonbrief.com` or a new one), and OK to put a
-   card on the `septimus-stories` project (Blaze) with a $10/month alert.
-4. **Community links:** the exact list of `?src=` codes (Hadar, DN, Kesher, Daniel's Brooklyn communities: names?).
-5. Daniel: confirm the yahrzeit (Friday 10 September 2027) and supply the Joe Septimus page wording.
+1. **Reading pace:** 75, 100 or 120 English words a minute (§2)? *(asked 2026-11-13)*
+2. OK to put a card on the `septimus-stories` project (Blaze) with a $10/month alert, for the weekly job and email?
+
+Everything else is in §12, for Daniel.
+
+## 12. Questions for Daniel (plain English, ready to paste)
+
+> Hi Daniel, a few things to settle before we build the sign-up for learning all the Talmud stories in your father's memory:
+>
+> 1. **What does "finishing" mean?** All of Shas's ~1,900 stories is only about 60–95 hours of reading, so if a few
+>    hundred people sign up, we'll get through everything many times over. My suggestion: we go through Shas together
+>    in order, and every time we reach the end, that's a siyum and we start the next round. Does that feel right, or
+>    would you rather something else (for example, each story read by several people at once)?
+> 2. **Launch date:** what week should everyone start together? Sign-ups would open a few weeks before.
+> 3. **The yahrzeit:** I've calculated 8 Elul 5787 as Friday 10 September 2027. Is that right?
+> 4. **Weekly email:** each person gets one email a week with links to their stories. Whose name should it come from,
+>    and is there wording you'd like (a line about your father, for example)?
+> 5. **Reading pace:** we estimate time per story assuming people read slowly, in Hebrew and English, and stop to
+>    think. We're thinking about [Simon's pick] words a minute, which makes a typical story about [N] minutes. Does that feel right?
+> 6. **Communities:** you mentioned Hadar, DN, Kesher and your Brooklyn communities. Each gets its own sign-up link so
+>    we can thank them by name later. What's the full list, and what should each be called?
+> 7. **A page about your father:** would you write a few paragraphs about him for the site, so people who didn't know
+>    him know whom they're learning for?
+
