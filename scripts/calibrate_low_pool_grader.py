@@ -232,11 +232,13 @@ def check_prompt():
                          'set JUDGE_PROMPT=src/prompts/judge_register_v2.md')
 
 
-def export(pass_name, seed, batch):
+def export(pass_name, seed, batch, out=OUT):
+    """Write <out>/<pass_name>/ from <out>/manifest.json. A span carrying `reuse` was graded already (the
+    pool reuses calibration C2 answers) and is not exported again."""
     check_prompt()
-    spans = load(str((OUT / 'manifest.json').relative_to(PROJECT_ROOT)))['spans']
+    spans = [s for s in load(str((out / 'manifest.json').relative_to(PROJECT_ROOT)))['spans'] if not s.get('reuse')]
     texts = {t: j.Text(t) for t in {s['tractate'] for s in spans}}
-    d = OUT / pass_name
+    d = out / pass_name
     if (d / 'keys').exists():
         raise SystemExit(f'{d} already holds an export')
     for sub in ('batches', 'keys', 'answers'):
@@ -269,9 +271,9 @@ def export(pass_name, seed, batch):
              pass_name, len(order), n, max(sizes.values()), over or 'none')
 
 
-def import_(pass_name, model):
+def import_(pass_name, model, out=OUT):
     check_prompt()
-    d = OUT / pass_name
+    d = out / pass_name
     man = json.loads((d / 'export_manifest.json').read_text())
     if man['prompt_sha'] != j.prompt_sha():
         raise SystemExit('prompt changed since export -- re-export')

@@ -4,7 +4,7 @@ capability: [classification, publication]
 tractate: [ketubot, kiddushin, gittin, yevamot, eruvin]
 blocked_by: []
 awaiting: []
-writes: [scripts/calibrate_low_pool_grader.py, results/shas_run/low_pool/calibration/]
+writes: [scripts/calibrate_low_pool_grader.py, results/shas_run/low_pool/calibration/, scripts/grade_low_pool.py, results/shas_run/low_pool/pool/, tests/test_grade_low_pool.py]
 finding:
 superseded_by:
 ---
@@ -67,3 +67,12 @@ below, and `git mv` this file to `work/done/`. **Never delete it.**
 
 Both passes graded, 300/300 valid each. "Both passes say story": 32/33 = 0.97 (Wilson 0.85–1.00), **meets the bar**.
 Recall of Jeff's yes is only 32/141: the grader is strict. Finding: `docs/findings/2026-11-13-low-pool-grader-calibration.md`.
+
+## Pool grading prepared (2026-11-13)
+
+`scripts/grade_low_pool.py` built `results/shas_run/low_pool/pool/manifest.json`: **1,259 units in 34 tractates**
+(P1 95, P2 26, P3 1,049, P4 89), the same filter as `measure_site_misses.pool()`. The 142 Eruvin/Yevamot units
+graded in calibration C2 reuse those verdicts (cells identical and prompt bytes checked identical); 1,117 are
+exported, 56 batches per pass (`pool/pass1`, seed 1; `pool/pass2`, seed 2). Golden LOW stories of the reviewed
+tractates are not in the pool (Rule 0 is their route). Next: grade both passes, `import`, `select`, `sample`,
+then Simon reads the 60.
