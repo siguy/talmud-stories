@@ -33,6 +33,8 @@ catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09
 the 19 borderlines and 3 Mishnah stories from the reviewed tractates and one Ketubot detector
 call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in both v14 runs
 (82, after 7 biblical passages and one duplicate span); and added Berakhot the same way (112).
+On 2026-11-10 biblical stories came back (Yevamot 85, Berakhot 118); on 2026-11-13 they went out again (Simon: one
+scope with Jeff's R-S1), so the five rows above are current again.
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate

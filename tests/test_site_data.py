@@ -78,7 +78,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 19693, "berakhot": 26096}  # yevamot, berakhot: biblical stories back (Simon 2026-11-10)
+SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 17643, "berakhot": 24396}  # yevamot, berakhot: biblical stories out again (Simon 2026-11-13)
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -105,14 +105,16 @@ def test_no_low_confidence_or_not_a_story_ships():
     index = json.loads((ROOT / "site/data/index.json").read_text())
     for row in index["tractates"]:
         for s in json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]:
-            assert s["classification"] in ("YES", "HIGH_CONFIDENCE"), s["id"]
+            # the one exception is a passage named in septimus_site_decisions.json `include`, which says who and when
+            assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or s["included_by"], s["id"]
             assert s["tier"] == "story" and not s["in_mishnah"], s["id"]
 
 
 def test_unreviewed_stories_are_definite_in_every_run():
     """Lesson 45: the detector is not deterministic, so a shipped story from an unreviewed tractate must be
-    YES/HIGH in EVERY listed run; a passage Gemini calls biblical and Claude calls not a story never ships; and every
-    passage the judges call biblical ships FLAGGED (Simon 2026-11-10: biblical stories stay, excluded for Jeff)."""
+    YES/HIGH in EVERY listed run (unless named in the site decisions' `include`); a passage Gemini calls biblical and
+    Claude calls not a story never ships; and every passage the judges call biblical is kept OUT of `stories`, in the
+    file's `out_of_scope` list (Simon 2026-11-13, reversing 2026-11-10)."""
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_site_data as b
     unreviewed = [t for t, src in b.SOURCES.items() if not src["reviewed"]]
@@ -123,12 +125,15 @@ def test_unreviewed_stories_are_definite_in_every_run():
         biblical, drop = b.judge_cells(t)
         if t in b.EXISTING:       # a newer tractate may have no biblical passage at all
             assert biblical, t
-        for s in json.loads((ROOT / f"site/data/{t}.json").read_text())["stories"]:
+        d = json.loads((ROOT / f"site/data/{t}.json").read_text())
+        for s in d["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
-            assert all(cells & r for r in runs), s["id"]
-            assert not cells & drop, s["id"]
-            if cells & biblical:
-                assert s["biblical"] is True, s["id"]
+            assert all(cells & r for r in runs) or s["included_by"], s["id"]
+            assert not cells & drop or s["included_by"], s["id"]
+            assert not s["biblical"], s["id"]
+            assert not cells & biblical or s["extended"], s["id"]   # only a display extension may reach a biblical cell
+        for s in d["out_of_scope"]:
+            assert s["biblical"] and s["out_of_scope_reason"].startswith("biblical (R-S1)"), s["id"]
 
 
 def test_reviewed_stories_carry_jeffs_evidence():
@@ -163,3 +168,44 @@ def test_site_app_has_no_hard_coded_tractate_list():
     # the home page must not open the tractate files
     home = app[app.index("function home()"):app.index("function tractate(")]
     assert 'getJSON("data/" +' not in home
+
+
+def _site():
+    index = json.loads((ROOT / "site/data/index.json").read_text())["tractates"]
+    return {r["tractate"]: json.loads((ROOT / f"site/data/{r['tractate']}.json").read_text()) for r in index}
+
+
+def test_biblical_stories_are_retained_out_of_scope_never_shipped():
+    """Simon 2026-11-13: biblical stories leave the site's list (consistency with Jeff's R-S1), but are kept in each
+    tractate file's `out_of_scope` list so a later filter can surface them. No story is in both."""
+    site = _site()
+    out = {s["id"] for d in site.values() for s in d["out_of_scope"]}
+    shipped = {s["id"] for d in site.values() for s in d["stories"]}
+    assert out and not out & shipped
+    assert not any(s["biblical"] for d in site.values() for s in d["stories"])
+    assert "berakhot-54b-0-0" in out   # the lepers Et and Hev: Jeff, 2026-11-12, out of scope (R-S1)
+    assert len(out) == 102             # every story flagged biblical on 2026-11-10; a change here is a decision
+
+
+def test_jeffs_not_and_borderline_passages_do_not_ship():
+    """Jeff 2026-11-12, Simon 2026-11-13 (results/shas_run/septimus_site_decisions.json `remove`), by OVERLAP."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    _, removals, _ = b.site_decisions()
+    assert sum(len(v) for v in removals.values()) == 12
+    site = _site()
+    for t, entries in removals.items():
+        for e in entries:
+            assert e["decided_by"] and e["source"] and e["jeff"] in ("not", "borderline"), e
+            for s in site[t]["stories"] + site[t]["out_of_scope"]:
+                assert not {(g["ref"], g["i"]) for g in s["segments"]} & b.decision_cells(e), (s["id"], e["ref"])
+
+
+def test_sanhedrin_52b_4_is_included_with_its_provenance():
+    """Jeff 2026-11-12 'I would include it'; Simon 2026-11-13 'Include this'. LOW in both runs, so only the explicit
+    per-passage decision puts it on the site, and the story says who decided."""
+    s = {s["id"]: s for s in _site()["sanhedrin"]["stories"]}["sanhedrin-52b-4-4"]
+    assert s["included_by"] and "Jeff" in s["included_by"][0]["decided_by"] and "Simon" in s["included_by"][0]["decided_by"]
+    assert s["reviewed"] and s["classification"] == "LOW_CONFIDENCE"
+    included = [s for d in _site().values() for s in d["stories"] if s["included_by"]]
+    assert [s["id"] for s in included] == ["sanhedrin-52b-4-4"]

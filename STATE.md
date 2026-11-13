@@ -128,7 +128,7 @@ history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
 open       2026-11-08-shas-finder-run
-closed     4 item(s) in work/done/
+closed     5 item(s) in work/done/
 ```
 
 ## Ground truth on hand
@@ -178,4 +178,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: bea23c24096b55da -->
+<!-- board-checksum: 85882c15a4a40dba -->

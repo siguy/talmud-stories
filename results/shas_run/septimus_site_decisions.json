@@ -1,0 +1,158 @@
+{
+  "_what": "Simon's decisions on what the Septimus family site ships, read by scripts/build_site_data.py (docs/technical/septimus-story-filter.md). Policy and per-passage removals/inclusions, each with who decided and when. Gate rulings (G4, G6, the judges) live in decisions.json beside this file.",
+  "biblical": {
+    "ships": false,
+    "bucket": "out_of_scope",
+    "rule": "R-S1",
+    "decided_by": "Simon 2026-11-13",
+    "reverses": "Simon 2026-11-10 (biblical stories ship, flagged)",
+    "_ruling": "Simon, 2026-11-13: 'I think it makes sense to remove biblical stories so we keep it consistent. I want to find them, but we now exclude from septimus stories and jeff's scholarly work (unless someone filters for them).' After Jeff ruled the Berakhot 54a-b lepers out of scope (R-S1, 2026-11-12). Every story flagged biblical leaves `stories` and is kept in the tractate file's `out_of_scope` list with its reason."
+  },
+  "remove": {
+    "_ruling": "Jeff's 2026-11-12 not / borderline verdicts on passages the site shipped; the site ships definite stories only (Simon 2026-11-13). Matched by span OVERLAP against the build's own cells (Lesson 36); a removal that matches nothing is named on stderr. The span is the one Jeff was shown (Eruvin: the review card's key, e.g. 53b_8-9 for the site's 53b:8, 67b_15-16 for 67b:15-18).",
+    "passages": [
+      {
+        "tractate": "arakhin",
+        "ref": "Arakhin 23b",
+        "start_segment": 0,
+        "end_segment": 1,
+        "jeff": "not",
+        "rule": "R-C0",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "pesachim",
+        "ref": "Pesachim 66b",
+        "start_segment": 4,
+        "end_segment": 4,
+        "jeff": "not",
+        "rule": "R-B4",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "shabbat",
+        "ref": "Shabbat 147a",
+        "start_segment": 6,
+        "end_segment": 6,
+        "jeff": "not",
+        "rule": "R-C2",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "chullin",
+        "ref": "Chullin 46a",
+        "start_segment": 8,
+        "end_segment": 8,
+        "jeff": "borderline",
+        "rule": "R-C7",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "chullin",
+        "ref": "Chullin 57b",
+        "start_segment": 6,
+        "end_segment": 7,
+        "jeff": "borderline",
+        "rule": "R-C7",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "niddah",
+        "ref": "Niddah 7b",
+        "start_segment": 4,
+        "end_segment": 5,
+        "jeff": "borderline",
+        "rule": "R-C7",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 41a",
+        "start_segment": 1,
+        "end_segment": 1,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_026",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 51a",
+        "start_segment": 2,
+        "end_segment": 3,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_035",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 53b",
+        "start_segment": 8,
+        "end_segment": 9,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_040",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 59b",
+        "start_segment": 9,
+        "end_segment": 11,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_050",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 67b",
+        "start_segment": 15,
+        "end_segment": 16,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_063",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      },
+      {
+        "tractate": "eruvin",
+        "ref": "Eruvin 68a",
+        "start_segment": 10,
+        "end_segment": 11,
+        "jeff": "not",
+        "rule": "jeff-verdict",
+        "list_id": "eruvin_064",
+        "decided_by": "Jeff Rubenstein 2026-11-12 (verdict); Simon 2026-11-13 (definite only: remove)",
+        "source": "results/expert_lists/superseded_by_rule.json"
+      }
+    ]
+  },
+  "include": {
+    "_ruling": "Explicit per-passage inclusions: an expert verdict of `story` plus Simon's yes. The only way past the definite-only filter, and never a rule. Matched by overlap against stories[] of the first run.",
+    "passages": [
+      {
+        "tractate": "sanhedrin",
+        "ref": "Sanhedrin 52b",
+        "start_segment": 4,
+        "end_segment": 4,
+        "jeff": "story",
+        "rule": "R-C1",
+        "decided_by": "Jeff Rubenstein 2026-11-12 ('In any case, I would include it'); Simon 2026-11-13 ('Include this')",
+        "source": "results/shas_run/precision_sample/jeff_verdicts_2026-11-12.json",
+        "why_held": "LOW_CONFIDENCE in both v14 runs"
+      }
+    ]
+  }
+}

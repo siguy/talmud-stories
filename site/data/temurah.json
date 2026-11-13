@@ -13,6 +13,8 @@
    "tier": "story",
    "classification": "YES",
    "biblical": false,
+   "biblical_reason": null,
+   "included_by": null,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -57,6 +59,8 @@
    "tier": "story",
    "classification": "YES",
    "biblical": false,
+   "biblical_reason": null,
+   "included_by": null,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -83,7 +87,9 @@
    ],
    "words": 263,
    "minutes": 2
-  },
+  }
+ ],
+ "out_of_scope": [
   {
    "id": "temurah-16a-2-6",
    "tractate": "temurah",
@@ -95,6 +101,8 @@
    "tier": "story",
    "classification": "YES",
    "biblical": true,
+   "biblical_reason": "consensus judges / decisions.json",
+   "included_by": null,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -131,6 +139,7 @@
      "en": "<b>The Holy One, Blessed be He, said</b> to Joshua: It is <b>impossible to tell you</b> these <i>halakhot</i>, as the Torah is not in Heaven. But to save yourself from the Jewish people who want to kill you, <b>go and exhaust them in war,</b> so that they will leave you alone. <b>As it is stated: “Now it came to pass after the death of Moses, the servant of the Lord, that the Lord spoke</b> to Joshua, son of Nun, Moses’ minister, saying: Moses My servant is dead, now therefore arise, go over this Jordan” (Joshua 1:1–2). This shows that immediately after the death of Moses, God commanded Joshua to lead the nation into battle."
     }
    ],
+   "out_of_scope_reason": "biblical (R-S1): consensus judges / decisions.json; Simon 2026-11-13",
    "words": 547,
    "minutes": 4
   },
@@ -145,6 +154,8 @@
    "tier": "story",
    "classification": "HIGH_CONFIDENCE",
    "biblical": true,
+   "biblical_reason": "consensus judges / decisions.json",
+   "included_by": null,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -169,6 +180,7 @@
      "en": "The Gemara cites yet another verse involving Achsah: <b>“And she said: Give me a blessing; for that you have set me in the land of the South [<i>negev</i>],</b> and you have given me springs of water. And he gave her the upper springs and the lower springs” (Joshua 15:19). She said to her father: You have given me <b>a home dried [<i>menugav</i>] of all goodness. “And you have given me springs of water”;</b> this is referring to <b>a man who has nothing other than Torah,</b> which is metaphorically called water. But as he is unable to provide me with food, how can I live? <b>“And gave her the upper springs and the lower springs.”</b> Caleb <b>said to her:</b> Does someone learned in Torah, <b>who dwells in the upper</b> worlds <b>and the lower</b> worlds, <b>require</b> that <b>sustenance be requested for him?</b> He certainly does not need it, as God will provide for him in merit of his Torah studies."
     }
    ],
+   "out_of_scope_reason": "biblical (R-S1): consensus judges / decisions.json; Simon 2026-11-13",
    "words": 422,
    "minutes": 3
   }

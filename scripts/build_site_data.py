@@ -18,10 +18,17 @@ Gemini judge is the detector's own model and adds almost nothing; the Claude jud
 the detector stories Jeff calls yes. They stay in the scholarly work -- except for one narrowing: a passage Gemini
 calls `out_of_scope` and Claude calls `not` (not a story at all) does not ship (Simon 2026-11-10).
 
-Biblical stories SHIP (Simon 2026-11-10: "as long as they are classified as stories outside of the fact they have
-biblical figures"). They carry `biblical: true` so the scholarly catalogue can exclude them (Jeff, R-S1). That covers
-both judges' `out_of_scope`, Claude alone under decisions.json, a hand flag in decisions.json, and Stage 4j's own
-biblical-actor demotion, whose pre-filter grade is what the site reads.
+Biblical stories are OUT OF SCOPE for the site (Simon 2026-11-13, reversing 2026-11-10, to stay consistent with
+Jeff's R-S1). They are still found and flagged `biblical: true` -- both judges' `out_of_scope`, Claude alone under
+decisions.json, a hand flag in decisions.json, and Stage 4j's own biblical-actor demotion (whose pre-filter grade is
+what the site reads) -- but they are written to each tractate file's `out_of_scope` list, with the reason, never to
+`stories`. A later filter may surface them; the default list does not.
+
+Per-passage decisions (results/shas_run/septimus_site_decisions.json, each with who decided and when):
+  remove   -- Jeff ruled not / borderline on a passage the site shipped; matched by span OVERLAP (Lesson 36)
+  include  -- an expert `story` verdict plus Simon's yes on a passage the filter held back (Sanhedrin 52b:4).
+              The only way past the definite-only filter, by name, never a rule.
+A decision that matches nothing is named on stderr.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
@@ -82,9 +89,23 @@ def discover():
 
 SOURCES, NOT_READY = discover()
 
+SITE_DECISIONS = "results/shas_run/septimus_site_decisions.json"
+
+
+def site_decisions():
+    """Simon's site decisions: (biblical ships?, {tractate: [remove entries]}, {tractate: [include entries]})."""
+    d = json.loads((ROOT / SITE_DECISIONS).read_text())
+    by = lambda k: {t: [e for e in d[k]["passages"] if e["tractate"] == t] for t in {e["tractate"] for e in d[k]["passages"]}}
+    return d["biblical"]["ships"], by("remove"), by("include")
+
+
+def decision_cells(e):
+    """Cells of a decision's span on its page (single-page spans; that is all a decision names today)."""
+    return {(e["ref"], i) for i in range(int(e["start_segment"]), int(e["end_segment"]) + 1)}
+
 
 def judge_cells(tractate):
-    """(biblical, drop): cells to FLAG as biblical (R-S1; shipped, excluded from Jeff's catalogue) and cells to DROP
+    """(biblical, drop): cells to FLAG as biblical (R-S1; out of scope for the site and Jeff's catalogue since 2026-11-13) and cells to DROP
     (Gemini says out_of_scope, Claude says `not`: not a story at all -- the one narrowing, Simon 2026-11-10)."""
     d = SOURCES[tractate].get("scope_judges")
     if not d:
@@ -111,8 +132,9 @@ def judge_cells(tractate):
 
 
 def site_classification(s):
-    """The grade the site reads. Stage 4j demotes a story whose actors are only biblical; biblical stories ship
-    (Simon 2026-11-10), so the site reads the grade from before that filter -- and flags the story."""
+    """The grade the site reads. Stage 4j demotes a story whose actors are only biblical; the site reads the
+    grade from before that filter and flags the story, so it is kept in `out_of_scope` (Simon 2026-11-13) rather than
+    lost as a LOW."""
     if s.get("filtered_as_biblical"):
         return s.get("classification_pre_biblical_filter")
     return s.get("classification")
@@ -176,7 +198,11 @@ def pieces(pages, i, s):
     return out
 
 
-def build(tractate):
+def build(tractate, matched=None):
+    """(stories, out_of_scope). `matched` collects (decision kind, entry, story id) for the build's report."""
+    matched = [] if matched is None else matched
+    _, removals, inclusions = site_decisions()
+    removals, inclusions = removals.get(tractate, []), inclusions.get(tractate, [])
     src = SOURCES[tractate]
     reviewed = src["reviewed"]
     pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
@@ -191,6 +217,7 @@ def build(tractate):
             segs = [(r, g) for r, gs in ps for g in gs]
             assert segs, (tractate, p["ref"], s)
             cells = {(r, g.get("index")) for r, g in segs}
+            include = [e for e in inclusions if cells & decision_cells(e)]
             # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
             if jeff is not None and not cells & jeff and not any(s.get(k) for k in JEFF_FIELDS):
                 t = None   # in the golden, but a detector call Jeff never answered
@@ -198,9 +225,16 @@ def build(tractate):
                 t = None   # Gemini says biblical, Claude says not a story at all (Simon 2026-11-10)
             if any(not cells & o for o in others):
                 t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
+            sid = f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}"
+            if include:
+                t = "story"   # an explicit per-passage decision (expert `story` + Simon), never a rule
+                matched += [("include", e, sid) for e in include]
+            remove = [e for e in removals if cells & decision_cells(e)]
+            if remove and t is not None:
+                matched += [("remove", e, sid) for e in remove]
+                t = None   # Jeff ruled not / borderline (2026-11-12); the site ships definite stories only
             if t is None:
                 continue
-            sid = f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}"
             if sid in seen:
                 # The detector can propose the identical span twice (Yevamot 15a:16, v14 run1). One passage
                 # is one story on the site; the duplicate is counted and named, never silently dropped.
@@ -217,18 +251,28 @@ def build(tractate):
                 "start_segment": int(s["start_segment"]),
                 "tier": t,
                 "classification": site_classification(s),
-                # Biblical characters (R-S1): on the site, excluded from Jeff's scholarly catalogue.
+                # Biblical characters (R-S1): out of scope for the site and Jeff's catalogue (Simon 2026-11-13).
                 "biblical": bool(cells & biblical) or bool(s.get("filtered_as_biblical")),
+                "biblical_reason": ("consensus judges / decisions.json" if cells & biblical else
+                                    "Stage 4j biblical-actor filter" if s.get("filtered_as_biblical") else None),
+                # who put a held-back passage on the site, and when (septimus_site_decisions.json `include`)
+                "included_by": [{"decided_by": e["decided_by"], "source": e["source"], "jeff": e["jeff"]} for e in include] or None,
                 "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
                 "extended": None,
-                "reviewed": reviewed,
+                "reviewed": reviewed or bool(include),   # an included passage carries Jeff's own `story`
                 # "[Restored from ... merge]" is a bookkeeping placeholder, not a summary: never show it.
                 "summary": "" if str(s.get("one_sentence_summary", "")).startswith("[") else s.get("one_sentence_summary", ""),
                 # ref + index locate a segment exactly, so feedback on one can be traced to the source.
                 "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                              for r, g in segs],
             })
-    return apply_extensions(tractate, stories, pages)
+    stories = apply_extensions(tractate, stories, pages)
+    if site_decisions()[0]:
+        return stories, []
+    # Simon 2026-11-13: biblical stories are out of scope for the site. Kept, with the reason, for a later filter.
+    out = [dict(s, out_of_scope_reason=f"biblical (R-S1): {s['biblical_reason']}; Simon 2026-11-13")
+           for s in stories if s["biblical"]]
+    return [s for s in stories if not s["biblical"]], out
 
 
 EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
@@ -309,20 +353,36 @@ def main():
         print(f"NOT on the site (a run exists but not both runs and the Gemini judge): {NOT_READY}", file=sys.stderr)
     check_unreviewed_gates()
     index = {"reading_wpm": wpm, "tractates": []}
+    matched = []
     for t in SOURCES:
         reviewed = SOURCES[t]["reviewed"]
-        stories = add_reading_time(build(t), wpm)
-        ids = [s["id"] for s in stories]
-        assert len(ids) == len(set(ids)), f"{t}: duplicate story ids"
-        (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories},
-                                                  ensure_ascii=False, indent=1))
+        stories, out_of_scope = build(t, matched)
+        stories, out_of_scope = add_reading_time(stories, wpm), add_reading_time(out_of_scope, wpm)
+        ids = [s["id"] for s in stories + out_of_scope]
+        assert len(ids) == len(set(ids)), f"{t}: duplicate story ids (or a story both shipped and out of scope)"
+        # `stories` is what the site shows. `out_of_scope` is retained, never shown by default (Simon 2026-11-13).
+        (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories,
+                                                   "out_of_scope": out_of_scope}, ensure_ascii=False, indent=1))
         n = {k: sum(1 for s in stories if s["tier"] == k) for k in ("story", "borderline")}
         words, minutes = sum(s["words"] for s in stories), sum(s["minutes"] for s in stories)
         index["tractates"].append({"tractate": t, "name": T.english(t), "he": T.hebrew(t), "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
-                                   "words": words, "minutes": minutes})
+                                   "out_of_scope": len(out_of_scope), "words": words, "minutes": minutes})
         print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} "
-              f"in_mishnah={index['tractates'][-1]['in_mishnah']} words={words} minutes={minutes}")
+              f"in_mishnah={index['tractates'][-1]['in_mishnah']} out_of_scope={len(out_of_scope)} "
+              f"words={words} minutes={minutes}")
     (OUT / "index.json").write_text(json.dumps(index, indent=1))
+    report_decisions(matched)
+
+
+def report_decisions(matched):
+    """Name every per-passage decision and the story it matched; a decision that matched nothing is named too."""
+    _, removals, inclusions = site_decisions()
+    for kind, entries in (("remove", removals), ("include", inclusions)):
+        for e in (e for es in entries.values() for e in es):
+            hits = [sid for k, m, sid in matched if k == kind and m == e]
+            span = f"{e['ref']}:{e['start_segment']}-{e['end_segment']}"
+            print(f"  {kind:7} {span:22} -> {', '.join(hits) if hits else 'NO MATCH (not shipped by the filter)'}",
+                  file=sys.stderr)
 
 
 if __name__ == "__main__":

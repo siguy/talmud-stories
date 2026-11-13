@@ -9,6 +9,7 @@
    "story": 86,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 23755,
    "minutes": 201
   },
@@ -20,6 +21,7 @@
    "story": 52,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 11861,
    "minutes": 104
   },
@@ -31,6 +33,7 @@
    "story": 111,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 25149,
    "minutes": 219
   },
@@ -39,55 +42,60 @@
    "name": "Yevamot",
    "he": "\u05d9\u05d1\u05de\u05d5\u05ea",
    "reviewed": false,
-   "story": 85,
+   "story": 82,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 19693,
-   "minutes": 171
+   "out_of_scope": 3,
+   "words": 17643,
+   "minutes": 156
   },
   {
    "tractate": "berakhot",
    "name": "Berakhot",
    "he": "\u05d1\u05e8\u05db\u05d5\u05ea",
    "reviewed": false,
-   "story": 118,
+   "story": 112,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 26096,
-   "minutes": 229
+   "out_of_scope": 6,
+   "words": 24396,
+   "minutes": 215
   },
   {
    "tractate": "shabbat",
    "name": "Shabbat",
    "he": "\u05e9\u05d1\u05ea",
    "reviewed": false,
-   "story": 121,
+   "story": 112,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 24731,
-   "minutes": 220
+   "out_of_scope": 8,
+   "words": 21899,
+   "minutes": 197
   },
   {
    "tractate": "eruvin",
    "name": "Eruvin",
    "he": "\u05e2\u05d9\u05e8\u05d5\u05d1\u05d9\u05df",
    "reviewed": false,
-   "story": 73,
+   "story": 67,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 14703,
-   "minutes": 135
+   "out_of_scope": 0,
+   "words": 13450,
+   "minutes": 124
   },
   {
    "tractate": "pesachim",
    "name": "Pesachim",
    "he": "\u05e4\u05e1\u05d7\u05d9\u05dd",
    "reviewed": false,
-   "story": 73,
+   "story": 66,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 15244,
-   "minutes": 139
+   "out_of_scope": 6,
+   "words": 12983,
+   "minutes": 120
   },
   {
    "tractate": "rosh_hashanah",
@@ -97,6 +105,7 @@
    "story": 26,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 3875,
    "minutes": 36
   },
@@ -105,22 +114,24 @@
    "name": "Yoma",
    "he": "\u05d9\u05d5\u05de\u05d0",
    "reviewed": false,
-   "story": 56,
+   "story": 54,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 11945,
-   "minutes": 106
+   "out_of_scope": 2,
+   "words": 10435,
+   "minutes": 95
   },
   {
    "tractate": "sukkah",
    "name": "Sukkah",
    "he": "\u05e1\u05d5\u05db\u05d4",
    "reviewed": false,
-   "story": 30,
+   "story": 28,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 5133,
-   "minutes": 48
+   "out_of_scope": 2,
+   "words": 4561,
+   "minutes": 43
   },
   {
    "tractate": "beitzah",
@@ -130,6 +141,7 @@
    "story": 30,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 5905,
    "minutes": 54
   },
@@ -138,22 +150,24 @@
    "name": "Taanit",
    "he": "\u05ea\u05e2\u05e0\u05d9\u05ea",
    "reviewed": false,
-   "story": 67,
+   "story": 65,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 14542,
-   "minutes": 127
+   "out_of_scope": 2,
+   "words": 14116,
+   "minutes": 123
   },
   {
    "tractate": "megillah",
    "name": "Megillah",
    "he": "\u05de\u05d2\u05d9\u05dc\u05d4",
    "reviewed": false,
-   "story": 39,
+   "story": 30,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 8525,
-   "minutes": 74
+   "out_of_scope": 9,
+   "words": 5465,
+   "minutes": 50
   },
   {
    "tractate": "moed_katan",
@@ -163,6 +177,7 @@
    "story": 54,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 10336,
    "minutes": 92
   },
@@ -174,6 +189,7 @@
    "story": 30,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 6816,
    "minutes": 63
   },
@@ -185,6 +201,7 @@
    "story": 43,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 8486,
    "minutes": 73
   },
@@ -193,22 +210,24 @@
    "name": "Nazir",
    "he": "\u05e0\u05d6\u05d9\u05e8",
    "reviewed": false,
-   "story": 10,
+   "story": 9,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 2036,
-   "minutes": 18
+   "out_of_scope": 1,
+   "words": 1941,
+   "minutes": 17
   },
   {
    "tractate": "sotah",
    "name": "Sotah",
    "he": "\u05e1\u05d5\u05d8\u05d4",
    "reviewed": false,
-   "story": 22,
+   "story": 15,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 6266,
-   "minutes": 52
+   "out_of_scope": 7,
+   "words": 3452,
+   "minutes": 29
   },
   {
    "tractate": "bava_kamma",
@@ -218,6 +237,7 @@
    "story": 50,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 11602,
    "minutes": 102
   },
@@ -229,6 +249,7 @@
    "story": 99,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 23359,
    "minutes": 214
   },
@@ -237,33 +258,36 @@
    "name": "Bava Batra",
    "he": "\u05d1\u05d1\u05d0 \u05d1\u05ea\u05e8\u05d0",
    "reviewed": false,
-   "story": 129,
+   "story": 124,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 30010,
-   "minutes": 262
+   "out_of_scope": 5,
+   "words": 29078,
+   "minutes": 254
   },
   {
    "tractate": "sanhedrin",
    "name": "Sanhedrin",
    "he": "\u05e1\u05e0\u05d4\u05d3\u05e8\u05d9\u05df",
    "reviewed": false,
-   "story": 128,
+   "story": 90,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 34457,
-   "minutes": 293
+   "out_of_scope": 39,
+   "words": 20624,
+   "minutes": 183
   },
   {
    "tractate": "makkot",
    "name": "Makkot",
    "he": "\u05de\u05db\u05d5\u05ea",
    "reviewed": false,
-   "story": 7,
+   "story": 6,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 1481,
-   "minutes": 13
+   "out_of_scope": 1,
+   "words": 1087,
+   "minutes": 10
   },
   {
    "tractate": "shevuot",
@@ -273,6 +297,7 @@
    "story": 11,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 2283,
    "minutes": 19
   },
@@ -281,55 +306,60 @@
    "name": "Avodah Zarah",
    "he": "\u05e2\u05d1\u05d5\u05d3\u05d4 \u05d6\u05e8\u05d4",
    "reviewed": false,
-   "story": 89,
+   "story": 87,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 19864,
-   "minutes": 169
+   "out_of_scope": 2,
+   "words": 19411,
+   "minutes": 165
   },
   {
    "tractate": "horayot",
    "name": "Horayot",
    "he": "\u05d4\u05d5\u05e8\u05d9\u05d5\u05ea",
    "reviewed": false,
-   "story": 4,
+   "story": 3,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 1729,
-   "minutes": 13
+   "out_of_scope": 1,
+   "words": 1473,
+   "minutes": 11
   },
   {
    "tractate": "zevachim",
    "name": "Zevachim",
    "he": "\u05d6\u05d1\u05d7\u05d9\u05dd",
    "reviewed": false,
-   "story": 11,
+   "story": 9,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 3981,
-   "minutes": 31
+   "out_of_scope": 2,
+   "words": 3027,
+   "minutes": 24
   },
   {
    "tractate": "menachot",
    "name": "Menachot",
    "he": "\u05de\u05e0\u05d7\u05d5\u05ea",
    "reviewed": false,
-   "story": 38,
+   "story": 36,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 9547,
-   "minutes": 80
+   "out_of_scope": 2,
+   "words": 8943,
+   "minutes": 75
   },
   {
    "tractate": "chullin",
    "name": "Chullin",
    "he": "\u05d7\u05d5\u05dc\u05d9\u05df",
    "reviewed": false,
-   "story": 105,
+   "story": 102,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 20145,
-   "minutes": 181
+   "out_of_scope": 1,
+   "words": 19405,
+   "minutes": 175
   },
   {
    "tractate": "bekhorot",
@@ -339,6 +369,7 @@
    "story": 23,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 5880,
    "minutes": 49
   },
@@ -347,22 +378,24 @@
    "name": "Arakhin",
    "he": "\u05e2\u05e8\u05db\u05d9\u05df",
    "reviewed": false,
-   "story": 15,
+   "story": 13,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 2711,
-   "minutes": 25
+   "out_of_scope": 1,
+   "words": 2311,
+   "minutes": 21
   },
   {
    "tractate": "temurah",
    "name": "Temurah",
    "he": "\u05ea\u05de\u05d5\u05e8\u05d4",
    "reviewed": false,
-   "story": 4,
+   "story": 2,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 1569,
-   "minutes": 12
+   "out_of_scope": 2,
+   "words": 600,
+   "minutes": 5
   },
   {
    "tractate": "keritot",
@@ -372,6 +405,7 @@
    "story": 2,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 668,
    "minutes": 5
   },
@@ -383,6 +417,7 @@
    "story": 2,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 1545,
    "minutes": 11
   },
@@ -394,6 +429,7 @@
    "story": 5,
    "borderline": 0,
    "in_mishnah": 0,
+   "out_of_scope": 0,
    "words": 2229,
    "minutes": 18
   },
@@ -402,11 +438,12 @@
    "name": "Niddah",
    "he": "\u05e0\u05d3\u05d4",
    "reviewed": false,
-   "story": 49,
+   "story": 48,
    "borderline": 0,
    "in_mishnah": 0,
-   "words": 9888,
-   "minutes": 93
+   "out_of_scope": 0,
+   "words": 9645,
+   "minutes": 91
   }
  ]
 }

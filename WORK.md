@@ -66,13 +66,13 @@ staleness check: it changes whenever anyone edits anything.*
 | `(detached)` | `recent-work-plans-d0818b` | clean |
 | `sessions-cleanup-consolidate-fc92b3` | `sessions-cleanup-consolidate-fc92b3` | clean |
 | `recall-without-lists` | `shas-accuracy-review-8fc321` | clean |
-| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **14 FILES** |
+| `jeff-responses-analysis-e4238c` | `shas-preflight-d2ae6f` | **44 FILES** |
 | `post-shas-run-fixes` | `shas-run` | **1 FILES** |
 | `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
 | `simon-precision-pre-read` | `simon-sample-review-b314ea` | clean |
 <!-- board-live:end -->
 
-## Done — 60 items, never deleted
+## Done — 61 items, never deleted
 
 | item | capability | finding |
 |---|---|---|
@@ -136,4 +136,5 @@ staleness check: it changes whenever anyone edits anything.*
 | [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
 | [Did we find the stories across Shas? Definition of done, stats, reading-list review](work/done/2026-11-10-shas-accuracy.md) | triage, detection, classification, publication | [2026-11-10-shas-accuracy.md](docs/findings/2026-11-10-shas-accuracy.md) |
 | [Record Jeff's two 2026-11-12 replies as data and recount Eruvin recall](work/done/2026-11-13-jeff-2026-11-12-verdicts.md) | classification, detection, publication | [2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md](docs/findings/2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md) |
-<!-- board-checksum: 42dc748aed0c71b7 -->
+| [Septimus site — biblical stories out of scope, Jeff's 2026-11-12 verdicts applied](work/done/2026-11-13-septimus-biblical-out-and-jeff-verdicts.md) | publication | — |
+<!-- board-checksum: cb7bfba52760e991 -->
