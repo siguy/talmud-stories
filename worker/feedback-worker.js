@@ -9,7 +9,9 @@ const CATEGORIES = {
   boundary: "Story starts or ends in the wrong place",
   other: "Something else",
 };
-const ID_RE = /^(ketubot|kiddushin|gittin|yevamot)-\d+[ab]-\d+-\d+$/;
+// Any tractate slug from scripts/tractates.py (lowercase, underscores: avodah_zarah). It was the 4 reviewed
+// tractates only, so feedback on the other 33 was rejected after the site grew to all of Shas.
+const ID_RE = /^[a-z]+(_[a-z]+)*-\d+[ab]-\d+-\d+$/;
 const cap = (v, n) => String(v == null ? "" : v).slice(0, n);
 
 export function buildIssue(p) {
