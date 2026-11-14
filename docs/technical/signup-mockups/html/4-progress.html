@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>Progress - Stories of the Talmud</title>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Cardo & Frank Ruhl Libre -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&amp;family=Frank+Ruhl+Libre:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#fbfbfa',
+            navy: '#18345d',
+            ink: '#222222',
+            muted: '#666666',
+            hairline: '#e6e4df',
+            goldAntique: '#ccb479',
+            goldInk: '#7a6422',
+            learnedGreen: '#2e7d4f',
+            chipStone: '#f1efe9',
+            cardWhite: '#ffffff',
+          },
+          fontFamily: {
+            cardo: ['Cardo', 'Georgia', 'serif'],
+            hebrew: ['"Frank Ruhl Libre"', '"David Libre"', 'serif'],
+            sans: ['"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+<!-- Custom CSS for strict typographic and mobile viewport precision -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #fbfbfa;
+      color: #222222;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink font-sans min-h-screen flex flex-col items-center">
+<!-- BEGIN: TopBar -->
+<header class="sticky top-0 z-50 w-full bg-navy text-white shadow-sm" data-purpose="app-header">
+<div class="max-w-[42rem] mx-auto px-4 h-12 flex items-center justify-between">
+<!-- Title at top left -->
+<span class="font-cardo font-bold text-[1.05rem] tracking-normal text-white">
+        Stories of the Talmud
+      </span>
+<!-- Outlined text size toggle button "Aa" -->
+<button aria-label="Adjust font size" class="border border-white/40 rounded-[6px] px-2.5 py-[0.18rem] text-[0.9rem] font-sans font-medium text-white hover:bg-white/10 active:bg-white/20 transition-colors" type="button">
+        Aa
+      </button>
+</div>
+</header>
+<!-- END: TopBar -->
+<!-- BEGIN: MainContent -->
+<main class="w-full max-w-[42rem] px-4 pt-5 pb-8 flex-1" data-purpose="page-content">
+<!-- BEGIN: TitleAndDedication -->
+<section class="mb-4" data-purpose="page-header">
+<h1 class="font-cardo font-bold text-[1.7rem] leading-tight text-ink mb-2">
+        Progress
+      </h1>
+<!-- Joe Septimus memorial dedication indicator -->
+<div class="border-l-[4px] border-goldAntique pl-3 py-0.5">
+<p class="font-cardo italic text-[1.05rem] text-muted">
+          In memory of Joe Septimus.
+        </p>
+</div>
+</section>
+<!-- END: TitleAndDedication -->
+<!-- BEGIN: SummaryCard -->
+<section class="bg-cardWhite border border-hairline border-l-[6px] border-l-goldAntique rounded-[10px] p-4 mt-[1.2rem] mb-[1.5rem] shadow-[0_1px_3px_rgba(0,0,0,0.03)]" data-purpose="completion-summary">
+<h2 class="font-cardo font-bold text-[1.3rem] text-ink leading-tight">
+        Shas completed 2 times
+      </h2>
+<p class="text-[0.95rem] text-[#333333] font-sans mt-1.5">
+        Round 3: 412 of about 1,800 stories learned
+      </p>
+<!-- Progress Bar Track -->
+<div class="w-full h-[6px] rounded-[3px] bg-chipStone my-[0.65rem] overflow-hidden">
+<!-- Progress Bar Fill: ~23% -->
+<div class="bg-learnedGreen h-full rounded-[3px]" style="width: 23%;"></div>
+</div>
+<p class="text-[0.85rem] text-muted font-sans">
+        186 people learning · [N] weeks until 8 Elul
+      </p>
+</section>
+<!-- END: SummaryCard -->
+<!-- BEGIN: TractateProgressSection -->
+<section data-purpose="tractates-list">
+<!-- Section Heading with gold border bottom -->
+<div class="border-b-2 border-goldAntique pb-1 mb-[0.8rem] inline-block w-full">
+<h3 class="font-cardo font-bold text-[1.15rem] text-goldInk leading-tight">
+          By tractate (this round)
+        </h3>
+</div>
+<!-- Tractate Card 1: Berakhot -->
+<article class="bg-cardWhite border border-hairline border-l-[6px] border-l-goldAntique rounded-[10px] px-4 py-[0.85rem] mb-[0.7rem] shadow-[0_1px_2px_rgba(0,0,0,0.02)]" data-purpose="tractate-card">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-cardo font-bold text-[1.2rem] text-ink">Berakhot</span>
+<span class="font-hebrew text-[1.38rem] text-goldInk font-medium leading-none" dir="rtl">ברכות</span>
+</div>
+<!-- Progress bar 100% -->
+<div class="w-full h-[6px] rounded-[3px] bg-chipStone mb-1.5 overflow-hidden">
+<div class="bg-learnedGreen h-full rounded-[3px]" style="width: 100%;"></div>
+</div>
+<p class="text-[0.85rem] text-muted font-sans">112 of 112 learned</p>
+</article>
+<!-- Tractate Card 2: Shabbat -->
+<article class="bg-cardWhite border border-hairline border-l-[6px] border-l-goldAntique rounded-[10px] px-4 py-[0.85rem] mb-[0.7rem] shadow-[0_1px_2px_rgba(0,0,0,0.02)]" data-purpose="tractate-card">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-cardo font-bold text-[1.2rem] text-ink">Shabbat</span>
+<span class="font-hebrew text-[1.38rem] text-goldInk font-medium leading-none" dir="rtl">שבת</span>
+</div>
+<!-- Progress bar 86% (140/163) -->
+<div class="w-full h-[6px] rounded-[3px] bg-chipStone mb-1.5 overflow-hidden">
+<div class="bg-learnedGreen h-full rounded-[3px]" style="width: 85.88%;"></div>
+</div>
+<p class="text-[0.85rem] text-muted font-sans">140 of 163 learned</p>
+</article>
+<!-- Tractate Card 3: Eruvin -->
+<article class="bg-cardWhite border border-hairline border-l-[6px] border-l-goldAntique rounded-[10px] px-4 py-[0.85rem] mb-[0.7rem] shadow-[0_1px_2px_rgba(0,0,0,0.02)]" data-purpose="tractate-card">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-cardo font-bold text-[1.2rem] text-ink">Eruvin</span>
+<span class="font-hebrew text-[1.38rem] text-goldInk font-medium leading-none" dir="rtl">עירובין</span>
+</div>
+<!-- Progress bar 42% (31/74) -->
+<div class="w-full h-[6px] rounded-[3px] bg-chipStone mb-1.5 overflow-hidden">
+<div class="bg-learnedGreen h-full rounded-[3px]" style="width: 41.89%;"></div>
+</div>
+<p class="text-[0.85rem] text-muted font-sans">31 of 74 learned</p>
+</article>
+<!-- Tractate Card 4: Pesachim -->
+<article class="bg-cardWhite border border-hairline border-l-[6px] border-l-goldAntique rounded-[10px] px-4 py-[0.85rem] mb-[0.7rem] shadow-[0_1px_2px_rgba(0,0,0,0.02)]" data-purpose="tractate-card">
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-cardo font-bold text-[1.2rem] text-ink">Pesachim</span>
+<span class="font-hebrew text-[1.38rem] text-goldInk font-medium leading-none" dir="rtl">פסחים</span>
+</div>
+<!-- Progress bar 0% -->
+<div class="w-full h-[6px] rounded-[3px] bg-chipStone mb-1.5 overflow-hidden">
+<div class="bg-learnedGreen h-full rounded-[3px]" style="width: 0%;"></div>
+</div>
+<p class="text-[0.85rem] text-muted font-sans">0 of 96 learned · not yet reviewed</p>
+</article>
+</section>
+<!-- END: TractateProgressSection -->
+<!-- BEGIN: InformationalNotice -->
+<p class="text-[0.85rem] leading-[1.4] text-muted font-sans my-[1.2rem]" data-purpose="status-notice">
+      Story list dated [date]. The list is still being checked and may change a little.
+    </p>
+<!-- END: InformationalNotice -->
+<!-- BEGIN: ActionButton -->
+<div class="w-full mb-8" data-purpose="auth-action">
+<button class="w-full min-h-[48px] bg-cardWhite border border-navy text-navy font-sans font-bold text-[1rem] rounded-[10px] flex items-center justify-center text-center px-4 hover:bg-navy/5 active:bg-navy/10 transition-colors shadow-sm" type="button">
+        Sign in with Google to join
+      </button>
+</div>
+<!-- END: ActionButton -->
+</main>
+<!-- END: MainContent -->
+<!-- BEGIN: PageFooter -->
+<footer class="w-full border-t border-hairline py-6 px-4 bg-paper" data-purpose="site-attribution-footer">
+<div class="max-w-[42rem] mx-auto">
+<p class="text-[0.8rem] text-muted leading-relaxed text-left font-sans">
+        Text and translation from <a class="underline hover:text-navy" href="https://www.sefaria.org" rel="noopener noreferrer" target="_blank">Sefaria</a> (William Davidson Edition). Stories were found by software and checked, where marked, by Prof. Jeff Rubenstein.
+      </p>
+</div>
+</footer>
+<!-- END: PageFooter -->
+</body></html>

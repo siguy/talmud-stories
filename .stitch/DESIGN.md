@@ -65,3 +65,15 @@ Component prompts
 - "A white card with a thin hairline border, a 6px antique-gold left edge and 10px corners, with a bold Cardo serif title, a muted one-line meta, and a thin green progress bar."
 - "A story row: an empty circular check at left, a bold reference like 'Ketubot 8b', and a muted one-sentence summary beneath."
 - "A full-width 48px button with 10px corners: solid green with white bold text for the main action, or white with a navy outline for secondary actions."
+
+## 7. Sefaria reference (the reader's inspiration)
+
+The reader's look is borrowed from sefaria.org (captured 2026-11-14: Texts, a Talmud page, a topic page, Create Account). No Sefaria logo or assets are used. Where the sign-up screens need something the reader does not have yet, take it from Sefaria rather than inventing it:
+
+- Main action button: solid Septimus Navy (#18345d) with white bold sans text and a 6px radius, as on Sefaria's "Sign Up" and "Continue with Email". Learned Green is reserved for "learned / done" states and progress fill only; it is never the sign-in or join button.
+- Sign in with Google: a white button with a 1px navy outline, the Google "G" mark at left and bold dark text, as on Sefaria's Create Account card. Full width on a phone, 48px tall.
+- Dedication: a plain Chip Stone (#f1efe9) box with italic serif text, like Sefaria's "Today's learning is dedicated ... in memory of ..." line. No coloured edge.
+- Section and category blocks: flat, with a thin coloured rule on top and no rounded outline, serif title and a small sans description beneath, as in Sefaria's library grid. The reader's gold-left-edge card stays for tractate and progress cards.
+- Small category labels may be uppercase, letter-spaced, muted sans (Sefaria's "TALMUDIC FIGURES"); use sparingly.
+- Type pairing: serif for titles and source text, plain sans (Roboto / Helvetica) for all interface text and descriptions.
+- Lots of white space, hairline dividers, no shadows heavier than a faint card lift, no gradients, no decorative imagery.
