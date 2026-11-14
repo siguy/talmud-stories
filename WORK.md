@@ -48,7 +48,7 @@ of four branches on 2026-08-30 had never committed anything.
 | [Decide the judge's answer categories (confidence tiers?)](work/2026-10-09-judge-answer-categories.md) | classification | — | — |
 | [Story viewer for the Septimus family (mobile, Sefaria-style)](work/2026-10-12-septimus-story-viewer.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
 | [Fix the run-path defects found in the pre-Eruvin code review before spending the Eruvin run](work/2026-11-07-pre-eruvin-run-fixes.md) | detection, boundaries | eruvin | — |
-| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | ketubot, kiddushin, gittin, yevamot | — |
+| ["Learn all the stories" sign-up for the Septimus yahrzeit (v1)](work/2026-11-08-septimus-signup.md) | publication | — | — |
 | [Run the story finder across all of Shas and build story list v1](work/2026-11-08-shas-finder-run.md) | triage, detection, classification, publication | eruvin | — |
 
 <!-- board-live:start -->
@@ -59,17 +59,7 @@ staleness check: it changes whenever anyone edits anything.*
 
 | branch | worktree | uncommitted |
 |---|---|---|
-| `remove-borderline` | `talmud-stories` | **2 FILES** |
-| `shas-berakhot` | `berakhot-shas-local-run-a26611` | clean |
-| `jeff-feedback-status-e36198` | `jeff-comms-review-92c526` | **1 FILES** |
-| `eruvin-run-v11` | `p2-detector-stage4-788e26` | clean |
-| `plan-shas-run-5e0644` | `plan-shas-run-5e0644` | clean |
-| `main` | `recent-work-plans-d0818b` | clean |
-| `shas-accuracy-review-8fc321` | `shas-accuracy-review-8fc321` | **6 FILES** |
-| `signup-plan-4efb53` | `shas-preflight-d2ae6f` | clean |
-| `run-2026-11` | `shas-run` | clean |
-| `berakhot-strong-yes` | `shas-v14-berakhot-6246c0` | **3 FILES** |
-| `v14-yevamot` | `state-work-review-40b153` | clean |
+| `signup-plan-v2` | `talmud-stories` | **2 FILES** |
 <!-- board-live:end -->
 
 ## Done — 59 items, never deleted
@@ -135,4 +125,4 @@ staleness check: it changes whenever anyone edits anything.*
 | [Detector v14 against v11 on full Yevamot](work/done/2026-11-08-v14-vs-v11-yevamot.md) | detection, classification | [2026-11-08-v14-vs-v11-yevamot.md](docs/findings/2026-11-08-v14-vs-v11-yevamot.md) |
 | [Judge prompt v4 — drop the borderline shape Jeff withdrew on 2026-10-25](work/done/2026-11-09-judge-register-v4.md) | classification | [2026-11-09-judge-register-v4.md](docs/findings/2026-11-09-judge-register-v4.md) |
 | [Did we find the stories across Shas? Definition of done, stats, reading-list review](work/done/2026-11-10-shas-accuracy.md) | triage, detection, classification, publication | [2026-11-10-shas-accuracy.md](docs/findings/2026-11-10-shas-accuracy.md) |
-<!-- board-checksum: d9ce9452c4a70cc4 -->
+<!-- board-checksum: 91fd6727dfdb8341 -->
