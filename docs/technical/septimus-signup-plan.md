@@ -1,7 +1,8 @@
 # "Learn all the stories" sign-up — plan (v1)
 
 *Written 2026-11-08; **rewritten 2026-11-13** for Simon's decisions after Daniel Septimus's reply (weekly
-commitments, weekly email, doubling up). Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md).
+commitments, weekly email, doubling up); **updated 2026-11-14**: mockups settled (§3a), data contract added (§7a),
+build order revised (§9). Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md).
 Work item: [`work/2026-11-08-septimus-signup.md`](../../work/2026-11-08-septimus-signup.md).*
 
 ## 1. Goal
@@ -56,10 +57,12 @@ story pages and the weekly email (Simon, 2026-11-13; supersedes "not displayed",
 ## 3. Scope
 
 ### v1 (build now)
-1. **Landing page** (one screen, before sign-in): what this is (learning every story in the Talmud together, in memory
-   of Joe Septimus, by 8 Elul 5787); what "a story" is here (narratives found by software; 3 tractates checked by a
-   scholar, Jeff Rubenstein, the rest labelled "not yet reviewed"); which list this is ("Story list v1, dated <date>");
-   progress so far; the launch date; one button, "Sign in with Google to join".
+1. **Landing page** (one short screen, before sign-in; mockup settled 2026-11-14, §3a): title, the dedication, one
+   sentence ("A few minutes a week, from <launch date> until his yahrzeit, 8 Elul."), the progress card, then one
+   button, "Sign in with Google to join", with "We email you your stories each week." under it. **No numbered steps
+   and no explanation on this page** (Simon, 2026-11-14). What "a story" is here, which tractates Jeff Rubenstein has
+   checked, and which list this is ("Story list v1, dated <date>") move to a small linked page, **"How the stories
+   were chosen"**; the list date also shows on the progress page.
 2. **Sign in with Google**, nothing else asked. A `?src=<community>` link (e.g. `?src=hadar`) is recorded silently.
 3. **Commit:** one question after sign-in, "How many minutes a week will you learn until 8 Elul?" — 5 / 10 / 15 / 30
    + "other". Changeable later. Nothing else asked.
@@ -75,6 +78,38 @@ story pages and the weekly email (Simon, 2026-11-13; supersedes "not displayed",
 The existing reader (cards, daf lists, story pages, Hebrew/English, "Open on Sefaria", feedback form, approved notes)
 keeps working unchanged; the sign-up wraps it.
 
+### 3a. Mockups (settled with Simon, 2026-11-14)
+
+Made before any code, so the look is agreed first. Images and editable HTML:
+[`signup-mockups/`](signup-mockups/). The build copies these; it does not re-design them.
+
+| Screen | File | Settled |
+|---|---|---|
+| Landing | `1-landing.png` | Progress card first, then sign-in. No 1-2-3 steps. About 45 words |
+| Minutes a week | `2-minutes.png` | 5 / 10 / 15 / 30 / Other; "10 minutes a week is about 3 stories."; "Join" |
+| My stories | `3-my-stories.png` | This week; still open from earlier weeks; group progress; "about N min" per story |
+| Progress | `4-progress.png` | "Shas completed N times", the current round, then per tractate (cycles option, §4) |
+| Weekly email | `5-weekly-email.png` | Three story cards, one button, Daniel's line as a placeholder |
+
+**Style rules** (full list: [`.stitch/DESIGN.md`](../../.stitch/DESIGN.md)):
+- The sign-up looks like the same site as the reader: navy top bar, gold-edged cards, Cardo and Frank Ruhl Libre.
+  Colours and fonts come from `site/style.css`, never from a mockup.
+- The reader's look is borrowed from sefaria.org, so anything the reader lacks is taken from Sefaria (captured
+  2026-11-14), not invented: **main buttons are solid navy**; **sign-in is a white, navy-outlined button with the
+  Google "G"**; the **dedication is a plain grey box in italic serif**. No Sefaria logo or assets.
+- **Green means "learned" only** (progress fill, the done tick). It is never a sign-in or join button.
+- Anything in [square brackets] on a mockup is a placeholder (launch date, sender, Daniel's line). Story names,
+  summaries and numbers on the mockups are invented samples.
+
+**How the mockups are made** (reusable): the `stitch` skill (`~/.agents/skills/stitch/`, CLI `stitch`) with the
+private Stitch project "Talmud Stories: learning sign-up" (id in `.stitch.json`). Capture the real reader pages and
+upload them as the style reference, write `.stitch/DESIGN.md` from `site/style.css`, then `stitch generate screen
+--device MOBILE` with the exact copy in the prompt. Three things learned the hard way: Stitch **invents copy** (footer
+lines, taglines) unless told "use only this copy", so read every screen before showing it; `stitch edit screen` often
+**fails to save**, so small changes are faster made in the downloaded HTML and re-uploaded with `stitch upload screen`;
+and screens generated in parallel **may not appear on the canvas**, so share the per-screen link the upload returns,
+and keep the PNGs in the repo as the copy of record.
+
 ### Later (not v1 — list, do not build)
 - **"Give me a story"** button: for (a) leftovers nobody committed to, (b) stories released by people who did not
   read them, (c) uncommitted people who want to double up. Same assignment write, one story at a time.
@@ -88,19 +123,21 @@ keeps working unchanged; the sign-up wraps it.
 
 ## 4. The commitment mechanic
 
-Each decision is marked **Simon decided** or **to confirm with Daniel** (Simon, 2026-11-13). Nothing that depends on
-a to-confirm item is built until Simon reports back (§9 marks which PRs wait).
+Each decision is marked **Simon decided** or **to confirm with Daniel** (Simon, 2026-11-13). The seven questions in
+§12 went to Daniel on 2026-11-13; no reply yet. **Revised 2026-11-14 (Simon): do not wait for him.** Every
+to-confirm item is a config value or a marked placeholder, and b and c are built now on the proposed defaults.
+Nothing goes live to real people until he answers (§9).
 
 | | Decision | Status |
 |---|---|---|
 | Unit | **Minutes per week**, converted to stories by word count at `readingWpm` | Simon decided |
-| Reading pace | One config value; 75 / 100 / 120 wpm (§2) | **Simon to pick, then confirm with Daniel** |
+| Reading pace | One config value, **75 wpm** (§2) | Simon picked 75 (2026-11-13); **asked Daniel 2026-11-13** |
 | Cadence | **Week by week** from the pool; no full schedule at sign-up | Simon decided |
 | Start | **Fixed launch date**: sign-ups open first, everyone starts the same week | Simon decided; **date to confirm with Daniel** |
 | Order | **In order through Shas** (site tractate order, then daf, then segment); **consecutive** stories per person | Simon decided |
 | Missed stories | **Roll over 2 weeks** on the person's list, then **released** to the pool | Simon decided |
 | More commitment than list | **Double up**: nobody turned away; stories learned more than once | Simon decided |
-| What "cover the entire thing" means | cycles / copies per story / per-person paths (below) | **To confirm with Daniel** |
+| What "cover the entire thing" means | cycles / copies per story / per-person paths (below) | **Asked Daniel 2026-11-13. Build on cycles meanwhile** (Simon, 2026-11-14), behind one config value so another answer is a small change |
 | Reminders | **Weekly personal email** + signed-in My stories page | Simon decided; **wording and sender to confirm with Daniel** |
 | Community attribution | **Per-community links** (`?src=...`), not an onboarding question | Simon decided; **list of communities to confirm with Daniel** |
 | Yahrzeit date | Friday 10 September 2027 (8 Elul 5787) | **To confirm with Daniel** |
@@ -178,6 +215,28 @@ When ids change (a boundary moves, so `tractate-daf-start-end` changes):
   A v1 story with no match keeps its rows under its old id, counted as history. Ambiguous splits/merges are printed
   for a person to decide, never guessed. The pool pointer is re-seated at the first v2 story not yet covered in the
   current cycle.
+
+## 7a. Data contract: what the sign-up reads from the story data (added 2026-11-14)
+
+The sign-up reads the same files as the reader (`site/data/index.json`, `site/data/<tractate>.json`). Today their
+shape is defined only by `scripts/build_site_data.py` and `tests/test_site_data.py`. With a second reader, it gets
+written down once:
+
+- **A schema file**, `site/data/schema.json` (JSON Schema: a formal list of fields and their types), checked by a
+  test against every tractate file. The sign-up depends only on fields in it.
+- **Fields the sign-up needs:** `id`, `tractate`, `ref`, `refs`, `start_segment`, `summary`, `words`, `minutes`,
+  `reviewed`, and from `index.json` the tractate order and totals. It must not depend on anything else.
+- **`list_version` and `published_at` in `index.json`**, which §7 already requires and which are still unset.
+- **Sizing numbers are read from the data at build time** (§2), never typed in: the list was 1,897 on 2026-11-13 and
+  1,864 on another branch a day later.
+- **Room for later:** people, themes and background notes (Simon wants to "add meaning" to stories) are optional
+  fields the sign-up ignores. Not built here.
+
+**This step waits.** The session "Jeff's responses and implications" (branch `claude/jeff-responses-analysis-e4238c`,
+not merged on 2026-11-14) is changing these same files: it adds 80 stories and an `included_by` tag, writes 85
+missing summaries, and removes `tier`, `biblical` and `biblical_reason`. The schema is written **after** that
+branch merges, from the shape it leaves. Until then b and c add new files only and do not edit
+`scripts/build_site_data.py`, `site/data/` or `tests/test_site_data.py` (run `python3 scripts/board.py lanes`).
 
 ## 8. Backend: decision
 
@@ -265,11 +324,16 @@ provider, and add `talmud-stories.vercel.app` to authorised domains.
 | PR | What | Done when |
 |---|---|---|
 | ~~a~~ | Word count + reading time in the export | **Done** (#79) |
-| b | Landing page + Google sign-in + `?src=` + minutes-per-week question | At 390 px: land, read what it is, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator. **Buildable now** with placeholders for launch date, yahrzeit and community names |
-| c | Weekly job: rollover/release, assignment in order, pool pointer; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing. **Waits for** the coverage answer (Daniel) and the pace (Simon) |
-| d | My stories + mark as learned + progress page | Marking learned shows on the progress page; counts per tractate add up. **Waits for** c |
-| e | Weekly email (service + domain + unsubscribe) | A test send to Simon renders on a phone; unsubscribe link works. **Waits for** sender, wording (Daniel) and Blaze (Simon) |
+| ~~m~~ | Mockups of the five screens | **Done** 2026-11-14 (§3a) |
+| b | Landing page + Google sign-in + `?src=` + minutes-per-week question + "How the stories were chosen" page | Matches mockups 1 and 2 at 390 px: land, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator. **Build now**, placeholders for launch date, yahrzeit and community names. New files only (§7a) |
+| c | Weekly job: rollover/release, assignment in order, pool pointer; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing; the §7 add/remove cases pass. **Build now** on cycles and 75 wpm, both config values. Tested in the emulator only: **running it for real waits for** Blaze (Simon) and Daniel's coverage answer |
+| s | Data contract: schema file + test, `list_version` / `published_at` (§7a) | Every tractate file validates; the sign-up reads only schema fields. **Waits for** the Jeff-responses branch to merge |
+| d | My stories + mark as learned + progress page | Matches mockups 3 and 4; marking learned shows on the progress page; counts per tractate add up. **Waits for** c |
+| e | Weekly email (service + domain + unsubscribe) | Matches mockup 5; a test send to Simon renders on a phone; unsubscribe link works. **Waits for** sender, wording (Daniel) and Blaze (Simon) |
 | f | About Joe Septimus page | Linked from the landing page; placeholder clearly marked for Daniel. **Buildable now** |
+
+**Order (2026-11-14):** b, then c, in one session; s as soon as the Jeff-responses branch merges; d after c and s;
+e and f when Daniel answers. b and c are each compared with their mockup in a real browser before being called done.
 
 Each verified in a real browser at phone width (Playwright, Chromium) before it is called done.
 `python3 -m pytest tests/test_site_data.py tests/test_bookkeeping.py -q` before each push.
@@ -289,12 +353,15 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 
 ## 11. Open questions for Simon (asked one per message, in this order)
 
-1. **Reading pace:** 75, 100 or 120 English words a minute (§2)? *(asked 2026-11-13)*
+1. ~~Reading pace~~ **75 wpm** (Simon, 2026-11-13; in the brief sent to Daniel).
 2. OK to put a card on the `septimus-stories` project (Blaze) with a $10/month alert, for the weekly job and email?
 
 Everything else is in §12, for Daniel.
 
 ## 12. Questions for Daniel (plain English, ready to paste)
+
+*Sent to Daniel on 2026-11-13 as a Google Doc plus an email (`comms/sent/2026-11-13-daniel-signup-*`, on branch
+`septimus/daniel-brief`). No reply by 2026-11-14.*
 
 > Hi Daniel, a few things to settle before we build the sign-up for learning all the Talmud stories in your father's memory:
 >

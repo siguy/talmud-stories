@@ -29,6 +29,9 @@ PRs b–f in plan §9: landing + sign-in + commitment; weekly job (assignment, r
 weekly email; Joe Septimus page. (a, word counts, done in #79.) Backend: Firebase Auth + Firestore on
 `septimus-stories`, Blaze for the scheduled job and email (plan §8d).
 
+**Update 2026-11-14:** the five screens are mocked up and settled (plan §3a, `docs/technical/signup-mockups/`). Build
+b and c now on the proposed defaults; the data contract (plan §7a) waits for the Jeff-responses branch to merge.
+
 ## How you know it worked
 
 - At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.
