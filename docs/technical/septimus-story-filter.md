@@ -184,3 +184,7 @@ definite answer.
 - 2026-11-14 — Simon: the 80 low-pool passages both Claude grader passes call `story` ship, as the `promote` rule, each
   with `included_by: "low-pool-grader-2026-11-13"` (the first sanctioned promotion path; the 54/60 review bar was waived,
   read in part). 0 dropped. The site went from 1,784 to 1,864 stories across 25 tractates; `out_of_scope` unchanged at 102.
+- 2026-11-14, later — Simon: "just remove them if you are sure." 17 twin-pass cards from unreviewed tractates, marked
+  SURE_REMOVE by a rules triage against `STORY_RULES.md` (no Jeff verdict), added to `remove` with rule and reason per
+  card. The site went from 1,864 to 1,847; `out_of_scope` unchanged at 102. Run agreement is weak evidence for a twin
+  card; the other twin-pass cards are unreviewed (`docs/findings/2026-11-14-twin-pass-site-cards.md`).

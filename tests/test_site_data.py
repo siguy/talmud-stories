@@ -79,7 +79,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 18329, "berakhot": 25213}  # yevamot +4, berakhot +7: low-pool promotions (Simon 2026-11-14)
+SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 18180, "berakhot": 25128}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14)
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -210,11 +210,16 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_site_data as b
     _, removals, _ = b.site_decisions()
-    assert sum(len(v) for v in removals.values()) == 12
+    # 12 from Jeff's 2026-11-12 verdicts; 17 twin-pass cards Simon removed 2026-11-14 on a rules triage (no Jeff verdict)
+    assert sum(len(v) for v in removals.values()) == 29
     site = _site()
     for t, entries in removals.items():
         for e in entries:
-            assert e["decided_by"] and e["source"] and e["jeff"] in ("not", "borderline"), e
+            assert e["decided_by"] and e["source"] and e["rule"], e
+            if "jeff" in e:
+                assert e["jeff"] in ("not", "borderline"), e
+            else:
+                assert "Simon 2026-11-14" in e["decided_by"] and e["reason"] and e["card"], e
             for s in site[t]["stories"] + site[t]["out_of_scope"]:
                 assert not {(g["ref"], g["i"]) for g in s["segments"]} & b.decision_cells(e), (s["id"], e["ref"])
 
