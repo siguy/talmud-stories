@@ -32,3 +32,6 @@ results/v11/triage_recall/*_plus_liverule.json
 # The measured result is in docs/findings/2026-08-31-triage-single-narrative.md; these
 # are the intermediate files it was computed from.
 results/v11/triage_rules/
+.stitch/*
+!.stitch/DESIGN.md
+!.stitch/manifest.json
