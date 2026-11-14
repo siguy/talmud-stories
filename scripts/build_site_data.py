@@ -30,6 +30,11 @@ Per-passage decisions (results/shas_run/septimus_site_decisions.json, each with 
               The only way past the definite-only filter, by name, never a rule. On the site it reads like any
               other story of its tractate (Simon 2026-11-13: "just count it as a regular story"): no badge, no
               `reviewed`, no provenance field. Who decided lives in the decisions file, and the build names it.
+  promote  -- a RULE over a graded pool, by owner decision (Simon 2026-11-14): every passage both Claude grader
+              passes call `story` (results/shas_run/low_pool/pool/promotions.json, judge prompt sha 88e8fff62716,
+              calibrated 32/33 vs Jeff) ships, carrying `included_by` so the batch can be filtered or removed in one
+              step. Still narrowed by every exclusion above; dropped ones are named on stderr. Model-graded, never
+              read back into a golden, ruler or expert list.
 A decision that matches nothing is named on stderr.
 
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
@@ -99,6 +104,87 @@ def site_decisions():
     d = json.loads((ROOT / SITE_DECISIONS).read_text())
     by = lambda k: {t: [e for e in d[k]["passages"] if e["tractate"] == t] for t in {e["tractate"] for e in d[k]["passages"]}}
     return d["biblical"]["ships"], by("remove"), by("include")
+
+
+def promotion_rules():
+    """The `promote` rules of the site decisions, each checked against its source file: the build refuses if the
+    file's ids, count or judge prompt sha differ from what Simon approved (a regraded pool must not ship silently)."""
+    d = json.loads((ROOT / SITE_DECISIONS).read_text()).get("promote", {"rules": []})
+    out = []
+    for r in d["rules"]:
+        src = json.loads((ROOT / r["source"]).read_text())
+        ids = [p["id"] for p in src["promotions"]]
+        if ids != r["ids"] or len(ids) != r["count"] or src["meta"]["judge_prompt_sha"] != r["judge_prompt_sha"]:
+            raise SystemExit(f"site build refused: {r['source']} no longer matches the `promote` rule "
+                             f"{r['included_by']} (ids, count or judge prompt sha changed)")
+        out.append((r, src["promotions"]))
+    return out
+
+
+def run_spans(path):
+    """[(key, story, cells)] of every span in one run, stories[] and mishnah_stories[] alike."""
+    pages = json.loads((ROOT / path).read_text())["pages"]
+    return [(k, s, {(r, g.get("index")) for r, gs in pieces(pages, i, s) for g in gs})
+            for i, p in enumerate(pages) for k in ("stories", "mishnah_stories") for s in p.get(k, [])]
+
+
+def promoted(tractate, taken, removals, biblical, drop, matched):
+    """Stories added by the `promote` rules for one tractate (Simon 2026-11-14). Bounds: the pool unit's cells -- the
+    detector span the grade refers to, never the grader's chosen segments (every other site story is bounded by a
+    detector span). Summary: the detector's reader-facing summary of the SAME passage, run 1 then run 2, else none --
+    never the grader's reason. A promotion is DROPPED, and named, when it overlaps a story already built (shipped or
+    out of scope), a `remove` decision, a biblical or judge-drop cell, a Stage 4j biblical span or a withheld Mishnah
+    story in either run."""
+    src = SOURCES[tractate]
+    rules = [(r, [p for p in ps if p["slug"] == tractate]) for r, ps in promotion_rules()]
+    rules = [(r, ps) for r, ps in rules if ps]
+    if not rules:
+        return []
+    if src["reviewed"]:
+        raise SystemExit(f"site build refused: a promotion names reviewed tractate {tractate}; Jeff's evidence rules there")
+    pages = json.loads((ROOT / src["runs"][0]).read_text())["pages"]
+    seg = {(p["ref"], g.get("index")): g for p in pages for g in p["segments"]}
+    spans = [x for q in src["runs"] for x in run_spans(q)]
+    out = []
+    for r, ps in rules:
+        for u in ps:
+            cells = [tuple(c) for c in u["cells"]]
+            cs = set(cells)
+            why = ("overlaps a story already built" if cs & taken else
+                   "overlaps a `remove` decision" if any(cs & decision_cells(e) for e in removals) else
+                   "biblical (consensus judges)" if cs & biblical else
+                   "judges: not a story" if cs & drop else
+                   "Stage 4j biblical span" if any(cs & c and s.get("filtered_as_biblical") for _, s, c in spans) else
+                   "withheld Mishnah story" if any(cs & c and k == "mishnah_stories" for k, _, c in spans) else None)
+            missing = [c for c in cells if c not in seg]
+            if missing:
+                raise SystemExit(f"site build refused: promotion {u['id']} has cells outside the text {missing[:3]}")
+            if why:
+                matched.append(("promote-dropped", (r["included_by"], u["id"], why), None))
+                continue
+            ref, a = cells[0]
+            b = max(i for rr, i in cells if rr == ref)
+            sid = f"{tractate}-{ref.split()[-1]}-{a}-{b}"
+            same = [s for _, s, c in spans if c == cs and is_reader_summary(s)]
+            segs = [(c[0], seg[c]) for c in cells]
+            if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
+                print(f"  no nikud: {tractate} {u['id']}", file=sys.stderr)
+            matched.append(("promote", (r["included_by"], u["id"]), sid))
+            out.append({
+                "id": sid, "tractate": tractate, "ref": ref, "refs": list(dict.fromkeys(c[0] for c in cells)),
+                "start_segment": a, "tier": "story",
+                # the detector's best grade across the two runs (the pool is LOW in at least one)
+                "classification": next((x for x in ("YES", "HIGH_CONFIDENCE", "LOW_CONFIDENCE") if x in (u["run1"], u["run2"])),
+                                       u["run1"]),
+                "biblical": False, "biblical_reason": None, "in_mishnah": False, "extended": None,
+                "reviewed": src["reviewed"],
+                "summary": same[0]["one_sentence_summary"] if same else "",
+                # provenance: the whole batch can be filtered or removed in one step (septimus_site_decisions.json)
+                "included_by": r["included_by"],
+                "segments": [{"ref": rr, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
+                             for rr, g in segs],
+            })
+    return out
 
 
 def decision_cells(e):
@@ -294,6 +380,10 @@ def build(tractate, matched=None):
                 "segments": [{"ref": r, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
                              for r, g in segs],
             })
+    taken = {(g["ref"], g["i"]) for x in stories for g in x["segments"]}
+    stories += promoted(tractate, taken, removals, biblical, drop, matched)
+    order = {(p["ref"], g.get("index")): k for k, (p, g) in enumerate((p, g) for p in pages for g in p["segments"])}
+    stories.sort(key=lambda x: order[(x["segments"][0]["ref"], x["segments"][0]["i"])])   # page order, promoted in place
     stories = apply_extensions(tractate, stories, pages)
     if site_decisions()[0]:
         return stories, []
@@ -411,6 +501,15 @@ def report_decisions(matched):
             span = f"{e['ref']}:{e['start_segment']}-{e['end_segment']}"
             print(f"  {kind:7} {span:22} -> {', '.join(hits) if hits else 'NO MATCH (not shipped by the filter)'}",
                   file=sys.stderr)
+    for r, ps in promotion_rules():
+        added = [sid for k, m, sid in matched if k == "promote" and m[0] == r["included_by"]]
+        dropped = [m for k, m, _ in matched if k == "promote-dropped" and m[0] == r["included_by"]]
+        print(f"  promote {r['included_by']}: {len(added)} of {len(ps)} added, {len(dropped)} dropped", file=sys.stderr)
+        for _, uid, why in dropped:
+            print(f"    dropped {uid}: {why}", file=sys.stderr)
+        unbuilt = len(ps) - len(added) - len(dropped)
+        if unbuilt:
+            print(f"    NOT BUILT {unbuilt}: their tractate is not on the site", file=sys.stderr)
 
 
 if __name__ == "__main__":

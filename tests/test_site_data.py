@@ -78,7 +78,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 17643, "berakhot": 24396}  # yevamot, berakhot: biblical stories out again (Simon 2026-11-13)
+SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 18329, "berakhot": 25213}  # yevamot +4, berakhot +7: low-pool promotions (Simon 2026-11-14)
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -108,6 +108,14 @@ def _included(s):
     return any(cells & b.decision_cells(e) for e in b.site_decisions()[2].get(s["tractate"], []))
 
 
+def _promoted(s):
+    """True when the story was added by a `promote` rule of septimus_site_decisions.json (Simon 2026-11-14): it says so
+    in `included_by`, and its id is on that rule's list."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    return any(s.get("included_by") == r["included_by"] for r, _ in b.promotion_rules())
+
+
 def test_no_low_confidence_or_not_a_story_ships():
     """Only definite stories reach the site (Simon, 2026-10-12; again 2026-11-09, Lesson 45).
     A later gate (e.g. the consensus judges on Berakhot) may narrow this, never promote past it."""
@@ -115,7 +123,8 @@ def test_no_low_confidence_or_not_a_story_ships():
     for row in index["tractates"]:
         for s in json.loads((ROOT / f"site/data/{row['tractate']}.json").read_text())["stories"]:
             # the one exception is a passage named in septimus_site_decisions.json `include`, which says who and when
-            assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or _included(s), s["id"]
+            # ... or a story added by a `promote` rule, which carries `included_by` (Simon 2026-11-14)
+            assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or _included(s) or _promoted(s), s["id"]
             assert s["tier"] == "story" and not s["in_mishnah"], s["id"]
 
 
@@ -137,7 +146,7 @@ def test_unreviewed_stories_are_definite_in_every_run():
         d = json.loads((ROOT / f"site/data/{t}.json").read_text())
         for s in d["stories"]:
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
-            assert all(cells & r for r in runs) or _included(s), s["id"]
+            assert all(cells & r for r in runs) or _included(s) or _promoted(s), s["id"]
             assert not cells & drop or _included(s), s["id"]
             assert not s["biblical"], s["id"]
             assert not cells & biblical or s["extended"], s["id"]   # only a display extension may reach a biblical cell
@@ -218,7 +227,7 @@ def test_sanhedrin_52b_4_ships_as_a_regular_story():
     import build_site_data as b
     site = _site()
     s = {s["id"]: s for s in site["sanhedrin"]["stories"]}["sanhedrin-52b-4-4"]
-    regular = next(x for x in site["sanhedrin"]["stories"] if x["id"] != s["id"])
+    regular = next(x for x in site["sanhedrin"]["stories"] if x["id"] != s["id"] and "included_by" not in x)
     assert set(s) == set(regular) and "included_by" not in s
     assert not s["reviewed"] and s["tier"] == "story" and not site["sanhedrin"]["reviewed"]
     entries = b.site_decisions()[2]["sanhedrin"]
@@ -249,3 +258,28 @@ def test_no_card_summary_is_pipeline_reasoning():
                    for s in p.get("stories", []) if s.get("source") == "twin_pass"} - {None, ""}
         bad = [s["id"] for s in d["stories"] if s["summary"] in reasons]
         assert not bad, (t, bad)
+
+
+def test_low_pool_promotions_carry_provenance_and_match_the_decision():
+    """Simon 2026-11-14 ('I suggest we add them at this point'): the passages both Claude grader passes call `story`
+    ship as a RULE recorded in septimus_site_decisions.json `promote`. Every one carries `included_by`, so the batch
+    can be filtered or removed in one step; the count on the site is the record's count minus the drops the build
+    names; none is in a reviewed tractate; no card shows the grader's reasoning; and nothing else carries the tag."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    site = _site()
+    rules = b.promotion_rules()
+    assert [r["included_by"] for r, _ in rules] == ["low-pool-grader-2026-11-13"]
+    r, ps = rules[0]
+    assert r["decided_by"] == "Simon 2026-11-14" and r["judge_prompt_sha"] == "88e8fff62716"
+    assert r["count"] == len(r["ids"]) == len(ps) == 80
+    assert r["review_bar"]["completed"] is False          # the 54/60 bar was waived, and the record says so
+    tagged = [s for d in site.values() for s in d["stories"] + d["out_of_scope"] if "included_by" in s]
+    assert all(s["included_by"] == r["included_by"] for s in tagged)
+    assert not any(site[t]["reviewed"] for t in {s["tractate"] for s in tagged})
+    assert len(tagged) == 80, len(tagged)                 # 0 dropped on 2026-11-14; a drop is named on stderr
+    by_cells = {frozenset(tuple(c) for c in p["cells"]): p for p in ps}
+    for s in tagged:
+        p = by_cells[frozenset((g["ref"], g["i"]) for g in s["segments"])]   # bounded by the unit's detector span
+        reasons = {p["grader"][k]["reason"] for k in ("pass1", "pass2")}
+        assert s["summary"] not in reasons and s["tier"] == "story" and not s["biblical"], s["id"]

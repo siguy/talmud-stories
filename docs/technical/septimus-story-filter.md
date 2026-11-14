@@ -70,6 +70,40 @@ it matched on stderr, and names one that matched nothing.
   *"Include this"*. On the site it reads as a regular story of its tractate (Simon 2026-11-13, *"just count it as a
   regular story"*): no badge, no `reviewed`, no provenance field. Who decided lives in the decisions file only.
 
+## Promoted by rule: the low-pool grader (Simon, 2026-11-14)
+
+**The first sanctioned promotion path, and an owner decision, not a quiet rule change.** Simon, 2026-11-14: *"Im
+looking through these stories and they seem to mostly be stories so far. I didnt review all of them, but I suggest we
+add them at this point."*
+
+- **What ships:** every passage in `results/shas_run/low_pool/pool/promotions.json`, the 1,259-unit pool of detector
+  proposals below the definite bar (LOW in at least one run), graded twice by Claude Code subagents on the judge prompt
+  `src/prompts/judge_register_v2.md` (sha `88e8fff62716`), where **both passes said `story`**. 80 passages, 80 shipped.
+- **Evidence:** calibrated against Jeff on 300 spans he ruled, both-passes-story is 32/33 = 0.97 precision (Wilson 95%
+  0.85–1.00), recall 32/141 (`docs/findings/2026-11-13-low-pool-grader-calibration.md`). Most of that set is
+  CIRCULAR; the BLIND slice is 6/6, too small to stand alone.
+- **The review bar was not met:** the plan was that Simon reads a seeded random 60 and nothing ships under 54 yes. He
+  read part of the sample informally and approved; his per-passage verdicts were not exported, so there is no count
+  against the bar. The decisions file records it as `review_bar.completed: false`.
+- **Recorded as a rule over a file**, `promote` in `septimus_site_decisions.json`: who, when, his words, the rule, the
+  prompt sha, the source file, the count and the 80 ids. The build **refuses** if the file's ids, count or prompt sha
+  stop matching the record, so a regraded pool cannot ship without a new decision.
+- **Provenance on the card:** each carries `included_by: "low-pool-grader-2026-11-13"` (unlike the Sanhedrin 52b:4
+  `include`, which reads as a regular story). Filtering or removing the batch is one step: drop the rule.
+- **Bounds:** the pool unit's cells, which is the detector span the grade refers to (identical in both runs for 76 of
+  80; for the other 4, the span of the run that proposed the wider or the only one). Not the grader's chosen segments:
+  every other site story is bounded by a detector span, and the grader's picks are numbered within a context window and
+  sometimes skip a segment.
+- **Summary:** the detector's reader-facing summary of the same passage (identical cells), run 1 then run 2, else none.
+  Never the grader's `reason`. All 80 have one.
+- **Classification shown:** the detector's best grade across the two runs (the pool is LOW in at least one).
+- **Still narrowed by everything else:** a promotion is dropped, and named on stderr, when it overlaps a story already
+  built (shipped or `out_of_scope`), a `remove` decision, a biblical or judge-drop cell, a Stage 4j biblical span or a
+  withheld Mishnah story. None was on 2026-11-14. A promotion naming a reviewed tractate stops the build.
+- **Model-graded, not expert-labelled.** These never enter a golden, ruler, expert list or recall/precision ruler.
+  Site-reading measurements (`measure_site_misses.py`, `measure_shas_accuracy.py`) read `site/data/`, so they now count
+  the promoted stories as on the site; filter on `included_by` to compare with earlier figures.
+
 ## The card's summary
 
 A card shows the story's `one_sentence_summary` only when it is written for a reader. Two kinds are pipeline text and
@@ -89,11 +123,11 @@ the scholarly work, where a disagreement is a question worth asking.
 ## What never ships
 
 - `BORDERLINE` — Jeff's own maybes (Simon, 2026-10-15)
-- `LOW_CONFIDENCE` — the detector's maybes (Simon, 2026-10-12)
+- `LOW_CONFIDENCE` — the detector's maybes (Simon, 2026-10-12) — unless the `promote` rule names it (Simon, 2026-11-14)
 - `NOT_A_STORY`
 - `mishnah_stories[]` — withheld by Stage 4g, never shown to Jeff
 - a golden story Jeff never answered
-- an unreviewed story the detector grades below YES/HIGH in any run
+- an unreviewed story the detector grades below YES/HIGH in any run, unless the `promote` rule names it
 - a passage Gemini calls `out_of_scope` and Claude calls `not` (not a story at all)
 - a story flagged `biblical` (kept in `out_of_scope`, Simon 2026-11-13)
 - a passage in `remove` of the site decisions file
@@ -101,11 +135,14 @@ the scholarly work, where a disagreement is a question worth asking.
 
 ## The one principle behind every line
 
-**A later gate may narrow what ships, never promote what an earlier one held back** (L-045).
+**A later gate may narrow what ships, never promote what an earlier one held back** (L-045) — **except by an owner
+decision recorded in the decisions file.** There are two: the per-passage `include` (Sanhedrin 52b:4) and, since
+2026-11-14, the `promote` rule above. Neither is a code change; each names who, when and the evidence.
 Each check is an AND. The judges cannot rescue a LOW; a golden YES cannot rescue a passage Jeff
 never answered; one run cannot outvote another. Combining signals for the
 site means taking their intersection. Anything that would *widen* what ships is a decision
-for Simon, not a code change — and when he makes one, it is an `include` entry naming the passage, who and when.
+for Simon, not a code change — and when he makes one, it is an `include` entry naming the passage, or a `promote`
+rule naming the graded file, its prompt sha and its ids, with who and when.
 
 ## Adding a tractate
 
@@ -144,3 +181,6 @@ definite answer.
   summary; none had a reader-facing summary of the same passage in the other run, so all 76 now show none (85 cards
   with no summary in all, the other 9 Ketubot golden placeholders as before). Sanhedrin 52b:4 now reads as a regular story (`reviewed` and
   `included_by` gone from the site data). Story count unchanged at 1,784.
+- 2026-11-14 — Simon: the 80 low-pool passages both Claude grader passes call `story` ship, as the `promote` rule, each
+  with `included_by: "low-pool-grader-2026-11-13"` (the first sanctioned promotion path; the 54/60 review bar was waived,
+  read in part). 0 dropped. The site went from 1,784 to 1,864 stories across 25 tractates; `out_of_scope` unchanged at 102.
