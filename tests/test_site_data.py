@@ -125,7 +125,7 @@ def test_no_low_confidence_or_not_a_story_ships():
             # the one exception is a passage named in septimus_site_decisions.json `include`, which says who and when
             # ... or a story added by a `promote` rule, which carries `included_by` (Simon 2026-11-14)
             assert s["classification"] in ("YES", "HIGH_CONFIDENCE") or _included(s) or _promoted(s), s["id"]
-            assert s["tier"] == "story" and not s["in_mishnah"], s["id"]
+            assert not s["in_mishnah"], s["id"]
 
 
 def test_unreviewed_stories_are_definite_in_every_run():
@@ -148,10 +148,9 @@ def test_unreviewed_stories_are_definite_in_every_run():
             cells = {(g["ref"], g["i"]) for g in s["segments"]}
             assert all(cells & r for r in runs) or _included(s) or _promoted(s), s["id"]
             assert not cells & drop or _included(s), s["id"]
-            assert not s["biblical"], s["id"]
             assert not cells & biblical or s["extended"], s["id"]   # only a display extension may reach a biblical cell
         for s in d["out_of_scope"]:
-            assert s["biblical"] and s["out_of_scope_reason"].startswith("biblical (R-S1)"), s["id"]
+            assert s["out_of_scope_reason"].startswith("biblical (R-S1)"), s["id"]
 
 
 def test_reviewed_stories_carry_jeffs_evidence():
@@ -200,7 +199,7 @@ def test_biblical_stories_are_retained_out_of_scope_never_shipped():
     out = {s["id"] for d in site.values() for s in d["out_of_scope"]}
     shipped = {s["id"] for d in site.values() for s in d["stories"]}
     assert out and not out & shipped
-    assert not any(s["biblical"] for d in site.values() for s in d["stories"])
+    assert all(s["out_of_scope_reason"].startswith("biblical (R-S1)") for d in site.values() for s in d["out_of_scope"])
     assert "berakhot-54b-0-0" in out   # the lepers Et and Hev: Jeff, 2026-11-12, out of scope (R-S1)
     assert len(out) == 102             # every story flagged biblical on 2026-11-10; a change here is a decision
 
@@ -229,7 +228,7 @@ def test_sanhedrin_52b_4_ships_as_a_regular_story():
     s = {s["id"]: s for s in site["sanhedrin"]["stories"]}["sanhedrin-52b-4-4"]
     regular = next(x for x in site["sanhedrin"]["stories"] if x["id"] != s["id"] and "included_by" not in x)
     assert set(s) == set(regular) and "included_by" not in s
-    assert not s["reviewed"] and s["tier"] == "story" and not site["sanhedrin"]["reviewed"]
+    assert not s["reviewed"] and not site["sanhedrin"]["reviewed"]
     entries = b.site_decisions()[2]["sanhedrin"]
     assert len(entries) == 1 and "Jeff" in entries[0]["decided_by"] and "Simon" in entries[0]["decided_by"]
     included = [x["id"] for d in site.values() for x in d["stories"] if _included(x)]
@@ -282,4 +281,90 @@ def test_low_pool_promotions_carry_provenance_and_match_the_decision():
     for s in tagged:
         p = by_cells[frozenset((g["ref"], g["i"]) for g in s["segments"])]   # bounded by the unit's detector span
         reasons = {p["grader"][k]["reason"] for k in ("pass1", "pass2")}
-        assert s["summary"] not in reasons and s["tier"] == "story" and not s["biblical"], s["id"]
+        assert s["summary"] not in reasons, s["id"]
+
+
+# --- the data contract (docs/technical/septimus-viewer-plan.md §3) -------------------------------------------------
+
+SCHEMA = ROOT / "site/data/schema/story.schema.json"
+REMOVED_FIELDS = ("tier", "biblical", "biblical_reason")   # Simon 2026-11-14: constant on every story, so dropped
+
+
+def _validators():
+    import jsonschema
+    from referencing import Registry, Resource
+    schema = json.loads(SCHEMA.read_text())
+    jsonschema.Draft202012Validator.check_schema(schema)
+    registry = Registry().with_resource(schema["$id"], Resource.from_contents(schema))
+    tractate = jsonschema.Draft202012Validator(schema)
+    index = jsonschema.Draft202012Validator({"$ref": schema["$id"] + "#/$defs/index"}, registry=registry)
+    return tractate, index
+
+
+def test_every_site_data_file_matches_the_schema():
+    """Every tractate file and index.json validate against site/data/schema/story.schema.json; the schema forbids
+    unknown story fields, so a removed field (tier, biblical, biblical_reason) cannot quietly come back."""
+    tractate, index = _validators()
+    rows = json.loads((ROOT / "site/data/index.json").read_text())
+    errors = [e.message for e in index.iter_errors(rows)]
+    for r in rows["tractates"]:
+        d = json.loads((ROOT / f"site/data/{r['tractate']}.json").read_text())
+        errors += [f"{r['tractate']} {list(e.absolute_path)[:3]}: {e.message[:200]}" for e in tractate.iter_errors(d)]
+        assert d["tractate"] == r["tractate"] and r["story"] == len(d["stories"]) and r["out_of_scope"] == len(d["out_of_scope"])
+        for s in d["stories"] + d["out_of_scope"]:
+            assert s["tractate"] == r["tractate"] and s["id"].startswith(r["tractate"] + "-"), s["id"]
+            assert not set(REMOVED_FIELDS) & set(s), s["id"]
+    assert not errors, errors[:10]
+    # the schema really is strict: a story carrying a removed field is rejected
+    d = json.loads((ROOT / "site/data/ketubot.json").read_text())
+    d["stories"][0]["tier"] = "story"
+    assert not tractate.is_valid(d)
+
+
+def test_viewer_never_shows_the_detector_grade():
+    """Simon 2026-11-14: 'No reason for the septimus viewer to show this.' The grade stays in the data (feedback triage,
+    analysis scripts), but app.js never reads it, nor `tier`, and the feedback payload does not carry it."""
+    app = (ROOT / "site/app.js").read_text()
+    for field in ("classification", "tier", "biblical", "HIGH_CONFIDENCE", "LOW_CONFIDENCE"):
+        assert field not in app, field
+    worker = (ROOT / "worker/feedback-worker.js").read_text()
+    assert "classification" not in worker and "p.tier" not in worker
+
+
+WRITTEN = ROOT / "results/shas_run/site_summaries_written.json"
+
+
+def test_written_summaries_fill_only_empty_summaries():
+    """results/shas_run/site_summaries_written.json is the last-resort summary source: used only where a story has no
+    reader-facing detector/golden summary, never over an existing one. Checked by rebuilding each affected tractate
+    with the file switched off and comparing story by story."""
+    import pytest
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    if not WRITTEN.exists():
+        assert b.WRITTEN == {}
+        pytest.skip("results/shas_run/site_summaries_written.json not written yet")
+    written = {k: v.strip() for k, v in json.loads(WRITTEN.read_text())["summaries"].items()}
+    assert b.WRITTEN == {k: v for k, v in written.items() if v}
+    site = _site()
+    shipped = {s["id"] for d in site.values() for s in d["stories"] + d["out_of_scope"]}
+    assert set(written) <= shipped, sorted(set(written) - shipped)[:5]   # a summary keyed to no story is a stale id
+    saved = b.WRITTEN
+    try:
+        b.WRITTEN = {}
+        bare = {t: b.build(t) for t in {k.split("-")[0] for k in written}}
+    finally:
+        b.WRITTEN = saved
+    for t, (stories, out) in bare.items():
+        now = {s["id"]: s["summary"] for s in site[t]["stories"] + site[t]["out_of_scope"]}
+        for s in stories + out:
+            expected = s["summary"] or written.get(s["id"], "")
+            assert now[s["id"]] == expected, s["id"]
+
+
+def test_no_shipped_story_has_an_empty_summary_once_written_summaries_exist():
+    import pytest
+    if not WRITTEN.exists():
+        pytest.skip("results/shas_run/site_summaries_written.json not written yet")
+    empty = [s["id"] for d in _site().values() for s in d["stories"] if not s["summary"].strip()]
+    assert not empty, empty

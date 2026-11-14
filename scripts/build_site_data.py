@@ -37,6 +37,11 @@ Per-passage decisions (results/shas_run/septimus_site_decisions.json, each with 
               read back into a golden, ruler or expert list.
 A decision that matches nothing is named on stderr.
 
+Summaries: the exported run's reader-facing `one_sentence_summary`, else the same passage's in another run, else the
+text written for that story id in results/shas_run/site_summaries_written.json (absent file tolerated), else none.
+
+Data contract: site/data/schema/story.schema.json (docs/technical/septimus-viewer-plan.md §3).
+
 Hebrew already carries nikud in the cached Sefaria segments; coverage is asserted below.
 """
 import json
@@ -172,13 +177,13 @@ def promoted(tractate, taken, removals, biblical, drop, matched):
             matched.append(("promote", (r["included_by"], u["id"]), sid))
             out.append({
                 "id": sid, "tractate": tractate, "ref": ref, "refs": list(dict.fromkeys(c[0] for c in cells)),
-                "start_segment": a, "tier": "story",
+                "start_segment": a,
                 # the detector's best grade across the two runs (the pool is LOW in at least one)
                 "classification": next((x for x in ("YES", "HIGH_CONFIDENCE", "LOW_CONFIDENCE") if x in (u["run1"], u["run2"])),
                                        u["run1"]),
-                "biblical": False, "biblical_reason": None, "in_mishnah": False, "extended": None,
+                "in_mishnah": False, "extended": None,
                 "reviewed": src["reviewed"],
-                "summary": same[0]["one_sentence_summary"] if same else "",
+                "summary": same[0]["one_sentence_summary"] if same else written_summary(sid),
                 # provenance: the whole batch can be filtered or removed in one step (septimus_site_decisions.json)
                 "included_by": r["included_by"],
                 "segments": [{"ref": rr, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
@@ -290,9 +295,28 @@ def clean(html):
     return TAG.sub(lambda m: f"<{m.group(1)}{m.group(2).lower()}>" if m.group(2).lower() in KEEP else "", html)
 
 
-def tier(classification):
+def ships(classification):
     """Only definite stories ship: BORDERLINE, LOW_CONFIDENCE and NOT_A_STORY never do."""
-    return "story" if classification in DEFINITE else None
+    return classification in DEFINITE
+
+
+WRITTEN_SUMMARIES = ROOT / "results" / "shas_run" / "site_summaries_written.json"
+
+
+def _written_summaries():
+    """{story id: text} from results/shas_run/site_summaries_written.json, written for the stories with no reader-facing
+    detector/golden summary. Absent file -> {} (the card then shows no summary line, as before)."""
+    if not WRITTEN_SUMMARIES.exists():
+        return {}
+    return {k: v.strip() for k, v in json.loads(WRITTEN_SUMMARIES.read_text())["summaries"].items() if v and v.strip()}
+
+
+WRITTEN = _written_summaries()
+
+
+def written_summary(sid):
+    """Fallback summary for a story with none: the written one for that id, else "". Never overrides an existing one."""
+    return WRITTEN.get(sid, "")
 
 
 def pieces(pages, i, s):
@@ -320,10 +344,10 @@ def build(tractate, matched=None):
     biblical, drop = judge_cells(tractate)
     others = [definite_cells(q) for q in src["runs"][1:]]
     other_summaries = [reader_summaries(q) for q in src["runs"][1:]]
-    stories, seen = [], set()
+    stories, seen, out_why = [], set(), {}
     for i, p in enumerate(pages):
         for s in p.get("stories", []):           # never mishnah_stories[]: withheld, unreviewed, unjudged
-            t = tier(site_classification(s))
+            ok = ships(site_classification(s))
             ps = pieces(pages, i, s)
             segs = [(r, g) for r, gs in ps for g in gs]
             assert segs, (tractate, p["ref"], s)
@@ -331,20 +355,20 @@ def build(tractate, matched=None):
             include = [e for e in inclusions if cells & decision_cells(e)]
             # Gates may only NARROW the detector's/golden's own `story` tier, never promote (Lesson 45).
             if jeff is not None and not cells & jeff and not any(s.get(k) for k in JEFF_FIELDS):
-                t = None   # in the golden, but a detector call Jeff never answered
+                ok = False   # in the golden, but a detector call Jeff never answered
             if cells & drop:
-                t = None   # Gemini says biblical, Claude says not a story at all (Simon 2026-11-10)
+                ok = False   # Gemini says biblical, Claude says not a story at all (Simon 2026-11-10)
             if any(not cells & o for o in others):
-                t = None   # below YES/HIGH (or absent) in another run: the detector is not deterministic
+                ok = False   # below YES/HIGH (or absent) in another run: the detector is not deterministic
             sid = f"{tractate}-{p['ref'].split()[-1]}-{s['start_segment']}-{s['end_segment']}"
             if include:
-                t = "story"   # an explicit per-passage decision (expert `story` + Simon), never a rule
+                ok = True   # an explicit per-passage decision (expert `story` + Simon), never a rule
                 matched += [("include", e, sid) for e in include]
             remove = [e for e in removals if cells & decision_cells(e)]
-            if remove and t is not None:
+            if remove and ok:
                 matched += [("remove", e, sid) for e in remove]
-                t = None   # Jeff ruled not / borderline (2026-11-12); the site ships definite stories only
-            if t is None:
+                ok = False   # Jeff ruled not / borderline (2026-11-12); the site ships definite stories only
+            if not ok:
                 continue
             if sid in seen:
                 # The detector can propose the identical span twice (Yevamot 15a:16, v14 run1). One passage
@@ -352,10 +376,17 @@ def build(tractate, matched=None):
                 print(f"  duplicate span, shipped once: {sid}", file=sys.stderr)
                 continue
             seen.add(sid)
+            # Biblical characters (R-S1): out of scope for the site and Jeff's catalogue (Simon 2026-11-13).
+            # The reason goes into `out_of_scope_reason` below; it is never a field of a shipped story.
+            why = ("consensus judges / decisions.json" if cells & biblical else
+                   "Stage 4j biblical-actor filter" if s.get("filtered_as_biblical") else None)
+            if why:
+                out_why[sid] = why
             # The card's summary: the exported run's own when it is reader-facing, else the same passage's in another
             # run, else none -- the page then shows no summary line. Never invented (no model call here).
+            # Last resort: a summary written for that id (site_summaries_written.json), only where all of these are empty.
             summary = s["one_sentence_summary"] if is_reader_summary(s) else next(
-                (o[frozenset(cells)] for o in other_summaries if frozenset(cells) in o), "")
+                (o[frozenset(cells)] for o in other_summaries if frozenset(cells) in o), "") or written_summary(sid)
             if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                 print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
             stories.append({
@@ -364,12 +395,9 @@ def build(tractate, matched=None):
                 "ref": p["ref"],
                 "refs": [r for r, _ in ps],
                 "start_segment": int(s["start_segment"]),
-                "tier": t,
+                # The detector's grade. Data only, for triage of feedback and analysis scripts: the viewer never shows
+                # it to readers (Simon 2026-11-14) and the feedback payload does not carry it (look it up by id).
                 "classification": site_classification(s),
-                # Biblical characters (R-S1): out of scope for the site and Jeff's catalogue (Simon 2026-11-13).
-                "biblical": bool(cells & biblical) or bool(s.get("filtered_as_biblical")),
-                "biblical_reason": ("consensus judges / decisions.json" if cells & biblical else
-                                    "Stage 4j biblical-actor filter" if s.get("filtered_as_biblical") else None),
                 "in_mishnah": False,   # mishnah_stories[] never ship (kept for the page's schema)
                 "extended": None,
                 # the tractate's own state: an included passage reads as a regular story (Simon 2026-11-13);
@@ -388,9 +416,9 @@ def build(tractate, matched=None):
     if site_decisions()[0]:
         return stories, []
     # Simon 2026-11-13: biblical stories are out of scope for the site. Kept, with the reason, for a later filter.
-    out = [dict(s, out_of_scope_reason=f"biblical (R-S1): {s['biblical_reason']}; Simon 2026-11-13")
-           for s in stories if s["biblical"]]
-    return [s for s in stories if not s["biblical"]], out
+    out = [dict(s, out_of_scope_reason=f"biblical (R-S1): {out_why[s['id']]}; Simon 2026-11-13")
+           for s in stories if s["id"] in out_why]
+    return [s for s in stories if s["id"] not in out_why], out
 
 
 EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
@@ -401,7 +429,7 @@ def apply_extensions(tractate, stories, pages):
     """Display-only: widen a cut-off story by whole neighbouring segments (never the golden).
 
     site/data/boundary_extensions.json: {story_id: {start_back, end_forward, reason}}, produced by
-    reviewing each cut-off story against its real neighbouring segments. Ids, tiers and the
+    reviewing each cut-off story against its real neighbouring segments. Ids and the
     golden are untouched; an extended story says so (`extended`), so the page can tell the reader.
     """
     if not EXT.exists():
@@ -481,11 +509,10 @@ def main():
         # `stories` is what the site shows. `out_of_scope` is retained, never shown by default (Simon 2026-11-13).
         (OUT / f"{t}.json").write_text(json.dumps({"tractate": t, "reviewed": reviewed, "stories": stories,
                                                    "out_of_scope": out_of_scope}, ensure_ascii=False, indent=1))
-        n = {k: sum(1 for s in stories if s["tier"] == k) for k in ("story", "borderline")}
         words, minutes = sum(s["words"] for s in stories), sum(s["minutes"] for s in stories)
-        index["tractates"].append({"tractate": t, "name": T.english(t), "he": T.hebrew(t), "reviewed": reviewed, **n, "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
+        index["tractates"].append({"tractate": t, "name": T.english(t), "he": T.hebrew(t), "reviewed": reviewed, "story": len(stories), "in_mishnah": sum(1 for s in stories if s["in_mishnah"]),
                                    "out_of_scope": len(out_of_scope), "words": words, "minutes": minutes})
-        print(f"{t:10} story={n['story']:4} borderline={n['borderline']:3} reviewed={reviewed} "
+        print(f"{t:10} story={len(stories):4} reviewed={reviewed} "
               f"in_mishnah={index['tractates'][-1]['in_mishnah']} out_of_scope={len(out_of_scope)} "
               f"words={words} minutes={minutes}")
     (OUT / "index.json").write_text(json.dumps(index, indent=1))

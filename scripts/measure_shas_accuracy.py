@@ -92,7 +92,7 @@ def site_stories(slug):
     p = ROOT / "site" / "data" / f"{slug}.json"
     if not p.exists():
         return None
-    return [s for s in load(p.relative_to(ROOT))["stories"] if s.get("tier") == "story"]
+    return load(p.relative_to(ROOT))["stories"]   # every shipped story is a definite story (no `tier` since 2026-11-14)
 
 
 def site_cells(slug):

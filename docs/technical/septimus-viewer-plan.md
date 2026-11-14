@@ -27,9 +27,47 @@ Success = Daniel opens it on his phone and reads a story end to end, and a mista
 Static site, no backend of its own: `site/` = `index.html`, `style.css`, `app.js`, `config.js`, `vercel.json`, `data/`.
 Hash routing (`#/`, `#/t/<tractate>`, `#/s/<id>`). Reads from `site/data/`:
 
-- `index.json`, `<tractate>.json` — **derived** by `scripts/build_site_data.py` from `results/canonical/{ketubot,kiddushin,gittin}_canonical.json`
-  and `results/v11/yevamot/yevamot_v11.json`. Each story: `id` (`tractate-daf-start-end`, from the golden's range), `ref`, `refs`, `tier`,
-  `classification`, `reviewed`, `in_mishnah`, `extended`, `summary`, `segments[{ref,i,he,en}]`.
+- `index.json`, `<tractate>.json` — **derived** by `scripts/build_site_data.py` (never hand-edited) from the goldens of the
+  reviewed tractates and the two v14 runs + judges of every other one. The contract is below.
+
+### 3.1 The data contract (`site/data/schema/story.schema.json`, JSON Schema draft 2020-12)
+
+Enforced by `tests/test_site_data.py::test_every_site_data_file_matches_the_schema`, which validates every tractate file
+and `index.json` (`#/$defs/index`). The schema forbids unknown story fields, so a dropped field cannot quietly return.
+Readers: `site/app.js`, `worker/feedback-worker.js`, the planned sign-up app (`septimus-signup-plan.md`), analysis scripts.
+
+**Tractate file** `{tractate, reviewed, stories[], out_of_scope[]}`. `stories` is what the site shows; `out_of_scope`
+(biblical, R-S1, Simon 2026-11-13) is retained and never shown by default.
+
+| Story field | Type | Meaning |
+|---|---|---|
+| `id` | string, `^<slug>-<daf>-<start>-<end>$` | Identity. **Encodes the source span** (see the risk below) |
+| `tractate`, `ref`, `refs[]` | slug; Sefaria refs | First page; every page the shown segments touch (1-3) |
+| `start_segment` | int | Start segment of the source span on `ref` |
+| `segments[]` | `{ref, i, he, en}`, all required | What the reader sees, after any display extension. `ref`+`i` locate a segment exactly |
+| `summary` | string, may be `""` | One reader-facing sentence: detector/golden summary, else the same passage's in run 2, else `results/shas_run/site_summaries_written.json` (only where all are empty) |
+| `classification` | `YES` / `HIGH_CONFIDENCE` / `LOW_CONFIDENCE` | Detector grade. **Data only — the viewer never shows it** (Simon 2026-11-14), and the feedback payload no longer carries it; triage looks it up by `id`. `LOW_CONFIDENCE` only via an `include` decision or a `promote` rule |
+| `reviewed`, `in_mishnah` | bool | Tractate reviewed by Jeff; Mishnah story (always false today) |
+| `extended` | `null` or `{start_back ≤2, end_forward ≤4, reason}` | Display-only widening; the id keeps the source span |
+| `words`, `minutes` | int ≥1 | English words shown; `ceil(words / readingWpm)` |
+| `included_by` | string, **optional** | The `promote` rule that added it (`septimus_site_decisions.json`) |
+
+`out_of_scope[]` entries have the same fields plus a required `out_of_scope_reason` (`"biblical (R-S1): <which gate>; …"`).
+**Removed 2026-11-14 (Simon):** `tier` (always `"story"`), `biblical` (always false in `stories`), `biblical_reason`
+(always null in `stories`; the reason lives in `out_of_scope_reason`), and the index's `borderline` count (always 0).
+
+**`index.json`** `{reading_wpm, tractates[{tractate, name, he, reviewed, story, in_mishnah, out_of_scope, words, minutes}]}` —
+`story` is the number of shipped stories. The home page reads only this file.
+
+**Risk for the sign-up app: ids change when a boundary changes.** An id is `tractate-daf-start-end` of the source span,
+so a golden correction, a re-run that moves an end segment, or a cross-page re-bounding gives the same story a new id.
+The sign-up plan keys `claims/{storyId}` by it; today the only defence is the v1→v2 overlap map run by hand (signup
+plan §5). *Proposed, not implemented:* give each story a **stable id** minted once and never derived from its span (e.g.
+`<slug>-<6 chars>`), stored in a committed registry `site/data/story_ids.json` `{stable_id: {ref, start, end}}`; the
+build assigns each new story the registry id it **overlaps most by segments** (Lesson 36), mints a new one only when
+nothing overlaps, and refuses when two stories claim one id. The span id stays as a secondary field for provenance.
+Claims, read-checkmarks (`localStorage` keys today) and feedback would key on the stable id, so a boundary fix moves
+nothing a reader owns.
 - `boundary_extensions.json` — display-only widenings: `{id: {start_back ≤2, end_forward ≤4, reason}}`.
 - `notes/<tractate>.json` — AI-drafted background notes: `{id: {note, people, terms, approved}}`. **Shown only when `approved: true`**
   (or `?notes=draft` for reviewers).

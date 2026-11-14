@@ -21,7 +21,6 @@ export function buildIssue(p) {
   const data = {
     story_id: p.story_id, tractate: cap(p.tractate, 20), ref: cap(p.ref, 40),
     refs: Array.isArray(p.refs) ? p.refs.slice(0, 2).map((r) => cap(r, 40)) : [],
-    tier: cap(p.tier, 20), classification: cap(p.classification, 30),
     reviewed: !!p.reviewed, in_mishnah: !!p.in_mishnah, summary: cap(p.summary, 600),
     category: p.category, comment,
     segment: p.segment ? { ref: cap(p.segment.ref, 40), index: Number.isInteger(p.segment.index) ? p.segment.index : null,

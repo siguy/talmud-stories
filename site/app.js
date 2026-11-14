@@ -51,7 +51,7 @@
         var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0; }).length);
         return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + esc(t.he) + '</span>' +
           '<div class="card-name">' + esc(t.name) + '</div>' +
-          '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') +
+          '<div class="card-meta">' + t.story +  ' stories' +
           (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
           '<div class="bar-track"><div class="bar-fill" style="width:' + (t.story ? 100 * done / t.story : 0) + '%"></div></div>' +
           '<div class="card-meta">' + done + ' of ' + t.story + ' read</div></a>';
@@ -62,17 +62,13 @@
     });
   }
 
-  function tractate(t, tab) {
+  // Every story on the site is a definite story (scripts/build_site_data.py ships nothing else), so there is one list.
+  function tractate(t) {
     return getJSON("data/" + t + ".json").then(function (d) {
-      tab = tab === "borderline" ? "borderline" : "story";
-      var counts = { story: 0, borderline: 0 };
-      d.stories.forEach(function (s) { counts[s.tier]++; });
-      var list = d.stories.filter(function (s) { return s.tier === tab; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
+      var list = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var html = '<div class="crumb"><a href="#/">All tractates</a></div><h1>' + NAME[t] + ' <span style="font-family:\'Frank Ruhl Libre\',serif">' + HE[t] + '</span></h1>';
       if (!d.reviewed) html += '<p class="notice">These stories were found by software and have not yet been checked by a scholar. Some may not be stories, or may be cut at the wrong place.</p>';
-      html += '<div class="tabs"><button class="tab" aria-pressed="' + (tab === "story") + '" data-tab="story">Stories (' + counts.story + ')</button>' +
-        (counts.borderline ? '<button class="tab" aria-pressed="' + (tab === "borderline") + '" data-tab="borderline">Borderline (' + counts.borderline + ')</button>' : '') + '</div>';
-      if (tab === "borderline") html += '<p class="notice">Borderline: scholars could reasonably disagree about whether these count as stories.</p>';
+      html += '<div class="tabs"><button class="tab" aria-pressed="true">Stories (' + list.length + ')</button></div>';
       var last = "";
       list.forEach(function (s) {
         var daf = s.ref.split(" ").pop();
@@ -82,7 +78,6 @@
           '<div class="row-sum">' + esc(s.summary) + '</div></span></a>';
       });
       app.innerHTML = html;
-      app.querySelectorAll("[data-tab]").forEach(function (b) { b.addEventListener("click", function () { location.hash = "#/t/" + t + "?tab=" + b.dataset.tab; }); });
     });
   }
 
@@ -95,12 +90,12 @@
       if (note && !note.approved && !draftMode) note = null; // unreviewed AI drafts never reach readers
       var s = d.stories.filter(function (x) { return x.id === id; })[0];
       if (!s) { app.innerHTML = '<p>Story not found. <a href="#/">Home</a></p>'; return; }
-      var siblings = d.stories.filter(function (x) { return x.tier === s.tier; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
+      var siblings = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var i = siblings.indexOf(s), prev = siblings[i - 1], next = siblings[i + 1];
       var segs = s.segments.map(function (g, n) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div><button class="flag" data-seg="' + n + '" aria-label="Report a problem with this passage" title="Report a problem with this passage">⚑ Report</button></div>'; }).join("");
-      app.innerHTML = '<div class="crumb"><a href="#/t/' + t + (s.tier === "borderline" ? "?tab=borderline" : "") + '">← ' + NAME[t] + '</a></div>' +
+      app.innerHTML = '<div class="crumb"><a href="#/t/' + t + '">← ' + NAME[t] + '</a></div>' +
         '<h1>' + esc(refLabel(s)) + '</h1>' +
-        (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
+        (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
         (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
@@ -160,7 +155,7 @@
       var cat = document.getElementById("fb-cat").value, comment = document.getElementById("fb-comment").value.trim();
       if (cat === "other" && !comment) { msg.className = "msg"; msg.textContent = "Please add a few words so we know what you mean."; return; }
       var payload = {
-        story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs, tier: s.tier, classification: s.classification,
+        story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs,
         reviewed: s.reviewed, in_mishnah: s.in_mishnah, summary: s.summary, category: cat, comment: comment,
         segment: g ? { ref: g.ref, index: g.i, he: plain(g.he), en: plain(g.en) } : null,
         name: document.getElementById("fb-name").value.trim(), website: document.getElementById("fb-website").value,
@@ -186,7 +181,7 @@
     var h = location.hash.slice(1) || "/", q = h.split("?"), parts = q[0].split("/"), p;
     window.scrollTo(0, 0);
     p = loadIndex().then(function () {
-      if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2], (/tab=(\w+)/.exec(q[1] || "") || [])[1]);
+      if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2]);
       if (parts[1] === "s") return story(parts[2]);
       return home();
     });
