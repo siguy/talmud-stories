@@ -164,9 +164,21 @@
       var send = document.getElementById("fb-send"); send.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
       function done(ok, text) { send.disabled = false; msg.className = "msg"; msg.innerHTML = text; if (ok) document.getElementById("fb-comment").value = ""; }
       function fallback() {
-        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + cat;
-        var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(payload, null, 1) + "\n```";
-        var url = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body.slice(0, 6000));
+        var label = CATS.filter(function (c) { return c[0] === cat; })[0][1];
+        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + label;
+        // GitHub refuses a new-issue URL much past 8 KB, and Hebrew triples when encoded: a long passage's text
+        // alone could exceed it. Shorten the passage text (id + segment index locate it) until the URL fits.
+        var base = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=";
+        var url, keep = 2000;
+        do {
+          var p = JSON.parse(JSON.stringify(payload));
+          if (p.segment) { p.segment.he = p.segment.he.slice(0, keep); p.segment.en = p.segment.en.slice(0, keep); }
+          if (keep < 2000) p.summary = (p.summary || "").slice(0, keep);
+          var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(p, null, 1) + "\n```";
+          url = base + encodeURIComponent(body);
+          keep = Math.floor(keep / 2);
+        } while (url.length > 8000 && keep > 0);
+        if (url.length > 8000) url = url.slice(0, 8000).replace(/%[0-9A-F]?$/i, "");
         window.open(url, "_blank", "noopener");
         done(true, "Opened GitHub with your note filled in — press “Submit new issue” there to send it.");
       }

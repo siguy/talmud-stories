@@ -47,8 +47,9 @@ def test_feedback_worker_builds_a_safe_issue():
     if not shutil.which("node"):
         import pytest
         pytest.skip("node not installed")
-    r = subprocess.run(["node", str(ROOT / "worker/test_worker.mjs")], capture_output=True, text=True)
-    assert r.returncode == 0, r.stderr
+    # worker/feedback-worker.test.mjs: buildIssue on every story id, caps, and the request handler with fetch mocked
+    r = subprocess.run(["node", "--test", str(ROOT / "worker/feedback-worker.test.mjs")], capture_output=True, text=True, timeout=120)
+    assert r.returncode == 0, r.stdout[-4000:] + r.stderr[-2000:]
 
 
 def test_every_story_has_a_note_and_none_is_approved_unreviewed():
