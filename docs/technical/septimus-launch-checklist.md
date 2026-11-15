@@ -14,8 +14,8 @@ on the real site.
 - [ ] Look at the built screens on staging, especially those that had no mockup: stop / delete / cancel deletion,
       paused / resume, "How the stories were chosen", "Your data", the in-app-browser notice.
 - [ ] Confirm the seven builder's choices in [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md).
-- [ ] Choose the email service and the sending domain (step e cannot start without them). Recommended: Resend,
-      on a subdomain of a domain Simon owns.
+- [x] Email service and sending domain: **Resend**, sending from `projects.simonbrief.com` (Simon, 2026-11-15; as
+      reported by the email session, which says the domain is verified and the secret `RESEND_API_KEY` is set).
 - [ ] The contact address shown as "No Google account? Email …".
 - [ ] The final site address, if it will not be `talmud-stories.vercel.app`.
 
@@ -41,7 +41,8 @@ Main is merged into all five sign-up branches; staging runs the new list.
 
 ## 4. Still to build
 
-- [ ] **Step e, the weekly email:** "Your stories this week", one-click unsubscribe, a link that marks a story
+- [ ] **Step e, the weekly email** (being built in a separate session, on its own branch cut from
+      `septimus/signup-flow`; it adds a module and a small hook in `scripts/septimus_weekly.py` and the workflow)**:** "Your stories this week", one-click unsubscribe, a link that marks a story
       learned without signing in, the "still with us?" email for paused people.
 - [ ] **The weekly counts email to Simon** (the alarm if a week is missed).
 - [ ] Script: remove a sign-up record whose Google account no longer exists (found in the d review).
