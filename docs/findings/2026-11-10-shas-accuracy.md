@@ -181,3 +181,42 @@ site loses Jeff's stories. (indicated)
 - **measured:** every recall row; site recall; the blind lower bound; coverage; G4.
 - **indicated:** precision (~85%); the reading-list judgments; recall on the 32 tractates with no list.
 - **suspected:** the 93.7% in the run finding comes from an earlier snapshot.
+
+## Update, 2026-11-13: re-run after Jeff's 2026-11-12 verdicts and the 1,784-story site
+
+The sections above are left as published. `python3 scripts/measure_shas_accuracy.py --out
+results/shas_run/accuracy/shas_accuracy.json` was re-run on 2026-11-13. Since 11-10, Jeff ruled 19 Eruvin entries
+and Yevamot 78b:9 `not` (they leave the denominators). The site dropped biblical stories to `out_of_scope` and
+removed 12 passages on his verdicts, going from 1,897 to 1,784 stories. What moved:
+
+| figure | 11-10 | **11-13** | why |
+|---|---|---|---|
+| Eruvin denominator | 74 | **55** | 19 entries Jeff ruled `not` (`superseded_by_rule.json`) |
+| Eruvin end-to-end proposed, run 1 / run 2 | 67/74 / 67/74 | **55/55 / 54/55** | all 7 misses were among his `not`s |
+| Eruvin **on the site** | 49/74 = 66.2% | **43/55 = 78.2%** | |
+| Yevamot denominator | 100 | **99** | 78b:9, `not` by R-C2 |
+| Yevamot **on the site** | 64/100 | **64/99 = 64.6%** | |
+| Ketubot / Kiddushin / Gittin on the site (CIRCULAR) | 86/149, 52/90, 108/110 | unchanged | this script still reads Ketubot at `--standard 2005` (149); at `current` it is **86/145** (`measure_site_misses.py`) |
+| blind precision lower bound, Eruvin | 50/73 = 68.5% | **44/67 = 65.7%** | 6 shipped stories removed on his `not`; they had been credited "on his list" through the very entries he ruled `not` |
+| the same plus Claude's grades, Eruvin | 80.8% | **79.1%** yes, 89.6% yes-or-borderline | |
+| blind precision lower bound, Yevamot | 60/85 = 70.6% | **60/82 = 73.2%** | 3 biblical stories moved out of scope |
+| the same plus Claude's grades, Yevamot | 88.2% | **89.0%** yes, 98.8% yes-or-borderline | |
+| coverage, G4, Jeff's verdicts on YES/HIGH calls | as above | unchanged | |
+
+**A defect fixed in the script.** The blind lower bound counted a shipped story as "on Jeff's list" when it
+overlapped *any* list entry, including entries he has since ruled `not`. It now uses only the entries that count
+for recall. On today's site the two give the same number, because the 6 stories that differed were removed on his
+verdicts. On the 11-10 site, Eruvin's 50/73 overstated by up to 6.
+
+**Precision is now closer to measured.** The 60-story stratified sample of shipped v14 stories (§4 point 1) was
+graded on 2026-11-12. Jeff gave 7 verdicts and Simon pre-read the rest: **54/60 = 90% definite stories** (Wilson
+80–95%), 57/60 counting borderline, and **3/60 not stories (measured, Jeff)**. That is above the ~85% indicated
+here. It is still **indicated**, not measured: 53 of the 60 grades are Simon's, and the 7 Jeff saw were chosen by
+Simon's grade (`docs/findings/2026-11-13-jeff-verdicts-eruvin-and-septimus-sample.md` §2). The 6 non-yes are off
+the site.
+
+**Recall of the site is now split by where each story was lost, and extrapolated to Shas:**
+[`2026-11-13-how-many-stories-we-miss.md`](2026-11-13-how-many-stories-we-miss.md). In short, on Eruvin plus
+Yevamot the detector proposes 149/154 (96.8%) and the site shows 107/154 (69.5%). At least about 700 real stories
+(roughly 520–940) are missing from the site across the 37 tractates, three in four of them lost to the
+definite-only filter.

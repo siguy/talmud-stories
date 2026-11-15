@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A one-line report that Rav Huna cut off a hand, cited as support for his dictum; nothing follows and no one responds."},
+"02": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A terse incident: a renter took his mezuza and buried his wife and sons. Two events with implied causality, but it is a bare exemplum inside a baraita; segment 3 is discussion."},
+"03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Zeira hears a teaching and approves it; speech only, no conflict and no event beyond the arrival."},
+"04": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "A midrashic narrative about Jacob and the sun setting early; an exegetical retelling of a biblical episode."},
+"05": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3, 4, 5], "reason": "Ravina sees Rav Ashi sad over a missed eruv tavshilin; an emotional state starts it, but the rest is halakhic dialogue with no outcome."},
+"06": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rabbi's household pays three successive bribes and so abolishes the obligation to bring the ox; several actions leading to a change."},
+"07": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A passing reference to the ornament R. Akiva made for his wife; a bare allusion with nothing following."},
+"08": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "A man opens windows and goes before two sages who rule oppositely; there is an action and a second appeal, but it is essentially an incident followed by rulings with no narrated outcome."},
+"09": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Elazar b. R. Tzadok asks the Sages at Usha and explains the Yavne ruling; a question and answer with no event."},
+"10": {"verdict": "borderline", "rules": ["R-C7", "R-S1"], "segments": [2], "reason": "The priests were singing when the conquerors came and interrupted them at the Temple's destruction; real events, but presented as a list of the day's coincidences, and the First Temple half sits near the biblical scope edge."},
+"11": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "An incident only alluded to (a fetus moved after its mother died), cited as an objection and explained away; minimal and legal."},
+"12": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2, 3], "reason": "At Rav Hisda's death the mourners plan actions and are corrected by two sages; the death is the event, the rest is mainly speech and rulings."},
+"13": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rain falls and the sages enter the synagogue, justifying it as for study; real events with little change, cited as an illustration of a law."},
+"14": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Two students report dreams to Rava and he interprets them; the dreams are events but the passage is mainly speech with no conflict or change."},
+"15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Habitual practices of Shmuel, Rav Huna and Rava with such bread, cited as their halakhic views; customs that lead nowhere."},
+"16": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Yehuda falls ill, recovers and is visited; real events, but the point is the blessing exchange and its halakhic discussion."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An exchange of praise between Rabbi and R. Yishmael b. R. Yosei; speech only, with no event and no real conflict."},
+"18": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "R. Yohanan asks the money changer for a coin and stops him from rising; small actions, mainly framing a halakhic dictum."},
+"19": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav's finding a scroll is a single act cited as the source of a teaching, followed by his comment; nothing develops."},
+"20": {"verdict": "borderline", "rules": ["R-C3", "R-C7"], "segments": [2], "reason": "Rav Hilkiya bar Tovi's farming practice produces a double yield he sells as fine flour; a habit with a result, but cited as evidence of a method with little drama."}
+}

@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3], "reason": "Fasts are decreed and rain falls (real events), but what follows is a halakhic correction and Shmuel HaKatan's parable; mainly speech with little change."},
+"02": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "A question and answer, plus a bare report that ben Elasa spent money on a haircut; nothing follows."},
+"03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic query sent and answered twice; quasi-speech acts with no event or conflict."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of Shmuel's transaction cited as evidence for his ruling; no one responds and nothing follows."},
+"05": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Tenant farmers stole and Rav Zevid disqualified them as witnesses: real events plus a ruling that is itself an act, but minimal narrative development."},
+"06": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "A certain man coerced by gentiles shows and carries Rav Mari's wine, then Rav Ashi rules and defends his ruling: an incident with several actions resolved by a ruling, R-C0's cow shape."},
+"07": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Elazar's instruction to his attendant is cited as his practice; no event follows."},
+"08": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "An exegetical narrative about Abraham, Eliezer and God at the tent; biblical characters."},
+"09": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A bare report of how Rav acquired the garden, cited as proof of his ruling."},
+"10": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Yohanan rebukes a recitation of a baraita; ordinary scholarly speech, not conflict in R-C2's sense."},
+"11": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Someone disparages the late Mar Shmuel and a reed falls and fractures his skull: two events with implied causality and change."},
+"12": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "The people of Nineveh send a halakhic question and Rabbi answers; question and answer only."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An elder explains a teaching to R. Ami; pure speech."},
+"14": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A visit that only frames a halakhic question about a mezuza; setting plus question is not a story."},
+"15": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Incidents alluded to only as precedents for rulings; one event then a ruling, nothing narrated."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Yehoshua's instruction to his sons is cited as practice and then analysed; no event."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Yehoshua sends word that R. Yishmael erred and states his view; ordinary halakhic dispute."},
+"18": {"verdict": "not", "rules": [], "segments": [], "reason": "Avimi's arrival only introduces a baraita; legal discussion."},
+"19": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "Rav Pappa bar Shmuel's instruction to his attendant and Rava's halakhic correction; setting plus ruling, no further event."},
+"20": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Two students each prevent R. Yitzhak Nappaha from teaching, and he answers with a parable; conflict, but mainly speech."}
+}

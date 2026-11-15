@@ -303,6 +303,16 @@ def test_g6_gemini_failed_row_missing_unit_and_wrong_prompt_are_red(tmp_path):
     assert C.g6_judge(build(tmp_path / 'c', m3), 'gemini').status == 'red'
 
 
+def test_g6_a_re_pin_keeps_outputs_judged_under_an_earlier_register_green(tmp_path):
+    """Re-pinning (Simon 2026-11-13: Jeff's 2026-11-12 rules moved the prompt sha) adopts the new register for NEW
+    judge runs; an output is judged by the register it was run under, so the earlier pin must stay green."""
+    assert C.JUDGE_PROMPT_SHA not in C.EARLIER_JUDGE_PROMPT_SHAS and '84bfb33fd32a' in C.EARLIER_JUDGE_PROMPT_SHAS
+    for k, sha in enumerate([C.JUDGE_PROMPT_SHA, *C.EARLIER_JUDGE_PROMPT_SHAS]):
+        def m(f, sha=sha):
+            f['results/consensus/tamid/gemini.json']['meta']['prompt_sha'] = sha
+        assert C.g6_judge(build(tmp_path / str(k), m), 'gemini').status == 'green', sha
+
+
 def _rulings(f, g4=(), alone=None):
     f['results/shas_run/decisions.json'] = {'g4_accepted': {'tractates': list(g4)},
                                             'claude_alone': {'units': alone or {}}}

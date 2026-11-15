@@ -58,6 +58,16 @@ thinking is what we follow. So a conflict between a list entry and a settled rul
 question for him** — apply the rule and annotate the entry. Ask only when the rule itself is
 unclear.
 
+**The Eruvin list is the least refined of the five — Jeff, 2026-11-12**, returning 20 of its
+entries 19 `no` and 1 `borderline`: *"I looked back at the list I sent you and these are all
+flagged as questionable. When we made these lists we initially included everything that
+could be even considered a story, and then eliminated those that did not make the cut. At
+least for the other tractates. This list seems to just be the preliminary list before
+refining."* The 20 are annotated in `superseded_by_rule.json` (`rule: jeff-verdict`,
+`scripts/apply_jeff_2026-11-12_verdicts.py`); the list itself is unchanged. Expect other
+Eruvin entries of the same shapes to be questionable too — but only the 20 he ruled on
+leave the denominator.
+
 **Why not just fix the evidence.** The blind lists are the only thing in this project that
 can tell us we are wrong. Editing them toward our own output turns the ruler into a mirror
 — and the composite already taught us what that feels like: deleting expert validations
@@ -98,6 +108,13 @@ post-biblical figures."*
 - **Applied:** Gittin 57b:0-4 and 68a:7-12 are in `gittin_canonical.json`'s
   `out_of_scope` list — neither entries nor unlabelled (`build_gittin_golden.py`). In the
   twin-pass question since 2026-09-25.
+- **An exegetical narrative built on biblical events is out of scope — Jeff, 2026-11-12**,
+  on Berakhot 54a-54b (the two lepers Et and Hev, *"Vahev in Sufa"*): *"Not a story for our
+  database. This is a story based on the biblical events, an exegetical narrative. We are
+  collecting sage-stories of post biblical times."* So a midrashic retelling of a biblical
+  episode is `OUT_OF_SCOPE` like a plain retelling, even when the Talmud elaborates it.
+  **For the site:** the 54b half ships today as `berakhot-54b-0-0` (Simon graded it yes in
+  the precision sample); the Septimus step decides it, not this register.
 - **Edges, open** (`jeff:scope-edges`): Elijah appearing to a rabbi (Gittin 6b, Kiddushin
   40a); a biblical exemplum cited *inside* a rabbinic story (Kiddushin 32b, Abraham
   serving guests); post-biblical non-rabbis (Titus, King Yannai, Agrippa). All three are
@@ -147,6 +164,17 @@ post-biblical figures."*
   creates more dynamism, that is, more change. … Had the rabbi just stated something,
   ('Said R. Ami...') it would not even be borderline."* Yevamot 45a:16 (2B) and Gittin
   89a:19 (2C), a case before a rabbi and his ruling: **not**.
+- **Narrative inside the legal give-and-take is hypothetical — Jeff, 2026-11-12**, Arakhin
+  23b:0-1 (Moshe bar Atzrei as guarantor of his son Rav Huna's ketubah, shipped YES/HIGH):
+  *"Not a story. The narrative elements appear within the give and take of the legal
+  discussion to work out the law. They are hypothetical or possible answers, not events."*
+  The July line (*"Legal problems/cases are hypothetical"*) extends to named people: a
+  scenario the Gemara proposes to resolve a difficulty is not an event, even when it names a
+  real sage and his son.
+- **A Mishnah story retold as a baraita is a story — Jeff, 2026-11-12**, Sanhedrin 52b:4
+  (R. Elazar b. R. Tzadok on his father's shoulders): *"this story basically appears in the
+  Mishnah (Sanhedrin 7:2) in slightly different form. Here it is indeed presented as a
+  baraita. I think it could be included."* Consistent with R-C1.
 - **Applied:** `scripts/apply_jeff_2026-10-25_verdicts.py`. Its `direct` tier is the
   passages he named; its `description` tier is his own February borderlines whose note
   names this shape (Ketubot 53a:12; held back: 54a:13-14, where Rav Nahman changes his ruling, and 77a:8, the Mishnah story he affirmed under R-C1) — "similar ones" is his word, which
@@ -199,6 +227,17 @@ borderline."* (Being mocked is conflict; it is not an event.)
 - **Teaching is speech — Jeff, 2026-10-07**, Ketubot 50a:10 (learned forty times *"as if in
   his pocket"*): *"since it is mainly about rabbinic teaching, speech-acts, I would still
   consider it borderline."* Added to the golden as `BORDERLINE`.
+- **A setting plus a question and answer is not a story — Jeff, 2026-11-12**, Shabbat
+  147a:6 (*"Ulla happened to come to the house of Asi bar Hini…"*, shipped YES/HIGH; Simon had
+  graded it borderline): *"Not a story. This is a legal ruling, a question and answer. It
+  start with the setting, that Ulla visited Asi bar Hini. But that is not enough for a
+  story."* A visit that only frames the question is not the second event.
+  **Settles `jeff:question-and-answer` by rule:** Yevamot 78b:9 (yevamot_051, the students
+  ask R. Eliezer about a *mamzeret* and he answers) has the question and answer and not even
+  the setting, so it is `not`. Not named by him — annotated with `tier: rule` in
+  `superseded_by_rule.json`, and it leaves the Yevamot recall denominator: 100 → 99, recall
+  of the artifact on disk 89/100 → 88/99 (that run had found it). The v13/v14 slice counted
+  that one drop against them; under this rule it was a correct rejection.
 - **Implied by it:** `borderline` must be a first-class verdict, which the axis review UI
   emits and the pipeline does not yet.
 
@@ -324,6 +363,16 @@ together they fall into four shapes. Each line below is his, on the passage name
 3. **Events, but weak causality or little change.** *"There are two events but no
    causality"* (Ketubot 14b); *"minimal causality. But there is some, and some change"*
    (Ketubot 50b:6); *"The change in outcome is absent, or at best, implied"* (Ketubot 100b).
+   **Three more, Jeff 2026-11-12** (the Septimus precision sample): Chullin 57b:6-7, R. Shimon
+   b. Halafta's hen splinted with a reed — *"Some would count it a minimal story: you have a
+   protagonist, two events (the splinting, the hen living) and change. If the choice were
+   story or not, I would say story. But if we have the option for borderline story, I think it
+   is borderline"*; Chullin 46a:8 — *"There are two events the dialogue is not really connected
+   to the events"*; Niddah 7b:4-5 — *"The return of the practice could be a literary ruling,
+   not a real event. Even if it is, there is not much drama or development."* The 57b line
+   matters beyond its case: **forced to two columns, a minimal story goes to *story*.** So
+   borderline sits on the story side of the line, which is why the definite-only site filter
+   leaving borderlines out is a choice about display, not a judgment that they are not stories.
 4. **An incident only alluded to** — R-C6. (Narrowing this to "sketched, not merely named"
    was reverted with shape 2: Ketubot 60b:7-9 and 74a:11 are named-only incidents he called
    borderline himself; Gittin 46a and 74b are named-only incidents he called `not`.)
@@ -396,6 +445,12 @@ story."*
   entry `kiddushin_041` and his 2026-04-23 note both start there). In the twin-pass
   question since 2026-09-25 — Yevamot 15a:14, one of his three twin-pass rejections, is the
   Gemara's commentary on the story beside it (the other two are R-C5).
+- **The Talmud discussing a story already told is legal discussion, not a new story —
+  Jeff, 2026-11-12**, Pesachim 66b:4 (*"This is precisely what the sons of Beteira asked
+  Hillel…"*, shipped YES/HIGH): *"Not a story. Similar to the last case. This is the Talmud
+  discussing a story that appeared previously and trying to make sense of it. But it is a
+  legal discussion."* R-B4 on the boundary axis becomes, when the commentary stands alone on
+  a later page, a classification: `NOT_A_STORY`. The story itself stays where it is told.
 
 ---
 
