@@ -71,9 +71,12 @@ def problems_with(rec, story):
         if HEBREW.search(str(rec.get(f) or "")):
             out.append(f"{f} contains Hebrew")
     english = fold(TAG.sub(" ", " ".join(g["en"] for g in story["segments"])))
+    titles = {"rabbi", "rav", "rabbah", "rabba", "reish", "rabban", "r", "son", "of", "the", "bar", "ben", "daughter",
+              "wife", "students", "servant", "and", "first", "second", "sage"}
     for p in rec.get("people") or []:   # a named person must actually be in the story
-        key = re.sub(r"^(rabbi|rav|rabbah|rabba|reish|rabban|r)\s+", "", fold(p.get("name", ""))).split()
-        if key and key[0] not in english:
+        # "Rava's servant" -> rava; any distinctive word of the name will do (spellings vary: Hananya / Hanania)
+        words = [w for w in fold(re.sub(r"['’]s\b", "", p.get("name", ""))).split() if w not in titles and len(w) > 2]
+        if words and not any(w in english for w in words):
             out.append(f"person '{clean(p.get('name'), 80)}' not found in the English")
     return out
 

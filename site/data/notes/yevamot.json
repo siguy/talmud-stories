@@ -24,7 +24,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is asking whether Beit Shammai actually put their rulings into practice where they differed from Beit Hillel. This incident is offered as evidence that they did, and the Gemara deflects it."
   },
   "yevamot-15b-1-4": {
    "note": "Rabbi Elazar bar Tzadok saw his teacher, Rabbi Yoḥanan the Ḥorani, eating only dry bread and salt in a drought year. He brought olives, but the teacher politely refused them, fearing they were damp and so ritually impure. Elazar's father explained that the olive barrel had a hole that later got clogged, so the olives were not made susceptible to impurity. The passage ends by noting the teacher always followed Beit Hillel, and concludes that Beit Shammai did generally act on their own rulings.",
@@ -49,7 +49,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is gathering evidence on whether Beit Shammai acted on their own rulings. It argues that praising Rabbi Yohanan for following Beit Hillel makes sense only if Shammai's disciples normally followed Shammai."
   },
   "yevamot-16a-2-11": {
    "note": "The Sages heard that Rabbi Dosa ben Harkinas, who was very old and nearly blind, had ruled that a certain woman was permitted. A group (Rabbis Yehoshua, Elazar ben Azarya and Akiva) visited him, and he said the law follows Beit Hillel; the other ruling, he explained, came from his sharp younger brother Yonatan. Leaving by three doors, they looked for Yonatan, and Akiva met him and answered all his objections. Yonatan then insulted Akiva, who replied modestly that he had not reached even the level of shepherds.",
@@ -86,28 +86,33 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara had quoted only the opening line, as evidence that Beit Shammai's view was once followed in practice; here it tells the whole incident. Afterward it explains Haggai's other two rulings."
   },
   "yevamot-21b-1-2": {
-   "note": "Rav Ḥisda recalls hearing Rabbi Ami say, when he was young, that a daughter-in-law was forbidden only because of another daughter-in-law, and he did not understand it. Astrologers told him he would be a teacher, so he reasoned that either he would understand it himself or could ask others. Now he understands it as follows: the ban on one's daughter's daughter-in-law was made so she would not be confused with one's son's daughter-in-law, and it does not extend further.",
+   "note": "Rav Hisda recalled hearing from a great man, Rabbi Ami, that the Sages forbade a daughter-in-law only because of a daughter-in-law, and not understanding it. Chaldean astrologers had told him he would be a teacher. He said to himself: if I become a great teacher, I will work it out on my own; if I become a teacher of children, I will ask the Sages who come to the synagogue. Now, he said, he had worked it out himself: a man's daughter's daughter-in-law was forbidden only because she could be confused with his son's daughter-in-law.",
+   "why": "The Gemara is listing relatives forbidden by the Sages rather than by the Torah, and has just corrected one item on Rav's list to read his daughter's daughter-in-law. Rav Hisda's account supplies the reason for that prohibition.",
    "people": [
     {
      "name": "Rav Ḥisda",
-     "about": "tells the story"
+     "about": "Tells how he came to understand a teaching he heard from Rabbi Ami."
     },
     {
      "name": "Rabbi Ami",
-     "about": "the teacher he heard it from"
+     "about": "The great man whose short teaching Rav Hisda heard."
     }
    ],
    "terms": [
     {
-     "term": "Chaldean astrologers",
-     "meaning": "Star-readers who claimed to predict a person's future."
+     "term": "Chaldeans",
+     "meaning": "Astrologers who foretold a person's future; here they predict Rav Hisda will become a teacher."
+    },
+    {
+     "term": "forbidden relatives",
+     "meaning": "Relatives one may not marry. Some are forbidden by the Torah; the Sages added others so that people would not confuse them with the Torah's cases."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-25b-4-4": {
    "note": "An armed bandit being led out for execution told bystanders to tell the wife of Shimon the Priest that he had killed her husband near Lod, and the court allowed her to remarry on that basis. This was brought as proof that a murderer's own statement is accepted. Rabbi Yehuda rejected the proof: the bandit had said only that he was with the murderers, not that he did the killing himself.",
@@ -128,7 +133,36 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The mishna lets a woman remarry on a witness who says I killed him, while Rabbi Yehuda accepts only we killed him, which Rav Yehuda reads as I was with his murderers. This teaching is the basis for that distinction; the Gemara then explains how a mere accomplice was executed."
+  },
+  "yevamot-34b-6-6": {
+   "note": "Ravin brought Rabbi Yohanan's teaching that a woman who waits ten years after her husband before marrying again can no longer bear children; Rav Nahman said this applies only if she did not intend to remarry. Rava told his wife, the daughter of Rav Hisda, that the Sages were gossiping about her, since, as the translation explains, she had borne him children after more than ten years without a husband. She answered: My mind was on you.",
+   "why": "The Gemara has been discussing sexual relations that cannot lead to pregnancy; it moves to this teaching about when a woman can still conceive, and Rava's exchange shows Rav Nahman's limit on it.",
+   "people": [
+    {
+     "name": "Ravin",
+     "about": "Brings Rabbi Yohanan's teaching from the Land of Israel."
+    },
+    {
+     "name": "Rabbi Yoḥanan",
+     "about": "The Sage whose teaching about ten years Ravin reports."
+    },
+    {
+     "name": "Rav Naḥman",
+     "about": "Limits the teaching to a woman who did not intend to remarry."
+    },
+    {
+     "name": "Rava",
+     "about": "Tells his wife that the Sages are gossiping about her."
+    },
+    {
+     "name": "daughter of Rav Ḥisda",
+     "about": "Rava's wife, who answers that her mind was on him."
+    }
+   ],
+   "terms": [],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-34b-7-7": {
    "note": "A woman came to Rav Yosef and said she had waited ten years after her husband's death and still gave birth. Rav Yosef told her not to cast doubt on the Sages' statement. She then confessed that she had had intercourse with a non-Jew during those ten years.",
@@ -140,32 +174,33 @@
    ],
    "terms": [],
    "approved": true,
-   "why": ""
+   "why": "Rabbi Yohanan has taught that a woman who waits ten years after her husband before remarrying can no longer conceive. The woman's case looks like a challenge to that teaching, and her confession shows it is not one."
   },
   "yevamot-37b-5-8": {
-   "note": "Rav, visiting Dardeshir, and Rav Naḥman, visiting Shakhnetziv, each announced that he wanted a woman to be his wife for the day, apparently showing that this was allowed. The Gemara replies that famous Sages are different, since their children are always known as the Sage's. It then explains that they sent word seven days ahead so the women could count seven clean days before marrying, or that they only meant to be in private with the woman and avoid improper thoughts.",
+   "note": "When Rav came to Dardeshir, he publicly announced: Who will be my wife for the day? Rav Nahman made the same announcement when he came to Shakhnetziv. The Gemara answers that Sages are different, since their names are famous and their children will always be known. It also explains how they could marry on arrival: they sent messengers ahead so the woman could count seven clean days, or else they only spent time alone with her, since, as the saying goes, one who has bread in his basket is not like one who has none.",
+   "why": "Rabbi Eliezer ben Yaakov has just taught that a man should not marry wives in two countries, lest his children meet and unknowingly marry each other. The Gemara cites these two Sages' conduct as a challenge to that teaching.",
    "people": [
     {
      "name": "Rav",
-     "about": ""
+     "about": "A Sage who, visiting Dardeshir, announced he was seeking a wife for his stay."
     },
     {
      "name": "Rav Naḥman",
-     "about": ""
-    },
-    {
-     "name": "Rava",
-     "about": "cited for the rule about seven clean days"
+     "about": "A Sage who did the same when visiting Shakhnetziv."
     }
    ],
    "terms": [
     {
      "term": "seven clean days",
-     "meaning": "A woman who may have had a menstrual flow counts seven days without any flow and then immerses in a ritual bath before she may be with her husband."
+     "meaning": "After possible menstrual bleeding, a woman counts seven days without bleeding and immerses in a ritual bath before marital relations are permitted."
+    },
+    {
+     "term": "seclusion",
+     "meaning": "Being alone together with a woman. Here the Gemara suggests the Sages married only for companionship, not relations."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-45a-3-3": {
    "note": "Rabbi Aḥa and Rabbi Tanḥum ransomed captives from Armon and brought them to Tiberias. One woman had become pregnant by a non-Jew, and they asked Rabbi Ami what the child's status would be. He answered that Rabbi Yoḥanan, Rabbi Elazar and Rabbi Ḥanina all say that the child of a non-Jew or slave and a Jewish woman is a mamzer.",
@@ -190,7 +225,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is debating the status of a child born to a Jewish woman and a gentile or slave. Rav Yosef then answers that counting names proves nothing, and lists Sages who rule such a child of unflawed lineage."
   },
   "yevamot-45a-11-15": {
    "note": "A man asked Rav about the status of a child of a non-Jew or slave and a Jewish woman, and Rav said the child's lineage is unflawed. The man, who was such a child, asked to marry Rav's daughter, but Rav refused, and Rav's grandson pointed out that this seemed to contradict his own ruling. Rav said he refused for other reasons, but the man kept pleading and would not leave. In the end Rav fixed his eyes on him and the man died.",
@@ -211,7 +246,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Abaye has argued that Rabbi Yehuda HaNasi permits such a child to marry within Israel. The Gemara brings this incident to show Rav ruled the same way, then lists other Sages who did too."
   },
   "yevamot-46a-2-2": {
    "note": "A convert named Beloreya had slaves who immersed in the ritual bath for conversion before she did. The case came before the Sages, who ruled that the slaves had acquired themselves and become free. Rav Ḥisda used this to raise a difficulty: it seems that had they immersed after her, they would not have become free. This conflicts with an earlier explanation in the Gemara.",
@@ -236,36 +271,41 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Rav has ruled that a slave bought from a gentile who immerses for conversion before his new Jewish owner immerses him goes free. Rav Hisda infers from this case that had they immersed after her they would not have gone free, and raises it as a challenge; Rava answers it."
   },
   "yevamot-46a-9-9": {
-   "note": "Rav Ashi wished to have his slave Minyamin immersed in the ritual bath and gave him to Ravina and Rav Aḥa. He warned that he would claim compensation from them if they did not stop the slave from immersing for conversion. They put a bridle on the slave's neck, loosened it at the moment of immersion, then tightened it again right away while he was still in the water.",
+   "note": "When Rav Ashi wanted to immerse his slave Minyamin, he handed him over to Ravina and Rav Aha son of Rava and told them he would hold them responsible for him. They put a bridle on Minyamin's neck; at the moment of immersion they loosened it, and then tightened it again.",
+   "why": "Shmuel has just said an owner must hold his slave firmly in the water, so that the immersion counts as entering slavery rather than conversion to freedom. This incident shows how it was done; the Gemara then explains each step.",
    "people": [
     {
-     "name": "Rav Ashi",
-     "about": "the slave's owner"
+     "name": "Minyamin",
+     "about": "Rav Ashi's slave, who is being immersed."
     },
     {
-     "name": "Minyamin",
-     "about": "Rav Ashi's slave"
+     "name": "Rav Ashi",
+     "about": "Minyamin's owner, who hands him to two Sages for the immersion."
     },
     {
      "name": "Ravina",
-     "about": ""
+     "about": "One of the two Sages who perform the immersion."
     },
     {
-     "name": "Rav Aḥa",
-     "about": "son of Rava"
+     "name": "Rav Aḥa, son of Rava",
+     "about": "The other Sage who performs the immersion."
     }
    ],
    "terms": [
     {
-     "term": "arvisa",
-     "meaning": "A bridle or restraint placed on the neck."
+     "term": "immerse",
+     "meaning": "A gentile slave acquired by a Jew is immersed in a ritual bath. If the slave declares it is for conversion as a free man, he goes free."
+    },
+    {
+     "term": "bridle",
+     "meaning": "A strap placed on the slave's neck to show the owner's control during the immersion."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-46a-13-14": {
    "note": "Rabbi Ḥiyya bar Abba visited Gavla and saw several things that troubled the rules: women pregnant by men who were circumcised but had not yet immersed to finish converting, wine being poured by non-Jews, and lupines cooked by non-Jews that Jews were eating. He said nothing there, but reported it to Rabbi Yoḥanan. Rabbi Yoḥanan told him to announce publicly that the children were mamzerim and the wine and lupines forbidden, being strict because the townspeople were not learned and might otherwise slip into real violations.",
@@ -290,28 +330,45 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has been discussing immersion as the step that completes a conversion. Afterward it shows Rabbi Yohanan's ruling follows his own views: no one is a convert until circumcised and immersed, and a gentile's child with a Jewish woman is a mamzer."
   },
   "yevamot-46b-13-13": {
-   "note": "In the house of Rabbi Ḥiyya bar Rabbi, a convert came who had been circumcised but had not yet immersed in the ritual bath. The Sage told him to stay until the next day, and then they would immerse him. The passage ends there. It does not say whether the immersion happened, and it gives no reason for the wait.",
+   "note": "Rabba told of an incident in the house of Rabbi Hiyya bar Rabbi. In Rav Yosef's version Rabbi Oshaya bar Rabbi was also there, and in Rav Safra's version Rabbi Oshaya son of Rabbi Hiyya as well. A convert came who had been circumcised but not yet immersed, and he was told: stay here until tomorrow, and we will immerse you.",
+   "why": "The Gemara has been debating whether circumcision or immersion completes a conversion. Rabba then draws three rules from this incident: a conversion needs a court of three, it needs both circumcision and immersion, and a convert is not immersed at night.",
    "people": [
     {
-     "name": "Rabbi Ḥiyya bar Rabbi",
-     "about": "in whose house it happened"
+     "name": "Rabba",
+     "about": "Reports the incident and draws rules from it."
     },
     {
-     "name": "Rabbi Oshaya",
-     "about": "another Sage present, according to one version"
+     "name": "Rabbi Ḥiyya bar Rabbi",
+     "about": "In whose house the convert came."
+    },
+    {
+     "name": "Rabbi Oshaya bar Rabbi",
+     "about": "Present, in the version Rav Yosef teaches."
+    },
+    {
+     "name": "Rabbi Oshaya, son of Rabbi Ḥiyya",
+     "about": "Also present, in the version Rav Safra teaches."
+    },
+    {
+     "name": "Rav Safra",
+     "about": "Teaches the version with three Sages present."
     }
    ],
    "terms": [
     {
-     "term": "immersion",
-     "meaning": "Dipping in a ritual bath, a required step in conversion."
+     "term": "convert",
+     "meaning": "A person joining the Jewish people. For a man this requires circumcision and immersion in a ritual bath."
+    },
+    {
+     "term": "immerse",
+     "meaning": "Dip fully in a ritual bath, the final step of conversion."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-47a-7-7": {
    "note": "A man known as Jewish told Rabbi Yehuda that he had actually converted in private, so he was not truly Jewish. Rabbi Yehuda asked if he had witnesses, and he did not, and he had children. Rabbi Yehuda ruled that he is believed about himself, so he is barred from marrying a Jewish woman, but he is not believed in a way that would make his children unfit.",
@@ -323,7 +380,37 @@
    ],
    "terms": [],
    "approved": true,
-   "why": ""
+   "why": "Rabbi Yehuda has just ruled that a conversion done in private, without a court, is not valid. The Gemara then asks how his ruling here fits his other teaching that a father is believed about his children's status, and offers two explanations."
+  },
+  "yevamot-48b-12-12": {
+   "note": "Three Sages, Rabbi Hanina bar Pappi, Rabbi Ami and Rabbi Yitzhak Nappaha, were sitting in Rabbi Yitzhak Nappaha's courtyard and talking. They recalled a city in the Land of Israel whose slaves refused to be circumcised. The masters put up with them for twelve months and then sold them to gentiles. The Sages asked whose opinion the townspeople had followed; the story itself does not give the answer.",
+   "why": "The discussion is about when a Jewish master may keep an uncircumcised slave. The Gemara answers the Sages' question with a teaching that a master may wait up to twelve months before selling such a slave to gentiles.",
+   "people": [
+    {
+     "name": "Rabbi Ḥanina bar Pappi",
+     "about": "One of the three Sages talking in the courtyard."
+    },
+    {
+     "name": "Rabbi Ami",
+     "about": "One of the three Sages talking in the courtyard."
+    },
+    {
+     "name": "Rabbi Yitzḥak Nappaḥa",
+     "about": "One of the three Sages; the conversation takes place in his courtyard."
+    }
+   ],
+   "terms": [
+    {
+     "term": "Eretz Yisrael",
+     "meaning": "The Land of Israel."
+    },
+    {
+     "term": "gentiles",
+     "meaning": "Non-Jews."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-59b-6-6": {
    "note": "Rav Dimi reported from Eretz Yisrael that a girl in the village of Hitlu was sweeping her house when a hunting dog sexually violated her from behind. Rabbi Yehuda HaNasi ruled she was still permitted to marry a priest, because she was not considered a zona (a woman disqualified from marrying a priest). Shmuel added that she was even fit for a High Priest, since she was still considered a virgin, and the Gemara clarifies he meant she would be fit for one.",
@@ -348,36 +435,37 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Rabbi Shimi bar Hiyya has just ruled that a woman who had intercourse with an animal is not considered a harlot and may marry a priest; this case is the precedent. The Gemara then asks for the verse showing there is no harlotry with an animal."
   },
   "yevamot-60b-14-14": {
-   "note": "In a city in Eretz Yisrael, the lineage of one family was disputed, so Rabbi Yehuda HaNasi sent Rabbi Romanus to check. He found that the family included the daughter of a convert who had converted before the age of three years and a day, and who had married a priest. Rabbi Yehuda HaNasi allowed her to stay married to the priesthood, which shows Rabbi Yehoshua ben Levi ruled like Rabbi Shimon, as Rabbi Ya'akov bar Idi confirmed.",
+   "note": "Rabbi Yehoshua ben Levi told of a city in the Land of Israel where a family's lineage was challenged. Rabbi Yehuda HaNasi sent Rabbi Romanus to investigate. He found that the family included a woman who had converted before she was three years and a day old and had married a priest, and Rabbi Yehuda HaNasi ruled she was permitted to the priesthood. When Rabbi Zeira asked whether he had drawn his ruling from this case, Rabbi Ya'akov bar Idi said he had heard it from Rabbi Yehoshua ben Levi explicitly.",
+   "why": "Rabbi Ya'akov bar Idi had reported that Rabbi Yehoshua ben Levi rules like Rabbi Shimon ben Yohai, who permits a girl converted before age three to marry a priest. Rabbi Zeira wanted to know whether this was said outright or only inferred from this case.",
    "people": [
     {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "sent Rabbi Romanus and permitted the woman"
+     "name": "Rabbi Yehoshua ben Levi",
+     "about": "The Sage who reported the case."
+    },
+    {
+     "name": "Rabbi",
+     "about": "Rabbi Yehuda HaNasi, who sent an investigator and permitted the woman to the priesthood."
     },
     {
      "name": "Rabbi Romanus",
-     "about": "investigated the lineage"
-    },
-    {
-     "name": "Rabbi Yehoshua ben Levi",
-     "about": "tells the story"
+     "about": "The Sage sent to examine the family's lineage."
     },
     {
      "name": "Rabbi Ya'akov bar Idi",
-     "about": "confirms the ruling"
+     "about": "Transmitted Rabbi Yehoshua ben Levi's ruling and insists he heard it directly."
     }
    ],
    "terms": [
     {
-     "term": "less than three years and one day",
-     "meaning": "The age limit in this discussion: a girl who converts younger than this is treated as a virgin for the purpose of marrying a priest."
+     "term": "three years and one day",
+     "meaning": "The age below which, in Talmudic law, intercourse does not count as removing a girl's virginity. A girl converted before then could be treated as never having had relations as a gentile."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-60b-18-18": {
    "note": "A priest married a woman who had converted before the age of three years and a day. Rav Naḥman bar Yitzḥak asked him why he was breaking the law, and the priest answered that Rabbi Ya'akov bar Idi quoted Rabbi Yehoshua ben Levi as ruling like Rabbi Shimon ben Yoḥai, who allows it. Rav Naḥman told him to divorce her, or he would remove Rabbi Ya'akov bar Idi from his ear, meaning he would act so the priest could no longer rely on that opinion.",
@@ -406,7 +494,53 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has just shown that Rabbi Yehoshua ben Levi rules like Rabbi Shimon ben Yohai on such a convert marrying a priest. This case shows a Sage refusing to rely on that ruling in practice."
+  },
+  "yevamot-61a-5-7": {
+   "note": "Yehoshua ben Gamla, a priest, betrothed Marta bat Baitos, a widow. The king then appointed him High Priest, and he went ahead and married her. Rav Yosef saw a conspiracy in the wording that the king appointed him, and cited Rav Asi: Marta bat Baitos brought King Yannai a vessel full of dinars until he made Yehoshua ben Gamla High Priest.",
+   "why": "The mishna rules that a priest who betrothed a widow and was then appointed High Priest may still marry her, and cites this marriage as the example. The Gemara then reads the wording closely and finds that the appointment was bought.",
+   "people": [
+    {
+     "name": "Yehoshua ben Gamla",
+     "about": "A priest who betrothed a widow and was then made High Priest."
+    },
+    {
+     "name": "Marta bat Baitos",
+     "about": "The widow he betrothed; Rav Asi says she paid the king to appoint him."
+    },
+    {
+     "name": "King Yannai",
+     "about": "The king who made Yehoshua ben Gamla High Priest."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "A Sage who saw a conspiracy behind the appointment."
+    },
+    {
+     "name": "Rav Asi",
+     "about": "The Sage who reported the payment to the king."
+    }
+   ],
+   "terms": [
+    {
+     "term": "betrothed",
+     "meaning": "The first stage of Jewish marriage, which already makes the couple legally bound; the wedding itself comes later."
+    },
+    {
+     "term": "High Priest",
+     "meaning": "The chief priest of the Temple. The Torah forbids him to marry a widow."
+    },
+    {
+     "term": "yavam",
+     "meaning": "The brother of a man who died childless; he is obligated to marry the widow (levirate marriage) or release her."
+    },
+    {
+     "term": "tarkav",
+     "meaning": "A measure of volume, half a se'a, used here for the size of a vessel full of coins."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-62b-9-10": {
    "note": "Rabbi Akiva had twelve thousand pairs of students who all died in one period because they did not treat each other with respect, and the world was left empty of Torah. Rabbi Akiva then taught five new students in the South: Rabbi Meir, Rabbi Yehuda, Rabbi Yosei, Rabbi Shimon, and Rabbi Elazar ben Shamua, who carried the Torah forward. The Gemara adds that the twelve thousand pairs died between Passover and Shavuot, of what is called a bad death, which Rav Nahman says was diphtheria.",
@@ -438,8 +572,21 @@
      "meaning": "The holiday, seven weeks after Passover, marking the giving of the Torah."
     }
    ],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "The Gemara is discussing whether a man who already has children should have more. Rabbi Yehoshua reads a verse from Ecclesiastes to say yes, and Rabbi Akiva reads the same verse about students, which his own life illustrates."
+  },
+  "yevamot-63a-6-6": {
+   "note": "Rabbi Elazar taught that all craftsmen will one day work the land, and that no occupation is lowlier than farming. Seeing a field that had been plowed across its width, he said to the field that even if it were plowed lengthwise as well, doing business was better than farming it.",
+   "why": "The Gemara is stringing together sayings of Rabbi Elazar; this one leads into more sayings comparing trade with farming, from Rav, Rava and Rav Pappa.",
+   "people": [
+    {
+     "name": "Rabbi Elazar",
+     "about": "A Sage who speaks to a plowed field about how little farming pays."
+    }
+   ],
+   "terms": [],
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-63a-11-12": {
    "note": "Rabbi Chiyya wished Rav to be saved from something worse than death, and Rav found the verse about a woman more bitter than death. Rav's wife did the opposite of whatever he asked, such as cooking peas when he wanted lentils. When their son Chiyya grew up, he reversed Rav's requests when passing them on, so Rav got what he wanted. Rav praised the idea but told his son not to do it, since it means saying something untrue.",
@@ -464,7 +611,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is collecting sayings and stories about wives, good and bad; this one is followed by Rabbi Hiyya's own troubled marriage and more teachings on a bad wife."
   },
   "yevamot-63a-13-13": {
    "note": "Rabbi Chiyya's wife constantly aggravated him, yet he brought her gifts. He told Rav it is enough that wives raise the children and keep their husbands from sin, so they deserve thanks. Then Rav Yehuda, teaching his son Rav Yitzchak the verse about a woman more bitter than death, said it described the son's own mother. The Gemara notes that when he taught that a man finds peace only with his first wife, he again named the son's mother as the example. It resolves this: she was sharp but easily calmed.",
@@ -493,7 +640,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is gathering stories and sayings about wives, and goes on to define a bad wife and what a husband may do about one."
   },
   "yevamot-64b-10-10": {
    "note": "Rabbi Yochanan reported that in Tzippori, three sisters each circumcised a son and each baby died. The fourth sister asked Rabban Shimon ben Gamliel, who told her not to circumcise her son. The Gemara learns from this that he held a pattern becomes an established presumption only after it happens three times.",
@@ -518,7 +665,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is asking whether, for Rabban Shimon ben Gamliel, a pattern is set by two events or three. This case seems to show three, but the Gemara replies that the third sister may simply never have asked him, and that the case teaches that sisters together can set a pattern."
   },
   "yevamot-64b-13-13": {
    "note": "Rav Yitzchak bar Yosef reported an incident before Rabbi Yochanan in the synagogue of Maon, on a Yom Kippur that fell on Shabbat. Two sisters had each circumcised a son who then died. When the third sister came, Rabbi Yochanan told her to go ahead and circumcise her son, because a presumption of danger is not established after only two cases. This is cited as evidence that, in Rabbi Yochanan's view, a presumption is not established after only two occurrences.",
@@ -543,7 +690,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara asks what the final ruling is: does a pattern of deaths start after two cases or three? This report is its answer, three. Abaye warns Rav Yitzhak to be sure of his report, since it permits something forbidden and dangerous."
   },
   "yevamot-64b-15-15": {
    "note": "Relying on the ruling that a presumption needs three cases, Abaye married Chuma, whose first two husbands had both died. He did not worry that she was a woman whose husbands die. Abaye died while married to her as well.",
@@ -567,35 +714,45 @@
    ],
    "terms": [],
    "approved": true,
-   "why": ""
+   "why": "Rav Yitzhak bar Yosef had reported that a pattern is set only after three cases, so a woman widowed twice could remarry. Rava then criticizes Abaye: he himself had called that reporter unreliable, and a rule about circumcision need not apply to marriage."
   },
   "yevamot-65b-15-17": {
-   "note": "The first part is a similar case: a woman asks Rav Nachman for a divorce because she wants children to care for her, and he forces the husband to divorce her. The second part tells of Rabbi Chiyya's wife Yehudit, who suffered greatly giving birth to twin sons born two months apart. She disguised herself, asked Rabbi Chiyya if a woman must have children, heard no, and drank a potion to become infertile. When he found out, he wished she had borne one more set of twins, since their sons and daughters all became leading scholars or mothers of scholars.",
+   "note": "A woman came before Rav Nahman wanting a divorce because her husband could not father children. He told her she was not commanded to have children. She asked whether a woman like her does not need a staff for her hand and a hoe for her burial, and Rav Nahman said that in such a case the husband is forced to divorce her. Separately, Rabbi Hiyya's wife Yehudit suffered terribly giving birth to twins. In disguise she asked him whether a woman is commanded to have children; he said no, and she drank a potion to make herself infertile. When he found out, he said he wished she had borne him one more set of twins, since their sons Yehuda and Hizkiyya and daughters Pazi and Tavi were twins.",
+   "why": "The Gemara is asking whether a woman is commanded to have children, which decides whether she can demand a divorce from a husband who cannot father them. Both stories assume she is not, and the Gemara next tests that with a case that seems to show the opposite.",
    "people": [
     {
-     "name": "Rav Nachman",
-     "about": ""
+     "name": "Rav Naḥman",
+     "about": "A Sage who forced a husband to divorce his wife so she could have children to care for her."
     },
     {
-     "name": "Rabbi Chiyya",
-     "about": ""
+     "name": "Rabbi Ḥiyya",
+     "about": "A Sage whose wife asked him, in disguise, whether women must have children."
     },
     {
      "name": "Yehudit",
-     "about": "Rabbi Chiyya's wife"
+     "about": "Rabbi Hiyya's wife, who drank an infertility potion after painful births."
     },
     {
-     "name": "Yehuda and Chizkiyya",
-     "about": "Rabbi Chiyya's twin sons"
+     "name": "Yehuda and Ḥizkiyya",
+     "about": "Rabbi Hiyya's twin sons."
     },
     {
      "name": "Pazi and Tavi",
-     "about": "Rabbi Chiyya's twin daughters"
+     "about": "Rabbi Hiyya's twin daughters."
     }
    ],
-   "terms": [],
-   "approved": false,
-   "why": ""
+   "terms": [
+    {
+     "term": "fruitful and multiply",
+     "meaning": "The commandment to have children. The Sages here hold that it falls on men, not women."
+    },
+    {
+     "term": "marriage contract",
+     "meaning": "The ketuba, which sets the money a wife receives if she is divorced or widowed."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-66a-1-1": {
    "note": "A woman who was half-slave and half-free could marry neither a slave nor a Jew. Her master was forced to free her completely. The Gemara cites this to prove that women are commanded to have children, since presumably she was freed so she could marry and have them. Rav Nachman bar Yitzchak rejects the proof: the court forced her release because, unable to marry, she was behaving immorally, and freeing her saved her and others from sin.",
@@ -624,7 +781,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara had said women are not commanded to have children. This case seems to show they are, since her master was forced to free her so she could marry; Rav Nahman bar Yitzhak answers that she was freed to stop the sexual misconduct."
   },
   "yevamot-66b-7-8": {
    "note": "A woman brought a fine wool robe into her marriage, listed in her marriage contract. After her husband died, his orphaned children used the robe to cover his body as a shroud, and she demanded it back. Rava ruled that the dead man had acquired it, and it is forbidden to benefit from something set aside for the dead. When challenged with another ruling, Rav Kahana answered that the robe had not yet been collected by the woman, so it still belonged to the husband's estate and his heirs could make it a shroud.",
@@ -653,7 +810,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The discussion is about who owns property a wife brings into marriage at a fixed value: Rav Yehuda says she may take it back as a family heirloom. This case tests that view, and the Gemara links Rava's ruling to his rule that consecrating something frees it from a debt claim."
   },
   "yevamot-72b-3-6": {
    "note": "Rabbi Yochanan taught that notar, leftover sacrificial meat that must be burned, is burned only by day when burned at its proper time. Rabbi Elazar objected with a baraita about circumcision, which reads the word 'and' in a verse as extending the rule to other cases, and said the same hint appears for notar. Rabbi Yochanan had no answer. Afterward he told Reish Lakish how impressive this was, and Reish Lakish said it is a baraita found in Torat Kohanim. Rabbi Yochanan then learned the whole book in three days.",
@@ -686,53 +843,59 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has explained that two early Sages disagree over whether the word \"and\" in a verse makes a late circumcision a daytime-only act. This episode shows Rabbi Yohanan holding the same view about leftover sacrificial meat, and being challenged on it."
   },
   "yevamot-75a-18-18": {
-   "note": "The Gemara asks whether a man whose testicles were merely punctured is unable to have children, and recalls a man whose testicles were pierced by a palm-tree thorn while he climbed. The man later had children. The Gemara answers that Shmuel sent this case to Rav, who told him to investigate where the children came from, doubting the man could father children and suspecting his wife had committed adultery.",
+   "note": "A man was climbing a palm tree when a thorn pierced his testicles, and a discharge like a thread of pus came out of him. Later he had children. Shmuel sent the case to Rav, who told him to go and find out where the man's children came from.",
+   "why": "The discussion asks whether a man whose testicles were pierced counts as having crushed testicles, a condition that bars him from marrying into the community. The case seems to show such a man can father children, but Rav's reply suggests the children were not his.",
    "people": [
     {
      "name": "Shmuel",
-     "about": "sent the case to Rav"
+     "about": "The Sage who sent the case to Rav."
     },
     {
      "name": "Rav",
-     "about": "told him to inquire about the children"
+     "about": "The Sage who doubted the children were the man's own."
     }
    ],
    "terms": [
     {
      "term": "crushed testicles",
-     "meaning": "A physical injury that makes a man legally barred from marrying into the congregation of Israel."
+     "meaning": "An injury the Torah lists as barring a man from marrying a Jewish woman by birth (\"entering the congregation\")."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-75b-15-15": {
-   "note": "Two cases of men with injuries are brought to decide whether they may marry into the Jewish community. In one, Mar bar Rav Ashi trimmed the flesh so the man was fit. In the other, a man's seminal duct was blocked, and Rav Beivai bar Abaye was inclined to allow him. Rav Pappi sharply disagreed, saying that since the man cannot father children he is treated like one whose testicles are crushed, so he may not enter the congregation.",
+   "note": "In Mata Mehasya a man's member had been cut like an open gutter; Mar bar Rav Ashi trimmed it into the shape of a quill and declared him fit. In Pumbedita a man's seminal duct became blocked and he emitted semen through the urinary duct. Rav Beivai bar Abaye wanted to declare him fit. Rav Pappi mocked him, saying that coming from a short-lived family he spoke short-lived words, since semen that does not pass through its proper place does not fertilize.",
+   "why": "The discussion is about which injuries to the genitals bar a man from marrying into the community. Rav Pappa has just ruled that a cut shaped like a quill or a gutter is fit, and these cases apply that ruling and test where it stops.",
    "people": [
     {
      "name": "Mar bar Rav Ashi",
-     "about": ""
+     "about": "Reshaped an injured man's member and declared him fit."
     },
     {
      "name": "Rav Beivai bar Abaye",
-     "about": ""
+     "about": "Wanted to declare the Pumbedita man fit."
     },
     {
      "name": "Rav Pappi",
-     "about": ""
+     "about": "Mocked Rav Beivai's ruling and held the man unfit."
     }
    ],
    "terms": [
     {
-     "term": "enter the congregation",
-     "meaning": "Marry into the Jewish community; certain injuries disqualify a man from this."
+     "term": "fit",
+     "meaning": "Permitted to marry a Jewish woman by birth (\"enter the congregation\"), despite the injury."
+    },
+    {
+     "term": "truncated people",
+     "meaning": "Rav Pappi's insult: Rav Beivai's family was descended from the priest Eli, whose descendants were cursed to die young."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-77b-8-9": {
    "note": "Rav Shmuel bar Yehuda came from Eretz Yisrael and reported a baraita taught before Rabbi Yochanan about whether Ammonite women and their children are fit to marry into the congregation. Rabbi Yochanan told him to go teach it outside the study hall, meaning it is not accepted law. He said the first part was already well known and the second was unnecessary, since the son of an Ammonite is simply an Ammonite.",
@@ -761,40 +924,49 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Rabbi Yohanan has just been cited as permitting the daughter of an Ammonite convert and a Jewish woman to marry a priest. This teaching says she is unfit, so he rejects it as unreliable."
   },
   "yevamot-78a-12-12": {
-   "note": "Rava cited a baraita in which Rabbi Yehuda recalls his friend Minyamin, an Egyptian convert who studied with Rabbi Akiva. Minyamin said he married another first-generation Egyptian convert and planned to marry his son to a second-generation one so that his grandson would be fit to marry into the congregation. This seemed to challenge a rule, but the Gemara answers that Rabbi Yochanan told the teacher of the baraita to say instead that Minyamin sought to marry his son to a first-generation convert.",
+   "note": "Rabbi Yehuda recalls his friend Minyamin, an Egyptian convert who studied with Rabbi Akiva. Minyamin said that he, a first-generation Egyptian convert, had married another first-generation Egyptian convert, and that he planned to marry off his son to a second-generation Egyptian convert so that his grandson would be allowed to enter the congregation. The Gemara adds that Rabbi Yohanan told the teacher reciting this account to change it: Minyamin meant to marry his son to a first-generation convert.",
+   "why": "The Gemara is asking whether a child's generation is counted from the father or the mother. Rava uses Minyamin's plan to challenge the view, credited to Rabbi Yohanan, that the father decides; the corrected wording answers him.",
    "people": [
     {
-     "name": "Rava",
-     "about": "raised the objection"
-    },
-    {
      "name": "Rabbi Yehuda",
-     "about": "told of his friend Minyamin"
+     "about": "A Sage who reports what his friend Minyamin told him."
     },
     {
      "name": "Minyamin",
-     "about": "an Egyptian convert and student of Rabbi Akiva"
+     "about": "An Egyptian convert, a friend of Rabbi Yehuda and a student of Rabbi Akiva, planning whom his son should marry."
     },
     {
-     "name": "Rabbi Yochanan",
-     "about": "corrected the wording of the baraita"
+     "name": "Rava",
+     "about": "A Sage who cites this account as an objection."
+    },
+    {
+     "name": "Rabbi Yohanan",
+     "about": "A Sage who told the reciter to correct the wording of the account."
     }
    ],
    "terms": [
     {
+     "term": "Egyptian convert",
+     "meaning": "The Torah says Egyptians who join the Jewish people may marry into the community only from the third generation. A first- or second-generation Egyptian convert may not marry a born Jew."
+    },
+    {
      "term": "enter the congregation",
-     "meaning": "To be permitted to marry a Jew of full status."
+     "meaning": "To be allowed to marry a born Jew."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the first written collection of Jewish law."
     },
     {
      "term": "tanna",
-     "meaning": "A rabbi of the Mishnah period; here, one who recites such teachings by heart."
+     "meaning": "Here, a person whose job was to memorize and recite early teachings word for word."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-78b-11-11": {
    "note": "Rabbi Ami investigated a man in his neighborhood and declared him a mamzer, a person born from a forbidden union who is barred from marrying most Jews. The man went around weeping. Rabbi Ami told him not to be upset, because by making it publicly known he had given him life. The text says that once someone is publicly known as a mamzer, he and his descendants may survive.",
@@ -811,7 +983,41 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has just quoted Rav Yehuda that a mamzer who is publicly known survives, while one who is not known dies at the hand of Heaven. Rabbi Ami's words to the weeping man apply that teaching."
+  },
+  "yevamot-84a-2-2": {
+   "note": "Rabbi Yehuda HaNasi recalls going to learn Torah from Rabbi Elazar ben Shamua. The students there ganged up on him like the fighting roosters of Beit Bukya and would not let him study. He managed to learn only one thing: Rabbi Eliezer's ruling that a man who has intercourse with a hermaphrodite is liable to stoning, as if with a male.",
+   "why": "The mishna quotes Rabbi Eliezer's ruling about a hermaphrodite, and the Gemara has just shown that Rabbi Eliezer does not treat a hermaphrodite as a full male. This memory of Rabbi Yehuda HaNasi confirms the wording of that ruling.",
+   "people": [
+    {
+     "name": "Rabbi Yehuda HaNasi",
+     "about": "A Sage, called simply Rabbi, who tells of his attempt to study with Rabbi Elazar ben Shamua."
+    },
+    {
+     "name": "Rabbi Elazar ben Shamua",
+     "about": "The teacher whose students would not let Rabbi Yehuda HaNasi learn."
+    },
+    {
+     "name": "Rabbi Eliezer",
+     "about": "The Sage whose ruling on a hermaphrodite was the one thing Rabbi Yehuda HaNasi learned there."
+    }
+   ],
+   "terms": [
+    {
+     "term": "hermaphrodite",
+     "meaning": "A person with both male and female sexual organs, whose legal status the Sages debate."
+    },
+    {
+     "term": "stoning",
+     "meaning": "The severest form of court execution in Jewish law, prescribed for certain forbidden sexual acts, including relations between males."
+    },
+    {
+     "term": "baraita",
+     "meaning": "A teaching of the early Sages that was not included in the Mishna, the first written collection of Jewish law."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-86b-2-2": {
    "note": "Rabbi Elazar ben Azarya, a priest, took the first tithe from a certain garden, since he held that priests are also entitled to it. Rabbi Akiva closed the garden and moved its entrance to face a cemetery, which a priest may not enter, to keep him out. Rabbi Elazar joked about Akiva, the former shepherd, and asked where his own livelihood would come from. The text adds that he was in fact very rich and was making a point about being blocked from what he saw as his due.",
@@ -836,7 +1042,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has just set out the dispute: Rabbi Akiva holds the first tithe belongs only to Levites, Rabbi Elazar ben Azarya that a priest may receive it too. This episode shows each acting on his view; afterwards the Gemara asks why Rabbi Akiva blocked the entrance."
   },
   "yevamot-90b-9-9": {
    "note": "Rabbi Elazar ben Yaakov taught that the court may sometimes punish where the Torah does not require it, to build a fence around the Torah. As an example, in the time of the Greeks a man rode a horse on Shabbat, which was forbidden only by rabbinic law. The court stoned him as a Shabbat violator, not because he deserved it, but because Jews at that time were careless about Shabbat and the hour demanded it.",
@@ -853,24 +1059,20 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is asking whether the Sages have the power to uproot a Torah law. This report of a court executing a man for an act the Torah does not punish by death is brought as evidence that they can."
   },
   "yevamot-90b-10-10": {
-   "note": "A man had relations with his own wife under a fig tree in plain sight. The court brought him in and flogged him, though the Torah does not forbid relations with one's wife, because the hour required it, to discourage others from licentious behavior. The Gemara raises that this shows a court can set aside a Torah law, and answers that safeguarding the law is a special case, as with the prophet Elijah.",
-   "people": [
-    {
-     "name": "Elijah",
-     "about": "the prophet, given as a precedent"
-    }
-   ],
+   "note": "A man had relations with his own wife under a fig tree, in public view. He was brought to court and flogged, not because he deserved it, but because the times required it.",
+   "why": "The Gemara is asking whether the Sages can uproot a Torah law by an active deed. This second precedent, after the man stoned for riding on Shabbat, seems to say they can; the Gemara limits it to safeguarding the Torah.",
+   "people": [],
    "terms": [
     {
-     "term": "flogging",
-     "meaning": "A court punishment of lashes."
+     "term": "flogged",
+     "meaning": "Given lashes, a punishment a court could impose."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-93a-7-8": {
    "note": "Rabbi Yannai's sharecropper brought him a basket of fruit every Shabbat eve. One day he was late, so Rabbi Yannai separated tithes in advance for the fruit he expected, so as not to be unable to tithe on Shabbat. Unsure that this works for fruit not yet in hand, he asked Rabbi Chiyya, who said he had acted well and gave a source. Rabbi Yannai worried because a dream had shown him the words 'bruised reed.' Rabbi Chiyya said the dream referred to a verse about the Messiah, meaning he had acted rightly.",
@@ -895,7 +1097,33 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is listing Sages who hold that a person can act on something that does not yet exist or is not yet his. This episode is its proof that Rabbi Yannai, like Rabbi Hiyya, holds that view."
+  },
+  "yevamot-95a-7-7": {
+   "note": "A man had relations with his mother-in-law. Rav Yehuda had him brought and flogged. Rav Yehuda told him: If Shmuel had not said that the law does not follow Rabbi Yehuda, I would make your wife forbidden to you for ever.",
+   "why": "Rabbi Yehuda holds that a man who sleeps with his mother-in-law becomes forbidden to his wife, and Shmuel ruled against him. This case shows Rav Yehuda following Shmuel's ruling in practice.",
+   "people": [
+    {
+     "name": "Rav Yehuda",
+     "about": "A Sage who judged the man and reported Shmuel's ruling."
+    },
+    {
+     "name": "Shmuel",
+     "about": "Rav Yehuda's teacher, who ruled that the law does not follow Rabbi Yehuda."
+    },
+    {
+     "name": "Rabbi Yehuda",
+     "about": "An earlier Sage who held that such a man is forbidden to his wife."
+    }
+   ],
+   "terms": [
+    {
+     "term": "halakha",
+     "meaning": "Jewish law; the binding ruling on a question."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-96b-13-17": {
    "note": "Rabbi Elazar taught a law in the study hall without saying it came from his teacher, Rabbi Yohanan, who got angry. Two colleagues tried to calm him with a story about two sages whose angry dispute ended with a Torah scroll being torn as they pulled it between them, which only made him angrier. Rabbi Ya'akov bar Idi then compared it to Joshua, who taught Moses' Torah without always naming Moses, and Yohanan was appeased. The text explains Yohanan cared because a teaching quoted in a scholar's name keeps his lips moving in the grave.",
@@ -928,49 +1156,67 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The ruling Rabbi Elazar repeated is the one just discussed, about a minor's relations with his yevama. The Gemara then explains Rabbi Yohanan's anger: a Sage quoted by name in this world, his lips move in the grave."
   },
   "yevamot-98a-3-3": {
-   "note": "The Gemara quotes a teaching about Niftayim, a convert who married the wife of his maternal half brother, and the Sages said such a marriage is not valid for a convert. The Gemara objects that this cannot mean no convert's marriage ever counts, so it rewords the teaching: a convert is not bound by the usual ban on a brother's wife. It then suggests this applies where the brother was also a convert when he married her.",
+   "note": "Rabbi Yosei reports a case: Niftayim, a convert, married the wife of his brother from the same mother. The case came before the Sages, who said that a convert has no marriage. The Gemara objects that a convert's marriage is surely valid, and rereads the ruling to mean that the ban on a brother's wife does not apply to a convert.",
+   "why": "Rav Aha bar Yaakov and Rav Sheshet disagree over a convert and his maternal brother's wife. This case is offered as proof that it is permitted even if the brother married her after converting; the Gemara answers that he married her before.",
    "people": [
     {
-     "name": "Niftayim",
-     "about": "a convert"
+     "name": "Rabbi Yosei",
+     "about": "The Sage who reports the case."
     },
     {
-     "name": "Rabbi Yosei",
-     "about": "the sage who reports the incident"
+     "name": "Niftayim",
+     "about": "A convert who married the wife of his brother from the same mother."
     }
    ],
    "terms": [
     {
-     "term": "Gemara",
-     "meaning": "the discussion in the Talmud that analyzes the Mishnah"
+     "term": "convert",
+     "meaning": "A person who has joined the Jewish people. In Jewish law a convert is like a newborn, so earlier family ties may not count."
+    },
+    {
+     "term": "brother's wife",
+     "meaning": "The Torah forbids a man to marry his brother's wife, apart from the special case of levirate marriage."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-98a-5-5": {
-   "note": "Ben Yasiyan reports that overseas he met a convert married to the former wife of his maternal half brother and asked who permitted it. The convert answered that it had been permitted for a local woman and her seven sons, and that Rabbi Akiva had sat on that very bench and taught that a convert may marry his maternal half brother's former wife. The Gemara uses this as another proof that a convert may marry his maternal brother's wife, perhaps where the brother was also a convert.",
+   "note": "Ben Yasiyan traveled to cities overseas and found a convert married to the wife of his brother from the same mother. He asked: My son, who allowed you this? The convert pointed to a woman and her seven sons and said that on this very bench Rabbi Akiva sat and taught two things: a convert may marry his maternal brother's wife, and God spoke to Jonah only twice, not a third time.",
+   "why": "The Gemara is asking whether a convert may marry his maternal brother's wife even when the brother married her after converting. This account is offered as proof; the Gemara answers that the brother married her before converting, then asks whether the convert can be trusted.",
    "people": [
     {
      "name": "Ben Yasiyan",
-     "about": "the traveler who tells the story"
+     "about": "A Sage who met the convert on his travels and questioned him."
     },
     {
      "name": "Rabbi Akiva",
-     "about": "the sage said to have taught that it is permitted"
+     "about": "The Sage who, according to the convert, permitted this marriage."
+    },
+    {
+     "name": "Jonah",
+     "about": "The biblical prophet, mentioned in the second teaching of Rabbi Akiva."
     }
    ],
    "terms": [
     {
-     "term": "baraita",
-     "meaning": "a teaching from the time of the Mishnah that is not in the Mishnah itself"
+     "term": "convert",
+     "meaning": "A person who has joined the Jewish people. In Jewish law a convert is like a newborn, so earlier family ties may not count."
+    },
+    {
+     "term": "Divine Presence",
+     "meaning": "God's presence as it reveals itself to people, here in speaking to a prophet."
+    },
+    {
+     "term": "cities overseas",
+     "meaning": "Coastal cities beyond the Land of Israel."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-99b-9-10": {
    "note": "Rabbi Elazar bar Tzadok said he testified in court only once, and a slave was promoted to the status of a priest on his word, an error. The Gemara finds that hard to believe, since God does not let even the animals of the righteous cause a mishap. It restates that they only wanted to promote the slave: Rabbi Elazar saw a man receiving teruma in one town and testified in another, not realizing this would be taken as proof the man was a priest.",
@@ -998,33 +1244,38 @@
      "meaning": "A teaching from the time of the Mishnah that was not included in it."
     }
    ],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "Rabbi Yehuda and Rabbi Yosei disagree on whether teruma may be handed to a priest's slave without his master, because in Rabbi Yehuda's town receiving teruma was taken as proof of priestly lineage. This account shows what that local difference could lead to."
   },
   "yevamot-101b-14-14": {
-   "note": "Rav Ashi came to Rav Kahana's house, and Rav Kahana asked him to join a group of five to perform halitza. Rav Kahana added that Rav Yehuda had once told him to go to the bundle of reeds, the set place for such cases. When asked why five were needed when three would do, Rav Yehuda said it was to make the matter public, not because the law requires it.",
+   "note": "Rav Ashi came to Rav Kahana's house, and Rav Kahana asked him to come up and make a fifth judge for a halitza. Rav Kahana recalled that Rav Yehuda once told him to go up to the bundle of reeds and join the five. When people asked Rav Yehuda why five were needed, he said it was to make the matter public.",
+   "why": "The Gemara has ruled that halitza needs only three judges, and that it takes place at a set location. These cases of five judges at a fixed spot explain why the Sages sometimes used more: to publicize it, not because the law requires it.",
    "people": [
     {
      "name": "Rav Ashi",
-     "about": "the visitor"
+     "about": "A Sage visiting Rav Kahana, who was asked to make up the five."
     },
     {
      "name": "Rav Kahana",
-     "about": "the host"
+     "about": "A Sage who invited Rav Ashi to join and recalled an earlier case with Rav Yehuda."
     },
     {
      "name": "Rav Yehuda",
-     "about": "the sage Rav Kahana once stood before"
+     "about": "Rav Kahana's teacher, who used five judges for halitza to make it public."
     }
    ],
    "terms": [
     {
      "term": "halitza",
-     "meaning": "a ceremony in which a widow removes her brother-in-law's shoe, freeing her to remarry"
+     "meaning": "The ceremony that releases a childless widow from marrying her late husband's brother. She removes his shoe and spits before a court, and is then free to marry anyone."
+    },
+    {
+     "term": "bundle of reeds",
+     "meaning": "A spot marked by a bundle of reeds, set aside as the regular place where the court met for halitza."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-101b-15-16": {
    "note": "Rav Yehuda asked Rav Shmuel bar Yehuda to join the five men watching a halitza ceremony. Rav Shmuel bar Yehuda pointed out that the law requires a court of Jews who are Jews from birth, and he admitted he was a convert along with his father. Rav Yehuda praised his honesty, saying he would accept his word to cancel a debt document, and the Gemara clarifies that one man's word cannot collect money.",
@@ -1045,7 +1296,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The discussion is about who may sit on a court for halitza. Rav Shmuel bar Yehuda's refusal leads the Gemara to Rava's rule on when a convert may judge, and to why a halitza judge needs two Jewish-born parents."
   },
   "yevamot-102a-7-8": {
    "note": "Rabbi Yosei tells of meeting an Elder in Netzivin who had seen Rabbi Yehuda ben Beteira perform halitza many times. The Elder insisted the Torah's word for shoe means a hard sandal, not a soft leather shoe. Rabbi Yosei asked why, then, Rabbi Meir holds that halitza done with a soft shoe is valid after the fact. The Gemara adds that Rabbi Ya'akov, in Rabbi Meir's name, permits it even from the start, and then asks the reason of those who forbid it.",
@@ -1081,8 +1332,8 @@
      "meaning": "From the start, as opposed to after the fact."
     }
    ],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "The Gemara has been asking whether halitza may be done with a soft leather shoe from the start, or is only valid after the fact. It cites this account to show that early Sages disagreed on it, then asks the reason of those who forbid it."
   },
   "yevamot-103b-5-6": {
    "note": "Abaye stood before Rav Yosef when a widow came for halitza, and Rav Yosef asked Abaye for his sandal for the ceremony. Abaye gave his left one, and Rav Yosef noted that a left shoe is only acceptable after the fact. Abaye replied that the same is true of a borrowed shoe, and Rav Yosef said that was his point: give the shoe as a temporary gift so it is truly his, making the ceremony ideal.",
@@ -1107,7 +1358,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The mishna says halitza is valid with a shoe that is not the brother's own, and the Sages read \"his shoe\" as one that fits him. This episode shows that using a borrowed or left shoe is still not the ideal way."
   },
   "yevamot-105a-5-7": {
    "note": "A woman spat before taking off the brother-in-law's shoe, which is the wrong order for halitza, and Rabbi Ami said she need not spit again. Rabbi Abba bar Memel objected, but Rabbi Ami warned that repeating it could lead people to wrongly permit a woman who has already done halitza. Rabbi Abba thought he was dodging, but afterwards he checked and found a teaching that the ceremony counts either way.",
@@ -1132,7 +1383,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is weighing a ruling sent to Shmuel's father: a widow who spat first need only remove the shoe and need not spit again. This case is cited as an instance of that ruling."
   },
   "yevamot-105a-8-9": {
    "note": "Levi went to villages to teach Torah and was asked three questions he could not answer, so he asked at the house of study. They said an armless woman may perform halitza, since the Torah does not require using the hand, and that spitting blood still counts since the verse says only 'she shall spit'. A verse mentions 'writing of truth', suggesting some writing in Heaven is not true; the answer is that a judgment sealed with an oath cannot be canceled, while one without an oath can.",
@@ -1152,8 +1403,38 @@
      "meaning": "A childless widow connected to her late husband's brother."
     }
    ],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "The Gemara has just told how Rabbi Abba bar Memel checked a halitza ruling in the study hall. Levi's questions bring more halitza cases, and his third question leads into the discussion of a decree sealed with an oath, shown by the house of Eli."
+  },
+  "yevamot-105a-13-13": {
+   "note": "Rabba taught that a descendant of the house of Eli cannot gain atonement through sacrifice, but can through Torah study. Abaye taught that he can through acts of kindness. Both were themselves from the house of Eli: Rabba, who devoted himself to Torah, lived forty years, and Abaye, who devoted himself to Torah and kindness, lived sixty.",
+   "why": "Rabbi Yonatan has just shown from the oath against Eli's house that a sentence sealed with an oath cannot be torn up, even with offerings. Rabba and Abaye read that verse as leaving another way out.",
+   "people": [
+    {
+     "name": "Rabba",
+     "about": "A Sage descended from the house of Eli who devoted himself to Torah and lived forty years."
+    },
+    {
+     "name": "Abaye",
+     "about": "A Sage descended from the house of Eli who devoted himself to Torah and kindness and lived sixty years."
+    }
+   ],
+   "terms": [
+    {
+     "term": "house of Eli",
+     "meaning": "The descendants of Eli, the priest at Shiloh in the Book of Samuel. God swore that their sin would not be atoned for by sacrifice, and that they would die young."
+    },
+    {
+     "term": "acts of kindness",
+     "meaning": "Good deeds done for others, such as helping the needy, visiting the sick and burying the dead."
+    },
+    {
+     "term": "sacrifice and offering",
+     "meaning": "Animal and grain offerings brought at the Temple, among other things to atone for sin."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-105a-14-14": {
    "note": "A Jerusalem family kept losing its children around age eighteen and went to Rabban Yohanan ben Zakkai. He said they might descend from the house of Eli, whose descendants were told they would die as young men, and advised them to immerse themselves in Torah study. They did, lived longer lives, and were called the family of Yohanan.",
@@ -1174,61 +1455,75 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has just told how Rabba and Abaye, descendants of Eli, lived longer through Torah and kindness. This account from the Sages is a second example that Torah study can overcome the decree against Eli's house."
   },
   "yevamot-105b-3-10": {
-   "note": "As Rabbi Yehuda HaNasi entered the study hall, the heavy Rabbi Yishmael stepped over seated students to reach his place, and the attendant Abdon mocked him. Yishmael answered sharply, then offered his father's ruling, which made Abdon's check of a young woman's age unnecessary, and rebuked him for stepping over heads without need. Abdon was told to stand still, and the text says he was then struck with leprosy and his two newly married sons drowned. Rav Nahman bar Yitzhak says this shame in this world spared Abdon punishment in the next.",
+   "note": "Rabbi Ḥiyya and Rabbi Shimon bar Rabbi were debating whether one who prays should look down or up, each citing a verse. Rabbi Yishmael, son of Rabbi Yosei, joined them and quoted his father: eyes down, heart up. When Rabbi entered the study hall, the heavy Rabbi Yishmael stepped over the heads of those seated, and Rabbi's attendant Abdon challenged him; the exchange ended with Yishmael asking, 'Is your teacher God?' When a yevama came, Rabbi sent Abdon to examine her, but Yishmael quoted his father that a minor may perform ḥalitza, so Rabbi called Abdon back. Yishmael rebuked him for stepping over heads again, and Rabbi told Abdon to stay where he was. At that moment Abdon was struck with leprosy, his two sons drowned, and their wives refused their marriages.",
+   "why": "The Gemara asks who the Rabbis are who, against Rabbi Meir, let a female minor perform ḥalitza, and answers that it is Rabbi Yosei, as his son reports him in this incident.",
    "people": [
     {
+     "name": "Rabbi Ḥiyya",
+     "about": "Sits debating the direction of one's gaze in prayer with Rabbi Shimon bar Rabbi."
+    },
+    {
      "name": "Rabbi Yishmael, son of Rabbi Yosei",
-     "about": "the heavy man Abdon insulted"
+     "about": "A very heavy Sage who quotes his father's rulings and clashes with Abdon."
+    },
+    {
+     "name": "Rabbi",
+     "about": "Rabbi Yehuda HaNasi, head of the study hall; Abdon is his student and attendant."
     },
     {
      "name": "Abdon",
-     "about": "short for Abba Yudan, Rabbi Yehuda HaNasi's student and attendant"
+     "about": "Rabbi's student and attendant, who challenges Rabbi Yishmael and is then punished."
     },
     {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "head of the study hall, called Rabbi"
-    },
-    {
-     "name": "Rabbi Yosei",
-     "about": "Yishmael's father, whose rulings he quotes"
+     "name": "Rav Naḥman bar Yitzḥak",
+     "about": "Comments that God shamed Abdon in this world, sparing him in the World-to-Come."
     }
    ],
    "terms": [
     {
-     "term": "halitza",
-     "meaning": "a ceremony in which a widow removes her brother-in-law's shoe, freeing her to remarry"
+     "term": "ḥalitza",
+     "meaning": "The ceremony in which a childless widow removes the shoe of her late husband's brother, releasing both from the duty of levirate marriage so she may marry someone else."
     },
     {
      "term": "yevama",
-     "meaning": "a widow whose husband died childless and who is tied to his brother"
+     "meaning": "A childless widow bound to her late husband's brother under the law of levirate marriage until he marries her or performs ḥalitza."
+    },
+    {
+     "term": "declarations of refusal",
+     "meaning": "A girl married off as a minor could annul the marriage by declaring that she refuses her husband."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-106a-3-3": {
-   "note": "A widow had to deal with her brother-in-law, who was not suitable for her. The judges had her perform halitza on the condition that she pay him two hundred dinars. She never paid, and the case came to Rabbi Hiyya, who ruled the halitza valid anyway.",
+   "note": "A widow was bound to her late husband's brother, but he was not suitable for her. The judges told him to let her perform ḥalitza on condition that she pay him two hundred dinars. The case later came before Rabbi Ḥiyya, and he ruled that the ḥalitza was valid.",
+   "why": "The Gemara is defining the 'mistaken ḥalitza' that the Sages call valid. Following Rabbi Yoḥanan it means a ḥalitza done on a condition of payment, and this incident is cited from a baraita in support.",
    "people": [
     {
-     "name": "Rabbi Hiyya",
-     "about": "the sage who ruled"
+     "name": "Rabbi Ḥiyya",
+     "about": "The Sage before whom the case came; he validated the ḥalitza."
     }
    ],
    "terms": [
     {
-     "term": "halitza",
-     "meaning": "a ceremony in which a widow removes her brother-in-law's shoe, freeing her to remarry"
+     "term": "ḥalitza",
+     "meaning": "The ceremony in which a childless widow removes the shoe of her late husband's brother, freeing her to marry someone else."
     },
     {
      "term": "yavam",
-     "meaning": "a brother-in-law of a childless widow, who may marry her or release her"
+     "meaning": "The brother of a man who died childless, who is obligated either to marry the widow or to release her through ḥalitza."
+    },
+    {
+     "term": "dinar",
+     "meaning": "A silver coin; two hundred dinars was a substantial sum."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-106a-4-5": {
    "note": "A man brought his brother's widow to Rabbi Hiyya bar Abba so the court could press her to marry him. She told Rabbi Hiyya she knew the man was after her money and would not be good for her. Rabbi Hiyya told the man that she would remove his shoe as a form of marriage, which was really halitza, and it left her forbidden to him forever. He then asked the man to allow a second, proper halitza so she could marry others.",
@@ -1253,7 +1548,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Reish Lakish defined a valid mistaken ḥalitza as telling the brother that ḥalitza would marry him, and Rabbi Yoḥanan rejected it. Rabbi Ḥiyya bar Abba uses exactly that ploy and then adds a proper second ḥalitza."
   },
   "yevamot-106a-6-10": {
    "note": "Rav Pappa's sister-in-law was tied to a brother-in-law who was not suitable, and Abaye had him do halitza on the condition that she pay two hundred dinars. After it was done, Rav Pappa argued she had only been fooling him, and cited a teaching about a prisoner promising a ferryman too much, so she owed nothing. Abaye agreed. Amazed at the young man's sharpness, Abaye asked about his parents and, envious that his own were not alive, looked on them, and both died.",
@@ -1278,77 +1573,111 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is discussing which mistaken ḥalitza counts. This case puts Rabbi Yoḥanan's version, ḥalitza on condition of payment, into practice and shows the woman need not actually pay."
   },
   "yevamot-106b-7-8": {
-   "note": "Rav Ashi found Rav Kahana carefully coaching a widow to say the halitza words 'he did not wish to consummate the levirate marriage' in one piece. Rav Ashi asked whether he did not follow Rava, who said proper pausing is not essential. Rav Kahana replied that Rava agrees this line must be said properly, and quoted Abaye's wording for the written halitza record.",
+   "note": "Rav Ashi found Rav Kahana struggling to prompt a widow to recite 'He did not wish to consummate the levirate marriage' as one unbroken phrase. Rav Ashi asked whether he did not hold Rava's view that such a pause does not matter. Rav Kahana answered that Rava concedes in the case of this phrase, and quoted Abaye's wording for the bill of ḥalitza, recording which verses she and the brother were each prompted to recite.",
+   "why": "Abaye said the prompter must not split 'He did not' from 'wish to consummate', and Rava called such a split a mere pause. This exchange marks where Rava's leniency stops.",
    "people": [
     {
      "name": "Rav Ashi",
-     "about": "asked the question"
+     "about": "Questions Rav Kahana's insistence on an unbroken recitation."
     },
     {
      "name": "Rav Kahana",
-     "about": "coached the widow"
-    },
-    {
-     "name": "Rava and Abaye",
-     "about": "earlier sages whose views are quoted"
+     "about": "Prompts the widow at a ḥalitza ceremony and defends his care."
     }
    ],
    "terms": [
     {
-     "term": "halitza",
-     "meaning": "a ceremony in which a widow removes her brother-in-law's shoe, freeing her to remarry"
+     "term": "levirate marriage",
+     "meaning": "The biblical duty of a man to marry the widow of his brother who died childless, unless he releases her through the shoe-removal ceremony of ḥalitza."
     },
     {
-     "term": "yevama",
-     "meaning": "a widow whose husband died childless and who is tied to his brother"
+     "term": "bill of ḥalitza",
+     "meaning": "A document the court writes recording that the ḥalitza ceremony took place, so the widow can prove she is free to remarry."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
+  },
+  "yevamot-108a-7-7": {
+   "note": "The daughters-in-law of Abdan rebelled against their husbands. Rabbi sent a pair of Sages to examine them. Some women said to them, 'Look, your husbands are coming,' and they answered, 'Let them be your husbands.'",
+   "why": "The Gemara asks whether Rabbi Yehuda ben Beteira's rule, that a minor's betrothal to another man counts as refusing her husband, applies even if she was married. Rabbi calls this reply the greatest refusal, but the Gemara says they were only betrothed.",
+   "people": [
+    {
+     "name": "Abdan",
+     "about": "The father-in-law of the young wives who reject their husbands."
+    },
+    {
+     "name": "Rabbi",
+     "about": "Rabbi Yehuda HaNasi, who sends two Sages to examine the women."
+    }
+   ],
+   "terms": [
+    {
+     "term": "rebelled",
+     "meaning": "Here, the young wives refused to stay married to their husbands; a girl married off as a minor could end the marriage by refusing."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-108b-10-11": {
-   "note": "During Roman persecution, people wanted a ruling on whether a girl married as a minor, who left one husband by divorce and a second by refusal, could return to the first. They paid one messenger four hundred dinars to take the risky trip. Rabbi Akiva in prison and Rabbi Yehuda ben Beteira in Netzivin both said it is forbidden. The Gemara uses this to say which sage held that view.",
+   "note": "In a time of danger a ruling was needed: may a girl who left her first husband by a bill of divorce, and her second by refusal, return to the first? Those involved hired a man for four hundred dinars to carry the question. He asked Rabbi Akiva, who was in prison, and he forbade it; he asked Rabbi Yehuda ben Beteira in Netzivin, and he forbade it too. Rav Yehuda, quoting Rav, reads this into the verse 'We have drunk our water for money.'",
+   "why": "The Gemara asks which early Sage holds that a minor's refusal of a later husband does not undo an earlier divorce. Rav's report names Rabbi Akiva and Rabbi Yehuda ben Beteira.",
    "people": [
     {
      "name": "Rabbi Akiva",
-     "about": "imprisoned by the Romans for teaching Torah"
+     "about": "Asked the question while in prison and ruled it forbidden."
     },
     {
      "name": "Rabbi Yehuda ben Beteira",
-     "about": "a sage in Netzivin, in Babylonia"
+     "about": "Asked the question in Netzivin and also ruled it forbidden."
+    },
+    {
+     "name": "Rav Yehuda",
+     "about": "Tells the incident in Rav's name."
     }
    ],
    "terms": [
     {
-     "term": "refusal (mi'un)",
-     "meaning": "a declaration by a girl married as a minor that ends the marriage without a divorce document"
+     "term": "refusal",
+     "meaning": "A girl married off as a minor could annul the marriage by declaring that she refuses her husband, without a bill of divorce."
     },
     {
-     "term": "tanna",
-     "meaning": "a sage of the Mishnah era"
+     "term": "bill of divorce",
+     "meaning": "The document (get) a husband gives his wife to end a marriage."
+    },
+    {
+     "term": "time of danger",
+     "meaning": "A period of persecution when teaching and asking about Jewish law was itself dangerous."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-108b-14-14": {
-   "note": "Those involved hired two messengers for four hundred dinars. They asked Rabbi Akiva in prison and Rabbi Yehuda ben Beteira in Netzivin, and both ruled the case forbidden.",
+   "note": "In this telling, the question was whether a minor could refuse her marriage after her husband's death so that levirate marriage could go ahead. Those involved hired two men for four hundred dinars. They asked Rabbi Akiva in prison, and he forbade it; they asked Rabbi Yehuda ben Beteira in Netzivin, and he forbade it too.",
+   "why": "Rabbi Yishmael, son of Rabbi Yosei, says the question in Rav's version was too obvious to need asking, and gives this version instead, about refusal after the husband's death.",
    "people": [
     {
      "name": "Rabbi Akiva",
-     "about": "in prison"
+     "about": "Asked the question while in prison and ruled it forbidden."
     },
     {
      "name": "Rabbi Yehuda ben Beteira",
-     "about": "a sage in Netzivin"
+     "about": "Asked the question in Netzivin and also ruled it forbidden."
     }
    ],
-   "terms": [],
-   "approved": false,
-   "why": ""
+   "terms": [
+    {
+     "term": "dinar",
+     "meaning": "A silver coin; four hundred dinars was a large fee, reflecting the danger of the errand."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": false
   },
   "yevamot-110a-4-6": {
    "note": "In Neresh a girl betrothed as a minor came of age and was seated in the bridal chair under the canopy before the marriage was consummated, but another man snatched her and married her. Rav's students did not require the second man to give her a divorce document. Rav Pappa says the first husband had already consummated the marriage; Rav Ashi says the snatcher acted wrongly, so the Sages cancelled his betrothal, even if done by intercourse, which they treated as a licentious act.",
@@ -1381,7 +1710,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara is testing Rav's view that a minor's betrothal holds once she grows up only if her husband then has intercourse with her. This incident, judged by his own students, seems to contradict it."
   },
   "yevamot-113b-15-15": {
    "note": "Rav Yitzhak bar Bisna lost the keys to the study hall, so people could not get in on Shabbat, and carrying a key in the public area is forbidden. Rabbi Pedat told him to lead children to where the keys were lost, and if they find them they will bring them on their own. The Gemara discusses whether this shows one need not stop a child from doing a forbidden act, and Abaye rejects the proof offered, noting that perhaps one must stop a child from breaking a Torah prohibition.",
@@ -1405,8 +1734,8 @@
      "meaning": "An in-between area that is not fully public or private; carrying there is forbidden only by Rabbinic rule."
     }
    ],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "The incident opens a discussion of whether adults must stop a child from breaking a prohibition, which the Gemara goes on to test against other teachings."
   },
   "yevamot-115a-3-3": {
    "note": "At the end of a wedding, a fire broke out in the bridal chamber and the bride screamed 'Look at my husband!' People found an unrecognizable burned body and a hand lying nearby. Rav Hiyya bar Avin thought her claim could not be trusted, like cases where someone says a house was set on fire. Rava answered that those women never said 'look at my husband', and here the burned body and hand support her claim.",
@@ -1421,54 +1750,93 @@
     }
    ],
    "terms": [],
-   "approved": false,
-   "why": ""
+   "approved": true,
+   "why": "The Gemara is asking when a woman who reports her husband's death in a disaster is believed; it has just said a woman who survives a house fire is not, since he too may have been saved."
   },
-  "yevamot-115a-10-10": {
-   "note": "Two Torah scholars traveling with Abba Yosei ben Simai were on a boat that sank. Rabbi Yehuda HaNasi let their wives remarry on the word of women who said the men had died. The Gemara reasons that the sea is like a battlefield, where mistakes are possible, and that any number of women count as only one witness. Since he still allowed the wives to remarry, one witness can be relied on even in wartime.",
+  "yevamot-115a-7-7": {
+   "note": "Rabbi Akiva recounts that when he went down to Neharde'a to intercalate the year, he met Neḥemya of Beit D'li. Neḥemya said he had heard that in Eretz Yisrael only Rabbi Yehuda ben Bava lets a woman remarry on the word of one witness, and Akiva confirmed it. Neḥemya told him: say to them in my name, you know this country is riddled with troops, that I received from Rabban Gamliel the Elder that a woman may marry on the word of one witness.",
+   "why": "The Gemara asks whether one witness to a husband's death is believed in wartime. Rami bar Ḥama cites this account, and the debate turns on what Neḥemya's remark about troops means.",
    "people": [
     {
-     "name": "Abba Yosei ben Simai",
-     "about": ""
+     "name": "Rabbi Akiva",
+     "about": "Tells of his meeting with Neḥemya."
     },
     {
-     "name": "Rabbi Yehuda HaNasi",
-     "about": "a leading sage who permitted the wives to remarry"
+     "name": "Neḥemya of Beit D'li",
+     "about": "A Sage in Neharde'a who passes on a tradition from Rabban Gamliel the Elder."
+    },
+    {
+     "name": "Rabbi Yehuda ben Bava",
+     "about": "Said to be the only Sage in Eretz Yisrael relying on one witness."
+    },
+    {
+     "name": "Rabban Gamliel the Elder",
+     "about": "The source of Neḥemya's tradition."
+    },
+    {
+     "name": "Rami bar Ḥama",
+     "about": "Brings this account into the discussion."
     }
    ],
    "terms": [
     {
-     "term": "baraita",
-     "meaning": "A teaching from the time of the Mishnah that was not included in the Mishnah itself."
+     "term": "intercalate the year",
+     "meaning": "To add a leap month to the Jewish calendar so the festivals stay in their seasons, a decision made by the Sages."
+    },
+    {
+     "term": "Eretz Yisrael",
+     "meaning": "The Land of Israel."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
-  "yevamot-115b-7-7": {
-   "note": "Yitzhak the Exilarch, a nephew of Rav Beivai, died while traveling from Cortva to Spain, and a message was sent from Spain reporting his death. The Gemara asks whether the report can be trusted given that another man might share the name Yitzhak. Abaye says we are concerned about this; Rava says we are not.",
+  "yevamot-115a-10-10": {
+   "note": "Two Torah scholars were traveling by boat with Abba Yosei ben Simai, and the boat sank. Rabbi allowed their wives to remarry on the testimony of women.",
+   "why": "The Gemara asks whether one witness to a death is believed in wartime. Water is treated like war, and many women count as one witness, so this seems to say yes; the Gemara answers that the women gave identifying marks.",
    "people": [
     {
-     "name": "Yitzhak the Exilarch",
-     "about": "son of Rav Beivai's sister"
+     "name": "Abba Yosei ben Simai",
+     "about": "Was traveling on the boat with the two scholars."
+    },
+    {
+     "name": "Rabbi",
+     "about": "Rabbi Yehuda HaNasi, who allowed the widows to remarry."
+    }
+   ],
+   "terms": [],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "yevamot-115b-7-7": {
+   "note": "Yitzḥak the Exilarch, son of Rav Beivai's sister, was traveling from Cortva to Spain and died. A message came from Spain reporting his death by name. The question was whether to worry that there were two men named Yitzḥak. Abaye said we are concerned; Rava said we are not. The text does not give the outcome.",
+   "why": "The Gemara has just debated whether a labelled container may hold something other than its label says; the same doubt is now asked of a name, and Abaye and Rava go on to defend their views with other cases.",
+   "people": [
+    {
+     "name": "Yitzḥak the Exilarch",
+     "about": "The man reported dead on the road to Spain."
+    },
+    {
+     "name": "Rav Beivai",
+     "about": "Yitzḥak's uncle; Yitzḥak is his sister's son."
     },
     {
      "name": "Abaye",
-     "about": ""
+     "about": "Holds we must worry about another man of the same name."
     },
     {
      "name": "Rava",
-     "about": ""
+     "about": "Holds we need not worry about that."
     }
    ],
    "terms": [
     {
      "term": "Exilarch",
-     "meaning": "The head of the Jewish community in Babylonia."
+     "meaning": "The title of the head of the Jewish community in Babylonia."
     }
    ],
-   "approved": false,
-   "why": ""
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-116b-9-9": {
    "note": "At the end of the wheat harvest, ten people went out to harvest and a snake bit one, who died. His wife told the court he had died, and messengers found it was as she said. The sages then ruled that a woman who says her husband died may remarry on that basis. If he left no children and has a brother, she enters levirate marriage. This is the case Beit Hillel referred to.",
@@ -1493,7 +1861,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Beit Hillel hold that a woman's word about her husband's death is accepted only in circumstances like the original incident, Beit Shammai that it extends further; the Gemara asks what that incident was."
   },
   "yevamot-116b-15-15": {
    "note": "A person was carrying water and ashes of purification, made from the red heifer, across the Jordan River by boat. An olive-sized piece of a corpse was found stuck to the bottom of the boat, making the water and ashes ritually impure. In response the sages said that such things may not be carried on the Jordan River in a boat. The passage ends with a dispute over whether this applies to other similar cases or only this one.",
@@ -1518,7 +1886,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "Rabbi Ḥananya ben Akiva limits that decree to the Jordan and to boats, as in the incident, while the Rabbis apply it to all rivers; the Gemara compares this to the dispute of Beit Shammai and Beit Hillel."
   },
   "yevamot-120a-10-10": {
    "note": "Abba bar Marta owed money to members of the Exilarch's household, who were known to be violent, and did not want to be seen by them. He stuck wax onto a strip of worn cloth and attached it to his forehead to change his look. He walked past them and they did not recognize him. The Gemara draws the lesson that changing the forehead changes a person's face a great deal.",
@@ -1535,24 +1903,32 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "A teaching just quoted says witnesses may identify a dead man only if they saw both his forehead and his face with the nose; this incident shows that changing the forehead alone can make a man unrecognizable."
   },
   "yevamot-120b-7-7": {
-   "note": "The Gemara cites an incident in Asya where a man was lowered into the sea on a rope and only his leg came up. The Sages ruled that if the leg was cut off at or above the knee, his wife may remarry, since he could not survive that; if below the knee, she may not. The Gemara uses this to challenge whether the Mishnah follows Rabbi Shimon ben Elazar.",
+   "note": "In Asya, people lowered a man into the sea on a rope, and when they pulled it back only his leg came up in their hands. The Sages ruled that if the leg was cut off from the knee up, his wife may remarry; if from the knee down, she may not.",
+   "why": "The Gemara proposed that the Mishna's rule against testifying about a man cut open follows Rabbi Shimon ben Elazar, who says such a wound can heal. This incident treats a high cut as fatal and seems to contradict that; the Gemara answers that water aggravates a wound.",
+   "people": [],
+   "terms": [],
+   "drafted": "shas1",
+   "approved": true
+  },
+  "yevamot-121a-3-3": {
+   "note": "A man drowned at Carmi and was pulled out near Bei Hedya after three days, and Rav Dimi of Neharde'a allowed his wife to remarry. Another man drowned in the Tigris and was pulled out at the Bridge of Shabistana, and Rava allowed his wife to remarry on the testimony of his friends, five days after his death.",
+   "why": "The Mishna allows identifying a body only within three days, and Rabbi Yehuda ben Bava disputes it; the Gemara asks whether he is more lenient or more strict. These rulings fit the lenient reading, but the Gemara answers that water keeps the body from changing.",
    "people": [
     {
-     "name": "Rabbi Shimon ben Elazar",
-     "about": ""
-    }
-   ],
-   "terms": [
+     "name": "Rav Dimi from Neharde'a",
+     "about": "Allowed the first drowned man's wife to remarry."
+    },
     {
-     "term": "mishna",
-     "meaning": "The earlier collection of Jewish law that the Gemara discusses."
+     "name": "Rava",
+     "about": "Allowed the second drowned man's wife to remarry."
     }
    ],
-   "approved": false,
-   "why": ""
+   "terms": [],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-121a-10-13": {
    "note": "A man drowned in the lake at Samkei, and Rav Sheila let his wife remarry because witnesses saw him go in and not come out. Rav wanted to excommunicate Rav Sheila, but Shmuel suggested asking him first. Rav Sheila admitted he had erred: he thought the still water counted as having a visible edge, but waves could have carried the man out of sight. Shmuel and Rav then quoted verses praising each other's caution and advice.",
@@ -1581,7 +1957,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Rabbis permit the wife only if the water has a visible end, and Abaye has just defined that as water whose shore can be seen on all four sides; this case shows a judge misapplying the rule."
   },
   "yevamot-121a-14-14": {
    "note": "Two men were fishing with nets on the Jordan River, and one went into a cave with a fish pond. Night fell and he could not find the opening, so his friend thought he had drowned and told his family. The next morning the man found the exit and came home to find people mourning him. Rabbi Yehuda HaNasi said this shows how great the Sages' words are: a wife may remarry if her husband fell into water with a visible end, but not if it had no end.",
@@ -1598,7 +1974,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The discussion has just dealt with Rav Sheila, who let a wife remarry after her husband vanished in the lake of Samkei, then admitted his error because waves could carry a man out of sight. This incident shows why the Sages refuse to presume death when a man disappears in such water."
   },
   "yevamot-121a-17-18": {
    "note": "Rabban Gamliel saw a boat sink and grieved for the Torah scholar aboard, Rabbi Akiva. Later Akiva turned up on dry land teaching, and said a plank from the boat reached him and he bowed his head before each wave so none swept him off. From this the Sages said that if wicked people attack, one should bow his head and he will be saved. Gamliel said this showed how great the Sages' words are, that a wife may remarry if her husband fell into water with a visible edge but not with no edge.",
@@ -1619,7 +1995,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has just rejected Rav Ashi's idea that a Torah scholar's survival would surely become known, ruling that no one lost in endless water is presumed dead. This is one of several accounts of men seen lost at sea who came back alive."
   },
   "yevamot-121a-19-19": {
    "note": "Rabbi Akiva saw a boat sink and grieved for the Torah scholar aboard, Rabbi Meir. When Akiva landed in Cappadocia, Meir came and discussed law with him. Meir said one wave carried him to the next until one threw him onto dry land. Akiva said this showed how great the Sages' words are, that a wife may remarry if her husband fell into water with a visible edge but not with no edge.",
@@ -1640,7 +2016,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "This follows Rabban Gamliel's account of Rabbi Akiva surviving a shipwreck, as a second case of a man seen lost at sea who came back alive, backing the rule that a wife may not remarry when her husband vanished in endless water."
   },
   "yevamot-121b-5-6": {
    "note": "The daughter of Nehunya the well digger fell into a large cistern, and people asked Rabbi Hanina ben Dosa to pray for her. After the first and second hours he told them she was safe, and after the third that she had come out of the cistern. She said a ram and an old man leading it pulled her out. Asked if he was a prophet, he said no, and explained that he reasoned God would not let the righteous Nehunya's own child be harmed by his public service.",
@@ -1656,7 +2032,37 @@
    ],
    "terms": [],
    "approved": true,
-   "why": ""
+   "why": "The mishna cited Rabbi Meir's case of a man who came out of the Great Cistern alive after three days, and the Sages objected that miracles are not used to set law. The Gemara then tells of another rescue from the same cistern; right after, Rabbi Abba notes that Neḥunya's son still died of thirst."
+  },
+  "yevamot-121b-14-14": {
+   "note": "A gentile went around calling out: Who is from the house of Ḥivvai? Who is from the house of Ḥivvai? Ḥivvai has died. On the strength of this, Rav Yosef allowed Ḥivvai's wife to marry. Another gentile went around saying: Alas for the brave horseman who was in Pumbedita, for he is dead. Rav Yosef, and some say Rava, allowed his wife to marry.",
+   "why": "The mishna says a gentile who intends to testify is not believed. After learning that the Rabbis rejected Rabbi Oshaya's wider use of gentile testimony, the Gemara asks when a gentile is ever believed, and answers: when he speaks offhandedly, as in these two cases.",
+   "people": [
+    {
+     "name": "Ḥivvai",
+     "about": "A man reported dead by a gentile calling out in the street."
+    },
+    {
+     "name": "Rav Yosef",
+     "about": "The Sage who allowed the wives to remarry on the gentiles' reports."
+    },
+    {
+     "name": "Rava",
+     "about": "Named in one version as the Sage who ruled in the horseman's case."
+    }
+   ],
+   "terms": [
+    {
+     "term": "speaking offhandedly",
+     "meaning": "Mentioning something in passing, with no aim of giving testimony or affecting a court's decision. A gentile's report of a death is believed only when said this way."
+    },
+    {
+     "term": "mishna",
+     "meaning": "The first great written collection of Jewish law; the Gemara is the long discussion built around it."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-121b-15-16": {
    "note": "A gentile went around announcing that Hasa had drowned, and Rav Nahman said the fish had eaten him. Although Rav Nahman gave no formal ruling, Hasa's wife remarried and no one objected. Rav Ashi learned that the ban on remarrying after a drowning in endless water applies only at the outset; if she has already remarried, she is not taken from her husband. A second version says Rav Nahman did rule, reasoning that a great man would have been heard from; the Gemara rejects that reason.",
@@ -1681,7 +2087,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "It continues the cases of a gentile's offhand report of a death. Here the man drowned, so the case also tests the rule that a wife may not remarry when her husband vanished in endless water."
   },
   "yevamot-121b-17-17": {
    "note": "A gentile threatened a Jew that he would kill him like another Jew he said he had already killed. The missing man's wife heard this and asked Abaye if she could remarry, but he could not decide the case over three festivals. Rav Adda bar Ahava sent her to Rav Yosef, who compared it to a baraita saying a gentile's claims about fruit being forbidden carry no weight since he may only be boosting his sale. He concluded the gentile's statement here could not be relied on.",
@@ -1706,7 +2112,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara has shown that a gentile who mentions a death offhandedly is believed. This case asks about a gentile who speaks for his own purposes, here to frighten someone."
   },
   "yevamot-122a-2-2": {
    "note": "Abba Yudan of Sidon tells of a Jew and a gentile who traveled together. Later the gentile said, alas for the Jew who was with me, he died and I buried him. The Sages relied on this statement and allowed the man's wife to remarry.",
@@ -1718,14 +2124,24 @@
    ],
    "terms": [],
    "approved": true,
-   "why": ""
+   "why": "Rav Yosef has just refused to rely on a gentile who spoke with his own aims. This report gives the other side: a gentile who mentions a death in passing, in a lament, is believed, and the widow may remarry."
   },
   "yevamot-122a-3-3": {
-   "note": "Two more incidents are told. Prisoners in collars were walking to Antokhya, and later a gentile said they had died and he had buried them. Sixty people were walking toward the siege of Beitar, and later a gentile said the same. In both cases the Sages allowed the wives to remarry.",
+   "note": "A group of men chained together by collars was being marched to Antokhya. A gentile later came and said: Alas for the collared people, for they died, and I buried them. Their wives were allowed to marry. In another incident, sixty men were walking to the siege of Beitar. A gentile came and said: Alas for those sixty people walking on the road to Beitar, for they died, and I buried them. Their wives too were allowed to marry.",
+   "why": "These continue Abba Yudan of Sidon's list of cases in which a gentile's passing lament over the dead was trusted enough to let the widows remarry.",
    "people": [],
-   "terms": [],
-   "approved": false,
-   "why": ""
+   "terms": [
+    {
+     "term": "kolar",
+     "meaning": "A collar. The translation explains these were prisoners, each chained by a collar around the neck."
+    },
+    {
+     "term": "karkom",
+     "meaning": "A siege. Here, the siege of the city of Beitar."
+    }
+   ],
+   "drafted": "shas1",
+   "approved": true
   },
   "yevamot-122b-2-5": {
    "note": "A man came to Rabbi Tarfon to testify that a woman's husband had died. He said they had traveled together, the husband drove off pursuing soldiers with a branch, and he called him lion. The man said that was indeed his name: Yohanan, son of Yonatan, the lion from Shihayya. In one version Rabbi Tarfon simply let the wife remarry. The Gemara objects with a second version, in which Tarfon cross-examined the witness two or three times and allowed the remarriage only after his answers stayed consistent. So questioning the witness is required.",
@@ -1746,7 +2162,7 @@
     }
    ],
    "approved": true,
-   "why": ""
+   "why": "The Gemara asks whether Rabbi Tarfon demands formal cross-examination of witnesses to a husband's death, since the second version has him question the witness and the first does not. It answers that the point is disputed: Rabbi Akiva says it is not needed, Rabbi Tarfon says it is."
   },
   "yevamot-101b-3-3": {
    "note": "Rabbi Yehuda recalls sitting before Rabbi Tarfon when a widow came to perform halitza, the ceremony that releases her from marrying her late husband's brother. Rabbi Tarfon told the students to call out 'He who had his shoe removed' once it was done. The Gemara uses this to explain a verse saying all who witness the ceremony must respond that way.",
@@ -2231,7 +2647,7 @@
      "meaning": "Marry into the Jewish community; certain groups are barred."
     }
    ],
-   "approved": false
+   "approved": true
   }
  }
 }

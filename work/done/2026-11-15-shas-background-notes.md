@@ -12,7 +12,7 @@ superseded_by:
 # Background notes (and a "why it's here" line) for every story on the Septimus site
 
 **Self-contained.** A fresh session executes this with no other context.
-Read [`docs/technical/septimus-viewer-plan.md`](../docs/technical/septimus-viewer-plan.md) §4 first, then this.
+Read [`docs/technical/septimus-viewer-plan.md`](../../docs/technical/septimus-viewer-plan.md) §4 first, then this.
 
 ## The problem
 
@@ -29,7 +29,7 @@ The site has 1,897 stories in 37 tractates. Only 4 tractates have background not
 | **total** | 1,897 | 321 | 217 |
 
 Counted 2026-11-15 by joining `site/data/<t>.json` story ids to `site/data/notes/<t>.json`.
-Recount before starting; the site data moves.
+Recount before starting; the site data moves. *(Main moved to 1,811 stories with permanent ids on 2026-11-15; the run used those.)*
 
 - Yevamot lost 13 notes when its v14 re-run changed story ids.
 - `scripts/build_site_notes.py` hardcodes the 4 tractates (`TRACTATES = [...]`).
@@ -98,3 +98,25 @@ not just the story itself, so the drafter is shown neighbouring segments as cont
 
 Write the finding to `docs/findings/<date>-shas-background-notes.md`, add an `## Outcome`
 section below, and `python3 scripts/board.py finish 2026-11-15-shas-background-notes`.
+
+## Outcome
+
+Done 2026-11-15. **Every story on the site has a note: 1,811 of 1,811; 1,805 carry a `why`; 1,651 approved, 160 held.**
+Counts from `python3 scripts/build_site_notes.py --report`, asserted by `tests/test_site_notes.py`.
+
+- **How.** Two pilots before the run. Pilot 1 (20 stories): the `why` repeated the note on legal stories, so the prompt
+  split the jobs (note = the story, why = the frame). Pilot 2 (30 stories, 13 tractates) was checked against the text
+  by an independent subagent: 27/30 fine, 28/30 whys add something. Its three faults became prompt rules: keep the text's
+  force ("kill", not "deal with"), credit the right speaker (a Sage vs the Gemara), no outside facts about people.
+  Then 90 subagent batches of 20 (`results/site_notes/shas1/`), 0 invalid answers, every story code matched.
+- **Why the plan review mattered.** It caught that this branch was behind main (1,897 stories, a `tier` field main had
+  dropped), and that answers were filed by file number only, so one skipped file would have shifted a batch's notes onto
+  the wrong stories. Fixed by merging main and by a story code each answer must repeat.
+- **Approval** (Simon): spot-checked October notes keep their text and gain only a `why`; everything that passes the
+  checks and is unflagged is approved. A drafter flag marks the passage for the team (`passage_flags.json`, listed in
+  `docs/findings/2026-10-12-septimus-note-flags.md`) and holds a never-reviewed note.
+- **Held, 160:** 149 drafter flags (story cut off, two passages joined, mostly legal argument) and 11 where the note
+  names someone who appears only in the surrounding discussion. These are questions about story boundaries as much as
+  about notes; they stay draft until someone reads them.
+- **Seen in passing, not fixed here:** Ketubot 2b and 3a tell the same ferry story twice; several flagged pairs are
+  one story split across two site entries (e.g. Rav Yehuda and Rav Nahman's court case).

@@ -132,3 +132,16 @@ def test_a_draft_from_an_earlier_run_is_replaced_whole():
     prev = {STORY["id"]: {**OLD, "approved": False, "drafted": "pilot1"}}
     notes, _ = B.merge([STORY], prev, {STORY["id"]: {**draft(), "_run": "pilot2"}}, held, {})
     assert notes[STORY["id"]]["note"] == "A new draft." and notes[STORY["id"]]["drafted"] == "pilot2"
+
+
+def test_every_story_on_the_site_has_a_note():
+    """A rebuild of site/data can add stories (a new tractate, a boundary split). They must not go
+    live with no Background box unnoticed: draft them with scripts/draft_site_notes.py."""
+    missing = []
+    for t in json.loads((ROOT / "site/data/index.json").read_text())["tractates"]:
+        slug = t["tractate"]
+        notes_file = ROOT / f"site/data/notes/{slug}.json"
+        notes = json.loads(notes_file.read_text())["notes"] if notes_file.exists() else {}
+        missing += [s["id"] for s in json.loads((ROOT / f"site/data/{slug}.json").read_text())["stories"]
+                    if s["id"] not in notes]
+    assert not missing, f"{len(missing)} stories have no note: {missing[:5]}"
