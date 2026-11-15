@@ -355,9 +355,9 @@ def test_user_owner_adds_paused_at_denied():
 
 
 def seed_paused_user(uid):
-    """A person the weekly script has paused: pausedAt set, plus the script's own everLearned / lapses."""
+    """A person the weekly script has paused: pausedAt set, plus the script's own lastLearnedWeek / lapses."""
     f = {"minutesPerWeek": 10, "src": "hadar", "deleteRequested": False, "pausedAt": ts("2026-11-02T00:00:00Z"),
-         "everLearned": False, "lapses": {"arrayValue": {"values": [{"integerValue": "1"}, {"integerValue": "4"}]}}}
+         "lastLearnedWeek": {"integerValue": "0"}, "lapses": {"arrayValue": {"values": [{"integerValue": "1"}, {"integerValue": "4"}]}}}
     assert ok(commit(f"users/{uid}", SCRIPT, f, server_time=("createdAt",)))
 
 
@@ -381,11 +381,11 @@ def test_user_owner_clears_pause_and_changes_minutes_together_allowed():
     assert ok(update_user("alice", "alice", {"pausedAt": None, "minutesPerWeek": 20}))
 
 
-def test_user_owner_writes_ever_learned_or_lapses_denied():
+def test_user_owner_writes_last_learned_week_or_lapses_denied():
     seed_paused_user("alice")
-    assert denied(update_user("alice", "alice", {"everLearned": True}))
+    assert denied(update_user("alice", "alice", {"lastLearnedWeek": 3}))
     assert denied(update_user("alice", "alice", {"lapses": {"arrayValue": {"values": []}}}))
-    assert denied(update_user("alice", "alice", {"pausedAt": None, "everLearned": True}))
+    assert denied(update_user("alice", "alice", {"pausedAt": None, "lastLearnedWeek": 3}))
 
 
 def test_user_other_person_update_denied():

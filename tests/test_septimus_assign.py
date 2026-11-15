@@ -39,7 +39,7 @@ def row(uid, story, week, round_=1, done=None, released=None):
 
 def step(order, rows, users, week, last=LAST):
     """One weekly run applied to shared state, the way the runner does it: release (recording lapses on the
-    person), note who has ever learned, hand out, pause. Mutates `rows` and `users`. Returns the Plan."""
+    person), note each person's last learned week, hand out, pause. Mutates `rows` and `users`. Returns the Plan."""
     by_id = {r["id"]: r for r in rows}
     by_uid = {u["uid"]: u for u in users}
     just_lapsed = set()
@@ -49,8 +49,8 @@ def step(order, rows, users, week, last=LAST):
         if why == "lapsed":
             just_lapsed.add((r["uid"], r["storyId"], r["round"]))
             A.add_lapse(by_uid[r["uid"]], r["week"])
-    for uid in A.ever_learned_uids(rows):
-        by_uid[uid]["everLearned"] = True
+    for uid, wk in A.last_learned_weeks(rows).items():
+        by_uid[uid]["lastLearnedWeek"] = max(by_uid[uid].get("lastLearnedWeek", 0), wk)
     plan = A.hand_out(order, rows, users, week, WPM, last, just_lapsed)
     for uid in plan.pause_uids:
         by_uid[uid]["pausedAt"] = week
@@ -309,7 +309,8 @@ def test_never_hands_a_person_a_story_they_hold_open(order):
 
 def test_story_lapsed_by_a_then_by_b_is_offered_again_and_the_round_completes(order):
     x = order[0].id
-    users = [person("a", 5, 1), person("b", 5, 2)]
+    # Busy readers (lastLearnedWeek far ahead), so the pause rule stays out of this test.
+    users = [person("a", 5, 1, lastLearnedWeek=1000), person("b", 5, 2, lastLearnedWeek=1000)]
     rows, offered_x = [], []
     for w in range(1, 25):
         step(order, rows, users, w)
@@ -361,17 +362,36 @@ def test_pause_rule_details():
     assert not A.should_pause({**base, "lapses": [1, 3]})                    # two weeks but under 3 apart
     assert A.should_pause({**base, "lapses": [1, 4]})
     assert A.should_pause({**base, "lapses": [4, 1, 2]})
-    assert not A.should_pause({**base, "lapses": [1, 4], "everLearned": True})
+    assert not A.should_pause({**base, "lapses": [1, 4], "lastLearnedWeek": 4})
     assert not A.should_pause({**base, "lapses": [1, 4], "pausedAt": 2})
     assert not A.should_pause({**base, "lapses": [1, 4], "minutesPerWeek": 0})
     assert A.add_lapse(base, 2) and base["lapses"] == [2] and not A.add_lapse(base, 2)
 
 
-def test_ever_learned_in_the_rows_stops_a_pause(order):
+def test_learning_in_the_rows_stops_a_pause(order):
     users = [person("a", 10, 1, lapses=[1, 4])]
     done = [row("a", order[0].id, 2, done=3)]
     assert A.hand_out(order, [], users, 7, WPM, LAST).pause_uids == ["a"]
     assert A.hand_out(order, done, users, 7, WPM, LAST).pause_uids == []
+
+
+def test_a_never_reader_is_paused_after_lapses_three_weeks_apart():
+    base = person("a", 10, 1)
+    assert A.should_pause({**base, "lapses": [1, 4]})
+    assert not A.should_pause({**base, "lapses": [1, 2]})
+
+
+def test_a_reader_who_stopped_is_paused_after_two_lapses_three_weeks_apart():
+    base = person("a", 10, 1)
+    assert A.should_pause({**base, "lastLearnedWeek": 1, "lapses": [2, 5]})      # learned week 1, then quiet
+    assert not A.should_pause({**base, "lastLearnedWeek": 5, "lapses": [2, 5]})  # both at or before week 5
+    assert not A.should_pause({**base, "lastLearnedWeek": 3, "lapses": [2, 5]})  # only week 5 remains
+    assert A.should_pause({**base, "lastLearnedWeek": 3, "lapses": [2, 5, 8]})   # 5 and 8 remain
+
+
+def test_last_learned_weeks_takes_the_latest_learned_row_per_person():
+    rows = [row("a", "s1", 1, done=2), row("a", "s2", 4, done=5), row("a", "s3", 6), row("b", "s1", 2)]
+    assert A.last_learned_weeks(rows) == {"a": 4}
 
 
 def test_120_minute_cap_applies_to_a_bigger_record():

@@ -284,7 +284,7 @@ def test_a_row_marked_learned_at_release_time_is_not_given_to_someone_else(order
     regiven = [r for r in racy.rows.values() if r["week"] == 4 and r["uid"] != "alice"
                and r["round"] == 1 and r["storyId"] in alice_week1]
     assert regiven == []                                         # still hers: covered, not free
-    assert racy.user_docs["alice"]["everLearned"] is True        # and it counts as learning
+    assert racy.user_docs["alice"]["lastLearnedWeek"] == 1      # and it counts as learning
     assert not racy.user_docs["alice"].get("lapses")             # not a lapse
 
 
@@ -380,22 +380,23 @@ def test_a_never_reading_person_is_paused_at_the_week_7_run_and_lapses_are_store
     assert counts["week"] == 8 and counts["handedOut"] > 0 and counts["paused"] == 0
 
 
-def test_ever_learned_is_written_only_when_it_changes(order):
+def test_last_learned_week_is_written_only_when_it_increases(order):
     store = FakeStore([person("a", 30, 1)])
     go(store, SUNDAY, order)
     first = next(r for r in store.rows.values() if r["uid"] == "a")
     first["doneAt"] = 5
     go(store, date(2026, 12, 8), order)
-    assert [u for u in store.user_updates if "everLearned" in u[1]] == [("a", {"everLearned": True})]
+    assert [u for u in store.user_updates if "lastLearnedWeek" in u[1]] == [("a", {"lastLearnedWeek": 1})]
     go(store, date(2026, 12, 9), order)
-    assert len([u for u in store.user_updates if "everLearned" in u[1]]) == 1       # not written again
+    assert len([u for u in store.user_updates if "lastLearnedWeek" in u[1]]) == 1       # not written again
 
 
-def test_a_person_who_has_learned_is_never_paused(order):
+def test_a_person_who_keeps_learning_is_never_paused(order):
     store = FakeStore([person("a", 30, 1)])
     go(store, SUNDAY, order)
-    next(r for r in store.rows.values())["doneAt"] = 5
     for w in range(2, 10):
+        for r in store.rows.values():
+            r["doneAt"] = r.get("doneAt") or 5                  # learns whatever they were given
         counts = go(store, LAUNCH + (w - 1) * timedelta(days=7), order)
         assert counts["paused"] == 0
 

@@ -9,7 +9,7 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 
 ## 1. Decisions from Simon
 
-- [ ] Should someone who learned once and then stopped reading also be paused? Today only people who have
+- [x] Should someone who learned once and then stopped reading also be paused? **Yes** (2026-11-15), built: Today only people who have
       never learned anything are (found by the multi-week test, `septimus-staging.md`).
 - [ ] Look at the built screens on staging, especially those that had no mockup: stop / delete / cancel deletion,
       paused / resume, "You're in", "How the stories were chosen", "Your data", the in-app-browser notice.

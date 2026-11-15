@@ -64,7 +64,8 @@ both week-1 stories learned. The script was right. Those checks were replaced.
 
 **One thing the run showed that the rules allow but may not be wanted:** someone who learned one story in week 1
 and nothing since is never paused. Simon's account let stories lapse in weeks 2, 3, 5, 6 and 8 and kept being given
-more. The pause rule only catches people who have *never* learned anything. A decision for Simon.
+more. The pause rule only caught people who had *never* learned anything. **Changed the same day (Simon):** two
+lapses at least three weeks apart with nothing learned in between now pauses anyone.
 
 The test accounts (`test-a` to `test-d`@example.com) and their rows are still on staging.
 

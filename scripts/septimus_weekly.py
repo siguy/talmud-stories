@@ -193,13 +193,13 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
     counts["released"], just_lapsed, patches = _release_rows(store, due, rows_by_id, users_by_uid, dry_run)
     LOG.info("released %d open rows (%d lapsed)", counts["released"], len(just_lapsed))
 
-    # The two fields only this script writes. everLearned is worked out from the rows read, OR the stored flag,
-    # so history below the base round is never needed; it is written back only when it changes.
-    for uid in A.ever_learned_uids(rows):
+    # The two fields only this script writes. lastLearnedWeek is the larger of the stored value and the rows read,
+    # so history below the base round is never needed; it is written back only when it increases.
+    for uid, wk in A.last_learned_weeks(rows).items():
         u = users_by_uid.get(uid)
-        if u is not None and not u.get("everLearned"):
-            u["everLearned"] = True
-            patches.setdefault(uid, {})["everLearned"] = True
+        if u is not None and wk > int(u.get("lastLearnedWeek") or 0):
+            u["lastLearnedWeek"] = wk
+            patches.setdefault(uid, {})["lastLearnedWeek"] = wk
     for uid, fields in patches.items():
         if not dry_run:
             store.update_user(uid, fields)
@@ -357,7 +357,7 @@ class Store:
         return txn(self.db.transaction())
 
     def update_user(self, uid, fields):
-        """Script-only fields on the user record (everLearned, lapses)."""
+        """Script-only fields on the user record (lastLearnedWeek, lapses)."""
         self.db.collection("users").document(uid).update(fields)
 
     def set_paused(self, uid, value):

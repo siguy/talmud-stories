@@ -20,8 +20,9 @@ Plain-English terms used below:
   - "covered": somebody holds an unreleased row for that story in that round, so nobody else is given it.
   - "week": campaign week. Week 1 is the seven days starting on the launch Sunday.
   - "lapsed": a row nobody marked learned in three weeks, so it went back in the deck.
-  - everLearned / lapses: two fields on the person's record that only the script writes. everLearned = they have
-    marked at least one story learned, ever. lapses = the weeks (assignment weeks) of rows that lapsed on them.
+  - lastLearnedWeek / lapses: two fields on the person's record that only the script writes. lastLearnedWeek = the
+    latest assignment week of any story they marked learned (0 or missing = never). lapses = the weeks
+    (assignment weeks) of rows that lapsed on them.
 """
 import json
 import re
@@ -114,9 +115,13 @@ def _is_stopped(user):
 
 # ---------------------------------------------------------------- the person's bookkeeping fields
 
-def ever_learned_uids(assignments):
-    """Uids with at least one row marked learned among the rows given."""
-    return {r.get("uid") for r in assignments if r.get("doneAt") and r.get("uid")}
+def last_learned_weeks(assignments):
+    """{uid: the latest assignment week of any row of theirs marked learned}, over the rows given."""
+    out = {}
+    for r in assignments:
+        if r.get("doneAt") and r.get("uid"):
+            out[r["uid"]] = max(out.get(r["uid"], 0), int(r["week"]))
+    return out
 
 
 def add_lapse(user, week):
@@ -132,12 +137,15 @@ def add_lapse(user, week):
 
 
 def should_pause(user):
-    """Never learned anything, and lapsed rows from two different lapse rounds (weeks at least 3 apart).
-    Releases for stopping never count (they are not recorded in `lapses`). No automatic un-pause: the person
-    resumes by clearing pausedAt themselves, and the script clears `lapses` when it pauses, so they start fresh."""
-    if user.get("pausedAt") or _is_stopped(user) or user.get("everLearned"):
+    """Quiet for a long stretch: after the last story they marked learned (or from the start, if they never
+    learned one), rows lapsed in two different weeks at least 3 weeks apart. Lapses from before or in their
+    last learned week do not count. Releases for stopping never count (they are not recorded in `lapses`).
+    No automatic un-pause: the person resumes by clearing pausedAt themselves, and the script clears `lapses`
+    when it pauses, so they start fresh."""
+    if user.get("pausedAt") or _is_stopped(user):
         return False
-    weeks = sorted({int(w) for w in user.get("lapses") or []})
+    last = int(user.get("lastLearnedWeek") or 0)
+    weeks = sorted({int(w) for w in user.get("lapses") or [] if int(w) > last})
     return len(weeks) >= 2 and weeks[-1] - weeks[0] >= PAUSE_LAPSE_SPAN_WEEKS
 
 
@@ -179,10 +187,10 @@ def hand_out(story_order, assignments, users, week, wpm, last_week, just_lapsed=
     just_lapsed = set(just_lapsed)
 
     # Pause the quiet (see should_pause). Rows in `assignments` also count as proof of having learned.
-    learned = ever_learned_uids(rows)
+    learned = last_learned_weeks(rows)
     paused = {u["uid"] for u in users if u.get("pausedAt")}
     for u in sorted(users, key=lambda p: p["uid"]):
-        if should_pause({**u, "everLearned": bool(u.get("everLearned")) or u["uid"] in learned}):
+        if should_pause({**u, "lastLearnedWeek": max(int(u.get("lastLearnedWeek") or 0), learned.get(u["uid"], 0))}):
             plan.pause_uids.append(u["uid"])
             paused.add(u["uid"])
 
@@ -265,9 +273,9 @@ def assign_week(story_order, assignments, users, week, wpm, last_week, max_minut
             just_lapsed.add((r["uid"], r["storyId"], r["round"]))
             if r["uid"] in by_uid:
                 add_lapse(by_uid[r["uid"]], r["week"])
-    learned = ever_learned_uids(rows)
+    learned = last_learned_weeks(rows)
     for u in people:
-        u["everLearned"] = bool(u.get("everLearned")) or u["uid"] in learned
+        u["lastLearnedWeek"] = max(int(u.get("lastLearnedWeek") or 0), learned.get(u["uid"], 0))
     plan = hand_out(story_order, rows, people, week, wpm, last_week, just_lapsed, max_minutes, base_round)
     plan.release_ids = [rid for rid, _ in due]
     return plan

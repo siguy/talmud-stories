@@ -179,7 +179,7 @@ no stored pool state, no name or email in the database.
 users/{uid}                    { createdAt, minutesPerWeek, src,            // written by the person at "Join"
                                  deleteRequested: false,                    // set by the person
                                  pausedAt: null,                            // set by the script; the person may clear it (resume)
-                                 everLearned, lapses: [week] }              // script only: what the pause rule needs (c review)
+                                 lastLearnedWeek, lapses: [week] }          // script only: what the pause rule needs
 assignments/{week_uid_storyId} { uid, storyId, round, week,                 // week = campaign week, 1..~40
                                  assignedAt, doneAt: null | ts, releasedAt: null | ts }
 runs/{week}                    { startedAt, finishedAt, counts }            // one per campaign week; makes a re-run a no-op
@@ -216,8 +216,9 @@ assign_week(story_order, assignments, users, week, wpm) -> rows to write, rows t
 2. **Release.** A row assigned in week W and still not learned is released by the week W+3 run (it stayed on the
    person's list for W, W+1 and W+2). The write re-checks that `doneAt` is still empty, so a story marked learned at
    that moment is not also handed to someone else.
-3. **Pause the quiet.** A person who has never marked anything learned and has let stories lapse in two hand-outs
-   at least three weeks apart gets `pausedAt` and one "still with us?" email. Tapping "Resume" (the person clearing
+3. **Pause the quiet.** A person who has let stories lapse in two hand-outs at least three weeks apart, with
+   nothing learned in between, gets `pausedAt` and one "still with us?" email. This covers someone who never read
+   and someone who read at first and then stopped (Simon, 2026-11-15); marking any story learned resets the count. Tapping "Resume" (the person clearing
    their own `pausedAt`) undoes it. Stories released because the person stopped do not count as lapses.
 4. **Which stories are free.** A story is *covered in round N* if a row for it exists in round N that has not been
    released. The current round is the lowest N in which some story on the list is not covered.
@@ -260,7 +261,7 @@ catches up at the next daily run and is labelled with its time.
 - `users/{uid}`: readable and writable only by that person. On create: only `createdAt` (must equal the server time),
   `minutesPerWeek` (whole number 1 to 120), `src` (short, lowercase letters, digits and hyphens),
   `deleteRequested: false`. On update: only `minutesPerWeek` (0 to 120) and `deleteRequested`, and clearing `pausedAt` (resume). Never
-  `createdAt`, `src`, setting `pausedAt`, or the script's `everLearned` and `lapses`.
+  `createdAt`, `src`, setting `pausedAt`, or the script's `lastLearnedWeek` and `lapses`.
 - `assignments`: a person can read their own rows and change only `doneAt` on them, to the server time or back to
   empty. Rows are created only by the script.
 - `runs`, `sent`: script only. `progress/summary`: anyone can read, only the script writes.

@@ -404,14 +404,14 @@ def test_previous_finished_at_walks_back_a_few_weeks_only(store):
 
 
 def test_set_paused_clears_lapses_and_update_user_writes_only_what_it_is_given(store):
-    seed_person(store, "pa", 30, 1, lapses=[1, 4], everLearned=False)
+    seed_person(store, "pa", 30, 1, lapses=[1, 4], lastLearnedWeek=0)
     store.set_paused("pa", True)
     u = store.db.collection("users").document("pa").get().to_dict()
     assert isinstance(u["pausedAt"], datetime) and u["lapses"] == [] and u["minutesPerWeek"] == 30
     store.set_paused("pa", False)
-    store.update_user("pa", {"everLearned": True})
+    store.update_user("pa", {"lastLearnedWeek": 3})
     u = store.db.collection("users").document("pa").get().to_dict()
-    assert u["pausedAt"] is None and u["everLearned"] is True and u["lapses"] == []
+    assert u["pausedAt"] is None and u["lastLearnedWeek"] == 3 and u["lapses"] == []
 
 
 # ---------------------------------------------------------------- 7 and 8: the command line
