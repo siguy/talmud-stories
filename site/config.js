@@ -24,3 +24,16 @@ window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://
     communities: ["hadar", "dn", "kesher"]    // allowed ?src= values; placeholder list until Daniel confirms
   }
 };
+// Staging: the copy of the site at talmud-stories-staging.vercel.app uses its own Firebase project, so test
+// sign-ups and test runs of the weekly script never touch real people's records. Also public, not a secret.
+if (/^talmud-stories-staging[a-z0-9-]*\.vercel\.app$/.test(location.hostname)) {
+  window.SEPTIMUS_CONFIG.staging = true;
+  window.SEPTIMUS_CONFIG.firebase = {
+    apiKey: "AIzaSyBbTAAbLf7l6O8hIzG4RiqsNgkTtJ-8znk",
+    authDomain: "septimus-stories-staging.firebaseapp.com",
+    projectId: "septimus-stories-staging",
+    storageBucket: "septimus-stories-staging.firebasestorage.app",
+    messagingSenderId: "83308377990",
+    appId: "1:83308377990:web:299bc891f9d11cc80dde07"
+  };
+}

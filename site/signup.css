@@ -66,3 +66,4 @@ p.su-progress-title{margin:.2rem 0}
 .su-rowmsg{margin:.2rem 0 0;font-size:.85rem;color:var(--muted)}
 .su-rowmsg:empty{display:none}
 @media (prefers-color-scheme:dark){.su-myrow.read .check{color:#121316}}   /* dark tick on the light green fill, like the other dark overrides here */
+.su-staging{margin-left:.6rem;padding:.1rem .5rem;border-radius:999px;background:var(--gold);color:#222;font:700 .7rem "Helvetica Neue",Helvetica,Arial,sans-serif;vertical-align:middle}

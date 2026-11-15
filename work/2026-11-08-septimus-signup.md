@@ -140,6 +140,9 @@ Review and outcomes: `docs/technical/signup-d-review-2026-11-15.md`. Screenshots
 - **Simon has not seen** the screens that had no mockup: stop / delete / cancel deletion, paused / stopped / resume,
   "You're in", "How the stories were chosen", "Your data", About (placeholder), the in-app-browser notice.
 
+**Staging exists (2026-11-15):** `https://talmud-stories-staging.vercel.app`, its own Firebase project
+`septimus-stories-staging`; see `docs/technical/septimus-staging.md`. Test there, not on the real site.
+
 ## What is left, in order (2026-11-15)
 
 1. Simon: look at the built screens; confirm the builder's choices in the b, c and d review files.

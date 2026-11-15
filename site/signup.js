@@ -721,9 +721,14 @@
   }
 
   // ---- routing --------------------------------------------------------------------------------
+  // On the staging copy of the site (config.js sets `staging`), say so in the top bar so nobody mistakes it for the real one.
+  function stagingLabel() {
+    var title = document.querySelector(".bar-title");
+    if ((window.SEPTIMUS_CONFIG || {}).staging && title) title.appendChild(el("span", { "class": "su-staging", text: "Staging" }));
+  }
   var SCREENS = { "": landing, join: join, joined: joined, how: how, "your-data": yourData, about: about, my: myStories, progress: progress };
   function route(parts) {
-    if (!srcDone) { srcDone = true; rememberSrc(); }
+    if (!srcDone) { srcDone = true; rememberSrc(); stagingLabel(); }
     var t = ++token;
     S.listener = null;
     var name = parts[1] || "";
