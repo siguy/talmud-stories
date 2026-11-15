@@ -261,7 +261,7 @@ catches up at the next daily run and is labelled with its time.
   and blanks `uid` on that person's rows, so group totals stay true.
 - **Unsubscribing from email** is handled by the email service and stops email only. It is not leaving.
 - **Everyone's personal data is deleted** (accounts and `users` records; rows anonymised) on a fixed date after the
-  yahrzeit, a config value, proposed as six months after.
+  yahrzeit, a config value: six months after (Simon, 2026-11-14).
 
 ## 7. A list that changes, and story ids
 
@@ -414,6 +414,13 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 None blocking b or c. Decided 2026-11-14 (plan review): script instead of a Cloud Function, so **no paid plan and no
 card**; order starts at Berakhot; long stories handed out anyway; stop / delete / deletion date; a "Your data" note
 before sign-in; pause the quiet; a contact line for people without Google; hand-outs stop after the yahrzeit.
+
+Also confirmed by Simon, 2026-11-14 (these were the builder's choices until he saw them):
+- **The landing page becomes the site's front page** (`/`); the tractate list moves to `#/browse`.
+- **At most 120 minutes a week.**
+- **Personal data is deleted six months after the yahrzeit** (still a config value).
+- **"Quiet" means two rounds of handed-back stories with nothing ever marked learned**, about six weeks, then one
+  "still with us?" email and a pause.
 
 Still to choose before step e: the email service and the sending domain.
 
