@@ -126,6 +126,7 @@
       (n.approved ? '' : ' <span class="chip">DRAFT — not yet reviewed</span>') + '</summary><p>' + esc(n.note) + '</p>';
     if (n.people.length) h += '<h3>Who\'s who</h3><ul>' + n.people.map(function (p) { return '<li><b>' + esc(p.name) + '</b>' + (p.about ? ' — ' + esc(p.about) : '') + '</li>'; }).join("") + '</ul>';
     if (n.terms.length) h += '<h3>Words to know</h3><ul>' + n.terms.map(function (t) { return '<li><b>' + esc(t.term) + '</b> — ' + esc(t.meaning) + '</li>'; }).join("") + '</ul>';
+    if (n.why) h += '<h3>Why is this story here?</h3><p>' + esc(n.why) + '</p>';   // last in the box (Simon 2026-11-15)
     return h + '<p class="fine">Written with the help of AI' + (n.approved ? ' and reviewed by a person' : '') + '. Spot a mistake? Use “Report a problem” below.</p></details>';
   }
   function feedbackMarkup() {
