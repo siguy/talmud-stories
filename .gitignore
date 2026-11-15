@@ -35,3 +35,6 @@ results/v11/triage_rules/
 .stitch/*
 !.stitch/DESIGN.md
 !.stitch/manifest.json
+
+# Firebase service-account keys are secrets: never commit one (docs/technical/septimus-staging.md)
+*firebase-adminsdk*.json

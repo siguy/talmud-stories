@@ -259,12 +259,17 @@ class Store:
         self.reads = 0
         key = os.environ.get("FIREBASE_SERVICE_ACCOUNT")
         if key:
-            cred = credentials.Certificate(json.loads(key))
+            # The key decides which project is touched (live or staging), not site/config.js: a staging key
+            # must never be pointed at the live database, or the other way round.
+            info = json.loads(key)
+            cred = credentials.Certificate(info)
+            project_id = info["project_id"]
         elif os.environ.get("FIRESTORE_EMULATOR_HOST") or os.environ.get("FIREBASE_AUTH_EMULATOR_HOST"):
             from google.auth.credentials import AnonymousCredentials
             cred = AnonymousCredentials()      # the emulator does not check credentials
         else:
             raise SystemExit("Set FIREBASE_SERVICE_ACCOUNT (the service-account JSON) or point at the emulator.")
+        LOG.info("database: project %s", project_id)
         firebase_admin.initialize_app(cred, {"projectId": project_id})
         self.db = firestore.client()
 

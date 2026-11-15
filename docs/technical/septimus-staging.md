@@ -23,8 +23,12 @@ It deploys whatever is checked out, so say which branch is on staging when askin
 
 ## Run the weekly script against staging
 
-Not done yet. It needs a service-account key for `septimus-stories-staging` (Firebase console → Project settings →
-Service accounts → Generate new private key). Keep the file outside the repo, then:
+**First run 2026-11-15:** with a test launch date of Monday 2026-11-09, it handed the one test account 2 stories
+(Berakhot 3a and 3b), wrote the public summary, and a second run changed nothing. The script takes its project from
+the key, not from `site/config.js`, and logs `database: project …` so a run can never hit the wrong one.
+
+It needs a service-account key for `septimus-stories-staging` (Firebase console → Project settings →
+Service accounts → Generate new private key). Keep the file outside the repo if you can; `.gitignore` refuses `*firebase-adminsdk*.json` either way. Then:
 
 ```bash
 pip install -r requirements-septimus.txt
