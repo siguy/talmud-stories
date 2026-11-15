@@ -548,8 +548,13 @@ def test_keep_decisions_ship_and_a_remove_that_would_undo_one_is_refused(tmp_pat
     import build_site_data as b
     site, d = _site(), _decisions()
     keep = d["keep"]["passages"]
+    # 4 kept 2026-11-14 ("if they're stories ... keep them"), then the 11 SHOW_SIMON twin cards ("keep them all").
     assert {k["card"] for k in keep} == {"pesachim-49a-15-15", "ketubot-86a-4-4", "rosh_hashanah-18a-7-7",
-                                         "yevamot-105a-13-13"}
+                                         "yevamot-105a-13-13",
+                                         "avodah_zarah-65b-5-5", "bava_batra-8a-16-16", "bava_metzia-85b-4-4",
+                                         "bava_metzia-85b-7-7", "berakhot-19a-9-9", "makkot-16b-6-6",
+                                         "moed_katan-21a-6-6", "moed_katan-25b-2-2", "moed_katan-25b-9-9",
+                                         "taanit-21b-8-8", "yoma-38b-2-2"}
     for k in keep:
         assert k["decided_by"] and k["simon"] and k["card"] in {s["id"] for s in site[k["tractate"]]["stories"]}, k
     bad = dict(d, remove=dict(d["remove"], passages=d["remove"]["passages"] + [
