@@ -83,7 +83,7 @@ def test_an_invalid_subagent_answer_is_never_a_note():
 def test_the_why_renders_inside_the_background_box():
     js = (ROOT / "site/app.js").read_text()
     box = js[js.index("function noteMarkup"):js.index("function feedbackMarkup")]
-    assert "n.why" in box and box.index("n.why") < box.index("Written with the help of AI")
+    assert "n.why" in box and box.index("n.why") < box.index("Written by AI")
 
 
 def test_no_held_note_is_approved_unless_simon_approved_it_in_october():
