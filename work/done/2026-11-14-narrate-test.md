@@ -5,14 +5,14 @@ tractate: [ketubot, kiddushin, gittin, eruvin, yevamot]
 blocked_by: []
 awaiting: []
 writes: [results/shas_run/narrate_test/, scripts/narrate_test.py, tests/test_narrate_test.py]
-finding:
+finding: docs/findings/2026-11-14-narrate-test.md
 superseded_by:
 ---
 
 # The narrate test
 
 **Self-contained.** A fresh session executes this with no other context.
-Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 
 ## The claim to test / the problem
 
@@ -59,3 +59,28 @@ same harness pattern as `scripts/calibrate_low_pool_grader.py`.
 
 Write the finding to `docs/findings/<date>-<slug>.md`, add an `## Outcome` section
 below, and `git mv` this file to `work/done/`. **Never delete it.**
+
+## Outcome
+
+Run 2026-11-14 with Sonnet narrators (two passes, 493 units each, all answers valid). Finding:
+[`docs/findings/2026-11-14-narrate-test.md`](../../docs/findings/2026-11-14-narrate-test.md).
+
+- **Classification: fails the bar.** `can_narrate == yes` recovers 80/141 and 84/141 of Jeff's yes (grader: 32/141) but at
+  precision 0.81 / 0.80 (grader 0.97); the combined second-judge rule gets 0.83-0.84 (Wilson LB 0.74-0.76), below the 0.90 / 0.80 bar.
+  BLIND (C2) precision 0.91 / 0.85 on n=22 / 26. Useful as a recall aid for the review queue, not for shipping.
+- **Boundaries: no gain.** The narrator's needed-segments span equals the detector's in ~89% of units (it is anchored by the PASSAGE
+  marker); Ketubot ends move by 2 targets (two MISS->HIT, one HIT->MISS), starts are level, both passes agree. The Ketubot end
+  deficit is not recovered. Not an independent border judge as prompted.
+- **Why / confounds:** the grader ran on Opus with the rules and a +-1 window; the narrator on Sonnet, no rules, +-3 window, so the
+  comparison is model + prompt + context together and not attributable to narrating alone. Untried: Opus narrator; an unmarked window.
+- Nothing ships; site and detector untouched. Reproduce: `python3 scripts/narrate_test.py build|export|import|score`.
+
+### Addendum (same day, at Simon's request)
+
+- **Opus on the grader's view (+-1, marked, no rules):** the same precision as Sonnet (0.80), recall 0.61-0.65. So the first run's gap to the grader was not
+  the model or the context: it is the rules.
+- **Narrate-then-rules (hybrid, Opus):** `story` precision 0.93-0.95 (Wilson LB 0.82-0.85), recall 0.26-0.30 -- it meets the second-judge bar
+  but only by becoming the grader; the combined rule adds ~10 of Jeff's 141 yes (recall 0.23 -> 0.30). Hybrid stability 96% yes-or-not.
+- **Unmarked-window border test (Opus):** the narrator's story equals the detector's span in 83-86% of windows without any marker (not an
+  echo: independent agreement), and net movement against Jeff's blind targets is 1-2 per direction. The Ketubot end deficit is not a
+  narration problem. Findings: `docs/findings/2026-11-14-narrate-test.md`, Addendum 2.
