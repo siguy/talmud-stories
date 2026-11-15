@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 import build_site_notes as B  # noqa: E402
 import draft_site_notes as D  # noqa: E402
 
-STORY = {"id": "t-2a-1-1", "ref": "T 2a", "tier": "story",
+STORY = {"id": "t-2a-1-1", "ref": "T 2a",
          "segments": [{"ref": "T 2a", "i": 1, "he": "", "en": "<b>Rav Huna</b> went to the market."}]}
 OLD = {"note": "Rav Huna goes to the market.", "why": "", "people": [], "terms": [], "approved": True}
 
@@ -93,3 +93,20 @@ def test_no_held_note_is_approved_unless_simon_approved_it_in_october():
         approved_held += [i for i, n in json.loads(f.read_text())["notes"].items()
                           if n.get("approved") and i in held and not held[i].startswith("why dropped")]
     assert not approved_held, approved_held[:5]
+
+
+def test_an_answer_filed_under_the_wrong_story_is_rejected():
+    """A subagent that skips 07.txt shifts every later answer by one; the code catches it."""
+    code_a, code_b = D.story_code("r", "t-2a-1-1"), D.story_code("r", "t-2a-5-5")
+    assert code_a != code_b
+    ans = {"code": code_b, "note": "ok", "why": "", "people": [], "terms": [], "flag": ""}
+    assert D.validate(ans, code_a)[0] is None
+    assert D.validate({**ans, "code": code_a.lower()}, code_a)[0]
+
+
+def test_every_story_file_opens_with_its_code():
+    s = {"ref": "T 2a", "segments": [{"ref": "T 2a", "i": 1, "he": "א", "en": "x"}]}
+    flat = [("T 2a", 0, "", "before"), ("T 2a", 1, "א", "x"), ("T 2a", 2, "", "after")]
+    text = D.story_file(s, flat, {("T 2a", k): k for k in range(3)}, "ABC123")
+    assert text.splitlines()[0] == "Story code: ABC123"
+    assert "[1] BEFORE" in text and "[2] STORY" in text and "[3] AFTER" in text

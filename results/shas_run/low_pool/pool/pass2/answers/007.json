@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question to Rava that he did not understand and Ravina's clarifying question: speech only, no conflict, no event beyond speaking."},
+"02": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "Habitual practices of R. Elazar and R. Zeira regarding gifts and invitations, with no one-time event and nothing following from the habit."},
+"03": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3], "reason": "A pending trial and a message sent to the judge, followed by Rav Nahman's deliberation about its purpose; mainly speech with a minimal real event."},
+"04": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "R. Hanina b. Akiva went somewhere, found palm branches, and instructed his disciples; a real event cited as precedent with little change."},
+"05": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "R. Ami finds a vessel of dinars and a Roman responds telling him to take it; real events and a response, but the outcome is only implied and causality is thin."},
+"06": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2, 3], "reason": "A heretic challenges R. Abbahu and he retorts; speech with conflict and no further event."},
+"07": {"verdict": "not", "rules": ["R-C0", "R-C6"], "segments": [], "reason": "An incident only named as precedent in a halakhic debate (a mouse in vinegar, Rav Kahana forbade it): one event and a ruling, then argument over the proof."},
+"08": {"verdict": "not", "rules": ["R-B4", "R-C0"], "segments": [], "reason": "The Gemara discusses the Mishnah's Shimon ben Shatah incident as a legal difficulty; commentary on a story told elsewhere, not a story."},
+"09": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Ravina delayed selling his merchandise and sold it for double; two events with an outcome, but minimal and reported as legal evidence."},
+"10": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "R. Yitzhak and R. Hanina's disciples act, the matter is reported up the chain, and the Nasi sends a constable to remove the girl: several actions and a change."},
+"11": {"verdict": "not", "rules": ["R-C0", "R-C7"], "segments": [], "reason": "A land dispute presented as a legal case (claim, counterclaim, one witness) followed by the Sages' discussion; no further narrated action or change."},
+"12": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2, 3, 4], "reason": "Cases of a borrowed pail that broke and a borrowed cat killed by mice, each brought for a ruling; real events with a ruling, closest to R-C0's cow case, so borderline rather than not."},
+"13": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "R. Hagga climbing the stairs overhears a child reciting verses and draws an exegetical inference; a real event that leads only to teaching."},
+"14": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabba bar Avuh meets Elijah and asks a question that is answered; a setting plus a question and answer is not a story."},
+"15": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A rotten lung brought before the study hall and ruled tereifa; a case and its ruling with no further action or change."},
+"16": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rabba tests the child Abaye and Rava; Rava points to the ceiling, Abaye goes outside and points to the sky, and Rabba foresees their greatness: actions beyond speech with a resolution."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Elazar arrives, is shown the tanna, and a halakhic question and answer follow; the setting only frames the question."},
+"18": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Mar bar Ameimar reports his father's practice, Rav Ashi remarks that it fails if he dies, and Ameimar then dies; the remark causes a dramatic change."},
+"19": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Yohanan visits Parod, asks for bar Kappara's teaching, is taught a baraita and praises the teacher with a verse; setting plus question and answer."},
+"20": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Rabba bar Rav Huna visited the Exilarch and gave a permissive ruling; a visit framing a ruling, with nothing else happening."}
+}

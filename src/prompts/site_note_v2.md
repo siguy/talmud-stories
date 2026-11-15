@@ -5,6 +5,7 @@ The file shows numbered segments. Segments marked `STORY` are the story. Segment
 Write ONE JSON object and nothing else:
 
 {
+  "code": "the Story code printed on the first line of the file, copied exactly",
   "note": "2-4 plain-English sentences: what happens in the story, with just enough setting to follow it (who these people are to each other, what the situation is). No more than 800 characters.",
   "why": "1-2 sentences: why the Gemara tells this story HERE. What question, ruling or teaching in the surrounding discussion does it support, illustrate, challenge or follow from? No more than 300 characters. Empty string if the segments shown do not tell you.",
   "people": [{"name": "a person named in the STORY segments", "about": "who they are, in under 160 characters"}],

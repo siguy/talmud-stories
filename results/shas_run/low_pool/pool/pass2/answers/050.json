@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "The tail of the Rabbi Zakkai story: the inheritances of wine as reward. Real events with a change, but it is only the outcome of a story begun in the context."},
+"02": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "Ravina's twelve-month delay is cited as a precedent. It is a single act with no response or change."},
+"03": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "The Rav Pappa incident is only named, and the translator fills it in. That makes it an alluded incident."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A legal answer that explains Rav Huna's ruling. No narrated event."},
+"05": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Kahana reads before Rav, Rav sighs, and Kahana draws an inference. Real events but little change; the rest is exegesis."},
+"06": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "Rabba decrees a fast and no rain comes. The rest is mainly his speech in a tense exchange with the people."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An exclamation and a halakhic objection. Only speech."},
+"08": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "A man mortgages an orchard, the orchard ages, then Abaye and Rava dispute. Events then legal discussion, with no resolution narrated."},
+"09": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Ashi's brief first-person report of a dream and his rise to greatness. An event and a change, minimally told."},
+"10": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "Rabba sells a donkey and Abaye questions it. One act followed by ordinary halakhic back-and-forth."},
+"11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A proverbial announcement and a recalled saying. No incident."},
+"12": {"verdict": "borderline", "rules": ["R-C7", "R-C6"], "segments": [2], "reason": "Rava bar Livai's injury and Rava's explanation of it are cited as evidence of Rava's view. Events with weak causality."},
+"13": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Rabbi Zeira relays Rabbi Hiyya's ruling and Rabbi retracts. Mainly speech, with a change of view; segments 3-4 are legal discussion."},
+"14": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A dispute over which book to study, Levi is compelled, Psalms is brought, and Levi takes Rabbi's teaching as permission to leave. Several actions with conflict and change."},
+"15": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Two brothers divide an estate, one builds a wall, there is a complaint, and Rav Hama rules. Real events but nothing changes after the ruling."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Legal discussion that mentions in passing that Rav Nahman ruled in a case. No narrated incident."},
+"17": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 5], "reason": "An exegetical narrative about the biblical Jonathan, Micah's priest, and King David. Segment 4 is the Gemara's commentary."},
+"18": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Basket sellers are blocked by the townspeople and come before Ravina, who rules. Events then a ruling and halakhic qualification."},
+"19": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 4], "reason": "A woman confesses to Rav Hisda, he predicts her death, and she does not die (or, in the other version, dies). Events with an outcome; segment 3 is commentary."},
+"20": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "A stain case in which Rabbi Meir and Rabbi attribute the stain to a source. A case and a ruling with no other narrated action."}
+}

@@ -1,6 +1,6 @@
 # Story finder across all of Shas: plan (produces story list v1)
 
-*Written 2026-11-08. Work item: [`work/2026-11-08-shas-finder-run.md`](../../work/2026-11-08-shas-finder-run.md).
+*Written 2026-11-08. Work item: [`work/done/2026-11-08-shas-finder-run.md`](../../work/done/2026-11-08-shas-finder-run.md).
 Comes **before** the sign-up ([`septimus-signup-plan.md`](septimus-signup-plan.md)), which reads the list this produces.
 Nothing here has been run. No API calls before Simon approves the plan and the cost.*
 

@@ -1,0 +1,1971 @@
+{
+ "meta": {
+  "what": "a seeded random sample of promotions for Simon to read; nothing ships unless >= 54 of 60 are real",
+  "seed": 20261113,
+  "n": 60,
+  "of": 80,
+  "by_pool": {
+   "P1": 20,
+   "P3": 38,
+   "P4": 2
+  },
+  "drawn": "2026-11-13T16:52:44"
+ },
+ "rows": [
+  {
+   "id": "Bava Metzia 85a:2-2",
+   "ref": "Bava Metzia 85a",
+   "tractate": "Bava Metzia",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Yehuda HaNasi, inspired by Rabbi Elazar's suffering, accepts thirteen years of physical ailments upon himself.",
+   "segments": [
+    {
+     "ref": "Bava Metzia 85a",
+     "i": 2,
+     "hebrew": "אָמַר רַבִּי, חֲבִיבִין יִסּוּרִין. קַבֵּל עֲלֵיהּ תְּלֵיסַר שְׁנֵי: שֵׁית בִּצְמִירְתָּא, וּשְׁבַע (בְּצַפְרִנָא) [בְּצַפְדִּינָא], וְאָמְרִי לַהּ: שִׁבְעָה בִּצְמִירְתָּא, וְשֵׁית (בְּצַפְרִנָא).",
+     "english": "§ The Gemara returns to the previous incident. When he heard that the greatness of Rabbi Elazar, son of Rabbi Shimon, was due to his suffering, <b>Rabbi</b> Yehuda HaNasi <b>said</b> to himself: <b>Afflictions are</b> evidently <b>precious. He accepted thirteen years</b> of afflictions <b>upon himself; six</b> years <b>of stones in the kidneys and seven</b> years <b>of scurvy [<i>bitzfarna</i>]. And some say</b> it was <b>seven</b> years <b>of stones in the kidneys and six</b> years <b>of scurvy.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbi, moved by what he heard, takes thirteen years of afflictions on himself; a decision with real consequences, part of the larger narrative of Rabbi's sufferings.",
+    "pass2": "Rabbi decides afflictions are precious and takes thirteen years of illness upon himself. This is an action with consequences, part of the larger narrative around it."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-C3"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 19a:5-5",
+   "ref": "Avodah Zarah 19a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Levi and Rabbi Shimon finish a book of study and disagree on which book to learn next, leading Rabbi Yehuda HaNasi to teach that one should learn what their heart desires.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 19a",
+     "i": 5,
+     "hebrew": "לֵוִי וְרַבִּי שִׁמְעוֹן בְּרַבִּי יָתְבִי קַמֵּיהּ דְּרַבִּי, וְקָא פָּסְקִי סִידְרָא. סְלֵיק סִפְרָא, לֵוִי אָמַר: לַיְיתוֹ [לַן] מִשְׁלֵי, רַבִּי שִׁמְעוֹן בְּרַבִּי אָמַר: לַיְיתוֹ [לַן] תִּילִּים. כַּפְיֵיהּ לְלֵוִי וְאַיְיתוֹ תִּילִּים, כִּי מְטוֹ הָכָא ״כִּי אִם בְּתוֹרַת ה׳ חֶפְצוֹ״, פָּרֵישׁ רַבִּי וַאֲמַר: אֵין אָדָם לוֹמֵד תּוֹרָה אֶלָּא מִמָּקוֹם שֶׁלִּבּוֹ חָפֵץ. אָמַר לֵוִי: רַבִּי, נָתַתָּ לָנוּ רְשׁוּת לַעֲמוֹד.",
+     "english": "The Gemara relates: <b>Levi and Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>were sitting before Rabbi</b> Yehuda HaNasi, <b>and</b> they <b>were learning the Torah portion.</b> When <b>they finished the book</b> that they were learning and were ready to begin a new subject, <b>Levi said: Let them bring us</b> the book of <b>Proverbs;</b> and <b>Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>said: Let them bring us</b> the book of <b>Psalms.</b> He <b>compelled Levi</b> to acquiesce, <b>and they brought</b> a book of <b>Psalms. When they arrived here,</b> at the verse: <b>“But his delight is in the Torah of the Lord,” Rabbi</b> Yehuda HaNasi <b>explained</b> the verse <b>and said: A person can learn Torah only from a place</b> in the Torah <b>that his heart desires. Levi said: My teacher, you have given us,</b> i.e., me, <b>permission to rise</b> and leave, as I wish to study Proverbs, not Psalms.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Levi and R. Shimon disagree, Levi is overruled, Psalms is brought, Rabbi's exposition leads Levi to claim leave to depart; several actions, conflict and change.",
+    "pass2": "A dispute over which book to study, Levi is compelled, Psalms is brought, and Levi takes Rabbi's teaching as permission to leave. Several actions with conflict and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C2"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 117a:12-13",
+   "ref": "Bava Kamma 117a",
+   "tractate": "Bava Kamma",
+   "pool": "P4",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "NOT_A_STORY",
+   "detector_summary": "A man is coerced into showing and carrying Rav Mari's wine for thugs, and Rav Ashi exempts him from liability.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 117a",
+     "i": 12,
+     "hebrew": "הָהוּא גַּבְרָא דַּאֲנָסוּהוּ גּוֹיִם, וְאַחְוִי אַחַמְרָא דְּרַב מָרִי בְּרֵיהּ דְּרַב פִּנְחָס בְּרֵיהּ דְּרַב חִסְדָּא. אֲמַרוּ לֵיהּ: ״דְּרִי וְאַמְטִי בַּהֲדַן״, דְּרָא וְאַמְטִי בַּהֲדַיְיהוּ. אֲתָא לְקַמֵּיהּ דְּרַב אָשֵׁי, פַּטְרִינֵּיהּ.",
+     "english": "The Gemara recounts another incident: There was <b>a certain man that gentiles</b> had <b>coerced and</b> so <b>he showed them the wine of Rav Mari, son of Rav Pineḥas, son of Rav Ḥisda, and</b> the gentiles <b>said to him: Carry</b> the wine <b>and bring it with us.</b> Complying with the gentiles, <b>he carried and brought</b> it <b>with them.</b> The case <b>came before Rav Ashi,</b> and he <b>exempted</b> the man from compensating Rav Mari for the wine.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Bava Kamma 117a",
+     "i": 13,
+     "hebrew": "אֲמַרוּ לֵיהּ רַבָּנַן לְרַב אָשֵׁי, וְהָתַנְיָא: אִם נָשָׂא וְנָתַן בַּיָּד – חַיָּיב! אֲמַר לְהוּ: הָנֵי מִילֵּי הֵיכָא דְּלָא אוֹקְמֵיהּ עִילָּוֵיהּ מֵעִיקָּרָא, אֲבָל הֵיכָא דְּאוֹקְמֵיהּ עִילָּוֵיהּ מֵעִיקָּרָא – מִיקְלֵי קַלְיֵיהּ.",
+     "english": "<b>The Rabbis said to Rav Ashi: But isn’t it taught</b> in a <i>baraita</i>: <b>If</b> he <b>took</b> the property <b>and manually transferred</b> it to the gentiles, he is <b>liable</b> to compensate the owner? Rav Ashi <b>said to them: That statement applies</b> only in a case <b>where</b> the Jew <b>did not bring</b> the gentiles <b>to</b> the property <b>at the outset; but if he brought</b> the gentiles <b>to</b> the property <b>at the outset,</b> it is as though <b>he</b> already <b>burned</b> it, as the gentiles then had access to the property. Since the damage inflicted by the Jew was committed by merely showing the wine to the gentiles, he is exempt from payment even though he later actively carried the wine with his hands.",
+     "grader_pass1_chose": false
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A man coerced by gentiles shows and carries Rav Mari's wine, then the case comes before Rav Ashi who exempts him: several actions and a change before the ruling; seg 3 is legal discussion.",
+    "pass2": "A certain man coerced by gentiles shows and carries Rav Mari's wine, then Rav Ashi rules and defends his ruling: an incident with several actions resolved by a ruling, R-C0's cow shape."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Nedarim 23a:3-3",
+   "ref": "Nedarim 23a",
+   "tractate": "Nedarim",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "Rabbi Yishmael bar Rabbi Yosei seeks dissolution for a vow after an incident where a launderer hit him.",
+   "segments": [
+    {
+     "ref": "Nedarim 23a",
+     "i": 3,
+     "hebrew": "רַבִּי יִשְׁמָעֵאל בַּר רַבִּי יוֹסֵי הֲוָה לֵיהּ נִדְרָא לְמִישְׁרֵא. אֲתָא לְקַמַּיְיהוּ דְּרַבָּנַן, אָמְרוּ לֵיהּ: נְדַרְתְּ אַדַּעְתָּא דְּהָכִי? אֲמַר לְהוּ: אִין. נְדַרְתָּא אַדַּעְתָּא דְּהָכִי? אֲמַר לְהוּ: אִין. כַּמָּה זִימְנִין. כֵּיוָן דַּחֲזָא הָהוּא קַצָּרָא דְּמִצְטַעֲרִי רַבָּנַן, מַחְיֵיהּ בְּאוּכְלָא דְקַצָּרֵי. אֲמַר: אַדַּעְתָּא דְּמָחֵי לִי קַצָּרָא לָא נְדַרִי, וְשַׁרְיֵהּ לְנַפְשֵׁיהּ.",
+     "english": "The Gemara relates another incident: <b>Rabbi Yishmael bar Rabbi Yosei had a vow to dissolve. He came before the Sages. They said to him: Did you vow with knowledge of this</b> particular fact? <b>He said to them: Yes.</b> They asked again: <b>Did you vow with knowledge of this</b> other fact? <b>He said to them: Yes.</b> This occurred <b>several times. When a certain launderer saw that the Sages were troubled</b> because Rabbi Yishmael caused them difficulty in successfully dissolving his vow, <b>he hit</b> Rabbi Yishmael <b>with a launderer’s tool</b> that he had in his hand. Rabbi Yishmael <b>said: Had I known that</b> the <b>launderer would hit me</b> due to my vow <b>I would not have vowed, and he dissolved it.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "R. Yishmael's vow resists dissolution, a launderer strikes him, and he then dissolves it himself. Several actions, conflict and a change.",
+    "pass2": "Rabbi Yishmael's repeated refusals, the launderer striking him, and the resulting dissolution of the vow: multiple actions with causality and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 17a:8-10",
+   "ref": "Avodah Zarah 17a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A woman confesses her grave sins to Rav Hisda and subsequently dies, serving as a case study for the fate of those who repent from heresy or severe sin.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 17a",
+     "i": 8,
+     "hebrew": "לְמֵימְרָא, דְּכׇל הַפּוֹרֵשׁ מִמִּינוּת מָיֵית? וְהָא הָהִיא דַּאֲתַאי לְקַמֵּיהּ דְּרַב חִסְדָּא, וְאָמְרָה לֵיהּ: קַלָּה שֶׁבַּקַּלּוֹת עָשְׂתָה בְּנָהּ הַקָּטָן מִבְּנָהּ הַגָּדוֹל, וַאֲמַר לַהּ רַב חִסְדָּא: טְרַחוּ לַהּ בִּזְוָודְתָּא, וְלָא מִתָה.",
+     "english": "The Gemara asks: Is this <b>to say that anyone who separates</b> himself <b>from heresy</b> and returns from his mistaken ways must <b>die? But</b> what about <b>that</b> woman <b>who came before Rav Ḥisda</b> to confess to him, <b>and she said to him: The lightest of the light,</b> i.e., the least of the sins that she committed, is that <b>she conceived her younger son from</b> engaging in intercourse with <b>her older son. And Rav Ḥisda said to her: Prepare funeral shrouds for her,</b> i.e., yourself, as you will certainly die soon, <b>but she did not die.</b>",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Avodah Zarah 17a",
+     "i": 9,
+     "hebrew": "מִדְּקָאָמְרָה קַלָּה שֶׁבַּקַּלּוֹת עָשְׂתָה, מִכְּלָל דְּמִינוּת [נָמֵי] הָוְיָא בַּהּ! הָהוּא דְּלָא הָדְרָא בַּהּ שַׁפִּיר, וּמִשּׁוּם הָכִי לֹא מֵתָה.",
+     "english": "The above incident refutes the claim that anyone who repents for the sin of heresy must die, as <b>from</b> the fact <b>that she said</b> that <b>the lightest of the light</b> of her sins was that <b>she conceived</b> one son from engaging in intercourse with another son, <b>by inference</b> one can learn <b>that she was also involved in heresy,</b> and yet she did not die. The Gemara answers: <b>That</b> is a case <b>where</b> the woman <b>did not repent properly, and due to that</b> reason <b>she did not die.</b>",
+     "grader_pass1_chose": false
+    },
+    {
+     "ref": "Avodah Zarah 17a",
+     "i": 10,
+     "hebrew": "אִיכָּא דְּאָמְרִי: מִמִּינוּת — אִין, מֵעֲבֵירָה — לָא? וְהָא הָהִיא דַּאֲתַאי קַמֵּיהּ דְּרַב חִסְדָּא, וַאֲמַר לְהוּ [רַב חִסְדָּא: זַוִּידוּ לַהּ זְוַודְתָּא], וּמִתָה! מִדְּקָאָמְרָה ״קַלָּה שֶׁבַּקַּלּוֹת״, מִכְּלָל דְּמִינוּת נָמֵי הַוְיָא בַּהּ.",
+     "english": "<b>There are</b> those <b>who say</b> there is a different version of the objection to the Gemara’s statement that those who repent for the sin of heresy must die: Is that to say that if one repents <b>for</b> the sin of <b>heresy, yes,</b> the result is death, whereas if one repents <b>for</b> the <b>sin</b> of forbidden sexual intercourse he does <b>not</b> die? <b>But</b> what about <b>that</b> woman <b>who came before Rav Ḥisda</b> to confess to him <b>and Rav Ḥisda said to</b> those present: <b>Prepare funeral shrouds for her, and she died?</b> The Gemara answers: <b>From</b> the fact <b>that she said: The lightest of the light, by inference</b> one can learn <b>that she was also involved in heresy.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A woman confesses grave sins to Rav Hisda, he tells her to prepare shrouds, and she does not die (or, in the other version, dies): an incident with an outcome. Segment 3 is the Gemara's commentary on it.",
+    "pass2": "A woman confesses to Rav Hisda, he predicts her death, and she does not die (or, in the other version, dies). Events with an outcome; segment 3 is commentary."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-B4"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Shabbat 129a:8-8",
+   "ref": "Shabbat 129a",
+   "tractate": "Shabbat",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "The daughter of Rav Hisda immersed in a ritual bath within thirty days of giving birth while her husband was away.",
+   "segments": [
+    {
+     "ref": "Shabbat 129a",
+     "i": 8,
+     "hebrew": "אָמַר רָבָא: לָא אֲמַרַן אֶלָּא שֶׁאֵין בַּעְלָהּ עִמָּהּ, אֲבָל בַּעְלָהּ עִמָּהּ — בַּעְלָהּ מְחַמְּמָה. כִּי הָא דִּבְרַתֵּיה דְּרַב חִסְדָּא טְבַלָה בְּגוֹ תְּלָתִין יוֹמִין שֶׁלֹּא בִּפְנֵי בַּעְלָהּ וְאִצְטְנִיאַת, וְאַמְטְיוּהָא לְעַרְסַהּ בָּתְרֵיהּ דְּרָבָא לְפוּמְבְּדִיתָא.",
+     "english": "<b>Rava said: We say</b> that the ruling that she does not immerse during that period applies <b>only when her husband is not with her. However,</b> if <b>her husband is with her, her husband warms her</b> by engaging in relations with her, and she is not susceptible to catching cold, <b>as</b> is illustrated <b>in this</b> incident involving <b>the daughter of Rav Ḥisda,</b> Rava’s wife. She <b>immersed within thirty days</b> of giving birth, <b>not in the presence of her husband, and caught cold, and</b> afterward <b>they brought her</b> funeral <b>bier after Rava to Pumbedita.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Hisda's daughter immersed early, caught cold, and died, her bier carried after Rava: multiple events with causality and change.",
+    "pass2": "Rav Hisda's daughter immerses early in Rava's absence, catches cold and dies: a sequence of events with causality and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Batra 126a:9-Bava Batra 126b:0",
+   "ref": "Bava Batra 126a",
+   "tractate": "Bava Batra",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A firstborn sold his deceased brother's portion of an estate, leading the brother's orphans to physically reclaim the produce from the buyers until Rava ruled on the sale's validity.",
+   "segments": [
+    {
+     "ref": "Bava Batra 126a",
+     "i": 9,
+     "hebrew": "וְהָא דְּרַב פַּפֵּי וְרַב פָּפָּא – לָאו בְּפֵירוּשׁ אִיתְּמַר, אֶלָּא מִכְּלָלָא אִיתְּמַר – דְּהָהוּא בְּכוֹר דַּאֲזַל זַבֵּין נִכְסֵי דִּידֵיהּ וּדְפָשׁוּט. אֲזוּל יַתְמֵי בְּנֵי פָּשׁוּט לְמֵיכַל תַּמְרֵי מֵהָנְהוּ לָקוֹחוֹת, מְחוֹנְהוּ. אָמְרִי לְהוּ קְרוֹבִים: לָא מִיסָּתְיָיא דִּזְבַנְתִּינְהוּ לְנִכְסַיְיהוּ, אֶלָּא מִימְחֵא נָמֵי מָחִיתוּ לְהוּ? אֲתוֹ לְקַמֵּיהּ דְּרָבָא, אֲמַר לְהוּ: לֹא עָשָׂה וְלֹא כְלוּם.",
+     "english": "The Gemara notes: <b>And this</b> dispute <b>of Rav Pappi and Rav Pappa was not stated explicitly; rather, it was stated by inference. As</b> there was <b>a certain firstborn who went</b> and <b>sold his property and</b> the property <b>of</b> his deceased <b>ordinary</b> brother, i.e., their respective portions of their father’s property, before the property was divided. The <b>orphan sons of</b> the <b>ordinary</b> brother <b>went to eat dates from</b> the field that was now in the possession of <b>those purchasers,</b> due to their father’s share in the field. The purchasers <b>hit them,</b> as though they were thieves. The <b>relatives</b> of the orphans <b>said to</b> the purchasers: <b>Not only did you purchase their property</b> illegally, <b>but you now hit them as well? They came before Rava,</b> who <b>said to them:</b> The firstborn <b>has done nothing.</b> His sale was not valid.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Bava Batra 126b",
+     "i": 0,
+     "hebrew": "מָר סָבַר: לֹא עָשָׂה כְּלוּם – בְּפַלְגָא. וּמָר סָבַר: בְּכוּלְּהוּ.",
+     "english": "Rav Pappi and Rav Pappa disagree with regard to Rava’s intention. One <b>Sage,</b> Rav Pappi, <b>holds</b> that <b>he has done nothing with regard to</b> his brother’s <b>portion,</b> as he had no right to sell it; with regard to his own additional portion, the sale was valid, as it was in his possession even before the division of the property. <b>And</b> one <b>Sage,</b> Rav Pappa, <b>holds</b> that he has done nothing <b>with regard to all</b> of the property, as he does not possess the additional portion before the property is divided between the brothers.",
+     "grader_pass1_chose": false
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Firstborn sells the property, the orphans eat dates, the buyers beat them, relatives protest, Rava rules: several actions, conflict and a resolution. Segment 3 is the Gemara's analysis of the ruling and is excluded.",
+    "pass2": "A firstborn sells the property, the purchasers beat the orphans who ate dates, the relatives protest and Rava rules: several actions, conflict and resolution. Segment 3 is the Gemara's analysis (R-B4)."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-B4"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 21b:7-7",
+   "ref": "Taanit 21b",
+   "tractate": "Taanit",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "A fire in Drokart avoids Rav Huna's neighborhood, and a dream reveals this was due to the merit of a woman who shared her oven.",
+   "segments": [
+    {
+     "ref": "Taanit 21b",
+     "i": 7,
+     "hebrew": "בִּדְרוֹקֶרֶת הֲווֹת דְּלֵיקְתָּא, וּבְשִׁיבָבוּתֵיהּ דְּרַב הוּנָא לָא הֲווֹת דְּלֵיקְתָּא. סְבוּר מִינַּהּ, בִּזְכוּתָא דְּרַב הוּנָא דִּנְפִישׁ. אִיתְחֲזִי לְהוּ בְּחֶילְמָא: הַאי זוּטְרָא לֵיהּ לְרַב הוּנָא, אֶלָּא מִשּׁוּם הָהִיא אִיתְּתָא דִּמְחַמְּמָא תַּנּוּרָא וּמְשַׁיְּילָא לְשִׁיבָבוּתַיהּ.",
+     "english": "The Gemara relates a similar incident. <b>In Drokart there was a fire, but in the neighborhood of Rav Huna there was no fire.</b> The people <b>therefore thought</b> that this was <b>due to Rav Huna’s great merit. It was revealed to them in a dream</b> that <b>this</b> matter was <b>too small for</b> the merit of <b>Rav Huna</b> to have played a role. <b>Rather,</b> it was <b>due to a certain woman who heats her oven and lends it,</b> i.e., the use of her oven, <b>to her neighbors.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A fire in Drokart spares Rav Huna's neighbourhood, people attribute it to him, and a dream reveals it was a generous woman's merit: events, causality and a reversal.",
+    "pass2": "A fire in Drokart spares Rav Huna's neighborhood, people attribute it to him, and a dream reveals the true cause; several events with a change in understanding."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Yoma 22b:17-17",
+   "ref": "Yoma 22b",
+   "tractate": "Yoma",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "After Rav Naḥman bar Yitzḥak mocks the idea of King Saul's purity, he receives a terrifying dream that night and immediately begs Saul's remains for forgiveness.",
+   "segments": [
+    {
+     "ref": "Yoma 22b",
+     "i": 17,
+     "hebrew": "מַתְקֵיף לַהּ רַב נַחְמָן בַּר יִצְחָק: וְאֵימָא ״כְּבֶן שָׁנָה״, שֶׁמְּלוּכְלָךְ בְּטִיט וּבְצוֹאָה? אַחְוִיאוּ לֵיהּ לְרַב נַחְמָן סִיּוּטָא בְּחֶלְמֵיהּ. אָמַר: נַעֲנֵיתִי לָכֶם עַצְמוֹת שָׁאוּל בֶּן קִישׁ. הֲדַר חֲזָא סִיּוּטָא בְּחֶלְמֵיהּ. אָמַר: נַעֲנֵיתִי לָכֶם עַצְמוֹת שָׁאוּל בֶּן קִישׁ מֶלֶךְ יִשְׂרָאֵל.",
+     "english": "<b>Rav Naḥman bar Yitzḥak strongly objects to this</b> interpretation of the verse, saying: You could just as well <b>say</b> that he was <b>like a one-year-old</b> in that he was always <b>filthy with mud and excrement. Rav Naḥman was shown a frightful dream</b> that night, and he understood it as a punishment for having disparaged Saul. <b>He said: I humbly submit myself to you, O bones of Saul, son of Kish,</b> and beg your forgiveness. But <b>once again he was shown a frightful dream,</b> and he understood that he had not shown enough deference in his first apology. He therefore <b>said</b> this time: <b>I humbly submit myself to you, O bones of Saul, son of Kish, king of Israel,</b> and beg your forgiveness. Subsequently, the nightmares ceased.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Nahman bar Yitzhak disparages Saul, has nightmares, apologizes, has them again and apologizes more fully. A post-biblical sage is the protagonist, with clear causality and change.",
+    "pass2": "Rav Nahman disparages Saul, is shown nightmares, apologizes, and again until it stops; actions, causality and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-S1",
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 58b:14-15",
+   "ref": "Bava Kamma 58b",
+   "tractate": "Bava Kamma",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "YES",
+   "detector_summary": "A man cut down another's date palm and was brought before the Exilarch, who ordered him to pay one hundred zuz based on his own knowledge of the tree's value.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 58b",
+     "i": 14,
+     "hebrew": "הָהוּא גַּבְרָא דְּקַץ קַשְׁבָּא מֵחַבְרֵיהּ. אֲתָא לְקַמֵּיהּ דְּרֵישׁ גָּלוּתָא, אֲמַר לֵיהּ: לְדִידִי חֲזֵי לִי, וּתְלָתָא תָּאלָתָא בְּקִינָּא הֲווֹ קָיְימִי, וַהֲווֹ שָׁווּ מְאָה זוּזֵי. זִיל הַב לֵיהּ תְּלָתִין וּתְלָתָא וְתִילְתָּא. אָמַר: גַּבֵּי רֵישׁ גָּלוּתָא דְּדָאֵין דִּינָא דְּפָרְסָאָה, לְמָה לִי? אֲתָא לְקַמֵּיהּ דְּרַב נַחְמָן, אֲמַר לֵיהּ: בְּשִׁשִּׁים.",
+     "english": "§ The Gemara relates: There was <b>a certain man who cut down a date palm [<i>kashba</i>]</b> belonging <b>to another.</b> The latter <b>came</b> with the perpetrator for arbitration <b>before the Exilarch.</b> The Exilarch <b>said to</b> the perpetrator: <b>I personally saw</b> that place where the date palm was planted, and it actually contained <b>three date palms [<i>talata</i>] standing</b> together <b>in a cluster,</b> growing out of a single root, <b>and they were worth</b> altogether <b>one hundred dinars.</b> Consequently, since you, the perpetrator, cut down one of the three, <b>go</b> and <b>give him thirty-three and one-third</b> dinars, one third of the total value. The perpetrator rejected this ruling and <b>said: Why do I</b> need to be judged by <b>the Exilarch, who rules according to Persian law? He came before Rav Naḥman</b> for judgment in the same case, who <b>said to him:</b> The court appraises the damage <b>in</b> relation to an area <b>sixty</b> times greater than the damage caused. This amount is much less than thirty-three and one-third dinars.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Bava Kamma 58b",
+     "i": 15,
+     "hebrew": "אֲמַר לֵיהּ רָבָא: אִם אָמְרוּ בְּנִזְקֵי מָמוֹנוֹ, יֹאמְרוּ בְּנִזְקֵי גוּפוֹ?!",
+     "english": "<b>Rava said to</b> Rav Naḥman: <b>If</b> the Sages <b>said</b> that the court appraises <b>damage</b> caused <b>by one’s property,</b> such as his animal, relative to an area sixty times greater, <b>would</b> they also <b>say</b> that the court appraises damage relative to an area sixty times greater even <b>for</b> direct <b>damage</b> caused by <b>one’s body?</b>",
+     "grader_pass1_chose": false
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A man cuts down another's palm, is judged by the Exilarch, rejects the ruling and goes to Rav Nahman: several actions, conflict and change. Segment 3 is Rava's legal challenge, not narrative.",
+    "pass2": "A man cuts down another's palm, the Exilarch rules, the man rejects the Exilarch's court and goes to Rav Nahman who rules differently: an incident with several actions and a change of venue; Rava's objection in [3] is discussion."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 38b:5-5",
+   "ref": "Avodah Zarah 38b",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Ḥiyya of Parva visits the Exilarch and is asked by the attendants for a ruling on eggs roasted by gentiles.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 38b",
+     "i": 5,
+     "hebrew": "רַבִּי חִיָּיא פַּרְוָואָה אִיקְּלַע לְבֵי רֵישׁ גָּלוּתָא, אֲמַרוּ לֵיהּ: בֵּיצָה צְלוּיָה מַאי? אֲמַר לְהוּ: חִזְקִיָּה וּבַר קַפָּרָא שָׁרוּ, וְרַבִּי יוֹחָנָן אָסַר, וְאֵין דְּבָרָיו שֶׁל אֶחָד בִּמְקוֹם שְׁנַיִם. אֲמַר לְהוּ רַב זְבִיד: לָא תְּצִיתוּ לֵיהּ, הָכִי אָמַר אַבָּיֵי: הִלְכְתָא כְּוָותֵיהּ דְּרַבִּי יוֹחָנָן. אַשְׁקְיוּהּ נָגוֹטָא דְּחַלָּא וְנָח נַפְשֵׁיהּ.",
+     "english": "The Gemara relates a relevant incident. <b>Rabbi Ḥiyya of Parva arrived at the home of the Exilarch,</b> whose attendants <b>said to him:</b> With regard to <b>an egg roasted</b> by a gentile, <b>what</b> is the <i>halakha</i>? Rabbi Ḥiyya <b>said to them: Ḥizkiyya and bar Kappara deem</b> it <b>permitted, and Rabbi Yoḥanan deems</b> it <b>prohibited, and the statement of one</b> Sage has <b>no</b> standing <b>in a place</b> where it is contradicted by <b>two,</b> i.e., the <i>halakha</i> is not in accordance with the opinion of Rabbi Yoḥanan because he is in the minority. <b>Rav Zevid said to them: Do not listen to him,</b> as <b>this</b> is what <b>Abaye said: The <i>halakha</i></b> is <b>in accordance with</b> the opinion <b>of Rabbi Yoḥanan.</b> Due to the stringency Rav Zevid sought to impose, the attendants <b>gave</b> Rav Zevid <b>a cup [<i>negota</i>] of</b> spiced <b>vinegar to drink, and he died</b> as a result.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "R. Hiyya of Parva arrives at the Exilarch's house, a ruling is disputed by Rav Zevid, and the attendants give Rav Zevid vinegar and he dies: conflict, actions and a decisive change.",
+    "pass2": "R. Hiyya of Parva visits the Exilarch, rules, Rav Zevid contradicts him, and the attendants give Rav Zevid vinegar and he dies: conflict, actions and a decisive change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Niddah 52a:17-17",
+   "ref": "Niddah 52a",
+   "tractate": "Niddah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Yitzḥak and the disciples of Rabbi Ḥanina rule according to Rabbi Yehuda, and Rav Shemen bar Abba reports this to Rabbi Yoḥanan, who then takes the matter further.",
+   "segments": [
+    {
+     "ref": "Niddah 52a",
+     "i": 17,
+     "hebrew": "רַבִּי יִצְחָק וְתַלְמִידִי דְּרַבִּי חֲנִינָא עֲבוּד עוֹבָדָא כְּרַבִּי יְהוּדָה, וְאַף עַל גַּב דְּנִבְעֲלָה. אֲזַל רַב שֶׁמֶן בַּר אַבָּא אַמְרַהּ קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲזַל רַבִּי יוֹחָנָן אַמְרַהּ קַמֵּיהּ דְּרַבִּי יְהוּדָה נְשִׂיאָה, שַׁדַּר בַּלָּשָׁא וְאַפְּקוּהָ.",
+     "english": "The Gemara further relates that <b>Rabbi Yitzḥak and the disciples of Rabbi Ḥanina performed an action in accordance with</b> the opinion of <b>Rabbi Yehuda</b> in the mishna, <b>and</b> permitted a young girl who had grown two pubic hairs to perform refusal, <b>even though she</b> had <b>engaged in intercourse</b> with her husband after growing two hairs. <b>Rav Shemen bar Abba</b> subsequently <b>went</b> and <b>stated</b> this story <b>before Rabbi Yoḥanan,</b> and <b>Rabbi Yoḥanan went</b> and <b>stated it before Rabbi Yehuda Nesia.</b> Rabbi Yehuda Nesia <b>sent a constable [<i>ballasha</i>] and removed</b> that girl from her second husband.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbis act on a lenient ruling, it is reported up to the Nasi, who sends a constable to remove the girl: a chain of actions with a consequence.",
+    "pass2": "R. Yitzhak and R. Hanina's disciples act, the matter is reported up the chain, and the Nasi sends a constable to remove the girl: several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 24a:15-15",
+   "ref": "Taanit 24a",
+   "tractate": "Taanit",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav encounters a prayer leader whose prayer brings rain because of his selfless devotion to teaching the children of the poor.",
+   "segments": [
+    {
+     "ref": "Taanit 24a",
+     "i": 15,
+     "hebrew": "רַב אִיקְּלַע לְהָהוּא אַתְרָא, גְּזַר תַּעֲנִיתָא וְלָא אֲתָא מִיטְרָא. נְחֵית קַמֵּיהּ שְׁלִיחָא דְצִבּוּרָא, אֲמַר ״מַשִּׁיב הָרוּחַ״ וּנְשַׁב זִיקָא, אֲמַר ״מוֹרִיד הַגֶּשֶׁם״ וַאֲתָא מִיטְרָא. אֲמַר לֵיהּ: מַאי עוֹבָדָךְ? אֲמַר לֵיהּ: מַיקְרֵי דַרְדְּקֵי אֲנָא, וּמַקְרֵינָא לִבְנֵי עַנְיֵי כִּבְנֵי עַתִּירֵי. וְכֹל דְּלָא אֶפְשָׁר לֵיהּ — לָא שָׁקֵלְינָא מִינֵּיהּ מִידֵּי. וְאִית לִי פִּירָא דִכְווֹרֵי, וְכׇל מַאן דְּפָשַׁע מְשַׁחֵידְנָא לֵיהּ מִינַּיְיהוּ, וּמְסַדְּרִינַן לֵיהּ וּמְפַיְּיסִינַן לֵיהּ עַד דְּאָתֵי וְקָרֵי.",
+     "english": "The Gemara relates a similar incident. <b>Rav happened</b> to come to <b>a certain place</b> where <b>he decreed a fast but rain did not come. The prayer leader descended</b> to lead the service <b>before him</b> and <b>recited: He Who makes the wind blow, and the wind blew.</b> He continued and <b>said:</b> And <b>Who makes the rain fall, and the rain came.</b> Rav <b>said to him: What are your</b> good <b>deeds? He said to him: I am a teacher of children, and I teach the Bible to the children of the poor as to the children of the rich, and</b> if there is <b>anyone who cannot</b> pay, <b>I do not take anything from him. And I have a fishpond, and any</b> child <b>who neglects</b> his studies, <b>I bribe him with</b> the fish <b>and calm him, and soothe him until he comes and reads.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav decrees a fast without rain; the prayer leader prays and wind and rain come; Rav asks his merit: events, causality and change.",
+    "pass2": "Rav decrees a fast, no rain; the prayer leader prays and rain comes; Rav asks his merit and he tells it. Multiple events and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 81b:9-10",
+   "ref": "Bava Kamma 81b",
+   "tractate": "Bava Kamma",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "While walking, Rabbi Yehuda HaNasi and Rabbi Hiyya observe Rabbi Yehuda ben Kanosa refusing to veer off the road; Rabbi Hiyya explains his student's pious motivations, leading to a respectful encounter.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 81b",
+     "i": 9,
+     "hebrew": "רַבִּי וְרַבִּי חִיָּיא הֲווֹ שָׁקְלִי וְאָזְלִי בְּאוֹרְחָא, אִסְתַּלַּקוּ לְצִידֵּי הַדְּרָכִים. הֲוָה קָא מְפַסַּיע וְאָזֵיל רַבִּי יְהוּדָה בֶּן (קְנוֹסָא) [נְקוֹסָא] קַמַּיְיהוּ, אֲמַר לֵיהּ רַבִּי לְרַבִּי חִיָּיא: מִי הוּא זֶה שֶׁמַּרְאֶה גְּדוּלָּה בְּפָנֵינוּ?",
+     "english": "<b>Rabbi</b> Yehuda HaNasi <b>and Rabbi Ḥiyya were</b> once <b>walking along the road,</b> and <b>they veered off to the sides of the road. Rabbi Yehuda ben Kanosa was taking broad steps</b> on the road, to avoid the protrusions without going off to the side of the road, <b>while walking in front of them. Rabbi</b> Yehuda HaNasi <b>said to Rabbi Ḥiyya: Who is this</b> man <b>who is showing off</b> his supposed <b>greatness in our presence?</b> By acting more stringently than required by <i>halakha</i>, he is displaying insolence.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Bava Kamma 81b",
+     "i": 10,
+     "hebrew": "אֲמַר לֵיהּ רַבִּי חִיָּיא: שֶׁמָּא רַבִּי יְהוּדָה בֶּן (קְנוֹסָא) [נְקוֹסָא] תַּלְמִידִי הוּא, וְכׇל מַעֲשָׂיו לְשֵׁם שָׁמַיִם. כִּי מְטוֹ לְגַבֵּיהּ, חַזְיֵיהּ. אֲמַר לֵיהּ: אִי לָאו יְהוּדָה בֶּן (קְנוֹסָא) [נְקוֹסָא] אַתְּ, גְּזַרְתִּינְהוּ לְשָׁקָךְ בְּגִיזְרָא דְפַרְזְלָא.",
+     "english": "<b>Rabbi Ḥiyya said to</b> Rabbi Yehuda HaNasi: <b>Perhaps it is my student Rabbi Yehuda ben Kanosa. And</b> if so, <b>all of his actions are</b> undertaken <b>for the sake of Heaven;</b> he is not acting out of haughtiness. <b>When they reached him</b> and Rabbi Yehuda HaNasi <b>saw him, he said to him: If you were not Yehuda ben Kanosa I would have cut off your legs with iron shears,</b> i.e., I would have excommunicated you for your impudence.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbi and R. Hiyya walking, R. Yehuda ben Kanosa striding ahead, Rabbi's suspicion, R. Hiyya's defense, and the confrontation: multiple events, conflict and resolution.",
+    "pass2": "Rabbi and R. Hiyya walk, veer aside, see R. Yehuda ben Kenosa striding ahead, reach him and Rabbi confronts him: several actions, conflict and a resolution."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Horayot 14a:3-3",
+   "ref": "Horayot 14a",
+   "tractate": "Horayot",
+   "pool": "P1",
+   "run1": "YES",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "When the academy needed a head, Rav Yosef and Rabba sought guidance from Eretz Yisrael, but Rav Yosef ultimately declined the position for twenty-two years.",
+   "segments": [
+    {
+     "ref": "Horayot 14a",
+     "i": 3,
+     "hebrew": "רַב יוֹסֵף סִינַי, רַבָּה עוֹקֵר הָרִים. שְׁלַחוּ לְתַמָּן: אֵיזֶה מֵהֶם קוֹדֵם? שְׁלַחוּ לְהוּ: סִינַי עֲדִיף, דְּאָמַר מָר: הַכֹּל צְרִיכִין לְמָרֵי חִטַּיָּא, וַאֲפִילּוּ הָכִי לָא קַבֵּיל רַב יוֹסֵף עֲלֵיהּ. מְלַךְ רַבָּה עֶשְׂרִין וְתַרְתֵּי שְׁנִין, וַהֲדַר מְלַךְ רַב יוֹסֵף. וְכֹל שְׁנֵי דִּמְלַךְ רַבָּה, רַב יוֹסֵף אֲפִילּוּ אוּמָּנָא לְבֵיתֵיהּ לָא (חֲלֵיף).",
+     "english": "The Gemara relates that this is not merely a theoretical dispute; rather, at one point it had practical ramifications. <b>Rav Yosef</b>  was <b>Sinai; Rabba</b> was one who <b>uproots mountains. They sent</b> a message from Babylonia <b>to there,</b> Eretz Yisrael: <b>Which takes precedence? They sent</b> in response: <b>Sinai is preferable, as the Master said: Everyone requires the owner of the wheat,</b> i.e., one who is expert in the sources. <b>And even so, Rav Yosef did not accept upon himself</b> the appointment of head of the yeshiva. <b>Rabba reigned for twenty-two years, and then Rav Yosef reigned.</b> The Gemara relates that in <b>all those years that Rabba presided,</b> Rav Yosef <b>did not even call a bloodletter to his home.</b> Rav Yosef did not assume even the slightest air of authority, in deference to Rabba, and would go to seek out the bloodletter rather than expecting that the bloodletter would accommodate him.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Yosef and Rabba: a query is sent to Eretz Yisrael and answered, Rav Yosef declines the post, Rabba reigns 22 years and then Rav Yosef does, with Rav Yosef's humility throughout. Several actions and a change.",
+    "pass2": "A question sent to the Land of Israel and its answer, then Rav Yosef refuses the post, Rabba reigns 22 years, Rav Yosef succeeds him and shows deference throughout. Several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 19a:18-Avodah Zarah 19b:0",
+   "ref": "Avodah Zarah 19a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Hisda warns his students that one should learn from multiple teachers, and upon hearing this, they immediately leave him to seek other instructors.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 19a",
+     "i": 18,
+     "hebrew": "אֲמַר לְהוּ רַב חִסְדָּא לְרַבָּנַן: בָּעֵינָא דְּאֵימָא לְכוּ מִלְּתָא, וּמִסְתְּפֵינָא דְּשָׁבְקִיתוּ לִי וְאָזְלִיתוּ. כׇּל הַלּוֹמֵד תּוֹרָה מֵרַב אֶחָד — אֵינוֹ רוֹאֶה סִימַן בְּרָכָה לְעוֹלָם. שַׁבְקוּהּ וַאֲזוּל קַמֵּיהּ דְּרָבָא. אֲמַר לְהוּ: הָנֵי מִילֵּי סְבָרָא, אֲבָל גְּמָרָא מֵרַב אֶחָד עֲדִיף, כִּי הֵיכִי",
+     "english": "<b>Rav Ḥisda said to the Sages</b> who were studying with him: <b>I wish to say something to you, but I am afraid that</b> then <b>you will leave me and go.</b> What did he wish to tell them? He wanted to say that <b>anyone who learns Torah from one teacher</b> alone <b>never sees a sign of blessing.</b> When the students heard this, they <b>did</b> in fact <b>leave him and went</b> to learn <b>from Rava.</b> Rav Ḥisda <b>said to them: That matter</b> applies only with regard to <b>reasoning,</b> i.e., in order to come up with sophisticated reasoning it is necessary to hear many different opinions. <b>But</b> with regard to the oral <b>tradition</b> itself, <b>it is preferable</b> to learn <b>from one teacher so that</b>",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Avodah Zarah 19b",
+     "i": 0,
+     "hebrew": "דְּלָא לִיפַּלּוּג לִישָּׁנֵי. ״עַל פַּלְגֵי מַיִם״. אָמַר רַבִּי תַּנְחוּם בַּר חֲנִילַאי: לְעוֹלָם יְשַׁלֵּשׁ אָדָם שְׁנוֹתָיו — שְׁלִישׁ בַּמִּקְרָא, שְׁלִישׁ בַּמִּשְׁנָה, שְׁלִישׁ בַּתַּלְמוּד.",
+     "english": "<b>he will not</b> become confused by the <b>different versions</b> of the same statements he hears from each teacher, as he will have no clear authoritative version from one source. The Gemara continues discussing the verse cited above: <b>“By streams [<i>palgei</i>] of water”</b> (Psalms 1:3). <b>Rabbi Tanḥum bar Ḥanilai says:</b> Since the root <i>peh</i>, <i>lamed</i>, <i>gimmel</i> can also refer to dividing, the verse is interpreted as follows: <b>A person should always divide his years into thirds,</b> as follows: <b>One third for Bible, one third for Mishna</b> and <b>one third for Talmud.</b>",
+     "grader_pass1_chose": false
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Hisda's statement causes his students to leave him for Rava, and he responds: action and change beyond speech.",
+    "pass2": "Rav Hisda's statement causes his students to leave him for Rava, and he responds; action, consequence and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Eruvin 63a:11-12",
+   "ref": "Eruvin 63a",
+   "tractate": "Eruvin",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "While sitting with his teacher, Ravina sees a man violating a law and shouts to stop him, later receiving his teacher's approval for acting in his presence to prevent a sin.",
+   "segments": [
+    {
+     "ref": "Eruvin 63a",
+     "i": 11,
+     "hebrew": "אָמַר רָבָא: וּלְאַפְרוֹשֵׁי מֵאִיסּוּרָא — אֲפִילּוּ בְּפָנָיו שַׁפִּיר דָּמֵי. רָבִינָא הֲוָה יָתֵיב קַמֵּיהּ דְּרַב אָשֵׁי, חַזְיֵיהּ לְהָהוּא גַּבְרָא דְּקָא אָסַר לֵיהּ לְחַמְרֵיהּ בְּצִינְתָא בְּשַׁבְּתָא. רְמָא בֵּיהּ קָלָא, וְלָא אַשְׁגַּח בֵּיהּ. אֲמַר לֵיהּ: לֶיהֱוֵי הַאי גַּבְרָא בְּשַׁמְתָּא.",
+     "english": "<b>Rava said:</b> Even though it is ordinarily prohibited for a disciple to issue a halakhic ruling in his teacher’s place, if he does so <b>in order to separate</b> another person <b>from a prohibition</b> he is committing, <b>even in</b> his teacher’s <b>presence it seems well,</b> i.e., it is permitted. The Gemara relates that <b>Ravina was</b> once <b>sitting before Rav Ashi</b> when <b>he saw a certain man tying his donkey to a palm tree on Shabbat,</b> in violation of the decree of the Sages against utilizing trees on Shabbat. <b>He raised his voice to him</b> in protest, <b>but</b> the man <b>paid him no attention.</b> Ravina then <b>said to</b> Rav Ashi: <b>Let this man be in excommunication</b> for transgressing the words of the Sages and ignoring a scholar’s rebuke.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Eruvin 63a",
+     "i": 12,
+     "hebrew": "אֲמַר לֵיהּ: כִּי הַאי גַּוְונָא, מִי מִתְחֲזֵא כְּאַפְקֵרוּתָא? אֲמַר לֵיהּ: ״אֵין חׇכְמָה וְאֵין תְּבוּנָה וְאֵין עֵצָה לְנֶגֶד ה׳״, כׇּל מָקוֹם שֶׁיֵּשׁ בּוֹ חִילּוּל הַשֵּׁם — אֵין חוֹלְקִין כָּבוֹד לָרַב.",
+     "english": "Afterward, Ravina <b>said to</b> Rav Ashi: Behavior <b>such as this,</b> the way I acted in your presence just now, <b>does</b> it <b>appear like irreverent</b> behavior? Rav Ashi <b>said to him:</b> With regard to this it is stated: <b>“There is no wisdom or understanding or council against the Lord”</b> (Proverbs 21:30). The Sages expounded this verse as follows: <b>Wherever a desecration of</b> God’s <b>name is involved, no respect is paid</b> even <b>to a teacher,</b> i.e., in such a situation one should disregard the respect due to his teacher’s wisdom and understanding and object to the inappropriate behavior.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Ravina sees a man desecrating Shabbat, protests, is ignored, excommunicates him, then asks Rav Ashi about it; multiple actions and change.",
+    "pass2": "Ravina sees a man violating Shabbat, protests, is ignored, and excommunicates him, then asks Rav Ashi about it. There are several actions, conflict and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Sanhedrin 109a:15-15",
+   "ref": "Sanhedrin 109a",
+   "tractate": "Sanhedrin",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "After Rabbi Yosei teaches the methods of theft used in Sodom, thieves in Tzippori immediately use those methods, leading the townspeople to blame the Rabbi.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 109a",
+     "i": 15,
+     "hebrew": "דָּרֵשׁ רַבִּי יוֹסֵי בְּצִיפּוֹרִי. אִחַתְרַין הָהִיא לֵילְיָא תְּלָת מְאָה מַחְתְּרָתָא בְּצִיפּוֹרִי. אֲתוֹ וְקָא מְצַעֲרִי לֵיהּ. אֲמַרוּ לֵיהּ: יְהַבְיתְּ אוֹרְחֵיהּ לְגַנָּבֵי! אֲמַר לְהוּ: מִי הֲוָה יָדַעְנָא דְּאַתּוּ גַּנָּבֵי? כִּי קָא נָח נַפְשֵׁיהּ דְּרַבִּי יוֹסֵי, שָׁפְעִי מַרְזְבֵי דְצִיפּוֹרִי דְּמָא.",
+     "english": "<b>Rabbi Yosei taught in Tzippori</b> the methods of theft employed in Sodom. <b>That night three hundred tunnels were excavated in Tzippori</b> in order to employ those methods. Homeowners <b>came and harassed him; they said to him: You have given a way for thieves</b> to steal. Rabbi Yosei <b>said to them: Did I know that thieves would come</b> as a result of my lecture? The Gemara relates: <b>When Rabbi Yosei died, the gutters of Tzippori</b> miraculously <b>overflowed</b> with <b>blood</b> as a sign of his death.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbi Yosei's lecture leads to 300 break-ins, the townspeople harass him, he responds, and at his death the gutters run with blood: causally linked events with change.",
+    "pass2": "R. Yosei's lecture leads to 300 break-ins, people harass him, and at his death the gutters run with blood; multiple events and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Chagigah 5b:0-0",
+   "ref": "Chagigah 5b",
+   "tractate": "Chagigah",
+   "pool": "P4",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "absent",
+   "detector_summary": "The Sages suggest Rava does not experience divine hiding because of his success, but Rava reveals he must secretly bribe the authorities.",
+   "segments": [
+    {
+     "ref": "Chagigah 5b",
+     "i": 0,
+     "hebrew": "אֵינוֹ מֵהֶם. אֲמַרוּ לֵיהּ רַבָּנַן לְרָבָא: מָר לָא בְּהֶסְתֵּר פָּנִים אִיתֵיהּ, וְלָא בִּ״וְהָיָה לֶאֱכוֹל״ אִיתֵיהּ! אֲמַר לְהוּ: מִי יָדְעִיתוּ כַּמָּה מְשַׁדַּרְנָא בְּצִנְעָא בֵּי שַׁבּוּר מַלְכָּא? אֲפִילּוּ הָכִי, יְהַבוּ בֵּיהּ רַבָּנַן עֵינַיְיהוּ. אַדְּהָכִי שַׁדּוּר דְּבֵי שַׁבּוּר מַלְכָּא וְגַרְבוּהוּ. אֲמַר: הַיְינוּ דְּתַנְיָא, אָמַר רַבָּן שִׁמְעוֹן בֶּן גַּמְלִיאֵל: כׇּל מָקוֹם שֶׁ״נָּתְנוּ חֲכָמִים עֵינֵיהֶם״ — אוֹ מִיתָה אוֹ עוֹנִי.",
+     "english": "<b>is not from</b> among <b>them. The Sages said to Rava: Master, you are not subject to</b> His <b>hiding</b> of the <b>face,</b> as your prayers are heard, <b>and you are not subject to: “And they shall be devoured,”</b> as the authorities take nothing from you. <b>He said to them: Do you know how many</b> gifts <b>I send in private to the house of King Shapur?</b> Although it might seem that the monarchy does not take anything from me, in actuality I am forced to give many bribes. <b>Even so, the Sages looked upon</b> Rava with suspicion. <b>In the meantime,</b> messengers <b>from the house of King Shapur sent</b> for him <b>and imprisoned him</b> to extort more money from him. Rava <b>said: This is as it is taught</b> in a <i>baraita</i> that <b>Rabban Shimon ben Gamliel said: Wherever the Sages looked upon</b> someone, it resulted in <b>either death or poverty.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "The Sages challenge Rava, he reveals his bribes, they look upon him, and King Shapur's men imprison him: actions, causality and change.",
+    "pass2": "The Sages suspect Rava, then Shapur's men imprison him, and he reads it as the fulfilment of the baraita. There are several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 16a:9-9",
+   "ref": "Avodah Zarah 16a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "The household of Rabbi Yehuda HaNasi paid a massive bribe to delay delivering a fattened ox to the Roman authorities until after their festival day.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 16a",
+     "i": 9,
+     "hebrew": "תָּא שְׁמַע, דְּאָמַר רַב יְהוּדָה אָמַר שְׁמוּאֵל: שֶׁל בֵּית רַבִּי הָיוּ מַקְרִיבִין שׁוֹר שֶׁל פַּטָּם בְּיוֹם אֵידָם, חָסֵר אַרְבַּע רִיבְבָן שֶׁאֵין מַקְרִיבִין אוֹתוֹ הַיּוֹם אֶלָּא לְמָחָר, חָסֵר אַרְבַּע רִיבְבָן שֶׁאֵין מַקְרִיבִין אוֹתוֹ חַי אֶלָּא שָׁחוּט, חָסֵר אַרְבַּע רִיבְבָן שֶׁאֵין מַקְרִיבִין אוֹתוֹ כׇּל עִיקָּר.",
+     "english": "The Gemara suggests a proof: <b>Come</b> and <b>hear that</b> which <b>Rav Yehuda says</b> that <b>Shmuel says:</b> The members <b>of</b> the <b>household of Rabbi</b> Yehuda HaNasi <b>were</b> required to <b>bring</b> as a present for the authorities <b>an ox of a fattener on their festival day. They deprived</b> themselves of <b>forty-thousand</b> dinars, i.e., they paid this sum as a bribe, to ensure <b>that they</b> would <b>not</b> have to <b>bring it</b> on <b>the</b> actual <b>day</b> of their festival, but <b>rather on the next day. They deprived</b> themselves again, i.e., they paid a further bribe, of another <b>forty-thousand</b> dinars, to ensure <b>that they</b> would <b>not</b> have to <b>bring it alive</b> but <b>rather slaughtered. They deprived</b> themselves again and paid yet another bribe of <b>forty-thousand</b> dinars to ensure <b>that they</b> would <b>not</b> have to <b>bring it at all.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbi's household paid successive bribes until the obligation to bring the fattened ox was abolished; a sequence of actions leading to change.",
+    "pass2": "Rabbi's household pays three successive bribes and so abolishes the obligation to bring the ox; several actions leading to a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Makkot 5b:2-3",
+   "ref": "Makkot 5b",
+   "tractate": "Makkot",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "YES",
+   "detector_summary": "A woman repeatedly brings sets of witnesses who are proven to be liars until Reish Lakish rules that she has established a presumptive status of dishonesty.",
+   "segments": [
+    {
+     "ref": "Makkot 5b",
+     "i": 2,
+     "hebrew": "הָהִיא אִיתְּתָא דַּאֲתַאי סָהֲדִי וְאִישְׁתַּקּוּר, אַיְיתִי סָהֲדִי וְאִישְׁתַּקּוּר. אֲזַלָה אַיְיתִי סָהֲדִי אַחֲרִינֵי דְּלָא אִישְׁתַּקּוּר. אָמַר רֵישׁ לָקִישׁ: הוּחְזְקָה זוֹ. אֲמַר לֵיהּ רַבִּי אֶלְעָזָר: אִם הִיא הוּחְזְקָה, כׇּל יִשְׂרָאֵל מִי הוּחְזְקוּ?",
+     "english": "Apropos the dispute in the mishna, the Gemara relates: There was <b>a certain woman who brought witnesses</b> to testify on her behalf, <b>and they were</b> proven to be <b>liars. She brought</b> other <b>witnesses, and they</b> too <b>were</b> proven to be <b>liars. She went</b> and <b>brought</b> yet <b>other witnesses, who were not</b> proven to be <b>liars.</b> There is an amoraic dispute whether the testimony of the third set of witnesses is accepted. <b>Reish Lakish said: This</b> woman <b>has assumed the presumptive status</b> of dishonesty because of her repeated reliance on false witnesses; therefore, the testimony of the third set is rejected. <b>Rabbi Elazar said to him: If she has assumed the presumptive status</b> of dishonesty, <b>has the entire Jewish people assumed</b> that <b>presumptive status?</b> Why assume that these witnesses are dishonest?",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Makkot 5b",
+     "i": 3,
+     "hebrew": "זִימְנִין הָווּ יָתְבִי קַמֵּיהּ דְּרַבִּי יוֹחָנָן, אֲתָא כִּי הַאי מַעֲשֶׂה לְקַמַּיְיהוּ. אָמַר רֵישׁ לָקִישׁ: הוּחְזְקָה זוֹ. אֲמַר לֵיהּ רַבִּי יוֹחָנָן: אִם הוּחְזְקָה זוֹ – כׇּל יִשְׂרָאֵל מִי הוּחְזְקוּ? הֲדַר חַזְיֵהּ לְרַבִּי אֶלְעָזָר בִּישׁוּת, אֲמַר לֵיהּ: שָׁמְעַתְּ מִילֵּי מִבַּר נַפָּחָא וְלָא אֲמַרְתְּ לִי מִשְּׁמֵיהּ?",
+     "english": "The Gemara relates: On another <b>occasion,</b> Reish Lakish and Rabbi Elazar <b>were sitting before Rabbi Yoḥanan</b> and <b>an incident similar to this</b> one <b>came before them</b> for judgment. <b>Reish Lakish said: This</b> woman <b>has assumed the presumptive status</b> of dishonesty. <b>Rabbi Yoḥanan said to him: If she has assumed the presumptive status</b> of dishonesty, <b>has the entire Jewish people assumed</b> that <b>presumptive status?</b> When Reish Lakish heard Rabbi Yoḥanan respond in a manner identical to the earlier response of Rabbi Elazar, <b>he turned</b> his head and <b>glared angrily at Rabbi Elazar,</b> and <b>he said to him: You heard</b> this <b>matter from bar Nappaḥa,</b> i.e., Rabbi Yoḥanan, <b>and you did not say</b> it <b>to me in his name?</b> Had I known that you were stating Rabbi Yoḥanan’s opinion I would have accepted it.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A woman repeatedly brings witnesses who are exposed, then a later incident in which Reish Lakish glares angrily at R. Elazar on discovering the source; multiple actions, conflict and emotional reaction.",
+    "pass2": "A woman repeatedly brings witnesses who are refuted; on another occasion Reish Lakish glares angrily at Rabbi Elazar and rebukes him: multiple events, emotion and conflict."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Moed Katan 16b:11-11",
+   "ref": "Moed Katan 16b",
+   "tractate": "Moed Katan",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Mar Ukva, distracted by a legal case, fails to honor Shmuel as usual, leading Shmuel to rebuke him in a way that the Gemara defines as a one-day admonition.",
+   "segments": [
+    {
+     "ref": "Moed Katan 16b",
+     "i": 11,
+     "hebrew": "כׇּל יוֹמָא הֲוָה מְלַוִי לֵיהּ מָר עוּקְבָא לִשְׁמוּאֵל עַד אוּשְׁפִּיזֵיהּ. יוֹמָא חַד אִיטְּרִיד בְּדִינֵיהּ הֲוָה אָזֵיל שְׁמוּאֵל בָּתְרֵיהּ. כִּי מְטָא לְבֵיתֵיהּ, אָמַר לֵיהּ: לָא נְגַהּ לָךְ? לִישְׁרֵי לִי מָר בְּתִיגְרֵיהּ! יְדַע דִּנְקַט מִילְּתָא בְּדַעְתֵּיהּ, נְהַג נְזִיפוּתָא בְּנַפְשֵׁיהּ חַד יוֹמָא.",
+     "english": "<b>Every day, Mar Ukva would accompany Shmuel to his lodgings,</b> in the manner that a student would show honor toward his teacher. <b>One day,</b> Mar Ukva <b>was</b> so heavily <b>preoccupied with a case</b> that had been brought before him for judgment that he did not realize that <b>Shmuel was walking behind him</b> to show him respect due to his position as the Exilarch. <b>When</b> Mar Ukva <b>reached his home,</b> Shmuel <b>said to him: Is it not enough for you</b> that I accompanied you until here? <b>Release me, Master, from my obligation,</b> so that I may return home. Mar Ukva <b>understood that</b> Shmuel <b>had taken the matter to heart</b> and was insulted. Therefore, <b>he conducted</b> himself as if he had been <b>admonished, for one day</b> as a self-imposed punishment.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Habit, then one day Mar Ukva fails to notice Shmuel accompanying him, Shmuel's remark, and Mar Ukva imposes admonition on himself: actions and change.",
+    "pass2": "One day Mar Ukva, preoccupied, fails to notice Shmuel accompanying him; Shmuel speaks, Mar Ukva realizes he offended him and imposes admonition on himself, so there are actions, conflict and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C3"
+    ],
+    "pass2": []
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Nedarim 41a:3-3",
+   "ref": "Nedarim 41a",
+   "tractate": "Nedarim",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "When Rav Yosef fell ill and forgot his learning, his student Abaye taught it back to him to restore his knowledge.",
+   "segments": [
+    {
+     "ref": "Nedarim 41a",
+     "i": 3,
+     "hebrew": "רַב יוֹסֵף חֲלַשׁ, אִיעַקַּר לֵיהּ תַּלְמוּדֵיהּ, אַהְדְּרֵיהּ אַבָּיֵי קַמֵּיהּ. הַיְינוּ דִּבְכָל דּוּכְתָּא אָמְרִינַן, אָמַר רַב יוֹסֵף: לָא שְׁמִיעַ לִי הָדָא שְׁמַעְתָּא, אֲמַר לֵיהּ אַבָּיֵי: אַתְּ אַמְרִיתַהּ נִיהֲלַן, וּמַהָא מַתְנִיתָא אַמְרִיתַהּ נִיהֲלַן.",
+     "english": "The Gemara relates: <b>Rav Yosef</b> himself <b>fell ill</b> and <b>his studies were forgotten. Abaye restored</b> his studies by reviewing what he had learned from Rav Yosef <b>before him. This is</b> the background for that <b>which we say everywhere</b> throughout the Talmud, that <b>Rav Yosef said: I did not learn this <i>halakha</i>,</b> and <b>Abaye said to him</b> in response: <b>You said this to us and</b> it was <b>from this <i>baraita</i></b> that <b>you said it to us.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Yosef fell ill and forgot his learning, and Abaye restored it to him: two events with causality and change.",
+    "pass2": "Rav Yosef falls ill, forgets his learning, and Abaye restores it to him; several events with causality and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": []
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Sanhedrin 39a:10-10",
+   "ref": "Sanhedrin 39a",
+   "tractate": "Sanhedrin",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabban Gamliel physically strikes the emperor's servant to set up a demonstration using the sun to explain how the Divine Presence can be in many places at once.",
+   "segments": [
+    {
+     "ref": "Sanhedrin 39a",
+     "i": 10,
+     "hebrew": "אֲמַר לֵיהּ קֵיסָר לְרַבָּן גַּמְלִיאֵל: אָמְרִיתוּ כֹּל בֵּי עַשְׂרָה שְׁכִינְתָּא שָׁרְיָא, כַּמָּה שְׁכִינְתָּא אִיכָּא? קַרְיֵיהּ לְשַׁמָּעֵיהּ, מְחָא בֵּיהּ בְּאַפָּתְקָא. אֲמַר לֵיהּ: אַמַּאי עָל שִׁמְשָׁא בְּבֵיתֵיהּ דְּקֵיסָר? אֲמַר לֵיהּ: שִׁמְשָׁא אַכּוּלֵּי עָלְמָא נָיְחָא. וּמָה שִׁמְשָׁא דְּחַד מִן אֶלֶף אַלְפֵי רִבּוֹא שַׁמָּשֵׁי דְּקַמֵּי קוּדְשָׁא בְּרִיךְ הוּא נָיְחָא אַכּוּלֵּי עָלְמָא, שְׁכִינְתָּא דְּקוּדְשָׁא בְּרִיךְ הוּא עַל אַחַת כַּמָּה וְכַמָּה.",
+     "english": "<b>The emperor said to Rabban Gamliel: You say</b> that <b>the Divine Presence dwells</b> in <b>any place where there are ten</b> adult male Jews. He asked, sarcastically: <b>How many Divine Presences are there?</b> Rabban Gamliel <b>summoned the servant</b> of the emperor and <b>hit him on his neck [<i>be’appatka</i>].</b> Rabban Gamliel <b>said to him: Why</b> did you allow <b>the sun</b> to <b>enter the house of the emperor? The emperor said to him: The sun rests upon all the world;</b> no one can prevent it from shining. Rabban Gamliel said to him: <b>And if the sun, which is one of ten thousand attendants that are before the Holy One, Blessed be He, rests upon all the world, the Divine Presence of the Holy One, Blessed be He, all the more so</b> rests upon the world.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "The emperor challenges Rabban Gamliel, who strikes the emperor's servant to stage a demonstration and wins the argument; action beyond speech, conflict and resolution.",
+    "pass2": "The emperor challenges Rabban Gamliel, who summons and strikes the servant to stage his answer; an encounter with conflict and action beyond speech."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C7"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Yevamot 78b:11-11",
+   "ref": "Yevamot 78b",
+   "tractate": "Yevamot",
+   "pool": "P1",
+   "run1": "YES",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Ami publicly identifies a neighbor as a mamzer, causing the man to weep until the Rabbi explains that the public knowledge will actually allow him to live longer.",
+   "segments": [
+    {
+     "ref": "Yevamot 78b",
+     "i": 11,
+     "hebrew": "הָהוּא דְּהָוֵי בְּשִׁבָבוּתֵיהּ דְּרַבִּי אַמֵּי. אַכְרֵיז עֲלֵיהּ דְּמַמְזֵרָא הֲוָה. בָּכֵי וְאָזֵיל, אֲמַר לֵיהּ: חַיִּים נָתַתִּי לָךְ.",
+     "english": "It is related that <b>a certain person</b> lived <b>in Rabbi Ami’s neighborhood,</b> and following an investigation Rabbi Ami <b>declared him to be a <i>mamzer</i>.</b> The man <b>went about weeping</b> until Rabbi Ami <b>said to him:</b> You should not be upset, as now <b>I have given you life.</b> As explained above, once one is publicly known as a <i>mamzer</i>, he and his descendants may survive.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "R. Ami declares a neighbour a mamzer, the man goes about weeping, and R. Ami responds to console him: several actions, emotion and change.",
+    "pass2": "R. Ami declares a neighbor a mamzer, the man weeps, and R. Ami responds; acts, an emotional reaction, and a response that reframes the outcome."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Metzia 51a:6-6",
+   "ref": "Bava Metzia 51a",
+   "tractate": "Bava Metzia",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "A man selling jewelry sets a price, and a buyer calculates the exploitation involved.",
+   "segments": [
+    {
+     "ref": "Bava Metzia 51a",
+     "i": 6,
+     "hebrew": "הָהוּא גַּבְרָא דַּהֲוָה נָקֵיט כִּיפֵּי לְזַבּוֹנֵי קָרֵי שִׁתִּין וְשָׁוֵי חַמְשִׁין, וְאִי הֲווֹ יָהֲבִי לֵיהּ חַמְשִׁין וְחַמְשָׁא הֲוָה שָׁקֵיל. אֲתָא הָהוּא גַּבְרָא וְאָמַר: אִי יָהֵיבְנָא לֵיהּ חַמְשִׁין וְחַמְשָׁא הָוְיָא מְחִילָה, אֶתֵּן לֵיהּ שִׁיתִּין וְאֶתְבְּעֵיהּ לְדִינָא. אֲתָא לְקַמֵּיהּ דְּרַב חִסְדָּא. אֲמַר לֵיהּ: לֹא שָׁנוּ אֶלָּא בְּלוֹקֵחַ מִן הַתַּגָּר, אֲבָל בְּלוֹקֵחַ מִן בַּעַל הַבַּיִת – אֵין לוֹ עָלָיו אוֹנָאָה.",
+     "english": "The Gemara relates a similar incident: There was <b>a certain man who was holding jewelry to sell. He announced</b> that he was selling it for <b>sixty</b> <i>ma’a</i>, <b>and</b> it was <b>worth fifty</b> <i>ma’a</i>, <b>and if they would give him fifty-five</b> <i>ma’a</i>, <b>he would take</b> it and sell the jewels. <b>This man,</b> i.e., a potential buyer, <b>came and said</b> to himself: <b>If I give him fifty-five</b> <i>ma’a</i>, it <b>is</b> a case of <b>a waiver,</b> and I will not be entitled to recover the difference. <b>I will give him sixty</b> <i>ma’a</i> <b>and claim</b> from <b>him by law</b> the return of the sum gained by the exploitation. He did so. The case <b>came before Rav Ḥisda,</b> who <b>said to him:</b> The Sages <b>taught</b> this <i>halakha</i> of exploitation <b>only with regard to one who buys</b> merchandise <b>from a merchant, but one who buys</b> merchandise <b>from</b> a regular <b>homeowner does not have</b> a claim of <b>exploitation against him.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A buyer deliberately overpays to sue for exploitation and the case comes before Rav Hisda who rules: several narrated actions with a scheme and outcome, like the cow case.",
+    "pass2": "A buyer deliberately overpays to sue for exploitation, the case comes before Rav Hisda who rules: narrated actions followed by a ruling, like the cow case."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Chagigah 5b:7-7",
+   "ref": "Chagigah 5b",
+   "tractate": "Chagigah",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Kahana hides under Rav's bed to learn proper conduct, but his presence is discovered when he makes a comment about Rav's behavior.",
+   "segments": [
+    {
+     "ref": "Chagigah 5b",
+     "i": 7,
+     "hebrew": "אִינִי? וְהָא רַב כָּהֲנָא הֲוָה גָּנֵי תּוּתֵי פּוּרְיֵיהּ דְּרַב, וְשַׁמְעֵיהּ דְּסָח וְצָחַק וְעָשָׂה צְרָכָיו. אֲמַר: דָּמֵי פּוּמֵּיהּ דְּרַב כְּמַאן דְּלָא טְעִים לֵיהּ תַּבְשִׁילָא. אֲמַר לֵיהּ: כָּהֲנָא, פּוֹק! לָאו אוֹרַח אַרְעָא!",
+     "english": "The Gemara asks: <b>Is that so?</b> Is it prohibited for a man to speak in this manner with his wife? <b>Wasn’t Rav Kahana lying beneath Rav’s bed, and he heard</b> Rav <b>chatting and laughing</b> with his wife, <b>and performing his needs,</b> i.e., having relations with her. Rav Kahana <b>said</b> out loud: <b>The mouth of Rav is like</b> one who <b>has never eaten a cooked dish,</b> i.e., his behavior is lustful. Rav <b>said to him: Kahana, leave, as</b> this is <b>not proper conduct.</b> This shows that Rav himself engaged in frivolous talk before relations.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Kahana hides under Rav's bed, overhears, comments aloud, and Rav sends him out: a vivid incident with action and reaction.",
+    "pass2": "Rav Kahana hides under Rav's bed, overhears him, speaks out, and Rav sends him away. There are several actions, conflict and a consequence."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Moed Katan 17a:23-23",
+   "ref": "Moed Katan 17a",
+   "tractate": "Moed Katan",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A dog that ate the Sages' shoes was excommunicated, resulting in its tail catching fire.",
+   "segments": [
+    {
+     "ref": "Moed Katan 17a",
+     "i": 23,
+     "hebrew": "אָמַר רַב יוֹסֵף: שְׁדִי שַׁמְתָּא אַגְּנוּבְתָּא דְכַלְבָּא וְאִיהִי דִּידַהּ עָבְדָה. דְּהָהוּא כַּלְבָּא דַּהֲוָה אָכֵיל מְסָאנֵי דְרַבָּנַן וְלָא הֲווֹ קָא יָדְעִי מַנּוּ, וְשַׁמִּתוּ לֵיהּ. אִיתְּלַי בֵּיהּ נוּרָא בִּגְנוּבְתֵּיהּ וַאֲכַלְתֵּיהּ.",
+     "english": "The Gemara continues discussing the power of a ban. <b>Rav Yosef said: Cast an excommunication on the tail of a dog and it,</b> the excommunication, <b>will do its work</b> and harm the dog. It was related that there was <b>a certain dog that would eat the shoes of the Sages, and they did not know who it was</b> causing this damage. They thought that it was a person, <b>and</b> so <b>they excommunicated</b> whoever was doing it. Soon thereafter, the dog’s <b>tail caught fire and got burnt.</b> This shows that excommunication can have a harmful effect even on a dog.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A dog eats the Sages' shoes, they excommunicate the unknown culprit, and the dog's tail catches fire: multiple actions with causality and change.",
+    "pass2": "A dog eats the Sages' shoes, they excommunicate the unknown culprit, and the dog's tail burns; multiple actions with causal change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 49a:14-14",
+   "ref": "Berakhot 49a",
+   "tractate": "Berakhot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Zeira asks Rav Hisda to teach Mishna, but Rav Hisda declines, claiming he has not yet mastered the laws of Grace after Meals.",
+   "segments": [
+    {
+     "ref": "Berakhot 49a",
+     "i": 14,
+     "hebrew": "אֲמַר לֵיהּ רַבִּי זֵירָא לְרַב חִסְדָּא: נֵיתֵי מָר וְנִתְנֵי. אֲמַר לֵיהּ: בִּרְכַּת מְזוֹנָא לָא גְּמִירְנָא, וְתַנּוֹיֵי מַתְנֵינָא. אֲמַר לֵיהּ: מַאי הַאי? אֲמַר לֵיהּ: דְּאִקְּלַעִי לְבֵי רֵישׁ גָּלוּתָא, וּבָרֵיכִי בִּרְכַּת מְזוֹנָא, וְזַקְפֵיהּ רַב שֵׁשֶׁת לְקוֹעֵיהּ עֲלַי כְּחִוְיָא. וְאַמַּאי? דְּלָא אֲמַרִי לֹא בְּרִית וְלֹא תּוֹרָה וְלֹא מַלְכוּת. וְאַמַּאי לָא אֲמַרְתְּ? כִּדְרַב חֲנַנְאֵל אָמַר רַב, דְּאָמַר רַב חֲנַנְאֵל אָמַר רַב: לֹא אָמַר בְּרִית וְתוֹרָה וּמַלְכוּת — יָצָא. בְּרִית — לְפִי שֶׁאֵינָהּ בְּנָשִׁים. תּוֹרָה וּמַלְכוּת — לְפִי שֶׁאֵינָן לֹא בְּנָשִׁים וְלֹא בַּעֲבָדִים. וְאַתְּ שְׁבַקְתְּ כֹּל הָנֵי תַּנָּאֵי וְאָמוֹרָאֵי, וַעֲבַדְתְּ כְּרַב?!",
+     "english": "On a similar topic, the Gemara relates: <b>Rabbi Zeira said to Rav Ḥisda: Let the Master come and teach</b> Mishna. <b>He responded: I have not</b> yet <b>learned Grace after Meals, and I will teach Mishna? He responded: What is this?</b> Why do you say that you have not yet learned Grace after Meals? <b>He said to him: I happened</b> to come <b>to the house of the Exilarch and recited Grace after Meals, and Rav Sheshet stiffened his neck over me like a snake,</b> i.e., he got angry and challenged me. Rabbi Zeira asked: <b>And why</b> did Rav Sheshet become angry with you? He answered: <b>I did not mention covenant, Torah, or sovereignty</b> in Grace after Meals. Rabbi Zeira wondered: <b>And why did you not mention</b> those themes? He answered that he did so <b>in accordance with</b> the opinion that <b>Rav Ḥananel</b> said that <b>Rav said, as Rav Ḥananel said</b> that <b>Rav said: If one does not mention covenant, Torah or sovereignty</b> in Grace after Meals, <b>he</b> nevertheless <b>fulfilled</b> his obligation because these themes are not applicable to all of Israel. <b>Covenant does not apply to women; Torah and sovereignty apply neither to women nor to slaves.</b> Rabbi Zeira said to him: Rav Sheshet should have been angry with you. <b>And you abandoned all of these <i>tanna’im</i> and <i>amora’im</i></b> who disagree with him, <b>and followed Rav?</b> Evidently, many <i>tanna’im</i> and <i>amora’im</i> hold that covenant, Torah, and sovereignty must be mentioned in the second blessing of Grace after Meals.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Hisda recounts reciting Grace at the Exilarch's and Rav Sheshet's angry reaction, which now leads him to refuse to teach; events with conflict and consequence.",
+    "pass2": "Rav Hisda recounts reciting Grace at the Exilarch's house and Rav Sheshet's angry reaction, which leads him to decline to teach; events, conflict and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-C2"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 24b:4-4",
+   "ref": "Taanit 24b",
+   "tractate": "Taanit",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Mari witnesses angels turning sand into flour during the famine but warns the people it is a miracle that will not last.",
+   "segments": [
+    {
+     "ref": "Taanit 24b",
+     "i": 4,
+     "hebrew": "אֲמַר רַב מָרִי בְּרַהּ דְּבַת שְׁמוּאֵל: אֲנָא הֲוָה קָאֵימְנָא אַגּוּדָּא דִּנְהַר פָּפָּא, חֲזַאי לְמַלְאֲכֵי דְּאִידְּמוֹ לְמַלָּחֵי דְּקָא מַיְיתִי חָלָא וּמְלוֹנְהוּ לְאַרְבֵּי, וַהֲוָה קִמְחָא דִּסְמִידָא. אֲתוֹ כּוּלֵּי עָלְמָא לְמִיזְבַּן, אָמֵינָא לְהוּ: מֵהָא לָא תִּיזְבְּנוּן דְּמַעֲשֵׂה נִסִּים הוּא, לִמְחַר אָתְיָין אַרְבֵי דְּחִיטֵּי דְּפַרְזִינָא.",
+     "english": "<b>Rav Mari, son of Shmuel’s daughter, said:</b> At that moment, <b>I was standing on the bank of the Pappa River. I saw angels who appeared as sailors bringing sand and filling ships</b> with it, <b>and it became fine flour. Everyone came to buy</b> this flour, but <b>I said to them: Do not purchase this</b> flour, <b>as it is the product of miracles. Tomorrow, boats filled with wheat will come from Parzina,</b> and you may purchase that produce.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Mari sees angels as sailors fill ships with sand that becomes flour, people come to buy, and he tells them not to; an eyewitness wonder with several events and a response.",
+    "pass2": "Rav Mari's eyewitness account: angels disguised as sailors turn sand into flour, people come to buy, he warns them off; multiple narrated events with a miraculous change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-C5"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 21b:6-6",
+   "ref": "Taanit 21b",
+   "tractate": "Taanit",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "When a plague skips Rav's neighborhood, a dream reveals it is due to the merit of a man who lends tools for burials rather than Rav's own merit.",
+   "segments": [
+    {
+     "ref": "Taanit 21b",
+     "i": 6,
+     "hebrew": "בְּסוּרָא הֲווֹת דְּבַרְתָּא, בְּשִׁיבָבוּתֵיהּ דְּרַב לָא הֲווֹת דְּבַרְתָּא. סְבוּר מִינַּהּ, מִשּׁוּם זְכוּתֵיהּ דְּרַב דִּנְפִישׁ. אִיתְחֲזִי לְהוּ בְּחֶילְמָא: רַב דִּנְפִישָׁא זְכוּתֵיהּ טוּבָא — הָא מִילְּתָא זוּטְרָא לֵיהּ לְרַב. אֶלָּא, מִשּׁוּם הָהוּא גַּבְרָא דִּמְשַׁיֵּיל מָרָא וּזְבִילָא לִקְבוּרָה.",
+     "english": "The Gemara relates another story involving a plague: Once <b>there was</b> a plague of <b>pestilence in Sura,</b> but <b>in the neighborhood of Rav there was no pestilence.</b> The people <b>therefore thought</b> that this was <b>due to Rav’s great merit.</b> However, <b>it was revealed to them in a dream</b> that <b>Rav’s merit was too great</b> and <b>this matter too small for</b> the merit of <b>Rav</b> to be involved. <b>Rather,</b> his neighborhood was spared <b>due to</b> the acts of kindness of <b>a certain man, who</b> would <b>lend his hoe [<i>mara</i>] and shovel [<i>zevila</i>]</b> to prepare sites <b>for burial.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Plague spares Rav's neighborhood, people attribute it to Rav, a dream reveals the true cause: events with a revelation and change.",
+    "pass2": "Plague in Sura spares Rav's neighborhood; people attribute it to Rav, and a dream reveals it was a man who lent burial tools; events, a reversal and a revelation."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Sotah 49b:4-4",
+   "ref": "Sotah 49b",
+   "tractate": "Sotah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabba bar Rav Huna made a tambourine for his son, but his father Rav Huna broke it to ensure it wouldn't be confused with a prohibited drum.",
+   "segments": [
+    {
+     "ref": "Sotah 49b",
+     "i": 4,
+     "hebrew": "וְעַל הָאִירוּס. מַאי ״אִירוּס״? אָמַר רַבִּי אֶלְעָזָר: טַבְלָא דְּחַד פּוּמָּא. רַבָּה בַּר רַב הוּנָא עֲבַד לֵיהּ לִבְרֵיהּ טַנְבּוּרָא, אֲתָא אֲבוּהּ תַּבְרֵיהּ, אֲמַר לֵיהּ: מִיחַלַּף בְּטַבְלָא דְּחַד פּוּמָּא, זִיל עֲבֵיד לֵיהּ אַפּוּמָּא דְחַצְבָּא אוֹ אַפּוּמָּא דִקְפִיזָא.",
+     "english": "The mishna taught that the Sages decreed against the wearing of crowns for bridegrooms <b>and upon the drums.</b> The Gemara poses a question: <b>What is</b> this <b>drum [<i>irus</i>]? Rabbi Elazar says: A drum with one mouth.</b> The Gemara relates a story involving this instrument: <b>Rabba bar Rav Huna made a tambourine for his son. His father,</b> Rav Huna, <b>came</b> and <b>broke it. He said to him:</b> This instrument will be <b>confused for a drum with one mouth,</b> and people will assume that a drum with one mouth is permitted. Instead, <b>go and make for him</b> a small drum <b>on the mouth of an earthen jug [<i>ḥatzava</i>], or on the mouth of</b> a container used for measuring <b>a <i>kefiza</i>,</b> a small measurement, which did not pose the concern of being confused with a drum with one mouth.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabba bar Rav Huna makes a tambourine, his father comes and breaks it and instructs him otherwise: several actions and a change.",
+    "pass2": "Rabba bar Rav Huna makes a tambourine for his son, Rav Huna comes and breaks it and instructs him; multiple actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 19a:2-2",
+   "ref": "Berakhot 19a",
+   "tractate": "Berakhot",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A man who spoke disparagingly of the deceased Mar Shmuel was immediately punished when a reed fell from the ceiling and fractured his skull.",
+   "segments": [
+    {
+     "ref": "Berakhot 19a",
+     "i": 2,
+     "hebrew": "אִינִי?! וְהָא אָמַר רַב פָּפָּא: חַד אִישְׁתַּעִי מִילְּתָא בָּתְרֵיהּ דְּמָר שְׁמוּאֵל וּנְפַל קַנְיָא מִטְּלָלָא וּבְזַעָא לְאַרְנְקָא דְמוֹחֵיהּ!",
+     "english": "The Gemara asks: <b>Is that so? Didn’t Rav Pappa say:</b> There was once <b>someone who spoke</b> disparagingly <b>after</b> the death of <b>Mar Shmuel and a reed fell from the ceiling, fracturing his skull?</b> Obviously, the dead care when people speak ill of them.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Someone spoke ill of Mar Shmuel after his death and a reed fell and fractured his skull: two events, causality and change.",
+    "pass2": "Someone disparages the late Mar Shmuel and a reed falls and fractures his skull: two events with implied causality and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Metzia 81a:8-8",
+   "ref": "Bava Metzia 81a",
+   "tractate": "Bava Metzia",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A man took a donkey to sell it on the condition that he would return it if unsuccessful, but the donkey was injured during the return journey, leading to a legal dispute.",
+   "segments": [
+    {
+     "ref": "Bava Metzia 81a",
+     "i": 8,
+     "hebrew": "הָהוּא גַּבְרָא דְּזַבֵּין לֵיהּ חֲמָרָא לְחַבְרֵיהּ, אֲמַר לֵיהּ: קָא מַמְטֵינָא לַיהּ לְדוּכְתָּא פְּלוֹנִי, אִי מִזְדַּבְּנָא – מוּטָב, וְאִי לָא – מַהְדַּרְנָא לַיהּ נִהֲלָיךְ. אֲזַל וְלָא אִזְדַּבְּנָא, וּבַהֲדֵי דְּקָא אָתֵא אִתְּנִיס. אֲתָא לְקַמֵּיהּ דְּרַב נַחְמָן, חַיְּיבֵיהּ.",
+     "english": "The Gemara relates: There was <b>a certain man who sold a donkey to another.</b> The buyer <b>said to him: I will bring it to such and such a place; if it is sold,</b> well and <b>good; and if not, I will return it to you. He went and it was not sold, and on his way</b> back the donkey was injured in <b>an accident.</b> The case <b>came before Rav Naḥman,</b> who <b>deemed</b> the buyer <b>liable</b> to pay.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A donkey is sold, taken to market, not sold, injured on the way back, and the case comes before Rav Nahman who rules the buyer liable; several narrated events and a resolving ruling.",
+    "pass2": "A narrated incident with several actions and a change (buyer takes the donkey, fails to sell it, it is injured on return), then Rav Nahman's ruling; the cow-case shape."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Sukkah 10b:4-4",
+   "ref": "Sukkah 10b",
+   "tractate": "Sukkah",
+   "pool": "P1",
+   "run1": "HIGH_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Hisda and Rabba bar Rav Huna visit the Exilarch and are lodged by Rav Nahman in a sukkah they would normally consider unfit, yet they remain silent.",
+   "segments": [
+    {
+     "ref": "Sukkah 10b",
+     "i": 4,
+     "hebrew": "רַב חִסְדָּא וְרַבָּה בַּר רַב הוּנָא אִיקְּלַעוּ לְבֵי רֵישׁ גָּלוּתָא. אַגְנִינְהוּ רַב נַחְמָן בְּסוּכָּה שֶׁנּוֹיֶיהָ מוּפְלָגִין מִמֶּנָּה אַרְבָּעָה טְפָחִים, אִשְׁתִּיקוּ וְלָא אֲמַרוּ לֵיהּ וְלָא מִידֵּי. אֲמַר לְהוּ: הֲדוּר בְּהוּ רַבָּנַן מִשְּׁמַעְתַּיְיהוּ? אֲמַרוּ לֵיהּ: אֲנַן שְׁלוּחֵי מִצְוָה אֲנַן, וּפְטוּרִין מִן הַסּוּכָּה.",
+     "english": "The Gemara relates that <b>Rav Ḥisda and Rabba bar Rav Huna happened</b> to come <b>to the house of the Exilarch. Rav Naḥman,</b> who was the official in charge of the Exilarch’s household, <b>lodged them in a <i>sukka</i> whose decorations were removed from</b> the roofing <b>four handbreadths. They were silent and did not say anything to him,</b> even though in their opinion the <i>sukka</i> was unfit. Rav Naḥman <b>said to them: Did the Sages retract their halakhic</b> ruling? Does your silence indicate that you concede to my ruling? <b>They said to him: We are on the path to perform a mitzva and,</b> therefore, <b>we are exempt from the</b> mitzva of <b><i>sukka</i>.</b> Therefore, it is permitted for us to sleep in this <i>sukka</i>. In terms of the <i>halakha</i>, our ruling is unchanged.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Hisda and Rabba bar Rav Huna visit the Exilarch, Rav Nahman lodges them in a sukka they consider unfit, they keep silent, he challenges them and they explain. Several actions and a conflict with a resolution.",
+    "pass2": "Rav Hisda and Rabba bar Rav Huna visit the Exilarch, Rav Nahman lodges them in a disputed sukka, they stay silent and he confronts them; events with conflict and resolution."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0",
+     "R-C2"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Metzia 51a:5-5",
+   "ref": "Bava Metzia 51a",
+   "tractate": "Bava Metzia",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "A man selling silk strips sets a price, and a buyer calculates whether the price constitutes exploitation.",
+   "segments": [
+    {
+     "ref": "Bava Metzia 51a",
+     "i": 5,
+     "hebrew": "הָהוּא גַּבְרָא דַּהֲוָה נָקֵט וַרְשְׁכֵי לְזַבּוֹנֵי, קָרֵי שִׁיתָּא וְשָׁוְיָא חַמְשָׁא, וְאִי הֲווֹ יָהֲבִי לֵיהּ חַמְשָׁא וּפַלְגָא הֲוָה שָׁקֵיל. אֲתָא הָהוּא גַּבְרָא וְאָמַר: אִי יָהֵיבְנָא לֵיהּ חַמְשָׁא וּפַלְגָא הָוְיָא מְחִילָה. אֶתֵּן לֵיהּ שִׁיתָּא וְאֶתְבְּעֵיהּ לְדִינָא. אֲתָא לְקַמֵּיהּ דְּרָבָא, אֲמַר לֵיהּ: לֹא שָׁנוּ אֶלָּא בְּלוֹקֵחַ מִן הַתַּגָּר, אֲבָל בְּלוֹקֵחַ מִבַּעַל הַבַּיִת – אֵין לוֹ עָלָיו אוֹנָאָה.",
+     "english": "§ The Gemara relates: There was <b>a certain man who had silk strips [<i>varshekhei</i>] to sell. He announced</b> that he was selling them for <b>six</b> <i>ma’a</i>, <b>and</b> they were <b>worth five</b> <i>ma’a</i>, <b>and if they would give him five and a half</b> <i>ma’a</i>, <b>he would take</b> it and sell the silk. <b>This man,</b> i.e., a potential buyer, <b>came and said</b> to himself: <b>If I give him five and a half</b> <i>ma’a</i>, it <b>is</b> a case of <b>a waiver,</b> and I will not be entitled to recover the difference. <b>I will give him six</b> <i>ma’a</i> <b>and claim</b> from <b>him by law</b> the return of the sum gained by the exploitation. He did so. The case <b>came before Rava,</b> who <b>said to him:</b> The Sages <b>taught</b> this <i>halakha</i> of exploitation <b>only with regard to one who buys</b> merchandise <b>from a merchant, but one who buys</b> merchandise <b>from</b> a regular <b>homeowner does not have</b> a claim of <b>exploitation against him.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A buyer deliberately overpays so he can sue, the case comes before Rava, and Rava rules. This is an incident with actions beyond the coming-to-court, followed by a ruling, like the cow case.",
+    "pass2": "A seller announces a price, a buyer deliberately overpays to sue, and the case comes before Rava who rules; multiple narrated actions followed by a ruling, the cow-case shape."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Yevamot 72b:3-6",
+   "ref": "Yevamot 72b",
+   "tractate": "Yevamot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Yoḥanan is silenced by Rabbi Elazar's legal objection and later praises him to Reish Lakish as teaching like Moses.",
+   "segments": [
+    {
+     "ref": "Yevamot 72b",
+     "i": 3,
+     "hebrew": "כִּי הָא דְּיָתֵיב רַבִּי יוֹחָנָן וְקָדָרֵישׁ: נוֹתָר, בִּזְמַנּוֹ — אֵינוֹ נִשְׂרָף אֶלָּא בַּיּוֹם, שֶׁלֹּא בִּזְמַנּוֹ — נִשְׂרָף בֵּין בַּיּוֹם בֵּין בַּלַּיְלָה.",
+     "english": "<b>As in</b> the case <b>where Rabbi Yoḥanan was sitting and he expounded: <i>Notar</i>,</b> the flesh of an offering that is left over beyond its allotted time, requires burning. If it is burnt <b>at its</b> appropriate <b>time,</b> i.e., on the same day that it became <i>notar</i>, it <b>may be burned only during the day.</b> If it is burnt <b>not at its</b> appropriate <b>time,</b> it <b>may be burned either during the day or at night.</b>",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Yevamot 72b",
+     "i": 4,
+     "hebrew": "וְאֵיתִיבֵיהּ רַבִּי אֶלְעָזָר לְרַבִּי יוֹחָנָן: אֵין לִי אֶלָּא נִימּוֹל לִשְׁמִינִי שֶׁאֵין נִימּוֹל אֶלָּא בַּיּוֹם, מִנַּיִן לְרַבּוֹת לְתִשְׁעָה, לַעֲשָׂרָה, לְאַחַד עָשָׂר לִשְׁנֵים עָשָׂר (מִנַּיִן)? תַּלְמוּד לוֹמַר: ״וּבַיּוֹם״.",
+     "english": "<b>And Rabbi Elazar raises an objection to</b> the opinion of <b>Rabbi Yoḥanan</b> from the following <i>baraita</i>: <b>I have</b> derived <b>only</b> that a child who <b>is circumcised on</b> the <b>eighth</b> day <b>may be circumcised only during the day. From where</b> do I derive <b>to include</b> in this <i>halakha</i> a child who is circumcised <b>on the ninth, tenth, eleventh,</b> or <b>twelfth</b> day? <b>From where</b> is it derived that he, too, may be circumcised only during the day? Therefore, <b>the verse states: “And on the day,”</b> which teaches that the obligation to circumcise during the day extends beyond the eighth day itself.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Yevamot 72b",
+     "i": 5,
+     "hebrew": "וַאֲפִילּוּ לְמַאן דְּלָא דָּרֵישׁ וָאו, וָאו וְהֵי דָּרֵישׁ. אִישְׁתִּיק.",
+     "english": "<b>And even</b> the Sage <b>who does not expound</b> the letter <b><i>vav</i>,</b> meaning “and,” as superfluous, <b>expounds</b> the letters <b><i>vav</i> and <i>heh</i></b> when they come together and understands them as alluding to cases not explicitly mentioned in the biblical text. Regarding <i>notar</i> the verse states: “And that which remains [<i>vehanotar</i>] of the flesh of the offering on the third day shall be burnt with fire” (Leviticus 7:17), where the letters <i>vav</i> and <i>heh</i> teach that the obligation to burn <i>notar</i> during the day extends beyond the third day itself. Rabbi Yoḥanan <b>was silent,</b> as he had no response.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Yevamot 72b",
+     "i": 6,
+     "hebrew": "בָּתַר דִּנְפַק, אֲמַר לֵיהּ רַבִּי יוֹחָנָן לְרֵישׁ לָקִישׁ: רָאִיתִי לְבֶן פְּדָת שֶׁיּוֹשֵׁב וְדוֹרֵשׁ כְּמֹשֶׁה מִפִּי הַגְּבוּרָה. אֲמַר לֵיהּ רֵישׁ לָקִישׁ: דִּידֵיהּ הִיא? מַתְנִיתָא הִיא. הֵיכָא תְּנָא לֵיהּ? בְּתוֹרַת כֹּהֲנִים. נְפַק, תַּנְיַיהּ בִּתְלָתָא יוֹמֵי, וְסַבְרַהּ בִּתְלָתָא יַרְחֵי.",
+     "english": "<b>After</b> Rabbi Elazar <b>left, Rabbi Yoḥanan,</b> who was impressed with Rabbi Elazar’s exposition, <b>said to Reish Lakish: I saw that</b> Rabbi Elazar, <b>son of Pedat, was sitting and expounding</b> the Torah <b>as Moses</b> had received it directly <b>from the mouth of the Almighty. Reish Lakish said to him:</b> Was this exposition <b>his own? It is a <i>baraita</i>.</b> Rabbi Yoḥanan inquired: <b>Where is this</b> <i>baraita</i> <b>taught?</b> Reish Lakish replied: It is <b>in <i>Torat Kohanim</i>,</b> otherwise known as <i>Sifra</i>, a work of halakhic midrash on the book of Leviticus. Rabbi Yoḥanan <b>went out</b> and <b>learned</b> the entire <i>Torat Kohanim</i> <b>in three days, and reached</b> a full <b>understanding of it in three months.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "R. Yohanan expounds, R. Elazar refutes him and he falls silent, then Reish Lakish exposes the source and R. Yohanan goes and masters Torat Kohanim. Several actions, conflict and a change.",
+    "pass2": "Rabbi Elazar's objection silences Rabbi Yohanan, who praises him, is told it is a baraita, then goes and learns Torat Kohanim in three days. Several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 21a:8-8",
+   "ref": "Bava Kamma 21a",
+   "tractate": "Bava Kamma",
+   "pool": "P1",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "HIGH_CONFIDENCE",
+   "detector_summary": "A man built a mansion on land belonging to orphans, and Rav Nahman confiscated the building from him.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 21a",
+     "i": 8,
+     "hebrew": "הָהוּא גַּבְרָא דִּבְנָה אַפַּדְנָא אַקִּילְקַלְתָּא דְיַתְמֵי. אַגְבְּיֵהּ רַב נַחְמָן לְאַפַּדְנֵיהּ מִינֵּיהּ. לֵימָא קָסָבַר רַב נַחְמָן: הַדָּר בַּחֲצַר חֲבֵירוֹ שֶׁלֹּא מִדַּעְתּוֹ, צָרִיךְ לְהַעֲלוֹת לוֹ שָׂכָר? הָהוּא – מֵעִיקָּרָא קַרְמְנָאֵי הֲווֹ דָּיְירִי בֵּיהּ, וְיָהֲבִי לְהוּ לְיַתְמֵי דָּבָר מוּעָט. אֲמַר לֵיהּ: זִיל פַּיְּיסִינְהוּ לְיַתְמֵי, וְלָא אַשְׁגַּח. אַגְבְּיֵהּ רַב נַחְמָן לְאַפַּדְנֵיהּ מִינֵּיהּ.",
+     "english": "The Gemara relates: There was <b>a certain man who built a mansion [<i>apadna</i>] on a garbage heap [<i>akilkalta</i>] belonging to orphans,</b> and <b>Rav Naḥman confiscated his mansion from him</b> as he did not pay the owners of the property. The Gemara asks: <b>Shall we say</b> that <b>Rav Naḥman holds</b> that <b>one who resides in another’s courtyard without his knowledge must pay him rent?</b> The Gemara rejects this: No, there is no proof taken from this case, because it was a unique situation. <b>In that</b> case <b>Carmanians,</b> nomadic tribes, <b>were initially living on</b> the property, <b>and they would pay the orphans a small amount</b> for the use of the land, and when this man built his mansion he removed the Carmanians from there. Rav Naḥman had <b>said to</b> the man who built the mansion: <b>Go and appease the orphans</b> with regard to their lost income, <b>but he did not pay attention</b> to the ruling. Therefore, <b>Rav Naḥman confiscated his mansion from him.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A man builds on the orphans' land, ignores Rav Nahman's order to appease them, and Rav Nahman confiscates the mansion: several actions, conflict and a change.",
+    "pass2": "A man builds a mansion on the orphans' land, Rav Nahman orders him to appease them, he ignores it, and his mansion is confiscated: several actions, conflict and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 28a:8-8",
+   "ref": "Avodah Zarah 28a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Abaye recounts how he was unable to find a cure for his ailment until an Arab provided a remedy involving burnt olive seeds, which successfully healed him.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 28a",
+     "i": 8,
+     "hebrew": "אָמַר אַבָּיֵי: אֲנָא עֲבַדִי כּוּלְּהוּ וְלָא אִיתַּסַּאי, עַד דַּאֲמַר לִי הַהוּא טַיָּיעָא: אַיְיתִי קַשְׁיָיתָא דְּזֵיתָא דְּלָא מְלוֹ תִּילְתָּא, וּקְלִנְהוּ אַמָּרָא חַדְתָּא, וְדַבֵּיק (בֵּיהּ) [אַבֵּי] דְּדָרֵיךְ. עֲבַדִי הָכִי וְאִיתַּסַּאי.",
+     "english": "<b>Abaye said: I prepared all of these</b> medicines <b>and was not cured</b> from this ailment <b>until a certain Arab told me</b> the remedy for it: <b>Take olive seeds that are less than one-third ripe, and burn them</b> in a fire <b>on top of a new hoe, and stick them along the row</b> of gums. <b>I did this and was cured.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Abaye tried every remedy, was not cured, an Arab told him a cure, he applied it and was healed; several actions and a change.",
+    "pass2": "Abaye tries remedies without success, an Arab tells him a cure, he applies it and is healed: multiple actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Zevachim 100a:4-4",
+   "ref": "Zevachim 100a",
+   "tractate": "Zevachim",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Yosef the Priest's wife died on the eve of Passover, and although he did not want to become impure, the Sages forced him to do so to bury her.",
+   "segments": [
+    {
+     "ref": "Zevachim 100a",
+     "i": 4,
+     "hebrew": "וּמְנָא תֵּימְרָא דְּשָׁנֵי לֵיהּ בֵּין קוֹדֶם חֲצוֹת בֵּין לְאַחַר חֲצוֹת? דְּתַנְיָא: ״לָהּ יִטַּמָּא״ – מִצְוָה. לֹא רָצָה – מְטַמְּאִין אוֹתוֹ עַל כׇּרְחוֹ. וּמַעֲשֶׂה בְּיוֹסֵף הַכֹּהֵן שֶׁמֵּתָה אִשְׁתּוֹ בְּעֶרֶב הַפֶּסַח, וְלֹא רָצָה לִיטַּמֵּא, וְנִמְנוּ אֶחָיו הַכֹּהֲנִים וְטִימְּאוּהוּ בְּעַל כׇּרְחוֹ.",
+     "english": "The Gemara explains: <b>And from where do you say that</b> the <i>halakha</i> <b>is different</b> depending on <b>whether</b> his relative died <b>before midday</b> on the fourteenth of Nisan or <b>whether</b> he died <b>after midday? As it is taught</b> in a <i>baraita</i>: The Torah states with regard to a priest: “And for his sister a virgin, that is near unto him, that has had no husband, <b>for her may he become impure”</b> (Leviticus 21:3). From here it is derived that it is <b>a mitzva</b> for a priest to become impure in order to bury his deceased relatives, and if he <b>did not want</b> to do so, others must <b>render him impure against his will. And an incident</b> occurred <b>involving Yosef the priest, where his wife died on Passover eve, and he did not want to become impure,</b> as he wanted to offer the Paschal offering; <b>and his brethren the priests voted and rendered him impure against his will.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Yosef the priest's wife dies, he refuses to become impure, and his fellow priests vote and render him impure against his will: several actions, conflict and change.",
+    "pass2": "Yosef the priest's wife dies on Passover eve, he refuses impurity, and his brethren vote and render him impure against his will: actions, conflict, change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 58b:6-6",
+   "ref": "Berakhot 58b",
+   "tractate": "Berakhot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Pappa and Rav Huna meet Rav Hanina on the road and inform him of the blessings they recited upon seeing him.",
+   "segments": [
+    {
+     "ref": "Berakhot 58b",
+     "i": 6,
+     "hebrew": "רַב פָּפָּא וְרַב הוּנָא בְּרֵיהּ דְּרַב יְהוֹשֻׁעַ הֲווֹ קָאָזְלִי בְּאוֹרְחָא. פְּגַעוּ בֵּיהּ בְּרַב חֲנִינָא בְּרֵיהּ דְּרַב אִיקָא. אֲמַרוּ לֵיהּ: בַּהֲדֵי דַּחֲזֵינָךְ בָּרֵיכִינַן עֲלָךְ תַּרְתֵּי: ״בָּרוּךְ … אֲשֶׁר חָלַק מֵחׇכְמָתוֹ לִירֵאָיו״ וְ״שֶׁהֶחֱיָינוּ״. אֲמַר לְהוּ: אֲנָא נָמֵי, כֵּיוָן דַּחֲזִתִינְכוּ חַשֵּׁבְתִּינְכוּ עִלָּוַאי כְּשִׁיתִּין רִבְּווֹן בֵּית יִשְׂרָאֵל, וּבָרֵיכְנָא עֲלַיְיכוּ תְּלָתָא: הָנָךְ תַּרְתֵּי, וּ״בָרוּךְ … חֲכַם הָרָזִים״. אֲמַרוּ לֵיהּ: חֲכִימַתְּ כּוּלֵּי הַאי! יָהֲבִי בֵּיהּ עֵינַיְיהוּ, וּשְׁכֵיב.",
+     "english": "The Gemara relates: <b>Rav Pappa and Rav Huna, son of Rav Yehoshua, were once walking along the road when they met Rav Ḥanina the son of Rav Ika. They said to him: When we saw you we recited two blessings over</b> meeting <b>you: Blessed…Who has shared of His wisdom to those who revere Him,</b> and: <b>Who has given us life…</b>as they had not seen him in over a month. <b>He said to them: I too, once I saw you, considered you in my eyes as</b> equivalent to <b>six hundred thousand</b> of the <b>house of Israel, and I recited three blessings over you. I recited those two</b> that you recited, as well as: <b>Blessed…Who knows all secrets,</b> which is the blessing recited upon seeing six hundred thousand Israelites. <b>They said to him: Are you all that clever? They fixed their gaze upon him and he died.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "The sages meet on the road, exchange blessings, take offense, fix their gaze on him and he dies: events, conflict and a decisive change.",
+    "pass2": "Meeting on the road, exchange of blessings, the rabbis fix their gaze on Rav Hanina and he dies: multiple events, conflict and a decisive change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": []
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Shabbat 20b:10-10",
+   "ref": "Shabbat 20b",
+   "tractate": "Shabbat",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Ravin and Abaye walk through the Valley of Tamrurita and identify certain willow trees as the 'idan' mentioned in the Mishna.",
+   "segments": [
+    {
+     "ref": "Shabbat 20b",
+     "i": 10,
+     "hebrew": "וְלֹא בִּפְתִילַת הָאִידָן — אַחְוִינָא. רָבִין וְאַבָּיֵי הֲווֹ קָאָזְלִי בְּפַקְתָּא דְטַמְרוּרִיתָא. חֲזַנְהִי לְהָנְהוּ אַרְבָתָא. אֲמַר לֵיהּ רָבִין לְאַבָּיֵי: הַיְינוּ אִידָן דִּתְנַן. אֲמַר לֵיהּ: הַהִיא עֵץ בְּעָלְמָא הוּא! קְלַף וְאַחְוִי לֵיהּ עַמְרָנִיתָא דְּבֵינֵי בֵּינֵי. וְלֹא בִּפְתִילַת הַמִּדְבָּר — שַׁבְרָא.",
+     "english": "<b>And</b> we learned in the mishna that <b>one may not</b> light <b>with <i>petilat ha</i>’<i>idan</i>.</b> The Gemara explains that <i>petilat ha</i>’<i>idan</i> is <b>willow,</b> which does not burn well. The Gemara relates that <b>Ravin and Abaye were walking in the valley of Tamrurita. They saw these willow</b> trees. <b>Ravin said to Abaye: This is</b> the <b><i>idan</i> that we learned</b> in the mishna. Abaye <b>said to him:</b> But <b>this is mere wood.</b> How would one fashion a wick from it? Ravin <b>peeled</b> the bark <b>and showed him the wool-</b>like substance <b>between</b> the bark and the tree. We also learned in the mishna: <b>Nor with desert silk [<i>petilat hamidbar</i>].</b> That is <b>the mullein</b> plant, which does not burn well.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Ravin and Abaye walk, see willows, disagree, and Ravin peels the bark to show him; several actions and a resolution of the dispute.",
+    "pass2": "Ravin and Abaye walk, see willows, dispute, and Ravin peels the bark to show him: several actions and a resolution of the disagreement."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 117b:8-8",
+   "ref": "Bava Kamma 117b",
+   "tractate": "Bava Kamma",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A man entrusted with funds for redeeming captives gives the money to thieves to save himself, and Rava rules he is not liable.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 117b",
+     "i": 8,
+     "hebrew": "הָהוּא גַּבְרָא דַּהֲוָה מִפְּקִיד גַּבֵּיהּ אַרְנְקָא דְּפִדְיוֹן שְׁבוּיִים. סְלִיקוּ גַּנָּבֵי עִילָּוֵיהּ, שַׁקְלַהּ יַהֲבַהּ נִיהֲלַיְיהוּ. אֲתָא לְקַמֵּיהּ דְּרָבָא, פַּטְרֵיהּ. אֲמַר לֵיהּ אַבָּיֵי: וְהָא מַצִּיל עַצְמוֹ בְּמָמוֹן חֲבֵירוֹ הוּא! אֲמַר לֵיהּ: אֵין לְךָ פִּדְיוֹן שְׁבוּיִים גָּדוֹל מִזֶּה.",
+     "english": "The Gemara relates another incident: There was <b>a certain man with whom the purse</b> containing funds collected <b>for the redemption of captives was deposited. Thieves came upon him</b> and <b>he took</b> the purse and <b>gave it to them.</b> The case <b>came before Rabba,</b> and Rabba <b>exempted him</b> from payment. <b>Abaye said to him: But this</b> individual <b>is saving himself with another’s property,</b> and he should therefore be liable to pay. Rabba <b>said to him: You have no greater redemption of captives than this.</b> Since the man used the money to avoid being harmed by the thieves, Rabba considered the money to have been used for its intended purpose.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Incident with distinct actions (thieves come, he hands over the captives' fund), brought before Rabba who rules, with Abaye's challenge: the cow-case shape of incident plus ruling.",
+    "pass2": "A narrated incident: thieves come, the bailee hands over the captives' purse, the case comes to Rabba who exempts him; the cow-case shape of an incident with actions followed by a ruling."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 18b:6-6",
+   "ref": "Taanit 18b",
+   "tractate": "Taanit",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "The general Nicanor would daily wave his hand toward Jerusalem and threaten to conquer it.",
+   "segments": [
+    {
+     "ref": "Taanit 18b",
+     "i": 6,
+     "hebrew": "מַאי נִיקָנוֹר וּמַאי טוּרְיָינוֹס? דְּתַנְיָא: נִיקָנוֹר, אֶחָד מֵאִפַּרְכֵי יְוָונִים הָיָה, וּבְכׇל יוֹם וָיוֹם הָיָה מֵנִיף יָדוֹ עַל יְהוּדָה וִירוּשָׁלַיִם, וְאוֹמֵר: אֵימָתַי תִּפּוֹל בְּיָדִי וְאֶרְמְסֶנָּה. וּכְשֶׁגָּבְרָה מַלְכוּת בֵּית חַשְׁמוֹנַאי וְנִצְּחוּם, קָצְצוּ בְּהוֹנוֹת יָדָיו וְרַגְלָיו וּתְלָאוּם בְּשַׁעֲרֵי יְרוּשָׁלַיִם, וְאָמְרוּ: פֶּה שֶׁהָיָה מְדַבֵּר בְּגַאֲוָה, וְיָדַיִים שֶׁהָיוּ מְנִיפוֹת עַל יְרוּשָׁלַיִם — תֵּעָשֶׂה בָּהֶם נְקָמָה.",
+     "english": "In relation to the above, the Gemara inquires: <b>What is</b> the origin of <b>Nicanor’s</b> Day <b>and what is</b> the origin of <b>Trajan’s</b> Day? <b>As it is taught</b> in a <i>baraita</i>: <b>Nicanor was one of the generals [<i>iparkhei</i>]</b> in the <b>Greek</b> army, <b>and each and every day he would wave his hand over Judea and Jerusalem and say: When will</b> this city <b>fall into my hands, and I shall trample it? And when the Hasmonean monarchy overcame</b> the Greeks <b>and emerged victorious over them,</b> they killed Nicanor in battle, <b>cut off his thumbs and big toes, and hung them on the gates of Jerusalem, saying: The mouth that spoke with pride, and the hands that waved over Jerusalem, may vengeance be taken against them.</b> This occurred on the thirteenth of Adar.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Nicanor the Greek general threatens Jerusalem daily, the Hasmoneans defeat him and hang his thumbs and toes; post-biblical figures, multiple actions and change.",
+    "pass2": "Post-biblical narrative of Nicanor's threats, Hasmonean victory and the hanging of his thumbs and toes; actions and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-S1",
+     "R-C0"
+    ],
+    "pass2": [
+     "R-S1",
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Metzia 66b:11-11",
+   "ref": "Bava Metzia 66b",
+   "tractate": "Bava Metzia",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A man sells land with a guarantee for high-quality reimbursement, but after his best land is sold, the rabbis debate whether he must provide his remaining best land or only intermediate quality.",
+   "segments": [
+    {
+     "ref": "Bava Metzia 66b",
+     "i": 11,
+     "hebrew": "הָהוּא גַּבְרָא דְּזַבֵּין לֵיהּ אַרְעָא לְחַבְרֵיהּ בְּאַחְרָיוּת. אֲמַר לֵיהּ: אִי טָרְפוּ לַיהּ מִנַּאי מַגְבֵּית לִי מֵעִידֵּי עִידִּית דְּאִית לָךְ. אֲמַר לֵיהּ: מֵעִידֵּי עִידִּית לָא מַגְבֵּינָא לָךְ, דְּבָעֵינָא לְמֵיקַם קַמַּאי, אֶלָּא מַגְבֵּינָא לָךְ מֵעִידִּית אַחֲרִיתִ[י] דְּאִית לִי. לְסוֹף טַרְפוּהָ מִינֵּיהּ, אֲתָא בִּדְקָא שְׁקֵיל לְעִידֵּי עִידִּית.",
+     "english": "§ The Gemara relates: There was <b>a certain man who sold land to another with</b> a property <b>guarantee,</b> meaning that in the event that land is seized by the seller’s creditors, the seller will reimburse the buyer his purchase money. The buyer <b>said to him: If</b> your creditors <b>seize</b> the land <b>from me,</b> will <b>you</b> allow <b>me to collect</b> that which is owed to me <b>from</b> the most <b>superior quality of</b> the <b>superior-quality</b> land <b>that you have?</b> The seller <b>said to him: I will not</b> allow <b>you to collect from</b> the most <b>superior quality of</b> my <b>superior-quality</b> land, <b>as I want to keep</b> those <b>before me. But I will</b> allow <b>you to collect from other superior-quality</b> land <b>I have. Ultimately,</b> creditors <b>seized</b> the field <b>from</b> the buyer, and in the meantime <b>a flood came and flooded</b> the seller’s most <b>superior quality of</b> his <b>superior-quality</b> land.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A man sells land with a guarantee, negotiates terms, the land is seized and a flood destroys the seller's best land; an actual incident with multiple events and change, preceding a ruling.",
+    "pass2": "A sale with a guarantee, a negotiation, then creditors seize the field and a flood destroys the best land; an actual incident with several events and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Chagigah 18a:9-9",
+   "ref": "Chagigah 18a",
+   "tractate": "Chagigah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "When Alexa died in Lod, the people gathered to eulogize him, but Rabbi Tarfon prevented them because it was a day of slaughter (associated with the festival).",
+   "segments": [
+    {
+     "ref": "Chagigah 18a",
+     "i": 9,
+     "hebrew": "וּמוּתָּרִין בְּהֶסְפֵּד וְתַעֲנִית, שֶׁלֹּא לְקַיֵּים אֶת דִּבְרֵי הָאוֹמְרִין עֲצֶרֶת אַחַר הַשַּׁבָּת. וְהָאִיתְּמַר: מַעֲשֶׂה וּמֵת אֲלֶכְּסָא בְּלוֹד, וְנִכְנְסוּ כׇּל יִשְׂרָאֵל לְסוֹפְדוֹ, וְלֹא הִנִּיחָם רַבִּי טַרְפוֹן, מִפְּנֵי שֶׁיּוֹם טוֹב שֶׁל עֲצֶרֶת הָיָה.",
+     "english": "§ The mishna taught: <b>All were permitted to eulogize and fast</b> on the days of slaughter, in order <b>not to uphold the opinion of</b> the Sadducees, <b>who would say: <i>Shavuot</i></b> must always occur <b>after Shabbat.</b> The Gemara raises a difficulty: <b>But wasn’t it stated: An incident</b> occurred when <b>Alexa died in Lod, and all of Israel gathered to eulogize him, but Rabbi Tarfon would not allow them</b> do so <b>because it was the Festival day of <i>Shavuot</i>?</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Alexa died in Lod, all Israel gathered to eulogize him, and Rabbi Tarfon prevented them: several narrated actions with a change, though cited as legal evidence.",
+    "pass2": "Alexa dies in Lod, all Israel gathers to eulogize him, and R. Tarfon prevents them: several events with a response, though cited as a legal difficulty."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Nedarim 48b:0-0",
+   "ref": "Nedarim 48b",
+   "tractate": "Nedarim",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A father vows to prohibit his son from benefiting from his property after the son is caught stealing flax, leading to a legal discussion about the status of the grandson's inheritance.",
+   "segments": [
+    {
+     "ref": "Nedarim 48b",
+     "i": 0,
+     "hebrew": "הָהוּא גַּבְרָא דַּהֲוָה לֵיהּ בְּרָא דַּהֲוָה שָׁמֵיט כִּיפֵּי דְכִיתָּנָא. אַסְרִינְהוּ לְנִכְסֵיהּ עֲלֵיהּ. אָמְרוּ לֵיהּ: וְאִי הֲוַאי בַּר בְּרָךְ צוּרְבָּא מֵרַבָּנַן, מַאי? אֲמַר לְהוֹן: לִיקְנֵי הָדֵין, וְאִי הֲוַאי בַּר בְּרִי צוּרְבָּא מֵרַבָּנַן, לִקְנְיֵיהּ. מַאי?",
+     "english": "There was <b>a certain man who had a son who seized</b> in theft <b>sheaves [<i>keifei</i>] of flax,</b> and the father took a vow <b>prohibiting</b> his son <b>from</b> deriving any benefit <b>from his possessions. They said</b> to the father: <b>And if the son of your son would become a Torah scholar,</b> and you would want him to be able to inherit your possessions, <b>what</b> would you do? <b>He said to them: Let this</b> son of mine <b>acquire</b> the possessions, <b>and</b> only <b>if the son of my son becomes a Torah scholar</b> then <b>let him,</b> my grandson, <b>acquire them</b> from my son. They asked: <b>What</b> is the ruling?",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A son steals flax sheaves and his father in response vows him out of his property, then sets a condition: incident with causality and change, followed by a legal question.",
+    "pass2": "A son steals flax sheaves, his father bars him from his property by vow and then modifies it when challenged; theft leading to a vow, with a ruling sought."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 54a:10-10",
+   "ref": "Berakhot 54a",
+   "tractate": "Berakhot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A man walking by the Euphrates is attacked by a lion and miraculously saved, leading him to recite a blessing at the site.",
+   "segments": [
+    {
+     "ref": "Berakhot 54a",
+     "i": 10,
+     "hebrew": "אַנִּיסָּא דְרַבִּים מְבָרְכִינַן, אַנִּיסָּא דְיָחִיד לָא מְבָרְכִינַן?! וְהָא הָהוּא גַּבְרָא דַּהֲוָה קָא אָזֵיל בַּעֲבַר יַמִּינָא. נְפַל עֲלֵיהּ אַרְיָא, אִתְעֲבִיד לֵיהּ נִיסָּא וְאִיתַּצַּל מִינֵּיהּ. אֲתָא לְקַמֵּיהּ דְּרָבָא, וַאֲמַר לֵיהּ: כׇּל אִימַּת דְּמָטֵית לְהָתָם — בָּרֵיךְ ״בָּרוּךְ שֶׁעָשָׂה לִי נֵס בַּמָּקוֹם הַזֶּה״.",
+     "english": "The Gemara asks: <b>For a miracle</b> that occurs for the <b>multitudes we recite a blessing,</b> but <b>for a miracle</b> that befalls <b>an individual</b> person <b>we do not recite a blessing? Wasn’t</b> there an incident where <b>a certain man was walking along the right side</b> of the Euphrates River when <b>a lion attacked him, a miracle was performed for him, and he was rescued? He came before Rava, who said to him: Every time that you arrive there,</b> to the site of the miracle, <b>recite the blessing, “Blessed…Who performed a miracle for me in this place.”</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "A man is attacked by a lion and miraculously rescued, then comes before Rava who instructs him: an incident with real events and change, followed by a ruling.",
+    "pass2": "A man is attacked by a lion and miraculously rescued, then comes to Rava, who instructs him. There are narrated events and a change beyond the ruling, like the cow case."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 48a:2-2",
+   "ref": "Berakhot 48a",
+   "tractate": "Berakhot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "As children sitting before Rabba, Rava and Abaye demonstrate their understanding of God's omnipresence by pointing to the ceiling and the sky.",
+   "segments": [
+    {
+     "ref": "Berakhot 48a",
+     "i": 2,
+     "hebrew": "אַבָּיֵי וְרָבָא הֲווֹ יָתְבִי קַמֵּיהּ דְּרַבָּה. אֲמַר לְהוּ רַבָּה: לְמִי מְבָרְכִין? אָמְרִי לֵיהּ: לְרַחֲמָנָא. וְרַחֲמָנָא הֵיכָא יָתֵיב? — רָבָא אַחְוִי לִשְׁמֵי טְלָלָא. אַבָּיֵי נְפַק לְבַרָּא, אַחְוִי כְּלַפֵּי שְׁמַיָּא. אֲמַר לְהוּ רַבָּה: תַּרְוַיְיכוּ רַבָּנַן הָוֵיתוּ. הַיְינוּ דְּאָמְרִי אִינָשֵׁי: בּוּצִין בּוּצִין מִקִּטְפֵיהּ יְדִיעַ.",
+     "english": "The Gemara relates that <b>Abaye and Rava,</b> when they were children, <b>were seated before Rabba. Rabba said to them: To whom does one recite blessings? They said to him: To</b> God, <b>the All-Merciful.</b> Rabba asked them: <b>And where does the All-Merciful reside? Rava pointed to the ceiling. Abaye went outside and pointed toward the heaven. Rabba said to them: You will both become Sages. It is as the popular saying goes: A cucumber can be recognized from its blossoming</b> stage. Similarly, a great person can be recognized even from a young age.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Child Abaye and Rava are tested by Rabba; Rava points to the ceiling, Abaye goes outside and points to the sky, and Rabba foretells their greatness; actions beyond speech with a resolution.",
+    "pass2": "Rabba tests the child Abaye and Rava; Rava points to the ceiling, Abaye goes outside and points to the sky, and Rabba foresees their greatness: actions beyond speech with a resolution."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Kamma 50b:16-17",
+   "ref": "Bava Kamma 50b",
+   "tractate": "Bava Kamma",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "An ox falls into a shallow channel and the owner slaughters it immediately out of fear it will die, but Rav Nachman rules the meat forbidden because the owner did not wait to see if it would survive the impact.",
+   "segments": [
+    {
+     "ref": "Bava Kamma 50b",
+     "i": 16,
+     "hebrew": "הָהוּא תּוֹרָא דִּנְפַל לַאֲרִיתָּא דְּדַלָּאֵי, שַׁחְטֵיהּ מָרֵיהּ. טַרְפֵיהּ רַב נַחְמָן.",
+     "english": "The Gemara relates: There was <b>a certain ox that fell into a water channel [<i>la’arita dedala’ei</i>]</b> whose depth was one cubit, i.e., six handbreadths. Because it suffered the impact of the fall, <b>its owner</b> assumed it would die and <b>slaughtered it</b> first, in order to eat the meat. <b>Rav Naḥman,</b> who was concerned that its organs were crushed by the fall, <b>deemed it an animal with a condition that will cause it to die within twelve months [<i>tereifa</i>],</b> which it is prohibited to consume.",
+     "grader_pass1_chose": true
+    },
+    {
+     "ref": "Bava Kamma 50b",
+     "i": 17,
+     "hebrew": "אָמַר רַב נַחְמָן: אִי שְׁקֵיל מָרֵיהּ דְּהַאי תּוֹרָא קַבָּא דְקִמְחָא, וַאֲזַל תְּנָא בֵּי מִדְרְשָׁא: אִם שָׁהֲתָה מֵעֵת לְעֵת – כְּשֵׁירָה; לָא אַפְסְדֵיהּ לְתוֹרָא דְּשָׁוֵה כַּמָּה קַבֵּי. אַלְמָא קָסָבַר רַב נַחְמָן: יֵשׁ חֲבָטָה בְּפָחוֹת מֵעֲשָׂרָה.",
+     "english": "Furthermore, <b>Rav Naḥman said: If the owner of this ox had taken a <i>kav</i> of flour</b> to bake into bread to eat instead of slaughtering his animal for its meat, <b>and gone and learned in the study hall</b> that although an ox that falls and hits the ground is considered <i>tereifa</i> if slaughtered immediately, <b>if</b> the animal <b>remained</b> alive <b>for twenty-four hours</b> and is then slaughtered, <b>it is fit to eat, he would not have lost</b> his <b>ox that was worth several <i>kav</i></b> of flour. The Gemara notes: <b>Apparently, Rav Naḥman maintains</b> that <b>there is an impact</b> caused even <b>by</b> a pit that is <b>less than ten</b> handbreadths, as Rav Naḥman was concerned in this case that its organs were crushed and it was fatally wounded.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "An ox falls into a channel, its owner slaughters it, and Rav Nahman declares it tereifa and laments the owner's loss; an incident with two actions and a consequential ruling, like the cow case.",
+    "pass2": "An ox falls into a channel, its owner slaughters it, Rav Nahman declares it tereifa, and he remarks on the owner's needless loss. This is an incident with actions followed by a ruling, the cow-case shape."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Eruvin 54b:3-3",
+   "ref": "Eruvin 54b",
+   "tractate": "Eruvin",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Elazar ben Pedat was so engrossed in Torah study in the lower marketplace of Tzippori that he was unaware his cloak was left behind in the upper marketplace.",
+   "segments": [
+    {
+     "ref": "Eruvin 54b",
+     "i": 3,
+     "hebrew": "״בְּאַהֲבָתָהּ תִּשְׁגֶּה תָּמִיד״ — כְּגוֹן רַבִּי (אֱלִיעֶזֶר) בֶּן פְּדָת. אָמְרוּ עָלָיו עַל רַבִּי (אֱלִיעֶזֶר) שֶׁהָיָה יוֹשֵׁב וְעוֹסֵק בַּתּוֹרָה בַּשּׁוּק הַתַּחְתּוֹן שֶׁל צִיפּוֹרִי, וּסְדִינוֹ מוּטָל בַּשּׁוּק הָעֶלְיוֹן שֶׁל צִיפּוֹרִי. (תַּנְיָא) אָמַר רַבִּי יִצְחָק בֶּן אֶלְעָזָר: פַּעַם אַחַת בָּא אָדָם לִיטְּלוֹ, וּמָצָא בּוֹ שָׂרָף.",
+     "english": "<b>“And be you ravished always with her love”;</b> your love for Torah should always distract you from worldly matters, <b>as was</b> the case with <b>Rabbi Elazar ben Pedat. They said of him, of Rabbi Elazar, that he would sit and engage in Torah</b> study <b>in the lower marketplace of Tzippori, and his cloak was lying in the upper marketplace of Tzippori.</b> His mind was so focused on Torah study that he would act in this unusual manner. In this regard, the Gemara relates that <b>it was taught</b> in a <i>baraita</i> that <b>Rabbi Yitzḥak ben Elazar said: One time a person came to take</b> this cloak for himself <b>and found a serpent on it</b> guarding it.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "R. Elazar's habit of leaving his cloak while absorbed in Torah leads to a one-time event: a man came to take it and found a serpent guarding it.",
+    "pass2": "R. Elazar ben Pedat's absorbed habit leads to a one-time event: a man comes to take his cloak and finds a serpent guarding it. Habit plus event and change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C3"
+    ],
+    "pass2": [
+     "R-C3"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Taanit 23b:9-9",
+   "ref": "Taanit 23b",
+   "tractate": "Taanit",
+   "pool": "P1",
+   "run1": "YES",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Passage B is a complete narrative about Rabbi Yona's humble method of praying for rain, distinct from the narrative in Passage A regarding his son Rabbi Mani's persecution by the house of the Nasi.",
+   "segments": [
+    {
+     "ref": "Taanit 23b",
+     "i": 9,
+     "hebrew": "תַּקִּיפֵי דְּאַרְעָא דְיִשְׂרָאֵל כְּגוֹן רַבִּי יוֹנָה אֲבוּהּ דְּרַבִּי מָנִי, כִּי הֲוָה מִצְטְרִיךְ עָלְמָא לְמִיטְרָא, הֲוָה עָיֵיל לְבֵיתֵיהּ וַאֲמַר לְהוּ: הַבוּ לִי גּוּאַלְקִי, וְאֵיזִיל וְאַיְיתֵי לִי בְּזוּזָא עִיבוּרָא. כִּי הֲוָה נָפֵיק לְבָרָא, אָזֵיל וְקָאֵי בְּדוּכְתָּא עַמִּיקְתָּא, דִּכְתִיב: ״מִמַּעֲמַקִּים קְרָאתִיךָ ה׳״, וְקָאֵי בְּדוּכְתָּא צְנִיעָא, וּמִכַּסֵּי בְּשַׂקָּא, וּבָעֵי רַחֲמֵי, וְאָתֵי מִיטְרָא. כִּי הֲוָה אָתֵי לְבֵיתֵיהּ, אָמְרִי לֵיהּ: אַיְיתִי מָר עִיבוּרָא? אֲמַר לְהוּ: אָמֵינָא, הוֹאִיל וַאֲתָא מִיטְרָא, הַשְׁתָּא רָוַוח עָלְמָא.",
+     "english": "By contrast, <b>the powerful men of Eretz Yisrael, such as Rabbi Yona, the father of Rabbi Mani,</b> acted differently. <b>When the world was in need of rain, he enters his house and say to</b> his household: <b>Give me my sack [<i>gevalki</i>] and I will go and buy myself a dinar of grain. When he went outside, he went and stood in a low place, as it is written: “Out of the depths I have called You, O Lord”</b> (Psalms 130:1). <b>And he would stand in a secluded place, and cover</b> himself <b>with sackcloth, and pray for mercy, and rain would come. When he would come home, they would say to him:</b> Did <b>the Master bring grain? He said to them: I said</b> to myself, <b>since rain has</b> now <b>come,</b> there will be <b>relief in the world</b> and prices will soon go down. In this manner, he hid his greatness even from his own household.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rabbi Yona's habitual secret prayer brings rain and he conceals it from his household; a habit that leads to change.",
+    "pass2": "R. Yona's habitual secret prayer leads to rain and a concealing exchange with his household; a habit that causes change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C3"
+    ],
+    "pass2": [
+     "R-C3"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Chullin 43b:1-1",
+   "ref": "Chullin 43b",
+   "tractate": "Chullin",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "An animal with a suspected predator wound is brought to Rabba, who begins inspecting it from the outside until Abaye challenges him with his own legal ruling.",
+   "segments": [
+    {
+     "ref": "Chullin 43b",
+     "i": 1,
+     "hebrew": "הָהִיא סְפֵק דְּרוּסָה דַּאֲתַאי לְקַמֵּיהּ דְּרַבָּה, הֲוָה קָא בָּדֵיק לֵיהּ רַבָּה לְוֶושֶׁט מֵאַבָּרַאי. אֲמַר לֵיהּ אַבָּיֵי: וְהָא מָר הוּא דְּאָמַר: וֶושֶׁט אֵין לוֹ בְּדִיקָה אֶלָּא מִבִּפְנִים! אַפְכֵיהּ רַבָּה וּבַדְקֵיהּ, וְאִישְׁתְּכַח עֲלֵיהּ תְּרֵי קוּרְטֵי דְּמָא, וְטַרְפַהּ. וְרַבָּה נָמֵי לְחַדּוֹדֵי לְאַבָּיֵי הוּא דְּבָעֵי.",
+     "english": "The Gemara recounts the case of <b>a certain</b> animal concerning which it was <b>uncertain</b> whether it was <b>clawed</b> by a predator, <b>which came before Rabba. Rabba was checking its gullet from the outside. Abaye said to him: But isn’t it</b> you, <b>Master, who says:</b> The <b>gullet may be inspected only from the inside? Rabba turned over</b> the gullet <b>and checked it</b> from the inside, <b>and found on it two drops of blood, and deemed it a <i>tereifa</i></b> due to clawing. The Gemara notes: <b>And Rabba as well desired</b> only <b>to sharpen Abaye</b> by inducing him to ask. He did not forget his own statement.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "An actual case before Rabba: he inspects, Abaye challenges, he turns the gullet over, finds blood and declares it tereifa; several actions with a change.",
+    "pass2": "Rabba inspects a gullet wrongly, Abaye challenges him, Rabba turns it over, finds blood and declares it tereifa: actions, conflict and an outcome."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Bava Batra 164b:12-12",
+   "ref": "Bava Batra 164b",
+   "tractate": "Bava Batra",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rabbi Yehuda HaNasi nearly invalidates a tied document for lacking a date until his son Shimon suggests it is hidden in the folds, which is confirmed upon opening it.",
+   "segments": [
+    {
+     "ref": "Bava Batra 164b",
+     "i": 12,
+     "hebrew": "הָהוּא מְקוּשָּׁר דַּאֲתָא לְקַמֵּיהּ דְּרַבִּי, וְאָמַר רַבִּי: אֵין זְמַן בָּזֶּה?! אֲמַר לֵיהּ רַבִּי שִׁמְעוֹן בַּר רַבִּי לְרַבִּי: שֶׁמָּא בֵּין קְשָׁרָיו מוּבְלָע? פַּלְיֵיהּ, וְחַזְיֵיהּ. הֲדַר חֲזָא בֵּיהּ רַבִּי בְּבִישׁוּת. אֲמַר לֵיהּ: לָאו אֲנָא כְּתַבְתֵּיהּ, רַבִּי יְהוּדָה חַיָּיטָא כַּתְבֵיהּ. אֲמַר לֵיהּ: כְּלָךְ מִלָּשׁוֹן הָרָע הַזֶּה.",
+     "english": "§ The Gemara relates: There was <b>a certain tied</b> document <b>that came before Rabbi</b> Yehuda HaNasi, <b>and Rabbi</b> Yehuda HaNasi, not realizing it was a folded document, <b>said: There is no date on this</b> document, so it is not valid. <b>Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>said to Rabbi</b> Yehuda HaNasi: <b>Perhaps</b> the date is <b>hidden between its tied</b> folds. Rabbi Yehuda HaNasi <b>opened it and saw</b> that the date was in fact between the tied folds. <b>Afterward, Rabbi</b> Yehuda HaNasi <b>looked at</b> his son <b>disapprovingly,</b> as he held that one should not write a tied document. His son <b>said to him: I did not write it; Rabbi Yehuda Ḥayyata wrote it.</b> Rabbi Yehuda HaNasi <b>said to</b> his son: <b>Turn away from</b> uttering <b>this</b> kind of <b>malicious speech.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rebbi rejects the tied document, his son suggests the date is hidden, Rebbi opens it, looks at him disapprovingly, and rebukes his reply; multiple actions, conflict and change.",
+    "pass2": "A tied document comes before Rabbi, he declares it invalid, opens it at his son's prompting, looks at him disapprovingly, and rebukes him: several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Nazir 57b:4-4",
+   "ref": "Nazir 57b",
+   "tractate": "Nazir",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Adda bar Ahava questions Rav Huna on who shaves his sons' heads, and upon hearing it is Rav Huna's wife Hoba, he curses her that she should bury her sons.",
+   "segments": [
+    {
+     "ref": "Nazir 57b",
+     "i": 4,
+     "hebrew": "אָמַר רַב הוּנָא: הַמַּקִּיף אֶת הַקָּטָן הֲרֵי הוּא חַיָּיב. אֲמַר לֵיהּ רַב אַדָּא בַּר אַהֲבָה לְרַב הוּנָא: וְדִידָךְ מַאן מְגַלַּח לְהוֹן? אֲמַר לֵיהּ: חוֹבָה. תִּקְבְּרִינּוּן חוֹבָה לִבְנַיהּ. כּוּלְּהוּ שְׁנֵי דְּרַב אַדָּא בַּר אַהֲבָה לָא אִקַּיַּים לֵיהּ זַרְעָא לְרַב הוּנָא.",
+     "english": "With regard to the same issue, <b>Rav Huna said:</b> An adult <b>who rounds</b> the head <b>of a minor boy is liable</b> to receive lashes, despite the fact that the child himself is not obligated to observe mitzvot. <b>Rav Adda bar Ahava,</b> who disputed this ruling, <b>said to Rav Huna: And</b> with regard to <b>your</b> sons, <b>who shaves them</b> and rounds the corners of their heads? After all, you maintain that an adult may not round the head of a minor. Rav Huna <b>said to him: Ḥova</b> my wife does it, as she is not prohibited from rounding their heads. Rav Adda bar Ahava exclaimed in anger: <b>Ḥova should bury her sons</b> if she acts in this manner. The Gemara reports: During <b>the years that Rav Adda bar Ahava</b> was alive, <b>Rav Huna’s children did not survive.</b> His children died due to the curse pronounced by Rav Adda.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Adda challenges Rav Huna, curses his wife, and Rav Huna's children do not survive while Rav Adda lives; conflict leading to a narrated consequence.",
+    "pass2": "A dispute escalates into Rav Adda bar Ahava's curse, and Rav Huna's children die during his lifetime; conflict, action and a consequential change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0",
+     "R-C2"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Sotah 48a:17-17",
+   "ref": "Sotah 48a",
+   "tractate": "Sotah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Huna banned music leading to an economic surplus where goods were cheap but unwanted, until Rav Ḥisda restored it.",
+   "segments": [
+    {
+     "ref": "Sotah 48a",
+     "i": 17,
+     "hebrew": "אָמַר רַב הוּנָא: זִמְרָא דְּנַגָּדֵי וּדְבַקָּרֵי — שְׁרֵי. דְּגַרְדָּאֵי — אֲסִיר. רַב הוּנָא בַּטֵּיל זִמְרָא, קָם מְאָה אֲווֹזֵי בְּזוּזָא וּמְאָה סָאֵה חִיטֵּי בְּזוּזָא וְלָא אִיבְּעִי. אֲתָא רַב חִסְדָּא זַלְזֵיל בֵּיהּ, אִיבְּעַאי אֲווֹזָא בְּזוּזָא וְלָא אִשְׁתְּכַח.",
+     "english": "<b>Rav Huna said:</b> The <b>song of those who pull ships and lead the herd is permitted,</b> for their singing assists them to establish a rhythm in their work. However, that <b>of weavers is forbidden,</b> as they sing only for their own enjoyment. The Gemara relates that subsequently, <b>Rav Huna nullified</b> all types of <b>song,</b> and this led to a general blessing: The price of <b>one hundred ducks stood at a dinar, and one hundred <i>se’a</i> of wheat at a dinar, and there was no desire</b> for them even at such a cheap price, due to their great abundance. Later, when <b>Rav Ḥisda came and belittled</b> this prohibition, people began to sing again. As a result, prices increased greatly, and this led to a situation whereby one <b>wanted</b> a single <b>duck for</b> one <b>dinar and it could not be found.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Huna bans song and prices collapse; Rav Hisda belittles the ban and prices rise: multiple actions with causal change.",
+    "pass2": "Rav Huna abolishes song and prices collapse; Rav Hisda belittles the ban and prices soar. Several actions with causal change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Berakhot 18b:3-3",
+   "ref": "Berakhot 18b",
+   "tractate": "Berakhot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "The sons of Rabbi Ḥiyya travel to the villages and forget their studies, leading them to wonder if their deceased father is aware of their distress.",
+   "segments": [
+    {
+     "ref": "Berakhot 18b",
+     "i": 3,
+     "hebrew": "בְּנֵי רַבִּי חִיָּיא נְפוּק לְקִרְיָיתָא. אִייַּקַּר לְהוּ תַּלְמוּדַיְיהוּ. הֲווֹ קָא מִצַּעֲרִי לְאִדְּכוֹרֵיהּ. אֲמַר לֵיהּ חַד לְחַבְרֵיהּ: יָדַע אֲבוּן בְּהַאי צַעֲרָא? אֲמַר לֵיהּ אִידַּךְ: מְנָא יָדַע? וְהָא כְּתִיב: ״יִכְבְּדוּ בָנָיו וְלֹא יֵדָע״.",
+     "english": "The Gemara relates a story on this topic: <b>The sons of Rabbi Ḥiyya went out to the villages</b> to oversee the laborers. <b>They forgot what they had learned and were struggling to recall it. One</b> of them <b>said to the other:</b> Does <b>our</b> deceased <b>father know of</b> our <b>anguish? The other said to him: From where would he know? Isn’t it written: “His sons are honored yet he shall not know it,</b> they come to sorrow and he shall not understand them” (Job 14:21)? The dead do not know.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "The sons of Rabbi Hiyya go out to the villages, forget their learning and are distressed, prompting their dialogue; narrated events with an emotional reaction and change, the opening of a known story.",
+    "pass2": "Rabbi Hiyya's sons go to the villages, forget their learning and are distressed, then debate whether their father knows; events with change (the dialogue continues past the passage)."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Avodah Zarah 29a:5-5",
+   "ref": "Avodah Zarah 29a",
+   "tractate": "Avodah Zarah",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Several Amoraim attempt to prepare and consume a specific medicinal remedy using different physical techniques.",
+   "segments": [
+    {
+     "ref": "Avodah Zarah 29a",
+     "i": 5,
+     "hebrew": "רַב אַחָא בְּרֵיהּ דְּרָבָא שָׁחֵיק לְהוּ לְכוּלְּהוּ בַּהֲדֵי הֲדָדֵי, וְשָׁקֵיל לֵיהּ מְלֵא חֲמֵשׁ אֶצְבְּעָתֵיהּ, וְשָׁתֵי לֵיהּ. רַב אָשֵׁי שָׁחֵיק כֹּל חַד וְחַד לְחוֹדֵיהּ, וְשָׁקֵיל מְלֵא אֶצְבְּעֵיהּ רַבָּתִי וּמְלֵא אֶצְבְּעֵיהּ זוּטַרְתִּי. אָמַר רַב פָּפָּא: אֲנָא עֲבַדִי לְכֹל הָנֵי וְלָא אִיתַּסַּאי, עַד דַּאֲמַר לִי הַהוּא טַיָּיעָא: אַיְיתִי כּוּזָא חַדְתָּא וּמַלְּיֵיהּ מַיָּא, וּרְמִי בֵּיהּ תַּרְוָודָא דְּדוּבְשָׁא דִּתְלֵי לֵהּ בֵּי כוֹכְבֵי, וְלִמְחַר אִישְׁתִּי. עֲבַדִי הָכִי וְאִיתַּסַּאי.",
+     "english": "<b>Rav Aḥa, son of Rava, ground all of these together and took a handful of</b> the mixture <b>and drank it. Rav Ashi ground each and every one</b> of the herbs <b>separately and he took all</b> that he could hold between <b>his large finger and his small finger</b> and drank it. <b>Rav Pappa said: I tried all these</b> remedies <b>and I was not healed until a certain Arab said to me: Bring a new jug and fill it with water and place in it a ladle [<i>tarvada</i>] of honey that is suspended among the stars,</b> i.e., add the ladle at night, <b>and drink it on the next day.</b> Rav Pappa concludes: <b>I did this and I was healed.</b>",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Pappa tried remedies without success, an Arab advised him, he did it and was healed: several actions and a change.",
+    "pass2": "Rav Pappa tries the remedies without success, an Arab gives him another, he follows it and is healed. A first-person narrative with several actions and a change."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Horayot 14a:4-4",
+   "ref": "Horayot 14a",
+   "tractate": "Horayot",
+   "pool": "P1",
+   "run1": "YES",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "A group of four sages held a competition to see whose legal reasoning could not be refuted, resulting in Abaye being appointed their leader.",
+   "segments": [
+    {
+     "ref": "Horayot 14a",
+     "i": 4,
+     "hebrew": "אַבָּיֵי וְרָבָא וְרַבִּי זֵירָא וְרַבָּה בַּר מַתְנָה הֲווֹ יָתְבִי וַהֲווֹ צְרִיכִי רֵישָׁא, אָמְרִי: כֹּל דְּאָמַר מִלְּתָא וְלָא מִפְּרִיךְ, לֶהֱוֵי רֵישָׁא. דְּכוּלְּהוּ אִיפְּרִיךְ, דְּאַבָּיֵי לָא אִיפְּרִיךְ. חַזְיֵיהּ רַבָּה לְאַבָּיֵי דִּגְבַהּ רֵישֵׁאּ, אֲמַר לֵיהּ: נַחְמָנִי, פְּתַח וְאֵימָא.",
+     "english": "The Gemara relates: <b>Abaye, Rava, Rabbi Zeira, and Rabba bar Mattana were sitting</b> and studying in a group <b>and were in need</b> of <b>a head</b> for their group. <b>They said: Let anyone who will say a matter</b> that <b>is not refuted be</b> the <b>head. Everyone’s</b> statements <b>were refuted,</b> and the statement <b>of Abaye was not refuted. Rabba saw that Abaye raised his head,</b> i.e., he noticed that his statement was not refuted. Rabba <b>said to him: Naḥmani,</b> calling Abaye by his name rather than by his nickname, <b>begin and say</b> your lecture.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "The sages sit, set a contest for leadership, all are refuted but Abaye, Rabba sees him raise his head and tells him to begin: multiple actions and a change.",
+    "pass2": "Four sages need a head, set a contest, all but Abaye are refuted, Rabba sees it and calls on Abaye to begin: actions and a change in status."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  },
+  {
+   "id": "Shevuot 30b:3-3",
+   "ref": "Shevuot 30b",
+   "tractate": "Shevuot",
+   "pool": "P3",
+   "run1": "LOW_CONFIDENCE",
+   "run2": "LOW_CONFIDENCE",
+   "detector_summary": "Rav Nachman navigates the protocol of honoring the wife of a Torah scholar during a trial without intimidating her opponent.",
+   "segments": [
+    {
+     "ref": "Shevuot 30b",
+     "i": 3,
+     "hebrew": "דְּבֵיתְהוּ דְּרַב הוּנָא הֲוָה לַהּ דִּינָא קַמֵּיהּ דְּרַב נַחְמָן, אֲמַר: הֵיכִי נַעֲבֵיד? אִי אֵיקוּם מִקַּמַּהּ – מִסְתַּתְּמָן טַעֲנָתֵיהּ דְּבַעַל דִּינָא. לָא אֵיקוּם מִקַּמַּהּ – אֵשֶׁת חָבֵר הֲרֵי הִיא כְּחָבֵר. אֲמַר לֵיהּ לְשַׁמָּעֵיהּ: צֵא וְאַפְרַח עֲלַי בַּר אֲוָוזָא וּשְׁדִי עִלָּוַואי, וְאֵיקוּם.",
+     "english": "The Gemara relates: <b>The wife of Rav Huna had a trial</b> pending <b>before Rav Naḥman.</b> Rav Naḥman <b>said: What should we do? If I will arise before her</b> in deference to her status as the wife of a Torah scholar, <b>the claims of the</b> other <b>litigant</b> will be <b>suppressed,</b> as it will be mistaken as a display of preference for the wife of Rav Huna, since not everyone is aware that one is required to show deference to the wife of a Torah scholar. If <b>I will not arise before her,</b> that would run counter to the principle that in terms of deference, the status of the <b>wife of a <i>ḥaver</i> is like</b> that of <b>a <i>ḥaver</i>,</b> who is devoted to the meticulous observance of mitzvot. Rav Naḥman <b>said to his attendant: Go outside and cause a duck to fly and cast it onto me, and</b> in that way <b>I will</b> be forced to <b>arise</b> in a manner that will fulfill the obligation to rise, without intimidating the other litigant.",
+     "grader_pass1_chose": true
+    }
+   ],
+   "grader_reason": {
+    "pass1": "Rav Nahman faces a dilemma at the trial of Rav Huna's wife and contrives to have a duck thrown at him so he can rise: a narrated incident with action and resolution.",
+    "pass2": "Rav Huna's wife comes to trial before Rav Nahman, who faces a dilemma and contrives to have a duck thrown at him so he can rise; actions with purpose and resolution."
+   },
+   "grader_rules": {
+    "pass1": [
+     "R-C0"
+    ],
+    "pass2": [
+     "R-C0"
+    ]
+   },
+   "simon_verdict": null
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A single act (Bonyam ben Nunyam sent Rabbi a gift) cited to explain a word; the rest is a description of fabrics, with no response or change."},
+"02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "One event (a betrothal with rags) followed by assessment and a ruling, then legal discussion; no further narrated action or change."},
+"03": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Rav Nahman's arrival and instruction to clear the earth is a ruling that frames a legal discussion; nothing further happens."},
+"04": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "A man comes before R. Yosei and asks; the rest is question, answer and a verse. Coming before a rabbi is the only event and the exchange is ordinary halakhic dialogue."},
+"05": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Scholarly objections, silence and a report back to Rav Yosef; standard rabbinic back-and-forth with no event beyond speech."},
+"06": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Bare reports that Levi, Zeiri and Rav Shimi were brought items, cited as practice; nothing follows."},
+"07": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "A couple comes before Rava, he rules, is challenged with a baraita and retracts; coming before him is the only event and the rest is ordinary legal dialogue."},
+"08": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A remark of praise by Rav Dimi; speech only, no event or conflict."},
+"09": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Yosef says he does not know a teaching and Abaye reminds him; a teaching dialogue with no event beyond speech."},
+"10": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "The incident of the woman who removed her husband from his grave is only alluded to and must be filled in from the commentaries; Jeff ruled this shape borderline."},
+"11": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "A narrated incident with several actions and change: the debtor sells two tracts, the creditor seizes one and comes for the other, the purchaser takes money and confronts him."},
+"12": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "A one-line eyewitness account (the Arab who cut open his camel, which died at once) cited as evidence; a real event with an outcome but minimal development."},
+"13": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Habitual practices of Rav Safra and Rava cited as illustration of a principle; no one-time event follows."},
+"14": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2, 3], "reason": "A heretic taunts Rabban Gamliel and is rebuffed; purely speech, but with real conflict beyond ordinary scholarly debate."},
+"15": {"verdict": "not", "rules": ["R-S1", "R-C0"], "segments": [], "reason": "An exegetical explanation of how the virgins of Jabesh-gilead were identified in a biblical episode; a proposed method, not a narrated post-biblical event."},
+"16": {"verdict": "story", "rules": ["R-C4"], "segments": [2], "reason": "A narrated incident with several actions and a reversal: the son climbs, sends away the mother bird, takes the chicks, falls and dies; the Gemara notes R. Yaakov saw it."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A visit and an observation only frame a question and answer about whose opinion is followed; a setting plus Q&A is not a story."},
+"18": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "Mainly dialogue between an Amorite and a resident of the Land, with a mocking challenge and retort; conflict but no events (Jeff ruled 112a:11 borderline on this ground)."},
+"19": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "One event (a betrothal with vegetables in the market) followed by Ravina's ruling and discussion; no further action or change."},
+"20": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "An incident only said to have come before R. Yitzhak, then his ruling; nothing of the incident is narrated."}
+}

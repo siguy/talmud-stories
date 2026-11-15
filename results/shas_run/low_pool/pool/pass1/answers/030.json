@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Hisda and Avimei exchange a question and an explanation of the mishna; ordinary scholarly dialogue with no event."},
+"02": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "A single instruction by Rabbi Zeira to his servant, cited to infer his legal view; speech only, nothing follows."},
+"03": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "Disciples ask and Rabbi Elazar ben Shammua lists his lifelong practices; a question and answer about habits, with no event."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Reports of Rav's habitual announcement and Rav Amram's habitual practice; no one-time event, nothing follows."},
+"05": {"verdict": "borderline", "rules": ["R-C6", "R-C7"], "segments": [2], "reason": "Yohanan the High Priest sent emissaries and saw that only teruma was separated, leading to his decree; real events with a change, but only alluded to as a legal explanation."},
+"06": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "A visit that only frames an observation and a remark by Rav Hisda, raised as a legal challenge and resolved; like the Ulla visit, not enough for a story."},
+"07": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Exegetical narrative about David and Hushai built on a biblical episode; biblical characters, out of scope."},
+"08": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "A question to Rabbi and his answer pointing to ben Elasa's haircut habit; question and answer plus a practice, no event."},
+"09": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report that Rabbi Yohanan and Rabbi Asi ate from a Samaritan's slaughter, cited as evidence, followed by Rabbi Zeira's wondering; no development."},
+"10": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "The Sages challenge Rav Sheshet, who becomes angry and retorts; mainly speech, but with conflict and an emotional reaction."},
+"11": {"verdict": "borderline", "rules": ["R-C3", "R-C7"], "segments": [2], "reason": "A habitual scene: children sent to Hanan HaNehba grab his cloak and he prays; vivid actions and a prayer, but customary and no stated outcome."},
+"12": {"verdict": "story", "rules": ["R-C0", "R-C2"], "segments": [2], "reason": "Rav Adda challenges Rav Huna, curses his wife, and Rav Huna's children do not survive while Rav Adda lives; conflict leading to a narrated consequence."},
+"13": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A duck in Mar Shmuel's house whose gizzard was set in the sun and then peeled; real events with a change, but minimal and cited only as a legal proof."},
+"14": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A certain man habitually said a phrase and the Sages drew an inference about his lineage; habitual speech and commentary, no event."},
+"15": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4, 5], "reason": "A legal exchange between students before a dozing teacher who wakes and explains; mainly dialogue, with one small event (waking)."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Habitual practices of three sages with their ritual fringes; customs that lead nowhere."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Ze'eiri travels to Neharde'a and sends a retraction of a teaching; quasi-speech acts with no conflict or further development."},
+"18": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "Eyewitness account: a bird is brought to Rav Ashi, he examines it, finds fifteen sinews and splits one into two; events with a discovery, but minimal and cited as halakhic evidence."},
+"19": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Mar son of Ravina's mother habitually brought him guarded wheat; a practice reported, nothing follows."},
+"20": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Asked a question, Rabbi Hiyya bar Abba is silent, then next day publicly teaches; mainly speech and teaching, with a minimal event and implied change."}
+}

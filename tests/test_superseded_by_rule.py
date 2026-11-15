@@ -19,8 +19,9 @@ RULES = json.loads(SUPERSEDED.read_text())["entries"]
 @pytest.mark.parametrize("rule", RULES, ids=lambda r: r["ref"])
 def test_every_ruling_is_stamped_on_exactly_one_denominator_row(rule):
     rows = json.loads((ROOT / f"results/recall/{rule['tractate'].lower()}_jeff2005_matches.json").read_text())
+    # text_starts is part of the key: one daf can carry several rulings of one date (Eruvin 53b, four).
     hits = [r for r in rows if (r.get("superseded_by_rule") or {}).get("date") == rule["date"]
-            and r["ref"] == rule["ref"]]
+            and r["ref"] == rule["ref"] and r["text"].startswith(rule["text_starts"])]
     assert len(hits) == 1, f"{rule['ref']}: run scripts/stamp_superseded_recall.py"
     assert hits[0]["counts_for_recall"] is rule["counts_for_recall"]
     # The list's own text is never edited -- the ruling sits beside it.
@@ -40,5 +41,5 @@ def test_a_ruling_that_matches_no_row_raises(tmp_path):
 
 
 def test_unruled_rows_still_count():
-    rows = apply_superseded([{"ref": "Eruvin 2b", "text": "x"}], "Eruvin")   # a tractate he has not ruled on
+    rows = apply_superseded([{"ref": "Berakhot 2b", "text": "x"}], "Berakhot")   # a tractate he has not ruled on
     assert rows[0]["counts_for_recall"] is True and rows[0]["superseded_by_rule"] is None

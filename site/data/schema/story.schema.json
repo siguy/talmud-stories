@@ -1,0 +1,103 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://talmud-stories.local/site/data/schema/story.schema.json",
+ "title": "Septimus site data: one tractate file (site/data/<tractate>.json)",
+ "description": "Contract between scripts/build_site_data.py (writer) and site/app.js, the feedback worker and the planned sign-up app (readers). Documented in docs/technical/septimus-viewer-plan.md section 3. index.json is validated against #/$defs/index, redirects.json against #/$defs/redirects. A story id is PERMANENT (site/data/story_ids.json, scripts/story_ids.py): minted once, kept across boundary changes; the current source span is the `span` field.",
+ "type": "object",
+ "required": ["tractate", "reviewed", "stories", "out_of_scope"],
+ "additionalProperties": false,
+ "properties": {
+  "tractate": {"$ref": "#/$defs/slug"},
+  "reviewed": {"type": "boolean", "description": "True when an expert (Jeff) reviewed this tractate's golden."},
+  "stories": {"type": "array", "items": {"$ref": "#/$defs/story"}, "description": "What the site shows."},
+  "out_of_scope": {"type": "array", "items": {"$ref": "#/$defs/out_of_scope_story"},
+                   "description": "Retained, never shown by default (biblical, R-S1; Simon 2026-11-13)."}
+ },
+ "$defs": {
+  "slug": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*$", "description": "scripts/tractates.py slug; never a hyphen (ids split on it)."},
+  "ref": {"type": "string", "pattern": "^[A-Z][A-Za-z ]+ [0-9]+[ab]$", "description": "Sefaria page ref, e.g. 'Bava Batra 21a'."},
+  "story_id": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*-[0-9]+[ab]-[0-9]+-[0-9]+(-v[0-9]+)?$",
+               "description": "Permanent id from site/data/story_ids.json. Reads as the span it was MINTED with (<tractate>-<daf>-<start>-<end>, -vN if that string was taken), never re-derived: after a boundary change the digits are history. Never parse a span from it; read `span`."},
+  "span": {"type": "array", "minItems": 1, "maxItems": 2, "description": "The story's current SOURCE span, one piece per page (never the display extension). The registry records the same.",
+           "items": {"type": "object", "required": ["ref", "start", "end"], "additionalProperties": false,
+                     "properties": {"ref": {"$ref": "#/$defs/ref"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 0}}}},
+  "segment": {
+   "type": "object", "required": ["ref", "i", "he", "en"], "additionalProperties": false,
+   "properties": {
+    "ref": {"$ref": "#/$defs/ref"},
+    "i": {"type": "integer", "minimum": 0, "description": "Segment index on that page (Sefaria order)."},
+    "he": {"type": "string", "minLength": 1, "description": "Hebrew/Aramaic with nikud; only b/i/strong/em/big/small/br tags."},
+    "en": {"type": "string", "minLength": 1, "description": "William Davidson English; same tag whitelist."}
+   }
+  },
+  "extended": {
+   "description": "null, or a display-only widening by whole segments (site/data/boundary_extensions.json).",
+   "oneOf": [
+    {"type": "null"},
+    {"type": "object", "required": ["start_back", "end_forward", "reason"], "additionalProperties": false,
+     "properties": {"start_back": {"type": "integer", "minimum": 0, "maximum": 2},
+                    "end_forward": {"type": "integer", "minimum": 0, "maximum": 4},
+                    "reason": {"type": "string", "maxLength": 300}}}
+   ]
+  },
+  "story_fields": {
+   "type": "object",
+   "required": ["id", "span", "tractate", "ref", "refs", "start_segment", "classification", "in_mishnah", "extended",
+                "reviewed", "summary", "segments", "words", "minutes"],
+   "properties": {
+    "id": {"$ref": "#/$defs/story_id"},
+    "span": {"$ref": "#/$defs/span"},
+    "tractate": {"$ref": "#/$defs/slug"},
+    "ref": {"$ref": "#/$defs/ref"},
+    "refs": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1, "maxItems": 3, "uniqueItems": true},
+    "start_segment": {"type": "integer", "minimum": 0},
+    "classification": {"enum": ["YES", "HIGH_CONFIDENCE", "LOW_CONFIDENCE"],
+                       "description": "Detector grade. Data only (feedback triage, analysis); the viewer never shows it. LOW_CONFIDENCE only on an `include` decision or a `promote` rule."},
+    "in_mishnah": {"type": "boolean"},
+    "extended": {"$ref": "#/$defs/extended"},
+    "reviewed": {"type": "boolean"},
+    "summary": {"type": "string", "description": "One reader-facing sentence, or empty (the page then shows none)."},
+    "segments": {"type": "array", "items": {"$ref": "#/$defs/segment"}, "minItems": 1},
+    "words": {"type": "integer", "minimum": 1},
+    "minutes": {"type": "integer", "minimum": 1},
+    "included_by": {"type": "string", "minLength": 1,
+                    "description": "Optional. The `promote` rule of results/shas_run/septimus_site_decisions.json that added this story."}
+   }
+  },
+  "story": {"$ref": "#/$defs/story_fields", "unevaluatedProperties": false},
+  "out_of_scope_story": {
+   "$ref": "#/$defs/story_fields",
+   "required": ["out_of_scope_reason"],
+   "properties": {"out_of_scope_reason": {"type": "string", "minLength": 1}},
+   "unevaluatedProperties": false
+  },
+  "redirects": {
+   "title": "site/data/redirects.json",
+   "description": "Every id that is no longer active -> the id its story now has (merge), or null (retired). Chains already followed. Derived from story_ids.json; site/app.js reads it to resolve old links and migrate read-checkmarks.",
+   "type": "object",
+   "propertyNames": {"$ref": "#/$defs/story_id"},
+   "additionalProperties": {"oneOf": [{"$ref": "#/$defs/story_id"}, {"type": "null"}]}
+  },
+  "index": {
+   "title": "site/data/index.json",
+   "type": "object", "required": ["reading_wpm", "tractates"], "additionalProperties": false,
+   "properties": {
+    "reading_wpm": {"type": "integer", "minimum": 1},
+    "tractates": {"type": "array", "minItems": 1, "items": {
+     "type": "object", "additionalProperties": false,
+     "required": ["tractate", "name", "he", "reviewed", "story", "in_mishnah", "out_of_scope", "words", "minutes"],
+     "properties": {
+      "tractate": {"$ref": "#/$defs/slug"},
+      "name": {"type": "string", "minLength": 1},
+      "he": {"type": "string", "minLength": 1},
+      "reviewed": {"type": "boolean"},
+      "story": {"type": "integer", "minimum": 0, "description": "Number of shipped stories (len of the file's stories)."},
+      "in_mishnah": {"type": "integer", "minimum": 0},
+      "out_of_scope": {"type": "integer", "minimum": 0},
+      "words": {"type": "integer", "minimum": 0},
+      "minutes": {"type": "integer", "minimum": 0}
+     }}}
+   }
+  }
+ }
+}

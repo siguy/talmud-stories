@@ -27,9 +27,72 @@ Success = Daniel opens it on his phone and reads a story end to end, and a mista
 Static site, no backend of its own: `site/` = `index.html`, `style.css`, `app.js`, `config.js`, `vercel.json`, `data/`.
 Hash routing (`#/`, `#/t/<tractate>`, `#/s/<id>`). Reads from `site/data/`:
 
-- `index.json`, `<tractate>.json` — **derived** by `scripts/build_site_data.py` from `results/canonical/{ketubot,kiddushin,gittin}_canonical.json`
-  and `results/v11/yevamot/yevamot_v11.json`. Each story: `id` (`tractate-daf-start-end`, from the golden's range), `ref`, `refs`, `tier`,
-  `classification`, `reviewed`, `in_mishnah`, `extended`, `summary`, `segments[{ref,i,he,en}]`.
+- `index.json`, `<tractate>.json` — **derived** by `scripts/build_site_data.py` (never hand-edited) from the goldens of the
+  reviewed tractates and the two v14 runs + judges of every other one. The contract is below.
+
+### 3.1 The data contract (`site/data/schema/story.schema.json`, JSON Schema draft 2020-12)
+
+Enforced by `tests/test_site_data.py::test_every_site_data_file_matches_the_schema`, which validates every tractate file
+and `index.json` (`#/$defs/index`); `redirects.json` (`#/$defs/redirects`) by `test_story_id_registry_matches_the_site_data`. The schema forbids unknown story fields, so a dropped field cannot quietly return.
+Readers: `site/app.js`, `worker/feedback-worker.js`, the planned sign-up app (`septimus-signup-plan.md`), analysis scripts.
+
+**Tractate file** `{tractate, reviewed, stories[], out_of_scope[]}`. `stories` is what the site shows; `out_of_scope`
+(biblical, R-S1, Simon 2026-11-13) is retained and never shown by default.
+
+| Story field | Type | Meaning |
+|---|---|---|
+| `id` | string, `^<slug>-<daf>-<start>-<end>(-vN)?$` | **Permanent** identity from `site/data/story_ids.json` (below). Reads as the span it was *minted* with; never parse a span from it |
+| `span` | `[{ref, start, end}]`, 1-2 pieces | The story's **current** source span (before any display extension); the registry records the same |
+| `tractate`, `ref`, `refs[]` | slug; Sefaria refs | First page; every page the shown segments touch (1-3) |
+| `start_segment` | int | Start segment of the source span on `ref` |
+| `segments[]` | `{ref, i, he, en}`, all required | What the reader sees, after any display extension. `ref`+`i` locate a segment exactly |
+| `summary` | string, may be `""` | One reader-facing sentence: detector/golden summary, else the same passage's in run 2, else `results/shas_run/site_summaries_written.json` (only where all are empty) |
+| `classification` | `YES` / `HIGH_CONFIDENCE` / `LOW_CONFIDENCE` | Detector grade. **Data only — the viewer never shows it** (Simon 2026-11-14), and the feedback payload no longer carries it; triage looks it up by `id`. `LOW_CONFIDENCE` only via an `include` decision or a `promote` rule |
+| `reviewed`, `in_mishnah` | bool | Tractate reviewed by Jeff; Mishnah story (always false today) |
+| `extended` | `null` or `{start_back ≤2, end_forward ≤4, reason}` | Display-only widening of `span`; never changes the id |
+| `words`, `minutes` | int ≥1 | English words shown; `ceil(words / readingWpm)` |
+| `included_by` | string, **optional** | The `promote` rule that added it (`septimus_site_decisions.json`) |
+
+`out_of_scope[]` entries have the same fields plus a required `out_of_scope_reason` (`"biblical (R-S1): <which gate>; …"`).
+**Removed 2026-11-14 (Simon):** `tier` (always `"story"`), `biblical` (always false in `stories`), `biblical_reason`
+(always null in `stories`; the reason lives in `out_of_scope_reason`), and the index's `borderline` count (always 0).
+
+**`index.json`** `{reading_wpm, tractates[{tractate, name, he, reviewed, story, in_mishnah, out_of_scope, words, minutes}]}` —
+`story` is the number of shipped stories. The home page reads only this file.
+
+**Permanent story ids — built 2026-11-14** (`scripts/story_ids.py`, registry `site/data/story_ids.json`).
+Before this an id *was* its span, so a golden correction, a re-run moving an end segment or a cross-page re-bounding gave
+the same story a new id and orphaned its read-checkmark, feedback, extension, note and (planned) claim. Now an id is
+minted **once** and kept. Every id that existed when the registry was created is exactly the old span id (all 1,847
+shipped + 102 out of scope), so nothing already shipped changed; new ids are minted the same way from the span they are
+born with (`-v2`, `-v3` if that string was ever used).
+- Registry entry: `{tractate, status: active | redirect | retired, span, redirect_to?}`, one line per id, keys sorted,
+  so an unchanged rebuild changes no byte. Covers shipped **and** out-of-scope stories (a story can move between them).
+- Each build matches every story to the entry it **overlaps most by segments** (Lesson 36), largest overlap first, one
+  story per entry. Shift → id kept, `span` updated. Split → the larger part keeps it, the other mints. Merge → the
+  merged story keeps the id it overlaps most, the other becomes `redirect_to` it. Gone → `retired`, never given to
+  another passage; the *same* passage returning revives its own id (its checkmarks come back). A redirected id is never
+  revived. A tractate not built in a run is untouched.
+- **A tie is refused**, naming the ids (one story overlapping two entries equally, or two stories one entry). Settle it
+  by setting the winning entry's `span` in `story_ids.json` to the new span and rebuilding.
+- `site/data/redirects.json` `{old id: current id | null}` (chains followed; `null` = retired) is derived each build.
+  `site/app.js` loads it with `index.json`: a link to a merged id `location.replace`s to its successor, a retired id
+  shows "no longer on the list", and a read-checkmark saved under a merged id moves to the successor (a retired one is
+  kept, uncounted).
+- Keyed by the permanent id: `boundary_extensions.json`, `notes/<t>.json`, `results/shas_run/site_summaries_written.json`,
+  feedback (`story_id`; the worker's `ID_RE` accepts `-vN`) and the sign-up app's `claims/{storyId}`. An extension is
+  relative to the span it was decided on, so when a story's span moves the build **does not apply** it and names it
+  until it is re-decided. A note or extension keyed to a merged/retired id is named by the build, never re-keyed
+  automatically.
+- Tests (`tests/test_site_data.py`): registry ↔ data (every story active with its exact span; matching today's stories
+  against the registry changes nothing; redirects valid), and a synthetic round trip (twice-built byte-identical, shift,
+  split, merge, tie refused, retire, never reused, revival, chains, other tractates untouched).
+- First live case, the same day: the 2026-11-14 golden fix of Ketubot 106a (2-3 → 3-3) keeps `ketubot-106a-2-3`, with
+  its note and written summary, at span 3-3.
+- **Display merges** (`septimus_site_decisions.json` `merge`, 2026-11-14): two cards joined into one would tie, so the
+  build sets the `keep` entry's span to the merged span first (the documented tie settlement, from a recorded decision);
+  the other member then `redirect`s to it. A member with a display extension is refused. The merged card takes the
+  summary written for `keep`.
 - `boundary_extensions.json` — display-only widenings: `{id: {start_back ≤2, end_forward ≤4, reason}}`.
 - `notes/<tractate>.json` — AI-drafted background notes: `{id: {note, people, terms, approved}}`. **Shown only when `approved: true`**
   (or `?notes=draft` for reviewers).

@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "An eyewitness report of what R. Yohanan did (bit and threw his nails), cited as evidence for halakha; no one responds and nothing follows."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "The Sages asked the tannaim and they answered: a quasi-speech-act question and answer with no event or conflict."},
+"03": {"verdict": "not", "rules": ["R-C2", "R-C7"], "segments": [], "reason": "Rav appointing a disseminator to teach his opposing view is teaching, i.e. speech; no narrated event or change."},
+"04": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "Habitual practices of Rav Huna and Rav Ashi with their rationale; customs that lead to no one-time event or change."},
+"05": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "A fragment of the larger innkeeper story: the sages come to a house named Bala and do not enter; one real event plus exegetical reasoning, part of a story rather than all of it."},
+"06": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3], "reason": "Rabba permits a tereifa and buys its meat, his wife challenges him and he defends himself; real acts and a conflict, but mainly dialogue with no change."},
+"07": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A certain man promised his land to one person, then went and sold it to another, and Rav Yosef ruled: the incident-plus-ruling shape of Jeff's cow case, with two narrated actions."},
+"08": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "Rav Eina's public teaching is denounced by Rabba, who orders his interpreter removed; speech with sharper-than-ordinary conflict, so borderline."},
+"09": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "Rabban Gamliel the Elder dies and Onkelos burns a fortune in his honor; a real incident cited as precedent, with a response but little development, between bare report and story."},
+"10": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "A heretic's taunt and R. Abbahu's cutting retort: speech only, but with genuine conflict."},
+"11": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "A habitual custom (the emperor's ladies singing whenever R. Abbahu came) that leads to no event or change."},
+"12": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "An incident only named, then an ordinary scholarly exchange between Rav Yosef and Abaye about an objection; no narrated action or change."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A tanna recites a baraita before Rav and a question is raised; teaching and legal discussion, no event."},
+"14": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "Rav eats dates and throws the pits into the oven and R. Hiyya rebukes him; one real event then speech, with the outcome left as a legal question."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic dispute, a question put to R. Bisa and his answer, then a verse applied in praise; quasi-speech-acts with no conflict beyond ordinary debate."},
+"16": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "Levi in the bathhouse sees a man bang his head and remarks on it; one real event followed by speech, cited as evidence for a legal point."},
+"17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi's recollection that they ate fruit outside the sukka is a report of practice cited as evidence in the legal discussion; nothing follows."},
+"18": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4, 5, 6], "reason": "Exegetical narrative about biblical figures (Zedekiah son of Chenaanah, Naboth's spirit, Ahab and Jehoshaphat), outside the rabbinic/post-biblical scope."},
+"19": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A judge rules, a scholar challenges him and threatens to bring a letter, then goes before Rav Hama, who upholds the ruling; mainly speech with conflict and some action but no change."},
+"20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A dream reported and interpreted: a question and answer in speech with no conflict and no narrated event."}
+}

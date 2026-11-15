@@ -9,7 +9,8 @@
 Same shape as scripts/judge_via_subagents.py: no API key; each subagent reads the prompt
 (src/prompts/site_note_v2.md) and one plain-text file per story, and writes one JSON file
 of answers keyed by file number ("01", "02", ...). Story ids live in keys/, never shown to
-an agent. Each story file carries the story's segments (STORY) plus CONTEXT segments of the
+an agent. Each file opens with a story code the answer must repeat; an answer whose code is
+not its story's is rejected, so a skipped or renumbered file cannot move notes between stories. Each story file carries the story's segments (STORY) plus CONTEXT segments of the
 surrounding discussion (BEFORE / AFTER), which the `why` field needs.
 
 A missing or invalid answer is counted and named, never written as a note (Lesson 21);
@@ -49,11 +50,17 @@ def flat_segments(tractate):
             for p in pages for k, g in enumerate(p["segments"])]
 
 
-def story_file(story, flat, pos):
+def story_code(run, sid):
+    """A short code the answer must repeat, so an answer can never be filed under another story.
+    Derived from the id but not revealing it; differs per run."""
+    return hashlib.sha256(f"{run}:{sid}".encode()).hexdigest()[:6].upper()
+
+
+def story_file(story, flat, pos, code):
     """The text one subagent reads for one story."""
     keys = [(g["ref"], g["i"]) for g in story["segments"]]
     first, last = pos[keys[0]], pos[keys[-1]]
-    lines = [f"Story at {story['ref']}.", ""]
+    lines = [f"Story code: {code}", f"Story at {story['ref']}.", ""]
     n = 0
     for k in range(max(0, first - CONTEXT), first):
         n += 1
@@ -86,7 +93,7 @@ def export(run, batch, ids=None, only=None):
         missing = [s["id"] for s in stories if any((g["ref"], g["i"]) not in pos for g in s["segments"])]
         if missing:
             raise SystemExit(f"{t}: {len(missing)} story segments not found in the source run: {missing[:5]}")
-        todo += [(s["id"], story_file(s, flat, pos)) for s in stories]
+        todo += [(s["id"], story_file(s, flat, pos, story_code(run, s["id"]))) for s in stories]
         log.info("%s: %d stories", t, len(stories))
     if ids and len(todo) != len(ids):
         raise SystemExit(f"--ids-file names {len(ids)} ids, {len(todo)} are on the site")
@@ -108,8 +115,10 @@ def export(run, batch, ids=None, only=None):
 FIELDS = {"note": str, "why": str, "people": list, "terms": list, "flag": str}
 
 
-def validate(ans):
-    """The answer as a dict, or a reason it is not one."""
+def validate(ans, code=None):
+    """The answer as a dict, or a reason it is not one. With `code`, the answer must repeat the
+    story's code: answers are filed by file number, and one skipped or renumbered file would
+    otherwise shift every later note in the batch onto the wrong story."""
     if isinstance(ans, str):
         try:
             ans = json.loads(ans)
@@ -120,6 +129,8 @@ def validate(ans):
     for k, typ in FIELDS.items():
         if not isinstance(ans.get(k, "" if typ is str else []), typ):
             return None, f"{k} is not a {typ.__name__}"
+    if code is not None and str(ans.get("code", "")).strip().upper() != code:
+        return None, f"code {ans.get('code')!r} is not this story's ({code})"
     if not str(ans.get("note", "")).strip():
         return None, "empty note"
     if not all(isinstance(p, dict) for p in ans.get("people", [])) or not all(isinstance(t, dict) for t in ans.get("terms", [])):
@@ -149,7 +160,7 @@ def import_(run):
             if key not in raw:
                 bad.append((sid, "no answer"))
                 continue
-            ans, why_bad = validate(raw[key])
+            ans, why_bad = validate(raw[key], story_code(run, sid))
             if why_bad:
                 bad.append((sid, why_bad))
                 continue

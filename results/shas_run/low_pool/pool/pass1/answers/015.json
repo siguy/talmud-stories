@@ -1,0 +1,22 @@
+{
+ "01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi's childhood reading is cited as evidence for a view and rejected in argument; a bare report followed by legal discussion."},
+ "02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic question and an exchange about whether it is a good question; ordinary scholarly dialogue with no event."},
+ "03": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "A visit framing a question about Rava's blessing practice and his answer; a setting plus question and answer is not enough."},
+ "04": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "The emperor challenges Rabban Gamliel, who strikes the emperor's servant to stage a demonstration and wins the argument; action beyond speech, conflict and resolution."},
+ "05": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A needle case brought before rabbis who give no ruling; coming before them is the only event and the rest is legal reasoning."},
+ "06": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "An incident only cited as a precedent (Rabbi granted four nights) within an objection; one ruling with nothing narrated."},
+ "07": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Shmuel's instruction to a scribe about deed wording, cited as legal evidence; speech only."},
+ "08": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Habitual practices of Abaye's mother and Rav Nahman bar Yitzhak's attendant cited as evidence; customs that lead nowhere."},
+ "09": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav arrives in Tatlefush, overhears women, concludes they are ignorant, stays and enacts a prohibition on udders; several actions leading to a change."},
+ "10": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A deed signed by robbers comes before Rav Pappa bar Shmuel and Rava rules; a case and ruling with no other narrated action or change."},
+ "11": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 5, 6], "reason": "Exegetical narrative of Joshua and the angel at Jericho; a biblical episode elaborated midrashically."},
+ "12": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Judges in two towns collected slaves from orphans and Rav Nahman ordered them returned under threat; events and conflict, but the outcome is only implied by his order."},
+ "13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question Rava does not understand and Ravina clarifies; ordinary dialogue about a term with no event or conflict."},
+ "14": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "A one-line eyewitness wonder ('I myself saw') about the height of Keren Ophel; an open case between report and story."},
+ "15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Ben Katin making twelve spigots is a bare report of what someone did, cited as evidence for a legal inference."},
+ "16": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "Students' question and R. Shimon b. Yohai's parable; the parable is hypothetical and the exchange is teaching."},
+ "17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A custom of city dwellers bequeathing lulavim, cited as proof and rejected; a habitual practice with no event following."},
+ "18": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Ravina's twelve-month delay is reported as a precedent for a legal rule; one act with no narrated change."},
+ "19": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A damaged-ceiling case followed by two rabbis' rulings; one event then rulings, nothing changes afterwards."},
+ "20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Ravina visits Sura and is asked about his teaching and answers; a setting plus question and answer is not a story."}
+}
