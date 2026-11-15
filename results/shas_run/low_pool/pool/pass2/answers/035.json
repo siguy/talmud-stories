@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "The Sages suspect Rava, then Shapur's men imprison him, and he reads it as the fulfilment of the baraita. There are several actions and a change."},
+"02": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "A public teaching is followed by Rabbi Ami's anger and rebuke. It is mainly speech, though the anger is a reaction and there is conflict."},
+"03": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Rabbi Ya'akov is ill and receives remedy instructions, followed by a list of cures. Nothing else is narrated and nothing changes."},
+"04": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Ravina's request to his mother only frames a halakhic challenge and answer. This is ordinary scholarly dialogue with no event that changes anything."},
+"05": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "An eyewitness report of the rabbis eating fruit without washing or inviting him is cited to derive three laws. There are events but little change; it sits between a report and a story."},
+"06": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A document's ambiguity is sent to Abaye and he rules. Coming before a rabbi for a ruling is the only event."},
+"07": {"verdict": "borderline", "rules": ["R-C3", "R-C7"], "segments": [2, 3], "reason": "A student's habitual restraint leads Rabbi Yannai to apply a verse to him in praise. The habit draws a response, but the response is only speech, so there is little change."},
+"08": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "The setting (arriving early at the wedding) only frames teaching and a halakhic exchange with Rami bar Hama. This is a setting plus question and answer."},
+"09": {"verdict": "not", "rules": ["R-C0", "R-C7"], "segments": [], "reason": "A bloodied duck in Rava's house prompts deliberation and his son's suggestion, used to derive the law. One event is followed by legal discussion, and no outcome is narrated."},
+"10": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rabbi decides afflictions are precious and takes thirteen years of illness upon himself. This is an action with consequences, part of the larger narrative around it."},
+"11": {"verdict": "story", "rules": ["R-C3"], "segments": [2], "reason": "Shammai the Elder refuses to feed with one hand, and the Sages respond with a decree compelling him. A practice draws a response that changes his conduct."},
+"12": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rava's disparaging gesture and rebuke of Rav Shimi is part of an ordinary halakhic challenge, which is standard Talmudic discourse."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Hamnuna demands an answer and Rabbi Zeira gives it. This is a question and answer only."},
+"14": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "It reports the habitual hiring practice of rabbis as halakhic precedent. Nothing follows."},
+"15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A general historical statement about how Torah was studied before and after Rabban Gamliel's death. No incident is narrated."},
+"16": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "A man plants wheat instead of sesame and earns more, and the rabbis then discuss the ruling. There are real events, but what follows is legal discussion with no further change."},
+"17": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Rabbi Hiyya insults Rabbi Shimon, who goes to his father, and the father supplies a retort. It is mainly speech, but there is real personal conflict and an action."},
+"18": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Eyewitness reports and lists of what various rabbis wore on Yom Kippur, cited as evidence for the law. These are bare reports of practice."},
+"19": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative about Micah's idol, the angels and the men of Gibeah. These are biblical figures."},
+"20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A disciple asks Rabbi Eliezer questions and receives answers, followed by Gemara analysis. This is question and answer only."}
+}

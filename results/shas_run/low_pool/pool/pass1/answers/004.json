@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A fast is declared and fails, Ilfa leads prayer, wind and rain come, and Rabbi asks about his merit: several events with a clear change."},
+"02": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "One act (Rava buys branches) followed only by Abaye's challenge and Rava's legal answer; ordinary scholarly back-and-forth with no further change."},
+"03": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Two small events (he sits on a boulder and asks for fanning, the wind blows) and a witty remark; minimal causality and change."},
+"04": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "Heretics question Rabban Gamliel and reject his proofs: speech only, but with conflict."},
+"05": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Hisda's statement causes his students to leave him for Rava, and he responds: action and change beyond speech."},
+"06": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A fish roasted with meat and Rava's prohibition: one event followed by a ruling, nothing changes afterwards."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A meeting that frames a question about a tradition and its answer; speech without conflict, the arrival is only setting."},
+"08": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A dialogue urging reproof, with no event and no real conflict."},
+"09": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Hiyya bar Ashi's habitual practice cited as evidence inside a legal discussion; nothing follows."},
+"10": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "A custom of reclining and Rav Yosef's ruling, cited as proof; no narrated change."},
+"11": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Reward coda to R. Zakkai's incident (mother left 300 barrels, he left 3000): events with implied causality but little development on its own."},
+"12": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Exegetical narrative about Jacob's burial and Joseph's crown: biblical characters."},
+"13": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4], "reason": "Divine voice rebuking Nebuchadnezzar, an exegetical elaboration of a biblical figure, cited as a cosmological proof."},
+"14": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "An actual incident (distress over lost inheritance, a dream revealing the money) followed by the Sages' ruling; one real event then a ruling, given in generic case form."},
+"15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Yosef's eyewitness report of a household practice cited as legal evidence; nothing follows."},
+"16": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "Palti placing a sword between himself and Michal: an exegetical narrative about biblical characters."},
+"17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A peddler's cry cited only to identify a plant; a bare report with no development."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A visit framing an exchange of vow formulas, followed by legal analysis; speech without real conflict or change."},
+"19": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "A rabbi reports issuing a ruling and having it approved; rulings and speech only, cited as halakhic support."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rava's habitual practice of seeking beets and rice, a custom that leads nowhere."}
+}

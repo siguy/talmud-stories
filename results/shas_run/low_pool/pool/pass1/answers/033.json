@@ -1,0 +1,22 @@
+{
+ "01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of what R. Akiva did in prison, cited as evidence and rebutted; nothing follows from the act."},
+ "02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A remark, a suit brought before Rav Nahman and his ruling; coming before the rabbi and being ruled on is the only event, nothing changes."},
+ "03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A man reciting an aphorism and Shmuel citing a verse; speech only, no event or conflict."},
+ "04": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "A real incident with cause and change (confining the animal in the sun, its death), followed only by a disputed ruling; like the stolen-cow case but minimal."},
+ "05": {"verdict": "story", "rules": ["R-C0", "R-B4"], "segments": [2], "reason": "An incident: a renter took the mezuza and was punished with the death of his wife and two sons, two events with causality and change. Segment 3 is the Gemara's commentary."},
+ "06": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "Rav Huna sold a cow and explained why when asked; a single act and a question and answer, nothing follows."},
+ "07": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Reports of the practice of R. Yohanan and R. Yannai with colleagues disagreeing, then legal discussion; no narrated event leads anywhere."},
+ "08": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "Ravina wrote an enhanced dowry and negotiated with the groom's family; one real act followed by mainly speech with some tension."},
+ "09": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Competing claims between guarantor and debtor and a question sent to Abaye; a legal case of speech and ruling with no narrated change."},
+ "10": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Shmuel asked seafarers and reports their answer about a substance; a speech act supplying information, no event or conflict."},
+ "11": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A student's question and R. Eliezer's answer followed by Gemara analysis; a question and answer is not a story."},
+ "12": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4, 5, 6, 7], "reason": "Rav Yehuda corrects his father's teaching and Shmuel rebukes him for how he spoke to his father; all speech, but with interpersonal conflict beyond ordinary debate."},
+ "13": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "A habitual practice of sages treating drunkenness with oil and salt, cited for the halakha; a custom that leads to no one-time event or change."},
+ "14": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic dispute, a question put to R. Bisa and a verse applied in praise; scholarly speech without an event or real conflict."},
+ "15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Hanina's eyewitness report of Rabbi hanging his tefillin, cited as evidence and then discussed; a bare report of an act."},
+ "16": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A man's instruction, a question sent to Rav Ashi and his ruling in two versions; no narrated action or change besides the ruling."},
+ "17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Tarfon's habitual practice and the Sages' approving remark; a custom that leads to no event."},
+ "18": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Brief reports that Shmuel and Rava were served pressed fish and ate it, cited as precedent in a halakhic argument; nothing follows."},
+ "19": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "Ravina finds Rav Aha searching for a certain herb and challenges him; one real event followed mainly by halakhic speech."},
+ "20": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "A captive child's offhand account comes before Rabbi, who marries the mother to a priest on its basis; captivity, testimony and an act that changes her status."}
+}
