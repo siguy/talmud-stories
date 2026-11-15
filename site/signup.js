@@ -86,6 +86,19 @@
     idx.tractates.forEach(function (t) { stories += t.story; words += t.words; });
     return { stories: stories, words: words, tractates: idx.tractates.length, mean: words / Math.max(1, stories) };
   }
+  // The same label the reader uses for a story: two refs read "Berakhot 3a – 3b".
+  function refLabel(s) { return s.refs && s.refs.length > 1 ? s.refs[0] + " – " + s.refs[1].split(" ").pop() : s.ref; }
+  function listLine(idx, st) {
+    return idx.list_version && idx.published_at ? "Story list v" + idx.list_version + ", dated " + idx.published_at + "."
+      : "Story list: " + commas(st.stories) + " stories in " + st.tractates + " tractates.";
+  }
+  // One tractate file, fetched once. A tractate that is not in index.json has no file (a made-up id): null, not an error.
+  var tractP = {};
+  function getTractate(slug, idx) {
+    if (!idx.tractates.some(function (x) { return x.tractate === slug; })) return Promise.resolve(null);
+    return tractP[slug] || (tractP[slug] = fetch("data/" + slug + ".json").then(function (r) { if (!r.ok) throw new Error(slug); return r.json(); })
+      .catch(function (e) { delete tractP[slug]; throw e; }));
+  }
   function storiesFor(minutes, st) { return Math.max(1, Math.round(minutes * (cfg().wpm || 75) / st.mean)); }
 
   // Draw a screen once index.json is in; otherwise show the same message app.js shows.
@@ -139,6 +152,32 @@
   }
   function notify() { if (S.listener) S.listener(); }
 
+  // The public group counts (progress/summary). Resolves to the data, or null when there is none or it cannot be read:
+  // callers draw zeros and carry on, never an error.
+  function loadSummary() {
+    return loadSdk().then(function (sdk) { return sdk.f.getDoc(sdk.f.doc(sdk.db, "progress", "summary")); })
+      .then(function (snap) { return snap.exists() ? snap.data() : null; })
+      .catch(function () { return null; });
+  }
+  // The "N of about T stories learned" card, filled in when the summary arrives. tag "a" makes the whole card a link.
+  function progressCard(t, total, tag, attrs, withJoined) {
+    var title = el("div", { "class": "su-progress-title" }), fill = el("div", { "class": "su-fill" });
+    var joinedEl = el("div", { "class": "su-muted su-small", hidden: true });   // stays hidden until progress/summary exists
+    function setProgress(learned) {
+      title.textContent = learned + " of about " + commas(total) + " stories learned";
+      fill.style.width = Math.min(100, 100 * learned / Math.max(1, total)) + "%";
+    }
+    setProgress(0);
+    loadSummary().then(function (d) {
+      if (t !== token || !d) return;
+      if (typeof d.learned === "number") setProgress(d.learned);
+      if (typeof d.joined === "number") { joinedEl.textContent = d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined"; joinedEl.hidden = false; }
+    });
+    var kids = [title, el("div", { "class": "su-track" }, [fill])];
+    if (withJoined) kids.push(joinedEl);
+    return el(tag, Object.assign({ "class": "su-progress" }, attrs), kids);
+  }
+
   // ---- in-app browsers (Google refuses sign-in inside them) -------------------------------------
   function inAppBrowser() {
     if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]inapp=1(&|$)/.test(location.search)) return true;
@@ -182,20 +221,7 @@
     loadSdk();
     withIndex(t, function (idx, st) {
       var c = cfg(), total = Math.round(st.stories / 100) * 100;
-      var learnedEl = el("div", { "class": "su-progress-title" });
-      var fill = el("div", { "class": "su-fill" });
-      var joinedEl = el("div", { "class": "su-muted su-small", hidden: true });   // stays hidden until progress/summary exists
-      function setProgress(learned) {
-        learnedEl.textContent = learned + " of about " + commas(total) + " stories learned";
-        fill.style.width = Math.min(100, 100 * learned / Math.max(1, total)) + "%";
-      }
-      setProgress(0);
-      loadSdk().then(function (sdk) { return sdk.f.getDoc(sdk.f.doc(sdk.db, "progress", "summary")); }).then(function (snap) {
-        if (t !== token || !snap.exists()) return;
-        var d = snap.data();
-        if (typeof d.learned === "number") setProgress(d.learned);
-        if (typeof d.joined === "number") { joinedEl.textContent = d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined"; joinedEl.hidden = false; }
-      }).catch(function () {});   // no document yet, or no network: the card just shows 0 and no join count
+      var card = progressCard(t, total, "a", { href: "#/progress", "aria-label": "Overall progress. See details." }, true);
 
       var area = el("div", { "class": "su-signin" });
       var errorLine = "";
@@ -205,6 +231,7 @@
         if (S.user && S.record) {
           var m = S.record.minutesPerWeek;
           kids.push(el("p", { "class": "su-signedin" }, [m === 0 ? "Signed in. Your stories are stopped." : "Signed in, " + m + " min a week", m === 0 ? null : " ", link("Change", "#/join")]));
+          kids.push(link("My stories", "#/my", "su-btn"));
         } else if (S.user && S.recordFailed) {
           // Signed in but the record could not be read: never offer Google sign-in, and never the Join form.
           var retry = el("button", { type: "button", "class": "su-linkbtn", text: "Try again" });
@@ -247,7 +274,7 @@
         el("p", { "class": "su-dedication", text: "In memory of Joe Septimus." }),
         el("p", { "class": "su-muted", text: afterYahrzeit() ? "Thank you to everyone who learned."
           : "A few minutes a week, from " + launchText() + " until his yahrzeit, " + (c.yahrzeitLabel || "8 Elul") + "." }),
-        el("div", { "class": "su-progress" }, [learnedEl, el("div", { "class": "su-track" }, [fill]), joinedEl]),
+        card,
         area,
         el("p", { "class": "su-center su-small" }, [link("Your data", "#/your-data")]),
         el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("Browse the stories", "#/browse"), " · ", link("How the stories were chosen", "#/how")])
@@ -353,10 +380,177 @@
         el("h1", { text: "You're in" }),
         el("p", { text: m + (m === 1 ? " minute" : " minutes") + " a week." }),
         el("p", { "class": "su-muted", text: startLine() }),
-        el("div", { "class": "su-actions" }, [link("Browse the stories", "#/browse", "su-btn"), link("Change", "#/join", "su-btn su-btn-outline")])
+        el("div", { "class": "su-actions" }, [link("My stories", "#/my", "su-btn"), link("Browse the stories", "#/browse", "su-btn su-btn-outline")]),
+        el("p", { "class": "su-center su-small" }, [link("Change", "#/join")])
       ]);
     };
     S.listener();
+  }
+
+  // ---- My stories -----------------------------------------------------------------------------
+  var SAVE_ERR = "Could not save. Check your connection and try again.";
+  // The reader's own per-device tick (app.js keeps the same array under the same key).
+  function setDeviceRead(id, on) {
+    var a = load("septimus-read", []).filter(function (x) { return x !== id; });
+    if (on) a.push(id);
+    save("septimus-read", a);
+  }
+  function myStories(t) {
+    show([el("p", { "class": "su-muted", text: "Loading…" })]);
+    loadSdk().catch(function () { sdkFailed(t); });
+    var drawn = false, uid = null;
+    S.listener = function () {
+      if (t !== token || !S.settled) return;
+      if (drawn && (!S.user || S.user.uid !== uid)) { redirect("#/"); return; }   // the account changed under the page
+      if (drawn) return;
+      if (!S.user || !S.record) { redirect("#/"); return; }   // signed out, no sign-up yet, or the record could not be read
+      drawn = true; uid = S.user.uid;
+      loadMine(t, S.user);
+    };
+    S.listener();
+  }
+  function isOpen(d) { return d.doneAt == null && d.releasedAt == null; }
+  function loadMine(t, user) {
+    var f = S.sdk.f;
+    // The rules only allow a list filtered on the person's own uid.
+    Promise.all([getIndex(), f.getDocs(f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", user.uid)))]).then(function (res) {
+      var idx = res[0], rows = [], slugs = [];
+      res[1].forEach(function (d) { rows.push({ id: d.id, ref: d.ref, d: d.data() }); });
+      rows.forEach(function (r) {
+        r.slug = String(r.d.storyId || "").split("-")[0];
+        if (isOpen(r.d) && slugs.indexOf(r.slug) === -1) slugs.push(r.slug);
+      });
+      return Promise.all(slugs.map(function (s) { return getTractate(s, idx); })).then(function (files) {
+        var found = {};   // storyId -> { story, pos } where pos is the story's place in its tractate file
+        files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
+        if (t === token) drawMine(t, idx, stats(idx), rows, found);
+      });
+    }).catch(function () {
+      if (t === token) show([el("p", { "class": "notice", text: "Could not load your stories. Please check your connection and reload." })]);
+    });
+  }
+  function drawMine(t, idx, st, rows, found) {
+    var wpm = cfg().wpm || 75, touched = {};   // touched: rows ticked during this visit stay on the page
+    var order = {};
+    idx.tractates.forEach(function (x, i) { order[x.tractate] = i; });
+    rows.forEach(function (r) {
+      var hit = found[r.d.storyId];
+      r.hit = hit || null;
+      r.ti = order[r.slug] == null ? 1e9 : order[r.slug];
+      r.pos = hit ? hit.pos : 1e9;
+    });
+    var learnedEl = el("p", { "class": "su-muted", hidden: true });
+    function countLearned() {
+      var n = rows.filter(function (r) { return r.d.doneAt != null; }).length;
+      learnedEl.hidden = !n;
+      learnedEl.textContent = "You have learned " + n + (n === 1 ? " story." : " stories.");
+    }
+
+    function rowNode(r, latest, m) {
+      var s = r.hit && r.hit.story, learned = r.d.doneAt != null;
+      var tick = el("button", { type: "button", "class": "su-tick", "aria-pressed": String(learned), "aria-label": s ? "Mark " + refLabel(s) + " as learned" : "Mark this story as learned" });
+      var ring = el("span", { "class": "check", "aria-hidden": "true", text: learned ? "✓" : "" });
+      tick.appendChild(ring);
+      var msg = el("p", { "class": "su-rowmsg", role: "status", hidden: true });
+      var body = [];
+      if (s) {
+        var mins = Math.ceil(s.words / wpm), top = [el("span", {}, [el("span", { "class": "row-ref", text: refLabel(s) })])];
+        if (r.d.week !== latest) top[0].appendChild(el("span", { "class": "chip", text: "from week " + r.d.week }));
+        if (m > 0 && s.words / wpm > m) top[0].appendChild(el("span", { "class": "chip", text: "longer than usual" }));
+        top.push(el("span", { "class": "su-rowmin", text: "about " + mins + " min" }));
+        body.push(el("a", { "class": "su-rowlink", href: "#/s/" + s.id }, [el("div", { "class": "su-rowtop" }, top), el("div", { "class": "row-sum", text: s.summary })]));
+      } else {
+        body.push(el("div", { "class": "row-sum", text: "No longer on the list" }));   // the story left the list; nothing to link to
+      }
+      body.push(msg);
+      var row = el("div", { "class": "row su-myrow" + (learned ? " read" : "") }, [tick, el("div", { "class": "su-rowbody" }, body)]);
+      tick.onclick = function () {
+        var f = S.sdk.f, want = r.d.doneAt == null;
+        tick.disabled = true; msg.hidden = false; msg.textContent = "Saving…";
+        // The tick changes only after the write is confirmed.
+        f.updateDoc(r.ref, { doneAt: want ? f.serverTimestamp() : null }).then(function () {
+          r.d.doneAt = want ? new Date() : null; touched[r.id] = true;
+          if (s) setDeviceRead(s.id, want);
+          row.className = "row su-myrow" + (want ? " read" : "");
+          ring.textContent = want ? "✓" : "";
+          tick.setAttribute("aria-pressed", String(want));
+          msg.textContent = "Saved"; tick.disabled = false;
+          countLearned();
+        }).catch(function () { msg.textContent = SAVE_ERR; tick.disabled = false; });
+      };
+      return row;
+    }
+
+    function render() {
+      var m = S.record.minutesPerWeek, latest = 0;
+      rows.forEach(function (r) { if (typeof r.d.week === "number" && r.d.week > latest) latest = r.d.week; });
+      var shown = rows.filter(function (r) { return isOpen(r.d) || touched[r.id]; })
+        .sort(function (a, b) { return (a.d.week - b.d.week) || (a.ti - b.ti) || (a.pos - b.pos); });
+      var now = shown.filter(function (r) { return r.d.week === latest; }), earlier = shown.filter(function (r) { return r.d.week !== latest; });
+      var nodes = [el("h1", { text: "My stories" })];
+      if (m > 0) nodes.push(el("p", { "class": "su-muted", text: m + (m === 1 ? " minute" : " minutes") + " a week" }));
+      if (S.record.pausedAt != null) {
+        var resume = el("button", { type: "button", "class": "su-btn", text: "Resume" }), err = el("p", { "class": "su-error", role: "alert", hidden: true, text: SAVE_ERR });
+        resume.onclick = function () {
+          resume.disabled = true; resume.textContent = "Saving…"; err.hidden = true;
+          S.sdk.f.updateDoc(S.sdk.f.doc(S.sdk.db, "users", S.user.uid), { pausedAt: null }).then(function () {
+            S.record = Object.assign({}, S.record, { pausedAt: null }); if (t === token) render();
+          }).catch(function () { err.hidden = false; resume.disabled = false; resume.textContent = "Resume"; });
+        };
+        nodes.push(el("p", { "class": "notice", text: "Your stories are paused because none were marked learned." }), resume, err);
+      }
+      if (m === 0) nodes.push(el("p", { "class": "notice", text: "Your stories are stopped." }), link("Start again", "#/join", "su-btn"));
+      if (!shown.length && m > 0) {
+        nodes.push(el("p", { text: hasLaunched() ? "Nothing open right now. New stories arrive each Monday." : "Your first stories arrive the week of " + launchText() + "." }));
+      }
+      [["This week", now], ["Still open from earlier weeks", earlier]].forEach(function (sec) {
+        if (!sec[1].length) return;
+        nodes.push(el("h2", { "class": "su-h2", text: sec[0] }));
+        sec[1].forEach(function (r) { nodes.push(rowNode(r, latest, m)); });
+      });
+      if (earlier.length) nodes.push(el("p", { "class": "notice", text: "Stories you do not get to stay on your list for about two weeks, then go to someone else. Nothing is lost." }));
+      countLearned();
+      nodes.push(learnedEl);
+      nodes.push(el("h2", { "class": "su-h2", text: "Everyone together" }));
+      nodes.push(progressCard(t, Math.round(st.stories / 100) * 100, "div", {}, false));
+      nodes[nodes.length - 1].appendChild(link("See overall progress", "#/progress", "su-btn su-btn-outline"));
+      nodes.push(el("p", { "class": "su-links" }, [link("Change my minutes", "#/join"), " · ", link("Your data", "#/your-data")]));
+      show(nodes);
+    }
+    render();
+  }
+
+  // ---- progress (public) ------------------------------------------------------------------------
+  function dateTime(d) { return fmtDate(d) + ", " + String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); }
+  function progress(t) {
+    show([el("p", { "class": "su-muted", text: "Loading…" })]);
+    withIndex(t, function (idx, st) {
+      loadSummary().then(function (d) {
+        if (t !== token) return;
+        d = d || {};
+        function num(x) { return typeof x === "number" ? x : 0; }
+        var learned = num(d.learned), round = d.round || 1, done = num(d.roundsCompleted), by = d.byTractate || {};
+        var head = done === 0 ? "First time through Shas" : "Shas completed " + done + (done === 1 ? " time" : " times");
+        var cardKids = [el("div", { "class": "su-progress-big", text: head }),
+          el("p", { "class": "su-progress-title", text: "Round " + round + ": " + learned + " of " + commas(st.stories) + " stories learned" }),
+          el("div", { "class": "su-track" }, [el("div", { "class": "su-fill", style: "width:" + Math.min(100, 100 * learned / Math.max(1, st.stories)) + "%" })])];
+        if (num(d.openInRound) > 0 && learned > 0.9 * st.stories) cardKids.push(el("p", { "class": "su-muted", text: d.openInRound + " stories still open in round " + round }));
+        if (typeof d.joined === "number") cardKids.push(el("p", { "class": "su-muted su-small", text: d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined" }));
+        var nodes = [el("h1", { text: "Progress" }), el("p", { "class": "dedication", text: "In memory of Joe Septimus." }), el("div", { "class": "su-progress" }, cardKids),
+          el("h2", { text: "By tractate (this round)" })];
+        idx.tractates.forEach(function (x) {
+          var n = num(by[x.tractate]);
+          nodes.push(el("div", { "class": "card" }, [
+            el("span", { "class": "card-he", text: x.he }), el("div", { "class": "card-name", text: x.name }),
+            el("div", { "class": "bar-track" }, [el("div", { "class": "bar-fill", style: "width:" + Math.min(100, x.story ? 100 * n / x.story : 0) + "%" })]),
+            el("div", { "class": "card-meta", text: n + " of " + x.story + " learned" + (x.reviewed ? "" : " · not yet reviewed") })]));
+        });
+        var at = d.updatedAt && typeof d.updatedAt.toDate === "function" ? d.updatedAt.toDate() : null;
+        if (at) nodes.push(el("p", { "class": "su-muted su-small", text: "Updated " + dateTime(at) }));
+        nodes.push(el("p", { "class": "su-muted su-small", text: listLine(idx, st) }), back());
+        show(nodes);
+      });
+    });
   }
 
   // ---- small text pages -----------------------------------------------------------------------
@@ -364,30 +558,70 @@
     withIndex(t, function (idx, st) {
       var names = idx.tractates.filter(function (x) { return x.reviewed; }).map(function (x) { return x.name; });
       var list = names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names.join("");
-      var listLine = idx.list_version && idx.published_at ? "Story list v" + idx.list_version + ", dated " + idx.published_at + "."
-        : "Story list: " + commas(st.stories) + " stories in " + st.tractates + " tractates.";
       show([
         el("h1", { text: "How the stories were chosen" }),
         el("p", { text: "A story here is a passage of the Babylonian Talmud that tells of something that happened: people, an event, and how it turned out." }),
         el("p", { text: "The stories were found by software. In " + list + " they were then checked by Prof. Jeff Rubenstein of New York University. The other tractates are marked “not yet reviewed”: some passages there may not be stories, or may start or end in the wrong place." }),
-        el("p", { text: listLine }),
+        el("p", { text: listLine(idx, st) }),
         back()
       ]);
     });
   }
-  function yourData() {
+  function yourData(t) {
+    var holder = el("div");
     show([
       el("h1", { text: "Your data" }),
       el("ul", { "class": "su-list" }, [
         el("li", { text: "What we store: your Google name and email address, the link you joined from, how many minutes a week you chose, and which stories you were given and when you marked them learned." }),
         el("li", { text: "Who sees it: Simon Brief, who runs the site. The Septimus family sees how many people joined from each community, and names. Only you and Simon see which stories you read." }),
         el("li", { text: "Nothing about you is shown publicly." }),
-        el("li", {}, ["Stopping: you can stop your stories or delete your data at any time. Until those buttons are on the site, email ", contactNode(), "."]),
+        el("li", { text: "Stopping: you can stop your stories or delete your data at any time, on this page when you are signed in." }),
         el("li", { text: "Everyone's personal data is deleted six months after the yahrzeit." }),
         el("li", { text: "You must be 13 or older to join." })
       ]),
+      holder,
       back()
     ]);
+    // Signed-in people with a sign-up get the stop / delete controls; everyone else sees the page as above.
+    var deleted = false, mode = "idle", failed = false, busy = false;
+    function draw() {
+      if (t !== token || deleted) return;
+      holder.textContent = "";
+      if (!S.settled || !S.user || !S.record) return;
+      var stopped = S.record.minutesPerWeek === 0, kids = [el("h2", { text: "Your sign-up" })];
+      function ask(text, doText, doIt) {
+        var yes = el("button", { type: "button", "class": "su-btn", text: doText, disabled: busy }), no = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Cancel", disabled: busy });
+        yes.onclick = function () {
+          busy = true; failed = false; draw();
+          doIt().then(function () { busy = false; }, function () { busy = false; failed = true; draw(); });
+        };
+        no.onclick = function () { mode = "idle"; failed = false; draw(); };
+        kids.push(el("p", { "class": "notice", text: text }), yes, no);
+      }
+      var ref = S.sdk.f.doc(S.sdk.db, "users", S.user.uid);
+      if (stopped) kids.push(el("p", { text: "Your stories are stopped. You can start again any time." }));
+      if (mode === "stop" && !stopped) {
+        ask("You will get no new stories. Stories you have not read go back to the group.", busy ? "Saving…" : "Stop", function () {
+          return S.sdk.f.updateDoc(ref, { minutesPerWeek: 0 }).then(function () { S.record = Object.assign({}, S.record, { minutesPerWeek: 0 }); mode = "idle"; draw(); });
+        });
+      } else if (mode === "delete") {
+        ask("This removes your account and your name and email from our records. It cannot be undone.", busy ? "Saving…" : "Delete my data", function () {
+          return S.sdk.f.updateDoc(ref, { deleteRequested: true }).then(function () {
+            deleted = true;
+            holder.textContent = "";
+            holder.appendChild(el("p", { role: "status", text: "Your data will be deleted within a day." }));
+            return S.sdk.a.signOut(S.sdk.auth).catch(function () {});
+          });
+        });
+      } else {
+        if (!stopped) { var b1 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Stop my stories" }); b1.onclick = function () { mode = "stop"; draw(); }; kids.push(b1); }
+        var b2 = el("button", { type: "button", "class": "su-btn su-btn-outline", text: "Delete my data" }); b2.onclick = function () { mode = "delete"; draw(); }; kids.push(b2);
+      }
+      if (failed) kids.push(el("p", { "class": "su-error", role: "alert", text: SAVE_ERR }));
+      kids.forEach(function (k) { holder.appendChild(k); });
+    }
+    S.listener = draw;
+    loadSdk().then(draw, function () {});   // no SDK: the page stays as it is for a signed-out visitor
   }
   function about() {
     show([
@@ -398,7 +632,7 @@
   }
 
   // ---- routing --------------------------------------------------------------------------------
-  var SCREENS = { "": landing, join: join, joined: joined, how: how, "your-data": yourData, about: about };
+  var SCREENS = { "": landing, join: join, joined: joined, how: how, "your-data": yourData, about: about, my: myStories, progress: progress };
   function route(parts) {
     if (!srcDone) { srcDone = true; rememberSrc(); }
     var t = ++token;
@@ -415,6 +649,8 @@
     var a = e.target.closest && e.target.closest('a[href="#/"]');
     if (a && app.contains(a) && !a.classList.contains("su-keep")) { e.preventDefault(); location.hash = "#/browse"; }
   });
+
+  // TODO(signup d, after the Jeff-responses branch merges): story page gets one "Mark as learned" button for a story that is yours, plus "Back to my stories" and "Next story" (plan §9 row d).
 
   window.SeptimusSignup = { route: route };
 })();
