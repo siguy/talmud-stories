@@ -1,0 +1,46 @@
+# Septimus sign-up: the daily job that hands out the week's stories, releases unread ones, handles
+# "delete my data" requests and refreshes the public totals (docs/technical/septimus-signup-plan.md section 6).
+#
+# It is OFF until the repository variable SEPTIMUS_WEEKLY_ENABLED is set to "true"
+# (Settings > Secrets and variables > Actions > Variables). "Run workflow" by hand always works;
+# tick "dry_run" to see what it would do without writing anything.
+#
+# Needs one secret: FIREBASE_SERVICE_ACCOUNT, the service-account key (JSON text) of the Firebase project.
+# Optional variable: SEPTIMUS_PAUSE=1 stops hand-outs without a deploy.
+name: Septimus weekly
+
+on:
+  schedule:
+    - cron: "10 10 * * *"   # daily, 10:10 UTC (early morning US Eastern)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Read and print the plan, write nothing"
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  weekly:
+    if: vars.SEPTIMUS_WEEKLY_ENABLED == 'true' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements-septimus.txt
+      - name: Run the weekly job
+        env:
+          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          SEPTIMUS_PAUSE: ${{ vars.SEPTIMUS_PAUSE }}
+          DRY_RUN: ${{ inputs.dry_run }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            python scripts/septimus_weekly.py --dry-run
+          else
+            python scripts/septimus_weekly.py
+          fi
