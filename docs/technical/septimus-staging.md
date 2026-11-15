@@ -69,6 +69,31 @@ lapses at least three weeks apart with nothing learned in between now pauses any
 
 The test accounts (`test-a` to `test-d`@example.com) and their rows are still on staging.
 
+## Load test, 2026-11-15
+
+`scripts/staging_load_test.py`: 300 pretend people (3,920 minutes a week pledged; 60% read everything, 25% half,
+15% nothing) added to staging, four more pretend weeks run, then removed again.
+
+| Week | Stories handed out | People served | Run time | Database reads |
+|---|---|---|---|---|
+| 13 | 1,204 | 301 | 43 s | 498 |
+| 14 | 876 | 257 | 90 s | 2,010 |
+| 15 | 821 | 247 | 58 s | 2,964 |
+| 16 | 1,012 (and 308 handed back) | 289 | 130 s | 3,845 |
+| ordinary daily run | 0 | | 26 s | 4,779 |
+
+Free limits are 50,000 reads and 20,000 writes a day, and the job is allowed 15 minutes. With 300 people the
+script uses under a tenth of the reads. Reads grow by about 1,000 a week at this size, so a 44-week campaign would
+end near the limit: watch it (launch checklist, "After launch"). 300 people at these minutes learn almost all of
+Shas in four weeks (1,777 of 1,897 stories).
+
+## The scheduled job on GitHub: not tested yet
+
+Needs the staging key stored as the repository secret `FIREBASE_SERVICE_ACCOUNT_STAGING` (Simon:
+`gh secret set FIREBASE_SERVICE_ACCOUNT_STAGING < ~/keys/septimus-stories-staging-firebase-adminsdk-fbsvc-79363ae1db.json`),
+and GitHub only offers "Run workflow" for a workflow file that is on `main`. So: merge, then Actions → Septimus
+weekly → Run workflow with "staging" and "dry_run" ticked.
+
 ## How it was set up (to repeat or audit)
 
 1. `PROJECT_ID=septimus-stories-staging APP_NAME=septimus-site-staging bash firebase/setup.sh`

@@ -14,7 +14,8 @@ on the real site.
 - [ ] Look at the built screens on staging, especially those that had no mockup: stop / delete / cancel deletion,
       paused / resume, "How the stories were chosen", "Your data", the in-app-browser notice.
 - [ ] Confirm the seven builder's choices in [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md).
-- [ ] Choose the email service and the sending domain (step e cannot start without them).
+- [ ] Choose the email service and the sending domain (step e cannot start without them). Recommended: Resend,
+      on a subdomain of a domain Simon owns.
 - [ ] The contact address shown as "No Google account? Email …".
 - [ ] The final site address, if it will not be `talmud-stories.vercel.app`.
 
@@ -60,7 +61,7 @@ on the real site.
       This has only ever run against the local test database.
 - [ ] **A second person** (not Simon) signs up from their own phone with a community link (`?src=`).
 - [ ] **The scheduled workflow on GitHub**, run by hand against staging, before it is trusted with the real one.
-- [ ] **Many people at once:** a few hundred pretend sign-ups on staging, to see the real read counts against the
+- [x] **Many people at once** (300 on staging: under a tenth of the free reads; `septimus-staging.md`)**:** a few hundred pretend sign-ups on staging, to see the real read counts against the
       free limit (simulated only so far: about 21,000 of 50,000 a day at 200 people).
 - [ ] The weekly email on a real phone, including unsubscribe (after step e).
 - [ ] Dark mode, larger text ("Aa") and a screen reader (VoiceOver) on the new pages.

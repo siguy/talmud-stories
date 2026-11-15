@@ -5,7 +5,8 @@
 # (Settings > Secrets and variables > Actions > Variables). "Run workflow" by hand always works;
 # tick "dry_run" to see what it would do without writing anything.
 #
-# Needs one secret: FIREBASE_SERVICE_ACCOUNT, the service-account key (JSON text) of the Firebase project.
+# Needs one secret: FIREBASE_SERVICE_ACCOUNT, the service-account key (JSON text) of the live Firebase project.
+# For trying the job safely, tick "staging": it then uses FIREBASE_SERVICE_ACCOUNT_STAGING instead.
 # Optional variable: SEPTIMUS_PAUSE=1 stops hand-outs without a deploy.
 #
 # Two things to know:
@@ -30,6 +31,10 @@ on:
         description: "Read and print the plan, write nothing"
         type: boolean
         default: true
+      staging:
+        description: "Run against the staging project (uses the secret FIREBASE_SERVICE_ACCOUNT_STAGING)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -47,7 +52,8 @@ jobs:
       - run: pip install -r requirements-septimus.txt
       - name: Run the weekly job
         env:
-          FIREBASE_SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          # The key decides which project is touched. A scheduled run always uses the live key.
+          FIREBASE_SERVICE_ACCOUNT: ${{ inputs.staging && secrets.FIREBASE_SERVICE_ACCOUNT_STAGING || secrets.FIREBASE_SERVICE_ACCOUNT }}
           SEPTIMUS_PAUSE: ${{ vars.SEPTIMUS_PAUSE }}
           DRY_RUN: ${{ inputs.dry_run }}
         run: |
