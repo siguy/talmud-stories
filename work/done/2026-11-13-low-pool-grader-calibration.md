@@ -5,20 +5,20 @@ tractate: [ketubot, kiddushin, gittin, yevamot, eruvin]
 blocked_by: []
 awaiting: []
 writes: [scripts/calibrate_low_pool_grader.py, results/shas_run/low_pool/calibration/, scripts/grade_low_pool.py, results/shas_run/low_pool/pool/, tests/test_grade_low_pool.py]
-finding:
+finding: docs/findings/2026-11-13-low-pool-grader-calibration.md
 superseded_by:
 ---
 
 # Calibrate the Claude grader before it promotes LOW proposals to the Septimus site
 
 **Self-contained.** A fresh session executes this with no other context.
-Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then this.
+Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then this.
 
 ## The claim to test / the problem
 
 About three in four stories missing from the site were found and graded LOW
-([finding](../docs/findings/2026-11-13-how-many-stories-we-miss.md)). The proposal: let the Claude
-grader (the consensus judge, [`judge_register_v2.md`](../src/prompts/judge_register_v2.md) at the sha
+([finding](../../docs/findings/2026-11-13-how-many-stories-we-miss.md)). The proposal: let the Claude
+grader (the consensus judge, [`judge_register_v2.md`](../../src/prompts/judge_register_v2.md) at the sha
 pinned as `JUDGE_PROMPT_SHA` in `scripts/check_tractate_run.py`, `88e8fff62716`) promote a LOW span it
 calls `story`. That prompt has never been scored against Jeff. **Claim: on spans Jeff has ruled on,
 when the grader says `story`, Jeff says yes often enough for a definite-only site.**
@@ -76,3 +76,15 @@ graded in calibration C2 reuse those verdicts (cells identical and prompt bytes 
 exported, 56 batches per pass (`pool/pass1`, seed 1; `pool/pass2`, seed 2). Golden LOW stories of the reviewed
 tractates are not in the pool (Rule 0 is their route). Next: grade both passes, `import`, `select`, `sample`,
 then Simon reads the 60.
+
+## Outcome
+
+**Done, closed 2026-11-15.** The calibration met the bar: both passes said `story` on 32 of 33, precision 0.97 (Wilson
+0.85–1.00). Recall is low, 32/141. The pool was graded twice with 0 unscored, and **80 spans were called `story` in
+both passes** ([finding](../../docs/findings/2026-11-13-low-pool-grader-calibration.md)).
+
+Simon added all 80 to the site on 2026-11-14 after a partial read ("mostly stories"). The 54/60 review bar was
+**not formally completed**: his verdicts in the review page were never exported. The 80 shipped in
+[#96](https://github.com/siguy/talmud-stories/pull/96), tagged `included_by`, so they can be pulled out in one step,
+and recorded in `results/shas_run/septimus_site_decisions.json`. They are model-graded, so they never go into
+goldens, rulers or expert lists.
