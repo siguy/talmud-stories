@@ -22,7 +22,7 @@ def draft(**kw):
 
 
 def run(prev, rec, held):
-    notes, ev = B.merge([STORY], prev, {STORY["id"]: rec} if rec else {}, held)
+    notes, ev = B.merge([STORY], prev, {STORY["id"]: rec} if rec else {}, held, {})
     return notes.get(STORY["id"]), ev
 
 
@@ -110,3 +110,18 @@ def test_every_story_file_opens_with_its_code():
     text = D.story_file(s, flat, {("T 2a", k): k for k in range(3)}, "ABC123")
     assert text.splitlines()[0] == "Story code: ABC123"
     assert "[1] BEFORE" in text and "[2] STORY" in text and "[3] AFTER" in text
+
+
+def test_a_flag_on_a_never_reviewed_kept_note_holds_it_and_flags_the_passage():
+    held, pf = {}, {}
+    notes, _ = B.merge([STORY], {STORY["id"]: {**OLD, "approved": False}},
+                       {STORY["id"]: draft(flag="Cut off: the ending is in the next segment.")}, held, pf)
+    n = notes[STORY["id"]]
+    assert n["note"] == OLD["note"] and n["approved"] is False
+    assert held[STORY["id"]].startswith("Cut off") and pf[STORY["id"]].startswith("Cut off")
+
+
+def test_a_flag_on_an_approved_note_flags_the_passage_but_keeps_the_note_approved():
+    held, pf = {}, {}
+    notes, _ = B.merge([STORY], {STORY["id"]: OLD}, {STORY["id"]: draft(flag="Cut off.")}, held, pf)
+    assert notes[STORY["id"]]["approved"] is True and STORY["id"] not in held and pf[STORY["id"]] == "Cut off."

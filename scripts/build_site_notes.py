@@ -29,6 +29,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "site" / "data"
 OUT = DATA / "notes"
 HELD = ROOT / "results" / "site_notes" / "held.json"
+PASSAGE_FLAGS = ROOT / "results" / "site_notes" / "passage_flags.json"
 FLAGS_DOC = ROOT / "docs" / "findings" / "2026-10-12-septimus-note-flags.md"
 TAG = re.compile(r"<[^>]+>")
 HEBREW = re.compile(r"[֐-׿]")
@@ -97,8 +98,12 @@ def load_parts(dirs):
     return by_id
 
 
-def merge(stories, prev, parts, held):
-    """(notes, events) for one tractate. Mutates `held`."""
+def merge(stories, prev, parts, held, passage_flags):
+    """(notes, events) for one tractate. Mutates `held` and `passage_flags`.
+
+    A drafter's flag is about the PASSAGE (not a story, cut off, garbled), so it is always recorded in
+    `passage_flags` for the team to check the story's boundaries. It also holds the note back from
+    approval unless Simon already approved that note's text (Simon 2026-11-15)."""
     notes, ev = {}, {"kept": 0, "why_added": 0, "drafted": 0, "held": 0, "missing": []}
     for s in stories:
         sid, old, rec = s["id"], prev.get(s["id"]), parts.get(s["id"])
@@ -110,6 +115,11 @@ def merge(stories, prev, parts, held):
             else:
                 ev["missing"].append(sid)
             continue
+        flag = clean(rec.get("flag"), 300)
+        if flag:
+            passage_flags[sid] = flag
+        else:
+            passage_flags.pop(sid, None)    # the latest reader's view of the passage
         if keep_text:
             n = {**old, "why": clean(rec.get("why"), LIMITS["why"])}
             if str(held.get(sid, "")).startswith("why dropped"):
@@ -118,12 +128,14 @@ def merge(stories, prev, parts, held):
             if bad:      # the reviewed text still ships; a `why` that fails a check does not
                 n["why"] = ""
                 bad = ["why dropped: " + "; ".join(bad)]
+            if flag and not old.get("approved"):    # never reviewed, and a fresh reader doubts the passage
+                bad.insert(0, flag)
             ev["why_added"] += 1
         else:
             n = norm(rec)
             bad = problems_with(rec, s)
-            if clean(rec.get("flag"), 300):
-                bad.insert(0, clean(rec["flag"], 300))
+            if flag:
+                bad.insert(0, flag)
             held.pop(sid, None)    # a fresh draft replaces the old hold; its own problems set the new one
             ev["drafted"] += 1
         if bad:
@@ -134,7 +146,7 @@ def merge(stories, prev, parts, held):
     return notes, ev
 
 
-def write_flags_doc(held, ref_of):
+def write_flags_doc(held, passage_flags, ref_of):
     lines = ["# Septimus viewer: notes held back", "",
              "Notes that are not approved automatically: the drafter thought the passage is not a story, is cut off "
              "or garbled, or the note failed a check (length, Hebrew, a person not in the story). For the project team; "
@@ -142,6 +154,11 @@ def write_flags_doc(held, ref_of):
              "`results/site_notes/held.json`; edit that file, not this one.", ""]
     lines += [f"- **{ref_of.get(i, '?')}** (`{i}`): {r}"
               for i, r in sorted(held.items())] or ["(none)"]
+    lines += ["", "## Passages to check", "",
+              "Every passage whose latest note-drafter flagged it (not a story, cut off, two passages joined, garbled), "
+              "approved note or not. A question about the story's boundaries, for the team; from "
+              "`results/site_notes/passage_flags.json`.", ""]
+    lines += [f"- **{ref_of.get(i, '?')}** (`{i}`): {r}" for i, r in sorted(passage_flags.items())] or ["(none)"]
     FLAGS_DOC.write_text("\n".join(lines) + "\n")
 
 
@@ -149,6 +166,9 @@ def main(argv):
     report = "--report" in argv
     dirs = [a for a in argv if not a.startswith("--")]
     held = json.loads(HELD.read_text()) if HELD.exists() else seed_held()
+    # Seeded from the October holds, which were all drafter flags on the passage.
+    passage_flags = (json.loads(PASSAGE_FLAGS.read_text()) if PASSAGE_FLAGS.exists()
+                     else {i: r for i, r in held.items() if not r.startswith("why dropped")})
     parts = load_parts(dirs)
     known, ref_of, total = set(), {}, {"stories": 0, "notes": 0, "approved": 0, "with_why": 0}
     for t in site_tractates():
@@ -157,7 +177,7 @@ def main(argv):
         ref_of.update({s["id"]: s["ref"] for s in stories})
         pf = OUT / f"{t}.json"
         prev = json.loads(pf.read_text())["notes"] if pf.exists() else {}
-        notes, ev = merge(stories, prev, parts, held)
+        notes, ev = merge(stories, prev, parts, held, passage_flags)
         stale = sorted(set(prev) - {s["id"] for s in stories})
         for i in stale:      # off the site today; kept so a story that returns keeps its reviewed note
             notes[i] = prev[i]
@@ -176,7 +196,9 @@ def main(argv):
     if not report:
         HELD.parent.mkdir(parents=True, exist_ok=True)
         HELD.write_text(json.dumps(dict(sorted(held.items())), ensure_ascii=False, indent=1))
-        write_flags_doc({i: r for i, r in held.items() if i in known}, ref_of)
+        PASSAGE_FLAGS.write_text(json.dumps(dict(sorted(passage_flags.items())), ensure_ascii=False, indent=1))
+        write_flags_doc({i: r for i, r in held.items() if i in known},
+                        {i: r for i, r in passage_flags.items() if i in known}, ref_of)
     if unknown:
         print(f"PROBLEM: {len(unknown)} drafted ids are not on the site: {unknown[:5]}")
         sys.exit(1)
