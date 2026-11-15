@@ -29,11 +29,15 @@ on the real site.
 - [ ] The list of communities and what each is called.
 - [ ] A few paragraphs about his father for the About page.
 
-## 3. Waiting on the Jeff-responses branch to merge
+## 3. Unblocked 2026-11-15: the Jeff-responses branch merged (#96; 1,811 stories, permanent ids)
+
+Main is merged into all five sign-up branches; staging runs the new list.
 
 - [ ] Step s: check the story-data fields; add list version, publish date and Shas order to the data.
 - [ ] Small clean-ups marked `TODO(signup)` in `site/signup.js` (two links, one version number).
-- [ ] Resolve the one expected merge conflict (the plan document).
+- [x] Resolve the one expected merge conflict (the plan document).
+- [ ] My stories: follow `site/data/redirects.json` when a handed-out story's id was merged into another, instead of
+      showing "No longer on the list".
 
 ## 4. Still to build
 
@@ -65,7 +69,7 @@ on the real site.
       free limit (simulated only so far: about 21,000 of 50,000 a day at 200 people).
 - [ ] The weekly email on a real phone, including unsubscribe (after step e).
 - [ ] Dark mode, larger text ("Aa") and a screen reader (VoiceOver) on the new pages.
-- [ ] The reader still works after the Jeff-responses branch is merged in.
+- [x] The reader still works after the Jeff-responses branch is merged in (checked on staging, signed out).
 
 ## 6. Launch day, in order
 
