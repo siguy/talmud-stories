@@ -262,7 +262,8 @@ class Store:
     def delete_person(self, uid):
         """Rows first (blank uid, release open ones), then the sign-in account, then users/{uid} last, so a run
         that dies halfway still sees deleteRequested and finishes next time."""
-        for d in self.db.collection("assignments").where("uid", "==", uid).stream():
+        from google.cloud.firestore_v1.base_query import FieldFilter
+        for d in self.db.collection("assignments").where(filter=FieldFilter("uid", "==", uid)).stream():
             patch = {"uid": None}
             if not (d.to_dict().get("doneAt") or d.to_dict().get("releasedAt")):
                 patch["releasedAt"] = self._fs.SERVER_TIMESTAMP
@@ -280,14 +281,18 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="Septimus sign-up: weekly story hand-out and progress summary.")
     ap.add_argument("--date", help="pretend today is YYYY-MM-DD (default: now, US Eastern)")
     ap.add_argument("--dry-run", action="store_true", help="read and compute, print the plan, write nothing")
+    ap.add_argument("--config", default=str(CONFIG_JS), help="config.js to read (default: site/config.js)")
+    ap.add_argument("--data-dir", default=str(DATA_DIR), help="story data folder (default: site/data)")
     args = ap.parse_args(argv)
     logging.basicConfig(stream=sys.stdout, level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     try:
-        config = parse_config(CONFIG_JS.read_text())
+        config = parse_config(Path(args.config).read_text())
         today = today_eastern(args.date)
         pause = os.environ.get("SEPTIMUS_PAUSE", "") not in ("", "0", "false")
         LOG.info("today (US Eastern) %s, launch %s, last week %s", today, config.launch_date, config.last_week)
-        run(Store(config.project_id), today, config, dry_run=args.dry_run, pause=pause)
+        order = A.load_story_order(args.data_dir)
+        run(Store(config.project_id), today, config, dry_run=args.dry_run, pause=pause,
+            story_order=order, list_version=A.load_list_version(args.data_dir))
     except Exception:
         LOG.exception("septimus_weekly failed")
         return 1
