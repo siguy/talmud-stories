@@ -1,0 +1,48 @@
+/* Sign-up pages (signup.js). Colours and fonts come from style.css variables; classes start with su-. */
+.su-muted{color:var(--muted);margin:.5rem 0}
+.su-small{font-size:.85rem}
+.su-center{text-align:center}
+.su-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.su-dedication{background:var(--chip);padding:.75rem .9rem;margin:.75rem 0;font:italic 1.05rem/1.4 Cardo,Georgia,serif}
+.su-progress{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:10px;padding:.9rem 1rem;margin:1rem 0}
+.su-progress-title{font:700 1.1rem Cardo,Georgia,serif}
+.su-track{height:6px;background:var(--chip);border-radius:3px;margin:.6rem 0;overflow:hidden}
+.su-fill{height:100%;width:0;background:var(--ok)}   /* green means "learned" and nothing else */
+.su-progress .su-muted{margin:0}
+
+/* Buttons: solid navy for the main action, white with a navy outline for sign-in (taken from sefaria.org). */
+.su-btn,.su-google{display:flex;align-items:center;justify-content:center;gap:.6rem;width:100%;min-height:48px;border-radius:6px;font:700 .95rem "Helvetica Neue",Helvetica,Arial,sans-serif;text-align:center;text-decoration:none;cursor:pointer}
+.su-btn{background:var(--accent);color:#fff;border:1px solid var(--accent);margin:1rem 0 .5rem}
+.su-btn-outline{background:var(--card);color:var(--accent)}
+.su-google{background:#fff;color:#222;border:1px solid var(--accent);margin:1.25rem 0 .5rem}
+.su-google:disabled{opacity:.55;cursor:default}
+.su-g{display:flex}
+@media (prefers-color-scheme:dark){.su-btn{color:#121316}.su-btn-outline{color:var(--accent)}}
+.su-btn:focus-visible,.su-google:focus-visible,.su-choices input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
+.su-actions{display:grid;gap:.6rem;margin:1.25rem 0}
+.su-actions .su-btn{margin:0}
+.su-signedin{background:var(--chip);border-radius:8px;padding:.75rem .9rem;margin:1.25rem 0 .5rem}
+.su-signedin a{display:inline-block;min-height:44px;line-height:44px;margin-left:.25rem}
+.su-error{color:var(--ink);background:var(--chip);border-left:4px solid var(--gold);border-radius:6px;padding:.5rem .7rem;font-size:.9rem;margin:.5rem 0}
+.su-links{text-align:center;font-size:.85rem;margin:1.25rem 0}
+.su-links a,.su-center a{display:inline-block;padding:.7rem .2rem}   /* tall enough to tap */
+.su-linkbtn{background:none;border:0;padding:.7rem 0;min-height:44px;color:var(--accent);text-decoration:underline;font:inherit;cursor:pointer}
+.su-list{padding-left:1.1rem}.su-list li{margin:.7rem 0}
+.su-copybox{width:100%;min-height:44px;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:6px;padding:.5rem;margin:.25rem 0}
+.su-pic{display:block;width:100%;max-width:15rem;margin:1rem auto}
+.su-pic-bg{fill:var(--card);stroke:var(--line)}
+.su-pic-menu{fill:var(--chip);stroke:var(--line)}
+.su-pic-hi{fill:var(--accent)}
+.su-pic-hitext{fill:#fff;font:700 12px "Helvetica Neue",Helvetica,Arial,sans-serif}
+.su-pic-row{fill:var(--muted);font:12px "Helvetica Neue",Helvetica,Arial,sans-serif}
+.su-pic-dots{fill:var(--ink);font:700 22px Georgia,serif}
+@media (prefers-color-scheme:dark){.su-pic-hitext{fill:#121316}}
+
+/* Minutes choice: real radios, hidden but focusable; the label is the button. */
+.su-choices{border:0;margin:1rem 0 0;padding:0;min-width:0}
+.su-choices input[type=radio]{position:absolute;opacity:0;width:1px;height:1px}
+.su-choices label{display:flex;align-items:center;justify-content:center;min-height:48px;margin:0 0 .6rem;border:1px solid var(--accent);border-radius:6px;background:var(--card);color:var(--accent);font:700 .95rem "Helvetica Neue",Helvetica,Arial,sans-serif;cursor:pointer}
+.su-choices input:checked+label{background:var(--accent);color:#fff}
+@media (prefers-color-scheme:dark){.su-choices input:checked+label{color:#121316}}
+.su-number{width:100%;min-height:48px;font:inherit;font-size:1.1rem;color:var(--ink);background:var(--card);border:1px solid var(--accent);border-radius:6px;padding:.5rem .75rem;margin:0 0 .6rem}
+.su-links a{text-decoration:none;font-weight:500}

@@ -185,6 +185,7 @@
   function route() {
     var h = location.hash.slice(1) || "/", q = h.split("?"), parts = q[0].split("/"), p;
     window.scrollTo(0, 0);
+    if (window.SeptimusSignup && window.SeptimusSignup.route(parts, q[1] || "")) return;
     p = loadIndex().then(function () {
       if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2], (/tab=(\w+)/.exec(q[1] || "") || [])[1]);
       if (parts[1] === "s") return story(parts[2]);

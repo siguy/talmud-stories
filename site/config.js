@@ -12,5 +12,16 @@ window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://
     storageBucket: "septimus-stories.firebasestorage.app",
     messagingSenderId: "833890592463",
     appId: "1:833890592463:web:e788e740dd532c3ea9f9ba"
+  },
+  // signup: settings for the sign-up pages (signup.js). Empty values show a [placeholder] on the page.
+  signup: {
+    wpm: 75,                    // reading pace for the weekly hand-out (plan section 4). Not readingWpm.
+    launchDate: "",             // ISO date of the Monday everyone starts, e.g. "2026-12-07". Empty = not set yet (asked Daniel).
+    yahrzeit: "2027-09-10",     // 8 Elul 5787; to confirm with Daniel
+    yahrzeitLabel: "8 Elul",
+    maxMinutes: 120,
+    contactEmail: "",           // shown under the sign-in button for people without a Google account. Empty = placeholder.
+    communities: ["hadar", "dn", "kesher"],   // allowed ?src= values; placeholder list until Daniel confirms
+    sdkVersion: "13.3.0"        // Firebase web SDK, loaded from gstatic.com on the sign-up pages only
   }
 };
