@@ -9,6 +9,14 @@
 # For trying the job safely, tick "staging": it then uses FIREBASE_SERVICE_ACCOUNT_STAGING instead.
 # Optional variable: SEPTIMUS_PAUSE=1 stops hand-outs without a deploy.
 #
+# Email (scripts/septimus_email.py, sent through Resend). Nothing is sent until ALL of these exist:
+#   secret   RESEND_API_KEY            the Resend key
+#   variable SEPTIMUS_EMAIL_FROM       e.g. Stories of the Talmud <talmud-stories@projects.simonbrief.com>
+#   variable SEPTIMUS_SITE_URL         the live site's address (SEPTIMUS_SITE_URL_STAGING for staging runs)
+#   secret   SEPTIMUS_COUNTS_TO        Simon's address for the weekly counts email (a secret so it never shows in a log)
+# A scheduled run sends email. A run started by hand sends only when "send_email" is ticked. A staging run can
+# only ever email the SEPTIMUS_COUNTS_TO address: the staging test accounts have made-up addresses.
+#
 # Two things to know:
 #  - GitHub switches scheduled workflows OFF after 60 days without activity in the repository (a commit, a merged
 #    pull request). So check now and then that the daily run is still happening (Actions tab); a week with no run
@@ -35,6 +43,10 @@ on:
         description: "Run against the staging project (uses the secret FIREBASE_SERVICE_ACCOUNT_STAGING)"
         type: boolean
         default: false
+      send_email:
+        description: "Send the emails too (on staging: only to the counts address)"
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -56,6 +68,12 @@ jobs:
           FIREBASE_SERVICE_ACCOUNT: ${{ inputs.staging && secrets.FIREBASE_SERVICE_ACCOUNT_STAGING || secrets.FIREBASE_SERVICE_ACCOUNT }}
           SEPTIMUS_PAUSE: ${{ vars.SEPTIMUS_PAUSE }}
           DRY_RUN: ${{ inputs.dry_run }}
+          RESEND_API_KEY: ${{ (github.event_name == 'schedule' || inputs.send_email) && secrets.RESEND_API_KEY || '' }}
+          SEPTIMUS_EMAIL_FROM: ${{ vars.SEPTIMUS_EMAIL_FROM }}
+          SEPTIMUS_SITE_URL: ${{ inputs.staging && vars.SEPTIMUS_SITE_URL_STAGING || vars.SEPTIMUS_SITE_URL }}
+          SEPTIMUS_COUNTS_TO: ${{ secrets.SEPTIMUS_COUNTS_TO }}
+          # "nobody" matches no address: a staging run with no counts address set emails no one at all.
+          SEPTIMUS_EMAIL_ONLY_TO: ${{ inputs.staging && (secrets.SEPTIMUS_COUNTS_TO || 'nobody') || vars.SEPTIMUS_EMAIL_ONLY_TO }}
         run: |
           if [ "$DRY_RUN" = "true" ]; then
             python scripts/septimus_weekly.py --dry-run
