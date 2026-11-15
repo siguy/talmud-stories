@@ -3,7 +3,7 @@
 
 What one run does (plan section 6), in this order:
   1. every run   handle "delete my data" requests (one person failing never stops the job)
-  2. hand-out    once per campaign week, on the first day the script runs in that week (so a missed Monday is made
+  2. hand-out    once per campaign week, on the first day the script runs in that week (so a missed Sunday is made
                  up the next day): release old stories FOR REAL (a story marked learned a second ago is not
                  given away), pause the quiet, deal new stories, record runs/<week>.
   3. other days  still release the stories of people who stopped
@@ -18,7 +18,7 @@ The repository is public, so Action logs are public: nothing here logs an id, an
 Usage:
   python3 scripts/septimus_weekly.py              # the real run (needs FIREBASE_SERVICE_ACCOUNT)
   python3 scripts/septimus_weekly.py --dry-run    # read, compute, print; write nothing
-  python3 scripts/septimus_weekly.py --date 2026-12-08
+  python3 scripts/septimus_weekly.py --date 2026-12-07
 Environment: FIREBASE_SERVICE_ACCOUNT (the JSON key, as text), SEPTIMUS_PAUSE=1 (no hand-out),
 SEPTIMUS_DEBUG=1 (print full error traces; only for local runs, they can contain ids),
 FIRESTORE_EMULATOR_HOST / FIREBASE_AUTH_EMULATOR_HOST (point at the local emulator instead).
@@ -85,8 +85,8 @@ def parse_config(text):
     launch = grab(r'\blaunchDate\s*:\s*"([^"]*)"', "launchDate")
     project = re.search(r'\bprojectId\s*:\s*"([^"]+)"', text)
     launch_date = date.fromisoformat(launch) if launch else None
-    if launch_date is not None and launch_date.weekday() != 0:
-        raise ValueError(f"launchDate must be a Monday (got {launch}, a {launch_date:%A})")
+    if launch_date is not None and launch_date.weekday() != 6:
+        raise ValueError(f"launchDate must be a Sunday (got {launch}, a {launch_date:%A})")
     return Config(
         launch_date=launch_date,
         yahrzeit=date.fromisoformat(grab(r'\byahrzeit\s*:\s*"([^"]+)"', "yahrzeit")),

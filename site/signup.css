@@ -19,10 +19,7 @@
 .su-g{display:flex}
 @media (prefers-color-scheme:dark){.su-btn{color:#121316}.su-btn-outline{color:var(--accent)}}
 .su-btn:focus-visible,.su-google:focus-visible,.su-choices input:focus-visible+label{outline:3px solid var(--gold);outline-offset:2px}
-.su-actions{display:grid;gap:.6rem;margin:1.25rem 0}
-.su-actions .su-btn{margin:0}
 .su-signedin{background:var(--chip);border-radius:8px;padding:.75rem .9rem;margin:1.25rem 0 .5rem}
-.su-signedin a{display:inline-block;min-height:44px;line-height:44px;margin-left:.25rem}
 .su-error{color:var(--ink);background:var(--chip);border-left:4px solid var(--gold);border-radius:6px;padding:.5rem .7rem;font-size:.9rem;margin:.5rem 0}
 .su-links{text-align:center;font-size:.85rem;margin:1.25rem 0}
 .su-links a,.su-center a{display:inline-block;padding:.7rem .2rem}   /* tall enough to tap */
@@ -67,3 +64,12 @@ p.su-progress-title{margin:.2rem 0}
 .su-rowmsg:empty{display:none}
 @media (prefers-color-scheme:dark){.su-myrow.read .check{color:#121316}}   /* dark tick on the light green fill, like the other dark overrides here */
 .su-staging{margin-left:.6rem;padding:.1rem .5rem;border-radius:999px;background:var(--gold);color:#222;font:700 .7rem "Helvetica Neue",Helvetica,Arial,sans-serif;vertical-align:middle}
+
+/* The three links under the title: one quiet row, lined up with <main>. */
+.su-nav{display:flex;gap:1.25rem;padding:0 max(1rem,calc((100% - 42rem)/2 + 1rem));background:var(--card);border-bottom:1px solid var(--line)}
+.su-nav a{display:flex;align-items:center;min-height:44px;color:var(--accent);text-decoration:none;font:500 .9rem "Helvetica Neue",Helvetica,Arial,sans-serif;border-bottom:2px solid transparent;box-sizing:border-box}
+.su-nav a[aria-current=page]{font-weight:700;border-bottom-color:var(--gold)}
+/* "Mark as learned" on a story that is yours. The reader's own button is hidden; .btn's display:grid would beat the hidden attribute. */
+#read-btn[hidden]{display:none}
+.su-mine{margin:1.25rem 0}
+.su-mine .btn{width:100%}

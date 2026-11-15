@@ -32,7 +32,7 @@ FS_HOST, AUTH_HOST = "localhost:8080", "localhost:9099"
 EMU_ENV = {"FIRESTORE_EMULATOR_HOST": FS_HOST, "FIREBASE_AUTH_EMULATOR_HOST": AUTH_HOST,
            "GOOGLE_CLOUD_PROJECT": PROJECT}
 
-WEEK1, WEEK2, WEEK3, WEEK4 = date(2026, 12, 7), date(2026, 12, 14), date(2026, 12, 21), date(2026, 12, 28)
+WEEK1, WEEK2, WEEK3, WEEK4 = date(2026, 12, 6), date(2026, 12, 13), date(2026, 12, 20), date(2026, 12, 27)
 
 
 def _skip(reason):
@@ -324,7 +324,7 @@ def test_stopping_releases_open_rows_and_hands_out_nothing_more(store, order):
     seed3(store)
     go(store, WEEK1, order)
     store.db.collection("users").document("pc").update({"minutesPerWeek": 0})
-    counts = go(store, date(2026, 12, 9), order)                         # not a hand-out day (already handed out)
+    counts = go(store, date(2026, 12, 8), order)                         # not a hand-out day (already handed out)
     assert counts["released"] >= 1
     rows = rows_of(store)
     assert all(r["releasedAt"] is not None for r in rows.values() if r["uid"] == "pc")
@@ -345,7 +345,7 @@ def test_reads_per_quiet_run_are_users_plus_summary_plus_current_round_and_open_
     go(store, WEEK1, order)
     all_rows = rows_of(store)
     before = store.reads
-    counts = go(store, date(2026, 12, 9), order)                         # a quiet day in an already-finished week
+    counts = go(store, date(2026, 12, 8), order)                         # a quiet day in an already-finished week
     # users + summary + (round >= 1 rows, and then the open rows AGAIN: the two queries overlap) + the run doc
     open_rows = [r for r in all_rows.values() if not r["doneAt"] and not r["releasedAt"]]
     assert store.reads - before == 3 + 1 + len(all_rows) + len(open_rows) + 1
@@ -393,10 +393,10 @@ def test_write_rows_is_one_batch_per_person_and_never_overwrites(store, order):
 
 def test_previous_finished_at_walks_back_a_few_weeks_only(store):
     db = store.db.collection("runs")
-    db.document("1").set({"finishedAt": datetime(2026, 12, 7, tzinfo=timezone.utc)})
-    db.document("3").set({"startedAt": datetime(2026, 12, 21, tzinfo=timezone.utc)})       # started, never finished
-    db.document("9").set({"finishedAt": datetime(2027, 2, 8, tzinfo=timezone.utc)})
-    assert store.previous_finished_at(4) == datetime(2026, 12, 7, tzinfo=timezone.utc)      # skips the unfinished week 3
+    db.document("1").set({"finishedAt": datetime(2026, 12, 6, tzinfo=timezone.utc)})
+    db.document("3").set({"startedAt": datetime(2026, 12, 20, tzinfo=timezone.utc)})       # started, never finished
+    db.document("9").set({"finishedAt": datetime(2027, 2, 7, tzinfo=timezone.utc)})
+    assert store.previous_finished_at(4) == datetime(2026, 12, 6, tzinfo=timezone.utc)      # skips the unfinished week 3
     assert store.previous_finished_at(7) is None                                            # week 1 is too far back
     store.reads = 0
     store.previous_finished_at(7)
@@ -427,7 +427,7 @@ def _cli_env(**extra):
 def _temp_config(tmp_path):
     p = tmp_path / "config.js"
     p.write_text('window.SEPTIMUS_CONFIG = {\n  firebase: { projectId: "%s" },\n  signup: {\n'
-                 '    wpm: 75,\n    launchDate: "2026-12-07",\n    yahrzeit: "2027-09-10",\n    maxMinutes: 120\n  }\n};\n'
+                 '    wpm: 75,\n    launchDate: "2026-12-06",\n    yahrzeit: "2027-09-10",\n    maxMinutes: 120\n  }\n};\n'
                  % PROJECT)
     return p
 
@@ -443,7 +443,7 @@ def test_dry_run_from_the_command_line_writes_nothing(store, order, tmp_path):
     seed_person(store, "pd", 30, 4, deleteRequested=True)
     before = _everything(store)
     out = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--dry-run", "--date", "2026-12-08",
+        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--dry-run", "--date", "2026-12-07",
          "--config", str(_temp_config(tmp_path)), "--data-dir", str(FIX)],
         capture_output=True, text=True, timeout=120, env=_cli_env(**EMU_ENV))
     assert out.returncode == 0, out.stdout + out.stderr
@@ -456,7 +456,7 @@ def test_dry_run_from_the_command_line_writes_nothing(store, order, tmp_path):
 def test_real_run_from_the_command_line_does_the_job(store, order, tmp_path):
     seed3(store)
     out = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--date", "2026-12-08",
+        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--date", "2026-12-07",
          "--config", str(_temp_config(tmp_path)), "--data-dir", str(FIX)],
         capture_output=True, text=True, timeout=120, env=_cli_env(**EMU_ENV))
     assert out.returncode == 0, out.stdout + out.stderr
@@ -465,7 +465,7 @@ def test_real_run_from_the_command_line_does_the_job(store, order, tmp_path):
 
 def test_without_the_secret_or_an_emulator_it_fails_clearly_and_early(tmp_path):
     out = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--dry-run", "--date", "2026-12-08",
+        [sys.executable, str(ROOT / "scripts" / "septimus_weekly.py"), "--dry-run", "--date", "2026-12-07",
          "--config", str(_temp_config(tmp_path)), "--data-dir", str(FIX)],
         capture_output=True, text=True, timeout=60, env=_cli_env())
     assert out.returncode != 0

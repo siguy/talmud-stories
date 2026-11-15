@@ -16,7 +16,7 @@ window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://
   // signup: settings for the sign-up pages (signup.js). Empty values show a [placeholder] on the page.
   signup: {
     wpm: 75,                    // reading pace for the weekly hand-out (plan section 4). Not readingWpm.
-    launchDate: "",             // ISO date of the Monday everyone starts, e.g. "2026-12-07". Empty = not set yet (asked Daniel).
+    launchDate: "",             // ISO date of the Sunday everyone starts, e.g. "2026-12-06". Empty = not set yet (asked Daniel).
     yahrzeit: "2027-09-10",     // 8 Elul 5787; to confirm with Daniel
     yahrzeitLabel: "8 Elul",
     maxMinutes: 120,

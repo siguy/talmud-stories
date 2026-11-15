@@ -18,7 +18,7 @@ Plain-English terms used below:
   - "row" (assignment): one person's copy of one story. Fields: id, uid, storyId, round, week, doneAt, releasedAt.
   - "open" row: handed out, not marked learned, not released.
   - "covered": somebody holds an unreleased row for that story in that round, so nobody else is given it.
-  - "week": campaign week. Week 1 is the seven days starting on the launch Monday.
+  - "week": campaign week. Week 1 is the seven days starting on the launch Sunday.
   - "lapsed": a row nobody marked learned in three weeks, so it went back in the deck.
   - everLearned / lapses: two fields on the person's record that only the script writes. everLearned = they have
     marked at least one story learned, ever. lapses = the weeks (assignment weeks) of rows that lapsed on them.

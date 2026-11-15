@@ -13,14 +13,13 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
       paused / resume, "You're in", "How the stories were chosen", "Your data", the in-app-browser notice.
 - [ ] Confirm the seven builder's choices in [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md).
 - [ ] Choose the email service and the sending domain (step e cannot start without them).
-- [ ] Sample stories / a visual on the landing page: pick a direction from mockups (section 4).
 - [ ] The contact address shown as "No Google account? Email …".
 - [ ] The final site address, if it will not be `talmud-stories.vercel.app`.
 
 ## 2. Answers from Daniel (asked 2026-11-13, no reply yet)
 
 - [ ] What "finishing" means (built on rounds of Shas meanwhile).
-- [ ] Launch date (must be a Monday).
+- [ ] Launch date (must be a Sunday: stories and the email go out Sunday morning).
 - [ ] Yahrzeit date: Friday 10 September 2027?
 - [ ] Weekly email: whose name it comes from, and any wording.
 - [ ] Reading pace feels right (75 words a minute).
@@ -30,13 +29,11 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 ## 3. Waiting on the Jeff-responses branch to merge
 
 - [ ] Step s: check the story-data fields; add list version, publish date and Shas order to the data.
-- [ ] "Mark as learned" on the story page, "Back to my stories", "Next story".
 - [ ] Small clean-ups marked `TODO(signup)` in `site/signup.js` (two links, one version number).
 - [ ] Resolve the one expected merge conflict (the plan document).
 
 ## 4. Still to build
 
-- [ ] **Landing page: sample stories or a visual.** Mockups first, then build.
 - [ ] **Step e, the weekly email:** "Your stories this week", one-click unsubscribe, a link that marks a story
       learned without signing in, the "still with us?" email for paused people.
 - [ ] **The weekly counts email to Simon** (the alarm if a week is missed).
@@ -49,6 +46,8 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 
 - [x] One real Google sign-in, Join, and a record written.
 - [x] One real run of the weekly script; a second run changes nothing.
+- [ ] Simon: walk the three flow changes on staging (links under the title; front page is My stories when signed
+      in; "Mark as learned" on a story that is yours).
 - [ ] **A real iPhone and a real Android phone:** sign in, Join, mark a story learned.
 - [ ] **A link opened inside WhatsApp, Gmail and Instagram:** the "open in your browser" notice appears and
       "Copy link" works.
@@ -78,8 +77,14 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 - [ ] Set the repository variable `SEPTIMUS_WEEKLY_ENABLED` to `true`. Run the workflow once by hand as a dry run.
 - [ ] Send the community links.
 
+## Parked on purpose (Simon, 2026-11-15: keep the site as simple as possible)
+
+- Sample stories or a visual on the front page.
+- "Give me another story" for people who want more (agreed; after launch).
+- Marking your stories inside the tractate lists; "Next story" on the story page.
+
 ## 7. After launch
 
-- [ ] Each Monday: the counts email arrived and the numbers look sane.
+- [ ] Each Sunday: the counts email arrived and the numbers look sane.
 - [ ] GitHub switches a scheduled workflow off after 60 days with no activity in the repository: check it is still on.
 - [ ] Watch sign-ups against the free database limit; decide about the paid plan if they near 500 people.

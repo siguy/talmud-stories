@@ -157,6 +157,19 @@ Options for the coverage question, so the answer can be one word:
 - **Per-person path:** each person reads their own sequence from wherever they start. Simplest to explain, but the
   group never "finishes" anything together.
 
+### Decisions after Simon tried staging (2026-11-15)
+
+- **As simple as possible; no added machinery.** Staging goes live with no edits: the same files run in both
+  places, and the site picks its database from its own address.
+- **The week starts on Sunday.** Stories are handed out, and the weekly email goes out, on **Sunday morning**
+  (US Eastern). The launch date must be a Sunday. Everything in this plan that said Monday now means Sunday.
+- **Three flow changes, built:** three links under the title on every page (My stories · All stories · Progress;
+  "Join" for people who have not joined); signed in, the front page is My stories (the "You're in" screen is gone);
+  "Mark as learned" on the story page when the story is yours.
+- **Parked:** sample stories on the front page; **"Give me another story"** (agreed, after launch); marking your
+  stories inside the tractate lists; "Next story" on the story page.
+- A story read without being assigned does not count toward the group total.
+
 ## 5. Data model (Firestore)
 
 Revised 2026-11-14 after the plan review ([`signup-plan-review-2026-11-14.md`](signup-plan-review-2026-11-14.md)):
@@ -188,7 +201,7 @@ progress/summary               { learned, byTractate: {t: n}, round, roundsCompl
 ## 6. The weekly hand-out (a Python script on a schedule)
 
 **`scripts/septimus_weekly.py`**, run by a scheduled GitHub Action and by hand when needed. Daily it refreshes
-`progress/summary` and handles delete requests; on **Mondays (US Eastern)** it also hands out stories and sends the
+`progress/summary` and handles delete requests; on **Sundays (US Eastern, early morning)** it also hands out stories and sends the
 email. Not a Cloud Function: the browser never needs a server, and this keeps the project on the free plan (§8).
 
 The hand-out is **one pure function**, tested with plain pytest on a fixture copy of the story data:
@@ -233,7 +246,7 @@ story nobody reads is visible instead of silently blocking a siyum. Group "learn
 one done mark in the current round.
 
 **Safe to re-run.** The script first creates `runs/<week>`; if it already exists and finished, it stops. Row ids are
-fixed, so a run that died halfway can be run again. A person who joins mid-week waits for the next Monday run.
+fixed, so a run that died halfway can be run again. A person who joins mid-week waits for the next Sunday run.
 
 **Each run emails Simon its counts** (new sign-ups, total minutes, stories handed out, released, people paused), so
 anything odd, including a wave of fake sign-ups or a missed week, is visible within a week. A `PAUSE` setting stops
@@ -314,9 +327,9 @@ no card so it cannot charge; the site needs no server of its own; Simon already 
 free projects pause after a week without traffic; Vercel functions plus a hosted database is three services to keep
 alive.
 
-**(a) Free-plan limits.** Spark allows 50,000 reads and 20,000 writes a day. A Monday run for a few hundred people is
+**(a) Free-plan limits.** Spark allows 50,000 reads and 20,000 writes a day. A Sunday run for a few hundred people is
 a few thousand writes; reading every assignment row is about 50,000 reads only at the very end of the campaign, so
-the daily refresh reads only what changed since the last run and recounts fully on Mondays. Public pages read
+the daily refresh reads only what changed since the last run and recounts fully on Sundays. Public pages read
 `progress/summary` only. Exceeding a quota means reads fail until midnight Pacific; it never costs money.
 
 **(b) Hosting: Vercel** (already live; the feedback endpoint already allows its origin). Sign-in uses
@@ -348,8 +361,8 @@ standard one-click header and a confirm page (mail scanners open links). The scr
 hard-bounced addresses, and writes `sent/<week>_<uid>` before sending.
 
 **(e) The schedule.** GitHub's scheduler can start late and occasionally skips a run. The script therefore works out
-which campaign week it is from the date, not from how many times it has run, and its daily run does the Monday work
-if Monday's was missed. The count email to Simon is the alarm.
+which campaign week it is from the date, not from how many times it has run, and its daily run does the Sunday work
+if Sunday's was missed. The count email to Simon is the alarm.
 
 **(f) Exports.** `firebase auth:export` (names and emails) and `scripts/export_signups.py` (rows and progress), run
 on Simon's machine. Exports go in a restricted Google Sheet, not email attachments, and are deleted afterwards.
@@ -372,7 +385,7 @@ on Simon's machine. Exports go in a restricted Google Sheet, not email attachmen
 
 **b checklist** (from the review):
 - The `users` record is written at "Join", not at sign-in; abandoning the question shows it again next visit.
-- After "Join": a "You're in" screen with the minutes, the start date ("Your first stories arrive Monday <date>" once
+- After "Join": a "You're in" screen with the minutes, the start date ("Your first stories arrive Sunday <date>" once
   launched), Change, and Browse the stories.
 - A returning signed-in person sees "Signed in, 10 min a week" and a link, not the sign-in button.
 - The landing page takes `/`; the tractate list moves to `#/browse`; existing `#/t/` and `#/s/` links keep working.
@@ -403,7 +416,7 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 | Heavy oversubscription makes "finish Shas" meaningless | Rounds: each completed pass is a siyum (§6); Daniel asked 2026-11-13 |
 | People commit and vanish | Released at W+3; paused after two rounds of releases with nothing learned (§6) |
 | A story nobody reads blocks a siyum | "K stories still open in round N" on the progress page |
-| GitHub's scheduler skips Monday | The daily run does Monday's work if it was missed; the counts email is the alarm (§8e) |
+| GitHub's scheduler skips Sunday | The daily run does Sunday's work if it was missed; the counts email is the alarm (§8e) |
 | The daily run uses too many free reads | About 21,000 of 50,000 a day with 200 very committed people (c review); revisit near 500 people |
 | Someone games the hand-out or the email | Rules bound every field; email comes from the sign-in system; the script caps minutes (§6) |
 | Emails land in spam | Dedicated sending subdomain with SPF/DKIM/DMARC, low volume, plain content, one-click unsubscribe |

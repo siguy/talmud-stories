@@ -1,4 +1,4 @@
-// Sign-up pages: landing, minutes question, "You're in", and three small text pages.
+// Sign-up pages: landing, minutes question, My stories, Progress, and three small text pages; the three-link nav under the title; and the story-page button.
 // app.js calls SeptimusSignup.route() first on every route; we return true when the hash is one of ours,
 // false otherwise (then app.js draws the tractate list / reader as before).
 // Everything from the person or from Google goes on the page as text nodes (el() below), never as HTML.
@@ -15,6 +15,14 @@
   function cfg() { return (window.SEPTIMUS_CONFIG || {}).signup || {}; }
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function save(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
+
+  // "Has joined" is remembered per device so reader pages can show the right first link, and the front page can skip the
+  // join pitch, without loading Firebase. The sign-in listener below keeps it true.
+  var JOINED = "septimus-joined", here = "", navLinks = [];
+  function setJoined(on) {
+    if (on) save(JOINED, true); else { try { localStorage.removeItem(JOINED); } catch (e) {} }
+    navUpdate();
+  }
 
   // ---- DOM helper: el("p", {class: "x", text: "hi"}, [child, "text"]) -----------------------
   function el(tag, props, kids) {
@@ -64,12 +72,12 @@
   function launchText() { var d = parseISO(cfg().launchDate); return d ? fmtDate(d) : "[launch date]"; }
   function hasLaunched() { var d = parseISO(cfg().launchDate); return !!d && today() >= d; }
   function afterYahrzeit() { var d = parseISO(cfg().yahrzeit); return !!d && today() > d; }
-  function nextMonday() { var d = today(); d.setDate(d.getDate() + (((1 - d.getDay() + 7) % 7) || 7)); return d; }
-  // The last Monday hand-out is over: the next Monday falls after the yahrzeit.
-  function ended() { var y = parseISO(cfg().yahrzeit); return hasLaunched() && !!y && nextMonday() > y; }
+  function nextSunday() { var d = today(); d.setDate(d.getDate() + ((7 - d.getDay()) % 7 || 7)); return d; }
+  // The last Sunday hand-out is over: the next Sunday falls after the yahrzeit.
+  function ended() { var y = parseISO(cfg().yahrzeit); return hasLaunched() && !!y && nextSunday() > y; }
   function startLine() {
     if (ended()) return "The weekly stories have ended.";
-    return hasLaunched() ? "Your first stories arrive Monday " + fmtDate(nextMonday()) + "."
+    return hasLaunched() ? "Your first stories arrive Sunday " + fmtDate(nextSunday()) + "."
       : "Everyone starts together on " + launchText() + ". Your first stories arrive by email that week.";
   }
   // Campaign weeks, counted the way campaign_week() in scripts/septimus_assign.py counts them:
@@ -178,6 +186,7 @@
       a.onAuthStateChanged(auth, function (user) {
         ++seq;   // an answer still on its way for the previous person is now stale
         S.user = user; S.record = null; S.recordFailed = false; S.settled = !user;
+        if (!user) setJoined(false);
         notify();
         if (user) loadRecord(user);
       });
@@ -191,11 +200,15 @@
   function loadRecord(user) {
     var mine = ++seq, f = S.sdk.f;
     S.record = null; S.recordFailed = false; S.settled = false;
-    return f.getDoc(f.doc(S.sdk.db, "users", user.uid)).then(function (snap) { if (mine === seq) S.record = snap.exists() ? snap.data() : null; })
+    return f.getDoc(f.doc(S.sdk.db, "users", user.uid)).then(function (snap) { if (mine === seq) { S.record = snap.exists() ? snap.data() : null; if (S.record) setJoined(true); } })
       .catch(function () { if (mine === seq) S.recordFailed = true; })
       .then(function () { if (mine === seq) { S.settled = true; notify(); } });
   }
   function notify() { if (S.listener) S.listener(); }
+  function signOut() {
+    var go = function () { location.hash = "#/"; };
+    return S.sdk.a.signOut(S.sdk.auth).then(go, go);
+  }
 
   // The public group counts (progress/summary). Resolves to the data, or null when there is none or it cannot be read:
   // callers draw zeros and carry on, never an error.
@@ -285,10 +298,6 @@
         if (S.user && S.record && S.record.deleteRequested) {
           // Deletion is waiting for the weekly script: nothing else on offer until it is cancelled (on Your data).
           kids.push(el("p", { "class": "su-signedin", text: "Your data is being deleted." }), el("p", { "class": "su-center su-small" }, [link("Your data", "#/your-data")]));
-        } else if (S.user && S.record) {
-          var m = S.record.minutesPerWeek;
-          kids.push(el("p", { "class": "su-signedin" }, [m === 0 ? "Signed in. Your stories are stopped." : "Signed in, " + m + " min a week", m === 0 ? null : " ", link("Change", "#/join")]));
-          kids.push(link("My stories", "#/my", "su-btn"));
         } else if (S.user && S.recordFailed) {
           // Signed in but the record could not be read: never offer Google sign-in, and never the Join form.
           kids.push(recordFailedNode(drawArea));
@@ -317,14 +326,8 @@
         area.textContent = "";
         kids.forEach(function (k) { area.appendChild(k); });
       }
-      S.listener = function () {
-        if (t !== token) return;
-        if (S.user && S.settled && !S.record && !S.recordFailed) { redirect("#/join"); return; }   // signed in but never answered the question
-        drawArea();
-      };
-      sdkP && sdkP.catch(function () { errorLine = "Could not sign in. Check your connection and try again."; drawArea(); });
-
-      show([
+      // Someone who joined on this device waits for sign-in to settle instead of seeing the pitch flash by.
+      var held = load(JOINED, false) && !S.settled, page = [
         el("h1", { text: "Learn every story in the Talmud, together" }),
         el("p", { "class": "su-dedication", text: "In memory of Joe Septimus." }),
         el("p", { "class": "su-muted", text: afterYahrzeit() ? "Thank you to everyone who learned."
@@ -333,14 +336,23 @@
         area,
         dataLink,
         el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("Browse the stories", "#/browse"), " · ", link("How the stories were chosen", "#/how")])
-      ]);
+      ];
+      function reveal() { if (held) { held = false; show(page); } }
+      S.listener = function () {
+        if (t !== token) return;
+        if (S.user && S.settled && S.record && !S.record.deleteRequested) { redirect("#/my"); return; }
+        if (S.user && S.settled && !S.record && !S.recordFailed) { redirect("#/join"); return; }   // signed in but never answered the question
+        if (S.settled) reveal();
+        if (!held) drawArea();
+      };
+      sdkP && sdkP.catch(function () { errorLine = "Could not sign in. Check your connection and try again."; reveal(); drawArea(); });
+      show(held ? [el("p", { "class": "su-muted", text: "Loading…" })] : page);
       S.listener();
     });
   }
 
   // ---- minutes question -----------------------------------------------------------------------
   var PRESETS = [5, 10, 15, 30];
-  var savedChange = false;   // set when a person who already had a sign-up saves new minutes; "You're in" reads it once
   function join(t) {
     if (afterYahrzeit()) { redirect("#/"); return; }
     show([el("p", { "class": "su-muted", text: "Loading…" })]);
@@ -403,47 +415,25 @@
         : f.setDoc(ref, { createdAt: f.serverTimestamp(), minutesPerWeek: m, src: savedSrc(), deleteRequested: false });
       watchSlow(write, t, say).then(function () {
         S.record = Object.assign({}, S.record || {}, { minutesPerWeek: m });
-        if (t === token) { savedChange = has; location.hash = "#/joined"; }   // only if they are still on this screen
+        setJoined(true);
+        if (t === token) location.hash = "#/my";   // only if they are still on this screen
       }).catch(function () {
         say(SAVE_ERR);
         joinBtn.disabled = false; joinBtn.textContent = has ? "Save" : "Join";
       });
     };
     var switchBtn = el("button", { type: "button", "class": "su-linkbtn", text: "Not you? Switch account" });
-    switchBtn.onclick = function () { S.sdk.a.signOut(S.sdk.auth).then(function () { location.hash = "#/"; }, function () { location.hash = "#/"; }); };
+    switchBtn.onclick = signOut;
 
     show([
       el("p", { "class": "su-muted su-small" }, ["Signed in as " + (S.user.email || ""), " ", switchBtn]),
       el("h1", { text: "How many minutes a week will you learn?" }),
       el("p", { "class": "su-muted", text: "From " + launchText() + " until " + (cfg().yahrzeitLabel || "8 Elul") + ". You can change this any time." }),
       group, estimate, joinBtn, errLine,
+      has ? el("p", { "class": "su-muted su-small su-center", text: "A change applies from next Sunday." }) : null,
       el("p", { "class": "su-muted su-small su-center", text: startLine() })
     ]);
     refresh(false);
-  }
-
-  // ---- you're in ------------------------------------------------------------------------------
-  function joined(t) {
-    if (afterYahrzeit()) { redirect("#/"); return; }
-    show([el("p", { "class": "su-muted", text: "Loading…" })]);
-    loadSdk().catch(function () { sdkFailed(t); });
-    var drawn = false;
-    S.listener = function () {
-      if (t !== token || !S.settled || drawn) return;
-      if (!S.user || !S.record || S.record.deleteRequested) { redirect("#/"); return; }
-      drawn = true;
-      var m = S.record.minutesPerWeek, changed = savedChange;
-      savedChange = false;
-      show([
-        el("h1", { text: "You're in" }),
-        el("p", { text: m + (m === 1 ? " minute" : " minutes") + " a week." }),
-        changed && hasLaunched() && !ended() ? el("p", { text: "The change applies from Monday " + fmtDate(nextMonday()) + "." }) : null,
-        el("p", { "class": "su-muted", text: startLine() }),
-        el("div", { "class": "su-actions" }, [link("My stories", "#/my", "su-btn"), link("Browse the stories", "#/browse", "su-btn su-btn-outline")]),
-        el("p", { "class": "su-center su-small" }, [link("Change", "#/join")])
-      ]);
-    };
-    S.listener();
   }
 
   // ---- My stories -----------------------------------------------------------------------------
@@ -552,7 +542,7 @@
             S.record = Object.assign({}, S.record, { pausedAt: null });
             if (t !== token) return;
             render();
-            var said = ended() ? "Resumed." : hasLaunched() ? "Resumed. New stories arrive Monday " + fmtDate(nextMonday()) + "."
+            var said = ended() ? "Resumed." : hasLaunched() ? "Resumed. New stories arrive Sunday " + fmtDate(nextSunday()) + "."
               : "Resumed. Your first stories arrive the week of " + launchText() + ".";
             setTimeout(function () { if (t === token) topStatus.textContent = said; }, 100);   // after the redraw, so it is announced
           }).catch(function () { rmsg.textContent = SAVE_ERR; rbusy = false; resume.textContent = "Resume"; resume.removeAttribute("aria-disabled"); });
@@ -562,7 +552,7 @@
       if (m === 0) nodes.push(el("p", { "class": "notice", text: "Your stories are stopped." }), link("Start again", "#/join", "su-btn"));
       if (!shown.length && m > 0 && !paused) {
         nodes.push(el("p", { text: wk != null && last != null && wk > last ? "The weekly stories have ended."
-          : !hasLaunched() ? "Your first stories arrive the week of " + launchText() + "." : "Nothing open right now. New stories arrive each Monday." }));
+          : !hasLaunched() ? "Your first stories arrive the week of " + launchText() + "." : "Nothing open right now. New stories arrive each Sunday." }));
       }
       [["This week", now], ["Still open from earlier weeks", earlier]].forEach(function (sec) {
         if (!sec[1].length) return;
@@ -574,7 +564,9 @@
       var card = progressCard(t, Math.round(st.stories / 100) * 100, false);
       card.appendChild(link("See overall progress", "#/progress", "su-btn su-btn-outline"));
       nodes.push(card);
+      // Two short rows, so no separator dot is left dangling at phone width.
       nodes.push(el("p", { "class": "su-links" }, [link("Change my minutes", "#/join"), " · ", link("Your data", "#/your-data")]));
+      nodes.push(el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("How the stories were chosen", "#/how")]));
       show(nodes);
     }
     render();
@@ -641,6 +633,8 @@
   }
   function yourData(t) {
     var holder = el("div"), status = el("p", { "class": "su-rowmsg", role: "status", tabindex: "-1" });   // status line: exists from the start, text goes in later
+    var out = el("button", { type: "button", "class": "su-linkbtn", text: "Sign out", hidden: true });
+    out.onclick = signOut;
     show([
       el("h1", { text: "Your data" }),
       el("ul", { "class": "su-list" }, [
@@ -651,7 +645,7 @@
         el("li", { text: "Everyone's personal data is deleted six months after the yahrzeit." }),
         el("li", { text: "You must be 13 or older to join." })
       ]),
-      holder, status,
+      holder, status, out,
       back()
     ]);
     // Signed-in people with a sign-up get the stop / delete controls; everyone else sees the page as above.
@@ -660,7 +654,9 @@
     // After a redraw the button that had focus is gone: put focus on the first button of the new state, or on the status line.
     function focusFirst() { var b = holder.querySelector("button"); (b || status).focus(); }
     function draw(refocus) {
-      if (t !== token || deleted) return;
+      if (t !== token) return;
+      out.hidden = !S.user;
+      if (deleted) return;
       holder.textContent = "";
       if (S.settled && S.user && S.recordFailed) { holder.appendChild(recordFailedNode(draw)); return; }
       if (!S.settled || !S.user || !S.record) return;
@@ -726,12 +722,28 @@
     var title = document.querySelector(".bar-title");
     if ((window.SEPTIMUS_CONFIG || {}).staging && title) title.appendChild(el("span", { "class": "su-staging", text: "Staging" }));
   }
-  var SCREENS = { "": landing, join: join, joined: joined, how: how, "your-data": yourData, about: about, my: myStories, progress: progress };
+  // The three links under the title, on every page. The first is "Join" until this device has joined.
+  var NAV_AT = { browse: 1, t: 1, s: 1, progress: 2 };   // which link marks the page (route name -> link number)
+  function navInit() {
+    var nav = el("nav", { "class": "su-nav", "aria-label": "Main" });
+    for (var i = 0; i < 3; i++) { navLinks.push(el("a", { href: ["#/", "#/browse", "#/progress"][i], text: ["Join", "All stories", "Progress"][i] })); nav.appendChild(navLinks[i]); }
+    document.getElementById("settings").after(nav);   // before <main>, so index.html needs no edit
+  }
+  function navUpdate() {
+    if (!navLinks.length) return;
+    var j = load(JOINED, false), c = NAV_AT.hasOwnProperty(here) ? NAV_AT[here] : (j ? here === "my" : here === "" || here === "join") ? 0 : -1;
+    navLinks[0].textContent = j ? "My stories" : "Join";
+    navLinks[0].setAttribute("href", j ? "#/my" : "#/");
+    navLinks.forEach(function (a, i) { if (i === c) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+  }
+
+  var SCREENS = { "": landing, join: join, how: how, "your-data": yourData, about: about, my: myStories, progress: progress };
   function route(parts) {
-    if (!srcDone) { srcDone = true; rememberSrc(); stagingLabel(); }
+    if (!srcDone) { srcDone = true; rememberSrc(); stagingLabel(); navInit(); }
     var t = ++token;
     S.listener = null;
-    var name = parts[1] || "";
+    var name = here = parts[1] || "";
+    navUpdate();
     if (!Object.prototype.hasOwnProperty.call(SCREENS, name)) return false;
     SCREENS[name](t);
     return true;
@@ -744,8 +756,40 @@
     if (a && app.contains(a) && !a.classList.contains("su-keep")) { e.preventDefault(); location.hash = "#/browse"; }
   });
 
-  // TODO(signup d, after the Jeff-responses branch merges): story page gets one "Mark as learned" button for a story that is yours, plus "Back to my stories" and "Next story" (plan §9 row d);
-  // also keep the reader's per-device tick (`septimus-read`) in step; app.js holds it in memory, so it must be done there.
+  // The story page, called by app.js after it draws a story: if the story is one of yours, swap the reader's
+  // per-device "Mark as read" for one "Mark as learned" that writes to your row. Anyone else sees the page unchanged.
+  // TODO(signup d, after the Jeff-responses branch merges): what remains is "Next story" on that block and keeping the
+  // reader's per-device tick (`septimus-read`) in step; app.js holds it in memory, so it must be done there.
+  function story(id) {
+    if (!load(JOINED, false)) return;   // not joined on this device: no Firebase on reader pages
+    var t = token;
+    loadSdk().catch(function () {});
+    S.listener = function () {
+      if (t !== token || !S.settled) return;
+      S.listener = null;
+      if (!S.user || !S.record) return;
+      var f = S.sdk.f, q = f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", S.user.uid), f.where("storyId", "==", id));
+      f.getDocs(q).then(function (snap) {
+        var row = null, old = document.getElementById("read-btn");
+        snap.forEach(function (d) { if (d.data().releasedAt == null) row = d; });
+        if (!row || t !== token || location.hash !== "#/s/" + id || !old) return;   // not yours, or they have moved on
+        var learned = row.data().doneAt != null, busy = false;
+        var btn = el("button", { type: "button", "class": "btn primary" }), msg = el("p", { "class": "su-rowmsg", role: "status" });
+        function paint() { btn.textContent = learned ? "✓ Learned" : "Mark as learned"; btn.setAttribute("aria-pressed", String(learned)); }
+        paint();
+        btn.onclick = function () {
+          if (busy) return;   // not the disabled attribute: that would drop keyboard focus
+          busy = true; btn.setAttribute("aria-disabled", "true"); msg.textContent = "Saving…";
+          watchSlow(f.updateDoc(row.ref, { doneAt: learned ? null : f.serverTimestamp() }), t, function (x) { msg.textContent = x; }).then(function () {
+            learned = !learned; paint(); msg.textContent = "Saved"; busy = false; btn.removeAttribute("aria-disabled");
+          }).catch(function () { msg.textContent = SAVE_ERR; busy = false; btn.removeAttribute("aria-disabled"); });
+        };
+        old.hidden = true;
+        old.parentNode.parentNode.insertBefore(el("div", { "class": "su-mine" }, [el("p", { "class": "notice", text: "One of your stories." }), btn, msg, link("← Back to my stories", "#/my", "su-back")]), old.parentNode);
+      }).catch(function () {});
+    };
+    S.listener();
+  }
 
-  window.SeptimusSignup = { route: route };
+  window.SeptimusSignup = { route: route, story: story };
 })();

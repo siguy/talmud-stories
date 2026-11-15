@@ -125,14 +125,14 @@ def test_reading_minutes_and_longer_than_usual(order):
 
 
 def test_campaign_week_around_launch_and_new_year():
-    launch = date(2026, 12, 7)                           # a Monday
-    assert A.campaign_week(date(2026, 12, 6), launch) == 0
-    assert A.campaign_week(date(2026, 11, 30), launch) == 0        # the whole week before launch is 0
-    assert A.campaign_week(date(2026, 11, 29), launch) == -1
-    assert A.campaign_week(date(2026, 12, 7), launch) == 1
-    assert A.campaign_week(date(2026, 12, 13), launch) == 1
-    assert A.campaign_week(date(2026, 12, 14), launch) == 2
-    assert A.campaign_week(date(2027, 1, 4), launch) == 5          # across New Year
+    launch = date(2026, 12, 6)                           # a Sunday
+    assert A.campaign_week(date(2026, 12, 5), launch) == 0
+    assert A.campaign_week(date(2026, 11, 29), launch) == 0        # the whole week before launch is 0
+    assert A.campaign_week(date(2026, 11, 28), launch) == -1
+    assert A.campaign_week(date(2026, 12, 6), launch) == 1
+    assert A.campaign_week(date(2026, 12, 12), launch) == 1
+    assert A.campaign_week(date(2026, 12, 13), launch) == 2
+    assert A.campaign_week(date(2027, 1, 3), launch) == 5          # across New Year
     assert A.campaign_week(date(2027, 9, 10), launch) == 40        # the yahrzeit week
 
 

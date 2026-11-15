@@ -3,7 +3,7 @@ import json
 import subprocess
 import sys
 import logging
-from datetime import date
+from datetime import date, timedelta
 from pathlib import Path
 
 import pytest
@@ -14,8 +14,8 @@ import septimus_assign as A  # noqa: E402
 import septimus_weekly as W  # noqa: E402
 
 FIX = ROOT / "tests" / "fixtures" / "septimus_stories"
-LAUNCH = date(2026, 12, 7)                      # a Monday
-MONDAY, TUESDAY = date(2026, 12, 7), date(2026, 12, 8)
+LAUNCH = date(2026, 12, 6)                      # a Sunday
+SUNDAY, MONDAY = date(2026, 12, 6), date(2026, 12, 7)
 
 
 class FakeStore:
@@ -142,18 +142,18 @@ def snapshot(store):
 
 def test_second_run_for_the_same_week_changes_nothing(order):
     store = FakeStore([person("a", 8, 1), person("b", 8, 2)])
-    first = go(store, MONDAY, order)
+    first = go(store, SUNDAY, order)
     assert first["handedOut"] > 0 and first["week"] == 1
     before = snapshot(store)
-    second = go(store, MONDAY, order)
+    second = go(store, SUNDAY, order)
     assert snapshot(store) == before and second["handedOut"] == 0
-    go(store, date(2026, 12, 9), order)                       # a later day, same week: still nothing
+    go(store, date(2026, 12, 8), order)                       # a later day, same week: still nothing
     assert snapshot(store) == before
 
 
-def test_a_run_on_tuesday_does_the_weeks_handout_if_monday_never_ran(order):
+def test_a_run_on_monday_does_the_weeks_handout_if_sunday_never_ran(order):
     store = FakeStore([person("a", 8, 1)])
-    counts = go(store, TUESDAY, order)
+    counts = go(store, MONDAY, order)
     assert counts["week"] == 1 and counts["handedOut"] > 0
     assert all(r["week"] == 1 for r in store.rows.values())
     assert store.runs[1]["counts"] == counts and store.runs[1]["finishedAt"]
@@ -161,14 +161,14 @@ def test_a_run_on_tuesday_does_the_weeks_handout_if_monday_never_ran(order):
 
 def test_launch_date_unset_means_no_handout_but_summary_is_written(order):
     store = FakeStore([person("a", 8, 1)])
-    counts = go(store, MONDAY, order, cfg=config(launch=None))
+    counts = go(store, SUNDAY, order, cfg=config(launch=None))
     assert counts["handedOut"] == 0 and not store.rows and not store.runs
     assert store.summary and store.summary["joined"] == 1 and store.summary["listVersion"] == "test-1"
 
 
 def test_before_launch_and_after_the_yahrzeit_week_no_handout(order):
     store = FakeStore([person("a", 8, 1)])
-    assert go(store, date(2026, 12, 6), order)["handedOut"] == 0
+    assert go(store, date(2026, 12, 5), order)["handedOut"] == 0
     assert go(store, date(2027, 9, 20), order)["handedOut"] == 0
     assert not store.rows and not store.runs and store.summary
 
@@ -177,18 +177,18 @@ def test_pause_does_everything_except_the_handout(order):
     store = FakeStore([person("a", 0, 1, deleteRequested=False), person("b", 8, 2)],
                       [{"id": f"1_a_{order[0].id}", "uid": "a", "storyId": order[0].id, "round": 1, "week": 1,
                         "doneAt": None, "releasedAt": None}])
-    counts = go(store, MONDAY, order, pause=True)
+    counts = go(store, SUNDAY, order, pause=True)
     assert counts["handedOut"] == 0
     assert not [r for r in store.rows.values() if r["uid"] == "b"] and 1 not in store.runs
     assert store.rows[f"1_a_{order[0].id}"]["releasedAt"] == "x"         # the stopped person's story still released
     assert store.summary is not None
-    assert go(store, MONDAY, order)["handedOut"] > 0                      # un-pausing hands out the same week
+    assert go(store, SUNDAY, order)["handedOut"] > 0                      # un-pausing hands out the same week
 
 
 def test_dry_run_writes_nothing(order, capsys):
     store = FakeStore([person("a", 8, 1), person("b", 8, 2, deleteRequested=True)])
     before = snapshot(store)
-    counts = go(store, MONDAY, order, dry_run=True)
+    counts = go(store, SUNDAY, order, dry_run=True)
     assert store.writes == 0 and snapshot(store) == before and store.deleted_auth == []
     assert counts["handedOut"] > 0 and counts["deleted"] == 1
     assert json.loads(capsys.readouterr().out.strip().splitlines()[-1]) == counts
@@ -200,7 +200,7 @@ def test_delete_request_removes_the_person_and_keeps_the_learned_total(order):
             {"id": f"1_b_{order[1].id}", "uid": "b", "storyId": order[1].id, "round": 1, "week": 1,
              "doneAt": None, "releasedAt": None}]
     store = FakeStore([person("a", 8, 1), person("b", 8, 2, deleteRequested=True)], rows)
-    counts = go(store, MONDAY, order)
+    counts = go(store, SUNDAY, order)
     assert store.deleted_auth == ["b"] and "b" not in store.user_docs and counts["deleted"] == 1
     assert all(r["uid"] != "b" for r in store.rows.values())             # blanked
     assert store.summary["learned"] == 1                                 # the done story still counts
@@ -214,7 +214,7 @@ def test_delete_request_removes_the_person_and_keeps_the_learned_total(order):
 
 def test_counts_include_new_signups_since_the_previous_run(order):
     store = FakeStore([person("a", 8, 1), person("b", 8, 2)])
-    first = go(store, MONDAY, order)
+    first = go(store, SUNDAY, order)
     assert first["newSignups"] == 2 and first["users"] == 2 and first["eligible"] == 2
     assert first["totalMinutes"] == 16
     store.user_docs["c"] = person("c", 8, 500)                            # joined after week 1 finished (finishedAt 101)
@@ -226,7 +226,7 @@ def test_stopped_person_is_released_on_a_non_handout_day(order):
     rows = [{"id": f"1_a_{order[0].id}", "uid": "a", "storyId": order[0].id, "round": 1, "week": 1,
              "doneAt": None, "releasedAt": None}]
     store = FakeStore([person("a", 0, 1)], rows)
-    counts = go(store, date(2026, 12, 6), order)                          # before launch
+    counts = go(store, date(2026, 12, 5), order)                          # before launch
     assert counts["released"] == 1 and store.rows[f"1_a_{order[0].id}"]["releasedAt"]
 
 
@@ -246,8 +246,8 @@ SAMPLE = '''window.SEPTIMUS_CONFIG = {
 
 
 def test_config_parsing_launch_set_and_unset():
-    c = W.parse_config(SAMPLE % "2026-12-07")
-    assert (c.launch_date, c.yahrzeit, c.wpm, c.max_minutes) == (date(2026, 12, 7), date(2027, 9, 10), 75, 120)
+    c = W.parse_config(SAMPLE % "2026-12-06")
+    assert (c.launch_date, c.yahrzeit, c.wpm, c.max_minutes) == (date(2026, 12, 6), date(2027, 9, 10), 75, 120)
     assert c.last_week == 40 and c.project_id == "septimus-stories"
     c = W.parse_config(SAMPLE % "")
     assert c.launch_date is None and c.last_week == 0
@@ -268,7 +268,7 @@ def test_help_works_without_firebase_admin():
 
 def test_a_row_marked_learned_at_release_time_is_not_given_to_someone_else(order):
     store = FakeStore([person("alice", 30, 1), person("bob", 30, 2)])
-    go(store, MONDAY, order)
+    go(store, SUNDAY, order)
     alice_week1 = {r["storyId"] for r in store.rows.values() if r["uid"] == "alice"}
     assert alice_week1
 
@@ -292,7 +292,7 @@ def test_a_failing_delete_does_not_stop_the_handout_and_logs_no_uid(order, caplo
     store = FakeStore([person("UIDcarol777", 30, 1, deleteRequested=True), person("UIDdan888", 30, 2)])
     store.fail_delete.add("UIDcarol777")
     with caplog.at_level(logging.INFO):
-        counts = go(store, MONDAY, order)
+        counts = go(store, SUNDAY, order)
     assert counts["deleteFailed"] == 1 and counts["deleted"] == 0 and counts["handedOut"] > 0
     assert "UIDcarol777" in store.user_docs and store.runs[1]["finishedAt"]
     assert [r for r in store.rows.values() if r["uid"] == "UIDdan888"]
@@ -307,8 +307,8 @@ def test_no_uid_in_logs_or_dry_run_output(order, caplog, capsys):
     store = FakeStore([person("UIDaaa111", 30, 1), person("UIDbbb222", 30, 2, deleteRequested=True),
                        person("UIDccc333", 0, 3)], rows)
     with caplog.at_level(logging.DEBUG):
-        go(store, MONDAY, order, dry_run=True)
-        go(store, MONDAY, order)
+        go(store, SUNDAY, order, dry_run=True)
+        go(store, SUNDAY, order)
     everything = caplog.text + capsys.readouterr().out
     for uid in ("UIDaaa111", "UIDbbb222", "UIDccc333"):
         assert uid not in everything
@@ -318,7 +318,7 @@ def test_no_uid_in_logs_or_dry_run_output(order, caplog, capsys):
 def test_dry_run_prints_counts_and_story_ids_only(order, caplog, capsys):
     store = FakeStore([person("UIDaaa111", 30, 1), person("UIDbbb222", 30, 2)])
     with caplog.at_level(logging.INFO):
-        go(store, MONDAY, order, dry_run=True)
+        go(store, SUNDAY, order, dry_run=True)
     dry = [rec.getMessage() for rec in caplog.records if "DRY RUN" in rec.getMessage()]
     assert dry and order[0].id in dry[0] and "UID" not in dry[0]
 
@@ -335,7 +335,7 @@ def test_rows_read_are_limited_to_the_current_round_plus_open_rows(order):
                      "doneAt": None, "releasedAt": 3}]
     store = FakeStore([person("u0", 30, 1), person("u1", 30, 2), person("zz", 30, 3)],
                       done_r1 + [stray] + r2 + old_released, summary={"round": 2})
-    go(store, MONDAY, order)
+    go(store, SUNDAY, order)
     read = set(store.read_row_ids)
     assert f"2_u0_{order[0].id}" in read and stray["id"] in read                     # round 2 and the open row
     assert not (read & {r["id"] for r in done_r1}) and old_released[0]["id"] not in read   # complete round 1: not read
@@ -348,16 +348,16 @@ def test_rows_read_are_limited_to_the_current_round_plus_open_rows(order):
 
 def test_counts_report_the_reads(order):
     store = FakeStore([person("a", 30, 1)])
-    counts = go(store, MONDAY, order)
+    counts = go(store, SUNDAY, order)
     assert counts["reads"] == store.reads > 0
     assert store.runs[1]["counts"]["reads"] == counts["reads"]
-    again = go(store, MONDAY, order)                                  # a second run reports its own reads, not a total
+    again = go(store, SUNDAY, order)                                  # a second run reports its own reads, not a total
     assert again["reads"] == store.reads - counts["reads"]
 
 
 def test_each_person_is_written_in_one_batch(order):
     store = FakeStore([person("a", 30, 1), person("b", 30, 2), person("c", 30, 3)])
-    go(store, MONDAY, order)
+    go(store, SUNDAY, order)
     assert len(store.write_batches) == 3
     for batch in store.write_batches:
         assert len({rid.split("_")[1] for rid in batch}) == 1               # one person per batch
@@ -367,7 +367,7 @@ def test_each_person_is_written_in_one_batch(order):
 def test_a_never_reading_person_is_paused_at_the_week_7_run_and_lapses_are_stored(order):
     store = FakeStore([person("a", 30, 1)])
     for w in range(1, 8):
-        counts = go(store, date(2026, 12, 7) + (w - 1) * (date(2026, 12, 14) - date(2026, 12, 7)), order)
+        counts = go(store, LAUNCH + (w - 1) * timedelta(days=7), order)
         if w < 7:
             assert counts["paused"] == 0, w
     assert counts["paused"] == 1 and store.user_docs["a"]["pausedAt"] and store.user_docs["a"]["lapses"] == []
@@ -382,31 +382,31 @@ def test_a_never_reading_person_is_paused_at_the_week_7_run_and_lapses_are_store
 
 def test_ever_learned_is_written_only_when_it_changes(order):
     store = FakeStore([person("a", 30, 1)])
-    go(store, MONDAY, order)
+    go(store, SUNDAY, order)
     first = next(r for r in store.rows.values() if r["uid"] == "a")
     first["doneAt"] = 5
-    go(store, date(2026, 12, 9), order)
+    go(store, date(2026, 12, 8), order)
     assert [u for u in store.user_updates if "everLearned" in u[1]] == [("a", {"everLearned": True})]
-    go(store, date(2026, 12, 10), order)
+    go(store, date(2026, 12, 9), order)
     assert len([u for u in store.user_updates if "everLearned" in u[1]]) == 1       # not written again
 
 
 def test_a_person_who_has_learned_is_never_paused(order):
     store = FakeStore([person("a", 30, 1)])
-    go(store, MONDAY, order)
+    go(store, SUNDAY, order)
     next(r for r in store.rows.values())["doneAt"] = 5
     for w in range(2, 10):
-        counts = go(store, date(2026, 12, 7) + (w - 1) * (date(2026, 12, 14) - date(2026, 12, 7)), order)
+        counts = go(store, LAUNCH + (w - 1) * timedelta(days=7), order)
         assert counts["paused"] == 0
 
 
-def test_launch_date_not_a_monday_raises():
-    with pytest.raises(ValueError, match="launchDate must be a Monday"):
-        W.parse_config(SAMPLE % "2026-12-08")
+def test_launch_date_not_a_sunday_raises():
+    with pytest.raises(ValueError, match="launchDate must be a Sunday"):
+        W.parse_config(SAMPLE % "2026-12-07")
 
 
 def test_config_parsing_survives_spacing_and_a_different_indent():
-    text = SAMPLE.replace('launchDate: "%s"', 'launchDate :"%s"').replace("signup: {", "signup :{ ") % "2026-12-07"
+    text = SAMPLE.replace('launchDate: "%s"', 'launchDate :"%s"').replace("signup: {", "signup :{ ") % "2026-12-06"
     text = text.replace("wpm: 75", "wpm  :75").replace('\n  }\n};', '\n    }\n};')
     c = W.parse_config(text)
-    assert (c.launch_date, c.wpm, c.max_minutes) == (date(2026, 12, 7), 75, 120)
+    assert (c.launch_date, c.wpm, c.max_minutes) == (date(2026, 12, 6), 75, 120)

@@ -112,6 +112,7 @@
       label();
       btn.addEventListener("click", function () { toggleRead(id); label(); });
       wireFeedback(s);
+      if (window.SeptimusSignup && window.SeptimusSignup.story) window.SeptimusSignup.story(id);
     });
   }
 

@@ -23,7 +23,7 @@ concurrency:
 
 on:
   schedule:
-    - cron: "10 10 * * *"   # daily, 10:10 UTC (early morning US Eastern)
+    - cron: "10 10 * * *"   # daily, 10:10 UTC: early Sunday morning US Eastern on Sundays; the weekly email, when built, goes out with that Sunday run
   workflow_dispatch:
     inputs:
       dry_run:
