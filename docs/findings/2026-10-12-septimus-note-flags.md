@@ -50,6 +50,9 @@ Notes that are not approved automatically: the drafter thought the passage is no
 - **Kiddushin 70a** (`kiddushin-70a-11-16`): Ends with Yalta's message; the outcome of the case may still be missing.
 - **Kiddushin 70b** (`kiddushin-70b-1-8`): Opens mid-story: it continues the Rav Yehuda and Rav Nahman account from the previous passage.
 - **Kiddushin 71a** (`kiddushin-71a-4-5`): Begins as a continuation ('with regard to the same issue'), so the earlier context is missing.
+- **Menachot 38a** (`menachot-38a-0-1`): The first STORY segment begins mid-sentence, finishing an answer started in the previous segment; the actual event (the torn fringe) is told only in the BEFORE segments.
+- **Niddah 66a** (`niddah-66a-22-22`): The STORY ends with the unexplained delay; Rav Hanina's question and Ravina's explanation, which complete the episode, are in the AFTER segments.
+- **Shevuot 41b** (`shevuot-41b-8-11`): The STORY segments join two separate loan cases (repaying before named witnesses, and before men learned in law) from a run of several such cases.
 - **Yevamot 101b** (`yevamot-101b-14-14`): Mostly a short account about legal procedure rather than a narrative with a plot.
 - **Yevamot 105b** (`yevamot-105b-3-10`): The start is about how to pray, a separate scene that sets up the story; the main account begins when Yehuda HaNasi enters.
 - **Yevamot 106a** (`yevamot-106a-3-3`): Very short and written as a legal precedent, not a full story.
@@ -124,6 +127,9 @@ Every passage whose latest note-drafter flagged it (not a story, cut off, two pa
 - **Kiddushin 70a** (`kiddushin-70a-11-16`): Ends with Yalta's message; the outcome of the case may still be missing.
 - **Kiddushin 70b** (`kiddushin-70b-1-8`): Opens mid-story: it continues the Rav Yehuda and Rav Nahman account from the previous passage.
 - **Kiddushin 71a** (`kiddushin-71a-4-5`): Begins as a continuation ('with regard to the same issue'), so the earlier context is missing.
+- **Menachot 38a** (`menachot-38a-0-1`): The first STORY segment begins mid-sentence, finishing an answer started in the previous segment; the actual event (the torn fringe) is told only in the BEFORE segments.
+- **Niddah 66a** (`niddah-66a-22-22`): The STORY ends with the unexplained delay; Rav Hanina's question and Ravina's explanation, which complete the episode, are in the AFTER segments.
+- **Shevuot 41b** (`shevuot-41b-8-11`): The STORY segments join two separate loan cases (repaying before named witnesses, and before men learned in law) from a run of several such cases.
 - **Yevamot 101b** (`yevamot-101b-14-14`): Mostly a short account about legal procedure rather than a narrative with a plot.
 - **Yevamot 105b** (`yevamot-105b-3-10`): The start is about how to pray, a separate scene that sets up the story; the main account begins when Yehuda HaNasi enters.
 - **Yevamot 106a** (`yevamot-106a-3-3`): Very short and written as a legal precedent, not a full story.

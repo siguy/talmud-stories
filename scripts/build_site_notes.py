@@ -9,9 +9,10 @@ Parts are `<tractate>.<anything>.json`, lists of {id, note, why, people, terms, 
 (scripts/draft_site_notes.py writes them). Every tractate in site/data/index.json is read.
 
 Merge rule, per story (work/2026-11-15-shas-background-notes.md):
-  * a note that is APPROVED, or that has no hold on it, KEEPS its text; a new draft only adds
-    its `why` (Simon reviewed these in October -- the text he read is the text that ships);
-  * a note that is HELD (the October drafter flagged it) or missing takes the new draft whole.
+  * a note that is APPROVED, or an October note with no hold on it, KEEPS its text; a new draft
+    only adds its `why` (October notes passed Simon's spot check -- that text is the text that ships);
+  * a note that is HELD, missing, or itself a draft from an earlier run (it carries `drafted`)
+    takes the new draft whole.
 A note keeps `approved` only while its `note` text is unchanged.
 
 Holds live in results/site_notes/held.json, {id: reason}: never on the site. A note is held
@@ -94,7 +95,7 @@ def load_parts(dirs):
     for d in dirs:
         for f in sorted(Path(d).glob("*.json")):
             for rec in json.loads(f.read_text()):
-                by_id[rec["id"]] = rec     # a later part wins
+                by_id[rec["id"]] = {**rec, "_run": f.stem.split(".", 1)[-1]}     # a later part wins
     return by_id
 
 
@@ -107,7 +108,7 @@ def merge(stories, prev, parts, held, passage_flags):
     notes, ev = {}, {"kept": 0, "why_added": 0, "drafted": 0, "held": 0, "missing": []}
     for s in stories:
         sid, old, rec = s["id"], prev.get(s["id"]), parts.get(s["id"])
-        keep_text = old is not None and (old.get("approved") or sid not in held)
+        keep_text = old is not None and (old.get("approved") or (sid not in held and not old.get("drafted")))
         if rec is None:
             if old is not None:
                 notes[sid] = {**old, "why": old.get("why", "")}
@@ -132,7 +133,7 @@ def merge(stories, prev, parts, held, passage_flags):
                 bad.insert(0, flag)
             ev["why_added"] += 1
         else:
-            n = norm(rec)
+            n = {**norm(rec), "drafted": rec.get("_run", "?")}
             bad = problems_with(rec, s)
             if flag:
                 bad.insert(0, flag)

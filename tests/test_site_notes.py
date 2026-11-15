@@ -125,3 +125,10 @@ def test_a_flag_on_an_approved_note_flags_the_passage_but_keeps_the_note_approve
     held, pf = {}, {}
     notes, _ = B.merge([STORY], {STORY["id"]: OLD}, {STORY["id"]: draft(flag="Cut off.")}, held, pf)
     assert notes[STORY["id"]]["approved"] is True and STORY["id"] not in held and pf[STORY["id"]] == "Cut off."
+
+
+def test_a_draft_from_an_earlier_run_is_replaced_whole():
+    held = {}
+    prev = {STORY["id"]: {**OLD, "approved": False, "drafted": "pilot1"}}
+    notes, _ = B.merge([STORY], prev, {STORY["id"]: {**draft(), "_run": "pilot2"}}, held, {})
+    assert notes[STORY["id"]]["note"] == "A new draft." and notes[STORY["id"]]["drafted"] == "pilot2"
