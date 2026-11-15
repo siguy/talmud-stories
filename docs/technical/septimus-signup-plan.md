@@ -185,7 +185,8 @@ assignments/{week_uid_storyId} { uid, storyId, round, week,                 // w
 runs/{week}                    { startedAt, finishedAt, counts }            // one per campaign week; makes a re-run a no-op
 sent/{week_uid}                { sentAt }                                   // one per email; makes a re-send impossible
 progress/summary               { learned, byTractate: {t: n}, round, roundsCompleted,
-                                 openInRound, joined, listVersion, updatedAt }   // public, script-written
+                                 openInRound, joined, listVersion, updatedAt,
+                                 week, lastWeek }       // public, script-written; the site takes the week from here
 ```
 
 - **Name and email are never stored here.** The script reads them from the sign-in system (Firebase Auth) when it

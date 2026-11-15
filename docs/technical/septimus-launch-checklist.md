@@ -4,15 +4,15 @@ Everything between today and real people signing up. Written 2026-11-15. Tick it
 the one list. Background: [`septimus-signup-plan.md`](septimus-signup-plan.md),
 [`septimus-staging.md`](septimus-staging.md), work item `work/2026-11-08-septimus-signup.md`.
 
-**Where things stand:** steps b, c and d are built and reviewed (draft pull requests #97 to #100). A real Google
-sign-in and one real run of the weekly script have worked on staging. Nothing is on the real site.
+**Where things stand:** steps b, c and d and the simplified flow are built (draft pull requests #97 to #101) and
+running on staging, where a real Google sign-in and a nine-week test of the weekly script have worked. Nothing is
+on the real site.
 
 ## 1. Decisions from Simon
 
-- [x] Should someone who learned once and then stopped reading also be paused? **Yes** (2026-11-15), built: Today only people who have
-      never learned anything are (found by the multi-week test, `septimus-staging.md`).
+- [x] Should someone who learned once and then stopped reading also be paused? **Yes** (2026-11-15), built.
 - [ ] Look at the built screens on staging, especially those that had no mockup: stop / delete / cancel deletion,
-      paused / resume, "You're in", "How the stories were chosen", "Your data", the in-app-browser notice.
+      paused / resume, "How the stories were chosen", "Your data", the in-app-browser notice.
 - [ ] Confirm the seven builder's choices in [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md).
 - [ ] Choose the email service and the sending domain (step e cannot start without them).
 - [ ] The contact address shown as "No Google account? Email …".
@@ -68,7 +68,7 @@ sign-in and one real run of the weekly script have worked on staging. Nothing is
 
 ## 6. Launch day, in order
 
-- [ ] Merge the pull requests: #97, then #98, #99, #100.
+- [ ] Merge the pull requests: #97, then #98, #99, #100, #101.
 - [ ] Put the launch date, yahrzeit, contact address and communities into `site/config.js`.
 - [ ] Add the real site's address to the live project's authorised sign-in domains (exact address only).
 - [ ] Restrict the public web key in the Google Cloud console to Firebase and the site's addresses.

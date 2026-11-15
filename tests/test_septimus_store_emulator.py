@@ -195,7 +195,7 @@ def test_week_one_writes_rows_run_and_summary(store, order):
 
     summary = dump(store, "progress")["progress"]["summary"]
     assert set(summary) == {"learned", "byTractate", "round", "roundsCompleted", "openInRound", "joined",
-                            "listVersion", "updatedAt"}
+                            "listVersion", "week", "lastWeek", "updatedAt"}
     assert summary["learned"] == 0 and summary["joined"] == 3 and summary["listVersion"] == "test-1"
     assert summary["openInRound"] == len(order) and isinstance(summary["updatedAt"], datetime)
 

@@ -231,6 +231,9 @@ def run(store, today, config, dry_run=False, pause=False, story_order=None, list
 
     # 4. The public totals, last, from the up-to-date local rows. Rows handed out just now have no doneAt.
     summary = A.summarise(story_order, rows, users, list_version, base_round)
+    # Which week it is, so the site shows the script's answer instead of working it out from config.js again.
+    summary["week"] = week if 1 <= week <= config.last_week else None
+    summary["lastWeek"] = config.last_week if config.launch_date else None
     LOG.info("summary: %d learned, round %d, %d joined", summary["learned"], summary["round"], summary["joined"])
     if dry_run:
         per_story = Counter(r["storyId"] for r in (plan.new_rows if plan else []))

@@ -166,6 +166,17 @@ def test_launch_date_unset_means_no_handout_but_summary_is_written(order):
     assert store.summary and store.summary["joined"] == 1 and store.summary["listVersion"] == "test-1"
 
 
+def test_summary_carries_the_week_and_last_week_for_the_site(order):
+    last = config().last_week
+    store = FakeStore([person("a", 8, 1)])
+    go(store, MONDAY, order)                                              # a normal week
+    assert store.summary["week"] == 1 and store.summary["lastWeek"] == last
+    go(store, date(2027, 9, 20), order)                                   # after the last week
+    assert store.summary["week"] is None and store.summary["lastWeek"] == last
+    go(store, SUNDAY, order, cfg=config(launch=None))                     # launch date not set
+    assert store.summary["week"] is None and store.summary["lastWeek"] is None
+
+
 def test_before_launch_and_after_the_yahrzeit_week_no_handout(order):
     store = FakeStore([person("a", 8, 1)])
     assert go(store, date(2026, 12, 5), order)["handedOut"] == 0

@@ -217,6 +217,16 @@
       .then(function (snap) { return snap.exists() ? snap.data() : null; })
       .catch(function () { return null; });
   }
+  // One read of the summary per screen, shared by the progress card and the week lookup below.
+  var sumCache = null;
+  function summaryFor(t) {
+    if (!sumCache || sumCache.t !== t) sumCache = { t: t, p: loadSummary() };
+    return sumCache.p;
+  }
+  // The campaign week and last week: the script's answer in the summary when it has one, else counted from config.js.
+  function weeksFrom(d) {
+    return { wk: d && isNum(d.week) ? d.week : campaignWeek(), last: d && isNum(d.lastWeek) ? d.lastWeek : lastWeek() };
+  }
   // The "N of about T stories learned" card, filled in when the summary arrives. withJoined adds the people-joined line (landing only).
   function progressCard(t, total, withJoined) {
     var title = el("div", { "class": "su-progress-title" }), fill = el("div", { "class": "su-fill" });
@@ -226,7 +236,7 @@
       fill.style.width = Math.min(100, 100 * learned / Math.max(1, total)) + "%";
     }
     setProgress(0);
-    loadSummary().then(function (d) {
+    summaryFor(t).then(function (d) {
       if (t !== token || !d) return;
       if (isNum(d.learned)) setProgress(d.learned);
       if (isNum(d.joined)) { joinedEl.textContent = d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined"; joinedEl.hidden = false; }
@@ -453,12 +463,20 @@
     S.listener();
   }
   function loadMine(t, user) {
-    var f = S.sdk.f;
-    // The rules only allow a list filtered on the person's own uid. Only open rows are read: not learned, not handed back.
-    var q = f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", user.uid), f.where("doneAt", "==", null), f.where("releasedAt", "==", null));
-    Promise.all([getIndex(), f.getDocs(q)]).then(function (res) {
-      var idx = res[0], rows = [], slugs = [], failed = {};
-      res[1].forEach(function (d) { rows.push({ id: d.id, ref: d.ref, d: d.data() }); });
+    var f = S.sdk.f, col = f.collection(S.sdk.db, "assignments");
+    // The rules only allow a list filtered on the person's own uid, so every query carries it (and equality tests only: no index).
+    // Open rows (not learned, not handed back) are always read; when the week is known, so is every row of this week, learned or not.
+    var open = f.query(col, f.where("uid", "==", user.uid), f.where("doneAt", "==", null), f.where("releasedAt", "==", null));
+    // The summary is waited for first: it says which week it is. It never fails (null when unreadable).
+    Promise.all([getIndex(), summaryFor(t)]).then(function (res) {
+      var wk = weeksFrom(res[1]);
+      var qs = [f.getDocs(open)];
+      if (wk.wk != null) qs.push(f.getDocs(f.query(col, f.where("uid", "==", user.uid), f.where("week", "==", wk.wk))));
+      return Promise.all(qs).then(function (snaps) { return [res[0], wk, snaps]; });
+    }).then(function (res) {
+      var idx = res[0], wk = res[1], byId = {}, rows = [], slugs = [], failed = {};
+      res[2].forEach(function (snap) { snap.forEach(function (d) { byId[d.id] = { id: d.id, ref: d.ref, d: d.data() }; }); });
+      Object.keys(byId).forEach(function (id) { if (byId[id].d.releasedAt == null) rows.push(byId[id]); });   // handed-back rows are never listed
       rows.forEach(function (r) {
         r.slug = String(r.d.storyId || "").split("-")[0];
         if (slugs.indexOf(r.slug) === -1) slugs.push(r.slug);
@@ -467,14 +485,14 @@
       return Promise.all(slugs.map(function (s) { return getTractate(s, idx).catch(function () { failed[s] = true; return null; }); })).then(function (files) {
         var found = {};   // storyId -> { story, pos } where pos is the story's place in its tractate file
         files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
-        if (t === token) drawMine(t, idx, stats(idx), rows, found, failed);
+        if (t === token) drawMine(t, idx, stats(idx), rows, found, failed, wk);
       });
     }).catch(function () {
       if (t === token) show([el("p", { "class": "notice", text: "Could not load your stories. Please check your connection and reload." })]);
     });
   }
-  function drawMine(t, idx, st, rows, found, failed) {
-    var wpm = cfg().wpm || 75, touched = {};   // touched: rows ticked during this visit stay on the page
+  function drawMine(t, idx, st, rows, found, failed, weeks) {
+    var wpm = cfg().wpm || 75, touched = {}, onTick = function () {};   // touched: rows ticked during this visit stay on the page
     rows.forEach(function (r) {
       var hit = found[r.d.storyId];
       r.hit = hit || null;
@@ -515,15 +533,17 @@
           ring.textContent = want ? "✓" : "";
           tick.setAttribute("aria-pressed", String(want));
           msg.textContent = "Saved"; busy = false; tick.removeAttribute("aria-disabled");
+          onTick();
         }).catch(function () { msg.textContent = SAVE_ERR; busy = false; tick.removeAttribute("aria-disabled"); });
       };
       return row;
     }
 
     function render() {
-      var m = S.record.minutesPerWeek, wk = campaignWeek(), last = lastWeek(), latest = wk;
+      var m = S.record.minutesPerWeek, wk = weeks.wk, last = weeks.last, latest = wk;
       if (latest == null) { latest = 0; rows.forEach(function (r) { if (isNum(r.d.week) && r.d.week > latest) latest = r.d.week; }); }   // week unknown: the newest week on the page
-      var shown = rows.filter(function (r) { return r.d.doneAt == null || touched[r.id]; })
+      // Learned rows stay for this week (and for any row ticked during this visit); older learned rows are not listed.
+      var shown = rows.filter(function (r) { return r.d.doneAt == null || touched[r.id] || (wk != null && r.d.week === wk); })
         .sort(function (a, b) { return (a.d.week - b.d.week) || (a.ti - b.ti) || (a.pos - b.pos); });
       var now = shown.filter(function (r) { return r.d.week >= latest; }), earlier = shown.filter(function (r) { return r.d.week < latest; });
       var paused = m > 0 && S.record.pausedAt != null;   // stopped wins over paused
@@ -558,6 +578,12 @@
         if (!sec[1].length) return;
         nodes.push(el("h2", { "class": "su-h2", text: sec[0] }));
         sec[1].forEach(function (r) { nodes.push(rowNode(r, latest, m)); });
+        if (sec[1] === now) {
+          var done = el("p", { "class": "su-muted", text: "All done for this week." });
+          onTick = function () { done.hidden = !now.every(function (r) { return r.d.doneAt != null; }); };
+          onTick();
+          nodes.push(done);
+        }
       });
       if (earlier.length) nodes.push(el("p", { "class": "notice", text: "Stories you do not get to stay on your list for about two weeks, then go back to the group. Nothing is lost." }));
       nodes.push(el("h2", { "class": "su-h2", text: "Everyone together" }));
@@ -574,30 +600,63 @@
 
   // ---- progress (public) ------------------------------------------------------------------------
   function dateTime(d) { return fmtDate(d) + ", " + String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0"); }
+  // The person's own learned stories, de-duplicated, in Shas order. Resolves to a node, or null when the read fails (no error shown).
+  function learnedSection(t, idx, uid) {
+    var f = S.sdk.f;
+    return f.getDocs(f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", uid))).then(function (snap) {
+      var seen = {}, items = [], slugs = [], failed = {};
+      snap.forEach(function (d) {
+        var id = d.data().storyId, slug = String(id || "").split("-")[0];
+        if (d.data().doneAt == null || !id || seen[id]) return;
+        seen[id] = true; items.push({ id: id, slug: slug });
+        if (slugs.indexOf(slug) === -1) slugs.push(slug);
+      });
+      return Promise.all(slugs.map(function (sl) { return getTractate(sl, idx).catch(function () { failed[sl] = true; return null; }); })).then(function (files) {
+        var found = {};
+        files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
+        items.forEach(function (x) { x.hit = found[x.id] || null; x.ti = shasRank(x.slug); x.pos = x.hit ? x.hit.pos : 1e9; });
+        items.sort(function (a, b) { return (a.ti - b.ti) || (a.pos - b.pos); });
+        var n = items.length, kids = [el("h2", { text: "Stories you have learned" }),
+          el("p", { text: n ? "You have learned " + n + (n === 1 ? " story." : " stories.") : "You have not marked a story learned yet." })];
+        if (n) {
+          var list = el("ul", { "class": "su-list su-learned" });
+          items.forEach(function (x) {
+            var s = x.hit && x.hit.story;
+            list.appendChild(el("li", {}, s ? [link(refLabel(s), "#/s/" + s.id, "su-learned-ref"), el("div", { "class": "su-muted su-small", text: s.summary })]
+              : [el("div", { "class": "su-muted", text: failed[x.slug] ? "Could not load this story." : "No longer on the list" })]));
+          });
+          kids.push(el("details", { "class": "su-more" }, [el("summary", { text: "Show them" }), list]));
+        }
+        return el("div", {}, kids);
+      });
+    }).catch(function () { return null; });
+  }
   function progress(t) {
     show([el("p", { "class": "su-muted", text: "Loading…" })]);
     withIndex(t, function (idx, st) {
-      loadSummary().then(function (d) {
+      summaryFor(t).then(function (d) {
         if (t !== token) return;
         d = d || {};
-        var learned = num(d.learned), round = Number.isInteger(d.round) && d.round >= 1 ? d.round : 1, done = num(d.roundsCompleted), by = d.byTractate || {};
+        var learned = num(d.learned), done = num(d.roundsCompleted), by = d.byTractate || {};
         var head = done === 0 ? "First time through Shas" : "Shas completed " + done + (done === 1 ? " time" : " times");
         var cardKids = [el("div", { "class": "su-progress-big", text: head }),
-          el("p", { "class": "su-progress-title", text: "Round " + round + ": " + learned + " of " + commas(st.stories) + " stories learned" }),
+          el("p", { "class": "su-progress-title", text: "This time through: " + learned + " of " + commas(st.stories) + " stories learned" }),
           el("div", { "class": "su-track" }, [el("div", { "class": "su-fill", style: "width:" + Math.min(100, 100 * learned / Math.max(1, st.stories)) + "%" })])];
-        if (num(d.openInRound) > 0 && learned > 0.9 * st.stories) cardKids.push(el("p", { "class": "su-muted", text: d.openInRound + " stories still open in round " + round }));
+        if (num(d.openInRound) > 0 && learned > 0.9 * st.stories) cardKids.push(el("p", { "class": "su-muted", text: d.openInRound + " stories still open this time through" }));
         var small = [], w = weeksToYahrzeit();
         if (isNum(d.joined)) small.push(d.joined + " " + (d.joined === 1 ? "person has" : "people have") + " joined");
         if (w) small.push(w + (w === 1 ? " week" : " weeks") + " until " + (cfg().yahrzeitLabel || "8 Elul"));
         if (small.length) cardKids.push(el("p", { "class": "su-muted su-small", text: small.join(" · ") }));
+        var mine = el("div");   // "Stories you have learned": filled only for a signed-in person with a record
         var nodes = [el("h1", { text: "Progress" }), el("p", { "class": "dedication", text: "In memory of Joe Septimus." }), el("div", { "class": "su-progress" }, cardKids),
-          el("h2", { text: "By tractate (this round)" })];
+          mine, el("h2", { text: "The whole group, tractate by tractate" }),
+          el("p", { "class": "su-muted", text: "A tractate is one volume of the Talmud. Each bar shows how many of its stories the group has learned this time through." })];
         sortTractates(idx.tractates).forEach(function (x) {
           var n = num(by[x.tractate]);
           nodes.push(el("div", { "class": "card" }, [
             el("span", { "class": "card-he", text: x.he }), el("div", { "class": "card-name", text: x.name }),
             el("div", { "class": "bar-track" }, [el("div", { "class": "bar-fill", style: "width:" + Math.min(100, x.story ? 100 * n / x.story : 0) + "%" })]),
-            el("div", { "class": "card-meta", text: n + " of " + x.story + " learned" + (x.reviewed ? "" : " · not yet reviewed") })]));
+            el("div", { "class": "card-meta", text: n + " of " + x.story + " learned by the group" + (x.reviewed ? "" : " · not yet reviewed") })]));
         });
         var at = d.updatedAt && typeof d.updatedAt.toDate === "function" ? d.updatedAt.toDate() : null;
         if (at) nodes.push(el("p", { "class": "su-muted su-small", text: "Updated " + dateTime(at) }));
@@ -609,8 +668,16 @@
           invite.textContent = "";
           if (!S.user && (S.settled || sdkBad)) invite.appendChild(link("Sign in with Google to join", "#/", "su-btn su-btn-outline su-keep"));
         }
-        S.listener = drawInvite;
-        loadSdk().then(drawInvite, function () { sdkBad = true; drawInvite(); });
+        var mineUid = null;   // whose list is drawn (or being fetched); one read per person
+        function drawMineLearned() {
+          if (t !== token || !S.settled) return;
+          if (!S.user || !S.record) { mine.textContent = ""; mineUid = null; return; }
+          if (mineUid === S.user.uid) return;
+          mineUid = S.user.uid;
+          learnedSection(t, idx, S.user.uid).then(function (node) { if (t === token && mineUid === S.user.uid) { mine.textContent = ""; if (node) mine.appendChild(node); } });
+        }
+        S.listener = function () { drawInvite(); drawMineLearned(); };
+        loadSdk().then(S.listener, function () { sdkBad = true; drawInvite(); });
         nodes.push(invite, back());
         show(nodes);
       });
