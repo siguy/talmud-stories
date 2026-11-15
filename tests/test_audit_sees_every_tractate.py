@@ -36,10 +36,13 @@ def test_audit_default_covers_every_board_tractate_that_has_files():
     assert 'yevamot' in audit.available(board.TRACTATES)
 
 
-def test_stamp_lists_tractates_from_the_board_and_skips_missing(caplog):
+def test_stamp_lists_tractates_from_the_board_and_skips_missing(caplog, monkeypatch):
     stamp = _load('stamp_superseded_recall')
+    # Every board tractate has a matches file since Eruvin's (2026-11-13), so a missing one is
+    # simulated: the property is that it is skipped AND named, never silently dropped.
+    monkeypatch.setattr(stamp.board, 'TRACTATES', list(stamp.board.TRACTATES) + ['nosuchtractate'])
     with caplog.at_level('WARNING'):
         got = stamp.tractates_with_matches()
-    assert 'Yevamot' in got and 'Gittin' in got
-    assert 'Eruvin' not in got                     # no matches file yet
-    assert any('Eruvin' in r.getMessage() for r in caplog.records)
+    assert 'Yevamot' in got and 'Gittin' in got and 'Eruvin' in got
+    assert 'Nosuchtractate' not in got
+    assert any('Nosuchtractate' in r.getMessage() for r in caplog.records)

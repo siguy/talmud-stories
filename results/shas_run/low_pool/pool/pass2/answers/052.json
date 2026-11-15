@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "A man's habitual saying and the Sages' inference about his lineage; no event, nothing follows."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A teaching reported before R. Yohanan, his silence and Abbahu's inference; speech only, no conflict or narrated change."},
+"03": {"verdict": "borderline", "rules": ["R-C7", "R-C6"], "segments": [2], "reason": "A brief incident cited as evidence: a man crossed water and his shoes shrank and feet shriveled. Real events but barely narrated."},
+"04": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Setting (Rav Ashi finds Rav Kahana building) framing a question and answer about Rava's view; ordinary halakhic exchange."},
+"05": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "An animal brought before Rav Ashi and a ruling discussed; coming before a rabbi is the only event."},
+"06": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2, 3, 4], "reason": "Mainly legal speech, but framed by events: R. Yirmeya dozing, the students talking, and him waking to correct them."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A baraita taught and R. Yohanan's dismissive retort; ordinary scholarly exchange, no event."},
+"08": {"verdict": "story", "rules": ["R-C3"], "segments": [2], "reason": "R. Yona's habitual secret prayer leads to rain and a concealing exchange with his household; a habit that causes change."},
+"09": {"verdict": "story", "rules": ["R-S1", "R-C0"], "segments": [2], "reason": "Post-biblical narrative of Nicanor's threats, Hasmonean victory and the hanging of his thumbs and toes; actions and change."},
+"10": {"verdict": "borderline", "rules": ["R-C6", "R-C7"], "segments": [2], "reason": "An incident only alluded to: a man completed 365 naziriteships and died, cited as evidence in a legal discussion."},
+"11": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A visit framing an exchange of vow formulas, then Gemara analysis; speech without conflict or narrated change."},
+"12": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4, 5], "reason": "A full story (Esau blocks Jacob's burial, Hushim kills him) but an exegetical narrative about biblical characters."},
+"13": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4, 5, 6], "reason": "Mainly halakhic dialogue, but with a setting and a pointed personal insult by Reish Lakish against R. Elazar, giving some conflict."},
+"14": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "Rav Nahman's jug and a case asked of Rav Asi serve a legal discussion; a question and ruling with no narrated change."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "The Sages wished to rule and R. Yannai objected; a legal debate, no event."},
+"16": {"verdict": "borderline", "rules": ["R-C2", "R-C0"], "segments": [2], "reason": "Mainly speech, but Rav Yosef angrily turns his face away; an emotional reaction with conflict in a halakhic exchange."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Accompanying a teacher only sets up a question; setting plus question is not a story."},
+"18": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "Rav's instruction on Kahana's visit is cited as evidence in the legal give-and-take; a bare report with nothing following."},
+"19": {"verdict": "borderline", "rules": ["R-C6", "R-C2"], "segments": [2], "reason": "Rav Kahana's remark alludes to his marriage leading to his forced exile; the incident is only alluded to, told through speech."},
+"20": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Nahman disparages Saul, is shown nightmares, apologizes, and again until it stops; actions, causality and change."}
+}

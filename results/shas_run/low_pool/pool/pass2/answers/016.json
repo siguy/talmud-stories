@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "Ulla sitting on a damaged platform is one act followed by a halakhic challenge and reply; ordinary scholarly back-and-forth with nothing changing afterward."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Pappa's question, his teacher's silence and his own reasoning are speech acts within a legal discussion, with no conflict or event."},
+"03": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative about Adam's reaction to God's decree; biblical characters, not post-biblical figures."},
+"04": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A setting (Rav Hamnuna searching for his oxen, meeting Rabba) frames only a question and answer, per the Shabbat 147a ruling."},
+"05": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of what Rav Ashi did with a collateral goblet, cited as evidence for a dilemma, with nothing following."},
+"06": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A description of Rav Yosef's agricultural practice and its result, cited to illustrate the baraita; no narrated incident."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic exchange between Ulla and Rav Yehuda and Rav Yehuda's later reflection; standard rabbinic dialogue without real conflict or event."},
+"08": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Foreigners came before Rava and he installed an interpreter, an act beyond a bare ruling, then legal discussion; segment 3 is only a legal exchange."},
+"09": {"verdict": "borderline", "rules": ["R-C6", "R-C2"], "segments": [2], "reason": "Ben Stada's smuggling of spells from Egypt is only alluded to as evidence in a debate, with genealogical discussion following."},
+"10": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Two incidents where judges seized slaves from orphans, and Rav Nahman's threatening order to return them; events plus a forceful ruling but no stated outcome."},
+"11": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "One event (a bird falls into kutah), a ruling, and Rava's praise with legal reasoning; nothing else happens."},
+"12": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "A visit framing a report of a past case and Rava's instruction to reverse it; ruling and discussion with the outcome not narrated."},
+"13": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rabbi Yishmael's repeated refusals, the launderer striking him, and the resulting dissolution of the vow: multiple actions with causality and change."},
+"14": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A passerby's aphorism matched with a verse by Shmuel; speech only."},
+"15": {"verdict": "borderline", "rules": ["R-C1", "R-C6"], "segments": [2], "reason": "The Gemara's citation of the Mishnah incident of Rabban Gamliel's sons returning late, here only alluded to in one line."},
+"16": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A scholar retracts his view when shown a baraita; ordinary dialogue."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Rabbi Yirmeya visits, sees one practice, and rules it prohibited; a case and a ruling with no further change."},
+"18": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2, 3], "reason": "Rav Dimi brings a fat kid and then a lean one at Rabbi Yehuda's request before receiving a teaching; real actions but the passage is mainly about teaching."},
+"19": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3], "reason": "Rava's exegetical narrative of Job's complaint and God's answer is about a biblical figure, cited inside a legal discussion."},
+"20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabba finds Rav Huna eating porridge by hand and asks why; a setting plus a question and answer."}
+}

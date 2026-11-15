@@ -43,7 +43,14 @@ KEPT_TOLERANCE = 0.10            # G4: kept-story counts within 10%
 # definite (YES/HIGH in stories[]) in either run, and definite in both: Berakhot 116/126 = 92.1%,
 # Yevamot 83/90 = 92.2%. The gate stays at 90%, just under both (n = 2: indicated, not measured).
 DEFINITE_BOTH_MIN = 0.90
-JUDGE_PROMPT_SHA = '84bfb33fd32a'   # judge_register_v2
+# G6: the judge prompt (src/prompts/judge_register_v2.md) embeds docs/STORY_RULES.md, so its sha moves whenever a
+# rule is added. JUDGE_PROMPT_SHA is the register a NEW judge run must use; EARLIER_JUDGE_PROMPT_SHAS are registers
+# already adopted, kept so every output written under them stays green (an output is judged by the register it was
+# run under, never retro-failed). Re-pinning is Simon's call: it adopts the new register for judging.
+JUDGE_PROMPT_SHA = '88e8fff62716'   # judge_register_v2 + Jeff's 2026-11-12 rules (commit d4a6674); re-pinned by Simon 2026-11-13
+EARLIER_JUDGE_PROMPT_SHAS = {
+    '84bfb33fd32a': 'judge_register_v2 as the Shas run was judged, 2026-11-09..12 (every judge output on disk before 2026-11-13)',
+}
 DEFINITE = ('YES', 'HIGH_CONFIDENCE')
 NIKUD = re.compile('[ְ-ׇ]')
 # G5 baselines, measured: kept stories per examined page 1.8 (Berakhot), 1.5 (Yevamot); Gemini
@@ -430,8 +437,9 @@ def g6_judge(P, who):
     extra = sorted(set(ids) - set(unit_ids))
     if extra:
         r.red(f'{len(extra)} row(s) for units that do not exist: {extra[:5]}')
-    if (d.get('meta') or {}).get('prompt_sha') != JUDGE_PROMPT_SHA:
-        r.red(f"judge prompt sha {(d.get('meta') or {}).get('prompt_sha')}, expected {JUDGE_PROMPT_SHA}")
+    if (d.get('meta') or {}).get('prompt_sha') not in {JUDGE_PROMPT_SHA, *EARLIER_JUDGE_PROMPT_SHAS}:
+        r.red(f"judge prompt sha {(d.get('meta') or {}).get('prompt_sha')}, expected {JUDGE_PROMPT_SHA} "
+              f"(or an earlier adopted register: {sorted(EARLIER_JUDGE_PROMPT_SHAS)})")
     alone = claude_alone(P) if who == 'gemini' else set()
     ruled = sorted(x['id'] for x in rows if x['answer'].get('outcome') != 'ok' and x['id'] in alone)
     if ruled:

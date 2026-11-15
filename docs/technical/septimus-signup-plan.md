@@ -21,18 +21,24 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 
 | | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
 |---|---|---|---|---|---|
-| Ketubot | 86 | 23,755 | 194 | 2.6 | 1.7 |
+| Ketubot | 86 | 23,680 | 195 | 2.6 | 1.7 |
 | Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
 | Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
-| Yevamot | 82 | 17,643 | 162 | 2.0 | 1.3 |
-| Berakhot | 112 | 24,396 | 144 | 2.7 | 1.8 |
-| **All** | **443** | **102,804** | **172** | **11.4** | **7.4** |
+| Yevamot | 84 | 18,055 | 162 | 2.0 | 1.3 |
+| Berakhot | 116 | 24,919 | 142 | 2.8 | 1.8 |
+| **All** | **449** | **103,664** | **171** | **11.5** | **7.5** |
 
 **Only definite stories ship** — the rule, and why it is kept apart from the scholarly
 catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
 the 19 borderlines and 3 Mishnah stories from the reviewed tractates and one Ketubot detector
 call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in both v14 runs
 (82, after 7 biblical passages and one duplicate span); and added Berakhot the same way (112).
+On 2026-11-10 biblical stories came back (Yevamot 85, Berakhot 118); on 2026-11-13 they went out again (Simon: one
+scope with Jeff's R-S1). On 2026-11-14 Simon added the low-pool promotions (both Claude grader passes say story):
+Yevamot +4 (86), Berakhot +7 (119). Later on 2026-11-14 Simon removed 17 twin-pass cards a rules triage marked not-a-story,
+one each from Yevamot (85) and Berakhot (118). Later still, Ketubot 106a went back to 3-3 (b43deb2; 23,680 words),
+and a second twin-pass triage pass removed 33 more cards, one from Yevamot (84) and two from Berakhot (116); the rows
+above include every change (re-measured 2026-11-14 from `site/data`).
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate
@@ -134,6 +140,9 @@ Security rules (no server code in v1):
 
 ## 7. List versions and stable ids
 
+- **Since 2026-11-14 ids are permanent** (`site/data/story_ids.json`, viewer plan §3.1): a boundary fix keeps the id, a
+  merge leaves a redirect, a removal retires it. Key `claims/{storyId}` on that id; the hand-run overlap map below is
+  now needed only for merges/retirements, and `site/data/redirects.json` already is that map.
 - v1 freezes today's ids (`tractate-daf-start-end`). `site/data/index.json` gains `list_version` and `published_at`.
 - A **new list (v2, …)** is built by the same script and ships with `site/data/lists/v1_to_v2.json`:
   each v1 id → the v2 id it **overlaps most by segments** (overlap, never an exact key — Lesson 36), or `null`.

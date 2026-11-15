@@ -10,9 +10,7 @@
     "Zevachim 13a"
    ],
    "start_segment": 11,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -43,6 +41,13 @@
      "en": "<b>Rabbi Tarfon said to him</b> excitedly: I take an oath by <b>the</b> Temple <b>service</b> that <b>you have</b> not <b>deviated left or right</b> from what I heard from my teachers. <b>I</b> myself <b>heard</b> them <b>and I cannot explicate</b> what they taught, whereas <b>you teach</b> this <i>halakha</i> on your own <b>in concurrence with the <i>halakha</i></b> I heard. <b>He said to</b> Rabbi Akiva, <b>using this language: Akiva, anyone who leaves you is like one who leaves his life.</b> In any event, Rabbi Akiva’s statement in the <i>baraita</i> apparently contradicts the mishna with regard to the matter of whether the collection of the blood with prohibited intent disqualifies the offering."
     }
    ],
+   "span": [
+    {
+     "ref": "Zevachim 13a",
+     "start": 11,
+     "end": 14
+    }
+   ],
    "words": 411,
    "minutes": 3
   },
@@ -54,9 +59,7 @@
     "Zevachim 19a"
    ],
    "start_segment": 1,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -69,64 +72,15 @@
      "en": "<b>Rav Ashi says: Huna bar Natan said to me: Once, I was standing before Izgadar, king</b> of Persia, <b>and my belt was raised</b> above its appropriate height, <b>and he lowered it</b> into place <b>and said to me: “A kingdom of priests, and a holy nation”</b> (Exodus 19:6), <b>is written about you;</b> therefore, you should always look dignified. <b>When I came before Ameimar</b> and recounted this incident, <b>he said to me: With regard to you,</b> God’s promise to Israel: <b>“And kings shall be your foster fathers”</b> (Isaiah 49:23), <b>was fulfilled.</b>"
     }
    ],
-   "words": 89,
-   "minutes": 1
-  },
-  {
-   "id": "zevachim-54b-2-7",
-   "tractate": "zevachim",
-   "ref": "Zevachim 54b",
-   "refs": [
-    "Zevachim 54b"
-   ],
-   "start_segment": 2,
-   "tier": "story",
-   "classification": "HIGH_CONFIDENCE",
-   "biblical": true,
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "David and Samuel study the book of Joshua to determine the precise location of the Temple, eventually choosing a site slightly lower than the highest point, which triggers the jealousy of Doeg the Edomite.",
-   "segments": [
+   "span": [
     {
-     "ref": "Zevachim 54b",
-     "i": 2,
-     "he": "דָּרֵשׁ רָבָא, מַאי דִּכְתִיב: ״וַיֵּלֶךְ דָּוִד וּשְׁמוּאֵל וַיֵּשְׁבוּ בְּנוֹיוֹת בָּרָמָה״? וְכִי מָה עִנְיַן נוֹיוֹת אֵצֶל רָמָה? אֶלָּא שֶׁהָיוּ יוֹשְׁבִין בָּרָמָה וְעוֹסְקִין בְּנוֹיוֹ שֶׁל עוֹלָם.",
-     "en": "§ Apropos the altar and the Temple, the Gemara relates that <b>Rava taught: What</b> is the meaning of that <b>which is written</b> concerning David: <b>“And he and Samuel went and dwelt in Naioth.</b> And it was told Saul, saying: Behold, David is at Naioth [<i>beNayot</i>] <b>in Ramah”</b> (I Samuel 19:18–19)? <b>But what does Naioth have to do with Ramah?</b> They are in two distinct places. <b>Rather,</b> this means <b>that they were sitting in Ramah and</b> were <b>involved in</b> discussing <b>the beauty [<i>benoyo</i>] of the world,</b> i.e., the Temple."
-    },
-    {
-     "ref": "Zevachim 54b",
-     "i": 3,
-     "he": "אָמְרִי, כְּתִיב: ״וְקַמְתָּ וְעָלִיתָ אֶל הַמָּקוֹם״ – מְלַמֵּד שֶׁבֵּית הַמִּקְדָּשׁ גָּבוֹהַּ מִכׇּל אֶרֶץ יִשְׂרָאֵל, וְאֶרֶץ יִשְׂרָאֵל גְּבוֹהָה מִכׇּל אֲרָצוֹת. לָא הֲווֹ יָדְעִי דּוּכְתֵּיהּ הֵיכָא;",
-     "en": "David and Samuel <b>said: It is written: “Then you shall arise, and get you up unto the place</b> which the Lord your God shall choose” (Deuteronomy 17:8). This <b>teaches that the Temple is higher than all</b> places in <b>Eretz Yisrael. And Eretz Yisrael is higher than all countries. They did not know where</b> the highest <b>place</b> in Eretz Yisrael was."
-    },
-    {
-     "ref": "Zevachim 54b",
-     "i": 4,
-     "he": "אַיְיתוֹ סֵפֶר יְהוֹשֻׁעַ, בְּכוּלְּהוּ כְּתִיב: ״וְיָרַד (וְעָלָה) הַגְּבוּל״, ״וְתָאַר הַגְּבוּל״; בְּשֵׁבֶט בִּנְיָמִין ״וְעָלָה״ כְּתִיב, ״וְיָרַד״ לָא כְּתִיב. אָמְרִי, שְׁמַע מִינַּהּ: הָכָא הוּא מְקוֹמוֹ.",
-     "en": "<b>They brought the book of Joshua. With regard to all of</b> the borders of the tribes <b>it is written: “And went down”</b> (see Joshua 15:10, 16:3, 17:9), and it is written: <b>“And the border went up</b> to Beth Hoglah.” (Joshua 15:6), and: <b>“And the border was drawn</b> from the top of the mountain to the fountain of the waters of Nephtoah” (Joshua 15:9). The verse uses different terms to describe the borders of the portion of each tribe. And <b>with regard to</b> the borders of <b>the tribe of Benjamin it is written</b> only: <b>“And went up”</b> (Joshua 18:11), but it <b>is not written: “And went down.” They said: Conclude from</b> the verses that the Temple’s <b>place is here,</b> in the portion of Benjamin."
-    },
-    {
-     "ref": "Zevachim 54b",
-     "i": 5,
-     "he": "סְבוּר לְמִבְנְיֵיהּ בְּעֵין עֵיטָם – דְּמִדְּלֵי; אָמְרִי: נִיתַתֵּי בֵּיהּ קַלִּיל, כְּדִכְתִיב: ״וּבֵין כְּתֵפָיו שָׁכֵן״.",
-     "en": "<b>They thought to build it at Ein Eitam, which is higher</b> than any other place in the portion of Benjamin. <b>They said: Let us lower it a bit, as it is written:</b> “He covers it throughout the day, <b>and He dwells between his shoulders”</b> (Deuteronomy 33:12). This indicates that the Temple is situated slightly lower, between two peaks."
-    },
-    {
-     "ref": "Zevachim 54b",
-     "i": 6,
-     "he": "וְאִיבָּעֵית אֵימָא: גְּמִירִי דְּסַנְהֶדְרִין בְּחֶלְקוֹ דִּיהוּדָה וּשְׁכִינָה בְּחֶלְקוֹ דְּבִנְיָמִין, וְאִי מְדַלִּינַן לֵיהּ – מִתְפְּלֵיג טוּבָא; מוּטָב דְּנִיתַתֵּי בֵּיהּ פּוּרְתָּא, כְּדִכְתִיב: ״וּבֵין כְּתֵפָיו שָׁכֵן״.",
-     "en": "<b>And if you wish, say</b> instead that <b>it is learned</b> as a tradition <b>that</b> the <b>Sanhedrin</b> is to be located <b>in the portion of Judah, and</b> the place of the <b>Divine Presence is</b> to be located <b>in the portion of Benjamin.</b> They said: <b>And if we raise it</b> and place it near Ein Eitam <b>it</b> will be <b>too distant</b> from the portion of Judah. They said: It is <b>preferable that we lower it a bit, as it is written:</b> “He covers it throughout the day, <b>and He dwells between his shoulders”</b> (Deuteronomy 33:12)."
-    },
-    {
-     "ref": "Zevachim 54b",
-     "i": 7,
-     "he": "וְעַל דָּבָר זֶה נִתְקַנֵּא דּוֹאֵג הָאֲדוֹמִי בְּדָוִד, כְּדִכְתִיב: ״כִּי קִנְאַת בֵּיתְךָ אֲכָלָתְנִי״, וּכְתִיב: ״זְכוֹר ה׳ לְדָוִד אֵת כׇּל עֻנּוֹתוֹ אֲשֶׁר נִשְׁבַּע לַה׳ וְגוֹ׳, אִם אָבֹא בְּאֹהֶל בֵּיתִי וְגוֹ׳, אִם אֶתֵּן שְׁנַת לְעֵינָי לְעַפְעַפַּי תְּנוּמָה עַד אֶמְצָא מָקוֹם לַה׳ וְגוֹ׳״.",
-     "en": "<b>And with regard to this matter,</b> that David and Samuel discovered the location of the Temple, <b>Doeg the Edomite was jealous of David, as it is written: “Because jealousy for Your House has eaten me up”</b> (Psalms 69:10), <b>and it is written: “Lord, remember for David all his affliction; how he swore to the Lord,</b> and vowed unto the Mighty One of Jacob: <b>I will not come into the tent of my house,</b> nor go up into the bed that is spread for me; <b>if I will give sleep to my eyes, or slumber to my eyelids; until I find a place for the Lord,</b> a dwelling place for the Mighty One of Jacob” (Psalms 132:1–5)."
+     "ref": "Zevachim 19a",
+     "start": 1,
+     "end": 1
     }
    ],
-   "words": 542,
-   "minutes": 4
+   "words": 89,
+   "minutes": 1
   },
   {
    "id": "zevachim-57a-5-13",
@@ -136,9 +90,7 @@
     "Zevachim 57a"
    ],
    "start_segment": 5,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -199,6 +151,13 @@
      "en": "The Gemara relates: <b>And when these matters were said before Rabbi Yishmael, he said to</b> his students: <b>Go out and tell Rabbi Akiva: You were mistaken</b> when you conceded to Rabbi Yosei HaGelili that the allotted time for eating a firstborn offering could have been derived from the allotted time for eating a thanks offering. Why? <b>From where is</b> it <b>derived</b> that the breast and thigh of <b>a thanks offering</b> are eaten by priests? It is derived <b>from</b> a juxtaposition with <b>a peace offering.</b> Nowhere is it stated explicitly that the breast and thigh of a thanks offering are eaten only by priests. <b>And</b> in the realm of consecrated matters, <b>can a matter derived via a juxtaposition then teach</b> its <i>halakha</i> <b>via a juxtaposition?</b> The Gemara (49b) demonstrated that it cannot. <b>Consequently, you should not infer from the latter formulation</b> of the verse, from the words “It shall be yours,” <b>but</b> rather, <b>from the first formulation</b> of the verse, as you claimed that the Torah juxtaposes a firstborn offering with the breast and thigh of a peace offering."
     }
    ],
+   "span": [
+    {
+     "ref": "Zevachim 57a",
+     "start": 5,
+     "end": 13
+    }
+   ],
    "words": 904,
    "minutes": 7
   },
@@ -210,9 +169,7 @@
     "Zevachim 59a"
    ],
    "start_segment": 9,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -223,6 +180,13 @@
      "i": 9,
      "he": "אָמַר רַב: מִזְבֵּחַ שֶׁנִּפְגַּם – כׇּל הַקֳּדָשִׁים שֶׁנִּשְׁחֲטוּ שָׁם פְּסוּלִין. מִקְרָא הוּא בְּיָדֵינוּ, וּשְׁכַחְנוּהוּ. כִּי סְלֵיק רַב כָּהֲנָא, אַשְׁכְּחֵיהּ לְרַבִּי שִׁמְעוֹן בְּרַבִּי דְּקָאָמַר מִשּׁוּם רַבִּי יִשְׁמָעֵאל בְּרַבִּי יוֹסֵי: מִנַּיִן לַמִּזְבֵּחַ שֶׁנִּפְגַּם – שֶׁכׇּל הַקֳּדָשִׁים שֶׁנִּשְׁחֲטוּ שָׁם פְּסוּלִין?",
      "en": "§ <b>Rav says:</b> In a case of <b>an altar that was damaged, all sacrificial</b> animals <b>that were slaughtered there</b> are <b>disqualified.</b> Rav continues: <b>We have a verse</b> as the source for this <i>halakha</i> <b>but we have forgotten</b> which one <b>it</b> is. <b>When Rav Kahana,</b> Rav’s disciple, <b>ascended</b> from Babylonia to Eretz Yisrael, <b>he found Rabbi Shimon, son of Rabbi</b> Yehuda HaNasi, <b>saying in the name of Rabbi Yishmael, son of Rabbi Yosei: From where</b> is it derived that in the case of <b>an altar that was damaged, that all sacrificial</b> animals <b>that were slaughtered there</b> are <b>disqualified?</b>"
+    }
+   ],
+   "span": [
+    {
+     "ref": "Zevachim 59a",
+     "start": 9,
+     "end": 9
     }
    ],
    "words": 97,
@@ -236,9 +200,7 @@
     "Zevachim 62a"
    ],
    "start_segment": 9,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -249,6 +211,13 @@
      "i": 9,
      "he": "אִין; דְּתַנְיָא: אוֹתוֹ הַיּוֹם נִפְגְּמָה קֶרֶן מִזְבֵּחַ, וְהֵבִיאוּ בּוּל שֶׁל מֶלַח וּסְתָמוּהוּ; וְלֹא מִפְּנֵי שֶׁכָּשֵׁר לַעֲבוֹדָה, אֶלָּא שֶׁלֹּא יֵרָאֶה מִזְבֵּחַ פָּגוּם. שֶׁכׇּל מִזְבֵּחַ שֶׁאֵין לוֹ קֶרֶן וְכֶבֶשׁ וִיסוֹד וְרִיבּוּעַ – פָּסוּל. רַבִּי יוֹסֵי בְּרַבִּי יְהוּדָה אוֹמֵר: אַף הַסּוֹבֵב.",
      "en": "The Gemara answers: <b>Yes,</b> the <i>karkov</i> is also indispensable, <b>as it is taught</b> in a <i>baraita</i>: On <b>that day</b> when <i>etrogim</i> were pelted at a Sadducee priest who poured the water libation of <i>Sukkot</i> on his feet rather than on the altar (see <i>Sukka</i> 48b), <b>the corner of the altar was damaged</b> as a result of the pelting and the ensuing chaos. <b>They brought a fistful of salt and sealed</b> the damaged section. They did this <b>not because</b> it rendered the altar <b>fit for the</b> Temple <b>service, but</b> in deference to the altar, <b>so that the altar would not be seen</b> in its <b>damaged</b> state. The reason the altar is disqualified is <b>because any altar that does not have a corner, a ramp, and a base, and</b> any altar that is not <b>square,</b> is <b>disqualified. Rabbi Yosei, son of Rabbi Yehuda, says: Even the surrounding ledge</b> is indispensable."
+    }
+   ],
+   "span": [
+    {
+     "ref": "Zevachim 62a",
+     "start": 9,
+     "end": 9
     }
    ],
    "words": 149,
@@ -262,9 +231,7 @@
     "Zevachim 95b"
    ],
    "start_segment": 8,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -277,8 +244,47 @@
      "en": "§ The Gemara relates: There was <b>a certain oven that was smeared with</b> animal <b>fat</b> all over its walls and floor. <b>Rabba bar Ahilai prohibited eating bread</b> baked in that oven <b>forever, and</b> he prohibited <b>even</b> eating the bread <b>with salt</b> alone, <b>lest one come to eat it with <i>kutaḥ</i>,</b> a dish made from milk, water, salt, and bread crumbs. According to Rabba bar Ahilai, the oven will never fully eliminate the fat."
     }
    ],
+   "span": [
+    {
+     "ref": "Zevachim 95b",
+     "start": 8,
+     "end": 8
+    }
+   ],
    "words": 74,
    "minutes": 1
+  },
+  {
+   "id": "zevachim-100a-4-4",
+   "tractate": "zevachim",
+   "ref": "Zevachim 100a",
+   "refs": [
+    "Zevachim 100a"
+   ],
+   "start_segment": 4,
+   "classification": "LOW_CONFIDENCE",
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Yosef the Priest's wife died on the eve of Passover, and although he did not want to become impure, the Sages forced him to do so to bury her.",
+   "included_by": "low-pool-grader-2026-11-13",
+   "segments": [
+    {
+     "ref": "Zevachim 100a",
+     "i": 4,
+     "he": "וּמְנָא תֵּימְרָא דְּשָׁנֵי לֵיהּ בֵּין קוֹדֶם חֲצוֹת בֵּין לְאַחַר חֲצוֹת? דְּתַנְיָא: ״לָהּ יִטַּמָּא״ – מִצְוָה. לֹא רָצָה – מְטַמְּאִין אוֹתוֹ עַל כׇּרְחוֹ. וּמַעֲשֶׂה בְּיוֹסֵף הַכֹּהֵן שֶׁמֵּתָה אִשְׁתּוֹ בְּעֶרֶב הַפֶּסַח, וְלֹא רָצָה לִיטַּמֵּא, וְנִמְנוּ אֶחָיו הַכֹּהֲנִים וְטִימְּאוּהוּ בְּעַל כׇּרְחוֹ.",
+     "en": "The Gemara explains: <b>And from where do you say that</b> the <i>halakha</i> <b>is different</b> depending on <b>whether</b> his relative died <b>before midday</b> on the fourteenth of Nisan or <b>whether</b> he died <b>after midday? As it is taught</b> in a <i>baraita</i>: The Torah states with regard to a priest: “And for his sister a virgin, that is near unto him, that has had no husband, <b>for her may he become impure”</b> (Leviticus 21:3). From here it is derived that it is <b>a mitzva</b> for a priest to become impure in order to bury his deceased relatives, and if he <b>did not want</b> to do so, others must <b>render him impure against his will. And an incident</b> occurred <b>involving Yosef the priest, where his wife died on Passover eve, and he did not want to become impure,</b> as he wanted to offer the Paschal offering; <b>and his brethren the priests voted and rendered him impure against his will.</b>"
+    }
+   ],
+   "span": [
+    {
+     "ref": "Zevachim 100a",
+     "start": 4,
+     "end": 4
+    }
+   ],
+   "words": 157,
+   "minutes": 2
   },
   {
    "id": "zevachim-102b-8-20",
@@ -288,9 +294,7 @@
     "Zevachim 102b"
    ],
    "start_segment": 8,
-   "tier": "story",
    "classification": "YES",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -375,6 +379,13 @@
      "en": "The story concludes: The priest <b>who immersed that day left</b> in disappointment, with <b>his <i>a fortiori</i></b> inferences <b>upon his head,</b> as they did not help him. And along with him walked <b>an acute mourner on his right</b> and a priest <b>who had not yet</b> brought an <b>atonement</b> offering <b>on his left.</b> They too were denied shares, because they were unfit for the Temple service."
     }
    ],
+   "span": [
+    {
+     "ref": "Zevachim 102b",
+     "start": 8,
+     "end": 20
+    }
+   ],
    "words": 1058,
    "minutes": 8
   },
@@ -386,9 +397,7 @@
     "Zevachim 113a"
    ],
    "start_segment": 15,
-   "tier": "story",
    "classification": "HIGH_CONFIDENCE",
-   "biblical": false,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -401,8 +410,110 @@
      "en": "<b>Rabbi Yoḥanan raised an objection to Reish Lakish</b> from a <i>baraita</i> (see <i>Tosefta</i>, <i>Eduyyot</i> 3:3): <b>Once,</b> human <b>bones were found in the Chamber of the Woodshed, and</b> the Sages <b>sought to decree impurity upon Jerusalem,</b> i.e., to proclaim all who go there to be impure, as if a corpse can be found in a chamber of the Temple there is reason to be concerned that there are lost graves in other places as well. <b>Rabbi Yehoshua stood upon his feet and said: Is it not a shame and disgrace for us to decree impurity upon the city of our fathers</b> because of this concern? Show me: <b>Where are the dead of the flood,</b> and <b>where are</b> all of <b>the dead</b> killed by <b>Nebuchadnezzar?</b>"
     }
    ],
+   "span": [
+    {
+     "ref": "Zevachim 113a",
+     "start": 15,
+     "end": 15
+    }
+   ],
    "words": 124,
    "minutes": 1
+  },
+  {
+   "id": "zevachim-116b-4-4",
+   "tractate": "zevachim",
+   "ref": "Zevachim 116b",
+   "refs": [
+    "Zevachim 116b"
+   ],
+   "start_segment": 4,
+   "classification": "YES",
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "Ifera Hurmiz sends a sacrifice to Rava, who instructs his students to find gentile youths to offer it on a private altar to satisfy her request legally.",
+   "segments": [
+    {
+     "ref": "Zevachim 116b",
+     "i": 4,
+     "he": "כִּי הָא דְּאִיפְרָא הוֹרְמִיז אִימֵּיהּ דְּשַׁבּוּר מַלְכָּא שַׁדַּרָה קוּרְבָּנָא לְרָבָא, שְׁלַחָה לֵיהּ: ״אַסְּקוּהּ נִיהֲלֵיהּ לְשֵׁם שָׁמַיִם״. אֲמַר לְהוּ לְרַב סָפְרָא וּלְרַב אַחָא בַּר הוּנָא: זִילוּ וּדְבַרוּ תְּרֵי עוּלֵמֵי גּוּלָאֵי, וַחֲזוֹ הֵיכָא דְּמַסְּקָא יַמָּא שִׂירְטוֹן; וּשְׁקֻלוּ צִיבֵי חַדְתֵי, וְאַפִּיקוּ נוּרָא מִמָּרָא חַדְתָּא, וְאַסְּקוּהּ נִיהֲלֵיהּ לְשֵׁם שָׁמַיִם.",
+     "en": "This is <b>similar to that</b> incident in <b>which Ifera Hurmiz, the mother of King Shapur</b> of Persia, <b>sent an offering to Rava,</b> with which <b>she sent</b> this message <b>to him: Sacrifice this for me, for the sake of Heaven.</b> Rava <b>said to Rav Safra and to Rav Aḥa bar Huna: Go, take two</b> gentile <b>youths of the same age,</b> i.e., similar to one another, so that the sacrifice will be performed with maximal beauty, <b>and see where the sea</b> currently <b>raises silt [<i>sirton</i>],</b> which is a place that no one has used before. <b>And take new wood and bring out fire from new vessels, and</b> the two youths will <b>sacrifice</b> the offering <b>for her, for the sake of Heaven.</b>"
+    }
+   ],
+   "span": [
+    {
+     "ref": "Zevachim 116b",
+     "start": 4,
+     "end": 4
+    }
+   ],
+   "words": 121,
+   "minutes": 1
+  }
+ ],
+ "out_of_scope": [
+  {
+   "id": "zevachim-54b-2-7",
+   "tractate": "zevachim",
+   "ref": "Zevachim 54b",
+   "refs": [
+    "Zevachim 54b"
+   ],
+   "start_segment": 2,
+   "classification": "HIGH_CONFIDENCE",
+   "in_mishnah": false,
+   "extended": null,
+   "reviewed": false,
+   "summary": "David and Samuel study the book of Joshua to determine the precise location of the Temple, eventually choosing a site slightly lower than the highest point, which triggers the jealousy of Doeg the Edomite.",
+   "segments": [
+    {
+     "ref": "Zevachim 54b",
+     "i": 2,
+     "he": "דָּרֵשׁ רָבָא, מַאי דִּכְתִיב: ״וַיֵּלֶךְ דָּוִד וּשְׁמוּאֵל וַיֵּשְׁבוּ בְּנוֹיוֹת בָּרָמָה״? וְכִי מָה עִנְיַן נוֹיוֹת אֵצֶל רָמָה? אֶלָּא שֶׁהָיוּ יוֹשְׁבִין בָּרָמָה וְעוֹסְקִין בְּנוֹיוֹ שֶׁל עוֹלָם.",
+     "en": "§ Apropos the altar and the Temple, the Gemara relates that <b>Rava taught: What</b> is the meaning of that <b>which is written</b> concerning David: <b>“And he and Samuel went and dwelt in Naioth.</b> And it was told Saul, saying: Behold, David is at Naioth [<i>beNayot</i>] <b>in Ramah”</b> (I Samuel 19:18–19)? <b>But what does Naioth have to do with Ramah?</b> They are in two distinct places. <b>Rather,</b> this means <b>that they were sitting in Ramah and</b> were <b>involved in</b> discussing <b>the beauty [<i>benoyo</i>] of the world,</b> i.e., the Temple."
+    },
+    {
+     "ref": "Zevachim 54b",
+     "i": 3,
+     "he": "אָמְרִי, כְּתִיב: ״וְקַמְתָּ וְעָלִיתָ אֶל הַמָּקוֹם״ – מְלַמֵּד שֶׁבֵּית הַמִּקְדָּשׁ גָּבוֹהַּ מִכׇּל אֶרֶץ יִשְׂרָאֵל, וְאֶרֶץ יִשְׂרָאֵל גְּבוֹהָה מִכׇּל אֲרָצוֹת. לָא הֲווֹ יָדְעִי דּוּכְתֵּיהּ הֵיכָא;",
+     "en": "David and Samuel <b>said: It is written: “Then you shall arise, and get you up unto the place</b> which the Lord your God shall choose” (Deuteronomy 17:8). This <b>teaches that the Temple is higher than all</b> places in <b>Eretz Yisrael. And Eretz Yisrael is higher than all countries. They did not know where</b> the highest <b>place</b> in Eretz Yisrael was."
+    },
+    {
+     "ref": "Zevachim 54b",
+     "i": 4,
+     "he": "אַיְיתוֹ סֵפֶר יְהוֹשֻׁעַ, בְּכוּלְּהוּ כְּתִיב: ״וְיָרַד (וְעָלָה) הַגְּבוּל״, ״וְתָאַר הַגְּבוּל״; בְּשֵׁבֶט בִּנְיָמִין ״וְעָלָה״ כְּתִיב, ״וְיָרַד״ לָא כְּתִיב. אָמְרִי, שְׁמַע מִינַּהּ: הָכָא הוּא מְקוֹמוֹ.",
+     "en": "<b>They brought the book of Joshua. With regard to all of</b> the borders of the tribes <b>it is written: “And went down”</b> (see Joshua 15:10, 16:3, 17:9), and it is written: <b>“And the border went up</b> to Beth Hoglah.” (Joshua 15:6), and: <b>“And the border was drawn</b> from the top of the mountain to the fountain of the waters of Nephtoah” (Joshua 15:9). The verse uses different terms to describe the borders of the portion of each tribe. And <b>with regard to</b> the borders of <b>the tribe of Benjamin it is written</b> only: <b>“And went up”</b> (Joshua 18:11), but it <b>is not written: “And went down.” They said: Conclude from</b> the verses that the Temple’s <b>place is here,</b> in the portion of Benjamin."
+    },
+    {
+     "ref": "Zevachim 54b",
+     "i": 5,
+     "he": "סְבוּר לְמִבְנְיֵיהּ בְּעֵין עֵיטָם – דְּמִדְּלֵי; אָמְרִי: נִיתַתֵּי בֵּיהּ קַלִּיל, כְּדִכְתִיב: ״וּבֵין כְּתֵפָיו שָׁכֵן״.",
+     "en": "<b>They thought to build it at Ein Eitam, which is higher</b> than any other place in the portion of Benjamin. <b>They said: Let us lower it a bit, as it is written:</b> “He covers it throughout the day, <b>and He dwells between his shoulders”</b> (Deuteronomy 33:12). This indicates that the Temple is situated slightly lower, between two peaks."
+    },
+    {
+     "ref": "Zevachim 54b",
+     "i": 6,
+     "he": "וְאִיבָּעֵית אֵימָא: גְּמִירִי דְּסַנְהֶדְרִין בְּחֶלְקוֹ דִּיהוּדָה וּשְׁכִינָה בְּחֶלְקוֹ דְּבִנְיָמִין, וְאִי מְדַלִּינַן לֵיהּ – מִתְפְּלֵיג טוּבָא; מוּטָב דְּנִיתַתֵּי בֵּיהּ פּוּרְתָּא, כְּדִכְתִיב: ״וּבֵין כְּתֵפָיו שָׁכֵן״.",
+     "en": "<b>And if you wish, say</b> instead that <b>it is learned</b> as a tradition <b>that</b> the <b>Sanhedrin</b> is to be located <b>in the portion of Judah, and</b> the place of the <b>Divine Presence is</b> to be located <b>in the portion of Benjamin.</b> They said: <b>And if we raise it</b> and place it near Ein Eitam <b>it</b> will be <b>too distant</b> from the portion of Judah. They said: It is <b>preferable that we lower it a bit, as it is written:</b> “He covers it throughout the day, <b>and He dwells between his shoulders”</b> (Deuteronomy 33:12)."
+    },
+    {
+     "ref": "Zevachim 54b",
+     "i": 7,
+     "he": "וְעַל דָּבָר זֶה נִתְקַנֵּא דּוֹאֵג הָאֲדוֹמִי בְּדָוִד, כְּדִכְתִיב: ״כִּי קִנְאַת בֵּיתְךָ אֲכָלָתְנִי״, וּכְתִיב: ״זְכוֹר ה׳ לְדָוִד אֵת כׇּל עֻנּוֹתוֹ אֲשֶׁר נִשְׁבַּע לַה׳ וְגוֹ׳, אִם אָבֹא בְּאֹהֶל בֵּיתִי וְגוֹ׳, אִם אֶתֵּן שְׁנַת לְעֵינָי לְעַפְעַפַּי תְּנוּמָה עַד אֶמְצָא מָקוֹם לַה׳ וְגוֹ׳״.",
+     "en": "<b>And with regard to this matter,</b> that David and Samuel discovered the location of the Temple, <b>Doeg the Edomite was jealous of David, as it is written: “Because jealousy for Your House has eaten me up”</b> (Psalms 69:10), <b>and it is written: “Lord, remember for David all his affliction; how he swore to the Lord,</b> and vowed unto the Mighty One of Jacob: <b>I will not come into the tent of my house,</b> nor go up into the bed that is spread for me; <b>if I will give sleep to my eyes, or slumber to my eyelids; until I find a place for the Lord,</b> a dwelling place for the Mighty One of Jacob” (Psalms 132:1–5)."
+    }
+   ],
+   "span": [
+    {
+     "ref": "Zevachim 54b",
+     "start": 2,
+     "end": 7
+    }
+   ],
+   "out_of_scope_reason": "biblical (R-S1): consensus judges / decisions.json; Simon 2026-11-13",
+   "words": 542,
+   "minutes": 4
   },
   {
    "id": "zevachim-116a-21-24",
@@ -412,9 +523,7 @@
     "Zevachim 116a"
    ],
    "start_segment": 21,
-   "tier": "story",
    "classification": "YES",
-   "biblical": true,
    "in_mishnah": false,
    "extended": null,
    "reviewed": false,
@@ -445,34 +554,16 @@
      "en": "They asked: <b>And</b> if so, <b>what is this tumultuous sound that we have heard?</b> Balaam <b>said to them: He has a good</b> and <b>precious item in His treasury, that was hidden away with Him</b> for <b>974 generations before the world was created, and He seeks to give it to his children, as it is stated: “The Lord will give strength to His people”</b> (Psalms 29:11). “Strength” is a reference to the Torah, which is the strength of the Jewish people. <b>Immediately, they all began to say: “The Lord will bless His people with peace”</b> (Psalms 29:11)."
     }
    ],
-   "words": 412,
-   "minutes": 3
-  },
-  {
-   "id": "zevachim-116b-4-4",
-   "tractate": "zevachim",
-   "ref": "Zevachim 116b",
-   "refs": [
-    "Zevachim 116b"
-   ],
-   "start_segment": 4,
-   "tier": "story",
-   "classification": "YES",
-   "biblical": false,
-   "in_mishnah": false,
-   "extended": null,
-   "reviewed": false,
-   "summary": "Ifera Hurmiz sends a sacrifice to Rava, who instructs his students to find gentile youths to offer it on a private altar to satisfy her request legally.",
-   "segments": [
+   "span": [
     {
-     "ref": "Zevachim 116b",
-     "i": 4,
-     "he": "כִּי הָא דְּאִיפְרָא הוֹרְמִיז אִימֵּיהּ דְּשַׁבּוּר מַלְכָּא שַׁדַּרָה קוּרְבָּנָא לְרָבָא, שְׁלַחָה לֵיהּ: ״אַסְּקוּהּ נִיהֲלֵיהּ לְשֵׁם שָׁמַיִם״. אֲמַר לְהוּ לְרַב סָפְרָא וּלְרַב אַחָא בַּר הוּנָא: זִילוּ וּדְבַרוּ תְּרֵי עוּלֵמֵי גּוּלָאֵי, וַחֲזוֹ הֵיכָא דְּמַסְּקָא יַמָּא שִׂירְטוֹן; וּשְׁקֻלוּ צִיבֵי חַדְתֵי, וְאַפִּיקוּ נוּרָא מִמָּרָא חַדְתָּא, וְאַסְּקוּהּ נִיהֲלֵיהּ לְשֵׁם שָׁמַיִם.",
-     "en": "This is <b>similar to that</b> incident in <b>which Ifera Hurmiz, the mother of King Shapur</b> of Persia, <b>sent an offering to Rava,</b> with which <b>she sent</b> this message <b>to him: Sacrifice this for me, for the sake of Heaven.</b> Rava <b>said to Rav Safra and to Rav Aḥa bar Huna: Go, take two</b> gentile <b>youths of the same age,</b> i.e., similar to one another, so that the sacrifice will be performed with maximal beauty, <b>and see where the sea</b> currently <b>raises silt [<i>sirton</i>],</b> which is a place that no one has used before. <b>And take new wood and bring out fire from new vessels, and</b> the two youths will <b>sacrifice</b> the offering <b>for her, for the sake of Heaven.</b>"
+     "ref": "Zevachim 116a",
+     "start": 21,
+     "end": 24
     }
    ],
-   "words": 121,
-   "minutes": 1
+   "out_of_scope_reason": "biblical (R-S1): consensus judges / decisions.json; Simon 2026-11-13",
+   "words": 412,
+   "minutes": 3
   }
  ]
 }

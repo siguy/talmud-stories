@@ -5,6 +5,9 @@
   var HE = {}, NAME = {};
   var app = document.getElementById("app");
   var cache = {}, index = null;
+  // Story ids are PERMANENT (site/data/story_ids.json, scripts/story_ids.py): a boundary change keeps the id. An id
+  // that is no longer active is in redirects.json: -> the id its story now has (a merge), or null (retired).
+  var REDIRECTS = {};
 
   // localStorage can throw (private windows, blocked storage): the site must work without it.
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
@@ -35,23 +38,38 @@
   function toggleRead(id) { if (read.has(id)) read.delete(id); else read.add(id); save("septimus-read", Array.from(read)); }
 
   function loadIndex() {
-    return getJSON("data/index.json").then(function (idx) {
+    // redirects.json missing or unreadable: old ids then simply show "not found"; the site still works.
+    var redirectsP = getJSON("data/redirects.json").catch(function () { return {}; });
+    return Promise.all([getJSON("data/index.json"), redirectsP]).then(function (both) {
+      var idx = both[0];
       index = idx;
       idx.tractates.forEach(function (t) { NAME[t.tractate] = t.name; HE[t.tractate] = t.he; });
+      if (REDIRECTS !== both[1]) { REDIRECTS = both[1]; migrateRead(); }
       return idx;
     });
   }
 
+  // A checkmark saved under an id that was merged into another story moves to that story's id. A retired id's
+  // checkmark is kept (it may be revived) but counts for nothing: home() counts only ids not in REDIRECTS.
+  function migrateRead() {
+    var changed = false;
+    Array.from(read).forEach(function (id) {
+      var to = REDIRECTS[id];
+      if (to) { read.delete(id); read.add(to); changed = true; }
+    });
+    if (changed) save("septimus-read", Array.from(read));
+  }
+
   // The home page reads ONLY the counts in index.json (36 tractate files are ~8 MB; a phone should not
   // fetch them to draw a list). "Read" progress is the saved story ids that begin with the tractate's
-  // slug and a hyphen (ids are <slug>-<daf>-<start>-<end>, slugs have no hyphen), capped at the count.
+  // slug and a hyphen (every id starts <slug>-, slugs have no hyphen), not retired, capped at the count.
   function home() {
     return loadIndex().then(function (idx) {
       var cards = idx.tractates.map(function (t) {
-        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0; }).length);
+        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0 && !(id in REDIRECTS); }).length);
         return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + esc(t.he) + '</span>' +
           '<div class="card-name">' + esc(t.name) + '</div>' +
-          '<div class="card-meta">' + t.story + ' stories' + (t.borderline ? ' · ' + t.borderline + ' borderline' : '') +
+          '<div class="card-meta">' + t.story +  ' stories' +
           (t.reviewed ? '' : ' · not yet reviewed') + '</div>' +
           '<div class="bar-track"><div class="bar-fill" style="width:' + (t.story ? 100 * done / t.story : 0) + '%"></div></div>' +
           '<div class="card-meta">' + done + ' of ' + t.story + ' read</div></a>';
@@ -62,17 +80,13 @@
     });
   }
 
-  function tractate(t, tab) {
+  // Every story on the site is a definite story (scripts/build_site_data.py ships nothing else), so there is one list.
+  function tractate(t) {
     return getJSON("data/" + t + ".json").then(function (d) {
-      tab = tab === "borderline" ? "borderline" : "story";
-      var counts = { story: 0, borderline: 0 };
-      d.stories.forEach(function (s) { counts[s.tier]++; });
-      var list = d.stories.filter(function (s) { return s.tier === tab; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
+      var list = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var html = '<div class="crumb"><a href="#/">All tractates</a></div><h1>' + NAME[t] + ' <span style="font-family:\'Frank Ruhl Libre\',serif">' + HE[t] + '</span></h1>';
       if (!d.reviewed) html += '<p class="notice">These stories were found by software and have not yet been checked by a scholar. Some may not be stories, or may be cut at the wrong place.</p>';
-      html += '<div class="tabs"><button class="tab" aria-pressed="' + (tab === "story") + '" data-tab="story">Stories (' + counts.story + ')</button>' +
-        (counts.borderline ? '<button class="tab" aria-pressed="' + (tab === "borderline") + '" data-tab="borderline">Borderline (' + counts.borderline + ')</button>' : '') + '</div>';
-      if (tab === "borderline") html += '<p class="notice">Borderline: scholars could reasonably disagree about whether these count as stories.</p>';
+      html += '<div class="tabs"><button class="tab" aria-pressed="true">Stories (' + list.length + ')</button></div>';
       var last = "";
       list.forEach(function (s) {
         var daf = s.ref.split(" ").pop();
@@ -82,12 +96,20 @@
           '<div class="row-sum">' + esc(s.summary) + '</div></span></a>';
       });
       app.innerHTML = html;
-      app.querySelectorAll("[data-tab]").forEach(function (b) { b.addEventListener("click", function () { location.hash = "#/t/" + t + "?tab=" + b.dataset.tab; }); });
     });
   }
 
   function story(id) {
     var t = id.split("-")[0];
+    if (Object.prototype.hasOwnProperty.call(REDIRECTS, id)) {
+      var to = REDIRECTS[id];
+      // replace, not assign: Back must not bounce the reader through the old id again
+      if (to) { location.replace("#/s/" + to); return Promise.resolve(); }
+      app.innerHTML = '<div class="crumb"><a href="#/t/' + esc(t) + '">← ' + esc(NAME[t] || "All tractates") + '</a></div>' +
+        '<p class="notice">This passage is no longer on the list of stories.</p>' +
+        '<p><a href="#/t/' + esc(t) + '">See the stories of ' + esc(NAME[t] || t) + '</a></p>';
+      return Promise.resolve();
+    }
     var draftMode = /[?&]notes=draft/.test(location.search) || !!CFG.showDraftNotes;
     var notesP = getJSON("data/notes/" + t + ".json").catch(function () { return { notes: {} }; });
     return Promise.all([getJSON("data/" + t + ".json"), notesP]).then(function (both) {
@@ -95,12 +117,12 @@
       if (note && !note.approved && !draftMode) note = null; // unreviewed AI drafts never reach readers
       var s = d.stories.filter(function (x) { return x.id === id; })[0];
       if (!s) { app.innerHTML = '<p>Story not found. <a href="#/">Home</a></p>'; return; }
-      var siblings = d.stories.filter(function (x) { return x.tier === s.tier; }).sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
+      var siblings = d.stories.slice().sort(function (a, b) { return dafKey(a.ref) - dafKey(b.ref) || a.start_segment - b.start_segment; });
       var i = siblings.indexOf(s), prev = siblings[i - 1], next = siblings[i + 1];
       var segs = s.segments.map(function (g, n) { return '<div class="seg"><div class="he" lang="he" dir="rtl">' + g.he + '</div><div class="en" lang="en">' + g.en + '</div><button class="flag" data-seg="' + n + '" aria-label="Report a problem with this passage" title="Report a problem with this passage">⚑ Report</button></div>'; }).join("");
-      app.innerHTML = '<div class="crumb"><a href="#/t/' + t + (s.tier === "borderline" ? "?tab=borderline" : "") + '">← ' + NAME[t] + '</a></div>' +
+      app.innerHTML = '<div class="crumb"><a href="#/t/' + t + '">← ' + NAME[t] + '</a></div>' +
         '<h1>' + esc(refLabel(s)) + '</h1>' +
-        (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') + (s.tier === "borderline" ? '<span class="chip" style="margin:0">Borderline</span> ' : '') +
+        (s.in_mishnah ? '<span class="chip" style="margin:0">Mishnah</span> ' : '') +
         (s.reviewed ? '' : '<span class="chip" style="margin:0">Not yet reviewed</span> ') +
         (s.extended ? '<span class="chip" style="margin:0" title="The passage was widened by a few lines so it ends at a natural point">Extended to finish the passage</span>' : '') +
         (s.summary ? '<p class="summary">' + esc(s.summary) + '</p>' : '') + noteMarkup(note) + '<p class="notice">Bold English is a translation of the original Aramaic; plain text is explanation added by the translators.</p>' + segs +
@@ -160,7 +182,7 @@
       var cat = document.getElementById("fb-cat").value, comment = document.getElementById("fb-comment").value.trim();
       if (cat === "other" && !comment) { msg.className = "msg"; msg.textContent = "Please add a few words so we know what you mean."; return; }
       var payload = {
-        story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs, tier: s.tier, classification: s.classification,
+        story_id: s.id, tractate: s.tractate, ref: s.ref, refs: s.refs,
         reviewed: s.reviewed, in_mishnah: s.in_mishnah, summary: s.summary, category: cat, comment: comment,
         segment: g ? { ref: g.ref, index: g.i, he: plain(g.he), en: plain(g.en) } : null,
         name: document.getElementById("fb-name").value.trim(), website: document.getElementById("fb-website").value,
@@ -169,9 +191,21 @@
       var send = document.getElementById("fb-send"); send.disabled = true; msg.className = "msg"; msg.textContent = "Sending…";
       function done(ok, text) { send.disabled = false; msg.className = "msg"; msg.innerHTML = text; if (ok) document.getElementById("fb-comment").value = ""; }
       function fallback() {
-        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + cat;
-        var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(payload, null, 1) + "\n```";
-        var url = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=" + encodeURIComponent(body.slice(0, 6000));
+        var label = CATS.filter(function (c) { return c[0] === cat; })[0][1];
+        var title = "[Feedback] " + (g ? g.ref + " segment " + g.i : s.ref) + ": " + label;
+        // GitHub refuses a new-issue URL much past 8 KB, and Hebrew triples when encoded: a long passage's text
+        // alone could exceed it. Shorten the passage text (id + segment index locate it) until the URL fits.
+        var base = "https://github.com/" + (CFG.repo || "") + "/issues/new?labels=" + encodeURIComponent("story-feedback") + "&title=" + encodeURIComponent(title) + "&body=";
+        var url, keep = 2000;
+        do {
+          var p = JSON.parse(JSON.stringify(payload));
+          if (p.segment) { p.segment.he = p.segment.he.slice(0, keep); p.segment.en = p.segment.en.slice(0, keep); }
+          if (keep < 2000) p.summary = (p.summary || "").slice(0, keep);
+          var body = (comment ? "> " + comment + "\n\n" : "") + "```json\n" + JSON.stringify(p, null, 1) + "\n```";
+          url = base + encodeURIComponent(body);
+          keep = Math.floor(keep / 2);
+        } while (url.length > 8000 && keep > 0);
+        if (url.length > 8000) url = url.slice(0, 8000).replace(/%[0-9A-F]?$/i, "");
         window.open(url, "_blank", "noopener");
         done(true, "Opened GitHub with your note filled in — press “Submit new issue” there to send it.");
       }
@@ -186,7 +220,7 @@
     var h = location.hash.slice(1) || "/", q = h.split("?"), parts = q[0].split("/"), p;
     window.scrollTo(0, 0);
     p = loadIndex().then(function () {
-      if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2], (/tab=(\w+)/.exec(q[1] || "") || [])[1]);
+      if (parts[1] === "t" && NAME[parts[2]]) return tractate(parts[2]);
       if (parts[1] === "s") return story(parts[2]);
       return home();
     });
