@@ -335,7 +335,7 @@
         card,
         area,
         dataLink,
-        el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("Browse the stories", "#/browse"), " · ", link("How the stories were chosen", "#/how")])
+        el("p", { "class": "su-links" }, [link("About Joe Septimus", "#/about"), " · ", link("How the stories were chosen", "#/how")])
       ];
       function reveal() { if (held) { held = false; show(page); } }
       S.listener = function () {
