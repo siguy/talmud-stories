@@ -188,3 +188,12 @@ definite answer.
   SURE_REMOVE by a rules triage against `STORY_RULES.md` (no Jeff verdict), added to `remove` with rule and reason per
   card. The site went from 1,864 to 1,847; `out_of_scope` unchanged at 102. Run agreement is weak evidence for a twin
   card; the other twin-pass cards are unreviewed (`docs/findings/2026-11-14-twin-pass-site-cards.md`).
+- 2026-11-14, second twin-pass pass — Simon: "just remove them if you are sure"; "if they're stories, which they seem
+  to be, keep them." 33 more cards in `remove` (32 SURE_REMOVE, plus chagigah-13a-10-10, a one-line allusion whose full
+  story ships as chagigah-13a-12-12); their ids are `retired`, except bava_batra-30b-5-5, which lies inside the
+  shipped bava_batra-30b-5-7 and so `redirect`s to it (its entry is `exact: true`: it removes only the card with exactly
+  its span). Two new decision lists: `merge` (three cards absorbed into their neighbours: megillah-29a-4-4 into
+  megillah-29a-5-5, sanhedrin-11a-8-8 into sanhedrin-11a-7-7, sanhedrin-104a-7-7 into sanhedrin-104a-8-8; the absorbed
+  ids redirect) and `keep` (four cards Simon kept; a `remove` overlapping one is refused). rosh_hashanah-25a-11-11 shown
+  extended to 25a:11-13 (`boundary_extensions.json`). The site went from 1,847 to 1,811 (−33 removed, −3 absorbed);
+  `out_of_scope` unchanged at 102.

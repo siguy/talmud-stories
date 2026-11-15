@@ -89,6 +89,10 @@ born with (`-v2`, `-v3` if that string was ever used).
   split, merge, tie refused, retire, never reused, revival, chains, other tractates untouched).
 - First live case, the same day: the 2026-11-14 golden fix of Ketubot 106a (2-3 → 3-3) keeps `ketubot-106a-2-3`, with
   its note and written summary, at span 3-3.
+- **Display merges** (`septimus_site_decisions.json` `merge`, 2026-11-14): two cards joined into one would tie, so the
+  build sets the `keep` entry's span to the merged span first (the documented tie settlement, from a recorded decision);
+  the other member then `redirect`s to it. A member with a display extension is refused. The merged card takes the
+  summary written for `keep`.
 - `boundary_extensions.json` — display-only widenings: `{id: {start_back ≤2, end_forward ≤4, reason}}`.
 - `notes/<tractate>.json` — AI-drafted background notes: `{id: {note, people, terms, approved}}`. **Shown only when `approved: true`**
   (or `?notes=draft` for reviewers).

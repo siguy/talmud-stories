@@ -21,12 +21,12 @@ September). Daniel to confirm. It is a config value (`yahrzeit` in `site/config.
 
 | | stories | English words | median words/story | hours at 150 wpm | hours at 230 wpm |
 |---|---|---|---|---|---|
-| Ketubot | 86 | 23,755 | 194 | 2.6 | 1.7 |
+| Ketubot | 86 | 23,680 | 195 | 2.6 | 1.7 |
 | Kiddushin | 52 | 11,861 | 188 | 1.3 | 0.9 |
 | Gittin | 111 | 25,149 | 183 | 2.8 | 1.8 |
-| Yevamot | 85 | 18,180 | 161 | 2.0 | 1.3 |
-| Berakhot | 118 | 25,128 | 138 | 2.8 | 1.8 |
-| **All** | **452** | **104,073** | **168** | **11.6** | **7.5** |
+| Yevamot | 84 | 18,055 | 162 | 2.0 | 1.3 |
+| Berakhot | 116 | 24,919 | 142 | 2.8 | 1.8 |
+| **All** | **449** | **103,664** | **171** | **11.5** | **7.5** |
 
 **Only definite stories ship** — the rule, and why it is kept apart from the scholarly
 catalogue: [`septimus-story-filter.md`](septimus-story-filter.md). On 2026-11-09 it removed
@@ -36,7 +36,9 @@ call Jeff never answered (17a:3); moved Yevamot from one v11 run to YES/HIGH in 
 On 2026-11-10 biblical stories came back (Yevamot 85, Berakhot 118); on 2026-11-13 they went out again (Simon: one
 scope with Jeff's R-S1). On 2026-11-14 Simon added the low-pool promotions (both Claude grader passes say story):
 Yevamot +4 (86), Berakhot +7 (119). Later on 2026-11-14 Simon removed 17 twin-pass cards a rules triage marked not-a-story,
-one each from Yevamot (85) and Berakhot (118); the rows above include both changes.
+one each from Yevamot (85) and Berakhot (118). Later still, Ketubot 106a went back to 3-3 (b43deb2; 23,680 words),
+and a second twin-pass triage pass removed 33 more cards, one from Yevamot (84) and two from Berakhot (116); the rows
+above include every change (re-measured 2026-11-14 from `site/data`).
 
 Words = whitespace tokens of the English with HTML stripped (the Davidson translation, bold literal + plain gloss),
 over the segments the reader is shown. Each story carries `words` and `minutes`; `index.json` carries per-tractate

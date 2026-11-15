@@ -469,15 +469,31 @@
    "start_segment": 11,
    "classification": "YES",
    "in_mishnah": false,
-   "extended": null,
+   "extended": {
+    "start_back": 0,
+    "end_forward": 2,
+    "reason": "Cut off mid-episode: 25a:12-13 (Akiva's teaching that the day the court fixes is sanctified, and 'Akiva, you have consoled me') complete it; no other card covers them (twin-pass triage, Simon 2026-11-14)."
+   },
    "reviewed": false,
-   "summary": "Rabbi Akiva found Rabbi Yehoshua distressed that Rabban Gamliel was forcing him to desecrate the day he reckoned as Yom Kippur, and Rabbi Yehoshua said it would be better to lie sick for a year than face such a decree.",
+   "summary": "Rabbi Akiva found Rabbi Yehoshua distressed that Rabban Gamliel was forcing him to desecrate the day he reckoned as Yom Kippur, and consoled him with a teaching Yehoshua had once taught him: the day the court fixes is sanctified even if it errs, and Yehoshua said, \"Akiva, you have consoled me.\"",
    "segments": [
     {
      "ref": "Rosh Hashanah 25a",
      "i": 11,
      "he": "הָלַךְ רַבִּי עֲקִיבָא וּמְצָאוֹ מֵיצֵר כּוּ׳. אִיבַּעְיָא לְהוּ: מִי מֵיצֵר? רַבִּי עֲקִיבָא מֵיצֵר, אוֹ רַבִּי יְהוֹשֻׁעַ מֵיצֵר? תָּא שְׁמַע, דְּתַנְיָא: הָלַךְ רַבִּי עֲקִיבָא וּמְצָאוֹ לְרַבִּי יְהוֹשֻׁעַ כְּשֶׁהוּא מֵיצֵר, אָמַר לוֹ: [רַבִּי] מִפְּנֵי מָה אַתָּה מֵיצֵר? אָמַר לוֹ: רַבִּי עֲקִיבָא, רָאוּי לוֹ שֶׁיִּפּוֹל לַמִּטָּה שְׁנֵים עָשָׂר חֹדֶשׁ, וְאַל יִגְזוֹר עָלָיו גְּזֵירָה זוֹ.",
      "en": "§ The mishna taught that <b>Rabbi Akiva went and found him distressed</b> that the head of the Great Sanhedrin was forcing him to desecrate the day that he maintained was Yom Kippur. <b>A dilemma was raised before</b> the Sages: <b>Who was distressed?</b> Was <b>Rabbi Akiva distressed or</b> was <b>Rabbi Yehoshua distressed?</b> The Gemara answers: <b>Come</b> and <b>hear, as it is taught</b> in a <i>baraita</i>: <b>Rabbi Akiva went and found Rabbi Yehoshua in a state of distress,</b> and <b>he said to him: My teacher, for what</b> reason <b>are you distressed?</b> Rabbi Yehoshua <b>said to him: Rabbi Akiva, it is fitting for</b> one <b>to fall</b> sick <b>in bed for twelve months, rather than to have this decree issued against him</b> that he should have to desecrate Yom Kippur."
+    },
+    {
+     "ref": "Rosh Hashanah 25a",
+     "i": 12,
+     "he": "אָמַר לוֹ: רַבִּי, תַּרְשֵׁינִי לוֹמַר לְפָנֶיךָ דָּבָר אֶחָד שֶׁלִּמַּדְתַּנִי. אָמַר לוֹ: אֱמוֹר. אָמַר לוֹ: הֲרֵי הוּא אוֹמֵר ״אֹתָם״ ״אֹתָם״ ״אֹתָם״ שָׁלֹשׁ פְּעָמִים.",
+     "en": "Rabbi Akiva <b>said to him: My teacher, allow me to say before you one matter that you</b> yourself once <b>taught me. He said to him: Speak. He said to him: It states</b> with respect to the Festivals: “The appointed seasons of the Lord, which you shall proclaim <b>them [<i>otam</i>]</b> to be sacred convocations (Leviticus 23:2). And it is written: “These are the appointed seasons of the Lord, sacred convocations; you shall proclaim <b>them [<i>otam</i>]</b> in their season” (Leviticus 23:4). And it is written: “These are the appointed seasons of the Lord; you shall proclaim <b>them [<i>otam</i>]</b> to be sacred convocations” (Leviticus 23:37). <b>Three times</b> the verses use the term: Them [<i>otam</i>], which can also be read as you [<i>atem</i>], in plural."
+    },
+    {
+     "ref": "Rosh Hashanah 25a",
+     "i": 13,
+     "he": "״אַתֶּם״ — אֲפִילּוּ שׁוֹגְגִין, ״אַתֶּם״ — אֲפִילּוּ מְזִידִין, ״אַתֶּם״ — אֲפִילּוּ מוּטְעִין. בַּלָּשׁוֹן הַזֶּה אָמַר לוֹ: עֲקִיבָא נִחַמְתַּנִי, נִחַמְתַּנִי.",
+     "en": "This comes to teach: <b>You</b> [<b><i>atem</i></b>] are authorized to determine the date of the new month, <b>even</b> if you <b>unwittingly</b> establish the New Moon on the wrong day; <b>you, even</b> if you do so <b>intentionally; you, even</b> if you are <b>misled</b> by false witnesses. In all cases, once the court establishes the day as the New Moon, it is sanctified, and God grants His consent. After hearing this, Rabbi Yehoshua <b>said to him in these words: Akiva, you have consoled me; you have consoled me.</b>"
     }
    ],
    "span": [
@@ -487,8 +503,8 @@
      "end": 11
     }
    ],
-   "words": 127,
-   "minutes": 1
+   "words": 345,
+   "minutes": 3
   },
   {
    "id": "rosh_hashanah-25b-3-3",

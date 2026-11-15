@@ -37,8 +37,13 @@ Per-passage decisions (results/shas_run/septimus_site_decisions.json, each with 
               read back into a golden, ruler or expert list.
 A decision that matches nothing is named on stderr.
 
+  merge    -- display cards joined into one story (Simon 2026-11-14): `keep` is the permanent id the merged card holds,
+              every other member's id redirects to it (apply_merges). Display only; goldens and runs untouched.
+  keep     -- Simon's explicit keeps of flagged cards: ignored, except that a `remove` overlapping one is refused.
+
 Summaries: the exported run's reader-facing `one_sentence_summary`, else the same passage's in another run, else the
 text written for that story id in results/shas_run/site_summaries_written.json (absent file tolerated), else none.
+That file's `overrides` replace a summary that is wrong as shown; a merged card always takes its written summary.
 
 Data contract: site/data/schema/story.schema.json (docs/technical/septimus-viewer-plan.md §3).
 
@@ -109,7 +114,67 @@ def site_decisions():
     """Simon's site decisions: (biblical ships?, {tractate: [remove entries]}, {tractate: [include entries]})."""
     d = json.loads((ROOT / SITE_DECISIONS).read_text())
     by = lambda k: {t: [e for e in d[k]["passages"] if e["tractate"] == t] for t in {e["tractate"] for e in d[k]["passages"]}}
+    # `keep`: Simon's explicit keeps. Read for one thing only -- a `remove` that would undo one is refused, by name.
+    for k in d.get("keep", {}).get("passages", []):
+        undo = [r for r in d["remove"]["passages"] if r["tractate"] == k["tractate"]
+                and (r.get("card") == k["card"] or decision_cells(r) & decision_cells(k))]
+        if undo:
+            raise SystemExit(f"site build refused: a `remove` entry overlaps {k['card']}, which Simon chose to keep "
+                             f"({k['decided_by']}); edit the `keep` list on purpose to undo it")
     return d["biblical"]["ships"], by("remove"), by("include")
+
+
+def merge_groups(tractate):
+    """The `merge` decisions for one tractate: display cards joined into one story (Simon 2026-11-14)."""
+    d = json.loads((ROOT / SITE_DECISIONS).read_text()).get("merge", {"groups": []})
+    return [g for g in d["groups"] if g["tractate"] == tractate]
+
+
+def apply_merges(tractate, stories, pages, registry, out_why, matched):
+    """Join the built stories each `merge` group names into one card (in place, before ids are assigned).
+
+    Each member matches the ONE built story its cells overlap (Lesson 36). The merged card is the `keep` member's story
+    over the union of the members' segments, which must be contiguous in page order; its summary is left empty, so the
+    one written for `keep` (site_summaries_written.json) fills it -- a member's own summary describes only its part.
+    The registry entry of `keep` is given the merged span, which is how a tie is settled (story_ids.py): the merged card
+    then keeps that id and every other member's id becomes `redirect` to it. A member with a display extension is
+    refused: an extension is relative to the span it was decided on. A group that no longer matches is named, unapplied.
+    """
+    groups = merge_groups(tractate)
+    if not groups:
+        return stories
+    ext = json.loads(EXT.read_text()) if EXT.exists() else {}
+    flat = [(p["ref"], g.get("index")) for p in pages for g in p["segments"]]
+    pos = {c: k for k, c in enumerate(flat)}
+    for grp in groups:
+        assert grp["keep"] in [m["card"] for m in grp["members"]], grp["keep"]
+        hit = [[s for s in stories if {(g["ref"], g["i"]) for g in s["segments"]} & decision_cells(m)]
+               for m in grp["members"]]
+        if any(len(h) != 1 for h in hit) or len({id(h[0]) for h in hit}) != len(hit):
+            print(f"  merge NOT applied, members do not match one built story each: {grp['keep']} "
+                  f"({[[s['id'] for s in h] for h in hit]})", file=sys.stderr)
+            continue
+        if any(m["card"] in ext for m in grp["members"]):
+            raise SystemExit(f"site build refused: merge {grp['keep']} has a member with a display extension")
+        parts = [h[0] for h in hit]
+        keep = parts[[m["card"] for m in grp["members"]].index(grp["keep"])]
+        segs = sorted((g for s in parts for g in s["segments"]), key=lambda g: pos[(g["ref"], g["i"])])
+        ks = [pos[(g["ref"], g["i"])] for g in segs]
+        assert ks == list(range(ks[0], ks[0] + len(ks))), f"merge {grp['keep']}: members are not contiguous"
+        merged = dict(keep, segments=segs, ref=segs[0]["ref"], start_segment=segs[0]["i"], summary="",
+                      refs=list(dict.fromkeys(g["ref"] for g in segs)))
+        merged["span"] = IDS.span_of(segs)
+        merged["id"] = IDS.span_id(tractate, merged["span"])
+        if any(s["id"] in out_why for s in parts):
+            out_why[merged["id"]] = next(out_why[s["id"]] for s in parts if s["id"] in out_why)
+        e = registry["ids"].get(grp["keep"])
+        if e and e["status"] == "active" and e["tractate"] == tractate:
+            e["span"] = merged["span"]   # settles the tie: the merged card keeps `keep`, the others redirect to it
+        at = min(k for k, s in enumerate(stories) if any(s is x for x in parts))
+        stories = [s for s in stories if not any(s is x for x in parts)]
+        stories.insert(at, merged)   # page order holds: the members are contiguous
+        matched.append(("merge", grp["keep"], [s["id"] for s in parts]))
+    return stories
 
 
 def promotion_rules():
@@ -315,6 +380,18 @@ def _written_summaries():
 WRITTEN = _written_summaries()
 
 
+def _summary_overrides():
+    """{story id: text} from the same file's `overrides`: replaces a detector summary that is wrong as shown (Eruvin
+    53b:24, two runs' summaries concatenated by the cross-page merge). Keyed by the permanent id. Absent -> {}."""
+    if not WRITTEN_SUMMARIES.exists():
+        return {}
+    d = json.loads(WRITTEN_SUMMARIES.read_text()).get("overrides", {})
+    return {k: v.strip() for k, v in d.items() if v and v.strip()}
+
+
+OVERRIDES = _summary_overrides()
+
+
 def written_summary(sid):
     """Fallback summary for a story with none: the written one for that id, else "". Never overrides an existing one."""
     return WRITTEN.get(sid, "")
@@ -370,7 +447,9 @@ def build(tractate, matched=None, registry=None):
             if include:
                 ok = True   # an explicit per-passage decision (expert `story` + Simon), never a rule
                 matched += [("include", e, sid) for e in include]
-            remove = [e for e in removals if cells & decision_cells(e)]
+            # by OVERLAP (Lesson 36), except an `exact` entry: it names one card whose segments another shipped card
+            # also covers (Bava Batra 30b:5-5 inside 30b:5-7), and removes only the story with exactly its span
+            remove = [e for e in removals if (cells == decision_cells(e) if e.get("exact") else cells & decision_cells(e))]
             if remove and ok:
                 matched += [("remove", e, sid) for e in remove]
                 ok = False   # Jeff ruled not / borderline (2026-11-12); the site ships definite stories only
@@ -421,6 +500,7 @@ def build(tractate, matched=None, registry=None):
     stories.sort(key=lambda x: order[(x["segments"][0]["ref"], x["segments"][0]["i"])])   # page order, promoted in place
     for s in stories:
         s["span"] = IDS.span_of(s["segments"])   # the SOURCE span, before any display extension
+    stories = apply_merges(tractate, stories, pages, registry, out_why, matched)
     ids = IDS.assign(registry, tractate, stories)
     out_why = {ids["by_span_id"][k]: v for k, v in out_why.items()}
     for kind in ("minted", "retired", "revived"):
@@ -431,7 +511,8 @@ def build(tractate, matched=None, registry=None):
     for old, new in ids["redirected"].items():
         print(f"  ids redirected: {old} -> {new}", file=sys.stderr)
     for s in stories:
-        s["summary"] = s["summary"] or written_summary(s["id"])   # keyed by the permanent id, so a boundary fix keeps it
+        # keyed by the permanent id, so a boundary fix keeps it. An override replaces a summary that is wrong as shown.
+        s["summary"] = OVERRIDES.get(s["id"]) or s["summary"] or written_summary(s["id"])
     stories = apply_extensions(tractate, stories, pages, moved=ids["moved"])
     if site_decisions()[0]:
         return stories, []
@@ -571,6 +652,8 @@ def report_decisions(matched):
             span = f"{e['ref']}:{e['start_segment']}-{e['end_segment']}"
             print(f"  {kind:7} {span:22} -> {', '.join(hits) if hits else 'NO MATCH (not shipped by the filter)'}",
                   file=sys.stderr)
+    for k, keep, parts in (x for x in matched if x[0] == "merge"):
+        print(f"  merge   {' + '.join(parts)} -> {keep}", file=sys.stderr)
     for r, ps in promotion_rules():
         added = [sid for k, m, sid in matched if k == "promote" and m[0] == r["included_by"]]
         dropped = [m for k, m, _ in matched if k == "promote-dropped" and m[0] == r["included_by"]]

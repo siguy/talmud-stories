@@ -83,7 +83,7 @@ def test_boundary_extensions_are_display_only_and_bounded():
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23680, "kiddushin": 11861, "gittin": 25149, "yevamot": 18180, "berakhot": 25128}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept
+SITE_WORDS = {"ketubot": 23680, "kiddushin": 11861, "gittin": 25149, "yevamot": 18055, "berakhot": 24919}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept; second twin-pass pass: yevamot -1, berakhot -2
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -214,8 +214,9 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
     sys.path.insert(0, str(ROOT / "scripts"))
     import build_site_data as b
     _, removals, _ = b.site_decisions()
-    # 12 from Jeff's 2026-11-12 verdicts; 17 twin-pass cards Simon removed 2026-11-14 on a rules triage (no Jeff verdict)
-    assert sum(len(v) for v in removals.values()) == 29
+    # 12 from Jeff's 2026-11-12 verdicts; 17 + 33 twin-pass cards Simon removed 2026-11-14 on a rules triage (no Jeff
+    # verdict): the second pass's 32 SURE_REMOVE and one duplicate allusion (chagigah-13a-10-10)
+    assert sum(len(v) for v in removals.values()) == 62
     site = _site()
     for t, entries in removals.items():
         for e in entries:
@@ -225,6 +226,10 @@ def test_jeffs_not_and_borderline_passages_do_not_ship():
             else:
                 assert "Simon 2026-11-14" in e["decided_by"] and e["reason"] and e["card"], e
             for s in site[t]["stories"] + site[t]["out_of_scope"]:
+                if e.get("exact"):   # only the card with exactly this span; an overlapping card may stay
+                    assert {(p["ref"], i) for p in s["span"] for i in range(p["start"], p["end"] + 1)} != \
+                        b.decision_cells(e), (s["id"], e["ref"])
+                    continue
                 assert not {(g["ref"], g["i"]) for g in s["segments"]} & b.decision_cells(e), (s["id"], e["ref"])
 
 
@@ -506,3 +511,59 @@ def test_viewer_resolves_old_ids_through_redirects():
     js = (ROOT / "site/app.js").read_text()
     assert 'getJSON("data/redirects.json")' in js and "location.replace(\"#/s/\" + to)" in js
     assert "function migrateRead()" in js and "!(id in REDIRECTS)" in js
+
+
+# ---- `merge`, `keep` and summary `overrides` (Simon 2026-11-14, second twin-pass triage pass) ----------------------
+
+def _decisions():
+    return json.loads((ROOT / "results/shas_run/septimus_site_decisions.json").read_text())
+
+
+def test_merge_decisions_join_cards_and_redirect_the_absorbed_ids():
+    """A `merge` group ships as ONE card under its `keep` id, over exactly the members' segments (contiguous); every
+    other member's id redirects to it; its summary is the one written for `keep` (a member's own covers only its part)."""
+    site, reg = _site(), _ids().load()
+    red = json.loads((ROOT / "site/data/redirects.json").read_text())
+    written = json.loads(WRITTEN.read_text())["summaries"]
+    groups = _decisions()["merge"]["groups"]
+    assert len(groups) == 3
+    for g in groups:
+        assert g["decided_by"] and g["reason"] and g["source"] and g["keep"] in [m["card"] for m in g["members"]], g
+        cells = {(m["ref"], i) for m in g["members"] for i in range(m["start_segment"], m["end_segment"] + 1)}
+        [s] = [s for s in site[g["tractate"]]["stories"] if {(x["ref"], x["i"]) for x in s["segments"]} & cells]
+        assert s["id"] == g["keep"] and s["extended"] is None
+        assert {(x["ref"], x["i"]) for x in s["segments"]} == cells
+        assert reg["ids"][g["keep"]]["status"] == "active" and reg["ids"][g["keep"]]["span"] == s["span"]
+        assert s["summary"] == written[g["keep"]].strip()
+        for m in g["members"]:
+            if m["card"] != g["keep"]:
+                assert reg["ids"][m["card"]]["status"] == "redirect" and red[m["card"]] == g["keep"], m["card"]
+                assert m["card"] not in written   # no summary keyed to a story that does not ship
+
+
+def test_keep_decisions_ship_and_a_remove_that_would_undo_one_is_refused(tmp_path, monkeypatch):
+    """Simon's `keep` list is read for one thing: a `remove` overlapping a kept card stops the build, by name."""
+    import pytest
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import build_site_data as b
+    site, d = _site(), _decisions()
+    keep = d["keep"]["passages"]
+    assert {k["card"] for k in keep} == {"pesachim-49a-15-15", "ketubot-86a-4-4", "rosh_hashanah-18a-7-7",
+                                         "yevamot-105a-13-13"}
+    for k in keep:
+        assert k["decided_by"] and k["simon"] and k["card"] in {s["id"] for s in site[k["tractate"]]["stories"]}, k
+    bad = dict(d, remove=dict(d["remove"], passages=d["remove"]["passages"] + [
+        {k: keep[0][k] for k in ("tractate", "ref", "start_segment", "end_segment")}]))
+    f = tmp_path / "decisions.json"
+    f.write_text(json.dumps(bad))
+    monkeypatch.setattr(b, "SITE_DECISIONS", str(f))
+    with pytest.raises(SystemExit, match=keep[0]["card"]):
+        b.site_decisions()
+
+
+def test_summary_overrides_replace_only_the_named_cards():
+    """site_summaries_written.json `overrides` replace a summary that is wrong as shown (Eruvin 53b:24 said it twice)."""
+    over = json.loads(WRITTEN.read_text()).get("overrides", {})
+    shown = {s["id"]: s["summary"] for d in _site().values() for s in d["stories"] + d["out_of_scope"]}
+    assert over and set(over) <= set(shown)
+    assert all(shown[k] == v.strip() for k, v in over.items())

@@ -37,8 +37,49 @@ pesachim, sanhedrin, shabbat, yevamot, yoma -1 each. Every other story is byte-i
 
 - **62 twin-pass cards are still on the site** after this removal. About 56 have not been reviewed by anyone, and
   they carry the same risk: about one in four of those looked at was not a story (indicated).
-- **pesachim-49a-15-15, ketubot-86a-4-4, rosh_hashanah-18a-7-7 / yevamot-105a-13-13** wait for Simon's call.
-- **ketubot-106a-2-3 holds two stories.** Likely cause: Jeff's 2026-05-25 boundary note was read 0-based where he
+- **pesachim-49a-15-15, ketubot-86a-4-4, rosh_hashanah-18a-7-7 / yevamot-105a-13-13** wait for Simon's call. *Decided the same day: keep (second pass, below).*
+- **ketubot-106a-2-3 holds two stories.** *Fixed the same day (b43deb2: back to 3-3); its summary and note now match.* Likely cause: Jeff's 2026-05-25 boundary note was read 0-based where he
   meant 1-based (or the reverse), and `scripts/apply_jeff_2026-06-03_corrections.py` applied it. **Likely, not
   proven.** The other notes that script applied may have the same off-by-one; check them before trusting their
   boundaries.
+
+## Second pass, later on 2026-11-14
+
+Simon: *"just remove them if you are sure"*; on the four cards above, *"if they're stories, which they seem to be,
+keep them."* A second rules-based triage (against `STORY_RULES.md`, no Jeff verdict on any card) read **60** of the
+remaining twin-pass cards:
+
+| verdict | cards | what happened |
+|---|---|---|
+| SURE_REMOVE | 32 | `remove`, rule and reason per card; ids `retired` |
+| FIX_NOT_REMOVE | 5 | 1 removed as a duplicate, 1 extended, 3 merged (below) |
+| KEEP | 12 | shipped unchanged |
+| SHOW_SIMON | 11 | **held, untouched**, for Simon |
+
+**The site went from 1,847 to 1,811** (−33 removed, −3 absorbed by merges); `out_of_scope` unchanged at 102. Every
+other story is byte-identical to the build before, except the summaries changed on purpose (below).
+
+- **Removed as a duplicate:** chagigah-13a-10-10, the Gemara's one-line allusion to the youth burned by the electrum;
+  the full story ships as chagigah-13a-12-12.
+- **Extended (display only):** rosh_hashanah-25a-11-11 to 25a:11-13 (`boundary_extensions.json`, `end_forward: 2`);
+  25a:12-13 complete the Akiva-consoles-Yehoshua episode and are on no other card.
+- **Merged** (new `merge` decision list, applied by `build_site_data.py`; the absorbed id redirects): megillah-29a-4-4
+  into **megillah-29a-5-5** (29a:4-5), sanhedrin-11a-8-8 into **sanhedrin-11a-7-7** (11a:7-8), sanhedrin-104a-7-7 into
+  **sanhedrin-104a-8-8** (104a:7-8). In each the flagged card is the one absorbed. Each merged card has a summary
+  written for the whole story.
+- **Kept by Simon:** pesachim-49a-15-15, ketubot-86a-4-4, rosh_hashanah-18a-7-7, yevamot-105a-13-13, recorded in a new
+  `keep` list; a `remove` overlapping one is refused.
+- **bava_batra-30b-5-5 lies inside bava_batra-30b-5-7**, another shipped card. Its removal is marked `exact: true`
+  (remove only the card with exactly this span), so 30b-5-7 stays; the registry then records 30b-5-5 as a `redirect`
+  to 30b-5-7, not `retired`, because its passage is still on the site inside that card.
+- **Summaries fixed:** ketubot-106a-2-3 (span 3-3 since b43deb2) now describes only the Rav Yosef famine story, and so
+  does its note (rewritten, `approved: false`); eruvin-53b-24-24 said the same thing twice (two runs' summaries
+  concatenated by the cross-page merge), replaced through a new `overrides` key in `site_summaries_written.json`.
+
+**Open.**
+- **11 SHOW_SIMON cards** wait for Simon: avodah_zarah-65b-5-5, bava_batra-8a-16-16, bava_metzia-85b-4-4,
+  bava_metzia-85b-7-7, berakhot-19a-9-9, makkot-16b-6-6, moed_katan-21a-6-6, moed_katan-25b-2-2, moed_katan-25b-9-9,
+  taanit-21b-8-8, yoma-38b-2-2.
+- **Shipped neighbours with the same shape as a removed card, not triaged:** bava_batra-30b-5-7 (contains the removed
+  30b:5) and yevamot-15a-15-15. Two others named in the brief, sukkah-26a-7-7 and yoma-79a-2-2, are **not on the site**
+  (no registry entry: they never shipped), and bava_batra-30b-6-7 does not exist; 30b-5-7 is the card at that spot.
