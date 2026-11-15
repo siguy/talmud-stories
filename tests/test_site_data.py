@@ -71,15 +71,19 @@ def test_boundary_extensions_are_display_only_and_bounded():
     for i, e in ((i, e) for i, e in ext.items() if i in by_id):
         assert 0 <= e["start_back"] <= 2 and 0 <= e["end_forward"] <= 4, i
         assert by_id[i]["extended"] and by_id[i]["extended"]["end_forward"] <= 4, i
-    # the golden itself is never rewritten: ids still encode the golden's own range
-    assert all(s["id"].count("-") == 3 for s in by_id.values())
+    # the golden itself is never rewritten: `span` is the source range, and every shown passage contains it
+    # (ids are permanent since 2026-11-14 and no longer encode the range -- scripts/story_ids.py)
+    for s in by_id.values():
+        shown = {(g["ref"], g["i"]) for g in s["segments"]}
+        assert {(p["ref"], i) for p in s["span"] for i in range(p["start"], p["end"] + 1)} <= shown, s["id"]
+        assert s["extended"] or len(shown) == sum(p["end"] - p["start"] + 1 for p in s["span"]), s["id"]
 
 
 # Plan §2 (docs/technical/septimus-signup-plan.md): English words per tractate on the shipped list.
 # A change here is a change to the list; update §2 in the same commit. These are the five tractates
 # shipped before the Shas run, pinned so any change to them is noticed. A tractate added by the Shas
 # run has no pin here (its total is checked against its own stories below); add one when it ships.
-SITE_WORDS = {"ketubot": 23755, "kiddushin": 11861, "gittin": 25149, "yevamot": 18180, "berakhot": 25128}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14)
+SITE_WORDS = {"ketubot": 23680, "kiddushin": 11861, "gittin": 25149, "yevamot": 18180, "berakhot": 25128}  # yevamot +4, berakhot +7: low-pool promotions; then -1 each: twin-pass removals (Simon 2026-11-14); ketubot -75: 106a back to 3-3 (b43deb2, Jeff segment numbering), id kept
 
 
 def test_every_story_has_words_and_reading_minutes():
@@ -374,3 +378,131 @@ def test_no_shipped_story_has_an_empty_summary_once_written_summaries_exist():
         pytest.skip("results/shas_run/site_summaries_written.json not written yet")
     empty = [s["id"] for d in _site().values() for s in d["stories"] if not s["summary"].strip()]
     assert not empty, empty
+
+
+# ---- permanent story ids: site/data/story_ids.json (scripts/story_ids.py; viewer plan §3.1) -----------------------
+
+def _ids():
+    sys.path.insert(0, str(ROOT / "scripts"))
+    import story_ids
+    return story_ids
+
+
+def test_story_id_registry_matches_the_site_data():
+    """Every story (shipped or out of scope) holds an ACTIVE registry id recording its exact span; redirects.json is
+    the registry's own derivation and validates against the schema; a redirect never points at a dead id."""
+    import copy
+    import jsonschema
+    from referencing import Registry, Resource
+    IDS = _ids()
+    reg = IDS.load()
+    seen = set()
+    for t, d in _site().items():
+        for s in d["stories"] + d["out_of_scope"]:
+            e = reg["ids"].get(s["id"])
+            assert e and e["status"] == "active" and e["tractate"] == t and e["span"] == s["span"], s["id"]
+            assert s["id"] not in seen, s["id"]
+            seen.add(s["id"])
+        # rebuilding gives identical ids: matching today's stories against the committed registry changes nothing
+        r, stories = copy.deepcopy(reg), copy.deepcopy(d["stories"] + d["out_of_scope"])
+        rep = IDS.assign(r, t, stories)
+        assert not (rep["minted"] or rep["retired"] or rep["redirected"] or rep["moved"] or rep["revived"]), (t, rep)
+        assert r == reg and [s["id"] for s in stories] == [s["id"] for s in d["stories"] + d["out_of_scope"]], t
+    red = json.loads((ROOT / "site/data/redirects.json").read_text())
+    assert red == IDS.redirects(reg)
+    assert all(v is None or reg["ids"][v]["status"] == "active" for v in red.values())
+    schema = json.loads(SCHEMA.read_text())
+    v = jsonschema.Draft202012Validator({"$ref": schema["$id"] + "#/$defs/redirects"},
+                                        registry=Registry().with_resource(schema["$id"], Resource.from_contents(schema)))
+    assert v.is_valid(red) and v.is_valid({"ketubot-2a-1-3": None, "ketubot-2a-4-5-v2": "ketubot-2a-1-3"})
+    assert not v.is_valid({"not an id": None})
+
+
+def _story(t, *pieces):
+    """A synthetic story: pieces are (ref, start, end); `id` is its span id, as build() hands it to assign()."""
+    IDS = _ids()
+    segs = [{"ref": r, "i": i} for r, a, b in pieces for i in range(a, b + 1)]
+    span = IDS.span_of(segs)
+    return {"id": IDS.span_id(t, span), "span": span}
+
+
+def test_story_id_registry_round_trip(tmp_path):
+    """Boundary shift keeps the id; a split keeps one and mints one; a merge keeps one and redirects the other; a
+    removal retires (never reused); a tie is refused; building twice changes no byte."""
+    import copy
+    import pytest
+    IDS = _ids()
+    P = "Ketubot 2a"
+    reg = IDS.empty()
+    st = lambda *p: _story("ketubot", *p)
+
+    # first build mints today's span ids; a second identical build changes nothing, to the byte
+    first = [st((P, 1, 3)), st((P, 5, 8)), st((P, 10, 12), ("Ketubot 2b", 0, 2))]
+    IDS.assign(reg, "ketubot", first)
+    assert [s["id"] for s in first] == ["ketubot-2a-1-3", "ketubot-2a-5-8", "ketubot-2a-10-12"]
+    IDS.save(reg, tmp_path / "a.json")
+    again = [st((P, 1, 3)), st((P, 5, 8)), st((P, 10, 12), ("Ketubot 2b", 0, 2))]
+    rep = IDS.assign(reg, "ketubot", again)
+    IDS.save(reg, tmp_path / "b.json")
+    assert [s["id"] for s in again] == [s["id"] for s in first] and not rep["minted"] and not rep["moved"]
+    assert (tmp_path / "a.json").read_bytes() == (tmp_path / "b.json").read_bytes()
+    assert IDS.load(tmp_path / "a.json") == reg
+
+    # boundary shift: 1-3 -> 1-4 keeps its id; the recorded span follows
+    shifted = [st((P, 1, 4)), st((P, 5, 8)), st((P, 10, 12), ("Ketubot 2b", 0, 2))]
+    rep = IDS.assign(reg, "ketubot", shifted)
+    assert shifted[0]["id"] == "ketubot-2a-1-3" and rep["moved"] == {"ketubot-2a-1-3"} and not rep["minted"]
+    assert reg["ids"]["ketubot-2a-1-3"]["span"] == [{"ref": P, "start": 1, "end": 4}]
+
+    # split: 5-8 -> 5-7 + 8-8. The larger part keeps the id, the other mints one
+    split = [st((P, 1, 4)), st((P, 5, 7)), st((P, 8, 8)), st((P, 10, 12), ("Ketubot 2b", 0, 2))]
+    rep = IDS.assign(reg, "ketubot", split)
+    assert [s["id"] for s in split][1:3] == ["ketubot-2a-5-8", "ketubot-2a-8-8"] and rep["minted"] == ["ketubot-2a-8-8"]
+
+    # merge: 1-4 + 5-7 -> 1-7. It keeps the id it overlaps most; the other redirects to it
+    merged = [st((P, 1, 7)), st((P, 8, 8)), st((P, 10, 12), ("Ketubot 2b", 0, 2))]
+    rep = IDS.assign(reg, "ketubot", merged)
+    assert merged[0]["id"] == "ketubot-2a-1-3" and rep["redirected"] == {"ketubot-2a-5-8": "ketubot-2a-1-3"}
+    assert IDS.redirects(reg) == {"ketubot-2a-5-8": "ketubot-2a-1-3"}
+
+    # a tie is a judgement for a person: 8-8 and the cross-page story merged into one span overlapping... equally
+    tie_reg = copy.deepcopy(reg)
+    tie_reg["ids"]["ketubot-2a-8-8"]["span"] = [{"ref": P, "start": 8, "end": 9}]
+    tie = [st((P, 1, 7)), st((P, 8, 11))]   # overlaps 8-9 by 2 and 10-12 by 2
+    with pytest.raises(IDS.IdConflict, match="ambiguous"):
+        IDS.assign(tie_reg, "ketubot", tie)
+
+    # removal: the cross-page story disappears -> retired, and redirects say so (null)
+    removed = [st((P, 1, 7)), st((P, 8, 8))]
+    rep = IDS.assign(reg, "ketubot", removed)
+    assert rep["retired"] == ["ketubot-2a-10-12"] and reg["ids"]["ketubot-2a-10-12"]["status"] == "retired"
+    assert IDS.redirects(reg)["ketubot-2a-10-12"] is None
+    # ... and never reused for another story: a new passage born with the same span STRING (the retired id's span
+    # had moved on) gets a -v2, not the retired id
+    reg["ids"]["ketubot-2a-10-12"]["span"] = [{"ref": P, "start": 20, "end": 22}]
+    fresh = [st((P, 1, 7)), st((P, 8, 8)), st((P, 10, 12))]
+    rep = IDS.assign(reg, "ketubot", fresh)
+    assert fresh[2]["id"] == "ketubot-2a-10-12-v2" and reg["ids"]["ketubot-2a-10-12"]["status"] == "retired"
+    # the same passage coming back revives its own id (a reader's checkmark comes back with it)
+    back = [st((P, 1, 7)), st((P, 8, 8)), st((P, 10, 12)), st((P, 20, 22))]
+    rep = IDS.assign(reg, "ketubot", back)
+    assert back[3]["id"] == "ketubot-2a-10-12" and rep["revived"] == ["ketubot-2a-10-12"]
+    assert "ketubot-2a-10-12" not in IDS.redirects(reg)
+
+    # a chain is followed: a redirect onto an id that later retires resolves to null
+    reg["ids"]["ketubot-2a-1-3"]["status"] = "retired"
+    assert IDS.redirects(reg)["ketubot-2a-5-8"] is None
+
+    # another tractate's entries are never touched by this tractate's build
+    other = IDS.empty()
+    IDS.assign(other, "gittin", [_story("gittin", ("Gittin 2a", 0, 1))])
+    snap = copy.deepcopy(other["ids"])
+    IDS.assign(other, "ketubot", [st((P, 0, 1))])
+    assert {k: v for k, v in other["ids"].items() if v["tractate"] == "gittin"} == snap
+
+
+def test_viewer_resolves_old_ids_through_redirects():
+    """site/app.js follows redirects.json for a story link and migrates a merged id's read-checkmark."""
+    js = (ROOT / "site/app.js").read_text()
+    assert 'getJSON("data/redirects.json")' in js and "location.replace(\"#/s/\" + to)" in js
+    assert "function migrateRead()" in js and "!(id in REDIRECTS)" in js

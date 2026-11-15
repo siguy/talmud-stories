@@ -55,6 +55,7 @@ OUT = ROOT / "site" / "data"
 
 sys.path.insert(0, str(ROOT / "scripts"))
 import tractates as T  # noqa: E402  (the one slug/English/Hebrew table; file locations by convention)
+import story_ids as IDS  # noqa: E402  (permanent story ids: site/data/story_ids.json)
 
 # runs: the first is exported (its boundaries and summaries are shown); every run must agree.
 # ruler: results/rulers/<t>_ruler.json (scripts/build_ruler.py) -- where Jeff's evidence is read.
@@ -183,7 +184,7 @@ def promoted(tractate, taken, removals, biblical, drop, matched):
                                        u["run1"]),
                 "in_mishnah": False, "extended": None,
                 "reviewed": src["reviewed"],
-                "summary": same[0]["one_sentence_summary"] if same else written_summary(sid),
+                "summary": same[0]["one_sentence_summary"] if same else "",   # written fallback: by permanent id, in build()
                 # provenance: the whole batch can be filtered or removed in one step (septimus_site_decisions.json)
                 "included_by": r["included_by"],
                 "segments": [{"ref": rr, "i": g.get("index"), "he": clean(g.get("hebrew")), "en": clean(g.get("english"))}
@@ -332,9 +333,14 @@ def pieces(pages, i, s):
     return out
 
 
-def build(tractate, matched=None):
-    """(stories, out_of_scope). `matched` collects (decision kind, entry, story id) for the build's report."""
+def build(tractate, matched=None, registry=None):
+    """(stories, out_of_scope). `matched` collects (decision kind, entry, span id) for the build's report.
+
+    Ids: every story is built under its SPAN id (`<tractate>-<daf>-<start>-<end>`), then given its PERMANENT id from
+    `registry` (scripts/story_ids.py), which this call updates in place; main() writes it. Without a registry the
+    committed one is read and left unwritten. Display extensions and notes are keyed by the permanent id."""
     matched = [] if matched is None else matched
+    registry = IDS.load() if registry is None else registry
     _, removals, inclusions = site_decisions()
     removals, inclusions = removals.get(tractate, []), inclusions.get(tractate, [])
     src = SOURCES[tractate]
@@ -384,9 +390,10 @@ def build(tractate, matched=None):
                 out_why[sid] = why
             # The card's summary: the exported run's own when it is reader-facing, else the same passage's in another
             # run, else none -- the page then shows no summary line. Never invented (no model call here).
-            # Last resort: a summary written for that id (site_summaries_written.json), only where all of these are empty.
+            # Last resort, filled in after ids are assigned: a summary written for the story's PERMANENT id
+            # (site_summaries_written.json), only where all of these are empty.
             summary = s["one_sentence_summary"] if is_reader_summary(s) else next(
-                (o[frozenset(cells)] for o in other_summaries if frozenset(cells) in o), "") or written_summary(sid)
+                (o[frozenset(cells)] for o in other_summaries if frozenset(cells) in o), "")
             if not NIKUD.search("".join(g.get("hebrew") or "" for _, g in segs)):
                 print(f"  no nikud: {tractate} {p['ref']} {s['start_segment']}", file=sys.stderr)
             stories.append({
@@ -412,7 +419,20 @@ def build(tractate, matched=None):
     stories += promoted(tractate, taken, removals, biblical, drop, matched)
     order = {(p["ref"], g.get("index")): k for k, (p, g) in enumerate((p, g) for p in pages for g in p["segments"])}
     stories.sort(key=lambda x: order[(x["segments"][0]["ref"], x["segments"][0]["i"])])   # page order, promoted in place
-    stories = apply_extensions(tractate, stories, pages)
+    for s in stories:
+        s["span"] = IDS.span_of(s["segments"])   # the SOURCE span, before any display extension
+    ids = IDS.assign(registry, tractate, stories)
+    out_why = {ids["by_span_id"][k]: v for k, v in out_why.items()}
+    for kind in ("minted", "retired", "revived"):
+        if ids[kind]:
+            print(f"  ids {kind}: {tractate} {', '.join(ids[kind])}", file=sys.stderr)
+    if ids["moved"]:
+        print(f"  ids kept, span moved: {', '.join(sorted(ids['moved']))}", file=sys.stderr)
+    for old, new in ids["redirected"].items():
+        print(f"  ids redirected: {old} -> {new}", file=sys.stderr)
+    for s in stories:
+        s["summary"] = s["summary"] or written_summary(s["id"])   # keyed by the permanent id, so a boundary fix keeps it
+    stories = apply_extensions(tractate, stories, pages, moved=ids["moved"])
     if site_decisions()[0]:
         return stories, []
     # Simon 2026-11-13: biblical stories are out of scope for the site. Kept, with the reason, for a later filter.
@@ -425,12 +445,16 @@ EXT = DATA_EXT = ROOT / "site" / "data" / "boundary_extensions.json"
 MAX_BACK, MAX_FWD = 2, 4
 
 
-def apply_extensions(tractate, stories, pages):
+def apply_extensions(tractate, stories, pages, moved=()):
     """Display-only: widen a cut-off story by whole neighbouring segments (never the golden).
 
     site/data/boundary_extensions.json: {story_id: {start_back, end_forward, reason}}, produced by
     reviewing each cut-off story against its real neighbouring segments. Ids and the
     golden are untouched; an extended story says so (`extended`), so the page can tell the reader.
+
+    Keyed by the PERMANENT id. An extension is a number of segments relative to the span it was decided on, so when
+    a story's span moved in this build (`moved`) its extension no longer means what was decided: it is NOT applied,
+    and named, until a person re-decides it against the new span.
     """
     if not EXT.exists():
         return stories
@@ -440,6 +464,9 @@ def apply_extensions(tractate, stories, pages):
     for s in stories:
         e = ext.get(s["id"])
         if not e or not (e.get("start_back") or e.get("end_forward")):
+            continue
+        if s["id"] in moved:
+            print(f"  extension NOT applied, the span moved: {s['id']} -- re-decide it in {EXT.name}", file=sys.stderr)
             continue
         sb, ef = int(e.get("start_back") or 0), int(e.get("end_forward") or 0)
         assert 0 <= sb <= MAX_BACK and 0 <= ef <= MAX_FWD, (s["id"], sb, ef)
@@ -500,9 +527,10 @@ def main():
     check_unreviewed_gates()
     index = {"reading_wpm": wpm, "tractates": []}
     matched = []
+    registry = IDS.load(OUT / IDS.REGISTRY.name)
     for t in SOURCES:
         reviewed = SOURCES[t]["reviewed"]
-        stories, out_of_scope = build(t, matched)
+        stories, out_of_scope = build(t, matched, registry)
         stories, out_of_scope = add_reading_time(stories, wpm), add_reading_time(out_of_scope, wpm)
         ids = [s["id"] for s in stories + out_of_scope]
         assert len(ids) == len(set(ids)), f"{t}: duplicate story ids (or a story both shipped and out of scope)"
@@ -516,7 +544,22 @@ def main():
               f"in_mishnah={index['tractates'][-1]['in_mishnah']} out_of_scope={len(out_of_scope)} "
               f"words={words} minutes={minutes}")
     (OUT / "index.json").write_text(json.dumps(index, indent=1))
+    IDS.save(registry, OUT / IDS.REGISTRY.name)
+    (OUT / IDS.REDIRECTS.name).write_text(json.dumps(IDS.redirects(registry), indent=1) + "\n")
+    report_orphaned_keys(registry)
     report_decisions(matched)
+
+
+def report_orphaned_keys(registry):
+    """A note or extension keyed to an id that is no longer active is shown on no story: name it, with where the id
+    went. Never re-keyed automatically -- a note written for one passage is not checked for its successor."""
+    red = IDS.redirects(registry)
+    keyed = [(EXT.name, k) for k in (json.loads(EXT.read_text()) if EXT.exists() else {})]
+    for f in sorted((OUT / "notes").glob("*.json")):
+        keyed += [(f"notes/{f.name}", k) for k in json.loads(f.read_text())["notes"]]
+    for where, k in keyed:
+        if k in red:
+            print(f"  orphaned key in {where}: {k} -> {red[k] or 'retired'}", file=sys.stderr)
 
 
 def report_decisions(matched):

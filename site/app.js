@@ -5,6 +5,9 @@
   var HE = {}, NAME = {};
   var app = document.getElementById("app");
   var cache = {}, index = null;
+  // Story ids are PERMANENT (site/data/story_ids.json, scripts/story_ids.py): a boundary change keeps the id. An id
+  // that is no longer active is in redirects.json: -> the id its story now has (a merge), or null (retired).
+  var REDIRECTS = {};
 
   // localStorage can throw (private windows, blocked storage): the site must work without it.
   function load(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
@@ -35,20 +38,35 @@
   function toggleRead(id) { if (read.has(id)) read.delete(id); else read.add(id); save("septimus-read", Array.from(read)); }
 
   function loadIndex() {
-    return getJSON("data/index.json").then(function (idx) {
+    // redirects.json missing or unreadable: old ids then simply show "not found"; the site still works.
+    var redirectsP = getJSON("data/redirects.json").catch(function () { return {}; });
+    return Promise.all([getJSON("data/index.json"), redirectsP]).then(function (both) {
+      var idx = both[0];
       index = idx;
       idx.tractates.forEach(function (t) { NAME[t.tractate] = t.name; HE[t.tractate] = t.he; });
+      if (REDIRECTS !== both[1]) { REDIRECTS = both[1]; migrateRead(); }
       return idx;
     });
   }
 
+  // A checkmark saved under an id that was merged into another story moves to that story's id. A retired id's
+  // checkmark is kept (it may be revived) but counts for nothing: home() counts only ids not in REDIRECTS.
+  function migrateRead() {
+    var changed = false;
+    Array.from(read).forEach(function (id) {
+      var to = REDIRECTS[id];
+      if (to) { read.delete(id); read.add(to); changed = true; }
+    });
+    if (changed) save("septimus-read", Array.from(read));
+  }
+
   // The home page reads ONLY the counts in index.json (36 tractate files are ~8 MB; a phone should not
   // fetch them to draw a list). "Read" progress is the saved story ids that begin with the tractate's
-  // slug and a hyphen (ids are <slug>-<daf>-<start>-<end>, slugs have no hyphen), capped at the count.
+  // slug and a hyphen (every id starts <slug>-, slugs have no hyphen), not retired, capped at the count.
   function home() {
     return loadIndex().then(function (idx) {
       var cards = idx.tractates.map(function (t) {
-        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0; }).length);
+        var done = Math.min(t.story, Array.from(read).filter(function (id) { return id.indexOf(t.tractate + "-") === 0 && !(id in REDIRECTS); }).length);
         return '<a class="card" href="#/t/' + t.tractate + '"><span class="card-he">' + esc(t.he) + '</span>' +
           '<div class="card-name">' + esc(t.name) + '</div>' +
           '<div class="card-meta">' + t.story +  ' stories' +
@@ -83,6 +101,15 @@
 
   function story(id) {
     var t = id.split("-")[0];
+    if (Object.prototype.hasOwnProperty.call(REDIRECTS, id)) {
+      var to = REDIRECTS[id];
+      // replace, not assign: Back must not bounce the reader through the old id again
+      if (to) { location.replace("#/s/" + to); return Promise.resolve(); }
+      app.innerHTML = '<div class="crumb"><a href="#/t/' + esc(t) + '">← ' + esc(NAME[t] || "All tractates") + '</a></div>' +
+        '<p class="notice">This passage is no longer on the list of stories.</p>' +
+        '<p><a href="#/t/' + esc(t) + '">See the stories of ' + esc(NAME[t] || t) + '</a></p>';
+      return Promise.resolve();
+    }
     var draftMode = /[?&]notes=draft/.test(location.search) || !!CFG.showDraftNotes;
     var notesP = getJSON("data/notes/" + t + ".json").catch(function () { return { notes: {} }; });
     return Promise.all([getJSON("data/" + t + ".json"), notesP]).then(function (both) {

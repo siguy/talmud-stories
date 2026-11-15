@@ -138,6 +138,9 @@ Security rules (no server code in v1):
 
 ## 7. List versions and stable ids
 
+- **Since 2026-11-14 ids are permanent** (`site/data/story_ids.json`, viewer plan §3.1): a boundary fix keeps the id, a
+  merge leaves a redirect, a removal retires it. Key `claims/{storyId}` on that id; the hand-run overlap map below is
+  now needed only for merges/retirements, and `site/data/redirects.json` already is that map.
 - v1 freezes today's ids (`tractate-daf-start-end`). `site/data/index.json` gains `list_version` and `published_at`.
 - A **new list (v2, …)** is built by the same script and ships with `site/data/lists/v1_to_v2.json`:
   each v1 id → the v2 id it **overlaps most by segments** (overlap, never an exact key — Lesson 36), or `null`.

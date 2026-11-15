@@ -11,7 +11,9 @@ const CATEGORIES = {
 };
 // Any tractate slug from scripts/tractates.py (lowercase, underscores: avodah_zarah). It was the 4 reviewed
 // tractates only, so feedback on the other 33 was rejected after the site grew to all of Shas.
-const ID_RE = /^[a-z]+(_[a-z]+)*-\d+[ab]-\d+-\d+$/;
+// The optional -vN is a permanent id minted when its birth-span string was already taken (scripts/story_ids.py);
+// ids are permanent, never re-derived from a span, so this pattern names a format, not a location.
+const ID_RE = /^[a-z]+(_[a-z]+)*-\d+[ab]-\d+-\d+(-v\d+)?$/;
 // A story spans at most a few pages: two in today's data, more once a display-only extension
 // (start_back <= 2, end_forward <= 4 segments) crosses a page break. 10 is headroom, not a limit anyone hits.
 const MAX_REFS = 10;

@@ -2,7 +2,7 @@
  "$schema": "https://json-schema.org/draft/2020-12/schema",
  "$id": "https://talmud-stories.local/site/data/schema/story.schema.json",
  "title": "Septimus site data: one tractate file (site/data/<tractate>.json)",
- "description": "Contract between scripts/build_site_data.py (writer) and site/app.js, the feedback worker and the planned sign-up app (readers). Documented in docs/technical/septimus-viewer-plan.md section 3. index.json is validated against #/$defs/index. A story id encodes its span (<tractate>-<daf>-<start>-<end>), so a boundary change changes the id.",
+ "description": "Contract between scripts/build_site_data.py (writer) and site/app.js, the feedback worker and the planned sign-up app (readers). Documented in docs/technical/septimus-viewer-plan.md section 3. index.json is validated against #/$defs/index, redirects.json against #/$defs/redirects. A story id is PERMANENT (site/data/story_ids.json, scripts/story_ids.py): minted once, kept across boundary changes; the current source span is the `span` field.",
  "type": "object",
  "required": ["tractate", "reviewed", "stories", "out_of_scope"],
  "additionalProperties": false,
@@ -16,8 +16,11 @@
  "$defs": {
   "slug": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*$", "description": "scripts/tractates.py slug; never a hyphen (ids split on it)."},
   "ref": {"type": "string", "pattern": "^[A-Z][A-Za-z ]+ [0-9]+[ab]$", "description": "Sefaria page ref, e.g. 'Bava Batra 21a'."},
-  "story_id": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*-[0-9]+[ab]-[0-9]+-[0-9]+$",
-               "description": "<tractate>-<daf of the first page>-<start segment>-<end segment>, from the source span (never the display extension)."},
+  "story_id": {"type": "string", "pattern": "^[a-z]+(_[a-z]+)*-[0-9]+[ab]-[0-9]+-[0-9]+(-v[0-9]+)?$",
+               "description": "Permanent id from site/data/story_ids.json. Reads as the span it was MINTED with (<tractate>-<daf>-<start>-<end>, -vN if that string was taken), never re-derived: after a boundary change the digits are history. Never parse a span from it; read `span`."},
+  "span": {"type": "array", "minItems": 1, "maxItems": 2, "description": "The story's current SOURCE span, one piece per page (never the display extension). The registry records the same.",
+           "items": {"type": "object", "required": ["ref", "start", "end"], "additionalProperties": false,
+                     "properties": {"ref": {"$ref": "#/$defs/ref"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 0}}}},
   "segment": {
    "type": "object", "required": ["ref", "i", "he", "en"], "additionalProperties": false,
    "properties": {
@@ -39,10 +42,11 @@
   },
   "story_fields": {
    "type": "object",
-   "required": ["id", "tractate", "ref", "refs", "start_segment", "classification", "in_mishnah", "extended",
+   "required": ["id", "span", "tractate", "ref", "refs", "start_segment", "classification", "in_mishnah", "extended",
                 "reviewed", "summary", "segments", "words", "minutes"],
    "properties": {
     "id": {"$ref": "#/$defs/story_id"},
+    "span": {"$ref": "#/$defs/span"},
     "tractate": {"$ref": "#/$defs/slug"},
     "ref": {"$ref": "#/$defs/ref"},
     "refs": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1, "maxItems": 3, "uniqueItems": true},
@@ -66,6 +70,13 @@
    "required": ["out_of_scope_reason"],
    "properties": {"out_of_scope_reason": {"type": "string", "minLength": 1}},
    "unevaluatedProperties": false
+  },
+  "redirects": {
+   "title": "site/data/redirects.json",
+   "description": "Every id that is no longer active -> the id its story now has (merge), or null (retired). Chains already followed. Derived from story_ids.json; site/app.js reads it to resolve old links and migrate read-checkmarks.",
+   "type": "object",
+   "propertyNames": {"$ref": "#/$defs/story_id"},
+   "additionalProperties": {"oneOf": [{"$ref": "#/$defs/story_id"}, {"type": "null"}]}
   },
   "index": {
    "title": "site/data/index.json",

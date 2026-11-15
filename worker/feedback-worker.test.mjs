@@ -25,7 +25,9 @@ function payloadFor(s, segIndex = null, extra = {}) {
   };
 }
 const stories = readdirSync(DATA).filter((f) => f.endsWith(".json") && !["index.json", "boundary_extensions.json"].includes(f))
-  .flatMap((f) => JSON.parse(readFileSync(join(DATA, f), "utf8")).stories);
+  .map((f) => JSON.parse(readFileSync(join(DATA, f), "utf8")))
+  .filter((d) => Array.isArray(d.stories))   // tractate files only: not story_ids.json / redirects.json
+  .flatMap((d) => d.stories);
 
 const ok = { story_id: "ketubot-20a-2-3", tractate: "ketubot", ref: "Ketubot 20a", category: "translation",
   comment: "line 2 is unclear\n```x```", segment: { ref: "Ketubot 20a", index: 2, he: "א", en: "b" }, name: "Dana" };
@@ -65,11 +67,18 @@ test("title, labels and the machine-readable block", () => {
 
 test("bad story ids are rejected", () => {
   for (const id of ["x; DROP", "", "Ketubot-20a-2-3", "ketubot-20c-2-3", "ketubot-20a-2", "ketubot_-20a-1-1", "_ketubot-20a-1-1",
-    "ketubot-20a-1-1\n", "../ketubot-20a-1-1", "ketubot2-20a-1-1", undefined, null, 7]) {
+    "ketubot-20a-1-1\n", "../ketubot-20a-1-1", "ketubot2-20a-1-1", "ketubot-20a-1-1-v", "ketubot-20a-1-1-2", "ketubot-20a-1-1-v2-v3",
+    undefined, null, 7]) {
     assert.throws(() => buildIssue({ ...ok, story_id: id }), /bad story_id/, String(id));
   }
   assert.throws(() => buildIssue(null), /bad story_id/);
   assert.throws(() => buildIssue("string"), /bad story_id/);
+});
+
+test("a permanent id minted with a -vN suffix is accepted (scripts/story_ids.py)", () => {
+  const d = machine(buildIssue({ ...ok, story_id: "ketubot-20a-2-3-v2" }));
+  assert.equal(d.story_id, "ketubot-20a-2-3-v2");
+  assert.equal(d.tractate, "ketubot");
 });
 
 test("bad categories are rejected; 'other' needs a comment", () => {
