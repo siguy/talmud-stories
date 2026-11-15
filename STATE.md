@@ -68,7 +68,7 @@ open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-triage
 open       2026-09-03-examine-all-pages
 open       2026-09-03-triage-recall-options
-closed     14 item(s) in work/done/
+closed     15 item(s) in work/done/
 ```
 
 ### 2 Detection
@@ -81,7 +81,7 @@ open       2026-08-30-kiddushin-12a-dedup
 open       2026-08-30-kiddushin-parse-open-calls
 open       2026-08-30-opener-lexicon
 open       2026-08-30-yevamot-detection   ← blocked: 2026-08-30-yevamot-triage, 2026-08-30-two-amud-header-parser
-closed     32 item(s) in work/done/
+closed     34 item(s) in work/done/
 ```
 
 ### 3 Classification
@@ -94,7 +94,7 @@ open       2026-08-30-gittin-classification   ← blocked: 2026-08-30-gittin-det
 open       2026-08-30-golden-completeness
 open       2026-08-30-story-criteria
 open       2026-08-30-yevamot-classification   ← blocked: 2026-08-30-yevamot-detection
-closed     31 item(s) in work/done/
+closed     34 item(s) in work/done/
 ```
 
 ### 4 Boundaries
@@ -104,9 +104,7 @@ history    docs/capabilities/4_boundaries.md
 open       2026-08-30-second-story-guard   ← awaiting: jeff:boundary-end-rule
 open       2026-09-03-boundary-testset-rebuild
 open       2026-09-03-rerun-all-tractates   ← blocked: 2026-09-03-tighten-story-finder, 2026-09-03-thinking-level-experiment
-open       2026-11-07-pre-eruvin-run-fixes
-open       2026-11-14-narrate-test
-closed     12 item(s) in work/done/
+closed     14 item(s) in work/done/
 ```
 
 ### 5 Review
@@ -128,9 +126,7 @@ gate       not yet defined
 history    docs/capabilities/6_publication.md
 open       2026-10-12-septimus-story-viewer
 open       2026-11-08-septimus-signup
-open       2026-11-08-shas-finder-run
-open       2026-11-13-low-pool-grader-calibration
-closed     7 item(s) in work/done/
+closed     9 item(s) in work/done/
 ```
 
 ## Ground truth on hand
@@ -181,4 +177,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 89b88d722c85561f -->
+<!-- board-checksum: 174970c254a012ed -->

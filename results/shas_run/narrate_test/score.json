@@ -1,0 +1,1268 @@
+{
+ "passes": [
+  "pass1",
+  "pass2"
+ ],
+ "classification": {
+  "pass1 yes": {
+   "all known": {
+    "story_called_known": 99,
+    "jeff_yes": 80,
+    "precision": 0.808,
+    "wilson95": [
+     0.72,
+     0.874
+    ],
+    "recall_of_jeff_yes": "80/141",
+    "recall_wilson95": [
+     0.485,
+     0.646
+    ],
+    "called_story_unknown_truth": 18
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 77,
+    "jeff_yes": 60,
+    "precision": 0.779,
+    "wilson95": [
+     0.675,
+     0.857
+    ],
+    "recall_of_jeff_yes": "60/104",
+    "recall_wilson95": [
+     0.481,
+     0.667
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 70,
+    "jeff_yes": 53,
+    "precision": 0.757,
+    "wilson95": [
+     0.645,
+     0.842
+    ],
+    "recall_of_jeff_yes": "53/95",
+    "recall_wilson95": [
+     0.458,
+     0.654
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 41,
+    "jeff_yes": 35,
+    "precision": 0.854,
+    "wilson95": [
+     0.716,
+     0.931
+    ],
+    "recall_of_jeff_yes": "35/48",
+    "recall_wilson95": [
+     0.59,
+     0.834
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 22,
+    "jeff_yes": 20,
+    "precision": 0.909,
+    "wilson95": [
+     0.722,
+     0.975
+    ],
+    "recall_of_jeff_yes": "20/37",
+    "recall_wilson95": [
+     0.384,
+     0.69
+    ],
+    "called_story_unknown_truth": 17
+   }
+  },
+  "pass1 yes|partial": {
+   "all known": {
+    "story_called_known": 161,
+    "jeff_yes": 125,
+    "precision": 0.776,
+    "wilson95": [
+     0.706,
+     0.834
+    ],
+    "recall_of_jeff_yes": "125/141",
+    "recall_wilson95": [
+     0.824,
+     0.929
+    ],
+    "called_story_unknown_truth": 53
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 124,
+    "jeff_yes": 93,
+    "precision": 0.75,
+    "wilson95": [
+     0.667,
+     0.818
+    ],
+    "recall_of_jeff_yes": "93/104",
+    "recall_wilson95": [
+     0.82,
+     0.94
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 115,
+    "jeff_yes": 84,
+    "precision": 0.73,
+    "wilson95": [
+     0.643,
+     0.803
+    ],
+    "recall_of_jeff_yes": "84/95",
+    "recall_wilson95": [
+     0.804,
+     0.934
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 54,
+    "jeff_yes": 46,
+    "precision": 0.852,
+    "wilson95": [
+     0.734,
+     0.923
+    ],
+    "recall_of_jeff_yes": "46/48",
+    "recall_wilson95": [
+     0.86,
+     0.988
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 37,
+    "jeff_yes": 32,
+    "precision": 0.865,
+    "wilson95": [
+     0.72,
+     0.941
+    ],
+    "recall_of_jeff_yes": "32/37",
+    "recall_wilson95": [
+     0.72,
+     0.941
+    ],
+    "called_story_unknown_truth": 50
+   }
+  },
+  "pass2 yes": {
+   "all known": {
+    "story_called_known": 105,
+    "jeff_yes": 84,
+    "precision": 0.8,
+    "wilson95": [
+     0.714,
+     0.865
+    ],
+    "recall_of_jeff_yes": "84/141",
+    "recall_wilson95": [
+     0.513,
+     0.673
+    ],
+    "called_story_unknown_truth": 16
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 79,
+    "jeff_yes": 62,
+    "precision": 0.785,
+    "wilson95": [
+     0.682,
+     0.861
+    ],
+    "recall_of_jeff_yes": "62/104",
+    "recall_wilson95": [
+     0.5,
+     0.685
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 71,
+    "jeff_yes": 54,
+    "precision": 0.761,
+    "wilson95": [
+     0.65,
+     0.845
+    ],
+    "recall_of_jeff_yes": "54/95",
+    "recall_wilson95": [
+     0.468,
+     0.663
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 43,
+    "jeff_yes": 36,
+    "precision": 0.837,
+    "wilson95": [
+     0.7,
+     0.919
+    ],
+    "recall_of_jeff_yes": "36/48",
+    "recall_wilson95": [
+     0.612,
+     0.851
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 26,
+    "jeff_yes": 22,
+    "precision": 0.846,
+    "wilson95": [
+     0.665,
+     0.939
+    ],
+    "recall_of_jeff_yes": "22/37",
+    "recall_wilson95": [
+     0.435,
+     0.737
+    ],
+    "called_story_unknown_truth": 14
+   }
+  },
+  "pass2 yes|partial": {
+   "all known": {
+    "story_called_known": 169,
+    "jeff_yes": 129,
+    "precision": 0.763,
+    "wilson95": [
+     0.694,
+     0.821
+    ],
+    "recall_of_jeff_yes": "129/141",
+    "recall_wilson95": [
+     0.857,
+     0.951
+    ],
+    "called_story_unknown_truth": 56
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 126,
+    "jeff_yes": 93,
+    "precision": 0.738,
+    "wilson95": [
+     0.655,
+     0.807
+    ],
+    "recall_of_jeff_yes": "93/104",
+    "recall_wilson95": [
+     0.82,
+     0.94
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 117,
+    "jeff_yes": 84,
+    "precision": 0.718,
+    "wilson95": [
+     0.63,
+     0.792
+    ],
+    "recall_of_jeff_yes": "84/95",
+    "recall_wilson95": [
+     0.804,
+     0.934
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 55,
+    "jeff_yes": 46,
+    "precision": 0.836,
+    "wilson95": [
+     0.717,
+     0.911
+    ],
+    "recall_of_jeff_yes": "46/48",
+    "recall_wilson95": [
+     0.86,
+     0.988
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 43,
+    "jeff_yes": 36,
+    "precision": 0.837,
+    "wilson95": [
+     0.7,
+     0.919
+    ],
+    "recall_of_jeff_yes": "36/37",
+    "recall_wilson95": [
+     0.862,
+     0.995
+    ],
+    "called_story_unknown_truth": 53
+   }
+  },
+  "both passes yes": {
+   "all known": {
+    "story_called_known": 89,
+    "jeff_yes": 73,
+    "precision": 0.82,
+    "wilson95": [
+     0.728,
+     0.886
+    ],
+    "recall_of_jeff_yes": "73/141",
+    "recall_wilson95": [
+     0.436,
+     0.599
+    ],
+    "called_story_unknown_truth": 13
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 68,
+    "jeff_yes": 54,
+    "precision": 0.794,
+    "wilson95": [
+     0.684,
+     0.873
+    ],
+    "recall_of_jeff_yes": "54/104",
+    "recall_wilson95": [
+     0.424,
+     0.613
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 61,
+    "jeff_yes": 47,
+    "precision": 0.77,
+    "wilson95": [
+     0.651,
+     0.858
+    ],
+    "recall_of_jeff_yes": "47/95",
+    "recall_wilson95": [
+     0.396,
+     0.594
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 38,
+    "jeff_yes": 32,
+    "precision": 0.842,
+    "wilson95": [
+     0.696,
+     0.926
+    ],
+    "recall_of_jeff_yes": "32/48",
+    "recall_wilson95": [
+     0.525,
+     0.783
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 21,
+    "jeff_yes": 19,
+    "precision": 0.905,
+    "wilson95": [
+     0.711,
+     0.973
+    ],
+    "recall_of_jeff_yes": "19/37",
+    "recall_wilson95": [
+     0.359,
+     0.666
+    ],
+    "called_story_unknown_truth": 12
+   }
+  },
+  "GRADER story (both passes)": {
+   "all known": {
+    "story_called_known": 33,
+    "jeff_yes": 32,
+    "precision": 0.97,
+    "wilson95": [
+     0.847,
+     0.995
+    ],
+    "recall_of_jeff_yes": "32/141",
+    "recall_wilson95": [
+     0.166,
+     0.303
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 27,
+    "jeff_yes": 26,
+    "precision": 0.963,
+    "wilson95": [
+     0.817,
+     0.993
+    ],
+    "recall_of_jeff_yes": "26/104",
+    "recall_wilson95": [
+     0.177,
+     0.341
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 23,
+    "jeff_yes": 22,
+    "precision": 0.957,
+    "wilson95": [
+     0.79,
+     0.992
+    ],
+    "recall_of_jeff_yes": "22/95",
+    "recall_wilson95": [
+     0.158,
+     0.326
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 14,
+    "jeff_yes": 13,
+    "precision": 0.929,
+    "wilson95": [
+     0.685,
+     0.987
+    ],
+    "recall_of_jeff_yes": "13/48",
+    "recall_wilson95": [
+     0.166,
+     0.41
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 6,
+    "jeff_yes": 6,
+    "precision": 1.0,
+    "wilson95": [
+     0.61,
+     1.0
+    ],
+    "recall_of_jeff_yes": "6/37",
+    "recall_wilson95": [
+     0.077,
+     0.311
+    ],
+    "called_story_unknown_truth": 0
+   }
+  },
+  "COMBINED pass1": {
+   "all known": {
+    "story_called_known": 95,
+    "jeff_yes": 79,
+    "precision": 0.832,
+    "wilson95": [
+     0.744,
+     0.894
+    ],
+    "recall_of_jeff_yes": "79/141",
+    "recall_wilson95": [
+     0.478,
+     0.64
+    ],
+    "called_story_unknown_truth": 10
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 78,
+    "jeff_yes": 63,
+    "precision": 0.808,
+    "wilson95": [
+     0.707,
+     0.88
+    ],
+    "recall_of_jeff_yes": "63/104",
+    "recall_wilson95": [
+     0.51,
+     0.694
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 70,
+    "jeff_yes": 55,
+    "precision": 0.786,
+    "wilson95": [
+     0.676,
+     0.866
+    ],
+    "recall_of_jeff_yes": "55/95",
+    "recall_wilson95": [
+     0.478,
+     0.673
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 40,
+    "jeff_yes": 34,
+    "precision": 0.85,
+    "wilson95": [
+     0.709,
+     0.929
+    ],
+    "recall_of_jeff_yes": "34/48",
+    "recall_wilson95": [
+     0.568,
+     0.818
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 17,
+    "jeff_yes": 16,
+    "precision": 0.941,
+    "wilson95": [
+     0.73,
+     0.99
+    ],
+    "recall_of_jeff_yes": "16/37",
+    "recall_wilson95": [
+     0.287,
+     0.591
+    ],
+    "called_story_unknown_truth": 9
+   }
+  },
+  "COMBINED pass2": {
+   "all known": {
+    "story_called_known": 96,
+    "jeff_yes": 81,
+    "precision": 0.844,
+    "wilson95": [
+     0.758,
+     0.903
+    ],
+    "recall_of_jeff_yes": "81/141",
+    "recall_wilson95": [
+     0.492,
+     0.653
+    ],
+    "called_story_unknown_truth": 10
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 77,
+    "jeff_yes": 64,
+    "precision": 0.831,
+    "wilson95": [
+     0.732,
+     0.899
+    ],
+    "recall_of_jeff_yes": "64/104",
+    "recall_wilson95": [
+     0.519,
+     0.703
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 68,
+    "jeff_yes": 55,
+    "precision": 0.809,
+    "wilson95": [
+     0.7,
+     0.885
+    ],
+    "recall_of_jeff_yes": "55/95",
+    "recall_wilson95": [
+     0.478,
+     0.673
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 42,
+    "jeff_yes": 36,
+    "precision": 0.857,
+    "wilson95": [
+     0.722,
+     0.933
+    ],
+    "recall_of_jeff_yes": "36/48",
+    "recall_wilson95": [
+     0.612,
+     0.851
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 19,
+    "jeff_yes": 17,
+    "precision": 0.895,
+    "wilson95": [
+     0.686,
+     0.971
+    ],
+    "recall_of_jeff_yes": "17/37",
+    "recall_wilson95": [
+     0.31,
+     0.616
+    ],
+    "called_story_unknown_truth": 8
+   }
+  },
+  "COMBINED both": {
+   "all known": {
+    "story_called_known": 88,
+    "jeff_yes": 74,
+    "precision": 0.841,
+    "wilson95": [
+     0.75,
+     0.903
+    ],
+    "recall_of_jeff_yes": "74/141",
+    "recall_wilson95": [
+     0.443,
+     0.605
+    ],
+    "called_story_unknown_truth": 9
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 72,
+    "jeff_yes": 59,
+    "precision": 0.819,
+    "wilson95": [
+     0.715,
+     0.891
+    ],
+    "recall_of_jeff_yes": "59/104",
+    "recall_wilson95": [
+     0.471,
+     0.658
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 64,
+    "jeff_yes": 51,
+    "precision": 0.797,
+    "wilson95": [
+     0.683,
+     0.877
+    ],
+    "recall_of_jeff_yes": "51/95",
+    "recall_wilson95": [
+     0.437,
+     0.634
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 39,
+    "jeff_yes": 33,
+    "precision": 0.846,
+    "wilson95": [
+     0.703,
+     0.928
+    ],
+    "recall_of_jeff_yes": "33/48",
+    "recall_wilson95": [
+     0.547,
+     0.801
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 16,
+    "jeff_yes": 15,
+    "precision": 0.938,
+    "wilson95": [
+     0.717,
+     0.989
+    ],
+    "recall_of_jeff_yes": "15/37",
+    "recall_wilson95": [
+     0.263,
+     0.565
+    ],
+    "called_story_unknown_truth": 8
+   }
+  }
+ },
+ "crosstab": {
+  "pass1": {
+   "borderline|no|borderline": 2,
+   "borderline|no|unknown": 1,
+   "borderline|no|yes": 1,
+   "borderline|partial|borderline": 3,
+   "borderline|partial|no": 1,
+   "borderline|partial|unknown": 15,
+   "borderline|partial|yes": 25,
+   "borderline|yes|borderline": 12,
+   "borderline|yes|no": 3,
+   "borderline|yes|unknown": 9,
+   "borderline|yes|yes": 47,
+   "not|no|borderline": 1,
+   "not|no|no": 22,
+   "not|no|unknown": 44,
+   "not|no|yes": 13,
+   "not|partial|borderline": 1,
+   "not|partial|no": 11,
+   "not|partial|unknown": 20,
+   "not|partial|yes": 14,
+   "not|yes|borderline": 1,
+   "not|yes|no": 3,
+   "not|yes|unknown": 8,
+   "not|yes|yes": 9,
+   "story|no|yes": 2,
+   "story|partial|no": 1,
+   "story|partial|yes": 6,
+   "story|yes|unknown": 1,
+   "story|yes|yes": 24
+  },
+  "pass2": {
+   "borderline|no|borderline": 1,
+   "borderline|no|yes": 1,
+   "borderline|partial|borderline": 4,
+   "borderline|partial|no": 2,
+   "borderline|partial|unknown": 16,
+   "borderline|partial|yes": 23,
+   "borderline|yes|borderline": 12,
+   "borderline|yes|no": 2,
+   "borderline|yes|unknown": 9,
+   "borderline|yes|yes": 49,
+   "not|no|no": 20,
+   "not|no|unknown": 42,
+   "not|no|yes": 11,
+   "not|partial|borderline": 2,
+   "not|partial|no": 11,
+   "not|partial|unknown": 24,
+   "not|partial|yes": 17,
+   "not|yes|borderline": 1,
+   "not|yes|no": 5,
+   "not|yes|unknown": 6,
+   "not|yes|yes": 8,
+   "story|partial|yes": 5,
+   "story|yes|no": 1,
+   "story|yes|unknown": 1,
+   "story|yes|yes": 27
+  }
+ },
+ "invalid": {
+  "pass1": {
+   "ok": 300
+  },
+  "pass2": {
+   "ok": 300
+  }
+ },
+ "stability_cls": {
+  "n": 300,
+  "same_can_narrate": 246,
+  "same_yes_or_not": 266
+ },
+ "boundaries": {
+  "ketubot": {
+   "detector, all covered targets": {
+    "start": {
+     "scored": 124,
+     "HIT": 94,
+     "NEAR": 12,
+     "MISS": 18,
+     "N/A": 0,
+     "hit_rate": 0.758,
+     "hit_near_rate": 0.855,
+     "hit_wilson95": [
+      0.676,
+      0.825
+     ]
+    },
+    "end": {
+     "scored": 105,
+     "HIT": 78,
+     "NEAR": 6,
+     "MISS": 21,
+     "N/A": 0,
+     "hit_rate": 0.743,
+     "hit_near_rate": 0.8,
+     "hit_wilson95": [
+      0.652,
+      0.817
+     ]
+    }
+   },
+   "pass1 narrator": {
+    "start": {
+     "scored": 122,
+     "HIT": 92,
+     "NEAR": 11,
+     "MISS": 19,
+     "N/A": 0,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.844,
+     "hit_wilson95": [
+      0.671,
+      0.822
+     ]
+    },
+    "end": {
+     "scored": 102,
+     "HIT": 78,
+     "NEAR": 6,
+     "MISS": 18,
+     "N/A": 2,
+     "hit_rate": 0.765,
+     "hit_near_rate": 0.824,
+     "hit_wilson95": [
+      0.674,
+      0.836
+     ]
+    }
+   },
+   "pass1 detector, same targets": {
+    "start": {
+     "scored": 122,
+     "HIT": 93,
+     "NEAR": 11,
+     "MISS": 18,
+     "N/A": 0,
+     "hit_rate": 0.762,
+     "hit_near_rate": 0.852,
+     "hit_wilson95": [
+      0.679,
+      0.829
+     ]
+    },
+    "end": {
+     "scored": 104,
+     "HIT": 77,
+     "NEAR": 6,
+     "MISS": 21,
+     "N/A": 0,
+     "hit_rate": 0.74,
+     "hit_near_rate": 0.798,
+     "hit_wilson95": [
+      0.649,
+      0.815
+     ]
+    }
+   },
+   "pass1 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 122,
+     "HIT": 92,
+     "NEAR": 11,
+     "MISS": 19,
+     "N/A": 2,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.844,
+     "hit_wilson95": [
+      0.671,
+      0.822
+     ]
+    },
+    "end": {
+     "scored": 102,
+     "HIT": 78,
+     "NEAR": 6,
+     "MISS": 18,
+     "N/A": 3,
+     "hit_rate": 0.765,
+     "hit_near_rate": 0.824,
+     "hit_wilson95": [
+      0.674,
+      0.836
+     ]
+    }
+   },
+   "pass2 narrator": {
+    "start": {
+     "scored": 117,
+     "HIT": 90,
+     "NEAR": 12,
+     "MISS": 15,
+     "N/A": 2,
+     "hit_rate": 0.769,
+     "hit_near_rate": 0.872,
+     "hit_wilson95": [
+      0.685,
+      0.836
+     ]
+    },
+    "end": {
+     "scored": 98,
+     "HIT": 76,
+     "NEAR": 6,
+     "MISS": 16,
+     "N/A": 3,
+     "hit_rate": 0.776,
+     "hit_near_rate": 0.837,
+     "hit_wilson95": [
+      0.683,
+      0.847
+     ]
+    }
+   },
+   "pass2 detector, same targets": {
+    "start": {
+     "scored": 119,
+     "HIT": 92,
+     "NEAR": 12,
+     "MISS": 15,
+     "N/A": 0,
+     "hit_rate": 0.773,
+     "hit_near_rate": 0.874,
+     "hit_wilson95": [
+      0.69,
+      0.839
+     ]
+    },
+    "end": {
+     "scored": 101,
+     "HIT": 77,
+     "NEAR": 6,
+     "MISS": 18,
+     "N/A": 0,
+     "hit_rate": 0.762,
+     "hit_near_rate": 0.822,
+     "hit_wilson95": [
+      0.671,
+      0.835
+     ]
+    }
+   },
+   "pass2 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 117,
+     "HIT": 90,
+     "NEAR": 12,
+     "MISS": 15,
+     "N/A": 7,
+     "hit_rate": 0.769,
+     "hit_near_rate": 0.872,
+     "hit_wilson95": [
+      0.685,
+      0.836
+     ]
+    },
+    "end": {
+     "scored": 98,
+     "HIT": 76,
+     "NEAR": 6,
+     "MISS": 16,
+     "N/A": 7,
+     "hit_rate": 0.776,
+     "hit_near_rate": 0.837,
+     "hit_wilson95": [
+      0.683,
+      0.847
+     ]
+    }
+   },
+   "movement": {
+    "pass1": {
+     "start": {
+      "HIT->HIT": 87,
+      "HIT->MISS": 1,
+      "MISS->MISS": 17,
+      "NEAR->NEAR": 11
+     },
+     "end": {
+      "HIT->HIT": 76,
+      "HIT->MISS": 1,
+      "MISS->HIT": 2,
+      "MISS->MISS": 12,
+      "MISS->N/A": 2,
+      "NEAR->NEAR": 6
+     }
+    },
+    "pass2": {
+     "start": {
+      "HIT->HIT": 87,
+      "HIT->N/A": 2,
+      "MISS->MISS": 15,
+      "NEAR->NEAR": 12
+     },
+     "end": {
+      "HIT->HIT": 74,
+      "HIT->MISS": 1,
+      "HIT->N/A": 2,
+      "MISS->HIT": 2,
+      "MISS->MISS": 12,
+      "MISS->N/A": 1,
+      "NEAR->NEAR": 6
+     }
+    }
+   },
+   "target_inside_window": {
+    "end|True": 105,
+    "start|True": 124
+   },
+   "narration_outcomes": {
+    "pass1": {
+     "yes": 99,
+     "partial": 20,
+     "no": 2
+    },
+    "pass2": {
+     "yes": 102,
+     "partial": 17,
+     "no": 2
+    }
+   }
+  },
+  "kiddushin": {
+   "detector, all covered targets": {
+    "start": {
+     "scored": 69,
+     "HIT": 52,
+     "NEAR": 6,
+     "MISS": 11,
+     "N/A": 0,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.841,
+     "hit_wilson95": [
+      0.64,
+      0.84
+     ]
+    },
+    "end": {
+     "scored": 61,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 9,
+     "N/A": 0,
+     "hit_rate": 0.787,
+     "hit_near_rate": 0.852,
+     "hit_wilson95": [
+      0.669,
+      0.871
+     ]
+    }
+   },
+   "pass1 narrator": {
+    "start": {
+     "scored": 68,
+     "HIT": 53,
+     "NEAR": 6,
+     "MISS": 9,
+     "N/A": 0,
+     "hit_rate": 0.779,
+     "hit_near_rate": 0.868,
+     "hit_wilson95": [
+      0.667,
+      0.862
+     ]
+    },
+    "end": {
+     "scored": 59,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 7,
+     "N/A": 1,
+     "hit_rate": 0.814,
+     "hit_near_rate": 0.881,
+     "hit_wilson95": [
+      0.696,
+      0.893
+     ]
+    }
+   },
+   "pass1 detector, same targets": {
+    "start": {
+     "scored": 68,
+     "HIT": 52,
+     "NEAR": 6,
+     "MISS": 10,
+     "N/A": 0,
+     "hit_rate": 0.765,
+     "hit_near_rate": 0.853,
+     "hit_wilson95": [
+      0.651,
+      0.85
+     ]
+    },
+    "end": {
+     "scored": 60,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 8,
+     "N/A": 0,
+     "hit_rate": 0.8,
+     "hit_near_rate": 0.867,
+     "hit_wilson95": [
+      0.682,
+      0.882
+     ]
+    }
+   },
+   "pass1 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 68,
+     "HIT": 53,
+     "NEAR": 6,
+     "MISS": 9,
+     "N/A": 1,
+     "hit_rate": 0.779,
+     "hit_near_rate": 0.868,
+     "hit_wilson95": [
+      0.667,
+      0.862
+     ]
+    },
+    "end": {
+     "scored": 59,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 7,
+     "N/A": 2,
+     "hit_rate": 0.814,
+     "hit_near_rate": 0.881,
+     "hit_wilson95": [
+      0.696,
+      0.893
+     ]
+    }
+   },
+   "pass2 narrator": {
+    "start": {
+     "scored": 69,
+     "HIT": 53,
+     "NEAR": 6,
+     "MISS": 10,
+     "N/A": 0,
+     "hit_rate": 0.768,
+     "hit_near_rate": 0.855,
+     "hit_wilson95": [
+      0.656,
+      0.852
+     ]
+    },
+    "end": {
+     "scored": 60,
+     "HIT": 47,
+     "NEAR": 4,
+     "MISS": 9,
+     "N/A": 1,
+     "hit_rate": 0.783,
+     "hit_near_rate": 0.85,
+     "hit_wilson95": [
+      0.664,
+      0.869
+     ]
+    }
+   },
+   "pass2 detector, same targets": {
+    "start": {
+     "scored": 69,
+     "HIT": 52,
+     "NEAR": 6,
+     "MISS": 11,
+     "N/A": 0,
+     "hit_rate": 0.754,
+     "hit_near_rate": 0.841,
+     "hit_wilson95": [
+      0.64,
+      0.84
+     ]
+    },
+    "end": {
+     "scored": 61,
+     "HIT": 48,
+     "NEAR": 4,
+     "MISS": 9,
+     "N/A": 0,
+     "hit_rate": 0.787,
+     "hit_near_rate": 0.852,
+     "hit_wilson95": [
+      0.669,
+      0.871
+     ]
+    }
+   },
+   "pass2 narrator, all covered (no-narrate = N/A)": {
+    "start": {
+     "scored": 69,
+     "HIT": 53,
+     "NEAR": 6,
+     "MISS": 10,
+     "N/A": 0,
+     "hit_rate": 0.768,
+     "hit_near_rate": 0.855,
+     "hit_wilson95": [
+      0.656,
+      0.852
+     ]
+    },
+    "end": {
+     "scored": 60,
+     "HIT": 47,
+     "NEAR": 4,
+     "MISS": 9,
+     "N/A": 1,
+     "hit_rate": 0.783,
+     "hit_near_rate": 0.85,
+     "hit_wilson95": [
+      0.664,
+      0.869
+     ]
+    }
+   },
+   "movement": {
+    "pass1": {
+     "start": {
+      "HIT->HIT": 52,
+      "MISS->HIT": 1,
+      "MISS->MISS": 9,
+      "NEAR->NEAR": 6
+     },
+     "end": {
+      "HIT->HIT": 48,
+      "MISS->MISS": 7,
+      "MISS->N/A": 1,
+      "NEAR->NEAR": 4
+     }
+    },
+    "pass2": {
+     "start": {
+      "HIT->HIT": 52,
+      "MISS->HIT": 1,
+      "MISS->MISS": 10,
+      "NEAR->NEAR": 6
+     },
+     "end": {
+      "HIT->HIT": 47,
+      "HIT->MISS": 1,
+      "MISS->MISS": 8,
+      "MISS->N/A": 1,
+      "NEAR->NEAR": 4
+     }
+    }
+   },
+   "target_inside_window": {
+    "end|True": 61,
+    "start|True": 69
+   },
+   "narration_outcomes": {
+    "pass1": {
+     "yes": 55,
+     "partial": 16,
+     "no": 1
+    },
+    "pass2": {
+     "yes": 56,
+     "partial": 16
+    }
+   }
+  }
+ }
+}

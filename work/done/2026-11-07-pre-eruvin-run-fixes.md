@@ -11,8 +11,8 @@ superseded_by:
 
 # Fix the run-path defects before the Eruvin run
 
-**Self-contained.** Read [`FRAMEWORK.md`](../FRAMEWORK.md) first, then the finding this item
-carries: [`2026-11-07-pre-eruvin-code-review.md`](../docs/findings/2026-11-07-pre-eruvin-code-review.md).
+**Self-contained.** Read [`FRAMEWORK.md`](../../FRAMEWORK.md) first, then the finding this item
+carries: [`2026-11-07-pre-eruvin-code-review.md`](../../docs/findings/2026-11-07-pre-eruvin-code-review.md).
 Every item below is a numbered finding there, with file, line and the artifact that shows it.
 
 ## The problem
@@ -100,3 +100,19 @@ Eruvin items: `board.py lanes` is grouping on a path nothing writes.
 ## When done
 
 Add `## Outcome` here, then `python3 scripts/board.py finish pre-eruvin-run-fixes`.
+
+## Outcome
+
+**Done, closed 2026-11-15.** Every box above is ticked. The fixes landed in three PRs on 2026-11-07:
+[#69](https://github.com/siguy/talmud-stories/pull/69) (4c boundary check, sorted stories, failed calls flagged),
+[#70](https://github.com/siguy/talmud-stories/pull/70) (runner cache and manifest, triage logging, strict recall
+applies rulings, audit sees every tractate) and [#71](https://github.com/siguy/talmud-stories/pull/71) (Stage 4
+leaves cross-page stories whole, whole-name scope filter, 429 retried, checkpoint always written).
+
+Item 10, which detector runs Eruvin, was settled by measurement rather than by choice. v13 and v14 were measured on
+the slice and not adopted at first ([#74](https://github.com/siguy/talmud-stories/pull/74)). Then v14 was adopted on
+the full-Yevamot comparison ([#82](https://github.com/siguy/talmud-stories/pull/82)). Eruvin ran on v14 in the Shas
+run ([`shas-run`](../../docs/findings/2026-11-10-shas-run.md)), with zero `stage2_error` pages required by gate G3.
+
+**Not checked when this item closed:** the "Gittin 36b regains its story" re-score from *How you know it worked*.
+That record lives in the PRs, if anywhere.
