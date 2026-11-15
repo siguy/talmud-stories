@@ -170,6 +170,7 @@ naming an empty file as a lost round buries the one that is not.
 | `jeff:boundary-end-rule` | When a ruling is what makes a passage a story at all, is that ruling part of the story we display, or the discussion that follows it? |
 | `jeff:review-error-rate` | At what error rate does reviewing our output become worse than working from scratch? |
 | `jeff:scope-edges` | Your scope is *"rabbis and post-biblical figures"* (2026-09-23). Three edges we read as **in** — confirm or correct: (1) Elijah appearing to a rabbi (Gittin 6b, Kiddushin 40a); (2) a biblical figure cited *inside* a rabbinic story (Kiddushin 32b — Rabban Gamliel serving, justified by Abraham); (3) post-biblical non-rabbis — Titus, King Yannai, Agrippa. |
+| `jeff:106a-elijah-split` | Ketubot 105b–106a, Rav Anan. Is *Elijah stopped visiting Rav Anan … the box … Seder Eliyahu* (Sefaria **106a:2–3**) its own story, or the end of the fish story that starts at 105b:15 (Sefaria numbering)? Quote both Hebrew openings; **say the numbering is Sefaria's, counted from 1.** |
 | `jeff:miss-rate` | If we publish this as "the stories in tractate X", what miss rate would make that claim false — 1 in 20? 1 in 50? |
 | `jeff:deliverable-shape` | Does a published, citable corpus **with a feedback channel** meet your need for the first version — scholars flag *not a story* / *borderline* / *missing*, you or a small group adjudicate, and corrections land in the next release? |
 
@@ -180,4 +181,4 @@ Items that can finish but cannot conclude until he answers:
 **Answered — these can conclude now, and their `awaiting:` is stale:**
 
 - `2026-09-28-twin-pass-r-c5-wording` — jeff:report-vs-incident is answered
-<!-- board-checksum: 677b54665e1ebbbf -->
+<!-- board-checksum: 89b88d722c85561f -->
