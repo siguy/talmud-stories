@@ -107,3 +107,31 @@ and showed an unmarked window is the untried variant, and the only way to test t
 1. If a recall aid for the review queue is wanted: use `narrate yes AND grader borderline` to order cards for Jeff (47/62
    known-truth hit rate), never to ship. 2. If the border claim matters, re-run with the PASSAGE marker removed (window only) and
    on Opus, so the narrator cannot echo. Neither is run here.
+
+## Addendum: the fair run (Opus, the grader's view) (measured)
+
+Asked for: remove the confounds. Same 300 classification spans, narrator = **Opus** (`claude-opus-5-5`, the grader's model),
+**+-1 segment window**, passage marked (the grader's exact view), still **without** `STORY_RULES.md`. Two passes, 300 valid
+answers each. Run with `python3 scripts/narrate_test.py --variant opus_ctx1 ...`; data in `results/shas_run/narrate_test/opus_ctx1/`.
+Boundaries were not re-run (the grader never judged them, and a marked window can only echo the card; the unmarked-window variant is
+still untried).
+
+| arm | precision (known) | Wilson 95% | recall of Jeff yes |
+|---|---|---|---|
+| grader story (Opus, rules) | 32/33 = 0.97 | .85-.995 | 32/141 = 0.23 |
+| narrate yes, Opus pass 1 | 91/113 = 0.805 | .72-.87 | 91/141 = 0.65 |
+| narrate yes, Opus pass 2 | 86/108 = 0.796 | .71-.86 | 86/141 = 0.61 |
+| narrate yes, both passes | 80/99 = 0.808 | .72-.87 | 80/141 = 0.57 |
+| narrate yes or partial, pass 1 / 2 | 137/184 = 0.745 (both) | .68-.80 | 137/141 = 0.97 |
+| COMBINED (grader story OR narrate yes & grader borderline), pass 1 / 2 / both | 0.84 / 0.84 / 0.84 | LB .76 / .75 / .75 | 0.60 / 0.59 / 0.56 |
+
+BLIND (C2): narrate yes precision 25/29 = 0.86 (.69-.95) and 23/27 = 0.85 (.68-.94); recall 25/37 and 23/37. Of the spans the grader
+called borderline and Opus-narrate called yes, Jeff said yes on 52/76 and 51/74 (known-truth 52/67 = 0.78, 51/66 = 0.77). Pass-to-pass:
+same `can_narrate` 247/300, same yes-or-not 264/300.
+
+**Read:** the model and context confounds were not what separated the arms. Opus-narrate reads the same as Sonnet-narrate
+(precision 0.80 vs 0.80-0.81, recall 0.61-0.65 vs 0.57-0.60), and the combined rule is unchanged (0.84, LB 0.75-0.76; bar 0.90 / 0.80, still
+missed). What is left is **the prompt**: the rule register makes the grader strict (precision 0.97, recall 0.23); a narration prompt without
+it says yes to anything with a sequence of events, including the ~20% of those that Jeff calls borderline or no. That attribution is
+now supported by an arm that holds model and view equal, which the first run could not say. It is still one prompt on one set; whether a
+*narrate-then-apply-rules* prompt would keep recall and recover precision is untested.

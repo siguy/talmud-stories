@@ -44,6 +44,13 @@ log = logging.getLogger('narrate-test')
 OUT = PROJECT_ROOT / 'results/shas_run/narrate_test'
 PROMPT_PATH = PROJECT_ROOT / 'src/prompts/narrate_v1.md'
 CONTEXT = 3
+# A variant re-runs the same units under another narrator/view. `opus_ctx1` is the "fair" arm against the rule
+# grader: Opus, the grader's +-1 window, passage marked, classification set only (the grader never saw the
+# boundary set). Outputs go to <OUT>/<variant>/; the manifest and units stay shared.
+VARIANTS = {'default': dict(context=3, sets=('CLS', 'BND'), sub=''),
+            'opus_ctx1': dict(context=1, sets=('CLS',), sub='opus_ctx1')}
+RUN = OUT
+SETS = ('CLS', 'BND')
 CAN = ('yes', 'partial', 'no')
 RUNS = {  # the detector's own honest outputs (CLAUDE.md: results/v10/wave4_notrim)
     'ketubot': ['results/v10/wave4_notrim/ketubot_v10_2-60_notrim.json',
@@ -63,8 +70,9 @@ def prompt_sha():
 
 # ---- pure logic (tested) -------------------------------------------------------
 
-def window(text, cells, context=CONTEXT):
+def window(text, cells, context=None):
     """(shown cells, {bracket number: cell}, passage numbers) for a passage with `context` cells each side."""
+    context = CONTEXT if context is None else context
     cells = [tuple(c) for c in cells]
     a, b = text.pos[cells[0]], text.pos[cells[-1]]
     lo, hi = max(0, a - context), min(len(text.cells) - 1, b + context)
@@ -193,7 +201,7 @@ def build():
 
 
 def load_manifest():
-    return json.loads((OUT / 'manifest.json').read_text())['units']
+    return [u for u in json.loads((OUT / 'manifest.json').read_text())['units'] if u['set'] in SETS]
 
 
 _TEXTS = {}
@@ -209,7 +217,7 @@ def text_for(tractate):
 
 def export(pass_name, seed, batch):
     units = load_manifest()
-    d = OUT / pass_name
+    d = RUN / pass_name
     if (d / 'keys').exists():
         raise SystemExit(f'{d} already holds an export')
     for sub in ('batches', 'keys', 'answers'):
@@ -239,7 +247,7 @@ def export(pass_name, seed, batch):
 
 
 def import_(pass_name, model):
-    d = OUT / pass_name
+    d = RUN / pass_name
     man = json.loads((d / 'export_manifest.json').read_text())
     if man['prompt_sha'] != prompt_sha():
         raise SystemExit('prompt changed since export -- re-export')
@@ -275,7 +283,7 @@ def import_(pass_name, model):
 # ---- score: classification -------------------------------------------------------------
 
 def narrations(pass_name):
-    rows = json.loads((OUT / pass_name / 'narrate.json').read_text())['rows']
+    rows = json.loads((RUN / pass_name / 'narrate.json').read_text())['rows']
     return {r['id']: r for r in rows}
 
 
@@ -438,17 +446,19 @@ def score_boundaries(passes, units, res, lines):
 
 def score():
     units = load_manifest()
-    passes = [p for p in ('pass1', 'pass2') if (OUT / p / 'narrate.json').exists()]
+    passes = [p for p in ('pass1', 'pass2') if (RUN / p / 'narrate.json').exists()]
     res, lines = {'passes': passes}, []
     score_classification(passes, units, res, lines)
-    score_boundaries(passes, units, res, lines)
-    (OUT / 'score.json').write_text(json.dumps(res, indent=1) + '\n')
+    if 'BND' in SETS:
+        score_boundaries(passes, units, res, lines)
+    (RUN / 'score.json').write_text(json.dumps(res, indent=1) + '\n')
     print('\n'.join(lines))
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest='cmd', required=True)
+    ap.add_argument('--variant', default='default', choices=sorted(VARIANTS))
     sub.add_parser('build')
     e = sub.add_parser('export')
     e.add_argument('--pass', dest='pass_name', required=True, choices=('pass1', 'pass2'))
@@ -461,6 +471,10 @@ def main():
     args = ap.parse_args()
     logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s [narrate-test] %(message)s',
                         handlers=[logging.FileHandler(PROJECT_ROOT / 'project.log'), logging.StreamHandler(sys.stdout)])
+    global CONTEXT, RUN, SETS
+    v = VARIANTS[args.variant]
+    CONTEXT, SETS, RUN = v['context'], v['sets'], OUT / v['sub']
+    RUN.mkdir(parents=True, exist_ok=True)
     if args.cmd == 'build':
         build()
     elif args.cmd == 'export':
