@@ -46,8 +46,8 @@ Set on 2026-11-15: `SEPTIMUS_EMAIL_FROM`, `SEPTIMUS_SITE_URL_STAGING`, `SEPTIMUS
 live `SEPTIMUS_SITE_URL`.
 
 **Test send, 2026-11-15:** `python scripts/septimus_email.py --test-send` ran once in a GitHub Action on a
-throwaway branch (since deleted) and Resend reported the sample weekly email as delivered to Simon. Not yet
-done: Simon looking at it on a phone, a full staging run of the job with email on, and running the new `Store`
+throwaway branch (since deleted) and Resend reported the sample weekly email as delivered to Simon, who confirmed it
+looks right. Not yet done: a full staging run of the job with email on, and running the new `Store`
 methods against the Firestore emulator.
 
 Resend's free plan stops at 100 emails a day. A Sunday with more people than that needs the paid plan; if the
