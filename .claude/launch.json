@@ -24,6 +24,18 @@
         "."
       ],
       "port": 8748
+    },
+    {
+      "name": "site-feedback-test",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8750",
+        "--directory",
+        "site"
+      ],
+      "port": 8750
     }
   ]
 }

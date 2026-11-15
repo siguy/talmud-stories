@@ -92,7 +92,7 @@ def site_stories(slug):
     p = ROOT / "site" / "data" / f"{slug}.json"
     if not p.exists():
         return None
-    return [s for s in load(p.relative_to(ROOT))["stories"] if s.get("tier") == "story"]
+    return load(p.relative_to(ROOT))["stories"]   # every shipped story is a definite story (no `tier` since 2026-11-14)
 
 
 def site_cells(slug):
@@ -227,7 +227,9 @@ def precision_blind_lower_bound(tmp):
         run1 = T.Paths(slug, ROOT).run(1).relative_to(ROOT)
         st, _ = harness(slug, cfg["expert"], run1, tmp)
         order = unit_order(run1)
-        listed = set().union(*(window(s, order) for s in st if s.get("located")))
+        # Counted stories only: an entry Jeff has since ruled `not` (superseded_by_rule.json) is no evidence that an
+        # overlapping shipped story is real. Before 2026-11-13 this read every row, superseded ones included.
+        listed = set().union(*(window(s, order) for s in counted(st) if s.get("located")))
         stories = site_stories(slug)
         on = [s for s in stories if {(g["ref"], g["i"]) for g in s["segments"]} & listed]
         unlisted = [s["id"] for s in stories if s not in on]

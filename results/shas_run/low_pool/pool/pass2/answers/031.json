@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Wine placed with sharecroppers is one event, followed only by the Rabbis' and Rava's legal reasoning; nothing further happens."},
+"02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A man sent silk home and Rabbi Ami ruled on its division; one event plus a ruling, no further change."},
+"03": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi Zeira's first-person report of eating in the sukka and rejoicing, cited as evidence; nothing follows from it."},
+"04": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Ravina arranges his son's match, agrees a date, then delays the wedding a week; multiple actions and a change that the following dialogue continues."},
+"05": {"verdict": "story", "rules": [], "segments": [2], "reason": "Rav Yosef falls ill, forgets his learning, and Abaye restores it to him; several events with causality and change."},
+"06": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question and a dismissive answer; speech only, of the ordinary question-and-retort kind, with no event."},
+"07": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2, 3], "reason": "Mainly a halakhic dialogue, but with a narrated frame (Rava dozing, then waking and intervening)."},
+"08": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "An exchange of insults between two midwives: speech only, but with real conflict and an implied history of acts."},
+"09": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Fat fell into a pot and Rav Asi proposed a measure that the Rabbis challenged; one event then legal discussion."},
+"10": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2, 3, 4, 5, 6], "reason": "Exegetical narrative about Joshua and the angel, a biblical episode elaborated by the Gemara."},
+"11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Adda bar Ahava's habitual practice of salting bone by bone, cited as practice; nothing follows."},
+"12": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Cases brought to Rabbi Yohanan (roasted kid, fish in a pot) each with only his ruling; one event then a ruling."},
+"13": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi Akiva's intercalating in prison is a single act cited as evidence and immediately discussed; no continuation."},
+"14": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "Isi bar Hini's arrival and Rabbi Yohanan's corrections and rebuke over 'Abba the tall' are mainly speech, but with conflict and a narrated encounter."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Elijah and Rav Yehuda exchange questions and answers about the messianic date; speech without event or conflict."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Mareimar and Mar Zutra's practice of rebuilding synagogues, cited to illustrate the law; a report of practice with no continuation."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic objection and a report of a vote; legal discussion, no narrated event."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "An encounter that only frames a scholarly question and answer with courteous exchange; ordinary rabbinic dialogue."},
+"19": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rava's illness and the visit only set the scene for a legal discussion; a setting plus question and answer."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "An eyewitness report of Rabbi Yohanan's practice, cited as evidence in a legal argument."}
+}

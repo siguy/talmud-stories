@@ -1,0 +1,212 @@
+{
+ "passes": [
+  "pass1",
+  "pass2"
+ ],
+ "pass1": {
+  "all known": {
+   "called_story_known": 38,
+   "jeff_yes": 36,
+   "precision": 0.947,
+   "wilson95": [
+    0.827,
+    0.985
+   ],
+   "meets_bar": true,
+   "called_story_unknown_truth": 2,
+   "recall_of_jeff_yes": "36/141",
+   "unscored": 0
+  },
+  "C1": {
+   "called_story_known": 32,
+   "jeff_yes": 30,
+   "precision": 0.938,
+   "wilson95": [
+    0.799,
+    0.983
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "30/104",
+   "unscored": 0
+  },
+  "C1 jeff_shown_low": {
+   "called_story_known": 27,
+   "jeff_yes": 25,
+   "precision": 0.926,
+   "wilson95": [
+    0.766,
+    0.979
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "25/95",
+   "unscored": 0
+  },
+  "C1 golden_low_on_list": {
+   "called_story_known": 18,
+   "jeff_yes": 16,
+   "precision": 0.889,
+   "wilson95": [
+    0.672,
+    0.969
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "16/48",
+   "unscored": 0
+  },
+  "C2 (BLIND)": {
+   "called_story_known": 6,
+   "jeff_yes": 6,
+   "precision": 1.0,
+   "wilson95": [
+    0.61,
+    1.0
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "6/37",
+   "unscored": 0
+  }
+ },
+ "pass2": {
+  "all known": {
+   "called_story_known": 40,
+   "jeff_yes": 38,
+   "precision": 0.95,
+   "wilson95": [
+    0.835,
+    0.986
+   ],
+   "meets_bar": true,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "38/141",
+   "unscored": 0
+  },
+  "C1": {
+   "called_story_known": 34,
+   "jeff_yes": 32,
+   "precision": 0.941,
+   "wilson95": [
+    0.809,
+    0.984
+   ],
+   "meets_bar": true,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "32/104",
+   "unscored": 0
+  },
+  "C1 jeff_shown_low": {
+   "called_story_known": 30,
+   "jeff_yes": 28,
+   "precision": 0.933,
+   "wilson95": [
+    0.787,
+    0.982
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "28/95",
+   "unscored": 0
+  },
+  "C1 golden_low_on_list": {
+   "called_story_known": 15,
+   "jeff_yes": 14,
+   "precision": 0.933,
+   "wilson95": [
+    0.702,
+    0.988
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "14/48",
+   "unscored": 0
+  },
+  "C2 (BLIND)": {
+   "called_story_known": 6,
+   "jeff_yes": 6,
+   "precision": 1.0,
+   "wilson95": [
+    0.61,
+    1.0
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 0,
+   "recall_of_jeff_yes": "6/37",
+   "unscored": 0
+  }
+ },
+ "both passes story": {
+  "all known": {
+   "called_story_known": 33,
+   "jeff_yes": 32,
+   "precision": 0.97,
+   "wilson95": [
+    0.847,
+    0.995
+   ],
+   "meets_bar": true,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "32/141",
+   "unscored": 0
+  },
+  "C1": {
+   "called_story_known": 27,
+   "jeff_yes": 26,
+   "precision": 0.963,
+   "wilson95": [
+    0.817,
+    0.993
+   ],
+   "meets_bar": true,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "26/104",
+   "unscored": 0
+  },
+  "C1 jeff_shown_low": {
+   "called_story_known": 23,
+   "jeff_yes": 22,
+   "precision": 0.957,
+   "wilson95": [
+    0.79,
+    0.992
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "22/95",
+   "unscored": 0
+  },
+  "C1 golden_low_on_list": {
+   "called_story_known": 14,
+   "jeff_yes": 13,
+   "precision": 0.929,
+   "wilson95": [
+    0.685,
+    0.987
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 1,
+   "recall_of_jeff_yes": "13/48",
+   "unscored": 0
+  },
+  "C2 (BLIND)": {
+   "called_story_known": 6,
+   "jeff_yes": 6,
+   "precision": 1.0,
+   "wilson95": [
+    0.61,
+    1.0
+   ],
+   "meets_bar": false,
+   "called_story_unknown_truth": 0,
+   "recall_of_jeff_yes": "6/37",
+   "unscored": 0
+  }
+ },
+ "stability": {
+  "n": 300,
+  "same_verdict": 256,
+  "same_story_or_not": 287
+ }
+}

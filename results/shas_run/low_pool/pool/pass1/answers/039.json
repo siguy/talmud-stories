@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Elijah's advice to Rav Yehuda followed by halakhic explanation; speech only, no event or conflict."},
+"02": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi Zeira's eyewitness reports of Rabbi Abbahu's conduct are cited as evidence for halakha, with nothing following."},
+"03": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2, 3, 4], "reason": "A note is presented at Rav Huna's court and he rules; Rav Hisda then sends Rabba to investigate. One event plus a ruling and an instruction, a little more than a bare ruling."},
+"04": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [3, 6], "reason": "Part of the frame story of the visit to Rabbi Yehoshua: mostly the content of Rabbi Elazar ben Azarya's teaching, ending with Rabbi Yehoshua's response. Teaching is speech."},
+"05": {"verdict": "borderline", "rules": ["R-C3", "R-C5"], "segments": [2, 3], "reason": "Abaye reports that Rabba changed his practices after hearing a baraita and Shmuel's statement. There is a change, but these are reports of practice with weak narrative."},
+"06": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic question to Rav and his reply that he never asked his uncle; ordinary scholarly dialogue with no event."},
+"07": {"verdict": "borderline", "rules": ["R-C2", "R-C0"], "segments": [2], "reason": "A sharp exchange between Rav and Shmuel ends with Rav embarrassed. That is conflict plus an emotional reaction, but it is mainly speech."},
+"08": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "Rabbi Hanina ben Akiva went somewhere, found branches and told his students to designate them. This is a small incident cited as a precedent, with little change."},
+"09": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2, 3], "reason": "Romans challenge Rabbi Yehoshua ben Hananya and he answers. It is a polemical exchange with conflict, but speech only."},
+"10": {"verdict": "not", "rules": [], "segments": [], "reason": "An anonymous man's aphorism about love, matched to verses; no narrated event."},
+"11": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "Rabbi Elazar son of Rabbi Yosei recounts refuting the Samaritans. It is a polemical speech with conflict but no event beyond speaking."},
+"12": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Josiah sees the verse and hides the Ark. The actor is biblical, an exegetical narrative about biblical events."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabba's halakhic instruction to the binders of the Exilarch's lulav; speech only, no event."},
+"14": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Yosef and Rabba: a query is sent to Eretz Yisrael and answered, Rav Yosef declines the post, Rabba reigns 22 years and then Rav Yosef does, with Rav Yosef's humility throughout. Several actions and a change."},
+"15": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Rava visits the Exilarch, is served breaded goose and eats only after checking it. It is a small incident cited as a precedent and then discussed legally."},
+"16": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Huna dies suddenly, the Sages worry, and Zuga of Hadayeiv reassures them with a teaching. There are real events, but the resolution is speech."},
+"17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report that three sages measured the Jordan stones, cited as evidence for a calculation; nothing follows."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabbi Yehoshua sends word that Rabbi Yishmael erred, followed by halakhic positions. This is ordinary scholarly disagreement, not conflict in the R-C2 sense."},
+"19": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Mesharshiya's habitual practice of paying a gentile child to sow hops, followed by legal discussion; a custom that leads nowhere."},
+"20": {"verdict": "not", "rules": ["R-S1", "R-C2"], "segments": [], "reason": "An exegetical dialogue between Abraham and God expounding a verse; speech only, and biblical in any case."}
+}

@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-B4", "R-C0"], "segments": [], "reason": "The Gemara analyses the Rabban Gamliel ramp incident told elsewhere; this is legal discussion of a story already told, not a narration."},
+"02": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A distressed woman takes a rash oath, unworthy men press their claim, and the Sages rule on her intent: an incident with several actions resolved by a ruling."},
+"03": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Nahman faces a dilemma at the trial of Rav Huna's wife and contrives to have a duck thrown at him so he can rise: a narrated incident with action and resolution."},
+"04": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Mostly a teaching exchange, but R. Elazar goes out, searches and finds the answer; a slight event within a scholarly dialogue."},
+"05": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "R. Abbahu reports changing his practice after seeing R. Abba of Akko; a minimal event and change embedded in a legal dispute."},
+"06": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A deathbed blessing exchange between R. Yehoshua ben Korha and Rabbi; mainly speech, with some tension and an implied consequence."},
+"07": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Three priests describe their portions, the court investigates the one who used impure imagery and finds a flaw in his lineage: events with causality and change."},
+"08": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "A person comes before Rabba bar Rav Huna, answers one question and has his vow dissolved; coming before a rabbi and a ruling with no further action is not a story."},
+"09": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rabbis act on a lenient ruling, it is reported up to the Nasi, who sends a constable to remove the girl: a chain of actions with a consequence."},
+"10": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Rav Kahana hides under Rav's bed, overhears, comments aloud, and Rav sends him out: a vivid incident with action and reaction."},
+"11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of Mareimar and Mar Zutra's practice in rebuilding synagogues, cited as evidence; nothing follows."},
+"12": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "R. Zeira's habitual practice of urging pairs of scholars on Shabbat; a custom that leads nowhere."},
+"13": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "A report that a butcher testified before Rabbi about an anatomical ruling; the testimony is a vehicle for a halakha, with no narrated incident."},
+"14": {"verdict": "not", "rules": ["R-C5", "R-C3"], "segments": [], "reason": "Habitual practices of R. Elazar and R. Zeira regarding gifts and invitations, with their explanations; customs with no event following."},
+"15": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Rav Yosef sends a message about a litigant and Rav Nahman ponders its intent; mainly speech, with a hint of tension over favoritism."},
+"16": {"verdict": "out_of_scope", "rules": ["R-S1", "R-B4"], "segments": [2, 3], "reason": "Rava's exegetical dramatization of Job's complaint and God's reply, cited inside a legal difficulty; a biblical exegetical narrative."},
+"17": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Shmuel's father's practice of making a mikveh in Nisan and mats in Tishrei, cited as evidence of his view; a custom with no event."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A tanna recites a mishna and R. Yohanan corrects the text; ordinary scholarly correction, speech without story-level conflict."},
+"19": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "The Sages ask the tannaim of two schools and receive an answer; a question and answer supporting a textual inference."},
+"20": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2, 3], "reason": "Ben Zoma sees a multitude on the Temple Mount and recites blessings, then a reflective saying; one real event followed mainly by speech."}
+}

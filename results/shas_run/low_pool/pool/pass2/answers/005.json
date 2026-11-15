@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "Ravina finds Rav Aha searching for merirata (one real event), then the passage is a halakhic question with proofs; mainly speech."},
+"02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "An incident only named, brought before rabbis and resolved by a ruling; no other narrated action or change."},
+"03": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A passing anecdote about someone selling a lamb, cited only as lexical evidence; nothing follows."},
+"04": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "A sage reports issuing a ruling and the Sages approving it; ruling and speech, no conflict or change."},
+"05": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "A one-line eyewitness wonder ('I myself saw') cited in a legal-exegetical objection; the open edge between report and story."},
+"06": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative about the biblical spies and Canaanites."},
+"07": {"verdict": "borderline", "rules": ["R-C7", "R-C6"], "segments": [2], "reason": "Ordination incidents (R. Yohanan's distress, one sage ordained and the other not) cited briefly as evidence; events with little development."},
+"08": {"verdict": "borderline", "rules": ["R-C6", "R-C1"], "segments": [2], "reason": "The Talmud quotes a Mishnah incident (Ben Zakkai examining fig stems) only alluded to, filled in by the translator."},
+"09": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Scribes were asked and knew the law; a question and answer with no conflict or change."},
+"10": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav Nahman reports his own legal practice and why it changed; a report of practice, not a narrated event."},
+"11": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Yosef the priest's wife dies on Passover eve, he refuses impurity, and his brethren vote and render him impure against his will: actions, conflict, change."},
+"12": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A sage's hypothetical statement of how he would react; no event."},
+"13": {"verdict": "borderline", "rules": ["R-C6"], "segments": [2], "reason": "Rav Safra's incident is only alluded to by name; the narrative is filled in by the translator/commentary."},
+"14": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3], "reason": "Rav Hisda's statement causes his students to leave him for Rava, and he responds; action, consequence and change."},
+"15": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A buyer deliberately overpays to sue for exploitation, the case comes before Rav Hisda who rules: narrated actions followed by a ruling, like the cow case."},
+"16": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "A dialogue between R. Eliezer and R. Akiva with real conflict (a dire pronouncement) but no event beyond speech."},
+"17": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question, answer and challenge among Rebbi, Levi and R. Shimon; ordinary scholarly back-and-forth."},
+"18": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "A heretic challenges R. Yishmael and a launderer steps in to answer; conflict, but almost all speech."},
+"19": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative about Jacob's burial and the crowns hung on his casket; biblical characters."},
+"20": {"verdict": "story", "rules": ["R-C0", "R-C2"], "segments": [2], "reason": "Rav Hisda and Rabba bar Rav Huna visit the Exilarch, Rav Nahman lodges them in a disputed sukka, they stay silent and he confronts them; events with conflict and resolution."}
+}

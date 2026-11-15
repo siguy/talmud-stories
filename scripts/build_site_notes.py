@@ -75,12 +75,12 @@ def main(parts_dir):
             n["approved"] = bool(prev.get(s["id"], {}).get("approved")) and prev[s["id"]].get("note") == n["note"]
             notes[s["id"]] = n
             if rec.get("flag"):
-                flags.append((t, s["ref"], s["id"], s["tier"], clean(rec["flag"], 300)))
+                flags.append((t, s["ref"], s["id"], clean(rec["flag"], 300)))
         pf.write_text(json.dumps({"tractate": t, "notes": notes}, ensure_ascii=False, indent=1))
         print(f"{t:10} notes={len(notes)}/{len(stories)} approved={sum(n['approved'] for n in notes.values())}")
     lines = ["# Septimus viewer: drafter flags", "",
              "Passages the note-drafter thought are not stories, are cut off, or look garbled. For the project team; not shown on the site. Indicated, not measured.", ""]
-    lines += [f"- **{t} {ref}** (`{i}`, {tier}): {fl}" for t, ref, i, tier, fl in flags] or ["(none)"]
+    lines += [f"- **{t} {ref}** (`{i}`): {fl}" for t, ref, i, fl in flags] or ["(none)"]
     (ROOT / "docs/findings/2026-10-12-septimus-note-flags.md").write_text("\n".join(lines) + "\n")
     print(f"flags={len(flags)} person-warnings={len(warns)}")
     for w in warns[:15]:

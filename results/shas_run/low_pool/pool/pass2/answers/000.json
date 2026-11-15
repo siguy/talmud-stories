@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic question to Rav Sheshet and his answer citing the study-hall mats; no narrated event."},
+"02": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rava comes to the Tigris and asks bar Avin to pray, who rises and prays; one real event but mainly speech, with no outcome narrated."},
+"03": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "Rav Huna finds Rav reciting kiddush over beer and makes a barbed remark; one real event then speech, nothing follows."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A general historical statement about the proliferation of disputes, not a narrated incident."},
+"05": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A baraita case plus R. Shimon's one-line 'I saw' report cited as evidence, followed by legal discussion; nothing follows."},
+"06": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "An incident only named, then coming before Shmuel and receiving a ruling; no other action or change."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Aha hears his son's blessing and they debate its wording; ordinary halakhic dialogue without real conflict or change."},
+"08": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A leading sage's father dies; he wishes to bare his shoulder, a colleague wishes to join him, and so he refrains: several actions with a causal change."},
+"09": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Three incidents merely cited as evidence (a baby girl immersed before her mother), each a single report with nothing following."},
+"10": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "A host brings a halakhic question to Rav Adda bar Ahava and receives an answer; setting plus question and answer is not a story."},
+"11": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "Ameimar's practice is reported and Rav Ashi questions its reasoning; ordinary scholarly back-and-forth."},
+"12": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Rabbi sends a marriage proposal to R. Elazar's widow and she refuses through exchanged messages; mainly speech with real conflict and an implied outcome."},
+"13": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Legal ruling with a neighbouring priest's habitual practice raised as an objection; no narrated event."},
+"14": {"verdict": "story", "rules": ["R-C0", "R-C3"], "segments": [2], "reason": "Rav arrives at a place, sits outside, is brought felt cloths and declines out of deference to his students, and onlookers misread his conduct: several actions with cause and consequence."},
+"15": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A first-person report of being served shrivelled eggs and eating them, cited as evidence; nothing follows."},
+"16": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative about Jacob and his sons, a story about biblical characters."},
+"17": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Abaye tries remedies without success, an Arab tells him a cure, he applies it and is healed: multiple actions and a change."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A setting (two sages sitting on a porch) that only frames quoted legal statements."},
+"19": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "A walk framing a question-and-answer on the law, with Shmuel's father's returning donkeys cited only as a precedent of practice."},
+"20": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "Rav Huna challenges his son for not attending Rav Hisda and overturns his reason; mainly dialogue with some conflict and implied change."}
+}
