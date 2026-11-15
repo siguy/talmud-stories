@@ -46,7 +46,7 @@
   }
   function show(nodes) { app.textContent = ""; nodes.forEach(function (n) { if (n) app.appendChild(n); }); }
   function link(text, href, cls) { return el("a", { href: href, text: text, class: cls }); }
-  function back() { return el("p", {}, [link("← Back", "#/", "su-keep su-back")]); }   // su-keep: this "#/" is the landing page
+  function back() { return el("p", {}, [link("← Back", "#/", "su-back")]); }
   // Automatic redirects replace the current history entry, so Back does not land on a page that bounces straight on again.
   function redirect(hash) { location.replace(location.pathname + location.search + hash); }
 
@@ -151,6 +151,21 @@
     if (!idx.tractates.some(function (x) { return x.tractate === slug; })) return Promise.resolve(null);
     return tractP[slug] || (tractP[slug] = fetch("data/" + slug + ".json").then(function (r) { if (!r.ok) throw new Error(slug); return r.json(); })
       .catch(function (e) { delete tractP[slug]; throw e; }));
+  }
+  // Story ids are permanent; data/redirects.json maps an id that was merged into another story to that story's id (null: removed).
+  // For each id missing from `found`, add the story it was merged into. A failed load = no redirects.
+  var redirectsP = null;
+  function followMerged(ids, found, idx) {
+    redirectsP = redirectsP || fetch("data/redirects.json").then(function (r) { if (!r.ok) throw new Error("redirects"); return r.json(); }).catch(function () { return {}; });
+    return redirectsP.then(function (m) {
+      return Promise.all(ids.filter(function (id) { return !found[id]; }).map(function (id) {
+        var to = Object.prototype.hasOwnProperty.call(m, id) ? m[id] : null;
+        if (typeof to !== "string") return null;
+        return getTractate(to.split("-")[0], idx).then(function (d) {
+          if (d) d.stories.forEach(function (s, i) { if (s.id === to) found[id] = { story: s, pos: i }; });
+        }).catch(function () {});
+      }));
+    });
   }
   function storiesFor(minutes, st) { return Math.max(1, Math.round(minutes * (cfg().wpm || 75) / st.mean)); }
 
@@ -485,7 +500,9 @@
       return Promise.all(slugs.map(function (s) { return getTractate(s, idx).catch(function () { failed[s] = true; return null; }); })).then(function (files) {
         var found = {};   // storyId -> { story, pos } where pos is the story's place in its tractate file
         files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
-        if (t === token) drawMine(t, idx, stats(idx), rows, found, failed, wk);
+        return followMerged(rows.map(function (r) { return r.d.storyId; }), found, idx).then(function () {
+          if (t === token) drawMine(t, idx, stats(idx), rows, found, failed, wk);
+        });
       });
     }).catch(function () {
       if (t === token) show([el("p", { "class": "notice", text: "Could not load your stories. Please check your connection and reload." })]);
@@ -614,6 +631,8 @@
       return Promise.all(slugs.map(function (sl) { return getTractate(sl, idx).catch(function () { failed[sl] = true; return null; }); })).then(function (files) {
         var found = {};
         files.forEach(function (d) { if (d) d.stories.forEach(function (s, i) { found[s.id] = { story: s, pos: i }; }); });
+        return followMerged(items.map(function (x) { return x.id; }), found, idx).then(function () { return found; });
+      }).then(function (found) {
         items.forEach(function (x) { x.hit = found[x.id] || null; x.ti = shasRank(x.slug); x.pos = x.hit ? x.hit.pos : 1e9; });
         items.sort(function (a, b) { return (a.ti - b.ti) || (a.pos - b.pos); });
         var n = items.length, kids = [el("h2", { text: "Stories you have learned" }),
@@ -666,7 +685,7 @@
         function drawInvite() {
           if (t !== token) return;
           invite.textContent = "";
-          if (!S.user && (S.settled || sdkBad)) invite.appendChild(link("Sign in with Google to join", "#/", "su-btn su-btn-outline su-keep"));
+          if (!S.user && (S.settled || sdkBad)) invite.appendChild(link("Sign in with Google to join", "#/", "su-btn su-btn-outline"));
         }
         var mineUid = null;   // whose list is drawn (or being fetched); one read per person
         function drawMineLearned() {
@@ -816,17 +835,9 @@
     return true;
   }
 
-  // TODO(signup): after the Jeff-responses branch merges, change the two "#/" links in app.js ("All tractates"
-  // crumb, "Home" on story-not-found) to "#/browse" and delete this listener. Until then "#/" there means the list.
-  app.addEventListener("click", function (e) {
-    var a = e.target.closest && e.target.closest('a[href="#/"]');
-    if (a && app.contains(a) && !a.classList.contains("su-keep")) { e.preventDefault(); location.hash = "#/browse"; }
-  });
-
-  // The story page, called by app.js after it draws a story: if the story is one of yours, swap the reader's
-  // per-device "Mark as read" for one "Mark as learned" that writes to your row. Anyone else sees the page unchanged.
-  // TODO(signup d, after the Jeff-responses branch merges): what remains is "Next story" on that block and keeping the
-  // reader's per-device tick (`septimus-read`) in step; app.js holds it in memory, so it must be done there.
+  // The story page, called by app.js after it draws a story: if the story is one of yours, add a "Mark as learned" block
+  // that writes to your row. Anyone else sees the page unchanged.
+  // TODO(signup d): "Next story" on that block.
   function story(id) {
     if (!load(JOINED, false)) return;   // not joined on this device: no Firebase on reader pages
     var t = token;
@@ -837,9 +848,9 @@
       if (!S.user || !S.record) return;
       var f = S.sdk.f, q = f.query(f.collection(S.sdk.db, "assignments"), f.where("uid", "==", S.user.uid), f.where("storyId", "==", id));
       f.getDocs(q).then(function (snap) {
-        var row = null, old = document.getElementById("read-btn");
+        var row = null, actions = app.querySelector(".actions");
         snap.forEach(function (d) { if (d.data().releasedAt == null) row = d; });
-        if (!row || t !== token || location.hash !== "#/s/" + id || !old) return;   // not yours, or they have moved on
+        if (!row || t !== token || location.hash !== "#/s/" + id || !actions || app.querySelector(".su-mine")) return;   // not yours, or they have moved on
         var learned = row.data().doneAt != null, busy = false;
         var btn = el("button", { type: "button", "class": "btn primary" }), msg = el("p", { "class": "su-rowmsg", role: "status" });
         function paint() { btn.textContent = learned ? "✓ Learned" : "Mark as learned"; btn.setAttribute("aria-pressed", String(learned)); }
@@ -851,8 +862,7 @@
             learned = !learned; paint(); msg.textContent = "Saved"; busy = false; btn.removeAttribute("aria-disabled");
           }).catch(function () { msg.textContent = SAVE_ERR; busy = false; btn.removeAttribute("aria-disabled"); });
         };
-        old.hidden = true;
-        old.parentNode.parentNode.insertBefore(el("div", { "class": "su-mine" }, [el("p", { "class": "notice", text: "One of your stories." }), btn, msg, link("← Back to my stories", "#/my", "su-back")]), old.parentNode);
+        actions.parentNode.insertBefore(el("div", { "class": "su-mine" }, [el("p", { "class": "notice", text: "One of your stories." }), btn, msg, link("← Back to my stories", "#/my", "su-back")]), actions);
       }).catch(function () {});
     };
     S.listener();

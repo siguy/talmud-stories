@@ -69,12 +69,7 @@ p.su-progress-title{margin:.2rem 0}
 .su-nav{display:flex;gap:1.25rem;padding:0 max(1rem,calc((100% - 42rem)/2 + 1rem));background:var(--card);border-bottom:1px solid var(--line)}
 .su-nav a{display:flex;align-items:center;min-height:44px;color:var(--accent);text-decoration:none;font:500 .9rem "Helvetica Neue",Helvetica,Arial,sans-serif;border-bottom:2px solid transparent;box-sizing:border-box}
 .su-nav a[aria-current=page]{font-weight:700;border-bottom-color:var(--gold)}
-/* "Mark as learned" on a story that is yours. The reader's own button is hidden; .btn's display:grid would beat the hidden attribute. */
-/* All stories is for viewing only (Simon, 2026-11-15): the reader's old per-device "Mark as read" button, its ticks
-   in the tractate lists and its "N of M read" bars are hidden. "Learned" lives only on My stories and on a story
-   that is yours. TODO(signup): after the Jeff-responses branch merges, delete that code from app.js and these rules. */
-#read-btn,a.row>.check,a.card .bar-track,a.card .bar-track+.card-meta{display:none}   /* a.card: the reader's lists; Progress's div.card keeps its bars */
-a.row.read{opacity:1}
+/* "Mark as learned" on a story that is yours. */
 .su-mine{margin:1.25rem 0}
 .su-mine .btn{width:100%}
 

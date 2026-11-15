@@ -33,11 +33,11 @@ on the real site.
 
 Main is merged into all five sign-up branches; staging runs the new list.
 
-- [ ] Step s: check the story-data fields; add list version, publish date and Shas order to the data.
-- [ ] Small clean-ups marked `TODO(signup)` in `site/signup.js` (two links, one version number).
+- [x] Step s, first half: a test checks the story-data fields the sign-up reads.
+- [ ] Step s, second half (with freezing the list at launch): list version, publish date and Shas order in the data.
+- [x] Clean-ups: the reader's old "read" feature deleted at the source; two links fixed; version numbers bumped.
 - [x] Resolve the one expected merge conflict (the plan document).
-- [ ] My stories: follow `site/data/redirects.json` when a handed-out story's id was merged into another, instead of
-      showing "No longer on the list".
+- [x] My stories and the learned list follow `site/data/redirects.json` when a story's id was merged into another.
 
 ## 4. Still to build
 
