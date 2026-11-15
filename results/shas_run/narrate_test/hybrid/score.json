@@ -1,0 +1,761 @@
+{
+ "passes": [
+  "pass1",
+  "pass2"
+ ],
+ "classification": {
+  "pass1 yes": {
+   "all known": {
+    "story_called_known": 43,
+    "jeff_yes": 41,
+    "precision": 0.953,
+    "wilson95": [
+     0.845,
+     0.987
+    ],
+    "recall_of_jeff_yes": "41/141",
+    "recall_wilson95": [
+     0.222,
+     0.37
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 36,
+    "jeff_yes": 34,
+    "precision": 0.944,
+    "wilson95": [
+     0.819,
+     0.985
+    ],
+    "recall_of_jeff_yes": "34/104",
+    "recall_wilson95": [
+     0.244,
+     0.422
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 31,
+    "jeff_yes": 29,
+    "precision": 0.935,
+    "wilson95": [
+     0.793,
+     0.982
+    ],
+    "recall_of_jeff_yes": "29/95",
+    "recall_wilson95": [
+     0.222,
+     0.404
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 16,
+    "jeff_yes": 14,
+    "precision": 0.875,
+    "wilson95": [
+     0.64,
+     0.965
+    ],
+    "recall_of_jeff_yes": "14/48",
+    "recall_wilson95": [
+     0.182,
+     0.432
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 7,
+    "jeff_yes": 7,
+    "precision": 1.0,
+    "wilson95": [
+     0.646,
+     1.0
+    ],
+    "recall_of_jeff_yes": "7/37",
+    "recall_wilson95": [
+     0.095,
+     0.342
+    ],
+    "called_story_unknown_truth": 1
+   }
+  },
+  "pass1 yes|partial": {
+   "all known": {
+    "story_called_known": 120,
+    "jeff_yes": 100,
+    "precision": 0.833,
+    "wilson95": [
+     0.757,
+     0.889
+    ],
+    "recall_of_jeff_yes": "100/141",
+    "recall_wilson95": [
+     0.63,
+     0.778
+    ],
+    "called_story_unknown_truth": 24
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 94,
+    "jeff_yes": 74,
+    "precision": 0.787,
+    "wilson95": [
+     0.694,
+     0.858
+    ],
+    "recall_of_jeff_yes": "74/104",
+    "recall_wilson95": [
+     0.618,
+     0.79
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 86,
+    "jeff_yes": 66,
+    "precision": 0.767,
+    "wilson95": [
+     0.668,
+     0.844
+    ],
+    "recall_of_jeff_yes": "66/95",
+    "recall_wilson95": [
+     0.596,
+     0.778
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 43,
+    "jeff_yes": 36,
+    "precision": 0.837,
+    "wilson95": [
+     0.7,
+     0.919
+    ],
+    "recall_of_jeff_yes": "36/48",
+    "recall_wilson95": [
+     0.612,
+     0.851
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 26,
+    "jeff_yes": 26,
+    "precision": 1.0,
+    "wilson95": [
+     0.871,
+     1.0
+    ],
+    "recall_of_jeff_yes": "26/37",
+    "recall_wilson95": [
+     0.542,
+     0.825
+    ],
+    "called_story_unknown_truth": 22
+   }
+  },
+  "pass2 yes": {
+   "all known": {
+    "story_called_known": 45,
+    "jeff_yes": 42,
+    "precision": 0.933,
+    "wilson95": [
+     0.821,
+     0.977
+    ],
+    "recall_of_jeff_yes": "42/141",
+    "recall_wilson95": [
+     0.229,
+     0.378
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 37,
+    "jeff_yes": 34,
+    "precision": 0.919,
+    "wilson95": [
+     0.787,
+     0.972
+    ],
+    "recall_of_jeff_yes": "34/104",
+    "recall_wilson95": [
+     0.244,
+     0.422
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 33,
+    "jeff_yes": 30,
+    "precision": 0.909,
+    "wilson95": [
+     0.764,
+     0.969
+    ],
+    "recall_of_jeff_yes": "30/95",
+    "recall_wilson95": [
+     0.231,
+     0.415
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 19,
+    "jeff_yes": 17,
+    "precision": 0.895,
+    "wilson95": [
+     0.686,
+     0.971
+    ],
+    "recall_of_jeff_yes": "17/48",
+    "recall_wilson95": [
+     0.234,
+     0.496
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 8,
+    "jeff_yes": 8,
+    "precision": 1.0,
+    "wilson95": [
+     0.676,
+     1.0
+    ],
+    "recall_of_jeff_yes": "8/37",
+    "recall_wilson95": [
+     0.114,
+     0.372
+    ],
+    "called_story_unknown_truth": 0
+   }
+  },
+  "pass2 yes|partial": {
+   "all known": {
+    "story_called_known": 124,
+    "jeff_yes": 101,
+    "precision": 0.815,
+    "wilson95": [
+     0.737,
+     0.873
+    ],
+    "recall_of_jeff_yes": "101/141",
+    "recall_wilson95": [
+     0.637,
+     0.784
+    ],
+    "called_story_unknown_truth": 23
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 100,
+    "jeff_yes": 80,
+    "precision": 0.8,
+    "wilson95": [
+     0.711,
+     0.867
+    ],
+    "recall_of_jeff_yes": "80/104",
+    "recall_wilson95": [
+     0.68,
+     0.84
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 91,
+    "jeff_yes": 71,
+    "precision": 0.78,
+    "wilson95": [
+     0.685,
+     0.853
+    ],
+    "recall_of_jeff_yes": "71/95",
+    "recall_wilson95": [
+     0.652,
+     0.824
+    ],
+    "called_story_unknown_truth": 3
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 47,
+    "jeff_yes": 40,
+    "precision": 0.851,
+    "wilson95": [
+     0.723,
+     0.926
+    ],
+    "recall_of_jeff_yes": "40/48",
+    "recall_wilson95": [
+     0.704,
+     0.913
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 24,
+    "jeff_yes": 21,
+    "precision": 0.875,
+    "wilson95": [
+     0.69,
+     0.957
+    ],
+    "recall_of_jeff_yes": "21/37",
+    "recall_wilson95": [
+     0.409,
+     0.713
+    ],
+    "called_story_unknown_truth": 20
+   }
+  },
+  "both passes yes": {
+   "all known": {
+    "story_called_known": 39,
+    "jeff_yes": 37,
+    "precision": 0.949,
+    "wilson95": [
+     0.831,
+     0.986
+    ],
+    "recall_of_jeff_yes": "37/141",
+    "recall_wilson95": [
+     0.197,
+     0.341
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 32,
+    "jeff_yes": 30,
+    "precision": 0.938,
+    "wilson95": [
+     0.799,
+     0.983
+    ],
+    "recall_of_jeff_yes": "30/104",
+    "recall_wilson95": [
+     0.21,
+     0.382
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 28,
+    "jeff_yes": 26,
+    "precision": 0.929,
+    "wilson95": [
+     0.774,
+     0.98
+    ],
+    "recall_of_jeff_yes": "26/95",
+    "recall_wilson95": [
+     0.194,
+     0.371
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 15,
+    "jeff_yes": 13,
+    "precision": 0.867,
+    "wilson95": [
+     0.621,
+     0.963
+    ],
+    "recall_of_jeff_yes": "13/48",
+    "recall_wilson95": [
+     0.166,
+     0.41
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 7,
+    "jeff_yes": 7,
+    "precision": 1.0,
+    "wilson95": [
+     0.646,
+     1.0
+    ],
+    "recall_of_jeff_yes": "7/37",
+    "recall_wilson95": [
+     0.095,
+     0.342
+    ],
+    "called_story_unknown_truth": 0
+   }
+  },
+  "GRADER story (both passes)": {
+   "all known": {
+    "story_called_known": 33,
+    "jeff_yes": 32,
+    "precision": 0.97,
+    "wilson95": [
+     0.847,
+     0.995
+    ],
+    "recall_of_jeff_yes": "32/141",
+    "recall_wilson95": [
+     0.166,
+     0.303
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 27,
+    "jeff_yes": 26,
+    "precision": 0.963,
+    "wilson95": [
+     0.817,
+     0.993
+    ],
+    "recall_of_jeff_yes": "26/104",
+    "recall_wilson95": [
+     0.177,
+     0.341
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 23,
+    "jeff_yes": 22,
+    "precision": 0.957,
+    "wilson95": [
+     0.79,
+     0.992
+    ],
+    "recall_of_jeff_yes": "22/95",
+    "recall_wilson95": [
+     0.158,
+     0.326
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 14,
+    "jeff_yes": 13,
+    "precision": 0.929,
+    "wilson95": [
+     0.685,
+     0.987
+    ],
+    "recall_of_jeff_yes": "13/48",
+    "recall_wilson95": [
+     0.166,
+     0.41
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 6,
+    "jeff_yes": 6,
+    "precision": 1.0,
+    "wilson95": [
+     0.61,
+     1.0
+    ],
+    "recall_of_jeff_yes": "6/37",
+    "recall_wilson95": [
+     0.077,
+     0.311
+    ],
+    "called_story_unknown_truth": 0
+   }
+  },
+  "COMBINED pass1": {
+   "all known": {
+    "story_called_known": 44,
+    "jeff_yes": 42,
+    "precision": 0.955,
+    "wilson95": [
+     0.849,
+     0.987
+    ],
+    "recall_of_jeff_yes": "42/141",
+    "recall_wilson95": [
+     0.229,
+     0.378
+    ],
+    "called_story_unknown_truth": 2
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 37,
+    "jeff_yes": 35,
+    "precision": 0.946,
+    "wilson95": [
+     0.823,
+     0.985
+    ],
+    "recall_of_jeff_yes": "35/104",
+    "recall_wilson95": [
+     0.253,
+     0.432
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 32,
+    "jeff_yes": 30,
+    "precision": 0.938,
+    "wilson95": [
+     0.799,
+     0.983
+    ],
+    "recall_of_jeff_yes": "30/95",
+    "recall_wilson95": [
+     0.231,
+     0.415
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 17,
+    "jeff_yes": 15,
+    "precision": 0.882,
+    "wilson95": [
+     0.657,
+     0.967
+    ],
+    "recall_of_jeff_yes": "15/48",
+    "recall_wilson95": [
+     0.199,
+     0.453
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 7,
+    "jeff_yes": 7,
+    "precision": 1.0,
+    "wilson95": [
+     0.646,
+     1.0
+    ],
+    "recall_of_jeff_yes": "7/37",
+    "recall_wilson95": [
+     0.095,
+     0.342
+    ],
+    "called_story_unknown_truth": 1
+   }
+  },
+  "COMBINED pass2": {
+   "all known": {
+    "story_called_known": 45,
+    "jeff_yes": 42,
+    "precision": 0.933,
+    "wilson95": [
+     0.821,
+     0.977
+    ],
+    "recall_of_jeff_yes": "42/141",
+    "recall_wilson95": [
+     0.229,
+     0.378
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 37,
+    "jeff_yes": 34,
+    "precision": 0.919,
+    "wilson95": [
+     0.787,
+     0.972
+    ],
+    "recall_of_jeff_yes": "34/104",
+    "recall_wilson95": [
+     0.244,
+     0.422
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 33,
+    "jeff_yes": 30,
+    "precision": 0.909,
+    "wilson95": [
+     0.764,
+     0.969
+    ],
+    "recall_of_jeff_yes": "30/95",
+    "recall_wilson95": [
+     0.231,
+     0.415
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 19,
+    "jeff_yes": 17,
+    "precision": 0.895,
+    "wilson95": [
+     0.686,
+     0.971
+    ],
+    "recall_of_jeff_yes": "17/48",
+    "recall_wilson95": [
+     0.234,
+     0.496
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 8,
+    "jeff_yes": 8,
+    "precision": 1.0,
+    "wilson95": [
+     0.676,
+     1.0
+    ],
+    "recall_of_jeff_yes": "8/37",
+    "recall_wilson95": [
+     0.114,
+     0.372
+    ],
+    "called_story_unknown_truth": 0
+   }
+  },
+  "COMBINED both": {
+   "all known": {
+    "story_called_known": 40,
+    "jeff_yes": 38,
+    "precision": 0.95,
+    "wilson95": [
+     0.835,
+     0.986
+    ],
+    "recall_of_jeff_yes": "38/141",
+    "recall_wilson95": [
+     0.203,
+     0.348
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 CIRCULAR": {
+    "story_called_known": 33,
+    "jeff_yes": 31,
+    "precision": 0.939,
+    "wilson95": [
+     0.804,
+     0.983
+    ],
+    "recall_of_jeff_yes": "31/104",
+    "recall_wilson95": [
+     0.219,
+     0.392
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 jeff_shown_low": {
+    "story_called_known": 29,
+    "jeff_yes": 27,
+    "precision": 0.931,
+    "wilson95": [
+     0.78,
+     0.981
+    ],
+    "recall_of_jeff_yes": "27/95",
+    "recall_wilson95": [
+     0.203,
+     0.382
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C1 golden_low_on_list": {
+    "story_called_known": 16,
+    "jeff_yes": 14,
+    "precision": 0.875,
+    "wilson95": [
+     0.64,
+     0.965
+    ],
+    "recall_of_jeff_yes": "14/48",
+    "recall_wilson95": [
+     0.182,
+     0.432
+    ],
+    "called_story_unknown_truth": 1
+   },
+   "C2 BLIND": {
+    "story_called_known": 7,
+    "jeff_yes": 7,
+    "precision": 1.0,
+    "wilson95": [
+     0.646,
+     1.0
+    ],
+    "recall_of_jeff_yes": "7/37",
+    "recall_wilson95": [
+     0.095,
+     0.342
+    ],
+    "called_story_unknown_truth": 0
+   }
+  }
+ },
+ "crosstab": {
+  "pass1": {
+   "borderline|no|borderline": 2,
+   "borderline|no|no": 2,
+   "borderline|no|unknown": 5,
+   "borderline|no|yes": 7,
+   "borderline|partial|borderline": 14,
+   "borderline|partial|no": 2,
+   "borderline|partial|unknown": 19,
+   "borderline|partial|yes": 56,
+   "borderline|yes|borderline": 1,
+   "borderline|yes|unknown": 1,
+   "borderline|yes|yes": 10,
+   "not|no|borderline": 3,
+   "not|no|no": 34,
+   "not|no|unknown": 69,
+   "not|no|yes": 34,
+   "not|partial|no": 2,
+   "not|partial|unknown": 3,
+   "not|partial|yes": 2,
+   "story|partial|yes": 1,
+   "story|yes|no": 1,
+   "story|yes|unknown": 1,
+   "story|yes|yes": 31
+  },
+  "pass2": {
+   "borderline|no|no": 1,
+   "borderline|no|unknown": 5,
+   "borderline|no|yes": 7,
+   "borderline|partial|borderline": 15,
+   "borderline|partial|no": 3,
+   "borderline|partial|unknown": 20,
+   "borderline|partial|yes": 56,
+   "borderline|yes|borderline": 2,
+   "borderline|yes|yes": 10,
+   "not|no|borderline": 3,
+   "not|no|no": 34,
+   "not|no|unknown": 70,
+   "not|no|yes": 33,
+   "not|partial|no": 2,
+   "not|partial|unknown": 2,
+   "not|partial|yes": 3,
+   "story|yes|no": 1,
+   "story|yes|unknown": 1,
+   "story|yes|yes": 32
+  }
+ },
+ "invalid": {
+  "pass1": {
+   "ok": 300
+  },
+  "pass2": {
+   "ok": 300
+  }
+ },
+ "stability_cls": {
+  "n": 300,
+  "same_can_narrate": 258,
+  "same_yes_or_not": 289
+ }
+}
