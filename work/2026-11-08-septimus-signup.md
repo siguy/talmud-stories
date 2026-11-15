@@ -143,8 +143,10 @@ Review and outcomes: `docs/technical/signup-d-review-2026-11-15.md`. Screenshots
 ## What is left, in order (2026-11-15)
 
 1. Simon: look at the built screens; confirm the builder's choices in the b, c and d review files.
-2. Simon: deploy the rules (`firebase deploy --only firestore:rules --project septimus-stories`), then sign in once
-   with a real Google account on the site.
+2. ~~Deploy the rules~~ **Done 2026-11-15** from `septimus/signup-d` (Simon's go-ahead). Signed out, the live
+   database now answers 404 for `progress/summary` (readable, not yet written) and 403 for `users`, `assignments`,
+   `runs`, `sent`. Still to do: Simon signs in once with a real Google account (locally: serve the repo root and
+   open `/site/`; `localhost` is an authorised sign-in domain).
 3. When the Jeff-responses branch merges: step s (field test, `list_version`, `published_at`, Shas order in the
    data), the story-page button, the two `#/` links and the `config.js?v=` bump.
 4. Step e (weekly email, counts email to Simon): needs the email service and sending domain chosen, and Daniel's
