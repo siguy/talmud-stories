@@ -32,7 +32,7 @@ Service accounts → Generate new private key). Keep the file outside the repo i
 
 ```bash
 pip install -r requirements-septimus.txt
-FIREBASE_SERVICE_ACCOUNT="$(cat /path/outside/the/repo/staging-key.json)" \
+FIREBASE_SERVICE_ACCOUNT="$(cat $HOME/keys/septimus-stories-staging-firebase-adminsdk-fbsvc-79363ae1db.json)" \
   python3 scripts/septimus_weekly.py --dry-run --date 2026-12-07 --config /path/to/a/config-with-a-launch-date.js
 ```
 
