@@ -7,7 +7,19 @@
 #
 # Needs one secret: FIREBASE_SERVICE_ACCOUNT, the service-account key (JSON text) of the Firebase project.
 # Optional variable: SEPTIMUS_PAUSE=1 stops hand-outs without a deploy.
+#
+# Two things to know:
+#  - GitHub switches scheduled workflows OFF after 60 days without activity in the repository (a commit, a merged
+#    pull request). So check now and then that the daily run is still happening (Actions tab); a week with no run
+#    is a week with no hand-out.
+#  - When a run fails, GitHub emails the repository owner. This repository is public, so the logs are public: the
+#    script never prints names, emails or ids, only counts.
 name: Septimus weekly
+
+# Never two runs at once (a late run and a manual one would trip over each other); queue, do not cancel.
+concurrency:
+  group: septimus-weekly
+  cancel-in-progress: false
 
 on:
   schedule:

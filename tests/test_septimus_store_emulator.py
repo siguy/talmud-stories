@@ -11,6 +11,7 @@ Only the emulators are ever used: the fixture refuses to build a Store unless bo
 """
 import json
 import os
+import re
 import shutil
 import signal
 import socket
@@ -123,19 +124,6 @@ def store():
     assert os.environ.get("FIRESTORE_EMULATOR_HOST") == FS_HOST, "FIRESTORE_EMULATOR_HOST not set: refusing"
     assert os.environ.get("FIREBASE_AUTH_EMULATOR_HOST") == AUTH_HOST, "FIREBASE_AUTH_EMULATOR_HOST not set: refusing"
     s = W.Store(PROJECT)
-    s.reads = {"users": 0, "assignments": 0}
-    real_users, real_rows = s.users, s.assignments
-
-    def users():
-        out = real_users()
-        s.reads["users"] += len(out)
-        return out
-
-    def rows():
-        out = real_rows()
-        s.reads["assignments"] += len(out)
-        return out
-    s.users, s.assignments = users, rows
     yield s
     firebase_admin.delete_app(firebase_admin.get_app())
 
@@ -270,8 +258,11 @@ def test_release_row_leaves_a_row_marked_done_meanwhile(store, order):
     assert store.release_row(rid) is False
     assert rows_of(store)[rid]["releasedAt"] is None
     other = sorted(r for r, d in rows_of(store).items() if not d["doneAt"])[0]
-    assert store.release_row(other) is True and store.release_row(other) is False   # and only once
-    assert store.release_row("no_such_row") is False
+    assert store.release_row(other) is True
+    first_release = rows_of(store)[other]["releasedAt"]
+    assert store.release_row(other) is True                              # idempotent: already released is not "learned"
+    assert rows_of(store)[other]["releasedAt"] == first_release          # and the time is not rewritten
+    assert store.release_row("no_such_row") is True                      # gone: nothing left to free (False means done)
 
 
 # ---------------------------------------------------------------- 5. delete request
@@ -280,23 +271,51 @@ def test_delete_request_removes_account_and_record_but_keeps_learned(store, orde
     seed3(store)
     go(store, WEEK1, order)
     mine = sorted(rid for rid, r in rows_of(store).items() if r["uid"] == "pb")
+    done_story = rows_of(store)[mine[0]]["storyId"]
+    open_stories = {rows_of(store)[rid]["storyId"] for rid in mine[1:]}
     store.db.collection("assignments").document(mine[0]).update({"doneAt": datetime.now(timezone.utc)})
     go(store, WEEK1, order)
     assert dump(store, "progress")["progress"]["summary"]["learned"] == 1
+    total_rows = len(rows_of(store))
 
     store.db.collection("users").document("pb").update({"deleteRequested": True})
     counts = go(store, WEEK1, order)
-    assert counts["deleted"] == 1
+    assert counts["deleted"] == 1 and counts["deleteFailed"] == 0
     assert not auth_exists("pb") and auth_exists("pa")
     assert not store.db.collection("users").document("pb").get().exists
     rows = rows_of(store)
-    assert all(rows[rid]["uid"] is None for rid in mine)
-    assert rows[mine[0]]["releasedAt"] is None and rows[mine[0]]["doneAt"] is not None   # the learned one stays learned
-    assert all(rows[rid]["releasedAt"] is not None for rid in mine[1:])                   # open ones go back
+    assert len(rows) == total_rows                                      # copied, not lost
+    assert not any("pb" in rid for rid in rows)                         # no row id carries the uid any more ...
+    assert all(r["uid"] != "pb" for r in rows.values())                 # ... and no field does
+    anon = {rid: r for rid, r in rows.items() if r["uid"] == ""}
+    assert len(anon) == len(mine)
+    for rid in anon:
+        assert re.fullmatch(r"1_deleted-[0-9a-f]{12}_.+", rid)
+    kept = next(r for r in anon.values() if r["storyId"] == done_story)
+    assert kept["doneAt"] is not None and kept["releasedAt"] is None    # the learned one stays learned
+    assert all(r["releasedAt"] is not None for r in anon.values() if r["storyId"] in open_stories)  # open ones go back
     summary = dump(store, "progress")["progress"]["summary"]
     assert summary["learned"] == 1 and summary["joined"] == 2
     go(store, WEEK1, order)                                              # and a second pass is quiet
     assert dump(store, "progress")["progress"]["summary"]["learned"] == 1
+    assert len(rows_of(store)) == total_rows
+
+
+def test_delete_person_is_safe_to_repeat_after_a_crash_midway(store, order):
+    seed3(store)
+    go(store, WEEK1, order)
+    mine = sorted(rid for rid, r in rows_of(store).items() if r["uid"] == "pb")
+    n = len(mine)
+    store.delete_person("pb")                                            # the whole thing ...
+    after_first = rows_of(store)
+    assert len(after_first) == len(rows_of(store)) and not any(r["uid"] == "pb" for r in after_first.values())
+    # ... then pretend it crashed before the user record went: the account and record are gone already, so redo
+    # the user record and the call must find nothing left to copy and not duplicate anything
+    store.db.collection("users").document("pb").set({"minutesPerWeek": 30, "deleteRequested": True,
+                                                     "createdAt": datetime(2026, 11, 20, tzinfo=timezone.utc)})
+    store.delete_person("pb")
+    assert rows_of(store) == after_first
+    assert len([r for r in after_first.values() if r["uid"] == ""]) == n
 
 
 # ---------------------------------------------------------------- 6. stop
@@ -310,6 +329,9 @@ def test_stopping_releases_open_rows_and_hands_out_nothing_more(store, order):
     rows = rows_of(store)
     assert all(r["releasedAt"] is not None for r in rows.values() if r["uid"] == "pc")
     before = len(rows)
+    for rid, r in rows.items():                                          # the others read everything, so have room again
+        if r["uid"] in ("pa", "pb"):
+            store.db.collection("assignments").document(rid).update({"doneAt": datetime.now(timezone.utc)})
     go(store, WEEK2, order)
     assert not [r for r in rows_of(store).values() if r["uid"] == "pc" and r["week"] == 2]
     assert len(rows_of(store)) > before                                  # the others still got week 2
@@ -318,15 +340,78 @@ def test_stopping_releases_open_rows_and_hands_out_nothing_more(store, order):
 
 # ---------------------------------------------------------------- reads per run
 
-def test_reads_per_run_match_the_formula(store, order):
+def test_reads_per_quiet_run_are_users_plus_summary_plus_current_round_and_open_rows(store, order):
     seed3(store)
     go(store, WEEK1, order)
-    U = len(store.users())
-    R = len(store.assignments())
-    store.reads = {"users": 0, "assignments": 0}
-    go(store, date(2026, 12, 9), order)                                  # a quiet day in an already-finished week
-    # run() also reads 1 run doc (get_run), not counted here. Nothing else on a quiet day.
-    assert store.reads == {"users": U, "assignments": R}
+    all_rows = rows_of(store)
+    before = store.reads
+    counts = go(store, date(2026, 12, 9), order)                         # a quiet day in an already-finished week
+    # users + summary + (round >= 1 rows, and then the open rows AGAIN: the two queries overlap) + the run doc
+    open_rows = [r for r in all_rows.values() if not r["doneAt"] and not r["releasedAt"]]
+    assert store.reads - before == 3 + 1 + len(all_rows) + len(open_rows) + 1
+    assert counts["reads"] == store.reads - before                  # the counts line carries this run's reads
+
+
+def test_old_complete_rounds_are_not_read_but_open_rows_always_are(store, order):
+    seed3(store)
+    for i, s in enumerate(order):                                        # round 1 complete
+        store.db.collection("assignments").document(f"0_x{i}_{s.id}").set(
+            {"uid": f"x{i}", "storyId": s.id, "round": 1, "week": 1, "doneAt": datetime(2026, 12, 1, tzinfo=timezone.utc),
+             "releasedAt": None, "assignedAt": datetime(2026, 12, 1, tzinfo=timezone.utc)})
+    store.db.collection("assignments").document("0_stray_open").set(       # an open row left over in round 1
+        {"uid": "stray", "storyId": order[0].id, "round": 1, "week": 1, "doneAt": None, "releasedAt": None})
+    store.db.collection("assignments").document("0_old_released").set(
+        {"uid": "old", "storyId": order[0].id, "round": 1, "week": 1, "doneAt": None,
+         "releasedAt": datetime(2026, 12, 1, tzinfo=timezone.utc)})
+    store.db.collection("assignments").document("0_r2").set(
+        {"uid": "y", "storyId": order[0].id, "round": 2, "week": 2,
+         "doneAt": datetime(2026, 12, 2, tzinfo=timezone.utc), "releasedAt": None})
+    ids = {r["id"] for r in store.assignments(2)}
+    assert ids == {"0_stray_open", "0_r2"}
+    assert len(store.assignments(1)) == len(order) + 3                   # from round 1: everything, merged by id
+    # the runner reads the summary's round
+    store.db.collection("progress").document("summary").set({"round": 2})
+    store.reads = 0
+    go(store, WEEK1, order)
+    assert store.reads < len(order)                                      # never the 18 complete-round rows
+
+
+def test_write_rows_is_one_batch_per_person_and_never_overwrites(store, order):
+    seed3(store)
+    rows = [{"id": f"1_pa_{order[i].id}", "uid": "pa", "storyId": order[i].id, "round": 1, "week": 1,
+             "doneAt": None, "releasedAt": None} for i in range(3)]
+    rows += [{"id": f"1_pb_{order[3].id}", "uid": "pb", "storyId": order[3].id, "round": 1, "week": 1,
+              "doneAt": None, "releasedAt": None}]
+    store.db.collection("assignments").document(rows[1]["id"]).set({**{k: v for k, v in rows[1].items() if k != "id"},
+                                                                     "doneAt": datetime(2026, 12, 2, tzinfo=timezone.utc)})
+    store.write_rows(rows)
+    got = rows_of(store)
+    assert got[rows[1]["id"]]["doneAt"] is not None                      # the existing row was not overwritten
+    assert rows[0]["id"] not in got and rows[2]["id"] not in got         # pa's batch failed as a whole: all or nothing
+    assert rows[3]["id"] in got                                          # pb's batch went through on its own
+
+
+def test_previous_finished_at_walks_back_a_few_weeks_only(store):
+    db = store.db.collection("runs")
+    db.document("1").set({"finishedAt": datetime(2026, 12, 7, tzinfo=timezone.utc)})
+    db.document("3").set({"startedAt": datetime(2026, 12, 21, tzinfo=timezone.utc)})       # started, never finished
+    db.document("9").set({"finishedAt": datetime(2027, 2, 8, tzinfo=timezone.utc)})
+    assert store.previous_finished_at(4) == datetime(2026, 12, 7, tzinfo=timezone.utc)      # skips the unfinished week 3
+    assert store.previous_finished_at(7) is None                                            # week 1 is too far back
+    store.reads = 0
+    store.previous_finished_at(7)
+    assert store.reads <= 4
+
+
+def test_set_paused_clears_lapses_and_update_user_writes_only_what_it_is_given(store):
+    seed_person(store, "pa", 30, 1, lapses=[1, 4], everLearned=False)
+    store.set_paused("pa", True)
+    u = store.db.collection("users").document("pa").get().to_dict()
+    assert isinstance(u["pausedAt"], datetime) and u["lapses"] == [] and u["minutesPerWeek"] == 30
+    store.set_paused("pa", False)
+    store.update_user("pa", {"everLearned": True})
+    u = store.db.collection("users").document("pa").get().to_dict()
+    assert u["pausedAt"] is None and u["everLearned"] is True and u["lapses"] == []
 
 
 # ---------------------------------------------------------------- 7 and 8: the command line

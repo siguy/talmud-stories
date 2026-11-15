@@ -27,11 +27,15 @@ service cloud.firestore {
         && request.resource.data.src.matches('^[a-z0-9-]{0,32}$')
         && request.resource.data.deleteRequested == false;
 
-      // Changing settings: only minutesPerWeek (0 = stop) and deleteRequested.
-      // createdAt, src and pausedAt can never be changed by the person.
+      // Changing settings: only minutesPerWeek (0 = stop) and deleteRequested,
+      // plus pausedAt, but only to clear it (resume after a pause): a person
+      // can never SET pausedAt. createdAt, src, everLearned and lapses (the
+      // script's own bookkeeping) can never be changed by the person.
       allow update: if request.auth != null && request.auth.uid == uid
         && request.resource.data.diff(resource.data).affectedKeys()
-             .hasOnly(['minutesPerWeek', 'deleteRequested'])
+             .hasOnly(['minutesPerWeek', 'deleteRequested', 'pausedAt'])
+        && (!request.resource.data.diff(resource.data).affectedKeys().hasAny(['pausedAt'])
+            || request.resource.data.pausedAt == null)
         && request.resource.data.minutesPerWeek is int
         && request.resource.data.minutesPerWeek >= 0
         && request.resource.data.minutesPerWeek <= 120

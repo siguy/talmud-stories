@@ -165,7 +165,8 @@ no stored pool state, no name or email in the database.
 ```
 users/{uid}                    { createdAt, minutesPerWeek, src,            // written by the person at "Join"
                                  deleteRequested: false,                    // set by the person
-                                 pausedAt: null }                           // set by the script only (§6)
+                                 pausedAt: null,                            // set by the script; the person may clear it (resume)
+                                 everLearned, lapses: [week] }              // script only: what the pause rule needs (c review)
 assignments/{week_uid_storyId} { uid, storyId, round, week,                 // week = campaign week, 1..~40
                                  assignedAt, doneAt: null | ts, releasedAt: null | ts }
 runs/{week}                    { startedAt, finishedAt, counts }            // one per campaign week; makes a re-run a no-op
@@ -202,14 +203,16 @@ assign_week(story_order, assignments, users, week, wpm) -> rows to write, rows t
 2. **Release.** A row assigned in week W and still not learned is released by the week W+3 run (it stayed on the
    person's list for W, W+1 and W+2). The write re-checks that `doneAt` is still empty, so a story marked learned at
    that moment is not also handed to someone else.
-3. **Pause the quiet.** A person with two full rounds of released stories and nothing ever marked learned gets
-   `pausedAt` and one "still with us?" email. Marking anything learned, or tapping "resume", clears it.
+3. **Pause the quiet.** A person who has never marked anything learned and has let stories lapse in two hand-outs
+   at least three weeks apart gets `pausedAt` and one "still with us?" email. Tapping "Resume" (the person clearing
+   their own `pausedAt`) undoes it. Stories released because the person stopped do not count as lapses.
 4. **Which stories are free.** A story is *covered in round N* if a row for it exists in round N that has not been
    released. The current round is the lowest N in which some story on the list is not covered.
 5. **Hand out.** People are served in sign-up order (`createdAt`). Budget = `minutesPerWeek` (capped at 120 by the
    script as well as by the rules) minus the reading time of their still-open stories. Each person gets the first
    uncovered stories in list order while the running total stays within budget; always at least one story if the
-   budget is above zero. When a round has no uncovered stories left, the next person continues in round N+1.
+   person holds nothing open. Nobody is handed a story they already hold, and a story is not handed back to the
+   person who let it lapse in that same run. When a round has no uncovered stories left, the next person continues in round N+1.
 6. **Reading time** is `words / wpm` at the script's own 75 wpm. The data's `minutes` field is computed at 150 wpm
    and is not used.
 
@@ -243,8 +246,8 @@ catches up at the next daily run and is labelled with its time.
 
 - `users/{uid}`: readable and writable only by that person. On create: only `createdAt` (must equal the server time),
   `minutesPerWeek` (whole number 1 to 120), `src` (short, lowercase letters, digits and hyphens),
-  `deleteRequested: false`. On update: only `minutesPerWeek` (0 to 120) and `deleteRequested`. Never `createdAt`,
-  `src` or `pausedAt`.
+  `deleteRequested: false`. On update: only `minutesPerWeek` (0 to 120) and `deleteRequested`, and clearing `pausedAt` (resume). Never
+  `createdAt`, `src`, setting `pausedAt`, or the script's `everLearned` and `lapses`.
 - `assignments`: a person can read their own rows and change only `doneAt` on them, to the server time or back to
   empty. Rows are created only by the script.
 - `runs`, `sent`: script only. `progress/summary`: anyone can read, only the script writes.
@@ -361,7 +364,7 @@ on Simon's machine. Exports go in a restricted Google Sheet, not email attachmen
 | ~~a~~ | Word count + reading time in the export | **Done** (#79) |
 | ~~m~~ | Mockups of the five screens | **Done** 2026-11-14 (§3a) |
 | b | **Built 2026-11-15** (branch `septimus/signup-b`; review: [`signup-b-review-2026-11-15.md`](signup-b-review-2026-11-15.md)). Still to do: deploy `firestore.rules` and one real Google sign-in by Simon. Landing page, Google sign-in, `?src=`, minutes question, "You're in" screen, "How the stories were chosen" and "Your data" pages, `firestore.rules` | Matches mockups 1 and 2 at 390 px; the b checklist below passes; rules tested in the Firestore emulator. **Build now**, placeholders for launch date, yahrzeit and community names. New files only (§7a) |
-| c | `assign_week` and `scripts/septimus_weekly.py` (hand-out, release, pause, progress summary, counts email to Simon), the scheduled Action | pytest on a fixture: 3 fake people over 4 simulated weeks get consecutive stories within budget; a missed story is released at W+3 and goes to someone else; a re-run changes nothing; the §7 list-change cases pass; a long story is handed out and labelled. **Build now** on rounds and 75 wpm. **Running it against the live database waits for** Daniel's "finishing" answer and a launch date |
+| c | **Built 2026-11-15** (branch `septimus/signup-c`; review: [`signup-c-review-2026-11-15.md`](signup-c-review-2026-11-15.md); the counts email waits for step e). `assign_week` and `scripts/septimus_weekly.py` (hand-out, release, pause, progress summary, counts email to Simon), the scheduled Action | pytest on a fixture: 3 fake people over 4 simulated weeks get consecutive stories within budget; a missed story is released at W+3 and goes to someone else; a re-run changes nothing; the §7 list-change cases pass; a long story is handed out and labelled. **Build now** on rounds and 75 wpm. **Running it against the live database waits for** Daniel's "finishing" answer and a launch date |
 | s | The field test and `list_version` / `published_at` (§7a) | Every tractate file passes. **Waits for** the Jeff-responses branch to merge |
 | d | My stories, mark as learned, stop / delete my data, progress page | Matches mockups 3 and 4; released rows are not listed (marking a released row learned stays allowed by the rules: Simon, 2026-11-15); one "Mark as learned" button on a story that is yours, which also sets the old per-device tick; "Back to my stories" and "Next story"; "Saved" only after the write is confirmed. **Waits for** c |
 | e | Weekly email (service, subdomain, unsubscribe, link that marks learned without signing in) | Matches mockup 5; a test send to Simon renders on a phone; a re-run sends nothing twice. **Waits for** sender and wording (Daniel) |
@@ -401,6 +404,7 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 | People commit and vanish | Released at W+3; paused after two rounds of releases with nothing learned (§6) |
 | A story nobody reads blocks a siyum | "K stories still open in round N" on the progress page |
 | GitHub's scheduler skips Monday | The daily run does Monday's work if it was missed; the counts email is the alarm (§8e) |
+| The daily run uses too many free reads | About 21,000 of 50,000 a day with 200 very committed people (c review); revisit near 500 people |
 | Someone games the hand-out or the email | Rules bound every field; email comes from the sign-in system; the script caps minutes (§6) |
 | Emails land in spam | Dedicated sending subdomain with SPF/DKIM/DMARC, low volume, plain content, one-click unsubscribe |
 | A boundary change breaks someone's place | List frozen at launch; migration written when a v2 exists (§7) |

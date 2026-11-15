@@ -354,6 +354,40 @@ def test_user_owner_adds_paused_at_denied():
     assert denied(update_user("alice", "alice", {"pausedAt": ts("2026-11-02T00:00:00Z")}))
 
 
+def seed_paused_user(uid):
+    """A person the weekly script has paused: pausedAt set, plus the script's own everLearned / lapses."""
+    f = {"minutesPerWeek": 10, "src": "hadar", "deleteRequested": False, "pausedAt": ts("2026-11-02T00:00:00Z"),
+         "everLearned": False, "lapses": {"arrayValue": {"values": [{"integerValue": "1"}, {"integerValue": "4"}]}}}
+    assert ok(commit(f"users/{uid}", SCRIPT, f, server_time=("createdAt",)))
+
+
+def test_user_owner_clears_paused_at_allowed():
+    seed_paused_user("alice")
+    assert ok(update_user("alice", "alice", {"pausedAt": None}))
+
+
+def test_user_owner_sets_paused_at_on_a_person_not_paused_denied():
+    seed_user("alice")
+    assert denied(update_user("alice", "alice", {"pausedAt": ts("2026-12-01T00:00:00Z")}))
+
+
+def test_user_owner_moves_paused_at_to_a_new_time_denied():
+    seed_paused_user("alice")
+    assert denied(update_user("alice", "alice", {"pausedAt": ts("2026-12-01T00:00:00Z")}))
+
+
+def test_user_owner_clears_pause_and_changes_minutes_together_allowed():
+    seed_paused_user("alice")
+    assert ok(update_user("alice", "alice", {"pausedAt": None, "minutesPerWeek": 20}))
+
+
+def test_user_owner_writes_ever_learned_or_lapses_denied():
+    seed_paused_user("alice")
+    assert denied(update_user("alice", "alice", {"everLearned": True}))
+    assert denied(update_user("alice", "alice", {"lapses": {"arrayValue": {"values": []}}}))
+    assert denied(update_user("alice", "alice", {"pausedAt": None, "everLearned": True}))
+
+
 def test_user_other_person_update_denied():
     seed_user("alice")
     assert denied(update_user("alice", "mallory", {"minutesPerWeek": 5}))

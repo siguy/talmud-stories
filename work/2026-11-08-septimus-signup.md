@@ -107,6 +107,23 @@ Branch `septimus/signup-b`. New: `site/signup.js`, `site/signup.css`, `firestore
 - Screens built without a mockup, in the reader's style, because the b checklist listed them: "You're in",
   "How the stories were chosen", "Your data", About (placeholder), the in-app-browser notice. Show Simon.
 
+## Step c built (2026-11-15)
+
+Branch `septimus/signup-c` (stacked on `septimus/signup-b`). `scripts/septimus_assign.py` (pure rules),
+`scripts/septimus_weekly.py` (runner and database access), `.github/workflows/septimus-weekly.yml` (daily, **off**
+until the repository variable `SEPTIMUS_WEEKLY_ENABLED` is `true`), `requirements-septimus.txt`. Review, outcomes and
+the builder's choices Simon has not yet confirmed: `docs/technical/signup-c-review-2026-11-15.md`.
+
+- **Verified:** logic and runner tests under plain pytest; the real database code against the local emulators
+  (needs a virtualenv with `requirements-septimus.txt` and a real Java); a 200-person, 40-week simulation.
+- **Never run against the live database.** Before it can be: a service-account key stored as the GitHub secret
+  `FIREBASE_SERVICE_ACCOUNT` (Simon creates it; never in the repo), a launch date that is a Monday in
+  `site/config.js`, the rules deployed, and Daniel's answers.
+- **Not built:** the counts email to Simon (step e, needs the email service); deletion of all personal data six
+  months after the yahrzeit (`TODO(before launch)` in the runner).
+- **Step d must:** show "longer than usual" using `is_longer_than_usual`; not list released rows; add "Resume"
+  (the person clears their own `pausedAt`), "Stop my stories" and "Delete my data".
+
 ## How you know it worked
 
 - At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.
