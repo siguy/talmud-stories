@@ -1,8 +1,8 @@
 # "Learn all the stories" sign-up — plan (v1)
 
 *Written 2026-11-08; **rewritten 2026-11-13** for Simon's decisions after Daniel Septimus's reply (weekly
-commitments, weekly email, doubling up); **updated 2026-11-14**: mockups settled (§3a), data contract added (§7a),
-build order revised (§9). Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md).
+commitments, weekly email, doubling up); **updated 2026-11-14**: mockups settled (§3a); then revised after a
+four-reviewer plan review ([`signup-plan-review-2026-11-14.md`](signup-plan-review-2026-11-14.md)): §5–§11 rewritten. Builds on the reader in [`septimus-viewer-plan.md`](septimus-viewer-plan.md).
 Work item: [`work/2026-11-08-septimus-signup.md`](../../work/2026-11-08-septimus-signup.md).*
 
 ## 1. Goal
@@ -134,8 +134,13 @@ Nothing goes live to real people until he answers (§9).
 | Reading pace | One config value, **75 wpm** (§2) | Simon picked 75 (2026-11-13); **asked Daniel 2026-11-13** |
 | Cadence | **Week by week** from the pool; no full schedule at sign-up | Simon decided |
 | Start | **Fixed launch date**: sign-ups open first, everyone starts the same week | Simon decided; **date to confirm with Daniel** |
-| Order | **In order through Shas** (site tractate order, then daf, then segment); **consecutive** stories per person | Simon decided |
+| Order | **In order through Shas, starting at Berakhot** (traditional order, then daf, then segment); **consecutive** stories per person | Simon decided (start point 2026-11-14) |
 | Missed stories | **Roll over 2 weeks** on the person's list, then **released** to the pool | Simon decided |
+| People who never read | **Paused** after two rounds of releases with nothing learned, with one "still with us?" email | Simon decided 2026-11-14 |
+| A story longer than the weekly minutes | Handed out anyway, labelled "longer than usual" | Simon decided 2026-11-14 |
+| Leaving | "Stop my stories", "Delete my data", and a fixed deletion date after the yahrzeit (§6) | Simon decided 2026-11-14 |
+| After the yahrzeit | Hand-outs stop; landing page shows the final total and a thank-you; reading stays open | Simon decided 2026-11-14 |
+| No Google account | A contact line under the button; added by hand | Simon decided 2026-11-14 |
 | More commitment than list | **Double up**: nobody turned away; stories learned more than once | Simon decided |
 | What "cover the entire thing" means | cycles / copies per story / per-person paths (below) | **Asked Daniel 2026-11-13. Build on cycles meanwhile** (Simon, 2026-11-14), behind one config value so another answer is a small change |
 | Reminders | **Weekly personal email** + signed-in My stories page | Simon decided; **wording and sender to confirm with Daniel** |
@@ -154,123 +159,162 @@ Options for the coverage question, so the answer can be one word:
 
 ## 5. Data model (Firestore)
 
+Revised 2026-11-14 after the plan review ([`signup-plan-review-2026-11-14.md`](signup-plan-review-2026-11-14.md)):
+no stored pool state, no name or email in the database.
+
 ```
-users/{uid}           { name, email, createdAt, minutesPerWeek, src,        // src from ?src=, first visit wins
-                        emailOptIn: true, active: true }
-assignments/{auto}    { uid, storyId, list: "v1", cycle, week,              // week = ISO week the job assigned it
-                        assignedAt, doneAt: null | ts, releasedAt: null | ts }
-pool/state            { list: "v1", cycle, lastAssigned: <storyId>,        // server-only; an id, never an index
-                        released: [storyId, …] }                            // returned stories, re-assigned first
-progress/summary      { learned, byTractate: {t: n}, cycles: {n: learned}, updatedAt }   // public, server-written
-meta/list             { current: "v1", publishedAt, launch, yahrzeit }
+users/{uid}                    { createdAt, minutesPerWeek, src,            // written by the person at "Join"
+                                 deleteRequested: false,                    // set by the person
+                                 pausedAt: null }                           // set by the script only (§6)
+assignments/{week_uid_storyId} { uid, storyId, round, week,                 // week = campaign week, 1..~40
+                                 assignedAt, doneAt: null | ts, releasedAt: null | ts }
+runs/{week}                    { startedAt, finishedAt, counts }            // one per campaign week; makes a re-run a no-op
+sent/{week_uid}                { sentAt }                                   // one per email; makes a re-send impossible
+progress/summary               { learned, byTractate: {t: n}, round, roundsCompleted,
+                                 openInRound, joined, listVersion, updatedAt }   // public, script-written
 ```
 
-- Assignments are **not** unique per story any more (doubling up); each row is one person's copy of one story.
-- No names or emails outside `users` (the progress page is public).
-- Export for Simon and Daniel: `users` (who joined, from where) and `assignments` (who learned what).
+- **Name and email are never stored here.** The script reads them from the sign-in system (Firebase Auth) when it
+  needs them. A person therefore cannot make the weekly email go to someone else's address.
+- `minutesPerWeek: 0` means "stopped". There is no separate active flag.
+- An assignment row is one person's copy of one story. Rows are not unique per story (doubling up).
+- The row id is fixed (`<week>_<uid>_<storyId>`), so writing the same hand-out twice changes nothing.
+- No pool pointer, no released queue, no list document: launch and yahrzeit dates live in `site/config.js`, the list
+  version in `site/data/index.json`.
+- Export for Simon: sign-ups from Firebase Auth, plus `users` and `assignments`. What Daniel and the family receive is
+  **community counts and names**, not anyone's reading log, unless he asks.
 
-## 6. Weekly assignment (server-side job, Monday morning US Eastern)
+## 6. The weekly hand-out (a Python script on a schedule)
 
-1. For each active user, roll-over check: their unfinished assignments older than **2 weeks** get `releasedAt` and
-   their story ids go to `pool.released`.
-2. Budget = `minutesPerWeek` minus the reading time of their still-open (rolled-over) stories. If ≤ 0, no new stories.
-3. Take stories from `pool.released` first (oldest first), then from the story after `pool.lastAssigned` in order, adding stories
-   while the running total ≤ budget; always at least one story if budget > 0. At the end of the list, the pointer
-   wraps and `cycle` increments (under the cycles option).
-4. Users are served in sign-up order, so each person's stories are consecutive and the list fills from the front.
-5. One transaction updates `pool/state` and writes the week's assignments; the job is idempotent per week (re-running
-   it for a week that is already assigned changes nothing).
-6. Then the weekly email goes out (§8), and `progress/summary` is recomputed.
+**`scripts/septimus_weekly.py`**, run by a scheduled GitHub Action and by hand when needed. Daily it refreshes
+`progress/summary` and handles delete requests; on **Mondays (US Eastern)** it also hands out stories and sends the
+email. Not a Cloud Function: the browser never needs a server, and this keeps the project on the free plan (§8).
 
-**Marking learned** is a client write to the user's own assignment (`doneAt` only); a small trigger keeps
-`progress/summary` current between weekly runs.
+The hand-out is **one pure function**, tested with plain pytest on a fixture copy of the story data:
 
-Security rules: `users/{uid}` read/write by that user only (fields: `minutesPerWeek`, `emailOptIn`, `active`, and
-`src` on create); `assignments` readable by their owner, updatable by their owner on `doneAt` only, created only by
-the server; `pool`, `meta` server-only writes; `progress/summary` public read.
+```
+assign_week(story_order, assignments, users, week, wpm) -> rows to write, rows to release, people to pause
+```
 
-## 7. List versions, stable ids, and lists that change mid-campaign
+**How it decides, in order:**
+1. **Nothing before launch or after the yahrzeit week.** If the launch date is unset or in the future, or the week is
+   past the yahrzeit, it hands out nothing.
+2. **Release.** A row assigned in week W and still not learned is released by the week W+3 run (it stayed on the
+   person's list for W, W+1 and W+2). The write re-checks that `doneAt` is still empty, so a story marked learned at
+   that moment is not also handed to someone else.
+3. **Pause the quiet.** A person with two full rounds of released stories and nothing ever marked learned gets
+   `pausedAt` and one "still with us?" email. Marking anything learned, or tapping "resume", clears it.
+4. **Which stories are free.** A story is *covered in round N* if a row for it exists in round N that has not been
+   released. The current round is the lowest N in which some story on the list is not covered.
+5. **Hand out.** People are served in sign-up order (`createdAt`). Budget = `minutesPerWeek` (capped at 120 by the
+   script as well as by the rules) minus the reading time of their still-open stories. Each person gets the first
+   uncovered stories in list order while the running total stays within budget; always at least one story if the
+   budget is above zero. When a round has no uncovered stories left, the next person continues in round N+1.
+6. **Reading time** is `words / wpm` at the script's own 75 wpm. The data's `minutes` field is computed at 150 wpm
+   and is not used.
 
-**Nobody loses their place when stories are added or removed** (checked against the design, 2026-11-13):
-- A person's place is their **assignment rows**, each holding a `storyId`, not a position. Adding or removing other
-  stories does not touch them.
-- The pool pointer stores the **id of the last story assigned** (`pool.lastAssigned`), not an index. Each week the job
-  finds that id in the current order and continues after it. If that story was removed, it continues after the
-  nearest earlier story still on the list.
-- **Story added behind the pointer** (in a part of Shas the current cycle has passed): it joins `pool.released`, so it
-  is assigned first next week and the cycle stays complete. **Added ahead of the pointer:** it is simply reached in order.
-- **Story removed:** open assignments for it stay on the person's list, marked "no longer on the list", and drop off at
-  rollover; learned ones stay counted as history but not as progress on the current list. It is removed from
-  `pool.released` if queued there.
-- Progress is always reported against the current list version, with its date.
-- Tests for the weekly job (§9 c) include: add a story behind and ahead of the pointer, remove the pointer's story,
-  remove a story someone holds open; every user's open list and the pointer survive each.
+What falls out of rule 4 without any special handling: a released story is uncovered again and, being earlier in the
+list, goes out first; a story added to the list is uncovered and is reached in order; a story removed from the list
+is simply never offered.
 
-When ids change (a boundary moves, so `tractate-daf-start-end` changes):
+**Order through Shas** is the traditional order, **starting at Berakhot** (Simon, 2026-11-14): the order of `TABLE`
+in `scripts/tractates.py`, then daf, then segment. Not the site's home-page order, which lists the reviewed
+tractates first.
 
-- v1 freezes today's ids (`tractate-daf-start-end`). `site/data/index.json` gains `list_version` and `published_at`.
-- A **new list (v2, …)** ships with `site/data/lists/v1_to_v2.json`: each v1 id → the v2 id it **overlaps most by
-  segments** (overlap, never an exact key — Lesson 36), or `null`.
-- A one-off migration rewrites assignments through that map: learned stays learned on its match; open stays open.
-  A v1 story with no match keeps its rows under its old id, counted as history. Ambiguous splits/merges are printed
-  for a person to decide, never guessed. The pool pointer is re-seated at the first v2 story not yet covered in the
-  current cycle.
+**A story longer than someone's weekly minutes** is handed out anyway under the at-least-one rule, labelled "longer
+than usual" (Simon, 2026-11-14). That person gets nothing new until it is learned or released.
 
-## 7a. Data contract: what the sign-up reads from the story data (added 2026-11-14)
+**Rounds and "finishing".** A round is *complete* when every story on the list has a row in that round with a done
+mark. The headline is "Shas completed N times"; the progress page also shows "K stories still open in round N", so a
+story nobody reads is visible instead of silently blocking a siyum. Group "learned" = distinct stories with at least
+one done mark in the current round.
 
-The sign-up reads the same files as the reader (`site/data/index.json`, `site/data/<tractate>.json`). Today their
-shape is defined only by `scripts/build_site_data.py` and `tests/test_site_data.py`. With a second reader, it gets
-written down once:
+**Safe to re-run.** The script first creates `runs/<week>`; if it already exists and finished, it stops. Row ids are
+fixed, so a run that died halfway can be run again. A person who joins mid-week waits for the next Monday run.
 
-- **A schema file**, `site/data/schema.json` (JSON Schema: a formal list of fields and their types), checked by a
-  test against every tractate file. The sign-up depends only on fields in it.
-- **Fields the sign-up needs:** `id`, `tractate`, `ref`, `refs`, `start_segment`, `summary`, `words`, `minutes`,
-  `reviewed`, and from `index.json` the tractate order and totals. It must not depend on anything else.
-- **`list_version` and `published_at` in `index.json`**, which §7 already requires and which are still unset.
+**Each run emails Simon its counts** (new sign-ups, total minutes, stories handed out, released, people paused), so
+anything odd, including a wave of fake sign-ups or a missed week, is visible within a week. A `PAUSE` setting stops
+hand-outs without a deploy.
+
+**Marking learned** is the person's own write to their own row (`doneAt`). Their tick shows at once; the group total
+catches up at the next daily run and is labelled with its time.
+
+### Access rules (`firestore.rules`, in the repo, tested in the emulator)
+
+- `users/{uid}`: readable and writable only by that person. On create: only `createdAt` (must equal the server time),
+  `minutesPerWeek` (whole number 1 to 120), `src` (short, lowercase letters, digits and hyphens),
+  `deleteRequested: false`. On update: only `minutesPerWeek` (0 to 120) and `deleteRequested`. Never `createdAt`,
+  `src` or `pausedAt`.
+- `assignments`: a person can read their own rows and change only `doneAt` on them, to the server time or back to
+  empty. Rows are created only by the script.
+- `runs`, `sent`: script only. `progress/summary`: anyone can read, only the script writes.
+- Nobody can list other people's records. No client deletes.
+- Rules decide shape and ownership; the script decides fairness (the minutes cap, the `src` allowlist, the pause).
+
+**Checked 2026-11-14:** the live database has no rules deployed, is empty, and refuses anonymous reads (HTTP 403 on
+`users`, `assignments`, `meta`, `progress`). So nothing is exposed today; the first rules deployed are the ones above.
+
+### Leaving
+
+- **"Stop my stories"** sets `minutesPerWeek: 0`; open stories are released at the next daily run.
+- **"Delete my data"** sets `deleteRequested`; the next daily run removes the sign-in account and the `users` record
+  and blanks `uid` on that person's rows, so group totals stay true.
+- **Unsubscribing from email** is handled by the email service and stops email only. It is not leaving.
+- **Everyone's personal data is deleted** (accounts and `users` records; rows anonymised) on a fixed date after the
+  yahrzeit, a config value, proposed as six months after.
+
+## 7. A list that changes, and story ids
+
+- A person's place is their **rows**, each holding a story id, not a position. Adding or removing other stories does
+  not touch them (and see §6 rule 4).
+- A row whose story is no longer on the list shows "no longer on the list" and drops off at release. A learned one
+  stays counted as history, not as progress on the current list.
+- Progress is always reported against the current list, with its date.
+- **Ids are `tractate-daf-start-end`, so a boundary change changes the id** and looks like one story removed and one
+  added. To keep that from happening mid-campaign, **the list (ids and order) is frozen at launch** as list v1;
+  `site/data/index.json` carries `list_version` and `published_at`.
+- **Deferred until a v2 list actually exists:** the old-id to new-id overlap map and the one-off migration that
+  rewrites `storyId` on existing rows (match by segment overlap, never an exact key — Lesson 36; ambiguous splits and
+  merges printed for a person to decide). With no stored pointer, that migration is the whole job.
+- Tests for `assign_week` include: a story added early and late in the list, a story removed while someone holds it,
+  a story released and re-offered, and the list changing size mid-round.
+
+## 7a. What the sign-up reads from the story data
+
+The sign-up reads the same files as the reader (`site/data/index.json`, `site/data/<tractate>.json`).
+
+- **Fields it may use:** `id`, `tractate`, `ref`, `refs`, `start_segment`, `summary`, `words`, `reviewed`, and from
+  `index.json` the tractate totals, `list_version` and `published_at`. Nothing else. Not `minutes` (§6 rule 6).
+- **One test** in `tests/test_site_data.py` asserts those fields exist with the right types in every tractate file.
+  No separate schema file: the only other reader is in this repo.
 - **Sizing numbers are read from the data at build time** (§2), never typed in: the list was 1,897 on 2026-11-13 and
   1,864 on another branch a day later.
-- **Room for later:** people, themes and background notes (Simon wants to "add meaning" to stories) are optional
-  fields the sign-up ignores. Not built here.
+- **Room for later:** people, themes and background notes are optional fields the sign-up ignores.
 
-**This step waits.** The session "Jeff's responses and implications" (branch `claude/jeff-responses-analysis-e4238c`,
-not merged on 2026-11-14) is changing these same files: it adds 80 stories and an `included_by` tag, writes 85
-missing summaries, and removes `tier`, `biblical` and `biblical_reason`. The schema is written **after** that
-branch merges, from the shape it leaves. Until then b and c add new files only and do not edit
-`scripts/build_site_data.py`, `site/data/` or `tests/test_site_data.py` (run `python3 scripts/board.py lanes`).
+**The test waits.** The session "Jeff's responses and implications" (branch `claude/jeff-responses-analysis-e4238c`,
+not merged on 2026-11-14) is changing these files: 80 added stories with an `included_by` tag, 85 summaries, and
+`tier`, `biblical` and `biblical_reason` removed. Until it merges, b and c add new files only and do not edit
+`scripts/build_site_data.py`, `site/data/` or `tests/test_site_data.py`; c's tests run on a fixture copy.
 
 ## 8. Backend: decision
 
-The static site cannot hold shared state; it needs sign-in and a small database.
+**Firebase Auth + Firestore on the free Spark plan; the site stays on Vercel; the weekly work is a Python script
+run by a scheduled GitHub Action.** (Revised 2026-11-14. The 2026-11-13 plan used a scheduled Cloud Function, which
+needs the paid Blaze plan; the review showed nothing here needs one.)
 
-| | Firebase Auth + Firestore | Supabase (Postgres + Auth) | Vercel functions + hosted Postgres + Auth.js |
-|---|---|---|---|
-| Google SSO | Built in, one switch | Needs a Google OAuth client set up in GCP, pasted into Supabase | Needs the same OAuth client plus Auth.js code |
-| Free tier | Spark: no card, so it can never charge | Free projects **pause after a week without traffic**: a real risk over 10 months | Free tiers, but three services to keep alive |
-| Code we must own | Static pages + security rules. **No server** | Static pages + row-level-security SQL | A server (API routes), schema, migrations |
-| For a non-engineer owner | Google console Simon already uses; data viewable as a table | One more account | Most moving parts |
-| Data export | `firebase auth:export` (sign-ups) + a small script for claims | SQL / CSV | SQL / CSV |
+**Project: `septimus-stories`** (created 2026-11-08; Firestore `nam5`; Google sign-in on; authorised domain
+`talmud-stories.vercel.app`, a placeholder: add the final domain when it exists; exact hosts only, never a
+`vercel.app` wildcard).
 
-**Decision: Firebase Auth + Firestore, on a NEW Google Cloud project. Site stays on Vercel.**
-**Revised 2026-11-13: v1 now needs the Blaze plan** (pay-as-you-go, card on file), because of the weekly job and the
-weekly email (§8d). Everything below about Spark still holds for the parts that run in the browser.
+Why Firebase and not the alternatives (unchanged from 2026-11-08): Google sign-in is one switch; the free plan needs
+no card so it cannot charge; the site needs no server of its own; Simon already uses the Google console. Supabase's
+free projects pause after a week without traffic; Vercel functions plus a hosted database is three services to keep
+alive.
 
-**Project: `septimus-stories`** (created 2026-11-08; Firestore `nam5`; Google sign-in on; authorised domain `talmud-stories.vercel.app`, a placeholder: add the final domain there when it exists).
-
-**(a) What Spark covered (2026-11-08 analysis; superseded by (d) for the weekly job):**
-- Google sign-in: free on Spark.
-- Firestore: free on Spark up to 50,000 reads, 20,000 writes and 1 GB per day.
-- Security rules and client-side transactions both work on Spark. Assignment (§6) is a client transaction that
-  re-reads each claim doc it writes, and the rules (§6) stop anyone writing a claim that is not theirs or not free.
-  That is safe without a server: the worst a malicious signed-in user can do is claim many free stories under their
-  own account, which a person can see and undo in the console.
-- **Cloud Functions need Blaze** (billing, card). v1 uses none. The later broadcast email does not need them either:
-  export the sign-up emails (`firebase auth:export`) and send one BCC email from Gmail.
-- **The one Spark risk is the daily read quota.** The progress page reads claim docs; at ~3,000 stories, loading
-  every tractate's claims costs up to 3,000 reads. Design for it: overall and per-tractate totals use Firestore
-  `count()` queries (one read per 1,000 docs counted); a tractate's per-story claims load only when someone opens that
-  tractate. Indicated budget at a busy day (100 visits × ~200 reads) ≈ 20,000 reads, within the 50,000. On Spark,
-  exceeding it means reads fail until midnight Pacific; it never costs money. If a launch email is going to hundreds
-  of people at once, switch to Blaze that day with a $5 budget alert (cents at this volume).
+**(a) Free-plan limits.** Spark allows 50,000 reads and 20,000 writes a day. A Monday run for a few hundred people is
+a few thousand writes; reading every assignment row is about 50,000 reads only at the very end of the campaign, so
+the daily refresh reads only what changed since the last run and recounts fully on Mondays. Public pages read
+`progress/summary` only. Exceeding a quota means reads fail until midnight Pacific; it never costs money.
 
 **(b) Hosting: Vercel** (already live; the feedback endpoint already allows its origin). Sign-in uses
 `signInWithPopup` with the default `<project>.firebaseapp.com` auth domain: no proxy, no extra OAuth setup.
@@ -289,35 +333,26 @@ Hosting on Google Cloud instead of Vercel (not proposed; for the record):
 
 If sign-in proves flaky on phones, Firebase Hosting is the move; otherwise Vercel's push-to-deploy wins.
 
-**(c) Data export for Simon:** `firebase auth:export signups.csv --format=csv` (names and emails) and
-`scripts/export_signups.py` (claims and progress → CSV, using his own `gcloud` login). Both run on his machine.
-Firestore's managed export (`gcloud firestore export`) needs Blaze and is not used.
+**(c) Secrets.** Two exist, both stored as GitHub Actions secrets and never in the repo: a service-account key that
+lets the script write to Firestore and read sign-in records, and the email service's API key. The Firebase web config
+in `site/config.js` (including its "API key") is public by design; restrict that key in the Google Cloud console to
+Firebase APIs and the site's addresses.
 
-The Firebase web config (including its "API key") is meant to be public and goes in `site/config.js`; access is
-controlled by the security rules and the authorised-domain list. No secret exists in v1.
+**(d) Email.** A transactional email service (for example Resend, Postmark, Brevo or Amazon SES) with a dedicated
+sending subdomain and its SPF, DKIM and DMARC records. Never "From: …@gmail.com" through a service. Free tiers cover
+a few hundred weekly recipients; past that, typically $15–20 a month. Unsubscribe is the service's own, with the
+standard one-click header and a confirm page (mail scanners open links). The script skips unsubscribed and
+hard-bounced addresses, and writes `sent/<week>_<uid>` before sending.
 
-**Setup is agent-driven, on Simon's machine** (this cloud container has no Google credentials):
-[`firebase/setup.sh`](../../firebase/setup.sh) is idempotent (safe to re-run) and
-[`firebase/LOCAL_CLAUDE_PROMPT.md`](../../firebase/LOCAL_CLAUDE_PROMPT.md) is the prompt a local Claude Code session
-runs. Two steps have no command line and are clicks in the Firebase console (~2 min): enable the Google sign-in
-provider, and add `talmud-stories.vercel.app` to authorised domains.
+**(e) The schedule.** GitHub's scheduler can start late and occasionally skips a run. The script therefore works out
+which campaign week it is from the date, not from how many times it has run, and its daily run does the Monday work
+if Monday's was missed. The count email to Simon is the alarm.
 
-**(d) Weekly job + email: why Blaze, what it costs (estimated 2026-11-13; check current price pages before enabling)**
+**(f) Exports.** `firebase auth:export` (names and emails) and `scripts/export_signups.py` (rows and progress), run
+on Simon's machine. Exports go in a restricted Google Sheet, not email attachments, and are deleted afterwards.
 
-- The weekly assignment and email must run **without anyone's browser open**, so they are a scheduled Cloud Function
-  (Cloud Scheduler → function). Scheduled functions require **Blaze**. Doing assignment server-side is also safer than
-  the old client-transaction design: one writer, no races, simpler rules.
-- **Firebase/Google cost at this scale: about $0–2 a month** (estimated). A few hundred users means a few thousand
-  Firestore reads/writes a week and four job runs a month, well inside Blaze's free allowances; Cloud Scheduler gives
-  3 jobs free.
-- **Email needs a sending service and a domain.** Sending from a personal Gmail account is capped (~500/day) and
-  lands in spam at volume. A transactional email service (e.g. Resend, Postmark, Brevo, Amazon SES) with a verified
-  sending domain (SPF/DKIM DNS records) is the normal way. Cost: free tiers cover roughly a few hundred weekly
-  recipients; past that, typically **$15–20 a month** (SES is cheaper, ~$0.10 per 1,000, but more setup). The API key
-  lives in Google Secret Manager, never in the repo.
-- **Budget alert:** a **$10/month** budget alert on the project (email to Simon at 50% and 100%). Blaze has no hard
-  cap; the alert is the guard.
-- One-click unsubscribe in every email (link sets `emailOptIn: false`); required practice for bulk senders.
+**Setup** stays as in [`firebase/setup.sh`](../../firebase/setup.sh) (idempotent, never links billing) and
+[`firebase/LOCAL_CLAUDE_PROMPT.md`](../../firebase/LOCAL_CLAUDE_PROMPT.md).
 
 ## 9. Build order (one PR each, branch `septimus/signup-*`, titles start `[Septimus]`)
 
@@ -325,12 +360,32 @@ provider, and add `talmud-stories.vercel.app` to authorised domains.
 |---|---|---|
 | ~~a~~ | Word count + reading time in the export | **Done** (#79) |
 | ~~m~~ | Mockups of the five screens | **Done** 2026-11-14 (§3a) |
-| b | Landing page + Google sign-in + `?src=` + minutes-per-week question + "How the stories were chosen" page | Matches mockups 1 and 2 at 390 px: land, sign in, pick 10 min/week; `users/{uid}` has the right fields; rules tested in the Firestore emulator. **Build now**, placeholders for launch date, yahrzeit and community names. New files only (§7a) |
-| c | Weekly job: rollover/release, assignment in order, pool pointer; progress summary | Emulator test: 3 fake users, 3 simulated weeks: consecutive stories, budgets met, a missed story rolls over 2 weeks then is re-assigned to someone else; re-running a week changes nothing; the §7 add/remove cases pass. **Build now** on cycles and 75 wpm, both config values. Tested in the emulator only: **running it for real waits for** Blaze (Simon) and Daniel's coverage answer |
-| s | Data contract: schema file + test, `list_version` / `published_at` (§7a) | Every tractate file validates; the sign-up reads only schema fields. **Waits for** the Jeff-responses branch to merge |
-| d | My stories + mark as learned + progress page | Matches mockups 3 and 4; marking learned shows on the progress page; counts per tractate add up. **Waits for** c |
-| e | Weekly email (service + domain + unsubscribe) | Matches mockup 5; a test send to Simon renders on a phone; unsubscribe link works. **Waits for** sender, wording (Daniel) and Blaze (Simon) |
+| b | Landing page, Google sign-in, `?src=`, minutes question, "You're in" screen, "How the stories were chosen" and "Your data" pages, `firestore.rules` | Matches mockups 1 and 2 at 390 px; the b checklist below passes; rules tested in the Firestore emulator. **Build now**, placeholders for launch date, yahrzeit and community names. New files only (§7a) |
+| c | `assign_week` and `scripts/septimus_weekly.py` (hand-out, release, pause, progress summary, counts email to Simon), the scheduled Action | pytest on a fixture: 3 fake people over 4 simulated weeks get consecutive stories within budget; a missed story is released at W+3 and goes to someone else; a re-run changes nothing; the §7 list-change cases pass; a long story is handed out and labelled. **Build now** on rounds and 75 wpm. **Running it against the live database waits for** Daniel's "finishing" answer and a launch date |
+| s | The field test and `list_version` / `published_at` (§7a) | Every tractate file passes. **Waits for** the Jeff-responses branch to merge |
+| d | My stories, mark as learned, stop / delete my data, progress page | Matches mockups 3 and 4; one "Mark as learned" button on a story that is yours, which also sets the old per-device tick; "Back to my stories" and "Next story"; "Saved" only after the write is confirmed. **Waits for** c |
+| e | Weekly email (service, subdomain, unsubscribe, link that marks learned without signing in) | Matches mockup 5; a test send to Simon renders on a phone; a re-run sends nothing twice. **Waits for** sender and wording (Daniel) |
 | f | About Joe Septimus page | Linked from the landing page; placeholder clearly marked for Daniel. **Buildable now** |
+
+**b checklist** (from the review):
+- The `users` record is written at "Join", not at sign-in; abandoning the question shows it again next visit.
+- After "Join": a "You're in" screen with the minutes, the start date ("Your first stories arrive Monday <date>" once
+  launched), Change, and Browse the stories.
+- A returning signed-in person sees "Signed in, 10 min a week" and a link, not the sign-in button.
+- The landing page takes `/`; the tractate list moves to `#/browse`; existing `#/t/` and `#/s/` links keep working.
+- "[N] people have joined" comes from `progress/summary` and is hidden until that exists.
+- `?src=` is kept in the URL and in the browser's storage so it survives leaving an in-app browser; checked against
+  an allowlist; never displayed raw.
+- In-app browsers (WhatsApp, Instagram, Gmail): detected; a large "Copy link" button and one picture of "Open in
+  browser". No tricks to force it open.
+- "Other" minutes: a whole number, 1 to 120. The minutes screen shows the email address and "Not you? Switch account".
+- Under the sign-in button: "No Google account? Email [contact]". Those people are added by hand.
+- The sign-in popup opens directly from the tap. Vercel preview sites cannot sign in; accepted.
+- Names from Google and `src` are inserted as text, never as HTML (`site/app.js` builds pages with `innerHTML`).
+- "Your data", linked before sign-in: what is stored (Google name and email, the community link, which stories you
+  read and when), who sees it (Simon; the family sees community counts and names), that nothing about a person is
+  public, how to stop or delete, 13 or older.
+- Aa control on every new page; targets at least 44 px; the minutes choice is a labelled radio group.
 
 **Order (2026-11-14):** b, then c, in one session; s as soon as the Jeff-responses branch merges; d after c and s;
 e and f when Daniel answers. b and c are each compared with their mockup in a real browser before being called done.
@@ -342,21 +397,25 @@ Each verified in a real browser at phone width (Playwright, Chromium) before it 
 
 | Risk | Handling |
 |---|---|
-| Heavy oversubscription makes "finish Shas" meaningless | Coverage definition (§12, question 1 for Daniel); the cycles option turns it into repeated siyumim |
-| People commit and vanish | 2-week grace, then release; released stories are re-assigned first |
-| Emails land in spam | Verified sending domain, low volume, plain content, unsubscribe link |
-| Blaze bills without a cap | $10/month budget alert; costs estimated at a few dollars |
-| A later list (v2) breaks someone's progress | Overlap map + migration (§7); nothing is ever deleted |
-| 34 of 37 tractates are not expert-reviewed | Labelled "not yet reviewed" on landing, list and story pages |
-| Sign-in blocked in WhatsApp/Instagram in-app browsers | Detect and say "open in Safari/Chrome" (§8b) |
+| Heavy oversubscription makes "finish Shas" meaningless | Rounds: each completed pass is a siyum (§6); Daniel asked 2026-11-13 |
+| People commit and vanish | Released at W+3; paused after two rounds of releases with nothing learned (§6) |
+| A story nobody reads blocks a siyum | "K stories still open in round N" on the progress page |
+| GitHub's scheduler skips Monday | The daily run does Monday's work if it was missed; the counts email is the alarm (§8e) |
+| Someone games the hand-out or the email | Rules bound every field; email comes from the sign-in system; the script caps minutes (§6) |
+| Emails land in spam | Dedicated sending subdomain with SPF/DKIM/DMARC, low volume, plain content, one-click unsubscribe |
+| A boundary change breaks someone's place | List frozen at launch; migration written when a v2 exists (§7) |
+| 34 of 37 tractates are not expert-reviewed | Labelled "not yet reviewed" on the list and story pages and on "How the stories were chosen" |
+| Sign-in blocked in WhatsApp/Instagram in-app browsers | Detect, "Copy link" and one picture (§9 b checklist) |
+| Personal data kept too long, or no way to leave | Stop, delete, and a fixed deletion date after the yahrzeit (§6) |
 | Yahrzeit date unconfirmed | Config value; shown once Daniel confirms |
 
-## 11. Open questions for Simon (asked one per message, in this order)
+## 11. Open questions for Simon
 
-1. ~~Reading pace~~ **75 wpm** (Simon, 2026-11-13; in the brief sent to Daniel).
-2. OK to put a card on the `septimus-stories` project (Blaze) with a $10/month alert, for the weekly job and email?
+None blocking b or c. Decided 2026-11-14 (plan review): script instead of a Cloud Function, so **no paid plan and no
+card**; order starts at Berakhot; long stories handed out anyway; stop / delete / deletion date; a "Your data" note
+before sign-in; pause the quiet; a contact line for people without Google; hand-outs stop after the yahrzeit.
 
-Everything else is in §12, for Daniel.
+Still to choose before step e: the email service and the sending domain.
 
 ## 12. Questions for Daniel (plain English, ready to paste)
 

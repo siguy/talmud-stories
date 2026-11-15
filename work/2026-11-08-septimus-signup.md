@@ -4,7 +4,7 @@ capability: [publication]
 tractate: []
 blocked_by: []
 awaiting: []
-writes: [site/, scripts/build_site_data.py, tests/test_site_data.py, docs/technical/septimus-signup-plan.md, firebase/, functions/]
+writes: [site/, scripts/build_site_data.py, tests/test_site_data.py, docs/technical/septimus-signup-plan.md, firebase/, firestore.rules, firebase.json, scripts/septimus_weekly.py, .github/workflows/]
 finding:
 superseded_by:
 ---
@@ -27,10 +27,14 @@ the pool; when commitments exceed the list, stories are learned more than once.
 
 PRs b–f in plan §9: landing + sign-in + commitment; weekly job (assignment, rollover, cycles); My stories + progress;
 weekly email; Joe Septimus page. (a, word counts, done in #79.) Backend: Firebase Auth + Firestore on
-`septimus-stories`, Blaze for the scheduled job and email (plan §8d).
+`septimus-stories` on the free plan; the weekly hand-out and email are a scheduled Python script (plan §6, §8).
 
 **Update 2026-11-14:** the five screens are mocked up and settled (plan §3a, `docs/technical/signup-mockups/`). Build
 b and c now on the proposed defaults; the data contract (plan §7a) waits for the Jeff-responses branch to merge.
+
+**Plan review 2026-11-14** (`docs/technical/signup-plan-review-2026-11-14.md`): the weekly work is a Python script
+on a scheduled GitHub Action, not a Cloud Function (no paid plan); no stored pool pointer; access rules tightened;
+stop / delete paths added. Plan §5–§11 rewritten accordingly.
 
 ## How you know it worked
 

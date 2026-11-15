@@ -2,7 +2,11 @@
 
 Four reviewers (simplicity, architecture, security and privacy, user flows) read
 [`septimus-signup-plan.md`](septimus-signup-plan.md) as of commit `b62f25d`. This is the merged list. Nothing here
-is applied to the plan yet; "Decision" items wait for Simon.
+was applied when this was written.
+
+**Outcome, 2026-11-14:** Simon accepted all eight recommended defaults in section B. Sections A to C are now in the
+plan (§4 to §11); section D is carried in the plan's §9 rows for steps d and e. The live database was checked the same
+day: no rules deployed, empty, anonymous reads refused.
 
 ## A. Two design changes that remove most of the other findings
 
