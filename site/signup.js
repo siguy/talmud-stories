@@ -38,19 +38,23 @@
   }
   function show(nodes) { app.textContent = ""; nodes.forEach(function (n) { app.appendChild(n); }); }
   function link(text, href, cls) { return el("a", { href: href, text: text, class: cls }); }
-  function back() { return el("p", {}, [link("← Back", "#/", "su-keep")]); }   // su-keep: this "#/" is the landing page
+  function back() { return el("p", {}, [link("← Back", "#/", "su-keep su-back")]); }   // su-keep: this "#/" is the landing page
+  // Automatic redirects replace the current history entry, so Back does not land on a page that bounces straight on again.
+  function redirect(hash) { location.replace(location.pathname + location.search + hash); }
 
   // ---- ?src=: the community link. Kept in storage so it survives leaving an in-app browser --
   var SRC_KEY = "septimus-src";
   function allowedSrc(v) { return typeof v === "string" && v && (cfg().communities || []).indexOf(v) !== -1; }
   // Called on the first route, once config.js has loaded, so the allowlist is known before anything is stored.
-  function rememberSrc() {
+  function urlSrc() {
     var m = /[?&]src=([^&#]*)/.exec(location.search), v;
-    if (!m) return;
-    try { v = decodeURIComponent(m[1]).toLowerCase(); } catch (e) { return; }
-    if (allowedSrc(v)) save(SRC_KEY, v);
+    if (!m) return "";
+    try { v = decodeURIComponent(m[1]).toLowerCase(); } catch (e) { return ""; }
+    return allowedSrc(v) ? v : "";
   }
-  function savedSrc() { var v = load(SRC_KEY, ""); return allowedSrc(v) ? v : ""; }
+  function rememberSrc() { var v = urlSrc(); if (v) save(SRC_KEY, v); }
+  // Storage can be blocked (private mode, in-app browsers), so fall back to the link we were opened with.
+  function savedSrc() { var v = load(SRC_KEY, ""); return allowedSrc(v) ? v : urlSrc(); }
 
   // ---- dates and numbers ----------------------------------------------------------------------
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -62,6 +66,8 @@
   function afterYahrzeit() { var d = parseISO(cfg().yahrzeit); return !!d && today() > d; }
   function nextMonday() { var d = today(); d.setDate(d.getDate() + (((1 - d.getDay() + 7) % 7) || 7)); return d; }
   function startLine() {
+    var y = parseISO(cfg().yahrzeit);
+    if (hasLaunched() && y && nextMonday() > y) return "The weekly stories have ended.";
     return hasLaunched() ? "Your first stories arrive Monday " + fmtDate(nextMonday()) + "."
       : "Everyone starts together on " + launchText() + ". Your first stories arrive by email that week.";
   }
@@ -88,6 +94,10 @@
       .catch(function () { if (t === token) show([el("p", { class: "notice", text: "Could not load the stories. Please check your connection and reload." })]); });
   }
 
+  function sdkFailed(t) {
+    if (t === token) show([el("p", { "class": "notice", text: "Could not load sign-in. Please check your connection and reload." })]);
+  }
+
   // ---- Firebase --------------------------------------------------------------------------------
   function emulatorOn() {
     return /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]emulator=1(&|$)/.test(location.search);
@@ -103,22 +113,29 @@
       if (emu) conf.projectId = "demo-septimus";
       var a = m[1], f = m[2], fbApp = m[0].initializeApp(conf), auth = a.getAuth(fbApp), db = f.getFirestore(fbApp);
       if (emu) { a.connectAuthEmulator(auth, "http://localhost:9099"); f.connectFirestoreEmulator(db, "localhost", 8080); }
-      S.sdk = { auth: auth, db: db, a: a, f: f, provider: new a.GoogleAuthProvider() };
+      var provider = new a.GoogleAuthProvider();
+      provider.setCustomParameters({ prompt: "select_account" });   // so "Switch account" shows Google's account chooser
+      S.sdk = { auth: auth, db: db, a: a, f: f, provider: provider };
       if (emu) window.SeptimusSignup._test = { auth: auth, db: db, sdk: { app: m[0], auth: a, firestore: f } };
-      var seq = 0;
       a.onAuthStateChanged(auth, function (user) {
-        var mine = ++seq;
+        ++seq;   // an answer still on its way for the previous person is now stale
         S.user = user; S.record = null; S.recordFailed = false; S.settled = !user;
         notify();
-        if (!user) return;
-        f.getDoc(f.doc(db, "users", user.uid)).then(function (snap) { if (mine === seq) S.record = snap.exists() ? snap.data() : null; })
-          .catch(function () { if (mine === seq) S.recordFailed = true; })
-          .then(function () { if (mine === seq) { S.settled = true; notify(); } });
+        if (user) loadRecord(user);
       });
       return S.sdk;
     });
     sdkP.catch(function () { sdkP = null; });   // let the next visit try again
     return sdkP;
+  }
+  // Read users/{uid}. Used when someone signs in and by "Try again". A late answer for an earlier call is ignored.
+  var seq = 0;
+  function loadRecord(user) {
+    var mine = ++seq, f = S.sdk.f;
+    S.record = null; S.recordFailed = false; S.settled = false;
+    return f.getDoc(f.doc(S.sdk.db, "users", user.uid)).then(function (snap) { if (mine === seq) S.record = snap.exists() ? snap.data() : null; })
+      .catch(function () { if (mine === seq) S.recordFailed = true; })
+      .then(function () { if (mine === seq) { S.settled = true; notify(); } });
   }
   function notify() { if (S.listener) S.listener(); }
 
@@ -188,6 +205,11 @@
         if (S.user && S.record) {
           var m = S.record.minutesPerWeek;
           kids.push(el("p", { "class": "su-signedin" }, [m === 0 ? "Signed in. Your stories are stopped." : "Signed in, " + m + " min a week", m === 0 ? null : " ", link("Change", "#/join")]));
+        } else if (S.user && S.recordFailed) {
+          // Signed in but the record could not be read: never offer Google sign-in, and never the Join form.
+          var retry = el("button", { type: "button", "class": "su-linkbtn", text: "Try again" });
+          retry.onclick = function () { loadRecord(S.user); drawArea(); };
+          kids.push(el("p", { "class": "su-error", role: "alert" }, ["Could not load your sign-up. ", retry]));
         } else if (inAppBrowser()) {
           kids.push(inAppNotice());
         } else {
@@ -209,14 +231,13 @@
           if (errorLine) kids.push(el("p", { "class": "su-error", role: "alert", text: errorLine }));
           kids.push(el("p", { "class": "su-muted su-small su-center", text: "We email you your stories each week." }));
         }
-        if (S.recordFailed && !errorLine) kids.push(el("p", { "class": "su-error", role: "alert", text: "Could not sign in. Check your connection and try again." }));
         if (!(S.user && S.record)) kids.push(el("p", { "class": "su-muted su-small su-center" }, ["No Google account? Email ", contactNode()]));
         area.textContent = "";
         kids.forEach(function (k) { area.appendChild(k); });
       }
       S.listener = function () {
         if (t !== token) return;
-        if (S.user && S.settled && !S.record && !S.recordFailed) { location.hash = "#/join"; return; }   // signed in but never answered the question
+        if (S.user && S.settled && !S.record && !S.recordFailed) { redirect("#/join"); return; }   // signed in but never answered the question
         drawArea();
       };
       sdkP && sdkP.catch(function () { errorLine = "Could not sign in. Check your connection and try again."; drawArea(); });
@@ -238,14 +259,18 @@
   // ---- minutes question -----------------------------------------------------------------------
   var PRESETS = [5, 10, 15, 30];
   function join(t) {
-    loadSdk();
-    var built = false;
+    if (afterYahrzeit()) { redirect("#/"); return; }
+    show([el("p", { "class": "su-muted", text: "Loading…" })]);
+    loadSdk().catch(function () { sdkFailed(t); });
+    var built = false, uid = null;
     S.listener = function () {
       if (t !== token) return;
+      // The screen was built for one person; if the account changes under it, do not leave their form up.
+      if (built && (!S.user || S.user.uid !== uid)) { redirect("#/"); return; }
       if (!S.settled) return;
-      if (!S.user || S.recordFailed) { location.hash = "#/"; return; }
+      if (!S.user || S.recordFailed) { redirect("#/"); return; }   // a failed read must never reach the Join form
       if (built) return;
-      built = true;
+      built = true; uid = S.user.uid;
       withIndex(t, function (idx, st) { drawJoin(t, st); });
     };
     S.listener();
@@ -294,7 +319,7 @@
         : f.setDoc(ref, { createdAt: f.serverTimestamp(), minutesPerWeek: m, src: savedSrc(), deleteRequested: false });
       write.then(function () {
         S.record = Object.assign({}, S.record || {}, { minutesPerWeek: m });
-        location.hash = "#/joined";
+        if (t === token) location.hash = "#/joined";   // only if they are still on this screen
       }).catch(function () {
         errLine.textContent = "Could not save. Check your connection and try again."; errLine.hidden = false;
         joinBtn.disabled = false; joinBtn.textContent = has ? "Save" : "Join";
@@ -315,11 +340,13 @@
 
   // ---- you're in ------------------------------------------------------------------------------
   function joined(t) {
-    loadSdk();
+    if (afterYahrzeit()) { redirect("#/"); return; }
+    show([el("p", { "class": "su-muted", text: "Loading…" })]);
+    loadSdk().catch(function () { sdkFailed(t); });
     var drawn = false;
     S.listener = function () {
       if (t !== token || !S.settled || drawn) return;
-      if (!S.user || !S.record) { location.hash = "#/"; return; }
+      if (!S.user || !S.record) { redirect("#/"); return; }
       drawn = true;
       var m = S.record.minutesPerWeek;
       show([
@@ -353,7 +380,7 @@
       el("h1", { text: "Your data" }),
       el("ul", { "class": "su-list" }, [
         el("li", { text: "What we store: your Google name and email address, the link you joined from, how many minutes a week you chose, and which stories you were given and when you marked them learned." }),
-        el("li", { text: "Who sees it: Simon Brief, who runs the site. The Septimus family sees how many people joined from each community, and names. Nobody sees your reading record but you." }),
+        el("li", { text: "Who sees it: Simon Brief, who runs the site. The Septimus family sees how many people joined from each community, and names. Only you and Simon see which stories you read." }),
         el("li", { text: "Nothing about you is shown publicly." }),
         el("li", {}, ["Stopping: you can stop your stories or delete your data at any time. Until those buttons are on the site, email ", contactNode(), "."]),
         el("li", { text: "Everyone's personal data is deleted six months after the yahrzeit." }),

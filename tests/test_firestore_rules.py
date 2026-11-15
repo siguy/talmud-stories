@@ -1,7 +1,8 @@
 """Tests for firestore.rules, run against the local Firestore emulator.
 
-Needs `firebase` (firebase-tools) and `java` on PATH. If either is missing, or
-port 8080 is already taken, the whole module is skipped with a reason.
+Needs `firebase` (firebase-tools) and a working `java` on PATH. If either is missing, or
+port 8080 is already taken, the whole module is skipped with a reason (or fails, when
+REQUIRE_RULES_TESTS=1 is set).
 
 Conventions (checked against the emulator):
   signed-in person   Authorization: Bearer <unsigned JWT with sub = uid>
@@ -36,12 +37,29 @@ def _port_open(port=8080):
         return s.connect_ex(("127.0.0.1", port)) == 0
 
 
+def _java_works():
+    """macOS ships a /usr/bin/java stub that exists but does not run, so run it."""
+    try:
+        return subprocess.run(["java", "-version"], capture_output=True, timeout=10).returncode == 0
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+
+
+def _skip(reason):
+    """Skip, unless REQUIRE_RULES_TESTS=1 (CI): then not testing the rules is a failure."""
+    if os.environ.get("REQUIRE_RULES_TESTS") == "1":
+        pytest.fail("REQUIRE_RULES_TESTS=1 but the rules tests cannot run: " + reason)
+    pytest.skip(reason)
+
+
 @pytest.fixture(scope="module", autouse=True)
 def emulator():
-    if not shutil.which("firebase") or not shutil.which("java"):
-        pytest.skip("firebase CLI and java are needed to run the Firestore emulator")
+    if not shutil.which("firebase"):
+        _skip("firebase CLI is needed to run the Firestore emulator")
+    if not _java_works():
+        _skip("no working Java runtime: the Firestore emulator needs one (brew install openjdk)")
     if _port_open(8080):
-        pytest.skip("port 8080 is already in use by something else")
+        _skip("port 8080 is already in use by something else")
     proc = subprocess.Popen(
         ["firebase", "emulators:start", "--only", "firestore", "--project", PROJECT],
         cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
@@ -51,12 +69,12 @@ def emulator():
         deadline = time.time() + 90
         while time.time() < deadline:
             if proc.poll() is not None:
-                pytest.skip("firebase emulator exited during start-up")
+                _skip("firebase emulator exited during start-up")
             if _port_open(8080):
                 break
             time.sleep(0.5)
         else:
-            pytest.skip("firebase emulator did not start within 90 seconds")
+            _skip("firebase emulator did not start within 90 seconds")
         yield
     finally:
         try:
@@ -303,6 +321,17 @@ def test_user_owner_updates_minutes_allowed(minutes):
 def test_user_owner_updates_minutes_to_121_denied():
     seed_user("alice")
     assert denied(update_user("alice", "alice", {"minutesPerWeek": 121}))
+
+
+@pytest.mark.parametrize("minutes", [-1, 10.5, "10"])
+def test_user_owner_updates_minutes_bad_value_denied(minutes):
+    seed_user("alice")
+    assert denied(update_user("alice", "alice", {"minutesPerWeek": minutes}))
+
+
+def test_user_owner_sets_delete_requested_non_bool_denied():
+    seed_user("alice")
+    assert denied(update_user("alice", "alice", {"deleteRequested": "yes"}))
 
 
 def test_user_owner_sets_delete_requested_allowed():

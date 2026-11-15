@@ -19,8 +19,6 @@ service cloud.firestore {
       allow create: if request.auth != null && request.auth.uid == uid
         && request.resource.data.keys().hasOnly(
              ['createdAt', 'minutesPerWeek', 'src', 'deleteRequested'])
-        && request.resource.data.keys().hasAll(
-             ['createdAt', 'minutesPerWeek', 'src', 'deleteRequested'])
         && request.resource.data.createdAt == request.time
         && request.resource.data.minutesPerWeek is int
         && request.resource.data.minutesPerWeek >= 1

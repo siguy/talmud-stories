@@ -83,6 +83,30 @@ c, on a new branch `septimus/signup-b` cut from `septimus/signup-mockups` (which
 Jeff-responses branch to merge; `septimus/daniel-brief` has one local commit moving the sent files, not pushed at
 Simon's request.
 
+## Step b built (2026-11-15)
+
+Branch `septimus/signup-b`. New: `site/signup.js`, `site/signup.css`, `firestore.rules`, `firebase.json`,
+`tests/test_firestore_rules.py`; one-line hooks in `site/app.js` and `site/index.html`; a `signup` block in
+`site/config.js`. Review and outcomes: `docs/technical/signup-b-review-2026-11-15.md`.
+
+- **Verified** at phone width against the local emulators (fake account): land, sign in, choose minutes, Join,
+  "You're in", return visit, Save, sign out; the record holds exactly the four planned fields with `src`; the rules
+  refuse reading another record and changing `src`. 49 rules tests pass. The reader still works at `#/browse`.
+- **Not verified:** a real Google account. It cannot work until `firestore.rules` is deployed to `septimus-stories`
+  (the live database refuses every read, so the page says "Could not load your sign-up."). Deploying is Simon's call:
+  `firebase deploy --only firestore:rules --project septimus-stories`. Then Simon signs in once on the site.
+- **Rules tests need a real Java** (`brew install openjdk`); without it they skip and say so.
+  `REQUIRE_RULES_TESTS=1` makes a skip a failure.
+- **To test locally:** `firebase emulators:start --only auth,firestore --project demo-septimus`, serve the repo root,
+  open `/site/?emulator=1`. `?inapp=1` shows the in-app-browser state. Both switches work on localhost only.
+- **After the Jeff-responses branch merges:** change the two `#/` links in `site/app.js` to `#/browse` and delete the
+  click listener marked `TODO(signup)` in `signup.js`; bump `config.js?v=` in `index.html`. That branch and this one
+  both edited the plan document, so expect one conflict there (site files merge cleanly, tested).
+- **Placeholders awaiting Daniel:** `launchDate`, `yahrzeit`, `contactEmail`, `communities` in `site/config.js`; the
+  About Joe Septimus page text.
+- Screens built without a mockup, in the reader's style, because the b checklist listed them: "You're in",
+  "How the stories were chosen", "Your data", About (placeholder), the in-app-browser notice. Show Simon.
+
 ## How you know it worked
 
 - At 390 px in a real browser: land, sign in, commit 10 min/week; the account is recorded with its `?src=`.
