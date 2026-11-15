@@ -40,8 +40,15 @@ next daily run retries; a timeout or server error keeps it, so that email is nev
 Repository variables: `SEPTIMUS_EMAIL_FROM`, `SEPTIMUS_SITE_URL`, `SEPTIMUS_SITE_URL_STAGING`.
 Repository secret: `SEPTIMUS_COUNTS_TO` (Simon's address).
 Then run the workflow by hand with "staging" and "send_email" ticked and "dry_run" unticked: on staging only the
-counts address can be emailed. Not yet done: no email has been sent through Resend from this code, and the new
-`Store` methods have not been run against the Firestore emulator.
+counts address can be emailed. (GitHub only offers "Run workflow" once the workflow file is on `main`.)
+
+Set on 2026-11-15: `SEPTIMUS_EMAIL_FROM`, `SEPTIMUS_SITE_URL_STAGING`, `SEPTIMUS_COUNTS_TO`. Still to set: the
+live `SEPTIMUS_SITE_URL`.
+
+**Test send, 2026-11-15:** `python scripts/septimus_email.py --test-send` ran once in a GitHub Action on a
+throwaway branch (since deleted) and Resend reported the sample weekly email as delivered to Simon. Not yet
+done: Simon looking at it on a phone, a full staging run of the job with email on, and running the new `Store`
+methods against the Firestore emulator.
 
 Resend's free plan stops at 100 emails a day. A Sunday with more people than that needs the paid plan; if the
 limit is hit, the rest are sent by the next daily run.
