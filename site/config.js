@@ -21,7 +21,6 @@ window.SEPTIMUS_CONFIG = window.SEPTIMUS_CONFIG || { feedbackEndpoint: "https://
     yahrzeitLabel: "8 Elul",
     maxMinutes: 120,
     contactEmail: "",           // shown under the sign-in button for people without a Google account. Empty = placeholder.
-    communities: ["hadar", "dn", "kesher"],   // allowed ?src= values; placeholder list until Daniel confirms
-    sdkVersion: "13.3.0"        // Firebase web SDK, loaded from gstatic.com on the sign-up pages only
+    communities: ["hadar", "dn", "kesher"]    // allowed ?src= values; placeholder list until Daniel confirms
   }
 };

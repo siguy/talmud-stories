@@ -92,9 +92,12 @@
   function emulatorOn() {
     return /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]emulator=1(&|$)/.test(location.search);
   }
+  // Pinned here, not in config.js: the calls below are written for this version, and a browser holding an
+  // older cached config.js must still load the right files.
+  var SDK_VERSION = "13.3.0";
   function loadSdk() {
     if (sdkP) return sdkP;
-    var c = window.SEPTIMUS_CONFIG || {}, base = "https://www.gstatic.com/firebasejs/" + cfg().sdkVersion + "/firebase-";
+    var c = window.SEPTIMUS_CONFIG || {}, base = "https://www.gstatic.com/firebasejs/" + SDK_VERSION + "/firebase-";
     sdkP = Promise.all([import(base + "app.js"), import(base + "auth.js"), import(base + "firestore.js")]).then(function (m) {
       var emu = emulatorOn(), conf = Object.assign({}, c.firebase);
       if (emu) conf.projectId = "demo-septimus";
