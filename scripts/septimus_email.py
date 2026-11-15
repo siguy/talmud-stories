@@ -411,18 +411,36 @@ def send_counts_email(mailer, counts, today):
 # ---------------------------------------------------------------- preview
 
 def main(argv=None):
-    """Write the weekly email as an HTML file to look at in a browser. Sends nothing.
-    Usage: python3 scripts/septimus_email.py --preview /tmp/weekly.html"""
+    """Look at the weekly email without running the job.
+      --preview FILE   write it as an HTML file to open in a browser; sends nothing
+      --test-send      send that same sample email, once, to SEPTIMUS_COUNTS_TO (needs the email settings)"""
     import argparse
-    ap = argparse.ArgumentParser(description="Septimus emails: write a preview of the weekly email. Sends nothing.")
-    ap.add_argument("--preview", required=True, help="file to write the HTML to")
+    ap = argparse.ArgumentParser(description="Septimus emails: preview the weekly email, or send one sample.")
+    ap.add_argument("--preview", help="file to write the HTML to; sends nothing")
+    ap.add_argument("--test-send", action="store_true", help="send one sample email to SEPTIMUS_COUNTS_TO")
     ap.add_argument("--data-dir", default=str(Path(__file__).resolve().parent.parent / "site" / "data"))
     ap.add_argument("--site-url", default=os.environ.get("SEPTIMUS_SITE_URL", "https://example.invalid"))
     args = ap.parse_args(argv)
     details = load_story_details(args.data_dir)
     stories = [{**d, "id": sid} for sid, d in list(details.items())[:3]]
-    _subject, html_body, _text = render_weekly("Dana", 3, stories, 1, 412, round(len(details) / 100) * 100,
-                                               args.site_url.rstrip("/"), 75)
+    total = round(len(details) / 100) * 100
+    if args.test_send:
+        settings, problem = Settings.from_env()
+        if settings is None or not settings.counts_to:
+            print("not sent: " + (problem or "RESEND_API_KEY and SEPTIMUS_COUNTS_TO must both be set"))
+            return 1
+        subject, html_body, text = render_weekly("Simon", 1, stories, 1, 412, total, settings.site_url, 75)
+        try:
+            Mailer(settings).send(settings.counts_to, "[TEST] " + subject, html_body, text,
+                                  key=f"septimus-test-{int(time.time())}")
+        except SendError as err:
+            print(f"not sent: {err}")                          # the kind of failure only, never an address
+            return 1
+        print("test email sent to the counts address")
+        return 0
+    if not args.preview:
+        ap.error("give --preview FILE or --test-send")
+    _subject, html_body, _text = render_weekly("Dana", 3, stories, 1, 412, total, args.site_url.rstrip("/"), 75)
     Path(args.preview).write_text(html_body)
     print(f"wrote {args.preview}")
     return 0

@@ -335,3 +335,16 @@ def test_the_real_post_builds_the_request_resend_documents(monkeypatch):
     assert seen["headers"]["Authorization"] == "Bearer re_test"
     assert seen["headers"]["Idempotency-key"] == "septimus-1_a" and seen["headers"]["User-agent"]
     assert b'"to": ["a@mail.example"]' in seen["body"] and b'"from"' in seen["body"]
+
+
+def test_test_send_goes_only_to_the_counts_address_and_prints_no_address(monkeypatch, capsys):
+    sent = []
+    monkeypatch.setattr(E.Mailer, "send", lambda self, to, subject, html_body, text, key: sent.append((to, subject)))
+    for name, value in (("RESEND_API_KEY", "re_x"), ("SEPTIMUS_EMAIL_FROM", "A <a@mail.example>"),
+                        ("SEPTIMUS_SITE_URL", SITE), ("SEPTIMUS_COUNTS_TO", "simon@mail.example")):
+        monkeypatch.setenv(name, value)
+    assert E.main(["--test-send"]) == 0
+    assert sent == [("simon@mail.example", "[TEST] Your stories this week (week 1)")]
+    assert "mail.example" not in capsys.readouterr().out
+    monkeypatch.delenv("SEPTIMUS_COUNTS_TO")
+    assert E.main(["--test-send"]) == 1 and len(sent) == 1
