@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "An exchange between a heretic and R. Abbahu; only speech, but with conflict (the heretic takes it as a curse)."},
+"02": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A list of brief reports of what sages did to show anger, cited as evidence; nothing follows from any of them."},
+"03": {"verdict": "not", "rules": ["R-B4"], "segments": [], "reason": "Legal discussion of the Rabban Gamliel ship incident told elsewhere; the Gemara analyzes it, it does not narrate it."},
+"04": {"verdict": "story", "rules": ["R-C0"], "segments": [3], "reason": "Rav Pappa came to the synagogue, decreed a fast, rain fell, and they recited hallel before eating: several narrated events and a change, though cited as an objection."},
+"05": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "R. Yosei's visit to Tzippori only frames two rulings; a setting followed by a ruling is not enough for a story."},
+"06": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "Nehunya testified and the court accepted his testimony in part: a testimony and a ruling, with no other action or change."},
+"07": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabbi's instruction not to be eulogized in small towns is a single statement cited for legal analysis; speech without conflict."},
+"08": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "A bare report that the Sages dissolved Rav Zutra's vow, cited as precedent; no further action or change."},
+"09": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "Hezekiah intercalating the year and praying for mercy is a biblical episode retold, outside the rabbinic scope."},
+"10": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "Disciples ask and R. Elazar b. Shammua answers with his lifelong practices; question and answer with no conflict or event."},
+"11": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A passing mention that R. Elazar saw R. Yohanan in a dream, used to vouch for an explanation; the rest is exegesis."},
+"12": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2, 3], "reason": "A polemical exchange between a heretic and R. Hanina/R. Oshaya; entirely speech, but with clear conflict."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Shmuel asking seafarers to identify a substance is a question and answer used for a definition; no story."},
+"14": {"verdict": "not", "rules": ["R-C2", "R-C5"], "segments": [], "reason": "Three sages sit and each teaches something new; teaching without conflict, plus Rava's habitual practice that leads nowhere."},
+"15": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "A one-line report that Ravina ruled in a case; a ruling with no narrated incident."},
+"16": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "The rabbis' claim on Rava angers him and he rebukes them; mainly speech, but with conflict and an emotional reaction."},
+"17": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [4, 5], "reason": "R. Asi had forgotten his teaching, R. Elazar reminds him, R. Asi falls silent and is challenged; mainly speech with some conflict, embedded in legal analysis."},
+"18": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A question asked while walking and an exegetical answer, then a parable; a setting plus question and answer is not a story."},
+"19": {"verdict": "not", "rules": ["R-C5", "R-C0"], "segments": [], "reason": "Rav Hisda saw palms among vines and ordered them uprooted; an order with a reason, and nothing narrated after it."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A habitual report that Mar bar Ravina's mother guarded his wheat; a practice that leads nowhere."}
+}

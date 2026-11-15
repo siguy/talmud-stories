@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "An eyewitness report of what R. Yohanan did, cited as evidence in a legal argument; nothing follows from it."},
+"02": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "A visit framing a halakhic challenge and answer; the setting only frames the question (Shabbat 147a shape) and the exchange is ordinary scholarly discourse."},
+"03": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "R. Yehuda raises a difficulty before R. Akiva, who retracts his teaching; speech and a quasi-speech act within normal scholarly discourse, no event."},
+"04": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of the habitual practice of R. Ami and R. Asi, cited as evidence, leading nowhere."},
+"05": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A polite question and a poetic answer about old age; speech only, without conflict or event."},
+"06": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A halakhic question-and-answer exchange while walking in the market; the setting only frames it."},
+"07": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report that scribes were asked and knew the law, cited as evidence; no narrative development."},
+"08": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A polemical encounter between the emperor and Rabban Gamliel, mainly dialogue with conflict, with the emperor's groaning as a minor event."},
+"09": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "Real events (purchase of the loft, repossession by the creditor) followed by a case before Shmuel and his ruling plus a challenge; weak continuation after the ruling."},
+"10": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4, 5], "reason": "R. Asi's silence, R. Zeira later finding him teaching, and the admission that the law came back to him: mainly speech and teaching, with a small narrated change."},
+"11": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Rava's instruction to his attendant is cited within the legal give-and-take as evidence; no narrated event."},
+"12": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "A host poses a halakhic question to Rav Adda and receives an answer; question and answer only."},
+"13": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rav Hisda meets Rabba bar Shmuel and asks what he learned; a scholarly question and answer."},
+"14": {"verdict": "not", "rules": ["R-C0", "R-C2"], "segments": [], "reason": "Ravina asks Rav Ashi a halakhic question about collecting a debt and gets a ruling; nothing happens afterward."},
+"15": {"verdict": "borderline", "rules": ["R-C7", "R-C0"], "segments": [2, 3, 4, 5], "reason": "Rav Ashi's sadness (an emotion, which counts as an event) at failing to prepare an eruv tavshilin opens a mainly halakhic dialogue."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report that the tannaim were asked and their versions differed; a scholarly inquiry, not an event."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A legal dictum and Rava's general instruction to his servant about when to light; instruction and question, no event."},
+"18": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Intestines come before Rava, his comparison fails, his son rubs them and they match, Rava questions him and praises him: several actions, a change and a resolution."},
+"19": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Ravina asks Rav Ashi how to prepare knives for Passover; a question and answer with no event."},
+"20": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A tanna recites a baraita and Rav Nahman bar Yitzhak puns on his name; speech without conflict or event."}
+}

@@ -1,0 +1,7616 @@
+{
+ "meta": {
+  "what": "Calibrate the Claude story grader on spans Jeff has ruled on, before it may promote LOW proposals.",
+  "judge_prompt": "src/prompts/judge_register_v2.md",
+  "judge_prompt_sha": "88e8fff62716",
+  "truth_rule": "Jeff borderline = NOT a story (site ships definite only)",
+  "golden_low_on_list_list_stories": {
+   "ketubot": 40,
+   "kiddushin": 21
+  },
+  "counts": {
+   "C1|borderline": 19,
+   "C1|no": 32,
+   "C1|unknown": 3,
+   "C1|yes": 104,
+   "C2|borderline": 1,
+   "C2|no": 9,
+   "C2|unknown": 95,
+   "C2|yes": 37
+  },
+  "built": "2026-11-13T16:27:53"
+ },
+ "spans": [
+  {
+   "id": "C1:Ketubot 2b_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 2b",
+   "cells": [
+    [
+     "Ketubot 2b",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-05 (1).json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 8b_13-13",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 8b",
+   "cells": [
+    [
+     "Ketubot 8b",
+     13
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 10a_7-7",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 10a",
+   "cells": [
+    [
+     "Ketubot 10a",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 10a_9-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 10a",
+   "cells": [
+    [
+     "Ketubot 10a",
+     9
+    ],
+    [
+     "Ketubot 10a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 20b_0-0",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 20b",
+   "cells": [
+    [
+     "Ketubot 20b",
+     0
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 21b_0-0",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 21b",
+   "cells": [
+    [
+     "Ketubot 21b",
+     0
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 25b_2-2",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 25b",
+   "cells": [
+    [
+     "Ketubot 25b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 25b_3-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 25b",
+   "cells": [
+    [
+     "Ketubot 25b",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 25b_5-5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 25b",
+   "cells": [
+    [
+     "Ketubot 25b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 27b_15-15",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 27b",
+   "cells": [
+    [
+     "Ketubot 27b",
+     15
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 52b_4-5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 52b",
+   "cells": [
+    [
+     "Ketubot 52b",
+     4
+    ],
+    [
+     "Ketubot 52b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 52b_17-17",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 52b",
+   "cells": [
+    [
+     "Ketubot 52b",
+     17
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (v5_1_feedback_anonymous_2026-02-05 (1).json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 53a_12-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 53a",
+   "cells": [
+    [
+     "Ketubot 53a",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 54a_13-14",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 54a",
+   "cells": [
+    [
+     "Ketubot 54a",
+     13
+    ],
+    [
+     "Ketubot 54a",
+     14
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 54a_20-20",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 54a",
+   "cells": [
+    [
+     "Ketubot 54a",
+     20
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 54a_21-21",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 54a",
+   "cells": [
+    [
+     "Ketubot 54a",
+     21
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 56b_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 56b",
+   "cells": [
+    [
+     "Ketubot 56b",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'adjust' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 60b_5-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 60b",
+   "cells": [
+    [
+     "Ketubot 60b",
+     5
+    ],
+    [
+     "Ketubot 60b",
+     6
+    ],
+    [
+     "Ketubot 60b",
+     7
+    ],
+    [
+     "Ketubot 60b",
+     8
+    ],
+    [
+     "Ketubot 60b",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 61a_12-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 61a",
+   "cells": [
+    [
+     "Ketubot 61a",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 65a_10-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 65a",
+   "cells": [
+    [
+     "Ketubot 65a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 65a_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 65a",
+   "cells": [
+    [
+     "Ketubot 65a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 66b_9-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 66b",
+   "cells": [
+    [
+     "Ketubot 66b",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 67b_3-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 67b",
+   "cells": [
+    [
+     "Ketubot 67b",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 67b_17-17",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 67b",
+   "cells": [
+    [
+     "Ketubot 67b",
+     17
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 69a_10-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 69a",
+   "cells": [
+    [
+     "Ketubot 69a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 82a_3-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 82a",
+   "cells": [
+    [
+     "Ketubot 82a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 84b_8-8",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 84b",
+   "cells": [
+    [
+     "Ketubot 84b",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85a_7-7",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85a",
+   "cells": [
+    [
+     "Ketubot 85a",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85a_13-14",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85a",
+   "cells": [
+    [
+     "Ketubot 85a",
+     13
+    ],
+    [
+     "Ketubot 85a",
+     14
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85b_1-1",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85b",
+   "cells": [
+    [
+     "Ketubot 85b",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85b_3-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85b",
+   "cells": [
+    [
+     "Ketubot 85b",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85b_4-4",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85b",
+   "cells": [
+    [
+     "Ketubot 85b",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 85b_5-5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 85b",
+   "cells": [
+    [
+     "Ketubot 85b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 91b_8-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 91b",
+   "cells": [
+    [
+     "Ketubot 91b",
+     8
+    ],
+    [
+     "Ketubot 91b",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 91b_15-16",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 91b",
+   "cells": [
+    [
+     "Ketubot 91b",
+     15
+    ],
+    [
+     "Ketubot 91b",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 94b_10-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 94b",
+   "cells": [
+    [
+     "Ketubot 94b",
+     10
+    ],
+    [
+     "Ketubot 94b",
+     11
+    ],
+    [
+     "Ketubot 94b",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 97a_10-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 97a",
+   "cells": [
+    [
+     "Ketubot 97a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 97a_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 97a",
+   "cells": [
+    [
+     "Ketubot 97a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 100b_16-16",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 100b",
+   "cells": [
+    [
+     "Ketubot 100b",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 100b_17-18",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 100b",
+   "cells": [
+    [
+     "Ketubot 100b",
+     17
+    ],
+    [
+     "Ketubot 100b",
+     18
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 103a_2-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 103a",
+   "cells": [
+    [
+     "Ketubot 103a",
+     2
+    ],
+    [
+     "Ketubot 103a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 103b_14-15",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 103b",
+   "cells": [
+    [
+     "Ketubot 103b",
+     14
+    ],
+    [
+     "Ketubot 103b",
+     15
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 105b_8-8",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 105b",
+   "cells": [
+    [
+     "Ketubot 105b",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 105b_9-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 105b",
+   "cells": [
+    [
+     "Ketubot 105b",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 109b_10-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 109b",
+   "cells": [
+    [
+     "Ketubot 109b",
+     10
+    ],
+    [
+     "Ketubot 109b",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 109b_12-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 109b",
+   "cells": [
+    [
+     "Ketubot 109b",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 111a_9-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 111a",
+   "cells": [
+    [
+     "Ketubot 111a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "unknown",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 111a_10-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 111a",
+   "cells": [
+    [
+     "Ketubot 111a",
+     10
+    ],
+    [
+     "Ketubot 111a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 111a_23-25",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 111a",
+   "cells": [
+    [
+     "Ketubot 111a",
+     23
+    ],
+    [
+     "Ketubot 111a",
+     24
+    ],
+    [
+     "Ketubot 111a",
+     25
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 111b_12-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 111b",
+   "cells": [
+    [
+     "Ketubot 111b",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 112a_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 112a",
+   "cells": [
+    [
+     "Ketubot 112a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 112a_14-14",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 112a",
+   "cells": [
+    [
+     "Ketubot 112a",
+     14
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 7a_1-1",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 7a",
+   "cells": [
+    [
+     "Ketubot 7a",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'borderline' (review_2026-09-16_bundle_jeff_2026-09-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 7a_2-2",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 7a",
+   "cells": [
+    [
+     "Ketubot 7a",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 8a_6-6",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 8a",
+   "cells": [
+    [
+     "Ketubot 8a",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 8a_9-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 8a",
+   "cells": [
+    [
+     "Ketubot 8a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 12b_0-0",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 12b",
+   "cells": [
+    [
+     "Ketubot 12b",
+     0
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-05 (1).json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 13b_16-16",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 13b",
+   "cells": [
+    [
+     "Ketubot 13b",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 15b_2-2",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 15b",
+   "cells": [
+    [
+     "Ketubot 15b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 25a_9-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 25a",
+   "cells": [
+    [
+     "Ketubot 25a",
+     9
+    ],
+    [
+     "Ketubot 25a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 26a_9-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 26a",
+   "cells": [
+    [
+     "Ketubot 26a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 49b_6-6",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 49b",
+   "cells": [
+    [
+     "Ketubot 49b",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 50b_4-4",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 50b",
+   "cells": [
+    [
+     "Ketubot 50b",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 50b_6-6",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 50b",
+   "cells": [
+    [
+     "Ketubot 50b",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 50b_9-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 50b",
+   "cells": [
+    [
+     "Ketubot 50b",
+     9
+    ],
+    [
+     "Ketubot 50b",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (canonical_review_anonymous_2026-03-17.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 63b_7-7",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 63b",
+   "cells": [
+    [
+     "Ketubot 63b",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 65a_5-5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 65a",
+   "cells": [
+    [
+     "Ketubot 65a",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 68a_16-16",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 68a",
+   "cells": [
+    [
+     "Ketubot 68a",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 69a_12-12",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 69a",
+   "cells": [
+    [
+     "Ketubot 69a",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 74a_11-11",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 74a",
+   "cells": [
+    [
+     "Ketubot 74a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 80a_2-2",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 80a",
+   "cells": [
+    [
+     "Ketubot 80a",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 84b_2-2",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 84b",
+   "cells": [
+    [
+     "Ketubot 84b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 86a_4-4",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 86a",
+   "cells": [
+    [
+     "Ketubot 86a",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "unknown",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 86a_8-8",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 86a",
+   "cells": [
+    [
+     "Ketubot 86a",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 88a_8-8",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 88a",
+   "cells": [
+    [
+     "Ketubot 88a",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 96a_7-7",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 96a",
+   "cells": [
+    [
+     "Ketubot 96a",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 98a_1-1",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 98a",
+   "cells": [
+    [
+     "Ketubot 98a",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 100a_8-9",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 100a",
+   "cells": [
+    [
+     "Ketubot 100a",
+     8
+    ],
+    [
+     "Ketubot 100a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 103b_20-21",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 103b",
+   "cells": [
+    [
+     "Ketubot 103b",
+     20
+    ],
+    [
+     "Ketubot 103b",
+     21
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 105a_13-13",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 105a",
+   "cells": [
+    [
+     "Ketubot 105a",
+     13
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 106a_3-3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 106a",
+   "cells": [
+    [
+     "Ketubot 106a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "unknown",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 107b_8-10",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 107b",
+   "cells": [
+    [
+     "Ketubot 107b",
+     8
+    ],
+    [
+     "Ketubot 107b",
+     9
+    ],
+    [
+     "Ketubot 107b",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'correct' (v5_1_feedback_anonymous_2026-02-20.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 110b_24-24",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 110b",
+   "cells": [
+    [
+     "Ketubot 110b",
+     24
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Ketubot 111b_4-5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 111b",
+   "cells": [
+    [
+     "Ketubot 111b",
+     4
+    ],
+    [
+     "Ketubot 111b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (v8_delta_feedback_anonymous_2026-02-26.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 8b_2-2",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 8b",
+   "cells": [
+    [
+     "Kiddushin 8b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 12a_13-13",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 12a",
+   "cells": [
+    [
+     "Kiddushin 12a",
+     13
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 12b_5-5",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 12b",
+   "cells": [
+    [
+     "Kiddushin 12b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 13a_3-3",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 13a",
+   "cells": [
+    [
+     "Kiddushin 13a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 25a_17-17",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 25a",
+   "cells": [
+    [
+     "Kiddushin 25a",
+     17
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 26b_2-2",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 26b",
+   "cells": [
+    [
+     "Kiddushin 26b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 29b_15-15",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 29b",
+   "cells": [
+    [
+     "Kiddushin 29b",
+     15
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 30a_7-7",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 30a",
+   "cells": [
+    [
+     "Kiddushin 30a",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 31a_3-4",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 31a",
+   "cells": [
+    [
+     "Kiddushin 31a",
+     3
+    ],
+    [
+     "Kiddushin 31a",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 31b_4-4",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 31b",
+   "cells": [
+    [
+     "Kiddushin 31b",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 32b_1-1",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 32b",
+   "cells": [
+    [
+     "Kiddushin 32b",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 32b_2-2",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 32b",
+   "cells": [
+    [
+     "Kiddushin 32b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 39b_13-13",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 39b",
+   "cells": [
+    [
+     "Kiddushin 39b",
+     13
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 40b_7-7",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 40b",
+   "cells": [
+    [
+     "Kiddushin 40b",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 44b_6-6",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 44b",
+   "cells": [
+    [
+     "Kiddushin 44b",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 45b_1-1",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 45b",
+   "cells": [
+    [
+     "Kiddushin 45b",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 52b_1-1",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 52b",
+   "cells": [
+    [
+     "Kiddushin 52b",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 52b_2-2",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 52b",
+   "cells": [
+    [
+     "Kiddushin 52b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 52b_3-3",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 52b",
+   "cells": [
+    [
+     "Kiddushin 52b",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 59a_3-3",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 59a",
+   "cells": [
+    [
+     "Kiddushin 59a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 59a_4-4",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 59a",
+   "cells": [
+    [
+     "Kiddushin 59a",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 66a_5-5",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 66a",
+   "cells": [
+    [
+     "Kiddushin 66a",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 66b_0-5",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 66b",
+   "cells": [
+    [
+     "Kiddushin 66b",
+     0
+    ],
+    [
+     "Kiddushin 66b",
+     1
+    ],
+    [
+     "Kiddushin 66b",
+     2
+    ],
+    [
+     "Kiddushin 66b",
+     3
+    ],
+    [
+     "Kiddushin 66b",
+     4
+    ],
+    [
+     "Kiddushin 66b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 72a_3-3",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 72a",
+   "cells": [
+    [
+     "Kiddushin 72a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 72a_10-10",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 72a",
+   "cells": [
+    [
+     "Kiddushin 72a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 79b_6-7",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 79b",
+   "cells": [
+    [
+     "Kiddushin 79b",
+     6
+    ],
+    [
+     "Kiddushin 79b",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 80b_11-11",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 80b",
+   "cells": [
+    [
+     "Kiddushin 80b",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 81a_2-2",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 81a",
+   "cells": [
+    [
+     "Kiddushin 81a",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed",
+    "golden_low_on_list"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 81b_14-14",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 81b",
+   "cells": [
+    [
+     "Kiddushin 81b",
+     14
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 7b_9-10",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 7b",
+   "cells": [
+    [
+     "Kiddushin 7b",
+     9
+    ],
+    [
+     "Kiddushin 7b",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 8a_9-10",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 8a",
+   "cells": [
+    [
+     "Kiddushin 8a",
+     9
+    ],
+    [
+     "Kiddushin 8a",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 12b_8-8",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 12b",
+   "cells": [
+    [
+     "Kiddushin 12b",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 20a_12-14",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 20a",
+   "cells": [
+    [
+     "Kiddushin 20a",
+     12
+    ],
+    [
+     "Kiddushin 20a",
+     13
+    ],
+    [
+     "Kiddushin 20a",
+     14
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'incorrect' (wave4_kiddushin_review_2026-07-06.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 29b_18-18",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 29b",
+   "cells": [
+    [
+     "Kiddushin 29b",
+     18
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 32a_8-12",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 32a",
+   "cells": [
+    [
+     "Kiddushin 32a",
+     8
+    ],
+    [
+     "Kiddushin 32a",
+     9
+    ],
+    [
+     "Kiddushin 32a",
+     10
+    ],
+    [
+     "Kiddushin 32a",
+     11
+    ],
+    [
+     "Kiddushin 32a",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 33a_16-16",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 33a",
+   "cells": [
+    [
+     "Kiddushin 33a",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 38a_0-0",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 38a",
+   "cells": [
+    [
+     "Kiddushin 38a",
+     0
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 38a_4-6",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 38a",
+   "cells": [
+    [
+     "Kiddushin 38a",
+     4
+    ],
+    [
+     "Kiddushin 38a",
+     5
+    ],
+    [
+     "Kiddushin 38a",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 39a_1-1",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 39a",
+   "cells": [
+    [
+     "Kiddushin 39a",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 41a_3-3",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 41a",
+   "cells": [
+    [
+     "Kiddushin 41a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 50a_5-5",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 50a",
+   "cells": [
+    [
+     "Kiddushin 50a",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 60b_8-8",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 60b",
+   "cells": [
+    [
+     "Kiddushin 60b",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 71b_9-9",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 71b",
+   "cells": [
+    [
+     "Kiddushin 71b",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 72b_10-10",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 72b",
+   "cells": [
+    [
+     "Kiddushin 72b",
+     10
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Kiddushin 80b_12-12",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 80b",
+   "cells": [
+    [
+     "Kiddushin 80b",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (kiddushin_review_2026-04-23.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 19a_15-15",
+   "tractate": "Gittin",
+   "ref": "Gittin 19a",
+   "cells": [
+    [
+     "Gittin 19a",
+     15
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 19a_16-16",
+   "tractate": "Gittin",
+   "ref": "Gittin 19a",
+   "cells": [
+    [
+     "Gittin 19a",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 19b_6-6",
+   "tractate": "Gittin",
+   "ref": "Gittin 19b",
+   "cells": [
+    [
+     "Gittin 19b",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 20a_9-9",
+   "tractate": "Gittin",
+   "ref": "Gittin 20a",
+   "cells": [
+    [
+     "Gittin 20a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "borderline",
+   "truth_source": "Jeff verdict 'borderline' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 27a_7-7",
+   "tractate": "Gittin",
+   "ref": "Gittin 27a",
+   "cells": [
+    [
+     "Gittin 27a",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 32b_2-2",
+   "tractate": "Gittin",
+   "ref": "Gittin 32b",
+   "cells": [
+    [
+     "Gittin 32b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 34a_13-13",
+   "tractate": "Gittin",
+   "ref": "Gittin 34a",
+   "cells": [
+    [
+     "Gittin 34a",
+     13
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 43b_4-4",
+   "tractate": "Gittin",
+   "ref": "Gittin 43b",
+   "cells": [
+    [
+     "Gittin 43b",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 44a_8-11",
+   "tractate": "Gittin",
+   "ref": "Gittin 44a",
+   "cells": [
+    [
+     "Gittin 44a",
+     8
+    ],
+    [
+     "Gittin 44a",
+     9
+    ],
+    [
+     "Gittin 44a",
+     10
+    ],
+    [
+     "Gittin 44a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 59a_16-16",
+   "tractate": "Gittin",
+   "ref": "Gittin 59a",
+   "cells": [
+    [
+     "Gittin 59a",
+     16
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 59a_19-19",
+   "tractate": "Gittin",
+   "ref": "Gittin 59a",
+   "cells": [
+    [
+     "Gittin 59a",
+     19
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 59b_21-21",
+   "tractate": "Gittin",
+   "ref": "Gittin 59b",
+   "cells": [
+    [
+     "Gittin 59b",
+     21
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 70a_9-9",
+   "tractate": "Gittin",
+   "ref": "Gittin 70a",
+   "cells": [
+    [
+     "Gittin 70a",
+     9
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 70a_22-22",
+   "tractate": "Gittin",
+   "ref": "Gittin 70a",
+   "cells": [
+    [
+     "Gittin 70a",
+     22
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "Jeff verdict 'correct' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 76b_19-19",
+   "tractate": "Gittin",
+   "ref": "Gittin 76b",
+   "cells": [
+    [
+     "Gittin 76b",
+     19
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 78b_8-8",
+   "tractate": "Gittin",
+   "ref": "Gittin 78b",
+   "cells": [
+    [
+     "Gittin 78b",
+     8
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 80b_1-2",
+   "tractate": "Gittin",
+   "ref": "Gittin 80b",
+   "cells": [
+    [
+     "Gittin 80b",
+     1
+    ],
+    [
+     "Gittin 80b",
+     2
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 82a_4-4",
+   "tractate": "Gittin",
+   "ref": "Gittin 82a",
+   "cells": [
+    [
+     "Gittin 82a",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 86b_24-25",
+   "tractate": "Gittin",
+   "ref": "Gittin 86b",
+   "cells": [
+    [
+     "Gittin 86b",
+     24
+    ],
+    [
+     "Gittin 86b",
+     25
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:Gittin 88a_11-11",
+   "tractate": "Gittin",
+   "ref": "Gittin 88a",
+   "cells": [
+    [
+     "Gittin 88a",
+     11
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "no",
+   "truth_source": "Jeff verdict 'incorrect' (gittin_axes_review_2026-09-02.json)",
+   "detector_confidence": {
+    "shown_to_jeff": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "jeff_shown_low"
+   ]
+  },
+  {
+   "id": "C1:golden:Ketubot 25b:4-Ketubot 25b:5",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 25b",
+   "cells": [
+    [
+     "Ketubot 25b",
+     4
+    ],
+    [
+     "Ketubot 25b",
+     5
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list [None] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Ketubot 52b:17-Ketubot 53a:3",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 52b",
+   "cells": [
+    [
+     "Ketubot 52b",
+     17
+    ],
+    [
+     "Ketubot 53a",
+     0
+    ],
+    [
+     "Ketubot 53a",
+     1
+    ],
+    [
+     "Ketubot 53a",
+     2
+    ],
+    [
+     "Ketubot 53a",
+     3
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list [None] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Ketubot 56b:11-Ketubot 57a:1",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 56b",
+   "cells": [
+    [
+     "Ketubot 56b",
+     11
+    ],
+    [
+     "Ketubot 57a",
+     0
+    ],
+    [
+     "Ketubot 57a",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list [None] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Ketubot 67b:17-Ketubot 68a:15",
+   "tractate": "Ketubot",
+   "ref": "Ketubot 67b",
+   "cells": [
+    [
+     "Ketubot 67b",
+     17
+    ],
+    [
+     "Ketubot 68a",
+     0
+    ],
+    [
+     "Ketubot 68a",
+     1
+    ],
+    [
+     "Ketubot 68a",
+     2
+    ],
+    [
+     "Ketubot 68a",
+     3
+    ],
+    [
+     "Ketubot 68a",
+     4
+    ],
+    [
+     "Ketubot 68a",
+     5
+    ],
+    [
+     "Ketubot 68a",
+     6
+    ],
+    [
+     "Ketubot 68a",
+     7
+    ],
+    [
+     "Ketubot 68a",
+     8
+    ],
+    [
+     "Ketubot 68a",
+     9
+    ],
+    [
+     "Ketubot 68a",
+     10
+    ],
+    [
+     "Ketubot 68a",
+     11
+    ],
+    [
+     "Ketubot 68a",
+     12
+    ],
+    [
+     "Ketubot 68a",
+     13
+    ],
+    [
+     "Ketubot 68a",
+     14
+    ],
+    [
+     "Ketubot 68a",
+     15
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list [None] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Kiddushin 32a:6-Kiddushin 32a:6",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 32a",
+   "cells": [
+    [
+     "Kiddushin 32a",
+     6
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list ['kiddushin_031'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Kiddushin 33b:12-Kiddushin 33b:12",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 33b",
+   "cells": [
+    [
+     "Kiddushin 33b",
+     12
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list ['kiddushin_039'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Kiddushin 39b:7-Kiddushin 39b:7",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 39b",
+   "cells": [
+    [
+     "Kiddushin 39b",
+     7
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list ['kiddushin_041'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Kiddushin 58a:2-Kiddushin 58a:4",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 58a",
+   "cells": [
+    [
+     "Kiddushin 58a",
+     2
+    ],
+    [
+     "Kiddushin 58a",
+     3
+    ],
+    [
+     "Kiddushin 58a",
+     4
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list ['kiddushin_062'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C1:golden:Kiddushin 72a:10-Kiddushin 72b:1",
+   "tractate": "Kiddushin",
+   "ref": "Kiddushin 72a",
+   "cells": [
+    [
+     "Kiddushin 72a",
+     10
+    ],
+    [
+     "Kiddushin 72b",
+     0
+    ],
+    [
+     "Kiddushin 72b",
+     1
+    ]
+   ],
+   "set": "C1",
+   "evidence": "CIRCULAR",
+   "truth": "yes",
+   "truth_source": "2005 list ['kiddushin_080'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "golden": "LOW_CONFIDENCE"
+   },
+   "tags": [
+    "golden_low_on_list",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 6a:3-3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 6a",
+   "cells": [
+    [
+     "Eruvin 6a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 6b:6-6",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 6b",
+   "cells": [
+    [
+     "Eruvin 6b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 6b:8-8",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 6b",
+   "cells": [
+    [
+     "Eruvin 6b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 6b:9-9",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 6b",
+   "cells": [
+    [
+     "Eruvin 6b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 7b:1-1",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 7b",
+   "cells": [
+    [
+     "Eruvin 7b",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 8a:12-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 8a",
+   "cells": [
+    [
+     "Eruvin 8a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "NOT_A_STORY",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 8a:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 8a",
+   "cells": [
+    [
+     "Eruvin 8a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 9a:5-5",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 9a",
+   "cells": [
+    [
+     "Eruvin 9a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 10a:5-7",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 10a",
+   "cells": [
+    [
+     "Eruvin 10a",
+     5
+    ],
+    [
+     "Eruvin 10a",
+     6
+    ],
+    [
+     "Eruvin 10a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 11b:4-4",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 11b",
+   "cells": [
+    [
+     "Eruvin 11b",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_002'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "absent",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 11b:10-10",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 11b",
+   "cells": [
+    [
+     "Eruvin 11b",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "absent",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 12a:14-14",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 12a",
+   "cells": [
+    [
+     "Eruvin 12a",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 13b:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 13b",
+   "cells": [
+    [
+     "Eruvin 13b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "absent",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 15a:18-18",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 15a",
+   "cells": [
+    [
+     "Eruvin 15a",
+     18
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 22b:1-1",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 22b",
+   "cells": [
+    [
+     "Eruvin 22b",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 24a:5-5",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 24a",
+   "cells": [
+    [
+     "Eruvin 24a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_013'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 24b:3-7",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 24b",
+   "cells": [
+    [
+     "Eruvin 24b",
+     3
+    ],
+    [
+     "Eruvin 24b",
+     4
+    ],
+    [
+     "Eruvin 24b",
+     5
+    ],
+    [
+     "Eruvin 24b",
+     6
+    ],
+    [
+     "Eruvin 24b",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 27a:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 27a",
+   "cells": [
+    [
+     "Eruvin 27a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 28a:11-11",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 28a",
+   "cells": [
+    [
+     "Eruvin 28a",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 28b:22-22",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 28b",
+   "cells": [
+    [
+     "Eruvin 28b",
+     22
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 29a:3-3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 29a",
+   "cells": [
+    [
+     "Eruvin 29a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 29a:17-17",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 29a",
+   "cells": [
+    [
+     "Eruvin 29a",
+     17
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 30a:10-10",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 30a",
+   "cells": [
+    [
+     "Eruvin 30a",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 37b:8-9",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 37b",
+   "cells": [
+    [
+     "Eruvin 37b",
+     8
+    ],
+    [
+     "Eruvin 37b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_021'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 40b:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 40b",
+   "cells": [
+    [
+     "Eruvin 40b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 41a:7-7",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 41a",
+   "cells": [
+    [
+     "Eruvin 41a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 41a:9-9",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 41a",
+   "cells": [
+    [
+     "Eruvin 41a",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 43a:2-2",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 43a",
+   "cells": [
+    [
+     "Eruvin 43a",
+     2
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "HIGH_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 43a:16-16",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 43a",
+   "cells": [
+    [
+     "Eruvin 43a",
+     16
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 43b:15-16",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 43b",
+   "cells": [
+    [
+     "Eruvin 43b",
+     15
+    ],
+    [
+     "Eruvin 43b",
+     16
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_028'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "YES",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 44b:6-6",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 44b",
+   "cells": [
+    [
+     "Eruvin 44b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 46a:11-11",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 46a",
+   "cells": [
+    [
+     "Eruvin 46a",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_033'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 47a:16-16",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 47a",
+   "cells": [
+    [
+     "Eruvin 47a",
+     16
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_034'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 48a:0-0",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 48a",
+   "cells": [
+    [
+     "Eruvin 48a",
+     0
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "NOT_A_STORY",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53a:11-14",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53a",
+   "cells": [
+    [
+     "Eruvin 53a",
+     11
+    ],
+    [
+     "Eruvin 53a",
+     12
+    ],
+    [
+     "Eruvin 53a",
+     13
+    ],
+    [
+     "Eruvin 53a",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53b:3-3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53b",
+   "cells": [
+    [
+     "Eruvin 53b",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "absent",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53b:6-6",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53b",
+   "cells": [
+    [
+     "Eruvin 53b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_039'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53b:12-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53b",
+   "cells": [
+    [
+     "Eruvin 53b",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_042'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "absent",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P2"
+   },
+   "tags": [
+    "P2",
+    "split_definite_not",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53b:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53b",
+   "cells": [
+    [
+     "Eruvin 53b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_042'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "absent",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 53b:16-16",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 53b",
+   "cells": [
+    [
+     "Eruvin 53b",
+     16
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "YES",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 54a:1-1",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 54a",
+   "cells": [
+    [
+     "Eruvin 54a",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_046'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 54b:3-3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 54b",
+   "cells": [
+    [
+     "Eruvin 54b",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_048'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 55b:14-14",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 55b",
+   "cells": [
+    [
+     "Eruvin 55b",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 57b:12-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 57b",
+   "cells": [
+    [
+     "Eruvin 57b",
+     12
+    ],
+    [
+     "Eruvin 57b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 61b:7-8",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 61b",
+   "cells": [
+    [
+     "Eruvin 61b",
+     7
+    ],
+    [
+     "Eruvin 61b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_053'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 62b:10-10",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 62b",
+   "cells": [
+    [
+     "Eruvin 62b",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 62b:12-Eruvin 63a:3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 62b",
+   "cells": [
+    [
+     "Eruvin 62b",
+     12
+    ],
+    [
+     "Eruvin 63a",
+     0
+    ],
+    [
+     "Eruvin 63a",
+     1
+    ],
+    [
+     "Eruvin 63a",
+     2
+    ],
+    [
+     "Eruvin 63a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_054'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 63a:4-4",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 63a",
+   "cells": [
+    [
+     "Eruvin 63a",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "borderline",
+   "truth_source": "2005 list ['eruvin_055'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 63a:11-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 63a",
+   "cells": [
+    [
+     "Eruvin 63a",
+     11
+    ],
+    [
+     "Eruvin 63a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_057'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "HIGH_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 64a:9-Eruvin 64b:2",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 64a",
+   "cells": [
+    [
+     "Eruvin 64a",
+     9
+    ],
+    [
+     "Eruvin 64a",
+     10
+    ],
+    [
+     "Eruvin 64a",
+     11
+    ],
+    [
+     "Eruvin 64b",
+     0
+    ],
+    [
+     "Eruvin 64b",
+     1
+    ],
+    [
+     "Eruvin 64b",
+     2
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 65a:13-13",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 65a",
+   "cells": [
+    [
+     "Eruvin 65a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 72b:15-15",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 72b",
+   "cells": [
+    [
+     "Eruvin 72b",
+     15
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 73a:3-3",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 73a",
+   "cells": [
+    [
+     "Eruvin 73a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 73a:8-8",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 73a",
+   "cells": [
+    [
+     "Eruvin 73a",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 74a:5-6",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 74a",
+   "cells": [
+    [
+     "Eruvin 74a",
+     5
+    ],
+    [
+     "Eruvin 74a",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_066'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 75b:8-8",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 75b",
+   "cells": [
+    [
+     "Eruvin 75b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 80a:17-18",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 80a",
+   "cells": [
+    [
+     "Eruvin 80a",
+     17
+    ],
+    [
+     "Eruvin 80a",
+     18
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_069'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 80a:19-19",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 80a",
+   "cells": [
+    [
+     "Eruvin 80a",
+     19
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['eruvin_070'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 81a:12-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 81a",
+   "cells": [
+    [
+     "Eruvin 81a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 83a:5-5",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 83a",
+   "cells": [
+    [
+     "Eruvin 83a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 87a:11-11",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 87a",
+   "cells": [
+    [
+     "Eruvin 87a",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 89b:4-8",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 89b",
+   "cells": [
+    [
+     "Eruvin 89b",
+     4
+    ],
+    [
+     "Eruvin 89b",
+     5
+    ],
+    [
+     "Eruvin 89b",
+     6
+    ],
+    [
+     "Eruvin 89b",
+     7
+    ],
+    [
+     "Eruvin 89b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 96a:12-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 96a",
+   "cells": [
+    [
+     "Eruvin 96a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 98b:15-Eruvin 99a:0",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 98b",
+   "cells": [
+    [
+     "Eruvin 98b",
+     15
+    ],
+    [
+     "Eruvin 99a",
+     0
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 99b:16-17",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 99b",
+   "cells": [
+    [
+     "Eruvin 99b",
+     16
+    ],
+    [
+     "Eruvin 99b",
+     17
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 100b:5-5",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 100b",
+   "cells": [
+    [
+     "Eruvin 100b",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 101a:9-9",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 101a",
+   "cells": [
+    [
+     "Eruvin 101a",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 102a:5-5",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 102a",
+   "cells": [
+    [
+     "Eruvin 102a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 102a:6-6",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 102a",
+   "cells": [
+    [
+     "Eruvin 102a",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 102a:10-10",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 102a",
+   "cells": [
+    [
+     "Eruvin 102a",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 102a:11-11",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 102a",
+   "cells": [
+    [
+     "Eruvin 102a",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "YES",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 103a:17-19",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 103a",
+   "cells": [
+    [
+     "Eruvin 103a",
+     17
+    ],
+    [
+     "Eruvin 103a",
+     18
+    ],
+    [
+     "Eruvin 103a",
+     19
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['eruvin_073'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 104a:12-12",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 104a",
+   "cells": [
+    [
+     "Eruvin 104a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Eruvin 104b:4-4",
+   "tractate": "Eruvin",
+   "ref": "Eruvin 104b",
+   "cells": [
+    [
+     "Eruvin 104b",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 14a:11-13",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 14a",
+   "cells": [
+    [
+     "Yevamot 14a",
+     11
+    ],
+    [
+     "Yevamot 14a",
+     12
+    ],
+    [
+     "Yevamot 14a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 15a:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 15a",
+   "cells": [
+    [
+     "Yevamot 15a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 15a:12-12",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 15a",
+   "cells": [
+    [
+     "Yevamot 15a",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 15b:5-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 15b",
+   "cells": [
+    [
+     "Yevamot 15b",
+     5
+    ],
+    [
+     "Yevamot 15b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_003'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 17a:5-5",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 17a",
+   "cells": [
+    [
+     "Yevamot 17a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_006'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 21b:15-15",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 21b",
+   "cells": [
+    [
+     "Yevamot 21b",
+     15
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 31a:11-Yevamot 31b:0",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 31a",
+   "cells": [
+    [
+     "Yevamot 31a",
+     11
+    ],
+    [
+     "Yevamot 31b",
+     0
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_008'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 32b:5-Yevamot 33a:7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 32b",
+   "cells": [
+    [
+     "Yevamot 32b",
+     5
+    ],
+    [
+     "Yevamot 32b",
+     6
+    ],
+    [
+     "Yevamot 32b",
+     7
+    ],
+    [
+     "Yevamot 32b",
+     8
+    ],
+    [
+     "Yevamot 32b",
+     9
+    ],
+    [
+     "Yevamot 32b",
+     10
+    ],
+    [
+     "Yevamot 33a",
+     0
+    ],
+    [
+     "Yevamot 33a",
+     1
+    ],
+    [
+     "Yevamot 33a",
+     2
+    ],
+    [
+     "Yevamot 33a",
+     3
+    ],
+    [
+     "Yevamot 33a",
+     4
+    ],
+    [
+     "Yevamot 33a",
+     5
+    ],
+    [
+     "Yevamot 33a",
+     6
+    ],
+    [
+     "Yevamot 33a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 37a:4-4",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 37a",
+   "cells": [
+    [
+     "Yevamot 37a",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 40a:23-23",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 40a",
+   "cells": [
+    [
+     "Yevamot 40a",
+     23
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 41a:12-14",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 41a",
+   "cells": [
+    [
+     "Yevamot 41a",
+     12
+    ],
+    [
+     "Yevamot 41a",
+     13
+    ],
+    [
+     "Yevamot 41a",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 41b:7-8",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 41b",
+   "cells": [
+    [
+     "Yevamot 41b",
+     7
+    ],
+    [
+     "Yevamot 41b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 42b:3-3",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 42b",
+   "cells": [
+    [
+     "Yevamot 42b",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 42b:9-Yevamot 43a:3",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 42b",
+   "cells": [
+    [
+     "Yevamot 42b",
+     9
+    ],
+    [
+     "Yevamot 42b",
+     10
+    ],
+    [
+     "Yevamot 43a",
+     0
+    ],
+    [
+     "Yevamot 43a",
+     1
+    ],
+    [
+     "Yevamot 43a",
+     2
+    ],
+    [
+     "Yevamot 43a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 43a:13-13",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 43a",
+   "cells": [
+    [
+     "Yevamot 43a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 45b:6-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 45b",
+   "cells": [
+    [
+     "Yevamot 45b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 45b:8-8",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 45b",
+   "cells": [
+    [
+     "Yevamot 45b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 45b:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 45b",
+   "cells": [
+    [
+     "Yevamot 45b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_015'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 45b:12-12",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 45b",
+   "cells": [
+    [
+     "Yevamot 45b",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_015', 'yevamot_016', 'yevamot_017'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 49b:5-5",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 49b",
+   "cells": [
+    [
+     "Yevamot 49b",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 52a:8-8",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 52a",
+   "cells": [
+    [
+     "Yevamot 52a",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 60b:10-10",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 60b",
+   "cells": [
+    [
+     "Yevamot 60b",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 60b:11-11",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 60b",
+   "cells": [
+    [
+     "Yevamot 60b",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 62b:3-4",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 62b",
+   "cells": [
+    [
+     "Yevamot 62b",
+     3
+    ],
+    [
+     "Yevamot 62b",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_028'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "HIGH_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 63a:3-3",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 63a",
+   "cells": [
+    [
+     "Yevamot 63a",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 63a:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 63a",
+   "cells": [
+    [
+     "Yevamot 63a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_031'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 63b:17-17",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 63b",
+   "cells": [
+    [
+     "Yevamot 63b",
+     17
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_037'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 64b:5-5",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 64b",
+   "cells": [
+    [
+     "Yevamot 64b",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_038'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 64b:6-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 64b",
+   "cells": [
+    [
+     "Yevamot 64b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_039', 'yevamot_040'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 65b:10-11",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 65b",
+   "cells": [
+    [
+     "Yevamot 65b",
+     10
+    ],
+    [
+     "Yevamot 65b",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 65b:14-14",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 65b",
+   "cells": [
+    [
+     "Yevamot 65b",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_043'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 67a:10-10",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 67a",
+   "cells": [
+    [
+     "Yevamot 67a",
+     10
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 72a:6-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 72a",
+   "cells": [
+    [
+     "Yevamot 72a",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 72b:3-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 72b",
+   "cells": [
+    [
+     "Yevamot 72b",
+     3
+    ],
+    [
+     "Yevamot 72b",
+     4
+    ],
+    [
+     "Yevamot 72b",
+     5
+    ],
+    [
+     "Yevamot 72b",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_047'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 72b:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 72b",
+   "cells": [
+    [
+     "Yevamot 72b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 76b:2-2",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 76b",
+   "cells": [
+    [
+     "Yevamot 76b",
+     2
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 78a:17-17",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 78a",
+   "cells": [
+    [
+     "Yevamot 78a",
+     17
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_050'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 78b:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 78b",
+   "cells": [
+    [
+     "Yevamot 78b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['yevamot_051'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "absent",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 78b:11-11",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 78b",
+   "cells": [
+    [
+     "Yevamot 78b",
+     11
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_052'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "YES",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 79b:0-0",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 79b",
+   "cells": [
+    [
+     "Yevamot 79b",
+     0
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_053'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 80b:1-1",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 80b",
+   "cells": [
+    [
+     "Yevamot 80b",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 80b:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 80b",
+   "cells": [
+    [
+     "Yevamot 80b",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 83b:5-5",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 83b",
+   "cells": [
+    [
+     "Yevamot 83b",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_054'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 84a:2-2",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 84a",
+   "cells": [
+    [
+     "Yevamot 84a",
+     2
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_055'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 97a:6-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 97a",
+   "cells": [
+    [
+     "Yevamot 97a",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 97b:8-8",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 97b",
+   "cells": [
+    [
+     "Yevamot 97b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_062'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 101b:3-3",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 101b",
+   "cells": [
+    [
+     "Yevamot 101b",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "HIGH_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 101b:13-13",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 101b",
+   "cells": [
+    [
+     "Yevamot 101b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "absent",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 102a:13-13",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 102a",
+   "cells": [
+    [
+     "Yevamot 102a",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 102b:13-14",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 102b",
+   "cells": [
+    [
+     "Yevamot 102b",
+     13
+    ],
+    [
+     "Yevamot 102b",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "HIGH_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 104a:6-6",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 104a",
+   "cells": [
+    [
+     "Yevamot 104a",
+     6
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 105b:14-15",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 105b",
+   "cells": [
+    [
+     "Yevamot 105b",
+     14
+    ],
+    [
+     "Yevamot 105b",
+     15
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "absent",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 106b:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 106b",
+   "cells": [
+    [
+     "Yevamot 106b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 106b:12-12",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 106b",
+   "cells": [
+    [
+     "Yevamot 106b",
+     12
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 107b:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 107b",
+   "cells": [
+    [
+     "Yevamot 107b",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "no",
+   "truth_source": "2005 list ['yevamot_072'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 108a:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 108a",
+   "cells": [
+    [
+     "Yevamot 108a",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_073'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 110b:11-13",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 110b",
+   "cells": [
+    [
+     "Yevamot 110b",
+     11
+    ],
+    [
+     "Yevamot 110b",
+     12
+    ],
+    [
+     "Yevamot 110b",
+     13
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 112a:5-5",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 112a",
+   "cells": [
+    [
+     "Yevamot 112a",
+     5
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 113a:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 113a",
+   "cells": [
+    [
+     "Yevamot 113a",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_075'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 114b:14-14",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 114b",
+   "cells": [
+    [
+     "Yevamot 114b",
+     14
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_077'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 115b:1-1",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 115b",
+   "cells": [
+    [
+     "Yevamot 115b",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_080'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 115b:8-8",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 115b",
+   "cells": [
+    [
+     "Yevamot 115b",
+     8
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_081'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 115b:10-Yevamot 116a:1",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 115b",
+   "cells": [
+    [
+     "Yevamot 115b",
+     10
+    ],
+    [
+     "Yevamot 116a",
+     0
+    ],
+    [
+     "Yevamot 116a",
+     1
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 116a:2-4",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 116a",
+   "cells": [
+    [
+     "Yevamot 116a",
+     2
+    ],
+    [
+     "Yevamot 116a",
+     3
+    ],
+    [
+     "Yevamot 116a",
+     4
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_082'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 116b:3-3",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 116b",
+   "cells": [
+    [
+     "Yevamot 116b",
+     3
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 120b:9-9",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 120b",
+   "cells": [
+    [
+     "Yevamot 120b",
+     9
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_086'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "HIGH_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P1"
+   },
+   "tags": [
+    "P1",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 121b:2-2",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 121b",
+   "cells": [
+    [
+     "Yevamot 121b",
+     2
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "unknown",
+   "truth_source": "on no list: unknown, lower bound only",
+   "detector_confidence": {
+    "v14_r1": "LOW_CONFIDENCE",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P3"
+   },
+   "tags": [
+    "P3",
+    "low_in_a_run",
+    "unlisted"
+   ]
+  },
+  {
+   "id": "C2:Yevamot 121b:7-7",
+   "tractate": "Yevamot",
+   "ref": "Yevamot 121b",
+   "cells": [
+    [
+     "Yevamot 121b",
+     7
+    ]
+   ],
+   "set": "C2",
+   "evidence": "BLIND",
+   "truth": "yes",
+   "truth_source": "2005 list ['yevamot_092'] (through superseded_by_rule)",
+   "detector_confidence": {
+    "v14_r1": "absent",
+    "v14_r2": "LOW_CONFIDENCE",
+    "pool": "P4"
+   },
+   "tags": [
+    "P4",
+    "low_in_a_run",
+    "expert_listed"
+   ]
+  }
+ ]
+}

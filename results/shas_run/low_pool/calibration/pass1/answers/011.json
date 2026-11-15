@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Only the opening of a sent question; a question and answer with no event and no conflict."},
+"02": {"verdict": "story", "rules": ["R-C3"], "segments": [2], "reason": "Rabbi Tarfon's habitual service of his mother leads to a one-time event: he boasts in the study hall and is rebuked, with a vivid counter-example."},
+"03": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2, 3], "reason": "A real incident (a bequest, the orphans divide the estate and withhold the palm) followed by legal discussion and a proposed remedy; events with little narrated change."},
+"04": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A prolonged dispute between the schools resolved by a vote; mainly speech, but with conflict and a decision that changes things."},
+"05": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3, 4, 5, 6, 7], "reason": "An incident (the Yavne reservoir measured and found deficient) leads to a dispute between Tarfon and Akiva that ends with Tarfon conceding and praising Akiva; event, conflict and change."},
+"06": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "Ravin goes to betroth a woman for his son and betroths her himself; several actions and a change, with the Gemara's justification attached."},
+"07": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [4, 5, 6], "reason": "Ravina examines a knife in his teacher's region and Rav Ashi challenges him; one real act followed mainly by dialogue with some conflict. Segments 2-3 are bare reports."},
+"08": {"verdict": "not", "rules": ["R-S1", "R-B4"], "segments": [], "reason": "Exegesis on a biblical verse explaining how virgins were identified; no narrated event of the catalogue's kind."},
+"09": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Ketubot 50b: the orphan daughters come before Shmuel and he orders sustenance; coming before a rabbi and a ruling, nothing else changes."},
+"10": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "Statements and habitual practices about orla cited as evidence; no event that leads anywhere."},
+"11": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2], "reason": "A case comes before Rabbi Yohanan, an exchange follows, and Reish Lakish looks harshly at Rabbi Elazar and rebukes him; mainly speech, but with conflict and an emotional reaction."},
+"12": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "An alluded practice of drawing water from the Tzippori channel, cited as legal evidence; a custom with no event following."},
+"13": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Bar Shatya's sale and conflicting witnesses, cited as a legal precedent and resolved by a ruling; a case and a ruling with no further narrated change."},
+"14": {"verdict": "story", "rules": ["R-C0"], "segments": [2], "reason": "A man snatches coins from another and throws them to a woman as betrothal, then comes before Rava who rules; several actions followed by a ruling, like the cow case."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A setting (Abbahu leaning on his attendant) framing a series of halakhic questions and answers; a setting plus Q&A is not a story."},
+"16": {"verdict": "borderline", "rules": ["R-C6", "R-C0"], "segments": [2], "reason": "An incident only alluded to (a husband abroad, a twelve-month pregnancy) and Rava Tosfa'a's ruling declaring the child fit, cited for legal analysis."},
+"17": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "Ameimar permits a marriage and Rav Ashi challenges his source; a ruling and ordinary scholarly back-and-forth."},
+"18": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rabbi Tavla saw a bolt and said nothing, cited as legal evidence; a bare report with nothing following."},
+"19": {"verdict": "story", "rules": ["R-C0"], "segments": [2, 3, 4, 5, 6], "reason": "Rav Pappa forces Yehuda bar Mareimar into the house, his silence makes Abba of Sura write over all his property, and the exchange that follows; multiple actions, misunderstanding and change."},
+"20": {"verdict": "borderline", "rules": ["R-C0", "R-C6"], "segments": [2], "reason": "An incident alluded to, in which Rafram presses Rav Ashi and Rav Ashi exacts full payment; a ruling that is itself an act, but the incident is barely told."}
+}

@@ -270,6 +270,9 @@ catches up at the next daily run and is labelled with its time.
 - A row whose story is no longer on the list shows "no longer on the list" and drops off at release. A learned one
   stays counted as history, not as progress on the current list.
 - Progress is always reported against the current list, with its date.
+- **Since 2026-11-14 story ids are permanent** (`site/data/story_ids.json`, viewer plan §3.1; merged in #96): a
+  boundary fix keeps the id, a merge leaves a redirect in `site/data/redirects.json`, a removal retires the id. So a
+  hand-out row keeps pointing at its story when a boundary is corrected. The bullets below were written before that.
 - **Ids are `tractate-daf-start-end`, so a boundary change changes the id** and looks like one story removed and one
   added. To keep that from happening mid-campaign, **the list (ids and order) is frozen at launch** as list v1;
   `site/data/index.json` carries `list_version` and `published_at`.

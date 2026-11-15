@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A report of Rav Nehemya's examination practice, cited only to debate which ruling it attaches to; nothing follows from it."},
+"02": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A document is brought before Rav Huna's court and he rules; Rav Hisda's instruction to Rabba is speech. A case and a ruling, with no further narrated change in the passage."},
+"03": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "The torn strap only frames a halakhic question and answer between Abaye and Rav Yosef; a setting plus Q&A is not a story."},
+"04": {"verdict": "borderline", "rules": ["R-C0", "R-C7"], "segments": [2], "reason": "A man strikes another and is ordered by R. Yehuda Nesia to pay; an incident plus a ruling, cited as legal proof, with the outcome only implied by the order."},
+"05": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "Rav Huna eats thirteen loaves without Grace and Rav Nahman rebukes him; one real act and a verbal response, mainly halakhic speech."},
+"06": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A one-line report that Rabbi appointed two brothers over the charity fund, cited as evidence; a single act with no continuation."},
+"07": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "Rav Mordekhai goes from sage to sage with his question and rebukes them all; there is movement and conflict, but it is mainly scholarly dialogue."},
+"08": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "Rav Huna hears a man grinding a millstone on Chol HaMoed and curses him; one event and a verbal reaction, then a halakhic comment."},
+"09": {"verdict": "borderline", "rules": ["R-C6", "R-C7"], "segments": [2], "reason": "The incident of Rav Yehuda's seal and Shmuel's order to deface it is only alluded to as a legal difficulty; one event and an order whose outcome is implied."},
+"10": {"verdict": "not", "rules": ["R-C2", "R-C7"], "segments": [], "reason": "Rava testing his students with a contradiction between mishnayot is teaching and legal discussion, with no event."},
+"11": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "R. Yirmeya's far-fetched question leads to his removal from the study hall: a speech act followed by one real consequence, told in a single line."},
+"12": {"verdict": "not", "rules": ["R-C2", "R-C0"], "segments": [], "reason": "Rav Pappi's permission and Rava's objection are a ruling and standard rabbinic critique, followed by a report of Rava's own practice; no narrated change."},
+"13": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3, 4], "reason": "Rava teaches, Rav Pappa challenges him, and Rava publicly retracts through an interpreter; mostly teaching speech, but with an act and a change."},
+"14": {"verdict": "borderline", "rules": ["R-C7", "R-C2"], "segments": [2], "reason": "R. Ile'a searches among R. Eliezer's students for corroboration and finally R. Eliezer b. Yaakov agrees; a first-person account of events, but about transmitting a teaching."},
+"15": {"verdict": "not", "rules": ["R-C0", "R-C5"], "segments": [], "reason": "The hunters' practice and their coming before R. Yehuda b. Beteira for a ruling; coming before a rabbi and being ruled on is the only event."},
+"16": {"verdict": "borderline", "rules": ["R-C7", "R-C5"], "segments": [2], "reason": "Ravina's eyewitness account of Rav Ashi donning tefillin at night and their exchange; one act plus dialogue, cited as evidence of his view."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "Rav Huna's instruction to the merchants is legal advice, followed by Gemara analysis; no event is narrated."},
+"18": {"verdict": "borderline", "rules": ["R-C2", "R-C0"], "segments": [2], "reason": "R. Yitzhak Nappaha teaches publicly and Rav Sheshet becomes angry that the teaching was not attributed; speech with an emotional reaction and conflict."},
+"19": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "A narrative about Miriam's prophecy, Moses's birth and her father's reactions: an exegetical retelling of a biblical episode."},
+"20": {"verdict": "borderline", "rules": ["R-C2", "R-S1"], "segments": [2, 3], "reason": "Elijah's conversation with Rav Yehuda about the sins in Nehardea is almost all dialogue, with events only mentioned, then drifts into exegesis."}
+}

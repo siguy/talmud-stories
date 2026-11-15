@@ -1,0 +1,22 @@
+{
+"01": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A sage's statement about how he would react to suggestions; hypothetical speech, no narrated event."},
+"02": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A report of teachings an angel told R. Yishmael; speech/teaching with no event or conflict."},
+"03": {"verdict": "borderline", "rules": ["R-C5", "R-C7"], "segments": [2], "reason": "A one-time incident (bringing up the kettle, returning it, R. Hiyya's silence) cited as evidence of a view; real events but little change, so borderline rather than not."},
+"04": {"verdict": "borderline", "rules": ["R-C7"], "segments": [2], "reason": "R. Yohanan overhears a maiden praying prostrate; a real event cited as a lesson, mainly speech with little change."},
+"05": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Recollections of general past conditions; no particular event or change."},
+"06": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Rav finding a scroll is a single act cited only as the source of a teaching; nothing follows."},
+"07": {"verdict": "borderline", "rules": ["R-C2", "R-C7"], "segments": [2, 3], "reason": "Rabba permits and buys the meat, his wife challenges him and he answers; real events but mainly a dialogue with mild conflict and no change."},
+"08": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A man takes collateral and comes before Abaye for a ruling; one event then a ruling with nothing else changing."},
+"09": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "A man's saying and Shmuel's matching verse; speech only, no event or conflict."},
+"10": {"verdict": "not", "rules": ["R-C5", "R-B4"], "segments": [], "reason": "A single gesture of displeasure followed by the Gemara's legal analysis; nothing narrated develops."},
+"11": {"verdict": "not", "rules": ["R-S1"], "segments": [], "reason": "Exegetical teaching that Moses found three things difficult; a list of derivations, not a narrated story."},
+"12": {"verdict": "not", "rules": ["R-C5", "R-C2"], "segments": [], "reason": "Rav's habitual announcement and a recollection of a saying; speech and custom with no event."},
+"13": {"verdict": "out_of_scope", "rules": ["R-S1"], "segments": [2], "reason": "An exegetical narrative of Jacob and his sons at his deathbed; a story about biblical figures."},
+"14": {"verdict": "borderline", "rules": ["R-C2"], "segments": [2], "reason": "Shmuel threatens the pot merchants over prices; speech only, but with conflict."},
+"15": {"verdict": "not", "rules": ["R-C2"], "segments": [], "reason": "Rabbi's instruction about his eulogies, cited as proof; speech without conflict or event."},
+"16": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "A legal explanation invoking a directive sent during persecution; an incident only mentioned to explain a ruling, no narration."},
+"17": {"verdict": "not", "rules": ["R-C0"], "segments": [], "reason": "A legal case ('one who binds another...') stated hypothetically; no event happened."},
+"18": {"verdict": "story", "rules": ["R-C2"], "segments": [2], "reason": "Levi and R. Shimon disagree, Levi is overruled, Psalms is brought, Rabbi's exposition leads Levi to claim leave to depart; several actions, conflict and change."},
+"19": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "Habitual practices of sages and a recollection of a study-hall saying, within legal discussion; no event."},
+"20": {"verdict": "not", "rules": ["R-C5"], "segments": [], "reason": "R. Yohanan's habitual excuse, cited as a legal proof and explained; a custom leading nowhere."}
+}
